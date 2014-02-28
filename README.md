@@ -15,7 +15,7 @@ A `livingdocs design` consists of CSS (and assets required by it) and a set of H
 
 #### Document
 
-A livingdocs document is an abstract representation of an HTML document. It is inspired by [web components](http://www.w3.org/TR/components-intro/). In livingdocs the components that can be used are defined in a `livingdocs design`and are called `snippets`. Just like the DOM represents a tree of HTML elements a livingdocs `document-model` represents a tree of `snippets`.
+A livingdocs document is an abstract representation of an HTML document. It is inspired by [web components](http://www.w3.org/TR/components-intro/). In livingdocs the components that can be used are defined in a `livingdocs design` and are called `snippets`. Just like the DOM represents a tree of HTML elements a livingdocs `document-model` represents a tree of `snippets`.
 
 From the user perspective a `livingdocs document` is a page with a list of components that can be dragged around, selected, edited and deleted individually.
 
@@ -27,11 +27,11 @@ Livingdocs can be used to edit whole pages or only parts of it. It is set up in 
 
 #### Livingdocs Editor
 
-The editor provides a user interface for editing livingdocs documents. It uses the livingdocs engine the same way you can use it if you want to build your own editor. All user interface elements are rendered and managed by the 
+The editor provides a user interface for editing livingdocs documents. It uses the livingdocs engine the same way you can use it if you want to build your own editor. All user interface elements are rendered and managed by the editor. To show the document itself to the user the editor requests an interactive view from the livingdocs engine. The livingdocs engine offers events to which the editor can react. Exmples of such events are selecting a snippet or text or dragging a snippet.
 
 #### Livingdocs Engine
 
-The engine is the central piece of livingdocs and defines the APIs for defining the document components, interacting with the document and storing the document.
+The engine is the central piece of livingdocs and defines the APIs for manipulating, viewing and storing the document.
 
 It consists of different parts with their own responsibilities:
 
@@ -75,7 +75,7 @@ This is a git repository that helps building `livingdocs designs`. It has a grun
 
 | Term | Description |
 |------|-------------|
-| `snippet` | An HTML component that can be used in a `livingdocs document |
+| `snippet` | An HTML component that can be used in a `livingdocs document` |
 | `livingdocs design` | A configuration file – a list of `snippets` – for the livingdocs engine along with the needed dependencies (css, javascripts, fonts) |
 | `document-model` | A JSON representation of the content of a `livingdocs document` |
 | `livingdocs document` | A document consists of a `document-model` and a `livingdocs design` |
