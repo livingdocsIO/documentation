@@ -13,6 +13,8 @@ HTML and CSS always work together. This is the guiding principle for livingdocs 
 
 A `livingdocs design` consists of CSS (and assets required by it) and a set of HTML `snippets` that can be used togehter with that CSS. Livingdocs will only allow the HTML constructs specified by the `snippets` to be created.
 
+[More about designs](design/create-a-design.md)
+
 #### Document
 
 A livingdocs document is an abstract representation of an HTML document. It is inspired by [web components](http://www.w3.org/TR/components-intro/). In livingdocs the components that can be used are defined in a `livingdocs design` and are called `snippets`. Just like the DOM represents a tree of HTML elements a livingdocs `document-model` represents a tree of `snippets`.
