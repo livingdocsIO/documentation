@@ -21,6 +21,8 @@ A livingdocs document is an abstract representation of an HTML document. It is i
 
 From the user perspective a `livingdocs document` is a page with a list of components that can be dragged around, selected, edited and deleted individually.
 
+[More about the document-model](document-model/document-model.md)
+
 #### How to use it
 
 Livingdocs can be used to edit whole pages or only parts of it. It is set up in different components that can be mixed and matched for different integration needs. And in the near future we will offer a service so it can conveniently be used as a standalone product in your browser.
