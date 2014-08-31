@@ -19,10 +19,16 @@
     'paragraph':
       'text': 'this.title'
 
+  behavior: 
+    'documentTitle': 'this.title'
+    'tableOfContents': 'this.title'
+    'bodyText': true
+
   # Example of a restriction so that this component can only be placed
   # inside the root container.
   restrict:
     only: ['root']
+    limit: 1 # can only be used once per document
 ```
 
 #### Paragraph component configuration:
@@ -162,3 +168,18 @@ components:
         'text': 'More storytelling'
       ]
 ```
+
+## Data Fields
+
+```coffee
+livingdoc.hasDataField('author') # document contains one or more author fields
+livingdoc.dataField('author').first.set('My Name')
+```
+
+```html
+<div>
+  <h1 doc-editable="title">Titel</h1>
+  <h3 doc-data-field="author">Author</h3>
+</div>
+```
+
