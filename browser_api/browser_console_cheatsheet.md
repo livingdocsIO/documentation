@@ -4,11 +4,11 @@
 ## Working with the current document
 
 ```javascript
-// Get the currently loaded document
-document = doc.document;
+// Get the currently loaded livingdocs-engine document
+livingdoc = doc.editor.livingdoc;
 
 // Get the design of the document
-document.design
+livingdoc.design
 ```
 
 
