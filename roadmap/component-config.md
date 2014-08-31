@@ -171,15 +171,23 @@ components:
 
 ## Data Fields
 
-```coffee
-livingdoc.hasDataField('author') # document contains one or more author fields
-livingdoc.dataField('author').first.set('My Name')
-```
+Data fields are an idea that give users an easy way to insert placeholders
+that can later be replaced by a delivery layer.
+
+Example component template:
 
 ```html
 <div>
-  <h1 doc-editable="title">Titel</h1>
+  <h1 doc-editable="title">Title</h1>
   <h3 doc-data-field="author">Author</h3>
 </div>
 ```
 
+Output HTML:
+
+```html
+<div>
+  <h1>Awesome Title</h1>
+  <h3><!--{{ author }}--></h3>
+</div>
+```
