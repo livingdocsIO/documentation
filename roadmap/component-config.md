@@ -20,9 +20,9 @@
       'text': 'this.title'
 
   behavior: 
-    'documentTitle': 'this.title'
-    'tableOfContents': 'this.title'
-    'bodyText': true
+    documentTitle: 'this.title'
+    tableOfContents: 'this.title'
+    nextComponentOnEnter: 'paragraph'
 
   # Example of a restriction so that this component can only be placed
   # inside the root container.
@@ -47,6 +47,10 @@
     # (the 'this.' in 'this.text' would be optional)
     'title':
       'title': 'this.text'
+
+  behavior:
+    split: true
+    defaultTextComponent: true
 ```
 
 #### Container component configuration:
@@ -169,10 +173,10 @@ components:
       ]
 ```
 
+
 ## Data Fields
 
-Data fields are an idea that give users an easy way to insert placeholders
-that can later be replaced by a delivery layer.
+Data fields are an idea that give designers an easy way to add elements to components that can be filled automatically from publication metadata. Examples could be author information or a publish date.
 
 Example component template:
 
@@ -183,11 +187,23 @@ Example component template:
 </div>
 ```
 
-Output HTML:
+
+## Placeholders
+
+Example component template:
+
+```html
+<div>
+  <h1 doc-editable="title">Title</h1>
+  <h3 doc-placeholder="author">Author</h3>
+</div>
+```
+
+Output HTML which inserts a placeholder string that can be replaced by a delivery layer.
 
 ```html
 <div>
   <h1>Awesome Title</h1>
-  <h3><!--{{ author }}--></h3>
+  <h3>{{ author }}</h3>
 </div>
 ```
