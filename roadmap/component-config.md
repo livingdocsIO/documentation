@@ -8,10 +8,10 @@
 ```coffee
 'title':
   data:
-    title: 
+    'title': 
       type: 'text'
       characterLimit: 100
-    subtitle:
+    'subtitle':
       type: 'text'
       optional: true # consider: rename to 'excludeWhenEmpty'.
 
@@ -36,7 +36,7 @@
 ```coffee
 'paragraph': 
   data:
-    text: 
+    'text': 
       type: 'text'
 
   properties: ['position', 'extra-space']
@@ -58,13 +58,32 @@
 ```coffee
 'sidebar': 
   data:
-    title: 
+    'title': 
       type: 'text'
-    children: 
+    'children': 
       type: 'container'
       # restriction what components can be placed inside 
       # of this container.
       only: ['paragraph', 'list']
+```
+
+#### Image component configuration:
+
+```coffee
+'sidebar': 
+  data:
+    'image': 
+      type: 'image'
+      cropAspectRatio: '16:9' # Or use an array: ['16:9', '9:16', 'free']
+      cropMaxWidth: 320
+      defaultCrop: '16:9 center'
+
+  cssClassOverrides:
+    'format--wide':
+      data:
+        'image':
+          cropAspectRatio: '20:6'
+        
 ```
 
 #### List component configuration:
@@ -103,6 +122,9 @@ componentProperties:
   'extra-space'
     type: 'cssClass'
     value: 'component--extra-space'
+  'format':
+    type: 'cssClass'
+    value: ['format--square', 'format--wide', 'format--high']
 ```
 
 #### User Interface configuration:
