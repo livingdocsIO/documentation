@@ -11,13 +11,13 @@ Livingdocs tries to offer complete control over web content. A livingdocs docume
 
 HTML and CSS always work together. This is the guiding principle for livingdocs when editing HTML. A consequence is that livingdocs always needs to be configured with a `livingdocs design` before content can be created or edited.
 
-A `livingdocs design` consists of CSS with its required assets and a set of HTML elements, or livingdocs `snippets`, that can be used together with that CSS. Livingdocs will only allow the HTML constructs specified by the `snippets` to be created.
+A `livingdocs design` consists of CSS with its required assets and a set of HTML elements, or livingdocs `components`, that can be used together with that CSS. Livingdocs will only allow the HTML constructs specified by the `components` to be created.
 
 [More about designs](design/create-a-design.md)
 
 #### Document
 
-A livingdocs document is an abstract representation of an HTML document. It's structure is inspired by [web components](http://www.w3.org/TR/components-intro/), which is a set of working draft documents at the W3C with the aim to leverage reusable components for the Web platform. In livingdocs the components that can be used are defined in a `livingdocs design` and are called `snippets`. Just like the DOM represents a tree of HTML elements a livingdocs `document-model` represents a tree of `snippets`.
+A livingdocs document is an abstract representation of an HTML document. It's structure is inspired by [web components](http://www.w3.org/TR/components-intro/), which is a set of working draft documents at the W3C with the aim to leverage reusable components for the Web platform. In livingdocs the elements that can be used are defined in a `livingdocs design` and are called `components`. Just like the DOM represents a tree of HTML elements a livingdocs `document-model` represents a tree of `components`.
 
 From the user's perspective a `livingdocs document` is a page with a list of components that can be dragged around, selected, edited and deleted individually.
 
@@ -78,7 +78,7 @@ This is a git repository that helps building `livingdocs designs`. It has a grun
 | Term | Description |
 |------|-------------|
 | `snippet` | An HTML element that can be used in a `livingdocs document` |
-| `livingdocs design` | A configuration file – a list of `snippets` – for the livingdocs engine along with the needed dependencies (css, javascripts, fonts) |
+| `livingdocs design` | A configuration file – a list of `components` – for the livingdocs engine along with the needed dependencies (css, javascripts, fonts) |
 | `document-model` | A JSON representation of the content of a `livingdocs document` |
 | `livingdocs document` | A document consists of a `document-model` and a `livingdocs design` |
 
