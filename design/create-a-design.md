@@ -3,7 +3,7 @@
 
 ## Overview
 
-A Livingdocs design consists of a series of `component definitions`. A `component definition` includes HTML, CSS, and configuration options that are all deduced based on an the site design and UI considerations. Here we have a first look how you can create a `component definition`.
+A Livingdocs design consists of a series of `component definitions`. A `component definition` includes HTML, CSS, and configuration options that are all based on an the site design and UI considerations. Here we have a first look how you can create a `component definition`.
 
 ## Available attributes
 
