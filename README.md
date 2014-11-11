@@ -1,85 +1,74 @@
 
 # Livingdocs Documentation
 
+## Overview
+
+Livingdocs tries to make working wiht content as easy and controlled as possible. The magic part of Livingdocs is that you can define completely how it works and how users are allowed to change HTML. For that you create your own design which is used to configure Livingdocs. After that you can create your own documents with completely custom HTML and CSS an be sure that they contain only the HTML constructs you defined.
+
+
+## The Livingdocs Framework
+
+To work with Livingdocs you should start with the [`livingdocs-engine`](https://github.com/upfrontIO/livingdocs-engine) repository. It is the central piece of Livingdocs and defines the APIs for manipulating, displaying and serializing your documents. The livingdocs-engine runs in the browser and in node.js.
+
+Here you can find detailed information about the most important objects in the livingdocs-engine and how to work with them:
+
+- [livingdoc](livingdocs-engine/livingdoc.md)
+- [component_tree](livingdocs-engine/component_tree.md)
+- [component_model](livingdocs-engine/component_model.md)
+- [browser_api](livingdocs-engine/browser_api.md)
+
+
+## Create your own designs
+
+To make the creation of a Livingdocs design easier and quicker we have set up a repository you can fork. Here is a short guid how that works:
+
+[Create designs with livingdocs-design-boilerplate](design/create_designs.md)
+
+
 ## Concepts
 
-#### Overview
+#### Regain control over your HTML
 
-Livingdocs tries to offer complete control over web content. A livingdocs document consists of HTML, CSS and assets like images and javascript files. Livingdocs uses the CSS of a page to deduce the allowed edits to a page.
+HTML and CSS always work together. Creating a CSS design can only work if you know how the HTML looks. Or better yet you can define your own HTML. Traditionally developers have to create templates for that on a server somewhere for a particular CMS. With Livindocs this is different.
 
-#### Design
+In Livingdocs you specify all HTML components as part of a Livingdocs design which is just a JSON file you can create (More on this [here](design/create_designs.md)).
 
-HTML and CSS always work together. This is the guiding principle for livingdocs when editing HTML. A consequence is that livingdocs always needs to be configured with a `livingdocs design` before content can be created or edited.
+For example a template for a paragraph looks like this:
 
-A `livingdocs design` consists of CSS with its required assets and a set of HTML elements, or livingdocs `components`, that can be used together with that CSS. Livingdocs will only allow the HTML constructs specified by the `components` to be created.
+```html
+<p doc-editable="text">
+  Placeholder text
+</p>
+```
 
-[More about designs](design/create-a-design.md)
+With that you regain full control over the HTML. And this is also the guiding principle of Livingdocs. We just manage your content. How that content looks and behaves is up to you.
 
-#### Document
 
-A livingdocs document is an abstract representation of an HTML document. It's structure is inspired by [web components](http://www.w3.org/TR/components-intro/), which is a set of working draft documents at the W3C with the aim to leverage reusable components for the Web platform. In livingdocs the elements that can be used are defined in a `livingdocs design` and are called `components`. Just like the DOM represents a tree of HTML elements a livingdocs `document-model` represents a tree of `components`.
+#### Work with your content the web way
 
-From the user's perspective a `livingdocs document` is a page with a list of components that can be dragged around, selected, edited and deleted individually.
+A livingdocs document is an abstract representation of an HTML document. It's structure is inspired by [web components](http://www.w3.org/TR/components-intro/), which is a set of working draft documents at the W3C with the aim to leverage reusable components for the Web platform. In livingdocs the components that can be used are defined in a Livingdocs `Design`. Just like the DOM represents a tree of HTML elements a `Livingdoc` represents a tree of `components`.
 
-[More about the document-model](document-model/document-model.md)
+From the user's perspective a `livingdoc` is a page with a list of components that can be dragged around, selected, edited and deleted individually. And for you as a developer a `livingdoc` looks the same. You just use an API instead of a UI. But the underlying concepts of components and editable parts are the same.
 
-#### How to use it
+[More about a Livingdoc](livingdocs-engine/livingdoc.md)
 
-There are 2 usage models for livingdocs: integration with an existing Content Management System (CMS) or usage as a web service. Livingdocs can be used to edit whole pages or only parts of it. The software behind livingdocs is split into components that can be mixed and matched for different integration needs.
 
-## Software Components
+## Related Projects
+
+### Open Source
+
+#### editable.js
+
+[editable.js](https://github.com/upfrontIO/editable.js) is your friendly open source contenteditable API. We built it to have full control over text editing and to provide an API that focuses on editing [phrasing content](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Phrasing_content). EditableJS is designed to be used on a single paragraph or heading element (or any other block level element for that matter). It is used by the livingdocs engine internally in interactive views to let users edit text.
+
+
+### For Business
 
 #### Livingdocs Editor
 
-The editor provides a user interface for editing livingdocs documents. It uses the underlying livingdocs engine to make the document itself editable and adds interfaces around the document that help the user in common tasks such as adding elements to the page or publishing a document. All user interface elements are rendered and managed by the editor. To show the document itself to the user, the editor requests an interactive view from the livingdocs engine. The livingdocs engine exposes events to which the editor can subscribe such as selecting a snippet or text or dragging a snippet.
-
-#### Livingdocs Engine
-
-The engine is the central piece of livingdocs and defines the APIs for manipulating, displaying and storing the document. It consists of several parts with their own responsibilities:
-
-**Design:**
-
-- Parse and load document design definitions
-- Enforce that documents always comply with their specified design
-
-**Document Model:**
-
-- Store a representation of the document in JSON
-- Offer an API to manipulate that representation
-- Notify interested parties of changes of the model
-- Store versions on the defined storage layer, e.g., a web API
-
-**Interactive Views:**
-
-- Render a document as HTML that can be interacted with
-- Provide help with interaction of that HTML
-
-**Published Views:**
-
-- Render the final HTML ready for delivery
-- Provide information about dependencies of a document (css, javascripts, fonts)
-
-
-#### EditableJS
-
-EditableJS is your friendly contenteditable API. We built it to have full control over text editing and to provide an API that focuses on editing [phrasing content](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Phrasing_content). EditableJS is designed to be used on a single paragraph or heading element (or any other block level element for that matter). It is used by the livingdocs engine internally in interactive views to let users edit text.
+The editor provides a user interface for editing livingdocs documents. It is used for [livingdocs-beta.io](http://livingdocs-beta.io) where you can test it for yourself. It uses the underlying livingdocs engine to manipulate the document and adds interfaces around the document that help the user in common tasks such as adding elements, editing content or uploading images.
 
 #### Livingdocs Server
 
-The server is a backend API that offers storage capabilities for livingdocs documents. It also handles image storage and manipulation. In an integration project the livingdocs server is often replaced with the respective CMS of the integrating party.
-
-#### Livingdocs Design
-
-This is a git repository that helps building `livingdocs designs`. It has a grunt task that can create the files needed to configure the livingdocs engine out of css and html files specifying the allowed html constructs.
-
-
-## Glossary
-
-| Term | Description |
-|------|-------------|
-| `snippet` | An HTML element that can be used in a `livingdocs document` |
-| `livingdocs design` | A configuration file – a list of `components` – for the livingdocs engine along with the needed dependencies (css, javascripts, fonts) |
-| `document-model` | A JSON representation of the content of a `livingdocs document` |
-| `livingdocs document` | A document consists of a `document-model` and a `livingdocs design` |
-
+The server provides storage capabilities for livingdocs documents and exposes a powerful API. It also handles image storage and manipulation.
 

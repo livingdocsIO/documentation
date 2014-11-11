@@ -1,5 +1,5 @@
 
-# Browser console cheatsheet
+# Livingdocs-Engine Browser API
 
 ## Working with the current document
 
@@ -10,11 +10,6 @@ livingdoc = doc.editor.livingdoc;
 // Get the design of the document
 livingdoc.design
 ```
-
-
-## Modifying a document
-
-todo...
 
 
 ## Working with designs
