@@ -65,27 +65,27 @@ component.remove();
 component.getParent();
 
 // Iterate through all parents
-components.parents(function(parentComponent) {
+components.parents(function(component) {
     // your code
 });
 
 // Iterate through all direct children
-components.children(function(parentComponent) {
+components.children(function(component) {
     // your code
 });
 
 // Iterate through oneself and all direct children
-components.childrenAndSelf(function(parentComponent) {
+components.childrenAndSelf(function(component) {
     // your code
 });
 
 // Iterate through all descendants (children and their children and so on...)
-components.descendants(function(parentComponent) {
+components.descendants(function(component) {
     // your code
 });
 
 // Iterate through oneself, and all descendants
-components.descendantsAndSelf(function(parentComponent) {
+components.descendantsAndSelf(function(component) {
     // your code
 });
 ```
