@@ -20,7 +20,7 @@ Here you can find detailed information about the most important objects in the l
 
 ## Create your own designs
 
-To make the creation of a Livingdocs design easier and quicker we have set up a repository you can fork. Here is a short guid how that works:
+Follow this link for a short guide on how designs work and how you can create your own:
 
 [Create designs with livingdocs-design-boilerplate](design/create_designs.md)
 
