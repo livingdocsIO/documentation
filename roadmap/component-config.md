@@ -7,7 +7,7 @@
 
 ```coffee
 'title':
-  data:
+  directives:
     'title': 
       type: 'text'
       characterLimit: 100
@@ -35,7 +35,7 @@
 
 ```coffee
 'paragraph': 
-  data:
+  directives:
     'text': 
       type: 'text'
 
@@ -57,7 +57,7 @@
 
 ```coffee
 'sidebar': 
-  data:
+  directives:
     'title': 
       type: 'text'
     'children': 
@@ -71,7 +71,7 @@
 
 ```coffee
 'sidebar': 
-  data:
+  directives:
     'image': 
       type: 'image'
       cropAspectRatio: '16:9' # Or use an array: ['16:9', '9:16', 'free']
@@ -90,7 +90,7 @@
 
 ```coffee
 'list': 
-  data:
+  directives:
     title: 
       type: 'text'
     items: 
@@ -114,6 +114,8 @@
 
 #### Component Properties:
 
+Specify the type of the property:
+
 ```coffee
 componentProperties:
   'position':
@@ -130,25 +132,15 @@ componentProperties:
 #### User Interface configuration:
 
 ```coffee
-groups: [
-  name: 'Body Text'
-  components: [
-    'title', 'paragraph'
-  ]
-]
+
 
 components: 
   'title': 
-    name: 'Title Header'
+    label: 'Title Header'
     # This would be the name when displayed in the context of a group.
     # Sometimes we want to use shorter names so as to not sound repetitive.
     # This is opt-in. If not set the UI will just use 'name'.
-    groupName: 'Title'
-  'paragraph':
-    name: 'paragraph'
-    # properties can be set to reorder properties or hide certain 
-    # available properties in the user-interface (optional).
-    properties: ['extra-space', 'position']
+    groupLabel: 'Title'
 
 properties:
   'position'
