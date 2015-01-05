@@ -9,7 +9,7 @@ A component model is the model of a component. You edit a `livingdoc` by creatin
 Every `component` has a unique id that allows Livingdocs to always identify a `component` no matter if it was moved to a different place somewhere else in a document.
 
 #### componentName
-The name of you component. E.g. a title component could have the name 'title'. Normally you use the name when creating a new component of the same type quering for component of a certain type.
+The name of your component. E.g. a title component could have the name 'title'. Normally you use the name when creating a new component of the same type querying for component of a certain type.
 
 #### template
 The Template from which your component was created.

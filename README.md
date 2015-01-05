@@ -3,7 +3,7 @@
 
 ## Overview
 
-Livingdocs tries to make working wiht content as easy and controlled as possible. The magic part of Livingdocs is that you can define completely how it works and how users are allowed to change HTML. For that you create your own design which is used to configure Livingdocs. After that you can create your own documents with completely custom HTML and CSS an be sure that they contain only the HTML constructs you defined.
+Livingdocs tries to make working with content as easy and controlled as possible. The magic part of Livingdocs is that you can define completely how it works and how users are allowed to change HTML. For that you create your own design which is used to configure Livingdocs. After that you can create your own documents with completely custom HTML and CSS an be sure that they contain only the HTML constructs you defined.
 
 
 ## The Livingdocs Framework
