@@ -15,7 +15,7 @@ Those are the building blocks of livingdocs. A template contains definitions for
 - directive configuration
 - properties
 
-The most crucial parts for the migration are the directives and directive configurations. A directive tells livingdocs what is editable in an HTML template and how. There are 6 types of directives:
+The most crucial parts for the migration are the directives and directive configurations. A directive tells Livingdocs whether an element is editable in an HTML template and how. There are 6 types of directives:
 - doc-editable (editable text)
 - doc-image (editable image)
 - doc-link (editable link)
@@ -35,7 +35,7 @@ The layouts define HTML wrapper blocks that are wrapped around the whole HTML of
 Changes in the markup of a layout are not subject to a migration. Depending on the frontend implementation they might require a re-publishing of existing articles.
 Adding new layouts is also not subject to a migration. Removing or renaming a layout though is a breaking change and requires a migration.
 
-#### Metadata (design part)
+#### Metadata (fieldData)
 
 The metadata section of a design defines which parts of an article's content should be automatically parsed for use in metadata. There are two types of content that can be parsed for the metadata: text and images. 
 
@@ -43,19 +43,19 @@ Changes to the metadata that introduce objects that are more than one level deep
 
 Changes in the metadata are generally not subject to migrations. Existing metadata is saved on a document and remains even if the metadata extractor entry was removed.
 The more relevant question in this regard is whether the document contains all the metadata information that the frontend requires. A (possibly versioned) validation of this required metadata should be introduced in the publishing process, i.e., documents should only be allowed for publication if they fulfill all metadata requirements from the frontend.
-Such a metadata validation does currently not exist. It could be added to the design specification (e.g., as "requiredMetadata").
+Such a metadata validation does currently not exist. It could be added to the design specification (e.g., as "requiredMetadata") or the space.
 
 #### Component Properties
 
-These are properties that define the visual behavior of a component. Examples are the left and right floating properties on images. Properties are defined in the configuration of a design and are "instantiated" on each component that should be able to use it.
+These are properties that define the visual behavior of a component. Examples are the left and right floating properties on images. Properties are defined in the configuration of a design.
 
 Adding new properties or property values is not a breaking change and requires no further action. Changing or removing a property is also not a breaking change, however it might change the visual representation of a component. If a user sets an image to be left-floating and the left-floating property is removed, then the image will be just rendered at its default position (in the middle). This does not break the document, i.e., prevents it from opening or displaying, but it removes the intention of the user who set it as left-floating. A migration might be used here but it is not required.
 
-#### Metadata (editor part)
+#### Metadata (Custom Metadata)
 
-This is metadata that is set explicitly in the editor using custom code. Examples are a future publication date or tags. The migration relevance for this kind of metadata is equivalent to the one from the design.
+This is metadata that is set explicitly in the editor using custom code. Examples are a future publication date or tags. The migration relevance for this kind of metadata is equivalent to the one from the design, i.e., it is not subject to migrations.
 
-#### Publication Data
+#### Livingdocs Publication Data
 
 This data comes directly with a publication. Examples are the publication date or the id of the document. The migration relevance for this data is equivalent to the metadata (i.e, only concerns frontends).
 
@@ -96,9 +96,10 @@ For example a change from version 1.0.0 to 2.0.0 requires a migration. A change 
 
 The design version that was used to create and edit the document is stored with each document. The current (latest) design version is stored with each design. When the editor tries to open a document with a new design version 2.0.0 but the document was created with design version 1.0.0 the migration is run automatically on this document upon opening. If no migration was found (an error condition) then the user can still open and edit the document with the old design version (1.0.0) but she is warned that she is working on an outdated design and should alert technical support.
 
-### Re-publishing job
+### Re-publishing
 
-The re-publishing of existing documents is not a one-to-one correspondence with migrations. E.g., when a migration is performed, a re-publishing is not necessarily needed. For this reason, re-publishing should be handled separately in a job, e.g., a grunt task. This grunt task can be run in the deployment process if necessary. Whether a re-publish should be done or not should be marked in the deployment notes of the specific deployment.
+The re-publishing of existing documents is not a one-to-one correspondence with migrations. E.g., when a migration is performed, a re-publishing is not necessarily needed and when we re-publish we might not need a migration. I would add an option to a migration script, e.g., `republish: true` that indicates that a migration require a re-publishing of documents. If we only want a re-publishing we set the flag ans simply let the data migration part of the migration empty.
+The re-publishing has to be smart enough to handle document versions, i.e., it should only re-publish the latest published version (not the latest draft). Correspondingly, the migration needs to be smart enough to migrate both the latest document version (possibly a draft) and the latest published version.
 
 ### Migration deploy helpers (optional)
 
