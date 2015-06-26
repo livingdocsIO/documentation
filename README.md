@@ -27,7 +27,9 @@ Before you dig down into the tech details you might be curious why you should ta
 
 ### Create your very first Livingdocs design
 
-coming soon.
+A design defines the visual output of your documents and the components that users can layout in the Livingdocs editor. You can fully adapt Livingdocs to your CI using your existing CSS design.
+
+[» Learn how to create a Livingdocs design](design/create_designs.md)
 
 ### Use the API to get your design up and running
 
@@ -93,5 +95,8 @@ NOTE: The Livingdocs framework used to be [open-source](https://github.com/upfro
 
 - [API documentation](https://github.com/upfrontIO/livingdocs-server/wiki)
 
+### The development roadmap
+
+[» read the rough plan](./roadmap/overview.md)
 
 

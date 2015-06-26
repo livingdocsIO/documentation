@@ -1,25 +1,25 @@
-## Teaser Management
+# Teaser Management
 
 The Livingdocs Teaser Management system allows to generate and manage aggregate pages of article teasers that are typically used to render start pages or topic pages such as for sport, news, or fashion.
 
 The Livingdocs TM allows both, definition of manually ordered lists and automatically updating lists as well as combinations of both (more below).
 
-### TOC
+## ToC
 
 - Teaser Management Overview (this page)
 - [Creating your own teasers](./teaser_definition.md)
 - [Elastic search indices in detail](./elastic_indices.md)
 - [A sample frontend app for aggregate pages](./sample_app.md)
 
-### Main concepts
+## Main concepts
 
-#### Teaser
+### Teaser
 
 A teaser is a short abstract for an article. Typically it consists of a title , an image, and some metadata such as author and date, but the design definition of teasers is just as free as any other Livingdocs component. There can be several types of teasers, e.g. for head-articles and updates.
 
 Teasers are rendered just like any other Livingdocs component. The data to render the teaser (title, etc.) comes from a document's metadata. This metadata is typically defined and/or edited when publishing a document such as selecting a good teaser image for different aspect ratios.
 
-#### List
+### List
 
 A list is a structure over teasers. The list itself is NOT a visual representation, but only a structuring of content. Every document is assigned to one or more lists upon publishing. The assignment can be either manual, i.e., the editor selects from a list of available "lists", or automatic for example through a text-analysis that assigns an document to its related lists.
 
@@ -30,7 +30,7 @@ To sum up, in order to appear in a list a document has to be:
 - be placed in the Livingdocs TM manually OR
 - "filled up" from the list's elastic search query 
 
-#### Container
+### Container
 
 A container is a visual representation of a list. The container defines how many teasers from a list should be shown (since a list is in theory infinite) and what teaser types should be used to render them, e.g., a head teaser for the first document, and a feed teaser for subsequent documents.
 
@@ -42,17 +42,17 @@ Frontends query the containers to get the necessary definitions to render finsih
 - getting the teaser type definition to render the filled up teasers
 - getting additional metadata such as placeholders for an ad system
 
-#### Page
+### Page
 
 A page is a special kind of Livingdocs document. This document allows editors to place, layout, and create containers and use a limited set of document components, e.g., to write headlines. Pages are edited in the Livingdocs editor just like regular documents. Good examples of pages are a newspaper's start page or a navigation point.
 
 Pages are also commonly used to generate site navigations. The simplest method is to just take all the available pages and create a navigation point for each. More complex navigations are possible but currently not editable within Livingdocs. Frontend apps can build their own logic to create more complex navigations.
 
-### Technical Details
+## Technical Details
 
 ![Teaser Management Overview](./overview.png)
 
-#### Storage layers
+### Storage layers
 
 There are three different kinds of storage layers for a running Livingdocs system:
 - Livingdocs (the editing part)
@@ -61,7 +61,7 @@ There are three different kinds of storage layers for a running Livingdocs syste
 
 In theory a frontend app could work without a storage mechanism, i.e., a browser-only app. In practice, it makes a lot of sense though to use some kind of view layer storage such as a Symphony app or similar setups that can use caches and store some intermediate information.
 
-#### The Livingdocs layer
+### The Livingdocs layer
 
 Livingdocs defines the document data type. A document is based upon revisions, which are the different versions of a document. This API is internal and external applications such as frontend apps do not need to worry about those details.
 
@@ -69,7 +69,7 @@ Documents are edited within the Livingdocs editor, a WYSIWIG editor that allows 
 
 It is important to note that technically both, a document as well as an aggregate page such as a newspaper's start page are Livingdocs documents and are edited in the Livingdocs editor. They differ only in the kinds of components that are available. To learn more about components, see the design documentation.
 
-#### The elastic search layer
+### The elastic search layer
 
 Elastic search defines three different kinds of viewing a document:
 - as a document (identity view)
@@ -84,7 +84,7 @@ The teaser view is used for aggregated pages. It does only contain the pre-rende
 
 The containers do not provide a view on a Livingdocs document. They are a self-contained entity in elastic search that defines a special kind of component: a visual representation of a list of documents. Careful: Although this could be assumed from the graphic, containers are not a view upon document lists, they are conceptually different (see the main concepts section above).
 
-#### The frontend layer
+### The frontend layer
 
 Frontends will typically need to deliver documents as well as some kind of aggregation such as a newspaper's start page or a blog's feed. Frontends can be written in any language, be it a web app or native technologies.
 
