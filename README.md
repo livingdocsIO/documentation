@@ -33,7 +33,9 @@ A design defines the visual output of your documents and the components that use
 
 ### Use the API to get your design up and running
 
-coming soon.
+Uploading a design is still very beta. It can be done though and testing out Livingdocs with your very own design is just more fun.
+
+[» Take the challenge to upload a design](./design/upload.md)
 
 ### A frontend app using the REST API
 

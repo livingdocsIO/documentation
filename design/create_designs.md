@@ -3,6 +3,7 @@
 
 ## ToC
 - Overview (this document)
+- [Versioning designs](./versioning.md)
 - [Defining metadata extractions](./metadata_extraction.md)
 - [Defining component properties](./component_properties.md)
 - [Working with images](./images.md)
@@ -201,3 +202,7 @@ A Livingdocs `component definition` consists of HTML that has added attributes t
 | doc-container | This tag can contain other components. |
 | doc-html | The content of this tag is freeform HTML. This can be used to embed tweets or IFrames. |
 | doc-link | The href attribute of this tag can be set to a link by the user. |
+
+#### But I want my own design
+
+Sure enough you don't want to keep working with the `livingdocs-design-boilerplate` forever. We highly advise you though to use the setup defined there as it makes working with Livingdocs designs a lot easier. Just create a Github fork of the `livingdocs-design-boilerplate` project (or copy it by hand), name it anything you like and start replacing the CSS and HTML with your own.
