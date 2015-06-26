@@ -3,72 +3,95 @@
 
 ## Overview
 
-Livingdocs tries to make working with content as easy and controlled as possible. The magic part of Livingdocs is that you can define completely how it works and how users are allowed to change HTML. For that you create your own design which is used to configure Livingdocs. After that you can create your own documents with completely custom HTML and CSS an be sure that they contain only the HTML constructs you defined.
+Livingdocs is a novel CMS that centers around frontend technologies and browser-based editing. A few cornerstones:
+- It is completely written in Javascript (with a little coffee)
+- There are no templates, but pure HTML/CSS and a search engine
+- Layouting is controlled by the user (designs are controlled)
+
+To use Livingdocs you can access our service via our REST API or the elastic search API and write your consumer apps in any language you like.
+To develop within Livingdocs you have to be fluent in Javascript and understand a little Angular.JS and/or Node.JS. Of course, in order to understand Livingdocs you should also know a thing or two about how Livingdocs works.
+
+## What is this?
+
+You are currently on the documentation project of Livingdocs. Unfortunately, we can't offer complete documentation at this moment, but we are working on it. This means that you can skim through this documentation but chances are that you won't really find what you're looking for. If so, please drop us a note to documentation@upfront.io or fork this project and send us a pull-request if you want to write it yourself.
+
+The following chapters will take you from novice Livingdocs consumer to Livingdocs core dev ninja. You can follow along or skip at will. The appendixes provide links to the various projects and structured API documentation. Note that most Livingdocs projects are closed-source and require access. Consuming the service can though be done without any special access, only a Livingdocs account and the things you'll learn in the subsequent chapters.
+
+## Why should I bother?
+
+Before you dig down into the tech details you might be curious why you should take the effort in the first place. How about this: you quickly read through our main concepts and then you can decide for yourself if Livingdocs is worth your effort.
+
+[» Livingdocs Concepts](concepts/main_concepts.md)
+
+## A Livingdocs consumer
+
+### Create your very first Livingdocs design
+
+coming soon.
+
+### Use the API to get your design up and running
+
+coming soon.
+
+### A frontend app using the REST API
+
+coming soon.
+
+### A fancy frontend app with elastic search
+
+coming soon.
+
+### Migrating documents
+
+coming soon.
+
+## Becoming a Livingdocs ninja
+
+### The Livingdocs user interface
+
+### The Livingdocs server
+
+### Understanding the Livingdocs teaser management
+
+The Livingdocs teaser management allows users to structure their documents within lists, assign those lists to containers that define a visual output of a list, and then layout those containers on pages that can be used in a site's navigation.
+
+[» Learn more about Livingdocs teaser management](teaser-management/main.md)
+
+## Going up and beyond: the framework and editable.js
+
+### The Livingdocs Framework
+
+The [`Livingdocs framework`](https://github.com/upfrontIO/livingdocs-framework is the central piece of Livingdocs and defines the APIs for manipulating, displaying and serializing your documents. The Livingdocs framework is an isomorphic app that runs in the browser and in node.js.
+
+Here you can find detailed information about the most important objects in the Livingdocs framework and how to work with them:
+
+- [livingdoc](livingdocs-framework/livingdoc.md)
+- [component_tree](livingdocs-framework/component_tree.md)
+- [component_model](livingdocs-framework/component_model.md)
+- [browser_api](livingdocs-framework/browser_api.md)
+
+### editable.js
+
+editable.js is our wrapper around the contenteditable API of the browser. It enables the Livingdocs framework to talk to the browser in order to allow inline editing and keyboard interaction. editable.js is designed to be used on a single paragraph or heading element (or any other block level element for that matter).
+
+The project is open-source and on Github. To learn more about Editable.JS it is best to use the [project's description](https://github.com/upfrontIO/editable.js).
+
+## Appendix
+
+### The Livingdocs projects
+
+- [editable.js (open-source)](https://github.com/upfrontIO/editable.js)
+- [Livingdocs framework (requires access)](https://github.com/upfrontIO/livingdocs-framework)
+- [Livingdocs editor (requires access)](https://github.com/upfrontIO/livingdocs-editor)
+- [Livingdocs server (requires access)](https://github.com/upfrontIO/livingdocs-server)
+- [Livingdocs boilerplate design (open-source)](https://github.com/upfrontIO/livingdocs-design-boilerplate)
+- [Livingdocs boilerplate blog (open-source)](https://github.com/upfrontIO/livingdocs-delivery)
+
+NOTE: The Livingdocs framework used to be [open-source](https://github.com/upfrontIO/livingdocs-engine). This repository is no longer maintained and the development of the framework continues closed-source. We are very sad about this but since the nice guys from WoodWing used our open-source efforts to pitch against us with our own software we had to safeguard our business first. We hope that we can switch back to open-source soon again but we first need to hire some more sales people to outmaneuver copycaters.
+
+### The server API
+
+- [API documentation](https://github.com/upfrontIO/livingdocs-server/wiki)
 
 
-## The Livingdocs Framework
-
-To work with Livingdocs you should start with the [`livingdocs-engine`](https://github.com/upfrontIO/livingdocs-engine) repository. It is the central piece of Livingdocs and defines the APIs for manipulating, displaying and serializing your documents. The livingdocs-engine runs in the browser and in node.js.
-
-Here you can find detailed information about the most important objects in the livingdocs-engine and how to work with them:
-
-- [livingdoc](livingdocs-engine/livingdoc.md)
-- [component_tree](livingdocs-engine/component_tree.md)
-- [component_model](livingdocs-engine/component_model.md)
-- [browser_api](livingdocs-engine/browser_api.md)
-
-
-## Create your own designs
-
-Follow this link for a short guide on how designs work and how you can create your own:
-
-[Create designs with livingdocs-design-boilerplate](design/create_designs.md)
-
-
-## Concepts
-
-#### Regain control over your HTML
-
-HTML and CSS always work together. Creating a CSS design can only work if you know how the HTML looks. Or better yet you can define your own HTML. Traditionally developers have to create templates for that on a server somewhere for a particular CMS. With Livindocs this is different.
-
-In Livingdocs you specify all HTML components as part of a Livingdocs design which is just a JSON file you can create (More on this [here](design/create_designs.md)).
-
-For example a template for a paragraph looks like this:
-
-```html
-<p doc-editable="text">
-  Placeholder text
-</p>
-```
-
-With that you regain full control over the HTML. And this is also the guiding principle of Livingdocs. We just manage your content. How that content looks and behaves is up to you.
-
-
-#### Work with your content the web way
-
-A livingdocs document is an abstract representation of an HTML document. It's structure is inspired by [web components](http://www.w3.org/TR/components-intro/), which is a set of working draft documents at the W3C with the aim to leverage reusable components for the Web platform. In livingdocs the components that can be used are defined in a Livingdocs `Design`. Just like the DOM represents a tree of HTML elements a `Livingdoc` represents a tree of `components`.
-
-From the user's perspective a `livingdoc` is a page with a list of components that can be dragged around, selected, edited and deleted individually. And for you as a developer a `livingdoc` looks the same. You just use an API instead of a UI. But the underlying concepts of components and editable parts are the same.
-
-[More about a Livingdoc](livingdocs-engine/livingdoc.md)
-
-
-## Related Projects
-
-### Open Source
-
-#### editable.js
-
-[editable.js](https://github.com/upfrontIO/editable.js) is your friendly open source contenteditable API. We built it to have full control over text editing and to provide an API that focuses on editing [phrasing content](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Phrasing_content). EditableJS is designed to be used on a single paragraph or heading element (or any other block level element for that matter). It is used by the livingdocs engine internally in interactive views to let users edit text.
-
-
-### For Business
-
-#### Livingdocs Editor
-
-The editor provides a user interface for editing livingdocs documents. It is used for [livingdocs-beta.io](http://livingdocs-beta.io) where you can test it for yourself. It uses the underlying livingdocs engine to manipulate the document and adds interfaces around the document that help the user in common tasks such as adding elements, editing content or uploading images.
-
-#### Livingdocs Server
-
-The server provides storage capabilities for livingdocs documents and exposes a powerful API. It also handles image storage and manipulation.
 
