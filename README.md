@@ -33,13 +33,16 @@ A design defines the visual output of your documents and the components that use
 
 ### Use the API to get your design up and running
 
-Uploading a design is still very beta. It can be done though and testing out Livingdocs with your very own design is just more fun.
+Uploading a design is still very beta. It can be done though and testing out Livingdocs with your very own design is just more fun. This description assumes that you are using the Livingdocs Beta service. For custom installations other workflows might apply.
 
 [» Take the challenge to upload a design](./design/upload.md)
 
 ### A frontend app using the REST API
 
-coming soon.
+A frontend app takes your Livingdocs documents to the world. You can write your frontend apps in any technology you like and for whatever purpose you like (blog, newspaper, native app, you name it).
+
+[» Read about the frontend app essentials](delivery/api_essentials.md)
+[or use our boilerplate blog app](https://github.com/upfrontIO/livingdocs-delivery)
 
 ### A fancy frontend app with elastic search
 
