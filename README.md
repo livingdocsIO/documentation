@@ -6,7 +6,7 @@
 Livingdocs is a novel CMS that centers around frontend technologies and browser-based editing. A few cornerstones:
 - It is completely written in Javascript (with a little coffee)
 - There are no templates, but pure HTML/CSS and a search engine
-- Layouting is controlled by the user (designs are controlled)
+- Layouting is controlled by the user (designs are defined by a designer)
 
 To use Livingdocs you can access our service via our REST API or the elastic search API and write your consumer apps in any language you like.
 To develop within Livingdocs you have to be fluent in Javascript and understand a little Angular.JS and/or Node.JS. Of course, in order to understand Livingdocs you should also know a thing or two about how Livingdocs works.
