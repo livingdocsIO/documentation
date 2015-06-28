@@ -23,6 +23,12 @@ Before you dig down into the tech details you might be curious why you should ta
 
 [» Livingdocs Concepts](concepts/main_concepts.md)
 
+## An intro to the Livingdocs architecture
+
+In this blog article we introduce the Livigndocs architecture and its parts. If you want to get started quickly with Livingdocs you can skip directly to the "A Livingdocs consumer" chapter. A little bit of background knowledge can never be bad though:
+
+[» The Livingdocs architecture](http://blog.livingdocs.io/articles/1739)
+
 ## A Livingdocs consumer
 
 ### Create your very first Livingdocs design
