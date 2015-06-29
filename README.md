@@ -103,8 +103,6 @@ The project is open-source and on Github. To learn more about Editable.JS it is 
 - [Livingdocs boilerplate design (open-source)](https://github.com/upfrontIO/livingdocs-design-boilerplate)
 - [Livingdocs boilerplate blog (open-source)](https://github.com/upfrontIO/livingdocs-delivery)
 
-NOTE: The Livingdocs framework used to be [open-source](https://github.com/upfrontIO/livingdocs-engine). This repository is no longer maintained and the development of the framework continues closed-source. We are very sad about this but since the nice guys from WoodWing used our open-source efforts to pitch against us with our own software we had to safeguard our business first. We hope that we can switch back to open-source soon again but we first need to hire some more sales people to outmaneuver copycaters.
-
 ### The server API
 
 - [API documentation](https://github.com/upfrontIO/livingdocs-server/wiki)
