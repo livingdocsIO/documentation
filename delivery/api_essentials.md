@@ -1,6 +1,7 @@
 # Livingdocs REST API
 
-## ToC
+## Table of Contents
+
 - A simple frontend app (this document)
 - [Real-time updates with webhooks](./webhooks.md)
 
@@ -25,8 +26,15 @@ Click the "Use API access" link and you will get a new browser page with a JSON 
 
 In order to build a navigation, feed, or start page you need to get a list of all your documents and some information that allows you to render teasers for them. You can get this with a simple call to `http://api.livingdocs.io/public/publications`. The only required parameter to this call is the `space_id`. You got your `space_id` in the previous subchapter by clicking the "Use API access" link.
 
-Once you have the `space_id` you can create your query. Lets make an example:
+First get your space id id with a terminal command:
+
+```bash
+ldm user:info
 ```
+
+With the space id you can create your query. Lets make an example:
+
+```bash
 curl http://api.livingdocs.io/public/publications?limit=10&space=your-space-id
 ```
 

@@ -1,23 +1,28 @@
 
 # Create designs with livingdocs-design-boilerplate
 
-## ToC
-- Overview (this document)
+## Table of contents
+
+- What is a Livingdocs design?
 - [Versioning designs](./versioning.md)
 - [Defining metadata extractions](./metadata_extraction.md)
 - [Defining component properties](./component_properties.md)
 - [Working with images](./images.md)
 - [Using iframely definitions](./iframely.md)
 
-## Overview
+## What is a Livingdocs design?
 
-A Livingdocs design is created from a `design defintion` JSON file and short snippets of HTML. Here we describe the details of such a design definition and how you can create them yourself.
+A Livingdocs design is a set of HTML components and configurations how they can be used and editet. It also lists the CSS and/or Javascript dependencies that need to be loaded to show the design correctly. A Livingdocs design is defind in a `design defintion` JSON file.
+
+To use a Livngdocs design you have to upload the JSON file and all its dependencies (CSS, Javascript and image files) to our server and configure your account to use this design.
+
+## Boilerplate design repository
 
 [`livingdocs-design-boilerplate`](https://github.com/upfrontIO/livingdocs-design-boilerplate) is a git repository that helps building Livingdocs design defintions. It has a grunt task that can create the files needed to configure the Livigndocs framework and provides a sample design with Twitter bootstrap. You don't need to use our boilerplate but it's a great way to get started quickly.
 
 ## Example design definition:
 
-Lets start with a possible end result of a livindocs design definition.
+Lets start with a possible end result of a Livindocs design definition.
 
 ```javascript
 var designDefinition = {

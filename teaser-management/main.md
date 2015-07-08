@@ -4,7 +4,7 @@ The Livingdocs Teaser Management system allows to generate and manage aggregate 
 
 The Livingdocs TM allows both, definition of manually ordered lists and automatically updating lists as well as combinations of both (more below).
 
-## ToC
+## Table of contents
 
 - Teaser Management Overview (this page)
 - [Creating your own teasers](./teaser_definition.md)

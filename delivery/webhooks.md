@@ -1,6 +1,7 @@
 # Webhooks
 
-## ToC
+## Table of contents
+
 - [A simple frontend app](./api_essentials.md)
 - Real-time update with webhooks (this document)
 
