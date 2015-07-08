@@ -15,16 +15,16 @@ To be quite honest, this process is a bit bumpy and we lacks UI support. Please 
 
 ### Upload manager
 
- In order to upload designs to Livingdocs you need the `livingdocs-design-manager` command line tool. In order to install it run:
+ In order to upload designs to Livingdocs you need the `livingdocs-manager` command line tool. In order to install it run:
  ```
- npm install -g livingdocs-design-manager
+ npm install -g livingdocs-manager
  ```
 
  With this out of the way you can now upload your design to the Livingdocs beta server. Make sure to use a unique name for your design. We currently don't reserve names so if your name is not unique enough it could be overwritten by somebody else.
 
  From a command line run:
  ```
- ldm publish folder-with-your-design/
+ ldm design:publish folder-with-your-design/
  ```
  (if you use the `livingdocs-design-boilerplate` setup then "folder-with-your-design" is the dist/ folder that is created when you run `grunt build`)
 
@@ -34,60 +34,15 @@ Go ahead and fetch the URL by simply pasting it into a browser. You should see t
 
 ### Using the design in your account
 
-In your Livingdocs Beta account you will not yet see your design. You will first need to configure it with your account. This is where it gets really bumpy (sorry...).
+In your Livingdocs Beta account you will not yet see your design. You first need to update the configuration. 
 
-In order to make the required API call to your account you first need 2 kinds of information:
-* Your access token for the Beta account
-* Your "space_id" (this is the id of your account)
-Unfortunately, you will find this information nowhere in the user interface. You will need to look at the network traffic with the Livingdocs server. I'll walk you through in this example with the Chrome inspector but you can use any network inspector you like.
+Add the design to your configuration with a terminal command:
 
-![Network Traffic in Chrome](./space_network_traffic.png)
-
-You are looking for the `GET` request for `me` (third entry in the screenshot).
-In this request look at the Header value for `Authorization` and copy this. It should look like `Bearer someCrypticString`. You will also want to look at the response from this request which contains a JSON with a field `space_id` (an integer). Copy this value as well.
-
-![Authorization Header](./authorization_header.png)
-![Space Id](./space_id.png)
-
-With those values in hand you can now make the required configuration call to the Livingdocs server. Below is an example for a curl request that you can run from the command line after replacing:
-* The-authorization-header-you-copied (looks like "Bearer 123")
-* your-design-name (looks like "boilerplate")
-* your-design-url (looks like "http://api.livingdocs.io/designs/boilerplate/0.3.0")
-* your-design-version (looks like "0.3.0")
-* your-space-id (looks like "281")
-
-```
-curl -X PUT \
--H "Content-Type: application/json" \
--H "Authorization: The-authorization-header-you-copied" \
--d '{
-  "default_design": {
-"name": "your-design-name",
-"url": "your-design-url",
-"version": "your-design-version"
-  }, "designs": [
-{
-  "name": "your-design-name",
-  "url": "your-design-url",
-  "version": "your-design-version",
-  "is_selectable": true
-},
-{
-  "name": "timeline",
-  "is_selectable": true,
-  "url": "http://api.livingdocs.io/designs/timeline/0.4.0",
-  "version": "0.4.0"
-},
-{
-  "name": "vanilla",
-  "is_selectable": true,
-  "url": "http://api.livingdocs.io/designs/vanilla/0.1.1",
-  "version": "0.1.1"
-}
-  ]
-}' http://api.livingdocs.io/spaces/your-space-id/config
+```bash
+ldm project:design:add --name bootstrap --version 1.0.0
 ```
 
-NOTE: Of course you can use any HTTP request command or tool you like.
+You will be asked to supply your username and password before the configuration can be updated. This will also set the new design as the default design that will be used when creating new documents.
 
 Congrats, you've done it! Now reload the browser page within your Livingdocs Beta account and press "Create Document" and you should see a new document with your design.
+
