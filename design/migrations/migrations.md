@@ -9,7 +9,7 @@ The following list looks at the different relevant data definitions at each step
 
 #### Component Templates
 
-Those are the building blocks of livingdocs. A template contains definitions for the following parts:
+Those are the building blocks of Livingdocs. A template contains definitions for the following parts:
 - HTML structure
 - directives (editable parts)
 - directive configuration
@@ -30,7 +30,7 @@ In the same way directive configurations have to be generally seen as breaking. 
 
 #### Layouts
 
-The layouts define HTML wrapper blocks that are wrapped around the whole HTML of a livingdocs article. They are always used to render the article inside the livingdocs editor and depending on implementation also on the delivery frontends.
+The layouts define HTML wrapper blocks that are wrapped around the whole HTML of a Livingdocs article. They are always used to render the article inside the Livingdocs editor and depending on implementation also on the delivery frontends.
 
 Changes in the markup of a layout are not subject to a migration. Depending on the frontend implementation they might require a re-publishing of existing articles.
 Adding new layouts is also not subject to a migration. Removing or renaming a layout though is a breaking change and requires a migration.
@@ -61,7 +61,7 @@ This data comes directly with a publication. Examples are the publication date o
 
 #### Rendered Document
 
-The rendered document is delivered by the Livingdocs Server with the help of the various render decorators that produce channel-specific output. For the livingdocs editor the render decorators are currently a black-box, i.e., there is no WYSIWYG for everything going on in the render decorators. We could (and should) think of preview modes using the render decorators.
+The rendered document is delivered by the Livingdocs Server with the help of the various render decorators that produce channel-specific output. For the Livingdocs editor the render decorators are currently a black-box, i.e., there is no WYSIWYG for everything going on in the render decorators. We could (and should) think of preview modes using the render decorators.
 
 Changes to the render decorators are not subject to migrations. They do require a re-publish of the document however to be applied. The same is true for changes in the rendering behavior of the Livingdocs Engine (though changes should be much rarer there).
 

@@ -1,12 +1,13 @@
-# Upload your designs to livingdocs-beta
+# Upload your design to livingdocs-beta
 
-## ToC
+## Table of contents
+
 - Uploading a design (this document)
 - [Updating a design](./update_design.md)
 
 ## Overview
 
-To be quite honest, this process is still pretty bumpy and we still lack UI support. Please bear with us, we will make this easier for you in the future. For now though there are quite a lot of requirements. So lets get them all together.
+To be quite honest, this process is a bit bumpy and we lacks UI support. Please bear with us, we will make this super-easy for you in the future. For now though there are quite a lot of requirements.
 
 ### Livingdocs Beta account
 
@@ -19,7 +20,7 @@ To be quite honest, this process is still pretty bumpy and we still lack UI supp
  npm install -g livingdocs-design-manager
  ```
 
- With this out of the way you can now upload your design to the Livingdocs beta server. Make sure to use a unique name for your design! We currently don't reserve names so if your name is not unique enough it could be overwritten by somebody else.
+ With this out of the way you can now upload your design to the Livingdocs beta server. Make sure to use a unique name for your design. We currently don't reserve names so if your name is not unique enough it could be overwritten by somebody else.
 
  From a command line run:
  ```
@@ -29,9 +30,9 @@ To be quite honest, this process is still pretty bumpy and we still lack UI supp
 
 The tool will ask you to provide a host (the default is fine) and enter your email and password for the Livingdocs Beta environment. If everything goes well you should get an output like this: `info publish Published the design boilerplate@0.3.0 to http://api.livingdocs.io/designs/boilerplate/0.3.0` (of course with your own design name and version).
 
-Go ahead and try you the URL by simply pasting it into a browser. You should see your design configuration file as a JSON.
+Go ahead and fetch the URL by simply pasting it into a browser. You should see the JSON design configuration file.
 
-### Configuring the design with your account
+### Using the design in your account
 
 In your Livingdocs Beta account you will not yet see your design. You will first need to configure it with your account. This is where it gets really bumpy (sorry...).
 

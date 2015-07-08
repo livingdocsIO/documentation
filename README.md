@@ -3,10 +3,11 @@
 
 ## Overview
 
-Livingdocs is a novel CMS that centers around frontend technologies and browser-based editing. A few cornerstones:
-- It is completely written in Javascript (with a little coffee)
-- There are no templates, but pure HTML/CSS and a search engine
-- Layouting is controlled by the user (designs are defined by a designer)
+Livingdocs is a component based CMS in javascript. A few cornerstones:
+- It focuses on individual documents and a WYSIWYG editor to edit them.
+- Components are HTML and CSS only. There is no need to updat templates in the backend.
+- Every document is self contained and aware of its CSS and javascript dependencies
+- The HTML is fully customizable and versioned
 
 To use Livingdocs you can access our service via our REST API or the elastic search API and write your consumer apps in any language you like.
 To develop within Livingdocs you have to be fluent in Javascript and understand a little Angular.JS and/or Node.JS. Of course, in order to understand Livingdocs you should also know a thing or two about how Livingdocs works.
@@ -29,21 +30,21 @@ In this blog article we introduce the Livigndocs architecture and its parts. If 
 
 [» The Livingdocs architecture](http://blog.livingdocs.io/articles/1739)
 
-## A Livingdocs consumer
+## Getting started
 
-### Create your very first Livingdocs design
+### Create a Livingdocs design
 
-A design defines the visual output of your documents and the components that users can layout in the Livingdocs editor. You can fully adapt Livingdocs to your CI using your existing CSS design.
+A design defines the components that can be used in your documents. As well as the CSS to style these components. Both HTML and CSS are fully customizable.
 
 [» Learn how to create a Livingdocs design](design/create_designs.md)
 
-### Use the API to get your design up and running
+### Upload your design
 
-Uploading a design is still very beta. It can be done though and testing out Livingdocs with your very own design is just more fun. This description assumes that you are using the Livingdocs Beta service. For custom installations other workflows might apply.
+Uploading a design is still in beta. It can be done though and testing out Livingdocs with your very own design is just more fun. This description assumes that you are using the Livingdocs Beta service. For custom installations other workflows might apply.
 
 [» Take the challenge to upload a design](./design/upload.md)
 
-### A frontend app using the REST API
+### Create a frontend app that features your documents
 
 A frontend app takes your Livingdocs documents to the world. You can write your frontend apps in any technology you like and for whatever purpose you like (blog, newspaper, native app, you name it).
 
@@ -51,7 +52,7 @@ A frontend app takes your Livingdocs documents to the world. You can write your 
 
 [or use our boilerplate blog app](https://github.com/upfrontIO/livingdocs-delivery)
 
-### A fancy frontend app with elastic search
+### An advanced frontend app with elastic search
 
 coming soon.
 

@@ -1,6 +1,7 @@
 # Livingdocs REST API
 
-## ToC
+## Table of Contents
+
 - A simple frontend app (this document)
 - [Real-time updates with webhooks](./webhooks.md)
 
