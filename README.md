@@ -106,7 +106,7 @@ The project is open-source and on Github. To learn more about Editable.JS it is 
 
 ### The server API
 
-- [API documentation](https://github.com/upfrontIO/livingdocs-server/wiki)
+- [API documentation](./server/home.md)
 
 ### The development roadmap
 
