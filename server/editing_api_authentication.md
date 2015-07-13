@@ -7,7 +7,6 @@
 | ------------- | ------- | -------- | -------------
 | `username`    | string  | -        | **required**, utf8 encoded username, normally your email address
 | `password`    | string  | -        | **required**, utf8 encoded password
-| `expires`     | integer | 7200     | Access token expiration time in milliseconds
 
 
 #### Possible Errors

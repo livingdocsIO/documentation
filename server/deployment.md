@@ -51,19 +51,19 @@ If you want to copy settings from other heroku instances you can use this heroku
 $ heroku config
 === livingdocs-api-staging Config Vars
 BUILDPACK_URL:              https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt.git
-DATABASE_URL:               postgres://orhhax4H4m:YzmZPBJ9g0akb9vnWJQZ1JnMSTeH3J@ec2-54-195-244-216.eu-west-1.compute.amazonaws.com:5432/jeHEdq505N30
+DATABASE_URL:               postgres://user:abc@ec2-54-195-244-216.eu-west-1.compute.amazonaws.com:5432/jeHEdq505N30
 NODE_ENV:                   production
-access_token_secret:        s456e6n33R0MX8OnT2dR5N6T6Ym0Rb
-aws__access_key:            AKIAIAXD3QCG2CK5VHMA
+access_token_secret:        abc
+aws__access_key:            ABC
 aws__buckets__images:       livingdocs-images-dev
-aws__secret_key:            xU1sOw9oyj4vzfhxss2TowKwdYim0koRa9kI8TZ6
+aws__secret_key:            abc
 db__client:                 pg
 db__connection__charset:    utf8
-db__connection__database:   jeHEdq505N30
+db__connection__database:   db
 db__connection__host:       ec2-54-195-244-216.eu-west-1.compute.amazonaws.com
-db__connection__password:   YzmZPBJ9g0akb9vnWJQZ1JnMSTeH3J
+db__connection__password:   abc
 db__connection__ssl:        true
-db__connection__user:       orhhax4H4m
+db__connection__user:       user
 db__pool__max:              10
 loglevel:                   success
 ```
