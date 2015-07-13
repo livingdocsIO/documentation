@@ -8,6 +8,7 @@ The Livingdocs TM allows both, definition of manually ordered lists and automati
 
 - Teaser Management Overview (this page)
 - [Creating your own teasers](./teaser_definition.md)
+- [Assigning teasers to lists](./teaser_assignment.md)
 - [Elastic search indices in detail](./elastic_indices.md)
 - [A sample frontend app for aggregate pages](./sample_app.md)
 
@@ -21,13 +22,19 @@ Teasers are rendered just like any other Livingdocs component. The data to rende
 
 ### List
 
-A list is a structure over teasers. The list itself is NOT a visual representation, but only a structuring of content. Every document is assigned to one or more lists upon publishing. The assignment can be either manual, i.e., the editor selects from a list of available "lists", or automatic for example through a text-analysis that assigns an document to its related lists.
+A list is a structure over teasers. The list itself is NOT a visual representation, but only a structuring of content. Every document is assigned to one or more lists upon publishing. The assignment can be either manual, i.e., the editor selects from a list of available "lists", or automatic for example through a text-analysis that assigns a document to its related lists.
 
 Every list is assumed to be infinite in theory. The definition of a list contains a value of how many teasers should be manually controlled. In addition it contains an elastic search query that is used to "fill up" the list. For example we can define a manual controlled number of 5 and show the list in a container (see below) with 20 teasers. This would mean that an editor can manually control the order and appearance of the first 5 teasers, and the remaining 15 teasers are fetched using the list's elastic search query from the available assigned documents.
 
 To sum up, in order to appear in a list a document has to be:
 - assigned to the list (manually or automatically)
-- be placed in the Livingdocs TM manually OR
+
+AND
+
+- be placed in the Livingdocs TM manually 
+
+OR
+
 - "filled up" from the list's elastic search query 
 
 ### Container
