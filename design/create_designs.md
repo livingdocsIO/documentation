@@ -133,7 +133,7 @@ Following you see a basic paragraph definition. It consists of a configuration p
 ```html
 <script type="ld-conf">
 {
-  "name": "myParagraph"
+  "name": "myParagraph",
   "label": "My very first paragraph"
 }
 </script>
