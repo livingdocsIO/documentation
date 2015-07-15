@@ -26,16 +26,17 @@ A list is a structure over teasers. The list itself is NOT a visual representati
 
 Every list is assumed to be infinite in theory. The definition of a list contains a value of how many teasers should be manually controlled. In addition it contains an elastic search query that is used to "fill up" the list. For example we can define a manual controlled number of 5 and show the list in a container (see below) with 20 teasers. This would mean that an editor can manually control the order and appearance of the first 5 teasers, and the remaining 15 teasers are fetched using the list's elastic search query from the available assigned documents.
 
-To sum up, in order to appear in a list a document has to be:
-- assigned to the list (manually or automatically)
+To sum up, in order to appear in a public list on the frontend, a document has to be:
+
+- in any case, assigned to the list (manually or automatically)
 
 AND
 
-- be placed in the Livingdocs TM manually 
+- either be ordered and published in the manual section of a list
 
 OR
 
-- "filled up" from the list's elastic search query 
+- "filled up" from the list's elastic search query (automatic section of a list)
 
 ### Container
 
