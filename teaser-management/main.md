@@ -8,6 +8,7 @@ The Livingdocs TM allows both, definition of manually ordered lists and automati
 
 - Teaser Management Overview (this page)
 - [Creating your own teasers](./teaser_definition.md)
+- [Assigning teasers to lists](./teaser_assignment.md)
 - [Elastic search indices in detail](./elastic_indices.md)
 - [A sample frontend app for aggregate pages](./sample_app.md)
 
@@ -21,14 +22,21 @@ Teasers are rendered just like any other Livingdocs component. The data to rende
 
 ### List
 
-A list is a structure over teasers. The list itself is NOT a visual representation, but only a structuring of content. Every document is assigned to one or more lists upon publishing. The assignment can be either manual, i.e., the editor selects from a list of available "lists", or automatic for example through a text-analysis that assigns an document to its related lists.
+A list is a structure over teasers. The list itself is NOT a visual representation, but only a structuring of content. Every document is assigned to one or more lists upon publishing. The assignment can be either manual, i.e., the editor selects from a list of available "lists", or automatic for example through a text-analysis that assigns a document to its related lists.
 
-Every list is assumed to be infinite in theory. The definition of a list contains a value of how many teasers should be manually controlled. In addition it contains an elastic search query that is used to "fill up" the list. For example we can define a manual controlled number of 5 and show the list in a container (see below) with 20 teasers. This would mean that an editor can manually control the order and appearance of the first 5 teasers, and the remaining 15 teasers are fetched using the list's elastic search query from the available assigned documents.
+Every list is assumed to be infinite in theory. The definition of a list contains a value of how many teasers should be pinned, i.e. placed and ordered manually. In addition it contains an elastic search query that is used to "fill up" the list. In the case where there are no pinned documents, the list is simply "filled up" from the query.
 
-To sum up, in order to appear in a list a document has to be:
+To sum up, in order to appear in a public list on the frontend, a document has to be:
+
 - assigned to the list (manually or automatically)
-- be placed in the Livingdocs TM manually OR
-- "filled up" from the list's elastic search query 
+
+AND
+
+- either be pinned by an editor (manual ordering)
+
+OR
+
+- "filled up" from the list's elastic search query (automatic ordering)
 
 ### Container
 
@@ -37,9 +45,9 @@ A container is a visual representation of a list. The container defines how many
 Containers can be used just like any other Livingdocs component within the Livingdocs editor to either define Page Documents (Page Management) or place teaser containers within other documents.
 
 Frontends query the containers to get the necessary definitions to render finsihed pages. This includes:
-- getting the pre-rendered teasers for the manually ordered teasers (if any)
+- getting the pre-rendered teasers for the pinned documents (if any)
 - getting the elastic search query for "filling up"
-- getting the teaser type definition to render the filled up teasers
+- getting the teaser type definition to render teasers, e.g., big teaser, small teaser, etc.
 - getting additional metadata such as placeholders for an ad system
 
 ### Page
@@ -65,7 +73,7 @@ In theory a frontend app could work without a storage mechanism, i.e., a browser
 
 Livingdocs defines the document data type. A document is based upon revisions, which are the different versions of a document. This API is internal and external applications such as frontend apps do not need to worry about those details.
 
-Documents are edited within the Livingdocs editor, a WYSIWIG editor that allows users to layout and edit their content directly in the browser. The Livingdocs editor stores the document data in the Livingdocs server which exposes a restful API. To learn more about the editing API see the respective documentation on the server (customers only).
+Documents are edited within the Livingdocs editor, a WYSIWIG editor that allows users to layout and edit their content directly in the browser. The Livingdocs editor stores the document data in the Livingdocs server which exposes a restful API. To learn more about the editing API see the [respective documentation](../server/home.md).
 
 It is important to note that technically both, a document as well as an aggregate page such as a newspaper's start page are Livingdocs documents and are edited in the Livingdocs editor. They differ only in the kinds of components that are available. To learn more about components, see the design documentation.
 
