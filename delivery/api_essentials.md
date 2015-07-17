@@ -48,26 +48,20 @@ And that's an example of what you get back:
             "id": 3,
             "created_at": "2014-09-20T19:16:25.824Z",
             "updated_at": "2014-09-20T19:16:25.824Z",
-            "is_deleted": false,
-            "user_id": 1,
             "document_id": 2,
-            "revision_id": 3,
             "html": "<div>publication in HTML</div>",
             "space_id": 1,
-            "data": {
-              "content": [],
-              "metadata": {}
-            }
+            "slug": "human-readable-url",
+            "design": {},
+            "metadata": {}
         }
     ]
 }
 ```
 
-- The `data` field in the response will contain the Livingdocs document in a structured way. 
-- The `data/content` field contains the complete tree structure of the Livingdocs document's data model.
-- The `data/metadata` field contains structured publication-time information about a document. Typically, you use information from the `metadata` field for content that you require to be there, e.g., a title, and the Livingdocs document tree to get optional content, e.g., videos if there are any in the document. 
+- The `metadata` field contains structured publication-time information about a document. Typically, you use information from the `metadata` field for content that you require to be there, e.g., a title, and the Livingdocs document tree to get optional content, e.g., videos if there are any in the document. 
 
-You will most likely use the data within `data/metadata` to render a teaser for a document, e.g., using the title and teaser image.
+You will most likely use the data within `metadata` to render a teaser for a document, e.g., using the title and teaser image.
 
 Last but not last, here is the complete description of the `GET /public/publications` endpoint:
 
@@ -76,7 +70,7 @@ Last but not last, here is the complete description of the `GET /public/publicat
 | `space`    | integer | -        | **required**, only get documents belonging to a space (shared account)
 | `limit`       | integer | 50       | **optional**, used for pagination, how many results per page (offset)
 | `offset`      | integer | 0        | **optional**, used for pagination, the page of the pagination that is returned
-| `fields`      | string  | -        | **optional**, used to include fields in the respond. e.g. id, document_id, data, html
+| `fields`      | string  | -        | **optional**, used to include fields in the respond. Available non-default fields: data (DEPRECATED), html
 | `callback`    | string  | -        | **optional**, a callback function that gets called (jsonp), if you don't specify this you'll just get back a json response
 
 ## Getting a single document
@@ -90,12 +84,11 @@ A response will look like the following:
         "id": 3,
         "created_at": "2014-09-20T19:16:25.824Z",
         "updated_at": "2014-09-20T19:16:25.824Z",
-        "is_deleted": false,
-        "user_id": 1,
         "document_id": 2,
-        "revision_id": 3,
         "html": "<div>Document HTML</div>",
-        "space_id": 1
+        "space_id": 1,
+        "metadata": {},
+        "design": {}
     }
 }
 ```
@@ -108,7 +101,7 @@ You can simply place the whole rendered HTML within a placeholder in your page. 
 
 At the very minimum each document requires the CSS files to be loaded that are defined in the respective Livingdocs design. You could hardcode the CSS `link` tags into your document but we advise you to dynamically parse the files from the API response. This has the advantage that you don't have to touch the frontend app every time you update the design to a newer version (Livingdocs handles the versioning for you and exposes the correct version with the API).
 
-The design name and version of a single document are in `data/design`. For the host part you need to use the server where you uploaded the design (see [uploading a design](../design/upload.md)). At the moment, the only supported design server for the Livingdocs Beta account is ours, so your URL will most likely look like this: `http://api.livingdocs.io/designs/your-design-name/your-design-version` where you can plug in the name and version from the result you have in the API response in `data/design`.
+The design name and version of a single document are in `design`. For the host part you need to use the server where you uploaded the design (see [uploading a design](../design/upload.md)). At the moment, the only supported design server for the Livingdocs Beta account is ours, so your URL will most likely look like this: `http://api.livingdocs.io/designs/your-design-name/your-design-version` where you can plug in the name and version from the result you have in the API response in `design`.
 
 The response from the URL above will give you the respective design definition. You will still need to get the CSS files out of this. The design definition defines a `basePath` and an array of CSS assets. For each entry in the css array concatenate it with the `basePath` and you have the full URL to the required css files. (NOTE: There might be more than one required CSS file depending on how the design was defined).
 
@@ -120,9 +113,9 @@ HINT: If you integrate Livingdocs documents in a page where there are lots of ot
 
 ## Getting a document's dependencies
 
-In addition to the design a document can have further CSS and Javascript dependencies. This happens for example when you embed a Tweet in your document (requires the Twitter Javascript). Those dependencies are added to the metadata section of the document. Check out `data/metadata/dependencies` for a document that has an embedded Tweet.
+In addition to the design a document can have further CSS and Javascript dependencies. This happens for example when you embed a Tweet in your document (requires the Twitter Javascript). Those dependencies are added to the metadata section of the document. Check out `metadata/dependencies` for a document that has an embedded Tweet.
 
-The following is a snippet of coffeescript code that gets you the Javascript and CSS dependencies from the `data/metadata` field.
+The following is a snippet of coffeescript code that gets you the Javascript and CSS dependencies from the `metadata` field.
 
 ```coffee
 getDependencies = (metadata) ->
