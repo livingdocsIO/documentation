@@ -13,7 +13,7 @@ Gets a list of published documents. This will be most useful to create pages to 
 | `space`    | integer | -        | **required**, only get documents belonging to a space (shared account)
 | `limit`       | integer | 50       | **optional**, used for pagination, how many results per page (offset)
 | `offset`      | integer | 0        | **optional**, used for pagination, the page of the pagination that is returned
-| `fields`      | string  | -        | **optional**, used to include fields in the respond. e.g. id, document_id, data, html
+| `fields`      | string  | -        | **optional**, used to include fields in the respond. Available non-default fields: data (DEPRECATED), html
 | `callback`    | string  | -        | **optional**, a callback function that gets called (jsonp), if you don't specify this you'll just get back a json response
 
 #### Example Request
@@ -30,24 +30,19 @@ curl http://localhost:9090/public/publications?limit=1&space=1
             "id": 3,
             "created_at": "2014-09-20T19:16:25.824Z",
             "updated_at": "2014-09-20T19:16:25.824Z",
-            "is_deleted": false,
-            "user_id": 1,
             "document_id": 2,
-            "revision_id": 3,
             "html": "<div>publication in HTML</div>",
             "space_id": 1,
-            "data": {
-              "content": [],
-              "metadata": {}
-            }
+            "slug": "human-readable-url",
+            "design": {},
+            "metadata": {}
         }
     ]
 }
 ```
 
-- The `data` field in the response will contain the livingdocs document in a structured way. 
-- The `data/content` field contains the complete tree structure of the livingdocs document.
-- The `data/metadata` field contains structured publication-time information about a document. Typically, you use information from the `metadata` field for content that you require to be there, e.g., a title, and the livingdocs document tree to get optional content, e.g., videos if there are any in the document. 
+- The `metadata` field contains structured publication-time information about a document. Typically, you use information from the `metadata` field for content that you require to be there, e.g., a title, and the livingdocs document tree to get optional content, e.g., videos if there are any in the document. 
+- The `design` field contains the name and version of the design this publication was rendered with. This is important for third-party apps in order to load the correct CSS resources.
 
 
 ### `GET /public/publications/:id` 
@@ -76,12 +71,11 @@ curl curl http://localhost:9090/public/publications/2
         "id": 3,
         "created_at": "2014-09-20T19:16:25.824Z",
         "updated_at": "2014-09-20T19:16:25.824Z",
-        "is_deleted": false,
-        "user_id": 1,
         "document_id": 2,
-        "revision_id": 3,
         "html": "<div>Document HTML</div>",
-        "space_id": 1
+        "space_id": 1,
+        "metadata": {},
+        "design": {}
     }
 }
 ```
