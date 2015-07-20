@@ -50,6 +50,7 @@ The data that is sent as a result of the publish event to your URL looks like th
         "document_id": 2,
         "revision_id": 3,
         "html": "<div>Document HTML</div>",
+        "metadata": {},
         "space_id": 1
     },
     "revision": {
@@ -71,12 +72,13 @@ The data that is sent as a result of the publish event to your URL looks like th
       "updated_at": "Mon Apr 28 2014 16:34:59 GMT + 0200(CEST)",
       "owner_id": 194,
       "space_id": 1,
-      "title": "Test"
+      "title": "Test",
+      "metadata": {}
     } 
 }
 ```
 
-The response contains more information than the REST calls. Basically, it is all that you could possibly need to directly render an document or a document preview from a notification. To render the document body, it's best to use the pre-rendered HTML from the `publication`. To render a document preview (teaser) you can use the data within `revision/data/metadata`.
+The response contains more information than the REST calls. Basically, it is all that you could possibly need to directly render an document or a document preview from a notification. To render the document body, it's best to use the pre-rendered HTML from the `publication`. To render a document preview (teaser) you can use the data within `publication/metadata`.
 
 ## Subscribing to unpublish events
 
