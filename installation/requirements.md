@@ -74,7 +74,7 @@ You can de-activate pusher in the editor's configuration file.
 In order to track your server's sanity, Livingdocs supports [newrelic](http://newrelic.com/). You can configure your newrelic account in the server's configuration file.
 
 
-#### Goolge analytics (optional)
+#### Google analytics (optional)
 
 For the public delivery of the server (the "Public Link" on livingdocs-beta.io) you can enable [Google analytics](http://www.google.com/analytics/). You can configure your analytics account in the server's configuration file.
 
