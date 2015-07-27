@@ -27,9 +27,12 @@ This service lets you track Javascript errors and how they happened, i.e., gives
 
 In order to track your user's usage of Livingdocs you can configure your [mixpanel](https://mixpanel.com/) account in the editor's configuration file.
 
-#### Iframely (optional)
+#### Iframely
 
-If you want to use components with automatic metadata fetching from a third-pary source (an example of this is the "Teaser" component in our livingdocs-beta.io design) then you will need to have an [Iframely](https://iframely.com/) account and configure it with the editor's configuration file.
+IFramely is currently used for 2 things:
+- components with automatic metadata fetching from a third-pary source (an example of this is the "Teaser" component in our livingdocs-beta.io design)
+- automatic validity checks of entered links  
+You will need to have an [Iframely](https://iframely.com/) account and configure it with the editor's configuration file.
 
 #### Spellchecker (optional)
 
