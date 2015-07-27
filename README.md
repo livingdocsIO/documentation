@@ -108,6 +108,10 @@ The project is open-source and on Github. To learn more about Editable.JS it is 
 
 - [API documentation](./server/home.md)
 
+### Custom installations
+
+- [Installation requirements](./installation/requirements.md)
+
 ### The development roadmap
 
 [» read the rough plan](./roadmap/overview.md)
