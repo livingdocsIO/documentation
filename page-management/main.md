@@ -1,8 +1,8 @@
-# Teaser Management
+# Page Management
 
-The Livingdocs Teaser Management system allows to generate and manage aggregate pages of article teasers that are typically used to render start pages or topic pages such as for sport, news, or fashion.
+The Livingdocs Page Management system allows to generate and manage aggregate pages of article cards that are typically used to render start pages or topic pages such as for sport, news, or fashion.
 
-The Livingdocs TM allows both, definition of manually ordered lists and automatically updating lists as well as combinations of both (more below).
+The Livingdocs Page Management allows both, definition of manually ordered card lists and automatically updating card lists as well as combinations of both (more below).
 
 ## Table of contents
 
@@ -14,40 +14,34 @@ The Livingdocs TM allows both, definition of manually ordered lists and automati
 
 ## Main concepts
 
-### Teaser
+### Component Card
 
-A teaser is a short abstract for an article. Typically it consists of a title , an image, and some metadata such as author and date, but the design definition of teasers is just as free as any other Livingdocs component. There can be several types of teasers, e.g. for head-articles and updates.
+A compnent card is a short abstract for an article. Typically it consists of a title , an image, and some metadata such as author and date, but the design definition of teasers is just as free as any other Livingdocs component. There can be several types of cards, e.g. for head-articles and updates.
 
-Teasers are rendered just like any other Livingdocs component. The data to render the teaser (title, etc.) comes from a document's metadata. This metadata is typically defined and/or edited when publishing a document such as selecting a good teaser image for different aspect ratios.
+Cards are rendered just like any other Livingdocs component. The data to render the card (title, etc.) comes from a document's metadata. This metadata is typically defined and/or edited when publishing a document such as selecting a good teaser image for different aspect ratios.
 
 ### List
 
-A list is a structure over teasers. The list itself is NOT a visual representation, but only a structuring of content. Every document is assigned to one or more lists upon publishing. The assignment can be either manual, i.e., the editor selects from a list of available "lists", or automatic for example through a text-analysis that assigns a document to its related lists.
+A list is a structure over component cards. The list itself is NOT a visual representation, but only a structuring of content. Every document is assigned to one or more lists upon publishing. The assignment can be either manual, i.e., the editor selects from a list of available "lists", or automatic for example through a text-analysis that assigns a document to its related lists.
 
-Every list is assumed to be infinite in theory. The definition of a list contains a value of how many teasers should be pinned, i.e. placed and ordered manually. In addition it contains an elastic search query that is used to "fill up" the list. In the case where there are no pinned documents, the list is simply "filled up" from the query.
+Every list is assumed to be infinite in theory. The list of documents that is published for a list is stored as "pins". The notion "pin" allows both, manual lists (all documents are pinned) and half-automatic lists (only some documents are pinned). For the automatic (and semi-automatic) mode a list contains an elastic search query that is used to "fill up" the list.
 
-To sum up, in order to appear in a public list on the frontend, a document has to be:
+To sum up, here are the modes of operation.
 
-- assigned to the list (manually or automatically)
-
-AND
-
-- either be pinned by an editor (manual ordering)
-
-OR
-
-- "filled up" from the list's elastic search query (automatic ordering)
+- manual: documents are assigned to a list but not automatically published. A user needs to "pin" the assigned documents and press a publish button. Only the pinned documents are published.
+- automatic: documents are assigned to a list. An elastic query that is stored on the list decides if and where an assigned document is published. No user input is required.
+- semi-automatic: documents are assigned to a list and the elastic query decides where and if an assinged document is published. In addition a user can force publication by pinning a document to the top of the list and pressing the publish button.
 
 ### Container
 
-A container is a visual representation of a list. The container defines how many teasers from a list should be shown (since a list is in theory infinite) and what teaser types should be used to render them, e.g., a head teaser for the first document, and a feed teaser for subsequent documents.
+A container is a visual representation of a list. The container defines how many cards from a list should be shown (since a list is in theory infinite) and what card types should be used to render them, e.g., a head card for the first document, and a feed card for subsequent documents.
 
-Containers can be used just like any other Livingdocs component within the Livingdocs editor to either define Page Documents (Page Management) or place teaser containers within other documents.
+Containers can be used just like any other Livingdocs component within the Livingdocs editor to either define Page Documents (Page Management) or place card containers within other documents.
 
 Frontends query the containers to get the necessary definitions to render finsihed pages. This includes:
-- getting the pre-rendered teasers for the pinned documents (if any)
+- getting the pre-rendered cards for the pinned documents (if any)
 - getting the elastic search query for "filling up"
-- getting the teaser type definition to render teasers, e.g., big teaser, small teaser, etc.
+- getting the card type definition to render cards, e.g., big card, small card, etc.
 - getting additional metadata such as placeholders for an ad system
 
 ### Page
@@ -58,7 +52,7 @@ Pages are also commonly used to generate site navigations. The simplest method i
 
 ## Technical Details
 
-![Teaser Management Overview](./overview.png)
+![Page Management Overview](./overview.png)
 
 ### Storage layers
 
@@ -82,13 +76,13 @@ It is important to note that technically both, a document as well as an aggregat
 Elastic search defines three different kinds of viewing a document:
 - as a document (identity view)
 - as a publication
-- as a teaser
+- as a component card
 
 The document view is used for the search feature that is available within the Livingdocs editor but could also be replicated in a frontend (though in a frontend it probably makes more sense to only search within the publications).
 
 The publication view is used for document pages. A publication has all the necessary data to render an single document, including the fully rendered HTML body. Typically, a frontend that wants to render a document page will query the publication index for the necessary data.
 
-The teaser view is used for aggregated pages. It does only contain the pre-rendered HTML for the document's abstracts that are used to teaser documents on start pages and the like as well as some metadata, but it does NOT contain the complete rendered HTML body of a document. The teaser index is rarely used directly, but a frontend app will first query a container for the required teaser ids or teaser query and then query the teaser index with this.
+The component card view is used for aggregated pages. It does only contain the pre-rendered HTML for the document's abstracts that are used to teaser documents on start pages and the like as well as some metadata, but it does NOT contain the complete rendered HTML body of a document. The component card index is rarely used directly, but a frontend app will first query a container for the required card ids or card query and then query the component card index with this.
 
 The containers do not provide a view on a Livingdocs document. They are a self-contained entity in elastic search that defines a special kind of component: a visual representation of a list of documents. Careful: Although this could be assumed from the graphic, containers are not a view upon document lists, they are conceptually different (see the main concepts section above).
 
@@ -98,6 +92,6 @@ Frontends will typically need to deliver documents as well as some kind of aggre
 
 Rendering of a document page is trivial given the id of the document. The frontend can simply query elastic search for the document and use the pre-rendered HTML body to show the document. Of course it can also enrich the content with additional information or use the document's metadata. Typically, a frontend app will also cache the document in some kind of frontend cache, e.g., Varnish.
 
-Rendering of aggregate pages is typically more involved. A frontend app gets the definition of a Page's container arrangement from a Page (remember: this is a kind of Livingdocs document). It will then query each container in turn and for each container query the teaser index to get the appropriate pre-rendered teasers. Containers typically define additional visual properties such as the type of teaser to use or placeholders for ad systems. It is the job of the frontend app to take all this information together and create a deliverable aggregate page.
+Rendering of aggregate pages is typically more involved. A frontend app gets the definition of a Page's container arrangement from a Page (remember: this is a kind of Livingdocs document). It will then query each container in turn and for each container query the component card index to get the appropriate pre-rendered cards. Containers typically define additional visual properties such as the type of card to use or placeholders for ad systems. It is the job of the frontend app to take all this information together and create a deliverable aggregate page.
 
-[Next: Creating your own teasers](./teaser_definition.md)
+[Next: Creating your own component cards](./component_card_definition.md)

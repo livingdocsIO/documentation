@@ -68,11 +68,11 @@ coming soon.
 
 - [The webhook system](server/webhook_system.md)
 
-### Understanding the Livingdocs teaser management
+### Understanding the Livingdocs Page management
 
-The Livingdocs teaser management allows users to structure their documents within lists, assign those lists to containers that define a visual output of a list, and then layout those containers on pages that can be used in a site's navigation.
+The Livingdocs page management allow users to structure their documents as cards within lists, assign those lists to containers that define a visual output of a list, and then layout those containers on pages that can be used in a site's navigation.
 
-[» Learn more about Livingdocs teaser management](teaser-management/main.md)
+[» Learn more about Livingdocs page management](page-management/main.md)
 
 ## Going up and beyond: the framework and editable.js
 
