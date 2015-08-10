@@ -1,6 +1,6 @@
 ## Your own component cards
 
-Component cards are in essence nothing else than standalone components. The definition is done in a livingdocs design project (see [here](../design/create_designs.md) for more details). You will define four properties:
+Component cards are in essence nothing else than standalone components. The definition of a card is in a livingdocs design project (see [here](../design/create_designs.md) for more details). You will define four properties for a card:
 - the Livingdocs component (this is just a regular component)
 - an HTML wrapper that is wrapped around *each* component card
 - a (unique) name to identify the component card
@@ -23,7 +23,7 @@ The following is an example configuration in a Livingdocs design:
   ],
 ```
 
-This defines two component card types: a default component card and a large component card. The linked component is just a regular Livingdocs component. The `teaser` component from the above code for example looks like this:
+This defines two component card types: a default component card and a large component card. The linked `component` is just a regular Livingdocs component. The `teaser` component from the above code for example looks like this:
 ```json
 <script type="ld-conf">
   {
@@ -68,7 +68,11 @@ Component cards wrap a regular Livingdocs component that has the usual directive
     }
   }
 ```
-Each mapping entry defines as the key the directive on the component card and as the value, the key in the publication's metadata hash as well as the data type with which to treat the value at this specific key.
+Each mapping entry defines: 
+- the key: a the directive on the component card,
+- the value/dataField: a key in the publication's metadata hash from which to take the content for the directive above,
+- the value/dataType: with which to treat the value at this specific key.
+
 Note that as of now there is no type enforcement so misuse of types (e.g. filling an editable directive with an object) will result in erronous behavior.
 
 It is important to note that a component card is itself never serialized or de-serialized nor will it ever hold its own state. The content of the component card is fully controlled by the values in the metadata hash of a publication.
