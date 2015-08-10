@@ -7,8 +7,8 @@ The Livingdocs Page Management allows both, definition of manually ordered card 
 ## Table of contents
 
 - Teaser Management Overview (this page)
-- [Creating your own teasers](./teaser_definition.md)
-- [Assigning teasers to lists](./teaser_assignment.md)
+- [Creating your own cards](./component_card_definition.md)
+- [Assigning documents to lists](./teaser_assignment.md)
 - [Elastic search indices in detail](./elastic_indices.md)
 - [A sample frontend app for aggregate pages](./sample_app.md)
 
