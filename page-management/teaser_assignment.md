@@ -1,8 +1,8 @@
-## Teaser Assignment
+## List Assignment
 
 By default every list is empty and a document is not assigned to any lists. The user has 2 ways to create an assignment of a document to a list:
 - on the publish panel of a document by selecting the list
-- on the TM user interface by dragging a document on a list manually
+- on the list user interface by dragging a document on a list manually
 
 ### Document to list relation
 
@@ -20,33 +20,33 @@ The second one is a join table called `documents_in_lists` that joins the two ta
 
 As mentioned before a relation to a list can only be done on a published document. This bears the question why not only the publication model has the relation. The reason to set up the relation with the document is that the document represent the main data model entity while a publication is in principle only a view on a document at a certain point in time. Thus we chose to always use the document and its id as the main entity (also in elastic).
 
-A consequence of this is that list assignments on the publication will propagate back to the document. So if an editor uses the TM to drag a document to a list, then not only the publication of this document is updated but also the document itself.
+A consequence of this is that list assignments on the publication will propagate back to the document. So if an editor uses the list user interface to drag a document to a list, then not only the publication of this document is updated but also the document itself.
 
-![Teaser Assignment](./teaser_assignment.png)
+![List Assignment](./teaser_assignment.png)
 
 The figure above illustrates this point by showing 3 sets of states:
-- an old publication which is assigned to List 1
-- the current publication which is assigned to List 2 and List 3
-- the current draft of the document which is also assigned to List 2 and List 3
+- an old publication which is assigned to list 1
+- the current publication which is assigned to list 2 and list 3
+- the current draft of the document which is also assigned to list 2 and list 3
 
-The TM user interface always works with the latest publication of a document (filled lines) and the listId assignment of the draft is ensured to be the same as the one of the current publication. The draft (latest state) of a document can only overwrite the list assingment once a user hits "Publish" in the publish panel and with this creates a new publication record.
+The list user interface always works with the latest publication of a document (filled lines) and the listId assignment of the draft is ensured to be the same as the one of the current publication. The draft (latest state) of a document can only overwrite the list assingment once a user hits "Publish" in the publish panel and with this creates a new publication record.
 
-NOTE: Never ever trigger an automated publish from the TM user interface. This could lead to unwantend draft changes to suddenly become public. The update of the `listIds` is controlled and does not publish any other information.
+NOTE: Never ever trigger an automated publish from the list user interface. This could lead to unwantend draft changes to suddenly become public. The update of the `listIds` is controlled and does not publish any other information.
 
-### adding / removing teasers from a list
+### adding / removing component cards from a list
 
 As discussed above, every publication comes with its assigned `listIds` from the publish panel (publish call to the API). After that you can still add or remove a publication from a list. To do this you can use 2 API endpoints:
 
 ```
-POST /document_lists/:id/add-candidate
+POST /document_lists/:id/add-document
 Parameters: document_id, assignment_content (any of 'publish', 'search')
 
-POST /document_lists/:id/remove-candidate
+POST /document_lists/:id/remove-document
 Parameters: document_id
 ```
 
 Both of these endpoints will also automatically update the respective publication record in elastic. The document record is not updated on elastic.
-We use those endpoints in the TM user interface when dragging a document from the search into a list or removing a document from a list.
+We use those endpoints in the list user interface when dragging a document from the search into a list or removing a document from a list.
 
 ### using the list assignment
 
