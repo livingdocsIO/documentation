@@ -16,7 +16,7 @@ The Livingdocs Page Management allows both, definition of manually ordered card 
 
 ### Component Card
 
-A compnent card is a short abstract for an article. Typically it consists of a title , an image, and some metadata such as author and date, but the design definition of teasers is just as free as any other Livingdocs component. There can be several types of cards, e.g. for head-articles and updates.
+A component card is a short abstract for an article. Typically it consists of a title , an image, and some metadata such as author and date, but the design definition of teasers is just as free as any other Livingdocs component. There can be several types of cards, e.g. for head-articles and updates.
 
 Cards are rendered just like any other Livingdocs component. The data to render the card (title, etc.) comes from a document's metadata. This metadata is typically defined and/or edited when publishing a document such as selecting a good teaser image for different aspect ratios.
 
@@ -30,7 +30,7 @@ To sum up, here are the modes of operation.
 
 - manual: documents are assigned to a list but not automatically published. A user needs to "pin" the assigned documents and press a publish button. Only the pinned documents are published.
 - automatic: documents are assigned to a list. An elastic query that is stored on the list decides if and where an assigned document is published. No user input is required.
-- semi-automatic: documents are assigned to a list and the elastic query decides where and if an assinged document is published. In addition a user can force publication by pinning a document to the top of the list and pressing the publish button.
+- semi-automatic: documents are assigned to a list and the elastic query decides where and if an assigned document is published. In addition a user can force publication by pinning a document to the top of the list and pressing the publish button.
 
 ### Container
 
@@ -38,7 +38,7 @@ A container is a visual representation of a list. The container defines how many
 
 Containers can be used just like any other Livingdocs component within the Livingdocs editor to either define Page Documents (Page Management) or place card containers within other documents.
 
-Frontends query the containers to get the necessary definitions to render finsihed pages. This includes:
+Frontends query the containers to get the necessary definitions to render finished pages. This includes:
 - getting the pre-rendered cards for the pinned documents (if any)
 - getting the elastic search query for "filling up"
 - getting the card type definition to render cards, e.g., big card, small card, etc.
@@ -61,7 +61,7 @@ There are three different kinds of storage layers for a running Livingdocs syste
 - Elastic search (the delivery storage)
 - Frontend apps (the view layer)
 
-In theory a frontend app could work without a storage mechanism, i.e., a browser-only app. In practice, it makes a lot of sense though to use some kind of view layer storage such as a Symphony app or similar setups that can use caches and store some intermediate information.
+In theory a frontend app could work without a storage mechanism, i.e., a browser-only app. In practice, it makes a lot of sense though to use some kind of view layer storage such as a Symfony app or similar setups that can use caches and store some intermediate information.
 
 ### The Livingdocs layer
 
