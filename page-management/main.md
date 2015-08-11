@@ -61,7 +61,7 @@ There are three different kinds of storage layers for a running Livingdocs syste
 - Elastic search (the delivery storage)
 - Frontend apps (the view layer)
 
-In theory a frontend app could work without a storage mechanism, i.e., a browser-only app. In practice, it makes a lot of sense though to use some kind of view layer storage such as a Symfony app or similar setups that can use caches and store some intermediate information.
+In theory a frontend app could work without a storage mechanism, i.e., a browser-only app. In practice, it makes a lot of sense though to use some kind of view layer storage such as a [Symfony](https://symfony.com) app or similar setups that can use caches and store some intermediate information.
 
 ### The Livingdocs layer
 
