@@ -115,16 +115,13 @@ curl --ipv4 -XPOST \
 The actual rendering of the component cards for a document happens whenever a document is published. The Livingdocs server will fetch the publication's metadata and the according mapping and render all defined component cards and  store an entry for each of them to the respective `ld_component_cards` index under the type `component_card` on elastic. An entry on elastic looks like this:
 ```json
 {
-    "_index": "local_teaser",
+    "_index": "ld_component_card",
     "_type": "component_card",
-    "_id": "62-teaser-gallery",
+    "_id": "62",
     "_score": 1,
     "_source": {
        "document_id": 62,
-       "publication_date": "2015-08-12T06:49:30.785Z",
-       "component_card_name": "teaser-gallery",
-       "html": "<article class=\"teaser teaser--gallery doc-component\" data-doc-template=\"morpheus.teaser-gallery\"><a class=\"teaser__link\" href=\"#\"><figure class=\"figure figure--gallery\"><div class=\"figure__placeholder figure__placeholder--16to9\"><img class=\"figure__image lazyautosizes lazyloaded\" data-doc-image=\"image\"></div></figure><h2 class=\"title title--gallery\"><div class=\"title__catchline doc-editable doc-no-placeholder\" data-doc-editable=\"catchline\" data-doc-placeholder=\"Spitzmarke\">Streusalz und Korrosion am Auto</div><div class=\"title__name doc-editable doc-no-placeholder\" data-doc-editable=\"title\" data-doc-placeholder=\"Titel\">Kampf dem Frost und Rost</div></h2></a><div class=\"teaser__text\"><ul class=\"metainfo\"><li class=\"metainfo__item\"><span class=\"metainfo__item-flag doc-editable doc-no-placeholder\" data-doc-editable=\"flag\" data-doc-placeholder=\"Flag\">video</span></li><li class=\"metainfo__item\"><span class=\"metainfo__item-author doc-editable doc-no-placeholder\" data-doc-editable=\"author\" data-doc-placeholder=\"Autor\">Herbie Schmidt</span></li><li class=\"metainfo__item\"><time class=\"metainfo__item-date doc-editable doc-no-placeholder\" datetime=\"2015-08-12T22:00:00.000Z\" data-doc-editable=\"publicationDate\" data-doc-placeholder=\"Publikationsdatum\">13.02.2015 13:33</time></li></ul></div></article>",
-       "data": {
+       "metadadata": {
           "title": "Kampf dem Frost und Rost",
           "catchline": "Streusalz und Korrosion am Auto",
           "teaserImage": {
@@ -136,11 +133,25 @@ The actual rendering of the component cards for a document happens whenever a do
           "flag": "video",
           "author": "Herbie Schmidt",
           "publicationDate": "2015-02-13T12:33:00.000Z"
-       }
+       },
+       "formats": [
+        {
+            "format_name": "default-teaser",
+            "html": "<div></div>"
+        },
+        {
+            "format_name": "big-teaser",
+            "html": "<div></div>"
+        }
+       ],
+       "list_assignments": []
     }
  }
 ```
-Each component card is stored as rendered HTML as well as a JSON object with the data that was used for rendering. It is important to note that there is an entry for each defined component card. So the document with id `62` might have several entries for different component cards (denoted in the composed id `62-teaser-gallery`).
+Each component card contains:
+- the metadata
+- for each format the name and rendered HTML
+- the assignments of this card to lists
 
 In addition to the publish event we can also force rendering of all component cards through a command line tool by typing:
 ```bash
