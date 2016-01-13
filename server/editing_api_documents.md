@@ -103,10 +103,10 @@ curl http://staging.api.livingdocs.io/documents/850 \
     "current_revision_id": 100,
     "revision": {
       "id": 100,
+      "version": 1,
       "created_at": "Mon May 05 2014 00:04:29 GMT+0200 (CEST)",
       "updated_at": "Mon May 05 2014 00:04:29 GMT+0200 (CEST)",
       "data": {},
-      "revision_number": 1,
       "user_id": 7,
       "document_id": 850
     }
@@ -122,8 +122,9 @@ curl http://staging.api.livingdocs.io/documents/850 \
 | ------------- | ------- | -------- | -------------
 | `access_token`|         | -        | **required**, as Authorization header or query string
 | `title`       | string  | -        | **required**, new document title
-| `revision`    | revision | {data: {}} | A new revision object
-| `revision.revision_number` | integer | - | **required**. Versioning of a document content. This prevents conflicts with other authors. Apply the revision_number retrieved from an existing revision. When creating the first revision, you should use the value 1.
+| `revision`    | revision| {data: {}} | A new revision object
+| `revision.id` | integer | -        | **required**. Versioning of a document content. This prevents conflicts with other authors. Apply the version retrieved from an existing revision.
+| `revision.version` | integer | - | **required** for Versioning of a document content.
 
 
 #### Example Request
@@ -149,13 +150,13 @@ curl http://staging.api.livingdocs.io/documents/850 \
     "current_revision_id": 100,
     "revision": {
       "id": 100,
+      "version": 2,
       "created_at": "Mon May 05 2014 00:04:29 GMT+0200 (CEST)",
       "updated_at": "Mon May 05 2014 00:04:29 GMT+0200 (CEST)",
       "data": [
         {"title": "snippet 1"},
         {"title": "snippet 2"}
       ],
-      "revision_number": 2,
       "user_id": 7,
       "document_id": 850
     }
