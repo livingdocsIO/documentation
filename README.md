@@ -78,7 +78,7 @@ The Livingdocs page management allow users to structure their documents as cards
 
 ### The Livingdocs Framework
 
-The [`Livingdocs framework`](https://github.com/upfrontIO/livingdocs-framework is the central piece of Livingdocs and defines the APIs for manipulating, displaying and serializing your documents. The Livingdocs framework is an isomorphic app that runs in the browser and in node.js.
+The [`Livingdocs framework`](https://github.com/upfrontIO/livingdocs-framework) is the central piece of Livingdocs and defines the APIs for manipulating, displaying and serializing your documents. The Livingdocs framework is an isomorphic app that runs in the browser and in node.js.
 
 Here you can find detailed information about the most important objects in the Livingdocs framework and how to work with them:
 
