@@ -23,11 +23,16 @@ A referenc to the [componentTree](component_tree.md) a component is part of. If 
 #### Edit Content
 
 ```javascript
-// Set the content of a directive
-paragraph.set('text', 'Lorem Ipsum dolorem...');
+textDirective = paragraph.directives.get('text');
+textDirective.setContent('Lorem Ipsum dolorem...');
+content = textDirective.getContent();
+
+
+// Set the content of a directive directly from the componentModel
+paragraph.setContent('text', 'Lorem Ipsum dolorem...');
 
 // Get the content of a directive
-paragraph.get('text');
+paragraph.getContent('text');
 ```
 
 #### ComponentTree operations
