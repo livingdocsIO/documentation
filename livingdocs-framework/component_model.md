@@ -11,17 +11,11 @@ Every `component` has a unique id that allows Livingdocs to always identify a `c
 #### componentName
 The name of your component. E.g. a title component could have the name 'title'. Normally you use the name when creating a new component of the same type querying for component of a certain type.
 
-#### template
-The Template from which your component was created.
+#### [directives](directives.md)
+The content of a component is managed through directives. For different
+content types like text and images there exists different directive types.
 
-#### componentTree
-A referenc to the [componentTree](component_tree.md) a component is part of. If empty a component is not yet part of a document just like a detached DOM node.
-
-
-## Methods
-
-#### Edit Content
-
+Quick examples:
 ```javascript
 textDirective = paragraph.directives.get('text');
 textDirective.setContent('Lorem Ipsum dolorem...');
@@ -34,6 +28,17 @@ paragraph.setContent('text', 'Lorem Ipsum dolorem...');
 // Get the content of a directive
 paragraph.getContent('text');
 ```
+
+For more information see the [detailed directive documentation](directives.md).
+
+#### template
+The Template from which your component was created.
+
+#### componentTree
+A referenc to the [componentTree](component_tree.md) a component is part of. If empty a component is not yet part of a document just like a detached DOM node.
+
+
+## Methods
 
 #### ComponentTree operations
 

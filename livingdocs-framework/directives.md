@@ -95,6 +95,6 @@ includeDirective.setParams({foo: 'bar'})
 
 ## Events
 
-#### `componentContentChanged`
+##### `componentContentChanged`
 
 Whenever a directive is changed a `componentContentChanged` event is fired on the `componentTree` the `componentModel` is attached to. If the `componentModel` the directive belongs to is not attached to a `componentTree` no event is fired.
