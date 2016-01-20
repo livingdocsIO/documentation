@@ -12,7 +12,7 @@
 
 ## What is a Livingdocs design?
 
-A Livingdocs design is a set of HTML components and configurations how they can be used and editet. It also lists the CSS and/or Javascript dependencies that need to be loaded to show the design correctly. A Livingdocs design is defind in a `design defintion` JSON file.
+A Livingdocs design is a set of HTML components and configurations how they can be used and edited. It also lists the CSS and/or Javascript dependencies that need to be loaded to show the design correctly. A Livingdocs design is defind in a `design defintion` JSON file.
 
 To use a Livngdocs design you have to upload the JSON file and all its dependencies (CSS, Javascript and image files) to our server and configure your account to use this design.
 
@@ -38,7 +38,7 @@ var designDefinition = {
   },
 
   // All available properties you can define on your components.
-  // A componentProperty is for example a css class a user can 
+  // A componentProperty is for example a css class a user can
   // toggle on a component.
   componentProperties: {
     'position': {
@@ -63,8 +63,8 @@ var designDefinition = {
     }
   },
 
-  // Here are the available components. 
-  // This is the central piece of every design definition. 
+  // Here are the available components.
+  // This is the central piece of every design definition.
   // Here you can list all possible HTML constructs that can
   // be used by users of your design.
   components: [
@@ -101,7 +101,7 @@ var designDefinition = {
     }
   ],
 
-  // The defaults paragraph component defines which component is 
+  // The defaults paragraph component defines which component is
   // inserted if a user hits ENTER.
   // The default image component defines which image component is
   // inserted if a user drags and drops an image on a document
@@ -128,7 +128,7 @@ If you want to create your design without the boilerplate project then you will 
 ## How to define components
 
 Let's get right to the core: how you can create a design definition with the `livingdocs-design-boilerplate`. The atom of a design is the `component`. Each component is a file in the filesystem with the ending `.html`. It includes a HTML template and configuration options. In your template you can use attributes to tell Livingdocs what elements can be edited or changed. Basically you create rules for the Livingdocs editor for what users will be allowed to change.
-Following you see a basic paragraph definition. It consists of a configuration part inside a `<script type="ld-conf">` tag and an HTML part. 
+Following you see a basic paragraph definition. It consists of a configuration part inside a `<script type="ld-conf">` tag and an HTML part.
 
 ```html
 <script type="ld-conf">

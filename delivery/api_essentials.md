@@ -20,22 +20,22 @@ First lets see a result of the Livingdocs API. In your Livingdocs Beta account n
 
 ![API Link](./api_link.png)
 
-Click the "Use API access" link and you will get a new browser page with a JSON response. This is the API result for a single document. Take note of the `space_id` entry, you will need this later
+Click the "Use API access" link and you will get a new browser page with a JSON response. This is the API result for a single document.
 
 ## Getting a documents feed
 
-In order to build a navigation, feed, or start page you need to get a list of all your documents and some information that allows you to render teasers for them. You can get this with a simple call to `http://api.livingdocs.io/public/publications`. The only required parameter to this call is the `space_id`. You got your `space_id` in the previous subchapter by clicking the "Use API access" link.
+In order to build a navigation, feed, or start page you need to get a list of all your documents and some information that allows you to render teasers for them. You can get this with a simple call to `http://api.livingdocs.io/public/publications`. The only required parameter to this call is the `project_id` which defines your account on Livingdocs Beta.
 
-First get your space id id with a terminal command:
+First get your project id id with a terminal command:
 
 ```bash
 ldm user:info
 ```
 
-With the space id you can create your query. Lets make an example:
+With the project id you can create your query. Lets make an example:
 
 ```bash
-curl http://api.livingdocs.io/public/publications?limit=10&space=your-space-id
+curl http://api.livingdocs.io/public/publications?limit=10&project=your-project-id
 ```
 
 This will get the 10 latest published documents from your Livingdocs Beta account. Easy, wasn't it.
@@ -50,7 +50,7 @@ And that's an example of what you get back:
             "updated_at": "2014-09-20T19:16:25.824Z",
             "document_id": 2,
             "html": "<div>publication in HTML</div>",
-            "space_id": 1,
+            "project_id": 1,
             "slug": "human-readable-url",
             "design": {},
             "metadata": {}
@@ -59,7 +59,7 @@ And that's an example of what you get back:
 }
 ```
 
-- The `metadata` field contains structured publication-time information about a document. Typically, you use information from the `metadata` field for content that you require to be there, e.g., a title, and the Livingdocs document tree to get optional content, e.g., videos if there are any in the document. 
+- The `metadata` field contains structured publication-time information about a document. Typically, you use information from the `metadata` field for content that you require to be there, e.g., a title, and the Livingdocs document tree to get optional content, e.g., videos if there are any in the document.
 
 You will most likely use the data within `metadata` to render a teaser for a document, e.g., using the title and teaser image.
 
@@ -67,7 +67,7 @@ Last but not last, here is the complete description of the `GET /public/publicat
 
 | Property      | Type    | Default  | Description
 | ------------- | ------- | -------- | -------------
-| `space`    | integer | -        | **required**, only get documents belonging to a space (shared account)
+| `project`    | integer | -        | **required**, only get documents belonging to a project (shared account)
 | `limit`       | integer | 50       | **optional**, used for pagination, how many results per page (offset)
 | `offset`      | integer | 0        | **optional**, used for pagination, the page of the pagination that is returned
 | `fields`      | string  | -        | **optional**, used to include fields in the respond. Available non-default fields: data (DEPRECATED), html
@@ -86,7 +86,7 @@ A response will look like the following:
         "updated_at": "2014-09-20T19:16:25.824Z",
         "document_id": 2,
         "html": "<div>Document HTML</div>",
-        "space_id": 1,
+        "project_id": 1,
         "metadata": {},
         "design": {}
     }
