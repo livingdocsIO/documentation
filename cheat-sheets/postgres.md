@@ -38,6 +38,11 @@ VACUUM FULL [tablename];
 
 Show active connections
 ```
+SELECT * FROM pg_stat_activity;
+```
+
+Show read/delete/update activity
+```
 SELECT * from pg_stat_database;
 ```
 
