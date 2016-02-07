@@ -101,8 +101,8 @@ The following diagram visualizes the most important states and actions:
 
 The boilerplate app implements three example migrations that you can take as a starting point for your own migrations. (Don't run the example migrations, they are using a sample design which is not configured).
 
-1. [Migration script after removing a directive from a component](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/add-data-migration-sample/app/data-migrations/000_example_remove_directive.coffee)
+1. [Migration script after removing a directive from a component](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_remove_directive.coffee)
 
-2. [Migration script after renaming a directive on a component](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/add-data-migration-sample/app/data-migrations/000_example_rename_directive.coffee)
+2. [Migration script after renaming a directive on a component](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_rename_directive.coffee)
 
-3. [Migration script to initialize a new metadata field](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/add-data-migration-sample/app/data-migrations/000_example_add_metadata_field.coffee)
+3. [Migration script to initialize a new metadata field](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_add_metadata_field.coffee)
