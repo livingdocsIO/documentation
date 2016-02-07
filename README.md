@@ -51,7 +51,7 @@ To develop within Livingdocs you have to be fluent in Javascript and understand 
 
 ### About this document
 
-Unfortunately, we can't offer complete documentation yet. If you require some documentation that is not yet present, please drop us a note to documentation@upfront.io or fork this project and send us a pull-request if you want to write it yourself.
+Unfortunately, we can't offer complete documentation yet. If you require some documentation that is not yet present, please drop us a note to dev@upfront.io or fork this project and send us a pull-request if you want to write it yourself.
 
 The following chapters explain the basics about Livingdocs. There is no core documentation yet but it is unlikely that you will need to work in the core.
 
