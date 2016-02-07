@@ -92,7 +92,7 @@ If your goal is to see your newly created design quickly in the editor or just t
 The boilerplate app is a server-side customization project which fully integrates the Livingdocs core server. It allows customers to write their specific requirements like third-party system integrations or special rendering options.
 The boilerplate app is not publicly available and you will need to conclude an evaluation contract with us to get access.
 
-[» Process published documents]()
+[» Process published documents](./boilerplate/publish_plugin.md)
 
 [» Writing data migrations](./data-migrations/migrations.md)
 
