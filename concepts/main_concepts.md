@@ -1,5 +1,7 @@
 ## Concepts
 
+[« back](../README.md)
+
 ### Regain control over your HTML
 
 HTML and CSS always work together. Creating a CSS design can only work if you know how the HTML looks. Or better yet you can define your own HTML. Traditionally developers have to create templates for that on a server somewhere for a particular CMS. With Livindocs this is different.
@@ -31,3 +33,5 @@ Livingdocs is very different from other CMSes in that it does not make any assum
 - a set of boilerplate apps that you can fork and use if they fit your needs
 
 Livingdocs pre-renders content for you and delivers those pre-rendered documents over the API. This means that it gets the correct version of your design, fetches the right content of your document and renders everything to HTML. This makes writing HTML-based apps really easy. But you can also write JSON or XML based apps (or whatever other format you might need). The Livingdocs server defines a render pipeline where you can define what content you want to export into which formats. Every channel is always represented as a Livingdocs design which enables your users to write in every channel directly in the Livingdocs editor. This makes for real multi channel publishing: your users can write natively in every channel and delivery is fully customizable.
+
+[« back](../README.md)
