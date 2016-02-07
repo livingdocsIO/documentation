@@ -1,13 +1,10 @@
 # Upload your design to livingdocs-beta
 
-## Table of contents
-
-- Uploading a design (this document)
-- [Updating a design](./update_design.md)
+[« back](../README.md)
 
 ## Overview
 
-To be quite honest, this process is a bit bumpy and we lacks UI support. Please bear with us, we will make this super-easy for you in the future. For now though there are quite a lot of requirements.
+To be honest, this process is a bit bumpy and lacks UI support. Please bear with us, we will make this super-easy for you in the future. For now though there are quite a lot of requirements.
 
 ### Livingdocs Beta account
 
@@ -34,15 +31,17 @@ Go ahead and fetch the URL by simply pasting it into a browser. You should see t
 
 ### Using the design in your account
 
-In your Livingdocs Beta account you will not yet see your design. You first need to update the configuration. 
+In your Livingdocs Beta account you will not yet see your design. You first need to update the configuration.
 
-Add the design to your configuration with a terminal command:
+Add the design to your configuration with 2 terminal commands:
 
 ```bash
 ldm project:design:add --name bootstrap --version 1.0.0
+ldm project:design:default --name bootstrap --version 1.0.0
 ```
 
 You will be asked to supply your username and password before the configuration can be updated. This will also set the new design as the default design that will be used when creating new documents.
 
 Congrats, you've done it! Now reload the browser page within your Livingdocs Beta account and press "Create Document" and you should see a new document with your design.
 
+[« back](../README.md)

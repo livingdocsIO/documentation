@@ -1,5 +1,6 @@
 # Livingdocs Data Migrations
 
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Livingdocs Data Migrations](#livingdocs-data-migrations)
 	- [Overview](#overview)
@@ -7,6 +8,8 @@
 	- [Structure of a migration script](#structure-of-a-migration-script)
 	- [The `data-migration` grunt task](#the-data-migration-grunt-task)
 	- [Examples](#examples)
+
+<!-- /TOC -->
 
 ## Overview
 

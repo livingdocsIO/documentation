@@ -1,14 +1,21 @@
-
 # Create designs with livingdocs-design-boilerplate
 
-## Table of contents
+[« back](../README.md)
 
-- What is a Livingdocs design?
-- [Versioning designs](./versioning.md)
-- [Defining metadata extractions](./metadata_extraction.md)
-- [Defining component properties](./component_properties.md)
-- [Working with images](./images.md)
-- [Using iframely definitions](./iframely.md)
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+
+- [Create designs with livingdocs-design-boilerplate](#create-designs-with-livingdocs-design-boilerplate)
+	- [What is a Livingdocs design?](#what-is-a-livingdocs-design)
+	- [Boilerplate design repository](#boilerplate-design-repository)
+	- [Example design definition:](#example-design-definition)
+	- [How to define components](#how-to-define-components)
+			- [Adding your component to the design](#adding-your-component-to-the-design)
+			- [Using the preview](#using-the-preview)
+			- [A more complex example](#a-more-complex-example)
+			- [Available attributes in the component HTML](#available-attributes-in-the-component-html)
+			- [But I want my own design](#but-i-want-my-own-design)
+
+<!-- /TOC -->
 
 ## What is a Livingdocs design?
 
@@ -211,3 +218,5 @@ A Livingdocs `component definition` consists of HTML that has added attributes t
 #### But I want my own design
 
 Sure enough you don't want to keep working with the `livingdocs-design-boilerplate` forever. We highly advise you though to use the setup defined there as it makes working with Livingdocs designs a lot easier. Just create a Github fork of the `livingdocs-design-boilerplate` project (or copy it by hand), name it anything you like and start replacing the CSS and HTML with your own.
+
+[« back](../README.md)
