@@ -81,7 +81,7 @@ Each migration is a 2-step process:
 
 The option "Creates and prepares a migration" allows you to start a new migration. You can either choose:
 - a simple version bump which bumps the design version in all your documents to a new design version without affecting the structure of the documents
-- or select a file in which you wrote a script to tell the system how to migrate your documents (the next section will show some examples for such scripts)
+- or select a migration script from the filesystem to tell the Livingdocs how to migrate your documents (the next section will show some examples for such scripts)
 
 Once you created a migration, it will run for all your documents. In the case of a migration script it will also generate a report for you that lists possible errors that were encountered with your script. (For a version bump there is no report, since errors are impossible). You can view this report by selecting the option "Show migration report".
 
@@ -92,6 +92,10 @@ If you want the migration to be applied, select "Accepts a migration" which will
 The option "Lists all migrations" lists all migrations you prepared or accepted in your project.
 
 The option "Get a migration description" allows you to review migration reports of prior migrations.
+
+The following diagram visualizes the most important states and actions:
+
+![Diagram](./migration-task-states.jpg)
 
 ## Examples
 
