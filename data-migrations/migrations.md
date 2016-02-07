@@ -30,6 +30,7 @@ The following changes do not require a data migration, but can be done with a si
 - changes in the design's wrapper or any of the layout's wrappers
 - changes in the assets of a design
 - adding a new directive to a component (will be empty)
+- removing or adding a `doc-optional` directive (`doc-optional` is never breaking)
 - removing or changing a component property on a component (will be silently ignored)
 - changes in the component set of a layout
 - changes in the component set of a group
