@@ -33,6 +33,7 @@ The following changes do not require a data migration, but can be done with a si
 - changes in the design's wrapper or any of the layout's wrappers
 - changes in the assets of a design
 - adding a new directive to a component (will be empty)
+- removing or adding a `doc-optional` directive (`doc-optional` is never breaking)
 - removing or changing a component property on a component (will be silently ignored)
 - changes in the component set of a layout
 - changes in the component set of a group
@@ -83,7 +84,7 @@ Each migration is a 2-step process:
 
 The option "Creates and prepares a migration" allows you to start a new migration. You can either choose:
 - a simple version bump which bumps the design version in all your documents to a new design version without affecting the structure of the documents
-- or select a file in which you wrote a script to tell the system how to migrate your documents (the next section will show some examples for such scripts)
+- or select a migration script from the filesystem to tell the Livingdocs how to migrate your documents (the next section will show some examples for such scripts)
 
 Once you created a migration, it will run for all your documents. In the case of a migration script it will also generate a report for you that lists possible errors that were encountered with your script. (For a version bump there is no report, since errors are impossible). You can view this report by selecting the option "Show migration report".
 
@@ -95,12 +96,16 @@ The option "Lists all migrations" lists all migrations you prepared or accepted 
 
 The option "Get a migration description" allows you to review migration reports of prior migrations.
 
+The following diagram visualizes the most important states and actions:
+
+![Diagram](./migration-task-states.jpg)
+
 ## Examples
 
 The boilerplate app implements three example migrations that you can take as a starting point for your own migrations. (Don't run the example migrations, they are using a sample design which is not configured).
 
-1. [Migration script after removing a directive from a component](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/add-data-migration-sample/app/data-migrations/000_example_remove_directive.coffee)
+1. [Migration script after removing a directive from a component](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_remove_directive.coffee)
 
-2. [Migration script after renaming a directive on a component](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/add-data-migration-sample/app/data-migrations/000_example_rename_directive.coffee)
+2. [Migration script after renaming a directive on a component](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_rename_directive.coffee)
 
-3. [Migration script to initialize a new metadata field](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/add-data-migration-sample/app/data-migrations/000_example_add_metadata_field.coffee)
+3. [Migration script to initialize a new metadata field](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_add_metadata_field.coffee)
