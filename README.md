@@ -94,7 +94,7 @@ The boilerplate app is not publicly available and you will need to conclude an e
 
 [» Process published documents]()
 
-[» Writing data migrations](./data-migrations/migrations)
+[» Writing data migrations](./data-migrations/migrations.md)
 
 <!-- [» Customize the document renderer]() -->
 
