@@ -26,7 +26,7 @@ The following chapters will walk you through each of these tasks. If you're fami
 
 ## A visual example
 
-First lets see a result of the Livingdocs API. In your Livingdocs Beta account navigate to the publish panel. Once you published your document, you will get two links on the right-hand side of the screen: a preview and an API link.
+First lets see a result of the Livingdocs API. In your Livingdocs Beta account navigate to the publish panel. Once you published your document, you will get three links on the right-hand side of the screen: a preview, an API link and an Iframe embed code.
 
 ![API Link](./api_link.png)
 
@@ -56,14 +56,13 @@ And that's an example of what you get back:
     "publications": [
         {
             "id": 3,
-            "created_at": "2014-09-20T19:16:25.824Z",
-            "updated_at": "2014-09-20T19:16:25.824Z",
-            "document_id": 2,
-            "html": "<div>publication in HTML</div>",
-            "project_id": 1,
-            "slug": "human-readable-url",
-            "design": {},
-            "metadata": {}
+						"metadata": {
+							"foo": "bar"
+						},
+            "design": {
+							"name": "timeline",
+							"version": "0.4.2"
+						}
         }
     ]
 }
@@ -77,35 +76,44 @@ Last but not last, here is the complete description of the `GET /public/publicat
 
 | Property      | Type    | Default  | Description
 | ------------- | ------- | -------- | -------------
-| `project`    | integer | -        | **required**, only get documents belonging to a project (shared account)
+| `project_id`  | integer | -        | **required**, only get documents belonging to a project (shared account)
 | `limit`       | integer | 50       | **optional**, used for pagination, how many results per page (offset)
 | `offset`      | integer | 0        | **optional**, used for pagination, the page of the pagination that is returned
-| `fields`      | string  | -        | **optional**, used to include fields in the respond. Available non-default fields: data (DEPRECATED), html
 | `callback`    | string  | -        | **optional**, a callback function that gets called (jsonp), if you don't specify this you'll just get back a json response
 
 ## Getting a single document
 
-Once you have your feed you will also want to be able to query a single document, e.g., to show a document's detail page. To query a document you will need it's id. You can either get the id of a document from the Livingdocs editor in the publish panel (using the "use API access" link) or from a previous [document feed call](./api_essentials#getting-a-documents-feed). Once you have the id, simply call `GET http://api.livigndocs.io/public/publications/:id` to get back the document's latest published version.
+Once you have your feed you will also want to be able to query a single document, e.g., to show a document's detail page.
+The easiest option is to just use our Iframe embed code. You can see the Iframe embed code in the publish panel of an article. It has the following structure:
+```
+<div class="livingdocs-embed">  
+	<a class="livingdocs-article-link" 		href="http://localhost:9090/articles/1.html?project_id=1"    data-article-id="1"
+	data-project-id="1">foo</a>  
+	<script src="http://localhost:9090/assets/livingdocs-embed.js"></script></div>
+```
+In order to embed an article in one of your HTML pages you can either copy the embed code for each article or you can generate the above snippet dynamically by inserting the correct values for the article id (data values).
+The other option is to query a document through the REST API as you did before for a collection of documents. You can either get the id of a document from the Livingdocs editor in the publish panel (using the "use API access" link) or from a previous [document feed call](./api_essentials#getting-a-documents-feed). Once you have the id, simply call `GET http://api.livigndocs.io/public/publications/:id` to get back the document's latest published version.
 
 A response will look like the following:
 ```json
 {
     "publication": {
         "id": 3,
-        "created_at": "2014-09-20T19:16:25.824Z",
-        "updated_at": "2014-09-20T19:16:25.824Z",
-        "document_id": 2,
         "html": "<div>Document HTML</div>",
-        "project_id": 1,
-        "metadata": {},
-        "design": {}
+        "metadata": {
+					"foo": "bar"
+				},
+        "design": {
+					"name": "timeline",
+					"version": "0.4.2"
+				}
     }
 }
 ```
 
 - The `html` contains the complete rendered HTML of the document.
 
-You can simply place the whole rendered HTML within a placeholder in your page. In order for it to render correctly you will though also need to add the CSS and possible dependencies of the document to the page. The next chapter explains how to do this.
+You can simply place the whole rendered HTML within a placeholder in your page. In order for it to render correctly you will though also need to add the CSS and possible dependencies of the document to the page. The next chapters explain how to do this. If you embedded the article with our Iframe embed code you will not need to do this.
 
 ## Getting a document's design
 
@@ -113,13 +121,13 @@ At the very minimum each document requires the CSS files to be loaded that are d
 
 The design name and version of a single document are in `design`. For the host part you need to use the server where you uploaded the design (see [uploading a design](../design/upload.md)). At the moment, the only supported design server for the Livingdocs Beta account is ours, so your URL will most likely look like this: `http://api.livingdocs.io/designs/your-design-name/your-design-version` where you can plug in the name and version from the result you have in the API response in `design`.
 
-The response from the URL above will give you the respective design definition. You will still need to get the CSS files out of this. The design definition defines a `basePath` and an array of CSS assets. For each entry in the css array concatenate it with the `basePath` and you have the full URL to the required css files. (NOTE: There might be more than one required CSS file depending on how the design was defined).
+The response from the URL above will give you the respective design definition in JSON. You will still need to get the CSS files out of this. The design definition defines a `basePath` and an array of CSS assets. For each entry in the css array concatenate it with the `basePath` and you have the full URL to the required css files. (NOTE: There might be more than one required CSS file depending on how the design was defined).
 
 ![CSS resources](./css_resources.png)
 
 You might have realized that by adding the CSS dynamically, you can have documents running in different design versions on your frontend page. For some scenarios this is exactly what we want since we can update our design for new documents and everything just works. If you have a scenario where you always need to migrate all documents to the latest design version, check out chapter 5 about migrations.
 
-HINT: If you integrate Livingdocs documents in a page where there are lots of other styles that could potentially clash, we made good experience by integrating the Livingdoc in an Iframe. We plan to provide Iframe integration out-of-the-box in the future, but for now you will need to add the rendered HTML to an Iframe yourself.
+HINT: If you integrate Livingdocs documents in a page where there are lots of other styles that could potentially clash, we made good experience by integrating the Livingdoc in an Iframe. Livingdocs already provides an Iframe embed code in the publish panel that you can use for this.
 
 ## Getting a document's dependencies
 
