@@ -99,7 +99,9 @@ A response will look like the following:
 {
     "publication": {
         "id": 3,
-        "html": "<div>Document HTML</div>",
+        "channels": {
+					"web": "<div>Document HTML</div>"
+				},
         "metadata": {
 					"foo": "bar"
 				},
@@ -111,7 +113,7 @@ A response will look like the following:
 }
 ```
 
-- The `html` contains the complete rendered HTML of the document.
+- The `channels` property contains rendered output for different channels. For the Beta service only the `web` channel is available which has HTML as a format.
 
 You can simply place the whole rendered HTML within a placeholder in your page. In order for it to render correctly you will though also need to add the CSS and possible dependencies of the document to the page. The next chapters explain how to do this. If you embedded the article with our Iframe embed code you will not need to do this.
 
