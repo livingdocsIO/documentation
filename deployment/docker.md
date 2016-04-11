@@ -60,6 +60,21 @@ git push dokku master
 Your editor is available on http://<name>.hosted.livingdocs.io
 
 
+### Run arbitrary dokku commands 
+
+If you want to interact with dokku, you can also run commands manually:
+
+```
+ssh -t dokku@hosted.livingdocs.io <dokku command> <name>
+```
+
+eg.
+ 
+```
+ssh -t dokku@hosted.livingdocs.io postgres:expose <name>
+```
+
+
 ## Manual, without Dokku
 
 In case you don't want to use Dokku, you can also run the following low level Docker commands to run a livingdocs instance.
