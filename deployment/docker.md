@@ -9,7 +9,7 @@ We provide a docker setup for both local development and production deployments.
 To set up the wiring for server, editor and the services, create an instance with:
 
 ```
-ssh -t dokku@hosting1.livingdocs.cust.vshn.net lvds:create <name>
+ssh -t dokku@hosted.livingdocs.io lvds:create <name>
 ```
 
 ### Set up the server
@@ -17,13 +17,13 @@ ssh -t dokku@hosting1.livingdocs.cust.vshn.net lvds:create <name>
 Add a git remote in your local server repository:
 
 ```
-git remote add dokku dokku@hosting1.livingdocs.cust.vshn.net:<name>-server
+git remote add dokku dokku@hosted.livingdocs.io:<name>-server
 ```
 
 Create a configuration file for the environment `dokku_<name>`. In case you need to store secrets, add them as environment variables to the instance like follows:
 
 ```
-ssh -t dokku@hosting1.livingdocs.cust.vshn.net config:set staging-server auth__secret="" aws__access_key="" aws__secret_key="" pusher__app_id="" pusher__key="" pusher__secret=""
+ssh -t dokku@hosted.livingdocs.io config:set staging-server auth__secret="" aws__access_key="" aws__secret_key="" pusher__app_id="" pusher__key="" pusher__secret=""
 ```
 
 Then you are ready to deploy by simply pushing to your remote:
@@ -35,7 +35,7 @@ git push dokku master
 The first deployment might fail because grunt setup has not been run. To open a bash on your server instance, run:
 
 ```
-ssh -t dokku@hosting1.livingdocs.cust.vshn.net run staging-server /bin/bash
+ssh -t dokku@hosted.livingdocs.io run staging-server /bin/bash
 ```
 
 Your server is available on http://<name>-server.hosted.livingdocs.io
@@ -46,7 +46,7 @@ Your server is available on http://<name>-server.hosted.livingdocs.io
 Add a git remote in your local editor repository:
 
 ```
-git remote add dokku dokku@hosting1.livingdocs.cust.vshn.net:<name>
+git remote add dokku dokku@hosted.livingdocs.io:<name>
 ```
 
 Create a configuration file for the environment `dokku_<name>`. Point your editor to the server instance you just created.
