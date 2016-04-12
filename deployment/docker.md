@@ -23,7 +23,7 @@ git remote add dokku dokku@hosted.livingdocs.io:<name>-server
 Create a configuration file for the environment `dokku_<name>`. In case you need to store secrets, add them as environment variables to the instance like follows:
 
 ```
-ssh -t dokku@hosted.livingdocs.io config:set staging-server auth__secret="" aws__access_key="" aws__secret_key="" pusher__app_id="" pusher__key="" pusher__secret=""
+ssh -t dokku@hosted.livingdocs.io config:set <name> auth__secret="" aws__access_key="" aws__secret_key="" pusher__app_id="" pusher__key="" pusher__secret=""
 ```
 
 Then you are ready to deploy by simply pushing to your remote:
@@ -60,18 +60,77 @@ git push dokku master
 Your editor is available on http://<name>.hosted.livingdocs.io
 
 
-### Run arbitrary dokku commands 
+### Letsencrypt SSL
 
-If you want to interact with dokku, you can also run commands manually:
+```
+ssh -t dokku@hosted.livingdocs.io letsencrypt <name>
+```
+
+
+### Run shell commands 
+
+Open a bash
+
+```
+ssh -t dokku@hosted.livingdocs.io run staging-server /bin/bash
+```
+
+Run a command on the server instance (eg. grunt setup)
+
+```
+ssh -t dokku@hosted.livingdocs.io run <name> <command>
+```
+
+### Run dokku commands
+
+You can run any dokku command by leaving out the `run` from the command.
 
 ```
 ssh -t dokku@hosted.livingdocs.io <dokku command> <name>
 ```
 
-eg.
- 
+Inspect the logs
+
 ```
-ssh -t dokku@hosted.livingdocs.io postgres:expose <name>
+ssh -t dokku@hosted.livingdocs.io logs <name> -t
+```
+
+Work with environment variables
+
+```
+ssh -t dokku@hosted.livingdocs.io config <name>
+ssh -t dokku@hosted.livingdocs.io config:set <name> pusher__key="xyz"
+```
+
+Restart the server
+
+```
+ssh -t dokku@hosted.livingdocs.io ps:restart <name>
+```
+
+List all deployed applications
+
+```
+ssh -t dokku@hosted.livingdocs.io apps <name>
+```
+
+### Services 
+
+You can run commands against the servers the services are linked to. 
+
+#### Elasticsearch
+
+Full list of commands, see https://github.com/dokku/dokku-elasticsearch
+
+#### Postgres
+
+Full list of commands, see https://github.com/dokku/dokku-postgres
+
+#### Database dumps
+
+```
+ssh -t dokku@hosted.livingdocs.io postgres:export <name> --no-acl --clean --verbose --no-owner -Fc > dump.sql
+ssh -t dokku@hosted.livingdocs.io postgres:import <name> --no-acl --clean --verbose --no-owner < dump.sql
 ```
 
 
