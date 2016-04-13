@@ -35,10 +35,10 @@ git push dokku master
 The first deployment might fail because grunt setup has not been run. To open a bash on your server instance, run:
 
 ```
-ssh -t dokku@hosted.livingdocs.io run staging-server /bin/bash
+ssh -t dokku@hosted.livingdocs.io run <name>-server /bin/bash
 ```
 
-Your server is available on http://<name>-server.hosted.livingdocs.io
+Your server is available on `http://<name>-server.hosted.livingdocs.io
 
 
 ### Set up the editor
@@ -57,13 +57,14 @@ Then you are ready to deploy by simply pushing to your remote:
 git push dokku master
 ```
 
-Your editor is available on http://<name>.hosted.livingdocs.io
+Your editor is available on ``http://<name>.hosted.livingdocs.io`
 
 
 ### Letsencrypt SSL
 
 ```
 ssh -t dokku@hosted.livingdocs.io letsencrypt <name>
+ssh -t dokku@hosted.livingdocs.io letsencrypt <name>-server
 ```
 
 
@@ -72,7 +73,7 @@ ssh -t dokku@hosted.livingdocs.io letsencrypt <name>
 Open a bash
 
 ```
-ssh -t dokku@hosted.livingdocs.io run staging-server /bin/bash
+ssh -t dokku@hosted.livingdocs.io run <name> /bin/bash
 ```
 
 Run a command on the server instance (eg. grunt setup)
