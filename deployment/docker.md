@@ -59,6 +59,12 @@ git push dokku master
 
 Your editor is available on ``http://<name>.hosted.livingdocs.io`
 
+### Custom domains
+
+```
+ssh -t dokku@hosted.livingdocs.io domains:add <name> domain.io
+ssh -t dokku@hosted.livingdocs.io domains:add <name>-server domain.io
+```
 
 ### Letsencrypt SSL
 
