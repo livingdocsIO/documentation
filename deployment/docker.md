@@ -4,6 +4,15 @@
 
 We provide a docker setup for both local development and production deployments. Our Dokku setup is open source as well, see https://github.com/upfrontIO/livingdocs-dokku
 
+### Requirements
+
+Currently, the following files need to be copied from upstream:
+ 
+- Dockerfile
+- CHECKS file
+- bin/dumb-init
+- nginx.conf.sigil
+
 ### Create Dokku instance
 
 To set up the wiring for server, editor and the services, create an instance with:
@@ -23,7 +32,7 @@ git remote add dokku dokku@hosted.livingdocs.io:<name>-server
 Create a configuration file for the environment `dokku_<name>`. In case you need to store secrets, add them as environment variables to the instance like follows:
 
 ```
-ssh -t dokku@hosted.livingdocs.io config:set <name> auth__secret="" aws__access_key="" aws__secret_key="" pusher__app_id="" pusher__key="" pusher__secret=""
+ssh -t dokku@hosted.livingdocs.io config:set <name>-server auth__secret="" aws__access_key="" aws__secret_key="" pusher__app_id="" pusher__key="" pusher__secret=""
 ```
 
 Then you are ready to deploy by simply pushing to your remote:
@@ -38,7 +47,7 @@ The first deployment might fail because grunt setup has not been run. To open a 
 ssh -t dokku@hosted.livingdocs.io run <name>-server /bin/bash
 ```
 
-Your server is available on `http://<name>-server.hosted.livingdocs.io
+Your server is available on `http://<name>-server.hosted.livingdocs.io`
 
 
 ### Set up the editor
@@ -57,7 +66,7 @@ Then you are ready to deploy by simply pushing to your remote:
 git push dokku master
 ```
 
-Your editor is available on ``http://<name>.hosted.livingdocs.io`
+Your editor is available on `http://<name>.hosted.livingdocs.io`
 
 ### Custom domains
 
@@ -118,7 +127,7 @@ ssh -t dokku@hosted.livingdocs.io ps:restart <name>
 List all deployed applications
 
 ```
-ssh -t dokku@hosted.livingdocs.io apps <name>
+ssh -t dokku@hosted.livingdocs.io apps
 ```
 
 ### Services 
@@ -169,4 +178,4 @@ Run editor container:
 docker run --rm -p 8080:9000 lve:prod dumb-init nginx
 ```
 
-The editor is now available under http://localhost:8080
+The editor is now available on http://localhost:8080
