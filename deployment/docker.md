@@ -163,8 +163,8 @@ docker build -t livingdocs/server .
 
 Run the container:
 ```
-docker run --rm -p 9090:9090 -e "db__host=postgres" -e "search__host=http://elasticsearch:9200" -e "ENVIRONMENT=production" -e "NODE_ENV=production" livingdocs/server node index.js```
-
+docker run --rm -p 9090:9090 -e "db__host=postgres" -e "search__host=http://elasticsearch:9200" -e "ENVIRONMENT=production" -e "NODE_ENV=production" livingdocs/server node index.js
+```
 
 ### Editor
 
