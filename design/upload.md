@@ -29,18 +29,28 @@ The tool will ask you to provide a host (the default is fine) and enter your ema
 
 Go ahead and fetch the URL by simply pasting it into a browser. You should see the JSON design configuration file.
 
-### Using the design in your account
+### Using the design
 
-In your Livingdocs Beta account you will not yet see your design. You first need to update the configuration.
+In your Livingdocs Beta account you will not yet see your design.
+
+#### Your first design
+
+As your design has probably a different name than the one attached to your current user, you need to create a new user:
+
+```bash
+grunt setup-admin-user
+```
+
+You will be asked to supply your username and password before the configuration can be updated. Then you will choose from a list your newly uploaded design. This will also set this design as the default design that will be used when creating new documents with this new user.
+
+#### New design has the same name as the current design only version number changed
 
 Add the design to your configuration with 2 terminal commands:
 
 ```bash
-ldm project:design:add --name bootstrap --version 1.0.0
-ldm project:design:default --name bootstrap --version 1.0.0
+ldm channel:design-version:add --name bootstrap --version 1.0.0 --channel 1
+ldm channel:design-version:current --name bootstrap --version 1.0.0 --channel 1
 ```
-
-You will be asked to supply your username and password before the configuration can be updated. This will also set the new design as the default design that will be used when creating new documents.
 
 Congrats, you've done it! Now reload the browser page within your Livingdocs Beta account and press "Create Document" and you should see a new document with your design.
 
