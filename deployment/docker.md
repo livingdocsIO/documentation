@@ -77,6 +77,8 @@ ssh -t dokku@hosted.livingdocs.io domains:add <name>-server domain.io
 
 ### Letsencrypt SSL
 
+SSL is enabled by default for the `*.hosted.livingdocs.io` domain, but you'll need to re-run this, if you add custom domains.
+
 ```
 ssh -t dokku@hosted.livingdocs.io letsencrypt <name>
 ssh -t dokku@hosted.livingdocs.io letsencrypt <name>-server
