@@ -30,7 +30,7 @@ In order to track your user's usage of Livingdocs you can configure your [mixpan
 #### Iframely
 
 IFramely is currently used for 2 things:
-- components with automatic metadata fetching from a third-pary source (an example of this is the "Teaser" component in our livingdocs-beta.io design)
+- components with automatic metadata fetching from a third-party source (an example of this is the "Teaser" component in our livingdocs-beta.io design)
 - automatic validity checks of entered links  
 You will need to have an [Iframely](https://iframely.com/) account and configure it with the editor's configuration file.
 
@@ -43,10 +43,10 @@ Livingdocs supports third-party spellcheckers. You can configure a URL to a spel
 The server installation is more involved. The server itself is a simple node.js application. Currently, we require a Linux system for the installation (Windows is not supported) and we recommend Amazon ec2 instances of Ubuntu. You will need to install your own process manager to ensure uptime. The application can be started with the command `node index.js` after installing all the requirements using `npm install`.
 
 Required software on the server are:
-- node.js (we recommend version 0.10.38, NOTE: >0.11.x is not supported)
+- node.js (version 4.x)
 - imagemagick (any reasonably new version)
 
-The server depends upon a lot of third party installations or services and in the following we will give details about each of them in turn.
+The server depends on third party installations or services and in the following we will give details about each of them in turn.
 
 #### Postgres
 
@@ -58,7 +58,7 @@ You will also want to install some kind of backup and rollover mechanism. This i
 
 To support search and delivery Livingdocs uses [elastic](https://www.elastic.co/). We support version 1.6 and upwards. The connection parameters and indices can be entered in the server's configuration file.
 
-We recommend using a service to host elastic since  setups can be quite involved. We use [found.no](https://www.found.no/) for our own hosted service.
+We recommend using a service to host elastic since setups can be quite involved. We use [found.no](https://www.found.no/) for our own hosted service.
 
 #### Amazon S3
 
@@ -80,9 +80,3 @@ In order to track your server's sanity, Livingdocs supports [newrelic](http://ne
 #### Google analytics (optional)
 
 For the public delivery of the server (the "Public Link" on livingdocs-beta.io) you can enable [Google analytics](http://www.google.com/analytics/). You can configure your analytics account in the server's configuration file.
-
-### Delivery sample app
-
-The delivery sample app is a small node.js application that we provide for users of the livingdocs-beta.io service to quickly get started with a delivery app. You can find the code [here](https://github.com/upfrontIO/livingdocs-delivery).
-
-The app can be installed on any Linux webserver running node.js (version 0.10.38 recommended). The readme gives a sample explanation of how to setup the sample app with heroku.
