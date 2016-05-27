@@ -13,6 +13,12 @@ Currently, the following files need to be copied from upstream:
 - bin/dumb-init
 - nginx.conf.sigil
 
+### Naming conventions
+
+Use a single word. Do not use underscores (it will not properly resolve the host names). Dashes work. 
+If you have multiple environments, append it with a dash to the customer name: `<customer>-<env>`
+
+
 ### Create Dokku instance
 
 To set up the wiring for server, editor and the services, create an instance with:
