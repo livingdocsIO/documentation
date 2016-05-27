@@ -18,7 +18,9 @@ The editor uses third party services that are described in the following.
 [Resrc.it](https://www.resrc.it/) is used by Livingdocs for 2 things:
 - cropping images
 - delivering perfectly sized images for different devices
-You can create an account on resrc.it and configure it with your image bucket on S3 (see server description).
+You can create an account on resrc.it and configure it with your image bucket on S3 (see server description). If you
+
+
 
 NOTE: Resrc.it is currently required for a working Livingdocs installation. All image URLs are built by the framework with the assumption that resrc.it is used. There is an experimental support for images without resrc.it that can be enabled in the editor's configuration but is not officially supported.
 
