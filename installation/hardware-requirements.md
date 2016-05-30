@@ -17,6 +17,7 @@ Serving static files is a lightweight task. A basic Amazon S3 instance or a simp
 #### Server
 
 The servers CPU requirements compares to the ones of a regular node application. One process requires about 250MB memory. Disk is not an issue since the application footprint is low and uploaded assets are stored in the cloud. You can expect to hit limitations earlier in the server than in the editor. This of depends on the number of users and the tasks they and developers perform. 
+ If you expect a lot of traffic on the assets, it might be worth to put a CDN in front of resrc.it.
 
 ### Databases
 
@@ -43,23 +44,34 @@ The storage your installation needs is directly coupled to the documents you upl
 Below you can find an overview of real life installations. 
 
 
-### Simple dokku cloud
+### Minimum requirements
 
-We are running a private Dokku cloud with multiple Docker based installations on virtual servers. There are about 10 demo instances running with each a server, editor, postgres,   
+We are running Livingdocs on very basic Amazon S3, Heroku and Cloudfoundry instances for demo, staging and development installations. This can be interpreted as the minimum requirements (no high availability and limited performance requirements).  
 
-Specs | |
-:--- | ---
-Instance | 2x Flex-8 from Cloudscale
-Instances | 10 x Elasticsearch, Postgres, Server, Editor
-vCpu | 4
-Memory | 8 GB
+Service | Specs | |
+:--- | :--- | ---
+**Editor** | Amazon S3 
+**Server** | Heroku
+| | Instance | 1x standard-1x
+| | vCPU | 1
+| | Memory | 512 MB
+| | Disk | -
+**Postgres** | Heroku Postgres
+| | Instance | 1x Standard 0
+| | Memory | 1 GB
+| | Storage | 64 GB
+**Elasticsearch** | Hosted instance at elastic.co 
+| | Cluster size | 1
+| | Memory | 1 GB
+| | SSD | 16 GB
+**Storage** | Amazon S3
 
 
-### NZZ
+### Scaled production setup at NZZ
 
-The production setup at NZZ is hosted on Amazon cloud services and managed by a third party service provider.
+The setup at NZZ is hosted on Amazon cloud services and managed by a third party service provider. Please not that NZZ uses an external system for delivery. 
  
-- 100+ journalists working in the editor
+- 100-200 journalists working in the editor
 - ~100k documents in the database 
 - Planning to import 1.6m documents. The import itself is expected to be heavy on the servers, but no massive scaling required for the daily operations
 - An external delivery system with Varnish is used to deliver articles to the user
@@ -67,12 +79,13 @@ The production setup at NZZ is hosted on Amazon cloud services and managed by a 
 Service | Specs | |
 :--- | :--- | ---
 **Editor** | Amazon S3 with local cloudfront CDN
-**Server** | 2x Amazon EC2 
-| | Instance |  M3 xlarge instances with a load balancer
+**Server** | Amazon EC2 with local fastly CDN and a load balancer 
+| | Instance | 2x M3 xlarge
 | | vCPU | 4 
 | | Memory | 15 GB 
 | | SSD | 40 GB
-**Postgres** | 1 x M3 xlarge Amazon RDS
+**Postgres** | Amazon RDS
+| | Instance | 1x M3 xlarge 
 | | vCPU | 4 
 | | Memory | 15 GB
 | | SSD | 80 GB
