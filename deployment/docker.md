@@ -7,7 +7,7 @@ We provide a docker setup for both local development and production deployments.
 ### Requirements
 
 Currently, the following files need to be copied from upstream:
- 
+
 - Dockerfile
 - CHECKS file
 - bin/dumb-init
@@ -15,7 +15,7 @@ Currently, the following files need to be copied from upstream:
 
 ### Naming conventions
 
-Use a single word. Do not use underscores (it will not properly resolve the host names). Dashes work. 
+Use a single word. Do not use underscores (it will not properly resolve the host names). Dashes work.
 If you have multiple environments, append it with a dash to the customer name: `<customer>-<env>`
 
 
@@ -24,7 +24,7 @@ If you have multiple environments, append it with a dash to the customer name: `
 To set up the wiring for server, editor and the services, create an instance with:
 
 ```
-ssh -t dokku@hosted.livingdocs.io lvds:create <name>
+ssh -t dokku@dokku.livingdocs.io lvds:create <name>
 ```
 
 ### Set up the server
@@ -32,13 +32,13 @@ ssh -t dokku@hosted.livingdocs.io lvds:create <name>
 Add a git remote in your local server repository:
 
 ```
-git remote add dokku dokku@hosted.livingdocs.io:<name>-server
+git remote add dokku dokku@dokku.livingdocs.io:<name>-server
 ```
 
 Create a configuration file for the environment `dokku_<name>`. In case you need to store secrets, add them as environment variables to the instance like follows:
 
 ```
-ssh -t dokku@hosted.livingdocs.io config:set <name>-server auth__secret="" aws__access_key="" aws__secret_key="" pusher__app_id="" pusher__key="" pusher__secret=""
+ssh -t dokku@dokku.livingdocs.io config:set <name>-server auth__secret="" aws__access_key="" aws__secret_key="" pusher__app_id="" pusher__key="" pusher__secret=""
 ```
 
 Then you are ready to deploy by simply pushing to your remote:
@@ -50,7 +50,7 @@ git push dokku master
 The first deployment might fail because grunt setup has not been run. To open a bash on your server instance, run:
 
 ```
-ssh -t dokku@hosted.livingdocs.io run <name>-server /bin/bash
+ssh -t dokku@dokku.livingdocs.io run <name>-server /bin/bash
 ```
 
 Your server is available on `http://<name>-server.hosted.livingdocs.io`
@@ -61,7 +61,7 @@ Your server is available on `http://<name>-server.hosted.livingdocs.io`
 Add a git remote in your local editor repository:
 
 ```
-git remote add dokku dokku@hosted.livingdocs.io:<name>
+git remote add dokku dokku@dokku.livingdocs.io:<name>
 ```
 
 Create a configuration file for the environment `dokku_<name>`. Point your editor to the server instance you just created.
@@ -77,8 +77,8 @@ Your editor is available on `http://<name>.hosted.livingdocs.io`
 ### Custom domains
 
 ```
-ssh -t dokku@hosted.livingdocs.io domains:add <name> domain.io
-ssh -t dokku@hosted.livingdocs.io domains:add <name>-server domain.io
+ssh -t dokku@dokku.livingdocs.io domains:add <name> domain.io
+ssh -t dokku@dokku.livingdocs.io domains:add <name>-server domain.io
 ```
 
 ### Letsencrypt SSL
@@ -86,23 +86,23 @@ ssh -t dokku@hosted.livingdocs.io domains:add <name>-server domain.io
 SSL is enabled by default for the `*.hosted.livingdocs.io` domain, but you'll need to re-run this, if you add custom domains.
 
 ```
-ssh -t dokku@hosted.livingdocs.io letsencrypt <name>
-ssh -t dokku@hosted.livingdocs.io letsencrypt <name>-server
+ssh -t dokku@dokku.livingdocs.io letsencrypt <name>
+ssh -t dokku@dokku.livingdocs.io letsencrypt <name>-server
 ```
 
 
-### Run shell commands 
+### Run shell commands
 
 Open a bash
 
 ```
-ssh -t dokku@hosted.livingdocs.io run <name> /bin/bash
+ssh -t dokku@dokku.livingdocs.io run <name> /bin/bash
 ```
 
 Run a command on the server instance (eg. grunt setup)
 
 ```
-ssh -t dokku@hosted.livingdocs.io run <name> <command>
+ssh -t dokku@dokku.livingdocs.io run <name> <command>
 ```
 
 ### Run dokku commands
@@ -110,37 +110,37 @@ ssh -t dokku@hosted.livingdocs.io run <name> <command>
 You can run any dokku command by leaving out the `run` from the command.
 
 ```
-ssh -t dokku@hosted.livingdocs.io <dokku command> <name>
+ssh -t dokku@dokku.livingdocs.io <dokku command> <name>
 ```
 
 Inspect the logs
 
 ```
-ssh -t dokku@hosted.livingdocs.io logs <name> -t
+ssh -t dokku@dokku.livingdocs.io logs <name> -t
 ```
 
 Work with environment variables
 
 ```
-ssh -t dokku@hosted.livingdocs.io config <name>
-ssh -t dokku@hosted.livingdocs.io config:set <name> pusher__key="xyz"
+ssh -t dokku@dokku.livingdocs.io config <name>
+ssh -t dokku@dokku.livingdocs.io config:set <name> pusher__key="xyz"
 ```
 
 Restart the server
 
 ```
-ssh -t dokku@hosted.livingdocs.io ps:restart <name>
+ssh -t dokku@dokku.livingdocs.io ps:restart <name>
 ```
 
 List all deployed applications
 
 ```
-ssh -t dokku@hosted.livingdocs.io apps
+ssh -t dokku@dokku.livingdocs.io apps
 ```
 
-### Services 
+### Services
 
-You can run commands against the servers the services are linked to. 
+You can run commands against the servers the services are linked to.
 
 #### Elasticsearch
 
@@ -153,8 +153,8 @@ Full list of commands, see https://github.com/dokku/dokku-postgres
 #### Database dumps
 
 ```
-ssh -t dokku@hosted.livingdocs.io postgres:export <name> --no-acl --clean --verbose --no-owner -Fc > dump.sql
-ssh -t dokku@hosted.livingdocs.io postgres:import <name> --no-acl --clean --verbose --no-owner < dump.sql
+ssh -t dokku@dokku.livingdocs.io postgres:export <name> --no-acl --clean --verbose --no-owner -Fc > dump.sql
+ssh -t dokku@dokku.livingdocs.io postgres:import <name> --no-acl --clean --verbose --no-owner < dump.sql
 ```
 
 
