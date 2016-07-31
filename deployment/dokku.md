@@ -8,6 +8,14 @@ We provide a docker setup for both local development and production deployments.
 
 Copy the Dockerfiles we provide by running `li-docker install`, for more information see https://github.com/upfrontIO/livingdocs-docker
 
+Currently, the following files need to be manually copied from upstream:
+ 
+- Dockerfile
+- CHECKS file
+- bin/dumb-init
+- nginx.conf.sigil
+
+
 ### Naming conventions
 
 Use a single word. Do not use underscores (it will not properly resolve the host names). Dashes work. 
