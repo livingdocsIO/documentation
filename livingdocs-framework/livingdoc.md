@@ -86,3 +86,46 @@ Here you see a serialized version of a `livingdoc` in JSON. This is an example d
   ]
 }
 ```
+## Manage Dependencies:
+
+```coffee
+# add js
+livingdoc.addJsDependency(src: 'url')
+livingdoc.addJsDependency(code: 'inline js')
+
+# add css
+livingdoc.addCssDependency(src: 'url')
+livingdoc.addCssDependency(code: 'inline css')
+
+# use namespaces
+livingdoc.addJsDependency(src: 'url', namespace: 'embeds.twitter')
+
+# Access the dependencies collection directly:
+dependencies = livingdoc.dependencies
+
+# Transform to JSON
+dependencies.serialize()
+
+# Get namespaces (Array of String)
+dependencies.getNamespaces()
+
+# Get all dependencies of a namespace
+dependencies.getNamespace('embeds.twitter')
+
+# Get an HTML string to include in a published document or to
+# Add to a document on the server side.
+dependencies.printJs()
+dependencies.printCss()
+```
+
+## Exposed Modules:
+
+For reuse in the editor these modules are exposed on `doc`:
+`doc.JsLoader` and `doc.CssLoader`
+
+```coffee
+# Example:
+jsLoader = new doc.JsLoader(window: iframe.contentWindow)
+jsLoader.loadSingleUrl(url, callback)
+jsLoader.loadInlineScript(url, callback)
+```
