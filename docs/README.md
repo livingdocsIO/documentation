@@ -49,7 +49,7 @@
 
 ### Design
 
-- [x] [Create your own design](https://github.com/upfrontIO/livingdocs-design-boilerplate)  **[TO CHECK]** maybe merge informations from [nzz]( https://github.com/nzzdev/livingdocs-design-nzz) and [li](https://github.com/upfrontIO/livingdocs/tree/master/design)
+- [ ] [Create and upload a design](./livingdocs-documentation/design)  **[TO MAKE]**
 
 
 ### Configuration
