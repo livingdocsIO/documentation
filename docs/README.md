@@ -63,11 +63,9 @@
 
 ### APIs
 
-- [x] [Publish and unpublish](https://github.com/upfrontIO/livingdocs/blob/master/boilerplate/publish_plugin.md) **[TO CHECK]**
-
+- [x] [Publish and unpublish](./public-documentation/APIs/publish-plugin.md) **[TO CHECK]**
 - [ ] Document (aka Public)
-
-- [ ] [Core: Extend server with custom code]()
+- [ ] Core: Extend server with custom code
 
 
 ### Migrations
