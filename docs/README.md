@@ -153,7 +153,7 @@
 - [ ] Design
 - [ ] Browser API
 - [ ] Node API
-- [x] [Editable.js](https://github.com/upfrontIO/editable.js) **[TO CHECK]**
+- [x] [Editable.js](https://github.com/upfrontIO/editable.js) **[EXTRACT FROM]**
 - [ ] Testing
 
 #### Design
