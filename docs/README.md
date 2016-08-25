@@ -104,8 +104,9 @@
 - [x] [Software](./core-documentation/guides/deployment/requirements.md) **[TO CHECK]**
 - [x] [Hardware](./core-documentation/guides/deployment/hardware-requirements.md) **[TO CHECK]**
 
-##### Infrastructure see
-- [x] [rancher1](https://github.com/upfrontIO/infrastructure) [rancher2](https://github.com/upfrontIO/livingdocs-rancher)  **[TO CHECK]**
+##### Infrastructure (Full repo links)
+- [x] [Introduction](https://github.com/upfrontIO/infrastructure) **[TO CHECK]**
+- [x] [Rancher](https://github.com/upfrontIO/livingdocs-rancher)  **[TO CHECK]**
 
 ##### Amazon
 - [x] [Amazon S3](https://github.com/upfrontIO/livingdocs/blob/master/deployment/amazon_s3.md) **[TO CHECK]**
