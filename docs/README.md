@@ -105,16 +105,17 @@
 - [x] [Hardware](./core-documentation/guides/deployment/hardware-requirements.md) **[TO CHECK]**
 
 ##### Infrastructure (Full repo links)
-- [x] [Introduction](https://github.com/upfrontIO/infrastructure) **[TO CHECK]**
-- [x] [Rancher](https://github.com/upfrontIO/livingdocs-rancher)  **[TO CHECK]**
+- [x] [Introduction](https://github.com/upfrontIO/infrastructure) **[EXTRACT FROM]**
+- [x] [Rancher](https://github.com/upfrontIO/livingdocs-rancher)  **[EXTRACT FROM]**
 
 ##### Amazon
 - [x] [Amazon S3](./core-documentation/guides/amazon/amazon_s3.md) **[TO CHECK]**
 
 ##### Container
-- [x] see [docker](https://github.com/upfrontIO/livingdocs-docker) and [docker/dokku](https://github.com/upfrontIO/livingdocs/blob/master/deployment/docker.md) **[TO CHECK]**
-- [x] [Elasticsearch](https://github.com/upfrontIO/dockerfile-elasticsearch) **[TO CHECK]**
-- [x] [Postgres](https://github.com/upfrontIO/dockerfile-postgres) **[TO CHECK]**
+- [x] [livingdocs-docker](https://github.com/upfrontIO/livingdocs-docker) **[EXTRACT FROM]**
+- [x]  [docker/dokku](./core-documentation/deployment/container/docker.md) **[TO CHECK]**
+- [x] [dockerfile-elasticsearch](https://github.com/upfrontIO/dockerfile-elasticsearch) **[EXTRACT FROM]**
+- [x] [dockerfile-postgres](https://github.com/upfrontIO/dockerfile-postgres) **[EXTRACT FROM]**
 
 #### FAQ/Troubleshooting
 - [x] [From NZZ](https://github.com/nzzdev/cms-troubleshoot-guide) also check [troubleshooting design](https://github.com/nzzdev/morpheus/blob/develop/livingdocs/readme.md)
