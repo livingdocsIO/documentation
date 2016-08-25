@@ -96,7 +96,7 @@
 - [ ] [Test your design in a local editor](./core-documentation/design) **[TO MAKE]**
 
 #### Customization
-- [x] [Add a custom include](https://github.com/upfrontIO/livingdocs-service-server/pull/62) **[TO CHECK]**
+- [x] [Add a custom include](./core-documentation/customization/add-custom-include.md) **[TO CHECK]**
 
 #### Deployment
 
