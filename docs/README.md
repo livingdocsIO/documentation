@@ -158,8 +158,8 @@
 
 #### Design
 
-- [x] [Livingdocs manager - ldm](https://github.com/upfrontIO/livingdocs-manager) **[TO CHECK]**
-- [x] [Design viewer](https://github.com/upfrontIO/livingdocs-design-viewer) **[TO CHECK]**
+- [x] [Livingdocs manager - ldm](https://github.com/upfrontIO/livingdocs-manager) **[TO EXTRACT]**
+- [x] [Design viewer](https://github.com/upfrontIO/livingdocs-design-viewer) **[TO EXTRACT]**
 
 
 
