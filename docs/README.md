@@ -18,7 +18,6 @@
     - [FAQ](#faq)
     - [Delivery, see:](#delivery-see)
   - [Livingdocs server](#livingdocs-server)
-    - [API](#api)
   - [Livingdocs editor](#livingdocs-editor)
   - [Livingdocs framework](#livingdocs-framework)
     - [Design](#design-1)
@@ -138,8 +137,7 @@
 
 ### Livingdocs server
 
-#### API
-- [x] [Core and editing](https://github.com/upfrontIO/livingdocs/tree/master/server) **[TO CHECK]**
+- [x] [Core and editing API](./core-documentation/livingdocs-server) **[TO MAKE]**
 - [ ] Features
 - [ ] Testing
 - [ ] Configuration
