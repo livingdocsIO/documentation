@@ -92,10 +92,8 @@
 - [ ] Run a local editor against a remote server
 - [ ] Link local dependencies: server and/or framework
 
-#### Working with designs
-- [ ] Test your design in a local editor, see [nzz](https://github.com/nzzdev/morpheus/blob/develop/livingdocs/readme.md),  [build](https://github.com/nzzdev/nzz-standard) and [timeline](https://github.com/upfrontIO/livingdocs-design-timeline)
-- [ ] Run a local editor against a remote server
-- [ ] Link local dependencies: server and/or framework
+#### Design
+- [ ] [Test your design in a local editor](./core-documentation/design) **[TO MAKE]**
 
 #### Customization
 - [x] [Add a custom include](https://github.com/upfrontIO/livingdocs-service-server/pull/62) **[TO CHECK]**
