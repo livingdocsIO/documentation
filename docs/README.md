@@ -130,11 +130,10 @@
 - [x] [HTML format](./core-documentation/architecture/nzzdev_nzz-standard_docs_json-format.md) **[TO CHECK]**
 
 #### Delivery, see:
-  - [x] [NZZ delivery architecture](https://github.com/nzzdev/cms-guide/blob/master/architecture/delivery_current.md) **[TO CHECK]**
-  - [x] [NZZ new delivery architecture](https://github.com/nzzdev/cms-guide/blob/master/architecture/delivery_new.md) **[TO CHECK]**
-  - [x] [Blog delivery](https://github.com/upfrontIO/livingdocs-delivery) **[TO CHECK]**
-  - [x] [Bluewin delivery](https://github.com/upfrontIO/bluewin-delivery) **[TO CHECK]**
-  - [x] [livingdocs-delivery-REST-API](https://github.com/upfrontIO/livingdocs/tree/master/delivery) **[TO CHECK]**
+  - [x] [NZZ delivery architecture](https://github.com/nzzdev/cms-guide/tree/master/architecture) **[TO EXTRACT]**
+  - [x] [Blog delivery](https://github.com/upfrontIO/livingdocs-delivery) **[TO EXTRACT]**
+  - [x] [Bluewin delivery](https://github.com/upfrontIO/bluewin-delivery) **[TO EXTRACT]**
+  - [x] [livingdocs-delivery-REST-API](./core-documentation/architecture/delivery) **[TO MAKE]**
 
 
 ### Livingdocs server
