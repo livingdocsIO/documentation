@@ -146,7 +146,7 @@
 
   - [ ] Testing
   - [ ] Configuration
-  - [x] [Metadata components](https://github.com/upfrontIO/livingdocs-editor/pull/1088)
+  - [x] [Metadata components](./core-documentation/livingdocs-editor/configurable-metadata-screen.md)
 
 ### Livingdocs framework
 
