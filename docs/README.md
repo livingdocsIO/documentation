@@ -126,8 +126,8 @@
 
 - [ ] Introduction
 - [ ] How do server, editor and framework play together?
-- [x] [Document and document structure](https://github.com/nzzdev/nzz-standard/blob/master/docs/json-format.md) **[TO CHECK]**
-- [x] [HTML format](https://github.com/nzzdev/nzz-standard/blob/master/docs/html-format.md) **[TO CHECK]**
+- [x] [Document and document structure](./core-documentation/architecture/nzzdev_nzz-standard_docs_html-format.md) **[TO CHECK]**
+- [x] [HTML format](./core-documentation/architecture/nzzdev_nzz-standard_docs_json-format.md) **[TO CHECK]**
 
 #### Delivery, see:
   - [x] [NZZ delivery architecture](https://github.com/nzzdev/cms-guide/blob/master/architecture/delivery_current.md) **[TO CHECK]**
