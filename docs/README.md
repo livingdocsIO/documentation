@@ -109,7 +109,7 @@
 - [x] [Rancher](https://github.com/upfrontIO/livingdocs-rancher)  **[TO CHECK]**
 
 ##### Amazon
-- [x] [Amazon S3](https://github.com/upfrontIO/livingdocs/blob/master/deployment/amazon_s3.md) **[TO CHECK]**
+- [x] [Amazon S3](./core-documentation/guides/amazon/amazon_s3.md) **[TO CHECK]**
 
 ##### Container
 - [x] see [docker](https://github.com/upfrontIO/livingdocs-docker) and [docker/dokku](https://github.com/upfrontIO/livingdocs/blob/master/deployment/docker.md) **[TO CHECK]**
