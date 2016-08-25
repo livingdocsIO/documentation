@@ -70,7 +70,7 @@
 
 ### Migrations
 
-- [x] [Design and data structures](https://github.com/upfrontIO/livingdocs/blob/master/data-migrations/migrations.md)  **[TO CHECK]**
+- [x] [Design and data structures](./public-documentation/migrations/migrations.md)  **[TO CHECK]**
 
 
 ### Integrations
