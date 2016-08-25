@@ -15,7 +15,7 @@
       - [Infrastructure see](#infrastructure-see)
       - [Amazon](#amazon)
       - [Container](#container)
-    - [FAQ/Troubleshooting](#faqtroubleshooting)
+    - [FAQ](#faq)
     - [Delivery, see:](#delivery-see)
   - [Livingdocs server](#livingdocs-server)
     - [API](#api)
@@ -117,8 +117,9 @@
 - [x] [dockerfile-elasticsearch](https://github.com/upfrontIO/dockerfile-elasticsearch) **[EXTRACT FROM]**
 - [x] [dockerfile-postgres](https://github.com/upfrontIO/dockerfile-postgres) **[EXTRACT FROM]**
 
-#### FAQ/Troubleshooting
-- [x] [From NZZ](https://github.com/nzzdev/cms-troubleshoot-guide) also check [troubleshooting design](https://github.com/nzzdev/morpheus/blob/develop/livingdocs/readme.md)
+#### FAQ
+- [x] [CMS troobleshooting](./core-documentation/guides/faq/nzzdev_cms-troubleshoot-guide_README.md) **[TO CHECK]**
+- [x] [NZZ FAQ](./core-documentation/guides/faq/nzzdev_morpheus_livingdocs_README.md) **[TO CHECK]**
 
 
 ### Architecture
