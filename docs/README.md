@@ -170,6 +170,7 @@
 - [x] [Template for writing readmes]()
 - [x] [Apply guides](https://github.com/upfrontIO/apply-guides)
 
-### Guides merge the guides repository in here
-  - [ ] Extend the CSS guide: dos and don’ts
+### Guides
+- [x] [Guides](./contribution-guidelines/guides) (merge from upfronIO/guides)
+- [ ] Extend the CSS guide: dos and don’ts
 
