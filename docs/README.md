@@ -174,4 +174,5 @@
 - [x] [Guides](./contribution-guidelines/guides) (merge from upfronIO/guides)
 - [ ] Extend the CSS guide: dos and don’ts
 - [x] [How to write readmes](./contribution-guidelines/how-to-write-readmes.md)
+- [x] [Documentation taxonomy](./contribution-guidelines/documentation-taxonomy.md)
 
