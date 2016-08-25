@@ -86,6 +86,8 @@
 
 ### Guides
 
+- [x] [Guide ideas from the team](./core-documentation/guide-ideas-from-the-team.md)
+
 #### Local development
 - [ ] Set editor and server for development
 - [ ] Run a local editor against a remote server
