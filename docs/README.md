@@ -101,8 +101,8 @@
 #### Deployment
 
 ##### Requirements
-- [x] [Hardware](https://github.com/upfrontIO/livingdocs/tree/master/installation) **[TO CHECK]**
-- [x] [Software](https://github.com/upfrontIO/livingdocs/tree/master/installation) **[TO CHECK]**
+- [x] [Software](./core-documentation/guides/deployment/requirements.md) **[TO CHECK]**
+- [x] [Hardware](./core-documentation/guides/deployment/hardware-requirements.md) **[TO CHECK]**
 
 ##### Infrastructure see
 - [x] [rancher1](https://github.com/upfrontIO/infrastructure) [rancher2](https://github.com/upfrontIO/livingdocs-rancher)  **[TO CHECK]**
