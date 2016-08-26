@@ -1,148 +1,174 @@
+# Livingdocs documentation
 
-# Livingdocs Documentation
+- [Concepts](#concepts)
+- [Public](#public)
+  - [Design](#design)
+  - [Configuration](#configuration)
+  - [APIs](#apis)
+  - [Migrations](#migrations)
+  - [Integrations](#integrations)
+- [Core](#core)
+  - [Guides](#guides)
+    - [Local development](#local-development)
+    - [Working with designs](#working-with-designs)
+    - [Customization](#customization)
+    - [Deployment](#deployment)
+      - [Requirements](#requirements)
+      - [Infrastructure](#infrastructure)
+      - [Amazon](#amazon)
+      - [Container](#container)
+    - [FAQ](#faq)
+    - [Delivery, see:](#delivery-see)
+  - [Livingdocs server](#livingdocs-server)
+  - [Livingdocs editor](#livingdocs-editor)
+  - [Livingdocs framework](#livingdocs-framework)
+    - [Design](#design-1)
+- [Contribution guidelines](#contribution-guidelines)
 
-## Table of contents
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [Livingdocs Documentation](#livingdocs-documentation)
-	- [Table of contents](#table-of-contents)
-	- [0. Overview](#0-overview)
-		- [About this document](#about-this-document)
-		- [Why should I bother?](#why-should-i-bother)
-	- [1. An intro to the Livingdocs architecture](#1-an-intro-to-the-livingdocs-architecture)
-	- [2. Getting started](#2-getting-started)
-		- [Create a Livingdocs design](#create-a-livingdocs-design)
-		- [Using the Livingdocs beta service](#using-the-livingdocs-beta-service)
-		- [Using the boilerplate app](#using-the-boilerplate-app)
-	- [3. Livingdocs core development](#3-livingdocs-core-development)
-		- [The Livingdocs user interface](#the-livingdocs-user-interface)
-		- [The Livingdocs server](#the-livingdocs-server)
-	- [4. Going up and beyond: the framework and editable.js](#4-going-up-and-beyond-the-framework-and-editablejs)
-		- [The Livingdocs Framework](#the-livingdocs-framework)
-		- [editable.js](#editablejs)
-	- [Appendix](#appendix)
-		- [The Livingdocs projects](#the-livingdocs-projects)
-		- [The server API](#the-server-api)
-		- [Custom installations](#custom-installations)
-		- [The development roadmap](#the-development-roadmap)
 
-<!-- /TOC -->
+## Concepts
 
-## 0. Overview
+- [x] [Introduction](./concepts/introduction.md) **[TO CHECK]**
+- [ ] What is a document?
+- [ ] What is a component?
+- [ ] What is a no-CMS?
+- [ ] What is a design?
 
-Livingdocs is a component based no-CMS written in javascript. Why a no-CMS? Because we
-believe that a CMS alone is not enough for today's multi-channel web landscape. Livingdocs is
-not only a CMS but a tool to get a hold of online communication.
-A few cornerstones:
-- It focuses on individual documents and a WYSIWYG editor to edit them on a component level.
-- Components are HTML and CSS only. There is no need to update templates in a database.
-- Every document is self contained and aware of its CSS and javascript dependencies
-- The HTML and CSS of the components are fully customizable and versioned
-- The rendering of the HTML out of components can be fully customized to fit different channels and products
 
-There are 2 ways two try out Livingdocs:
-- via our [beta service](http://www.livingdocs-beta.io) which offers a hosted Livingdocs with a REST API
-- via our customizing boilerplate app that allows you to create your own custom Livingdocs
 
-The first option is free and you can start immediately. For the customizing boilerplate we complete an evaluation contract with the goal that you will license and use Livingdocs for your company.
 
-To develop within Livingdocs you have to be fluent in Javascript and understand a little Angular.JS and/or Node.JS. Of course, in order to understand Livingdocs you should also know a thing or two about how Livingdocs works.
+## Public
 
-### About this document
 
-Unfortunately, we can't offer complete documentation yet. If you require some documentation that is not yet present, please drop us a note to dev@upfront.io or fork this project and send us a pull-request if you want to write it yourself.
+### Design
 
-The following chapters explain the basics about Livingdocs. There is no core documentation yet but it is unlikely that you will need to work in the core.
+- [ ] [Create and upload a design](./livingdocs-documentation/design)  **[TO MAKE]**
 
-The appendixes provide links to the various projects and structured API documentation. Note that most Livingdocs projects are closed-source and require access, so not all links might work for you.
 
-### Why should I bother?
+### Configuration
 
-Before you dig down into the tech details you might be curious why you should take the effort in the first place. How about this: you quickly read through our main concepts and then you can decide for yourself if Livingdocs is worth your effort.
+- [ ] Projects
+- [ ] Channels
+- [ ] Metadata
+- [ ] Collaboration
+- [ ] Text formatting
 
-[» Livingdocs Concepts](concepts/main_concepts.md)
 
-## 1. An intro to the Livingdocs architecture
+### APIs
 
-In this blog article we introduce the Livingdocs architecture and its parts. If you want to get started quickly with Livingdocs you can skip directly to the "A Livingdocs consumer" chapter. A little bit of background knowledge can never be bad though:
+- [x] [Publish and unpublish](./public/APIs/publish-plugin.md) **[TO CHECK]**
+- [ ] Document (aka Public)
+- [ ] Core: Extend server with custom code
 
-[» The Livingdocs architecture](http://blog.livingdocs.io/articles/1739)
 
-## 2. Getting started
+### Migrations
 
-### Create a Livingdocs design
+- [x] [Design and data structures](./public/migrations/migrations.md)  **[TO CHECK]**
 
-A design defines the components that can be used in your documents. As well as the CSS to style these components. Both HTML and CSS are fully customizable.
 
-[» Learn how to create a Livingdocs design](./design/create_designs.md)
+### Integrations
 
-### Using the Livingdocs beta service
+- [ ] Hugo
+- [ ] Webhooks
+- [ ] Authentication
 
-If your goal is to see your newly created design quickly in the editor or just to find out a little bit about how Livingdocs works then the service is your best option.
 
-[» Upload a custom design to Livingdocs Beta](./design/upload.md)
 
-[» Fetch documents from Livingdocs for your delivery app](delivery/api_essentials.md)
 
-[or use our sample blog app](https://github.com/upfrontIO/livingdocs-delivery)
+## Core
 
-### Using the boilerplate app
 
-The boilerplate app is a server-side customization project which fully integrates the Livingdocs core server. It allows customers to write their specific requirements like third-party system integrations or special rendering options.
-The boilerplate app is not publicly available and you will need to conclude an evaluation contract with us to get access.
+### Guides
 
-[» Process published documents](./boilerplate/publish_plugin.md)
+- [x] [Guide ideas from the team](./core/guide-ideas-from-the-team.md)
 
-[» Writing data migrations](./data-migrations/migrations.md)
+#### Local development
+- [ ] Set editor and server for development
+- [ ] Run a local editor against a remote server
+- [ ] Link local dependencies: server and/or framework
 
-<!-- [» Customize the document renderer]() -->
+#### Design
+- [ ] [Test your design in a local editor](./core/design) **[TO MAKE]**
 
-## 3. Livingdocs core development
+#### Customization
+- [x] [Add a custom include](./core/customization/add-custom-include.md) **[TO CHECK]**
 
-### The Livingdocs user interface
+#### Deployment
 
-### The Livingdocs server
+##### Requirements
+- [x] [Software](./core/guides/deployment/requirements.md) **[TO CHECK]**
+- [x] [Hardware](./core/guides/deployment/hardware-requirements.md) **[TO CHECK]**
 
-## 4. Going up and beyond: the framework and editable.js
+##### Infrastructure
+- [x] [Introduction](https://github.com/upfrontIO/infrastructure) **[EXTRACT FROM]**
+- [x] [Rancher](https://github.com/upfrontIO/livingdocs-rancher)  **[EXTRACT FROM]**
 
-### The Livingdocs Framework
+##### Amazon
+- [x] [Amazon S3](./core/guides/amazon/amazon_s3.md) **[TO CHECK]**
 
-The [`Livingdocs framework`](https://github.com/upfrontIO/livingdocs-framework) is the central piece of Livingdocs and defines the APIs for manipulating, displaying and serializing your documents. The Livingdocs framework is an isomorphic app that runs in the browser and in node.js.
+##### Container
+- [x] [livingdocs-docker](https://github.com/upfrontIO/livingdocs-docker) **[EXTRACT FROM]**
+- [x]  [docker/dokku](./core/deployment/container/docker.md) **[TO CHECK]**
+- [x] [dockerfile-elasticsearch](https://github.com/upfrontIO/dockerfile-elasticsearch) **[EXTRACT FROM]**
+- [x] [dockerfile-postgres](https://github.com/upfrontIO/dockerfile-postgres) **[EXTRACT FROM]**
 
-Here you can find detailed information about the most important objects in the Livingdocs framework and how to work with them:
+#### FAQ
+- [x] [CMS troobleshooting](./core/guides/faq/nzzdev_cms-troubleshoot-guide_README.md) **[TO CHECK]**
+- [x] [NZZ FAQ](./core/guides/faq/nzzdev_morpheus_livingdocs_README.md) **[TO CHECK]**
+- [x] [Profiling](./core/guides/faq/profiling.md) **[TO CHECK]**
 
-- [livingdoc](livingdocs-framework/livingdoc.md)
-- [component_tree](livingdocs-framework/component_tree.md)
-- [component_model](livingdocs-framework/component_model.md)
-- [browser_api](livingdocs-framework/browser_api.md)
 
-### editable.js
+### Architecture
 
-editable.js is our wrapper around the contenteditable API of the browser. It enables the Livingdocs framework to talk to the browser in order to allow inline editing and keyboard interaction. editable.js is designed to be used on a single paragraph or heading element (or any other block level element for that matter).
+- [ ] Introduction
+- [ ] How do server, editor and framework play together?
+- [x] [Document and document structure](./core/architecture/nzzdev_nzz-standard_docs_html-format.md) **[TO CHECK]**
+- [x] [HTML format](./core/architecture/nzzdev_nzz-standard_docs_json-format.md) **[TO CHECK]**
 
-The project is open-source and on Github. To learn more about Editable.JS it is best to use the [project's description](https://github.com/upfrontIO/editable.js).
+#### Delivery, see:
+  - [x] [NZZ delivery architecture](https://github.com/nzzdev/cms-guide/tree/master/architecture) **[TO EXTRACT]**
+  - [x] [Blog delivery](https://github.com/upfrontIO/livingdocs-delivery) **[TO EXTRACT]**
+  - [x] [Bluewin delivery](https://github.com/upfrontIO/bluewin-delivery) **[TO EXTRACT]**
+  - [x] [livingdocs-delivery-REST-API](./core/architecture/delivery) **[TO MAKE]**
 
-## Appendix
 
-### The Livingdocs projects
+### Livingdocs server
 
-- [editable.js (open-source)](https://github.com/upfrontIO/editable.js)
-- [Livingdocs framework (requires access)](https://github.com/upfrontIO/livingdocs-framework)
-- [Livingdocs editor (requires access)](https://github.com/upfrontIO/livingdocs-editor)
-- [Livingdocs server (requires access)](https://github.com/upfrontIO/livingdocs-server)
-- [Livingdocs boilerplate design (open-source)](https://github.com/upfrontIO/livingdocs-design-boilerplate)
-- [Livingdocs boilerplate server](https://github.com/upfrontIO/livingdocs-server-boilerplate)
-- [Livingdocs sample blog (open-source)](https://github.com/upfrontIO/livingdocs-delivery)
+- [x] [Core and editing API](./core/livingdocs-server) **[TO MAKE]**
+- [ ] Features
+- [ ] Testing
+- [ ] Configuration
 
-### The server API
+### Livingdocs editor
 
-- [API documentation](./server/home.md)
+  - [ ] Testing
+  - [ ] Configuration
+  - [x] [Metadata components](./core/livingdocs-editor/configurable-metadata-screen.md)
 
-### Custom installations
+### Livingdocs framework
 
-- [Installation requirements](./installation/requirements.md)
+- [ ] Design
+- [ ] Browser API
+- [ ] Node API
+- [x] [Editable.js](https://github.com/upfrontIO/editable.js) **[EXTRACT FROM]**
+- [ ] Testing
 
-### The development roadmap
+#### Design
 
-[» read the rough plan](./roadmap/overview.md)
+- [x] [Livingdocs manager - ldm](https://github.com/upfrontIO/livingdocs-manager) **[TO EXTRACT]**
+- [x] [Design viewer](https://github.com/upfrontIO/livingdocs-design-viewer) **[TO EXTRACT]**
+
+
+
+
+## Contribution guidelines
+
+- [x] [Documentation taxonomy](./contribution-guidelines/documentation/documentation-taxonomy.md)
+- [x] [Template for writing readmes](./contribution-guidelines/documentation/how-to-write-readmes.md)
+- [x] [Apply guides](https://github.com/upfrontIO/apply-guides)
+- [x] [Collaboration](./contribution-guidelines/collaboration) (merge from upfronIO/guides)
+- [x] [Git](./contribution-guidelines/git) (merge from upfronIO/guides)
+- [x] [Npm](./contribution-guidelines/npm) (merge from upfronIO/guides)
+- [x] [Style guides](./contribution-guidelines/style-guides) (merge from upfronIO/guides)
