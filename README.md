@@ -1,6 +1,6 @@
 # Livingdocs documentation
 
-- [Livingdocs concepts](#concepts)
+- [Concepts](#concepts)
 - [Public](#public)
   - [Design](#design)
   - [Configuration](#configuration)
