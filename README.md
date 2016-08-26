@@ -1,7 +1,7 @@
 # Livingdocs documentation
 
 - [Livingdocs concepts](#concepts)
-- [Public documentation](#public-documentation)
+- [Public](#public)
   - [Design](#design)
   - [Configuration](#configuration)
   - [APIs](#apis)
@@ -14,7 +14,7 @@
     - [Customization](#customization)
     - [Deployment](#deployment)
       - [Requirements](#requirements)
-      - [Infrastructure see](#infrastructure-see)
+      - [Infrastructure](#infrastructure)
       - [Amazon](#amazon)
       - [Container](#container)
     - [FAQ](#faq)
@@ -39,7 +39,7 @@
 
 
 
-## Public documentation
+## Public
 
 
 ### Design
@@ -58,14 +58,14 @@
 
 ### APIs
 
-- [x] [Publish and unpublish](./public-documentation/APIs/publish-plugin.md) **[TO CHECK]**
+- [x] [Publish and unpublish](./public/APIs/publish-plugin.md) **[TO CHECK]**
 - [ ] Document (aka Public)
 - [ ] Core: Extend server with custom code
 
 
 ### Migrations
 
-- [x] [Design and data structures](./public-documentation/migrations/migrations.md)  **[TO CHECK]**
+- [x] [Design and data structures](./public/migrations/migrations.md)  **[TO CHECK]**
 
 
 ### Integrations
@@ -101,7 +101,7 @@
 - [x] [Software](./core-documentation/guides/deployment/requirements.md) **[TO CHECK]**
 - [x] [Hardware](./core-documentation/guides/deployment/hardware-requirements.md) **[TO CHECK]**
 
-##### Infrastructure (Full repo links)
+##### Infrastructure
 - [x] [Introduction](https://github.com/upfrontIO/infrastructure) **[EXTRACT FROM]**
 - [x] [Rancher](https://github.com/upfrontIO/livingdocs-rancher)  **[EXTRACT FROM]**
 
