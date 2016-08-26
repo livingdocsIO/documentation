@@ -1,6 +1,6 @@
 # Livingdocs documentation
 
-- [Livingdocs concepts](#livingdocs-concepts)
+- [Livingdocs concepts](#concepts)
 - [Public documentation](#public-documentation)
   - [Design](#design)
   - [Configuration](#configuration)
@@ -28,9 +28,9 @@
 
 
 
-## Livingdocs concepts
+## Concepts
 
-- [x] [Introduction](./livingdocs-concepts/introduction.md) **[TO CHECK]**
+- [x] [Introduction](./concepts/introduction.md) **[TO CHECK]**
 - [ ] What is a document?
 - [ ] What is a component?
 - [ ] What is a no-CMS?
