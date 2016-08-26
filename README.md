@@ -24,7 +24,6 @@
   - [Livingdocs framework](#livingdocs-framework)
     - [Design](#design-1)
 - [Contribution guidelines](#contribution-guidelines)
-  - [Guides merge the guides repository in here](#guides-merge-the-guides-repository-in-here)
 
 
 
@@ -118,6 +117,7 @@
 #### FAQ
 - [x] [CMS troobleshooting](./core-documentation/guides/faq/nzzdev_cms-troubleshoot-guide_README.md) **[TO CHECK]**
 - [x] [NZZ FAQ](./core-documentation/guides/faq/nzzdev_morpheus_livingdocs_README.md) **[TO CHECK]**
+- [x] [Profiling](./core-documentation/guides/faq/profiling.md) **[TO CHECK]**
 
 
 ### Architecture
@@ -165,13 +165,10 @@
 
 ## Contribution guidelines
 
-- [x] [Documentation taxonomy]()
-- [x] [Template for writing readmes]()
+- [x] [Documentation taxonomy](./contribution-guidelines/documentation/documentation-taxonomy.md)
+- [x] [Template for writing readmes](./contribution-guidelines/documentation/how-to-write-readmes.md)
 - [x] [Apply guides](https://github.com/upfrontIO/apply-guides)
-
-### Guides
-- [x] [Guides](./contribution-guidelines/guides) (merge from upfronIO/guides)
-- [ ] Extend the CSS guide: dos and don’ts
-- [x] [How to write readmes](./contribution-guidelines/how-to-write-readmes.md)
-- [x] [Documentation taxonomy](./contribution-guidelines/documentation-taxonomy.md)
-
+- [x] [Collaboration](./contribution-guidelines/collaboration) (merge from upfronIO/guides)
+- [x] [Git](./contribution-guidelines/git) (merge from upfronIO/guides)
+- [x] [Npm](./contribution-guidelines/npm) (merge from upfronIO/guides)
+- [x] [Style guides](./contribution-guidelines/style-guides) (merge from upfronIO/guides)
