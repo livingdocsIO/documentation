@@ -18,11 +18,11 @@
       - [Amazon](#amazon)
       - [Container](#container)
     - [FAQ](#faq)
-    - [Delivery, see:](#delivery-see)
+    - [Delivery](#delivery)
   - [Livingdocs server](#livingdocs-server)
   - [Livingdocs editor](#livingdocs-editor)
   - [Livingdocs framework](#livingdocs-framework)
-    - [Design](#design-1)
+    - [Design](#design)
 - [Contribution guidelines](#contribution-guidelines)
 
 
@@ -127,7 +127,7 @@
 - [x] [Document and document structure](./core/architecture/nzzdev_nzz-standard_docs_html-format.md) **[TO CHECK]**
 - [x] [HTML format](./core/architecture/nzzdev_nzz-standard_docs_json-format.md) **[TO CHECK]**
 
-#### Delivery, see:
+#### Delivery:
   - [x] [NZZ delivery architecture](https://github.com/nzzdev/cms-guide/tree/master/architecture) **[TO EXTRACT]**
   - [x] [Blog delivery](https://github.com/upfrontIO/livingdocs-delivery) **[TO EXTRACT]**
   - [x] [Bluewin delivery](https://github.com/upfrontIO/bluewin-delivery) **[TO EXTRACT]**
