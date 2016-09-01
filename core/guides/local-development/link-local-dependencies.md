@@ -6,7 +6,7 @@ There is two Livingdocs dependencies:
 
 li-server is a dependency of the service-servers.
 
-li-framework is both a dependency for the editors and the service-servers.
+li-framework is both a dependency for the editors and the li-server.
 
 When you’re developing locally a dependency, you might want to integration test your local changes in the service-server or in the editor instance.
 
