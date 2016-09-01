@@ -44,7 +44,7 @@
 
 ### Design
 
-- [ ] [Create and upload a design](./livingdocs-documentation/design)  **[TO MAKE]**
+- [ ] [Create and upload a design](./public/design)  **[TO MAKE]**
 
 
 ### Configuration
