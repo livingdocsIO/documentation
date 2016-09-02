@@ -59,6 +59,7 @@
 ### APIs
 
 - [x] [Publish and unpublish](./public/APIs/publish-plugin.md) **[TO CHECK]**
+- [x] [Print API](./public/APIs/print_api.md) **[TO CHECK]**
 - [ ] Document (aka Public)
 - [ ] Core: Extend server with custom code
 
