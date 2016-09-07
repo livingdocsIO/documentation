@@ -9,6 +9,7 @@
 ```bash
 git clone git@github.com:upfrontIO/livingdocs-design-boilerplate.git
 cd livingdocs-design-boilerplate
+export DESIGN_PATH=`pwd`
 npm install
 ```
 
@@ -40,7 +41,6 @@ In `src/config.json` add a new element to the `components` array:
 ## Building the design
 
 ```bash
-cd path-to-your-design
 grunt build
 ```
 
@@ -50,7 +50,7 @@ In our local service-server, the design repository is set by default to a remote
 
 We can overwrite this configuration by creating  a new file:
 ```bash
-cd path-to-your-service-server
+cd $SERVICE_SERVER_PATH
 cd conf/secrets
 touch local.coffee
 ```
@@ -66,43 +66,43 @@ The service-server is also a design repository, so it can point its own design r
 
 ## Uploading the design
 
-1. Install a tool called the livingdocs-manager or ldm:
+1. Install the livingdocs-manager or ldm:
   ```bash
   npm install -g livingdocs-manager
   ```
 
-
 2. Make sure your service-server is started, if not:
   ```bash
-  cd path-to-your-service-server
+  cd $SERVICE_SERVER_PATH
   export ENVIRONMENT=local && npm start
   ```
 
 3. Publish and set the new design with ldm:
+
   The ldm tool asks for:
   - a design repository host: http://localhost:9090
   - your service-server's credentials: email/password
 
   ```bash
-  cd path-to-your-design
+  cd $DESIGN_PATH
   ldm design:publish dist/
   ldm channel:design-version:add --name {designName} --version {x.y.z} --channel 1
   ldm channel:design-version:current --name {designName} --version {x.y.z} --channel 1
   ```
 
-    Note: {designName} and {x.y.z}can be found in `src/config.json`
+    Note: `{designName}` and `{x.y.z}` can be found in `src/config.json`
 
 ## Trying the new design
 
 1. Restart your service-server:
   ```bash
-  cd path-to-your-service-server
+  cd $SERVICE_SERVER_PATH
   export ENVIRONMENT=local && npm start
   ```
 
 2. Start your local editor:
   ```bash
-  cd path-to-your-editor
+  cd $EDITOR_PATH
   export ENVIRONMENT=local && npm start
   ```
 

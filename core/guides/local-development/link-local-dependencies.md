@@ -12,7 +12,7 @@ When you’re developing locally a dependency, you might want to integration tes
 
 ## Examples
 
-### link li-server to the service-server
+### Link li-server to the service-server
 
 1. Prerequisites
 
@@ -29,16 +29,16 @@ When you’re developing locally a dependency, you might want to integration tes
 
 3. Linking the li-server dependency
   ```bash
-  cd path-to-your-installed-service-server
+  cd $SERVICE_SERVER_PATH
   npm link @livingdocs/server
   ```
 
 4. **When you make changes to the li-server do not forget to restart your service-server**
 
-### link li-framework to the editor
+### Link li-framework to the editor
 
 1. Prerequisites
-  One of:
+  one of:
   - [editor and service-server](./editor-and-service-server.md)
   - [editor only](./editor-only.md)
 
@@ -55,7 +55,7 @@ When you’re developing locally a dependency, you might want to integration tes
 
 3. Linking the li-framework dependency
   ```bash
-  cd path-to-your-installed-editor
+  cd $EDITOR_PATH
   npm link @livingdocs/framework
   ```
 

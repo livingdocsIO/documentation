@@ -1,25 +1,27 @@
-# Node
+# Node setup
 
-## nvm
-```bash
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
-```
+## Prerequisites
 
-https://github.com/creationix/nvm
+- nvm
+  ```bash
+  wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
+  ```
 
-## jq
+  https://github.com/creationix/nvm
 
-- OSX
-```bash
-brew install jq
-```
+- jq
 
-- Ubuntu
-```bash
-sudo apt-get install jq
-```
+  - OSX
+  ```bash
+  brew install jq
+  ```
 
-https://stedolan.github.io/jq/download/
+  - Ubuntu
+  ```bash
+  sudo apt-get install jq
+  ```
+
+  https://stedolan.github.io/jq/download/
 
 ## Install node and npm
 
@@ -31,6 +33,7 @@ npm install -g npm@"$(jq -r '.engines.npm' package.json)"
 nvm alias default $(node -v)
 ```
 
+****
 
 # TODO
 - jq part seems overkill, at least let's have a dedicated repo for node and npm version ?
