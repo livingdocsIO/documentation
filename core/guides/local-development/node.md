@@ -3,11 +3,8 @@
 ## Prerequisites
 
 - nvm
-  ```bash
-  wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.4/install.sh | bash
-  ```
 
-  https://github.com/creationix/nvm
+  https://github.com/creationix/nvm#install-script
 
 - jq
 
@@ -32,8 +29,3 @@ nvm install "$(jq -r '.engines.node' package.json)"
 npm install -g npm@"$(jq -r '.engines.npm' package.json)"
 nvm alias default $(node -v)
 ```
-
-****
-
-# TODO
-- jq part seems overkill, at least let's have a dedicated repo for node and npm version ?

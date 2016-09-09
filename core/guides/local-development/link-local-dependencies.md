@@ -12,7 +12,7 @@ When you’re developing locally a dependency, you might want to integration tes
 
 ## Examples
 
-### Link li-server to the service-server
+### Link li-server in the service-server
 
 1. Prerequisites
 
@@ -35,9 +35,9 @@ When you’re developing locally a dependency, you might want to integration tes
 
 4. **When you make changes to the li-server do not forget to restart your service-server**
 
-### Link li-framework to the editor
+### Link li-framework in the editor
 
-1. Prerequisites
+1. Prerequisite
   one of:
   - [editor and service-server](./editor-and-service-server.md)
   - [editor only](./editor-only.md)

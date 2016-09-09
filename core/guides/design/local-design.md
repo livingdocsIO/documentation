@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-[editor and service-server](./editor-and-service-server.md)
+[An editor and a service-server](./editor-and-service-server.md)
 
 ## Fetching the design
 
@@ -28,7 +28,7 @@ In the design repository, create a new file named `h3.html` in `src/components`:
 </h3>
 ```
 
-In `src/config.json` add a new element to the `components` array:
+In `src/config.json` add a new `"h3"` element to the `components` array:
 ```json
 "groups": [
   {
@@ -109,8 +109,3 @@ The service-server is also a design repository, so it can point its own design r
 3. Go to
   http://localhost:9000
 
-
-****
-# TODO
-- Do we still need to set the design_repository in the editor or is it fetched from the server ?
-- ldm is a three steps process, asking three times for credentials, design name and version plus host

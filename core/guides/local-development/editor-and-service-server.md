@@ -56,4 +56,4 @@ cd $EDITOR_PATH
 export ENVIRONMENT=local && npm start
 ```
 
-Go to http://localhost:9000 and login with the credentials you created during the [initial setup](#initial-setup).
+Go to http://localhost:9000 and login with the credentials you created during the initial-setup.

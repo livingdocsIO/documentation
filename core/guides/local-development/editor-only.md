@@ -34,8 +34,3 @@ Ask for credentials of the `staging` or the `dokku_staging` server according to 
 
 Go to http://localhost:9000 and login with the credentials you just get.
 
-
-****
-
-# TODO
-- Is it possible to have the same name for the staging server ?

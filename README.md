@@ -82,15 +82,16 @@
 
 ### Guides
 
-- [x] [Guide ideas from the team](./core/guide-ideas-from-the-team.md)
+- [x] [Guide ideas from the team](./tree/master/core/guides)
 
 #### Local development
-- [ ] Set editor and server for development
-- [ ] Run a local editor against a remote server
-- [ ] Link local dependencies: server and/or framework
+- [x] [Set editor and service-server for development](./core/guides/local-development/editor-and-service-server.md)
+- [x] [Run a local editor against a remote server](./core/guides/local-development/editor-only.md)
+- [x] [Link local dependencies: server and/or framework](./core/guides/local-development/link-local-dependencies.md)
 
 #### Design
-- [ ] [Test your design in a local editor](./core/design) **[TO MAKE]**
+- [x] [Use and change a local design](./core/guides/design/local-design.md)
+- [ ] [Local design](./tree/master/core/design) **[EXTRACT FROM]**
 
 #### Customization
 - [x] [Add a custom include](./core/customization/add-custom-include.md) **[TO CHECK]**
