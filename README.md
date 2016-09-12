@@ -18,11 +18,11 @@
       - [Amazon](#amazon)
       - [Container](#container)
     - [FAQ](#faq)
-    - [Delivery, see:](#delivery-see)
+    - [Delivery](#delivery)
   - [Livingdocs server](#livingdocs-server)
   - [Livingdocs editor](#livingdocs-editor)
   - [Livingdocs framework](#livingdocs-framework)
-    - [Design](#design-1)
+    - [Design](#design)
 - [Contribution guidelines](#contribution-guidelines)
 
 
@@ -44,7 +44,7 @@
 
 ### Design
 
-- [ ] [Create and upload a design](./livingdocs-documentation/design)  **[TO MAKE]**
+- [ ] [Create and upload a design](./public/design)  **[TO MAKE]**
 
 
 ### Configuration
@@ -82,15 +82,16 @@
 
 ### Guides
 
-- [x] [Guide ideas from the team](./core/guide-ideas-from-the-team.md)
+- [x] [Guide ideas from the team](./tree/master/core/guides)
 
 #### Local development
-- [ ] Set editor and server for development
-- [ ] Run a local editor against a remote server
-- [ ] Link local dependencies: server and/or framework
+- [x] [Set editor and service-server for development](./core/guides/local-development/editor-and-service-server.md)
+- [x] [Run a local editor against a remote server](./core/guides/local-development/editor-only.md)
+- [x] [Link local dependencies: server and/or framework](./core/guides/local-development/link-local-dependencies.md)
 
 #### Design
-- [ ] [Test your design in a local editor](./core/design) **[TO MAKE]**
+- [x] [Use and change a local design](./core/guides/design/local-design.md)
+- [ ] [Local design](./tree/master/core/design) **[EXTRACT FROM]**
 
 #### Customization
 - [x] [Add a custom include](./core/customization/add-custom-include.md) **[TO CHECK]**
@@ -127,7 +128,7 @@
 - [x] [Document and document structure](./core/architecture/nzzdev_nzz-standard_docs_html-format.md) **[TO CHECK]**
 - [x] [HTML format](./core/architecture/nzzdev_nzz-standard_docs_json-format.md) **[TO CHECK]**
 
-#### Delivery, see:
+#### Delivery:
   - [x] [NZZ delivery architecture](https://github.com/nzzdev/cms-guide/tree/master/architecture) **[TO EXTRACT]**
   - [x] [Blog delivery](https://github.com/upfrontIO/livingdocs-delivery) **[TO EXTRACT]**
   - [x] [Bluewin delivery](https://github.com/upfrontIO/bluewin-delivery) **[TO EXTRACT]**
