@@ -18,19 +18,16 @@ List of the available editors:
 
 ## Start up
 
-Depending on your editor choice, choose one from the following:
+In this configuration, the editor needs a remote staging server.
 
-- For the livingdocs-editor:
+For example:
 ```bash
-export ENVIRONMENT=dokku_staging && npm start
+export ENVIRONMENT=<your staging environment>
+```
+Then start the editor:
+```bash
+npm start
 ```
 
-- For the nzz-editor:
-```bash
-export ENVIRONMENT=staging && npm start
-```
-
-Ask for credentials of the `staging` or the `dokku_staging` server according to your previous choice.
-
-Go to http://localhost:9000 and login with the credentials you just get.
+Now, just use the credentials of your staging server to login at: http://localhost:9000.
 
