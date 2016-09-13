@@ -1,7 +1,5 @@
 # Livingdocs Publish Plugin
 
-[« back](../README.md)
-
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
 - [Livingdocs Publish Plugin](#livingdocs-publish-plugin)
@@ -64,5 +62,3 @@ Just as before you get a `documentVersion` object for the document that was unpu
 The boilerplate app implements a very simple webhook module that you can use to send the publish and unpublish payloads to a third-party system via the web. To enable the wehbook module you need to uncomment the feature in the app's [configuration](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/conf/environments/all.coffee#L81) as well as in the [channel configuration](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/channels/article_config.coffee#L29). You will also need to adapt the [url endpoints](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/conf/environments/all.coffee#L84) to match the ones of your third-party system.
 
 The implementation is extremely bare-bone and only suited to get you started quickly. Please provide your own implementation for production code or at least carefully review the sample code to your requirements.
-
-[« back](../README.md)

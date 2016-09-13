@@ -1,7 +1,5 @@
 # Upload your design to livingdocs-beta
 
-[« back](../README.md)
-
 ## Overview
 
 To be honest, this process is a bit bumpy and lacks UI support. Please bear with us, we will make this super-easy for you in the future. For now though there are quite a lot of requirements.
@@ -43,5 +41,3 @@ ldm project:design:default --name bootstrap --version 1.0.0
 You will be asked to supply your username and password before the configuration can be updated. This will also set the new design as the default design that will be used when creating new documents.
 
 Congrats, you've done it! Now reload the browser page within your Livingdocs Beta account and press "Create Document" and you should see a new document with your design.
-
-[« back](../README.md)
