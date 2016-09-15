@@ -1,11 +1,6 @@
 
-## Migration subjects
+## When are migrations needed after design changes?
 
-![](./migration-subjects.png)
-
-The above schema shows the different systems involved with Livingdocs data. The definition is given in the design, i.e., Morpheus' config.json. Livingdocs uses this definition to edit and publish documents and send them to the delivery channel.
-
-The following list looks at the different relevant data definitions at each step and describes how the data affects migration scenarios. The data definitions in italics are only given for completeness and are not relevant for migrations.
 
 #### Component Templates
 
@@ -37,7 +32,7 @@ Adding new layouts is also not subject to a migration. Removing or renaming a la
 
 #### Metadata (fieldData)
 
-The metadata section of a design defines which parts of an article's content should be automatically parsed for use in metadata. There are two types of content that can be parsed for the metadata: text and images. 
+The metadata section of a design defines which parts of an article's content should be automatically parsed for use in metadata. There are two types of content that can be parsed for the metadata: text and images.
 
 Changes to the metadata that introduce objects that are more than one level deep are breaking changes and will make saving the document impossible. They do not require a migration but a change in the (Livingdocs) server-side validation code (JSON schema). Additions of objects with only one level or any other datatype are not breaking.
 
