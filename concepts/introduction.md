@@ -1,11 +1,10 @@
-Previously named: [main_concepts.md](https://github.com/upfrontIO/livingdocs/blob/master/concepts/main_concepts.md)
 
-## Concepts
+## Introduction into Livingdocs
 
 
-### Regain control over your HTML
+### What is is all about?
 
-HTML and CSS always work together. Creating a CSS design can only work if you know how the HTML looks. Or better yet you can define your own HTML. Traditionally developers have to create templates for that on a server somewhere for a particular CMS. With Livindocs this is different.
+Regain control over your HTML. HTML and CSS always work together. Creating a CSS design can only work if you know how the HTML looks. Or better yet you can define your own HTML. Traditionally developers have to create templates for that on a server somewhere for a particular CMS. With Livindocs this is different.
 
 In Livingdocs you specify all HTML components as part of a Livingdocs design which is just a JSON file you can create (More on this [here](../design/create_designs.md)).
 
@@ -17,7 +16,7 @@ For example a component template for a paragraph looks like this:
 </p>
 ```
 
-With that you regain full control over the HTML. This is the guiding principle of Livingdocs. We manage your content. How that content looks and behaves is up to you.
+With that you regain full control over the HTML. This is the guiding principle of Livingdocs. Livingdocs manages your content. How that content looks and behaves is up to you.
 
 
 ### Work with your content the web way
@@ -27,9 +26,10 @@ A Livingdocs document is an abstract representation of an HTML document. It's st
 From the user's perspective a `livingdoc` is a page with a list of components that can be dragged around, selected, edited and deleted individually. And for you as a developer a `livingdoc` looks the same. You just use an API instead of a UI. But the underlying concepts of components and editable parts are the same.
 
 
-### True multi channel publishing
+### Multi channel publishing
 
-Livingdocs is very different from other CMSes in that it does not make any assumptions about how you deliver your content. From a Livingdocs perspective a single-page app, an integration into another CMS, or a native app are all the same. In essence, the Livingdocs delivery layer is:
+Livingdocs is very different from other Content Management Systems in that it does not make any assumptions about how you deliver your content. From a Livingdocs perspective a single-page app, an integration into another CMS, or a native app are all the same. In essence, the Livingdocs delivery layer is:
+
 - a set of APIs that provide the necessary data to make rendering really easy
 - a set of boilerplate apps that you can fork and use if they fit your needs
 
