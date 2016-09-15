@@ -142,6 +142,7 @@ Experimental:
 
 #### Editable.js
 
+- [Documentation and demo](http://upfrontio.github.io/editable.js)
 - Repo: [upfrontIO/editable.js](https://github.com/upfrontIO/editable.js)
 
 
