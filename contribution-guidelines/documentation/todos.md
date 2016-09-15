@@ -87,9 +87,9 @@ Configure a Livingdocs server.
 - [x] Repo: [dockerfile-postgres](https://github.com/upfrontIO/dockerfile-postgres) **[EXTRACT FROM]**
 
 #### FAQ
+
 - [x] [CMS troobleshooting](./core/guides/faq/nzzdev_cms-troubleshoot-guide_README.md) **[TO CHECK]**
 - [x] [NZZ FAQ](./core/guides/faq/nzzdev_morpheus_livingdocs_README.md) **[TO CHECK]**
-- [x] [Profiling](./core/guides/faq/profiling.md) **[TO CHECK]**
 
 
 ### Architecture

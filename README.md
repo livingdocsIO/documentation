@@ -181,7 +181,11 @@ Experimental:
 
 - [CMS troobleshooting](./core/guides/faq/nzzdev_cms-troubleshoot-guide_README.md)
 - [NZZ FAQ](./core/guides/faq/nzzdev_morpheus_livingdocs_README.md)
-- [Profiling](./core/guides/faq/profiling.md)
+
+
+### Development Tips
+
+- [Profiling](./core/development-tips/profiling.md)
 
 ### Contribution guidelines
 
