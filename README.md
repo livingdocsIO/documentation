@@ -106,15 +106,15 @@ Experimental:
 
 #### Editor, Server and Framework development
 
-- [Use and update a design during development](./core/guides/design/local-design.md)
-- [Set editor and service-server for development](./core/guides/local-development/editor-and-service-server.md)
-- [Run a local editor against a remote server](./core/guides/local-development/editor-only.md)
-- [Link local dependencies: server and/or framework](./core/guides/local-development/link-local-dependencies.md)
+★ [Use and update a design during development](./core/guides/design/local-design.md)  
+★ [Set editor and service-server for development](./core/guides/local-development/editor-and-service-server.md)  
+★ [Run a local editor against a remote server](./core/guides/local-development/editor-only.md)  
+★ [Link local dependencies: server and/or framework](./core/guides/local-development/link-local-dependencies.md)  
 
 
 #### Livingdocs Server customization
 
-- [Add a custom include](./core/guides/customization/add-custom-include.md)
+★ [Add a custom include](./core/guides/customization/add-custom-include.md)
 
 
 ### Documentation for selected core repos:
