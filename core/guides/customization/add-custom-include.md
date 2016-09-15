@@ -1,6 +1,7 @@
-## Needs `li-server` version `v28.9.0`
+### Register includes in the Livingdocs Server
 
-### How to use includes rendering
+Introduced in `v28.9.0`
+
 
 #### embed-teaser
 
@@ -91,4 +92,3 @@ As far as I understand in the multiple "pipes" (NZZ has 9): print channel pipe, 
 In the middle of the diagram NZZ wants to know exactly what are the structure and the content of all the components. They don't want to have a mystery component that passes through the `render-pipeline` without revealing itself.
 
 So instead of parsing HTML and replacing `doc-include` by their rendition at the far end of the `render-pipeline` they crawl the component tree and replace `doc-include` component before hand.
-
