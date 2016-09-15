@@ -1,30 +1,19 @@
+
 # Livingdocs documentation
 
-- [Concepts](#concepts)
-- [Public](#public)
-  - [Design](#design)
-  - [Configuration](#configuration)
-  - [APIs](#apis)
-  - [Migrations](#migrations)
-  - [Integrations](#integrations)
-- [Core](#core)
-  - [Guides](#guides)
-    - [Local development](#local-development)
-    - [Working with designs](#working-with-designs)
-    - [Customization](#customization)
-    - [Deployment](#deployment)
-      - [Requirements](#requirements)
-      - [Infrastructure](#infrastructure)
-      - [Amazon](#amazon)
-      - [Container](#container)
-    - [FAQ](#faq)
-    - [Delivery](#delivery)
-  - [Livingdocs server](#livingdocs-server)
-  - [Livingdocs editor](#livingdocs-editor)
-  - [Livingdocs framework](#livingdocs-framework)
-    - [Design](#design)
-- [Contribution guidelines](#contribution-guidelines)
 
+#### Structure of the documenation
+
+The documentation is structured in three main parts:
+
+
+- [Public](#public)
+
+  Explains how to create your designs, configure and use a Livingdocs Server.
+
+- [Core](#core)
+
+  This part is aimed at developers who want to contribute to Livingdocs core repositories.
 
 
 
