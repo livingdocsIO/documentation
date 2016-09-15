@@ -162,15 +162,6 @@
 - [x] [Design viewer](https://github.com/upfrontIO/livingdocs-design-viewer) **[TO EXTRACT]**
 
 
+### Contribution guidelines
 
-
-## Contribution guidelines
-
-- [x] [Documentation taxonomy](./contribution-guidelines/documentation/documentation-taxonomy.md)
-- [x] [Template for writing readmes](./contribution-guidelines/documentation/how-to-write-readmes.md)
-- [x] [Apply guides](https://github.com/upfrontIO/apply-guides)
-- [x] [Collaboration](./contribution-guidelines/collaboration) (merge from upfronIO/guides)
-- [x] [Git](./contribution-guidelines/git) (merge from upfronIO/guides)
-- [x] [Npm](./contribution-guidelines/npm) (merge from upfronIO/guides)
-- [x] [Ramp-up](./contribution-guidelines/ramp-up) (merge from upfronIO/guides)
-- [x] [Style guides](./contribution-guidelines/style-guides) (merge from upfronIO/guides)
+If you want to contribute in code or documentation or have to create a new repository please read our [contribution guidelines](./contribution-guidelines).
