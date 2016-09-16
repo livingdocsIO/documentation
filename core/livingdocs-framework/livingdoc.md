@@ -1,5 +1,5 @@
 
-# Livingdoc
+# Framework: Livingdoc
 
 A `Livingdoc` represents a Livingdocs document. It consists of a [componentTree](component_tree.md) and can have one or more views.
 
@@ -66,19 +66,19 @@ Here you see a serialized version of a `livingdoc` in JSON. This is an example d
   "content": [
     {
       "id": "doc-18fsfqsiq0",
-      "identifier": "ghibli.cover",
+      "component": "cover",
       "content": {}
     },
     {
       "id": "doc-18fsfr5f50",
-      "identifier": "ghibli.title",
+      "component": "title",
       "content": {
         "title": "Storytellers have more fun"
       }
     },
     {
       "id": "doc-18fsfra8r0",
-      "identifier": "ghibli.lead",
+      "component": "lead",
       "content": {
         "text": "Yet, if we look at the interesting people in our lives, I think we’ll find few of them have climbed Mount Everest or broken a wild mustang. Most have never wrestled an alligator or gotten embroiled in a covert operation. Most haven’t seen a whole lot of real excitement."
       }

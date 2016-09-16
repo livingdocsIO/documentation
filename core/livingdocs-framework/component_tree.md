@@ -1,5 +1,5 @@
 
-# ComponentTree
+# Framework: ComponentTree
 
 A component tree is a tree of [components](component_model.md). Just like the DOM is a tree of DOM nodes.
 

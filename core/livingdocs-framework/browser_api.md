@@ -1,5 +1,5 @@
 
-# Livingdocs-Engine Browser API
+# Framework: Browser API
 
 ## Working with the current document
 

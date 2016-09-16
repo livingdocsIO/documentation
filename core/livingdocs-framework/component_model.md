@@ -1,5 +1,5 @@
 
-# ComponentModel
+# Framework: ComponentModel
 
 A component model is the model of a component. You edit a `livingdoc` by creating, updating and removing `componentModels` in a [componentTree](component_tree.md).
 
