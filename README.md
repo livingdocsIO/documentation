@@ -172,4 +172,5 @@
 - [x] [Collaboration](./contribution-guidelines/collaboration) (merge from upfronIO/guides)
 - [x] [Git](./contribution-guidelines/git) (merge from upfronIO/guides)
 - [x] [Npm](./contribution-guidelines/npm) (merge from upfronIO/guides)
+- [x] [Ramp-up](./contribution-guidelines/ramp-up) (merge from upfronIO/guides)
 - [x] [Style guides](./contribution-guidelines/style-guides) (merge from upfronIO/guides)
