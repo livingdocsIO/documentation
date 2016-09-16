@@ -1,176 +1,194 @@
+
 # Livingdocs documentation
 
-- [Concepts](#concepts)
+
+#### Structure of the documenation
+
+The documentation is structured in two main parts:
+
+
 - [Public](#public)
-  - [Design](#design)
-  - [Configuration](#configuration)
-  - [APIs](#apis)
-  - [Migrations](#migrations)
-  - [Integrations](#integrations)
+
+  Explains how to create your designs, configure and use a Livingdocs Server.
+
 - [Core](#core)
-  - [Guides](#guides)
-    - [Local development](#local-development)
-    - [Working with designs](#working-with-designs)
-    - [Customization](#customization)
-    - [Deployment](#deployment)
-      - [Requirements](#requirements)
-      - [Infrastructure](#infrastructure)
-      - [Amazon](#amazon)
-      - [Container](#container)
-    - [FAQ](#faq)
-    - [Delivery](#delivery)
-  - [Livingdocs server](#livingdocs-server)
-  - [Livingdocs editor](#livingdocs-editor)
-  - [Livingdocs framework](#livingdocs-framework)
-    - [Design](#design)
-- [Contribution guidelines](#contribution-guidelines)
+
+  This part is aimed at developers who want to contribute to Livingdocs core repositories.
 
 
+#### Get to know the Livingdocs basics
 
-
-## Concepts
-
-- [x] [Introduction](./concepts/introduction.md) **[TO CHECK]**
-- [ ] What is a document?
-- [ ] What is a component?
-- [ ] What is a no-CMS?
-- [ ] What is a design?
-
-
+- [Introduction into Livingdocs](./concepts/introduction.md)
 
 
 ## Public
 
+#### Design
 
-### Design
+Guides:
 
-- [ ] [Create and upload a design](./public/design)  **[TO MAKE]**
-
-
-### Configuration
-
-- [ ] Projects
-- [ ] Channels
-- [ ] Metadata
-- [ ] Collaboration
-- [ ] Text formatting
+★ Create and upload a design ✍
 
 
-### APIs
+Learn about Livingdocs designs which define the components you can use in your documents.
 
-- [x] [Publish and unpublish](./public/APIs/publish-plugin.md) **[TO CHECK]**
-- [ ] Document (aka Public)
-- [ ] Core: Extend server with custom code
-
-
-### Migrations
-
-- [x] [Design and data structures](./public/migrations/migrations.md)  **[TO CHECK]**
+- How a design works ✍
+- Design Configuration Options ✍
 
 
-### Integrations
+#### Livingdocs Server Configuration
 
-- [ ] Hugo
-- [ ] Webhooks
-- [ ] Authentication
+Configure a Livingdocs server:
 
+- Projects ✍
+- Channels ✍
+- Metadata ✍
+- Collaboration ✍
+- Text formatting and spellchecking ✍
+
+
+Extend a Livingdocs server:
+
+- Extend a Livingdocs server with custom modules ✍
+
+
+#### Livingdocs Server Public API
+
+- [Publish and unpublish](./public/APIs/publish_plugin.md)
+- Document API ✍
+- Webhooks & Evens ✍
+
+
+#### Livingdocs Server Integrations
+
+- Hugo ✍
+- Authentication ✍
+
+
+#### Document Migrations
+
+Learn how you can roll out with breaking changes in your design and how you can update your documents in bulk with our migration framework:
+
+- [Design and data structures](./public/migrations/migrations.md)
 
 
 
 ## Core
 
+This documentation applies if you work on core Livingdocs repositories or want to send pull requests.
+
+The main core repositories are:
+
+- [upfrontIO/livingdocs-editor](https://github.com/upfrontIO/livingdocs-editor)
+- [upfrontIO/livingdocs-server](https://github.com/upfrontIO/livingdocs-server)
+- [upfrontIO/livingdocs-framework](https://github.com/upfrontIO/livingdocs-framework)
+- [upfrontIO/editable.js](https://github.com/upfrontIO/editable.js)
+
+Infrastructure and hosting repos:
+
+- [upfrontIO/infrastructure](https://github.com/upfrontIO/infrastructure)
+- [upfrontIO/livingdocs-rancher](https://github.com/upfrontIO/livingdocs-rancher)
+- [upfrontIO/livingdocs-docker](https://github.com/upfrontIO/livingdocs-docker)
+- [upfrontIO/dockerfile-elasticsearch](https://github.com/upfrontIO/dockerfile-elasticsearch)
+- [upfrontIO/dockerfile-postgres](https://github.com/upfrontIO/dockerfile-postgres)
+
+Development Support repos:
+
+- [upfrontIO/livingdocs-manager](https://github.com/upfrontIO/livingdocs-manager)
+- [upfrontIO/apply-guides](https://github.com/upfrontIO/livingdocs-rancher)
+
+Experimental:
+
+- [upfrontIO/livingdocs-design-viewer](https://github.com/upfrontIO/livingdocs-design-viewer)
+
 
 ### Guides
 
-- [x] [Guide ideas from the team](./tree/master/core/guides)
+#### Editor, Server and Framework development
 
-#### Local development
-- [x] [Set editor and service-server for development](./core/guides/local-development/editor-and-service-server.md)
-- [x] [Run a local editor against a remote server](./core/guides/local-development/editor-only.md)
-- [x] [Link local dependencies: server and/or framework](./core/guides/local-development/link-local-dependencies.md)
-
-#### Design
-- [x] [Use and change a local design](./core/guides/design/local-design.md)
-- [ ] [Local design](./tree/master/core/design) **[EXTRACT FROM]**
-
-#### Customization
-- [x] [Add a custom include](./core/customization/add-custom-include.md) **[TO CHECK]**
-
-#### Deployment
-
-##### Requirements
-- [x] [Software](./core/guides/deployment/requirements.md) **[TO CHECK]**
-- [x] [Hardware](./core/guides/deployment/hardware-requirements.md) **[TO CHECK]**
-
-##### Infrastructure
-- [x] [Introduction](https://github.com/upfrontIO/infrastructure) **[EXTRACT FROM]**
-- [x] [Rancher](https://github.com/upfrontIO/livingdocs-rancher)  **[EXTRACT FROM]**
-
-##### Amazon
-- [x] [Amazon S3](./core/guides/amazon/amazon_s3.md) **[TO CHECK]**
-
-##### Container
-- [x] [livingdocs-docker](https://github.com/upfrontIO/livingdocs-docker) **[EXTRACT FROM]**
-- [x]  [docker/dokku](./core/deployment/container/docker.md) **[TO CHECK]**
-- [x] [dockerfile-elasticsearch](https://github.com/upfrontIO/dockerfile-elasticsearch) **[EXTRACT FROM]**
-- [x] [dockerfile-postgres](https://github.com/upfrontIO/dockerfile-postgres) **[EXTRACT FROM]**
-
-#### FAQ
-- [x] [CMS troobleshooting](./core/guides/faq/nzzdev_cms-troubleshoot-guide_README.md) **[TO CHECK]**
-- [x] [NZZ FAQ](./core/guides/faq/nzzdev_morpheus_livingdocs_README.md) **[TO CHECK]**
-- [x] [Profiling](./core/guides/faq/profiling.md) **[TO CHECK]**
+★ [Use and update a design during development](./core/guides/design/local-design.md)  
+★ [Set editor and service-server for development](./core/guides/local-development/editor-and-service-server.md)  
+★ [Run a local editor against a remote server](./core/guides/local-development/editor-only.md)  
+★ [Link local dependencies: server and/or framework](./core/guides/local-development/link-local-dependencies.md)  
 
 
-### Architecture
+#### Livingdocs Server customization
 
-- [ ] Introduction
-- [ ] How do server, editor and framework play together?
-- [x] [Document and document structure](./core/architecture/nzzdev_nzz-standard_docs_html-format.md) **[TO CHECK]**
-- [x] [HTML format](./core/architecture/nzzdev_nzz-standard_docs_json-format.md) **[TO CHECK]**
-
-#### Delivery:
-  - [x] [NZZ delivery architecture](https://github.com/nzzdev/cms-guide/tree/master/architecture) **[TO EXTRACT]**
-  - [x] [Blog delivery](https://github.com/upfrontIO/livingdocs-delivery) **[TO EXTRACT]**
-  - [x] [Bluewin delivery](https://github.com/upfrontIO/bluewin-delivery) **[TO EXTRACT]**
-  - [x] [livingdocs-delivery-REST-API](./core/architecture/delivery) **[TO MAKE]**
+★ [Add a custom include](./core/guides/customization/add-custom-include.md)
 
 
-### Livingdocs server
+### Documentation for selected core repos:
 
-- [x] [Core and editing API](./core/livingdocs-server) **[TO MAKE]**
-- [ ] Features
-- [ ] Testing
-- [ ] Configuration
+#### Livingdocs server
 
-### Livingdocs editor
+- Core and editing API
+- Features
+- Testing
+- Configuration
 
-  - [ ] Testing
-  - [ ] Configuration
-  - [x] [Metadata components](./core/livingdocs-editor/configurable-metadata-screen.md)
+#### Livingdocs editor
 
-### Livingdocs framework
+- Testing
+- Configuration
+- [Metadata components](./core/livingdocs-editor/configurable-metadata-screen.md)
 
-- [ ] Design
-- [ ] Browser API
-- [ ] Node API
-- [x] [Editable.js](https://github.com/upfrontIO/editable.js) **[EXTRACT FROM]**
-- [ ] Testing
+#### Livingdocs framework
 
-#### Design
-
-- [x] [Livingdocs manager - ldm](https://github.com/upfrontIO/livingdocs-manager) **[TO EXTRACT]**
-- [x] [Design viewer](https://github.com/upfrontIO/livingdocs-design-viewer) **[TO EXTRACT]**
+- Design
+- [Browser API](./core/livingdocs-framework/browser_api.md)
+- [Livingdoc](./core/livingdocs-framework/livingdoc.md)
+- [Component Tree](./core/livingdocs-framework/component_tree.md)
+- [Component Model](./core/livingdocs-framework/component_model.md)
+- [Directives](./core/livingdocs-framework/directives.md)
 
 
+#### Editable.js
+
+- [Documentation and demo](http://upfrontio.github.io/editable.js)
+- Repo: [upfrontIO/editable.js](https://github.com/upfrontIO/editable.js)
 
 
-## Contribution guidelines
+#### Livingdocs Manager (ldm)
 
-- [x] [Documentation taxonomy](./contribution-guidelines/documentation/documentation-taxonomy.md)
-- [x] [Template for writing readmes](./contribution-guidelines/documentation/how-to-write-readmes.md)
-- [x] [Apply guides](https://github.com/upfrontIO/apply-guides)
-- [x] [Collaboration](./contribution-guidelines/collaboration) (merge from upfronIO/guides)
-- [x] [Git](./contribution-guidelines/git) (merge from upfronIO/guides)
-- [x] [Npm](./contribution-guidelines/npm) (merge from upfronIO/guides)
-- [x] [Ramp-up](./contribution-guidelines/ramp-up) (merge from upfronIO/guides)
-- [x] [Style guides](./contribution-guidelines/style-guides) (merge from upfronIO/guides)
+- Livingdocs manager (ldm): [upfrontIO/livingdocs-manager](https://github.com/upfrontIO/livingdocs-manager)
+
+
+### Deployment
+
+#### Requirements
+
+- [Software](./core/guides/deployment/requirements/requirements.md)
+- [Hardware](./core/guides/deployment/requirements/hardware-requirements.md)
+
+
+#### Amazon
+
+- [Amazon S3](./core/guides/deployment/amazon/amazon_s3.md)
+
+
+#### Container
+
+- [docker/dokku](./core/guides/deployment/container/docker.md)
+
+
+### Delivery:
+
+- Repo: [NZZ delivery architecture](https://github.com/nzzdev/cms-guide/tree/master/architecture)
+- Repo: [Blog delivery](https://github.com/upfrontIO/livingdocs-delivery)
+- Repo: [Bluewin delivery](https://github.com/upfrontIO/bluewin-delivery)
+- livingdocs-delivery-REST-API
+
+
+### FAQ
+
+- [CMS troobleshooting](./core/guides/faq/nzzdev_cms-troubleshoot-guide_README.md)
+- [NZZ FAQ](./core/guides/faq/nzzdev_morpheus_livingdocs_README.md)
+
+
+### Development Tips
+
+- [Profiling](./core/development-tips/profiling.md)
+
+### Contribution guidelines
+
+If you want to contribute in code or documentation or have to create a new repository please read our [contribution guidelines](./contribution-guidelines).
