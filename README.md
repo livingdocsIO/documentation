@@ -135,11 +135,11 @@ Experimental:
 #### Livingdocs framework
 
 - Design
-- [Browser API](./livingdocs-framework/browser_api.md)
-- [Livingdoc](./livingdocs-framework/livingdoc.md)
-- [Component Tree](./livingdocs-framework/component_tree.md)
-- [Component Model](./livingdocs-framework/component_model.md)
-- [Directives](./livingdocs-framework/directives.md)
+- [Browser API](./core/livingdocs-framework/browser_api.md)
+- [Livingdoc](./core/livingdocs-framework/livingdoc.md)
+- [Component Tree](./core/livingdocs-framework/component_tree.md)
+- [Component Model](./core/livingdocs-framework/component_model.md)
+- [Directives](./core/livingdocs-framework/directives.md)
 
 
 #### Editable.js
