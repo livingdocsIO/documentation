@@ -173,10 +173,11 @@ Experimental:
 
 ### Delivery:
 
-- Repo: [NZZ delivery architecture](https://github.com/nzzdev/cms-guide/tree/master/architecture)
-- Repo: [Blog delivery](https://github.com/upfrontIO/livingdocs-delivery)
-- Repo: [Bluewin delivery](https://github.com/upfrontIO/bluewin-delivery)
-- livingdocs-delivery-REST-API
+- Service Server: [upfrontIO/livingdocs-service-server](https://github.com/upfrontIO/livingdocs-service-server)
+- Blog & Boilerplate: [upfrontIO/livingdocs-delivery](https://github.com/upfrontIO/livingdocs-delivery)
+- Website: [upfrontIO/livingdocs-delivery-website](https://github.com/upfrontIO/livingdocs-delivery-website)
+- Bluewin: [upfrontIO/bluewin-delivery](https://github.com/upfrontIO/bluewin-delivery)
+- [NZZ delivery architecture documentation](https://github.com/nzzdev/cms-guide/tree/master/architecture)
 
 
 ### FAQ
