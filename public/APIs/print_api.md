@@ -81,7 +81,7 @@ Each line represents one layout, i.e., one placed and sized box in the InDesign 
 - `columns`, the number of columns that this layout has
 - `name`, the name of this layout, will be displayed in the Livingdocs layout search (see screenshot below)
 - `page`, the page of your newspaper where this layout is placed
-- `status`, one of the supported [stati](#available-stati)
+- `status`, one of the supported [statuses](#available-statuses)
 - `publication`, the publication to which this layout belongs
 - `publicationDate`, the date of the publication for which the layout was requested
 
@@ -121,9 +121,9 @@ Your response should look as follows:
 <articleUpload>
    <getTemplates>
       <templates>
-         <template columns="4.0" department="fp" group="LEIT" id="MV6PU" key="" name="2Leitartikel SA" publication="msne"/>
-         <template columns="5.0" department="mf" group="" id="O6RV1" key="" name="Anleser Text" publication="mfne"/>
-         <template columns="1.0" department="oe" group="KOMM" id="MTFS8" key="" name="Archiv Trouvaillen" publication="msne"/>
+         <template columns="4.0" department="fp" group="LEIT" id="MV6PU" name="2Leitartikel SA" publication="msne"/>
+         <template columns="5.0" department="mf" group="" id="O6RV1" name="Anleser Text" publication="mfne"/>
+         <template columns="1.0" department="oe" group="KOMM" id="MTFS8" name="Archiv Trouvaillen" publication="msne"/>
       </templates>
    </getTemplates>
 </articleUpload>
@@ -134,7 +134,6 @@ Each line represents one template, i.e., one generic box that can be used in InD
 - `columns`, the number of columns that this template has
 - `group`, namespacing in your template
 - `id`, a unique id with which you can access the template, LD will send you this later on
-- `key`, TODO is this used?
 - `name`, the name of this template, will be displayed in the LD Layout search
 - `publication`, the publication to which this template belongs
 
@@ -305,9 +304,9 @@ Your response to Livingdocs should look as follows:
 The response consists of different `content` blocks that contain `rows`. The `content` blocks define logical components of your layout or templates in InDesign, such as the title or the body text. The `rows` define the textual content represented in rows. Each row defines:
 - `id`, identifies the rows within a content block, normally just a counter
 - `debug`, the name of the component in your InDesign layout
-- `justifying`, the justification information, can be `left` or `justify` TODO: what is this doing?
+- `justifying`, the justification information, can be `left` or `justify`
 - `number`, the row number in the overall layout or template (Zeilennummer), displayed on the left of the Livingdocs preview
-- `type`, 'title' or 'text' TODO why do we need this?
+- `type`, 'title' or 'text'
 - `column`, the column in which the row is rendered
 
 If the content contained information that is not present in the layout or template you can notify Livingdocs of this. For example, if Livingdocs sent you an author content element, but the respective layout in InDesign has no match for author, then you can send back a row containing text that matches the following regex:
@@ -440,7 +439,7 @@ The authentication block is equivalent to the other requests. There are 2 metada
   - `publicationDate`, the date (edition) for which this article is exported
   - `department`, the department in which this article is exported
   - `templateId` or `layoutId`, the id of the InDesign template or layout for which this article was written
-  - `status`, the status of this article, [see available stati](#available-stati)
+  - `status`, the status of this article, [see available statuses](#available-statuses)
 
 The second (`livingdocsMetadata`) metadata block contains information that is specific to Livingdocs:
 - `channel`, the name of the Livingdocs channel where this article derives from
@@ -461,11 +460,13 @@ Response:
 </articleUpload>
 ```
 
-TODO how does an error response look like?
-
 ### Lifecycle - Status
 
-The status call bears a lot of importance. When a print article has been written or partly written its status in the print system may update. For example the article might be locked in the print system or it might have gone to the printing press. To know about such status changes, Livingdocs polls your middleware for status updates. Livingdocs will send the following request.
+The status call bears a lot of importance. When a print article has been written or partly written its status in the print system may update. For example the article might be locked in the print system or it might have gone to the printing press. To know about such status changes, Livingdocs polls your middleware for status updates. Currently, Livingdocs will call `status` for the following actions:
+- when a preview is requested, i.e. whenever a user changes something in the text
+- before the user exports the article
+
+Livingdocs will send the following request.
 
 To:
 ```
@@ -502,16 +503,18 @@ The `getStatus` elements contains the following attributes:
 - `isEditable`, tells Livingdocs if this article can still be edited or is locked (it will switch the editor to read-only if you set this field to `false`)
 - `layoutId`, the id of the layout where this article is placed. If the layout id changes in the print system you can set the changed `layoutId` here and Livingdocs will adapt accordingly
 - `livingdocsId`, the Livingdocs id, should match what you got in the request
-- `statusName`, the print status this article is in, see the available stati below
+- `statusName`, the print status this article is in, see the available statuses below
 
-#### Available stati
+#### Available statuses
 
-The available stati values for a print article are:
+The available statuses values for a print article are:
 - `Redigieren`, the article is being edited
 - `Gegenlesen`, the article is being proofread
-- `Umbruch`, TODO what is this?
+- `Umbruch`, the article is in preparation for layouting, it is read-only for the editor
 - `Korrekturlesen`, the article is being corrected
 - `Korrigiert`, the article has been corrected
 - `Placiert`, the article has been placed in the editon's InDesign file
 - `Freigabe`, the article is ready for the printing press
 - `Papierkorb`, the article is being deleted (archived)
+
+NOTE: Currently, all of these statuses are informational, i.e. Livingdocs does not evaluate them. The only thing Livigndocs currently evaluates is if the article is read-only (locked) or not. This is though not handled by the status, but by the `isEditable` field in the `status` response.
