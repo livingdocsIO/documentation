@@ -46,15 +46,14 @@ Configure a Livingdocs server:
 - Collaboration ✍
 - Text formatting and spellchecking ✍
 
-
 Extend a Livingdocs server:
-
 - Extend a Livingdocs server with custom modules ✍
 
 
 #### Livingdocs Server Public API
 
 - [Publish and unpublish](./public/APIs/publish_plugin.md)
+- [Print API](./public/APIs/print_api.md)
 - Document API ✍
 - Webhooks & Evens ✍
 
