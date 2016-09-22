@@ -1,5 +1,5 @@
 
-# Livingdoc
+# Framework: Livingdoc
 
 A `Livingdoc` represents a Livingdocs document. It consists of a [componentTree](component_tree.md) and can have one or more views.
 
@@ -66,23 +66,67 @@ Here you see a serialized version of a `livingdoc` in JSON. This is an example d
   "content": [
     {
       "id": "doc-18fsfqsiq0",
-      "identifier": "ghibli.cover",
+      "component": "cover",
       "content": {}
     },
     {
       "id": "doc-18fsfr5f50",
-      "identifier": "ghibli.title",
+      "component": "title",
       "content": {
         "title": "Storytellers have more fun"
       }
     },
     {
       "id": "doc-18fsfra8r0",
-      "identifier": "ghibli.lead",
+      "component": "lead",
       "content": {
         "text": "Yet, if we look at the interesting people in our lives, I think we’ll find few of them have climbed Mount Everest or broken a wild mustang. Most have never wrestled an alligator or gotten embroiled in a covert operation. Most haven’t seen a whole lot of real excitement."
       }
     }
   ]
 }
+```
+
+## Manage Dependencies
+
+```coffee
+# add js
+livingdoc.addJsDependency(src: 'url')
+livingdoc.addJsDependency(code: 'inline js')
+
+# add css
+livingdoc.addCssDependency(src: 'url')
+livingdoc.addCssDependency(code: 'inline css')
+
+# use namespaces
+livingdoc.addJsDependency(src: 'url', namespace: 'embeds.twitter')
+
+# Access the dependencies collection directly:
+dependencies = livingdoc.dependencies
+
+# Transform to JSON
+dependencies.serialize()
+
+# Get namespaces (Array of String)
+dependencies.getNamespaces()
+
+# Get all dependencies of a namespace
+dependencies.getNamespace('embeds.twitter')
+
+# Get an HTML string to include in a published document or to
+# Add to a document on the server side.
+dependencies.printJs()
+dependencies.printCss()
+```
+
+## Exposed Modules:
+
+For reuse in the editor these modules are exposed on `doc`:
+`doc.JsLoader` and `doc.CssLoader`
+
+```coffee
+# Example:
+jsLoader = new doc.JsLoader(window: iframe.contentWindow)
+jsLoader.loadSingleUrl(url, callback)
+jsLoader.loadInlineScript(url, callback)
 ```

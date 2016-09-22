@@ -1,6 +1,5 @@
 # Livingdocs REST API
 
-[« back](../README.md)
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
@@ -184,5 +183,3 @@ In your document before the end of the body tag, add the following snippet:
 ```
 
 This rounds off the building of a simple frontend app. You can now get feeds of documents, single documents and load the required dependencies for correct rendering.
-
-[« back](../README.md)

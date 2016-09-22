@@ -1,8 +1,10 @@
 # Central documentation
+
 Located in the central livingdocs repository
 
 
-## Livingdocs Concepts
+## Introduction into Livingdocs
+
 Concepts describe the fundamental concepts of Livingdocs. They help you understand how we at Livingdocs think about the software. You will also learn the right words to describe specific things.
 
 
@@ -19,9 +21,9 @@ The public documentation is organized around Topics. A topic is a walkthrough of
 
 Topics:
 - Design Setup & Configuration
-- The server’s public/document REST API
-- The server’s configuration options
-- Core API to extend the server with custom code
+- The servers public REST API
+- The servers configuration options
+- The servers Core API to extend the server with custom code
 
 ## Core documentation
 **Audience: integration customers, core-developers/designers**
@@ -32,13 +34,11 @@ The guides contain a set of step by step instructions that cover day to day use 
 
 
 ### Guides:
+
 - Setup a working environment
 
-### Architecture:
-- How do server, editor and framework play together?
-- How does authentication work?
-
 ### APIs:
+
 - Server: Editing API
 - Server: Document Entities Manager
 - Server: Core API to extend the editor with custom code
@@ -52,6 +52,7 @@ Coding style for CSS, Coffeescript, etc.
 How to label github issues
 
 # Readmes
+
 Located in the individual project repository
 
 

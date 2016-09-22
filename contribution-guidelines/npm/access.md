@@ -19,7 +19,7 @@ For **private repositories**, we add the read-only token to the `.npmrc` under s
 ```
 echo "//registry.npmjs.org/:_authToken=<fill-in-your-token>" >> .npmrc
 ```
- 
+
 For **public repositories**, add the `.npmrc` file to the `.gitignore` and fetch the token from an environment variable.
 
 ```

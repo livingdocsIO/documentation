@@ -33,7 +33,7 @@ After initial publishing, you need to [add read access to the package for consum
 
 ## With semantic release
 
-Releases are done by a machine user automatically. Manual actions are only required, when you need to release a patch for an older version (legacy release). 
+Releases are done by a machine user automatically. Manual actions are only required, when you need to release a patch for an older version (legacy release).
 The workflow is described [here](https://gist.github.com/boennemann/54042374e49c7ade8910).
 
 ### Example
@@ -44,14 +44,21 @@ Let v18 be the newest version. A customer needs a patch release for their older 
 
    ```bash
    # Define your new 'maintenance' branch
-   branch=v17.x
-   tag=legacy
-   git checkout -b $branch
+   export base=v27.6.0
+   export branch=maintenance-$base
+   export tag=$branch
+   export git checkout $base
+   export git checkout -b $branch
 
    # Set release.branch to "v17.x" in package.json,
    # set publishConfig.tag to prevent push to `latest` tag
    # Both steps are required to not mess up other customers installations
-   pkg=`cat package.json | jq ".release.branch=\"$branch\" | .publishConfig.tag=\"$tag\""` | echo $pkg > package.json
+
+   export pkg=`cat package.json | jq ".release.branch=\"$branch\" | .publishConfig.tag=\"$tag\""` | echo $pkg > package.json
+
+   # Set up npm dist tag that's used for semantic-release
+   export name=$(node -e 'console.log(require("./package.json").name)')
+   npm dist-tags add $name@$base maintenance-v27.6.0
 
    # push to v17.x
    git add package.json
