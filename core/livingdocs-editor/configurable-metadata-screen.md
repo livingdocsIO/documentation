@@ -42,6 +42,8 @@ metadata:
     article: [
       name: 'catchline'
       form: 'li-meta-text-form'
+      config:
+        service: 'defaultText'
     ]
 ```
 
@@ -75,12 +77,24 @@ name: 'nameOfYourMetadataTextField'
 form: 'li-meta-text-form'
 config:
   halfWidth: true or false # optional, false by default
+  service: 'nameOfYourServicePlugin' # mandatory
   label: 'foo' # optional, takes camelized name otherwise
   placeholder: 'bar' # optional, takes camelized name otherwise
 ```
 
 You need to make sure that your server-side metadata field is of type `li-text` otherwise you will get errors.
 The `halfWidth` option will render the text input field over half of the screen width if set to true (otherwise over the full width).
+The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
+The service plugin for a text input allows you to customize the logic for the following methods:
+```
+init: (identifier) ->
+  # init the value of the text input
+
+set: (identifier, text) ->
+  # set the value
+```
+
+There is a sample implementation in `plugins/metadata_services/default_text_service.coffee` to help you get started.
 
 ### Select Box
 
