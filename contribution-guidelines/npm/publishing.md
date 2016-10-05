@@ -56,14 +56,16 @@ Let v28 be the newest version. A customer needs a patch release for their older 
 2. Update package.json
 
   ```bash
-  # Set release.branch to maintenance-v27.6.0 in package.json,
-  # set publishConfig.tag to prevent push to `latest` tag
+  # semantic-release only runs on master by default. 
+  # Set release.branch to maintenance-v27.6.0 in package.json to enable semantic-release on your non-master branch.
+  # semantic-release publishes the new version as `latest` by default.
+  # As you're releasing an old version, set publishConfig.tag to prevent a release of the `latest` dist-tag
   # Both steps are required to not mess up other customers installations
 
   pkg=`cat package.json | jq ".release.branch=\"$branch\" | .publishConfig.tag=\"$tag\""` | echo $pkg > package.json
   ```
   
-  These fields in your package.json should now look like this:
+  These fields in your package.json should now look like this (you might have additional values in there):
   
   ```json
   "publishConfig": {
@@ -103,4 +105,4 @@ Let v28 be the newest version. A customer needs a patch release for their older 
 
 6. Create a pull request from your fixes branch `maintenance-v27.6.0-some-fix` with the target branch `maintenance-v27.6.0`
 
-7. Then you can watch codeship build & create a release based on your additional commit messages, e.g. v27.6.1 when you added a fix.
+7. Then you can watch codeship build & create a release based on your additional commit messages, e.g. `v27.6.1` when you added a fix.
