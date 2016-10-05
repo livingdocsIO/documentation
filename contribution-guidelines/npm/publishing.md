@@ -60,7 +60,6 @@ Let v28 be the newest version. A customer needs a patch release for their older 
   # set publishConfig.tag to prevent push to `latest` tag
   # Both steps are required to not mess up other customers installations
 
-  # TODO: this is not working
   pkg=`cat package.json | jq ".release.branch=\"$branch\" | .publishConfig.tag=\"$tag\""` | echo $pkg > package.json
   ```
   
