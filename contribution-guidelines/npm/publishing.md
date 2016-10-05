@@ -38,7 +38,7 @@ The workflow is described [here](https://gist.github.com/boennemann/54042374e49c
 
 ### Example
 
-Let v18 be the newest version. A customer needs a patch release for their older version v17.3.0.
+Let v28 be the newest version. A customer needs a patch release for their older version v27.6.0.
 
 1. Set up the maintenance branch you want to merge your fixes into
 
@@ -58,7 +58,7 @@ Let v18 be the newest version. A customer needs a patch release for their older 
 
    # Set up npm dist tag that's used for semantic-release
    export name=$(node -e 'console.log(require("./package.json").name)')
-   npm dist-tags add $name@$base maintenance-v27.6.0
+   npm dist-tags add $name@$base $branch
 
    # push to v17.x
    git add package.json
