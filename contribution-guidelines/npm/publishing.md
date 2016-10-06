@@ -76,13 +76,28 @@ Let v28 be the newest version. A customer needs a patch release for their older 
   }
   ```
 
-3. Set up npm dist tag that's used for semantic-release
+3. Create a dist tag that's used for semantic-release
   
+  To push a dist-tag to npm you need write access. For more info see how to access [private npm packages](access.md)
+  ```bash
+  # install the get-npm-token package
+  npm install -g get-npm-token
+  
+  # Create a token with write access.
+  # It will ask you for credentials for a user.
+  # This user needs write access for the generated token 
+  # to have write access as well.
+  get-npm-token
+  ```
+  
+  Then you can create the dist tag:
   ```bash
   export name=$(node -e 'console.log(require("./package.json").name)')
-   
+  
+  # Pass the auth token you generated above in the following command.
   # Make sure you have a write access token, or you'll get a 404
-  npm dist-tag add $name@$base $tag
+  # e.g. npm dist-tag add @livingdocs/editor@v7.3.4 maintenance-v7.3.4
+  npm dist-tag add $name@$base $tag --//registry.npmjs.org/:_authToken=<yourTokenWithWriteAccess>
   ```
   
 4. Push your branch to origin
