@@ -25,4 +25,4 @@
 
 - [Documentation taxonomy](./documentation/documentation-taxonomy.md)
 - [Todos](./documentation/todos.md)
-- [Ideas for furhter guides](./documentation/guide-ideas-from-the-team.md)
+- [Ideas for further guides](./documentation/guide-ideas-from-the-team.md)
