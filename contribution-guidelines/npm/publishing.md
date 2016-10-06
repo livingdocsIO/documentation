@@ -120,4 +120,4 @@ Let v28 be the newest version. A customer needs a patch release for their older 
 
 6. Create a pull request from your fixes branch `maintenance-v27.6.0-some-fix` with the target branch `maintenance-v27.6.0`
 
-7. Then you can watch codeship build & create a release based on your additional commit messages, e.g. `v27.6.1` when you added a fix.
+7. Then you can watch CI build & create a release based on your additional commit messages, e.g. `v27.6.1` when you added a fix.
