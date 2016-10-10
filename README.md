@@ -2,7 +2,7 @@
 # Livingdocs documentation
 
 
-#### Structure of the documenation
+#### Structure of the documentation
 
 The documentation is structured in two main parts:
 
@@ -27,7 +27,8 @@ The documentation is structured in two main parts:
 
 Guides:
 
-★ Create and upload a design ✍
+- ★ Create and upload a design ✍
+- [Create designs with livingdocs-design-boilerplate](./public/design/create_designs.md)
 
 
 Learn about Livingdocs designs which define the components you can use in your documents.

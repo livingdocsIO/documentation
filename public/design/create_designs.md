@@ -19,7 +19,7 @@
 
 A Livingdocs design is a set of HTML components and configurations how they can be used and edited. It also lists the CSS and/or Javascript dependencies that need to be loaded to show the design correctly. A Livingdocs design is defind in a `design defintion` JSON file.
 
-To use a Livngdocs design you have to upload the JSON file and all its dependencies (CSS, Javascript and image files) to our server and configure your account to use this design.
+To use a Livingdocs design you have to upload the JSON file and all its dependencies (CSS, Javascript and image files) to our server and configure your account to use this design.
 
 ## Boilerplate design repository
 
