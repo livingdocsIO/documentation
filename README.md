@@ -43,9 +43,9 @@ Learn about Livingdocs designs which define the components you can use in your d
 
 Configure a Livingdocs server:
 
+- [Metadata](./public/livingdocs-editor/configurable-metadata-screen.md)
 - Projects ✍
 - Channels ✍
-- Metadata ✍
 - Collaboration ✍
 - Text formatting and spellchecking ✍
 
@@ -130,7 +130,6 @@ Experimental:
 
 - Testing
 - Configuration
-- [Metadata components](./core/livingdocs-editor/configurable-metadata-screen.md)
 
 #### Livingdocs framework
 

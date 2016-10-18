@@ -118,7 +118,7 @@ Configure a Livingdocs server.
 
 - [ ] Testing
 - [ ] Configuration
-- [x] [Metadata components](./core/livingdocs-editor/configurable-metadata-screen.md)
+- [x] [Metadata components](./public/livingdocs-editor/configurable-metadata-screen.md)
 
 ### Livingdocs framework
 
