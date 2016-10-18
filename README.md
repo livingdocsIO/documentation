@@ -27,7 +27,9 @@ The documentation is structured in two main parts:
 
 Guides:
 
+- [Install and run locally](./public/guides/local-development/editor-and-server.md)
 - ★ Create and upload a design ✍
+- [Use and update a design during development](./public/design/local-design.md)
 - [Create designs with livingdocs-design-boilerplate](./public/design/create_designs.md)
 
 
@@ -106,8 +108,6 @@ Experimental:
 
 #### Editor, Server and Framework development
 
-★ [Use and update a design during development](./core/guides/design/local-design.md)  
-★ [Set editor and service-server for development](./core/guides/local-development/editor-and-service-server.md)  
 ★ [Run a local editor against a remote server](./core/guides/local-development/editor-only.md)  
 ★ [Link local dependencies: server and/or framework](./core/guides/local-development/link-local-dependencies.md)  
 
