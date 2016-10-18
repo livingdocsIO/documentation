@@ -28,9 +28,9 @@ The documentation is structured in two main parts:
 Guides:
 
 - [Install and run locally](./public/guides/local-development/editor-and-server.md)
-- ★ Create and upload a design ✍
-- [Use and update a design during development](./public/design/local-design.md)
 - [Create designs with livingdocs-design-boilerplate](./public/design/create_designs.md)
+- [Use and update a design during development](./public/design/local-design.md)
+- ★ Upload a design to Livingdocs Beta ✍
 
 
 Learn about Livingdocs designs which define the components you can use in your documents.

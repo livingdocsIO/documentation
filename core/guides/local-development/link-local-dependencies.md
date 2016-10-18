@@ -33,7 +33,7 @@ When you’re developing locally a dependency, you might want to integration tes
   npm link @livingdocs/server
   ```
 
-4. **When you make changes to the li-server do not forget to restart your service-server**
+4. **When you make changes to the li-server do not forget to restart your customization server**
 
 ### Link li-framework in the editor
 
