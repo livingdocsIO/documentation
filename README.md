@@ -123,6 +123,7 @@ Experimental:
 
 - Core and editing API
 - Features
+  - [Document Copy](./core/livingdocs-server/document_copy_feature.md)
 - Testing
 - Configuration
 
