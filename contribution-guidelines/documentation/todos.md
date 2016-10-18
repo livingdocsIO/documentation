@@ -56,12 +56,12 @@ Configure a Livingdocs server.
 - [x] [Guide ideas from the team](./contribution-guidelines/documentation/guide-ideas-from-the-team.md)
 
 #### Local development
-- [x] [Set editor and service-server for development](./core/guides/local-development/editor-and-service-server.md)
+- [x] [Set editor and server for development](./public/guides/local-development/editor-and-server.md)
 - [x] [Run a local editor against a remote server](./core/guides/local-development/editor-only.md)
 - [x] [Link local dependencies: server and/or framework](./core/guides/local-development/link-local-dependencies.md)
 
 #### Design
-- [x] [Use and change a local design](./core/guides/design/local-design.md)
+- [x] [Use and change a local design](./public/guides/design/local-design.md)
 - [ ] [Local design](./core/design) **[EXTRACT FROM]**
 
 #### Customization
@@ -118,7 +118,7 @@ Configure a Livingdocs server.
 
 - [ ] Testing
 - [ ] Configuration
-- [x] [Metadata components](./core/livingdocs-editor/configurable-metadata-screen.md)
+- [x] [Metadata components](./public/livingdocs-editor/configurable-metadata-screen.md)
 
 ### Livingdocs framework
 

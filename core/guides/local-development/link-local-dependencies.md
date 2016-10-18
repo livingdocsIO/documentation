@@ -16,7 +16,7 @@ When you’re developing locally a dependency, you might want to integration tes
 
 1. Prerequisites
 
-  [editor and service-server](./editor-and-service-server.md)
+  [editor and service-server](../../../public/guides/local-development/editor-and-server.md)
 
 2. Getting the li-server dependency
 
@@ -33,13 +33,13 @@ When you’re developing locally a dependency, you might want to integration tes
   npm link @livingdocs/server
   ```
 
-4. **When you make changes to the li-server do not forget to restart your service-server**
+4. **When you make changes to the li-server do not forget to restart your customization server**
 
 ### Link li-framework in the editor
 
 1. Prerequisite
   one of:
-  - [editor and service-server](./editor-and-service-server.md)
+  - [editor and server](../../../public/guides/local-development/editor-and-server.md)
   - [editor only](./editor-only.md)
 
 
@@ -61,4 +61,3 @@ When you’re developing locally a dependency, you might want to integration tes
 
 4. **When you make changes to the framework do not forget to rebuild it with:
 `npm run build`**
-

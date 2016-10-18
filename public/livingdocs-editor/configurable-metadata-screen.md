@@ -1,22 +1,20 @@
-Issue: https://github.com/upfrontIO/livingdocs-planning/issues/29
+## Intro
 
-## Motivation
+To store a new metadata field you need to configure it in the server. In order to make it editable to the journalists you need to configure the editor respectively.
 
-Creating custom UI elements for each new metadata field is cumbersome and introduces unnecessary differences between clients. We need a UI library of re-usable elements (text fields, select boxes, etc.) for which customers can write  their own business logic where necessary.
-
-Metadata fields should be fully configurable in a way that we can eventually put this in a user interface.
-
-Customized business logic should be injectable in a customer project as a plugin.
+The editor offers a UI library of re-usable elements (text fields, select boxes, etc.) for which customers can write their own business logic where necessary. You can also write your own custom UI elements by just requiring them in your project.
 
 ## Defining a metadata field
 
-This PR goes some way in leveraging the above. Lets explain this in an example. Say we want to create a new metadata field "catchline" for articles of your default web channel. The catchline should be a simple text input.
+Lets explain this in an example. Say we want to create a new metadata field "catchline" for articles of your default web channel. The catchline should be a simple text input on the publish panel that journalists can edit.
 
 ### Server
 
+(Note: we assume the use of the [Livingdocs server boilerplate](https://github.com/upfrontIO/livingdocs-server-boilerplate) here)
+
 You will first need to configure this in your server.
 1. Check if a suitable metadata data-type already exists. In our example `li-text` is suitable.
-2. Open the respective configuration file, in our case `channels/web/article_config.coffee` and add an entry as follows:
+2. Open the respective configuration file, in our case `conf/channels/web/article/all.coffee` and add an entry as follows:
 ```coffee
 metadata: # might already exist
   catchline:
@@ -64,11 +62,8 @@ There are UI elements for:
 - multiselect boxes
 - image selection
 - section headers (not a form, only a title)
-- nzz departments (don't use)
-- nzz seo data (don't use)
 
 The following subchapters discuss them and show the available options.
-*The 2 NZZ specific forms are only there since we don't yet have a way to register a whole component as a plugin. They will be gone very soon. Don't use them!*
 
 ### Text Input
 

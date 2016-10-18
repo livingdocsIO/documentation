@@ -1,18 +1,17 @@
 # Create designs with livingdocs-design-boilerplate
 
+Table of contents
+
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [Create designs with livingdocs-design-boilerplate](#create-designs-with-livingdocs-design-boilerplate)
-	- [What is a Livingdocs design?](#what-is-a-livingdocs-design)
-	- [Boilerplate design repository](#boilerplate-design-repository)
-	- [Example design definition:](#example-design-definition)
-	- [How to define components](#how-to-define-components)
-			- [Adding your component to the design](#adding-your-component-to-the-design)
-			- [Using the preview](#using-the-preview)
-			- [A more complex example](#a-more-complex-example)
-			- [Available attributes in the component HTML](#available-attributes-in-the-component-html)
-			- [But I want my own design](#but-i-want-my-own-design)
-
+- [What is a Livingdocs design?](#what-is-a-livingdocs-design)
+- [Boilerplate design repository](#boilerplate-design-repository)
+- [Example design definition:](#example-design-definition)
+- [How to define components](#how-to-define-components)
+    - [Adding your component to the design](#adding-your-component-to-the-design)
+    - [Using the preview](#using-the-preview)
+    - [A more complex example](#a-more-complex-example)
+    - [Available attributes in the component HTML](#available-attributes-in-the-component-html)
+    - [But I want my own design](#but-i-want-my-own-design)
 <!-- /TOC -->
 
 ## What is a Livingdocs design?
@@ -34,7 +33,7 @@ var designDefinition = {
 
   // General design information
   name: 'designName',
-  version: 'v1.0.0',
+  version: '1.0.0',
   author: 'Peter Pan',
 
   // Assets required by the design
@@ -212,6 +211,7 @@ A Livingdocs `component definition` consists of HTML that has added attributes t
 | doc-container | This tag can contain other components. |
 | doc-html | The content of this tag is freeform HTML. This can be used to embed tweets or IFrames. |
 | doc-link | The href attribute of this tag can be set to a link by the user. |
+| doc-include | Inside of this tag, the server will render an edge-side include of the given type |
 
 #### But I want my own design
 

@@ -2,7 +2,11 @@
 
 ## Prerequisite
 
-[An editor and a service-server](./editor-and-service-server.md)
+[Local editor and server setup](../guides/local-development/editor-and-server.md)
+
+## Background
+
+This guide uses the [Livingdocs boilerplate design](https://github.com/upfrontIO/livingdocs-design-boilerplate) and produces a symbolical change to it in order to show how to update a design locally. For your work, you will most likely use your own design.
 
 ## Fetching the design
 
@@ -46,11 +50,11 @@ grunt build
 
 ## Configuring a local design repository
 
-In our local service-server, the design repository is set by default to a remote design server such as: http://api.livingdocs.io.
+In our local server, the design repository is set by default to a remote design server such as: http://api.livingdocs.io.
 
 We can overwrite this configuration by creating  a new file:
 ```bash
-cd $SERVICE_SERVER_PATH
+cd $SERVER_PATH
 cd conf/secrets
 touch local.coffee
 ```
@@ -62,26 +66,40 @@ module.exports =
     design_repository: 'http://localhost:9090'
 ```
 
-The service-server is also a design repository, so it can point its own design repository to itself.
+The server is also a design repository, so it can point its own design repository to itself.
+
+The same adaptation also has to be done for the editor:
+```bash
+cd $EDITOR_PATH
+cd config/user_specific
+touch local.coffee
+```
+
+Then, fill `local.coffee` with:
+```
+module.exports =
+  designsApi:
+    host: 'http://localhost:9090'
+```
 
 ## Uploading the design
 
-1. Install the livingdocs-manager or ldm:
+1. Install the livingdocs-manager (short `ldm`):
   ```bash
   npm install -g livingdocs-manager
   ```
 
-2. Make sure your service-server is started, if not:
+2. Make sure your server is started, if not:
   ```bash
-  cd $SERVICE_SERVER_PATH
-  export ENVIRONMENT=local && npm start
+  cd $SERVER_PATH
+  export ENVIRONMENT=local && node index.js
   ```
 
 3. Publish and set the new design with ldm:
 
   The ldm tool asks for:
   - a design repository host: http://localhost:9090
-  - your service-server's credentials: email/password
+  - your server's credentials: email/password
 
   ```bash
   cd $DESIGN_PATH
@@ -92,12 +110,14 @@ The service-server is also a design repository, so it can point its own design r
 
     Note: `{designName}` and `{x.y.z}` can be found in `src/config.json`
 
+    Pro Tip: If you don't want to type the ldm channel commands each time, install [Postico](https://eggerapps.at/postico/) and adapt the `channels` table directly
+
 ## Trying the new design
 
-1. Restart your service-server:
+1. Restart your server:
   ```bash
-  cd $SERVICE_SERVER_PATH
-  export ENVIRONMENT=local && npm start
+  cd $SERVER_PATH
+  export ENVIRONMENT=local && node index.js
   ```
 
 2. Start your local editor:
@@ -108,4 +128,3 @@ The service-server is also a design repository, so it can point its own design r
 
 3. Go to
   http://localhost:9000
-

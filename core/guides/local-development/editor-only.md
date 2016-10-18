@@ -13,8 +13,8 @@ npm install
 ```
 
 List of the available editors:
-- [livindocs-editor](https://github.com/upfrontIO/livingdocs-service-server)
-- [nzz-editor](https://github.com/nzzdev/livingdocs-editor)
+- [livindocs core editor](https://github.com/upfrontIO/livingdocs-editor)
+- [nzz editor](https://github.com/nzzdev/livingdocs-editor)
 
 ## Start up
 
@@ -30,4 +30,3 @@ npm start
 ```
 
 Now, just use the credentials of your staging server to login at: http://localhost:9000.
-

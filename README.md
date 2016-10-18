@@ -27,8 +27,10 @@ The documentation is structured in two main parts:
 
 Guides:
 
-- ★ Create and upload a design ✍
+- [Install and run locally](./public/guides/local-development/editor-and-server.md)
 - [Create designs with livingdocs-design-boilerplate](./public/design/create_designs.md)
+- [Use and update a design during development](./public/design/local-design.md)
+- ★ Upload a design to Livingdocs Beta ✍
 
 
 Learn about Livingdocs designs which define the components you can use in your documents.
@@ -41,9 +43,9 @@ Learn about Livingdocs designs which define the components you can use in your d
 
 Configure a Livingdocs server:
 
+- [Metadata](./public/livingdocs-editor/configurable-metadata-screen.md)
 - Projects ✍
 - Channels ✍
-- Metadata ✍
 - Collaboration ✍
 - Text formatting and spellchecking ✍
 
@@ -106,8 +108,6 @@ Experimental:
 
 #### Editor, Server and Framework development
 
-★ [Use and update a design during development](./core/guides/design/local-design.md)  
-★ [Set editor and service-server for development](./core/guides/local-development/editor-and-service-server.md)  
 ★ [Run a local editor against a remote server](./core/guides/local-development/editor-only.md)  
 ★ [Link local dependencies: server and/or framework](./core/guides/local-development/link-local-dependencies.md)  
 
@@ -130,7 +130,6 @@ Experimental:
 
 - Testing
 - Configuration
-- [Metadata components](./core/livingdocs-editor/configurable-metadata-screen.md)
 
 #### Livingdocs framework
 
