@@ -58,7 +58,8 @@ Extend a Livingdocs server:
 - [Publish and unpublish](./public/APIs/publish_plugin.md)
 - [Print API](./public/APIs/print_api.md)
 - Document API ✍
-- Webhooks & Evens ✍
+- Webhooks ✍
+- [Events](./public/APIs/events.md)
 
 
 #### Livingdocs Server Integrations
