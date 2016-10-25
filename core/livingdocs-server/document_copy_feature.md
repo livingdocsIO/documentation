@@ -30,6 +30,13 @@ If you request a copy, the copy feature tries to find a config match in the chan
       # false = ignore a component when the target layout doesn't know the component
       # NOT IMPLEMENTED: currently everything will be copied (is the same as `true`)
       copyUnknownComponents: false
+      # Prefixes a component directive after a copy
+      # This example adds the prefix 'Kopie von' to the directive 'title' in the component 'header'
+      prefix: [
+        component: 'header'
+        directive: 'title'
+        text: 'Kopie von '
+      ]
     metadata:
       # copies source.title to target.catchline
       map: [{'from': 'title', 'to': 'catchline'}]
