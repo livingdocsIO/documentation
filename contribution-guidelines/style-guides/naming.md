@@ -3,6 +3,7 @@
 The following naming conventions apply to projects when owned by Livingdocs.
 
 | Thing | Convention | Livingdocs example | Customer example |
+| --- | --- | --- | --- |
 | Repository | `upfrontIO/<namespace>-<project>` | `upfrontIO/livingdocs-server` or `upfrontIO/livingdocs-service-server` | `upfrontIO/bluewin-server` |
 | Git tag name | vX.Y.Z | v1.0.0 | v1.0.0 |
 | Npm package | `@livingdocs/<namespace>-<project>` | `@livingdocs/server` or `@livingdocs/service-server` | `@livingdocs/bluewin-server` |
