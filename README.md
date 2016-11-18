@@ -130,7 +130,7 @@ Experimental:
 
 #### Livingdocs editor
 
-★ [Styleguide](./core/livingdocs-editor/styleguide.md) 
+★ [Styleguide](./core/livingdocs-editor/styleguide.md)
 - Testing
 - Configuration
 
@@ -175,10 +175,20 @@ Experimental:
 
 ### Delivery:
 
-- Service Server: [upfrontIO/livingdocs-service-server](https://github.com/upfrontIO/livingdocs-service-server)
-- Blog & Boilerplate: [upfrontIO/livingdocs-delivery](https://github.com/upfrontIO/livingdocs-delivery)
-- Website: [upfrontIO/livingdocs-delivery-website](https://github.com/upfrontIO/livingdocs-delivery-website)
-- Bluewin: [upfrontIO/bluewin-delivery](https://github.com/upfrontIO/bluewin-delivery)
+#### Service Server
+- [Deliver beta publications via keyCDN CDN](./core/delivery/service-server/keycdn.md)
+- [upfrontIO/livingdocs-service-server](https://github.com/upfrontIO/livingdocs-service-server)
+
+#### Blog & Boilerplate:
+- [upfrontIO/livingdocs-delivery](https://github.com/upfrontIO/livingdocs-delivery)
+
+#### Website:
+- [upfrontIO/livingdocs-delivery-website](https://github.com/upfrontIO/livingdocs-delivery-website)
+
+#### Bluewin:
+- [upfrontIO/bluewin-delivery](https://github.com/upfrontIO/bluewin-delivery)
+
+#### NZZ
 - [NZZ delivery architecture documentation](https://github.com/nzzdev/cms-guide/tree/master/architecture)
 
 
