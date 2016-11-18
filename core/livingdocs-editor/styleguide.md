@@ -9,7 +9,7 @@ Go to: http://localhost:9000/styleguide.html
 
 ## Description
 
-In styleguide/templates/main.html you can those two directives:
+In styleguide/templates/main.html you can add those two directives:
 
 - Styleguide include
 
