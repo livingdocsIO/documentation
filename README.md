@@ -130,6 +130,7 @@ Experimental:
 
 #### Livingdocs editor
 
+★ [Styleguide](./core/guides/livingdocs-editor/styleguide.md) 
 - Testing
 - Configuration
 
