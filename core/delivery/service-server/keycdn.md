@@ -14,6 +14,7 @@ It needs:
 ```
 - `keycdn__key` (lowercase double underscore) as an environment variable to overwrite the dummy value from above.
 - A `zone_id` and a `zone_url`
+
 ### Scope
 keyCDN is available through two zones with SSL, one for *dokku_production* with a zone alias url, one for *dokku_staging* with a default url:
 - `https://production-server.hosted.livingdocs.io` to `https://cdn.livingdocs.io` (LE SSL)
