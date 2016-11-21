@@ -1,6 +1,6 @@
 # What to do when creating a new repository
 
-Always use the `livingdocs-automation` user, not your private account when adding integrations.
+Always use the `livingdocs-automation` user, not your private account when adding integrations. Be careful to not leak any secrets when creating public repositories.
 
 - Github Organization Settings: 
   - [Allow the team and machine users access](https://github.com/orgs/upfrontIO/teams)
