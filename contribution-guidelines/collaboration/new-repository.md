@@ -8,6 +8,7 @@ Always use the `livingdocs-automation` user, not your private account when addin
   - Options: Disable wiki, disable issues, enable restricted editing
   - Branches: Enable branch protection, require status checks, require reviews
   - Integrations & Services: Enable greenkeeper
+  - [Create labels](https://github.com/upfrontIO/livingdocs/blob/master/contribution-guidelines/collaboration/create_labels.sh)
 - Travis: Configure a new repo, configure environment variables, set up integrations, semantic releases, deployment
 - Codeship: For downstream servers and editors, run downstream tests with the upstream build
 - Apply guides: Add the project to [repos.json](https://github.com/upfrontIO/apply-guides/blob/master/repos.json)
