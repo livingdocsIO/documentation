@@ -1,4 +1,6 @@
-# Set a local design
+# Set up a local design
+
+By default the designs are fetched from the [livingdocs server](https://github.com/upfrontIO/livingdocs-server-boilerplate). By default you will work with our Design Server from the [Livingdocs Beta](https://livingdocs-beta.io/). For simple evaluations this will be sufficient.
 
 ## Prerequisite
 
