@@ -21,7 +21,6 @@ If the project requires a specific node or npm version, it is stated in the `pac
 ```bash
 nvm install "$(jq -r '.engines.node' package.json)"
 nvm alias default $(node -v)
-npm install -g npm@"$(jq -r '.engines.npm' package.json)"
 ```
 
 ## Install npm dependencies
