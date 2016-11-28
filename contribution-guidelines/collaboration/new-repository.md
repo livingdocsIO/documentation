@@ -4,10 +4,10 @@ Always use the `livingdocs-automation` user, not your private account when addin
 
 - Github Organization Settings: 
   - [Allow the team and machine users access](https://github.com/orgs/upfrontIO/teams)
+  - [Enable greenekeeper](https://github.com/organizations/upfrontIO/settings/installations/2843)
 - Github Repository Settings:
   - Options: Disable wiki, disable issues, enable restricted editing
   - Branches: Enable branch protection, require status checks, require reviews
-  - Integrations & Services: Enable greenkeeper
   - [Create labels](https://github.com/upfrontIO/livingdocs/blob/master/contribution-guidelines/collaboration/create_labels.sh)
 - Travis: Configure a new repo, configure environment variables, set up integrations, semantic releases, deployment
 - Codeship: For downstream servers and editors, run downstream tests with the upstream build
