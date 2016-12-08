@@ -20,19 +20,23 @@ Status labels allow quickly scanning the status of tickets in a list and filteri
 - **To review**: Add this label when you requested a review from someone. The reviewer removes this label when they're finished with their comments.
 - **To test**: You want someone else to test your work. Unless it's not an external person, assign your coworker.
 - **Blocked**: Issue is still open because of something outside of the assignee's control. Waiting for a response from an external service provider for example.
-- **In delay**: Apply if you think the issue will not be closed within the sprint.
+- **Preparation**: Issue description needs refinement before the task can be started.  
+- **Status?**: A call for an update on the status of the issue. 
+- **Leftover**: Not finished in the last sprint, lower the estimation for the next sprint.
 
 ### Classifications
 
 - **Urgent**: Just one for prioritizing. Use very sparingly.
 - **Bug**: To visualize the number of bugs in a sprint. Bugs might get prioritized.
-- **Breaking change**: Your changes require additional work downstream in order to work. Limiting the number of parallel breaking changes is essential for stability.
-- **Greenkeeper**: Added by greenkeeper.
 - **Epic**: Added by ZenHub when creating epics.
 
 ### Customers
 
-Each customer that has issues on our roadmap has his own label.
+Each customer that has issues on our roadmap has his own label, for example `for/bluewin`
+
+### Projects
+
+The most important projects have a label, for example `in/Server`. 
 
 
 ## Linking issues
