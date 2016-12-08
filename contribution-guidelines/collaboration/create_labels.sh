@@ -9,22 +9,29 @@
 
 declare -A LABELS
 
-# Status
-LABELS["Discussion"]="5319e7"
-LABELS["To review"]="009800"
-LABELS["To test"]="00ce00"
-LABELS["Blocked"]="fbe489"
-LABELS["In delay"]="fbca04"
+if [ "$repo" == "livingdocs-planning" ]; then
+  LABELS["Urgent"]="e11d21"
+  LABELS["Bug"]="b6171b"
+  LABELS["Leftover"]="bfdadc"
+  LABELS["Preparation"]="fbca04"
+  LABELS["Status?"]="f60205"
+  LABELS["Discussion"]="5319e7"
+  LABELS["Blocked"]="fbe489"
 
-# Reminders
-LABELS["Urgent"]="e11d21"
-LABELS["Bug"]="b6171b"
-LABELS["Breaking change"]="00aebe"
-LABELS["Greenkeeper"]="ededed"
+  # Projects
+  LABELS["in/Editor"]="433945"
+  LABELS["in/Server"]="433945"
+  LABELS["in/Framework"]="433945"
+  LABELS["in/Other"]="433945"
 
-# Customers
-LABELS["NZZ"]="e77ee6"
-LABELS["Bluewin"]="c384e7"
+  # Customers
+  LABELS["for/NZZ"]="3e78bd"
+  LABELS["for/Bluewin"]="061e5c"
+  LABELS["for/Livingdocs"]="29b96f"
+else
+  LABELS["to/Review"]="009800"
+  LABELS["to/Test"]="00ce00"
+fi
 
 
 ###
@@ -54,7 +61,7 @@ for K in "${!LABELS[@]}"; do
       # We update
       echo "'$K' already exists. Updating..."
       CURL_OUTPUT=$(curl -s -H "Authorization: token $TOKEN" -X PATCH "https://api.github.com/repos/$owner/$repo/labels/${K/ /%20}" -d "{\"name\":\"$K\", \"color\":\"${LABELS[$K]}\"}")
-    elif ["$ERROR" -ne ""]; then
+    elif [ -z "$ERROR" ]; then
       echo "Output from curl: "
       echo "$CURL_OUTPUT"
       echo "Exiting..."
@@ -64,3 +71,5 @@ for K in "${!LABELS[@]}"; do
     echo "Created '$K'."
   fi
 done
+
+echo "Check it out: https://github.com/$owner/$repo/labels"
