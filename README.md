@@ -164,6 +164,13 @@ Experimental:
 
 ### Deployment
 
+#### Releases
+
+★ [How to release a hotfix step by step](./core/releases/hotfix-release-howto.md)
+- [@livingdocs npm organization](./core/releases/npm/access-livingdocs-organization.md)
+- [publish packages](./core/releases/npm/publish-packages.md)
+
+
 #### Requirements
 
 - [Software](./core/guides/deployment/requirements/requirements.md)
