@@ -1,4 +1,4 @@
-# Livingdocs Publish Plugin
+# Livingdocs Server Publish Hooks
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 

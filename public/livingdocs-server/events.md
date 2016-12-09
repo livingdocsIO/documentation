@@ -1,4 +1,5 @@
-# Livingdocs Events API
+# Livingdocs Server Events
+
 
 The events API is Livingdocs's implementation of the publish/subscribe pattern.
 

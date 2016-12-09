@@ -50,16 +50,23 @@ Configure a Livingdocs server:
 - Text formatting and spellchecking ✍
 
 Extend a Livingdocs server:
+
+- [Publish and unpublish hooks](./public/livingdocs-server/publish-hooks.md)
+- [Events](./public/livingdocs-server/events.md)
 - Extend a Livingdocs server with custom modules ✍
 
 
-#### Livingdocs Server Public API
+#### Livingdocs Server Public Api
 
-- [Publish and unpublish](./public/APIs/publish_plugin.md)
-- [Print API](./public/APIs/print_api.md)
-- Document API ✍
+You can find the public documentation of the public Api in any livingdocs-editor.
+Go to `Project Settings > Public Api` and there you find a link.
+
+
+#### Other Livingdocs Server Apis
+
+- [Print API](./public/livingdocs-server/print-api.md)
 - Webhooks ✍
-- [Events](./public/APIs/events.md)
+
 
 
 #### Livingdocs Server Integrations
