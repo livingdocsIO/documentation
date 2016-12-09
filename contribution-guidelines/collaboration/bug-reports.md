@@ -23,7 +23,7 @@ You should be confident that others can easily reproduce the bug. If not you hav
 
 Some bugs are obvious when you can see them in action. In these cases description of the performed actions can often be fully or partially omitted if you provide visual material.
 
-To do that use a screen capture tool like [LICEcap](https://github.com/lepht/licecap) to create an animated GIF. Animated GIFs can easily be attached to an issue and can be seen immediately.
+To do that use a screen capture tool like [LICEcap](http://www.cockos.com/licecap/) to create an animated GIF. Animated GIFs can easily be attached to an issue and can be seen immediately.
 If necessary add a description describing the state of the app and what you were trying to do.
 
 If you have a static issue add images to provide context to your bug. Highlight the areas of interest in your image.
