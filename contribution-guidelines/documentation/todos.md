@@ -31,7 +31,7 @@ Configure a Livingdocs server.
 
 ### APIs
 
-- [x] [Publish and unpublish](./public/APIs/publish_plugin.md) **[TO CHECK]**
+- [x] [Publish and unpublish](./public/livingdocs-server/publish-hooks.md) **[TO CHECK]**
 - [ ] Document (aka Public)
 - [ ] Core: Extend server with custom code
 
