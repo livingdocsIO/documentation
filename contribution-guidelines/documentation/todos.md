@@ -142,5 +142,4 @@ Configure a Livingdocs server.
 - [x] Use Livingdocs linting templates in your repo: [upfrontIO/apply-guides](https://github.com/upfrontIO/apply-guides)
 - [x] [Collaboration](./contribution-guidelines/collaboration) (merge from upfronIO/guides)
 - [x] [Git](./contribution-guidelines/git) (merge from upfronIO/guides)
-- [x] [Npm](./contribution-guidelines/npm) (merge from upfronIO/guides)
 - [x] [Style guides](./contribution-guidelines/style-guides) (merge from upfronIO/guides)

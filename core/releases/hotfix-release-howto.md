@@ -1,40 +1,3 @@
-# Publish npm packages
-
-All public and private packages belong to the [@livingdocs organization](https://www.npmjs.com/org/livingdocs). Publish using access tokens belonging to the organization.
-The publishing process might be automated with [semantic release](https://github.com/semantic-release/semantic-release) and you might not need to publish packages yourself. Please make yourself familiar with the publishing process on your project first.
-
-## Without semantic release
-
-```
-npm adduser --scope=livingdocs --always-auth
-# fill in login infos that belong to the organization
-```
-
-
-### Public package
-
-Packages without a scope are public by default. If you use the `@livingdocs` scope in the package name, you must set access to public explicitly:
-
-```
-npm publish --access public
-```
-
-
-### Private package
-
-Your package name must be scoped with `@livingdocs`.
-
-```
-npm publish
-```
-
-After initial publishing, you need to [add read access to the package for consumers team](https://www.npmjs.com/org/livingdocs/team/consumers/add-package).
-
-
-## With semantic release
-
-Releases are done by a machine user automatically. Manual actions are only required, when you need to release a patch for an older version (legacy release).
-The workflow is described [here](https://gist.github.com/boennemann/54042374e49c7ade8910).
 
 ### How to release a hotfix step by step
 
@@ -47,7 +10,7 @@ Let v28 be the newest version. A customer needs a patch release for their older 
   export base=v27.6.0
   export branch=maintenance-$base
   export tag=$branch
-  
+
   # create branch maintenance-v27.6.0
   git checkout $base
   git checkout -b $branch
@@ -56,7 +19,7 @@ Let v28 be the newest version. A customer needs a patch release for their older 
 2. Update package.json
 
   ```bash
-  # semantic-release only runs on master by default. 
+  # semantic-release only runs on master by default.
   # Set release.branch to maintenance-v27.6.0 in package.json to enable semantic-release on your non-master branch.
   # semantic-release publishes the new version as `latest` by default.
   # As you're releasing an old version, set publishConfig.tag to prevent a release of the `latest` dist-tag
@@ -64,9 +27,9 @@ Let v28 be the newest version. A customer needs a patch release for their older 
 
   pkg=`cat package.json | jq ".release.branch=\"$branch\" | .publishConfig.tag=\"$tag\""` | echo $pkg > package.json
   ```
-  
+
   These fields in your package.json should now look like this (you might have additional values in there):
-  
+
   ```json
   "publishConfig": {
     "tag": "maintenance-v27.6.0"
@@ -77,29 +40,29 @@ Let v28 be the newest version. A customer needs a patch release for their older 
   ```
 
 3. Create a dist tag that's used for semantic-release
-  
-  To push a dist-tag to npm you need write access. For more info see how to access [private npm packages](access.md)
+
+  To push a dist-tag to npm you need write access. For more info see how to access [private npm packages](./npm/access-livingdocs-organization.md)
   ```bash
   # install the get-npm-token package
   npm install -g get-npm-token
-  
+
   # Create a token with write access.
   # It will ask you for credentials for a user.
-  # This user needs write access for the generated token 
+  # This user needs write access for the generated token
   # to have write access as well.
   get-npm-token
   ```
-  
+
   Then you can create the dist tag:
   ```bash
   export name=$(node -e 'console.log(require("./package.json").name)')
-  
+
   # Pass the auth token you generated above in the following command.
   # Make sure you have a write access token, or you'll get a 404
   # e.g. npm dist-tag add @livingdocs/editor@v7.3.4 maintenance-v7.3.4
   npm dist-tag add $name@$base $tag --//registry.npmjs.org/:_authToken=<yourTokenWithWriteAccess>
   ```
-  
+
 4. Push your branch to origin
 
   ```bash

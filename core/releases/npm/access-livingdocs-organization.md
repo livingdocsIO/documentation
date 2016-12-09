@@ -1,4 +1,6 @@
-## Private npm packages
+## Access @livingdocs organization on npm
+
+All public and private packages belong to the [@livingdocs organization](https://www.npmjs.com/org/livingdocs). Publish using access tokens belonging to the organization.
 
 Installing private packages (scoped with @livingdocs) requires an npm token with at least read access. For publishing, you need write access respectively.
 
