@@ -16,6 +16,9 @@ Let v28 be the newest version. A customer needs a patch release for their older 
   git checkout -b $branch
   ```
 
+  ⚠️ Don't let your `base` get outdated. If someone else releases a version on top of the `base` you chose, you will be lacking the diff in the version you release. Make sure you're the only one working on the same `base`. Finish this process timely to minimize the chance of a diff.
+
+
 2. Update package.json
 
   ```bash
