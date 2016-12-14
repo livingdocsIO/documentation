@@ -80,9 +80,9 @@ Let v28 be the newest version. A customer needs a patch release for their older 
    ```bash
    # create a branch based on that maintenance branch you just created
    export fix=some-fix
-   git checkout -b maintenance-$branch-$fix
+   git checkout -b $branch-$fix
    ... # apply and commit your changes
-   git push -u origin maintenance-$branch-$fix
+   git push -u origin $branch-$fix
    ```
 
 6. Create a pull request from your fixes branch `maintenance-v27.6.0-some-fix` with the target branch `maintenance-v27.6.0`
