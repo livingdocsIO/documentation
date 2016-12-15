@@ -6,7 +6,7 @@
 
 Regain control over your HTML. HTML and CSS always work together. Creating a CSS design can only work if you know how the HTML looks. Or better yet you can define your own HTML. Traditionally developers have to create templates for that on a server somewhere for a particular CMS. With Livindocs this is different.
 
-In Livingdocs you specify all HTML components as part of a Livingdocs design which is just a JSON file you can create (More on this [here](../design/create_designs.md)).
+In Livingdocs you specify all HTML components as part of a Livingdocs design which is just a JSON file you can create (More on this [here](../public/design/create_designs.md)).
 
 For example a component template for a paragraph looks like this:
 
