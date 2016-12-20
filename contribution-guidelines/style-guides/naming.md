@@ -1,5 +1,7 @@
 ## Naming conventions
 
+### Projects
+
 The following naming conventions apply to projects when owned by Livingdocs.
 
 | Thing | Convention | Livingdocs example | Customer example |
@@ -12,12 +14,21 @@ The following naming conventions apply to projects when owned by Livingdocs.
 | Rancher environment | `<namespace>` | `livingdocs` | `bluewin` |
 | Rancher stack | `<environment>` | `staging` | `staging` |
 
-### Project
+#### Project
 
 The name of the project, eg. `editor`, `server`, `framework`.
 
-### Namespace
+#### Namespace
 
 For external projects, use the customer name, eg, `bluewin`.
 For internal projects, use `livingdocs`. If there are multiple internal instances, use `livingdocs-<instance>`.
 If parts of the namespace cause redundant parts in the final name, they can be left out. Eg. `livingdocs/livingdocs-server` is just `livingdocs/server`.
+
+## Environment variables
+
+Applies to environment variables referenced in config files
+
+- Use **lowercase** to prevent clashes with existing variables on the system
+- Indicate hierarchy with **two underscores**
+
+For example, the config key `db:name` results in the environment variable `db__name`
