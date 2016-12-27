@@ -1,6 +1,6 @@
 # Public API
 
-### `GET /public/publications` 
+### `GET /public/publications`
 
 #### Description
 
@@ -41,15 +41,15 @@ curl http://localhost:9090/public/publications?limit=1&space=1
 }
 ```
 
-- The `metadata` field contains structured publication-time information about a document. Typically, you use information from the `metadata` field for content that you require to be there, e.g., a title, and the livingdocs document tree to get optional content, e.g., videos if there are any in the document. 
+- The `metadata` field contains structured publication-time information about a document. Typically, you use information from the `metadata` field for content that you require to be there, e.g., a title, and the livingdocs document tree to get optional content, e.g., videos if there are any in the document.
 - The `design` field contains the name and version of the design this publication was rendered with. This is important for third-party apps in order to load the correct CSS resources.
 
 
-### `GET /public/publications/:id` 
+### `GET /public/publications/:id`
 
 #### Description
 
-Gets a sinlge published document by id. This endpoint is mostly used to create the single-document view of your application, e.g., a page for a single blog article.
+Gets a single published document by id. This endpoint is mostly used to create the single-document view of your application, e.g., a page for a single blog article.
 
 #### Parameters
 
@@ -61,7 +61,7 @@ Gets a sinlge published document by id. This endpoint is mostly used to create t
 #### Example Request
 
 ```bash
-curl curl http://localhost:9090/public/publications/2
+curl http://localhost:9090/public/publications/2
 ```
 
 #### Response
