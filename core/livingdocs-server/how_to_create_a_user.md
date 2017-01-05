@@ -1,21 +1,38 @@
-## Create the first admin user
+## How to create a user
+
+## Prerequisites
+
+1. **Applies only if you plan to run this remotely.** Make sure you've reviewed this [docker guide](https://github.com/upfrontIO/livingdocs/blob/master/core/guides/deployment/container/docker.md).
+2. **Applies only if you plan to run this remotely.** Make sure your ssh key has been added to the remote server.
+3. Use password from e.g. 1password (8 digits, pronauncable, digits)
+4. Make sure the node server is running either locally or remotely
+
 ### Production
 
-Run the following commands in console:
+1. Copy the command how to run remotely shell commands [here](https://github.com/upfrontIO/livingdocs/blob/master/core/guides/deployment/container/docker.md#run-shell-commands). We call the 
+2. Replace the <name> with your remote instance name. If your intance is located at https://instance-name.hosted.livingdocs.io your <name> is `instance-name`
+3. If you want to create a regular user (not an admin) use:
 
-    heroku run bash --app livingdocs-api-production
-    npm install -g grunt-cli
-    grunt user-local-create
+````bash
+ssh-part run <name> grunt create-user
+```` 
 
-Use password from e.g. 1password (8 digits, pronauncable, digits)
+If you want to create an admin
 
-### Staging
+````bash
+ssh-part run <name> grunt create-user-admin
+````
 
-    heroku run bash --app livingdocs-api-staging
-    …
+### Locally
 
-## Create a user after you have an admin
-Run the following command in the console:
+If you want to create a regular user (not an admin) use:
 
-    # A node server must be running somewhere
-    grunt user-create
+````bash
+grunt create-user
+```` 
+
+If you want to create an admin run:
+
+````bash
+grunt create-user-admin
+````
