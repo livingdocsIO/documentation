@@ -1,5 +1,3 @@
-# Git
-
 ## Global `.gitignore`
 
 Every developer has their own tools and preferences. If you want to ignore some

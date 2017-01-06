@@ -1,9 +1,5 @@
 # Set an editor only
 
-## Prerequisites
-- [Node.js](./node.md)
-- [Docker](./docker.md)
-
 ## Install the editor
 
 ```bash

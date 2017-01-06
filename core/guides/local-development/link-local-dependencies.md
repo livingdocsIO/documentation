@@ -1,63 +1,34 @@
 # Link local dependencies
 
-There is two Livingdocs dependencies:
-- li-server
-- li-framework
+When you’re developing on a npm dependency (eg. the framework or editable, but also an upstream server or editor), 
+you might want to integration test your local changes in projects that use the dependency you're working on (eg. test your local framework changes in a local editor).
 
-li-server is a dependency of the service-servers.
+Use [`npm link`](https://docs.npmjs.com/cli/link) to locally link your dependencies. 
 
-li-framework is both a dependency for the editors and the li-server.
+For node dependencies, linking is enough to work with a local dependency. If your dependency needs a build, run it in order to make your changes available to the linking project. 
 
-When you’re developing locally a dependency, you might want to integration test your local changes in the service-server or in the editor instance.
-
-## Examples
+## Example
 
 ### Link li-server in the service-server
 
-1. Prerequisites
+Check out the repository of your dependency (you want to make changes here)
+```bash
+git git@github.com:upfrontIO/livingdocs-server.git
+cd livingdocs-server
+npm install
+npm link
+```
 
-  [editor and service-server](../../../public/guides/local-development/editor-and-server.md)
+Link the li-server dependency
+```bash
+git git@github.com:upfrontIO/livingdocs-service-server.git
+cd livingdocs-service-server
+npm link @livingdocs/server
+```
 
-2. Getting the li-server dependency
+And when you want to revert to the official version from npm
 
-  ```bash
-  git git@github.com:upfrontIO/livingdocs-server.git
-  cd livingdocs-server
-  npm install
-  npm link
-  ```
-
-3. Linking the li-server dependency
-  ```bash
-  cd $SERVICE_SERVER_PATH
-  npm link @livingdocs/server
-  ```
-
-4. **When you make changes to the li-server do not forget to restart your customization server**
-
-### Link li-framework in the editor
-
-1. Prerequisite
-  one of:
-  - [editor and server](../../../public/guides/local-development/editor-and-server.md)
-  - [editor only](./editor-only.md)
-
-
-2. Getting the li-framework dependency
-
-  ```bash
-  git git@github.com:upfrontIO/livingdocs-framework.git
-  cd livingdocs-framework
-  npm install
-  npm build
-  npm link
-  ```
-
-3. Linking the li-framework dependency
-  ```bash
-  cd $EDITOR_PATH
-  npm link @livingdocs/framework
-  ```
-
-4. **When you make changes to the framework do not forget to rebuild it with:
-`npm run build`**
+```
+cd livingdocs-service-server
+npm unlink @livingdocs/server
+```

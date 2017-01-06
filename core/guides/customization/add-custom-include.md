@@ -1,32 +1,17 @@
-### Register includes in the Livingdocs Server
+## Includes 
 
-Introduced in `v28.9.0`
+Think of Livingdocs includes as edge-side includes. You can create include components in your design, using a include [directive](../../livingdocs-framework/directives.md). 
+Includes can render content to your article or page that comes from an external source.
 
+Displaying a teaser for example can be achieved through includes. An article is referenced and its data (eg. title, description, teaser image) is fetched when rendering a page.
 
-#### embed-teaser
+### Example
 
-The embed-teaser is a new component:
-```html
-<div doc-include="embed-teaser"></div>
-```
-It currently only exists in the [timeline design](https://github.com/upfrontIO/livingdocs-design-timeline/blob/master/source/components/Embeds/embed-teaser.html) version `0.6.0`, in order to use it, you should add this design repository in your configuration file:
-```coffeescript
-  designs:
-    design_repository: 'https://api.livingdocs.io'
-```
-And finally choose this timeline design during the setup of the server.
-
-
-#### Rendering
-
-##### Description
-
-The idea is to give the li-server access to a set of renderers. One renderer for each include.
-
-So the li-server can transform this include:
+The server can transform this include:
 ```html
 <ld-include data-include-service="embed-teaser" data-include-params="{"mediaId":2}"></ld-include>
 ```
+
 into something like this:
 ```html
 <a internal href="/articles/2.html">
@@ -37,18 +22,31 @@ into something like this:
   </div>
 </a>
 ```
-The rendering is needed in two locations:
-- the includes preview in the editor
-- the public API once the document is published
 
-##### Registration of renderers
+### Registration of renderers
 
-In the `nzz-api` or in `li-beta` you need to add a rendering method and its template (combination of those is a `service-renderer`) in the `plugins/includes` directory.
-Examples of a `service-renderer`:
-- https://github.com/upfrontIO/livingdocs-beta/pull/62
-- https://github.com/nzzdev/livingdocs-api/pull/1134
+Since server `v28.9.0`, you can register includes in the Livingdocs Server using the API exposed by the `li-includes` feature 
 
-Then you have to register your newly created `service-renderer` like this:
+The include is rendered in two locations:
+- in the editor while editing 
+- in the final published HTML
+
+First, create an include component in your design. For example, have a look at the `embed-teaser` in the [timeline design](https://github.com/upfrontIO/livingdocs-design-timeline/blob/master/source/components/Embeds/embed-teaser.html) 
+                                                   
+```html
+<div doc-include="embed-teaser"></div>
+``` 
+
+Each include directive references a `include-service`, that is invoked when rendering the include. The function `render` is called on your custom service:
+
+```coffeescript
+exports = module.exports =
+  render: (params, callback) ->
+    renderedHtml = 'hello world!'
+    return callback(null, renderedHtml)
+```
+
+Register a service renderer for the type `embed-teaser``:
 ```coffeescript
   includesApi = liServer.features.api('li-includes')
 
@@ -60,7 +58,8 @@ Then you have to register your newly created `service-renderer` like this:
     embedTeaserServiceRenderer
   )
 ```
-Finally, you have to set the channel configuration, in `app/channels/article_config.coffee`:
+
+Includes are not resolved by default. Enable it in the channel configuration:
 ```coffeescript
 module.exports =
 
@@ -72,23 +71,3 @@ module.exports =
           resolveIncludes: ['embed-teaser']
 ```
 If you miss this final step, the rendering will only happen for the includes preview in the editor but NOT in the public API.
-
-### Location in the `li-server`
-![untitled diagram](https://cloud.githubusercontent.com/assets/1951875/16261316/5c6f2e98-386b-11e6-98ba-eb336e3c5984.png)
-
-
-#### `li-beta`
-This "replacing of includes" takes place int the `render-pipeline`. It's the box with the `after render` label in the diagram.
-This feature was enabled in the `li-server` version `v28.6.0` by this PR: https://github.com/upfrontIO/livingdocs-server/pull/981
-
-#### `nzz-api`
-There is also a `before-render` labeled box which is the strategy chosen by NZZ here:
-https://github.com/nzzdev/livingdocs-api/pull/1197
-This feature was enabled by this PR: https://github.com/upfrontIO/livingdocs-server/pull/1034
-
-####  `before render` vs `after render`
-On the left-side of the diagram we are in a component world and in the right-side, after the rendering, we are in a HTML world.
-As far as I understand in the multiple "pipes" (NZZ has 9): print channel pipe, web channel pipe etc... it is complicated to handle this unresolved `doc-include` component.
-In the middle of the diagram NZZ wants to know exactly what are the structure and the content of all the components. They don't want to have a mystery component that passes through the `render-pipeline` without revealing itself.
-
-So instead of parsing HTML and replacing `doc-include` by their rendition at the far end of the `render-pipeline` they crawl the component tree and replace `doc-include` component before hand.

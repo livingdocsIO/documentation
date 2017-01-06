@@ -1,31 +1,29 @@
 ## Usage
 
-``` bash
-npm start
-```
-
-Go to: http://localhost:9000/styleguide.html
+The styleguide is included with the upstream editor. Run it and go to: http://localhost:9000/styleguide.html
 
 
-## Description
+## Maintenance
 
 In styleguide/templates/main.html you can add those two directives:
 
-- Styleguide include
+Styleguide include
 
-  ``` HTML
-  <sg-include data-template="topbar.html"></sg-include>
-  ```
-- Styleguide iframe
+``` HTML
+<sg-include data-template="topbar.html"></sg-include>
+```
 
-  ``` HTML
-  <sg-iframe
-    data-src="topbar.html"
-    data-height="auto"
-    data-editor-style="false">
-  </sg-iframe>
-  ```
+Styleguide iframe
 
-  `sg-Iframe` is styled by the _iframe-styles.scss_ by default. It can also uses the _editor-styles.scss_ file alongside _iframe-styles.scss_, if `data-editor-style` is set to `true`
+``` HTML
+<sg-iframe
+data-src="topbar.html"
+data-height="auto"
+data-editor-style="false">
+</sg-iframe>
+```
 
-Both are using a topbar.html file which should be located in the styleguide/templates directory.
+`sg-Iframe` is styled by the `iframe-styles.scss` by default. It can also uses the `editor-styles.scss` file alongside `iframe-styles.scss`, 
+if `data-editor-style` is set to `true`
+
+Both are using a `topbar.html` file which should be located in the `styleguide/templates` directory.

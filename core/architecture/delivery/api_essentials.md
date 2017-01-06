@@ -1,19 +1,5 @@
 # Livingdocs REST API
 
-
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [Livingdocs REST API](#livingdocs-rest-api)
-	- [Overview](#overview)
-	- [A visual example](#a-visual-example)
-	- [Getting a documents feed](#getting-a-documents-feed)
-	- [Getting a single document](#getting-a-single-document)
-	- [Getting a document's design](#getting-a-documents-design)
-	- [Getting a document's dependencies](#getting-a-documents-dependencies)
-	- [The resrc.it dependency](#the-resrcit-dependency)
-
-<!-- /TOC -->
-
 ## Overview
 
 The essential parts in a frontend app are:
