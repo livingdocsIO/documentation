@@ -58,7 +58,7 @@ This data comes directly with a publication. Examples are the publication date o
 
 The rendered document is delivered by the Livingdocs Server with the help of the various render decorators that produce channel-specific output. For the Livingdocs editor the render decorators are currently a black-box, i.e., there is no WYSIWYG for everything going on in the render decorators. We could (and should) think of preview modes using the render decorators.
 
-Changes to the render decorators are not subject to migrations. They do require a re-publish of the document however to be applied. The same is true for changes in the rendering behavior of the Livingdocs Engine (though changes should be much rarer there).
+Changes to the render decorators are not subject to migrations. They do require a re-publish of the document however to be applied. The same is true for changes in the rendering behavior of the Livingdocs Framework (though changes should be much rarer there).
 
 ## Migration algorithm
 
