@@ -1,19 +1,5 @@
 # Create designs with livingdocs-design-boilerplate
 
-Table of contents
-
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-- [What is a Livingdocs design?](#what-is-a-livingdocs-design)
-- [Boilerplate design repository](#boilerplate-design-repository)
-- [Example design definition:](#example-design-definition)
-- [How to define components](#how-to-define-components)
-    - [Adding your component to the design](#adding-your-component-to-the-design)
-    - [Using the preview](#using-the-preview)
-    - [A more complex example](#a-more-complex-example)
-    - [Available attributes in the component HTML](#available-attributes-in-the-component-html)
-    - [But I want my own design](#but-i-want-my-own-design)
-<!-- /TOC -->
-
 ## What is a Livingdocs design?
 
 A Livingdocs design is a set of HTML components and configurations how they can be used and edited. It also lists the CSS and/or Javascript dependencies that need to be loaded to show the design correctly. A Livingdocs design is defind in a `design defintion` JSON file.

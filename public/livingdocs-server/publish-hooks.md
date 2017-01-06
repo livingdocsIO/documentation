@@ -1,16 +1,5 @@
 # Livingdocs Server Publish Hooks
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [Livingdocs Publish Plugin](#livingdocs-publish-plugin)
-	- [Overview](#overview)
-		- [The publish hook](#the-publish-hook)
-		- [The documentVersion object](#the-documentversion-object)
-		- [The unpublish hook](#the-unpublish-hook)
-		- [Sample webhook implementation](#sample-webhook-implementation)
-
-<!-- /TOC -->
-
 ## Overview
 
 The boilerplate app allows you to subscribe to publish and unpublish events of articles and pages and implement your customizations, e.g., for third-party system integrations.

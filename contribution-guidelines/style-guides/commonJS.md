@@ -20,7 +20,7 @@ Document = require('../Document')
 # Export the module
 module.exports =
 
-  # Keep exported methods short so readers can get a glance at the
+  # Keep exported functions short so readers can get a glance at the
   # module's signature quickly.
   createDocument: ({foo, bar}, cb) ->
     db.connection.transaction (trx) ->
@@ -32,7 +32,7 @@ module.exports =
 # Private
 # -------
 
-# Declare local method
+# Declare local function
 someHelperFunction = ->
   console.log('Have fun coding!')
 ```

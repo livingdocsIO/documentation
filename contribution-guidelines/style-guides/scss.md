@@ -81,7 +81,7 @@ js-action-save
 ```
 
 
-### Decleration order
+### Declaration order
 
 Related property declarations should be grouped together following the order:
 
@@ -172,13 +172,3 @@ color: #fff;
 or 
 color: white;
 ```
-
-
-### Tools
-
-#### Sublime Sass Linter
-
-Linter plugin for SublimeLinter:
-[SublimeLinter-scss-lint](https://github.com/attenzione/SublimeLinter-scss-lint)
-
-And here is the [.scss-lint.yaml](https://gist.github.com/peyerluk/e342b843f906baa840c0) file you can use for linting your sass files.

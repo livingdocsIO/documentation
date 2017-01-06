@@ -1,9 +1,10 @@
-# Mardown Style Guide
+# Markdown Style Guide
 
 ## Block Elements
 
 In general, all block elements should be preceded and followed by a single blank
-line except when placed at the very beginning or at the very end of the file.
+line except when placed at the very beginning.
+
 Never use multiple blank lines in a document as it does not carry any meaning.
 
 ### Paragraphs and Line Breaks
@@ -49,8 +50,9 @@ bad example
 ```
 
 When writing a list that contains items consisting of more than just a single
-paragraph, keep the content indented at 4 spaces. This is an example of how not
-to do it because it creates the wrong HTML:
+paragraph, keep the content indented at 4 spaces. 
+
+This is an example of how not to do it because it creates the wrong HTML:
 
 ```markdown
 - paragraph one
@@ -154,7 +156,7 @@ Results in:
 > }
 > ```
 
-If you don't know the identifier of the language, look it up [here]
+If you don't know the identifier of the language, [look it up]
 (https://github.com/github/linguist/blob/master/lib/linguist/languages.yml).
 
 ### Blockquotes
@@ -222,7 +224,8 @@ To create a horizontal rule, prefer three consecutive asterisks:
 ***
 ```
 
-## Span Elements
+
+## Inline Elements
 
 ### Links
 

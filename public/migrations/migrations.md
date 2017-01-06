@@ -1,16 +1,5 @@
 # Livingdocs Data Migrations
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-
-- [Livingdocs Data Migrations](#livingdocs-data-migrations)
-	- [Overview](#overview)
-	- [Migrations from design changes](#migrations-from-design-changes)
-	- [Structure of a migration script](#structure-of-a-migration-script)
-	- [The `data-migration` grunt task](#the-data-migration-grunt-task)
-	- [Examples](#examples)
-
-<!-- /TOC -->
-
 ## Overview
 
 The Livingdocs design is in some sense like a database. Instead of database columns you define directives on a component, e.g. an editable title (`doc-editable='title'`). The component's "database" now has a "column" title.
