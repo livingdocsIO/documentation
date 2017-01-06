@@ -44,7 +44,7 @@ Let v28 be the newest version. A customer needs a patch release for their older 
 
 3. Create a dist tag that's used for semantic-release
 
-  To push a dist-tag to npm you need write access. For more info see how to access [private npm packages](./npm/access-livingdocs-organization.md)
+  To push a dist-tag to npm you need write access. For more info see how to access [private npm packages](access-livingdocs-organization.md)
   ```bash
   # install the get-npm-token package
   npm install -g get-npm-token
