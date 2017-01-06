@@ -4,19 +4,11 @@ The Livingdocs Page Management system allows to generate and manage aggregate pa
 
 The Livingdocs Page Management allows both, definition of manually ordered card lists and automatically updating card lists as well as combinations of both (more below).
 
-## Table of contents
-
-- Teaser Management Overview (this page)
-- [Creating your own cards](./component_card_definition.md)
-- [Assigning documents to lists](./teaser_assignment.md)
-- [Elastic search indices in detail](./elastic_indices.md)
-- [A sample frontend app for aggregate pages](./sample_app.md)
-
 ## Main concepts
 
 ### Component Card
 
-A compnent card is a short abstract for an article. Typically it consists of a title , an image, and some metadata such as author and date, but the design definition of teasers is just as free as any other Livingdocs component. There can be several types of cards, e.g. for head-articles and updates.
+A component card is a short abstract for an article. Typically it consists of a title , an image, and some metadata such as author and date, but the design definition of teasers is just as free as any other Livingdocs component. There can be several types of cards, e.g. for head-articles and updates.
 
 Cards are rendered just like any other Livingdocs component. The data to render the card (title, etc.) comes from a document's metadata. This metadata is typically defined and/or edited when publishing a document such as selecting a good teaser image for different aspect ratios.
 
