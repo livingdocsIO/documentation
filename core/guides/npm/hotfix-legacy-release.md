@@ -1,4 +1,3 @@
-
 ### How to release a hotfix step by step
 
 Let v28 be the newest version. A customer needs a patch release for their older version v27.6.0.
@@ -44,17 +43,7 @@ Let v28 be the newest version. A customer needs a patch release for their older 
 
 3. Create a dist tag that's used for semantic-release
 
-  To push a dist-tag to npm you need write access. For more info see how to access [private npm packages](access-livingdocs-organization.md)
-  ```bash
-  # install the get-npm-token package
-  npm install -g get-npm-token
-
-  # Create a token with write access.
-  # It will ask you for credentials for a user.
-  # This user needs write access for the generated token
-  # to have write access as well.
-  get-npm-token
-  ```
+  To push a dist-tag to npm you need write access. You can find a pre-generated tokens with write access in the **secrets**
 
   Then you can create the dist tag:
   ```bash
