@@ -61,4 +61,4 @@ Basically all endpoints that can have side effects may return this error.
 
 #### 500 Internal Server Error
 
-Returned when we fuck up. Go fix it!
+Returned when we a server error occurs. Feel free to file a bug report
