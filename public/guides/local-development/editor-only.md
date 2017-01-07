@@ -9,7 +9,7 @@ npm install
 ```
 
 List of the available editors:
-- [livindocs core editor](https://github.com/upfrontIO/livingdocs-editor)
+- [Livingdocs core editor](https://github.com/upfrontIO/livingdocs-editor)
 - [nzz editor](https://github.com/nzzdev/livingdocs-editor)
 
 ## Start up

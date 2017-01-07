@@ -517,4 +517,4 @@ The available statuses values for a print article are:
 - `Freigabe`, the article is ready for the printing press
 - `Papierkorb`, the article is being deleted (archived)
 
-NOTE: Currently, all of these statuses are informational, i.e. Livingdocs does not evaluate them. The only thing Livigndocs currently evaluates is if the article is read-only (locked) or not. This is though not handled by the status, but by the `isEditable` field in the `status` response.
+NOTE: Currently, all of these statuses are informational, i.e. Livingdocs does not evaluate them. The only thing Livingdocs currently evaluates is if the article is read-only (locked) or not. This is though not handled by the status, but by the `isEditable` field in the `status` response.

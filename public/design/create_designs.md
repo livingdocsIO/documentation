@@ -2,17 +2,24 @@
 
 ## What is a Livingdocs design?
 
-A Livingdocs design is a set of HTML components and configurations how they can be used and edited. It also lists the CSS and/or Javascript dependencies that need to be loaded to show the design correctly. A Livingdocs design is defind in a `design defintion` JSON file.
+A Livingdocs design is a set of HTML components and configurations how they can be used and edited. 
+It also lists the CSS and/or Javascript dependencies that need to be loaded to show the design correctly, 
+both in the editor and when rendering it on the server side. 
+A Livingdocs design is defined in a `design definition` JSON file.
 
-To use a Livingdocs design you have to upload the JSON file and all its dependencies (CSS, Javascript and image files) to our server and configure your account to use this design.
+To use a Livingdocs design you have to upload the JSON file and all its dependencies 
+(CSS, Javascript and image files) to a livingdocs server and configure your account to use this design.
 
 ## Boilerplate design repository
 
-[`livingdocs-design-boilerplate`](https://github.com/upfrontIO/livingdocs-design-boilerplate) is a git repository that helps building Livingdocs design defintions. It has a grunt task that can create the files needed to configure the Livigndocs framework and provides a sample design with Twitter bootstrap. You don't need to use our boilerplate but it's a great way to get started quickly.
+[`livingdocs-design-boilerplate`](https://github.com/upfrontIO/livingdocs-design-boilerplate) is a git repository 
+that helps building Livingdocs design definitions. It has a grunt task that can create the files needed to 
+configure the Livingdocs framework and provides a sample design with Twitter bootstrap. 
+You don't need to use our boilerplate but it's a great way to get started quickly.
 
 ## Example design definition:
 
-Lets start with a possible end result of a Livindocs design definition.
+Lets start with a possible end result of a Livingdocs design definition.
 
 ```javascript
 var designDefinition = {
