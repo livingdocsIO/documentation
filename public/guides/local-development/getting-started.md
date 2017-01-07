@@ -21,7 +21,7 @@ jq is a lightweight and flexible command-line JSON processor
 
 https://stedolan.github.io/jq/download/
 
-## Install node and npm
+### Install node and npm
 
 If the project requires a specific node or npm version, it is stated in the `package.json`. You can install the required versions by running   
 
@@ -30,15 +30,19 @@ nvm install "$(jq -r '.engines.node' package.json)"
 nvm alias default $(node -v)
 ```
 
-## Install npm dependencies
-
-```bash
-npm install -g npm@"$(jq -r '.engines.npm' package.json)"
-```
-
 ## Set environment
 
-Permanently set `ENVIRONMENT=local` by adding the following line to your `~/.zhsrc` or `~/.bashrc`
+Locally, you might want to permanently set `ENVIRONMENT=local` by adding the following line to your `~/.zhsrc` or `~/.bashrc`
 ```bash
 export ENVIRONMENT=local
 ```
+
+## Ready to run
+
+Clone the project you want to run and install the npm dependencies 
+   
+```bash
+npm install
+``` 
+
+**Proceed with the instructions in the projects `README`**
