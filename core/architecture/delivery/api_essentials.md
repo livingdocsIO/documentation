@@ -77,7 +77,7 @@ The easiest option is to just use our Iframe embed code. You can see the Iframe 
 	<script src="http://localhost:9090/assets/livingdocs-embed.js"></script></div>
 ```
 In order to embed an article in one of your HTML pages you can either copy the embed code for each article or you can generate the above snippet dynamically by inserting the correct values for the article id (data values).
-The other option is to query a document through the REST API as you did before for a collection of documents. You can either get the id of a document from the Livingdocs editor in the publish panel (using the "use API access" link) or from a previous [document feed call](./api_essentials#getting-a-documents-feed). Once you have the id, simply call `GET http://api.livigndocs.io/public/publications/:id` to get back the document's latest published version.
+The other option is to query a document through the REST API as you did before for a collection of documents. You can either get the id of a document from the Livingdocs editor in the publish panel (using the "use API access" link) or from a previous [document feed call](./api_essentials#getting-a-documents-feed). Once you have the id, simply call `GET http://api.Livingdocs.io/public/publications/:id` to get back the document's latest published version.
 
 A response will look like the following:
 ```json

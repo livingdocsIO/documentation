@@ -61,7 +61,7 @@ For every component you can create a new file. Here is an example for a paragrap
 </p>
 ```
 
-Inside of the `<script type="ld-conf">` you can define configurations for the components. The component itself is built with normal HTML and Livindocs specific attributes indicate to Livingdocs what content the user can change and edit. The attribute `doc-editable` will turn the paragraph into an editable element.
+Inside of the `<script type="ld-conf">` you can define configurations for the components. The component itself is built with normal HTML and Livingdocs specific attributes indicate to Livingdocs what content the user can change and edit. The attribute `doc-editable` will turn the paragraph into an editable element.
 
 
 #### Advanced Example of a list
