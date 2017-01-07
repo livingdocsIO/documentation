@@ -35,3 +35,10 @@ nvm alias default $(node -v)
 ```bash
 npm install -g npm@"$(jq -r '.engines.npm' package.json)"
 ```
+
+## Set environment
+
+Permanently set `ENVIRONMENT=local` by adding the following line to your `~/.zhsrc` or `~/.bashrc`
+```bash
+export ENVIRONMENT=local
+```
