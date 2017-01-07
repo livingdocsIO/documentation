@@ -1,6 +1,13 @@
-# Node setup
+# Getting started with livingdocs
 
-## Prerequisites
+Both the server and the editor ship with a default configuration, that works out of the box with the Dockerfiles we provide. 
+
+## Install Docker
+
+Install the docker engine to use our 
+https://docs.docker.com/engine/getstarted/step_one/
+
+## Node setup
 
 ### nvm
 
