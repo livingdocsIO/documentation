@@ -26,6 +26,8 @@ On a high level, livingdocs can be divided in two different stacks. These stacks
 ## External services
 For specific features, livingdocs uses external services.
 
+![API Link](./architecture-external-services.png)
+
 - **Image service (resrc.it)**: 
   - Used by the server in editing mode for cropping images.
   - Used by the editorial users browser to deliver responsive images.
