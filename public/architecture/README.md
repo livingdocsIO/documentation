@@ -24,7 +24,7 @@ On a high level, livingdocs can be divided in two different stacks. These stacks
 - **Elasticsearch (ES)**: The editor provides the user with a search, powered by an elasticsearch secondary index. Only servers in editing mode need access to this service.
 
 ## External services
-For specific features, livingdocs uses external services.
+For specific features, livingdocs uses external services. All external systems expose a REST interface, so only ports 443 and 80 are required.
 
 ![API Link](./architecture-external-services.png)
 
