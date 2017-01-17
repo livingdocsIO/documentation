@@ -35,6 +35,7 @@ For specific features, livingdocs uses external services. All external systems e
 - **Iframely**:
   - Design components with automatic metadata fetching from a third-party source (such components are optional) in the editorial users browser.
   - Automatic validity checks of entered links. Used by the editorial users browser.
+- **CDN (keyCDN)**: Caching for static assets
 - **Websockets (Pusher, optional)**: To support real-time collaboration in the editor. The feature can be disabled, so this is optional. Used by the server in editing mode, as well as the editorial users browser.
 - **Spellchecker (optional)**: Livingdocs supports the integration of third-party spellcheckers. The feature can be disabled, so this is optional. Used by the editorial users browser.
 - **Metrics and Logging (optional)**: Newrelic, Mixpanel, Loggly. Used by the server in editing mode.
