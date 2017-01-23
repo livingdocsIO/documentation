@@ -4,13 +4,13 @@ Any livingdocs server can act as design server.
 
 ## Configure a design server 
 
-In the configuration of the livingdocs server, you can point `design:design_repository` to any livingdocs server
+In the configuration of the livingdocs server, you can point `designsApi:host` to any livingdocs server
 instance, even a local installation.
 
 ```coffee
 module.exports =
-  designs:
-    design_repository: 'http://localhost:9090'
+  designsApi:
+    host: 'http://localhost:9090'
 ```
 
 For simple evaluations you can use the server of our service at `https://api.livingdocs.io`. 
