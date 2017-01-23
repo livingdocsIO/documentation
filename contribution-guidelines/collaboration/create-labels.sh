@@ -28,6 +28,7 @@ if [ "$repo" == "livingdocs-planning" ]; then
   LABELS["for/NZZ"]="3e78bd"
   LABELS["for/Bluewin"]="061e5c"
   LABELS["for/Livingdocs"]="29b96f"
+  LABELS["for/SZ"]="03a491"
 else
   LABELS["to/Review"]="009800"
   LABELS["to/Test"]="00ce00"
