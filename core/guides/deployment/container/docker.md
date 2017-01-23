@@ -32,19 +32,19 @@ ssh -t dokku@dokku.livingdocs.io lvds:create <name>
 Add a git remote in your local server repository:
 
 ```
-git remote add dokku dokku@dokku.livingdocs.io:<name>-server
+git remote add <name> dokku@dokku.livingdocs.io:<name>-server
 ```
 
 Create a configuration file for the environment `dokku_<name>`. In case you need to store secrets, add them as environment variables to the instance like follows:
 
 ```
-ssh -t dokku@dokku.livingdocs.io config:set <name>-server auth__secret="" aws__access_key="" aws__secret_key="" pusher__app_id="" pusher__key="" pusher__secret=""
+ssh -t dokku@dokku.livingdocs.io config:set <name>-server auth__access_token_secret="" aws__access_key="" aws__secret_key="" pusher__app_id="" pusher__key="" pusher__secret=""
 ```
 
 Then you are ready to deploy by simply pushing to your remote:
 
 ```
-git push dokku master
+git push <name> localbranch:master
 ```
 
 The first deployment might fail because grunt setup has not been run. To open a bash on your server instance, run:
@@ -61,7 +61,7 @@ Your server is available on `http://<name>-server.hosted.livingdocs.io`
 Add a git remote in your local editor repository:
 
 ```
-git remote add dokku dokku@dokku.livingdocs.io:<name>
+git remote add <name> dokku@dokku.livingdocs.io:<name>
 ```
 
 Create a configuration file for the environment `dokku_<name>`. Point your editor to the server instance you just created.
