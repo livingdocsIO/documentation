@@ -1,20 +1,4 @@
-Livingdocs Design
-=================
-
-This project is a boilerplate design for Livingdocs ([Documentation](https://github.com/upfrontIO/livingdocs)) - you can fork to create your own designs.
-
-
-## Project structure
-
-The design is stored in the `src` directory.
-A design consists of the following files:
-
-    src/config.json    // design configuration file,             required
-    src/components/    // the components of a design,            required
-    src/stylesheets/   // stylesheets of a design,               required
-    src/images/        // images belonging to a design,          optional
-    src/index.html     // preview of the design in development,  optional
-
+# Livingdocs design basics
 
 ## config.json
 
@@ -29,23 +13,9 @@ Basic Information:
 "author": "upfront.io"
 ```
 
-
-### Css
-
-You can put your stylesheets inside of the `src/stylesheets` folders. How your css works and whether you use sass or less to generate it is up to you.
-
-Define the stylesheets that are needed by your design in the `config.json` so that Livingdocs can laod them dynamically into the editor.
-
-```javascript
-"assets": {
-  "css": ["./stylesheets/boilerplate.css"]
-},
-```
-
-
 ## Components
 
-Inside of the folder `src/components` you can define HTML components that can be used in documents that use your design. These components will be automatically inserted into `dist/design.json` when you run `grunt build`.
+Inside of the folder `src/components` you can define HTML components that can be used in documents that use your design. These components will be automatically inserted into `dist/design.json` when you run a build.
 
 For every component you can create a new file. Here is an example for a paragraph:
 
@@ -63,35 +33,7 @@ For every component you can create a new file. Here is an example for a paragrap
 
 Inside of the `<script type="ld-conf">` you can define configurations for the components. The component itself is built with normal HTML and Livingdocs specific attributes indicate to Livingdocs what content the user can change and edit. The attribute `doc-editable` will turn the paragraph into an editable element.
 
-
-#### Advanced Example of a list
-
-This is a custom container that can only be placed at the topmost level (not be nested inside other components) and which can only contain `text` and `image` components.
-
-```html
-<script type="ld-conf">
-{
-  "name": "list",
-  "label": "List",
-  "allowedParents": ["root"]
-  "directives": {
-    "children": {
-      "allowedChildren": ["text", "image"]
-    }
-  }
-}
-</script>
-
-<div doc-container="children"></div>
-```
-
-- `name` The name of this component as used in code. If not specified this is inferred from the filename.  
-- `label` The label displayed in user interfaces.  
-- `directives` Configuration for individual directives. Here the container is configured to only accept certain components.  
-- `allowedParents` Inside of which components a component can be placed. ('root' stands for the topmost level.)  
-
-
-#### Preview Component
+## Preview Component
 
 ```html
 <script type="ld-conf">
@@ -279,26 +221,3 @@ There are two types of prefill modes: 'string' and 'computed'. String will just 
 
 The example above will generate the content of header.author from the handler method "author" inside the livingdocs-editor and the content of image.caption will always be prefilled with "all copyright by me".
 Prefilling is just an initial value. You can always overwrite the content in the editor.
-
-## How to export your design
-
-The design is compiled using `grunt build` and previewed using `grunt dev`. The build folder is `/dist` and the build structure is as follows:
-
-    dist/design.js        // the design configuration as a js file
-    dist/design.json      // the design configuration as json
-    dist/images/          // images are copied
-    dist/stylesheets/     // stylesheets are to css and then copied
-
-You can manage your design versions with the `grunt release task`:
-
-    grunt release:patch
-    grunt release:minor
-    grunt release:major
-
-
-## Installation
-
-Install [node.js](http://nodejs.org/) and [grunt](http://gruntjs.com/installing-grunt)
-
-  1. From the root of the project run `npm install`
-  2. Run `grunt dev` to compile the design. When a file changes, the files in **/dist** folder are updated automatically
