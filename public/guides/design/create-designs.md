@@ -1,13 +1,16 @@
-# Create designs with livingdocs-design-boilerplate
+# Create designs
+
+This guide references the [Livingdocs timeline design](https://github.com/upfrontIO/livingdocs-design-timeline),
+ which you can use as a starting point for your own designs.
 
 ## What is a Livingdocs design?
 
-A Livingdocs design is a set of HTML components and configurations how they can be used and edited. 
-It also lists the CSS and/or Javascript dependencies that need to be loaded to show the design correctly, 
-both in the editor and when rendering it on the server side. 
+A Livingdocs design is a set of HTML components and configurations how they can be used and edited.
+It also lists the CSS and/or Javascript dependencies that need to be loaded to show the design correctly,
+both in the editor and when rendering it on the server side.
 A Livingdocs design is defined in a `design definition` JSON file.
 
-To use a Livingdocs design you have to upload the JSON file and all its dependencies 
+To use a Livingdocs design you have to upload the JSON file and all its dependencies
 (CSS, Javascript and image files) to a livingdocs server and configure your account to use this design.
 
 
@@ -15,7 +18,7 @@ To use a Livingdocs design you have to upload the JSON file and all its dependen
 
 ## Example design definition:
 
-Lets start with a possible end result of a Livingdocs design definition.
+Let's start with a possible end result of a Livingdocs design definition.
 
 ```javascript
 var designDefinition = {
@@ -114,13 +117,12 @@ var designDefinition = {
 };
 ```
 
-A full list of all available keys in the design configuration can be found in the README of the [`livingdocs-design-boilerplate`](https://github.com/upfrontIO/livingdocs-design-boilerplate#configjson)
-
-If you want to create your design without the boilerplate project then you will need to create a file as above by hand. The subsequent chapters assume that you use the boilerplate project and the grunt tasks that help you create designs more easily and streamlined.
 
 ## How to define components
 
-Let's get right to the core: how you can create a design definition with the `livingdocs-design-boilerplate`. The atom of a design is the `component`. Each component is a file in the filesystem with the ending `.html`. It includes a HTML template and configuration options. In your template you can use attributes to tell Livingdocs what elements can be edited or changed. Basically you create rules for the Livingdocs editor for what users will be allowed to change.
+The atom of a design is the `component`. Each component is a file in the filesystem with the ending `.html`.
+It includes a HTML template and configuration options. In your template you can use attributes to tell Livingdocs what
+elements can be edited or changed. Basically you create rules for the Livingdocs editor for what users will be allowed to change.
 Following you see a basic paragraph definition. It consists of a configuration part inside a `<script type="ld-conf">` tag and an HTML part.
 
 ```html
@@ -145,11 +147,17 @@ Go ahead and create a file called `myParagraph.html` under `src/components/Text`
 
 #### Adding your component to the design
 
-Once you have a component definition you will want to add your new component to your design. For this we will need to move to our `config.json` file in the boilerplate project. Find the section `groups` within this file. Here you can add your newly created `myParagraph` component. (NOTE: Use the `name`, not the `label`). Add it to any of the existing groups or create a new one. Now run `grunt build` and you will get a `dist` folder with a new design definition that contains your new component.
+Once you have a component definition you will want to add your new component to your design. For this we will
+need to move to our `config.json` file in the timeline project. Find the section `groups` within this file.
+Here you can add your newly created `myParagraph` component. (NOTE: Use the `name`, not the `label`).
+Add it to any of the existing groups or create a new one. Now run a build and you will get a `dist` folder with a
+new design definition that contains your new component.
 
 #### Using the preview
 
-In order to preview your components in the `livingdocs-design-boilerplate` project you can add it to the file `src/index.html`. In the script section of this file you will see the creation of a Livingdoc using the JSON data model. Don't worry about the details of this data yet. Simply navigate to the end of the `content` array and add the following markup:
+In order to preview your components in the `livingdocs-design-timeline` project you can add it to the file `src/index.html`.
+In the script section of this file you will see the creation of a Livingdoc using the JSON data model.
+Don't worry about the details of this data yet. Simply navigate to the end of the `content` array and add the following markup:
 
 ```json
 {
@@ -162,7 +170,8 @@ In order to preview your components in the `livingdocs-design-boilerplate` proje
 
 You just added a `myParagraph` component to the preview Livingdoc and assigned some sample text to the `text` template of this component.
 
-Now run `grunt dev` on your command line and you should get a browser window with your preview document, fully working with inline editing. (NOTE: this is not the Livingdocs editor only the Livingdocs framework is loaded).
+Now start the development server on your command line and you should get a browser window with your preview document, fully working with inline editing.
+(NOTE: this is not the Livingdocs editor only the Livingdocs framework is loaded).
 
 #### A more complex example
 
@@ -204,4 +213,4 @@ A Livingdocs `component definition` consists of HTML that has added attributes t
 
 #### But I want my own design
 
-Sure enough you don't want to keep working with the `livingdocs-design-boilerplate` forever. We highly advise you though to use the setup defined there as it makes working with Livingdocs designs a lot easier. Just create a Github fork of the `livingdocs-design-boilerplate` project (or copy it by hand), name it anything you like and start replacing the CSS and HTML with your own.
+Sure enough you don't want to keep working with the `livingdocs-design-timeline` forever. We highly advise you though to use the setup defined there as it makes working with Livingdocs designs a lot easier. Just create a Github fork of the `livingdocs-design-timeline` project (or copy it by hand), name it anything you like and start replacing the CSS and HTML with your own.
