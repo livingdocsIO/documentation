@@ -1,5 +1,5 @@
 
-## Introduction into Livingdocs
+## Livingdoc Document Format
 
 
 ### What is is all about?
