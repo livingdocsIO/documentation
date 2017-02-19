@@ -120,7 +120,7 @@ auth:
 ```coffee
 emails:
   transports:
-    default:
+    awsEmailSender:
       from: 'Livingdocs <noreply@livingdocs.io>'
       module: 'nodemailer-ses-transport'
       config:
@@ -141,7 +141,7 @@ emails:
       ]
 
     passwordReset:
-      transport: 'default'
+      transport: 'awsEmailSender'
       subject: 'Password reset'
       htmlTemplatePath: require.resolve('../../plugins/email-templates/password_reset.html')
 
