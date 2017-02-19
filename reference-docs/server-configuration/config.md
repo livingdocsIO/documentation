@@ -250,7 +250,7 @@ routing:
 
 #### Search
 
-Configure the elasticsearc instance used by the search feature.
+Configure the elasticsearch instance used by the search feature.
 
 ```coffee
 search:
