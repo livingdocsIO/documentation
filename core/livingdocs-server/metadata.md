@@ -1,14 +1,16 @@
-# Metadata
+# Metadata on the Server
 
 ## Scope
 
 This documentation assumes that you have setup a channel and design within Livingdocs.
 You also know what an environment and a channel config is.
 
-## Introduction to Metadata
+To find out more about metadata on the editor you can read the [editor documentation](../livingdocs-editor/metadata.md) or study [examples](../../public/guides/metadata-examples.md).
+
+## Introduction
 
 Every document(article, page) can have metadata. A metadata object consist of key-value pairs where the key is unique per document.
-A metadata field has a configuration (config + used plugin) and can be configured in the channel config. It's possible to use existing metadata plugins to handle the behaviour of the metadata field. It's also possible to create custom plugins.
+A metadata field has a configuration (config + used plugin) and can be configured in the channel config. It's possible to use existing metadata plugins to handle the behavior of the metadata field. It's also possible to create custom plugins.
 
 Example of a metadata object:
 ```json
@@ -60,7 +62,7 @@ There is already a set of reusable metadata plugins which are stored in
 
 ## Write a Custom Plugin
 
-When the behaviour of the standard plugins are not enough, you can write custom plugins.
+When the behavior of the standard plugins are not enough, you can write custom plugins.
 
 
 ```js
@@ -97,56 +99,6 @@ module.exports = {
   // Is the same as `onUpdate` without documentVersion as parameter
   set: function(newValue, oldValue, config) {
     // your implementation
-  }
-}
-```
-
-
-# Example: Use a Standard Plugin
-
-A standard plugin is stored in `plugins/metadata` and will automatically be load on the downstream server and is always ready for usage.
-
-If you want to define and use a default plugin, you have to declare
-a new field in the metadata settings of the channel config.
-
-```js
-metadata: {
-  // Name of the metadata field
-  myStandardField: {
-    // Define the plugin for the myStandardField
-    // 'li-text' is the name defined in /plugins/metadata/li-text
-    plugin: 'li-text'
-  }
-}
-```
-
-
-
-# Example: Activate and Use a Custom Plugin
-
-Define the custom plugin folder in the environment config.
-
-```js
-metadataPlugins: { path.resolve('./plugins/metadata') }
-```
-
-Add a new custom plugin to './plugins/metadata/customername-pluginname.js'
-
-```js
-module.exports = {
-  name: 'customername-pluginname',
-  schema: {
-    type: 'string'
-  }
-}
-```
-
-Activate the custom plugin in the channel config
-
-```js
-metadata: {
-  myNewMetadataField: {
-    plugin: 'customername-pluginname'
   }
 }
 ```

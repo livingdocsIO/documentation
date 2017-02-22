@@ -1,55 +1,20 @@
-## Intro
+# Metadata on the Editor
 
-To store a new metadata field you need to configure it in the server. In order to make it editable to the journalists you need to configure the editor respectively.
+## Scope
+
+This documentation assumes that you already setup the metadata field(s) on the server side.
+
+To find out more about metadata on the server you can read the [server documentation](../livingdocs-server/metadata.md) or study [examples](../../public/guides/metadata-examples.md).
+
+## Introduction
+
+In order to make metadata editable to the journalists you need to configure the editor.
 
 The editor offers a UI library of re-usable elements (text fields, select boxes, etc.) for which customers can write their own business logic where necessary. You can also write your own custom UI elements by just requiring them in your project.
 
-## Defining a metadata field
-
-Lets explain this in an example. Say we want to create a new metadata field "catchline" for articles of your default web channel. The catchline should be a simple text input on the publish panel that journalists can edit.
-
-### Server
-
-(Note: we assume the use of the [Livingdocs server boilerplate](https://github.com/upfrontIO/livingdocs-server-boilerplate) here)
-
-You will first need to configure this in your server.
-1. Check if a suitable metadata data-type already exists. In our example `li-text` is suitable.
-2. Open the respective configuration file, in our case `conf/channels/web/article/all.coffee` and add an entry as follows:
-```coffee
-metadata: # might already exist
-  catchline:
-      plugin: 'li-text'
-```
-3. Open your elastic search metadata mapping (typically in `search/custom-mappings/metadata.json`) and add an entry as follows (the key `properties` probably already exists):
-```json
-{
-  "properties": {
-    "catchline": {
-      "type": "string"
-    }
-  }
-}
-```
-4. Reset your document elastic search index by running `grunt search-index:document:reset`
-
-### Editor
-
-After you've setup your new metadata field you can now use it in the editor. Open the respective configuration file, `all.coffee` if you want to have it in all environments, and add a configuration as follows:
-```coffee
-metadata:
-    article: [
-      name: 'catchline'
-      form: 'li-meta-text-form'
-      config:
-        service: 'defaultText'
-    ]
-```
-
-This will render a text-input field to the publish screen of articles where users can type in the value for the "catchline" which is automatically saved to the server.
-
 ## Screen types
 
-As you can see in the example you nest your metadata screen configuration in an array under a key, in the example above `article`. This is the screen type for which you define a metadata screen. Currently, we support 2 screen types: `articles` and `pages`. In the long run we might take in different channels here too, but for now we don't have that requirement.
+As you can see in the [examples](../../public/guides/metadata-examples.md) you nest your metadata screen configuration in an array under a key. The example defined the key `article`. This is the screen type for which you define a metadata screen. Currently, we support 2 screen types: `articles` and `pages`. In the long run we might take in different channels here too, but for now we don't have that requirement.
 
 ## Available UI elements
 
