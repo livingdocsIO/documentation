@@ -1,14 +1,27 @@
 # Sass / CSS Styleguide
 
-[http://sass-lang.com/](http://sass-lang.com/)
-
 On a high-level we want:
 
 - two (2) space indents
 - multi-line CSS
 - meaningful use of whitespace
+- use `ld` a a prefix for editor related classes (e.g. `.ld-topbar`)
 
-When it comes to the Livingdocs CSS architecture we are basically trying to apply the [open/close principle](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/) to our CSS. If you want to dig deeper read this: [About HTML semantics and front-end architecture](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/)
+###CSS Architecture
+
+The Livingdocs CSS architecture is based on the [open/close principle](http://csswizardry.com/2012/06/the-open-closed-principle-applied-to-css/) which has its roots in object oriented programming. You should also be familiar with [object oriented CSS](https://github.com/stubbornella/oocss/wiki) if you want to be able to fully understand how our CSS is structured. 
+
+Essentially there are two main principles we try to consider when writing CSS:
+
+1. Separate structure and skin
+2. Separate container and content
+
+Have a look at [@stubbnornella](https://twitter.com/stubbornella)’s wiki to get a better idea on [object oriented CSS](https://github.com/stubbornella/oocss/wiki).
+
+If you want to dig deeper also check out these links: 
+
+* [About HTML semantics and front-end architecture](http://nicolasgallagher.com/about-html-semantics-front-end-architecture/)
+* [How to manage CSS projects with ITCSS](https://www.youtube.com/watch?v=hz76JIU_xB0)
 
 
 ### Titling
@@ -38,11 +51,21 @@ All strings in classes are delimited with a hyphen (-), like so:
 .sub-content {}
 ```
 
-BEM-like Naming:
+**BEM(-like) Naming:**
 
-It is important to know when BEM scope starts and stops. As a rule, BEM applies to self-contained, discrete parts of the UI. Don’t overBEM. :D
+It is important to know when BEM scope starts and stops. As a rule, BEM applies to self-contained, discrete parts of the UI. Don’t overBEMify. :D
 
-[csswizardry: getting your head round bem syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
+Read the following article to get a better idea on the BEM syntax: [Getting your head round bem syntax](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
+
+The naming convention basically follows this pattern:
+
+```scss
+.block {}
+.block__element {}
+.block--modifier {}
+```
+
+A real world example could look like this:
 
 ```html
 <div class="weather weather--stormy">
@@ -52,19 +75,47 @@ It is important to know when BEM scope starts and stops. As a rule, BEM applies 
 
 ```scss
 .weather {
-  //…
+  // …
 }
-  .weather--stormy {
-      //…
-  }
 
-  .weather__temparature {
-      //…
-  }
+.weather--stormy {
+  // …
+}
+
+.weather__temparature {
+  //
+}
 ```
 
-Write your component states as follows:
+In order to keep the readablity of our CSS as high as possible we don’t declare elements or modifiers inside of its parent class. A neat side effect of this rule is that it keeps the findability of all your classes in your editor of choice.
 
+```scss
+
+// Cool:
+.weather {
+}
+
+.weather--stormy {
+}
+
+.weather__temparature {
+}
+
+// Uncool:
+.weather {
+  &--stormy {
+  }
+
+  &__temparature {
+  }
+}
+
+
+```
+
+**State rules**
+
+We define state rules the [SMACSS way](https://smacss.com/book/type-state). This helps us to distinguish modifier classes from state classes. No, it’s not the same. I know you just thought that. ;)
 
 ```scss
 .is-hidden
@@ -73,11 +124,11 @@ Write your component states as follows:
 .is-selected
 ```
 
-If you need a JS-hook:
+If you need a JS-hook, try this:
 
 ```
-js-submit
-js-action-save
+.js-submit
+.js-action-save
 ```
 
 
@@ -89,6 +140,8 @@ Related property declarations should be grouped together following the order:
 2. Box model
 3. Typographic
 4. Visual
+
+This is borrowed from [@mdo](https://twitter.com/mdo)’s excellent [code guide](http://codeguide.co/#css-declaration-order).
 
 ```
 .declaration-order {
@@ -121,11 +174,12 @@ Related property declarations should be grouped together following the order:
   opacity: 1;
 }
 ```
+
 ### Specifity: IDs in CSS
 
 Keep specifity low at all times. To do that there is one simple rule we need to follow: *avoid using IDs in CSS*.
 
-Thousend of chained classes can’t override the specificity of a single ID: jsfiddle.net/0yb7rque
+Thousend of chained classes [can’t override](http://jsfiddle.net/0yb7rque/) the specificity of a single ID. 
 
 ### Nesting
 
@@ -142,12 +196,12 @@ Everything is gobal in CSS. Avoid polluting the global namespace and styling ele
 ```
 
 ```scss
-// Good:
+// Cool:
 .footer {
   background: #333;
 }
 
-// Bad
+// Uncool:
 footer {
   background: #333;
 }
@@ -165,9 +219,11 @@ footer {
 - Also don't define local color variables
 
 ```scss
+
+// Cool
 color: $ld-c-white;
 
-// not
+// Uncool:
 color: #fff;
 or 
 color: white;
