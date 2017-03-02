@@ -8,7 +8,7 @@
 ```coffee
 'title':
   directives:
-    'title': 
+    'title':
       type: 'text'
       characterLimit: 100
     'subtitle':
@@ -19,7 +19,7 @@
     'paragraph':
       'text': 'this.title'
 
-  behavior: 
+  behavior:
     documentTitle: 'this.title'
     tableOfContents: 'this.title'
     nextComponentOnEnter: 'paragraph'
@@ -34,9 +34,9 @@
 #### Paragraph component configuration:
 
 ```coffee
-'paragraph': 
+'paragraph':
   directives:
-    'text': 
+    'text':
       type: 'text'
 
   properties: ['position', 'extra-space']
@@ -56,13 +56,13 @@
 #### Container component configuration:
 
 ```coffee
-'sidebar': 
+'sidebar':
   directives:
-    'title': 
+    'title':
       type: 'text'
-    'children': 
+    'children':
       type: 'container'
-      # restriction what components can be placed inside 
+      # restriction what components can be placed inside
       # of this container.
       only: ['paragraph', 'list']
 ```
@@ -70,9 +70,9 @@
 #### Image component configuration:
 
 ```coffee
-'sidebar': 
+'sidebar':
   directives:
-    'image': 
+    'image':
       type: 'image'
       cropAspectRatio: '16:9' # Or use an array: ['16:9', '9:16', 'free']
       cropMaxWidth: 320
@@ -83,17 +83,17 @@
       data:
         'image':
           cropAspectRatio: '20:6'
-        
+
 ```
 
 #### List component configuration:
 
 ```coffee
-'list': 
+'list':
   directives:
-    title: 
+    title:
       type: 'text'
-    items: 
+    items:
       type: 'repeatable'
       data:
         text: 'text'
@@ -134,8 +134,8 @@ componentProperties:
 ```coffee
 
 
-components: 
-  'title': 
+components:
+  'title':
     label: 'Title Header'
     # This would be the name when displayed in the context of a group.
     # Sometimes we want to use shorter names so as to not sound repetitive.
@@ -181,26 +181,11 @@ components:
     content:
       'title': 'Superior storyteller skills'
       'items': [
-        'text': 'Storytelling' 
+        'text': 'Storytelling'
       ,
         'text': 'More storytelling'
       ]
 ```
-
-
-## Data Fields
-
-Data fields are an idea that give designers an easy way to add elements to components that can be filled automatically from publication metadata. Examples could be author information or a publish date.
-
-Example component template:
-
-```html
-<div>
-  <h1 doc-editable="title">Title</h1>
-  <h3 doc-data-field="author">Author</h3>
-</div>
-```
-
 
 ## Placeholders
 
