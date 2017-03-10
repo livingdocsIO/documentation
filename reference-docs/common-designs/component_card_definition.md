@@ -1,6 +1,6 @@
 ## Your own component cards
 
-Component cards are in essence nothing else than standalone components. The definition of a card is in a livingdocs design project (see [here](../design/create_designs.md) for more details). You will define four properties for a card:
+Component cards are in essence nothing else than standalone components. The definition of a card is in a livingdocs design project (see [here](./create_designs.md) for more details). You will define four properties for a card:
 - the Livingdocs component (this is just a regular component)
 - an HTML wrapper that is wrapped around *each* component card
 - a (unique) name to identify the component card
@@ -49,7 +49,7 @@ This defines two component card types: a default component card and a large comp
 
 ### Rendering component cards
 
-Component cards wrap a regular Livingdocs component that has the usual directives (see the [design description](../design/create_designs.md) for details). The content for these directives is filled through a document's metadata. A document's project contains a configuration that defines the mapping between the metadata entries and the directives of the component cards. An example mapping might look like this:
+Component cards wrap a regular Livingdocs component that has the usual directives (see the [design description](./create_designs.md) for details). The content for these directives is filled through a document's metadata. A document's project contains a configuration that defines the mapping between the metadata entries and the directives of the component cards. An example mapping might look like this:
 ```json
   "mapping": {
     "default-teaser": {
@@ -68,7 +68,7 @@ Component cards wrap a regular Livingdocs component that has the usual directive
     }
   }
 ```
-Each mapping entry defines: 
+Each mapping entry defines:
 - the key: a the directive on the component card,
 - the value/dataField: a key in the publication's metadata hash from which to take the content for the directive above,
 - the value/dataType: with which to treat the value at this specific key.

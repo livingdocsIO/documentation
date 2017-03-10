@@ -1,51 +1,44 @@
 # Livingdocs documentation
 
 
-## Welcome
+#### How to use this documentation?
 
-- Getting Started
+In this docs you find an overview over the general concepts used in Livingdocs as well
+as detailed documentation of the various parts Livingdocs consists of.
 
-## Walkthroughs
 
-- publish a design
-- Add Design Component
-- Create Users
-- Getting Started with local development
+#### Glossary
+
+A list of [terms and definitions](./glossary/glossary.md) you will encounter
+in this documentation.
+
+
+#### Walkthroughs
+
+Getting Started:
+
+- Publish a design
+- Add a component to a design
+- Create users
+
+Advanced Development Tips:
+
+- Getting started with local development
 - link local dependencies
 - run a local editor with a remote server
 
-## Concepts
 
-- Document Format «Livingdoc»
-- Livingdocs Design
-- Metadata
-- Document Transformations
-- Migrations
-- Delivery
-- Rendering
-- Channels, DocumentTypes and Layouts
-- Page Management
-- Image Service
-- Sitemap
-- Menus
-- Projects and User Management
+#### Concepts
+
+Get an overview over the [general concepts used in Livingdocs](./concepts).
 
 
-## Setup and Operations
+#### Reference Docs
 
-- High-Availability Setup
-- Docker
+[Detailed overview over apis and configurations](./reference-docs).
 
 
-## Reference Docs
+#### Setup and Operations
 
-- Authentication Strategies
-- Metadata
-- Migrations
-- Livingdocs Design
-- Public-Api
-- Editing-Api
-- Print-Api
-- Server-CLI
-- Server-Configuration
-- Server-Extensions
+How to do [Setup, Deployment and Operations](./setup-and-deployment)
+for different use cases.
