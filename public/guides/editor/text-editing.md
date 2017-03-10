@@ -108,3 +108,68 @@ In addition to configuring what options the text toolbar gives to your users you
 ```
 
 A common use case for this is when you want to insert some CSS classes around your formatted text, as in the example above. You are not restricted to the `class` attribute however but can configure any HTML attribute you like.
+
+### Behavior
+
+Newlines with Shift+Enter. Default: true
+```
+'app': {
+  'editable': {
+    'allowNewline': false
+  }
+}
+```
+
+Allows the users to make a newline in a paragraph by pressing Shift+Enter. This will result in a `<br>` tag an might not always be wanted thus the ability to turn this off.
+
+Events on Mouse selection. Default: false
+```
+'app': {
+  'editable': {
+    'mouseMoveSelectionChanges': true
+  }
+}
+```
+
+By default the editable selection event is only fired once the user releases the mouse over a selection. With this setting you can already get events when the user still holds the mouse while making a selection. This is only useful if you want to somehow support the user during the process of making a selection and it will fire lots of events so be cautious with this one.
+
+### Spellcheck
+
+Livingdocs allows you to use the default browser spellcheck, a custom spellcheck server or no spellchecking at all.
+
+Spellchecking turned off:
+```
+'app': {
+  'editable': {
+    'browserSpellcheck': false
+  }
+},
+'spellcheck': {
+  'isEnabled': false
+}
+```
+
+Default browser spellchecking:
+```
+'app': {
+  'editable': {
+    'browserSpellcheck': true
+  }
+},
+'spellcheck': {
+  'isEnabled': false
+}
+```
+
+Custom spellchecker (examples are NZZs vademecum or Duden):
+```
+'app': {
+  'editable': {
+    'browserSpellcheck': false
+  }
+},
+'spellcheck': {
+  'isEnabled': true,
+  'host': 'http://your-spellcheck-server.com'
+}
+```
