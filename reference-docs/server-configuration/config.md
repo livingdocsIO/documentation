@@ -177,7 +177,7 @@ designs:
 
 #### Images
 
-##### Standard Option
+- Standard Option
 
 Define the Amazon S3 image upload target plus processing options that are
 applied before the image is uploaded. (The `bucket_region` must support
@@ -202,7 +202,7 @@ images:
       max_dimension: 1500
 ```
 
-##### Proxy Option
+- Proxy Option
 
 Alternatively you can forward image upload to another service.
 
@@ -212,6 +212,24 @@ images:
     url: 'https://foobar.com/images/upload'
   upload_restrictions:
     max_file_size: 100*1000*1000 # 100MB, defaults to 5MB.
+```
+
+#### Files
+
+```coffee
+public: 'http://livingdocs-images-dev.s3.amazonaws.com'
+bucket: 'livingdocs-images-dev'
+bucket_region: 'us-west-1'
+uploadRestrictions:
+  allowedMimeTypes: ['application/pdf']
+  maxFileSize: 100 * 1000 * 1000  # 100MB
+```
+
+The files feature is optional and can be disabled.
+
+```coffee
+files:
+  enabled: false
 ```
 
 #### Documents
