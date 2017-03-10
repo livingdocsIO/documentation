@@ -44,6 +44,16 @@ content = textDirective.getContent()
 type: 'image'
 component template attribute: `doc-image`
 
+Minimal Example:
+```coffee
+imageDirective.setContent(url: 'http://images.com/1')
+```
+
+Most of the time you will want to have optimized delivery with an image service.
+For this `width`, `height`, `mimeType` as well as the `imageService` itself have
+to be specified when setting an url.
+
+Real World Example with image service:
 ```coffee
 imageDirective.setContent
   url: 'http://images.com/1'
