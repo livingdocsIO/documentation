@@ -43,3 +43,23 @@ For specific features, livingdocs uses external services. All external systems e
 There are other external services, called from the editorial- and / or end users browser. They don’t have an impact on the infrastructure and are solely listed for the sake of completeness. 
 - **Track.js**: for tracking javascript errors
 - **Analytics**: for tracking users and behavior on the site
+
+
+## External services whitelist
+
+### Editor
+- https://imgr.io
+- https://usage.trackjs.com
+- https://stats.pusher.com
+- https://api.mixpanel.com
+- https://app.resrc.it
+- https://p.typekit.net
+- https://use.typekit.net
+- The host for your S3 bucket (eg. https://livingdocs-designs.s3.amazonaws.com if you're using the default design server)
+
+### Server
+- The host for your S3 bucket (eg. https://livingdocs-designs.s3.amazonaws.com if you're using the default design server)
+- The host for your Hugo instance
+
+### Delivery
+- The host to your design server (eg. http://api.livingdocs.io if you're using the default design server)
