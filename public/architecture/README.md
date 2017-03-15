@@ -57,9 +57,9 @@ There are other external services, called from the editorial- and / or end users
 - https://use.typekit.net
 - The host for your S3 bucket (eg. https://livingdocs-designs.s3.amazonaws.com if you're using the default design server)
 
-### Server
+### Server
 - The host for your S3 bucket (eg. https://livingdocs-designs.s3.amazonaws.com if you're using the default design server)
 - The host for your Hugo instance
 
-### Delivery
+### Delivery
 - The host to your design server (eg. http://api.livingdocs.io if you're using the default design server)
