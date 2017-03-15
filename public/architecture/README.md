@@ -62,4 +62,5 @@ There are other external services, called from the editorial- and / or end users
 - The host for your Hugo instance
 
 ### Delivery
-- The host to your design server (eg. http://api.livingdocs.io if you're using the default design server)
+- The host to your livingdocs design server (eg. http://api.livingdocs.io if you're using the default design server)
+- The host to your livingdocs server (if it's not in the same network)
