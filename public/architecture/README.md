@@ -51,6 +51,7 @@ There are other external services, called from the editorial- and / or end users
 - https://imgr.io
 - https://usage.trackjs.com
 - https://stats.pusher.com
+- wss://ws-eu.pusher.com
 - https://api.mixpanel.com
 - https://app.resrc.it
 - https://p.typekit.net
