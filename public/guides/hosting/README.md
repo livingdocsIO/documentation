@@ -8,28 +8,35 @@ The server and delivery are both applications written in node.js. Node.js is sin
 
 For a production setup, node.js processes should always be redundant to prevent downtime in case of crashes.
 
+Please refer to the [architecture documentation](https://github.com/upfrontIO/livingdocs/blob/master/public/architecture/README.md#external-services-whitelist) for more details
+
+
 ### Docker
 We recommend to use Docker as we provide Dockerfiles for every application and service. Compatibility is ensured with every release.
 
-### Services
+#### Services
 Both elasticsearch and postgres will need a persistent volume mounted.
 Any custom configuration, as well as the supported versions for elasticsearch and postgres are visible in the respective Dockerfile.
 
 - https://github.com/upfrontIO/dockerfile-elasticsearch
 - https://github.com/upfrontIO/dockerfile-postgres
 
-### Applications
+#### Applications
 The applications are stateless and follow the 12 factor app methodology.
 Any system level dependency and the required environment variables are visible in the respective Dockerfile. 
 
 - https://github.com/upfrontIO/livingdocs-docker/tree/master/server
 - https://github.com/upfrontIO/livingdocs-docker/tree/master/editor
 
-### Health checks
+#### Container data volumes
+
+Both the containers for server and editor are stateless. The elasticsearch and postgres containers data directory needs to be mounted to the host on with a data volume.
+
+#### Health checks
 - **Editor**: HTTP GET /version.json, Port 9000
 - **Server**: HTTP GET /status, Port 9090
 - **Postgres**: TCP, Port 5432
 - **Elasticsearch**: TCP, Port 9200
 
-### Deployment
+#### Deployment
 We recommend building docker images on CI and pushing them to the registry. Deployment can be done manually or triggered by CI continuously.
