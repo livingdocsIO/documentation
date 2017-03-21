@@ -73,7 +73,7 @@ The `specialChars` can be configured separately. The button for special chars (a
 }
 ```
 
-## Markup
+## Markup
 
 In addition to configuring what options the text toolbar gives to your users you can also configure to some extent the HTML markup that is inserted when a formatting option is selected. Currently, you can configure the markup for `bold`, `italic` and `link`. An example is below.
 
