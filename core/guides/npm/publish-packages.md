@@ -18,7 +18,7 @@ npm --//registry.npmjs.org/:_authToken=<fill-in-your-write-token>
 ## With semantic release
 
 Releases are done by a machine user automatically via [semantic release](https://github.com/semantic-release/semantic-release). 
-Manual actions are only required, when you need to release a patch for an [older version (legacy release)](./hotfix-release-howto.md).
+Manual actions are only required, when you need to release a patch for an [older version (legacy release)](./hotfix-legacy-release.md).
 
 Always prefer releasing via semantic release, don't release manually
 
