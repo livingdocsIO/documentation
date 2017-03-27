@@ -56,7 +56,7 @@ For every document you will get the serialized Livingdoc data model (JSON) and t
 That migration can be used in two ways:
 
 ### Manually
-In order to create a migration script which you can run manually, simply add a file to the folder [`maintenance/manual-migrations`](https://github.com/upfrontIO/livingdocs-server-boilerplate/tree/add-data-migration-sample/app/data-migrations). It might make sense to have some sort of increasing identifier in the filename to visualize history. In the file create a method `exports.migrate` as described above and implement your desired migration steps.
+In order to create a migration script which you can run manually, simply add a file to the folder `maintenance/manual-migrations`. It might make sense to have some sort of increasing identifier in the filename to visualize history. In the file create a method `exports.migrate` as described above and implement your desired migration steps.
 
 ### Automatically
 When a migration is needed to change the document structure to work with a specific design version, you might want to have it automatically selected during a migration.
