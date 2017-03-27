@@ -53,7 +53,29 @@ exports.migrate = ({serializedLivingdoc, metadata}, callback) => {
 
 For every document you will get the serialized Livingdoc data model (JSON) and the metadata associated with that document. You can then alter the JSON and metadata in your migration method and pass it to the callback which will automatically apply your changes to the document.
 
-In order to create a migration script, simply add a file to the folder [`app/data-migrations`](https://github.com/upfrontIO/livingdocs-server-boilerplate/tree/add-data-migration-sample/app/data-migrations). It might make sense to have some sort of increasing identifier in the filename to visualize history. In the file create a method `exports.migrate` as described above and implement your desired migration steps.
+That migration can be used in two ways:
+
+### Manually
+In order to create a migration script which you can run manually, simply add a file to the folder [`maintenance/manual-migrations`](https://github.com/upfrontIO/livingdocs-server-boilerplate/tree/add-data-migration-sample/app/data-migrations). It might make sense to have some sort of increasing identifier in the filename to visualize history. In the file create a method `exports.migrate` as described above and implement your desired migration steps.
+
+### Automatically
+When a migration is needed to change the document structure to work with a specific design version, you might want to have it automatically selected during a migration.
+You can do this by adding the definition to which design version it belongs:
+
+```js
+exports.config: {
+  project_id: {
+    local: '4',
+    develop: '2',
+    production: '1'
+  }
+  channel_name: 'web',
+  design_name: 'basic',
+  design_version: '0.1.0'
+}
+```
+
+Then add the file to the `maintenance/document-migrations` folder.
 
 To run your migration script, use the `data-migration` grunt task which is explained in the next section.
 
@@ -77,8 +99,9 @@ Each migration is a 2-step process:
 2. Accepting the migration
 
 The option "Creates and prepares a migration" allows you to start a new migration. You can either choose:
-- a simple version bump which bumps the design version in all your documents to a new design version without affecting the structure of the documents
-- or select a migration script from the filesystem to tell the Livingdocs how to migrate your documents (the next section will show some examples for such scripts), to select, type in a file path relative to your root directory, e.g. `app/data-migrations/your_migration.js`
+
+- Standard Migration: It searches and executes any automatic migration that fits your current migration. If none fits, it executes a simple version bump which bumps the design version in all your documents to a new design version without affecting the structure of the documents
+- Manual Migration: Select a migration script from the filesystem to tell the Livingdocs how to migrate your documents (the next section will show some examples for such scripts), to select, type in a file path relative to your root directory, e.g. `app/data-migrations/your_migration.js`
 
 Once you created a migration, it will run for all your documents. In the case of a migration script it will also generate a report for you that lists possible errors that were encountered with your script. (For a version bump there is no report, since errors are impossible). You can view this report by selecting the option "Show migration report".
 
