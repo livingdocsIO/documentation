@@ -79,8 +79,8 @@ getSelectables: (cb) ->
   # the selectables need to be in the format {name: 'name', value: 'value'}
 
 initSelection: (identifier) ->
-  # called when the select box is first rendered and needs to get an initial value
-  # you will probably use `metadata.get` to get the required value
+  # called when cb(null, selectables) provided from getSelectables is invoked, this makes sure the select box is properly 
+  # initialized with an initial value even if you fetch data async, you will probably use `metadata.get` to get the required value
 
 select: (identifier, selection) ->
   # executed when a user select an item.
@@ -122,8 +122,8 @@ getSelectables: ->
   # the selectables need to be in the format {name: 'name', value: 'value'}
 
 initSelection: (identifier) ->
-  # called when the select box is first rendered and needs to get an initial value
-  # you will probably use `metadata.get` to get the required value
+  # called when cb(null, selectables) provided from getSelectables is invoked, this makes sure the select box is properly 
+  # initialized with an initial value even if you fetch data async, you will probably use `metadata.get` to get the required value
 
 select: (identifier, selection) ->
   # executed when a user adds a selection to the multiselection.
