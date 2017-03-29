@@ -22,6 +22,7 @@ On a high level, livingdocs can be divided in two different stacks. These stacks
 ## Services
 - **Postgres (PG)**: Primary data store for the server. For example pages, articles, menus, users are persisted here. Both servers in delivery, as well as servers in editing mode access the same data.
 - **Elasticsearch (ES)**: The editor provides the user with a search, powered by an elasticsearch secondary index. Only servers in editing mode need access to this service.
+- **Redis**: Key value store for the server. Used by specific features for queuing and caching. Depending on the feature set you are using, Redis is optional.
 
 ## External services
 For specific features, livingdocs uses external services. All external systems expose a REST interface, so only ports 443 and 80 are required.
