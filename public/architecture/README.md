@@ -53,16 +53,17 @@ There are other external services, called from the editorial- and / or end users
 - https://stats.pusher.com
 - wss://ws-eu.pusher.com
 - https://api.mixpanel.com
-- https://app.resrc.it
 - https://p.typekit.net
 - https://use.typekit.net
 - The host for your S3 asset bucket (eg. https://livingdocs-evaluation-images.s3.amazonaws.com if you're using our evaluation account)
 - The host for your S3 design bucket (eg. https://livingdocs-evaluation-designs.s3.amazonaws.com if you're using the default design server)
+- The host for your image service (eg. https://xyz.imgix.net or https://app.resrc.it)
 
 ### Server
 - The host to your livingdocs design server (eg. http://api.livingdocs.io if you're using the default design server)
 - The host for your S3 asset bucket (eg. https://livingdocs-evaluation-images.s3.amazonaws.com if you're using our evaluation account)
 - The host for your S3 design bucket (eg. https://livingdocs-evaluation-designs.s3.amazonaws.com if you're using the default design server)
+- The host for your image service (eg. https://xyz.imgix.net or https://app.resrc.it)
 - The host for your Hugo instance
 
 ### Delivery
