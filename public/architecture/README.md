@@ -45,10 +45,17 @@ There are other external services, called from the editorial- and / or end users
 - **Track.js**: for tracking javascript errors
 - **Analytics**: for tracking users and behavior on the site
 
+### Connecting to external services through a proxy
 
-## External services whitelist
+Often times, the application processes are not allowed to have direct access to the internet for security reasons. In this case, Livingdocs can be configured to run all outgoing connections through a proxy    
+ 
+![API Link](./architecture-proxy.png)
+
+### External services whitelist
 
 ### Editor
+The following external service hosts have to be whitelisted on the proxy for the editor. Please note that this happens in the network where the editors browser is running, not the editor process.
+
 - https://imgr.io
 - https://usage.trackjs.com
 - https://stats.pusher.com
@@ -62,6 +69,8 @@ There are other external services, called from the editorial- and / or end users
 - Any host your customizations are using
 
 ### Server
+The following external service hosts have to be whitelisted on the proxy for the server. This concerns the network where the server process is running.
+
 - The host to your livingdocs design server (eg. http://api.livingdocs.io if you're using the default design server)
 - The host for your S3 asset bucket (eg. https://livingdocs-evaluation-images.s3.amazonaws.com if you're using our evaluation account)
 - The host for your S3 design bucket (eg. https://livingdocs-evaluation-designs.s3.amazonaws.com if you're using the default design server)
