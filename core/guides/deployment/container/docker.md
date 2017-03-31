@@ -69,7 +69,7 @@ Create a configuration file for the environment `dokku_<name>`. Point your edito
 Then you are ready to deploy by simply pushing to your remote:
 
 ```
-git push dokku master
+git push <name> master
 ```
 
 Your editor is available on `http://<name>.hosted.livingdocs.io`
