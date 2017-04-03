@@ -57,7 +57,7 @@ Often times, the application processes are not allowed to have direct access to 
 The following external service hosts have to be whitelisted on the proxy for the editor. Please note that this happens in the network where the editors browser is running, not the editor process.
 
 - https://imgr.io - used for delivering user avatars, courtesy of @marcbachmann.
-- https://usage.trackjs.com - 
+- https://usage.trackjs.com
 - https://stats.pusher.com
 - wss://ws-eu.pusher.com
 - https://api.mixpanel.com
