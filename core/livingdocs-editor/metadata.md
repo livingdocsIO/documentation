@@ -40,10 +40,12 @@ config:
   service: 'nameOfYourServicePlugin' # mandatory
   label: 'foo' # optional, takes camelized name otherwise
   placeholder: 'bar' # optional, takes camelized name otherwise
+  readOnly: true or false # optional, false by default
+  maxLength: 200 # optional, integer, not used by default
 ```
 
 You need to make sure that your server-side metadata field is of type `li-text` otherwise you will get errors.
-The `halfWidth` option will render the text input field over half of the screen width if set to true (otherwise over the full width).
+The `halfWidth` option will render the text input field over half of the screen width if set to true (otherwise over the full width). `readOnly` and `maxLength` let you customize the behavior of the text input.
 The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
 The service plugin for a text input allows you to customize the logic for the following methods:
 ```
@@ -79,7 +81,7 @@ getSelectables: (cb) ->
   # the selectables need to be in the format {name: 'name', value: 'value'}
 
 initSelection: (identifier) ->
-  # called when cb(null, selectables) provided from getSelectables is invoked, this makes sure the select box is properly 
+  # called when cb(null, selectables) provided from getSelectables is invoked, this makes sure the select box is properly
   # initialized with an initial value even if you fetch data async, you will probably use `metadata.get` to get the required value
 
 select: (identifier, selection) ->
@@ -122,7 +124,7 @@ getSelectables: ->
   # the selectables need to be in the format {name: 'name', value: 'value'}
 
 initSelection: (identifier) ->
-  # called when cb(null, selectables) provided from getSelectables is invoked, this makes sure the select box is properly 
+  # called when cb(null, selectables) provided from getSelectables is invoked, this makes sure the select box is properly
   # initialized with an initial value even if you fetch data async, you will probably use `metadata.get` to get the required value
 
 select: (identifier, selection) ->
