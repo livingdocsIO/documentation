@@ -17,6 +17,13 @@ To sum up:
 - The data format is (currently) XML
 - You need to provide Livingdocs with the relevant print information otherwise Livingdocs can not perform a reliable job informing about the layouting system
 
+## Editor config
+
+Settings for the editor are located under `print`:
+
+`defaultPreviewMode`: determines default preview mode, valid values are `text` or `image`, if not configured falls back to `text`
+
+
 ## The endpoints
 
 All Livingdocs requests require you to have configured endpoints on your side where your middleware sits. The respective entry in the Livingdocs configuration looks as follows:
