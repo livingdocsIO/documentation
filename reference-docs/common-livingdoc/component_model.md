@@ -16,17 +16,16 @@ The content of a component is managed through directives. For different
 content types like text and images there exists different directive types.
 
 Quick examples:
-```javascript
-textDirective = paragraph.directives.get('text');
-textDirective.setContent('Lorem Ipsum dolorem...');
-content = textDirective.getContent();
+```js
+const textDirective = paragraph.directives.get('text')
+textDirective.setContent('Lorem Ipsum dolorem...')
+const content = textDirective.getContent()
 
+// Test if a directive contains content
+textDirective.isEmpty() // false
 
 // Set the content of a directive directly from the componentModel
-paragraph.setContent('text', 'Lorem Ipsum dolorem...');
-
-// Get the content of a directive
-paragraph.getContent('text');
+textDirective.setContent('text', 'Lorem Ipsum dolorem...')
 ```
 
 For more information see the [detailed directive documentation](directives.md).
@@ -42,60 +41,60 @@ A referenc to the [componentTree](component_tree.md) a component is part of. If 
 
 #### ComponentTree operations
 
-```javascript
-var title = componentTree.createComponent('title');
+```js
+const title = componentTree.createComponent('title')
 
 // Insert the title component before this one
-component.before(title);
+component.before(title)
 
 // Insert a component after this one
-component.after(title);
+component.after(title)
 
 // Append a component to a container of this component
-component.append(containerName, title);
+component.append(containerName, title)
 
 // Prepend a component to a container of this component
-component.prepend(containerName, title);
+component.prepend(containerName, title)
 
 // Move this component up
-component.up();
+component.up()
 
 // Move this component down
-component.down();
+component.down()
 
 // Remove this component from its componentTree
-component.remove();
+component.remove()
 ```
 
 
 #### Traverse the componentTree relative to a component
 
-```javascript
+```js
 // Get the parent component if the component is nested
-component.getParent();
+component.getParent()
 
 // Iterate through all parents
-components.parents(function(component) {
+components.parents((component) => {
     // your code
-});
+})
 
 // Iterate through all direct children
-components.children(function(component) {
+components.children((component) => {
     // your code
-});
+})
 
 // Iterate through oneself and all direct children
-components.childrenAndSelf(function(component) {
+components.childrenAndSelf((component) => {
     // your code
-});
+})
 
 // Iterate through all descendants (children and their children and so on...)
-components.descendants(function(component) {
+components.descendants((component) => {
     // your code
-});
+})
 
 // Iterate through oneself, and all descendants
-components.descendantsAndSelf(function(component) {
+components.descendantsAndSelf((component) => {
     // your code
-});
+})
 ```

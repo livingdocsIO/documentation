@@ -8,10 +8,10 @@ A `Livingdoc` represents a Livingdocs document. It consists of a [componentTree]
 
 #### Create a new livingdoc:
 
-```javascript
-var livingdoc = doc.new({
+```js
+const livingdoc = doc.new({
   design: 'bootstrap'
-});
+})
 ```
 
 
@@ -19,15 +19,15 @@ var livingdoc = doc.new({
 
 Simply render a livingdoc into your current page:
 
-```javascript
-livingdoc.appendTo('.article-container', { interactive: false });
+```js
+livingdoc.appendTo('.article-container', { interactive: false })
 ```
 
 Create multiple views in iframes:
 
-```javascript
-var interactiveView = livingdoc.createView('.editor-section', { interactive: true });
-var preview = livingdoc.createView('.editor-preview');
+```js
+const interactiveView = livingdoc.createView('.editor-section', {interactive: true})
+const preview = livingdoc.createView('.editor-preview')
 ```
 
 With the iframe technique you can isolate CSS or Javascript that is needed in your documents and also generate views that will work properly with responsive designs. There can only be one interactive view where the user can edit, but you can have as many readOnly views as you want to preview the content at different screen sizes at the same time.
@@ -50,9 +50,11 @@ The interactiveView associated with this `livingdoc` if you created one.
 
 #### createComponent()
 
-```javascript
+```js
 // Create a component
-var titleComponent = livingdoc.createComponent('title');
+const titleComponent = livingdoc.createComponent('title')
+const componentTree = livingdoc.componentTree
+componentTree.append(titleComponent)
 ```
 
 #### toJSON()
@@ -89,32 +91,32 @@ Here you see a serialized version of a `livingdoc` in JSON. This is an example d
 
 ## Manage Dependencies
 
-```coffee
-# add js
-livingdoc.addJsDependency(src: 'url')
-livingdoc.addJsDependency(code: 'inline js')
+```js
+// add js
+livingdoc.addJsDependency({src: 'url'})
+livingdoc.addJsDependency({code: 'inline js'})
 
-# add css
-livingdoc.addCssDependency(src: 'url')
-livingdoc.addCssDependency(code: 'inline css')
+// add css
+livingdoc.addCssDependency({src: 'url'})
+livingdoc.addCssDependency({code: 'inline css'})
 
-# use namespaces
-livingdoc.addJsDependency(src: 'url', namespace: 'embeds.twitter')
+// use namespaces
+livingdoc.addJsDependency({src: 'url', namespace: 'embeds.twitter'})
 
-# Access the dependencies collection directly:
-dependencies = livingdoc.dependencies
+// Access the dependencies collection directly:
+const dependencies = livingdoc.dependencies
 
-# Transform to JSON
+// Transform to JSON
 dependencies.serialize()
 
-# Get namespaces (Array of String)
+// Get namespaces (Array of String)
 dependencies.getNamespaces()
 
-# Get all dependencies of a namespace
+// Get all dependencies of a namespace
 dependencies.getNamespace('embeds.twitter')
 
-# Get an HTML string to include in a published document or to
-# Add to a document on the server side.
+// Get an HTML string to include in a published document or to
+// Add to a document on the server side.
 dependencies.printJs()
 dependencies.printCss()
 ```
@@ -124,9 +126,9 @@ dependencies.printCss()
 For reuse in the editor these modules are exposed on `doc`:
 `doc.JsLoader` and `doc.CssLoader`
 
-```coffee
+```js
 # Example:
-jsLoader = new doc.JsLoader(window: iframe.contentWindow)
+const jsLoader = new doc.JsLoader({window: iframe.contentWindow})
 jsLoader.loadSingleUrl(url, callback)
 jsLoader.loadInlineScript(url, callback)
 ```

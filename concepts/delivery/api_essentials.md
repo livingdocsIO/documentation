@@ -9,14 +9,6 @@ The essential parts in a frontend app are:
 
 The following chapters will walk you through each of these tasks. If you're familiar with node.js you can also just use our [boilerplate app](https://github.com/upfrontIO/livingdocs-delivery) that we use ourselves to run our blog.
 
-## A visual example
-
-First lets see a result of the Livingdocs API. In your Livingdocs Beta account navigate to the publish panel. Once you published your document, you will get three links on the right-hand side of the screen: a preview, an API link and an Iframe embed code.
-
-![API Link](./api_link.png)
-
-Click the "Use API access" link and you will get a new browser page with a JSON response. This is the API result for a single document.
-
 ## Getting a documents feed
 
 In order to build a navigation, feed, or start page you need to get a list of all your documents and some information that allows you to render teasers for them. You can get this with a simple call to `http://api.livingdocs.io/public/publications`. The only required parameter to this call is the `project_id` which defines your account on Livingdocs Beta.

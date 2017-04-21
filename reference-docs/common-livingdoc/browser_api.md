@@ -2,18 +2,18 @@
 
 ## Working with the current document
 
-```javascript
+```js
 // Get the currently loaded livingdocs-framework document
-livingdoc = doc.editor.livingdoc
+const livingdoc = doc.editor.livingdoc
 
 // Get the design of the document
-livingdoc.design
+const design = livingdoc.design
 ```
 
 
 ## Working with designs
 
-```javascript
+```js
 // Get all component identifiers of a design as an array
 doc.design.get('timeline').list()
 

@@ -81,12 +81,13 @@ It is important to note that a component card is itself never serialized or de-s
 
 The mapping that is used to assign values from the publication's metadata hash to the various component cards is stored in a project's configuration. There is an API endpoint that allows you to set or overwrite the mapping entry.
 
-```
+```http
 POST /projects/:id/set-component-card-metadata-mapping
 ```
 
 where `:id` is the id of your project that you can always get with `ldm user:info`. As a parameter it takes a json with a mapping as shown above. You will also need to provide an authorization header (again, use `ldm user:info` to get this.). An example call could look like this:
-```
+
+```bash
 curl --ipv4 -XPOST \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer eyJ..your-auth-header" \
@@ -149,6 +150,7 @@ The actual rendering of the component cards for a document happens whenever a do
  }
 ```
 Each component card contains:
+
 - the metadata
 - for each format the name and rendered HTML
 - the assignments of this card to lists

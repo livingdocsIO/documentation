@@ -70,33 +70,55 @@ module.exports = {
   // Plugin name
   // Use the name as plugin value in the configuration
   name: 'customername-pluginname',
-  // JSON scheme
-  // Define the scheme of the metadata property
+
+  // JSON schema
+  // Define the schema of the metadata property
   schema: {
     type: 'string'
   },
+
+  // @param value property value after onPublish has been called.
+  // @param config {Object} config property of `metadata configuration`
+  // @return If you return `false` or even better a `string` with an explanation
+  //   this will be treated as a failed validation. All other return values
+  //   count as valid.
+  validate: function (value, config) {
+    // Example implementation
+    if (value.length > 20) {
+      return 'The value is too long'
+    } else {
+      return true
+    }
+  },
+
   // The onUpdate event will be called before a document gets stored
   // @param newValue Updated value when updating a document
   // @param oldValue Stored value before the document update
-  // @param config {object} config property of `metadata configuration`
-  // @param documentVersion {documentVersion}
+  // @param config {Object} config property of `metadata configuration`
+  // @param documentVersion {DocumentVersion}
   onUpdate: function(newValue, oldValue, config, documentVersion) {
     // your implementation
   },
+
   // The onPublish event will be called before a document gets published
   onPublish: function(newValue, oldValue, config, documentVersion) {
     // your implementation
   },
+
   // The onUnpublish event will be called before a document gets unpublished
   onUnpublish: function(newValue, oldValue, config, documentVersion) {
     // your implementation
   },
+
+  // DEPRECATED: WILL BE REMOVED AT SOME POINT.
+  // USE THE RENDER PIPELINE INSTEAD.
   // The onRender event will be called before a document gets rendered
   onRender: function(newValue, oldValue, config, documentVersion) {
     // your implementation
   },
-  // Deprecated
-  // Is the same as `onUpdate` without documentVersion as parameter
+
+  // DEPRECATED. USE onUpdate INSTEAD.
+  // This is the same as `onUpdate` without documentVersion as parameter
   set: function(newValue, oldValue, config) {
     // your implementation
   }

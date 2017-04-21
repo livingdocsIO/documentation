@@ -6,23 +6,26 @@
 Directives are always part of a `ComponentModel`. On a component you can access the
 directives through the `directives` property which is a `DirectiveColletion`.
 
-```coffee
-# get hold of a specific directive
-textDirective = componentModel.directives.get('title')
+```js
+// get hold of a specific directive
+const textDirective = componentModel.directives.get('title')
 
-# loop through all directives on a component in the order
-# they are defined.
-for directive in componentModel.directives
+// loop through all directives on a component in the order
+// they are defined.
+for (const directive in componentModel.directives) {
   directive.getContent()
+}
 
-# loop through each image directive on a component
-componentModel.directives.eachImage (imageDirective) ->
+// loop through each image directive on a component
+componentModel.directives.eachImage((imageDirective) => {
   imageDirective.getUrl()
+})
 
-# Get the number of directives of a certain type
-# on a component.
-# Possible types: 'editable', 'image', 'html', 'link', 'include'
-count = componentModel.directives.count('include')
+
+// Get the number of directives of a certain type
+// on a component.
+// Possible types: 'editable', 'image', 'html', 'link', 'include'
+const count = componentModel.directives.count('include')
 ```
 
 
@@ -33,9 +36,9 @@ count = componentModel.directives.count('include')
 type: 'editable'
 component template attribute: `doc-editable`
 
-```coffee
+```js
 textDirective.setContent('Lorem Ipsum dolorem...')
-content = textDirective.getContent()
+const content = textDirective.getContent()
 ```
 
 
@@ -45,8 +48,8 @@ type: 'image'
 component template attribute: `doc-image`
 
 Minimal Example:
-```coffee
-imageDirective.setContent(url: 'http://images.com/1')
+```js
+imageDirective.setContent({url: 'http://images.com/1'})
 ```
 
 Most of the time you will want to have optimized delivery with an image service.
@@ -54,17 +57,18 @@ For this `width`, `height`, `mimeType` as well as the `imageService` itself have
 to be specified when setting an url.
 
 Real World Example with image service:
-```coffee
-imageDirective.setContent
-  url: 'http://images.com/1'
-  width: 400
-  height: 300
-  mimeType: 'image/jpeg'
-  imageService: 'resrc.it'
-  crop: {x: 100, y: 50, width: 200, height: 200}
+```js
+imageDirective.setContent({
+  url: 'http://images.com/1',
+  width: 400,
+  height: 300,
+  mimeType: 'image/jpeg',
+  imageService: 'resrc.it',
+  crop: {x: 100, y: 50, width: 200, height: 200},
   origins: [{name: 'uez463x8ie39', identifier: 'hugo'}]
+})
 
-# Update the crop
+// Update the crop
 imageDirective.setCrop({x: 0, y: 0, width: 250, height: 250})
 ```
 
@@ -74,7 +78,7 @@ imageDirective.setCrop({x: 0, y: 0, width: 250, height: 250})
 type: 'html'
 component template attribute: `doc-html`
 
-```coffee
+```js
 htmlDirective.setContent('<div>Moby Dick</div>')
 ```
 
@@ -84,7 +88,7 @@ htmlDirective.setContent('<div>Moby Dick</div>')
 type: 'link'
 component template attribute: `doc-link`
 
-```coffee
+```js
 linkDirective.setContent('http://www.test.com/')
 ```
 
@@ -94,10 +98,11 @@ linkDirective.setContent('http://www.test.com/')
 type: 'include'
 component template attribute: `doc-include`
 
-```coffee
-includeDirective.setContent
-  service: 'list'
+```js
+includeDirective.setContent({
+  service: 'list',
   params: {foo: 'bar'}
+})
 
 includeDirective.setParams({foo: 'bar'})
 ```

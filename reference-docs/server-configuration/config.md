@@ -4,34 +4,37 @@
 
 #### Server
 
-```coffee
-server:
-  port: 9090
-  max_json_request_size: '100kb'
+```js
+server: {
+  port: 9090,
+  max_json_request_size: '100kb'  
+}
 ```
 
 
 #### Editor
 
-Configure the Editor Host. This is used for password reset & login urls.
 
-```coffee
-editor:
+```js
+editor: {
+  // configure the Editor Host. This is used for password reset & login urls.
   public_host: 'http://localhost:9000'
+}
 ```
 
 
 #### Postgres
 
-```coffee
-db:
-  host: 'localhost'
-  port: '5432'
-  user: 'postgres'
-  database: 'li_local'
-  pool_min: 1
-  pool_max: 5
+```js
+db: {
+  host: 'localhost',
+  port: '5432',
+  user: 'postgres',
+  database: 'li_local',
+  pool_min: 1,
+  pool_max: 5,
   ssl: false
+}
 ```
 
 #### Amazon S3
@@ -48,12 +51,13 @@ aws:
 Disabled by Default. Enable to show how is viewing documetn and allow for basic
 collaboration features in the editor.
 
-```coffee
-pusher:
-  enabled: false
-  app_id: '108378'
-  key: 'dda3c0ca58ed2f649ea8'
-  secret: '*****'
+```js
+pusher: {
+  enabled: false,
+  app_id: '108378',
+  key: 'dda3c0ca58ed2f649ea8',
+  secret: '*****'  
+}
 ```
 
 
@@ -61,7 +65,7 @@ pusher:
 
 Possible log levels: `['debug', ''success', 'warn', 'error']`
 
-```coffee
+```js
 loglevel: 'success'
 ```
 
@@ -166,12 +170,13 @@ Configure the Livingdocs Design Server.
   uploaded through this server. (The `bucket_region` must support
   Amazon Signature Version 2)
 
-```coffee
-designs:
-  design_repository: 'https://api.livingdocs.io'
-  public: 'http://livingdocs-designs-dev.s3.amazonaws.com'
-  bucket: 'livingdocs-designs-dev'
-  bucket_region: 'eu-west-1'
+```js
+designs: {
+  design_repository: 'https://api.livingdocs.io',
+  public: 'http://livingdocs-designs-dev.s3.amazonaws.com',
+  bucket: 'livingdocs-designs-dev',
+  bucket_region: 'eu-west-1'  
+}
 ```
 
 
@@ -206,12 +211,15 @@ images:
 
 Alternatively you can forward image upload to another service.
 
-```coffee
-images:
-  proxy:
+```js
+images: {
+  proxy: {
     url: 'https://foobar.com/images/upload'
-  upload_restrictions:
-    max_file_size: 100*1000*1000 # 100MB, defaults to 5MB.
+  },
+  upload_restrictions: {
+    max_file_size: 100*1000*1000 // 100MB, defaults to 5MB.
+  }
+}
 ```
 
 #### Files
@@ -234,7 +242,26 @@ files:
 
 #### Documents
 
-To be defined.
+```js
+documents: {
+  projects: {
+    default: {
+      channels: {
+        'web': {
+          articles: [channel config],
+          pages: [channel config]
+        }
+      }
+    }
+  },
+  genericTransformations: [
+    name: 'timeline'
+    conversion: require.resolve('../document-transformations/timeline-conversion')
+  ]
+}
+```
+
+The channel config is described here: [channel config](./channel-config.md)
 
 
 #### Render Pipeline

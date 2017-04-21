@@ -5,28 +5,28 @@ A component tree is a tree of [components](component_model.md). Just like the DO
 
 Schematic example of a `componentTree`:
 
-```coffee
-# - ComponentContainer (root)
-#  - Component 'Hero'
-#  - Component '2 Columns'
-#    - ComponentContainer 'main'
-#      - Component 'Title'
-#    - ComponentContainer 'sidebar'
-#      - Component 'Info-Box'
+```js
+// - ComponentContainer (root)
+//  - Component 'Hero'
+//  - Component '2 Columns'
+//    - ComponentContainer 'main'
+//      - Component 'Title'
+//    - ComponentContainer 'sidebar'
+//      - Component 'Info-Box'
 ```
 
 ## Methods
 
 #### Create components:
 
-```javascript
+```js
 // Create a component
-var title = componentTree.createComponent('title');
+const title = componentTree.createComponent('title')
 ```
 
 #### Insert components:
 
-```javascript
+```js
 // Insert a component at the beginning.
 componentTree.prepend(title)
 
@@ -36,36 +36,36 @@ componentTree.append(title)
 
 #### Traverse and find components:
 
-```javascript
+```js
 // Traverse through each component
-componentTree.each(function(component) {
+componentTree.each((component) => {
     // your code
-});
+})
 
 // Traverse through each container
-componentTree.eachContainer(function(container) {
+componentTree.eachContainer((container) => {
     // your code
-});
+})
 
 // Traverse through each component and container
-componentTree.all(function(componentOrContainer) {
+componentTree.all((componentOrContainer) => {
     // your code
-});
+})
 
 // Find all components of a type
-var subtitles = componentTree.find('subtitle');
+const subtitles = componentTree.find('subtitle')
 if (subtitles.length) {
-    var subtitleComponent = subtitles[0];
+    const subtitleComponent = subtitles[0]
 }
 
 // Get the first component in a document
-var firstComponent = componentTree.first();
+const firstComponent = componentTree.first()
 ```
 
 
 #### Serialize:
 
-```javascript
+```js
 componentTree.toJson()
 ```
 
@@ -74,7 +74,7 @@ This method is called by `Livingdoc.toJson()` internally.
 
 #### Development Helpers:
 
-```javascript
+```js
 // Get a readable string of the whole componentTree
 componentTree.print()
 ```
