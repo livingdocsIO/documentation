@@ -4,10 +4,8 @@ Every component has a `script` block at the top of the file that can take differ
 
 ## Administrative configuration
 
-`name`: The (machine) name of the component. This is how the component is referenced in either code or the `config.json` file where it is assigned to a group.
-
 Example:
-```
+```html
 <script type="ld-conf">
 {
   "name": "p"
@@ -22,7 +20,13 @@ Example:
 
 ----
 
-`label`: The label that is used in the editor's sidebar. This is the human label. See example above.
+- `name`
+
+  The handle of the component. This is how the component is referenced in either code or the `config.json` file where it is assigned to a group.
+
+- `label`
+
+  The label that is used in the editor's sidebar. This is the human label. See example above.
 
 ----
 
@@ -31,7 +35,7 @@ Example:
 Properties allow you to reference style properties (CSS toggles) that are defined in the `config.json`. They will be available to the user in the Livingdocs editor when the respective component is selected.
 
 Example:
-```
+```html
 <script type="ld-conf">
 {
   "label": "Aside",
@@ -54,7 +58,7 @@ Example:
 `allowedParents`: Allows you to define what components are allowed as parents of this component. The allowed parents must contain at least one `doc-container` directive. Normally, this config comes in tandem with the `allowedChildren` configuration on the `doc-container` directive (see further down in the `doc-container` section).
 
 Example:
-```
+```html
 <script type="ld-conf">
 {
   "name": "bullet-list-item",
@@ -75,7 +79,7 @@ Directives are the editable parts of a component and come in different flavors, 
 `plainText`: Ensures that a text can not contain any HTML tags (decodes HTML).
 
 Example:
-```
+```html
 <script type="ld-conf">
 {
   "label": "foo",
@@ -101,7 +105,7 @@ Example:
 This configuration comes in handy when doing external teasers, i.e. a teaser to an arbitrary webpage that the user can enter in a link.
 
 Example:
-```
+```html
 <script type="ld-conf">
   {
     "label": "Web Teaser",
@@ -156,7 +160,7 @@ Reading example: The `doc-editable` directive `headline` will be filled through 
 `ratios`: allows you to define pre-defined image ratios for an image. The cropping mask in the Livingdocs editor will show those ratios when cropping the image of the respective component.
 
 Example:
-```
+```html
 <script type="ld-conf">
 {
   "label": "Normal Image",
@@ -188,7 +192,7 @@ Example:
 Common use case: The two configurations can be used to define the container of a repeatable such as a bullet point list. An editor drags in a component with a container with the according configuration that already has one item of the repeatable by default (`defaultContent`) and upon pressing Enter the user can repeat it (`defaultComponents` -> `paragraph`).
 
 Example:
-```
+```html
 <script type="ld-conf">
 {
   "label": "Bullet List",
@@ -212,7 +216,7 @@ Example:
 ```
 
 The list item for the example above looks like this:
-```
+```html
 <script type="ld-conf">
 {
   "name": "bullet-list-item",
@@ -229,7 +233,7 @@ The list item for the example above looks like this:
 `allowedChildren`: array. Allows you to define which components are allowed within a certain container. Great if you need to restrict what users can do in a design.
 
 Example:
-```
+```html
 <script type="ld-conf">
 {
   "label": "Media Gallery",
@@ -255,7 +259,7 @@ Example:
 `service`: defines the service type to use which corresponds to the name of an existing server-side plugin. `doc-include` services are freely configurable and are implemented as plugins in customizing projects. The concept is similar to [edge side includes](https://en.wikipedia.org/wiki/Edge_Side_Includes).
 
 Example:
-```
+```html
 <script type="ld-conf">
   {
     "name": "top-row",

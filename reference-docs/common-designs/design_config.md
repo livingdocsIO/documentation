@@ -6,7 +6,7 @@ The config.json defines the design configuration. You can specifiy through the d
 
 Basic Information:
 
-```javascript
+```json
 "name": "boilerplate",
 "label": "Boilerplate Design",
 "version": "1.0.0",
@@ -59,7 +59,7 @@ Inside of the `<script type="ld-conf">` you can define configurations for the co
 
 The `defaultComponents` configuration tells the editor which components should be used by default for some basic interactions like Pressing Enter at the end of a paragraph. Since Livingdocs is completely configurable you can for example define what your standard text paragraph looks like.
 
-```javascript
+```js
 "defaultComponents": {
   "paragraph": "p", // The default component to insert when pressing Enter
   "image": "image"  // The component to insert when dragging an image into the document.
@@ -71,7 +71,7 @@ The `defaultComponents` configuration tells the editor which components should b
 
 The settings in `componentProperties` will add configuration options to your components. Technically a componentProperty will just add a css class to the top level element of a component if it is selected by the user. You can use these properties in one of your components as shown further below.
 
-```javascript
+```js
 "componentProperties": {
 
   // Dropcap that will add the css class 'drop-cap' to a component if selected
@@ -122,7 +122,7 @@ This is an example configuration of a paragraph component that uses the `dropcap
 
 Named aspect ratios can be added to a design that can be reused in the components. It is possible to restrict images to certain aspect ratios to for example ensure that an image is always a landscape image of 16:9.
 
-```javascript
+```js
 "imageRatios": {
   "16:9": {
     "label": "16:9",
@@ -160,7 +160,7 @@ In a component the aspect ratios can be defined per image directive. In the foll
 
 For the User interface you can group your components. This is done via the `groups` configuration. These are purely instructions for the user interface how to display a grouped list of components to the user.
 
-```javascript
+```js
 "groups": [
   {
     "label": "Headers",
@@ -186,11 +186,14 @@ There are two types of content that can be extracted: text and images. You can d
   {
     "identifier": "title",
     "type": "text",
-    "components": ["hero.title", "head.title", "title.title"]
+    "matches": ["hero.title", "head.title", "title.title"],
+    "isEditable": true
   }, {
     "identifier": "teaserImage",
     "type": "image",
-    "components": ["hero.image", "image.image"]
+    "matches": ["hero.image", "image.image"],
+    "imageRatios": ["16:9"],
+    "isEditable": true
   }
 ]
 ```
