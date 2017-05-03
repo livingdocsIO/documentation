@@ -2,18 +2,44 @@
 
 ## Overview
 
-Livingdocs allows users to upload pictures and then subsequently shows them. There are 2 parts here:
-1. the storage and delivery of the images
-2. the generated image markup (e.g. `img` tags in the HTML document)
+Livingdocs allows users to upload pictures and then subsequently shows them. There are 3 parts here:
+1. the **storage** of the images
+2. the generated image **markup** (e.g. `img` tags in the HTML document)
+3. the **delivery** of the images
 
-The storage of choice for Livingdocs is Amazon S3. You can customize this.
+### Storage
+
+The storage of choice for Livingdocs is Amazon S3, the bucket is configured in the server like this:
+```json
+'images': {
+  'public': 'http://bucket-name.s3.amazonaws.com',
+  'bucket': 'bucket-name',
+  'bucket_region': 'eu-west-1'
+}
+```
+
+You can configure your own image storage using the following configuration:
+```json
+'images': {
+  'proxy': {
+    'url': 'http://your-image-storage.com'
+  }
+}
+```
+
+This will route image upload requests from Livingdocs to your chosen URL instead of S3.
+
+### Delivery
+
 The delivery of the images is done through a URL-pattern-based web service. Out of the box, Livingdocs supports:
 1. resrc.it (https://www.resrc.it/ note: resrc.it was bought by fastly and you can currently not open new accounts)
 2. ImgIX (https://www.imgix.com/)
 
 You can also add another image service, or even your own. SZ did so for their magazine.
 
-In order to see an image in a HTML document, Livingdocs needs to generate the HTML markup. This has to work in tandem with the choosen web service (ImgIX or resrc.it) since each of those services expects a specific URL pattern to encode things like the image width or a cropping. Currently, both ImgIX and resrc.it have their corresponding markup generator in the Livingdocs framework. As an outlook, we are pushing towards a more configurable Lego-like system where you don't configure a specific web service but rather specific strategies.
+### Markup
+
+In order to see an image in a HTML document, Livingdocs needs to generate the HTML markup. This has to work in tandem with the chosen web service (ImgIX or resrc.it) since each of those services expects a specific URL pattern to encode things like the image width or a cropping. Currently, both ImgIX and resrc.it have their corresponding markup generator in the Livingdocs framework. As an outlook, we are pushing towards a more configurable Lego-like system where you don't configure a specific web service but rather specific strategies.
 
 Below is an example workflow that summarizes the whole process.
 
@@ -112,11 +138,13 @@ app:
   imageServiceConfig:
     host: 'https://app.resrc.it'
     quality: 75
+    scriptUrl: '//d2o08py1e264ss.cloudfront.net/assets/resrc-0.9.0.min.js'
 ```
 
 The `imageService` field tells Livingdocs which image service should be used. The `imageServiceConfig` contains the configuration for this specific image service.
 The `host` is simply where your resrc.it images are served from. With `resrc.it` this is normally always the same.
 The `quality` setting allows you to choose a global quality for your images. In the range between 75 to 100 you normally don't see a difference.
+The `scriptUrl` points to the client-side Javascript code used for the responsive behavior. You need to provide this. And don't rely on our URL ;)
 
 #### Server
 
@@ -126,6 +154,7 @@ documents:
     'resrc.it':
         host: 'https://app.resrc.it'
         quality: 75
+        scriptUrl: '//d2o08py1e264ss.cloudfront.net/assets/resrc-0.9.0.min.js'
 ```
 
 The parameters are equivalent to the ones in the editor. You can in theory also configure several images services in the server, but as of now only one can be used (the one specified in the editor config).
