@@ -59,7 +59,7 @@ If you want to define and use a custom plugin, you have to do the following step
 - Define the custom plugin folder in the environment config (`conf/environments/all.coffee`).
 
 ```js
-metadataPlugins: { path.resolve('./plugins/metadata') }
+metadataPlugins: path.resolve('./plugins/metadata')
 ```
 
 * Add a new custom plugin to './plugins/metadata/customername-pluginname.js'
@@ -69,6 +69,10 @@ module.exports = {
   name: 'customername-pluginname',
   schema: {
     type: 'string'
+  },
+  validate: (value, config) => {
+    console.log(value); // the entered value
+    console.log(config); // { custompluginconfig: 'test' }
   }
 }
 ```
@@ -78,7 +82,10 @@ module.exports = {
 ```js
 metadata: {
   myNewMetadataField: {
-    plugin: 'customername-pluginname'
+    plugin: 'customername-pluginname',
+    config: {
+      custompluginconfig: 'test'
+    }
   }
 }
 ```
