@@ -75,7 +75,7 @@ Each migration is a 2-step process:
 
 The option "Creates and prepares a migration" allows you to start a new migration. You can either choose:
 - a simple version bump which bumps the design version in all your documents to a new design version without affecting the structure of the documents
-- or select a migration script from the filesystem to tell the Livingdocs how to migrate your documents (the next section will show some examples for such scripts)
+- or select a migration script from the filesystem to tell the Livingdocs how to migrate your documents (the next section will show some examples for such scripts), to select, type in a file path relative to your root directory, e.g. `app/data-migrations/your_migration.js`
 
 Once you created a migration, it will run for all your documents. In the case of a migration script it will also generate a report for you that lists possible errors that were encountered with your script. (For a version bump there is no report, since errors are impossible). You can view this report by selecting the option "Show migration report".
 
@@ -95,8 +95,8 @@ The following diagram visualizes the most important states and actions:
 
 The boilerplate app implements three example migrations that you can take as a starting point for your own migrations. (Don't run the example migrations, they are using a sample design which is not configured).
 
-1. [Migration script after removing a directive from a component](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_remove_directive.coffee)
+1. [Migration script after removing a directive from a component](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_remove_directive.js)
 
-2. [Migration script after renaming a directive on a component](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_rename_directive.coffee)
+2. [Migration script after renaming a directive on a component](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_rename_directive.js)
 
-3. [Migration script to initialize a new metadata field](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_add_metadata_field.coffee)
+3. [Migration script to initialize a new metadata field](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_add_metadata_field.js)
