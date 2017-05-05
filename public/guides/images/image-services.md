@@ -37,7 +37,7 @@ The delivery of the images is done through a URL-pattern-based web service. Out 
 
 You can also add another image service, or even your own. SZ did so for their magazine.
 
-### Markup
+### Markup
 
 In order to see an image in a HTML document, Livingdocs needs to generate the HTML markup. This has to work in tandem with the chosen web service (ImgIX or resrc.it) since each of those services expects a specific URL pattern to encode things like the image width or a cropping. Currently, both ImgIX and resrc.it have their corresponding markup generator in the Livingdocs framework. As an outlook, we are pushing towards a more configurable Lego-like system where you don't configure a specific web service but rather specific strategies.
 
@@ -166,7 +166,7 @@ This section is only relevant if you are using ImgIX. Skip it otherwise.
 Metadata fields of type image will contain the `srcset` in a specific `crop`, but not in the root. The reason for this is simply that you normally only want teaser images in a certain crop and in the metadata definition it is not even possible to have a metadata image without a crop definition.
 
 An example:
-```json
+```
 "metadata": {
   "teaserImage": {
     "originalUrl": "http://livingdocs-images-dev.s3.amazonaws.com/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg",
