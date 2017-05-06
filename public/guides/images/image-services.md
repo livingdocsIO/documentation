@@ -95,7 +95,7 @@ app:
 
 The `imageService` field tells Livingdocs which image service should be used. The `imageServiceConfig` contains the configuration for this specific image service.
 The `host` is simply where your ImgIX images are served from.
-If `preferWebp` is set to `true` Livingdocs will pass the `format=auto` parameter (https://docs.imgix.com/apis/url/auto).
+If `preferWebp` is set to `true` Livingdocs will pass the `auto=format` parameter (https://docs.imgix.com/apis/url/auto).
 `srcSet` defines the settings you want for your `srcset` attribute:
 1. the available image widths `widths`
 2. the width that is set to the `src` attribute (e.g. for IE11 and below), defined in `defaultWidth`
@@ -170,13 +170,13 @@ An example:
 "metadata": {
   "teaserImage": {
     "originalUrl": "http://livingdocs-images-dev.s3.amazonaws.com/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg",
-    "url": "https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?w=1024&format=auto",
+    "url": "https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?w=1024&auto=format",
     "width": 1760,
     "height": 791,
     "imageService": "imgix",
     "crops": [
         {
-            "url": "https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?rect=177%2C0%2C1406%2C791&w=1024&format=auto",
+            "url": "https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?rect=177%2C0%2C1406%2C791&w=1024&auto=format",
             "name": "16:9",
             "x": 177,
             "y": 0,
@@ -184,19 +184,19 @@ An example:
             "height": 791,
             "srcSet": [
                 {
-                    "url": "https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?rect=177%2C0%2C1406%2C791&w=2048&format=auto",
+                    "url": "https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?rect=177%2C0%2C1406%2C791&w=2048&auto=format",
                     "width": 2048
                 },
                 {
-                    "url": "https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?rect=177%2C0%2C1406%2C791&w=1024&format=auto",
+                    "url": "https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?rect=177%2C0%2C1406%2C791&w=1024&auto=format",
                     "width": 1024
                 },
                 {
-                    "url": "https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?rect=177%2C0%2C1406%2C791&w=620&format=auto",
+                    "url": "https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?rect=177%2C0%2C1406%2C791&w=620&auto=format",
                     "width": 620
                 },
                 {
-                    "url": "https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?rect=177%2C0%2C1406%2C791&w=320&format=auto",
+                    "url": "https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?rect=177%2C0%2C1406%2C791&w=320&auto=format",
                     "width": 320
                 }
             ]
