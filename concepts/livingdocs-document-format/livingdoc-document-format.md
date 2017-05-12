@@ -1,3 +1,0 @@
-# Livingdoc Document Format
-
-tbd
