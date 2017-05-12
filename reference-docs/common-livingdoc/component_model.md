@@ -30,6 +30,40 @@ textDirective.setContent('text', 'Lorem Ipsum dolorem...')
 
 For more information see the [detailed directive documentation](directives.md).
 
+#### componentProperties
+
+Component properties let you define css classes or styles that can be set on
+the root element of a component.
+
+
+Component Properties definition in the design:
+```js
+componentProperties: {
+  'css-background-color': {
+    type: 'style',
+    label: 'Background Color',
+    cssProperty: 'background-color'
+  }
+}
+```
+
+Component definition:
+```html
+<script type="ld-conf">
+{
+  name: 'header',
+  properties: ['css-background-color']
+}
+</script>
+<header>...</header>
+```
+
+Setting the style on the `componentModel`:
+```js
+header.setStyle('css-background-color', '#29b96f')
+```
+
+
 #### template
 The Template from which your component was created.
 
