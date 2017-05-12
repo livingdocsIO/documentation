@@ -303,6 +303,18 @@ search:
   article_document_index: 'li_local_documents'
   number_of_replicas: 1
   log: null # use 'trace' to debug the search feature (warning: very verbose)
+
+  # The metadata mapping determines which metadata fields will be indexed
+  # in elasticsearch. This can then be used to e.g. create search filters
+  # based on metadata.
+  metadata_mapping: require.resolve('../some/path/metadata/es_metadata_mapping')
+
+  # Metadata fields that will be forwarded to the livigndocs-editor when
+  # a document search is performed. This forwarding is needed to e.g show
+  # the open tasks in the dashboard article list.
+  documentsMetadataFields: [
+    'tasks.*',
+  ]
 ```
 
 
