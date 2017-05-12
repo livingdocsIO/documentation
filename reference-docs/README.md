@@ -3,24 +3,24 @@
 
 #### Common
 
-- Livingdocs Document Format
-- Livingdocs Design
+- [Livingdocs Document Format](./common-livingdoc)
+- [Livingdocs Design](./common-designs)
 
 
 #### Server APIs
 
-- Public Api
-- Print Api
-- Editing Api
+- [Public Api](./server-public-api)
+- [Editing Api](./server-editing-api)
+- [Print Api](./server-print-api)
 
 
 #### Server
 
-- Configuration
-- Writing plugins and adding Extensions
+- [Configuration](./server-configuration)
+- [Writing plugins and adding Extensions](./server-extensions)
 
 
-#### Editor
+#### Editor
 
-- Configuration
-- CSS Styleguide
+- [Configuration](./editor-configuration)
+- [CSS Styleguide](./editor-styleguide)

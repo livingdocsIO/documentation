@@ -8,23 +8,24 @@ Component cards are in essence nothing else than standalone components. The defi
 
 The following is an example configuration in a Livingdocs design:
 ```json
-  "componentCards": [
-    {
-      "name": "default-card",
-      "component": "teaser",
-      "wrapper": "<div class='funky-wrapper'></div>",
-      "isDefault": true
-    }, {
-      "name": "large-card",
-      "component": "hero",
-      "wrapper": "<div class='large-wrapper'></div>",
-      "isDefault": false
-    }
-  ],
+"componentCards": [
+  {
+    "name": "default-card",
+    "component": "teaser",
+    "wrapper": "<div class='funky-wrapper'></div>",
+    "isDefault": true
+  }, {
+    "name": "large-card",
+    "component": "hero",
+    "wrapper": "<div class='large-wrapper'></div>",
+    "isDefault": false
+  }
+]
 ```
 
 This defines two component card types: a default component card and a large component card. The linked `component` is just a regular Livingdocs component. The `teaser` component from the above code for example looks like this:
-```json
+
+```html
 <script type="ld-conf">
   {
     "label": "Teaser",
@@ -50,6 +51,7 @@ This defines two component card types: a default component card and a large comp
 ### Rendering component cards
 
 Component cards wrap a regular Livingdocs component that has the usual directives (see the [design description](./create_designs.md) for details). The content for these directives is filled through a document's metadata. A document's project contains a configuration that defines the mapping between the metadata entries and the directives of the component cards. An example mapping might look like this:
+
 ```json
   "mapping": {
     "default-teaser": {
@@ -68,7 +70,9 @@ Component cards wrap a regular Livingdocs component that has the usual directive
     }
   }
 ```
+
 Each mapping entry defines:
+
 - the key: a the directive on the component card,
 - the value/dataField: a key in the publication's metadata hash from which to take the content for the directive above,
 - the value/dataType: with which to treat the value at this specific key.
@@ -114,6 +118,7 @@ curl --ipv4 -XPOST \
 ### The rendered cards
 
 The actual rendering of the component cards for a document happens whenever a document is published. The Livingdocs server will fetch the publication's metadata and the according mapping and render all defined component cards and  store an entry for each of them to the respective `ld_component_cards` index under the type `component_card` on elastic. An entry on elastic looks like this:
+
 ```json
 {
     "_index": "ld_component_card",
@@ -156,9 +161,11 @@ Each component card contains:
 - the assignments of this card to lists
 
 In addition to the publish event we can also force rendering of all component cards through a command line tool by typing:
+
 ```bash
 grunt search-index:component-card
 or
 grunt search-index:component-card:reset
 ```
+
 The `reset` flag will cause the tool to first delete any existing index, then apply the elastic mapping and then re-render all content of the index.
