@@ -5,7 +5,7 @@ The Livingdocs editor allows you to set certain configuration options to customi
 
 For all configurable options in the library, see [here](https://github.com/upfrontIO/srcissors#configuration-options)
 
-## Example configuration
+## Example Editor configuration
 
 ```
 {
