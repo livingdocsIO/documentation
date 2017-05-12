@@ -60,10 +60,11 @@ For local overrides you can use `secrets/{environment}.coffee` in the server and
 According to the [12 factor app methodology](https://12factor.net/config), sensitive data and secrets should not be checked in to source control.
 Always reference sensitive configs with environment variables, for example:
 
-```coffeescript
-db:
-  username: myuser
+```js
+db: {
+  username: myuser,
   password: process.env.db__password
+}
 ```
 
 ## Setting the environment

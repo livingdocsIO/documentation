@@ -32,26 +32,32 @@ Properties:
 
 
 Example:
-```coffee
-filters:
-  articleList:
-    displayFilters: ['channels', 'layouts', 'timeRange']
+```js
+filters: {
+  articleList: {
+    displayFilters: ['channels', 'layouts', 'timeRange'],
     defaultQueries: [{type: 'documentType', value: 'article'},
       {type: 'sortBy', value: '-updated_at'}]
-  inlineArticleList:
-    displayFilters: []
+  },
+  inlineArticleList: {
+    displayFilters: [],
     defaultQueries: [{type: 'documentType', value: 'article'},
       {type: 'sortBy', value: '-updated_at'}]
-  pageList:
-    displayFilters: []
+  },
+  pageList: {
+    displayFilters: [],
     defaultQueries: [{type: 'documentType', value: 'page'},
       {type: 'sortBy', value: '-updated_at'}]
-  documentListList:
-    displayFilters: ['timeRange']
+  },
+  documentListList: {
+    displayFilters: ['timeRange'],
     defaultQueries: [
       {type: 'documentType', value: 'article'},
       {type: 'documentState', value: 'published'},
       {type: 'sortBy', value: '-updated_at'}
+    ]
+  }
+}
 ```
 
 

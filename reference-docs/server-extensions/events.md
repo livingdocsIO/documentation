@@ -4,24 +4,28 @@
 The events API is Livingdocs's implementation of the publish/subscribe pattern.
 
 ## Requiring events from the li-server
+
 Example:
-```coffeescript
-config = require('../conf')
-liServer = require('@livingdocs/server/core/api')(config)
-{events} = liServer
+```js
+const config = require('../conf')
+const liServer = require('@livingdocs/server/core/api')(config)
+const {events} = liServer
 ```
 
 ## Event firing: `notify`
-```coffeescript
+
+```js
 events.notify(event, message)
 ```
+
 - event `<String>`
 - message `<Object>`
 
 The events.notify() methods emits a named event alongside a message object.
 
 ## Event subscription: `subscribe`
-```coffeescript
+
+```js
 events.subscribe(event, listener)
 ```
 
@@ -31,7 +35,8 @@ events.subscribe(event, listener)
 The events.subscribe() method adds a listener that gets called each time the event is fired.
 
 ## Event unsubscription: `unsubscribe`
-```coffeescript
+
+```js
 events.unsubscribe(event, listener)
 ```
 
@@ -41,14 +46,16 @@ events.unsubscribe(event, listener)
 The events.unsubscribe() method removes the listener that was called each time the event was fired.
 
 ## Events unsubscription: `unsubscribeAll`
-```coffeescript
+
+```js
 events.unsubscribeAll()
 ```
 
 The events.unsubscribeAll() method removes all listeners.
 
 ## Event subscribers: `subscribers`
-```coffeescript
+
+```js
 events.subscribers(event)
 ```
 

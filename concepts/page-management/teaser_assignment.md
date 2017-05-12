@@ -6,12 +6,13 @@ By default every list is empty and a document is not assigned to any lists. The 
 
 ### Document to list relation
 
-On a data-structure level the relation between lists and documents is stored in three places. 
+On a data-structure level the relation between lists and documents is stored in three places.
 
 The first two are the metadata of the document and publication records. It is worth noting that a list relation can only exist to a published document. Unpublished documents can not belong to any lists. The entry will look like the following:
-```json
-metadata:
+```js
+metadata: {
   listIds: [1, 2, 3]
+}
 ```
 
 The second one is a join table called `documents_in_lists` that joins the two tables `document_lists` and `documents` and in addition to the relation stores the way in which the relation was conceived, e.g., on the publish panel. This table is currently only used for bookkeeping and has no use in delivery or editing.
@@ -37,13 +38,15 @@ NOTE: Never ever trigger an automated publish from the list user interface. This
 
 As discussed above, every publication comes with its assigned `listIds` from the publish panel (publish call to the API). After that you can still add or remove a publication from a list. To do this you can use 2 API endpoints:
 
-```
+```http
 POST /document_lists/:id/add-document
+```
 Parameters: document_id, assignment_content (any of 'publish', 'search')
 
+```http
 POST /document_lists/:id/remove-document
-Parameters: document_id
 ```
+Parameters: document_id
 
 Both of these endpoints will also automatically update the respective publication record in elastic. The document record is not updated on elastic.
 We use those endpoints in the list user interface when dragging a document from the search into a list or removing a document from a list.
@@ -81,4 +84,3 @@ The list assignment is used to filter the documents for a list's proposal. Every
 }
 ```
 Note that the list assignment does not affect the publication of a list, i.e., the pinned documents that appear in a published list. Those are fetched exclusively from the `pinned` member of the `document_lists` table.
-

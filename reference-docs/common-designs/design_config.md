@@ -181,19 +181,19 @@ This section allows you to configure the livingdocs metadata extractor for the d
 The configuration allows you for each requested metadata field to define which <component>.<directive> combinations should be used for extraction and in what order.
 There are two types of content that can be extracted: text and images. You can define which one you want in the parameter 'type'.
 
-```javascript
-"metadata": [
+```js
+metadata: [
   {
-    "identifier": "title",
-    "type": "text",
-    "matches": ["hero.title", "head.title", "title.title"],
-    "isEditable": true
+    identifier: 'title',
+    type: 'text',
+    matches: ['hero.title', 'head.title', 'title.title'],
+    isEditable: true
   }, {
-    "identifier": "teaserImage",
-    "type": "image",
-    "matches": ["hero.image", "image.image"],
-    "imageRatios": ["16:9"],
-    "isEditable": true
+    identifier: 'teaserImage',
+    type: 'image',
+    matches: ['hero.image', 'image.image'],
+    imageRatios: ['16:9'],
+    isEditable: true
   }
 ]
 ```
@@ -205,8 +205,8 @@ The example above will take the metadata field 'title' preferably from the direc
 This configuration option lets you define components that should be prefilled upon document creation. E.g., you might want to prefill the author field of a newly created document to the name of the current user.
 There are two types of prefill modes: 'string' and 'computed'. String will just use the string inside the 'value' field to do the prefilling. Computed expects a respective handler method inside the livingdocs-editor so you can only use this type if you have control over the livingdocs-editor.
 
-```javascript
-"prefilledComponents": {
+```js
+prefilledComponents: {
   "header": {
     "author": {
       "value": "author",

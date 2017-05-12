@@ -20,7 +20,8 @@ To sum up:
 ## The endpoints
 
 All Livingdocs requests require you to have configured endpoints on your side where your middleware sits. The respective entry in the Livingdocs configuration looks as follows:
-```
+
+```coffee
 print:
   enabled: true
   host: 'https://your-host.com'
@@ -37,12 +38,12 @@ Before a print document is created and whenever a user wants to change the layou
 Livingdocs sends the following request to get the layouts.
 
 To:
-```
+```http
 POST /support
 ```
 
 Payload:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
     <authentication type="USER_PASSWORD">
@@ -61,7 +62,7 @@ The authentication sends you a username and a password that you can use to authe
 The layout part queries for the requested publication and the date of this publication (e.g. tomorrow's newspaper). The date will be in the format "dd.mm.YYYY", e.g. "02.09.2016".
 
 Your response should look as follows:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
    <getLayouts>
@@ -94,12 +95,12 @@ Each line represents one layout, i.e., one placed and sized box in the InDesign 
 Templates are basically the same as layouts, except that they are for text-for-layout workflows. Templates are pre-defined boxes that are not yet placed on any publication or edition but are common blueprints, e.g. a one-column text. Livingdocs sends the following request to get the templates.
 
 To:
-```
+```http
 POST /support
 ```
 
 Payload:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
     <authentication type="USER_PASSWORD">
@@ -116,7 +117,7 @@ Payload:
 Again, we are using an authentication block. The second block defines the publication name for which you want to get the templates. Note that you don't get a specific publication date since templates are independent of any specific edition. The `allowedOnCms` parameter will always be `true` for calls from Livingdocs.
 
 Your response should look as follows:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
    <getTemplates>
@@ -146,12 +147,12 @@ Each line represents one template, i.e., one generic box that can be used in InD
 Publication Dates are used for the layouts. They return the dates for which, in a certain publication, layouts already exist, i.e. an InDesign file was prepared for the edition. Livingdocs sends the following request to get the available publication dates (editions):
 
 To:
-```
+```http
 POST /support
 ```
 
 Payload:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
     <authentication type="USER_PASSWORD">
@@ -169,7 +170,7 @@ Payload:
 The authentication block is equivalent to the other requests. The second block defines for which publication you want to get the prepared edition dates and in which time frame (in the example between the 3rd and 23rd of September).
 
 Your response should look as follows:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
    <getPublicationDates>
@@ -193,12 +194,12 @@ This is really the gist of the Livingdocs Print API. In the preview response you
 Livingdocs will call your middleware with the following request.
 
 To:
-```
+```http
 /getPreview
 ```
 
 Payload:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
     <authentication type="USER_PASSWORD">
@@ -241,7 +242,7 @@ Your middleware is now responsible to use the provided data, feed it to your pri
 - check if the provided content types are correct for the chosen layout (or template)
 
 Your response to Livingdocs should look as follows:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
    <getPreview>
@@ -310,7 +311,7 @@ The response consists of different `content` blocks that contain `rows`. The `co
 - `column`, the column in which the row is rendered
 
 If the content contained information that is not present in the layout or template you can notify Livingdocs of this. For example, if Livingdocs sent you an author content element, but the respective layout in InDesign has no match for author, then you can send back a row containing text that matches the following regex:
-```
+```js
 /IM CMS ZUSATZTEXT FÜR (\w+): (.*)/
 ```
 If Livingdocs sees this regex in a row it will render a respective message in the print preview. All of those messages should come at the end of the content block.
@@ -330,12 +331,12 @@ In addition, if a jpeg preview was requested, you need to send a `previews` bloc
 Before exporting a print article to the print system, the journalist will add some metadata. Currently, the only supported metadata that is requested from the print system is the department (organisational unit within a newspaper). To request the available departments, Livingdocs will send out the following request.
 
 To:
-```
+```http
 /support
 ```
 
 Payload:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
     <authentication type="USER_PASSWORD">
@@ -351,7 +352,7 @@ Payload:
 The authentication block is equivalent to the other requests. The `getDepartments` block simply requests for which publication the departments are requested.
 
 Your middleware should send a response as follows:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
    <getDepartments>
@@ -381,12 +382,12 @@ Each department element has to provide the following attributes:
 Once a journalist is finished with a print article, she will want to export it to the print system. To do this, Livingdocs sends the following request.
 
 To:
-```
+```http
 /export
 ```
 
 Payload:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
     <authentication type="USER_PASSWORD">
@@ -453,7 +454,7 @@ Aside of the component-based export, there is also an `html` field where the who
 Your middleware should use all of this information to export the article to the print system. You will not need to send anything back to Livingdocs except for the status of the export (success or failure).
 
 Response:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
    <export status="OK"/>
@@ -469,12 +470,12 @@ The status call bears a lot of importance. When a print article has been written
 Livingdocs will send the following request.
 
 To:
-```
+```http
 /status
 ```
 
 Payload:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
     <authentication type="USER_PASSWORD">
@@ -492,7 +493,7 @@ The authentication block is equivalent to the other requests. The `getStatus` bl
 Your middleware's response should look as follows.
 
 Response:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
    <getStatus isEditable="true" layoutId="OYN6P" livingdocsId="c5e5e4e7-0d79-4b98-b7e8-29482aad6da1" statusName="Redigieren"/>

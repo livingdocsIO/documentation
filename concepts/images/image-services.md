@@ -113,16 +113,17 @@ For background images you can simply set a fixed max-width, so that each backgro
 
 #### Server
 
-```coffee
-documents:
-  imageServices:
-    imgix:
-      host: 'https://livingdocs-dev.imgix.net'
-      preferWebp: true
-      backgroundImage:
+```js
+documents: {
+  imageServices: {
+    imgix: {
+      host: 'https://livingdocs-dev.imgix.net',
+      preferWebp: true,
+      backgroundImage: {
         maxWidth: 2048
-      srcSet:
-        defaultWidth: 1024
+      }
+      srcSet: {
+        defaultWidth: 1024,
         widths: [
           2048,
           1024,
@@ -130,6 +131,10 @@ documents:
           320
         ],
         sizes: ['100vw']
+      }
+    }
+  }
+}
 ```
 
 The parameters are equivalent to the ones in the editor. You can in theory also configure several images services in the server, but as of now only one can be used (the one specified in the editor config).
@@ -138,13 +143,15 @@ The parameters are equivalent to the ones in the editor. You can in theory also 
 
 #### Editor
 
-```coffee
-app:
-  imageService: 'resrc.it'
-  imageServiceConfig:
-    host: 'https://app.resrc.it'
-    quality: 75
+```js
+app: {
+  imageService: 'resrc.it',
+  imageServiceConfig: {
+    host: 'https://app.resrc.it',
+    quality: 75,
     scriptUrl: '//d2o08py1e264ss.cloudfront.net/assets/resrc-0.9.0.min.js'
+  }
+}
 ```
 
 The `imageService` field tells Livingdocs which image service should be used. The `imageServiceConfig` contains the configuration for this specific image service.

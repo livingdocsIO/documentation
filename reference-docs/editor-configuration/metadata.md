@@ -19,6 +19,7 @@ As you can see in the [examples](../../public/guides/metadata-examples.md) you n
 ## Available UI elements
 
 There are UI elements for:
+
 - text input (example above)
 - checkbox
 - datetime (date and time)
@@ -32,110 +33,122 @@ The following subchapters discuss them and show the available options.
 
 ### Text Input
 
-```coffee
-name: 'nameOfYourMetadataTextField'
-form: 'li-meta-text-form'
-config:
-  halfWidth: true or false # optional, false by default
-  service: 'nameOfYourServicePlugin' # mandatory
-  label: 'foo' # optional, takes camelized name otherwise
-  placeholder: 'bar' # optional, takes camelized name otherwise
-  readOnly: true or false # optional, false by default
-  maxLength: 200 # optional, integer, not used by default
+```js
+name: 'nameOfYourMetadataTextField',
+form: 'li-meta-text-form',
+config: {
+  halfWidth: false, // optional, false by default
+  service: 'nameOfYourServicePlugin', // mandatory
+  label: 'foo', // optional, takes camelized name otherwise
+  placeholder: 'bar', // optional, takes camelized name otherwise
+  readOnly: false, // optional, false by default
+  maxLength: 200 // optional, integer, not used by default
+}
 ```
 
 You need to make sure that your server-side metadata field is of type `li-text` otherwise you will get errors.
 The `halfWidth` option will render the text input field over half of the screen width if set to true (otherwise over the full width). `readOnly` and `maxLength` let you customize the behavior of the text input.
 The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
 The service plugin for a text input allows you to customize the logic for the following methods:
-```
-init: (identifier) ->
-  # init the value of the text input
 
-set: (identifier, text) ->
-  # set the value
+```js
+{
+  // init the value of the text input
+  init (identifier) {},
+
+  // set the value
+  set (identifier, text) {}
+}
 ```
 
 There is a sample implementation in `plugins/metadata_services/default_text_service.coffee` to help you get started.
 
 ### Select Box
 
-```coffee
-name: 'nameOfYourMetadataSelectField'
-form: 'li-meta-select-form'
-config:
-  service: 'nameOfYourServicePlugin' # mandatory
-  halfWidth: true or false # optional, false by default
-  label: 'foo' # optional, takes camelized name otherwise
-  placeholder: 'bar' # optional, takes camelized name otherwise
+```js
+name: 'nameOfYourMetadataSelectField',
+form: 'li-meta-select-form',
+config: {
+  service: 'nameOfYourServicePlugin', // mandatory
+  halfWidth: false, // optional, false by default
+  label: 'foo', // optional, takes camelized name otherwise
+  placeholder: 'bar' // optional, takes camelized name otherwise
+}
 ```
 
 You need to make sure that your server-side metadata field is of type `li-enum` or a suitable format you defined yourself in a customized server, otherwise you will get errors.
 The `halfWidth` option will render the text input field over half of the screen width if set to true (otherwise over the full width).
 The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
 The service plugin for a select box allows you to customize the logic for the following methods:
-```
-getSelectables: (cb) ->
-  # asynchronous
-  # needs to call cb with cb(null, selectables) or cb(error)
-  # the selectables need to be in the format {name: 'name', value: 'value'}
 
-initSelection: (identifier) ->
-  # called when cb(null, selectables) provided from getSelectables is invoked, this makes sure the select box is properly
-  # initialized with an initial value even if you fetch data async, you will probably use `metadata.get` to get the required value
+```js
+{
+  // asynchronous
+  // needs to call cb with cb(null, selectables) or cb(error)
+  // the selectables need to be in the format {name: 'name', value: 'value'}
+  getSelectables (callback) {},
 
-select: (identifier, selection) ->
-  # executed when a user select an item.
-  # the identifier is the name of your metadata field, the selection contains the name/value pair
-  # you will probably call `metadata.set` in here
+  // called when the select box is first rendered and needs to get an initial value
+  // you will probably use `metadata.get` to get the required value
+  initSelection (identifier) {},
 
-hasCustomItem: ->
-  # true if you want to define your own directive for the display of results in the select box
-  # false otherwise
+  // executed when a user select an item.
+  // the identifier is the name of your metadata field, the selection contains the name/value pair
+  // you will probably call `metadata.set` in here
+  select (identifier, selection) {},
 
-getCustomItem: ->
-  # the name of a directive that you want to use to render the items (lines) in the select box when
-  # it is opened. This is handy for example if you want to render them in a hierarchical view.
-  # make sure that you require the directive in your service so it is loaded.
+  // true if you want to define your own directive for the display of results in the select box
+  // false otherwise
+  hasCustomItem () {},
+
+  // the name of a directive that you want to use to render the items (lines) in the select box when
+  // it is opened. This is handy for example if you want to render them in a hierarchical view.
+  // make sure that you require the directive in your service so it is loaded.
+  getCustomItem () {}
+}
 ```
 
 There is a sample implementation in `plugins/metadata_services/default_select_service.coffee` to help you get started.
 
 ### Multiselect Box
 
-```coffee
-name: 'nameOfYourMetadataMultiselectField'
-form: 'li-meta-multiselect-form'
-config:
-  service: 'nameOfYourServicePlugin' # mandatory
-  halfWidth: true or false # optional, false by default
-  label: 'foo' # optional, takes camelized name otherwise
-  placeholder: 'bar' # optional, takes camelized name otherwise
+```js
+name: 'nameOfYourMetadataMultiselectField',
+form: 'li-meta-multiselect-form',
+config: {
+  service: 'nameOfYourServicePlugin', // mandatory
+  halfWidth: false, // optional, false by default
+  label: 'foo', // optional, takes camelized name otherwise
+  placeholder: 'bar' // optional, takes camelized name otherwise
+}
 ```
 
 You need to make sure that your server-side metadata field is of a suitable format you defined yourself in a customized server (there is no core data type for multiselects), otherwise you will get errors.
 The `halfWidth` option will render the text input field over half of the screen width if set to true (otherwise over the full width).
 The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
 The service plugin for a multiselect box allows you to customize the logic for the following methods:
-```
-getSelectables: ->
-  # asynchronous
-  # needs to call cb with cb(null, selectables) or cb(error)
-  # the selectables need to be in the format {name: 'name', value: 'value'}
 
-initSelection: (identifier) ->
-  # called when cb(null, selectables) provided from getSelectables is invoked, this makes sure the select box is properly
-  # initialized with an initial value even if you fetch data async, you will probably use `metadata.get` to get the required value
+```js
+{
+  // asynchronous
+  // needs to call cb with cb(null, selectables) or cb(error)
+  // the selectables need to be in the format {name: 'name', value: 'value'}
+  getSelectables () {},
 
-select: (identifier, selection) ->
-  # executed when a user adds a selection to the multiselection.
-  # the identifier is the name of your metadata field, the selection contains the name/value pair
-  # you will probably call `metadata.set` in here
+  // called when the select box is first rendered and needs to get an initial value
+  // you will probably use `metadata.get` to get the required value
+  initSelection (identifier) {},
 
-unselect: (identifier) ->
-  # executed when a user removes a selection of the multiselect.
-  # the identifier is the name of your metadata field
-  # you will probably call `metadata.set` in here
+  // executed when a user adds a selection to the multiselection.
+  // the identifier is the name of your metadata field, the selection contains the name/value pair
+  // you will probably call `metadata.set` in here
+  select (identifier, selection) {},
+
+  // executed when a user removes a selection of the multiselect.
+  // the identifier is the name of your metadata field
+  // you will probably call `metadata.set` in here
+  unselect (identifier) {}
+}
 ```
 
 There is a sample implementation in `plugins/metadata_services/default_multiselect_service.coffee` to help you get started.
@@ -143,8 +156,8 @@ There is a sample implementation in `plugins/metadata_services/default_multisele
 
 ### Image Selection
 
-```coffee
-name: 'nameOfYourMetadataImageField'
+```js
+name: 'nameOfYourMetadataImageField',
 form: 'li-meta-image-form'
 ```
 
@@ -170,12 +183,13 @@ Also, the markup in the image form does not adhere to the plugin standard, so do
 
 ### Checkbox
 
-```coffee
-name: 'nameOfYourMetadataImageField'
-form: 'li-meta-checkbox-form'
-config:
-  halfWidth: true or false # optional, false by default
-  label: 'foo' # optional, takes camelized name otherwise
+```js
+name: 'nameOfYourMetadataImageField',
+form: 'li-meta-checkbox-form',
+config: {
+  halfWidth: false, // optional, false by default
+  label: 'foo' // optional, takes camelized name otherwise
+}
 ```
 
 You need to make sure that your server-side metadata field is of type `li-boolean` or a suitable custom format, otherwise you will get errors.
@@ -183,44 +197,49 @@ The `halfWidth` option will render the text input field over half of the screen 
 
 ### Datetime
 
-```coffee
-name: 'nameOfYourMetadataImageField'
-form: 'li-meta-datetime-form'
-config:
-  service: 'nameOfYourServicePlugin' # mandatory
-  halfWidth: true or false # optional, false by default
-  label: 'foo' # optional, takes camelized name otherwise
+```js
+name: 'nameOfYourMetadataImageField',
+form: 'li-meta-datetime-form',
+config: {
+  service: 'nameOfYourServicePlugin', // mandatory
+  halfWidth: false, // optional, false by default
+  label: 'foo', // optional, takes camelized name otherwise
+}
 ```
 
 You need to make sure that your server-side metadata field is of type `li-datetime` or a suitable custom format, otherwise you will get errors.
 The `halfWidth` option will render the text input field over half of the screen width if set to true (otherwise over the full width).
 The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
 The service plugin for a datetime allows you to customize the logic for the following methods:
-```
-setDate: (identifier, value) ->
-  # set the date, possibly applying formatting options
 
-getDate: (identifier) ->
-  # get the date, possibly applying formatting options
+```js
+{
+  // set the date, possibly applying formatting options
+  setDate (identifier, value) {},
 
-isValidDate: (date) ->
-  # this lets you define what dates a user can select in the UI. Handy if you want for example
-  # to disallow past dates.
+  // get the date, possibly applying formatting options
+  getDate (identifier) {},
+
+  // this lets you define what dates a user can select in the UI. Handy if you want for example
+  // to disallow past dates.
+  isValidDate (date) {}
+}
 ```
 
 There is a sample implementation in `plugins/metadata_services/default_date_service.coffee` to help you get started.
 
 ### Slug
 
-```coffee
-name: 'nameOfYourMetadataImageField'
-form: 'li-meta-slug-form'
-config:
-  service: 'nameOfYourServicePlugin' # mandatory
-  halfWidth: true or false # optional, false by default
-  label: 'foo' # optional, takes camelized name otherwise
-  placeholder: 'bar' # optional, takes camelized name otherwise
-  canReset: true or false # optional, false by default
+```js
+name: 'nameOfYourMetadataImageField',
+form: 'li-meta-slug-form',
+config: {
+  service: 'nameOfYourServicePlugin', // mandatory
+  halfWidth: false, // optional, false by default
+  label: 'foo', // optional, takes camelized name otherwise
+  placeholder: 'bar', // optional, takes camelized name otherwise
+  canReset: false // optional, false by default
+}
 ```
 
 You need to make sure that your server-side metadata field is of type `li-text` or a suitable custom format, otherwise you will get errors.
@@ -228,18 +247,21 @@ The `halfWidth` option will render the text input field over half of the screen 
 The `canReset` option if set to true renders a reset button next to the slug input that resets the input to its initial value.
 The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
 The service plugin for a slug allows you to customize the logic for the following methods:
-```
-  initSlug: (identifier) ->
-    # define the logic for the initial value of a slug
-    # For example: existing value or normalized metadata title
 
-  setSlug: (identifier, slug) ->
-    # gives you the unnormalized slug input (user input) and lets you define your custom
-    # normalization logic (depending on what you want to allow in a URL)
+```js
+{
+  // define the logic for the initial value of a slug
+  // For example: existing value or normalized metadata title
+  initSlug (identifier) {},
 
-  resetSlug: (identifier) ->
-    # only important if `canReset` is set to true
-    # defines to what value the field will be reset
+  // gives you the unnormalized slug input (user input) and lets you define your custom
+  // normalization logic (depending on what you want to allow in a URL)
+  setSlug (identifier, slug) {},
+
+  // only important if `canReset` is set to true
+  // defines to what value the field will be reset
+  resetSlug (identifier) {}
+}
 ```
 
 There is a sample implementation in `plugins/metadata_services/default_slug_service.coffee` to help you get started.
@@ -247,17 +269,18 @@ There is a sample implementation in `plugins/metadata_services/default_slug_serv
 ### Section Headers
 
 Since the whole publish panel form is generated you might want to set your own section headers (titles) in some instances. To do so, just place a markup as the following at the respective place in your config:
-```coffee
-articles: [
-  name: 'someFieldBeforeTitle'
+
+```js
+articles: [{
+  name: 'someFieldBeforeTitle',
   form: 'li-meta-text-form'
-,
-  type: 'sectionHeader'
+}, {
+  type: 'sectionHeader',
   header: 'MyAwesomeTitle'
-,
-  name: 'someFieldUnderTheHeader'
+}, {
+  name: 'someFieldUnderTheHeader',
   form: 'li-meta-text-form'
-]
+}]
 ```
 
 This would render the title `MyAwesomeTitle` in between the 2 text fields.
@@ -266,15 +289,17 @@ Section headers are always clear-fixed and go over the full width.
 ## Registering a metadata service
 
 Some of the forms require you to provide a service that implements the business logic behind those fields. In order to register a service you will need to add it to `core/bootstrap/index.coffee`. To add a fictional metadata service `foobar` you would add the following line:
-```
-editor.metadataServices.register('foobar', require('path/to/foobar))
+
+```js
+editor.metadataServices.register('foobar', require('path/to/foobar'))
 ```
 
 The file `foobar.coffee` defines the metadata service *and gives you a metadata instance as well as the angular injector*. It should always have the following format:
-```
-module.exports = ({metadata, $injector}) ->
-  # your implementation goes here
-]
+
+```js
+module.exports = function ({metadata, $injector}) {
+  // your implementation goes here
+}
 ```
 
 In the future we want to write our own injector for this to control more tightly what can be injected and what is private in the core.
@@ -288,7 +313,8 @@ All UI elements should be implemented as Angular components and get at least the
 A new UI element has to be required in `ld_metadata_view.coffee`.
 
 The template should have a surrounding `li` element of this form:
-```
+
+```html
 <li class="ld-grid__item breathe-quarter--bottom"
     ng-class="{ 'one-half': selectForm.halfWidth == true }">
 </li>

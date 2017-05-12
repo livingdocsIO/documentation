@@ -65,7 +65,7 @@ The body contains the configuration as a JSON. The interpreted values are:
 
 #### Example Request
 
-```
+```sh
 curl -X PUT \
 -H "Content-Type: application/json" \
 -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI0MTZhNmRiNC00N2YzLTRjODItYTk5OC0zMTk3ZjI1ZDJjMDgiLCJ1c2VyIjp7ImlkIjoyODB9LCJpYXQiOjE0MzA0MDE2MzMsImV4cCI6MTQzMDQ0NDgzMn0.20iOXxiFH7KoQEKcozQOnF0umqr680dEuzpEt6olA_c" \

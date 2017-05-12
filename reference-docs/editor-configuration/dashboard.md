@@ -1,17 +1,20 @@
 # Dashboard Customization
 
-```coffee
-search:
-  articleSearch:
+```js
+search: {
+  articleSearch: {
     listItemComponent: 'li-dashboard-list-item'
+  }
+}
 ```
 
 Expose metadata for use in the custom list view:
-```coffee
-search:
+```js
+search: {
   documentsMetadataFields: [
     'title',
     'tasks.*',
     'pushNotifications.*'
   ]
+}
 ```

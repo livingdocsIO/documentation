@@ -1,7 +1,8 @@
 # Design Management API
 
 ## Configuration
-```coffee
+
+```js
 {
   designs: {
     public: 'http://livingdocs-designs-dev.s3-website-eu-west-1.amazonaws.com',
@@ -12,6 +13,7 @@
 ```
 
 ## GET /designs
+
 is currently public
 ```json
 {
@@ -29,6 +31,7 @@ is currently public
 ```
 
 ## GET /designs/:name - Complete design object
+
 ```json
 {
   "design": {
@@ -53,6 +56,7 @@ is currently public
 
 ## GET /designs/:name/:semver - Design Version
 ## GET /designs/:name/latest
+
 ```json
 {
   "name": "boilerplate",
@@ -63,6 +67,7 @@ is currently public
 ```
 
 ## POST /designs/:name/latest
+
 Set a design version as latest version
 REQUEST
 ```json

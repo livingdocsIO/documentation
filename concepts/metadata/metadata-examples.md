@@ -39,14 +39,17 @@ metadata: {
 ## Editor
 
 After you've setup your new metadata field you can now use it in the editor. Open the respective configuration file, `all.coffee` if you want to have it in all environments, and add a configuration as follows:
-```coffee
-metadata:
-    article: [
-      name: 'catchline'
-      form: 'li-meta-text-form'
-      config:
-        service: 'defaultText'
-    ]
+
+```js
+metadata: {
+  article: [
+    name: 'catchline',
+    form: 'li-meta-text-form',
+    config: {
+      service: 'defaultText'
+    }
+  ]
+}
 ```
 
 This will render a text-input field to the publish screen of articles where users can type in the value for the "catchline" which is automatically saved to the server.

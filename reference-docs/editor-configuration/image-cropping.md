@@ -7,14 +7,14 @@ For all configurable options in the library, see [here](https://github.com/upfro
 
 ## Example Editor configuration
 
-```
+```js
 {
-  'editor': {
-    'imageCrop': {
-      'showSurroundingImage': 'always',
-      'surroundingImageOpacity': 0.5,
-      'zoomStep': 1.05,
-      'maxArea': 0.5
+  editor: {
+    imageCrop: {
+      showSurroundingImage: 'always',
+      surroundingImageOpacity: 0.5,
+      zoomStep: 1.05,
+      maxArea: 0.5
     }
   }  
 }

@@ -41,12 +41,14 @@ It is important to note that the data migrations **only affect the Livingdocs da
 The previous section explained data migrations as a consequence of a design change. But data migrations really are a general-purpose tool that can be used to alter your existing documents. A different and common example is the need to add a new metadata field to all of your documents and initialize the value in some way.
 
 The Livingdocs migration framework gives you a hook method to implement and calls this method with every document in your project. The hook method looks like this:
-```
-exports.migrate = ({serializedLivingdoc, metadata}, callback) ->
-  # do your stuff here
 
-  # overwrite the JSON data model and the metadata in the response
+```js
+exports.migrate = ({serializedLivingdoc, metadata}, callback) => {
+  // do your stuff here
+
+  // overwrite the JSON data model and the metadata in the response
   callback(null, {serializedLivingdoc, metadata})
+}
 ```
 
 For every document you will get the serialized Livingdoc data model (JSON) and the metadata associated with that document. You can then alter the JSON and metadata in your migration method and pass it to the callback which will automatically apply your changes to the document.
@@ -58,7 +60,8 @@ To run your migration script, use the `data-migration` grunt task which is expla
 ## The `data-migration` grunt task
 
 Livingdocs provides a grunt task to help you running and managing data migrations. If you type `grunt data-migration` on the command line of your boilerplate app, you get the following menu:
-```
+
+```sh
 Select an action to execute, press CTRL+C to cancel:
 ? Action (Use arrow keys)
 ❯ Creates and prepares a migration

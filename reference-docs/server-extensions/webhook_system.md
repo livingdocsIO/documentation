@@ -24,49 +24,54 @@ Example Services are webhooks, hipchat notifications or an elasticsearch indexin
 Services live in /lib/service-hooks/services. A service consists of a couple of things. Each service must contain at least a `name`, `trigger` method, a list of available `events` and a configuration `schema`.
 
 An example service looks like this:  
-```coffee
-# Example Service
-# /lib/service-hooks/services
-request = require('request')
-_ = require('lodash')
+```js
+// Example Service
+// /lib/service-hooks/services
+const request = require('request')
+const _ = require('lodash')
 
-module.exports =
+module.exports = {
 
-  # Optional service initialization
-  # normally automatically called on server start
-  init: (globalConfig, callback) -> callback()
+  // Optional service initialization
+  // normally automatically called on server start
+  init: (globalConfig, callback) => { callback() }
 
-  # Administrative name that's also saved in the hook entity
-  # Once this is defined, do not change it as existing hooks won't work anymore
-  name: 'webhook'
+  // Administrative name that's also saved in the hook entity
+  // Once this is defined, do not change it as existing hooks won't work anymore
+  name: 'webhook',
 
-  # Currently not used but nice to have
-  label: 'Webhook'
+  // Currently not used but nice to have
+  label: 'Webhook',
 
-  # Events to which a service can subscribe
-  events: ['document.publish', 'document.unpublish']
+  // Events to which a service can subscribe
+  events: ['document.publish', 'document.unpublish'],
 
-  # Schema that defines the configuration structure
-  # This will be used when subscribing a hook
-  schema:
-    required: ['url']
+  // Schema that defines the configuration structure
+  // This will be used when subscribing a hook
+  schema: {
+    required: ['url'],
     additionalProperties: false
-    properties:
-      url:
-        type: 'string'
-        format: 'url'
+    properties: {
+      url: {
+        type: 'string',
+        format: 'url',
         protocols: ['http', 'https']
+      }
+    }
+  },
 
-  # This gets called when an event occurs
-  # If you'd like to listen to multiple events,
-  # you have to route them manually inside this method
-  trigger: (hookConfig, event, data, callback) ->
+  // This gets called when an event occurs
+  // If you'd like to listen to multiple events,
+  // you have to route them manually inside this method
+  trigger (hookConfig, event, data, callback) {
     console.log('Triggering webhook on "%s"', event)
-    request.post
-      url: config.url
-      body: _.extend({}, data, event: event)
-    , callback
+    request.post({
+      url: config.url,
+      body: _.extend({}, data, {event: event})
+    }, callback)
+  }
 
+}
 ```
 
 
@@ -101,7 +106,7 @@ curl -XPOST \
 
 ### List all subscriptions - GET /hooks
 
-Supported query strings: `space_id` 
+Supported query strings: `space_id`
 
 ```js
 {

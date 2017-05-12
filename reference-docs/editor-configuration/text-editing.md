@@ -8,9 +8,9 @@ Most of the text editing is handled by [editable.js](https://github.com/upfrontI
 
 When you select some text in the editor you get a popover with some options on how to format text or what special characters to include. You can fully customize the options in the popover, like if you want to be able to toggle text bold, italic, etc. The configuration can be set for both web (default) or print (only relevant if you use the Livingdocs print editor). Below is a configuration example that shows all the different options.
 
-```
-'app': {
-  'editable': {
+```js
+app: {
+  editable: {
     'default': {
       'bold': true,
       'italic': true,
@@ -29,9 +29,9 @@ When you select some text in the editor you get a popover with some options on h
 The example would result in a toolbar with a button for toggling text `bold`, `italic`, make it a `link` and adding `specialChars`.
 The `specialChars` can be configured separately. The button for special chars (a `$` sign) opens a second popover with a tabbed selection of special characters that you want to allow your users to insert. A configuration for `specialChars` looks as follows.
 
-```
-'app': {
-  'specialChars': [
+```js
+app: {
+  specialChars: [
     {
     'name': 'general',
     'label': 'General',
@@ -77,28 +77,28 @@ The `specialChars` can be configured separately. The button for special chars (a
 
 In addition to configuring what options the text toolbar gives to your users you can also configure to some extent the HTML markup that is inserted when a formatting option is selected. Currently, you can configure the markup for `bold`, `italic` and `link`. An example is below.
 
-```
-'app': {
-  'editable': {
-    'formatting': {
-      'boldMarkup': {
-        'type': 'tag',
-        'name': 'strong',
-        'attribs': {
+```js
+app: {
+  editable: {
+    formatting: {
+      boldMarkup: {
+        type: 'tag',
+        name: 'strong',
+        attribs: {
           'class': 'foo'
         }
       },
-      'italicMarkup': {
-        'type': 'tag',
-        'name': 'em',
-        'attribs': {
+      italicMarkup: {
+        type: 'tag',
+        name: 'em',
+        attribs: {
           'class': 'bar'
         }
       },
-      'linkMarkup': {
-        'type': 'tag',
-        'name': 'a',
-        'attribs': {
+      linkMarkup: {
+        type: 'tag',
+        name: 'a',
+        attribs: {
           'class': 'foo bar'
         }
       }
@@ -112,10 +112,10 @@ A common use case for this is when you want to insert some CSS classes around yo
 ### Behavior
 
 Newlines with Shift+Enter. Default: true
-```
-'app': {
-  'editable': {
-    'allowNewline': false
+```js
+app: {
+  editable: {
+    allowNewline: false
   }
 }
 ```
@@ -123,10 +123,10 @@ Newlines with Shift+Enter. Default: true
 Allows the users to make a newline in a paragraph by pressing Shift+Enter. This will result in a `<br>` tag an might not always be wanted thus the ability to turn this off.
 
 Events on Mouse selection. Default: false
-```
-'app': {
-  'editable': {
-    'mouseMoveSelectionChanges': true
+```js
+app: {
+  editable: {
+    mouseMoveSelectionChanges: true
   }
 }
 ```
@@ -138,38 +138,38 @@ By default the editable selection event is only fired once the user releases the
 Livingdocs allows you to use the default browser spellcheck, a custom spellcheck server or no spellchecking at all.
 
 Spellchecking turned off:
-```
-'app': {
-  'editable': {
-    'browserSpellcheck': false
+```js
+app: {
+  editable: {
+    browserSpellcheck: false
   }
 },
-'spellcheck': {
-  'isEnabled': false
+spellcheck: {
+  isEnabled: false
 }
 ```
 
 Default browser spellchecking:
-```
-'app': {
-  'editable': {
-    'browserSpellcheck': true
+```js
+app: {
+  editable: {
+    browserSpellcheck: true
   }
 },
-'spellcheck': {
-  'isEnabled': false
+spellcheck: {
+  isEnabled: false
 }
 ```
 
 Custom spellchecker (examples are NZZs vademecum or Duden):
-```
-'app': {
-  'editable': {
-    'browserSpellcheck': false
+```js
+app: {
+  editable: {
+    browserSpellcheck: false
   }
 },
-'spellcheck': {
-  'isEnabled': true,
+spellcheck: {
+  isEnabled: true,
   'host': 'http://your-spellcheck-server.com'
 }
 ```

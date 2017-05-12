@@ -24,6 +24,7 @@ Example Services are webhooks, hipchat notifications or an elasticsearch indexin
 Services live in /lib/service-hooks/services. A service consists of a couple of things. Each service must contain at least a `name`, `trigger` method, a list of available `events` and a configuration `schema`.
 
 An example service looks like this:  
+
 ```coffee
 # Example Service
 # /lib/service-hooks/services
@@ -107,7 +108,7 @@ curl -XPOST \
 
 ### List all subscriptions - GET /hooks
 
-Supported query strings: `space_id` 
+Supported query strings: `space_id`
 
 ```js
 {
