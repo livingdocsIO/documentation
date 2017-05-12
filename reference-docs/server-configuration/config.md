@@ -314,9 +314,37 @@ search:
   # the open tasks in the dashboard article list.
   documentsMetadataFields: [
     'tasks.*',
+    'pushNotifications.*'
   ]
 ```
 
+#### Push Notifications
+
+```js
+push_notifications: {
+  firebase: {
+    serverKey: '*****',
+
+    // Params sent with each message.
+    //
+    // Google Firebase Docs:
+    // https://firebase.google.com/docs/cloud-messaging/http-server-ref
+    notificationParams: {
+      // high|normal, 'high' will send message immediately
+      // https://firebase.google.com/docs/cloud-messaging/concept-options
+      priority: 'high',
+
+      // ringtone played when the message is received
+      sound: 'sms_alert_input.caf', // other possible value: 'sms_alert_popcorn.caf'
+
+      // The value of the badge on the home screen app icon.
+      // If not specified, the badge is not changed.
+      // If set to 0, the badge is removed.
+      badge: '1'
+    }
+  }
+}
+```
 
 ## Integrations
 
