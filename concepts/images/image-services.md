@@ -3,6 +3,7 @@
 ## Overview
 
 Livingdocs allows users to upload pictures and then subsequently shows them. There are 3 parts here:
+
 1. the **storage** of the images
 2. the generated image **markup** (e.g. `img` tags in the HTML document)
 3. the **delivery** of the images
@@ -10,7 +11,7 @@ Livingdocs allows users to upload pictures and then subsequently shows them. The
 ### Storage
 
 The storage of choice for Livingdocs is Amazon S3, the bucket is configured in the server like this:
-```json
+```js
 'images': {
   'public': 'http://bucket-name.s3.amazonaws.com',
   'bucket': 'bucket-name',
@@ -19,7 +20,7 @@ The storage of choice for Livingdocs is Amazon S3, the bucket is configured in t
 ```
 
 You can configure your own image storage using the following configuration:
-```json
+```js
 'images': {
   'proxy': {
     'url': 'http://your-image-storage.com'
@@ -28,6 +29,7 @@ You can configure your own image storage using the following configuration:
 ```
 
 This will route image upload requests from Livingdocs to your chosen URL instead of S3.
+For details please see the reference documentation for the [server configuration](../../reference-docs/server-configuration/config.md)
 
 ### Delivery
 
@@ -74,23 +76,27 @@ The ImgIX configuration uses `srcset`. If you don't know about this HTML standar
 
 #### Editor
 
-```
-app:
-  imageService: 'imgix'
-  imageServiceConfig:
-    host: 'https://livingdocs-dev.imgix.net'
-    preferWebp: true
-    backgroundImage:
-      maxWidth: 2048
-    srcSet:
-      defaultWidth: 1024
-      widths: [
-        2048,
-        1024,
-        620,
-        320
-      ],
-      sizes: ['100vw']
+```js
+  app: {
+    imageService: 'imgix',
+    imageServiceConfig: {
+      host: "https://livingdocs-dev.imgix.net",
+      preferWebp: true,
+      backgroundImage: {
+        maxWidth: 2048
+      },
+      srcSet: {
+        defaultWidth: 1024,
+        widths: [
+          2048,
+          1024,
+          620,
+          320
+        ],
+        sizes: ['100vw']
+      }
+    }
+  }
 ```
 
 The `imageService` field tells Livingdocs which image service should be used. The `imageServiceConfig` contains the configuration for this specific image service.
@@ -107,7 +113,7 @@ For background images you can simply set a fixed max-width, so that each backgro
 
 #### Server
 
-```
+```coffee
 documents:
   imageServices:
     imgix:
@@ -132,7 +138,7 @@ The parameters are equivalent to the ones in the editor. You can in theory also 
 
 #### Editor
 
-```
+```coffee
 app:
   imageService: 'resrc.it'
   imageServiceConfig:
@@ -148,13 +154,16 @@ The `scriptUrl` points to the client-side Javascript code used for the responsiv
 
 #### Server
 
-```
-documents:
-  imageServices:
-    'resrc.it':
-        host: 'https://app.resrc.it'
-        quality: 75
-        scriptUrl: '//d2o08py1e264ss.cloudfront.net/assets/resrc-0.9.0.min.js'
+```js
+documents: {
+  imageServices: {
+    'resrc.it': {
+      host: 'https://app.resrc.it',
+      quality: 75,
+      scriptUrl: '//d2o08py1e264ss.cloudfront.net/assets/resrc-0.9.0.min.js'
+    }
+  }
+}
 ```
 
 The parameters are equivalent to the ones in the editor. You can in theory also configure several images services in the server, but as of now only one can be used (the one specified in the editor config).
@@ -166,7 +175,7 @@ This section is only relevant if you are using ImgIX. Skip it otherwise.
 Metadata fields of type image will contain the `srcset` in a specific `crop`, but not in the root. The reason for this is simply that you normally only want teaser images in a certain crop and in the metadata definition it is not even possible to have a metadata image without a crop definition.
 
 An example:
-```
+```json
 "metadata": {
   "teaserImage": {
     "originalUrl": "http://livingdocs-images-dev.s3.amazonaws.com/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg",

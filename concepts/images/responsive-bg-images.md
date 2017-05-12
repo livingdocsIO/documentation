@@ -20,7 +20,7 @@ There are basically 3 ways to render responsive background images:
 (3) is currently the best option. Against common believe, when having multiple image variants in different media queries, not all of them are loaded but only the one for the active media query. We looked into the specs and did tests on Chrome and Safari.
 
 Nevertheless, we did not implement (3) for now because media queries and CSS have their own shortcomings. Most notably: the Livingdocs framework generates the markup for each background image in a document. Since we don't know ahead of time what kind of CSS that would lead to, the framework normally adds the CSS at runtime in an inline style. This is not possible with media queries though (you can not add a media query inline). You can add a `style` tag to the document which works fine. Example:
-```
+```html
 <style>
 .bg-image {
   url("/foo.jpeg")
@@ -35,7 +35,7 @@ Nevertheless, we did not implement (3) for now because media queries and CSS hav
 ```
 
 This would load a 500px wide image for devices up to 500px screen width and the original on all larger devices. Note that we hardcoded the url in the CSS. This is not nice since in that way we would need a separate `style` tag for each and every background image and we would need separate unique class names, e.g.:
-```
+```html
 <style>
 .bg-image-<unique-id> {
   url("/foo.jpeg")
@@ -50,7 +50,7 @@ This would load a 500px wide image for devices up to 500px screen width and the 
 ```
 
 We also looked into the `attr` method of CSS which could allow us to do it a bit nicer with only one `style` tag that is referenced from each background image. The idea:
-```
+```html
 <style type="text/css">
 .page-title {
   height: 700px;
@@ -76,10 +76,12 @@ Unfortunately, this does not work since `attr` currently only works to fill the 
 
 From all this we decided not to do responsive background images, but simply provide a configuration on an image directive that allows a user to set a max-width for a background image.
 
-```
-imageServiceConfig:
-  backgroundImage:
+```js
+imageServiceConfig: {
+  backgroundImage: {
     maxWidth: 2048
+  }
+}
 ```
 
 This would advise the respective image service (e.g. ImgIX) to always add a `w=2048` URL parameter to all background images. If the original background image is larger it would downsize it. If it is smaller it would simply do nothing.
