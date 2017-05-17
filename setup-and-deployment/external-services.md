@@ -12,6 +12,7 @@ For specific features, livingdocs uses external services. All external systems e
   - Design components with automatic metadata fetching from a third-party source (such components are optional) in the editorial users browser.
   - Automatic validity checks of entered links. Used by the editorial users browser.
 - **CDN (eg. keyCDN, optional)**: Caching for static assets
+- **Mail server (eg. Amazon SES)**: For sending welcome and password reset emails.
 - **Websockets (Pusher, optional)**: To support real-time collaboration in the editor. The feature can be disabled, so this is optional. Used by the server in editing mode, as well as the editorial users browser.
 - **Spellchecker (optional)**: Livingdocs supports the integration of third-party spellcheckers. The feature can be disabled, so this is optional. Used by the editorial users browser.
 - **Metrics and Logging (optional)**: Newrelic, Mixpanel, Loggly. Used by the server in editing mode.
@@ -41,6 +42,7 @@ The following external service hosts have to be whitelisted on the proxy for the
 - The host to your livingdocs design server (eg. http://api.livingdocs.io if you're using the default design server)
 - The host for your S3 asset bucket (eg. https://livingdocs-evaluation-images.s3.amazonaws.com if you're using our evaluation account)
 - The host for your S3 design bucket (eg. https://livingdocs-evaluation-designs.s3.amazonaws.com if you're using the default design server)
+- The host for your mail server (eg. https://email.eu-west-1.amazonaws.com if you're using our evaluation account
 - The host for your Hugo instance
 - Any host your customizations are using
 
