@@ -1,5 +1,5 @@
 ## External services
-For specific features, livingdocs uses external services. All external systems expose a REST interface, so only ports 443 and 80 are required.
+For specific features, livingdocs uses external services. By default only ports 443 and 80 are required. Additional ports might depend on your configuration.
 
 ![API Link](./architecture-external-services.png)
 
