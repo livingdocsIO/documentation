@@ -4,7 +4,7 @@
 
 This documentation assumes that you already setup the metadata field(s) on the server side.
 
-To find out more about metadata on the server you can read the [server documentation](../livingdocs-server/metadata.md) or study [examples](../../public/guides/metadata-examples.md).
+To find out more about metadata on the server you can read the [server documentation](../server-configuration/metadata.md) or study [examples](../../concepts/metadata/metadata-examples.md).
 
 ## Introduction
 
@@ -14,7 +14,7 @@ The editor offers a UI library of re-usable elements (text fields, select boxes,
 
 ## Screen types
 
-As you can see in the [examples](../../public/guides/metadata-examples.md) you nest your metadata screen configuration in an array under a key. The example defined the key `article`. This is the screen type for which you define a metadata screen. Currently, we support 2 screen types: `articles` and `pages`. In the long run we might take in different channels here too, but for now we don't have that requirement.
+As you can see in the [examples](../../concepts/metadata/metadata-examples.md) you nest your metadata screen configuration in an array under a key. The example defined the key `article`. This is the screen type for which you define a metadata screen. Currently, we support 2 screen types: `articles` and `pages`. In the long run we might take in different channels here too, but for now we don't have that requirement.
 
 ## Available UI elements
 
