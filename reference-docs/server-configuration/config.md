@@ -61,14 +61,24 @@ pusher: {
 }
 ```
 
-
 #### Logging
 
-Possible log levels: `['debug', ''success', 'warn', 'error']`
-
 ```js
-loglevel: 'success'
+logs: {
+  enabled: true,
+
+  // possible log levels: 'error', 'warn', 'info', 'debug', 'trace'
+  level: 'warn',
+
+  // use `true` for development to have a formatted output
+  pretty: false,
+
+  // enable request logs
+  logRequests: true
+}
 ```
+
+[More info about logging](./logging.md)
 
 
 ## Features
