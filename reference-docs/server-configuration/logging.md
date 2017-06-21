@@ -20,10 +20,22 @@ log.warn('Requiring lib/something is deprecated.')
 log.error(new Error('noooo!'), 'ouch!')
 ```
 
+In order for the passed object or Error to be logged as JSON it must be
+passed as the first param. And this object should not have any of the following
+root-level keys: `pid`, `hostname`, `level`, `time`, `msg` or `v`.
+
+If Errors are passed as a property of an object, e.g. log.error({x: new Error()}),
+the error will just be coerced as string with `toString()` and not serialized
+with its stack trace.
+
 
 ## What does the log output look like?
 
 #### Example json log:
+
+```js
+log.warn({foo: 'bar'}, 'A log message.')
+```
 
 ```json
 {
@@ -31,8 +43,9 @@ log.error(new Error('noooo!'), 'ouch!')
   "hostname": "Lukas-MacBook-Pro.local",
   "level": 40,
   "time": 1497365986364,
-  "msg": "Requiring lib/events is deprecated, use liServer.events instead",
-  "v": 1
+  "msg": "A log message.",
+  "v": 1,
+  "foo": "bar"
 }
 ```
 
@@ -55,6 +68,9 @@ Level   | Value
 
 #### Example Request Log:
 
+This is an example request log from express middleware that are logged when
+`logRequests: true` is set:
+
 ```json
 {
   "pid": 40073,
@@ -76,7 +92,7 @@ Level   | Value
 ```
 
 The request logs have the same format as any other logs.
-However they have the addtional keys `req`, `res` and `responseTime`.
+However they have the additional keys `req`, `res` and `responseTime`.
 
 In cases when our api returns a standard error in the body these will be
 added to `res.error`.
