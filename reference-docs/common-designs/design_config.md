@@ -155,6 +155,30 @@ In a component the aspect ratios can be defined per image directive. In the foll
 </figure>
 ```
 
+## Layouts
+
+Layouts define different type of documents. When creating a document in the
+editor, a user can choose which layout he wants to use.
+
+A layout defines a list of components and a default content that will be present
+after the document has been created. Also a wrapper can be defined that will
+be used.
+
+```js
+"layouts": [
+  {
+    "name": "regular",
+    "caption": "Article",
+    "wrapper": "<div class=\"funky-wrapper doc-section\"></div>",
+    "defaultContent": [
+      { "component": "head" },
+      { "component": "normal" },
+      { "component": "p" }
+    ],
+    "groups": [...] // Overwrites the default groups config.
+  }
+]
+```
 
 ## Groups
 
