@@ -6,7 +6,9 @@ Most of the text editing is handled by [editable.js](https://github.com/upfrontI
 
 ![Text Popover](./text-popover.png)
 
-When you select some text in the editor you get a popover with some options on how to format text or what special characters to include. You can fully customize the options in the popover, like if you want to be able to toggle text bold, italic, etc. The configuration can be set for both web (default) or print (only relevant if you use the Livingdocs print editor). Below is a configuration example that shows all the different options.
+When you select some text in the editor you get a popover with some options on how to format text or what special characters to include. You can fully customize the options in the popover, like if you want to be able to toggle text bold, italic, etc. The configuration can be set for both web (default) or print (only relevant if you use the Livingdocs print editor).
+
+#### Formatting Options
 
 ```js
 app: {
@@ -27,6 +29,10 @@ app: {
 ```
 
 The example would result in a toolbar with a button for toggling text `bold`, `italic`, make it a `link` and adding `specialChars`.
+
+
+#### Special Characters
+
 The `specialChars` can be configured separately. The button for special chars (a `$` sign) opens a second popover with a tabbed selection of special characters that you want to allow your users to insert. A configuration for `specialChars` looks as follows.
 
 ```js
@@ -73,7 +79,7 @@ app: {
 }
 ```
 
-## Markup
+#### Advanced Formatting Options
 
 In addition to configuring what options the text toolbar gives to your users you can also configure to some extent the HTML markup that is inserted when a formatting option is selected. Currently, you can configure the markup for `bold`, `italic` and `link`. An example is below.
 
@@ -109,7 +115,7 @@ app: {
 
 A common use case for this is when you want to insert some CSS classes around your formatted text, as in the example above. You are not restricted to the `class` attribute however but can configure any HTML attribute you like.
 
-### Behavior
+## Text Editing Behavior
 
 Newlines with Shift+Enter. Default: true
 ```js
@@ -133,7 +139,7 @@ app: {
 
 By default the editable selection event is only fired once the user releases the mouse over a selection. With this setting you can already get events when the user still holds the mouse while making a selection. This is only useful if you want to somehow support the user during the process of making a selection and it will fire lots of events so be cautious with this one.
 
-### Spellcheck
+## Spellcheck
 
 Livingdocs allows you to use the default browser spellcheck, a custom spellcheck server or no spellchecking at all.
 
@@ -171,5 +177,31 @@ app: {
 spellcheck: {
   isEnabled: true,
   'host': 'http://your-spellcheck-server.com'
+}
+```
+
+## Character Counter
+
+A character counter can be configured. The counter can be limited to only
+count text within certain components.
+
+```js
+textcount: {
+  isEnabled: true,
+  timeout: 200
+}
+```
+
+It is also possible to only count the text of selected components (if `components` is null or an empty array it will count the text of all components):
+
+```js
+textcount: {
+  isEnabled: true,
+  timeout: 200,
+  components: [
+    'p',
+    'list-item',
+    'quote'
+  ]
 }
 ```
