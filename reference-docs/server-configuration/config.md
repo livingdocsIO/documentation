@@ -81,6 +81,21 @@ logs: {
 [More info about logging](./logging.md)
 
 
+#### Docker
+
+This tells the database scripts which recreates the database that docker is used.
+This does not work for docker-compose. And the docker container where postgres runs
+must be named `postgres`.
+
+If `docker.enabled` is set to `false` then `createdb` and `dropdb` must be installed
+on the system.
+
+```js
+docker:
+  enabled: true
+```
+
+
 ## Features
 
 
