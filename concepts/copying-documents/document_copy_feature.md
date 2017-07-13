@@ -11,43 +11,123 @@ A copy can be configured in the source channel config, as you can see in the suc
 
 If you request a copy, the copy feature tries to find a config match in the channel config between the source(design/layout) and the target(design/layout). If there is a match, the copy feature makes a copy based on the configured `options` and `metadata` properties. If there is no match, the copy operation will be ignored.
 
+The configuration of a transformation happens in two places:
+
+1. the "setup config" in the `copy:` section of your main (channel-specific article) config that
+defines which transformations for which design/layout combinations are allowed and specifies the
+location of the corresponding instruction config in `target.instructionPath`
+
+2. the "instruction config" referenced above that holds the transformation instructions for a
+specific scenario
+
 ### Copy Config Example
-```coffee
-  # copy config in the source channel
-  copy: [
-    source:
-      design: 'basic'
-      layout: 'fantasy'
-    target: [
-      design: 'eternal-bliss'
-      layout: 'regular'
-    ]
-    options:
-      # Use an instruction if you want to transform
-      # one component to another from one design to another
-      instruction: require.resolve('../conversions/basic-to-eternal-bliss.coffee')
-      # true = copy the component, even when the target layout doesn't know the component
-      # false = ignore a component when the target layout doesn't know the component
-      # NOT IMPLEMENTED: currently everything will be copied (is the same as `true`)
-      copyUnknownComponents: false
-      # Prefixes a component directive after a copy
-      # This example adds the prefix 'Kopie von' to the directive 'title' in the component 'header'
-      prefix: [
-        component: 'header'
-        directive: 'title'
-        text: 'Kopie von '
+
+#### Setup Config
+
+```js
+// copy config in the source channel
+copy: [{
+  source: {
+    design: 'basic'
+    layout: 'fantasy'
+  },
+
+  target: [{
+    design: 'eternal-bliss',
+    layout: 'regular',
+
+    // Path to a config of instructions to be applied when transforming one component to another
+    instructionPath: require.resolve('../conversions/basic-to-eternal-bliss.js')
+
+    // Metadata config
+    metadata: {
+      map: [
+        // copies source.title to target.catchline
+        {'from': 'title', 'to': 'catchline'},
+
+        // syntactic sugar for:
+        // [
+        //   {'from': 'title', 'to': 'title'},
+        //   {'from': 'tasks', 'to': 'tasks'}
+        // ]
+        'title', 'tasks',
+
+        // NOT IMPLEMENTED: computes the new value based on a passed function
+        {'from': 'title', 'to': function(d) {return d.toUpperCase()}
       ]
-    metadata:
-      # copies source.title to target.catchline
-      map: [{'from': 'title', 'to': 'catchline'}]
-      # syntactic sugar for:
-      # [
-      #   {'from': 'title', 'to': 'title'},
-      #   {'from': 'tasks', 'to': 'tasks'}
-      # ]
-      map: ['title', 'tasks']
-      # NOT IMPLEMENTED: computes the new value based on a passed function
-      map: [{'from': 'title', 'to': function(d) {return d.toUpperCase()}]
+    }
+  }]
+}]
+```
+
+#### Instruction Config
+
+```js
+module.exports = {
+  from: 'basic@x.x.x',
+  to: 'eternal-bliss@1.6.0',
+
+  // Instructions on which components/directives are transformed to which in the target design
+  componentConversions: [{
+
+    // Component with multiple directives
+    match: 'header'
+    result: [{
+      component: 'subtitle',
+      directives: {
+        'title': {takeFrom: 'catchline'}
+      }
+    }, {
+      component: 'headline'
+      directives: {
+        'title': {takeFrom: 'title'}
+      }
+    }]
+  }, {
+
+    // Example of a custom transformation using the framework API on the matched component
+    match: 'image',
+    process: ({matchedComponent, resultDoc}) => {
+      component = resultDoc.createComponent('image')
+      imageDirective = matchedComponent.directives.get('image')
+      imageDirective.copyTo(component.directives.get('src'))
+      component.setContent('text', matchedComponent.getContent('caption'))
+
+      conversionLog.addImage({
+        livingdoc: resultDoc,
+        id: component.id,
+        data: imageDirective.getContent()
+      })
+
+      return [component]
+    }
+  }, {
+
+    // Excluded components are ignored during copying:
+    match: 'responsive-image',
+    exclude: true
+  }],
+
+
+  // Prefixes a component directive after a copy
+  // This example adds the prefix 'Kopie von' to the directive 'title' in the component 'header'
+  prefix: [{
+    component: 'header',
+    directive: 'title',
+    text: 'Kopie von '
+  }]
+
+  // Allows for custom changes on the target document after the copy is done just before it is saved,
+  // useful if the other options in the copy API are too limiting
+  afterConversion: ({source, convertedDocument}) => {
+    return doCustomStuff({source, convertedDocument})
+  },
+
+  // true = copy the component, even when the target layout doesn't know the component
+  // false = ignore a component when the target layout doesn't know the component
+  // NOT IMPLEMENTED: currently everything will be copied (is the same as `true`)
+  copyUnknownComponents: false
+}
 ```
 
 
@@ -61,13 +141,12 @@ If you want to copy an article from `channel 1` -> `channel 2`, you need a trans
 
 #### Example Config
 
-```coffee
-  copy: [
-    source: {design: 'basic', layout: 'default'}
-    target: [{design: 'eternal-bliss', layout: 'regular'}]
-    options:
-      instruction: require.resolve('../conversions/basic-to-eternal-bliss.coffee')
-  ]
+```js
+copy: [{
+  source: {design: 'basic', layout: 'default'},
+  target: [{design: 'eternal-bliss', layout: 'regular'}],
+  instructionPath: require.resolve('../conversions/basic-to-eternal-bliss.js')
+}]
 ```
 
 #### (1.2) Layout Copy (Layout L1 to Layout L2)
@@ -77,13 +156,12 @@ Usually a copy in the same design can be done **without** an instruction. If a d
 
 #### Example Config
 
-```coffee
-  copy: [
-    source: {design: 'basic', layout: 'default'}
-    target: [{design: 'basic', layout: 'regular'}]
-    options:
-      instruction: require.resolve('../conversions/basic-default-to-basic-regular.coffee')
-  ]
+```js
+copy: [{
+  source: {design: 'basic', layout: 'default'},
+  target: [{design: 'basic', layout: 'regular'}],
+  instructionPath: require.resolve('../conversions/basic-default-to-basic-regular.js')
+}]
 ```
 
 ### (2) Clone Copy
@@ -94,13 +172,18 @@ This scenario copies all components from one layout to another layout in the sam
 
 #### Example Config
 
-```coffee
-  copy: [
-    source: {design: 'basic', layout: 'default'}
-    target: [{design: 'basic', layout: 'regular'}]
-    options:
-      copyUnknownComponents: false
-  ]
+```js
+copy: [{
+  source: {design: 'basic', layout: 'default'},
+  target: [{design: 'basic', layout: 'regular'}],
+  instructionPath: require.resolve('../conversions/basic-default-to-basic-regular.js')
+}]
+```
+
+```js
+module.exports = {
+  copyUnknownComponents: false
+}
 ```
 
 #### (2.2) Layout Layout L1 to Layout L2 - Copy unknown components => NOT IMPLEMENTED
@@ -110,14 +193,18 @@ This scenario copies all components from one layout to another layout in the sam
 
 #### Example Config
 
-```coffee
-  copy: [
-    source: {design: 'basic', layout: 'default'}
-    target: [{design: 'basic', layout: 'regular'}]
-    options:
-      copyUnknownComponents: true
-  ]
-    ]
+```js
+copy: [{
+  source: {design: 'basic', layout: 'default'},
+  target: [{design: 'basic', layout: 'regular'}],
+  instructionPath: require.resolve('../conversions/basic-default-to-basic-regular.js')
+}]
+```
+
+```js
+module.exports = {
+  copyUnknownComponents: true
+}
 ```
 
 
