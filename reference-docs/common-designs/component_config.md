@@ -98,6 +98,29 @@ Example:
 </section>
 ```
 
+
+`excludeFromTextCount`: Tells the editor to exclude the directive
+from text counter. By default every `doc-editable` will be counted.
+
+Example, only count text directive:
+```html
+<script type="ld-conf">
+{
+  "label": "foo",
+  "directives": {
+    "title": {
+      "excludeFromTextCount": true
+    }
+  }
+}
+</script>
+
+<section class="container">
+  <span class="container__item" doc-editable="title">Titel</span>
+  <span class="container__item" doc-editable="text">Text</span>
+</section>
+```
+
 ### `doc-link`
 
 `prefill`: allows to define a metadata fetching service to prefill the content of other directives from the result of fetching metadata from the respective link. Currently only iframely is supported as a metadata service. What this does in a nutshell is parsing the `head` section of a linked HTML page (the content of `doc-link`) for meta tags.
@@ -154,6 +177,7 @@ Example:
 ```
 
 Reading example: The `doc-editable` directive `headline` will be filled through the metadata service `iframely` and the content comes from the metadata key `author`.
+
 
 ### `doc-image`
 
