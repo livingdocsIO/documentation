@@ -32,7 +32,7 @@ Example:
 
 ## Properties
 
-Properties allow you to reference style properties (CSS toggles) that are defined in the `config.json`. They will be available to the user in the Livingdocs editor when the respective component is selected.
+Properties allow you to reference style properties (CSS classes or styles) that are defined in the `config.json`. They will be available to the user in the Livingdocs editor when the respective component is selected.
 
 Example:
 ```html
