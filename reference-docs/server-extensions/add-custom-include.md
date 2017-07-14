@@ -1,6 +1,6 @@
 ## Includes
 
-Think of Livingdocs includes as edge-side includes. You can create include components in your design, using a include [directive](../../livingdocs-framework/directives.md).
+Think of Livingdocs includes as edge-side includes. You can create include components in your design, using an include [directive](../../livingdocs-framework/directives.md).
 Includes can render content to your article or page that comes from an external source.
 Includes are resolved every time a document is rendered. So they can be used to
 display dynamic content that changes after a document has been published.
@@ -8,12 +8,12 @@ display dynamic content that changes after a document has been published.
 Displaying a teaser for example can be achieved through includes. An article is referenced and its data (eg. title, description, teaser image) is fetched when rendering a page.
 
 
-## A component with an include directive
+## A component with an include directive
 
 Includes are directives on components. They can be used as content placeholders
 that will be filled with HTML created by an include service on the server.
 
-An example component with an include diretive:
+An example component, defined in the design, with an include directive:
 ```html
 <script type="ld-conf">
   {
@@ -43,7 +43,7 @@ the rendering of the document.
 An unresolved include looks like this:
 ```html
 <div>
-  <ld-include data-include-service="embed-teaser" data-include-params="{"mediaId":2}"></ld-include>
+  <ld-include data-include-service="embed-teaser" data-include-params="{&quot;mediaId&quot;:2}"></ld-include>
 </div>
 ```
 
@@ -126,22 +126,21 @@ module.exports = {
   server: {
     type: 'function',
     function: function (params, options, callback) {
-      if (options && options.preview === true) {
-        // When options preview is true the request comes from a livingdocs
-        // editor while a user is editing a document.
-      }
+      // When options preview is true the request comes from a livingdocs
+      // editor while a user is editing a document.
+      const isPreview = options && options.preview === true
 
       // It does not render an unpublished document on the public API
-      if (shouldNotBeRendered(params)) {
+      if (isPreview && paramsAreInsufficient(params)) {
+        // Return undefined if not enough params are provided to
+        // render the include. While editing the draft in the editor
+        // this will just leave the include preview visible.
+        return callback(null, undefined)
+      } else if (shouldNotBeRendered(params)) {
         // Return an empty string to render nothing.
         // While editing the draft in the editor this will remove
         // the include preview.
         return callback(null, '')
-      } else if (paramsAreInsufficient(params)) {
-        // Return undefined in not enough params are provided to
-        // render the include. While editing the draft in the editor
-        // this will just leave the include preview visible.
-        return callback(null, undefined)
       } else {
         // Render the include
         const html = renderInclude(params)
@@ -152,7 +151,7 @@ module.exports = {
 }
 ```
 
-#### Include UI options:
+#### Include UI options:
 
 Use an angular component in the sidebar:
 ```js
