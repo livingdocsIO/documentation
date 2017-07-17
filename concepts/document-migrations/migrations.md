@@ -64,11 +64,7 @@ You can do this by adding the definition to which design version it belongs:
 
 ```js
 exports.config: {
-  project_id: {
-    local: '4',
-    develop: '2',
-    production: '1'
-  }
+  project_handle: 'default',
   channel_name: 'web',
   design_name: 'basic',
   design_version: '0.1.0'
