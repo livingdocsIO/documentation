@@ -25,7 +25,7 @@ const content = textDirective.getContent()
 textDirective.isEmpty() // false
 
 // Set the content of a directive directly from the componentModel
-textDirective.setContent('text', 'Lorem Ipsum dolorem...')
+paragraph.setContent({text: 'Lorem Ipsum dolorem...'})
 ```
 
 For more information see the [detailed directive documentation](directives.md).
@@ -44,6 +44,19 @@ componentProperties: {
     label: 'Background Color',
     cssProperty: 'background-color'
   }
+  'css-class': {
+    type: 'option'
+    value: 'capitalize'
+  }
+  'css-class-selection': {
+    type: 'select'
+    options: [
+      caption: 'Default'
+    ,
+      caption: 'Red'
+      value: 'color--red'
+    ]
+  }
 }
 ```
 
@@ -52,7 +65,7 @@ Component definition:
 <script type="ld-conf">
 {
   name: 'header',
-  properties: ['css-background-color']
+  properties: ['css-background-color', 'css-class', 'css-class-selection']
 }
 </script>
 <header>...</header>
@@ -61,6 +74,8 @@ Component definition:
 Setting the style on the `componentModel`:
 ```js
 header.setStyle('css-background-color', '#29b96f')
+header.setStyle('css-class', 'capitalize')
+header.setStyle('css-class-selection', 'color--red')
 ```
 
 
@@ -108,27 +123,27 @@ component.remove()
 component.getParent()
 
 // Iterate through all parents
-components.parents((component) => {
+component.parents((component) => {
     // your code
 })
 
 // Iterate through all direct children
-components.children((component) => {
+component.children((component) => {
     // your code
 })
 
 // Iterate through oneself and all direct children
-components.childrenAndSelf((component) => {
+component.childrenAndSelf((component) => {
     // your code
 })
 
 // Iterate through all descendants (children and their children and so on...)
-components.descendants((component) => {
+component.descendants((component) => {
     // your code
 })
 
 // Iterate through oneself, and all descendants
-components.descendantsAndSelf((component) => {
+component.descendantsAndSelf((component) => {
     // your code
 })
 ```
