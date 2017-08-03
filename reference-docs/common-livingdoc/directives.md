@@ -104,7 +104,18 @@ includeDirective.setContent({
   params: {foo: 'bar'}
 })
 
+// Retrieve the params set on a directive (this includes defaultParams
+// specified in the component configuration if they have not been overwritten).
+includeDirective.getParams()
+
+
+// setParams overwrites all parameters of this include.
 includeDirective.setParams({foo: 'bar'})
+
+// addParams merges the specified params with the existing ones
+// (including any default params that may have been set in the component
+// configuration).
+includeDirective.addParams({foo: 'bar'})
 ```
 
 
