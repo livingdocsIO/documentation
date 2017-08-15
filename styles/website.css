@@ -1,0 +1,26 @@
+/*
+ul.summary {
+  background-color: #26cb7d;
+}
+
+.book-summary ul.summary li a {
+  color: white !important;
+}
+
+.book-summary ul.summary li a:active {
+  color: white !important;
+  text-decoration: underline;
+}
+
+.book-summary ul.summary li.header {
+  color: white !important;
+}
+*/
+
+.book-header a.btn:hover {
+  color: white !important;
+}
+
+div.page-wrapper {
+  margin-top: 50px !important;
+}

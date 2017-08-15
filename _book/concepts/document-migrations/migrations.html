@@ -1,0 +1,1158 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Design migrations · Livingdocs Technical Documentation</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Livingdocs">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../walkthroughs/add_customizations.html" />
+    
+    
+    <link rel="prev" href="../../reference-docs/common-designs/list_example.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../getting_started.html">
+            
+                <a href="../../getting_started.html">
+            
+                    
+                    Getting started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../walkthroughs/getting-started-with-local-development.html">
+            
+                <a href="../../walkthroughs/getting-started-with-local-development.html">
+            
+                    
+                    Setting up Livingdocs locally
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../GLOSSARY.html">
+            
+                <a href="../../GLOSSARY.html">
+            
+                    
+                    Glossary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Livingdocs Design</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../reference-docs/common-designs/create_designs.html">
+            
+                <a href="../../reference-docs/common-designs/create_designs.html">
+            
+                    
+                    Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../reference-docs/common-designs/component_config.html">
+            
+                <a href="../../reference-docs/common-designs/component_config.html">
+            
+                    
+                    Livingdocs components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../../reference-docs/common-designs/design_config.html">
+            
+                <a href="../../reference-docs/common-designs/design_config.html">
+            
+                    
+                    Design configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../../reference-docs/common-designs/list_example.html">
+            
+                <a href="../../reference-docs/common-designs/list_example.html">
+            
+                    
+                    Bullet List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="migrations.html">
+            
+                <a href="migrations.html">
+            
+                    
+                    Design migrations
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Livingdocs Customizations</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../walkthroughs/add_customizations.html">
+            
+                <a href="../../walkthroughs/add_customizations.html">
+            
+                    
+                    Register customizations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    Editor
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../../reference-docs/editor-configuration/metadata.html">
+            
+                <a href="../../reference-docs/editor-configuration/metadata.html">
+            
+                    
+                    Metadata
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../../reference-docs/editor-configuration/search-filters.html">
+            
+                <a href="../../reference-docs/editor-configuration/search-filters.html">
+            
+                    
+                    Dashboard search filters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../../reference-docs/editor-configuration/text-editing.html">
+            
+                <a href="../../reference-docs/editor-configuration/text-editing.html">
+            
+                    
+                    Cofigure text editing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="../../reference-docs/editor-configuration/image-cropping.html">
+            
+                <a href="../../reference-docs/editor-configuration/image-cropping.html">
+            
+                    
+                    Configure image cropping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="../../reference-docs/editor-configuration/editing-features.html">
+            
+                <a href="../../reference-docs/editor-configuration/editing-features.html">
+            
+                    
+                    Configure editing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    Server
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../reference-docs/server-configuration/metadata.html">
+            
+                <a href="../../reference-docs/server-configuration/metadata.html">
+            
+                    
+                    Metadata
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.2" data-path="../../reference-docs/server-extensions/add-custom-include.html">
+            
+                <a href="../../reference-docs/server-extensions/add-custom-include.html">
+            
+                    
+                    Adding Includes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.3" data-path="../../reference-docs/server-extensions/events.html">
+            
+                <a href="../../reference-docs/server-extensions/events.html">
+            
+                    
+                    Available Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.4" data-path="../../reference-docs/server-configuration/config.html">
+            
+                <a href="../../reference-docs/server-configuration/config.html">
+            
+                    
+                    Configure the server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.5" data-path="../../reference-docs/server-configuration/channel-config.html">
+            
+                <a href="../../reference-docs/server-configuration/channel-config.html">
+            
+                    
+                    Configure channels
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.6" data-path="../../reference-docs/server-extensions/publish-hooks.html">
+            
+                <a href="../../reference-docs/server-extensions/publish-hooks.html">
+            
+                    
+                    Publish and Unpublish Hooks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3.7" data-path="../../reference-docs/server-public-api/routing-system.html">
+            
+                <a href="../../reference-docs/server-public-api/routing-system.html">
+            
+                    
+                    Routing system
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../metadata/metadata-examples.html">
+            
+                <a href="../metadata/metadata-examples.html">
+            
+                    
+                    Metadata Example (editor and server)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../../reference-docs/server-print-api/print-api.html">
+            
+                <a href="../../reference-docs/server-print-api/print-api.html">
+            
+                    
+                    Print API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Devops</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../setup-and-deployment/self-hosting.html">
+            
+                <a href="../../setup-and-deployment/self-hosting.html">
+            
+                    
+                    Hosting Livingdocs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../setup-and-deployment/hardware-requirements.html">
+            
+                <a href="../../setup-and-deployment/hardware-requirements.html">
+            
+                    
+                    Hardware Requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../../setup-and-deployment/high-availability/">
+            
+                <a href="../../setup-and-deployment/high-availability/">
+            
+                    
+                    Architecture
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.2.1" data-path="../../setup-and-deployment/high-availability/high-availability-setup.html">
+            
+                <a href="../../setup-and-deployment/high-availability/high-availability-setup.html">
+            
+                    
+                    high-availability
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../../setup-and-deployment/docker/">
+            
+                <a href="../../setup-and-deployment/docker/">
+            
+                    
+                    Docker
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.3.1" data-path="../../setup-and-deployment/docker/build-docker-images.html">
+            
+                <a href="../../setup-and-deployment/docker/build-docker-images.html">
+            
+                    
+                    Build docker images
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../../setup-and-deployment/external-services.html">
+            
+                <a href="../../setup-and-deployment/external-services.html">
+            
+                    
+                    External services
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../../setup-and-deployment/proxy.html">
+            
+                <a href="../../setup-and-deployment/proxy.html">
+            
+                    
+                    Proxy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../../setup-and-deployment/npm/access-private-npm-modules.html">
+            
+                <a href="../../setup-and-deployment/npm/access-private-npm-modules.html">
+            
+                    
+                    NPM Tokens
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../reference-docs/server-configuration/design-servers.html">
+            
+                <a href="../../reference-docs/server-configuration/design-servers.html">
+            
+                    
+                    Design Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../../reference-docs/maintenance/how-to-do-a-load-test.html">
+            
+                <a href="../../reference-docs/maintenance/how-to-do-a-load-test.html">
+            
+                    
+                    Load Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Administration</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../walkthroughs/create-users.html">
+            
+                <a href="../../walkthroughs/create-users.html">
+            
+                    
+                    Create Users
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../reference-docs/server-configuration/logging.html">
+            
+                <a href="../../reference-docs/server-configuration/logging.html">
+            
+                    
+                    Logs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Livingdocs core development</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <span>
+            
+                    
+                    Editor
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../../reference-docs/editor-styleguide/styleguide.html">
+            
+                <a href="../../reference-docs/editor-styleguide/styleguide.html">
+            
+                    
+                    Styleguide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" >
+            
+                <span>
+            
+                    
+                    Server
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="../../reference-docs/server-editing-api/">
+            
+                <a href="../../reference-docs/server-editing-api/">
+            
+                    
+                    Editing API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1.1" data-path="../../reference-docs/server-editing-api/api_basics.html">
+            
+                <a href="../../reference-docs/server-editing-api/api_basics.html">
+            
+                    
+                    Basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.1.2" data-path="../../reference-docs/server-editing-api/api_cors.html">
+            
+                <a href="../../reference-docs/server-editing-api/api_cors.html">
+            
+                    
+                    CORS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.1.3" data-path="../../reference-docs/server-editing-api/api_errors.html">
+            
+                <a href="../../reference-docs/server-editing-api/api_errors.html">
+            
+                    
+                    Error
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.1.4" data-path="../../reference-docs/server-editing-api/editing_api_authentication.html">
+            
+                <a href="../../reference-docs/server-editing-api/editing_api_authentication.html">
+            
+                    
+                    Authentication
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.1.5" data-path="../../reference-docs/server-editing-api/editing_api_design.html">
+            
+                <a href="../../reference-docs/server-editing-api/editing_api_design.html">
+            
+                    
+                    Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.1.6" data-path="../../reference-docs/server-editing-api/editing_api_list.md">
+            
+                <span>
+            
+                    
+                    Lists
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.1.7" data-path="../../reference-docs/server-editing-api/editing_api_documents.html">
+            
+                <a href="../../reference-docs/server-editing-api/editing_api_documents.html">
+            
+                    
+                    Documents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.1.8" data-path="../../reference-docs/server-editing-api/editing_api_revisions.html">
+            
+                <a href="../../reference-docs/server-editing-api/editing_api_revisions.html">
+            
+                    
+                    Revisions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.1.9" data-path="../../reference-docs/server-editing-api/editing_api_publications.html">
+            
+                <a href="../../reference-docs/server-editing-api/editing_api_publications.html">
+            
+                    
+                    Publications
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.1.10" data-path="../../reference-docs/server-editing-api/editing_api_users.html">
+            
+                <a href="../../reference-docs/server-editing-api/editing_api_users.html">
+            
+                    
+                    Users
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.1.11" data-path="../../reference-docs/server-editing-api/editing_api_spaces.html">
+            
+                <a href="../../reference-docs/server-editing-api/editing_api_spaces.html">
+            
+                    
+                    Projects
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.1.12" data-path="../../reference-docs/server-editing-api/editing_api_hooks.html">
+            
+                <a href="../../reference-docs/server-editing-api/editing_api_hooks.html">
+            
+                    
+                    Hooks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../../reference-docs/maintenance/release-management/">
+            
+                <a href="../../reference-docs/maintenance/release-management/">
+            
+                    
+                    Releases
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.3.1" data-path="../../reference-docs/maintenance/release-management/deployment-pipeline.html">
+            
+                <a href="../../reference-docs/maintenance/release-management/deployment-pipeline.html">
+            
+                    
+                    Deployment
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation" style="background-color: #3a2f3c; height: 50px; position: fixed; width: 83%">
+    <a href="https://www.livingdocs.io"><img src="https://livingdocs.io/assets/images/livingdocs-logo-inverted.svg" style="width: 200px; padding: 15px 40px" /></a>
+    
+
+    <!-- Title -->
+    <h1 style="position: absolute; top: 0; left: 30%; color: white">
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Design migrations</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="livingdocs-data-migrations">Livingdocs Data Migrations</h1>
+<h2 id="overview">Overview</h2>
+<p>The Livingdocs <a href="../../GLOSSARY.html#design" class="glossary-term" title="A list of Components and configurations how they can be used
+in a Livingdoc and how users can interact with these Components in the
+Livingdocs Editor.">design</a> is in some sense like a database. Instead of database columns you define directives on a component, e.g. an editable title (<code>doc-editable=&apos;title&apos;</code>). The component&apos;s &quot;database&quot; now has a &quot;column&quot; title.
+Just as with a database you need to write data migrations if you make structural changes. This is necessary to adapt all existing documents to the new structure.</p>
+<p>The next chapter will describe which kinds of <a href="../../GLOSSARY.html#design" class="glossary-term" title="A list of Components and configurations how they can be used
+in a Livingdoc and how users can interact with these Components in the
+Livingdocs Editor.">design</a> changes require you to write a migration script and which ones can be handled with a simple version bump. The section after that will show you the structure of a migration script. After that we look at the grunt task to help you run migrations and last but not least we&apos;ll present some examples of migration scripts.</p>
+<h2 id="migrations-from-design-changes">Migrations from design changes</h2>
+<p>Livingdocs designs have a version number in the <code>config.json</code> file that follows the <a href="http://semver.org/" target="_blank">semver pattern</a>. You should create a major version whenever a <a href="../../GLOSSARY.html#design" class="glossary-term" title="A list of Components and configurations how they can be used
+in a Livingdoc and how users can interact with these Components in the
+Livingdocs Editor.">design</a> change requires you to write a data migration. Livingdocs is very strict with un-migrated documents: when you try to open a document that has a different structure than the <a href="../../GLOSSARY.html#design" class="glossary-term" title="A list of Components and configurations how they can be used
+in a Livingdoc and how users can interact with these Components in the
+Livingdocs Editor.">design</a> you&apos;re using, it will fail with an error.
+The following changes require a data migration:</p>
+<ul>
+<li>removing a directive from a component</li>
+<li>renaming a directive in a component</li>
+<li>changing the type of a directive (e.g. from <code>doc-editable</code> to <code>doc-image</code>)</li>
+</ul>
+<p>The following changes do not require a data migration, but can be done with a simple <a href="#the-data-migration-grunt-task">version bump</a>. Note though that depending on the case you still might want to write a migration, it&apos;s just not mandatory, i.e. Livingdocs won&apos;t crash if you don&apos;t.</p>
+<ul>
+<li>HTML or CSS changes that don&apos;t affect the structure</li>
+<li>changes in the <a href="../../GLOSSARY.html#design" class="glossary-term" title="A list of Components and configurations how they can be used
+in a Livingdoc and how users can interact with these Components in the
+Livingdocs Editor.">design</a>&apos;s wrapper or any of the layout&apos;s wrappers</li>
+<li>changes in the assets of a <a href="../../GLOSSARY.html#design" class="glossary-term" title="A list of Components and configurations how they can be used
+in a Livingdoc and how users can interact with these Components in the
+Livingdocs Editor.">design</a></li>
+<li>adding a new directive to a component (will be empty)</li>
+<li>adding a new layout</li>
+<li>moving a directive from one HTML tag to another in the same component</li>
+<li>removing or adding a <code>doc-optional</code> directive (<code>doc-optional</code> is never breaking)</li>
+<li>removing or changing a component property on a component (will be silently ignored)</li>
+<li>changes in the component set of a layout</li>
+<li>changes in the component set of a group</li>
+<li>changing the default component</li>
+<li>changes in the image ratios</li>
+<li>changes in the default content</li>
+<li>changes in the pre-filled components (will not be re-calculated for old documents)</li>
+<li>changes in the metadata field extractor configuration</li>
+</ul>
+<p>It is important to note that the data migrations <strong>only affect the Livingdocs data model and not the published HTML</strong>. When you need to update your published HTML, for example after you changed some HTML markup, you need to write a custom handler for this in the boilerplate app that renders the last publication of a document and notifies your delivery layer of the change.</p>
+<h2 id="structure-of-a-migration-script">Structure of a migration script</h2>
+<p>The previous section explained data migrations as a consequence of a <a href="../../GLOSSARY.html#design" class="glossary-term" title="A list of Components and configurations how they can be used
+in a Livingdoc and how users can interact with these Components in the
+Livingdocs Editor.">design</a> change. But data migrations really are a general-purpose tool that can be used to alter your existing documents. A different and common example is the need to add a new metadata field to all of your documents and initialize the value in some way.</p>
+<p>The Livingdocs migration framework gives you a hook method to implement and calls this method with every document in your <a href="../../GLOSSARY.html#project" class="glossary-term" title="Represents an organisation and consists of users and channels.">project</a>. The hook method looks like this:</p>
+<pre><code class="lang-js">exports.migrate = ({serializedLivingdoc, metadata}, callback) =&gt; {
+  <span class="hljs-comment">// do your stuff here</span>
+
+  <span class="hljs-comment">// overwrite the JSON data model and the metadata in the response</span>
+  callback(<span class="hljs-literal">null</span>, {serializedLivingdoc, metadata})
+}
+</code></pre>
+<p>For every document you will get the serialized <a href="../../GLOSSARY.html#livingdoc" class="glossary-term" title="A representation of content. It separates content from structure by using
+Components. A Livingdoc references a specific Design wich defines the
+available Components that can be used in the document.">Livingdoc</a> data model (JSON) and the metadata associated with that document. You can then alter the JSON and metadata in your migration method and pass it to the callback which will automatically apply your changes to the document.</p>
+<p>In order to create a migration script, simply add a file to the folder <a href="https://github.com/upfrontIO/livingdocs-server-boilerplate/tree/add-data-migration-sample/app/data-migrations" target="_blank"><code>app/data-migrations</code></a>. It might make sense to have some sort of increasing identifier in the filename to visualize history. In the file create a method <code>exports.migrate</code> as described above and implement your desired migration steps.</p>
+<p>To run your migration script, use the <code>data-migration</code> grunt task which is explained in the next section.</p>
+<h2 id="the-data-migration-grunt-task">The <code>data-migration</code> grunt task</h2>
+<p>Livingdocs provides a grunt task to help you running and managing data migrations. If you type <code>grunt data-migration</code> on the command line of your boilerplate app, you get the following menu:</p>
+<pre><code class="lang-sh">Select an action to execute, press CTRL+C to cancel:
+? Action (Use arrow keys)
+&#x276F; Creates and prepares a migration
+  Accepts a migration
+  Lists all migrations
+  Get a migration description
+  Cancels a migration
+  Show migration report
+</code></pre>
+<p>Each migration is a 2-step process:</p>
+<ol>
+<li>Executing the migration</li>
+<li>Accepting the migration</li>
+</ol>
+<p>The option &quot;Creates and prepares a migration&quot; allows you to start a new migration. You can either choose:</p>
+<ul>
+<li>a simple version bump which bumps the <a href="../../GLOSSARY.html#design" class="glossary-term" title="A list of Components and configurations how they can be used
+in a Livingdoc and how users can interact with these Components in the
+Livingdocs Editor.">design</a> version in all your documents to a new <a href="../../GLOSSARY.html#design" class="glossary-term" title="A list of Components and configurations how they can be used
+in a Livingdoc and how users can interact with these Components in the
+Livingdocs Editor.">design</a> version without affecting the structure of the documents</li>
+<li>or select a migration script from the filesystem to tell the Livingdocs how to migrate your documents (the next section will show some examples for such scripts), to select, type in a file path relative to your root directory, e.g. <code>app/data-migrations/your_migration.js</code></li>
+</ul>
+<p>Once you created a migration, it will run for all your documents. In the case of a migration script it will also generate a report for you that lists possible errors that were encountered with your script. (For a version bump there is no report, since errors are impossible). You can view this report by selecting the option &quot;Show migration report&quot;.</p>
+<p>If after reviewing the report you don&apos;t want the migration to be applied, just select the option &quot;Cancels a migration&quot; and the changes will be discarded.</p>
+<p>If you want the migration to be applied, select &quot;Accepts a migration&quot; which will update all necessary database records and alters your documents.</p>
+<p>The option &quot;Lists all migrations&quot; lists all migrations you prepared or accepted in your <a href="../../GLOSSARY.html#project" class="glossary-term" title="Represents an organisation and consists of users and channels.">project</a>.</p>
+<p>The option &quot;Get a migration description&quot; allows you to review migration reports of prior migrations.</p>
+<p>The following diagram visualizes the most important states and actions:</p>
+<p><img src="migration-task-states.jpg" alt="Diagram"></p>
+<h2 id="examples">Examples</h2>
+<p>The boilerplate app implements three example migrations that you can take as a starting point for your own migrations. (Don&apos;t run the example migrations, they are using a sample <a href="../../GLOSSARY.html#design" class="glossary-term" title="A list of Components and configurations how they can be used
+in a Livingdoc and how users can interact with these Components in the
+Livingdocs Editor.">design</a> which is not configured).</p>
+<ol>
+<li><p><a href="https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_remove_directive.js" target="_blank">Migration script after removing a directive from a component</a></p>
+</li>
+<li><p><a href="https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_rename_directive.js" target="_blank">Migration script after renaming a directive on a component</a></p>
+</li>
+<li><p><a href="https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_add_metadata_field.js" target="_blank">Migration script to initialize a new metadata field</a></p>
+</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../../reference-docs/common-designs/list_example.html" class="navigation navigation-prev " aria-label="Previous page: Bullet List">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../walkthroughs/add_customizations.html" class="navigation navigation-next " aria-label="Next page: Register customizations">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Design migrations","level":"2.5","depth":1,"next":{"title":"Register customizations","level":"3.1","depth":1,"path":"walkthroughs/add_customizations.md","ref":"walkthroughs/add_customizations.md","articles":[]},"previous":{"title":"Bullet List","level":"2.4","depth":1,"path":"reference-docs/common-designs/list_example.md","ref":"reference-docs/common-designs/list_example.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Livingdocs","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Livingdocs Technical Documentation","gitbook":"*","description":"Technical documentation of the Livingdocs CMS. Covers documentation for designers, integrators and core developers"},"file":{"path":"concepts/document-migrations/migrations.md","mtime":"2017-08-14T15:28:46.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-15T12:39:59.671Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,8 @@
+- [Authentication](./editing_api_authentication.md)
+- [Designs](./editing_api_design.md)
+- [Documents](./editing_api_documents.md)
+- [Hooks](./editing_api_hooks.md)
+- [Publications](./editing_api_publications.md)
+- [Revisions](./editing_api_revisions.md)
+- [Spaces](./editing_api_spaces.md)
+- [Users](./editing_api_users.md)

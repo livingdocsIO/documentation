@@ -14,8 +14,6 @@ To use a Livingdocs design you have to upload the JSON file and all its dependen
 (CSS, Javascript and image files) to a livingdocs server and configure your account to use this design.
 
 
-
-
 ## Example design definition:
 
 Let's start with a possible end result of a Livingdocs design definition.
@@ -205,11 +203,12 @@ A Livingdocs `component definition` consists of HTML that has added attributes t
 |:---------|:-----------|
 | doc-editable | The content of this tag is editable text by the user. |
 | doc-image    | The user can select and image that is set as a `src` attribute on `<img>` tags and as `background-image` style on other tags. |
-| doc-optional    | Can be used together with `doc-editable` and prevents rendering of the tag to the published document if the editable content is empty.|
+| doc-optional    | Can be used only with `doc-editable` and prevents rendering of the tag to the published document if the editable content is empty.|
 | doc-container | This tag can contain other components. |
 | doc-html | The content of this tag is freeform HTML. This can be used to embed tweets or IFrames. |
 | doc-link | The href attribute of this tag can be set to a link by the user. |
 | doc-include | Inside of this tag, the server will render an edge-side include of the given type |
+| doc-style | Allows a user to set the `style` attribute on a DOM node |
 
 #### But I want my own design
 
