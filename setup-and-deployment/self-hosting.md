@@ -4,12 +4,9 @@
 See the [hardware requirements](./hardware-requirements.md) for the requirements of each application and the services.
 
 ### Applications
-The server and delivery are both applications written in node.js. Node.js is single threaded, but it can handle concurrency through the asynchronous event loop. If a node.js process crashes, it has to be restarted and it is not able to accept requests during startup. 
+The server and delivery are both applications written in node.js. Node.js is single threaded, but it can handle concurrency through the asynchronous event loop. If a node.js process crashes, it has to be restarted and it is not able to accept requests during startup.
 
 For a production setup, node.js processes should always be redundant to prevent downtime in case of crashes.
-
-Please refer to the [architecture documentation](https://github.com/upfrontIO/livingdocs/blob/master/public/architecture/README.md#external-services-whitelist) for more details
-
 
 ### Docker
 We recommend to use Docker as we provide Dockerfiles for every application and service. Compatibility is ensured with every release.
@@ -23,7 +20,7 @@ Any custom configuration, as well as the supported versions for elasticsearch an
 
 #### Applications
 The applications are stateless and follow the 12 factor app methodology.
-Any system level dependency and the required environment variables are visible in the respective Dockerfile. 
+Any system level dependency and the required environment variables are visible in the respective Dockerfile.
 
 - https://github.com/upfrontIO/livingdocs-docker/tree/master/server
 - https://github.com/upfrontIO/livingdocs-docker/tree/master/editor

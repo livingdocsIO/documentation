@@ -1,7 +1,20 @@
-#### Static Channel Configuration
+#### Channel Configuration
+
+The channel configuration allows you to:
+- define alterations of your content before Rendering
+- define different rendering outputs (renditions)
+- define metadata
+- define the metadata screen setup for the editor (this can be done on the server or in the editor whereas the server configuration takes precedence)
+- configure the push notifications feature
+- implement hook methods that are called on publish and on unpublish
+- define document copy options
+- define various frontend behaviors
+
+The following sample configuration file illustrates all of the above.
 
 Configuration file for a single channel:
 ```js
+// run before the rendering process, the same for all renditions
 beforeRender: function (rendition, callback) {
   const livingdoc = rendition.getLivingdoc()
   const galleryTeasers = livingdoc.componentTree.find('gallery-teaser')
@@ -9,16 +22,21 @@ beforeRender: function (rendition, callback) {
   extendGalleryTeasers(galleryTeasers, rendition, callback)
 },
 
+// define a set of renderings for your channel
 renditions: {
+  // a label
   'web': {
     output: {
+      // an output renderer
       'html': {
         outputRenderer: new CheerioHtml({
+          // middlewares for content alterations
           middleware: [
             addSocialLinks,
             addPublicationDate
           ]
         }),
+        // resolve definitions for doc-includes
         resolveIncludes: ['embed-teaser', 'list', 'categoryList']
       }
     }
@@ -32,6 +50,7 @@ renditions: {
   }
 },
 
+// define the server-side metadata
 metadata: {
 
   // invisible editor metadata
@@ -47,6 +66,7 @@ metadata: {
   }
 },
 
+// define the layout of the metadata screen in the editor (this can also be configured in the editor)
 metadataFormArrangement: [{
   name: 'title',
   form: 'li-meta-text-form',
@@ -57,6 +77,7 @@ metadataFormArrangement: [{
   config: {service: 'defaultText'}
 }]
 
+// setup the push notification feature if applicable
 pushNotifications: {
   topics: [{
     handle: 'breaking-news',
@@ -69,11 +90,13 @@ pushNotifications: {
   }]
 }
 
+// called whenever a document is published, gets the structured document (documentVersion) and all renderings (renditions)
 publish: function ({documentVersion, renditions}, callback) {
   getDocumentCache().del(documentVersion.getDocumentId())
   callback()
 },
 
+// called whenever a document is unpublished
 unpublish: function ({documentVersion}, callback) {
   getDocumentCache().del(documentVersion.getDocumentId())
   callback()

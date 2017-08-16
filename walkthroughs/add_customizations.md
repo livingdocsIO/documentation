@@ -1,17 +1,17 @@
 ## Adding Customizations
 
 If you use Livingdocs as on-premises software you can register plugins through a code API in both the editor and the server. Your projects will use a `package.json` file to install the core editor and server respectively as npm packages in a specific version.
-The boilerplate projects are small customizing project setups that illustrate this.
+The boilerplate projects are small customizing setups that illustrate this.
 
 This document gives an overview of how to register custom features without going into detail on how to write any of them.
 
 ### Server
 
-(Refer to the boilerplate server to see real examples of this.)
+(Refer to the [boilerplate server](https://github.com/upfrontIO/livingdocs-server-boilerplate) to see real examples of this.)
 
 A custom server feature can contain any code you like. Common examples are bridges to third-party APIs or import features that import documents from some other source like an old legacy CMS.
 
-This section only refers to coded customizations. Other behavior can be customized using the JSON configuration files.
+The explanations here only refer to customizations that need coding. Other behavior can be customized using the [JSON configuration files](../reference-docs/server-configuration/config.md).
 
 In the server you will normally have an `app/server.js` file add new features. The content looks something like this:
 ```js
@@ -61,16 +61,16 @@ featureApi.doSomething()
 ```
 (you need the server instance for this)
 
-The same also works if you need to access any of the core features from Livingdocs, which by convention all start with `li-`.
+The same also works if you need to access any of the [core features](https://github.com/upfrontIO/livingdocs-server/tree/master/app/features) from Livingdocs, which by convention all start with `li-`.
 
 ### Editor
 
 The code customizations in the Livingdocs editor (user interface) are restricted to the following cases:
 - custom Angular factories or services (for use in other customizations)
 - custom Angular components for metadata fields
-- .. or custom model classes for existing metadata fields
+- .. or [custom model classes](../reference-docs/editor-configuration/metadata.html) for existing metadata fields
 - custom Angular components for doc-include sidebar user interfaces
-- custom Dashboard filters
+- custom [Dashboard filters](../reference-docs/editor-configuration/search-filters.md)
 - custom Dahboard item (a single item in the articles dashboard)
 - custom Embed components (the core contains Iframes and Tweets)
 - custom Iframely metadata extractors

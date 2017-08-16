@@ -4,8 +4,6 @@
 
 The boilerplate app allows you to subscribe to publish and unpublish events of articles and pages and implement your customizations, e.g., for third-party system integrations.
 
-Pages are still an experimental feature so you should focus on the article configuration.
-
 ### The publish hook
 
 The hooks for article and page publish events are located in `app/channels/article_config.coffee` and `app/channels/page_config.coffee` respectively. The method definition looks as follows:
@@ -48,6 +46,6 @@ Just as before you get a `documentVersion` object for the document that was unpu
 
 ### Sample webhook implementation
 
-The boilerplate app implements a very simple webhook module that you can use to send the publish and unpublish payloads to a third-party system via the web. To enable the wehbook module you need to uncomment the feature in the app's [configuration](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/conf/environments/all.coffee#L81) as well as in the [channel configuration](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/channels/article_config.coffee#L29). You will also need to adapt the [url endpoints](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/conf/environments/all.coffee#L84) to match the ones of your third-party system.
+The [boilerplate server](https://github.com/upfrontIO/livingdocs-server-boilerplate) implements a very simple webhook module that you can use to send the publish and unpublish payloads to a third-party system via the web. To enable the wehbook module you need to uncomment the feature in the app's [configuration](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/conf/environments/all.js#L116) as well as in the [channel configuration](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/conf/channels/web/article/all.js#L30). You will also need to adapt the [url endpoints](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/conf/environments/all.js#L117) to match the ones of your third-party system.
 
 The implementation is extremely bare-bone and only suited to get you started quickly. Please provide your own implementation for production code or at least carefully review the sample code to your requirements.

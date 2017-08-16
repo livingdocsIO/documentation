@@ -1,7 +1,7 @@
 # Create designs
 
 This guide references the [Livingdocs timeline design](https://github.com/upfrontIO/livingdocs-design-timeline),
- which you can use as a starting point for your own designs.
+ which you can use as a starting point for your own designs. We advise you to clone this repository now to follow the subsequent examples.
 
 ## What is a Livingdocs design?
 
@@ -146,14 +146,14 @@ Go ahead and create a file called `myParagraph.html` under `src/components/Text`
 #### Adding your component to the design
 
 Once you have a component definition you will want to add your new component to your design. For this we will
-need to move to our `config.json` file in the timeline project. Find the section `groups` within this file.
+need to move to our `config.json` file in the timeline design repository. Find the section `groups` within this file.
 Here you can add your newly created `myParagraph` component. (NOTE: Use the `name`, not the `label`).
 Add it to any of the existing groups or create a new one. Now run a build and you will get a `dist` folder with a
 new design definition that contains your new component.
 
 #### Using the preview
 
-In order to preview your components in the `livingdocs-design-timeline` project you can add it to the file `src/index.html`.
+In order to preview your components outside of the editor, you can add it to the file `src/index.html`.
 In the script section of this file you will see the creation of a Livingdoc using the JSON data model.
 Don't worry about the details of this data yet. Simply navigate to the end of the `content` array and add the following markup:
 
@@ -212,4 +212,4 @@ A Livingdocs `component definition` consists of HTML that has added attributes t
 
 #### But I want my own design
 
-Sure enough you don't want to keep working with the `livingdocs-design-timeline` forever. We highly advise you though to use the setup defined there as it makes working with Livingdocs designs a lot easier. Just create a Github fork of the `livingdocs-design-timeline` project (or copy it by hand), name it anything you like and start replacing the CSS and HTML with your own.
+Sure enough you don't want to keep working with the `livingdocs-design-timeline` forever. We highly advise you though to use the setup defined there as it makes working with Livingdocs designs a lot easier. Just copy the `livingdocs-design-timeline` repository, name it anything you like and start replacing the CSS and HTML with your own.

@@ -5,7 +5,7 @@ Includes can render content to your article or page that comes from an external 
 Includes are resolved every time a document is rendered. So they can be used to
 display dynamic content that changes after a document has been published.
 
-Displaying a teaser for example can be achieved through includes. An article is referenced and its data (eg. title, description, teaser image) is fetched when rendering a page.
+Displaying a teaser for example can be achieved through includes. An article is referenced and its meta data (eg. title, description, teaser image) is fetched when rendering a page.
 
 
 ## A component with an include directive

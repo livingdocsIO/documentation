@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Metadata Example (editor and server) · Livingdocs Technical Documentation</title>
+        <title>Image Services · Livingdocs Technical Documentation</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -59,10 +59,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../../reference-docs/server-print-api/print-api.html" />
     
-    
-    <link rel="prev" href="../../reference-docs/editor-configuration/editing-features.html" />
+    <link rel="prev" href="../../reference-docs/editor-styleguide/styleguide.html" />
     
 
     </head>
@@ -429,9 +427,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.4" data-path="metadata-examples.html">
+        <li class="chapter " data-level="3.4" data-path="../metadata/metadata-examples.html">
             
-                <a href="metadata-examples.html">
+                <a href="../metadata/metadata-examples.html">
             
                     
                     Metadata Example (editor and server)
@@ -690,9 +688,9 @@
             
         </li>
     
-        <li class="chapter " data-level="6.1.2" data-path="../images/image-services.html">
+        <li class="chapter active" data-level="6.1.2" data-path="image-services.html">
             
-                <a href="../images/image-services.html">
+                <a href="image-services.html">
             
                     
                     Image Services
@@ -965,7 +963,7 @@
     <!-- Title -->
     <h1 style="position: absolute; top: 0; left: 30%; color: white">
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Metadata Example (editor and server)</a>
+        <a href="../.." >Image Services</a>
     </h1>
 </div>
 
@@ -980,85 +978,203 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="example-1-full-example-on-how-to-introduce-a-metadata-field-with-a-standard-metadata-plugin">Example 1: Full Example on how to Introduce a Metadata Field with a Standard Metadata Plugin</h1>
-<p>Say we want to create a new metadata field &quot;catchline&quot; for articles of your default web <a href="../../GLOSSARY.html#channel" class="glossary-term" title="Represents a collection of documents. All documents in a channel must use
-the same design. A channel also defines the Renditions.">channel</a>. The catchline should be a simple text input on the publish panel that journalists can edit.</p>
-<p>For details have a look at the <a href="../../reference-docs/server-configuration/metadata.html">server configuration reference documentation</a></p>
-<h2 id="server">Server</h2>
-<p>(Note: we assume the use of the <a href="https://github.com/upfrontIO/livingdocs-server-boilerplate" target="_blank">Livingdocs server boilerplate</a> here)</p>
-<p>You will first need to configure this in your server.</p>
-<p><strong>Configuration Example with a Default Plugin</strong></p>
-<pre><code class="lang-js">metadata: {
-  <span class="hljs-comment">// Name of the metadata field</span>
-  catchline: {
-    <span class="hljs-comment">// Define the plugin for the catchline</span>
-    <span class="hljs-comment">// &apos;li-text&apos; is the name defined in /plugins/metadata/li-text</span>
-    plugin: <span class="hljs-string">&apos;li-text&apos;</span>
-  }
-}
-</code></pre>
+                                <h1 id="image-services">Image Services</h1>
+<h2 id="overview">Overview</h2>
+<p>Livingdocs allows users to upload pictures and then subsequently shows them. There are 3 parts here:</p>
 <ol>
-<li>A standard plugin is stored in <code>plugins/metadata</code> and will automatically be loaded on the downstream and is always ready for usage. In our example we use <code>li-text</code>.</li>
-<li>Open the respective configuration file, in our case <code>conf/channels/web/article/all.js</code> and add the catchline config from the example to the metadata object into <code>all.js</code>.</li>
-<li>Open your elastic search metadata mapping (typically in <code>search/custom-mappings/metadata.json</code>) and add an entry as follows (the key <code>properties</code> probably already exists):<pre><code class="lang-json">{
-<span class="hljs-string">&quot;properties&quot;</span>: {
- <span class="hljs-string">&quot;catchline&quot;</span>: {
-   <span class="hljs-string">&quot;type&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
- }
-}
-}
-</code></pre>
-</li>
-<li>Reset your document elastic search index by running <code>grunt search-index:document:reset</code></li>
+<li>the <strong>storage</strong> of the images</li>
+<li>the generated image <strong>markup</strong> (e.g. <code>img</code> tags in the HTML document)</li>
+<li>the <strong>delivery</strong> of the images</li>
 </ol>
-<h2 id="editor">Editor</h2>
-<p>After you&apos;ve setup your new metadata field you can now use it in the editor. Open the respective configuration file, <code>all.js</code> if you want to have it in all environments, and add a configuration as follows:</p>
-<pre><code class="lang-js">metadata: {
-  article: [
-    name: <span class="hljs-string">&apos;catchline&apos;</span>,
-    form: <span class="hljs-string">&apos;li-meta-text-form&apos;</span>,
-    config: {
-      service: <span class="hljs-string">&apos;defaultText&apos;</span>
-    }
-  ]
+<h3 id="storage">Storage</h3>
+<p>The storage of choice for Livingdocs is Amazon S3, the bucket is configured in the server like this:</p>
+<pre><code class="lang-js"><span class="hljs-string">&apos;images&apos;</span>: {
+  <span class="hljs-string">&apos;public&apos;</span>: <span class="hljs-string">&apos;http://bucket-name.s3.amazonaws.com&apos;</span>,
+  <span class="hljs-string">&apos;bucket&apos;</span>: <span class="hljs-string">&apos;bucket-name&apos;</span>,
+  <span class="hljs-string">&apos;bucket_region&apos;</span>: <span class="hljs-string">&apos;eu-west-1&apos;</span>
 }
 </code></pre>
-<p>This will render a text-input field to the publish screen of articles where users can type in the value for the &quot;catchline&quot; which is automatically saved to the server.</p>
-<p>Note that you can add this configuration either as shown here in the editor configuration or under <a href="../../reference-docs/server-configuration/channel-config.html"><code>meatadataFormArrangement</code> on the server</a>. If you add it in both places the server configuration takes precedence. The structure of the configuration is the same in both places.</p>
-<h1 id="example-2-activate-and-use-a-custom-plugin">Example 2: Activate and Use a Custom Plugin</h1>
-<p>If you want to define and use a custom plugin, you have to do the following steps on the server:</p>
-<ul>
-<li>Define the custom plugin folder in the environment config (<code>conf/environments/all.js</code>).</li>
-</ul>
-<pre><code class="lang-js">metadataPlugins: path.resolve(<span class="hljs-string">&apos;./plugins/metadata&apos;</span>)
-</code></pre>
-<ul>
-<li>Add a new custom plugin to &apos;./plugins/metadata/customername-pluginname.js&apos;</li>
-</ul>
-<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
-  name: <span class="hljs-string">&apos;customername-pluginname&apos;</span>,
-  schema: {
-    type: <span class="hljs-string">&apos;string&apos;</span>
-  },
-  validate: (value, config) =&gt; {
-    <span class="hljs-built_in">console</span>.log(value); <span class="hljs-comment">// the entered value</span>
-    <span class="hljs-built_in">console</span>.log(config); <span class="hljs-comment">// { custompluginconfig: &apos;test&apos; }</span>
+<p>You can configure your own image storage using the following configuration:</p>
+<pre><code class="lang-js"><span class="hljs-string">&apos;images&apos;</span>: {
+  <span class="hljs-string">&apos;proxy&apos;</span>: {
+    <span class="hljs-string">&apos;url&apos;</span>: <span class="hljs-string">&apos;http://your-image-storage.com&apos;</span>
   }
 }
 </code></pre>
-<ul>
-<li>Activate the custom plugin in the <a href="../../GLOSSARY.html#channel" class="glossary-term" title="Represents a collection of documents. All documents in a channel must use
-the same design. A channel also defines the Renditions.">channel</a> config</li>
-</ul>
-<pre><code class="lang-js">metadata: {
-  myNewMetadataField: {
-    plugin: <span class="hljs-string">&apos;customername-pluginname&apos;</span>,
-    config: {
-      custompluginconfig: <span class="hljs-string">&apos;test&apos;</span>
+<p>This will route image upload requests from Livingdocs to your chosen URL instead of S3.
+For details please see the reference documentation for the <a href="../../reference-docs/server-configuration/config.html">server configuration</a></p>
+<h3 id="delivery">Delivery</h3>
+<p>The delivery of the images is done through a URL-pattern-based web service. Out of the box, Livingdocs supports:</p>
+<ol>
+<li>resrc.it (<a href="https://www.resrc.it/" target="_blank">https://www.resrc.it/</a> note: resrc.it was bought by fastly and you can currently not open new accounts)</li>
+<li>ImgIX (<a href="https://www.imgix.com/" target="_blank">https://www.imgix.com/</a>)</li>
+</ol>
+<p>You can also add another image service, or even your own. SZ did so for their magazine.</p>
+<h3 id="markup">Markup</h3>
+<p>In order to see an image in a HTML document, Livingdocs needs to generate the HTML markup. This has to work in tandem with the chosen web service (ImgIX or resrc.it) since each of those services expects a specific URL pattern to encode things like the image width or a cropping. Currently, both ImgIX and resrc.it have their corresponding markup generator in the Livingdocs framework. As an outlook, we are pushing towards a more configurable Lego-like system where you don&apos;t configure a specific web service but rather specific strategies.</p>
+<p>Below is an example workflow that summarizes the whole process.</p>
+<p>A user uploads an image to the Livingdocs editor, the corresponding file is stored on Amazon S3 and the URL to the Amazon file is available on the component as <code>originalUrl</code>. The framework chooses the correct image service (e.g. ImgIX) for generating the correct HTML markup in the document that is shown in the Livingdocs editor. (The image service to be used is configured in the Livingdocs editor. Let&apos;s say <code>ImgIX</code> is configured.) The framework loads the <code>imgix_image_service</code> and calls the <code>set</code> method which will generate an <code>img</code> tag with a URL that fits the ImgIX url specification (<a href="https://docs.imgix.com/setup/serving-images" target="_blank">https://docs.imgix.com/setup/serving-images</a>). The browser then renders the image by querying ImgIX for the respective image.</p>
+<h2 id="why-image-services">Why image services?</h2>
+<p>You might wonder why Livingdocs uses an image service to start with and does not just write the Amazon URL into an <code>img</code> tag&apos;s <code>src</code> attribute. Two reasons mainly:</p>
+<ol>
+<li>cropping</li>
+<li>different image widths (sizes) for different devices</li>
+</ol>
+<p>The first reason is easily explained. Livingdocs provides an image cropping tool (<a href="https://github.com/upfrontIO/srcissors" target="_blank">https://github.com/upfrontIO/srcissors</a>) in the Livingdocs editor that allows users to crop their images and change the aspect ratio. The Livingdocs server can not generate different versions of an image and deliver them. It gives this responsibility to a web service such as ImgIX. Currently, Livingdocs expects that a web service takes the cropping information in the form of a URL parameter (example of ImgIX: <a href="https://docs.imgix.com/apis/url/size/rect" target="_blank">https://docs.imgix.com/apis/url/size/rect</a>). This is the case for all services we know of.</p>
+<p>The second reason for using an image service is a bit more involved. Put simply, you don&apos;t want to download a 5 Megapixel image on your mobile phone. Instead you want a website to be &quot;smart&quot; and download the image in such a size that the resolution is perfect for your device but the size is just as large as need be. There is actually a whole community for this topic: <a href="https://responsiveimages.org/" target="_blank">https://responsiveimages.org/</a>
+Livingdocs support 2 strategies for responsive images:</p>
+<ol>
+<li>script-based plugin</li>
+<li><code>srcset</code> images (inline images only)</li>
+</ol>
+<p>The first approach expects you to provide a client-side Javascript that runs in the reader&apos;s browser, detects the respective device size and requests the optimal image for this size. We provide such a script for rescr.it. For another image service you would need to provide your own script.
+The second approach uses the browser&apos;s <code>srcset</code> markup. A good article on the topic is found here: <a href="https://ericportis.com/posts/2014/srcset-sizes/" target="_blank">https://ericportis.com/posts/2014/srcset-sizes/</a> The <code>srcset</code> attribute is today (2017) supported by all major browsers, including Mircosoft&apos;s edge. It is <em>not</em> supported in IE11 and below. Of course that does not mean that users can not see images on IE11 just that they are not responsive there.
+Srcset only works for inline images (<code>img</code> tag). If you use a background image, you can currently set a max width. Read here on <a href="responsive-bg-images.md">why srcset does not work for background images</a>.</p>
+<h2 id="configuring-an-image-service">Configuring an image service</h2>
+<p>You currently need to configure your image service in both the editor and the server. We will push towards a server-only configuration, also because most of the configuration is duplicated, but we&apos;re not there yet. In the editor you configure which image service to use and the configuration for this image service. In the server you just add the configuration for the image service.</p>
+<p>Below we&apos;ll outline the configuration for both ImgIX and resrc.it.</p>
+<h3 id="imgix">ImgIX</h3>
+<p>The ImgIX configuration uses <code>srcset</code>. If you don&apos;t know about this HTML standard yet, refer to this article first: <a href="https://ericportis.com/posts/2014/srcset-sizes/" target="_blank">https://ericportis.com/posts/2014/srcset-sizes/</a></p>
+<h4 id="editor">Editor</h4>
+<pre><code class="lang-js">  app: {
+    imageService: <span class="hljs-string">&apos;imgix&apos;</span>,
+    imageServiceConfig: {
+      host: <span class="hljs-string">&quot;https://livingdocs-dev.imgix.net&quot;</span>,
+      preferWebp: <span class="hljs-literal">true</span>,
+      backgroundImage: {
+        maxWidth: <span class="hljs-number">2048</span>
+      },
+      srcSet: {
+        defaultWidth: <span class="hljs-number">1024</span>,
+        widths: [
+          <span class="hljs-number">2048</span>,
+          <span class="hljs-number">1024</span>,
+          <span class="hljs-number">620</span>,
+          <span class="hljs-number">320</span>
+        ],
+        sizes: [<span class="hljs-string">&apos;100vw&apos;</span>]
+      }
+    }
+  }
+</code></pre>
+<p>The <code>imageService</code> field tells Livingdocs which image service should be used. The <code>imageServiceConfig</code> contains the configuration for this specific image service.
+The <code>host</code> is simply where your ImgIX images are served from.
+If <code>preferWebp</code> is set to <code>true</code> Livingdocs will pass the <code>auto=format</code> parameter (<a href="https://docs.imgix.com/apis/url/auto" target="_blank">https://docs.imgix.com/apis/url/auto</a>).
+<code>srcSet</code> defines the settings you want for your <code>srcset</code> attribute:</p>
+<ol>
+<li>the available image widths <code>widths</code></li>
+<li>the width that is set to the <code>src</code> attribute (e.g. for IE11 and below), defined in <code>defaultWidth</code></li>
+<li>The <code>sizes</code> attribute that defines the responsive behavior</li>
+</ol>
+<p>Note: We will take (3) out of the configuration in the medium term since we think it makes more sense to set the <code>sizes</code> attribute directly on the component or template.</p>
+<p>For background images you can simply set a fixed max-width, so that each background image will get the corresponding ImgIX width set. (if the actual width of the image is lower, ImgIX will never try to interpolate but just leave it -&gt; this is why it is called max-width).</p>
+<h4 id="server">Server</h4>
+<pre><code class="lang-js">documents: {
+  imageServices: {
+    imgix: {
+      host: <span class="hljs-string">&apos;https://livingdocs-dev.imgix.net&apos;</span>,
+      preferWebp: <span class="hljs-literal">true</span>,
+      backgroundImage: {
+        maxWidth: <span class="hljs-number">2048</span>
+      }
+      srcSet: {
+        defaultWidth: <span class="hljs-number">1024</span>,
+        widths: [
+          <span class="hljs-number">2048</span>,
+          <span class="hljs-number">1024</span>,
+          <span class="hljs-number">620</span>,
+          <span class="hljs-number">320</span>
+        ],
+        sizes: [<span class="hljs-string">&apos;100vw&apos;</span>]
+      }
     }
   }
 }
 </code></pre>
+<p>The parameters are equivalent to the ones in the editor. You can in theory also configure several images services in the server, but as of now only one can be used (the one specified in the editor config).</p>
+<h3 id="resrcit">Resrc.it</h3>
+<h4 id="editor">Editor</h4>
+<pre><code class="lang-js">app: {
+  imageService: <span class="hljs-string">&apos;resrc.it&apos;</span>,
+  imageServiceConfig: {
+    host: <span class="hljs-string">&apos;https://app.resrc.it&apos;</span>,
+    quality: <span class="hljs-number">75</span>,
+    scriptUrl: <span class="hljs-string">&apos;//d2o08py1e264ss.cloudfront.net/assets/resrc-0.9.0.min.js&apos;</span>
+  }
+}
+</code></pre>
+<p>The <code>imageService</code> field tells Livingdocs which image service should be used. The <code>imageServiceConfig</code> contains the configuration for this specific image service.
+The <code>host</code> is simply where your resrc.it images are served from. With <code>resrc.it</code> this is normally always the same.
+The <code>quality</code> setting allows you to choose a global quality for your images. In the range between 75 to 100 you normally don&apos;t see a difference.
+The <code>scriptUrl</code> points to the client-side Javascript code used for the responsive behavior. You need to provide this. And don&apos;t rely on our URL ;)</p>
+<h4 id="server">Server</h4>
+<pre><code class="lang-js">documents: {
+  imageServices: {
+    <span class="hljs-string">&apos;resrc.it&apos;</span>: {
+      host: <span class="hljs-string">&apos;https://app.resrc.it&apos;</span>,
+      quality: <span class="hljs-number">75</span>,
+      scriptUrl: <span class="hljs-string">&apos;//d2o08py1e264ss.cloudfront.net/assets/resrc-0.9.0.min.js&apos;</span>
+    }
+  }
+}
+</code></pre>
+<p>The parameters are equivalent to the ones in the editor. You can in theory also configure several images services in the server, but as of now only one can be used (the one specified in the editor config).</p>
+<h2 id="srcset-in-metadata"><code>srcset</code> in Metadata</h2>
+<p>This section is only relevant if you are using ImgIX. Skip it otherwise.</p>
+<p>Metadata fields of type image will contain the <code>srcset</code> in a specific <code>crop</code>, but not in the root. The reason for this is simply that you normally only want teaser images in a certain crop and in the metadata definition it is not even possible to have a metadata image without a crop definition.</p>
+<p>An example:</p>
+<pre><code class="lang-json"><span class="hljs-string">&quot;metadata&quot;</span>: {
+  <span class="hljs-string">&quot;teaserImage&quot;</span>: {
+    <span class="hljs-string">&quot;originalUrl&quot;</span>: <span class="hljs-string">&quot;http://livingdocs-images-dev.s3.amazonaws.com/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg&quot;</span>,
+    <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?w=1024&amp;auto=format&quot;</span>,
+    <span class="hljs-string">&quot;width&quot;</span>: <span class="hljs-number">1760</span>,
+    <span class="hljs-string">&quot;height&quot;</span>: <span class="hljs-number">791</span>,
+    <span class="hljs-string">&quot;imageService&quot;</span>: <span class="hljs-string">&quot;imgix&quot;</span>,
+    <span class="hljs-string">&quot;crops&quot;</span>: [
+        {
+            <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?rect=177%2C0%2C1406%2C791&amp;w=1024&amp;auto=format&quot;</span>,
+            <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;16:9&quot;</span>,
+            <span class="hljs-string">&quot;x&quot;</span>: <span class="hljs-number">177</span>,
+            <span class="hljs-string">&quot;y&quot;</span>: <span class="hljs-number">0</span>,
+            <span class="hljs-string">&quot;width&quot;</span>: <span class="hljs-number">1406</span>,
+            <span class="hljs-string">&quot;height&quot;</span>: <span class="hljs-number">791</span>,
+            <span class="hljs-string">&quot;srcSet&quot;</span>: [
+                {
+                    <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?rect=177%2C0%2C1406%2C791&amp;w=2048&amp;auto=format&quot;</span>,
+                    <span class="hljs-string">&quot;width&quot;</span>: <span class="hljs-number">2048</span>
+                },
+                {
+                    <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?rect=177%2C0%2C1406%2C791&amp;w=1024&amp;auto=format&quot;</span>,
+                    <span class="hljs-string">&quot;width&quot;</span>: <span class="hljs-number">1024</span>
+                },
+                {
+                    <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?rect=177%2C0%2C1406%2C791&amp;w=620&amp;auto=format&quot;</span>,
+                    <span class="hljs-string">&quot;width&quot;</span>: <span class="hljs-number">620</span>
+                },
+                {
+                    <span class="hljs-string">&quot;url&quot;</span>: <span class="hljs-string">&quot;https://livingdocs-dev.imgix.net/2017/3/29/56cac115-07ef-4421-9fbf-4c886d4543cd.jpeg?rect=177%2C0%2C1406%2C791&amp;w=320&amp;auto=format&quot;</span>,
+                    <span class="hljs-string">&quot;width&quot;</span>: <span class="hljs-number">320</span>
+                }
+            ]
+        }
+    ]
+  }
+}
+</code></pre>
+<p>The <code>srcset</code> information is useful when you want to have responsive images in your overview pages or embeds (<code>doc-include</code> directives). In such a case you will render the <code>doc-include</code> HTML in a server-side plugin (template). This plugin will not use the Livingdocs framework to render thus your configured <code>srcset</code> will not be automatically applied. You can though use the information on the metadata field to apply it manually in the template.</p>
+<p>An example template:</p>
+<pre><code class="lang-html">module.exports = `
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&lt;%= article.url %&gt;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;teaser__img-wrap&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;teaser__img&quot;</span>
+        <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&lt;%= article.teaserImage %&gt;&quot;</span>
+        <span class="hljs-attr">srcset</span>=<span class="hljs-string">&quot;&lt;%= article.srcSet %&gt;&quot;</span>
+        <span class="hljs-attr">sizes</span>=<span class="hljs-string">&quot;(min-width: 1024px) 100vw, 50vw&quot;</span>/&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+<p>You apply the <code>srcset</code> attribute manually in your <code>doc-include</code> template.
+Note also that we prefer here to write the <code>sizes</code> attribute directly in the template. This makes sense since the template knows best how the responsive behavior should be (better than a config).</p>
 
                                 
                                 </section>
@@ -1086,14 +1202,10 @@ the same design. A channel also defines the Renditions.">channel</a> config</li>
 
             
                 
-                <a href="../../reference-docs/editor-configuration/editing-features.html" class="navigation navigation-prev " aria-label="Previous page: Configure editing features">
+                <a href="../../reference-docs/editor-styleguide/styleguide.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Styleguide">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../../reference-docs/server-print-api/print-api.html" class="navigation navigation-next " aria-label="Next page: Print API">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -1102,7 +1214,7 @@ the same design. A channel also defines the Renditions.">channel</a> config</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Metadata Example (editor and server)","level":"3.4","depth":1,"next":{"title":"Print API","level":"3.5","depth":1,"path":"reference-docs/server-print-api/print-api.md","ref":"reference-docs/server-print-api/print-api.md","articles":[]},"previous":{"title":"Configure editing features","level":"3.3.5","depth":2,"path":"reference-docs/editor-configuration/editing-features.md","ref":"reference-docs/editor-configuration/editing-features.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Livingdocs","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Livingdocs Technical Documentation","gitbook":"*","description":"Technical documentation of the Livingdocs CMS. Covers documentation for designers, integrators and core developers"},"file":{"path":"concepts/metadata/metadata-examples.md","mtime":"2017-08-16T15:55:46.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-15T12:39:59.671Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Image Services","level":"6.1.2","depth":2,"next":{"title":"Server","level":"6.2","depth":1,"ref":"","articles":[{"title":"Editing API","level":"6.2.1","depth":2,"path":"reference-docs/server-editing-api/README.md","ref":"reference-docs/server-editing-api/README.md","articles":[{"title":"Basics","level":"6.2.1.1","depth":3,"path":"reference-docs/server-editing-api/api_basics.md","ref":"reference-docs/server-editing-api/api_basics.md","articles":[]},{"title":"CORS","level":"6.2.1.2","depth":3,"path":"reference-docs/server-editing-api/api_cors.md","ref":"reference-docs/server-editing-api/api_cors.md","articles":[]},{"title":"Error","level":"6.2.1.3","depth":3,"path":"reference-docs/server-editing-api/api_errors.md","ref":"reference-docs/server-editing-api/api_errors.md","articles":[]},{"title":"Authentication","level":"6.2.1.4","depth":3,"path":"reference-docs/server-editing-api/editing_api_authentication.md","ref":"reference-docs/server-editing-api/editing_api_authentication.md","articles":[]},{"title":"Design","level":"6.2.1.5","depth":3,"path":"reference-docs/server-editing-api/editing_api_design.md","ref":"reference-docs/server-editing-api/editing_api_design.md","articles":[]},{"title":"Lists","level":"6.2.1.6","depth":3,"path":"reference-docs/server-editing-api/editing_api_list.md","ref":"reference-docs/server-editing-api/editing_api_list.md","articles":[]},{"title":"Documents","level":"6.2.1.7","depth":3,"path":"reference-docs/server-editing-api/editing_api_documents.md","ref":"reference-docs/server-editing-api/editing_api_documents.md","articles":[]},{"title":"Revisions","level":"6.2.1.8","depth":3,"path":"reference-docs/server-editing-api/editing_api_revisions.md","ref":"reference-docs/server-editing-api/editing_api_revisions.md","articles":[]},{"title":"Publications","level":"6.2.1.9","depth":3,"path":"reference-docs/server-editing-api/editing_api_publications.md","ref":"reference-docs/server-editing-api/editing_api_publications.md","articles":[]},{"title":"Users","level":"6.2.1.10","depth":3,"path":"reference-docs/server-editing-api/editing_api_users.md","ref":"reference-docs/server-editing-api/editing_api_users.md","articles":[]},{"title":"Projects","level":"6.2.1.11","depth":3,"path":"reference-docs/server-editing-api/editing_api_spaces.md","ref":"reference-docs/server-editing-api/editing_api_spaces.md","articles":[]},{"title":"Hooks","level":"6.2.1.12","depth":3,"path":"reference-docs/server-editing-api/editing_api_hooks.md","ref":"reference-docs/server-editing-api/editing_api_hooks.md","articles":[]}]}]},"previous":{"title":"Styleguide","level":"6.1.1","depth":2,"path":"reference-docs/editor-styleguide/styleguide.md","ref":"reference-docs/editor-styleguide/styleguide.md","articles":[]},"dir":"ltr"},"config":{"plugins":["livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Livingdocs","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Livingdocs Technical Documentation","gitbook":"*","description":"Technical documentation of the Livingdocs CMS. Covers documentation for designers, integrators and core developers"},"file":{"path":"concepts/images/image-services.md","mtime":"2017-08-14T13:11:48.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-08-15T12:39:59.671Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

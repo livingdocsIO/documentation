@@ -17,13 +17,7 @@
 ## Livingdocs Customizations
 
 * [Register customizations](walkthroughs/add_customizations.md)
-* Editor
-  * [Metadata](reference-docs/editor-configuration/metadata.md)
-  * [Dashboard search filters](reference-docs/editor-configuration/search-filters.md)
-  * [Cofigure text editing](reference-docs/editor-configuration/text-editing.md)
-  * [Configure image cropping](reference-docs/editor-configuration/image-cropping.md)
-  * [Configure editing features](reference-docs/editor-configuration/editing-features.md)
-* Server
+* [Server](walkthroughs/add_customizations.md#server)
   * [Metadata](reference-docs/server-configuration/metadata.md)
   * [Adding Includes](reference-docs/server-extensions/add-custom-include.md)
   * [Available Events](reference-docs/server-extensions/events.md)
@@ -31,6 +25,12 @@
   * [Configure channels](reference-docs/server-configuration/channel-config.md)
   * [Publish and Unpublish Hooks](reference-docs/server-extensions/publish-hooks.md)
   * [Routing system](reference-docs/server-public-api/routing-system.md)
+* [Editor](walkthroughs/add_customizations.md#editor)
+  * [Metadata](reference-docs/editor-configuration/metadata.md)
+  * [Dashboard search filters](reference-docs/editor-configuration/search-filters.md)
+  * [Cofigure text editing](reference-docs/editor-configuration/text-editing.md)
+  * [Configure image cropping](reference-docs/editor-configuration/image-cropping.md)
+  * [Configure editing features](reference-docs/editor-configuration/editing-features.md)
 
 * [Metadata Example (editor and server)](concepts/metadata/metadata-examples.md)
 * [Print API](reference-docs/server-print-api/print-api.md)
@@ -60,6 +60,7 @@
 
 * Editor
   * [Styleguide](reference-docs/editor-styleguide/styleguide.md)
+  * [Image Services](concepts/images/image-services.md)
 * Server
   * [Editing API](reference-docs/server-editing-api/README.md)
     * [Basics](reference-docs/server-editing-api/api_basics.md)

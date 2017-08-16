@@ -249,7 +249,7 @@ images: {
 - Proxy Option
 
 Alternatively you can forward image upload to another service.
-For more info about this see [concepts/images](../concepts/images/image-services.md).
+For more info about this see [Image Services](../../concepts/images/image-services.md).
 
 ```js
 images: {
