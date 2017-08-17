@@ -6,6 +6,11 @@
 
 * [Glossary](./GLOSSARY.md)
 
+## Videos
+
+* [Livingdocs Design Intro](videos/design_intro.md)
+* [Livingdocs Boilerplate Intro](videos/boilerplate_intro.md)
+
 ## Livingdocs Design
 
 * [Overview](reference-docs/common-designs/create_designs.md)

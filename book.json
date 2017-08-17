@@ -2,7 +2,7 @@
   "title": "Livingdocs Technical Documentation",
   "description": "Technical documentation of the Livingdocs CMS. Covers documentation for designers, integrators and core developers",
   "author": "Livingdocs",
-  "plugins": ["youtube", "disqus", "-sharing"],
+  "plugins": ["video", "disqus", "-sharing"],
   "pluginsConfig": {
     "disqus": {
       "shortName": "livingdocs"
