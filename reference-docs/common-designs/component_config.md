@@ -276,7 +276,45 @@ Example:
 </div>
 ```
 
-## `doc-include`
+### `doc-style`
+
+`properties`: Array of style properties that are set when the user enters content. E.g. in the example below a user could set a hex-code for a color that is then set to `style="background-color:user-value"`.
+
+Example:
+```html
+<script type="ld-conf">
+{
+  "name": "article-header",
+  "label": "Artikelkopf",
+  "allowedParents": ["root"],
+  "directives": {
+    "background": {
+      "properties": [
+        "css-background-color": {
+          "type": "style",
+          "label": "Background Color",
+          "cssProperty": "background-color"
+        }
+      ]
+    },
+    "title": {
+      "plainText": true
+    }
+  }
+}
+</script>
+
+<header class="articleheader">
+  <section class="articleheader__textsection"  doc-style="background">
+    <div class="articleheader__textcontainer l-rwd fore-edge">
+      <h1 class="headline headline--h1 articleheader__headline articleheader__headline--h1" doc-editable="title">Artikel Headline</h1>
+      <div class="subline articleheader__subline text__large--italic" doc-editable="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</div>
+    </div>
+  </section>
+</header>
+```
+
+### `doc-include`
 
 (also see the following [techtalk](https://drive.google.com/open?id=0B8MM4t0ini5HbVB3cXlxSmZZV3c))
 

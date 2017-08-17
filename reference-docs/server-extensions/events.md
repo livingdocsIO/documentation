@@ -1,7 +1,7 @@
 # Livingdocs Server Events
 
 
-The events API is Livingdocs's implementation of the publish/subscribe pattern.
+The events API is Livingdocs's implementation of the publish/subscribe pattern. This allows you to send messages back and forth between features or to listen for events from the core features.
 
 ## Requiring events from the li-server
 

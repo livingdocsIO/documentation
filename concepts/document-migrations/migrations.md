@@ -9,8 +9,6 @@ The next chapter will describe which kinds of design changes require you to writ
 
 ## Migrations from design changes
 
-(If you don't know much about designs yet, we advise to read up about them [here](../guides/design/create_designs.md))
-
 Livingdocs designs have a version number in the `config.json` file that follows the [semver pattern](http://semver.org/). You should create a major version whenever a design change requires you to write a data migration. Livingdocs is very strict with un-migrated documents: when you try to open a document that has a different structure than the design you're using, it will fail with an error.
 The following changes require a data migration:
 - removing a directive from a component

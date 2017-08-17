@@ -1,4 +1,4 @@
-# Livingdocs design basics
+# Design Configuration
 
 ## config.json
 

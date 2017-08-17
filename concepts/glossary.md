@@ -5,7 +5,7 @@
 - Livingdoc
 
   A representation of content. It separates content from structure by using
-  `Components`. A Livingdoc references a specific `Design` wich defines the
+  `Components`. A `Livingdoc` references a specific `Design` wich defines the
   available `Components` that can be used in the document.
 
 

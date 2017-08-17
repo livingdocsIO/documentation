@@ -1,7 +1,7 @@
 # Create designs
 
 This guide references the [Livingdocs timeline design](https://github.com/upfrontIO/livingdocs-design-timeline),
- which you can use as a starting point for your own designs.
+ which you can use as a starting point for your own designs. We advise you to clone this repository now to follow the subsequent examples.
 
 ## What is a Livingdocs design?
 
@@ -12,8 +12,6 @@ A Livingdocs design is defined in a `design definition` JSON file.
 
 To use a Livingdocs design you have to upload the JSON file and all its dependencies
 (CSS, Javascript and image files) to a livingdocs server and configure your account to use this design.
-
-
 
 
 ## Example design definition:
@@ -148,14 +146,14 @@ Go ahead and create a file called `myParagraph.html` under `src/components/Text`
 #### Adding your component to the design
 
 Once you have a component definition you will want to add your new component to your design. For this we will
-need to move to our `config.json` file in the timeline project. Find the section `groups` within this file.
+need to move to our `config.json` file in the timeline design repository. Find the section `groups` within this file.
 Here you can add your newly created `myParagraph` component. (NOTE: Use the `name`, not the `label`).
 Add it to any of the existing groups or create a new one. Now run a build and you will get a `dist` folder with a
 new design definition that contains your new component.
 
 #### Using the preview
 
-In order to preview your components in the `livingdocs-design-timeline` project you can add it to the file `src/index.html`.
+In order to preview your components outside of the editor, you can add it to the file `src/index.html`.
 In the script section of this file you will see the creation of a Livingdoc using the JSON data model.
 Don't worry about the details of this data yet. Simply navigate to the end of the `content` array and add the following markup:
 
@@ -205,12 +203,13 @@ A Livingdocs `component definition` consists of HTML that has added attributes t
 |:---------|:-----------|
 | doc-editable | The content of this tag is editable text by the user. |
 | doc-image    | The user can select and image that is set as a `src` attribute on `<img>` tags and as `background-image` style on other tags. |
-| doc-optional    | Can be used together with `doc-editable` and prevents rendering of the tag to the published document if the editable content is empty.|
+| doc-optional    | Can be used only with `doc-editable` and prevents rendering of the tag to the published document if the editable content is empty.|
 | doc-container | This tag can contain other components. |
 | doc-html | The content of this tag is freeform HTML. This can be used to embed tweets or IFrames. |
 | doc-link | The href attribute of this tag can be set to a link by the user. |
 | doc-include | Inside of this tag, the server will render an edge-side include of the given type |
+| doc-style | Allows a user to set the `style` attribute on a DOM node |
 
 #### But I want my own design
 
-Sure enough you don't want to keep working with the `livingdocs-design-timeline` forever. We highly advise you though to use the setup defined there as it makes working with Livingdocs designs a lot easier. Just create a Github fork of the `livingdocs-design-timeline` project (or copy it by hand), name it anything you like and start replacing the CSS and HTML with your own.
+Sure enough you don't want to keep working with the `livingdocs-design-timeline` forever. We highly advise you though to use the setup defined there as it makes working with Livingdocs designs a lot easier. Just copy the `livingdocs-design-timeline` repository, name it anything you like and start replacing the CSS and HTML with your own.

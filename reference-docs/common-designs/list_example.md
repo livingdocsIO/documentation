@@ -1,25 +1,43 @@
-## Advanced Example of a list
+## Example of a simple bullet list
 
-This is a custom container that can only be placed at the topmost level (not be nested inside other components) and which can only contain `text` and `image` components.
+A list is basically a set of 2 components: a container component that holds the list items and a repeatable component that is inserted whenever a user presses enter in the container. You can basically make everything a repeatable. The example shows the regular use case of a bullet list.
 
+In the container you set the `defaultComponents:paragraph` to define which component is inserted when a user presses enter (repeatable) and the `defaultContent` to define which component is initially present (template). Usually, the two are the same.
+
+The container:
 ```html
 <script type="ld-conf">
 {
-  "name": "list",
-  "label": "List",
-  "allowedParents": ["root"]
+  "label": "Bullet List",
+  "name": "bullet-list",
+  "properties": ["list-type"],
   "directives": {
-    "children": {
-      "allowedChildren": ["text", "image"]
+    "list": {
+      "defaultComponents": {
+        "paragraph": "bullet-list-item"
+      },
+      "defaultContent": [
+        {
+          "component": "bullet-list-item"
+        }
+      ]
     }
   }
 }
 </script>
 
-<div doc-container="children"></div>
+<ul doc-container="list" class="ld-list"></ul>
 ```
 
-- `name` The name of this component as used in code. If not specified this is inferred from the filename.
-- `label` The label displayed in user interfaces.
-- `directives` Configuration for individual directives. Here the container is configured to only accept certain components.
-- `allowedParents` Inside of which components a component can be placed. ('root' stands for the topmost level.)
+The repeatable:
+```html
+<script type="ld-conf">
+{
+  "name": "bullet-list-item",
+  "label": "Bullet List Item",
+  "allowedParents": ["bullet-list"]
+}
+</script>
+
+<li doc-editable="text">List item</li>
+```

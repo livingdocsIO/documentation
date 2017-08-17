@@ -23,7 +23,7 @@ metadata: {
 ```
 
 1. A standard plugin is stored in `plugins/metadata` and will automatically be loaded on the downstream and is always ready for usage. In our example we use `li-text`.
-2. Open the respective configuration file, in our case `conf/channels/web/article/all.coffee` and add the catchline config from the example to the metadata object into `all.coffee`.
+2. Open the respective configuration file, in our case `conf/channels/web/article/all.js` and add the catchline config from the example to the metadata object into `all.js`.
 3. Open your elastic search metadata mapping (typically in `search/custom-mappings/metadata.json`) and add an entry as follows (the key `properties` probably already exists):
 ```json
 {
@@ -38,7 +38,7 @@ metadata: {
 
 ## Editor
 
-After you've setup your new metadata field you can now use it in the editor. Open the respective configuration file, `all.coffee` if you want to have it in all environments, and add a configuration as follows:
+After you've setup your new metadata field you can now use it in the editor. Open the respective configuration file, `all.js` if you want to have it in all environments, and add a configuration as follows:
 
 ```js
 metadata: {
@@ -54,12 +54,13 @@ metadata: {
 
 This will render a text-input field to the publish screen of articles where users can type in the value for the "catchline" which is automatically saved to the server.
 
+Note that you can add this configuration either as shown here in the editor configuration or under [`meatadataFormArrangement` on the server](../../reference-docs/server-configuration/channel-config.html). If you add it in both places the server configuration takes precedence. The structure of the configuration is the same in both places.
 
 # Example 2: Activate and Use a Custom Plugin
 
 If you want to define and use a custom plugin, you have to do the following steps on the server:
 
-- Define the custom plugin folder in the environment config (`conf/environments/all.coffee`).
+- Define the custom plugin folder in the environment config (`conf/environments/all.js`).
 
 ```js
 metadataPlugins: path.resolve('./plugins/metadata')

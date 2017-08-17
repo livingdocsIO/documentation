@@ -288,13 +288,13 @@ Section headers are always clear-fixed and go over the full width.
 
 ## Registering a metadata service
 
-Some of the forms require you to provide a service that implements the business logic behind those fields. In order to register a service you will need to add it to `core/bootstrap/index.coffee`. To add a fictional metadata service `foobar` you would add the following line:
+Some of the forms require you to provide a service that implements the business logic behind those fields. In order to register a service you will need to [add it as a customization](../../walkthroughs/add_customizations.md#editor). To add a fictional metadata service `foobar` you would add the following line:
 
 ```js
 editor.metadataServices.register('foobar', require('path/to/foobar'))
 ```
 
-The file `foobar.coffee` defines the metadata service *and gives you a metadata instance as well as the angular injector*. It should always have the following format:
+The file `foobar.js` defines the metadata service *and gives you a metadata instance as well as the angular injector*. It should always have the following format:
 
 ```js
 module.exports = function ({metadata, $injector}) {
@@ -305,6 +305,7 @@ module.exports = function ({metadata, $injector}) {
 In the future we want to write our own injector for this to control more tightly what can be injected and what is private in the core.
 
 ## Creating a new metadata form element (core)
+<!-- TODO GH This is outdated, get an example from NZZ and describe it -->
 
 Currently, new UI elements can only be created in the core. As a core developer you might need to create one though at some point. Here are some things to look out for.
 

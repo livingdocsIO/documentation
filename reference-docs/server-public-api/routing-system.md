@@ -2,11 +2,11 @@
 
 ## Use case
 
-The Delivery **app** is asked to deliver a **document** located at a **path**. To resolve a path to a document, the delivery app uses the Routing system endpoint.
+A delivery **app** is asked to deliver a **document** located at a **path**. To resolve a path to a document, a delivery app can use the Routing system endpoint from the Livingdocs core.
 
 1. Delivery **app** receives `GET /article/adventure/i-m-on-the-road-again-09fed8` on the channel `web`
-1. Delivery **app** calls public API of Delivery **server**: `GET https://delivery-server/api/routing/web?path=/article/adventure/i-m-on-the-road-again-09fed8`
-1. Delivery **server** response looks like:
+1. Delivery **app** calls public API of the Livingdocs **server**: `GET https://livingdocs-server/api/routing/web?path=/article/adventure/i-m-on-the-road-again-09fed8`
+1. Livingdocs **server** response looks like:
 
     ```json
     [{
@@ -18,7 +18,7 @@ The Delivery **app** is asked to deliver a **document** located at a **path**. T
     }]
     ```
 
-1. (Down the road, the delivery **app** will ask the delivery **server** for an HTML rendering of the latest publication of this document and serve it to the client)
+1. (Down the road, the delivery **app** will ask the Livingdocs **server** for an HTML rendering of the latest publication of this document and serve it to the client)
 
 ## Architecture
 
@@ -36,7 +36,7 @@ The plugin's responsibility is to generate a path (`/article/adventure/i-m-on-th
 
 The routes indexer sees this new publication event. It first puts the routing information for this publication (found in the publication metadata which the *routing metadata plugin* wrote) in the *routes cache*: `"doc:173" => {path: …, slug: …, …}`. The routes indexer, through another intervaled function, puts `"path:5:/article/adventure/i-m-on-the-road-again-09fed8" => {id: 173, resource: {status: 200, …}, …}` in the *routes cache*.
 
-The Delivery **app** gets a GET request for `/article/adventure/i-m-on-the-road-again-09fed8`. It asks the Delivery **server**; its API does a lookup in the routes cache; this key being in the routes cache it directly returns the corresponding value, which are telling the Delivery **app** about which document this routes corresponds to, which is here the document `173`.
+The Delivery **app** gets a GET request for `/article/adventure/i-m-on-the-road-again-09fed8`. It asks the Livingdocs **server**; its API does a lookup in the routes cache; this key being in the routes cache it directly returns the corresponding value, which are telling the Delivery **app** about which document this routes corresponds to, which is here the document `173`.
 
 
 ### Routing Metadata Plugin
@@ -102,9 +102,9 @@ If not explicitly set to `enabled: true`, routing will be disabled.
 
 #### Master check
 
-In a setting with more than one Delivery **server** running against the same *routes cache*, we want to have at most one *routes indexer* running at any time. Having many of them trying to concurrently index the same publication events could create issues.
+In a setting with more than one Livingdocs **server** running against the same *routes cache*, we want to have at most one *routes indexer* running at any time. Having many of them trying to concurrently index the same publication events could create issues.
 
-When using Redis, a Delivery **server** will either be the *master* and index the routes by running the *routes indexer* or not be the *master* and not index the routes by pausing the *routes indexer*.
+When using Redis, a Livingdocs **server** will either be the *master* and index the routes by running the *routes indexer* or not be the *master* and not index the routes by pausing the *routes indexer*.
 
 When a *master* crashes or gets shut down, another node will get promoted *master*. Same goes when *master* gets too slow because of the load or any other issue: it will get demoted and another node will get promoted.
 

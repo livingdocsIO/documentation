@@ -2,9 +2,13 @@
 
 Both the server and the editor ship with a default configuration, that works out of the box with the Dockerfiles we provide.
 
+## Operating system
+
+Livingdocs runs under both Mac OSX and Linux. We did not test (nor support) it under Windows. If you are using Windows we are recommending a VM, e.g. https://www.virtualbox.org/
+
 ## Install Docker
 
-Install the docker engine to use our
+Install the docker engine:
 https://docs.docker.com/engine/getstarted/step_one/
 
 ## Node setup
@@ -23,7 +27,7 @@ https://stedolan.github.io/jq/download/
 
 ### Install node and npm
 
-If the project requires a specific node or npm version, it is stated in the `package.json`. You can install the required versions by running   
+If the editor or server require a specific node or npm version, it is stated in the `package.json`. You can install the required versions by running   
 
 ```bash
 nvm install "$(jq -r '.engines.node' package.json)"
@@ -51,7 +55,7 @@ For example, you will want a different database configuration for production tha
 ## Config structure
 
 In the configuration folder, you find a global configuration in `environments/all`, that you can override with
-environment-specific values in `environments/{environment}.coffee`. These files are checked in to source control and therefore shared with everyone working with the project.
+environment-specific values in `environments/{environment}.coffee`. These files are checked in to source control and therefore shared with everyone working with the repository.
 
 For local overrides you can use `secrets/{environment}.coffee` in the server and `user_specific/{environment}.coffee` in the editor. These files are not checked in to source control and therefore specific to your local installation.
 
@@ -79,4 +83,4 @@ export ENVIRONMENT=<your environment>
 You can set this variable to any value that you have a config for in your `environments folder`.
 
 
-**Proceed with the instructions in the projects `README`**
+**Proceed with the instructions in the editor and server `README`**
