@@ -60,7 +60,9 @@
 
 * Editor
   * [Styleguide](reference-docs/editor-styleguide/styleguide.md)
+  * [Why use an image service?](concepts/images/why-an-image-service.md)
   * [Image Services](concepts/images/image-services.md)
+  * [Responsive background images](concepts/images/responsive-bg-images.md)
 * Server
   * [Editing API](reference-docs/server-editing-api/README.md)
     * [Basics](reference-docs/server-editing-api/api_basics.md)
@@ -68,12 +70,18 @@
     * [Error](reference-docs/server-editing-api/api_errors.md)
     * [Authentication](reference-docs/server-editing-api/editing_api_authentication.md)
     * [Design](reference-docs/server-editing-api/editing_api_design.md)
-    * [Lists](reference-docs/server-editing-api/editing_api_list.md)
+    * [Lists](reference-docs/server-editing-api/editing_api_document_list.md)
     * [Documents](reference-docs/server-editing-api/editing_api_documents.md)
     * [Revisions](reference-docs/server-editing-api/editing_api_revisions.md)
     * [Publications](reference-docs/server-editing-api/editing_api_publications.md)
     * [Users](reference-docs/server-editing-api/editing_api_users.md)
     * [Projects](reference-docs/server-editing-api/editing_api_spaces.md)
     * [Hooks](reference-docs/server-editing-api/editing_api_hooks.md)
+* Framework
+  * [Browser API](reference-docs/common-livingdoc/browser_api.md)
+  * [Livingdoc](reference-docs/common-livingdoc/livingdoc.md)
+  * [Component Tree](reference-docs/common-livingdoc/component_tree.md)
+  * [Component Model](reference-docs/common-livingdoc/component_model.md)
+  * [Directives](reference-docs/common-livingdoc/directives.md)
 * [Releases](reference-docs/maintenance/release-management/index.md)
   * [Deployment](reference-docs/maintenance/release-management/deployment-pipeline.md)
