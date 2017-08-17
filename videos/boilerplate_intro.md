@@ -36,6 +36,7 @@ Basically everything in this documentation that is under the section "Livingdocs
 - How long is the process time, for 1 million documents, needed to update Elasticsearch and Postgres if:
   - we add a new metadata field
   - we change an already existing metadata field
+
 > Both require a metadata migration. A run of comparable size takes around 8 hours at the NZZ.
 
 - During this reindexing/migration how do you ensure availability?
@@ -43,9 +44,7 @@ Basically everything in this documentation that is under the section "Livingdocs
 
 - In the publication screen, how would you populate a metadata field with a dynamic list of departments?
 > You use the multi-select:
-https://docs.livingdocs.io/reference-docs/editor-configuration/metadata.html#multiselect-box
-
-> In the `getSelectables` you do an ajax request to where you get your dynamic departments from.
+https://docs.livingdocs.io/reference-docs/editor-configuration/metadata.html#multiselect-box In the `getSelectables` you do an ajax request to where you get your dynamic departments from.
 
 - Is there any limitations in listing documents in the dashboards: maximum number of documents, filtering problems?
 > No.
