@@ -14,7 +14,7 @@ Learn how to create a Livingdocs Design given that you have already written the 
 
 ### Video
 
-{% video %}https://vimeo.com/229997156{% endvideo %}
+{% vimeo %}229997156{% endvimeo %}
 
 ### Related Material
 

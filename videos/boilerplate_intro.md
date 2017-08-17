@@ -12,7 +12,7 @@ Learn about the basics of the Livingdocs architecture and how to setup the boile
 
 ### Video
 
-{% video %}https://vimeo.com/229998718{% endvideo %}
+{% vimeo %}229998718{% endvimeo %}
 
 ### Related Material
 
