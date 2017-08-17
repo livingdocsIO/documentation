@@ -22,7 +22,7 @@ the same `design`. A `channel` also defines the `Renditions`.
 ## HuGO
 
 A stand-alone product to manage images and agency reports in large numbers.
-Also acts as a proxy for our Print Api to print publishing systems like `NewsNT`.
+Also acts as a proxy for our Print Api to print publishing systems like `NewsNT` or `WoodWing`.
 
 ## NewsNT
 
