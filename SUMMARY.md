@@ -30,6 +30,7 @@
   * [Configure channels](reference-docs/server-configuration/channel-config.md)
   * [Publish and Unpublish Hooks](reference-docs/server-extensions/publish-hooks.md)
   * [Routing system](reference-docs/server-public-api/routing-system.md)
+  * [Stack](reference-docs/server-configuration/stack.md)
 * [Editor](walkthroughs/add_customizations.md#editor)
   * [Metadata](reference-docs/editor-configuration/metadata.md)
   * [Dashboard search filters](reference-docs/editor-configuration/search-filters.md)
