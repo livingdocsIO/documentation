@@ -1,7 +1,7 @@
 #### Channel Configuration
 
 The channel configuration allows you to:
-- define alterations of your content before Rendering
+- implement a hook method to alter document content before Rendering
 - define different rendering outputs (renditions)
 - define metadata
 - define the metadata screen setup for the editor (this can be done on the server or in the editor whereas the server configuration takes precedence)
@@ -13,15 +13,8 @@ The channel configuration allows you to:
 The following sample configuration file illustrates all of the above.
 
 Configuration file for a single channel:
+
 ```js
-// run before the rendering process, the same for all renditions
-beforeRender: function (rendition, callback) {
-  const livingdoc = rendition.getLivingdoc()
-  const galleryTeasers = livingdoc.componentTree.find('gallery-teaser')
-
-  extendGalleryTeasers(galleryTeasers, rendition, callback)
-},
-
 // define a set of renderings for your channel
 renditions: {
   // a label
@@ -90,18 +83,6 @@ pushNotifications: {
   }]
 }
 
-// called whenever a document is published, gets the structured document (documentVersion) and all renderings (renditions)
-publish: function ({documentVersion, renditions}, callback) {
-  getDocumentCache().del(documentVersion.getDocumentId())
-  callback()
-},
-
-// called whenever a document is unpublished
-unpublish: function ({documentVersion}, callback) {
-  getDocumentCache().del(documentVersion.getDocumentId())
-  callback()
-},
-
 editor: {
   frontend: {
     // link pattern for ld-editor publish panel to generate a link
@@ -154,6 +135,98 @@ copy: [
     }
   ]
 ]
+```
+
+
+## Hooks: before render, on publish, on unpublish
+
+A few APIs are provided to allow hooking into the document (un)publication process and into the rendering pipeline.
+
+Although these hooks should preferably be registered before the server gets initialized, it is also possible to register them at runtime using the same APIs. (This is particularly handy for testing purpose, but also useful if you create projects or channels at runtime and need to set hooks for these.)
+
+All hooks are asynchronous functions that are registered synchronously using the common signature: `({projectHandle, channelHandle, hook})`. The function `hook` passed here has the signature `({contentType, payload}, callback)`. The `payload` is the only thing that vary by hook type.
+
+Each hook is tied to a specific channel of a specific project. For a single channel, you can only register on hook of each type:
+
+```js
+registerPublishHook({projectHandle: 'foo', channelHandle: 'bar', hook: myHook})
+// the following register call will overwrite `myHook` with `myOtherHook`:
+registerPublishHook({projectHandle: 'foo', channelHandle: 'bar', hook: myOtherHook})
+```
+
+Since hooks get passed the document `contentType`, it is up to the hook implementer to filter by `contentType` if need be. This can be used to apply different modifications to documents that have different `contentTypes`.
+
+Examples for each hook type:
+
+### Publish/Unpublish Hooks
+
+These two are set on the `documents` feature.
+
+```js
+// publish hook
+liServer.features.api('li-documents').hooks
+  .registerPublishHook({
+    projectHandle: 'your-awesome-project',
+    channelHandle: 'some-channel',
+    hook: ({
+      contentType,
+      payload // payload is {documentVersion, renditions}
+    }, callback) => {
+      liServer.log.info(`Hook called for contentType: ${contentType}!`)
+      liServer.log.debug({
+        documentVersion: payload.documentVersion,
+        renditions: payload.renditions
+      })
+      callback()
+    }
+  })
+
+// unpublish hook
+liServer.features.api('li-documents').hooks
+  .registerUnpublishHook({
+    projectHandle: 'your-awesome-project',
+    channelHandle: 'some-channel',
+    hook: ({
+      contentType,
+      payload // payload is {documentVersion}
+    }, callback) => {
+      liServer.log.info({documentVersion: payload.documentVersion}, `of type ${contentType} will get unpublished!`)
+      callback()
+    }
+  })
+```
+
+### Before Render Hooks
+
+This one hooks into the `render-pipeline` feature. Here is a full example including server initialization:
+
+```js
+const server = require('livingdocs-server/core')
+const config = require('livingdocs-server/conf')
+const liServer = server(config)
+const port = liServer.config.get('server:port')
+
+liServer.features.api('li-render-pipeline').registerBeforeRenderHook({
+  projectHandle: 'your-interesting-project',
+  channelHandle: 'some-channel',
+  hook: ({contentType, rendition}, callback) => { // here `payload` is a rendition
+    if (['interview', 'biography'].includes(contentType)) {
+      liServer.log.info("We're about to render something about somebody!")
+      // do something with the rendition:
+      const livingdoc = rendition.getLivingdoc()
+      const galleryTeasers = livingdoc.componentTree.find('gallery-teaser')
+
+      return extendGalleryTeasers(galleryTeasers, rendition, callback)
+    }
+
+    callback()
+  }
+})
+
+liServer.listen(port, function (err) {
+  if (err) throw err
+  liServer.log.info('Listening on http://localhost:%s, started within %ss', port, process.uptime())
+})
 ```
 
 
