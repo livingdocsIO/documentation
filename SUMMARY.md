@@ -55,7 +55,9 @@
   * [NPM Tokens](setup-and-deployment/npm/access-private-npm-modules.md)
 
 * [Design Server](reference-docs/server-configuration/design-servers.md)
-* [Load Testing](reference-docs/maintenance/how-to-do-a-load-test.md)
+* [How to do a Load Test](reference-docs/maintenance/how-to-do-a-load-test.md)
+* [How to do a Stress Test](https://github.com/DaRaFF/stress-test-example#how-to-make-a-simple-stress-test)
+* [How to Configure and Interpret Varnish](reference-docs/maintenance/how-to-varnish.md)
 
 ## Administration
 
