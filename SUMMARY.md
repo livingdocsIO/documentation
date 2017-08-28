@@ -61,6 +61,8 @@
 
 * [Create Users](walkthroughs/create-users.md)
 * [Logs](reference-docs/server-configuration/logging.md)
+* [Project](reference-docs/server-configuration/admin-commands.md#project-create)
+* [Maintain Search Index](reference-docs/server-configuration/admin-commands.md#search-index)
 
 ## Livingdocs core development
 
