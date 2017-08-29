@@ -91,3 +91,4 @@
   * [Directives](reference-docs/common-livingdoc/directives.md)
 * [Releases](reference-docs/maintenance/release-management/index.md)
   * [Deployment](reference-docs/maintenance/release-management/deployment-pipeline.md)
+  * [Workflow](reference-docs/maintenance/release-management/workflow.md)
