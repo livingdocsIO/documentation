@@ -142,59 +142,65 @@ copy: [
 
 A few APIs are provided to allow hooking into the document (un)publication process and into the rendering pipeline.
 
-Although these hooks should preferably be registered before the server gets initialized, it is also possible to register them at runtime using the same APIs. (This is particularly handy for testing purpose, but also useful if you create projects or channels at runtime and need to set hooks for these.)
+Although these hooks should preferably be registered before the server gets initialized (using [Server Initialized Hooks](../../reference-docs/server-extensions/server-initalization.md#initialized-hooks)), it is also possible to register them at runtime using the same APIs. (This is particularly handy for testing purpose, but also useful if you create projects or channels at runtime and need to set hooks for these.)
 
-All hooks are asynchronous functions that are registered synchronously using the common signature: `({projectHandle, channelHandle, hook})`. The function `hook` passed here has the signature `({contentType, payload}, callback)`. The `payload` is the only thing that vary by hook type.
+All hooks are asynchronous functions, registered asynchronously using the common signature: `({projectHandle, channelHandle, namedHook}, callback)`. The hook provided must have the signature `({documentType, payload}, callback)`. The `payload` is the only thing that varies by hook type.
 
-Each hook is tied to a specific channel of a specific project. For a single channel, you can only register on hook of each type:
+Each hook is tied to a specific channel of a specific project. For a single channel, you can only register one hook of each type:
 
 ```js
-registerPublishHook({projectHandle: 'foo', channelHandle: 'bar', hook: myHook})
+registerPublicationHooks({projectHandle: 'foo', channelHandle: 'bar', publishHook: myHook})
 // the following register call will overwrite `myHook` with `myOtherHook`:
-registerPublishHook({projectHandle: 'foo', channelHandle: 'bar', hook: myOtherHook})
+registerPublicationHooks({projectHandle: 'foo', channelHandle: 'bar', publishHook: myOtherHook})
 ```
 
-Since hooks get passed the document `contentType`, it is up to the hook implementer to filter by `contentType` if need be. This can be used to apply different modifications to documents that have different `contentTypes`.
+Since hooks get passed the `documentType` of a document, it is up to the hook implementer to filter by `documentType` if need be. This can be used to apply different modifications to documents that have different `documentType`s.
 
 Examples for each hook type:
 
 ### Publish/Unpublish Hooks
 
-These two are set on the `documents` feature.
+These two are set at once on the `documents` feature.
 
 ```js
-// publish hook
-liServer.features.api('li-documents').hooks
-  .registerPublishHook({
+const server = require('livingdocs-server/core')
+const config = require('livingdocs-server/conf')
+const liServer = server(config)
+const port = liServer.config.get('server:port')
+
+
+liServer.registerInitializedHook((done) => {
+  liServer.features.api('li-documents').registerPublicationHooks({
     projectHandle: 'your-awesome-project',
     channelHandle: 'some-channel',
-    hook: ({
-      contentType,
+    publishHook: ({
+      documentType,
       payload // payload is {documentVersion, renditions}
     }, callback) => {
-      liServer.log.info(`Hook called for contentType: ${contentType}!`)
+      liServer.log.info(`Hook called for documentType: ${documentType}!`)
       liServer.log.debug({
         documentVersion: payload.documentVersion,
         renditions: payload.renditions
       })
       callback()
-    }
-  })
-
-// unpublish hook
-liServer.features.api('li-documents').hooks
-  .registerUnpublishHook({
-    projectHandle: 'your-awesome-project',
-    channelHandle: 'some-channel',
-    hook: ({
-      contentType,
+    },
+    unpublishHook: ({
+      documentType,
       payload // payload is {documentVersion}
-    }, callback) => {
-      liServer.log.info({documentVersion: payload.documentVersion}, `of type ${contentType} will get unpublished!`)
-      callback()
-    }
+    }, callback) => {callback()}
   })
+})
+
+liServer.listen(port, function (err) {
+  if (err) throw err
+  liServer.log.info('Listening on http://localhost:%s, started within %ss', port, process.uptime())
+})
 ```
+
+* `publishHook`:
+    * `({documentType, {documentVersion, renditions}}, callback)`
+* `unpublishHook`:
+    * `({documentType, {documentVersion}}, callback)`
 
 ### Before Render Hooks
 
@@ -206,21 +212,26 @@ const config = require('livingdocs-server/conf')
 const liServer = server(config)
 const port = liServer.config.get('server:port')
 
-liServer.features.api('li-render-pipeline').registerBeforeRenderHook({
-  projectHandle: 'your-interesting-project',
-  channelHandle: 'some-channel',
-  hook: ({contentType, rendition}, callback) => { // here `payload` is a rendition
-    if (['interview', 'biography'].includes(contentType)) {
-      liServer.log.info("We're about to render something about somebody!")
-      // do something with the rendition:
-      const livingdoc = rendition.getLivingdoc()
-      const galleryTeasers = livingdoc.componentTree.find('gallery-teaser')
 
-      return extendGalleryTeasers(galleryTeasers, rendition, callback)
+liServer.registerInitializedHook((done) => {
+  liServer.features.api('li-render-pipeline').registerRenderHooks({
+    projectHandle: 'your-interesting-project',
+    channelHandle: 'some-channel',
+    beforeRenderHook: ({documentType, rendition}, callback) => { // here `payload` is a rendition
+      if (['interview', 'biography'].includes(documentType)) {
+        liServer.log.info("We're about to render something about somebody!")
+        // do something with the rendition:
+        const livingdoc = rendition.getLivingdoc()
+        const galleryTeasers = livingdoc.componentTree.find('gallery-teaser')
+
+        return extendGalleryTeasers(galleryTeasers, rendition, callback)
+      }
+
+      callback()
     }
+  })
 
-    callback()
-  }
+  done()
 })
 
 liServer.listen(port, function (err) {
@@ -229,6 +240,8 @@ liServer.listen(port, function (err) {
 })
 ```
 
+* `beforeRenderHook`:
+    * `({documentType, rendition}, callback)`
 
 ## A visual example of the `editor.frontend` configuration
 
