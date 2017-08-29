@@ -82,7 +82,7 @@ var designDefinition = {
     }
   ],
 
-  // Groups are jsut required to show your components in the
+  // Groups are just required to show your components in the
   // user interface. You can group and order the appearance of
   // your components here.
   groups: [

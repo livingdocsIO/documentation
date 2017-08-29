@@ -19,7 +19,7 @@ If you want to use the HTML of a rendered article, you can access it as `renditi
 
 ### The documentVersion object
 
-The documentVersion object is a core object and thus contains private APIs. You should only use the provided getter methods on the instance in order not to program agains private APIs that are prone to change. The following methods are provided:
+The documentVersion object is a core object and thus contains private APIs. You should only use the provided getter methods on the instance in order not to program against private APIs that are prone to change. The following methods are provided:
 
 * **getDocumentId()**, returns the unique document id of the document that was published (the same as is in the URL of the editor when you have the document opened)
 
