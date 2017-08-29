@@ -17,3 +17,15 @@ liServer.listen(port, function (err) {
   console.log('Listening on http://localhost:%s', port)
 })
 ```
+
+## Initialized Hooks
+
+Hooks to be executed right after the server initialized can be registered on a Livingdocs Server instance.
+
+```js
+liServer.registerInitializedHook((done) => {
+  done(/* err */)
+})
+```
+
+You can register as many hooks as you'd like. They will be executed sequentially (and always in registration order), which means that no two hooks ever run in parallel and instead each hook waits until the previous one is done executing before running.
