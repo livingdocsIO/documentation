@@ -2,7 +2,7 @@
 
 ## config.json
 
-The config.json defines the design configuration. You can specifiy through the design configuration what options are available and how components behave when editing in the Livingdocs editor.
+The config.json defines the design configuration. You can specify through the design configuration what options are available and how components behave when editing in the Livingdocs editor.
 
 Basic Information:
 

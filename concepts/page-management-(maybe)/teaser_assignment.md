@@ -30,7 +30,7 @@ The figure above illustrates this point by showing 3 sets of states:
 - the current publication which is assigned to list 2 and list 3
 - the current draft of the document which is also assigned to list 2 and list 3
 
-The list user interface always works with the latest publication of a document (filled lines) and the listId assignment of the draft is ensured to be the same as the one of the current publication. The draft (latest state) of a document can only overwrite the list assingment once a user hits "Publish" in the publish panel and with this creates a new publication record.
+The list user interface always works with the latest publication of a document (filled lines) and the listId assignment of the draft is ensured to be the same as the one of the current publication. The draft (latest state) of a document can only overwrite the list assignment once a user hits "Publish" in the publish panel and with this creates a new publication record.
 
 NOTE: Never ever trigger an automated publish from the list user interface. This could lead to unwantend draft changes to suddenly become public. The update of the `listIds` is controlled and does not publish any other information.
 
