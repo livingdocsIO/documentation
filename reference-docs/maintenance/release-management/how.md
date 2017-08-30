@@ -26,7 +26,7 @@ The release use `v2.1.0` as a base tag.
 
 ## Downstream applications
 
-Clients who develop their downstreams on their own handle releases by themselves:
+Clients who develop their downstreams on their own handle releases by themselves, examples:
 - NZZ
 - Bluewin
 
@@ -34,7 +34,7 @@ Livingdocs handles the releases of its two downstreams :
 - [livingdocs-service-server](https://github.com/upfrontIO/livingdocs-service-server)
 - [livingdocs-service-editor](https://github.com/upfrontIO/livingdocs-service-editor)
 - [livingdocs-server-boilerplate](https://github.com/upfrontIO/livingdocs-server-boilerplate)
-- [livingdocs-editor-boilerplate]( (https://github.com/upfrontIO/livingdocs-editor-boilerplate)
+- [livingdocs-editor-boilerplate](https://github.com/upfrontIO/livingdocs-editor-boilerplate)
 
 ### Assumption
 
