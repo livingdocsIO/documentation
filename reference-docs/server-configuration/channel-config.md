@@ -138,7 +138,7 @@ copy: [
 ```
 
 
-## Hooks: before render, on publish, on unpublish
+## Hooks
 
 A few APIs are provided to allow hooking into the document (un)publication process and into the rendering pipeline.
 
@@ -160,7 +160,12 @@ Examples for each hook type:
 
 ### Publish/Unpublish Hooks
 
-These two are set at once on the `documents` feature.
+These two are set at once on the `documents` feature:
+
+* `publishHook`:
+    * `({documentType, {documentVersion, renditions}}, callback)`
+* `unpublishHook`:
+    * `({documentType, {documentVersion}}, callback)`
 
 ```js
 const server = require('livingdocs-server/core')
@@ -188,7 +193,7 @@ liServer.registerInitializedHook((done) => {
       documentType,
       payload // payload is {documentVersion}
     }, callback) => {callback()}
-  })
+  }, done)
 })
 
 liServer.listen(port, function (err) {
@@ -197,14 +202,14 @@ liServer.listen(port, function (err) {
 })
 ```
 
-* `publishHook`:
-    * `({documentType, {documentVersion, renditions}}, callback)`
-* `unpublishHook`:
-    * `({documentType, {documentVersion}}, callback)`
-
 ### Before Render Hooks
 
-This one hooks into the `render-pipeline` feature. Here is a full example including server initialization:
+This one hooks into the `render-pipeline` feature. The `beforeRenderHook` is the last opportunity you have to modify/transform a document before it bets rendered.
+
+* `beforeRenderHook`:
+    * `({documentType, rendition}, callback)`
+
+Here is a full example including server initialization:
 
 ```js
 const server = require('livingdocs-server/core')
@@ -217,7 +222,7 @@ liServer.registerInitializedHook((done) => {
   liServer.features.api('li-render-pipeline').registerRenderHooks({
     projectHandle: 'your-interesting-project',
     channelHandle: 'some-channel',
-    beforeRenderHook: ({documentType, rendition}, callback) => { // here `payload` is a rendition
+    beforeRenderHook: ({documentType, rendition}, callback) => {
       if (['interview', 'biography'].includes(documentType)) {
         liServer.log.info("We're about to render something about somebody!")
         // do something with the rendition:
@@ -229,9 +234,7 @@ liServer.registerInitializedHook((done) => {
 
       callback()
     }
-  })
-
-  done()
+  }, done)
 })
 
 liServer.listen(port, function (err) {
@@ -240,8 +243,50 @@ liServer.listen(port, function (err) {
 })
 ```
 
-* `beforeRenderHook`:
-    * `({documentType, rendition}, callback)`
+### Document Lists Hooks
+
+Two hooks are available in the `document-lists` feature.
+
+* `updateListHook`:
+
+        ({
+          listId,
+          remove: [30, 199, …],
+          add: [{id: 77, order: 12}, …]
+        }, callback)
+
+* `getListHook`:
+    * `({listId}, callback)`
+
+Here is a full example including server initialization:
+
+```js
+const server = require('livingdocs-server/core')
+const config = require('livingdocs-server/conf')
+const liServer = server(config)
+const port = liServer.config.get('server:port')
+
+
+liServer.registerInitializedHook((done) => {
+  liServer.features.api('li-document-lists').registerListHooks({
+    projectHandle: 'your-interesting-project',
+    channelHandle: 'some-channel',
+    updateListHook: ({listId, remove, add}, callback) => {
+      console.info(`${listId} update happening, removing ${remove.length} things, adding ${add.length} things.`)
+      callback()
+    },
+    getListHook: ({listId}, callback) => {
+      console.info(`Getting list ${listId}`)
+      callback()
+    }
+  }, done)
+})
+
+liServer.listen(port, function (err) {
+  if (err) throw err
+  liServer.log.info('Listening on http://localhost:%s, started within %ss', port, process.uptime())
+})
+```
 
 ## A visual example of the `editor.frontend` configuration
 
