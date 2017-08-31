@@ -5,7 +5,7 @@ The boilerplate projects are small customizing setups that illustrate this.
 
 This document gives an overview of how to register custom features without going into detail on how to write any of them.
 
-### Server
+### Server
 
 (Refer to the [boilerplate server](https://github.com/upfrontIO/livingdocs-server-boilerplate) to see real examples of this.)
 

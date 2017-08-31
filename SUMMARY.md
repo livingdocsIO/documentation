@@ -6,7 +6,7 @@
 
 * [Glossary](./GLOSSARY.md)
 
-## Videos
+## Videos
 
 * [Livingdocs Design Intro](videos/design_intro.md)
 * [Livingdocs Boilerplate Intro](videos/boilerplate_intro.md)

@@ -513,7 +513,7 @@ The `getStatus` elements contains the following attributes:
 - `livingdocsId`, the Livingdocs id, should match what you got in the request
 - `statusName`, the print status this article is in, see the available statuses below
 
-#### Available statuses
+#### Available statuses
 
 The available statuses values for a print article are:
 - `Redigieren`, the article is being edited

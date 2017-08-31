@@ -179,7 +179,7 @@ Example:
 Reading example: The `doc-editable` directive `headline` will be filled through the metadata service `iframely` and the content comes from the metadata key `author`.
 
 
-### `doc-image`
+### `doc-image`
 
 `ratios`: allows you to define pre-defined image ratios for an image. The cropping mask in the Livingdocs editor will show those ratios when cropping the image of the respective component.
 
