@@ -14,11 +14,8 @@ The release use `v2.1.0` as a base tag.
 #### Optional
 **If** `v2.1.0` is not the latest tag/release and to avoid potential versioning conflicts one need to execute:
 
-1. `git checkout -b release-bump-2.2.0`
-2. `git commit --allow-empty -m "feat: bump minor version to 2.2.0 for release management"`
-3. `git push origin release-bump-2.2.0`
-4. `git branch -D release-bump-2.2.0`
-5. Merge the Pull request in the Github UI and wait for the semantic release script to produce the new `v2.2.0` release and tag.
+1. `./node_modules/@livingdocs/release-tools/li-release push-feat-commit v2.2.0`
+2. Merge the Pull request in the Github UI and wait for the semantic release script to produce the new `v2.2.0` release and tag.
 
 #### Mandatory
 
