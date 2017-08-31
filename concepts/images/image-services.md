@@ -74,7 +74,7 @@ Below we'll outline the configuration for both ImgIX and resrc.it.
 
 The ImgIX configuration uses `srcset`. If you don't know about this HTML standard yet, refer to this article first: https://ericportis.com/posts/2014/srcset-sizes/
 
-#### Editor
+#### Editor
 
 ```js
   app: {

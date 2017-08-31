@@ -1,4 +1,4 @@
-# Publish npm packages
+# Publish npm packages
 
 All public and private packages belong to the [@livingdocs organization](https://www.npmjs.com/org/livingdocs).
 
@@ -31,7 +31,7 @@ npm adduser --scope=livingdocs --always-auth
 ```
 
 
-### Public package
+### Public package
 
 Packages without a scope are public by default. If you use the `@livingdocs` scope in the package name, you must set access to public explicitly:
 

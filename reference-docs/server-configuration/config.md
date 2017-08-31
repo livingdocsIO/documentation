@@ -81,7 +81,7 @@ logs: {
 [More info about logging](./logging.md)
 
 
-#### Docker
+#### Docker
 
 This tells the database scripts which recreates the database that docker is used.
 This does not work for docker-compose. And the docker container where postgres runs
@@ -105,7 +105,7 @@ stack: ['all']
 ## Features
 
 
-#### Authentication
+#### Authentication
 
 Configure the authentication feature.
 
@@ -201,7 +201,7 @@ emails: {
 ```
 
 
-#### Designs
+#### Designs
 
 Configure the Livingdocs Design Server.
 
@@ -290,7 +290,7 @@ files: {
 }
 ```
 
-#### Documents
+#### Documents
 
 ```js
 documents: {
@@ -314,7 +314,7 @@ documents: {
 The channel config is described here: [channel config](./channel-config.md)
 
 
-#### Render Pipeline
+#### Render Pipeline
 
 Configure the worker configuration that is used to render Livingdoc Documents.
 

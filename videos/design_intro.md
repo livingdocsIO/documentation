@@ -12,7 +12,7 @@ There is quite some background noise in the video, we are very sorry for this
 
 Learn how to create a Livingdocs Design given that you have already written the HTML and CSS for your intended website.
 
-### Video
+### Video
 
 {% vimeo %}229997156{% endvimeo %}
 

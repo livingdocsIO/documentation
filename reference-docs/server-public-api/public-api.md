@@ -1,7 +1,7 @@
 
 # Public Api Documentation
 
-#### Current Version
+#### Current Version
 
 https://beta.livingdocs.io/public-api.html
 
