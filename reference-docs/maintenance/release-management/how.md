@@ -22,7 +22,7 @@ The release use `v2.1.0` as a base tag.
 
 #### Mandatory
 
-1. `./node_modules/@livingdocs/release-tools/li-release create-maintenance-release --base-tag 2.1.0 --npm-auth-token <token>`
+1. `npm run li-release create-maintenance-release --base-tag 2.1.0 --npm-auth-token <token>`
 
 ## Downstream applications
 
@@ -44,5 +44,5 @@ The latest release of the downstream application is `4.0.0`.
 
 In Livingdocs's downstreams semantic-release is not enabled. We always do a major bump after every sprint. Example for `5.0.0`
 
-1. `./node_modules/@livingdocs/release-tools/li-release init-release 5.0.0 master`
-2. `./node_modules/@livingdocs/release-tools/li-release finish-release 5.0.0`
+1. `npm run li-release init-release 5.0.0 master`
+2. `npm run li-release finish-release 5.0.0`
