@@ -79,6 +79,8 @@
 * [Add an Instagram embed](walkthroughs/instagram_embed.md)
 * [Use push notifications and custom dashboard item](walkthroughs/push_notifications.md)
 * [A possible routing system](reference-docs/server-public-api/routing-system.md)
+* [Hugo Drag and Drop](reference-docs/server-extensions/hugo-dnd.md)
+
 
 ## Devops
 
