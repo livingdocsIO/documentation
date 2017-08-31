@@ -31,6 +31,7 @@
   * [Publish and Unpublish Hooks](reference-docs/server-extensions/publish-hooks.md)
   * [Routing system](reference-docs/server-public-api/routing-system.md)
   * [Stack](reference-docs/server-configuration/stack.md)
+  * [Hugo Drag and Drop](reference-docs/server-extensions/hugo-dnd.md)
 * [Editor](walkthroughs/add_customizations.md#editor)
   * [Metadata](reference-docs/editor-configuration/metadata.md)
   * [Dashboard search filters](reference-docs/editor-configuration/search-filters.md)
