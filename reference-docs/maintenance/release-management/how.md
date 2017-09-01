@@ -7,11 +7,11 @@
 
 ### Assumption
 
-We want a release with semantic version `v2.1.x`.
+We want a release with semantic version `v2.1.0`.
 
 ### Steps
 
-#### If `v2.1.x` already exists
+#### If `v2.1.0` already exists
 
 The versioning of master and the release branch shouldn't overlap. Therefore, you have to bump the minor version of the master branch before creating the release branch. You need to execute:
 
@@ -27,7 +27,9 @@ The above list of commands will create a version `v2.2.0`. When new patches, min
 
 #### Mandatory
 
-**Prerequisites**: `v2.1.x` should already exists as a release in the upstream repository.
+**Prerequisites**: `v2.1.0` should already exists as a release in the upstream repository. If the release has been executed properly the npm package with version `v2.1.0` should also be uploaded to `npm`.
+
+The line below creates a new branch `maintenance-2.1.x`, where you can make patches for `2.1.x`. It won't conflict with 2.2.0 and newer versions. It is where hotfixes will be released.
 
 1. `./node_modules/@livingdocs/release-tools/li-release create-maintenance-release --base-tag 2.1.x --npm-auth-token <token>`
 
