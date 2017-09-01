@@ -7,12 +7,13 @@
 
 ### Assumption
 
-The release use `v2.1.0` as a base tag.
+We want a release with semantic version `v2.1.x`.
 
 ### Steps
 
-#### Optional
-**If** `v2.1.0` is not the latest tag/release and to avoid potential versioning conflicts one need to execute:
+#### If `v2.1.x` already exists
+
+The versioning of master and the release branch shouldn't overlap. Therefore, you have to bump the minor version of the master branch before creating the release branch. You need to execute:
 
 1. `git checkout -b release-bump-2.2.0`
 2. `git commit --allow-empty -m "feat: bump minor version to 2.2.0 for release management"`
@@ -20,9 +21,15 @@ The release use `v2.1.0` as a base tag.
 4. `git branch -D release-bump-2.2.0`
 5. Merge the Pull request in the Github UI and wait for the semantic release script to produce the new `v2.2.0` release and tag.
 
+The above list of commands will create a version `v2.2.0`. When new patches, minor or major updates are submitted the version that they will increment is `v2.2.0`.
+
+**Please note** that the release process does not create the semantic version you want to release.
+
 #### Mandatory
 
-1. `./node_modules/@livingdocs/release-tools/li-release create-maintenance-release --base-tag 2.1.0 --npm-auth-token <token>`
+**Prerequisites**: `v2.1.x` should already exists as a release in the upstream repository.
+
+1. `./node_modules/@livingdocs/release-tools/li-release create-maintenance-release --base-tag 2.1.x --npm-auth-token <token>`
 
 ## Downstream applications
 
@@ -38,7 +45,7 @@ Livingdocs handles the releases of its two downstreams :
 
 ### Assumption
 
-The latest release of the downstream application is `4.0.0`.
+Let's assume that the latest release is `v4.0.0`. We want to release `v5.0.0`.
 
 ### Steps
 
