@@ -11,6 +11,8 @@ We want a release with semantic version `v2.1.0`.
 
 ### Steps
 
+Execute this for the `livingdocs-server` and `livingdocs-editor`.
+
 #### If `v2.1.0` already exists
 
 The versioning of master and the release branch shouldn't overlap. Therefore, you have to bump the minor version of the master branch before creating the release branch. You need to execute:
