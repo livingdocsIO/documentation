@@ -18,23 +18,29 @@ liServer.listen(port, function (err) {
 })
 ```
 
-### `liServer.listen`
-
-`liServer.listen(port, (done) => {done(err, server)})`
-
-Initializes all registered features and spins a web server up.
-
 ### `liServer.initialize`
 
 `liServer.initialize((done) => {done()})`
 
-Initializes all registered features. Executes _initialized hooks_ (see below) right before calling its callback.
+Initializes all features. Executes _initialized hooks_ (see below) right before calling its callback.
+
+
+### `liServer.listen`
+
+`liServer.listen(port, (done) => {done(err, server)})`
+
+Calls `liServer.initialize()` and then starts a web server under the provided port. 
+Note: If you call `liServer.listen()` you must not call `liServer.initialize()` before.
+
+
 
 ### `liServer.registerInitializedHook`
 
 `liServer.registerInitializedHook((done) => {done()})`
 
-Hooks to be executed right after the server initialized can be registered on a Livingdocs Server instance.
+Hooks to be executed by `liServer.initialize()` right after all features have been initialized. This method
+is useful to configure features dynamically or register feature specific hooks. An example would be to register
+a publish hook on the documents feature.
 
 ```js
 liServer.registerInitializedHook((done) => {
