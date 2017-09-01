@@ -55,5 +55,10 @@ Let's assume that the latest release is `v4.0.0`. We want to release `v5.0.0`.
 
 In Livingdocs's downstreams semantic-release is not enabled. We always do a major bump after every sprint. Example for `5.0.0`
 
-1. `./node_modules/@livingdocs/release-tools/li-release init-release 5.0.0 master`
+1. `./node_modules/@livingdocs/release-tools/li-release init-release 5.0.0 master`. 
+  - Here we create a branch `release-5.0.0` which should contain as the minimum the updated `package.json` with the upstream version.
+  - All commits regarding the integration of the upstream branch with the downstream should also reside in this branch.
+  - Any fixes that needs to be done reside here as well.
 2. `./node_modules/@livingdocs/release-tools/li-release finish-release 5.0.0`
+  - Once we've completed the work on the release branch we close the release with the above command.
+
