@@ -19,29 +19,8 @@ metadata: {
     // 'li-text' is the name defined in /plugins/metadata/li-text
     plugin: 'li-text'
   }
-}
-```
-
-1. A standard plugin is stored in `plugins/metadata` and will automatically be loaded on the downstream and is always ready for usage. In our example we use `li-text`.
-2. Open the respective configuration file, in our case `conf/channels/web/article/all.js` and add the catchline config from the example to the metadata object into `all.js`.
-3. Open your elastic search metadata mapping (typically in `search/custom-mappings/metadata.json`) and add an entry as follows (the key `properties` probably already exists):
-```json
-{
-  "properties": {
-    "catchline": {
-      "type": "string"
-    }
-  }
-}
-```
-4. Reset your document elastic search index by running `grunt search-index:document:reset`
-
-## Editor
-
-After you've setup your new metadata field you can now use it in the editor. Open the respective configuration file, `all.js` if you want to have it in all environments, and add a configuration as follows:
-
-```js
-metadata: {
+},
+metadataFormArrangement: {
   article: [
     name: 'catchline',
     form: 'li-meta-text-form',
@@ -52,9 +31,21 @@ metadata: {
 }
 ```
 
-This will render a text-input field to the publish screen of articles where users can type in the value for the "catchline" which is automatically saved to the server.
-
-Note that you can add this configuration either as shown here in the editor configuration or under [`meatadataFormArrangement` on the server](../../reference-docs/server-configuration/channel-config.html). If you add it in both places the server configuration takes precedence. The structure of the configuration is the same in both places.
+1. A standard plugin is stored in `plugins/metadata` and will automatically be loaded on the downstream and is always ready for usage. In our example we use `li-text`.
+2. Open the respective configuration file, in our case `conf/channels/web/article/all.js` and add the catchline config from the example to the metadata object into `all.js`. The field `catchline` is now available on the server.
+3. If you want to see `catchline` on the editor publish screen, you have to configure the `metadataFormArrangement` in `conf/channels/web/article/all.js`. This will render a text-input field to the publish screen of articles where users can type in the value for the "catchline" which is automatically saved to the server.
+4. Open your elastic search metadata mapping (typically in `search/custom-mappings/metadata.json`) and add an entry as follows (the key `properties` probably already exists):
+```json
+{
+  "properties": {
+    "catchline": {
+      "type": "string"
+    }
+  }
+}
+```
+5. Reset your document elastic search index by running `grunt search-index:document:reset`
+6. After you have setup your new metadata field you can use it in the editor.
 
 # Example 2: Activate and Use a Custom Plugin
 
