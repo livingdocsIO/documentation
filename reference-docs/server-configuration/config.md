@@ -33,7 +33,14 @@ db: {
   database: 'li_local',
   pool_min: 1,
   pool_max: 5,
-  ssl: false
+  ssl: false,
+  // During the initial db setup e.g. with 'grunt setup',
+  // this parameter controls whether the database setup should run in a dedicated docker
+  // container. That way you don't need to install the postgres `createdb` and `dropdb` commands.
+  // `grunt setup` is not supported, when you start docker containers with
+  // `docker-compose` and point to a container by a dns name.
+  // default = true
+  run_db_setup_commands_within_docker_container: true
 }
 ```
 
@@ -80,20 +87,6 @@ logs: {
 
 [More info about logging](./logging.md)
 
-
-#### Docker
-
-This tells the database scripts which recreates the database that docker is used.
-This does not work for docker-compose. And the docker container where postgres runs
-must be named `postgres`.
-
-If `docker.enabled` is set to `false` then `createdb` and `dropdb` must be installed
-on the system.
-
-```js
-docker:
-  enabled: true
-```
 
 ## Stack
 A stack is a list of features that a server loads when it starts: [How to configure a stack?](./stack.md)

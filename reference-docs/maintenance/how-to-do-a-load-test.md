@@ -2,7 +2,7 @@
 
 Before you start with testing it's very important to understand **what** and **how** you want to test. The article [what is the difference between performance-, load- and stress testing](http://www.softwaretestinghelp.com/what-is-performance-testing-load-testing-stress-testing/) is a good place to start.
 
-A rule of thumb for load testing is: **never do a serious performance test locally!!!!** If you run a test locally you can get inconsistent results. The reason for that is f.e. of a slow internet connection or running applications in the background.
+A rule of thumb for load testing is: **never do a serious performance test locally!!!!** If you run a test locally you can get inconsistent results. The reason for that is e.g. of a slow internet connection or running applications in the background.
 
 
 
