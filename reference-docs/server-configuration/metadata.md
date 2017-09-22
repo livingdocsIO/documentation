@@ -26,7 +26,7 @@ Example of a metadata object:
 }
 ```
 Metadata can be seen as a public API for a document. Frontends usually access on metadata
-and use them for rendering data(f.e. teasers).
+and use them for rendering data(e.g. teasers).
 
 
 ## Configuration

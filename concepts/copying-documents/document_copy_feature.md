@@ -152,7 +152,7 @@ copy: [{
 #### (1.2) Layout Copy (Layout L1 to Layout L2)
 ![copy-layout-l1-to-layout-l2-modified-components](https://cloud.githubusercontent.com/assets/172394/18784528/043b54ec-8193-11e6-8b26-14322768fc27.png)
 
-Usually a copy in the same design can be done **without** an instruction. If a design has several layouts and in the layouts there are the same type of component with a different name (f.e. in layout1 'title' and in layout2 'title-extended'), then this configuration approach is the correct one at the moment.
+Usually a copy in the same design can be done **without** an instruction. If a design has several layouts and in the layouts there are the same type of component with a different name (e.g. in layout1 'title' and in layout2 'title-extended'), then this configuration approach is the correct one at the moment.
 
 #### Example Config
 
