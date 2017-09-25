@@ -9,8 +9,15 @@ A `Livingdoc` represents a Livingdocs document. It consists of a [componentTree]
 #### Create a new livingdoc:
 
 ```js
-const livingdoc = doc.new({
-  design: 'bootstrap'
+const doc = require('@livingdocs/framework')
+
+doc.design.load(jsonSerializedDesign)
+
+const livingdoc = doc.create({
+  design: {
+    name: 'bootstrap',
+    version: '1.0.0'
+  }
 })
 ```
 
@@ -57,11 +64,11 @@ const componentTree = livingdoc.componentTree
 componentTree.append(titleComponent)
 ```
 
-#### toJSON()
+#### toJson()
 
-With toJSON you can serialize a `Livingdoc`.
+With `toJson()` you can serialize a `Livingdoc` to a JSON string. To get a JSON object instead of a string, you can call `serialize()` instead of `toJson()`.
 
-Here you see a serialized version of a `livingdoc` in JSON. This is an example document that uses the 'ghibli' design and consist of three components: A cover, a title and a lead.
+Here you see a serialized version of a `livingdoc` in JSON. This is an example document that uses the 'ghibli' design and consists of three components: A cover, a title and a lead.
 
 ```json
 {
@@ -106,7 +113,7 @@ livingdoc.addJsDependency({src: 'url', namespace: 'embeds.twitter'})
 // Access the dependencies collection directly:
 const dependencies = livingdoc.dependencies
 
-// Transform to JSON
+// Transform to JSON object
 dependencies.serialize()
 
 // Get namespaces (Array of String)
