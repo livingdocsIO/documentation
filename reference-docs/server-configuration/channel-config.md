@@ -66,7 +66,7 @@ metadata: {
   }
 },
 
-// define the layout of the metadata screen in the editor (this can also be configured in the editor)
+// define the layout of the metadata screen in the editor
 metadataFormArrangement: [{
   name: 'title',
   form: 'li-meta-text-form',
