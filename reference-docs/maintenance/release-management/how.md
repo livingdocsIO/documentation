@@ -7,12 +7,15 @@
 
 ### Assumption
 
-The release use `v2.1.0` as a base tag.
+We want a release with semantic version `v2.1.0`.
 
 ### Steps
 
-#### Optional
-**If** `v2.1.0` is not the latest tag/release and to avoid potential versioning conflicts one need to execute:
+Execute this for the `livingdocs-server` and `livingdocs-editor`.
+
+#### If `v2.1.0` already exists
+
+The versioning of master and the release branch shouldn't overlap. Therefore, you have to bump the minor version of the master branch before creating the release branch. You need to execute:
 
 1. `git checkout -b release-bump-2.2.0`
 2. `git commit --allow-empty -m "feat: bump minor version to 2.2.0 for release management"`
@@ -20,9 +23,17 @@ The release use `v2.1.0` as a base tag.
 4. `git branch -D release-bump-2.2.0`
 5. Merge the Pull request in the Github UI and wait for the semantic release script to produce the new `v2.2.0` release and tag.
 
+The above list of commands will create a version `v2.2.0`. When new patches, minor or major updates are submitted the version that they will increment is `v2.2.0`.
+
+**Please note** that the release process does not create the semantic version you want to release.
+
 #### Mandatory
 
-1. `./node_modules/@livingdocs/release-tools/li-release create-maintenance-release --base-tag 2.1.0 --npm-auth-token <token>`
+**Prerequisites**: `v2.1.0` should already exists as a release in the upstream repository. If the release has been executed properly the npm package with version `v2.1.0` should also be uploaded to `npm`.
+
+The line below creates a new branch `maintenance-2.1.x`, where you can make patches for `2.1.x`. It won't conflict with 2.2.0 and newer versions. It is where hotfixes will be released.
+
+1. `./node_modules/@livingdocs/release-tools/li-release create-maintenance-release --base-tag 2.1.x --npm-auth-token <token>`
 
 ## Downstream applications
 
@@ -38,11 +49,16 @@ Livingdocs handles the releases of its two downstreams :
 
 ### Assumption
 
-The latest release of the downstream application is `4.0.0`.
+Let's assume that the latest release is `v4.0.0`. We want to release `v5.0.0`.
 
 ### Steps
 
 In Livingdocs's downstreams semantic-release is not enabled. We always do a major bump after every sprint. Example for `5.0.0`
 
-1. `./node_modules/@livingdocs/release-tools/li-release init-release 5.0.0 master`
+1. `./node_modules/@livingdocs/release-tools/li-release init-release 5.0.0 master`. 
+  - Here we create a branch `release-5.0.0` which should contain as the minimum the updated `package.json` with the upstream version.
+  - All commits regarding the integration of the upstream branch with the downstream should also reside in this branch.
+  - Any fixes that needs to be done reside here as well.
 2. `./node_modules/@livingdocs/release-tools/li-release finish-release 5.0.0`
+  - Once we've completed the work on the release branch we close the release with the above command.
+
