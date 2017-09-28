@@ -7,18 +7,17 @@
 
 ### Assumption
 
-The release use `v2.1.0` as a base tag.
+- All the commands are to be executed at the root of a project. The projects are listed above as upstream applications.
+- The release use `v2.1.0` as a base tag.
 
 ### Steps
 
 #### Optional
 **If** `v2.1.0` is not the latest tag/release and to avoid potential versioning conflicts one need to execute:
 
-1. `git checkout -b release-bump-2.2.0`
-2. `git commit --allow-empty -m "feat: bump minor version to 2.2.0 for release management"`
-3. `git push origin release-bump-2.2.0`
-4. `git branch -D release-bump-2.2.0`
-5. Merge the Pull request in the Github UI and wait for the semantic release script to produce the new `v2.2.0` release and tag.
+1. `./node_modules/@livingdocs/release-tools/li-release push-feat-commit v2.2.0`
+2. Create a pull request in Github from the branch, `release-bump-2.2.0`, created by the previous command.
+3. Merge the Pull request in the Github and wait for the semantic release script to produce the new `v2.2.0` release and tag.
 
 #### Mandatory
 
@@ -38,7 +37,8 @@ Livingdocs handles the releases of its two downstreams :
 
 ### Assumption
 
-The latest release of the downstream application is `4.0.0`.
+- All the commands are to be executed at the root of a project. The projects are listed above as downstream Livingdocs applications.
+- The latest release of the downstream application is `4.0.0`.
 
 ### Steps
 
