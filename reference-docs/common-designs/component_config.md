@@ -316,8 +316,6 @@ Example:
 
 ### `doc-include`
 
-(also see the following [techtalk](https://drive.google.com/open?id=0B8MM4t0ini5HbVB3cXlxSmZZV3c))
-
 `service`: defines the service type to use which corresponds to the name of an existing server-side plugin. `doc-include` services are freely configurable and are implemented as plugins in customizing projects. The concept is similar to [edge side includes](https://en.wikipedia.org/wiki/Edge_Side_Includes).
 
 Example:
