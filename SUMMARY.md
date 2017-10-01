@@ -24,7 +24,6 @@
 * [Register customizations](walkthroughs/add_customizations.md)
 * [Server](walkthroughs/add_customizations.md#server)
   * [Metadata](reference-docs/server-configuration/metadata.md)
-  * [Adding Includes](reference-docs/server-extensions/add-custom-include.md)
   * [Available Events](reference-docs/server-extensions/events.md)
   * [Configure the server](reference-docs/server-configuration/config.md)
   * [Configure channels](reference-docs/server-configuration/channel-config.md)
