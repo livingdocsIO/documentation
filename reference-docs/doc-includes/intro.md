@@ -8,7 +8,7 @@ In particular we will cover:
 
 ### What is a doc-include
 
-In short a doc-include allows you to define an area in a Livingdocs document where you can define the rendering yourself through a custom server-side plugin. The area in question is nothing else than a `directive` of type `doc-include` that you define in your design. (» if you don't know what a directive is see [here](../common-designs/component_config.md#directives)). To render HTML into this `doc-include` directive you register a custom renderer on the server. This renderer will return an HTML string and can use whatever templating system you like or even a remote system.
+In short a doc-include allows you to define an area in a Livingdocs document where you can define the rendering yourself through a custom server-side plugin. The area in question is nothing else than a `directive` of type `doc-include` that you define in your design. (» if you don't know what a directive is see [here](../common-designs/component_config.md#directives)). To render HTML into this `doc-include` directive you register a custom renderer on the server. This renderer will return an HTML string and can use whatever templating system you like or even a remote system. Includes are resolved every time a document is rendered. So they can be used to display dynamic content that changes after a document has been published.
 Inside the editor the same server-side plugin is used to preview the `doc-include` for your WYSIWYG experience. If you click the component that contains the `doc-include` directive the sidebar renders custom user interfaces that are defined for a specific `doc-include`. You can fully customize those user interfaces.
 
 ### How are doc-includes defined
