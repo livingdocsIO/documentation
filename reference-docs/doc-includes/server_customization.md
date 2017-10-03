@@ -1,10 +1,10 @@
-## doc-include server customizations
+## Doc-include server customizations
 
-This section explains how you setup the server to render `doc-include`s and gives an exhaustive listing of all options. It does not explain how to create custom editor user interfaces, this will be explained [here](TODO).
+This section explains how you setup the server to render `doc-include`s and gives an exhaustive listing of all options. It does not explain how to create custom editor user interfaces, this will be explained [here](./editor_customization.md).
 
-### resolve options
+### Resolve options
 
-Includes can be resolved in two modes when rendering a document. Either a `<ld-include>` tag can be rendered so the include can be resolved outside of Livingdocs (e.g by a script in the browser or a server that delivers the rendered html to a browser). Or the includes can be resolved on the Livingdocs server in the rendering of the document.
+Includes can be resolved in two modes when rendering a document. Either a `<ld-include>` tag can be rendered so the include can be resolved outside of Livingdocs (e.g by a script in the browser or a server that delivers the rendered HTML to a browser). Or the includes can be resolved on the Livingdocs server in the rendering of the document.
 
 #### Unresolved include
 
@@ -127,9 +127,10 @@ module.exports = {
 The `uiComponents` array allows you to define a list of ui elements that are rendered in the sidebar upon selection of the `doc-include` (top to bottom). There are 3 supported types:
 1. `angular-component`, sidebar user interface
 2. `angular-modal`, user interface in a modal dialog (if more space is required), button in the sidebar to open the modal
-3. `iframe-modal`, as above user interface in a modal dialog but loaded as an iframe (e.g. if you want to to your UI outside of Livingdocs)
+3. `iframe-modal`, as above user interface in a modal dialog but loaded as an iframe (e.g. if you want to implement your UI outside of Livingdocs)
 
-The first two require an angular plugin to be present in the Livingdocs editor. The markup for `angular-component` looks as follows:
+The first two require an angular plugin to be present in the Livingdocs editor.
+The markup for `angular-component` looks as follows:
 ```
 {
   // required, fixed name
@@ -143,7 +144,7 @@ The first two require an angular plugin to be present in the Livingdocs editor. 
 }
 ```
 
-The angular component `liFoo` is required to be registered in the editor. We explain [here](TODO) how to do this.
+The angular component `liFoo` is required to be registered in the editor. We explain [here](./editor_customization.md) how to do this.
 
 The markup for `angular-modal` looks as follows:
 ```
@@ -191,7 +192,7 @@ The `rendering` configuration allows you to define how your `doc-include` is ren
 1. `function`
 2. `remote`
 
-The `function` option is what we have seen so far. You are required to implement a method in your Livingdocs server customizing project that renders an HTML string for the `doc-include` in question. Above we have shown several examples for this. The API of the function is:
+The `function` option is what we have seen so far. You are required to implement a method that renders an HTML string for the `doc-include` in question. Above we have shown several examples for this. The API of the function is:
 ```
 function (params, options, callback)
 ```

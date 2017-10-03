@@ -36,6 +36,11 @@
   * [Cofigure text editing](reference-docs/editor-configuration/text-editing.md)
   * [Configure image cropping](reference-docs/editor-configuration/image-cropping.md)
   * [Configure editing features](reference-docs/editor-configuration/editing-features.md)
+* [Includes](reference-docs/doc-includes/intro.md)
+  * [Article embed and list](reference-docs/doc-includes/embed_and_list.md)
+  * [Server registration and rendering](reference-docs/doc-includes/server_customization.md)
+  * [Editor user interfaces](reference-docs/doc-includes/editor_customization.md)
+  * [Multiservice components](reference-docs/doc-includes/service_multiselect.md)
 
 * [Metadata Example (editor and server)](concepts/metadata/metadata-examples.md)
 * [Print API](reference-docs/server-print-api/print-api.md)

@@ -6,7 +6,7 @@ The `list` represents a list of articles, commonly seen on startpages of newspap
 
 Both of those core doc-includes require you to implement a custom server-side rendering plugin if you want the preview and rendering insided published documents.
 
-### embed-teaser
+### Embed-teaser
 
 ![Embed Teaser](./embed-teaser.png)
 
@@ -15,7 +15,7 @@ The search is exactly the same as in the documents dashboard (first screen after
 - The `defaultQueries`. Those are hidden filters that are passed to every search query in the search modal.
 - The `displayFilters`. This is a list of filters that should be shown to the user to filter the search results. In the example we passed an empty array to the `displayFilters` thus no filters are visible.
 
-#### design definition
+#### Design definition
 
 Lets see an example component in a Livingdocs design.
 
@@ -48,12 +48,12 @@ Lets see an example component in a Livingdocs design.
 </div>
 ```
 
-First note that the component makes use of the `embed-teaser` service for the `doc-include` directive `gallery-embed`. It instances the service. We pass a `defaultParams` layout to it that the server-side rendering will be able to make use of.
+First note that the component makes use of the `embed-teaser` service for the `doc-include` directive `gallery-embed`. It instances the service. In the `defaultParams` we pass a `layout` to the server-side rendering.
 The most important thing is the configuration in `config.search`. The configuration is equivalent to the one of the dashboard search. Please see [here](../editor-configuration/search-filters.md#predefined-core-properties) for all available options. The configuration in the example above allows the user to select available filters for `documentState` (e.g. published, etc.) and adds the hidden queries to only show articles (no pages) and of the articles only the subset of image galleries. This seems to be a sane default for an image gallery search modal.
 
-#### server-side registration
+#### Server-side registration
 
-In order for the user interface to be applied you need to register the `doc-include` on the server.
+In order for the editor to know which user interface to render for which `doc-include` you need to add a server-side registration.
 
 ```
 module.exports = function (feature, server, done) {
@@ -83,8 +83,8 @@ module.exports = function (feature, server, done) {
 ```
 
 The above code snippet assumes you are inside a custom feature. See [here](../../walkthroughs/add_customizations.html#server) for how to register a custom feature.
-The `name` of the `doc-include` to register must match the service name you used in the design and in the Livingdocs editor. In the case of the article embed, the `name` must be `embed-teaser`.
-The first key we have, `uiComponents`, defines a list of ui components that are rendered in the sidebar of the editor for the given `doc-include`. We will come back to all the available options when describing how to do custom editor user interfaces. For now just note that we register 2 angular components: `liEmbedTeaserIncludeModal` and `liEmbedTeaserLink`. Those are predefined in the core and the names must exactly match. (note: if you don't want a link to the embedded article in the sidebar, just leave the `liEmbedTeaserLink` entry away)
+The `name` of the `doc-include` to register must match the service name you used in the design definition. In the case of the article embed, the `name` must be `embed-teaser`.
+The first key we have, `uiComponents`, defines a list of ui components that are rendered in the sidebar of the editor for the given `doc-include`. We will come back to all the available options when describing [how to do custom editor user interfaces](./editor_customization.md). For now just note that we register 2 angular components: `liEmbedTeaserIncludeModal` and `liEmbedTeaserLink`. Those are predefined in the core and the names must exactly match. (note: if you don't want a link to the embedded article in the sidebar, just leave the `liEmbedTeaserLink` entry away)
 The second key `rendering` defines how your doc-include should be rendered. We will come back to the remote options later. For now take note of the function method that allows you to define a function that returns the rendering of the doc-include as an HTML string.
 
 #### Enable for publishing
@@ -109,13 +109,13 @@ renditions:
 
 There are 2 renditions here, web and app. For the web, the `embed-teaser` include is resolved (`resolveIncludes`) thus in my published HTML documents I will see the rendered `doc-include` according to the rendering function I wrote. For the app, no includes are resolved, thus I will only get placeholders containing the parameters without any rendering happening.
 
-### list
+### List
 
 ![List](./list.png)
 
 The image above shows how a manually sorted list of article teasers is created in Livingdocs. Upon selecting the component, the user can select a list in the sidebar ("bar" in the example). If the user presses "edit" in the sidebar, the user gets a second sidebar (to the left) where she can change the order of articles and add/remove articles. When she presses "Publish List" the preview is updated.
 
-#### design definition
+#### Design definition
 
 ```
 <script type="ld-conf">
@@ -144,10 +144,10 @@ The image above shows how a manually sorted list of article teasers is created i
 </div>
 ```
 
-This time the component makes use of the `list` service for the `doc-include` directive `top-news`. It instances the list service. We again pass a `defaultParams` layout to it that the server-side rendering will be able to make use of.
+This time the component makes use of the `list` service for the `doc-include` directive `top-news`. It instances the list service. We again use `defaultParams` to send a `layout` to the server.
 The configuration lets you define a `minCount` and `maxCount` for the list. The user gets a number input in the editor sidebar where he can select a number between `minCount` and `maxCount`. In the example `minCount` and `maxCount` are equal. If this is the case, no number input is rendered in the sidebar (since the user couldn't set anything anyway).
 
-#### server-side registration
+#### Server-side registration
 
 ```
 module.exports = function (feature, server, done) {
@@ -173,7 +173,7 @@ module.exports = function (feature, server, done) {
 ```
 
 The above code snippet again assumes you are inside a custom feature. See [here](../../walkthroughs/add_customizations.html#server) for how to register a custom feature.
-The `name` of the `doc-include` to register must match the service name you used in the design and in the Livingdocs editor. In the case of the manual list, the `name` must be `list`.
+The `name` of the `doc-include` to register must match the service name you used in the design definition. In the case of the manual list, the `name` must be `list`.
 The first key we have `uiComponents` defines a list of ui components that are rendered in the sidebar of the editor for the given `doc-include`. For the list example we register the predefined component `liManualList`. The name must much exactly.
 The second key `rendering` defines how your doc-include should be rendered. The options and method are equivalent to the `embed-teaser` case.
 
