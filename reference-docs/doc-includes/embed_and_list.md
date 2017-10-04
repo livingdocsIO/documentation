@@ -78,8 +78,8 @@ module.exports = function (feature, server, done) {
         return '<h1>TODO rendering</h1>'
       }
     }
-  })
-})
+  }, done)
+}
 ```
 
 The above code snippet assumes you are inside a custom feature. See [here](../../walkthroughs/add_customizations.html#server) for how to register a custom feature.
@@ -168,7 +168,7 @@ module.exports = function (feature, server, done) {
         return '<h1>TODO render list</h1>'
       }
     }
-  })
+  }, done)
 }
 ```
 
