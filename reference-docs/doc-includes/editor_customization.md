@@ -54,16 +54,16 @@ bindings: {
 ### An example
 
 `controller.js`
-```controller.js
+```js
 const _get = require('lodash/get')
 const BrightcoveVideo = require('./model')
 
 module.exports = class BrightcoveVideoController {
 
-  static get $inject () { return ['editor'] }
+  static get $inject () { return ['languageService'] }
 
-  constructor (editor) {
-    const language = _get(editor, 'workspace.document.metadata.language')
+  constructor (languageService) {
+    const language = languageService.get()
     if (this.directive) this.include = new BrightcoveVideo(this.directive, language)
   }
 
@@ -79,10 +79,10 @@ module.exports = class BrightcoveVideoController {
 }
 ```
 
-The controller is just a regular angular component controller (see the [angular documentation](https://docs.angularjs.org/guide/component) if you don't know this). You can inject dependencies in the angular way. The example injects one of the core objects to read the metadata of the current document.
+The controller is just a regular angular component controller (see the [angular documentation](https://docs.angularjs.org/guide/component) if you don't know this). You can inject dependencies in the angular way. The example injects `languageService` a custom service that was written in a customizing project (the implementation is not relevant to the example and left out). In order to do a custom angular service (or factory or anything else), register it to the module `livingdocs-editor`.
 
 `model.js`
-```model.js
+```js
 module.exports = class BrightcoveVideoModel {
   constructor (directive, language) {
     const {id} = directive.getParams() || {}
@@ -105,7 +105,7 @@ The model is optional (you could also write all code in the controller but we ad
 - `directive.addParams({foo: 'bar'})`, saves the given parameters to the existing ones, overwrites keys if duplicate, NOTE: this does not overwrite the whole params object, only when a key collides
 
 `template.html`
-```template.html
+```html
 <div class="ld-panel" ng-if="$ctrl.hasInclude()">
   <div class="ld-panel__header">
     <h2 class="ld-panel__header__title">Brightcove Video settings</h2>
@@ -143,7 +143,7 @@ Last but not least you have an angular component template. This will be rendered
 
 The following snippet shows only the controller of a custom component that renders in a modal (and thus uses the second API with the `dispatch` option).
 
-```controller.js
+```js
 const _capitalize = require('lodash/capitalize')
 const _isString = require('lodash/isString')
 const _remove = require('lodash/remove')
