@@ -4,11 +4,11 @@ This section explains how you setup the server to render `doc-include`s and give
 
 ### Resolve options
 
-Includes can be resolved in two modes when rendering a document. Either a `<ld-include>` tag can be rendered so the include can be resolved outside of Livingdocs (e.g by a script in the browser or a server that delivers the rendered HTML to a browser). Or the includes can be resolved on the Livingdocs server in the rendering of the document.
+Includes can be resolved in two modes when rendering (i.e. publishing) a document. Either a `<ld-include>` tag can be rendered so the include can be resolved outside of Livingdocs (e.g. in a microservice). Or the includes can be resolved on the Livingdocs server in the rendering of the document.
 
 #### Unresolved include
 
-An unresolved include looks like this:
+An unresolved include looks like this in the published document's HTML:
 ```html
 <div>
   <ld-include data-include-service="embed-teaser" data-include-params="{&quot;mediaId&quot;:2}"></ld-include>

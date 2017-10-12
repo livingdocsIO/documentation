@@ -1,6 +1,7 @@
 ## Core doc-includes
 
-The Livingdocs core predefines 2 editor user interfaces for the `doc-include` services: `embed-teaser` and `list`.
+The Livingdocs core predefines 2 editor user interfaces for the `doc-include` services: `embed-teaser` and `list`. If you just want to enable those features without having to understand much else about includes, stick to the descriptions below. If you want to understand the concepts behind those instructions you should also read about [editor customizations](./editor_customization.md) and [server customizations](./server_customization.md).
+
 The `embed-teaser` is an article embed. The user can click the component containing the `embed-teaser` include and the sidebar shows a user interface that lets the user select an article to be embedded as a teaser.
 The `list` represents a list of articles, commonly seen on startpages of newspapers. It assumes a manually sorted list that can be created with the Livingdocs list interface (see main navigation inside the Livingdocs editor). The sidebar renders a user interface where a user can select a list or re-order the articles in that list.
 
