@@ -2,27 +2,36 @@
 
 Doc-Includes are the Livingdocs equivalent to [edge side includes](https://en.wikipedia.org/wiki/Edge_Side_Includes). They are extremely powerful in what they allow you to achieve but mastering them takes a bit of effort. This section explains how you can do customizations using `doc-include`s and provides hands-on examples from real projects.
 In particular we will cover:
-- how to configure the predefined `doc-include`s for article embeds and lists
-- how to implement new `doc-include`s in the server
-- how to implement custom `doc-include` user interfaces in the editor
+- how to configure the predefined `doc-include`s for [article embeds and lists](./embed_and_list.md)
+- how to implement new `doc-include`s in the [server](./server_customization.md)
+- how to implement custom `doc-include` user interfaces in the [editor](./editor_customization.md)
 
 ### What is a doc-include
 
-In short a `doc-include` allows you to define an area in a Livingdocs document where you can define the rendering yourself through a custom server-side plugin. The area in question is a Livingdocs `directive` of type `doc-include` that you define in your design (if you don't know what a directive is see [here](../common-designs/component_config.md#directives)). To render HTML into this `doc-include` directive you register a custom renderer on the server. This renderer will return an HTML string and can use whatever templating system you like or even a remote system. Includes are resolved every time a document is rendered. So they can be used to display dynamic content that changes after a document has been published. Put another way: you don't need to publish the entailing document in order to update the `doc-include` area, this happens automatically on request.
-Inside the editor the same server-side plugin is used to preview the `doc-include` for your WYSIWYG experience. If you click the component that contains the `doc-include` directive the sidebar renders custom user interfaces that are defined for a specific `doc-include`. You can fully customize those user interfaces.
+![doc-include lifecycle](./time-diagram-doc-include.jpeg)
+
+Above we see a lifecycle diagram of a document with a `doc-include`. Take note of the component in the right-hand sidebar.
+Time starts at the bottom with an empty placeholder for a `doc-include` named 'foo'. The definition is done in the Livingdocs design, in particular setting the `service` name to 'foo'. The editor in this case has a custom sidebar user interface for `doc-include`s with service 'foo'. It is rendered when a user selects the respective component.
+Once the user has entered some data, the server-side kicks in. The server in this case defines a rendering method for `doc-include`s with service 'foo'. It gets the parameters the user entered in the custom user interface in the editor and renders a string of HTML that is then shown as a preview in the editor (WYSIWYG). In the image above those are some brightcove video teasers.
+After editing the user publishes the document. Whenever a reader loads the published document in the browser (upon every request), the server-side rendering method from above is called again. This time it's passed an option that tells the method that this is a public rendering (as opposed to the preview in the editor).
+
+The last point is worth mentioning again: rendering of a `doc-include` is done on every request, that means you don't need to publish the entailing document in order to update the `doc-include` area, this happens automatically on request.
+
 
 ### How are doc-includes defined
+
+You should be familiar with [Livingdocs directives](../common-designs/component_config.md#directives) for this section.
 
 ```component.html
 <script type="ld-conf">
 {
-  "name": "most-read",
-  "label": "Most Read",
+  "name": "example",
+  "label": "Example Component",
   "directives": {
-    "chartbeat": {
-      "service": "chartbeat",
+    "example-include": {
+      "service": "foo",
       "defaultParams": {
-        "layout": "mostRead"
+        "layout": "mostViewed"
       },
       "config": {
         "minCount": 3,
@@ -37,7 +46,7 @@ Inside the editor the same server-side plugin is used to preview the `doc-includ
   <div class="teaser-list__head">
     <h4 class="teaser-list__title" doc-editable="title">Title</h4>
   </div>
-  <div class="page-teaser__content page-teaser--count" doc-include="chartbeat">
+  <div class="page-teaser__content page-teaser--count" doc-include="example-include">
     <div class="embed headlines">
       <div class="placeholder"></div>
     </div>
@@ -45,31 +54,29 @@ Inside the editor the same server-side plugin is used to preview the `doc-includ
 </div>
 ```
 
-The above snippet shows the design definition of a `doc-include` that renders the most read articles from a publication retrieved via the [chartbeat API](https://chartbeat.com/docs/api/) (it assumes you are using chartbeat in your publication).
+The above snippet shows the design definition of a `doc-include` that renders the most viewed articles from a brightove channel (as in the introductory diagram).
 You see several important concepts:
-- The `service` configuration defines which service is used by this `doc-include` directive. This service name is used by the server-side and editor-side customizations to identifiy a specific `doc-include` implementation.
-- The directive configuration contains `defaultParams`. The custom editor interface for a `doc-include` service normally sets and sends parameters to the server-side to do the rendering. In the chartbeat example it could send a category that a user selects in the sidebar and for which the chartbeat API should be queried (e.g. most read "Sport" articles). In addition you can pass `defaultParams` in the design that are there by default and if the editor does not overwrite them are passed to the server. The `layout` in our example tells the server-side plugin to use a specific sub-template for the chartbeat rendering. You could for example have templates for "list with images" and "text only list" thus rendering the most-read section with different layouts in different components.
-- The directive configuration also contains a `config` section. You can write in this Object whatever you like. The values are passed to your custom user interface in the editor and you can use them there to customize the user interface for this specific instance of the chartbeat `doc-include` service. The example sends a `minCount` and `maxCount`. This is used by the user interface in question to offer the user a number input form that is limited to numbers between 3 and 6 and controls how many articles are rendered.
+- The `service` configuration defines which service is used by this `doc-include` directive. This service name is used by the server-side and editor-side customizations to identify a specific `doc-include` implementation.
+- The directive configuration contains `defaultParams`. The custom editor interface for a `doc-include` service normally sets and sends parameters to the server-side to do the rendering. In the example it could send a category that a user enters and for which videos are shown (e.g. most viewed "Sport" videos). In addition you can pass `defaultParams` in the design that are there by default and if the editor does not overwrite them are passed to the server. The `layout` in our example tells the server-side plugin to use a specific sub-template for the rendering. You could for example have templates for "list with images" and "text only list" thus rendering the section with different layouts in different components.
+- The directive configuration also contains a `config` section. You can write in this Object whatever you like. The values are passed to your custom user interface in the editor and you can use them there to customize the user interface for this specific instance of the "foo" `doc-include` service. The example sends a `minCount` and `maxCount`. This is used by the user interface in question to offer the user a number input form that is limited to numbers between 3 and 6 and controls how many articles are rendered.
 
-Schematic view of how the different parts play together:
+Schematic view of how the different parts play together using a `doc-include` service as an identifier:
 ```
-doc-include service -> defines -> doc-include "class"
-
-Livingdocs server -> implements -> renderer for doc-include "class"
+Livingdocs design component -> uses service in directives -> configures an instance of the service "class" (config, defaultParams)
 
 Livingdocs editor -> implements -> user interface for doc-include "class"
 
-Livingdocs design component -> uses service in directives -> configures an instance of the service "class" (config, defaultParams)
+Livingdocs server -> implements -> renderer for doc-include "class"
 ```
 
 (note: we are not talking about a class in the sense of OO, just to visualize the hierarchical connection)
 
-It is important to understand that a `doc-include` service ("chartbeat" in the example above) can be used in multiple components/directives in different configurations. For example you could do a new component that is pretty much the same as the example above but changes the `minCount` to 6 which would in effect tell the user interface not to render a number input (if `minCount` == `maxCount` no interface is rendered).
+It is important to understand that a `doc-include` service ("foo" in the example above) can be used in multiple components/directives in different configurations. For example you could do a new component that is pretty much the same as the example above but changes the `minCount` to 6 which would in effect tell the user interface not to render a number input (if `minCount` == `maxCount` no interface is rendered).
 
 ### What are the customizations
 
-The server customization is normally a simple node.js plugin that uses any templating language (e.g. lodash templates) to render a HTML string from a template and parameters.
-The editor customization is an angular component. Angular (1.x) knowledge is required for this.
+The [server customization](./server_customization.md) is normally a simple node.js plugin that uses any templating language (e.g. lodash templates) to render a HTML string from a template and parameters.
+The [editor customization](./editor_customization.md) is an angular component. Angular (1.x) knowledge is required for this.
 
 Both customizations are optional.
 - A `doc-include` service with neither server nor editor part would just render an empty placeholder into the rendered HTML wherever a respective component was dropped.
