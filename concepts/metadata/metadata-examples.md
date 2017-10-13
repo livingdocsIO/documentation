@@ -20,15 +20,15 @@ metadata: {
     plugin: 'li-text'
   }
 },
-metadataFormArrangement: {
-  article: [
+metadataFormArrangement: [
+  {
     name: 'catchline',
     form: 'li-meta-text-form',
     config: {
       service: 'defaultText'
     }
-  ]
-}
+  }
+]
 ```
 
 1. A standard plugin is stored in `plugins/metadata` and will automatically be loaded on the downstream and is always ready for usage. In our example we use `li-text`.
