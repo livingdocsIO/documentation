@@ -96,18 +96,27 @@ module.exports = {
   // @param oldValue Stored value before the document update
   // @param config {Object} config property of `metadata configuration`
   // @param documentVersion {DocumentVersion}
+  // @return the value you assign to the metadata field, if you don't return
+  //    the value will be undefined
   onUpdate: function(newValue, oldValue, config, documentVersion) {
-    // your implementation
+    // CUSTOMIZE: your implementation
+    return newValue
   },
 
   // The onPublish event will be called before a document gets published
+  // @return the value you assign to the metadata field, if you don't return
+  //    the value will be undefined
   onPublish: function(newValue, oldValue, config, documentVersion) {
-    // your implementation
+    // CUSTOMIZE: your implementation
+    return newValue
   },
 
   // The onUnpublish event will be called before a document gets unpublished
+  // @return the value you assign to the metadata field, if you don't return
+  //    the value will be undefined
   onUnpublish: function(newValue, oldValue, config, documentVersion) {
     // your implementation
+    return newValue
   },
 
   // DEPRECATED: WILL BE REMOVED AT SOME POINT.
