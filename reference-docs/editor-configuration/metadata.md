@@ -37,7 +37,6 @@ The following subchapters discuss them and show the available options.
 name: 'nameOfYourMetadataTextField',
 form: 'li-meta-text-form',
 config: {
-  halfWidth: false, // optional, false by default
   service: 'nameOfYourServicePlugin', // mandatory
   label: 'foo', // optional, takes camelized name otherwise
   placeholder: 'bar', // optional, takes camelized name otherwise
@@ -47,7 +46,7 @@ config: {
 ```
 
 You need to make sure that your server-side metadata field is of type `li-text` otherwise you will get errors.
-The `halfWidth` option will render the text input field over half of the screen width if set to true (otherwise over the full width). `readOnly` and `maxLength` let you customize the behavior of the text input.
+`readOnly` and `maxLength` let you customize the behavior of the text input.
 The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
 The service plugin for a text input allows you to customize the logic for the following methods:
 
@@ -70,14 +69,12 @@ name: 'nameOfYourMetadataSelectField',
 form: 'li-meta-select-form',
 config: {
   service: 'nameOfYourServicePlugin', // mandatory
-  halfWidth: false, // optional, false by default
   label: 'foo', // optional, takes camelized name otherwise
   placeholder: 'bar' // optional, takes camelized name otherwise
 }
 ```
 
 You need to make sure that your server-side metadata field is of type `li-enum` or a suitable format you defined yourself in a customized server, otherwise you will get errors.
-The `halfWidth` option will render the text input field over half of the screen width if set to true (otherwise over the full width).
 The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
 The service plugin for a select box allows you to customize the logic for the following methods:
 
@@ -117,14 +114,12 @@ name: 'nameOfYourMetadataMultiselectField',
 form: 'li-meta-multiselect-form',
 config: {
   service: 'nameOfYourServicePlugin', // mandatory
-  halfWidth: false, // optional, false by default
   label: 'foo', // optional, takes camelized name otherwise
   placeholder: 'bar' // optional, takes camelized name otherwise
 }
 ```
 
 You need to make sure that your server-side metadata field is of a suitable format you defined yourself in a customized server (there is no core data type for multiselects), otherwise you will get errors.
-The `halfWidth` option will render the text input field over half of the screen width if set to true (otherwise over the full width).
 The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
 The service plugin for a multiselect box allows you to customize the logic for the following methods:
 
@@ -187,13 +182,11 @@ Also, the markup in the image form does not adhere to the plugin standard, so do
 name: 'nameOfYourMetadataImageField',
 form: 'li-meta-checkbox-form',
 config: {
-  halfWidth: false, // optional, false by default
   label: 'foo' // optional, takes camelized name otherwise
 }
 ```
 
 You need to make sure that your server-side metadata field is of type `li-boolean` or a suitable custom format, otherwise you will get errors.
-The `halfWidth` option will render the text input field over half of the screen width if set to true (otherwise over the full width).
 
 ### Datetime
 
@@ -202,13 +195,11 @@ name: 'nameOfYourMetadataImageField',
 form: 'li-meta-datetime-form',
 config: {
   service: 'nameOfYourServicePlugin', // mandatory
-  halfWidth: false, // optional, false by default
   label: 'foo', // optional, takes camelized name otherwise
 }
 ```
 
 You need to make sure that your server-side metadata field is of type `li-datetime` or a suitable custom format, otherwise you will get errors.
-The `halfWidth` option will render the text input field over half of the screen width if set to true (otherwise over the full width).
 The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
 The service plugin for a datetime allows you to customize the logic for the following methods:
 
@@ -235,7 +226,6 @@ name: 'nameOfYourMetadataImageField',
 form: 'li-meta-slug-form',
 config: {
   service: 'nameOfYourServicePlugin', // mandatory
-  halfWidth: false, // optional, false by default
   label: 'foo', // optional, takes camelized name otherwise
   placeholder: 'bar', // optional, takes camelized name otherwise
   canReset: false // optional, false by default
@@ -243,7 +233,6 @@ config: {
 ```
 
 You need to make sure that your server-side metadata field is of type `li-text` or a suitable custom format, otherwise you will get errors.
-The `halfWidth` option will render the text input field over half of the screen width if set to true (otherwise over the full width).
 The `canReset` option if set to true renders a reset button next to the slug input that resets the input to its initial value.
 The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
 The service plugin for a slug allows you to customize the logic for the following methods:
@@ -313,11 +302,15 @@ All UI elements should be implemented as Angular components and get at least the
 
 A new UI element has to be required in `ld_metadata_view.coffee`.
 
-The template should have a surrounding `li` element of this form:
+The template should have the following markup structure:
 
 ```html
-<li class="ld-grid__item breathe-quarter--bottom"
-    ng-class="{ 'one-half': selectForm.halfWidth == true }">
-</li>
+<div class="ld-form-group ld-form-group--horizontal">
+  <div class="ld-form-group__label">
+    <!-- add your label here -->
+  </div>
+  <div class="ld-form-group__content">
+    <!-- add your content here -->
+  </div>
+</div>
 ```
-The `ng-class` is optional, only use it when you want to expose the `halfWidth` option on your UI element.

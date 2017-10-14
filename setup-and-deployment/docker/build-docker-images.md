@@ -14,6 +14,11 @@ docker run --rm -p 9090:9090 -e "ENVIRONMENT=production" -e "NODE_ENV=production
 
 The server is now available on http://localhost:9090
 
+Development hint: If you want to run from your docker container locally and you have containers for postgres and elasticsearch with the alias `postgres` and `elasticsearch`, you can use the following command to run in the local environment:
+```
+docker run --rm --link postgres:postgres --link elasticsearch:elasticsearch --env db__host=postgres --env search__host=http://elasticsearch:9200 -p 9090:9090 -e "ENVIRONMENT=local" -e "NODE_ENV=local" livingdocs-server-boilerplate npm start
+```
+
 
 ### Editor
 
