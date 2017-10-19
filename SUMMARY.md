@@ -11,39 +11,52 @@
 * [Livingdocs Design Intro](videos/design_intro.md)
 * [Livingdocs Boilerplate Intro](videos/boilerplate_intro.md)
 
-## Livingdocs Design
+## Reference
 
-* [Overview](reference-docs/common-designs/create_designs.md)
-* [Livingdocs components](reference-docs/common-designs/component_config.md)
-* [Design configuration](reference-docs/common-designs/design_config.md)
-* [Bullet List](reference-docs/common-designs/list_example.md)
-* [Design migrations](concepts/document-migrations/migrations.md)
-
-## Livingdocs Customizations
-
-* [Register customizations](walkthroughs/add_customizations.md)
-* [Server](walkthroughs/add_customizations.md#server)
-  * [Metadata](reference-docs/server-configuration/metadata.md)
-  * [Available Events](reference-docs/server-extensions/events.md)
-  * [Configure the server](reference-docs/server-configuration/config.md)
-  * [Configure channels](reference-docs/server-configuration/channel-config.md)
-  * [Publish and Unpublish Hooks](reference-docs/server-extensions/publish-hooks.md)
-  * [Routing system](reference-docs/server-public-api/routing-system.md)
-  * [Stack](reference-docs/server-configuration/stack.md)
-* [Editor](walkthroughs/add_customizations.md#editor)
-  * [Metadata](reference-docs/editor-configuration/metadata.md)
-  * [Dashboard search filters](reference-docs/editor-configuration/search-filters.md)
-  * [Cofigure text editing](reference-docs/editor-configuration/text-editing.md)
-  * [Configure image cropping](reference-docs/editor-configuration/image-cropping.md)
-  * [Configure editing features](reference-docs/editor-configuration/editing-features.md)
-* [Includes](reference-docs/doc-includes/intro.md)
-  * [Article embed and list](reference-docs/doc-includes/embed_and_list.md)
-  * [Server registration and rendering](reference-docs/doc-includes/server_customization.md)
-  * [Editor user interfaces](reference-docs/doc-includes/editor_customization.md)
-  * [Multiservice components](reference-docs/doc-includes/service_multiselect.md)
-
-* [Metadata Example (editor and server)](concepts/metadata/metadata-examples.md)
+* [Channel config](reference-docs/server-configuration/channel-config.md)
+  * [Config options](reference-docs/server-configuration/channel-config.md)
+  * [Hooks](reference-docs/server-configuration/channel-config.md#hooks)
+  * [Publication hooks](reference-docs/server-configuration/channel-config.md#publishunpublish-hooks)
+  * [Render hooks](reference-docs/server-configuration/channel-config.md#before-render-hooks)
+  * [Collection hooks](reference-docs/server-configuration/channel-config.md#document-lists-hooks)
+* Data model
+  * [Livingdoc](reference-docs/common-livingdoc/livingdoc.md)
+  * [Component tree](reference-docs/common-livingdoc/component_tree.md)
+  * [Component model](reference-docs/common-livingdoc/component_model.md)
+  * [Directives](reference-docs/common-livingdoc/directives.md)
+* Design
+  * [Component config](reference-docs/common-designs/component_config.md)
+  * [Design config](reference-docs/common-designs/design_config.md)
+* [Editor config](reference-docs/editor-configuration/editing-features.md)
+* [Events](reference-docs/server-extensions/events.md)
+* [Image cropper config](reference-docs/editor-configuration/image-cropping.md)
+* [Image services](concepts/images/image-services.md)
+* Includes
+  * [Include server config](reference-docs/doc-includes/server_customization.md)
+  * [Include user interfaces](reference-docs/doc-includes/editor_customization.md)
+  * [Includes with multiple services](reference-docs/doc-includes/service_multiselect.md)
+* [Metadata definition](reference-docs/server-configuration/metadata.md)
+* [Metadata user interfaces](reference-docs/editor-configuration/metadata.md)
 * [Print API](reference-docs/server-print-api/print-api.md)
+* [Server config](reference-docs/server-configuration/config.md)
+* [Stack](reference-docs/server-configuration/stack.md)
+* [Text editing config](reference-docs/editor-configuration/text-editing.md)
+
+## Design Guides
+
+* [Introduction to design and components](reference-docs/common-designs/create_designs.md)
+* [How to do a bullet list](reference-docs/common-designs/list_example.md)
+* [Running and defining design migrations](concepts/document-migrations/migrations.md)
+
+## Customizing Guides
+
+* [Register a custom feature](walkthroughs/add_customizations.md)
+* [Define Metadata](concepts/metadata/metadata-examples.md)
+* [Implement includes](reference-docs/doc-includes/intro.md)
+* [Configure article embed and list](reference-docs/doc-includes/embed_and_list.md)
+* [Use the Publish Hooks](reference-docs/server-extensions/publish-hooks.md)
+* [Add a search filter](reference-docs/editor-configuration/search-filters.md)
+* [A possible routing system](reference-docs/server-public-api/routing-system.md)
 
 ## Devops
 
@@ -70,12 +83,11 @@
 * [Project](reference-docs/server-configuration/admin-commands.md#project-create)
 * [Maintain Search Index](reference-docs/server-configuration/admin-commands.md#search-index)
 
-## Livingdocs core development
+<!-- ## Livingdocs core development
 
 * Editor
   * [Styleguide](reference-docs/editor-styleguide/styleguide.md)
   * [Why use an image service?](concepts/images/why-an-image-service.md)
-  * [Image Services](concepts/images/image-services.md)
   * [Responsive background images](concepts/images/responsive-bg-images.md)
 * Server
   * [Editing API](reference-docs/server-editing-api/README.md)
@@ -92,8 +104,4 @@
     * [Projects](reference-docs/server-editing-api/editing_api_spaces.md)
     * [Hooks](reference-docs/server-editing-api/editing_api_hooks.md)
 * Framework
-  * [Browser API](reference-docs/common-livingdoc/browser_api.md)
-  * [Livingdoc](reference-docs/common-livingdoc/livingdoc.md)
-  * [Component Tree](reference-docs/common-livingdoc/component_tree.md)
-  * [Component Model](reference-docs/common-livingdoc/component_model.md)
-  * [Directives](reference-docs/common-livingdoc/directives.md)
+  * [Browser API](reference-docs/common-livingdoc/browser_api.md) -->
