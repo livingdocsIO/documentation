@@ -35,4 +35,4 @@ Represents an organisation and consists of users and channels.
 
 ## Upstream
 
-*Upstream* is a package/repository which is integrated in another project called *downstream*. In our case *upstream* means our core editor and server is provided as a npm package (semantic versioning) and can be used by a *downstream* project e.g. `livingdocs-server-downstream`.
+*Upstream* is a package/repository which is integrated in another project called *downstream*. In our case *upstream* means our core `livingdocs-editor` and `livingdocs-server` is provided as a npm package (semantic versioning) and can be used by a *downstream* project e.g. `livingdocs-server-downstream`. `livingdocs-framework` can not be installed separately and also has no distinction between up- and downstream.
