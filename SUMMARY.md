@@ -4,7 +4,7 @@
 
 * [Setting up Livingdocs locally](walkthroughs/getting-started-with-local-development.md)
 
-* [Glossary](./GLOSSARY.md)
+* [Glossary](./DICTIONARY.md)
 
 ## Videos
 
