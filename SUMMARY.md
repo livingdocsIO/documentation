@@ -10,6 +10,7 @@
 
 * [Livingdocs Design Intro](videos/design_intro.md)
 * [Livingdocs Boilerplate Intro](videos/boilerplate_intro.md)
+* [Livingdocs Includes](videos/includes.md)
 
 ## Reference
 
