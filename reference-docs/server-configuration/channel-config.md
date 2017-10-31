@@ -291,15 +291,3 @@ liServer.listen(port, function (err) {
   liServer.log.info('Listening on http://localhost:%s, started within %ss', port, process.uptime())
 })
 ```
-
-## A visual example of the `editor.frontend` configuration
-
-In the Livingdocs Editor navigate to the publish panel. Once you published a
-document, you get three links on the right-hand side of the screen: a preview,
-an API link and an Iframe embed code.
-
-![API Link](./api_link.png)
-
-<!-- todo (LP) this is not a link to our api -->
-Click the "Use API access" link and you will get a new browser page with a JSON response.
-This is the API result for a single document.
