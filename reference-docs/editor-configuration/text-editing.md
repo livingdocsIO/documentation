@@ -205,3 +205,18 @@ textcount: {
   ]
 }
 ```
+
+## Links
+
+![Links](./links.png)
+
+#### Options
+```js
+app: {
+  links:{
+    allowRelativeUrls: false,
+    allowAnchorLinks: false,
+    allowMailToUrls: true
+  }
+}
+```
