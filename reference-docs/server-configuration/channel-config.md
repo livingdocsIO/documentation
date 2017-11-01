@@ -140,7 +140,7 @@ copy: [
 
 ## Hooks
 
-A few APIs are provided to allow hooking into the document (un)publication process and into the rendering pipeline.
+A few APIs are provided to allow hooking into the document (un)publication process and into the rendering pipeline. Hooks are executed within the corresponding transaction thus you can for example abort a publish process by returning the callback with an error in your hook implementation. If you don't need the reliability of a transaction, you can also use [events](../server-extensions/events.md) which are fire and forget.
 
 Although these hooks should preferably be registered before the server gets initialized (using [Server Initialized Hooks](../../reference-docs/server-extensions/server-initalization.md#initialized-hooks)), it is also possible to register them at runtime using the same APIs. (This is particularly handy for testing purpose, but also useful if you create projects or channels at runtime and need to set hooks for these.)
 

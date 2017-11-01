@@ -2,7 +2,7 @@
 
 ## Overview
 
-The boilerplate app allows you to subscribe to publish and unpublish events of articles and pages and implement your customizations, e.g., for third-party system integrations.
+The boilerplate app allows you to hook into the publish and unpublish transactions of articles and pages and implement your customizations, e.g., for third-party system integrations. Note that you are executing your code within the transaction thus don't do things like long-running polls in there. You can also abort the publish (visible to the user) by returning the callback with an error.
 
 ### The publish hook
 
