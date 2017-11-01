@@ -39,7 +39,11 @@
 * [Metadata definition](reference-docs/server-configuration/metadata.md)
 * [Metadata user interfaces](reference-docs/editor-configuration/metadata.md)
 * [Print API](reference-docs/server-print-api/print-api.md)
-* [Server config](reference-docs/server-configuration/config.md)
+* [Server config](reference-docs/server-configuration/config.md#services)
+  * [services](reference-docs/server-configuration/config.md#services)
+  * [stack](reference-docs/server-configuration/config.md#stack)
+  * [features](reference-docs/server-configuration/config.md#features)
+  * [integrations](reference-docs/server-configuration/config.md#integrations)
 * [Stack](reference-docs/server-configuration/stack.md)
 * [Text editing config](reference-docs/editor-configuration/text-editing.md)
 
