@@ -1,7 +1,7 @@
 # Livingdocs Server Events
 
+The events API is Livingdocs's implementation of the publish/subscribe pattern. This allows you to send messages back and forth between features or to listen for events from the core features. Events are fire and forget thus it is possible that some calls might be lost (e.g. when there is a connection outage). If you need reliable transaction-like hooks, see [the hooks feature](../server-configuration/channel-config.md#hooks).
 
-The events API is Livingdocs's implementation of the publish/subscribe pattern. This allows you to send messages back and forth between features or to listen for events from the core features.
 
 ## Requiring events from the li-server
 
@@ -65,32 +65,36 @@ The events.subscribers() method lists all the listeners of an event.
 
 ## Available Events
 
+The following lists all events, before the comma, the name of the event and behind the comma, the parameters received by a listener.
+
 - user
-  - user.create
-  - user.delete
-  - user.password.request
-  - user.password.redeem
-  - user.password.change
-  - user.email.change
-  - user.login.success
-  - user.login.fail
+  - user.create, `(eventName, {user})`
+  - user.delete, `(eventName, {user})`
+  - user.password.request, `(eventName, {userId, identityId})`
+  - user.password.redeem, `(eventName, {userId, identityId})`
+  - user.password.change, `(eventName, {id, connectionId, identityId, userId})`
+  - user.email.change, `(eventName, identity)`
+  - user.login.success, `(eventName, {user})`
+  - user.login.fail, `(eventName, {error})`
 
 - document
-  - document.update
-  - document.delete
-  - document.create
-  - document.publish
-  - document.unpublish
+  - document.update, `(eventName, {user, documentVersion})`
+  - document.delete, `(eventName, {user, documentVersion})`
+  - document.create, `(eventName, {user, documentVersion})`
+  - document.publish, `(eventName, {user, documentVersion, renditions})`
+  - document.unpublish, `(eventName, {user, documentVersion})`
 
 - document_list
-  - document_list.delete
-  - document_list.publish
-  - document_list.update
-  - document_list.create
+  - document_list.delete, `(eventName, {user, documentList})`
+  - document_list.publish, `(eventName, {user, documentList})`
+  - document_list.update, `(eventName), {user, documentList}`
+  - document_list.create, `(eventName, {user, documentList})`
 
 - migration
-  - migration.prepare
-  - migration.accept
-  - migration.cancel
-  - project.create
-  - project.update
+  - migration.prepare, `(eventName, {migration})`
+  - migration.accept, `(eventName, {migration})`
+  - migration.cancel, `(eventName, {migration})`
+
+- project
+  - project.create, `(eventName, {project})`
+  - project.update, `(eventName, {project})`
