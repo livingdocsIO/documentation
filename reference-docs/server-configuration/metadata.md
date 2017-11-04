@@ -1,3 +1,6 @@
+DEPRECATED: The feature is not working at the moment and needs to be integrated into the public API. Then this needs to be re-documented
+
+
 # Metadata on the Server
 
 ## Scope
