@@ -52,7 +52,7 @@ Most likely you will also need to get some configured access tokens for your thi
 ### routes
 
 You will need to define the route for authentication that you configured in the editor before.
-```routes.js
+```
 module.exports = {
   endpoints: [{
     method: 'get',
