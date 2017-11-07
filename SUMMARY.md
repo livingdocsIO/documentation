@@ -61,6 +61,7 @@
 * [Configure article embed and list](reference-docs/doc-includes/embed_and_list.md)
 * [Use the Publish Hooks](reference-docs/server-extensions/publish-hooks.md)
 * [Add a search filter](reference-docs/editor-configuration/search-filters.md)
+* [Implement single-sign-on (SSO)](walkthroughs/github-login.md)
 * [A possible routing system](reference-docs/server-public-api/routing-system.md)
 
 ## Devops

@@ -1,3 +1,5 @@
+DEPRECATED: The feature is not working at the moment and needs to be integrated into the public API. Then this needs to be re-documented
+
 # Hook System
 
 Hooks are subscriptions to events that use a service as notification system.
