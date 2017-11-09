@@ -1,4 +1,4 @@
-#### Channel Configuration
+## Channel Configuration
 
 The channel configuration allows you to:
 - implement a hook method to alter document content before Rendering
@@ -71,6 +71,9 @@ metadataFormArrangement: [{
 }]
 
 // setup the push notification feature if applicable
+// for this to work you also must:
+// 1. configure firebase in the server configuration
+// 2. have a metadata field with the (exact) name `pushNotifications`
 pushNotifications: {
   topics: [{
     handle: 'breaking-news',
@@ -136,6 +139,19 @@ copy: [
   ]
 ]
 ```
+
+### Push Notifications
+
+To enable push notifications for a channel you must have a metadata field called `pushNotifications`. Name and plugin must match exactly.
+```
+metadata: {
+  pushNotifications: {
+    plugin: 'li-push-notifications'
+  }
+}
+```
+
+With this in place you can set the channel configuration for your push notification topics (see example config above) and the firebase configuration in the [server config](./config.md#push-notifications).
 
 
 ## Hooks

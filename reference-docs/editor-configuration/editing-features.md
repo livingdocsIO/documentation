@@ -29,3 +29,17 @@ auth: {
 ```
 
 Only strategies of type `link` are supported at the moment. For an example see our [Github login guide](../../walkthroughs/github-login.md).
+
+## Dashboard
+
+Define a custom item for the dashboard list of articles. This is useful when you want to show additional data on the dashboard such as the open tasks on an article.
+
+```
+search: {
+  articleSearch: {
+    listItemComponent: 'custom-dashboard-list-item'
+  }
+}
+```
+
+Note that the custom component can only use document metadata that has been explicitly [whitelisted](../server-configuration/config.md#search).
