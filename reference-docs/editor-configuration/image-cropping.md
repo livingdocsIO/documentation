@@ -16,7 +16,8 @@ For all configurable options in the library, see [here](https://github.com/upfro
       zoomStep: 1.05,
       maxArea: 0.5
     }
-  }  
+  },
+  disableCropFor: ['image/svg+xml']  
 }
 ```
 
@@ -44,3 +45,7 @@ Possible values: null or between 0 and 1, Default: null
 
 If set to `null` (or left out in the config) the full image will be shown and changing the horizontal and vertical sizes will keep the other respective size constant.
 If set to a value between 0 and 1 changing the sizes will affect the whole ratio (width and height) and fill the area given in max area (e.g. 0.8 -> 80%).
+
+### disableCropFor
+
+An array of mime types for which there should be no "crop image" option displayed in the editor.
