@@ -212,7 +212,7 @@ textcount: {
 
 #### Options
 ```js
-app: {
+{
   links:{
     allowRelativeUrls: false,
     allowAnchorLinks: false,
