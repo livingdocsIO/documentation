@@ -72,8 +72,10 @@ metadataFormArrangement: [{
 
 // setup the push notification feature if applicable
 // for this to work you also must:
-// 1. configure firebase in the server configuration
+// 1. configure firebase in the server-wide `pushNotifications` configuration
 // 2. have a metadata field with the (exact) name `pushNotifications`
+// IMPORTANT: value can not contain more than three comma separated entries
+// see firebase conditions for more details.
 pushNotifications: {
   topics: [{
     handle: 'breaking-news',
