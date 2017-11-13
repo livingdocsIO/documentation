@@ -152,6 +152,17 @@ To hide an entry, simply delete it from the list.
 You can also customize the scopes that you assign to a menu item to control access rights. See [all available scopes](../../administration/access_rights.md#available-scopes).
 You can also customize the icons. We use https://materialdesignicons.com/ just use the respective icon string.
 
+To link to an external page add an entry as follows:
+```
+{
+  label: 'Your page',
+  href: 'https://www.livingdocs.io',
+  icon: 'settings'
+}
+```
+
+Note that you use `href` instead of `sref` for external links.
+
 ## Images
 
 There are several configuration options concerning images.
