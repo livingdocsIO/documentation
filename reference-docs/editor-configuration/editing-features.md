@@ -187,6 +187,7 @@ embeds.registerCustomEmbeds [
 
 The example above registers a custom embed of type `Instagram`.
 Note that embeds refer to client-side rendered elements such as an iframe or a script section in the HTML DOM. This is different from [includes](../doc-includes/intro.md) which are rendered server-side.
+For more details, see our guide on [how to add an Instagram embed](../../walkthroughs/instagram_embed.md)
 
 ### allow unrecognized code
 

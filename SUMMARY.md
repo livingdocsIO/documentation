@@ -76,6 +76,7 @@
 * [Add a search filter](reference-docs/editor-configuration/search-filters.md)
 * [Validate task completion](walkthroughs/validate_tasks.md)
 * [Implement single-sign-on (SSO)](walkthroughs/github-login.md)
+* [Add an Instagram embed](walkthroughs/instagram_embed.md)
 * [Use push notifications and custom dashboard item](walkthroughs/push_notifications.md)
 * [A possible routing system](reference-docs/server-public-api/routing-system.md)
 
