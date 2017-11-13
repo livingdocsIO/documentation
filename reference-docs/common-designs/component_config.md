@@ -314,6 +314,30 @@ Example:
 </header>
 ```
 
+### `doc-html`
+
+A `doc-html` directive can take arbitrary HTML. The Livingdocs editor handles `doc-html` directives as [embeds](../editor-configuration/editing-features.md#embeds) except when you name the directive `free-html` in which case it is treated as a free-html input (no validation). The latter is dangerous and we don't advise using it.
+
+Example:
+```html
+<script type="ld-conf">
+{
+  "label": "Tweet",
+  "properties": []
+}
+</script>
+
+
+<div class="embed-container">
+  <div doc-html="tweet">
+    <div class="embed tweet">
+      <div class="placeholder"></div>
+    </div>
+  </div>
+</div>
+```
+
+
 ### `doc-include`
 
 `service`: defines the service type to use which corresponds to the name of an existing server-side plugin. `doc-include` services are freely configurable and are implemented as plugins in customizing projects. The concept is similar to [edge side includes](https://en.wikipedia.org/wiki/Edge_Side_Includes).

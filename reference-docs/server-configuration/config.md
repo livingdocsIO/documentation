@@ -364,6 +364,9 @@ search: {
 }
 ```
 
+The `documentsMetadataFields` array whitelists metadata that can be used in the dashboard. By
+default the article list query gets no metadata.
+
 #### Push Notifications
 
 ```js
@@ -391,6 +394,8 @@ push_notifications: {
   }
 }
 ```
+
+For push notifications to be enabled you also need to follow the steps in the [channel config setup](./channel-config.md#push-notifications)
 
 ## Integrations
 

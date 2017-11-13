@@ -29,6 +29,19 @@
   * [Component config](reference-docs/common-designs/component_config.md)
   * [Design config](reference-docs/common-designs/design_config.md)
 * [Editor config](reference-docs/editor-configuration/editing-features.md)
+  * [Toolbar](reference-docs/editor-configuration/editing-features.md#toolbar)
+  * [Login](reference-docs/editor-configuration/editing-features.md#login)
+  * [Dashboard](reference-docs/editor-configuration/editing-features.md#dashboard)
+  * [Main menu](reference-docs/editor-configuration/editing-features.md#main-menu)
+  * [Images](reference-docs/editor-configuration/editing-features.md#images)
+  * [Text editing](reference-docs/editor-configuration/editing-features.md#text-editing)
+  * [Tasks](reference-docs/editor-configuration/editing-features.md#tasks)
+  * [Embeds](reference-docs/editor-configuration/editing-features.md#embeds)
+  * [Filters](reference-docs/editor-configuration/editing-features.md#filters)
+  * [Timeout](reference-docs/editor-configuration/editing-features.md#timeout)
+  * [Third-party services](reference-docs/editor-configuration/editing-features.md#third-party-services)
+  * [Links](reference-docs/editor-configuration/editing-features.md#links)
+  * [Keyboard shortcuts](reference-docs/editor-configuration/editing-features.md#keyboard-shortcuts)
 * [Events](reference-docs/server-extensions/events.md)
 * [Image cropper config](reference-docs/editor-configuration/image-cropping.md)
 * [Image services](concepts/images/image-services.md)
@@ -61,7 +74,10 @@
 * [Configure article embed and list](reference-docs/doc-includes/embed_and_list.md)
 * [Use the Publish Hooks](reference-docs/server-extensions/publish-hooks.md)
 * [Add a search filter](reference-docs/editor-configuration/search-filters.md)
+* [Validate task completion](walkthroughs/validate_tasks.md)
 * [Implement single-sign-on (SSO)](walkthroughs/github-login.md)
+* [Add an Instagram embed](walkthroughs/instagram_embed.md)
+* [Use push notifications and custom dashboard item](walkthroughs/push_notifications.md)
 * [A possible routing system](reference-docs/server-public-api/routing-system.md)
 
 ## Devops
@@ -85,6 +101,7 @@
 ## Administration
 
 * [Create Users](walkthroughs/create-users.md)
+* [Assign access rights](administration/access_rights.md)
 * [Logs](reference-docs/server-configuration/logging.md)
 * [Project](reference-docs/server-configuration/admin-commands.md#project-create)
 * [Maintain Search Index](reference-docs/server-configuration/admin-commands.md#search-index)
