@@ -66,7 +66,7 @@ Srcset only works for inline images (`img` tag). If you use a background image, 
 
 ## Configuring an image service
 
-You currently need to configure your image service in both the editor and the server. We will push towards a server-only configuration, also because most of the configuration is duplicated, but we're not there yet. In the editor you configure which image service to use and the configuration for this image service. In the server you just add the configuration for the image service.
+You currently need to configure your image service in both the editor and the server. We will push towards a server-only configuration. In the editor you configure which image service to use and the configuration for this image service. In the server you just add the configuration for the image service.
 
 Below we'll outline the configuration for both ImgIX and resrc.it.
 
@@ -78,38 +78,11 @@ The ImgIX configuration uses `srcset`. If you don't know about this HTML standar
 
 ```js
   app: {
-    imageService: 'imgix',
-    imageServiceConfig: {
-      host: "https://livingdocs-dev.imgix.net",
-      preferWebp: true,
-      backgroundImage: {
-        maxWidth: 2048
-      },
-      srcSet: {
-        defaultWidth: 1024,
-        widths: [
-          2048,
-          1024,
-          620,
-          320
-        ],
-        sizes: ['100vw']
-      }
-    }
+    imageService: 'imgix'
   }
 ```
 
-The `imageService` field tells Livingdocs which image service should be used. The `imageServiceConfig` contains the configuration for this specific image service.
-The `host` is simply where your ImgIX images are served from.
-If `preferWebp` is set to `true` Livingdocs will pass the `auto=format` parameter (https://docs.imgix.com/apis/url/auto).
-`srcSet` defines the settings you want for your `srcset` attribute:
-1. the available image widths `widths`
-2. the width that is set to the `src` attribute (e.g. for IE11 and below), defined in `defaultWidth`
-3. The `sizes` attribute that defines the responsive behavior
-
-Note: We will take (3) out of the configuration in the medium term since we think it makes more sense to set the `sizes` attribute directly on the component or template.
-
-For background images you can simply set a fixed max-width, so that each background image will get the corresponding ImgIX width set. (if the actual width of the image is lower, ImgIX will never try to interpolate but just leave it -> this is why it is called max-width).
+The `imageService` field tells Livingdocs which image service should be used.
 
 #### Server
 
@@ -137,7 +110,21 @@ documents: {
 }
 ```
 
-The parameters are equivalent to the ones in the editor. You can in theory also configure several images services in the server, but as of now only one can be used (the one specified in the editor config).
+The `imageServices` contains the configurations for one or more image services.
+
+You can in theory configure several images services in the server, but as of now only one can be used (the one specified in the editor config).
+
+The `host` is simply where your ImgIX images are served from.
+If `preferWebp` is set to `true` Livingdocs will pass the `auto=format` parameter (https://docs.imgix.com/apis/url/auto).
+`srcSet` defines the settings you want for your `srcset` attribute:
+1. the available image widths `widths`
+2. the width that is set to the `src` attribute (e.g. for IE11 and below), defined in `defaultWidth`
+3. The `sizes` attribute that defines the responsive behavior
+
+Note: We will take (3) out of the configuration in the medium term since we think it makes more sense to set the `sizes` attribute directly on the component or template.
+
+For background images you can simply set a fixed max-width, so that each background image will get the corresponding ImgIX width set. (if the actual width of the image is lower, ImgIX will never try to interpolate but just leave it -> this is why it is called max-width).
+
 
 ### Resrc.it
 
@@ -146,18 +133,10 @@ The parameters are equivalent to the ones in the editor. You can in theory also 
 ```js
 app: {
   imageService: 'resrc.it',
-  imageServiceConfig: {
-    host: 'https://app.resrc.it',
-    quality: 75,
-    scriptUrl: '//d2o08py1e264ss.cloudfront.net/assets/resrc-0.9.0.min.js'
-  }
 }
 ```
 
-The `imageService` field tells Livingdocs which image service should be used. The `imageServiceConfig` contains the configuration for this specific image service.
-The `host` is simply where your resrc.it images are served from. With `resrc.it` this is normally always the same.
-The `quality` setting allows you to choose a global quality for your images. In the range between 75 to 100 you normally don't see a difference.
-The `scriptUrl` points to the client-side Javascript code used for the responsive behavior. You need to provide this. And don't rely on our URL ;)
+The `imageService` field tells Livingdocs which image service should be used.
 
 #### Server
 
@@ -173,7 +152,14 @@ documents: {
 }
 ```
 
-The parameters are equivalent to the ones in the editor. You can in theory also configure several images services in the server, but as of now only one can be used (the one specified in the editor config).
+The `imageServices` contains the configurations for one or more image services.
+
+You can in theory also configure several images services in the server, but as of now only one can be used (the one specified in the editor config).Î
+
+The `host` is simply where your resrc.it images are served from. With `resrc.it` this is normally always the same.
+The `quality` setting allows you to choose a global quality for your images. In the range between 75 to 100 you normally don't see a difference.
+The `scriptUrl` points to the client-side Javascript code used for the responsive behavior. You need to provide this. And don't rely on our URL ;)
+
 
 ## `srcset` in Metadata
 
