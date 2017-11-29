@@ -1,4 +1,4 @@
-# Metadata on the Server
+# Metadata server configuration
 
 ## Scope
 
@@ -39,7 +39,8 @@ metadata: {
     plugin: 'li-title',
     config: {
       maxLength: 200,
-      required: true
+      required: true,
+      requiredErrorMessage: 'please provide a title'
     }
   },
   url: {

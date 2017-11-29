@@ -1,4 +1,4 @@
-# Metadata on the Editor
+# Metadata editor configuration
 
 ## Scope
 
