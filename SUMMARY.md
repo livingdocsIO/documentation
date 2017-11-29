@@ -52,6 +52,7 @@
 * Metadata
   * [Metadata server configuration](reference-docs/server-configuration/metadata.md)
   * [Metadata editor configuration](reference-docs/editor-configuration/metadata.md)
+  * [Metadata examples](reference-docs/metadata/examples.md)
 * [Print API](reference-docs/server-print-api/print-api.md)
 * [Server config](reference-docs/server-configuration/config.md#services)
   * [services](reference-docs/server-configuration/config.md#services)
