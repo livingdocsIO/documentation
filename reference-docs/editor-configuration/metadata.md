@@ -18,16 +18,16 @@ As you can see in the [examples](../../concepts/metadata/metadata-examples.md) y
 
 ## Available UI elements
 
-There are UI elements for:
+There are UI elements, forms, for:
 
-- text input (example above)
+- text input (example below)
+- select box
+- multiselect box
+- image selection
 - checkbox
 - datetime (date and time)
-- slugs (URL escaped titles)
-- select boxes
-- multiselect boxes
-- image selection
-- section headers (not a form, only a title)
+- slug (URL escaped title)
+- section header (not a form, only a title)
 
 The following subchapters discuss them and show the available options.
 
