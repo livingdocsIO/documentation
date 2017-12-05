@@ -1,4 +1,4 @@
-# Metadata server configuration
+# Metadata on the server
 
 ## Scope
 

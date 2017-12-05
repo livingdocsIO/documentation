@@ -1,16 +1,17 @@
-# Metadata examples
-
-
-
 ## Fully customized metadata component
 
 We would like to add a new metadata field, a `slug`, in the publish screen.
+
+A slug is a reader/SEO friendly text used in a URL, example:
+```
+https://www.example.com/a-way-to-compare-schools```
+`a-way-to-compare-schools` is a slug.
 
 ![Slug form metadata](./slug-metadata-form.png)
 
 ### Server
 
-First we need to define a new property in our Elasticsearch's mappings.
+First we need to define a new property in our Elasticsearch's mapping.
 
 In `app/search/custom-mappings/metadata.json`, add the `slug` property:
 ```JSON
@@ -57,7 +58,7 @@ There is a new `metadata` key: `slug`. It has a custom server `plugin` set to `'
 
 There is also a new object in the `metadataFormArrangement` array. It describes how the editor handles the `slug` metadata. It has a form: `'bp-slug-form'`, and a custom service: `'bpSlugService'`.
 
-The form is an Angular's component and the custom service refers to some business logic code.
+The form is an Angular component and the custom service refers to some business logic code.
 
 The `bp` prefix stands for one of our downstream named: *boilerplate*. It's generally a good practice to namespace custom components.
 
@@ -182,7 +183,7 @@ liEditor.metadataServices
   )
 ```
 
-### Comment
+### Boilerplate
 
 The whole implementation for this already exists in the boilerplates projects:
 - https://github.com/upfrontIO/livingdocs-server-boilerplate
