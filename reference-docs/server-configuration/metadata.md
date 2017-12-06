@@ -1,4 +1,4 @@
-# Metadata on the Server
+# Metadata on the server
 
 ## Scope
 
@@ -9,7 +9,7 @@ To find out more about metadata on the editor you can read the [editor documenta
 
 ## Introduction
 
-Every document(article, page) can have metadata. A metadata object consist of key-value pairs where the key is unique per document.
+Every document (article, page) can have metadata. A metadata object consist of key-value pairs where the key is unique per document.
 A metadata field has a configuration (config + used plugin) and can be configured in the channel config. It's possible to use existing metadata plugins to handle the behavior of the metadata field. It's also possible to create custom plugins.
 
 Example of a metadata object:
@@ -26,7 +26,7 @@ Example of a metadata object:
 }
 ```
 Metadata can be seen as a public API for a document. Frontends usually access on metadata
-and use them for rendering data(e.g. teasers).
+and use them for rendering data (e.g. teasers).
 
 
 ## Configuration
@@ -39,7 +39,8 @@ metadata: {
     plugin: 'li-title',
     config: {
       maxLength: 200,
-      required: true
+      required: true,
+      requiredErrorMessage: 'please provide a title'
     }
   },
   url: {

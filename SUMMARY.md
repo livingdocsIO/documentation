@@ -49,8 +49,8 @@
   * [Include server config](reference-docs/doc-includes/server_customization.md)
   * [Include user interfaces](reference-docs/doc-includes/editor_customization.md)
   * [Includes with multiple services](reference-docs/doc-includes/service_multiselect.md)
-* [Metadata definition](reference-docs/server-configuration/metadata.md)
-* [Metadata user interfaces](reference-docs/editor-configuration/metadata.md)
+* [Metadata on the server](reference-docs/server-configuration/metadata.md)
+* [Metadata editor configuration](reference-docs/editor-configuration/metadata.md)
 * [Print API](reference-docs/server-print-api/print-api.md)
 * [Server config](reference-docs/server-configuration/config.md#services)
   * [services](reference-docs/server-configuration/config.md#services)
@@ -69,7 +69,7 @@
 ## Customizing Guides
 
 * [Register a custom feature](walkthroughs/add_customizations.md)
-* [Define Metadata](concepts/metadata/metadata-examples.md)
+* [Metadata examples](walkthroughs/metadata/metadata-examples.md)
 * [Implement includes](reference-docs/doc-includes/intro.md)
 * [Configure article embed and list](reference-docs/doc-includes/embed_and_list.md)
 * [Use the Publish Hooks](reference-docs/server-extensions/publish-hooks.md)
