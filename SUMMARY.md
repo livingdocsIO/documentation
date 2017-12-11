@@ -45,6 +45,7 @@
 * [Events](reference-docs/server-extensions/events.md)
 * [Image cropper config](reference-docs/editor-configuration/image-cropping.md)
 * [Image services](concepts/images/image-services.md)
+* [Import API](reference-docs/server-import-api/import_api.md)
 * Includes
   * [Include server config](reference-docs/doc-includes/server_customization.md)
   * [Include user interfaces](reference-docs/doc-includes/editor_customization.md)
