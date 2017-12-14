@@ -14,14 +14,14 @@ in a `Livingdoc` and how users can interact with these `Components` in the
 
 See *Upstream*.
 
-## HuGO
+## [HuGO](http://www.sternwald.com/hugo/)
 
-A stand-alone product to manage images and agency reports in large numbers.
+A Digital Assets Management product edited by Sterwald, used to manage images and agency reports in large numbers.
 Also acts as a proxy for our Print Api to print publishing systems like `NewsNT` or `WoodWing`.
 
 ## Livingdoc
 
-A representation of content. It separates content from structure by using
+A `livingdoc` is a document in our system. It separates content from structure by using
 `Components`. A `Livingdoc` references a specific `Design` which defines the
 available `Components` that can be used in the document.
 
@@ -35,4 +35,4 @@ Represents an organisation and consists of users and channels.
 
 ## Upstream
 
-*Upstream* is a package/repository which is integrated in another project called *downstream*. In our case *upstream* means our core `livingdocs-editor` and `livingdocs-server` is provided as a npm package (semantic versioning) and can be used by a *downstream* project e.g. `livingdocs-server-downstream`. `livingdocs-framework` can not be installed separately and also has no distinction between up- and downstream.
+*Upstream* is a package/repository which is integrated in another project called *downstream*. In our case the *upstreams* are our core `livingdocs-editor` and `livingdocs-server`. They are provided as npm packages (semantic versioning) and can be used by a *downstream* project, e.g., `livingdocs-server-downstream`. The `livingdocs-framework` package cannot be installed separately, it is a core package that cannot be used as an *upstream*.
