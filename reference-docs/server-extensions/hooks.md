@@ -1,12 +1,12 @@
-# Livingdocs Server Publish Hooks
+# Livingdocs Server Publication Hooks
 
 ## Overview
 
-The boilerplate app allows you to hook into the publish and unpublish transactions of articles and pages and implement your customizations, e.g., for third-party system integrations. Note that you are executing your code within the transaction thus don't do things like long-running polls in there. You can also abort the publish (visible to the user) by returning the callback with an error.
+The boilerplate app allows you to hook before publish and into the publish and unpublish transactions of articles and pages and implement your customizations, e.g., for third-party system integrations. Note that in the case of publish and unpublish hooks you are executing your code within the transaction, therefore it is best to avoid things like long-running polls in there. You can also abort the publish (visible to the user) by returning the callback with an error.
 
 ### The publish hook
 
-There are sample hooks in the boilerplate located under `app/event_listeners.js`. See [here](../server-configuration/channel-config.html#hooks) for all the options and definition of the available hooks.
+There are sample hooks in the boilerplate located under [`app/event_listeners.js`](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/event_listeners.js). See [*hooks*](../server-configuration/channel-config.html#hooks) for all the options and definition of the available hooks.
 
 Upon every publish event in Livingdocs, e.g., when a user presses the "Publish" button in the editor, this hook method is called.
 You get two parameters that your custom implementation can use: the `documentVersion` which contains all information about the document and the `renditions` object which contains all rendered renditions that you defined for your channels. By default the `renditions` object will contain just one entry `webarticle` or `webpage` respectively, which just is the rendered HTML without any alterations.
