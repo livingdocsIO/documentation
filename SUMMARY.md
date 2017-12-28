@@ -54,6 +54,7 @@
 * [Metadata editor configuration](reference-docs/editor-configuration/metadata.md)
 * [Print API](reference-docs/server-print-api/print-api.md)
 * [Server config](reference-docs/server-configuration/config.md#services)
+  * [hooks](reference-docs/server-configuration/hooks.md)
   * [services](reference-docs/server-configuration/config.md#services)
   * [stack](reference-docs/server-configuration/config.md#stack)
   * [features](reference-docs/server-configuration/config.md#features)
