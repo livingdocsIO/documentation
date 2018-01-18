@@ -16,6 +16,22 @@ app: {
 }
 ```
 
+## Properties Panel
+
+### Transform Component
+
+Visibility of the "Transform Component" select menu can be configured.
+
+```js
+app: {
+  editor: {
+    propertiesPanel: {
+      transformComponentEnabled: true
+    }
+  }
+}
+```
+
 ## Login
 
 In addition to the Livingdocs login, you can configure additional login providers.

@@ -30,6 +30,7 @@
   * [Design config](reference-docs/common-designs/design_config.md)
 * [Editor config](reference-docs/editor-configuration/editing-features.md)
   * [Toolbar](reference-docs/editor-configuration/editing-features.md#toolbar)
+  * [Properties Panel](reference-docs/editor-configuration/editing-features.md#properties-panel)
   * [Login](reference-docs/editor-configuration/editing-features.md#login)
   * [Dashboard](reference-docs/editor-configuration/editing-features.md#dashboard)
   * [Main menu](reference-docs/editor-configuration/editing-features.md#main-menu)
