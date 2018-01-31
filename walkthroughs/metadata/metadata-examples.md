@@ -32,8 +32,8 @@ metadataFormArrangement: [
 ```
 
 1. A standard plugin is stored in `plugins/metadata` and will automatically be loaded on the downstream and is always ready for usage. In our example we use `li-text`.
-2. Open the respective configuration file, in our case `conf/channels/web/article/all.js` and add the catchline config from the example to the metadata object into `all.js`. The field `catchline` is now available on the server.
-3. If you want to see `catchline` on the editor publish screen, you have to configure the `metadataFormArrangement` in `conf/channels/web/article/all.js`. This will render a text-input field to the publish screen of articles where users can type in the value for the "catchline" which is automatically saved to the server.
+2. Open the `contentType` configuration file you want to edit and add the catchline config from the example to the metadata configuration. The field `catchline` is now available on documents with this `contentType`.
+3. If you want to see `catchline` on the editor publish screen, you have to configure the `metadataFormArrangement` in the same `contentType` configuration file. This will render a text-input field to the publish screen of articles where users can type in the value for the "catchline" which is automatically saved to the server.
 4. Open your elastic search metadata mapping (typically in `search/custom-mappings/metadata.json`) and add an entry as follows (the key `properties` probably already exists):
 ```json
 {
@@ -48,11 +48,11 @@ metadataFormArrangement: [
 6. After you have setup your new metadata field you can use it in the editor.
 
 
-# Example 2: Activate and Use a Custom Plugin
+# Example 2: Create your own Metadata Plugin
 
-If you want to define and use a custom plugin, you have to do the following steps on the server:
+If you want to use a custom metadata plugin, you have to do the following steps on the server:
 
-- Define the custom plugin folder in the environment config (`conf/environments/all.js`).
+- Define the custom plugin folder in the environment config (e.g. `conf/environments/all.js`).
 
 ```js
 metadataPlugins: path.resolve('./plugins/metadata')
@@ -73,7 +73,7 @@ module.exports = {
 }
 ```
 
-* Activate the custom plugin in the channel config
+* Activate the custom plugin in the `contentType` config
 
 ```js
 metadata: {
@@ -89,7 +89,7 @@ metadata: {
 
 # Example 3: Fully customized metadata component
 
-We would like to add a new metadata field, a `slug`, in the publish screen.
+Lets add a new metadata field, a `slug`, in the publish screen.
 
 A slug is a reader/SEO friendly text used in a URL, example:
 ```
@@ -103,7 +103,7 @@ https://www.example.com/a-way-to-compare-schools
 
 ## Server
 
-First we need to define a new property in our Elasticsearch's mapping.
+First we need to define a new property in our Elasticsearch mapping.
 
 In `app/search/custom-mappings/metadata.json`, add the `slug` property:
 ```JSON
@@ -117,9 +117,9 @@ In `app/search/custom-mappings/metadata.json`, add the `slug` property:
 }
 ```
 
-Then, we extend the configuration of the **web** channel for documents of type **article**.
+Then, we extend the configuration of the **web** channel for documents with `conentType` **article**.
 
-In `conf/channels/web/article/all.js` to:
+ContentType configuration:
 ```js
 module.exports = {
   metadata: {

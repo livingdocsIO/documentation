@@ -283,28 +283,20 @@ files: {
 }
 ```
 
-#### Documents
+#### Projects
+
 
 ```js
-documents: {
-  projects: {
-    default: {
-      channels: {
-        'web': {
-          articles: [channel config],
-          pages: [channel config]
-        }
-      }
-    }
-  },
-  genericTransformations: [
-    name: 'timeline'
-    conversion: require.resolve('../document-transformations/timeline-conversion')
+projects: {
+
+  // Example static channel configurations
+  channelConfigurations: [
+    require('./path/to/static-channel-config')
   ]
 }
 ```
 
-The channel config is described here: [channel config](./channel-config.md)
+The channel and contentType config is described in detail here: [channel config](./channel-config.md)
 
 
 #### Render Pipeline

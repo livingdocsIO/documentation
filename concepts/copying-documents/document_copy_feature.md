@@ -1,26 +1,29 @@
 # Document Copy Feature
 
 ## Document Copy Basics
+
 ![copy-basics](https://cloud.githubusercontent.com/assets/172394/18782898/0beb0214-8189-11e6-98cc-e5e6728456de.png)
 ([original diagram ressource](https://www.draw.io/#G0B2rv2Pw26xPLT3hXQ3BsZU1lWlE))
 
-If you want to setup and configure an article copy, you need a rough understanding of channels, designs, layouts and components.
+If you want to setup and configure an article copy, you need a rough understanding of channels, contentTypes, designs, layouts and components.
 
 Every `channel` has assigned a `livingdocs-design` (`D1, D2, ...`) and every design has one or more layouts (`L1, L2, ...`) with one ore more component (`C1, C2, ...`).
+
+For every layout there must be a contentType configuration in the channel.
 A copy can be configured in the source channel config, as you can see in the succeeding example.
 
-If you request a copy, the copy feature tries to find a config match in the channel config between the source(design/layout) and the target(design/layout). If there is a match, the copy feature makes a copy based on the configured `options` and `metadata` properties. If there is no match, the copy operation will be ignored.
+If you request a copy, the copy feature tries to find a config match in the channel config between the source(channel/contentType) and the target(channel/contentType). If there is a match, the copy feature makes a copy based on the configured `options` and `metadata` properties. If there is no match, the copy operation will be ignored.
 
 The configuration of a transformation happens in two places:
 
 1. the "setup config" in the `copy:` section of your main (channel-specific article) config that
-defines which transformations for which design/layout combinations are allowed and specifies the
+defines which transformations for which channel/contentType combinations are allowed and specifies the
 location of the corresponding instruction config in `target.instructionPath`
 
-2. the "instruction config" referenced above that holds the transformation instructions for a
-specific scenario
+2. the "instruction config" referenced above that holds the transformation instructions for a specific scenario
 
-### Copy Config Example
+
+## Copy Config Example
 
 #### Setup Config
 
@@ -28,13 +31,13 @@ specific scenario
 // copy config in the source channel
 copy: [{
   source: {
-    design: 'basic'
-    layout: 'fantasy'
+    channelHandle: 'web',
+    contentType: 'fantasy'
   },
 
   target: [{
-    design: 'eternal-bliss',
-    layout: 'regular',
+    channelHandle: 'print',
+    contentType: 'regular',
 
     // Path to a config of instructions to be applied when transforming one component to another
     instructionPath: require.resolve('../conversions/basic-to-eternal-bliss.js')
@@ -53,7 +56,7 @@ copy: [{
         'title', 'tasks',
 
         // NOT IMPLEMENTED: computes the new value based on a passed function
-        {'from': 'title', 'to': function(d) {return d.toUpperCase()}
+        {from: 'title', to: function(d) {return d.toUpperCase()}}
       ]
     }
   }]
@@ -123,8 +126,8 @@ module.exports = {
     return doCustomStuff({source, convertedDocument})
   },
 
-  // true = copy the component, even when the target layout doesn't know the component
-  // false = ignore a component when the target layout doesn't know the component
+  // true = copy the component, even when the target contentType doesn't know the component
+  // false = ignore a component when the target contentType doesn't know the component
   // NOT IMPLEMENTED: currently everything will be copied (is the same as `true`)
   copyUnknownComponents: false
 }
@@ -143,8 +146,8 @@ If you want to copy an article from `channel 1` -> `channel 2`, you need a trans
 
 ```js
 copy: [{
-  source: {design: 'basic', layout: 'default'},
-  target: [{design: 'eternal-bliss', layout: 'regular'}],
+  source: {channelHandle: 'web', contentType: 'default'},
+  target: [{channelHandle: 'print', contentType: 'regular'}],
   instructionPath: require.resolve('../conversions/basic-to-eternal-bliss.js')
 }]
 ```
@@ -158,8 +161,8 @@ Usually a copy in the same design can be done **without** an instruction. If a d
 
 ```js
 copy: [{
-  source: {design: 'basic', layout: 'default'},
-  target: [{design: 'basic', layout: 'regular'}],
+  source: {channelHandle: 'web', contentType: 'default'},
+  target: [{channelHandle: 'web', contentType: 'regular'}],
   instructionPath: require.resolve('../conversions/basic-default-to-basic-regular.js')
 }]
 ```
@@ -174,8 +177,8 @@ This scenario copies all components from one layout to another layout in the sam
 
 ```js
 copy: [{
-  source: {design: 'basic', layout: 'default'},
-  target: [{design: 'basic', layout: 'regular'}],
+  source: {channelHandle: 'web', contentType: 'default'},
+  target: [{channelHandle: 'web', contentType: 'regular'}],
   instructionPath: require.resolve('../conversions/basic-default-to-basic-regular.js')
 }]
 ```
@@ -195,8 +198,8 @@ This scenario copies all components from one layout to another layout in the sam
 
 ```js
 copy: [{
-  source: {design: 'basic', layout: 'default'},
-  target: [{design: 'basic', layout: 'regular'}],
+  source: {channelHandle: 'web', contentType: 'default'},
+  target: [{channelHandle: 'web', contentType: 'regular'}],
   instructionPath: require.resolve('../conversions/basic-default-to-basic-regular.js')
 }]
 ```
@@ -209,11 +212,12 @@ module.exports = {
 
 
 ## Copy Algorithm
+
 In this section I try to describe what copy config options result in which copy algorithm.
 
 ```
 # pseudocode
-if config matches source(design/layout) && target(design/layout)
+if config matches source(channel/contentType) && target(channel/contentType)
   if config:copy:options:instruction
     return doCopyWithInstruction()
   if config:copy:options:copyUnknownComponents == true

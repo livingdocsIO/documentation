@@ -115,8 +115,8 @@ liServer.registerInitializedHook((done) => {
   liServer.features.api('li-render-pipeline').registerRenderHooks({
     projectHandle: 'your-interesting-project',
     channelHandle: 'some-channel',
-    beforeRenderHook: ({documentType, rendition}, callback) => {
-      if (['interview', 'biography'].includes(documentType)) {
+    beforeRenderHook: ({contentType, rendition}, callback) => {
+      if (['interview', 'biography'].includes(contentType)) {
         liServer.log.info("We're about to render something about somebody!")
         // do something with the rendition:
         const livingdoc = rendition.getLivingdoc()
