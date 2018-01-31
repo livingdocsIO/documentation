@@ -196,19 +196,25 @@ emails: {
 
 #### Designs
 
-Configure the Livingdocs Design Server.
 
-- `design_repository` is used to define from where designs are loaded.
-- `public`, `bucket` and `bucket_region` are only used if designs are
-  uploaded through this server. (The `bucket_region` must support
-  Amazon Signature Version 2)
+Configure the Livingdocs Design Server. When a design is uploaded the assets
+are moved to the storage configured here.
 
 ```js
 designs: {
-  design_repository: 'https://api.livingdocs.io',
-  public: 'http://livingdocs-designs-dev.s3.amazonaws.com',
-  bucket: 'livingdocs-designs-dev',
-  bucket_region: 'eu-west-1'  
+  assets: {
+    cache_expiration: 31536000,
+    publicUrl: 'http://livingdocs-designs-dev.s3.amazonaws.com',
+    storage: {
+      strategy: 's3',
+      config: {
+        bucket: 'livingdocs-designs-dev',
+        region: 'eu-west-1',
+        accessKeyId: '*****',
+        secretAccessKey: '*****'
+      }
+    }
+  }
 }
 ```
 
