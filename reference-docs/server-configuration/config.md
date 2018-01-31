@@ -193,9 +193,37 @@ emails: {
 }
 ```
 
+#### Design Loader
+
+The DesignLoader offers different options how designs are loaded. By default designs
+are loaded from the local database.
+
+Options include:
+* Load a specific design from a url
+* Preload a design into memory (useful for testing, or if you only change designs
+  during a deploy)
+* Load a design from another Livingdocs Server
+
+```js
+designLoader: {
+  hostedDesigns: [{ // optional
+    designName: 'timeline',
+
+    // The final request for timeline design v1.0.0 will go to this url:
+    // -> http://assets.livingdocs.io/timeline/1.0.0
+    url: 'http://assets.livingdocs.io/timeline'
+  }],
+  localDesigns: [{ // optional
+    path: '/designs/timeline/v1.1.0' // path to design
+  }],
+  designRepository: { // optional, defaults to the local design server
+    remoteHost: 'http://api.livingdocs.io'
+  },
+  cacheSize: 100 // optional, defaults to '20'
+}
+```
 
 #### Designs
-
 
 Configure the Livingdocs Design Server. When a design is uploaded the assets
 are moved to the storage configured here.
