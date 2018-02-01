@@ -347,6 +347,7 @@ search: {
   host: 'http://localhost:9200',
   article_document_index: 'li_local_documents',
   number_of_replicas: 1,
+  apiVersion: '2.4', // optional, defaults to '2.4'
   log: null, // use 'trace' to debug the search feature (warning: very verbose)
 
   // The metadata mapping determines which metadata fields will be indexed
