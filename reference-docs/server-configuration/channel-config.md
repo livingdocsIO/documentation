@@ -23,7 +23,7 @@ The following sample configuration file illustrates all of the above.
   editMode: 'default',
 
   // Content Types
-  contentTypes: [
+  contentTypes: [{
     require('./path/to/one/content_type_config'),
     require('./path/to/another/content_type_config')
   }]
@@ -47,12 +47,12 @@ The following sample configuration file illustrates all of the above.
   }
 
   // Copy Configuration
-  copy: [
+  copy: [{
     source: {
       channelHandle: 'web',
       contentType: 'gallery'
     },
-    target: [
+    target: [{
       channelHandle: 'web',
       contentType: 'gallery'
       options: {
@@ -65,7 +65,7 @@ The following sample configuration file illustrates all of the above.
           {from: 'author', to: 'description'}
         ]
       }
-    ]
-  ]
+    }]
+  }]
 }
 ```

@@ -117,7 +117,7 @@ In `app/search/custom-mappings/metadata.json`, add the `slug` property:
 }
 ```
 
-Then, we extend the configuration of the **web** channel for documents with `conentType` **article**.
+Then, we extend the configuration of the **web** channel for documents with `contentType` **article**.
 
 ContentType configuration:
 ```js

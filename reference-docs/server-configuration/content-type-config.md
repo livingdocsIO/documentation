@@ -118,9 +118,7 @@ module.exports = {
   },
   'app': {
     output: {
-      'json': {
-        outputRenderer: appRenderer
-      }
+      'json': appRenderer
     }
   }
 }
