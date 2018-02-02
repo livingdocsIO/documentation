@@ -5,12 +5,13 @@
 This documentation assumes that you have setup a channel and design within Livingdocs.
 You also know what an environment and a channel config is.
 
-To find out more about metadata on the editor you can read the [editor documentation](../editor-configuration/metadata.md) or study [examples](../../concepts/metadata/metadata-examples.md).
+To find out more about metadata on the editor you can read the [editor documentation](../editor-configuration/metadata.md) or study [examples](../../walkthroughs/metadata/metadata-examples.md).
 
 ## Introduction
 
-Every document (article, page) can have metadata. A metadata object consist of key-value pairs where the key is unique per document.
-A metadata field has a configuration (config + used plugin) and can be configured in the channel config. It's possible to use existing metadata plugins to handle the behavior of the metadata field. It's also possible to create custom plugins.
+Every document can have metadata. Which metadata properties a document has is defined by its `contentType`. A metadata object consist of key-value pairs where the key is unique per document.
+
+A metadata field has a configuration (config + used plugin) and can be configured in the `contentType` config. It's possible to use existing metadata plugins to handle the behavior of the metadata field. It's also possible to create custom plugins.
 
 Example of a metadata object:
 ```json
