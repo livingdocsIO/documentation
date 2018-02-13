@@ -5,11 +5,11 @@
 ![copy-basics](https://cloud.githubusercontent.com/assets/172394/18782898/0beb0214-8189-11e6-98cc-e5e6728456de.png)
 ([original diagram ressource](https://www.draw.io/#G0B2rv2Pw26xPLT3hXQ3BsZU1lWlE))
 
-If you want to setup and configure an article copy, you need a rough understanding of channels, contentTypes, designs, layouts and components.
+If you want to setup and configure an article copy, you need a rough understanding of channels, content types, designs, layouts and components.
 
 Every `channel` has assigned a `livingdocs-design` (`D1, D2, ...`) and every design has one or more layouts (`L1, L2, ...`) with one ore more component (`C1, C2, ...`).
 
-For every layout there must be a contentType configuration in the channel.
+For every layout there must be a corresponding content type configuration in the channel.
 A copy can be configured in the source channel config, as you can see in the succeeding example.
 
 If you request a copy, the copy feature tries to find a config match in the channel config between the source(channel/contentType) and the target(channel/contentType). If there is a match, the copy feature makes a copy based on the configured `options` and `metadata` properties. If there is no match, the copy operation will be ignored.

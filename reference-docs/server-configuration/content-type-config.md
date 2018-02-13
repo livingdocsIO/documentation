@@ -6,7 +6,7 @@ a document and which metadata are present.
 
 Whenever you create a document you have to choose of what contentType it will be. The contentType of a document cannot be changed after creation.
 
-The `documentType` distinguished between articles and pages. Articles will be accessible in the main dashboard in the editor. Pages appear on a different screen. It is also possible to give distinct permissions for articles or pages.
+The `documentType` distinguishes between articles and pages. Articles will be accessible in the main dashboard in the editor. Pages appear on a different screen. It is also possible to give distinct permissions for articles or pages.
 
 *Important to know* For every `contentType` there must be a `layout` in the design.
 The name layout of the layout must be exactly the same as the `contentType.handle`.

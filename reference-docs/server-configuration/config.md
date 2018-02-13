@@ -201,16 +201,16 @@ are loaded from the local database.
 Options include:
 * Load a specific design from a url
 * Preload a design into memory (useful for testing, or if you only change designs
-  during a deploy)
+  during a deployment)
 * Load a design from another Livingdocs Server
 
 All these options can work alongside each other.
 
-If a design is requested the design loader fill do in this order:
+If a design is requested the design loader will execute these steps in the given order:
 
 1. check if the design is preloaded in `localDesigns`.
   -> If yes, return it, otherwise continue.
-2. check if for this design name a custom url is configured in `hostedDesigns`. 
+2. check if for this design name a custom url is configured in `hostedDesigns`.
   -> If yes append the version to the url and fetch from that url. Return the design or an error.
 3. load from a remote design server if a `designRepository` is configured otherwise load from local server
 

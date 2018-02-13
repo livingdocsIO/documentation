@@ -157,7 +157,7 @@ In a component the aspect ratios can be defined per image directive. In the foll
 
 ## Layouts
 
-Layouts define different type of documents. For every layout there must be a corresponding `contentType` in the channel configuration of the server. When creating a document in the
+Layouts define subtypes of documents. For every layout there must be a corresponding `contentType` in the channel configuration of the server. When creating a document in the
 editor, a user can choose which contentType he wants to use. And this contentType will match with a layout in the design.
 
 A layout defines a list of components and a default content that will be present
