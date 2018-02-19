@@ -40,7 +40,7 @@ Example:
 ```js
 filters: {
   articleList: {
-    displayFilters: ['channels', 'layouts', 'timeRange', 'sortBy'],
+    displayFilters: ['channels', 'contentType', 'timeRange', 'sortBy'],
     defaultQueries: [{type: 'documentType', value: 'article'}]
   },
   inlineArticleList: {
