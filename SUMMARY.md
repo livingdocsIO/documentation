@@ -41,6 +41,7 @@
   * [Filters](reference-docs/editor-configuration/editing-features.md#filters)
   * [Timeout](reference-docs/editor-configuration/editing-features.md#timeout)
   * [Third-party services](reference-docs/editor-configuration/editing-features.md#third-party-services)
+  * [Document History](reference-docs/editor-configuration/editing-features.md#document-history)
   * [Links](reference-docs/editor-configuration/editing-features.md#links)
   * [Keyboard shortcuts](reference-docs/editor-configuration/editing-features.md#keyboard-shortcuts)
 * [Events](reference-docs/server-extensions/events.md)

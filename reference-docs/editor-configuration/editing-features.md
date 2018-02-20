@@ -301,6 +301,22 @@ Iframely is used for 2 things:
 
 See [here](./text-editing.md#spellcheck)
 
+## Document History
+
+```
+{
+  app: {
+    useHistoryStatistics: true
+    useHistoryRestore: true
+  }
+}
+```
+
+The `useHistoryStatistics` option will show a small statistics/activity panel at the top of the document history sidebar.
+The `useHistoryRestore` option enables / disables the restore functionality in the document history, i.e. the ability to restore the opened document to an older revision.
+
+Both options are recommended.
+
 ## Links
 
 See [here](./text-editing.md#links)
