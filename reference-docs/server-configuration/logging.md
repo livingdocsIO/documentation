@@ -29,6 +29,21 @@ the error will just be coerced as string with `toString()` and not serialized
 with its stack trace.
 
 
+#### Creating a child logger
+
+Child loggers can be created with additional properties that will be added to
+all logs which are created with the child logger.
+
+```js
+const log = server.log.child({ns: 'li-projects'})
+```
+
+In this example `ns` is short for namespace. And we use this property to identify
+where logs originated. But the use of the `ns` property is just a convention we
+use in the livingdocs-server. You can also use other properties in your child
+loggers.
+
+
 ## What does the log output look like?
 
 #### Example json log:
