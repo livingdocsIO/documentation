@@ -26,7 +26,10 @@ Visibility of the "Transform Component" select menu can be configured.
 app: {
   editor: {
     propertiesPanel: {
-      transformComponentEnabled: true
+      transformComponent: {
+        enabled: true,
+        showEvenIfEmpty: false
+      }
     }
   }
 }
