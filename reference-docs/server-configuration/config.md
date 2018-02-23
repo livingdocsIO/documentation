@@ -328,6 +328,19 @@ files: {
 }
 ```
 
+#### Documents
+
+```js
+documents: {
+  imageServices: {
+    imgix: {} // imageService specific configuration 
+  }
+}
+```
+
+See [image service configuration](../../concepts/images/image-services.md) for more information.
+
+
 #### Projects
 
 
