@@ -94,7 +94,7 @@ documents: {
       preferWebp: true,
       backgroundImage: {
         maxWidth: 2048
-      }
+      },
       srcSet: {
         defaultWidth: 1024,
         widths: [
