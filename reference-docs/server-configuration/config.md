@@ -239,6 +239,8 @@ designLoader: {
 Configure the Livingdocs Design Server. When a design is uploaded the assets
 are moved to the storage configured here.
 
+For details about the `storage` option see [storage-config](./file-storage-config.md)
+
 ```js
 designs: {
   assets: {
@@ -333,7 +335,7 @@ files: {
 ```js
 documents: {
   imageServices: {
-    imgix: {} // imageService specific configuration 
+    imgix: {} // imageService specific configuration
   }
 }
 ```
