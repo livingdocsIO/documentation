@@ -15,11 +15,7 @@
 ## Reference
 
 * [Channel config](reference-docs/server-configuration/channel-config.md)
-  * [Config options](reference-docs/server-configuration/channel-config.md)
-  * [Hooks](reference-docs/server-configuration/channel-config.md#hooks)
-  * [Publication hooks](reference-docs/server-configuration/channel-config.md#publishunpublish-hooks)
-  * [Render hooks](reference-docs/server-configuration/channel-config.md#before-render-hooks)
-  * [Collection hooks](reference-docs/server-configuration/channel-config.md#document-lists-hooks)
+* [Content-type config](reference-docs/server-configuration/content-type-config.md)
 * Data model
   * [Livingdoc](reference-docs/common-livingdoc/livingdoc.md)
   * [Component tree](reference-docs/common-livingdoc/component_tree.md)
