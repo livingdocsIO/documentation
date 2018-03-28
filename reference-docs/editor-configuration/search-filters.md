@@ -19,6 +19,10 @@ The editor core API exposes functions to customize the search filters on the das
 
   This configures the pages screen.
 
+- `dataRecordList`
+
+  This configures the data-record screen.
+
 - `documentListList`
 
   This configures the List screen.
@@ -55,6 +59,13 @@ filters: {
     displayFilters: [],
     defaultQueries: [
       {type: 'documentType', value: 'page'},
+      {type: 'sortBy', value: '-updated_at'}
+    ]
+  },
+  dataRecordList: {
+    displayFilters: ['timeRange'],
+    defaultQueries: [
+      {type: 'documentType', value: 'data-record'},
       {type: 'sortBy', value: '-updated_at'}
     ]
   },
