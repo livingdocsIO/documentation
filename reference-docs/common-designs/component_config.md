@@ -76,28 +76,75 @@ Directives are the editable parts of a component and come in different flavors, 
 
 ### `doc-editable`
 
+
+#### `plainText`, `tagWhitelist` and `tagBlacklist`
+
+Only one of these options can be used on a single directive. `plainText` does not allow any markup. `tagWhitelist` can be used to have exact control about the possible tags in content. `tagBlacklist` can be used to filter out only a few specific tags and allow everything else.
+
+Note: Block level elements and elements like script and style are already prohibited in editable directives. Please use the new options only to filter inline elements like a or strong for example.
+
+
 `plainText`: Ensures that a text can not contain any HTML tags (decodes HTML).
 
 Example:
 ```html
 <script type="ld-conf">
 {
-  "label": "foo",
+  "label": "Page Title",
   "directives": {
-    "title": {
+    "text": {
       "plainText": true
     }
   }
 }
 </script>
 
-<section class="container container--product container--nzzas">
-  <a class="container__head" doc-link="link">
-    <span class="container__link" doc-editable="title">Titel</span>
-  </a>
-</section>
+<h1 doc-editable="text">
+  Title
+</h1>
 ```
 
+
+`tagWhitelist`: Only allows selected tags in the content.
+
+```html
+<script type="ld-conf">
+{
+  "label": "Paragraph",
+  "directives": {
+    "text": {
+      "tagWhitelist": ['a', 'em']
+    }
+  }
+}
+</script>
+
+<p doc-editable="text">
+  Lorem Ipsum Dolorem...
+</p>
+```
+
+`tagBlacklist`: Removes certain tags from the content.
+
+Example where an editable directive cannot contain links:
+```html
+<script type="ld-conf">
+{
+  "label": "Subtitle",
+  "directives": {
+    "text": {
+      "tagBlacklist": ['a']
+    }
+  }
+}
+</script>
+
+<h3 doc-editable="text">
+  Lorem Ipsum Dolorem...
+</h3>
+```
+
+#### Text-Counter
 
 `excludeFromTextCount`: Tells the editor to exclude the directive
 from text counter. By default every `doc-editable` will be counted.
@@ -106,19 +153,18 @@ Example, only count text directive:
 ```html
 <script type="ld-conf">
 {
-  "label": "foo",
+  "label": "Footer",
   "directives": {
-    "title": {
+    "text": {
       "excludeFromTextCount": true
     }
   }
 }
 </script>
 
-<section class="container">
-  <span class="container__item" doc-editable="title">Titel</span>
-  <span class="container__item" doc-editable="text">Text</span>
-</section>
+<p doc-editable="text" class="footer">
+  Title
+</p>
 ```
 
 ### `doc-link`
