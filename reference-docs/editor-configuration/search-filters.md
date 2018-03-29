@@ -88,6 +88,7 @@ The core allows you to use the following values for `displayFilters`:
 - `timeRange`, filter the search results in time ranges such as last 24 hours
 - `sortBy`: `relevance` (default), `creation_date`, `updated_at`, `alphabetical`  
   **ATTENTION:** if you use the `sortBy` in the displayFilters you can not at the same time configure a `sortBy` in the `defaultQueries`, only one is allowed.
+- `language`: uses the channel configuration for [available languages](../server-configuration/channel-config.md) to offer a select box to filter for languages (requires multi-language feature to be enabled)
 
 The next section shows you how you can add your own custom filters to the ones defined in the core.
 

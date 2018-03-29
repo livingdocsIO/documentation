@@ -15,11 +15,7 @@
 ## Reference
 
 * [Channel config](reference-docs/server-configuration/channel-config.md)
-  * [Config options](reference-docs/server-configuration/channel-config.md)
-  * [Hooks](reference-docs/server-configuration/channel-config.md#hooks)
-  * [Publication hooks](reference-docs/server-configuration/channel-config.md#publishunpublish-hooks)
-  * [Render hooks](reference-docs/server-configuration/channel-config.md#before-render-hooks)
-  * [Collection hooks](reference-docs/server-configuration/channel-config.md#document-lists-hooks)
+* [Content-type config](reference-docs/server-configuration/content-type-config.md)
 * Data model
   * [Livingdoc](reference-docs/common-livingdoc/livingdoc.md)
   * [Component tree](reference-docs/common-livingdoc/component_tree.md)
@@ -82,6 +78,8 @@
 * [Implement single-sign-on (SSO)](walkthroughs/github-login.md)
 * [Add an Instagram embed](walkthroughs/instagram_embed.md)
 * [Use push notifications and custom dashboard item](walkthroughs/push_notifications.md)
+* [Enable multi-language support](walkthroughs/setup_multilanguage.md)
+* [A possible translation system](walkthroughs/translations_example.md)
 * [A possible routing system](reference-docs/server-public-api/routing-system.md)
 * [Hugo Drag and Drop](reference-docs/server-extensions/hugo-dnd.md)
 
