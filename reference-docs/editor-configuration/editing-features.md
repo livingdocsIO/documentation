@@ -99,6 +99,12 @@ app: {
     scope: 'readPages'
   },
   {
+    label: 'Data Records'
+    sref: 'app.dataRecords'
+    icon: 'format-list-checks'
+    scope: 'readDataRecords'
+  },
+  {
     label: 'Lists',
     sref: 'app.lists',
     icon: 'view-headline',
