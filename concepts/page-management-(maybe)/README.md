@@ -85,5 +85,3 @@ Frontends will typically need to deliver documents as well as some kind of aggre
 Rendering of a document page is trivial given the id of the document. The frontend can simply query elastic search for the document and use the pre-rendered HTML body to show the document. Of course it can also enrich the content with additional information or use the document's metadata. Typically, a frontend app will also cache the document in some kind of frontend cache, e.g., Varnish.
 
 Rendering of aggregate pages is typically more involved. A frontend app gets the definition of a Page's container arrangement from a Page (remember: this is a kind of Livingdocs document). It will then query each container in turn and for each container query the component card index to get the appropriate pre-rendered cards. Containers typically define additional visual properties such as the type of card to use or placeholders for ad systems. It is the job of the frontend app to take all this information together and create a deliverable aggregate page.
-
-[Next: Creating your own component cards](./component_card_definition.md)
