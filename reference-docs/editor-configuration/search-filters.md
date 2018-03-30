@@ -35,6 +35,13 @@ Properties:
   soon as a user manually selects a filter and reapplied when all manually
   chosen filters are deselected.
 
+- emptySearchQueries
+
+  This setting determines the empty search filter. This filter is taken into
+  account when there is no search query input present. Note that this filter is
+  treated mutually exclusive with the default filter that is used in case there is
+  a query present.
+
 
 Example:
 ```js
@@ -42,25 +49,39 @@ filters: {
   articleList: {
     displayFilters: ['channels', 'contentType', 'timeRange', 'sortBy'],
     defaultQueries: [{type: 'documentType', value: 'article'}]
+    emptySearchQueries: [{type: 'documentType', value: 'article'}]
   },
   inlineArticleList: {
     displayFilters: [],
     defaultQueries: [
       {type: 'documentType', value: 'article'},
-      {type: 'sortBy', value: '-updated_at'}
+      {type: 'sortBy', value: 'relevance'}
       // because `sortBy` is used here, it cannot be used as `displayFilters`
+    ]
+    emptySearchQueries: [
+      {type: 'documentType', value: 'article'},
+      {type: 'sortBy', value: '-updated_at'}
     ]
   },
   pageList: {
     displayFilters: [],
     defaultQueries: [
       {type: 'documentType', value: 'page'},
+      {type: 'sortBy', value: 'relevance'}
+    ],
+    emptySearchQueries: [
+      {type: 'documentType', value: 'article'},
       {type: 'sortBy', value: '-updated_at'}
     ]
   },
   documentListList: {
     displayFilters: ['timeRange'],
     defaultQueries: [
+      {type: 'documentType', value: 'article'},
+      {type: 'documentState', value: 'published'},
+      {type: 'sortBy', value: 'relevance'}
+    ]
+    emptySearchQueries: [
       {type: 'documentType', value: 'article'},
       {type: 'documentState', value: 'published'},
       {type: 'sortBy', value: '-updated_at'}
