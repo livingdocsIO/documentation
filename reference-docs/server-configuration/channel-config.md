@@ -8,6 +8,7 @@ The channel configuration allows you to:
 - define contentTypes
 - define copy options
 - configure the push notifications feature
+- configure the multi-language feature
 
 The contentType configuration is described in detail here: [contentType config](./content-type-config.md)
 
@@ -21,6 +22,25 @@ The following sample configuration file illustrates all of the above.
   // the `handle` 'web' will be used.
   handle: 'web',
   editMode: 'default',
+
+  // Multi-language
+  // Important: Make sure to use ISO-639-1 compliant locale codes
+
+  // defines the languages that a user can select for a document
+  availableLanguages: [
+    {
+      'name': 'English',
+      'value': 'en-US'
+    }, {
+      'name': 'German',
+      'value': 'de-DE'
+    }
+  ],
+  // used to create new documents
+  defaultLanguage: {
+    name: 'English',
+    value: 'en-US'
+  },
 
   // Content Types
   contentTypes: [{

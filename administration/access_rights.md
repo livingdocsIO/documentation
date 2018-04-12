@@ -35,6 +35,14 @@ Pages:
 - `publishPages`, users that can publish pages
 - `unpublishPages`, users that can unpublish pages
 
+Data:
+
+- `readData`, users that can read data
+- `createData`, users that can create data
+- `writeData`, users that can write data
+- `publishData`, users that can publish data
+- `unpublishData`, users that can unpublish data
+
 Lists (main menu entry):
 
 - `readLists`, users that can read lists

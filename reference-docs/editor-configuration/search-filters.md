@@ -19,6 +19,10 @@ The editor core API exposes functions to customize the search filters on the das
 
   This configures the pages screen.
 
+- `dataRecordList`
+
+  This configures the data-record screen.
+
 - `documentListList`
 
   This configures the List screen.
@@ -74,6 +78,13 @@ filters: {
       {type: 'sortBy', value: '-updated_at'}
     ]
   },
+  dataRecordList: {
+    displayFilters: ['timeRange'],
+    defaultQueries: [
+      {type: 'documentType', value: 'data-record'},
+      {type: 'sortBy', value: '-updated_at'}
+    ]
+  },
   documentListList: {
     displayFilters: ['timeRange'],
     defaultQueries: [
@@ -98,6 +109,7 @@ The core allows you to use the following values for `displayFilters`:
 - `timeRange`, filter the search results in time ranges such as last 24 hours
 - `sortBy`: `relevance` (default), `creation_date`, `updated_at`, `alphabetical`  
   **ATTENTION:** if you use the `sortBy` in the displayFilters you can not at the same time configure a `sortBy` in the `defaultQueries`, only one is allowed.
+- `language`: uses the channel configuration for [available languages](../server-configuration/channel-config.md) to offer a select box to filter for languages (requires multi-language feature to be enabled)
 
 The next section shows you how you can add your own custom filters to the ones defined in the core.
 
