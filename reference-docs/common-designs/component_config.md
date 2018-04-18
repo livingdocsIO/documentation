@@ -53,7 +53,9 @@ Example:
 </aside>
 ```
 
-## Container
+## Nesting Components
+
+Components can be nested. For more info have a look at the `doc-container` directive.
 
 `allowedParents`: Allows you to define what components are allowed as parents of this component. The allowed parents must contain at least one `doc-container` directive. Normally, this config comes in tandem with the `allowedChildren` configuration on the `doc-container` directive (see further down in the `doc-container` section).
 
@@ -74,7 +76,15 @@ Example:
 
 Directives are the editable parts of a component and come in different flavors, e.g. `doc-editable`, `doc-image`, etc. Every directive can take different options. Following, we describe the different options for different kinds of directives.
 
-### `doc-editable`
+### `doc-editable` directive
+
+
+#### `plainText`, `tagWhitelist` and `tagBlacklist`
+
+Only one of these options can be used on a single directive. `plainText` does not allow any markup. `tagWhitelist` can be used to have exact control about the possible tags in content. `tagBlacklist` can be used to filter out only a few specific tags and allow everything else.
+
+Note: Block level elements and elements like script and style are already prohibited in editable directives. Use the new options only to filter inline elements like `<a>` or `<strong>`.
+
 
 `plainText`: Ensures that a text can not contain any HTML tags (decodes HTML).
 
@@ -82,22 +92,61 @@ Example:
 ```html
 <script type="ld-conf">
 {
-  "label": "foo",
+  "label": "Page Title",
   "directives": {
-    "title": {
+    "text": {
       "plainText": true
     }
   }
 }
 </script>
 
-<section class="container container--product container--nzzas">
-  <a class="container__head" doc-link="link">
-    <span class="container__link" doc-editable="title">Titel</span>
-  </a>
-</section>
+<h1 doc-editable="text">
+  Title
+</h1>
 ```
 
+
+`tagWhitelist`: Only allows selected tags in the content.
+
+```html
+<script type="ld-conf">
+{
+  "label": "Paragraph",
+  "directives": {
+    "text": {
+      "tagWhitelist": ['a', 'em']
+    }
+  }
+}
+</script>
+
+<p doc-editable="text">
+  Lorem Ipsum Dolorem...
+</p>
+```
+
+`tagBlacklist`: Removes certain tags from the content.
+
+Example where an editable directive cannot contain links:
+```html
+<script type="ld-conf">
+{
+  "label": "Subtitle",
+  "directives": {
+    "text": {
+      "tagBlacklist": ['a']
+    }
+  }
+}
+</script>
+
+<h3 doc-editable="text">
+  Lorem Ipsum Dolorem...
+</h3>
+```
+
+#### Text-Counter
 
 `excludeFromTextCount`: Tells the editor to exclude the directive
 from text counter. By default every `doc-editable` will be counted.
@@ -106,22 +155,21 @@ Example, only count text directive:
 ```html
 <script type="ld-conf">
 {
-  "label": "foo",
+  "label": "Footer",
   "directives": {
-    "title": {
+    "text": {
       "excludeFromTextCount": true
     }
   }
 }
 </script>
 
-<section class="container">
-  <span class="container__item" doc-editable="title">Titel</span>
-  <span class="container__item" doc-editable="text">Text</span>
-</section>
+<p doc-editable="text" class="footer">
+  Title
+</p>
 ```
 
-### `doc-link`
+### `doc-link` directive
 
 `prefill`: allows to define a metadata fetching service to prefill the content of other directives from the result of fetching metadata from the respective link. Currently only iframely is supported as a metadata service. What this does in a nutshell is parsing the `head` section of a linked HTML page (the content of `doc-link`) for meta tags.
 
@@ -179,7 +227,7 @@ Example:
 Reading example: The `doc-editable` directive `headline` will be filled through the metadata service `iframely` and the content comes from the metadata key `author`.
 
 
-### `doc-image`
+### `doc-image` directive
 
 `ratios`: allows you to define pre-defined image ratios for an image. The cropping mask in the Livingdocs editor will show those ratios when cropping the image of the respective component.
 
@@ -207,7 +255,7 @@ Example:
 
 `allowOriginalRatio`: true or false. If true will show the original ratio of the image in the crop selection box as well. See example above.
 
-### `doc-container`
+### `doc-container` directive
 
 `defaultComponent`: allows you to overwrite the default components inside a container. Probably the most important one is the `paragraph` default component which defines what happens upon pressing the Enter key.
 
@@ -276,7 +324,7 @@ Example:
 </div>
 ```
 
-### `doc-style`
+### `doc-style` directive
 
 `properties`: Array of style properties that are set when the user enters content. E.g. in the example below a user could set a hex-code for a color that is then set to `style="background-color:user-value"`.
 
@@ -314,7 +362,7 @@ Example:
 </header>
 ```
 
-### `doc-html`
+### `doc-html` directive
 
 A `doc-html` directive can take arbitrary HTML. The Livingdocs editor handles `doc-html` directives as [embeds](../editor-configuration/editing-features.md#embeds) except when you name the directive `free-html` in which case it is treated as a free-html input (no validation). The latter is dangerous and we don't advise using it.
 
@@ -338,7 +386,7 @@ Example:
 ```
 
 
-### `doc-include`
+### `doc-include` directive
 
 `service`: defines the service type to use which corresponds to the name of an existing server-side plugin. `doc-include` services are freely configurable and are implemented as plugins in customizing projects. The concept is similar to [edge side includes](https://en.wikipedia.org/wiki/Edge_Side_Includes).
 
