@@ -55,7 +55,7 @@
   * [Include User Interfaces](reference-docs/doc-includes/editor_customization.md)
   * [Includes with Multiple Services](reference-docs/doc-includes/service_multiselect.md)
 * [Print API](reference-docs/server-print-api/print-api.md)
-
+* [Seed API](reference-docs/server-seed-api/seed_api.md)
 
 ## Design Howtos
 
