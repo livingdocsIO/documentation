@@ -58,6 +58,12 @@ We plan to allow to move all layout options which are currently defined in the d
 
   // Configuration for the Editor behaviour
   editor: {
+    ui: {
+      // flag whether the list assignment on the publish (metadata)
+      // screen should be shown for this content-type
+      showListAssignment: true
+    },
+
     frontend: {
       // link pattern for ld-editor publish panel to generate a link
       // Available placeholders:
