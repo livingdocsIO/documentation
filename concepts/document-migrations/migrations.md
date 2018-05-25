@@ -36,7 +36,7 @@ It is important to note that the data migrations **only affect the Livingdocs da
 
 ## Structure of a migration script
 
-The previous section explained data migrations as a consequence of a design change. But data migrations really are a general-purpose tool that can be used to alter your existing documents. A different and common example is the need to add a new metadata field to all of your documents and initialize the value in some way.
+The previous section explained data migrations as a consequence of a design change. But data migrations really are a general-purpose tool that can be used to alter your existing documents. A different and common example is the need to add a new metadata field to all of your documents and initialise the value in some way.
 
 The Livingdocs migration framework gives you a hook method to implement and calls this method with every document in your project. The hook method looks like this:
 
