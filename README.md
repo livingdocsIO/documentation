@@ -1,6 +1,5 @@
 # Livingdocs documentation
 
-
 This is the technical documentation for the Livingdocs CMS. We address 3 larger audiences here:
 - designers
 - integrators
@@ -13,4 +12,3 @@ Please let us know about gaps or errors in our documentation at [documentation@l
 
 
 (If you are viewing this documentation on our Github repository, there is a new nicer view of it at https://docs.livingdocs.io)
-
