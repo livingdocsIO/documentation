@@ -17,6 +17,7 @@ The editor offers a UI library of reusable elements (text fields, select boxes, 
 There are UI elements, forms, for:
 
 - text input (example below)
+- textarea input
 - select box
 - multiselect box
 - image selection
@@ -45,6 +46,40 @@ You need to make sure that your server-side metadata field is of type `li-text` 
 `readOnly` and `maxLength` let you customize the behavior of the text input.
 The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
 The service plugin for a text input allows you to customize the logic for the following methods:
+
+```js
+{
+  // init the value of the text input
+  init (identifier) {},
+
+  // set the value
+  set (identifier, text) {}
+}
+```
+
+There is a sample implementation in `plugins/metadata_services/default_text_service.coffee` to help you get started.
+
+### Textarea input
+
+This is almost exactly the same as the text input, except for the `rows` config.
+
+```js
+name: 'nameOfYourMetadataTextareaField',
+form: 'li-meta-textarea-form',
+config: {
+  service: 'nameOfYourServicePlugin', // mandatory
+  label: 'foo', // optional, takes camelized name otherwise
+  placeholder: 'bar', // optional, takes camelized name otherwise
+  readOnly: false, // optional, false by default
+  maxLength: 200, // optional, integer, not used by default
+  rows: 10 // optional, integer, 5 by default
+}
+```
+
+You need to make sure that your server-side metadata field is of type `li-text` otherwise you will get errors.
+`readOnly` and `maxLength` let you customize the behavior of the text input.
+The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
+The service plugin for a textarea input is exactly the same as for the text input and allows you to customize the logic for the following methods:
 
 ```js
 {
