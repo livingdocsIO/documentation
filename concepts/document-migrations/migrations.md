@@ -41,7 +41,10 @@ The previous section explained data migrations as a consequence of a design chan
 The Livingdocs migration framework gives you a hook method to implement and calls this method with every document in your project. The hook method looks like this:
 
 ```js
-exports.migrate = ({serializedLivingdoc, metadata}, callback) => {
+//  systemdata:
+//    document_id: 1
+//    content_type: 'regular'
+exports.migrate = ({serializedLivingdoc, metadata, systemdata}, callback) => {
   // do your stuff here
 
   if (serializedLivingdoc.layout === 'regular') {
@@ -61,7 +64,12 @@ exports.migrate = ({serializedLivingdoc, metadata}, callback) => {
 }
 ```
 
-For every document you will get the serialized Livingdoc data model (JSON) and the metadata associated with that document. You can then alter the JSON and metadata in your migration method and pass it to the callback which will automatically apply your changes to the document. If you want to skip a migration, just call the callback without passing data.
+For every document you will get
+* A serialised Livingdoc data model (JSON)
+* metadata
+* systemdata (`document_id`/`content_type` only)
+
+You can then alter the JSON and metadata in your migration method and pass it to the callback which will automatically apply your changes to the document. Systemdata are read only. If you want to skip a migration, just call the callback without passing some data.
 
 In order to create a migration script, simply add a file to the folder [`app/data-migrations`](https://github.com/livingdocsIO/livingdocs-server-boilerplate/tree/add-data-migration-sample/app/data-migrations). It might make sense to have some sort of increasing identifier in the filename to visualize history. In the file create a method `exports.migrate` as described above and implement your desired migration steps.
 
