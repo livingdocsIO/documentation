@@ -6,6 +6,7 @@ There a lot of commands which can be executed on the server.
 * [Help](#help)
 * [Create Project](#project-create)
 * [Maintain Search Index](#search-index)
+* [Data Cleaning](#data-cleaning)
 
 
 
@@ -36,4 +37,36 @@ grunt search-index:<index-name>:reset
 
 # To update the mapping of an index, use:
 grunt search-index:<index-name>:update-mapping
+```
+
+## <a name="data-cleaning">Data Cleaning</a>
+
+At the moment Livingdocs creates a lot of data (revisions/publications/metadata/migrations), which are not needed absolutely. With the data cleaning tools this data can be deleted.
+
+After a data cleanup only the last revision of a user in a sequence of revisions created by the same user is kept, e.g.
+
+```
+[tom, tom, tom, tom, tom, tom] --> [tom]
+[tom, jerry, tom, tom, jerry, jerry] --> [tom, jerry, tom, jerry]
+[tom, jerry, donald, dagobert] --> [tom, jerry, donald, dagobert]
+```
+
+After that cleanup the system is still fully functional but needs a lot less space.
+
+### Cleanup Command Examples
+```bash
+# Show help
+node ./node_modules/@livingdocs/server/bin/tasks/cleanup
+
+# Show document cleanup help
+node ./node_modules/@livingdocs/server/bin/tasks/cleanup documents -h
+
+# Show migration cleanup help
+node ./node_modules/@livingdocs/server/bin/tasks/cleanup migrations -h
+
+# Cleanup documents (revisions, projects, metadata)
+node ./node_modules/@livingdocs/server/bin/tasks/cleanup documents
+
+# Cleanup migrations
+node ./node_modules/@livingdocs/server/bin/tasks/cleanup migrations
 ```
