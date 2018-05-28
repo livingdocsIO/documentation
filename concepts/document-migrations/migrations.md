@@ -36,7 +36,7 @@ It is important to note that the data migrations **only affect the Livingdocs da
 
 ## Structure of a migration script
 
-The previous section explained data migrations as a consequence of a design change. But data migrations really are a general-purpose tool that can be used to alter your existing documents. A different and common example is the need to add a new metadata field to all of your documents and initialize the value in some way.
+The previous section explained data migrations as a consequence of a design change. But data migrations really are a general-purpose tool that can be used to alter your existing documents. A different and common example is the need to add a new metadata field to all of your documents and initialise the value in some way.
 
 The Livingdocs migration framework gives you a hook method to implement and calls this method with every document in your project. The hook method looks like this:
 
@@ -44,12 +44,24 @@ The Livingdocs migration framework gives you a hook method to implement and call
 exports.migrate = ({serializedLivingdoc, metadata}, callback) => {
   // do your stuff here
 
-  // overwrite the JSON data model and the metadata in the response
+  if (serializedLivingdoc.layout === 'regular') {
+    // skip the revision from being migrated, e.g.
+    //     return callback()
+    //     return callback(null)
+    //     return callback(null, null)
+    //     return callback(null, undefined)
+    //     return callback(null, {})
+    return callback()
+  }
+  // commit the revision migration, e.g.
+  //     callback({serializedLivingdoc, metadata})
+  //     callback({serializedLivingdoc})
+  //     callback({metadata})
   callback(null, {serializedLivingdoc, metadata})
 }
 ```
 
-For every document you will get the serialized Livingdoc data model (JSON) and the metadata associated with that document. You can then alter the JSON and metadata in your migration method and pass it to the callback which will automatically apply your changes to the document.
+For every document you will get the serialized Livingdoc data model (JSON) and the metadata associated with that document. You can then alter the JSON and metadata in your migration method and pass it to the callback which will automatically apply your changes to the document. If you want to skip a migration, just call the callback without passing data.
 
 In order to create a migration script, simply add a file to the folder [`app/data-migrations`](https://github.com/upfrontIO/livingdocs-server-boilerplate/tree/add-data-migration-sample/app/data-migrations). It might make sense to have some sort of increasing identifier in the filename to visualize history. In the file create a method `exports.migrate` as described above and implement your desired migration steps.
 
@@ -74,6 +86,7 @@ Each migration is a 2-step process:
 1. Executing the migration
 2. Accepting the migration
 
+### Create and Prepare a Migration
 The option "Creates and prepares a migration" allows you to start a new migration. You can either choose:
 - a simple version bump which bumps the design version in all your documents to a new design version without affecting the structure of the documents
 - or select a migration script from the filesystem to tell the Livingdocs how to migrate your documents (the next section will show some examples for such scripts), to select, type in a file path relative to your root directory, e.g. `app/data-migrations/your_migration.js`
@@ -82,12 +95,17 @@ Once you created a migration, it will run for all your documents. In the case of
 
 If after reviewing the report you don't want the migration to be applied, just select the option "Cancels a migration" and the changes will be discarded.
 
+### Accept a migration
 If you want the migration to be applied, select "Accepts a migration" which will update all necessary database records and alters your documents.
 
+### List all migrations
 The option "Lists all migrations" lists all migrations you prepared or accepted in your project.
 
+### Get a migration description
 The option "Get a migration description" allows you to review migration reports of prior migrations.
 
+
+## Visualisation of migration states and actions
 The following diagram visualizes the most important states and actions:
 
 ![Diagram](./migration-task-states.jpg)
