@@ -65,7 +65,9 @@ Component definition:
 <script type="ld-conf">
 {
   name: 'header',
-  properties: ['css-background-color', 'css-class', 'css-class-selection']
+  properties: ['css-background-color', 'css-class', 'css-class-selection'],
+  "iconUrl": "https://livingdocs.io/images/building_blocks_magazine.svg",
+  "description": "A header with multiple colors"
 }
 </script>
 <header>...</header>
