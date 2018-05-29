@@ -22,7 +22,9 @@ For every component you can create a new file. Here is an example for a paragrap
 ```html
 <script type="ld-conf">
 {
-  "label": "Paragraph"
+  "label": "Paragraph",
+  "iconUrl": "https://livingdocs.io/images/building_blocks_magazine.svg",
+  "description": "Your main writing tool"
 }
 </script>
 
@@ -39,7 +41,9 @@ Inside of the `<script type="ld-conf">` you can define configurations for the co
 <script type="ld-conf">
 {
   "name": "hero",
-  "label": "Hero Teaser"
+  "label": "Hero Teaser",
+  "iconUrl": "https://livingdocs.io/images/building_blocks_magazine.svg",
+  "description": "A mega title"
 }
 </script>
 
