@@ -9,7 +9,9 @@ Example:
 <script type="ld-conf">
 {
   "name": "p"
-  "label": "Paragraph"
+  "label": "Paragraph",
+  "iconUrl": "https://livingdocs.io/images/building_blocks_magazine.svg",
+  "description": "Your main writing tool"
 }
 </script>
 
@@ -27,6 +29,14 @@ Example:
 - `label`
 
   The label that is used in the editor's sidebar. This is the human label. See example above.
+
+- `iconUrl` (optional)
+
+  Adds a visual icon to the component in the editor's sidebar. Must be an absolute URL.
+
+- `description` (optional)
+
+  Adds an additional description text to the component in the editor's sidebar.
 
 ----
 
