@@ -48,6 +48,9 @@ copy: [{
         // copies source.title to target.catchline
         {'from': 'title', 'to': 'catchline'},
 
+        // copies systemdata.id to target.copySourceId.
+        {'from': 'systemdata.id', 'to': 'copySourceId'},
+
         // syntactic sugar for:
         // [
         //   {'from': 'title', 'to': 'title'},
