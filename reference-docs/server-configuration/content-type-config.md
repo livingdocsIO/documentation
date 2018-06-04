@@ -61,7 +61,10 @@ We plan to allow to move all layout options which are currently defined in the d
     ui: {
       // flag whether the list assignment on the publish (metadata)
       // screen should be shown for this content-type
-      showListAssignment: true
+      showListAssignment: true,
+      // flag whether the component list in the sidebar should show icons and
+      // desriptions (true) or only the titles (false)
+      useExpandedComponentStyle: true
     },
 
     frontend: {
