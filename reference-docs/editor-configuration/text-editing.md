@@ -141,12 +141,13 @@ By default the editable selection event is only fired once the user releases the
 
 ## Spellcheck
 
-Livingdocs allows you to use the default browser spellcheck, a custom spellcheck server or no spellchecking at all.
+Livingdocs allows you to use the default browser spellcheck, a custom spellcheck server or no spellchecking at all. The browser spellcheck is the default browser behaviour and will differ between Chrome, Firefox etc. The custom spellcheck requires a spellcheck service that analyzes the text and return a list of words that have been spelled wrong. Thus the custom spellchecker is completely customizable.
 
 Spellchecking turned off:
 ```js
 app: {
   editable: {
+    // This will simply disable spellchecking on the `contenteditable` element.
     browserSpellcheck: false
   }
 },
@@ -171,6 +172,8 @@ Custom spellchecker (examples are NZZs vademecum or Duden):
 ```js
 app: {
   editable: {
+    // This will simply disable spellchecking on the `contenteditable` element. This is 
+    // recommended when using a custom spellchecker.
     browserSpellcheck: false
   }
 },
