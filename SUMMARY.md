@@ -57,6 +57,7 @@
   * [stack](reference-docs/server-configuration/config.md#stack)
   * [features](reference-docs/server-configuration/config.md#features)
   * [integrations](reference-docs/server-configuration/config.md#integrations)
+  * [single sign-on](reference-docs/server-configuration/single_sign-on.md)
 * [Stack](reference-docs/server-configuration/stack.md)
 * [Text editing config](reference-docs/editor-configuration/text-editing.md)
 * [Document copy](concepts/copying-documents/document_copy_feature.md)
