@@ -19,6 +19,8 @@ In the following example we set three different providers: Github, Google and Fa
       github: {
         strategy: 'li-authentication-sso',
         enabled: true,
+        loginEnabled: true,
+        registrationEnabled: true,
         connectionId: 'github',
         config: {
           scope: 'user:email',
@@ -33,6 +35,8 @@ In the following example we set three different providers: Github, Google and Fa
       google: {
         strategy: 'li-authentication-sso',
         enabled: true,
+        loginEnabled: true,
+        registrationEnabled: true,
         connectionId: 'google',
         config: {
           scope: 'email',
@@ -48,6 +52,8 @@ In the following example we set three different providers: Github, Google and Fa
       facebook: {
         strategy: 'li-authentication-sso',
         enabled: true,
+        loginEnabled: true,
+        registrationEnabled: true,
         connectionId: 'facebook',
         config: {
           scope: 'email',
