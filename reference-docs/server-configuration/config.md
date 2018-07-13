@@ -129,6 +129,8 @@ auth: {
     local: {
       label: 'Password',
       enabled: true,
+      loginEnabled: true,
+      registrationEnabled: true,
       strategy: 'li-authentication-local',
       config: {
         default_login_domain: 'upfront.io',
@@ -333,7 +335,7 @@ files: {
 ```js
 documents: {
   imageServices: {
-    imgix: {} // imageService specific configuration 
+    imgix: {} // imageService specific configuration
   }
 }
 ```
