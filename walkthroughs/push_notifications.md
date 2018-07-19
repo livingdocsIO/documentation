@@ -1,7 +1,7 @@
 # Push notifications with custom dashboard item
 
 This guide explains 2 things:
-1. how to enable the push notifications feature in the [livingdocs server boilerplate](https://github.com/upfrontIO/livingdocs-server-boilerplate)
+1. how to enable the push notifications feature in the [livingdocs server boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate)
 2. how to do a custom dashboard item for your articles that shows push notification information
 
 Livingdocs uses the free [Google Firebase](https://firebase.google.com/) service for push notifications. Livingdocs sends push notifications to Google Firebase and you can setup Google Firebase in such a way that it passes those notifications on to your native apps and other targets.
@@ -24,7 +24,7 @@ To enable push notifications you need to do 3 things:
 3. in every channel that should support push notifications, [configure your topics](../reference-docs/server-configuration/channel-config.md#push-notifications)
 4. setup the push notifications field in your elasticsearch mapping
 
-The [livingdocs server boilerplate](https://github.com/upfrontIO/livingdocs-server-boilerplate) has commented out sections for all three things so you can check there.
+The [livingdocs server boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate) has commented out sections for all three things so you can check there.
 (4) is already done in the boilerplate server so if you are running with this, you don't need to do anything. Otherwise add the following ES mapping block to `app/search/custom-mappings/metadata.json`
 ```
 "pushNotifications": {

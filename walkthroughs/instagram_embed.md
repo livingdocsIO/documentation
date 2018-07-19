@@ -1,7 +1,7 @@
 # Add an instagram embed
 
 This guide will show you how to add a custom [client-side embed](../reference-docs/editor-configuration/editing-features.md#embeds) with the example of an Instagram card.
-The example is present in the [Livingdocs editor boilerplate](https://github.com/upfrontIO/livingdocs-editor-boilerplate) so you can check out the code there.
+The example is present in the [Livingdocs editor boilerplate](https://github.com/livingdocsIO/livingdocs-editor-boilerplate) so you can check out the code there.
 
 ![Instagram embed](./embed-images/instagram.png)
 
@@ -122,7 +122,7 @@ module.exports = class Instagram {
 }
 ```
 
-We left out the specific code for the validation of the embed code (`InstagramEmbedCode` require at the top) since it is basically just a regexp matching. You can check the demo implementation in the [Livingdocs editor boilerplate](https://github.com/upfrontIO/livingdocs-editor-boilerplate) if you want to see an actual implementation of this.
+We left out the specific code for the validation of the embed code (`InstagramEmbedCode` require at the top) since it is basically just a regexp matching. You can check the demo implementation in the [Livingdocs editor boilerplate](https://github.com/livingdocsIO/livingdocs-editor-boilerplate) if you want to see an actual implementation of this.
 
 ## Registering a custom embed
 

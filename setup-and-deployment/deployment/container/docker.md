@@ -2,7 +2,7 @@
 
 ## With Dokku
 
-We provide a docker setup for both local development and production deployments. Our Dokku setup is open source as well, see https://github.com/upfrontIO/livingdocs-dokku
+We provide a docker setup for both local development and production deployments. Our Dokku setup is open source as well, see https://github.com/livingdocsIO/livingdocs-dokku
 
 ### Requirements
 

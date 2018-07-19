@@ -13,7 +13,7 @@ For node dependencies, linking is enough to work with a local dependency. If you
 
 Check out the repository of your dependency (you want to make changes here)
 ```sh
-git git@github.com:upfrontIO/livingdocs-server.git
+git git@github.com:livingdocsIO/livingdocs-server.git
 cd livingdocs-server
 npm install
 npm link
@@ -21,7 +21,7 @@ npm link
 
 Link the li-server dependency
 ```sh
-git git@github.com:upfrontIO/livingdocs-service-server.git
+git git@github.com:livingdocsIO/livingdocs-service-server.git
 cd livingdocs-service-server
 npm link @livingdocs/server
 ```

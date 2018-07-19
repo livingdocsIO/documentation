@@ -20,6 +20,6 @@ Learn how to create a Livingdocs Design given that you have already written the 
 
 The HTML / CSS design used in the video: http://fidel.io/
 
-The open-source boilerplate design from Livingdocs: https://github.com/upfrontIO/livingdocs-design-timeline
+The open-source boilerplate design from Livingdocs: https://github.com/livingdocsIO/livingdocs-design-timeline
 
 Also see our [written design documentation](../reference-docs/common-designs/create_designs.md)

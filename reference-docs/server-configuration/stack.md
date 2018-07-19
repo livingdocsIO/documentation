@@ -6,7 +6,7 @@ A stack is a list of features that a server loads when it starts.
 
 Examples of features are: `li-cache`, `li-designs`, `li-search`. The list of all the core features is available here:
 
-https://github.com/upfrontIO/livingdocs-server/blob/master/core/api/core_features.coffee
+https://github.com/livingdocsIO/livingdocs-server/blob/master/core/api/core_features.coffee
 
 
 ## Configuration
@@ -31,4 +31,4 @@ To define an alias you need to add it to this file:
   'feature_z'
 ]
 ```
-By default there is already one defined in: https://github.com/upfrontIO/livingdocs-server/blob/master/core/stack-list.js
+By default there is already one defined in: https://github.com/livingdocsIO/livingdocs-server/blob/master/core/stack-list.js

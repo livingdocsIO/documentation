@@ -59,7 +59,7 @@ A metadata plugin is a set of predefined aspects of a metadata
 property. For every property the configuration references a plugin
 to base the configuration on.
 There is already a set of reusable metadata plugins which are stored in
-[`plugins/metadata` on the livingdocs-server](https://github.com/upfrontIO/livingdocs-server/tree/master/plugins/metadata).
+[`plugins/metadata` on the livingdocs-server](https://github.com/livingdocsIO/livingdocs-server/tree/master/plugins/metadata).
 
 
 ## Write a Custom Plugin

@@ -17,9 +17,9 @@ Learn about doc-includes both how to implement custom render components inside o
 ### Related Material
 
 The boilerplates:
-- https://github.com/upfrontIO/livingdocs-server-boilerplate
-- https://github.com/upfrontIO/livingdocs-editor-boilerplate
+- https://github.com/livingdocsIO/livingdocs-server-boilerplate
+- https://github.com/livingdocsIO/livingdocs-editor-boilerplate
 
-The open-source boilerplate design from Livingdocs: https://github.com/upfrontIO/livingdocs-design-timeline
+The open-source boilerplate design from Livingdocs: https://github.com/livingdocsIO/livingdocs-design-timeline
 
 Basically everything in this documentation that is under the section "Includes"

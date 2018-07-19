@@ -50,7 +50,7 @@ metadata: {
 }
 ```
 
-The [boilerplate server](https://github.com/upfrontIO/livingdocs-server-boilerplate) already contains a metadata plugin `custom-tasks`, but of course you can also write your own. The schema of our `custom-tasks` plugin is exactly the same as the core plugin (`li-tasks`), the only difference is that we add a `validate` method.
+The [boilerplate server](https://github.com/livingdocsIO/livingdocs-server-boilerplate) already contains a metadata plugin `custom-tasks`, but of course you can also write your own. The schema of our `custom-tasks` plugin is exactly the same as the core plugin (`li-tasks`), the only difference is that we add a `validate` method.
 
 ```
 validate: function (value, config) {

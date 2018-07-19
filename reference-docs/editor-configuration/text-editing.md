@@ -1,6 +1,6 @@
 # Text editing
 
-Most of the text editing is handled by [editable.js](https://github.com/upfrontIO/editable.js), an open-source library, maintained by Livingdocs. The Livingdocs editor allows different configurations to adapt the behavior of editable.js.
+Most of the text editing is handled by [editable.js](https://github.com/livingdocsIO/editable.js), an open-source library, maintained by Livingdocs. The Livingdocs editor allows different configurations to adapt the behavior of editable.js.
 
 ## Toolbar
 

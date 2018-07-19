@@ -21,7 +21,7 @@ Other example use cases:
 ### Publish hook
 
 There are sample hooks in the boilerplate located under
-[`app/event_listeners.js`](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/event_listeners.js).
+[`app/event_listeners.js`](https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/master/app/event_listeners.js).
 See [*hooks*](../server-configuration/hooks.html) for all the options and definition of the available
 hooks.
 
@@ -78,13 +78,13 @@ your third-party system so you can reference to your document again.
 
 ### Sample webhook implementation
 
-The [boilerplate server](https://github.com/upfrontIO/livingdocs-server-boilerplate)
+The [boilerplate server](https://github.com/livingdocsIO/livingdocs-server-boilerplate)
 implements a very simple webhook module that you can use to send
 the publish and unpublish payloads to a third-party system via the web. To
 enable the wehbook module you need to adapt the
-[configuration](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/conf/environments/all.js)
+[configuration](https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/master/conf/environments/all.js)
 to use your endpoints. Also, in the
-[event listener setup](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/event_listeners.js)
+[event listener setup](https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/master/app/event_listeners.js)
 you need to uncomment the relevant code to trigger the webhook.
 
 The implementation is extremely bare-bone and only suited to get you started
