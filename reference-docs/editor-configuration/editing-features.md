@@ -1,6 +1,6 @@
 # Configuration of editing features
 
-All of the following options concern the editor environment configuration files, so for example `config/environments/all.js` in the [boilerplate editor](https://github.com/upfrontIO/livingdocs-editor-boilerplate). We list all available config options here where necessary with links to other pages.
+All of the following options concern the editor environment configuration files, so for example `config/environments/all.js` in the [boilerplate editor](https://github.com/livingdocsIO/livingdocs-editor-boilerplate). We list all available config options here where necessary with links to other pages.
 
 ## Toolbar
 
@@ -193,7 +193,7 @@ app: {
 You can configure any number of tasks here. The tasks are displayed in the Livingdocs editor's sidebar next to an article and stored in the metadata. You can for example have a proofreading task where editors need to check off different steps and have a publish validation that checks if an article has been proofread.
 For every task:
 1. make sure that you define one entry with `completesTask: true` (see example above)
-2. make sure to add the respective elasticsearch mapping update for the additional metadata (new entry under `tasks`), e.g. [here](https://github.com/upfrontIO/livingdocs-server-boilerplate/blob/master/app/search/custom-mappings/metadata.json#L80) for the boilerplate server. After updating the file you need to run `grunt search-index:document:reset` to apply the new mapping. The content of a task mapping in elastic always looks the same (`name`, `status`, etc.), only the name changes, so you can basically just copy the definition of another task (e.g. 'proofreading') and change the name to the name you assigned in the editor configuration above.
+2. make sure to add the respective elasticsearch mapping update for the additional metadata (new entry under `tasks`), e.g. [here](https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/master/app/search/custom-mappings/metadata.json#L80) for the boilerplate server. After updating the file you need to run `grunt search-index:document:reset` to apply the new mapping. The content of a task mapping in elastic always looks the same (`name`, `status`, etc.), only the name changes, so you can basically just copy the definition of another task (e.g. 'proofreading') and change the name to the name you assigned in the editor configuration above.
 
 If after adding a new task, you get a 400 error while saving a document you probably didn't do (2) above or didn't exactly match the metadata in the mapping.
 

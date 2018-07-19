@@ -1,9 +1,9 @@
 # Image cropping
 
-The image cropping in Livingdocs is implemented as an open-source library available [here](https://github.com/upfrontIO/srcissors).
+The image cropping in Livingdocs is implemented as an open-source library available [here](https://github.com/livingdocsIO/srcissors).
 The Livingdocs editor allows you to set certain configuration options to customize the behavior of the cropping interface.
 
-For all configurable options in the library, see [here](https://github.com/upfrontIO/srcissors#configuration-options)
+For all configurable options in the library, see [here](https://github.com/livingdocsIO/srcissors#configuration-options)
 
 ## Example Editor configuration
 

@@ -568,4 +568,4 @@ resolveFromDocumentIds({projectId, channelId, documentIds}, callback)
 [memdown]: https://github.com/level/memdown
 [redisdown]: https://github.com/hmalphettes/redisdown
 [leveldb]: https://github.com/google/leveldb
-[metadatapluginplaceholder]: https://github.com/upfrontIO/livingdocs-server/blob/ffa54c83a0b07606ce806616e5655e4f1ab6bc07/plugins/metadata/li-test-mood.js#L23
+[metadatapluginplaceholder]: https://github.com/livingdocsIO/livingdocs-server/blob/ffa54c83a0b07606ce806616e5655e4f1ab6bc07/plugins/metadata/li-test-mood.js#L23

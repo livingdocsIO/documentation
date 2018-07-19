@@ -1,7 +1,7 @@
 ## SSO example with Github login
 
 The boilerplate server and editor provide an example for a SSO login using Github as an authentication provider.
-The bulk of the implementation is in the server. Check out the `app/sso` directory in the [boilerplate server](https://github.com/upfrontIO/livingdocs-server-boilerplate).
+The bulk of the implementation is in the server. Check out the `app/sso` directory in the [boilerplate server](https://github.com/livingdocsIO/livingdocs-server-boilerplate).
 
 ### How the authentication flow works
 
@@ -102,4 +102,4 @@ Note that users and projects are a many to many relation over groups thus you ne
 - createAccessToken
 ```
 
-Refer to the code in `app/sso` of the [Livingdocs server boilerpalte](https://github.com/upfrontIO/livingdocs-server-boilerplate) to see the full implementation.
+Refer to the code in `app/sso` of the [Livingdocs server boilerpalte](https://github.com/livingdocsIO/livingdocs-server-boilerplate) to see the full implementation.

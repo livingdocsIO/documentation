@@ -19,5 +19,5 @@ The `build` task (built on [webpack](https://webpack.github.io/)) is used to
 
 Currently, the deployment is optimized for use with the CDN Cloudfront. For this reason all files except `index.html` as well as the files in the `design` folder get a `max-age` of 2 years. The mentioned exceptions get a `must-revalidate` header to make sure these files are never cached.
 
-This is the user interface implementation for livingdocs. It depends upon the [livingdocs-framework](https://github.com/upfrontIO/livingdocs-framework) as well as a document design in `app/designs`.
-It implements panels and interaction models as well as integration with the [server-side API](https://github.com/upfrontIO/livingdocs-api).
+This is the user interface implementation for livingdocs. It depends upon the [livingdocs-framework](https://github.com/livingdocsIO/livingdocs-framework) as well as a document design in `app/designs`.
+It implements panels and interaction models as well as integration with the [server-side API](https://github.com/livingdocsIO/livingdocs-api).

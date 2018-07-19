@@ -15,15 +15,15 @@ We recommend to use Docker as we provide Dockerfiles for every application and s
 Both elasticsearch and postgres will need a persistent volume mounted.
 Any custom configuration, as well as the supported versions for elasticsearch and postgres are visible in the respective Dockerfile.
 
-- https://github.com/upfrontIO/dockerfile-elasticsearch
-- https://github.com/upfrontIO/dockerfile-postgres
+- https://github.com/livingdocsIO/dockerfile-elasticsearch
+- https://github.com/livingdocsIO/dockerfile-postgres
 
 #### Applications
 The applications are stateless and follow the 12 factor app methodology.
 Any system level dependency and the required environment variables are visible in the respective Dockerfile.
 
-- https://github.com/upfrontIO/livingdocs-docker/tree/master/server
-- https://github.com/upfrontIO/livingdocs-docker/tree/master/editor
+- https://github.com/livingdocsIO/livingdocs-docker/tree/master/server
+- https://github.com/livingdocsIO/livingdocs-docker/tree/master/editor
 
 #### Container data volumes
 

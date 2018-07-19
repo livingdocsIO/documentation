@@ -6,7 +6,7 @@ For details have a look at the [server configuration reference documentation](..
 
 ## Server
 
-(Note: we assume the use of the [Livingdocs server boilerplate](https://github.com/upfrontIO/livingdocs-server-boilerplate) here)
+(Note: we assume the use of the [Livingdocs server boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate) here)
 
 You will first need to configure this in your server.
 
@@ -278,7 +278,7 @@ liEditor.metadataServices
 ## Boilerplate
 
 The whole implementation for this already exists in the boilerplates projects:
-- https://github.com/upfrontIO/livingdocs-server-boilerplate
-- https://github.com/upfrontIO/livingdocs-editor-boilerplate
+- https://github.com/livingdocsIO/livingdocs-server-boilerplate
+- https://github.com/livingdocsIO/livingdocs-editor-boilerplate
 
 One would need to "activate" it by uncommenting the server's configurations and the editor's registrations.

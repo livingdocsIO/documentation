@@ -5,12 +5,12 @@
 
 #### `li-beta`
 This "replacing of includes" takes place int the `render-pipeline`. It's the box with the `after render` label in the diagram.
-This feature was enabled in the `li-server` version `v28.6.0` by this PR: https://github.com/upfrontIO/livingdocs-server/pull/981
+This feature was enabled in the `li-server` version `v28.6.0` by this PR: https://github.com/livingdocsIO/livingdocs-server/pull/981
 
 #### `nzz-api`
 There is also a `before-render` labeled box which is the strategy chosen by NZZ here:
 https://github.com/nzzdev/livingdocs-api/pull/1197
-This feature was enabled by this PR: https://github.com/upfrontIO/livingdocs-server/pull/1034
+This feature was enabled by this PR: https://github.com/livingdocsIO/livingdocs-server/pull/1034
 
 ####  `before render` vs `after render`
 On the left-side of the diagram we are in a component world and in the right-side, after the rendering, we are in a HTML world.

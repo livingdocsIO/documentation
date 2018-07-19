@@ -1,13 +1,13 @@
 # Add a new component to a design
 
-This guide uses the [Livingdocs timeline design](https://github.com/upfrontIO/livingdocs-design-timeline) 
+This guide uses the [Livingdocs timeline design](https://github.com/livingdocsIO/livingdocs-design-timeline) 
 and produces a symbolical change to it in order to show how to update a design locally. 
 For your work, you will most likely use your own design.
 
 ## Clone the design
 
 ```bash
-git clone git@github.com:upfrontIO/livingdocs-design-timeline.git
+git clone git@github.com:livingdocsIO/livingdocs-design-timeline.git
 cd livingdocs-design-timeline
 npm install
 ```

@@ -17,10 +17,10 @@ Learn about the basics of the Livingdocs architecture and how to setup the boile
 ### Related Material
 
 The boilerplates:
-- https://github.com/upfrontIO/livingdocs-server-boilerplate
-- https://github.com/upfrontIO/livingdocs-editor-boilerplate
+- https://github.com/livingdocsIO/livingdocs-server-boilerplate
+- https://github.com/livingdocsIO/livingdocs-editor-boilerplate
 
-The open-source boilerplate design from Livingdocs: https://github.com/upfrontIO/livingdocs-design-timeline
+The open-source boilerplate design from Livingdocs: https://github.com/livingdocsIO/livingdocs-design-timeline
 
 Basically everything in this documentation that is under the section "Livingdocs Customizations"
 

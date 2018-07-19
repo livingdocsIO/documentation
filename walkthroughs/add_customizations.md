@@ -7,7 +7,7 @@ This document gives an overview of how to register custom features without going
 
 ### Server
 
-(Refer to the [boilerplate server](https://github.com/upfrontIO/livingdocs-server-boilerplate) to see real examples of this.)
+(Refer to the [boilerplate server](https://github.com/livingdocsIO/livingdocs-server-boilerplate) to see real examples of this.)
 
 A custom server feature can contain any code you like. Common examples are bridges to third-party APIs or import features that import documents from some other source like an old legacy CMS.
 
@@ -61,7 +61,7 @@ featureApi.doSomething()
 ```
 (you need the server instance for this)
 
-The same also works if you need to access any of the [core features](https://github.com/upfrontIO/livingdocs-server/tree/master/app/features) from Livingdocs, which by convention all start with `li-`.
+The same also works if you need to access any of the [core features](https://github.com/livingdocsIO/livingdocs-server/tree/master/app/features) from Livingdocs, which by convention all start with `li-`.
 
 ### Editor
 
