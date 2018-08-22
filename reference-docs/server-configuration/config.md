@@ -18,7 +18,8 @@ server: {
 ```js
 editor: {
   // configure the Editor Host. This is used for password reset & login urls.
-  public_host: 'http://localhost:9000'
+  public_host: 'http://localhost:9000',
+  auto_save_interval: 10 // This defines how often the editor auto saves in seconds
 }
 ```
 
