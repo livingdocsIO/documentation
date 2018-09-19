@@ -1,5 +1,64 @@
 # Document Copy Feature
 
+## Enable Copy Feature
+
+To enable the copy feature, you have to update the editor config.
+
+```
+{
+  app: {
+    copy: {
+      isEnabled: true
+    }
+  }
+}
+```
+
+After opening a document, you can click on "Copy" in the toolbar and a copy modal opens, e.g.
+
+![image](https://user-images.githubusercontent.com/172394/45543556-158a2880-b815-11e8-9cb0-54db6ff6db08.png)
+
+
+## Copy Modes
+
+There are three different ways to copy a document.
+
+### (A) Copy without a server copy configuration
+
+Without a configuration on the server, the copy feature provides a 1:1 copy. If the opened document has the content-type `regular`, it's possible to create a copy from `regular` to `regular`.
+
+### (B) Copy with a server copy configuration
+
+For more advanced scenarios, it's possible to define a copy config on the server. The copy config supports a lot of scenarios, e.g.
+  - copy from content-type A to content-type B
+  - copy/convert a content-type into another content-type with another design
+  - convert livingdoc components
+  - map metadata
+
+To get a rough understanding of the copy feature with a server configuration, read [Document Copy Basics](#document-copy-basics) first. The [Copy Config Example](#copy-config-example) section provides an overview of a basic copy config. To get a better feeling of what copy scenarios are supported, visit the [Copy Use Cases](#copy-use-cases).
+
+### (C) Transform a document (alpha state)
+
+:fire: **Attention**, this is an alpha feature. If used in the wrong environment, it can result in not wanted consequences.
+
+With the `transform` operation, no new document is created. `transform` modifies the origin document and changes the content-type. This operation is only available with a copy config on the server and can be activated with `allowTransform: true`.
+
+```js
+// copy config in the source channel
+copy: [{
+  source: {
+    channelHandle: 'web',
+    contentType: 'fantasy'
+  },
+  target: [{
+    channelHandle: 'web',
+    contentType: 'another-content-type',
+    allowTransform: true
+  }]
+}]
+```
+
+
 ## Document Copy Basics
 
 ![copy-basics](https://cloud.githubusercontent.com/assets/172394/18782898/0beb0214-8189-11e6-98cc-e5e6728456de.png)
@@ -61,7 +120,9 @@ copy: [{
         // NOT IMPLEMENTED: computes the new value based on a passed function
         {from: 'title', to: function(d) {return d.toUpperCase()}}
       ]
-    }
+    },
+    // a document can be transformed
+    allowTransform: true
   }]
 }]
 ```
@@ -171,7 +232,7 @@ copy: [{
 ```
 
 ### (2) Clone Copy
-#### (2.1) Layout L1 to Layout L2 - Ignore unknown components
+#### Layout L1 to Layout L2 - Ignore unknown components
 ![copy-layout-l1-to-layout-l2-unknown-copy-false](https://cloud.githubusercontent.com/assets/172394/18784494/b97da6bc-8192-11e6-9789-e02af83b5509.png)
 
 This scenario copies all components from one layout to another layout in the same design, but ignores unknown components in the target design.
@@ -184,50 +245,4 @@ copy: [{
   target: [{channelHandle: 'web', contentType: 'regular'}],
   instructionPath: require.resolve('../conversions/basic-default-to-basic-regular.js')
 }]
-```
-
-```js
-module.exports = {
-  copyUnknownComponents: false
-}
-```
-
-#### (2.2) Layout Layout L1 to Layout L2 - Copy unknown components => NOT IMPLEMENTED
-![copy-layout-l1-to-layout-l2-unknown-copy-true](https://cloud.githubusercontent.com/assets/172394/18784520/f6b6308a-8192-11e6-82e5-0557dff706b8.png)
-
-This scenario copies all components from one layout to another layout in the same design and keeps unknown components in the target design.
-
-#### Example Config
-
-```js
-copy: [{
-  source: {channelHandle: 'web', contentType: 'default'},
-  target: [{channelHandle: 'web', contentType: 'regular'}],
-  instructionPath: require.resolve('../conversions/basic-default-to-basic-regular.js')
-}]
-```
-
-```js
-module.exports = {
-  copyUnknownComponents: true
-}
-```
-
-
-## Copy Algorithm
-
-In this section I try to describe what copy config options result in which copy algorithm.
-
-```
-# pseudocode
-if config matches source(channel/contentType) && target(channel/contentType)
-  if config:copy:options:instruction
-    return doCopyWithInstruction()
-  if config:copy:options:copyUnknownComponents == true
-    return doCopyEveryComponent()
-  if config:copy:options:copyUnknownComponents == false
-    # copyUnknownComponents == false is not implemented, therefore use the true mechanism
-    return doCopyEveryComponent()
-else
-  doNothing()
 ```
