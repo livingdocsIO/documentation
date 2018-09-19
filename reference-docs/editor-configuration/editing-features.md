@@ -332,3 +332,17 @@ See [here](./text-editing.md#links)
 
 The keyboard shortcuts allow you to customize which keys you want to use for common actions in Livingdocs.
 The actions (values) are fixed. You can define on which keys you want to execute the actions
+
+## Document Copy
+
+```
+{
+  app: {
+    copy: {
+      isEnabled: true
+    }
+  }
+}
+```
+
+If the copy feature is enabled, it allows you to copy and transform documents. 

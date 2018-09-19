@@ -84,7 +84,8 @@ The following sample configuration file illustrates all of the above.
           'tasks',
           {from: 'author', to: 'description'}
         ]
-      }
+      },
+      allowTransform: true
     }]
   }]
 }
