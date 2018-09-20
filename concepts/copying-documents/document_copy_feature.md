@@ -1,31 +1,28 @@
 # Document Copy Feature
 
-## Enable Copy Feature
+## Introduction
 
-To enable the copy feature, you have to update the editor config.
+If everything is set up correctly, one can open a document, click on "Copy" in the toolbar and a copy modal opens, e.g.
+
+![image](https://user-images.githubusercontent.com/172394/45543556-158a2880-b815-11e8-9cb0-54db6ff6db08.png)
+
+In the following sections you learn to know three different ways to copy a document.
+
+### (A) Create a Simple Copy
+
+If you want to make a simple 1:1 copy, e.g. from content-type `regular` to `regular`, you have to
+- remove the copy config on the server (if there is one)
+- enable the simple copy flag on the editor
 
 ```
 {
   app: {
     copy: {
-      isEnabled: true
+      simpleCopyEnabled: true
     }
   }
 }
 ```
-
-After opening a document, you can click on "Copy" in the toolbar and a copy modal opens, e.g.
-
-![image](https://user-images.githubusercontent.com/172394/45543556-158a2880-b815-11e8-9cb0-54db6ff6db08.png)
-
-
-## Copy Modes
-
-There are three different ways to copy a document.
-
-### (A) Copy without a server copy configuration
-
-Without a configuration on the server, the copy feature provides a 1:1 copy. If the opened document has the content-type `regular`, it's possible to create a copy from `regular` to `regular`.
 
 ### (B) Copy with a server copy configuration
 
@@ -39,9 +36,9 @@ To get a rough understanding of the copy feature with a server configuration, re
 
 ### (C) Transform a document (alpha state)
 
-:fire: **Attention**, this is an alpha feature. If used in the wrong environment, it can result in not wanted consequences.
+:fire: **Attention**, this is an alpha feature. If used in the wrong environment, it can result in unwanted consequences.
 
-With the `transform` operation, no new document is created. `transform` modifies the origin document and changes the content-type. This operation is only available with a copy config on the server and can be activated with `allowTransform: true`.
+With the `transform` operation, no new document is created. `transform` modifies the origin document and changes its content-type. This operation is only available with a copy config on the server and can be activated with `allowTransform: true`.
 
 ```js
 // copy config in the source channel
