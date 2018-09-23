@@ -85,6 +85,10 @@
 * [A possible routing system](reference-docs/server-public-api/routing-system.md)
 * [Hugo Drag and Drop](reference-docs/server-extensions/hugo-dnd.md)
 
+## Writing tests
+
+* [Using Factories in Downstream](reference-docs/writing-tests/tests-with-factories.md)
+
 
 ## Devops
 
