@@ -44,7 +44,7 @@ config: {
 
 You need to make sure that your server-side metadata field is of type `li-text` otherwise you will get errors.
 `readOnly` and `maxLength` let you customize the behavior of the text input.
-The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
+The `service` option lets you customize the business logic of a metadata form field. Check the section [registering a metadata service](#registering-a-metadata-service) later on how to register a service.
 The service plugin for a text input allows you to customize the logic for the following methods:
 
 ```js
@@ -78,7 +78,7 @@ config: {
 
 You need to make sure that your server-side metadata field is of type `li-text` otherwise you will get errors.
 `readOnly` and `maxLength` let you customize the behavior of the text input.
-The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
+The `service` option lets you customize the business logic of a metadata form field. Check the section [registering a metadata service](#registering-a-metadata-service) later on how to register a service.
 The service plugin for a textarea input is exactly the same as for the text input and allows you to customize the logic for the following methods:
 
 ```js
@@ -106,7 +106,7 @@ config: {
 ```
 
 You need to make sure that your server-side metadata field is of type `li-enum` or a suitable format you defined yourself in a customized server, otherwise you will get errors.
-The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
+The `service` option lets you customize the business logic of a metadata form field. Check the section [registering a metadata service](#registering-a-metadata-service) later on how to register a service.
 The service plugin for a select box allows you to customize the logic for the following methods:
 
 ```js
@@ -151,7 +151,7 @@ config: {
 ```
 
 You need to make sure that your server-side metadata field is of a suitable format you defined yourself in a customized server (there is no core data type for multiselects), otherwise you will get errors.
-The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
+The `service` option lets you customize the business logic of a metadata form field. Check the section [registering a metadata service](#registering-a-metadata-service) later on how to register a service.
 The service plugin for a multiselect box allows you to customize the logic for the following methods:
 
 ```js
