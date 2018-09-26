@@ -274,22 +274,6 @@ Allows you to configure after how much time a timeout should happen in calls fro
 
 ## Third-party services
 
-### Pusher
-
-```
-{
-  pusher: {
-    isEnabled: true,
-    endpoint: '/pusher/authorize',
-    appId: '***',
-    key: '***',
-    cluster: 'eu'
-  }
-}
-```
-
-Pusher is used for the real-time collaboration feature, i.e. to show you changes that other users are doing on your document while you are on the same document.
-
 ### Iframely
 
 ```
