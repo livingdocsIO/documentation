@@ -65,6 +65,8 @@ We plan to allow to move all layout options which are currently defined in the d
       // flag whether the component list in the sidebar should show icons and
       // desriptions (true) or only the titles (false)
       useExpandedComponentStyle: true
+      // flag whether the document title at the toolbar can be edited
+      disableEditTitleAtToolbar: false
     },
 
     frontend: {
