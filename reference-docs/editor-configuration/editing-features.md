@@ -12,7 +12,8 @@ E.g config/environments/all.js
 app: {
   useSplitPane: true,
   useSelectionMode: true,
-  useHistoryMode: true
+  useHistoryMode: true,
+  undoRedoButtonsAreEnabled: true
 }
 ```
 
@@ -345,4 +346,4 @@ The actions (values) are fixed. You can define on which keys you want to execute
 }
 ```
 
-If the copy feature is enabled, it allows you to copy and transform documents. 
+If the copy feature is enabled, it allows you to copy and transform documents.
