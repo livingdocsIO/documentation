@@ -64,7 +64,7 @@ We plan to allow to move all layout options which are currently defined in the d
       showListAssignment: true,
       // flag whether the component list in the sidebar should show icons and
       // desriptions (true) or only the titles (false)
-      useExpandedComponentStyle: true
+      useExpandedComponentStyle: true,
       // flag whether the document title at the toolbar can be edited
       disableEditTitleAtToolbar: false
     },
@@ -98,7 +98,9 @@ We plan to allow to move all layout options which are currently defined in the d
       // whitelist of hosts for image urls that are drag & dropped into the editor
       whitelist: ['//pixabay.com']
     }
-  }
+  },
+  // With 'documentCreationDisabled: true', you can't create documents with this content-type
+  documentCreationDisabled: true, // default false
 }
 ```
 
