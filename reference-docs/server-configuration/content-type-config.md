@@ -101,6 +101,9 @@ We plan to allow to move all layout options which are currently defined in the d
   },
   // With 'documentCreationDisabled: true', you can't create documents with this content-type
   documentCreationDisabled: true, // default false
+  }
+  // Jumps to the 'publish' or 'edit' view after creating a document
+  viewAfterDocumentCreation: 'publish' // default 'edit'
 }
 ```
 
