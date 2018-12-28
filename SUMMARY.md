@@ -84,6 +84,7 @@
 * [A possible translation system](walkthroughs/translations_example.md)
 * [A possible routing system](reference-docs/server-public-api/routing-system.md)
 * [Hugo Drag and Drop](reference-docs/server-extensions/hugo-dnd.md)
+* [Enable Soft Lock](walkthroughs/enable-soft-lock.md)
 
 
 ## Devops
