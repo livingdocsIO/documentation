@@ -183,8 +183,8 @@ module.exports = {
 
   // Allows for custom changes on the target document after the copy is done just before it is saved,
   // useful if the other options in the copy API are too limiting
-  afterConversion: ({source, convertedDocument}) => {
-    return doCustomStuff({source, convertedDocument})
+  afterConversion: ({sourceMetadata, convertedDocument}) => {
+    return doCustomStuff({sourceMetadata, convertedDocument})
   },
 
   // true = copy the component, even when the target contentType doesn't know the component
