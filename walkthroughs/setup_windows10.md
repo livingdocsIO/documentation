@@ -17,4 +17,5 @@ https://docs.microsoft.com/en-us/windows/wsl/install-win10
         - `make`
         - `sudo make install`
         - `sudo ldconfig /usr/local/lib`
+- Run all the next steps always in the bash from linux
 - Proceed with the [getting started](./getting-started-with-local-development)
