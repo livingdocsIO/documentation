@@ -22,6 +22,4 @@ To get a devops environment, refer to our [devops section](setup-and-deployment/
 # Feedback
 Please let us know about gaps or errors in our documentation at [documentation@livingdocs.io](mailto: documentation@livingdocs.io) or do a pull request on https://github.com/livingdocsIO/livingdocs the source for our documentation.
 
-
 (If you are viewing this documentation on our Github repository, there is a new nicer view of it at https://docs.livingdocs.io)
-
