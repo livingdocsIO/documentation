@@ -42,6 +42,7 @@
   * [Keyboard shortcuts](reference-docs/editor-configuration/editing-features.md#keyboard-shortcuts)
 * [Events](reference-docs/server-extensions/events.md)
 * [Image cropper config](reference-docs/editor-configuration/image-cropping.md)
+* [Image source policy config](reference-docs/editor-configuration/image-source-policy.md)
 * [Image services](concepts/images/image-services.md)
 * [Import API](reference-docs/server-import-api/import_api.md)
 * Includes
