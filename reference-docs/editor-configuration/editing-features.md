@@ -17,6 +17,22 @@ app: {
 }
 ```
 
+## Insert Panel
+
+### Advanced Component Groups
+
+Availability of advanced features such as component search and collapsable component groups.
+
+```js
+app: {
+  editor: {
+    insertPanel: {
+      useAdvancedComponentGroups: true
+    }
+  }
+}
+```
+
 ## Properties Panel
 
 ### Transform Component
