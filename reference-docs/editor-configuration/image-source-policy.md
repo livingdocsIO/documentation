@@ -27,11 +27,13 @@ images.sourcePolicy is a new config option which is optional. By default upload 
 
 Current default policy:
 
+```js
 const defaultPolicies = {
   upload: {enabled: true},
   hugo: {enabled: true},
   url: {enabled: false}
 }
+```
 
 There is also a config that can be set in the contentType channelConfig property editorConfig.images.whitelist which is still respected.
 
