@@ -291,3 +291,15 @@ comments: {
 ```
 
 The `defaultForDocumentType` section allows you to separately turn comments off for articles and pages.
+
+
+## Asset Management
+
+In order to enable the Assetmanagement to be visible in the sidebar of an image as "Media Library" button, as well as to have the menu entry which guides you to the dedicated Media Library page, you need to set the feature flag to true.
+
+```
+  {
+    assetManagementEnabled: true
+  }
+```
+
