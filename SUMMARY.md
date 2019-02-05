@@ -2,6 +2,8 @@
 
 * [Getting started](./getting_started.md)
 
+* [Evaluation guide](walkthroughs/evaluation_guide.md)
+
 
 ## Evaluation Guide
 

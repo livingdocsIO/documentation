@@ -11,7 +11,8 @@ Most of this documentation assumes that you integrate Livingdocs on-premises or 
 ## Livingdocs on-premises
 
 If you use Livingdocs as an on-premises software you will have access to the (private) boilerplates projects and/or an .npmrc file with access to our core repositories (Note: this requires at least signing an evaluation contract, if you haven't done so already contact us at contact@livingdocs.io).
-To get a local setup refer to [our setup guide](walkthroughs/getting-started-with-local-development.md) and the README's linked in the boilerplate projects.
+To start an evaluation you can go through [our evaluation guide](walkthroughs/evaluation_guide.md).
+
 To get a devops environment, refer to our [devops section](setup-and-deployment/self-hosting.md).
 
 For Livingdocs code integrations you will always install the core software as an npm package. You can refer to the implementations there but you can not change code in the core (this is left to the core developers). You will usually start with our boilerplate projects (in the image "Customer = Boilerplate") to do your customizations (and install the core packages too). These projects are yours to copy and adapt as you see fit.
