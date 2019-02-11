@@ -421,6 +421,61 @@ search: {
 The `documentsMetadataFields` array whitelists metadata that can be used in the dashboard. By
 default the article list query gets no metadata.
 
+## Asset Management setup
+
+The asset management impacts editor in three ways:
+- You can pick images from the library which have been previously uploaded
+- You can see all the uploaded images and perform operations on them
+- You can edit the Metadata of images in a dedicated view, which is accessible about an image
+
+### Seting up the Elasticsearch Mapping
+
+The first step when setting up the server is to create a new Mapping within Elastic Search.
+
+The entire setup can be done by running the following command:
+
+``` javascript
+./bin/index.js create-image-index
+```
+
+### Feature Flag
+The endpoint `/upload` will work with Asset Management functionality or without. The change can be configured in the environment with:
+
+```javascript
+assetManagement: {
+  enabled: true
+},
+```
+The feature flag is ignored by the other Asset Management endpoints (`GET /images?fullText` search and `GET /images/:id` Image information endpoint), because they are new endpoints and would only be called explicitly by an Editor which is configured for using the Asset Management.
+
+### Image Service
+This functionality introduces a new image-service `liImageProxy`. It's a proxy around ImgIX. Therefore it includes some new (proxy specific) configuration and all configuration that's required for ImgIX:
+
+``` javascript
+imageServices: {
+  liImageProxy: {
+    host: 'http://localhost:9090',
+    proxyEndpoint: 'api/v1/images',
+    paginationSize: 25,
+    preferWebp: true,
+    backgroundImage: {
+      maxWidth: 2048
+    },
+    srcSet: {
+      defaultWidth: 1024,
+      widths: [
+        2048,
+        1024,
+        620,
+        320
+      ],
+      sizes: ['100vw']
+    }
+  }
+}
+```
+
+
 #### Push Notifications
 
 ```js
@@ -450,6 +505,62 @@ push_notifications: {
 ```
 
 For push notifications to be enabled you also need to follow the steps in the [channel config setup](./channel-config.md#push-notifications)
+
+
+#### Asset management
+
+The asset management impacts editor in three ways:
+- You can pick images from the library which have been previously uploaded
+- You can see all the uploaded images and perform operations on them
+- You can edit the Metadata of images in a dedicated view, which is accessible over an image
+
+##### Seting up the Elasticsearch Mapping
+
+For now the very first step when setting up the server, you need to create a new Mapping the elastic search.
+
+The entire setup can be done by running the following command:
+
+``` javascript
+./bin/index.js create-image-index
+```
+
+##### Feature Flag
+The endpoint /upload can function with Asset Management functionality or without. The change can be configured in the environment with:
+
+```
+  assetManagement: {
+    enabled: true
+  },
+```
+The feature flag is ignored by the other Asset Management endpoints (`GET /images?fullText` search and `GET /images/:id` Image information endpoint), because they are new endpoints and would only be called explicitly by an Editor which is configured for using the Asset Management.
+
+##### Image Service
+This functionality introduces a new image-service `liImageProxy`. It's a proxy around ImgIX. Therefore it includes some new (proxy specific) configuration and all configuration that's required for ImgIX:
+
+``` javascript
+    imageServices: {
+      liImageProxy: {
+        host: 'http://localhost:9090',
+        proxyEndpoint: 'api/v1/images',
+        paginationSize: 25,
+        preferWebp: true,
+        backgroundImage: {
+          maxWidth: 2048
+        },
+        srcSet: {
+          defaultWidth: 1024,
+          widths: [
+            2048,
+            1024,
+            620,
+            320
+          ],
+          sizes: ['100vw']
+        }
+      }
+    }
+```
+
 
 ## Integrations
 
