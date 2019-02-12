@@ -245,6 +245,22 @@ See [here](./text-editing.md#links)
 The keyboard shortcuts allow you to customize which keys you want to use for common actions in Livingdocs.
 The actions (values) are fixed. You can define on which keys you want to execute the actions
 
+## Multi select
+
+Selecting multiple components at once allows editors to delete a bulk of components.
+The multi selection is currently only enabled through keyboard shortcuts (see above). To enable it, add this to the shortcut definition:
+```
+{
+  keyboardShortcuts: {
+    '↓shift': 'start multiselect mode',
+    '↑shift': 'end multiselect mode',
+  }  
+}
+```
+
+This will allow editors to use Shift+Click to multi-select components. Of course you can also choose to have different shortcuts.
+
+
 ## Document Copy
 
 ```
