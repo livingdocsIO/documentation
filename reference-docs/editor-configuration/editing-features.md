@@ -363,3 +363,20 @@ The actions (values) are fixed. You can define on which keys you want to execute
 ```
 
 If the copy feature is enabled, it allows you to copy and transform documents.
+
+
+## Comments
+
+Comments are a great way for editors to communicate about a text.
+To enable it, add the following block to your editor config:
+```
+comments: {
+  isEnabled: true,
+  defaultForDocumentType: {
+    article: true,
+    page: false
+  }
+}
+```
+
+The `defaultForDocumentType` section allows you to separately turn comments off for articles and pages.
