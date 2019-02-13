@@ -88,7 +88,7 @@ The details about adding a new metadata field can be seen in the [metadata examp
 ### Dashboard
 
 As soon as we have the multi-language feature configured, the dashboard will show a new column `languages` in the search results.
-In order for the dashboard to have the required metadata, you will need to configure the [`documentsMetadataFields`](../reference-docs/server-configuration/config.html#search) in the server config to include your metadata property. You need to use the metadata property name here. In our example from before this would be:
+In order for the dashboard to have the required metadata, you will need to configure the [`documentsMetadataFields`](../reference-docs/server-configuration/config.md#search) in the server config to include your metadata property. You need to use the metadata property name here. In our example from before this would be:
 ```
 {
   search: {
@@ -103,7 +103,7 @@ Note: if you did your [own dashboard item](./push_notifications.md#add-a-custom-
 
 ## Editor
 
-The editor side is relatively easy to configure. You only need to add the provided language [core filter](../reference-docs/editor-configuration/search-filters.html#predefined-core-properties) to your dashboard so that you are able to filter documents by language. This is done in the editor environment config file.
+The editor side is relatively easy to configure. You only need to add the provided language [core filter](../reference-docs/editor-configuration/menu-and-dashboards.html) to your dashboard so that you are able to filter documents by language. This is done in the editor environment config file.
 
 ```
 {
