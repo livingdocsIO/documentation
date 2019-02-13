@@ -4,7 +4,7 @@ Both the server and the editor ship with a default configuration, that works out
 
 ## Operating system
 
-Livingdocs runs under Mac OSX, Linux and Windows 10. For Windows 10 proceed first to [setup Windows 10](./setup_windows10)
+Livingdocs runs under Mac OSX, Linux and Windows 10. For Windows 10 proceed first to [setup Windows 10](./setup_windows10.md)
 
 ## Install Docker
 
