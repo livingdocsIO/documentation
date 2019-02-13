@@ -303,3 +303,30 @@ In order to enable the Assetmanagement to be visible in the sidebar of an image 
   }
 ```
 
+Also make sure that the proper image Service is enabled:
+
+```javascript
+
+{
+  app: {
+    imageService: 'liImageProxy'
+  }
+}
+
+```
+
+If you disable it, make sure to change the image service to a non-DAM image service lile `imgix`
+
+
+```javascript
+
+{
+  app: {
+    imageService: 'imgix'
+  }
+}
+
+```
+
+Of course make sure that you disable the feature on the server as well.
+
