@@ -50,119 +50,6 @@ app: {
 }
 ```
 
-## Login
-
-In addition to the Livingdocs login, you can configure additional login providers.
-```
-auth: {
-  providers: [{
-    id: 'myLoginProvider',
-    strategy: 'link',
-    label: 'Log in via myLoginProvider',
-    url: 'http://localhost:9090/auth/myLoginProvider'
-  }]
-}
-```
-
-Only strategies of type `link` are supported at the moment. For an example see our [Github login guide](../../walkthroughs/github-login.md).
-
-### Login screen
-
-```
-app: {  
-  ui: {
-    login: {
-      requestAccess: {
-        label: 'No Account?',
-        url: 'http://livingdocs.io/trial/',
-        urlText: 'Request beta access'
-      }
-    }
-  }
-}
-```
-
-Customize the label and link below to login (to request a login).
-
-## Dashboard
-
-Define a custom item for the dashboard list of articles. This is useful when you want to show additional data on the dashboard such as the open tasks on an article.
-
-```
-search: {
-  articleSearch: {
-    listItemComponent: 'custom-dashboard-list-item'
-  }
-}
-```
-
-Note that the custom component can only use document metadata that has been explicitly [whitelisted](../server-configuration/config.md#search).
-
-## Main Menu
-
-You can customize the entries you want to have in the main menu (the burger icon in the top left of the screen).
-```
-app: {
-  sidePanelItems: [{
-    label: 'Articles',
-    sref: 'app.editor.articles',
-    icon: 'file-document',
-    scope: 'readArticles'
-  },
-  {
-    label: 'Pages',
-    sref: 'app.pages',
-    icon: 'newspaper',
-    scope: 'readPages'
-  },
-  {
-    label: 'Data Records'
-    sref: 'app.dataRecords'
-    icon: 'format-list-checks'
-    scope: 'readDataRecords'
-  },
-  {
-    label: 'Lists',
-    sref: 'app.lists',
-    icon: 'view-headline',
-    scope: 'readLists'
-  },
-  {
-    label: 'Menus',
-    sref: 'app.menus',
-    icon: 'file-tree',
-    scope: 'manageMenus'
-  },
-  {
-    label: 'Project Settings',
-    sref: 'app.projects',
-    icon: 'settings',
-    scope: 'administerProject'
-  },
-  {
-    label: 'Server Admin',
-    sref: 'app.admin.users',
-    icon: 'account-multiple',
-    scope: 'manageUsers'
-  }]
-}
-```
-
-To hide an entry, simply delete it from the list.
-You can also customize the scopes that you assign to a menu item to control access rights. See [all available scopes](../../administration/access_rights.md#available-scopes).
-You can also customize the icons. We use https://materialdesignicons.com/ just use the respective icon string.
-
-To link to an external page add an entry as follows:
-```
-{
-  label: 'Your page',
-  href: 'https://www.livingdocs.io',
-  icon: 'settings'
-}
-```
-
-Note that you use `href` instead of `sref` for external links.
-
 ## Images
 
 There are several configuration options concerning images.
@@ -283,9 +170,6 @@ Allows you to customize the language of the Twitter card (buttons, retweet displ
 Iframes in Livingdocs use a special CSS trick to always be rendered in a given aspect ratio and scale automatically to the given width. In this way an iframe out of Livingdocs is never cut off at the sides. The default ratio of 55 is about a 16:9 aspect ratio. Use this formula to calculate the correct value for your custom default aspect ratio: `(width / height) * 100`.
 This setting only sets the default ratio, a user is given an interface to change the aspect ratio inside of the Livingdocs editor.
 
-## Filters
-
-See [here](./search-filters.md)
 
 ## Timeout
 

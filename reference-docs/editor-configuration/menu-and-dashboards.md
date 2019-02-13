@@ -1,3 +1,84 @@
+# Main Menu
+
+You can customize the entries you want to have in the main menu (the burger icon in the top left of the screen).
+```
+app: {
+  sidePanelItems: [{
+    label: 'Articles',
+    sref: 'app.editor.articles',
+    icon: 'file-document',
+    scope: 'readArticles'
+  },
+  {
+    label: 'Pages',
+    sref: 'app.pages',
+    icon: 'newspaper',
+    scope: 'readPages'
+  },
+  {
+    label: 'Data Records'
+    sref: 'app.dataRecords'
+    icon: 'format-list-checks'
+    scope: 'readDataRecords'
+  },
+  {
+    label: 'Lists',
+    sref: 'app.lists',
+    icon: 'view-headline',
+    scope: 'readLists'
+  },
+  {
+    label: 'Menus',
+    sref: 'app.menus',
+    icon: 'file-tree',
+    scope: 'manageMenus'
+  },
+  {
+    label: 'Project Settings',
+    sref: 'app.projects',
+    icon: 'settings',
+    scope: 'administerProject'
+  },
+  {
+    label: 'Server Admin',
+    sref: 'app.admin.users',
+    icon: 'account-multiple',
+    scope: 'manageUsers'
+  }]
+}
+```
+
+To hide an entry, simply delete it from the list.
+You can also customize the scopes that you assign to a menu item to control access rights. See [all available scopes](../../administration/access_rights.md#available-scopes).
+You can also customize the icons. We use https://materialdesignicons.com/ just use the respective icon string.
+
+To link to an external page add an entry as follows:
+```
+{
+  label: 'Your page',
+  href: 'https://www.livingdocs.io',
+  icon: 'settings'
+}
+```
+
+Note that you use `href` instead of `sref` for external links.
+
+
+# Dashboard
+
+Define a custom item for the dashboard list of articles. This is useful when you want to show additional data on the dashboard such as the open tasks on an article.
+
+```
+search: {
+  articleSearch: {
+    listItemComponent: 'custom-dashboard-list-item'
+  }
+}
+```
+
+Note that the custom component can only use document metadata that has been explicitly [whitelisted](../server-configuration/config.md#search).
+
+
 # Search Filters
 
 The editor core API exposes functions to customize the search filters on the dashboard.
