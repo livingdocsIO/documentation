@@ -83,4 +83,4 @@ export ENVIRONMENT=<your environment>
 You can set this variable to any value that you have a config for in your `environments folder`.
 
 
-**Proceed with the instructions in the editor and server `README`**
+**Proceed with the instructions in the [editor](https://github.com/livingdocsIO/livingdocs-editor) and [server](https://github.com/livingdocsIO/livingdocs-server)  `README`**
