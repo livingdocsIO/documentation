@@ -27,6 +27,7 @@
 * Editor config
   * [Document Editing Features](reference-docs/editor-configuration/editing-features.md)
   * [Menu and Dashboards](reference-docs/editor-configuration/menu-and-dashboards.md)
+  * [Document Drag & Drop](reference-docs/editor-configuration/document-drag-drop.md)
   * [Login](reference-docs/editor-configuration/login.md)
 * [Events](reference-docs/server-extensions/events.md)
 * [Image cropper config](reference-docs/editor-configuration/image-cropping.md)
