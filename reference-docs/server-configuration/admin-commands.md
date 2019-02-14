@@ -1,6 +1,6 @@
 # Admin Commands
 
-There a lot of commands which can be executed on the server.
+There are a lot of commands which can be executed on the server.
 
 ## Description of the Commands
 * [Help](#help)
