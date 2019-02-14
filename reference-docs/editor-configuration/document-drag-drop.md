@@ -2,11 +2,9 @@
 
 ## Description
 
-The editor has some built in Drag & Drop implementations, to handle image, file and text drops onto a document. There is also an integration with the asset management system HuGO.
+The editor has some built in Drag & Drop implementations, to handle image, file and text drops onto a document. And It is possible to register your own drag & drop handlers.
 
-It is also possible to add your own drag & drop handlers in the editor.
-
-Dropping objects over a dashboard is not covered in this document.
+Dropping objects over a dashboard is a separate subject.
 
 
 ## Add Custom Drag & Drop Handlers
