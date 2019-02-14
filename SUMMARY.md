@@ -2,9 +2,16 @@
 
 * [Getting started](./getting_started.md)
 
-* [Setting up Livingdocs locally](walkthroughs/getting-started-with-local-development.md)
+
+## Concepts
 
 * [Glossary](./DICTIONARY.md)
+* [Livingdocs Design and Components](reference-docs/common-designs/create_designs.md)
+* [Metadata Plugins](walkthroughs/metadata/metadata-examples.md)
+* [Image Services](concepts/images/image-services.md)
+* [Includes](reference-docs/doc-includes/intro.md)
+* [Document Copy](concepts/copying-documents/document_copy_feature.md)
+
 
 ## Videos
 
@@ -12,63 +19,65 @@
 * [Livingdocs Boilerplate Intro](videos/boilerplate_intro.md)
 * [Livingdocs Includes](videos/includes.md)
 
-## Reference
 
-* [Channel config](reference-docs/server-configuration/channel-config.md)
-* [Content-type config](reference-docs/server-configuration/content-type-config.md)
-* Data model
-  * [Livingdoc](reference-docs/common-livingdoc/livingdoc.md)
-  * [Component tree](reference-docs/common-livingdoc/component_tree.md)
-  * [Component model](reference-docs/common-livingdoc/component_model.md)
-  * [Directives](reference-docs/common-livingdoc/directives.md)
-* Design
-  * [Component config](reference-docs/common-designs/component_config.md)
-  * [Design config](reference-docs/common-designs/design_config.md)
-* Editor config
+## Reference Documentation
+
+* Server
+  * [Configuration File](reference-docs/server-configuration/config.md)
+  * [Channel Config](reference-docs/server-configuration/channel-config.md)
+  * [Content-Type Config](reference-docs/server-configuration/content-type-config.md)
+  * [Metadata on the Server](reference-docs/server-configuration/metadata.md)
+  * [Hooks](reference-docs/server-configuration/hooks.md)
+  * [Import API](reference-docs/server-import-api/import_api.md)
+  * [Specify Loaded Features](reference-docs/server-configuration/stack.md)
+  * [Events](reference-docs/server-extensions/events.md)
+  * [Logs](reference-docs/server-configuration/logging.md)
+  * [Single Sign-On](reference-docs/server-configuration/single_sign-on.md)
+  * [Create Users](walkthroughs/create-users.md)
+  * [Server Admin Commands](reference-docs/server-configuration/admin-commands.md)
+* Editor
   * [Document Editing Features](reference-docs/editor-configuration/editing-features.md)
+  * [Text Editing Config](reference-docs/editor-configuration/text-editing.md)
   * [Menu and Dashboards](reference-docs/editor-configuration/menu-and-dashboards.md)
   * [Document Drag & Drop](reference-docs/editor-configuration/document-drag-drop.md)
+  * [Image Cropper Config](reference-docs/editor-configuration/image-cropping.md)
+  * [Image Source Policy Config](reference-docs/editor-configuration/image-source-policy.md)
+  * [Metadata Configuration](reference-docs/editor-configuration/metadata.md)
   * [Login](reference-docs/editor-configuration/login.md)
-* [Events](reference-docs/server-extensions/events.md)
-* [Image cropper config](reference-docs/editor-configuration/image-cropping.md)
-* [Image source policy config](reference-docs/editor-configuration/image-source-policy.md)
-* [Image services](concepts/images/image-services.md)
-* [Import API](reference-docs/server-import-api/import_api.md)
+* Livingdocs Design
+  * [Design Config](reference-docs/common-designs/design_config.md)
+  * [Component Config](reference-docs/common-designs/component_config.md)
+* Livingdocs Content Model
+  * [Livingdoc](reference-docs/common-livingdoc/livingdoc.md)
+  * [Component Tree](reference-docs/common-livingdoc/component_tree.md)
+  * [Component Model](reference-docs/common-livingdoc/component_model.md)
+  * [Directives](reference-docs/common-livingdoc/directives.md)
 * Includes
-  * [Include server config](reference-docs/doc-includes/server_customization.md)
-  * [Include user interfaces](reference-docs/doc-includes/editor_customization.md)
-  * [Includes with multiple services](reference-docs/doc-includes/service_multiselect.md)
-* [Metadata on the server](reference-docs/server-configuration/metadata.md)
-* [Metadata editor configuration](reference-docs/editor-configuration/metadata.md)
+  * [Include Server Config](reference-docs/doc-includes/server_customization.md)
+  * [Include User Interfaces](reference-docs/doc-includes/editor_customization.md)
+  * [Includes with Multiple Services](reference-docs/doc-includes/service_multiselect.md)
 * [Print API](reference-docs/server-print-api/print-api.md)
-* Server
-  * [configuration file](reference-docs/server-configuration/config.md)
-  * [hooks](reference-docs/server-configuration/hooks.md)
-  * [single sign-on](reference-docs/server-configuration/single_sign-on.md)
-* [Stack](reference-docs/server-configuration/stack.md)
-* [Text editing config](reference-docs/editor-configuration/text-editing.md)
-* [Document copy](concepts/copying-documents/document_copy_feature.md)
 
-## Design Guides
 
-* [Introduction to design and components](reference-docs/common-designs/create_designs.md)
-* [How to do a bullet list](reference-docs/common-designs/list_example.md)
-* [Running and defining design migrations](concepts/document-migrations/migrations.md)
+## Design Howtos
 
-## Customizing Guides
+* [Create a Bullet List Component](reference-docs/common-designs/list_example.md)
+* [Running and Defining Design Migrations](concepts/document-migrations/migrations.md)
 
-* [Register a custom feature](walkthroughs/add_customizations.md)
-* [Metadata examples](walkthroughs/metadata/metadata-examples.md)
-* [Implement includes](reference-docs/doc-includes/intro.md)
-* [Configure article embed and list](reference-docs/doc-includes/embed_and_list.md)
-* [Use the Publish Hooks](reference-docs/server-extensions/publish-hooks.md)
-* [Validate task completion](walkthroughs/validate_tasks.md)
-* [Implement single-sign-on (SSO)](walkthroughs/github-login.md)
-* [Add an Instagram embed](walkthroughs/instagram_embed.md)
-* [Use push notifications and custom dashboard item](walkthroughs/push_notifications.md)
-* [Enable multi-language support](walkthroughs/setup_multilanguage.md)
-* [A possible translation system](walkthroughs/translations_example.md)
-* [A possible routing system](reference-docs/server-public-api/routing-system.md)
+
+## General Howtos
+
+* [Register a Custom Server Feature](walkthroughs/add_customizations.md)
+* [Configure Includes: Article Embed and List](reference-docs/doc-includes/embed_and_list.md)
+* [Assign Access Rights](administration/access_rights.md)
+* [Use the Publish Hooks](reference-docs/server-extensions/hooks.md)
+* [Validate Task Completion](walkthroughs/validate_tasks.md)
+* [Implement Single Sign-On](walkthroughs/github-login.md)
+* [Add an Instagram Embed](walkthroughs/instagram_embed.md)
+* [Use Push Notifications and Custom Dashboard Item](walkthroughs/push_notifications.md)
+* [Enable Multi-Language Support](walkthroughs/setup_multilanguage.md)
+* [A Possible Translation System](walkthroughs/translations_example.md)
+* [A Possible Routing System](reference-docs/server-public-api/routing-system.md)
 * [Hugo Drag and Drop](reference-docs/server-extensions/hugo-dnd.md)
 
 
@@ -78,10 +87,10 @@
 
   * [Hardware Requirements](setup-and-deployment/hardware-requirements.md)
   * [Architecture](setup-and-deployment/high-availability/README.md)
-    * [high-availability](setup-and-deployment/high-availability/high-availability-setup.md)
+    * [High-Availability](setup-and-deployment/high-availability/high-availability-setup.md)
   * [Docker](setup-and-deployment/docker/README.md)
-    * [Build docker images](setup-and-deployment/docker/build-docker-images.md)
-  * [External services](setup-and-deployment/external-services.md)
+    * [Build Docker Images](setup-and-deployment/docker/build-docker-images.md)
+  * [External Services](setup-and-deployment/external-services.md)
   * [Proxy](setup-and-deployment/proxy.md)
   * [NPM Tokens](setup-and-deployment/npm/access-private-npm-modules.md)
 
@@ -90,12 +99,10 @@
 * [How to do a Stress Test](https://github.com/DaRaFF/stress-test-example#how-to-make-a-simple-stress-test)
 * [How to Configure and Interpret Varnish](reference-docs/maintenance/how-to-varnish.md)
 
-## Administration
 
-* [Create Users](walkthroughs/create-users.md)
-* [Assign access rights](administration/access_rights.md)
-* [Logs](reference-docs/server-configuration/logging.md)
-* [Server Admin Commands](reference-docs/server-configuration/admin-commands.md)
+## Core Development
+
+* [Setup for Core Development](walkthroughs/getting-started-with-local-development.md)
 
 <!-- ## Livingdocs core development
 
