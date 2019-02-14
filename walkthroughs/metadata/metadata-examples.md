@@ -1,10 +1,13 @@
-# Example 1: Full Example on how to Introduce a Metadata Field with a Standard Metadata Plugin
+
+# Metadata Plugins
+
+## Example 1: Full Example on how to Introduce a Metadata Field with a Standard Metadata Plugin
 
 Say we want to create a new metadata field "catchline" for articles of your default web channel. The catchline should be a simple text input on the publish panel that journalists can edit.
 
 For details have a look at the [server configuration reference documentation](../../reference-docs/server-configuration/metadata.md)
 
-## Server
+#### Server
 
 (Note: we assume the use of the [Livingdocs server boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate) here)
 
@@ -48,7 +51,7 @@ metadataFormArrangement: [
 6. After you have setup your new metadata field you can use it in the editor.
 
 
-# Example 2: Create your own Metadata Plugin
+## Example 2: Create your own Metadata Plugin
 
 If you want to use a custom metadata plugin, you have to do the following steps on the server:
 
@@ -87,7 +90,7 @@ metadata: {
 ```
 
 
-# Example 3: Fully customized metadata component
+## Example 3: Fully customized metadata component
 
 Lets add a new metadata field, a `slug`, in the publish screen.
 
@@ -101,7 +104,7 @@ https://www.example.com/a-way-to-compare-schools
 ![Slug form metadata](./slug-metadata-form.png)
 
 
-## Server
+#### Server
 
 First we need to define a new property in our Elasticsearch mapping.
 
@@ -178,7 +181,7 @@ module.exports = {
 ```
 
 
-## Editor
+#### Editor
 
 In the editor we need to create the form defined in the server as `'bp-slug-form'`.
 

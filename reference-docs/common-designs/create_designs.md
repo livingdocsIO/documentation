@@ -1,4 +1,5 @@
-# Create designs
+
+# Livingdocs Design and Components
 
 This guide references the [Livingdocs timeline design](https://github.com/livingdocsIO/livingdocs-design-timeline),
  which you can use as a starting point for your own designs. We advise you to clone this repository now to follow the subsequent examples.
