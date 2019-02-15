@@ -80,6 +80,7 @@
 * [A Possible Translation System](walkthroughs/translations_example.md)
 * [A Possible Routing System](reference-docs/server-public-api/routing-system.md)
 * [Hugo Drag and Drop](reference-docs/server-extensions/hugo-dnd.md)
+* [Asset Management](reference-docs/common-livingdoc/asset-management.md)
 
 
 ## Devops
