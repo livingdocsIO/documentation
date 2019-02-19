@@ -1,25 +1,33 @@
 # Evaluation guide
+This is the evaluation guide for enterprise on-premise livingdocs. 
+
+The goal is that after going through this guide you have a basic installation on your local machine. You will have a configured instance of livingdocs with some added customization. 
 
 ## Short introduction to livingdocs
-Livingdocs has 2 main application, the livingdocs-editor and the livingdocs-server. For the livingdocs-server we need the following additional application:
-- elasticsearch
-- postgres
-- redis
-- Amazon s3 buckets
-  - Image bucket
-  - Design bucket
-- Image service (Imgix)
-- Pusher
-- Amazon Mailserver
-- Iframely
+Livingdocs has 2 main applications, the livingdocs-editor and the livingdocs-server. For the livingdocs-server we need the following additional application.
 
-Elasticsearch, Postgres and redis are started in a docker container. The other 3 are external services. For evaluation we already have added accounts for this 3 services in the config files. They are limited to a specific amount of data but this shouldn't be a problem for the evaluation.
+#### Livingdocs Components, Containers and external Services
+- components
+  - livingdocs-editor
+  - livingdocs-server
+- docker-containers
+  - elasticsearch
+  - postgres
+  - redis
+- external services
+  - Amazon s3 buckets
+    - Image bucket
+    - Design bucket
+  - Image service (Imgix)
+  - Pusher
+  - Amazon Mailserver
+  - Iframely
+
+For evaluation we already have added accounts for the 5 external services in the config files. They are limited to a specific amount of data but this shouldn't be a problem for the evaluation.
 
 For the livingdocs-server and livingdocs-editor we have a boilerplate which you can use to setup your own server and editor. These two repositories are private. Please contact us that you are interested to evaluate livingdocs so we can give you access to the repository.
 
 ## Setup
-- Get the livingdocs-server-boilerplate repository (https://github.com/livingdocsIO/livingdocs-server-boilerplate)
-- Get the livingdocs-editor-boilerplate repository (https://github.com/livingdocsIO/livingdocs-editor-boilerplate)
 - Go through the setup documentation: [setup local development](../reference-docs/getting-started-with-local-development)
 - After setup server and editor you should be able to login with a given user
 
