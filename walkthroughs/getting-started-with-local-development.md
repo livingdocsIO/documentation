@@ -31,17 +31,21 @@ Now, what did you get?
 
 Within `livingdocs-server-boilerplate` we have a default configuration for a Livingdocs Server instance. This server, once up and running, will take care of a variety of things, from persisting your documents to search indexation – however, it is exclusively data driven or [headless](https://en.wikipedia.org/wiki/Headless_software).
 
-We still expect beautiful things to happen in our browser in the near future though. This is what `livingdocs-editor-boilerplate` is for. It contains a default configuration for a Livingdocs Editor instance, our editing user interface.
+The second folder `livingdocs-editor-boilerplate` contains a default configuration for a Livingdocs Editor instance, our editing user interface.
+
+### The `ENVIRONMENT` variable
+
+With this value, we determine under what kind of base premise the services should get run. At this point, we only need to know, that for a local setup we always want that value to be set to `local`.
+You can either call the folllowing line before each and every script or permanently set the environment variable by adding the following line to your `~/.zhsrc` or `~/.bashrc`
+
+```bash
+export ENVIRONMENT=local
+```
+
+**Please note**
+These boilerplates are _not_ meant to be used for anything else than local evaluation. They also include configurations for rate limited third-party API's that we provide for convenience reasons.
 
 To proceed, follow the instructions in each repository's `README`:
 
 - [livingdocs-editor-boilerplate](https://github.com/livingdocsIO/livingdocs-editor-boilerplate)
 - [livingdocs-server-boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate)
-
-#### Persist ENVIRONMENT variable
-
-Locally, you might want to permanently set `ENVIRONMENT=local` by adding the following line to your `~/.zhsrc` or `~/.bashrc`
-
-```bash
-export ENVIRONMENT=local
-```
