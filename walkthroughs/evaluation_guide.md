@@ -1,7 +1,7 @@
 # Evaluation guide
 
 ## Short introduction to livingdocs
-Livingdocs has 2 main applications, the livingdocs-editor and the livingdocs-server. For the livingdocs-server we need the following additional application:
+Livingdocs has 2 main application, the livingdocs-editor and the livingdocs-server. For the livingdocs-server we need the following additional application:
 - elasticsearch
 - postgres
 - redis
@@ -10,6 +10,8 @@ Livingdocs has 2 main applications, the livingdocs-editor and the livingdocs-ser
   - Design bucket
 - Image service (Imgix)
 - Pusher
+- Amazon Mailserver
+- Iframely
 
 Elasticsearch, Postgres and redis are started in a docker container. The other 3 are external services. For evaluation we already have added accounts for this 3 services in the config files. They are limited to a specific amount of data but this shouldn't be a problem for the evaluation.
 
@@ -30,6 +32,16 @@ At the moment you have the blank design without any assets on your design server
 The next step is to create your own metadata field with a own metadata plugin. 
 
 [create metadata field](../reference-docs/common-designs/create_designs)
+
+## Delivery
+If you want deliver your documents to your Delivery Website you can use webhooks to get notified if a document got published.
+
+[use webhooks](../reference-docs/server-configuration/hooks)
+
+## Import
+You can import documents from your old application. There is a special API where you can create documents programmatically. So you have to transform the old format to the livingdocs format and create an article.
+
+[import api](../server-import-api/import_api)
 
 ## doc-include
 It can be important for your case that you can create components which can include rendered content. You can describe how the content should be rendered and use this doc-include in your components.
