@@ -460,7 +460,27 @@ The asset management impacts editor in three ways:
 - You can see all the uploaded images and perform operations on them
 - You can edit the Metadata of images in a dedicated view, which is accessible over an image
 
-##### Seting up the Elasticsearch Mapping
+
+##### Prerequisite
+
+This is not specific to the DAM and is the same for Image uploads. However, it needs to be ensured that valid S3 credentials are configured. This information is usually not checked in and can be configured in `conf/secrets/local.js`.
+
+```js
+images: {
+  publicUrl: 'http://some-bucketname.s3.amazonaws.com',
+  storage: {
+    strategy: 's3',
+    config: {
+      bucket: 'some-bucketname',
+      region: 'some-s3-region',
+      secretAccessKey: 'YOUR_SECRET_ACCESS_KEY',
+      accessKeyId: 'YOUR_ACCESS_KEY'
+    }
+  }
+}
+```
+
+##### Setting up the Elastic Search Mapping
 
 For now the very first step when setting up the server, you need to create a new Mapping the elastic search. The mapping is defined in the file `app/features/indexing/mapping/image_v6.json`.
 
