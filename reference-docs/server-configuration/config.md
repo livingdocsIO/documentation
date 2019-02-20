@@ -462,9 +462,19 @@ The asset management impacts editor in three ways:
 
 ##### Seting up the Elasticsearch Mapping
 
-For now the very first step when setting up the server, you need to create a new Mapping the elastic search.
+For now the very first step when setting up the server, you need to create a new Mapping the elastic search. The mapping is defined in the file `app/features/indexing/mapping/image_v6.json`.
 
-The entire setup can be done by running the following command:
+The name of the Image index can be configured:
+
+```js
+{
+ search: {
+    image_document_index: 'livingdocs-local-images'
+  }
+}
+```
+
+Then the Image index can be created. This is included in the `grunt setup` task, but can also be issued separately via:
 
 ``` javascript
 ./bin/index.js create-image-index
@@ -485,7 +495,7 @@ Make sure that you disable the Asset Management in the Editor as well and make s
 ##### Image Service
 This functionality introduces a new image-service `liImageProxy`. It's a proxy around ImgIX. Therefore it includes some new (proxy specific) configuration and all configuration that's required for ImgIX:
 
-``` javascript
+```js
     imageServices: {
       liImageProxy: {
         host: 'http://localhost:9090',

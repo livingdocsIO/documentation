@@ -295,7 +295,7 @@ The `defaultForDocumentType` section allows you to separately turn comments off 
 
 ## Asset Management
 
-In order to enable the Assetmanagement to be visible in the sidebar of an image as "Media Library" button, as well as to have the menu entry which guides you to the dedicated Media Library page, you need to set the feature flag to true.
+In order make the Asset Management visible in the sidebar of an image as "Media Library" button, as well as to have the menu entry which guides you to the dedicated Media Library page, you need to set the feature flag to true.
 
 ```
   {
@@ -329,4 +329,18 @@ If you disable it, make sure to change the image service to a non-DAM image serv
 ```
 
 Of course make sure that you disable the feature on the server as well.
+
+
+### Upload
+
+In the editor, you can define how many images can be uploaded at the
+same time.
+
+```
+{
+  imageUpload: {
+    maxNumberOfFiles: 10
+  }
+}
+```
 
