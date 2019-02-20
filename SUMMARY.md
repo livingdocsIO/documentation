@@ -3,14 +3,14 @@
 * [Getting started](./getting_started.md)
 
 
-## Concepts
+## Evaluation Guide
 
-* [Glossary](./DICTIONARY.md)
+* [System Prerequisites](walkthroughs/getting-started-with-local-development.md)
 * [Livingdocs Design and Components](reference-docs/common-designs/create_designs.md)
 * [Metadata Plugins](walkthroughs/metadata/metadata-examples.md)
 * [Image Services](concepts/images/image-services.md)
 * [Includes](reference-docs/doc-includes/intro.md)
-* [Document Copy](concepts/copying-documents/document_copy_feature.md)
+* [Glossary](./DICTIONARY.md)
 
 
 ## Videos
@@ -67,6 +67,7 @@
 
 ## General Howtos
 
+* [Use Document Copy](concepts/copying-documents/document_copy_feature.md)
 * [Register a Custom Server Feature](walkthroughs/add_customizations.md)
 * [Configure Includes: Article Embed and List](reference-docs/doc-includes/embed_and_list.md)
 * [Assign Access Rights](administration/access_rights.md)
@@ -100,9 +101,6 @@
 * [How to Configure and Interpret Varnish](reference-docs/maintenance/how-to-varnish.md)
 
 
-## Core Development
-
-* [Setup for Core Development](walkthroughs/getting-started-with-local-development.md)
 
 <!-- ## Livingdocs core development
 
