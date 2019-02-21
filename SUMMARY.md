@@ -1,5 +1,5 @@
 # Summary
-
+* [Introduction](./README.md)
 
 ## Evaluation Guide
 * [Getting started](walkthroughs/getting_started.md)
