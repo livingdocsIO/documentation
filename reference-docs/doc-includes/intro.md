@@ -22,7 +22,7 @@ The last point is worth mentioning again: rendering of a `doc-include` is done o
 
 You should be familiar with [Livingdocs directives](../common-designs/component_config.md#directives) for this section.
 
-```component.html
+```html
 <script type="ld-conf">
 {
   "name": "example",
