@@ -259,6 +259,7 @@ designs: {
   }
 }
 ```
+[config options](./config-storage-options.md) for `storage`.
 
 
 #### Images
@@ -479,6 +480,8 @@ images: {
   }
 }
 ```
+[config options](./config-storage-options.md) for `storage`.
+
 
 ##### Setting up the Elastic Search Mapping
 
