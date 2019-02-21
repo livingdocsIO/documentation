@@ -1,12 +1,8 @@
 # Summary
 
-* [Getting started](./getting_started.md)
-
-* [Evaluation guide](walkthroughs/evaluation_guide.md)
-
 
 ## Evaluation Guide
-
+* [Getting started](walkthroughs/getting_started.md)
 * [System Prerequisites](walkthroughs/getting-started-with-local-development.md)
 * [Livingdocs Design and Components](reference-docs/common-designs/create_designs.md)
 * [Metadata Plugins](walkthroughs/metadata/metadata-examples.md)
