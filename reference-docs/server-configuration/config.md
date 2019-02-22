@@ -309,6 +309,16 @@ images: {
 }
 ```
 
+- Convert Option
+
+It is possible to define a convert from one image format to another. If the sourceFormat is a vector based format you can define the density (dpi) which should be used to create the pixel based format.
+
+```
+processing: {
+  convert: [{sourceFormat: 'pdf', targetFormat: 'png', density: 300}]
+}
+```
+
 #### Files
 
 ```js
