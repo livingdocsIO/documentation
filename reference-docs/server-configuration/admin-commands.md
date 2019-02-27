@@ -1,31 +1,77 @@
 # Admin Commands
 
-There are a lot of commands which can be executed on the server.
+There are a lot of commands which can be executed on the server. <br/>
+You will find the most important ones listed below. <br/>
+_A full list of commands can be found in the "Help" section._
 
 ## Description of the Commands
-* [Help](#help)
-* [Create Project](#project-create)
-* [Maintain Search Index](#search-index)
-* [Data Cleaning](#data-cleaning)
 
-
+- [Help](#help)
+- [Create Project](#project-create)
+- [Create Project](#create-users)
+- [Maintain Search Index](#search-index)
+- [Data Cleaning](#data-cleaning)
 
 ## <a name="help">Help</a>
 
-`grunt help` shows an overview of all available grunt commands.
-`livingdocs-server` shows an overview of all available livingdocs-server commands.
-
+`livingdocs-server` shows an overview of all available livingdocs-server commands.<br/>
+`grunt help` shows an overview of all available grunt commands. 
 
 ## <a name="project-create">Create Project</a>
 
 `grunt project-create` creates a new project.
 
+## <a name="create-users">Create Livingdocs users</a>
+
+To set up the **initial user**, run the following command in the project folder.
+
+<!-- 
+We should enable this in favor of the grunt description,
+once we can assign projects to the users.
+
+Otherwise it's confusing, as those users cant log into livingdocs.
+
+```sh
+livingdocs-server create-admin-user
+```
+
+```sh
+Usage: create-admin-users --source config.json
+
+Source.json could look like that:
+{ "users":
+    [
+        {
+            "_importHandle": ":developer",
+            "firstName": "first",
+            "lastName": "last",
+            "email": "foo@livingdocs.io",
+            "password": "foopassword"
+        }
+    ]
+}
+
+``` -->
+
+```sh
+grunt user-create-admin
+```
+
+Once you have an initial admin user, you can use it to create additional users via the server API:
+
+```sh
+grunt user-create
+```
+
+The difference between the two commands is, that the first connects to the database directly and has to be executed on the target server.
+Once you have the server running and an initial user created, you can add more users via the server API. This does not require you to ssh to the target server.
 
 ## <a name="search-index">Maintain Search Index</a>
 
 `grunt search-index` is a tool to create, index, update and delete a search index.
 
 ### Examples
+
 ```bash
 # Show help
 grunt search-index
@@ -55,6 +101,7 @@ After a data cleanup only the last revision of a user in a sequence of revisions
 After that cleanup the system is still fully functional but needs a lot less space.
 
 ### Cleanup Command Examples
+
 ```bash
 # Show help
 livingdocs-server cleanup-documents -h
