@@ -31,7 +31,6 @@
   * [Events](reference-docs/server-extensions/events.md)
   * [Logs](reference-docs/server-configuration/logging.md)
   * [Single Sign-On](reference-docs/server-configuration/single_sign-on.md)
-  * [Create Users](walkthroughs/create-users.md)
   * [Server Admin Commands](reference-docs/server-configuration/admin-commands.md)
 * Editor
   * [Document Editing Features](reference-docs/editor-configuration/editing-features.md)
