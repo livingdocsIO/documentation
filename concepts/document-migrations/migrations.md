@@ -120,10 +120,10 @@ The following diagram visualizes the most important states and actions:
 
 ## Examples
 
-The boilerplate app implements three example migrations that you can take as a starting point for your own migrations. (Don't run the example migrations, they are using a sample design which is not configured).
+We've described three example migrations that you can take as a starting point for your own migrations. 
 
-1. [Migration script after removing a directive from a component](https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_remove_directive.js)
+1. [Migration script after removing a directive from a component](./examples/remove_directive.md)
 
-2. [Migration script after renaming a directive on a component](https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_rename_directive.js)
+2. [Migration script after renaming a directive on a component](./examples/rename_directive.md)
 
-3. [Migration script to initialize a new metadata field](https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/master/app/data-migrations/000_example_add_metadata_field.js)
+3. [Migration script to initialize a new metadata field](./examples/add_metadata_field.md)
