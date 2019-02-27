@@ -60,8 +60,10 @@
 ## Design Howtos
 
 * [Create a Bullet List Component](reference-docs/common-designs/list_example.md)
-* [Running and Defining Design Migrations](concepts/document-migrations/migrations.md)
-
+* [Running and defining design migrations](concepts/document-migrations/migrations.md)
+  * [Example: Removing a directive](concepts/document-migrations/examples/remove_directive.md)
+  * [Example: Renaming a directive](concepts/document-migrations/examples/rename_directive.md)
+  * [Example: Adding a metadata field](concepts/document-migrations/examples/add_metadata_field.md)
 
 ## General Howtos
 
