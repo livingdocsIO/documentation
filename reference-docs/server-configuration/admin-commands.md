@@ -20,9 +20,9 @@ There are a lot of commands which can be executed on the server.
 
 `grunt project-create` creates a new project.
 
-
 ## <a name="search-index">Maintain Search Index</a>
 
+`livingdocs-server search-index` is a tool to recreate and reindex a search index.
 `grunt search-index` is a tool to create, index, update and delete a search index.
 
 ### Examples
