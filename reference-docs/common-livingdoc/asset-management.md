@@ -1,16 +1,43 @@
 # Digital Asset Management (DAM) Guide
 
-The LI Asset Management (DAM) enables smart features around assets (at this time only images).
+The LI Digital Asset Management (DAM) enables smart features around assets (at this time only images).
 
-## Special Features / Restrictions
+### Related tasks
 
-In this sections, special functions and restrictions that apply for the DAM are described.
+`./bin/index.js create-image-index`
+
+Creates the Image index within Elastic Search. This task is
+automatically run on `grunt setup`, as well.
+
+`grunt verify-image-index`
+
+This task ensures that all entries in the PG `images` table are also in the ES `images` index. Since PG is the master, it's only checked this way and not the other way around.
+
+Possible output:
+
+- Good case: "All good. All images in Postgres are also in Elastic Search!"
+
+- Bad case: Shows the amount of Images which are non-existent in ES, but are in ES. Also shows the IDs for those entries.
+
+
+### Persistence
+
+The DAM utilizes two databases:
+
+1. Postgres as primary data store
+2. Elastic Search as search index
+
+Saving to both DBs happens in a PG transaction, so if either fails, there's an automatic rollback and an error message.
+
+**PG ERD**
+
+![](../../images/dam_pg_table_images_erd.png)
 
 ### Filenames
 
-When the DAM is not enabled, the filenames of the files which are uploaded do not have any impact on the URL. Uploaded files are saved as UUIDs on S3 image services wrap URLs around S3 paths.
+When the DAM _is not enabled_, the filenames of the files which are uploaded do not have any impact on the URL. Uploaded files are saved as UUIDs on S3 image services wrap URLs around S3 paths.
 
-When the DAM is enabled, the uploaded images get semantic filenames. This is a drastic improvement for SEO (see sub chapter [SEO impact for naming files](#seo-impact-for-naming-files)). This means that the files of the uploaded files are sanitized.
+When the DAM _is enabled_, the uploaded images get semantic filenames. This is a drastic improvement for SEO (see sub chapter [SEO impact for naming files](#seo-impact-for-naming-files)). This means that the files of the uploaded files are sanitized.
 
 For reference, some examples: The filenames are being transformed along the following pattern, where the left hand is the naughty name and the right side is the sanitized and normalized name:
 
