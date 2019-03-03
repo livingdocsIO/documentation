@@ -4,10 +4,14 @@ The LI Digital Asset Management (DAM) enables smart features around assets (at t
 
 ### Related tasks
 
-`./bin/index.js create-image-index`
+`./bin/index.js create-image-index` || `grunt create-image-index`
 
 Creates the Image index within Elastic Search. This task is
 automatically run on `grunt setup`, as well.
+
+`./bin/index.js delete-image-index` || `grunt delete-image-index`
+
+Deletes the Image index within Elastic Search.
 
 `grunt verify-image-index`
 
