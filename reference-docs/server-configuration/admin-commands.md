@@ -25,7 +25,7 @@ _A full list of commands can be found in the "Help" section._
 
 To set up the **initial user**, run the following command in the project folder.<br/>
 The initial user is required to set up a `livingdocs-server` instance. <br/>
-This user can for example then upload a design. <br/>
+This user can for example, upload a design to the server. <br/>
 _Unless you connect a project to the user, you will not be able to log in with it though._ 
 
 ```sh
