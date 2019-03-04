@@ -25,34 +25,6 @@ _A full list of commands can be found in the "Help" section._
 
 To set up the **initial user**, run the following command in the project folder.
 
-<!-- 
-We should enable this in favor of the grunt description,
-once we can assign projects to the users.
-
-Otherwise it's confusing, as those users cant log into livingdocs.
-
-```sh
-livingdocs-server create-admin-user
-```
-
-```sh
-Usage: create-admin-users --source config.json
-
-Source.json could look like that:
-{ "users":
-    [
-        {
-            "_importHandle": ":developer",
-            "firstName": "first",
-            "lastName": "last",
-            "email": "foo@livingdocs.io",
-            "password": "foopassword"
-        }
-    ]
-}
-
-``` -->
-
 ```sh
 grunt user-create-admin
 ```
