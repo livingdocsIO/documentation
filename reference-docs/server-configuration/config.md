@@ -495,14 +495,16 @@ images: {
 
 ##### Setting up the Elastic Search Mapping
 
-For now the very first step when setting up the server, you need to create a new Mapping the elastic search. The mapping is defined in the file `app/features/indexing/mapping/image_v6.json`.
+For now the very first step when setting up the server, you need to create a new index 'images' in Elastic Search. The mapping is defined in the file `app/features/indexing/mapping/image_v6.json`.
 
-The name of the Image index can be configured:
+The name of the Image index has to be configured:
+
 
 ```js
 {
  search: {
-    image_document_index: 'livingdocs-local-images'
+    // Analogous to the `article_document_index` configuration
+    image_document_index: 'livingdocs-local-images',
   }
 }
 ```
