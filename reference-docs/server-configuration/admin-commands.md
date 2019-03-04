@@ -23,7 +23,10 @@ _A full list of commands can be found in the "Help" section._
 
 ## <a name="create-users">Create Livingdocs users</a>
 
-To set up the **initial user**, run the following command in the project folder.
+To set up the **initial user**, run the following command in the project folder.<br/>
+The initial user is required to set up a `livingdocs-server` instance. <br/>
+This user can for example then upload a design. <br/>
+_Unless you connect a project to the user, you will not be able to log in with it though._ 
 
 ```sh
 grunt user-create-admin
