@@ -8,7 +8,7 @@ _A full list of commands can be found in the "Help" section._
 
 - [Help](#help)
 - [Create Project](#project-create)
-- [Create Project](#create-users)
+- [Create User](#create-users)
 - [Maintain Search Index](#search-index)
 - [Data Cleaning](#data-cleaning)
 
