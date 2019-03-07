@@ -346,6 +346,7 @@ files: {
 
 ```js
 documents: {
+  selectedImageService: 'imgix',
   imageServices: {
     imgix: {} // imageService specific configuration
   }
@@ -492,6 +493,41 @@ images: {
 ```
 [config options](./config-storage-options.md) for `storage`.
 
+##### Image Service
+
+Livingdocs uses so-called image services to generate image URLs on the client and on the server. For the asset management you have to decide if you want to use a proxy or not.
+Without a proxy, just select your preferred image service, nothing else needs to be done.
+If you want to use a proxy (i.e. proxy image requests through Livingdocs), you need to use `liImageProxy`:
+```
+documents: {
+  selectedImageService: 'liImageProxy',
+  imageServices: {
+    liImageProxy: {
+      proxiedImageService: 'imgix',
+      host: 'http://localhost:9090',
+      proxyEndpoint: 'api/v1/images',
+      preferWebp: true,
+      backgroundImage: {
+        maxWidth: 2048
+      },
+      srcSet: {
+        defaultWidth: 1024,
+        widths: [
+          2048,
+          1024,
+          620,
+          320
+        ],
+        sizes: ['100vw']
+      }
+    }
+  }
+}
+```
+
+The image service `liImageProxy` is only used as a proxy. Internally and for the delivery of your images to end customers you will use an internally proxied image service (`proxiedImageService`).
+(Note: Currently, this is only tested with ImgIX, other image services are not officially supported)
+
 
 ##### Setting up the Elastic Search Mapping
 
@@ -513,44 +549,21 @@ Then the Image index can be created. This is included in the `grunt setup` task,
 ./bin/index.js create-image-index
 ```
 
-##### Feature Flag
+##### Feature Flag and internal image service
 The endpoint /upload can function with Asset Management functionality or without. The change can be configured in the environment with:
 
 ```
   assetManagement: {
-    enabled: true
-  },
+    enabled: true,
+    paginationSize: 25
+  }
 ```
+
 The feature flag is ignored by the other Asset Management endpoints (`GET /images?fullText` search and `GET /images/:id` Image information endpoint), because they are new endpoints and would only be called explicitly by an Editor which is configured for using the Asset Management.
 
+The `paginationSize` tells the asset management how many images to show on one page.
+
 Make sure that you disable the Asset Management in the Editor as well and make sure that you configure the image services properly too.
-
-##### Image Service
-This functionality introduces a new image-service `liImageProxy`. It's a proxy around ImgIX. Therefore it includes some new (proxy specific) configuration and all configuration that's required for ImgIX:
-
-```js
-    imageServices: {
-      liImageProxy: {
-        host: 'http://localhost:9090',
-        proxyEndpoint: 'api/v1/images',
-        paginationSize: 25,
-        preferWebp: true,
-        backgroundImage: {
-          maxWidth: 2048
-        },
-        srcSet: {
-          defaultWidth: 1024,
-          widths: [
-            2048,
-            1024,
-            620,
-            320
-          ],
-          sizes: ['100vw']
-        }
-      }
-    }
-```
 
 
 ## Integrations
