@@ -45,7 +45,7 @@ In order to see an image in a HTML document, Livingdocs needs to generate the HT
 
 Below is an example workflow that summarizes the whole process.
 
-A user uploads an image to the Livingdocs editor, the corresponding file is stored on Amazon S3 and the URL to the Amazon file is available on the component as `originalUrl`. The framework chooses the correct image service (e.g. ImgIX) for generating the correct HTML markup in the document that is shown in the Livingdocs editor. (The image service to be used is configured in the Livingdocs editor. Let's say `ImgIX` is configured.) The framework loads the `imgix_image_service` and calls the `set` method which will generate an `img` tag with a URL that fits the ImgIX url specification (https://docs.imgix.com/setup/serving-images). The browser then renders the image by querying ImgIX for the respective image.
+A user uploads an image to the Livingdocs editor, the corresponding file is stored on Amazon S3 and the URL to the Amazon file is available on the component as `originalUrl`. The framework chooses the correct image service (e.g. ImgIX) for generating the correct HTML markup in the document that is shown in the Livingdocs editor. (The image service to be used is configured via `selectedImageService`. Let's say `ImgIX` is configured.) The framework loads the `imgix_image_service` and calls the `set` method which will generate an `img` tag with a URL that fits the ImgIX url specification (https://docs.imgix.com/setup/serving-images). The browser then renders the image by querying ImgIX for the respective image.
 
 ## Why image services?
 
@@ -66,7 +66,7 @@ Srcset only works for inline images (`img` tag). If you use a background image, 
 
 ## Configuring an image service
 
-You currently need to configure your image service in both the editor and the server. We will push towards a server-only configuration. In the editor you configure which image service to use and the configuration for this image service. In the server you just add the configuration for the image service.
+You need to configure your image service in the server. You add the configuration for one or more image services as well as the selected image service.
 
 Below we'll outline the configuration for both ImgIX and resrc.it.
 
@@ -74,20 +74,11 @@ Below we'll outline the configuration for both ImgIX and resrc.it.
 
 The ImgIX configuration uses `srcset`. If you don't know about this HTML standard yet, refer to this article first: https://ericportis.com/posts/2014/srcset-sizes/
 
-#### Editor
-
-```js
-  app: {
-    imageService: 'imgix'
-  }
-```
-
-The `imageService` field tells Livingdocs which image service should be used.
-
 #### Server
 
 ```js
 documents: {
+  selectedImageService: 'imgix',
   imageServices: {
     imgix: {
       host: 'https://livingdocs-dev.imgix.net',
@@ -109,10 +100,10 @@ documents: {
   }
 }
 ```
-
+The `selectedImageService` field tells Livingdocs which image service should be used.
 The `imageServices` contains the configurations for one or more image services.
 
-You can in theory configure several images services in the server, but as of now only one can be used (the one specified in the editor config).
+You can in theory configure several images services in the server, but as of now only one can be used (the one specified in selectedImageService).
 
 The `host` is simply where your ImgIX images are served from.
 If `preferWebp` is set to `true` Livingdocs will pass the `auto=format` parameter (https://docs.imgix.com/apis/url/auto).
@@ -128,20 +119,11 @@ For background images you can simply set a fixed max-width, so that each backgro
 
 ### Resrc.it
 
-#### Editor
-
-```js
-app: {
-  imageService: 'resrc.it',
-}
-```
-
-The `imageService` field tells Livingdocs which image service should be used.
-
 #### Server
 
 ```js
 documents: {
+  selectedImageService: 'resrc.it'
   imageServices: {
     'resrc.it': {
       host: 'https://app.resrc.it',
@@ -151,10 +133,10 @@ documents: {
   }
 }
 ```
-
+The `selectedImageService` field tells Livingdocs which image service should be used.
 The `imageServices` contains the configurations for one or more image services.
 
-You can in theory also configure several images services in the server, but as of now only one can be used (the one specified in the editor config).Î
+You can in theory also configure several images services in the server, but as of now only one can be used (the one specified in selectedImageService).
 
 The `host` is simply where your resrc.it images are served from. With `resrc.it` this is normally always the same.
 The `quality` setting allows you to choose a global quality for your images. In the range between 75 to 100 you normally don't see a difference.
