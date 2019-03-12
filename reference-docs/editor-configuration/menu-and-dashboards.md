@@ -133,7 +133,7 @@ Example:
 filters: {
   articleList: {
     displayFilters: ['channels', 'contentType', 'timeRange', 'sortBy'],
-    defaultQueries: [{type: 'documentType', value: 'article'}]
+    defaultQueries: [{type: 'documentType', value: 'article'}],
     emptySearchQueries: [{type: 'documentType', value: 'article'}]
   },
   inlineArticleList: {
@@ -142,7 +142,7 @@ filters: {
       {type: 'documentType', value: 'article'},
       {type: 'sortBy', value: 'relevance'}
       // because `sortBy` is used here, it cannot be used as `displayFilters`
-    ]
+    ],
     emptySearchQueries: [
       {type: 'documentType', value: 'article'},
       {type: 'sortBy', value: '-updated_at'}
@@ -171,8 +171,9 @@ filters: {
     defaultQueries: [
       {type: 'documentType', value: 'article'},
       {type: 'documentState', value: 'published'},
+      {type: 'channelHandle', value: 'web'},
       {type: 'sortBy', value: 'relevance'}
-    ]
+    ],
     emptySearchQueries: [
       {type: 'documentType', value: 'article'},
       {type: 'documentState', value: 'published'},
@@ -186,6 +187,7 @@ filters: {
 
 The core allows you to use the following values for `displayFilters`:
 - `channels` give the user a dropdown to filter by a specific channel
+- `channelHandle` resolves the channel id by the handle such as "web" or "newsletter"
 - `documentState`, unpublished, published, not yet published, my articles, needs proofreading, currently proofreading
 - `timeRange`, filter the search results in time ranges such as last 24 hours
 - `sortBy`: `relevance` (default), `creation_date`, `updated_at`, `alphabetical`  
