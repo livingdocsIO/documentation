@@ -292,6 +292,17 @@ comments: {
 
 The `defaultForDocumentType` section allows you to separately turn comments off for articles and pages.
 
+## Filter Sets
+
+Filter Sets allow you to define bookmarks on combinations of filters such as "Last hour" and "Published" as a bookmark "Recently published".
+To enable the feature, add the following block to your editor config:
+```
+filterSets: {
+  isEnabled: true
+}
+```
+
+All users will be able to see and choose filter sets. Only admins and project admins will be able to add and edit filter sets.
 
 ## Asset Management
 
@@ -343,4 +354,3 @@ same time.
   }
 }
 ```
-
