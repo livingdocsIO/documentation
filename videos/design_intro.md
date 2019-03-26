@@ -10,7 +10,9 @@ There is quite some background noise in the video, we are very sorry for this
 
 ### Abstract
 
-Learn how to create a Livingdocs Design given that you have already written the HTML and CSS for your intended website.
+This screencast showcases how to create a Livingdocs Design given that you have already written the HTML and CSS for your intended website.
+The video touches quite a lot of (advanced) topics, so to get a basic idea of what a Livingdocs Design is, we recommend a visit to our
+[written design documentation](../reference-docs/common-designs/create_designs.md) before watching this screencast.
 
 ### Video
 
@@ -21,5 +23,3 @@ Learn how to create a Livingdocs Design given that you have already written the 
 The HTML / CSS design used in the video: http://fidel.io/
 
 The open-source boilerplate design from Livingdocs: https://github.com/livingdocsIO/livingdocs-design-timeline
-
-Also see our [written design documentation](../reference-docs/common-designs/create_designs.md).
