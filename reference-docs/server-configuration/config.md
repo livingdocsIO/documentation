@@ -34,14 +34,7 @@ db: {
   database: 'li_local',
   pool_min: 1,
   pool_max: 5,
-  ssl: false,
-  // During the initial db setup e.g. with 'grunt setup',
-  // this parameter controls whether the database setup should run in a dedicated docker
-  // container. That way you don't need to install the postgres `createdb` and `dropdb` commands.
-  // `grunt setup` is not supported, when you start docker containers with
-  // `docker-compose` and point to a container by a dns name.
-  // default = true
-  run_db_setup_commands_within_docker_container: true
+  ssl: false
 }
 ```
 
