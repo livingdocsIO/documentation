@@ -11,7 +11,7 @@ Most of this documentation assumes that you integrate Livingdocs on-premises or 
 ## Livingdocs on-premises
 
 If you use Livingdocs as an on-premises software you will have access to the (private) boilerplates projects and/or an .npmrc file with access to our core repositories (Note: this requires at least signing an evaluation contract, if you haven't done so already contact us at contact@livingdocs.io).
-To start an evaluation you can go through [our evaluation guide](walkthroughs/evaluation_guide.md).
+To start an evaluation you can go through [our evaluation guide](walkthroughs/getting_started.md).
 
 To get a devops environment, refer to our [devops section](setup-and-deployment/self-hosting.md).
 
