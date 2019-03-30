@@ -558,6 +558,40 @@ The `paginationSize` tells the asset management how many images to show on one p
 
 Make sure that you disable the Asset Management in the Editor as well and make sure that you configure the image services properly too.
 
+##### Google Vision API
+
+Livingdocs supports auto-tagging of images using the Google Vision API. In order to use this feature you need to open an account on GCP. Careful, use of this feature will incur costs with GCP. Refer to Google's pricing for more details. Livingdocs uses the label annotation and web detection features (can be configured separately).
+The node vision API package has some good documentation on how to create an account: https://github.com/googleapis/nodejs-vision
+
+Once you have your account, you can configure Livingdocs with the Vision API as follows:
+```
+assetManagement: {
+    autoTagging: {
+      googleVision: {
+        isEnabled: true,
+        detectLabels: true,
+        detectWeb: true,
+        confidenceCliff: 0.7,
+        credentials: {
+          type: '***',
+          project_id: '***',
+          private_key_id: '***',
+          private_key: '***',
+          client_email: '***',
+          client_id: '***',
+          auth_uri: '***',
+          token_uri: '***',
+          auth_provider_x509_cert_url: '***',
+          client_x509_cert_url: '***'
+        }
+      }
+    }
+  }
+```
+
+The `confidenceCliff` lets you specify a value (0..1) below which to drop results from the Vision API, e.g. only to take results with a confidence of 70% or higher. In fact we found 70% (0.7) to be a good default.
+You can turn on detection of labels and web entities separately. Refer to the Google Vision API documentation for details about both. Livingdocs shows labels in the UI under "Topics" and web entities under "Entities".
+The credentials object is just the google service account json. We advise you to download the json from GCP and then entering the values here.
 
 ## Integrations
 
