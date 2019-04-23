@@ -342,11 +342,17 @@ documents: {
   selectedImageService: 'imgix',
   imageServices: {
     imgix: {} // imageService specific configuration
+  },
+  paginationFindConfig: {
+    default: 50, // default is the batch size
+    limit: 100 // limit is the max.
   }
 }
 ```
 
 See [image service configuration](../../concepts/images/image-services.md) for more information.
+The `paginationFindConfig` allows you to set how many documents you can see on the documents dashboard.
+Defaults to max. 100 documents.
 
 
 #### Projects
