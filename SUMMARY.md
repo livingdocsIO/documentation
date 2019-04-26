@@ -32,6 +32,7 @@
   * [Logs](reference-docs/server-configuration/logging.md)
   * [Single Sign-On](reference-docs/server-configuration/single_sign-on.md)
   * [Server Admin Commands](reference-docs/server-configuration/admin-commands.md)
+  * [Using Google Cloud Storage](reference-docs/server-configuration/google-cloud-storage.md)
 * Editor
   * [Document Editing Features](reference-docs/editor-configuration/editing-features.md)
   * [Text Editing Config](reference-docs/editor-configuration/text-editing.md)
