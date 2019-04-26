@@ -68,7 +68,7 @@ In your local configuration, set the storage strategy to `google-cloud-storage` 
 ```
 
 
-## Setting up a ImgIX with GCS and Livingdocs
+## Setting up ImgIX with GCS and Livingdocs
 
 1. Get a set of [interoperability credentials](https://cloud.google.com/storage/docs/migrating#keys) from the settings page of GCS.
 2. Log into your imgIX account and go to the [Sources section](https://dashboard.imgix.com/sources).
