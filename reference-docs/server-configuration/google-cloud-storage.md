@@ -6,9 +6,9 @@ For users who to store your images, files and design assets in a Google Cloud St
 
 In order to integrate GCS with Livingdocs, you need to make sure you have the following things set up properly:
 
-* A (Service Account)[https://cloud.google.com/iam/docs/creating-managing-service-accounts]. **Please note:** Make sure you download the credentials JSON file right after creating the Service Account and keep it somewhere safe, as there is no way to get it any time after you finalised the creation procedure.
+* A [Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts). **Please note:** Make sure you download the credentials JSON file right after creating the Service Account and keep it somewhere safe, as there is no way to get it any time after you finalised the creation procedure.
 * At least one [bucket](https://cloud.google.com/storage/docs/creating-buckets) on your Google Cloud Storage.
-* [Granted Privileges]https://cloud.google.com/iam/docs/granting-roles-to-service-accounts to your Service Account to write and read to and from the bucket.
+* [Granted Privileges](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts) to your Service Account to write and read to and from the bucket.
 
 ## Configuring the Livingdocs Server to use GCS as storage
 
