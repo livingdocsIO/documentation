@@ -220,6 +220,31 @@ The `useHistoryRestore` option enables / disables the restore functionality in t
 
 Both options are recommended.
 
+### Track changes
+```
+app: {
+  history: {
+    enableDiffView: true,
+    diffUserColors: [
+      ['#B39CD0', '#FBEAFF'],
+      ['#F9F871', '#F6F2CB'],
+      ['#FF9671', '#FFE6D6'],
+      ['#D65DB1', '#EAADD4'],
+      ['#00C9A7', '#C7FCEC'],
+      ['#FFC75F', '#FFEDCB'],
+      ['#008F7A', '#55C6AE'],
+      ['#0089BA', '#5FBEF2'],
+      ['#C34A36', '#D99586'],
+      ['#FF6F91', '#FFE3EB']
+    ],
+    pageSize: 100
+  },
+}
+```
+The `enableDiffView` will enable the track changes tab in the history sidebar
+The `diffUserColors` is an array with colors for the users in the changes. You can set two colors for a user. The colors are always picked from beginning and given to a user in the changes.
+The `pageSize` is the size of how many revisions are shown in the UI.
+
 ## Links
 
 See [here](./text-editing.md#links)
