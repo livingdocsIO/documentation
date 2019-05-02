@@ -220,7 +220,7 @@ The `useHistoryRestore` option enables / disables the restore functionality in t
 
 Both options are recommended.
 
-### Track changes
+### Diff View
 ```
 app: {
   history: {
@@ -241,8 +241,8 @@ app: {
   },
 }
 ```
-The `enableDiffView` will enable the track changes tab in the history sidebar
-The `diffUserColors` is an array with colors for the users in the changes. You can set two colors for a user. The colors are always picked from beginning and given to a user in the changes.
+The `enableDiffView` will enable the changes tab in the history sidebar
+The `diffUserColors` is an array with colors for the users in the diff view. You can set two colors for a user. The colors are always picked from beginning and given to a user in the diff view.
 The `pageSize` is the size of how many revisions are shown in the UI.
 
 ## Links
