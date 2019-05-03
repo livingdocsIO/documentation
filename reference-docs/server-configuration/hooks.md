@@ -152,14 +152,6 @@ Two hooks are available in the `document-lists` feature.
     removed `documentId`s. A use case would be to e.g. have Elasticsearch
     reflect changes that got detected here.
 
-* `getExternalList`:
-    * `({listId}, callback)`
-
-    This one is different from other hooks. This is a method to get the current
-    `documentId`s from an external storage. A use case might be to have a
-    `repairList` task to check if there are inconsistencies between e.g. a list
-    exported to Elasticsearch by the `listUpdateHook` and the list that lives in
-    Postgres.
 
 Here is a full example including server initialization:
 
@@ -176,10 +168,6 @@ liServer.registerInitializedHook((done) => {
     channelHandle: 'some-channel',
     listUpdateHook: ({listId, remove, add}, callback) => {
       console.info(`${listId} update happening, removing ${remove.length} things, adding ${add.length} things.`)
-      callback()
-    },
-    getExternalList: ({listId}, callback) => {
-      console.info(`Getting list ${listId}`)
       callback()
     }
   }, done)
