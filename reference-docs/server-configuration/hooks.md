@@ -143,14 +143,17 @@ Two hooks are available in the `document-lists` feature.
 * `listUpdateHook`:
 
         ({
+          trx, // a knex transaction object
+          projectId,
+          channelId,
           listId,
           remove: [30, 199, …],
           add: [{id: 77, order: 12}, …]
         }, callback)
 
-    The payload describe here has a custom format where it gives the added and
-    removed `documentId`s. A use case would be to e.g. have Elasticsearch
-    reflect changes that got detected here.
+    The payload described here has a custom format where it gives the added and
+    removed `documentId`s. An example how to use that hook would be to have Elasticsearch
+    reindex the documents which got added/removed from a list.
 
 
 Here is a full example including server initialization:
@@ -166,8 +169,11 @@ liServer.registerInitializedHook((done) => {
   liServer.features.api('li-document-lists').registerListHooks({
     projectHandle: 'your-interesting-project',
     channelHandle: 'some-channel',
-    listUpdateHook: ({listId, remove, add}, callback) => {
-      console.info(`${listId} update happening, removing ${remove.length} things, adding ${add.length} things.`)
+    listUpdateHook: ({projectId, listId, remove, add}, callback) => {
+      console.info(
+        `The list with id '${listId}' in the project '${projectId}' has changes.`,
+        `removing ${remove.length} things, adding ${add.length} things.`
+      )
       callback()
     }
   }, done)
