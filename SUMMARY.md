@@ -73,6 +73,8 @@
 * [Assign Access Rights](administration/access_rights.md)
 * [Use the Publish Hooks](reference-docs/server-extensions/hooks.md)
 * [Validate Task Completion](walkthroughs/validate_tasks.md)
+* [Add Custom Task](walkthroughs/add-custom-task.md)
+* [Add Custom Proofreading Task](walkthroughs/add-custom-proofreading-task.md)
 * [Implement Single Sign-On](walkthroughs/github-login.md)
 * [Add an Instagram Embed](walkthroughs/instagram_embed.md)
 * [Use Push Notifications and Custom Dashboard Item](walkthroughs/push_notifications.md)
