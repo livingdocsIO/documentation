@@ -214,12 +214,22 @@ textcount: {
 ![Links](./links.png)
 
 #### Options
+If you set the internal hosts as regex, you can define default behavior for internal and external links.
 ```js
 {
   links:{
     allowRelativeUrls: false,
     allowAnchorLinks: false,
-    allowMailToUrls: true
+    allowMailToUrls: true,
+    internalHostsRegex: ['^(https?://)?(www.)?internalLink.ch', '^(https?://)?(www.)?internalLink.com'],
+    internalDefaults: {
+      openInNewWindow: false,
+      follow: true
+    },
+    externalDefaults: {
+      openInNewWindow: true, -> // will resolve to `<a target="_blank"></a>`
+      follow: false -> // will resolve to `<a rel="nofollow"></a>`
+    }
   }
 }
 ```
