@@ -221,7 +221,7 @@ If you set the internal hosts as regex, you can define default behavior for inte
     allowRelativeUrls: false,
     allowAnchorLinks: false,
     allowMailToUrls: true,
-    internalHostsRegex: ['^(https?://)?(www.)?internalLink.ch', '^(https?://)?(www.)?internalLink.com'],
+    internalHostsRegex: ['^(https?://)?(www.)?foo.com', '^(https?://)?(www.)?bar.io'],
     internalDefaults: {
       openInNewWindow: false,
       follow: true
