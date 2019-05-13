@@ -455,7 +455,7 @@ module.exports = function (searchQuery) {
 }
 ```
 
-For inspiration, you can also check out our [current default document search function](https://gist.github.com/DaRaFF/874f7b222b44a96eb4b444d315af5b36).
+For inspiration, you can also check out our [current default document search function](../search/improved-document-search-example.md).
 
 
 
