@@ -317,15 +317,9 @@ liEditor.searchFilters.register('project', ['session', (session) => ({
 })])
 ```
 
-
-Relations:
-  - Issue: https://github.com/livingdocsIO/livingdocs-planning/issues/2628
-  - Documentation: tbd
-
-
 ## Custom Dashboards
 
-Custom Dashboards are configurable versions of the current Articles / Pages / Date-Records Screens. You can as many custom dashboards as you want in the Editor configuration.
+Custom Dashboards are configurable versions of the current Articles / Pages / Date-Records Screens. You can add as many custom dashboards as you want in the Editor configuration.
 
 First add a navigation entry into the main navigation:
 ```js
@@ -372,7 +366,7 @@ Kanban Boards are very similar to dashboards, except they do have multiple resul
 
 For example a task board will show all tasks in the `requested` state in one column and tasks with the state `inProgress` and `done` in the other columns. In order to move a card into another column you simply have to open the document and move the task into another state.
 
-Simple Task KanbanBaord Config:
+Simple Task KanbanBoard Config:
 ```js
 dashboards: [{
   handle: 'kanban-proofreading',
