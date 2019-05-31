@@ -84,6 +84,7 @@
 * [Hugo Drag and Drop](reference-docs/server-extensions/hugo-dnd.md)
 * [Enable Soft Lock](walkthroughs/enable-soft-lock.md)
 * [Asset Management](reference-docs/common-livingdoc/asset-management.md)
+* [Author Management](walkthroughs/prefill-author.md)
 
 
 ## Devops
