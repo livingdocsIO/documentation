@@ -27,6 +27,8 @@ metadata: [
     updateLastProofreadRevision: true,
     // you can pick a deadline date in the editor when starting with a task
     requestDeadline: true,
+    // define a link from the task to a dashboard. 'kanban-proofreading' is the handle of the dashboard in the editor-config
+    linkToDashboard: 'kanban-proofreading',
     // define beforeLabel/afterLabel of the 3 states requested/accepted/completed
     requested: {
       beforeLabel: 'Request proofreading',
