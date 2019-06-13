@@ -329,6 +329,40 @@ filterSets: {
 
 All users will be able to see and choose filter sets. Only admins and project admins will be able to add and edit filter sets.
 
+## Pin components
+
+Pinning of components enables a pin icon next to a component card in the sidebar. When clicked the component is pinned according to the rules:
+- if it is alone in a container it can not be moved, deleted nor can anything be moved or inserted before or after it (perfect for a fixed article header)
+- if it is next to other components, it can not be moved nor deleted, but other components can be moved or inserted around it
+
+```
+pinComponents: {
+  isEnabled: true
+}
+```
+
+Pinning is triggered by the `position` property on the component. You can also pin components over the `defaultContent` by setting the `position` to `fixed` in the JSON:
+```
+"defaultContent": [
+  {
+    "identifier": "living-times.article-container",
+    "containers": {
+      "header": [
+        {
+          "identifier": "living-times.head",
+          "position": "fixed"
+        }
+      ],
+      "main": [
+        { "identifier": "living-times.image" }
+      ]
+    }
+  }
+]
+```
+
+The UI allows users to unpin or pin a component. If you want to enforce pinning just disable the UI (`pinComponents`) and set the `position` to `fixed` programatically (e.g. by the default content).
+
 ## Asset Management
 
 In order make the Asset Management visible in the sidebar of an image as "Media Library" button, as well as to have the menu entry which guides you to the dedicated Media Library page, you need to set the feature flag to true.
