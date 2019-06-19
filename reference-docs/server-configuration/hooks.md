@@ -1,4 +1,4 @@
-## Hooks
+# Hooks
 
 APIs are provided to allow hooking into the document (pre/un)publication process
 and into the rendering pipeline. Hooks are executed within the corresponding
@@ -9,19 +9,22 @@ extensions/events.md) which are fire and forget.
 
 Although these hooks should preferably be registered before the server gets
 initialized (using [Server Initialized Hooks](../../reference-docs/server-
-extensions/server-initalization.md#initialized-hooks)), it is also possible to
+extensions/server-initalization.md#initialized-hooks) deadlink!), it is also possible to
 register them at runtime using the same APIs. (This is particularly handy for
 testing purpose, but also useful if you create projects or channels at runtime
 and need to set hooks for these.)
 
-There are two ways of registering hooks: on a specific channel or server-wide.
-All hooks can be registered on a channel, registering hooks server-wide is only
-possible for publication hooks. You can register as many hooks as you need, they
-will always be executed in the same order they got registered.
+There are two ways of registering hooks: on a specific project or server-wide.
+Registering hooks server-wide is only possible for publication hooks.
+You can register as many hooks as you need, they
+will be executed in the same order they got registered.
 
-### Publication Hooks
 
-Publish, unpublish, prepublish hooks are set on the `documents` feature:
+## Publication Hooks
+
+#### registerPublicationHooks()
+
+The publish, unpublish and prepublish hooks are set on the `documents` feature:
 
 * `prepublishHook`:
     * `({documentVersion}, callback)`
@@ -30,16 +33,15 @@ Publish, unpublish, prepublish hooks are set on the `documents` feature:
 * `unpublishHook`:
     * `({documentType, {documentVersion}}, callback)`
 
+Example:
 ```js
-const server = require('livingdocs-server/core')
-const config = require('livingdocs-server/conf')
-const liServer = server(config)
-const port = liServer.config.get('server:port')
+const appConfig = require('./conf')
+const liServer = require('@livingdocs/server')(appConfig)
 
 liServer.registerInitializedHook((done) => {
   liServer.features.api('li-documents').registerPublicationHooks({
     projectHandle: 'your-awesome-project',
-    channelHandle: 'some-channel',
+    channelHandle: 'default',
     prepublishHook: ({documentVersion}, callback) => { callback(null, {documentVersion}) },
     publishHook: ({
       documentType,
@@ -58,46 +60,98 @@ liServer.registerInitializedHook((done) => {
     }, callback) => {callback()}
   }, done)
 })
-
-liServer.listen(port, function (err) {
-  if (err) throw err
-  liServer.log.info('Listening on http://localhost:%s, started within %ss', port, process.uptime())
-})
 ```
 
-Note: prepublish hooks allow modifications of the `documentVersion` they receive
-as argument, for this reason any prepublish hook should always pass
-`{documentVersion}` to its callback, allowing it to be modified by the next hook
-or to be published.
+Hooks can be registered for all projects.
+These hooks run **before** projects specific ones.
 
+Example of a server-wide publishHook registration:
+```js
+registerPublicationServerHooks({publishHook: myOtherHook}, done)
+```
 
-#### Registered on the channel
+#### prepublishHook()
 
-Hooks can be tied to a specific channel of a specific project.
+The prepublish hook allows modifications of the `documentVersion`. For this reason any prepublish hook should always pass `{documentVersion}` to its callback, allowing it to be modified by the next hook or to be published.
 
 ```js
-registerPublicationHooks({projectHandle: 'foo', channelHandle: 'bar', prepublishHook: someHook, publishHook: myHook}, hookRegistrationDone)
-registerPublicationHooks({projectHandle: 'foo', channelHandle: 'bar', publishHook: myOtherHook}, hookRegistrationDone)
+prepublishHook: ({documentVersion}, callback) => {
+  if (isTitleValid(documentVersion)) {
+    return callback(null, documentVersion)
+  } else {
+    // Example Validation Error for a metadata property
+    const err = new Error('Invalid Title')
+    err.name = 'MetadataValidationError'
+    err.propertyName = 'title'
+    err.status = 400
+    return callback(err)
+  }
+}
 ```
 
-It is up to the hook implementer to filter by `documentType` if need be. This
-can be used to apply different modifications to documents that have different
-`documentType`s.
+#### publishHook()
 
-#### Registered server-wide
+Upon every publish event in Livingdocs, e.g., when a user presses the "Publish"
+button in the editor, this hook method is called.
+But they do run in the same transaction and if an error is returned the publish
+action will be reverted.
 
-These hooks are executed on all channels. They run **before** channel specific ones.
+You get two parameters that your custom implementation can use:
+the `documentVersion` which contains all
+information about the document and the `renditions` object which contains all
+rendered renditions that you defined for your channels.
+
+E.g. If you want to use the HTML of a rendered article, you can access it as `renditions.webarticle.html`.
 
 ```js
-registerPublicationServerHooks({prepublishHook: someHook, publishHook: myHook}, hookRegistrationDone)
-registerPublicationServerHooks({publishHook: myOtherHook}, hookRegistrationDone)
+publishHook: ({documentType, {documentVersion, renditions}}, callback) => {...}
 ```
 
-### Before Render Hooks
+#### unpublishHook()
 
-These hook into the `render-pipeline` feature. The `beforeRenderHook` is the
-last opportunity you have to modify/transform a document before it gets
-rendered.
+Just as with the publish hook, you can also configure a method that reacts to
+unpublish events.
+
+Just as in the publishHook you get a `documentVersion` object for the document that was
+unpublished.
+
+```js
+unpublishHook: ({documentType, {documentVersion}}, callback) => {...}
+```
+
+
+#### Info: The documentVersion object
+
+The documentVersion object is a core object and thus contains private APIs. You
+should only use the provided getter methods on the instance in order not to
+program against private APIs that are prone to change. The following methods are
+provided:
+
+* **getDocumentId()**, returns the unique document id of the document that was
+  published (the same as is in the URL of the editor when you have the document
+  opened)
+
+* **getProjectId()**, gets the id of the project that this document belongs to
+
+* **getSerializedLivingdoc()**, gets the document description in the Livingdocs
+  data format (JSON)
+
+* **getMetadata()**, gets the metadata associated with the document (JSON)
+
+* **getDesignDescriptor()**, gets the name and version of the design that this
+  document was created with
+
+* **getDocumentType()**, gets the document type, either 'article' or 'page'
+
+* **render(callback)**, renders the document, i.e., produces output according to
+  your renditions configuration. The hook method is called *after* a render, so
+  you will probably never want to call `render` in this context. The callback
+  receives the `renditions` object.
+
+
+## Render Hooks
+
+These hook into the `render-pipeline` feature. The `beforeRenderHook` is called right before a document gets rendered.
 
 * `beforeRenderHook`:
     * `({documentType, rendition}, callback)`
@@ -105,11 +159,8 @@ rendered.
 Here is a full example including server initialization:
 
 ```js
-const server = require('livingdocs-server/core')
-const config = require('livingdocs-server/conf')
-const liServer = server(config)
-const port = liServer.config.get('server:port')
-
+const appConfig = require('./conf')
+const liServer = require('@livingdocs/server')(appConfig)
 
 liServer.registerInitializedHook((done) => {
   liServer.features.api('li-render-pipeline').registerRenderHooks({
@@ -129,41 +180,22 @@ liServer.registerInitializedHook((done) => {
     }
   }, done)
 })
-
-liServer.listen(port, function (err) {
-  if (err) throw err
-  liServer.log.info('Listening on http://localhost:%s, started within %ss', port, process.uptime())
-})
 ```
 
-### Document Lists Hooks
 
-Two hooks are available in the `document-lists` feature.
+## List Hooks
 
-* `listUpdateHook`:
-
-        ({
-          trx, // a knex transaction object
-          projectId,
-          channelId,
-          listId,
-          remove: [30, 199, …],
-          add: [{id: 77, order: 12}, …]
-        }, callback)
-
-    The payload described here has a custom format where it gives the added and
-    removed `documentId`s. An example how to use that hook would be to have Elasticsearch
-    reindex the documents which got added/removed from a list.
+Two hooks are available in the `document-lists` feature. They are registerd
+through ` registerListHooks()`.
 
 
-Here is a full example including server initialization:
+#### registerListHooks()
 
+
+Here is a full example:
 ```js
-const server = require('livingdocs-server/core')
-const config = require('livingdocs-server/conf')
-const liServer = server(config)
-const port = liServer.config.get('server:port')
-
+const appConfig = require('./conf')
+const liServer = require('@livingdocs/server')(appConfig)
 
 liServer.registerInitializedHook((done) => {
   liServer.features.api('li-document-lists').registerListHooks({
@@ -178,9 +210,21 @@ liServer.registerInitializedHook((done) => {
     }
   }, done)
 })
+```
 
-liServer.listen(port, function (err) {
-  if (err) throw err
-  liServer.log.info('Listening on http://localhost:%s, started within %ss', port, process.uptime())
-})
+#### listUpdateHook()
+
+The payload described here has a custom format where it gives the added and
+removed `documentId`s. An example how to use that hook would be to have Elasticsearch
+reindex the documents which got added/removed from a list.
+
+```js
+listUpdateHook: ({
+  trx, // a knex transaction object
+  projectId,
+  channelId,
+  listId,
+  remove: [30, 199, …],
+  add: [{id: 77, order: 12}, …]
+}, done)
 ```
