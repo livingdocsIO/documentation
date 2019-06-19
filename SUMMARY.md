@@ -21,6 +21,7 @@
 ## Reference Documentation
 
 * Server
+  * [Initialization](reference-docs/server-extensions/server-initalization.md)
   * [Configuration File](reference-docs/server-configuration/config.md)
   * [Channel Config](reference-docs/server-configuration/channel-config.md)
   * [Content-Type Config](reference-docs/server-configuration/content-type-config.md)
