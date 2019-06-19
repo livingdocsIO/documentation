@@ -72,7 +72,6 @@
 * [Register a Custom Server Feature](walkthroughs/add_customizations.md)
 * [Configure Includes: Article Embed and List](reference-docs/doc-includes/embed_and_list.md)
 * [Assign Access Rights](administration/access_rights.md)
-* [Use the Publish Hooks](reference-docs/server-extensions/hooks.md)
 * [Validate Task Completion](walkthroughs/validate_tasks.md)
 * [Add Custom Task](walkthroughs/add-custom-task.md)
 * [Add Custom Proofreading Task](walkthroughs/add-custom-proofreading-task.md)
