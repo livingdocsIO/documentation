@@ -30,16 +30,21 @@ The following subchapters discuss them and show the available options.
 
 ### Text Input
 
+ContentType metadata config:
 ```js
-name: 'nameOfYourMetadataTextField',
-form: 'li-meta-text-form',
-config: {
-  service: 'nameOfYourServicePlugin', // mandatory
-  label: 'foo', // optional, takes camelized name otherwise
-  placeholder: 'bar', // optional, takes camelized name otherwise
-  readOnly: false, // optional, false by default
-  maxLength: 200 // optional, integer, not used by default
-}
+metadata: [{
+  ...,
+  ui: {
+    component: 'liMetaTextForm',
+    service: 'customServicePlugin' // optional
+    config: {
+      label: 'foo', // optional, takes camelized name otherwise
+      placeholder: 'bar', // optional, takes camelized name otherwise
+      readOnly: false, // optional, false by default
+      maxLength: 200 // optional, integer, not used by default
+    }  
+  }
+}]
 ```
 
 You need to make sure that your server-side metadata field is of type `li-text` otherwise you will get errors.
@@ -63,17 +68,22 @@ There is a sample implementation in `plugins/metadata_services/default_text_serv
 
 This is almost exactly the same as the text input, except for the `rows` config.
 
+ContentType metadata config:
 ```js
-name: 'nameOfYourMetadataTextareaField',
-form: 'li-meta-textarea-form',
-config: {
-  service: 'nameOfYourServicePlugin', // mandatory
-  label: 'foo', // optional, takes camelized name otherwise
-  placeholder: 'bar', // optional, takes camelized name otherwise
-  readOnly: false, // optional, false by default
-  maxLength: 200, // optional, integer, not used by default
-  rows: 10 // optional, integer, 5 by default
-}
+metadata: [{
+  ...,
+  ui: {
+    component: 'liMetaTextareaForm',
+    service: 'customServicePlugin' // optional
+    config: {
+      label: 'foo', // optional, takes camelized name otherwise
+      placeholder: 'bar', // optional, takes camelized name otherwise
+      readOnly: false, // optional, false by default
+      maxLength: 200, // optional, integer, not used by default
+      rows: 10 // optional, integer, 5 by default
+    }
+  }
+}]
 ```
 
 You need to make sure that your server-side metadata field is of type `li-text` otherwise you will get errors.
@@ -95,14 +105,19 @@ There is a sample implementation in `plugins/metadata_services/default_text_serv
 
 ### Select Box
 
+ContentType metadata config:
 ```js
-name: 'nameOfYourMetadataSelectField',
-form: 'li-meta-select-form',
-config: {
-  service: 'nameOfYourServicePlugin', // mandatory
-  label: 'foo', // optional, takes camelized name otherwise
-  placeholder: 'bar' // optional, takes camelized name otherwise
-}
+metadata: [{
+  ...,
+  ui: {
+    component: 'liMetaSelectForm',
+    service: 'customServicePlugin', // mandatory
+    config: {
+      label: 'foo', // optional, takes camelized name otherwise
+      placeholder: 'bar' // optional, takes camelized name otherwise
+    }
+  }
+}]
 ```
 
 You need to make sure that your server-side metadata field is of type `li-enum` or a suitable format you defined yourself in a customized server, otherwise you will get errors.
@@ -140,14 +155,19 @@ There is a sample implementation in `plugins/metadata_services/default_select_se
 
 ### Multiselect Box
 
+ContentType metadata config:
 ```js
-name: 'nameOfYourMetadataMultiselectField',
-form: 'li-meta-multiselect-form',
-config: {
-  service: 'nameOfYourServicePlugin', // mandatory
-  label: 'foo', // optional, takes camelized name otherwise
-  placeholder: 'bar' // optional, takes camelized name otherwise
-}
+metadata: [{
+  ...,
+  ui: {
+    component: 'liMetaMultiselectForm',
+    service: 'customServicePlugin', // mandatory
+    config: {
+      label: 'foo', // optional, takes camelized name otherwise
+      placeholder: 'bar' // optional, takes camelized name otherwise
+    }
+  }
+}]
 ```
 
 You need to make sure that your server-side metadata field is of a suitable format you defined yourself in a customized server (there is no core data type for multiselects), otherwise you will get errors.
@@ -182,9 +202,14 @@ There is a sample implementation in `plugins/metadata_services/default_multisele
 
 ### Image Selection
 
+ContentType metadata config:
 ```js
-name: 'nameOfYourMetadataImageField',
-form: 'li-meta-image-form'
+metadata: [{
+  ...,
+  ui: {
+    component: 'liMetaImageForm'
+  }
+}]
 ```
 
 The image selection was taken over as is from the existing implementation and does not adhere to the general plugin architecture. We should fix this at some point in the future.
@@ -193,11 +218,11 @@ For now the content is defined through the method `metadata.getEditableImages`. 
 ```json
 "metadata": [
   {
-      "identifier": "teaserImage",
-      "type": "image",
-      "matches": ["image.image"],
-      "isEditable": true,
-      "imageRatios": ["4:3", "16:9"]
+    "identifier": "teaserImage",
+    "type": "image",
+    "matches": ["image.image"],
+    "isEditable": true,
+    "imageRatios": ["4:3", "16:9"]
   }
 ]
 ```
@@ -209,25 +234,35 @@ Also, the markup in the image form does not adhere to the plugin standard, so do
 
 ### Checkbox
 
+ContentType metadata config:
 ```js
-name: 'nameOfYourMetadataImageField',
-form: 'li-meta-checkbox-form',
-config: {
-  label: 'foo' // optional, takes camelized name otherwise
-}
+metadata: [{
+  ...,
+  ui: {
+    component: 'liMetaCheckboxForm',
+    config: {
+      label: 'foo' // optional, takes camelized name otherwise
+    }
+  }
+}]
 ```
 
 You need to make sure that your server-side metadata field is of type `li-boolean` or a suitable custom format, otherwise you will get errors.
 
 ### Datetime
 
+ContentType metadata config:
 ```js
-name: 'nameOfYourMetadataImageField',
-form: 'li-meta-datetime-form',
-config: {
-  service: 'nameOfYourServicePlugin', // mandatory
-  label: 'foo', // optional, takes camelized name otherwise
-}
+metadata: [{
+  ...,
+  ui: {
+    component: 'liMetaDatetimeForm',
+    service: 'customServicePlugin', // optional
+    config: {
+      label: 'foo' // optional, takes camelized name otherwise
+    }
+  }
+}]
 ```
 
 You need to make sure that your server-side metadata field is of type `li-datetime` or a suitable custom format, otherwise you will get errors.
@@ -250,17 +285,56 @@ The service plugin for a datetime allows you to customize the logic for the foll
 
 There is a sample implementation in `plugins/metadata_services/default_date_service.coffee` to help you get started.
 
+### Reference and Reference List
+
+ContentType metadata config for a single reference:
+```js
+metadata: [{
+  ...,
+  type: 'li-reference',
+  config: {
+    referenceType: 'document'
+  },
+  ui: {
+    component: 'liMetaReferenceForm'
+  }
+}]
+```
+
+ContentType metadata config for a reference list:
+```js
+metadata: [{
+  ...,
+  type: 'li-reference-list',
+  config: {
+    referenceType: 'documents'
+  },
+  ui: {
+    component: 'liMetaReferenceForm',
+    config: {
+      sortable: true // enable sorting by drag and drop
+    }
+  }
+}]
+```
+
+
 ### Slug
 
+ContentType metadata config:
 ```js
-name: 'nameOfYourMetadataImageField',
-form: 'li-meta-slug-form',
-config: {
-  service: 'nameOfYourServicePlugin', // mandatory
-  label: 'foo', // optional, takes camelized name otherwise
-  placeholder: 'bar', // optional, takes camelized name otherwise
-  canReset: false // optional, false by default
-}
+metadata: [{
+  ...,
+  ui: {
+    component: 'liMetaSlugForm',
+    service: 'customServicePlugin', // optional
+    config: {
+      label: 'foo', // optional, takes camelized name otherwise
+      placeholder: 'bar', // optional, takes camelized name otherwise
+      canReset: false // optional, false by default
+    }
+  }
+}]
 ```
 
 You need to make sure that your server-side metadata field is of type `li-text` or a suitable custom format, otherwise you will get errors.
@@ -286,25 +360,6 @@ The service plugin for a slug allows you to customize the logic for the followin
 
 There is a sample implementation in `plugins/metadata_services/default_slug_service.coffee` to help you get started.
 
-### Section Headers
-
-Since the whole publish panel form is generated you might want to set your own section headers (titles) in some instances. To do so, just place a markup as the following at the respective place in your config:
-
-```js
-articles: [{
-  name: 'someFieldBeforeTitle',
-  form: 'li-meta-text-form'
-}, {
-  type: 'sectionHeader',
-  header: 'MyAwesomeTitle'
-}, {
-  name: 'someFieldUnderTheHeader',
-  form: 'li-meta-text-form'
-}]
-```
-
-This would render the title `MyAwesomeTitle` in between the 2 text fields.
-Section headers are always clear-fixed and go over the full width.
 
 ## Registering a metadata service
 
