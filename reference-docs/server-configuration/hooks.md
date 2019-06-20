@@ -183,12 +183,10 @@ liServer.registerInitializedHook((done) => {
 
 ## List Hooks
 
-Two hooks are available in the `document-lists` feature. They are registerd
-through ` registerListHooks()`.
-
-
 #### registerListHooks()
 
+There is one hook for the `document-lists` feature. The hook can be registerd
+through ` registerListHooks()`.
 
 Here is a full example:
 ```js
