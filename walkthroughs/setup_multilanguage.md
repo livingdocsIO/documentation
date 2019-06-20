@@ -49,9 +49,9 @@ metadata: [{
   plugin: 'li-language',
   ui: {
     component: 'liMetaSelectForm',
+    service: 'languageSelection',
     config: {
       label: 'Language',
-      service: 'languageSelection',
       placeholder: 'select language..'
     }
   }

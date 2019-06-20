@@ -124,8 +124,8 @@ module.exports = {
     },
     ui: {
       compononent: 'bpSlugForm',
+      service: 'bpSlugService',
       config: {
-        service: 'bpSlugService',
         label: 'Slug',
         placeholder: 'Set a slug'
       }
