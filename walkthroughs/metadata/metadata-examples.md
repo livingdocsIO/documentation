@@ -15,28 +15,19 @@ You will first need to configure this in your server.
 
 **Configuration Example with a Default Plugin**
 ```js
-metadata: {
-  // Name of the metadata field
-  catchline: {
-    // Define the plugin for the catchline
-    // 'li-text' is the name defined in /plugins/metadata/li-text
-    plugin: 'li-text'
-  }
-},
-metadataFormArrangement: [
-  {
-    name: 'catchline',
-    form: 'li-meta-text-form',
-    config: {
-      service: 'defaultText'
-    }
-  }
-]
+metadata: [{
+  handle: 'catchline', // Name of the metadata field
+
+  // Define the plugin for the catchline
+  // 'li-text' is the name defined in /plugins/metadata/li-text
+  plugin: 'li-text',
+  ui: {component: 'liMetaTextForm'}
+}]
 ```
 
 1. A standard plugin is stored in `plugins/metadata` and will automatically be loaded on the downstream and is always ready for usage. In our example we use `li-text`.
 2. Open the `contentType` configuration file you want to edit and add the catchline config from the example to the metadata configuration. The field `catchline` is now available on documents with this `contentType`.
-3. If you want to see `catchline` on the editor publish screen, you have to configure the `metadataFormArrangement` in the same `contentType` configuration file. This will render a text-input field to the publish screen of articles where users can type in the value for the "catchline" which is automatically saved to the server.
+3. The `ui` proprety in `metadata` defines the component that will be displayed in the Editor publish screen.
 4. Open your elastic search metadata mapping (typically in `search/custom-mappings/metadata.json`) and add an entry as follows (the key `properties` probably already exists):
 ```json
 {
@@ -65,13 +56,13 @@ metadataPlugins: path.resolve('./plugins/metadata')
 
 ```js
 module.exports = {
-  name: 'customername-pluginname',
+  name: 'customerName-pluginName',
   schema: {
     type: 'string'
   },
   validate: (value, config) => {
     console.log(value); // the entered value
-    console.log(config); // { custompluginconfig: 'test' }
+    console.log(config); // { customPluginConfig: 'test' }
   }
 }
 ```
@@ -79,14 +70,13 @@ module.exports = {
 * Activate the custom plugin in the `contentType` config
 
 ```js
-metadata: {
-  myNewMetadataField: {
-    plugin: 'customername-pluginname',
-    config: {
-      custompluginconfig: 'test'
-    }
+metadata: [{
+  handle: 'myNewMetadataField',
+  plugin: 'customerName-pluginName',
+  config: {
+    customPluginConfig: 'test'
   }
-}
+}]
 ```
 
 
@@ -125,37 +115,32 @@ Then, we extend the configuration of the **web** channel for documents with `con
 ContentType configuration:
 ```js
 module.exports = {
-  metadata: {
-    slug: {
-      plugin: 'bp-slug',
-      config: {
-        required: true,
-        requiredErrorMessage: 'please provide a slug'
-      }
-    }
-  },
-  metadataFormArrangement: [
-    {
-      slug: 'slug',
-      form: 'bp-slug-form',
+  metadata: [{
+    handle: 'slug',
+    plugin: 'bp-slug',
+    config: {
+      required: true,
+      requiredErrorMessage: 'please provide a slug'
+    },
+    ui: {
+      compononent: 'bpSlugForm',
       config: {
         service: 'bpSlugService',
         label: 'Slug',
         placeholder: 'Set a slug'
       }
     }
-  ]
-};
-
+  }]
+}
 ```
 
-There is a new `metadata` key: `slug`. It has a custom server `plugin` set to `'bp-slug'`. We are going to see later on how to define this plugin.
+This defines a `metadata` property `slug`. It has a custom metadata `plugin` set to `bp-slug`. We are going to see later on how to define this plugin.
 
-There is also a new object in the `metadataFormArrangement` array. It describes how the editor handles the `slug` metadata. It has a form: `'bp-slug-form'`, and a custom service: `'bpSlugService'`.
+There is also a custom component for the the form in editor defined via `ui.component`. It describes how the editor displays the `slug` metadata. It has a form: `bpSlugForm`, and a custom service `bpSlugService`.
 
-The form is an Angular component and the custom service refers to some business logic code.
+The component is an Angular component and the custom service refers to some business logic code defined separately in the Editor.
 
-The `bp` prefix stands for one of our downstream named: *boilerplate*. It's generally a good practice to namespace custom components.
+The `bp` prefix stands for one of our downstream named: *boilerplate*. It's generally a good practice to prefix custom components in angular as all components are registered globally.
 
 Next step is to create a file to implement a simple custom server plugin.
 `plugins/metadata/bp-slug.js`:

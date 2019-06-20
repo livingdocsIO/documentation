@@ -19,7 +19,7 @@ We plan to allow to move all layout options which are currently defined in the d
 ```js
 {
   handle: 'gallery',
-  documentType: 'article', // either 'article' or 'page'
+  documentType: 'article', // either 'article', 'page' or 'data-record'
 
   info: {
     label: 'Image Gallery',
@@ -27,30 +27,18 @@ We plan to allow to move all layout options which are currently defined in the d
   },
 
   // define the server-side metadata
-  metadata: {
-
-    // invisible editor metadata
-    author: { plugin: 'li-text' },
-
-    // A required metadata field
-    description: {
-      plugin: 'li-text',
-      config: {
-        required: true,
-        requiredErrorMessage: 'please provide a short description'
-      }
-    }
-  },
-
-  // define the layout of the metadata screen in the editor
-  metadataFormArrangement: [{
-    name: 'title',
-    form: 'li-meta-text-form',
-    config: {service: 'defaultText'}
+  metadata: [{
+    handle: 'author',
+    type: 'li-text',
+    ui: {component: 'liMetaTextForm'}
   }, {
-    name: 'description',
-    form: 'li-meta-text-form',
-    config: {service: 'defaultText'}
+    handle: 'description',
+    type: 'li-text',
+    config: {
+      required: true,
+      requiredErrorMessage: 'please provide a short description'
+    },
+    ui: {component: 'liMetaTextForm'}
   }]
 
   // You'll find the renditions example further below
@@ -142,11 +130,10 @@ module.exports = {
 
 To enable push notifications for a specific content type you must have a metadata field called `pushNotifications`. Name and plugin must match exactly.
 ```js
-metadata: {
-  pushNotifications: {
-    plugin: 'li-push-notifications'
-  }
-}
+metadata: [{
+  handle: 'pushNotifications',
+  type: 'li-push-notifications'
+}]
 ```
 
 With this in place you can set the channel configuration for your push notification topics (see example config above) and the firebase configuration in the [server config](./config.md#push-notifications).

@@ -17,17 +17,16 @@ The metadata screen gets a new language select box if the multi-language feature
 On the server, we first need to provide which languages we want to support in our project. This is defined per [channel](../reference-docs/server-configuration/channel-config.md). In the configuration file for your channel
 add code as follows.
 
-```
+```js
 // defines the languages that a user can select for a document
-availableLanguages: [
-  {
-    'name': 'English',
-    'value': 'en-US'
-  }, {
-    'name': 'German',
-    'value': 'de-DE'
-  }
-],
+availableLanguages: [{
+  'name': 'English',
+  'value': 'en-US'
+}, {
+  'name': 'German',
+  'value': 'de-DE'
+}],
+
 // used to create new documents
 defaultLanguage: {
   name: 'English',
@@ -44,23 +43,19 @@ The language of a document is stored within the documents metadata. In order to 
 [content-type](../reference-docs/server-configuration/content-type-config.md) that we want to have in multiple languages. An example is
 given below.
 
-```
-{
-  metadata: {
-    language: {plugin: 'li-language'}
-  },
-  metadataFormArrangement: [{
-    {
-      name: 'language',
-      form: 'li-meta-select-form',
-      config: {
-        label: 'Language',
-        service: 'languageSelection',
-        placeholder: 'select language..'
-      }
+```js
+metadata: [{
+  handle: 'language',
+  plugin: 'li-language',
+  ui: {
+    component: 'liMetaSelectForm',
+    config: {
+      label: 'Language',
+      service: 'languageSelection',
+      placeholder: 'select language..'
     }
-  }]
-}
+  }
+}]
 ```
 
 There are several important things to note in the example:
@@ -69,7 +64,8 @@ There are several important things to note in the example:
 3. the form arrangement uses a select box with the core service `languageSelection`, we strongly advise you to use our core metadata service
 
 Once you have the metadata field defined on the channel, you also need to update your custom elasticsearch metadata mapping with an entry as follows:
-```
+
+```json
 {
   "properties": {
     "language": {
@@ -89,7 +85,7 @@ The details about adding a new metadata field can be seen in the [metadata examp
 
 As soon as we have the multi-language feature configured, the dashboard will show a new column `languages` in the search results.
 In order for the dashboard to have the required metadata, you will need to configure the [`documentsMetadataFields`](../reference-docs/server-configuration/config.md) in the server config to include your metadata property. You need to use the metadata property name here. In our example from before this would be:
-```
+```js
 {
   search: {
     documentsMetadataFields: [
@@ -105,7 +101,7 @@ Note: if you did your [own dashboard item](./push_notifications.md#add-a-custom-
 
 The editor side is relatively easy to configure. You only need to add the provided language [core filter](../reference-docs/editor-configuration/menu-and-dashboards.md) to your dashboard so that you are able to filter documents by language. This is done in the editor environment config file.
 
-```
+```js
 {
   filters: {
     articleList: {
