@@ -35,23 +35,23 @@ A metadata configuration describes the metadata properties. The keys are identic
 the metadata object. Each channel must provide it's own configuration.
 ```js
 // Metadata configuration example in the channel config
-metadata: {
-  title: {
-    plugin: 'li-title',
-    config: {
-      maxLength: 200,
-      required: true,
-      requiredErrorMessage: 'please provide a title'
-    }
-  },
-  url: {
-    plugin: 'li-text'
-  },
-  seo: {
-    plugin: 'li-seo'
+metadata: [{
+  handle: 'title',
+  plugin: 'li-text',
+  config: {
+    maxLength: 200,
+    required: true,
+    requiredErrorMessage: 'please provide a title'
   }
-}
+}, {
+  handle: 'slug',
+  plugin: 'li-text',
+}, {
+  handle: 'slug',
+  plugin: 'li-seo',  
+}]
 ```
+
 
 ## Plugin
 
