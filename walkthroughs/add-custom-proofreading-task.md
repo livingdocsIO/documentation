@@ -29,6 +29,8 @@ metadata: [
     requestDeadline: true,
     // define a link from the task to a dashboard. 'kanban-proofreading' is the handle of the dashboard in the editor-config
     linkToDashboard: 'kanban-proofreading',
+    // flag to enable an option to mark a task as a high priority task
+    setPriority: true,
     // define beforeLabel/afterLabel of the 3 states requested/accepted/completed
     requested: {
       beforeLabel: 'Request proofreading',
