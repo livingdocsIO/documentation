@@ -1,6 +1,26 @@
 # Main Menu
 
-You can customize the entries you want to have in the main menu (the burger icon in the top left of the screen).
+## Triggering the main menu
+You can define the way the main menu will be triggered. It can be triggered by `clicking`, `hovering` or both. The default way of opening the navigation menu is by `clicking`.
+
+#### Config options
+
+```js
+app: {
+  sidePanelBehaviour: {
+    // you can also enable both.
+    click: true,
+    hover: false
+  }
+}
+```
+
+#### Example opening the main-nav by clicking
+
+![Open Livingdocs navigation by clicking](./open-by-click.gif)
+
+## Menu items
+You can also customize the entries you want to have in the main menu (the burger icon in the top left of the screen as seen in the previous gif).
 
 
 Default Configuration:
@@ -346,6 +366,7 @@ Where `taskBoard` is simply a predefined `kanbanBoard` for a task. These configu
 
 Normal Dashboard:
 ```js
+// note: not within the config of app: {...}
 dashboards: [{
   handle: 'gallery-dashboard',
   type: 'dashboard',
