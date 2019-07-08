@@ -224,7 +224,6 @@ Both options are recommended.
 ```
 app: {
   history: {
-    diffViewEnabled: true,
     diffUserColors: [
       ['#B39CD0', '#FBEAFF'],
       ['#F9F871', '#F6F2CB'],
@@ -241,7 +240,6 @@ app: {
   },
 }
 ```
-The `diffViewEnabled` will enable the changes tab in the history sidebar
 The `diffUserColors` is an array with colors for the users in the diff view. You can set two colors for a user. The colors are always picked from beginning and given to a user in the diff view.
 The `pageSize` is the size of how many revisions are shown in the UI.
 
