@@ -123,6 +123,12 @@ The editor core API exposes functions to customize the search filters on the das
 
   This configures the List screen.
 
+- `menuList`
+
+  This configures the Menu screen.
+
+
+
 Properties:
 
 - displayFilters
