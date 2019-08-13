@@ -347,13 +347,13 @@ Example:
   "allowedParents": ["root"],
   "directives": {
     "background": {
-      "properties": [
+      "properties": {
         "css-background-color": {
           "type": "style",
           "label": "Background Color",
           "cssProperty": "background-color"
         }
-      ]
+      }
     },
     "title": {
       "plainText": true
@@ -363,7 +363,7 @@ Example:
 </script>
 
 <header class="articleheader">
-  <section class="articleheader__textsection"  doc-style="background">
+  <section class="articleheader__textsection" doc-style="background">
     <div class="articleheader__textcontainer l-rwd fore-edge">
       <h1 class="headline headline--h1 articleheader__headline articleheader__headline--h1" doc-editable="title">Artikel Headline</h1>
       <div class="subline articleheader__subline text__large--italic" doc-editable="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</div>
