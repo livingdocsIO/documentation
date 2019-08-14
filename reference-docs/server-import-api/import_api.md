@@ -28,7 +28,7 @@ import ({importJob, rawDocument, shouldCreateNew, updateCondition, userId}, call
 
 Example how to build a `rawDocument` object:
 ```js
-const livingdoc = return framework.createLivingdoc({
+const livingdoc = framework.createLivingdoc({
   content: {
     component: 'title',
     content: {
