@@ -44,6 +44,7 @@ const rawDocument = {
   },
   livingdoc: livingdoc.serialize()
 }
+```
 
 
 ### `shouldCreateNew`
