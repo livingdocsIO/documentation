@@ -79,6 +79,7 @@
 * [Add Custom Proofreading Task](walkthroughs/add-custom-proofreading-task.md)
 * [Implement Single Sign-On](walkthroughs/github-login.md)
 * [Add an Instagram Embed](walkthroughs/instagram_embed.md)
+* [Includes: Add an Twitter Include](walkthroughs/twitter_include_embed.md)
 * [Use Push Notifications and Custom Dashboard Item](walkthroughs/push_notifications.md)
 * [Enable Multi-Language Support](walkthroughs/setup_multilanguage.md)
 * [A Possible Translation System](walkthroughs/translations_example.md)
