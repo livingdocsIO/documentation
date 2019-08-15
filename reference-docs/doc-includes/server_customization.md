@@ -70,10 +70,13 @@ So in order to see a preview while editing you have to register an include rende
 Let's register an include renderer for the core include `embed-teaser`. Since article embeds are very common you will very likely need to do this too.
 
 ```js
-const includeRenderer = require('../plugins/includes/embed-teaser.js')
-
 const includesApi = liServer.features.api('li-includes')
-includesApi.registerService(includeRenderer, cb)
+
+await includesApi.registerService([
+  // registers the include rendering service
+  require('./plugins/includes/embed-teaser.js')
+  require('./plugins/includes/twitter.js')
+])
 ```
 
 `plugins/includes/embed-teaser.js`:
@@ -111,11 +114,26 @@ module.exports = {
         // Return an empty string to render nothing.
         // While editing the draft in the editor this will remove
         // the include preview.
-        return callback(null, '')
+        return callback(null, {html: ''})
       } else {
         // Render the include
         const html = renderInclude(params)
-        return callback(null, html)
+        return callback(null, {
+          html,
+          // optionally you can also pass dependencies either as raw code or from a source
+          // dependencies: {
+          //   css: [{src: 'http://cdn.cloudflare.com/...'}],
+          //   js: [
+          //     {
+          //       src: 'https://instagram.com/embed.js',
+          //       namespace: 'includes.instagram'
+          //     },
+          //     {
+          //      code: ... your js script
+          //     }
+          //   ]
+          // }
+        })
       }
     })
   }
@@ -131,7 +149,7 @@ The `uiComponents` array allows you to define a list of ui elements that are ren
 
 The first two require an angular plugin to be present in the Livingdocs editor.
 The markup for `angular-component` looks as follows:
-```
+```js
 {
   // required, fixed name
   type: 'angular-component',
@@ -147,7 +165,7 @@ The markup for `angular-component` looks as follows:
 The angular component `liFoo` is required to be registered in the editor. We explain [here](./editor_customization.md) how to do this.
 
 The markup for `angular-modal` looks as follows:
-```
+```js
 {
   // required, fixed name
   type: 'angular-modal',
@@ -167,7 +185,7 @@ The markup for `angular-modal` looks as follows:
 Again, the angular component `liFooModal` is required to be registered in the editor.
 
 The markup for `iframe-modal` looks as follows:
-```
+```js
 {
   // required, fixed name
   type: 'iframe-modal',
@@ -203,7 +221,7 @@ function (params, options, callback)
 
 The `remote` option allows you to render your HTML in a third-party system that is not Livingdocs.
 
-```
+```js
 {
   name: 'q-embed',
   uiComponents: [],

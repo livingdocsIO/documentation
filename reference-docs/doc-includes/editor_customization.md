@@ -6,7 +6,7 @@ This section explains how you can write custom angular components that you can p
 
 In order to enable a custom user interface for your doc-includes in the editor, you need to register it. This is commonly done in `app/editor.js` (the startup file).
 
-```
+```js
 liEditor.includes.register('customBrightcoveVideo', {
   template: require('../plugins/doc-includes/brightcove-video/template.html'),
   controller: require('../plugins/doc-includes/brightcove-video/controller'),
@@ -26,7 +26,7 @@ We have 2 kinds of API: one for sidebar components and one for modal components.
 
 #### Sidebar component
 
-```
+```js
 bindings: {
   directive: '=',
   componentView: '=',
@@ -41,7 +41,7 @@ Your component controller can use three properties of the Livingdocs framework:
 
 #### Modal component
 
-```
+```js
 bindings: {
   directive: '<',
   dispatch: '&'
@@ -203,3 +203,65 @@ window.top.postMessage({action: 'close'})
 ```
 
 The `close` and `update` actions are equivalent to the example above where you do this in an angular component.
+
+
+
+### onIncludeRendered hook
+
+To make a components work as they do in the frontend, you may have to use our include-`onRendered` hook.
+
+This example shows you would register a twitter include, load the twitter script for the include and trigger the widgets to reload for new components.
+
+```js
+// server-side
+module.exports = {
+  name: 'twitterInclude',
+  uiComponents: [
+    {
+      type: 'angular-component',
+      sidebarLabel: 'Twitter-include',
+      sidebarContentComponent: 'liTwitterInclude' // Twitter sidebar plugin from the core-editor.
+    }
+  ],
+  rendering: {
+    type: 'function',
+    function: () => {
+      return {
+        html: 'html',
+        embed: 'liTwitterPlugin', // TwitterPlugin from the core-editor.
+        dependencies: {
+          js: [
+            {
+              src: 'https://platform.twitter.com/widgets.js',
+              namespace: 'includes.twitter'
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+```
+
+In the editor you can register a special include-plugin, which helps to execute scripts once the plugin has loaded
+```js
+// editor
+liEditor.includePlugins.register('liTwitterPlugin', {
+  controller: require('../plugins/include-plugin/twitter'),
+})
+```
+
+```js
+// editor
+module.exports = {
+  /**
+   *
+   * @param {Object} componentData {componentModelId, directiveName, include, renderer}
+   */
+  onRendered (err, componentData) {
+    if (err) return
+    const {twttr} = componentData.renderer.renderingContainer.window
+    twttr != null ? twttr.ready(() => twttr.widgets.load()) : undefined
+  }
+}
+```
