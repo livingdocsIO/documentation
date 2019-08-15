@@ -20,6 +20,10 @@ The editor is an Angular web application. It is the user interface implementatio
 ## Livingdocs-...-boilerplate
 Our boilerplates are recipes to quickly get one started with a custom downstream implementation of our core products such as the editor or server.
 
+## Livingdocs SDK
+Our [SDK](https://github.com/livingdocsIO/livingdocs-node-sdk) is a helper library that wraps some of the livingdocs core functionality. 
+It is used for example to render documents, retrieve designs or changing document output.
+
 ## Upstream && Downstream
 *Upstream* is a package/repository which is integrated in another project called
 *downstream*. In our case the *upstreams* are our core `livingdocs-editor` and
@@ -45,3 +49,13 @@ our Print Api to print publishing systems like `NewsNT` or `WoodWing`.
 
 ## NewsNT
 A print publishing system.
+
+## Include / Doc-include
+Includes are our implementation of ESI's. (Edge side includes)
+The basic concept is that you set a placeholder in the livingdocs-design.
+Then in the server the way it will be rendered can be defined.
+You can also define assets (css, javascript) that will be only loaded once an include resolved.
+
+## Public api
+The [PublicApi](https://edit.livingdocs.io/public-api.html) exposes server endpoints which then can be consumed by a delivery (frontend).
+
