@@ -56,10 +56,18 @@ The most important thing is the configuration in `config.search`. The configurat
 
 In order for the editor to know which user interface to render for which `doc-include` you need to add a server-side registration.
 
-```
-module.exports = function (feature, server, done) {
+```js
+module.exports = async function (feature, server) {
   const includesApi = server.features.api('li-includes')
-  includesApi.registerService({
+  await includesApi.registerServices([
+    require('../../plugins/includes/gallery-embed')
+  ])
+}
+```
+
+```js
+// gallery-embed.js
+module.exports = {
     name: 'embed-teaser',
     uiComponents: [{
       type: 'angular-modal',
@@ -76,11 +84,10 @@ module.exports = function (feature, server, done) {
       type: 'function',
       function: function (params, options, callback) {
         // TODO render your HTML template given the parameters
-        return '<h1>TODO rendering</h1>'
+        return {html: '<h1>TODO rendering</h1>'}
       }
     }
-  }, done)
-}
+  }
 ```
 
 The above code snippet assumes you are inside a custom feature. See [here](../../walkthroughs/add_customizations.html#server) for how to register a custom feature.
@@ -150,10 +157,18 @@ The configuration lets you define a `minCount` and `maxCount` for the list. The 
 
 #### Server-side registration
 
-```
-module.exports = function (feature, server, done) {
+```js
+module.exports = async function (feature, server) {
   const includesApi = server.features.api('li-includes')
-  includesApi.registerService({
+  await includesApi.registerServices([
+    require('../../plugins/includes/list')
+  ])
+}
+```
+
+```js
+// gallery-embed.js
+module.exports = {
     name: 'list',
     uiComponents: [
       {
@@ -166,11 +181,10 @@ module.exports = function (feature, server, done) {
       type: 'function',
       function: function (params, options, callback) {
         // TODO render your HTML template given the parameters
-        return '<h1>TODO render list</h1>'
+        return {html: '<h1>TODO render list</h1>'}
       }
     }
-  }, done)
-}
+  }
 ```
 
 The above code snippet again assumes you are inside a custom feature. See [here](../../walkthroughs/add_customizations.html#server) for how to register a custom feature.
