@@ -44,7 +44,20 @@ app: {
   editor: {
     propertiesPanel: {
       transformComponentEnabled: true
-      }
+    }
+  }
+}
+```
+
+### HTML Input Behaviour for `doc-html` Directives
+
+Behaviour of the HTML content input can be configured to opt in for auto update to apply input changes automatically on components with `doc-html` directives.
+
+```js
+app: {
+  editor: {
+    propertiesPanel: {
+      htmlInputDefaultAutoUpdate: true
     }
   }
 }
