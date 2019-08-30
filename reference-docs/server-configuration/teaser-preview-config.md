@@ -116,7 +116,7 @@ teaserPreview: {
         // target parameter. The resolved source value will then get set on the 
         // content object.
         // If you omit this, the resolved source value will get set on the directive
-        // "as is". This is useful when targeting `doc-text` directives  
+        // "as is". This is useful when targeting `doc-editable` directives  
         target: 'params.mediaId'
       }
     ]
