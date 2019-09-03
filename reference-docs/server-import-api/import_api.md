@@ -19,7 +19,7 @@ import ({importJob, rawDocument, shouldCreateNew, updateCondition, userId}, call
 * `checksum`: An arbitrary `string` which allows you to determine whether it's an update.
 * `projectId`: A `number` containing the Id of the Project you want the Document to import to.
 * `channelid`: A `number` containing the Id of the Channel you want the Document to import to.
-* `documentType`: A `string`, the desired `documentType` of your Document.
+* `contentType`: A `string`, the desired `contentType` of your Document.
 * `title`: A `string`, the title of your Document.
 
 ### `rawDocument`
