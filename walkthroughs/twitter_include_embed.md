@@ -3,26 +3,37 @@
 This guide will show you how to add a custom Include for Twitter. We will show the implementation for the design, server and editor.
 This is more of a quick-guide where you can just copy and paste code. For a deeper understanding you can dive into [server-customization](../reference-docs/doc-includes/server_customization.md) and [editor-customization](../reference-docs/doc-includes/editor_customization.md)
 
-![Instagram embed](./embed-images/twitter-include.png)
-
-*The screenshot above shows an twitter card in an article with the "preview-feature" triggered so it appears twice*
 
 ## Design definition
 
 In the design you will define the component. This is pretty basic.
 
 ```json
-{
-  "name": "twitterIncludeComponent",
-  "html": "<div style='border: 1px solid black;padding: 20px;'  doc-include='twitterInclude' class='placeholder'></div>",
-  "label": "Twitter Include",
-  "description": "Embed a tweet",
-  "directives": {
-    "twitterInclude": {
-      "service": "twitterInclude"
+"name": "blank-design",
+"layouts": [
+  {
+    "name": "regular",
+    "caption": "Article",
+    "wrapper": "<div>Some wrapper</div>",
+    "groups": [
+      { "label": "Twitter Include", "components": ["twitterIncludeComponent"] }
+    ]
+  }
+],
+
+"components": [
+  {
+    "name": "twitterIncludeComponent",
+    "html": "<div doc-include='twitterInclude' class='placeholder'><div className='example-inline-placeholder-styles' style='min-height: 100px;outline: 1px dashed rgba(0, 0, 0, 0.2);position: relative;'/></div>",
+    "label": "Twitter Include",
+    "description": "Embed a tweet",
+    "directives": {
+      "twitterInclude": {
+        "service": "twitterInclude"
+      }
     }
   }
-}
+]
 ```
 
 ## Server - rendering the include and defining the service
@@ -33,10 +44,10 @@ This twitterInclude service has one main job -
 rendering the include with parameters filled in the editor.
 
 ```js
-// server.js
-liServer.features.register('custom-includes', require('./doc-includes'))
+// app/server.js
+liServer.features.register('custom-includes', require('app/doc-includes'))
 
-// ./doc-includes/index.js
+// app/doc-includes/index.js
 module.exports = async function (feature, server) {
   const includesApi = server.features.api('li-includes')
   await includesApi.registerServices([
@@ -52,39 +63,36 @@ module.exports = {
     {
       type: 'angular-component',
       sidebarLabel: 'Twitter-include',
-      sidebarContentComponent: 'liTwitterInclude' // Sidebar: liTwitterInclude from the core-editor.
+      sidebarContentComponent: 'liTwitterInclude' // TwitterPlugin registered in the editor.
     }
   ],
   rendering: {
     type: 'function',
-    function: renderTweet
+    render: renderTweet
   }
 }
 
-// we are using the twitter oembed api, so we expect a link in the editor
-// we will resolve the tweet html from the link
-// Alternatively you could paste the embed code <blockquote... /> and just use that
-function renderTweet (params, options, cb) {
-  fetch(`https://publish.twitter.com/oembed?url=${params.embedLink};omit_script=true`, {method: 'GET'})
-  .then(res => res.json())
-  .then(tweetData => {
+async function renderTweet (params, options) {
+  // we are using the twitter oembed api, so we expect a link in the editor
+  const res = await fetch(`https://publish.twitter.com/oembed?url=${params.embedLink};omit_script=true`, {method: 'GET'})
+  if (res.status === 404) {
+    const err = new Error(`Could not find twitter link.`)
+    err.status = 404
+    throw err
+  }
 
-  // these are the possible params. Only "html" is required
-  // But we will need the twitter script and define a way to trigger it in the editor later
-  const include = {
+  const tweetData = await res.json()
+  return {
     html: tweetData.html,
-    embed: 'liTwitterPlugin', // TwitterPlugin from the core-editor.
+    doNotRender: false,
+    embed: 'liTwitterRenderPlugin', // Twitter rendering plugin registered in the editor.
     dependencies: {
-      js: [
-        {
-          src: 'https://platform.twitter.com/widgets.js',
-          namespace: 'includes.twitter'
-        }
-      ]
+      js: [{
+        src: 'https://platform.twitter.com/widgets.js',
+        namespace: 'includes.twitter'
+      }]
     }
   }
-  return cb(null, include)
-  }).catch(err => cb(err))
 }
 ```
 
@@ -93,16 +101,12 @@ function renderTweet (params, options, cb) {
 
 You will have to define two things, the sidebar where one can paste the embed code or twitter link and in certain cases once the script has already loaded you will need to trigger it again. For example when components are moved or a second twitter component been pasted in the same document.
 
-We have a special `onRendered` hook for includes where you can trigger a script.
+We have a special `onIncludeRendered` hook for includes where you can trigger a script.
 
-
-Registering the sidebar and plugin. liTwitterInclude and liTwitterPlugin are both within the core.
-If you were to copy this setup, they would already be defined and you wouldn't need to copy this step
 ```js
-// Sidebar
-liEditor.includes.register('liTwitterInclude', {
-  template: require('../plugins/doc-includes/twitter-include/template.html'),
-  controller: require('../plugins/doc-includes/twitter-include/controller'),
+liEditor.includes.register('twitterIncludeSidebar', {
+  template: require('../plugins/doc_includes/twitter/template.html'),
+  controller: require('../plugins/doc_includes/twitter/controller'),
   bindings: {
     directive: '=',
     componentView: '=',
@@ -110,10 +114,9 @@ liEditor.includes.register('liTwitterInclude', {
   }
 })
 
-// execute the twitter widgets load for the twitter script
-liEditor.includePlugins.register('liTwitterPlugin', {
-  controller: require('../plugins/include-plugin/twitter'),
-})
+// Example of a custom include rendering plugin
+liEditor.includeRenderPlugins.register('twitterIncludeRenderPlugin',
+  require('../plugins/doc_include_render_plugins/twitter'))
 ```
 
 Registering the HTML for the sidebar, you can decide what parameters the user can enter here
@@ -165,17 +168,12 @@ module.exports = class twitterInclude {
 ```
 
 Once the server has returned the include object with the HTML and scripts,
-as everything has loaded the `onRendered` hook will be fired and you can fire `twttr.widgets.load()` and it should be nicely displayed!
+as everything has loaded the `onIncludeRendered` hook will be fired and you can fire `twttr.widgets.load()` and it should be nicely displayed!
 ```js
-// ../plugins/include-plugin/twitter
 module.exports = {
-  /**
-   *
-   * @param {Object} componentData {componentModelId, directiveName, include, renderer}
-   */
-  onRendered (err, componentData) {
+  onIncludeRendered (err, {componentId, directiveName, includeValue, renderer}) {
     if (err) return
-    const {twttr} = componentData.renderer.renderingContainer.window
+    const {twttr} = renderer.renderingContainer.window
     twttr != null ? twttr.ready(() => twttr.widgets.load()) : undefined
   }
 }
