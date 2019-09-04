@@ -115,7 +115,7 @@ liEditor.includes.register('twitterIncludeSidebar', {
 })
 
 // Example of a custom include rendering plugin
-liEditor.includeRenderPlugins.register('twitterIncludeRenderPlugin',
+liEditor.includeRenderPlugins.register('liTwitterRenderPlugin',
   require('../plugins/doc_include_render_plugins/twitter'))
 ```
 
