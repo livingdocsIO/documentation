@@ -121,6 +121,7 @@ module.exports = {
         return callback(null, {
           html,
           // optionally you can also pass dependencies either as raw code or from a source
+          // doNotRender: false,
           // dependencies: {
           //   css: [{src: 'http://cdn.cloudflare.com/...'}],
           //   js: [

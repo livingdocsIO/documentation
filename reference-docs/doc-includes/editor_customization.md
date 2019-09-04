@@ -206,62 +206,11 @@ The `close` and `update` actions are equivalent to the example above where you d
 
 
 
-### onIncludeRendered hook
+### onIncludeRendered Hook
 
-To make a components work as they do in the frontend, you may have to use our include-`onRendered` hook.
+To make a components work as they do in the frontend, you have to use our include-`onRendered` hook.
 
-This example shows you would register a twitter include, load the twitter script for the include and trigger the widgets to reload for new components.
-
-```js
-// server-side
-module.exports = {
-  name: 'twitterInclude',
-  uiComponents: [
-    {
-      type: 'angular-component',
-      sidebarLabel: 'Twitter-include',
-      sidebarContentComponent: 'liTwitterInclude' // Twitter sidebar plugin from the core-editor.
-    }
-  ],
-  rendering: {
-    type: 'function',
-    function: () => {
-      return {
-        html: 'html',
-        embed: 'liTwitterPlugin', // TwitterPlugin from the core-editor.
-        dependencies: {
-          js: [
-            {
-              src: 'https://platform.twitter.com/widgets.js',
-              namespace: 'includes.twitter'
-            }
-          ]
-        }
-      }
-    }
-  }
-}
-```
-
-In the editor you can register a special include-plugin, which helps to execute scripts once the plugin has loaded
-```js
-// editor
-liEditor.includePlugins.register('liTwitterPlugin', {
-  controller: require('../plugins/include-plugin/twitter'),
-})
-```
-
-```js
-// editor
-module.exports = {
-  /**
-   *
-   * @param {Object} componentData {componentModelId, directiveName, include, renderer}
-   */
-  onRendered (err, componentData) {
-    if (err) return
-    const {twttr} = componentData.renderer.renderingContainer.window
-    twttr != null ? twttr.ready(() => twttr.widgets.load()) : undefined
-  }
-}
-```
+<br/>
+ 1) [register](https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/add-include-example/plugins%2Fincludes%2Ftweet.js) a twitter include in the **server**<br/>
+ 2) [register](https://github.com/livingdocsIO/livingdocs-editor-boilerplate/pull/99/files#diff-beb9ebd19fcc1e56d5bdeda46106e930R54) a twitter include rendering plugin in the **editor**<br/>
+ 3) [trigger](https://github.com/livingdocsIO/livingdocs-editor-boilerplate/pull/99/files#diff-f2e50a0b2e458496f0fc57617c4a6a33) your script for a given include in the **editor**
