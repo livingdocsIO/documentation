@@ -208,7 +208,7 @@ The `close` and `update` actions are equivalent to the example above where you d
 
 ### onIncludeRendered Hook
 
-To make a components work as they do in the frontend, you have to use our include-`onRendered` hook.
+To make includes work in the Livingdocs Editor you sometimes have to execute some code inside the rendered document in the editor. For example when adding a twitter embed to a document you have to tell the twitter script to parse the page again and render the embed. In such cases you can use an onIncludeRendered hook in the editor.
 
 <br/>
  1) [register](https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/add-include-example/plugins%2Fincludes%2Ftweet.js) a twitter include in the **server**<br/>
