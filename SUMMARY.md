@@ -67,6 +67,7 @@
   * [Example: Removing a directive](concepts/document-migrations/examples/remove_directive.md)
   * [Example: Renaming a directive](concepts/document-migrations/examples/rename_directive.md)
   * [Example: Adding a metadata field](concepts/document-migrations/examples/add_metadata_field.md)
+* [Running a design locally](reference-docs/common-designs/using_a_local_design.md)
 
 ## General Howtos
 
