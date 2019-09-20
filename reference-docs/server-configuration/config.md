@@ -355,6 +355,22 @@ The `paginationFindConfig` allows you to set how many documents you can see on t
 Defaults to max. 100 documents.
 
 
+#### Document-lists
+
+```js
+ documentLists: {
+    paginationConfig: {
+      default: 300, // default is the batch size
+      limit: 1000 // limit is the max.
+    }
+  }
+```
+
+The `paginationConfig` allows you to set how many documents you can see on the lists dashboard.
+Defaults to max. 1000 documents.
+
+
+
 #### Projects
 
 
