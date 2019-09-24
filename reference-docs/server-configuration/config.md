@@ -406,16 +406,33 @@ render_pipeline: {
 ```js
 routing: {
   enabled: false,
-  indexing: { // (optional)
+  indexing: {
+    enabled: true,
+    debug_routes: false,
     // number of publication events to process in each batch
     batch_size: 50000, // (default: 50000)
     // routes cache update interval
     watch_interval: 1000 // (default: 1000)
   },
-  db: 'leveldown' // (default: leveldown) to use leveldb, npm i leveldown and set 'leveldown' here
-  // db_options: # (optional) cf. https://github.com/Level/levelup#options
+  redis: {
+    master_check_interval: 5000 // (default: 5000) how often do we check if we're the master
+  }
+}
+// Routes indexer
+kv: {
+  enabled: true,
+  levelUpAdapter: 'redisdown', // (default: memdown)
+  redis: {
+    prefix: 'li:r',
+    host: process.env.redis__host,
+    port: process.env.redis__port || 6379,
+    sentinels: process.env.redis_sentinels && JSON.parse(process.env.redis_sentinels),
+    masterName: process.env.redis_masterName
+  }
 }
 ```
+
+Note: only use routing in production with redis. Memdown is only for tests or local development.
 
 
 #### Search
@@ -456,11 +473,11 @@ default the article list query gets no metadata.
 
 `queryBuilderPlugin` is the path to your custom elasticsearch query.
 
-If you know Elasticsearch, it's simple to define your own [search request body](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html) function. 
+If you know Elasticsearch, it's simple to define your own [search request body](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html) function.
 The simplest possible query function looks like this:
 
 ```js
-// reference this file with the 'queryBuilderPlugin' property in your server config 
+// reference this file with the 'queryBuilderPlugin' property in your server config
 
 // @param {String} searchQuery 'hello world'
 // @returns {Object} Elasticsearch body.query

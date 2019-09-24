@@ -114,7 +114,7 @@ contentType configured with `routing.pathPattern.type: 'page'`:
       /about-us` instead of `/page/about`. The routes indexer notices the new
       publication and updates the cache `"path:5:/page/about"` replacing `data`
       like this:
-        ```json 
+        ```json
         "data": {
           "type": "redirect",
           "path": "/page/about-us",
@@ -143,8 +143,8 @@ keys are required:
 
 #### KV
 
-Routing data is stored in a Key-Value (KV) store. This store is abstracted by a
-leveldb API named **levelup**. See [Routes Cache](#routes-cache) for supported
+Routing data is stored in a Key-Value (KV) store. This store is abstracted by an
+ API named **levelup**. See [Routes Cache](#routes-cache) for supported
 adapters.
 
 ```js
@@ -177,10 +177,6 @@ adapters.
       batch_size: 500, // (default: 1000)
       // routes cache update interval, in ms
       watch_interval: 1000 // (default: 1000)
-    },
-    pathPatterns: {
-      current: '/document/:slug--:id',
-      legacy: []
     }
   },
 ```
@@ -364,11 +360,7 @@ A few options include:
 
 * [*memdown*][memdown], an in-memory KV store - we use it in our tests since we
   don't care about persisting the cache
-* [*redisdown*][redisdown], which is a Redis backend - not recommended because
-  untested yet, might create issues if you have several indexers running
-  concurrently
-* [*leveldb*][leveldb], an in-memory KV store - we use it in our tests since we
-  don't care about persisting the cache
+* [*redisdown*][redisdown], which is a Redis backend - use this for production
 
 The *routes cache* has two keys per once-published document (i.e. not per
 publication but rather per document for which we got at least one publication
@@ -394,11 +386,6 @@ routes by pausing the *routes indexer*.
 When a *master* crashes or gets shut down, another node will get promoted
 *master*. Same goes when *master* gets too slow because of the load or any other
 issue: it will get demoted and another node will get promoted.
-
-Note that many Livingdocs servers cannot run against the same `leveldb` backend
-because this backend is single-tenant. If you decide to use `leveldb` as KV
-store for the routing, you will have to provide a different directory path for
-each server instance.
 
 `routing:redis:master_check_interval` is the interval at which a process checks
 whether they are master or not, and should or should not get demoted or
@@ -518,16 +505,16 @@ buildPath({documentVersion, pattern}, callback)
 Resolving strategy is:
 
 1. attempt `documentId` extraction using the parsers built with
-   `pathPatterns.current` from contentTypes that have 
+   `pathPatterns.current` from contentTypes that have
    `pathPattern.type === 'article'`
 1. attempt `documentId` extraction using the parsers built with
-   `pathPatterns.legacy` from contentTypes that have 
+   `pathPatterns.legacy` from contentTypes that have
    `pathPattern.type === 'article'`
 1. attempt `documentId` extraction using the parsers built with
-   `pathPatterns.current` from contentTypes that have 
+   `pathPatterns.current` from contentTypes that have
    `pathPattern.type === 'page'`
 1. attempt `documentId` extraction using the parsers built with
-   `pathPatterns.legacy` from contentTypes that have 
+   `pathPatterns.legacy` from contentTypes that have
    `pathPattern.type === 'page'`
 1. do a KV lookup with the path
 1. give up and return an error (404)
@@ -567,5 +554,4 @@ resolveFromDocumentIds({projectId, channelId, documentIds}, callback)
 [levelup]: https://github.com/Level/levelup
 [memdown]: https://github.com/level/memdown
 [redisdown]: https://github.com/hmalphettes/redisdown
-[leveldb]: https://github.com/google/leveldb
 [metadatapluginplaceholder]: https://github.com/livingdocsIO/livingdocs-server/blob/ffa54c83a0b07606ce806616e5655e4f1ab6bc07/plugins/metadata/li-test-mood.js#L23
