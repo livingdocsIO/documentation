@@ -70,10 +70,6 @@ Add the following to the channel config of the project you want to connect with 
       clientSecret: '********'
     },
     
-    // The base URL of your Livingdocs editor. Used to create links in Desk-Net to open and edit a given
-    // article directly from Desk-Net 
-    editorUrl: 'https://my.livingdocs-editor.com',
-    
     // This is the ID of the Desk-Net platform you're connecting with. The easiest way to get 
     // this ID is to use an HTTP client like Postman and request the platforms of your Desk-Net account.
     // https://desk-net.com/api/v1_0_0/platforms/
