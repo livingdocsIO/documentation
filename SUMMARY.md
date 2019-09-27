@@ -84,6 +84,7 @@
 * [Use Push Notifications and Custom Dashboard Item](walkthroughs/push_notifications.md)
 * [Enable Multi-Language Support](walkthroughs/setup_multilanguage.md)
 * [A Possible Translation System](walkthroughs/translations_example.md)
+* [Setup Categories](walkthroughs/activate-categories.md)
 * [A Possible Routing System](reference-docs/server-public-api/routing-system.md)
 * [Hugo Drag and Drop](reference-docs/server-extensions/hugo-dnd.md)
 * [Enable Soft Lock](walkthroughs/enable-soft-lock.md)
