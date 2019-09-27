@@ -434,6 +434,26 @@ kv: {
 
 Note: only use routing in production with redis. Memdown is only for tests or local development.
 
+#### Categories
+
+```
+categories: {
+  maxInheritanceDepth: 20,
+  maxAutoRepublishes: 5, // used to re-publish pages after the path was changed
+  hooksEnabled: true
+}
+```
+
+Categories always have to be used in tandem with the Routing (see above).
+Categories have a property `metadata`. Values can be inherited down to child categories up
+to a maximum inheritance depth configured in `maxInheritanceDepth`.
+When the `path` property of a category changes we automatically try to republish pages with
+that category in order to update the routing cache. Since this can be expensive for a lot of documents
+the `maxAutoRepublishes` setting limits the number of pages that are republished. We don't recommend going
+above 10 here.
+`hooksEnabled` should always be true. It makes sure that whenever a document is published the category on the
+document is correctly updated.
+
 
 #### Search
 
