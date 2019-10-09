@@ -170,6 +170,12 @@ module.exports = {
     // Excluded components are ignored during copying:
     match: 'responsive-image',
     exclude: true
+  }, { 
+
+    // OPTIONAL: matches all components without instructions and copies or excludes them.
+    // CAREFUL: if you copy all components, they have to be defined in both designs!
+    match: '*',
+    copy: true // OR exclude: true
   }],
 
 
