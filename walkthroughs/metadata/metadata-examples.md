@@ -140,7 +140,7 @@ There is also a custom component for the the form in editor defined via `ui.comp
 
 The component is an Angular component and the custom service refers to some business logic code defined separately in the Editor.
 
-The `bp` prefix stands for one of our downstream named: *boilerplate*. It's generally a good practice to prefix custom components in angular as all components are registered globally.
+The `bp` prefix stands for one of our downstream named: *boilerplate*. It's generally a good practice to prefix custom components in Angular as all components are registered globally.
 
 Next step is to create a file to implement a simple custom server plugin.
 `plugins/metadata/bp-slug.js`:

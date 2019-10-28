@@ -123,7 +123,7 @@ For background images you can simply set a fixed max-width, so that each backgro
 
 ```js
 documents: {
-  selectedImageService: 'resrc.it'
+  selectedImageService: 'resrc.it',
   imageServices: {
     'resrc.it': {
       host: 'https://app.resrc.it',
@@ -194,7 +194,7 @@ The `srcset` information is useful when you want to have responsive images in yo
 
 An example template:
 ```html
-module.exports = `
+module.exports =
 <a href="<%= article.url %>">
   <div class="teaser__img-wrap">
     <img class="teaser__img"
