@@ -83,7 +83,7 @@ Level   | Value
 
 #### Example Request Log:
 
-This is an example request log from express middleware that are logged when
+This is an example request logs from express middleware that are logged when
 `logRequests: true` is set:
 
 ```json

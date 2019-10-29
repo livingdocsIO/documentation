@@ -9,7 +9,7 @@ To find out more about metadata on the editor you can read the [editor documenta
 
 ## Introduction
 
-Every document can have metadata. Which metadata properties a document has is defined by its `contentType`. A metadata object consist of key-value pairs where the key is unique per document.
+Every document can have metadata. Which metadata properties a document has is defined by its `contentType`. A metadata object consists of key-value pairs where the key is unique per document.
 
 A metadata field has a configuration (config + used plugin) and can be configured in the `contentType` config. It's possible to use existing metadata plugins to handle the behavior of the metadata field. It's also possible to create custom plugins.
 
@@ -32,7 +32,7 @@ and use them for rendering data (e.g. teasers).
 
 ## Configuration
 A metadata configuration describes the metadata properties. The keys are identical to those of
-the metadata object. Each channel must provide it's own configuration.
+the metadata object. Each channel must provide its own configuration.
 ```js
 // Metadata configuration example in the channel config
 metadata: [{
