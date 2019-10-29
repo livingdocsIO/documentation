@@ -74,7 +74,7 @@ The following sample configuration file illustrates all of the above.
     },
     target: [{
       channelHandle: 'web',
-      contentType: 'gallery'
+      contentType: 'gallery',
       options: {
         copyUnknownComponents: false
       },

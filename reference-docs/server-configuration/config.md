@@ -164,11 +164,11 @@ emails: {
       transport: 'default',
       subject: 'Welcome at Livingdocs',
       htmlTemplatePath: require.resolve('../../plugins/email-templates/user_created.html'),
-      attachments: [
-        cid: 'logo'
-        filename: 'logo.png'
+      attachments: {
+        cid: 'logo',
+        filename: 'logo.png',
         path: require.resolve('../../plugins/email-templates/logo.png')
-      ]
+      }
     },
     passwordReset: {
       transport: 'awsEmailSender',
@@ -179,11 +179,11 @@ emails: {
       // textTemplate: 'Reset password for <%= user.name %>'
       // htmlTemplate: 'Reset password for <%= user.name %>'
 
-      attachments: [
-        cid: 'logo'
-        filename: 'logo.png'
+      attachments: {
+        cid: 'logo',
+        filename: 'logo.png',
         path: require.resolve('../../plugins/email-templates/logo.png')
-      ]
+      }
     }
   }
 }
@@ -690,6 +690,7 @@ hugo: {
     enabled: true,
     host: 'hugo-api.customer.com',
     customer: 'yourCustomerKey'
+  },
   print: {
     enabled: true,
     host: 'hugo-api-pss.customer.com',
