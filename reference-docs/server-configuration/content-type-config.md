@@ -69,7 +69,7 @@ We plan to allow to move all layout options which are currently defined in the d
 
       // link pattern for api access to that document
       // The same placeholders apply as for the preview
-      api: ''
+      api: '',
 
       // Iframe embed code
       // Available placeholders:
