@@ -71,13 +71,13 @@ teaserPreview: {
     handle: 'sidebar',
 
     // A numeric value (absolute pixels) for the viewport width.
-    windowWidth: 640
+    windowWidth: 640,
     
     
     // Optional. A numeric width (absolute pixels) for the viewport height. 
     // Only set this if you want to enforce fixed dimensions. If ommitted, the height
     // of viewport will auto-adjust.
-    windowHeight: 320
+    windowHeight: 320,
 
     // Optional. A DOM string representing a wrapping component for the teaser.
     // Use this to give the teaser some context e.g. by emulating a sidebar.
@@ -163,8 +163,8 @@ contentTypes: [{
       directives: [{
         name: 'title',
         source: [
-          'metadata.title'
-          'title',
+          'metadata.title',
+          'title'
         ]
       }, {
         name: 'image',

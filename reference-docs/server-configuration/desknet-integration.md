@@ -297,7 +297,7 @@ Now, we have to a) add a metadata plugin and b) a transform mapping to the setti
     metadataTransforms: [
       {
         // Optional. The function name, or handle, under which the transform was registered.
-        importFunctionHandle: 'readHasPrint'
+        importFunctionHandle: 'readHasPrint',
 
         // The function name, or handle, under which the transform was registered.
         exportFunctionHandle: null,
