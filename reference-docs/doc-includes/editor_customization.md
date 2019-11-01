@@ -1,6 +1,6 @@
 ## Doc-include editor customizations
 
-This section explains how you can write custom angular components that you can provide for your users inside the Livingdocs editor to configure your doc-includes. If you are looking for the server-side rendering options, [see here](./server_customization.md).
+This section explains how you can write custom Angular components that you can provide for your users inside the Livingdocs editor to configure your doc-includes. If you are looking for the server-side rendering options, [see here](./server_customization.md).
 
 ### Registering a custom angular component
 
@@ -20,7 +20,7 @@ liEditor.includes.register('customBrightcoveVideo', {
 
 The first parameter to the register method, `customBrightcoveVideo`, denotes the name of the angular component that you will register. It is the same name that you reference in the server (`sidebarContentComponent` or `modalContentComponent`) as a ui component. Internally, those names will be prefixed, but you don't need to worry about this.
 
-The second parameter is the definition of the component and matches just the regular definition for angular components. We have a template (HTML), a controller (JS) and a set of bindings that defines the API to the angular component.
+The second parameter is the definition of the component and matches just the regular definition for Angular components. We have a template (HTML), a controller (JS) and a set of bindings that defines the API to the angular component.
 
 We have 2 kinds of API: one for sidebar components and one for modal components.
 
