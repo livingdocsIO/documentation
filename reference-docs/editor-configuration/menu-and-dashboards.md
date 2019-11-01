@@ -60,7 +60,7 @@ app: {
   sidePanelItems: [
   // other entries...
   {
-    liItem: 'articles'
+    liItem: 'articles',
     label: 'My articles',
     icon: 'file-document'
   }]
