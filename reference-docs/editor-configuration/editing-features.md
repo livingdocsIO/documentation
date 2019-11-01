@@ -209,7 +209,7 @@ See [here](./text-editing.md#spellcheck)
 ```
 {
   app: {
-    useHistoryStatistics: true
+    useHistoryStatistics: true,
     useHistoryRestore: true
   }
 }
@@ -363,7 +363,7 @@ The UI allows users to unpin or pin a component. If you want to enforce pinning 
 
 ## Asset Management
 
-In order make the Asset Management visible in the sidebar of an image as "Media Library" button, as well as to have the menu entry which guides you to the dedicated Media Library page, you need to set the feature flag to true.
+In order to make the Asset Management visible in the sidebar of an image as "Media Library" button, as well as to have the menu entry which guides you to the dedicated Media Library page, you need to set the feature flag to true.
 
 ```
   {

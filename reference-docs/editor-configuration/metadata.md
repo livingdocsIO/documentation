@@ -36,7 +36,7 @@ metadata: [{
   ...,
   ui: {
     component: 'liMetaTextForm',
-    service: 'customServicePlugin' // optional
+    service: 'customServicePlugin', // optional
     config: {
       label: 'foo', // optional, takes camelized name otherwise
       placeholder: 'bar', // optional, takes camelized name otherwise
@@ -74,7 +74,7 @@ metadata: [{
   ...,
   ui: {
     component: 'liMetaTextareaForm',
-    service: 'customServicePlugin' // optional
+    service: 'customServicePlugin', // optional
     config: {
       label: 'foo', // optional, takes camelized name otherwise
       placeholder: 'bar', // optional, takes camelized name otherwise
