@@ -155,7 +155,8 @@ emails: {
       config: {
         accessKeyId: 'yourAccessKeyId',
         secretAccessKey: 'yourSecretAccessKey',
-        region: 'eu-west-1'
+        region: 'eu-west-1',
+        httpOptions: {proxy: process.env.HTTP_PROXY}
       }
     }
   },
