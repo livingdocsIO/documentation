@@ -152,6 +152,8 @@ emails: {
     awsEmailSender: {
       from: 'Livingdocs <noreply@livingdocs.io>',
       module: 'nodemailer-ses-transport',
+      // for more options see the aws client config object:
+      // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html
       config: {
         accessKeyId: 'yourAccessKeyId',
         secretAccessKey: 'yourSecretAccessKey',
