@@ -83,10 +83,25 @@ We plan to allow to move all layout options which are currently defined in the d
     },
 
     images: {
-      // whitelist of hosts for image urls that are drag & dropped into the editor
+      // Deprecated for `sourcePolicy` below: whitelist of hosts for image urls that are drag & dropped into the editor
       whitelist: ['//pixabay.com']
+
+      sourcePolicy: [
+        {
+          provider: 'upload',
+          enabled: true
+        }, {
+          provider: 'hugo',
+          enabled: false
+        }, {
+          provider: 'url',
+          enabled: true,
+          hosts: ['//pixabay.com']
+        }
+      ]
     }
   },
+
   // With 'documentCreationDisabled: true', you can't create documents with this content-type
   documentCreationDisabled: true, // default false
 }
@@ -125,8 +140,11 @@ module.exports = {
 }
 ```
 
+## Image Source Policy
+You may set a `contentType` specific sourcePolicy here. For details see: [Image Source Policy](../editor-configuration/image-source-policy.md))
 
-### Enable Push Notifications for a ContentType
+
+## Enable Push Notifications for a ContentType
 
 To enable push notifications for a specific content type you must have a metadata field called `pushNotifications`. Name and plugin must match exactly.
 ```js
