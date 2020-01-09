@@ -32,14 +32,10 @@ For the livingdocs-server and livingdocs-editor we have a boilerplate which you 
 - After setup server and editor you should be able to login with a given user
 
 ## Design
-At the moment you have the blank design without any assets on your design server which has his files on the S3 bucket. The next step is now to create your own design. 
-
-[create design](../reference-docs/common-designs/create_designs.md)
+Changing designs is simple, in the server, navigate into a component `setup/projects/components/title` for example and make a change. After the server restarts, refresh the document in the Editor and you should see the changes live.
 
 ## Metadata
-The next step is to create your own metadata field with a own metadata plugin. 
-
-[create metadata field](../reference-docs/common-designs/create_designs.md)
+The next step is to create your own metadata field. In the server, navigate into a document type `setup/projects/article` for example and make a change in the metadata section. After the server restarts, refresh the document in the Editor and you should see the changes live.
 
 ## Delivery
 If you want deliver your documents to your Delivery Website you can use webhooks to get notified if a document got published.
