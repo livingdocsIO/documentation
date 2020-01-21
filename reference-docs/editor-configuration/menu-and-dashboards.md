@@ -314,34 +314,51 @@ liEditor.searchFilters.registerList('creationDate', {
 })
 ```
 
-#### Example: Register angular directive
+#### Example: Register Angular Component Declaration
 
-`searchFilters.register` registers an Angular directive as filter for the search UI.
+`searchFilters.registerAngularComponent` registers an Angular component as filter for the search UI.
 Display is controlled with the `filters` key in the configuration.
 
 ```js
-liEditor.searchFilters.register('project', ['session', (session) => ({
-  scope: {value: '='},
+coreApi.searchFilters.registerAngularComponent('test', {
+  bindings: {
+    value: '='
+  },
   template: `
-    <div
-      ng-class="{'filter-active': isActive}"
-      ng-click="toggleProjectFilter()">
+    <div 
+      ng-class="{'is-set': $ctrl.isActive}" 
+      class="ld-filter" 
+      ng-click="$ctrl.toggleProjectFilter()" 
+      ng-if="$ctrl.hasPrint"
+    >
+      <div class="ld-dropdown__text">
         Show print documents
+      </div>          
     </div>
   `,
-  link: (scope) => {
-    channel = _find(session.project.channels, {name: 'print'})
-    scope.isActive = scope.value.get().value
-    scope.toggleProjectFilter: () => {
-      scope.isActive = !scope.isActive
-      if (scope.isActive) {
-        scope.value.set({type: 'channelId', value: !scope.isActive})
+  controller: class PrintController {
+    static get $inject () { return ['session'] }
+
+    constructor (session) {
+      this.session = session
+      this.channel = _find(session.project.channels, {handle: 'print'}) || {}
+      this.hasPrint = !!this.channel.id
+    }
+
+    $doCheck () {
+      this.isActive = this.value.get()
+    }
+
+    toggleProjectFilter () {
+      if (this.channel.id) this.isActive = !this.isActive
+      if (this.isActive && this.channel.id) {
+        this.value.set({type: 'channelId', value: this.channel.id})
       } else {
-        scope.value.set()
+        this.value.set()
       }
     }
   }
-})])
+})
 ```
 
 ## Custom Dashboards
