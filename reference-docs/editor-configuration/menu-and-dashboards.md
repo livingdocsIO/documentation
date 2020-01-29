@@ -131,10 +131,18 @@ app: {
 }
 ```
 
-There are three types of dashboard configurations `dashboard`, `kanbanBoard` and `taskBoard`.
-Where `taskBoard` is simply a predefined `kanbanBoard` for a task. These configurations also go into your editor config file.
+There are three types of dashboard configurations 
+- `dashboard`
+- `kanbanBoard`
+- `taskBoard` (predefined `kanbanBoard` for a task)
 
-Normal Dashboard:
+These configurations also go into your editor config file.
+
+Kanban Boards are very similar to dashboards, except they do have multiple result columns. Each result column will show a list of documents the same as a single dashboard does. The documents cannot be manually sorted or moved between columns, instead each column typically has its own filter settings.
+
+For example a task board will show all tasks in the `requested` state in one column and tasks with the state `inProgress` and `done` in the other columns. In order to move a card into another column you simply have to open the document and move the task into another state.
+
+#### Example: Dashboard
 ```js
 // note: not within the config of app: {...}
 dashboards: [{
@@ -159,11 +167,9 @@ dashboards: [{
 }]
 ```
 
-Kanban Boards are very similar to dashboards, except they do have multiple result columns. Each result column will show a list of documents the same as a single dashboard does. The documents cannot be manually sorted or moved between columns, instead each column typically has its own filter settings.
 
-For example a task board will show all tasks in the `requested` state in one column and tasks with the state `inProgress` and `done` in the other columns. In order to move a card into another column you simply have to open the document and move the task into another state.
+#### Example: Taskboard (simple config)
 
-Simple Task KanbanBoard Config:
 ```js
 dashboards: [{
   handle: 'kanban-proofreading',
@@ -175,7 +181,8 @@ dashboards: [{
 }]
 ```
 
-Full KanbanBoard Config:
+#### Example: Kanbanboard (full config)
+
 ```js
 dashboards: [{
   handle: 'kanban-proofreading',
