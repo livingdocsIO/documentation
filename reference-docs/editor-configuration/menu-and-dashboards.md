@@ -113,6 +113,106 @@ search: {
 
 Note that the custom component can only use document metadata that has been explicitly [whitelisted](../server-configuration/config.md#search).
 
+## Custom Dashboards
+
+Custom Dashboards are configurable versions of the current Articles / Pages / Date-Records Screens. You can add as many custom dashboards as you want in the Editor configuration.
+
+First add a navigation entry into the main navigation:
+```js
+app: {
+  sidePanelItems: [
+  // other entries...
+  {
+    label: 'Proofreading',
+    // 'kanban-proofreading' is the dashboard config handle we will define in the next step
+    dashboard: 'kanban-proofreading',
+    icon: 'file-document'
+  }]
+}
+```
+
+There are three types of dashboard configurations `dashboard`, `kanbanBoard` and `taskBoard`.
+Where `taskBoard` is simply a predefined `kanbanBoard` for a task. These configurations also go into your editor config file.
+
+Normal Dashboard:
+```js
+// note: not within the config of app: {...}
+dashboards: [{
+  handle: 'gallery-dashboard',
+  type: 'dashboard',
+  pageTitle: 'Gallery Board',
+  // Label used to describe the documents in this Dashboard
+  entityLabel: 'Article',
+  // Invisible base filters applied to every search (including the default result list)
+  baseFilters: [{type: 'documentType', value: 'article'}],
+  // Filters shown to the user below the search input
+  displayFilters: ['documentState', 'timeRange'],
+  sort: '-updated_at',
+  // fields to be returned from the server (not all metadata fields are returned by default)
+  fields: ['metadata.*'],
+  // This is the name of the angular component used in the result list
+  componentName: 'liHeroCard',
+  // The componentOptions are injected into the component `liHeroCard` (in this example)
+  componentOptions: {teaserImage: 'teaserImage'},
+  // CSS class set as a wrapper around the result list
+  cssWrapper: 'li-result-columns'
+}]
+```
+
+Kanban Boards are very similar to dashboards, except they do have multiple result columns. Each result column will show a list of documents the same as a single dashboard does. The documents cannot be manually sorted or moved between columns, instead each column typically has its own filter settings.
+
+For example a task board will show all tasks in the `requested` state in one column and tasks with the state `inProgress` and `done` in the other columns. In order to move a card into another column you simply have to open the document and move the task into another state.
+
+Simple Task KanbanBoard Config:
+```js
+dashboards: [{
+  handle: 'kanban-proofreading',
+  type: 'taskBoard',
+  pageTitle: 'Proofreading',
+  // This is the name of a metadataProperty of `type: 'li-task-v2'`
+  taskName: 'proofreading',
+  displayFilters: ['documentState', 'timeRange']
+}]
+```
+
+Full KanbanBoard Config:
+```js
+dashboards: [{
+  handle: 'kanban-proofreading',
+  type: 'kanbanBoard',
+  pageTitle: 'Proofreading',
+  // Label used to describe the documents in this KanbanBoard
+  entityLabel: 'Article',
+  displayFilters: [],
+  // Base filters are applied to all columns
+  baseFilters: [{type: 'documentType', value: 'article'}],
+  // This is the name of the angular component to use in all columns
+  // (can also be defined for each columns separately)
+  componentName: 'liTaskCard',
+  openState: 'tasks',
+  columns: [{
+    handle: 'requested',
+    label: 'Needs Proofreading',
+    // Filter applied for this column on top of the `baseFilter`
+    columnFilter: [{type: 'metadata', propertyName: 'proofreading', value: 'requested'}],
+    sort: ['-proofreading_deadline'],
+    // The componentOptions are injected into the component `liTaskCard` (in this example)
+    componentOptions: {column: 'todo', taskName: 'proofreading'}
+  }, {
+    handle: 'in-progress',
+    label: 'In Progress',
+    columnFilter: [{type: 'metadata', propertyName: 'proofreading', value: 'inProgress'}],
+    sort: ['-updated_at'],
+    componentOptions: {column: 'doing', taskName: 'proofreading'}
+  }, {
+    handle: 'done',
+    label: 'Finished Proofreading',
+    columnFilter: [{type: 'metadata', propertyName: 'proofreading', value: 'done'}],
+    sort: '-updated_at',
+    componentOptions: {column: 'done', taskName: 'proofreading'}
+  }]
+}]
+```
 
 # Search Filters
 
@@ -433,105 +533,4 @@ coreApi.searchFilters.registerAngularComponent('test', {
     }
   }
 })
-```
-
-## Custom Dashboards
-
-Custom Dashboards are configurable versions of the current Articles / Pages / Date-Records Screens. You can add as many custom dashboards as you want in the Editor configuration.
-
-First add a navigation entry into the main navigation:
-```js
-app: {
-  sidePanelItems: [
-  // other entries...
-  {
-    label: 'Proofreading',
-    // 'kanban-proofreading' is the dashboard config handle we will define in the next step
-    dashboard: 'kanban-proofreading',
-    icon: 'file-document'
-  }]
-}
-```
-
-There are three types of dashboard configurations `dashboard`, `kanbanBoard` and `taskBoard`.
-Where `taskBoard` is simply a predefined `kanbanBoard` for a task. These configurations also go into your editor config file.
-
-Normal Dashboard:
-```js
-// note: not within the config of app: {...}
-dashboards: [{
-  handle: 'gallery-dashboard',
-  type: 'dashboard',
-  pageTitle: 'Gallery Board',
-  // Label used to describe the documents in this Dashboard
-  entityLabel: 'Article',
-  // Invisible base filters applied to every search (including the default result list)
-  baseFilters: [{type: 'documentType', value: 'article'}],
-  // Filters shown to the user below the search input
-  displayFilters: ['documentState', 'timeRange'],
-  sort: '-updated_at',
-  // fields to be returned from the server (not all metadata fields are returned by default)
-  fields: ['metadata.*'],
-  // This is the name of the angular component used in the result list
-  componentName: 'liHeroCard',
-  // The componentOptions are injected into the component `liHeroCard` (in this example)
-  componentOptions: {teaserImage: 'teaserImage'},
-  // CSS class set as a wrapper around the result list
-  cssWrapper: 'li-result-columns'
-}]
-```
-
-Kanban Boards are very similar to dashboards, except they do have multiple result columns. Each result column will show a list of documents the same as a single dashboard does. The documents cannot be manually sorted or moved between columns, instead each column typically has its own filter settings.
-
-For example a task board will show all tasks in the `requested` state in one column and tasks with the state `inProgress` and `done` in the other columns. In order to move a card into another column you simply have to open the document and move the task into another state.
-
-Simple Task KanbanBoard Config:
-```js
-dashboards: [{
-  handle: 'kanban-proofreading',
-  type: 'taskBoard',
-  pageTitle: 'Proofreading',
-  // This is the name of a metadataProperty of `type: 'li-task-v2'`
-  taskName: 'proofreading',
-  displayFilters: ['documentState', 'timeRange']
-}]
-```
-
-Full KanbanBoard Config:
-```js
-dashboards: [{
-  handle: 'kanban-proofreading',
-  type: 'kanbanBoard',
-  pageTitle: 'Proofreading',
-  // Label used to describe the documents in this KanbanBoard
-  entityLabel: 'Article',
-  displayFilters: [],
-  // Base filters are applied to all columns
-  baseFilters: [{type: 'documentType', value: 'article'}],
-  // This is the name of the angular component to use in all columns
-  // (can also be defined for each columns separately)
-  componentName: 'liTaskCard',
-  openState: 'tasks',
-  columns: [{
-    handle: 'requested',
-    label: 'Needs Proofreading',
-    // Filter applied for this column on top of the `baseFilter`
-    columnFilter: [{type: 'metadata', propertyName: 'proofreading', value: 'requested'}],
-    sort: ['-proofreading_deadline'],
-    // The componentOptions are injected into the component `liTaskCard` (in this example)
-    componentOptions: {column: 'todo', taskName: 'proofreading'}
-  }, {
-    handle: 'in-progress',
-    label: 'In Progress',
-    columnFilter: [{type: 'metadata', propertyName: 'proofreading', value: 'inProgress'}],
-    sort: ['-updated_at'],
-    componentOptions: {column: 'doing', taskName: 'proofreading'}
-  }, {
-    handle: 'done',
-    label: 'Finished Proofreading',
-    columnFilter: [{type: 'metadata', propertyName: 'proofreading', value: 'done'}],
-    sort: '-updated_at',
-    componentOptions: {column: 'done', taskName: 'proofreading'}
-  }]
-}]
 ```
