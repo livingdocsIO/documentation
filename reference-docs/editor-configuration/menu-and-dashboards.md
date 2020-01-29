@@ -144,7 +144,11 @@ For example a task board will show all tasks in the `requested` state in one col
 
 #### Example: Dashboard
 ```js
-// note: not within the config of app: {...}
+// note: add dashboards to root in the editor config:
+// {
+//   app: {...},
+//   dashboard: {...}
+// }
 dashboards: [{
   handle: 'gallery-dashboard',
   type: 'dashboard',
@@ -196,6 +200,9 @@ dashboards: [{
   // This is the name of the angular component to use in all columns
   // (can also be defined for each columns separately)
   componentName: 'liTaskCard',
+  // Set the target when clicking on a card. Currently supported:
+  // - 'article' (default setting)
+  // - 'tasks'
   openState: 'tasks',
   columns: [{
     handle: 'requested',
@@ -453,7 +460,7 @@ Added in: `release-2020-02`
 
 #### Example
 
-`searchFilters.registerListV2` registers an object where you can configure a filter object which is used render the search UI.
+`searchFilters.registerListV2` registers an object where you can configure a filter object which is used to render the search UI.
 
 ![image](https://user-images.githubusercontent.com/172394/73385319-431e2780-42cd-11ea-975c-3206a25ac4c7.png)
 
