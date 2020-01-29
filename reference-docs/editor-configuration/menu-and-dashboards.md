@@ -433,7 +433,7 @@ dashboards: [{
   entityLabel: 'Article',
   displayFilters: [],
   // Base filters are applied to all columns
-  baseFilter: [{type: 'documentType', value: 'article'}],
+  baseFilters: [{type: 'documentType', value: 'article'}],
   // This is the name of the angular component to use in all columns
   // (can also be defined for each columns separately)
   componentName: 'liTaskCard',
