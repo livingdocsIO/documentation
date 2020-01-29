@@ -435,16 +435,83 @@ defaultQueries: [
 This would filter for only documents that have had a successful proofreading. The core only exposes the `proofreading` task, but you can define your own custom tasks. The values are `todo`, `doing`, `done` for the 3 states that a task can have.
 
 
-## Registering Custom Filter
+## Register Custom Filter
 
 Its possible to register a custom filter and add it to `displayFilters` in the editor config (see [example](#overview)).
 
 At the moment there are 2 types of custom filters (click on the link to get see a description/example):
-- [List Filter](#register-custom-list-filter)
+- [List Filter v2](#register-custom-list-v2-filter)
+- [List Filter](#register-custom-list-filter) (deprecated)
 - [Angular Component Filter](#register-custom-angular-component-filter)
 
 Hint: If you want to create a filter with metadata, make sure they are setup correctly in the ElasticSearch index (`search.metadata_mapping` config in the server)
 
+
+### Register Custom List v2 Filter
+
+Added in: `release-2020-02`
+
+#### Example
+
+`searchFilters.registerListV2` registers an object where you can configure a filter object which is used render the search UI.
+
+![image](https://user-images.githubusercontent.com/172394/73385319-431e2780-42cd-11ea-975c-3206a25ac4c7.png)
+
+Process
+- `datasource.fetch` fetch data async from a remote service or create a list of filter items
+- `mount` - configure the filter object
+
+```js
+liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
+  datasource: {
+    // fetch data and inject response into mount function
+    async fetch ({project, user, server}) {
+      const host = server.host
+      const channelId = project.defaultChannel.id
+      const uri = `${host}/channel-configs/properties?channelId=${channelId}&properties=contentTypes`
+
+      const response = await window.fetch(uri, {
+        method: 'GET',
+        headers: new window.Headers({
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${server.accessToken}`
+        })
+      })
+      await new Promise((resolve) => setTimeout(resolve, 2000))
+      // only succeed on status codes 200 - 299
+      if (!response.ok) throw new Error('contentTypeV2Filter was not able to fetch data')
+      return response.json()
+    }
+  },
+
+  // Mount a search filter (search behaviour, display options)
+  //
+  // @param data injected result from datasource.fetch
+  //
+  // @example options = [{
+  //     id: 'regular',
+  //     label: 'Regular Article',
+  //     type: 'contentType',
+  //     value: 'regular'
+  //   }, {
+  //     id: 'page',
+  //     label: 'Page',
+  //     type: 'contentType',
+  //     value: 'page'
+  //   }]
+  async mount ({data, filter}) {
+    const options = data.contentTypes.map((ct) => {
+      return {
+        id: ct.handle,
+        type: 'contentType',
+        label: ct.info.label,
+        value: ct.handle
+      }
+    })
+    filter.options = options
+  }
+})
+```
 
 ### Register Custom List Filter
 
