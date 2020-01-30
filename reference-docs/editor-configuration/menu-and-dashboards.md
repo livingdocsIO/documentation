@@ -116,61 +116,19 @@ Note that the custom component can only use document metadata that has been expl
 
 # Search Filters
 
-The editor core API exposes functions to customize the search filters on the dashboard.
-
 ![Search filters](search-filters.png)
 
+## Overview
 
-## Available config options
+Filters on a dashboard are highly customisable in Livingdocs.
 
-- `articleList`
-
-  This configures the dashboard that users see after logging in.
-
-- `inlineArticleList`
-
-  This configures inline article search like the one used in the List screen.
-
-- `pageList`
-
-  This configures the pages screen.
-
-- `dataRecordList`
-
-  This configures the data-record screen.
-
-- `documentListList`
-
-  This configures the List screen.
-
-- `menuList`
-
-  This configures the Menu screen.
-
-
-
-Properties:
-
-- displayFilters
-
-  The filters that are shown to the user.
-
-- defaultQueries
-
-  This setting determines the default filter. This filter is discarded as
-  soon as a user manually selects a filter and reapplied when all manually
-  chosen filters are deselected.
-
-- emptySearchQueries
-
-  This setting determines the empty search filter. This filter is taken into
-  account when there is no search query input present. Note that this filter is
-  treated mutually exclusive with the default filter that is used in case there is
-  a query present.
-
+- One can define the order of filters in a dashboard (`displayFilters`)
+- One can use core filter or custom filter registered over the editors `coreApi` in the `displayFilters`.
+- One can define the default search behaviour (`defaultQueries`/`emptySearchQueries`)
 
 Example:
 ```js
+// editor config
 filters: {
   articleList: {
     displayFilters: ['channels', 'contentType', 'timeRange', 'sortBy'],
@@ -224,11 +182,41 @@ filters: {
 }
 ```
 
-## Predefined core properties
+#### Filter groups (see example)
+- `articleList` - This configures the dashboard that users see after logging in.
+- `inlineArticleList` - This configures inline article search like the one used in the List screen.
+- `pageList` - This configures the pages screen.
+- `menuList` - This configures the Menu screen.
+- `mediaList` - This configures the media screen.
+- `dataRecordList` - This configures the data-record screen.
+- `documentListList` - This configures the List screen.
 
-The core allows you to use the following values for `displayFilters`:
+
+#### Filter config properties (see example)
+
+- `displayFilters`
+
+  The filters that are shown to the user.
+
+- `defaultQueries`
+
+  `defaultQueries` determines a set of default filter (not visible in UI). This filter is discarded as
+  soon as a user manually selects a filter and reapplied when all manually
+  chosen filters are deselected.
+
+- `emptySearchQueries`
+
+  `emptySearchQueries` determines the empty search filter. This filter is taken into
+  account when there is no search query input present. Note that this filter is
+  treated mutually exclusive with the default filter that is used in case there is
+  a query present.
+
+
+## Core Filter Plugins (displayFilters)
+
+The following filters can be used in `displayFilters`:
+
 - `channels` give the user a dropdown to filter by a specific channel
-- `channelHandle` resolves the channel id by the handle such as "web" or "newsletter"
 - `documentState`, unpublished, published, not yet published, my articles, needs proofreading, currently proofreading
 - `timeRange`, filter the search results in time ranges such as last 24 hours
 - `sortBy`: `relevance` (default), `creation_date`, `updated_at`, `alphabetical`  
@@ -237,37 +225,103 @@ The core allows you to use the following values for `displayFilters`:
 - `contentType`: uses the content-types configuration in your server to filter for different content-types, e.g. galleries or regular articles.
 - `category`: uses the channel configuration for categories to offer a multi-select box to filter for categories (OR filter)
 
-The next section shows you how you can add your own custom filters to the ones defined in the core.
 
-The configuration also allows you to set `defaultQueries`. Those are hidden search queries that are appended to each search query of the user. In the `type` you can use the same values as described in the `displayFilters` (including your own custom filters). The `value` describes the (fixed) value you want to set for this hidden query. Example:
+## Filter Query Format
 
+There are different places, where one can define a filter query
+- baseFilters (dashboard property)
+- defaultQueries (filter group property)
+- emptySearchQueries (filter group property)
+- custom filter (your own filter added to `displayFilters`)
+
+At all this places, one can use the same query format, e.g.
+
+```
+{type: 'documentType', value: 'article'}
+```
+
+The query format always has a `type` and most of the time a `value`. You can see some examples in the next section.
+
+## Filter Query Types
+
+This are all available `queryTypes` which can be used to form a filter query.
+
+```
+// documentType
+{type: 'documentType', value: 'article'}
+
+// locale
+{type: 'locale', value: 'de-DE'}
+
+// channelHandle
+{type: 'channelHandle', value: 'web'}
+
+// contentType
+{type: 'contentType', value: 'regular'}
+
+// notContentType (multiple value combinations possible)
+{type: 'notContentType', value: 'regular'}
+
+// ownerId
+{type: 'ownerId', value: 1}
+
+// channelId
+{type: 'channelId', value: 2}
+
+// dateRange
+const from = new Date('2016-01-23T15:00')
+const to = new Date('2015-04-05T20:00')
+{type: 'dateRange', key: 'created_at', from, to}
+
+// documentState (value: 'published', 'unpublished', 'deleted', 'draft', 'publishedWithDraft')
+{type: 'documentState', value: 'published'} 
+
+// metadata (multiple key, value combinations possible)
+{type: 'metadata', key: 'foo', value: 'bar'}
+{type: 'metadata', key: 'foo', value: {exists: true}}
+
+// task (multiple taskName and taskValue combinations possible)
+// taskValue: 'todo', 'doing', 'done'
+{type: 'task', taskName: 'proofreading', taskValue: 'pending'},
+{type: 'task', taskName: 'review', taskValue: 'done'}
+
+// sortBy (multiple values possible)
+{type: 'sortBy', value: '-created_at'},
+{type: 'sortBy', value: 'title'}
+```
+
+
+## Filter Query Examples
+
+#### Example 1 - filter by documentType
 ```
 defaultQueries: [
   {type: 'documentType', value: 'article'}
 ]
 ```
 
-This would reduce the search to only articles (no pages). The user has no way to change this.
+This would reduce the search to only articles (no pages).
 
-In addition to the values in the `displayFilters` you can also use a metadata query and a task query in the `defaultQueries`. The metadata query looks as follows:
 
+#### Example 2 - filter by metadata
 ```
 defaultQueries: [
   {type: 'metadata', key: 'foo', value: 'bar'}
 ]
 ```
 
-This would filter for only documents that have the value bar in the metadata field foo. You have to make sure that foo is a correctly indexed metadata field.
+This would filter for only documents that have the value `bar` in the metadata field `foo`. You have to make sure that `foo` is a correctly indexed metadata field.
 
-The tasks query looks as follows:
 
+#### Example 3 - filter by task
 ```
 defaultQueries: [
   {type: 'task', taskName: 'proofreading', taskValue: 'done'}
 ]
 ```
 
-This would filter for only documents that have had a successful proofreading. The core only exposes the 'proofreading' taks but you can define your own custom tasks. The values are 'todo', 'doing', 'done' for the 3 states that a task can have.
+This would filter for only documents that have had a successful proofreading. The core only exposes the `proofreading` task, but you can define your own custom tasks. The values are `todo`, `doing`, `done` for the 3 states that a task can have.
+
 
 ## Registering Custom Filters
 
