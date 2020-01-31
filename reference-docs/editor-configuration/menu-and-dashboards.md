@@ -484,7 +484,7 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
           'Authorization': `Bearer ${server.accessToken}`
         })
       })
-      await new Promise((resolve) => setTimeout(resolve, 2000))
+
       // only succeed on status codes 200 - 299
       if (!response.ok) throw new Error('contentTypeV2Filter was not able to fetch data')
       return response.json()
@@ -510,8 +510,9 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
     const options = data.contentTypes.map((ct) => {
       return {
         id: ct.handle,
-        type: 'contentType',
         label: ct.info.label,
+        // these props are used for creating a search request (see above section 'Filter Query Types')
+        type: 'contentType',
         value: ct.handle
       }
     })
