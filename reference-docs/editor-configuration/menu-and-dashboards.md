@@ -222,13 +222,15 @@ filters: {
 The following filters can be used in `displayFilters`:
 
 - `channels` give the user a dropdown to filter by a specific channel
-- `documentState`, unpublished, published, not yet published, my articles, needs proofreading, currently proofreading
+- `documentState`, unpublished, published, not yet published, my articles
 - `timeRange`, filter the search results in time ranges such as last 24 hours
 - `sortBy`: `relevance` (default), `creation_date`, `updated_at`, `alphabetical`  
   **ATTENTION:** if you use the `sortBy` in the displayFilters you can not at the same time configure a `sortBy` in the `defaultQueries`, only one is allowed.
 - `language`: uses the channel configuration for [available languages](../server-configuration/channel-config.md) to offer a select box to filter for languages (requires multi-language feature to be enabled)
 - `contentType`: uses the content-types configuration in your server to filter for different content-types, e.g. galleries or regular articles.
 - `category`: uses the channel configuration for categories to offer a multi-select box to filter for categories (OR filter)
+- `authors`: filters by author entries made in the data-records section
+- `proofreading`:  filters by the current proofreading state requested | accepted | done
 
 
 ## Filter Query Format
