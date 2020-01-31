@@ -123,7 +123,7 @@ Note that the custom component can only use document metadata that has been expl
 Filters on a dashboard are highly customisable in Livingdocs.
 
 - One can define filters in a dashboard (`displayFilters`)
-- One can use core filter or custom filter registered over the editors `coreApi` in the `displayFilters`.
+- One can use core filters provided by Livingdocs or custom filters registered over the editors `coreApi` in the `displayFilters`.
 - One can define the default search behaviour (`defaultQueries`/`emptySearchQueries`)
 
 Example:
