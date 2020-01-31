@@ -472,7 +472,7 @@ Process
 liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
   datasource: {
     // fetch data and inject response into mount function
-    async fetch ({project, user, server}) {
+    async fetch ({project, user, userGroup, server}) {
       const host = server.host
       const channelId = project.defaultChannel.id
       const uri = `${host}/channel-configs/properties?channelId=${channelId}&properties=contentTypes`
