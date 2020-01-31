@@ -130,9 +130,14 @@ Example:
 ```js
 // editor config
 filters: {
+  // filter groups
   articleList: {
+    // visible filters on the top of the dashboard
+    // core filter plugins and custom filter plugins can be defined here
     displayFilters: ['channels', 'contentType', 'timeRange', 'sortBy'],
+    // invisible
     defaultQueries: [{type: 'documentType', value: 'article'}],
+    // invisibile
     emptySearchQueries: [{type: 'documentType', value: 'article'}]
   },
   inlineArticleList: {
@@ -229,10 +234,10 @@ The following filters can be used in `displayFilters`:
 ## Filter Query Format
 
 There are different places, where one can define a filter query
-- baseFilters (dashboard property)
-- defaultQueries (filter group property)
-- emptySearchQueries (filter group property)
-- custom filter (your own filter added to `displayFilters`)
+- `baseFilters` (used for dashboards)
+- `defaultQueries` (see [Filter config properties](#filter-config-properties-see-example) section for a description)
+- `emptySearchQueries` (see [Filter config properties](#filter-config-properties-see-example) section for a description)
+- `custom filter` (your custom filter added to `displayFilters` - see 'Registering Custom Filter' section how to register and implement a custom filter)
 
 At all this places, one can use the same query format, e.g.
 
@@ -323,9 +328,22 @@ defaultQueries: [
 This would filter for only documents that have had a successful proofreading. The core only exposes the `proofreading` task, but you can define your own custom tasks. The values are `todo`, `doing`, `done` for the 3 states that a task can have.
 
 
-## Registering Custom Filters
+## Registering Custom Filter
 
-#### Example: Register list
+Its possible to register a custom filter and add it to `displayFilters` in the editor config (see [example](#overview)).
+
+At the moment there are 2 types of custom filters (click on the link to get see a description/example):
+- [List Filter](#register-custom-list-filter)
+- [Angular Component Filter](#register-custom-angular-component-filter)
+
+Hint: If you want to create a filter with metadata, make sure they are setup correctly in the ElasticSearch index (`search.metadata_mapping` config in the server)
+
+
+### Register Custom List Filter
+
+Deprecated since: `release-2020-02`
+
+#### Example
 
 `searchFilters.registerList` registers a filter based on a config object to create an Angular directive for the search UI.
 Display is controlled with the `filters` key in the configuration.
@@ -368,7 +386,9 @@ liEditor.searchFilters.registerList('creationDate', {
 })
 ```
 
-#### Example: Register Angular Component Declaration
+### Register Custom Angular Component Filter
+
+#### Example
 
 `searchFilters.registerAngularComponent` registers an Angular component as filter for the search UI.
 Display is controlled with the `filters` key in the configuration.
