@@ -1,4 +1,4 @@
-# Publication index
+# Search published documents
 
 The publication index is an elastic search index that allows developers to do queries in order to retrieve published documents from Livingdocs.
 
@@ -14,7 +14,7 @@ Two larger concepts are configurable by customers:
 - the date logic, in particular sort date and scheduled publishing
 - generic filter values from custom metadata fields that can be used to query
 
-The definition of the custom indexing is done in the channel-config in a new sub-property of `contentTypes` that is called `publicationIndex`. Below is a sample configuration for an article content-type.
+The definition of the custom indexing is done in the server's channel-config in a new sub-property of `contentTypes` that is called `publicationIndex`. Below is a sample configuration for an article content-type.
 
 ```
 publicationIndex: {
@@ -71,7 +71,9 @@ publicationIndex: {
   }
 }
 ```
-As with the channel-config, the metadata plugin can also have an entry `publicationIndex`. There you define how the publication index should get the value from the metadata entry. You can return 3 things:
+As with the channel-config, the metadata plugin can also have an entry `publicationIndex`.
+First of all, you need to set `enabled` to true so that indexing of this metadata plugin to the index is allowed. The `getValue` method is optional, if you don't define one, it will just index the whole value stored in the metadata entry.
+If you define `getValue`, you can return 3 things:
 
 - a string, will result in a simple `key=val` entry
 - an array, will create a `key=val` entry for each entry in the array
@@ -79,7 +81,7 @@ As with the channel-config, the metadata plugin can also have an entry `publicat
 
 ## Search Publications
 
-After setting up you publication index you can use either the public API or the core's search API to query for published documents. The documentation for the public API can be found here: https://edit.livingdocs.io/public-api (under "search Publications").
+After setting up your publication index you can use either the public API or the core's search API to query for published documents. The documentation for the public API can be found here: https://edit.livingdocs.io/public-api (under "search Publications").
 
 The core API allows you all the options of the public API plus some additional ones. To get the search API, do the following in your server-side feature:
 ```
