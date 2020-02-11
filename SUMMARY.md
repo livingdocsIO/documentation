@@ -113,6 +113,8 @@
 * [How to Configure and Interpret Varnish](reference-docs/maintenance/how-to-varnish.md)
 
 
+## Livingdocs Service
+* [Project Setup](service/project_setup.md)
 
 <!-- ## Livingdocs core development
 
