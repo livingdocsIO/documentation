@@ -1,14 +1,35 @@
 # Hugo Drag and Drop
 
-## Overview
+## Basic Configuration
 
-In case you use _huGO+_ as Digital Assets Management software, you can import articles from huGO+ by dragging and dropping them into livingdocs. There are two types of articles available for imports: _Agency_ and _Archive_ articles. Agency articles are imported from established news agencies like _DPA_, _Reuters_, etc. Archive articles come from sources you specify on your own: If you have a print system or any other system and wish to feed articles into huGO+ you would get Archive articles.
+To enable dragging both images and documents from _huGO+_ into livingdocs you first need to configure `hugo.resource`
+in the [server configuration](../server-configuration/config.md)
 
-## Preparation
 
-Think about what types of articles you want to create from an imported hugo document, what design and layout you'd like them to have. You can specify any number of target documents with designs and layouts that are available to you.
+## Image Drag and Drop
 
-## Configuration
+Images can be dragged onto a livingdocs document directly from _huGO+_ after the basic configuration is set up.
+
+Note: you can restrict from which sources images can be uploaded, e.g. you could allow only uploads from _huGO+_.
+See [Image Source Policy](../editor-configuration/image-source-policy.md)
+
+
+## Document Drag and Drop
+
+In case you use _huGO+_ as Digital Assets Management software, you can import articles from huGO+ by dragging and dropping them onto a livingdocs dashboard.
+
+There are two types of articles available for imports:
+* Agency articles   
+  These are imported from established news agencies like _DPA_, _Reuters_, etc.
+* Archive articles  
+  They come from sources you specify on your own: If you have a print system or any other system and wish to feed articles into huGO+ you would get Archive articles.
+
+
+### Preparation
+
+Think about what types of articles you want to create from an imported hugo document and which contentType you'd like them to have. You can specify multiple target documents with different contentTypes.
+
+### Configuration
 
 This configuration is needed to let the server know what kind of target designs and layouts are available, which transformations handle them and where these transformations are located.
 
@@ -24,7 +45,7 @@ hugo:
       dir: 'agency' # Specify the directory that contains transformations for agency articles
       layouts: [ # Arbitrary number of targets possible
         design: 'timeline' # You'd typically want to specify your own design here
-        layout: 'regular' # This can be any layout that is embedded in your design
+        layout: 'regular' # This can be any contentType from your project.
         transformation: 'regular' # This corresponds to a file named 'regular.js' that holds code for this particular transformation
       ,
         design: 'limestone'
@@ -42,11 +63,11 @@ hugo:
 
 **Important**: Every item in the configuration object is required for the feature to work.
 
-## Transformations
+### Transformations
 
 Now that you have configured the feature you'll want to provide transformations so the huGO+ document can be converted to a document that corresponds to your design and layout.
 
-A transformation is a single function that is expected to return an object containing a [`livingdoc`](https://docs.livingdocs.io/reference-docs/common-livingdoc/livingdoc.html) and [`metadata`](https://docs.livingdocs.io/reference-docs/server-configuration/metadata.html) and should have following signature:
+A transformation is a single function that is expected to return an object containing a [`livingdoc`](../common-livingdoc/livingdoc.md) and [`metadata`](../server-configuration/metadata.md) and should have following signature:
 
 ```js
 // E.g. ./plugins/hugo-import-transformations/agency/regular.js
@@ -61,7 +82,7 @@ module.exports = function ({hugoArticle, design, layout, metadata, imagesApi}, c
 
 You are provided with the `hugoArticle` you imported, the `design` and `layout` you have specified in your config and the `imagesApi` which is a service you can use to handle images, e.g. uploading them to your storage. You also have the possibility to pass additional metadata which must have been defined beforehand (see below).
 
-## Example transformation
+### Example transformation
 
 ```js
 const async = require('async')
@@ -164,10 +185,10 @@ function getMetadata (hugoArticle) {
 }
 ```
 
-## Metadata
+### Metadata
 You might want to store data that's embedded in each `hugoArticle` thus you need to specify that data in order for it to be valid.
 
-### Metadata plugin
+#### Metadata plugin
 ```js
 // plugins/metadata/hugo.js
 
@@ -206,7 +227,7 @@ module.exports = {
 
 ```
 
-### Elasticsearch metadata
+#### Elasticsearch metadata
 The metadata you have specified should be made known to Elasticsearch as well.
 
 ```js
@@ -254,7 +275,7 @@ The metadata you have specified should be made known to Elasticsearch as well.
 
 ```
 
-### Configure articles
+#### Configure articles
 At last you have to configure all your possible huGO+ targets with the metadata plugin you created before.
 
 ```coffee
