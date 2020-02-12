@@ -13,7 +13,7 @@ With the following steps a project can be setup and used with a own design.
 # Design setup
 Use the https://github.com/livingdocsIO/magazine-example Design example to see a design example. This is not an embedded Design so it can't be used the same way as an embedded design.
 
-The config options for a design: [design configs](./reference-documentation/livingdocs-design/component_config.md)
+The config options for a design: [design configs](../reference-docs/common-designs/component_config.md)
 
 ### project config download and changes
 With the following steps an embedded Design can be created for the new project.
