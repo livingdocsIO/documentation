@@ -115,6 +115,10 @@
 
 ## Livingdocs Service
 * [Project Setup](service/project_setup.md)
+* [Project Setup](service/project_config.md)
+* [Project Setup](service/design_setup.md)
+* [Project Setup](service/design_settings_config.md)
+* [Project Setup](service/design_component_settings.md)
 
 <!-- ## Livingdocs core development
 
