@@ -1,11 +1,15 @@
 # Design settings config options
+
 ## Design description options
-```
+
+```js
 label: 'Demo Design',
 description: 'This is an example design',
 author: 'living doc'
 ```
+
 ## componentProperties
+
 Component properties let you define css classes or styles that can be set on
 the root element of a component.
 
@@ -14,15 +18,15 @@ You can add 3 different types:
 - option: user can enable or disable class
 - select: user can select a value from given options
 
-
 Component Properties definition in the design:
-```
+
+```js
 componentProperties: [{
-      type: 'style',
-      label: 'Background Color',
-      name: 'css-background-color',
-      // this is the property which is set with the input from the user
-      cssProperty: 'background-color'
+    type: 'style',
+    label: 'Background Color',
+    name: 'css-background-color',
+    // this is the property which is set with the input from the user
+    cssProperty: 'background-color'
   }, {
     type: 'option',
     label: 'Thin',
@@ -46,62 +50,64 @@ componentProperties: [{
 
 Component definition:
 add the properties property to the component definition
+
+```js
+properties: ['css-background-color', 'css-class', 'css-class-selection']
 ```
-  properties: ['css-background-color', 'css-class', 'css-class-selection']
-```
+
 ## assets
 You can add custom css and js files to your design. These files will be loaded in the editor to show an article.
 
-```
+```js
 assets: {
-    css: [
-      'url to css'
-    ], 
-    js: [
-        'url to js'
-    ]
-  }
+  css: [
+    'url to css'
+  ], 
+  js: [
+    'url to js'
+  ]
+}
 ```
 
 ## componentGroups
 To group different components together a componentGroups section can be added. 
 
 The group alwasys have a name, label and the components.
-```
-  componentGroups: [{
-    name: 'content',
-    label: 'Components',
-    components: ['title', 'p']
-  }, {
-    name: 'media',
-    label: 'Media',
-    components: ['image', 'insta']
-  }]
+```js
+componentGroups: [{
+  name: 'content',
+  label: 'Components',
+  components: ['title', 'p']
+}, {
+  name: 'media',
+  label: 'Media',
+  components: ['image', 'insta']
+}]
 ```
 
 ## defaultComponents
 For the different component types in a livingdoc the default component can be defined. 
 These components are used on default operation like drag and drop an image or after the enter/return key is pressed and a new component will be created.
 
-```
-  defaultComponents: {
-    // enter/return key is pressed and a new component will be created
-    paragraph: 'p',
+```js
+defaultComponents: {
+  // enter/return key is pressed and a new component will be created
+  paragraph: 'p',
 
-    // drag and drop an image
-    image: 'image'
-  },
+  // drag and drop an image
+  image: 'image'
+}
 ```
 
 ## fieldExtractor
-```
- // extract the content of a field to set a metadata 
-  fieldExtractor: [{
-    // metadata field name
-    identifier: 'title',
-    // type of metadata text or image
-    type: 'text',
-    // matches in the document componentName.directiveName
-    matches: ['title.title']
-  }]
+```js
+// extract the content of a field to set a metadata 
+fieldExtractor: [{
+  // metadata field name
+  identifier: 'title',
+  // type of metadata text or image
+  type: 'text',
+  // matches in the document componentName.directiveName
+  matches: ['title.title']
+}]
 ```

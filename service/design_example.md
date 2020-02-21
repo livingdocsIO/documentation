@@ -1,11 +1,12 @@
-# Design setup
-This is a small example to setup a design for the service. On the service the embedded design is used. Otherwise we only can use a default design and can't change it.
+# Embedded Design Example
+
+This is a small example to setup an embedded design for the service.
 
 ## Use embedded design
-- Add following properties to the index.js in the [project config](./project_setup.md)
+- Add following properties to the index.js in the [project config](./project_config.md)
 
-```
-designSettings: require('./design_settings'),
+```js
+designSettings: require('./design-settings'),
 components: [
   require('./components/image'),
   require('./components/insta'),
@@ -14,13 +15,16 @@ components: [
 ]
 ```
 
-### The design_settings
+### designSettings
+
 We use external assets because we can’t upload it at the moment on the livingdocs service
-The assets (javascript, css and images) has to be uploaded on an external service manually.
-```
+The assets (javascript, css and images) has to be uploaded on an external service manually (cdn/s3).
+
+```js
+// ./design-settings.js
 module.exports = {
  
- // assets for the design
+  // assets for the design
   assets: {
     css: [
       // https://materializecss.com/
@@ -50,12 +54,15 @@ module.exports = {
 }
 ```
  
-### The component configs
-For each component we create a file
-The dedent must be installed with npm in the project
+### components
+
+For each component we create a file.
 
 #### paragraph
-```
+```js
+// ./components/paragraph.js
+
+// add dedent to your package.json
 const dedent = require('dedent')
  
 module.exports = {
@@ -71,7 +78,10 @@ module.exports = {
 ```
 
 #### image
-```
+
+```js
+// ./components/image.js
+
 const dedent = require('dedent')
  
 module.exports = {
@@ -92,7 +102,10 @@ class="responsive-img">
 ```
 
 #### title
-```
+
+```js
+// ./components/title.js
+
 const dedent = require('dedent')
  
 module.exports = {
@@ -106,7 +119,10 @@ module.exports = {
 ```
 
 #### instagram
-```
+
+```js
+// ./components/instagram.js
+
 const dedent = require('dedent')
  
 module.exports = {
@@ -124,13 +140,3 @@ module.exports = {
     </div>`
 }
 ```
-
-## Design restrictions
-At the moment following changes on the design are not supported.
-- rename a directive in a component
-- rename a component
-- add a new directive to a component
-- remove a component (please remove it only from the content-type)
-
-## Design links
-Use the https://github.com/livingdocsIO/magazine-example Design example to see a design example. This is not an embedded Design so it can't be used the same way as an embedded design.

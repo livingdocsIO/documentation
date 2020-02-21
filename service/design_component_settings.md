@@ -1,7 +1,7 @@
 # Component settings
-Please continue to the [component config](../reference-docs/common-designs/component_config.md) section. In this section everything is described with the html template. Please use instead the following template: 
 
-```
+Example:
+```js
 const dedent = require('dedent')
  
 module.exports = {
@@ -13,3 +13,5 @@ module.exports = {
     `
 }
 ```
+
+The [component config reference documentation](../reference-docs/common-designs/component_config.md) describes everything you need to know about components. The 'component config reference documentation' example uses an outdated format, but with the above example, you should be able to adapt the code.

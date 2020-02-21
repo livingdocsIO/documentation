@@ -14,6 +14,11 @@ in a `Livingdoc` and how users can interact with these `Components` in the
 
 See *Upstream*.
 
+## Embedded Design
+
+An "Embedded Design" lives inside of a Livingdocs channel configuration, therefore every "Embedded Design" is unique per project.
+Another design type is a [Referenced Design](#referenced-design).
+
 ## [HuGO](http://www.sternwald.com/hugo/)
 
 A Digital Assets Management product developed and maintained by Sternwald, used
@@ -33,6 +38,11 @@ A print publishing system.
 ## Project
 
 Represents an organisation and consists of users and channels.
+
+## Referenced Design
+
+A "Referenced Design" can be used multiple times in different projects.
+Another design type is an [Embedded Design](#embedded-design).
 
 ## Upstream
 
