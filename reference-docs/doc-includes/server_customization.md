@@ -72,7 +72,7 @@ Let's register an include renderer for the core include `embed-teaser`. Since ar
 ```js
 const includesApi = liServer.features.api('li-includes')
 
-await includesApi.registerService([
+await includesApi.registerServices([
   // registers the include rendering service
   require('./plugins/includes/embed-teaser.js')
   require('./plugins/includes/twitter.js')

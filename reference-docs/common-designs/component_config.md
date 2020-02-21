@@ -398,8 +398,6 @@ Example:
 
 ### `doc-include` directive
 
-`service`: defines the service type to use which corresponds to the name of an existing server-side plugin. `doc-include` services are freely configurable and are implemented as plugins in customizing projects. The concept is similar to [edge side includes](https://en.wikipedia.org/wiki/Edge_Side_Includes).
-
 Example:
 ```html
 <script type="ld-conf">
@@ -407,7 +405,7 @@ Example:
     "name": "top-row",
     "label": "Top Row",
     "directives": {
-      "latest-news": {
+      "latest-news": { // doc-include definition used on line 31
         "service": "list",
         "defaultParams": {
           "count": 5,
@@ -444,6 +442,15 @@ Example:
 </div>
 ```
 
-`defaultParams`: set of default parameters that are sent to the server-side plugin. Usually you will implement an editor plugin that allows users to change the default parameters in the editor.
+**service**
 
-`config`: configuration parameters that are sent to the editor plugin to customize the user interface.
+`service` handle defines which server-side plugin is used to render a `doc-include` (via `includesApi.registerService()`).
+
+**defaultParams**
+
+`defaultParams` Are passed to the server-side plugin and can be used to render the include based on the data passed. 
+Usually you will implement an editor-side plugin that allows users to change the `defaultParams` in the editor.
+
+**config**
+
+`config` parameters are passed to the editor-side plugin and can be used to render the UI based on the data passed. For example you could let the user choose between `minCount` and `maxCount` of rendered articles in a list.
