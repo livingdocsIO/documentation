@@ -13,13 +13,14 @@ This short guide explains how to set up and use the service with your own design
   - modify the project settings
   - add contentTypes
   - define components and metadata in contentTypes
+  - define your design [design settings](./project_config.md#designSettings)
 - [Publish](#publish-a-project-config-to-the-service) your project config and the embedded design at the Livingdocs Service
 
 #### 3) Administration
 - Create groups with the different Rights
 - Invite Users to your project
 
-#### 4) Embed documents on your webside
+#### 4) Embed documents on your website
 - [Show documents on your frontend](#show-documents-on-your-frontend)
 
 
@@ -59,5 +60,5 @@ After modifying the project config and the design locally, you can publish the c
 
 # Show documents on your frontend
 
-To render documents on your webside, you have to load them via [Livingdocs public API](https://edit.livingdocs.io/public-api)
+To render documents on your website, you have to load them via [Livingdocs public API](https://edit.livingdocs.io/public-api)
 

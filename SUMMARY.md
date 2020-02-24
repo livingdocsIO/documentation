@@ -115,6 +115,10 @@
 
 ## Livingdocs Service
 * [Getting started](service/getting_started.md)
+* Reference docs
+  * [Project config](service/project_config.md)
+  * [Design settings](service/design_settings_config.md)
+  * [Design component](service/design_component_settings_config.md)
 
 <!-- ## Livingdocs core development
 

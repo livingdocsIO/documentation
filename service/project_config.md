@@ -1,6 +1,6 @@
 # project config
 
-A project config defines the project specific config, contentTypes and designs.
+A project config defines the project specific config, contentTypes and designs. To build a custom design the [designSettings](#designSettings) and [components](#components) can be modified.
 
 Example:
 ```js
@@ -21,6 +21,10 @@ module.exports = {
 }
 ```
 
+## v
+
+This is the version of the config schema. This value is fixed.
+
 ## $baseRevision
 
 This is an internal property used for version management.
@@ -38,7 +42,7 @@ This is an internal property used for version management.
 
 ## contentTypes
 
-A project can have multiple contentTypes. An example for a contentTypes is a "Regular article" or a "Gallery article". Every contentTypes can have different components and metadata.
+A project can have multiple contentTypes. An example for a contentTypes is a "Regular article" or a "Gallery article". Every contentType can have different components and metadata.
 
 #### References
 - [contentType reference documentation](../reference-docs/server-configuration/content-type-config.md)
