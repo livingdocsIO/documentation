@@ -18,8 +18,8 @@ app: {
       'italic': true,
       'superscript': false,
       'subscript': false,
-      'swissQuotes': false,
-      'singleQuotes': false,
+      'quotes': ['«', '»'],
+      'singleQuotes': ['‹', '›'],
       'link': true,
       'specialChars': true
     },
@@ -27,8 +27,27 @@ app: {
   }
 }
 ```
-
 The example would result in a toolbar with a button for toggling text `bold`, `italic`, make it a `link` and adding `specialChars`.
+
+
+Some example quotes configs:
+```js
+// swiss
+quotes: ['«', '»']
+singleQuotes: ['‹', '›']
+
+// german
+quotes:  ['„', '“']
+singleQuotes: ['‚', '‘']
+
+// german with guillemets
+quotes: ['»', '«']
+singleQuotes: ['›', '‹']
+
+// english
+quotes: ['“', '”']
+singleQuotes: ['‘', '’']
+```
 
 
 #### Special Characters
@@ -172,7 +191,7 @@ Custom spellchecker (examples are NZZs vademecum or Duden):
 ```js
 app: {
   editable: {
-    // This will simply disable spellchecking on the `contenteditable` element. This is 
+    // This will simply disable spellchecking on the `contenteditable` element. This is
     // recommended when using a custom spellchecker.
     browserSpellcheck: false
   }
