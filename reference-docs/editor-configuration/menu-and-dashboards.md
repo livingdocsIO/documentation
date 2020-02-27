@@ -131,7 +131,7 @@ app: {
 }
 ```
 
-There are three types of dashboard configurations 
+There are three types of dashboard configurations
 - `dashboard`
 - `kanbanBoard`
 - `taskBoard` (predefined `kanbanBoard` for a task)
@@ -200,29 +200,32 @@ dashboards: [{
   // This is the name of the angular component to use in all columns
   // (can also be defined for each columns separately)
   componentName: 'liTaskCard',
+  // include all metadata properties in the search response data
+  fields: ['metadata.*'],
   // Set the target when clicking on a card. Currently supported:
   // - 'article' (default setting)
   // - 'tasks'
   openState: 'tasks',
+  showFooter: true,
   columns: [{
     handle: 'requested',
     label: 'Needs Proofreading',
     // Filter applied for this column on top of the `baseFilter`
-    columnFilter: [{type: 'metadata', propertyName: 'proofreading', value: 'requested'}],
-    sort: ['-proofreading_deadline'],
+    columnFilter: [{type: 'metadata', key: 'proofreading.state', value: 'requested'}],
+    sort: [`metadata.proofreading.priority`, `metadata.proofreading.deadline`]
     // The componentOptions are injected into the component `liTaskCard` (in this example)
     componentOptions: {column: 'todo', taskName: 'proofreading'}
   }, {
     handle: 'in-progress',
     label: 'In Progress',
-    columnFilter: [{type: 'metadata', propertyName: 'proofreading', value: 'inProgress'}],
-    sort: ['-updated_at'],
+    columnFilter: [{type: 'metadata', key: 'proofreading.state', value: 'accepted'}],
+    sort: [`metadata.proofreading.priority`, `-metadata.proofreading.accepted.date`],
     componentOptions: {column: 'doing', taskName: 'proofreading'}
   }, {
     handle: 'done',
     label: 'Finished Proofreading',
-    columnFilter: [{type: 'metadata', propertyName: 'proofreading', value: 'done'}],
-    sort: '-updated_at',
+    columnFilter: [{type: 'metadata', key: 'proofreading.state', value: 'completed'}],
+    sort: [`-metadata.proofreading.completed.date`],
     componentOptions: {column: 'done', taskName: 'proofreading'}
   }]
 }]
@@ -393,7 +396,7 @@ const to = new Date('2015-04-05T20:00')
 {type: 'dateRange', key: 'created_at', from, to}
 
 // documentState (value: 'published', 'unpublished', 'deleted', 'draft', 'publishedWithDraft')
-{type: 'documentState', value: 'published'} 
+{type: 'documentState', value: 'published'}
 
 // metadata (multiple key, value combinations possible)
 {type: 'metadata', key: 'foo', value: 'bar'}
@@ -581,10 +584,10 @@ coreApi.searchFilters.registerAngularComponent('test', {
     value: '='
   },
   template: `
-    <div 
-      ng-class="{'is-set': $ctrl.isActive}" 
-      class="ld-filter" 
-      ng-click="$ctrl.toggleProjectFilter()" 
+    <div
+      ng-class="{'is-set': $ctrl.isActive}"
+      class="ld-filter"
+      ng-click="$ctrl.toggleProjectFilter()"
       ng-if="$ctrl.hasPrint"
     >
       <div class="ld-dropdown__text">
