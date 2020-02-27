@@ -214,19 +214,32 @@ textcount: {
 }
 ```
 
-It is also possible to only count the text of selected components (if `components` is null or an empty array it will count the text of all components):
+#### Excluding components and directives (configured in the livingdocs component library)
 
+It is also possible to only count the text of selected components or directives. This
+is configured in the component library of a livingdocs design.
+
+Exclude whole components from the text counter (example component config):
 ```js
-textcount: {
-  isEnabled: true,
-  timeout: 200,
-  components: [
-    'p',
-    'list-item',
-    'quote'
-  ]
+{
+  "name": "aside",
+  "label": "Aside",
+  "excludeFromTextCount": true
 }
 ```
+
+Exclude individual directives from the text counter (example component config):
+```js
+{
+  "name": "quote",
+  "label": "Quote",
+  "directives": {
+    "text": {"excludeFromTextCount": true},
+    "source": {"excludeFromTextCount": true}
+  }
+}
+```
+
 
 ## Links
 
