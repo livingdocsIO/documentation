@@ -48,7 +48,8 @@
   * [Customizing the Navigation](reference-docs/editor-configuration/main-navigation.md)
   * [Login](reference-docs/editor-configuration/login.md)
 * Livingdocs Design
-  * [Design Config](reference-docs/common-designs/design_config.md)
+  * [Design Config v1](reference-docs/common-designs/design_config_v1.md)
+  * [Design Config v1 to v2 mapping](reference-docs/common-designs/design_config_v1_to_v2.md)
   * [Component Config](reference-docs/common-designs/component_config.md)
 * Livingdocs Content Model
   * [Livingdoc](reference-docs/common-livingdoc/livingdoc.md)
