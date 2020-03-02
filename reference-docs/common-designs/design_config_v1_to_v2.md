@@ -46,9 +46,6 @@ const v2 = {
   version: '1.0.0',  
   components: [{name, label, iconUrl, directives, html, ...}],
   designSettings: {
-    label: '',
-    description: '',
-    author: '',
     assets: {},
     componentGroups: [],
     defaultComponents: {},
