@@ -23,7 +23,7 @@ The assets (javascript, css and images) has to be uploaded on an external servic
 ```js
 // ./design-settings.js
 module.exports = {
- 
+
   // assets for the design
   assets: {
     css: [
@@ -31,21 +31,21 @@ module.exports = {
       'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'
     ]
   },
- 
+
   // group components
   componentGroups: [{
     name: 'content',
     label: 'Components',
     components: ['title', 'p', 'image', 'insta']
   }],
- 
+
   // default components for a paragraph and image
   defaultComponents: {
     paragraph: 'p',
     image: 'image'
   },
- 
-  // extract the content of a field to set a metadata 
+
+  // extract the content of a field to set a metadata
   fieldExtractor: [{
     identifier: 'title',
     type: 'text',
@@ -53,7 +53,7 @@ module.exports = {
   }]
 }
 ```
- 
+
 ### components
 
 For each component we create a file.
@@ -64,7 +64,7 @@ For each component we create a file.
 
 // add dedent to your package.json
 const dedent = require('dedent')
- 
+
 module.exports = {
   name: 'p',
   label: 'Paragraph',
@@ -83,7 +83,7 @@ module.exports = {
 // ./components/image.js
 
 const dedent = require('dedent')
- 
+
 module.exports = {
   name: 'image',
   label: 'Image',
@@ -94,9 +94,9 @@ module.exports = {
     imageRatios: ['16:9', '1:1', '4:3', '3:4']
  }],
   html: dedent`
-<img
-doc-image="img"
-class="responsive-img">
+    <img
+    doc-image="img"
+    class="responsive-img">
   `
 }
 ```
@@ -107,14 +107,14 @@ class="responsive-img">
 // ./components/title.js
 
 const dedent = require('dedent')
- 
+
 module.exports = {
   name: 'title',
   label: 'Title',
   iconUrl: 'https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_header_simple.svg',
   html: dedent`
     <h2 doc-editable="title">Title</h2>
-    `
+  `
 }
 ```
 
@@ -124,7 +124,7 @@ module.exports = {
 // ./components/instagram.js
 
 const dedent = require('dedent')
- 
+
 module.exports = {
   name: 'insta',
   label: 'Instagram',
@@ -137,6 +137,7 @@ module.exports = {
   html: dedent`
     <div doc-include="insta">
         <div>Instagram Include</div>
-    </div>`
+    </div>
+  `
 }
 ```

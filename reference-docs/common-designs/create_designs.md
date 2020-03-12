@@ -21,42 +21,7 @@ Let's start with a possible end result of a Livingdocs design definition.
 
 ```js
 var designDefinition = {
-
-  // General design information
-  name: 'designName',
-  version: '1.0.0',
-  author: 'Peter Pan',
-
-  // Assets required by the design
-  assets: {
-    css: ["/stylesheets/test.css"]
-  },
-
-  // All available properties you can define on your components.
-  // A componentProperty is for example a css class a user can
-  // toggle on a component.
-  componentProperties: {
-    'position': {
-      label: 'Position',
-      type: 'select',
-      options: [
-        {
-          caption: 'Default'
-        }, {
-          caption: 'Left',
-          value: 'position-left'
-        }, {
-          caption: 'Right',
-          value: 'position-right'
-        }
-      ]
-    },
-    'extra-space': {
-      label: 'Extra Space',
-      type: 'option',
-      value: 'extra-space'
-    }
-  },
+  v: 2,
 
   // Here are the available components.
   // This is the central piece of every design definition.
@@ -83,37 +48,67 @@ var designDefinition = {
     }
   ],
 
-  // Groups are just required to show your components in the
-  // user interface. You can group and order the appearance of
-  // your components here.
-  groups: [
-    {
+  designSettings: {
+
+    // General design information
+    name: 'designName',
+    version: '1.0.0',
+    author: 'Peter Pan',
+
+    // Assets required by the design
+    assets: {
+      css: ["/stylesheets/test.css"]
+    },
+
+    // Groups are just required to show your components in the
+    // user interface. You can group and order the appearance of
+    // your components here.
+    componentGroups: [{
+      name: 'headers',
       label: 'Headers',
       components: ['title']
     }, {
-      label: 'Text',
-      components: ['paragraph']
-    }
-  ],
+      name: 'content',
+      label: 'Content',
+      components: ['paragraph', 'image']
+    }],
 
-  // The defaults paragraph component defines which component is
-  // inserted if a user hits ENTER.
-  // The default image component defines which image component is
-  // inserted if a user drags and drops an image on a document
-  defaultComponents: {
-    paragraph: 'paragraph',
-    image: 'image'
-  },
+    // All available properties you can define on your components.
+    // A componentProperty is for example a css class a user can
+    // toggle on a component.
+    componentProperties: {
+      'position': {
+        label: 'Position',
+        type: 'select',
+        options: [
+          {
+            caption: 'Default'
+          }, {
+            caption: 'Left',
+            value: 'position-left'
+          }, {
+            caption: 'Right',
+            value: 'position-right'
+          }
+        ]
+      },
+      'extra-space': {
+        label: 'Extra Space',
+        type: 'option',
+        value: 'extra-space'
+      }
+    },
 
-  // Image ratios allow you to control the aspect ratios
-  // of uploaded images.
-  imageRatios: {
-    "16:9": {
-      label: "16:9 Cinemascope",
-      ratio: "16/9"
+    // The defaults paragraph component defines which component is
+    // inserted if a user hits ENTER.
+    // The default image component defines which image component is
+    // inserted if a user drags and drops an image on a document
+    defaultComponents: {
+      paragraph: 'paragraph',
+      image: 'image'
     }
   }
-};
+}
 ```
 
 
