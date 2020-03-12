@@ -20,28 +20,28 @@ The search is exactly the same as in the documents dashboard (first screen after
 
 Lets see an example component in a Livingdocs design.
 
-```
+```html
 <script type="ld-conf">
 {
   "name": "gallery-embed",
   "label": "Gallery embed",
-  "directives": {
-    "gallery-embed": {
-      "service": "embed-teaser",
-      "defaultParams": {
-        "layout": "gallery"
-      },
-      "config": {
-        "search": {
-          "defaultQueries": [
-            {"type": "documentType", "value": "article"},
-            {"type": "metadata", "key": "layout", "value": "gallery"}
-          ],
-          "displayFilters": ["documentState"]
-        }
+  "directives": [{
+    "name": "gallery-embed",
+    "type": "include",
+    "service": "embed-teaser",
+    "defaultParams": {
+      "layout": "gallery"
+    },
+    "config": {
+      "search": {
+        "defaultQueries": [
+          {"type": "documentType", "value": "article"},
+          {"type": "metadata", "key": "layout", "value": "gallery"}
+        ],
+        "displayFilters": ["documentState"]
       }
     }
-  }
+  }]
 }
 </script>
 
@@ -125,23 +125,23 @@ The image above shows how a manually sorted list of article teasers is created i
 
 #### Design definition
 
-```
+```html
 <script type="ld-conf">
 {
   "name": "top-news",
   "label": "Top News",
-  "directives": {
-    "top-news": {
-      "service": "list",
-      "defaultParams": {
-        "layout": "topNews"
-      },
-      "config": {
-        "minCount": 5,
-        "maxCount": 5
-      }
+  "directives": [{
+    "name": "top-news",
+    "type": "include",
+    "service": "list",
+    "defaultParams": {
+      "layout": "topNews"
+    },
+    "config": {
+      "minCount": 5,
+      "maxCount": 5
     }
-  }
+  }]
 }
 </script>
 

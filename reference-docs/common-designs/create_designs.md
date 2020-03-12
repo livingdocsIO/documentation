@@ -19,7 +19,7 @@ To use a Livingdocs design you have to upload the JSON file and all its dependen
 
 Let's start with a possible end result of a Livingdocs design definition.
 
-```javascript
+```js
 var designDefinition = {
 
   // General design information
@@ -74,11 +74,11 @@ var designDefinition = {
     }, {
       name: 'image',
       label: 'Image',
-      directives: {
-        image: {
-          imageRatios: ["16:9"]
-        }
-      },
+      directives: [{
+        name: 'image',
+        type: 'image',
+        imageRatios: ["16:9"]
+      }],
       html: '<img doc-image="image">'
     }
   ],

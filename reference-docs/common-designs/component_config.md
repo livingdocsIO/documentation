@@ -103,11 +103,11 @@ Example:
 <script type="ld-conf">
 {
   "label": "Page Title",
-  "directives": {
-    "text": {
-      "plainText": true
-    }
-  }
+  "directives": [{
+    "name": "text",
+    "type": "editable",
+    "plainText": true
+  }]
 }
 </script>
 
@@ -123,11 +123,11 @@ Example:
 <script type="ld-conf">
 {
   "label": "Paragraph",
-  "directives": {
-    "text": {
-      "tagWhitelist": ['a', 'em']
-    }
-  }
+  "directives": [{
+    "name": "text",
+    "type": "editable",
+    "tagWhitelist": ['a', 'em']
+  }]
 }
 </script>
 
@@ -143,11 +143,11 @@ Example where an editable directive cannot contain links:
 <script type="ld-conf">
 {
   "label": "Subtitle",
-  "directives": {
-    "text": {
-      "tagBlacklist": ['a']
-    }
-  }
+  "directives": [{
+    "name": "text",
+    "type": "editable",
+    "tagBlacklist": ['a']
+  }]
 }
 </script>
 
@@ -166,11 +166,11 @@ Example, only count text directive:
 <script type="ld-conf">
 {
   "label": "Footer",
-  "directives": {
-    "text": {
-      "excludeFromTextCount": true
-    }
-  }
+  "directives": [{
+    "name": "text",
+    "type": "editable",
+    "excludeFromTextCount": true
+  }]
 }
 </script>
 
@@ -190,32 +190,33 @@ Example:
 <script type="ld-conf">
   {
     "label": "Web Teaser",
-    "directives": {
-      "link": {
-        "prefill": {
-          "title": {
-            "key": "title",
-            "provider": "iframely"
-          },
-          "site": {
-            "key": "site",
-            "provider": "iframely"
-          },
-          "headline": {
-            "key": "author",
-            "provider": "iframely"
-          },
-          "image": {
-            "key": "image",
-            "provider": "iframely"
-          }
+    "directives": [{
+      "name": "link",
+      "type": "link",
+      "prefill": {
+        "title": {
+          "key": "title",
+          "provider": "iframely"
+        },
+        "site": {
+          "key": "site",
+          "provider": "iframely"
+        },
+        "headline": {
+          "key": "author",
+          "provider": "iframely"
+        },
+        "image": {
+          "key": "image",
+          "provider": "iframely"
         }
-      },
-      "image": {
-        "imageRatios": ["16:9"],
-        "allowOriginalRatio": false
       }
-    }
+    }, {
+      "name": "image",
+      "type": "image",
+      "imageRatios": ["16:9"],
+      "allowOriginalRatio": false
+    }]
   }
 </script>
 
@@ -246,12 +247,12 @@ Example:
 <script type="ld-conf">
 {
   "label": "Normal Image",
-  "directives": {
-    "image": {
-      "imageRatios": ["16:9", "1:1", "4:3", "3:4"],
-      "allowOriginalRatio": true
-    }
-  }
+  "directives": [{
+    "name": "image",
+    "type": "image",
+    "imageRatios": ["16:9", "1:1", "4:3", "3:4"],
+    "allowOriginalRatio": true
+  }]
 }
 </script>
 
@@ -279,18 +280,16 @@ Example:
 {
   "label": "Bullet List",
   "name": "bullet-list",
-  "directives": {
-    "list": {
-      "defaultComponents": {
-        "paragraph": "bullet-list-item"
-      },
-      "defaultContent": [
-        {
-          "component": "bullet-list-item"
-        }
-      ]
-    }
-  }
+  "directives": [{
+    "name": "list",
+    "type": "container",
+    "defaultComponents": {
+      "paragraph": "bullet-list-item"
+    },
+    "defaultContent": [{
+      "component": "bullet-list-item"
+    }]
+  }]
 }
 </script>
 
@@ -319,11 +318,11 @@ Example:
 <script type="ld-conf">
 {
   "label": "Media Gallery",
-  "directives": {
-    "slides": {
-      "allowedChildren": ["image-slide", "media-slide", "quote-slide"]
-    }
-  }
+  "directives": [{
+    "name": "slides",
+    "type": "container",
+    "allowedChildren": ["image-slide", "media-slide", "quote-slide"]
+  }]
 }
 </script>
 
@@ -345,20 +344,21 @@ Example:
   "name": "article-header",
   "label": "Artikelkopf",
   "allowedParents": ["root"],
-  "directives": {
-    "background": {
-      "properties": {
-        "css-background-color": {
-          "type": "style",
-          "label": "Background Color",
-          "cssProperty": "background-color"
-        }
+  "directives": [{
+    "name": "background",
+    "type": "style",
+    "properties": {
+      "css-background-color": {
+        "type": "style",
+        "label": "Background Color",
+        "cssProperty": "background-color"
       }
-    },
-    "title": {
-      "plainText": true
     }
-  }
+  }, {
+    "name": "title",
+    "type": "editable",
+    "plainText": true
+  }]
 }
 </script>
 
@@ -406,25 +406,26 @@ Example:
   {
     "name": "top-row",
     "label": "Top Row",
-    "directives": {
-      "latest-news": {
-        "service": "list",
-        "defaultParams": {
-          "count": 5,
-          "layout": "news"
-        }
-      },
-      "top-teasers": {
-        "service": "list",
-        "config": {
-          "minCount": 3,
-          "maxCount": 3
-        },
-        "defaultParams": {
-          "layout": "teaserRowHigh"
-        }
+    "directives": [{
+      "name": "latest-news",
+      "type": "include",
+      "service": "list",
+      "defaultParams": {
+        "count": 5,
+        "layout": "news"
       }
-    }
+    }, {
+      "name": "top-teasers",
+      "type": "include",
+      "service": "list",
+      "config": {
+        "minCount": 3,
+        "maxCount": 3
+      },
+      "defaultParams": {
+        "layout": "teaserRowHigh"
+      }
+    }]
   }
 </script>
 

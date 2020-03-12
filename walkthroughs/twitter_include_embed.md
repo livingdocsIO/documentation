@@ -27,11 +27,11 @@ In the design you will define the component. This is pretty basic.
     "html": "<div doc-include='twitterInclude' class='placeholder'><div className='example-inline-placeholder-styles' style='min-height: 100px;outline: 1px dashed rgba(0, 0, 0, 0.2);position: relative;'/></div>",
     "label": "Twitter Include",
     "description": "Embed a tweet",
-    "directives": {
-      "twitterInclude": {
-        "service": "twitterInclude"
-      }
-    }
+    "directives": [{
+      "name": "twitterInclude",
+      "type": "include",
+      "service": "twitterInclude"
+    }]
   }
 ]
 ```
