@@ -134,6 +134,73 @@ app: {
 
 A common use case for this is when you want to insert some CSS classes around your formatted text, as in the example above. You are not restricted to the `class` attribute however but can configure any HTML attribute you like.
 
+
+#### Paste Formatting Options
+
+You can configure how pasted text content is filtered.
+
+Here you see the default configuration. Any property you define
+in `pastedHtmlRules` will be merged into the default configuration.
+```js
+app: {
+  editable: {
+    formatting: {
+      // ...
+      pastedHtmlRules: {
+
+        // Elements and their attributes to keep in pasted text
+        // Note that elements not explicitly allowed here will not be removed, their
+        // tags will get stripped but their content will be kept. Use `blacklistedElements`
+        // to get rid of a whole element (tag+content)
+        allowedElements: {
+          'a': {
+            'href': true,
+            'rel': true,
+            'target': true
+          },
+          'strong': {},
+          'em': {},
+          'br': {}
+        },
+
+        // Elements that have required attributes.
+        // If these are not present the elements are filtered out.
+        // Required attributes have to be present in the 'allowed' object
+        // as well if they should not be filtered out.
+        requiredAttributes: {
+          'a': ['href']
+        },
+
+        // Elements that should be transformed into other elements
+        transformElements: {
+          'b': 'strong',
+          'i': 'em'
+        },
+
+        // A list of elements which should be split into paragraphs.
+        splitIntoBlocks: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'blockquote'],
+
+        // A list of HTML block level elements.
+        // -> prevent missing whitespace between text when block-level
+        // elements are removed.
+        blockLevelElements: [
+          'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div', 'p', 'pre', 'hr', 'blockquote',
+          'article', 'figure', 'header', 'footer', 'ul', 'ol', 'li', 'section', 'table', 'video'
+        ],
+
+        // A list of elements that will get completely removed when pasted. Their tags
+        // and content (text content and child elements) will get removed.
+        blacklistedElements: ['style', 'script'],
+
+        // Do not remote a tags if the href is a relative path
+        keepInternalRelativeLinks: false
+      }
+    }
+  }
+}
+```
+
+
 ## Text Editing Behavior
 
 Newlines with Shift+Enter. Default: true
