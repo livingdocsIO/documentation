@@ -11,18 +11,16 @@ The container:
   "label": "Bullet List",
   "name": "bullet-list",
   "properties": ["list-type"],
-  "directives": {
-    "list": {
-      "defaultComponents": {
-        "paragraph": "bullet-list-item"
-      },
-      "defaultContent": [
-        {
-          "component": "bullet-list-item"
-        }
-      ]
-    }
-  }
+  "directives": [{
+    "name": "list",
+    "type": "container",
+    "defaultComponents": {
+      "paragraph": "bullet-list-item"
+    },
+    "defaultContent": [{
+      "component": "bullet-list-item"
+    }]
+  }]
 }
 </script>
 
