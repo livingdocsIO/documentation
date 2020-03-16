@@ -192,6 +192,46 @@ emails: {
 }
 ```
 
+##### New Login Device Detection
+
+In case you want to activate abuse detection through login device comparison, please configure:
+
+```js
+auth: {
+  connections: {
+    local: {
+      sendNotificationIfNewDevice: true
+    }
+  }
+}
+```
+
+After activating the feature, you have to also configure the email content that is sent:
+
+```js
+emails: {
+  templates: {
+    newLoginDevice: {
+      transport: 'default',
+      subject: 'New device login detected',
+      htmlTemplatePath: require.resolve('@livingdocs/server/plugins/email-templates/new_login_device.html'),
+      attachments: [{
+        cid: 'logo',
+        filename: 'logo.png',
+        path: require.resolve('@livingdocs/server/plugins/email-templates/logo.png')
+      }]
+    }
+  }
+}
+```
+
+Note: We compare the previously used device (Platform, OS, Browser) with the one that is used to login. In case the check fails,
+we then send out this email. The email contains information about the device that was used to login and a revokation link to
+prevent access for the possibly abusing actor.
+
+In case you want to adjust the email template, head over to the original file `@livingdocs/server/plugins/email-templates/new_login_device.html`
+and copy it's content into your target file which you then can adapt to your needs.
+
 #### Design Loader
 
 The DesignLoader offers different options how designs are loaded. By default designs
