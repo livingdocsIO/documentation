@@ -9,6 +9,7 @@ The channel configuration allows you to:
 - define copy options
 - configure the push notifications feature
 - configure the multi-language feature
+- configure integrations
 
 The contentType configuration is described in detail here: [contentType config](./content-type-config.md)
 
@@ -88,5 +89,21 @@ The following sample configuration file illustrates all of the above.
       allowTransform: true
     }]
   }]
+
+  // Integrations (added in release-2020-04)
+  integrations: {
+    // Comyan (added in release-2020-04)
+    comyan: {
+      enabled: true,
+      buttonLabel: 'open comyan'
+      mediaSystem: {
+        credentials: {
+          username: 'user',
+          password: '****'
+        },
+        baseUrl: 'https://example.com/MediaSystem',
+      }
+    }
+  }
 }
 ```
