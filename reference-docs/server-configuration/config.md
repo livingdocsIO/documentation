@@ -725,7 +725,25 @@ The credentials object is just the google service account json. We advise you to
 
 ## Integrations
 
+Added in: `release-2020-04`
+
+There is a general `integrations` feature for small integrations that can be configured in the `channelConfig` through editor UI. They need to be allowed in the server config with the following config.
+
+#### Comyan
+
+To allow the `comyan` integration, add this to your config:
+
+```js
+integrations: {
+  comyan: {
+    allowed: true
+  }
+}
+```
+
 #### HuGO
+
+The HuGO integration has it's own top level config:
 
 ```js
 hugo: {
