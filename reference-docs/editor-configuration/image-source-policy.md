@@ -2,7 +2,10 @@
 
 #### Source Policy
 
-Different sources for images can be enabled and disabled. E.g. it is now possible to disable image uploads by users and only allow e.g to use images from HuGo.
+Different sources for images can be enabled and disabled. E.g. it is possible to disable image uploads by users and only allow e.g to use images from HuGo.
+
+This config can be defined per project and overwritten per contentType.
+(It is also possible to configure it generally in the editor).
 
 Example config with multiple sources:
 ```js
@@ -14,14 +17,26 @@ Example config with multiple sources:
     provider: 'hugo',
     enabled: true
   }, {
-    provider: 'url', 
+    provider: 'url',
     enabled: true,
     hosts: ['https://cdn.pixabay.com']
   }]
 }
 ```
 
-This config can be placed into the `editor` config and/or the server's `contentType` channelConfig (see below). If both are defined the `contentType` will take precedence.
+
+#### Server Configuration
+
+This config can be defined as `imageSourcePolicy` in these places:
+
+For a project: [Settings configuration](../server-configuration/channel-config.md)
+Overwrite per contentType: [ContentType configuration](../server-configuration/content-type-config.md)
+
+
+#### Editor Configuration
+
+This config can be placed into the `editor` config
+If both are defined the project or `contentType` specific configs will take precedence.
 
 Editor config:
 ```js
@@ -34,10 +49,11 @@ Editor config:
 }
 ```
 
-This config is optional. By default upload and hugo are enabled and url is disabled.
+#### Default Config
+
+This whole config is optional. By default upload and hugo are enabled and url is disabled.
 
 Current default policy:
-
 ```js
 const defaultPolicies = {
   upload: {enabled: true},
@@ -45,8 +61,3 @@ const defaultPolicies = {
   url: {enabled: false}
 }
 ```
-
-Please refer to the server configuration's `contentType` section to set the `sourcePolicy` there. 
-There is also a config that can be set in the `contentType` channelConfig property editorConfig.images.whitelist which is still respected.
-
-See: [ContentType configuration](../server-configuration/content-type-config.md)

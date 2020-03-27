@@ -88,7 +88,20 @@ The following sample configuration file illustrates all of the above.
       },
       allowTransform: true
     }]
-  }]
+  }],
+
+  // This setting can be overwritten in the `contentType` config
+  imageSourcePolicy: [{
+    provider: 'upload',
+    enabled: true
+  }, {
+    provider: 'hugo',
+    enabled: false
+  }, {
+    provider: 'url',
+    enabled: true,
+    hosts: ['//pixabay.com']
+  }],
 
   // Integrations (added in release-2020-04)
   integrations: {
