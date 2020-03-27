@@ -94,6 +94,10 @@
 * [Asset Management](reference-docs/common-livingdoc/asset-management.md)
 * [Author Management](walkthroughs/prefill-author.md)
 
+## CLI
+
+* [Dotfile](livingdocs-cli/cli-dotfile.md)
+* [Config Sync](livingdocs-cli/sync-configs.md)
 
 ## Devops
 
