@@ -39,7 +39,20 @@ We plan to allow to move all layout options which are currently defined in the d
       requiredErrorMessage: 'please provide a short description'
     },
     ui: {component: 'liMetaTextForm'}
-  }]
+  }],
+
+  // Overwrites config in `settings`
+  imageSourcePolicy: [{
+    provider: 'upload',
+    enabled: true
+  }, {
+    provider: 'hugo',
+    enabled: false
+  }, {
+    provider: 'url',
+    enabled: true,
+    hosts: ['//pixabay.com']
+  }],
 
   // You'll find the renditions example further below
   renditions: require.resolve('./path/to/rendition/config'),
@@ -83,22 +96,8 @@ We plan to allow to move all layout options which are currently defined in the d
     },
 
     images: {
-      // Deprecated for `sourcePolicy` below: whitelist of hosts for image urls that are drag & dropped into the editor
+      // Deprecated for `imageSourcePolicy`: whitelist of hosts for image urls that are drag & dropped into the editor
       whitelist: ['//pixabay.com']
-
-      sourcePolicy: [
-        {
-          provider: 'upload',
-          enabled: true
-        }, {
-          provider: 'hugo',
-          enabled: false
-        }, {
-          provider: 'url',
-          enabled: true,
-          hosts: ['//pixabay.com']
-        }
-      ]
     }
   },
 
