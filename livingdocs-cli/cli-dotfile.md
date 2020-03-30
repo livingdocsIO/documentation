@@ -5,7 +5,7 @@
 In case you are working with multiple projects and/or environments it becomes
 cumbersome to set tokens, hosts and other params.
 
-To make this easier you can set up a dotfile that allows you to pass
+To make the sync projects process easier you can set up a dotfile that allows you to pass
 `env` and `project` to all commands where this makes sense instead of
 using e.g. the `LI_TOKEN` environment variable.
 
@@ -42,6 +42,10 @@ using e.g. the `LI_TOKEN` environment variable.
   }
 }
 ```
+
+Note: it is recommended to add a production token with only
+read access. When publishing a new config you can
+supply a write token via `--token` argument.
 
 How to use these configs in the terminal:
 ```sh

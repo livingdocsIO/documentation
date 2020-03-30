@@ -95,8 +95,8 @@
 
 ## CLI
 
-* [Dotfile](livingdocs-cli/cli-dotfile.md)
-* [Config Sync](livingdocs-cli/sync-configs.md)
+* [.livingdocs-cli](livingdocs-cli/cli-dotfile.md)
+* [Sync Project Configs](livingdocs-cli/sync-configs.md)
 
 ## Devops
 
