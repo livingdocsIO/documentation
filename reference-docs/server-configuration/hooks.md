@@ -74,13 +74,14 @@ The prepublish hook allows modifications of the `documentVersion`. For this reas
 
 ```js
 prepublishHook: ({documentVersion}, callback) => {
-  if (isTitleValid(documentVersion)) {
-    return callback(null, documentVersion)
+  const metadata = documentVersion.getMetadata() || {}
+  if (metadata.title === 'Let me pass') {
+    return callback(null, {documentVersion})
   } else {
     // Example Validation Error for a metadata property
     const err = new Error('Invalid Title')
     err.name = 'MetadataValidationError'
-    err.propertyName = 'title'
+    err.metadataProperty = 'title'
     err.status = 400
     return callback(err)
   }
