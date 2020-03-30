@@ -1,4 +1,4 @@
-# Sync project configs between projects
+# Sync project configs between environments
 
 ## What are we doing here?
 
