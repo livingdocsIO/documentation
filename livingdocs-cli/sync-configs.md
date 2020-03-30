@@ -54,7 +54,8 @@ This workflow is for enterprise customers who also have a local setup
 of livingdocs on their machine.
 
 
-1. Download all configs:
+**Step 1: Download all configs**
+
 ```sh
 npx livingdocs-cli project-config:download --format json -p projectA --env dev &&
 npx livingdocs-cli project-config:download --format json -p projectA --env staging &&
@@ -65,24 +66,29 @@ npx livingdocs-cli project-config:download --format json -p projectB --env stagi
 npx livingdocs-cli project-config:download --format json -p projectB --env production
 ```
 
-2. Commit these changes
+**Step 2: Commit these changes**
 
-3. Download local configs (these usually have the latest changes)
+**Step 3: Download local configs (these usually have the latest changes)**
+
 ```sh
 npx livingdocs-cli project-config:download --format json -p projectA --env local
 npx livingdocs-cli project-config:download --format json -p projectB --env local
 ```
 
-4. Compare configs (here just one example)
+**Step 4: Compare configs**
+
+One example:
 ```sh
 git diff --no-index sync-projectA/local sync-projectA/development
 ```
 Note that some configs like renditions or preview urls are always different
 between environments.
 
-5. Make changes to config files
+**Step 5: Make changes to config files**
 
-6. Publish changed configs (also just one example)
+**Step 6: Publish changed configs**
+
+One example:
 ```sh
 # plan update and verify only the expected properties are updated
 npx livingdocs-cli project-config:plan -p projectA --env development
@@ -91,6 +97,6 @@ npx livingdocs-cli project-config:plan -p projectA --env development
 npx livingdocs-cli project-config:publish -p projectA --env development
 ```
 
-7. Discard `sync-projectA/local` and `sync-projectB/local`
+**Step 7: Discard `sync-projectA/local` and `sync-projectB/local`**
 
-8. Commit the rest
+**Step 8: Commit the rest**
