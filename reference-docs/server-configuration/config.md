@@ -588,11 +588,11 @@ For push notifications to be enabled you also need to follow the steps in the [c
 
 #### Asset management
 
-The asset management impacts editor in three ways:
+The asset management impacts editor in four ways:
 - You can pick images from the library which have been previously uploaded
 - You can see all the uploaded images and perform operations on them
 - You can edit the Metadata of images in a dedicated view, which is accessible over an image
-
+- You can enforce metadata on images before a user can upload them
 
 ##### Prerequisite
 
@@ -675,10 +675,10 @@ Then the Image index can be created. This is included in the `grunt setup` task,
 ##### Feature Flag and internal image service
 The endpoint /upload can function with Asset Management functionality or without. The change can be configured in the environment with:
 
-```
+```js
   assetManagement: {
     enabled: true,
-    paginationSize: 25
+    paginationSize: 25,
   }
 ```
 
@@ -694,7 +694,7 @@ Livingdocs supports auto-tagging of images using the Google Vision API. In order
 The node vision API package has some good documentation on how to create an account: https://github.com/googleapis/nodejs-vision
 
 Once you have your account, you can configure Livingdocs with the Vision API as follows:
-```
+```js
 assetManagement: {
     autoTagging: {
       googleVision: {
@@ -722,6 +722,25 @@ assetManagement: {
 The `confidenceCliff` lets you specify a value (0..1) below which to drop results from the Vision API, e.g. only to take results with a confidence of 70% or higher. In fact we found 70% (0.7) to be a good default.
 You can turn on detection of labels and web entities separately. Refer to the Google Vision API documentation for details about both. Livingdocs shows labels in the UI under "Topics" and web entities under "Entities".
 The credentials object is just the google service account json. We advise you to download the json from GCP and then entering the values here.
+
+
+## Enforcing image metadata
+
+Added in: `release-2020-04`
+
+Below you see an example of enforcing image metadata. Before _any_ image can be uploaded, a modal will open promting the user to fill the metadata for the image before it goes into the media library.
+
+This will validate the required metadata properties for an image in the editor and the server, so you can ensure no image will be uploaded without proper metadata set on it.
+
+```js
+assetManagement: {
+  enabled: true,
+  types: [{
+    type: 'image',
+    requiredMetadataProperties: ['title', 'caption']
+  }]
+},
+```
 
 ## Integrations
 
