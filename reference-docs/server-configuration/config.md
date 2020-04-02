@@ -724,7 +724,7 @@ You can turn on detection of labels and web entities separately. Refer to the Go
 The credentials object is just the google service account json. We advise you to download the json from GCP and then entering the values here.
 
 
-## Enforcing image metadata (Beta)
+#####  Enforcing image metadata (Beta)
 
 Added in: `release-2020-04`
 
