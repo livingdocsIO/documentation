@@ -2,26 +2,17 @@
 
 The LI Digital Asset Management (DAM) enables smart features around assets (at this time only images).
 
+Read more about how to activate and configure [here](../server-configuration/config.md#asset-management)
+
 ### Related tasks
 
-`./bin/index.js create-image-index` || `grunt create-image-index`
+`npx livingocs-server es-media-reindex`
 
-Creates the Image index within Elastic Search. This task is
-automatically run on `grunt setup`, as well.
+Creates or updates the Image index within Elastic Search.
 
-`./bin/index.js delete-image-index` || `grunt delete-image-index`
+`npx livingocs-server es-media-delete-index`
 
 Deletes the Image index within Elastic Search.
-
-`grunt verify-image-index`
-
-This task ensures that all entries in the PG `images` table are also in the ES `images` index. Since PG is the master, it's only checked this way and not the other way around.
-
-Possible output:
-
-- Good case: "All good. All images in Postgres are also in Elastic Search!"
-
-- Bad case: Shows the amount of Images which are non-existent in ES, but are in ES. Also shows the IDs for those entries.
 
 
 ### Persistence
@@ -32,10 +23,6 @@ The DAM utilizes two databases:
 2. Elastic Search as search index
 
 Saving to both DBs happens in a PG transaction, so if either fails, there's an automatic rollback and an error message.
-
-**PG ERD**
-
-![](../../images/dam_pg_table_images_erd.png)
 
 ### Filenames
 
