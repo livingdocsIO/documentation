@@ -666,10 +666,68 @@ The name of the Image index has to be configured:
 }
 ```
 
-Then the Image index can be created. This is included in the `grunt setup` task, but can also be issued separately via:
+Then the Image index must be created.
 
 ``` javascript
-./bin/index.js create-image-index
+npx livingdocs-server es-media-reindex -y
+```
+
+##### Document Metadata Mapping in Elasticsearch
+
+When you want to index your metadata image fields in elasticsearch (e.g. for dashboard filters), you have to define the elasticsearch metadata mapping, e.g.
+
+```js
+// the elasticsearch metadata mapping file is defined in the environment config at 'search.metadata_mapping'
+    "teaserImage": {
+      "properties": {
+        "crops": {
+          "properties": {
+            "height": {
+              "type": "long"
+            },
+            "name": {
+              "type": "keyword"
+            },
+            "url": {
+              "type": "keyword"
+            },
+            "width": {
+              "type": "double"
+            },
+            "x": {
+              "type": "double"
+            },
+            "y": {
+              "type": "long"
+            },
+            "ratio": {
+              "type": "double"
+            }
+          }
+        },
+        "height": {
+          "type": "long"
+        },
+        "imageService": {
+          "type": "keyword"
+        },
+        "mimeType": {
+          "type": "keyword"
+        },
+        "originalUrl": {
+          "type": "keyword"
+        },
+        "url": {
+          "type": "keyword"
+        },
+        "mediaId": {
+          "type": "keyword"
+        },
+        "width": {
+          "type": "long"
+        }
+      }
+    }
 ```
 
 ##### Feature Flag and internal image service
