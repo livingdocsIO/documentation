@@ -45,7 +45,7 @@ If you want deliver your documents to your Delivery Website you can use webhooks
 ## Import
 You can import documents from your old application. There is a special API where you can create documents programmatically. So you have to transform the old format to the livingdocs format and create an article.
 
-[import api](../server-api/import_api.md)
+[import api](../reference-docs/server-api/import_api.md)
 
 ## doc-include
 It can be important for your case that you can create components which can include rendered content. You can describe how the content should be rendered and use this doc-include in your components.
