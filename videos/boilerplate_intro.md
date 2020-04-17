@@ -52,4 +52,4 @@ Basically everything in this documentation that is under the section "Livingdocs
 > See the [documentation](../reference-docs/common-designs/design_config.html#prefilled-components)
 
 - How can we add Woodwing and NewsNT from the boilerplate?
-> See the [documentation](../reference-docs/server-print-api/print-api.html) Maybe not fully up-to-date though.
+> See the [documentation](../reference-docs/server-api/print-api.md) Maybe not fully up-to-date though.

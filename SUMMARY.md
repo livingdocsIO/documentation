@@ -20,6 +20,10 @@
 
 ## Reference Documentation
 
+* Server Core APIs
+  * [Import API](reference-docs/server-api/import_api.md)
+  * [Print API](reference-docs/server-api/print-api.md)
+  * [Seed API](reference-docs/server-api/seed_api.md)
 * Server
   * [Initialization](reference-docs/server-extensions/server-initalization.md)
   * [Configuration File](reference-docs/server-configuration/config.md)
@@ -27,7 +31,6 @@
   * [Content-Type Config](reference-docs/server-configuration/content-type-config.md)
   * [Metadata on the Server](reference-docs/server-configuration/metadata.md)
   * [Hooks](reference-docs/server-configuration/hooks.md)
-  * [Import API](reference-docs/server-import-api/import_api.md)
   * [Specify Loaded Features](reference-docs/server-configuration/stack.md)
   * [Events](reference-docs/server-extensions/events.md)
   * [Logs](reference-docs/server-configuration/logging.md)
@@ -60,8 +63,6 @@
   * [Include Server Config](reference-docs/doc-includes/server_customization.md)
   * [Include User Interfaces](reference-docs/doc-includes/editor_customization.md)
   * [Includes with Multiple Services](reference-docs/doc-includes/service_multiselect.md)
-* [Print API](reference-docs/server-print-api/print-api.md)
-* [Seed API](reference-docs/server-seed-api/seed_api.md)
 
 ## Design Howtos
 
