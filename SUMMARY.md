@@ -24,6 +24,7 @@
   * [Import API](reference-docs/server-api/import_api.md)
   * [Print API](reference-docs/server-api/print-api.md)
   * [Seed API](reference-docs/server-api/seed_api.md)
+  * [DataSource API](reference-docs/server-api/data_source_api.md)
 * Server
   * [Initialization](reference-docs/server-extensions/server-initalization.md)
   * [Configuration File](reference-docs/server-configuration/config.md)
