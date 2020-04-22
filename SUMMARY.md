@@ -32,6 +32,7 @@
   * [Content-Type Config](reference-docs/server-configuration/content-type-config.md)
   * [Metadata on the Server](reference-docs/server-configuration/metadata.md)
   * [Hooks](reference-docs/server-configuration/hooks.md)
+  * [Webhooks](reference-docs/server-configuration/webhooks.md)
   * [Specify Loaded Features](reference-docs/server-configuration/stack.md)
   * [Events](reference-docs/server-extensions/events.md)
   * [Logs](reference-docs/server-configuration/logging.md)

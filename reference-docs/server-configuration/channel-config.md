@@ -115,6 +115,22 @@ The following sample configuration file illustrates all of the above.
         }
       }
     }
+
+    // Webhooks (added in release-2020-05)
+    webhooks: {
+      enabled: true
+      configurations: [{
+        handle: 'my-webhook',
+        label: 'My Webhook',
+        description: 'A description for future self and coworkers',
+        url: 'https://example.com/my-webhook-endpoint',
+        token: 'a-secret-token-to-sign-the-request'
+        active: true
+        events: ['document.published', 'document.unpublished']
+      }
+    }]
+  }
+
   },
 
   // Content Types
