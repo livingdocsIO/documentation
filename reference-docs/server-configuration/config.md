@@ -783,6 +783,16 @@ integrations: {
 }
 ```
 
+## Webhooks
+
+Added in: `release-2020-05`
+
+```js
+webhooks: {
+  enabled: true
+}
+```
+
 #### HuGO
 
 The HuGO integration has it's own top level config:
