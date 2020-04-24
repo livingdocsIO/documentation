@@ -6,9 +6,9 @@ You can configure multiple webhooks that are called on only one or both of these
 
 ## Configuration
 
-The feature needs to be enabled in your [server configuration](../server-configuration/config.md#webhooks).
+The feature is enabled by default, you can disable it in your [server configuration](../server-configuration/config.md#webhooks).
 
-In the project menu, select "Project Setup", then select "Webhooks" in the "Configuration" section of the menu. You can enable/disable all your configured webhooks using the setting "call webhooks on events".
+In the project menu, select "Project Setup", then select "Webhooks" in the "Configuration" section of the menu. You can activate/deactivate all your configured webhooks using the setting "deliver webhooks on events".
 
 ![Webhooks Configuration](./webhooks.png)
 
@@ -32,7 +32,7 @@ The configuration of webhooks is stored in `channelConfig.settings.webhooks`.
 
 ```
 webhooks: {
-  enabled: true
+  active: true
   configurations: [{
     handle: 'my-webhook',
     label: 'My Webhook',
@@ -46,13 +46,13 @@ webhooks: {
 ```
 
 ## Payload
-The payload sent to your webhook endpoints looks like this. The `requestId` is unique for every call.
+The payload sent to your webhook endpoints looks like this. The `deliveryId` is unique for every call.
 
 `document.published`
 ```
 {
   "event": "document.published",
-  "requestId": "o4-0Rdu0f695qnlun0iY-",
+  "deliveryId": "o4-0Rdu0f695qnlun0iY-",
   "projectId": 8,
   "projectHandle": "magazine",
   "webhookHandle": "my-webhook",
@@ -73,7 +73,7 @@ The payload sent to your webhook endpoints looks like this. The `requestId` is u
 ```
 {
   "event": "document.unpublished",
-  "requestId": "HMCywrXG5EDPqwrogRfum",
+  "deliveryId": "HMCywrXG5EDPqwrogRfum",
   "projectId": 8,
   "projectHandle": "magazine",
   "webhookHandle": "my-webhook",
@@ -92,7 +92,7 @@ The payload sent to your webhook endpoints looks like this. The `requestId` is u
 
 ## Securing your webhooks
 If you have defined a `secret` for your webhook, Livingdocs uses this to create a signature of the payload and sends it with the request in the HTTP header `x-livingdocs-signature`.
-The signature is created using HMAC-SHA1 and will be sent in `x-livingdocs-signature` in the form `sha1=<hex digest>` for example `sha1=d8a47af83666a771d57117aa28ef8d3243a3de43`.
+The signature is created using HMAC-SHA256 and will be sent in `x-livingdocs-signature` in the form `sha256=<hex digest>` for example `sha256=d8a47af83666a771d57117aa28ef8d3243a3de43`.
 
 Here is sample code in JavaScript to validate the signature in your endpoint:
 
@@ -106,8 +106,8 @@ const secret = 'a-secret-token-to-sign-the-request' // you should not hardcode t
 
 // compute the hmac on the received payload using the same secret
 const crypto = require('crypto')
-const hmac = crypto.createHmac('sha1', secret)
-const payloadSignature = Buffer.from(`sha1=${hmac.update(payload).digest('hex')}`, 'utf8')
+const hmac = crypto.createHmac('sha256', secret)
+const payloadSignature = Buffer.from(`sha256=${hmac.update(payload).digest('hex')}`, 'utf8')
 const checksum = Buffer.from(signature, 'utf8')
 
 // use timingSafeEqual to compare the signature sent from livingdocs with the computed checksum
