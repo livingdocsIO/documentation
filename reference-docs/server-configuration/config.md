@@ -787,9 +787,10 @@ integrations: {
 
 Added in: `release-2020-05`
 
+To disable the webhooks feature, add this:
 ```js
 webhooks: {
-  enabled: true
+  enabled: false
 }
 ```
 
