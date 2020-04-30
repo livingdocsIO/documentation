@@ -34,21 +34,22 @@ For more advanced scenarios, it's possible to define a copy config on the server
 
 To get a rough understanding of the copy feature with a server configuration, read [Document Copy Basics](#document-copy-basics) first. The [Copy Config Example](#copy-config-example) section provides an overview of a basic copy config. To get a better feeling of what copy scenarios are supported, visit the [Copy Use Cases](#copy-use-cases).
 
-### (C) Transform a document (alpha state)
-
-:fire: **Attention**, this is an alpha feature. If used in the wrong environment, it can result in unwanted consequences.
+### (C) Transform a document (use at own risk)
 
 With the `transform` operation, no new document is created. `transform` modifies the origin document and changes its content-type. This operation is only available with a copy config on the server and can be activated with `allowTransform: true`.
 
+**Attention**, this is feature can have consequences if you rely that
+the `contentType` not to change after creation. E.g. if you have code in the
+downstream that triggers an action when a document is first published
+if the document has a certain contentType.
+
+Project config `/settings`
 ```js
-// copy config in the source channel
 copy: [{
   source: {
-    channelHandle: 'web',
     contentType: 'fantasy'
   },
-  target: [{
-    channelHandle: 'web',
+  targets: [{
     contentType: 'another-content-type',
     allowTransform: true
   }]
@@ -61,19 +62,19 @@ copy: [{
 ![copy-basics](https://cloud.githubusercontent.com/assets/172394/18782898/0beb0214-8189-11e6-98cc-e5e6728456de.png)
 ([original diagram ressource](https://www.draw.io/#G0B2rv2Pw26xPLT3hXQ3BsZU1lWlE))
 
-If you want to setup and configure an article copy, you need a rough understanding of channels, content types, designs, layouts and components.
+The copy features can copy content into a new document of the same or a different `contentType`.
+As `contentTypes` can use different components and have different metadata properties a config
+configuration instructs the system how to deal with this differences. Also even if a copy is
+used to create a new document of the same contentType some metadata properties may should not
+be copied.
 
-Every `channel` has assigned a `livingdocs-design` (`D1, D2, ...`) and every design has one or more layouts (`L1, L2, ...`) with one ore more component (`C1, C2, ...`).
-
-For every layout there must be a corresponding content type configuration in the channel.
-A copy can be configured in the source channel config, as you can see in the succeeding example.
 
 If you request a copy, the copy feature tries to find a config match in the channel config between the source(channel/contentType) and the target(channel/contentType). If there is a match, the copy feature makes a copy based on the configured `options` and `metadata` properties. If there is no match, the copy operation will be ignored.
 
 The configuration of a transformation happens in two places:
 
-1. the "setup config" in the `copy:` section of your main (channel-specific article) config that
-defines which transformations for which channel/contentType combinations are allowed and specifies the
+1. the "setup config" in the `copy:` section of your main config that
+defines which transformations for which contentType combinations are allowed and specifies the
 location of the corresponding instruction config in `target.instructionPath`
 
 2. the "instruction config" referenced above that holds the transformation instructions for a specific scenario
@@ -87,12 +88,10 @@ location of the corresponding instruction config in `target.instructionPath`
 // copy config in the source channel
 copy: [{
   source: {
-    channelHandle: 'web',
     contentType: 'fantasy'
   },
 
-  target: [{
-    channelHandle: 'print',
+  targets: [{
     contentType: 'regular',
 
     // Path to a config of instructions to be applied when transforming one component to another
@@ -170,7 +169,7 @@ module.exports = {
     // Excluded components are ignored during copying:
     match: 'responsive-image',
     exclude: true
-  }, { 
+  }, {
 
     // OPTIONAL: matches all components without instructions and copies or excludes them.
     // CAREFUL: if you copy all components, they have to be defined in both designs!
@@ -214,7 +213,7 @@ If you want to copy an article from `channel 1` -> `channel 2`, you need a trans
 ```js
 copy: [{
   source: {channelHandle: 'web', contentType: 'default'},
-  target: [{channelHandle: 'print', contentType: 'regular'}],
+  targets: [{channelHandle: 'print', contentType: 'regular'}],
   instructionPath: require.resolve('../conversions/basic-to-eternal-bliss.js')
 }]
 ```
@@ -222,14 +221,14 @@ copy: [{
 #### (1.2) Layout Copy (Layout L1 to Layout L2)
 ![copy-layout-l1-to-layout-l2-modified-components](https://cloud.githubusercontent.com/assets/172394/18784528/043b54ec-8193-11e6-8b26-14322768fc27.png)
 
-Usually a copy in the same design can be done **without** an instruction. If a design has several layouts and in the layouts there are the same type of component with a different name (e.g. in layout1 'title' and in layout2 'title-extended'), then this configuration approach is the correct one at the moment.
+Usually a copy can be done **without** an instruction. If a design has several layouts and in the layouts there are the same type of component with a different name (e.g. in layout1 'title' and in layout2 'title-extended'), then this configuration approach is the correct one at the moment.
 
 #### Example Config
 
 ```js
 copy: [{
-  source: {channelHandle: 'web', contentType: 'default'},
-  target: [{channelHandle: 'web', contentType: 'regular'}],
+  source: {contentType: 'default'},
+  targets: [{contentType: 'regular'}],
   instructionPath: require.resolve('../conversions/basic-default-to-basic-regular.js')
 }]
 ```
@@ -238,14 +237,14 @@ copy: [{
 #### Layout L1 to Layout L2 - Ignore unknown components
 ![copy-layout-l1-to-layout-l2-unknown-copy-false](https://cloud.githubusercontent.com/assets/172394/18784494/b97da6bc-8192-11e6-9789-e02af83b5509.png)
 
-This scenario copies all components from one layout to another layout in the same design, but ignores unknown components in the target design.
+This scenario copies all components from one contentType to another contentType.
 
 #### Example Config
 
 ```js
 copy: [{
-  source: {channelHandle: 'web', contentType: 'default'},
-  target: [{channelHandle: 'web', contentType: 'regular'}],
+  source: {contentType: 'default'},
+  targets: [{contentType: 'regular'}],
   instructionPath: require.resolve('../conversions/basic-default-to-basic-regular.js')
 }]
 ```
