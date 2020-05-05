@@ -4,6 +4,19 @@ The DataSource API provides a simple way to fetch/transform any DataSource (e.g.
 
 The current version supports binding a DataSource to a metadata field, which will be described in more detail in the example section.
 
+## Supported Metadata UI Components
+
+`liMetaSelectForm` supports this types
+  - li-string-list
+  - li-numeric-list
+  - li-text
+  - li-enum
+  - li-integer
+
+`liMetaMultiselectForm` supports this types
+  - li-string-list
+  - li-numeric-list
+
 ## Example - Bind a DataSource to a Metadata Field
 
 You can register a DataSource (e.g. `nameValuePairDataSource`) and use it as dataProvider for a metadata field (e.g. `dummy`). In the publish screen you get a list of values (based on the results of the DataSource).
@@ -25,7 +38,7 @@ dataSourcesApi.register({
   // result for labelValuePair = [{label, value}, ...]
   dataFormat: 'nameValuePair',
   // fetch data from your external service (or provide a static list)
-  async fetch () {
+  async fetch ({projectId, userId}) {
     const fetchedData = {
       'categories': [
         {'id': '1', 'category': 'Bücher'},
