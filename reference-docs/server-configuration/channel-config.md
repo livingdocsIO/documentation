@@ -10,6 +10,7 @@ The channel configuration allows you to:
 - configure the push notifications feature
 - configure the multi-language feature
 - configure integrations
+- configure includeServices. See [doc-includes](../doc-includes/intro.md) for more information.
 
 The contentType configuration is described in detail here: [contentType config](./content-type-config.md)
 
@@ -99,6 +100,33 @@ The following sample configuration file illustrates all of the above.
       enabled: true,
       hosts: ['//pixabay.com']
     }],
+
+    // includeServices (added in release-2020-05)
+    // using this config, you can declaratively define include services
+    includeServices: [
+      {
+        handle: 'my-service', 
+        rendering: {
+          type: 'remote', 
+          url: 'http://example.com', 
+          timeout: 3000
+        }, 
+        config: {
+          foo: 'this config is sent to the service'
+        },
+        // paramsSchema is used to render a form for datainput when a component
+        // using this service on an include directive
+        paramsSchema: [
+          {
+            type: 'li-text', // li-text is the only supported type in release-2020-05
+            handle: 'myText'
+          }
+        ], 
+        defaultParams: {
+          myText: 'A default value for the myText property'
+        }
+      }
+    ],
 
     // Integrations (added in release-2020-04)
     integrations: {
