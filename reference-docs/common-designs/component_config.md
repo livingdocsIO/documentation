@@ -240,7 +240,9 @@ Reading example: The `doc-editable` directive `headline` will be filled through 
 
 ### `doc-image` directive
 
-`ratios`: allows you to define pre-defined image ratios for an image. The cropping mask in the Livingdocs editor will show those ratios when cropping the image of the respective component.
+
+`imageRatios`: allows you to define available image ratios for an image. The cropping mask in the Livingdocs editor will show those ratios when cropping the image of the respective component.
+`allowOriginalRatio`: if set to false the image will be cropped to the first `imageRatio` in the `imageRatios` array.
 
 Example:
 ```html

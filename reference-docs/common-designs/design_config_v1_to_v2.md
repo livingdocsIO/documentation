@@ -13,7 +13,11 @@ const v1 = {
   description: '', // removed property - does not exist in v2
   author: '', // removed property - does not exist in v2
   assets: {}, // move this to v2.designSettings.assets
-  componentProperties: {}, // move this to v2.designSettings.componentProperties
+
+  // move this to v2.designSettings.componentProperties and convert into
+  // an array. Add the key under the property `name`.
+  componentProperties: {},
+
   // moved out of design config, every layout is a contentType in the project config, e.g.
   layouts: [{
     name: '', // should already exist as contentType.handle
@@ -21,7 +25,7 @@ const v1 = {
     wrapper: '', // move to contentType.editorWrapper
     defaultContent: [], // move to contentType.defaultContent
     // migrate this config to contentType.components
-    // contentType.components are grouped by v2.designSettings.componentGroups 
+    // contentType.components are grouped by v2.designSettings.componentGroups
     groups: []
   }],
   components: [{name, label, iconUrl, directives, html, ...}], // move this to v2.components
@@ -40,7 +44,7 @@ const v1 = {
 This is an example of a design config v2 of a referenced design. If you use an embedded design, `name` and `version` are not used.
 
 ```javascript
-const v2 = { 
+const v2 = {
   v: 2,
   name: 'testv2',
   version: '1.0.0',  
@@ -50,7 +54,7 @@ const v2 = {
     componentGroups: [],
     defaultComponents: {},
     fieldExtractor: [],
-    componentProperties: {}
+    componentProperties: []
   }
 }
 ```

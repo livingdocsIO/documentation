@@ -50,11 +50,6 @@ var designDefinition = {
 
   designSettings: {
 
-    // General design information
-    name: 'designName',
-    version: '1.0.0',
-    author: 'Peter Pan',
-
     // Assets required by the design
     assets: {
       css: ["/stylesheets/test.css"]
@@ -76,28 +71,27 @@ var designDefinition = {
     // All available properties you can define on your components.
     // A componentProperty is for example a css class a user can
     // toggle on a component.
-    componentProperties: {
-      'position': {
-        label: 'Position',
-        type: 'select',
-        options: [
-          {
-            caption: 'Default'
-          }, {
-            caption: 'Left',
-            value: 'position-left'
-          }, {
-            caption: 'Right',
-            value: 'position-right'
-          }
-        ]
-      },
-      'extra-space': {
-        label: 'Extra Space',
-        type: 'option',
-        value: 'extra-space'
-      }
-    },
+    componentProperties: [{
+      name: 'position',
+      label: 'Position',
+      type: 'select',
+      options: [
+        {
+          caption: 'Default'
+        }, {
+          caption: 'Left',
+          value: 'position-left'
+        }, {
+          caption: 'Right',
+          value: 'position-right'
+        }
+      ]
+    }, {
+      name: 'extra-space',
+      label: 'Extra Space',
+      type: 'option',
+      value: 'extra-space'
+    }],
 
     // The defaults paragraph component defines which component is
     // inserted if a user hits ENTER.
