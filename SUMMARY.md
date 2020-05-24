@@ -53,7 +53,7 @@
   * [Customizing the Navigation](reference-documentation/editor/customizing-the-navigation.md)
   * [Login](reference-documentation/editor/login.md)
 * [Livingdocs Design](reference-documentation/livingdocs-design/README.md)
-  * [Design Config v1](reference-documentation/livingdocs-design/design_config_v1.md)
+  * [Design Config v2](reference-documentation/livingdocs-design/design_config_v2.md)
   * [Design Config v1 to v2 mapping](reference-documentation/livingdocs-design/design_config_v1_to_v2.md)
   * [Component Config](reference-documentation/livingdocs-design/component_config.md)
 * [Livingdocs Content Model](reference-documentation/livingdocs-content-model/README.md)
@@ -125,4 +125,3 @@
   * [Project config](livingdocs-service/reference-docs/project_config.md)
   * [Design settings](livingdocs-service/reference-docs/design_settings_config.md)
   * [Design component](livingdocs-service/reference-docs/design-component.md)
-
