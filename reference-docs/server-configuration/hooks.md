@@ -218,6 +218,7 @@ reindex the documents which got added/removed from a list.
 ```js
 listUpdateHook: ({
   trx, // a knex transaction object
+  eventSource, // which api method triggers the hook 'updateList' or `removeDocumentFromList`
   projectId,
   channelId,
   listId,
