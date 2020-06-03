@@ -713,38 +713,45 @@ Make sure that you disable the Asset Management in the Editor as well and make s
 
 ##### Google Vision API
 
-Livingdocs supports auto-tagging of images using the Google Vision API. In order to use this feature you need to open an account on GCP. Careful, use of this feature will incur costs with GCP. Refer to Google's pricing for more details. Livingdocs uses the label annotation and web detection features (can be configured separately).
+Livingdocs supports auto-tagging of images through the Google Vision API integration. In order to use this feature you need to open an account on GCP. Careful, use of this feature will incur costs with GCP. Refer to Google's pricing for more details. Livingdocs uses the label annotation and web detection features (can be configured).
 The node vision API package has some good documentation on how to create an account: https://github.com/googleapis/nodejs-vision
 
-Once you have your account, you can configure Livingdocs with the Vision API as follows:
+If you are using configurable channels you can use the UI in "Project Setup - Integrations" to setup the Google Vision API integration.
+If you want to do it manually, add the following configuration to the project's channel-config where you want to add the plugin:
+
 ```js
-assetManagement: {
-    autoTagging: {
-      googleVision: {
-        isEnabled: true,
-        detectLabels: true,
-        detectWeb: true,
-        confidenceCliff: 0.7,
-        credentials: {
-          type: '***',
-          project_id: '***',
-          private_key_id: '***',
-          private_key: '***',
-          client_email: '***',
-          client_id: '***',
-          auth_uri: '***',
-          token_uri: '***',
-          auth_provider_x509_cert_url: '***',
-          client_x509_cert_url: '***'
-        }
-      }
+handle: 'magazine',
+  integrations: {
+    googleVision: {
+      enabled: true,
+      credentials: {
+        type: 'service_account',
+        project_id: 'livingdocs-devel-1540279986584',
+        private_key_id: 'd715e0a07dd75660cc63c55571d07f92fe20c35e',
+        // eslint-disable-next-line
+        private_key: `-----BEGIN PRIVATE KEY-----foo bar\n-----END PRIVATE KEY-----\n`,
+        client_email: 'vision-api-dev@livingdocs-devel-1540279986584.iam.gserviceaccount.com',
+        client_id: '116066780307201591107',
+        auth_uri: 'https://accounts.google.com/o/oauth2/auth',
+        token_uri: 'https://oauth2.googleapis.com/token',
+        auth_provider_x509_cert_url: 'https://www.googleapis.com/oauth2/v1/certs',
+        client_x509_cert_url: 'https://www.googleapis.com/robot/v1/metadata/x509/vision-api-dev%40livingdocs-devel-1540279986584.iam.gserviceaccount.com'
+      },
+      confidenceCliff: 0.7,
+      language: {
+        label: 'German',
+        locale: 'de'
+      },
+      shouldDetectWeb: true
     }
   }
+}
 ```
 
 The `confidenceCliff` lets you specify a value (0..1) below which to drop results from the Vision API, e.g. only to take results with a confidence of 70% or higher. In fact we found 70% (0.7) to be a good default.
-You can turn on detection of labels and web entities separately. Refer to the Google Vision API documentation for details about both. Livingdocs shows labels in the UI under "Topics" and web entities under "Entities".
+You can turn on detection of web entities separately. Refer to the Google Vision API documentation for details about both. Livingdocs shows labels in the UI under "Topics" and web entities under "Entities".
 The credentials object is just the google service account json. We advise you to download the json from GCP and then entering the values here.
+The language enables a separate call to Google Translate API to translate the labels received from an image analysis. You GCP Account needs to have Google Translate API activated for this to work (will also infer costs).
 
 
 #####  Enforcing image metadata (Beta)
