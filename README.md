@@ -1,18 +1,26 @@
-# Livingdocs documentation
+# Introduction
 
-This is the technical documentation for the "Livingdocs CMS - Enterprise Edition". As a starting point we recommend the [Evaluation Guide](guides/getting_started.md) and then moving on from there.
-Make sure that you have the Livingdocs Boilerplate projects ([editor](https://github.com/livingdocsIO/livingdocs-editor-boilerplate), [server](https://github.com/livingdocsIO/livingdocs-server-boilerplate)) cloned locally as the documentation referes to them in many places
+## Livingdocs documentation
 
-Note: Enterprise means you have access to our source code. If you are a service customer, refer to our [Service Documentation](https://upfrontio.gitbook.io/livingdocs-service/).
+This is the technical documentation for the Livingdocs CMS. We address 3 larger audiences here:
 
-## Installation
+* designers
+* integrators
+* core developers
 
-If you use Livingdocs as an on-premises software you will have access to the (private) boilerplates projects and/or an .npmrc file with access to our core repositories (Note: this requires at least signing an evaluation contract, if you haven't done so already contact us at contact@livingdocs.io).
-To start an evaluation you can go through [our evaluation guide](guides/getting_started.md).
+### Livingdocs as a service
 
-To get a devops environment, refer to our [devops section](devops/self-hosting.md).
+You can use our hosted Livingdocs at [edit.livingdocs.io](http://edit.livingdocs.io) and do your integration using our API. This is a headless CMS approach. You can get started immediately by just creating an account on livingdocs.io Refer to our [API documentation](https://edit.livingdocs.io/public-api.html#/public-api.html) for more information on the available endpoints. Most of this documentation assumes that you integrate Livingdocs on-premises or have otherwise access to the source code.
 
-# Feedback
-Please let us know about gaps or errors in our documentation at [documentation@livingdocs.io](mailto: documentation@livingdocs.io) or do a pull request on https://github.com/livingdocsIO/livingdocs the source for our documentation.
+### Livingdocs on-premises
 
-(If you are viewing this documentation on our Github repository, there is a new nicer view of it at https://docs.livingdocs.io)
+If you use Livingdocs as an on-premises software you will have access to the \(private\) boilerplates projects and/or an .npmrc file with access to our core repositories \(Note: this requires at least signing an evaluation contract, if you haven't done so already contact us at contact@livingdocs.io\). To start an evaluation you can go through [our evaluation guide](https://github.com/livingdocsIO/livingdocs/tree/cbc473431e6fc6178c42dc7ede0421b7caeccce9/walkthroughs/getting_started.md).
+
+To get a devops environment, refer to our [devops section](https://github.com/livingdocsIO/livingdocs/tree/cbc473431e6fc6178c42dc7ede0421b7caeccce9/setup-and-deployment/self-hosting.md).
+
+## Feedback
+
+Please let us know about gaps or errors in our documentation at [documentation@livingdocs.io](mailto:%20documentation@livingdocs.io) or do a pull request on [https://github.com/livingdocsIO/livingdocs](https://github.com/livingdocsIO/livingdocs) the source for our documentation.
+
+\(If you are viewing this documentation on our Github repository, there is a new nicer view of it at [https://docs.livingdocs.io](https://docs.livingdocs.io)\)
+
