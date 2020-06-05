@@ -1,14 +1,16 @@
-# Summary
-* [Quick Start](./README.md)
-* [First Steps](service/getting_started.md)
+# Table of contents
+
+* [Quick Start](README.md)
+* [First Steps](getting_started.md)
 
 ## CLI
-* [Sync Project Configs](livingdocs-cli/sync-configs.md)
-* [.livingdocs-cli](livingdocs-cli/cli-dotfile.md)
+
+* [Sync Project Configs](cli/sync-configs.md)
+* [.livingdocs-cli](cli/cli-dotfile.md)
 
 ## Reference docs
-* [Channel config](service/project_config.md)
-* [Design settings](service/design_settings_config.md)
-* [Design component](service/design_component_settings.md)
 
-## Public API
+* [Channel config](reference-docs/project_config.md)
+* [Design settings](reference-docs/design_settings_config.md)
+* [Design component](reference-docs/design_component_settings.md)
+

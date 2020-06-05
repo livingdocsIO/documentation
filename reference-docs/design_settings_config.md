@@ -1,8 +1,8 @@
-# Design settings config options
+# Design settings
 
 ## Design description options
 
-```js
+```javascript
 label: 'Demo Design',
 description: 'This is an example design',
 author: 'living doc'
@@ -10,17 +10,17 @@ author: 'living doc'
 
 ## componentProperties
 
-Component properties let you define css classes or styles that can be set on
-the root element of a component.
+Component properties let you define css classes or styles that can be set on the root element of a component.
 
-You can add 3 different types: 
-- style: user can add a css value in the side-bar
-- option: user can enable or disable class
-- select: user can select a value from given options
+You can add 3 different types:
+
+* style: user can add a css value in the side-bar
+* option: user can enable or disable class
+* select: user can select a value from given options
 
 Component Properties definition in the design:
 
-```js
+```javascript
 componentProperties: [{
     type: 'style',
     label: 'Background Color',
@@ -48,17 +48,17 @@ componentProperties: [{
 }]
 ```
 
-Component definition:
-add the properties property to the component definition
+Component definition: add the properties property to the component definition
 
-```js
+```javascript
 properties: ['css-background-color', 'css-class', 'css-class-selection']
 ```
 
 ## assets
+
 You can add custom css and js files to your design. These files will be loaded in the editor to show an article.
 
-```js
+```javascript
 assets: {
   css: [
     'url to css'
@@ -70,10 +70,12 @@ assets: {
 ```
 
 ## componentGroups
-To group different components together a componentGroups section can be added. 
+
+To group different components together a componentGroups section can be added.
 
 The group alwasys have a name, label and the components.
-```js
+
+```javascript
 componentGroups: [{
   name: 'content',
   label: 'Components',
@@ -86,10 +88,10 @@ componentGroups: [{
 ```
 
 ## defaultComponents
-For the different component types in a livingdoc the default component can be defined. 
-These components are used on default operation like drag and drop an image or after the enter/return key is pressed and a new component will be created.
 
-```js
+For the different component types in a livingdoc the default component can be defined. These components are used on default operation like drag and drop an image or after the enter/return key is pressed and a new component will be created.
+
+```javascript
 defaultComponents: {
   // enter/return key is pressed and a new component will be created
   paragraph: 'p',
@@ -100,7 +102,8 @@ defaultComponents: {
 ```
 
 ## fieldExtractor
-```js
+
+```javascript
 // extract the content of a field to set a metadata 
 fieldExtractor: [{
   // metadata field name
@@ -111,3 +114,4 @@ fieldExtractor: [{
   matches: ['title.title']
 }]
 ```
+
