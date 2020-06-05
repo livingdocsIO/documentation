@@ -1,6 +1,6 @@
-# project config
+# channel config
 
-A project config defines the project specific config, contentTypes and designs. To build a custom design the [designSettings](#designSettings) and [components](#components) can be modified.
+The channel config defines the project specific config, contentTypes and designs. To build a custom design the [designSettings](#designSettings) and [components](#components) can be modified.
 
 Example:
 ```js

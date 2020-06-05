@@ -1,17 +1,14 @@
-# Table of contents
-
-* [Introduction](README.md)
-
-## Livingdocs Service
-
-* [Getting started](livingdocs-service/getting_started.md)
-* [Reference docs](livingdocs-service/reference-docs/README.md)
-  * [Project config](livingdocs-service/reference-docs/project_config.md)
-  * [Design settings](livingdocs-service/reference-docs/design_settings_config.md)
-  * [Design component](livingdocs-service/reference-docs/design-component.md)
+# Summary
+* [Quick Start](./README.md)
+* [First Steps](service/getting_started.md)
 
 ## CLI
+* [Sync Project Configs](livingdocs-cli/sync-configs.md)
+* [.livingdocs-cli](livingdocs-cli/cli-dotfile.md)
 
-* [.livingdocs-cli](cli/cli-dotfile.md)
-* [Sync Project Configs](cli/sync-configs.md)
+## Reference docs
+* [Channel config](service/project_config.md)
+* [Design settings](service/design_settings_config.md)
+* [Design component](service/design_component_settings.md)
 
+## Public API
