@@ -1,0 +1,2 @@
+# Livingdocs Content Model
+
