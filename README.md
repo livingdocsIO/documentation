@@ -11,19 +11,19 @@ Read on to learn about the most important concepts of Livingdocs.
 
 A Livingdocs project is easiest understood as a publication. This can be a newspaper, blog, website or pretty much every imaginable web publication. Upon [signing up](https://edit.livingdocs.io) for the Livingdocs service a Sandbox is created for you. This is a project. You can also create your own projects and invite teams to them. The number of projects you are allowed to create depends upon your chosen service plan.
 
-{% vimeo %}426279221{% endvimeo %}
+{% video %}https://vimeo.com/426279221{% endvideo %}
 
 ## Project Setup
 
 This is where you configure your publication. A publication might have different content-types like articles or image galleries. Those in turn have metadata and component sets out of which editors can create content. All those things can be configured in the "Project Setup" section of Livingdocs.
 
-{% vimeo %}426285528{% endvimeo %}
+{% video %}https://vimeo.com/426285528{% endvideo %}
 
 ## Channel-Config
 
 The channel-config is the persistence of the project setup. It's a huge JSON file that contains all settings you applied to your project. The UIs in the "Project Setup" section alter the channel-config JSON and you can always see the complete JSON in the "History" screen of the "Project Setup" (it's versioned as well). You can also write to this JSON directly using our CLI, more on this later.
 
-{% vimeo %}426287530{% endvimeo %}
+{% video %}https://vimeo.com/426287530{% endvideo %}
 
 ## Design
 
