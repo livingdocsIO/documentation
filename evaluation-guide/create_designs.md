@@ -43,11 +43,6 @@ var designDefinition = {
 
   designSettings: {
 
-    // General design information
-    name: 'designName',
-    version: '1.0.0',
-    author: 'Peter Pan',
-
     // Assets required by the design
     assets: {
       css: ["/stylesheets/test.css"]
@@ -69,28 +64,27 @@ var designDefinition = {
     // All available properties you can define on your components.
     // A componentProperty is for example a css class a user can
     // toggle on a component.
-    componentProperties: {
-      'position': {
-        label: 'Position',
-        type: 'select',
-        options: [
-          {
-            caption: 'Default'
-          }, {
-            caption: 'Left',
-            value: 'position-left'
-          }, {
-            caption: 'Right',
-            value: 'position-right'
-          }
-        ]
-      },
-      'extra-space': {
-        label: 'Extra Space',
-        type: 'option',
-        value: 'extra-space'
-      }
-    },
+    componentProperties: [{
+      name: 'position',
+      label: 'Position',
+      type: 'select',
+      options: [
+        {
+          caption: 'Default'
+        }, {
+          caption: 'Left',
+          value: 'position-left'
+        }, {
+          caption: 'Right',
+          value: 'position-right'
+        }
+      ]
+    }, {
+      name: 'extra-space',
+      label: 'Extra Space',
+      type: 'option',
+      value: 'extra-space'
+    }],
 
     // The defaults paragraph component defines which component is
     // inserted if a user hits ENTER.
@@ -191,4 +185,3 @@ A Livingdocs `component definition` consists of HTML that has added attributes t
 ### But I want my own design
 
 Sure enough you don't want to keep working with the `livingdocs-design-timeline` forever. We highly advise you though to use the setup defined there as it makes working with Livingdocs designs a lot easier. Just copy the `livingdocs-design-timeline` repository, name it anything you like and start replacing the CSS and HTML with your own.
-
