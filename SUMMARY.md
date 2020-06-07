@@ -25,8 +25,6 @@
 * Server Config
   * [Initialization](reference-docs/server-extensions/server-initalization.md)
   * [Configuration File](reference-docs/server-configuration/config.md)
-  * [Channel Config](reference-docs/server-configuration/channel-config.md)
-  * [Content-Type Config](reference-docs/server-configuration/content-type-config.md)
   * [Metadata on the Server](reference-docs/server-configuration/metadata.md)
   * [Hooks](reference-docs/server-configuration/hooks.md)
   * [Webhooks](reference-docs/server-configuration/webhooks.md)
