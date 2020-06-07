@@ -36,7 +36,7 @@ This is an internal property used for version management.
 `settings.js` can be used to configure a channel (project). 
 
 #### References
-- [channel-config reference documentation](../reference-docs/server-configuration/channel-config.md)
+- [channel-config reference documentation](../reference-docs/channel-config/README.md)
 
 
 
@@ -45,7 +45,7 @@ This is an internal property used for version management.
 A project can have multiple contentTypes. An example for a contentTypes is a "Regular article" or a "Gallery article". Every contentType can have different components and metadata.
 
 #### References
-- [contentType reference documentation](../reference-docs/server-configuration/content-type-config.md)
+- [contentType reference documentation](../reference-docs/channel-config/content_types.md)
 - [metadata reference documentation](../reference-docs/editor-configuration/metadata.md)
 
 

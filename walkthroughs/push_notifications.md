@@ -20,8 +20,8 @@ The resulting feature looks as follows.
 
 To enable push notifications you need to do 3 things:
 1. setup the firebase config in your [server configuration](../reference-docs/server-configuration/config.md#push-notifications), you will need to create a Google firebase key for this
-2. in every channel that should support push notifications, [configure the required metadata field](../reference-docs/server-configuration/channel-config.md#push-notifications)
-3. in every channel that should support push notifications, [configure your topics](../reference-docs/server-configuration/channel-config.md#push-notifications)
+2. in every channel that should support push notifications, [configure the required metadata field](../reference-docs/channel-config/content_types.md#push-notifications)
+3. in every channel that should support push notifications, [configure your topics](../reference-docs/channel-config/content_types.md#push-notifications)
 4. setup the push notifications field in your elasticsearch mapping
 
 The [livingdocs server boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate) has commented out sections for all three things so you can check there.
