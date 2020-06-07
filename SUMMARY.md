@@ -20,12 +20,9 @@
 
 ## Reference Documentation
 
-* Server Core APIs
-  * [Import API](reference-docs/server-api/import_api.md)
-  * [Print API](reference-docs/server-api/print-api.md)
-  * [Seed API](reference-docs/server-api/seed_api.md)
-  * [DataSource API](reference-docs/server-api/data_source_api.md)
-* Server
+* [Project Config](reference-docs/channel-config/README.md)
+  * [Content Types](reference-docs/channel-config/content_types.md)
+* Server Config
   * [Initialization](reference-docs/server-extensions/server-initalization.md)
   * [Configuration File](reference-docs/server-configuration/config.md)
   * [Channel Config](reference-docs/server-configuration/channel-config.md)
@@ -42,7 +39,7 @@
   * [Teaser Preview Configuration](reference-docs/server-configuration/teaser-preview-config.md)
   * [Desk-Net Integration](reference-docs/server-configuration/desknet-integration.md)
   * [Search Publications](reference-docs/server-configuration/publication-index.md)
-* Editor
+* Editor Config
   * [Document Editing Features](reference-docs/editor-configuration/editing-features.md)
   * [Text Editing Config](reference-docs/editor-configuration/text-editing.md)
   * [Menu and Dashboards](reference-docs/editor-configuration/menu-and-dashboards.md)
@@ -52,6 +49,11 @@
   * [Metadata Configuration](reference-docs/editor-configuration/metadata.md)
   * [Customizing the Navigation](reference-docs/editor-configuration/main-navigation.md)
   * [Login](reference-docs/editor-configuration/login.md)
+* Server Core APIs
+  * [Import API](reference-docs/server-api/import_api.md)
+  * [Print API](reference-docs/server-api/print-api.md)
+  * [Seed API](reference-docs/server-api/seed_api.md)
+  * [DataSource API](reference-docs/server-api/data_source_api.md)
 * Livingdocs Design
   * [Design Config v1](reference-docs/common-designs/design_config_v1.md)
   * [Design Config v1 to v2 mapping](reference-docs/common-designs/design_config_v1_to_v2.md)
