@@ -1,4 +1,4 @@
-# Livingdocs Design Intro
+## Design Introduction
 
 Speakers: Gabriel Hase, Co-Founder Livingdocs and Vedran Rudelj, Freelance Designer
 
@@ -8,15 +8,18 @@ Length: 50 minutes
 
 There is quite some background noise in the video, we are very sorry for this
 
-## Abstract
+### Abstract
 
-This screencast showcases how to create a Livingdocs Design given that you have already written the HTML and CSS for your intended website. The video touches quite a lot of \(advanced\) topics, so to get a basic idea of what a Livingdocs Design is, we recommend a visit to our [written design documentation](../evaluation-guide/create_designs.md) before watching this screencast.
+This screencast showcases how to create a Livingdocs Design given that you have already written the HTML and CSS for your intended website.
+The video touches quite a lot of (advanced) topics, so to get a basic idea of what a Livingdocs Design is, we recommend a visit to our
+[written design documentation](../reference-docs/common-designs/create_designs.md) before watching this screencast.
 
-## Video
+### Video
 
-## Related Material
+{% vimeo %}229997156{% endvimeo %}
 
-The HTML / CSS design used in the video: [http://fidel.io/](http://fidel.io/)
+### Related Material
 
-The open-source boilerplate design from Livingdocs: [https://github.com/livingdocsIO/livingdocs-design-timeline](https://github.com/livingdocsIO/livingdocs-design-timeline)
+The HTML / CSS design used in the video: http://fidel.io/
 
+The open-source boilerplate design from Livingdocs: https://github.com/livingdocsIO/livingdocs-design-timeline

@@ -1,2 +1,0 @@
-# Livingdocs Design
-
