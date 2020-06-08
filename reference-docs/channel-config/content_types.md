@@ -76,14 +76,21 @@ We plan to allow to move all layout options which are currently defined in the d
     },
 
     frontend: {
-      // link pattern for ld-editor publish panel to generate a link
-      // Available placeholders:
+      // One or multiple deliveryLinks are show in the publish panel
+      // They should point to your frontends
+      // url can be a pattern containing these placeholders:
       // :path
       // :routingPath
       // :id
       // :projectId
       // :slug
-      preview: 'http://localhost:9999/:slug' // TODO replace with delivery links
+      deliveryLinks: [
+        {
+          url: 'http://localhost:9999/:slug',
+          icon: 'link-variant',
+          label: 'Publish link'
+        }
+      ]
     }
   },
 
