@@ -22,6 +22,8 @@
 
 * [Project Config](reference-docs/channel-config/README.md)
   * [Content Types](reference-docs/channel-config/content_types.md)
+  * [Categories](reference-docs/channel-config/categories.md)
+  * [Settings](reference-docs/channel-config/settings.md)
 * Server Config
   * [Initialization](reference-docs/server-extensions/server-initalization.md)
   * [Configuration File](reference-docs/server-configuration/config.md)
