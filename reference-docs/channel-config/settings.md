@@ -34,15 +34,15 @@ An example:
         "enabled": true,
         "credentials": {
             "type": "service_account",
-            "project_id": "livingdocs-devel-1540279986584",
-            "private_key_id": "d715e0a07dd75660cc63c55571d07f92fe20c35e",
+            "project_id": "your-project-123",
+            "private_key_id": "123",
             "private_key": "-----BEGIN PRIVATEfoo bar-----END PRIVATE KEY-----\n",
-            "client_email": "vision-api-dev@livingdocs-devel-1540279986584.iam.gserviceaccount.com",
-            "client_id": "116066780307201591107",
+            "client_email": "vision-api-dev@your-project-123.iam.gserviceaccount.com",
+            "client_id": "123",
             "auth_uri": "https://accounts.google.com/o/oauth2/auth",
             "token_uri": "https://oauth2.googleapis.com/token",
             "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-            "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/vision-api-dev%40livingdocs-devel-1540279986584.iam.gserviceaccount.com"
+            "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/vision-api-dev%40your-project-123.iam.gserviceaccount.com"
         },
         "confidenceCliff": 0.7,
         "language": {
@@ -115,7 +115,8 @@ An example:
 }
 ```
 
-## Languages / Translations (has UI support)
+## Languages / Translations 
+*has UI support*
 
 Livingdocs allows you to define documents in multiple languages as well as integrating a translation workflow to translate a document from one language to the other.
 
@@ -126,7 +127,8 @@ The `translationWorkflow` flag, if true, enables the translation tools in Living
 
 If you activate the translation feature, then the `language` metadata plugin on a document will contain a `groupId`. You can use this in the `languageGroupId` parameter of the [Publication Search public API](https://edit.livingdocs.io/public-api) (under "Search Publications") call to retrieve all translations of a document.
 
-## Integrations (has UI support)
+## Integrations
+*has UI support*
 
 Since integrations typically require a correct connection to be establised we strongly advise to use our UIs under "Project Setup" to set them up.
 
@@ -139,7 +141,8 @@ Available plugins are:
 - Comyan (external image storage)
 - Netlify (static rendering)
 
-## Includes (has UI support)
+## Includes
+*has UI support*
 
 Includes allow you to render parts of your document from a remote location. For example you can create a component called `highcharts` that uses a service directive in the HTML lik `<div doc-include="highcharts"></div>`. Everything inside that div will be rendered from the remote service "highcharts".
 
@@ -150,7 +153,8 @@ The `config` parameter can contain arbitrary (fixed) data that are sent to your 
 The `paramsSchema` generates a form for the editor in the sidebar when a respective component is selected. Editors can then enter (dynamic) configs that are sent to your micro-service. As of now the only supported form types are `li-boolean` and `li-text`, i.e. a checkbox and a text input.
 
 
-## Webhooks (has UI support)
+## Webhooks
+*has UI support*
 
 Webhooks allow you to receive notifications for events from within Livingdocs and react to them. We advise you to use the UI under "Project Setup" to define your webhooks.
 

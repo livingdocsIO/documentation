@@ -24,7 +24,7 @@ We plan to allow to move all layout options which are currently defined in the d
   },
 
   editorWrapper: '<div class="doc-section"></div>',
-  defaultContent: [],
+  defaultContent: [{component: 'title', position: 'fixed}],
 
   // define the server-side metadata
   metadata: [{
@@ -100,17 +100,23 @@ We plan to allow to move all layout options which are currently defined in the d
 }
 ```
 
-## Default Content (has UI support)
+## Default Content
+*has UI support*
 
-The default content defines what components are pre-set on your document upon creation. NOTE: the default content only gets applied when a document is created manually, i.e. in the editor. If you create documents programmatically (e.g. import), you need to define the content yourself.
+The default content defines what components are pre-set on your document upon creation. 
+
+NOTE: the default content only gets applied when a document is created manually, i.e. in the editor. If you create documents programmatically (e.g. import), you need to define the content yourself.
 
 The default content is simply a (valid) Livingdocs JSON applying to your design. We advise you to use the UI in the "Project Setup" for adapting the default content.
+
+One useful property on components within the default content is the `position: fixed` property. It allows to fix a component in place, useful, e.g. for headers. [Read more](../editor-configuration/editing-features.md#pin-components)
 
 ## Editor Wrapper
 
 Defines an HTML string that wraps the document when used in the editor, e.g. for global styling. Use the class `doc-section` where you want the content to be inserted.
 
-## Metadata (has UI support)
+## Metadata
+*has UI support*
 
 Metadata can be freely configured for each content-type. An article might have different metadata fields than an image gallery.
 
@@ -143,7 +149,8 @@ The schema of the metadata array looks as follows:
 
 We advise to use the "Project Setup" UI for metadata changes wherever possible.
 
-## Metadata Groups (has UI support)
+## Metadata Groups
+*has UI support*
 
 The Metadata Groups allow you to logically group the fields for display on the publish panel.
 
@@ -162,7 +169,8 @@ e.g.:
   }]
 ```
 
-## Components and Component Groups (has UI support)
+## Components and Component Groups
+*has UI support*
 
 The `components` entry tells the Livingdocs editor which subset of all components in the design should be usable within a content-type. For example, a gallery should probably only have images.
 The groups allow you to define how the components are shown in the Livingdocs editor sidebar of a document.
@@ -185,9 +193,10 @@ componentGroups: [{
 
 The `publicationIndex` config allows you to define how documents of this content-type are indexed into the elastic search publication index which in turn is used by the public API. You can for example change the date field by which API results are sorted.
 
-For details on the configuration and how it interacts with the metadata configuration, see our section on [searching publications](../server/publication-index.md).
+For details on the configuration and how it interacts with the metadata configuration, see our section on [searching publications](../server-configuration/publication-index.md).
 
-## Routing (has UI support)
+## Routing
+*has UI support*
 
 The routing setting defines how the routes cache (redis) builds lookup route entries for this content-type. We advise you to use the UI under "Project Setup - Categories / Routing" to setup your routing config.
 
@@ -254,13 +263,13 @@ The schema is as follows:
   })
 ```
 
-Apart from the general settings (`renderSettings`) you define an entry for each teaser (`teasers`) giving it the Livingdocs component (from the design) that should be used for rendering as well as a mapping of metadata values to component directives. See our guide on [teaser previews](../server/teaser-preview-config.md) for more details.
+Apart from the general settings (`renderSettings`) you define an entry for each teaser (`teasers`) giving it the Livingdocs component (from the design) that should be used for rendering as well as a mapping of metadata values to component directives. See our guide on [teaser previews](../server-configuration/teaser-preview-config.md) for more details.
 
 ## Desk-Net (has UI support)
 
 We advise you to setup the Desk-Net configuration from the "Project Setup" entry of the same name. There is also a [video](https://vimeo.com/368750546) explaining the setup.
 
-See our [Desk-Net plugin guide](../server/desknet-integration.md) for comprehensive infos (custom code parts require enterprise version).
+See our [Desk-Net plugin guide](../server-configuration/desknet-integration.md) for comprehensive infos (custom code parts require enterprise version).
 
 ## Renditions (enterprise only)
 
@@ -297,7 +306,8 @@ module.exports = {
 }
 ```
 
-## Enable Push Notifications for a ContentType (enterprise only)
+## Enable Push Notifications for a ContentType 
+*enterprise only*
 
 To enable push notifications for a specific content type you must have a metadata field called `pushNotifications`. Name and plugin must match exactly.
 
@@ -308,6 +318,4 @@ metadata: [{
 }]
 ```
 
-With this in place you can set the channel configuration for your push notification topics \(see example config above\) and the firebase configuration in the [server config](../server/config.md#push-notifications).
-
-## 
+With this in place you can set the channel configuration for your push notification topics \(see example config above\) and the firebase configuration in the [server config](../server-configuration/config.md#push-notifications).
