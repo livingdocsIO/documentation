@@ -34,7 +34,7 @@ If the include is resolved instead of the `<ld-include>` you see the actual HTML
 
 #### How to configure the rendering option
 
-Includes are not resolved by default. Enable it in the [channel configuration](../channel-config/README.md):
+Includes are not resolved by default. Enable it in the [channel configuration](../project-config/README.md):
 
 ```js
 module.exports = {

@@ -29,8 +29,8 @@ Example config with multiple sources:
 
 This config can be defined as `imageSourcePolicy` in these places:
 
-For a project: [Settings configuration](../channel-config/README.md)
-Overwrite per contentType: [ContentType configuration](../channel-config/content_types.md)
+For a project: [Settings configuration](../project-config/README.md)
+Overwrite per contentType: [ContentType configuration](../project-config/content_types.md)
 
 
 #### Editor Configuration

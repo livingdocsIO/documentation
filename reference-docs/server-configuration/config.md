@@ -427,7 +427,7 @@ projects: {
 }
 ```
 
-The channel and contentType config is described in detail here: [channel config](../channel-config/README.md)
+The channel and contentType config is described in detail here: [channel config](../project-config/README.md)
 
 
 #### Render Pipeline
@@ -583,7 +583,7 @@ push_notifications: {
 }
 ```
 
-For push notifications to be enabled you also need to follow the steps in the [channel config setup](../channel-config/content_types.md#push-notifications)
+For push notifications to be enabled you also need to follow the steps in the [channel config setup](../project-config/content_types.md#push-notifications)
 
 
 #### Asset management
