@@ -18,21 +18,21 @@
 * [Livingdocs Includes](videos/includes.md)
 
 
-## Reference Documentation
+## Reference Docs
 
-* [Project Config](reference-docs/channel-config/README.md)
-  * [Content Types](reference-docs/channel-config/content_types.md)
-  * [Categories](reference-docs/channel-config/categories.md)
-  * [Settings](reference-docs/channel-config/settings.md)
-  * [Design](reference-docs/channel-config/design.md)
+* [Project Config](reference-docs/project-config/README.md)
+  * [Content Types](reference-docs/project-config/content_types.md)
+  * [Categories](reference-docs/project-config/categories.md)
+  * [Settings](reference-docs/project-config/settings.md)
+  * [Design](reference-docs/project-config/design.md)
   * Directives
-    * [Editable](reference-docs/channel-config/directives/editable.md)
-    * [Image](reference-docs/channel-config/directives/image.md)
-    * [Container](reference-docs/channel-config/directives/container.md)
-    * [Link](reference-docs/channel-config/directives/link.md)
-    * [Include](reference-docs/channel-config/directives/include.md)
-    * [HTML](reference-docs/channel-config/directives/html.md)
-    * [Style](reference-docs/channel-config/directives/style.md)
+    * [Editable](reference-docs/project-config/directives/editable.md)
+    * [Image](reference-docs/project-config/directives/image.md)
+    * [Container](reference-docs/project-config/directives/container.md)
+    * [Link](reference-docs/project-config/directives/link.md)
+    * [Include](reference-docs/project-config/directives/include.md)
+    * [HTML](reference-docs/project-config/directives/html.md)
+    * [Style](reference-docs/project-config/directives/style.md)
 * Server Config
   * [Initialization](reference-docs/server-extensions/server-initalization.md)
   * [Configuration File](reference-docs/server-configuration/config.md)
@@ -85,7 +85,7 @@
   * [Example: Renaming a directive](concepts/document-migrations/examples/rename_directive.md)
   * [Example: Adding a metadata field](concepts/document-migrations/examples/add_metadata_field.md)
 
-## General Howtos
+## Walkthroughs
 
 * [Use Document Copy](concepts/copying-documents/document_copy_feature.md)
 * [Register a Custom Server Feature](walkthroughs/add_customizations.md)

@@ -14,7 +14,7 @@ The metadata screen gets a new language select box if the multi-language feature
 
 ### Languages
 
-On the server, we first need to provide which languages we want to support in our project. This is defined per [channel](../reference-docs/channel-config/README.md). In the configuration file for your channel
+On the server, we first need to provide which languages we want to support in our project. This is defined per [channel](../reference-docs/project-config/README.md). In the configuration file for your channel
 add code as follows.
 
 ```js
@@ -40,7 +40,7 @@ languages from which a user can choose for a document. The `defaultLanguage` mus
 ### Metadata
 
 The language of a document is stored within the documents metadata. In order to enable this, we need to add a metadata field for every
-[content-type](../reference-docs/channel-config/content_types.md) that we want to have in multiple languages. An example is
+[content-type](../reference-docs/project-config/content_types.md) that we want to have in multiple languages. An example is
 given below.
 
 ```js

@@ -2,11 +2,11 @@
 
 ![Teaser Preview](./teaser_preview.gif)
 
-The Teaser Preview adds an additional read-only view to the publication section of the Livingdocs Editor. It is by default disabled and can only be enabled and configured through a [content type config](../channel-config/content_types.md). 
+The Teaser Preview adds an additional read-only view to the publication section of the Livingdocs Editor. It is by default disabled and can only be enabled and configured through a [content type config](../project-config/content_types.md). 
 
 We basically configure a mapping that translates a subset of the **_current document_** (the one we are editing / publishing) into a state that gets rendered using components from your design. Further we can also control the dimensions and look of the preview.
 
-**Please note**: This documentation assumes that you have a [channel](../channel-config/README.md) and a [design](../common-designs/create_designs.md) and at least one [content type](../channel-config/content_types.md) properly set up.
+**Please note**: This documentation assumes that you have a [channel](../project-config/README.md) and a [design](../common-designs/create_designs.md) and at least one [content type](../project-config/content_types.md) properly set up.
 
 
 ## Minimalist example
@@ -145,7 +145,7 @@ In a design, with a teaser component `teaser`:
 </div>
 ```
 
-Extend a [content-type config](../channel-config/content_types.md): 
+Extend a [content-type config](../project-config/content_types.md): 
 
 ```
 contentTypes: [{
@@ -189,7 +189,7 @@ In a design, with a teaser component `embed-teaser`:
 </div>
 ```
 
-Extend a [content-type config](../channel-config/content_types.md): 
+Extend a [content-type config](../project-config/content_types.md): 
 
 ```
 contentTypes: [{
