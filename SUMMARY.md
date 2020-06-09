@@ -24,6 +24,15 @@
   * [Content Types](reference-docs/channel-config/content_types.md)
   * [Categories](reference-docs/channel-config/categories.md)
   * [Settings](reference-docs/channel-config/settings.md)
+  * [Design](reference-docs/channel-config/design.md)
+  * Directives
+    * [Editable](reference-docs/channel-config/directives/editable.md)
+    * [Image](reference-docs/channel-config/directives/image.md)
+    * [Container](reference-docs/channel-config/directives/container.md)
+    * [Link](reference-docs/channel-config/directives/link.md)
+    * [Include](reference-docs/channel-config/directives/include.md)
+    * [HTML](reference-docs/channel-config/directives/html.md)
+    * [Style](reference-docs/channel-config/directives/style.md)
 * Server Config
   * [Initialization](reference-docs/server-extensions/server-initalization.md)
   * [Configuration File](reference-docs/server-configuration/config.md)

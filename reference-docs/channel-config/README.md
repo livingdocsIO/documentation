@@ -1,6 +1,8 @@
-# Project (channel-config)
+# Project Config
 
 The project config affects all configurable settings of a Livingdocs project, e.g. the content types or the design. There can be several project configs within a Livingdocs installation, one for each project.
+
+The project config has wide UI support. Basically the whole section "Project Setup" in the Livingdocs Main Menu allows setting parts of the Project config via UI options. The parts that have UI support are marked in the documentation.
 
 The project config is a huge JSON file with subproperties for things like content types. Below is a simple example:
 ```javascript
@@ -162,4 +164,4 @@ In a nutshell, the channel configuration allows you to:
 * configure the push notifications feature
 * configure the multi-language feature
 * configure integrations
-* configure includeServices. See [doc-includes](../../evaluation-guide/intro.md) for more information.
+* configure includeServices for third-party rendering
