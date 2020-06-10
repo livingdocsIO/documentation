@@ -19,21 +19,11 @@ See *Upstream*.
 An "Embedded Design" lives inside of a Livingdocs channel configuration, therefore every "Embedded Design" is unique per project.
 Another design type is a [Referenced Design](#referenced-design).
 
-## [HuGO](http://www.sternwald.com/hugo/)
-
-A Digital Assets Management product developed and maintained by Sternwald, used
-to manage images and agency reports in large numbers. Also acts as a proxy for
-our Print Api to print publishing systems like `NewsNT` or `WoodWing`.
-
 ## Livingdoc
 
 A `livingdoc` is a document in our system. It separates content from structure
 by using `Components`. A `Livingdoc` references a specific `Design` which
 defines the available `Components` that can be used in the document.
-
-## NewsNT
-
-A print publishing system.
 
 ## Project
 

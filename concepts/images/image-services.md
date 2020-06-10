@@ -34,8 +34,9 @@ For details please see the reference documentation for the [server configuration
 ### Delivery
 
 The delivery of the images is done through a URL-pattern-based web service. Out of the box, Livingdocs supports:
-1. resrc.it (https://www.resrc.it/ note: resrc.it was bought by fastly and you can currently not open new accounts)
-2. ImgIX (https://www.imgix.com/)
+1. ImgIX (https://www.imgix.com/)
+2. Deprecated: resrc.it (https://www.resrc.it/ note: resrc.it was bought by fastly and you can currently not open new accounts)
+
 
 You can also add another image service, or even your own. SZ did so for their magazine.
 

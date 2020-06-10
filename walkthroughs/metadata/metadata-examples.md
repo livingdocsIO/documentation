@@ -1,9 +1,9 @@
 
 # Metadata Plugins
 
-## Example 1: Full Example on how to Introduce a Metadata Field with a Standard Metadata Plugin
+## Example 1: Add a Metadata Field
 
-Say we want to create a new metadata field "catchline" for articles of your default web channel. The catchline should be a simple text input on the publish panel that journalists can edit.
+Say we want to create a new metadata field "catchline" for articles. The catchline should be a simple text input on the publish panel that journalists can edit.
 
 For details have a look at the [server configuration reference documentation](../../reference-docs/server-configuration/metadata.md)
 
@@ -17,30 +17,35 @@ You will first need to configure this in your server.
 ```js
 metadata: [{
   handle: 'catchline', // Name of the metadata field
-
-  // Define the plugin for the catchline
-  // 'li-text' is the name defined in /plugins/metadata/li-text
-  plugin: 'li-text',
-  ui: {component: 'liMetaTextForm'}
+  type: 'li-text', // name of the used metadata plugin
+  config: {maxLength: 400}, // configuration 
+  ui: {component: 'liMetaTextForm'} // UI to use in the editor
 }]
 ```
+
+The metadata lives in the content-type config. You can for example add the above defition to the content-type file `article.js` to have a `catchline` metadata field on articles.
+
+Some things to note:
 
 1. A standard plugin is stored in `plugins/metadata` and will automatically be loaded on the downstream and is always ready for usage. In our example we use `li-text`.
 2. Open the `contentType` configuration file you want to edit and add the catchline config from the example to the metadata configuration. The field `catchline` is now available on documents with this `contentType`.
 3. The `ui` proprety in `metadata` defines the component that will be displayed in the Editor publish screen.
-4. Open your elastic search metadata mapping (typically in `search/custom-mappings/metadata.json`) and add an entry as follows (the key `properties` probably already exists):
+
+By default, metadata is only stored in the database. Depending on your use case you might want to add it to your search index. There are two search indexes: drafts (for the internal search), publications (for the public API).
+
+To add something to your drafts index, open the metadata mapping (typically in `search/custom-mappings/metadata.json`) and add an entry as follows (the key `properties` probably already exists):
 ```json
 {
   "properties": {
     "catchline": {
-      "type": "string"
+      "type": "text"
     }
   }
 }
 ```
-5. Reset your document elastic search index by running `grunt search-index:document:reset`
-6. After you have setup your new metadata field you can use it in the editor.
+5. Reset your draft elastic search index by running `npx livingdocs-server es-search-reindex -y`
 
+Adding to the publication index only makes sense if you want to filter by it (so the catchline is a poor example for this). [Read about the publication index](../../reference-docs/server-configuration/publication-index.md)
 
 ## Example 2: Create your own Metadata Plugin
 
@@ -96,21 +101,7 @@ https://www.example.com/a-way-to-compare-schools
 
 #### Server
 
-First we need to define a new property in our Elasticsearch mapping.
-
-In `app/search/custom-mappings/metadata.json`, add the `slug` property:
-```JSON
-{
-  "properties": {
-    "slug": {
-      "type": "string",
-      "index": "not_analyzed"
-    }
-  }
-}
-```
-
-Then, we extend the configuration of the **web** channel for documents with `contentType` **article**.
+We extend the configuration for documents with `contentType` **article**.
 
 ContentType configuration:
 ```js
@@ -151,11 +142,6 @@ mmodule.exports = {
     type: 'string'
   }
 }
-```
-
-Finally we need to reset Elasticsearch.
-```bash
-grunt search-index:document:reset
 ```
 
 As a side note, in the server, custom plugins are probably ready to use. See `conf/environments/all.js`:
