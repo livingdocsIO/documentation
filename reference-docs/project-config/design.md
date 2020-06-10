@@ -213,3 +213,13 @@ Livingdocs supports the following directive types.
 | style | Allows a user to set the `style` attribute on a DOM node [details](directives/style.md) |
 
 For the declaration in HTML always prepend `doc-` to the type.
+
+Apart from directives, components also have properties.
+
+- `allowedParents`, array of strings, defines in which components that have container directives (you must give the component name) this component may be added
+- `excludeFromTextCount`, true | false, if true no editable directives in this component are counted towards the document text count
+- `properties`, array of strings, references to component properties (see above) that should be shown in the properties panel if this component is selected in the editor
+- `iconUrl`, string, fully specified URL to an icon that is displayed for this component in the editors sidebar
+- `label`, string, the title that this component has
+- `description`, string, a descriptive text for this component
+- `name`, string, the system name of this component
