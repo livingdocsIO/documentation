@@ -1,7 +1,7 @@
 # Livingdocs documentation
 
-This is the technical documentation for the "Livingdocs CMS - Enterprise Edition". As a starting point we recommend the Evaluation Guide and then moving on from there.
-Make sure that you have the Livingdocs Boilerplate projects cloned locally as the documentation referes to them in many places
+This is the technical documentation for the "Livingdocs CMS - Enterprise Edition". As a starting point we recommend the [Evaluation Guide](walkthroughs/getting_started.md) and then moving on from there.
+Make sure that you have the Livingdocs Boilerplate projects ([editor](https://github.com/livingdocsIO/livingdocs-editor-boilerplate), [server](https://github.com/livingdocsIO/livingdocs-server-boilerplate)) cloned locally as the documentation referes to them in many places
 
 Note: Enterprise means you have access to our source code. If you are a service customer, refer to our [Service Documentation](https://upfrontio.gitbook.io/livingdocs-service/).
 

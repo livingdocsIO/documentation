@@ -7,7 +7,7 @@ The components define the building blocks out of which you can create your docum
 The design settings define global design properties like the CSS to use or how components are grouped together.
 
 An example:
-```
+```javascript
 "designSettings": {
     "assets": {
       "css": [
@@ -128,7 +128,7 @@ The `value` in case of option or select contains a CSS class from your CSS asset
 ![Component Property](./component-property.png)
 
 The schema looks as follows.
-```
+```javascript
 componentProperties: ms.arrayOf(ms.allOf([{
     if: ms.obj({type: ms.const('option')}),
     then: ms.strictObj({
@@ -186,7 +186,7 @@ In `cssProperty` you can define which CSS Property you want to extract, e.g. `co
 
 Components are the building blocks of Livingdocs documents. In essence a component is a combination of an HTML template with declarative Livingdocs directive attributes (`doc-` directives) and a JSON with configuration for those directives.
 
-```
+```javascript
   "name": "p",
   "label": "Paragraph",
   "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_text.svg",
