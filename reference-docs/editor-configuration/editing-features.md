@@ -198,7 +198,7 @@ Allows you to configure after how much time a timeout should happen in calls fro
 ```
 Iframely is used for 2 things:
 - validating links that you enter in the text (see [text editing](./text-editing.md#links))
-- in combination with [`doc-link` to prefill component from metadata](../common-designs/component_config.md#doc-link)
+- in combination with [`doc-link` to prefill component from metadata](../project-config/directives/link.md)
 
 ### Spellcheck
 

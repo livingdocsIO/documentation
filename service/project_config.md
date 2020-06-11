@@ -71,6 +71,6 @@ At the moment following changes on the design are not supported.
 - remove a component (please remove it only from the content-type)
 
 #### References
-- [components documentation](./design_component_settings.md)
+- [components documentation](../reference-docs/project-config/design.md#components)
 - [embedded design example](./design_example.md)
 - [referenced design example](https://github.com/livingdocsIO/magazine-example) - check also out the magazine design example. But attention the format is not exactly the same, but it gives you a feeling what you can do with a design

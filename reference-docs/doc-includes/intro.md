@@ -20,7 +20,7 @@ The last point is worth mentioning again: rendering of a `doc-include` is done o
 
 ### How are doc-includes defined
 
-You should be familiar with [Livingdocs directives](../common-designs/component_config.md#directives) for this section.
+You should be familiar with [Livingdocs directives](../project-config/design.md#components) for this section.
 
 ```html
 <script type="ld-conf">
