@@ -2,7 +2,7 @@
 
 The LI Digital Asset Management (DAM) enables smart features around assets (at this time only images).
 
-Read more about how to activate and configure [here](../server-configuration/config.md#asset-management)
+Read more about how to activate and configure [here](../reference-docs/server-configuration/config.md#asset-management)
 
 ### Related tasks
 
