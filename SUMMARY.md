@@ -56,7 +56,6 @@
   * [Seed API](reference-docs/server-api/seed_api.md)
   * [DataSource API](reference-docs/server-api/data_source_api.md)
 * Livingdocs Design
-  * [Design Config v1](reference-docs/common-designs/design_config_v1.md)
   * [Design Config v1 to v2 mapping](reference-docs/common-designs/design_config_v1_to_v2.md)
 * Livingdocs Content Model
   * [Livingdoc](reference-docs/common-livingdoc/livingdoc.md)

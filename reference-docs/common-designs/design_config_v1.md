@@ -1,5 +1,7 @@
 # Design Configuration v1
 
+**DEPRECATED** This is only as a reference for old projects. DO NOT USE design config v1 in new projects.
+
 ## config.json
 
 The config.json defines the design configuration. You can specify through the design configuration what options are available and how components behave when editing in the Livingdocs editor.
