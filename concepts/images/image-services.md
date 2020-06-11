@@ -33,16 +33,13 @@ For details please see the reference documentation for the [server configuration
 
 ### Delivery
 
-The delivery of the images is done through a URL-pattern-based web service. Out of the box, Livingdocs supports:
-1. ImgIX (https://www.imgix.com/)
-2. Deprecated: resrc.it (https://www.resrc.it/ note: resrc.it was bought by fastly and you can currently not open new accounts)
+The delivery of the images is done through a URL-pattern-based web service. Out of the box, Livingdocs supports ImgIX (https://www.imgix.com/).
 
-
-You can also add another image service, or even your own. SZ did so for their magazine.
+You can also add another image service, or even your own. SZ did so for their magazine. Contact us for more information on a custom image service.
 
 ### Markup
 
-In order to see an image in a HTML document, Livingdocs needs to generate the HTML markup. This has to work in tandem with the chosen web service (ImgIX or resrc.it) since each of those services expects a specific URL pattern to encode things like the image width or a cropping. Currently, both ImgIX and resrc.it have their corresponding markup generator in the Livingdocs framework. As an outlook, we are pushing towards a more configurable Lego-like system where you don't configure a specific web service but rather specific strategies.
+In order to see an image in a HTML document, Livingdocs needs to generate the HTML markup. This has to work in tandem with the chosen web service (ImgIX) since each of those services expects a specific URL pattern to encode things like the image width or a cropping. Currently ImgIX has its corresponding markup generator in the Livingdocs framework. As an outlook, we are pushing towards a more configurable Lego-like system where you don't configure a specific web service but rather specific strategies.
 
 Below is an example workflow that summarizes the whole process.
 
@@ -69,7 +66,7 @@ Srcset only works for inline images (`img` tag). If you use a background image, 
 
 You need to configure your image service in the server. You add the configuration for one or more image services as well as the selected image service.
 
-Below we'll outline the configuration for both ImgIX and resrc.it.
+Below we'll outline the configuration for ImgIX.
 
 ### ImgIX
 
@@ -116,33 +113,6 @@ If `preferWebp` is set to `true` Livingdocs will pass the `auto=format` paramete
 Note: We will take (3) out of the configuration in the medium term since we think it makes more sense to set the `sizes` attribute directly on the component or template.
 
 For background images you can simply set a fixed max-width, so that each background image will get the corresponding ImgIX width set. (if the actual width of the image is lower, ImgIX will never try to interpolate but just leave it -> this is why it is called max-width).
-
-
-### Resrc.it
-
-#### Server
-
-```js
-documents: {
-  selectedImageService: 'resrc.it',
-  imageServices: {
-    'resrc.it': {
-      host: 'https://app.resrc.it',
-      quality: 75,
-      scriptUrl: '//d2o08py1e264ss.cloudfront.net/assets/resrc-0.9.0.min.js'
-    }
-  }
-}
-```
-The `selectedImageService` field tells Livingdocs which image service should be used.
-The `imageServices` contains the configurations for one or more image services.
-
-You can in theory also configure several images services in the server, but as of now only one can be used (the one specified in selectedImageService).
-
-The `host` is simply where your resrc.it images are served from. With `resrc.it` this is normally always the same.
-The `quality` setting allows you to choose a global quality for your images. In the range between 75 to 100 you normally don't see a difference.
-The `scriptUrl` points to the client-side Javascript code used for the responsive behavior. You need to provide this. And don't rely on our URL ;)
-
 
 ## `srcset` in Metadata
 
