@@ -133,7 +133,7 @@ const Instagram = require('../plugins/embeds/instagram/instagram')
 embeds.registerCustomEmbeds([Instagram])
 ```
 
-After the registration, your users can paste embed codes of your custom embed (Instagram in the example) in the editor. You can use the embed codes interchangeably in all embeds, i.e. all components that have a [`doc-html` directive](../reference-docs/common-designs/component_config.md#doc-html). The exception is if your directive is called `free-html` in which case it is handled as a free HTML input and not as an embed.
+After the registration, your users can paste embed codes of your custom embed (Instagram in the example) in the editor. You can use the embed codes interchangeably in all embeds, i.e. all components that have a [`doc-html` directive](../reference-docs/project-config/directives/html.md). The exception is if your directive is called `free-html` in which case it is handled as a free HTML input and not as an embed.
 So to apply this to our example: In order to have Instagram cards you can either:
 - add a new component to your design that has a `doc-html` directive
 - .. or your users just paste the Instagram embed code to an iframe component in which case the Instagram icon appears as soon as the user pasted the Instagram embed code.
