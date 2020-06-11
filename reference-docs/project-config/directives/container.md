@@ -25,7 +25,7 @@ module.exports = {
 }
 ```
 
-The above is an idiomatic bullet list. The container (list) will have one item by default and upon pressing enter in an item, a new item is inserted (`defaultComponents.paragraph`).
+The above example is an idiomatic bullet list. The container (list) will have one item by default and upon pressing enter in an item, a new item is inserted (`defaultComponents.paragraph`).
 
 ## Config Options
 

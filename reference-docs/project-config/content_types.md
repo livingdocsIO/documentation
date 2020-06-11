@@ -113,7 +113,13 @@ One useful property on components within the default content is the `position: f
 
 ## Editor Wrapper
 
-Defines an HTML string that wraps the document when used in the editor, e.g. for global styling. Use the class `doc-section` where you want the content to be inserted.
+Defines a HTML string that wraps the document when used in the editor. Use the class `doc-section` where you want the content to be inserted.
+
+```
+<div class="doc-section" style="padding: 20px"></div>
+```
+
+The example above would put a padding of 20px on documents in the editor to give some space on the sides.
 
 ## Metadata
 *has UI support*
@@ -132,7 +138,7 @@ The schema of the metadata array looks as follows:
     }),
     ui: ms.obj({
       component: 'string:required',
-      service: 'string', // any of TODO we should replace https://docs.livingdocs.io/reference-docs/editor/metadata
+      service: 'string', // any of the available here https://docs.livingdocs.io/reference-documentation/editor/metadata
       label: 'string',
       config: ms.obj({
         canReset: 'boolean',
@@ -147,7 +153,7 @@ The schema of the metadata array looks as follows:
   }))
 ```
 
-We advise to use the "Project Setup" UI for metadata changes wherever possible.
+We advise to use the "Project Setup" UI for metadata changes if possible.
 
 ## Metadata Groups
 *has UI support*
@@ -155,14 +161,14 @@ We advise to use the "Project Setup" UI for metadata changes wherever possible.
 The Metadata Groups allow you to logically group the fields for display on the publish panel.
 
 The schema looks as follows:
-```
+```javascript
   metadataGroups: ms.arrayOf(ms.strictObj({
     label: 'string',
     properties: ms.arrayOf(ms.string())
   }))
 ```
 e.g.:
-```
+```javascript
   metadataGroups: [{
       label: 'SEO',
       properties: ['keywords', 'title']
@@ -195,13 +201,13 @@ The `publicationIndex` config allows you to define how documents of this content
 
 For details on the configuration and how it interacts with the metadata configuration, see our section on [searching publications](../server-configuration/publication-index.md).
 
-## Routing
+## Routing
 *has UI support*
 
 The routing setting defines how the routes cache (redis) builds lookup route entries for this content-type. We advise you to use the UI under "Project Setup - Categories / Routing" to setup your routing config.
 
 Example:
-```
+```javascript
   routing: {
     enabled: true,
     pathPatterns: {
@@ -238,7 +244,7 @@ The above example disables direct image uploads to Livingdocs and allows only th
 
 ## Teaser Previews
 
-You can configure teaser previews for this content-type that are displayed on the publish panel, e.g. how an article will look like when referenced from the start page.
+You can configure teaser previews for this content-type that are displayed on the publish panel, e.g. how an article will look like when referenced from the start page. This is useful for your editors to see the provided metadata in the real, visual context.
 
 The schema is as follows:
 ```javascript
@@ -265,13 +271,15 @@ The schema is as follows:
 
 Apart from the general settings (`renderSettings`) you define an entry for each teaser (`teasers`) giving it the Livingdocs component (from the design) that should be used for rendering as well as a mapping of metadata values to component directives. See our guide on [teaser previews](../server-configuration/teaser-preview-config.md) for more details.
 
-## Desk-Net (has UI support)
+## Desk-Net 
+*has UI support*
 
 We advise you to setup the Desk-Net configuration from the "Project Setup" entry of the same name. There is also a [video](https://vimeo.com/368750546) explaining the setup.
 
 See our [Desk-Net plugin guide](../server-configuration/desknet-integration.md) for comprehensive infos (custom code parts require enterprise version).
 
-## Renditions (enterprise only)
+## Renditions
+*enterprise only*
 
 Renditions can only be changed in the enterprise model since they require custom code.
 

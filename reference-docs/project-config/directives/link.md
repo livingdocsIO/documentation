@@ -11,7 +11,7 @@ module.exports = {
     "directives": [{
         "name": "link",
         "type": "link",
-        "prefill": {
+        "prefill": { // optional
         "title": {
             "key": "title",
             "provider": "iframely"
@@ -56,7 +56,7 @@ module.exports = {
 
 ## Config Options
 
-The only config option is `prefill`. This works in tandem with the service Iframely and allows you to prefill other directives (e.g. text) in the same component with metadata fetched from the provided link (through the Iframely service). The example above uses the `prefill` option to render a teaser that works simply by linking any article from the web (e.g. a NYT article).
+The only (optional) config option is `prefill`. This works in tandem with the service Iframely and allows you to prefill other directives (e.g. text) in the same component with metadata fetched from the provided link (through the Iframely service). The example above uses the `prefill` option to render a teaser that works simply by linking any article from the web (e.g. a NYT article).
 What Iframely does in a nutshell is parsing the `head` section of a linked HTML page (the content of `doc-link`) for meta tags.
 
 The only supported provider is `iframely`.

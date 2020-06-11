@@ -9,7 +9,7 @@ module.exports = {
   "label": "Paragraph",
   "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_text.svg",
   "directives": [{
-    "name": "p",
+    "name": "text",
     "type": "editable",
     "plainText": true,
     "excludeFromTextCount": true,
@@ -27,9 +27,9 @@ Only one of these options can be used on a single directive. `plainText` does no
 
 Note: Block level elements and elements like script and style are already prohibited in editable directives. Use the above options only to filter inline elements like `<a>` or `<strong>`.
 
-`plainText`: true | false, Ensures that a text can not contain any HTML tags (decodes HTML).
-`tagWhitelist`: Only allows selected tags in the content, e.g. `"tagWhitelist": ['a', 'em']` would only allow a and em tags, but would remove e.g. a strong tag.
-`tagBlacklist`: Removes certain tags from the content, e.g. `"tagBlacklist": ['a']` would remove all a tags.
+- `plainText`: true | false, Ensures that a text can not contain any HTML tags (decodes HTML).
+- `tagWhitelist`: Only allows selected tags in the content, e.g. `"tagWhitelist": ['a', 'em']` would only allow a and em tags, but would remove e.g. a strong tag.
+- `tagBlacklist`: Removes certain tags from the content, e.g. `"tagBlacklist": ['a']` would remove all `<a>` tags.
 
 ### Other
 
