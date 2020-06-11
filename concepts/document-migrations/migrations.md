@@ -9,7 +9,7 @@ The next chapter will describe which kinds of design changes require you to writ
 
 ## Migrations from design changes
 
-Livingdocs designs have a version number in the `config.json` file that follows the [semver pattern](http://semver.org/). You should create a major version whenever a design change requires you to write a data migration. Livingdocs is very strict with un-migrated documents: when you try to open a document that has a different structure than the design you're using, it will fail with an error.
+Livingdocs designs have a version number that follows the [semver pattern](http://semver.org/). You should create a major version whenever a design change requires you to write a data migration. Livingdocs is very strict with un-migrated documents: when you try to open a document that has a different structure than the design you're using, it will fail with an error.
 The following changes require a data migration:
 - removing a directive from a component
 - renaming a directive in a component
@@ -71,7 +71,7 @@ For every document you will get
 
 You can then alter the JSON and metadata in your migration method and pass it to the callback which will automatically apply your changes to the document. Systemdata are read only. If you want to skip a migration, just call the callback without passing some data.
 
-In order to create a migration script, simply add a file to the folder [`app/data-migrations`](https://github.com/livingdocsIO/livingdocs-server-boilerplate/tree/add-data-migration-sample/app/data-migrations). It might make sense to have some sort of increasing identifier in the filename to visualize history. In the file create a method `exports.migrate` as described above and implement your desired migration steps.
+In order to create a migration script, simply add a file to the folder `app/data-migrations`. It might make sense to have some sort of increasing identifier in the filename to visualize history. In the file create a method `exports.migrate` as described above and implement your desired migration steps.
 
 To run your migration script, use the `data-migration` grunt task which is explained in the next section.
 
