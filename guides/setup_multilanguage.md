@@ -1,7 +1,7 @@
 # Enable multi-language in Livingdocs
 
 This guide explains you how to enable the Livingdocs core setup for multi-language support.
-The core setup does not include a translation workflow. Such a workflow can be implemented based on the core functionality and in a custom project. We have an [example suggestion](./translations_example.md) for this.
+The core setup also includes a translation workflow that can be enabled via configuration in the "Project Setup" section (UI).
 
 The following shows the search dashboard that gets a new language column and filter if the multi-language feature is configured.
 ![Dashboard UI](./multi-language-images/dashboard.png)
