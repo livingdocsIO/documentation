@@ -93,11 +93,11 @@ So far, we've changed the configuration files by hand. Livingdocs provides exten
 
 In the main navigation (burger menu) navigate to "Project Setup" and there in the side menu to "Component Library". You should see your "Header" component at the bottom of the "Text" group. Drag the "Header" component with the drag handler to the top position.
 
-![Rearrange component](./rearrange-component.png)
+![Rearrange component](images/rearrange-component.png)
 
 You will also see that on the top right a new button "Prepare Publication" appeared. Click it.
 
-![Publish Config](./publish-config.png)
+![Publish Config](images/publish-config.png)
 
 This is the publication screen for your project config. Every change is shown in a diff view where you can review your changes. This is the same JSON that you edited manually in the boilerplate before. 
 

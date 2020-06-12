@@ -4,7 +4,7 @@
 ## Evaluation Guide
 * [Getting started](guides/getting_started.md)
 * [System Prerequisites](guides/getting-started-with-local-development.md)
-* [Livingdocs Design and Components](reference-docs/common-designs/create_designs.md)
+* [Livingdocs Design and Components](guides/create_designs.md)
 * [Metadata Plugins](guides/metadata/metadata-examples.md)
 * [Image Services](guides/image-services.md)
 * [Includes](reference-docs/doc-includes/intro.md)
@@ -55,21 +55,15 @@
   * [Print API](reference-docs/server-api/print-api.md)
   * [Seed API](reference-docs/server-api/seed_api.md)
   * [DataSource API](reference-docs/server-api/data_source_api.md)
-* Livingdocs Design
-  * [Design Config v1 to v2 mapping](reference-docs/common-designs/design_config_v1_to_v2.md)
-* [Content Model](reference-docs/common-livingdoc/README.md)
-  * [Livingdoc](reference-docs/common-livingdoc/livingdoc.md)
-  * [Component Tree](reference-docs/common-livingdoc/component_tree.md)
-  * [Component Model](reference-docs/common-livingdoc/component_model.md)
-  * [Directives](reference-docs/common-livingdoc/directives.md)
+* [Content Model](reference-docs/content-model/README.md)
+  * [Livingdoc](reference-docs/content-model/livingdoc.md)
+  * [Component Tree](reference-docs/content-model/component_tree.md)
+  * [Component Model](reference-docs/content-model/component_model.md)
+  * [Directives](reference-docs/content-model/directives.md)
 * Includes
   * [Include Server Config](reference-docs/doc-includes/server_customization.md)
   * [Include User Interfaces](reference-docs/doc-includes/editor_customization.md)
   * [Includes with Multiple Services](reference-docs/doc-includes/service_multiselect.md)
-
-## Design Howtos
-
-* [Create a Bullet List Component](reference-docs/common-designs/list_example.md)
 
 ## Guides
 
@@ -97,6 +91,7 @@
   * [Example: Removing a directive](guides/document-migrations/examples/remove_directive.md)
   * [Example: Renaming a directive](guides/document-migrations/examples/rename_directive.md)
   * [Example: Adding a metadata field](guides/document-migrations/examples/add_metadata_field.md)
+* [Create a Bullet List Component](guides/list_example.md)
 
 
 ## CLI
@@ -135,4 +130,4 @@
 * Editor
   * [Styleguide](reference-docs/editor-styleguide/styleguide.md)
 * Framework
-  * [Browser API](reference-docs/common-livingdoc/browser_api.md) -->
+  * [Browser API](reference-docs/content-model/browser_api.md) -->
