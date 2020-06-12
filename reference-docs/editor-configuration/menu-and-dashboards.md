@@ -17,7 +17,7 @@ app: {
 
 #### Example opening the main-nav by clicking
 
-![Open Livingdocs navigation by clicking](./open-by-click.gif)
+![Open Livingdocs navigation by clicking](images/open-by-click.gif)
 
 ## Menu items
 You can also customize the entries you want to have in the main menu (the burger icon in the top left of the screen as seen in the previous gif).
@@ -233,7 +233,7 @@ dashboards: [{
 
 # Search Filters
 
-![Search filters](search-filters.png)
+![Search filters](images/search-filters.png)
 
 ## Overview
 

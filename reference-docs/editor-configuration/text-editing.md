@@ -4,7 +4,7 @@ Most of the text editing is handled by [editable.js](https://github.com/livingdo
 
 ## Toolbar
 
-![Text Popover](./text-popover.png)
+![Text Popover](images/text-popover.png)
 
 When you select some text in the editor you get a popover with some options on how to format text or what special characters to include. You can fully customize the options in the popover, like if you want to be able to toggle text bold, italic, etc. The configuration can be set for both web (default) or print (only relevant if you use the Livingdocs print editor).
 
@@ -310,7 +310,7 @@ Exclude individual directives from the text counter (example component config):
 
 ## Links
 
-![Links](./links.png)
+![Links](images/links.png)
 
 #### Options
 If you set the internal hosts as regex, you can define default behavior for internal and external links.
