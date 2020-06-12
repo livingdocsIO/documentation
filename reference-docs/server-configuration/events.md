@@ -1,6 +1,6 @@
 # Livingdocs Server Events
 
-The events API is Livingdocs's implementation of the publish/subscribe pattern. This allows you to send messages back and forth between features or to listen for events from the core features. Events are fire and forget thus it is possible that some calls might be lost (e.g. when there is a connection outage). If you need reliable transaction-like hooks, see [the hooks feature](../server-configuration/hooks.md).
+The events API is Livingdocs's implementation of the publish/subscribe pattern. This allows you to send messages back and forth between features or to listen for events from the core features. Events are fire and forget thus it is possible that some calls might be lost (e.g. when there is a connection outage). If you need reliable transaction-like hooks, see [the hooks feature](./hooks.md).
 
 
 ## Requiring events from the li-server
