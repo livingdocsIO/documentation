@@ -248,11 +248,3 @@ liEditor.metadataServices
     require('../plugins/metadata/bp-slug/service')
   )
 ```
-
-## Boilerplate
-
-The whole implementation for this already exists in the boilerplates projects:
-- https://github.com/livingdocsIO/livingdocs-server-boilerplate
-- https://github.com/livingdocsIO/livingdocs-editor-boilerplate
-
-One would need to "activate" it by uncommenting the server's configurations and the editor's registrations.
