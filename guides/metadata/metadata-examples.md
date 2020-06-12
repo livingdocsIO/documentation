@@ -5,7 +5,7 @@
 
 Say we want to create a new metadata field "catchline" for articles. The catchline should be a simple text input on the publish panel that journalists can edit.
 
-For details have a look at the [server configuration reference documentation](../../reference-docs/server-configuration/metadata.md)
+For details have a look at the [server configuration reference documentation](../../reference-docs/server-api/metadata.md)
 
 #### Server
 

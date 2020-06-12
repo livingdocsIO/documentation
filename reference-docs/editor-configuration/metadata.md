@@ -4,7 +4,7 @@
 
 This documentation assumes that you already setup the metadata field(s) on the server side.
 
-To find out more about metadata on the server you can read the [server documentation](../server-configuration/metadata.md) or study [examples](../../guides/metadata/metadata-examples.md).
+To find out more about metadata on the server you can read the [server documentation](../server-api/metadata.md) or study [examples](../../guides/metadata/metadata-examples.md).
 
 
 ## Introduction
