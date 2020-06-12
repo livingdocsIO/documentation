@@ -1,4 +1,4 @@
-# Document Copy Feature
+# Document Copy
 
 ## Introduction
 

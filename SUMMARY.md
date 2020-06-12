@@ -77,7 +77,7 @@
 
 ## Walkthroughs
 
-* [Use Document Copy](concepts/copying-documents/document_copy_feature.md)
+* [Copy documents between types](guides/document_copy.md)
 * [Register a Custom Server Feature](walkthroughs/add_customizations.md)
 * [Configure Includes: Article Embed and List](reference-docs/doc-includes/embed_and_list.md)
 * [Assign Access Rights](administration/access_rights.md)
