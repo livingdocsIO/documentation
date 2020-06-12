@@ -67,7 +67,7 @@ hugo:
 
 Now that you have configured the feature you'll want to provide transformations so the huGO+ document can be converted to a document that corresponds to your design and layout.
 
-A transformation is a single function that is expected to return an object containing a [`livingdoc`](../reference-docs/common-livingdoc/livingdoc.md) and [`metadata`](../reference-docs/server-configuration/metadata.md) and should have following signature:
+A transformation is a single function that is expected to return an object containing a [`livingdoc`](../reference-docs/content-model/livingdoc.md) and [`metadata`](../reference-docs/server-configuration/metadata.md) and should have following signature:
 
 ```js
 // E.g. ./plugins/hugo-import-transformations/agency/regular.js

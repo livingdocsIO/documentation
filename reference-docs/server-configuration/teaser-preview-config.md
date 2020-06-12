@@ -6,7 +6,7 @@ The Teaser Preview adds an additional read-only view to the publication section 
 
 We basically configure a mapping that translates a subset of the **_current document_** (the one we are editing / publishing) into a state that gets rendered using components from your design. Further we can also control the dimensions and look of the preview.
 
-**Please note**: This documentation assumes that you have a [channel](../project-config/README.md) and a [design](../common-designs/create_designs.md) and at least one [content type](../project-config/content_types.md) properly set up.
+**Please note**: This documentation assumes that you have a [channel](../project-config/README.md) and a [design](../../guides/create_designs.md) and at least one [content type](../project-config/content_types.md) properly set up.
 
 
 ## Minimalist example
