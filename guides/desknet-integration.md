@@ -246,7 +246,7 @@ Let's do another example:
 - We *don't* want this field to be editable in Livingdocs.
 - The technical label for this field on the metadata should be `hasPrint` and the actual label should read «Desk-Net – Is planned for Print»
 
-First, we have to write and register the transforms. As we have to register transforms before the server actually starts, but only after the application is properly up and running, we use a [hook](./hooks.md) for that:
+First, we have to write and register the transforms. As we have to register transforms before the server actually starts, but only after the application is properly up and running, we use a [hook](../reference-docs/server-api/hooks.md) for that:
 
 ```js
 liServer.registerInitializedHook(async () => {

@@ -40,7 +40,7 @@ The next step is to create your own metadata field. In the server, navigate into
 ## Delivery
 If you want deliver your documents to your Delivery Website you can use webhooks to get notified if a document got published.
 
-[use server hooks](../reference-docs/server-configuration/hooks.md)
+[use server hooks](../reference-docs/server-api/hooks.md)
 or
 [use webhooks](../reference-docs/server-configuration/webhooks.md)
 
