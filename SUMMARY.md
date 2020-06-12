@@ -70,10 +70,6 @@
 ## Design Howtos
 
 * [Create a Bullet List Component](reference-docs/common-designs/list_example.md)
-* [Running and defining design migrations](concepts/document-migrations/migrations.md)
-  * [Example: Removing a directive](concepts/document-migrations/examples/remove_directive.md)
-  * [Example: Renaming a directive](concepts/document-migrations/examples/rename_directive.md)
-  * [Example: Adding a metadata field](concepts/document-migrations/examples/add_metadata_field.md)
 
 ## Walkthroughs
 
@@ -95,8 +91,13 @@
 * [A Possible Routing System](reference-docs/server-public-api/routing-system.md)
 * [Hugo Drag and Drop](reference-docs/server-extensions/hugo-dnd.md)
 * [Enable Soft Lock](walkthroughs/enable-soft-lock.md)
-* [Asset Management](concepts/asset-management.md)
+* [Asset Management](guides/asset-management.md)
 * [Author Management](walkthroughs/prefill-author.md)
+* [Running and defining design migrations](guides/document-migrations/migrations.md)
+  * [Example: Removing a directive](guides/document-migrations/examples/remove_directive.md)
+  * [Example: Renaming a directive](guides/document-migrations/examples/rename_directive.md)
+  * [Example: Adding a metadata field](guides/document-migrations/examples/add_metadata_field.md)
+
 
 ## CLI
 
