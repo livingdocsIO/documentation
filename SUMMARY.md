@@ -35,7 +35,6 @@
   * [Events](reference-docs/server-configuration/events.md)
   * [Logs](reference-docs/server-configuration/logging.md)
   * [Single Sign-On](reference-docs/server-configuration/single_sign-on.md)
-  * [Server Admin Commands](reference-docs/server-configuration/admin-commands.md)
   * [Using Google Cloud Storage](reference-docs/server-configuration/google-cloud-storage.md)
   * [Teaser Preview Configuration](reference-docs/server-configuration/teaser-preview-config.md)
   * [Desk-Net Integration](reference-docs/server-configuration/desknet-integration.md)
