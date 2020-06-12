@@ -333,7 +333,7 @@ images: {
 - Proxy Option
 
 Alternatively you can forward image upload to another service.
-For more info about this see [Image Services](../../concepts/images/image-services.md).
+For more info about this see [Image Services](../../guides/image-services.md).
 
 ```js
 images: {
@@ -393,7 +393,7 @@ documents: {
 }
 ```
 
-See [image service configuration](../../concepts/images/image-services.md) for more information.
+See [image service configuration](../../guides/image-services.md) for more information.
 The `paginationFindConfig` allows you to set how many documents you can see on the documents dashboard.
 Defaults to max. 100 documents.
 
