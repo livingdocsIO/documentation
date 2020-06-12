@@ -57,7 +57,7 @@
   * [DataSource API](reference-docs/server-api/data_source_api.md)
 * Livingdocs Design
   * [Design Config v1 to v2 mapping](reference-docs/common-designs/design_config_v1_to_v2.md)
-* Livingdocs Content Model
+* [Content Model](reference-docs/common-livingdoc/README.md)
   * [Livingdoc](reference-docs/common-livingdoc/livingdoc.md)
   * [Component Tree](reference-docs/common-livingdoc/component_tree.md)
   * [Component Model](reference-docs/common-livingdoc/component_model.md)
