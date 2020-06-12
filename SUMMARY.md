@@ -65,33 +65,36 @@
 
 ## Guides
 
-* [Copy documents between types](guides/document_copy.md)
 * [Register a Custom Server Feature](guides/add_customizations.md)
-* [Configure Includes: Article Embed and List](reference-docs/includes/embed_and_list.md)
+* [Copy documents between types](guides/document_copy.md)
 * [Assign Access Rights](guides/access_rights.md)
-* [Validate Task Completion](guides/validate_tasks.md)
-* [Add Custom Realtime Proofreading Dashboard](guides/add-custom-realtime-proofreading-dashboard.md)
-* [Add Custom Task](guides/add-custom-task.md)
-* [Add Custom Proofreading Task](guides/add-custom-proofreading-task.md)
 * [Implement Single Sign-On](guides/github-login.md)
-* [Add an Instagram Embed](guides/instagram_embed.md)
-* [Includes: Add an Twitter Include](guides/twitter_include_embed.md)
 * [Use Push Notifications and Custom Dashboard Item](guides/push_notifications.md)
 * [Enable Multi-Language Support](guides/setup_multilanguage.md)
-* [A Possible Translation System](guides/translations_example.md)
-* [Setup Categories](guides/activate-categories.md)
-* [Routing](guides/routing-system.md)
-* [Hugo Integration (DAM)](guides/hugo-dnd.md)
-* [Desk-Net Integration (Planning)](guides/desknet-integration.md)
-* [Enable Soft Lock](guides/enable-soft-lock.md)
 * [Asset Management](guides/asset-management.md)
 * [Author Management](guides/prefill-author.md)
-* [Running and defining design migrations](guides/document-migrations/migrations.md)
-  * [Example: Removing a directive](guides/document-migrations/examples/remove_directive.md)
-  * [Example: Renaming a directive](guides/document-migrations/examples/rename_directive.md)
-  * [Example: Adding a metadata field](guides/document-migrations/examples/add_metadata_field.md)
-* [Create a Bullet List Component](guides/list_example.md)
-
+* Workflows
+  * [Validate Task Completion](guides/validate_tasks.md)
+  * [Add Custom Realtime Proofreading Dashboard](guides/add-custom-realtime-proofreading-dashboard.md)
+  * [Add Custom Task](guides/add-custom-task.md)
+  * [Add Custom Proofreading Task](guides/add-custom-proofreading-task.md)
+  * [Enable Soft Lock](guides/enable-soft-lock.md)
+* Integrations
+  * [Hugo Integration (DAM)](guides/hugo-dnd.md)
+  * [Desk-Net Integration (Planning)](guides/desknet-integration.md)
+* Includes / Embeds
+  * [Configure Includes: Article Embed and List](reference-docs/includes/embed_and_list.md)
+  * [Includes: Add an Twitter Include](guides/twitter_include_embed.md)
+  * [Add an Instagram Embed](guides/instagram_embed.md)
+* Design
+  * [Running and defining design migrations](guides/document-migrations/migrations.md)
+    * [Example: Removing a directive](guides/document-migrations/examples/remove_directive.md)
+    * [Example: Renaming a directive](guides/document-migrations/examples/rename_directive.md)
+    * [Example: Adding a metadata field](guides/document-migrations/examples/add_metadata_field.md)
+  * [Create a Bullet List Component](guides/list_example.md)
+* Categories / Routing
+  * [Routing](guides/routing-system.md)
+  * [Setup Categories](guides/activate-categories.md)
 
 ## CLI
 
