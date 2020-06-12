@@ -301,7 +301,7 @@ module.exports = {
             addPublicationDate
           ]
         }),
-        // resolve definitions for doc-includes
+        // resolve definitions for includes
         resolveIncludes: ['embed-teaser', 'list', 'categoryList']
       }
     }

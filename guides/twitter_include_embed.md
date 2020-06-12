@@ -1,7 +1,7 @@
 # Add an Twitter include (embed)
 
 This guide will show you how to add a custom Include for Twitter. We will show the implementation for the design, server and editor.
-This is more of a quick-guide where you can just copy and paste code. For a deeper understanding you can dive into [server-customization](../reference-docs/doc-includes/server_customization.md) and [editor-customization](../reference-docs/doc-includes/editor_customization.md)
+This is more of a quick-guide where you can just copy and paste code. For a deeper understanding you can dive into [server-customization](../reference-docs/includes/server_customization.md) and [editor-customization](../reference-docs/includes/editor_customization.md)
 
 
 ## Design definition
@@ -45,9 +45,9 @@ rendering the include with parameters filled in the editor.
 
 ```js
 // app/server.js
-liServer.features.register('custom-includes', require('app/doc-includes'))
+liServer.features.register('custom-includes', require('app/includes'))
 
-// app/doc-includes/index.js
+// app/includes/index.js
 module.exports = async function (feature, server) {
   const includesApi = server.features.api('li-includes')
   await includesApi.registerServices([
@@ -121,7 +121,7 @@ liEditor.includeRenderPlugins.register('liTwitterRenderPlugin',
 
 Registering the HTML for the sidebar, you can decide what parameters the user can enter here
 ```js
-// ../plugins/doc-includes/twitter-include/template.html
+// ../plugins/includes/twitter-include/template.html
 <div class="ld-panel" ng-if="$ctrl.directive">
   <div class="ld-panel__header">
     <h2 class="ld-panel__header__title">Include embed settings</h2>
@@ -152,7 +152,7 @@ Registering the HTML for the sidebar, you can decide what parameters the user ca
 The controller for the HTML, here you save the parameters onto the document.
 In the server the render function will now be triggered
 ```js
-// ../plugins/doc-includes/twitter-include/controller.js
+// ../plugins/includes/twitter-include/controller.js
 module.exports = class twitterInclude {
   $onInit () {
     const params = this.directive.getParams()
