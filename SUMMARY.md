@@ -25,8 +25,7 @@
     * [Include](reference-docs/project-config/directives/include.md)
     * [HTML](reference-docs/project-config/directives/html.md)
     * [Style](reference-docs/project-config/directives/style.md)
-* Server Config
-  * [Initialization](reference-docs/server-configuration/server-initalization.md)
+* [Server Config](reference-docs/server-configuration/server-initalization.md)
   * [Configuration File](reference-docs/server-configuration/config.md)
   * [Metadata on the Server](reference-docs/server-configuration/metadata.md)
   * [Hooks](reference-docs/server-configuration/hooks.md)
@@ -112,7 +111,6 @@
   * [Proxy](devops/proxy.md)
   * [NPM Tokens](devops/npm/access-private-npm-modules.md)
 
-* [Design Server](reference-docs/server-configuration/design-servers.md)
 * [How to do a Load Test](devops/maintenance/how-to-do-a-load-test.md)
 * [How to do a Stress Test](https://github.com/DaRaFF/stress-test-example#how-to-make-a-simple-stress-test)
 * [How to Configure and Interpret Varnish](devops/maintenance/how-to-varnish.md)
