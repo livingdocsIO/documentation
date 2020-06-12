@@ -106,16 +106,16 @@
 
 ## Devops
 
-* [Hosting Livingdocs](setup-and-deployment/self-hosting.md)
+* [Hosting Livingdocs](devops/self-hosting.md)
 
-  * [Hardware Requirements](setup-and-deployment/hardware-requirements.md)
-  * [Architecture](setup-and-deployment/high-availability/README.md)
-    * [High-Availability](setup-and-deployment/high-availability/high-availability-setup.md)
-  * [Docker](setup-and-deployment/docker/README.md)
-    * [Build Docker Images](setup-and-deployment/docker/build-docker-images.md)
-  * [External Services](setup-and-deployment/external-services.md)
-  * [Proxy](setup-and-deployment/proxy.md)
-  * [NPM Tokens](setup-and-deployment/npm/access-private-npm-modules.md)
+  * [Hardware Requirements](devops/hardware-requirements.md)
+  * [Architecture](devops/high-availability/README.md)
+    * [High-Availability](devops/high-availability/high-availability-setup.md)
+  * [Docker](devops/docker/README.md)
+    * [Build Docker Images](devops/docker/build-docker-images.md)
+  * [External Services](devops/external-services.md)
+  * [Proxy](devops/proxy.md)
+  * [NPM Tokens](devops/npm/access-private-npm-modules.md)
 
 * [Design Server](reference-docs/server-configuration/design-servers.md)
 * [How to do a Load Test](reference-docs/maintenance/how-to-do-a-load-test.md)
