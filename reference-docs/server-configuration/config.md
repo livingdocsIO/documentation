@@ -551,7 +551,7 @@ module.exports = function (searchQuery) {
 }
 ```
 
-For inspiration, you can also check out our [current default document search function](../search/improved-document-search-example.md).
+For inspiration, you can also check out our [current default document search function](../../know-how/es-document-search-example.md).
 
 
 
