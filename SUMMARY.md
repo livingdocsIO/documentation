@@ -114,9 +114,9 @@
   * [NPM Tokens](devops/npm/access-private-npm-modules.md)
 
 * [Design Server](reference-docs/server-configuration/design-servers.md)
-* [How to do a Load Test](reference-docs/maintenance/how-to-do-a-load-test.md)
+* [How to do a Load Test](devops/maintenance/how-to-do-a-load-test.md)
 * [How to do a Stress Test](https://github.com/DaRaFF/stress-test-example#how-to-make-a-simple-stress-test)
-* [How to Configure and Interpret Varnish](reference-docs/maintenance/how-to-varnish.md)
+* [How to Configure and Interpret Varnish](devops/maintenance/how-to-varnish.md)
 
 
 ## Livingdocs Service
