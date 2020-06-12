@@ -4,7 +4,7 @@
 
 This documentation assumes that you already setup the metadata field(s) on the server side.
 
-To find out more about metadata on the server you can read the [server documentation](../server-configuration/metadata.md) or study [examples](../../walkthroughs/metadata/metadata-examples.md).
+To find out more about metadata on the server you can read the [server documentation](../server-configuration/metadata.md) or study [examples](../../guides/metadata/metadata-examples.md).
 
 
 ## Introduction
@@ -363,7 +363,7 @@ There is a sample implementation in `plugins/metadata_services/default_slug_serv
 
 ## Registering a metadata service
 
-Some of the forms require you to provide a service that implements the business logic behind those fields. In order to register a service you will need to [add it as a customization](../../walkthroughs/add_customizations.md#editor). To add a fictional metadata service `foobar` you would add the following line:
+Some of the forms require you to provide a service that implements the business logic behind those fields. In order to register a service you will need to [add it as a customization](../../guides/add_customizations.md#editor). To add a fictional metadata service `foobar` you would add the following line:
 
 ```js
 editor.metadataServices.register('foobar', require('path/to/foobar'))

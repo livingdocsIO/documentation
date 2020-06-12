@@ -1,6 +1,6 @@
 # Categories
 
-The categories are normally used together with the routing system to represent the idiomatic department structure in a newspaper. Read our [Setup Categories Guide](../../walkthroughs/activate-categories.md) for more infos on the actual use cases.
+The categories are normally used together with the routing system to represent the idiomatic department structure in a newspaper. Read our [Setup Categories Guide](../../guides/activate-categories.md) for more infos on the actual use cases.
 
 You can define an array of available categories in your project config. The schema looks as follows:
 

@@ -5,7 +5,7 @@
 This documentation assumes that you have setup a channel and design within Livingdocs.
 You also know what an environment and a channel config is.
 
-To find out more about metadata on the editor you can read the [editor documentation](../editor-configuration/metadata.md) or study [examples](../../walkthroughs/metadata/metadata-examples.md).
+To find out more about metadata on the editor you can read the [editor documentation](../editor-configuration/metadata.md) or study [examples](../../guides/metadata/metadata-examples.md).
 
 ## Introduction
 

@@ -12,7 +12,7 @@ auth: {
 }
 ```
 
-Only strategies of type `link` are supported at the moment. For an example see our [Github login guide](../../walkthroughs/github-login.md).
+Only strategies of type `link` are supported at the moment. For an example see our [Github login guide](../../guides/github-login.md).
 
 ### Login screen
 

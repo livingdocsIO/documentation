@@ -28,7 +28,7 @@ For evaluation we already have added accounts for the 5 external services in the
 For the livingdocs-server and livingdocs-editor we have a boilerplate which you can use to setup your own server and editor. These two repositories are private. Please contact us that you are interested to evaluate livingdocs so we can give you access to the repository.
 
 ## Setup
-- Go through the setup documentation: [setup local development](../walkthroughs/getting-started-with-local-development.md)
+- Go through the setup documentation: [setup local development](../guides/getting-started-with-local-development.md)
 - After setup server and editor you should be able to login with a given user
 
 ## Design
