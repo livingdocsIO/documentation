@@ -10,7 +10,7 @@ The feature is enabled by default, you can disable it in your [server configurat
 
 In the project menu, select "Project Setup", then select "Webhooks" in the "Configuration" section of the menu. You can activate/deactivate all your configured webhooks using the setting "deliver webhooks on events".
 
-![Webhooks Configuration](./webhooks.png)
+![Webhooks Configuration](images/webhooks.png)
 
 Add a new Webhook by clicking "Add Webhook" or edit an existing one by clicking on it's entry in the list. This shows a form to configure the webhook.
 
@@ -24,7 +24,7 @@ Add a new Webhook by clicking "Add Webhook" or edit an existing one by clicking 
 
 For testing purposes the service at https://webhook.site may come in handy. It gives you an URL you can use to send webhooks to and look at all the requests in a webinterface.
 
-![Webhooks Configuration](./webhook-detail.png)
+![Webhooks Configuration](images/webhook-detail.png)
 
 ### Configuration storage
 

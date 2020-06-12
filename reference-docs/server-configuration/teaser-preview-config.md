@@ -1,6 +1,6 @@
 # Teaser Preview
 
-![Teaser Preview](./teaser_preview.gif)
+![Teaser Preview](images/teaser_preview.gif)
 
 The Teaser Preview adds an additional read-only view to the publication section of the Livingdocs Editor. It is by default disabled and can only be enabled and configured through a [content type config](../project-config/content_types.md). 
 

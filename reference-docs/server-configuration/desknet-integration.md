@@ -26,10 +26,10 @@ The rest of this guide will detail the underlying data structures in case you do
 
 - In the project menu, select "Project Access".
 
-![Menu Preview](./desknet_token_1.png)
+![Menu Preview](images/desknet_token_1.png)
 - Then select "Api Tokens", enter a descriptive name and click "Create token".
 
-![Api Token](./desknet_token_2.png).
+![Api Token](images/desknet_token_2.png).
 
 - In the list of tokens, select "Show" for your newly created token, copy the token and temp-store it somewhere, we're going to use it in a minute.
 
@@ -40,7 +40,7 @@ The rest of this guide will detail the underlying data structures in case you do
 - Click "Edit" for the platform you want to connect with Livingdocs. Select the tab "Advanced Settings".
 - Fill in the form "Data / export API". Replace the domain part in the URL with your server domain. Under "API secret", enter the Livingdocs Public API token we created in the last step.
 
-![Desk-Net form](./desknet_desknet_config.png)
+![Desk-Net form](images/desknet_desknet_config.png)
 
 #### 3. Enable the Desk-Net feature
 
