@@ -4,7 +4,7 @@ In Livingdocs, access rights are set on a group. A group is a many-2-many relati
 So in general for a given project you will have many groups. One group, the "Owners" group is always created by default.
 The screenshot below shows you how to set the access rights for a given group.
 
-![Access Rights](./access_rights.png)
+![Access Rights](./images/access_rights.png)
 
 *You reach this screen by clicking on "Project Settings" in the main menu*
 
