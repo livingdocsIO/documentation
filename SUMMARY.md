@@ -88,7 +88,7 @@
 * [Enable Multi-Language Support](guides/setup_multilanguage.md)
 * [A Possible Translation System](guides/translations_example.md)
 * [Setup Categories](guides/activate-categories.md)
-* [A Possible Routing System](reference-docs/server-public-api/routing-system.md)
+* [Routing](guides/routing-system.md)
 * [Hugo Drag and Drop](reference-docs/server-extensions/hugo-dnd.md)
 * [Enable Soft Lock](guides/enable-soft-lock.md)
 * [Asset Management](guides/asset-management.md)
