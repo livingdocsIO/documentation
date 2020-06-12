@@ -37,7 +37,7 @@ Next you need a way to update this index whenever a document in Livingdocs chang
 3. you want to have the relation information for both
 
 For this example, we only look at use case 1.
-You will use the [hooks API](../reference-docs/server-configuration/hooks.md) to be informed whenever a user publishes a document. For this example we will use a server-wide hook.
+You will use the [hooks API](../reference-docs/server-api/hooks.md) to be informed whenever a user publishes a document. For this example we will use a server-wide hook.
 ```
 liServer.registerInitializedHook((done) => {
   liServer.features.api('li-render-pipeline').registerPublicationServerHooks({
