@@ -126,8 +126,5 @@
   * [Design component](service/design_component_settings_config.md)
 
 <!-- ## Livingdocs core development
-
-* Editor
-  * [Styleguide](reference-docs/editor-styleguide/styleguide.md)
 * Framework
   * [Browser API](reference-docs/content-model/browser_api.md) -->
