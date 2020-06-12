@@ -56,7 +56,7 @@ So far we have seen design definitions where a `doc-include` directive has one `
 
 The example shows one component "Top News". This component has only one directive `top-news`. Instead of a single service the `top-news` directive has an array of services in its configuration. The use case is quite simple: Top News is a geometry on a start page. It can be filled either manually (`list` service), automatically (`categoryList` service) or have a time schedule for the future (`scheduledList` service). Instead of doing 3 components for this, the `services` (array) configuration allows you to re-use the geometry of the "Top News" component and give the user in the editor the ability to switch between the defined services.
 
-![Service Multiselect](./multiselect.png)
+![Service Multiselect](images/multiselect.png)
 
 The screenshot above shows the multiselect option in the sidebar. The rendering of the selected "Top News" component will always look the same only the underlying `doc-include` service (and thus the editor user interface as well as the server rendering) change.
 

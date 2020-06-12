@@ -53,6 +53,6 @@ You can import documents from your old application. There is a special API where
 It can be important for your case that you can create components which can include rendered content from third-parties, e.g. facebook embeds.
 Apart from third-party content, teasers on overview pages are also currently handled as includes in Livingdocs.
 
-[create includes](../reference-docs/doc-includes/intro.md)
+[create includes](../reference-docs/includes/intro.md)
 
-[teaser and teaser list example](../reference-docs/doc-includes/embed_and_list.md)
+[teaser and teaser list example](../reference-docs/includes/embed_and_list.md)

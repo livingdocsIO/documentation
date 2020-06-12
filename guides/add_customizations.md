@@ -99,8 +99,8 @@ liEditor.searchFilters.registerList('layouts', layoutsFilter)
 
 // Register a custom doc-include sidebar interface (Angular component)
 liEditor.includes.register('brightcove', {
-  template: require('../plugins/doc-includes/ld-brightcove-include/brightcove_include_template.html'),
-  controller: require('../plugins/doc-includes/ld-brightcove-include/brightcove_include_controller'),
+  template: require('../plugins/includes/ld-brightcove-include/brightcove_include_template.html'),
+  controller: require('../plugins/includes/ld-brightcove-include/brightcove_include_controller'),
   bindings: {
     directive: '=',
     componentView: '=',

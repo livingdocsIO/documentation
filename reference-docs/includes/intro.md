@@ -1,6 +1,6 @@
-## Doc-Includes
+## includes
 
-Doc-Includes are the Livingdocs equivalent to [edge side includes](https://en.wikipedia.org/wiki/Edge_Side_Includes). They are extremely powerful in what they allow you to achieve but mastering them takes a bit of effort. This section explains how you can do customizations using `doc-include`s and provides hands-on examples from real projects.
+includes are the Livingdocs equivalent to [edge side includes](https://en.wikipedia.org/wiki/Edge_Side_Includes). They are extremely powerful in what they allow you to achieve but mastering them takes a bit of effort. This section explains how you can do customizations using `doc-include`s and provides hands-on examples from real projects.
 In particular we will cover:
 - how to configure the predefined `doc-include`s for [article embeds and lists](./embed_and_list.md)
 - how to implement new `doc-include`s in the [server](./server_customization.md)
@@ -8,7 +8,7 @@ In particular we will cover:
 
 ### What is a doc-include
 
-![doc-include lifecycle](./time-diagram-doc-include.jpeg)
+![doc-include lifecycle](images/time-diagram-doc-include.jpeg)
 
 Above we see a lifecycle diagram of a document with a `doc-include`. Take note of the component in the right-hand sidebar.
 Time starts at the bottom with an empty placeholder for a `doc-include` named 'foo'. The definition is done in the Livingdocs design, in particular setting the `service` name to 'foo'. The editor in this case has a custom sidebar user interface for `doc-include`s with service 'foo'. It is rendered when a user selects the respective component.
@@ -18,7 +18,7 @@ After editing the user publishes the document. Whenever a reader loads the publi
 The last point is worth mentioning again: rendering of a `doc-include` is done on every request, that means you don't need to publish the entailing document in order to update the `doc-include` area, this happens automatically on request.
 
 
-### How are doc-includes defined
+### How are includes defined
 
 You should be familiar with [Livingdocs directives](../project-config/design.md#components) for this section.
 

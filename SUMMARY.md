@@ -7,7 +7,7 @@
 * [Livingdocs Design and Components](guides/create_designs.md)
 * [Metadata Plugins](guides/metadata/metadata-examples.md)
 * [Image Services](guides/image-services.md)
-* [Includes](reference-docs/doc-includes/intro.md)
+* [Includes](reference-docs/includes/intro.md)
 * [Glossary](./DICTIONARY.md)
 
 ## Reference Docs
@@ -61,15 +61,15 @@
   * [Component Model](reference-docs/content-model/component_model.md)
   * [Directives](reference-docs/content-model/directives.md)
 * Includes
-  * [Include Server Config](reference-docs/doc-includes/server_customization.md)
-  * [Include User Interfaces](reference-docs/doc-includes/editor_customization.md)
-  * [Includes with Multiple Services](reference-docs/doc-includes/service_multiselect.md)
+  * [Include Server Config](reference-docs/includes/server_customization.md)
+  * [Include User Interfaces](reference-docs/includes/editor_customization.md)
+  * [Includes with Multiple Services](reference-docs/includes/service_multiselect.md)
 
 ## Guides
 
 * [Copy documents between types](guides/document_copy.md)
 * [Register a Custom Server Feature](guides/add_customizations.md)
-* [Configure Includes: Article Embed and List](reference-docs/doc-includes/embed_and_list.md)
+* [Configure Includes: Article Embed and List](reference-docs/includes/embed_and_list.md)
 * [Assign Access Rights](guides/access_rights.md)
 * [Validate Task Completion](guides/validate_tasks.md)
 * [Add Custom Realtime Proofreading Dashboard](guides/add-custom-realtime-proofreading-dashboard.md)

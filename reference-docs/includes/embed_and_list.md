@@ -1,15 +1,15 @@
-## Core doc-includes
+## Core includes
 
 The Livingdocs core predefines 2 editor user interfaces for the `doc-include` services: `embed-teaser` and `list`. If you just want to enable those features without having to understand much else about includes, stick to the descriptions below. If you want to understand the concepts behind those instructions you should also read about [editor customizations](./editor_customization.md) and [server customizations](./server_customization.md).
 
 The `embed-teaser` is an article embed. The user can click the component containing the `embed-teaser` include and the sidebar shows a user interface that lets the user select an article to be embedded as a teaser.
 The `list` represents a list of articles, commonly seen on startpages of newspapers. It assumes a manually sorted list that can be created with the Livingdocs list interface (see main navigation inside the Livingdocs editor). The sidebar renders a user interface where a user can select a list or re-order the articles in that list.
 
-Both of those core doc-includes require you to implement a custom server-side rendering plugin if you want the preview and rendering insided published documents.
+Both of those core includes require you to implement a custom server-side rendering plugin if you want the preview and rendering insided published documents.
 
 ### Embed-teaser
 
-![Embed Teaser](./embed-teaser.png)
+![Embed Teaser](images/embed-teaser.png)
 
 The image above shows how a teaser to an image gallery (article type) is linked in an article. The image gallery is selected in the document. The sidebar renders a button "Link Article". If pressed this button opens up a search modal that allows the user to search for gallery articles and select one to be linked.
 The search is exactly the same as in the documents dashboard (first screen after Login). You can configure 2 things in this search:
@@ -119,7 +119,7 @@ There are 2 renditions here, web and app. For the web, the `embed-teaser` includ
 
 ### List
 
-![List](./list.png)
+![List](images/list.png)
 
 The image above shows how a manually sorted list of article teasers is created in Livingdocs. Upon selecting the component, the user can select a list in the sidebar ("bar" in the example). If the user presses "edit" in the sidebar, the user gets a second sidebar (to the left) where she can change the order of articles and add/remove articles. When she presses "Publish List" the preview is updated.
 

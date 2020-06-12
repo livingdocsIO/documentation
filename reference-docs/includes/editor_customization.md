@@ -1,15 +1,15 @@
 ## Doc-include editor customizations
 
-This section explains how you can write custom Angular components that you can provide for your users inside the Livingdocs editor to configure your doc-includes. If you are looking for the server-side rendering options, [see here](./server_customization.md).
+This section explains how you can write custom Angular components that you can provide for your users inside the Livingdocs editor to configure your includes. If you are looking for the server-side rendering options, [see here](./server_customization.md).
 
 ### Registering a custom angular component
 
-In order to enable a custom user interface for your doc-includes in the editor, you need to register it. This is commonly done in `app/editor.js` (the startup file).
+In order to enable a custom user interface for your includes in the editor, you need to register it. This is commonly done in `app/editor.js` (the startup file).
 
 ```js
 liEditor.includes.register('customBrightcoveVideo', {
-  template: require('../plugins/doc-includes/brightcove-video/template.html'),
-  controller: require('../plugins/doc-includes/brightcove-video/controller'),
+  template: require('../plugins/includes/brightcove-video/template.html'),
+  controller: require('../plugins/includes/brightcove-video/controller'),
   bindings: {
     directive: '=',
     componentView: '=',
@@ -137,7 +137,7 @@ The model is optional (you could also write all code in the controller but we ad
 </div>
 ```
 
-Last but not least you have an angular component template. This will be rendered in the sidebar. Regarding HTML structure and classes see the [Livingdocs styleguide](https://beta.livingdocs.io/styleguide.html).
+Last but not least you have an angular component template. This will be rendered in the sidebar. Regarding HTML structure and classes see the [Livingdocs styleguide](https://edit.livingdocs.io/styleguide.html).
 
 ### An example with dispatch
 
