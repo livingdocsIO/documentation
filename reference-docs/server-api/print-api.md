@@ -93,7 +93,7 @@ Each line represents one layout, i.e., one placed and sized box in the InDesign 
 - `publication`, the publication to which this layout belongs
 - `publicationDate`, the date of the publication for which the layout was requested
 
-![Choose a print layout in Livingdocs](./images/print-layout.png)
+![Choose a print layout in Livingdocs](images/print-layout.png)
 
 *The screenshot above shows how to choose a print layout in the Livingdocs user interface*
 
@@ -145,7 +145,7 @@ Each line represents one template, i.e., one generic box that can be used in InD
 - `name`, the name of this template, will be displayed in the LD Layout search
 - `publication`, the publication to which this template belongs
 
-![Choose a print template in Livingdocs](./images/print-template.png)
+![Choose a print template in Livingdocs](images/print-template.png)
 
 *The screenshot above shows how to choose a print template in the Livingdocs user interface*
 
@@ -323,13 +323,13 @@ If the content contained information that is not present in the layout or templa
 ```
 If Livingdocs sees this regex in a row it will render a respective message in the print preview. All of those messages should come at the end of the content block.
 
-![Print Preview for a component that is not in the layout](./images/print-preview-inexisting-component.png)
+![Print Preview for a component that is not in the layout](images/print-preview-inexisting-component.png)
 
 *The preview indicating that the component "Untertitel" is not present in this layout*
 
 In addition, if a jpeg preview was requested, you need to send a `previews` block that passes the URL to an image with the jpeg preview.
 
-![The Livingdocs print preview](./images/print-preview.png)
+![The Livingdocs print preview](images/print-preview.png)
 
 *The screenshot above shows the Livingdocs print preview. To the right the journalist writes text in Livingdocs (the request) and to the left the preview from the print system is displayed (your response)*
 
@@ -380,7 +380,7 @@ Each department element has to provide the following attributes:
 - `parent`, empty or the shorthand identifier (`id`) of the parent department
 - `publication`, the publication to which this department belongs
 
-![The print department selection in the user interface](./images/print-metadata-department.png)
+![The print department selection in the user interface](images/print-metadata-department.png)
 
 *Screenshot of the print department selection in the Livingdocs editor*
 

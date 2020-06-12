@@ -3,7 +3,7 @@
 ## Basic Configuration
 
 To enable dragging both images and documents from _huGO+_ into livingdocs you first need to configure `hugo.resource`
-in the [server configuration](../server-configuration/config.md)
+in the [server configuration](../reference-docs/server-configuration/config.md)
 
 
 ## Image Drag and Drop
@@ -11,7 +11,7 @@ in the [server configuration](../server-configuration/config.md)
 Images can be dragged onto a livingdocs document directly from _huGO+_ after the basic configuration is set up.
 
 Note: you can restrict from which sources images can be uploaded, e.g. you could allow only uploads from _huGO+_.
-See [Image Source Policy](../editor-configuration/image-source-policy.md)
+See [Image Source Policy](../reference-docs/editor-configuration/image-source-policy.md)
 
 
 ## Document Drag and Drop
@@ -67,7 +67,7 @@ hugo:
 
 Now that you have configured the feature you'll want to provide transformations so the huGO+ document can be converted to a document that corresponds to your design and layout.
 
-A transformation is a single function that is expected to return an object containing a [`livingdoc`](../common-livingdoc/livingdoc.md) and [`metadata`](../server-configuration/metadata.md) and should have following signature:
+A transformation is a single function that is expected to return an object containing a [`livingdoc`](../reference-docs/common-livingdoc/livingdoc.md) and [`metadata`](../reference-docs/server-configuration/metadata.md) and should have following signature:
 
 ```js
 // E.g. ./plugins/hugo-import-transformations/agency/regular.js
