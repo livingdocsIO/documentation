@@ -36,7 +36,6 @@
   * [Single Sign-On](reference-docs/server-configuration/single_sign-on.md)
   * [Using Google Cloud Storage](reference-docs/server-configuration/google-cloud-storage.md)
   * [Teaser Preview Configuration](reference-docs/server-configuration/teaser-preview-config.md)
-  * [Desk-Net Integration](reference-docs/server-configuration/desknet-integration.md)
   * [Search Publications](reference-docs/server-configuration/publication-index.md)
 * Editor Config
   * [Document Editing Features](reference-docs/editor-configuration/editing-features.md)
@@ -83,6 +82,7 @@
 * [Setup Categories](guides/activate-categories.md)
 * [Routing](guides/routing-system.md)
 * [Hugo Integration (DAM)](guides/hugo-dnd.md)
+* [Desk-Net Integration (Planning)](guides/desknet-integration.md)
 * [Enable Soft Lock](guides/enable-soft-lock.md)
 * [Asset Management](guides/asset-management.md)
 * [Author Management](guides/prefill-author.md)

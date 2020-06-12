@@ -276,7 +276,7 @@ Apart from the general settings (`renderSettings`) you define an entry for each 
 
 We advise you to setup the Desk-Net configuration from the "Project Setup" entry of the same name. There is also a [video](https://vimeo.com/368750546) explaining the setup.
 
-See our [Desk-Net plugin guide](../server-configuration/desknet-integration.md) for comprehensive infos (custom code parts require enterprise version).
+See our [Desk-Net plugin guide](../../guides/desknet-integration.md) for comprehensive infos (custom code parts require enterprise version).
 
 ## Renditions
 *enterprise only*

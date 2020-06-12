@@ -297,7 +297,6 @@ designs: {
 ```
 [config options](./config-storage-options.md) for `storage`.
 
-
 #### Images
 
 - Standard Option
