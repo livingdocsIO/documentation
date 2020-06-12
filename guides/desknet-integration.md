@@ -14,8 +14,8 @@ The rest of this guide will detail the underlying data structures in case you do
 
 - You should have a Desk-Net account and a set of valid API credentials to authorize Livingdocs to access the Desk-Net HTTP API.
 - You should be somewhat familiar with the Desk-Net data entities (Stories, Publications, Platforms and so on). A technical overview can be found [here](https://api.desk-net.com)
-- You should know about the different Livingdocs configuration levels/methods, namely the [channel config](../project-config/content_types.md) and the [content type config](../project-config/content_types.md))
-- You should be familiar with how to [set up custom metadata fields](./metadata.md) for your content types.
+- You should know about the different Livingdocs configuration levels/methods, namely the [channel config](../reference-docs/project-config/content_types.md) and the [content type config](../reference-docs/project-config/content_types.md))
+- You should be familiar with how to [set up custom metadata fields](../reference-docs/server-api/metadata.md) for your content types.
 - For local development, we strongly suggest you use:
    - some kind of http tunnel solution like [ngrok](https://ngrok.com). This is useful, when you want to redirect messages from Desk-Net to your local server.
    - a HTTP API client like [Postman](https://www.getpostman.com/). Very handy to explore the Desk-Net API. Certain configuration settings also need you to provide Desk-Net entity ID's, which are not easily (or not at all) accessible via the Desk-Net UI.

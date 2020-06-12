@@ -40,7 +40,7 @@ Above we see the configuration of our custom task in the editor. There is nothin
 
 ## Server plugin
 
-On the server we need to exchange the [metadata plugin](../reference-docs/server-configuration/metadata.md#plugin) used for the tasks.
+On the server we need to exchange the [metadata plugin](../reference-docs/server-api/metadata.md#plugin) used for the tasks.
 
 ```
 metadata: {
