@@ -32,8 +32,8 @@
   * [Logs](reference-docs/server-configuration/logging.md)
   * [Single Sign-On](reference-docs/server-configuration/single_sign-on.md)
   * [Using Google Cloud Storage](reference-docs/server-configuration/google-cloud-storage.md)
-  * [Teaser Preview Configuration](reference-docs/server-configuration/teaser-preview-config.md)
-  * [Search Publications](reference-docs/server-configuration/publication-index.md)
+  * [Teaser Preview](reference-docs/server-configuration/teaser-preview-config.md)
+  * [Publication Index](reference-docs/server-configuration/publication-index.md)
 * Editor Config
   * [Document Editing Features](reference-docs/editor-configuration/editing-features.md)
   * [Text Editing Config](reference-docs/editor-configuration/text-editing.md)
@@ -123,6 +123,6 @@
   * [Design settings](service/design_settings_config.md)
   * [Design component](service/design_component_settings_config.md)
 
-<!-- ## Livingdocs core development
-* Framework
-  * [Browser API](reference-docs/content-model/browser_api.md) -->
+## Contribution Guidelines
+
+* [Guidelines](./CONTRIBUTING.md)
