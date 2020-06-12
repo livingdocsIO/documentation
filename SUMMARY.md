@@ -6,7 +6,7 @@
 * [System Prerequisites](walkthroughs/getting-started-with-local-development.md)
 * [Livingdocs Design and Components](reference-docs/common-designs/create_designs.md)
 * [Metadata Plugins](walkthroughs/metadata/metadata-examples.md)
-* [Image Services](concepts/images/image-services.md)
+* [Image Services](guides/image-services.md)
 * [Includes](reference-docs/doc-includes/intro.md)
 * [Glossary](./DICTIONARY.md)
 
@@ -134,8 +134,6 @@
 
 * Editor
   * [Styleguide](reference-docs/editor-styleguide/styleguide.md)
-  * [Why use an image service?](concepts/images/why-an-image-service.md)
-  * [Responsive background images](concepts/images/responsive-bg-images.md)
 * Server
   * [Editing API](reference-docs/server-editing-api/README.md)
     * [Basics](reference-docs/server-editing-api/api_basics.md)

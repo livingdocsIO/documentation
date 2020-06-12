@@ -56,7 +56,7 @@ There are several configuration options concerning images.
 
 ### Image service
 
-See [here](../../concepts/images/image-services.md#configuring-an-image-service)
+See [here](../../guides/image-services.md#configuring-an-image-service)
 
 ### Image cropping
 
