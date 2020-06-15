@@ -41,7 +41,6 @@
   * [Image Cropper Config](reference-docs/editor-configuration/image-cropping.md)
   * [Image Source Policy Config](reference-docs/editor-configuration/image-source-policy.md)
   * [Metadata Configuration](reference-docs/editor-configuration/metadata.md)
-  * [Customizing the Navigation](reference-docs/editor-configuration/main-navigation.md)
   * [Login](reference-docs/editor-configuration/login.md)
 * Server Code APIs
   * [Import API](reference-docs/server-api/import_api.md)
