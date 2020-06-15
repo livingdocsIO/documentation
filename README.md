@@ -18,19 +18,21 @@ This is where you configure your publication. A publication might have different
 
 {% embed url="https://vimeo.com/426285528" %}
 
-## Channel-Config
+## Project-Config
 
-The channel-config is the persistence of the project setup. It's a huge JSON file that contains all settings you applied to your project. The UIs in the "Project Setup" section alter the channel-config JSON and you can always see the complete JSON in the "History" screen of the "Project Setup" \(it's versioned as well\). You can also write to this JSON directly using our CLI, more on this later.
+The project-config is the persistence of the project setup. It's a huge JSON file that contains all settings you applied to your project. The UIs in the "Project Setup" section alter the project-config JSON and you can always see the complete JSON in the "History" screen of the "Project Setup" \(it's versioned as well\). You can also write to this JSON directly using our CLI, more on this later.
 
 {% embed url="https://vimeo.com/426287530" %}
 
+(you might come across the term "channel-config", this is just the old name of the project config)
+
 ## Design
 
-The Design is a part of the channel-config \(subproperties `designSettings` and `components`\). It defines the assets used to render \(CSS, JS, etc.\) as well as the available components \(HTML templates\). Those components will then be visbile in the sidebar of the Livingdocs editor and users can drag them in to create articles and documents.
+The Design is a part of the project-config \(subproperties `designSettings` and `components`\). It defines the assets used to render \(CSS, JS, etc.\) as well as the available components \(HTML templates\). Those components will then be visbile in the sidebar of the Livingdocs editor and users can drag them in to create articles and documents.
 
 ## CLI \(comand-line-interface\)
 
-The [Livingdocs CLI](https://github.com/livingdocsIO/livingdocs-cli) allows you to download and re-upload the channel-config of your project. This is very useful if you want to locally work on your configuration and collaborate on it with other developers, e.g. by pushing it to a Github repo.
+The [Livingdocs CLI](https://github.com/livingdocsIO/livingdocs-cli) allows you to download and re-upload the project-config of your project. This is very useful if you want to locally work on your configuration and collaborate on it with other developers, e.g. by pushing it to a Github repo.
 
 ## Users
 
@@ -38,5 +40,5 @@ Users can be in many projects and projects can have many users. You are a user o
 
 ## Public API
 
-This is where you can interact with Livingdocs over a REST interface. The API allows you to: get content out of Livingdocs \(publications, menus, etc.\), import content into Livingdocs and alter the configuration of your project \(channel-config\) though for the latter you can also use the CLI. Read our [API documentation](https://edit.livingdocs.io/public-api) for more infos.
+This is where you can interact with Livingdocs over a REST interface. The API allows you to: get content out of Livingdocs \(publications, menus, etc.\), import content into Livingdocs and alter the configuration of your project \(project-config\) though for the latter you can also use the CLI. Read our [API documentation](https://edit.livingdocs.io/public-api) for more infos.
 

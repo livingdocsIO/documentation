@@ -14,11 +14,11 @@ This short guide explains how to set up and use the service with your own design
 ### 2\) Create your own design
 
 * [Download](getting_started.md#download-project-config-from-service) the project config from the Livingdocs Service
-* Understand and modify the [project config](reference-docs/project_config.md)
+* Understand and modify the [project config](reference-docs/project_config/README.md)
   * modify the project settings
   * add contentTypes
   * define components and metadata in contentTypes
-  * define your design [design settings](reference-docs/project_config.md#designSettings)
+  * define your design [design settings](reference-docs/project_config/design.md)
 * [Publish](getting_started.md#publish-a-project-config-to-the-service) your project config and the embedded design at the Livingdocs Service
 
 ### 3\) Administration

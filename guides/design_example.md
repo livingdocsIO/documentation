@@ -3,7 +3,7 @@
 This is a small example to setup an embedded design for the service.
 
 ## Use embedded design
-- Add following properties to the index.js in the [project config](./project_config.md)
+- Add following properties to the index.js in the [project config](../reference-docs/project-config/README.md)
 
 ```js
 designSettings: require('./design-settings'),
