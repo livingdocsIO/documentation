@@ -24,21 +24,36 @@ The project-config is the persistence of the project setup. It's a huge JSON fil
 
 {% embed url="https://vimeo.com/426287530" %}
 
+[» Reference Documentation](reference-docs/project-config/README.md)
+
 (you might come across the term "channel-config", this is just the old name of the project config)
 
 ## Design
 
 The Design is a part of the project-config \(subproperties `designSettings` and `components`\). It defines the assets used to render \(CSS, JS, etc.\) as well as the available components \(HTML templates\). Those components will then be visbile in the sidebar of the Livingdocs editor and users can drag them in to create articles and documents.
 
+{% embed url="https://vimeo.com/429647905" %}
+
+[» Reference Documentation](reference-docs/project-config/design.md)
+
 ## CLI \(comand-line-interface\)
 
 The [Livingdocs CLI](https://github.com/livingdocsIO/livingdocs-cli) allows you to download and re-upload the project-config of your project. This is very useful if you want to locally work on your configuration and collaborate on it with other developers, e.g. by pushing it to a Github repo.
+
+{% embed url="https://vimeo.com/429648531" %}
+
+[» Reference Documentation](cli/sync-configs.md)
 
 ## Users
 
 Users can be in many projects and projects can have many users. You are a user once you signed up with Livingdocs. You can also invite users to your projects and assign them to groups. Groups can give different rights \(read-only, publish, etc.\) to your users so you can segment your team in e.g. admins, editors and editors in chief.
 
+{% embed url="https://vimeo.com/429650395" %}
+
 ## Public API
 
 This is where you can interact with Livingdocs over a REST interface. The API allows you to: get content out of Livingdocs \(publications, menus, etc.\), import content into Livingdocs and alter the configuration of your project \(project-config\) though for the latter you can also use the CLI. Read our [API documentation](https://edit.livingdocs.io/public-api) for more infos.
 
+{% embed url="https://vimeo.com/429650615" %}
+
+[» Reference Documentation](https://edit.livingdocs.io/public-api)
