@@ -88,7 +88,7 @@ You can also customize the scopes that you assign to a menu item to control acce
 You can also customize the icons. We use https://materialdesignicons.com/ just use the respective icon string.
 
 To link to an external page add an entry as follows:
-```
+```js
 {
   label: 'Your page',
   href: 'https://www.livingdocs.io',
@@ -103,7 +103,7 @@ Note that you use `href` instead of `sref` for external links.
 
 Define a custom item for the dashboard list of articles. This is useful when you want to show additional data on the dashboard such as the open tasks on an article.
 
-```
+```js
 search: {
   articleSearch: {
     listItemComponent: 'custom-dashboard-list-item'
@@ -341,7 +341,7 @@ The following filters can be used in `displayFilters`:
 - `channels` give the user a dropdown to filter by a specific channel
 - `documentState`, unpublished, published, not yet published, my articles, needs proofreading, currently proofreading
 - `timeRange`, filter the search results in time ranges such as last 24 hours
-- `sortBy`: `relevance` (default), `creation_date`, `updated_at`, `alphabetical`  
+- `sortBy`: `relevance` (default), `creation_date`, `updated_at`, `alphabetical`
   **ATTENTION:** if you use the `sortBy` in the displayFilters you can not at the same time configure a `sortBy` in the `defaultQueries`, only one is allowed.
 - `language`: uses the channel configuration for [available languages](../project-config/README.md) to offer a select box to filter for languages (requires multi-language feature to be enabled)
 - `contentType`: uses the content-types configuration in your server to filter for different content-types, e.g. galleries or regular articles.
@@ -358,7 +358,7 @@ There are different places, where one can define a filter query
 
 At all this places, one can use the same query format, e.g.
 
-```
+```js
 {type: 'documentType', value: 'article'}
 ```
 
@@ -368,7 +368,7 @@ The query format always has a `type` and most of the time a `value`. You can see
 
 This are all available `queryTypes` which can be used to form a filter query.
 
-```
+```js
 // documentType
 {type: 'documentType', value: 'article'}
 
@@ -401,6 +401,7 @@ const to = new Date('2015-04-05T20:00')
 // metadata (multiple key, value combinations possible)
 {type: 'metadata', key: 'foo', value: 'bar'}
 {type: 'metadata', key: 'foo', value: {exists: true}}
+{type: 'metadata', key: 'foo.bar.id', value: 42}
 
 // task (multiple taskName and taskValue combinations possible)
 // taskValue: 'todo', 'doing', 'done'
@@ -416,7 +417,7 @@ const to = new Date('2015-04-05T20:00')
 ## Filter Query Examples
 
 #### Example 1 - filter by documentType
-```
+```js
 defaultQueries: [
   {type: 'documentType', value: 'article'}
 ]
@@ -425,17 +426,41 @@ defaultQueries: [
 This would reduce the search to only articles (no pages).
 
 
-#### Example 2 - filter by metadata
-```
+#### Example 2 - filter by metadata with key/value
+```js
 defaultQueries: [
   {type: 'metadata', key: 'foo', value: 'bar'}
 ]
 ```
 
-This would filter for only documents that have the value `bar` in the metadata field `foo`. You have to make sure that `foo` is a correctly indexed metadata field.
+This would filter for only documents that have the value `bar` in the metadata field `foo`. You have to make sure that `foo` is an indexed metadata field.
+
+#### Example 3 - filter by metadata with objects
+```js
+defaultQueries: [
+  {type: 'metadata', key: 'author.reference.id', value: 42}
+]
+```
+
+More complex metadata fields are indexed as an object (instead of key/value). In this case one can filter based on subproperties.
+
+```js
+// This is how the metadata field has been indexed into the search index
+{
+  metadata: {
+    author: {
+      reference: {
+        id: 42
+      }
+    }
+  }
+}
+```
+
+This example would filter documents that have the value `42` in the metadata field `author` with propreties `reference.id`. You have to make sure that `author` is an indexed metadata field.
 
 
-#### Example 3 - filter by task
+#### Example 4 - filter by task
 ```
 defaultQueries: [
   {type: 'task', taskName: 'proofreading', taskValue: 'done'}
@@ -592,7 +617,7 @@ coreApi.searchFilters.registerAngularComponent('test', {
     >
       <div class="ld-dropdown__text">
         Show print documents
-      </div>          
+      </div>
     </div>
   `,
   controller: class PrintController {
