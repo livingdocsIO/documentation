@@ -95,11 +95,6 @@
   * [Routing](guides/routing-system.md)
   * [Setup Categories](guides/activate-categories.md)
 
-## CLI
-
-* [.livingdocs-cli](livingdocs-cli/cli-dotfile.md)
-* [Sync Project Configs](livingdocs-cli/sync-configs.md)
-
 ## Devops
 
 * [Hosting Livingdocs](devops/self-hosting.md)
@@ -117,13 +112,6 @@
 * [How to do a Stress Test](https://github.com/DaRaFF/stress-test-example#how-to-make-a-simple-stress-test)
 * [How to Configure and Interpret Varnish](devops/maintenance/how-to-varnish.md)
 
-
-## Livingdocs Service
-* [Getting started](service/getting_started.md)
-* Reference docs
-  * [Project config](service/project_config.md)
-  * [Design settings](service/design_settings_config.md)
-  * [Design component](service/design_component_settings_config.md)
 
 ## Contribution Guidelines
 
