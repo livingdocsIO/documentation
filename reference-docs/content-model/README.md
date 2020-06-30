@@ -2,7 +2,7 @@
 ## Livingdoc Document Format
 
 
-### What is is all about?
+### What is it all about?
 
 Regain control over your HTML. HTML and CSS always work together. Creating a CSS design can only work if you know how the HTML looks. Or better yet you can define your own HTML. Traditionally developers have to create templates for that on a server somewhere for a particular CMS. With Livingdocs this is different.
 

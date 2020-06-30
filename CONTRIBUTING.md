@@ -14,8 +14,6 @@ Add your documentation in the right spot. The structure is as follows:
 - `guides` -> hands-on guides to do a specific integration, use a feature, etc.
 - `devops` -> everything that concerns server setup and administration
 - `know-how` -> only things that do not depend on Livingdocs (general know-how)
-- DEPRECATED: `livingdocs-cli` -> will be moved to separate documentation
-- DEPRECATED: `service` -> will be moved to separate documentation
 
 ## Style
 
