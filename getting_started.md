@@ -61,7 +61,7 @@ After modifying the project config and the design locally, you can publish the c
 ### Publication restrictions
 
 * content-types can't be removed
-* metadata-fields can not be removed
+* metadata-fields can't be removed
 
 ### Example
 
