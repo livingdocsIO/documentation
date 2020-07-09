@@ -1,5 +1,7 @@
 # Main Menu
 
+This documentation describes the configuration possibilities within the editor (instance-wide). There are also project-wide configuration options. [See our project config docs](../project-config/editor_settings.md)
+
 ## Triggering the main menu
 You can define the way the main menu will be triggered. It can be triggered by `clicking`, `hovering` or both. The default way of opening the navigation menu is by `clicking`.
 
