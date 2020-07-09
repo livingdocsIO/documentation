@@ -6,6 +6,7 @@ You can define the way the main menu will be triggered. It can be triggered by `
 #### Config options
 
 ```js
+// editor config
 app: {
   sidePanelBehaviour: {
     // you can also enable both.
@@ -20,13 +21,13 @@ app: {
 ![Open Livingdocs navigation by clicking](images/open-by-click.gif)
 
 ## Menu items
-You can also customize the entries you want to have in the main menu (the burger icon in the top left of the screen as seen in the previous gif).
-
+You can also customize the entries you want to have in the main navigation (the burger icon in the top left of the screen as seen in the previous gif).
 
 Default Configuration:
 ```js
-app: {
-  sidePanelItems: [{
+// project config on the server
+editorSettings: {
+  mainNavigation: [{
     {liItem: 'articles'},
     {liItem: 'pages'},
     {liItem: 'dataRecords'},
@@ -42,8 +43,9 @@ app: {
 
 Add a custom dashboard entry:
 ```js
-app: {
-  sidePanelItems: [
+// project config on the server
+editorSettings: {
+  mainNavigation: [
   // other entries...
   {
     label: 'Proofreading',
@@ -56,8 +58,9 @@ app: {
 
 Extend a `liItem` entry:
 ```js
-app: {
-  sidePanelItems: [
+// project config on the server
+editorSettings: {
+  mainNavigation: [
   // other entries...
   {
     liItem: 'articles',
@@ -69,8 +72,9 @@ app: {
 
 Fully custom entry:
 ```js
-app: {
-  sidePanelItems: [
+// project config on the server
+editorSettings: {
+  mainNavigation: [
   // other entries...
   {
     label: 'Articles',
@@ -104,6 +108,7 @@ Note that you use `href` instead of `sref` for external links.
 Define a custom item for the dashboard list of articles. This is useful when you want to show additional data on the dashboard such as the open tasks on an article.
 
 ```js
+// editor config
 search: {
   articleSearch: {
     listItemComponent: 'custom-dashboard-list-item'
@@ -113,14 +118,37 @@ search: {
 
 Note that the custom component can only use document metadata that has been explicitly [whitelisted](../server-configuration/config.md#search).
 
+## Media Library Dashboard
+
+After linking the media library on the mainNavigation (see above), one can also define `displayFilters` to customise the media library dashboard.
+
+```js
+// project config on the server
+editorSettings: {
+  mediaLibrary: {
+    enabled: true
+    dashboard: {
+      // displayFilters for the media library dashboard
+      displayFilters: ['liDateTimeRange']
+    },
+    // displayFilters for the media library editor sidepanel and the medialibrary metadata modal
+    editorSelection: {
+      displayFilters: ['timeRange']
+    }
+  }
+}
+```
+
+
 ## Custom Dashboards
 
 Custom Dashboards are configurable versions of the current Articles / Pages / Date-Records Screens. You can add as many custom dashboards as you want in the Editor configuration.
 
 First add a navigation entry into the main navigation:
 ```js
-app: {
-  sidePanelItems: [
+// project config on the server
+editorSettings: {
+  mainNavigation: [
   // other entries...
   {
     label: 'Proofreading',
@@ -144,11 +172,8 @@ For example a task board will show all tasks in the `requested` state in one col
 
 #### Example: Dashboard
 ```js
-// note: add dashboards to root in the editor config:
-// {
-//   app: {...},
-//   dashboard: {...}
-// }
+// project config on the server
+// { editorSettings: { dashboard: [...] }
 dashboards: [{
   handle: 'gallery-dashboard',
   type: 'dashboard',
@@ -175,6 +200,7 @@ dashboards: [{
 #### Example: Taskboard (simple config)
 
 ```js
+// project config on the server
 dashboards: [{
   handle: 'kanban-proofreading',
   type: 'taskBoard',
@@ -188,6 +214,7 @@ dashboards: [{
 #### Example: Kanbanboard (full config)
 
 ```js
+// project config on the server
 dashboards: [{
   handle: 'kanban-proofreading',
   type: 'kanbanBoard',
