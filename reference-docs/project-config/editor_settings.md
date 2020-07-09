@@ -96,7 +96,7 @@ For custom dashboards you configure the handle of your custom dashboard (see bel
 
 ## Dashboards
 
-The `dashboards` entry allows you to configure custom dashbaords, e.g. for authors (data-records) or proofreading (tasks).
+The `dashboards` entry allows you to configure custom dashboards, e.g. for authors (data-records) or proofreading (tasks).
 
 There are 3 types of dashboards (`type` property):
 - `dashboard`
