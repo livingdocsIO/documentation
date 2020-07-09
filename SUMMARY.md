@@ -54,6 +54,7 @@
   * [Metadata Plugins](reference-docs/server-api/metadata.md)
 * [Editor Code APIs](reference-docs/editor-api/initalization.md)
   * [Document Drag & Drop](reference-docs/editor-api/document-drag-drop.md)
+  * [Vue Component Registry](reference-docs/editor-api/vue-component-registry.md)
 * [Content Model](reference-docs/content-model/README.md)
   * [Livingdoc](reference-docs/content-model/livingdoc.md)
   * [Component Tree](reference-docs/content-model/component_tree.md)
