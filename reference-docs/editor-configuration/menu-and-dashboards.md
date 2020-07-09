@@ -403,6 +403,10 @@ const to = new Date('2015-04-05T20:00')
 {type: 'metadata', key: 'foo', value: {exists: true}}
 {type: 'metadata', key: 'foo.bar.id', value: 42}
 
+const from = new Date('2016-01-23T15:00')
+const to = new Date('2015-04-05T20:00')
+{type: 'metadata', key: 'publicationDate', value: {dateFilter: {from, to}}}
+
 // task (multiple taskName and taskValue combinations possible)
 // taskValue: 'todo', 'doing', 'done'
 {type: 'task', taskName: 'proofreading', taskValue: 'pending'},
