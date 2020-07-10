@@ -92,12 +92,12 @@ The project config is a huge JSON file with subproperties for things like conten
     // using this config, you can declaratively define include services
     includeServices: [
       {
-        handle: 'my-service', 
+        handle: 'my-service',
         rendering: {
-          type: 'remote', 
-          url: 'http://example.com', 
+          type: 'remote',
+          url: 'http://example.com',
           timeout: 3000
-        }, 
+        },
         config: {
           foo: 'this config is sent to the service'
         },
@@ -108,7 +108,7 @@ The project config is a huge JSON file with subproperties for things like conten
             type: 'li-text', // li-text is the only supported type in release-2020-05
             handle: 'myText'
           }
-        ], 
+        ],
         defaultParams: {
           myText: 'A default value for the myText property'
         }
@@ -152,7 +152,15 @@ The project config is a huge JSON file with subproperties for things like conten
   contentTypes: [{
     require('./path/to/one/content_type_config'),
     require('./path/to/another/content_type_config')
-  }]
+  }],
+
+  // Editor settings are sent to the editor and control the behavior of your editor
+  editorSettings: {
+    userMenu: [],
+    mainNavigation:[],
+    dashboards: [],
+    mediaLibrary: {}
+  }
 }
 ```
 
@@ -165,3 +173,4 @@ In a nutshell, the project configuration allows you to:
 * configure the multi-language feature
 * configure integrations
 * configure includeServices for third-party rendering
+* configure the behavior of the editor
