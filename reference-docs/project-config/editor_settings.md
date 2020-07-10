@@ -124,7 +124,7 @@ dashboards: [{
   fields: ['metadata.*'],
   // Enterprise only: This is the name of the vue component used in the result list
   componentName: 'liHeroCard',
-  // Enterprise only: The componentOptions are injected into the component 
+  // Enterprise only: The componentOptions are injected into the component
   // `liHeroCard` (in this example)
   componentOptions: {teaserImage: 'teaserImage'},
   // Enterprise only: CSS class set as a wrapper around the result list
@@ -132,7 +132,7 @@ dashboards: [{
 }]
 ```
 
-Possible value for display filters are:
+Possible value for `displayFilters` are:
 - `documentState`, unpublished, published, not yet published, my articles, needs proofreading, currently proofreading
 - `timeRange`, filter the search results in time ranges such as last 24 hours
 - `sortBy`: `relevance` (default), `creation_date`, `updated_at`, `alphabetical`
@@ -141,7 +141,7 @@ Possible value for display filters are:
 - `category`: uses the channel configuration for categories to offer a multi-select box to filter for categories (OR filter)
 - Enterprise-only: `channels` give the user a dropdown to filter by a specific channel
 
-For the base filters you can use the following formats:
+For the `baseFilters` you can use the following formats:
 ```javascript
 // documentType
 {type: 'documentType', value: 'article'}
@@ -176,6 +176,10 @@ const to = new Date('2015-04-05T20:00')
 {type: 'metadata', key: 'foo', value: 'bar'}
 {type: 'metadata', key: 'foo', value: {exists: true}}
 {type: 'metadata', key: 'foo.bar.id', value: 42}
+
+const from = new Date('2016-01-23T15:00')
+const to = new Date('2015-04-05T20:00')
+{type: 'metadata', key: 'publicationDate', value: {dateFilter: {from, to}}}
 
 // task (multiple taskName and taskValue combinations possible)
 // taskValue: 'todo', 'doing', 'done'
@@ -248,4 +252,4 @@ dashboards: [{
 
 ## Media Library
 
-After linking the media library on the `mainNavigation` (see above), one can also define `displayFilters` to customise the media library dashboard.
+After linking the media library on the `mainNavigation` (see above), one can also define `displayFilters` to customise the media library dashboard (see example on top of the page).

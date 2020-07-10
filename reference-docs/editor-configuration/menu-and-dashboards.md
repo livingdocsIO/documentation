@@ -1,9 +1,9 @@
-# Main Menu
+# Main Navigation
 
 This documentation describes the configuration possibilities within the editor (instance-wide). There are also project-wide configuration options. [See our project config docs](../project-config/editor_settings.md)
 
-## Triggering the main menu
-You can define the way the main menu will be triggered. It can be triggered by `clicking`, `hovering` or both. The default way of opening the navigation menu is by `clicking`.
+## Triggering the Main Navigation
+You can define the way the main navigation will be triggered. It can be triggered by `clicking`, `hovering` or both. The default way of opening the navigation menu is by `clicking`.
 
 #### Config options
 
@@ -27,9 +27,8 @@ You can also customize the entries you want to have in the main navigation (the 
 
 Default Configuration:
 ```js
-// project config on the server
-editorSettings: {
-  mainNavigation: [{
+app: {
+  sidePanelItems: [{
     {liItem: 'articles'},
     {liItem: 'pages'},
     {liItem: 'dataRecords'},
@@ -45,9 +44,8 @@ editorSettings: {
 
 Add a custom dashboard entry:
 ```js
-// project config on the server
-editorSettings: {
-  mainNavigation: [
+app: {
+  sidePanelItems: [
   // other entries...
   {
     label: 'Proofreading',
@@ -60,9 +58,8 @@ editorSettings: {
 
 Extend a `liItem` entry:
 ```js
-// project config on the server
-editorSettings: {
-  mainNavigation: [
+app: {
+  sidePanelItems: [
   // other entries...
   {
     liItem: 'articles',
@@ -74,9 +71,8 @@ editorSettings: {
 
 Fully custom entry:
 ```js
-// project config on the server
-editorSettings: {
-  mainNavigation: [
+app: {
+  sidePanelItems: [{
   // other entries...
   {
     label: 'Articles',
@@ -128,7 +124,6 @@ After linking the media library on the mainNavigation (see above), one can also 
 // project config on the server
 editorSettings: {
   mediaLibrary: {
-    enabled: true
     dashboard: {
       // displayFilters for the media library dashboard
       displayFilters: ['liDateTimeRange']
@@ -148,9 +143,8 @@ Custom Dashboards are configurable versions of the current Articles / Pages / Da
 
 First add a navigation entry into the main navigation:
 ```js
-// project config on the server
-editorSettings: {
-  mainNavigation: [
+app: {
+  sidePanelItems: [
   // other entries...
   {
     label: 'Proofreading',
@@ -174,8 +168,10 @@ For example a task board will show all tasks in the `requested` state in one col
 
 #### Example: Dashboard
 ```js
-// project config on the server
-// { editorSettings: { dashboard: [...] }
+// note: add dashboards to root in the editor config:
+//   app: {...},
+//   dashboard: {...}
+// }
 dashboards: [{
   handle: 'gallery-dashboard',
   type: 'dashboard',
@@ -202,7 +198,6 @@ dashboards: [{
 #### Example: Taskboard (simple config)
 
 ```js
-// project config on the server
 dashboards: [{
   handle: 'kanban-proofreading',
   type: 'taskBoard',
@@ -216,7 +211,6 @@ dashboards: [{
 #### Example: Kanbanboard (full config)
 
 ```js
-// project config on the server
 dashboards: [{
   handle: 'kanban-proofreading',
   type: 'kanbanBoard',
