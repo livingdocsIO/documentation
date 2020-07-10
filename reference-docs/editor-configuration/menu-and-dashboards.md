@@ -527,7 +527,7 @@ Process
 liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
   datasource: {
     // fetch data and inject response into mount function
-    async fetch ({project, user, server}) {
+    async fetch ({project, user, server, config}) {
       const host = server.host
       const channelId = project.defaultChannel.id
       const uri = `${host}/channel-configs/properties?channelId=${channelId}&properties=contentTypes`
@@ -588,7 +588,7 @@ Display is controlled with the `filters` key in the configuration.
 There are two flavors to this function
 
 ```js
-liEditor.searchFilters.registerList('creation-date', ['session', (session) => {
+liEditor.searchFilters.registerList('creation-date', ['session', 'config', (session, config) => {
   const channels = _map(session.project.channels, (channel) => ({
     id: channel.id,
     label: channel.label,
@@ -633,7 +633,8 @@ Display is controlled with the `filters` key in the configuration.
 ```js
 coreApi.searchFilters.registerAngularComponent('test', {
   bindings: {
-    value: '='
+    value: '=',
+    config: '='
   },
   template: `
     <div
