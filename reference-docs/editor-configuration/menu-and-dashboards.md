@@ -559,7 +559,8 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
   //     id: 'page',
   //     label: 'Page',
   //     type: 'contentType',
-  //     value: 'page'
+  //     value: 'page',
+  //     isDefault: true
   //   }]
   async mount ({data, filter}) {
     const options = data.contentTypes.map((ct) => {
@@ -575,6 +576,11 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
   }
 })
 ```
+
+#### isDefault option
+
+When `isDefault: true` (see example above), the default option will be added to the search query by default. As soon as one selects a filter manually, the default filter option will be ignored.
+
 
 ### Register Custom List Filter
 
@@ -618,7 +624,8 @@ liEditor.searchFilters.registerList('creationDate', {
     type: 'dateRange',
     key: 'created_at',
     from: new Date('2016-01-01'),
-    to: new Date('2017-01-01')
+    to: new Date('2017-01-01'),
+    isDefault: true
   }]
 })
 ```
