@@ -131,7 +131,13 @@ editorSettings: {
     // displayFilters for the media library editor sidepanel and the medialibrary metadata modal
     editorSelection: {
       displayFilters: ['timeRange']
-    }
+    },
+    // when an image is inserted into a document, the image components directives (directiveName)
+    // are prefilled with that images metadata (metadataPropertyName)
+    componentDirectivesPrefilling: [
+      {metadataPropertyName: 'source', directiveName: 'source'},
+      {metadataPropertyName: 'caption', directiveName: 'caption'}
+    ]
   }
 }
 ```
