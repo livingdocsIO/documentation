@@ -585,6 +585,8 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
 
 #### isDefault option
 
+Added in: `release-2020-07`
+
 When `isDefault: true` (see example above), the default option will be added to the search query by default. As soon as one selects a filter manually, the default filter option will be ignored.
 
 
