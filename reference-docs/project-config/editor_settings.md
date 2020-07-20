@@ -16,10 +16,14 @@ An example:
       data: {
         lastUpdate: '2020-06-16T13:19:38.560Z'
       },
-      // alternative to href = route {name: 'app.state'}
-      href: 'https://github.com/livingdocsIO/livingdocs-release-notes',
       icon: 'plus',
-      id: 'release_notes'
+      id: 'release_notes',
+      group: 'string:required',
+      // Use either 'href' (external link) or 'route' (internal link)
+      href: 'https://github.com/livingdocsIO/livingdocs-release-notes',
+      route: {
+        name: 'app.state'
+      }
     }
   ],
    mainNavigation: [
@@ -95,7 +99,10 @@ An example:
 ```
 
 ## User Menu
-...TODO...
+
+Makes it possible to configure custom entries within the livingdocs user menu. If given a `userMenu.data.lastUpdate` property, it will visually indicate changes to the user. It is not possible to remove or alter the default livingdocs menu entries.
+
+![Custom user menu](images/custom_user_menu.png)
 
 ## Main Navigation
 

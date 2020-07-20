@@ -764,10 +764,6 @@ This will validate the required metadata properties for an image in the editor a
 ```js
 assetManagement: {
   enabled: true,
-  types: [{
-    type: 'image',
-    requiredMetadataProperties: ['title', 'caption']
-  }]
 },
 ```
 
