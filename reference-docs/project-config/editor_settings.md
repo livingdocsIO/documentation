@@ -1,5 +1,7 @@
 # Editor Settings
 
+Added in: `release-2020-07`
+
 The editor settings are sent to the editor and control the behavior of your editor, in particular:
 - user menu
 - main navigation
@@ -22,6 +24,16 @@ An example:
   ],
    mainNavigation: [
     {liItem: 'articles'},
+    // liItem is a shortcut, one can also define it's own config
+    {
+      label: 'My Custom Articles',
+      route: {
+        name: 'app.articles'
+      },
+      icon: 'file-document',
+      scope: 'readArticles',
+      group: 'dashboards' // one of 'dashboards', 'preferences', 'admin'
+    },
     {liItem: 'pages'},
     { // custom task dashboard
       label: 'Proofreading',
@@ -260,6 +272,10 @@ dashboards: [{
   }]
 }]
 ```
+
+## startPage
+
+Set custom `startPage: {path: '/my-custom-path'}} to set the path used to render on login or when switching projects.
 
 ## Media Library
 
