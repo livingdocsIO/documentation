@@ -771,6 +771,31 @@ assetManagement: {
 },
 ```
 
+#### Custom previews
+
+Added in: `release-2020-05`
+
+Custom previews are a way to display a custom preview of a document. This could be a custom mobile preview, a preview of a finished article living on the frontend or anything that fits the specific customer need. You will need to enable the feature and register a custom render function that will contain the `documentId`.
+
+```js
+preview: {
+  enabled: true
+}
+```
+
+```js
+liServer.registerInitializedHook(async () => {
+  const previewApi = liServer.features.api('li-preview')
+  const renderFunction = async ({documentId}) => {
+    return {html: '<div>HTML FROM RENDER FUNCTION </div>'}
+  }
+  previewApi.registerRenderFunction(renderFunction)
+}
+```
+
+![Teaser Preview](images/custom_preview.png)
+
+
 ## Integrations
 
 Added in: `release-2020-04`
