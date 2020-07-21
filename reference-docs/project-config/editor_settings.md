@@ -87,7 +87,8 @@ An example:
     path: '/articles'
   },
   mediaLibrary: {
-    enabled: true
+    enabled: true, // default true
+    showUi: true, // default true
     dashboard: {
       displayFilters: ['timeRange']
     },
