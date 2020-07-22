@@ -13,6 +13,7 @@ We plan to allow to move all layout options which are currently defined in the d
 ## Example
 
 ```javascript
+// projectConfig.contentTypes[{...}]
 {
   handle: 'gallery',
   documentType: 'article', // either 'article', 'page' or 'data-record'
@@ -103,7 +104,7 @@ We plan to allow to move all layout options which are currently defined in the d
 ## Default Content
 *has UI support*
 
-The default content defines what components are pre-set on your document upon creation. 
+The default content defines what components are pre-set on your document upon creation.
 
 NOTE: the default content only gets applied when a document is created manually, i.e. in the editor. If you create documents programmatically (e.g. import), you need to define the content yourself.
 
@@ -222,7 +223,7 @@ You can use the value of metadata fields in the path. e.g. `:slug` will enter th
 
 ## Image Source Policy
 
-You may set a `contentType` specific sourcePolicy here. 
+You may set a `contentType` specific sourcePolicy here.
 
 ```javascript
 {
@@ -271,7 +272,7 @@ The schema is as follows:
 
 Apart from the general settings (`renderSettings`) you define an entry for each teaser (`teasers`) giving it the Livingdocs component (from the design) that should be used for rendering as well as a mapping of metadata values to component directives. See our guide on [teaser previews](../server-configuration/teaser-preview-config.md) for more details.
 
-## Desk-Net 
+## Desk-Net
 *has UI support*
 
 We advise you to setup the Desk-Net configuration from the "Project Setup" entry of the same name. There is also a [video](https://vimeo.com/368750546) explaining the setup.
@@ -314,7 +315,7 @@ module.exports = {
 }
 ```
 
-## Enable Push Notifications for a ContentType 
+## Enable Push Notifications for a ContentType
 *enterprise only*
 
 To enable push notifications for a specific content type you must have a metadata field called `pushNotifications`. Name and plugin must match exactly.

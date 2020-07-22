@@ -154,6 +154,12 @@ The project config is a huge JSON file with subproperties for things like conten
     require('./path/to/another/content_type_config')
   }],
 
+  // Media Types
+  mediaTypes: [{
+    // currently only type 'mediaImage' is supported
+    require('./path/to/media_type_image_config')
+  }],
+
   // Editor settings are sent to the editor and control the behavior of your editor
   editorSettings: {
     userMenu: [],
@@ -168,6 +174,7 @@ In a nutshell, the project configuration allows you to:
 
 * describe general information
 * define contentTypes
+* define mediaTypes
 * define copy options
 * configure the push notifications feature
 * configure the multi-language feature

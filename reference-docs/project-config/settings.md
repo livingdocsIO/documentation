@@ -9,6 +9,7 @@ The settings contain general feature settings for your project, in particular:
 
 An example:
 ```javascript
+// projectConfig.settings: {}
 "settings": {
     "handle": "magazine",
     "languages": {
@@ -80,7 +81,7 @@ An example:
         ],
         "defaultParams": {
             "title": "defaultTitle"
-        }   
+        }
     }],
     "webhooks": {
       "active": false,
@@ -115,7 +116,7 @@ An example:
 }
 ```
 
-## Languages / Translations 
+## Languages / Translations
 *has UI support*
 
 Livingdocs allows you to define documents in multiple languages as well as integrating a translation workflow to translate a document from one language to the other.
