@@ -26,15 +26,27 @@ editor: {
 
 #### Postgres
 
+A postgres connection string or an a connection object.
+
 ```js
+db: 'databasename',
+// or
+db: 'postgresql://user:password@localhost:5432/databasename?max=50&ssl=false'
+// or
 db: {
-  host: 'localhost',
-  port: '5432',
-  user: 'postgres',
-  database: 'li_local',
-  pool_min: 1,
-  pool_max: 5,
-  ssl: false
+  host: 'localhost', // default
+  port: '5432', // default
+  user: 'postgres', // default
+  max: 20, // default, database pool size
+  database: 'databasename', // required
+  ssl: false, // default
+  // or
+  ssl: {
+    rejectUnauthorized: true,
+    ca: '-----BEGIN CERTIFICATE-----\n...',
+    key: '-----BEGIN PRIVATE KEY-----\n...',
+    cert: '-----BEGIN CERTIFICATE-----\n...'
+  }
 }
 ```
 
@@ -127,7 +139,7 @@ auth: {
       registrationEnabled: true,
       strategy: 'li-authentication-local',
       config: {
-        default_login_domain: 'upfront.io',
+        default_login_domain: 'livingdocs.io',
         secret: '8wP0oTmQFX4^f@FCW*MiQ%qkDu*m6B!NBElVg%hVmMHNdr2F@F9J4yf$ykN5',
         bcrypt_iterations: 10,
         password_reset_url: '/reset#code={{code}}',
