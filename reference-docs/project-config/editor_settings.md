@@ -87,14 +87,16 @@ An example:
     path: '/articles'
   },
   mediaLibrary: {
-    enabled: true, // default true
     showUi: true, // default true
+    altTextPrefilling: {
+      metadataPropertyName: 'caption'
+    }
     dashboard: {
       displayFilters: ['timeRange']
     },
     editorSelection: {
       displayFilters: ['timeRange']
-    }
+    },
   }
 }
 ```
