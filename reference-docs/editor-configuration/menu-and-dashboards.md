@@ -116,32 +116,6 @@ search: {
 
 Note that the custom component can only use document metadata that has been explicitly [whitelisted](../server-configuration/config.md#search).
 
-## Media Library Dashboard
-
-After linking the media library on the mainNavigation (see above), one can also define `displayFilters` to customise the media library dashboard.
-
-```js
-// project config on the server
-editorSettings: {
-  mediaLibrary: {
-    dashboard: {
-      // displayFilters for the media library dashboard
-      displayFilters: ['liDateTimeRange']
-    },
-    // displayFilters for the media library editor sidepanel and the medialibrary metadata modal
-    editorSelection: {
-      displayFilters: ['timeRange']
-    },
-    // when an image is inserted into a document, the image components directives (directiveName)
-    // are prefilled with that images metadata (metadataPropertyName)
-    componentDirectivesPrefilling: [
-      {metadataPropertyName: 'source', directiveName: 'source'},
-      {metadataPropertyName: 'caption', directiveName: 'caption'}
-    ]
-  }
-}
-```
-
 
 ## Custom Dashboards
 
