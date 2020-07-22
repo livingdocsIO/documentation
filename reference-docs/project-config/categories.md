@@ -5,6 +5,7 @@ The categories are normally used together with the routing system to represent t
 You can define an array of available categories in your project config. The schema looks as follows:
 
 ```javascript
+// projectConfig.categories: [{...}]
 ms.arrayOf(ms.strictObj({
   id: 'string:required',
   label: 'string:required',

@@ -8,6 +8,7 @@ The design settings define global design properties like the CSS to use or how c
 
 An example:
 ```javascript
+// projectConfig.designSettings: {...}
 "designSettings": {
     "assets": {
       "css": [
@@ -160,7 +161,7 @@ componentProperties: ms.arrayOf(ms.allOf([{
 }]))
 ```
 
-## Component Groups 
+## Component Groups
 *has UI support*
 
 With component groups you can visually group together similar components, e.g. "Text components" for use in the Livingdocs editor sidebar.

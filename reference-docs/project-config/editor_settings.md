@@ -9,6 +9,7 @@ The editor settings are sent to the editor and control the behavior of your edit
 
 An example:
 ```js
+// projectConfig.editorSettings: {...}
 {
   userMenu: [
     {

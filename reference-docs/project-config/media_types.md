@@ -1,14 +1,17 @@
 # Media-Type Config
 
+Added in: `release-2020-07`
+
 Media-Types describe the content you can manage in the Media Library. You can configure the metadata you want to manage per Media-Type by using the same metadata schema as on Content-Types. The Media Library will provide forms to edit this data.
 
-Release 2020-07 includes the first version of this feature. It has these limitations:
+`release-2020-07` includes the first version of this feature. It has these limitations:
 - You can only configure 1 mediaType and it has to have the handle `image`.
 - Only one `type` is supported: `mediaImage`
 
 ## Example
 
 ```javascript
+// projectConfig.mediaTypes: [{...}]
 {
   handle: 'image',
   type: 'mediaImage',
