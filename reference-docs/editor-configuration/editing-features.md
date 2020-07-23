@@ -261,7 +261,7 @@ See [here](./text-editing.md#links)
     '⌘+down, ⌃+down': 'move component down',
     '⌘+z, ⌃+z': 'undo',
     '⌘+y, ⌘+shift+z, ⌃+y, ⌃+shift+z': 'redo'
-  }  
+  }
 }
 ```
 
@@ -277,7 +277,7 @@ The multi selection is currently only enabled through keyboard shortcuts (see ab
   keyboardShortcuts: {
     '↓shift': 'start multiselect mode',
     '↑shift': 'end multiselect mode',
-  }  
+  }
 }
 ```
 
@@ -360,54 +360,3 @@ Pinning is triggered by the `position` property on the component. You can also p
 ```
 
 The UI allows users to unpin or pin a component. If you want to enforce pinning just disable the UI (`pinComponents`) and set the `position` to `fixed` programatically (e.g. by the default content).
-
-## Asset Management
-
-In order to make the Asset Management visible in the sidebar of an image as "Media Library" button, as well as to have the menu entry which guides you to the dedicated Media Library page, you need to set the feature flag to true.
-
-```
-  {
-    assetManagementEnabled: true
-  }
-```
-
-Also make sure that the proper image Service is enabled:
-
-```javascript
-
-{
-  app: {
-    imageService: 'liImageProxy'
-  }
-}
-
-```
-
-If you disable it, make sure to change the image service to a non-DAM image service lile `imgix`
-
-
-```javascript
-
-{
-  app: {
-    imageService: 'imgix'
-  }
-}
-
-```
-
-Of course make sure that you disable the feature on the server as well.
-
-
-### Upload
-
-In the editor, you can define how many images can be uploaded at the
-same time.
-
-```
-{
-  imageUpload: {
-    maxNumberOfFiles: 10
-  }
-}
-```

@@ -75,7 +75,6 @@
 * [Implement Single Sign-On](guides/github-login.md)
 * [Use Push Notifications and Custom Dashboard Item](guides/push_notifications.md)
 * [Enable Multi-Language Support](guides/setup_multilanguage.md)
-* [Asset Management](guides/asset-management.md)
 * [Author Management](guides/prefill-author.md)
 * Workflows
   * [Validate Task Completion](guides/validate_tasks.md)

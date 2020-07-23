@@ -7,7 +7,7 @@
 ```js
 server: {
   port: 9090,
-  max_json_request_size: '100kb'  
+  max_json_request_size: '100kb'
 }
 ```
 
@@ -58,7 +58,7 @@ pusher: {
   enabled: false,
   app_id: '108378',
   key: 'dda3c0ca58ed2f649ea8',
-  secret: '*****'  
+  secret: '*****'
 }
 ```
 
@@ -694,21 +694,15 @@ When you want to index your metadata image fields in elasticsearch (e.g. for das
     }
 ```
 
-##### Feature Flag and internal image service
-The endpoint /upload can function with Asset Management functionality or without. The change can be configured in the environment with:
+##### Media Library
 
 ```js
-  assetManagement: {
-    enabled: true,
+  mediaLibrary: {
     paginationSize: 25,
   }
 ```
 
-The feature flag is ignored by the other Asset Management endpoints (`GET /images?fullText` search and `GET /images/:id` Image information endpoint), because they are new endpoints and would only be called explicitly by an Editor which is configured for using the Asset Management.
-
-The `paginationSize` tells the asset management how many images to show on one page.
-
-Make sure that you disable the Asset Management in the Editor as well and make sure that you configure the image services properly too.
+`paginationSize` tells the media library dashboard how many images to show on one page.
 
 ##### Google Vision API
 
