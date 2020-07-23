@@ -99,7 +99,7 @@ Note: if you did your [own dashboard item](./push_notifications.md#add-a-custom-
 
 ## Editor
 
-The editor side is relatively easy to configure. You only need to add the provided language [core filter](../reference-docs/editor-configuration/menu-and-dashboards.md) to your dashboard so that you are able to filter documents by language. This is done in the editor environment config file.
+The editor side is relatively easy to configure. You only need to add the provided language [display filter](../reference-docs/project-config/search/display_filter.md) to your dashboard so that you are able to filter documents by language. This is done in the editor environment config file.
 
 ```js
 {

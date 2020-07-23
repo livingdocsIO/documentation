@@ -6,6 +6,8 @@ The editor settings are sent to the editor and control the behavior of your edit
 - user menu
 - main navigation
 - dashboards
+- startPage
+- mediaLibrary
 
 An example:
 ```js
@@ -121,7 +123,7 @@ For custom dashboards you configure the handle of your custom dashboard (see bel
 
 The `dashboards` entry allows you to configure custom dashboards, e.g. for authors (data-records) or proofreading (tasks).
 
-There are 3 types of dashboards (`type` property):
+There are 3 `types` of custom dashboards (`type` property):
 - `dashboard`
 - `kanbanBoard`
 - `taskBoard` (predefined `kanbanBoard` for a task)
@@ -129,6 +131,35 @@ There are 3 types of dashboards (`type` property):
 Kanban Boards are very similar to dashboards, except they do have multiple result columns. Each result column will show a list of documents the same as a single dashboard does. The documents cannot be manually sorted or moved between columns, instead each column typically has its own filter settings.
 
 For example a task board will show all tasks in the `requested` state in one column and tasks with the state `inProgress` and `done` in the other columns. In order to move a card into another column you simply have to open the document and move the task into another state.
+
+### Common Dashboard Properties
+
+Custom dashboards have some basic properties in common which are described in more detail below.
+
+#### handle
+
+Identifier for a custom dashboard. Is also used as a reference for the [main navigation](#main-navigation)
+
+#### type
+
+Type of the dashboard, one of these: `dashboard`, `kanbanBoard`, `taskBoard`
+
+#### displayFilters
+
+[Display Filters](./search/display_filter.md) are shown to the user below the search input
+
+#### baseFilters
+
+[Base Filters](./search/base_filter.md) are invisible filters and applied to every search (including the default result list)
+
+#### sort
+
+Sort the result, possible values are:
+- `relevance` (default),
+- `-created_at` / `created_at`,
+- `-updated_at` / `updated_at`
+- a metadata property e.g. `metadata.proofreading.priority`
+
 
 ### Example: Dashboard
 ```javascript
@@ -153,76 +184,6 @@ dashboards: [{
   // Enterprise only: CSS class set as a wrapper around the result list
   cssWrapper: 'li-result-columns'
 }]
-```
-
-Possible value for `displayFilters` are:
-- `documentState`, unpublished, published, not yet published, my articles, needs proofreading, currently proofreading
-- `timeRange`, filter the search results in time ranges such as last 24 hours
-- `liDateTimeRange`, filter the search results in time ranges (quick filter + from/to range)
-```js
-// simple config - filters by updatedAt
-displayFilters: ['liDateTimeRange']
-
-// custom config
-//   documentPropertyName 'createdAt'/'updatedAt'
-//   metadataPropertyName -> filter by any of your metadata date fields
-displayFilters: [{filterName: 'liDateTimeRange', config: {documentPropertyName: 'createdAt'}}]
-displayFilters: [{filterName: 'liDateTimeRange', config: {metadataPropertyName: 'publicationDate'}}]
-```
-- `sortBy`: `relevance` (default), `creation_date`, `updated_at`, `alphabetical`
-- `language`: uses the project configuration for [available languages](./settings.md) to offer a select box to filter for languages (requires multi-language feature to be enabled)
-- `contentType`: uses the content-types configuration in your server to filter for different content-types, e.g. galleries or regular articles.
-- `category`: uses the channel configuration for categories to offer a multi-select box to filter for categories (OR filter)
-- Enterprise-only: `channels` give the user a dropdown to filter by a specific channel
-
-For the `baseFilters` you can use the following formats:
-```javascript
-// documentType
-{type: 'documentType', value: 'article'}
-
-// locale
-{type: 'locale', value: 'de-DE'}
-
-// Enterprise-only: channelHandle
-{type: 'channelHandle', value: 'web'}
-
-// contentType
-{type: 'contentType', value: 'regular'}
-
-// notContentType (multiple value combinations possible)
-{type: 'notContentType', value: 'regular'}
-
-// ownerId
-{type: 'ownerId', value: 1}
-
-// channelId
-{type: 'channelId', value: 2}
-
-// dateRange
-const from = new Date('2016-01-23T15:00')
-const to = new Date('2015-04-05T20:00')
-{type: 'dateRange', key: 'created_at', from, to}
-
-// documentState (value: 'published', 'unpublished', 'deleted', 'draft', 'publishedWithDraft')
-{type: 'documentState', value: 'published'}
-
-// Enterprise-only: metadata (multiple key, value combinations possible)
-{type: 'metadata', key: 'foo', value: 'bar'}
-{type: 'metadata', key: 'foo', value: {exists: true}}
-{type: 'metadata', key: 'foo.bar.id', value: 42}
-
-const from = new Date('2016-01-23T15:00')
-const to = new Date('2015-04-05T20:00')
-{type: 'metadata', key: 'publicationDate', value: {dateFilter: {from, to}}}
-
-// task (multiple taskName and taskValue combinations possible)
-// taskValue: 'todo', 'doing', 'done'
-{type: 'task', taskName: 'proofreading', taskValue: 'pending'},
-{type: 'task', taskName: 'review', taskValue: 'done'}
-
-// sortBy (multiple values possible)
-{type: 'sortBy', value: '-created_at'},
-{type: 'sortBy', value: 'title'}
 ```
 
 ### Example: Taskboard (simple config)

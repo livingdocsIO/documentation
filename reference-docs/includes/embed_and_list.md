@@ -50,7 +50,7 @@ Lets see an example component in a Livingdocs design.
 ```
 
 First note that the component makes use of the `embed-teaser` service for the `doc-include` directive `gallery-embed`. It instances the service. In the `defaultParams` we pass a `layout` to the server-side rendering.
-The most important thing is the configuration in `config.search`. The configuration is equivalent to the one of the dashboard search. Please see [here](../editor-configuration/menu-and-dashboards.md) for all available options. The configuration in the example above allows the user to select available filters for `documentState` (e.g. published, etc.) and adds the hidden queries to only show articles (no pages) and of the articles only the subset of image galleries. This seems to be a sane default for an image gallery search modal.
+The most important thing is the configuration in `config.search`. The configuration is equivalent to base filters of the dashboard search. Please see [here](../project-config/search/base_filter.md) for all available options. The configuration in the example above allows the user to select available filters for `documentState` (e.g. published, etc.) and adds the hidden queries to only show articles (no pages) and of the articles only the subset of image galleries. This seems to be a sane default for an image gallery search modal.
 
 #### Server-side registration
 

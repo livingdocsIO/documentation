@@ -34,12 +34,12 @@ References:
 - [How to configure a metadata field](../reference-docs/server-configuration/metadata)
 
 ### Add my-proofreading to elasticsearch
-The metadata field `my-proofreading` should be searchable by the proofreading dashboard later. Therefore you have to extend the Elasticsearch document mapping. 
+The metadata field `my-proofreading` should be searchable by the proofreading dashboard later. Therefore you have to extend the Elasticsearch document mapping.
 You will find an example on the [server](https://github.com/livingdocsIO/livingdocs-server/blob/be923b40b47bb1d27d5f63d65c9548928c28890f/example-server/metadata/es_metadata_mapping_v6.json#L111-L166).
 
 ## 2) Register your custom dashboard on the editor
 
-As a second step you have to register a custom dashboard in the editor config.
+As a second step you have to register a custom dashboard in the project config.
 
 ```js
 dashboards: [{
@@ -53,22 +53,18 @@ dashboards: [{
 ```
 
 References:
-- [How to configure custom dashboards](../reference-docs/editor-configuration/menu-and-dashboards)
+- [Project Config](../reference-docs/project-config/editor_settings.md)
 
 ## 3) Add your custom dashboard to the menu
 
-As third step you can add the custom dashboard to the editor menu.
+As third step you can add the custom dashboard to the [main navigation](../reference-docs/project-config/editor_settings.md).
 
 ```js
-app: {
-  sidePanelItems: [
-    {
-      label: 'My Proofreading',
-      // 'my-kanban-proofreading' is the dashboard handle configured in the last step
-      dashboard: 'my-kanban-proofreading',
-      icon: 'file-document'
-    },
-  ]
+{
+  label: 'My Proofreading',
+  // 'my-kanban-proofreading' is the dashboard handle configured in the last step
+  dashboard: 'my-kanban-proofreading',
+  icon: 'file-document'
 }
 ```
 
@@ -79,7 +75,7 @@ How to test it
 - go to the `My Proofreading` dashboard via the menu and look if your task is on the board
 
 References:
-- [How to add a custom dashboard entry](../reference-docs/editor-configuration/menu-and-dashboards)
+- [Project Config](../reference-docs/project-config/editor_settings.md)
 
 
 ## 4) Customise a card on the dashboard
@@ -114,5 +110,3 @@ If you want to have all features available in your own card, you can copy and mo
 
 References:
 - [Example implementation 'liTaskCard'](https://github.com/livingdocsIO/livingdocs-editor/blob/f21c4c2ff6250f99f789a4e3528b76e3c3510b48/app/features/search/document_cards/li_task_card/li_task_card.js)
-
-
