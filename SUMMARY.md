@@ -40,6 +40,7 @@
   * [Document Editing Features](reference-docs/editor-configuration/editing-features.md)
   * [Text Editing Config](reference-docs/editor-configuration/text-editing.md)
   * [Menu and Dashboards](reference-docs/editor-configuration/menu-and-dashboards.md)
+  * [Default Dashboard Filter](reference-docs/editor-configuration/default_dashboard_filter.md)
   * [Image Cropper Config](reference-docs/editor-configuration/image-cropping.md)
   * [Image Source Policy Config](reference-docs/editor-configuration/image-source-policy.md)
   * [Metadata Configuration](reference-docs/editor-configuration/metadata.md)
@@ -68,6 +69,7 @@
 ## Guides
 
 * [Register a Custom Server Feature](guides/add_customizations.md)
+* [Register a Custom Display Filter](guides/add_custom_display_filter.md)
 * [Copy documents between types](guides/document_copy.md)
 * [Assign Access Rights](guides/access_rights.md)
 * [Implement Single Sign-On](guides/github-login.md)
