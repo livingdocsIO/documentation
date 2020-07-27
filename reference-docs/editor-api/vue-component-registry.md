@@ -9,7 +9,11 @@ To register a custom component to be used in the result list of a custom dashboa
 
 ```js
 liEditor = require('@livingdocs/editor')()
-liEditor.vueComponentRegistry.registerComponent({type: 'dashboardCard', require('path/to/your/vue/component.vue')})
+liEditor.vueComponentRegistry.registerComponent({
+  type: 'dashboardCard',
+  name: 'myComponent',
+  component: require('path/to/your/vue/component.vue').default
+})
 ```
 
 As you can see, [Vue Single File Components](https://vuejs.org/v2/guide/single-file-components.html) are supported.
@@ -18,8 +22,11 @@ As you can see, [Vue Single File Components](https://vuejs.org/v2/guide/single-f
 ## Types
 
 ### dashboardCard
-A `dashboardCard` is used to render a single search result in a dashboard. These are the `props`:
-```
+
+A `dashboardCard` is used to render a single search result in a dashboard.
+
+These are the `props` which are provided to your vue component:
+```js
 props: {
   result: {
     type: Object,

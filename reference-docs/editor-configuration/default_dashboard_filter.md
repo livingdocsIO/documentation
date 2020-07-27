@@ -7,7 +7,7 @@
 Filters on a dashboard are highly customisable in Livingdocs.
 
 - One can define filters in a dashboard (`displayFilters`)
-- One can use [Core DisplayFilter](../project-config/search/display_filter.md) or [Custom DisplayFilter](../../guides/add_custom_display_filter.md).
+- One can use [Core DisplayFilter](../project-config/search/display_filter.md) or [Custom DisplayFilter](../../guides/register_custom_dashboard_filters.md).
 - One can define the default search behaviour (`defaultQueries`/`emptySearchQueries`)
 
 Example:
@@ -85,7 +85,7 @@ filters: {
 
 - `displayFilters`
 
-  The filters that are shown to the user. One can use [Core DisplayFilter](../project-config/search/display_filter.md) or [Custom DisplayFilter](../../guides/add_custom_display_filter.md).
+  The filters that are shown to the user. One can use [Core DisplayFilter](../project-config/search/display_filter.md) or [Custom DisplayFilter](../../guides/register_custom_dashboard_filters.md).
 
 - `defaultQueries`
 

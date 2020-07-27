@@ -1,6 +1,6 @@
-# Register Custom Display Filter
+# Register Custom Dashboard Filters
 
-Its possible to register a custom filter and use it as [displayFilter](../reference-docs/project-config/search/display_filter.md) for dashboards or search modals.
+It is possible to register a custom filter and use it as a [displayFilter](../reference-docs/project-config/search/display_filter.md) for dashboards or search modals.
 
 At the moment there are 3 types of custom filters:
 - [Register Custom List v2 Filter](#register-custom-list-v2-filter)
