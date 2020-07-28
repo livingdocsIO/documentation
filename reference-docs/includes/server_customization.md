@@ -184,7 +184,7 @@ module.exports = {
 #### More flexibility
 The `uiComponents` array allows you to define a list of ui elements that are rendered in the sidebar upon selection of the `doc-include` (top to bottom). As you register your own component or helper provided by livingdocs, you have more choices but the development time increases as well. 
 
-You can choose between 3 types or  you can generate the sidebar.
+You can choose between 3 types of custom UI components.
 1. `angular-component`, sidebar user interface
 
 2. `angular-modal`, user interface in a modal dialog (if more space is required), button in the sidebar to open the modal

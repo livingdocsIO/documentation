@@ -51,6 +51,7 @@ module.exports = {
   name: 'youtubeIncludeService',
 
   // define the possible parameters an include can recieve
+  // this schema will be used to render a form for data input in the sidebar
   paramsSchema: [
     {
       type: 'li-text',
@@ -110,4 +111,4 @@ And once a user enters a link, the youtube component is complete:
 
 ## Editor - Triggering a custom script
 Youtube should already be rendering without any further integration.
-If your include does not render correctly, feel free to check out the example [here](./twitter_include_embed.md#editor-sidebar-and-trigger-twitter-script) to trigger the render mechanism of a given script.
+If your include does not render correctly, you might need to trigger rendering on changes. See the example [here](./twitter_include_embed.md#editor-sidebar-and-trigger-twitter-script) to learn how to run code when new content is injected into the document.
