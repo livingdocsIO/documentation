@@ -114,47 +114,7 @@ If after adding a new task, you get a 400 error while saving a document you prob
 
 ## Embeds
 
-By default, the Livingdocs core supports embeds of type Iframe and Twitter (official Twitter card). You can add more embeds in `app/editor.js`:
-```
-const embeds = require('@livingdocs/editor/app/scripts/modules/embeds/embeds')
-const Instagram = require('./custom/scripts/modules/embeds/instagram/instagram')
-embeds.registerCustomEmbeds [
-  Instagram
-]
-```
-
-The example above registers a custom embed of type `Instagram`.
-Note that embeds refer to client-side rendered elements such as an iframe or a script section in the HTML DOM. This is different from [includes](../includes/intro.md) which are rendered server-side.
-For more details, see our guide on [how to add an Instagram embed](../../guides/instagram_embed.md)
-
-### allow unrecognized code
-
-```
-{
-  embeds: {
-    options: {
-      allowUnrecognizedEmbeds: false
-    }
-  }
-}
-```
-
-The option `allowUnrecognizedEmbeds` allows your users to paste any kind of code into any embed. By default this value is `false`. We don't recommend using this option as it is a potential security risk.
-
-### twitter card language
-
-```
-{
-  embeds: {
-    twitter: {
-      language: false
-    }
-  }
-}
-```
-
-Allows you to customize the language of the Twitter card (buttons, retweet display, etc.). By default the language is english. You can pass a language identifier such as `de` or `fr` to customize the language.
-
+By default, the Livingdocs core supports embeds of type Iframe:
 ### iframe default ratio
 
 ```
