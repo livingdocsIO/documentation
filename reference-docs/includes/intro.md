@@ -1,26 +1,26 @@
 ## includes
 
-includes are the Livingdocs equivalent to [edge side includes](https://en.wikipedia.org/wiki/Edge_Side_Includes). They are extremely powerful in what they allow you to achieve but mastering them takes a bit of effort. This section explains gives you an overview of the topic and further resources to go deeper into the topic.
+includes are the Livingdocs equivalent to [edge side includes](https://en.wikipedia.org/wiki/Edge_Side_Includes). They are extremely powerful in what they allow you to achieve but mastering them takes a bit of effort. In this section you get overview of the topic and further resources to go deeper into the topic.
 In particular we will cover:
 - how to configure the predefined `doc-include`s for [article embeds and lists](./embed_and_list.md)
 - how to implement new `doc-include`s in the [server](./server_customization.md)
 - how to implement custom `doc-include` user interfaces in the [editor](./editor_customization.md)
 
-### Summary of a doc-include...
+### Summary of a doc-include
 
 ![doc-include lifecycle](images/time-diagram-doc-include.jpeg)
 
-Above we see a lifecycle diagram of a document with a `doc-include` (from bottom to top).
+Above you see a lifecycle diagram of a document with a `doc-include` (from bottom to top).
 
 1. You see an empty placeholder (a `doc-include` with a server-side registered service `foo`)
-2. The user can choose an entry in the sidebar (a core or custom UI registered in the editor)
+2. The user can choose an entry in the sidebar (a core or custom UI registered in the editor or a form generated based on the `paramsSchema`)
 3. After selecting an entry, the server calls a rendering function of the service `foo` and shows the result in the editor as preview (WYSIWYG). In the image above those are some brightcove video teasers.
 4. After publishing, whenever a reader loads the published document in the browser, the server-side rendering function of the service `foo` gets called again.
 
 The last point is worth mentioning again: rendering of a `doc-include` is done on every request, that means you don't need to publish the entailing document in order to update the `doc-include` area, this happens automatically on request.
 
 
-### Concept of a include
+### Concept of an include
 
 You should be familiar with [Livingdocs directives](../project-config/design.md#components) for this section.
 
