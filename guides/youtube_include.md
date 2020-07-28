@@ -18,7 +18,8 @@ module.exports = {
     type: 'include',
     service: 'youtubeIncludeService'
   }],
-  // the return value will be overwritten by the include service
+  // The innerHTML of the div containing the `doc-include` attribute
+  // will be replaced by the return value of the service
   html: `
     <div doc-include="youtubeInclude">
       <div>Youtube Include</div>
