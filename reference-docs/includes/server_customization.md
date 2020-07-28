@@ -15,7 +15,7 @@ An unresolved include looks like this in the published document's HTML:
 </div>
 ```
 
-It contains all the information needed to replace it with the actual content. The example shows the core include for the [embed-teaser](./embed_and_list.md#embed-teaser) that is given the linked document id as a parameter.
+It contains all the information needed to replace it with the actual content. The example shows the core include for the [embed-teaser](./article_and_list_includes.md#embed-teaser) that is given the linked document id as a parameter.
 
 #### Resolved include
 

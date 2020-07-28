@@ -55,4 +55,4 @@ Apart from third-party content, teasers on overview pages are also currently han
 
 [create includes](../reference-docs/includes/intro.md)
 
-[teaser and teaser list example](../reference-docs/includes/embed_and_list.md)
+[teaser and teaser list example](../reference-docs/includes/article_and_list_includes.md)
