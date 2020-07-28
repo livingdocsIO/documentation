@@ -192,4 +192,4 @@ The `name` of the `doc-include` to register must match the service name you used
 The first key we have `uiComponents` defines a list of ui components that are rendered in the sidebar of the editor for the given `doc-include`. For the list example we register the predefined component `liManualList`. The name must much exactly.
 The second key `rendering` defines how your doc-include should be rendered. The options and method are equivalent to the `embed-teaser` case.
 
-As with the `embed-teaser` you have to enable the `list` for publishing if you want this. See [the above section](./embed_and_list.md#enable-for-publishing) on how this is done (in the `list` case you need to register `list`).
+As with the `embed-teaser` you have to enable the `list` for publishing if you want this. See [the above section](./article_and_list_includes.md#enable-for-publishing) on how this is done (in the `list` case you need to register `list`).

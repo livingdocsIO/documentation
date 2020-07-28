@@ -86,10 +86,9 @@
   * [Hugo Integration (DAM)](guides/hugo-dnd.md)
   * [Desk-Net Integration (Planning)](guides/desknet-integration.md)
 * Includes / Embeds
-  * [Configure Includes: Article Embed and List](reference-docs/includes/embed_and_list.md)
+  * [Configure Includes: Article Embed and List](reference-docs/includes/article_and_list_includes.md)
   * [Includes: Add an Twitter Include](guides/twitter_include_embed.md)
   * [Includes: Add a Youtube Include](guides/youtube_include.md)
-  * [Add an Instagram Embed](guides/instagram_embed.md)
 * Design
   * [Running and defining design migrations](guides/document-migrations/migrations.md)
     * [Example: Removing a directive](guides/document-migrations/examples/remove_directive.md)
