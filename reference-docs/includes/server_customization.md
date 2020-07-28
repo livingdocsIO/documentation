@@ -72,7 +72,7 @@ Let's register an include renderer for the core include `embed-teaser`. Since ar
 ```js
 const includesApi = liServer.features.api('li-includes')
 
-await includesApi.registerService([
+await includesApi.registerServices([
   // registers the include rendering service
   require('./plugins/includes/embed-teaser.js')
   require('./plugins/includes/twitter.js')
@@ -143,9 +143,52 @@ module.exports = {
 
 ### Include UI options
 
-The `uiComponents` array allows you to define a list of ui elements that are rendered in the sidebar upon selection of the `doc-include` (top to bottom). There are 3 supported types:
+#### Generated sidebar
+The generated sidebar allows you to quickly create new includes. You will be limited to the API's provided by Livingdocs but our API is built to catch most of the common use-cases.
+
+```js
+// Example include service using the paramsSchema
+module.exports = {
+    name: 'youtubeIncludeService',
+    paramsSchema: [
+      {
+        type: 'li-text',
+        handle: 'url', // <-- 1. register url form field in sidebar
+        config: {
+          maxLength: 200
+        },
+        ui: {
+          component: 'liMetaTextareaForm',
+          config: {
+            label: 'Youtube settings',
+            placeholder: 'Paste Embed Code or URL'
+          }
+        }
+      }
+    ],
+    defaultParams: {
+      url: ''
+    },
+    rendering: {
+      type: 'function',
+      render: (params, options) => {
+        const {url} = params  // <-- 2. use the params to render the include
+        return `<div> do something with the url: ${url}</div>` 
+      }
+    }
+  } 
+}
+```
+
+
+#### More flexibility
+The `uiComponents` array allows you to define a list of ui elements that are rendered in the sidebar upon selection of the `doc-include` (top to bottom). As you register your own component or helper provided by livingdocs, you have more choices but the development time increases as well. 
+
+You can choose between 3 types or  you can generate the sidebar.
 1. `angular-component`, sidebar user interface
+
 2. `angular-modal`, user interface in a modal dialog (if more space is required), button in the sidebar to open the modal
+
 3. `iframe-modal`, as above user interface in a modal dialog but loaded as an iframe (e.g. if you want to implement your UI outside of Livingdocs)
 
 The first two require an angular plugin to be present in the Livingdocs editor.
