@@ -6,18 +6,19 @@ This is more of a quick-guide where you can just copy and paste code. For a deep
 
 ## Design definition
 
-In the design you will define the component. This is pretty basic.
+In the design you will define the component.
 
 ```js
 module.exports = {
   name: 'youtube',
   label: 'Youtube',
-  iconUrl: 'https://baz.org/foo-icon',
+  iconUrl: 'https://example.com/foo-icon',
   directives: [{
     name: 'youtubeInclude',
     type: 'include',
     service: 'youtubeIncludeService'
   }],
+  // the return value will be overwritten by the include service
   html: `
     <div doc-include="youtubeInclude">
       <div>Youtube Include</div>

@@ -6,7 +6,7 @@ This is more of a quick-guide where you can just copy and paste code. For a deep
 
 ## Design definition
 
-In the design you will define the component. This is pretty basic.
+In the design you will define the component.
 
 ```json
 "name": "blank-design",
