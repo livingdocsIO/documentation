@@ -61,7 +61,7 @@ module.exports = {
   name: 'twitterInclude',
   uiComponents: [
     {
-      type: 'angular-component',
+      type: 'vue-component',
       sidebarLabel: 'Twitter-include',
       sidebarContentComponent: 'liTwitterInclude' // TwitterPlugin registered in the editor.
     }
@@ -103,78 +103,90 @@ You will have to define two things, the sidebar where one can paste the embed co
 
 We have a special `onIncludeRendered` hook for includes where you can trigger a script.
 
+Please note that using Vue Components for the Sidebar requires at least `release-2020-07`.
 ```js
-liEditor.includes.register('twitterIncludeSidebar', {
-  template: require('../plugins/doc_includes/twitter/template.html'),
-  controller: require('../plugins/doc_includes/twitter/controller'),
-  bindings: {
-    directive: '=',
-    componentView: '=',
-    component: '='
-  }
+// register the sidebar Vue Component
+liEditor.vueComponentRegistry.registerComponent({
+  type: 'includeParamsSidebarForm',
+  name: 'twitterIncludeSidebar',
+  component: require('../plugins/includes/twitter-include/twitter-include-sidebar.vue').default
 })
 
-// Example of a custom include rendering plugin
+// register the render plugin implementing 'onIncludeRendered'
 liEditor.includeRenderPlugins.register('liTwitterRenderPlugin',
   require('../plugins/doc_include_render_plugins/twitter'))
 ```
 
-Registering the HTML for the sidebar, you can decide what parameters the user can enter here
-```js
-// ../plugins/includes/twitter-include/template.html
-<div class="ld-panel" ng-if="$ctrl.directive">
-  <div class="ld-panel__header">
-    <h2 class="ld-panel__header__title">Include embed settings</h2>
-  </div>
-  <div class="ld-panel__body">
-    <form name="idForm" novalidate>
-      <div class="ld-form-group"
-        ng-class="{'has-error': idForm.idInput.$invalid && idForm.idInput.$touched}">
-        <div class="ld-form-group__label">
-          <label class="ld-form-label">Twitter-embed</label>
+You are free to render any kind of form for the sidebar. Any params the user can define here
+will be passed to the include service.
+```vue
+<!-- ../plugins/includes/twitter-include/twitter-include-sidebar.vue -->
+<template>
+  <div class="ld-panel">
+    <div class="ld-panel__header">
+      <h2 class="ld-panel__header__title">Include embed settings</h2>
+    </div>
+    <div class="ld-panel__body">
+      <form name="idForm" novalidate>
+        <div class="ld-form-group"
+          ng-class="{'has-error': idForm.idInput.$invalid && idForm.idInput.$touched}">
+          <div class="ld-form-group__label">
+            <label class="ld-form-label">Twitter-embed</label>
+          </div>
+          <div class="ld-form-group__content">
+            <input
+              name="idInput"
+              class="ld-text-input"
+              v-model="paramsDraft.embedLink"
+              @change="save()"
+              placeholder="Twitter embed link"
+              required>
+          </div>
         </div>
-        <div class="ld-form-group__content">
-          <input
-            name="idInput"
-            class="ld-text-input"
-            ng-model="$ctrl.embedLink"
-            ng-change="$ctrl.save()"
-            ng-model-options="{debounce: 512}"
-            placeholder="Twitter embed link"
-            required>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
-</div>
-```
-
-The controller for the HTML, here you save the parameters onto the document.
-In the server the render function will now be triggered
-```js
-// ../plugins/includes/twitter-include/controller.js
-module.exports = class twitterInclude {
-  $onInit () {
-    const params = this.directive.getParams()
-    this.embedLink = params && params.embedLink
-  }
-
-  save () {
-    this.directive.addParams({
-      embedLink: this.embedLink
-    })
+</template>
+<script>
+export default {
+  props: {
+    params: {
+      type: Object,
+      required: true
+    }
+  },
+  data: function () {
+    return {
+      paramsDraft: {
+        embedLink: this.params.embedLink || '',
+      }
+    }
+  },
+  methods: {
+    save () {
+      // you have to dispatch a CustomEvent named 'update:params'
+      // the let livingdocs know when your params have changed
+      // send the new params object as event.detail
+      const event = new CustomEvent('update:params', {
+        detail: this.paramsDraft,
+        bubbles: true
+      })
+      this.$el.dispatchEvent(event)
+    }
   }
 }
+</script>
 ```
 
 Once the server has returned the include object with the HTML and scripts,
 as everything has loaded the `onIncludeRendered` hook will be fired and you can fire `twttr.widgets.load()` and it should be nicely displayed!
 ```js
-module.exports = {
+// ../plugins/doc_include_render_plugins/twitter
+coreApi.includeRenderPlugins.register('liTwitterRenderPlugin', {
   onIncludeRendered (err, {componentId, directiveName, includeValue, renderer}) {
     if (err) return
     const {twttr} = renderer.renderingContainer.window
     twttr != null ? twttr.ready(() => twttr.widgets.load()) : undefined
   }
-}
+})
 ```
