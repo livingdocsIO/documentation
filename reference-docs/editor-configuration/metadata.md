@@ -41,14 +41,20 @@ metadata: [{
       label: 'foo', // optional, takes camelized name otherwise
       placeholder: 'bar', // optional, takes camelized name otherwise
       readOnly: false, // optional, false by default
-      maxLength: 200 // optional, integer, not used by default
+      maxLength: 200 // optional, integer, not used by default. Enables small UI, see screenshow below
+      
     }  
   }
 }]
 ```
 
 You need to make sure that your server-side metadata field is of type `li-text` otherwise you will get errors.
-`readOnly` and `maxLength` let you customize the behavior of the text input.
+`readOnly` and `maxLength` let you customize the behavior of the text input. The text input will automatically display some visual help if a `maxLength` is set:
+
+Visual helper added in: `release-2020-09`
+![Shows how the max length behavior is affects the editor](./images/max-length.png)
+
+
 The `service` option lets you customize the business logic of a metadata form field. Check the section [registering a metadata service](#registering-a-metadata-service) later on how to register a service.
 The service plugin for a text input allows you to customize the logic for the following methods:
 
