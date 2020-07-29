@@ -185,50 +185,36 @@ module.exports = {
 The `uiComponents` array allows you to define a list of ui elements that are rendered in the sidebar upon selection of the `doc-include` (top to bottom). As you register your own component or helper provided by livingdocs, you have more choices but the development time increases as well. 
 
 You can choose between 3 types of custom UI components.
-1. `angular-component`, sidebar user interface
 
-2. `angular-modal`, user interface in a modal dialog (if more space is required), button in the sidebar to open the modal
+1. `vue-component`, sidebar user interface
 
-3. `iframe-modal`, as above user interface in a modal dialog but loaded as an iframe (e.g. if you want to implement your UI outside of Livingdocs)
+2. `iframe-modal`, as above user interface in a modal dialog but loaded as an iframe (e.g. if you want to implement your UI outside of Livingdocs)
 
-The first two require an angular plugin to be present in the Livingdocs editor.
-The markup for `angular-component` looks as follows:
+3. `angular-component`, sidebar user interface
+
+4. `angular-modal`, user interface in a modal dialog (if more space is required), button in the sidebar to open the modal
+
+##### vue-component
+Added in: `release-2020-02`
+The `uiComponents` config for `vue-component` looks as follows:
 ```js
 {
   // required, fixed name
-  type: 'angular-component',
+  type: 'vue-component',
   // required, displayed as a label in the sidebar
   sidebarLabel: 'Foo Bar',
-  // required, the custom angular component to be rendered in the sidebar
+  // required, the custom Vue component to be rendered in the sidebar
   // this custom component has to be registered in the editor and
   // names must match
-  sidebarContentComponent: 'liFoo'
+  sidebarContentComponent: 'myIncludeSidebarComponent'
 }
 ```
 
-The angular component `liFoo` is required to be registered in the editor. We explain [here](./editor_customization.md) how to do this.
+The Vue component `myIncludeSidebarComponent` is required to be registered in the editor. We explain [here](../editor-api/vue-component-registry.md#includeParamsSidebarForm) how to do this.
 
-The markup for `angular-modal` looks as follows:
-```js
-{
-  // required, fixed name
-  type: 'angular-modal',
-  // required, displayed as a label in the sidebar
-  sidebarLabel: 'Assign Teaser to content block',
-  // required, text for the button that opens the modal dialog
-  sidebarButton: 'Link Article',
-  // required, title in the modal dialog
-  modalTitle: 'Article Search',
-  // required, the custom angular component to be rendered in the modal dialog
-  // this custom component has to be registered in the editor and
-  // names must match
-  modalContentComponent: 'liFooModal'
-}
-```
 
-Again, the angular component `liFooModal` is required to be registered in the editor.
-
-The markup for `iframe-modal` looks as follows:
+##### iframe-modal
+The `uiComponents` config for `iframe-modal` looks as follows:
 ```js
 {
   // required, fixed name
@@ -242,11 +228,63 @@ The markup for `iframe-modal` looks as follows:
   // required, the url to the iframe that implements the user interface
   // note this user interface is independent of Livingdocs and can be
   // implemented in any language/framework, e.g. react.js
-  modalContentUrl: 'https://q.st-staging.nzz.ch/livingdocs-component.html'
+  modalContentUrl: 'https://q.st.nzz.ch/livingdocs-component.html'
 }
 ```
 
-The iframe modal enables you to implement the user interface in a third-party system or re-use existing interfaces.
+The iframe modal enables you to implement the user interface in a third-party system or re-use existing interfaces. There is an API in place to pass the `params` object between the iframe and Livingdocs:
+Existing `params` are passed into the iframe as a URL query parameter `?params`. It contains the stringified JSON of the `params` Object as an urlencoded String.
+From inside the iframe, you have to send messages using [postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) like this:
+```js
+const message = {
+  action: "update",
+  params: {
+    someParam: 'foo',
+    anotherParam: 42
+  }
+};
+// the 2nd parameter is the 'targetOrigin'. Set this to the origin of your Livingdocs Editor instance.
+window.parent.postMessage(message, "*");
+```
+
+
+##### angular-component
+The `uiComponents` config for `angular-component` looks as follows:
+```js
+{
+  // required, fixed name
+  type: 'angular-component',
+  // required, displayed as a label in the sidebar
+  sidebarLabel: 'Foo Bar',
+  // required, the custom angular component to be rendered in the sidebar
+  // this custom component has to be registered in the editor and
+  // names must match
+  sidebarContentComponent: 'myIncludeSidebarComponent'
+}
+```
+
+The angular component `myIncludeSidebarComponent` is required to be registered in the editor. We explain [here](./editor_customization.md) how to do this.
+
+##### angular-modal
+The `uiComponents` config for `angular-modal` looks as follows:
+```js
+{
+  // required, fixed name
+  type: 'angular-modal',
+  // required, displayed as a label in the sidebar
+  sidebarLabel: 'Assign Teaser to content block',
+  // required, text for the button that opens the modal dialog
+  sidebarButton: 'Link Article',
+  // required, title in the modal dialog
+  modalTitle: 'Article Search',
+  // required, the custom angular component to be rendered in the modal dialog
+  // this custom component has to be registered in the editor and
+  // names must match
+  modalContentComponent: 'myIncludeModalComponent'
+}
+```
+
+Again, the angular component `myIncludeModalComponent` is required to be registered in the editor.
 
 ### Include rendering options
 

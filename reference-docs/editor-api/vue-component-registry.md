@@ -2,7 +2,11 @@
 
 ## Description
 The Livingdocs Editor can be customized by using your own components. Components are referenced by name in configurations. For Livingdocs to pick up your components, you need to register them first.
-Livingdocs provides an API to register custom components writte in VueJS. They are always register with a certain type. Currently only the type `dashboardCard` is supported.
+Livingdocs provides an API to register custom components writte in VueJS. They are always register with a certain type. The supported types are:
+
+- [includeParamsSidebarForm](#includeparamssidebarform)
+- [dashboardCard](#dashboardcard)
+
 Depending on the `type`, you will get different `props` defined on your component. Please see below for details.
 
 To register a custom component to be used in the result list of a custom dashboard, you would call the API like this:
@@ -10,7 +14,8 @@ To register a custom component to be used in the result list of a custom dashboa
 ```js
 liEditor = require('@livingdocs/editor')()
 liEditor.vueComponentRegistry.registerComponent({
-  type: 'dashboardCard',
+  // type needs to be a valid type
+  type: 'type',
   name: 'myComponent',
   component: require('path/to/your/vue/component.vue').default
 })
@@ -20,6 +25,30 @@ As you can see, [Vue Single File Components](https://vuejs.org/v2/guide/single-f
 
 
 ## Types
+
+### includeParamsSidebarForm
+
+A `includeParamsSidebarForm` is used to render a form to manipulate `params` for `doc-include`s. [This Guide](includes-embeds/twitter_include_embed) shows you how to use such a component.
+
+This component needs to take exactly one prop named `params`. It will contain an object with the params for the `doc-include`.
+```js
+props: {
+  params: {
+    type: Object,
+    required: true
+  }
+}
+```
+
+The component needs to emit a CustomEvent to tell Livingdocs when the params have changed. You can do this in a change event handler for example:
+```js
+const event = new CustomEvent('update:params', {
+  detail: this.paramsDraft,
+  bubbles: true
+})
+this.$el.dispatchEvent(event)
+```
+
 
 ### dashboardCard
 
