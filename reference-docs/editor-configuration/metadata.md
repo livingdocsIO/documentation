@@ -78,6 +78,13 @@ ContentType metadata config:
 ```js
 metadata: [{
   ...,
+  handle: 'title',
+  type: 'li-text',
+  config: {
+    required: true,
+    requiredErrorMessage: 'Please provide a title',
+    maxLength: 200 // enables server validation and a UI-character counter (see screenshot below)
+  },
   ui: {
     component: 'liMetaTextareaForm',
     service: 'customServicePlugin', // optional
