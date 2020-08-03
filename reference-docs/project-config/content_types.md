@@ -328,3 +328,57 @@ metadata: [{
 ```
 
 With this in place you can set the channel configuration for your push notification topics \(see example config above\) and the firebase configuration in the [server config](../server-configuration/config.md#push-notifications).
+
+## Text Formatting
+The text formatting toolbar (the toolbar which is shown after selection of a text) can be customized. When this configuration is added the default configuration and the configuration from the project will be overwritten.
+
+![image](images/text_formatting.png)
+
+Enable or disable the existing elements for text formatting.
+
+Example:
+```js
+textFormatting: {
+  bold: {enabled: true},
+  italic: {enabled: true},
+  superscript: {enabled: false},
+  subscript: {enabled: false},
+  singleQuotes: ['`', '`'],
+  quotes: ['"', '"'],
+  link: {enabled: true},
+  specialChars: {enabled: false}
+}
+```
+
+Extend the text formatting toolbar with custom configured elements. The elements will be shown after the default elements. Add this configuration to the textFormatting configuration above.
+
+Example:
+```js
+ customElements: [{
+      label: 'blue color',
+      handle: 'bluecolor',
+      // the tag which is set around the selection
+      tagName: 'span',
+      // the icon which will be displayed. Only existing icons in the editor can be used.
+      icon: 'format-color-highlight',
+      // the attributes which are set on the tag
+      attributes: [{name: 'class', value: 'blue'}]
+    }]
+```
+
+Add placeholder config to a custom elements. This enables the possibility for the user to add a value to the defined placeholder attribute. The existing value can be removed and after a change applied. This can be used when the user should have the possibility to add some information to a selection. The information can be used for example in the delivery.
+
+![image](images/text_formatting_placeholder.png)
+
+Example:
+```js
+ customElements: [{
+      label: 'icon',
+      handle: 'customIcon',
+      tagName: 'span',
+      icon: 'format-color-highlight',
+      attributes: [{name: 'class', value: 'custom-icon'}],
+      // the placeholder attribute which will be filled with the inserted value
+      placeholder: {name: 'ld-placeholder'}
+    }]
+```

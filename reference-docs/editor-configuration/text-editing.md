@@ -49,6 +49,23 @@ quotes: ['“', '”']
 singleQuotes: ['‘', '’']
 ```
 
+The text formatting toolbar can also be extended with custom configured elements. The elements will be shown after the default elements. Add this configuration to the default configuration above.
+
+Example:
+```js
+ customElements: [{
+      label: 'blue color',
+      handle: 'bluecolor',
+      // the tag which is set around the selection
+      tagName: 'span',
+      // the icon which will be displayed. Only existing icons in the editor can be used.
+      icon: 'format-color-highlight',
+      // the attributes which are set on the tag
+      attributes: [{name: 'class', value: 'blue'}]
+    }]
+```
+
+
 
 #### Special Characters
 
