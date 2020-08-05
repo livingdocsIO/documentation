@@ -86,11 +86,11 @@ If you don't want to use the UI, you can also add the metadata property programm
     documentType: 'data-record',
     contentType: 'author',
     prefillAuthor: true,
-    displayFilters: []
   },
   ui: {
     component: 'liMetaReferenceForm',
-    label: 'authors'
+    label: 'authors',
+    displayFilters: []
   }
 }
 ```
