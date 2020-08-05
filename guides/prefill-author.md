@@ -85,7 +85,8 @@ If you don't want to use the UI, you can also add the metadata property programm
     referenceType: 'documents',
     documentType: 'data-record',
     contentType: 'author',
-    prefillAuthor: true
+    prefillAuthor: true,
+    displayFilters: []
   },
   ui: {
     component: 'liMetaReferenceForm',
