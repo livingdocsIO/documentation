@@ -293,7 +293,8 @@ metadata: [{
   ...,
   type: 'li-reference',
   config: {
-    referenceType: 'document'
+    referenceType: 'document',
+    displayFilters: []
   },
   ui: {
     component: 'liMetaReferenceForm'
@@ -308,6 +309,7 @@ metadata: [{
   type: 'li-reference-list',
   config: {
     referenceType: 'documents'
+    displayFilters: []
   },
   ui: {
     component: 'liMetaReferenceForm',
