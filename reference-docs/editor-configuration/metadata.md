@@ -294,10 +294,12 @@ metadata: [{
   type: 'li-reference',
   config: {
     referenceType: 'document',
-    displayFilters: []
   },
   ui: {
     component: 'liMetaReferenceForm'
+    config: {
+        displayFilters: []
+    }
   }
 }]
 ```
@@ -314,7 +316,8 @@ metadata: [{
   ui: {
     component: 'liMetaReferenceForm',
     config: {
-      sortable: true // enable sorting by drag and drop
+      sortable: true, // enable sorting by drag and drop
+      displayFilters: [] // enable display filters 
     }
   }
 }]
