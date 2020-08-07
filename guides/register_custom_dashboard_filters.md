@@ -2,14 +2,16 @@
 
 It is possible to register a custom filter and use it as a [displayFilter](../reference-docs/project-config/search/display_filter.md) for dashboards or search modals.
 
-At the moment there are 3 types of custom filters:
+At the moment there are 3 types of custom filters
 - [Register Custom List v2 Filter](#register-custom-list-v2-filter)
   - [Example](#example)
   - [isDefault option](#isdefault-option)
 - [Register Custom List Filter](#register-custom-list-filter)
   - [Example](#example-1)
-- [Register Custom Angular Component Filter](#register-custom-angular-component-filter)
+- [Register Custom Vue Component Filter](#register-custom-vue-component-filter)
   - [Example](#example-2)
+- [Register Custom Angular Component Filter](#register-custom-angular-component-filter)
+  - [Example](#example-3)
 
 Hint: If you want to create a filter with metadata, make sure they are setup correctly in the ElasticSearch index (`search.metadata_mapping` config in the server)
 
@@ -135,6 +137,50 @@ liEditor.searchFilters.registerList('creationDate', {
     isDefault: true
   }]
 })
+```
+
+## Register Custom Vue Component Filter
+
+### Example
+
+`vueComponentRegistry.registerComponent({type: 'searchFilter'})` registers a Vue component as filter for the search UI. Below you can see a minimal example:
+
+```js
+coreApi.vueComponentRegistry.registerComponent({
+  type: 'searchFilter',
+  name: 'customFilter',
+  component: require('./filters/custom-filter.vue').default
+})
+```
+
+After registering the filter, the vue component will recieve a prop called `filter` and the upstream-editor has some logic behind the scenes. For example the filter is written onto the localStorage so it persists through refreshing or navigating and triggers the search, or is cleared after resetting the filter settings.
+```js
+<template> 
+  // the 'update:filter' event is required
+  <div 
+    @click="$emit('update:filter', {type: 'dateRange', amount: 24, value: 'h'})">
+  Filter logic
+  </div> 
+</template>
+
+<style lang="scss" scoped>
+  .my-css-class {
+  }
+</style>
+
+<script>
+export default {
+  name: 'customFilter',
+  // synced with it's parent and the value in the localStorage
+  // updated via $emit('update:filter', {...data})
+  props: {
+    filter: {
+      type: Object,
+      default: () => {}
+    }
+  },
+}
+</script>
 ```
 
 ## Register Custom Angular Component Filter
