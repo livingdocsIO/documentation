@@ -298,6 +298,8 @@ metadata: [{
   ui: {
     component: 'liMetaReferenceForm'
     config: {
+        // enables display filters for the reference modal
+        // see: "Register a Custom Display Filter" for general filter documentation
         displayFilters: []
     }
   }
