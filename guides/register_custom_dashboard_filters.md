@@ -141,6 +141,8 @@ liEditor.searchFilters.registerList('creationDate', {
 
 ## Register Custom Vue Component Filter
 
+Added in: `release-2020-09`
+
 ### Example
 
 `vueComponentRegistry.registerComponent({type: 'searchFilter'})` registers a Vue component as filter for the search UI. Below you can see a minimal example:
