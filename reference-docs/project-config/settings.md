@@ -9,6 +9,7 @@ The settings contain general feature settings for your project, in particular:
 
 An example:
 ```javascript
+// projectConfig.settings: {}
 "settings": {
     "handle": "magazine",
     "languages": {

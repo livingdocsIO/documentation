@@ -8,6 +8,7 @@ The design settings define global design properties like the CSS to use or how c
 
 An example:
 ```javascript
+// projectConfig.designSettings: {...}
 "designSettings": {
     "assets": {
       "css": [

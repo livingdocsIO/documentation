@@ -7,8 +7,10 @@
 
 * [Project Config](reference-docs/project-config/README.md)
   * [Content Types](reference-docs/project-config/content_types.md)
+  * [Media Types](reference-docs/project-config/media_types.md)
   * [Categories](reference-docs/project-config/categories.md)
   * [Settings](reference-docs/project-config/settings.md)
+  * [Editor Settings](reference-docs/project-config/editor_settings.md)
   * [Design](reference-docs/project-config/design.md)
   * Directives
     * [Editable](reference-docs/project-config/directives/editable.md)

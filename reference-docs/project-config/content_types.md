@@ -13,6 +13,7 @@ We plan to allow to move all layout options which are currently defined in the d
 ## Example
 
 ```javascript
+// projectConfig.contentTypes[{...}]
 {
   handle: 'gallery',
   documentType: 'article', // either 'article', 'page' or 'data-record'
