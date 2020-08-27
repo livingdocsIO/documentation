@@ -2,12 +2,13 @@
 
 Added in: `release-2020-07`
 
-The editor settings are sent to the editor and control the behavior of your editor, in particular:
+The editor settings control the behavior of your editor UX, in particular:
 - user menu
 - main navigation
 - dashboards
-- startPage
-- mediaLibrary
+- start page
+- media library
+- text formatting
 
 An example:
 ```js
@@ -116,18 +117,18 @@ An example:
 
 ## User Menu
 
-Makes it possible to configure custom entries within the livingdocs user menu. If given a `userMenu.data.lastUpdate` property, it will visually indicate changes to the user. It is not possible to remove or alter the default livingdocs menu entries.
+Makes it possible to configure custom entries within the Livingdocs user menu. If given a `userMenu.data.lastUpdate` property, it will visually indicate changes to the user. While you can add additional menu items, it is not possible to remove or alter the default Livingdocs menu items.
 
 ![Custom user menu](images/custom_user_menu.png)
 
 ## Main Navigation
 
-Configures the main navigation see behind the burger menu in Livingdocs.
+Configures the main navigation in Livingdocs.
 You can either configure a predefined `liItem`, link a custom dashboard or link an external page.
 
 The possible values for `liItem` are: 'articles', 'pages', 'dataRecords', 'mediaLibrary', 'proofreading', 'lists', 'menus', 'tags' (imatrics), 'contentSetup', 'projectSettings', 'serverAdmin' (enterprise only)
 
-For custom dashboards you configure the handle of your custom dashboard (see belwo) in the `dashboard` key. For external links you set the `href` property. For both you can define: `icon` (visual icon in the main nav), `group` (any of 'preferences', 'dashboards', 'custom', 'top') and `label` (visual title).
+For custom dashboards you configure the handle of your custom dashboard (see below) in the `dashboard` key. For external links you set the `href` property. For both you can define: `icon` (visual icon in the main nav), `group` (any of 'preferences', 'dashboards', 'custom', 'top') and `label` (visual title).
 
 ## Dashboards
 
@@ -138,7 +139,7 @@ There are 3 `types` of custom dashboards (`type` property):
 - `kanbanBoard`
 - `taskBoard` (predefined `kanbanBoard` for a task)
 
-Kanban Boards are very similar to dashboards, except they do have multiple result columns. Each result column will show a list of documents the same as a single dashboard does. The documents cannot be manually sorted or moved between columns, instead each column typically has its own filter settings.
+Kanban Boards are very similar to dashboards, except for having multiple result columns. Each result column shows a list of documents just as a single column dashboard does. The documents cannot be manually sorted or moved between columns, instead each column typically has its own filter settings.
 
 For example a task board will show all tasks in the `requested` state in one column and tasks with the state `inProgress` and `done` in the other columns. In order to move a card into another column you simply have to open the document and move the task into another state.
 
@@ -156,7 +157,7 @@ Type of the dashboard, one of these: `dashboard`, `kanbanBoard`, `taskBoard`
 
 #### displayFilters
 
-[Display Filters](./search/display_filter.md) are shown to the user below the search input
+[Display Filters](./search/display_filter.md) are filters that the user can set in the UI (below the search input)
 
 #### baseFilters
 
@@ -257,16 +258,21 @@ dashboards: [{
 
 ## startPage
 
-Set custom `startPage: {path: '/my-custom-path'}} to set the path used to render on login or when switching projects.
+Set custom `startPage: {path: '/my-custom-path'}}` to set the path used to render on login or when switching projects.
 
 ## Media Library
 
 After linking the media library on the `mainNavigation` (see above), one can also define `displayFilters` to customise the media library dashboard (see example on top of the page).
 
+The media library settings only take effect if you link it with the `mediaLibrary` item in the `mainNavigation`.
+You can apply 3 customized settings for the default media library dashbaord:
+- filters on the main dashboard: `dashboard: {displayFilters: []}`
+- filters on the editor inline dashboard: `editorSelection: {displayFilters: []}`
+- a metadata property handle from which the `alt` attribute on an image tag is filled: `altTextPrefilling: {metadataPropertyName: ''}`
+
 ## Text Formatting
-The text formatting toolbar (the toolbar which is shown after selection of a text) can be customized. When this configuration is added the default configuration from the editor will be overwritten.
 
-
+The text formatting toolbar can be customized globally here. You can also overwrite this settings for each content type.
 Enable or disable the existing elements for text formatting:
 ```js
 textFormatting: {

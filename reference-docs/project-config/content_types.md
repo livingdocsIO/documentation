@@ -330,7 +330,8 @@ metadata: [{
 With this in place you can set the channel configuration for your push notification topics \(see example config above\) and the firebase configuration in the [server config](../server-configuration/config.md#push-notifications).
 
 ## Text Formatting
-The text formatting toolbar (the toolbar which is shown after selection of a text) can be customized. When this configuration is added the default configuration and the configuration from the project will be overwritten.
+
+The text formatting toolbar can be customized per content-type in addition to the global config in the [editor settings](editor_settings.md).
 
 ![image](images/text_formatting.png)
 
@@ -366,7 +367,7 @@ Example:
     }]
 ```
 
-Add placeholder config to a custom elements. This enables the possibility for the user to add a value to the defined placeholder attribute. The existing value can be removed and after a change applied. This can be used when the user should have the possibility to add some information to a selection. The information can be used for example in the delivery.
+Add placeholder config to a custom element. This enables the possibility for the user to add a value to the defined placeholder attribute. The existing value can be removed and after a change applied. This can be used when the user should have the possibility to add some information to a selection. The information can be used for example in the delivery.
 
 ![image](images/text_formatting_placeholder.png)
 
