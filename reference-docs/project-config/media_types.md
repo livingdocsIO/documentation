@@ -73,17 +73,24 @@ This conversation was marked as resolved by DaRaFF
 }
 ```
 
+## Metadata
+
+The metadata follows the rules that also apply to document metadata [defined on a content-type](content_types.md#metadata). All the same metadata plugins are available. Different from the document metadata, media metadata does not have UI support as of now.
+
 ## Exif Extraction
 Whenever in image file is stored in the Media Library, we can extract the IPTC data from the image file and store it in the metadata.
 You can configure this behavior with the `mappings` defined in `exifExtraction`.
 
 We follow https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata and provide a mapping of the field names (and some aliases) to the actual value in IMM or XMP, following the standard with best effort. If the same field is available in IIM and XMP defined fields, we prefer the one in XMP. And example for this is the field `Creator` (https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata#creator). It was first defined in IIM as `2:80 By-line`. Later it was renamed in XMP to `dc:creator`. Both fields have effectively the same meaning: "Contains the name of the photographer, but in cases where the photographer should not be identified the name of a company or organisation may be appropriate."
 You can extract this field by using either `Creator` or `By-line` as the value for `field` in a mapping, for example:
+
 ```
 {
   field: 'By-line',
   metadataPropertyName: 'creator'
 }
+```
+
 We found inconsistencies with the EXIF data provided in different images. If you have any problems with the extraction of these metadata, please provide us with an example file. We will try to improve our extraction system.
 Here is a complete list of fields you can use. Please consult https://www.iptc.org/std/photometadata/specification/IPTC-PhotoMetadata for detailed descriptions of the meaning of the single fields.
 | Field                                      | Aliases (comma separated)                                    |
