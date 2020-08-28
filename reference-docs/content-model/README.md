@@ -1,32 +1,84 @@
 
 ## Livingdoc Document Format
 
+### Component Templates
 
-### What is it all about?
+Instead of having a template for an entire article or a page, Livingdocs defines templates for components (or little snippets) of a page like headers, paragraphs or images.
 
-Regain control over your HTML. HTML and CSS always work together. Creating a CSS design can only work if you know how the HTML looks. Or better yet you can define your own HTML. Traditionally developers have to create templates for that on a server somewhere for a particular CMS. With Livingdocs this is different.
+A Livingdocs document is a structured JSON tree representation. It holds a (nestable) list of components and within each component the data stored in it such as text or image data.
 
-In Livingdocs you specify all HTML components as part of a Livingdocs design which is just a JSON file you can create (More on this [here](../../guides/create_designs.md)).
-
-For example a component template for a paragraph looks like this:
-
-```html
-<p doc-editable="text">
-  Placeholder text
-</p>
+A simple Livingdocs document JSON defining a header and a paragraph:
+```
+{
+  content: [{
+    identifier: 'header',
+    content: {
+      title: 'Publishing has never been easier',
+      subline: 'Livingdocs',
+      image: {
+        url: 'https://server.livingdocs.io/api/v1/images/collaboration.jpg?id=MQkvMjAxOS83LzIyLzJiZTcwZWI2LTIxYjMtNDBiMy04MmRkLWY4OTY5ZGE4YjBmMy5qcGVnCTQ4NQ%3D%3D&w=1024&auto=format'
+      }
+    }
+  }, {
+    identifier: 'paragraph',
+    content: {
+      text: 'Livingdocs is a modern Digital Content Creation and Publishing System in use at a large variety of media companies.'
+    }
+  }],
+  design: {
+    name: 'livingdocs',
+    version: '0.0.1'
+  }
+}
 ```
 
-With that you regain full control over the HTML. This is the guiding principle of Livingdocs. Livingdocs manages your content. How that content looks and behaves is up to you.
+A Livingdoc references a Livingdocs design which again is a JSON holding the definition how to use the component list to stitch together HTML templates to build a document.
 
+A simple Livingdocs design defining the two components used in the document above:
+```
+{
+  designSettings: {
+    assets: {
+      basePath: 'https://server.livingdocs.io',
+      css: ['/styles.css', '/gallery-styles.css'],
+      js: ['/scripts.js', '/asset-gallery.js']
+    }
+  },
+  components: [{
+    name: 'header',
+    html: '<div class="head"><span doc-editable="subline"><h1 class="head__title"      doc-editable="title">Title</h1><div class="figure"><img doc-image="image"</div></div>',
+    label: 'Header',
+    directives: [{
+      name: 'title',
+      plainText: true
+    }]
+  }, {  
+    name: 'paragraph',
+    html: '<p doc-editable="text">Tell your story</p>',
+    label: 'Paragraph'
+  }]
+}
+```
 
-### Work with your content the web way
+To learn more about designs, read our [guide](../../guides/create_designs.md).
 
-A Livingdocs document is an abstract representation of an HTML document. It's structure is inspired by [web components](http://www.w3.org/TR/components-intro/), which is a set of working draft documents at the W3C with the aim to leverage reusable components for the Web platform. In Livingdocs the components that can be used are defined in a Livingdocs `Design`. Just like the DOM represents a tree of HTML elements a `Livingdoc` represents a tree of `components`.
+### Rendering
 
-From the user's perspective a `livingdoc` is a page with a list of components that can be dragged around, selected, edited and deleted individually. And for you as a developer a `livingdoc` looks the same. You just use an API instead of a UI. But the underlying concepts of components and editable parts are the same.
+Livingdocs uses a structured JSON (see above) as its document format. There are 2 kinds of rendering:
+- a reactive renderer that renders the JSON to HTML whenever a change occurs. This renderer is used in the editor
+- a scalable and fast bulk renderer with its own DOM implementation that is used to render documents for delivery over the public API and ultimately rendering of frontend pages
 
+The rendering works by iterating over the list of components (document JSON), for each component getting the respective HTML component template from the design JSON, filling in the content from the document to the template and repeat, ultimately stitching together all HTML component templates to form a complete document.
 
-### Multi channel publishing
+### How we fit to the web ecosystem
+
+A Livingdocs document is an abstract representation of an HTML document. It's structure is inspired by [web components](http://www.w3.org/TR/components-intro/), which is a set of working draft documents at the W3C with the aim to leverage reusable components for the Web platform. 
+
+In Livingdocs the components that can be used are defined in a Livingdocs `Design`. Just like the DOM represents a tree of HTML elements a `Livingdoc` represents a tree of `components`.
+
+From the user's perspective a `livingdoc` is a page with a list of components that can be dragged around, selected, edited and deleted individually. The same is true for developers: all action in the editor map to livingdocs framework actions that can be scripted as well.
+
+### Headless approach for multi channel publishing
 
 Livingdocs is very different from other Content Management Systems in that it does not make any assumptions about how you deliver your content. From a Livingdocs perspective a single-page app, an integration into another CMS, or a native app are all the same. In essence, the Livingdocs delivery layer is:
 
