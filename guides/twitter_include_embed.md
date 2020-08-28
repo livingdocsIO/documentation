@@ -182,7 +182,7 @@ Once the server has returned the include object with the HTML and scripts,
 as everything has loaded the `onIncludeRendered` hook will be fired and you can fire `twttr.widgets.load()` and it should be nicely displayed!
 ```js
 // ../plugins/doc_include_render_plugins/twitter
-coreApi.includeRenderPlugins.register('liTwitterRenderPlugin', {
+liEditor.includeRenderPlugins.register('liTwitterRenderPlugin', {
   onIncludeRendered (err, {componentId, directiveName, includeValue, renderer}) {
     if (err) return
     const {twttr} = renderer.renderingContainer.window

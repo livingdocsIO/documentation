@@ -145,7 +145,7 @@ liEditor.searchFilters.registerList('creationDate', {
 Display is controlled with the `filters` key in the configuration.
 
 ```js
-coreApi.searchFilters.registerAngularComponent('test', {
+liEditor.searchFilters.registerAngularComponent('test', {
   bindings: {
     value: '=',
     config: '='
