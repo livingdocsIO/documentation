@@ -63,7 +63,7 @@ The default behavior is
 - allowed date range (validation): now + 7 days
 
 
-If you want to change that default behavior, you can register you own deadline computation in the editor via the `coreApi`.
+If you want to change that default behavior, you can register you own deadline computation in the editor via the `liEditor`.
 
 ```js
 // return an Error if validation fails
@@ -83,5 +83,5 @@ suggestDeadline = (document, handle) => {
   return moment().add(2, 'days')
 }
 
-coreApi.taskDeadline.register(suggestDeadline, validation)
+liEditor.taskDeadline.register(suggestDeadline, validation)
 ```
