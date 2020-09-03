@@ -21,6 +21,8 @@ metadata: [
   config: {
     label: 'Proofreading',
     showInTaskList: true,
+    // flag to control if the card should be updated automatically on custom dashboard
+    realtimeNotification: true,
     // flag to declare that this metadata field is a proofreading task
     isProofreading: true
     // flag to control the differ from the poofreading feature in the editor
