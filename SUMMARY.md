@@ -26,6 +26,10 @@
   * [Component Model](reference-docs/content-model/component_model.md)
   * [Directives](reference-docs/content-model/directives.md)
 
+## Videos
+  * [Technical Tutorials](https://vimeo.com/showcase/5875797)
+  * [Workflows](https://vimeo.com/showcase/7538934)
+
 ## CLI
 
 * [Sync Project Configs](cli/sync-configs.md)
