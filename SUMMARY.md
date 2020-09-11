@@ -66,6 +66,10 @@
   * [Include User Interfaces](reference-docs/includes/editor_customization.md)
   * [Includes with Multiple Services](reference-docs/includes/service_multiselect.md)
 
+## Videos
+  * [Technical Tutorials](https://vimeo.com/showcase/5875797)
+  * [Workflows](https://vimeo.com/showcase/7538934)
+
 ## Guides
 
 * [Register a Custom Server Feature](guides/add_customizations.md)
