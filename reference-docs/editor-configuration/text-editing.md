@@ -55,7 +55,7 @@ Example:
 ```js
  customElements: [{
       label: 'blue color',
-      handle: 'bluecolor',
+      handle: 'blue',
       // the tag which is set around the selection
       tagName: 'span',
       // the icon which will be displayed. Only existing icons in the editor can be used.
