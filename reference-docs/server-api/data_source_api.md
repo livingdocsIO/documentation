@@ -38,7 +38,9 @@ dataSourcesApi.register({
   // result for labelValuePair = [{label, value}, ...]
   dataFormat: 'nameValuePair',
   // fetch data from your external service (or provide a static list)
-  async fetch ({projectId, userId}) {
+  // projectId/userId is always passed (guaranteed by the server)
+  // params will be passed by the requester (e.g. a metadata plugin on the editor which passes the documentId)
+  async fetch ({projectId, userId, params}) {
     const fetchedData = {
       'categories': [
         {'id': '1', 'category': 'Bücher'},
@@ -69,10 +71,9 @@ metadata = [{
   },
   config: {
     dataProvider: {
-      // this is the dataSource handle registered on the server   
+      // this is the dataSource handle registered on the server
       dataSource: 'nameValuePairDataSource'
-    }  
+    }
   }
 }]
 ```
-
