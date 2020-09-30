@@ -19,7 +19,7 @@ The current version supports binding a DataSource to a metadata field, which wil
 
 ## Example - Bind a DataSource to a Metadata Field
 
-You can register a DataSource (e.g. `nameValuePairDataSource`) and use it as dataProvider for a metadata field (e.g. `dummy`). In the publish screen you get a list of values (based on the results of the DataSource).
+You can register a DataSource (e.g. `labelValuePairDataSource`) and use it as dataProvider for a metadata field (e.g. `dummy`). In the publish screen you get a list of values (based on the results of the DataSource).
 
 **Final result on the editor publish screen**
 
@@ -32,11 +32,9 @@ const dataSourcesApi = liServer.features.api('li-data-sources')
 
 // register code on the server
 dataSourcesApi.register({
-  handle: 'nameValuePairDataSource',
-  // result for nameValuePair = [{name, value}, ...]
-  // result for keyValuePair = [{key, value}, ...]
+  handle: 'labelValuePairDataSource',
   // result for labelValuePair = [{label, value}, ...]
-  dataFormat: 'nameValuePair',
+  dataFormat: 'labelValuePair',
   // fetch data from your external service (or provide a static list)
   // projectId/userId is always passed (guaranteed by the server)
   // params will be passed by the requester (e.g. a metadata plugin on the editor which passes the documentId)
@@ -45,13 +43,18 @@ dataSourcesApi.register({
       'categories': [
         {'id': '1', 'category': 'Bücher'},
         {'id': '2', 'category': 'News'},
-        {'id': '3', 'category': 'Wirtschaft'},
+        {'id': '3', 'category': 'Wirtschaft', isDefault: true},
         {'id': '4', 'category': 'International'}
       ]
     }
 
     // your returned data format must match with the 'dataFormat'
-    return fetchedData.categories.map((i) => ({name: i.category, value: i.id}))
+    return fetchedData.categories.map((i) => ({
+      label: i.category,
+      value: i.id,
+      // optional - if true this is the initial value
+      isDefault: !!i.isDefault
+    }))
   }
 })
 ```
@@ -72,7 +75,7 @@ metadata = [{
   config: {
     dataProvider: {
       // this is the dataSource handle registered on the server
-      dataSource: 'nameValuePairDataSource'
+      dataSource: 'labelValuePairDataSource'
     }
   }
 }]
