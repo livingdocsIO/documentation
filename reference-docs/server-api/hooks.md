@@ -22,14 +22,12 @@ will be executed in the same order they got registered.
 
 #### registerPublicationHooks()
 
-The publish, unpublish and prepublish hooks are set on the `documents` feature:
+The `prepublish`, `publish` and `unpublish` hooks are set on the `documents` feature:
 
-* `prepublishHook`:
-    * `({documentVersion}, callback)`
-* `publishHook`:
-    * `({documentType, {documentVersion, renditions}}, callback)`
-* `unpublishHook`:
-    * `({documentType, {documentVersion}}, callback)`
+* `prepublishHookAsync`: `({documentVersion}) { return {documentVersion} }`
+* `publishHookAsync`: `({documentType, {documentVersion, renditions}}) { return }`
+* `unpublishHookAsync`: `({doumentType, {documentVersion}}) { return }`
+
 
 Example:
 ```js
@@ -40,22 +38,20 @@ liServer.registerInitializedHook((done) => {
   liServer.features.api('li-documents').registerPublicationHooks({
     projectHandle: 'your-awesome-project',
     channelHandle: 'default',
-    prepublishHook: ({documentVersion}, callback) => { callback(null, {documentVersion}) },
-    publishHook: ({
-      documentType,
-      payload // payload is {documentVersion, renditions}
-    }, callback) => {
-      liServer.log.info(`Hook called for documentType: ${documentType}!`)
+    async prepublishHookAsync ({documentVersion}) { return {documentVersion} },
+    async publishHookAsync ({documentType, payload}) { // payload = {documentVersion, renditions}
+      liServer.log.info(`publishHookAsync called for documentType: ${documentType}!`)
       liServer.log.debug({
         documentVersion: payload.documentVersion,
         renditions: payload.renditions
       })
-      callback()
+      return
     },
-    unpublishHook: ({
-      documentType,
-      payload // payload is {documentVersion}
-    }, callback) => {callback()}
+    async unpublishHookAsync ({documentType, payload}) { // payload = {documentVersion}
+      liServer.log.info(`unpublishHookAsync called for documentType: ${documentType}!`)
+      liServer.log.debug({documentVersion: payload.documentVersion})
+      return
+    }
   }, done)
 })
 ```
@@ -68,29 +64,29 @@ Example of a server-wide publishHook registration:
 registerPublicationServerHooks({publishHook: myOtherHook}, done)
 ```
 
-#### prepublishHook()
+#### prepublishHookAsync()
 
-The prepublish hook allows modifications of the `documentVersion`. For this reason any prepublish hook should always pass `{documentVersion}` to its callback, allowing it to be modified by the next hook or to be published.
+The prepublish hook allows modifications of the `documentVersion`. For this reason any prepublish hook should always return `{documentVersion}`, allowing it to be modified by the next hook or to be published.
 
 ```js
-prepublishHook: ({documentVersion}, callback) => {
+async prepublishHookAsync ({documentVersion}) {
   const metadata = documentVersion.getMetadata() || {}
   if (metadata.title === 'Let me pass') {
-    return callback(null, {documentVersion})
+    return {documentVersion}
   } else {
     // Example Validation Error for a metadata property
     const err = new Error('Invalid Title')
     err.name = 'MetadataValidationError'
     err.metadataProperty = 'title'
     err.status = 400
-    return callback(err)
+    throw err
   }
 }
 ```
 
-#### publishHook()
+#### publishHookAsync()
 
-Upon every publish event in Livingdocs, e.g., when a user presses the "Publish"
+Upon every publish event in Livingdocs, e.g. when a user presses the "Publish"
 button in the editor, this hook method is called.
 But they do run in the same transaction and if an error is returned the publish
 action will be reverted.
@@ -103,10 +99,11 @@ rendered renditions that you defined for your channels.
 E.g. If you want to use the HTML of a rendered article, you can access it as `renditions.webarticle.html`.
 
 ```js
-publishHook: ({documentType, {documentVersion, renditions}}, callback) => {...}
+// payload = {documentVersion, renditions}
+async publishHookAsync ({documentType, payload}) {...}
 ```
 
-#### unpublishHook()
+#### unpublishHookAsync()
 
 Just as with the publish hook, you can also configure a method that reacts to
 unpublish events.
@@ -115,7 +112,8 @@ Just as in the publishHook you get a `documentVersion` object for the document t
 unpublished.
 
 ```js
-unpublishHook: ({documentType, {documentVersion}}, callback) => {...}
+// payload = {documentVersion}
+async unpublishHookAsync ({documentType, payload}) {...}
 ```
 
 
