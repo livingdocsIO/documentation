@@ -167,6 +167,32 @@ The project config is a huge JSON file with subproperties for things like conten
     dashboards: [],
     mediaLibrary: {}
   }
+
+  // Deliveries contains information about the delivery systems you operate
+  // added in release-2020-12
+  deliveries: [
+    {
+      handle: 'web',
+      label: 'Website',
+      isPrimary: true,
+      icon: 'book-open',
+      url: {
+        origin: 'https://example.com',
+        // possible patterns:, :path, :routingPath, :projectId, :slug, :id
+        pathPattern: '/article/:id'
+      }
+    },
+    {
+      handle: 'app',
+      label: 'App',
+      icon: 'rocket',
+      url: {
+        origin: 'https://example.com',
+        pathPattern: '/app/article/:id'
+      }
+    }
+  ]
+
 }
 ```
 
@@ -176,6 +202,7 @@ In a nutshell, the project configuration allows you to:
 * define contentTypes
 * define mediaTypes
 * define copy options
+* define the deliveries you operate per content-type
 * configure the push notifications feature
 * configure the multi-language feature
 * configure integrations
