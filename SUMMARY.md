@@ -36,6 +36,7 @@
   * [Using Google Cloud Storage](reference-docs/server-configuration/google-cloud-storage.md)
   * [Teaser Preview](reference-docs/server-configuration/teaser-preview-config.md)
   * [Publication Index](reference-docs/server-configuration/publication-index.md)
+  * [Custom Index](reference-docs/server-configuration/custom-index.md)
 * Editor Config
   * [Document Editing Features](reference-docs/editor-configuration/editing-features.md)
   * [Text Editing Config](reference-docs/editor-configuration/text-editing.md)
