@@ -6,6 +6,7 @@ Livingdocs provides an API to register custom components written in VueJS. They 
 
 - [includeParamsSidebarForm](#includeparamssidebarform)
 - [dashboardCard](#dashboardcard)
+- [searchFilter](#searchfilter)
 
 Depending on the `type`, you will get different `props` defined on your component. Please see below for details.
 
@@ -75,3 +76,18 @@ props: {
   }
 }
 ```
+
+### searchFilter
+A `searchFilter` registers a Vue component as filter for the search UI.
+
+These are the `props` which are provided to your vue component: 
+```js
+props: {
+  filter: {
+    type: Object,
+    default: () => {}
+  }
+},
+```
+
+A full example can be seen [here](../../guides/register_custom_dashboard_filters.md#register-custom-vue-component-filter)
