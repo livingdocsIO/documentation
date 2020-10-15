@@ -2,7 +2,7 @@
 
 It is possible to register a custom filter and use it as a [displayFilter](../reference-docs/project-config/search/display_filter.md) for dashboards or search modals.
 
-At the moment there are 3 types of custom filters
+At the moment there are 4 types of custom filters
 - [Register Custom List v2 Filter](#register-custom-list-v2-filter)
   - [Example](#example)
   - [isDefault option](#isdefault-option)
@@ -148,7 +148,7 @@ Added in: `release-2020-09`
 `vueComponentRegistry.registerComponent({type: 'searchFilter'})` registers a Vue component as filter for the search UI. Below you can see a minimal example:
 
 ```js
-coreApi.vueComponentRegistry.registerComponent({
+liEditor.vueComponentRegistry.registerComponent({
   type: 'searchFilter',
   name: 'customFilter',
   component: require('./filters/custom-filter.vue').default
@@ -193,7 +193,7 @@ export default {
 Display is controlled with the `filters` key in the configuration.
 
 ```js
-coreApi.searchFilters.registerAngularComponent('test', {
+liEditor.searchFilters.registerAngularComponent('test', {
   bindings: {
     value: '=',
     config: '='
