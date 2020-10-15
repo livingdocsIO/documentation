@@ -85,7 +85,11 @@ module.exports = {
 
 async function renderYoutube (params, options) {
   const {url} = params
-  if (!url) { return {html: ''} }
+  if (!url) {
+    return options.preview
+      ? {doNotRender: true} // render the placeholder in the editor
+      : {html: ''} // do not render anything
+  }
 
   // always extract the ID so the document only contains 'safe' HTML
   const videoId = getId(url)

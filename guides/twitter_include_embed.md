@@ -73,8 +73,15 @@ module.exports = {
 }
 
 async function renderTweet (params, options) {
+  if (!params.embedLink) {
+    return options.preview
+      ? {doNotRender: true} // render the placeholder in the editor
+      : {html: ''} // do not render anything
+  }
+
   // we are using the twitter oembed api, so we expect a link in the editor
-  const res = await fetch(`https://publish.twitter.com/oembed?url=${params.embedLink};omit_script=true`, {method: 'GET'})
+  const url = `https://publish.twitter.com/oembed?url=${params.embedLink};omit_script=true`
+  const res = await fetch(url, {method: 'GET'})
   if (res.status === 404) {
     const err = new Error(`Could not find twitter link.`)
     err.status = 404

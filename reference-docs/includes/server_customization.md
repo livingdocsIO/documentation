@@ -99,7 +99,7 @@ module.exports = {
   }],
   rendering: {
     type: 'function',
-    function: function (params, options, callback) {
+    function: async function (params, options) {
       // When options preview is true the request comes from a livingdocs
       // editor while a user is editing a document.
       const isPreview = options && options.preview === true
@@ -109,19 +109,18 @@ module.exports = {
         // Return undefined if not enough params are provided to
         // render the include. While editing the draft in the editor
         // this will just leave the include preview visible.
-        return callback(null, undefined)
+        return {doNotRender: true}
       } else if (shouldNotBeRendered(params)) {
         // Return an empty string to render nothing.
         // While editing the draft in the editor this will remove
         // the include preview.
-        return callback(null, {html: ''})
+        return {html: ''}
       } else {
         // Render the include
         const html = renderInclude(params)
-        return callback(null, {
+        return {
           html,
           // optionally you can also pass dependencies either as raw code or from a source
-          // doNotRender: false,
           // dependencies: {
           //   css: [{src: 'http://cdn.cloudflare.com/...'}],
           //   js: [
@@ -134,7 +133,7 @@ module.exports = {
           //     }
           //   ]
           // }
-        })
+        }
       }
     })
   }
@@ -171,18 +170,26 @@ module.exports = {
     },
     rendering: {
       type: 'function',
-      render: (params, options) => {
+      render: async function (params, options) {
         const {url} = params  // <-- 2. use the params to render the include
-        return `<div> do something with the url: ${url}</div>` 
+        if (!url) {
+          return options.preview
+            ? {doNotRender: true} // render the placeholder in the editor
+            : {html: ''} // do not render anything
+        }
+
+        return {
+          html: `<div> do something with the url: ${url}</div>`
+        }
       }
     }
-  } 
+  }
 }
 ```
 
 
 #### More flexibility
-The `uiComponents` array allows you to define a list of ui elements that are rendered in the sidebar upon selection of the `doc-include` (top to bottom). As you register your own component or helper provided by livingdocs, you have more choices but the development time increases as well. 
+The `uiComponents` array allows you to define a list of ui elements that are rendered in the sidebar upon selection of the `doc-include` (top to bottom). As you register your own component or helper provided by livingdocs, you have more choices but the development time increases as well.
 
 You can choose between 3 types of custom UI components.
 
