@@ -41,7 +41,8 @@ const v1 = {
 
 ## Design Config v2
 
-This is an example of a design config v2 of a referenced design. If you use an embedded design, `name` and `version` are not used.
+This is an example of a design config v2 of a referenced design. If you use an embedded design, you only will have to specify `components` and `designSettings`
+in your project configuration.
 
 ```javascript
 const v2 = {
