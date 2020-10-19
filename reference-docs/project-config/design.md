@@ -7,15 +7,44 @@ The components define the building blocks out of which you can create your docum
 The design settings define global design properties like the CSS to use or how components are grouped together.
 
 An example:
-```javascript
+```js
 // projectConfig.designSettings: {...}
-"designSettings": {
-    "assets": {
-      "css": [
-        "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+designSettings: {
+
+    assets: {
+      css: [
+        'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'
       ]
     },
-    "componentProperties: [{
+
+    imageRendering: {
+      // strategy used if doc-image is declared on an <img> tag
+      imgTagRenderStrategy: 'srcSet',
+      // strategy used if doc-image is declared on any other tag
+      anyTagRenderStrategy: 'backgroundImage',  
+
+      // configuration for the responsive 'backgroundImage' render strategy
+      backgroundImage: {
+        defaultWidth: 1200,
+        cssVars: {
+          'mobile-img': 600,
+          'tablet-img': 900
+        }
+      },
+      // configuration for the 'srcSet' render strategy
+      srcSet: {
+        defaultWidth: 1024,
+        widths: [
+          2048,
+          1024,
+          620,
+          320
+        ],
+        sizes: ['100vw']
+      }
+    },
+
+    componentProperties: [{
         label: 'Lead',
         type: 'option',
         value: 'paragraph--lead',
@@ -26,89 +55,89 @@ An example:
         cssProperty: 'background-color',
         name: 'css-background-color'
     }],
-    "componentGroups": [
+
+    componentGroups: [
       {
-        "name": "text",
-        "label": "Text",
-        "components": [
-          "title",
-          "p"
+        name: 'text',
+        label: 'Text',
+        components: [
+          title,
+          p
         ]
       },
       {
-        "name": "media",
-        "label": "Media",
-        "components": [
-          "image",
-          "insta"
+        name: 'media',
+        label: 'Media',
+        components: [
+          image,
+          insta
         ]
       }
     ],
-    "defaultComponents": {
-      "paragraph": "p",
-      "image": "image"
+    defaultComponents: {
+      paragraph: 'p',
+      image: 'image'
     },
-    "fieldExtractor": [
+    fieldExtractor: [
       {
-        "identifier": "title",
-        "type": "text",
-        "matches": [
-          "title.title"
-        ]
+        identifier: 'title',
+        type: 'text',
+        matches: ['title.title']
       }
     ]
 },
-"components": [
+
+components: [
     {
-      "name": "title",
-      "label": "Title",
-      "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_header_simple.svg",
-      "directives": [
+      name: 'title',
+      label: 'Title',
+      iconUrl: 'https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_header_simple.svg',
+      directives: [
         {
-          "type": "editable",
-          "name": "title",
-          "maxLength": 5
+          type: 'editable',
+          name: 'title',
+          maxLength: 5
         }
       ],
-      "html": "<h2 doc-editable=\"title\">\n  Title\n</h2>"
+      html: '<h2 doc-editable="title">\n  Title\n</h2>'
     },
     {
-      "name": "p",
-      "label": "Paragraph",
-      "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_text.svg",
-      "html": "<p class=\"text\" doc-editable=\"text\">\n  Paragraph\n</p>"
+      name: "p",
+      label: "Paragraph",
+      iconUrl: 'https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_text.svg',
+      html: '<p class="text" doc-editable="text">\n  Paragraph\n</p>'
     },
     {
-      "name": "image",
-      "label": "Bild",
-      "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_image.svg",
-      "directives": [
+      name: "image",
+      label: "Bild",
+      iconUrl: 'https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_image.svg',
+      directives: [
         {
-          "name": "image",
-          "type": "image",
-          "allowOriginalRatio": true,
-          "imageRatios": [
-            "16:9",
-            "1:1",
-            "4:3",
-            "3:4"
+          name: 'image',
+          type: 'image',
+          allowOriginalRatio: true,
+          imageRatios: [
+            '16:9',
+            '1:1',
+            '4:3',
+            '3:4'
           ]
         }
       ],
-      "html": "<div class=\"m-asset-image m-asset-image--numbered\">\n  <div class=\"m-asset-image__image\">\n    <img doc-image=\"image\" />\n  </div>\n  <div class=\"m-asset-image__options\">\n    <div class=\"a-asset-input\" doc-editable=\"caption\">Caption</div>\n    <div class=\"a-asset-input\" doc-editable=\"source\">Source</div>\n  </div>\n</div>"
+      html: '<div class="m-asset-image m-asset-image--numbered">\n  <div class="m-asset-image__image">\n    <img doc-image="image" />\n  </div>\n  <div class="m-asset-image__options">\n    <div class="a-asset-input" doc-editable="caption">Caption</div>\n    <div class="a-asset-input" doc-editable="source">Source</div>\n  </div>\n</div>'
     },
     {
-      "name": "insta",
-      "label": "Instagram",
-      "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_image.svg",
-      "directives": [
+      name: 'insta',
+      label: 'Instagram',
+      iconUrl: "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_image.svg",
+      directives: [
         {
-          "name": "insta",
-          "type": "include",
-          "service": "instagram"
+          name: 'insta',
+          type: 'include',
+          service: 'instagram'
         }
       ],
-      "html": "<div doc-include=\"insta\">\n  <div>Instagram Include</div>\n</div>"
+      html: '<div doc-include="insta">\n  <div>Instagram Include</div>\n</div>'
     }
 ]
 ```
@@ -119,6 +148,155 @@ update your design to version 2](../legacy-design/design_config_v1_to_v2.md).
 ## Assets
 
 Livingdocs uses CSS and possible JS assets to render documents. The `assets` object contains 2 keys, `css` and `js`, both of which are arrays and contain fully specified URLs to your CSS and JS files respectively. We advise you to upload the files to an AWS S3 bucket or similar and link them.
+
+
+## Image Rendering
+
+The image rendering configuration tells Livingdocs how to render
+images in your components.
+
+In general the image rendering configs or part of them
+can be overwritten in components so you can e.g. have different
+`srcSet` settings for an individual component or use a different image
+render strategy altogether.
+
+
+#### `imgTagRenderStrategy`
+
+Default: 'srcSet'
+Available: ['srcSet', 'resrc.it', 'src']
+
+Strategy used if `doc-image` is declared on an `<img>` tag.
+
+Example Component where this strategy would be used:
+```html
+<div doc-include="image-component">
+  <img doc-image="src">
+</div>
+```
+
+#### `anyTagRenderStrategy`
+
+Default: 'backgroundImage'
+Available: ['backgroundImage', 'resrc.it']
+
+Strategy used if `doc-image` is declared on an tag except `<img>`.
+
+Example Component where this strategy would be used:
+```html
+<div doc-include="background-image-component">
+  <div doc-image="src"></div>
+</div>
+```
+
+#### `srcSet`
+
+Used when the image is rendered with the render strategy 'srcSet'.
+
+For more information about how `srcSet` works in HTML, refer to this article:
+https://ericportis.com/posts/2014/srcset-sizes/
+
+Config Example:
+```js
+// configuration for the 'srcSet' render strategy
+srcSet: {
+  defaultWidth: 1024,
+  widths: [
+    1024,
+    620
+  ],
+  sizes: ['100vw']
+}
+```
+
+Example Output:
+```html
+<img
+  src="https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg?w=1024"
+  srcset="https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg?w=1024 1024w,
+    https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg?w=620 620w"
+  sizes="100vw">
+```
+
+
+#### `backgroundImage`
+
+Used when the image is rendered with the render strategy 'backgroundImage'.
+
+For background images you can simply set a fixed `defaultWidth`, so that each background image will get the corresponding width set. (if the actual width of the image is lower, it will never be interpolated but just left at its original size).
+
+Config Example:
+```js
+// Example config for a responsive 'backgroundImage' rendering
+backgroundImage: {
+  defaultWidth: 1200,
+  cssVars: {
+    'mobile-img': 600
+  }
+}
+```
+
+Example Output:
+```html
+<div
+  class="hero-background"
+  style="background: url(https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg?w=1200); --mobile-img: url(https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg?w=600);">
+</div>
+```
+
+Example CSS to make it work:
+```css
+@media(max-width: 768px){
+  .hero-background {
+    background-image: var(--mobile-img) !important;
+  }
+}
+```
+
+#### `src`
+
+Needs no configuration. Only available for `img` tags.
+
+Example Output:
+```html
+<img src="https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg">
+```
+
+#### `resrc.it`
+
+Works both for <img> tags as well as for other tags.
+
+Example Output:
+```html
+<img
+  class="resrc"
+  data-src="https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg">
+```
+
+
+#### Overwriting config in a Component Directive
+
+```js
+// Can overwrite design config.
+// Here an example for a responsive background image:
+directives: {
+  image: {
+    type: 'image',
+    renderStrategy: 'backgroundImage',
+    backgroundImage: {
+      defaultWidth: 1200
+      cssVars: {
+        'mobile-img': 600,
+        'tablet-img': 900
+      }
+    }
+  }
+}
+```
+Via the property `renderStrategy` a renderStrategy can be explicitly defined.
+The `backgroundImage` config in this example is of the same structure as
+it is in the `imageRendering` property of the `designSettings`.
+
 
 ## Component Properties
 
@@ -132,7 +310,7 @@ The `value` in case of option or select contains a CSS class from your CSS asset
 ![Component Property](./component-property.png)
 
 The schema looks as follows.
-```javascript
+```js
 componentProperties: ms.arrayOf(ms.allOf([{
     if: ms.obj({type: ms.const('option')}),
     then: ms.strictObj({
@@ -191,15 +369,15 @@ In `cssProperty` you can define which CSS Property you want to extract, e.g. `co
 Components are the building blocks of Livingdocs documents. In essence a component is a combination of an HTML template with declarative Livingdocs directive attributes (`doc-` directives) and a JSON with configuration for those directives.
 
 ```javascript
-  "name": "p",
-  "label": "Paragraph",
-  "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_text.svg",
-  "directives": [{
-    "name": "p",
-    "type": "editable",
-    "plainText": true
+  name: 'p',
+  label: 'Paragraph',
+  iconUrl: 'https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_text.svg',
+  directives: [{
+    name: 'p',
+    type: 'editable',
+    plainText: true
   }],
-  "html": "<p class=\"text\" doc-editable=\"text\">\n  Paragraph\n</p>"
+  html: '<p class="text" doc-editable="text">\n  Paragraph\n</p>'
 ```
 
 The above component definition will render a paragraph with editable text. Only plaintext is allowed in this text.
