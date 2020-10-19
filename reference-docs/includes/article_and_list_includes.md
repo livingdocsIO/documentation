@@ -82,7 +82,7 @@ module.exports = {
     }],
     rendering: {
       type: 'function',
-      function: async function (params, options) {
+      async render (params, options) {
         // TODO render your HTML template given the parameters
         return {html: '<h1>TODO rendering</h1>'}
       }
@@ -179,7 +179,7 @@ module.exports = {
     ],
     rendering: {
       type: 'function',
-      function: async function (params, options) {
+      async render (params, options) {
         // TODO render your HTML template given the parameters
         return {html: '<h1>TODO render list</h1>'}
       }

@@ -99,7 +99,7 @@ module.exports = {
   }],
   rendering: {
     type: 'function',
-    function: async function (params, options) {
+    async render function (params, options) {
       // When options preview is true the request comes from a livingdocs
       // editor while a user is editing a document.
       const isPreview = options && options.preview === true
@@ -170,7 +170,7 @@ module.exports = {
     },
     rendering: {
       type: 'function',
-      render: async function (params, options) {
+      async render (params, options) {
         const {url} = params  // <-- 2. use the params to render the include
         if (!url) {
           return options.preview
