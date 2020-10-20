@@ -5,17 +5,17 @@
 The Livingdocs design is in some sense like a database. Instead of database columns you define directives on a component, e.g. an editable title (`doc-editable='title'`). The component's "database" now has a "column" title.
 Just as with a database you need to write data migrations if you make structural changes. This is necessary to adapt all existing documents to the new structure.
 
-The next chapter will describe which kinds of design changes require you to write a migration script and which ones can be handled with a simple version bump. The section after that will show you the structure of a migration script. After that we look at the grunt task to help you run migrations and last but not least we'll present some examples of migration scripts.
+The next chapter will describe which kinds of design changes require a `data migration` and which ones can be handled with a `version bump`. The section after shows the structure of a migration script. After that we look into CLI scripts to run migrations and last but not least we'll present some examples of migration scripts.
 
-## Migrations from design changes
+## Version Bump vs Data Migration
 
-Livingdocs designs have a version number that follows the [semver pattern](http://semver.org/). You should create a major version whenever a design change requires you to write a data migration. Livingdocs is very strict with un-migrated documents: when you try to open a document that has a different structure than the design you're using, it will fail with an error.
-The following changes require a data migration:
-- removing a directive from a component
-- renaming a directive in a component
-- changing the type of a directive (e.g. from `doc-editable` to `doc-image`)
+When one activates a new design version (e.g. via project setup in the editor), old documents still have the old design version. A common approach is to update and deliver documents with the newest design version possible. Based on the design change, one has to choose between a `version bump` and a `data migration` for the update.
 
-The following changes do not require a data migration, but can be done with a simple [version bump](#the-data-migration-grunt-task). Note though that depending on the case you still might want to write a migration, it's just not mandatory, i.e. Livingdocs won't crash if you don't.
+#### Version Bump
+
+Use a `version bump` when you have non structural changes and want to just lift all documents to a new design version. This operation is fast and cheap for the system.
+
+Examples when a `version bump` is the right choice:
 - HTML or CSS changes that don't affect the structure
 - changes in the design's wrapper or any of the layout's wrappers
 - changes in the assets of a design
@@ -32,98 +32,89 @@ The following changes do not require a data migration, but can be done with a si
 - changes in the pre-filled components (will not be re-calculated for old documents)
 - changes in the metadata field extractor configuration
 
-It is important to note that the data migrations **only affect the Livingdocs data model and not the published HTML**. When you need to update your published HTML, for example after you changed some HTML markup, you need to write a custom handler for this in the boilerplate app that renders the last publication of a document and notifies your delivery layer of the change.
 
-## Structure of a migration script
+#### Data Migration
 
-The previous section explained data migrations as a consequence of a design change. But data migrations really are a general-purpose tool that can be used to alter your existing documents. A different and common example is the need to add a new metadata field to all of your documents and initialise the value in some way.
+Use a `data migration` when you have structural changes in the design (e.g. rename/remove design component). A `data migration` can update content, metadata and the design version of a document. This operation is extensive and heavy for the system.
 
-The Livingdocs migration framework gives you a hook method to implement and calls this method with every document in your project. The hook method looks like this:
+Examples when a `data migration` is the right choice:
+- removing a directive from a component
+- renaming a directive in a component
+- changing the type of a directive (e.g. from `doc-editable` to `doc-image`)
 
+It is important to note that a `data migration` **only affects the Livingdocs data model** and not the rendered publication (e.g. HTML).
+
+## Migration File
+
+The previous section explained data migrations as a consequence of a design change. But data migrations are a general-purpose tool that can be used to alter your existing documents. A different and common example is the need to add a new metadata field to all of your documents and initialise the value in some way.
+
+Livingdocs provides you a migration hook (async/await `migrateAsync` or callback based `migrate`) to implement. This hook will be called/applied for every document in your project.
+
+
+#### Example
+
+Added in: `release-2020-12`
 ```js
+// file: app/data-migrations/async-migration.js
+
 //  systemdata:
 //    document_id: 1
 //    content_type: 'regular'
-exports.migrate = ({serializedLivingdoc, metadata, systemdata}, callback) => {
-  // do your stuff here
+module.exports = {
+  async migrateAsync ({serializedLivingdoc, metadata, systemdata} = {}) {
+    // do your stuff here
 
+    if (serializedLivingdoc.layout === 'regular') {
+      // skip the revision from being migrated
+      return
+    }
+
+    // commit the revision migration, e.g.
+    //   return {metadata, serializedLivingdoc}
+    //   return {serializedLivingdoc}
+    //   return {metadata}
+    return {metadata}
+  }
+}
+```
+
+Added in: `release-2017-12`
+```js
+
+// file: app/data-migrations/callback-migration.js
+exports.migrate = ({serializedLivingdoc, metadata, systemdata}, callback) => {
   if (serializedLivingdoc.layout === 'regular') {
     // skip the revision from being migrated, e.g.
-    //     return callback()
-    //     return callback(null)
-    //     return callback(null, null)
-    //     return callback(null, undefined)
-    //     return callback(null, {})
     return callback()
   }
   // commit the revision migration, e.g.
-  //     callback({serializedLivingdoc, metadata})
-  //     callback({serializedLivingdoc})
-  //     callback({metadata})
   callback(null, {serializedLivingdoc, metadata})
 }
 ```
 
-For every document you will get
-* A serialised Livingdoc data model (JSON)
-* metadata
-* systemdata (`document_id`/`content_type` only)
-
-You can then alter the JSON and metadata in your migration method and pass it to the callback which will automatically apply your changes to the document. Systemdata are read only. If you want to skip a migration, just call the callback without passing some data.
-
-In order to create a migration script, simply add a file to the folder `app/data-migrations`. It might make sense to have some sort of increasing identifier in the filename to visualize history. In the file create a method `exports.migrate` as described above and implement your desired migration steps.
-
-To run your migration script, use the `data-migration` grunt task which is explained in the next section.
-
-## The `data-migration` grunt task
-
-Livingdocs provides a grunt task to help you running and managing data migrations. If you type `grunt data-migration` on the command line of your boilerplate app, you get the following menu:
-
-```sh
-Select an action to execute, press CTRL+C to cancel:
-? Action (Use arrow keys)
-❯ Creates and prepares a migration
-  Accepts a migration
-  Lists all migrations
-  Get a migration description
-  Cancels a migration
-  Show migration report
-```
-
-Each migration is a 2-step process:
-1. Executing the migration
-2. Accepting the migration
-
-### Create and Prepare a Migration
-The option "Creates and prepares a migration" allows you to start a new migration. You can either choose:
-- a simple version bump which bumps the design version in all your documents to a new design version without affecting the structure of the documents
-- or select a migration script from the filesystem to tell the Livingdocs how to migrate your documents (the next section will show some examples for such scripts), to select, type in a file path relative to your root directory, e.g. `app/data-migrations/your_migration.js`
-
-Once you created a migration, it will run for all your documents. In the case of a migration script it will also generate a report for you that lists possible errors that were encountered with your script. (For a version bump there is no report, since errors are impossible). You can view this report by selecting the option "Show migration report".
-
-If after reviewing the report you don't want the migration to be applied, just select the option "Cancels a migration" and the changes will be discarded.
-
-### Accept a migration
-If you want the migration to be applied, select "Accepts a migration" which will update all necessary database records and alters your documents.
-
-### List all migrations
-The option "Lists all migrations" lists all migrations you prepared or accepted in your project.
-
-### Get a migration description
-The option "Get a migration description" allows you to review migration reports of prior migrations.
+#### Data
+* editable - `serializedLivingdoc` - A serialised Livingdoc data model (JSON)
+* editable - `metadata`
+* read only - systemdata (`document_id`/`content_type` only)
 
 
-## Visualisation of migration states and actions
-The following diagram visualizes the most important states and actions:
+## Execute a Migration
 
-![Diagram](./migration-task-states.jpg)
+To execute a migration, run `livingdocs-server data-migration-run` on the terminal. Without options, you'll see the help with all the options:
+![image](https://user-images.githubusercontent.com/172394/92695759-3c6a8f00-f349-11ea-9e48-e579bff3ce97.png)
 
-## Examples
+Once you started a migration, it will run for all your documents (in the same process, no queue). After the migration you get a migration report:
+![image](https://user-images.githubusercontent.com/172394/92476319-0d380e80-f1df-11ea-90fb-1ec7f01818df.png)
 
-We've described three example migrations that you can take as a starting point for your own migrations. 
+#### Report: not_applied_documents
 
-1. [Migration script after removing a directive from a component](./examples/remove_directive.md)
+Documents can't be migrated when they are actively edited by users. Therefore a report after the end of a migration shows `not_applied_documents`. These document have to be migrated again until no user is actively editing the documents.
 
-2. [Migration script after renaming a directive on a component](./examples/rename_directive.md)
 
-3. [Migration script to initialize a new metadata field](./examples/add_metadata_field.md)
+## Example Migrations
+
+To learn how to write data migration we provide some examples.
+
+- [Migration script after removing a directive from a component](./examples/remove_directive.md)
+- [Migration script after renaming a directive on a component](./examples/rename_directive.md)
+- [Migration script to initialize a new metadata field](./examples/add_metadata_field.md)
