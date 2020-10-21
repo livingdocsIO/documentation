@@ -61,7 +61,7 @@ Added in: `release-2020-12`
 //    document_id: 1
 //    content_type: 'regular'
 module.exports = {
-  async migrateAsync ({serializedLivingdoc, metadata, systemdata} = {}) {
+  async migrateAsync ({serializedLivingdoc, metadata, systemdata}) {
     // do your stuff here
 
     if (serializedLivingdoc.layout === 'regular') {
