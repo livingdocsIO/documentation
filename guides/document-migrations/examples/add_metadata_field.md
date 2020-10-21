@@ -4,11 +4,13 @@ Adding a new metadata field is not a breaking change but it's a common use case 
 
 In this example we will introduce a new metadata field "title" and prefill it in all documents with the value of the title field of the first header found in the document (if any).
 
+Designs for the example
+- [test@1.0.0](../designs/test_design_1.0.0.js)
+
 ```js
 const _ = require('lodash')
 const liSDK = require('@livingdocs/node-sdk')
-// https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/46a40bcacbce569f20aed7e1d45134da083b5c37/test/support/designs/test_design_1.0.0.js
-const testDesignV1 = require('../../test/support/designs/test_design_1.0.0')
+const testDesignV1 = require('../designs/test_design_1.0.0.js')
 
 module.exports = {
   async migrateAsync ({serializedLivingdoc, metadata, systemdata} = {}) {
