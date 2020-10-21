@@ -11,7 +11,7 @@ const testDesignV2 = require('../../test/support/designs/test_design_2.0.0')
 const testDesignV3 = require('../../test/support/designs/test_design_3.0.0')
 
 module.exports = {
-  async migrateAsync ({serializedLivingdoc, metadata, systemdata} = {}) {
+  async migrateAsync ({serializedLivingdoc, metadata, systemdata}) {
     // You can work directly on the JSON or create a livingdoc instance from
     // it and use the livingdoc API. We do the latter in this example.
     const livingdocV2 = liSDK.document.create({
