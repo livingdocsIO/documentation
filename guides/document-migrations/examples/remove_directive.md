@@ -3,11 +3,14 @@
 Removing a directive in a design is a breaking change.
 To denote it in the design you should use a major semver version (http://semver.org/). In any case you need to write a data migration in order to be able to open old documents with the new design. The below code is a sample migration for a design change that removes an editable directive called "author" from a component.
 
+
+Designs for the example
+- [test@1.0.0](../designs/test_design_1.0.0.js)
+
 ```js
 const _ = require('lodash')
 const liSDK = require('@livingdocs/node-sdk')
-// https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/46a40bcacbce569f20aed7e1d45134da083b5c37/test/support/designs/test_design_1.0.0.js
-const testDesignV1 = require('../../test/support/designs/test_design_1.0.0')
+const testDesignV1 = require('../designs/test_design_1.0.0.js')
 
 module.exports = {
   async migrateAsync ({serializedLivingdoc, metadata, systemdata}) {

@@ -2,13 +2,16 @@
 
 Renaming or moving a directive in a design is a breaking change. To denote it in the design you should use a major semver version (http://semver.org/). In any case you need to write a data migration in order to be able to open old documents with the new design. The below code is a sample migration for a design change that renames an image directive called "image" to "teaser".
 
+
+Designs for the example
+- [test@2.0.0](../designs/test_design_2.0.0.js)
+- [test@3.0.0](../designs/test_design_3.0.0.js)
+
 ```js
 const _ = require('lodash')
 const liSDK = require('@livingdocs/node-sdk')
-// https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/46a40bcacbce569f20aed7e1d45134da083b5c37/test/support/designs/test_design_2.0.0.js
-const testDesignV2 = require('../../test/support/designs/test_design_2.0.0')
-// https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/46a40bcacbce569f20aed7e1d45134da083b5c37/test/support/designs/test_design_3.0.0.js
-const testDesignV3 = require('../../test/support/designs/test_design_3.0.0')
+const testDesignV2 = require('../designs/test_design_2.0.0.js')
+const testDesignV3 = require('../designs/test_design_3.0.0.js')
 
 module.exports = {
   async migrateAsync ({serializedLivingdoc, metadata, systemdata}) {
