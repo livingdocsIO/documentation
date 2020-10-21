@@ -101,9 +101,11 @@ exports.migrate = ({serializedLivingdoc, metadata, systemdata}, callback) => {
 ## Execute a Migration
 
 To execute a migration, run `livingdocs-server data-migration-run` on the terminal. Without options, you'll see the help with all the options:
+
 ![image](https://user-images.githubusercontent.com/172394/92695759-3c6a8f00-f349-11ea-9e48-e579bff3ce97.png)
 
 Once you started a migration, it will run for all your documents (in the same process, no queue). After the migration you get a migration report:
+
 ![image](https://user-images.githubusercontent.com/172394/92476319-0d380e80-f1df-11ea-90fb-1ec7f01818df.png)
 
 #### Report: not_applied_documents
