@@ -21,7 +21,7 @@ designSettings: {
       // strategy used if doc-image is declared on an <img> tag
       imgTagRenderStrategy: 'srcSet',
       // strategy used if doc-image is declared on any other tag
-      anyTagRenderStrategy: 'backgroundImage',  
+      anyTagRenderStrategy: 'backgroundImage',
 
       // configuration for the responsive 'backgroundImage' render strategy
       backgroundImage: {
@@ -80,8 +80,11 @@ designSettings: {
     },
     fieldExtractor: [
       {
+        // metadata handle
         identifier: 'title',
+        // 'text' / 'image' / 'cssProperty'
         type: 'text',
+        // prefill from 'component.directive'
         matches: ['title.title']
       }
     ]
@@ -358,11 +361,27 @@ You have to configure the handle of the respective component that should be inse
 
 ## Field Extractor
 
-The field extractor allows you to prefill metadata fields with values from the document. A common use case is to use the document title in a metadata field `title`.
-In `identifier` you define the handle of the metadata field that you want to prefill.
-In `type` you define what type the data has. This can be any of `text` (for `doc-editable` directives), `image` (for `doc-image`) and `cssProperty` (for `doc-style`). Other design directives are currently not supported.
-In `matches` you define an array of component.directive pairs from which the content should be prefilled. E.g. for a component named "title" that has a doc-editable directive "title", you would write "title.title".
-In `cssProperty` you can define which CSS Property you want to extract, e.g. `color`. This only makes sense if the `type` is `cssProperty`.
+The field extractor allows you to one way synchronising metadata fields with values from the document. As long as the metadata field is not overwritten manually, the sync is active. A common use case is to use the document title in a metadata field `title`.
+
+**Example**
+```js
+fieldExtractor: [
+  {
+    identifier: 'title',
+    type: 'text',
+    matches: ['title.title']
+  }
+]
+```
+
+**Properties**
+- `identifier` - metadata field handle, you want to sync to
+- `type` data type
+  - `text` for `doc-editable` directives
+  - `image` for `doc-image`
+  - `cssProperty` for `doc-style`
+  - Other design directives are currently not supported.
+- `matches` defines an array of component.directive pairs from which the content should be synced into the metadata field. E.g. for a component named "title" that has a doc-editable directive "title", you would write "title.title". When `type` is set to `cssProperty` one can define which CSS property to extract, e.g. `color`.
 
 ## Components
 
