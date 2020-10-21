@@ -7,15 +7,43 @@ The components define the building blocks out of which you can create your docum
 The design settings define global design properties like the CSS to use or how components are grouped together.
 
 An example:
-```javascript
+```js
 // projectConfig.designSettings: {...}
-"designSettings": {
-    "assets": {
-      "css": [
-        "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+designSettings: {
+    assets: {
+      css: [
+        'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'
       ]
     },
-    "componentProperties: [{
+
+    imageRendering: {
+      // strategy used if doc-image is declared on an <img> tag
+      imgTagRenderStrategy: 'srcSet',
+      // strategy used if doc-image is declared on any other tag
+      anyTagRenderStrategy: 'backgroundImage',
+
+      // configuration for the responsive 'backgroundImage' render strategy
+      backgroundImage: {
+        defaultWidth: 1200,
+        cssVars: {
+          'mobile-img': 600,
+          'tablet-img': 900
+        }
+      },
+      // configuration for the 'srcSet' render strategy
+      srcSet: {
+        defaultWidth: 1024,
+        widths: [
+          2048,
+          1024,
+          620,
+          320
+        ],
+        sizes: ['100vw']
+      }
+    },
+
+    componentProperties: [{
         label: 'Lead',
         type: 'option',
         value: 'paragraph--lead',
@@ -26,89 +54,94 @@ An example:
         cssProperty: 'background-color',
         name: 'css-background-color'
     }],
-    "componentGroups": [
+
+    componentGroups: [
       {
-        "name": "text",
-        "label": "Text",
-        "components": [
-          "title",
-          "p"
+        name: 'text',
+        label: 'Text',
+        components: [
+          'title',
+          'p'
         ]
       },
       {
-        "name": "media",
-        "label": "Media",
-        "components": [
-          "image",
-          "insta"
+        name: 'media',
+        label: 'Media',
+        components: [
+          'image',
+          'insta'
         ]
       }
     ],
-    "defaultComponents": {
-      "paragraph": "p",
-      "image": "image"
+
+    defaultComponents: {
+      paragraph: 'p',
+      image: 'image'
     },
-    "fieldExtractor": [
+
+    fieldExtractor: [
       {
-        "identifier": "title",
-        "type": "text",
-        "matches": [
-          "title.title"
-        ]
+        // metadata handle
+        identifier: 'title',
+        // 'text' / 'image' / 'cssProperty'
+        type: 'text',
+        // prefill from 'component.directive'
+        matches: ['title.title']
       }
     ]
 },
-"components": [
+
+components: [
     {
-      "name": "title",
-      "label": "Title",
-      "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_header_simple.svg",
-      "directives": [
+      name: 'title',
+      label: 'Title',
+      iconUrl: 'https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_header_simple.svg',
+      directives: [
         {
-          "type": "editable",
-          "name": "title",
-          "maxLength": 5
+          type: 'editable',
+          name: 'title',
+          maxLength: 5
         }
       ],
-      "html": "<h2 doc-editable=\"title\">\n  Title\n</h2>"
+      html: "<h2 doc-editable=\"title\">\n  Title\n</h2>"
     },
     {
-      "name": "p",
-      "label": "Paragraph",
-      "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_text.svg",
-      "html": "<p class=\"text\" doc-editable=\"text\">\n  Paragraph\n</p>"
+      name: 'p',
+      label: 'Paragraph',
+      iconUrl: 'https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_text.svg',
+      html: "<p class=\"text\" doc-editable=\"text\">\n  Paragraph\n</p>"
     },
     {
-      "name": "image",
-      "label": "Bild",
-      "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_image.svg",
-      "directives": [
+      name: 'image',
+      label: 'Bild',
+      iconUrl: 'https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_image.svg',
+      directives: [
         {
-          "name": "image",
-          "type": "image",
-          "allowOriginalRatio": true,
-          "imageRatios": [
-            "16:9",
-            "1:1",
-            "4:3",
-            "3:4"
+          name: 'image',
+          type: 'image',
+          allowOriginalRatio: true,
+          imageRatios: [
+            '16:9',
+            '1:1',
+            '4:3',
+            '3:4'
           ]
         }
       ],
-      "html": "<div class=\"m-asset-image m-asset-image--numbered\">\n  <div class=\"m-asset-image__image\">\n    <img doc-image=\"image\" />\n  </div>\n  <div class=\"m-asset-image__options\">\n    <div class=\"a-asset-input\" doc-editable=\"caption\">Caption</div>\n    <div class=\"a-asset-input\" doc-editable=\"source\">Source</div>\n  </div>\n</div>"
+      html: "<div class=\"m-asset-image m-asset-image--numbered\">\n  <div class=\"m-asset-image__image\">\n    <img doc-image=\"image\" />\n  </div>\n  <div class=\"m-asset-image__options\">\n    <div class=\"a-asset-input\" doc-editable=\"caption\">Caption</div>\n    <div class=\"a-asset-input\" doc-editable=\"source\">Source</div>\n  </div>\n</div>"
     },
     {
-      "name": "insta",
-      "label": "Instagram",
-      "iconUrl": "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_image.svg",
-      "directives": [
+      name: 'insta',
+      label: 'Instagram',
+      iconUrl: 'https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_image.svg',
+      directives: [
         {
-          "name": "insta",
-          "type": "include",
-          "service": "instagram"
+          name: 'insta',
+          type: 'include',
+          service: 'instagram'
         }
       ],
-      "html": "<div doc-include=\"insta\">\n  <div>Instagram Include</div>\n</div>"
+      html: "<div doc-include=\"insta\">\n  <div>Instagram Include</div>\n</div>"
     }
 ]
 ```
@@ -161,7 +194,7 @@ componentProperties: ms.arrayOf(ms.allOf([{
 }]))
 ```
 
-## Component Groups 
+## Component Groups
 *has UI support*
 
 With component groups you can visually group together similar components, e.g. "Text components" for use in the Livingdocs editor sidebar.
@@ -177,11 +210,27 @@ You have to configure the handle of the respective component that should be inse
 
 ## Field Extractor
 
-The field extractor allows you to prefill metadata fields with values from the document. A common use case is to use the document title in a metadata field `title`.
-In `identifier` you define the handle of the metadata field that you want to prefill.
-In `type` you define what type the data has. This can be any of `text` (for `doc-editable` directives), `image` (for `doc-image`) and `cssProperty` (for `doc-style`). Other design directives are currently not supported.
-In `matches` you define an array of component.directive pairs from which the content should be prefilled. E.g. for a component named "title" that has a doc-editable directive "title", you would write "title.title".
-In `cssProperty` you can define which CSS Property you want to extract, e.g. `color`. This only makes sense if the `type` is `cssProperty`.
+The field extractor allows you to one way synchronising metadata fields with values from the document. As long as the metadata field is not overwritten manually, the sync is active. A common use case is to use the document title in a metadata field `title`.
+
+**Example**
+```js
+fieldExtractor: [
+  {
+    identifier: 'title',
+    type: 'text',
+    matches: ['title.title']
+  }
+]
+```
+
+**Properties**
+- `identifier` - metadata field handle, you want to sync to
+- `type` data type
+  - `text` for `doc-editable` directives
+  - `image` for `doc-image`
+  - `cssProperty` for `doc-style`
+  - Other design directives are currently not supported.
+- `matches` defines an array of component.directive pairs from which the content should be synced into the metadata field. E.g. for a component named "title" that has a doc-editable directive "title", you would write "title.title". When `type` is set to `cssProperty` one can define which CSS property to extract, e.g. `color`.
 
 ## Components
 
