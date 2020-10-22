@@ -7,7 +7,7 @@ The Import API provides a possibility to programmatically create Documents. One 
 The Import function has the following signature
 
 ```js
-import ({importJob, rawDocument, shouldCreateNew, updateCondition, userId}, callback)
+const importLog = await import({importJob, rawDocument, shouldCreateNew, updateCondition, userId})
 ```
 
 ### `importJob`
@@ -83,19 +83,19 @@ const updateCondition = (document, importLog) => {
 You can configure a user per Project which is set as author of imported Documents if you dont pass a `userId`.
 
 ```js
-createImportUser (projectId, callback)
+const user = await createImportUser(projectId)
 ```
 
 ### `projectId`
 
-A `number` containing the Id of the Project for which you want to create an Import User.
+The `id` of the Project for which you want to create an Import User.
 
 ## `getImportUser`
 
-You can retrieve the `userId` of the Import User.
+You can retrieve the user object of the Import User.
 
 ```js
-getImportUser (projectId, callback)
+const {id} = await importApi.getImportUser(projectId)
 ```
 
 **CAUTION**: This only returns the `userId` of the Import User.
@@ -105,7 +105,7 @@ getImportUser (projectId, callback)
 You can retrieve a specific ImportLog.
 
 ```js
-getImportLog ({systemName, externalId}, callback)
+const importLog = await importApi.getImportLog({systemName, externalId})
 ```
 
 ## `getLastImportLog`
@@ -113,5 +113,5 @@ getImportLog ({systemName, externalId}, callback)
 You can also fetch the latest ImportLog.
 
 ```js
-getLastImportLog ({projectId, channelId}, callback)
+const lastImportLog = await getLastImportLog({projectId, channelId})
 ```
