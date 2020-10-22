@@ -8,8 +8,8 @@ The events API is Livingdocs's implementation of the publish/subscribe pattern. 
 Example:
 ```js
 const config = require('../conf')
-const liServer = require('@livingdocs/server/core/api')(config)
-const {events} = liServer
+const liServer = require('@livingdocs/server')(config)
+liServer.events.subscribe('document.update', console.log)
 ```
 
 ## Event firing: `notify`
