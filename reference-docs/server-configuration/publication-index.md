@@ -123,4 +123,4 @@ As you can see you can either pass a simple string value or an array to the filt
 
 ## Task Support
 
-There are the tasks `npx livingdocs-server es-publication-reindex` and `npx livingdocs-server es-publication-delete-index`. Those 2 tasks work exactly like the search index tasks for the drafts index. For details refer to the CLI documentation.
+There are the tasks `npx livingdocs-server elasticsearch-index --handle=li-publications` and `npx livingdocs-server elasticsearch-delete-index --handle=li-publications`. Those 2 tasks work exactly like the search index tasks for the drafts index. For details refer to the CLI documentation.

@@ -554,6 +554,69 @@ For inspiration, you can also check out our [current default document search fun
 
 
 
+#### Custom Elasticsearch Index
+
+Integrate custom Elasticsearch indexes. If you want to know more, look into the [guide](./custom-index.md).
+
+```js
+// conf/environments/local.js
+elasticIndex: {
+
+  // Size of batches for background indexing
+  // default: 1000
+  batchSize: 1000,
+
+  // Elasticsearch load in %. The background indexing process will automatically
+  // be throttled when the load is higher
+  // default: 80
+  maxCpu: 80,
+
+  // enable/disable the Livingdocs publication index (used in the public API for search requests)
+  // see: [Publication Index](../server-configuration/publication-index.md)
+  // default: true
+  documentPublicationIndexEnabled: true,
+
+  // A custom index can be registered here
+  // The indexing hooks call every custom index and handle them
+  customIndexes: [
+    {
+      // used as identifier e.g. for the background indexing via CLI
+      handle: 'my-custom-publication',
+      // file to define the mapping and the transformation of the documents
+      indexInitializationFile: require.resolve('../../app/search/my-custom-publication/init.js')
+    }
+  ]
+},
+```
+
+##### documentsMetadataFields
+
+The `documentsMetadataFields` array whitelists metadata that can be used in the dashboard. By
+default the article list query gets no metadata.
+
+##### queryBuilderPlugin
+
+`queryBuilderPlugin` is the path to your custom elasticsearch query.
+
+If you know Elasticsearch, it's simple to define your own [search request body](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html) function.
+The simplest possible query function looks like this:
+
+```js
+// reference this file with the 'queryBuilderPlugin' property in your server config
+
+// @param {String} searchQuery 'hello world'
+// @returns {Object} Elasticsearch body.query
+module.exports = function (searchQuery) {
+  return {
+    match : { 'document.title' : searchQuery }
+  }
+}
+```
+
+For inspiration, you can also check out our [current default document search function](../../know-how/es-document-search-example.md).
+
+
+
 #### Push Notifications
 Configuration examples for the different notification services. 
 
