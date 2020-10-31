@@ -80,6 +80,7 @@
 * [Use Push Notifications and Custom Dashboard Item](guides/push_notifications.md)
 * [Enable Multi-Language Support](guides/setup_multilanguage.md)
 * [Author Management](guides/prefill-author.md)
+* [DPA Import](guides/dpa-import.md)
 * Workflows
   * [Validate Task Completion](guides/validate_tasks.md)
   * [Add Custom Realtime Proofreading Dashboard](guides/add-custom-realtime-proofreading-dashboard.md)
