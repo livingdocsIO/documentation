@@ -1,10 +1,118 @@
-## Doc-include editor customizations
+## Include User Interfaces
 
-This section explains how you can write custom Angular components that you can provide for your users inside the Livingdocs editor to configure your includes. If you are looking for the server-side rendering options, [see here](./server_customization.md).
+In order to provide a custom User Interface for your includes, you can register custom Vue or AngularJS components.
+Another options is to configure an iframe that you serve from any webserver.
 
-### Registering a custom angular component
+The possibility to use AngularJS will be phased out in the future. If you are doing something new, use Vue.
 
-In order to enable a custom user interface for your includes in the editor, you need to register it. This is commonly done in `app/editor.js` (the startup file).
+In order to actually render content, you need to configure the server to do so, [see here](./server_customization.md) how that works.
+
+### Custom Include User Interface with Vue
+Here is an example of an include User Interface Vue Component:
+```
+// my-instagram-include-params-sidebar-form.vue
+<template>
+  <div
+    v-if="params"
+    class="my-instagram-include-params-sidebar-form ld-panel hard--bottom"
+  >
+    <div class="ld-panel__header">
+      <h2 class="ld-panel__header__title">
+        Instagram settings
+      </h2>
+    </div>
+    <div class="ld-panel__body">
+      <form
+        name="idForm"
+      >
+        <div
+          class="ld-form-group flush--bottom"
+        >
+          <div class="ld-form-group__content breathe-quarter--bottom">
+            <input
+              v-model="paramsDraft.url"
+              v-li-debounce-input:300="save"
+              name="idInput"
+              class="ld-text-input"
+              placeholder="URL"
+              required
+            >
+          </div>
+          <div class="ld-form-group__content">
+            <input
+              id="caption"
+              v-model="paramsDraft.caption"
+              v-li-debounce-input:300="save"
+              name="captionInput"
+              class="ld-checkbox"
+              type="checkbox"
+            >
+            <label
+              class="soft-half--right"
+              for="caption"
+            ><div>✕</div></label> Caption
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  props: {
+    params: {
+      type: Object,
+      default: function () { return {} }
+    }
+  },
+  data: function () {
+    return {
+      paramsDraft: {
+        url: this.params.url || '',
+        caption: this.params.caption || false
+      }
+    }
+  },
+  methods: {
+    save () {
+      const event = new CustomEvent('update:params', {
+        detail: this.paramsDraft,
+        bubbles: true
+      })
+      this.$el.dispatchEvent(event)
+    }
+  }
+}
+</script>
+```
+
+You have to register this component like this:
+```
+coreApi.vueComponentRegistry.registerComponent({
+    type: 'includeParamsSidebarForm',
+    name: 'myInstagramInclude',
+    component: require('../../plugins/doc_includes/instagram/my-instagram-include-params-sidebar-form.vue').default
+  })
+```
+
+The component `myInstagramInclude` can then be used as the `sidebarContentComponent` config property when registering the include in the server.
+
+### Custom Include User Interface with an iframe
+
+In the [server configuration](./server_customization.md#include-ui-options) we learned that you can also register an external iframe as a user interface in a modal.
+The Livingdocs modal which will contain the iframe listens to `postMessage`s for updates. You can use this to update the include params or close the modal without any changes:
+```
+window.top.postMessage({action: 'update', params: {"someParam": "test"}})
+// or
+window.top.postMessage({action: 'close'})
+```
+
+The `params` stored in the document when the modal is opened are passed into the iframe as a URL query parameter `?params`. It contains the stringified JSON of the `params` Object as an urlencoded String. You want to handle this case in the iframe's code.
+
+### Custom Include User Interface with AngularJS
+`Will be phased out`
+
+In order to use AngularJS to create a custom user interface for your includes in the editor, you need to register it. This is commonly done in `app/editor.js` (the startup file).
 
 ```js
 liEditor.includes.register('customBrightcoveVideo', {
@@ -191,19 +299,6 @@ function validateSearchConfig (config, cb) {
 ```
 
 The only thing that differs from the prior example is the use of the `dispatch` method in `select`.
-
-### Using an iframe
-
-In the [server configuration](./server_customization.md#include-ui-options) we learned that you can also register an external iframe as a user interface in a modal. We will not show any example code for this because you can use whatever code you like in the iframe (doesn't need to be angular).
-One thing to note though is how to close or update the Livingdocs editor modal from inside your custom iframe. The Livingdocs modal listens to `postMessage` for updates. So in your code you can do:
-```
-window.top.postMessage({action: 'update', params: {"someParam": "test"}})
-// or
-window.top.postMessage({action: 'close'})
-```
-
-The `close` and `update` actions are equivalent to the example above where you do this in an angular component.
-
 
 
 ### onIncludeRendered Hook
