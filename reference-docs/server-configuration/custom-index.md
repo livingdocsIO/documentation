@@ -30,27 +30,48 @@ First, one needs to setup the configuration. You can see an example below.
 elasticIndex: {
 
   // Size of batches for background indexing
-  // default: 1000
-  batchSize: 1000,
+  batchSize: 1000, // default: 1000
 
   // Elasticsearch load in %. The background indexing process will automatically
   // be throttled when the load is higher
-  // default: 80
-  maxCpu: 80,
+  maxCpu: 80, // default: 80
 
   // enable/disable the Livingdocs publication index (used in the public API for search requests)
   // see: [Publication Index](../server-configuration/publication-index.md)
-  // default: true
-  documentPublicationIndexEnabled: true,
+  documentPublicationIndexEnabled: true, // default: true
 
   // A custom index can be registered here
   // The indexing hooks call every custom index and handle them
   customIndexes: [
     {
+      // required options
+      // ----------------
+
       // used as identifier e.g. for the background indexing via CLI
       handle: 'my-custom-publication',
+      // every index name will be prefixed to prevent name clashes
+      // the index name in this example would be: 'your-company-my-custom-publication-index'
+      indexNamePrefix: 'your-company',
       // file to define the mapping and the transformation of the documents
       indexInitializationFile: require.resolve('../../app/search/my-custom-publication/init.js')
+
+
+      // optional options
+      // ----------------
+
+      // Overwrite the alias pointing to your elastic index
+      // The default alias is the 'handle' (in this example - 'my-custom-publication')
+      alias: 'an-alias'
+      // The context is passed to the 'processBatch' and 'createBatches' function
+      // With that it's possible to search/index documents based on the context
+      context: {
+        projectId: 42,
+        channelId: 43,
+        documentType: 'page',
+        contentType: 'regular',
+        isPublished: true,
+        myCustomField: 'hello world'
+      }
     }
   ]
 },
@@ -82,10 +103,11 @@ module.exports = async function ({server}) {
    * Usually it's only the case when you want to index data which are not related to publications
    *
    * @param {Object}   params
-   * @param {Object}   params.filter
-   * @param {?string}  params.filter.contentType
-   * @param {?string}  params.filter.documentType
-   * @param {?number}  params.filter.projectId
+   * @param {Object}   params.context
+   * @param {?string}  params.context.contentType
+   * @param {?string}  params.context.documentType
+   * @param {?number}  params.context.projectId
+   * @param {?}        params.payload.myCustomValue - passed via context object of index config
    * @param {number}   params.batchSize
    * @returns {Promise<object>}
    *   Returns a promise object {context, ranges}
@@ -99,8 +121,8 @@ module.exports = async function ({server}) {
    *     ]
    *   }
    */
-  async function createBatches ({batchSize, filter}) {
-    return indexApi._createDocumentBatches({batchSize, ...filter})
+  async function createBatches ({batchSize, context}) {
+    return indexApi._createDocumentBatches({batchSize, ...context})
   }
 
   /**
@@ -111,14 +133,12 @@ module.exports = async function ({server}) {
    *
    * @param {Object}   params
    * @param {Object}   params.payload
-   * @param {string}   params.payload.op - operation
-   *   live indexing:        either 'update' / 'delete'
-   *   background indexing:  undefined
    * @param {number}   params.payload.from - range (document)Id from
    * @param {number}   params.payload.to - range (document)Id to
    * @param {?string}  params.payload.contentType
    * @param {?string}  params.payload.documentType
    * @param {?number}  params.payload.projectId
+   * @param {?}        params.payload.myCustomValue - passed via context object of index config
    * @param {Object}   params.customIndexConfig - server config elasticIndex.customIndexes[{}]
    */
   async function processBatch ({payload, customIndexConfig}) {
@@ -127,20 +147,20 @@ module.exports = async function ({server}) {
       handle: customIndexConfig.handle,
       // entries to index, e.g.
       // [
-      //   { op: 'update', id: 60011, entry: { id: 60011, documentId: 60011, title: 'test' } },
-      //   { op: 'delete', id: 60012 }
+      //   { operation: 'update', id: 60011, entry: { id: 60011, documentId: 60011, title: 'test' } },
+      //   { operation: 'delete', id: 60012 }
       // ]
       entries: publications.map((publication) => {
         // delete operation
         if (!publication.created_at) {
           return {
-            op: 'delete',
+            operation: 'delete',
             id: `${publication.project_id}:${publication.document_id}`
           }
         }
         // update operation
         return {
-          op: 'update',
+          operation: 'update',
           id: `${publication.project_id}:${publication.document_id}`,
           entry: {
             id: `${publication.project_id}:${publication.document_id}`,
