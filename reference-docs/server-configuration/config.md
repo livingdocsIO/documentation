@@ -583,34 +583,6 @@ elasticIndex: {
 },
 ```
 
-##### documentsMetadataFields
-
-The `documentsMetadataFields` array whitelists metadata that can be used in the dashboard. By
-default the article list query gets no metadata.
-
-##### queryBuilderPlugin
-
-`queryBuilderPlugin` is the path to your custom elasticsearch query.
-
-If you know Elasticsearch, it's simple to define your own [search request body](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html) function.
-The simplest possible query function looks like this:
-
-```js
-// reference this file with the 'queryBuilderPlugin' property in your server config
-
-// @param {String} searchQuery 'hello world'
-// @returns {Object} Elasticsearch body.query
-module.exports = function (searchQuery) {
-  return {
-    match : { 'document.title' : searchQuery }
-  }
-}
-```
-
-For inspiration, you can also check out our [current default document search function](../../know-how/es-document-search-example.md).
-
-
-
 #### Push Notifications
 Configuration examples for the different notification services. 
 
