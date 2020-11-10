@@ -556,25 +556,19 @@ For inspiration, you can also check out our [current default document search fun
 
 #### Custom Elasticsearch Index
 
-Integrate custom Elasticsearch indexes. If you want to know more, look into the [guide](./custom-index.md).
+Integrate custom Elasticsearch indexes. If you want to know more (with all possible options), look into the [guide](./custom-index.md).
 
 ```js
 // conf/environments/local.js
 elasticIndex: {
 
-  // Size of batches for background indexing
-  // default: 1000
-  batchSize: 1000,
-
-  // Elasticsearch load in %. The background indexing process will automatically
-  // be throttled when the load is higher
-  // default: 80
-  maxCpu: 80,
-
-  // enable/disable the Livingdocs publication index (used in the public API for search requests)
-  // see: [Publication Index](../server-configuration/publication-index.md)
-  // default: true
-  documentPublicationIndexEnabled: true,
+  // used as identifier e.g. for the background indexing via CLI
+  handle: 'my-custom-publication',
+  // every index name will be prefixed to prevent name clashes
+  // the index name in this example would be: 'your-company-my-custom-publication-index'
+  indexNamePrefix: 'your-company',
+  // file to define the mapping and the transformation of the documents
+  indexInitializationFile: require.resolve('../../app/search/my-custom-publication/init.js'),
 
   // A custom index can be registered here
   // The indexing hooks call every custom index and handle them
