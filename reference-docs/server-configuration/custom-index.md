@@ -44,8 +44,8 @@ elasticIndex: {
   // The indexing hooks call every custom index and handle them
   customIndexes: [
     {
-      // required options
-      // ----------------
+      // required
+      // --------
 
       // used as identifier e.g. for the background indexing via CLI
       handle: 'my-custom-publication',
@@ -53,11 +53,11 @@ elasticIndex: {
       // the index name in this example would be: 'your-company-my-custom-publication-index'
       indexNamePrefix: 'your-company',
       // file to define the mapping and the transformation of the documents
-      indexInitializationFile: require.resolve('../../app/search/my-custom-publication/init.js')
+      indexInitializationFile: require.resolve('../../app/search/my-custom-publication/init.js'),
 
 
-      // optional options
-      // ----------------
+      // optional
+      // --------
 
       // Overwrite the alias pointing to your elastic index
       // The default alias is the 'handle' (in this example - 'my-custom-publication')
@@ -65,13 +65,17 @@ elasticIndex: {
       // The context is passed to the 'processBatch' and 'createBatches' function
       // With that it's possible to search/index documents based on the context
       context: {
-        projectId: 42,
-        channelId: 43,
+        project: 'myProjectHandle',
+        channel: 'myChannelHandle',
         documentType: 'page',
         contentType: 'regular',
         isPublished: true,
         myCustomField: 'hello world'
-      }
+      },
+
+      // enable/disable the Livingdocs publication index (used in the public API for search requests)
+      // see: [Publication Index](../server-configuration/publication-index.md)
+      documentPublicationIndexEnabled: true, // default: true
     }
   ]
 },
