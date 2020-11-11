@@ -84,8 +84,8 @@ designSettings: {
         identifier: 'title',
         // 'text' / 'image' / 'cssProperty'
         type: 'text',
-        // prefill from 'component.directive'
-        matches: ['title.title']
+        // extract from component 'title' the directive 'text'
+        matches: ['title.text']
       }
     ]
 },

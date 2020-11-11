@@ -42,7 +42,7 @@ metadata: [{
       placeholder: 'bar', // optional, takes camelized name otherwise
       readOnly: false, // optional, false by default
       maxLength: 200 // optional, integer, not used by default. Enables small UI, see screenshow below
-      
+
     }  
   }
 }]
@@ -213,37 +213,42 @@ The service plugin for a multiselect box allows you to customize the logic for t
 There is a sample implementation in `plugins/metadata_services/default_multiselect_service.coffee` to help you get started.
 
 
-### Image Selection
+### Image
 
 ContentType metadata config:
 ```js
 metadata: [{
-  ...,
+  handle: 'teaserImage',
+  type: 'li-image',
+  config: {
+    imageRatios: ['16:9', '1:1']
+  },
   ui: {
     component: 'liMetaImageForm'
   }
 }]
 ```
 
-The image selection was taken over as is from the existing implementation and does not adhere to the general plugin architecture. We should fix this at some point in the future.
+This defines an image with two crops: 16:9 and 1:1.
 
-For now the content is defined through the method `metadata.getEditableImages`. Basically this takes the values defined in the design configuration for the images. So for example if you have the following design configuration excerpt:
-```json
-"metadata": [
+You can automatically extract images from the document and set the metadata
+automatically unless you change the metadata manually at which point the automatic
+extraction will stop.
+
+```js
+fieldExtractor: [
   {
-    "identifier": "teaserImage",
-    "type": "image",
-    "matches": ["image.image"],
-    "isEditable": true,
-    "imageRatios": ["4:3", "16:9"]
+    // the metadata field 'teaserImage' is the target of this extraction
+    identifier: 'teaserImage',
+    // the extraction is of type image
+    type: 'image',
+    // extract from component 'image' the value in the directive 'image'
+    matches: ['image.image']
   }
 ]
 ```
-This would fill the metadata screen with a section for the field "teaserImage" giving 2 selections, a "4:3" image and a "16:9" image. The data format for the image value is hardcoded at the moment and can not be customized. An example of a metadata image format can be found here: https://gist.github.com/gabrielhase/9d7b0ff518585da844c257591a810ecc
-
-The current implementation is especially dangerous since the `metadata` section in a design config is not really metadata at all, its only a field extractor for metadata.
-
-Also, the markup in the image form does not adhere to the plugin standard, so don't look here when doing your own plugin.
+This would autofill the metadata property 'teaserImage' with the first image
+from the document in a 'image' component.
 
 ### Checkbox
 
@@ -332,7 +337,7 @@ metadata: [{
     component: 'liMetaReferenceForm',
     config: {
       sortable: true, // enable sorting by drag and drop
-      displayFilters: [] // enable display filters 
+      displayFilters: [] // enable display filters
     }
   }
 }]
