@@ -9,11 +9,14 @@ If no `Media Type` config is provided it falls back to a default config where `t
 - You can only configure 1 mediaType and it has to have the handle `image`.
 - Only one `type` is supported: `mediaImage`
 
+`release-2020-12` includes the type `mediaVideo`
+- You can only configure 1 mediaType for the type `mediaVideo` and it has to have the handle `video`.
+
 ## Example
 
 ```javascript
 // projectConfig.mediaTypes: [{...}]
-{
+[{
   handle: 'image',
   type: 'mediaImage',
   metadata: [
@@ -71,7 +74,22 @@ If no `Media Type` config is provided it falls back to a default config where `t
       }
     ]
   }
-}
+}, {
+  type: 'mediaVideo',
+  handle: 'video',
+  metadata: [
+    {
+      handle: 'title',
+      type: 'li-text',
+      config: {
+        required: true,
+        requiredErrorMessage: 'Please provide a title',
+        maxLength: 200
+      },
+      ui: {component: 'liMetaTextForm'}
+    }
+  ]
+}]
 
 ```
 
@@ -80,6 +98,8 @@ If no `Media Type` config is provided it falls back to a default config where `t
 The metadata follows the rules that also apply to document metadata [defined on a content-type](content_types.md#metadata). All the same metadata plugins are available. Different from the document metadata, media metadata does not have UI support as of now.
 
 ## Exif Extraction
+This feature is only supported for the `mediaImage` mediaType.
+
 Whenever in image file is stored in the Media Library, we can extract the IPTC data from the image file and store it in the metadata.
 You can configure this behavior with the `mappings` defined in `exifExtraction`.
 
