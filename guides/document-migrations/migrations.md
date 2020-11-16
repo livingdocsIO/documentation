@@ -120,3 +120,13 @@ To learn how to write data migration we provide some examples.
 - [Migration script after removing a directive from a component](./examples/remove_directive.md)
 - [Migration script after renaming a directive on a component](./examples/rename_directive.md)
 - [Migration script to initialize a new metadata field](./examples/add_metadata_field.md)
+
+
+## Performance of Migrations
+
+Version bumps are quite fast (just some minutes for a lot of documents). Data migrations need more time, but it's difficult to predict how long they need in a specific production environment. We would estimate roughly 1h per 1 mio. documents.
+
+There are a some factors which are influencing the migration time:
+- power of the server
+- request/response time between Livingdocs and the database
+- the computing time for the migration operation
