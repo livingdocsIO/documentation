@@ -17,7 +17,7 @@ In order to go from a reference design to an embedded design the following steps
 ## Migrate design config
 
 The rules on how to migrate the design are described [here](../reference-docs/legacy-design/design_config_v1_to_v2.md).
-We have an unofficial helper script that can be used but still has some shortcomings. We hope that we can fix the shortcomings soon and release the taks with the livingdocs-cli. For now, you need to decide for yourself if you want to take the adventure to use an experimental script.
+We have an unofficial helper script that can be used. It can be considered an alpha version and has successfully been used to migrate several projects. We want to test it some more before we take it to the official command list.
 
 ### For the adventerous
 
@@ -31,12 +31,7 @@ The path on your drive needs to be a project config folder. This can either be a
 
 The task will create a file `design_settings` and a `components` folder with all components and link them in the config respectively.
 
-We mentioned that the task is not yet complete. Those things will require manual post-processing:
-- component groups are not added to design settings
-- editor wrapper is not added to content types
-- components is not added to the content types
-- sometimes the directive definition for a component is not taken (we don't know which pattern this follows)
-
+Please manually check the migrated design before pushing it to a productive system.
 ## Add design to your server
 
 In your server project you will want to add a seeding config containing your new design. An example for a local seeding config is given below.
