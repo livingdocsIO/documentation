@@ -37,12 +37,11 @@ metadata: [{
   ui: {
     component: 'liMetaTextForm',
     service: 'customServicePlugin', // optional
+    label: 'foo', // optional, takes camelized name otherwise
     config: {
-      label: 'foo', // optional, takes camelized name otherwise
       placeholder: 'bar', // optional, takes camelized name otherwise
       readOnly: false, // optional, false by default
       maxLength: 200 // optional, integer, not used by default. Enables small UI, see screenshow below
-
     }  
   }
 }]
@@ -88,8 +87,8 @@ metadata: [{
   ui: {
     component: 'liMetaTextareaForm',
     service: 'customServicePlugin', // optional
+    label: 'foo', // optional, takes camelized name otherwise
     config: {
-      label: 'foo', // optional, takes camelized name otherwise
       placeholder: 'bar', // optional, takes camelized name otherwise
       readOnly: false, // optional, false by default
       maxLength: 200, // optional, integer, not used by default
@@ -125,8 +124,8 @@ metadata: [{
   ui: {
     component: 'liMetaSelectForm',
     service: 'customServicePlugin', // mandatory
+    label: 'foo', // optional, takes camelized name otherwise
     config: {
-      label: 'foo', // optional, takes camelized name otherwise
       placeholder: 'bar' // optional, takes camelized name otherwise
     }
   }
@@ -175,8 +174,8 @@ metadata: [{
   ui: {
     component: 'liMetaMultiselectForm',
     service: 'customServicePlugin', // mandatory
+    label: 'foo', // optional, takes camelized name otherwise
     config: {
-      label: 'foo', // optional, takes camelized name otherwise
       placeholder: 'bar' // optional, takes camelized name otherwise
     }
   }
@@ -258,9 +257,7 @@ metadata: [{
   ...,
   ui: {
     component: 'liMetaCheckboxForm',
-    config: {
-      label: 'foo' // optional, takes camelized name otherwise
-    }
+    label: 'foo' // optional, takes camelized name otherwise
   }
 }]
 ```
@@ -276,9 +273,7 @@ metadata: [{
   ui: {
     component: 'liMetaDatetimeForm',
     service: 'customServicePlugin', // optional
-    config: {
-      label: 'foo' // optional, takes camelized name otherwise
-    }
+    label: 'foo' // optional, takes camelized name otherwise
   }
 }]
 ```
@@ -353,8 +348,8 @@ metadata: [{
   ui: {
     component: 'liMetaSlugForm',
     service: 'customServicePlugin', // optional
+    label: 'foo', // optional, takes camelized name otherwise
     config: {
-      label: 'foo', // optional, takes camelized name otherwise
       placeholder: 'bar', // optional, takes camelized name otherwise
       canReset: false // optional, false by default
     }
