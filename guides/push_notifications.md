@@ -4,7 +4,10 @@ This guide explains 2 things:
 1. how to enable the push notifications feature in the [livingdocs server boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate)
 2. how to do a custom dashboard item for your articles that shows push notification information
 
-Livingdocs uses the free [Google Firebase](https://firebase.google.com/) service for push notifications. Livingdocs sends push notifications to Google Firebase and you can setup Google Firebase in such a way that it passes those notifications on to your native apps and other targets.
+Livingdocs supports three push notification services.
+- Google Firebase: The free [Google Firebase](https://firebase.google.com/) service for push notifications. Livingdocs sends push notifications to Google Firebase and you can setup Google Firebase in such a way that it passes those notifications on to your native apps and other targets.
+- Urban airship
+- Ethinking
 
 The resulting feature looks as follows.
 
