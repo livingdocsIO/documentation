@@ -555,9 +555,12 @@ For inspiration, you can also check out our [current default document search fun
 
 
 #### Push Notifications
+Configuration examples for the different notification services. 
 
+Firebase: 
 ```js
-push_notifications: {
+pushNotifications: {
+  enabled: true,
   firebase: {
     serverKey: '*****',
 
@@ -578,6 +581,36 @@ push_notifications: {
       // If set to 0, the badge is removed.
       badge: '1'
     }
+  }
+}
+```
+
+Airship: 
+
+Added in: `release-2020-10`
+```js
+pushNotifications: {
+  enabled: true,
+  airship: {
+      apiUrl: 'https://go.urbanairship.com'
+      apiAuthKeys: [{
+        // must be base64 encoded '<App key>:<master secret key>'
+        apiAuthKey: 'SECRET', 
+
+        // must match with the platform handle
+        handle: 'li-website'
+      }],
+      deepLinks: [{
+        // must match with the platform handle
+        handle: 'li-website',  
+
+        // {articleId} will be replaced with the id from the document
+        urlTemplate: 'az://artikel/{articleId}', 
+
+        // fallback Url in case the deep link doesn't work
+        fallbackUrl: 'https://livingdocs.io'
+      }],
+    deviceTypes: ['android', 'ios']
   }
 }
 ```
