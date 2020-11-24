@@ -74,7 +74,7 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
       return {
         id: ct.handle,
         label: ct.info.label,
-        // these props are used for creating a search request (see above section 'Filter Query Types')
+        // these props are used for creating a search request (see 'Filter Query Types' link below)
         type: 'contentType',
         value: ct.handle
       }
@@ -83,6 +83,8 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
   }
 })
 ```
+
+Hint: Look into [Filter Query Types](../reference-docs/project-config/search/base_filter.md) to find possible `{type, value}` combinations for the `filter.options` in the `mount` function.
 
 ### isDefault option
 
@@ -157,12 +159,12 @@ liEditor.vueComponentRegistry.registerComponent({
 
 After registering the filter, the vue component will recieve a prop called `filter` and the upstream-editor has some logic behind the scenes. For example the filter is written onto the localStorage so it persists through refreshing or navigating and triggers the search, or is cleared after resetting the filter settings.
 ```js
-<template> 
+<template>
   // the 'update:filter' event is required
-  <div 
+  <div
     @click="$emit('update:filter', {type: 'dateRange', amount: 24, value: 'h'})">
   Filter logic
-  </div> 
+  </div>
 </template>
 
 <style lang="scss" scoped>
