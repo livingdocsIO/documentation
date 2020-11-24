@@ -80,7 +80,7 @@ props: {
 ### searchFilter
 A `searchFilter` registers a Vue component as filter for the search UI.
 
-These are the `props` which are provided to your vue component: 
+These are the `props` which are provided to your vue component:
 ```js
 props: {
   filter: {
@@ -90,4 +90,4 @@ props: {
 },
 ```
 
-A full example can be seen [here](../../guides/register_custom_dashboard_filters.md#register-custom-vue-component-filter)
+A full example can be seen [here](../../guides/register_custom_dashboard_filters_.md#register-custom-vue-component-filter)

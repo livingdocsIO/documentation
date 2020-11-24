@@ -24,4 +24,4 @@ displayFilters: [{filterName: 'liDateTimeRange', config: {metadataPropertyName: 
 
 ## Custom Display Filter
 
-One can also register it's own display filter. Look into this [guide](../../../guides/register_custom_dashboard_filters.md) for more information.
+One can also register it's own display filter. Look into this [guide](../../../guides/register_custom_dashboard_filters_.md) for more information.

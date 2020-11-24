@@ -73,7 +73,7 @@
 ## Guides
 
 * [Register a Custom Server Feature](guides/add_customizations.md)
-* [Register a Custom Display Filter](guides/register_custom_dashboard_filters.md)
+* [Register a Custom Display Filter](guides/register_custom_dashboard_filters_.md)
 * [Copy documents between types](guides/document_copy.md)
 * [Assign Access Rights](guides/access_rights.md)
 * [Implement Single Sign-On](guides/github-login.md)
