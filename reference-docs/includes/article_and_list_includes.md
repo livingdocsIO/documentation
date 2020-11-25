@@ -5,7 +5,7 @@ The Livingdocs core predefines 2 editor user interfaces for the `doc-include` se
 The `embed-teaser` is an article embed. The user can click the component containing the `embed-teaser` include and the sidebar shows a user interface that lets the user select an article to be embedded as a teaser.
 The `list` represents a list of articles, commonly seen on startpages of newspapers. It assumes a manually sorted list that can be created with the Livingdocs list interface (see main navigation inside the Livingdocs editor). The sidebar renders a user interface where a user can select a list or re-order the articles in that list.
 
-Both of those core includes require you to implement a custom server-side rendering plugin if you want the preview and rendering insided published documents.
+Both of those core includes require you to implement a custom server-side rendering plugin if you want the preview and rendering inside published documents.
 
 ### Embed-teaser
 
@@ -160,15 +160,19 @@ The configuration lets you define a `minCount` and `maxCount` for the list. The 
 ```js
 module.exports = async function (feature, server) {
   const includesApi = server.features.api('li-includes')
+  const publicationApi = server.features.api('li-documents').publication
+  const documentListsApi = server.features.api('li-document-lists')
   await includesApi.registerServices([
-    require('../../plugins/includes/list')
+    // an example for the code in this include service is right below
+    require('../../plugins/includes/list.js')(documentListsApi, publicationApi)
   ])
 }
 ```
 
 ```js
-// gallery-embed.js
-module.exports = {
+// list.js
+module.exports = function (documentListsApi, publicationApi) {
+  return {
     name: 'list',
     uiComponents: [
       {
@@ -180,11 +184,28 @@ module.exports = {
     rendering: {
       type: 'function',
       async render (params, options) {
-        // TODO render your HTML template given the parameters
+        // you want to add error handling to this code
+        // it is left out here for clarity
+        const documentList = await documentListsApi.get(params.listId, undefined, options)
+        const documentIds = documentList.documents
+          .map(entry => entry.document.id)
+          .filter(Boolean)
+        const documentVersions = await publicationApi.getPublicationsByDocumentIds(documentIds)
+        const res = []
+        for (const docVersion of documentVersions) {
+          if (!docVersion) continue
+          const document = docVersion.getSerializedDocument()
+          document.metadata = docVersion.getMetadata()
+          document.revision = docVersion.getSerializedRevision()
+          res.push(document)
+        }
+        // here you get all the documents in res
+        // you want to turn them into some html
         return {html: '<h1>TODO render list</h1>'}
       }
     }
   }
+}
 ```
 
 The above code snippet again assumes you are inside a custom feature. See [here](../../guides/add_customizations.html#server) for how to register a custom feature.
