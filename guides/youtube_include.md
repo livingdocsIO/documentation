@@ -43,9 +43,9 @@ module.exports = async function (feature, server) {
   const includesApi = server.features.api('li-includes')
 
   // register the include service
-  await includesApi.registerServices([
+  await includesApi.registerService(
     require('../../plugins/includes/youtubeService')
-  ])
+  )
 }
 
 // ../../plugins/includes/youtubeService.js

@@ -50,9 +50,9 @@ liServer.features.register('custom-includes', require('app/includes'))
 // app/includes/index.js
 module.exports = async function (feature, server) {
   const includesApi = server.features.api('li-includes')
-  await includesApi.registerServices([
+  await includesApi.registerService(
     require('../../plugins/includes/tweet')
-  ])
+  )
 }
 
 // ../../plugins/includes/tweet.js

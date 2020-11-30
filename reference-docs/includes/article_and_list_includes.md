@@ -59,9 +59,9 @@ In order for the editor to know which user interface to render for which `doc-in
 ```js
 module.exports = async function (feature, server) {
   const includesApi = server.features.api('li-includes')
-  await includesApi.registerServices([
+  await includesApi.registerService(
     require('../../plugins/includes/gallery-embed')
-  ])
+  )
 }
 ```
 
@@ -162,10 +162,10 @@ module.exports = async function (feature, server) {
   const includesApi = server.features.api('li-includes')
   const publicationApi = server.features.api('li-documents').publication
   const documentListsApi = server.features.api('li-document-lists')
-  await includesApi.registerServices([
+  await includesApi.registerService(
     // an example for the code in this include service is right below
     require('../../plugins/includes/list.js')(documentListsApi, publicationApi)
-  ])
+  )
 }
 ```
 
