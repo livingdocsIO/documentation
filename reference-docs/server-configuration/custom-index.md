@@ -1,5 +1,7 @@
 # Custom Elasticsearch Index
 
+Added in: `release-2020-12`
+
 Livingdocs allows to index data (e.g. publications) in Elasticsearch with custom data and mapping. The customer fully controls what data and format is indexed. The core server supports the indexing process with
 - Data transformation hooks for processing
 - Creating/processing the data via batches/jobs
@@ -36,6 +38,10 @@ elasticIndex: {
   // be throttled when the load is higher
   maxCpu: 80, // default: 80
 
+  // every index name will be prefixed to prevent name clashes
+  // the index will be created with this pattern: `${indexNAmePrefix}-${handle}-index`
+  indexNamePrefix: 'your-company-local',
+
   // enable/disable the Livingdocs publication index (used in the public API for search requests)
   // see: [Publication Index](../server-configuration/publication-index.md)
   documentPublicationIndexEnabled: true, // default: true
@@ -49,9 +55,7 @@ elasticIndex: {
 
       // used as identifier e.g. for the background indexing via CLI
       handle: 'my-custom-publication',
-      // every index name will be prefixed to prevent name clashes
-      // the index name in this example would be: 'your-company-my-custom-publication-index'
-      indexNamePrefix: 'your-company',
+
       // file to define the mapping and the transformation of the documents
       indexInitializationFile: require.resolve('../../app/search/my-custom-publication/init.js'),
 
@@ -59,9 +63,6 @@ elasticIndex: {
       // optional
       // --------
 
-      // Overwrite the alias pointing to your elastic index
-      // The default alias is the 'handle' (in this example - 'my-custom-publication')
-      alias: 'an-alias'
       // The context is passed to the 'processBatch' and 'createBatches' function
       // With that it's possible to search/index documents based on the context
       context: {
@@ -72,6 +73,13 @@ elasticIndex: {
         isPublished: true,
         myCustomField: 'hello world'
       },
+
+      // When disabled, the index will be ignored for all operations
+      enabled: true, // default: true
+
+      // Overwrite the alias pointing to your elastic index
+      // The default alias is the 'handle' (in this example - 'my-custom-publication')
+      alias: 'an-alias'
 
       // enable/disable the Livingdocs publication index (used in the public API for search requests)
       // see: [Publication Index](../server-configuration/publication-index.md)

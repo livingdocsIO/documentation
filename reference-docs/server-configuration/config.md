@@ -556,19 +556,17 @@ For inspiration, you can also check out our [current default document search fun
 
 #### Custom Elasticsearch Index
 
+Added in: `release-2020-12`
+
 Integrate custom Elasticsearch indexes. If you want to know more (with all possible options), look into the [guide](./custom-index.md).
 
 ```js
 // conf/environments/local.js
 elasticIndex: {
 
-  // used as identifier e.g. for the background indexing via CLI
-  handle: 'my-custom-publication',
   // every index name will be prefixed to prevent name clashes
-  // the index name in this example would be: 'your-company-my-custom-publication-index'
-  indexNamePrefix: 'your-company',
-  // file to define the mapping and the transformation of the documents
-  indexInitializationFile: require.resolve('../../app/search/my-custom-publication/init.js'),
+  // the index will be created with this pattern: `${indexNAmePrefix}-${handle}-index`
+  indexNamePrefix: 'your-company-local',
 
   // A custom index can be registered here
   // The indexing hooks call every custom index and handle them
@@ -584,9 +582,9 @@ elasticIndex: {
 ```
 
 #### Push Notifications
-Configuration examples for the different notification services. 
+Configuration examples for the different notification services.
 
-Firebase: 
+Firebase:
 ```js
 pushNotifications: {
   enabled: true,
@@ -614,7 +612,7 @@ pushNotifications: {
 }
 ```
 
-Airship: 
+Airship:
 
 Added in: `release-2020-10`
 ```js
@@ -624,17 +622,17 @@ pushNotifications: {
       apiUrl: 'https://go.urbanairship.com'
       apiAuthKeys: [{
         // must be base64 encoded '<App key>:<master secret key>'
-        apiAuthKey: 'SECRET', 
+        apiAuthKey: 'SECRET',
 
         // must match with the platform handle
         handle: 'li-website'
       }],
       deepLinks: [{
         // must match with the platform handle
-        handle: 'li-website',  
+        handle: 'li-website',
 
         // {articleId} will be replaced with the id from the document
-        urlTemplate: 'az://artikel/{articleId}', 
+        urlTemplate: 'az://artikel/{articleId}',
 
         // fallback Url in case the deep link doesn't work
         fallbackUrl: 'https://livingdocs.io'
