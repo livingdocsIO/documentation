@@ -95,6 +95,12 @@ The following lists all events, before the comma, the name of the event and behi
   - migration.accept, `(eventName, {migration})`
   - migration.cancel, `(eventName, {migration})`
 
+
+- mediaLibraryEntry added in: `release-2020-12`
+  - mediaLibraryEntry.create, `(eventName, {userId, projectId, mediaLibraryEntry})`
+  - mediaLibraryEntry.update, `(eventName, {userId, projectId, id})`
+  - mediaLibraryEntry.archive, `(eventName, {userId, projectId, id})`
+
 - project
   - project.create, `(eventName, {project})`
   - project.update, `(eventName, {project})`
