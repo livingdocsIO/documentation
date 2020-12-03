@@ -78,7 +78,7 @@ It is important to understand that a `doc-include` service ("foo" in the example
 ### What are the customizations
 
 The [server customization](./server_customization.md) is normally a simple node.js plugin that uses any templating language (e.g. lodash templates) to render a HTML string from a template and parameters.
-The [editor customization](./editor_customization.md) is an angular component. Angular (1.x) knowledge is required for this.
+The [editor customization](./editor_customization.md) can be done in 3 different ways: a schema describing the params, a Vue component or an AngularJS component.
 
 Both customizations are optional.
 - A `doc-include` service with neither server nor editor part would just render an empty placeholder into the rendered HTML wherever a respective component was dropped.
