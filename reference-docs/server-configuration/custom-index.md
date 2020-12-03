@@ -47,7 +47,7 @@ elasticIndex: {
   documentPublicationIndexEnabled: true, // default: true
 
   // A custom index can be registered here
-  // The indexing hooks call every custom index and handle them
+  // The live indexing hooks call every custom index and handle them
   customIndexes: [
     {
       // required
@@ -103,10 +103,13 @@ const elasticsearchMapping = require('./mapping.json')
  *
  * @param {Object}   params
  * @param {Object}   params.server upstream server instance
+ * @param {Object}   params.indexConfig important values from the customIndex config
+ *                                      like handle, context, ...
  */
-module.exports = async function ({server}) {
-  // TODO: up or downstream server? based on that, change the description
-  const indexApi = server.features.api('li-indexing').index
+module.exports = async function ({server, indexConfig}) {
+  const indexingApi = server.features.api('li-indexing')
+  const publicationApi = server.features.api('li-documents').publication
+  const metadataApi = server.features.api('li-documents').metadata
 
   /**
    * createBatches is an optional function to define how batch jobs for indexing are created
@@ -114,17 +117,18 @@ module.exports = async function ({server}) {
    * Do only an implementation when you have special requirements for the context and ranges
    * Usually it's only the case when you want to index data which are not related to publications
    *
-   * @param {Object}   params
-   * @param {Object}   params.context
-   * @param {?string}  params.context.contentType
-   * @param {?string}  params.context.documentType
-   * @param {?number}  params.context.projectId
-   * @param {?}        params.payload.myCustomValue - passed via context object of index config
-   * @param {number}   params.batchSize
+   * @param {Object}        params
+   * @param {Object}        params.context
+   * @param {?string}       params.context.contentType
+   * @param {?string}       params.context.documentType
+   * @param {?number}       params.context.projectId
+   * @param {Object}        params.context.updatedAt
+   * @param {number|Date}   params.context.updatedAt.from time in ms since 1970
+   * @param {number}        params.batchSize
    * @returns {Promise<object>}
    *   Returns a promise object {context, ranges}
-   *     context -> will be passed to 'processBatch' as payload
-   *     ranges  -> will be passed to 'processBatch' as payload.from / payload.to
+   *     context -> will be passed to 'processBatch' as context
+   *     ranges  -> will be passed to 'processBatch' as range.from / range.to
    *   e.g.
    *   {
    *     context: { projectId: 2 },
@@ -134,7 +138,7 @@ module.exports = async function ({server}) {
    *   }
    */
   async function createBatches ({batchSize, context}) {
-    return indexApi._createDocumentBatches({batchSize, ...context})
+    return indexingApi._createDocumentBatches({batchSize, ...context})
   }
 
   /**
@@ -143,39 +147,51 @@ module.exports = async function ({server}) {
    *   2) Map documents/publications to Elasticsearch format
    *   3) Index documents/publications into Elasticsearch
    *
-   * @param {Object}   params
-   * @param {Object}   params.payload
-   * @param {number}   params.payload.from - range (document)Id from
-   * @param {number}   params.payload.to - range (document)Id to
-   * @param {?string}  params.payload.contentType
-   * @param {?string}  params.payload.documentType
-   * @param {?number}  params.payload.projectId
-   * @param {?}        params.payload.myCustomValue - passed via context object of index config
-   * @param {Object}   params.customIndexConfig - server config elasticIndex.customIndexes[{}]
+   * Both use cases
+   *   - background indexing via CLI
+   *   - live indexing (e.g. press the publish button in the editor)
+   * call the processBatch function. The background indexing pass the 'ranges' parameter
+   * and the live indexing pass the 'ids' parameter.
+   *
+   * @param {Object}        params
+   * @param {?Object}       params.range
+   * @param {?number}       params.range.from id from (for background indexing)
+   * @param {?number}       params.range.to  id to (for background indexing)
+   * @param {?array}        params.ids array of document ids (for live indexing)
+   * @param {Object}        params.context
+   * @param {?string}       params.context.contentType
+   * @param {?string}       params.context.documentType
+   * @param {?number}       params.context.projectId
+   * @param {Object}        params.context.updatedAt
+   * @param {number|Date}   params.context.updatedAt.from time in ms since 1970
+   * @param {?}             params.context.myCustomValue - passed via context object of index config
    */
-  async function processBatch ({payload, customIndexConfig}) {
-    const publications = await indexApi.fetchPublications({payload})
-    return indexApi.bulk({
-      handle: customIndexConfig.handle,
+  async function processBatch ({context, range, ids}) {
+    const documentVersions = await publicationApi.getLatestPublicationsV2({...context, ...range, ids})
+    const updatedDocumentVersions = await Promise.all(documentVersions.map((d) => metadataApi.updateOnRender(d)))
+
+    return indexingApi.bulk({
+      handle: indexConfig.handle,
       // entries to index, e.g.
       // [
       //   { operation: 'update', id: 60011, entry: { id: 60011, documentId: 60011, title: 'test' } },
       //   { operation: 'delete', id: 60012 }
       // ]
-      entries: publications.map((publication) => {
+      entries: updatedDocumentVersions.map((documentVersion) => {
+        const documentId = documentVersion.getDocumentId()
         // delete operation
-        if (!publication.created_at) {
+        if (!documentVersion.publicationEntity.created_at) {
           return {
             operation: 'delete',
-            id: `${publication.project_id}:${publication.document_id}`
+            id: documentId
           }
         }
         // update operation
         return {
           operation: 'update',
-          id: `${publication.project_id}:${publication.document_id}`,
+          id: documentId,
           entry: {
-            id: `${publication.project_id}:${publication.document_id}`,
+            id: documentId,
             title: publication.title
           }
         }
@@ -215,13 +231,20 @@ module.exports = async function ({server}) {
 
 ## Server API
 
-TODO: add example for live indexing
-TODO: How to make a search query
+### Search
+
+Based on the customIndex configs, Elasticsearch indexes are updated via live indexing (automatically after the publish event) or via background indexing (reindexing via CLI). It's possible to search in your custom index with that API below:
+
+```js
+const handle = 'my-custom-index-handle'
+const idsToSearchFor = [1,17,42]
+const indexingApi = await test.liServer.features.api('li-indexing')
+const body = {query: {bool: {filter: {terms: {_id: idsToSearchFor}}}}}
+const results = await indexingApi.search({handle, body})
+```
 
 
 ## Index Management via CLI
-
-TODO: add screenshot (index/delete index)
 
 ### Custom Index
 
