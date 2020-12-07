@@ -25,7 +25,7 @@ We suggest to use the [Publication Index](../server-configuration/publication-in
 
 An integration is based on the server config and the initialisation file which contains the transformation, thats it!
 
-First, one needs to setup the configuration. You can see an example below.
+First, the `elasticIndex` server config needs to be added.
 
 ```js
 // conf/environments/local.js
@@ -80,10 +80,6 @@ elasticIndex: {
       // Overwrite the alias pointing to your elastic index
       // The default alias is the 'handle' (in this example - 'my-custom-publication')
       alias: 'an-alias'
-
-      // enable/disable the Livingdocs publication index (used in the public API for search requests)
-      // see: [Publication Index](../server-configuration/publication-index.md)
-      documentPublicationIndexEnabled: true, // default: true
     }
   ]
 },
