@@ -123,6 +123,16 @@ There are 2 renditions here, web and app. For the web, the `embed-teaser` includ
 
 The image above shows how a manually sorted list of article teasers is created in Livingdocs. Upon selecting the component, the user can select a list in the sidebar ("bar" in the example). If the user presses "edit" in the sidebar, the user gets a second sidebar (to the left) where she can change the order of articles and add/remove articles. When she presses "Publish List" the preview is updated.
 
+_Note: you need to activate the editor environment config for the inline list editing to become visible_
+```js
+// for example: all.js in the editor
+module.exports = { 
+  app: {
+    inlineListEditingIsEnabled: true
+  } 
+}
+``` 
+
 #### Design definition
 
 ```html
