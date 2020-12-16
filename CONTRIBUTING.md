@@ -23,7 +23,7 @@ In the guides always state what a certain guide is trying to achieve. Be compreh
 
 ## Gitbook Usage
 
-This documentation is built using [GitBook](https://www.gitbook.com/). If you want to run it locally, follow the [Installation and Setup section](https://toolchain.gitbook.com/setup.html). The gist is:
+This documentation is built using [GitBook](https://www.gitbook.com/). If you want to run it locally, follow the [Installation and Setup section](https://github.com/GitbookIO/gitbook/blob/master/docs/setup.md). The gist is:
 
 *Initial installation*
 

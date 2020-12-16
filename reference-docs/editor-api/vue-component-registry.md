@@ -29,7 +29,7 @@ As you can see, [Vue Single File Components](https://vuejs.org/v2/guide/single-f
 
 ### includeParamsSidebarForm
 
-A `includeParamsSidebarForm` is used to render a form to manipulate `params` for `doc-include`s. [This Guide](includes-embeds/twitter_include_embed) shows you how to use such a component.
+A `includeParamsSidebarForm` is used to render a form to manipulate `params` for `doc-include`s. [This Guide](../../guides/twitter_include_embed.md) shows you how to use such a component.
 
 This component needs to take exactly one prop named `params`. It will contain an object with the params for the `doc-include`.
 ```js

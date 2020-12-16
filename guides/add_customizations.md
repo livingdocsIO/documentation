@@ -68,7 +68,7 @@ The same also works if you need to access any of the [core features](https://git
 The code customizations in the Livingdocs editor (user interface) are restricted to the following cases:
 - custom Angular factories or services (for use in other customizations)
 - custom Angular components for metadata fields
-- .. or [custom model classes](../reference-docs/editor-configuration/metadata.html) for existing metadata fields
+- .. or [custom model classes](../reference-docs/editor-configuration/metadata.md) for existing metadata fields
 - custom Angular components for doc-include sidebar user interfaces
 - custom [Display Filter](../reference-docs/project-config/search/display_filter.md)
 - custom Dashboard item (a single item in the articles dashboard)

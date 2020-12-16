@@ -20,4 +20,4 @@ https://docs.microsoft.com/en-us/windows/wsl/install-win10
 - Run all the npm and node steps in the bash from linux
   - As information when you start the editor you have to type manually the url http://localhost:9000 
 - Run all the docker commands in powershell
-- Proceed with the [getting started](./getting-started-with-local-development)
+- Proceed with the [getting started](./getting-started-with-local-development.md)

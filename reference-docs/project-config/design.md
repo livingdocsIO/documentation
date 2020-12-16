@@ -275,7 +275,7 @@ Example Output:
 
 #### `resrc.it`
 
-Works both for <img> tags as well as for other tags.
+Works both for `<img>` tags as well as for other tags.
 
 Example Output:
 ```html
@@ -283,7 +283,6 @@ Example Output:
   class="resrc"
   data-src="https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg">
 ```
-
 
 #### Overwriting config in a Component Directive
 
