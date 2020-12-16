@@ -90,7 +90,7 @@ module.exports = {
   }
 ```
 
-The above code snippet assumes you are inside a custom feature. See [here](../../guides/add_customizations.html#server) for how to register a custom feature.
+The above code snippet assumes you are inside a custom feature. See [here](../../guides/add_customizations.md#server) for how to register a custom feature.
 The `name` of the `doc-include` to register must match the service name you used in the design definition. In the case of the article embed, the `name` must be `embed-teaser`.
 The first key we have, `uiComponents`, defines a list of ui components that are rendered in the sidebar of the editor for the given `doc-include`. We will come back to all the available options when describing [how to do custom editor user interfaces](./editor_customization.md). For now just note that we register 2 Angular components: `liEmbedTeaserIncludeModal` and `liEmbedTeaserLink`. Those are predefined in the core and the names must exactly match. (note: if you don't want a link to the embedded article in the sidebar, just leave the `liEmbedTeaserLink` entry away)
 The second key `rendering` defines how your doc-include should be rendered. We will come back to the remote options later. For now take note of the function method that allows you to define a function that returns the rendering of the doc-include as an HTML string.
@@ -218,9 +218,9 @@ module.exports = function (documentListsApi, publicationApi) {
 }
 ```
 
-The above code snippet again assumes you are inside a custom feature. See [here](../../guides/add_customizations.html#server) for how to register a custom feature.
+The above code snippet again assumes you are inside a custom feature. See [here](../../guides/add_customizations.md#server) for how to register a custom feature.
 The `name` of the `doc-include` to register must match the service name you used in the design definition. In the case of the manual list, the `name` must be `list`.
 The first key we have `uiComponents` defines a list of ui components that are rendered in the sidebar of the editor for the given `doc-include`. For the list example we register the predefined component `liManualList`. The name must much exactly.
 The second key `rendering` defines how your doc-include should be rendered. The options and method are equivalent to the `embed-teaser` case.
 
-As with the `embed-teaser` you have to enable the `list` for publishing if you want this. See [the above section](./article_and_list_includes.md#enable-for-publishing) on how this is done (in the `list` case you need to register `list`).
+As with the `embed-teaser` you have to enable the `list` for publishing if you want this. See [the above section](#enable-for-publishing) on how this is done (in the `list` case you need to register `list`).

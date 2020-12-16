@@ -6,7 +6,7 @@ A stack is a list of features that a server loads when it starts.
 
 Examples of features are: `li-cache`, `li-designs`, `li-search`. The list of all the core features is available here:
 
-https://github.com/livingdocsIO/livingdocs-server/blob/master/core/api/core_features.coffee
+https://github.com/livingdocsIO/livingdocs-server/blob/master/core/api/core_features.js
 
 
 ## Configuration

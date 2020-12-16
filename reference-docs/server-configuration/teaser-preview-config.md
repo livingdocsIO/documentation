@@ -37,7 +37,7 @@ This roughly translates into the following:
 
 ## Source object schema
 
-A subset of a document structure that you will be able to write lookups against. The `metadata` object gives access to all properties you set up using [metadata plugins](./metadata) 
+A subset of a document structure that you will be able to write lookups against. The `metadata` object gives access to all properties you set up using [metadata plugins](../server-api/metadata.md) 
 
 ```
 {

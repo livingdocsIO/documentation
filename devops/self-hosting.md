@@ -22,8 +22,8 @@ Any custom configuration, as well as the supported versions for elasticsearch an
 The applications are stateless and follow the 12 factor app methodology.
 Any system level dependency and the required environment variables are visible in the respective Dockerfile.
 
-- https://github.com/livingdocsIO/livingdocs-docker/tree/master/server
-- https://github.com/livingdocsIO/livingdocs-docker/tree/master/editor
+- https://github.com/livingdocsIO/docker/tree/master/livingdocs-server-base
+- https://github.com/livingdocsIO/docker/tree/master/livingdocs-editor-base
 
 #### Container data volumes
 

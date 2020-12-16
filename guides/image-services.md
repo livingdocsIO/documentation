@@ -41,7 +41,7 @@ images: {
 ```
 
 This will route image upload requests from Livingdocs to your chosen URL instead of S3.
-For details please see the reference documentation for the [server configuration](../../reference-docs/server-configuration/config.md)
+For details please see the reference documentation for the [server configuration](../reference-docs/server-configuration/config.md)
 
 
 ### Delivery
@@ -59,7 +59,7 @@ You can also use other image services as described at the end of this document.
 You can choose different render strategies how an image should be rendered in
 HTML.
 
-Here are some Examples. For more detailed information check out the [project configuration](../../reference-docs/project-config/design.md)
+Here are some Examples. For more detailed information check out the [project configuration](../reference-docs/project-config/design.md)
 
 Example of an image with a srcset attribute:
 ```html

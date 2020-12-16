@@ -25,5 +25,5 @@ They contain the minimal setup along with a docker setup to get you started quic
 
 Both the core server and the editor npm package expose an API when required
 
-- [Editor core API](./editor/README.md)
-- [Server core API](./server/README.md)
+- [Editor core API](../reference-docs/editor-api/initalization.md)
+- [Server core API](../reference-docs/server-apis/data_source_api.md)
