@@ -11,7 +11,7 @@ This document gives an overview of how to register custom features without going
 
 A custom server feature can contain any code you like. Common examples are bridges to third-party APIs or import features that import documents from some other source like an old legacy CMS.
 
-The explanations here only refer to customizations that need coding. Other behavior can be customized using the [JSON configuration files](../reference-docs/server-configuration/config.md).
+The explanations here only refer to customizations that need coding. Other behavior can be customized using the [JSON configuration files](../reference-docs/project-config/settings.md).
 
 In the server you will normally have an `app/server.js` file add new features. The content looks something like this:
 ```js
@@ -70,7 +70,7 @@ The code customizations in the Livingdocs editor (user interface) are restricted
 - custom Angular components for metadata fields
 - .. or [custom model classes](../reference-docs/editor-configuration/metadata.html) for existing metadata fields
 - custom Angular components for doc-include sidebar user interfaces
-- custom [Dashboard filters](../reference-docs/editor-configuration/menu-and-dashboards.md)
+- custom [Dashboard filters](../reference-docs/project-config/editor_settings.md#dashboards)
 - custom Dahboard item (a single item in the articles dashboard)
 - custom Embed components (the core contains Iframes and Tweets)
 - custom Iframely metadata extractors

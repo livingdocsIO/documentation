@@ -19,7 +19,7 @@ This flow assumes that the users from the SSO provider haven been created within
 
 ### Enabling an authentication route in the editor
 
-On the login screen of the Livingdocs editor you want a way to actually use your third-party SSO login. You can configure it like this in the [editor configuration](../reference-docs/editor-configuration/editing-features.html):
+On the login screen of the Livingdocs editor you want a way to actually use your third-party SSO login. You can configure it like this in the [editor configuration](../reference-docs/project-config/editor_settings.md):
 ```
 auth: {
   providers: [{

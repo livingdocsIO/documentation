@@ -3,7 +3,7 @@
 ## Basic Configuration
 
 To enable dragging both images and documents from _huGO+_ into livingdocs you first need to configure `hugo.resource`
-in the [server configuration](../reference-docs/server-configuration/config.md)
+in the [server configuration](../reference-docs/project-config/README.md)
 
 
 ## Image Drag and Drop
@@ -11,7 +11,7 @@ in the [server configuration](../reference-docs/server-configuration/config.md)
 Images can be dragged onto a livingdocs document directly from _huGO+_ after the basic configuration is set up.
 
 Note: you can restrict from which sources images can be uploaded, e.g. you could allow only uploads from _huGO+_.
-See [Image Source Policy](../reference-docs/editor-configuration/image-source-policy.md)
+See [Image Source Policy](../reference-docs/project-config/content_types.md#image-source-policy)
 
 
 ## Document Drag and Drop

@@ -29,7 +29,7 @@ You can configure your own image storage using the following configuration:
 ```
 
 This will route image upload requests from Livingdocs to your chosen URL instead of S3.
-For details please see the reference documentation for the [server configuration](../../reference-docs/server-configuration/config.md)
+For details please see the reference documentation for the [server configuration](../reference-docs/project-config/README.md)
 
 ### Delivery
 

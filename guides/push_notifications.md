@@ -19,9 +19,9 @@ The resulting feature looks as follows.
 ## Enable push notifications
 
 To enable push notifications you need to do 3 things:
-1. setup the firebase config in your [server configuration](../reference-docs/server-configuration/config.md#push-notifications), you will need to create a Google firebase key for this
-2. in every channel that should support push notifications, [configure the required metadata field](../reference-docs/project-config/content_types.md#push-notifications)
-3. in every channel that should support push notifications, [configure your topics](../reference-docs/project-config/content_types.md#push-notifications)
+1. setup the firebase config in your [server configuration](../reference-docs/project-config/README.md), you will need to create a Google firebase key for this
+2. in every channel that should support push notifications, [configure the required metadata field](../reference-docs/project-config/content_types.md#enable-push-notifications-for-a-contenttype)
+3. in every channel that should support push notifications, [configure your topics](../reference-docs/project-config/content_types.md#enable-push-notifications-for-a-contenttype)
 4. setup the push notifications field in your elasticsearch mapping
 
 The [livingdocs server boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate) has commented out sections for all three things so you can check there.
@@ -66,9 +66,9 @@ After doing those three things, push notifications are enabled and you can see t
 ## Add a custom dashboard item
 
 You need to do 3 things to have your custom dashboard item that shows push notification information:
-1. [whitelist the push notification metadata for use in the dashboard](../reference-docs/server-configuration/config.md#search)
+1. [whitelist the push notification metadata for use in the dashboard](../reference-docs/project-config/editor_settings.md#example-dashboard)
 2. create an angular component for the dashboard item
-3. [configure the angular component in the editor](../reference-docs/editor-configuration/editing-features.md#dashboard)
+3. [configure the angular component in the editor](../reference-docs/project-config/editor_settings.md#dashboard)
 
 Below is a sample implementation for (2).
 

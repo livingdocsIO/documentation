@@ -50,7 +50,7 @@ Lets see an example component in a Livingdocs design.
 ```
 
 First note that the component makes use of the `embed-teaser` service for the `doc-include` directive `gallery-embed`. It instances the service. In the `defaultParams` we pass a `layout` to the server-side rendering.
-The most important thing is the configuration in `config.search`. The configuration is equivalent to the one of the dashboard search. Please see [here](../editor-configuration/menu-and-dashboards.md) for all available options. The configuration in the example above allows the user to select available filters for `documentState` (e.g. published, etc.) and adds the hidden queries to only show articles (no pages) and of the articles only the subset of image galleries. This seems to be a sane default for an image gallery search modal.
+The most important thing is the configuration in `config.search`. The configuration is equivalent to the one of the dashboard search. Please see [here](../project-config/editor_settings.md#user-menu) for all available options. The configuration in the example above allows the user to select available filters for `documentState` (e.g. published, etc.) and adds the hidden queries to only show articles (no pages) and of the articles only the subset of image galleries. This seems to be a sane default for an image gallery search modal.
 
 #### Server-side registration
 
@@ -90,7 +90,7 @@ module.exports = {
   }
 ```
 
-The above code snippet assumes you are inside a custom feature. See [here](../../guides/add_customizations.html#server) for how to register a custom feature.
+The above code snippet assumes you are inside a custom feature. See [here](../../guides/add_customizations.md#server) for how to register a custom feature.
 The `name` of the `doc-include` to register must match the service name you used in the design definition. In the case of the article embed, the `name` must be `embed-teaser`.
 The first key we have, `uiComponents`, defines a list of ui components that are rendered in the sidebar of the editor for the given `doc-include`. We will come back to all the available options when describing [how to do custom editor user interfaces](./editor_customization.md). For now just note that we register 2 Angular components: `liEmbedTeaserIncludeModal` and `liEmbedTeaserLink`. Those are predefined in the core and the names must exactly match. (note: if you don't want a link to the embedded article in the sidebar, just leave the `liEmbedTeaserLink` entry away)
 The second key `rendering` defines how your doc-include should be rendered. We will come back to the remote options later. For now take note of the function method that allows you to define a function that returns the rendering of the doc-include as an HTML string.
@@ -187,7 +187,7 @@ module.exports = {
   }
 ```
 
-The above code snippet again assumes you are inside a custom feature. See [here](../../guides/add_customizations.html#server) for how to register a custom feature.
+The above code snippet again assumes you are inside a custom feature. See [here](../../guides/add_customizations.md#server) for how to register a custom feature.
 The `name` of the `doc-include` to register must match the service name you used in the design definition. In the case of the manual list, the `name` must be `list`.
 The first key we have `uiComponents` defines a list of ui components that are rendered in the sidebar of the editor for the given `doc-include`. For the list example we register the predefined component `liManualList`. The name must much exactly.
 The second key `rendering` defines how your doc-include should be rendered. The options and method are equivalent to the `embed-teaser` case.
