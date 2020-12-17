@@ -137,7 +137,7 @@ If `preferWebp` is set to `true` Livingdocs will pass the `auto=format` paramete
 
 #### Backwards compatible image rendering server config
 
-Until all your designs contain an `imageRendering` config you should
+Until all your designs contain an `mediaRendering` config you should
 keep the server wide 'backgroundImage' and 'srcSet'
 imageServices configurations.
 

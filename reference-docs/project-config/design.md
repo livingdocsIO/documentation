@@ -17,7 +17,7 @@ designSettings: {
       ]
     },
 
-    imageRendering: {
+    mediaRendering: {
       // strategy used if doc-image is declared on an <img> tag
       imgTagRenderStrategy: 'srcSet',
       // strategy used if doc-image is declared on any other tag
@@ -41,6 +41,14 @@ designSettings: {
           320
         ],
         sizes: ['100vw']
+      },
+
+      video: {
+        controls: true,
+        loop: false,
+        autoplay: false,
+        muted: false',
+        preload: 'auto'
       }
     },
 
@@ -298,7 +306,7 @@ directives: {
 ```
 Via the property `renderStrategy` a renderStrategy can be explicitly defined.
 The `backgroundImage` config in this example is of the same structure as
-it is in the `imageRendering` property of the `designSettings`.
+it is in the `mediaRendering` property of the `designSettings`.
 
 
 ## Component Properties
