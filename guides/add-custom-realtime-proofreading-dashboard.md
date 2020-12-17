@@ -30,7 +30,7 @@ metadata: [{
 ```
 
 References:
-- [How to customise a proofreading task](./add-custom-proofreading-task)
+- [How to customise a proofreading task](./add-custom-proofreading-task.md)
 - [How to configure a metadata field](../reference-docs/server-configuration/metadata)
 
 ### Add my-proofreading to elasticsearch
@@ -53,7 +53,7 @@ dashboards: [{
 ```
 
 References:
-- [How to configure custom dashboards](../reference-docs/editor-configuration/menu-and-dashboards)
+- [How to configure custom dashboards](../reference-docs/project-config/editor_settings.md#dashboards)
 
 ## 3) Add your custom dashboard to the menu
 
@@ -79,7 +79,7 @@ How to test it
 - go to the `My Proofreading` dashboard via the menu and look if your task is on the board
 
 References:
-- [How to add a custom dashboard entry](../reference-docs/editor-configuration/menu-and-dashboards)
+- [How to add a custom dashboard entry](../reference-docs/project-config/editor_settings.md#dashboards)
 
 
 ## 4) Customise a card on the dashboard

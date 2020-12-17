@@ -16,7 +16,7 @@ So setting a role on a group gives users of this group certain scopes in the sys
 ## Available Scopes
 
 This lists all available scopes with their system identifiers.
-In the configuration you might find `scope` settings in some places, e.g. for the [sidePanelItems](../reference-docs/editor-configuration/editing-features.md#main-menu).
+In the configuration you might find `scope` settings in some places, e.g. for the [sidePanelItems](../reference-docs/project-config/editor_settings.md).
 
 Articles:
 

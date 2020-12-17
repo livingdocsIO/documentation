@@ -110,7 +110,7 @@ NOTE: the default content only gets applied when a document is created manually,
 
 The default content is simply a (valid) Livingdocs JSON applying to your design. We advise you to use the UI in the "Project Setup" for adapting the default content.
 
-One useful property on components within the default content is the `position: fixed` property. It allows to fix a component in place, useful, e.g. for headers. [Read more](../editor-configuration/editing-features.md#pin-components)
+One useful property on components within the default content is the `position: fixed` property. It allows to fix a component in place, useful, e.g. for headers.
 
 ## Editor Wrapper
 
@@ -270,7 +270,7 @@ The schema is as follows:
   })
 ```
 
-Apart from the general settings (`renderSettings`) you define an entry for each teaser (`teasers`) giving it the Livingdocs component (from the design) that should be used for rendering as well as a mapping of metadata values to component directives. See our guide on [teaser previews](../server-configuration/teaser-preview-config.md) for more details.
+Apart from the general settings (`renderSettings`) you define an entry for each teaser (`teasers`) giving it the Livingdocs component (from the design) that should be used for rendering as well as a mapping of metadata values to component directives. See our guide on [teaser previews](../includes/embed_and_list.md#embed-teaser) for more details.
 
 ## Desk-Net 
 *has UI support*
@@ -327,7 +327,7 @@ metadata: [{
 }]
 ```
 
-With this in place you can set the channel configuration for your push notification topics \(see example config above\) and the firebase configuration in the [server config](../server-configuration/config.md#push-notifications).
+With this in place you can set the channel configuration for your push notification topics \(see example config above\) and the firebase configuration in the [server config](./README.md).
 
 ## Text Formatting
 

@@ -36,7 +36,7 @@ app: {
 }
 ```
 
-Above we see the configuration of our custom task in the editor. There is nothing special here. The metadata entry in elasticsearch for the review task already exists in the boilerplate so you don't need to do anything in this regard. If you have a different task name or don't work with the boilerplate, see [here](../reference-docs/editor-configuration/editing-features.md#tasks) for what to do in elastic.
+Above we see the configuration of our custom task in the editor. There is nothing special here. The metadata entry in elasticsearch for the review task already exists in the boilerplate so you don't need to do anything in this regard. If you have a different task name or don't work with the boilerplate, see [here](../reference-docs/project-config/editor_settings.md#dashboards) for what to do in elastic.
 
 ## Server plugin
 
