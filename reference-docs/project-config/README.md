@@ -178,7 +178,10 @@ The project config is a huge JSON file with subproperties for things like conten
       icon: 'book-open',
       url: {
         origin: 'https://example.com',
-        // possible patterns:, :path, :routingPath, :projectId, :slug, :id
+        // the available variables in the pattern are:
+        // - :id (document.id)
+        // - :projectId (document.projectId)
+        // - :slug (document.metadata.slug)
         pathPattern: '/article/:id'
       }
     },
