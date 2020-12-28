@@ -355,6 +355,35 @@ processing: {
 }
 ```
 
+#### Videos
+Added in: `release-2021-02`
+For videos it is necessary to have a specific configuration. The storage, publicUrl and the uploadRestriction must be set.
+
+```js
+  videos: {
+    // must be public accessible
+    publicUrl: 'http://livingdocs-videos-development.s3.amazonaws.com',
+    storage: {
+      strategy: 's3',
+      config: {
+        // the videos must be public-read to be shown in the editor
+        params: {
+          ACL: 'public-read'
+        },
+        bucket: 'livingdocs-videos-development',
+        region: 'eu-central-1',
+        secretAccessKey: '****',
+        accessKeyId: '****'
+      }
+    },
+
+    uploadRestrictions: {
+      maxFileSize: 100 * 1000 * 1000 // 100MB
+    }
+  }
+```
+[config options](./config-storage-options.md) for `storage`.
+
 #### Files
 
 ```js
@@ -652,6 +681,9 @@ The asset management impacts editor in four ways:
 - You can see all the uploaded images and perform operations on them
 - You can edit the Metadata of images in a dedicated view, which is accessible over an image
 - You can enforce metadata on images before a user can upload them
+
+Added in: `release-2020-12`
+- Videos are supported
 
 ##### Prerequisite
 
