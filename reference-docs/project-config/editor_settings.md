@@ -92,7 +92,11 @@ An example:
     showUi: true, // default true
     altTextPrefilling: {
       metadataPropertyName: 'caption'
-    }
+    },
+    componentDirectivesPrefilling: [
+      {metadataPropertyName: 'source', directiveName: 'source'},
+      {metadataPropertyName: 'caption', directiveName: 'caption'}
+    ],
     dashboard: {
       displayFilters: ['timeRange']
     },
@@ -155,7 +159,7 @@ Type of the dashboard, one of these: `dashboard`, `kanbanBoard`, `taskBoard`
 
 #### displayFilters
 
-[Display Filters](search/display_filter.md) are shown to the user below the search input
+[Display Filters](search/display_filter.md) are filters that the user can set in the UI (below the search input)
 
 #### baseFilters
 
@@ -260,14 +264,20 @@ Set custom `startPage: {path: '/my-custom-path'}}` to set the path used to rende
 
 ## Media Library
 
-After linking the media library on the `mainNavigation` (see above), one can also define `displayFilters` to customise the media library dashboard (see example on top of the page).
+After linking the media library on the `mainNavigation` (see above), you can customize the default Media Library Dashboards:
 
-The media library settings only take effect if you link it with the `mediaLibrary` item in the `mainNavigation`.
-You can apply 3 customized settings for the default media library dashbaord:
-- filters on the main dashboard: `dashboard: {displayFilters: []}`
-- filters on the editor inline dashboard: `editorSelection: {displayFilters: []}`
-- a metadata property handle from which the `alt` attribute on an image tag is filled: `altTextPrefilling: {metadataPropertyName: ''}`
+- `mediaLibrary.dashboard.displayFilters`: an array of [Display Filters](search/display_filter.md) for the Dashboard accessible via the Main Navigation
+- `mediaLibrary.editorSelection.displayFilters`: an array of [Display Filters](search/display_filter.md) for the Dashboard accessible via the Media Button in the Document Editing Toolbar
 
+Then there are 2 configs to define the behavior when Images are inserted into a Document from the Media Library:
+- `mediaLibrary.altTextPrefilling: {metadataPropertyName: ''}`: a metadata property handle from which the `alt` attribute on an image tag is filled.
+- `mediaLibrary.componentDirectivesPrefilling`: an array of mappings to prefill `doc-editable` directives with Media Library Entry Metadata
+```js
+[
+  {metadataPropertyName: 'source', directiveName: 'source'},
+  {metadataPropertyName: 'caption', directiveName: 'caption'}
+]
+```
 ## Text Formatting
 
 The text formatting toolbar can be customized globally here. You can also overwrite this settings for each content type.
