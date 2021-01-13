@@ -1,6 +1,6 @@
 # Register Custom Dashboard Filters
 
-It is possible to register a custom filter and use it as a [displayFilter](../reference-docs/project-config/search/display_filter.md) for dashboards or search modals.
+It is possible to register a custom filter and use it as a [displayFilter](/reference/display_filter.md) for dashboards or search modals.
 
 At the moment there are 4 types of custom filters
 - [Register Custom List v2 Filter](#register-custom-list-v2-filter)
@@ -84,7 +84,7 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
 })
 ```
 
-Hint: Look into [Filter Query Types](../reference-docs/project-config/search/base_filter.md) to find possible `{type, value}` combinations for the `filter.options` in the `mount` function.
+Hint: Look into [Filter Query Types](/reference/base_filter.md) to find possible `{type, value}` combinations for the `filter.options` in the `mount` function.
 
 ### isDefault option
 

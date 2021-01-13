@@ -97,7 +97,7 @@ Livingdocs support different strategies for responsive images:
 
 The first approach uses the an images `srcset` attribute. A good article on the topic is found here: https://ericportis.com/posts/2014/srcset-sizes/ The `srcset` attribute is supported by all major browsers. It is *not* supported in IE11 and below. Of course that does not mean that users can not see images on IE11 just that they are not responsive there.
 
-Srcset only works for inline images (`img` tag). If you use a background image, you can currently set a max width. Read here on [why srcset does not work for background images](../know-how/responsive-bg-images.md).
+Srcset only works for inline images (`img` tag). If you use a background image, you can currently set a max width. Read here on [why srcset does not work for background images](/reference/responsive-bg-images.md).
 
 The second approach expects you to provide a client-side Javascript that runs in the reader's browser, detects the respective device size and requests the optimal image for this size. We can provide such a script based on the now out-of-service service rescr.it. For another image service you would need to provide your own script.
 

@@ -161,11 +161,11 @@ Type of the dashboard, one of these: `dashboard`, `kanbanBoard`, `taskBoard`
 
 #### displayFilters
 
-[Display Filters](search/display_filter.md) are filters that the user can set in the UI (below the search input)
+[Display Filters](/reference/display_filter.md) are filters that the user can set in the UI (below the search input)
 
 #### baseFilters
 
-[Base Filters](search/base_filter.md) are invisible filters and applied to every search (including the default result list)
+[Base Filters](/reference/base_filter.md) are invisible filters and applied to every search (including the default result list)
 
 #### sort
 
@@ -268,8 +268,8 @@ Set custom `startPage: {path: '/my-custom-path'}}` to set the path used to rende
 
 After linking the media library on the `mainNavigation` (see above), you can customize the default Media Library Dashboards:
 
-- `mediaLibrary.dashboard.displayFilters`: an array of [Display Filters](search/display_filter.md) for the Dashboard accessible via the Main Navigation
-- `mediaLibrary.editorSelection.displayFilters`: an array of [Display Filters](search/display_filter.md) for the Dashboard accessible via the Media Button in the Document Editing Toolbar
+- `mediaLibrary.dashboard.displayFilters`: an array of [Display Filters](/reference/display_filter.md) for the Dashboard accessible via the Main Navigation
+- `mediaLibrary.editorSelection.displayFilters`: an array of [Display Filters](/reference/display_filter.md) for the Dashboard accessible via the Media Button in the Document Editing Toolbar
 
 Then there are 2 configs to define the behavior when Images are inserted into a Document from the Media Library:
 - `mediaLibrary.altTextPrefilling: {metadataPropertyName: ''}`: a metadata property handle from which the `alt` attribute on an image tag is filled.

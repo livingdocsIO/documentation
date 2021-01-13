@@ -105,6 +105,8 @@
 * Categories / Routing
   * [Routing](guides/routing-system.md)
   * [Setup Categories](guides/activate-categories.md)
+* Development
+  * [On Windows](guides/setup_windows.md)
 
 ## Devops
 
@@ -127,3 +129,15 @@
 ## Contribution Guidelines
 
 * [Guidelines](./CONTRIBUTING.md)
+
+----
+
+* Reference
+  * [Display Filter](reference/display_filter.md))
+  * [Base Filter](reference/base_filter.md))
+  * [Config Storage Options](reference/config-storage-options.md))
+  * [Config Storage Options](reference/es-document-search-example.md))
+  * Legacy Design v1
+    * [Design Config v1 to v2](reference/legacy-design/design_config_v1_to_v2.md))
+    * [Design Config v1](reference/legacy-design/design_config_v1.md))
+  * [Responsive Background Images](reference/responsive-bg-images.md))

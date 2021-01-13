@@ -70,7 +70,7 @@ The code customizations in the Livingdocs editor (user interface) are restricted
 - custom Angular components for metadata fields
 - .. or [custom model classes](../reference-docs/editor-configuration/metadata.md) for existing metadata fields
 - custom Angular components for doc-include sidebar user interfaces
-- custom [Display Filter](../reference-docs/project-config/search/display_filter.md)
+- custom [Display Filter](/reference/display_filter.md)
 - custom Dashboard item (a single item in the articles dashboard)
 - custom Embed components (the core contains Iframes and Tweets)
 - custom Iframely metadata extractors
