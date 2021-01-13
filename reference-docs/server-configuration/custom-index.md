@@ -103,7 +103,7 @@ const elasticsearchMapping = require('./mapping.json')
  *                                      like handle, context, ...
  */
 module.exports = async function ({server, indexConfig}) {
-  const indexingApi = server.features.api('li-indexing')
+  const indexingRepo = server.features.api('li-indexing')._indexingRepository
   const publicationApi = server.features.api('li-documents').publication
   const metadataApi = server.features.api('li-documents').metadata
 
@@ -134,7 +134,7 @@ module.exports = async function ({server, indexConfig}) {
    *   }
    */
   async function createBatches ({batchSize, context}) {
-    return indexingApi._createDocumentBatches({batchSize, ...context})
+    return indexingRepo.getDocumentRanges({batchSize, ...context})
   }
 
   /**
@@ -166,8 +166,8 @@ module.exports = async function ({server, indexConfig}) {
     const documentVersions = await publicationApi.getLatestPublicationsV2({...context, ...range, ids})
     const updatedDocumentVersions = await Promise.all(documentVersions.map((d) => metadataApi.updateOnRender(d)))
 
-    return indexingApi.bulk({
-      handle: indexConfig.handle,
+    return esClient.customBulk({
+      index: indexConfig.index,
       // entries to index, e.g.
       // [
       //   { operation: 'update', id: 60011, entry: { id: 60011, documentId: 60011, title: 'test' } },
