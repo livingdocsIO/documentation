@@ -295,7 +295,7 @@ designs: {
   }
 }
 ```
-[config options](./config-storage-options.md) for `storage`.
+[config options](/reference/config-storage-options.md) for `storage`.
 
 #### Images
 
@@ -382,7 +382,7 @@ For videos it is necessary to have a specific configuration. The storage, public
     }
   }
 ```
-[config options](./config-storage-options.md) for `storage`.
+[config options](/reference/config-storage-options.md) for `storage`.
 
 #### Files
 
@@ -579,7 +579,7 @@ module.exports = function (searchQuery) {
 }
 ```
 
-For inspiration, you can also check out our [current default document search function](../../know-how/es-document-search-example.md).
+For inspiration, you can also check out our [current default document search function](/reference/es-document-search-example.md).
 
 
 
@@ -703,7 +703,7 @@ images: {
   }
 }
 ```
-[config options](./config-storage-options.md) for `storage`.
+[config options](/reference/config-storage-options.md) for `storage`.
 
 
 ##### Setting up the Elastic Search Mapping

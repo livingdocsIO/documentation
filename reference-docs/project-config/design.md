@@ -153,7 +153,7 @@ components: [
 ]
 ```
 Note: if you have a design in the legacy version 1 here is a [guide how to
-update your design to version 2](../legacy-design/design_config_v1_to_v2.md).
+update your design to version 2](/reference/legacy-design/design_config_v1_to_v2.md).
 
 
 ## Assets
