@@ -63,7 +63,39 @@ You can easily test your embedded desig with a local seeding config by just rest
 
 ## Setup asset workflow
 
-TODO Dibran
+Design assets need to be accessible for both the editor as well as the end-user facing delivery. We strongly recommend the use of a high availability object storage like AWS S3, Google Cloud (Object) Storage or any other object storage. Usually you can setup a CDN in front of your object storage to optimize your asset delivery and consumption.
+
+### Design assets configuration
+
+In the `design_settings` file (see above), you can specify the location where your required assets are located:
+
+```
+{
+  v: 2,
+  settings: {/* omitted for illustration purpose */},
+  editorSettings: {/* omitted for illustration purpose */},
+  designSettings: {
+    assets: [
+      'https://cdn.example.com/1.0.0/styles.css',
+      'https://cdn.example.com/1.0.0/scripts.js'
+    ],
+    componentGroups: {/* omitted for illustration purpose */}
+  }
+}
+```
+
+We recommend prefixing your assets with a versioning e.g. `1.0.0`, `1.0.1` (semantic versioning) which allows to roll back to a specific verison, gives better control over caching policies and provides a better ground for reasoning in case of debugging and communication.
+
+### Design assets publishing workflow
+
+Ideally you have a webpack (or similar) development setup in your delivery project which allows to work on the design locally and observe the changes directly. Once you are happy with your changes, you'd build your assets and use a upload script to publish your new design version to the object storage. As steps:
+
+1. Work on a new design version (dev mode)
+2. Once finished, build the assets and upload, using an incremented prefix (folder) e.g. `1.0.0` -> `1.0.1`, to the object storage via an upload script
+3. Once uploaded, bump the version prefix in your `designSettings.assets` path entries configuration
+4. Run the project seeding on your servers
+5. Optionally, you can migrate old documents to the new design version (automatically created via the project seeding)
+6. Done, the editor would use the new entries now, you can read the design version from the project configuration also in the delivery project to make sure you have a single point of truth (allows to roll back etc.)
 
 ## Migrate old documents to embedded design
 
