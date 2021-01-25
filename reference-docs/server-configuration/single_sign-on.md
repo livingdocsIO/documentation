@@ -16,6 +16,27 @@ In the following example we set three different providers: Github, Google and Fa
 [...]
   auth: {
     connections: {
+      azure: {
+        strategy: 'li-authentication-openid-connect',
+        enabled: true,
+        loginEnabled: true,
+        registrationEnabled: false,
+        connectionId: 'azure',
+        issuer: 'https://login.microsoftonline.com/${tenantId}/v2.0/.well-known/openid-configuration',
+        config: {
+          clientId: '',
+          clientSecret: '',
+          extractGroupNames: async (jwtContentFromSSOProvider, groupsOfProject) => {
+            return ['owners']
+          },
+          // defaultProjectId: 1,
+          defaultProjectHandle: 'enterprise-web-print'
+        },
+        ui: {
+          label: 'AD',
+          icon: 'azure'
+        }
+      },
       github: {
         strategy: 'li-authentication-sso',
         enabled: true,
@@ -72,8 +93,9 @@ In the following example we set three different providers: Github, Google and Fa
 [...]
 ```
 
-- `strategy` is set to `li-authentication-sso` as opposed to `li-authentication-local` the default email/password authentication strategy
-- `enabled` is a flag for easily switching on and off different providers
+- `strategy` 
+  - You should be building upon `li-authentication-openid-connect` which builds upon the `openid-connect` (OIDC) standard. OIDC extends OAuth 2.0  (Added in `release-2020-12`)
+  - `li-authentication-sso` builds on OAuth 2.0
 - `connectionId` is the provider handle
 - `config` can contain up to two "fixed" fields: `scope` and `callbackURL`, this is provider specific. The two other fields are `clientID` and `clientSecret` you can get those by creating an Oauth2 application at one of those external providers. For example to get those credentials from Github you have to go to `Settings>Developer settings` and then click on `New Oauth App`.
 - `ui` is only used by the editor to "draw" the actual signin and signup buttons.
