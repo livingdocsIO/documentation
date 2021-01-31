@@ -96,6 +96,7 @@
   * [Configure Includes: Article Embed and List](reference-docs/includes/article_and_list_includes.md)
   * [Includes: Add an Twitter Include](guides/twitter_include_embed.md)
   * [Includes: Add a Youtube Include](guides/youtube_include.md)
+  * [Includes: Embedded Documents](guides/embedded_documents.md)
 * Design
   * [Running and defining design migrations](guides/document-migrations/migrations.md)
     * [Example: Removing a directive](guides/document-migrations/examples/remove_directive.md)
