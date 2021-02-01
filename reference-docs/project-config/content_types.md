@@ -25,7 +25,7 @@ We plan to allow to move all layout options which are currently defined in the d
   },
 
   editorWrapper: '<div class="doc-section"></div>',
-  defaultContent: [{component: 'title', position: 'fixed}],
+  defaultContent: [{component: 'title', position: 'fixed'}],
 
   // define the server-side metadata
   metadata: [{
@@ -95,9 +95,12 @@ We plan to allow to move all layout options which are currently defined in the d
     }
   },
 
-  // With 'documentCreationDisabled: true', you can't create documents with this content-type
+  // With 'documentCreationDisabled: true',
+  // you can't create documents with this content-type
   documentCreationDisabled: true, // default false
-  viewAfterDocumentCreation: 'publish' // either 'edit' or 'publish', default is 'edit'
+
+  // either show 'edit' or 'publish' view after creating a document
+  viewAfterDocumentCreation: 'publish' // default is 'edit'
 }
 ```
 
