@@ -15,6 +15,7 @@ In order to setup and run a Livingdocs application on your local machine, you ne
 - [GraphicsMagick](http://www.graphicsmagick.org/README.html) - A library that, among other things, enables image processing. We use it mainly to resize images.
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - Everybody's favorite distributed version control software. We use it extensively and, let's be honest, chances are you are too.
 - [jq](https://stedolan.github.io/jq/download/) - A lightweight and flexible command-line JSON processor. We use it for batch patches and data migrations.
+- [local certificate](https://github.com/livingdocsIO/livingdocs-editor/blob/master/config/cert.js) - Due to security reasons some features require a valid SSL/TLS setup and running the editor with HTTPS.
 
 On a lower note, you'll also need active Github and Docker accounts respectively.
 
