@@ -282,9 +282,29 @@ app: {
 },
 spellcheck: {
   isEnabled: true,
-  'host': 'http://your-spellcheck-server.com'
+  'host': 'http://your-spellcheck-server.com/spellcheck'
 }
 ```
+
+If a custom spellcheck service is configured, Livingdocs makes requests to
+the configured endpoint with a `text` parameter containing text from
+individual paragraphs.
+
+Example request:
+```http
+GET http://your-spellcheck-server.com/spellcheck?text=foobar
+```
+
+Spellcheck response with no corrections:
+```json
+{"status":true}
+```
+
+Spellcheck response with corrections:
+```json
+{"status":false, "bad":[{"word":"falsch","pos":0,"suggest":["Falsch"]}]}
+```
+
 
 ## Character Counter
 
