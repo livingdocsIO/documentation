@@ -31,7 +31,6 @@
 * [Server Config](reference-docs/server-configuration/server-initalization.md)
   * [Configuration File](reference-docs/server-configuration/config.md)
   * [Webhooks](reference-docs/server-configuration/webhooks.md)
-  * [Specify Loaded Features](reference-docs/server-configuration/stack.md)
   * [Logs](reference-docs/server-configuration/logging.md)
   * [Single Sign-On](reference-docs/server-configuration/single_sign-on.md)
   * [Using Google Cloud Storage](reference-docs/server-configuration/google-cloud-storage.md)
