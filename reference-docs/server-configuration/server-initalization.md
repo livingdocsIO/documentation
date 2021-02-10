@@ -5,46 +5,49 @@
 ```js
 // see server-configuration for how the configuration should look like
 const conf = require('./conf')
+const port = conf.get('server:port')
 
 // create a liServer with your configuration
 const liServer = require('@livingdocs/server')(conf)
 
-const port = liServer.config.get('server:port')
-liServer.listen(port, function (err) {
-  if (err) {
-    throw err
-  }
-  console.log('Listening on http://localhost:%s', port)
-})
+liServer.listen(port)
+  .then(() => {
+    liServer.warn('Listening on http://localhost:%s', port)
+  })
 ```
 
 ### `liServer.initialize`
 
-`liServer.initialize((done) => {done()})`
+Initializes all features and executes _initialized hooks_ (see below) right before calling its callback. It returns a promise. This can be used in scripts and tests.
 
-Initializes all features. Executes _initialized hooks_ (see below) right before calling its callback.
+```js
+const conf = require('./conf')
+const liServer = require('@livingdocs/server')(conf)
 
+liServer.initialize()
+  .then(() => {
+    liServer.warn('Started the server without http server')
+  })
+```
 
 ### `liServer.listen`
 
-`liServer.listen(port, (done) => {done(err, server)})`
-
-Calls `liServer.initialize()` and then starts a web server under the provided port. 
+Calls `liServer.initialize()` and then starts a http server on the configured port.
 Note: If you call `liServer.listen()` you must not call `liServer.initialize()` before.
-
-
 
 ### `liServer.registerInitializedHook`
 
-`liServer.registerInitializedHook((done) => {done()})`
-
-Hooks to be executed by `liServer.initialize()` right after all features have been initialized. This method
-is useful to configure features dynamically or register feature specific hooks. An example would be to register
-a publish hook on the documents feature.
+Hooks to be executed by `liServer.initialize()` right after all features have been initialized.
+This method is useful to configure features dynamically or register feature specific hooks.
+An example would be to register a publish hook on the documents feature.
 
 ```js
-liServer.registerInitializedHook((done) => {
-  done(/* err */)
+liServer.registerInitializedHook(async () => {
+  liServer.log.info('This gets executed before starting the http server.')
+
+  // And will only start the server after it
+  // succeeded if you use promises in here
+  return new Promise((resolve) => setTimeout(resolve, 1000))
 })
 ```
 
