@@ -64,6 +64,8 @@ pusher: {
 
 #### Logging
 
+[More info about logging](./logging.md)
+
 ```js
 logs: {
   enabled: true,
