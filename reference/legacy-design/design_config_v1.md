@@ -12,7 +12,7 @@ Basic Information:
 "name": "boilerplate",
 "label": "Boilerplate Design",
 "version": "1.0.0",
-"author": "upfront.io"
+"author": "Livingdocs"
 ```
 
 ## Components

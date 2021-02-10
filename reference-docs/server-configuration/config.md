@@ -108,29 +108,32 @@ logs: {
 
 Configure the authentication feature.
 
-*Important* Replace `access_token_secret` and `connections.local.config.secret`
-with a randomly generated string for every environment you use.
-Changing the `access_token_secret` will render all access tokens in the
+*Important* Replace `accessTokenSecret` with a randomly generated string for every environment you use. It will be used to sign json web tokens.
+Changing the `accessTokenSecret` will render all access tokens in the
 database useless.
 
 ##### `connections.local`
 
 Represents the default email/password authentication strategy.
 
-- `default_login_domain` Allows to omit the email suffix
+- `defaultLoginDomain` Allows to omit the email suffix
   (e.g '@gmail.com') during login
-- `denied_passwords` Array of regexes that are used in the strong passwords
+- `deniedPasswords` Array of regexes that are used in the strong passwords
   feature. If the regex matches the password cannot be used.
 
 
 ```js
 auth: {
-  realm: 'livingdocs',
-  access_token_secret: 'GpA^xLH5$qLzWcqEvZmE3imYwVf68kXa1JR5rP*NFRUyRPQRtbVwWk3bHusD',
-  access_token_ttl: 12 * 3600 * 1000, // 12 h
-  authorization_code_ttl: 3600 * 1000 / 4, // 15min
-  password_reset_ttl: 6 * 3600 * 1000, // 6h
-  account_confirmation_ttl: 72 * 3600 * 1000, // 3d
+  accessTokenSecret: 'GpA^xLH5$qLzWcqEvZmE3imYwVf68kXa1JR5rP*NFRUyRPQRtbVwWk3bHusD',
+
+  // The refresh interval of tokens used in the editor
+  accessTokenTtl: '12h',
+
+  // How long a password reset link should be valid
+  passwordResetTtl: '6h',
+
+  // How long the link in an account confirmation email should be valid
+  account_confirmation_ttl: '3d',
   connections: {
     local: {
       label: 'Password',
@@ -139,11 +142,9 @@ auth: {
       registrationEnabled: true,
       strategy: 'li-authentication-local',
       config: {
-        default_login_domain: 'upfront.io',
-        secret: '8wP0oTmQFX4^f@FCW*MiQ%qkDu*m6B!NBElVg%hVmMHNdr2F@F9J4yf$ykN5',
-        bcrypt_iterations: 10,
-        password_reset_url: '/reset#code={{code}}',
-        denied_passwords: [
+        defaultLoginDomain: 'livingdocs.io',
+        passwordResetUrl: '/reset#code={{code}}',
+        deniedPasswords: [
           'upfront',
           'livingd[o0][cg]s',
           'lukas',
