@@ -164,6 +164,9 @@ emails: {
   transports: {
     awsEmailSender: {
       from: 'Livingdocs <noreply@livingdocs.io>',
+      // You can use any nodemailer module to send emails
+      // The configuration below gets passed to this module
+      // See https://nodemailer.com/
       module: 'nodemailer-ses-transport',
       // for more options see the aws client config object:
       // https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Config.html
@@ -179,17 +182,17 @@ emails: {
     userCreated: {
       transport: 'default',
       subject: 'Welcome at Livingdocs',
-      htmlTemplatePath: require.resolve('../../plugins/email-templates/user_created.html'),
+      htmlTemplatePath: require.resolve('@livingdocs/server/plugins/email-templates/user_created.html'),
       attachments: {
         cid: 'logo',
         filename: 'logo.png',
-        path: require.resolve('../../plugins/email-templates/logo.png')
+        path: require.resolve('@livingdocs/server/plugins/email-templates/logo.png')
       }
     },
     passwordReset: {
       transport: 'awsEmailSender',
       subject: 'Password reset',
-      htmlTemplatePath: require.resolve('../../plugins/email-templates/password_reset.html'),
+      htmlTemplatePath: require.resolve('@livingdocs/server/plugins/email-templates/password_reset.html'),
 
       // # or
       // textTemplate: 'Reset password for <%= user.name %>'
@@ -198,7 +201,7 @@ emails: {
       attachments: {
         cid: 'logo',
         filename: 'logo.png',
-        path: require.resolve('../../plugins/email-templates/logo.png')
+        path: require.resolve('@livingdocs/server/plugins/email-templates/logo.png')
       }
     }
   }
