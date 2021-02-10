@@ -1,4 +1,4 @@
-# Using Google Cloud Storage
+# Configuring Google Cloud Storage
 
 For users who want to store their images, files and design assets in a Google Cloud Storage (GCS) bucket rather than on Amazon, we provide a separate storage strategy.
 

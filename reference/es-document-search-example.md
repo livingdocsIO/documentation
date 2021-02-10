@@ -1,3 +1,5 @@
+# Elasticsearch Query Implementation
+
 This is an example of the current Elasticsearch [search request body](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html) function to define your own search function for documents.
 
 ```js
