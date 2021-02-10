@@ -81,16 +81,6 @@ logs: {
 }
 ```
 
-[More info about logging](./logging.md)
-
-
-## Stack
-A stack is a list of features that a server loads when it starts: [How to configure a stack?](./stack.md)
-```js
-stack: ['all']
-```
-
-
 ## Features
 
 
