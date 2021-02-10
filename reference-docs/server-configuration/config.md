@@ -24,19 +24,39 @@ editor: {
 ```
 
 
-#### Postgres
+#### Postgres Database
 
 ```js
+db: 'postgres://postgres:password@localhost:5432'
+// or
+db: {
+  connectionString: 'postgres://postgres:password@localhost:5432?max=20',
+  ssl: {
+    rejectUnauthorized: false,
+    ca: '-----BEGIN CERTIFICATE-----....',
+    key: '-----BEGIN PRIVATE KEY-----...',
+    cert: '-----BEGIN CERTIFICATE-----....',
+  }
+}
+// or
 db: {
   host: 'localhost',
   port: '5432',
   user: 'postgres',
   database: 'li_local',
   pool_min: 1,
-  pool_max: 5,
+  pool_max: 20,
   ssl: false
 }
 ```
+
+To not create too many connections against postgres, we suggest to use a connection pooler running using `transaction` mode.
+
+Amazon, Google Cloud and other hosters also offer solutions for that.
+
+Self-hosted solutions could use [pgbouncer](https://www.pgbouncer.org/) or [odyssey](https://github.com/yandex/odyssey). We have some docker images for them in our docker registry.
+https://github.com/livingdocsIO/docker#livingdocsodyssey
+
 
 #### Amazon S3
 
