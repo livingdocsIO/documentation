@@ -135,8 +135,8 @@
 * Reference
   * [Display Filter](reference/display_filter.md))
   * [Base Filter](reference/base_filter.md))
-  * [Config Storage Options](reference/config-storage-options.md))
-  * [Config Storage Options](reference/es-document-search-example.md))
+  * [Storage Strategy Configuration](reference/storage-strategy-configuration.md))
+  * [Elasticsearch Query Implementation](reference/es-document-search-example.md))
   * Legacy Design v1
     * [Design Config v1 to v2](reference/legacy-design/design_config_v1_to_v2.md))
     * [Design Config v1](reference/legacy-design/design_config_v1.md))

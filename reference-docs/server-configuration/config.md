@@ -311,15 +311,14 @@ designs: {
   }
 }
 ```
-[config options](/reference/config-storage-options.md) for `storage`.
+[config options](/reference/storage-strategy-configuration.md) for `storage`.
 
 #### Images
 
 - Standard Option
 
 Define the Amazon S3 image upload target plus processing options that are
-applied before the image is uploaded. (The `bucket_region` must support
-Amazon Signature Version 2)
+applied before the image is uploaded.
 
 ```js
 images: {
@@ -398,7 +397,7 @@ For videos it is necessary to have a specific configuration. The storage, public
     }
   }
 ```
-[config options](/reference/config-storage-options.md) for `storage`.
+[config options](/reference/storage-strategy-configuration.md) for `storage`.
 
 #### Files
 
@@ -719,7 +718,7 @@ images: {
   }
 }
 ```
-[config options](/reference/config-storage-options.md) for `storage`.
+[config options](/reference/storage-strategy-configuration.md) for `storage`.
 
 
 ##### Setting up the Elastic Search Mapping
