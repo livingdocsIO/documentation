@@ -57,17 +57,6 @@ Amazon, Google Cloud and other hosters also offer solutions for that.
 Self-hosted solutions could use [pgbouncer](https://www.pgbouncer.org/) or [odyssey](https://github.com/yandex/odyssey). We have some docker images for them in our docker registry.
 https://github.com/livingdocsIO/docker#livingdocsodyssey
 
-
-#### Amazon S3
-
-```js
-aws: {
-  force_local_storage: false // defaults to `false`
-  secret_key: 'yourSecretKey'
-  access_key: 'yourAccessKey'
-}
-```
-
 #### Pusher
 
 Disabled by Default. Enable to show who is viewing a document in real time
@@ -292,7 +281,9 @@ designLoader: {
 #### Designs
 
 Configure the Livingdocs Design Server. When a design is uploaded the assets
-are moved to the storage configured here.
+are moved to the [storage configured](/reference/storage-strategy-configuration.md) here.
+
+[config options](/reference/storage-strategy-configuration.md) for `storage`.
 
 ```js
 designs: {
@@ -311,28 +302,34 @@ designs: {
   }
 }
 ```
-[config options](/reference/storage-strategy-configuration.md) for `storage`.
 
 #### Images
 
-- Standard Option
-
-Define the Amazon S3 image upload target plus processing options that are
+Define the S3 Storage as image upload target and processing options that are
 applied before the image is uploaded.
+
+Consult the [storage configuration](/reference/storage-strategy-configuration.md) to configure other providers than s3.
 
 ```js
 images: {
-  public: 'http://livingdocs-images-dev.s3.amazonaws.com',
-  bucket: 'livingdocs-images-dev',
-  bucket_region: 'us-west-1',
+  publicUrl: 'https://livingdocs-images-dev.s3.amazonaws.com',
+  storage: {
+    strategy: 's3',
+    config: {
+      bucket: 'livingdocs-images-development',
+      region: 'eu-central-1',
+      secretAccessKey: '****',
+      accessKeyId: '****'
+    }
+  },
   upload: {
-    max_file_size: 100 * 1000 * 1000, // 100MB, defaults to 5MB.
+    maxFileSize: 100 * 1000 * 1000, // 100MB, defaults to 5MB.
     max_resolution: 15 * 1000 * 1000 // 15 mega-pixels
   },
   processing: {
     // Default values that approximate 4MB
-    max_file_size: 4 * 1000 * 1000,
-    max_concurrent_processes: 1,
+    maxFileSize: 4 * 1000 * 1000,
+    maxConcurrentProcesses: 10,
     lossy: {
       max_dimension: 4000,
       quality: 80
@@ -344,7 +341,7 @@ images: {
 }
 ```
 
-- Proxy Option
+##### Alternative Image Proxy Configuration
 
 Alternatively you can forward image upload to another service.
 For more info about this see [Image Services](../../guides/image-services.md).
@@ -354,13 +351,13 @@ images: {
   proxy: {
     url: 'https://foobar.com/images/upload'
   },
-  upload_restrictions: {
-    max_file_size: 100*1000*1000 // 100MB, defaults to 5MB.
+  uploadRestrictions: {
+    maxFileSize: 100*1000*1000 // 100MB, defaults to 5MB.
   }
 }
 ```
 
-- Convert Option
+#### images.processing.convert Confguration
 
 It is possible to define a convert from one image format to another. If the sourceFormat is a vector based format you can define the density (dpi) which should be used to create the pixel based format.
 
@@ -372,19 +369,20 @@ processing: {
 
 #### Videos
 Added in: `release-2021-02`
-For videos it is necessary to have a specific configuration. The storage, publicUrl and the uploadRestriction must be set.
+For videos it is necessary to have a specific configuration.
+The storage, publicUrl and the uploadRestriction must be set.
+
+Consult the [storage configuration](/reference/storage-strategy-configuration.md) to configure other providers than s3.
 
 ```js
   videos: {
     // must be public accessible
-    publicUrl: 'http://livingdocs-videos-development.s3.amazonaws.com',
+    publicUrl: 'https://livingdocs-videos-development.s3.amazonaws.com',
     storage: {
       strategy: 's3',
       config: {
         // the videos must be public-read to be shown in the editor
-        params: {
-          ACL: 'public-read'
-        },
+        params: {ACL: 'public-read'},
         bucket: 'livingdocs-videos-development',
         region: 'eu-central-1',
         secretAccessKey: '****',
@@ -397,27 +395,29 @@ For videos it is necessary to have a specific configuration. The storage, public
     }
   }
 ```
-[config options](/reference/storage-strategy-configuration.md) for `storage`.
 
 #### Files
 
+Consult the [storage configuration](/reference/storage-strategy-configuration.md) to configure other providers than s3.
+
 ```js
 files: {
-  public: 'http://livingdocs-images-dev.s3.amazonaws.com',
-  bucket: 'livingdocs-images-dev',
-  bucket_region: 'us-west-1',
+  // The files feature is optional and can be disabled.
+  enabled: true,
+  publicUrl: 'https://livingdocs-files-dev.s3.amazonaws.com',
+  storage: {
+    strategy: 's3',
+    config: {
+      bucket: 'livingdocs-files-dev',
+      region: 'eu-central-1',
+      secretAccessKey: '****',
+      accessKeyId: '****'
+    }
+  },
   uploadRestrictions: {
     allowedMimeTypes: ['application/pdf'],
     maxFileSize: 100 * 1000 * 1000  // 100MB
   }
-}
-```
-
-The files feature is optional and can be disabled.
-
-```js
-files: {
-  enabled: false
 }
 ```
 
@@ -503,7 +503,7 @@ routing: {
   redis: {
     master_check_interval: 5000 // (default: 5000) how often do we check if we're the master
   }
-}
+},
 // Routes indexer
 kv: {
   enabled: true,
@@ -548,15 +548,15 @@ Configure the elasticsearch instance used by the search feature.
 ```js
 search: {
   host: 'http://localhost:9200',
-  article_document_index: 'li_local_documents',
-  number_of_replicas: 1,
+  articleDocumentIndex: 'li_local_documents',
+  numberOfReplicas: 1,
   apiVersion: '2.4', // optional, defaults to '2.4'
   log: null, // use 'trace' to debug the search feature (warning: very verbose)
 
   // The metadata mapping determines which metadata fields will be indexed
   // in elasticsearch. This can then be used to e.g. create search filters
   // based on metadata.
-  metadata_mapping: require.resolve('../some/path/metadata/es_metadata_mapping'),
+  metadataMapping: require.resolve('../some/path/metadata/es_metadata_mapping'),
 
   // Metadata fields that will be forwarded to the livigndocs-editor when
   // a document search is performed. This forwarding is needed to e.g show
@@ -594,7 +594,7 @@ module.exports = function (searchQuery) {
 }
 ```
 
-For inspiration, you can also check out our [current default document search function](/reference/es-document-search-example.md).
+For inspiration, you can also check out our [current default document search function](/reference/query-builder-plugin-implementation.md).
 
 
 
