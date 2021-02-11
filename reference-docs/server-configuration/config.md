@@ -357,7 +357,7 @@ images: {
 }
 ```
 
-#### images.processing.convert Confguration
+#### images.processing.convert Configuration
 
 It is possible to define a convert from one image format to another. If the sourceFormat is a vector based format you can define the density (dpi) which should be used to create the pixel based format.
 
@@ -548,7 +548,7 @@ Configure the elasticsearch instance used by the search feature.
 ```js
 search: {
   host: 'http://localhost:9200',
-  articleDocumentIndex: 'li_local_documents',
+  articleDocumentIndex: 'li-local-documents',
   numberOfReplicas: 1,
   apiVersion: '2.4', // optional, defaults to '2.4'
   log: null, // use 'trace' to debug the search feature (warning: very verbose)
@@ -600,7 +600,7 @@ For inspiration, you can also check out our [current default document search fun
 
 #### Custom Elasticsearch Index
 
-Added in: `release-2020-12`
+Added in: [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md)
 
 Integrate custom Elasticsearch indexes. If you want to know more (with all possible options), look into the [guide](./custom-index.md).
 
@@ -697,7 +697,7 @@ The asset management impacts editor in four ways:
 - You can edit the Metadata of images in a dedicated view, which is accessible over an image
 - You can enforce metadata on images before a user can upload them
 
-Added in: `release-2020-12`
+Added in: [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md)
 - Videos are supported
 
 ##### Prerequisite

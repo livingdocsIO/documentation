@@ -53,7 +53,8 @@ Livingdocs provides you a migration hook (async/await `migrateAsync` or callback
 
 #### Example
 
-Added in: `release-2020-12`
+Added in: [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md)
+
 ```js
 // file: app/data-migrations/async-migration.js
 
