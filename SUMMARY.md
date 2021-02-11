@@ -103,6 +103,7 @@
     * [Example: Renaming a directive](guides/document-migrations/examples/rename_directive.md)
     * [Example: Adding a metadata field](guides/document-migrations/examples/add_metadata_field.md)
   * [Create a Bullet List Component](guides/list_example.md)
+  * [Migrating from a reference to an embedded design](guides/migrate-to-embedded-design.md)
 * Categories / Routing
   * [Routing](guides/routing-system.md)
   * [Setup Categories](guides/activate-categories.md)
