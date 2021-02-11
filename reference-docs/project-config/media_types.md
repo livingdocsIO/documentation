@@ -198,6 +198,7 @@ Here is a complete list of fields you can use. Please consult https://www.iptc.o
 
 ## Media Sources
 
+
 Added in: `release-2021-03`
 
 This feature is only supported for mediaTypes of type `mediaImage`.
