@@ -29,4 +29,4 @@ The automatic validation is hardcoded for a set of given embeds and is recognize
 - `iframe` -> only allow iframe embeds
 - `tweet` -> only allow twitter embeds
 
-Use of the client-side embeds (html directive) is not recommended. We advise you to use [includes](./inlude.md) and write your own micro-service to control the rendering of third-party embeds.
+Use of the client-side embeds (html directive) is not recommended. We advise you to use [includes](./include.md) and write your own micro-service to control the rendering of third-party embeds.
