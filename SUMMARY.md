@@ -143,3 +143,4 @@
     * [Design Config v1 to v2](reference/legacy-design/design_config_v1_to_v2.md))
     * [Design Config v1](reference/legacy-design/design_config_v1.md))
   * [Responsive Background Images](reference/responsive-bg-images.md))
+  * [Media Sources](reference/media-source-example.md))
