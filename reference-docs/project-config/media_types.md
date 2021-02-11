@@ -19,6 +19,10 @@ If no `Media Type` config is provided it falls back to a default config where `t
 [{
   handle: 'image',
   type: 'mediaImage',
+  info: {
+    label: 'Image',
+    description: 'Media type for images'
+  }
   metadata: [
     {
       handle: 'title',
@@ -73,7 +77,21 @@ If no `Media Type` config is provided it falls back to a default config where `t
         metadataPropertyName: 'caption'
       }
     ]
-  }
+  },
+  mediaSources: [
+    {
+      handle: 'example',
+      // the plugin name must match with the registered plugin(-handle)
+      plugin: 'examplePlugin',
+      info: {
+        label: 'Example'
+      },
+      // config will be passed to the plugin
+     config: {
+       accessKey: '****'
+     }
+    }
+  ],
 }, {
   type: 'mediaVideo',
   handle: 'video',
@@ -177,3 +195,11 @@ Here is a complete list of fields you can use. Please consult https://www.iptc.o
 | Property Release Status                    | PropertyReleaseStatus                                        |
 | Web Statement of Rights                    | WebStatement                                                 |
 | Artwork or Object in the Image structure   | ArtworkOrObject                                              |
+
+## Media Sources
+
+Added in: `release-2021-03`
+
+This feature is only supported for the `mediaImage` mediaType.
+
+With [Media Sources](/reference/media-source-example.md) you can integrate asset research/import into Livingdocs. Instead of going onto another platform like Unsplash and then drag + drop images into Livingdocs, you can have Unsplash assets search results embedded into Livingdocs directly.
