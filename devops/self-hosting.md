@@ -37,3 +37,25 @@ Both the containers for server and editor are stateless. The elasticsearch and p
 
 #### Deployment
 We recommend building docker images on CI and pushing them to the registry. Deployment can be done manually or triggered by CI continuously.
+
+## Operating Livingdocs
+
+Notable required configurations and our recommended best practices are described below.
+
+**Avoiding CORS**
+
+The preferred solution is to serve the livingdocs server instance on the same domain as the editor to prevent CORS requests and have a better security as we don't need to make the login cookies accessible on multiple domains. Please expose the livingdocs server instance on `/proxy/api` and then in the `livingdocs-editor` environment configs, configure the _host:_ `module.exports={api: {host: '/proxy/api'}}`
+
+Alternatively you can use _proxiedHost_ instead of _host_ to proxy to a dns name of an internal service that's not accessible from the internet. We'll automatically set up a http/websocket proxy on `/proxy/api`.
+
+
+**Request headers**
+
+A non-standard request header that is required is the **x-forwarded-prefix**. 
+
+As an example on how to configure that in a standard kuberentes ingress can be found here:
+https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/#x-forwarded-prefix-header
+
+In this example the x-forwarded-prefix would look like this:
+
+`nginx.ingress.kubernetes.io/x-forwarded-prefix: "/proxy/api"`
