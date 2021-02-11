@@ -74,7 +74,7 @@ storage: {
 If you use an http proxy like [squid](http://squid-cache.org/), you can declare the `HTTPS_PROXY` environment variable, which then configures the aws client.
 e.g. `HTTPS_PROXY=http://localhost:3128 node index.js`
 
-Or you cna explicitly configure it with the options provided by the aws sdk:
+Or you can explicitly configure it with the options provided by the aws sdk:
 
 ```js
 storage: {
@@ -115,6 +115,9 @@ storage: {
 ```
 
 ### Cloudinary
+
+Added in: [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md)
+
 
 With cloudinary we support a storage provider that has built in image-processing
 and can directly serve the images instead of using a separate image service

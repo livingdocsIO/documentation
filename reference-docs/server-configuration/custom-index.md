@@ -1,6 +1,6 @@
 # Custom Elasticsearch Index
 
-Added in: `release-2020-12`
+Added in: [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md)
 
 Livingdocs allows to index data (e.g. publications) in Elasticsearch with custom data and mapping. The customer fully controls what data and format is indexed. The core server supports the indexing process with
 - Data transformation hooks for processing

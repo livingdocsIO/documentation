@@ -1,5 +1,5 @@
 # Video
-Added in: `release-2020-12`
+Added in: [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md)
 
 ## Example
 
