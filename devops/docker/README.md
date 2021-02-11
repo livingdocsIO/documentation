@@ -4,11 +4,8 @@ We provide a Docker setup for local development and production deployments.
 We recommend to use it, as we will constantly keep it up to date with the application.
 
 Docker files are available in both server and editor, both up- and downstream.
-For more details, have a look at the [livingdocs-docker repository](https://github.com/livingdocsIO/docker).
+Please consult the boilerplate projects of the [server](https://github.com/livingdocsIO/livingdocs-server-boilerplate#livingdocs-server-boilerplate) and the [editor](https://github.com/livingdocsIO/livingdocs-editor-boilerplate) and check the Dockerfiles.
 
-To install the newest docker files compatible with your version of the upstream, run
-```sh
-li-docker install
-```
 
-It will be stated in the release notes if a new livingdocs version requires an update of the docker files.
+We also provide several docker images that we use internally and at customers.
+To find our docker base images, have a look at the [livingdocsIO/docker repository](https://github.com/livingdocsIO/docker).
