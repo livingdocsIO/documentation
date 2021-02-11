@@ -70,7 +70,12 @@ module.exports = {
   // you must also define a fetch function to import the asset into the Media Library
   async fetchMediaImage ({projectId, key, config, log}) {
     // fetch image from remote service
-    const buffer = await fs.readFile(`test/fixtures/${key}`)
+    const fetchUrl = `https://your-source.com/${key}`
+    const res = await axios.get(fetchUrl, {
+      responseType: 'arraybuffer',
+      validateStatus: null
+    })
+    const buffer = Buffer.from(res.data)
 
     return {
       fileName: key,
