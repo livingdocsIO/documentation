@@ -202,4 +202,4 @@ Added in: `release-2021-03`
 
 This feature is only supported for mediaTypes of type `mediaImage`.
 
-With [Media Sources](/reference/media-source-example.md) you can integrate asset research/import into Livingdocs. Instead of going onto another platform like Unsplash and then drag + drop images into Livingdocs, you can have Unsplash assets search results embedded into Livingdocs directly.
+With [Media Sources](/reference/media-source-example.md) you can integrate asset research/import into Livingdocs. Instead of having to log in to another platform like Unsplash and then drag + drop images into Livingdocs, you can have Unsplash assets search results available directly in Livingdocs.
