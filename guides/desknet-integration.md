@@ -199,15 +199,15 @@ And we're all set. From now on, whenever you create a new story on Desk-Net with
 
 #### <a name="desknet-properties"></a>What are the available Desk-Net properties?
 
-When determining mapping results we analyze an enriched version of the result of [GetElement](http://api.desk-net.com/#api-Element-GetElement) on the Desk-Net API.
+When determining mapping results we analyze an enriched version of the result of [GetElement](https://api.desk-net.com/#api-Element-GetElement) on the Desk-Net API.
 
 The following prefetches are already in place:
 
-- `elementStatus` – [GetElementStatus](http://api.desk-net.com/#api-Element_status-GetElementStatus)
-- `publications[].status` – [GetPublicationStatus](http://api.desk-net.com/#api-Publication_status-GetPublicationStatus)
-- `publications[].category` – [GetCategory](http://api.desk-net.com/#api-Category-GetCategory)
-- `publications[].platform` – [GetPlatform](http://api.desk-net.com/#api-Platform-GetPlatform)
-- `publications[].type` – [GetType](http://api.desk-net.com/#api-Type-GetType)
+- `elementStatus` – [GetElementStatus](https://api.desk-net.com/#api-Element_status-GetElementStatus)
+- `publications[].status` – [GetPublicationStatus](https://api.desk-net.com/#api-Publication_status-GetPublicationStatus)
+- `publications[].category` – [GetCategory](https://api.desk-net.com/#api-Category-GetCategory)
+- `publications[].platform` – [GetPlatform](https://api.desk-net.com/#api-Platform-GetPlatform)
+- `publications[].type` – [GetType](https://api.desk-net.com/#api-Type-GetType)
 
 Additionally, all elements have
 - a property `publication` which always points at the one connected to the platformId set up in the current channel config.
@@ -365,22 +365,22 @@ const myImportTransform = async (desknetApi, element, document) => {
 ```
 
 - `async function getElement (elementId)`
- – [GetElement](http://api.desk-net.com/#api-Element-GetElement)
+ – [GetElement](https://api.desk-net.com/#api-Element-GetElement)
 
 - `async function getElementStatus (elementStatusId)`
- – [GetElementStatus](http://api.desk-net.com/#api-Element_status-GetElementStatus)
+ – [GetElementStatus](https://api.desk-net.com/#api-Element_status-GetElementStatus)
 
 - `async function getElementStatus (publicationStatusId)`
- – [GetPublicationStatus](http://api.desk-net.com/#api-Publication_status-GetPublicationStatus)
+ – [GetPublicationStatus](https://api.desk-net.com/#api-Publication_status-GetPublicationStatus)
 
 - `async function getCategory(categoryId)`
- – [GetCategory](http://api.desk-net.com/#api-Category-GetCategory)
+ – [GetCategory](https://api.desk-net.com/#api-Category-GetCategory)
 
 - `async function getPlatform(platformId)`
- – [GetPlatform](http://api.desk-net.com/#api-Platform-GetPlatform)
+ – [GetPlatform](https://api.desk-net.com/#api-Platform-GetPlatform)
 
 - `async function getType(typeId)`
- – [GetType](http://api.desk-net.com/#api-Type-GetType)
+ – [GetType](https://api.desk-net.com/#api-Type-GetType)
 
 - `async function getFullElement (elementId)` –
 This function resolves to a Desk-Net element [with prefetched values](#desknet-properties).

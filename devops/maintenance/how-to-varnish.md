@@ -7,8 +7,8 @@ Using varnish is quite simple, but configure and interpret varnish needs some ti
 Varnish VCL is the most important part of varnish. In this file you can define the behaviour of varnish. For example what and how long a request gets cached. In the sources section are some links to get more familiar with a varnish VCL.
 
 **Sources**
-* http://book.varnish-software.com/4.0/chapters/VCL_Basics.html
-* http://book.varnish-software.com/4.0/chapters/Cache_Invalidation.html
+* https://book.varnish-software.com/4.0/chapters/VCL_Basics.html
+* https://book.varnish-software.com/4.0/chapters/Cache_Invalidation.html
 * https://varnish-cache.org/docs/4.0/users-guide/vcl-built-in-subs.html
 * https://www.varnish-software.com/wiki/content/tutorials/varnish/sample_vclTemplate.html
 
@@ -55,5 +55,5 @@ If you want to check the health of varnish, you will use the tool `varnishstat`.
 **sources**
 
 * [The most important varnish stat counters](https://www.datadoghq.com/blog/top-varnish-performance-metrics/)
-* [Notable varnishstat counters](http://book.varnish-software.com/4.0/chapters/Examining_Varnish_Server_s_Output.html#notable-counters)
+* [Notable varnishstat counters](https://book.varnish-software.com/4.0/chapters/Examining_Varnish_Server_s_Output.html#notable-counters)
 * [All varnishstat counters](https://varnish-cache.org/docs/4.1/reference/varnish-counters.html)
