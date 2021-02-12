@@ -94,6 +94,7 @@
   * [Desk-Net Integration (Planning)](guides/desknet-integration.md)
 * Includes / Embeds
   * [Configure Includes: Article Embed and List](reference-docs/includes/article_and_list_includes.md)
+  * [Article Teaser (with release-2021-03)](reference-docs/includes/article_teasers_.md)
   * [Includes: Add an Twitter Include](guides/twitter_include_embed.md)
   * [Includes: Add a Youtube Include](guides/youtube_include.md)
   * [Includes: Embedded Documents](guides/embedded_documents.md)

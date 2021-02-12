@@ -7,6 +7,11 @@ The possibility to use AngularJS will be phased out in the future. If you are do
 
 In order to actually render content, you need to configure the server to do so, [see here](./server_customization.md) how that works.
 
+
+### Include User Interface with paramsSchema
+This is the most simple way to render a UI for the include. It doesn't need any code in the editor.
+[See here](./server_customization.md#generated-sidebar) for an example.
+
 ### Custom Include User Interface with Vue
 Here is an example of an include User Interface Vue Component:
 ```
