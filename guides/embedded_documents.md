@@ -24,22 +24,20 @@ An example of an includes return value:
       link: 'https://example.com'
     }
   }
+}
 ```
 
-Here is an includes configuration you would want to consider for the editable teaser usecase:
+Here is an example includes configuration to consider for the editable teaser usecase:
 ```js
 {
   name: 'editable-teaser',
   paramsSchema: [
-    // this will render a UI in the document editing sidebar to let the User select a document with
-    // the contentType `regular` to link to.
+    // this will render a UI in the document editing sidebar to let the User select a document
     {
       handle: 'article',
       type: 'li-reference',
       config: {
         referenceType: 'document',
-        documentType: 'article',
-        contentType: ['regular']
       },
       ui: {
         label: 'Teaser'
@@ -54,6 +52,36 @@ Here is an includes configuration you would want to consider for the editable te
   }
 }
 ```
+
+This is how your Teaser Component looks like in this case:
+```js
+{
+  name: 'teaser-include',
+  label: 'Teaser',
+  iconUrl: 'URL to an SVG icon',
+  directives: [{
+    name: 'teaser',
+    type: 'include',
+    service: 'editable-teaser',
+    paramsSchemaExtension: [ // <- added with release-2020-03
+      {
+        name: 'article',
+        config: {
+          // configure base filters for the article search modal
+          contentType: ['regular'], // only document of contentType 'regular'
+          published: true // only published documents
+        }
+      }
+    ]
+  }],
+  html: `
+    <div doc-include="teaser">
+      <div>Link an Article</div>
+    </div>
+  `
+}
+```
+
 
 ## Caveats
 - `editableContent` has no effect when more than one component is returned.
