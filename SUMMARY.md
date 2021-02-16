@@ -37,3 +37,7 @@
 
 * [Sync Project Configs](cli/sync-configs.md)
 * [.livingdocs-cli](cli/cli-dotfile.md)
+
+## About us
+
+* [Visit Livingdocs](https://livingdocs.io/)
