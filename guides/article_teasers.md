@@ -46,7 +46,7 @@ Here is an example includes configuration to consider for the editable teaser us
     service: 'teaser', // refer to the include service handle
     paramsSchemaExtension: [ // extend the config for li-reference type input
       {
-        name: 'article', // refer to the handle of the 
+        name: 'article', // refer to the handle of the services paramsSchema property
         config: {
           // configure base filters for the article search modal
           contentType: ['regular'], // only document of contentType 'regular'
