@@ -195,8 +195,5 @@ Here is a complete list of fields you can use. Please consult https://www.iptc.o
 
 ## Media Sources
 
-Added in: `release-2021-03`
+This feature is only supported for the `mediaImage` mediaType and on the Livingdocs service we currently only support unsplash as an external image provider.
 
-This feature is only supported for the `mediaImage` mediaType.
-
-With [Media Sources](/reference/media-source-example.md) you can integrate asset research/import into Livingdocs. Instead of going onto another platform like Unsplash and then drag + drop images into Livingdocs, you can have Unsplash assets search results embedded into Livingdocs directly.
