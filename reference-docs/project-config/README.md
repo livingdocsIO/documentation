@@ -165,7 +165,22 @@ The project config is a huge JSON file with subproperties for things like conten
     mainNavigation:[],
     dashboards: [],
     mediaLibrary: {}
-  }
+  },
+  // Deliveries contains information about the delivery systems you operate
+  deliveries: [{
+    handle: 'web',
+    label: 'Website',
+    isPrimary: true,
+    icon: 'book-open',
+    url: {
+      origin: 'https://example.com',
+       // the available variables in the pattern are:
+       // - :id (document.id)
+       // - :projectId (document.projectId)
+       // - :slug (document.metadata.slug)
+      pathPatterh: '/article/:id'
+    }
+  }]
 }
 ```
 
