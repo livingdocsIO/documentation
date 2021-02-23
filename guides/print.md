@@ -1,12 +1,194 @@
-# Livingdocs Print API
+# Livingdocs Print Preview Setup
 
-## Scope
+## Motivation
 
-Livingdocs allows publishers to integrate their print system with the Livingdocs editor. This allows journalists to write in Livingdocs while at the same time seeing how their text would behave in the layouting system, e.g. InDesign.
+Livingdocs is often used as an editor for both online and print publications in a so-called content-first (or even online-first) workflow. A simple workflow just exports the Livingdocs article to a print system whenever a publish is performed. We have an open-source example for a serverless app that builds upon a Livingdocs webhook and exports to WoodWing Studio: [https://github.com/livingdocsIO/livingdocs-to-woodwing-exporter](https://github.com/livingdocsIO/livingdocs-to-woodwing-exporter)
 
-This documentation assumes that you have setup a print channel and design within Livingdocs. It only describes the API endpoints that you have to implement in order to use your print system with the Livingdocs editor.
+Sometimes, a simple export is not enough for the editors. For this use case we have built-in support for:
+- choosing a layout (e.g. InDesign template) from the print system
+- previewing that layout in the preview window next to a Livingdocs article (actual print system rendering)
 
-## Concepts
+With this system, editors can see how their article will be displayed in print (linebreaks, overflow, etc.) while they are writing in Livingdocs. An example of this workflow is shown in this video: [https://vimeo.com/456695030](https://vimeo.com/456695030)
+
+## Print system support
+
+Out of the box, we support [WoodWing Studio](https://www.woodwing.com/en/multichannel-publishing) using a connector developed by the companies [BrixWare](http://www.brixware.com) and [a&f](https://www.a-f.ch) as well as [NewsNT](https://www.michelic-partner.com/projectnewsnt.html) using a connector developed by the company [Sternwald](https://www.sternwald.com/).
+
+Other print systems can potentially be setup but require custom development.
+
+## Setup
+
+The presented setup assumes a workflow with different content-types for online and print. Editors can then choose on "Write new article" if they want to start with an online or a print article. If they start with the online article they have the option to make a print copy out of the online article and continue refining this for print. To get an impression of the workflow you can watch this video (although the video starts with print and copies to online): [https://vimeo.com/455953898](https://vimeo.com/455953898)
+
+### Setup a print content-type
+
+In order to follow this example we advise you to use our [Service](https://edit.livingdocs.io) with the pre-configured Sandbox. The example can of course be applied to any Livingdocs project with a configurable project config.
+First of all, use the [CLI](../livingdocs-cli/sync-configs.md) to download the project config of your service project to your local computer and open it with a code editor of your choice.
+In our service Sandbox we already have a content-type for an online article. It has the handle `regular`. So the first thing we need to do is to add a content-type for the print article. It will look as follows:
+```
+module.exports = {
+    handle: 'woodwing',
+    documentType: 'article',
+    info: {
+      label: 'Print Article'
+    },
+    components: [{
+      name: 'paragraph'
+    }, {
+      name: 'toptitle'
+    }, {
+      name: 'catchline'
+    }, {
+      name: 'headline'
+    }, {
+      name: 'print-subtitle'
+    }, {
+      name: 'lead'
+    }, {
+      name: 'byline'
+    }],
+    editorWrapper: '<article class="nzz-standard doc-section" itemscope itemtype="http://schema.org/NewsArticle"></article>',
+    defaultContent: [{
+        identifier: 'catchline'
+    }, {
+        identifier: 'headline'
+    }, {
+        identifier: 'lead'
+    }, {
+        identifier: 'byline'
+    }, {
+        identifier: 'paragraph'
+    }],
+    metadata: [{
+      handle: 'title',
+      type: 'li-text',
+      config: {
+        maxLength: 200,
+        useAsTitle: true
+      },
+      ui: {
+        component: 'liMetaTextForm'
+      }
+    }],
+    print: {
+      enabled: true,
+      enableStepZooming: true,
+      componentMap: {
+        // Woodwing: Obertitel
+        'toptitle': {
+          title: 'toptitle'
+        },
+        // Woodwing: Spitzmarke
+        'catchline': {
+          title: 'catchline'
+        },
+        // Woodwing: Titel
+        'headline': {
+          title: 'title'
+        },
+        // Woodwing: Kursivtitel
+        'print-subtitle': {
+          title: 'subtitle'
+        },      
+        // Woodwing: Autor
+        'print-byline': {
+          text: 'author'
+        },
+        // Woodwing: Lead
+        'print-lead': {
+          text: 'lead'
+        },
+        // Woodwing: Grundtext
+        'paragraph': {
+          text: 'text'
+        }
+    }
+  }
+}
+```
+
+A few things to note here:
+- we set the option `print.enabled` to true. This activates the print features (layout selection, print preview) for this content-type.
+- the handle in this case is `woodwing`. You are free to name it whatever you want, but our service uses a pre-configuration with a test installation of the WoodWing Studio connector (DO NOT USE THIS PRODUCTIVELY!).
+- we have a `components` section and a `componentMap` section. Each component needs a respective entry in the component map in order to be exported to the print system. We only showed a subset of the supported components here, for a productive setup you want to discuss this with your print system provider.
+- we set the `print.enableStepZooming` option to true. In that configuration editors can zoom the print preview with a mousewheel similar to the image crop interface in the Livingdocs editor. If it is set to `false` the print preview will be static and can be toggled between sidescreen and fullscreen.
+
+We leave out the steps to create the references components as well as grouping them in the `designSettings` and requiring them in the project config's index file. Those steps are equivalent to what you do for online articles, see [here](create_designs.md).
+
+Once you require the new content-type in our project configs index file and publish the config you will be able to create print articles from the "Write new article" button.
+
+### Setup an online to print copy config
+
+In order to copy a print article from an existing online article, we will use the copy feature of Livingdocs.
+
+In the `settings` section of your project config add a config as follows:
+```
+copy: [{
+  source: {
+    contentType: 'regular'
+  },
+  targets: [{
+    contentType: 'woodwing',
+    metadata: {
+      map: ['title']
+    },
+    instructions: {
+      componentConversions: [{
+        match: 'article-container',
+        exclude: true
+      }, {
+        match: 'head',
+        result: [{
+          component: 'catchline',
+          directives: {
+            title: {takeFrom: 'flag'}
+          }
+        }, {
+          component: 'headline',
+          directives: {
+            title: {takeFrom: 'title'}
+          }
+        }, {
+          component: 'lead',
+          directives: {
+            text: {takeFrom: 'text'}
+          }
+        }, {
+          component: 'byline',
+          directives: {
+            text: {takeFrom: 'author'}
+          }
+        }]
+      }, {
+        match: 'subtitle',
+        result: [{
+          component: 'print-subtitle',
+          directives: {
+            title: {takeFrom: 'title'}
+          }
+        }]
+      }, {
+        match: 'paragraph',
+        copy: true
+      }]
+    }
+  }]
+}]
+```
+
+A few things to note:
+- we copy from the content-type `regular` to the content-type `woodwing`, this is our online to print copy configuration
+- again we only apply the conversion to a subset of the available components for demo purposes. For more details on the available conversion rules see [here](document_copy.md)
+
+As before, use the [CLI](../livingdocs-cli/sync-configs.md) to publish the changes to your project config.
+
+You will now have a "Copy" button in the topbar of an online article. When pressing it, you have the option to copy it to a print article. If you do so, a new print article (with the preview and layout selection) is created for you and the component of the online article are mapped to the print article according to the configured rules.
+
+## Implementation Details
+
+This section is not about the setup but contains background information for print system integrators that want to implement the Livingdocs Print API.
+
+### Headless API
 
 Livingdocs itself knows nothing about a print layouting system. All it does is rendering information it gets back. In order to do this, Livingdocs sends out requests to a number of defined endpoints and expects results in a certain format. Currently, the data format is in XML which was basically driven by need. If you'd rather have JSON, please get in contact with us, we'd love to do this.
 
@@ -17,29 +199,25 @@ To sum up:
 - The data format is (currently) XML
 - You need to provide Livingdocs with the relevant print information otherwise Livingdocs can not perform a reliable job informing about the layouting system
 
-## Editor config
+### The endpoints
 
-Settings for the editor are located under `print`:
+All Livingdocs requests require you to have configured endpoints on your side where your middleware sits. The respective entry in the Livingdocs server configuration looks as follows:
 
-`defaultPreviewMode`: determines default preview mode, valid values are `text` or `image`, if not configured falls back to `text`
-
-
-## The endpoints
-
-All Livingdocs requests require you to have configured endpoints on your side where your middleware sits. The respective entry in the Livingdocs configuration looks as follows:
-
-```coffee
-print:
+```
+print: {
   enabled: true
   host: 'https://your-host.com'
   xmlRoot: 'pathUnderWhichTheEndpointsLive'
+}
 ```
+
+Note: this config still sits under the `hugo` key in the server configuration. This is due to legacy support, the print interface is not necessarily connected to hugo.
 
 In the example above we would send each of the following requests to `https://your-host.com/pathUnderWhichTheEndpointsLive/<theSpecificRequest>`
 
 The subsequent subchapters look at each of the possible requests.
 
-### Layouts
+#### Layouts
 
 Before a print document is created and whenever a user wants to change the layout of an existing print article, Livingdocs will ask you for the list of available layouts. Layouts assume a layout-for-text workflow. Thus they are the placed and sized boxes in your InDesign file for a specific publication of your newspaper. Journalists are expected to fit their text into those layouts.
 Livingdocs sends the following request to get the layouts.
@@ -97,7 +275,7 @@ Each line represents one layout, i.e., one placed and sized box in the InDesign 
 
 *The screenshot above shows how to choose a print layout in the Livingdocs user interface*
 
-### Templates
+#### Templates
 
 Templates are basically the same as layouts, except that they are for text-for-layout workflows. Templates are pre-defined boxes that are not yet placed on any publication or edition but are common blueprints, e.g. a one-column text. Livingdocs sends the following request to get the templates.
 
@@ -149,7 +327,7 @@ Each line represents one template, i.e., one generic box that can be used in InD
 
 *The screenshot above shows how to choose a print template in the Livingdocs user interface*
 
-### Publication Dates
+#### Publication Dates
 
 Publication Dates are used for the layouts. They return the dates for which, in a certain publication, layouts already exist, i.e. an InDesign file was prepared for the edition. Livingdocs sends the following request to get the available publication dates (editions):
 
@@ -195,7 +373,7 @@ Each line represents one prepared edition's date. The information you need to pr
 - `publication`, the publication to which the prepared edition belongs
 - `isToday`, a boolean indicating the current edition, NOTE: the current edition is normally tomorrow's newspaper
 
-### Preview
+#### Preview
 
 This is really the gist of the Livingdocs Print API. In the preview response your middleware tells Livingdocs how a specific block of text is rendered in your print system's layout so that Livingdocs can give the journalists the respective information in the editor.
 Livingdocs will call your middleware with the following request.
@@ -333,7 +511,7 @@ In addition, if a jpeg preview was requested, you need to send a `previews` bloc
 
 *The screenshot above shows the Livingdocs print preview. To the right the journalist writes text in Livingdocs (the request) and to the left the preview from the print system is displayed (your response)*
 
-### Metadata - department
+#### Metadata - department
 
 Before exporting a print article to the print system, the journalist will add some metadata. Currently, the only supported metadata that is requested from the print system is the department (organisational unit within a newspaper). To request the available departments, Livingdocs will send out the following request.
 
@@ -384,7 +562,7 @@ Each department element has to provide the following attributes:
 
 *Screenshot of the print department selection in the Livingdocs editor*
 
-### Export
+#### Export
 
 Once a journalist is finished with a print article, she will want to export it to the print system. To do this, Livingdocs sends the following request.
 
@@ -468,7 +646,7 @@ Response:
 </articleUpload>
 ```
 
-### Lifecycle - Status
+#### Lifecycle - Status
 
 The status call bears a lot of importance. When a print article has been written or partly written its status in the print system may update. For example the article might be locked in the print system or it might have gone to the printing press. To know about such status changes, Livingdocs polls your middleware for status updates. Currently, Livingdocs will call `status` for the following actions:
 - when a preview is requested, i.e. whenever a user changes something in the text
@@ -513,7 +691,7 @@ The `getStatus` elements contains the following attributes:
 - `livingdocsId`, the Livingdocs id, should match what you got in the request
 - `statusName`, the print status this article is in, see the available statuses below
 
-#### Available statuses
+##### Available statuses
 
 The available statuses values for a print article are:
 - `Redigieren`, the article is being edited
