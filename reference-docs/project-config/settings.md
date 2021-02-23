@@ -109,7 +109,20 @@ An example:
         "contentType": "kolumne",
         "metadata": {
             "map": ["title", "headline", "authors", "description", "teaserImage", "publishDate"]
-        }
+        },
+        "componentConversions": [{
+          "match": "article-container",
+          "exclude": "true"
+        }, {
+          "match": "head",
+          "result": [{
+            "component": "catchline",
+            "directives": {"title": {"takeFrom": "flag"}}
+          }, {
+            "component": "headline",
+            "directives": {"title": {"takeFrom": "title"}}
+          }]
+        }]
       }]
     }],
     "editMode": "default"
@@ -165,6 +178,6 @@ For details on the parameters see our [Webhooks Guide](../server-configuration/w
 
 The copy configuration allows you to define the mapping of what content-types can be copied to what other content-types and how the metadata is mapped. A common example is the copy of a web article to the print article.
 
-It's an array of copy definitions. Each definition first defines the `source`, i.e. the content-type that is copied (e.g. web article) and then the possible targets (e.g. print article) and which metadata fields should be mapped from source to target.
+It's an array of copy definitions. Each definition first defines the `source`, i.e. the content-type that is copied (e.g. web article) and then the possible targets (e.g. print article), which metadata fields should be mapped from source to target and a set of rules on how to convert the components and directives (exlcude, simple copy or one to many).
 
 For the enterprise version we also have a detailed [guide for copy and transform workflows](../../guides/document_copy.md).

@@ -95,6 +95,18 @@ We plan to allow to move all layout options which are currently defined in the d
     }
   },
 
+  // if enabled is true this content-type will use the WoodWing
+  // print layout selection and preview
+  print: {
+    enabled: false,
+    enableStepZooming: true,
+    componentMap: {
+      toptitle: {
+        title: 'toptitle'
+      }
+    }
+  },
+
   // With 'documentCreationDisabled: true',
   // you can't create documents with this content-type
   documentCreationDisabled: true, // default false
@@ -386,3 +398,7 @@ Example:
       placeholder: {name: 'ld-placeholder'}
     }]
 ```
+
+## Print
+
+The print options allow you to enable the WoodWing Studio print connector on a content-type. Refer to our [setup guide](../../guides/print.md) in order to setup your project with the print connector. Note: before you consider productive use of a print connector you must get in contact with us. The provided WoodWing connector is only to be used for test purposes.
