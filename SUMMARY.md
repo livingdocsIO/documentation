@@ -49,7 +49,6 @@
   * [Login](reference-docs/editor-configuration/login.md)
 * Server Code APIs
   * [Import API](reference-docs/server-api/import_api.md)
-  * [Print API](reference-docs/server-api/print-api.md)
   * [Seed API](reference-docs/server-api/seed_api.md)
   * [DataSource API](reference-docs/server-api/data_source_api.md)
   * [Events](reference-docs/server-api/events.md)
@@ -92,6 +91,7 @@
 * Integrations
   * [Hugo Integration (DAM)](guides/hugo-dnd.md)
   * [Desk-Net Integration (Planning)](guides/desknet-integration.md)
+  * [Setup a print system](guides/print.md)
 * Includes / Embeds
   * [Configure Includes: Article Embed and List](reference-docs/includes/article_and_list_includes.md)
   * [Article Teaser (with release-2021-03)](guides/article_teasers.md)
