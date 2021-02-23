@@ -110,7 +110,7 @@ A user uploads an image to the Livingdocs editor, the corresponding file is stor
 
 You need to configure your image service in the server. You add the configuration for one or more image services as well as the selected image service.
 
-Below we'll outline the configuration for imgix.
+Below we'll outline the configuration for Imgix.
 
 
 #### Server Configuration
@@ -121,7 +121,8 @@ documents: {
   imageServices: {
     imgix: {
       host: 'https://livingdocs-dev.imgix.net',
-      preferWebp: true
+      preferWebp: true, // default: true
+      secureToken: '<your-token>' // optional
     }
   }
 }
@@ -133,6 +134,7 @@ You can in theory configure several images services in the server, but as of now
 
 The `host` is simply where your imgix images are served from.
 If `preferWebp` is set to `true` Livingdocs will pass the `auto=format` parameter (https://docs.imgix.com/apis/url/auto).
+When the optional property `secureToken` is set, the images are [secured](https://docs.imgix.com/setup/securing-images).
 
 
 #### Backwards compatible image rendering server config
