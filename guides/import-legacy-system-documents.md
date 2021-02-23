@@ -1,4 +1,4 @@
-# Import and Identify Documents from a Legacya System
+# Import and Identify Documents from a Legacy System
 
 Added in: [`release-2020-10`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-10.md)
 
