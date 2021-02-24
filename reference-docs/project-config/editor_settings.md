@@ -99,9 +99,11 @@ An example:
       {metadataPropertyName: 'source', directiveName: 'source'},
       {metadataPropertyName: 'caption', directiveName: 'caption'}
     ],
+    // deprected with release-2021-03, move filters to a mediaType
     dashboard: {
       displayFilters: ['timeRange']
     },
+    // deprected with release-2021-03, move filters to a mediaType
     editorSelection: {
       displayFilters: ['timeRange']
     },
@@ -161,11 +163,15 @@ Type of the dashboard, one of these: `dashboard`, `kanbanBoard`, `taskBoard`
 
 #### displayFilters
 
-[Display Filters](/reference/display_filter.md) are filters that the user can set in the UI (below the search input)
+[Display Filters](/reference/display_filter.md) are filters that the user can set in the UI (below the search input).
+
+With `release-2021-03` the `displayFilters` for the Media Library Dashboards are defined on the [Media Type](/reference-docs/project-config/media_types.md).
 
 #### baseFilters
 
-[Base Filters](/reference/base_filter.md) are invisible filters and applied to every search (including the default result list)
+[Base Filters](/reference/base_filter.md) are invisible filters and applied to every search (including the default result list).
+
+With `release-2021-03` the `baseFilters` for the Media Library Dashboards are defined on the [Media Type](/reference-docs/project-config/media_types.md).
 
 #### sort
 
@@ -266,11 +272,19 @@ Set custom `startPage: {path: '/my-custom-path'}}` to set the path used to rende
 
 ## Media Library
 
-After linking the media library on the `mainNavigation` (see above), you can customize the default Media Library Dashboards:
+### Dashboards
+If you linked the media library on the `mainNavigation` (see above), Livingdocs automatically inserts separate dashboards per type (`mediaImage`/`mediaVideo`).
+If you only have `mediaImage` mediaTypes, you will see a Dashboard `Images`. If you also have `mediaVideo`, you will see `Videos` as well.
 
+As of `release-2021-03` the `baseFilters` and `displayFilters` are to be configured on the `mediaType` config.
+See [Media Type](/reference-docs/project-config/media_types.md) documentation for more information.
+
+Any release before `release-2021-03` takes the following config
 - `mediaLibrary.dashboard.displayFilters`: an array of [Display Filters](/reference/display_filter.md) for the Dashboard accessible via the Main Navigation
 - `mediaLibrary.editorSelection.displayFilters`: an array of [Display Filters](/reference/display_filter.md) for the Dashboard accessible via the Media Button in the Document Editing Toolbar
 
+
+### Behavior
 Then there are 2 configs to define the behavior when Images are inserted into a Document from the Media Library:
 - `mediaLibrary.altTextPrefilling: {metadataPropertyName: ''}`: a metadata property handle from which the `alt` attribute on an image tag is filled.
 - `mediaLibrary.componentDirectivesPrefilling`: an array of mappings to prefill `doc-editable` directives with Media Library Entry Metadata
@@ -280,6 +294,7 @@ Then there are 2 configs to define the behavior when Images are inserted into a 
   {metadataPropertyName: 'caption', directiveName: 'caption'}
 ]
 ```
+
 ## Text Formatting
 
 The text formatting toolbar can be customized globally here. You can also overwrite this settings for each content type.

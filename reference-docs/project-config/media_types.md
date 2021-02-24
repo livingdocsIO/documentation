@@ -92,6 +92,22 @@ If no `Media Type` config is provided it falls back to a default config where `t
      }
     }
   ],
+  editor: {
+    dashboard: { // the dashboard opened from the Document Editor
+      displayFilters: [
+        {
+          filterName: 'liDateTimeRange'
+        }
+      ]
+    },
+    managementDashboard: { // the dashboard opened from the Main Navigation
+      displayFilters: [
+        {
+          filterName: 'liDateTimeRange'
+        }
+      ]
+    }
+  }
 }, {
   type: 'mediaVideo',
   handle: 'video',
