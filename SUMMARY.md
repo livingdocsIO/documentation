@@ -77,11 +77,13 @@
 * [Register a Custom Server Feature](guides/add_customizations.md)
 * [Register a Custom Display Filter](guides/register_custom_dashboard_filters_.md)
 * [Copy documents between types](guides/document_copy.md)
-* [Assign Access Rights](guides/access_rights.md)
 * [Implement Single Sign-On](guides/github-login.md)
 * [Use Push Notifications and Custom Dashboard Item](guides/push_notifications.md)
 * [Enable Multi-Language Support](guides/setup_multilanguage.md)
 * [Author Management](guides/prefill-author.md)
+* Access
+  * [Assign Access Rights](guides/access_rights.md)
+  * [Access Hooks](guides/access_hooks.md)
 * Imports
   * [DPA Import](guides/dpa-import.md)
   * [Import Legacy System Documents](guides/import-legacy-system-documents.md)
