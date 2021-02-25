@@ -199,7 +199,7 @@ Here is a complete list of fields you can use. Please consult https://www.iptc.o
 ## Media Sources
 
 
-Added in: `release-2021-03`
+Added in: [`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-03.md)
 
 This feature is only supported for mediaTypes of type `mediaImage`.
 

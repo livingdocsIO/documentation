@@ -368,7 +368,7 @@ processing: {
 ```
 
 #### Videos
-Added in: `release-2021-02`
+Added in: [`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-03.md)
 For videos it is necessary to have a specific configuration.
 The storage, publicUrl and the uploadRestriction must be set.
 

@@ -96,7 +96,7 @@
   * [Setup a print system](guides/print.md)
 * Includes / Embeds
   * [Configure Includes: Article Embed and List](reference-docs/includes/article_and_list_includes.md)
-  * [Article Teaser (with release-2021-03)](guides/article_teasers.md)
+  * [Article Teaser](guides/article_teasers.md)
   * [Includes: Add an Twitter Include](guides/twitter_include_embed.md)
   * [Includes: Add a Youtube Include](guides/youtube_include.md)
   * [Includes: Embedded Documents](guides/embedded_documents.md)
