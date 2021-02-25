@@ -351,7 +351,7 @@ Exclude individual directives from the text counter (example component config):
 
 #### Options
 If you set the internal hosts as regex, you can define default behavior for internal and external links.
-If you configure `deliveries` in your [Project Config](../project-config/deliveries.md) (added in release-2020-12)
+If you configure `deliveries` in your [Project Config](../project-config/deliveries.md) (added in [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md))
 links to these deliveries will be treated as internal links as well and you don't need to define the `internalHostsRegex`.
 ```js
 {

@@ -1,6 +1,6 @@
 # Embedded Documents / Editable Teasers
 
-With `release-2020-12` a new possibility to resolve includes is available. This feature is still somewhat experimental and some usecases are not covered yet.
+With [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md) a new possibility to resolve includes is available. This feature is still somewhat experimental and some usecases are not covered yet.
 
 You can return Livingdocs Document JSON from an [include resolve function](../evaluation-guide/intro.md).
 If you mark the return value as editable, a user can overwrite the single directive values within the local document. These overwrites will be stored and sent to the include resolve function for consideration.
@@ -14,7 +14,7 @@ An example of an includes return value:
   content: [{
     id: `teaser-${documentId}`,
     // a Component with the name `teaser` needs to be configured in the design
-    component: 'teaser', 
+    component: 'teaser',
     // the content contains the values for the directives configured on the `teaser` component
     content: {
       image: metadata.teaserImage,
@@ -63,7 +63,7 @@ This is how your Teaser Component looks like in this case:
     name: 'teaser',
     type: 'include',
     service: 'editable-teaser',
-    paramsSchemaExtension: [ // <- added with release-2020-03
+    paramsSchemaExtension: [ // <- added with release-2020-04
       {
         name: 'article',
         config: {

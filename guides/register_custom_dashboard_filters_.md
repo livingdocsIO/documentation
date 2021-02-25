@@ -18,7 +18,7 @@ Hint: If you want to create a filter with metadata, make sure they are setup cor
 
 ## Register Custom List v2 Filter
 
-Added in: `release-2020-02`
+Added in: [`release-2020-02`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-02.md)
 
 ### Example
 
@@ -88,14 +88,14 @@ Hint: Look into [Filter Query Types](/reference/base_filter.md) to find possible
 
 ### isDefault option
 
-Added in: `release-2020-07`
+Added in: [`release-2020-07`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-07.md)
 
 When `isDefault: true` (see example above), the default option will be added to the search query by default. As soon as one selects a filter manually, the default filter option will be ignored.
 
 
 ## Register Custom List Filter
 
-Deprecated since: `release-2020-02`
+Deprecated since: [`release-2020-02`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-02.md)
 
 ### Example
 
@@ -143,7 +143,7 @@ liEditor.searchFilters.registerList('creationDate', {
 
 ## Register Custom Vue Component Filter
 
-Added in: `release-2020-09`
+Added in: [`release-2020-10`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-10.md)
 
 ### Example
 

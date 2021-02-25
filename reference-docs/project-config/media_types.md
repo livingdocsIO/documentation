@@ -1,15 +1,15 @@
 # Media-Type Config
 
-Added in: `release-2020-07`
+Added in: [`release-2020-07`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-07.md)
 
 `Media Types` describe the content you can manage in the Media Library. You can configure the metadata you want to manage per `Media Type` by using the same metadata schema as on Content-Types. The Media Library will provide forms to edit this data.
 If no `Media Type` config is provided it falls back to a default config where `title`, `caption`, `source` and `description` will be taken as metadata.
 
-`release-2020-07` includes the first version of this feature. It has these limitations:
+[`release-2020-07`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-07.md) includes the first version of this feature. It has these limitations:
 - You can only configure 1 mediaType and it has to have the handle `image`.
 - Only one `type` is supported: `mediaImage`
 
-`release-2020-12` includes the type `mediaVideo`
+[`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md) includes the type `mediaVideo`
 - You can only configure 1 mediaType for the type `mediaVideo` and it has to have the handle `video`.
 
 ## Example

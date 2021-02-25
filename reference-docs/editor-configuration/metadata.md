@@ -42,7 +42,7 @@ metadata: [{
       placeholder: 'bar', // optional, takes camelized name otherwise
       readOnly: false, // optional, false by default
       maxLength: 200 // optional, integer, not used by default. Enables small UI, see screenshow below
-    }  
+    }
   }
 }]
 ```
@@ -50,7 +50,7 @@ metadata: [{
 You need to make sure that your server-side metadata field is of type `li-text` otherwise you will get errors.
 `readOnly` and `maxLength` let you customize the behavior of the text input. The text input will automatically display some visual help if a `maxLength` is set:
 
-Visual helper added in: `release-2020-09`
+Visual helper added in: [`release-2020-10`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-10.md)
 ![Shows how the max length behavior is affects the editor](./images/max-length.png)
 
 

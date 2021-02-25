@@ -1,6 +1,6 @@
 # Editor Settings
 
-Added in: `release-2020-07`
+Added in: [`release-2020-07`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-07.md)
 
 The editor settings control the behavior of your editor UX, in particular:
 - user menu
@@ -105,7 +105,7 @@ An example:
     editorSelection: {
       displayFilters: ['timeRange']
     },
-  }, 
+  },
   textFormatting: {
     bold: {enabled: true},
     italic: {enabled: true},

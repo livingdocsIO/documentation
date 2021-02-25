@@ -110,7 +110,7 @@ You will have to define two things, the sidebar where one can paste the embed co
 
 We have a special `onIncludeRendered` hook for includes where you can trigger a script.
 
-Please note that using Vue Components for the Sidebar requires at least `release-2020-07`.
+Please note that using Vue Components for the Sidebar requires at least [`release-2020-07`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-07.md).
 ```js
 // register the sidebar Vue Component
 liEditor.vueComponentRegistry.registerComponent({

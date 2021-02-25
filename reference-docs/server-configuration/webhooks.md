@@ -1,5 +1,5 @@
 # Webhooks
-- added in `release-2020-05`
+- added in [`release-2020-05`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-05.md)
 
 Webhooks are registered HTTP endpoints that are called on specific events. Registered webhooks can be called when a document is published (`document.published`) or unpublished (`document.unpublished`).
 You can configure multiple webhooks that are called on only one or both of these events.

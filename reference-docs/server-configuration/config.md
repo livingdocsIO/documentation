@@ -658,7 +658,7 @@ pushNotifications: {
 
 Airship:
 
-Added in: `release-2020-10`
+Added in: [`release-2020-10`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-10.md)
 ```js
 pushNotifications: {
   enabled: true,
@@ -856,7 +856,7 @@ The language enables a separate call to Google Translate API to translate the la
 
 #####  Enforcing image metadata (Beta)
 
-Added in: `release-2020-04`
+Added in: [`release-2020-04`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-04.md)
 
 Below you see an example of enforcing image metadata. Before _any_ image can be uploaded, a modal will open promting the user to fill the metadata for the image before it goes into the media library.
 
@@ -870,7 +870,7 @@ assetManagement: {
 
 #### Custom previews
 
-Added in: `release-2020-05`
+Added in: [`release-2020-05`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-05.md)
 
 Custom previews are a way to display a custom preview of a document. This could be a custom mobile preview, a preview of a finished article living on the frontend or anything that fits the specific customer need. You will need to enable the feature and register a custom render function that will contain the `documentId`.
 
@@ -895,7 +895,7 @@ liServer.registerInitializedHook(async () => {
 
 ## Integrations
 
-Added in: `release-2020-04`
+Added in: [`release-2020-04`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-04.md)
 
 There is a general `integrations` feature for small integrations that can be configured in the `channelConfig` through editor UI. They need to be allowed in the server config with the following config.
 
@@ -913,7 +913,7 @@ integrations: {
 
 ## Webhooks
 
-Added in: `release-2020-05`
+Added in: [`release-2020-05`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-05.md)
 
 To disable the webhooks feature, add this:
 ```js
