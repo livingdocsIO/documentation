@@ -81,8 +81,9 @@
 * [Enable Multi-Language Support](guides/setup_multilanguage.md)
 * [Author Management](guides/prefill-author.md)
 * Access
-  * [Assign Access Rights](guides/access_rights.md)
-  * [Access Hooks](guides/access_hooks.md)
+  * [Assign Access Rights](guides/access/access_rights.md)
+  * [Access Hooks (Alpha)](guides/access/access_hooks.md)
+  * [Attribute Based Access Control (Alpha)](guides/access/attribute_based_access_control.md)
 * Imports
   * [DPA Import](guides/dpa-import.md)
   * [Import Legacy System Documents](guides/import-legacy-system-documents.md)
