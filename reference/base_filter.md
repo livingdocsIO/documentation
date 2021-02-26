@@ -24,8 +24,9 @@ The query format always has a `type` and most of the time a `value`. You can see
 This are all available `queryTypes` which can be used to form a filter query.
 
 ```js
-// documentType
+// documentType {type: 'string', value: string || array}
 {type: 'documentType', value: 'article'}
+{type: 'documentType', value: ['article', 'page']}
 
 // locale
 {type: 'locale', value: 'de-DE'}
@@ -33,11 +34,13 @@ This are all available `queryTypes` which can be used to form a filter query.
 // channelHandle
 {type: 'channelHandle', value: 'web'}
 
-// contentType
+// contentType {type: 'string', value: string || array}
 {type: 'contentType', value: 'regular'}
+{type: 'contentType', value: ['regular', 'news']}
 
-// notContentType (multiple value combinations possible)
+// notContentType{type: 'string', value: string || array}
 {type: 'notContentType', value: 'regular'}
+{type: 'notContentType', value: ['regular', 'news']}
 
 // ownerId
 {type: 'ownerId', value: 1}
