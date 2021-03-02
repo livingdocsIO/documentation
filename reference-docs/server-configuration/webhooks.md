@@ -1,8 +1,8 @@
 # Webhooks
 - added in [`release-2020-05`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-05.md)
 
-Webhooks are registered HTTP endpoints that are called on specific events. Registered webhooks can be called when a document is published (`document.published`) or unpublished (`document.unpublished`).
-You can configure multiple webhooks that are called on only one or both of these events.
+Webhooks are registered HTTP endpoints that are called on specific events.
+You can configure multiple webhooks that are called on only one or multiple events.
 
 ## Configuration
 
@@ -30,7 +30,7 @@ For testing purposes the service at https://webhook.site may come in handy. It g
 
 The configuration of webhooks is stored in `channelConfig.settings.webhooks`.
 
-```
+```js
 webhooks: {
   active: true
   configurations: [{
@@ -40,7 +40,21 @@ webhooks: {
     url: 'https://example.com/my-webhook-endpoint',
     secret: 'a-secret-token-to-sign-the-request'
     active: true
-    events: ['document.published', 'document.unpublished']
+    events: [
+      'document.publish',
+      'document.unpublish',
+      {
+        name: 'document.update', 
+        changeFilter: {
+          metadataProperties: [
+            'title'
+          ]
+        }
+      },
+      'mediaLibraryEntry.create',
+      'mediaLibraryEntry.archive',
+      'mediaLibraryEntry.update'
+    ]
   }
 }]
 ```
@@ -48,48 +62,100 @@ webhooks: {
 ## Payload
 The payload sent to your webhook endpoints looks like this. The `deliveryId` is unique for every call.
 
-`document.published`
-```
+`document.publish`
+```json
 {
-  "event": "document.published",
-  "deliveryId": "o4-0Rdu0f695qnlun0iY-",
-  "projectId": 8,
-  "projectHandle": "magazine",
-  "webhookHandle": "my-webhook",
+  "event": "document.publish",
+  "deliveryId": "qy8qoxQPVCES1VDneg4FE",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "documentId": 179,
   "publicationEvent": {
-    "createdAt": "2020-04-22T11:09:17.439Z",
-    "projectId": 8,
-    "channelId": 10,
-    "documentId": 40,
+    "createdAt": "2021-02-16T18:04:50.203Z",
     "contentType": "regular",
     "documentType": "article",
     "eventType": "publish",
-    "publicationId": 113
+    "publicationId": 174,
+    "projectId": 3,
+    "channelId": 4,
+    "documentId": 179
   }
 }
 ```
 
-`document.unpublished`
-```
+`document.unpublish`
+```json
 {
-  "event": "document.unpublished",
-  "deliveryId": "HMCywrXG5EDPqwrogRfum",
-  "projectId": 8,
-  "projectHandle": "magazine",
-  "webhookHandle": "my-webhook",
+  "event": "document.unpublish",
+  "deliveryId": "p3QA1OhXkQGJepVTkdd1b",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "documentId": 179,
   "publicationEvent": {
-    "createdAt": "2020-04-22T11:09:16.800Z",
-    "projectId": 8,
-    "channelId": 10,
-    "documentId": 40,
+    "createdAt": "2021-02-16T18:04:51.285Z",
     "contentType": "regular",
     "documentType": "article",
     "eventType": "unpublish",
-    "publicationId": 112
+    "publicationId": 174,
+    "projectId": 3,
+    "channelId": 4,
+    "documentId": 179
   }
 }
 ```
 
+`document.update`
+```json
+{
+  "event": "document.update",
+  "deliveryId": "B_-8BAfgvuJRKk7m_RSls",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "documentId": 179,
+  "metadataPropertyChanges": [
+    "title"
+  ]
+}
+```
+
+`mediaLibraryEntry.create`
+```json
+{
+  "event": "mediaLibraryEntry.create",
+  "deliveryId": "f8K1HZ-_fTIf5kT698NqG",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "mediaId": "PNIi08x4UdEA"
+}
+```
+
+`mediaLibraryEntry.update`
+```json
+{
+  "event": "mediaLibraryEntry.update",
+  "deliveryId": "_p6aKe9Len6WnlvANDJSz",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "mediaId": "PNIi08x4UdEA"
+}
+```
+
+`mediaLibraryEntry.archive`
+```json
+{
+  "event": "mediaLibraryEntry.archive",
+  "deliveryId": "gmWn5OfOsZzEiY3FNRgA4",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "mediaId": "PNIi08x4UdEA"
+}
+```
 ## Securing your webhooks
 If you have defined a `secret` for your webhook, Livingdocs uses this to create a signature of the payload and sends it with the request in the HTTP header `x-livingdocs-signature`.
 The signature is created using HMAC-SHA256 and will be sent in `x-livingdocs-signature` in the form `sha256=<hex digest>` for example `sha256=d8a47af83666a771d57117aa28ef8d3243a3de43`.
