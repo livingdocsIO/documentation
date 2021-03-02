@@ -1,8 +1,9 @@
 # Webhooks
-- added in [`release-2020-05`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-05.md)
-
+- added `document.published` and `document.publish` added in [`release-2020-05`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-05.md)
+- all other events added in `release-2021-03`
 Webhooks are registered HTTP endpoints that are called on specific events.
 You can configure multiple webhooks that are called on only one or multiple events.
+
 
 ## Configuration
 
