@@ -81,7 +81,8 @@ An example:
         ],
         "defaultParams": {
             "title": "defaultTitle"
-        }
+        },
+        "blockEditorInteraction": "initial"
     }],
     "webhooks": {
       "active": false,
@@ -163,8 +164,10 @@ Includes allow you to render parts of your document from a remote location. For 
 The service itself is configured in the config (see example at the top). We advise you to use the UI under "Project Setup" to setup the remote service.
 The `handle` is the service name that is also used in the `doc-include` directive of the component.
 In the `rendering` object you define the URL of your micro-service where the rendering is done as well as a timeout to indicate when it should fail.
-The `config` parameter can contain arbitrary (fixed) data that are sent to your micro-service.
+`blockEditorInteraction` can be used to alter the interactivity of the include within the editor. Not setting this value, or selecting "No" in the UI, will result in the default experience of the include being rendered and interactive within the editor. Passing a value of `'always'` will block all interaction with the include in the editor, and using `'initial'` will block the first click only.
 The `paramsSchema` generates a form for the editor in the sidebar when a respective component is selected. Editors can then enter (dynamic) configs that are sent to your micro-service. As of now the only supported form types are `li-boolean` and `li-text`, i.e. a checkbox and a text input.
+The `defaultParams` object allows you to define defaults for the dynamic params of an include. Dynamic params are set by the user over a UI in the editor.
+The `config` parameter can contain arbitrary (fixed) data that are sent to your micro-service.
 
 
 ## Webhooks

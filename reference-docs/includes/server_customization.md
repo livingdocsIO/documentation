@@ -182,7 +182,8 @@ module.exports = {
           html: `<div> do something with the url: ${url}</div>`
         }
       }
-    }
+    },
+    blockEditorInteraction: 'initial'
   }
 }
 ```
@@ -322,3 +323,7 @@ The `remote` option allows you to render your HTML in a third-party system that 
 ```
 
 The above example tells the Livingdocs rendering engine that whenever it sees a `doc-include` with service `q-embed` it should do a GET request to the remote URL defined to get the rendered HTML string.
+
+### Editor interaction blocker
+
+The config property `blockEditorInteraction` can be `'always'`, `'initial'`, or not defined at all. It is used to configure how the user can interact with the include within the editor. The default behavior when the value is undefined is to allow the include to be fully interactive. By passing the string `'always'` the user will not be able to interact with the include content, and `'initial'` will only block the first click and then allow interaction (resetting the blocker when the include component is blurred). These two options can be particularly useful when working with videos and other interactive content, because they allow the component to be selected and configured more easily within the UI.
