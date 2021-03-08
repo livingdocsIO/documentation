@@ -317,12 +317,15 @@ The `remote` option allows you to render your HTML in a third-party system that 
   uiComponents: [],
   rendering: {
     type: 'remote',
+    // 'post' and 'get' are possible (get only sends params, not options and config)
+    method: 'post',
     url: 'https://q-server.st-staging.nzz.ch/livingdocs-preview/nzz_ch'
   }
 }
 ```
 
-The above example tells the Livingdocs rendering engine that whenever it sees a `doc-include` with service `q-embed` it should do a GET request to the remote URL defined to get the rendered HTML string.
+
+The above example tells the Livingdocs rendering engine that whenever it sees a `doc-include` with service `q-embed` it should do a POST request to the remote URL defined to get the rendered HTML string.
 
 ### Editor interaction blocker
 
