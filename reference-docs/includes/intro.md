@@ -12,10 +12,10 @@ In particular we will cover:
 
 Above you see a lifecycle diagram of a document with a `doc-include` (from bottom to top).
 
-1. You see an empty placeholder (a `doc-include` with a server-side registered service `foo`)
+1. You see an empty placeholder (a `doc-include` with a server-side registered service `your-include-service`)
 2. The user can choose an entry in the sidebar (a core or custom UI registered in the editor or a form generated based on the `paramsSchema`)
-3. After selecting an entry, the server calls a rendering function of the service `foo` and shows the result in the editor as preview (WYSIWYG). In the image above those are some brightcove video teasers.
-4. After publishing, whenever a reader loads the published document in the browser, the server-side rendering function of the service `foo` gets called again.
+3. After selecting an entry, the server calls a rendering function of the service `your-include-service` and shows the result in the editor as preview (WYSIWYG). In the image above those are some brightcove video teasers.
+4. After publishing, whenever a reader loads the published document in the browser, the server-side rendering function of the service `your-include-service` gets called again.
 
 The last point is worth mentioning again: rendering of a `doc-include` is done on every request, that means you don't need to publish the entailing document in order to update the `doc-include` area, this happens automatically on request.
 
@@ -29,18 +29,18 @@ You should be familiar with [Livingdocs directives](../project-config/design.md#
 {
   "name": "example",
   "label": "Example Component",
-  "directives": {
-    "example-include": {
-      "service": "foo",
-      "defaultParams": {
-        "layout": "mostViewed"
-      },
-      "config": {
-        "minCount": 3,
-        "maxCount": 6
-      }
+  "directives": [{
+    "name": "example-include",
+    "type": "include",
+    "service": "your-include-service",
+    "defaultParams": {
+      "layout": "mostViewed"
+    },
+    "config": {
+      "minCount": 3,
+      "maxCount": 6
     }
-  }
+  }]
 }
 </script>
 
@@ -60,7 +60,7 @@ The above snippet shows the design definition of a `doc-include` that renders th
 You see several important concepts:
 - The `service` configuration defines which service is used by this `doc-include` directive. This service name is used by the server-side and editor-side customizations to identify a specific `doc-include` implementation.
 - The directive configuration contains `defaultParams`. The custom editor interface for a `doc-include` service normally sets and sends parameters to the server-side to do the rendering. In the example it could send a category that a user enters and for which videos are shown (e.g. most viewed "Sport" videos). In addition you can pass `defaultParams` in the design that are there by default and if the editor does not overwrite them are passed to the server. The `layout` in our example tells the server-side plugin to use a specific sub-template for the rendering. You could for example have templates for "list with images" and "text only list" thus rendering the section with different layouts in different components.
-- The directive configuration also contains a `config` section. You can write in this Object whatever you like. The values are passed to your custom user interface in the editor and you can use them there to customize the user interface for this specific instance of the "foo" `doc-include` service. The example sends a `minCount` and `maxCount`. This is used by the user interface in question to offer the user a number input form that is limited to numbers between 3 and 6 and controls how many articles are rendered.
+- The directive configuration also contains a `config` section. You can write in this Object whatever you like. The values are passed to your custom user interface in the editor and you can use them there to customize the user interface for this specific instance of the "your-include-service" `doc-include` service. The example sends a `minCount` and `maxCount`. This is used by the user interface in question to offer the user a number input form that is limited to numbers between 3 and 6 and controls how many articles are rendered.
 
 Schematic view of how the different parts play together using a `doc-include` service as an identifier:
 ```
@@ -73,7 +73,7 @@ Livingdocs server -> implements -> renderer for doc-include "class"
 
 (note: we are not talking about a class in the sense of OO, just to visualize the hierarchical connection)
 
-It is important to understand that a `doc-include` service ("foo" in the example above) can be used in multiple components/directives in different configurations. For example you could do a new component that is pretty much the same as the example above but changes the `minCount` to 6 which would in effect tell the user interface not to render a number input (if `minCount` == `maxCount` no interface is rendered).
+It is important to understand that a `doc-include` service ("your-include-service" in the example above) can be used in multiple components/directives in different configurations. For example you could do a new component that is pretty much the same as the example above but changes the `minCount` to 6 which would in effect tell the user interface not to render a number input (if `minCount` == `maxCount` no interface is rendered).
 
 ### What are the customizations
 
