@@ -1,9 +1,13 @@
 # Webhooks
 - The feature and the two events `document.published` and `document.unpublished` were added in [`release-2020-05`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-05.md)
-- all other events added in `release-2021-03`
+- Four new webhooks added in `release-2021-03`.
+  - `document.update`
+  - `mediaLibraryEntry.create`
+  - `mediaLibraryEntry.archive`
+  - `mediaLibraryEntry.update`
+
 Webhooks are registered HTTP endpoints that are called on specific events.
 You can configure multiple webhooks that are called on only one or multiple events.
-
 
 ## Configuration
 
