@@ -34,6 +34,9 @@ metadata: [
     // flag to enable an option to mark a task as a high priority task
     setPriority: true,
     // define beforeLabel/afterLabel of the 3 states requested/accepted/completed
+    assignUsers: true,
+    // flag to enable an option to assign a user to a task.
+    // if the 'notifications' feature is activated, assigned users will always get an email/slack/* notification
     requested: {
       beforeLabel: 'Request proofreading',
       afterLabel: 'Proofreading requested'
