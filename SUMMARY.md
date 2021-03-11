@@ -62,6 +62,7 @@
   * [Component Tree](reference-docs/content-model/component_tree.md)
   * [Component Model](reference-docs/content-model/component_model.md)
   * [Directives](reference-docs/content-model/directives.md)
+  * [References](reference-docs/content-model/references.md)
 * Includes
   * [Include Server Config](reference-docs/includes/server_customization.md)
   * [Include User Interfaces](reference-docs/includes/editor_customization.md)
