@@ -1,23 +1,6 @@
 # Main Navigation
 
 This documentation describes the configuration possibilities of the main navigation within the editor (instance-wide). The basic configuration of the main navigation has to be set in the [project config](../project-config/editor_settings.md).
-
-## Triggering the Main Navigation
-You can define the way the main navigation will be triggered. It can be triggered by `clicking`, `hovering` or both. The default way of opening the navigation menu is by `clicking`.
-
-#### Config options
-
-```js
-// editor config
-app: {
-  sidePanelBehaviour: {
-    // you can also enable both.
-    click: true,
-    hover: false
-  }
-}
-```
-
 #### Example opening the main-nav by clicking
 
 ![Open Livingdocs navigation by clicking](images/open-by-click.gif)
