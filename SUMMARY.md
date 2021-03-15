@@ -80,6 +80,7 @@
 * [Implement Single Sign-On](guides/github-login.md)
 * [Use Push Notifications and Custom Dashboard Item](guides/push_notifications.md)
 * [Enable Multi-Language Support](guides/setup_multilanguage.md)
+* [Enable Notifications](guides/watching_documents.md)
 * [Author Management](guides/prefill-author.md)
 * Access
   * [Assign Access Rights](guides/access/access_rights.md)
