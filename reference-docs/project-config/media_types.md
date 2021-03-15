@@ -12,6 +12,18 @@ If no `Media Type` config is provided it falls back to a default config where `t
 [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md) includes the type `mediaVideo`
 - You can only configure 1 mediaType for the type `mediaVideo` and it has to have the handle `video`.
 
+[`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-03.md) includes `index` on config
+- You can configure which metadata should be indexed on the media index. The metadata plugin must support the media index. Set in `config` property `index:true`
+- upstream plugins which support media index
+   - li-text
+   - li-boolean
+   - li-enum
+   - li-integer
+   - li-numeric-list
+   - li-string-list
+   - li-google-vision
+
+
 ## Example
 
 ```javascript
@@ -29,7 +41,8 @@ If no `Media Type` config is provided it falls back to a default config where `t
       type: 'li-text',
       config: {
         required: true,
-        requiredErrorMessage: 'Please provide a title'
+        requiredErrorMessage: 'Please provide a title',
+        index: true
       },
       ui: {component: 'liMetaTextForm'}
     },
@@ -43,7 +56,8 @@ If no `Media Type` config is provided it falls back to a default config where `t
       type: 'li-text',
       config: {
         required: true,
-        requiredErrorMessage: 'Please provide a source'
+        requiredErrorMessage: 'Please provide a source',
+        index: true
       },
       ui: {component: 'liMetaTextForm'}
     },
@@ -59,7 +73,10 @@ If no `Media Type` config is provided it falls back to a default config where `t
     },
     {
       handle: 'googleVision',
-      type: 'li-google-vision'
+      type: 'li-google-vision',
+      config: {
+        index: true
+      }
     }
   ],
   exifExtraction: {

@@ -700,6 +700,9 @@ The asset management impacts editor in four ways:
 Added in: [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md)
 - Videos are supported
 
+Added in: [`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-03md)
+- Customize indexing of metadata is supported
+
 ##### Prerequisite
 
 This is not specific to the DAM and is the same for Image uploads. However, it needs to be ensured that valid S3 credentials are configured. This information is usually not checked in and can be configured in `conf/secrets/local.js`.
@@ -721,27 +724,62 @@ images: {
 [config options](/reference/storage-strategy-configuration.md) for `storage`.
 
 
-##### Setting up the Elastic Search Mapping
+##### Setting up the media-library Elastic Search Mapping
 
-For now the very first step when setting up the server, you need to create a new index 'images' in Elastic Search. The mapping is defined in the file `app/features/indexing/mapping/image_v6.json`.
+For now the very first step when setting up the server, you need to create a new index 'media-library' in Elastic Search. 
 
-The name of the Image index has to be configured:
+The name of the Media index has to be configured:
 
 
 ```js
 {
  search: {
-    // Analogous to the `article_document_index` configuration
-    image_document_index: 'livingdocs-local-images',
+    // Analogous to the `articleDocumentIndex` configuration
+    mediaLibraryIndex: 'li-local-media-library'
   }
 }
 ```
 
-Then the Image index must be created.
+Then the media-library index must be created.
 
 ``` javascript
 npx livingdocs-server es-media-reindex -y
 ```
+
+To index the metadata the plugin must support the mediaIndex and on the metadata in the mediaType the index must be enabled.
+
+###### Enable mediaIndex on metadata plugin
+To enable the indexing for the media-library in a plugin you have to add the `mediaIndex` config.
+
+```js
+  mediaIndex: {
+    enabled: true,
+    index_behavior: [
+      {
+        // the type for the index
+        type: 'text',
+        // when there are more than behavior with the same type, a key is needed
+        key: 'labels',
+        // the return value of this function will be indexed
+        // it is also possible to return an array
+        // default is just return the value
+        getValue: (val) => { if (val.labels) return val.labels.map(obj => obj.label) }
+      },
+      {
+        // this will return the value of the metadata property and will index it as keyword
+        type: 'keyword'
+      },
+    ]
+  },
+```
+
+We support these types for indexing
+- `text` will be available for text search
+- `keyword` to filter by keyword
+- `boolean` to filter by boolean
+- `date` to filter by date range
+- `integer` to index integer
+- `float` to index float
 
 ##### Document Metadata Mapping in Elasticsearch
 
