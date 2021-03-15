@@ -145,6 +145,12 @@ liEditor.searchFilters.registerList('creationDate', {
 
 Added in: [`release-2020-10`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-10.md)
 
+[`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-03.md)
+Filters for the media-library need to define the `dataType`
+```js
+$emit('update:filter', {type: 'metadata', key:'transformed', dataType: 'boolean', value: true})
+```
+
 ### Example
 
 `vueComponentRegistry.registerComponent({type: 'searchFilter'})` registers a Vue component as filter for the search UI. Below you can see a minimal example:
