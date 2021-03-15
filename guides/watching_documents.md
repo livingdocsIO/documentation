@@ -1,0 +1,123 @@
+# Enable notifications in Livingdocs
+
+This guide explains you how to enable Livingdocs _notifications_ and what they are.
+In a nutshell, _notifications_ enable editors to actively track interesting changes on documents.
+
+Let's have an example with a _Proofreading task_. Let's assume Proofreaders are really interested to know if a certain article has been marked for proofreading, so they that the article can be published with lightspeed once they finished the task.
+
+If they subscribe for changes on a specific document they will get an E-Mail or Slack notification that the document was marked for proofreading.
+
+The basic idea is to improve production speed by pushing information to the editors instead of pulling, so going to a colleague and asking if an article is ready for proofreading, review or publishing.
+
+## Server config
+
+First, the feature and the available channels will have to be configured in the server environment configs. 
+
+```js
+// all.js
+module.exports = {
+  notifications: {
+    enabled: true,
+    enableConsumers: true,
+    // only email and slack are available at the moment
+    channels: {
+      email: {
+        enabled: true,
+        fromAddress: 'noreply@your-company.io'
+      },
+      slack: {
+        enabled: true,
+        botUserToken: 'botUserToken'
+      }
+    }
+  },
+  
+  // a valid email configuration is required
+  emails: {
+    transports: {
+      default: {
+        from: '<noreply@your-company.io>',
+        module: 'nodemailer-ses-transport',
+        config: {
+          accessKeyId: 'secret',
+          secretAccessKey: 'secret',
+          region: 'eu-west-1',
+        }
+      }
+    },
+    // defining your own email templates
+    templates: {
+      notifications: {
+        transport: 'default',
+        subject: 'Changes on a document you are subscribed to',
+        htmlTemplatePath: require.resolve('@livingdocs/server/plugins/email-templates/notifications.html')
+      }
+    }
+  }
+}
+```
+
+
+### Project config
+On the top level of the project config cretain _actions groups_ can be defined.
+
+With the _action groups_ you can define the types of changes a certain group is interested in.
+
+Enabling the feature and project configuration will be output as this in the editor.
+
+![Notifications UI](./images/notification_config.png)
+
+```js
+module.exports = {
+  v: 2,
+  notifications: {
+    actionGroups: [
+      // First example group, interested in ALL changes
+      {
+        handle: 'all',
+        label: 'All Events',
+        description: 'Comments, Tasks, Publish and delete',
+        actions: [
+          'task.changed',
+          'document.publish',
+          'document.unpublish',
+          'document.copy',
+          'document.delete'
+        ]
+      },
+      // Second example group, interested only in Task changes
+      {
+        handle: 'proofreading',
+        label: 'Proofreading events',
+        description: 'All proofreading task changes',
+        actions: [
+          {
+            type: 'task.changed',
+            taskName: 'proofreading',
+            statusChange: ['requested', 'accepted', 'completed']
+          }
+        ]
+      }
+    ],
+    // the task requester is notified on task changed even without subscription
+    notifyTaskRequester: true,
+    // the author is auto subscribed to the document with the specified actionGroup
+    autoSubscribeOwner: {enabled: true, actionGroup: 'all'}
+  }
+}
+```
+
+Possible action to register on at the moment:
+- task.changed
+   config options:
+   ```js
+    // assign to all tasks and statusChanges
+   'task.changed'
+   
+    // assign to task proofreading on statusChanges 'requested', 'accepted', 'completed'
+   {type: 'task.changed', taskName: 'proofreading', statusChange: ['requested', 'accepted', 'completed']}
+   ```
+- document.publish
+- document.unpublish
+- document.copy
+- document.delete
