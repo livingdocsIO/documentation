@@ -1,13 +1,13 @@
 # Enable notifications in Livingdocs
 
-This guide explains you how to enable Livingdocs _notifications_ and what they are.
+This guide explains to you how to enable Livingdocs _notifications_ and what they are.
 In a nutshell, _notifications_ enable editors to actively track interesting changes on documents.
 
-Let's have an example with a _Proofreading task_. Let's assume Proofreaders are really interested to know if a certain article has been marked for proofreading, so they that the article can be published with lightspeed once they finished the task.
+Let's have an example with a _Proofreading task_. Let's assume Proofreaders are interested to know if a certain article has been marked for proofreading so that the article can be published with lightspeed once they finished the task.
 
 If they subscribe for changes on a specific document they will get an E-Mail or Slack notification that the document was marked for proofreading.
 
-The basic idea is to improve production speed by pushing information to the editors instead of pulling, so going to a colleague and asking if an article is ready for proofreading, review or publishing.
+The basic idea is to improve production speed by pushing information to the editors instead of pulling, so going to a colleague and asking if an article is ready for proofreading, review, or publishing.
 
 ## Server config
 
@@ -59,11 +59,11 @@ module.exports = {
 
 
 ### Project config
-On the top level of the project config cretain _actions groups_ can be defined.
+On the top level of the project config, certain _actions groups_ can be defined.
 
 With the _action groups_ you can define the types of changes a certain group is interested in.
 
-Enabling the feature and project configuration will be output as this in the editor.
+Enabling the feature and project configuration will be output like this in the editor.
 
 ![Notifications UI](./images/notification_config.png)
 
