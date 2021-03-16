@@ -73,6 +73,13 @@ const to = new Date('2015-04-05T20:00')
 // sortBy (multiple values possible)
 {type: 'sortBy', value: '-created_at'},
 {type: 'sortBy', value: 'title'}
+
+// media Index base filter for metadata
+{type: 'metadata', key: 'foo', value: 'bar', dataType: 'keyword'}
+{type: 'metadata', key: 'transformed', value: true, dataType: 'boolean'}
+// metadata plugin with a set key in the index_behavior
+{type: 'metadata', key: 'googleVision.labels', value: 'Vogel', dataType: 'keyword'}
+
 ```
 
 
@@ -130,3 +137,12 @@ defaultQueries: [
 ```
 
 This would filter for only documents that have had a successful proofreading. The core only exposes the `proofreading` task, but you can define your own custom tasks. The values are `todo`, `doing`, `done` for the 3 states that a task can have.
+
+#### Example 5 - filter by metadata with dataType keyword for mediaIndex
+```js
+baseFilters: [
+  {type: 'metadata', key: 'transformed', value: true, dataType: 'boolean'}
+]
+```
+
+This would filter for only transformed assets. 
