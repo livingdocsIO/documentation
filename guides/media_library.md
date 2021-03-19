@@ -3,7 +3,7 @@
 Livingdocs contains a Media Library that solves management and delivery of Images and Videos.
 There are different pieces that can be used to cover custom needs per project.
 
-This guide will walk you through setting up a basic Media Library for you project with Images support, you will learn about some details along the way.
+This guide will walk you through setting up a basic Media Library for your project with Images support, you will learn about some details along the way.
 
 The Videos Feature is not feature complete yet, it will be documented when it is. If you
 are interested in testing it, please contact us.
