@@ -19,7 +19,7 @@ Let's setup a `mediaType` for the images first. You add it to your [project conf
 media-types/image.js
 ```js
 module.exports = {
-  type: 'mediaImage', // the type is either mediaImage or mediaVideo
+  type: 'mediaImage', // the type is either 'mediaImage' or 'mediaVideo'
   handle: 'image', // You should name the primary image mediaType `image`
   info: {
     label: 'Images', // used in dashboards generated for this mediaType
