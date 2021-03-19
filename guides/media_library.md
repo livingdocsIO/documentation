@@ -5,7 +5,7 @@ There are different pieces that can be used to cover custom needs per project.
 
 This guide will walk you through setting up a basic Media Library for your project with Images support, you will learn about some details along the way.
 
-The Videos Feature is not feature complete yet, it will be documented when it is. If you
+The Videos feature is not feature complete yet, it will be documented when it is. If you
 are interested in testing it, please contact us.
 
 At heart, the Media Library is based around configured `Media Types`. You might be familiar already with the concept of `Content Types`. `Media Types` are very similar.
