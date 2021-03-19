@@ -147,7 +147,7 @@ We are going to configure the strategy 1 in this guide. There are 3 points where
 4. Metadata: `li-image` metadata properties (for a teaser image for example)
 
 #### designSettings
-In the [designSettings](/reference-docs/design.md), all the `namedCrops` need to be configured. You can then use all or some of them in `mediaType`s and `doc-image` directives.
+In the [designSettings](/reference-docs/project-config/design.md) of the project config, all the `namedCrops` need to be configured. You can then use all or some of them in `mediaType`s and `doc-image` directives.
 
 ```js
 projectConfig.designSettings: {
