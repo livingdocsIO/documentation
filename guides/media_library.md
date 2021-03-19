@@ -130,7 +130,7 @@ module.exports = {
 }
 ```
 
-### Crops
+### Named Crops
 With Livingocs, you can manage multiple crops per Image. We call it `Named Crops` and it works like this:
 - You can define the crops hold with an image in the Media Library
 - A user can edit these crops during upload or from within the Media Library Management Dashboard
