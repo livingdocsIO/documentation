@@ -16,8 +16,8 @@ See the [mediaType reference](/reference-docs/project-config/media_types.md) for
 ## Media Types
 Let's setup a `mediaType` for the images first. You add it to your [project config](/reference-docs/project-config/README.md) in an array at the top-level property `mediaTypes`.
 
-media-types/image.js
 ```js
+//media-types/image.js
 module.exports = {
   type: 'mediaImage', // the type is either 'mediaImage' or 'mediaVideo'
   handle: 'image', // You should name the primary image mediaType `image`
@@ -104,8 +104,8 @@ You do this by adding the `exifExtraction` property to the `mediaType`. See [the
 The exif extraction will run when an image is imported through the [Import API](/reference-docs/server-api/import_api.md) or when a user uploads an image through the UI.
 The user has the chance to manually change the extracted Metadata before the image is actually stored in the Media Library.
 
-media-types/image.js
 ```js
+// media-types/image.js
 module.exports = {
   type: 'mediaImage',
   handle: 'image',
@@ -181,12 +181,13 @@ projectConfig.designSettings: {
 ```
 
 #### mediaType
-Now we want to make sure the user can define the crops during upload or when changing an image in the Media Library. This way, the user can optimize the crops during upload, then these crops will be used by default when an image is inserted into a document.
+In order to hold default crops on images in the Media Library we configure the special purpose metadata plugin `li-named-crops`. It allows users to set crops during image upload and later on within the Media Library.
+These default crops will be copied into documents at the time an image is inserted into a document (well, a `doc-image` directive technically). They are copied so a user can change the crops locally for this specific usage of the image. Later changes to the crops in the Media Library won't affect the usages in `doc-image` anymore.
 
-There is a special purpose metadata plugin `li-named-crops` available to be used for this usecase. You configure it within the metadata config of a `mediaType` of type `mediaImage`.
+To define which default crops to store in the Media Library, we configure a metadata property of type `li-named-crops` within the metadata config of a `mediaType` of type `mediaImage`.
 
-media-types/image.js
 ```js
+// media-types/image.js
 module.exports = {
   type: 'mediaImage',
   handle: 'image',
