@@ -95,6 +95,54 @@ designSettings: {
         // extract from component 'title' the directive 'text'
         matches: ['title.text']
       }
+    ],
+    namedCrops: [
+      {
+        handle: 'mobile',
+        label: 'Mobile',
+        description: 'this image will be shown on small screens',
+        // recommendedRatios are a suggestion and the user can easily pick on, but can also use a different ratio
+        recommendedRatios: ['1:1', '16:9']
+      },
+      {
+        handle: 'tablet',
+        label: 'Tablet',
+        description: 'this image will be shown on medium screens',
+        recommendedRatios: ['16:9']
+      },
+      {
+        handle: 'desktop',
+        label: 'Desktop',
+        description: 'this image will be shown on wide screens',
+        // imageRatios are enforced, the user has to pick one of them, the first is the default
+        imageRatios: ['21:9', '16:9']
+      },
+      {
+        handle: 'socialMediaTeaser',
+        label: 'SM Teaser',
+        description: 'This image will be used for social media teasers',
+        // the user won't be able to pick a ratio but can only change the crops position and zoom
+        imageRatios: ['16:9']
+      },
+      {
+        handle: 'smallTeaser',
+        label: 'Small Teaser',
+        description: 'Used for small teasers',
+        // the user can either stay with the recommended 1:1 ratio or change it freely...
+        recommendedRatios: ['1:1'],
+        // ... within the boundaries of minRatio and maxRatio (the factor is the ratio, think 16/9 = 1.7777)
+        minRatio: 0.25,
+        maxRatio: 3
+      },
+      {
+        handle: 'largeTeaser',
+        label: 'Large Teaser',
+        description: 'Used for large teasers',
+        // the user can stay with 16:9 or change the ratio freely...
+        recommendedRatios: ['16:9'],
+        // ...as long as the resulting image contains at least 300 * 300 pixels (width * height)
+        minResolution: 300 * 300
+      }
     ]
 },
 
