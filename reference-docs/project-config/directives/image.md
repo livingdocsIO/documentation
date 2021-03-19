@@ -13,8 +13,7 @@ module.exports = {
   directives: [{
     name: 'image',
     type: 'image',
-    allowOriginalRatio: true,
-    imageRatios: ['16:9', '1:1', '4:3', '3:4'],
+    recommendedRatios: ['16:9', '1:1', '4:3', '3:4'],
     srcSet: {
         defaultWidth: 1024,
         widths: [2048, 1024, 620],
@@ -35,15 +34,21 @@ module.exports = {
 ```
 
 ## Config Options
-
 ### Ratios
 
 The image ratio definitions control how the crop tool in the Livingdocs editor is configured.
 
 ![Crop presets](./image-crop.png)
 
-`allowOriginalRatio`: true | false, if true allows the inherent ratio of the image to be selected
-`imageRatios`: array of strings, an array of strings, e.g. '16:9' of all image ratios that should be preset
+There are two ways to configure how the crop tool behaves. If you configure `imageRatios`, one of the given ratios is enforced.
+If you configure `recommendedRatios`, the given ratios are presented to the user, but a custom aspect ratio is possible.
+
+`imageRatios`: array of strings, an array of strings, e.g. '16:9'
+`recommendedRatios`: array of strings, an array of strings, e.g. '16:9'
+
+### Named Crops
+Alternatively to `imageRatios`/`recommendedRatios` you can configure `namedCrops` if you are using that system.
+To understand what Named Crops are, read the [Media Library Guide](/guides/media_library.md).
 
 ### SrcSet
 
