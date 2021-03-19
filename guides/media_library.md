@@ -137,10 +137,13 @@ With Livingocs, you can manage multiple crops per Image. We call it `Named Crops
 - Whenever an image is used in a document, the crops are copied into the document and can be changed locally within the document
 
 There are different strategies how to configure the crops:
+
 1. Configure Named Crops with names after the usage, e.g. `desktop`, `mobile`
 2. Configure Named Crops with aspect ratio names, e.g. `16:9`, `4:3`
 
+
 We are going to configure strategy 1 in this guide. There are 4 points where we need to configure this:
+
 1. designSettings
 2. mediaType
 3. Design: image components `doc-image` directive
