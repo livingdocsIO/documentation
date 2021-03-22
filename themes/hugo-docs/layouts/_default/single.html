@@ -1,0 +1,27 @@
+{{ partial "header.html" . }}
+
+<div class="page">
+  {{ partial "sidebar.html" . }}
+
+  <main class="content-wrapper">
+    <div class="content">
+      <article>
+        {{ partial "suggest-edit.html" . }}
+
+        <h1 class="post-title">{{ .Title }}</h1>
+
+        <div>{{ .Content }}</div>
+
+        {{ partial "navigation.html" . }}
+      </article>
+
+      {{ if not .Sections }}
+      <div class="right-toc">
+        {{ .TableOfContents }}
+      </div>
+      {{ end }}
+    </div>
+  </main>
+
+</div>
+{{ partial "footer.html" . }}

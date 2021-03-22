@@ -1,0 +1,103 @@
+h2,
+h3 {
+  position: relative;
+}
+
+h1:hover .anchor svg,
+h2:hover .anchor svg,
+h3:hover .anchor svg {
+  visibility: visible;
+}
+
+a {
+  color: #3661b5;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+b,
+strong,
+label,
+th {
+  font-weight: 500;
+}
+
+hr {
+  border-bottom: 4px solid #f0f2f4;
+}
+
+/* headers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #232323;
+  line-height: 1.1;
+  margin: 1.3em 0 0.8em;
+}
+
+h1 {
+  font-size: 1.9em;
+  border-bottom: 1px solid #f4f4f4;
+  padding-bottom: 0.6em;
+}
+
+h2 {
+  font-size: 1.7em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+p {
+  margin: 0 0 0.8em;
+}
+
+
+// table {
+//   border: 1px solid #eaeaea;
+//   table-layout: auto;
+// }
+// th {
+//   background: #f7f7f7;
+//   padding: 0.5rem;
+// }
+// td {
+//   padding: 0.5rem;
+//   border: 1px solid #eaeaea;
+// }
+
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+thead {
+  border-bottom: 2px solid rgba(20,16,20,.08);
+  font-weight: 500;
+  color: rgba(20,16,20,.54);
+}
+
+table th, table td {
+  padding: 7px;
+  text-align: left;
+  min-width: 80px;
+}
+
+tbody {
+  font-weight: 400;
+}
+
+tbody tr:not(:last-child) {
+  border-bottom: 1px solid rgba(20,16,20,.08);
+}

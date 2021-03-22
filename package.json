@@ -1,0 +1,31 @@
+{
+  "name": "livingdocs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "clipboard": "^2.0.6",
+    "domhandler": "^4.0.0",
+    "domutils": "^2.4.4",
+    "glob": "^7.1.6",
+    "htmlparser2": "^6.0.0",
+    "lunr": "^2.3.9"
+  },
+  "scripts": {
+    "build": "./bin/build.sh",
+    "start": "hugo serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upfrontIO/livingdocs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/upfrontIO/livingdocs/issues"
+  },
+  "homepage": "https://github.com/upfrontIO/livingdocs#readme",
+  "release": {
+    "extends": "@livingdocs/semantic-release-presets/npm-github"
+  }
+}

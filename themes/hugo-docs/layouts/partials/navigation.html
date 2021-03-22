@@ -1,0 +1,8 @@
+<div class="navigation-buttons">
+  {{if .NextInSection}}
+    <a class="li-btn li-btn--small nav-prev-btn" href="{{.NextInSection.RelPermalink}}">← {{.NextInSection.Title}} </a>
+  {{end}}
+  {{if .PrevInSection}}
+    <a class="li-btn li-btn--small nav-next-btn" href="{{.PrevInSection.RelPermalink}}">{{.PrevInSection.Title}} →</a>
+  {{end}}
+</div>

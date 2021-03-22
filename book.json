@@ -1,6 +1,0 @@
-{
-  "title": "Livingdocs Technical Documentation",
-  "description": "Technical documentation of the Livingdocs CMS for enterprise customers.",
-  "author": "Livingdocs",
-  "plugins": ["videoclips", "-sharing", "expandable-chapters"]
-}
