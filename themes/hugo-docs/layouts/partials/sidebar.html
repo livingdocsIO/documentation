@@ -1,0 +1,35 @@
+<aside class="sidebar" id="sidebar">
+  <nav>
+    <ul class="topics">
+      <li class="topic{{ if (eq .CurrentSection .Site.Home )}} active{{ end }}"><a href="{{ .Site.Home.RelPermalink }}">Introduction</a></li>
+    </ul>
+  </nav>
+
+  {{- partial "menu" (dict "menu" "evaluation" "title" "Evaluation Guide" "context" .) -}}
+  {{- partial "menu" (dict "menu" "reference-docs" "title" "Reference Docs" "context" .) -}}
+
+  <nav>
+    <div class="section-label">Videos</div>
+    <ul class="topics">
+      <li class="topic"><a href="https://vimeo.com/showcase/5875797">Technical Tutorials</a></li>
+      <li class="topic"><a href="https://vimeo.com/showcase/7538934">Workflows</a></li>
+    </ul>
+  </nav>
+
+  {{- partial "menu" (dict "menu" "guides" "title" "Guides" "context" .) -}}
+  {{- partial "menu" (dict "menu" "operations" "title" "Operations" "context" .) -}}
+  {{- partial "menu" (dict "menu" "reference" "title" "Reference" "context" .) -}}
+
+  <script>
+    // We always restore the scroll position right after
+    // the menu is loaded to prevent flickering
+    const sidebar = document.getElementById('sidebar')
+    if(sessionStorage.menuScrollPosition) {
+      sidebar.scrollTop = sessionStorage.getItem('menuScrollPosition')
+    }
+
+    window.addEventListener('beforeunload', function () {
+      sessionStorage.setItem('menuScrollPosition', sidebar.scrollTop)
+    })
+  </script>
+</aside>
