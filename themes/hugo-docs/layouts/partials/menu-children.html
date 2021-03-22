@@ -1,0 +1,14 @@
+{{- $menu := .menu -}}
+{{- $currentPage := .context -}}
+{{- $level := add .level 1 -}}
+
+{{- if .HasChildren -}}
+<ul class="{{ with .class }}{{ . }} {{ end }}topics">
+  {{ range .Children }}
+      <li class="topic topic-level-{{ $level }}{{ if ($currentPage.IsMenuCurrent $menu .) }} active{{ end }}{{ if ($currentPage.HasMenuCurrent $menu .) }} open{{ end }}" style="--menu-level: {{ $level }}">
+          <a href="{{ .URL }}">{{ .Name }}{{ if .HasChildren }}<span class="arrow-down"></span>{{ end }}</a>
+          {{- partial "menu-children" (dict "menu" $menu "context" $currentPage "level" $level "HasChildren" .HasChildren "Children" .Children) -}}
+      </li>
+  {{- end -}}
+</ul>
+{{- end -}}

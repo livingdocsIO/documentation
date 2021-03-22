@@ -1,0 +1,4 @@
+name = "Livingdocs"
+description = "Documentation Theme for Livingdocs"
+homepage = "https://github.com/livingdocsIO/livingdocs"
+min_version = 0.80

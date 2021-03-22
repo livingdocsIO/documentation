@@ -1,0 +1,39 @@
+languageCode: en-us
+theme: hugo-docs
+enableEmoji: true
+uglyURLs: false
+refLinksErrorLevel: WARNING
+baseURL: https://documentation.livingdocs.io/
+title: Livingdocs Enterprise Documentation
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    hl_Lines: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: false
+    tabWidth: 2
+
+  tableOfContents:
+    endLevel: 4
+    ordered: false
+    startLevel: 2
+
+imaging:
+  quality: 75
+
+outputFormats:
+  SearchIndex:
+    baseName: search
+    mediaType: application/json
+
+outputs:
+  home: [HTML, RSS, SearchIndex]
+

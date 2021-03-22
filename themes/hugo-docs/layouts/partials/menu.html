@@ -1,0 +1,6 @@
+{{- $menu := .menu -}}
+{{- $currentPage := .context -}}
+{{- $level := 1 -}}
+
+<div class="section-label">{{ .title }}</div>
+{{ partial "menu-children" (dict "class" "section-topics" "menu" $menu "context"  $currentPage "level" 0 "HasChildren" true "Children" (index .context.Site.Menus $menu)) }}
