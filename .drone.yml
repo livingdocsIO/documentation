@@ -1,0 +1,70 @@
+---
+kind: pipeline
+name: build
+
+clone:
+  depth: 50
+
+steps:
+- name: docker
+  image: plugins/docker
+  settings:
+    repo: livingdocs/bar
+    username:
+      from_secret: DOCKER_USERNAME
+    password:
+      from_secret: DOCKER_PASSWORD
+    tags: ["sha-${DRONE_COMMIT_SHA}"]
+
+- name: release
+  image: livingdocs/semantic-release:v1.0.0
+  environment:
+    GH_TOKEN:
+      from_secret: GH_TOKEN
+
+trigger:
+  event: [push]
+
+---
+kind: pipeline
+name: tag
+
+clone:
+  disable: true
+
+steps:
+- name: tag
+  image: livingdocs/docker-node
+  volumes:
+    - name: dockersocket
+      path: /var/run/docker.sock
+  environment:
+    DOCKER_USERNAME:
+      from_secret: DOCKER_USERNAME
+    DOCKER_PASSWORD:
+      from_secret: DOCKER_PASSWORD
+  commands:
+    - |
+      echo $DOCKER_PASSWORD | docker login -u="$DOCKER_USERNAME" --password-stdin 1>/dev/null
+      SHA_TAG=livingdocs/docs:sha-$DRONE_COMMIT_SHA
+      RELEASE_TAG=livingdocs/docs:$DRONE_TAG
+
+      docker build -t $RELEASE_TAG . -f-<<EOF
+      FROM $SHA_TAG
+      EOF
+
+      docker push $RELEASE_TAG
+
+volumes:
+- name: dockersocket
+  host:
+    path: /var/run/docker.sock
+
+trigger:
+  event: [tag]
+
+---
+kind: signature
+hmac: 05ff4a71010bb67a80f34f6d642a3a66ac27d8348915572c3e51f12c60aa4dc3
+
+...
