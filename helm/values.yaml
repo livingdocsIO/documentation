@@ -1,0 +1,26 @@
+replicaCount: 1
+
+image:
+  repository: livingdocs/docs
+  # pullPolicy: Always
+  tag: "latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+
+virtualService:
+  enabled: true
+  annotations: {}
+  gateways: [istio-system/cluster]
+  hosts: [docs.livingdocs.io, documentation.livingdocs.io]
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 400Mi
+  requests:
+    cpu: 100m
+    memory: 400Mi
