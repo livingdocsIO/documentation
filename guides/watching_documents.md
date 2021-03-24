@@ -78,11 +78,13 @@ module.exports = {
         label: 'All Events',
         description: 'Comments, Tasks, Publish and delete',
         actions: [
-          'task.changed',
+          'task.change',
           'document.publish',
           'document.unpublish',
           'document.copy',
-          'document.delete'
+          'document.delete',
+          'document.transform',
+          'comment.add'
         ]
       },
       // Second example group, interested only in Task changes
@@ -92,7 +94,7 @@ module.exports = {
         description: 'All proofreading task changes',
         actions: [
           {
-            type: 'task.changed',
+            type: 'task.change',
             taskName: 'proofreading',
             statusChange: ['requested', 'accepted', 'completed']
           }
@@ -108,16 +110,18 @@ module.exports = {
 ```
 
 Possible action to register on at the moment:
-- task.changed
+- task.change
    config options:
    ```js
     // assign to all tasks and statusChanges
-   'task.changed'
+   'task.change'
    
     // assign to task proofreading on statusChanges 'requested', 'accepted', 'completed'
-   {type: 'task.changed', taskName: 'proofreading', statusChange: ['requested', 'accepted', 'completed']}
+   {type: 'task.change', taskName: 'proofreading', statusChange: ['requested', 'accepted', 'completed']}
    ```
 - document.publish
 - document.unpublish
 - document.copy
 - document.delete
+- document.transform
+- comment.add
