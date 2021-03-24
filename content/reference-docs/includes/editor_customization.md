@@ -19,7 +19,7 @@ This is the most simple way to render a UI for the include. It doesn't need any 
 
 ### Custom Include User Interface with Vue
 Here is an example of an include User Interface Vue Component:
-```
+```html
 // my-instagram-include-params-sidebar-form.vue
 <template>
   <div
@@ -97,7 +97,7 @@ export default {
 ```
 
 You have to register this component like this:
-```
+```js
 coreApi.vueComponentRegistry.registerComponent({
     type: 'includeParamsSidebarForm',
     name: 'myInstagramInclude',
@@ -111,7 +111,7 @@ The component `myInstagramInclude` can then be used as the `sidebarContentCompon
 
 In the [server configuration](./server_customization.md#include-ui-options) we learned that you can also register an external iframe as a user interface in a modal.
 The Livingdocs modal which will contain the iframe listens to `postMessage`s for updates. You can use this to update the include params or close the modal without any changes:
-```
+```js
 window.top.postMessage({action: 'update', params: {"someParam": "test"}})
 // or
 window.top.postMessage({action: 'close'})

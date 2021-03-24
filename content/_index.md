@@ -1,5 +1,6 @@
 ---
 title: Livingdocs Enterprise Documentation
+renderEditButton: false
 ---
 
 This is the technical documentation for the "Livingdocs CMS - Enterprise Edition". As a starting point we recommend the [Evaluation Guide]({{< ref "./evaluation/getting-started.md" >}}) and then moving on from there.

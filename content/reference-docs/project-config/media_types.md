@@ -5,7 +5,7 @@ menus:
     parent: Project Config
 ---
 
-Added in: [`release-2020-07`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-07.md)
+{{< added-in release-2020-07 >}}
 
 `Media Types` describe the content you can manage in the Media Library. You can configure the metadata you want to manage per `Media Type` by using the same metadata schema as on Content-Types. The Media Library will provide forms to edit this data.
 If no `Media Type` config is provided it falls back to a default config where `title`, `caption`, `source` and `description` will be taken as metadata.
@@ -237,7 +237,7 @@ Here is a complete list of fields you can use. Please consult https://www.iptc.o
 ## Media Sources
 
 
-Added in: [`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-03.md)
+{{< added-in release-2021-03 >}}
 
 This feature is only supported for mediaTypes of type `mediaImage`.
 
