@@ -20,6 +20,7 @@
   * [Editor Settings](reference-docs/project-config/editor_settings.md))
   * [Design](reference-docs/project-config/design.md)
   * [Deliveries](reference-docs/project-config/deliveries.md)
+  * [Notifications](reference-docs/project-config/notifications.md)
   * Directives
     * [Editable](reference-docs/project-config/directives/editable.md)
     * [Image](reference-docs/project-config/directives/image.md)
