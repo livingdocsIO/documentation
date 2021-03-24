@@ -6,7 +6,7 @@ menus:
 ---
 
 In addition to the Livingdocs login, you can configure additional login providers.
-```
+```js
 auth: {
   providers: [{
     id: 'myLoginProvider',
@@ -21,8 +21,8 @@ Only strategies of type `link` are supported at the moment. For an example see o
 
 ### Login screen
 
-```
-app: {  
+```js
+app: {
   ui: {
     login: {
       requestAccess: {

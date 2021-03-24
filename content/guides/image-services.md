@@ -127,7 +127,7 @@ documents: {
     imgix: {
       host: 'https://livingdocs-dev.imgix.net',
       preferWebp: true, // default: true
-      secureToken: '<your-token>' // optional - added in: `release-2021-03`
+      secureToken: '<your-token>' // optional - {{< added-in release-2021-03 >}}
     }
   }
 }

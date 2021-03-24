@@ -284,9 +284,9 @@ designLoader: {
 #### Designs
 
 Configure the Livingdocs Design Server. When a design is uploaded the assets
-are moved to the [storage configured]({{< ref "/reference/storage-strategy-configuration.md" >}}) here.
+are moved to the [storage configured]({{< ref "/reference-docs/server-configuration/storage" >}}) here.
 
-[config options]({{< ref "/reference/storage-strategy-configuration.md" >}}) for `storage`.
+[config options]({{< ref "/reference-docs/server-configuration/storage" >}}) for `storage`.
 
 ```js
 designs: {
@@ -311,7 +311,7 @@ designs: {
 Define the S3 Storage as image upload target and processing options that are
 applied before the image is uploaded.
 
-Consult the [storage configuration]({{< ref "/reference/storage-strategy-configuration.md" >}}) to configure other providers than s3.
+Consult the [storage configuration]({{< ref "/reference-docs/server-configuration/storage" >}}) to configure other providers than s3.
 
 ```js
 images: {
@@ -371,11 +371,11 @@ processing: {
 ```
 
 #### Videos
-Added in: [`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-03.md)
+{{< added-in release-2021-03 >}}
 For videos it is necessary to have a specific configuration.
 The storage, publicUrl and the uploadRestriction must be set.
 
-Consult the [storage configuration]({{< ref "/reference/storage-strategy-configuration.md" >}}) to configure other providers than s3.
+Consult the [storage configuration]({{< ref "/reference-docs/server-configuration/storage" >}}) to configure other providers than s3.
 
 ```js
   videos: {
@@ -401,7 +401,7 @@ Consult the [storage configuration]({{< ref "/reference/storage-strategy-configu
 
 #### Files
 
-Consult the [storage configuration]({{< ref "/reference/storage-strategy-configuration.md" >}}) to configure other providers than s3.
+Consult the [storage configuration]({{< ref "/reference-docs/server-configuration/storage" >}}) to configure other providers than s3.
 
 ```js
 files: {
@@ -603,9 +603,9 @@ For inspiration, you can also check out our [current default document search fun
 
 #### Custom Elasticsearch Index
 
-Added in: [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md)
+{{< added-in release-2020-12 >}}
 
-Integrate custom Elasticsearch indexes. If you want to know more (with all possible options), look into the [guide]({{< ref "./custom-index.md" >}}).
+Integrate custom Elasticsearch indexes. If you want to know more (with all possible options), look into the [guide]({{< ref "./indexing/custom-index.md" >}}).
 
 ```js
 // conf/environments/local.js
@@ -661,7 +661,7 @@ pushNotifications: {
 
 Airship:
 
-Added in: [`release-2020-10`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-10.md)
+{{< added-in release-2020-10 >}}
 ```js
 pushNotifications: {
   enabled: true,
@@ -700,10 +700,10 @@ The asset management impacts editor in four ways:
 - You can edit the Metadata of images in a dedicated view, which is accessible over an image
 - You can enforce metadata on images before a user can upload them
 
-Added in: [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md)
+{{< added-in release-2020-12 >}}
 - Videos are supported
 
-Added in: [`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-03md)
+{{< added-in release-2021-03 >}}
 - Customize indexing of metadata is supported
 
 ##### Prerequisite
@@ -724,7 +724,7 @@ images: {
   }
 }
 ```
-[config options]({{< ref "/reference/storage-strategy-configuration.md" >}}) for `storage`.
+[config options]({{< ref "/reference-docs/server-configuration/storage" >}}) for `storage`.
 
 
 ##### Setting up the media-library Elastic Search Mapping
@@ -897,7 +897,7 @@ The language enables a separate call to Google Translate API to translate the la
 
 #####  Enforcing image metadata (Beta)
 
-Added in: [`release-2020-04`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-04.md)
+{{< added-in release-2020-04 >}}
 
 Below you see an example of enforcing image metadata. Before _any_ image can be uploaded, a modal will open promting the user to fill the metadata for the image before it goes into the media library.
 
@@ -911,7 +911,7 @@ assetManagement: {
 
 #### Custom previews
 
-Added in: [`release-2020-05`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-05.md)
+{{< added-in release-2020-05 >}}
 
 Custom previews are a way to display a custom preview of a document. This could be a custom mobile preview, a preview of a finished article living on the frontend or anything that fits the specific customer need. You will need to enable the feature and register a custom render function that will contain the `documentId`.
 
@@ -936,7 +936,7 @@ liServer.registerInitializedHook(async () => {
 
 ## Integrations
 
-Added in: [`release-2020-04`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-04.md)
+{{< added-in release-2020-04 >}}
 
 There is a general `integrations` feature for small integrations that can be configured in the `channelConfig` through editor UI. They need to be allowed in the server config with the following config.
 
@@ -954,7 +954,7 @@ integrations: {
 
 ## Webhooks
 
-Added in: [`release-2020-05`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-05.md)
+{{< added-in release-2020-05 >}}
 
 To disable the webhooks feature, add this:
 ```js

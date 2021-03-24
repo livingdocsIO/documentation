@@ -7,7 +7,7 @@ menus:
 
 So far we have seen design definitions where a `doc-include` directive has one `doc-include` service. It is possible though to configure multiple services behind a directive.
 
-```
+```html
 <script type="ld-conf">
 {
   "name": "top-news",

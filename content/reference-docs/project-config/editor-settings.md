@@ -5,7 +5,7 @@ menus:
     parent: Project Config
 ---
 
-Added in: [`release-2020-07`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-07.md)
+{{< added-in release-2020-07 >}}
 
 The editor settings control the behavior of your editor UX, in particular:
 - user menu
