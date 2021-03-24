@@ -1,6 +1,9 @@
 ---
 title: Storage Strategy Configuration
-menu: reference
+linkTitle: Storage
+menus:
+  reference-docs:
+    parent: Server Config
 ---
 
 Various features have to store files in a blobStore. For this they offer a `storage`
@@ -94,7 +97,7 @@ storage: {
 ### Google Cloud Storage
 
 The google cloud storage just needs a bucket name and a credentials object.
-Please consult the [detailed instructions]({{< ref "/reference-docs/server-configuration/google-cloud-storage.md" >}}) to retrieve the `credentials` from google.
+Please consult the [detailed instructions]({{< ref "/reference-docs/server-configuration/storage/google-cloud-storage" >}}) to retrieve the `credentials` from google.
 
 ```js
 storage: {
@@ -119,8 +122,7 @@ storage: {
 
 ### Cloudinary
 
-Added in: [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md)
-
+{{< added-in release-2020-12 >}}
 
 With cloudinary we support a storage provider that has built in image-processing
 and can directly serve the images instead of using a separate image service

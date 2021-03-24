@@ -1,8 +1,9 @@
 ---
 title: Search published documents
+linkTitle: Publication Index
 menus:
   reference-docs:
-    parent: Server Config
+    parent: Elasticsearch Indexing
 ---
 
 The publication index is an elastic search index that allows developers to do queries in order to retrieve published documents from Livingdocs.
@@ -21,7 +22,7 @@ Two larger concepts are configurable by customers:
 
 The definition of the custom indexing is done in the server's channel-config in a new sub-property of `contentTypes` that is called `publicationIndex`. Below is a sample configuration for an article content-type.
 
-```
+```js
 publicationIndex: {
     sortDate: {
       fieldName: 'publishDate',
@@ -54,7 +55,7 @@ The `sortDate` defines the date that is used to sort results in a publication se
 The `scheduledPublishing` set allows you to define `on` and `off` dates. When set, all search queries to the publication index will automatically exclude publications that have a `sortDate` outside of the `on` and `off` bounds. This is how customers can define future publish and un-publish actions for an article, e.g. when there are blocking periods on the content due to confidentiality or copyright.
 
 Lastly, the `filters` array allows customers to register custom filters for indexing. Filters are always indexed as elastic keywords, e.g. the definition above could result in the following elastic instance:
-```
+```js
 filters: [{
   "value": "news=true"
 }, {
@@ -68,10 +69,10 @@ As you can see, the filters are indexed as key/value strings. This brings with i
 ### Metadata Plugins
 
 The exact way how the `value` of the index is set (see above) is defined in the metadata plugin. All core metadata plugins have fixed value function that you can not change. In a custom metadata plugin you can define your own value function. An example looks as follows.
-```
+```js
 publicationIndex: {
   enabled: true,
-  getValue: function (obj) {
+  getValue (obj) {
     return _.get(obj, 'reference.id')
   }
 }

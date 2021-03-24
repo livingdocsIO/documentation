@@ -1,8 +1,9 @@
 ---
 title: Configuring Google Cloud Storage
+linkTitle: Google Cloud Storage
 menus:
   reference-docs:
-    parent: Server Config
+    parent: Storage
 ---
 
 For users who want to store their images, files and design assets in a Google Cloud Storage (GCS) bucket rather than on Amazon, we provide a separate storage strategy.
@@ -20,7 +21,7 @@ In order to integrate GCS with Livingdocs, you need to make sure you have the fo
 
 In your local configuration, set the storage strategy to `google-cloud-storage` and add the bucket name and the credentials from the JSON file to the config key:
 
-```
+```js
 {
   images: {
     storage: {
@@ -83,7 +84,7 @@ In your local configuration, set the storage strategy to `google-cloud-storage` 
 
 In your local Livingdocs config, adjust the `documents` settings as follows:
 
-```
+```js
 documents: {
   selectedImageService: 'imgix',
   imageServices: {
