@@ -5,7 +5,7 @@ menus:
     parent: Integrations
 ---
 
-Added in: [`release-2020-10`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-10.md)
+{{< added-in release-2020-10 >}}
 
 ## Motivation
 

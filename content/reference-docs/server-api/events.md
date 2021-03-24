@@ -101,7 +101,7 @@ The following lists all events, before the comma, the name of the event and behi
   - migration.cancel, `(eventName, {migration})`
 
 
-- mediaLibraryEntry added in: [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md)
+- mediaLibraryEntry {{< added-in release-2020-12 >}}
   - mediaLibraryEntry.create, `(eventName, {userId, projectId, mediaLibraryEntry})`
   - mediaLibraryEntry.update, `(eventName, {userId, projectId, id})`
   - mediaLibraryEntry.archive, `(eventName, {userId, projectId, id})`

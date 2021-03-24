@@ -3,7 +3,7 @@ title: Media Sources
 menu: reference
 ---
 
-Added in: [`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-03.md)
+{{< added-in release-2021-03 >}}
 
 With Media Sources you can integrate asset research/import into Livingdocs. Instead of having to log in to another platform like Unsplash and then drag + drop images into Livingdocs, you can have Unsplash assets search results available directly in Livingdocs.
 
