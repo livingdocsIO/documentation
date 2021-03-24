@@ -23,7 +23,7 @@ You will first need to configure this in your server.
 metadata: [{
   handle: 'catchline', // Name of the metadata field
   type: 'li-text', // name of the used metadata plugin
-  config: {maxLength: 400}, // configuration 
+  config: {maxLength: 400}, // configuration
   ui: {component: 'liMetaTextForm'} // UI to use in the editor
 }]
 ```
@@ -50,7 +50,7 @@ To add something to your drafts index, open the metadata mapping (typically in `
 ```
 5. Reset your draft elastic search index by running `npx livingdocs-server es-search-reindex -y`
 
-Adding to the publication index only makes sense if you want to filter by it (so the catchline is a poor example for this). [Read about the publication index]({{< ref "/reference-docs/server-configuration/publication-index.md" >}})
+Adding to the publication index only makes sense if you want to filter by it (so the catchline is a poor example for this). [Read about the publication index]({{< ref "/reference-docs/server-configuration/indexing/publication-index" >}})
 
 ## Example 2: Create your own Metadata Plugin
 

@@ -208,7 +208,7 @@ You can choose between 3 types of custom UI components.
 4. `angular-modal`, user interface in a modal dialog (if more space is required), button in the sidebar to open the modal
 
 ##### vue-component
-Added in: [`release-2020-02`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-02.md)
+{{< added-in release-2020-02 >}}
 The `uiComponents` config for `vue-component` looks as follows:
 ```js
 {

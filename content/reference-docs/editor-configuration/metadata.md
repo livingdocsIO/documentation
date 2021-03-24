@@ -55,7 +55,7 @@ metadata: [{
 You need to make sure that your server-side metadata field is of type `li-text` otherwise you will get errors.
 `readOnly` and `maxLength` let you customize the behavior of the text input. The text input will automatically display some visual help if a `maxLength` is set:
 
-Visual helper added in: [`release-2020-10`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-10.md)
+Visual helper {{< added-in release-2020-10 >}}
 {{< img src="./images/max-length.png" alt="Shows how the max length behavior is affects the editor" >}}
 
 The `service` option lets you customize the business logic of a metadata form field. Check the section [registering a metadata service](#registering-a-metadata-service) later on how to register a service.

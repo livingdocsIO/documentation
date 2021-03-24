@@ -4,7 +4,7 @@ menus:
   reference-docs:
     parent: Directives
 ---
-Added in: [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md)
+{{< added-in release-2020-12 >}}
 
 ## Example
 

@@ -106,7 +106,7 @@ The project config is a huge JSON file with subproperties for things like conten
       hosts: ['//pixabay.com']
     }],
 
-    // includeServices (added in release-2020-05)
+    // includeServices ({{< added-in release-2020-05 >}})
     // using this config, you can declaratively define include services
     includeServices: [
       {
@@ -133,9 +133,9 @@ The project config is a huge JSON file with subproperties for things like conten
       }
     ],
 
-    // Integrations (added in release-2020-04)
+    // Integrations ({{< added-in release-2020-04 >}})
     integrations: {
-      // Comyan (added in release-2020-04)
+      // Comyan ({{< added-in release-2020-04 >}})
       comyan: {
         enabled: true,
         buttonLabel: 'open comyan'
@@ -149,7 +149,7 @@ The project config is a huge JSON file with subproperties for things like conten
       }
     }
 
-    // Webhooks (added in release-2020-05)
+    // Webhooks ({{< added-in release-2020-05 >}})
     webhooks: {
       enabled: true
       configurations: [{

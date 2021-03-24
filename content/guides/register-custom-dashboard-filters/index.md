@@ -21,7 +21,7 @@ Hint: If you want to create a filter with metadata, make sure they are setup cor
 
 ## Register Custom List v2 Filter
 
-Added in: [`release-2020-02`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-02.md)
+{{< added-in release-2020-02 >}}
 
 ### Example
 
@@ -91,7 +91,7 @@ Hint: Look into [Filter Query Types]({{< ref "/reference/base_filter.md" >}}) to
 
 ### isDefault option
 
-Added in: [`release-2020-07`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-07.md)
+{{< added-in release-2020-07 >}}
 
 When `isDefault: true` (see example above), the default option will be added to the search query by default. As soon as one selects a filter manually, the default filter option will be ignored.
 
@@ -146,7 +146,7 @@ liEditor.searchFilters.registerList('creationDate', {
 
 ## Register Custom Vue Component Filter
 
-Added in: [`release-2020-10`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-10.md)
+{{< added-in release-2020-10 >}}
 
 [`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-03.md)
 Filters for the media-library need to define the `dataType`
