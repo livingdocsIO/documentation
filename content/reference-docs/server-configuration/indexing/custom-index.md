@@ -1,11 +1,12 @@
 ---
 title: Custom Elasticsearch Index
+linkTitle: Custom Index
 menus:
   reference-docs:
-    parent: Server Config
+    parent: Elasticsearch Indexing
 ---
 
-Added in: [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md)
+{{< added-in release-2020-12 >}}
 
 Livingdocs allows to index data (e.g. publications) in Elasticsearch with custom data and mapping. The customer fully controls what data and format is indexed. The core server supports the indexing process with
 - Data transformation hooks for processing
@@ -13,11 +14,11 @@ Livingdocs allows to index data (e.g. publications) in Elasticsearch with custom
 - CLI support for background indexing
 - Reporting
 
-The Livingdocs publication index [Publication Index]({{< ref "/reference-docs/server-configuration/publication-index.md" >}}) uses the same custom index approach, which is available by default for every customer.
+The Livingdocs publication index [Publication Index]({{< ref "./publication-index.md" >}}) uses the same custom index approach, which is available by default for every customer.
 
 ## Reasons for Using a Custom Elasticsearch Index
 
-We suggest to use the [Publication Index]({{< ref "/reference-docs/server-configuration/publication-index.md" >}}) if possible. But there are reasons why a custom index is the better approach.
+We suggest to use the [Publication Index]({{< ref "./publication-index.md" >}}) if possible. But there are reasons why a custom index is the better approach.
 
 - maximum flexibility
 - index other data than metadata
@@ -48,7 +49,7 @@ elasticIndex: {
   indexNamePrefix: 'your-company-local',
 
   // enable/disable the Livingdocs publication index (used in the public API for search requests)
-  // see: /reference-docs/server-configuration/publication-index
+  // see: /reference-docs/server-configuration/indexing/publication-index
   documentPublicationIndexEnabled: true, // default: true
 
   // A custom index can be registered here
@@ -208,7 +209,7 @@ module.exports = async function ({server, indexConfig}) {
 }
 ```
 
-```json
+```js
 // app/search/my-custom-publication/mapping.js
 {
   "dynamic": "strict",
