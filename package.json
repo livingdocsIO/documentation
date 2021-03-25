@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "./bin/build.sh",
-    "start": "hugo serve"
+    "start": "open http://localhost:1313 && exec hugo serve"
   },
   "repository": {
     "type": "git",
