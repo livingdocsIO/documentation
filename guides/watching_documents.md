@@ -1,7 +1,7 @@
-# Enable notifications in Livingdocs
+# Enable Notifications in Livingdocs
 
-This guide explains to you how to enable Livingdocs _notifications_ and what they are.
-In a nutshell, _notifications_ enable editors to actively track interesting changes on documents.
+This guide explains to you how to enable Livingdocs _Notifications_ and what they are.
+In a nutshell, _Notifications_ enable editors to actively track interesting changes on documents.
 
 Let's have an example with a _Proofreading task_. Let's assume Proofreaders are interested to know if a certain article has been marked for proofreading so that the article can be published with lightspeed once they finished the task.
 
@@ -27,12 +27,15 @@ module.exports = {
       },
       slack: {
         enabled: true,
+        // Slack documentation on how to create and retrieve that token
+        // https://api.slack.com/authentication/token-types#bot
         botUserToken: 'botUserToken'
       }
     }
   },
   
-  // a valid email configuration is required
+  // A valid email configuration is required:
+  // https://docs.livingdocs.io/reference-docs/server-config/config#user-management-emails
   emails: {
     transports: {
       default: {
@@ -59,7 +62,7 @@ module.exports = {
 
 
 ### Project config
-On the top level of the project config, certain _actions groups_ can be defined.
+Certain _actions groups_ can be defined within the [project config for notifications](../reference-docs/project-config/notifications.md).
 
 With the _action groups_ you can define the types of changes a certain group is interested in.
 
@@ -110,6 +113,13 @@ module.exports = {
 ```
 
 Possible action to register on at the moment:
+- document.publish
+- document.unpublish
+- document.copy
+- document.delete
+- document.transform
+- comment.add
+- task.assign
 - task.change
    config options:
    ```js
@@ -119,9 +129,3 @@ Possible action to register on at the moment:
     // assign to task proofreading on statusChanges 'requested', 'accepted', 'completed'
    {type: 'task.change', taskName: 'proofreading', statusChange: ['requested', 'accepted', 'completed']}
    ```
-- document.publish
-- document.unpublish
-- document.copy
-- document.delete
-- document.transform
-- comment.add
