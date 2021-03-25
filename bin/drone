@@ -1,3 +1,5 @@
 #!/bin/bash
 set -e
+export DRONE_SERVER=https://drone.livingdocs.io
 drone sign livingdocsIO/livingdocs --save
+git add .drone.yml
