@@ -146,7 +146,6 @@ If no `Media Type` config is provided it falls back to a default config where `t
     }
   ]
 }]
-
 ```
 
 ## Metadata

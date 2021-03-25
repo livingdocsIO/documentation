@@ -104,20 +104,26 @@ The second key `rendering` defines how your doc-include should be rendered. We w
 
 The registered rendering method will render the `doc-include` preview in the editor for you. You can also use it to render the `doc-include` upon publishing, i.e. delivering the rendered `doc-include` over the public API. You can perform this setting per channel and rendition. Below is an example channel configuration for the web channel.
 
-```
-renditions:
-  'web':
-    livingdocMiddleware: []
-    output:
-      'html':
-        outputRenderer: new CheerioHtml
-          middleware: []
+```js
+renditions: {
+  'web': {
+    livingdocMiddleware: [],
+    output: {
+      'html': {
+        outputRenderer: new CheerioHtml({middleware: []}),
         resolveIncludes: ['embed-teaser']
-  'app':
-    livingdocMiddleware: []
-    output:
-      'json':
+      }
+    }
+  },
+  'app': {
+    livingdocMiddleware: [],
+    output: {
+      'json': {
         outputRenderer: appRenderer
+      }
+    }
+  }
+}
 ```
 
 There are 2 renditions here, web and app. For the web, the `embed-teaser` include is resolved (`resolveIncludes`) thus in my published HTML documents I will see the rendered `doc-include` according to the rendering function I wrote. For the app, no includes are resolved, thus I will only get placeholders containing the parameters without any rendering happening.
@@ -131,12 +137,12 @@ The image above shows how a manually sorted list of article teasers is created i
 _Note: you need to activate the editor environment config for the inline list editing to become visible_
 ```js
 // for example: all.js in the editor
-module.exports = { 
+module.exports = {
   app: {
     inlineListEditingIsEnabled: true
-  } 
+  }
 }
-``` 
+```
 
 #### Design definition
 

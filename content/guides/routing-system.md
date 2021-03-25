@@ -410,7 +410,7 @@ republishing is enough to get the metadata up to date.
 
 Available on the routing feature API `server.features.api('li-routing').`
 
-```
+```js
 type PublicationStatus = {
   route: {
     metadata: {
