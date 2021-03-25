@@ -6,6 +6,8 @@ metadata:
     {{- include "helm.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: RollingUpdate
   selector:
     matchLabels:
       {{- include "helm.selectorLabels" . | nindent 6 }}
