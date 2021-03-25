@@ -24,7 +24,7 @@ In order to go from a reference design to an embedded design the following steps
 The rules on how to migrate the design are described [here]({{< ref "/reference/legacy-design/design-config-v1-to-v2.md" >}}).
 We have an unofficial helper script that can be used. It can be considered an alpha version and has successfully been used to migrate several projects. We want to test it some more before we take it to the official command list.
 
-### For the adventerous
+### For the adventurous
 
 The script can be called from the code repository of the [livingdocs-cli](https://github.com/livingdocsIO/livingdocs-cli).
 With the checked out code, you can run the following command from the cli:

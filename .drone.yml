@@ -9,7 +9,7 @@ steps:
 - name: docker
   image: plugins/docker
   settings:
-    repo: livingdocs/bar
+    repo: livingdocs/docs
     username:
       from_secret: DOCKER_USERNAME
     password:
@@ -80,6 +80,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 05ff4a71010bb67a80f34f6d642a3a66ac27d8348915572c3e51f12c60aa4dc3
+hmac: 459564a41950b12ddedc20a21a8cce1cfb7ccb9ecf6deb3eafab432622d4114e
 
 ...
