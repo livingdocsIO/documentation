@@ -22,13 +22,15 @@ Here you see a simple example which rejects a document update when the title is 
 liServer.registerInitializedHook(async () => {
   const accessControlApi = server.features.api('li-access-control')
   accessControlApi.registerHook(async ({action, nextDocument}) => {
-    if (action === 'document.update') {
-      if (nextDocument.metadata.title === 'examplePermissionError') {
-        return accessControlApi.metadataPermissionError({
-          message: 'Title cannot be "examplePermissionError"',
-          metadataProperty: 'title'
-        })
-      }
+    switch (action) {
+      case 'document.update':
+        if (nextDocument.metadata.title === 'examplePermissionError') {
+          return accessControlApi.metadataPermissionError({
+            message: 'Title cannot be "examplePermissionError"',
+            metadataProperty: 'title'
+          })
+        }
+        break
     }
   })
 })
