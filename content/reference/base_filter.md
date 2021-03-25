@@ -82,7 +82,6 @@ const to = new Date('2015-04-05T20:00')
 {type: 'metadata', key: 'transformed', value: true, dataType: 'boolean'}
 // metadata plugin with a set key in the index_behavior
 {type: 'metadata', key: 'googleVision.labels', value: 'Vogel', dataType: 'keyword'}
-
 ```
 
 

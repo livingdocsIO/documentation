@@ -238,7 +238,6 @@ module.exports = {
     }
   }
 }
-
 ```
 
 #### Elasticsearch metadata

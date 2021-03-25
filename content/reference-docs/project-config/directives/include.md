@@ -9,7 +9,7 @@ Includes allow you to define parts of your markup that will be controlled from a
 
 ## Example
 
-```
+```js
 module.exports = {
   name: 'echo',
   label: 'Echo',
