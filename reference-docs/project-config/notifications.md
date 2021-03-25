@@ -4,7 +4,7 @@ Added in: [`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release
 You can configure `notifications` to enable the possibility that a user can get notifications for changes on a document.
 
 There is also a guide how to configure the notifications.
-[Notification guide](guides/watching_documents.md)
+[Notification guide](../../guides/watching_documents.md)
 
 ```js
 module.exports = {
