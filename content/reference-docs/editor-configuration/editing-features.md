@@ -144,7 +144,6 @@ This setting only sets the default ratio, a user is given an interface to change
     timeout: 10000
   }
 }
-
 ```
 
 Allows you to configure after how much time a timeout should happen in calls from the editor to the server. 10 seconds by default. In milliseconds.

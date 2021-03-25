@@ -64,7 +64,7 @@ To get the component displayed in the editor you need to do 3 more things:
  (Note that we used the `name` property, i.e. `header` when referencing the component in other config files)
 
 Now that everything is ready, we can restart the server to apply our changes. Upon starting you should see a line like this on the command-line:
-```
+```sh
 16:31:12 INFO  li-tasks/setupProjects > Updated - project 'boilerplate': 1 patch applied (revisionNumber: 2)
 ```
 
@@ -89,7 +89,7 @@ Navigate to the content-type file `article.js` and add the following JSON just a
 ```
 
 Again, restart your server. In case of success you will see a line on the CLI like this:
-```
+```sh
 16:57:10 INFO  li-tasks/setupProjects > Updated - project 'boilerplate': 1 patch applied (revisionNumber: 3)
 ```
 
@@ -109,7 +109,7 @@ You will also see that on the top right a new button "Prepare Publication" appea
 
 {{< img src="publish-config.png" alt="Publish Config" >}}
 
-This is the publication screen for your project config. Every change is shown in a diff view where you can review your changes. This is the same JSON that you edited manually in the boilerplate before. 
+This is the publication screen for your project config. Every change is shown in a diff view where you can review your changes. This is the same JSON that you edited manually in the boilerplate before.
 
 If you're fine with your changes, scroll to the bottom and click "Publish Changes".
 Navigate to any article and in the "Insert" sidebar the header will now be in first place.
