@@ -74,7 +74,7 @@ Design assets need to be accessible for both the editor as well as the end-user 
 
 In the `design_settings` file (see above), you can specify the location where your required assets are located:
 
-```
+```js
 {
   v: 2,
   settings: {/* omitted for illustration purpose */},
