@@ -53,7 +53,7 @@ module.exports = {
 
 Lets recap what we have.
 Every component defines a `name` to reference it in the system, a `label` and `iconUrl` for display and an `html` containing the markup.
-The HTML itself contains declarative directives that are prepended with `doc-`, in our example `doc-editable` and `doc-image` ([learn all about directives](../reference-docs/project-config/design.md#components)). Those tell the Livingdocs editor where the users can edit content.
+The HTML itself contains declarative directives that are prepended with `doc-`, in our example `doc-editable` and `doc-image` ([learn all about directives]({{< ref "/reference-docs/project-config/design.md#components">}})). Those tell the Livingdocs editor where the users can edit content.
 The directives themselves can contain configuration, referenced in the `directives` property. In our example we tell the Livingdocs editor that we want to give the image preset ratios of '16:9' and '4:3'.
 
 To get the component displayed in the editor you need to do 3 more things:

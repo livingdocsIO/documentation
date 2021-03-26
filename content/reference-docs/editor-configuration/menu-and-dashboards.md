@@ -93,7 +93,7 @@ app: {
 
 
 To hide an entry, simply delete it from the list.
-You can also customize the scopes that you assign to a menu item to control access rights. See [all available scopes](../../guides/access/access_rights.md#available-scopes).
+You can also customize the scopes that you assign to a menu item to control access rights. See [all available scopes]({{< ref "/guides/auth/access-rights#available-scopes" >}}).
 You can also customize the icons. We use https://materialdesignicons.com/ just use the respective icon string.
 
 To link to an external page add an entry as follows:
@@ -123,4 +123,4 @@ search: {
 }
 ```
 
-Note that the custom component can only use document metadata that has been explicitly [whitelisted](../server-configuration/config.md#search).
+Note that the custom component can only use document metadata that has been explicitly [whitelisted]({{< ref "/reference-docs/server-configuration#search" >}}).
