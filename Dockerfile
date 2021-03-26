@@ -1,4 +1,4 @@
-FROM node:15-alpine as builder
+FROM livingdocs/node:15 as builder
 ADD package*.json /app/
 WORKDIR /app
 RUN apk add hugo --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community && npm ci
