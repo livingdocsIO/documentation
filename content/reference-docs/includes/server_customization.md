@@ -20,7 +20,7 @@ An unresolved include looks like this in the published document's HTML:
 </div>
 ```
 
-It contains all the information needed to replace it with the actual content. The example shows the core include for the [embed-teaser](./article_and_list_includes.md#embed-teaser) that is given the linked document id as a parameter.
+It contains all the information needed to replace it with the actual content. The example shows the core include for the [embed-teaser]({{< ref "/guides/includes/article-and-list-includes#embed-teaser">}}) that is given the linked document id as a parameter.
 
 #### Resolved include
 
@@ -223,7 +223,7 @@ The `uiComponents` config for `vue-component` looks as follows:
 }
 ```
 
-The Vue component `myIncludeSidebarComponent` is required to be registered in the editor. We explain [here](../editor-api/vue-component-registry.md#includeParamsSidebarForm) how to do this.
+The Vue component `myIncludeSidebarComponent` is required to be registered in the editor. We explain [here]({{< ref "/reference-docs/editor-api/vue-component-registry.md#includeParamsSidebarForm" >}}) how to do this.
 
 
 ##### iframe-modal

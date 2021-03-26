@@ -347,7 +347,7 @@ metadata: [{
 }]
 ```
 
-With this in place you can set the channel configuration for your push notification topics \(see example config above\) and the firebase configuration in the [server config](../server-configuration/config.md#push-notifications).
+With this in place you can set the channel configuration for your push notification topics \(see example config above\) and the firebase configuration in the [server config]({{< ref "/reference-docs/server-configuration#push-notifications" >}}).
 
 ## Text Formatting
 
@@ -406,4 +406,4 @@ Example:
 
 ## Print
 
-The print options allow you to enable the WoodWing Studio print connector on a content-type. Refer to our [setup guide](../../guides/print.md) in order to setup your project with the print connector. Note: before you consider productive use of a print connector you must get in contact with us. The provided WoodWing connector is only to be used for test purposes.
+The print options allow you to enable the WoodWing Studio print connector on a content-type. Refer to our [setup guide]({{< ref "/guides/integrations/print" >}}) in order to setup your project with the print connector. Note: before you consider productive use of a print connector you must get in contact with us. The provided WoodWing connector is only to be used for test purposes.

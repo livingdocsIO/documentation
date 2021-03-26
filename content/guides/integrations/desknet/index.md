@@ -173,7 +173,7 @@ Add the plugin to the settings of content type `'regular'`:
 }
 ```
 
-As mentioned before, we won't go further into how to set up metadata at this point, but you can read all about that [here](./metadata).
+As mentioned before, we won't go further into how to set up metadata at this point, but you can read all about that [here]({{ ref "/reference-docs/server-api/metadata" >}}).
 
 #### 2. Set up a mapping that defines how to translate from Desk-Net to Livingdocs
 

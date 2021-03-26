@@ -689,7 +689,7 @@ pushNotifications: {
 }
 ```
 
-For push notifications to be enabled you also need to follow the steps in the [channel config setup](../project-config/content-types.md#push-notifications)
+For push notifications to be enabled you also need to follow the steps in the [channel config setup]({{< ref "/reference-docs/project-config/content-types.md#push-notifications">}})
 
 
 #### Asset management

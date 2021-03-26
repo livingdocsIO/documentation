@@ -100,7 +100,7 @@ In order for the dashboard to have the required metadata, you will need to confi
 }
 ```
 
-Note: if you did your [own dashboard item](./push_notifications.md#add-a-custom-dashboard-item), the language column will not work out-of-the-box and you will need to customize your dashboard item to show the language
+Note: if you did your [own dashboard item]({{< ref "../push-notifications#add-a-custom-dashboard-item" >}}), the language column will not work out-of-the-box and you will need to customize your dashboard item to show the language
 
 ## Editor
 
