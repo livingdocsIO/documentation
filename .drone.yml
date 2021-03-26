@@ -3,7 +3,7 @@ kind: pipeline
 name: build
 
 clone:
-  depth: 50
+  depth: 5000
 
 steps:
 - name: docker
@@ -80,6 +80,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 459564a41950b12ddedc20a21a8cce1cfb7ccb9ecf6deb3eafab432622d4114e
+hmac: 0d6c83679db58bf37486a938f58aeb1d8fd97011a1b5c0f58ca8169e55d7aa59
 
 ...
