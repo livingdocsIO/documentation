@@ -4,7 +4,7 @@ menu: operations
 ---
 
 ### Hardware requirements
-See the [hardware requirements](../hardware-requirements) for the requirements of each application and the services.
+See the [hardware requirements]({{< ref "/operations/hardware-requirements.md" >}}) for the requirements of each application and the services.
 
 ### Applications
 The server and delivery are both applications written in node.js. Node.js is single threaded, but it can handle concurrency through the asynchronous event loop. If a node.js process crashes, it has to be restarted and it is not able to accept requests during startup.
