@@ -34,4 +34,4 @@ module.exports = {
 
 ## Config Option
 
-- `properties`: array of strings, set of referenced [component properties](../design.md#component-properties) that are set when the user enters content. E.g. in the example below a user could set a hex-code for a color that uses the component property `css-background-color` that in turn sets the style attribute to `style="background-color:user-value"`.
+- `properties`: array of strings, set of referenced [component properties]({{< ref "../design.md#component-properties" >}}) that are set when the user enters content. E.g. in the example below a user could set a hex-code for a color that uses the component property `css-background-color` that in turn sets the style attribute to `style="background-color:user-value"`.

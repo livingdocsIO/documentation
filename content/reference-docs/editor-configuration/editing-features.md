@@ -61,7 +61,7 @@ There are several configuration options concerning images.
 
 ### Image service
 
-See [here](../../guides/image-services.md#configuring-an-image-service)
+See [here]({{< ref "/guides/image-services.md#configuring-an-image-service" >}})
 
 ### Image cropping
 
@@ -161,12 +161,12 @@ Allows you to configure after how much time a timeout should happen in calls fro
 }
 ```
 Iframely is used for 2 things:
-- validating links that you enter in the text (see [text editing](./text-editing.md#links))
+- validating links that you enter in the text (see [text editing]({{ ref "./text-editing.md#links" }}>))
 - in combination with [`doc-link` to prefill component from metadata]({{< ref "/reference-docs/project-config/directives/link.md" >}})
 
 ### Spellcheck
 
-See [here](./text-editing.md#spellcheck)
+See [here]({{ ref "./text-editing.md#spellcheck" }}>)
 
 ## Document History
 
@@ -209,7 +209,7 @@ The `pageSize` is the size of how many revisions are shown in the UI.
 
 ## Links
 
-See [here](./text-editing.md#links)
+See [here]({{ ref "./text-editing.md#links" >}})
 
 ## Keyboard Shortcuts
 
