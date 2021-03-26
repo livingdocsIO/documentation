@@ -1,10 +1,14 @@
 languageCode: en-us
 theme: hugo-docs
-enableEmoji: true
 uglyURLs: false
 refLinksErrorLevel: WARNING
 baseURL: https://documentation.livingdocs.io/
 title: Livingdocs Enterprise Documentation
+enableGitInfo: true
+enableEmoji: true
+enableInlineShortcodes: true
+enableRobotsTXT: true
+googleAnalytics: UA-47320912-2
 
 markup:
   goldmark:
