@@ -3,17 +3,27 @@
 Livingdocs contains a Media Library that solves management and delivery of Images and Videos.
 There are different pieces that can be used to cover custom needs per project.
 
-This guide will walk you through setting up a basic Media Library for your project with Images support, you will learn about some details along the way.
-
-The Videos feature is not feature complete yet, it will be documented when it is. If you
-are interested in testing it, please contact us.
+This guide will walk you through setting up a basic Media Library for your project with Images and Videos support, you will learn about some details along the way.
 
 At heart, the Media Library is based around configured `Media Types`. You might be familiar already with the concept of `Content Types`. `Media Types` are very similar.
 You can configure as many different `Media Types` as you want. Usually you want to have at least 1 for Images (in fact, if you don't define one yourself, there is one added automatically at runtime).
 
 See the [mediaType reference](/reference-docs/project-config/media_types.md) for a full reference of the `mediaType` configuration options.
 
-## Media Types
+When you have configured mediaTypes, you will get buttons to let users insert `Images` and `Videos` from the Document Editing Toolbar automatically.
+![Editing Toolbar](images/media_library/editing-toolbar.png)
+
+The [Main Navigation](/reference-docs/project-config/editor_settings#main-navigation) will automatically hold entries for `Images` and `Videos` as well if you have a `liItem: 'mediaLibrary'` entry in your `mainNavigation` config.
+
+## Images
+
+### Server Config
+First, you need to make sure your server is [configured to store images](/reference-docs/server-config/config.md#images).
+
+### Image Services
+To render images in documents, Livingdocs uses so called [Image Services](/evaluation-guide/image-services.md). You need to [configure one in your project](/evaluation-guide/image-services.md#configuring-an-image-service) to make use of images in documents.
+
+### Basic Media Type
 Let's setup a `mediaType` for the images first. You add it to your [project config](/reference-docs/project-config/README.md) in an array at the top-level property `mediaTypes`.
 
 ```js
@@ -306,6 +316,142 @@ module.exports = {
       ui: {component: 'liMetaImageForm'}
     }
     // ...
+  ],
+  // ...
+}
+```
+
+## Videos
+Since `release-2021-03` you can manage your Videos with the Livingdocs Media Library as well. It works pretty similar to the images. The solution still has some shortcomings you need to be aware of:
+
+- No render strategies or video services like you know them from images are available yet. That means the system works well if you render from the JSON in the delivery, but not so well if you let Livingdocs do the rendering to HTML.
+- As with images, you don't want to deliver the original Video file to your customers directly but have some kind of transcoding to different formats and sizes. There is no integrated solution to this in Livingdocs yet.
+
+Nevertheless if you find solutions to these problems outside of Livingdocs, you can very well make use of the Video Management System already.
+
+### Server Config
+You need to make sure your server is [configured to store videos](/reference-docs/server-config/config.md#videos).
+
+### Basic Media Type
+Let's setup a `mediaType` for the videos. You add it to your [project config](/reference-docs/project-config/README.md) in an array at the top-level property `mediaTypes`.
+
+```js
+//media-types/video.js
+module.exports = {
+  type: 'mediaVideo', // the type is either 'mediaImage' or 'mediaVideo'
+  handle: 'video', // you can name this as you like
+  info: {
+    label: 'Videos', // used in dashboards generated for this mediaType
+    description: ''
+  },
+  metadata: [ // any metadata configuration as you know it from contentTypes already
+    {
+      handle: 'title',
+      type: 'li-text',
+      config: {
+        required: true, // if a metadata property is required, the user will see a form to enter the metadata during upload
+        requiredErrorMessage: 'Please provide a title',
+        maxLength: 200,
+        index: true
+      },
+      ui: {component: 'liMetaTextForm'}
+    },
+    {
+      handle: 'description',
+      type: 'li-text',
+      config: {
+        index: true
+      },
+      ui: {component: 'liMetaTextForm'}
+    },
+    {
+      handle: 'credit',
+      type: 'li-text',
+      config: {
+        required: true,
+        requiredErrorMessage: 'Please provide a source',
+        index: true
+      },
+      ui: {component: 'liMetaTextForm'}
+    }
+  ],
+  editor: {
+    // the dashboard seen by users when opening Images/Videos from the document editor
+    dashboard: {
+      displayFilters: [
+        {
+          filterName: 'liDateTimeRange'
+        }
+      ]
+    },
+    // the dashboard opened through the main navigation
+    managementDashboard: {
+      displayFilters: [
+        {
+          filterName: 'liDateTimeRange'
+        }
+      ]
+    }
+  }
+}
+```
+
+### Poster Image
+For Videos, you want to have a poster image displayed in your Video Player before the Video starts playing. Livingdocs provides a metadata plugin to manage this image.
+
+When configured, a UI to manage the image is provided.
+![poster image](images/media_library/poster-image.png)
+
+You can even select a specific frame of the video by pausing the player and selecting the current frame as the poster image.
+![poster image frame selection](images/media_library/poster-image-frame-selection.png)
+
+Images stored with this metadata plugin will contain one crop in the aspect ratio of the video file automatically. A user can change the zoom and position but not the aspect ratio of that crop.
+
+Poster Images are stored withing the Media Library as images when uploaded through the poster image metadata plugin or a frame of the video is selected. You probably want to configure a separate `mediaType` for these, since there are different requirements to the metadata.
+
+#### mediaType for the images
+Don't forget to add this the the `mediaTypes` in your [project config](/reference-docs/project-config/README.md).
+
+```js
+// /media-types/poster-image.js
+module.exports = {
+  type: 'mediaImage',
+  handle: 'posterImage',
+  info: {
+    label: 'Poster Images'
+  },
+  hidden: true, // This makes sure these images are not shown in the regular Image Library
+  metadata: [{
+    handle: 'title',
+    type: 'li-text',
+    ui: {
+      component: 'liMetaTextForm'
+    }
+  }]
+}
+```
+
+#### li-poster-image metadata plugin
+Now you can add the `li-poster-image` metadata plugin to your video `mediaType`:
+
+```js
+//media-types/video.js
+module.exports = {
+  type: 'mediaVideo',
+  handle: 'video',
+  // ...
+  metadata: [
+    // ...
+    {
+      handle: 'posterImage',
+      type: 'li-poster-image',
+      ui: {
+        component: 'liMetaPosterImageForm',
+        config: {
+          uploadMediaType: 'posterImage' // this is the handle of the mediaType used for uploaded images
+        }
+      }
+    }
   ],
   // ...
 }
