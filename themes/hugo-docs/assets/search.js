@@ -1,33 +1,47 @@
 const lunr = require('lunr')
 
-let index
-const queue = []
+const indexes = {}
 const byRef = new Map()
-fetch('/search.json')
-	.then(response => response.json())
-	.then((documents) => {
-		index = lunr(function () {
-			// this.pipeline.remove(lunr.trimmer)
 
-			this.ref('url')
-			this.field('title')
-			this.field('description')
-			this.field('body')
-	    this.metadataWhitelist = ['position']
+function initializeIndex (searchJson) {
+	let index
+	const queue = []
 
-			for (const doc of documents) {
-				byRef.set(doc.url, doc)
-				this.add(doc)
-			}
+	fetch(searchJson)
+		.then(response => response.json())
+		.then((documents) => {
+			index = lunr(function () {
+				// this.pipeline.remove(lunr.trimmer)
+
+				this.ref('url')
+				this.field('title')
+				this.field('description')
+				this.field('body')
+				this.metadataWhitelist = ['position']
+
+				for (const doc of documents) {
+					byRef.set(doc.url, doc)
+					this.add(doc)
+				}
+			})
+
+			for (const query of queue) search(query)
 		})
 
-		for (const query of queue) search(query)
-	})
+	function search (data) {
+		if (!index) return queue.push(data)
+		searchInIndex(index, data)
+	}
 
-function search ({query, limit}) {
+	const api = {search}
+	indexes[searchJson] = api
+	return api
+}
+
+function searchInIndex (index, {query, limit}) {
 	const byDoc = {}
 	let count = 0
-	for (const match of index.query(queryFunction.bind(this, query))) {
+	for (const match of index.query(queryFunction.bind(this, index, query))) {
 		count++
 		const ref = byRef.get(match.ref)
 		const documentUrl = match.ref.replace(/#.+/, '')
@@ -76,7 +90,7 @@ function highlight (prop, string, matches) {
 	return str
 }
 
-function queryFunction (query, q) {
+function queryFunction (index, query, q) {
 	const words = query.toLowerCase().split(/[ .]/).filter(Boolean)
 
 	// how to properly normalize the string?
@@ -100,8 +114,8 @@ function queryFunction (query, q) {
   new lunr.QueryParser(query, q).parse()
 }
 
-
 self.addEventListener('message', function (e) {
-	if (!index) queue.push(JSON.parse(e.data))
-	else search(JSON.parse(e.data))
+	const data = JSON.parse(e.data);
+	(indexes[data.index] || initializeIndex(data.index))
+		.search(data)
 }, false)

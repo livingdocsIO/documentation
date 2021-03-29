@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="preload"/>
 
   {{ $built := resources.Get "script.js" | js.Build | resources.Minify | fingerprint }}
+  <script>window.searchJson = {{ if (eq .Section "enterprise") }}'/enterprise/search.json'{{ else }}'/service/search.json'{{ end }}</script>
   <script type="text/javascript" src="{{ $built.RelPermalink }}" defer></script>
   {{ $worker := resources.Get "search.js" | js.Build }}
   <link rel="lunr" href="{{ $worker.RelPermalink }}"/>
