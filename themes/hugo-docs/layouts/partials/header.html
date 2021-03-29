@@ -19,6 +19,7 @@
   <script type="text/javascript" src="{{ $built.RelPermalink }}" defer></script>
   {{ $worker := resources.Get "search.js" | js.Build }}
   <link rel="lunr" href="{{ $worker.RelPermalink }}"/>
+  {{ template "_internal/google_analytics_async.html" . }}
 </head>
 
 <body>
