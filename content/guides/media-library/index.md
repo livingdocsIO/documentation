@@ -338,7 +338,7 @@ Nevertheless if you find solutions to these problems outside of Livingdocs, you 
 You need to make sure your server is [configured to store videos]({{< ref "/reference-docs/server-configuration#videos" >}}).
 
 ### Basic Media Type
-Let's setup a `mediaType` for the videos. You add it to your [project config]({{< ref "/reference-docs/project-config" >}}) in an array at the top-level property `mediaTypes`.
+Let's setup a `mediaType` for the videos. You add it to your [project config]({{< ref "/reference-docs/project-config/project-config" >}}) in an array at the top-level property `mediaTypes`.
 
 ```js
 //media-types/video.js

@@ -96,4 +96,4 @@ props: {
 },
 ```
 
-A full example can be seen [here](/guides/register-custom-dashboard-filters#register-custom-vue-component-filter)
+A full example can be seen [here]({{< ref "/guides/register-custom-dashboard-filters#register-custom-vue-component-filter" >}})
