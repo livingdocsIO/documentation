@@ -1,5 +1,6 @@
 ---
 title: Include
+description: Includes allow you to define parts of your markup that will be controlled from a third-party micro-service.
 menus:
   reference-docs:
     parent: Directives

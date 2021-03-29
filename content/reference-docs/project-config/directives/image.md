@@ -1,5 +1,6 @@
 ---
 title: Image
+description: The image directive declared on `img` tags enable a user to make the image editable.
 menus:
   reference-docs:
     parent: Directives

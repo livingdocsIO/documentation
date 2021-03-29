@@ -1,11 +1,13 @@
 ---
 title: Link
+description: A link directive generates a user interface in Livingdocs to enter a link.
 menus:
   reference-docs:
     parent: Directives
 ---
 
-A link directive can only be used on `<a>` tags. It generates a user interface in the editor for entering a link. If you want to set a link on an image for example, just wrap the `<img>` tag in an `<a>` tag and add a doc-link directive on the `<a>` tag.
+A link directive generates a user interface in Livingdocs to enter a link. It can only be defined on `<a>` tags.
+If you want to set a link on an image for example, just wrap the `<img>` tag in an `<a>` tag and add a doc-link directive on the `<a>` tag.
 
 ## Example
 
