@@ -1,11 +1,12 @@
 ---
-title: Add your custom proofreading task
+title: Proofreading Task
+description: Configure a proofreading task that can be used by editorial teams to assign documents to subeditors.
 menus:
   guides:
     parent: Workflows
 ---
 
-This guide will show you how to add a custom `proofreading` task. A `proofreading` task is a special form of a task with some additional config settings and plugins. If you want to know how to add a custom task in general, you can read more [here]({{< ref "add-custom-task.md" >}})
+This guide will show you how to add a custom `proofreading` task. A `proofreading` task is a special form of a task with some additional config settings and plugins. If you want to know how to add a review task or another generic task, you can read more [here]({{< ref "review-task.md" >}})
 
 The screenshot below shows the task in question.
 

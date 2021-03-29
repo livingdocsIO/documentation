@@ -1,5 +1,6 @@
 ---
-title: Add Custom Realtime Proofreading Dashboard
+title: Proofreading Dashboard
+description: Configure a proofreading dashboard to assist editorial teams with an efficient workflow.
 menus:
   guides:
     parent: Workflows
@@ -7,7 +8,7 @@ menus:
 
 ## Goal
 
-Our goal of this walkthrough is to show how to set up a "Custom Realtime Proofreading Task Dashboard".
+Our goal of this walkthrough is to show how to set up a Proofreading Task Dashboard with Realtime Collaboration.
 
 Key features
 - You have your own dashboard with your own design card
@@ -37,7 +38,7 @@ metadata: [{
 ```
 
 References:
-- [How to customise a proofreading task]({{< ref "./add-custom-proofreading-task.md" >}})
+- [How to customise a proofreading task]({{< ref "./proofreading-task.md" >}})
 - [How to configure a metadata field]({{< ref "/enterprise/reference-docs/server-api/metadata.md" >}})
 
 ### Add my-proofreading to elasticsearch
