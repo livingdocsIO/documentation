@@ -22,7 +22,7 @@ Add your documentation in the right spot. The structure is as follows:
 
 Always have a small description at the top of your page to introduce the reader into the topic. Add notes after the first section.
 
-In the reference-docs always be brief and concise. Don't state opinions or use unnecessary adjectives. Or as Einstein puts it «as simple as possible but no simpler».
+Always be brief and concise. Don't state opinions or use unnecessary adjectives. Or as Einstein puts it «as simple as possible but no simpler».
 
 In the guides always state what a certain guide is trying to achieve. Be comprehensive, i.e. don't leave out stuff that would frustrate people following your guide.
 
