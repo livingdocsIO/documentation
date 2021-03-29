@@ -550,7 +550,14 @@ Configure the elasticsearch instance used by the search feature.
 
 ```js
 search: {
+  // Configures the elasticsearch search cluster
   host: 'http://localhost:9200',
+  // Instead of `host`, you can also declare the
+  // configuration using the elasticsearch.js client configuration object.
+  // For more details about the configuration,
+  // please consult the elasticsearch client documentation. https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/basic-config.html
+  elasticsearchClient: {node: 'http://localhost:9200'}
+
   articleDocumentIndex: 'li-local-documents',
   numberOfReplicas: 1,
   apiVersion: '2.4', // optional, defaults to '2.4'
@@ -610,19 +617,43 @@ Integrate custom Elasticsearch indexes. If you want to know more (with all possi
 ```js
 // conf/environments/local.js
 elasticIndex: {
-
-  // every index name will be prefixed to prevent name clashes
-  // the index will be created with this pattern: `${indexNAmePrefix}-${handle}-index`
+  // If this option is configured, every index name will be prefixed.
+  // We advise to configure this in case you don't use credentials per environment (dev/stage/prod).
+  // The indexes are created with the following pattern: `${indexNamePrefix}-${index.handle}-index`
   indexNamePrefix: 'your-company-local',
 
-  // A custom index can be registered here
-  // The indexing hooks call every custom index and handle them
+  // To support multi cluster indexing, you can declare multiple clusters.
+  // By default we index into the cluster defined in `search.host` or `search.elasticsearchClient`.
+  // Please consult {{< ref "./indexing/multi-cluster-indexing.md" >}} for more details.
+  clusters: [
+    {handle: 'default', node: 'https://elasticsearch:9200', useAsLivingdocsIndexTarget: true}
+  ],
+
+  // Custom indexes can be configured in case you want to
+  // index documents with a custom structure and mapping.
+  // Consult {{< ref "./indexing/custom-index.md" >}} for more details.
   customIndexes: [
     {
       // used as identifier e.g. for the background indexing via CLI
       handle: 'my-custom-publication',
-      // file to define the mapping and the transformation of the documents
-      indexInitializationFile: require.resolve('../../app/search/my-custom-publication/init.js')
+
+      // Reference to a file that contains a factory function to transform and index documents.
+      // Please
+      indexInitializationFile: require.resolve('../../app/search/my-custom-publication/init.js'),
+
+      // You can disable a specific index by setting that flag to false
+      enabled: true,
+
+      // Declare an alias, so we can reindex in the background and switch it once finished
+      // By default the index handle is used as alias. Use `false` to disable the alias creation.
+      alias: 'my-custom-publication',
+
+      // An object passed to the index bulk operations
+      context: {projectHandle: 'your-project-handle', isPublished: true},
+
+      //  To support multi cluster indexing, you can configure a target cluster by handle.
+      // Consult {{< ref "./indexing/multi-cluster-indexing.md" >}} for more details.
+      clusters: ['default']
     }
   ]
 },

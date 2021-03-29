@@ -27,7 +27,7 @@ function parseDocument (index, {url, section, categories, title, description, bo
           section: section,
           categories: [],
           title: (sectionTitle || '').trim(),
-          description,
+          description: sectionTitle === title ? (description || '').trim() : '',
           body: (sectionText || '').trim(),
         })
 

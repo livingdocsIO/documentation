@@ -1,6 +1,7 @@
 ---
 title: Search published documents
 linkTitle: Publication Index
+description: How to use and configure the publication index of Livingdocs.
 menus:
   reference-docs:
     parent: Elasticsearch Indexing

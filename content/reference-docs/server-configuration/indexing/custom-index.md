@@ -1,6 +1,7 @@
 ---
 title: Custom Elasticsearch Index
 linkTitle: Custom Index
+description: Configure an index processor to support custom data structures and queries in elasticsearch.
 menus:
   reference-docs:
     parent: Elasticsearch Indexing
@@ -52,42 +53,40 @@ elasticIndex: {
   // see: /reference-docs/server-configuration/indexing/publication-index
   documentPublicationIndexEnabled: true, // default: true
 
+
+  clusters: [{handle: 'default', node: 'http://elasticsearch:9200'}]
+
   // A custom index can be registered here
   // The live indexing hooks call every custom index and handle them
-  customIndexes: [
-    {
-      // required
-      // --------
+  customIndexes: [{
+    // Used as index identifier in the API's and CLI
+    handle: 'my-custom-publication',
 
-      // used as identifier e.g. for the background indexing via CLI
-      handle: 'my-custom-publication',
+    // file to define the mapping and the transformation of the documents
+    indexInitializationFile: require.resolve('../../app/search/my-custom-publication/init.js'),
 
-      // file to define the mapping and the transformation of the documents
-      indexInitializationFile: require.resolve('../../app/search/my-custom-publication/init.js'),
+    // The context is passed to the 'processBatch' and 'createBatches' function
+    // With that it's possible to search/index documents based on the context
+    context: {
+      projectHandle: 'myProjectHandle',
+      channelHandle: 'myChannelHandle',
+      documentType: 'page',
+      contentType: 'regular',
+      isPublished: true,
+      myCustomField: 'hello world'
+    },
 
+    // When disabled, the index will be ignored for all operations
+    enabled: true, // default: true
 
-      // optional
-      // --------
+    // Define the alias pointing to your elastic index
+    // The default for the alias is the index.handle config (in this example - 'my-custom-publication')
+    alias: 'an-alias',
 
-      // The context is passed to the 'processBatch' and 'createBatches' function
-      // With that it's possible to search/index documents based on the context
-      context: {
-        project: 'myProjectHandle',
-        channel: 'myChannelHandle',
-        documentType: 'page',
-        contentType: 'regular',
-        isPublished: true,
-        myCustomField: 'hello world'
-      },
-
-      // When disabled, the index will be ignored for all operations
-      enabled: true, // default: true
-
-      // Overwrite the alias pointing to your elastic index
-      // The default alias is the 'handle' (in this example - 'my-custom-publication')
-      alias: 'an-alias'
-    }
-  ]
+    // In case you want to target a specific elasticsearch cluster, reference the specific cluster by handle.
+    // By default all clusters declared in elasticIndex.clusters are used as target.
+    clusters: ['default']
+  }]
 },
 ```
 
