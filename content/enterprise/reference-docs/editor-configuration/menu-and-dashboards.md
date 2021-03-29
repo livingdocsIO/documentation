@@ -108,7 +108,7 @@ To link to an external page add an entry as follows:
 Note that you use `href` instead of `sref` for external links.
 
 
-# Custom Card for Default Dashboard
+# Custom Card for Default Dashboard
 
 Currently we have 3 types of default dashboards: `articles`, `pages`, `dataRecords`
 

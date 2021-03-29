@@ -17,7 +17,7 @@ The screenshot below shows the task in question.
 - A task can be configured individually on the server.
 
 
-## Server plugin
+## Server plugin
 
 On the server we need to configure a new metadata field `review` (more about metadata fields you can read [here]({{< ref "/enterprise/reference-docs/server-api/metadata.md" >}}))
 

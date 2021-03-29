@@ -5,7 +5,9 @@
   <main class="content-wrapper">
     <div class="content">
       <article>
-        {{ partial "edit-page.html" . }}
+        {{ if (ne (.Param "renderEditButton") false) }}
+          {{ partial "edit-page.html" . }}
+        {{ end }}
 
         <h1 class="post-title">{{ .Title }}</h1>
 

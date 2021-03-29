@@ -12,7 +12,7 @@ The screenshot below shows the task in question.
 {{< img src="images/custom-proofreading-task.png" alt="Custom Task" >}}
 
 
-## Server plugin
+## Server plugin
 
 On the server we need to configure a new metadata field `proofreading` (more about metadata fields you can read [here]({{< ref "/enterprise/reference-docs/server-api/metadata.md" >}}))
 
@@ -64,7 +64,7 @@ metadata: [
 ]
 ```
 
-## Register a deadline computation in the editor
+## Register a deadline computation in the editor
 
 If `requestDeadline: true` in the configuration, you are asked to set a deadline date when starting a task.
 
