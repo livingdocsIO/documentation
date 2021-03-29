@@ -41,3 +41,6 @@ outputFormats:
 outputs:
   home: [HTML, RSS, SearchIndex]
 
+params:
+  branch: next
+

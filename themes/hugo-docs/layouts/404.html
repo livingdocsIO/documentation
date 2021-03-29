@@ -6,7 +6,7 @@
     <div class="content">
       <article id="{{ .Slug }}">
         {{if (ne .Title "Get started with Livingdocs") }}
-        {{ partial "suggest-edit.html" . }}
+        {{ partial "edit-page.html" . }}
         {{ end }}
 
         <div class="page-not-found">
