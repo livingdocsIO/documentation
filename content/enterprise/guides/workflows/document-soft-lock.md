@@ -1,15 +1,18 @@
 ---
-title: Enable soft lock functionality in Livingdocs
+title: Document Soft Lock
+description: Allow editors to lock documents and state the intention that they don't want to be disturbed by other editors taking over.
 menus:
   guides:
     parent: Workflows
 ---
 
-With a soft lock a user can indicate that she wants the document for herself and not to be disturbed by other editors taking over. Other editors are still able to take over (thus soft lock) but they need to confirm that they want to overwrite the soft lock.
+With a soft lock an editor can indicate that she wants the document for herself and not to be disturbed by other editors taking over. Other editors are still able to take over (thus soft lock) but they need to confirm that they want to overwrite the soft lock.
 A soft lock has a configurable timeout after which it expires.
 If the user that requested the soft lock leaves the document, the soft lock will be automatically released. Same goes for closing of the browser.
 
 Once the soft lock is enabled for a content-type (e.g. articles) a "Lock" button will be visible in the top toolbar.
+
+{{< img src="document-soft-lock.png" alt="Document Soft Lock" >}}
 
 ## Enable soft lock
 

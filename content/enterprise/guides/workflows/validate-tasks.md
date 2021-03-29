@@ -1,5 +1,6 @@
 ---
-title: Validate tasks
+title: Tasks with Validation Constraints
+description: Configure a task with a user defined, server side validation constraint.
 menus:
   guides:
     parent: Workflows

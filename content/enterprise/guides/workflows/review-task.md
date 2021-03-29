@@ -1,11 +1,12 @@
 ---
-title: Add your custom task
+title: Review Task
+description: Configure a review or any other task to cover collaboration workflows.
 menus:
   guides:
     parent: Workflows
 ---
 
-This guide will show you how to add a custom `review` task. If you want to know how to add a custom proofreading tasks, you can read more [here]({{< ref "add-custom-proofreading-task.md" >}})
+This guide will show you how to add a custom `review` task. If you want to know how to add a custom proofreading tasks, you can read more [here]({{< ref "proofreading-task.md" >}})
 
 The screenshot below shows the task in question.
 
