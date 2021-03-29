@@ -35,8 +35,7 @@ module.exports = {
 ```
 
 ## Config Options
-
-### Parameters
+### Parameters
 
 - `config`: object, allows you to pass static configuration to your third-party microservice. In the example above we pass a language as a fixed config.
 - `defaultParams`: object, allows you to define defaults for the dynamic params of an include. Dynamic params are set by the user over a UI in the editor and are defined in the [Settings for the include]({{< ref "../project-config#includes" >}}).
