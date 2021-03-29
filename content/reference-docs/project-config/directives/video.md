@@ -1,5 +1,6 @@
 ---
 title: Video
+description: The video directive declared on `video` tags enable a user to make the video editable.
 menus:
   reference-docs:
     parent: Directives
