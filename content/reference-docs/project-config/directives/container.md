@@ -1,5 +1,6 @@
 ---
 title: Container
+description: Container directives allow you to nest lists of Livingdocs components.
 menus:
   reference-docs:
     parent: Directives

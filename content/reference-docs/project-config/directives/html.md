@@ -1,5 +1,6 @@
 ---
 title: HTML
+description: HTML directives allow you to insert arbitrary HTML within the tag on which the directive is specified.
 menus:
   reference-docs:
     parent: Directives

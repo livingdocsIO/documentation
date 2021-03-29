@@ -1,5 +1,6 @@
 ---
 title: Editable
+description: Make text editable on your HTML tag of a component.
 menus:
   reference-docs:
     parent: Directives

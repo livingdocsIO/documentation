@@ -1,5 +1,6 @@
 ---
 title: Style
+description: Style directives allow a user to set style properties like a background color.
 menus:
   reference-docs:
     parent: Directives
