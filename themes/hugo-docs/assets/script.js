@@ -119,7 +119,7 @@ searchInput.addEventListener('keyup', async (e) => {
   const words = searchInput.value.split(/[: ]/).filter(Boolean).join(' ')
   if (!words.length) return hideSearchResults(true)
   else showSearchResults()
-  for (const doc of await searchIndex.search({query: words, limit: 20})) {
+  for (const doc of await searchIndex.search({index: window.searchJson, query: words, limit: 20})) {
     const docElem = documentResultsTemplate.cloneNode(true)
     docElem.firstChild.innerHTML = doc.title
     for (const result of doc.results) {

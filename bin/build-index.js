@@ -3,12 +3,18 @@ const lunr = require('lunr')
 const {Parser} = require("htmlparser2")
 const {DomHandler} = require("domhandler")
 const {getText, hasAttrib, getAttributeValue} = require('domutils')
-const json = JSON.parse(fs.readFileSync('./public/search.json', 'utf8'))
 
-const index = []
-for (const doc of json) parseDocument(index, doc)
+buildIndex('./public/search.json')
+buildIndex('./public/enterprise/search.json')
 
-fs.writeFileSync('./public/search.json', JSON.stringify(index))
+function buildIndex (file) {
+  const json = JSON.parse(fs.readFileSync(file, 'utf8'))
+
+  const index = []
+  for (const doc of json) parseDocument(index, doc)
+
+  fs.writeFileSync(file, JSON.stringify(index))
+}
 
 function parseDocument (index, {url, section, categories, title, description, body}) {
   const dom = getDom(body)
