@@ -46,7 +46,7 @@ elasticIndex: {
   maxCpu: 80, // default: 80
 
   // every index name will be prefixed to prevent name clashes
-  // the index will be created with this pattern: `${indexNAmePrefix}-${handle}-index`
+  // the index will be created with this pattern: `${indexNamePrefix}-${handle}-index`
   indexNamePrefix: 'your-company-local',
 
   // enable/disable the Livingdocs publication index (used in the public API for search requests)
