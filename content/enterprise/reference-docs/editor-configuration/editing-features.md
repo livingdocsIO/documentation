@@ -49,7 +49,6 @@ app: {
   editor: {
     propertiesPanel: {
       transformComponentEnabled: true
-      }
     }
   }
 }
