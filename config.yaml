@@ -33,6 +33,10 @@ markup:
 imaging:
   quality: 75
 
+disableKinds:
+- taxonomy
+- term
+
 outputFormats:
   SearchIndex:
     baseName: search
