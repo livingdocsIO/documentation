@@ -3,6 +3,7 @@ title: Image Services
 menus:
   evaluation:
     weight: 5
+tags: [guides]
 ---
 
 ## Overview

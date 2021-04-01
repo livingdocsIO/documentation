@@ -1,5 +1,6 @@
 ---
 title: Embedded Documents / Editable Teasers
+tags: [guides, includes]
 menus:
   guides:
     parent: Includes and Embeds

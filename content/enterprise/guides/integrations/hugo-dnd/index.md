@@ -1,5 +1,6 @@
 ---
 title: Hugo Drag and Drop
+tags: [guides, integrations]
 menus:
   guides:
     parent: Integrations

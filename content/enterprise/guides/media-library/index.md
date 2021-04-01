@@ -1,5 +1,6 @@
 ---
 title: Media Library
+tags: [guides]
 menus:
   guides:
     weight: 5

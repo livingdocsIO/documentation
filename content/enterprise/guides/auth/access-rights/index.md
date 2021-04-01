@@ -1,6 +1,7 @@
 ---
 title: Assign Access Rights
 description: Define granular permissions of users by editing the group.
+tags: [guides, auth]
 menus:
   guides:
     parent: Authentication and Authorization

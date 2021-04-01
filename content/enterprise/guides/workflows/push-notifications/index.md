@@ -3,6 +3,7 @@ title: Push notifications with custom dashboard item
 menus:
   guides:
     parent: Workflows
+tags: [guides, workflows]
 ---
 
 This guide explains 2 things:

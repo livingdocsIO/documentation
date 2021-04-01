@@ -1,6 +1,7 @@
 ---
 title: Hardware requirements
 menu: operations
+tags: [operations]
 ---
 
 The hardware requirements greatly depend on your use case. However, you can find a general evaluation and some example installations below.

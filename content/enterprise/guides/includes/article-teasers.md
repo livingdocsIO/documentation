@@ -1,5 +1,6 @@
 ---
 title: Article Teasers
+tags: [guides, includes]
 menus:
   guides:
     parent: Includes and Embeds

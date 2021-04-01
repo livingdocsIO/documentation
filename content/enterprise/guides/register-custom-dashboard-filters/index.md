@@ -1,5 +1,6 @@
 ---
 menu: guides
+tags: [guides]
 title: Register Custom Dashboard Filters
 ---
 

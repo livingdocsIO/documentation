@@ -1,5 +1,6 @@
 ---
 title: Migrate reference design to embedded design
+tags: [guides, design]
 menus:
   guides:
     parent: Design

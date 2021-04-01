@@ -1,5 +1,6 @@
 ---
 title: Publish a design with ldm
+tags: [guides, design]
 menus:
   guides:
     parent: Design

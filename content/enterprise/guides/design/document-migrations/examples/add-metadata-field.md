@@ -1,6 +1,7 @@
 ---
 title: "Example: Add a Metadata Field"
 linkTitle: Add a Metadata Field
+tags: [guides, maintenance]
 menus:
   guides:
     parent: Livingdocs Data Migrations

@@ -3,6 +3,7 @@ title: Customization Quick Start
 menus:
   guides:
     weight: 1
+tags: [guides]
 ---
 
 If you use Livingdocs as on-premises software you can register plugins through a code API in both the editor and the server. Your projects will use a `package.json` file to install the core editor and server respectively as npm packages in a specific version.

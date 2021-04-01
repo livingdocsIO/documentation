@@ -3,6 +3,7 @@ title: Enable multi-language in Livingdocs
 menus:
   guides:
     parent: Workflows
+tags: [guides, workflows]
 ---
 
 This guide explains you how to enable the Livingdocs core setup for multi-language support.
