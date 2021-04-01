@@ -1,5 +1,6 @@
 ---
 title: DPA Import
+tags: [guides, integrations]
 menus:
   guides:
     parent: Integrations

@@ -1,6 +1,7 @@
 ---
 title: Example of a simple bullet list
 linkTitle: Bullet list example
+tags: [guides, design]
 menus:
   guides:
     parent: Design

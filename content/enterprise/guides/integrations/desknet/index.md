@@ -1,5 +1,6 @@
 ---
 title: Desk-Net integration
+tags: [guides, integrations]
 menus:
   guides:
     parent: Integrations

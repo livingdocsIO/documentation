@@ -106,10 +106,13 @@ document.body.addEventListener('click', (evt) => {
   hideSearchResults(false)
 })
 
-let searchIndex
+let searchWorker
 searchInput.addEventListener('focus', (evt) => {
   if (searchInput.value) showSearchResults()
-  if (!searchIndex) searchIndex = createSearchWorker()
+  if (!searchWorker) {
+    searchWorker = createSearchWorker()
+    searchWorker.search({index: window.searchJson, query: '', limit: 0})
+  }
 })
 
 searchInput.addEventListener('keyup', async (e) => {
@@ -119,7 +122,7 @@ searchInput.addEventListener('keyup', async (e) => {
   const words = searchInput.value.split(/[: ]/).filter(Boolean).join(' ')
   if (!words.length) return hideSearchResults(true)
   else showSearchResults()
-  for (const doc of await searchIndex.search({index: window.searchJson, query: words, limit: 20})) {
+  for (const doc of await searchWorker.search({index: window.searchJson, query: words, limit: 20})) {
     const docElem = documentResultsTemplate.cloneNode(true)
     docElem.firstChild.innerHTML = doc.title
     for (const result of doc.results) {

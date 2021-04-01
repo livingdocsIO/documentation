@@ -1,6 +1,7 @@
 ---
 title: Livingdocs Command Line Tool
 description: How to configure the CLI using a .livingdocs-cli config file
+tags: [cli]
 ---
 
 # .livingdocs-cli

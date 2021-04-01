@@ -1,5 +1,6 @@
 ---
 title: Enable Notifications in Livingdocs
+tags: [guides]
 menu: guides
 ---
 

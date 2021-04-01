@@ -1,6 +1,7 @@
 ---
 title: Categories and Routing
 menu: guides
+tags: [guides]
 ---
 
 The categories feature allows you to enable a newspaper specific system to handle routes as well as hierarchical metadata for content such as advertising campaigns or tracking codes.

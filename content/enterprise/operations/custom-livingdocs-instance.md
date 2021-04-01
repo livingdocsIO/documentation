@@ -1,5 +1,6 @@
 ---
 title: Livingdocs npm packages
+tags: [operations]
 ---
 
 ## Livingdocs npm packages

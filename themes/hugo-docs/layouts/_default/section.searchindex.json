@@ -2,7 +2,7 @@
   {{- range $index, $page := where .Site.Pages "Section" .Section -}}
     {{- if ne $index 0 -}} , {{- end -}}
     {{- $entry := (dict "url" $page.RelPermalink) -}}
-    {{- $entry = merge $entry (dict "section" $page.Section) -}}
+    {{- if $page.Params.tags -}} {{- $entry = merge $entry (dict "section" (delimit $page.Params.tags ", ")) -}} {{- end -}}
     {{- $entry = merge $entry (dict "categories" $page.Params.categories) -}}
     {{- $entry = merge $entry (dict "title" $page.Title) -}}
     {{- $entry = merge $entry (dict "description" $page.Description) -}}

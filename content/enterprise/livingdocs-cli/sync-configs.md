@@ -1,5 +1,6 @@
 ---
 title: Sync project configs between environments
+tags: [cli]
 ---
 ## What are we doing here?
 

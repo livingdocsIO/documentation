@@ -1,5 +1,6 @@
 ---
 title: Link local dependencies
+tags: [guides, development]
 menus:
   guides:
     parent: Development

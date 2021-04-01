@@ -1,5 +1,6 @@
 ---
 title: Livingdocs Design and Components
+tags: [guides, design]
 menus:
   evaluation:
     weight: 3

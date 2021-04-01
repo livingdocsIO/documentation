@@ -1,5 +1,6 @@
 ---
 title: External Services
+tags: [operations]
 ---
 
 ## External services

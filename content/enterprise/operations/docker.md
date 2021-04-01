@@ -1,6 +1,7 @@
 ---
 title: Docker
 menu: operations
+tags: [operations]
 ---
 
 We provide a Docker setup for local development and production deployments.

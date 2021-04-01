@@ -1,5 +1,6 @@
 ---
 title: Add a component to a design
+tags: [guides, design]
 menus:
   guides:
     parent: Design

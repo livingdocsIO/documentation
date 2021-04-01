@@ -1,5 +1,6 @@
 ---
 title: Metadata Plugins
+tags: [guides]
 menus:
   evaluation:
     weight: 5

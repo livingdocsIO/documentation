@@ -1,6 +1,7 @@
 ---
 menu: guides
 title: Routing Feature
+tags: [guides]
 ---
 ## Overview
 
