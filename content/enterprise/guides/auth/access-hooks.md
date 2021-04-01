@@ -1,5 +1,6 @@
 ---
 title: Access Hooks
+tags: [guides, auth]
 menus:
   guides:
     parent: Authentication and Authorization

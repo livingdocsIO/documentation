@@ -4,6 +4,7 @@ description: Configure a task with a user defined, server side validation constr
 menus:
   guides:
     parent: Workflows
+tags: [guides, workflows]
 ---
 
 This guide will show you how to add a custom review task and validate before publishing if the task was completed. The boilerplate server and editor contain all required code in commented sections, so you can easily try the example there.

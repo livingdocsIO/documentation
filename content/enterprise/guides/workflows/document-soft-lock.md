@@ -4,6 +4,7 @@ description: Allow editors to lock documents and state the intention that they d
 menus:
   guides:
     parent: Workflows
+tags: [guides, workflows]
 ---
 
 With a soft lock an editor can indicate that she wants the document for herself and not to be disturbed by other editors taking over. Other editors are still able to take over (thus soft lock) but they need to confirm that they want to overwrite the soft lock.

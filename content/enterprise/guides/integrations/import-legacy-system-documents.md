@@ -1,5 +1,6 @@
 ---
 title: Import and Identify Documents from a Legacy System
+tags: [guides, integrations]
 menus:
   guides:
     parent: Integrations

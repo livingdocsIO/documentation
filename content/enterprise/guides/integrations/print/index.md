@@ -1,6 +1,7 @@
 ---
 title: Livingdocs Print Preview Setup
 linkTitle: Setup a print system
+tags: [guides, integrations]
 menus:
   guides:
     parent: Integrations

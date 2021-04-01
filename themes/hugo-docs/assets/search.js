@@ -51,7 +51,8 @@ function searchInIndex (index, {query, limit}) {
 		const url = ref.url
 		const title = highlight('title', ref.title, byField)
 		const description = highlight('description', ref.description, byField)
-		byDoc[documentUrl] = byDoc[documentUrl] || {score: 0, results: [], title: `${doc.title} <small>${ref.section}</small>`}
+		const tags = ref.section ? ref.section.split(',').map((l) => l.trim() ? `<small>${l.trim()}</small>` : '').join('') : ''
+		byDoc[documentUrl] = byDoc[documentUrl] || {score: 0, results: [], title: `${doc.title}${tags}`}
 		byDoc[documentUrl].results.push({url, title, description})
 		byDoc[documentUrl].score += match.score
 		if (count === limit) break

@@ -1,6 +1,7 @@
 ---
 title: "Example: Rename a directive"
 linkTitle: Rename a directive
+tags: [guides, maintenance]
 menus:
   guides:
     parent: Livingdocs Data Migrations

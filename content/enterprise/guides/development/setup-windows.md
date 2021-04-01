@@ -1,5 +1,6 @@
 ---
 title: Setup Windows Environment
+tags: [guides, development]
 menus:
   guides:
     parent: Development

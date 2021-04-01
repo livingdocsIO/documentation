@@ -1,5 +1,6 @@
 ---
 title: Implement Single Sign-On
+tags: [guides, auth]
 menus:
   guides:
     parent: Authentication and Authorization

@@ -1,5 +1,6 @@
 ---
 title: Author Management
+tags: [guides]
 menu: guides
 ---
 

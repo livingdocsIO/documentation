@@ -4,6 +4,7 @@ description: Configure a proofreading dashboard to assist editorial teams with a
 menus:
   guides:
     parent: Workflows
+tags: [guides, workflows]
 ---
 
 ## Goal

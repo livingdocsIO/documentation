@@ -4,6 +4,7 @@ description: Configure a proofreading task that can be used by editorial teams t
 menus:
   guides:
     parent: Workflows
+tags: [guides, workflows]
 ---
 
 This guide will show you how to add a custom `proofreading` task. A `proofreading` task is a special form of a task with some additional config settings and plugins. If you want to know how to add a review task or another generic task, you can read more [here]({{< ref "review-task.md" >}})

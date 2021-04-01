@@ -1,6 +1,7 @@
 ---
 title: "Example: Remove a directive"
 linkTitle: Remove a directive
+tags: [guides, maintenance]
 menus:
   guides:
     parent: Livingdocs Data Migrations
