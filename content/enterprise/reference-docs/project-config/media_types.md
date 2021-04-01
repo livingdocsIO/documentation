@@ -150,7 +150,7 @@ If no `Media Type` config is provided it falls back to a default config where `t
 
 ## Metadata
 
-The metadata follows the rules that also apply to document metadata [defined on a content-type](content_types.md#metadata). All the same metadata plugins are available. Different from the document metadata, media metadata does not have UI support as of now.
+The metadata follows the rules that also apply to document metadata [defined on a content-type]({{< ref "content-types.md#metadata" >}}). All the same metadata plugins are available. Different from the document metadata, media metadata does not have UI support as of now.
 
 ## Exif Extraction
 This feature is only supported for the `mediaImage` mediaType.

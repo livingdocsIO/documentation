@@ -103,8 +103,7 @@ app: {
       label: 'Finish proofreading',
       completedLabel: 'Proofreading finished',
       completesTask: true
-    }
-    ]
+    }]
   }]
 }
 ```

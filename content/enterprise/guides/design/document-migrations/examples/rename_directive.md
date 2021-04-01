@@ -6,7 +6,7 @@ menus:
     parent: Livingdocs Data Migrations
 ---
 
-Renaming or moving a directive in a design is a breaking change. To denote it in the design you should use a major semver version (http://semver.org/). In any case you need to write a data migration in order to be able to open old documents with the new design. The below code is a sample migration for a design change that renames an image directive called "image" to "teaser".
+Renaming or moving a directive in a design is a breaking change. To denote it in the design you should use a major semver version (https://semver.org/). In any case you need to write a data migration in order to be able to open old documents with the new design. The below code is a sample migration for a design change that renames an image directive called "image" to "teaser".
 
 
 Designs for the example
