@@ -119,7 +119,7 @@ A few things to note here:
 - we have a `components` section and a `componentMap` section. Each component needs a respective entry in the component map in order to be exported to the print system. We only showed a subset of the supported components here, for a productive setup you want to discuss this with your print system provider.
 - we set the `print.enableStepZooming` option to true. In that configuration editors can zoom the print preview with a mousewheel similar to the image crop interface in the Livingdocs editor. If it is set to `false` the print preview will be static and can be toggled between sidescreen and fullscreen.
 
-We leave out the steps to create the references components as well as grouping them in the `designSettings` and requiring them in the project config's index file. Those steps are equivalent to what you do for online articles, see [here](create_designs.md).
+We leave out the steps to create the references components as well as grouping them in the `designSettings` and requiring them in the project config's index file. Those steps are equivalent to what you do for online articles, see [here]({{< ref "../../design/create-designs/index.md" >}}).
 
 Once you require the new content-type in our project configs index file and publish the config you will be able to create print articles from the "Write new article" button.
 
