@@ -508,6 +508,8 @@ body.sidebar-visible .content-wrapper {
 .edit-btn {
   float: right;
   margin-left: 8px;
+  position: relative;
+  z-index: 1;
 }
 
 @media screen and (max-width: 860px) {
