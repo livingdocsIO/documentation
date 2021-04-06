@@ -56,20 +56,14 @@ steps:
       docker push $RELEASE_TAG
 
 - name: deploy
-  image: bitsbeats/drone-helm3
-  settings:
-    kube_api_server: {from_secret: kubernetes_server}
-    kube_token: {from_secret: kubernetes_token}
-    kube_certificate: {from_secret: kubernetes_certificate}
-    mode: upgrade
-    chart: ./helm
-    release: docs
-    namespace: livingdocs-production
-    envsubst: true
-    values:
-      - image.tag=${DRONE_TAG}
+  image: dtzar/helm-kubectl:3
+  environment:
+    KUBE_CONFIG:
+      from_secret: kube_config
+  commands:
+    - echo "$KUBE_CONFIG" > /root/.kube/config && chmod 600 /root/.kube/config
+    - helm upgrade docs -n livingdocs-production --set "image.tag=${DRONE_TAG}" ./helm
 
-  # kube_api_server: https://cluster.livingdocs.io:6443/
 volumes:
 - name: dockersocket
   host:
@@ -80,6 +74,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 0d6c83679db58bf37486a938f58aeb1d8fd97011a1b5c0f58ca8169e55d7aa59
+hmac: ddcebeba3758c467b8fe7d504a4c1912ff506f4e818b614cfa6091c6c0280a59
 
 ...
