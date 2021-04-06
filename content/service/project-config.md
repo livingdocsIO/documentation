@@ -38,7 +38,7 @@ This is an internal property used for version management.
 
 ### References
 
-* [Project Config reference documentation](https://github.com/livingdocsIO/livingdocs/tree/bc45ad164d41aa10cdb72c2e832e4e0b334c9a7b/reference-docs/server-configuration/channel-config.md)
+* [Project Config reference documentation](https://github.com/livingdocsIO/documentation/tree/bc45ad164d41aa10cdb72c2e832e4e0b334c9a7b/reference-docs/server-configuration/channel-config.md)
 
 ## contentTypes
 
@@ -46,8 +46,8 @@ A project can have multiple contentTypes. An example for a contentTypes is a "Re
 
 ### References
 
-* [contentType reference documentation](https://github.com/livingdocsIO/livingdocs/tree/bc45ad164d41aa10cdb72c2e832e4e0b334c9a7b/reference-docs/server-configuration/content-type-config.md)
-* [metadata reference documentation](https://github.com/livingdocsIO/livingdocs/tree/bc45ad164d41aa10cdb72c2e832e4e0b334c9a7b/reference-docs/editor-configuration/metadata.md)
+* [contentType reference documentation](https://github.com/livingdocsIO/documentation/tree/bc45ad164d41aa10cdb72c2e832e4e0b334c9a7b/reference-docs/server-configuration/content-type-config.md)
+* [metadata reference documentation](https://github.com/livingdocsIO/documentation/tree/bc45ad164d41aa10cdb72c2e832e4e0b334c9a7b/reference-docs/editor-configuration/metadata.md)
 
 ## designSettings
 
@@ -73,6 +73,6 @@ At the moment following changes on the design are not supported.
 ### References
 
 * [components documentation](design_component_settings.md)
-* [embedded design example](https://github.com/livingdocsIO/livingdocs/tree/bc45ad164d41aa10cdb72c2e832e4e0b334c9a7b/service/design_example.md)
+* [embedded design example](https://github.com/livingdocsIO/documentation/tree/bc45ad164d41aa10cdb72c2e832e4e0b334c9a7b/service/design_example.md)
 * [referenced design example](https://github.com/livingdocsIO/magazine-example) - check also out the magazine design example. But attention the format is not exactly the same, but it gives you a feeling what you can do with a design
 
