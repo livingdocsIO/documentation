@@ -85,7 +85,9 @@ type: 'html'
 component template attribute: `doc-html`
 
 ```js
-htmlDirective.setContent('<div>Moby Dick</div>')
+htmlDirective.setContent({
+  html: '<div>Moby Dick</div>'
+})
 ```
 
 
@@ -95,8 +97,13 @@ type: 'link'
 component template attribute: `doc-link`
 
 ```js
-linkDirective.setContent('http://www.test.com/')
+linkDirective.setContent({
+  href: 'http://www.test.com/',
+  target: '_blank'
+})
 ```
+
+Allowed values for `target`: '_blank', '_self', '_parent' or '_top'
 
 
 #### Include

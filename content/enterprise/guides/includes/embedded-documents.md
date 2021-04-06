@@ -27,7 +27,7 @@ An example of an includes return value:
       title: documentVersion.getTitle(),
       lead: 'Lead',
       byline: 'Byline',
-      link: 'https://example.com'
+      link: {href: 'https://example.com'}
     }
   }
 }
