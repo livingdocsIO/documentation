@@ -8,7 +8,7 @@ The telemetry stack will assist you in debugging your Livingdocs server instance
 
 ## Setup
 
-Follow the Loki setup instructions in the [livingdocsIO/loki](https://github.com/livingdocsIO/loki) repository. It should be as simple as cloning the repository and running `docker-compose up`.
+Follow the setup instructions in the [livingdocsIO/monitoring](https://github.com/livingdocsIO/monitoring) repository. It should be as simple as cloning the repository and running `docker-compose up`.
 
 If the Livingdocs server is running in a Docker container on the same server then everything *should* just work by adding the following to the [server configuration]({{< ref "/enterprise/reference-docs/server-configuration/_index.md" >}}) file:
 
@@ -105,7 +105,7 @@ Another way to create dashboard graphs is to use the Prometheus datasource. Add 
 
 ## Stack
 
-The [livingdocsIO/loki](https://github.com/livingdocsIO/loki) repository runs a number of containers, and while Grafana should contain all of the information you require, there are some additional user interfaces exposed that can be accessed by following the "[Local UI]" links listed in the container summary below:
+The [livingdocsIO/monitoring](https://github.com/livingdocsIO/monitoring) repository runs a number of containers, and while Grafana should contain all of the information you require, there are some additional user interfaces exposed that can be accessed by following the "[Local UI]" links listed in the container summary below:
 
 * **cAdvisor** [[Docs](https://github.com/google/cadvisor)] [[Local UI](http://localhost:9081/)] - Provides resource usage and performance metrics of Docker containers to Prometheus
 * **Grafana** [[Docs](https://grafana.com/docs/grafana/latest/)] [[Local UI](http://localhost:3000/)] - UI to explore logs and metrics using queries, charts, and alerts
