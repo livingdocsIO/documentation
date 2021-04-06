@@ -33,7 +33,9 @@ liEditor.dropHandlers.register({
 
     const {component, directiveName} = dropActions.createHtmlComponent()
     const directive = component.directives.get(directiveName)
-    directive.setContent(data.html)
+    directive.setContent({
+      html: data.html
+    })
 
     dropActions.dropLocation.insert(component)
 
