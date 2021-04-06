@@ -2,7 +2,7 @@ languageCode: en-us
 theme: hugo-docs
 uglyURLs: false
 refLinksErrorLevel: WARNING
-baseURL: https://documentation.livingdocs.io/
+baseURL: https://docs.livingdocs.io/
 title: Livingdocs Enterprise Documentation
 enableGitInfo: true
 enableEmoji: true
