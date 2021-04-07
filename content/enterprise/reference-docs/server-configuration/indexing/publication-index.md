@@ -15,7 +15,7 @@ There are two parts to the feature:
 
 ## Indexing
 
-Some fields like `projectId`, `category` or `contentType` are indexed by default and can not be changed. You can see all the fields that are mapped by default in the mapping file for the publication index: https://github.com/livingdocsIO/livingdocs-server/blob/master/app/features/indexing/mappings/publication_v6.json
+Some fields like `projectId`, `category` or `contentType` are indexed by default and can not be changed. You can see all the fields that are mapped by default in the mapping file for the publication index: https://github.com/livingdocsIO/livingdocs-server/blob/5f04a637bef5a2e7c766668b85ed5537a78ac296/app/features/indexing/publications/document-publication-mapping.json
 
 Two larger concepts are configurable by customers:
 - the date logic, in particular sort date and scheduled publishing
