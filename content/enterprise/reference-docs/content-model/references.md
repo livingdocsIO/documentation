@@ -19,9 +19,9 @@ To find *incoming* references, which point to the document or media library entr
 
 References extracted from the content of a document provide details of the item they are referencing (`id` and `type`) along with contextual information to help locate the reference within the document.
 
-#### Include directive params:
+#### Include directive params
 
-```
+```js
 {
   type: 'document',
   id: '466',
@@ -34,9 +34,9 @@ References extracted from the content of a document provide details of the item 
 }
 ```
 
-#### Include directive override:
+#### Include directive override
 
-```
+```js
 {
   type: 'document',
   id: '223',
@@ -50,9 +50,9 @@ References extracted from the content of a document provide details of the item 
 }
 ```
 
-#### Image:
+#### Image
 
-```
+```js
 {
   type: 'image',
   id: 'eud8373',
@@ -63,9 +63,9 @@ References extracted from the content of a document provide details of the item 
 }
 ```
 
-#### Video:
+#### Video
 
-```
+```js
 {
   type: 'video',
   id: '9ojS1u2-wljb',
@@ -76,9 +76,9 @@ References extracted from the content of a document provide details of the item 
 }
 ```
 
-#### Inline link:
+#### Inline link
 
-```
+```js
 {
   type: 'document',
   id: '938',
@@ -93,9 +93,9 @@ References extracted from the content of a document provide details of the item 
 
 References extracted from the metadata of a document or media library entry also provide details of the item they are referencing (`id` and `type`), but only require simple contextual information (`location: 'metadata'` and `propertyName`) to help locate the reference.
 
-#### li-reference:
+#### li-reference
 
-```
+```js
 {
   type: 'document',
   id: '537',
@@ -104,9 +104,9 @@ References extracted from the metadata of a document or media library entry also
 }
 ```
 
-#### li-reference-list:
+#### li-reference-list
 
-```
+```js
 {
   type: 'documents',
   ids: ['537', 745'],
@@ -115,9 +115,9 @@ References extracted from the metadata of a document or media library entry also
 }
 ```
 
-#### li-image:
+#### li-image
 
-```
+```js
 {
   type: 'image',
   id: '48k2h38',
@@ -126,9 +126,9 @@ References extracted from the metadata of a document or media library entry also
 }
 ```
 
-#### li-language:
+#### li-language
 
-```
+```js
 {
   type: 'language-group',
   id: '4e5rt7',
