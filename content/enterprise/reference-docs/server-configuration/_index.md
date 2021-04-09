@@ -295,6 +295,7 @@ designs: {
     publicUrl: 'http://livingdocs-designs-dev.s3.amazonaws.com',
     storage: {
       strategy: 's3',
+      prefix: 'images/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
       config: {
         bucket: 'livingdocs-designs-dev',
         region: 'eu-west-1',
@@ -318,6 +319,7 @@ images: {
   publicUrl: 'https://livingdocs-images-dev.s3.amazonaws.com',
   storage: {
     strategy: 's3',
+    prefix: 'images/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
     config: {
       bucket: 'livingdocs-images-development',
       region: 'eu-central-1',
@@ -383,6 +385,7 @@ Consult the [storage configuration]({{< ref "/enterprise/reference-docs/server-c
     publicUrl: 'https://livingdocs-videos-development.s3.amazonaws.com',
     storage: {
       strategy: 's3',
+      prefix: 'videos/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
       config: {
         // the videos must be public-read to be shown in the editor
         params: {ACL: 'public-read'},
@@ -410,6 +413,7 @@ files: {
   publicUrl: 'https://livingdocs-files-dev.s3.amazonaws.com',
   storage: {
     strategy: 's3',
+    prefix: 'files/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
     config: {
       bucket: 'livingdocs-files-dev',
       region: 'eu-central-1',
@@ -760,7 +764,7 @@ images: {
 
 ##### Setting up the media-library Elastic Search Mapping
 
-For now the very first step when setting up the server, you need to create a new index 'media-library' in Elastic Search. 
+For now the very first step when setting up the server, you need to create a new index 'media-library' in Elastic Search.
 
 The name of the Media index has to be configured:
 
