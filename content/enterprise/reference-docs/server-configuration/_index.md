@@ -879,13 +879,41 @@ When you want to index your metadata image fields in elasticsearch (e.g. for das
 
 ##### Media Library
 
+{{< added-in release-2021-06 >}}
+For files it is necessary to have a specific configuration.
+The storage, publicUrl and the uploadRestriction must be set.
+
+Consult the [storage configuration]({{< ref "/enterprise/reference-docs/server-configuration/storage" >}}) to configure other providers than s3.
+
 ```js
-  mediaLibrary: {
-    paginationSize: 25,
+mediaLibrary: {
+  // tells the media library dashboard how many images to show on one page.
+  paginationSize: 25,
+
+  // {{< added-in release-2021-06 >}}
+  files: {
+    // must be public accessible
+    publicUrl: 'https://livingdocs-files-development.s3.amazonaws.com',
+    storage: {
+      strategy: 's3',
+      prefix: 'files/' // optional, the storage key will be prefixed
+      config: {
+        // the files must be public-read to be shown in the editor
+        params: {ACL: 'public-read'},
+        bucket: 'livingdocs-files-development',
+        region: 'eu-central-1',
+        accessKeyId: '****',
+        secretAccessKey: '****'
+      }
+    },
+    uploadRestrictions: {
+      allowedMimeTypes: ['application/pdf'], // default: ['application/pdf']
+      maxFileSize: 5 * 1000 * 1000 // default: 5MB
+    }
   }
+}
 ```
 
-`paginationSize` tells the media library dashboard how many images to show on one page.
 
 ##### Google Vision API
 
