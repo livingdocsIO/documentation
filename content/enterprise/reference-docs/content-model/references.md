@@ -109,7 +109,7 @@ References extracted from the metadata of a document or media library entry also
 ```js
 {
   type: 'documents',
-  ids: ['537', 745'],
+  ids: ['537', '745'],
   location: 'metadata',
   propertyName: 'relatedDocuments'
 }
