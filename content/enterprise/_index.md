@@ -6,8 +6,10 @@ renderTOC: false
 outputs: [html, rss, SearchIndex]
 ---
 
-This is the technical documentation for the "Livingdocs CMS - Enterprise Edition". As a starting point we recommend the [Evaluation Guide]({{< ref "/enterprise/evaluation/getting-started.md" >}}) and then moving on from there.
+This is the technical documentation for the «Livingdocs CMS - Enterprise Edition». As a starting point we recommend the [Evaluation Guide]({{< ref "/enterprise/evaluation/getting-started.md" >}}) and then moving on from there.
 Make sure that you have the Livingdocs Boilerplate projects ([editor](https://github.com/livingdocsIO/livingdocs-editor-boilerplate), [server](https://github.com/livingdocsIO/livingdocs-server-boilerplate)) cloned locally as the documentation refers to them in many places.
+
+{{< img src="illustration.png" alt="Livingdocs in a Box" >}}
 
 ## Service Documentation
 
