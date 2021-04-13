@@ -1,0 +1,14 @@
+.topics {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .topic-level-1 & {
+    display: none;
+  }
+
+  .topic.active > &,
+  .topic.open > & {
+    display: block;
+  }
+}

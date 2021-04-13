@@ -1,0 +1,40 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  body {
+    @extend %font-s;
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: $color-white;
+    color: $color-black;
+    margin: 0;
+    height: 100%;
+    display: block;
+  }
+}
+
+em {
+  background-color: $color-cyan-2;
+  padding-right: .2em;
+  padding-left: .2em;
+  box-decoration-break: clone;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+b,
+strong,
+label,
+th {
+  font-weight: 500;
+}
+
+hr {
+  border-bottom: 4px solid $color-grey-6;
+}
