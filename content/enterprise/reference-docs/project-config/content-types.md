@@ -22,12 +22,11 @@ We plan to allow to move all layout options which are currently defined in the d
 {
   handle: 'gallery',
   documentType: 'article', // either 'article', 'page' or 'data-record'
-  isAuthor: false, // only true if this content-type represents an author, must be 'data-record'
-  icon: 'file-outline',
-  
+  isAuthor: false, // only true if this content-type represents an author, must be 'data-record'  
   info: {
     label: 'Boilerplate Article',
-    description: 'The most simple article'
+    description: 'The most simple article',
+    icon: 'file-outline'
   },
 
   editorWrapper: '<div class="doc-section"></div>',
