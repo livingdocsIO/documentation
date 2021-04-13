@@ -8,6 +8,9 @@ You can run it locally:
 # install hugo
 brew install hugo
 
+# install dependencies
+npm install
+
 # then start the hugo server
 npm start
 
