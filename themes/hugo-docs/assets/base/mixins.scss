@@ -1,0 +1,41 @@
+// widescreen first!
+@mixin media-query($size) {
+  @if $size == desktop {
+    @media (max-width: $breakpoint-desktop) { @content; }
+  }
+  @if $size == tablet {
+    @media (max-width: $breakpoint-tablet) { @content; }
+  }
+  @if $size == mobile {
+    @media (max-width: $breakpoint-mobile) { @content; }
+  }
+}
+
+@mixin box-shadow($variant: '') {
+  box-shadow: 0 1px 18px $color-shadow;
+  @if $variant == highlight {
+    box-shadow: 0 1px 24px $color-shadow--highlight;
+  }
+  transition: box-shadow $transition-time;
+}
+
+@mixin mobile-scroll() {
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin text-link() {
+  color: $color-blue-1;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 1px solid rgba($color-blue-1, .5);
+
+  &:hover {
+    border-bottom-color: $color-blue-1;
+  }
+}
