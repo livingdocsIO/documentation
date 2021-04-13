@@ -1,0 +1,90 @@
+.button {
+  display: inline-block;
+  margin: 0;
+  color: $color-grey-2;
+  border: 1px solid $color-grey-6;
+  outline: none;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  overflow: visible;
+  user-select: none;
+  white-space: nowrap;
+  background-color: transparent;
+  padding: 7px 13px;
+  border-radius: $rounded-corners;
+  transition: background-color $transition-time ease-in;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 13px;
+
+  &:hover {
+    background-color: $color-grey-8;
+    outline: none;
+    border: 1px solid $color-grey-6;
+  }
+
+  &--small {
+    padding: 4px 7px;
+    font-size: 12px;
+  }
+
+  &--edit {
+    float: right;
+    margin-top: $space-xs;
+    margin-left: $space-s;
+    position: relative;
+    z-index: 1;
+  
+    @include media-query(tablet) {
+      display: none;
+    }
+  }
+
+  &--prev {
+    float: left;
+
+    .button {
+      &__ascii {
+        padding-right: $space-s;
+      }
+    }
+  }
+
+  &--next {
+    float: right;
+
+    .button {
+      &__ascii {
+        padding-left: $space-s;
+      }
+    }
+  }
+}
+
+.copy-button {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  color: $color-grey-2;
+  background: $color-white;
+  padding: 6px 11px 3px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid $color-grey-6;
+  border-left: 1px solid $color-grey-6;
+  border-bottom-left-radius: 3px;
+  cursor: pointer;
+  z-index: 1;
+
+  &.copied {
+    cursor: default;
+  }
+
+  &:not(.copied) {
+    &:hover {
+      background-color: $color-grey-9;
+    }
+  }
+}

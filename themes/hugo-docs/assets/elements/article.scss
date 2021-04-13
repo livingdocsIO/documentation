@@ -1,0 +1,25 @@
+.article {
+  margin-right: $toc-width + $space-l - $space-m;
+  word-break: break-word;
+
+  @include media-query(desktop) {
+    margin-right: 0;
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__content {
+    a {
+      &:not([class]) {
+        @include text-link();
+      }
+    }
+  
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

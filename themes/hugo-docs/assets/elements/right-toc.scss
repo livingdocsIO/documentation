@@ -1,0 +1,13 @@
+.right-toc {
+  position: fixed;
+  top: $space-l;
+  right: $space-m;
+  bottom: 0;
+  width: $toc-width;
+  overflow-y: auto;
+  padding-bottom: 1.6rem;
+
+  @include media-query(desktop) {
+    display: none;
+  }
+}

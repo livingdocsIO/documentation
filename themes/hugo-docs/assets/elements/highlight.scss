@@ -1,0 +1,33 @@
+.highlight {
+  position: relative;
+}
+
+// generated using
+//   hugo gen chromastyles --style=lovelace > themes/hugo-docs/assets/chroma.scss
+code {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-size: .85em;
+  color: $color-violet-1;
+  background: rgba($color-violet-1, .2);
+  border-radius: $rounded-corners;
+  padding: 1px 3px;
+  border: 1px solid $color-grey-6;
+}
+
+.chroma {
+  position: relative;
+  padding: $space-s $space-m;
+  margin: $space-l 0;
+  background: $color-grey-9;
+  border: 0;
+  border-radius: $rounded-corners;
+  border: 1px solid $color-grey-6;
+  overflow: auto;
+
+  code {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+  }
+}

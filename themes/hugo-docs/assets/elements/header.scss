@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $header-height;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: fixed;
+  border-bottom: 1px solid $color-grey-6;
+  padding: 0 22px;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  width: auto;
+  background-color: $color-white;
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__burger {
+    display: none;
+    width: 1.5 * $space-m;
+    height: 1.5 * $space-m;
+    margin-left: 1.5 * $space-s;
+    cursor: pointer;
+    user-select: none;
+
+    @include media-query(tablet) {
+      display: block;
+    }
+  }
+
+  &__brand {
+    user-select: none;
+  }
+
+  &__right {
+    width: 5 * $space-l;
+
+    @include media-query(mobile) {
+      width: 3 * $space-l;
+    }
+  }
+}

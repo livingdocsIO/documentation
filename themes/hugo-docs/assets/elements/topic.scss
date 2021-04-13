@@ -1,0 +1,49 @@
+.topic {
+  a {
+    @extend %font-s-xs;
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    padding: $space-xs 14px $space-xs calc(var(--menu-level, 1) * 14px + 8px);
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba($color-grey-5, .15);
+      text-decoration: none;
+    }
+  }
+
+  & > a .arrow-down {
+    position: absolute;
+    right: 14px;
+    top: calc(50% - 4px);
+    border: solid currentColor;
+    border-width: 0 1px 1px 0;
+    padding: 2px;
+    margin-bottom: 3px;
+    margin-right: $space-s;
+    transform-origin: 75% 75%;
+    transform: rotate(45deg);
+    cursor: pointer;
+  }
+
+  &.active {
+    & > a {
+      color: $color-cyan-1;
+      background-color: rgba($color-cyan-2, .4);
+
+      .arrow-down {
+        transform: rotate(-135deg);
+      }
+    }
+  }
+
+  &.open {
+    & > a .arrow-down {
+      transform: rotate(-135deg);
+      margin-bottom: 3px;
+    }
+  }
+}
+

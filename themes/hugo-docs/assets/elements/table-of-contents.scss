@@ -1,0 +1,35 @@
+#TableOfContents {
+  ul {
+    li {
+      a {
+        @extend %font-s-xs;
+        display: block;
+        padding: $space-xs 0px;
+        color: inherit;
+      }
+    }
+  }
+}
+
+.right-toc {
+  #TableOfContents {
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        ul {
+          list-style-type: none;
+          padding: 0;
+          margin-left: $space-s;
+        }
+      }
+    }
+
+    & > ul:before {
+      @extend .section-label;
+      @extend .section-label--table-of-contents;
+    }
+  }  
+}

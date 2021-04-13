@@ -1,0 +1,41 @@
+.anchor {
+  @extend %font-s-xs;
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  padding-right: 1.5 * $space-s;
+  transform: translateY(-50%);
+  color: $color-grey-4;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-black;
+  }
+
+  svg {
+    visibility: hidden;
+    vertical-align: middle;
+    height: 1.5 * $space-s;
+    width: 1.5 * $space-s;
+  }
+}
+
+.anchor-offset {
+  position: relative;
+  top: -$space-l;
+  visibility: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  &:hover {
+    .anchor {
+      svg {
+        visibility: visible;
+      }
+    }
+  }
+}
