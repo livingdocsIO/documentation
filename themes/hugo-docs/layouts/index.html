@@ -2,26 +2,26 @@
 
 <div class="page">
   {{ partial "sidebar.html" . }}
-  <main class="content-wrapper">
-    <div class="content">
-      <article id="{{ .Slug }}">
-        {{ if (ne (.Param "renderEditButton") false) }}
-          {{ partial "edit-page.html" . }}
-        {{ end }}
+  <main class="page__content">
+    <article class="article" id="{{ .Slug }}">
+      {{ if (ne (.Param "renderEditButton") false) }}
+        {{ partial "edit-page.html" . }}
+      {{ end }}
 
-        <h1 class="post-title">{{ .Title }}</h1>
+      <h1 class="article__title">{{ .Title }}</h1>
 
-        <div>{{ .Content }}</div>
-        <div class="section-containers">
-          {{ range .Pages.ByWeight }}
-          <a class="section-container"  href="{{ .RelPermalink }}">
-            <h3>{{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}</h3>
-            {{ with .Description}}<p>{{ . }}</p>{{ end }}
+      <div class="article__content">{{ .Content }}</div>
+      <div class="section-teasers">
+        {{ range .Pages.ByWeight }}
+        <div class="section-teaser">
+          <a class="section-teaser__link"  href="{{ .RelPermalink }}">
+            <h3 class="section-teaser__title">{{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}</h3>
+            {{ with .Description}}<p class="section-teaser__text">{{ . }}</p>{{ end }}
           </a>
-          {{ end }}
         </div>
-      </article>
-    </div>
+        {{ end }}
+      </div>
+    </article>
   </main>
 </div>
 

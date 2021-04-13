@@ -2,25 +2,22 @@
 
 <div class="page">
   {{ partial "sidebar.html" . }}
+  <main class="page__content">
+    <article class="article">
+      {{ partial "edit-page.html" . }}
 
-  <main class="content-wrapper">
-    <div class="content">
-      <article>
-        {{ partial "edit-page.html" . }}
+      <h1 class="article__title">{{ .Title }}</h1>
 
-        <h1 class="post-title">{{ .Title }}</h1>
+      <div class="article__content">{{ .Content }}</div>
 
-        <div>{{ .Content }}</div>
+      {{ partial "navigation.html" . }}
+    </article>
 
-        {{ partial "navigation.html" . }}
-      </article>
-
-      {{ if not .Sections }}
-      <div class="right-toc">
-        {{ .TableOfContents }}
-      </div>
-      {{ end }}
+    {{ if not .Sections }}
+    <div class="right-toc">
+      {{ .TableOfContents }}
     </div>
+    {{ end }}
   </main>
 
 </div>

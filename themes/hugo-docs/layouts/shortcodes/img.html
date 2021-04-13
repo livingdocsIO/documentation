@@ -7,7 +7,7 @@
   {{ $img := imageConfig (path.Join "content" $src) }}
   <img src="{{ $src | relURL }}" width="{{ $img.Width }}" height="{{ $img.Height }}"{{ with .Get "alt" }} alt='{{.}}'{{ end }}/>
 {{ else }}
-  {{ $notfound := resources.Get "not-found.svg" | fingerprint }}
+  {{ $notfound := resources.Get "svg/not-found.svg" | fingerprint }}
   {{ warnf "Image '%s' not found. It was referenced from %s" $src .Position }}
   <img src="{{ $notfound.RelPermalink }}" width="600" height="300" alt="Image Not Found"/>
 {{ end }}
