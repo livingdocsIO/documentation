@@ -1,0 +1,101 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  position: relative;
+  margin: 1.3em 0 $space-m;
+}
+
+h1 {
+  @extend %font-xl;
+  border-bottom: 1px solid $color-grey-6;
+  padding-bottom: 1.33 * $space-s;
+}
+
+h2 {
+  @extend %font-l;
+}
+
+h3 {
+  @extend %font-l-m;
+}
+
+h4 {
+  @extend %font-m;
+}
+
+h5 {
+  @extend %font-s;
+  font-weight: 500;
+}
+
+p {
+  @extend %font-s;
+  margin: 0 0 $space-m;
+}
+
+%font-xxl {
+  font-weight: 500;
+  font-size: 52px;
+  @include media-query (tablet) {
+    font-size: 40px;
+  }
+  line-height: 125%;
+}
+
+%font-xl {
+  font-weight: 500;
+  font-size: 40px;
+  @include media-query (tablet) {
+    font-size: 30px;
+  }
+  line-height: 130%;
+}
+
+%font-l {
+  font-weight: 500;
+  font-size: 30px;
+  @include media-query (tablet) {
+    font-size: 22px;
+  }
+  line-height: 135%;
+}
+
+%font-l-m {
+  font-weight: 500;
+  font-size: 22px;
+  @include media-query (tablet) {
+    font-size: 20px;
+  }
+  line-height: 135%;
+}
+
+%font-m {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 145%;
+}
+
+%font-s {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 145%;
+}
+
+%font-s-xs {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 145%;
+}
+
+%font-xs {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 145%;
+}
+
+%font-forms {
+  font-weight: 500;
+  font-size: 15px;
+}
