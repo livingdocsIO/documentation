@@ -1,12 +1,14 @@
 .search-results-document {
   @extend %font-s-xs;
   padding: $space-s;
-    
+
   &:not(:last-child) {
     border-bottom: 1px solid $color-grey-6;
   }
 
   &__title {
+    display: block;
     font-weight: 500;
+    color: $color-black;
   }
 }
