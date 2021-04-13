@@ -21,5 +21,9 @@
       max-width: 100%;
       height: auto;
     }
+
+    hr {
+      border-bottom: 4px solid $color-grey-6;
+    }
   }
 }

@@ -1,0 +1,16 @@
+.article {
+  &__content {
+    ul {
+      margin-top: $space-s;
+    }
+    
+    & > ul,
+    & > ol {
+      padding-left: $space-m;
+    }
+    
+    li {
+      margin-bottom: $space-s;
+    }
+  }
+}

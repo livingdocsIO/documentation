@@ -1,10 +1,12 @@
 table {
+  width: 100%;
+  margin: $space-l 0;
   border-spacing: 0;
   border-collapse: collapse;
 }
 
 thead {
-  border-bottom: 2px solid $color-grey-5;
+  border-bottom: 1px solid $color-black;
   font-weight: 500;
 }
 
@@ -16,9 +18,16 @@ tr:not(:last-child) {
   border-bottom: 1px solid $color-grey-5;
 }
 
+th {
+  font-weight: 500;
+}
+
 th,
 td {
-  padding: 7px;
+  @extend %font-xs;
+  min-width: $space-l;
+  padding: $space-xs;
   text-align: left;
-  min-width: 80px;
+  vertical-align: left;
+  word-break: initial;
 }
