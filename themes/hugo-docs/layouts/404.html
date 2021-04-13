@@ -2,22 +2,20 @@
 
 <div class="page">
   {{ partial "sidebar.html" . }}
-  <main class="content-wrapper">
-    <div class="content">
-      <article id="{{ .Slug }}">
-        {{if (ne .Title "Get started with Livingdocs") }}
-        {{ partial "edit-page.html" . }}
-        {{ end }}
+  <main class="page__content">
+    <article class="article" id="{{ .Slug }}">
+      {{if (ne .Title "Get started with Livingdocs") }}
+      {{ partial "edit-page.html" . }}
+      {{ end }}
 
-        <div class="page-not-found">
-          <h1>Uh-oh</h1>
+      <div class="page-not-found">
+        <h1>Uh-oh</h1>
 
-          <h3>Sorry, but we can't find the page!</h3>
+        <h3>Sorry, but we can't find the page!</h3>
 
-          <p><a href="{{.Site.BaseURL}}">Go to homepage</a></p>
-        </div>
-      </article>
-    </div>
+        <p><a href="{{.Site.BaseURL}}">Go to homepage</a></p>
+      </div>
+    </article>
   </main>
 </div>
 

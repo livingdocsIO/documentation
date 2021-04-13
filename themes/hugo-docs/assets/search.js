@@ -51,8 +51,8 @@ function searchInIndex (index, {query, limit}) {
 		const url = ref.url
 		const title = highlight('title', ref.title, byField)
 		const description = highlight('description', ref.description, byField)
-		const tags = ref.section ? ref.section.split(',').map((l) => l.trim() ? `<small>${l.trim()}</small>` : '').join('') : ''
-		byDoc[documentUrl] = byDoc[documentUrl] || {score: 0, results: [], title: `${doc.title}${tags}`}
+		const tags = ref.section ? ref.section.split(',').map((l) => l.trim() ? `<div class="tag tag--spaced">${l.trim()}</div>` : '').join('') : ''
+		byDoc[documentUrl] = byDoc[documentUrl] || {score: 0, results: [], title: `${tags}`}
 		byDoc[documentUrl].results.push({url, title, description})
 		byDoc[documentUrl].score += match.score
 		if (count === limit) break
@@ -84,7 +84,7 @@ function highlight (prop, string, matches) {
 	let str = ''
 	let offset = 0
 	for (const [from, count] of matches[prop]) {
-		str += `${string.substring(offset, from)}<i>${string.substr(from, count)}</i>`
+		str += `${string.substring(offset, from)}<em>${string.substr(from, count)}</em>`
 		offset = from + count
 	}
 	str += string.substr(offset)

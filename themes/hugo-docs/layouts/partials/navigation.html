@@ -1,8 +1,8 @@
-<div class="navigation-buttons">
+<div class="pagination">
   {{if .NextInSection}}
-    <a class="li-btn li-btn--small nav-prev-btn" href="{{.NextInSection.RelPermalink}}">← {{.NextInSection.Title}} </a>
+    <a class="button button--small button--prev" href="{{.NextInSection.RelPermalink}}"><span class="button__ascii">←</span>{{.NextInSection.Title}}</a>
   {{end}}
   {{if .PrevInSection}}
-    <a class="li-btn li-btn--small nav-next-btn" href="{{.PrevInSection.RelPermalink}}">{{.PrevInSection.Title}} →</a>
+    <a class="button button--small button--next" href="{{.PrevInSection.RelPermalink}}">{{.PrevInSection.Title}}<span class="button__ascii">→</span></a>
   {{end}}
 </div>
