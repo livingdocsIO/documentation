@@ -8,13 +8,15 @@
       {{ partial "edit-page.html" . }}
       {{ end }}
 
-      <div class="page-not-found">
-        <h1>Uh-oh</h1>
+      <h1 class="article__title">
+        Uh-oh
+      </h1>
 
-        <h3>Sorry, but we can't find the page!</h3>
-
+      <div class="article__content">
+        <h3>Sorry, but we can't find the page… 😞</h3>
         <p><a href="{{.Site.BaseURL}}">Go to homepage</a></p>
       </div>
+
     </article>
   </main>
 </div>
