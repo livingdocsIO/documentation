@@ -48,7 +48,7 @@ system:
 
 Now, the routes indexer sees a new publication event. It first puts the routing
 information for this publication (found in the Publication Metadata) in the
-*routes cache*:
+*routes cache:*
 
 ```js
 // key => value
