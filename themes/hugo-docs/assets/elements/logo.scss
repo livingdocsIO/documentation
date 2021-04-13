@@ -1,7 +1,7 @@
 .logo {
   &--brand-desktop {
     width: 1.5 * $space-xl;
-    margin-top: $space-s;
+    margin-top: 8px;
 
     @include media-query(tablet) {
       display: none;
