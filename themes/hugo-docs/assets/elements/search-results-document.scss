@@ -5,4 +5,8 @@
   &:not(:last-child) {
     border-bottom: 1px solid $color-grey-6;
   }
+
+  &__title {
+    font-weight: 500;
+  }
 }
