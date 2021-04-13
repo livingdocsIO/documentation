@@ -6,9 +6,20 @@ menus:
     parent: Integrations
 ---
 
-{{< added-in release-2020-10 >}}
 
-## Motivation
+## Foreword and import statistics
+As imports from old systems can contain millions of documents, it's important to correctly estimate the time needed to complete an import.
+
+As a rough number, you can assume to import ~ 50.000 articles and ~ 100.000 - 300.000 images per hour. Without the necessity to import images, you could import a lot more articles per hour.
+
+This scenario assumes ~4 GB of RAM usage and a bandwidth of 25Mpbs inbound and outbound. 
+
+Of course, the Infrastructure can be scaled to support faster imports if that's necessary.
+
+
+## Custom document IDs
+
+{{< added-in release-2020-10 >}}
 
 During a migration of an existing system, it's best practice to migrate all entries of the old system into livingdocs.
 To ease the migration, we want to support user-defined identifiers, so a custom import script can reuse existing identifiers.
@@ -65,3 +76,18 @@ curl -k -X POST "https://edit.livingdocs.io/proxy/api/v1/import/documents" \
 }
 EOF
 ```
+
+## Custom publication dates
+
+{{< added-in release-2021-03 >}}
+
+When importing articles from legacy systems, you should be setting the `publicationDate`. The `publicationDate` can be found in the [public api documentation](https://edit.livingdocs.io/public-api) or [import api reference documentation]({{< ref "../../reference-docs/server/import-api.md" >}}).
+
+The `publicationDate` controls when an article has been published, updated and is important for the search to function properly.
+
+If an article has multiple publication dates and you want to keep a history of for example `created` and `updated`, we advise importing the same article twice.
+
+First import the article with the `publicationDate` containing the value of the first time an article was published.
+Then re-import the article and you basically would 'update' that article with a new `publicationDate`
+
+We save the `firstPublicationDate` of an article, so you could access both dates later on in your delivery and show when an article has been published initially and when it was updated.
