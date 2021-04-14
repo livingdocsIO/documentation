@@ -5,8 +5,13 @@
     text-decoration: none;
     display: block;
     position: relative;
-    padding: $space-xs 14px $space-xs calc(var(--menu-level, 1) * 14px + 8px);
+    padding: 1.5 * $space-s 14px 1.5 * $space-s calc(var(--menu-level, 1) * 14px + 8px);
     cursor: pointer;
+
+    @include media-query(desktop) {
+      padding-top: $space-xs;
+      padding-bottom: $space-xs;
+    }
 
     &:hover {
       background-color: rgba($color-grey-5, .15);

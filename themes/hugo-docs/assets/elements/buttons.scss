@@ -43,7 +43,14 @@
   }
 
   &--prev {
-    float: left;
+    width: 100%;
+    margin-bottom: $space-m;
+
+    @include media-query(desktop) {
+      width: auto;
+      margin-bottom: 0;
+      float: left;
+    }
 
     .button {
       &__ascii {
@@ -53,7 +60,12 @@
   }
 
   &--next {
-    float: right;
+    width: 100%;
+
+    @include media-query(desktop) {
+      width: auto;
+      float: right;
+    }
 
     .button {
       &__ascii {

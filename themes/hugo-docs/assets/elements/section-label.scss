@@ -1,9 +1,14 @@
 .section-label {
   @extend %font-xs;
-  padding: 0 $space-m;
-  margin: $space-m 0 $space-xs 0;
+  padding: $space-s $space-m;
+  margin: 2 * $space-m 0 $space-xs 0;
   text-transform: uppercase;
   color: $color-grey-4;
+
+  @include media-query(desktop) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 
   &--table-of-contents {
     content: 'Contents';
