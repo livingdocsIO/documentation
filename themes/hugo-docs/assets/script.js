@@ -176,7 +176,12 @@ function createSearchWorker () {
 // Mobile burger navigation
 const burger = document.querySelector('.header__burger')
 const page = document.querySelector('.page')
+const conent = document.querySelector('.page__content')
 
 burger.addEventListener('click', (evt) => {
   page.classList.toggle('show-sidebar')
+})
+
+conent.addEventListener('click', (evt) => {
+  page.classList.remove('show-sidebar')
 })
