@@ -28,7 +28,7 @@ const importLog = await import({importJob, rawDocument, shouldCreateNew, updateC
 * `channelid`: A `number` containing the Id of the Channel you want the Document to import to.
 * `contentType`: A `string`, the desired `contentType` of your Document.
 * `title`: A `string`, the title of your Document.
-* `publicationDate` A `string` containing an ISO date of when an article was published (`autoPublish` flag needs to be set as well)
+* `publicationDate` A `string` containing an ISO 8601 date time stamp of when an article was published (`autoPublish` flag needs to be set as well)
 
 ### `rawDocument`
 

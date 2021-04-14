@@ -8,14 +8,13 @@ menus:
 
 
 ## Foreword and import statistics
-As imports from old systems can contain millions of documents, it's important to correctly estimate the time needed to complete an import.
+Importing millions of documents from legacy systems into Livingdocs takes time. We observed these numbers:
+- 50k articles per hour
+- 100k - 300k images per hour
 
-As a rough number, you can assume to import ~ 50.000 articles and ~ 100.000 - 300.000 images per hour. Without the necessity to import images, you could import a lot more articles per hour.
+During these observations, memory usage was around ~4GB or RAM und 25Mbps of inbout and outbound bandwidth was used.
 
-This scenario assumes ~4 GB of RAM usage and a bandwidth of 25Mpbs inbound and outbound. 
-
-Of course, the Infrastructure can be scaled to support faster imports if that's necessary.
-
+If no images are imported, a lot more documents could be imported. 
 
 ## Custom document IDs
 
