@@ -21,6 +21,7 @@ $list-number-gap: 1.5 * $space-s;
 
       li {
         counter-increment: listCounter;
+        position: relative;
         margin-bottom: $space-s;
 
         &:before {
@@ -30,12 +31,11 @@ $list-number-gap: 1.5 * $space-s;
           align-items: center;
           width: $list-number-circle-size;
           height: $list-number-circle-size;
-          position: relative;
+          position: absolute;
           top: -.2em;
+          left: calc(-#{$list-number-circle-size} - #{$list-number-gap});
           padding-top: .1em;
           padding-left: .05em;
-          margin-right: $list-number-gap;
-          margin-left: calc(-#{$list-number-circle-size} - #{$list-number-gap});
           background: $color-black;
           border-radius: 100%;
           color: $color-white;
