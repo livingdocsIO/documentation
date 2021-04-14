@@ -63,8 +63,9 @@
     }
 
     @include media-query(widescreen) {
-      padding-right: $space-xl;
+      padding-right: calc(#{$space-xl} + (100vw - 100%) / 2);
       padding-left: $space-xl;
+      margin-right: calc((100% - 100vw) / 2);
     }
   }
 }
