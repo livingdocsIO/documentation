@@ -5,7 +5,7 @@
     text-decoration: none;
     display: block;
     position: relative;
-    padding: 1.5 * $space-s 14px 1.5 * $space-s calc(var(--menu-level, 1) * 14px + 8px);
+    padding: $space-s 14px $space-s calc(var(--menu-level, 1) * 14px + 8px);
     cursor: pointer;
 
     @include media-query(desktop) {
