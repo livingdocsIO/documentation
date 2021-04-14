@@ -22,7 +22,7 @@
 
 .anchor-offset {
   position: relative;
-  top: -$space-l;
+  top: -1.5 * $space-m;
   visibility: hidden;
 }
 
@@ -34,7 +34,9 @@ h5 {
   &:hover {
     .anchor {
       svg {
-        visibility: visible;
+        @include media-query(desktop) {
+          visibility: visible;
+        }
       }
     }
   }
