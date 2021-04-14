@@ -22,15 +22,14 @@
   }
 
   &__burger {
-    display: none;
     width: 1.5 * $space-m;
     height: 1.5 * $space-m;
     margin-left: 1.5 * $space-s;
     cursor: pointer;
     user-select: none;
 
-    @include media-query(tablet) {
-      display: block;
+    @include media-query(desktop) {
+      display: none;
     }
   }
 
@@ -39,10 +38,10 @@
   }
 
   &__right {
-    width: 5 * $space-l;
+    width: 3 * $space-l;
 
-    @include media-query(mobile) {
-      width: 3 * $space-l;
+    @include media-query(tablet) {
+      width: 5 * $space-l;
     }
   }
 }

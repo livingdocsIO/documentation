@@ -1,11 +1,11 @@
 .section-teaser {
   flex-grow: 1;
   margin: $space-s;
-  width: 40%;
+  width: 100%;
   cursor: pointer;
 
-  @include media-query(mobile) {
-    width: 100%;
+  @include media-query(tablet) {
+    width: 40%;
   }
 
   &__link {

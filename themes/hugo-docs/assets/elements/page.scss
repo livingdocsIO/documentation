@@ -9,17 +9,23 @@
   margin-left: 50%;
   transform: translateX(-50%);
 
-  @include media-query(tablet) {
-    &.show-sidebar {
-      .page {
-        &__content {
-          left: $page-sidebar-width;
+  &.show-sidebar {
+    .page {
+      &__content {
+        left: $page-sidebar-width;
+
+        @include media-query(desktop) {
+          left: initial;
         }
       }
     }
   }
 
   &__sidebar {
+    @include mobile-scroll();
+    position: fixed;
+    top: 0;
+    bottom: 0;
     flex-grow: 0;
     flex-shrink: 0;
     width: $page-sidebar-width;
@@ -29,34 +35,36 @@
     overflow-x: hidden;
     overflow-y: auto;
 
-    @include media-query(tablet) {
-      @include mobile-scroll();
-      position: fixed;
-      top: 0;
-      bottom: 0;
+    @include media-query(desktop) {
+      position: static;
+      top: initial;
+      bottom: initial;
     }
   }
 
   &__content {
-    padding: $space-l + 3px  $space-xl;
+    @include box-shadow();
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    left: 0;
+    padding: $space-l + 3px $space-m;
+    transition: left $transition-time ease;
     background-color: $color-white;
     overflow-y: auto;
 
     @include media-query(desktop) {
+      position: static;
+      width: 100%;
       padding-right: $space-l;
       padding-left: $space-l;
+      box-shadow: none;
     }
 
-    @include media-query(tablet) {
-      @include box-shadow();
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      width: 100vw;
-      left: 0;
-      padding-right: $space-m;
-      padding-left: $space-m;
-      transition: left $transition-time ease;
+    @include media-query(widescreen) {
+      padding-right: $space-xl;
+      padding-left: $space-xl;
     }
   }
 }

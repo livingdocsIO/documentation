@@ -30,14 +30,15 @@
   }
 
   &--edit {
+    display: none;
     float: right;
     margin-top: $space-xs;
     margin-left: $space-s;
     position: relative;
     z-index: 1;
   
-    @include media-query(tablet) {
-      display: none;
+    @include media-query(desktop) {
+      display: inline-block;
     }
   }
 

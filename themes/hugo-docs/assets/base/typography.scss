@@ -37,36 +37,36 @@ p {
 
 %font-xxl {
   font-weight: 500;
-  font-size: 52px;
-  @include media-query (tablet) {
-    font-size: 40px;
+  font-size: 40px;
+  @include media-query (desktop) {
+    font-size: 52px;
   }
   line-height: 125%;
 }
 
 %font-xl {
   font-weight: 500;
-  font-size: 40px;
-  @include media-query (tablet) {
-    font-size: 30px;
+  font-size: 30px;
+  @include media-query (desktop) {
+    font-size: 40px;
   }
   line-height: 130%;
 }
 
 %font-l {
   font-weight: 500;
-  font-size: 30px;
-  @include media-query (tablet) {
-    font-size: 22px;
+  font-size: 22px;
+  @include media-query (desktop) {
+    font-size: 30px;
   }
   line-height: 135%;
 }
 
 %font-l-m {
   font-weight: 500;
-  font-size: 22px;
-  @include media-query (tablet) {
-    font-size: 20px;
+  font-size: 20px;
+  @include media-query (desktop) {
+    font-size: 22px;
   }
   line-height: 135%;
 }

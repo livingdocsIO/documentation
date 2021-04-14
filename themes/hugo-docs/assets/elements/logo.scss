@@ -1,20 +1,20 @@
 .logo {
   &--brand-desktop {
+    display: none;
     width: 1.5 * $space-xl;
     margin-top: 8px;
 
-    @include media-query(tablet) {
-      display: none;
+    @include media-query(desktop) {
+      display: initial;
     }
   }
 
-  &--brand-tablet {
-    display: none;
+  &--brand-mobile {
     margin-top: $space-xs;
     height: 1.75 * $space-m;
 
-    @include media-query(tablet) {
-      display: initial;
+    @include media-query(desktop) {
+      display: none;
     }
   }
 }

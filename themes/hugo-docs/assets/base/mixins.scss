@@ -1,13 +1,25 @@
-// widescreen first!
+// mobile first
 @mixin media-query($size) {
+  @if $size == widescreen {
+    @media (min-width: $breakpoint-widescreen) { @content; }
+  }
   @if $size == desktop {
-    @media (max-width: $breakpoint-desktop) { @content; }
+    @media (min-width: $breakpoint-desktop) { @content; }
   }
   @if $size == tablet {
-    @media (max-width: $breakpoint-tablet) { @content; }
+    @media (min-width: $breakpoint-tablet) { @content; }
+  }
+}
+
+@mixin media-query-down($size) {
+  @if $size == desktop {
+    @media (max-width: $breakpoint-desktop - 1px) { @content; }
+  }
+  @if $size == tablet {
+    @media (max-width: $breakpoint-tablet - 1px) { @content; }
   }
   @if $size == mobile {
-    @media (max-width: $breakpoint-mobile) { @content; }
+    @media (max-width: $breakpoint-mobile - 1px) { @content; }
   }
 }
 
@@ -20,12 +32,14 @@
 }
 
 @mixin mobile-scroll() {
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
+  @include media-query-down(tablet) {
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 

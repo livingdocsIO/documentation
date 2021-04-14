@@ -1,9 +1,9 @@
 .article {
-  margin-right: $toc-width + $space-l - $space-m;
+  margin-right: 0;
   word-break: break-word;
 
-  @include media-query(desktop) {
-    margin-right: 0;
+  @include media-query(widescreen) {
+    margin-right: $toc-width + $space-l - $space-m;
   }
 
   &__title {
