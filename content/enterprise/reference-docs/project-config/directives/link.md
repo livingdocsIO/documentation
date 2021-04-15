@@ -13,36 +13,36 @@ If you want to set a link on an image for example, just wrap the `<img>` tag in 
 
 ```js
 module.exports = {
-    "label": "Web Teaser",
-    "iconUrl": `https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-icons/icon_component_teaser_with_image.svg`,
-    "directives": [{
-        "name": "link",
-        "type": "link",
-        "prefill": { // optional
-        "title": {
-            "key": "title",
-            "provider": "iframely"
+    label: 'Web Teaser',
+    iconUrl: 'https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-icons/icon_component_teaser_with_image.svg',
+    directives: [{
+        name: 'link',
+        type: 'link',
+        prefill: { // optional
+        title: {
+            key: 'title',
+            provider: 'iframely'
         },
-        "site": {
-            "key": "site",
-            "provider": "iframely"
+        site: {
+            key: 'site',
+            provider: 'iframely'
         },
-        "headline": {
-            "key": "author",
-            "provider": "iframely"
+        headline: {
+            key: 'author',
+            provider: 'iframely'
         },
-        "image": {
-            "key": "image",
-            "provider": "iframely"
+        image: {
+            key: 'image',
+            provider: 'iframely'
         }
       }
     }, {
-        "name": "image",
-        "type": "image",
-        "imageRatios": ["16:9"],
-        "allowOriginalRatio": false
+        name: 'image',
+        type: 'image',
+        imageRatios: ['16:9'],
+        allowOriginalRatio: false
     }],
-    "html": dedent`
+    html: dedent`
         <div class="teaser">
             <a doc-link="link">
                 <div class="teaser__image container image-container" doc-image="image">

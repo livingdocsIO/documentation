@@ -13,9 +13,9 @@ HTML directives allow you to insert arbitrary HTML within the tag on which the d
 Example:
 ```js
 module.exports = {
-  "name": "tweet",
-  "label": "Tweet",
-  "html": dedent`
+  name: 'tweet',
+  label: 'Tweet',
+  html: dedent`
     <div class="embed-container">
       <div doc-html="tweet">
           <div class="embed tweet">

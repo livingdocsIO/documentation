@@ -59,12 +59,12 @@ of livingdocs on their machine.
 **Step 1: Download all configs**
 
 ```sh
-npx livingdocs-cli project-config:download --format json -p projectA --env dev &&
-npx livingdocs-cli project-config:download --format json -p projectA --env staging &&
+npx livingdocs-cli project-config:download --format json -p projectA --env dev
+npx livingdocs-cli project-config:download --format json -p projectA --env staging
 npx livingdocs-cli project-config:download --format json -p projectA --env production
 
-npx livingdocs-cli project-config:download --format json -p projectB --env dev &&
-npx livingdocs-cli project-config:download --format json -p projectB --env staging &&
+npx livingdocs-cli project-config:download --format json -p projectB --env dev
+npx livingdocs-cli project-config:download --format json -p projectB --env staging
 npx livingdocs-cli project-config:download --format json -p projectB --env production
 ```
 

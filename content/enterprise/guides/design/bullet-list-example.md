@@ -14,33 +14,29 @@ In the container you set the `defaultComponents:paragraph` to define which compo
 The container:
 ```js
 module.exports = {
-  "label": "Bullet List",
-  "name": "bullet-list",
-  "properties": ["list-type"],
-  "directives": [{
-    "name": "list",
-    "type": "container",
-    "defaultComponents": {
-      "paragraph": "bullet-list-item"
+  label: 'Bullet List',
+  name: 'bullet-list',
+  properties: ['list-type'],
+  directives: [{
+    name: 'list',
+    type: 'container',
+    defaultComponents: {
+      paragraph: 'bullet-list-item'
     },
-    "defaultContent": [{
-      "component": "bullet-list-item"
+    defaultContent: [{
+      component: 'bullet-list-item'
     }]
   }],
-  "html": dedent`
-  <ul doc-container="list" class="ld-list"></ul>
-  `
+  html: `<ul doc-container="list" class="ld-list"></ul>`
 }
 ```
 
 The repeatable:
 ```js
 module.exports = {
-  "name": "bullet-list-item",
-  "label": "Bullet List Item",
-  "allowedParents": ["bullet-list"],
-  "html": dedent`
-  <li doc-editable="text">List item</li>
-  `
+  name: 'bullet-list-item',
+  label: 'Bullet List Item',
+  allowedParents: ['bullet-list'],
+  html: `<li doc-editable="text">List item</li>`
 }
 ```

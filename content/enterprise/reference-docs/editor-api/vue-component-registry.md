@@ -19,7 +19,7 @@ Depending on the `type`, you will get different `props` defined on your componen
 To register a custom component to be used in the result list of a custom dashboard, you would call the API like this:
 
 ```js
-liEditor = require('@livingdocs/editor')()
+const liEditor = require('@livingdocs/editor')()
 liEditor.vueComponentRegistry.registerComponent({
   // type needs to be a valid type
   type: 'type',

@@ -12,18 +12,18 @@ Style directives allow a user to set style properties like a background color th
 
 ```js
 module.exports = {
-  "name": "article-header",
-  "label": "Artikelkopf",
-  "directives": [{
-    "name": "background",
-    "type": "style",
-    "properties": ["css-background-color"]
+  name: 'article-header',
+  label: 'Artikelkopf',
+  directives: [{
+    name: 'background',
+    type: 'style',
+    properties: ['css-background-color']
   }, {
-    "name": "title",
-    "type": "editable",
-    "plainText": true
+    name: 'title',
+    type: 'editable',
+    plainText: true
   }],
-  "html": dedent`
+  html: dedent`
     <header class="articleheader">
         <section class="articleheader__textsection" doc-style="background">
             <h1 class="headline headline--h1 articleheader__headline articleheader__headline--h1" doc-editable="title">Artikel Headline</h1>

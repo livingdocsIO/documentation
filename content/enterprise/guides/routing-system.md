@@ -52,19 +52,19 @@ information for this publication (found in the Publication Metadata) in the
 
 ```js
 // key => value
-"doc:173" => {
-  "route": {
-    "metadata": {
-      "projectId": 5,
-      "channelId": 12,
-      "channelHandle": "web"
+'doc:173' => {
+  route: {
+    metadata: {
+      projectId: 5,
+      channelId: 12,
+      channelHandle: 'web'
     },
-    "data": {
-      "path": "/interview/2018/01/i-m-on-the-road-again--173",
-      "type": "document",
-      "resource": {
-        "id": 173,
-        "statusCode": 200
+    data: {
+      path: '/interview/2018/01/i-m-on-the-road-again--173',
+      type: 'document',
+      resource: {
+        id: 173,
+        statusCode: 200
       }
     }
   }
@@ -93,17 +93,17 @@ contentType configured with `routing.pathPattern.type: 'page'`:
   :
     ```js
     // key => value
-    "path:5:/page/about" => {
-      "metadata": {
-        "projectId": 5,
-        "channelId": 12,
-        "channelHandle": "web"
+    'path:5:/page/about' => {
+      metadata: {
+        projectId: 5,
+        channelId: 12,
+        channelHandle: 'web'
       },
-      "data": {
-        "type": "document",
-        "resource": {
-          "id": 175, // document ID
-          "statusCode": 200
+      data: {
+        type: 'document',
+        resource: {
+          id: 175, // document ID
+          statusCode: 200
         }
       }
     }
@@ -115,18 +115,18 @@ contentType configured with `routing.pathPattern.type: 'page'`:
     * Should this document get republished with another slug than `about`, e.g.
       `about-us`, the path pattern such as `/page/:slug` would give `/page
       /about-us` instead of `/page/about`. The routes indexer notices the new
-      publication and updates the cache `"path:5:/page/about"` replacing `data`
+      publication and updates the cache `'path:5:/page/about'` replacing `data`
       like this:
         ```js
-        "data": {
-          "type": "redirect",
-          "path": "/page/about-us",
-          "resource": {
-            "statusCode": 301 // HTTP301 is 'Moved Permanently'
+        data: {
+          type: 'redirect',
+          path: '/page/about-us',
+          resource: {
+            statusCode: 301 // HTTP 301 is 'Moved Permanently'
           }
         }
         ```
-    * It would also write a new cache entry for `"path:5:/page/about-us"`.
+    * It would also write a new cache entry for `'path:5:/page/about-us'`.
 
 
 ## Configuration
