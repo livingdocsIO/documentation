@@ -8,12 +8,12 @@ menus:
 {{< added-in release-2020-07 >}}
 
 The editor settings control the behavior of your editor UX, in particular:
-- user menu
-- main navigation
-- dashboards
-- start page
-- media library
-- text formatting
+- [user menu]({{< ref "editor-settings#user-menu" >}})
+- [main navigation]({{< ref "editor-settings#main-navigation" >}})
+- [dashboards]({{< ref "editor-settings#dashboards" >}})
+- [start page]({{< ref "editor-settings#startpage" >}})
+- [media library]({{< ref "editor-settings#media-library" >}})
+- [text formatting]({{< ref "editor-settings#text-formatting" >}})
 
 An example:
 ```js
@@ -302,7 +302,7 @@ Then there are 2 configs to define the behavior when Images are inserted into a 
 
 ## Text Formatting
 
-The text formatting toolbar can be customized globally here. You can also overwrite this settings for each content type.
+The text formatting toolbar can be customized globally here. You can also overwrite this settings for each [content type]({{< ref "content-types#text-formatting" >}}).
 Enable or disable the existing elements for text formatting:
 ```js
 textFormatting: {
