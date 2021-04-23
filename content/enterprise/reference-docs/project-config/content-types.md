@@ -26,7 +26,8 @@ We plan to allow to move all layout options which are currently defined in the d
 
   info: {
     label: 'Boilerplate Article',
-    description: 'The most simple article'
+    description: 'The most simple article',
+    icon: 'file-outline'
   },
 
   editorWrapper: '<div class="doc-section"></div>',
