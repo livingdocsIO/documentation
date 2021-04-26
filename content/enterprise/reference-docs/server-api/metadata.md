@@ -131,12 +131,6 @@ module.exports = {
   // The onRender event will be called before a document gets rendered
   onRender: function(newValue, oldValue, config, documentVersion) {
     // your implementation
-  },
-
-  // DEPRECATED. USE onUpdate INSTEAD.
-  // This is the same as `onUpdate` without documentVersion as parameter
-  set: function(newValue, oldValue, config) {
-    // your implementation
   }
 }
 ```
