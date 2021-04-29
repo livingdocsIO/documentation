@@ -738,7 +738,7 @@ mediaLibrary: {
 ```
 
 
-##### Setting up the MediaLibrary Elastic Search Mapping
+##### Setting up the Media Library Elastic Search Mapping
 
 For now the very first step when setting up the server, you need to create a new index 'media-library' in Elastic Search.
 
