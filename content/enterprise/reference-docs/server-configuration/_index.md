@@ -621,7 +621,7 @@ The Media Library impacts editor in four ways:
 - Customize indexing of metadata is supported
 
 {{< added-in release-2021-06 >}}
-- Files are supported
+- Files are supported (for example PDFs)
 - The config `mediaLibrary.images` `mediaLibrary.videos` `mediaLibrary.files` is now supported. Before the asset configs were stored in `images`, `videos` and `files`.
 
 Below you see a full mediaLibrary config (with default values). Consult the [storage configuration]({{< ref "/enterprise/reference-docs/server-configuration/storage" >}}) to get more details about the configuration and other strategies than s3.
