@@ -622,7 +622,8 @@ The Media Library impacts editor in four ways:
 
 {{< added-in release-2021-06 >}}
 - Files are supported (for example PDFs)
-- The config `mediaLibrary.images` `mediaLibrary.videos` `mediaLibrary.files` is now supported. Before the asset configs were stored in `images`, `videos` and `files`.
+- We now support the following configs: `mediaLibrary.images` `mediaLibrary.videos` `mediaLibrary.files` is now supported.
+_Before the release-2021-06 - those configs were stored on the top-level 'images', 'videos', 'files'_
 
 Below you see a full mediaLibrary config (with default values). Consult the [storage configuration]({{< ref "/enterprise/reference-docs/server-configuration/storage" >}}) to get more details about the configuration and other strategies than s3.
 
