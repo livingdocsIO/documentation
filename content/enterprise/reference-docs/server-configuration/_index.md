@@ -307,127 +307,6 @@ designs: {
 }
 ```
 
-#### Images
-
-Define the S3 Storage as image upload target and processing options that are
-applied before the image is uploaded.
-
-Consult the [storage configuration]({{< ref "/enterprise/reference-docs/server-configuration/storage" >}}) to configure other providers than s3.
-
-```js
-images: {
-  publicUrl: 'https://livingdocs-images-dev.s3.amazonaws.com',
-  storage: {
-    strategy: 's3',
-    prefix: 'images/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
-    config: {
-      bucket: 'livingdocs-images-development',
-      region: 'eu-central-1',
-      secretAccessKey: '****',
-      accessKeyId: '****'
-    }
-  },
-  upload: {
-    maxFileSize: 100 * 1000 * 1000, // 100MB, defaults to 5MB.
-    max_resolution: 15 * 1000 * 1000 // 15 mega-pixels
-  },
-  processing: {
-    // Default values that approximate 4MB
-    maxFileSize: 4 * 1000 * 1000,
-    maxConcurrentProcesses: 10,
-    lossy: {
-      max_dimension: 4000,
-      quality: 80
-    }
-    lossless: {
-      max_dimension: 1500
-    }
-  }
-}
-```
-
-##### Alternative Image Proxy Configuration
-
-Alternatively you can forward image upload to another service.
-For more info about this see [Image Services]({{< ref "/enterprise/guides/image-services.md" >}}).
-
-```js
-images: {
-  proxy: {
-    url: 'https://foobar.com/images/upload'
-  },
-  uploadRestrictions: {
-    maxFileSize: 100*1000*1000 // 100MB, defaults to 5MB.
-  }
-}
-```
-
-#### images.processing.convert Configuration
-
-It is possible to define a convert from one image format to another. If the sourceFormat is a vector based format you can define the density (dpi) which should be used to create the pixel based format.
-
-```js
-processing: {
-  convert: [{sourceFormat: 'pdf', targetFormat: 'png', density: 300}]
-}
-```
-
-#### Videos
-{{< added-in release-2021-03 >}}
-For videos it is necessary to have a specific configuration.
-The storage, publicUrl and the uploadRestriction must be set.
-
-Consult the [storage configuration]({{< ref "/enterprise/reference-docs/server-configuration/storage" >}}) to configure other providers than s3.
-
-```js
-  videos: {
-    // must be public accessible
-    publicUrl: 'https://livingdocs-videos-development.s3.amazonaws.com',
-    storage: {
-      strategy: 's3',
-      prefix: 'videos/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
-      config: {
-        // the videos must be public-read to be shown in the editor
-        params: {ACL: 'public-read'},
-        bucket: 'livingdocs-videos-development',
-        region: 'eu-central-1',
-        secretAccessKey: '****',
-        accessKeyId: '****'
-      }
-    },
-
-    uploadRestrictions: {
-      maxFileSize: 100 * 1000 * 1000 // 100MB
-    }
-  }
-```
-
-#### Files
-
-Consult the [storage configuration]({{< ref "/enterprise/reference-docs/server-configuration/storage" >}}) to configure other providers than s3.
-
-```js
-files: {
-  // The files feature is optional and can be disabled.
-  enabled: true,
-  publicUrl: 'https://livingdocs-files-dev.s3.amazonaws.com',
-  storage: {
-    strategy: 's3',
-    prefix: 'files/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
-    config: {
-      bucket: 'livingdocs-files-dev',
-      region: 'eu-central-1',
-      secretAccessKey: '****',
-      accessKeyId: '****'
-    }
-  },
-  uploadRestrictions: {
-    allowedMimeTypes: ['application/pdf'],
-    maxFileSize: 100 * 1000 * 1000  // 100MB
-  }
-}
-```
-
 #### Documents
 
 ```js
@@ -727,9 +606,9 @@ pushNotifications: {
 For push notifications to be enabled you also need to follow the steps in the [channel config setup]({{< ref "/enterprise/reference-docs/project-config/content-types.md#push-notifications">}})
 
 
-#### Asset management
+#### Media Library (DAM)
 
-The asset management impacts editor in four ways:
+The Media Library impacts editor in four ways:
 - You can pick images from the library which have been previously uploaded
 - You can see all the uploaded images and perform operations on them
 - You can edit the Metadata of images in a dedicated view, which is accessible over an image
@@ -741,25 +620,122 @@ The asset management impacts editor in four ways:
 {{< added-in release-2021-03 >}}
 - Customize indexing of metadata is supported
 
-##### Prerequisite
+{{< added-in release-2021-06 >}}
+- Files are supported
+- The config `mediaLibrary.images` `mediaLibrary.videos` `mediaLibrary.files` is now supported. Before the asset configs were stored in `images`, `videos` and `files`.
 
-This is not specific to the DAM and is the same for Image uploads. However, it needs to be ensured that valid S3 credentials are configured. This information is usually not checked in and can be configured in `conf/secrets/local.js`.
+Below you see a full mediaLibrary config (with default values). Consult the [storage configuration]({{< ref "/enterprise/reference-docs/server-configuration/storage" >}}) to get more details about the configuration and other strategies than s3.
 
 ```js
-images: {
-  publicUrl: 'http://some-bucketname.s3.amazonaws.com',
-  storage: {
-    strategy: 's3',
-    config: {
-      bucket: 'some-bucketname',
-      region: 'some-s3-region',
-      secretAccessKey: 'YOUR_SECRET_ACCESS_KEY',
-      accessKeyId: 'YOUR_ACCESS_KEY'
+// [storage configuration]({{< ref "/enterprise/reference-docs/server-configuration/storage" >}})
+mediaLibrary: {
+  // define behavior for images in Livingdocs (upload, upload processing, storage)
+  images: {
+    processingStrategy: 'libvips' // 'libvips' (default), 'imagemagick'
+    publicUrl: 'https://livingdocs-images-dev.s3.amazonaws.com', // base url of the storage
+    storage: {
+      strategy: 's3',
+      prefix: 'images/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
+      config: {
+        bucket: 'livingdocs-images-development',
+        region: 'eu-central-1',
+        secretAccessKey: '****',
+        accessKeyId: '****'
+      }
+    },
+    // max upload values of Livingdocs API endpoints
+    uploadRestrictions: {
+      maxFileSize: 15 * 1000 * 1000, // 15MB, default 15MB
+      maxResolution: 24 * 1000 * 1000 // 24MP,  default 24 mega-pixels
+    },
+    processing: {
+      maxFileSize: 15 * 1000 * 1000, // 15MB, default 15MB
+      maxConcurrentProcesses: 5, // default 5
+      lossy: {
+        // max pixel width or height
+        maxDimension: 6000, // default 6000
+        // compression
+        quality: 100 // default 100 (no compression)
+      }
+      lossless: {
+        // max pixel width or height
+        maxDimension: 6000 // default 6000
+      },
+      // optional - Convert your image during upload into another format
+      convert: [{
+        sourceFormat: 'pdf',
+        targetFormat: 'png',
+        // density is only available with processingStrategy 'imagemagick'
+        // If the sourceFormat is a vector based format you can define the density (dpi) which should be used to create the pixel based format.
+        density: 300
+      }]
+    }
+  },
+
+  // define behavior for videos in Livingdocs (upload, storage)
+  videos: {
+    // must be public accessible
+    publicUrl: 'https://livingdocs-videos-development.s3.amazonaws.com',  // base url of the storage
+    storage: {
+      strategy: 's3',
+      prefix: 'videos/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
+      config: {
+        // the videos must be public-read to be shown in the editor
+        params: {ACL: 'public-read'},
+        bucket: 'livingdocs-videos-development',
+        region: 'eu-central-1',
+        secretAccessKey: '****',
+        accessKeyId: '****'
+      }
+    },
+    // max upload values of Livingdocs API endpoints
+    uploadRestrictions: {
+      maxFileSize: 100 * 1000 * 1000 // 100MB, default 100MB
+    }
+  },
+
+  // define behavior for files in Livingdocs (upload, storage)
+  files: {
+    publicUrl: 'https://livingdocs-files-dev.s3.amazonaws.com',  // base url of the storage
+    storage: {
+      strategy: 's3',
+      prefix: 'files/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
+      config: {
+        bucket: 'livingdocs-files-dev',
+        region: 'eu-central-1',
+        secretAccessKey: '****',
+        accessKeyId: '****'
+      }
+    },
+    // max upload values of Livingdocs API endpoints
+    uploadRestrictions: {
+      allowedMimeTypes: ['application/pdf'],
+      maxFileSize: 100 * 1000 * 1000  // 100MB
+    }
+  }
+
+  // tells the media library dashboard how many images to show on one page
+  paginationSize: 25,
+}
+```
+
+##### Alternative Image Proxy Configuration (mediaLibrary.images.proxy)
+
+Alternatively you can forward image upload to another service.
+For more info about this see [Image Services]({{< ref "/enterprise/guides/image-services.md" >}}).
+
+```js
+mediaLibrary: {
+  images: {
+    proxy: {
+      url: 'https://foobar.com/images/upload'
+    },
+    uploadRestrictions: {
+      maxFileSize: 15 * 1000 * 1000 // 15MB, defaults to 15MB.
     }
   }
 }
 ```
-[config options]({{< ref "/enterprise/reference-docs/server-configuration/storage" >}}) for `storage`.
 
 
 ##### Setting up the media-library Elastic Search Mapping
@@ -876,16 +852,6 @@ When you want to index your metadata image fields in elasticsearch (e.g. for das
       }
     }
 ```
-
-##### Media Library
-
-```js
-  mediaLibrary: {
-    paginationSize: 25,
-  }
-```
-
-`paginationSize` tells the media library dashboard how many images to show on one page.
 
 ##### Google Vision API
 
