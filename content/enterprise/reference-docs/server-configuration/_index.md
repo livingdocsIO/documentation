@@ -710,7 +710,7 @@ mediaLibrary: {
     // max upload values of Livingdocs API endpoints
     uploadRestrictions: {
       allowedMimeTypes: ['application/pdf'],
-      maxFileSize: 100 * 1000 * 1000  // 100MB
+      maxFileSize: 100 * 1000 * 1000 // 100MB, default 100MB
     }
   }
 
@@ -738,7 +738,7 @@ mediaLibrary: {
 ```
 
 
-##### Setting up the media-library Elastic Search Mapping
+##### Setting up the MediaLibrary Elastic Search Mapping
 
 For now the very first step when setting up the server, you need to create a new index 'media-library' in Elastic Search.
 
@@ -756,14 +756,14 @@ The name of the Media index has to be configured:
 
 Then the media-library index must be created.
 
-``` javascript
-npx livingdocs-server es-media-reindex -y
+```js
+livingdocs-server elasticsearch-index --handle li-media -y // ({{< added-in release-2021-03 >}})
 ```
 
 To index the metadata the plugin must support the mediaIndex and on the metadata in the mediaType the index must be enabled.
 
 ###### Enable mediaIndex on metadata plugin
-To enable the indexing for the media-library in a plugin you have to add the `mediaIndex` config.
+To enable the indexing for the MediaLibrary in a plugin you have to add the `mediaIndex` config.
 
 ```js
   mediaIndex: {
