@@ -49,7 +49,7 @@ To add something to your drafts index, open the metadata mapping (typically in `
   }
 }
 ```
-5. Reset your draft elastic search index by running `npx livingdocs-server es-search-reindex -y`
+5. Reset your draft elastic search index by running `npx livingdocs-server elasticsearch-index --handle li-documents -y`
 
 Adding to the publication index only makes sense if you want to filter by it (so the catchline is a poor example for this). [Read about the publication index]({{< ref "/enterprise/reference-docs/server-configuration/indexing/publication-index" >}})
 
