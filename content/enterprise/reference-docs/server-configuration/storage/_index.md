@@ -89,6 +89,9 @@ storage: {
     ...
     httpOptions: {
       proxy: 'http://localhost:3128'
+      // If you can't use ssl in your http proxy,
+      // you might need to disable it explicitly
+      // sslEnabled: false
     }
   }
 }
