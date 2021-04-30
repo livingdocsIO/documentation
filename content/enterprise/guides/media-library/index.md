@@ -117,7 +117,7 @@ module.exports = {
 Since many image files (especially those you get from image agencies) hold metadata defined by the IPTC standard, you want to configure extraction for certain metadata fields, so your users don't have to manually type them.
 You do this by adding the `exifExtraction` property to the `mediaType`. See [the list of all IPTC fields]({{< ref "/enterprise/reference-docs/project-config/media_types.md#exif-extraction" >}}) and how to configure them.
 
-The exif extraction will run when an image is imported through the [Import API]({{< ref "/enterprise/reference-docs/server-api/import_api.md" >}}) or when a user uploads an image through the UI.
+The exif extraction will run when an image is imported through the [Import API]({{< ref "/enterprise/reference-docs/server-api/import-api.md" >}}) or when a user uploads an image through the UI.
 The user has the chance to manually change the extracted Metadata before the image is actually stored in the Media Library.
 
 ```js
