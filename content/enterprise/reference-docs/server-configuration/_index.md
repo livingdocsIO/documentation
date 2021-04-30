@@ -903,7 +903,8 @@ If you are using configurable channels you can use the UI in "Project Setup - In
 If you want to do it manually, add the following configuration to the project's channel-config where you want to add the plugin:
 
 ```js
-handle: 'magazine',
+{
+  handle: 'magazine',
   integrations: {
     googleVision: {
       enabled: true,
@@ -980,16 +981,23 @@ liServer.registerInitializedHook(async () => {
 
 {{< added-in release-2020-04 >}}
 
-There is a general `integrations` feature for small integrations that can be configured in the `channelConfig` through editor UI. They need to be allowed in the server config with the following config.
-
-#### Comyan
-
-To allow the `comyan` integration, add this to your config:
+There is a general `integrations` configuration for small integrations that can be configured in the `channelConfig` through editor UI. They need to be enabled in the server config with the following config.
 
 ```js
-integrations: {
-  comyan: {
-    allowed: true
+{
+  integrations: {
+    comyan: {
+      allowed: true
+    },
+    googleVision: {
+      allowed: true
+    },
+    imatrics: {
+      allowed: true
+    },
+    woodwingAssets: {
+      allowed: true
+    }
   }
 }
 ```
