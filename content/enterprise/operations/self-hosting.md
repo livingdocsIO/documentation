@@ -34,10 +34,11 @@ Any system level dependency and the required environment variables are visible i
 Both the containers for server and editor are stateless. The elasticsearch and postgres containers data directory needs to be mounted to the host on with a data volume.
 
 #### Health checks
-- **Editor**: HTTP GET /version.json, Port 9000
+- **Editor**: HTTP GET /status, Port 9000
 - **Server**: HTTP GET /status, Port 9090
 - **Postgres**: TCP, Port 5432
 - **Elasticsearch**: TCP, Port 9200
+- **Redis**: TCP, Port 6379
 
 #### Deployment
 We recommend building docker images on CI and pushing them to the registry. Deployment can be done manually or triggered by CI continuously.
