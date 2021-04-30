@@ -25,9 +25,9 @@ See [Image Source Policy]({{< ref "/enterprise/reference-docs/editor-configurati
 In case you use _huGO+_ as Digital Assets Management software, you can import articles from huGO+ by dragging and dropping them onto a livingdocs dashboard.
 
 There are two types of articles available for imports:
-* Agency articles   
+* Agency articles
   These are imported from established news agencies like _DPA_, _Reuters_, etc.
-* Archive articles  
+* Archive articles
   They come from sources you specify on your own: If you have a print system or any other system and wish to feed articles into huGO+ you would get Archive articles.
 
 
