@@ -1,5 +1,6 @@
 ---
 title: Document Copy
+description: Set up the livingdocs server configuration to support copying content into other content types.
 menus:
   guides:
     parent: Workflows
