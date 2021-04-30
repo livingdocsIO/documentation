@@ -3,6 +3,46 @@ title: Livingdocs Server Config
 linkTitle: Server Config
 menu: reference-docs
 ---
+
+## Configuration Object
+
+```js
+{
+  "server": "{{< a href="#server" title="<http server config>" >}}",
+  "editor": "{{< a href="#editor" title="<editor config>">}}",
+
+  "db": "{{< a href="#postgres-database" title="<postgres database config>">}}",
+  "logs": "{{< a href="#logging" title="<logging config>">}}",
+  "auth": "{{< a href="#authentication" title="<authentication config>">}}",
+  "emails": "{{< a href="#user-management-emails" title="<user management emails>">}}",
+
+  "designLoader": "{{< a href="#design-loader" title="<designLoader config>">}}",
+  "designs": "{{< a href="#designs" title="<designs config>">}}",
+
+  "documents": "{{< a href="#documents" title="<document feature config>">}}",
+  "mediaLibrary": "{{< a href="#pusher" title="<pusher config>">}}",
+  "documentLists": "{{< a href="#document-lists" title="<document list feature config>">}}",
+
+  "projects": "{{< a href="#projects" title="<projects config>">}}",
+  "render_pipeline": "{{< a href="#render-pipeline" title="<render pipeline config>">}}",
+  "categories": "{{< a href="#categories" title="<categories config>">}}",
+
+  // Configure the elasticsearch behavior
+  "search": "{{< a href="#search" title="<search config>">}}",
+  "elasticIndex": "{{< a href="#custom-elasticsearch-index" title="<elasticIndex config>">}}",
+
+  // Interactions between server, editor and users
+  "pusher": "{{< a href="#pusher" title="<pusher config>">}}",
+  "pushNotifications": "{{< a href="#push-notifications" title="<push notification config>">}}",
+  "preview": "{{< a href="#custom-previews" title="<preview config>">}}",
+  "integrations": "{{< a href="#integrations" title="<integrations config>">}}",
+
+  // routing feature
+  "routing": "{{< a href="#routing" title="<routing config>">}}",
+  "kv": "{{< a href="#routing" title="<routing storage config>">}}",
+}
+```
+
 ## Services
 
 #### Server
