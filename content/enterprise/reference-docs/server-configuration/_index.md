@@ -544,6 +544,18 @@ elasticIndex: {
   // The indexes are created with the following pattern: `${indexNamePrefix}-${index.handle}-index`
   indexNamePrefix: 'your-company-local',
 
+  // The concurrency defines how many requests the livingdocs-server is doing
+  // in parallel on every single process.
+  concurrency: 5,
+
+  // The batchSize defines how many documents/entries should be
+  // aggregated into a single elasticsearch /_bulk request.
+  batchSize: 100,
+
+  // Define the maximum cpu threshold of the elasticsearch cluster
+  // that pauses the elasticsearch indexing once it's exceeded.
+  maxCpu: 80,
+
   // To support multi cluster indexing, you can declare multiple clusters.
   // By default we index into the cluster defined in `search.host` or `search.elasticsearchClient`.
   // Please consult {{< ref "./indexing/multi-cluster-indexing.md" >}} for more details.
@@ -565,6 +577,12 @@ elasticIndex: {
 
       // You can disable a specific index by setting that flag to false
       enabled: true,
+
+      // Overrides the elasticIndex.concurrency config for a specific index
+      concurrency: 5,
+
+      // Overrides the elasticIndex.batchSize config for a specific index
+      batchSize: 5,
 
       // Declare an alias, so we can reindex in the background and switch it once finished
       // By default the index handle is used as alias. Use `false` to disable the alias creation.
