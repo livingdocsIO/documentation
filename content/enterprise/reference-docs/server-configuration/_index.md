@@ -326,13 +326,12 @@ designLoader: {
 Configure the Livingdocs Design Server. When a design is uploaded the assets
 are moved to the [storage configured]({{< ref "/enterprise/reference-docs/server-configuration/storage" >}}) here.
 
-[config options]({{< ref "/enterprise/reference-docs/server-configuration/storage" >}}) for `storage`.
-
 ```js
 designs: {
   assets: {
     cache_expiration: 31536000,
     publicUrl: 'http://livingdocs-designs-dev.s3.amazonaws.com',
+    // {{< a ref="/enterprise/reference-docs/server-configuration/storage" title="Storage Configuration" >}}
     storage: {
       strategy: 's3',
       prefix: 'images/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
@@ -665,15 +664,14 @@ The Media Library impacts editor in four ways:
 - We now support the following configs: `mediaLibrary.images` `mediaLibrary.videos` `mediaLibrary.files` is now supported.
 _Before the release-2021-06 - those configs were stored on the top-level 'images', 'videos', 'files'_
 
-Below you see a full mediaLibrary config (with default values). Consult the [storage configuration]({{< ref "/enterprise/reference-docs/server-configuration/storage" >}}) to get more details about the configuration and other strategies than s3.
-
+Below you see a full mediaLibrary config (with default values).
 ```js
-// [storage configuration]({{< ref "/enterprise/reference-docs/server-configuration/storage" >}})
 mediaLibrary: {
   // define behavior for images in Livingdocs (upload, upload processing, storage)
   images: {
     processingStrategy: 'libvips' // 'libvips' (default), 'imagemagick'
     publicUrl: 'https://livingdocs-images-dev.s3.amazonaws.com', // base url of the storage
+    // {{< a ref="/enterprise/reference-docs/server-configuration/storage" title="Storage Configuration" >}}
     storage: {
       strategy: 's3',
       prefix: 'images/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
@@ -717,6 +715,7 @@ mediaLibrary: {
   videos: {
     // must be public accessible
     publicUrl: 'https://livingdocs-videos-development.s3.amazonaws.com',  // base url of the storage
+    // {{< a ref="/enterprise/reference-docs/server-configuration/storage" title="Storage Configuration" >}}
     storage: {
       strategy: 's3',
       prefix: 'videos/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
@@ -738,6 +737,7 @@ mediaLibrary: {
   // define behavior for files in Livingdocs (upload, storage)
   files: {
     publicUrl: 'https://livingdocs-files-dev.s3.amazonaws.com',  // base url of the storage
+    // {{< a ref="/enterprise/reference-docs/server-configuration/storage" title="Storage Configuration" >}}
     storage: {
       strategy: 's3',
       prefix: 'files/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
