@@ -8,11 +8,13 @@ menu: reference-docs
 
 ```js
 {
+  "logs": "{{< a href="#logging" title="<logging config>">}}",
   "server": "{{< a href="#server" title="<http server config>" >}}",
   "editor": "{{< a href="#editor" title="<editor config>">}}",
 
   "db": "{{< a href="#postgres-database" title="<postgres database config>">}}",
-  "logs": "{{< a href="#logging" title="<logging config>">}}",
+  "redis": "{{< a href="#redis-database" title="<redis database config>">}}",
+
   "auth": "{{< a href="#authentication" title="<authentication config>">}}",
   "emails": "{{< a href="#user-management-emails" title="<user management emails>">}}",
 
@@ -43,6 +45,25 @@ menu: reference-docs
 }
 ```
 
+
+## Logging
+
+[More info about logging]({{< ref "./logging.md" >}})
+
+```js
+logs: {
+  enabled: true,
+
+  // possible log levels: 'error', 'warn', 'info', 'debug', 'trace'
+  level: 'warn',
+
+  // use `true` for development to have a formatted output
+  pretty: false,
+
+  // enable request logs
+  logRequests: true
+}
+```
 ## Services
 
 #### Server
@@ -54,7 +75,6 @@ server: {
 }
 ```
 
-
 #### Editor
 
 
@@ -62,10 +82,9 @@ server: {
 editor: {
   // configure the Editor Host. This is used for password reset & login urls.
   public_host: 'http://localhost:9000',
-  auto_save_interval: 10 // This defines how often the editor auto saves in seconds
+  autoSaveInterval: 3 // This defines how often the editor auto saves in seconds
 }
 ```
-
 
 #### Postgres Database
 
@@ -100,36 +119,31 @@ Amazon, Google Cloud and other hosters also offer solutions for that.
 Self-hosted solutions could use [pgbouncer](https://www.pgbouncer.org/) or [odyssey](https://github.com/yandex/odyssey). We have some docker images for them in our docker registry.
 https://github.com/livingdocsIO/docker#livingdocsodyssey
 
-#### Pusher
+#### Redis Database
 
-Disabled by Default. Enable to show who is viewing a document in real time
-and allow for basic collaboration features in the editor.
-
-```js
-pusher: {
-  enabled: false,
-  app_id: '108378',
-  key: 'dda3c0ca58ed2f649ea8',
-  secret: '*****'
-}
-```
-
-#### Logging
-
-[More info about logging]({{< ref "./logging.md" >}})
+Livingdocs uses redis worker queue for imports and elasticsearch indexing.
+A functional setup is mandatory.
 
 ```js
-logs: {
-  enabled: true,
+redis: {
+  // All keys in redis will be prefixed by this value
+  // This can be used to prevent tests from interfering with regular usage
+  prefix: 'li:develop',
 
-  // possible log levels: 'error', 'warn', 'info', 'debug', 'trace'
-  level: 'warn',
+  // Configure a specific redis primary, defaults to 'localhost'
+  host: 'redis',
+  port: 6379,
 
-  // use `true` for development to have a formatted output
-  pretty: false,
+  // Or configure {{< a title="redis sentinel" href="https://redis.io/topics/sentinel" >}}
+  masterName: 'livingdocs-develop',
+  sentinels: [
+    {host: 'sentinel1', port: 6379},
+    {host: 'sentinel2', port: 6379}
+  ],
 
-  // enable request logs
-  logRequests: true
+  // Optional username and password
+  username: 'string',
+  password: 'string'
 }
 ```
 
@@ -597,6 +611,20 @@ elasticIndex: {
     }
   ]
 },
+```
+
+#### Pusher
+
+Disabled by Default. Enable to show who is viewing a document in real time
+and allow for basic collaboration features in the editor.
+
+```js
+pusher: {
+  enabled: false,
+  app_id: '108378',
+  key: 'dda3c0ca58ed2f649ea8',
+  secret: '*****'
+}
 ```
 
 #### Push Notifications
