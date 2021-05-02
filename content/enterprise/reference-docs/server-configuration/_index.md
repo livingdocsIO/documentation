@@ -18,11 +18,11 @@ menu: reference-docs
   "auth": "{{< a href="#authentication" title="<authentication config>">}}",
   "emails": "{{< a href="#user-management-emails" title="<user management emails>">}}",
 
-  "designLoader": "{{< a href="#design-loader" title="<designLoader config>">}}",
+  "designLoader": "{{< a href="#design-loader" title="<design loader config>">}}",
   "designs": "{{< a href="#designs" title="<designs config>">}}",
 
   "documents": "{{< a href="#documents" title="<document feature config>">}}",
-  "mediaLibrary": "{{< a href="#pusher" title="<pusher config>">}}",
+  "mediaLibrary": "{{< a href="#media-library-dam" title="<media library config>">}}",
   "documentLists": "{{< a href="#document-lists" title="<document list feature config>">}}",
 
   "projects": "{{< a href="#projects" title="<projects config>">}}",
