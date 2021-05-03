@@ -4,7 +4,7 @@
   {{ partial "sidebar.html" . }}
   <main class="page__content">
     <article class="article">
-      {{ partial "edit-page.html" . }}
+      {{ if (ne (.Param "renderEditButton") false) }}{{ partial "edit-page.html" . }}{{ end }}
 
       <h1 class="article__title">{{ .Title }}</h1>
 
@@ -13,11 +13,7 @@
       {{ partial "navigation.html" . }}
     </article>
 
-    {{ if not .Sections }}
-    <div class="right-toc">
-      {{ .TableOfContents }}
-    </div>
-    {{ end }}
+    {{ if (ne (.Param "renderTOC") false) }}<div class="right-toc">{{ .TableOfContents }}</div>{{ end }}
   </main>
 
 </div>

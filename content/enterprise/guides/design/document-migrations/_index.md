@@ -1,7 +1,7 @@
 ---
 title: Livingdocs Data Migrations
 tags: [guides, design, maintenance]
-renderTOC: false
+renderSummaries: false
 menus:
   guides:
     parent: Design

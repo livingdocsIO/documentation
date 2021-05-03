@@ -2,6 +2,7 @@
 title: Livingdocs Enterprise Documentation
 description: Technical documentation for the Enterprise Edition.
 renderEditButton: false
+renderSummaries: false
 renderTOC: false
 outputs: [html, rss, SearchIndex]
 ---
