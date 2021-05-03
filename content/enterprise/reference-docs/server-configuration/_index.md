@@ -806,6 +806,15 @@ mediaLibrary: {
 }
 ```
 
+##### Filename Strategy
+
+When uploading an asset into the media library, we choose one strategy to define the filename/path. See the pattern below:
+- pattern: `<mediaLibrary.images.storage.prefix>/YYYY/MM/DD/uuid.file-extension`
+- example: `/images/2021/05/04/7f6352fb-8bff-4560-98e6-304a0d0885b9.jpeg`
+
+Even when the storage (e.g. Amazon S3) is public, the name of the path is difficult to guess.
+
+
 ##### Alternative Image Proxy Configuration (mediaLibrary.images.proxy)
 
 Alternatively you can forward image upload to another service.
