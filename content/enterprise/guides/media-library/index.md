@@ -24,7 +24,7 @@ The [Main Navigation]({{< ref "/enterprise/reference-docs/project-config/editor-
 ## Images
 
 ### Server Config
-First, you need to make sure your server is [configured to store images]({{< ref "/enterprise/reference-docs/server-configuration#images" >}}).
+First, you need to make sure your Media Library can [store images]({{< ref "/enterprise/reference-docs/server-configuration#media-library-dam" >}}).
 
 ### Image Services
 To render images in documents, Livingdocs uses so called [Image Services]({{< ref "/enterprise/guides/image-services.md" >}}). You need to [configure one in your project]({{< ref "/enterprise/guides/image-services.md#configuring-an-image-service" >}}) to make use of images in documents.
@@ -336,7 +336,8 @@ Since `release-2021-03` you can manage your Videos with the Livingdocs Media Lib
 Nevertheless if you find solutions to these problems outside of Livingdocs, you can very well make use of the Video Management System already.
 
 ### Server Config
-You need to make sure your server is [configured to store videos]({{< ref "/enterprise/reference-docs/server-configuration#videos" >}}).
+
+You need to make sure your Media Library can [store videos]({{< ref "/enterprise/reference-docs/server-configuration#media-library-dam" >}}).
 
 ### Basic Media Type
 Let's setup a `mediaType` for the videos. You add it to your [project config]({{< ref "/enterprise/reference-docs/project-config/project-config" >}}) in an array at the top-level property `mediaTypes`.
@@ -460,5 +461,79 @@ module.exports = {
     }
   ],
   // ...
+}
+```
+
+
+## Files
+Since `release-2021-06` you can manage your Files with the Livingdocs Media Library as well. It works pretty similar to the images. The solution still has some shortcomings you need to be aware of:
+
+- No render strategies or file services like you know them from images are available yet. That means the system works well if you render from the JSON in the delivery, but not so well if you let Livingdocs do the rendering to HTML.
+
+### Server Config
+
+You need to make sure your Media Library can [store files]({{< ref "/enterprise/reference-docs/server-configuration#media-library-dam" >}}).
+
+### Basic Media Type
+Let's setup a `mediaType` for the files. You add it to your [project config]({{< ref "/enterprise/reference-docs/project-config/project-config" >}}) in an array at the top-level property `mediaTypes`.
+
+```js
+//media-types/file.js
+module.exports = {
+  type: 'mediaFile', // the type is either 'mediaImage' or 'mediaVideo' or 'mediaFile'
+  handle: 'file', // you can name this as you like
+  info: {
+    label: 'Files', // used in dashboards generated for this mediaType
+    description: ''
+  },
+  metadata: [ // any metadata configuration as you know it from contentTypes already
+    {
+      handle: 'title',
+      type: 'li-text',
+      config: {
+        required: true, // if a metadata property is required, the user will see a form to enter the metadata during upload
+        requiredErrorMessage: 'Please provide a title',
+        maxLength: 200,
+        index: true
+      },
+      ui: {component: 'liMetaTextForm'}
+    },
+    {
+      handle: 'description',
+      type: 'li-text',
+      config: {
+        index: true
+      },
+      ui: {component: 'liMetaTextForm'}
+    },
+    {
+      handle: 'credit',
+      type: 'li-text',
+      config: {
+        required: true,
+        requiredErrorMessage: 'Please provide a source',
+        index: true
+      },
+      ui: {component: 'liMetaTextForm'}
+    }
+  ],
+  editor: {
+    // the dashboard seen by users when opening from the document editor
+    dashboard: {
+      displayFilters: [
+        {
+          filterName: 'liDateTimeRange'
+        }
+      ]
+    },
+    // the dashboard opened through the main navigation
+    managementDashboard: {
+      displayFilters: [
+        {
+          filterName: 'liDateTimeRange'
+        }
+      ]
+    }
+  }
 }
 ```
