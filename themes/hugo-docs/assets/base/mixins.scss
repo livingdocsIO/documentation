@@ -52,3 +52,9 @@
     border-bottom-color: $color-blue-1;
   }
 }
+
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

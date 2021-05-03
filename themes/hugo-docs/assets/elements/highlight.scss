@@ -31,12 +31,14 @@ code {
     padding: 0;
 
     // Support links in string types in js code blocks
-    .s2 a {
-      color: adjust-hue($color-orange-1, -10%);
-      border-bottom: 1px solid rgba(adjust-hue($color-orange-1, -10%), .5);
+    .s2 {
+      a {
+        color: adjust-hue($color-orange-1, -10%);
+        border-bottom-color: rgba(adjust-hue($color-orange-1, -10%), .5);
 
-      &:hover {
-        border-bottom-color: adjust-hue($color-orange-1, -10%);
+        &:hover {
+          border-bottom-color: adjust-hue($color-orange-1, -10%);
+        }
       }
     }
   }
