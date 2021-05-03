@@ -62,6 +62,9 @@ document.addEventListener('click', function (e){
   e.target.target = '_blank'
 },true)
 
+/**
+ * Search Support
+ */
 const search = document.querySelector('.menu-search')
 const cancelButton = search.querySelector('.cancel')
 const searchInput = search.querySelector('input')
@@ -173,7 +176,9 @@ function createSearchWorker () {
   }
 }
 
-// Mobile burger navigation
+/**
+ * Mobile burger navigation
+ */
 const burger = document.querySelector('.header__burger')
 const page = document.querySelector('.page')
 const conent = document.querySelector('.page__content')
@@ -185,3 +190,29 @@ burger.addEventListener('click', (evt) => {
 conent.addEventListener('click', (evt) => {
   page.classList.remove('show-sidebar')
 })
+
+/**
+ * Fix back buttons for anchors
+ */
+const menuHeight = 65
+window.addEventListener('hashchange', function (evt) {
+  const div = document.querySelector('.page__content')
+  if (!div) return
+
+  let elem = document.getElementById(window.location.hash.replace('#', ''))
+  if (!elem) {
+    div.scrollTop = 0
+  } else {
+    div.scrollTop = offsetTopToParent(div, elem) - menuHeight
+  }
+}, true)
+
+function offsetTopToParent (parent, elem) {
+  let y = 0
+  while (elem) {
+    if (elem === parent) break
+    y += elem.offsetTop
+    elem = elem.offsetParent
+  }
+  return y
+}

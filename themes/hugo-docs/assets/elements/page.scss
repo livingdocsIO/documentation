@@ -68,6 +68,7 @@
     transition: left $transition-time ease;
     background-color: $color-white;
     overflow-y: auto;
+    scroll-behavior: smooth;
 
     @include media-query(desktop) {
       position: static;
