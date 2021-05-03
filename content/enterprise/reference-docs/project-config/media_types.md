@@ -5,19 +5,31 @@ menus:
     parent: Project Config
 ---
 
+## Changelog
+
+In the last few months we have substantially extended the media library. To show you what changed in what release, we provide you a changelog.
+
+#### Add Image Support
 {{< added-in release-2020-07 >}}
 
 `Media Types` describe the content you can manage in the Media Library. You can configure the metadata you want to manage per `Media Type` by using the same metadata schema as on Content-Types. The Media Library will provide forms to edit this data.
 If no `Media Type` config is provided it falls back to a default config where `title`, `caption`, `source` and `description` will be taken as metadata.
 
-[`release-2020-07`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-07.md) includes the first version of this feature. It has these limitations:
+- Add image support with the new type `mediaImage`.
 - You can only configure 1 mediaType and it has to have the handle `image`.
 - Only one `type` is supported: `mediaImage`
 
-[`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md) includes the type `mediaVideo`
-- You can only configure 1 mediaType for the type `mediaVideo` and it has to have the handle `video`.
+#### Add Video Support
+{{< added-in release-2020-12 >}}
 
-[`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-03.md) includes `index` on config
+- Add video support with the new type `mediaVideo`.
+- You can only configure 1 mediaType for the type `mediaVideo` and it has to have the handle `video`.
+- Multiple Media Types of type `mediaImage` are supported, but at least one Media Type must have the handle `image`
+
+#### Add Configurability of Media Library Index / Multiple Videos
+{{< added-in release-2021-03 >}}
+
+- Includes `index` on config
 - You can configure which metadata should be indexed on the media index. The metadata plugin must support the media index. Set in `config` property `index:true`
 - upstream plugins which support media index
    - li-text
@@ -27,6 +39,12 @@ If no `Media Type` config is provided it falls back to a default config where `t
    - li-numeric-list
    - li-string-list
    - li-google-vision
+- Multiple Media Types of type `mediaVideo` are supported, but at least one Media Type must have the handle `video`
+
+#### Add File Support
+{{< added-in release-2021-06 >}}
+
+- Add file support with the new type `mediaFile`
 
 
 ## Example
@@ -133,6 +151,21 @@ If no `Media Type` config is provided it falls back to a default config where `t
 }, {
   type: 'mediaVideo',
   handle: 'video',
+  metadata: [
+    {
+      handle: 'title',
+      type: 'li-text',
+      config: {
+        required: true,
+        requiredErrorMessage: 'Please provide a title',
+        maxLength: 200
+      },
+      ui: {component: 'liMetaTextForm'}
+    }
+  ]
+}, {
+  type: 'mediaFile',
+  handle: 'file',
   metadata: [
     {
       handle: 'title',
