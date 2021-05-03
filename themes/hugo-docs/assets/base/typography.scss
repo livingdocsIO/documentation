@@ -27,7 +27,9 @@ h4 {
 
 h5 {
   @extend %font-s;
-  font-weight: 500;
+  html & { // only used for overriding extended value
+    font-weight: 500;
+  }
 }
 
 p {
