@@ -6,23 +6,35 @@ $list-number-gap: 1.5 * $space-s;
   &__content {
     ul {
       padding-left: 2 * $space-s;
-      margin-top: $space-s;  
+      margin-top: $space-m;
+      margin-bottom: $space-m; 
 
       li {
-        margin-bottom: $space-s;
+        margin-bottom: $space-m;
       }
+    }
+
+    & > ul {
+      margin-top: $space-l;
+      margin-bottom: $space-l; 
     }
 
     ol {
       padding-left: calc(#{$list-number-circle-size} + #{$list-number-font-factor} * #{$list-number-gap});
-      margin-top: $space-s;
+      margin-top: $space-m;
+      margin-bottom: $space-m; 
       list-style: none;
-      counter-reset: listCounter;
+
+      @for $i from 1 through 100 {
+        &[start='#{$i}'] {
+          counter-reset: listCounter $i - 1;
+        }
+      }
 
       li {
         counter-increment: listCounter;
         position: relative;
-        margin-bottom: $space-s;
+        margin-bottom: $space-m;
 
         &:before {
           content: counter(listCounter);
@@ -42,6 +54,11 @@ $list-number-gap: 1.5 * $space-s;
           font-size: $list-number-font-factor * 1em;
         }
       }
+    }
+
+    & > ol {
+      margin-top: $space-l;
+      margin-bottom: $space-l; 
     }
   }
 }
