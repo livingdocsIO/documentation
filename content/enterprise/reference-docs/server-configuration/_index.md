@@ -89,8 +89,6 @@ editor: {
 #### Postgres Database
 
 ```js
-db: 'postgres://postgres:password@localhost:5432'
-// or
 db: {
   connectionString: 'postgres://postgres:password@localhost:5432?max=20',
   ssl: {
