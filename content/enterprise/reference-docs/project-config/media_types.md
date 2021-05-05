@@ -163,7 +163,7 @@ If no `Media Type` config is provided it falls back to a default config where `t
     }
   ]
 }, {
-  handle: 'file', // the handle is free, but one mediaFile must have the handle 'file'
+  handle: 'file', // one mediaFile must have the handle 'file', additional ones can be named as you like
   type: 'mediaFile',
   metadata: [
     {
