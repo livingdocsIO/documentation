@@ -479,7 +479,7 @@ Let's setup a `mediaType` for the files. You add it to your [project config]({{<
 ```js
 //media-types/file.js
 module.exports = {
-  handle: 'file', // the handle is free, but one mediaFile must have the handle 'file'
+  handle: 'file', // one mediaFile must have the handle 'file', additional ones can be named as you like
   type: 'mediaFile',
   info: {
     label: 'Files', // used in dashboards generated for this mediaType
