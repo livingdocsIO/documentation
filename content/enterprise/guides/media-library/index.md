@@ -35,8 +35,8 @@ Let's setup a `mediaType` for the images first. You add it to your [project conf
 ```js
 //media-types/image.js
 module.exports = {
-  type: 'mediaImage', // the type is either 'mediaImage' or 'mediaVideo'
-  handle: 'image', // You should name the primary image mediaType `image`
+  handle: 'image', // the handle is free, but one mediaImage must have the handle 'image'
+  type: 'mediaImage',
   info: {
     label: 'Images', // used in dashboards generated for this mediaType
     description: ''
@@ -123,8 +123,8 @@ The user has the chance to manually change the extracted Metadata before the ima
 ```js
 // media-types/image.js
 module.exports = {
-  type: 'mediaImage',
   handle: 'image',
+  type: 'mediaImage',
   // ...
   exifExtraction: {
     mappings: [
@@ -208,8 +208,8 @@ To define which default crops to store in the Media Library, we configure a meta
 ```js
 // media-types/image.js
 module.exports = {
-  type: 'mediaImage',
   handle: 'image',
+  type: 'mediaImage',
   // ...
   metadata: [
     // ...
@@ -345,8 +345,8 @@ Let's setup a `mediaType` for the videos. You add it to your [project config]({{
 ```js
 //media-types/video.js
 module.exports = {
-  type: 'mediaVideo', // the type is either 'mediaImage' or 'mediaVideo'
-  handle: 'video', // you can name this as you like
+  handle: 'video', // the handle is free, but one mediaVideo must have the handle 'video'
+  type: 'mediaVideo',
   info: {
     label: 'Videos', // used in dashboards generated for this mediaType
     description: ''
@@ -422,8 +422,8 @@ Don't forget to add this the the `mediaTypes` in your [project config]({{< ref "
 ```js
 // /media-types/poster-image.js
 module.exports = {
-  type: 'mediaImage',
   handle: 'posterImage',
+  type: 'mediaImage',
   info: {
     label: 'Poster Images'
   },
@@ -444,8 +444,8 @@ Now you can add the `li-poster-image` metadata plugin to your video `mediaType`:
 ```js
 //media-types/video.js
 module.exports = {
-  type: 'mediaVideo',
   handle: 'video',
+  type: 'mediaVideo',
   // ...
   metadata: [
     // ...
@@ -466,9 +466,8 @@ module.exports = {
 
 
 ## Files
-Since `release-2021-06` you can manage your Files with the Livingdocs Media Library as well. It works pretty similar to the images. The solution still has some shortcomings you need to be aware of:
 
-- No render strategies or file services like you know them from images are available yet. That means the system works well if you render from the JSON in the delivery, but not so well if you let Livingdocs do the rendering to HTML.
+Since `release-2021-06` you can manage other files than videos and images with the Livingdocs Media Library as well.
 
 ### Server Config
 
@@ -480,8 +479,8 @@ Let's setup a `mediaType` for the files. You add it to your [project config]({{<
 ```js
 //media-types/file.js
 module.exports = {
-  type: 'mediaFile', // the type is either 'mediaImage' or 'mediaVideo' or 'mediaFile'
-  handle: 'file', // you can name this as you like
+  handle: 'file', // the handle is free, but one mediaFile must have the handle 'file'
+  type: 'mediaFile',
   info: {
     label: 'Files', // used in dashboards generated for this mediaType
     description: ''
