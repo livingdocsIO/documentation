@@ -148,7 +148,7 @@ If no `Media Type` config is provided it falls back to a default config where `t
     }
   }
 }, {
-  handle: 'video', // the handle is free, but one mediaVideo must have the handle 'video'
+  handle: 'video', // one mediaVideo must have the handle 'video', additional ones can be named as you like
   type: 'mediaVideo',
   metadata: [
     {
