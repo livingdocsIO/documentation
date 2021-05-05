@@ -345,7 +345,7 @@ Let's setup a `mediaType` for the videos. You add it to your [project config]({{
 ```js
 //media-types/video.js
 module.exports = {
-  handle: 'video', // the handle is free, but one mediaVideo must have the handle 'video'
+  handle: 'video', // one mediaVideo must have the handle 'video', additional ones can be named as you like
   type: 'mediaVideo',
   info: {
     label: 'Videos', // used in dashboards generated for this mediaType
