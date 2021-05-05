@@ -740,7 +740,7 @@ mediaLibrary: {
         // max pixel width or height
         maxDimension: 6000, // default 6000
         // compression
-        quality: 100 // default 100 (no compression)
+        quality: 80 // default 80
       }
       lossless: {
         // max pixel width or height
