@@ -23,7 +23,6 @@ If no `Media Type` config is provided it falls back to a default config where `t
 {{< added-in release-2020-12 >}}
 
 - Add video support with the new type `mediaVideo`.
-- You can only configure 1 mediaType for the type `mediaVideo` and it has to have the handle `video`.
 - Multiple Media Types of type `mediaImage` are supported, but at least one Media Type must have the handle `image`
 
 #### Add Configurability of Media Library Index / Multiple Videos
@@ -52,7 +51,7 @@ If no `Media Type` config is provided it falls back to a default config where `t
 ```js
 // projectConfig.mediaTypes: [{...}]
 [{
-  handle: 'image',
+  handle: 'image', // the handle is free, but one mediaImage must have the handle 'image'
   type: 'mediaImage',
   info: {
     label: 'Image',
@@ -149,8 +148,8 @@ If no `Media Type` config is provided it falls back to a default config where `t
     }
   }
 }, {
+  handle: 'video', // the handle is free, but one mediaVideo must have the handle 'video'
   type: 'mediaVideo',
-  handle: 'video',
   metadata: [
     {
       handle: 'title',
@@ -164,8 +163,8 @@ If no `Media Type` config is provided it falls back to a default config where `t
     }
   ]
 }, {
+  handle: 'file', // the handle is free, but one mediaFile must have the handle 'file'
   type: 'mediaFile',
-  handle: 'file',
   metadata: [
     {
       handle: 'title',
