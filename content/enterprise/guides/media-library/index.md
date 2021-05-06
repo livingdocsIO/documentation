@@ -465,6 +465,99 @@ module.exports = {
 ```
 
 
+### External Transcoding Service
+
+A Transcoding Service can be used to convert a Video into different formats and resolutions.
+Livingdocs lets you connect to an external Transcoding Service using a metadata plugin that
+manages the transcoding state.
+
+When configured, the transcoding state of a Video is shown in the UI.
+
+Initial state:
+![Initial transcoding state](transcoding-state-zero.png)
+
+After transcoding:
+![Final transcoding state](transcoding-state-done.png)
+
+#### li-transcoding-state metadata plugin
+Add the `li-transcoding-state` metadata plugin to your video `mediaType`:
+
+```js
+//media-types/video.js
+module.exports = {
+  handle: 'video',
+  type: 'mediaVideo',
+  // ...
+  metadata: [
+    // ...
+    {
+      handle: 'transcoding',
+      type: 'li-transcoding-state',
+      ui: {
+        component: 'liMetaTranscodingStateForm'
+      }
+    }
+  ],
+  // ...
+}
+```
+
+#### Transcoding Service implementation
+An external transcoding service can be connected to Livingdocs as follows:
+- Use [webhooks]({{< ref "/enterprise/reference-docs/server-configuration/webhooks" >}}) to get notified about transcoding requests.
+- Use the public API (mediaLibrary GET) to fetch information about a transcoding request.
+- Use the public API (mediaLibrary PATCH) to update the transcoding state.
+
+This data structure is used to track transcoding state:
+```js
+{
+  "metadata": {
+    "transcoding": {
+      "commands": [{
+        "assetKey": "de2bc74bea-3",
+        "commandId": "1980b544cfc2",
+        "createdAt": "2021-03-01T12:34:56Z",
+
+        // One of ["requested", "acknowledged", "inProgress",
+        //         "done", "error"]
+        "state": "inProgress",
+
+        // optional, 0 - 100
+        "progress": 42,
+
+        // optional
+        "errorMessage": "Error: Unsupported video resolution."
+      }],
+      "transcodings": [
+        { 
+          "assetKey": "de2bc74bea-3",
+
+          // Just an example; defined by external system
+          "versions": [
+            {
+              "format": "video/mp4",
+              "url": "https://example.com/example-w500.mp4",
+              "size": "mobile"
+            },
+            {
+              "format": "video/webm",
+              "url": "https://example.com/example-w500.webm",
+              "size": "mobile"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+Transcoding happens in the following sequence:
+- When a user clicks "Start processing", a new `command` with `state: "requested"` is created.
+- The transcoding service gets notified via webhook and can report transcoding progress by setting `state` and `progress` / `errorMessage`.
+- When transcoding is done, the transcoding service is expected to set `state` to `done` and add an entry to the `transcodings` array.
+
+
 ## Files
 
 Since `release-2021-06` you can manage other files than videos and images with the Livingdocs Media Library as well.
