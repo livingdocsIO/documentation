@@ -28,15 +28,40 @@ In the following example we set three different providers: Github, Google and Fa
         config: {
           clientId: '',
           clientSecret: '',
+          // jwtContentFromSSOProvider is a openid-connect standard claim, for available properties see:
+          // https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims
           extractGroupNames: async (jwtContentFromSSOProvider, groupsOfProject) => {
             return ['owners']
           },
-          // defaultProjectId: 1,
-          defaultProjectHandle: 'enterprise-web-print'
+          // User will be created and logged into this project (enterprise use-case)
+          defaultProjectHandle: 'enterprise-web-print' // alternative 'defaultProjectId: 1'
         },
         ui: {
           label: 'AD',
           icon: 'azure'
+        }
+      },
+      google: {
+        strategy: 'li-authentication-openid-connect',
+        enabled: false,
+        loginEnabled: true,
+        registrationEnabled: false,
+        connectionId: 'google',
+        issuer: 'https://accounts.google.com/.well-known/openid-configuration',
+        config: {
+          clientId: '',
+          clientSecret: '',
+          // jwtContentFromSSOProvider is a openid-connect standard claim, for available properties see:
+          // https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims
+          extractGroupNames: async (jwtContentFromSSOProvider, groupsOfProject) => {
+            return ['owners']
+          },
+          // User will be created and logged into this project (enterprise use-case)
+          defaultProjectHandle: 'enterprise-web-print' // alternative 'defaultProjectId: 1'
+        },
+        ui: {
+          label: 'Google',
+          icon: 'google'
         }
       },
       github: {
