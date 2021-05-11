@@ -221,14 +221,12 @@ metadata: [
   {
     identifier: 'title',
     type: 'text',
-    matches: ['hero.title', 'head.title', 'title.title'],
-    isEditable: true
+    matches: ['hero.title', 'head.title', 'title.title']
   }, {
     identifier: 'teaserImage',
     type: 'image',
     matches: ['hero.image', 'image.image'],
-    imageRatios: ['16:9'],
-    isEditable: true
+    imageRatios: ['16:9']
   }
 ]
 ```
