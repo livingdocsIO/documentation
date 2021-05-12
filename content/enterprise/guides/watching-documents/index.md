@@ -133,3 +133,17 @@ Possible action to register on at the moment:
     // assign to task proofreading on statusChanges 'requested', 'accepted', 'completed'
    {type: 'task.change', taskName: 'proofreading', statusChange: ['requested', 'accepted', 'completed']}
    ```
+
+### Setup Slack
+1. Go to https://api.slack.com/apps/
+2. “Create new app” 
+3. select from scratch
+4. Add it to your workspace
+5. Go to the app & go to ‘oauth and permissions’
+6. use the Bot User OAuth Access Token and add the following scopes:
+   - chat:write
+   - chat:write.customize
+   - users:read
+   - users:read.mail
+7. install the app on the workspace
+8. Add `Bot User OAuth Token` to the livingdocs `notifications.channels.slack.botUserToken` config
