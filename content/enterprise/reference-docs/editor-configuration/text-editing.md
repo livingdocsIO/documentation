@@ -19,40 +19,48 @@ When you select some text in the editor you get a popover with some options on h
 app: {
   editable: {
     'default': {
-      'bold': true,
-      'italic': true,
-      'superscript': false,
-      'subscript': false,
-      'quotes': ['«', '»'],
-      'singleQuotes': ['‹', '›'],
-      'link': true,
-      'specialChars': true
-    },
-    'print': {}
+      bold: true,
+      italic: true,
+      superscript: false,
+      subscript: false,
+      link: true,
+      specialChars: true,
+      quotes: ['„', '“'],
+      singleQuotes: ['‚', '‘'],
+      apostrophe: '’',
+      locales: {
+        de: {
+          quotes: ['„', '“'],
+          singleQuotes: ['‚', '‘']
+        },
+        'de-CH': {
+          quotes: ['«', '»'],
+          singleQuotes: ['‹', '›']
+        },
+        en: {
+          quotes: ['“', '”'],
+          singleQuotes: ['‘', '’']
+        }
+      }
+    }
   }
 }
 ```
-The example would result in a toolbar with a button for toggling text `bold`, `italic`, make it a `link` and adding `specialChars`.
+The example would result in a toolbar with a buttons for
+`bold`, `italic`, `double quotes`, `single quotes`, `link`,
+`superscript`, `subscript` and adding `specialChars`
+(The  apostrophe is currently only used for the pasting logic).
+
+The `locales` config is only active if you have translations enabled.
+With translations enabled when you create or open a document which has
+a language assigned the `quotes`, `singleQuotes` and `apostrophe` configs
+for the current language will be used if set (Note that the locale value in the documents metadata must match the propertyName in `locales` for this to work).
 
 
-Some example quotes configs:
-```js
-// swiss
-quotes: ['«', '»']
-singleQuotes: ['‹', '›']
+**Behavior when pasting text:**
+If `quotes`, `singleQuotes` or `apostrophe` are configured then
+incorrect quotes and apostrophe will be replaced with the configured ones.
 
-// german
-quotes:  ['„', '“']
-singleQuotes: ['‚', '‘']
-
-// german with guillemets
-quotes: ['»', '«']
-singleQuotes: ['›', '‹']
-
-// english
-quotes: ['“', '”']
-singleQuotes: ['‘', '’']
-```
 
 The text formatting toolbar can also be extended with custom configured elements. The elements will be shown after the default elements. Add this configuration to the default configuration above.
 
@@ -69,7 +77,6 @@ Example:
       attributes: [{name: 'class', value: 'blue'}]
     }]
 ```
-
 
 
 #### Special Characters

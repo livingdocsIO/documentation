@@ -113,15 +113,28 @@ An example:
       displayFilters: ['timeRange']
     },
   },
+
+  // Note: the textFormatting config can be overwritten in a `contentType`
   textFormatting: {
-    bold: {enabled: true},
-    italic: {enabled: true},
-    superscript: {enabled: false},
-    subscript: {enabled: false},
-    quotes: {enabled: true, open: '„', close: '“'},
-    singleQuotes: {enabled: true, open: '‚', close: '‘'},
-    link: {enabled: true},
-    specialChars: {enabled: true}
+    bold: true,
+    italic: true,
+    superscript: false,
+    subscript: false,
+    link: true,
+    specialChars: true,
+    quotes: ['„', '“']
+    singleQuotes: ['‚', '‘']
+    apostrophe: '’',
+    locales: {
+      de: {
+        quotes: ['„', '“'],
+        singleQuotes: ['‚', '‘']
+      },
+      en: {
+        quotes: ['“', '”'],
+        singleQuotes: ['‘', '’']
+      }
+    }
   }
 }
 ```
@@ -302,18 +315,21 @@ Then there are 2 configs to define the behavior when Images are inserted into a 
 
 ## Text Formatting
 
-The text formatting toolbar can be customized globally here. You can also overwrite this settings for each [content type]({{< ref "content-types#text-formatting" >}}).
+The text formatting toolbar can be customized globally here. You can also overwrite this config for each [content type]({{< ref "content-types#text-formatting" >}}).
+
 Enable or disable the existing elements for text formatting:
 ```js
 textFormatting: {
-  bold: {enabled: true},
-  italic: {enabled: true},
-  superscript: {enabled: false},
-  subscript: {enabled: false},
-  singleQuotes: ['`', '`'],
-  quotes: ['"', '"'],
-  link: {enabled: true},
-  specialChars: {enabled: false}
+  bold: true,
+  italic: true,
+  superscript: false,
+  subscript: false,
+  link: true,
+  specialChars: false,
+  quotes: ['„', '“'],
+  singleQuotes: ['‚', '‘'],
+  apostrophe: '’',
+  locales: {...}
 }
 ```
 
