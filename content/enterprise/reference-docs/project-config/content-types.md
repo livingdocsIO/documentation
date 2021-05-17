@@ -361,14 +361,25 @@ Enable or disable the existing elements for text formatting.
 Example:
 ```js
 textFormatting: {
-  bold: {enabled: true},
-  italic: {enabled: true},
-  superscript: {enabled: false},
-  subscript: {enabled: false},
-  singleQuotes: ['`', '`'],
-  quotes: ['"', '"'],
-  link: {enabled: true},
-  specialChars: {enabled: false}
+  bold: true,
+  italic: true,
+  superscript: false,
+  subscript: false,
+  link: true,
+  specialChars: false,
+  quotes: ['„', '“'],
+  singleQuotes: ['‚', '‘']
+  apostrophe: '’',
+  locales: {
+    de: {
+      quotes: ['„', '“'],
+      singleQuotes: ['‚', '‘']
+    },
+    en: {
+      quotes: ['“', '”'],
+      singleQuotes: ['‘', '’']
+    }
+  }
 }
 ```
 
