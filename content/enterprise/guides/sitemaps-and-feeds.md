@@ -48,7 +48,7 @@ API-Scope: Public API token with `read-scope`
 
 **HTTP-API (GET)**
 
-`${serverUrl}/sitemaps/index?contentTypes=articles&baseUrl=https://livingdocs.io/entriesPerPage=20000&access_token=publicApiToken`
+`${serverUrl}/sitemaps/index?contentTypes=articles&baseUrl=https://livingdocs.io/entriesPerPage=20000`
 
 **Parameters**
 - **contentTypes** - comma separated list of content types you want to include in the Sitemap. Defaults to all content types if none are passed explicity
@@ -60,18 +60,26 @@ API-Scope: Public API token with `read-scope`
 - **entriesPerPage** - Customize how many Sitemap entries there will be per page. We recommend to not set anything and our default of 20000 entries will be applied.
   - `?entriesPerPage=20000` 
 
-**Return value**
+**Minimal delivery setup example**
 
-Returns an encoded XML string, use `decodeURIComponent()` to get a response equal to this example:
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap>
-    <loc>https://livingdocs.io/sitemap.2021-05.xml</loc>
-    <lastmod>2021-05-18T16:56:31.633Z</lastmod>
-  </sitemap>
-</sitemapindex>
+A minimal example that's implemented in a delivery could look like this:
+```js
+const fastify = require('fastify')({ logger: true })
+const livingdocsAccessToken = process.env.ACCESS_TOKEN
+const serverUrl = 'https://edit.livingdocs.io/proxy/api'
+
+fastify.get('/sitemap.xml', async (req, rep) => {
+  const res = await axios({
+    method: 'get',
+    headers: {Authorization: `Bearer ${livingdocsAccessToken}`},
+    url: `${serverUrl}/sitemaps/index?baseUrl=https://livingdocs.io/`,
+    responseType: 'stream'
+  })
+
+  return res.data
+})
 ```
+
 
 **Note**
 
@@ -101,7 +109,7 @@ API-Scope: Public API token with `read-scope`
 
 **HTTP-API (GET)**
 
-`${serverUrl}/sitemaps/entries?date=2021-05&contentTypes=articles&baseUrl=https://livingdocs.io/&entriesPerPage=20000&access_token=publicApiToken`
+`${serverUrl}/sitemaps/entries?date=2021-05&contentTypes=articles&baseUrl=https://livingdocs.io/&entriesPerPage=20000`
 
 **Parameters**
 - **date** - for the specific month matching the schema from the sitemap index file
@@ -116,14 +124,22 @@ API-Scope: Public API token with `read-scope`
 - **entriesPerPage** - Customize how many Sitemap entries there will be per page. We recommend to not set anything and our default of 20000 entries will be applied.
   - `?entriesPerPage=20000` 
 
-**Return value**
+**Minimal delivery setup example**
 
-Returns an encoded XML string, use `decodeURIComponent()` to get a response equal to this example:
-```xml
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.livingdocs.io/category/title-li.1</loc>
-    <lastmod>2021-05-01T04:56:50.276Z</lastmod>
-  </url>
-</urlset>
+A minimal example that's implemented in a delivery could look like this:
+```js
+const fastify = require('fastify')({ logger: true })
+const livingdocsAccessToken = process.env.ACCESS_TOKEN
+const serverUrl = 'https://edit.livingdocs.io/proxy/api'
+
+fastify.get('/sitemap.:date(*)', async (req, rep) => {
+  const res = await axios({
+    method: 'get',
+    headers: {Authorization: `Bearer ${livingdocsAccessToken}`},
+    url: `${serverUrl}/sitemaps/entries?date=${req.params.date}&baseUrl=https://livingdocs.io/`,
+    responseType: 'stream'
+  })
+
+  return res.data
+})
 ```
