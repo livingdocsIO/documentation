@@ -34,7 +34,7 @@ fastify.get('/sitemap.xml', async (req, rep) => {
   const res = await axios({
     method: 'get',
     headers: {Authorization: `Bearer ${livingdocsAccessToken}`},
-    url: `${serverUrl}/sitemaps/index?baseUrl=https://livingdocs.io/`,
+    url: `${serverUrl}/api/v1/sitemaps/index?baseUrl=https://livingdocs.io/`,
     responseType: 'stream'
   })
 
@@ -57,7 +57,7 @@ fastify.get('/sitemap.:date(*)', async (req, rep) => {
   const res = await axios({
     method: 'get',
     headers: {Authorization: `Bearer ${livingdocsAccessToken}`},
-    url: `${serverUrl}/sitemaps/entries?date=${req.params.date}&baseUrl=https://livingdocs.io/`,
+    url: `${serverUrl}/api/v1/sitemaps/entries?date=${req.params.date}&baseUrl=https://livingdocs.io/`,
     responseType: 'stream'
   })
 
