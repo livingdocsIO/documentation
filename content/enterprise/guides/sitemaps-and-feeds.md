@@ -88,7 +88,7 @@ module.exports = function (feature, server) {
     searchManager,
     sitemapsApi
   })
-  
+
   const controller = require('./feeds_controller')({feedsApi})
   const routes = require('./feeds_routes')
 
@@ -165,6 +165,38 @@ module.exports = ({searchManager, sitemapsApi}) => {
     }
   }
 }
+```
+
+**Result**
+
+Given valid published articles in Livingdocs, the feed should be created:
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>Feed title</title>
+  <description>Alle Artikel von Livingdocs</description>
+  <language>de</language>
+  <copyright>copy-foo-right</copyright>
+  <image>
+    <url>https://example.com/foo-image</url>
+    <title>foo-image-title</title>
+    <description>some description for this image</description>
+    <link>https://example.com/foo-image</link>
+    <width>144</width>
+    <height>400</height>
+  </image>
+  <pubDate>Wed, 19 May 2021 14:55:06 GMT</pubDate>
+  <lastBuildDate>Wed, 19 May 2021 14:55:06 GMT</lastBuildDate>
+  <link>https://livingdocs.io/</link>
+  <item>
+    <title>foo item title</title>
+    <description>foo item description</description>
+    <link>https://livingdocs.io/article/1</link>
+    <pubDate>Tue, 01 Jan 2030 00:00:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>
 ```
 
 **Minimal delivery setup example**
