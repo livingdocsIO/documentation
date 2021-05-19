@@ -67,7 +67,7 @@ fastify.get('/sitemap.:date(*)', async (req, rep) => {
 
 ## **Feeds**
 
-Feeds are highly customizeable and no there is no 'one-fits-it-all' solution. We will still outline a way to integrate feeds using one of our helper methods for Feeds that builds up on the RSS 2.0 Specification
+Feeds are highly customizable and no there is no 'one-fits-it-all' solution. We will still outline a way to integrate feeds using one of our helper methods for Feeds that builds upon the RSS 2.0 Specification
 
 **Server Downstream**
 You will need to add your own HTTP-API.
@@ -116,7 +116,6 @@ module.exports = {
 // Setup the Feature - ./feeds/feeds_controller.js
 module.exports = ({feedsApi}) => {
   return {
-    // retrieve an article
     async getFeed (req, res) {
       const {channelId, projectId} = req.verifiedToken
       const feed = await feedsApi.getFeed({channelId, projectId})
@@ -131,11 +130,13 @@ module.exports = ({feedsApi}) => {
 module.exports = ({searchManager, sitemapsApi}) => {
   return {
     async getFeed ({projectId, channelId}) {
+      // gather the latest published documents with the 'article' contentType
       const res = await searchManager.searchPublications({
         projectId: projectId,
         channelId: channelId,
         contentTypes: ['article']
       })
+      // render the XML
       const xml = sitemapsApi.renderFeedXml({
         title: 'Feed title',
         description: 'Feed description',
