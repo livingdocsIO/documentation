@@ -20,8 +20,7 @@ The metadata screen gets a new language select box if the multi-language feature
 
 ### Languages
 
-On the server, we first need to provide which languages we want to support in our project. This is defined per [channel]({{< ref "/enterprise/reference-docs/project-config/project-config.md" >}}). In the configuration file for your channel
-add code as follows.
+On the server, we first need to provide which languages we want to support in our project. This is defined per [project]({{< ref "/enterprise/reference-docs/project-config/project-config.md" >}}). Add these top-level properties to your project config:
 
 ```js
 // defines the languages that a user can select for a document
@@ -69,7 +68,7 @@ There are several important things to note in the example:
 2. the use of `li-language` **must be unique within a content-type**, i.e. you can only have one metadata property in a content-type that uses the `li-language` plugin
 3. the form arrangement uses a select box with the core service `languageSelection`, we strongly advise you to use our core metadata service
 
-Once you have the metadata field defined on the channel, you also need to update your custom elasticsearch metadata mapping with an entry as follows:
+Once you have the metadata field defined on the content-type, you also need to update your custom elasticsearch metadata mapping with an entry as follows:
 
 ```json
 {
