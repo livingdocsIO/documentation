@@ -629,3 +629,51 @@ module.exports = {
   }
 }
 ```
+
+## Multilanguage
+The Media Library supports multilanguage since `release-2021-06`. Here you learn how to configure it.
+
+First, you have to configure multilanguage in the system as [described here]({{< ref "/enterprise/guides/workflows/multi-language/index.md" >}})
+
+### Translatable metadata properties
+No you can configure any metadata property in a `mediaType` to be translatable by the user like this:
+
+```js
+//media-types/image.js
+module.exports = {
+// ...
+metadata: [
+  {
+    // ...
+    config: {
+      // ...
+      translatable: true
+    }
+  },
+  // ...
+]
+// ...
+```
+
+### Translatable assets (image/video/file)
+If you want to allow users to define a different assets per language on a Media Library entry, you have to specifically allow this per `mediaType` like this:
+``js
+//media-types/image.js
+module.exports = {
+  handle: 'image',
+  type: 'mediaImage'
+  // ...
+  asset: {
+    // this allows to set another asset per translation once
+    translatable: true,
+    // this allows for existing assets to be changed by the user
+    replaceable: true
+  },
+  //...
+
+// ...
+```
+
+#### Caveats
+- With `release-2021-06`, using `li-named-crops` metadata plugin on `mediaImage` types in combination with asset translation has some suboptimal behaviors. This will be improved in a next release.
+- Both `translatable` and `replaceable` might need handling in your delivery regarding caching, fallback resolution when rendering different languages etc. You need to be aware of this and find solutions. Setting these assets triggers a `mediaLibraryEntry.update` event on the Events API and the webhooks in the same way as updating the metadata does.

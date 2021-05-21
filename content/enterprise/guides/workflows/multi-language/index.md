@@ -117,3 +117,6 @@ The editor side is relatively easy to configure. You only need to add the provid
 ```
 
 Equivalently for pages if you want to have it there too.
+
+## Media Library
+Read the guide about [setting up the Media Library]({{< ref "/enterprise/guides/media-library/index.md" >}}) to learn how to configure multilanguage for your Images, Videos and Files.
