@@ -164,7 +164,7 @@ Iframely is used for 2 things:
 
 ### Spellcheck
 
-See [here]({{ ref "./text-editing.md#spellcheck" }}>)
+See [here]({{< ref "./text-editing.md#spellcheck" }}>)
 
 ## Document History
 
@@ -276,6 +276,8 @@ comments: {
 ```
 
 The `defaultForDocumentType` section allows you to separately turn comments off for articles and pages.
+
+The notification feature needs to be enabled if the mentioned users should get a notification. [Notification feature]({{< ref "/enterprise/reference-docs/project-config/notifications.md" >}})
 
 ## Filter Sets
 
