@@ -57,3 +57,6 @@ Possible action to register on at the moment:
 - document.delete
 - document.transform
 - comment.add
+
+{{< added-in release-2021-06 >}}
+The comments mentioning doesn't have to be configured. It will work automatically as soon as the comments and the notifications are enabled.

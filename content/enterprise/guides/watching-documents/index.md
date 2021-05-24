@@ -134,6 +134,11 @@ Possible action to register on at the moment:
    {type: 'task.change', taskName: 'proofreading', statusChange: ['requested', 'accepted', 'completed']}
    ```
 
+{{< added-in release-2021-06 >}}
+#### Comments mentioning
+As soon as the comments are enabled it is possible to mention another user in a comment. The other user will get a notification when they are enabled. The user doesn't have to watch a document to get the notification.
+
+
 ### Setup Slack
 1. Go to https://api.slack.com/apps/
 2. “Create new app” 
