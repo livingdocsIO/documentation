@@ -164,7 +164,7 @@ Iframely is used for 2 things:
 
 ### Spellcheck
 
-See [here]({{< ref "./text-editing.md#spellcheck" }}>)
+See [here]({{< ref "./text-editing.md#spellcheck" >}})
 
 ## Document History
 
@@ -207,7 +207,7 @@ The `pageSize` is the size of how many revisions are shown in the UI.
 
 ## Links
 
-See [here]({{ ref "./text-editing.md#links" >}})
+See [here]({{< ref "./text-editing.md#links" >}})
 
 ## Keyboard Shortcuts
 
