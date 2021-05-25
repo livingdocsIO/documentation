@@ -159,7 +159,7 @@ Allows you to configure after how much time a timeout should happen in calls fro
 }
 ```
 Iframely is used for 2 things:
-- validating links that you enter in the text (see [text editing]({{ ref "./text-editing.md#links" }}>))
+- validating links that you enter in the text (see [text editing]({{< ref "./text-editing.md#links" >}}))
 - in combination with [`doc-link` to prefill component from metadata]({{< ref "/enterprise/reference-docs/project-config/directives/link.md" >}})
 
 ### Spellcheck

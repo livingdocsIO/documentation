@@ -136,6 +136,10 @@ Possible action to register on at the moment:
 
 {{< added-in release-2021-06 >}}
 #### Comments mentioning
+In a comment it is possible to mention a user with `@`. A dropdown will be shown and a user can be selected. This user will get a notification about the mentioning in a comment.
+
+![Comments mentioning](./comments-mentioning.png)
+
 As soon as the comments are enabled it is possible to mention another user in a comment. The other user will get a notification when they are enabled. The user doesn't have to watch a document to get the notification.
 
 
