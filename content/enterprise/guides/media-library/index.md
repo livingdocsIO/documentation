@@ -636,7 +636,7 @@ The Media Library supports multilanguage since `release-2021-06`. Here you learn
 First, you have to configure multilanguage in the system as [described here]({{< ref "/enterprise/guides/workflows/multi-language/index.md" >}})
 
 ### Translatable metadata properties
-No you can configure any metadata property in a `mediaType` to be translatable by the user like this:
+Now you can configure any metadata property in a `mediaType` to be translatable by the user like this:
 
 ```js
 //media-types/image.js
@@ -656,7 +656,7 @@ metadata: [
 ```
 
 ### Translatable assets (image/video/file)
-If you want to allow users to define a different assets per language on a Media Library entry, you have to specifically allow this per `mediaType` like this:
+If you want to allow users to define different assets per language on a Media Library entry, you have to specifically allow this per `mediaType` like this:
 ```js
 //media-types/image.js
 module.exports = {
