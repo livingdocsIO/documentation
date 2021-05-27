@@ -657,7 +657,7 @@ metadata: [
 
 ### Translatable assets (image/video/file)
 If you want to allow users to define a different assets per language on a Media Library entry, you have to specifically allow this per `mediaType` like this:
-``js
+```js
 //media-types/image.js
 module.exports = {
   handle: 'image',
