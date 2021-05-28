@@ -11,9 +11,12 @@
     "htmlparser2": "^6.0.0",
     "lunr": "^2.3.9"
   },
+  "devDependencies": {
+    "opener": "^1.5.2"
+  },
   "scripts": {
     "build": "./bin/build.sh",
-    "start": "open http://localhost:1313 && exec hugo serve"
+    "start": "opener http://localhost:1313 && exec hugo serve"
   },
   "repository": {
     "type": "git",
