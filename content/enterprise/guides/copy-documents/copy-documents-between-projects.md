@@ -11,12 +11,12 @@ This feature allows you to drag-and-drop a document from one project to another.
 
 ### Server config
 
-A new property, `customerId`, is required in the server config to help identify the source and destination servers. The value is a string which will typically be the same across all of your environments.
+The `customerId` property is required in the server config to help identify the source and destination servers. The value is a string which will typically be the same across all of your environments. However, if you use multiple Livingdocs servers for different projects you should give them different `customerId` values.
 
 ```js
 {
   ...serverConfig,
-  customerId: 'livingdocs'
+  customerId: 'daily-planet'
 }
 ```
 
@@ -59,8 +59,8 @@ The `import` property is very similar to the `export` property above, but the ob
       {
         // Allow documents from "service" project to be imported
         handle: 'service',
-        // The designs and types are the same, so the keys and values match
         contentTypeMapping: {
+          // sourceType: destinationType
           regular: 'regular'
         },
         mediaTypeMapping: {
@@ -89,7 +89,7 @@ You may want to write some custom functionality or a script which copies documen
 
 #### Request
 
-When calling the `importDocumentAndMedia()` function you need to provide the (destination) `projectId` and (destination) `userId`, along with information about the source document and server. The source `documentId` and `projectId` are mandatory, while the `channelId` is optional. The source server data, `customerId` and `environment`, should be taken from the server config. If you have already loaded the `documentVersion` from the source project you can pass it through as `sourceDocumentVersion` which saves on a database query. There is also a `verifyDocumentCreatePermissions` property, which allows you to pass a function to verify that the user has permission to create the document. This hook receives the new `documentVersion` after it has been created and transformed. The hook must throw and error to prevent the document from being commited to the database.
+When calling the `importDocumentAndMedia()` function you need to provide the (destination) `projectId` and `userId` of the user who will become the owner of the copied document, along with information about the source document and server. The source `documentId` and `projectId` are mandatory, while the `channelId` is optional. The source server data, `customerId` and `environment`, should be taken from the server config. If you have already loaded the `documentVersion` from the source project you can pass it through as `sourceDocumentVersion` which saves on a database query. There is also a `verifyDocumentCreatePermissions` property, which allows you to pass a function to verify that the user has permission to create the document. This hook receives the new `documentVersion` after it has been created and transformed. The hook must throw and error to prevent the document from being commited to the database.
 
 ```js
 const importReport = await server.features.api('li-import').importDocumentAndMedia({
@@ -99,7 +99,7 @@ const importReport = await server.features.api('li-import').importDocumentAndMed
     documentId: 3,
     projectId: 4,
     server: {
-      customerId: 'livingdocs',
+      customerId: 'daily-planet',
       environment: 'development'
     }
   },
