@@ -89,7 +89,7 @@ You may want to write some custom functionality or a script which copies documen
 
 #### Request
 
-When calling the `importDocumentAndMedia()` function you need to provide the (destination) `projectId` and `userId` of the user who will become the owner of the copied document, along with information about the source document and server. The source `documentId` and `projectId` are mandatory, while the `channelId` is optional. The source server data, `customerId` and `environment`, should be taken from the server config. If you have already loaded the `documentVersion` from the source project you can pass it through as `sourceDocumentVersion` which saves on a database query. There is also a `verifyDocumentCreatePermissions` property, which allows you to pass a function to verify that the user has permission to create the document. This hook receives the new `documentVersion` after it has been created and transformed. The hook must throw and error to prevent the document from being commited to the database.
+When calling the `importDocumentAndMedia()` function you need to provide the (destination) `projectId` and `userId` of the user who will become the owner of the copied document, along with information about the source document and server. The source `documentId` and `projectId` are mandatory, while the `channelId` is optional. The source server data, `customerId` and `environment`, should be taken from the server config. If you have already loaded the `documentVersion` from the source project you can pass it through as `sourceDocumentVersion` which saves on a database query.
 
 ```js
 const importReport = await server.features.api('li-import').importDocumentAndMedia({
@@ -104,8 +104,7 @@ const importReport = await server.features.api('li-import').importDocumentAndMed
     }
   },
   userId: 5,
-  sourceDocumentVersion,
-  verifyDocumentCreatePermissions
+  sourceDocumentVersion
 })
 ```
 
