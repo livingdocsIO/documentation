@@ -95,6 +95,6 @@ const documentVersion = {
   //     type: 'image'
   //   }
   // ]
-  references,
+  references
 }
 ```
