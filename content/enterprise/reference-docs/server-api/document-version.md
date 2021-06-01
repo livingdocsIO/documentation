@@ -8,9 +8,9 @@ menus:
 
 ## The documentVersion object
 
-The `documentVersion` is a core object and is returned in a lot of server API calls. It contains information about a document like content, systemdata, metadata and more.
+The `documentVersion` is a core object and is returned in a lot of server API calls. It contains information about a document like content, systemdata, metadata and the lastest publication.
 
-## The documentVersion API
+## The documentVersion Interface
 
 ```js
 const documentVersion = {
@@ -69,14 +69,14 @@ const documentVersion = {
 
   // systemdata of a document, e.g.
   // {
-  //   projectId: 3,
-  //   channelId: 4,
-  //   documentId: 10,
-  //   contentType: 'regular',
-  //   documentType: 'article',
-  //   publicationId: 19,
-  //   firstPublicationDate: '2021-06-01T07:36:15.474Z',
-  //   updatedAt: '2021-06-01T07:53:20.291Z',
+  //   project_id: 3,
+  //   channel_id: 4,
+  //   document_id: 10,
+  //   content_type: 'regular',
+  //   document_type: 'article',
+  //   publication_id: 19,
+  //   first_publication_date: '2021-06-01T07:36:15.474Z',
+  //   updated_at: '2021-06-01T07:53:20.291Z',
   //   design: {
   //       name: 'p:3:4',
   //       version: '7.0.0'

@@ -71,7 +71,7 @@ registerPublicationServerHooks({publishHook: myOtherHook}, done)
 
 #### prepublishHookAsync()
 
-The prepublish hook allows modifications of the `documentVersion`. For this reason any prepublish hook should always return `{documentVersion}`, allowing it to be modified by the next hook or to be published.
+The prepublish hook allows modifications of the [DocumentVersion]({{< ref "/enterprise/reference-docs/server-api/document-version.md" >}}). For this reason any prepublish hook should always return `{documentVersion}`, allowing it to be modified by the next hook or to be published.
 
 ```js
 async prepublishHookAsync ({documentVersion}) {
@@ -97,7 +97,7 @@ But they do run in the same transaction and if an error is returned the publish
 action will be reverted.
 
 You get two parameters that your custom implementation can use:
-the `documentVersion` which contains all
+the [DocumentVersion]({{< ref "/enterprise/reference-docs/server-api/document-version.md" >}}) which contains all
 information about the document and the `renditions` object which contains all
 rendered renditions that you defined for your channels.
 
@@ -113,7 +113,7 @@ async publishHookAsync ({documentType, payload}) {...}
 Just as with the publish hook, you can also configure a method that reacts to
 unpublish events.
 
-Just as in the publishHook you get a `documentVersion` object for the document that was
+Just as in the publishHook you get a [DocumentVersion]({{< ref "/enterprise/reference-docs/server-api/document-version.md" >}}) object for the document that was
 unpublished.
 
 ```js
