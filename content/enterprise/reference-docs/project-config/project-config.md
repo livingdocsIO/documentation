@@ -160,10 +160,8 @@ The project config is a huge JSON file with subproperties for things like conten
         token: 'a-secret-token-to-sign-the-request'
         active: true
         events: ['document.published', 'document.unpublished']
-      }
-    }]
-  }
-
+      }]
+    }
   },
 
   // Content Types
@@ -184,7 +182,7 @@ The project config is a huge JSON file with subproperties for things like conten
     mainNavigation:[],
     dashboards: [],
     mediaLibrary: {}
-  }
+  },
 
   // Deliveries contains information about the delivery systems you operate
   // added in release-2020-12
@@ -212,7 +210,17 @@ The project config is a huge JSON file with subproperties for things like conten
         pathPattern: '/app/article/:id'
       }
     }
-  ]
+  ],
 
+  import: {
+    allowedProjects: [
+      {handle: 'web-clone'} // Allow documents to be imported from the "web-clone" project
+    ]
+  },
+  export: {
+    allowedProjects: [
+      {handle: 'web-clone'} // Allow documents to be exported to the "web-clone" project
+    ]
+  }
 }
 ```

@@ -48,7 +48,7 @@ The `export` property is an object which contains an `allowedProjects` property.
 
 #### Destination project
 
-The `import` property is very similar to the `export` property above, but the objects inside the `allowedProjects` array now contain additional information on how to map the source content and media types to the destination. Within `contentTypeMapping` and `mediaTypeMapping` the object keys are the source types (i.e. the type handles which belong to the document and media being copied), and the values are the destination types (i.e. the type handles used by the project you're adding the `import` config to).
+The `import` property is very similar to the `export` property above, but the objects inside the `allowedProjects` array now contain additional information on how to map the source content and media types to the destination. Within `contentTypeMapping` and `mediaTypeMapping` the object keys are the source types (i.e. the type handles which belong to the document and media being copied), and the values are the destination types (i.e. the type handles used by the project you're adding the `import` config to). If the handles used by the two projects match, as shown below, then they become optional, because if a source type is not defined it will try to use the same value in the destination project.
 
 ```js
 // Example for the "service-clone" project

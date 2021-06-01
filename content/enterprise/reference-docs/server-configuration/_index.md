@@ -31,9 +31,6 @@ menu: reference-docs
   "render_pipeline": "{{< a href="#render-pipeline" title="<render pipeline config>">}}",
   "categories": "{{< a href="#categories" title="<categories config>">}}",
 
-  "export": "{{< a href="#export" title="<export config>">}}",
-  "import": "{{< a href="#import" title="<import config>">}}",
-
   // Configure the elasticsearch behavior
   "search": "{{< a href="#search" title="<search config>">}}",
   "elasticIndex": "{{< a href="#custom-elasticsearch-index" title="<elasticIndex config>">}}",
@@ -1042,51 +1039,6 @@ liServer.registerInitializedHook(async () => {
 ```
 
 {{< img src="images/custom_preview.png" alt="Teaser Preview" >}}
-
-#### Export
-
-{{< added-in release-2021-06 >}}
-
-The `export` property is an object which contains an `allowedProjects` property. The `allowedProjects` property is an array of objects containing a `handle` property, which indicates the projects you would like to export to.
-
-```js
-export: {
-  allowedProjects: [
-    {
-      // Allow documents to be exported to the "service-clone" project
-      handle: 'service-clone'
-    },
-    {
-      handle: 'another-service'
-    }
-  ]
-}
-```
-
-#### Import
-
-{{< added-in release-2021-06 >}}
-
-The `import` property is very similar to the `export` property above, but the objects inside the `allowedProjects` array now contain additional information on how to map the source content and media types to the destination. Within `contentTypeMapping` and `mediaTypeMapping` the object keys are the source types (i.e. the type handles which belong to the document and media being copied), and the values are the destination types (i.e. the type handles used by the project you're adding the `import` config to).
-
-```js
-import: {
-  allowedProjects: [
-    {
-      // Allow documents to be imported from the "service" project
-      handle: 'service',
-      contentTypeMapping: {
-        // sourceType: destinationType
-        regular: 'regular'
-      },
-      mediaTypeMapping: {
-        image: 'image',
-        video: 'video'
-      }
-    }
-  ]
-}
-```
 
 ## Integrations
 
