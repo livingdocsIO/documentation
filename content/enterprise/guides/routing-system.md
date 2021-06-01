@@ -297,7 +297,7 @@ Using this *section* metadata content as a placeholder named `:section`, you
 first need this Metadata Plugin to expose a function
 `.getRoutePart(documentVersion) => string`. When building a path for a
 publication for which the path pattern contains `:section`, this function will
-be passed the `documentVersion` to publish and should return the string with
+be passed the [DocumentVersion]({{< ref "/enterprise/reference-docs/server-api/document-version.md" >}}) to publish and should return the string with
 which `:section` will be replaced in the path.
 
 Take a look at [this example metadata plugin][metadatapluginplaceholder].
