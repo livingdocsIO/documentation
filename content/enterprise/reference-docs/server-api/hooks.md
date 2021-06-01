@@ -122,35 +122,6 @@ async unpublishHookAsync ({documentType, payload}) {...}
 ```
 
 
-#### Info: The documentVersion object
-
-The documentVersion object is a core object and thus contains private APIs. You
-should only use the provided getter methods on the instance in order not to
-program against private APIs that are prone to change. The following methods are
-provided:
-
-* **getDocumentId()**, returns the unique document id of the document that was
-  published (the same as is in the URL of the editor when you have the document
-  opened)
-
-* **getProjectId()**, gets the id of the project that this document belongs to
-
-* **getSerializedLivingdoc()**, gets the document description in the Livingdocs
-  data format (JSON)
-
-* **getMetadata()**, gets the metadata associated with the document (JSON)
-
-* **getDesignDescriptor()**, gets the name and version of the design that this
-  document was created with
-
-* **getDocumentType()**, gets the document type, either 'article' or 'page'
-
-* **render(callback)**, renders the document, i.e., produces output according to
-  your renditions configuration. The hook method is called *after* a render, so
-  you will probably never want to call `render` in this context. The callback
-  receives the `renditions` object.
-
-
 ## Render Hooks
 
 These hook into the `render-pipeline` feature. The `beforeRenderHook` is called right before a document gets rendered.
