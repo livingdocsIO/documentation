@@ -146,8 +146,8 @@ redis: {
   // Or configure {{< a title="redis sentinel" href="https://redis.io/topics/sentinel" >}}
   masterName: 'livingdocs-develop',
   sentinels: [
-    {host: 'sentinel1', port: 6379},
-    {host: 'sentinel2', port: 6379}
+    {host: 'sentinel1', port: 26379},
+    {host: 'sentinel2', port: 26379}
   ],
 
   // Optional username and password
