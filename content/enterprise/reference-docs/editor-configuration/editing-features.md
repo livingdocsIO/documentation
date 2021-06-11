@@ -28,6 +28,9 @@ app: {
 
 Availability of advanced features such as component search and collapsable component groups.
 
+![image](https://user-images.githubusercontent.com/172394/121654796-64d11680-ca9e-11eb-871f-48e79a1c47b0.png)
+
+
 ```js
 app: {
   editor: {
