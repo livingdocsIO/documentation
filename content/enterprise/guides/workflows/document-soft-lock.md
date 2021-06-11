@@ -7,7 +7,7 @@ menus:
 tags: [guides, workflows]
 ---
 
-With a soft lock an editor can indicate that she wants the document for herself and not to be disturbed by other editors taking over. Other editors are still able to take over (thus soft lock) but they need to confirm that they want to overwrite the soft lock.
+With a soft lock an editor can indicate that she wants the document for herself and not to be disturbed by other editors taking over (usually used by Proofreaders). Other editors are still able to take over (thus soft lock) but they need to confirm that they want to overwrite the soft lock.
 A soft lock has a configurable timeout after which it expires.
 If the user that requested the soft lock leaves the document, the soft lock will be automatically released. Same goes for closing of the browser.
 
