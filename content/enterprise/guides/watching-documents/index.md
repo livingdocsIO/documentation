@@ -79,7 +79,7 @@ module.exports = {
   v: 2,
   notifications: {
     actionGroups: [
-      // First example group, interested in ALL changes
+      // 1st group: Interested in ALL changes
       {
         handle: 'all',
         label: 'All Events',
@@ -93,8 +93,14 @@ module.exports = {
           'document.transform',
           'comment.add'
         ]
-      },
-      // Second example group, interested only in Task changes
+      // 2nd group: Interested in publishing changes
+      }, {
+        handle: 'publish',
+        label: 'Publish Events',
+        description: 'Publish events',
+        actions: ['document.publish', 'document.unpublish']
+      }
+      // 3rd group: Interested in task changes
       {
         handle: 'proofreading',
         label: 'Proofreading events',
