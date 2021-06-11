@@ -47,6 +47,9 @@ app: {
 
 Visibility of the "Transform Component" select menu can be configured.
 
+![image](https://user-images.githubusercontent.com/172394/121656348-ae6e3100-ca9f-11eb-9470-a983cc5c6618.png)
+
+
 ```js
 app: {
   editor: {
