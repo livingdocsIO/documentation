@@ -105,7 +105,7 @@ module.exports = ({searchManager, sitemapsApi}) => {
         language: 'de',
         copyright: 'Feed copyright',
         link: 'https://livingdocs.io/',
-        pubDate: new Date(),
+        pubDate: res.results[0]?.createdAt,
         lastBuildDate: new Date(),
         image: {
           url: 'https://example.com/foo',
@@ -119,7 +119,7 @@ module.exports = ({searchManager, sitemapsApi}) => {
           return {
             title: 'document title',
             description: 'document description',
-            pubDate: new Date(doc.createdAt),
+            pubDate: doc.createdAt,
             link: `https://livingdocs.io/article/${doc.documentId}`
           }
         })
