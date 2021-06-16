@@ -209,7 +209,7 @@ fastify.get("/sitemap.xml", async (req, rep) => {
   const res = await axios({
     method: "get",
     headers: { Authorization: "Bearer " + accessToken },
-    url: serverUrl + "/api/v1/sitemaps/index?baseUrl=https://livingdocs.io",
+    url: serverUrl + "/api/v1/sitemaps/index?baseUrl=https://livingdocs.io/",
     responseType: "text",
   });
   return res.data;
