@@ -241,7 +241,7 @@ fastify.get("/feed.xml", (req, rep) => {
     <item>
         <title>Foo story title</title>
         <description>Foo story description</description>
-        <link>https://ivingdocs.io/foo-article</link>
+        <link>https://livingdocs.io/foo-article</link>
         <pubDate>Wed, 16 Jun 2021 11:05:53 GMT</pubDate>
     </item>
 </channel>
