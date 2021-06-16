@@ -167,6 +167,12 @@ Note: This still result still needs to be consumed in the delivery, similar to t
 ## **Live Delivery Setup**
 This live demo of a minimal delivery runs against a real livingdocs instance.
 
+You can explore the following routes in the example
+- `/robots.txt`
+- `/sitemap.xml`
+- `/sitemap.2021-06.xml`
+- `/feed.xml`
+
 <h3 style="text-align: center;">Interactive minimal delivery example</h3>
 <script src="https://embed.runkit.com"></script>
 <div id="my-element"></div>
@@ -189,19 +195,21 @@ fastify.get("/", async (req, rep) => rep.redirect("/sitemap.xml"));
 \ 
 // set up a robots.txt, linking to the Sitemap and Feed
 fastify.get("/robots.txt", (req, rep) => {
-    return \`
-Sitemap: /feed.xml
+    return \`Sitemap: /feed.xml
 Sitemap: /sitemap.xml
 \`
 })
 \ 
+// use your own credentials to create a sitemap!
+const accessToken = process.env.ACCESS_TOKEN
+const serverUrl = process.env.SERVER_URL
+\ 
 // example route to retrieve the Sitemap index file
 fastify.get("/sitemap.xml", async (req, rep) => {
-  console.log({ token: process.env.ACCESS_TOKEN, url: process.env.SERVER_URL });
   const res = await axios({
     method: "get",
-    headers: { Authorization: "Bearer " + process.env.ACCESS_TOKEN },
-    url: process.env.SERVER_URL + "/api/v1/sitemaps/index?baseUrl=/",
+    headers: { Authorization: "Bearer " + accessToken },
+    url: serverUrl + "/api/v1/sitemaps/index?baseUrl=https://livingdocs.io",
     responseType: "text",
   });
   return res.data;
@@ -209,13 +217,12 @@ fastify.get("/sitemap.xml", async (req, rep) => {
 \ 
 // example route to retrieve the Sitemap entries file
 fastify.get("/sitemap.:date", async (req, rep) => {
-  console.log(req.params);
   const res = await axios({
     method: "get",
-    headers: { Authorization: "Bearer " + process.env.ACCESS_TOKEN },
+    headers: { Authorization: "Bearer " + accessToken },
     url:
-      process.env.SERVER_URL +
-      "/api/v1/sitemaps/entries?baseUrl=/&date=" +
+      serverUrl +
+      "/api/v1/sitemaps/entries?baseUrl=https://livingdocs.io/&date=" +
       req.params.date.split(".")[0],
     responseType: "text",
   });
