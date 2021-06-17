@@ -30,16 +30,7 @@ Availability of advanced features such as component search and collapsable compo
 
 ![image](https://user-images.githubusercontent.com/172394/121654796-64d11680-ca9e-11eb-871f-48e79a1c47b0.png)
 
-
-```js
-app: {
-  editor: {
-    insertPanel: {
-      useAdvancedComponentGroups: true
-    }
-  }
-}
-```
+The search is automatically activated if there are more than 8 components.
 
 ## Properties Panel
 
