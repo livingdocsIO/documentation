@@ -92,6 +92,33 @@ An example:
     fields: ['metadata.*'],
     componentName: 'bluewinDashboardListItem'
   }],
+  // Added in release-2021-09
+  // you can define configured cards here, they can then be referenced
+  // within a mediaType defining the card to be used for rendering in a dashboard
+  dashboardCardConfigurations: [
+    {
+      handle: 'myImageCard',
+      useCard: 'liMediaLibraryCard',
+      options: {
+        additionalInfo: [
+          {
+            metadataPropertyName: 'credit'
+          }
+        ]
+      }
+    },
+    {
+      handle: 'myVideoCard',
+      useCard: 'liMediaLibraryCard',
+      options: {
+        additionalInfo: [
+          {
+            metadataPropertyName: 'credit'
+          }
+        ]
+      }
+    }
+  ],
   startPage: {
     path: '/articles'
   },
@@ -104,11 +131,11 @@ An example:
       {metadataPropertyName: 'source', directiveName: 'source'},
       {metadataPropertyName: 'caption', directiveName: 'caption'}
     ],
-    // deprected with release-2021-03, move filters to a mediaType
+    // removed with release-2021-09, move filters to a mediaType
     dashboard: {
       displayFilters: ['timeRange']
     },
-    // deprected with release-2021-03, move filters to a mediaType
+    // removed with release-2021-09, move filters to a mediaType
     editorSelection: {
       displayFilters: ['timeRange']
     },

@@ -45,7 +45,10 @@ If no `Media Type` config is provided it falls back to a default config where `t
 
 - Add file support with the new type `mediaFile`
 
+#### Add Dashboard Card Config Support
+{{< added-in release-2020-09 >}}
 
+- The card (UI Component or configured dashboard card) to be used for a mediaType in a Media Library Dashboard can be configured
 ## Example
 
 ```js
@@ -137,7 +140,10 @@ If no `Media Type` config is provided it falls back to a default config where `t
         {
           filterName: 'liDateTimeRange'
         }
-      ]
+      ],
+      card: {
+        name: 'liMediaLibraryCard' // this is the default, can be changed to another card
+      }
     },
     managementDashboard: { // the dashboard opened from the Main Navigation
       displayFilters: [
