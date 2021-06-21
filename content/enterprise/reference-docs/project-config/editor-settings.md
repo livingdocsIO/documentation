@@ -329,7 +329,7 @@ Any release before `release-2021-03` takes the following config
 - `mediaLibrary.editorSelection.displayFilters`: an array of [Display Filters]({{< ref "/enterprise/reference/display_filter.md" >}}) for the Dashboard accessible via the Media Button in the Document Editing Toolbar
 
 ### Dashboard Cards
-With `release-2021-09` you can configure the card used to show results in dashboards. You do this by configuring your own dashboard card and then define this card per mediaType as you please.
+With `release-2021-09` you can configure the card used to show results in dashboards. You do this by configuring your own dashboard card in the project config under `editorSettings.dashboardCardConfigurations` and then define this card per mediaType as you please.
 
 ```
 // projectConfig.editorSettings
