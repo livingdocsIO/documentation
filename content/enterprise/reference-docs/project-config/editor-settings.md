@@ -328,6 +328,29 @@ Any release before `release-2021-03` takes the following config
 - `mediaLibrary.dashboard.displayFilters`: an array of [Display Filters]({{< ref "/enterprise/reference/display_filter.md" >}}) for the Dashboard accessible via the Main Navigation
 - `mediaLibrary.editorSelection.displayFilters`: an array of [Display Filters]({{< ref "/enterprise/reference/display_filter.md" >}}) for the Dashboard accessible via the Media Button in the Document Editing Toolbar
 
+### Dashboard Cards
+With `release-2021-09` you can configure the card used to show results in dashboards. You do this by configuring your own dashboard card and then define this card per mediaType as you please.
+
+```
+// projectConfig.editorSettings
+
+dashboardCardConfigurations: [
+  {
+    handle: 'myImageCard',
+    useCard: 'liMediaLibraryCard',
+    options: {
+      // will make the card show the credit information from the metadata of the mediaLibraryEntry
+      additionalInfo: [
+        {
+          metadataPropertyName: 'credit'
+        }
+      ]
+    }
+  }
+}
+```
+
+This will define a card `myImageCard` to be used in `mediaType.editor.dashboard.card.name`. See the See [Media Type config example]({{< ref "/enterprise/reference-docs/project-config/media_types.md" >}}).
 
 ### Behavior
 Then there are 2 configs to define the behavior when Images are inserted into a Document from the Media Library:
