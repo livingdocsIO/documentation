@@ -21,7 +21,7 @@ Two larger concepts are configurable by customers:
 - the date logic, in particular sort date and scheduled publishing
 - generic filter values from custom metadata fields that can be used to query
 
-The definition of the custom indexing is done in the server's channel-config in a new sub-property of `contentTypes` that is called `publicationIndex`. Below is a sample configuration for an article content-type.
+The definition of the custom indexing is done in the project config at `contentTypes['your-content-type'].publicationIndex`. Below is a sample configuration for an article content-type.
 
 ```js
 publicationIndex: {
