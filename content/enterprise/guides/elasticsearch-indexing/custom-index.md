@@ -3,7 +3,7 @@ title: Custom Elasticsearch Index
 linkTitle: Custom Index
 description: Configure an index processor to support custom data structures and queries in elasticsearch.
 menus:
-  reference-docs:
+  guides:
     parent: Elasticsearch Indexing
 ---
 

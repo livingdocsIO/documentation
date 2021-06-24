@@ -557,7 +557,7 @@ For inspiration, you can also check out our [current default document search fun
 
 {{< added-in release-2020-12 >}}
 
-Integrate custom Elasticsearch indexes. If you want to know more (with all possible options), look into the [guide]({{< ref "./indexing/custom-index.md" >}}).
+Integrate custom Elasticsearch indexes. If you want to know more (with all possible options), look into the [guide]({{< ref "enterprise/guides/elasticsearch-indexing/custom-index.md" >}}).
 
 ```js
 // conf/environments/local.js
@@ -581,14 +581,14 @@ elasticIndex: {
 
   // To support multi cluster indexing, you can declare multiple clusters.
   // By default we index into the cluster defined in `search.host` or `search.elasticsearchClient`.
-  // Please consult {{< ref "./indexing/multi-cluster-indexing.md" >}} for more details.
+  // Consult {{< ref "enterprise/guides/elasticsearch-indexing/multi-cluster-indexing.md" >}} for more details.
   clusters: [
     {handle: 'default', node: 'https://elasticsearch:9200', useAsLivingdocsIndexTarget: true}
   ],
 
   // Custom indexes can be configured in case you want to
   // index documents with a custom structure and mapping.
-  // Consult {{< ref "./indexing/custom-index.md" >}} for more details.
+  // Consult {{< ref "enterprise/guides/elasticsearch-indexing/custom-index.md" >}} for more details.
   customIndexes: [
     {
       // used as identifier e.g. for the background indexing via CLI
@@ -615,7 +615,7 @@ elasticIndex: {
       context: {projectHandle: 'your-project-handle', isPublished: true},
 
       //  To support multi cluster indexing, you can configure a target cluster by handle.
-      // Consult {{< ref "./indexing/multi-cluster-indexing.md" >}} for more details.
+      // Consult {{< ref "enterprise/guides/elasticsearch-indexing/multi-cluster-indexing.md" >}} for more details.
       clusters: ['default']
     }
   ]

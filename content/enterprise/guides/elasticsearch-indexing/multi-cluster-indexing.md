@@ -2,7 +2,7 @@
 title: Multi Cluster Indexing
 description: Configure multiple elasticsearch clusters that span multiple datacenters for higher resiliency.
 menus:
-  reference-docs:
+  guides:
     parent: Elasticsearch Indexing
 ---
 

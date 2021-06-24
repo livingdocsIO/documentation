@@ -3,7 +3,7 @@ title: Search published documents
 linkTitle: Publication Index
 description: How to use and configure the publication index of Livingdocs.
 menus:
-  reference-docs:
+  guides:
     parent: Elasticsearch Indexing
 ---
 
@@ -78,7 +78,7 @@ publicationIndex: {
   }
 }
 ```
-As with the project config, a metadata plugin can also have an entry `publicationIndex`.
+As with the channel-config, the metadata plugin can also have an entry `publicationIndex`.
 First of all, you need to set `enabled` to true so that indexing of this metadata plugin to the index is allowed. The `getValue` method is optional, if you don't define one, it will just index the whole value stored in the metadata entry.
 If you define `getValue`, you can return 3 things:
 
