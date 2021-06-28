@@ -3,10 +3,16 @@
   word-break: break-word;
 
   @include media-query(widescreen) {
+    max-width: 580px;
     margin-right: $toc-width + $space-l - $space-m;
   }
 
+  @include media-query(ultrawide) {
+    max-width: 688px;
+  }
+
   &__title {
+    position: relative;
     margin-top: 0;
   }
 

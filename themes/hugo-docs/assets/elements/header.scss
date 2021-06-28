@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   height: $header-height;
-  max-width: 1400px;
+  max-width: $breakpoint-ultrawide;
   margin: 0 auto;
   position: fixed;
   border-bottom: 1px solid $color-grey-6;

@@ -1,9 +1,10 @@
 .highlight {
+  @include explode-to-max-width;
   position: relative;
 }
 
 // generated using
-//   hugo gen chromastyles --style=lovelace > themes/hugo-docs/assets/chroma.scss
+// hugo gen chromastyles --style=lovelace > themes/hugo-docs/assets/chroma.scss
 code {
   font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
   font-size: .85em;

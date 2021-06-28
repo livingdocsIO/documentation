@@ -1,5 +1,8 @@
 // mobile first
 @mixin media-query($size) {
+  @if $size == ultrawide {
+    @media (min-width: $breakpoint-ultrawide) { @content; }
+  }
   @if $size == widescreen {
     @media (min-width: $breakpoint-widescreen) { @content; }
   }
@@ -12,6 +15,9 @@
 }
 
 @mixin media-query-down($size) {
+  @if $size == widescreen {
+    @media (max-width: $breakpoint-widescreen - 1px) { @content; }
+  }
   @if $size == desktop {
     @media (max-width: $breakpoint-desktop - 1px) { @content; }
   }
@@ -40,6 +46,18 @@
     &::-webkit-scrollbar {
       display: none;
     }
+  }
+}
+
+@mixin explode-to-max-width() {
+  @include media-query(widescreen) {
+    margin-left: calc(50% + #{$page-sidebar-width + $space-l} - 50vw);
+    margin-right: calc(50% + #{$page-sidebar-width + $space-l} - 50vw);
+  }
+
+  @include media-query(ultrawide) {
+    margin-left: calc(50% + #{$page-sidebar-width + $space-l - $breakpoint-ultrawide / 2});
+    margin-right: calc(50% + #{$page-sidebar-width + $space-l - $breakpoint-ultrawide / 2});
   }
 }
 
