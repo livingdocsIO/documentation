@@ -55,7 +55,7 @@ It is important to note that a `data migration` **only affects the Livingdocs da
 
 The previous section explained data migrations as a consequence of a design change. But data migrations are a general-purpose tool that can be used to alter your existing documents. A different and common example is the need to add a new metadata field to all of your documents and initialise the value in some way.
 
-Livingdocs provides you a migration hook (async/await `migrateAsync` or callback based `migrate`) to implement. This hook will be called/applied for every document in your project.
+Livingdocs provides you a migration hook `migrateAsync` to implement. This hook will be called/applied for every document in your project.
 
 
 #### Example
@@ -83,20 +83,6 @@ module.exports = {
     //   return {metadata}
     return {metadata}
   }
-}
-```
-
-Added in: `release-2017-12`
-```js
-
-// file: app/data-migrations/callback-migration.js
-exports.migrate = ({serializedLivingdoc, metadata, systemdata}, callback) => {
-  if (serializedLivingdoc.layout === 'regular') {
-    // skip the revision from being migrated, e.g.
-    return callback()
-  }
-  // commit the revision migration, e.g.
-  callback(null, {serializedLivingdoc, metadata})
 }
 ```
 
