@@ -121,13 +121,9 @@ Once you started a migration, it will run for all your documents (in the same pr
 Documents can't be migrated when they are actively edited by users. Therefore a report after the end of a migration shows `not_applied_documents`. These document have to be migrated again until no user is actively editing the documents.
 
 
-## Example Migrations
+## Example: Use Livingdocs Server for a data migration
 
-To learn how to write data migration we provide some examples.
-
-- [Migration script after removing a directive from a component]({{< ref "./examples/remove_directive.md" >}})
-- [Migration script after renaming a directive on a component]({{< ref "./examples/rename_directive.md" >}})
-- [Migration script to initialize a new metadata field]({{< ref "./examples/add-metadata-field" >}})
+- [Migration script with the usage of the Livingdocs Server]({{< ref "./examples/use-livingdocs-server.md" >}})
 
 
 ## Performance of Migrations
