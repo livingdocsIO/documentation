@@ -1,11 +1,11 @@
 .button {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   margin: 0;
   color: $color-grey-2;
   border: 1px solid $color-grey-6;
   outline: none;
   vertical-align: middle;
-  text-align: center;
   cursor: pointer;
   overflow: visible;
   user-select: none;
@@ -29,16 +29,36 @@
     font-size: 12px;
   }
 
+  &--no-border {
+    border: 0;
+
+    &:hover {
+      border: 0;
+      background-color: transparent;
+    }
+  }
+
   &--edit {
     display: none;
-    float: right;
-    margin-top: $space-xs;
-    margin-left: $space-m;
-    position: relative;
+    top: 8px;
+    left: -2 * $space-m;
+    padding-right: $space-m;
+    position: absolute;
     z-index: 1;
-  
+    color: $color-grey-4;
+
+    &:hover {
+      color: $color-black;
+    }
+
     @include media-query(desktop) {
-      display: inline-block;
+      h1:hover & {
+        display: flex;
+      }
+    }
+
+    @include media-query-down(desktop) {
+      display: none;
     }
   }
 

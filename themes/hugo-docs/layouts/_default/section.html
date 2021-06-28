@@ -4,9 +4,12 @@
   {{ partial "sidebar.html" . }}
   <main class="page__content">
     <article class="article">
-      {{ if (ne (.Param "renderEditButton") false) }}{{ partial "edit-page.html" . }}{{ end }}
-
-      <h1 class="article__title">{{ .Title }}</h1>
+      <h1 class="article__title">
+        {{ .Title }}
+        {{ if (ne (.Param "renderEditButton") false) }}
+          {{ partial "edit-page.html" . }}
+        {{ end }}
+      </h1>
 
       <div class="article__content">
         {{ .Content }}
