@@ -2,6 +2,7 @@
   flex-grow: 1;
   margin: $space-s;
   width: 100%;
+  min-height: $space-xl;
   cursor: pointer;
 
   @include media-query(tablet) {
@@ -15,24 +16,26 @@
     justify-content: center;
     height: 100%;
     padding: $space-m;
-    color: $color-black;
     border: 1px solid transparent;
-    border-radius: $rounded-corners;
+    border-radius: 3 * $rounded-corners;
     background-color: $color-white;
+    transition: border-color $transition-time;
 
     &:hover {
       @include box-shadow(highlight);
-      color: $color-cyan-1;
       border-color: $color-cyan-1;
     }
   }
 
   &__title {
     margin: 0;
+    color: $color-cyan-1;
   }
 
   &__text {
+    @extend %font-s-xs;
     margin-top: $space-s;
     margin-bottom: 0;
+    color: $color-grey-2;
   }
 }
