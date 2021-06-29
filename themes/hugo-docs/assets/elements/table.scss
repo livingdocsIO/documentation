@@ -1,5 +1,5 @@
 table {
-  width: 100%;
+  @include explode-to-max-width;
   margin: $space-l 0;
   border-spacing: 0;
   border-collapse: collapse;
