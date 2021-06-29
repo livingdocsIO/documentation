@@ -40,8 +40,8 @@
 
   &--edit {
     display: none;
-    top: 8px;
-    left: -2 * $space-m;
+    top: $space-s;
+    left: -2.1 * $space-m;
     padding-right: $space-m;
     position: absolute;
     z-index: 1;
