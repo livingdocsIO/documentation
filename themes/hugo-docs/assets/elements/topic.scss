@@ -50,5 +50,10 @@
       margin-bottom: 3px;
     }
   }
+
+  & > a .arrow-right {
+    @extend .arrow-down;
+    transform: rotate(-45deg);
+  }
 }
 
