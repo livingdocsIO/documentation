@@ -8,7 +8,7 @@
 
   @include media-query(desktop) {
     flex-wrap: nowrap;
-    gap: $space-m;
+    gap: $space-m; // scss-lint:disable PropertySpelling
   }
 
   &__prev,

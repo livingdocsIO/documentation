@@ -7,9 +7,9 @@
 // hugo gen chromastyles --style=lovelace > themes/hugo-docs/assets/chroma.scss
 code {
   font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
-  font-size: .85em;
+  font-size: 0.85em;
   color: $color-violet-1;
-  background: rgba($color-violet-1, .2);
+  background: rgba($color-violet-1, 0.2);
   border-radius: $rounded-corners;
   padding: 1px 3px;
   border: 1px solid $color-grey-6;
@@ -20,7 +20,6 @@ code {
   padding: $space-s $space-m;
   margin: $space-l 0;
   background: $color-grey-9;
-  border: 0;
   border-radius: $rounded-corners;
   border: 1px solid $color-grey-6;
   overflow: auto;
@@ -35,7 +34,7 @@ code {
     .s2 {
       a {
         color: adjust-hue($color-orange-1, -10%);
-        border-bottom-color: rgba(adjust-hue($color-orange-1, -10%), .5);
+        border-bottom-color: rgba(adjust-hue($color-orange-1, -10%), 0.5);
 
         &:hover {
           border-bottom-color: adjust-hue($color-orange-1, -10%);

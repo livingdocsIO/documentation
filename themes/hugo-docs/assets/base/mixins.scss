@@ -41,7 +41,7 @@
   @include media-query-down(tablet) {
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none;
-    scrollbar-width: none;
+    scrollbar-width: none; // scss-lint:disable PropertySpelling
 
     &::-webkit-scrollbar {
       display: none;
@@ -68,7 +68,7 @@
 @mixin text-link() {
   color: $color-blue-1;
   cursor: pointer;
-  border-bottom: 1px solid rgba($color-blue-1, .5);
+  border-bottom: 1px solid rgba($color-blue-1, 0.5);
 
   &:hover {
     border-bottom-color: $color-blue-1;
