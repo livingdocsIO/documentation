@@ -1,6 +1,6 @@
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -18,8 +18,8 @@ html {
 
 em {
   background-color: $color-cyan-2;
-  padding-right: .2em;
-  padding-left: .2em;
+  padding-right: 0.2em;
+  padding-left: 0.2em;
   box-decoration-break: clone;
   font-style: normal;
 }

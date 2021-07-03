@@ -1,4 +1,4 @@
-$list-number-font-factor: .8;
+$list-number-font-factor: 0.8;
 $list-number-circle-size: 2em;
 $list-number-gap: 1.5 * $space-s;
 
@@ -7,22 +7,22 @@ $list-number-gap: 1.5 * $space-s;
     ul {
       padding-left: 2 * $space-s;
       margin-top: $space-m;
-      margin-bottom: $space-m; 
+      margin-bottom: $space-m;
 
       li {
         margin-bottom: $space-m;
       }
     }
 
-    & > ul {
+    > ul {
       margin-top: $space-l;
-      margin-bottom: $space-l; 
+      margin-bottom: $space-l;
     }
 
     ol {
       padding-left: calc(#{$list-number-circle-size} + #{$list-number-font-factor} * #{$list-number-gap});
       margin-top: $space-m;
-      margin-bottom: $space-m; 
+      margin-bottom: $space-m;
       list-style: none;
 
       @for $i from 1 through 100 {
@@ -36,7 +36,7 @@ $list-number-gap: 1.5 * $space-s;
         position: relative;
         margin-bottom: $space-m;
 
-        &:before {
+        &::before {
           content: counter(listCounter);
           display: inline-flex;
           justify-content: center;
@@ -44,10 +44,10 @@ $list-number-gap: 1.5 * $space-s;
           width: $list-number-circle-size;
           height: $list-number-circle-size;
           position: absolute;
-          top: -.2em;
+          top: -0.2em;
           left: calc(-#{$list-number-circle-size} - #{$list-number-gap});
-          padding-top: .1em;
-          padding-left: .05em;
+          padding-top: 0.1em;
+          padding-left: 0.05em;
           background: $color-black;
           border-radius: 100%;
           color: $color-white;
@@ -56,9 +56,9 @@ $list-number-gap: 1.5 * $space-s;
       }
     }
 
-    & > ol {
+    > ol {
       margin-top: $space-l;
-      margin-bottom: $space-l; 
+      margin-bottom: $space-l;
     }
   }
 }

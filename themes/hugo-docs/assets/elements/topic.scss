@@ -14,12 +14,12 @@
     }
 
     &:hover {
-      background-color: rgba($color-grey-5, .15);
+      background-color: rgba($color-grey-5, 0.15);
       text-decoration: none;
     }
   }
 
-  & > a .arrow-down {
+  > a .arrow-down {
     position: absolute;
     right: 14px;
     top: calc(50% - 4px);
@@ -34,9 +34,9 @@
   }
 
   &.active {
-    & > a {
+    > a {
       color: $color-cyan-1;
-      background-color: rgba($color-cyan-2, .4);
+      background-color: rgba($color-cyan-2, 0.4);
 
       .arrow-down {
         transform: rotate(-135deg);
@@ -45,15 +45,14 @@
   }
 
   &.open {
-    & > a .arrow-down {
+    > a .arrow-down {
       transform: rotate(-135deg);
       margin-bottom: 3px;
     }
   }
 
-  & > a .arrow-right {
+  > a .arrow-right {
     @extend .arrow-down;
     transform: rotate(-45deg);
   }
 }
-

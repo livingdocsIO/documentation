@@ -1,10 +1,10 @@
-#TableOfContents {
+#TableOfContents { // scss-lint:disable SelectorFormat
   ul {
     li {
       a {
         @extend %font-s-xs;
         display: block;
-        padding: $space-xs 0px;
+        padding: $space-xs 0;
         color: inherit;
       }
     }
@@ -12,14 +12,14 @@
 }
 
 .right-toc {
-  #TableOfContents {
+  #TableOfContents { // scss-lint:disable SelectorFormat
     ul {
       list-style-type: none;
       padding: 0;
       margin: 0;
 
       li {
-        ul {
+        ul { // scss-lint:disable SelectorDepth
           list-style-type: none;
           padding: 0;
           margin-left: $space-s;
@@ -27,9 +27,9 @@
       }
     }
 
-    & > ul:before {
+    > ul::before {
       @extend .section-label;
       @extend .section-label--table-of-contents;
     }
-  }  
+  }
 }
