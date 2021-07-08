@@ -13,7 +13,7 @@ The design settings define global design properties like the CSS to use or how c
 
 An example:
 ```js
-// projectConfig.designSettings: {...}
+// projectConfig.designSettings:
 designSettings: {
 
     assets: {
@@ -87,10 +87,13 @@ designSettings: {
         ]
       }
     ],
+    
     defaultComponents: {
       paragraph: 'p',
-      image: 'image'
+      image: 'image',
+      video: 'video'
     },
+ 
     fieldExtractor: [
       {
         // metadata handle
@@ -101,6 +104,7 @@ designSettings: {
         matches: ['title.text']
       }
     ],
+    
     namedCrops: [
       {
         handle: 'mobile',
@@ -150,7 +154,10 @@ designSettings: {
       }
     ]
 },
+```
 
+```js
+// projectConfig.designSettings:
 components: [
     {
       name: 'title',
@@ -413,9 +420,10 @@ We advise you to use the UI in "Project Setup - Component Library" to create and
 
 ## Default Components
 
-Livingdocs knows 2 types of default components:
-- Paragraph, automatic insert when a user presses "Enter" in the editor, typically a p tag
-- Image, automatic insert when a user drags an image to Livingdocs, e.g. from the Desktop
+Livingdocs knows 3 types of default components:
+- `paragraph`, automatic insert when a user presses "Enter" in the editor, typically a p tag
+- `image`, automatic insert when a user drags an image to Livingdocs, e.g. from the Desktop
+- `video`, automatic insert when a user drags a video to Livingdocs, e.g. from the Desktop
 
 You have to configure the handle of the respective component that should be inserted.
 
