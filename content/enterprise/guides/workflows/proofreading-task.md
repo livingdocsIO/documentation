@@ -27,6 +27,8 @@ metadata: [
   type: 'li-task-v2',
   config: {
     label: 'Proofreading',
+    // allows to assign a user to a task
+    assignUsers: true,
     showInTaskList: true,
     // flag to control if the card should be updated automatically on custom dashboard
     realtimeNotification: true,
@@ -64,6 +66,72 @@ metadata: [
   }
 }
 ]
+```
+
+Additionally, you need to extend the metadata mapping defined in your server config under `search.metadataMapping` for the property `proofreading`.
+
+```js
+    ...
+    "proofreading": {
+      "properties": {
+        "state": {
+          "type": "keyword",
+          "index": true
+        },
+        "deadline": {
+          "type": "date",
+          "format": "strict_date_time",
+          "index": true
+        },
+        "priority": {
+          "type": "keyword",
+          "index": true
+        },
+        "requested": {
+          "properties": {
+            "date": {
+              "type": "date",
+              "format": "strict_date_time",
+              "index": true
+            },
+            "user": {
+              "type": "keyword",
+              "index": true
+            }
+          }
+        },
+        "accepted": {
+          "properties": {
+            "date": {
+              "type": "date",
+              "format": "strict_date_time",
+              "index": true
+            },
+            "user": {
+              "type": "keyword",
+              "index": true
+            }
+          }
+        },
+        "completed": {
+          "properties": {
+            "date": {
+              "type": "date",
+              "format": "strict_date_time",
+              "index": true
+            },
+            "user": {
+              "type": "keyword",
+              "index": true
+            }
+          }
+        },
+        "assignees": {
+          "type": "keyword",
+          "index": true
+        }
+      }
+    },
 ```
 
 ## Register a deadline computation in the editor
