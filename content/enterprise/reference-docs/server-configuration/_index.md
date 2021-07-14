@@ -625,14 +625,15 @@ elasticIndex: {
 #### Pusher
 
 Disabled by Default. Enable to show who is viewing a document in real time
-and allow for basic collaboration features in the editor.
+and allow for collaboration features in the editor.
 
 ```js
 pusher: {
   enabled: false,
   app_id: '108378',
   key: 'dda3c0ca58ed2f649ea8',
-  secret: '*****'
+  secret: '*****',
+  cluster: 'eu'
 }
 ```
 
