@@ -1,6 +1,5 @@
 ---
 title: Design Configuration v1
-menu: reference
 ---
 
 **DEPRECATED** This is only as a reference for old projects. DO NOT USE design config v1 in new projects.

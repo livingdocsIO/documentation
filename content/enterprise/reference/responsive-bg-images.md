@@ -1,6 +1,5 @@
 ---
 title: Responsive background images
-menu: reference
 ---
 
 ## The problem
