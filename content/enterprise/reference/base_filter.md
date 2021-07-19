@@ -1,6 +1,5 @@
 ---
 title: Base Filter
-menu: reference
 ---
 
 Base filters are used to filter the resultset on a dashboard or a search modal.

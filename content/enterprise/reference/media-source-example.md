@@ -1,6 +1,5 @@
 ---
 title: Media Sources
-menu: reference
 ---
 
 {{< added-in release-2021-03 >}}

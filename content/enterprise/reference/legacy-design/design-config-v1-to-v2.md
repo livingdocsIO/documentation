@@ -1,6 +1,5 @@
 ---
 title: Design Configuration v1 to v2 mapping
-menu: reference
 ---
 
 If you want to migrate from a design configuration v1 (deprecated) to a design configuration v2 (current), you can follow this abstract example to migrate your design.

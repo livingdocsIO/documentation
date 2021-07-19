@@ -1,6 +1,5 @@
 ---
 title: Core Display Filter
-menu: reference
 ---
 
 Possible values for `displayFilters` are:
