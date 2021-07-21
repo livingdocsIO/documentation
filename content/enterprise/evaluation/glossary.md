@@ -5,46 +5,73 @@ menus:
     weight: 7
 ---
 
-## Channel
+### Content Type
 
-Represents a collection of documents. All documents in a `channel` must use
-the same `design`. A `channel` also defines the `Renditions`.
+This is a document configuration. The contentType specifies what metadata properties can be used in the [metadata](#metadata) and what components can be used in the [content](#content) of a [document](#document). And also further worflow and integration configurations.
 
-## Design
+### Content
 
-A list of `Components` and configurations how they can be used
-in a `Livingdoc` and how users can interact with these `Components` in the
-`Livingdocs Editor`.
+The content specifies the flexible content of a [document](#document).
 
-## Downstream
+### Component
 
-See *Upstream*.
+A component specifies a HTML template and a set of [directives](#directive).
 
-## Embedded Design
+### Directive
+
+A directive is a field within a [component](#component). The available directive types are: text, image, video, audio, include, html and link.
+
+### Document
+
+A document consists of [content](#content) and [metadata](#metadata). Documents are versioned.
+
+### Design
+
+A list of [components](#component) and configurations how they can be used
+in a [livingdoc](#livingdoc) and how users can interact with these [components](#components) in the
+`Livingdocs Editor`. Designs are versioned.
+
+##### Embedded Design
 
 An "Embedded Design" lives inside of a Livingdocs channel configuration, therefore every "Embedded Design" is unique per project.
 Another design type is a [Referenced Design](#referenced-design).
 
-## Livingdoc
-
-A `livingdoc` is a document in our system. It separates content from structure
-by using `Components`. A `Livingdoc` references a specific `Design` which
-defines the available `Components` that can be used in the document.
-
-## Project
-
-Represents an organisation and consists of users and channels.
-
-## Referenced Design
+##### Referenced Design
 
 A "Referenced Design" can be used multiple times in different projects.
 Another design type is an [Embedded Design](#embedded-design).
 
-## Upstream
+### List
 
-*Upstream* is a package/repository which is integrated in another project called
-*downstream*. In our case the *upstreams* are our core `livingdocs-editor` and
-`livingdocs-server`. They are provided as npm packages (semantic versioning) and
-can be used by a *downstream* project, e.g., `livingdocs-server-downstream`. The
-`livingdocs-framework` package cannot be installed separately, it is a core
-package that cannot be used as an *upstream*.
+A list is an ordered collection of [documents](#document).
+
+### Livingdoc
+
+A livingdoc is the [content](#content) of a [document](#document) in our content format. A livingdoc is a tree of [components](#components).
+
+Every livingdoc references a specific [design](#design) version.
+
+### Menu
+
+This is a representation of a menu on a website or app. It's a tree with links to [documents](#document) or urls.
+
+### Metadata
+
+Every [document](#document) contains a set of metadata. Metadata are configurable and are a list of keys and values.
+
+### Media Library
+
+The media library manages images, videos, audio and other files used in your [documents](#document).
+
+### Project
+
+Represents an organisation and consists of users, [documents](#document), [menus](#menu), [lists](#list) and a [media library](#media-library).
+
+### Project Configuration
+
+The json configuration of a [project](#project). This determines the settings for a particular project and is versioned.
+
+### Upstream / Downstream
+
+The `livingdocs-editor` and `livingdocs-server` repositories are are referenced as upstream. And your
+server and editor repositories are referenced as downstream.
