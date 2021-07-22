@@ -30,18 +30,32 @@ The storage of choice for Livingdocs is Amazon S3, the bucket is configured in t
 
 server configuration:
 ```js
-images: {
-  public: 'http://bucket-name.s3.amazonaws.com',
-  bucket: 'bucket-name',
-  bucket_region: 'eu-west-1'
+mediaLibrary: {
+  images: {
+    // base url of the storage
+    publicUrl: 'https://livingdocs-images-dev.s3.amazonaws.com',
+    // {{< a ref="/enterprise/reference-docs/server-configuration/storage" title="Storage Configuration" >}}
+    storage: {
+      strategy: 's3',
+      prefix: 'images/' // optional, the storage key will be prefixed (Added in: release-2021-06)
+      config: {
+        bucket: 'livingdocs-images-development',
+        region: 'eu-central-1',
+        secretAccessKey: '****',
+        accessKeyId: '****'
+      }
+    }
+  }
 }
 ```
 
 You can configure your own image storage using the following configuration:
 ```js
-images: {
-  proxy: {
-    url: 'http://your-image-storage.com'
+mediaLibrary: {
+  images: {
+    proxy: {
+      url: 'http://your-image-storage.com'
+    }
   }
 }
 ```
