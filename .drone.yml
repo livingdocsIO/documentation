@@ -60,7 +60,7 @@ steps:
   commands:
     - |
       mkdir -p /root/.kube && echo "$KUBE_CONFIG" > /root/.kube/config && chmod 600 /root/.kube/config
-      helm upgrade docs -n livingdocs-production --set "image.tag=${DRONE_TAG}" ./helm
+      helm upgrade docs -n docs-prod --set "image.tag=${DRONE_TAG}" ./helm
 
 volumes:
 - name: dockersocket
@@ -72,6 +72,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 745addf13334a05d341d93edaad9201e2b0708f8bf7e8b415d9061758d958f53
+hmac: 2fe81489955c06e1e2c06499e5d894e73a93a4cf53ddc70f2d4e470255f325af
 
 ...
