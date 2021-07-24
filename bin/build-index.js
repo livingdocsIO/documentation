@@ -5,7 +5,6 @@ const {DomHandler} = require("domhandler")
 const {getText, hasAttrib, getAttributeValue} = require('domutils')
 
 buildIndex('./public/search.json')
-buildIndex('./public/enterprise/search.json')
 
 function buildIndex (file) {
   const json = JSON.parse(fs.readFileSync(file, 'utf8'))

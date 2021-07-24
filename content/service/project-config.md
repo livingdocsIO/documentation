@@ -1,5 +1,6 @@
 ---
 title: Project Config
+draft: true
 ---
 
 The project config defines the project specific config, contentTypes and designs. To build a custom design the [designSettings](project_config.md#designSettings) and [components](project_config.md#components) can be modified.
@@ -75,4 +76,3 @@ At the moment following changes on the design are not supported.
 * [components documentation](design_component_settings.md)
 * [embedded design example](https://github.com/livingdocsIO/documentation/tree/bc45ad164d41aa10cdb72c2e832e4e0b334c9a7b/service/design_example.md)
 * [referenced design example](https://github.com/livingdocsIO/magazine-example) - check also out the magazine design example. But attention the format is not exactly the same, but it gives you a feeling what you can do with a design
-

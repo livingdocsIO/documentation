@@ -3,7 +3,7 @@
 <div class="page">
   {{ partial "sidebar.html" . }}
   <main class="page__content">
-    <article class="article">
+    <article class="article" id="{{ .Slug }}">
       <h1 class="article__title">
         {{ .Title }}
         {{ if (ne (.Param "renderEditButton") false) }}
@@ -12,11 +12,8 @@
       </h1>
 
       <div class="article__content">{{ .Content }}</div>
-
     </article>
-
-    {{ if (ne (.Param "renderTOC") false) }}<div class="right-toc">{{ .TableOfContents }}</div>{{ end }}
   </main>
-
 </div>
+
 {{ partial "footer.html" . }}

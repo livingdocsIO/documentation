@@ -3,7 +3,7 @@ theme: hugo-docs
 uglyURLs: false
 refLinksErrorLevel: WARNING
 baseURL: https://docs.livingdocs.io/
-title: Livingdocs Enterprise Documentation
+title: Livingdocs Documentation
 enableGitInfo: true
 enableEmoji: true
 enableInlineShortcodes: true
@@ -47,4 +47,3 @@ outputs:
 
 params:
   branch: master
-

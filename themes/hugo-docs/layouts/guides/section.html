@@ -1,0 +1,26 @@
+{{ partial "header.html" . }}
+
+<div class="page">
+  {{ partial "sidebar.html" . }}
+  <main class="page__content">
+    <article class="article">
+      <div class="article__content">
+        {{ .Content }}
+        {{ if (ne (.Param "renderSummaries") false) }}
+          <div class="section-teasers">
+            {{ range .Pages.ByWeight }}
+            <div class="section-teaser">
+              <a class="section-teaser__link"  href="{{ .RelPermalink }}">
+                <h3 class="section-teaser__title">{{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}</h3>
+                {{ with .Description}}<p class="section-teaser__text">{{ . }}</p>{{ end }}
+              </a>
+            </div>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+    </article>
+  </main>
+</div>
+
+{{ partial "footer.html" . }}
