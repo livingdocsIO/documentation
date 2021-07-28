@@ -15,20 +15,18 @@ Here is an example includes configuration to consider for the editable teaser us
 ```js
 {
   name: 'teaser',
-  paramsSchema: [
-    // this will render a UI in the document editing sidebar to let the User select a document with
-    // the contentType `regular` to link to.
-    {
-      handle: 'article',
-      type: 'li-reference',
-      config: {
-        referenceType: 'document',
-      },
-      ui: {
-        label: 'Teaser'
-      }
+  // this will render a UI in the document editing sidebar to let the User select a document with
+  // the contentType `regular` to link to.
+  paramsSchema: [{
+    handle: 'article',
+    type: 'li-reference',
+    config: {
+      referenceType: 'document',
+    },
+    ui: {
+      label: 'Teaser'
     }
-  ],
+  }],
   rendering: {
     type: 'function',
     render (params, options) {
@@ -49,17 +47,20 @@ Here is an example includes configuration to consider for the editable teaser us
   directives: [{
     name: 'teaser',
     type: 'include',
-    service: 'teaser', // refer to the include service handle
-    paramsSchemaExtension: [ // extend the config for li-reference type input
-      {
-        name: 'article', // refer to the handle of the services paramsSchema property
-        config: {
-          // configure base filters for the article search modal
-          contentType: ['regular'], // only document of contentType 'regular'
-          published: true // only published documents
-        }
+    // refer to the include service handle
+    service: 'teaser',
+    // extend the config for li-reference type input
+    paramsSchemaExtension: [{
+      // refer to the handle of the services paramsSchema property
+      name: 'article',
+      // configure base filters for the article search modal
+      config: {
+        // only document of contentType 'regular'
+        contentType: ['regular'],
+        // only published documents
+        published: true
       }
-    ]
+    }]
   }],
   html: `
     <div doc-include="teaser">

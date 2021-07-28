@@ -15,7 +15,7 @@ The screenshot below shows the task in question.
 
 #### Basic information about tasks
 - You can add as much tasks as you want (additionally to the `review` task)
-- A task has 3 states: `requested`, `accepted`, `completed`. 
+- A task has 3 states: `requested`, `accepted`, `completed`.
 - A task can be configured individually on the server.
 
 
@@ -24,8 +24,7 @@ The screenshot below shows the task in question.
 On the server we need to configure a new metadata field `review` (more about metadata fields you can read [here]({{< ref "/enterprise/reference-docs/server-api/metadata.md" >}}))
 
 ```js
-metadata: [
-{
+metadata: [{
   // metadata field name
   handle: 'review',
   // plugin
@@ -47,6 +46,5 @@ metadata: [
       afterLabel: 'Review finished'
     }
   }
-}
-]
+}]
 ```

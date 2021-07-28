@@ -25,29 +25,29 @@ The definition of the custom indexing is done in the project config at `contentT
 
 ```js
 publicationIndex: {
-    sortDate: {
+  sortDate: {
+    fieldName: 'publishDate',
+    type: 'li-datetime'
+  },
+  scheduledPublishing: {
+    on: {
       fieldName: 'publishDate',
       type: 'li-datetime'
     },
-    scheduledPublishing: {
-      on: {
-        fieldName: 'publishDate',
-        type: 'li-datetime'
-      },
-      off: {
-        fieldName: 'unpublishDate',
-        type: 'li-datetime'
-      }
-    },
-    filters: [{
-      label: 'News',
-      type: 'li-boolean',
-      filterField: 'news'
-    }, {
-      label: 'Authors',
-      type: 'li-reference-list',
-      filterField: 'authors'
-    }]
+    off: {
+      fieldName: 'unpublishDate',
+      type: 'li-datetime'
+    }
+  },
+  filters: [{
+    label: 'News',
+    type: 'li-boolean',
+    filterField: 'news'
+  }, {
+    label: 'Authors',
+    type: 'li-reference-list',
+    filterField: 'authors'
+  }]
 }
 ```
 

@@ -107,7 +107,7 @@ module.exports = {
     async render (params, options) {
       // When options preview is true the request comes from a livingdocs
       // editor while a user is editing a document.
-      const isPreview = options && options.preview === true
+      const isPreview = options?.preview === true
 
       // It does not render an unpublished document on the public API
       if (isPreview && paramsAreInsufficient(params)) {
@@ -157,7 +157,8 @@ module.exports = {
     paramsSchema: [
       {
         type: 'li-text',
-        handle: 'url', // <-- 1. register url form field in sidebar
+        // 1. register url form field in sidebar
+        handle: 'url',
         config: {
           maxLength: 200
         },
@@ -176,16 +177,14 @@ module.exports = {
     rendering: {
       type: 'function',
       async render (params, options) {
-        const {url} = params  // <-- 2. use the params to render the include
-        if (!url) {
-          return options.preview
-            ? {doNotRender: true} // render the placeholder in the editor
-            : {html: ''} // do not render anything
-        }
+        // 2. use the params to render the include
+        if (params.url) return {html: `<div> do something with the url: ${params.url}</div>`}
 
-        return {
-          html: `<div> do something with the url: ${url}</div>`
-        }
+        // render the placeholder in the editor
+        if (options.preview) return {doNotRender: true}
+
+        // do not render anything
+        return {html: ''}
       }
     },
     blockEditorInteraction: 'initial'

@@ -88,8 +88,7 @@ module.exports = {
   }
 }
 
-async function renderYoutube (params, options) {
-  const {url} = params
+async function renderYoutube ({url}, options) {
   if (!url) {
     return options.preview
       ? {doNotRender: true} // render the placeholder in the editor
@@ -98,7 +97,8 @@ async function renderYoutube (params, options) {
 
   // always extract the ID so the document only contains 'safe' HTML
   const videoId = getId(url)
-  return {html: `<iframe width="560" height="315" src="//www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`
+  return {
+    html: `<iframe width="560" height="315" src="//www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`
   }
 }
 

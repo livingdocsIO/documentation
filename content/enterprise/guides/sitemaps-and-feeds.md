@@ -63,14 +63,12 @@ module.exports = function (feature, server) {
 module.exports = {
   title: 'RSS Feeds',
   description: 'Feed endpoints',
-  endpoints: [
-    {
-      path: 'custom/api/v1/feed',
-      auth: 'public-api:read',
-      method: 'get',
-      action: 'getFeed'
-    }
-  ]
+  endpoints: [{
+    path: 'custom/api/v1/feed',
+    auth: 'public-api:read',
+    method: 'get',
+    action: 'getFeed'
+  }]
 }
 ```
 

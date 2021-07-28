@@ -19,8 +19,7 @@ The screenshot below shows the task in question.
 On the server we need to configure a new metadata field `proofreading` (more about metadata fields you can read [here]({{< ref "/enterprise/reference-docs/server-api/metadata.md" >}}))
 
 ```js
-metadata: [
-{
+metadata: [{
   // metadata field name
   handle: 'proofreading',
   // plugin
@@ -64,8 +63,7 @@ metadata: [
       high: {value: 2, unit: 'hours'}
     }
   }
-}
-]
+}]
 ```
 
 Additionally, you need to extend the metadata mapping defined in your server config under `search.metadataMapping` for the property `proofreading`.

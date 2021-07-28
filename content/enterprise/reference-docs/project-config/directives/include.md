@@ -20,10 +20,10 @@ module.exports = {
     type: 'include',
     service: 'foo-service',
     config: {
-        language: 'en'
+      language: 'en'
     },
     defaultParams: {
-        tag: 'livingdocs'
+      tag: 'livingdocs'
     }
   }],
   html: dedent`
@@ -51,9 +51,9 @@ You can define one service (`service`) or an array of `services` in which case t
 schema of services:
 ```js
 services: ms.arrayOf(ms.strictObj({
-        service: 'string:required',
-        label: 'string:required',
-        defaultParams: ms.obj(),
-        config: ms.obj()
-      }))
+  service: 'string:required',
+  label: 'string:required',
+  defaultParams: ms.obj(),
+  config: ms.obj()
+}))
 ```

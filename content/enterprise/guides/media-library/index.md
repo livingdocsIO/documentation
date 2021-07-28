@@ -270,15 +270,15 @@ module.exports = {
     }]
   }],
   html: dedent`
-  <div class="m-asset-image m-asset-image--numbered">
-    <div class="m-asset-image__image">
-      <img class="responsive-img" doc-image="image">
+    <div class="m-asset-image m-asset-image--numbered">
+      <div class="m-asset-image__image">
+        <img class="responsive-img" doc-image="image">
+      </div>
+      <div class="m-asset-image__options">
+        <div class="a-asset-input" doc-editable="caption">Caption</div>
+        <div class="a-asset-input" doc-editable="source">Source</div>
+      </div>
     </div>
-    <div class="m-asset-image__options">
-      <div class="a-asset-input" doc-editable="caption">Caption</div>
-      <div class="a-asset-input" doc-editable="source">Source</div>
-    </div>
-  </div>
   `
 }
 ```
@@ -528,25 +528,21 @@ This data structure is used to track transcoding state:
         // optional
         "errorMessage": "Error: Unsupported video resolution."
       }],
-      "transcodings": [
-        { 
-          "assetKey": "de2bc74bea-3",
+      "transcodings": [{
+        "assetKey": "de2bc74bea-3",
 
-          // Just an example; defined by external system
-          "versions": [
-            {
-              "format": "video/mp4",
-              "url": "https://example.com/example-w500.mp4",
-              "size": "mobile"
-            },
-            {
-              "format": "video/webm",
-              "url": "https://example.com/example-w500.webm",
-              "size": "mobile"
-            }
-          ]
-        }
-      ]
+        // Just an example; defined by external system
+        "versions": [{
+          "format": "video/mp4",
+          "url": "https://example.com/example-w500.mp4",
+          "size": "mobile"
+        },
+        {
+          "format": "video/webm",
+          "url": "https://example.com/example-w500.webm",
+          "size": "mobile"
+        }]
+      }]
     }
   }
 }
@@ -578,53 +574,48 @@ module.exports = {
     label: 'Files', // used in dashboards generated for this mediaType
     description: ''
   },
-  metadata: [ // any metadata configuration as you know it from contentTypes already
-    {
-      handle: 'title',
-      type: 'li-text',
-      config: {
-        required: true, // if a metadata property is required, the user will see a form to enter the metadata during upload
-        requiredErrorMessage: 'Please provide a title',
-        maxLength: 200,
-        index: true
-      },
-      ui: {component: 'liMetaTextForm'}
+  // any metadata configuration as you know it from contentTypes already
+  metadata: [{
+    handle: 'title',
+    type: 'li-text',
+    config: {
+      required: true, // if a metadata property is required, the user will see a form to enter the metadata during upload
+      requiredErrorMessage: 'Please provide a title',
+      maxLength: 200,
+      index: true
     },
-    {
-      handle: 'description',
-      type: 'li-text',
-      config: {
-        index: true
-      },
-      ui: {component: 'liMetaTextForm'}
+    ui: {component: 'liMetaTextForm'}
+  },
+  {
+    handle: 'description',
+    type: 'li-text',
+    config: {
+      index: true
     },
-    {
-      handle: 'credit',
-      type: 'li-text',
-      config: {
-        required: true,
-        requiredErrorMessage: 'Please provide a source',
-        index: true
-      },
-      ui: {component: 'liMetaTextForm'}
-    }
-  ],
+    ui: {component: 'liMetaTextForm'}
+  },
+  {
+    handle: 'credit',
+    type: 'li-text',
+    config: {
+      required: true,
+      requiredErrorMessage: 'Please provide a source',
+      index: true
+    },
+    ui: {component: 'liMetaTextForm'}
+  }],
   editor: {
     // the dashboard seen by users when opening from the document editor
     dashboard: {
-      displayFilters: [
-        {
-          filterName: 'liDateTimeRange'
-        }
-      ]
+      displayFilters: [{
+        filterName: 'liDateTimeRange'
+      }]
     },
     // the dashboard opened through the main navigation
     managementDashboard: {
-      displayFilters: [
-        {
-          filterName: 'liDateTimeRange'
-        }
-      ]
+      displayFilters: [{
+        filterName: 'liDateTimeRange'
+      }]
     }
   }
 }
