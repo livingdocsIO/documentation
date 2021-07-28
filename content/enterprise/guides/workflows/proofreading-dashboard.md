@@ -44,7 +44,7 @@ References:
 
 ### Add my-proofreading to elasticsearch
 The metadata field `my-proofreading` should be searchable by the proofreading dashboard later. Therefore you have to extend the Elasticsearch document mapping.
-You will find an example on the [server](https://github.com/livingdocsIO/livingdocs-server/blob/be923b40b47bb1d27d5f63d65c9548928c28890f/example-server/metadata/es_metadata_mapping_v6.json#L111-L166).
+You will find an example on the [server](https://github.com/livingdocsIO/livingdocs-server/blob/cb91a7913149293e2d8562f98c085bb46da41d60/example-server/metadata/es_metadata_mapping_v6.json#L59-L118).
 
 ## 2) Register your custom dashboard on the editor
 
