@@ -100,8 +100,6 @@ module.exports = (editorModule) => {
 
 controller.js
 ```js
-const _get = require('lodash/get')
-
 module.exports = class ArticleListItemController {
   static get $inject () { return ['session'] }
 
@@ -110,11 +108,11 @@ module.exports = class ArticleListItemController {
   }
 
   hasPushNotifications () {
-    return _get(this.document, 'metadata.pushNotifications.messageCount')
+    return this.document.metadata.pushNotifications?.messageCount
   }
 
   pushNotificationsSent () {
-    return _get(this.document, 'metadata.pushNotifications.messageCount')
+    return this.document.metadata.pushNotifications?.messageCount
   }
 
   hasPastPublication () {

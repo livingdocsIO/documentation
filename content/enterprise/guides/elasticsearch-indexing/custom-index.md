@@ -179,12 +179,11 @@ module.exports = async function ({server, indexConfig}) {
       //   { operation: 'delete', id: 60012 }
       // ]
       entries: updatedDocumentVersions.map((documentVersion) => {
-        const documentId = documentVersion.getDocumentId()
         // delete operation
-        if (!documentVersion.publicationEntity.created_at) {
+        if (!documentVersion.isPublished()) {
           return {
             operation: 'delete',
-            id: documentId
+            id: documentVersion.documentId
           }
         }
         // update operation

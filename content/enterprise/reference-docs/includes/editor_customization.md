@@ -173,7 +173,6 @@ bindings: {
 
 `controller.js`
 ```js
-const _get = require('lodash/get')
 const BrightcoveVideo = require('./model')
 
 module.exports = class BrightcoveVideoController {

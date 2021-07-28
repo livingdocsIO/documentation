@@ -61,7 +61,7 @@ The [boilerplate server](https://github.com/livingdocsIO/livingdocs-server-boile
 
 ```js
 validate: function (value, config) {
-  const reviewStatus = _.get(value, 'review.status')
+  const reviewStatus = value?.review?.status
   if (reviewStatus !== 'editorial-review') {
     return 'The review has to be completed by the editor in chief'
   }

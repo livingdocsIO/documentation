@@ -74,7 +74,7 @@ The exact way how the `value` of the index is set (see above) is defined in the 
 publicationIndex: {
   enabled: true,
   getValue (obj) {
-    return _.get(obj, 'reference.id')
+    return obj?.reference?.id
   }
 }
 ```

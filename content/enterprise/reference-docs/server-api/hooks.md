@@ -75,8 +75,7 @@ The prepublish hook allows modifications of the [DocumentVersion]({{< ref "/ente
 
 ```js
 async prepublishHookAsync ({documentVersion}) {
-  const metadata = documentVersion.getMetadata() || {}
-  if (metadata.title === 'Let me pass') {
+  if (documentVersion.metadata.title === 'Let me pass') {
     return {documentVersion}
   } else {
     // Example Validation Error for a metadata property

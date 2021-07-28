@@ -69,7 +69,7 @@ accessControlApi.registerHook(function ({action, projectId, userId, newDocument,
 })
 
 function canUpdate (documentVersion, userId) {
-  const hasFinancialReport = documentVersion.getMetadata().category === 'financialReport')
+  const hasFinancialReport = documentVersion.metadata.category === 'financialReport')
   if (hasFinancialReport && userId !== 1) {
    throw accessControlApi.permissionError(
     'No user except the admin is allowed to edit documents in the category financialReport'

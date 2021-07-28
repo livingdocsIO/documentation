@@ -24,7 +24,7 @@ An example of an includes return value:
     // the content contains the values for the directives configured on the `teaser` component
     content: {
       image: metadata.teaserImage,
-      title: documentVersion.getTitle(),
+      title: documentVersion.title,
       lead: 'Lead',
       byline: 'Byline',
       link: {href: 'https://example.com'}

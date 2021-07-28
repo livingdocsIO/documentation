@@ -207,22 +207,19 @@ module.exports = function (documentListsApi, publicationApi) {
       async render (params, options) {
         // you want to add error handling to this code
         // it is left out here for clarity
-        const documentList = await documentListsApi.get(params.listId, undefined, options)
-        const documentIds = documentList.documents
-          .map(entry => entry.document.id)
-          .filter(Boolean)
-        const documentVersions = await publicationApi.getPublicationsByDocumentIds(documentIds)
-        const res = []
-        for (const docVersion of documentVersions) {
-          if (!docVersion) continue
-          const document = docVersion.getSerializedDocument()
-          document.metadata = docVersion.getMetadata()
-          document.revision = docVersion.getSerializedRevision()
-          res.push(document)
-        }
-        // here you get all the documents in res
-        // you want to turn them into some html
-        return {html: '<h1>TODO render list</h1>'}
+        const documentList = await documentListsApi.getListInfo({
+          listId: params.listId,
+          limit: 10
+        })
+
+        const documentVersions = await publicationApi.getPublicationsByDocumentIds(
+          documentList.documentIds
+        )
+
+        // Generate and return some html
+        let html = ''
+        for (const doc of documentVersions) html += `<h1>${doc.metadata.title}</h1>`
+        return {html}
       }
     }
   }
