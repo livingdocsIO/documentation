@@ -13,6 +13,7 @@ The editor settings control the behavior of your editor UX, in particular:
 - [dashboards]({{< ref "editor-settings#dashboards" >}})
 - [start page]({{< ref "editor-settings#startpage" >}})
 - [media library]({{< ref "editor-settings#media-library" >}})
+- [document lists]({{< ref "editor-settings#document-lists" >}})
 - [text formatting]({{< ref "editor-settings#text-formatting" >}})
 
 An example:
@@ -140,6 +141,16 @@ An example:
       displayFilters: ['timeRange']
     },
   },
+
+  documentLists: {
+    card: {
+      name: 'liDocumentListCard' // default, can be omitted
+    },
+    dashboard: {
+      displayFilters: [],
+      baseFilters: []
+    }
+  }
 
   // Note: the textFormatting config can be overwritten in a `contentType`
   textFormatting: {
@@ -346,12 +357,48 @@ dashboardCardConfigurations: [
         }
       ]
     }
+  },
+  {
+    handle: 'myDocumentListCard',
+    useCard: 'liDocumentListCard',
+    options: {
+      // the liDocumentListCard supports the rendering of an additional Vue component
+      // inside. This component is configured here, it has to be registered with the vueComponentRegistry
+      uiExtensionComponent: {
+        name: 'liDocumentListCardExtensionRocket'
+      }
+    }
   }
 }
 ```
 
 This will define a card `myImageCard` to be used in `mediaType.editor.dashboard.card.name`. See the See [Media Type config example]({{< ref "/enterprise/reference-docs/project-config/media_types.md" >}}).
 
+
+## Document Lists
+```js
+documentLists: {
+  card: {
+    // defaults to liDocumentListCard provided by Livingdocs
+    // can be any card registered in the vueComponentRegistry or
+    // a configured one from dashboardCardConfigurations
+    name: 'myDocumentListCard'
+  },
+  dashboard: {
+    displayFilters: [],
+    baseFilters: [
+      {type: 'documentType', value: 'article'},
+      {type: 'documentState', value: 'published'}
+    ]
+  }
+}
+```
+### displayFilters
+
+[Display Filters]({{< ref "/enterprise/reference/display_filter.md" >}}) are filters that the user can set in the UI (below the search input).
+### baseFilters
+
+[Base Filters]({{< ref "/enterprise/reference/base_filter.md" >}}) are invisible filters and applied to every search (including the default result list).
 ### Behavior
 Then there are 2 configs to define the behavior when Images are inserted into a Document from the Media Library:
 - `mediaLibrary.altTextPrefilling: {metadataPropertyName: ''}`: a metadata property handle from which the `alt` attribute on an image tag is filled.

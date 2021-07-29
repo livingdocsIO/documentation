@@ -59,6 +59,7 @@ filters: {
       {type: 'sortBy', value: '-updated_at'}
     ]
   },
+  // this is deprecated, use projectConfig editorSettings.documentLists
   documentListList: {
     displayFilters: ['timeRange'],
     defaultQueries: [
