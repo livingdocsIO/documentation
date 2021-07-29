@@ -13,6 +13,7 @@ Livingdocs provides an API to register custom components written in VueJS. They 
 - [includeParamsSidebarForm](#includeparamssidebarform)
 - [dashboardCard](#dashboardcard)
 - [searchFilter](#searchfilter)
+- [liDocumentListCardExtension](#liDocumentListCardExtension)
 
 Depending on the `type`, you will get different `props` defined on your component. Please see below for details.
 
@@ -97,3 +98,28 @@ props: {
 ```
 
 A full example can be seen [here]({{< ref "/enterprise/guides/register-custom-dashboard-filters#register-custom-vue-component-filter" >}})
+
+
+### liDocumentListCardExtension
+A `liDocumentListCardExtension` registers a Vue component that can be configured to be displayed on `liDocumentListCard` dashboard cards.
+[here]({{< ref "/enterprise/guides/register-custom-dashboard-filters#register-custom-vue-component-filter" >}})
+
+These are the `props` which are provided to your vue component:
+```js
+props: {
+  options: {
+    type: Object
+  }
+},
+```
+The `options` object looks like this:
+```js
+{
+  column: '', // either empty (when in search column) or 'inbox', 'published', 'inline-list-edit`
+  listId: 1,
+  documentId: 2
+}
+```
+
+Valid `inject`:
+- `authedHttp`

@@ -181,7 +181,8 @@ The project config is a huge JSON file with subproperties for things like conten
     userMenu: [],
     mainNavigation:[],
     dashboards: [],
-    mediaLibrary: {}
+    mediaLibrary: {},
+    documentLists: {}
   },
 
   // Deliveries contains information about the delivery systems you operate
