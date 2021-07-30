@@ -172,7 +172,6 @@ The project config is a huge JSON file with subproperties for things like conten
 
   // Media Types
   mediaTypes: [{
-    // currently only type 'mediaImage' is supported
     require('./path/to/media_type_image_config')
   }],
 
