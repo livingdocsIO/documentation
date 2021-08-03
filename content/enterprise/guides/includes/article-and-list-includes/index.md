@@ -5,6 +5,8 @@ menus:
     parent: Includes and Embeds
 ---
 
+(Note: There are more modern ways of configuring includes for [articles]({{< ref "/enterprise/guides/includes/article-teasers" >}}) and [lists]({{< ref "/enterprise/guides/includes/article-list-teasers" >}}), which avoid the need to create custom UI components and to query for documents within the render function.)
+
 The Livingdocs core predefines 2 editor user interfaces for the `doc-include` services: `embed-teaser` and `list`. If you just want to enable those features without having to understand much else about includes, stick to the descriptions below. If you want to understand the concepts behind those instructions you should also read about [editor customizations]({{< ref "/enterprise/reference-docs/includes/editor_customization" >}}) and [server customizations]({{< ref "/enterprise/reference-docs/includes/server_customization.md" >}}).
 
 The `embed-teaser` is an article embed. The user can click the component containing the `embed-teaser` include and the sidebar shows a user interface that lets the user select an article to be embedded as a teaser.
