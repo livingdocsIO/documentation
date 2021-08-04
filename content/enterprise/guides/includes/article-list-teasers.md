@@ -25,9 +25,6 @@ This guide assumes that you are familiar with the possibilities to register an I
         defaultCount: 3,
         minCount: 2,
         maxCount: 6,
-        enablePriority: true, // Show the priority option within the editor UI
-        minPriority: 0,
-        maxPriority: 100,
         enableListEditing: true // Enable list creation and editing within the editor UI
       }
     }
@@ -43,8 +40,7 @@ This guide assumes that you are familiar with the possibilities to register an I
         return {doNotRender: true}
       }
       // Using "preload" in "paramsSchema" will populate the documents in the "values" property.
-      // It will automatically remove duplicates between lists displayed on the same page, and
-      // ensure the duplicate article is only added to the list with the highest priority (if used).
+      // It will automatically remove duplicates between lists displayed on the same page.
       if (!params.list?.values?.length) {
         // Empty list
         return {content: []}
