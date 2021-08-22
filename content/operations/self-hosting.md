@@ -1,7 +1,6 @@
 ---
 title: Hosting Livingdocs
 menu: operations
-tags: [operations]
 ---
 
 ### Hardware requirements

@@ -1,7 +1,7 @@
 ---
 title: Telemetry
-menu: operations
 description: Use opentelemetry to get metrics and traces out of the Livingdocs Server instance.
+menu: operations
 ---
 
 The telemetry stack will assist you in debugging your Livingdocs server instance. It enables you to build dashboards to provide an overview of the server and its surrounding environment, or to dive deeper into the metrics, logs and traces produced by the server.

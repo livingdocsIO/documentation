@@ -34,6 +34,9 @@
   @if $variant == highlight {
     box-shadow: 0 1px 24px $color-shadow--highlight;
   }
+  @if $variant == heavy {
+    box-shadow: 0 1px 6px rgba($color-black, 0.2);
+  }
   transition: box-shadow $transition-time;
 }
 

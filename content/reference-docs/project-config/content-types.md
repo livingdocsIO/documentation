@@ -221,7 +221,7 @@ componentGroups: [{
 
 The `publicationIndex` config allows you to define how documents of this content-type are indexed into the elastic search publication index which in turn is used by the public API. You can for example change the date field by which API results are sorted.
 
-For details on the configuration and how it interacts with the metadata configuration, see our section on [searching publications]({{< ref "/guides/elasticsearch-indexing/publication-index.md" >}}).
+For details on the configuration and how it interacts with the metadata configuration, see our section on [searching publications]({{< ref "/guides/search/publication-index.md" >}}).
 
 ## Routing
 *has UI support*

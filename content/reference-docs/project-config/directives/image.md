@@ -54,7 +54,7 @@ If you configure `recommendedRatios`, the given ratios are presented to the user
 
 ### Named Crops
 Alternatively to `imageRatios`/`recommendedRatios` you can configure `namedCrops` if you are using that system.
-To understand what Named Crops are, read the [Media Library Guide]({{< ref "/guides/media-library/index.md" >}}).
+To understand what Named Crops are, read the [Media Library Guide]({{< ref "/guides/media-library/media-library-setup" >}}).
 
 ### SrcSet
 

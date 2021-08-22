@@ -20,7 +20,7 @@ An unresolved include looks like this in the published document's HTML:
 </div>
 ```
 
-It contains all the information needed to replace it with the actual content. The example shows the core include for the [embed-teaser]({{< ref "/guides/includes/article-and-list-includes#embed-teaser">}}) that is given the linked document id as a parameter.
+It contains all the information needed to replace it with the actual content. The example shows the core include for the [embed-teaser]({{< ref "/guides/documents/includes/embedded-teaser-and-list#embed-teaser">}}) that is given the linked document id as a parameter.
 
 #### Resolved include
 

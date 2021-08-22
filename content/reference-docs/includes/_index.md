@@ -8,7 +8,7 @@ menus:
 
 Includes are the Livingdocs equivalent to [edge side includes](https://en.wikipedia.org/wiki/Edge_Side_Includes). They are extremely powerful in what they allow you to achieve but mastering them takes a bit of effort. In this section you get overview of the topic and further resources to go deeper into the topic.
 In particular we will cover:
-- how to configure the predefined `doc-include`s for [article embeds and lists]({{< ref "/guides/includes/article-and-list-includes.md" >}})
+- how to configure the predefined `doc-include`s for [article embeds and lists]({{< ref "/guides/documents/includes/embedded-teaser-and-list.md" >}})
 - how to implement new `doc-include`s in the [server]({{< ref "./server-customization.md" >}})
 - how to implement custom `doc-include` user interfaces in the [editor]({{< ref "./editor-customization.md" >}})
 
@@ -92,4 +92,4 @@ Both customizations are optional.
 - A `doc-include` service with only a server part would render a preview in the editor and also render the placeholder when publishing. It doesn't let your users interact with the rendering in the editor (no user interface). This can be used e.g. when a rendering is only dependent on something like the current time but on nothing that a user would set.
 - A `doc-include` service with both server and editor parts has a user interface where a user can set parameters that are then used in the server-side plugin to render a preview and also render the `doc-include` directive upon publishing. This is the example we used in this section.
 
-Livingdocs comes with editor-side plugins for an article embed and a manually sorted list of articles out of the box. [Read on]({{< ref "/guides/includes/article-and-list-includes" >}}) to learn how to configure those two and create your own (single) article embed and list of articles. Those are the main use cases to build your index page.
+Livingdocs comes with editor-side plugins for an article embed and a manually sorted list of articles out of the box. [Read on]({{< ref "/guides/documents/includes/embedded-teaser-and-list" >}}) to learn how to configure those two and create your own (single) article embed and list of articles. Those are the main use cases to build your index page.

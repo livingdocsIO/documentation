@@ -48,6 +48,6 @@ Additionally a `data-li-document-ref` attribute is written containing the `docum
 
 ### Caveats
 Since the `Internal Document Links` is specifically handy to link to not yet published documents you want to validate these links somewhere in your delivery to remove the ones pointing to not yet published documents.
-As this feature works on unpublished documents, Livingdocs cannot resolve the `routing` information from the [Routing System]({{< ref "/guides/routing-system.md" >}}) since this stores the information on publish which makes it unavailable before a document is published.
+As this feature works on unpublished documents, Livingdocs cannot resolve the `routing` information from the [Routing System]({{< ref "/guides/organisation/routing-system.md" >}}) since this stores the information on publish which makes it unavailable before a document is published.
 
 To have the `Internal Document Links` feature be able to construct working `href` attributes, you need a routing system in your delivery that is able to redirect a user do a valid document URL based on the `document.id` and `document.projectId` only.

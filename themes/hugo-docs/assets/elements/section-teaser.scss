@@ -7,6 +7,7 @@
 
   @include media-query(tablet) {
     width: 40%;
+    max-width: calc(50% - #{2 * $space-s});
   }
 
   &__link {
@@ -37,5 +38,55 @@
     margin-top: $space-s;
     margin-bottom: 0;
     color: $color-grey-2;
+  }
+
+  h3 {
+    margin-bottom: 5px;
+  }
+
+  ul {
+    margin: 0;
+    font-size: 15px;
+    color: darken($color-cyan-1, 5%);
+    padding: 0;
+    list-style-position: inside;
+  }
+
+}
+
+:root {
+  --teaser-color: #{$color-green-1};
+}
+
+.section-teaser--guides {
+
+  .section-teaser__link {
+    @include box-shadow(heavy);
+    background-color: var(--teaser-color);
+    justify-content: flex-start;
+
+    &:hover {
+      @include box-shadow(highlight);
+      border-color: rgba($color-black, 0.1);
+      // background-color: darken($color-green-1, 3%);
+    }
+  }
+
+  .section-teaser__title {
+    color: $color-white;
+    font-weight: 400;
+  }
+
+  p {
+    margin: 0;
+    color: rgba($color-white, 0.9);
+  }
+
+  ul {
+    color: rgba($color-white, 0.9);
+  }
+
+  li {
+    line-height: 1.5;
   }
 }

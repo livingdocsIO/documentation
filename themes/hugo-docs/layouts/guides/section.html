@@ -3,20 +3,44 @@
 <div class="page">
   {{ partial "sidebar.html" . }}
   <main class="page__content">
-    <article class="article">
-      <div class="article__content">
+    <article class="section">
+      {{ if gt (len (split .RelPermalink "/")) 3 }}
+      <ul id="breadcrumbs" class="breadcrumbs">
+        <li><a href="/guides">Guides</a></li>
+        {{ if gt (len (split .RelPermalink "/")) 4 }}
+        <li> <a href="{{.CurrentSection.Parent.RelPermalink}}">{{ .CurrentSection.Parent.Title }}</a></li>
+        {{ end }}
+      </ul>
+      {{ end }}
+
+      <div class="section__content">
         {{ .Content }}
         {{ if (ne (.Param "renderSummaries") false) }}
-          <div class="section-teasers">
-            {{ range .Pages.ByWeight }}
-            <div class="section-teaser">
-              <a class="section-teaser__link"  href="{{ .RelPermalink }}">
-                <h3 class="section-teaser__title">{{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}</h3>
-                {{ with .Description}}<p class="section-teaser__text">{{ . }}</p>{{ end }}
-              </a>
+
+          {{ $pages := .RegularPagesRecursive.GroupBy "CurrentSection" }}
+          {{ range sort $pages ".Key.Weight" }}
+            <div class="section__subsection">
+              <h2 class="section__title">{{ .Key.Title }}</h2>
+              <div class="section-teasers">
+                {{ range .Pages.ByWeight }}
+                <div class="section-teaser section-teaser--guides" 
+                  {{ if .Params.TeaserColor }} style="--teaser-color: {{ .Params.TeaserColor }}" {{ end }}>
+                  <a class="section-teaser__link"  href="{{ .RelPermalink }}">
+                    <h3 class="section-teaser__title">{{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}</h3>
+                    {{ with .Description}}<p class="section-teaser__text">{{ . }}</p>{{ end }}
+                    <ul>
+                    {{ range .Params.bullets }}
+                      <li>{{ . }}</li>
+                    {{ end }}
+                    </ul>
+                    <!-- <div>{{ range .Params.Tags }} <span>{{ . }}</span> {{ end }}</div> -->
+                  </a>
+                </div>
+                {{ end }}
+              </div>
             </div>
-            {{ end }}
-          </div>
+          {{ end }}
+
         {{ end }}
       </div>
     </article>

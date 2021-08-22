@@ -61,4 +61,4 @@ Apart from third-party content, teasers on overview pages are also currently han
 
 [create includes]({{< ref "../reference-docs/includes/_index.md" >}})
 
-[teaser and teaser list example]({{< ref "/guides/includes/article-and-list-includes" >}})
+[teaser and teaser list example]({{< ref "/guides/documents/includes/embedded-teaser-and-list" >}})

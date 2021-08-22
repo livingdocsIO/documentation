@@ -24,4 +24,4 @@ Possible values for `displayFilters` are:
 
 ## Custom Display Filter
 
-One can also register it's own display filter. Look into this [guide]({{< ref "/guides/register-custom-dashboard-filters" >}}) for more information.
+One can also register it's own display filter. Look into this [guide]({{< ref "/guides/editor/custom-dashboard-filters" >}}) for more information.

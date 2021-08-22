@@ -188,4 +188,4 @@ The copy configuration allows you to define the mapping of what content-types ca
 
 It's an array of copy definitions. Each definition first defines the `source`, i.e. the content-type that is copied (e.g. web article) and then the possible targets (e.g. print article), which metadata fields should be mapped from source to target and a set of rules on how to convert the components and directives (exlcude, simple copy or one to many).
 
-For the enterprise version we also have a detailed [guide for copy and transform workflows]({{< ref "/guides/workflows/document-copy" >}}).
+For the enterprise version we also have a detailed [guide for copy and transform workflows]({{< ref "/guides/editor/document-copy" >}}).

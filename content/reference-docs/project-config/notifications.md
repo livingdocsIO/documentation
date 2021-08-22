@@ -8,7 +8,7 @@ menu: reference-docs
 You can configure `notifications` to enable the possibility that a user can get notifications for changes on a document.
 
 There is also a guide how to configure the notifications.
-[Notification guide]({{< ref "/guides/watching-documents.md" >}})
+[Notification guide]({{< ref "/guides/editor/notifications.md" >}})
 
 ```js
 module.exports = {
@@ -61,6 +61,6 @@ Possible action to register on at the moment:
 - comment.resolve
 
 {{< added-in release-2021-06 >}}
-A user can be mentioned in comment. [Comments mentioning]({{< ref "/guides/watching-documents.md#comments-mentioning" >}})
+A user can be mentioned in comment. [Comments mentioning]({{< ref "/guides/editor/notifications.md#comments-mentioning" >}})
 
 The comments mentioning doesn't have to be configured. It will work automatically as soon as the comments and the notifications are enabled.

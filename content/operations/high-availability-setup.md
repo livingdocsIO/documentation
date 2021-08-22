@@ -1,7 +1,6 @@
 ---
-title: High availbility setup
+title: High Availibility Setup
 menu: operations
-tags: [operations]
 ---
 
 _Architecture diagrams master files can be found [on google drive](https://docs.google.com/document/d/1TQhW3HtzurI78kinxUCqf5OxG3RSoiEURXEn4AIztP0/edit#heading=h.snjxmn1ywzn)_

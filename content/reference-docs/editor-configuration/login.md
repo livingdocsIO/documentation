@@ -17,7 +17,7 @@ auth: {
 }
 ```
 
-Only strategies of type `link` are supported at the moment. For an example see our [Github login guide]({{< ref "/guides/auth/github-login.md" >}}).
+Only strategies of type `link` are supported at the moment. For an example see our [Github login guide]({{< ref "/guides/authentication/github-login" >}}).
 
 ### Login screen
 

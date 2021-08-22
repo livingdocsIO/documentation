@@ -36,7 +36,7 @@ As you can see, [Vue Single File Components](https://vuejs.org/v2/guide/single-f
 
 ### includeParamsSidebarForm
 
-A `includeParamsSidebarForm` is used to render a form to manipulate `params` for `doc-include`s. [This Guide]({{< ref "/guides/includes/twitter-embed" >}}) shows you how to use such a component.
+A `includeParamsSidebarForm` is used to render a form to manipulate `params` for `doc-include`s. [This Guide]({{< ref "/guides/documents/includes/twitter-embed" >}}) shows you how to use such a component.
 
 This component needs to take exactly one prop named `params`. It will contain an object with the params for the `doc-include`.
 ```js
@@ -97,12 +97,12 @@ props: {
 },
 ```
 
-A full example can be seen [here]({{< ref "/guides/register-custom-dashboard-filters#register-custom-vue-component-filter" >}})
+A full example can be seen [here]({{< ref "/guides/editor/custom-dashboard-filters#register-custom-vue-component-filter" >}})
 
 
 ### liDocumentListCardExtension
 A `liDocumentListCardExtension` registers a Vue component that can be configured to be displayed on `liDocumentListCard` dashboard cards.
-[here]({{< ref "/guides/register-custom-dashboard-filters#register-custom-vue-component-filter" >}})
+[here]({{< ref "/guides/editor/custom-dashboard-filters#register-custom-vue-component-filter" >}})
 
 These are the `props` which are provided to your vue component:
 ```js

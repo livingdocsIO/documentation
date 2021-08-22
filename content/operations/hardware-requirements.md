@@ -1,5 +1,5 @@
 ---
-title: Hardware requirements
+title: Hardware Requirements
 menu: operations
 tags: [operations]
 ---

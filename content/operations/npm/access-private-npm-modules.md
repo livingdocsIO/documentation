@@ -1,5 +1,5 @@
 ---
-title: Access @livingdocs organization on npm
+title: Access @livingdocs organisation on NPM
 ---
 
 ## NPM tokens
