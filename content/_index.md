@@ -9,7 +9,7 @@ outputs: [html, rss, SearchIndex]
 
 <!-- ## Learn important concepts and features
 
-In our [learn]({{< ref "learn" >}}) section you can find an introduction to the most important concepts of Livingdocs which will make using and configuring our product much easier. -->
+In our [learn]() section you can find an introduction to the most important concepts of Livingdocs which will make using and configuring our product much easier. -->
 
 
 ## Evaluation

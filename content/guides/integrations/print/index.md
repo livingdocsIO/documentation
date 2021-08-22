@@ -1,10 +1,7 @@
 ---
-title: Livingdocs Print Preview Setup
-linkTitle: Setup a print system
-tags: [guides, integrations]
-menus:
-  guides:
-    parent: Integrations
+title: Print Integration
+description: Print Integration with WoodWing Studio 
+weight: 4
 ---
 
 ## Motivation
@@ -120,7 +117,7 @@ A few things to note here:
 - we have a `components` section and a `componentMap` section. Each component needs a respective entry in the component map in order to be exported to the print system. We only showed a subset of the supported components here, for a productive setup you want to discuss this with your print system provider.
 - we set the `print.enableStepZooming` option to true. In that configuration editors can zoom the print preview with a mousewheel similar to the image crop interface in the Livingdocs editor. If it is set to `false` the print preview will be static and can be toggled between sidescreen and fullscreen.
 
-We leave out the steps to create the references components as well as grouping them in the `designSettings` and requiring them in the project config's index file. Those steps are equivalent to what you do for online articles, see [here]({{< ref "../../design/create-designs/index.md" >}}).
+We leave out the steps to create the references components as well as grouping them in the `designSettings` and requiring them in the project config's index file. Those steps are equivalent to what you do for online articles, see [here]({{< ref "/guides/documents/document-design" >}}).
 
 Once you require the new content-type in our project configs index file and publish the config you will be able to create print articles from the "Write new article" button.
 
@@ -185,7 +182,7 @@ copy: [{
 
 A few things to note:
 - we copy from the content-type `regular` to the content-type `woodwing`, this is our online to print copy configuration
-- again we only apply the conversion to a subset of the available components for demo purposes. For more details on the available conversion rules see [here]({{< ref "/guides/workflows/document-copy/index.md" >}})
+- again we only apply the conversion to a subset of the available components for demo purposes. For more details on the available conversion rules see [here]({{< ref "/guides/editor/document-copy" >}})
 
 As before, use the [CLI]({{< ref "/livingdocs-cli/sync-configs.md" >}}) to publish the changes to your project config.
 

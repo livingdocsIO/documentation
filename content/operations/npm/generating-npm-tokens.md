@@ -1,5 +1,5 @@
 ---
-title: Generating npm tokens
+title: Generating NPM tokens
 ---
 
 You can find a pre-generated tokens with read access in the **secrets**

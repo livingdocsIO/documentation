@@ -65,7 +65,7 @@ A simple Livingdocs design defining the two components used in the document abov
 }
 ```
 
-To learn more about designs, read our [guide]({{< ref "/guides/design/create-designs" >}}).
+To learn more about designs, read our [guide]({{< ref "/guides/documents/document-design" >}}).
 
 ### Rendering
 

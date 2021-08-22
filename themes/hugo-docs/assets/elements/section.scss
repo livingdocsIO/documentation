@@ -1,0 +1,41 @@
+.section {
+  margin-right: 0;
+  word-break: break-word;
+  width: 100%;
+
+  @include media-query(widescreen) {
+    // max-width: 580px;
+    // margin-right: $toc-width + $space-l - $space-m;
+  }
+
+  @include media-query(ultrawide) {
+    max-width: 688px;
+  }
+
+  &__title {
+    position: relative;
+    margin-top: 0;
+  }
+
+  &__content {
+
+    a {
+      &:not([class]) {
+        @include text-link();
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    hr {
+      border-bottom: 4px solid $color-grey-6;
+    }
+  }
+
+  &__subsection {
+    margin-bottom: 50px;
+  }
+}

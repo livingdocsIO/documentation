@@ -1,6 +1,6 @@
 ---
-title: Software Requirements and Dependencies
-tags: [operations]
+title: External Services
+menu: operations
 ---
 
 Additionally to the mandatory dependency on the databases (postgres, redis and elasticsearch), livingdocs also depends on a few external services. Many of them are configurable and optional.

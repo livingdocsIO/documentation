@@ -1,9 +1,7 @@
 ---
 title: DPA Import
-tags: [guides, integrations]
-menus:
-  guides:
-    parent: Integrations
+description: Setup an agency import from DPA
+weight: 2
 ---
 
 Apart from the one-time imports to import a set of legacy data into Livingdocs, continuous imports from a third-party feed, e.g. DPA articles are a major case for publishers.

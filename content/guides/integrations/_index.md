@@ -1,6 +1,7 @@
 ---
 title: Integrations
+weight: 800
 menus:
   guides:
-    weight: 5
+    weight: 9
 ---

@@ -92,7 +92,7 @@ app: {
 ```
 
 To hide an entry, simply delete it from the list.
-You can also customize the scopes that you assign to a menu item to control access rights. See [all available scopes]({{< ref "/guides/auth/access-rights#available-scopes" >}}).
+You can also customize the scopes that you assign to a menu item to control access rights. See [all available scopes]({{< ref "/guides/authentication/access-rights#available-scopes" >}}).
 You can also customize the icons. We use https://materialdesignicons.com/ just use the respective icon string.
 
 To link to an external page add an entry as follows:

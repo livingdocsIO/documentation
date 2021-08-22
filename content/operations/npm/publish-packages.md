@@ -1,5 +1,5 @@
 ---
-title: Publish npm modules
+title: Publish NPM Modules
 ---
 
 All public and private packages belong to the [@livingdocs organization](https://www.npmjs.com/org/livingdocs).

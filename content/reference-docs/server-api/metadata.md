@@ -10,7 +10,7 @@ menus:
 This documentation assumes that you have setup a channel and design within Livingdocs.
 You also know what an environment and a channel config is.
 
-To find out more about metadata on the editor you can read the [editor documentation]({{< ref "/reference-docs/editor-configuration/metadata" >}}) or study [examples]({{< ref "/guides/metadata-examples" >}}).
+To find out more about metadata on the editor you can read the [editor documentation]({{< ref "/reference-docs/editor-configuration/metadata" >}}) or study [examples]({{< ref "/guides/documents/metadata/metadata-examples" >}}).
 
 ## Introduction
 

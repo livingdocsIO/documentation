@@ -1,9 +1,7 @@
 ---
-title: Hugo Drag and Drop
-tags: [guides, integrations]
-menus:
-  guides:
-    parent: Integrations
+title: Hugo Drag & Drop
+description: Configure image and document imports from Hugo via Drag & Drop
+weight: 3
 ---
 
 ## Basic Configuration

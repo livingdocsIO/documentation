@@ -1,7 +1,7 @@
 ---
 title: Running Livingdocs behind a proxy
+linkTitle: Proxy Setup
 menu: operations
-tags: [operations]
 ---
 
 Where applicable, Livingdocs respects the environment variables `HTTPS_PROXY` and `HTTP_PROXY` by default and routes all external requests through the given proxy.

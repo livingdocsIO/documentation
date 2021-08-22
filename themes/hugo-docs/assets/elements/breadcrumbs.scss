@@ -1,0 +1,19 @@
+.breadcrumbs {
+  padding: 0;
+  margin: 0 0 5px 0;
+
+  display: flex;
+  list-style: none;
+}
+
+.breadcrumbs li {
+  padding-right: 5px;
+}
+
+.breadcrumbs li::before {
+  content: "/";
+}
+
+.breadcrumbs li:first-child::before {
+  content: "";
+}
