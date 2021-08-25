@@ -1,5 +1,7 @@
 ---
 title: Media Sources
+description: Walkthrough to set up a media source
+weight: 4
 ---
 
 {{< added-in release-2021-03 >}}
