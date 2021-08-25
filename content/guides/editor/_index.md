@@ -3,5 +3,5 @@ title: Editor
 weight: 400
 menus:
   guides:
-    weight: 5
+    weight: 2
 ---
