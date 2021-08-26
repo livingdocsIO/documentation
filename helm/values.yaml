@@ -20,7 +20,7 @@ virtualService:
 resources:
   limits:
     cpu: 100m
-    memory: 400Mi
+    memory: 50Mi
   requests:
-    cpu: 100m
-    memory: 400Mi
+    cpu: 0m
+    memory: 2Mi
