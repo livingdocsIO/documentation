@@ -5,6 +5,8 @@ renderEditButton: false
 renderSummaries: false
 renderTOC: false
 outputs: [html, rss, SearchIndex]
+aliases:
+  - "/enterprise"
 ---
 
 <!-- ## Learn important concepts and features
