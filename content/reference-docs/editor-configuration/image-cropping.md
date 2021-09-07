@@ -19,7 +19,7 @@ For all configurable options in the library, see [here](https://github.com/livin
       showSurroundingImage: 'always',
       surroundingImageOpacity: 0.5,
       zoomStep: 1.05,
-      maxArea: 0.5
+      maxArea: null
     }
   },
   disableCropFor: ['image/svg+xml']  
