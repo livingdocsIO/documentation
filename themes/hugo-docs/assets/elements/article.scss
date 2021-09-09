@@ -3,7 +3,7 @@
   word-break: break-word;
 
   @include media-query(widescreen) {
-    max-width: 580px;
+    max-width: 620px;
     margin-right: $toc-width + $space-l - $space-m;
   }
 
