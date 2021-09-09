@@ -18,8 +18,7 @@ For all configurable options in the library, see [here](https://github.com/livin
     imageCrop: {
       showSurroundingImage: 'always',
       surroundingImageOpacity: 0.5,
-      zoomStep: 1.05,
-      maxArea: null
+      zoomStep: 1.05
     }
   },
   disableCropFor: ['image/svg+xml']  
@@ -43,13 +42,6 @@ Deduces the opacity with which the cropped out parts are shown (see above).
 Possible values: between 1 and 2, Default: 1.25
 
 Deduces zoom steps when zooming into an image and out. 1.05 zooms in 5% with every step.
-
-### maxArea
-
-Possible values: null or between 0 and 1, Default: null
-
-If set to `null` (or left out in the config) the full image will be shown and changing the horizontal and vertical sizes will keep the other respective size constant.
-If set to a value between 0 and 1 changing the sizes will affect the whole ratio (width and height) and fill the area given in max area (e.g. 0.8 -> 80%).
 
 ### disableCropFor
 
