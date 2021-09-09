@@ -1,0 +1,12 @@
+<div class="github-repo">
+  {{ $repo := resources.Get "svg/repo.svg" | fingerprint }}
+  <img src="{{ $repo.RelPermalink }}" alt="" class="icon">
+  <a class="repo-link" href="https://github.com/{{ .Get 0 }}">{{ .Get 0 }}</a>
+  <p class="repo-desc">{{ .Get 1 }}</p>
+  <p class="repo-info">
+    <span class="d-inline-block mr-3">
+      <span class="repo-lang-color"></span>
+      <span itemprop="repo-lang">JavaScript</span>
+    </span>
+  </p>
+</div>
