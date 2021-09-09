@@ -10,13 +10,8 @@ $list-number-gap: 1.5 * $space-s;
       margin-bottom: $space-m;
 
       li {
-        margin-bottom: $space-m;
+        margin-bottom: $space-xs;
       }
-    }
-
-    > ul {
-      margin-top: $space-l;
-      margin-bottom: $space-l;
     }
 
     ol {
