@@ -8,7 +8,7 @@ This guide uses the [Livingdocs timeline design](https://github.com/livingdocsIO
 
 If you already have a custom design, you can just use that.
 
-### Clone the design
+## Clone the design
 
 ```bash
 git clone git@github.com:livingdocsIO/livingdocs-design-timeline.git
@@ -16,7 +16,7 @@ cd livingdocs-design-timeline
 npm install
 ```
 
-### Adding a new component to the design
+## Adding a new component to the design
 
 In the design repository, create a new file named `h3.html` in `src/components/Headers`:
 ```html

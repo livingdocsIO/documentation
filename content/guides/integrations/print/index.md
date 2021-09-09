@@ -1,18 +1,23 @@
 ---
 title: Print Integration
-description: Print Integration with WoodWing Studio 
+description: Print Integration with WoodWing Studio
 weight: 4
 ---
 
 ## Motivation
 
-Livingdocs is often used as an editor for both online and print publications in a so-called content-first (or even online-first) workflow. A simple workflow just exports the Livingdocs article to a print system whenever a publish is performed. We have an open-source example for a serverless app that builds upon a Livingdocs webhook and exports to WoodWing Studio: [https://github.com/livingdocsIO/livingdocs-to-woodwing-exporter](https://github.com/livingdocsIO/livingdocs-to-woodwing-exporter)
+Livingdocs is often used as an editor for both online and print publications in a so-called content-first (or even online-first) workflow. A simple workflow just exports the Livingdocs article to a print system whenever a publish is performed. We have an open-source example for a serverless app that builds upon a Livingdocs webhook and exports to WoodWing Studio:
+
+{{< github "livingdocsIO/livingdocs-to-woodwing-exporter"
+  "Exporter from Livingdocs to WoodWing Studio" >}}
 
 Sometimes, a simple export is not enough for the editors. For this use case we have built-in support for:
 - choosing a layout (e.g. InDesign template) from the print system
 - previewing that layout in the preview window next to a Livingdocs article (actual print system rendering)
 
-With this system, editors can see how their article will be displayed in print (linebreaks, overflow, etc.) while they are writing in Livingdocs. An example of this workflow is shown in this video: [https://vimeo.com/456695030](https://vimeo.com/456695030)
+With this system, editors can see how their article will be displayed in print (linebreaks, overflow, etc.) while they are writing in Livingdocs. An example of this workflow is shown in this video:
+
+{{< vimeo id="456695030" class="video-wrapper" >}}
 
 ## Print system support
 
@@ -22,90 +27,92 @@ Other print systems can potentially be setup but require custom development.
 
 ## Setup
 
-The presented setup assumes a workflow with different content-types for online and print. Editors can then choose on "Write new article" if they want to start with an online or a print article. If they start with the online article they have the option to make a print copy out of the online article and continue refining this for print. To get an impression of the workflow you can watch this video (although the video starts with print and copies to online): [https://vimeo.com/455953898](https://vimeo.com/455953898)
+The presented setup assumes a workflow with different content-types for online and print. Editors can then choose on "Write new article" if they want to start with an online or a print article. If they start with the online article they have the option to make a print copy out of the online article and continue refining this for print. To get an impression of the workflow you can watch this video (although the video starts with print and copies to online):
+
+{{< vimeo id="455953898" class="video-wrapper" >}}
 
 ### Setup a print content-type
 
 In order to follow this example we advise you to use our [Service](https://edit.livingdocs.io) with the pre-configured Sandbox. The example can of course be applied to any Livingdocs project with a configurable project config.
-First of all, use the [CLI]({{< ref "/livingdocs-cli/sync-configs.md" >}}) to download the project config of your service project to your local computer and open it with a code editor of your choice.
+First of all, use the [CLI]({{< ref "/reference-docs/cli/managing-configs" >}}) to download the project config of your service project to your local computer and open it with a code editor of your choice.
 In our service Sandbox we already have a content-type for an online article. It has the handle `regular`. So the first thing we need to do is to add a content-type for the print article. It will look as follows:
 ```js
-module.exports = {
-    handle: 'woodwing',
-    documentType: 'article',
-    info: {
-      label: 'Print Article'
+{
+  handle: 'woodwing',
+  documentType: 'article',
+  info: {
+    label: 'Print Article'
+  },
+  components: [{
+    name: 'paragraph'
+  }, {
+    name: 'toptitle'
+  }, {
+    name: 'catchline'
+  }, {
+    name: 'headline'
+  }, {
+    name: 'print-subtitle'
+  }, {
+    name: 'lead'
+  }, {
+    name: 'byline'
+  }],
+  editorWrapper: '<article class="nzz-standard doc-section" itemscope itemtype="http://schema.org/NewsArticle"></article>',
+  defaultContent: [{
+      identifier: 'catchline'
+  }, {
+      identifier: 'headline'
+  }, {
+      identifier: 'lead'
+  }, {
+      identifier: 'byline'
+  }, {
+      identifier: 'paragraph'
+  }],
+  metadata: [{
+    handle: 'title',
+    type: 'li-text',
+    config: {
+      maxLength: 200,
+      useAsTitle: true
     },
-    components: [{
-      name: 'paragraph'
-    }, {
-      name: 'toptitle'
-    }, {
-      name: 'catchline'
-    }, {
-      name: 'headline'
-    }, {
-      name: 'print-subtitle'
-    }, {
-      name: 'lead'
-    }, {
-      name: 'byline'
-    }],
-    editorWrapper: '<article class="nzz-standard doc-section" itemscope itemtype="http://schema.org/NewsArticle"></article>',
-    defaultContent: [{
-        identifier: 'catchline'
-    }, {
-        identifier: 'headline'
-    }, {
-        identifier: 'lead'
-    }, {
-        identifier: 'byline'
-    }, {
-        identifier: 'paragraph'
-    }],
-    metadata: [{
-      handle: 'title',
-      type: 'li-text',
-      config: {
-        maxLength: 200,
-        useAsTitle: true
+    ui: {
+      component: 'liMetaTextForm'
+    }
+  }],
+  print: {
+    enabled: true,
+    enableStepZooming: true,
+    componentMap: {
+      // Woodwing: Obertitel
+      'toptitle': {
+        title: 'toptitle'
       },
-      ui: {
-        component: 'liMetaTextForm'
+      // Woodwing: Spitzmarke
+      'catchline': {
+        title: 'catchline'
+      },
+      // Woodwing: Titel
+      'headline': {
+        title: 'title'
+      },
+      // Woodwing: Kursivtitel
+      'print-subtitle': {
+        title: 'subtitle'
+      },
+      // Woodwing: Autor
+      'print-byline': {
+        text: 'author'
+      },
+      // Woodwing: Lead
+      'print-lead': {
+        text: 'lead'
+      },
+      // Woodwing: Grundtext
+      'paragraph': {
+        text: 'text'
       }
-    }],
-    print: {
-      enabled: true,
-      enableStepZooming: true,
-      componentMap: {
-        // Woodwing: Obertitel
-        'toptitle': {
-          title: 'toptitle'
-        },
-        // Woodwing: Spitzmarke
-        'catchline': {
-          title: 'catchline'
-        },
-        // Woodwing: Titel
-        'headline': {
-          title: 'title'
-        },
-        // Woodwing: Kursivtitel
-        'print-subtitle': {
-          title: 'subtitle'
-        },
-        // Woodwing: Autor
-        'print-byline': {
-          text: 'author'
-        },
-        // Woodwing: Lead
-        'print-lead': {
-          text: 'lead'
-        },
-        // Woodwing: Grundtext
-        'paragraph': {
-          text: 'text'
-        }
     }
   }
 }
@@ -184,7 +191,7 @@ A few things to note:
 - we copy from the content-type `regular` to the content-type `woodwing`, this is our online to print copy configuration
 - again we only apply the conversion to a subset of the available components for demo purposes. For more details on the available conversion rules see [here]({{< ref "/guides/editor/document-copy" >}})
 
-As before, use the [CLI]({{< ref "/livingdocs-cli/sync-configs.md" >}}) to publish the changes to your project config.
+As before, use the [CLI]({{< ref "/reference-docs/cli/managing-configs" >}}) to publish the changes to your project config.
 
 You will now have a "Copy" button in the topbar of an online article. When pressing it, you have the option to copy it to a print article. If you do so, a new print article (with the preview and layout selection) is created for you and the component of the online article are mapped to the print article according to the configured rules.
 

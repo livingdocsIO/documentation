@@ -4,10 +4,6 @@ bullets:
   - Document Design Intro
   - Create a component from scratch
 weight: 1
-menus:
-  evaluation:
-    weight: 3
-    name: Design and Components
 ---
 
 ### What is a document design?
@@ -18,7 +14,7 @@ both in the editor and when rendering it on the server side.
 
 
 **Note**:<br/>
-The [boilerplate server](https://github.com/livingdocsIO/livingdocs-server-boilerplate) has an embedded design. The entry point for your project config is in "setup/seeding.js". This file requires a complete [project config]({{< ref "/reference-docs/project-config/project-config.md" >}}) that also contains the two relevant design configs `design_settings.js` and the `components` folder.
+The [boilerplate server](https://github.com/livingdocsIO/livingdocs-server-boilerplate) has an embedded design. The entry point for your project config is in "setup/seeding.js". This file requires a complete [project config]({{< ref "/reference-docs/project-config" >}}) that also contains the two relevant design configs `design_settings.js` and the `components` folder.
 
 _Good to know:_ you might come across the notion of a "reference design". Reference designs are basically the same as embedded designs, but live externally, e.g. on an S3 bucket and are referenced in a project. The downside of reference designs is that they can not be customized in the context of a single project.
 
@@ -54,8 +50,11 @@ module.exports = {
 ```
 
 Lets recap what we have.
+
 Every component defines a `name` to reference it in the system, a `label` and `iconUrl` for display and an `html` containing the markup.
-The HTML itself contains declarative directives that are prepended with `doc-`, in our example `doc-editable` and `doc-image` ([learn all about directives]({{< ref "/reference-docs/project-config/design.md#components">}})). Those tell the Livingdocs editor where the users can edit content.
+
+The HTML itself contains declarative directives that are prepended with `doc-`, in our example `doc-editable` and `doc-image` ([learn all about directives]({{< ref "/reference-docs/document/document-design">}})). Those tell the Livingdocs editor where the users can edit content.
+
 The directives themselves can contain configuration, referenced in the `directives` property. In our example we tell the Livingdocs editor that we want to give the image preset ratios of '16:9' and '4:3'.
 
 To get the component displayed in the editor you need to do 3 more things:
@@ -116,4 +115,4 @@ This is the publication screen for your project config. Every change is shown in
 If you're fine with your changes, scroll to the bottom and click "Publish Changes".
 Navigate to any article and in the "Insert" sidebar the header will now be in first place.
 
-Congratulations, you've taken your first steps in a Livingdocs Design! To learn more about designs, refer to [the design reference documentation]({{< ref "/reference-docs/project-config/design.md" >}}).
+Congratulations, you've taken your first steps in a Livingdocs Design! To learn more about designs, refer to [the design reference documentation]({{< ref "/reference-docs/document/document-design" >}}).

@@ -1,11 +1,11 @@
 ---
-title: Add a Twitter Embed
+title: Twitter Embed
 description: Register an include service to render a tweet
 weight: 1
 ---
 
 This guide will show you how to add a custom Include for Twitter. We will show the implementation for the design, server and editor.
-This is more of a quick-guide where you can just copy and paste code. For a deeper understanding you can dive into [server-customization]({{< ref "/reference-docs/includes/server-customization.md" >}}) and [editor-customization]({{< ref "/reference-docs/includes/editor-customization.md" >}})
+This is more of a quick-guide where you can just copy and paste code. For a deeper understanding you can dive into [server-customization]({{< ref "/reference-docs/document/includes" >}}) and [editor-customization]({{< ref "/reference-docs/document/includes/editor-customization" >}})
 
 
 ## Design definition

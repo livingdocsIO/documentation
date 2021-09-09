@@ -32,7 +32,7 @@ mediaLibrary: {
   images: {
     // base url of the storage
     publicUrl: 'https://livingdocs-images-dev.s3.amazonaws.com',
-    // {{< a ref="/reference-docs/server-configuration/storage" title="Storage Configuration" >}}
+    // {{< a ref="/reference-docs/server-extensions/server-configuration/storage" title="Storage Configuration" >}}
     storage: {
       strategy: 's3',
       prefix: 'images/' // optional, the storage key will be prefixed (Added in: release-2021-06)
@@ -59,7 +59,7 @@ mediaLibrary: {
 ```
 
 This will route image upload requests from Livingdocs to your chosen URL instead of S3.
-For details please see the reference documentation for the [server configuration]({{< ref "/reference-docs/server-configuration/_index.md" >}})
+For details please see the reference documentation for the [server configuration]({{< ref "/reference-docs/server-extensions/server-configuration" >}})
 
 
 ### Delivery
@@ -76,8 +76,6 @@ You can also use other image services as described at the end of this document.
 
 You can choose different render strategies how an image should be rendered in
 HTML.
-
-Here are some Examples. For more detailed information check out the [project configuration]({{< ref "/reference-docs/project-config/design.md" >}})
 
 Example of an image with a srcset attribute:
 ```html

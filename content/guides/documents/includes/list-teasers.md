@@ -1,10 +1,10 @@
 ---
-title: Embedded List Teasers
+title: List Teasers
 description: Register an include service to embed a list
 weight: 4
 ---
 
-With [`release-2021-09`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-09.md) a simpler way to setup list teasers is introduced. It is based on [Includes]({{< ref "/reference-docs/includes" >}}) and the possiblity to define the UI with a `paramsSchema`. Please see [Article Teasers]({{< ref "/guides/documents/includes/document-teasers" >}}) for information on setting up individual document teasers.
+With [`release-2021-09`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-09.md) a simpler way to setup list teasers is introduced. It is based on [Includes]({{< ref "/reference-docs/document/includes" >}}) and the possiblity to define the UI with a `paramsSchema`. Please see [Article Teasers]({{< ref "/guides/documents/includes/document-teasers" >}}) for information on setting up individual document teasers.
 
 This guide assumes that you are familiar with the possibilities to register an Include Service and how to use it in a Component.
 

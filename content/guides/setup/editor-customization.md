@@ -13,9 +13,9 @@ Possible livingdocs editor UI customizations:
 
 - custom Angular factories or services (for use in other customizations)
 - custom Angular components for metadata fields
-- .. or [custom model classes]({{< ref "/reference-docs/editor-configuration/metadata.md" >}}) for existing metadata fields
+- .. or [custom model classes]({{< ref "/guides/documents/metadata" >}}) for existing metadata fields
 - custom Angular components for doc-include sidebar user interfaces
-- custom [Display Filter]({{< ref "/reference-docs/editor-configuration/display-filter.md" >}})
+- custom [Display Filter]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}})
 - custom Dashboard item (a single item in the articles dashboard)
 - custom Embed components (the core contains Iframes and Tweets)
 - custom Iframely metadata extractors

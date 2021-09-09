@@ -26,7 +26,7 @@ The resulting feature looks as follows.
 ## Enable push notifications
 
 To enable push notifications you need to do 3 things:
-1. setup the firebase config in your [server configuration]({{< ref "/reference-docs/server-configuration/_index.md#push-notifications" >}}), you will need to create a Google firebase key for this
+1. setup the firebase config in your [server configuration]({{< ref "/reference-docs/server-extensions/server-configuration#push-notifications" >}}), you will need to create a Google firebase key for this
 2. in every channel that should support push notifications, [configure the required metadata field]({{< ref "/reference-docs/project-config/content-types.md#push-notifications" >}})
 3. in every channel that should support push notifications, [configure your topics]({{< ref "/reference-docs/project-config/content-types.md#push-notifications" >}})
 4. setup the push notifications field in your elasticsearch mapping
@@ -75,9 +75,9 @@ After doing those three things, push notifications are enabled and you can see t
 ## Add a custom dashboard item
 
 You need to do 3 things to have your custom dashboard item that shows push notification information:
-1. [whitelist the push notification metadata for use in the dashboard]({{< ref "/reference-docs/server-configuration/_index.md#search" >}})
+1. [whitelist the push notification metadata for use in the dashboard]({{< ref "/reference-docs/server-extensions/server-configuration#search" >}})
 2. create an angular component for the dashboard item
-3. [configure the angular component in the editor]({{<ref "/reference-docs/editor-configuration/editing-features.md#dashboard" >}})
+3. [configure the angular component in the editor]({{<ref "/reference-docs/editor-extensions/editor-configuration#dashboard" >}})
 
 Below is a sample implementation for (2).
 

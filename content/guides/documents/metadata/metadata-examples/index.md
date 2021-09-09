@@ -3,16 +3,13 @@ title: Metadata Plugins
 bullets:
   - Add a metadata field to a contentType
   - Create a metadata plugin
-menus:
-  evaluation:
-    weight: 5
 ---
 
 ## Example 1: Add a Metadata Field
 
 Say we want to create a new metadata field "catchline" for articles. The catchline should be a simple text input on the publish panel that journalists can edit.
 
-For details have a look at the [server configuration reference documentation]({{< ref "/reference-docs/server-api/metadata.md" >}})
+For details have a look at the [server configuration]({{< ref "/reference-docs/server-extensions/metadata-plugins" >}})
 
 ### Server
 

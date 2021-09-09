@@ -40,11 +40,11 @@ app: {
 }
 ```
 
-Above we see the configuration of our custom task in the editor. There is nothing special here. The metadata entry in elasticsearch for the review task already exists in the boilerplate so you don't need to do anything in this regard. If you have a different task name or don't work with the boilerplate, see [here]({{< ref "/reference-docs/editor-configuration/editing-features.md#tasks" >}}) for what to do in elastic.
+Above we see the configuration of our custom task in the editor. There is nothing special here. The metadata entry in elasticsearch for the review task already exists in the boilerplate so you don't need to do anything in this regard. If you have a different task name or don't work with the boilerplate, see [here]({{< ref "/reference-docs/editor-extensions/editor-configuration#tasks" >}}) for what to do in elastic.
 
 ## Server plugin
 
-On the server we need to exchange the [metadata plugin]({{< ref "/reference-docs/server-api/metadata.md#plugin" >}}) used for the tasks.
+On the server we need to exchange the [metadata plugin]({{< ref "/reference-docs/document/metadata" >}}) used for the tasks.
 
 ```js
 metadata: {

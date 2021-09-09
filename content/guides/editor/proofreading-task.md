@@ -13,7 +13,7 @@ The screenshot below shows the task in question.
 
 ## Server plugin
 
-On the server we need to configure a new metadata field `proofreading` (more about metadata fields you can read [here]({{< ref "/reference-docs/server-api/metadata.md" >}}))
+On the server we need to configure a new metadata field `proofreading` (more about metadata fields you can read [here]({{< ref "/reference-docs/document/metadata" >}}))
 
 ```js
 metadata: [{

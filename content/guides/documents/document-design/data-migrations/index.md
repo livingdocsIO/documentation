@@ -59,8 +59,6 @@ Livingdocs provides you a migration hook `migrateAsync` to implement. This hook 
 
 #### Example
 
-{{< added-in release-2020-12 >}}
-
 ```js
 // file: app/data-migrations/async-migration.js
 

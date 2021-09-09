@@ -37,7 +37,7 @@ metadata: [{
 
 References:
 - [How to customise a proofreading task]({{< ref "./proofreading-task.md" >}})
-- [How to configure a metadata field]({{< ref "/reference-docs/server-api/metadata.md" >}})
+- [How to configure a metadata field]({{< ref "/reference-docs/server-extensions/metadata-plugins" >}})
 
 ### Add my-proofreading to elasticsearch
 The metadata field `my-proofreading` should be searchable by the proofreading dashboard later. Therefore you have to extend the Elasticsearch document mapping.

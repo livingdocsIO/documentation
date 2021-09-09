@@ -4,7 +4,7 @@ description: How to add an existing design to a project configuration
 weight: 5
 ---
 
-Embedded designs are around for a while now and several Livingdocs customers use them productively. The main difference to a reference design is that embedded designs are stored in the Livingdocs server database and are part of the project config. This means that updates to an embedded design are done via the CLI as described [here]({{< ref "/livingdocs-cli/sync-configs.md" >}}).
+Embedded designs are around for a while now and several Livingdocs customers use them productively. The main difference to a reference design is that embedded designs are stored in the Livingdocs server database and are part of the project config. This means that updates to an embedded design are done via the CLI as described [here]({{< ref "/reference-docs/cli/managing-configs" >}}).
 
 The main benefit for customers is that they can completely separate Livingdocs designs from whatever technology they want to use in the frontend. E.g. Swisscom has embedded designs in the server project and uses the HTML framework nitro in the frontend (without any dependency on Livingdocs).
 
@@ -20,7 +20,7 @@ In order to go from a reference design to an embedded design the following steps
 
 ## Migrate design config
 
-The rules on how to migrate the design are described [here]({{< ref "/reference-docs/project-config/legacy-design/design-config-v1-to-v2.md" >}}).
+The rules on how to migrate the design are described [here]({{< ref "/reference-docs/document/document-design/legacy-design/design-config-v1-to-v2" >}}).
 We have an unofficial helper script that can be used. It can be considered an alpha version and has successfully been used to migrate several projects. We want to test it some more before we take it to the official command list.
 
 ### For the adventurous

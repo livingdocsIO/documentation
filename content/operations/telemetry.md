@@ -10,7 +10,7 @@ The telemetry stack will assist you in debugging your Livingdocs server instance
 
 Follow the setup instructions in the [livingdocsIO/monitoring](https://github.com/livingdocsIO/monitoring) repository. It should be as simple as cloning the repository and running `docker-compose up`.
 
-If the Livingdocs server is running in a Docker container on the same server then everything *should* just work by adding the following to the [server configuration]({{< ref "/reference-docs/server-configuration/_index.md" >}}) file:
+If the Livingdocs server is running in a Docker container on the same server then everything *should* just work by adding the following to the [server configuration]({{< ref "/reference-docs/server-extensions/server-configuration" >}}) file:
 
 ```js
 {
@@ -50,7 +50,7 @@ On some systems it might not be possible for Prometheus to scrape the metrics en
 
 ## Configuration
 
-The `telemetry` object in the [server configuration]({{< ref "/reference-docs/server-configuration/_index.md" >}}) is as follows (with defaults provided):
+The `telemetry` object in the [server configuration]({{< ref "/reference-docs/server-extensions/server-configuration" >}}) is as follows (with defaults provided):
 
 ```js
 {
