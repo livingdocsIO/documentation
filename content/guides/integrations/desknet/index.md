@@ -9,10 +9,13 @@ weight: 1
 - Sync publication status between the two domains.
 - Exchange and sync any data that is relevant to your workflow.
 
-We have a video on Vimeo explaining the necessary steps to configure Desk-Net through our UI: [https://vimeo.com/368750546](https://vimeo.com/368750546)
-The rest of this guide will detail the underlying data structures in case you don't want to use the UI.
 
-{{< vimeo 368750546 >}}
+## Video Guide
+
+We have a video on Vimeo explaining the necessary steps to configure Desk-Net through our UI.
+
+{{< vimeo id="368750546" class="video-wrapper" >}}
+
 
 ## Setup
 
@@ -20,8 +23,8 @@ The rest of this guide will detail the underlying data structures in case you do
 
 - You should have a Desk-Net account and a set of valid API credentials to authorize Livingdocs to access the Desk-Net HTTP API.
 - You should be somewhat familiar with the Desk-Net data entities (Stories, Publications, Platforms and so on). A technical overview can be found [here](https://api.desk-net.com)
-- You should know about the different Livingdocs configuration levels/methods, namely the [project config]({{< ref "/reference-docs/project-config/project-config.md" >}}) and the [content type config]({{< ref "/reference-docs/project-config/content-types.md" >}}))
-- You should be familiar with how to [set up custom metadata fields]({{< ref "/reference-docs/server-api/metadata.md" >}}) for your content types.
+- You should know about the different Livingdocs configuration levels/methods, namely the [project config]({{< ref "/reference-docs/project-config" >}}) and the [content type config]({{< ref "/reference-docs/project-config/content-types.md" >}}))
+- You should be familiar with how to [set up custom metadata fields]({{< ref "/reference-docs/server-extensions/metadata-plugins" >}}) for your content types.
 - For local development, we strongly suggest you use:
    - some kind of http tunnel solution like [ngrok](https://ngrok.com). This is useful, when you want to redirect messages from Desk-Net to your local server.
    - a HTTP API client like [Postman](https://www.getpostman.com/). Very handy to explore the Desk-Net API. Certain configuration settings also need you to provide Desk-Net entity ID's, which are not easily (or not at all) accessible via the Desk-Net UI.
@@ -172,7 +175,7 @@ Add the plugin to the settings of content type `'regular'`:
 }
 ```
 
-As mentioned before, we won't go further into how to set up metadata at this point, but you can read all about that [here]({{< ref "/reference-docs/server-api/metadata" >}}).
+As mentioned before, we won't go further into how to set up metadata at this point, but you can read all about that [here]({{< ref "/reference-docs/document/metadata" >}}).
 
 #### 2. Set up a mapping that defines how to translate from Desk-Net to Livingdocs
 
@@ -252,7 +255,7 @@ Let's do another example:
 - We *don't* want this field to be editable in Livingdocs.
 - The technical label for this field on the metadata should be `hasPrint` and the actual label should read «Desk-Net – Is planned for Print»
 
-First, we have to write and register the transforms. As we have to register transforms before the server actually starts, but only after the application is properly up and running, we use a [hook]({{< ref "/reference-docs/server-api/hooks.md" >}}) for that:
+First, we have to write and register the transforms. As we have to register transforms before the server actually starts, but only after the application is properly up and running, we use a [hook]({{< ref "/reference-docs/server-extensions/server-hooks" >}}) for that:
 
 ```js
 liServer.registerInitializedHook(async () => {

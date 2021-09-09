@@ -1,5 +1,6 @@
 ---
 title: Settings
+weight: 1
 menus:
   reference-docs:
     parent: Project Config
@@ -14,124 +15,167 @@ The settings contain general feature settings for your project, in particular:
 
 An example:
 ```js
-// projectConfig.settings: {}
-"settings": {
-    "handle": "magazine",
-    "languages": {
-      "available": [
-        {
-            "label": "German",
-            "locale": "de"
-        },
-        {
-            "label": "English",
-            "locale": "en"
-        }
-      ],
-      "defaultLanguage": {
-        "label": "German",
-        "locale": "de"
-      },
-      "requiredOnCreation": true,
-      "translationWorkflow": true
+settings: {
+  handle: 'magazine',
+  languages: {
+    available: [{
+      label: 'German',
+      locale: 'de'
+    }, {
+      label: 'English',
+      locale: 'en'
+    }],
+    defaultLanguage: {
+      label: 'German',
+      locale: 'de'
     },
-    "integrations": {
-      "googleVision": {
-        "enabled": true,
-        "credentials": {
-            "type": "service_account",
-            "project_id": "your-project-123",
-            "private_key_id": "123",
-            "private_key": "-----BEGIN PRIVATEfoo bar-----END PRIVATE KEY-----\n",
-            "client_email": "vision-api-dev@your-project-123.iam.gserviceaccount.com",
-            "client_id": "123",
-            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-            "token_uri": "https://oauth2.googleapis.com/token",
-            "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-            "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/vision-api-dev%40your-project-123.iam.gserviceaccount.com"
+    requiredOnCreation: true,
+    translationWorkflow: true
+  },
+  integrations: {
+    comyan: {
+      enabled: true,
+      buttonLabel: 'open comyan'
+      mediaSystem: {
+        credentials: {
+          username: 'user',
+          password: '****'
         },
-        "confidenceCliff": 0.7,
-        "language": {
-            "label": "German",
-            "locale": "de"
-        },
-        "shouldDetectWeb": true
+        baseUrl: 'https://example.com/MediaSystem',
       }
     },
-    "includeServices": [{
-        "handle": "echo-service",
-        "rendering": {
-            "type": "remote",
-            "url": "http://localhost:3000",
-            "timeout": 3000
-        },
-        "config": {
-            "foo": "bar"
-        },
-        "paramsSchema": [
-            {
-            "type": "li-text",
-            "handle": "json",
-            "config": {
-                "maxLength": 200
-            },
-            "ui": {
-                "component": "liMetaTextareaForm",
-                "config": {
-                "label": "JSON",
-                "placeholder": "{ \"foo\": \"bar\" }"
-                }
-            }
-            }
-        ],
-        "defaultParams": {
-            "title": "defaultTitle"
-        },
-        "blockEditorInteraction": "initial"
-    }],
-    "webhooks": {
-      "active": false,
-      "configurations": [
-        {
-          "active": true,
-          "handle": "publish-hook",
-          "label": "Publish Hook",
-          "description": "",
-          "url": "https://foo.bar.com/my-webhook",
-          "secret": "foo-bar",
-          "events": [
-            "document.published"
-          ]
-        }
-      ]
-    },
-    "copy": [{
-      "source": {
-        "channelHandle": "web",
-        "contentType": "regular"
+    googleVision: {
+      enabled: true,
+      credentials: {
+        type: 'service_account',
+        project_id: 'your-project-123',
+        private_key_id: '123',
+        private_key: '-----BEGIN PRIVATEfoo bar-----END PRIVATE KEY-----\n',
+        client_email: 'vision-api-dev@your-project-123.iam.gserviceaccount.com',
+        client_id: '123',
+        auth_uri: 'https://accounts.google.com/o/oauth2/auth',
+        token_uri: 'https://oauth2.googleapis.com/token',
+        auth_provider_x509_cert_url: 'https://www.googleapis.com/oauth2/v1/certs',
+        client_x509_cert_url: 'https://www.googleapis.com/robot/v1/metadata/x509/vision-api-dev%40your-project-123.iam.gserviceaccount.com'
       },
-      "targets": [{
-        "channelHandle": "web",
-        "contentType": "kolumne",
-        "metadata": {
-            "map": ["title", "headline", "authors", "description", "teaserImage", "publishDate"]
-        },
-        "componentConversions": [{
-          "match": "article-container",
-          "exclude": "true"
+      confidenceCliff: 0.7,
+      language: {
+        label: 'German',
+        locale: 'de'
+      },
+      shouldDetectWeb: true
+    }
+  },
+
+  includeServices: [{
+    handle: 'echo-service',
+    rendering: {
+      type: 'remote',
+      url: 'http://localhost:3000',
+      timeout: 3000
+    },
+    config: {
+      foo: 'bar'
+    },
+    paramsSchema: [{
+      type: 'li-text',
+      handle: 'json',
+      config: {
+          maxLength: 200
+      },
+      ui: {
+        component: 'liMetaTextareaForm',
+        config: {
+          label: 'Json',
+          placeholder: '{ "foo": "bar" }'
+        }
+      }
+    }],
+    defaultParams: {
+      title: 'defaultTitle'
+    },
+    blockEditorInteraction: 'initial'
+  }],
+
+  webhooks: {
+    active: true,
+    configurations: [{
+      active: true,
+      handle: 'publish-hook',
+      label: 'Publish Hook',
+      description: '',
+      url: 'https://foo.bar.com/my-webhook',
+      secret: 'foo-bar',
+      events: ['document.published']
+    }]
+  },
+
+  copy: [{
+    source: {
+      channelHandle: 'web',
+      contentType: 'regular'
+    },
+    targets: [{
+      channelHandle: 'web',
+      contentType: 'kolumne',
+      metadata: {
+        map: [
+          'title',
+          'headline',
+          'authors',
+          'description',
+          'teaserImage',
+          'publishDate'
+        ]
+      },
+      componentConversions: [{
+        match: 'article-container',
+        exclude: true
+      }, {
+        match: 'head',
+        result: [{
+          component: 'catchline',
+          directives: {title: {takeFrom: 'flag'}}
         }, {
-          "match": "head",
-          "result": [{
-            "component": "catchline",
-            "directives": {"title": {"takeFrom": "flag"}}
-          }, {
-            "component": "headline",
-            "directives": {"title": {"takeFrom": "title"}}
-          }]
+          component: 'headline',
+          directives: {title: {takeFrom: 'title'}}
         }]
       }]
-    }],
-    "editMode": "default"
+    }]
+  }],
+
+  // This setting can be overwritten in the `contentType` config
+  imageSourcePolicy: [{
+    provider: 'upload',
+    enabled: true
+  }, {
+    provider: 'hugo',
+    enabled: false
+  }, {
+    provider: 'url',
+    enabled: true,
+    hosts: ['//pixabay.com']
+  }],
+
+  // setup the push notification feature if applicable
+  // for this to work you also must:
+  // 1. configure firebase in the server-wide `pushNotifications` configuration
+  // 2. have a metadata field with the (exact) name `pushNotifications`
+  // IMPORTANT: value can not contain more than three comma separated entries
+  // see firebase conditions for more details.
+  pushNotifications: {
+    topics: [{
+      handle: 'breaking-news',
+      label: 'Breaking News',
+      value: 'ios_de_breakingnews, android_de_breakingnews'
+    }, {
+      handle: 'sport',
+      label: 'Sport',
+      value: 'ios_de_sports, android_de_sports'
+    }]
+  }
+
+  editMode: 'default'
 }
 ```
 
@@ -180,7 +224,7 @@ The `config` parameter can contain arbitrary (fixed) data that are sent to your 
 
 Webhooks allow you to receive notifications for events from within Livingdocs and react to them. We advise you to use the UI under "Project Setup" to define your webhooks.
 
-For details on the parameters see our [Webhooks Guide]({{< ref "/reference-docs/server-configuration/webhooks.md" >}}).
+For details on the parameters see our [Webhooks]({{< ref "/reference-docs/server-extensions/webhooks" >}}) documentation.
 
 ## Copy Configuration
 

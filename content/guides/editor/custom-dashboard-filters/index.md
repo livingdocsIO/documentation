@@ -4,7 +4,7 @@ description: Create custom filters with you own UI
 weight: 7
 ---
 
-It is possible to register a custom filter and use it as a [displayFilter]({{< ref "/reference-docs/editor-configuration/display-filter.md" >}}) for dashboards or search modals.
+It is possible to register a custom filter and use it as a [displayFilter]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) for dashboards or search modals.
 
 At the moment there are 4 types of custom filters
 - [Register Custom List v2 Filter](#register-custom-list-v2-filter)
@@ -21,8 +21,6 @@ Hint: If you want to create a filter with metadata, make sure they are setup cor
 
 
 ## Register Custom List v2 Filter
-
-{{< added-in release-2020-02 >}}
 
 ### Example
 
@@ -88,11 +86,9 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
 })
 ```
 
-Hint: Look into [Filter Query Types]({{< ref "/reference-docs/editor-configuration/base-filter.md" >}}) to find possible `{type, value}` combinations for the `filter.options` in the `mount` function.
+Hint: Look into [Filter Query Types]({{< ref "/reference-docs/editor-extensions/editor-configuration/base-filter.md" >}}) to find possible `{type, value}` combinations for the `filter.options` in the `mount` function.
 
 ### isDefault option
-
-{{< added-in release-2020-07 >}}
 
 When `isDefault: true` (see example above), the default option will be added to the search query by default. As soon as one selects a filter manually, the default filter option will be ignored.
 
@@ -146,8 +142,6 @@ liEditor.searchFilters.registerList('creationDate', {
 ```
 
 ## Register Custom Vue Component Filter
-
-{{< added-in release-2020-10 >}}
 
 [`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-03.md)
 Filters for the media-library need to define the `dataType`

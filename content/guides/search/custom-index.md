@@ -5,8 +5,6 @@ description: Configure an index processor to support custom data structures and 
 weight: 2
 ---
 
-{{< added-in release-2020-12 >}}
-
 Livingdocs allows to index data (e.g. publications) in Elasticsearch with custom data and mapping. The customer fully controls what data and format is indexed. The core server supports the indexing process with
 - Data transformation hooks for processing
 - Creating/processing the data via batches/jobs
@@ -48,7 +46,7 @@ elasticIndex: {
   indexNamePrefix: 'your-company-local',
 
   // enable/disable the Livingdocs publication index (used in the public API for search requests)
-  // see: /reference-docs/server-configuration/indexing/publication-index
+  // see: /guides/search/publication-index
   documentPublicationIndexEnabled: true, // default: true
 
 

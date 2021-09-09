@@ -8,7 +8,7 @@ weight: 5
 
 (Note: There are more modern ways of configuring includes for [articles]({{< ref "/guides/documents/includes/document-teasers" >}}) and [lists]({{< ref "/guides/documents/includes/list-teasers" >}}), which avoid the need to create custom UI components and to query for documents within the render function.)
 
-The Livingdocs core predefines 2 editor user interfaces for the `doc-include` services: `embed-teaser` and `list`. If you just want to enable those features without having to understand much else about includes, stick to the descriptions below. If you want to understand the concepts behind those instructions you should also read about [editor customizations]({{< ref "/reference-docs/includes/editor-customization" >}}) and [server customizations]({{< ref "/reference-docs/includes/server-customization" >}}).
+The Livingdocs core predefines 2 editor user interfaces for the `doc-include` services: `embed-teaser` and `list`. If you just want to enable those features without having to understand much else about includes, stick to the descriptions below. If you want to understand the concepts behind those instructions you should also read about [editor customizations]({{< ref "/reference-docs/document/includes/editor-customization" >}}) and [server customizations]({{< ref "/reference-docs/document/includes" >}}).
 
 The `embed-teaser` is an article embed. The user can click the component containing the `embed-teaser` include and the sidebar shows a user interface that lets the user select an article to be embedded as a teaser.
 The `list` represents a list of articles, commonly seen on startpages of newspapers. It assumes a manually sorted list that can be created with the Livingdocs list interface (see main navigation inside the Livingdocs editor). The sidebar renders a user interface where a user can select a list or re-order the articles in that list.
@@ -58,7 +58,7 @@ Lets see an example component in a Livingdocs design.
 ```
 
 First note that the component makes use of the `embed-teaser` service for the `doc-include` directive `gallery-embed`. It instances the service. In the `defaultParams` we pass a `layout` to the server-side rendering.
-The most important thing is the configuration in `config.search`. The configuration is equivalent to base filters of the dashboard search. Please see [here]({{< ref "/reference-docs/editor-configuration/base-filter.md" >}}) for all available options. The configuration in the example above allows the user to select available filters for `documentState` (e.g. published, etc.) and adds the hidden queries to only show articles (no pages) and of the articles only the subset of image galleries. This seems to be a sane default for an image gallery search modal.
+The most important thing is the configuration in `config.search`. The configuration is equivalent to base filters of the dashboard search. Please see [here]({{< ref "/reference-docs/editor-extensions/editor-configuration/base-filter.md" >}}) for all available options. The configuration in the example above allows the user to select available filters for `documentState` (e.g. published, etc.) and adds the hidden queries to only show articles (no pages) and of the articles only the subset of image galleries. This seems to be a sane default for an image gallery search modal.
 
 #### Server-side registration
 
@@ -100,7 +100,7 @@ module.exports = {
 
 The above code snippet assumes you are inside a custom feature. See [here]({{< ref "/guides/setup/server-customization" >}}) for how to register a custom feature.
 The `name` of the `doc-include` to register must match the service name you used in the design definition. In the case of the article embed, the `name` must be `embed-teaser`.
-The first key we have, `uiComponents`, defines a list of ui components that are rendered in the sidebar of the editor for the given `doc-include`. We will come back to all the available options when describing [how to do custom editor user interfaces]({{< ref "/reference-docs/includes/editor-customization.md" >}}). For now just note that we register 2 Angular components: `liEmbedTeaserIncludeModal` and `liEmbedTeaserLink`. Those are predefined in the core and the names must exactly match. (note: if you don't want a link to the embedded article in the sidebar, just leave the `liEmbedTeaserLink` entry away)
+The first key we have, `uiComponents`, defines a list of ui components that are rendered in the sidebar of the editor for the given `doc-include`. We will come back to all the available options when describing [how to do custom editor user interfaces]({{< ref "/reference-docs/document/includes/editor-customization" >}}). For now just note that we register 2 Angular components: `liEmbedTeaserIncludeModal` and `liEmbedTeaserLink`. Those are predefined in the core and the names must exactly match. (note: if you don't want a link to the embedded article in the sidebar, just leave the `liEmbedTeaserLink` entry away)
 The second key `rendering` defines how your doc-include should be rendered. We will come back to the remote options later. For now take note of the function method that allows you to define a function that returns the rendering of the doc-include as an HTML string.
 
 #### Enable for publishing

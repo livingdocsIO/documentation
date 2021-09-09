@@ -13,14 +13,12 @@ In our [learn]() section you can find an introduction to the most important conc
 
 ## Evaluation
 
-If you are already in contact with us and have access to our repositories we recommend our [Evaluation Guide]({{< ref "/evaluation/getting-started.md" >}}) to set up Livingdocs locally (in case you haven't you can contact us at contact@livingdocs.io).
+If you are already in contact with us and have access to our repositories we recommend our [On Premise Setup]({{< ref "/learn/on-premise-setup" >}}) to set up Livingdocs locally (in case you haven't you can contact us at <contact@livingdocs.io>).
 
 
 ## Having a first look on edit.livingdocs.io?
 
 You can check out Livingdocs via our service at [edit.livingdocs.io](https://edit.livingdocs.io). This way you do not have to set up anything locally and can see quickly how our editor and our REST Api work. On the service you will be set up with a preconfigured project.
-
-There is a separate documentation to get you started quickly with our service at [developers.livingdocs.io](https://developers.livingdocs.io).
 
 
 ## Guides

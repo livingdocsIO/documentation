@@ -1,5 +1,6 @@
 ---
-title: Media-Type Config
+title: Media Types
+weight: 8
 menus:
   reference-docs:
     parent: Project Config
@@ -10,7 +11,6 @@ menus:
 In the last few months we have substantially extended the media library. To show you what changed in what release, we provide you a changelog.
 
 #### Add Image Support
-{{< added-in release-2020-07 >}}
 
 `Media Types` describe the content you can manage in the Media Library. You can configure the metadata you want to manage per `Media Type` by using the same metadata schema as on Content-Types. The Media Library will provide forms to edit this data.
 If no `Media Type` config is provided it falls back to a default config where `title`, `caption`, `source` and `description` will be taken as metadata.
@@ -20,7 +20,6 @@ If no `Media Type` config is provided it falls back to a default config where `t
 - Only one `type` is supported: `mediaImage`
 
 #### Add Video Support
-{{< added-in release-2020-12 >}}
 
 - Add video support with the new type `mediaVideo`.
 - Multiple Media Types of type `mediaImage` are supported, but at least one Media Type must have the handle `image`
@@ -46,14 +45,12 @@ If no `Media Type` config is provided it falls back to a default config where `t
 - Add file support with the new type `mediaFile`
 
 #### Add Dashboard Card Config Support
-{{< added-in release-2020-09 >}}
 
 - The card (UI Component or configured dashboard card) to be used for a mediaType in a Media Library Dashboard can be configured
 ## Example
 
 ```js
-// projectConfig.mediaTypes: [{...}]
-[{
+mediaTypes: [{
   handle: 'image', // the handle is free, but one mediaImage must have the handle 'image'
   type: 'mediaImage',
   info: {
@@ -278,4 +275,4 @@ Here is a complete list of fields you can use. Please consult https://www.iptc.o
 
 This feature is only supported for mediaTypes of type `mediaImage`.
 
-With [Media Sources]({{< ref "media-sources.md" >}}) you can integrate asset research/import into Livingdocs. Instead of having to log in to another platform like Unsplash and then drag + drop images into Livingdocs, you can have Unsplash assets search results available directly in Livingdocs.
+With [Media Sources]({{< ref "/guides/media-library/media-sources" >}}) you can integrate asset research/import into Livingdocs. Instead of having to log in to another platform like Unsplash and then drag + drop images into Livingdocs, you can have Unsplash assets search results available directly in Livingdocs.

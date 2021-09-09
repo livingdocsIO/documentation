@@ -21,7 +21,7 @@ The metadata screen gets a new language select box if the multi-language feature
 
 ### Languages
 
-On the server, we first need to provide which languages we want to support in our project. This is defined per [project]({{< ref "/reference-docs/project-config/project-config.md" >}}). Add these top-level properties to your project config:
+On the server, we first need to provide which languages we want to support in our project. This is defined per [project]({{< ref "/reference-docs/project-config" >}}). Add these top-level properties to your project config:
 
 ```js
 // defines the languages that a user can select for a document
@@ -90,7 +90,7 @@ The details about adding a new metadata field can be seen in the [metadata examp
 ### Dashboard
 
 As soon as we have the multi-language feature configured, the dashboard will show a new column `languages` in the search results.
-In order for the dashboard to have the required metadata, you will need to configure the [`documentsMetadataFields`]({{< ref "/reference-docs/server-configuration/_index.md" >}}) in the server config to include your metadata property. You need to use the metadata property name here. In our example from before this would be:
+In order for the dashboard to have the required metadata, you will need to configure the [`documentsMetadataFields`]({{< ref "/reference-docs/server-extensions/server-configuration" >}}) in the server config to include your metadata property. You need to use the metadata property name here. In our example from before this would be:
 ```js
 {
   search: {
@@ -105,7 +105,7 @@ Note: if you did your [own dashboard item]({{< ref "../push-notifications#add-a-
 
 ## Editor
 
-The editor side is relatively easy to configure. You only need to add the provided language [display filter]({{< ref "/reference-docs/editor-configuration/display-filter.md" >}}) to your dashboard so that you are able to filter documents by language. This is done in the editor environment config file.
+The editor side is relatively easy to configure. You only need to add the provided language [display filter]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) to your dashboard so that you are able to filter documents by language. This is done in the editor environment config file.
 
 ```js
 {

@@ -1,5 +1,5 @@
 ---
-title: Editable Embedded Document Teasers
+title: Editable Document Teasers
 description: Register an include service to render teasers which can be edited on the page they are embedded in
 weight: 4
 ---
@@ -67,16 +67,14 @@ This is how your Teaser Component looks like in this case:
     name: 'teaser',
     type: 'include',
     service: 'editable-teaser',
-    paramsSchemaExtension: [ // <- added with release-2020-04
-      {
-        name: 'article',
-        config: {
-          // configure base filters for the article search modal
-          contentType: ['regular'], // only document of contentType 'regular'
-          published: true // only published documents
-        }
+    paramsSchemaExtension: [{
+      name: 'article',
+      config: {
+        // configure base filters for the article search modal
+        contentType: ['regular'], // only document of contentType 'regular'
+        published: true // only published documents
       }
-    ]
+    }]
   }],
   html: `
     <div doc-include="teaser">

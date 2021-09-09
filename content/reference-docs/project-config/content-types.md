@@ -1,5 +1,6 @@
 ---
-title: Content Type Config
+title: Content Types
+weight: 3
 menus:
   reference-docs:
     parent: Project Config
@@ -18,8 +19,7 @@ We plan to allow to move all layout options which are currently defined in the d
 ## Example
 
 ```js
-// projectConfig.contentTypes[{...}]
-{
+contentTypes: [{
   handle: 'gallery',
   documentType: 'article', // either 'article', 'page' or 'data-record'
   isAuthor: false, // only true if this content-type represents an author, must be 'data-record'
@@ -119,7 +119,7 @@ We plan to allow to move all layout options which are currently defined in the d
 
   // either show 'edit' or 'publish' view after creating a document
   viewAfterDocumentCreation: 'publish' // default is 'edit'
-}
+}]
 ```
 
 ## Default Content
@@ -131,7 +131,7 @@ NOTE: the default content only gets applied when a document is created manually,
 
 The default content is simply a (valid) Livingdocs JSON applying to your design. We advise you to use the UI in the "Project Setup" for adapting the default content.
 
-One useful property on components within the default content is the `position: fixed` property. It allows to fix a component in place, useful, e.g. for headers. [Read more]({{< ref "/reference-docs/editor-configuration/editing-features.md#pin-components" >}})
+One useful property on components within the default content is the `position: fixed` property. It allows to fix a component in place, useful, e.g. for headers. [Read more]({{< ref "/reference-docs/editor-extensions/editor-configuration#pin-components" >}})
 
 ## Editor Wrapper
 
@@ -291,12 +291,12 @@ The schema is as follows:
   })
 ```
 
-Apart from the general settings (`renderSettings`) you define an entry for each teaser (`teasers`) giving it the Livingdocs component (from the design) that should be used for rendering as well as a mapping of metadata values to component directives. See our guide on [teaser previews]({{< ref "/reference-docs/server-configuration/teaser-preview-config.md" >}}) for more details.
+Apart from the general settings (`renderSettings`) you define an entry for each teaser (`teasers`) giving it the Livingdocs component (from the design) that should be used for rendering as well as a mapping of metadata values to component directives. See our guide on [teaser preview guide]({{< ref "/guides/editor/teaser-preview" >}}) for more details.
 
 ## Desk-Net
 *has UI support*
 
-We advise you to setup the Desk-Net configuration from the "Project Setup" entry of the same name. There is also a [video](https://vimeo.com/368750546) explaining the setup.
+We advise you to setup the Desk-Net configuration in the Editor via the "Project Setup" entry.
 
 See our [Desk-Net plugin guide]({{< ref "/guides/integrations/desknet" >}}) for comprehensive infos (custom code parts require enterprise version).
 
@@ -348,7 +348,7 @@ metadata: [{
 }]
 ```
 
-With this in place you can set the channel configuration for your push notification topics \(see example config above\) and the firebase configuration in the [server config]({{< ref "/reference-docs/server-configuration#push-notifications" >}}).
+With this in place you can set the channel configuration for your push notification topics \(see example config above\) and the firebase configuration in the [server config]({{< ref "/reference-docs/server-extensions/server-configuration#push-notifications" >}}).
 
 ## Text Formatting
 

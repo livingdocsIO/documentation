@@ -1,6 +1,9 @@
 ---
-title: Notifications Config
-menu: reference-docs
+title: Notifications
+weight: 10
+menu:
+  reference-docs:
+    parent: Project Config
 ---
 
 {{< added-in release-2021-03 >}}
@@ -11,34 +14,31 @@ There is also a guide how to configure the notifications.
 [Notification guide]({{< ref "/guides/editor/notifications.md" >}})
 
 ```js
-module.exports = {
-  v: 2,
-  notifications: {
-    // Define actionGroups which the user can select per document
-    actionGroups: [
-      // First example group, interested in ALL changes
-      {
-        handle: 'all',
-        label: 'All Events',
-        description: 'Comments, Tasks, Publish and delete',
-        // add actions on which the user should get a notification
-        actions: [
-          'task.change',
-          'document.publish',
-          'document.unpublish',
-          'document.copy',
-          'document.delete',
-          'document.transform',
-          'comment.add',
-          'comment.resolve'
-        ]
-      }
-    ],
-    // the task requester is notified on task changed even without subscription
-    notifyTaskRequester: true,
-    // the author is auto subscribed to the document with the specified actionGroup
-    autoSubscribeOwner: {enabled: true, actionGroup: 'all'}
-  }
+notifications: {
+  // Define actionGroups which the user can select per document
+  actionGroups: [
+    // First example group, interested in ALL changes
+    {
+      handle: 'all',
+      label: 'All Events',
+      description: 'Comments, Tasks, Publish and delete',
+      // add actions on which the user should get a notification
+      actions: [
+        'task.change',
+        'document.publish',
+        'document.unpublish',
+        'document.copy',
+        'document.delete',
+        'document.transform',
+        'comment.add',
+        'comment.resolve'
+      ]
+    }
+  ],
+  // the task requester is notified on task changed even without subscription
+  notifyTaskRequester: true,
+  // the author is auto subscribed to the document with the specified actionGroup
+  autoSubscribeOwner: {enabled: true, actionGroup: 'all'}
 }
 ```
 

@@ -11,13 +11,13 @@ The boilerplate projects are small customizing setups that illustrate this.
 
 This document gives an overview of how to register custom features without going into detail on how to write any of them.
 
-### Register a custom server feature
+## Register a custom server feature
 
 (Refer to the [boilerplate server](https://github.com/livingdocsIO/livingdocs-server-boilerplate) to see real examples of this.)
 
 A custom server feature can contain any code you like. Common examples are bridges to third-party APIs or import features that import documents from some other source like an old legacy CMS.
 
-The explanations here only refer to customizations that need coding. Other behavior can be customized using the [JSON configuration files]({{< ref "/reference-docs/server-configuration/_index.md" >}}).
+The explanations here only refer to customizations that need coding. Other behavior can be customized using the [JSON configuration files]({{< ref "/reference-docs/server-extensions/server-configuration" >}}).
 
 In the server you will normally have an `app/server.js` file add new features. The content looks something like this:
 ```js

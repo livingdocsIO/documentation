@@ -27,7 +27,7 @@ Note: `{designName}` and `{x.y.z}` can be found in `src/config.json`
 
 If there are existing designs on your target server, make sure to use a unique name.
 
-### Activate the design
+## Activate the design
 
 After uploading, the design is not automatically active. You first need to add it for your channels:
 

@@ -17,8 +17,6 @@ If no images are imported, a lot more documents could be imported.
 
 ## Custom document IDs
 
-{{< added-in release-2020-10 >}}
-
 During a migration of an existing system, it's best practice to migrate all entries of the old system into livingdocs.
 To ease the migration, we want to support user-defined identifiers, so a custom import script can reuse existing identifiers.
 
@@ -79,7 +77,7 @@ EOF
 
 {{< added-in release-2021-03 >}}
 
-When importing articles from legacy systems, you should be setting the `publicationDate`. The `publicationDate` can be found in the [public api documentation](https://edit.livingdocs.io/public-api) or [import api reference documentation]({{< ref "/reference-docs/server-api/import-api.md" >}}).
+When importing articles from legacy systems, you should be setting the `publicationDate`. The `publicationDate` can be found in the [public api documentation](https://edit.livingdocs.io/public-api) or [import api reference documentation]({{< ref "/reference-docs/server-extensions/import-api.md" >}}).
 
 The `publicationDate` controls when an article has been published, updated and is important for the search to function properly.
 

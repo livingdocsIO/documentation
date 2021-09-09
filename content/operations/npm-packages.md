@@ -27,5 +27,5 @@ They contain the minimal setup along with a docker setup to get you started quic
 
 Both the core server and the editor npm package expose an API when required
 
-- [Editor core API]({{< ref "/reference-docs/editor-api/_index.md" >}})
-- [Server core API]({{< ref "/reference-docs/server-api/data-source-api.md" >}})
+- [Editor core API]({{< ref "/reference-docs/editor-extensions/editor-api" >}})
+- [Server core API]({{< ref "/reference-docs/server-extensions/data-source-api" >}})

@@ -37,9 +37,6 @@ This is an internal property used for version management.
 
 `settings.js` can be used to configure a channel \(project\).
 
-### References
-
-* [Project Config reference documentation](https://github.com/livingdocsIO/documentation/tree/bc45ad164d41aa10cdb72c2e832e4e0b334c9a7b/reference-docs/server-configuration/channel-config.md)
 
 ## contentTypes
 
@@ -48,7 +45,7 @@ A project can have multiple contentTypes. An example for a contentTypes is a "Re
 ### References
 
 * [contentType reference documentation](https://github.com/livingdocsIO/documentation/tree/bc45ad164d41aa10cdb72c2e832e4e0b334c9a7b/reference-docs/server-configuration/content-type-config.md)
-* [metadata reference documentation](https://github.com/livingdocsIO/documentation/tree/bc45ad164d41aa10cdb72c2e832e4e0b334c9a7b/reference-docs/editor-configuration/metadata.md)
+* [metadata reference documentation](https://github.com/livingdocsIO/documentation/tree/bc45ad164d41aa10cdb72c2e832e4e0b334c9a7b/reference-docs/editor-extensions/editor-configuration/metadata.md)
 
 ## designSettings
 

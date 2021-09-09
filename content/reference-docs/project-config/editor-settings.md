@@ -1,11 +1,10 @@
 ---
 title: Editor Settings
+weight: 2
 menus:
   reference-docs:
     parent: Project Config
 ---
-
-{{< added-in release-2020-07 >}}
 
 The editor settings control the behavior of your editor UX, in particular:
 - [user menu]({{< ref "editor-settings#user-menu" >}})
@@ -18,8 +17,7 @@ The editor settings control the behavior of your editor UX, in particular:
 
 An example:
 ```js
-// projectConfig.editorSettings: {...}
-{
+editorSettings: {
   userMenu: [
     {
       label: 'What is new',
@@ -219,13 +217,13 @@ Type of the dashboard, one of these: `dashboard`, `kanbanBoard`, `taskBoard`
 
 #### displayFilters
 
-[Display Filters]({{< ref "/reference-docs/editor-configuration/display-filter.md" >}}) are filters that the user can set in the UI (below the search input).
+[Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) are filters that the user can set in the UI (below the search input).
 
 With `release-2021-03` the `displayFilters` for the Media Library Dashboards are defined on the [Media Type]({{< ref "/reference-docs/project-config/media-types.md" >}}).
 
 #### baseFilters
 
-[Base Filters]({{< ref "/reference-docs/editor-configuration/base-filter.md" >}}) are invisible filters and applied to every search (including the default result list).
+[Base Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/base-filter.md" >}}) are invisible filters and applied to every search (including the default result list).
 
 With `release-2021-03` the `baseFilters` for the Media Library Dashboards are defined on the [Media Type]({{< ref "/reference-docs/project-config/media-types.md" >}}).
 
@@ -336,8 +334,8 @@ As of `release-2021-03` the `baseFilters` and `displayFilters` are to be configu
 See [Media Type]({{< ref "/reference-docs/project-config/media-types.md" >}}) documentation for more information.
 
 Any release before `release-2021-03` takes the following config
-- `mediaLibrary.dashboard.displayFilters`: an array of [Display Filters]({{< ref "/reference-docs/editor-configuration/display-filter.md" >}}) for the Dashboard accessible via the Main Navigation
-- `mediaLibrary.editorSelection.displayFilters`: an array of [Display Filters]({{< ref "/reference-docs/editor-configuration/display-filter.md" >}}) for the Dashboard accessible via the Media Button in the Document Editing Toolbar
+- `mediaLibrary.dashboard.displayFilters`: an array of [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) for the Dashboard accessible via the Main Navigation
+- `mediaLibrary.editorSelection.displayFilters`: an array of [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) for the Dashboard accessible via the Media Button in the Document Editing Toolbar
 
 ### Dashboard Cards
 With `release-2021-09` you can configure the card used to show results in dashboards. You do this by configuring your own dashboard card in the project config under `editorSettings.dashboardCardConfigurations` and then define this card per mediaType as you please.
@@ -395,10 +393,10 @@ documentLists: {
 ```
 ### displayFilters
 
-[Display Filters]({{< ref "/reference-docs/editor-configuration/display-filter" >}}) are filters that the user can set in the UI (below the search input).
+[Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter" >}}) are filters that the user can set in the UI (below the search input).
 ### baseFilters
 
-[Base Filters]({{< ref "/reference-docs/editor-configuration/base-filter" >}}) are invisible filters and applied to every search (including the default result list).
+[Base Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/base-filter" >}}) are invisible filters and applied to every search (including the default result list).
 ### Behavior
 Then there are 2 configs to define the behavior when Images are inserted into a Document from the Media Library:
 - `mediaLibrary.altTextPrefilling: {metadataPropertyName: ''}`: a metadata property handle from which the `alt` attribute on an image tag is filled.

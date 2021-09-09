@@ -5,8 +5,15 @@ weight: 2
 ---
 
 Apart from the one-time imports to import a set of legacy data into Livingdocs, continuous imports from a third-party feed, e.g. DPA articles are a major case for publishers.
+
 In this guide we use an [open-source example](https://github.com/livingdocsIO/dpa-example) provided by Livingdocs to get a DPA feed import running with the Livingdocs service sandbox and then in a hands-on exercise adapt the open-source boilerplate such as to import DPA articles to the living-stories design (another design available on the Livigndocs service).
 This guide will not only help you to get a DPA import running but shows you the details necessary to import any kind of data source (e.g. another feed provider) to any kind of Livingdocs design.
+
+## Video Guide
+
+This walkthrough for developers, explains you how to use the open-source serverless application for importing DPA articles over the S3 push API to Livingdocs.
+
+{{< vimeo id="498376374" class="video-wrapper" >}}
 
 ## Overview
 

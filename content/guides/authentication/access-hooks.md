@@ -8,11 +8,11 @@ The access hook feature allows to register a function on the server that interce
 
 A hook can return a permission error (with a 403 `status` property) which is consumed by the editor.
 
-### Alpha Stage
+## Beta Stage
 
-The implementation of the access hooks is in an alpha stage and could change in the future. We might introduce policies that will replace the hooks at a later step. So please make sure you don't implement complex logic using the hooks.
+The implementation of the access hooks is in an beta stage and could change in the future. We might introduce policies that will replace the hooks at a later step. So please make sure you don't implement complex logic using the hooks.
 
-### Example
+## Example: Prevent Document Updates
 
 Here you see a simple example which rejects a document update when the title is set to 'examplePermissionError'.
 
@@ -36,7 +36,7 @@ liServer.registerInitializedHook(async () => {
 ```
 
 
-### Advanced Example
+## Advanced Document Update Example
 
 In this example we only allow the server admin (which has userId = 1) to update a document which has the category 'financialReport'. It's only a showcase to get a feeling what you could do.
 
