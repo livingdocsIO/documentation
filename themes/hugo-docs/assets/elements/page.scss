@@ -81,9 +81,9 @@
     @include media-query(widescreen) {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding-right: $space-xl;
-      padding-left: $space-xl;
+      align-items: left;
+      padding-right: $space-l;
+      padding-left: $space-l;
     }
   }
 }

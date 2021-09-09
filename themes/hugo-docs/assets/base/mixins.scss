@@ -56,14 +56,14 @@
   @include media-query(widescreen) {
     $shift: '50% + #{$page-sidebar-width + $space-l} - 50vw';
     width: calc(100% - 2 * (#{$shift}));
-    margin-left: calc(#{$shift});
+    // margin-left: calc(#{$shift});
     margin-right: calc(#{$shift});
   }
 
   @include media-query(ultrawide) {
     $shift: '50% + #{$page-sidebar-width + $space-l - $breakpoint-ultrawide / 2}';
     width: calc(100% - 2 * (#{$shift}));
-    margin-left: calc(#{$shift});
+    // margin-left: calc(#{$shift});
     margin-right: calc(#{$shift});
   }
 }
