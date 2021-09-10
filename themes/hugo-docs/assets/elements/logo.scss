@@ -1,20 +1,20 @@
 .logo {
-  &--brand-desktop {
-    display: none;
-    width: 1.5 * $space-xl;
-    margin-top: 8px;
+  display: flex;
+  align-items: center;
 
-    @include media-query(desktop) {
-      display: initial;
-    }
+  &__dot {
+    height: 1.5 * $space-m;
   }
 
-  &--brand-mobile {
-    margin-top: $space-xs;
-    height: 1.75 * $space-m;
+  &__brandname {
+    @extend %font-s;
+    display: none;
+    margin: 0 0 0 $space-s;
+    color: $color-black;
+    font-weight: 500;
 
     @include media-query(desktop) {
-      display: none;
+      display: block;
     }
   }
 }
