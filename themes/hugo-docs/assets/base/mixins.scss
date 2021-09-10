@@ -30,7 +30,7 @@
 }
 
 @mixin box-shadow($variant: '') {
-  box-shadow: 0 1px 18px $color-shadow;
+  box-shadow: 0 1px 9px $color-shadow;
   @if $variant == highlight {
     box-shadow: 0 1px 24px $color-shadow--highlight;
   }
