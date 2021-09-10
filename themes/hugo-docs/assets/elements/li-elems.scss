@@ -1,11 +1,10 @@
 li-warning {
+  @extend %font-xs;
   display: block;
-  padding: 10px;
-  margin-bottom: 20px;
-
-  border: 1px solid rgb(221, 205, 91);
-  border-radius: 3px;
-  color: #57606a;
-  background-color: $color-yellow-2; // #f1e05a
-  font-size: 14px;
+  padding: $space-s;
+  margin-bottom: $space-m;
+  border: 1px solid $color-yellow-1;
+  border-radius: $rounded-corners;
+  color: $color-black;
+  background-color: $color-yellow-2;
 }
