@@ -1,25 +1,25 @@
 .github-repo {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 20px;
-  max-width: 450px;
-  margin-bottom: 20px;
+  border: 1px solid $color-grey-5;
+  border-radius: $rounded-corners;
+  padding: $space-m;
+  max-width: 4.5 * $space-xl;
+  margin-bottom: $space-m;
 }
 
 .repo-link {
-  padding-left: 2px;
+  padding-left: $space-xs;
 }
 
 .repo-desc {
-  padding-top: 10px;
-  margin-bottom: 10px;
-  font-size: 14px;
-  color: #57606a;
+  @extend %font-s-xs;
+  padding-top: $space-s;
+  margin-bottom: $space-s;
+  color: $color-grey-2;
 }
 
 .repo-info {
-  font-size: 12px;
-  color: #57606a;
+  @extend %font-xxs;
+  color: $color-grey-2;
   margin-bottom: 0;
 }
 
@@ -29,8 +29,7 @@
   display: inline-block;
   width: 12px;
   height: 12px;
-  border: 1px solid rgb(221, 205, 91);
+  border: 1px solid $color-yellow-1;
   border-radius: 50%;
-
-  background-color: #f1e05a;
+  background-color: $color-yellow-2;
 }
