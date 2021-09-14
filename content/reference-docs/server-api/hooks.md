@@ -160,7 +160,7 @@ liServer.registerInitializedHook((done) => {
 #### registerListHooks()
 
 There is one hook for the `document-lists` feature. The hook can be registerd
-through ` registerListHooks()`.
+through `registerListHooks()`.
 
 Here is a full example:
 ```js
@@ -171,25 +171,25 @@ liServer.registerInitializedHook((done) => {
   liServer.features.api('li-document-lists').registerListHooks({
     projectHandle: 'your-interesting-project',
     channelHandle: 'some-channel',
-    listUpdateHook: ({projectId, listId, remove, add}, callback) => {
+    listUpdateHookAsync: ({projectId, listId, remove, add}) => {
       console.info(
         `The list with id '${listId}' in the project '${projectId}' has changes.`,
         `removing ${remove.length} things, adding ${add.length} things.`
       )
-      callback()
+      return
     }
   }, done)
 })
 ```
 
-#### listUpdateHook()
+#### listUpdateHookAsync()
 
 The payload described here has a custom format where it gives the added and
 removed `documentId`s. An example how to use that hook would be to have Elasticsearch
 reindex the documents which got added/removed from a list.
 
 ```js
-listUpdateHook: ({
+listUpdateHookAsync: ({
   trx, // a knex transaction object
   eventSource, // which api method triggers the hook 'updateList' or `removeDocumentFromList`
   projectId,
@@ -197,5 +197,5 @@ listUpdateHook: ({
   listId,
   remove: [30, 199],
   add: [{id: 77, order: 12}]
-}, done)
+})
 ```
