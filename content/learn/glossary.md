@@ -34,7 +34,7 @@ in a [livingdoc](#livingdoc) and how users can interact with these [components](
 
 ##### Embedded Design
 
-An "Embedded Design" lives inside of a Livingdocs channel configuration, therefore every "Embedded Design" is unique per project.
+An "Embedded Design" lives inside of a project configuration, therefore every "Embedded Design" is unique per project.
 Another design type is a [Referenced Design](#referenced-design).
 
 ##### Referenced Design

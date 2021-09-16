@@ -105,7 +105,7 @@ The second key `rendering` defines how your doc-include should be rendered. We w
 
 #### Enable for publishing
 
-The registered rendering method will render the `doc-include` preview in the editor for you. You can also use it to render the `doc-include` upon publishing, i.e. delivering the rendered `doc-include` over the public API. You can perform this setting per channel and rendition. Below is an example channel configuration for the web channel.
+The registered rendering method will render the `doc-include` preview in the editor for you. You can also use it to render the `doc-include` upon publishing, i.e. delivering the rendered `doc-include` over the public API. You can perform this setting per channel and rendition. Below is an example project configuration for the web channel.
 
 ```js
 renditions: {

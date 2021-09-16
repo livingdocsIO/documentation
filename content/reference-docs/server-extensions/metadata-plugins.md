@@ -10,7 +10,7 @@ menus:
 
 A metadata plugin defines the format and validation of a metadata value. It also defines how this value is indexed in elasticsearch in the publication index.
 
-There are synchronous hooks for for update, publish and unpublish events.
+There are synchronous hooks for update, publish and unpublish events.
 
 If a custom metadata plugin should appear in the Prepare Publish screen in the Editor
 there also must be a UI plugin in the editor which can render the form UI.

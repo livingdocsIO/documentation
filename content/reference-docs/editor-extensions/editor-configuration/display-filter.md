@@ -19,7 +19,7 @@ Possible values for `displayFilters` are:
 - `sortBy`: `relevance` (default), `creation_date`, `updated_at`, `alphabetical`
 - `language`: uses the project configuration for [available languages]({{< ref "/reference-docs/project-config/settings.md" >}}) to offer a select box to filter for languages (requires multi-language feature to be enabled)
 - `contentType`: uses the content-types configuration in your server to filter for different content-types, e.g. galleries or regular articles.
-- `category`: uses the channel configuration for categories to offer a multi-select box to filter for categories (OR filter)
+- `category`: uses the project configuration for categories to offer a multi-select box to filter for categories (OR filter)
 - Enterprise-only: `channels` give the user a dropdown to filter by a specific channel
 
 ## Custom Display Filter

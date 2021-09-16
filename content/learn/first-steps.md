@@ -12,12 +12,12 @@ Livingdocs offers a headless CMS as a service.
 
 This short guide explains how to set up and use the service with your own design.
 
-### 1\) Basic Setup
+### 1) Basic Setup
 
 * Setup a project on the [Livingdocs Service](https://edit.livingdocs.io/)
-* Add an API token on the [Livingdocs Service](https://edit.livingdocs.io/) \(Burger Menu -&gt; Project Access -&gt; Api Tokens\)
+* Add an API token on the [Livingdocs Service](https://edit.livingdocs.io/) \(Burger Menu -&gt; Project Access -&gt; Api Tokens)
 
-### 2\) Create your own design
+### 2) Create your own design
 
 * [Download](getting_started.md#download-project-config-from-service) the project config from the Livingdocs Service
 * Understand and modify the [project config](reference-docs/project-config/README.md)
@@ -27,18 +27,18 @@ This short guide explains how to set up and use the service with your own design
   * define your design [design settings](reference-docs/project-config/design.md)
 * [Publish](getting_started.md#publish-a-project-config-to-the-service) your project config and the embedded design at the Livingdocs Service
 
-### 3\) Administration
+### 3) Administration
 
 * Create groups with the different Rights
 * Invite Users to your project
 
-### 4\) Embed documents on your website
+### 4) Embed documents on your website
 
 * [Show documents on your frontend](getting_started.md#show-documents-on-your-frontend)
 
 ## Download project config from service
 
-With the cli tool `livingdocs-cli` \(\), you can down- and upload project configs and embedded designs.
+With the cli tool `livingdocs-cli` (), you can down- and upload project configs and embedded designs.
 
 ### Preconditions
 

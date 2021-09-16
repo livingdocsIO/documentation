@@ -348,7 +348,7 @@ metadata: [{
 }]
 ```
 
-With this in place you can set the channel configuration for your push notification topics \(see example config above\) and the firebase configuration in the [server config]({{< ref "/reference-docs/server-extensions/server-configuration#push-notifications" >}}).
+With this in place you can set the project configuration for your push notification topics \(see example config above\) and the firebase configuration in the [server config]({{< ref "/reference-docs/server-extensions/server-configuration#push-notifications" >}}).
 
 ## Text Formatting
 

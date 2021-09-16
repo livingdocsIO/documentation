@@ -9,7 +9,7 @@ menus:
 
 ## Overview
 
-Each project has its own project config which defines `contentTypes`, integrations editor settings and other project specific configurations.
+Each project has its own project config which defines `contentTypes`, integrations, editor settings and other project specific configurations.
 
 The project config is stored in the database and has a history. It can be updated at runtime.
 
