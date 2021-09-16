@@ -54,7 +54,6 @@
 /reference-docs/initalization /reference-docs/editor-api/;
 /reference-docs/initalization/document-drag-drop /reference-docs/editor-api/document-drag-drop/;
 /reference-docs/initalization/vue-component-registry /reference-docs/editor-api/vue-component-registry/;
-/reference-docs/project-config /reference-docs/project-config/;
 /reference-docs/project-config/content_types /reference-docs/project-config/content-types/;
 /reference-docs/project-config/editor_settings /reference-docs/project-config/editor-settings/;
 /reference-docs/project-config/media_types /reference-docs/project-config/media-types/;
