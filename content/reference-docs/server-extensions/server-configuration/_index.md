@@ -414,7 +414,7 @@ Defaults to max. 1000 documents.
 ```js
 projects: {
 
-  // Example static channel configurations
+  // Example static project configurations (still named channelConfigurations here)
   channelConfigurations: [
     require('./path/to/static-channel-config')
   ]

@@ -115,7 +115,7 @@ It contains all the information needed to replace it with the actual content. Th
 If the include is resolved instead of the `<ld-include>` you see the actual HTML returned by the include renderer:
 ```html
 <div>
-  <a internal href="/articles/2.html">
+  <a href="/articles/2.html">
     <div style="background-image: url(https://image.jpg)"></div>
     <div class="teaser__text">
         <h3><span>Mathieu Pavageau</span> <span> on Wed May 25 2016</span></h3>
@@ -127,7 +127,7 @@ If the include is resolved instead of the `<ld-include>` you see the actual HTML
 
 #### How to configure the rendering option
 
-Includes are not resolved by default. Enable it in the [channel configuration]({{< ref "/reference-docs/project-config" >}}):
+Includes are not resolved by default. Enable it in the [project configuration]({{< ref "/reference-docs/project-config" >}}):
 
 ```js
 module.exports = {

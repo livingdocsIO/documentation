@@ -14,7 +14,7 @@ Every document can have metadata. Which metadata properties a document has is de
 Every metadata property has a type which is called a `metadata plugin`.
 Livingdocs offers pre-made plugins for a wide array of data types like strings, dates or references to other documents. Where this is not enough, it's possible to create your own metadata plugins.
 
-Example of a metadata object as it could be returned by the REST API:
+Example of a metadata object as it could be returned by the Public API:
 ```json
 {
   "title": "Doctor Who 2",
