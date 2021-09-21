@@ -25,23 +25,26 @@ On the server, we first need to provide which languages we want to support in ou
 
 ```js
 // defines the languages that a user can select for a document
-availableLanguages: [{
-  'name': 'English',
-  'value': 'en-US'
-}, {
-  'name': 'German',
-  'value': 'de-DE'
-}],
-
-// used to create new documents
-defaultLanguage: {
-  name: 'English',
-  value: 'en-US'
-},
+settings: {
+  languages: {
+    // defines the languages that a user can select for a document
+    available: [{
+      label: 'German',
+      locale: 'de'
+    }, {
+      label: 'English',
+      locale: 'en'
+    }],
+    // used to create new documents
+    defaultLanguage: {
+      label: 'German',
+      locale: 'de'
+    },
+}
 ```
 
-The `defaultLanguage` defines with what language a new document is created. The `availableLanguages` define the set of
-languages from which a user can choose for a document. The `defaultLanguage` must be contained in the `availableLanguages`.
+The `defaultLanguage` defines with what language a new document is created. The `available` defines the set of
+languages from which a user can choose. The `defaultLanguage` must be contained in the `available`.
 
 ### Metadata
 
