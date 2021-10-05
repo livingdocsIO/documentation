@@ -16,6 +16,10 @@ The following shows the search dashboard that gets a new language column and fil
 The metadata screen gets a new language select box if the multi-language feature is configured.
 {{< img src="metadata.png" alt="Dashboard UI" >}}
 
+#### Related Infos
+- Read the [metadata translations for Data Records]({{< ref "/guides/editor/metadata-translations" >}}) guide to learn how to use translations for Data Records.
+- Read the [setting up the Media Library]({{< ref "/guides/media-library/media-library-setup" >}}) guide to learn how to configure translations for your Images, Videos and Files.
+- Get a list of available [metadata plugins]({{< ref "/reference-docs/document/metadata/metadata-plugin-list" >}})
 
 ## Server-side
 
@@ -121,6 +125,3 @@ The editor side is relatively easy to configure. You only need to add the provid
 ```
 
 Equivalently for pages if you want to have it there too.
-
-## Media Library
-Read the guide about [setting up the Media Library]({{< ref "/guides/media-library/media-library-setup" >}}) to learn how to configure multilanguage for your Images, Videos and Files.
