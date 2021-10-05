@@ -619,10 +619,29 @@ module.exports = {
 }
 ```
 
-## Multilanguage
-The Media Library supports multilanguage since `release-2021-06`. Here you learn how to configure it.
+## Metadata Translations
+The Media Library supports metadata translations since `release-2021-06`. Here you learn how to configure it.
 
-First, you have to configure multilanguage in the system as [described here]({{< ref "/guides/editor/multi-language.md" >}})
+First, you have to configure the available languages in the system as [described here]({{< ref "/guides/editor/multi-language.md" >}})
+
+### Add Plugin to Enable Translations
+
+As a next step, you have to add the `li-metadata-translations` metadata plugin to enable the Translations behavior for the media library.
+
+```js
+//media-types/image.js
+module.exports = {
+metadata: [
+  {
+    handle: 'translations',
+    type: 'li-metadata-translations',
+    ui: {
+      component: 'liMetaSelectForm',
+      service: 'languageSelection'
+    }
+  }
+]
+```
 
 ### Translatable metadata properties
 Now you can configure any metadata property in a `mediaType` to be translatable by the user like this:
@@ -630,18 +649,13 @@ Now you can configure any metadata property in a `mediaType` to be translatable 
 ```js
 //media-types/image.js
 module.exports = {
-// ...
 metadata: [
   {
-    // ...
     config: {
-      // ...
       translatable: true
     }
   },
-  // ...
 ]
-// ...
 ```
 
 ### Translatable assets (image/video/file)

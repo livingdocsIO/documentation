@@ -356,3 +356,23 @@ The service plugin for a slug allows you to customize the logic for the followin
 ```
 
 There is a sample implementation in `plugins/metadata_services/default_slug_service.coffee` to help you get started.
+
+
+## Metadata Translations
+
+Metadata translations are currently supported for the Media Library and Data Records.
+
+```js
+// metadata config:
+metadata: [{
+  handle: 'translations',
+  type: 'li-metadata-translations',
+  ui: {
+    component: 'liMetaSelectForm',
+    service: 'languageSelection'
+  }
+}]
+```
+
+- Read the [metadata translations for Data Records]({{< ref "/guides/media-library/media-library-setup" >}}) guide to learn how to use translations for Data Records.
+- Read the [setting up the Media Library]({{< ref "/guides/media-library/media-library-setup" >}}) guide to learn how to configure translations for your Images, Videos and Files.
