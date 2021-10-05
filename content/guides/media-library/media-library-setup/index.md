@@ -633,7 +633,7 @@ As a next step, you have to add the `li-metadata-translations` metadata plugin t
 module.exports = {
 metadata: [
   {
-    handle: 'translations',
+    handle: 'language',
     type: 'li-metadata-translations',
     ui: {
       component: 'liMetaSelectForm',

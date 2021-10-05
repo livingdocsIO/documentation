@@ -11,7 +11,7 @@ weight: 5
 
 This guide explains you how to enable metadata translations for Data Records.
 
-![image](https://user-images.githubusercontent.com/172394/135991690-d9b7bf2e-0b6d-44e9-a35d-e26f9c1b1b18.png)
+![image](https://user-images.githubusercontent.com/172394/138244183-c604aed5-efde-4484-a75b-0a1addb8ad6f.png)
 
 ## Add Available Languages
 
@@ -43,7 +43,7 @@ As a next step, you have to add the `li-metadata-translations` metadata plugin t
 module.exports = {
 metadata: [
   {
-    handle: 'translations',
+    handle: 'language',
     type: 'li-metadata-translations',
     ui: {
       component: 'liMetaSelectForm',

@@ -362,10 +362,10 @@ There is a sample implementation in `plugins/metadata_services/default_slug_serv
 
 Metadata translations are currently supported for the Media Library and Data Records.
 
+#### Metadata Config
 ```js
-// metadata config:
 metadata: [{
-  handle: 'translations',
+  handle: 'language',
   type: 'li-metadata-translations',
   ui: {
     component: 'liMetaSelectForm',
@@ -373,6 +373,15 @@ metadata: [{
   }
 }]
 ```
+
+#### Storage
+```js
+metadata: {
+  language: {locale: 'de'}
+}
+```
+
+#### References
 
 - Read the [metadata translations for Data Records]({{< ref "/guides/media-library/media-library-setup" >}}) guide to learn how to use translations for Data Records.
 - Read the [setting up the Media Library]({{< ref "/guides/media-library/media-library-setup" >}}) guide to learn how to configure translations for your Images, Videos and Files.
