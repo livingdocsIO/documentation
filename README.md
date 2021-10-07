@@ -68,7 +68,7 @@ If you press `Shift` once if the screenshot tool is still open, you can capture 
 
 ### Terminal
 
-Please try to capture a nice segment. If possible try to embed the text in a text code block or use [this website to generate an image](https://carbon.now.sh/?bg=rgba%280%2C0%2C0%2C0%29&t=lucario&wt=bw&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=false&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=const%2520cars%2520%253D%2520%255B%27BMW%27%252C%2520%27Volvo%27%252C%2520%27Mini%27%255D%250A%250Afor%2520%28const%2520car%2520of%2520cars%29%2520%257B%250A%2520%2520console.log%28%2560car%253A%2520%2524%257Bcar%257D%2560%29%250A%257D).
+Please try to capture a nice segment. If possible try to embed the text in a text code block or use [this website to generate an image](https://carbon.now.sh/?bg=rgba%280%2C0%2C0%2C0%29&t=lucario&wt=bw&l=auto&ds=false&dsyoff=20px&dsblur=68px&wc=false&wa=true&pv=56px&ph=56px&ln=true&fl=1&fm=Fira+Code&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=const%2520cars%2520%253D%2520%255B%27BMW%27%252C%2520%27Volvo%27%252C%2520%27Mini%27%255D%250A%250Afor%2520%28const%2520car%2520of%2520cars%29%2520%257B%250A%2520%2520console.log%28%2560car%253A%2520%2524%257Bcar%257D%2560%29%250A%257D).
 
 
 ## Hugo Theme
