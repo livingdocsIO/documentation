@@ -125,6 +125,13 @@ Iframely is used for 2 things:
 - validating links that you enter in the text (see [text editing]({{< ref "./text-editing.md#links" >}}))
 - in combination with [`doc-link` to prefill component from metadata]({{< ref "/reference-docs/document/document-design/directives/link" >}})
 
+#### Settings for Iframely
+
+When you have your own Iframely account, you should disable this [setting](https://iframely.com/settings/app) (red arrow) to prevent issues with link external link validation in Livingdocs.
+
+![image](https://user-images.githubusercontent.com/172394/136374486-12e9a79d-c7a6-4456-b2fd-197d3980e83f.png)
+
+
 ### Spellcheck
 
 See [here]({{< ref "./text-editing.md#spellcheck" >}})
