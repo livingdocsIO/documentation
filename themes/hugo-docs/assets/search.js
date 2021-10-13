@@ -30,7 +30,13 @@ function initializeIndex (searchJson) {
 
 	function search (data) {
 		if (!index) return queue.push(data)
-		searchInIndex(index, data)
+		try {
+			const results = searchInIndex(index, data)
+			self.postMessage(JSON.stringify(results))
+		} catch (err) {
+			console.error('Search error', err)
+			self.postMessage('[]')
+		}
 	}
 
 	const api = {search}
