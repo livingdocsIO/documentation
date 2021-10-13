@@ -66,11 +66,13 @@ function searchInIndex (index, {query, limit}) {
 
 		byDoc[documentUrl].results.push({url, title, description})
 		byDoc[documentUrl].score += match.score
-		if (count === limit) break
 	}
 
-	const results = Object.values(byDoc).sort(function (a, b) { return b.score - a.score })
-	self.postMessage(JSON.stringify(results))
+	const results = Object.values(byDoc).sort(function (a, b) { return b.score - a.score }).slice(0, limit)
+	for (const doc of results) {
+		doc.results = doc.results.slice(0, 3)
+	}
+	return results
 }
 
 function matchesOfFields ({matchData: {metadata}}) {
