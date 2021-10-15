@@ -25,6 +25,10 @@ You can check out Livingdocs via our service at [edit.livingdocs.io](https://edi
 
 If you would like to get a specific task done head over to the [guides]({{< ref "guides" >}}) section.
 
+## Releases
+
+An overview of the releases can be found at [release notes]({{< ref "operations/releases" >}}).
+
 
 ## Operations
 
