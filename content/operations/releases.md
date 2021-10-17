@@ -25,4 +25,4 @@ We announce roughly every 2 months a new release. You can find more information 
 
 ## Older Release Notes
 
-Older release notes can still be found [here](https://github.com/livingdocsIO/documentation/tree/master/content/operations/releases/archive).
+Older release notes can still be found [here](https://github.com/livingdocsIO/documentation/tree/master/content/operations/releases/archived).
