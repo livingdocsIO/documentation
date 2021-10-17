@@ -19,7 +19,6 @@ description: Release notes for release-2021-09
 
 # Newsletter
 
-* Newsletter: **TODO**
 * Subscribe here: https://confirmsubscription.com/h/j/61B064416E79453D
 
 
@@ -27,13 +26,13 @@ description: Release notes for release-2021-09
 
 #### Features
 
-* Recording: **TODO**
-* Documentation: **TODO**
+* [Recording](https://us02web.zoom.us/rec/share/ys3C8auCq6NX-kAA8fs9s002XozU26Q2UKv4hKeWFQQ_JZFcSaAUxuHlgnVdEvsE.7jDTiAZkBFtS_bfC) | PW: %W6wRuIU
+* [Documentation](https://docs.google.com/document/d/17zmlYWhxSsWViZ2cYRBrRnuJ0qOglPwmbf_Gy6vxfTg/edit)
 
 #### Developers
 
-* Recording: **TODO**
-* Slides: **TODO**
+* [Recording](https://us02web.zoom.us/rec/play/H7HD6Cetet6wHKHUL6rWVdKuOL_HkgAOI_6Ovy179zhsamEY2Z2Ph8ZLw-iF7cOnejGv0gVQYIoJaCZI.zGVqtMK5THPYJHP9?continueMode=true) | PW: P+iCE8!?
+* [Slides](https://docs.google.com/presentation/d/1WgRxVPsseYXD_NQ2syKBi24UmmgtD8ti7H1JEeRGUUM/edit#slide=id.g5d9a6eb16f_1_0)
 
 # System Requirements
 
@@ -471,7 +470,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 
 editor config  are deprecated in favor of project config editorSettings.documentList.dashboard:
 
-🔧  Deprecate editor config `app.filters.documentListList` and projectConfig `settings.lists`. Move config to server config `editorSettings.documentList.dashboard`
+🔧  Deprecate editor config `app.filters.documentListList` and projectConfig `settings.lists`. Move config to server config `editorSettings.documentLists.dashboard`
 
 References:
 * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4591)
@@ -619,10 +618,58 @@ References:
 # Patches
 
 ### Livingdocs Server Patches
+- [v154.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.34): fix(postgres): Fix support for postgres 14 that has some query logic change (maybe accidental)
+
+https://twitter.com/mrbrookman/status/1444462747287228416?s=20
+https://www.postgresql.org/message-id/3735893.1633232886%40sss.pgh.pa.us
+- [v154.0.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.33): chore(build): Upgrade to @livingdocs/secure-password
+- [v154.0.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.32): test: update tests for comments mentioning
+- [v154.0.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.31): fix(imagemagick): Support imagemagick uploads again
+- [v154.0.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.29): fix(publication-hooks): Pass the correct documentType, add the contentType additionally to the documentType
+- [v154.0.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.28): fix(group-projection): do nothing on an insert conflict
+- [v154.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.27): fix(telemetry): Fix opentelemetry span creation in the job queue
+
+Since the opentelemetry upgrade, the span got created wrong.
+```
+xadd bl:media:update * mediaTypeId 6 id 0WJhlrSIiwMG _trace 00-undefined-undefined-00
+```
+- [v154.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.26): chore: remove content-disposition and let the editor decide how to get the file
+- [v154.0.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.25): test(push notifications): Add tests for airship
+- [v154.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.24): fix(elasticsearch): Get rid `"./*": "./*"` deprecation message coming from a package.json require of elasticsearch
+
+https://github.com/elastic/elasticsearch-js/issues/1465#issuecomment-928236270
+- [v154.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.23): test: adapt tests
+- [v154.0.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.22): chore(blob-store): Isolate the computeKey tests more
+- [v154.0.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.21): fix(project-config): Lower the minimum metadata handle length to two characters
+
+The policy to require 3 characters in a metadata property name is too restrictive for some use cases
+- [v154.0.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.20): fix(pusher): Enforce pusher to use tls
+
+We never want to send data unencrypted
+- [v154.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.19): fix(blob-store): Fix Cloudinary storage
+
+- Make createReadStream synchronous
+- Always use Cloudinary public_id
+- Rename "delete" function to "remove"
+- [v154.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.18): perf(imports): Skip daily count request if there's no import limit configured
+- [v154.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.17): fix(tracing): Properly retrieve the traceId from a span of http requests
 - [v154.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.16): fix(framework): update to 21.0.5
 - [v154.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.15): openid-connect: Support HTTP_PROXY environment variable in Issuer.discover call
 
 ### Livingdocs Editor Patches
+- [v72.13.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.33): fix(media-library): correctly select an additional language in multilanguage
+- [v72.13.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.32): fix(media upload service): Remove component on failed/canceled upload
+- [v72.13.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.31): fix(component card): Fix layout for images with height > width
+- [v72.13.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.30): fix: send context to server
+- [v72.13.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.29): fix(search filter bar): Update show/hide when items are added asynchronously
+- [v72.13.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.28): fix: rename Ignore to Off
+- [v72.13.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.26): fix(user): Escape user initials that would break the avatar svg
+- [v72.13.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.25): fix: move file downloader to it's own helper and improve logic
+- [v72.13.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.24): fix(media-library): Hide "set" button for non-translatable assets
+- [v72.13.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.23): fix: Trigger another release as the npm publish failed
+- [v72.13.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.22): fix(feature-detection): Cancel script execution once we detect that a browser is not supported
+- [v72.13.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.21): fix: Handle properties with default values in li-form-select
+- [v72.13.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.20): fix(clipboard): Cancel drag event when clipboard is emptied
 - [v72.13.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.19): fix: change toolbar max offset to fix overlapping action bar issue
 - [v72.13.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.18): fix(framework): update to 21.0.5
 - [v72.13.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.17): document lists: Compute data when adding documents

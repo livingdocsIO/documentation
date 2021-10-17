@@ -648,6 +648,18 @@ References:
 # Patches
 
 ### Livingdocs Server Patches
+- [v135.1.82](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.82): fix(document-lists): Allow empty lists to be published
+- [v135.1.81](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.81): chore(build): Upgrade to @livingdocs/secure-password
+- [v135.1.80](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.80): fix(project-config): Lower the minimum metadata handle length to two characters
+
+The policy to require 3 characters in a metadata property name is too restrictive for some use cases
+- [v135.1.79](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.79): fix(publication-hooks): Pass the correct documentType, add the contentType additionally to the documentType
+- [v135.1.78](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.78): fix(group-projection): do nothing on an insert conflict
+- [v135.1.77](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.77): chore: Update npm read token
+- [v135.1.76](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.76): fix: add module ~lib/extract-header
+- [v135.1.75](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.75): test(push notifications): Add tests for airship
+- [v135.1.74](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.74): test: adapt tests
+- [v135.1.73](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.73): chore(blob-store): Isolate the computeKey tests more
 - [v135.1.72](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.72): fix(indexing): Do not trigger a catchup job with the publication indexing to not trigger an 'Invalid Index Job' message
 
 Introducing the catchup job means supporting all the parameter options in custom indexes and is therefore a breaking change.
@@ -729,6 +741,12 @@ We're also introducing the `mediaLibrary` config, so we can remove the old keys 
 
 
 ### Livingdocs Editor Patches
+- [v67.6.81](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v67.6.81): fix(collab bar): Show tooltip with name to the left of avatar
+- [v67.6.80](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v67.6.80): fix(search filter bar): Update show/hide when items are added asynchronously
+- [v67.6.79](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v67.6.79): fix: rename Ignore to Off
+- [v67.6.78](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v67.6.78): fix(user): Escape user initials that would break the avatar svg
+- [v67.6.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v67.6.77): fix: move file downloader to it's own helper and improve logic
+- [v67.6.76](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v67.6.76): fix(media-library): Hide "set" button for non-translatable assets
 - [v67.6.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v67.6.75): fix: change toolbar max offset to fix overlapping action bar issue
 - [v67.6.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v67.6.74): fix: invoke PR feedback
 - [v67.6.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v67.6.73): fix: request the whole month (inclusive current)
