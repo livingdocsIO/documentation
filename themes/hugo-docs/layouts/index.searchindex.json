@@ -1,12 +1,14 @@
 [
   {{- range $index, $page := .Site.AllPages -}}
-    {{- if ne $index 0 -}} , {{- end -}}
     {{- $entry := (dict "url" $page.RelPermalink) -}}
     {{- $entry = merge $entry (dict "section" $page.Section) -}}
     {{- $entry = merge $entry (dict "categories" $page.Params.categories) -}}
     {{- $entry = merge $entry (dict "title" $page.Title) -}}
     {{- $entry = merge $entry (dict "description" $page.Description) -}}
     {{- $entry = merge $entry (dict "body" ($page.Content | jsonify)) -}}
-    {{- $entry | jsonify -}}
+    {{- if ne $page.Params.excludeFromSearch true -}}
+      {{- if ne $index 0 -}} , {{- end -}}
+      {{- $entry | jsonify -}}
+    {{- end -}}
   {{- end -}}
 ]

@@ -78,6 +78,23 @@ Please try to capture a nice segment. If possible try to embed the text in a tex
 Some icons where copied individually to `themes/hugo-docs/assets/svg` from
 <https://primer.style/octicons/>.
 
+## Document Headers
+
+Every document has a header to control the behavior in the documentation. Below you will see an example:
+
+```
+---
+title: Setup Notifications
+linkTitle: Notifications
+description: Configure notifications so users can watch documents
+weight: 6
+---
+```
+
+#### Document Header Properties
+
+* `excludeFromSearch: true` - every document will be indexed by default except you exclued it with `excludeFromSearch`
+
 
 ## Development
 
