@@ -1,7 +1,7 @@
 ---
 title: release-2017-07
 description: Release notes for release-2018-07
-draft: true
+excludeFromSearch: true
 ---
 
 # Release Notes release-17-07

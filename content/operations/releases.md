@@ -15,14 +15,38 @@ We announce roughly every 2 months a new release. You can find more information 
 
 ## Release Notes
 
-* [![Current Release](https://img.shields.io/badge/-current-success)]()[ September 2021 Release]({{< ref "operations/releases/release-2021-09.md" >}})
-* [![Legacy Release](https://img.shields.io/badge/-legacy*-lightgrey)]()[ June 2021 Release]({{< ref "operations/releases/release-2021-06.md" >}})
-* [![Legacy Release](https://img.shields.io/badge/-legacy*-lightgrey)]()[ March 2021 Release]({{< ref "operations/releases/release-2021-03.md" >}})
-* [![Legacy Release](https://img.shields.io/badge/-legacy*-lightgrey)]()[ December 2020 Release]({{< ref "operations/releases/release-2020-12.md" >}})
-* [![Legacy Release](https://img.shields.io/badge/-legacy*-lightgrey)]()[ October 2020 Release]({{< ref "operations/releases/release-2020-10.md" >}})
+* **Current Release**: The latest announced release
+* **Maintained Releases**: Get security fixes and severe bug fixes.
+* **Upcoming Release**: You can already read about the features, improvements and fixes of the next release. But be aware that the release notes are auto generated and will be manually fixed before we officially anounce the new release.
+* **Legacy Release**: Legacy releases do not receive bugfixes anymore. If you use an old release please notify us (release@livingdocs.io) so we are aware and can inform you of critical fixes in newer releases.
 
-(*) __Legacy releases__ do not receive bugfixes anymore. If you use an old release please notify us (release@livingdocs.io) so we are aware and can inform you of critical fixes in newer releases.
-
-## Older Release Notes
-
-Older release notes can still be found [here](https://github.com/livingdocsIO/documentation/tree/master/content/operations/releases/archived).
+|Name|Upcoming|Current|Maintained|Legacy|
+|-|-|-|-|-|
+|[November 2021 Release]({{< ref "operations/releases/master.md" >}})|✅||||
+|[September 2021 Release]({{< ref "operations/releases/release-2021-09.md" >}})||✅|✅||
+|[June 2021 Release]({{< ref "operations/releases/release-2021-06.md" >}})|||✅||
+|[March 2021 Release]({{< ref "operations/releases/release-2021-03.md" >}})||||✅|
+|[October 2020 Release]({{< ref "operations/releases/release-2020-10.md" >}})||||✅|
+|[July 2020 Release]({{< ref "operations/releases/release-2020-07.md" >}})||||✅|
+|[May 2020 Release]({{< ref "operations/releases/release-2020-05.md" >}})||||✅|
+|[April 2020 Release]({{< ref "operations/releases/release-2020-04.md" >}})||||✅|
+|[February 2020 Release]({{< ref "operations/releases/release-2020-02.md" >}})||||✅|
+|[December 2019 Release]({{< ref "operations/releases/release-2019-12.md" >}})||||✅|
+|[September 2019 Release]({{< ref "operations/releases/release-2019-09.md" >}})||||✅|
+|[July 2019 Release]({{< ref "operations/releases/release-2019-07.md" >}})||||✅|
+|[May 2019 Release]({{< ref "operations/releases/release-2019-05.md" >}})||||✅|
+|[March 2019 Release]({{< ref "operations/releases/release-2019-03.md" >}})||||✅|
+|[January 2019 Release]({{< ref "operations/releases/release-2019-01.md" >}})||||✅|
+|[November 2018 Release]({{< ref "operations/releases/release-2018-11.md" >}})||||✅|
+|[September 2018 Release]({{< ref "operations/releases/release-2018-09.md" >}})||||✅|
+|[June 2018 Release]({{< ref "operations/releases/release-2018-06.md" >}})||||✅|
+|[May 2018 Release]({{< ref "operations/releases/release-2018-05.md" >}})||||✅|
+|[April 2018 Release]({{< ref "operations/releases/release-2018-04.md" >}})||||✅|
+|[March 2018 Release]({{< ref "operations/releases/release-2018-03.md" >}})||||✅|
+|[February 2018 Release]({{< ref "operations/releases/release-2018-02.md" >}})||||✅|
+|[January 2018 Release]({{< ref "operations/releases/release-2018-01.md" >}})||||✅|
+|[December 2017 Release]({{< ref "operations/releases/release-2017-12.md" >}})||||✅|
+|[October 2017 Release]({{< ref "operations/releases/release-2017-10.md" >}})||||✅|
+|[September 2017 Release]({{< ref "operations/releases/release-2017-09.md" >}})||||✅|
+|[August 2017 Release]({{< ref "operations/releases/release-2017-08.md" >}})||||✅|
+|[July 2017 Release]({{< ref "operations/releases/release-2017-07.md" >}})||||✅|

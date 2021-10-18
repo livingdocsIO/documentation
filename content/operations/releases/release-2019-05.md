@@ -1,7 +1,7 @@
 ---
 title: release-2019-05
 description: Release notes for release-2019-05
-draft: true
+excludeFromSearch: true
 ---
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
