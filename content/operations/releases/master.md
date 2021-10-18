@@ -15,7 +15,7 @@ excludeFromSearch: true
 - [Webinar](#webinar)
 - [System Requirements](#system-requirements)
 - [Highlights](#highlights)
-- [Breaking Changes :fire:](#breaking-changes-fire)
+- [Breaking Changes :fire:](#breaking-changes)
 - [Deprecations](#deprecations)
 - [APIs :gift:](#apis-gift)
 - [Internal Changes](#internal-changes)
