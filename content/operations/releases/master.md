@@ -4,6 +4,7 @@ description: Release notes for release-2021-11
 excludeFromSearch: true
 ---
 * :new: projectConfigCache: same-process invalidation on updates [livingdocs-server #4050 v156.0.1](undefined) :gift:
+* :new: projectConfigCache: same-process invalidation on updates [livingdocs-server #4050 v156.0.1](undefined) :gift:
 * :new: fix(upload center): Fix usage of reactive variables [livingdocs-editor #4785 v74.2.10](undefined) :gift:
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
