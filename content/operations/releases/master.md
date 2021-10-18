@@ -3,6 +3,7 @@ title: release-2021-11
 description: Release notes for release-2021-11
 excludeFromSearch: true
 ---
+* :new: fix(upload center): Fix usage of reactive variables [livingdocs-editor #4785 v74.2.10](undefined) :gift:
 
 
 Server until: 156.0.1
