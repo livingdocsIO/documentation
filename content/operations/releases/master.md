@@ -3,6 +3,7 @@ title: release-2021-11
 description: Release notes for release-2021-11
 excludeFromSearch: true
 ---
+* :new: Use the updated release-notes-patch repo [livingdocs-editor #4794 v74.2.14](https://github.com/livingdocsIO/livingdocs-editor/pull/4794) :gift:
 * :new: Media Library: Fix transcoding state after video replace [livingdocs-editor #4792 v74.2.13](https://github.com/livingdocsIO/livingdocs-editor/pull/4792) :gift:
 * :new: Media Library: Fix transcoding state after video replace [livingdocs-editor #4792 v74.2.13](https://github.com/livingdocsIO/livingdocs-editor/pull/4792) :gift:
 * :new: Media Library: Fix transcoding state after video replace [livingdocs-editor #4792 v74.2.13](https://github.com/livingdocsIO/livingdocs-editor/pull/4792) :gift:
