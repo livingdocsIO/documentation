@@ -3,6 +3,7 @@ title: release-2021-11
 description: Release notes for release-2021-11
 excludeFromSearch: true
 ---
+* :new: Improvement/multilanguage metadata [livingdocs-editor #4793 v74.2.12](https://github.com/livingdocsIO/livingdocs-editor/pull/4793) :gift:
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
