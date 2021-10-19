@@ -639,6 +639,13 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v135.1.83](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.83): fix: use the updated release-notes-patch rep
+
+and add an additional comment
+
+with multiple lines
+
+to test if the patch message will be parsed correctly
 - [v135.1.82](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.82): fix(document-lists): Allow empty lists to be published
 - [v135.1.81](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.81): chore(build): Upgrade to @livingdocs/secure-password
 - [v135.1.80](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.80): fix(project-config): Lower the minimum metadata handle length to two characters
