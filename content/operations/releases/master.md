@@ -3,12 +3,6 @@ title: release-2021-11
 description: Release notes for release-2021-11
 excludeFromSearch: true
 ---
-* :new: Improvement/multilanguage metadata [livingdocs-editor #4793 v74.2.12](https://github.com/livingdocsIO/livingdocs-editor/pull/4793) :gift:
-* :new: Improvement/multilanguage metadata [livingdocs-editor #4793 v74.2.12](undefined) :gift:
-* :new: Improvement/modals [livingdocs-editor #4790 v74.2.11](undefined) :gift:
-* :new: projectConfigCache: same-process invalidation on updates [livingdocs-server #4050 v156.0.1](undefined) :gift:
-* :new: projectConfigCache: same-process invalidation on updates [livingdocs-server #4050 v156.0.1](undefined) :gift:
-* :new: fix(upload center): Fix usage of reactive variables [livingdocs-editor #4785 v74.2.10](undefined) :gift:
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
@@ -251,6 +245,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
   * Fix not necessary request to `/[object Object]` in upload center [livingdocs-editor #4785](https://github.com/livingdocsIO/livingdocs-editor/pull/4785) :beetle:
   * Fix the selection of an additional language in media library multilanguage [livingdocs-editor #4786](https://github.com/livingdocsIO/livingdocs-editor/pull/4786) :beetle:
   * Remove component on failed/canceled upload [livingdocs-editor #4782](https://github.com/livingdocsIO/livingdocs-editor/pull/4782) :beetle:
+  * Improve design of additional language [livingdocs-editor #4793 v74.2.12](https://github.com/livingdocsIO/livingdocs-editor/pull/4793) :gift:
 * Menu
   * Fix Lost Menu Entries on save [livingdocs-editor #4703](https://github.com/livingdocsIO/livingdocs-editor/pull/4703) :beetle:
 :beetle:
