@@ -640,6 +640,7 @@ We never want to send data unencrypted
 - [v154.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.15): openid-connect: Support HTTP_PROXY environment variable in Issuer.discover call
 
 ### Livingdocs Editor Patches
+- [v72.13.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.34): fix: use the updated release-notes-patch repo
 - [v72.13.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.33): fix(media-library): correctly select an additional language in multilanguage
 - [v72.13.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.32): fix(media upload service): Remove component on failed/canceled upload
 - [v72.13.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.31): fix(component card): Fix layout for images with height > width
