@@ -3,6 +3,7 @@ title: release-2021-11
 description: Release notes for release-2021-11
 excludeFromSearch: true
 ---
+* :new: Improvement/multilanguage metadata [livingdocs-editor #4793 v74.2.12](undefined) :gift:
 * :new: Improvement/modals [livingdocs-editor #4790 v74.2.11](undefined) :gift:
 * :new: projectConfigCache: same-process invalidation on updates [livingdocs-server #4050 v156.0.1](undefined) :gift:
 * :new: projectConfigCache: same-process invalidation on updates [livingdocs-server #4050 v156.0.1](undefined) :gift:
