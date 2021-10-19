@@ -739,6 +739,7 @@ We're also introducing the `mediaLibrary` config, so we can remove the old keys 
 
 
 ### Livingdocs Editor Patches
+- [v67.6.82](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v67.6.82): fix: use the updated release-notes-patch repo
 - [v67.6.81](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v67.6.81): fix(collab bar): Show tooltip with name to the left of avatar
 - [v67.6.80](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v67.6.80): fix(search filter bar): Update show/hide when items are added asynchronously
 - [v67.6.79](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v67.6.79): fix: rename Ignore to Off
