@@ -14,35 +14,37 @@ description: Release notes for release-2021-06
 
 ### Features
 
-* Recording: https://us02web.zoom.us/rec/share/TqruhYHYmnfgv4cJoCdwFO7nmGgHfNFsRXpe8ZVFxm0z4H4sAyiHdcBxsX9KuKkc.espYdCzJ3EvJqyPz / Password: 9RmW6ZH#
-* Documentation: https://docs.google.com/document/d/1HF5icxlcjgFTuzj-vcTugowQLIm0FXnFvUwakPozCkE/edit?usp=sharing
+* [Recording](https://us02web.zoom.us/rec/share/TqruhYHYmnfgv4cJoCdwFO7nmGgHfNFsRXpe8ZVFxm0z4H4sAyiHdcBxsX9KuKkc.espYdCzJ3EvJqyPz) | PW: 9RmW6ZH#
+* [Documentation](https://docs.google.com/document/d/1HF5icxlcjgFTuzj-vcTugowQLIm0FXnFvUwakPozCkE/edit?usp=sharing)
 
 ### Developers
 
-* Recording: https://us02web.zoom.us/rec/share/QFejRPVPrcslXGHCiOXqh5mDix5nSLiAu4IH5zIN_JvaqUSDSfA7Ts6GJSQT5Wz6.61tmJBF6CL6eFeRL / Password: 2!OqE8n&
-* Slides: https://docs.google.com/presentation/d/1vJSl1_t8jBbsIuSnT3dNsD7K_Sm9HuPeAHoGAL8A83o/edit#slide=id.g5d9a6eb16f_1_0
+* [Recording](https://us02web.zoom.us/rec/share/QFejRPVPrcslXGHCiOXqh5mDix5nSLiAu4IH5zIN_JvaqUSDSfA7Ts6GJSQT5Wz6.61tmJBF6CL6eFeRL) | PW: 2!OqE8n&
+* [Slides](https://docs.google.com/presentation/d/1vJSl1_t8jBbsIuSnT3dNsD7K_Sm9HuPeAHoGAL8A83o/edit#slide=id.g5d9a6eb16f_1_0)
 
 ## System Requirements
 
-### Minimal
-* Node 14 :fire:
-* NPM 7
-* Postgres 9.6 (Deprecate Postgres 9 and 10)
-* Elasticsearch 6.x
-* Redis 5
-* Base Docker Images
-  * livingdocs-server: `livingdocs/server-base:14.3`
-  * livingdocs-editor: `livingdocs/editor-base:14.3`
-
 ### Suggested
-* Node 16
-* NPM 7
-* Postgres 13
-* Elasticsearch 7
-* Redis 6
-* Base Docker Images
-  * livingdocs-server: `livingdocs/server-base:16`
-  * livingdocs-editor: `livingdocs/editor-base:16`
+|Name|Version|
+|-|-|
+|Node|16|
+|NPM|7|
+|Postgres|13|
+|Elasticsearch|7|
+|Redis|6|
+|Livingdocs Server Docker Image|livingdocs/server-base:16|
+|Livingdocs Editor Docker Image|livingdocs/editor-base:16|
+
+### Minimal
+|Name|Version|
+|-|-|
+|Node|14 :fire:|
+|NPM|7|
+|Postgres|9.6 (Deprecated Postgres 9 and 10)|
+|Elasticsearch|6.x|
+|Redis|5|
+|Livingdocs Server Docker Image|livingdocs/server-base:14.3|
+|Livingdocs Editor Docker Image|livingdocs/editor-base:14.3|
 
 
 ## Highlights

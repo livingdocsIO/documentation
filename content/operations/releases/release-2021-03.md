@@ -14,35 +14,38 @@ description: Release notes for release-2021-03
 
 ### Features
 
-* Documentation/Recording: [here](https://docs.google.com/document/d/1gSbHm6nRBT0O8i9Z2UPvQ_PSLS_ZtGiy_qi8erTIMls)
+* [Documentation/Recording](https://docs.google.com/document/d/1gSbHm6nRBT0O8i9Z2UPvQ_PSLS_ZtGiy_qi8erTIMls)
 
 ### Developers
 
-* Slides: [here](https://docs.google.com/presentation/d/e/2PACX-1vTZHMF4UEK40l3dAOHA8rz4gPge2LXJD8R8R6alGDUgGbotd2iBuy44bsSWJvg_aKcFxa8ft8dFMyPH/pub?start=false&loop=false&delayms=3000&slide=id.g5d9a6eb16f_1_0)
-* Video: [here](https://us02web.zoom.us/rec/play/DPHqD8K6fVJbNVKon-oDu9ZOPzyjgPvRDS8CiqRA8uaiZ9KiQXIpuTpTjJ_NR8ke39VN8alRNMzbCGXq.XOMZuoBbvpdlHrgR?startTime=1617871969000&_x_zm_rtaid=RHvqvTfISdKgOm4AgbOGdw.1617882110914.f572a02e3425f855371a47d681f7d3af&_x_zm_rhtaid=96)
+* [Slides](https://docs.google.com/presentation/d/e/2PACX-1vTZHMF4UEK40l3dAOHA8rz4gPge2LXJD8R8R6alGDUgGbotd2iBuy44bsSWJvg_aKcFxa8ft8dFMyPH/pub?start=false&loop=false&delayms=3000&slide=id.g5d9a6eb16f_1_0)
+* [Video](https://us02web.zoom.us/rec/play/DPHqD8K6fVJbNVKon-oDu9ZOPzyjgPvRDS8CiqRA8uaiZ9KiQXIpuTpTjJ_NR8ke39VN8alRNMzbCGXq.XOMZuoBbvpdlHrgR?startTime=1617871969000&_x_zm_rtaid=RHvqvTfISdKgOm4AgbOGdw.1617882110914.f572a02e3425f855371a47d681f7d3af&_x_zm_rhtaid=96)
 
 ## System Requirements
 
-### Minimal
-* Node 12
-* NPM 7
-* Postgres 9.6
-* Elasticsearch 6.x
-* Redis 5
-* Base Docker Images
-  * livingdocs-server: `livingdocs/server-base:12.5`
-  * livingdocs-editor: `livingdocs/editor-base:12.2`
-
 ### Suggested
-* Node 14
-* NPM 7
-* Postgres 13
-* Elasticsearch 7
-* Redis 6
-* Base Docker Images
-  * livingdocs-server: `livingdocs/server-base:14.3`
-  * livingdocs-editor: `livingdocs/editor-base:14.3`
 
+|Name|Version|
+|-|-|
+|Node|14|
+|NPM|7|
+|Postgres|13|
+|Elasticsearch|7|
+|Redis|6|
+|Livingdocs Server Docker Image|livingdocs/server-base:14.3|
+|Livingdocs Editor Docker Image|livingdocs/editor-base:14.3|
+
+### Minimal
+
+|Name|Version|
+|-|-|
+|Node|12|
+|NPM|7|
+|Postgres|9.6|
+|Elasticsearch|6.x|
+|Redis|5|
+|Livingdocs Server Docker Image|livingdocs/server-base:12.5|
+|Livingdocs Editor Docker Image|livingdocs/editor-base:12.2|
 
 
 ## Highlights
