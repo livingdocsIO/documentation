@@ -5,17 +5,6 @@ description: Release notes for release-2020-10
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
-# Table of content
-- [Newsletter](#newsletter)
-- [Webinar](#webinar)
-- [Patches](#repositories)
-- [Highlights](#highlights)
-- [Breaking Changes](#breaking-changes-fire)
-- [Deprecations](#deprecations)
-- [APIs](#apis-gift)
-- [Internal Changes](#internal-changes)
-- [Other Changes](#other-changes)
-
 # Newsletter
 
 * Newsletter: **TODO**

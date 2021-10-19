@@ -6,16 +6,6 @@ excludeFromSearch: true
 
 # Release Notes: `November/December 2017 Release`
 
-## Content
-
-1. [Involved repositories](#repositories)
-2. [Breaking changes](#breaking-changes)
-3. [Public API](#public-api)
-4. [Configuration](#configuration)
-5. [Changelog](#changelog)
-6. [Print API](#print-api)
-7. [Patches](#patches)
-
 ## Repositories
 
 This release consists of the following new versions of the `livingdocs-server` and `livingdocs-editor`:

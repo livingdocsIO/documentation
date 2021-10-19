@@ -11,40 +11,27 @@ excludeFromSearch: true
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
-# Table of content <!-- omit in toc -->
-- [Newsletter](#newsletter)
-- [Webinar](#webinar)
-- [System Requirements](#system-requirements)
-- [Highlights](#highlights)
-- [Breaking Changes :fire:](#breaking-changes-)
-- [Deprecations](#deprecations)
-- [APIs :gift:](#apis-)
-- [Internal Changes](#internal-changes)
-- [Other Changes](#other-changes)
-- [Patches](#patches)
-
-# Newsletter
+## Newsletter
 
 * Newsletter: **TODO**
 * Subscribe here: https://confirmsubscription.com/h/j/61B064416E79453D
 
+## Webinar
 
-# Webinar
-
-#### Features
+### Features
 
 * Recording: **TODO**
 * Documentation: **TODO**
 
-#### Developers
+### Developers
 
 * Recording: **TODO**
 * Slides: **TODO**
 
 
-# System Requirements
+## System Requirements
 
-#### Minimal
+### Minimal
 
 * Node 14
 * NPM 7
@@ -56,7 +43,7 @@ excludeFromSearch: true
   * livingdocs-editor: `livingdocs/editor-base:14.3`
 * Browser Support: Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67
 
-#### Suggested
+### Suggested
 
 * Node 16
 * NPM 7
@@ -70,7 +57,7 @@ excludeFromSearch: true
 
 
 
-# Highlights
+## Highlights
 
 ### Project Secrets
 
@@ -115,9 +102,9 @@ TODO: Add description and documentation
 
 
 
-# Breaking Changes :fire:
+## Breaking Changes :fire:
 
-#### Migrate the database
+### Migrate the database
 
 TODO: add migrations
 
@@ -132,14 +119,14 @@ TODO: add migrations
 livingdocs-server migrate up
 ```
 
-#### Remove Deprecated Editor Config :fire:
+### Remove Deprecated Editor Config :fire:
 
 - 🔥 remove deprecated editor config `hugo.assetHost` - use server config `hugo.assetHost` instead
 - 🔥 remove deprecated editor config `app.imageService` - use server config `documents.selectedImageService` instead
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4691)
 
-#### Remove DocumentModel Getters :fire:
+### Remove DocumentModel Getters :fire:
 
 Some internal methods got removed. If you use any of the following methods, please rather use `documentWriteModel.metadata` directly.
 
@@ -149,14 +136,14 @@ Some internal methods got removed. If you use any of the following methods, plea
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4024)
 
-#### Rename channelConfig to projectConfig :fire:
+### Rename channelConfig to projectConfig :fire:
 
 - 🔥 removed server config property `channelConfigs.enabled` - it has no effect anymore
 - 🔥 removed server config `channelConfigs` - use `projectConfigs` instead
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4047)
 
-#### Button cleanup iteration 1 :fire:
+### Button cleanup iteration 1 :fire:
 
 If you have any custom UI in your downstream that makes use of any of the following you want to read this:
 
@@ -179,7 +166,7 @@ This will define the removed classes and variables within your SCSS file tree. Y
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4656)
 
-#### Button cleanup iteration 2 :fire:
+### Button cleanup iteration 2 :fire:
 
 If you have any custom UI in your downstream that makes use of any of the following you want to read this:
 
@@ -204,22 +191,22 @@ This will define the removed classes and variables within your SCSS file tree. Y
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4759)
 
 
-# Deprecations
+## Deprecations
 
 
 
 
-# APIs :gift:
+## APIs :gift:
 
 
 
 
-# Internal Changes
+## Internal Changes
 
 
 
 
-# Other Changes
+## Other Changes
 
 ### Features
 
@@ -277,12 +264,12 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 
 
 
-# Patches
+## Patches
 
-### Livingdocs Server Patches
+## Livingdocs Server Patches
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
-### Livingdocs Editor Patches
+## Livingdocs Editor Patches
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v??.?.?): text
 
   ---

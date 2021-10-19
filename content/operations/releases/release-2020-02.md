@@ -6,13 +6,6 @@ excludeFromSearch: true
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
-# Table of content
-- [Patches](#repositories)
-- [Highlights](#highlights)
-- [Breaking Changes](#breaking-changes-fire)
-- [APIs](#apis-gift)
-- [Other Changes](#other-changes)
-
 # Newsletter
 
 * Newsletter: [release-2020-02](https://livingdocsag.createsend.com/t/ViewEmail/j/30A473BB76A310C32540EF23F30FEDED/C67FD2F38AC4859C)

@@ -5,37 +5,25 @@ description: Release notes for release-2021-03
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
-# Table of content
-- [Newsletter](#newsletter)
-- [Webinar](#webinar)
-- [System Requirements](#system-requirements)
-- [Highlights](#highlights)
-- [Breaking Changes](#breaking-changes-fire)
-- [Deprecations](#deprecations)
-- [APIs](#apis-gift)
-- [Internal Changes](#internal-changes)
-- [Other Changes](#other-changes)
-- [Patches](#patches)
-
-# Newsletter
+## Newsletter
 
 * Subscribe here: https://confirmsubscription.com/h/j/61B064416E79453D
 
 
-# Webinar
+## Webinar
 
-#### Features
+### Features
 
 * Documentation/Recording: [here](https://docs.google.com/document/d/1gSbHm6nRBT0O8i9Z2UPvQ_PSLS_ZtGiy_qi8erTIMls)
 
-#### Developers
+### Developers
 
 * Slides: [here](https://docs.google.com/presentation/d/e/2PACX-1vTZHMF4UEK40l3dAOHA8rz4gPge2LXJD8R8R6alGDUgGbotd2iBuy44bsSWJvg_aKcFxa8ft8dFMyPH/pub?start=false&loop=false&delayms=3000&slide=id.g5d9a6eb16f_1_0)
 * Video: [here](https://us02web.zoom.us/rec/play/DPHqD8K6fVJbNVKon-oDu9ZOPzyjgPvRDS8CiqRA8uaiZ9KiQXIpuTpTjJ_NR8ke39VN8alRNMzbCGXq.XOMZuoBbvpdlHrgR?startTime=1617871969000&_x_zm_rtaid=RHvqvTfISdKgOm4AgbOGdw.1617882110914.f572a02e3425f855371a47d681f7d3af&_x_zm_rhtaid=96)
 
-# System Requirements
+## System Requirements
 
-#### Minimal
+### Minimal
 * Node 12
 * NPM 7
 * Postgres 9.6
@@ -45,7 +33,7 @@ description: Release notes for release-2021-03
   * livingdocs-server: `livingdocs/server-base:12.5`
   * livingdocs-editor: `livingdocs/editor-base:12.2`
 
-#### Suggested
+### Suggested
 * Node 14
 * NPM 7
 * Postgres 13
@@ -57,9 +45,9 @@ description: Release notes for release-2021-03
 
 
 
-# Highlights
+## Highlights
 
-## Media Library - Upload Center
+### Media Library - Upload Center
 
 When the user uploads images or videos, a new Upload Center is visible in the bottom right corner of the editor screen allowing the users to continue their work in the document while assets are uploaded in parallel in the background. If an error with any of the uploads happens it is shown and logged in the upload center.
 
@@ -68,7 +56,7 @@ When the user uploads images or videos, a new Upload Center is visible in the bo
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4145)
 
 
-## Media Library - Media Sources :tada:
+### Media Library - Media Sources :tada:
 
 ![image](https://user-images.githubusercontent.com/821875/107018818-35816480-67a1-11eb-945e-02f4838c5b61.png)
 
@@ -81,7 +69,7 @@ References:
   * [Documentation](https://github.com/livingdocsIO/livingdocs/pull/357)
 
 
-## Media Library - Index/Filter :tada:
+### Media Library - Index/Filter :tada:
 
 The media library dashboard has now the same search and filter capabilites as the documents dashboard.
 Define which media library metadata are indexed and define dashboard filter for all metadata.
@@ -94,7 +82,7 @@ References:
   * [Documentation custom Display Filter](https://docs.livingdocs.io/guides/register_custom_dashboard_filters_#register-custom-vue-component-filter)
 
 
-## Media Library - Videos :tada:
+### Media Library - Videos :tada:
 
 ![image](https://user-images.githubusercontent.com/4352425/98831646-2312bb80-243c-11eb-9211-5ea665b7e22c.png)
 
@@ -123,7 +111,7 @@ References:
 
 
 
-## Named Crops :tada:
+### Named Crops :tada:
 
 The Named Crops feature supports multiple crops per image in a document. This allows to preset crops on the master images in the Media Library and on demand overwrite those master crops on the placed image inside an article. Also, the API now provides several crops per image as defined in the named crops settings.
 
@@ -138,7 +126,7 @@ References:
   * [Documentation](https://github.com/livingdocsIO/livingdocs/pull/377)
 
 
-## Notifications
+### Notifications
 
 <img width="285" alt="Screenshot 2021-03-03 at 17 19 37" src="https://user-images.githubusercontent.com/821875/109836673-af8ff680-7c44-11eb-8e21-628a4016ef87.png">
 
@@ -151,7 +139,7 @@ References:
 * [Manage Document Subscriptions UI](https://github.com/livingdocsIO/livingdocs-editor/pull/4013)
 
 
-## Simplify Setup of Article Teasers
+### Simplify Setup of Article Teasers
 
 A simpler way to setup [Article Teasers](https://docs.livingdocs.io/guides/includes-embeds/article_teasers) is introduced. It is based on Includes and the possiblity to define the UI with a `paramsSchema` instead of writing code.
 
@@ -161,7 +149,7 @@ References:
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4152)
 
 
-## Multi Cluster Indexing :tada:
+### Multi Cluster Indexing :tada:
 
 There are a bunch of new features for indexing
 - Support multiple elasticsearch clusters during indexing
@@ -178,7 +166,7 @@ References:
   * [Documentation](https://github.com/livingdocsIO/livingdocs/commit/5d7d2622b937b69c132ddab653383efcf18e945c#diff-7bbdd5c871b81a390b45235abfd10ec146307fd2f4ebca354f4d2a1115b17a7c)
 
 
-## Tracing :tada:
+### Tracing :tada:
 
 We've added tracing support in the server based on opentelemetry.
 
@@ -187,7 +175,7 @@ References:
   * [Documentation](https://github.com/livingdocsIO/livingdocs/pull/381)
 
 
-## Support Deep Links in Multi Project Environments :tada:
+### Support Deep Links in Multi Project Environments :tada:
 
 We changed editor urls to contain the project handle so links work reliably in multi-project setups. This is the new pattern - `https://0.0.0.0:9000/p/<your-project-handle>/articles/<article-id>`
 
@@ -195,7 +183,7 @@ References:
   *  [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4171)
 
 
-## Admin UI - Extend Indexing UI to Support all Configured Indexes :tada:
+### Admin UI - Extend Indexing UI to Support all Configured Indexes :tada:
 
 A server admin can now reindex every existing index.
 
@@ -205,7 +193,7 @@ References:
   *  [Editor PR](https://github.com/livingdocsIO/livingdocs-server/pull/3409)
 
 
-### Support OpenID Connect for SSO
+#### Support OpenID Connect for SSO
 
 We support now OpenID Connect for a SSO connection. This allows customers to setup 2-factor authentication and external group management.
 
@@ -214,7 +202,7 @@ References:
 - [Documentation](https://github.com/livingdocsIO/livingdocs/pull/353)
 
 
-# Breaking Changes :fire:
+## Breaking Changes :fire:
 
 This time we have a rather high amount of breaking changes, therefore we grouped the breaking changes into different sections:
 - [Post Deployment](#post-deployment-fire)
@@ -224,13 +212,13 @@ This time we have a rather high amount of breaking changes, therefore we grouped
 - [Breaking Changes - Editor](#breaking-changes---editor-fire)
 
 
-## Post Deployment :fire:
+### Post Deployment :fire:
 
 :fire: **Attention**, in this release we clean up some data structures to have better options for the future.
 This section contains tasks you have to do **after** the deployment was successful and the new version is running properly.
 
 
-### Revision Migration (post deployment) :fire:
+#### Revision Migration (post deployment) :fire:
 
 We changed the `doc-link` and `doc-html` directives to be objects instead of strings (see [here](#changed-doc-link-and-doc-html-directive-to-objects-post-deployment-fire) to compare the :fire: old/new format).
 
@@ -257,7 +245,7 @@ References:
 - [Set sane defaults for the Revision Migration](https://github.com/livingdocsIO/livingdocs-server/pull/3478)
 
 
-### Migrate References (post deployment) :fire:
+#### Migrate References (post deployment) :fire:
 
 As described in the [APIs](#apis-gift) section, we extend some endpoints (public API + server API) with reference information of a document. Old document references need to be converted into the new format with a manual db migration.
 
@@ -271,7 +259,7 @@ These are the key changes/issues
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3341)
 
 
-### CLI Script to Fix Group Memberships (post deployment) :fire:
+#### CLI Script to Fix Group Memberships (post deployment) :fire:
 
 We're having some customers running an old state of the groups tables which got partially corrupted by some old user merge logic that we've fixed about a year ago. The new `release-2021-03-fix-group-memberships` command fixes those tables completely.
 
@@ -283,9 +271,9 @@ References:
 
 
 
-## Breaking Changes - Public API :fire:
+### Breaking Changes - Public API :fire:
 
-### Webhook Payload Change (publish/unpublish) :fire:
+#### Webhook Payload Change (publish/unpublish) :fire:
 
 - :fire: Document publish webhook, changed value of `event` from `document.published` to `document.publish`
 - :fire: Document unpublish webhook, changed value of `event` from `document.unpublished` to `document.unpublish`
@@ -294,9 +282,9 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3
 
 
 
-## Breaking Changes - Server + Editor :fire:
+### Breaking Changes - Server + Editor :fire:
 
-### Changed doc-link and doc-html directive to objects :fire:
+#### Changed doc-link and doc-html directive to objects :fire:
 
 - :fire: Update [Framework](https://github.com/livingdocsIO/livingdocs-framework/pull/509) to v18 - New documents will store link and html directives as objects. Old documents will still store them as strings until you run the [manual migration](#revision-migration-post-deployment-fire).
 - :fire: Public API: `GET /latestPublication` and `GET /latestPublications` return the JSON as stored in the database. Thus after the update you will receive the old and new format until you run the [manual migration](#revision-migration-post-deployment-fire).
@@ -378,7 +366,7 @@ References:
 * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/3981)
 
 
-### Use One Time Rendering by Default :fire:
+#### Use One Time Rendering by Default :fire:
 
 The CheerioHtml output renderer for the render-pipeline now uses the frameworks one time rendering
 by default which is 10 to 20 times faster but has a few minor differences in render output.
@@ -407,15 +395,15 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3
 
 
 
-## Breaking Changes - Server :fire:
+### Breaking Changes - Server :fire:
 
-### Require npm7 :fire:
+#### Require npm7 :fire:
 
 :fire: To support ~lib requires in downstreams we expect `npm > 7`
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3475)
 
-### Migrate the database :fire:
+#### Migrate the database :fire:
 
 It's a simple/fast migration with no expected data losses.
 
@@ -443,7 +431,7 @@ livingdocs-server migrate up
 ```
 
 
-### Remove Legacy Postgres Tables :fire:
+#### Remove Legacy Postgres Tables :fire:
 
 These Postgres tables have been removed:
 - `assets` - got replaced by `media_library_entries` earlier last year
@@ -456,7 +444,7 @@ These Postgres tables have been removed:
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3386)
 
 
-### Remove Grunt Tasks :fire:
+#### Remove Grunt Tasks :fire:
 
 Removed all Grunt tasks. If you still need a task, you can just copy the code to your downstream. But almost all functionality has been replaced with `livingdocs-server` CLI and the editor administration UI.
 Please give us some feedback when you miss some functionality of a Grunt task, so we can provide that in the future in another form.
@@ -491,7 +479,7 @@ Please give us some feedback when you miss some functionality of a Grunt task, s
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3399)
 
 
-### Changed API for indexingApi :fire:
+#### Changed API for indexingApi :fire:
 
 - :fire: Removed `indexingApi.bulk`. The index clients are directly exposed in the index init features and on there we have a `esClient.customBulk` method you can use.
 - :fire: `indexingApi.document.addDocumentUpdate` moved to `indexingApi.addDocumentUpdate`
@@ -530,13 +518,13 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3361)
 
-### Changed format of 'document.update' event :fire:
+#### Changed format of 'document.update' event :fire:
 
 The `document.update` event will only receive `user: {id: userId}`. Previously the user object could have more params on it (like admin or project_id) depending on what user object was passed into documentApi.updateV2(). Note that currently it is also possible that `user: {id: undefined}` is passed as the user.id is not required in documentApi.updateV2().
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3352)
 
-### Removed 'li-netlify-publish-hooks' feature :fire:
+#### Removed 'li-netlify-publish-hooks' feature :fire:
 
 🔥 Removes the `li-netlify-publish-hooks` feature (which seems not to be used by anyone) as the more generic webhooks feature already offers the same behavior. The [webhook](https://docs.livingdocs.io/reference-docs/server-initalization/webhooks) documentation can help to migrate the feature.
 
@@ -544,7 +532,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3
 
 
 
-### Add property 'isAutomatic' to Metadata plugin 'li-image' :fire:
+#### Add property 'isAutomatic' to Metadata plugin 'li-image' :fire:
 
 A metadata field of type `li-image` has a new property `isAutomatic`, e.g. `teaserImage.crops[{..., isAutomatic: true}].`
 :fire: Add the field `isAutomatic` to the Elasticsearch metadata mapping:
@@ -576,7 +564,7 @@ A metadata field of type `li-image` has a new property `isAutomatic`, e.g. `teas
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4051)
 
-### Upload Media Assets via Streams instead of a Buffer :fire:
+#### Upload Media Assets via Streams instead of a Buffer :fire:
 
 - :fire: removed `mediaLibraryApi.addImageCb`, use `mediaLibraryApi.addImage` (promise) instead
 - :fire: changed `mediaLibraryApi.addImages({..., tempBase64})` to `mediaLibraryApi.addImages({..., stream})` (pass an image stream for an exif extraction)
@@ -585,26 +573,26 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3396)
 
-### Include Api Refactoring :fire:
+#### Include Api Refactoring :fire:
 
 - 🔥 `includeApi.registerService()` We're sunsetting of the old service config format which used ui and server properties instead of the new format with uiComponents and rendering. This format has been deprecated with a logged warning for a few years now. If the server starts successfully you don't use the old format.
 - 🔥 Removed `includeApi.resolveChannelOutputs()` (but this function should only have been used internally)
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3405)
 
-### Group Api - Optimistic Locking :fire:
+#### Group Api - Optimistic Locking :fire:
 
 :fire: `groupApi.updateGroup({..., version})` - version changed the optimistic locking behavior. Previously when doing an update against a group, the version must have been +1 of the state on the server. When doing requests from now on, the version in the request must match the version on the server.
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3449)
 
-### Woodwing Asset Api :fire:
+#### Woodwing Asset Api :fire:
 
 :fire: removed url from `woodwingAssetsApi.uploadImageToWoodwingAssets({..., url})` and added stream (readStream) `woodwingAssetsApi.uploadImageToWoodwingAssets({..., stream})`
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3437)
 
-### Media Library Filter :fire:
+#### Media Library Filter :fire:
 
 - 🔥 Media Library Index: `caption`, `source` and `google-vision` fields are not indexed automatically anymore. The config `config: {index:true}` must be set in the metadata configuration.
 
@@ -630,15 +618,15 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3
 
 
 
-## Breaking Changes - Editor :fire:
+### Breaking Changes - Editor :fire:
 
-### Fix close tags in Angular templates :fire:
+#### Fix close tags in Angular templates :fire:
 
 :fire: If you have downstream **Angular** templates, change all XHTML like closing tags `<some-tag/>` to valid HTML5 `<some-tag></some-tag>`.
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4107)
 
-### Media Library Dashboard Configuration Change :fire:
+#### Media Library Dashboard Configuration Change :fire:
 
 :fire: Removed project config `editorSettings.mediaLibrary.editorSelection.displayFilters`
 
@@ -668,9 +656,9 @@ If you want to keep the filters, you need to move the config to the `mediaType` 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4106)
 
 
-### Prefix all app Routes with a Project Handle :fire:
+#### Prefix all app Routes with a Project Handle :fire:
 
-#### Rename UI Router Application States 'app' -> 'project'
+##### Rename UI Router Application States 'app' -> 'project'
 🔥 We renamed all ui router application states. All states for the editor routing are affected.
 Examples, where it could be used in customer projects are:
 - `ui-sref`
@@ -685,7 +673,7 @@ In most cases this is the easy migration guide for almost all states prefixed wi
 _Note: Exception are server admin routes route like 'app.admin.users' is still 'app.admin.users' and user routes like 'app.user'_
 
 
-#### Rename Project Routes/States
+##### Rename Project Routes/States
 
 :fire: Changed url schema from `/projects/id/*` to `/p/projectHandle/config/*`
 ```js
@@ -718,7 +706,7 @@ return this.$state.go('project.admin.current.groups')    // to
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4171)
 
 
-### Drop Coffee Script Support :fire:
+#### Drop Coffee Script Support :fire:
 
 - 🔥 Remove coffee-script support in the webpack setup in the editor. We've dropped coffee-script a few years ago, but still kept the webpack loader as not all projects were migrated. From now on we've completely removed support for it. Please upgrade your code base if you still use coffee-script.
 
@@ -726,7 +714,7 @@ If you still want to use coffeescript, you can require it manually, e.g. `node -
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4164)
 
-### Remove Deprecated Editor Env Config 'dashboards' :fire:
+#### Remove Deprecated Editor Env Config 'dashboards' :fire:
 
 - :fire: remove [deprecated](https://github.com/livingdocsIO/livingdocs-editor/pull/3663) editor config `dashboards`.
 
@@ -741,16 +729,16 @@ projectConfig.editorSettings.dashboards: [{handle: 'kanban-proofreading'}]`
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4166)
 
 
-### liDateTimeRange Filter config :fire:
+#### liDateTimeRange Filter config :fire:
 
 - :fire: `metadataPropertyName` in the liDateTimeRange Filter config can only be used for metadata. To filter for `documentPropertyName` created_at or updated_at (default) you should use in the config `{filterName: 'liDateTimeRange', config: {documentPropertyName: 'updated_at'}}`
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4202)
 
 
-# Deprecations
+## Deprecations
 
-## Node 12 Support
+### Node 12 Support
 
 💣 Node 12 is deprecated. Please upgrade your docker images and local environments to node 14.
 
@@ -767,20 +755,20 @@ In your `.nvmrc` (if present) change
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3442)
 
 
-## swisscomTV.customLanguageHandle
+### swisscomTV.customLanguageHandle
 
 The server config `swisscomTV.customLanguageHandle` is not used any longer for the reference extraction. All metadata of type `li-language` will be extracted to the references if they have a `groupId`.
 
-## Server Callbacks
+### Server Callbacks
 
 All callback functions on the server are now in deprecated state. We will start removing callbacks and switch to a promise based only approach.
 
 
 
 
-# APIs :gift:
+## APIs :gift:
 
-## Publication Events
+### Publication Events
 
 - :candy: Support `/api/v1/publicationEvents?reverse=true` query parameter to retrieve events in reverse order starting at the latest event
 
@@ -788,7 +776,7 @@ References:
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3447)
 * [Documentation](https://github.com/livingdocsIO/livingdocs-editor/pull/4290)
 
-## References
+### References
 
 We worked on document reference extraction. The list below contains public APIs and server APIs with an additional `reference` property in the response. Look into the [documentation](https://github.com/livingdocsIO/livingdocs/pull/372) to get different types of references. References can be used for static page rendering strategies where updates of references in a page, e.g. teasers, must be identified.
 
@@ -812,7 +800,7 @@ References:
 * [Add Endpoints PR](https://github.com/livingdocsIO/livingdocs-server/pull/3365)
 
 
-## Public API - Add context object to import endpoints :gift:
+### Public API - Add context object to import endpoints :gift:
 
 A `context` (max 8192 bytes) parameter can be passed to:
 
@@ -827,7 +815,7 @@ References:
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3353)
 
 
-## Public API - Add Media Library Webhooks + Extend document.update Webhook :gift:
+### Public API - Add Media Library Webhooks + Extend document.update Webhook :gift:
 
 - 🎁 Add webhook for event `mediaLibraryEntry.create`
 - 🎁 Add webhook for event `mediaLibraryEntry.update`
@@ -839,7 +827,7 @@ References:
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3359)
 
 
-## Public API Beta
+### Public API Beta
 
 For all public API endpoints documentation, go to 'https://your-editor.com/public-api'.
 
@@ -856,15 +844,15 @@ References:
 * [Add Endpoints PR II](https://github.com/livingdocsIO/livingdocs-server/pull/3400)
 
 
-## Server API - includesApi
+### Server API - includesApi
 
 - :gift: Add `includesApi.getServiceConfig({serviceName})` method to `includesApi`.
 
 
 
-# Internal Changes
+## Internal Changes
 
-## Colt
+### Colt
 
 ```js
 // Simple import of all colt factories
@@ -877,7 +865,7 @@ colt().createConfigProject('project', {...})
 ```
 
 
-# Other Changes
+## Other Changes
 
 ### Features
 
@@ -890,9 +878,7 @@ colt().createConfigProject('project', {...})
 * Style Guide: Clean up the style guide [livingdocs-editor #4149](https://github.com/livingdocsIO/livingdocs-editor/pull/4149) :gift:
 * Improve dashboard footer [livingdocs-editor #4209](https://github.com/livingdocsIO/livingdocs-editor/pull/4209) :gift:
 
-### Improvements
-
-#### Editor
+### Editor
 
 * Dashboards
   * Properly handle pagination for a resultList [livingdocs-editor #4153](https://github.com/livingdocsIO/livingdocs-editor/pull/4153) :gift:
@@ -903,7 +889,7 @@ colt().createConfigProject('project', {...})
 * Image cropping: Use downscaled image size for very large images [livingdocs-editor #4141](https://github.com/livingdocsIO/livingdocs-editor/pull/4141) :gift:
 * Editing: Add Iframe height watcher (guard) [livingdocs-editor #4108](https://github.com/livingdocsIO/livingdocs-editor/pull/4108) :gift:
 
-#### Media Library
+### Media Library
 
 * Media Upload/Import
   * Remove hardcoded mediaTypes [livingdocs-editor #4155](https://github.com/livingdocsIO/livingdocs-editor/pull/4155) :gift:
@@ -913,7 +899,7 @@ colt().createConfigProject('project', {...})
   * Reimplement `video.asset.size` support for the stream-based upload [livingdocs-server #3439](https://github.com/livingdocsIO/livingdocs-server/pull/3439) :gift:
 * Resolve dashboards in Main Navigation and Document Editing Toolbar from mediaTypes config [livingdocs-editor #4106](https://github.com/livingdocsIO/livingdocs-editor/pull/4106) & [livingdocs-editor #4180](https://github.com/livingdocsIO/livingdocs-editor/pull/4180) :gift:
 
-#### Other
+### Other
 
 * CLI: Add 'newerThan' argument for task 'cleanup-documents' [livingdocs-server #3333](https://github.com/livingdocsIO/livingdocs-server/pull/3333) :gift:
 * Import: Support files with no file ending of mimeType image [livingdocs-server #3380](https://github.com/livingdocsIO/livingdocs-server/pull/3380) :gift:
@@ -947,7 +933,7 @@ colt().createConfigProject('project', {...})
 
 
 
-# Patches
+## Patches
 
 ### Livingdocs Server Patches
 - [v124.5.80](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.80): test: fix require

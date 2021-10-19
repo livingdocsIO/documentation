@@ -5,38 +5,26 @@ description: Release notes for release-2021-09
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
-# Table of content
-- [Newsletter](#newsletter)
-- [Webinar](#webinar)
-- [System Requirements](#system-requirements)
-- [Highlights](#highlights)
-- [Breaking Changes](#breaking-changes-fire)
-- [Deprecations](#deprecations)
-- [APIs](#apis-gift)
-- [Internal Changes](#internal-changes)
-- [Other Changes](#other-changes)
-- [Patches](#patches)
-
-# Newsletter
+## Newsletter
 
 * Subscribe here: https://confirmsubscription.com/h/j/61B064416E79453D
 
 
-# Webinar
+## Webinar
 
-#### Features
+### Features
 
 * [Recording](https://us02web.zoom.us/rec/share/ys3C8auCq6NX-kAA8fs9s002XozU26Q2UKv4hKeWFQQ_JZFcSaAUxuHlgnVdEvsE.7jDTiAZkBFtS_bfC) | PW: %W6wRuIU
 * [Documentation](https://docs.google.com/document/d/17zmlYWhxSsWViZ2cYRBrRnuJ0qOglPwmbf_Gy6vxfTg/edit)
 
-#### Developers
+### Developers
 
 * [Recording](https://us02web.zoom.us/rec/play/H7HD6Cetet6wHKHUL6rWVdKuOL_HkgAOI_6Ovy179zhsamEY2Z2Ph8ZLw-iF7cOnejGv0gVQYIoJaCZI.zGVqtMK5THPYJHP9?continueMode=true) | PW: P+iCE8!?
 * [Slides](https://docs.google.com/presentation/d/1WgRxVPsseYXD_NQ2syKBi24UmmgtD8ti7H1JEeRGUUM/edit#slide=id.g5d9a6eb16f_1_0)
 
-# System Requirements
+## System Requirements
 
-#### Minimal
+### Minimal
 
 * Node 14
 * NPM 7
@@ -48,7 +36,7 @@ description: Release notes for release-2021-09
   * livingdocs-editor: `livingdocs/editor-base:14.3`
 * Browser Support: Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67
 
-#### Suggested
+### Suggested
 
 * Node 16
 * NPM 7
@@ -61,9 +49,9 @@ description: Release notes for release-2021-09
 * Browser Support: Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67
 
 
-# Highlights
+## Highlights
 
-## Revoke Media
+### Revoke Media
 
 The new "revoke media" functionality in the media library allows users to delete media files from storage instead of archiving them. This can be useful in situations such as handling requests to completely removing media for legal reasons.
 Customers have different requirements for what should happen after revoking an image, like
@@ -78,7 +66,7 @@ Therefore we provide a server event and a webhook, both named `mediaLibraryEntry
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3809)
 
 
-## Dashboard Cards Configuration for the Media Library :tada:
+### Dashboard Cards Configuration for the Media Library :tada:
 
 This feature allows you to register your own dashboard card in the Media Library. The default card `liMediaLibraryCard`, allows to be extended with additional metadata fields.
 
@@ -87,7 +75,7 @@ This feature allows you to register your own dashboard card in the Media Library
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4500)
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3779)
 
-## Dashboard Cards Configuration for the Document List :tada:
+### Dashboard Cards Configuration for the Document List :tada:
 
 This feature allows you to register your own dashboard card in the Document List.
 
@@ -98,7 +86,7 @@ This feature allows you to register your own dashboard card in the Document List
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3876)
 
 
-## List Teasers
+### List Teasers
 
 We now support list teasers as includes without registering your own plugin.
 
@@ -108,7 +96,7 @@ We now support list teasers as includes without registering your own plugin.
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3846)
 
 
-## Responsive Editing Toolbar :tada:
+### Responsive Editing Toolbar :tada:
 
 With the introduction of more an more actions in the Document Editing Toolbar, space was getting rare, especially on smaller screens. Therefore a responsive editing toolbar has been introduced which collapse actions to groups when there is not enough space.
 
@@ -121,7 +109,7 @@ With the introduction of more an more actions in the Document Editing Toolbar, s
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4245)
 
 
-## Restricted Users :tada:
+### Restricted Users :tada:
 
 It's now possible to define a user group with "Restricted Users". Restricted users can only see their own documents and assets. This can be useful if you have external editors (freelancer).
 
@@ -130,7 +118,7 @@ It's now possible to define a user group with "Restricted Users". Restricted use
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3756)
 
 
-## Improve Keyboard Navigation and Viewport Focus in Editor (more Word like behavior) :tada:
+### Improve Keyboard Navigation and Viewport Focus in Editor (more Word like behavior) :tada:
 
 You can now use the arrow keys on your keyboard to navigate between different text components. The cursor position is maintained, so that the editor can always get back to where she started after navigating around. The viewport scrolls automatically if the cursor hits positions outside of the viewport. The same applies to navigation between comments in a document. The behavior is now much more in line with common text processors such as Microsoft Word.
 
@@ -140,9 +128,9 @@ You can now use the arrow keys on your keyboard to navigate between different te
   * [Framework PR](https://github.com/livingdocsIO/livingdocs-framework/pull/573)
 
 
-# Breaking Changes :fire:
+## Breaking Changes :fire:
 
-## Migrate the database
+### Migrate the database
 
 It's a simple/fast migration with no expected data losses.
 
@@ -153,7 +141,7 @@ It's a simple/fast migration with no expected data losses.
 livingdocs-server migrate up
 ```
 
-#### Remove support for callbacks in multiple server API's :fire:
+### Remove support for callbacks in multiple server API's :fire:
 
 We removed Callback support in several server API's as we noticed many bugs originating from mixing callbacks and promises. So we continue to phase out callbacks in all APIs. In the next releases we will continue with the removal of callbacks in server API's. All server API's already support Promises, therefore you can prepare the downstream migration from Callbacks to Promises.
 
@@ -171,7 +159,7 @@ We removed Callback support in several server API's as we noticed many bugs orig
 - 🔥 remove callback support for routingApi (`server.features.api('li-routing')`) functions. Only promise based calls are supported
 
 
-##### Example how to migrate
+#### Example how to migrate
 
 Search e.g. for `li-design-loader` and replace all your code from a callback to a promise based approach (async/await). Please also consider your tests.
 
@@ -234,9 +222,6 @@ async function fetchTargetChannel (projectId) {
 }
 ```
 
-
-
-
 References:
 - [designLoaderApi PR](https://github.com/livingdocsIO/livingdocs-server/pull/3845)
 - [registrationApi PR](https://github.com/livingdocsIO/livingdocs-server/pull/3854)
@@ -257,14 +242,14 @@ References:
 
 
 
-#### Do not support callbacks in includes anymore (removed rendering.function) :fire:
+### Do not support callbacks in includes anymore (removed rendering.function) :fire:
 
 🔥 removed `rendering.function` (callback) support in includes. Use `rendering.render` (promise) instead. (Tip: search for `rendering: {` to find potentially affected functions)
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3872)
 
 
-#### Remove support for worker-farm and worker-nodes strategies :fire:
+### Remove support for worker-farm and worker-nodes strategies :fire:
 
 There is no worker strategy available and settable anymore for the migration and render pipeline feature. All migrations are computed in the same process (formerly known as `in-process` strategy)
 
@@ -273,7 +258,7 @@ There is no worker strategy available and settable anymore for the migration and
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3821)
 
 
-#### Upgrade from Webpack 4 to Webpack 5 :fire:
+### Upgrade from Webpack 4 to Webpack 5 :fire:
 
 
 In case you have a [karma test setup](https://karma-runner.github.io/) (if `karma.js` file is present in your project root), you'll need to update the configurations.
@@ -323,7 +308,7 @@ Then change the coverage reporter in the `karma.js` configuration:
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4577)
 
-#### Dashboard Card Configuration :fire:
+### Dashboard Card Configuration :fire:
 
 :fire: Removed project config `editorSettings.mediaLibrary.dashboard.displayFilters`. Move `editorSettings.mediaLibrary.dashboard.displayFilters` config to `mediaType.editor.dashboard.displayFilters` on the relevant mediaType configs.
 
@@ -363,7 +348,7 @@ mediaType.editor: {
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4500)
 
 
-#### Remove File Feature :fire:
+### Remove File Feature :fire:
 
 - 🔥 Removed core feature `li-files`
 - 🔥 Removed server API `liServer.features.api('li-files')`
@@ -372,32 +357,32 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3643)
 
 
-#### Always activate copy component feature :fire:
+### Always activate copy component feature :fire:
 
 🔥 Remove editor config `copy.componentCopyEnabled`. The setting has no effect anymore, component copy is always enabled.
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4476)
 
 
-#### Show insert component filter if there are more than 8 components :fire:
+### Show insert component filter if there are more than 8 components :fire:
 
 🔥 Remove editor config `app.editor.insertPanel.useAdvancedComponentGroups`. The setting has no effect anymore. The filter on the insert panel is always shown if there are more than 8 components.
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4477)
 
 
-#### Data-Migration: remove callback support :fire:
+### Data-Migration: remove callback support :fire:
 
 🔥 The callback-based function `migrate` has been removed for a file data-migration. Use the promise based function `migrateAsync` instead.
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3819)
 
 
-#### Fix JSON patch operation of MediaLibraryEntries :fire:
+### Fix JSON patch operation of MediaLibraryEntries :fire:
 
 We had some invalid data structures when an asset in the media library got replaced.
 
-##### Required action for downstreams :fire:
+#### Required action for downstreams :fire:
 
 In case you had the replaceAsset functionality enabled, you might want to fix invalid data structures. To check whether there are existing archived assets, please execute that query:
 
@@ -436,7 +421,7 @@ WHERE data->'archivedAssets' IS NOT NULL;
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3815)
 
 
-#### Typography Cleanup :fire:
+### Typography Cleanup :fire:
 
 If you have any custom UI in your downstream that makes use of any of the following you want to read this:
 
@@ -464,9 +449,9 @@ You can also consult the styleguide to read more about newly introduced styles a
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4612)
 
 
-# Deprecations
+## Deprecations
 
-## Document List Card Extension
+### Document List Card Extension
 
 editor config  are deprecated in favor of project config editorSettings.documentList.dashboard:
 
@@ -478,9 +463,9 @@ References:
 
 
 
-# APIs :gift:
+## APIs :gift:
 
-## Server API
+### Server API
 
 Because we want to get rid of callbacks on the server, we provide helper functions for downstreams.
 
@@ -491,9 +476,9 @@ References:
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3954)
 
 
-## Server CLI
+### Server CLI
 
-### livingdocs-server add-design
+#### livingdocs-server add-design
 
 - renamed `livingdocs-server add-design` to `livingdocs-server design-add` (deprecate `add-design`)
 
@@ -501,7 +486,7 @@ References:
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3844)
 
 
-### livingdocs-server add-design
+#### livingdocs-server add-design
 
 - add task to set current/active design `livingdocs-server design-set-active --project=<project handle> --design-version=<design-version>`
 
@@ -509,12 +494,9 @@ References:
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3841)
 
 
-# Internal Changes
 
 
-
-
-# Other Changes
+## Other Changes
 
 ### Features
 
@@ -615,7 +597,7 @@ References:
 
 
 
-# Patches
+## Patches
 
 ### Livingdocs Server Patches
 - [v154.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.34): fix(postgres): Fix support for postgres 14 that has some query logic change (maybe accidental)

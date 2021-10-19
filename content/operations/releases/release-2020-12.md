@@ -5,18 +5,6 @@ description: Release notes for release-2020-12
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
-# Table of content
-- [Newsletter](#newsletter)
-- [Webinar](#webinar)
-- [System Requirements](#system-requirements)
-- [Highlights](#highlights)
-- [Experimental](#experimental)
-- [Breaking Changes](#breaking-changes-fire)
-- [APIs](#apis-gift)
-- [Internal Changes](#internal-changes)
-- [Other Changes](#other-changes)
-- [Patches](#patches)
-
 # Newsletter
 
 * Subscribe here: https://confirmsubscription.com/h/j/61B064416E79453D

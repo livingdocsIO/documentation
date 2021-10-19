@@ -6,14 +6,6 @@ excludeFromSearch: true
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
-# Table of content
-- [Patches](#repositories)
-- [Highlights](#highlights)
-- [Breaking Changes](#breaking-changes-fire)
-- [APIs](#apis-gift)
-- [Other Changes](#other-changes)
-
-
 #### 📬Release Newsletter
 
 [View the newsletter for this release](http://createsend.com/t/j-0F1302733E9082472540EF23F30FEDED)

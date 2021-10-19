@@ -6,15 +6,6 @@ excludeFromSearch: true
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
-# Table of content
-- [Patches](#repositories)
-- [Highlights](#highlights)
-- [Breaking Changes](#breaking-changes-fire)
-- [Deprecations](#deprecations)
-- [APIs](#apis-gift)
-- [Internal Changes](#internal-changes)
-- [Other Changes](#other-changes)
-
 # Newsletter
 
 * Newsletter: [release-2020-07](http://createsend.com/t/j-9E8CA344FFE6D18F2540EF23F30FEDED)
