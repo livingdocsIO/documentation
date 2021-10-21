@@ -939,6 +939,7 @@ colt().createConfigProject('project', {...})
 ## Patches
 
 ### Livingdocs Server Patches
+- [v124.5.82](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.82): chore: check type of assets
 - [v124.5.81](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.81): fix: use the updated release-notes-patch repo
 - [v124.5.80](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.80): test: fix require
 - [v124.5.79](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.79): chore: update npm read token
