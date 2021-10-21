@@ -639,6 +639,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v135.1.84](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.84): chore: check type of assets
 - [v135.1.83](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.83): fix: use the updated release-notes-patch repo
 - [v135.1.82](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.82): fix(document-lists): Allow empty lists to be published
 - [v135.1.81](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.81): chore(build): Upgrade to @livingdocs/secure-password
