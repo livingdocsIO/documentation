@@ -37,19 +37,16 @@ const documentVersion = {
   // e.g. {name: 'bootstrap', version: '1.0.0'}
   design,
 
-  // gets the document description in the Livingdocs data format (JSON), e.g.
-  // {
-  //   content: [
-  //     {
-  //       identifier: "p:3:4.title",
-  //       id: "doc-1f7380g1q0",
-  //       content: {
-  //         title: "This is a title
-  //       }
+  // gets the content Livingdocs data format (JSON), e.g.
+  // [
+  //   {
+  //     identifier: "p:3:4.title",
+  //     id: "doc-1f7380g1q0",
+  //     content: {
+  //       title: "This is a title
   //     }
-  //   ]
-  //   design: {name: 'bootstrap', version: '1.0.0'}
-  // }
+  //   }
+  // ]
   content,
 
   // title of the document
