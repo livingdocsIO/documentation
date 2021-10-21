@@ -3,6 +3,7 @@ title: release-2021-11
 description: Release notes for release-2021-11
 excludeFromSearch: true
 ---
+* :new: Multi-Language Data Records [livingdocs-server #4046 v157.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4046) :gift:
 * :new: Multilanguage Data Records [livingdocs-editor #4761 v74.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4761) :gift:
 * :new: Media Library: use a dialog for media library selection [livingdocs-editor #4791 v74.2.15](https://github.com/livingdocsIO/livingdocs-editor/pull/4791) :gift:
 * :new: Media Library: Fix transcoding state after video replace [livingdocs-editor #4792 v74.2.13](https://github.com/livingdocsIO/livingdocs-editor/pull/4792) :gift:
