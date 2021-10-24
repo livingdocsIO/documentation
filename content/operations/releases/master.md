@@ -3,6 +3,7 @@ title: release-2021-11
 description: Release notes for release-2021-11
 excludeFromSearch: true
 ---
+* :new: fix/toolbar meta and filters [livingdocs-editor #4798 v74.3.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4798) :gift:
 * :new: add basepath to v2 design [livingdocs-server #4051 v157.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4051) :gift:
 * :new: Make whole “Link document” button clickable [livingdocs-editor #4747 v74.3.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4747) :gift:
 * :new: Multi-Language Data Records [livingdocs-server #4046 v157.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4046) :gift:
