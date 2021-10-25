@@ -3,6 +3,7 @@ title: release-2021-11
 description: Release notes for release-2021-11
 excludeFromSearch: true
 ---
+* :new: Improvement/gray color palette [livingdocs-editor #4788 v74.3.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4788) :gift:
 * :new: fix/toolbar meta and filters [livingdocs-editor #4798 v74.3.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4798) :gift:
 * :new: add basepath to v2 design [livingdocs-server #4051 v157.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4051) :gift:
 * :new: Make whole “Link document” button clickable [livingdocs-editor #4747 v74.3.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4747) :gift:
