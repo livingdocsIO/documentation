@@ -66,7 +66,7 @@ The second folder `livingdocs-editor-boilerplate` contains a default configurati
 ### The `ENVIRONMENT` variable
 
 With this value, we determine under what kind of base premise the services should get run. At this point, we only need to know, that for a local setup we always want that value to be set to `local`.
-You can either call the folllowing line before each and every script or permanently set the environment variable by adding the following line to your `~/.zhsrc` or `~/.bashrc`
+You can either call the following line before each and every script or permanently set the environment variable by adding the line to your `~/.zhsrc` or `~/.bashrc`
 
 ```bash
 export ENVIRONMENT=local
