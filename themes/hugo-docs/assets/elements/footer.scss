@@ -1,0 +1,30 @@
+.footer {
+  @extend %font-s-xs;
+  display: flex;
+  flex-direction: column;
+  gap: $space-s;
+  padding: $space-m 0;
+  margin-top: $space-xl;
+  border-top: 1px solid $color-grey-5;
+
+  &__social {
+    list-style: none;
+    display: flex;
+    gap: $space-m;
+
+    img {
+      height: $space-m;
+    }
+  }
+
+  &__address {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-s;
+
+    a {
+      color: inherit;
+    }
+  }
+}
