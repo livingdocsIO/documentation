@@ -3,6 +3,7 @@ title: release-2021-11
 description: Release notes for release-2021-11
 excludeFromSearch: true
 ---
+* :new: Disable debug mode in local environment [livingdocs-editor #4809 v74.3.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4809) :gift:
 * :new: Fix restore Metadata [livingdocs-editor #4797 v74.3.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4797) :gift:
 * :new: Improvement/gray color palette [livingdocs-editor #4788 v74.3.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4788) :gift:
 * :new: fix/toolbar meta and filters [livingdocs-editor #4798 v74.3.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4798) :gift:
