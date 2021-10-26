@@ -623,6 +623,7 @@ References:
 - [v154.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.15): openid-connect: Support HTTP_PROXY environment variable in Issuer.discover call
 
 ### Livingdocs Editor Patches
+- [v72.13.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.36): fix(metadata): Spacing
 - [v72.13.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.35): fix: show correct placeholder on creating list
 - [v72.13.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.34): fix: use the updated release-notes-patch repo
 - [v72.13.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.33): fix(media-library): correctly select an additional language in multilanguage
