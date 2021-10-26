@@ -1,4 +1,4 @@
-{{ partial "header.html" . }}
+{{ partial "html-header.html" . }}
 
 <div class="page">
   {{ partial "sidebar.html" . }}
@@ -26,9 +26,17 @@
           </div>
         {{ end }}
       </div>
+
+      <div class="article__footer">
+        {{ partial "footer.html" . }}
+      </div>
     </article>
-    {{ if (ne (.Param "renderTOC") false) }}<div class="right-toc">{{ .TableOfContents }}</div>{{ end }}
   </main>
+  {{ if (ne (.Param "renderTOC") false) }}
+  <div class="page__toc">
+    {{ .TableOfContents }}
+  </div>
+  {{ end }}
 </div>
 
-{{ partial "footer.html" . }}
+{{ partial "html-footer.html" . }}
