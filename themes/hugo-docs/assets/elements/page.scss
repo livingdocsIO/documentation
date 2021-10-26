@@ -15,11 +15,16 @@
     flex-grow: 0;
     flex-shrink: 0;
     width: $page-sidebar-width;
-    padding-bottom: 3rem;
+    padding-bottom: $space-l;
     padding-top: $space-l;
     font-weight: 400;
     overflow-x: hidden;
     overflow-y: auto;
+    transition: top $transition-time;
+
+    .is-scrolled & {
+      top: 0;
+    }
   }
 
   &__content {
@@ -77,12 +82,18 @@
   &__toc {
     display: none;
     position: fixed;
-    top: $header-height + $space-l;
+    top: $header-height;
     right: $space-m;
     bottom: 0;
     width: $toc-width;
+    padding-top: $space-l;
     padding-bottom: $space-l;
     overflow-y: auto;
+    transition: top $transition-time;
+
+    .is-scrolled & {
+      top: 0;
+    }
 
     @include media-query(widescreen) {
       display: block;

@@ -192,6 +192,22 @@ conent.addEventListener('click', (evt) => {
 })
 
 /**
+ * Header while Scrolling
+ */
+let lastScrollingPosition = 0
+
+document.addEventListener('scroll', (evt) => {
+  const body = document.querySelector('body')
+  const currentScrollPosition = window.pageYOffset
+  if (currentScrollPosition > lastScrollingPosition) {
+    body.classList.add('is-scrolled')
+  } else {
+    body.classList.remove('is-scrolled')
+  }
+  lastScrollingPosition = currentScrollPosition
+})
+
+/**
  * Fix back buttons for anchors
  */
 const menuHeight = 65

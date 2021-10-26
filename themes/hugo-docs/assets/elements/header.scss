@@ -15,6 +15,11 @@
   left: 0;
   width: auto;
   background-color: $color-white;
+  transition: top $transition-time;
+
+  .is-scrolled & {
+    top: -$header-height;
+  }
 
   &__left {
     display: flex;
