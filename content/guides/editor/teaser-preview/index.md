@@ -85,7 +85,7 @@ teaserPreview: {
 
     // Optional. A DOM string representing a wrapping component for the teaser.
     // Use this to give the teaser some context e.g. by emulating a sidebar.
-    wrapper: '<div class="page__sidebar"></div>'
+    wrapper: '<div class="page__navigation"></div>'
   }],
 
   // A set of teaser components you want to have rendered as previews.

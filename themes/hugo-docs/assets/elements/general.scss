@@ -5,15 +5,17 @@
 }
 
 html {
-  body {
-    @extend %font-s;
-    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: $color-white;
-    color: $color-black;
-    margin: 0;
-    height: 100%;
-    display: block;
-  }
+  scroll-behavior: smooth;
+}
+
+body {
+  @extend %font-s;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: $color-white;
+  color: $color-black;
+  margin: 0;
+  height: 100%;
+  display: block;
 }
 
 em {

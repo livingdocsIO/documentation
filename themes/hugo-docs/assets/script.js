@@ -184,11 +184,11 @@ const page = document.querySelector('.page')
 const conent = document.querySelector('.page__content')
 
 burger.addEventListener('click', (evt) => {
-  page.classList.toggle('show-sidebar')
+  page.classList.toggle('show-navigation')
 })
 
 conent.addEventListener('click', (evt) => {
-  page.classList.remove('show-sidebar')
+  page.classList.remove('show-navigation')
 })
 
 /**
@@ -196,14 +196,14 @@ conent.addEventListener('click', (evt) => {
  */
 const menuHeight = 65
 window.addEventListener('hashchange', function (evt) {
-  const div = document.querySelector('.page__content')
-  if (!div) return
+  const maincontent = document.querySelector('html')
+  if (!maincontent) return
 
   let elem = document.getElementById(window.location.hash.replace('#', ''))
   if (!elem) {
-    div.scrollTop = 0
+    maincontent.scrollTop = 0
   } else {
-    div.scrollTop = offsetTopToParent(div, elem) - menuHeight
+    maincontent.scrollTop = offsetTopToParent(maincontent, elem) - menuHeight
   }
 }, true)
 

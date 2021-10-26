@@ -4,7 +4,6 @@
 
   @include media-query(widescreen) {
     max-width: 620px;
-    margin-right: $toc-width + $space-l - $space-m;
   }
 
   @include media-query(ultrawide) {

@@ -1,4 +1,4 @@
-{{ partial "header.html" . }}
+{{ partial "html-header.html" . }}
 
 <div class="page">
   {{ partial "sidebar.html" . }}
@@ -43,8 +43,12 @@
 
         {{ end }}
       </div>
+
+      <div class="section__footer">
+        {{ partial "footer.html" . }}
+      </div>
     </article>
   </main>
 </div>
 
-{{ partial "footer.html" . }}
+{{ partial "html-footer.html" . }}
