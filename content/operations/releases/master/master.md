@@ -8,6 +8,7 @@ excludeFromSearch: true
 This are the release notes of the upcoming release. By reading this document, you can get a feeling what will come into the upcoming release. This document is generated and updated :fire: **automatically** :fire: (every merged PR to master adds some notes). About once a week it will be categorized manually.
 
 ## PRs to Categorize
+* :new: feat(hugo): Use upload center for image uploads [livingdocs-editor #4677 v74.4.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4677)
 * :new: Fix small issues: Single-line tooltip width, hide toolbar for archived, close dialog on outside click [livingdocs-editor #4810 v74.3.10](https://github.com/livingdocsIO/livingdocs-editor/pull/4810)
 * :new: Remove Deprecation Messages in Workspace (metadataUpdater) [livingdocs-editor #4807 v74.3.9](https://github.com/livingdocsIO/livingdocs-editor/pull/4807)
 * :new: Includes: Fix include w/ multiple services using vue components for UI [livingdocs-editor #4803 v74.3.8](https://github.com/livingdocsIO/livingdocs-editor/pull/4803)
