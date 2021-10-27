@@ -3,6 +3,7 @@ title: release-2021-11
 description: Release notes for release-2021-11
 excludeFromSearch: true
 ---
+* :new: Includes: Fix include w/ multiple services using vue components for UI [livingdocs-editor #4803 v74.3.8](https://github.com/livingdocsIO/livingdocs-editor/pull/4803) :gift:
 * :new: fix(menus): Show unpublished document warning without refresh [livingdocs-editor #4811 v74.3.7](https://github.com/livingdocsIO/livingdocs-editor/pull/4811) :gift:
 * :new: reset initial crop with setImage [livingdocs-editor #4805 v74.3.6](https://github.com/livingdocsIO/livingdocs-editor/pull/4805) :gift:
 * :new: Disable debug mode in local environment [livingdocs-editor #4809 v74.3.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4809) :gift:
