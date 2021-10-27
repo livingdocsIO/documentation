@@ -441,7 +441,7 @@ If you need to generate a new key, you can use our helper cli tool:
 livingdocs-server key-generate enc --alg dir --enc A256GCM
 ```
 This generates a synchronous encryption key using the A256GCM encoding.
-See the task description for all possible parameters.
+Call `livingdocs-server key-generate` for a description of all possible parameters.
 
 #### Render Pipeline
 
