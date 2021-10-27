@@ -600,6 +600,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v154.0.99](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.99): chore: check type of assets
 - [v154.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.36): chore: check type of assets
 - [v154.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.35): fix: use the updated release-notes-patch repo
 - [v154.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.34): fix(postgres): Fix support for postgres 14 that has some query logic change (maybe accidental)
