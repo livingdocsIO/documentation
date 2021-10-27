@@ -8,6 +8,7 @@ excludeFromSearch: true
 This are the release notes of the upcoming release. By reading this document, you can get a feeling what will come into the upcoming release. This document is generated and updated :fire: **automatically** :fire: (every merged PR to master adds some notes). About once a week it will be categorized manually.
 
 ## PRs to Categorize
+* :new: Support access token key rotation [livingdocs-server #4062 v157.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4062)
 * :new: Extend formatting toolbar [livingdocs-editor #4799 v74.5.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4799)
 * :new: Extend formatting toolbar with li-reference [livingdocs-server #4060 v157.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4060)
 * :new: feat(hugo): Use upload center for image uploads [livingdocs-editor #4677 v74.4.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4677)
