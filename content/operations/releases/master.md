@@ -3,6 +3,7 @@ title: release-2021-11
 description: Release notes for release-2021-11
 excludeFromSearch: true
 ---
+* :new: Fix small issues: Single-line tooltip width, hide toolbar for archived, close dialog on outside click [livingdocs-editor #4810 v74.3.10](https://github.com/livingdocsIO/livingdocs-editor/pull/4810) :gift:
 * :new: Remove Deprecation Messages in Workspace (metadataUpdater) [livingdocs-editor #4807 v74.3.9](https://github.com/livingdocsIO/livingdocs-editor/pull/4807) :gift:
 * :new: Includes: Fix include w/ multiple services using vue components for UI [livingdocs-editor #4803 v74.3.8](https://github.com/livingdocsIO/livingdocs-editor/pull/4803) :gift:
 * :new: fix(menus): Show unpublished document warning without refresh [livingdocs-editor #4811 v74.3.7](https://github.com/livingdocsIO/livingdocs-editor/pull/4811) :gift:
