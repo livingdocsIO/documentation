@@ -1,5 +1,5 @@
 ---
-title: release-2017-12
+title: December '17 Release (release-2017-12)
 description: Release notes for release-2018-12
 excludeFromSearch: true
 ---

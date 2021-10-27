@@ -1,25 +1,29 @@
 ---
-title: release-2021-11
+title: Upcoming Release (release-2021-11)
 description: Release notes for release-2021-11
 excludeFromSearch: true
 ---
-* :new: Fix small issues: Single-line tooltip width, hide toolbar for archived, close dialog on outside click [livingdocs-editor #4810 v74.3.11](https://github.com/livingdocsIO/livingdocs-editor/pull/4810) :gift:
-* :new: Fix small issues: Single-line tooltip width, hide toolbar for archived, close dialog on outside click [livingdocs-editor #4810 v74.3.10](https://github.com/livingdocsIO/livingdocs-editor/pull/4810) :gift:
-* :new: Remove Deprecation Messages in Workspace (metadataUpdater) [livingdocs-editor #4807 v74.3.9](https://github.com/livingdocsIO/livingdocs-editor/pull/4807) :gift:
-* :new: Includes: Fix include w/ multiple services using vue components for UI [livingdocs-editor #4803 v74.3.8](https://github.com/livingdocsIO/livingdocs-editor/pull/4803) :gift:
-* :new: fix(menus): Show unpublished document warning without refresh [livingdocs-editor #4811 v74.3.7](https://github.com/livingdocsIO/livingdocs-editor/pull/4811) :gift:
-* :new: reset initial crop with setImage [livingdocs-editor #4805 v74.3.6](https://github.com/livingdocsIO/livingdocs-editor/pull/4805) :gift:
-* :new: Disable debug mode in local environment [livingdocs-editor #4809 v74.3.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4809) :gift:
-* :new: Fix restore Metadata [livingdocs-editor #4797 v74.3.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4797) :gift:
-* :new: Improvement/gray color palette [livingdocs-editor #4788 v74.3.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4788) :gift:
-* :new: fix/toolbar meta and filters [livingdocs-editor #4798 v74.3.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4798) :gift:
-* :new: add basepath to v2 design [livingdocs-server #4051 v157.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4051) :gift:
-* :new: Make whole “Link document” button clickable [livingdocs-editor #4747 v74.3.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4747) :gift:
-* :new: Multi-Language Data Records [livingdocs-server #4046 v157.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4046) :gift:
-* :new: Multilanguage Data Records [livingdocs-editor #4761 v74.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4761) :gift:
-* :new: Media Library: use a dialog for media library selection [livingdocs-editor #4791 v74.2.15](https://github.com/livingdocsIO/livingdocs-editor/pull/4791) :gift:
-* :new: Media Library: Fix transcoding state after video replace [livingdocs-editor #4792 v74.2.13](https://github.com/livingdocsIO/livingdocs-editor/pull/4792) :gift:
-* :new: Improvement/multilanguage metadata [livingdocs-editor #4793 v74.2.12](https://github.com/livingdocsIO/livingdocs-editor/pull/4793) :gift:
+
+## Scope
+This are the release notes of the upcoming release. By reading this document, you can get a feeling what will come into the upcoming release. This document is generated and updated :fire: **automatically** :fire: (every merged PR to master adds some notes). About once a week it will be categorized manually.
+
+## PRs to Categorize
+* :new: Fix small issues: Single-line tooltip width, hide toolbar for archived, close dialog on outside click [livingdocs-editor #4810 v74.3.10](https://github.com/livingdocsIO/livingdocs-editor/pull/4810)
+* :new: Remove Deprecation Messages in Workspace (metadataUpdater) [livingdocs-editor #4807 v74.3.9](https://github.com/livingdocsIO/livingdocs-editor/pull/4807)
+* :new: Includes: Fix include w/ multiple services using vue components for UI [livingdocs-editor #4803 v74.3.8](https://github.com/livingdocsIO/livingdocs-editor/pull/4803)
+* :new: fix(menus): Show unpublished document warning without refresh [livingdocs-editor #4811 v74.3.7](https://github.com/livingdocsIO/livingdocs-editor/pull/4811)
+* :new: reset initial crop with setImage [livingdocs-editor #4805 v74.3.6](https://github.com/livingdocsIO/livingdocs-editor/pull/4805)
+* :new: Disable debug mode in local environment [livingdocs-editor #4809 v74.3.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4809)
+* :new: Fix restore Metadata [livingdocs-editor #4797 v74.3.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4797)
+* :new: Improvement/gray color palette [livingdocs-editor #4788 v74.3.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4788)
+* :new: fix/toolbar meta and filters [livingdocs-editor #4798 v74.3.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4798)
+* :new: add basepath to v2 design [livingdocs-server #4051 v157.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4051)
+* :new: Make whole “Link document” button clickable [livingdocs-editor #4747 v74.3.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4747)
+* :new: Multi-Language Data Records [livingdocs-server #4046 v157.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4046)
+* :new: Multilanguage Data Records [livingdocs-editor #4761 v74.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4761)
+* :new: Media Library: use a dialog for media library selection [livingdocs-editor #4791 v74.2.15](https://github.com/livingdocsIO/livingdocs-editor/pull/4791)
+* :new: Media Library: Fix transcoding state after video replace [livingdocs-editor #4792 v74.2.13](https://github.com/livingdocsIO/livingdocs-editor/pull/4792)
+* :new: Improvement/multilanguage metadata [livingdocs-editor #4793 v74.2.12](https://github.com/livingdocsIO/livingdocs-editor/pull/4793)
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 

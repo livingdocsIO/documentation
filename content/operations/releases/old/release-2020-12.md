@@ -1,6 +1,7 @@
 ---
-title: release-2020-12
+title: December '20 Release (release-2020-12)
 description: Release notes for release-2020-12
+excludeFromSearch: true
 ---
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.

@@ -1,5 +1,5 @@
 ---
-title: release-2021-09
+title: September '21 Release (release-2021-09)
 description: Release notes for release-2021-09
 ---
 

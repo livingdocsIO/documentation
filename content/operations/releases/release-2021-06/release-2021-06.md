@@ -1,5 +1,5 @@
 ---
-title: release-2021-06
+title: Juni '21 Release (release-2021-06)
 description: Release notes for release-2021-06
 ---
 

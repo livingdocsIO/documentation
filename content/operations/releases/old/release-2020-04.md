@@ -1,5 +1,5 @@
 ---
-title: release-2020-04
+title: April '20 Release (release-2020-04)
 description: Release notes for release-2020-04
 excludeFromSearch: true
 ---
