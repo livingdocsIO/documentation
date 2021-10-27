@@ -208,7 +208,27 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 
 ## Deprecations
 
+### Configuration `auth.accessTokenSecret`
 
+The configuration `auth.accessTokenSecret` gets replaced by `auth.accessTokenSigningKeys`.
+Old configurations are still valid, but make sure you'll convert your secret to a JSON web key as soon as you use the new configuration property.
+
+```diff
+  auth: {
+-    accessTokenSecret: "some-secret-for-hmac256-token-signing"
+      // Generate the JSON web key using
+      //   $ livingdocs-server key-generate convert-hs256 'some-secret-for-hmac256-token-signing'
++    accessTokenSigningKeys: [{"kty":"oct","k":"c29tZS1zZWNyZXQtZm9yLWhtYWMyNTYtdG9rZW4tc2lnbmluZw","kid":"","alg":"HS256","use":"sig"}]
+}
+```
+
+Take the existing `auth.accessTokenSecret` value and convert it to a JSON web key.
+To ease the conversion, we have the following command that outputs the json
+for the `auth.accessTokenSigningKeys` array:
+
+```bash
+livingdocs-server key-generate convert-hs256 'some-secret-for-hmac256-token-signing'
+```
 
 
 ## APIs :gift:
