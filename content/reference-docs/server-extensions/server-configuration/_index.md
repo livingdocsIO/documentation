@@ -165,13 +165,78 @@ redis: {
 
 #### Authentication
 
-Configure the authentication feature.
+```js
+auth: {
+  // Deprecated: Please use 'accessTokenSigningKeys' instead
+  accessTokenSecret: 'GpA^xLH5$qLzWcqEvZmE3imYwVf68kXa1JR5rP*NFRUyRPQRtbVwWk3bHusD',
 
-*Important* Replace `accessTokenSecret` with a randomly generated string for every environment you use. It will be used to sign json web tokens.
-Changing the `accessTokenSecret` will render all access tokens in the
-database useless.
+  // The secret used to sign JWT tokens
+  accessTokenSigningKeys: [{"crv":"Ed25519","d":"fake-private-key","x":"fake-x","kty":"OKP","kid":"211027-fmJi","alg":"EdDSA","use":"sig"}],
 
-##### `connections.local`
+  // The refresh interval of tokens used in the editor
+  accessTokenTtl: '12h',
+
+  // After which time a user needs to log in again
+  sessionTtl: '5d',
+
+  // How long a password reset link should be valid
+  passwordResetTtl: '6h',
+
+  // How long an email confirmation link should be valid
+  accountConfirmationTtl: '3d',
+
+  // Declares authentication strategies in livingdocs
+  // Please see the connections.local configuration below
+  connections: "{{< a href="#auth-connections-local" title="<connections>">}}"
+}
+```
+
+### `auth.accessTokenSecret`
+Deprecated since `release-2021-11`, Please use `auth.accessTokenSigningKeys` instead.
+
+The `accessTokenSecret` config was used to sign the JWT tokens together with the HMAC-based `HS256` algorithm.
+This setup got replaced with a more standardized one, which supports most signing algorithms and also key rotation.
+
+### `auth.accessTokenSigningKeys`
+{{< added-in release-2021-11 >}}
+
+Livingdocs uses JWT tokens for client (browser and public api) authorization.
+The `accessTokenSigningKeys` configuration defines the signing and verification keys for the tokens.
+
+To generate a new token signing key, execute the following command:
+  `livingdocs-server key-generate sig`
+
+Or convert an existing `auth.accessTokenSecret` value:
+  `livingdocs-server key-generate convert-hs256 '<your-existing-secret>'`
+
+
+And then configure the json web key in the array.
+Please use different keys for all of your environments.
+```patch
+  auth: {
++    accessTokenSigningKeys: [{"kty":"oct","k":"c29tZS1zZWNyZXQtZm9yLWhtYWMyNTYtdG9rZW4tc2lnbmluZw","kid":"","alg":"HS256","use":"sig"}]
+}
+```
+
+Any of the following signing algorithms are supported:
+
+Symmetric Algorithms:
+- `HS256`, `HS384`, `HS512`
+
+Asymmetric Algorithms:
+- `EdDSA` (preferred)
+- `ES256`, `ES384`, `ES512`
+- `PS256`, `PS384`, `PS512`
+- `RS256`, `RS384`, `RS512`
+
+The preferred signing algorithm is `EdDSA`, which is an asymmetric one.
+The main benefit of an asymmetric algorithm is that you could use our tokens in some of your own applications running as separate processes.
+That process can then be configured with just the public key to verify livingdocs access tokens.
+This allows several processes to consume our api client tokens without contacting our server instance for verification. But this is only meant for internal usage at companies. Don't send the tokens to third parties!
+
+A json web key set of the configured keys is exposed on `http://localhost:9090/.well-known/jwks.json`.
+
+##### `auth.connections.local`
 
 Represents the default email/password authentication strategy.
 
@@ -183,16 +248,7 @@ Represents the default email/password authentication strategy.
 
 ```js
 auth: {
-  accessTokenSecret: 'GpA^xLH5$qLzWcqEvZmE3imYwVf68kXa1JR5rP*NFRUyRPQRtbVwWk3bHusD',
-
-  // The refresh interval of tokens used in the editor
-  accessTokenTtl: '12h',
-
-  // How long a password reset link should be valid
-  passwordResetTtl: '6h',
-
-  // How long the link in an account confirmation email should be valid
-  account_confirmation_ttl: '3d',
+  ...,
   connections: {
     local: {
       label: 'Password',
@@ -203,12 +259,14 @@ auth: {
       config: {
         defaultLoginDomain: 'livingdocs.io',
         passwordResetUrl: '/reset#code={{code}}',
+        // You can reject certain passwords using a list of regexes
         deniedPasswords: [
           'upfront',
           'livingd[o0][cg]s',
           'lukas',
           'nzz',
-          '@[a-z]{2,6}\\.[chomteinf]{2,4}(.au)?$' // Email blacklisting
+          // Reject email addresses as passwords
+          '@[a-z]{2,6}\\.[chomteinf]{2,4}(.au)?$'
         ]
       }
     }
