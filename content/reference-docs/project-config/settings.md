@@ -33,6 +33,22 @@ settings: {
     translationWorkflow: true
   },
   integrations: {
+    // NOTE: imatrics uses our secure $secretRef method that will be used by all plugins in future
+    imatrics: {
+      enabled: true,
+      apiEndpoint: 'https://some.url.com',
+      user: 'yourUser',
+      key: {
+        $secretRef: {
+          name: 'imatrics-20211027'
+        }
+      },
+      minchars: 20,
+      language: {
+        name: 'German',
+        value: 'de'
+      }
+    },
     comyan: {
       enabled: true,
       buttonLabel: 'open comyan'
@@ -204,6 +220,30 @@ Available plugins are:
 - Google Vision (image auto-tagging)
 - Comyan (external image storage)
 - Netlify (static rendering)
+
+### Imatrics
+
+Imatrics already uses our new secure secrets feature that will in future be used by all plugins.
+There is full UI support for it, so if you use the UI to configure the plugin you don't need to know anything more.
+If you are using a seeding process, e.g. via the CLI then you need to manually generate a key and reference it in your project config:
+```
+// NOTE: you need to choose a unique name, an easy way is to append the current date to the string 'imatrics-' as done below
+npx livingdocs-server secret-add --project=<handle> --name=imatrics-20211027 --value=secretvalue
+// -> this adds a new secret 'imatrics-20211027' to our encrypted secret store
+```
+After you have created the secret in our system you need to reference it from your project config:
+```
+imatrics: {
+  ...
+  key: {
+    $secretRef: {
+      name: 'imatrics-20211027'
+    }
+  },
+  ...
+```
+
+NOTE: for this to work, the name of the key needs to be unique for every update of the key. You can e.g. append the current date to ensure this or use any other form of unique string appending.
 
 ## Includes
 *has UI support*

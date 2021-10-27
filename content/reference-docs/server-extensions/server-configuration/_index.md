@@ -31,6 +31,7 @@ menus:
   "documentLists": "{{< a href="#document-lists" title="<document list feature config>">}}",
 
   "projects": "{{< a href="#projects" title="<projects config>">}}",
+  "projectConfigs": "{{< a href="#project-configs" title="<project-config config>">}}"
   "render_pipeline": "{{< a href="#render-pipeline" title="<render pipeline config>">}}",
   "categories": "{{< a href="#categories" title="<categories config>">}}",
 
@@ -423,6 +424,24 @@ projects: {
 
 The channel and contentType config is described in detail here: [channel config]({{< ref "/reference-docs/project-config" >}})
 
+#### Project configs
+
+```js
+secretEncryptionKeys: [
+      {"kty":"oct","k":"foo","kid":"newKey","alg":"A256GCMKW","enc":"A256GCM","use":"enc"},
+      {"kid":"oldKey","kty":"oct","k":"bar","alg": "dir","enc": "A128CBC-HS256"}
+    ]
+```
+
+The `secretEncryptionKeys` config is required if you want to use secrets in the project config, e.g. the secret key for imatrics.
+Since we never exchange the project config secrets between parties, synchronous encryption methods are fine. The config also supports key rotation, just add a new key to the beginning of the array and it will then use this.
+
+If you need to generate a new key, you can use our helper cli tool:
+```
+livingdocs-server key-generate enc --alg dir --enc A256GCM
+```
+This generates a synchronous encryption key using the A256GCM encoding.
+See the task description for all possible parameters.
 
 #### Render Pipeline
 
