@@ -623,6 +623,7 @@ References:
 - [v154.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.15): openid-connect: Support HTTP_PROXY environment variable in Issuer.discover call
 
 ### Livingdocs Editor Patches
+- [v72.13.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.40): fix: Upgrade @livingdocs/framework to fix setting link attributes in editable.js
 - [v72.13.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.39): fix(li-dialog): Close on click outside
 - [v72.13.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.38): fix(includes): correctly update directive params when multiple services are used with vue components UIs
 - [v72.13.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.37): fix: initial crop with setImage
