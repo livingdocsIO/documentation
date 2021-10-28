@@ -4,8 +4,14 @@ description: Release notes for release-2021-11
 excludeFromSearch: true
 ---
 
-## Scope
-This are the release notes of the upcoming release. By reading this document, you can get a feeling what will come into the upcoming release. This document is generated and updated :fire: **automatically** :fire: (every merged PR to master adds some notes). About once a week it will be categorized manually.
+## Caveat :fire:
+
+This are the release notes of the upcoming release (pull requests merged to master).
+
+- :info: this document is updated automatically by a bot (pr's to categorize section)
+- :info: this document will be roughly updated manually once a week (put PRs + description to the right section)
+- :fire: We don't guarantee stable APIs. They can still change until the official release
+- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
 * :new: Upgrade @livingdocs/framework to fix setting link attributes in editable.js [livingdocs-editor #4814 v74.6.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4814)
