@@ -8,6 +8,7 @@ excludeFromSearch: true
 This are the release notes of the upcoming release. By reading this document, you can get a feeling what will come into the upcoming release. This document is generated and updated :fire: **automatically** :fire: (every merged PR to master adds some notes). About once a week it will be categorized manually.
 
 ## PRs to Categorize
+* :new: Upgrade @livingdocs/framework to fix setting link attributes in editable.js [livingdocs-editor #4814 v74.6.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4814)
 * :new: Link Tool: open extended search when search term is entered again [livingdocs-editor #4802 v74.6.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4802)
 * :new: Project secrets [livingdocs-editor #4766 v74.6.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4766)
 * :new: Support access token key rotation [livingdocs-server #4062 v157.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4062)
