@@ -14,33 +14,6 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* :new: Bump minor version for release management [livingdocs-server #4063 v157.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4063)
-* :new: Bump minor version for release management [livingdocs-editor #4817 v74.8.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4817)
-* :new: Multilist Editor: Add 'Lists on page' button, visible list setting [livingdocs-editor #4801 v74.7.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4801)
-* :new: fix(email): Add project to the invite user login URL [livingdocs-server #3982 v157.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/3982)
-* :new: Upgrade @livingdocs/framework to fix setting link attributes in editable.js [livingdocs-editor #4814 v74.6.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4814)
-* :new: Link Tool: open extended search when search term is entered again [livingdocs-editor #4802 v74.6.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4802)
-* :new: Project secrets [livingdocs-editor #4766 v74.6.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4766)
-* :new: Support access token key rotation [livingdocs-server #4062 v157.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4062)
-* :new: Extend formatting toolbar [livingdocs-editor #4799 v74.5.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4799)
-* :new: Extend formatting toolbar with li-reference [livingdocs-server #4060 v157.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4060)
-* :new: feat(hugo): Use upload center for image uploads [livingdocs-editor #4677 v74.4.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4677)
-* :new: Fix small issues: Single-line tooltip width, hide toolbar for archived, close dialog on outside click [livingdocs-editor #4810 v74.3.10](https://github.com/livingdocsIO/livingdocs-editor/pull/4810)
-* :new: Remove Deprecation Messages in Workspace (metadataUpdater) [livingdocs-editor #4807 v74.3.9](https://github.com/livingdocsIO/livingdocs-editor/pull/4807)
-* :new: Includes: Fix include w/ multiple services using vue components for UI [livingdocs-editor #4803 v74.3.8](https://github.com/livingdocsIO/livingdocs-editor/pull/4803)
-* :new: fix(menus): Show unpublished document warning without refresh [livingdocs-editor #4811 v74.3.7](https://github.com/livingdocsIO/livingdocs-editor/pull/4811)
-* :new: reset initial crop with setImage [livingdocs-editor #4805 v74.3.6](https://github.com/livingdocsIO/livingdocs-editor/pull/4805)
-* :new: Disable debug mode in local environment [livingdocs-editor #4809 v74.3.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4809)
-* :new: Fix restore Metadata [livingdocs-editor #4797 v74.3.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4797)
-* :new: Improvement/gray color palette [livingdocs-editor #4788 v74.3.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4788)
-* :new: fix/toolbar meta and filters [livingdocs-editor #4798 v74.3.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4798)
-* :new: add basepath to v2 design [livingdocs-server #4051 v157.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4051)
-* :new: Make whole “Link document” button clickable [livingdocs-editor #4747 v74.3.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4747)
-* :new: Multi-Language Data Records [livingdocs-server #4046 v157.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4046)
-* :new: Multilanguage Data Records [livingdocs-editor #4761 v74.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4761)
-* :new: Media Library: use a dialog for media library selection [livingdocs-editor #4791 v74.2.15](https://github.com/livingdocsIO/livingdocs-editor/pull/4791)
-* :new: Media Library: Fix transcoding state after video replace [livingdocs-editor #4792 v74.2.13](https://github.com/livingdocsIO/livingdocs-editor/pull/4792)
-* :new: Improvement/multilanguage metadata [livingdocs-editor #4793 v74.2.12](https://github.com/livingdocsIO/livingdocs-editor/pull/4793)
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
@@ -72,8 +45,8 @@ This are the release notes of the upcoming release (pull requests merged to mast
 |Postgres|13|
 |Elasticsearch|7|
 |Redis|6|
-|Livingdocs Server Docker Image|livingdocs/server-base:16|
-|Livingdocs Editor Docker Image|livingdocs/editor-base:16|
+|Livingdocs Server Docker Image|livingdocs/server-base:16.1|
+|Livingdocs Editor Docker Image|livingdocs/editor-base:16.1|
 |Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
 
 ### Minimal
@@ -91,39 +64,33 @@ This are the release notes of the upcoming release (pull requests merged to mast
 
 ## Highlights
 
-### Project Secrets
-
-TODO@marcbachmann / @gabrielhase: Add description and documentation
-
-* References
-  * [Documentation](TODO)
-  * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3974)
-  * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4766)
-
 ### Metadata Translations for Data Records
 
-We introduce metadata translations for Data Records. The behavior and look is the same as the metadata translations for the Media Library.
-
-TODO@DaRaFF: add a screenshot / update link to the doc
+We introduce "Metadata Translations for Data Records". It allows to translate data records into different languages. The behavior and look is similar like for the translation of Media Library Assets.
 
 * References
-  * [Documentation](TODO)
+  * [Guide - Enable Metadata Translations for Data Records](https://docs.livingdocs.io/guides/editor/metadata-translations/)
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4761)
-  * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/????)
+  * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4046)
 
 ### Multilist Editor
 
-TODO@romankaravia: Add description and documentation
+The multilist editor lets a user view and edit multiple document lists in one screen (before you had to jump from list to list)
+
+- the multilist editor is accessible from the editor toolbar while editing a page
+- lists can individually be filtered (visible/invisible)
+- optionally it shows the inbox for one specific document.
+
+![image](https://user-images.githubusercontent.com/172394/139450007-aba52431-b828-4d58-adba-1700a57bc498.png)
 
 * References
-  * [Documentation](TODO)
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4760)
-  * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/????)
+  * [Editor PR 2](https://github.com/livingdocsIO/livingdocs-editor/pull/4801)
 
 
 ### Document Inbox
 
-TODO: Add description and documentation
+We introduce the "Document Inbox" feature to support teams with splitted responsibilities. In bigger editorial teams there are different roles (e.g. writing an article and orchestrating pages). As an example: Editor A writes an article and put it to the inbox of the front page. Editor B then can decide into which list of the front page the article should go.
 
 * References
   * [Documentation](TODO)
@@ -131,6 +98,16 @@ TODO: Add description and documentation
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4661)
 
 
+### Extended Text Formatting Toolbar
+
+We added 3 new possibilities to select data for custom attributes in the text formattting toolbar
+* Select a value from a list
+* Select a document reference
+* Text input
+
+* [Documentation](TODO)
+* [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4799)
+* [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4060)
 
 
 
@@ -138,16 +115,24 @@ TODO: Add description and documentation
 
 ### Migrate the database
 
-TODO: add migrations
-
-- Expected duration?
-- Possible data losses?
-- Is it a simple migration? (fast/easy downgradable)
+It's a simple/fast migration with no expected data losses.
 
 ```sh
 # run grunt migrate to update to the newest database scheme
-# migration - 111-add-comments-table.js
-#   create comments table + add events to the stream_events_types table
+# migration - 167-add-document-inbox.js
+#   create new table document_inbox
+# migration - 168-add-started_at-index-on-import_jobs.js
+#   add index to import_jobs.started_at
+# migration - 169-add-li_jsonb_find_index-and-improve-li_jsonb_patch-error-handling.js
+#   add new pg function for json patching
+# migration - 170-add-translations-to-document_metadata-table.js
+#   add column document_metadata.translations
+# migration - 170-support-postgres-14.js
+#   add support for postgres 14
+# migration - 171-add-project-secrets.js
+#   add new table project_secrets
+# migration - 172-prepare-content_type_id-migration.js
+#   add new pg function for content type population
 livingdocs-server migrate up
 ```
 
@@ -223,89 +208,79 @@ This will define the removed classes and variables within your SCSS file tree. Y
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4759)
 
 
-## Deprecations
-
-
-
-
-## APIs :gift:
-
-
-
-
-## Internal Changes
-
-
-
-
 ## Other Changes
 
 ### Features
 
-* Show login connections in server admin [livingdocs-editor #4711](https://github.com/livingdocsIO/livingdocs-editor/pull/4711) :gift:
+* Security: Support access token key rotation [livingdocs-server #4062 v157.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4062)
+* Hugo: Use upload center and metadata forms for image uploads [livingdocs-editor #4677 v74.4.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4677)
+* Introduce Project Secrets Storage [livingdocs-server #3974 v155.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/3974)
+* Show login connections in server admin [livingdocs-editor #4711](https://github.com/livingdocsIO/livingdocs-editor/pull/4711)
 
 ### Design
 
-* Button Cleanup 1 [livingdocs-editor #4656](https://github.com/livingdocsIO/livingdocs-editor/pull/4656) :gift:
-* Button Cleanup 2 [livingdocs-editor #4656](https://github.com/livingdocsIO/livingdocs-editor/pull/4759) :gift:
-* Improve Embed and Twitter visuals [livingdocs-editor #4689](https://github.com/livingdocsIO/livingdocs-editor/pull/4689) :gift:
-* Collaboration Cards spacing polishing [livingdocs-editor #4767](https://github.com/livingdocsIO/livingdocs-editor/pull/4767) :gift:
+* Button Cleanup 1 [livingdocs-editor #4656](https://github.com/livingdocsIO/livingdocs-editor/pull/4656)
+* Button Cleanup 2 [livingdocs-editor #4656](https://github.com/livingdocsIO/livingdocs-editor/pull/4759)
+* Improve Embed and Twitter visuals [livingdocs-editor #4689](https://github.com/livingdocsIO/livingdocs-editor/pull/4689)
+* Collaboration Cards spacing polishing [livingdocs-editor #4767](https://github.com/livingdocsIO/livingdocs-editor/pull/4767)
+* Improvement/gray color palette [livingdocs-editor #4788 v74.3.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4788)
 
 ### Improvements
 
-* Indexing: Get rid of `Invalid index job` logs with custom indexes [livingdocs-server #3965](https://github.com/livingdocsIO/livingdocs-server/pull/3965) :gift:
-* Allow task cards to open via middle-click in new tab [livingdocs-editor #4733](https://github.com/livingdocsIO/livingdocs-editor/pull/4733) :gift:
-* Import: Within a reimport the design version can be updated [livingdocs-server #3957](https://github.com/livingdocsIO/livingdocs-server/pull/3957) :gift:
-* Media Library: Support boolean flag=false / exists filters in metadata search [livingdocs-server #4012](https://github.com/livingdocsIO/livingdocs-server/pull/4012) :gift:
-* Push Notifications: Add suport for segments in airship [livingdocs-server #3953](https://github.com/livingdocsIO/livingdocs-server/pull/3953) :gift:
-* projectConfigCache: same-process invalidation on updates [livingdocs-server #4050](https://github.com/livingdocsIO/livingdocs-server/pull/4050) :gift:
+* Indexing: Get rid of `Invalid index job` logs with custom indexes [livingdocs-server #3965](https://github.com/livingdocsIO/livingdocs-server/pull/3965)
+* Allow task cards to open via middle-click in new tab [livingdocs-editor #4733](https://github.com/livingdocsIO/livingdocs-editor/pull/4733)
+* Import: Within a reimport the design version can be updated [livingdocs-server #3957](https://github.com/livingdocsIO/livingdocs-server/pull/3957)
+* Media Library: Support boolean flag=false / exists filters in metadata search [livingdocs-server #4012](https://github.com/livingdocsIO/livingdocs-server/pull/4012)
+* Push Notifications: Add suport for segments in airship [livingdocs-server #3953](https://github.com/livingdocsIO/livingdocs-server/pull/3953)
+* projectConfigCache: same-process invalidation on updates [livingdocs-server #4050](https://github.com/livingdocsIO/livingdocs-server/pull/4050)
 
 ### Bugfixes
 
 * Editor
-  * Fix line wrap behavior [livingdocs-editor #4705](https://github.com/livingdocsIO/livingdocs-editor/pull/4705) :beetle:
-  * Fix newline behavior [livingdocs-editor #4726](https://github.com/livingdocsIO/livingdocs-editor/pull/4726) :beetle:
-  * Change Toolbar max Offset to fix Overlapping Action Bar Issue [livingdocs-editor #4737](https://github.com/livingdocsIO/livingdocs-editor/pull/4737) :beetle:
-  * The Vue metadata plugin `li-form-select` handles undefined values the same way as the Angular plugins [livingdocs-editor #4742](https://github.com/livingdocsIO/livingdocs-editor/pull/4742) :beetle:
-  * Clipboard: Stop the clipboard drag event when deleting the last item from the clipboard [livingdocs-editor #4743](https://github.com/livingdocsIO/livingdocs-editor/pull/4743) :beetle:
-  * Fix Link Check in Toolbar [livingdocs-editor #4718](https://github.com/livingdocsIO/livingdocs-editor/pull/4718) :beetle:
+  * Fix line wrap behavior [livingdocs-editor #4705](https://github.com/livingdocsIO/livingdocs-editor/pull/4705)
+  * Fix newline behavior [livingdocs-editor #4726](https://github.com/livingdocsIO/livingdocs-editor/pull/4726)
+  * Change Toolbar max Offset to fix Overlapping Action Bar Issue [livingdocs-editor #4737](https://github.com/livingdocsIO/livingdocs-editor/pull/4737)
+  * The Vue metadata plugin `li-form-select` handles undefined values the same way as the Angular plugins [livingdocs-editor #4742](https://github.com/livingdocsIO/livingdocs-editor/pull/4742)
+  * Clipboard: Stop the clipboard drag event when deleting the last item from the clipboard [livingdocs-editor #4743](https://github.com/livingdocsIO/livingdocs-editor/pull/4743)
+  * Fix Link Check in Toolbar [livingdocs-editor #4718](https://github.com/livingdocsIO/livingdocs-editor/pull/4718)
+  * Fix "null" in links [livingdocs-editor #4814 v74.6.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4814)
 * Comments
-  * Jump to the comment if url is provided in the url [livingdocs-editor #4768](https://github.com/livingdocsIO/livingdocs-editor/pull/4768) :beetle:
-  * Merge local comment to remote thread [livingdocs-editor #4762](https://github.com/livingdocsIO/livingdocs-editor/pull/4762) :beetle:
-* Billing: Request the correct time range + get the current month [livingdocs-editor #4728](https://github.com/livingdocsIO/livingdocs-editor/pull/4728) :beetle:
+  * Jump to the comment if url is provided in the url [livingdocs-editor #4768](https://github.com/livingdocsIO/livingdocs-editor/pull/4768)
+  * Merge local comment to remote thread [livingdocs-editor #4762](https://github.com/livingdocsIO/livingdocs-editor/pull/4762)
+* Billing: Request the correct time range + get the current month [livingdocs-editor #4728](https://github.com/livingdocsIO/livingdocs-editor/pull/4728)
 * Dashboards
-  * Fix page and data record links [livingdocs-editor #4687](https://github.com/livingdocsIO/livingdocs-editor/pull/4687) :beetle:
-  * Filters: Update show/hide when items are added asynchronously [livingdocs-editor #4770](https://github.com/livingdocsIO/livingdocs-editor/pull/4770) :beetle:
+  * Fix page and data record links [livingdocs-editor #4687](https://github.com/livingdocsIO/livingdocs-editor/pull/4687)
+  * Filters: Update show/hide when items are added asynchronously [livingdocs-editor #4770](https://github.com/livingdocsIO/livingdocs-editor/pull/4770)
 * Media (Library)
-  * Only save document when new images has been added on content load [livingdocs-editor #4697](https://github.com/livingdocsIO/livingdocs-editor/pull/4697) :beetle:
-  * Select video after upload [livingdocs-editor #4715](https://github.com/livingdocsIO/livingdocs-editor/pull/4715) :beetle:
-  * Able to re-trigger upload after cancelling/reset upload [livingdocs-editor #4698](https://github.com/livingdocsIO/livingdocs-editor/pull/4698) :beetle:
-  * Fix not necessary request to `/[object Object]` in upload center [livingdocs-editor #4785](https://github.com/livingdocsIO/livingdocs-editor/pull/4785) :beetle:
-  * Fix the selection of an additional language in media library multilanguage [livingdocs-editor #4786](https://github.com/livingdocsIO/livingdocs-editor/pull/4786) :beetle:
-  * Remove component on failed/canceled upload [livingdocs-editor #4782](https://github.com/livingdocsIO/livingdocs-editor/pull/4782) :beetle:
-  * Improve design of additional language [livingdocs-editor #4793 v74.2.12](https://github.com/livingdocsIO/livingdocs-editor/pull/4793) :gift:
+  * Only save document when new images has been added on content load [livingdocs-editor #4697](https://github.com/livingdocsIO/livingdocs-editor/pull/4697)
+  * Select video after upload [livingdocs-editor #4715](https://github.com/livingdocsIO/livingdocs-editor/pull/4715)
+  * Able to re-trigger upload after cancelling/reset upload [livingdocs-editor #4698](https://github.com/livingdocsIO/livingdocs-editor/pull/4698)
+  * Fix not necessary request to `/[object Object]` in upload center [livingdocs-editor #4785](https://github.com/livingdocsIO/livingdocs-editor/pull/4785)
+  * Fix the selection of an additional language in media library multilanguage [livingdocs-editor #4786](https://github.com/livingdocsIO/livingdocs-editor/pull/4786)
+  * Remove component on failed/canceled upload [livingdocs-editor #4782](https://github.com/livingdocsIO/livingdocs-editor/pull/4782)
+  * Improve design of additional language [livingdocs-editor #4793 v74.2.12](https://github.com/livingdocsIO/livingdocs-editor/pull/4793)
+  * Fix transcoding state after video replace [livingdocs-editor #4792 v74.2.13](https://github.com/livingdocsIO/livingdocs-editor/pull/4792)
 * Menu
-  * Fix Lost Menu Entries on save [livingdocs-editor #4703](https://github.com/livingdocsIO/livingdocs-editor/pull/4703) :beetle:
-:beetle:
-  * Fix Lost Menu Entries on move [livingdocs-editor #4720](https://github.com/livingdocsIO/livingdocs-editor/pull/4720) :beetle:
+  * Fix Lost Menu Entries on save [livingdocs-editor #4703](https://github.com/livingdocsIO/livingdocs-editor/pull/4703)
+  * Fix Lost Menu Entries on move [livingdocs-editor #4720](https://github.com/livingdocsIO/livingdocs-editor/pull/4720)
+  * Show unpublished document warning without refresh [livingdocs-editor #4811 v74.3.7](https://github.com/livingdocsIO/livingdocs-editor/pull/4811)
 * Document Lists
   * Add default lister to only show published documents [livingdocs-editor #4693](https://github.com/livingdocsIO/livingdocs-editor/pull/4693)
-  * Fixes multiple documents disappearing when removing a single document from a list [livingdocs-editor #4696](https://github.com/livingdocsIO/livingdocs-editor/pull/4696) :beetle:
-* Document Inbox: Prevent duplicate references from being added to an inbox [livingdocs-server #3956](https://github.com/livingdocsIO/livingdocs-server/pull/3956) :beetle:
-* Storage: Use correct day of the month for storage keys [livingdocs-server #3997](https://github.com/livingdocsIO/livingdocs-server/pull/3997) :beetle:
-* Images: Fix imagemagick upload with streams [livingdocs-server #4036](https://github.com/livingdocsIO/livingdocs-server/pull/4036) :beetle:
-
+  * Fixes multiple documents disappearing when removing a single document from a list [livingdocs-editor #4696](https://github.com/livingdocsIO/livingdocs-editor/pull/4696)
+* Document Inbox: Prevent duplicate references from being added to an inbox [livingdocs-server #3956](https://github.com/livingdocsIO/livingdocs-server/pull/3956)
+* Storage: Use correct day of the month for storage keys [livingdocs-server #3997](https://github.com/livingdocsIO/livingdocs-server/pull/3997)
+* Images: Fix imagemagick upload with streams [livingdocs-server #4036](https://github.com/livingdocsIO/livingdocs-server/pull/4036)
+* History: Several fixes with metadata restoring [livingdocs-editor #4797 v74.3.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4797)
+* Includes: Fix include w/ multiple services using vue components for UI [livingdocs-editor #4803 v74.3.8](https://github.com/livingdocsIO/livingdocs-editor/pull/4803)
+* Invote Email: Fix project URL [livingdocs-server #3982 v157.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/3982)
 
 
 ## Patches
 
 ### Livingdocs Server Patches
-- [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
 - [v74.4.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.2): fix: design improvements for document-list and soft-lock
-- [v74.4.1](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.1): fix: update framework to release-2021-11
-- [v??.?.?](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v??.?.?): text
 
   ---
   **Icon Legend**
