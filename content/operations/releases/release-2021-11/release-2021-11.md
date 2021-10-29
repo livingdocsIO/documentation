@@ -303,6 +303,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v74.4.1](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.1): fix: update framework to release-2021-11
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v??.?.?): text
 
   ---
