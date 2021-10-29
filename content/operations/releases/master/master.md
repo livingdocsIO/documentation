@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Bump minor version for release management [livingdocs-server #4063 v157.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4063)
 * :new: Bump minor version for release management [livingdocs-editor #4817 v74.8.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4817)
 * :new: Multilist Editor: Add 'Lists on page' button, visible list setting [livingdocs-editor #4801 v74.7.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4801)
 * :new: fix(email): Add project to the invite user login URL [livingdocs-server #3982 v157.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/3982)
