@@ -22,7 +22,8 @@ We announce roughly every 2 months a new release. You can find more information 
 
 |Name|Upcoming|Current|Maintained|Legacy|
 |-|-|-|-|-|
-|[November 2021 Release]({{< ref "operations/releases/master/master.md" >}})|✅||||
+|[February 2022 Release]({{< ref "operations/releases/master/master.md" >}})|✅||||
+|[November 2021 Release]({{< ref "operations/releases/release-2021-11/release-2021-11" >}})|✅||||
 |[September 2021 Release]({{< ref "operations/releases/release-2021-09/release-2021-09.md" >}})||✅|✅||
 |[June 2021 Release]({{< ref "operations/releases/release-2021-06/release-2021-06.md" >}})|||✅||
 |[March 2021 Release]({{< ref "operations/releases/release-2021-03/release-2021-03.md" >}})||||✅|
