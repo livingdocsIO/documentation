@@ -68,13 +68,13 @@
   }
 }
 
-@mixin text-link() {
-  color: $color-blue-1;
+@mixin text-link($color: $color-blue-1) {
+  color: $color;
   cursor: pointer;
-  border-bottom: 1px solid rgba($color-blue-1, 0.5);
+  border-bottom: 1px solid rgba($color, 0.5);
 
   &:hover {
-    border-bottom-color: $color-blue-1;
+    border-bottom-color: $color;
   }
 }
 
