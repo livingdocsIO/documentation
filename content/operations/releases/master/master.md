@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: design improvements for document-list and soft-lock [livingdocs-editor #4820 v74.8.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4820)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
