@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Video include [livingdocs-editor #4796 v74.9.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4796)
 * :new: Video include [livingdocs-server #4054 v157.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4054)
 * :new: design improvements for document-list and soft-lock [livingdocs-editor #4820 v74.8.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4820)
 
