@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(schema-form): Use updated video reference schema [livingdocs-editor #4824 v74.10.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4824)
 * :new: feat(references): Change media schemas [livingdocs-server #4067 v157.5.0](https://github.com/livingdocsIO/livingdocs-server/pull/4067)
 * :new: 🐞 Translation Action in Editor Toolbar (show all related translations) [livingdocs-editor #4816 v74.9.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4816)
 * :new: Video include [livingdocs-editor #4796 v74.9.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4796)
