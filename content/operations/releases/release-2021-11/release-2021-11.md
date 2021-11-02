@@ -280,6 +280,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+- [v74.4.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.3): fix(collab card): Text selection
 - [v74.4.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.2): fix: design improvements for document-list and soft-lock
 
   ---
