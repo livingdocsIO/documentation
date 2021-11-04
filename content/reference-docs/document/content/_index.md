@@ -58,7 +58,7 @@ A simple Livingdocs design defining the two components used in the document abov
       name: 'title',
       plainText: true
     }]
-  }, {  
+  }, {
     name: 'paragraph',
     html: '<p doc-editable="text">Tell your story</p>',
     label: 'Paragraph'

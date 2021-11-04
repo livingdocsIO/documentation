@@ -35,7 +35,7 @@ For evaluation we already have added accounts for the 5 external services in the
 For the livingdocs-server and livingdocs-editor we have a boilerplate which you can use to setup your own server and editor. These two repositories are private. Please contact us that you are interested to evaluate livingdocs so we can give you access to the repository.
 
 ## Setup
-- Go through the setup documentation: [setup local development]({{< ref "./system-requirements.md" >}})
+- Go through the setup documentation: [on premise setup]({{< ref "./on-premise-setup.md" >}})
 - After setup server and editor you should be able to login with a given user
 
 ## Design
@@ -47,7 +47,7 @@ The next step is to create your own metadata field. In the server, navigate into
 ## Delivery
 If you want deliver your documents to your Delivery Website you can use webhooks to get notified if a document got published.
 
-[use server hooks]({{< ref "../reference-docs/server-extensions/hooks" >}})
+[use server hooks]({{< ref "../reference-docs/server-extensions/server-hooks" >}})
 or
 [use webhooks]({{< ref "../reference-docs/server-extensions/webhooks" >}})
 
