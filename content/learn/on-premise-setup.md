@@ -77,6 +77,10 @@ export ENVIRONMENT=local
 
 Next, follow the instructions in each repository's README:
 
+{{< warning >}}
+  If you get a <strong>404 - Not Found</strong> for the repos below this means you do not have access to Livingdocs on Github.
+{{< /warning >}}
+
 {{< github "livingdocsIO/livingdocs-editor-boilerplate" "[Private Repo] On Premise Editor Template" >}}
 
 {{< github "livingdocsIO/livingdocs-server-boilerplate" "[Private Repo] On Premise Server Template" >}}
@@ -84,3 +88,57 @@ Next, follow the instructions in each repository's README:
 
 **Please note**
 These boilerplates are _not_ meant to be used for anything else than local evaluation. They also include configurations for rate limited third-party API's that we provide for convenience reasons.
+
+## Setting up required services and accounts
+
+For your convenience we provide evaluation accounts for e.g. image storage or sending mails so you can start exploring the boilerplate right away.
+
+But before starting to develop in earnest you will have set up your own accounts.
+
+### Account Checklist
+
+#### File Storage (e.g. AWS S3)
+
+All files you upload to Livingdocs will be stored in your storages. For this to work you need to configure your own supported storage.
+
+On AWS for example we recommend to create four buckets per environment (for images, videos, files and design assets).
+
+Server Config Keys to update:
+  * `mediaLibrary.images.storage.*`
+  * `mediaLibrary.videos.storage.*`
+  * `mediaLibrary.files.storage.*`
+  * `designs.assets.storage.*`
+
+#### Image Service (e.g. Imgix)
+
+Images in Livingdocs are usually displayed through an image service to handle image resizing and cropping. You should configure your own service per environment.
+
+Server Config Keys to update:
+  * `documents.imageServices.*`
+
+#### Pusher
+
+In order for real-time collaboration to work as designed you will have to set up an account on [pusher.com](https://pusher.com).
+
+Server Config Keys to update:
+  * `pusher.*`
+
+#### Email (e.g. AWS SES)
+
+The livingdocs-server needs to send mails for things like password resets or user notifications. For this you should configure an E-Mail with a trusted domain of yours which you should also communicate to your users so they know from which sender to expect Livingdocs E-Mails. We recommend to create different E-Mail accounts for different environments.
+
+Server Config Keys to update:
+  * `notifications.channels.email.fromAddress`
+  * `emails.transport.default.*`
+
+#### NPM Access Token
+
+To access private livingdocs repositories you need to create a npm user with an access token. We can then grant your npm user read access to our @livingdocs packages (e.g. `@livingdocs/livingdocs-server` and `@livingdocs/livingdocs-editor`).
+
+We recommend adding an `.npmrc` file to your server and editor repositories so everyone in your team can run `npm install` seamlessly.
+
+.npmrc file:
+
+```ini
+//registry.npmjs.org/:_authToken=<yourNpmToken>
+```
