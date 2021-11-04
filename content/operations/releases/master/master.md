@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Multilist Editor: apply configured filters for the document search [livingdocs-editor #4830 v74.11.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4830)
 * :new: Fix/User Avatar [livingdocs-editor #4828 v74.11.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4828)
 * :new: fix(environments): Use files bucket [livingdocs-server #4069 v157.5.1](https://github.com/livingdocsIO/livingdocs-server/pull/4069)
 * :new: Video reference form upload [livingdocs-editor #4823 v74.11.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4823)
