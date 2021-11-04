@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix/User Avatar [livingdocs-editor #4828 v74.11.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4828)
 * :new: fix(environments): Use files bucket [livingdocs-server #4069 v157.5.1](https://github.com/livingdocsIO/livingdocs-server/pull/4069)
 * :new: Video reference form upload [livingdocs-editor #4823 v74.11.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4823)
 * :new: feat(schema-form): Use updated video reference schema [livingdocs-editor #4824 v74.10.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4824)
