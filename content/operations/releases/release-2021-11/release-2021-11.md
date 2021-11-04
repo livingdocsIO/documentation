@@ -147,11 +147,28 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 
 Some internal methods got removed. If you use any of the following methods, please rather use `documentWriteModel.metadata` directly.
 
-- `documentWriteModel.metadata.setProperties(obj)` got removed. Please use `.setProperty` for now.
-- `documentWriteModel.metadata.serialize()` got removed. Please use `.splittedSerialize()`
-- `documentWriteModel.metadata.getEntity()` got removed. Please use `documentWriteModel.metadata.entity`
+- :fire: `documentWriteModel.metadata.setProperties(obj)` got removed. Please use `.setProperty` for now.
+- :fire: `documentWriteModel.metadata.serialize()` got removed. Please use `.splittedSerialize()`
+- :fire: `documentWriteModel.metadata.getEntity()` got removed. Please use `documentWriteModel.metadata.entity`
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4024)
+
+### Remove documentModel getters :fire:
+
+Some internal methods got removed. If you use any of the following methods, please rather use `documentWriteModel.metadata` directly.
+
+- :fire: `documentModel.document` got removed. Please use `documentModel.documentEntity` instead
+- :fire: `documentModel.metadata` got removed. Please use `documentModel.metadataModel` instead
+- :fire: `documentModel.revision` got removed. Please use `documentModel.revisionEntity` instead
+
+Instead of using higher level getters like `documentModel.content` and `documentModel.metadataContent`, you can use low level getters instead:
+- documentModel.id
+- documentModel.documentId
+- documentModel.revisionId
+- documentModel.projectId
+- documentModel.channelId
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4011)
 
 ### Rename channelConfig to projectConfig :fire:
 
