@@ -91,9 +91,34 @@ weight: 6
 ---
 ```
 
-#### Document Header Properties
+### Properties
 
-* `excludeFromSearch: true` - every document will be indexed by default except you exclued it with `excludeFromSearch`
+* `excludeFromSearch: true` - a document will not be in search results
+* `draft: true` - a document will not be rendered. Start your server with `npm run start -- -D` to see drafts for development
+* `renderEditButton: false` - don't show the edit button for updating a docuement at github
+* `renderSummaries: false` - don't show document teaser cards
+* `renderTOC: false` - don't show table of contents on the right side of the page
+
+### Teaser Properties
+
+Here you can see an example, how to define a document teaser
+
+```
+---
+title: My title
+linkTitle: This is my card title
+bullets:
+  - item 1 in your bullet list
+  - item 2 in your bullet list
+description: Describe the document
+weight: 6
+---
+```
+
+![image](https://user-images.githubusercontent.com/172394/140274827-1fdf9774-8664-44cc-ae62-cb17089461cc.png)
+
+`linkTitle` - a document teaser card takes `title` as default, with `linkTitle`, you can overwrite the teaser title
+
 
 
 ## Development
