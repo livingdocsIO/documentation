@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Document list: Correctly update internal state when dragging item out of list [livingdocs-editor #4832 v74.11.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4832)
 * :new: Multilist Editor: inbox and search card actions [livingdocs-editor #4831 v74.11.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4831)
 * :new: Upgrade to pino v7 [livingdocs-server #4068 v157.5.2](https://github.com/livingdocsIO/livingdocs-server/pull/4068)
 * :new: Multilist Editor: apply configured filters for the document search [livingdocs-editor #4830 v74.11.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4830)
