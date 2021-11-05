@@ -298,6 +298,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 - [v157.2.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.2): fix: Upgrade to pino v7
 
 ### Livingdocs Editor Patches
+- [v74.4.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.8): fix(document list): Correctly update internal state when dragging item out of list
 - [v74.4.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.7): fix(multilist editor): use configured searchFilters for the document search
 - [v74.4.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.6): fix(multilist editor): Update document inbox on remote after remove action
 - [v74.4.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.5): fix(multilist editor): Improvements from PR feedback
