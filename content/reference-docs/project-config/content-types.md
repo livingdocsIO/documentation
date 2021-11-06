@@ -118,7 +118,14 @@ contentTypes: [{
   documentCreationDisabled: true, // default false
 
   // either show 'edit' or 'publish' view after creating a document
-  viewAfterDocumentCreation: 'publish' // default is 'edit'
+  viewAfterDocumentCreation: 'publish', // default is 'edit'
+
+  // Allows the current content type ("gallery") to accept
+  // "regular" and "another-handle" documents into its inbox.
+  // The inbox assignment UI will be displayed for those content types.
+  inbox: {
+    contentTypes: ['regular', 'another-handle']
+  }
 }]
 ```
 
@@ -419,3 +426,13 @@ Example:
 ## Print
 
 The print options allow you to enable the WoodWing Studio print connector on a content-type. Refer to our [setup guide]({{< ref "/guides/integrations/print" >}}) in order to setup your project with the print connector. Note: before you consider productive use of a print connector you must get in contact with us. The provided WoodWing connector is only to be used for test purposes.
+
+## Document Inbox
+
+{{< added-in release-2021-11 >}}
+
+The document inbox feature can be used in parallel with, or as a replacement for, the list assignment feature. It provides a way for users to indicate that a document should be listed within another document without the need to know which specific list it should appear on.
+  
+An example use-case would be: When Editor User A finishes an article they would like to tell CvD User B (Chef vom Dienst - a role that is in charge of the frontpage at many newsrooms) to publish the teaser to that article on the frontpage. If the frontpage is compiled from multiple lists, it's not User A's job to decide into which list the article should go, as it's User B deciding that. Once assigned, User B will be able to see the article in the inbox column of the multi-list editor view for the frontpage.
+
+The inbox assignment UI will be displayed on the publish screen for the content types listed within the content types array. The document search dialog used for the inbox assignment will be automatically filtered by the content type(s) which will accept the document being published.
