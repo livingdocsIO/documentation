@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix backfilling of the content_type_id column on the document_publication_events table [livingdocs-server #4075 v157.5.3](https://github.com/livingdocsIO/livingdocs-server/pull/4075)
 * :new: Document list: Correctly update internal state when dragging item out of list [livingdocs-editor #4832 v74.11.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4832)
 * :new: Multilist Editor: inbox and search card actions [livingdocs-editor #4831 v74.11.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4831)
 * :new: Upgrade to pino v7 [livingdocs-server #4068 v157.5.2](https://github.com/livingdocsIO/livingdocs-server/pull/4068)
