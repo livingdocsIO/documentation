@@ -295,6 +295,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 ## Patches
 
 ### Livingdocs Server Patches
+- [v157.2.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.3): fix: Fix backfilling of the content_type_id column on the document_publication_events table
 - [v157.2.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.2): fix: Upgrade to pino v7
 
 ### Livingdocs Editor Patches
