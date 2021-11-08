@@ -600,6 +600,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v154.0.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.38): fix: Fix backfilling of the content_type_id column on the document_publication_events table
 - [v154.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.37): fix: Upgrade to pino v7
 - [v154.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.36): chore: check type of assets
 - [v154.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.35): fix: use the updated release-notes-patch repo
