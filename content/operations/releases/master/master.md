@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Improvement/button group [livingdocs-editor #4825 v74.12.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4825)
 * :new: Only load/require the print feature if it's configured [livingdocs-server #4088 v157.5.5](https://github.com/livingdocsIO/livingdocs-server/pull/4088)
 * :new: Fix/Loader Color [livingdocs-editor #4840 v74.11.6](https://github.com/livingdocsIO/livingdocs-editor/pull/4840)
 * :new: Fix/Top Banner [livingdocs-editor #4837 v74.11.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4837)
