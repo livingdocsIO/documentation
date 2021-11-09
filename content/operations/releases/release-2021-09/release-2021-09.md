@@ -627,6 +627,7 @@ References:
 - [v154.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.15): openid-connect: Support HTTP_PROXY environment variable in Issuer.discover call
 
 ### Livingdocs Editor Patches
+- [v72.13.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.43): fix: show card actions in inbox and document search
 - [v72.13.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.42): fix(top banner): Max width mobile
 - [v72.13.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.41): fix: design improvements for document-list and soft-lock
 - [v72.13.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.40): fix: Upgrade @livingdocs/framework to fix setting link attributes in editable.js
