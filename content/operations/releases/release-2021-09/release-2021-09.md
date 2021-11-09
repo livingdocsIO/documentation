@@ -600,6 +600,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v154.0.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.40): fix: trigger a new version for npm
 - [v154.0.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.39): fix(print): Add hugo image URLs to export data
 - [v154.0.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.38): fix: Fix backfilling of the content_type_id column on the document_publication_events table
 - [v154.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.37): fix: Upgrade to pino v7
