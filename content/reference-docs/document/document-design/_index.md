@@ -46,7 +46,17 @@ Components are the building blocks of Livingdocs documents. In essence a compone
 
 The above component definition will render a paragraph with editable text. Only plaintext is allowed in this text.
 
-Available icons for components can be found at [edit.livingdocs.io/styleguide](https://edit.livingdocs.io/styleguide).
+### Component Properties
+
+- `allowedParents`, array of strings, defines in which components that have container directives (you must give the component name) this component may be added
+- `excludeFromTextCount`, true | false, if true no editable directives in this component are counted towards the document text count
+- `properties`, array of strings, references to component properties (see above) that should be shown in the properties panel if this component is selected in the editor
+- `iconUrl`
+  - option 1: string, fully specified URL to an SVG icon that is displayed for this component in the editors sidebar
+  - option 2: string, base64 encoded SVG data url that is displayed for this component in the editors sidebar
+- `label`, string, the title that this component has
+- `description`, string, a descriptive text for this component
+- `name`, string, the system name of this component
 
 
 ### Component Directives
@@ -65,15 +75,6 @@ Livingdocs supports the following directive types.
 
 For the declaration in HTML always prepend `doc-` to the type.
 
-Apart from directives, components also have properties.
-
-- `allowedParents`, array of strings, defines in which components that have container directives (you must give the component name) this component may be added
-- `excludeFromTextCount`, true | false, if true no editable directives in this component are counted towards the document text count
-- `properties`, array of strings, references to component properties (see above) that should be shown in the properties panel if this component is selected in the editor
-- `iconUrl`, string, fully specified URL to an icon that is displayed for this component in the editors sidebar
-- `label`, string, the title that this component has
-- `description`, string, a descriptive text for this component
-- `name`, string, the system name of this component
 
 ### Example With Multiple Components
 

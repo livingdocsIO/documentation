@@ -1,44 +1,59 @@
-- How to add an icon (upstream and downstream)?
-  - add icon to the design? or embed it directly, how?
-- When and how are icons changed?
-- content-type icons (create article)
-- when I have to register an icon in the upsteram?
+---
+title: Icons
+description: All you need to know how one can use icons in Livingdocs
+weight: 14
+---
+
+## Overview
+
+Icons are widely used and supported in the editor.
+
+- [Content Type Icon]({{< ref "../../../../reference-docs/project-config/content-types.md#example" >}})
+- [Deliveries Icon]({{< ref "../../../../reference-docs/project-config/deliveries.md" >}})
+- [Design Component Icon]({{< ref "../../reference-docs/document/document-design#component-properties" >}})
+- [Main Navigation Icon]({{< ref "../../../../reference-docs/editor-extensions/editor-configuration/menu-and-dashboards.md#menu-items" >}})
+- [User Menu Icon]({{< ref "../../../../reference-docs/editor-extensions/editor-configuration/menu-and-dashboards.md" >}})
+- [Text Formatting Toolbar Icon]({{< ref "../../../reference-docs/editor-extensions/editor-configuration/text-editing.md#custom-elements" >}})
+- [Icons in UI extensions](#icons-in-ui-extensions)
+
+In every case mentioned before, you can set an icon of the supported [li-icon collection](https://github.com/livingdocsIO/livingdocs-editor/blob/master/server/li_icon.paths.txt). If your icon is not supported, you can [register a custom icon](#register-a-custom-icon).
 
 
+## Icon and Placeholder Collections
 
-- DOC: add doc to business doc - customIconNames - https://github.com/livingdocsIO/livingdocs-bluewin-editor/pull/450
-- DOC - Add material design icon in iconUrl for a component - https://livingdocs.slack.com/archives/D583DEU7Q/p1622823074091700
-	- overview - https://livingdocsio.github.io/material-design-icons-svg/
-	- detail page - https://livingdocsio.github.io/material-design-icons-svg/svg/access-point-network-off.svg
+Livingdocs provides some icon collections, which you can use in your downstream.
 
-marc info
-https://livingdocs.slack.com/archives/D583DEU7Q/p1622823074091700
+- [material design icon collection](http://livingdocsio.github.io/material-design-icons-svg) (get the SVG here: `https://livingdocsio.github.io/material-design-icons-svg/svg/<icon-name>.svg`
+- [design component icon collection](https://github.com/livingdocsIO/livingdocs-design-assets/tree/gh-pages/docs/icons/component-icons) (get the SVG here: `https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-icons/<icon-name>.svg`)
+- [li-icon collection](https://github.com/livingdocsIO/livingdocs-editor/blob/master/server/li_icon.paths.txt)
+  - this is a subset of the material design icons embedded into the core via identifier
+  - the SVG path of the li icons list can be loaded via `window.materialDesignIconsSvgPaths` in the browser console of the editor
 
+## Register a Custom Icon
 
-update cycle
-------------
-Hey Fuhrer Mathias, INI-DOS-EAS, sorry, didn't see your question. Yes, you can reuse our icons. It's indeed planned like that. We don't guarantee no changes and we also don't communicate changes. But changes are very rare and almost super small, e.g. making the background a little bit more bright.
+The editor supports some material design icons by default ([list of supported icons](https://github.com/livingdocsIO/livingdocs-editor/blob/master/server/li_icon.paths.txt)). If you want to use another icon from the [material design icon collection](http://livingdocsio.github.io/material-design-icons-svg), you can add the icons to the editor config.
 
+```js
+// all.js
+{
+  customIconNames: ['abugida-devanagari'],
+}
+```
 
+## Icons in UI Extensions
 
-ICONS - material design icons
------------------------------
+If you develop an UI extensions like an include, a metadata component or a component sidebar, you can embed icons from the [li-icon collection](https://github.com/livingdocsIO/livingdocs-editor/blob/master/server/li_icon.paths.txt) like this:
 
-We use Material Design icons originally imported from http://livingdocsio.github.io/material-design-icons-svg.
+```html
+<li-icon name="arrow-right" class="li-icon li-icon--small"></li-icon>
+```
 
-Technically any icon is supported, it has to be placed in /assets/icons/ as an svg file.
+Another option is to embed your SVG directly in the html:
 
-
-styleguide - icons
-- are used in upstream
-- can also be used in downstream views e.g. <li-icon name="history" theme="default"></li-icon>
----> doc-include -> https://github.com/livingdocsIO/livingdocs-bluewin-editor/blob/80033d3526e221285c32e21773c3e9fc13090938/plugins/doc-includes/scheduled-list/list_template.html#L14
-
-
-components
----------------------
-
-
-
-metadata
----------------------
+```html
+<div class="li-icon li-icon--default">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#6e6e6e">
+		<path d="M13,13H11V7H13M13,17H11V15H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
+	</svg>
+</div>
+```
