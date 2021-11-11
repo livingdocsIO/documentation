@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix date remote update [livingdocs-editor #4844 v74.12.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4844)
 * :new: add more information to the remoteError from airship [livingdocs-server #4091 v157.5.7](https://github.com/livingdocsIO/livingdocs-server/pull/4091)
 * :new: fix(button group): fix usage of li-button-group vue component [livingdocs-editor #4845 v74.12.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4845)
 * :new: Extend print metadata [livingdocs-server #4078 v157.5.6](https://github.com/livingdocsIO/livingdocs-server/pull/4078)
