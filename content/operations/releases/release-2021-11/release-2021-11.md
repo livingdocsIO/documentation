@@ -301,6 +301,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 - [v157.2.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.2): fix: Upgrade to pino v7
 
 ### Livingdocs Editor Patches
+- [v74.4.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.11): fix(date input): fix behavior for clear button on date/time input in firefox
 - [v74.4.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.10): fix(loader): Color
 - [v74.4.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.9): fix(top banner): Max width mobile
 - [v74.4.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.8): fix(document list): Correctly update internal state when dragging item out of list
