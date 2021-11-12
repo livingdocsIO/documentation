@@ -17,7 +17,7 @@ steps:
     tags: ["sha-${DRONE_COMMIT_SHA}"]
 
 - name: release
-  image: livingdocs/semantic-release:v1.0.0
+  image: livingdocs/semantic-release:v1.2.2
   environment:
     GH_TOKEN:
       from_secret: GH_TOKEN
@@ -72,6 +72,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 2fe81489955c06e1e2c06499e5d894e73a93a4cf53ddc70f2d4e470255f325af
+hmac: f1f7bf1b1ee577b897d014614ff09eaf5bf62acf98c366fa440fbeb86e838031
 
 ...
