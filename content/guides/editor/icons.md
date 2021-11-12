@@ -16,7 +16,7 @@ Icons are widely used and supported in the editor.
 - [Text Formatting Toolbar Icon]({{< ref "../../../reference-docs/editor-extensions/editor-configuration/text-editing.md#custom-elements" >}})
 - [Icons in UI extensions](#icons-in-ui-extensions)
 
-In every case mentioned before, you can set an icon of the supported [li-icon collection](https://github.com/livingdocsIO/livingdocs-editor/blob/master/server/li_icon.paths.txt). If your icon is not supported, you can [register a custom icon](#register-a-custom-icon).
+In every case mentioned before, you can set an icon of the supported [li-icon collection](https://github.com/livingdocsIO/livingdocs-editor/blob/master/server/li_icon.paths.txt). If your icon is not supported, you can [register a material design icon](#register-a-material-design-icon).
 
 
 ## Icon and Placeholder Collections
@@ -29,7 +29,7 @@ Livingdocs provides some icon collections, which you can use in your downstream.
   - this is a subset of the material design icons embedded into the core via identifier
   - the SVG path of the li icons list can be loaded via `window.materialDesignIconsSvgPaths` in the browser console of the editor
 
-## Register a Custom Icon
+## Register a Material Design Icon
 
 The editor supports some material design icons by default ([list of supported icons](https://github.com/livingdocsIO/livingdocs-editor/blob/master/server/li_icon.paths.txt)). If you want to use another icon from the [material design icon collection](http://livingdocsio.github.io/material-design-icons-svg), you can add the icons to the editor config.
 
