@@ -143,25 +143,23 @@ livingdocs-server migrate up
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4691)
 
-### Remove DocumentModel Getters :fire:
+### Remove DocumentWriteModel Getters I :fire:
 
 Some internal methods got removed. If you use any of the following methods, please rather use `documentWriteModel.metadata` directly.
 
-- :fire: `documentWriteModel.metadata.setProperties(obj)` got removed. Please use `.setProperty` for now.
-- :fire: `documentWriteModel.metadata.serialize()` got removed. Please use `.splittedSerialize()`
+- :fire: `documentWriteModel.metadata.setProperties(obj)` got removed. Please use `documentWriteModel.metadata.setProperty` for now.
+- :fire: `documentWriteModel.metadata.serialize()` got removed. Please use `documentWriteModel.metadata.splittedSerialize()`
 - :fire: `documentWriteModel.metadata.getEntity()` got removed. Please use `documentWriteModel.metadata.entity`
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4024)
 
-### Remove documentModel getters :fire:
+### Remove DocumentWriteModel Getters II :fire:
 
-Some internal methods got removed. If you use any of the following methods, please rather use `documentWriteModel.metadata` directly.
+- :fire: `documentWriteModel.document` got removed. Please use `documentWriteModel.documentEntity` instead
+- :fire: `documentWriteModel.metadata` got removed. Please use `documentWriteModel.metadataModel` instead
+- :fire: `documentWriteModel.revision` got removed. Please use `documentWriteModel.revisionEntity` instead
 
-- :fire: `documentModel.document` got removed. Please use `documentModel.documentEntity` instead
-- :fire: `documentModel.metadata` got removed. Please use `documentModel.metadataModel` instead
-- :fire: `documentModel.revision` got removed. Please use `documentModel.revisionEntity` instead
-
-Instead of using higher level getters like `documentModel.content` and `documentModel.metadataContent`, you can use low level getters instead:
+Instead of using higher level getters like `documentWriteModel.content` and `documentWriteModel.metadataContent`, you can use low level getters instead:
 - documentModel.id
 - documentModel.documentId
 - documentModel.revisionId
@@ -295,22 +293,10 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 ## Patches
 
 ### Livingdocs Server Patches
-- [v157.2.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.5): fix: add more information to the remoteError from airship
-- [v157.2.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.4): fix(print): Add hugo image URLs to export data
-- [v157.2.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.3): fix: Fix backfilling of the content_type_id column on the document_publication_events table
-- [v157.2.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.2): fix: Upgrade to pino v7
+- [v157.2.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.5): Add more information to the remoteError from airship
 
 ### Livingdocs Editor Patches
-- [v74.4.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.11): fix(date input): fix behavior for clear button on date/time input in firefox
-- [v74.4.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.10): fix(loader): Color
-- [v74.4.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.9): fix(top banner): Max width mobile
-- [v74.4.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.8): fix(document list): Correctly update internal state when dragging item out of list
-- [v74.4.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.7): fix(multilist editor): use configured searchFilters for the document search
-- [v74.4.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.6): fix(multilist editor): Update document inbox on remote after remove action
-- [v74.4.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.5): fix(multilist editor): Improvements from PR feedback
-- [v74.4.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.4): fix(user avatar): Firefox
-- [v74.4.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.3): fix(collab card): Text selection
-- [v74.4.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.2): fix: design improvements for document-list and soft-lock
+- [v74.4.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.11): Fix behavior for clear button on date/time input in firefox
 
   ---
   **Icon Legend**
