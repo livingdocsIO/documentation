@@ -8,9 +8,14 @@ weight: 12
 
 With this walkthrough we show how to set up an image gallery and an image gallery teaser, usually used for a slideshow. At the moment the concept of a gallery is not part of the core system, so we show you a way how Livingdocs would create an image gallery.
 
-Key features
+**Key features**
 - You will have your own content-type "gallery" where you can create a slideshow
 - You will have a gallery-teaser component to embed into your document
+
+**Workflow**
+
+First we add a few [gallery components](#add-gallery-components) and a new content type [gallery](#add-content-type-gallery). Then we [add](#integrate-gallery-to-your-project) the components and the content type to your project. In the next step we [add](#add-gallery-teaser-include) and then [register](#register-gallery-teaser-include) a gallery-teaser include. The last step [adds](#add-gallery-teaser-component) and then [integrates](#integrate-gallery-teaser-to-your-project) a gallery teaser component into your project.
+
 
 ## Expected Result
 
@@ -29,50 +34,6 @@ Empty "gallery-teaser"
 
 
 ## Guide
-
-### Add Content Type "gallery"
-
-```js
-// your-project/content-types/gallery.js
-module.exports = {
-  handle: 'gallery',
-  documentType: 'article',
-
-  info: {
-    label: 'Gallery',
-    icon: 'image-multiple'
-  },
-
-  components: [
-    {name: 'asset-image'}
-  ],
-
-  editorWrapper: '<div class="page container container--article doc-section"></div>',
-
-  defaultContent: [
-    {
-      identifier: 'asset-content',
-      position: 'fixed',
-      containers: {
-        header: [
-          {identifier: 'asset-head-gallery', position: 'fixed'}
-        ],
-        body: [
-          {
-            identifier: 'asset-container-gallery',
-            containers: {
-              gallery: [
-                {identifier: 'asset-image'},
-                {identifier: 'asset-image'}
-              ]
-            }
-          }
-        ]
-      }
-    }
-  ]
-}
-```
 
 ### Add Gallery Components
 
@@ -206,6 +167,50 @@ module.exports = {
 }
 ```
 
+### Add Content Type "gallery"
+
+```js
+// your-project/content-types/gallery.js
+module.exports = {
+  handle: 'gallery',
+  documentType: 'article',
+
+  info: {
+    label: 'Gallery',
+    icon: 'image-multiple'
+  },
+
+  components: [
+    {name: 'asset-image'}
+  ],
+
+  editorWrapper: '<div class="page container container--article doc-section"></div>',
+
+  defaultContent: [
+    {
+      identifier: 'asset-content',
+      position: 'fixed',
+      containers: {
+        header: [
+          {identifier: 'asset-head-gallery', position: 'fixed'}
+        ],
+        body: [
+          {
+            identifier: 'asset-container-gallery',
+            containers: {
+              gallery: [
+                {identifier: 'asset-image'},
+                {identifier: 'asset-image'}
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
 ### Integrate Gallery to your project
 
 ```js
@@ -226,7 +231,7 @@ module.exports = {
       require('./components/asset-image')
     ]
   },
-  // Add UI and behaviour for the Gallery Content Type
+  // Add UI and behaviour for the asset/gallery components in the Gallery Content Type
   designSettings: {
     assets: {
       css: [
@@ -297,6 +302,12 @@ async function renderTeaser ({params, options, publicationApi}) {
     const documentVersion = await publicationApi.getLatestPublication({documentId})
 
     const apiContent = documentVersion.content[0]
+
+    // isPreview = true defines that the teaser is requested by the editor as a preview
+    // You can send any preview to the editor even when the output to the publicAPI
+    // would be different
+    // In this preview we want to return a simple gallery teaser (called gallery-teaser-resolved)
+    // which only shows a title a teaserimage and a text without any interactivity like sliding to the next image in the gallery
     const previewContent = [{
       id: `gallery-teaser-${documentId}`,
       component: 'gallery-teaser-resolved',
@@ -339,7 +350,7 @@ liServer.features.register('include-services', async function (feature, server) 
 })
 ```
 
-### Add "gallery-teaser" components
+### Add "gallery-teaser" component
 
 ```js
 // your-project/components/gallery-teaser.js
