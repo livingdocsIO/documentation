@@ -296,6 +296,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 - [v157.2.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.5): Add more information to the remoteError from airship
 
 ### Livingdocs Editor Patches
+- [v74.4.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.12): fix(multilist editor): Fix max-height per list for Firefox
 - [v74.4.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.11): Fix behavior for clear button on date/time input in firefox
 
   ---
