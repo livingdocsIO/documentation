@@ -173,7 +173,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4
 - 🔥 removed server config property `channelConfigs.enabled` - it has no effect anymore
 - 🔥 removed server config `channelConfigs` - use `projectConfigs` instead
 
-References: [Server PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4047)
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4047)
 
 ### Button cleanup iteration 1 :fire:
 
