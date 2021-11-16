@@ -600,6 +600,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v154.0.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.43): fix(elasticsearch): Fix opensearch compatibility
 - [v154.0.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.42): fix: be able to start the server without hugo config
 - [v154.0.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.41): fix: add more information to the remoteError from airship
 - [v154.0.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.40): fix: trigger a new version for npm
