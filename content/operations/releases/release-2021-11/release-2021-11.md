@@ -293,6 +293,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 ## Patches
 
 ### Livingdocs Server Patches
+- [v157.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.6): fix: be able to start the server without hugo config
 - [v157.2.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.5): Add more information to the remoteError from airship
 
 ### Livingdocs Editor Patches
