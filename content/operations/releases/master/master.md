@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: Be able to start the server without Hugo config [livingdocs-server #4101 v157.5.8](https://github.com/livingdocsIO/livingdocs-server/pull/4101)
 * :new: Multilist editor: Fix max-height per list for Firefox [livingdocs-editor #4850 v74.13.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4850)
 * :new: Media: Allow opening Image/Video in MediaLibrary from Properties Panel [livingdocs-editor #4846 v74.13.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4846)
 * :new: Upgrade semantic release [livingdocs-server #4096 v157.5.7](https://github.com/livingdocsIO/livingdocs-server/pull/4096)
