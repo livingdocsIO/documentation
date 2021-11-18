@@ -630,6 +630,7 @@ References:
 - [v154.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.15): openid-connect: Support HTTP_PROXY environment variable in Issuer.discover call
 
 ### Livingdocs Editor Patches
+- [v72.13.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.45): test: add the file to the dataTransfer object from hugo
 - [v72.13.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.44): fix: upgrade framework to 21.0.7
 - [v72.13.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.43): fix: show card actions in inbox and document search
 - [v72.13.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.42): fix(top banner): Max width mobile
