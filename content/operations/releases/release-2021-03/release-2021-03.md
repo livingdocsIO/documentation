@@ -1000,6 +1000,7 @@ colt().createConfigProject('project', {...})
 
 
 ### Livingdocs Editor Patches
+- [v63.8.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v63.8.73): test: skip failing test in nzz Downstream
 - [v63.8.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v63.8.72): fix: move file downloader to it's own helper and improve logic
 - [v63.8.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v63.8.71): fix(menu): do not allow to move a menu item before first save
 - [v63.8.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v63.8.70): chore(menu): move event extraction to the right place
