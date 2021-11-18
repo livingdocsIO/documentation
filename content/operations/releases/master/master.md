@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: 🐞 fix missing label in password reset screen [livingdocs-editor #4855 v74.13.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4855)
 * :new: 🐞  add type='submit' to 'create group' button to trigger an action [livingdocs-editor #4860 v74.13.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4860)
 * :new: 🐞 fix endless redirect after login with custom startpage [livingdocs-editor #4856 v74.13.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4856)
 * :new: Fix opensearch compatibility [livingdocs-server #4100 v157.5.9](https://github.com/livingdocsIO/livingdocs-server/pull/4100)
