@@ -298,6 +298,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 - [v157.2.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.5): Add more information to the remoteError from airship
 
 ### Livingdocs Editor Patches
+- [v74.4.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.17): test: add the file to the dataTransfer object from hugo
 - [v74.4.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.16): fix: fix issue with label for password reset view
 - [v74.4.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.15): fix: fix existing delivery link visibility in project config UI
 - [v74.4.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.14): fix: add type='submit' to create group button to trigger an action
