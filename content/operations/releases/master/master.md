@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Multilist Editor: Show 20 (instead of 4) cards without scrolling [livingdocs-editor #4867 v74.13.6](https://github.com/livingdocsIO/livingdocs-editor/pull/4867)
 * :new: handle files on drop from hugo for images [livingdocs-editor #4866 v74.13.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4866)
 * :new: 🐞 fix missing label in password reset screen [livingdocs-editor #4855 v74.13.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4855)
 * :new: 🐞  add type='submit' to 'create group' button to trigger an action [livingdocs-editor #4860 v74.13.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4860)
