@@ -26,13 +26,13 @@ This are the release notes of the upcoming release (pull requests merged to mast
 
 ### Features
 
-* Recording: **TODO**
-* Documentation: **TODO**
+* [Recording](https://us02web.zoom.us/rec/share/T59ekBnRxOoWtQPAX6vJTV8db8QmNkvmvcy3qBF0FYYtP_-cDgfSbbzKqSfRSIl7.X4BCYQcsWkeDfxkT) | PW: Lh0S9C$T
+* [Documentation](https://docs.google.com/document/d/18A1WWlCnE7xanwSh5ADi8dgYanX0rwUzdY7Koi2Jnt4/edit?usp=sharing)
 
 ### Developers
 
-* Recording: **TODO**
-* Slides: **TODO**
+* [Recording](https://us02web.zoom.us/rec/share/Oj7q86DWOCR0DGVlIuDImPwTuLz1bmYwPGg0ZDWFxILFtPtdYkFNXGBhr4nyN9lc.c9vQmi5TDjzhDUk3) | PW: zfuPUe+0
+* [Slides](https://docs.google.com/presentation/d/1HdSc7Ut06hCyGGXzrrPdMer7wvF71pZJHm_yozrxTlU/edit#slide=id.g5d9a6eb16f_1_0)
 
 
 ## System Requirements
