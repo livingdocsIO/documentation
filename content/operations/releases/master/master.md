@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: 🐞 fix endless redirect after login with custom startpage [livingdocs-editor #4856 v74.13.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4856)
 * :new: Fix opensearch compatibility [livingdocs-server #4100 v157.5.9](https://github.com/livingdocsIO/livingdocs-server/pull/4100)
 * :new: fix: Be able to start the server without Hugo config [livingdocs-server #4101 v157.5.8](https://github.com/livingdocsIO/livingdocs-server/pull/4101)
 * :new: Multilist editor: Fix max-height per list for Firefox [livingdocs-editor #4850 v74.13.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4850)
