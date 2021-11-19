@@ -298,6 +298,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 - [v157.2.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.5): Add more information to the remoteError from airship
 
 ### Livingdocs Editor Patches
+- [v74.4.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.21): chore: remove console.log
 - [v74.4.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.20): fix: deduplicate concepts
 - [v74.4.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.19): code(teasers): Improve error handling, incorporate PR feedback
 - [v74.4.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.18): fix(multilist editor): show 20 document cards per list without scrolling
