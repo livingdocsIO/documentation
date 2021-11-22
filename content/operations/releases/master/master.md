@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Component Transform: update canvas after transform [livingdocs-editor #4886 v74.13.12](https://github.com/livingdocsIO/livingdocs-editor/pull/4886)
 * :new: Document List: Layout Fix [livingdocs-editor #4883 v74.13.11](https://github.com/livingdocsIO/livingdocs-editor/pull/4883)
 * :new: Document List: Allow list publish when a document is in inbox [livingdocs-editor #4881 v74.13.10](https://github.com/livingdocsIO/livingdocs-editor/pull/4881)
 * :new: Kanban Boards: fix race condition from user and metadata update event triggered searches  [livingdocs-editor #4877 v74.13.9](https://github.com/livingdocsIO/livingdocs-editor/pull/4877)
