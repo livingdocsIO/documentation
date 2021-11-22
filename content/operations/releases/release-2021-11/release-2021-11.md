@@ -222,6 +222,47 @@ This will define the removed classes and variables within your SCSS file tree. Y
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4759)
 
 
+## Deprecations
+
+### Formatting Toolbar  - Custom Elements
+
+`customElements[].placeholder` are deprecated. Please replace them with with `customElements[].attributes[]`
+
+```js
+// deprecated
+customElements: [{
+      label: 'icon',
+      handle: 'customIcon',
+      tagName: 'span',
+      icon: 'format-color-highlight',
+      attributes: [
+        {name: 'class', value: 'custom-icon'}
+      ],
+      // deprecated: the placeholder attribute which will be filled with the inserted value
+      placeholder: {name: 'data-input'}
+}]
+
+// new approach with attributes
+customElements: [{
+      label: 'icon',
+      handle: 'customIcon',
+      tagName: 'span',
+      icon: 'format-color-highlight',
+      attributes: [
+        {name: 'class', value: 'custom-icon'},
+        // add li-text attribute
+        {
+          handle: 'input',
+          type: 'li-text',
+          name: 'data-input'
+        }
+      ]
+}]
+```
+
+References:
+* [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4060)
+
 ## Other Changes
 
 ### Features
