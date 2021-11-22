@@ -338,6 +338,7 @@ References:
 - [v157.2.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.5): Add more information to the remoteError from airship
 
 ### Livingdocs Editor Patches
+- [v74.4.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.23): fix(document lists): allow list publish when document is stored in the inbox
 - [v74.4.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.22): fix(kanban boards): don't apply wrong search result when filter change and metadata update triggered searches happen at roughly the same instant
 - [v74.4.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.21): chore: remove console.log
 - [v74.4.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.20): fix: deduplicate concepts
