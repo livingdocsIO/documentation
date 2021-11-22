@@ -19,7 +19,6 @@ This are the release notes of the upcoming release (pull requests merged to mast
 
 ## Newsletter
 
-* Newsletter: **TODO**
 * Subscribe here: https://confirmsubscription.com/h/j/61B064416E79453D
 
 ## Webinar
@@ -93,7 +92,7 @@ The multilist editor lets a user view and edit multiple document lists in one sc
 We introduce the "Document Inbox" feature to support teams with splitted responsibilities. In bigger editorial teams there are different roles (e.g. writing an article and orchestrating pages). As an example: Editor A writes an article and put it to the inbox of the front page. Editor B then can decide into which list of the front page the article should go.
 
 * References
-  * [Documentation](TODO)
+  * [Documentation]({{< ref "../../../../reference-docs/project-config/content-types.md#document-inbox" >}})
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3911)
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4661)
 
