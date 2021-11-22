@@ -105,7 +105,7 @@ We added 3 new possibilities to select data for custom attributes in the text fo
 * Select a document reference
 * Text input
 
-* [Documentation](TODO)
+* [Documentation](https://docs.livingdocs.io/reference-docs/project-config/editor-settings/#text-formatting)
 * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4799)
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4060)
 

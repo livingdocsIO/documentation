@@ -399,22 +399,71 @@ Example:
     }]
 ```
 
-Add placeholder config to a custom element. This enables the possibility for the user to add a value to the defined placeholder attribute. The existing value can be removed and after a change applied. This can be used when the user should have the possibility to add some information to a selection. The information can be used for example in the delivery.
+Following attribute types can be added to a customElement:
 
-{{< img src="images/text_formatting_placeholder.png" alt="image" >}}
+- static value
 
-Example:
-```js
- customElements: [{
-      label: 'icon',
-      handle: 'customIcon',
-      tagName: 'span',
-      icon: 'format-color-highlight',
-      attributes: [{name: 'class', value: 'custom-icon'}],
-      // the placeholder attribute which will be filled with the inserted value
-      placeholder: {name: 'ld-placeholder'}
+  e.g. add to the class attribute on the customElement the value blue `{name: 'class', value: 'blue'}`
+- li-reference
+
+  Users can link a document. The attribute name is always `data-li-document-ref`. And the references are extracted as with a normal link to a document.
+  ```js
+  {
+    label: 'author link',
+    handle: 'authorlink',
+    tagName: 'span',
+    icon: 'file-link',
+    attributes: [{
+      handle: 'documentref',
+      type: 'li-reference',
+      config: {referenceType: 'document', contentType: 'author'}
     }]
-```
+  }
+  ```
+- li-enum
+
+  Users can select a value from a list
+  ```js
+  {
+    handle: 'specialprovider',
+    type: 'li-enum',
+    name: 'data-specialprovider',
+    config: {
+      dataProvider: {
+        handle: 'specialprovider',
+        type: 'labelValuePair',
+        items: [
+          {label: 'Batman', value: 'batman'},
+          {label: 'Alfred', value: 'alfred'},
+          {label: 'Robin', value: 'robin'},
+          {label: 'Riddler', value: 'riddler'},
+          {label: 'Joker', value: 'joker'},
+          {label: 'Penguin', value: 'penguin'},
+          {label: 'Mr. Freeze', value: 'freeze'}
+        ]}
+    }
+  }
+  ```
+- li-text
+
+  Users can add a text value by themself
+  ```js
+  {
+    label: 'input',
+    handle: 'input',
+    tagName: 'span',
+    icon: 'format-color-highlight',
+    attributes: [{
+      handle: 'input',
+      type: 'li-text',
+      name: 'data-input'
+    }]
+  }
+  ```
+
+**Restrictions**
+
+There can be only one attribute with a type in the attributes array. Static values can be added as many as needed.
 
 ## Print
 
