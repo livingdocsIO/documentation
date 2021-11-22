@@ -338,6 +338,7 @@ References:
 - [v157.2.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.5): Add more information to the remoteError from airship
 
 ### Livingdocs Editor Patches
+- [v74.4.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.26): fix(document lists): fix include reload after inline list edit when list references are used
 - [v74.4.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.25): fix(transform): ensure the canvas is updated after a component is transformed
 - [v74.4.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.24): fix(document lists): ensure page inbox and search pane doesn't get higher than the screen
 - [v74.4.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.23): fix(document lists): allow list publish when document is stored in the inbox
