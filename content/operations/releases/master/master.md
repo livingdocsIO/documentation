@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Improve asset upload timeout error message [livingdocs-editor #4065 v74.13.14](https://github.com/livingdocsIO/livingdocs-editor/pull/4065)
 * :new: Document Lists: reload include after inline list edit when li-list-reference is used [livingdocs-editor #4884 v74.13.13](https://github.com/livingdocsIO/livingdocs-editor/pull/4884)
 * :new: Component Transform: update canvas after transform [livingdocs-editor #4886 v74.13.12](https://github.com/livingdocsIO/livingdocs-editor/pull/4886)
 * :new: Document List: Layout Fix [livingdocs-editor #4883 v74.13.11](https://github.com/livingdocsIO/livingdocs-editor/pull/4883)
