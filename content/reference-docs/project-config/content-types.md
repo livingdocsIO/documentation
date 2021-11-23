@@ -485,3 +485,12 @@ The document inbox feature can be used in parallel with, or as a replacement for
 An example use-case would be: When Editor User A finishes an article they would like to tell CvD User B (Chef vom Dienst - a role that is in charge of the frontpage at many newsrooms) to publish the teaser to that article on the frontpage. If the frontpage is compiled from multiple lists, it's not User A's job to decide into which list the article should go, as it's User B deciding that. Once assigned, User B will be able to see the article in the inbox column of the multi-list editor view for the frontpage.
 
 The inbox assignment UI will be displayed on the publish screen for the content types listed within the content types array. The document search dialog used for the inbox assignment will be automatically filtered by the content type(s) which will accept the document being published.
+
+Example:
+```js
+// Allows current content type to accept "regular" and "another-handle" documents into its inbox.
+// The inbox assignment UI will be displayed for those content types.
+inbox: {
+  contentTypes: ['regular', 'another-handle']
+}
+```
