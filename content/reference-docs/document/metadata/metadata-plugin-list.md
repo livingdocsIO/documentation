@@ -383,5 +383,5 @@ metadata: {
 
 #### References
 
-- Read the [metadata translations for Data Records]({{< ref "/guides/media-library/media-library-setup" >}}) guide to learn how to use translations for Data Records.
+- Read the [metadata translations for Data Records]({{< ref "/guides/editor/metadata-translations" >}}) guide to learn how to use translations for Data Records.
 - Read the [setting up the Media Library]({{< ref "/guides/media-library/media-library-setup" >}}) guide to learn how to configure translations for your Images, Videos and Files.
