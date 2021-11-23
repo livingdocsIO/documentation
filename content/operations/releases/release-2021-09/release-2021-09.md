@@ -630,6 +630,7 @@ References:
 - [v154.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.15): openid-connect: Support HTTP_PROXY environment variable in Issuer.discover call
 
 ### Livingdocs Editor Patches
+- [v72.13.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.48): fix(comments): on page the comments can be disabled
 - [v72.13.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.47): fix(imatrics-form): add margin-bottom
 - [v72.13.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.46): fix: deduplicate concepts
 - [v72.13.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.45): test: add the file to the dataTransfer object from hugo
