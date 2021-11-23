@@ -333,6 +333,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v157.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.9): fix: return revision also in case metadata_id is null
 - [v157.2.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.8): chore(imatrics): return extendedDescription in error case
 - [v157.2.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.7): fix(elasticsearch): Fix opensearch compatibility
 - [v157.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.6): fix: be able to start the server without hugo config
