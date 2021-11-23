@@ -296,6 +296,10 @@ metadata: [{
 
 ## Reference List
 
+Stores an array of multiple document ids, not to be confused with [List Reference]({{< ref "#list-reference" >}}).
+
+{{< img src="./li-reference-list-example.png" alt="Reference List Example" >}}
+
 ContentType metadata config for a reference list:
 ```js
 metadata: [{
@@ -315,6 +319,26 @@ metadata: [{
 }]
 ```
 
+## List Reference
+
+Stores a single id of a list, not to be confused with [Reference List]({{< ref "#reference-list" >}}).
+
+{{< img src="./li-list-reference-example.png" alt="List Reference Example" >}}
+
+Config for a list reference:
+```js
+metadata: [{
+  ...,
+  type: 'li-list-reference',
+  config: {
+    enableCount: true,      // enable configuration of number of articles
+    defaultCount: 3,        // number of articles shown by default
+    minCount: 2,            // minimum number of articles
+    maxCount,               // maximum number of articles
+    enableListEditing: true // allow to create/edit list inline
+  }
+}]
+```
 
 ## Slug
 
