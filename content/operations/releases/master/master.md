@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: disabled comments lead to errors [livingdocs-editor #4889 v74.13.16](https://github.com/livingdocsIO/livingdocs-editor/pull/4889)
 * :new: add margin-bottom to the imatrics-form [livingdocs-editor #4891 v74.13.15](https://github.com/livingdocsIO/livingdocs-editor/pull/4891)
 * :new: Improve asset upload timeout error message [livingdocs-editor #4065 v74.13.14](https://github.com/livingdocsIO/livingdocs-editor/pull/4065)
 * :new: Document Lists: reload include after inline list edit when li-list-reference is used [livingdocs-editor #4884 v74.13.13](https://github.com/livingdocsIO/livingdocs-editor/pull/4884)
