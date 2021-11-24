@@ -14,6 +14,7 @@ This are the release notes of the upcoming release (pull requests merged to mast
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Service switch for schema form [livingdocs-editor #4853 v74.13.17](https://github.com/livingdocsIO/livingdocs-editor/pull/4853)
 * :new: Public API: replace asset [livingdocs-server #4109 v157.7.0](https://github.com/livingdocsIO/livingdocs-server/pull/4109)
 * :new: disabled comments lead to errors [livingdocs-editor #4889 v74.13.16](https://github.com/livingdocsIO/livingdocs-editor/pull/4889)
 * :new: add margin-bottom to the imatrics-form [livingdocs-editor #4891 v74.13.15](https://github.com/livingdocsIO/livingdocs-editor/pull/4891)
