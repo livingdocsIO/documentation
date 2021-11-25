@@ -18,7 +18,9 @@
   transition: top $transition-time;
 
   .is-scrolled & {
-    top: -$header-height;
+    @include media-query(desktop) {
+      top: -$header-height;
+    }
   }
 
   &__left {
