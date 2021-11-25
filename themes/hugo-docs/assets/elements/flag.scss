@@ -1,0 +1,7 @@
+.flag {
+  color: $color-green-1;
+
+  &::after {
+    content: " /";
+  }
+}
