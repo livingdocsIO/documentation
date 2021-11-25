@@ -1,0 +1,15 @@
+.shortcut {
+  &__link {
+    @extend %font-s;
+    color: $color-black;
+    font-weight: 500;
+  }
+
+  &--active {
+    .shortcut {
+      &__link {
+        color: $color-cyan-1;
+      }
+    }
+  }
+}
