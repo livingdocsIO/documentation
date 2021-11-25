@@ -1,0 +1,14 @@
+<div class="illu-teaser">
+  <div class="illu-teaser__image-wrapper">
+    <img class="illu-teaser__image" src="{{ .Get "image" }}">
+  </div>
+  <div class="illu-teaser__text">
+    <div class="illu-teaser__flag">
+      <div class="flag">{{ .Get "flag" }}</div>
+    </div>
+    <div class="illu-teaser__title">
+      {{ .Get "title" }}
+    </div>
+  </div>
+  <a class="illu-teaser__link" href="{{ .Get "link" }}"></a>
+</div>
