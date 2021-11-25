@@ -1,0 +1,25 @@
+.cols {
+  @include media-query(tablet) {
+    display: flex;
+    gap: $space-m;
+    width: 100%;
+    margin-bottom: $space-l;
+  }
+
+  @include media-query(desktop) {
+    width: calc(100vw - #{$page-sidebar-width + 2 * $space-l});
+  }
+
+  @include media-query(ultrawide) {
+    width: #{$breakpoint-ultrawide - $page-sidebar-width - 2 * $space-l};
+  }
+
+  & > * {
+    flex-basis: 100%;
+    margin-bottom: $space-m;
+
+    @include media-query(tablet) {
+      margin-bottom: 0;
+    }
+  }
+}
