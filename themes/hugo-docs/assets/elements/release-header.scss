@@ -18,8 +18,7 @@
 
   &__link {
     @extend %font-s-xs;
-    a {
-      @include text-link();
-    }
+    @include text-link();
+    align-self: flex-start;
   }
 }

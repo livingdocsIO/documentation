@@ -17,8 +17,6 @@
     </div>
   {{ end }}
   {{ if .Get "branchHandle" }}
-  <div class="release-header__link">
-    <a href="https://github.com/livingdocsIO/livingdocs-editor/tree/{{ .Get "branchHandle" }}" target="_blank">https://github.com/livingdocsIO/livingdocs-editor/tree/{{ .Get "branchHandle" }}</a>
-  </div>
+  <a class="release-header__link" href="https://github.com/livingdocsIO/livingdocs-editor/tree/{{ .Get "branchHandle" }}" target="_blank">https://github.com/livingdocsIO/livingdocs-editor/tree/{{ .Get "branchHandle" }}</a>
   {{ end }}
 </div>
