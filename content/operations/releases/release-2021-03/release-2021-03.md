@@ -1,7 +1,17 @@
 ---
-title: March '21 Release (release-2021-03)
+type: release-notes
+title: March 2021 Release
 description: Release notes for release-2021-03
 ---
+
+{{< release-header 
+  title="March 2021 Release"
+  upcoming=false
+  legacy=true
+  current=false
+  maintained=false
+  branchHandle="release-2021-03"
+>}}
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 

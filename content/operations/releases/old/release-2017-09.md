@@ -1,8 +1,18 @@
 ---
-title: September '17 Release (release-2017-09)
+type: release-notes
+title: September 2017 Release
 description: Release notes for release-2018-09
 excludeFromSearch: true
 ---
+
+{{< release-header 
+  title="September 2017 Release"
+  upcoming=false
+  legacy=true
+  current=false
+  maintained=false
+  branchHandle="release-2017-09"
+>}}
 
 # Release Notes: `September 2017 Release`
 

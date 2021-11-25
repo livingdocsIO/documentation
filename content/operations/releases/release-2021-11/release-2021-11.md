@@ -1,12 +1,22 @@
 ---
-title: Upcoming Release (release-2021-11)
+type: release-notes
+title: November 2021 Release
 description: Release notes for release-2021-11
 excludeFromSearch: true
 ---
 
+{{< release-header 
+  title="November 2021 Release"
+  upcoming=true
+  legacy=false
+  current=false
+  maintained=false
+  branchHandle="release-2021-11"
+>}}
+
 ## Caveat :fire:
 
-This are the release notes of the upcoming release (pull requests merged to master).
+These are the release notes of the upcoming release (pull requests merged to master).
 
 - :information_source: this document is updated automatically by a bot (pr's to categorize section)
 - :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)

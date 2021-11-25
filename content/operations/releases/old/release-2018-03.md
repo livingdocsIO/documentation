@@ -1,8 +1,18 @@
 ---
-title: March '18 Release (release-2018-03)
+type: release-notes
+title: March 2018 Release
 description: Release notes for release-2018-03
 excludeFromSearch: true
 ---
+
+{{< release-header 
+  title="March 2018 Release"
+  upcoming=false
+  legacy=true
+  current=false
+  maintained=false
+  branchHandle="release-2018-03"
+>}}
 
 **Attention:** If you skipped one or more release, please also check the release-notes of the skipped ones.
 

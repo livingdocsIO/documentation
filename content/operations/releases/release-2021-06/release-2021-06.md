@@ -1,7 +1,17 @@
 ---
-title: Juni '21 Release (release-2021-06)
+type: release-notes
+title: June 2021 Release
 description: Release notes for release-2021-06
 ---
+
+{{< release-header 
+  title="June 2021 Release"
+  upcoming=false
+  legacy=false
+  current=false
+  maintained=true
+  branchHandle="release-2021-06"
+>}}
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 

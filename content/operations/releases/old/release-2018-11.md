@@ -1,8 +1,18 @@
 ---
-title: November '18 Release (release-2018-11)
+type: release-notes
+title: November 2018 Release
 description: Release notes for release-2018-11
 excludeFromSearch: true
 ---
+
+{{< release-header 
+  title="November 2018 Release"
+  upcoming=false
+  legacy=true
+  current=false
+  maintained=false
+  branchHandle="release-2018-11"
+>}}
 
 **Attention:** If you skipped one or more release, please also check the release-notes of the skipped ones.
 # Repositories

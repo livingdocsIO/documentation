@@ -1,8 +1,18 @@
 ---
-title: February '18 Release (release-2018-02)
+type: release-notes
+title: February 2018 Release
 description: Release notes for release-2018-02
 excludeFromSearch: true
 ---
+
+{{< release-header 
+  title="February 2018 Release"
+  upcoming=false
+  legacy=true
+  current=false
+  maintained=false
+  branchHandle="release-2018-02"
+>}}
 
 
 ## Repositories

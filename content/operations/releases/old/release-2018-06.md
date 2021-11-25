@@ -1,8 +1,18 @@
 ---
-title: June '18 Release (release-2018-06)
+type: release-notes
+title: June 2018 Release
 description: Release notes for release-2018-06
 excludeFromSearch: true
 ---
+
+{{< release-header 
+  title="June 2018 Release"
+  upcoming=false
+  legacy=true
+  current=false
+  maintained=false
+  branchHandle="release-2018-06"
+>}}
 
 **Attention:** If you skipped one or more release, please also check the release-notes of the skipped ones.
 

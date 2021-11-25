@@ -1,7 +1,17 @@
 ---
-title: September '21 Release (release-2021-09)
+type: release-notes
+title: September 2021 Release
 description: Release notes for release-2021-09
 ---
+
+{{< release-header 
+  title="September 2021 Release"
+  upcoming=false
+  legacy=false
+  current=true
+  maintained=true
+  branchHandle="release-2021-09"
+>}}
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 

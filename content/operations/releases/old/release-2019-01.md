@@ -1,8 +1,18 @@
 ---
-title: January '19 Release (release-2019-01)
+type: release-notes
+title: January 2019 Release
 description: Release notes for release-2019-01
 excludeFromSearch: true
 ---
+
+{{< release-header 
+  title="January 2019 Release"
+  upcoming=false
+  legacy=true
+  current=false
+  maintained=false
+  branchHandle="release-2019-01"
+>}}
 
 **Attention:** If you skipped one or more release, please also check the release-notes of the skipped ones.
 

@@ -1,8 +1,18 @@
 ---
-title: October '20 Release (release-2020-10)
+type: release-notes
+title: October 2020 Release
 description: Release notes for release-2020-10
 excludeFromSearch: true
 ---
+
+{{< release-header 
+  title="October 2020 Release"
+  upcoming=false
+  legacy=true
+  current=false
+  maintained=false
+  branchHandle="release-2020-10"
+>}}
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
