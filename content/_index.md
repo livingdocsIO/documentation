@@ -20,23 +20,30 @@ If you are already in contact with us and have access to our repositories we rec
 
 You can check out Livingdocs via our service at [edit.livingdocs.io](https://edit.livingdocs.io). This way you do not have to set up anything locally and can see quickly how our editor and our REST Api work. On the service you will be set up with a preconfigured project.
 
+## Discover our technology the way you like
 
-## Guides
+{{< cols >}}
+  {{< illu-teaser
+    image="illu-referrence.png"
+    flag="Reference Docs"
+    title="Look up all specifications of our interfaces"
+    link="/reference-docs/public-api/"
+  >}}
 
-If you would like to get a specific task done head over to the [guides]({{< ref "guides" >}}) section.
+  {{< illu-teaser
+    image="illu-guides.png"
+    flag="Guides"
+    title="If you would like to get a specific task done"
+    link="/guides/setup/"
+  >}}
 
-## Releases
-
-An overview of the releases can be found at [release notes]({{< ref "operations/releases" >}}).
-
-
-## Operations
-
-To see common setups, cloud deployments, required services and monitoring options refer to our [devops section]({{< ref "operations/self-hosting.md" >}}).
-
-
-{{< img src="illustration.png" alt="Livingdocs in a Box" >}}
-
+  {{< illu-teaser
+    image="illu-operations.png"
+    flag="Operations"
+    title="To see common setups, cloud deployments, required services and monitoring"
+    link="/operations/releases/"
+  >}}
+{{< /cols >}}
 
 ## Feedback
 
