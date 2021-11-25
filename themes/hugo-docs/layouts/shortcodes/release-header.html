@@ -1,0 +1,24 @@
+{{ $upcoming := .Get "upcoming" }}
+{{ $legacy := .Get "legacy" }}
+{{ $current := .Get "current" }}
+{{ $maintained := .Get "maintained" }}
+
+<div class="release-header">
+  <div class="release-header__badges">
+    {{ with (eq $upcoming true) }}<div class="badge badge--red">Upcoming</div>{{ end }}
+    {{ with (eq $legacy true) }}<div class="badge badge--red">Legacy</div>{{ end }}
+    {{ with (eq $current true) }}<div class="badge badge--cyan">Current</div>{{ end }}
+    {{ with (eq $maintained true) }}<div class="badge badge--cyan">Maintained</div>{{ end }}
+    {{ if .Get "branchHandle" }}<div class="badge">{{ .Get "branchHandle"}}</div>{{ end }}
+  </div>
+  {{ if .Get "title" }}
+    <div class="release-header__title">
+      {{ .Get "title" }}
+    </div>
+  {{ end }}
+  {{ if .Get "branchHandle" }}
+  <div class="release-header__link">
+    <a href="https://github.com/livingdocsIO/livingdocs-editor/tree/{{ .Get "branchHandle" }}" target="_blank">https://github.com/livingdocsIO/livingdocs-editor/tree/{{ .Get "branchHandle" }}</a>
+  </div>
+  {{ end }}
+</div>

@@ -1,0 +1,25 @@
+.release-header {
+  display: flex;
+  flex-direction: column;
+  gap: $space-m;
+  padding-top: $space-s;
+  padding-bottom: 2 * $space-m;
+  margin-bottom: 2 * $space-m;
+  border-bottom: 2px solid $color-green-1;
+
+  &__badges {
+    display: flex;
+    gap: $space-s;
+  }
+
+  &__title {
+    @extend %font-xl;
+  }
+
+  &__link {
+    @extend %font-s-xs;
+    a {
+      @include text-link();
+    }
+  }
+}
