@@ -1,0 +1,16 @@
+.badge {
+  @extend %font-s-xs;
+  padding: 2px $space-s;
+  color: $color-white;
+  text-align: center;
+  background-color: $color-green-1;
+  border-radius: 13px;
+
+  &--red {
+    background-color: $color-red-1;
+  }
+
+  &--cyan {
+    background-color: $color-cyan-1;
+  }
+}
