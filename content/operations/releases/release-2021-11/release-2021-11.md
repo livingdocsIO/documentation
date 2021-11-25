@@ -340,6 +340,7 @@ References:
 - [v157.2.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.5): Add more information to the remoteError from airship
 
 ### Livingdocs Editor Patches
+- [v74.4.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.32): fix: fix error in defaultSelectService and defaultMultiSelectService
 - [v74.4.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.31): fix(restore-metadata): when metadata not set log an error
 - [v74.4.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.30): fix(select ui): fix type style
 - [v74.4.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.29): fix(comments): on page the comments can be disabled
