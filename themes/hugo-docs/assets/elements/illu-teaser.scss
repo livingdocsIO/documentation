@@ -1,0 +1,42 @@
+.illu-teaser {
+  @include box-shadow;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+
+  &:hover {
+    @include box-shadow(highlight);
+  }
+
+  &__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100% !important; /* must get rid of this! */
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  &__text {
+    @extend %font-l-m;
+    padding: $space-m;
+  }
+
+  &__link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
