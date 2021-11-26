@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Introduce `accessTokenCacheSize` [livingdocs-server #4118 v157.7.1](https://github.com/livingdocsIO/livingdocs-server/pull/4118)
 * :new: Fix release fixes [livingdocs-editor #4907 v74.14.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4907)
 * :new: Normalize language labels [livingdocs-editor #4897 v74.14.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4897)
 * :new: Ensure script execution from angular templates when renderered in Vue [livingdocs-editor #4899 v74.13.19](https://github.com/livingdocsIO/livingdocs-editor/pull/4899)
