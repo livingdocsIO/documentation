@@ -610,6 +610,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v154.0.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.45): fix: Support a `accessTokenCacheSize` config to increase the token cache size on heavy used servers
 - [v154.0.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.44): fix: return revision also in case metadata_id is null
 - [v154.0.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.43): fix(elasticsearch): Fix opensearch compatibility
 - [v154.0.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.42): fix: be able to start the server without hugo config
