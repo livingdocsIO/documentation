@@ -5,7 +5,7 @@
   padding-top: $space-s;
   padding-bottom: 2 * $space-m;
   margin-bottom: 2 * $space-m;
-  border-bottom: 2px solid $color-black;
+  border-bottom: 1px solid $color-black;
 
   &__badges {
     display: flex;
@@ -17,8 +17,9 @@
   }
 
   &__link {
-    @extend %font-s-xs;
-    @include text-link();
-    align-self: flex-start;
+    a {
+      @extend %font-s-xs;
+      @include text-link();
+    }
   }
 }
