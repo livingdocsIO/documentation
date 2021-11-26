@@ -27,21 +27,21 @@ You can check out Livingdocs via our service at [edit.livingdocs.io](https://edi
     image="illu-referrence.png"
     flag="Reference Docs"
     title="Look up all specifications of our interfaces"
-    link="/reference-docs/public-api/"
+    link="/reference-docs/"
   >}}
 
   {{< illu-teaser
     image="illu-guides.png"
     flag="Guides"
     title="If you would like to get a specific task done"
-    link="/guides/setup/"
+    link="/guides/"
   >}}
 
   {{< illu-teaser
     image="illu-operations.png"
     flag="Operations"
     title="To see common setups, cloud deployments, required services and monitoring"
-    link="/operations/releases/"
+    link="/operations/"
   >}}
 {{< /cols >}}
 
