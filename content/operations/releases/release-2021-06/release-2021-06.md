@@ -4,12 +4,12 @@ title: June 2021 Release
 description: Release notes for release-2021-06
 ---
 
-{{< release-header 
+{{< release-header
   title="June 2021 Release"
   upcoming=false
-  legacy=false
+  legacy=true
   current=false
-  maintained=true
+  maintained=false
   branchHandle="release-2021-06"
 >}}
 

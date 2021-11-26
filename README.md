@@ -95,7 +95,7 @@ weight: 6
 
 * `excludeFromSearch: true` - a document will not be in search results
 * `draft: true` - a document will not be rendered. Start your server with `npm run start -- -D` to see drafts for development
-* `renderEditButton: false` - don't show the edit button for updating a docuement at github
+* `renderEditButton: false` - don't show the edit button for updating a document at github
 * `renderSummaries: false` - don't show document teaser cards
 * `renderTOC: false` - don't show table of contents on the right side of the page
 

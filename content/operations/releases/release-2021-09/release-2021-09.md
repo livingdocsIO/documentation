@@ -4,11 +4,11 @@ title: September 2021 Release
 description: Release notes for release-2021-09
 ---
 
-{{< release-header 
+{{< release-header
   title="September 2021 Release"
   upcoming=false
   legacy=false
-  current=true
+  current=false
   maintained=true
   branchHandle="release-2021-09"
 >}}

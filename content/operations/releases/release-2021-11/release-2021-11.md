@@ -2,28 +2,16 @@
 type: release-notes
 title: November 2021 Release
 description: Release notes for release-2021-11
-excludeFromSearch: true
 ---
 
-{{< release-header 
+{{< release-header
   title="November 2021 Release"
-  upcoming=true
+  upcoming=false
   legacy=false
-  current=false
-  maintained=false
+  current=true
+  maintained=true
   branchHandle="release-2021-11"
 >}}
-
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to master).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
-
-## PRs to Categorize
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
@@ -343,35 +331,10 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
-- [v157.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.9): fix: return revision also in case metadata_id is null
-- [v157.2.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.8): chore(imatrics): return extendedDescription in error case
-- [v157.2.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.7): fix(elasticsearch): Fix opensearch compatibility
-- [v157.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.6): fix: be able to start the server without hugo config
-- [v157.2.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.5): Add more information to the remoteError from airship
+- [v157.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.9): return revision also in case metadata_id is null
 
 ### Livingdocs Editor Patches
-- [v74.4.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.32): fix: fix error in defaultSelectService and defaultMultiSelectService
-- [v74.4.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.31): fix(restore-metadata): when metadata not set log an error
-- [v74.4.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.30): fix(select ui): fix type style
-- [v74.4.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.29): fix(comments): on page the comments can be disabled
-- [v74.4.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.28): fix(imatrics-form): add margin-bottom
-- [v74.4.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.27): fix(asset-proxy): Improve upload timeout message
-- [v74.4.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.26): fix(document lists): fix include reload after inline list edit when list references are used
-- [v74.4.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.25): fix(transform): ensure the canvas is updated after a component is transformed
-- [v74.4.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.24): fix(document lists): ensure page inbox and search pane doesn't get higher than the screen
-- [v74.4.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.23): fix(document lists): allow list publish when document is stored in the inbox
-- [v74.4.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.22): fix(kanban boards): don't apply wrong search result when filter change and metadata update triggered searches happen at roughly the same instant
-- [v74.4.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.21): chore: remove console.log
-- [v74.4.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.20): fix: deduplicate concepts
-- [v74.4.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.19): code(teasers): Improve error handling, incorporate PR feedback
-- [v74.4.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.18): fix(multilist editor): show 20 document cards per list without scrolling
-- [v74.4.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.17): test: add the file to the dataTransfer object from hugo
-- [v74.4.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.16): fix: fix issue with label for password reset view
-- [v74.4.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.15): fix: fix existing delivery link visibility in project config UI
-- [v74.4.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.14): fix: add type='submit' to create group button to trigger an action
-- [v74.4.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.13): fix: fix endless redirect after login with custom startpage
-- [v74.4.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.12): fix(multilist editor): Fix max-height per list for Firefox
-- [v74.4.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.11): Fix behavior for clear button on date/time input in firefox
+- [v74.4.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.32): fix error in defaultSelectService and defaultMultiSelectService
 
   ---
   **Icon Legend**
