@@ -334,6 +334,7 @@ References:
 - [v157.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.9): return revision also in case metadata_id is null
 
 ### Livingdocs Editor Patches
+- [v74.4.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.33): fix(media source drop handler): Use correct target component
 - [v74.4.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.32): fix error in defaultSelectService and defaultMultiSelectService
 
   ---
