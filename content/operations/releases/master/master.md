@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Media sources: Fix image drop when there is no existing image component [livingdocs-editor #4908 v74.14.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4908)
 * :new: Introduce `accessTokenCacheSize` [livingdocs-server #4118 v157.7.1](https://github.com/livingdocsIO/livingdocs-server/pull/4118)
 * :new: Fix release fixes [livingdocs-editor #4907 v74.14.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4907)
 * :new: Normalize language labels [livingdocs-editor #4897 v74.14.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4897)
