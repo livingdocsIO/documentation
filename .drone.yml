@@ -6,21 +6,29 @@ clone:
   depth: 5000
 
 steps:
-- name: docker
-  image: plugins/docker
+- name: build
+  image: livingdocs/docker-node:20.10
+  volumes:
+    - name: dockersocket
+      path: /var/run/docker.sock
   settings:
+    push: true
     repo: livingdocs/docs
     username:
       from_secret: DOCKER_USERNAME
     password:
       from_secret: DOCKER_PASSWORD
-    tags: ["sha-${DRONE_COMMIT_SHA}"]
 
 - name: release
   image: livingdocs/semantic-release:v1.2.2
   environment:
     GH_TOKEN:
       from_secret: GH_TOKEN
+
+volumes:
+- name: dockersocket
+  host:
+    path: /var/run/docker.sock
 
 trigger:
   event: [push]
@@ -31,10 +39,7 @@ name: tag
 
 steps:
 - name: tag
-  image: livingdocs/docker-node
-  volumes:
-    - name: dockersocket
-      path: /var/run/docker.sock
+  image: livingdocs/docker-node:20.10
   environment:
     DOCKER_USERNAME:
       from_secret: DOCKER_USERNAME
@@ -42,36 +47,16 @@ steps:
       from_secret: DOCKER_PASSWORD
   commands:
     - |
-      echo $DOCKER_PASSWORD | docker login -u="$DOCKER_USERNAME" --password-stdin 1>/dev/null
+      docker-login
       SHA_TAG=livingdocs/docs:sha-$DRONE_COMMIT_SHA
       RELEASE_TAG=livingdocs/docs:$DRONE_TAG
-
-      docker build -t $RELEASE_TAG . -f-<<EOF
-      FROM $SHA_TAG
-      EOF
-
-      docker push $RELEASE_TAG
-
-- name: deploy
-  image: dtzar/helm-kubectl:3
-  environment:
-    KUBE_CONFIG:
-      from_secret: kube_config
-  commands:
-    - |
-      mkdir -p /root/.kube && echo "$KUBE_CONFIG" > /root/.kube/config && chmod 600 /root/.kube/config
-      helm upgrade docs -n docs-prod --set "image.tag=${DRONE_TAG}" ./helm
-
-volumes:
-- name: dockersocket
-  host:
-    path: /var/run/docker.sock
+      regctl image cp $SHA_TAG $RELEASE_TAG
 
 trigger:
   event: [tag]
 
 ---
 kind: signature
-hmac: f1f7bf1b1ee577b897d014614ff09eaf5bf62acf98c366fa440fbeb86e838031
+hmac: 4af11fdba734b38a5fb198944e0f2ccca1696da2b0111aeb3e37bf8cd7de2dd5
 
 ...
