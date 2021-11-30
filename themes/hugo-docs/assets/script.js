@@ -1,6 +1,23 @@
 'use strict';
 const Clipboard = require('clipboard')
 
+// cookies
+function getCookie (name) {
+	let value = `; ${document.cookie}`
+	let parts = value.split(`; ${name}=`)
+	if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+// simulate click
+function simulateClick (elem) {
+	var evt = new MouseEvent('click', {
+		bubbles: true,
+		cancelable: true,
+		view: window
+	})
+	var canceled = !elem.dispatchEvent(evt)
+}
+
 // clipboard
 for (const elem of document.querySelectorAll('.highlight')) {
   if (elem.innerText.length < 5) continue
@@ -66,9 +83,31 @@ document.addEventListener('click', function (e){
  * Search Support
  */
 const search = document.querySelector('.menu-search')
-const cancelButton = search.querySelector('.cancel')
-const searchInput = search.querySelector('input')
-const searchModal = search.querySelector('.search-results')
+const cancelButton = search.querySelector('.menu-search__icon--cancel')
+const searchInput = search.querySelector('.menu-search__field')
+const searchBox = search.querySelector('.search-box')
+const searchResults = search.querySelector('.search-results')
+
+document.addEventListener("DOMContentLoaded", function() {
+  searchInput.focus()
+
+  let activeSearchFilters = getCookie('li-documentation-search-filters')
+  console.log(activeSearchFilters)
+  if (activeSearchFilters !== undefined) {
+    const filterHandles = activeSearchFilters.split(',')
+  
+    const searchFilters = document.querySelectorAll('.js-search-filter')
+    searchFilters.forEach(function(searchFilter) {
+      const handle = searchFilter.getAttribute('data-filter-handle')
+      if (filterHandles.indexOf(handle) > -1) {
+        searchFilter.classList.add('is-active')
+      }
+      else {
+        searchFilter.classList.remove('is-active')
+      }
+    })
+  }
+})
 
 let documentResultsTemplate = document.createElement('div')
 documentResultsTemplate.innerHTML = [
@@ -92,15 +131,15 @@ searchResultTemplate = searchResultTemplate.firstElementChild
 function hideSearchResults (deleteQuery) {
   if (deleteQuery) {
     searchInput.value = ''
-    searchModal.innerHTML = ''
+    searchResults.innerHTML = ''
   }
   cancelButton.classList.remove('visible')
-  searchModal.classList.remove('visible')
+  searchBox.classList.remove('visible')
 }
 
 function showSearchResults () {
   cancelButton.classList.add('visible')
-  searchModal.classList.add('visible')
+  searchBox.classList.add('visible')
 }
 
 cancelButton.addEventListener('click', () => hideSearchResults(true))
@@ -118,14 +157,25 @@ searchInput.addEventListener('focus', (evt) => {
   }
 })
 
-searchInput.addEventListener('keyup', async (e) => {
+async function startSearch (e) {
+  if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'Enter') return
   if (e.key === 'Escape') return hideSearchResults(false)
+
+  searchFocusIndex = -1
 
   const results = []
   const words = searchInput.value.split(/[: ]/).filter(Boolean).join(' ')
+
+  const searchFilters = document.querySelectorAll('.js-search-filter.is-active')
+  const filterTags = []
+
+  searchFilters.forEach(function(searchFilter) {
+    filterTags.push(searchFilter.getAttribute('data-filter-handle'))
+  })
+
   if (!words.length) return hideSearchResults(true)
   else showSearchResults()
-  for (const doc of await searchWorker.search({index: window.searchJson, query: words, limit: 20})) {
+  for (const doc of await searchWorker.search({index: window.searchJson, query: words, filterTags, limit: 20})) {
     const docElem = documentResultsTemplate.cloneNode(true)
     docElem.firstChild.innerHTML = doc.title
     for (const result of doc.results) {
@@ -144,8 +194,60 @@ searchInput.addEventListener('keyup', async (e) => {
     results.push(docElem)
   }
 
-  searchModal.innerHTML = ''
-  searchModal.append(...results)
+  if (results.length === 0) {
+    searchResults.innerHTML = '<div class="search-results__no-results">No results found…</div>'
+  } else {
+    searchResults.innerHTML = ''
+    searchResults.append(...results)
+  }
+}
+
+let searchFocusIndex = -1
+
+function changeSearchFocus (direction) {
+  const results = document.querySelectorAll('.search-results-document')
+  if (results[searchFocusIndex] !== undefined) {
+    results[searchFocusIndex].classList.remove('is-focussed')
+  }
+  searchFocusIndex = searchFocusIndex + direction
+  if (searchFocusIndex < 0) {
+    searchFocusIndex = -1
+    searchInput.focus()
+  }
+  else if (results[searchFocusIndex] === undefined) {
+    searchFocusIndex = searchFocusIndex - direction
+  }
+  if (results[searchFocusIndex] !== undefined) {
+    results[searchFocusIndex].classList.add('is-focussed')
+    results[searchFocusIndex].scrollIntoView({behavior: "smooth", block: "center"})
+    searchInput.blur()
+  }
+}
+
+searchInput.addEventListener('keyup', (e) => {
+  startSearch(e)
+})
+
+// prevent browser default key actions
+window.addEventListener("keydown", function(e) {
+  if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+      e.preventDefault();
+  }
+}, false)
+
+// add custom key actions
+document.addEventListener('keyup', (e) => {
+  // check for up, down and enter keys
+  if (e.key === 'ArrowUp') {
+    changeSearchFocus(-1)
+  }
+  else if (e.key === 'ArrowDown') {
+    changeSearchFocus(1)
+  }
+  else if (e.key === 'Enter') {
+    const focussedLink = document.querySelector('.search-results-document.is-focussed a')
+    simulateClick(focussedLink)
+  }
 })
 
 function createSearchWorker () {
@@ -175,6 +277,38 @@ function createSearchWorker () {
     }
   }
 }
+
+/**
+ * Pills
+ */
+const pills = document.querySelectorAll('.pill')
+
+pills.forEach(function(pill) {
+  pill.addEventListener('click', (evt) => {
+    evt.target.classList.toggle('is-active')
+  })
+})
+
+const searchFilterPills = document.querySelectorAll('.js-search-filter')
+
+pills.forEach(function(pill) {
+  pill.addEventListener('click', (evt) => {
+    // update cookie with new filter selection
+    const activeSearchFilters = document.querySelectorAll('.js-search-filter.is-active')
+    let filters = ' '
+    activeSearchFilters.forEach(function(searchFilter) {
+      filters += `${searchFilter.getAttribute('data-filter-handle')},`
+    })
+    filters = filters.slice(0, -1)
+    document.cookie = `li-documentation-search-filters=${filters};path=/;`;
+
+    // start search feature
+    startSearch(evt)
+  })
+})
+
+
+
 
 /**
  * Mobile burger navigation

@@ -1,38 +1,8 @@
 .search-results {
-  @include box-shadow();
-  position: absolute;
-  margin-top: $space-s;
-  right: 0;
-  width: 4 * $space-xl;
-  max-width: calc(100vw - 2 * #{$space-m});
-  border-radius: $rounded-corners;
-  background-color: $color-white;
-  max-height: 0;
-  overflow: auto;
-  opacity: 0;
-  transition: max-height $transition-time, opacity $transition-time;
-
-  &.visible {
-    max-height: 80vh;
-    opacity: 1;
-  }
-
-  &::before,
-  &::after {
-    position: absolute;
-    content: '';
-    right: calc(20% - #{$space-s});
-    top: -1.5 * $space-s;
-    border-style: solid;
-    border-width: 0 1.5 * $space-s 1.5 * $space-s;
-    border-color: transparent transparent $color-white transparent;
-    transition: transform $transition-time;
-  }
-
-  &::before {
-    border-color: transparent transparent $color-grey-5 transparent;
-    border-width: 0 16px 16px;
-    top: -16px;
-    right: calc(20% - 11px);
+  &__no-results {
+    @extend %font-s-xs;
+    padding: 1.5 * $space-s;
+    color: $color-grey-4;
+    text-align: center;
   }
 }

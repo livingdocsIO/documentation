@@ -44,7 +44,7 @@ function initializeIndex (searchJson) {
 	return api
 }
 
-function searchInIndex (index, {query, limit}) {
+function searchInIndex (index, {query, filterTags, limit}) {
 	const byDoc = {}
 	let count = 0
 	for (const match of index.query(queryFunction.bind(this, index, query))) {
@@ -58,14 +58,19 @@ function searchInIndex (index, {query, limit}) {
 		const title = highlight('title', ref.title, byField)
 		const description = highlight('description', ref.description, byField)
 		const tags = ref.section ? ref.section.split(',').map((l) => l.trim() ? `<div class="tag tag--spaced">${l.trim()}</div>` : '').join('') : ''
-		byDoc[documentUrl] = byDoc[documentUrl] || {
-			score: 0,
-			results: [],
-			title: `${tags}${doc.title === ref.title ? '' : `<a href="${documentUrl}" class="search-results-document__title">${doc.title}</a>`}`
-		}
 
-		byDoc[documentUrl].results.push({url, title, description})
-		byDoc[documentUrl].score += match.score
+    const passesFilter = ref.section && filterTags ? ref.section.split(',').some(item => filterTags.includes(item)) : false
+    
+    if (passesFilter) {
+      byDoc[documentUrl] = byDoc[documentUrl] || {
+        score: 0,
+        results: [],
+        title: `${tags}${doc.title === ref.title ? '' : `<a href="${documentUrl}" class="search-results-document__title">${doc.title}</a>`}`
+      }
+  
+      byDoc[documentUrl].results.push({url, title, description})
+      byDoc[documentUrl].score += match.score
+    }
 	}
 
 	const results = Object.values(byDoc).sort(function (a, b) { return b.score - a.score }).slice(0, limit)

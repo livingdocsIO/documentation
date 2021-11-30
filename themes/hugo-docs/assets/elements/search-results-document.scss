@@ -1,6 +1,6 @@
 .search-results-document {
   @extend %font-s-xs;
-  padding: $space-s;
+  padding: 1.5 * $space-s;
 
   &:not(:last-child) {
     border-bottom: 1px solid $color-grey-6;
@@ -10,5 +10,9 @@
     display: block;
     font-weight: 500;
     color: $color-black;
+  }
+
+  &.is-focussed {
+    background-color: $color-grey-8;
   }
 }

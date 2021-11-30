@@ -1,0 +1,35 @@
+.search-box {
+  @include box-shadow();
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-top: 27px;
+  right: 0;
+  width: 4 * $space-xl;
+  max-width: calc(100vw - 2 * #{$space-m});
+  border-radius: $rounded-corners;
+  background-color: $color-white;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height $transition-time, opacity $transition-time;
+  overflow: hidden;
+
+  &.visible {
+    max-height: calc(100vh - 8 * #{$space-m});
+    opacity: 1;
+  }
+
+  &__header {
+    @include box-shadow();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $space-xs;
+    position: relative;
+    padding: 1.5 * $space-s;
+  }
+
+  &__main {
+    overflow: auto;
+  }
+}

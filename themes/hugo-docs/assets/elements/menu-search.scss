@@ -1,28 +1,28 @@
 .menu-search {
   position: relative;
 
-  svg {
+  &__icon {
     fill: $color-grey-3;
     position: absolute;
     left: 0;
     top: 9px;
     height: 22px;
-  }
 
-  .cancel {
-    right: 0;
-    left: auto;
-    fill: $color-grey-3;
-    visibility: hidden;
-    position: absolute;
-    cursor: pointer;
-
-    &.visible {
-      visibility: visible;
+    &--cancel {
+      right: 0;
+      left: auto;
+      fill: $color-grey-3;
+      visibility: hidden;
+      position: absolute;
+      cursor: pointer;
+  
+      &.visible {
+        visibility: visible;
+      }
     }
   }
 
-  input {
+  &__field {
     @extend %font-forms;
     width: 100%;
     padding: $space-s 3 * $space-s;
