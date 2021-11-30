@@ -6,19 +6,26 @@ renderSummaries: false
 renderTOC: false
 ---
 
-<!-- ## Learn important concepts and features
+{{< cols >}}
+  {{< illu-teaser
+    image="illu-learn.svg"
+    flag="Learn"
+    title="The most important concepts of Livingdocs making using and configuring our product much easier"
+    link="/learn/"
+  >}}
 
-In our [learn]() section you can find an introduction to the most important concepts of Livingdocs which will make using and configuring our product much easier. -->
+  {{< cols >}}
+    {{< tip
+      title="Evaluation"
+      text="If you are already in contact with us and have access to our repositories we recommend our [On Premise Setup](/learn/on-premise-setup) to set up Livingdocs locally (in case you haven't you can contact us at <contact@livingdocs.io>)."
+    >}}
 
-
-## Evaluation
-
-If you are already in contact with us and have access to our repositories we recommend our [On Premise Setup]({{< ref "/learn/on-premise-setup" >}}) to set up Livingdocs locally (in case you haven't you can contact us at <contact@livingdocs.io>).
-
-
-## Having a first look on edit.livingdocs.io?
-
-You can check out Livingdocs via our service at [edit.livingdocs.io](https://edit.livingdocs.io). This way you do not have to set up anything locally and can see quickly how our editor and our REST Api work. On the service you will be set up with a preconfigured project.
+    {{< tip
+      title="Look up all specifications of our interfaces"
+      text="You can check out Livingdocs via our service at [edit.livingdocs.io](https://edit.livingdocs.io). This way you do not have to set up anything locally and can see quickly how our editor and our REST Api work. On the service you will be set up with a preconfigured project."
+    >}}
+  {{< /cols >}}
+{{< /cols >}}
 
 ## Discover our technology the way you like
 
