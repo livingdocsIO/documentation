@@ -1,11 +1,10 @@
 .tag {
-  @extend %font-s-xs;
+  @extend %font-xs;
   display: inline-flex;
   background-color: $color-grey-8;
   padding: 2px $space-xs;
   border: 1px solid $color-grey-6;
-  border-radius: $rounded-corners;
-  color: $color-grey-4;
+  color: $color-grey-3;
 
   &--spaced {
     margin-right: $space-xs;
