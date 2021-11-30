@@ -1,0 +1,21 @@
+.pill {
+  @include ellipsis;
+  @extend %font-s-xs;
+  padding: 4px $space-s;
+  color: $color-black;
+  text-align: center;
+  background-color: $color-grey-7;
+  border-radius: 15px;
+  cursor: pointer;
+  user-select: none;
+
+  &.is-active {
+    background-color: $color-green-2;
+  }
+
+  &--small {
+    @extend %font-xs;
+    padding: 2px $space-s;
+    border-radius: 11px;
+  }
+}
