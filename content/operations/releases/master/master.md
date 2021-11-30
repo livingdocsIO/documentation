@@ -5,7 +5,7 @@ description: Release notes for release-2022-02
 excludeFromSearch: true
 ---
 
-{{< release-header 
+{{< release-header
   title="February 2022 Release"
   upcoming=true
   legacy=false
@@ -24,59 +24,37 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* :new: Media sources: Fix image drop when there is no existing image component [livingdocs-editor #4908 v74.14.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4908)
-* :new: Introduce `accessTokenCacheSize` [livingdocs-server #4118 v157.7.1](https://github.com/livingdocsIO/livingdocs-server/pull/4118)
-* :new: Fix release fixes [livingdocs-editor #4907 v74.14.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4907)
-* :new: Normalize language labels [livingdocs-editor #4897 v74.14.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4897)
-* :new: Ensure script execution from angular templates when renderered in Vue [livingdocs-editor #4899 v74.13.19](https://github.com/livingdocsIO/livingdocs-editor/pull/4899)
-* :new: 🐞 Fix error message in defaultSelectService and defaultMultiSelectService [livingdocs-editor #4905 v74.13.18](https://github.com/livingdocsIO/livingdocs-editor/pull/4905)
-* :new: Service switch for schema form [livingdocs-editor #4853 v74.13.17](https://github.com/livingdocsIO/livingdocs-editor/pull/4853)
-* :new: Public API: replace asset [livingdocs-server #4109 v157.7.0](https://github.com/livingdocsIO/livingdocs-server/pull/4109)
-* :new: disabled comments lead to errors [livingdocs-editor #4889 v74.13.16](https://github.com/livingdocsIO/livingdocs-editor/pull/4889)
-* :new: add margin-bottom to the imatrics-form [livingdocs-editor #4891 v74.13.15](https://github.com/livingdocsIO/livingdocs-editor/pull/4891)
-* :new: Improve asset upload timeout error message [livingdocs-editor #4065 v74.13.14](https://github.com/livingdocsIO/livingdocs-editor/pull/4065)
-* :new: Document Lists: reload include after inline list edit when li-list-reference is used [livingdocs-editor #4884 v74.13.13](https://github.com/livingdocsIO/livingdocs-editor/pull/4884)
-* :new: Component Transform: update canvas after transform [livingdocs-editor #4886 v74.13.12](https://github.com/livingdocsIO/livingdocs-editor/pull/4886)
-* :new: Document List: Layout Fix [livingdocs-editor #4883 v74.13.11](https://github.com/livingdocsIO/livingdocs-editor/pull/4883)
-* :new: Document List: Allow list publish when a document is in inbox [livingdocs-editor #4881 v74.13.10](https://github.com/livingdocsIO/livingdocs-editor/pull/4881)
-* :new: Kanban Boards: fix race condition from user and metadata update event triggered searches  [livingdocs-editor #4877 v74.13.9](https://github.com/livingdocsIO/livingdocs-editor/pull/4877)
-* :new: Remove renderInProcess option of renderPipeline [livingdocs-server #4106 v157.6.1](https://github.com/livingdocsIO/livingdocs-server/pull/4106)
-* :new: Add multilang teaser example in service [livingdocs-server #4097 v157.6.0](https://github.com/livingdocsIO/livingdocs-server/pull/4097)
-* :new: Set default value in metadata of a data source [livingdocs-editor #4854 v74.13.8](https://github.com/livingdocsIO/livingdocs-editor/pull/4854)
-* :new: fix update concept for imatrics [livingdocs-editor #4873 v74.13.7](https://github.com/livingdocsIO/livingdocs-editor/pull/4873)
-* :new: Multilist Editor: Show 20 (instead of 4) cards without scrolling [livingdocs-editor #4867 v74.13.6](https://github.com/livingdocsIO/livingdocs-editor/pull/4867)
-* :new: handle files on drop from hugo for images [livingdocs-editor #4866 v74.13.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4866)
-* :new: 🐞 fix missing label in password reset screen [livingdocs-editor #4855 v74.13.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4855)
-* :new: 🐞  add type='submit' to 'create group' button to trigger an action [livingdocs-editor #4860 v74.13.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4860)
-* :new: 🐞 fix endless redirect after login with custom startpage [livingdocs-editor #4856 v74.13.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4856)
-* :new: Fix opensearch compatibility [livingdocs-server #4100 v157.5.9](https://github.com/livingdocsIO/livingdocs-server/pull/4100)
-* :new: fix: Be able to start the server without Hugo config [livingdocs-server #4101 v157.5.8](https://github.com/livingdocsIO/livingdocs-server/pull/4101)
-* :new: Multilist editor: Fix max-height per list for Firefox [livingdocs-editor #4850 v74.13.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4850)
-* :new: Media: Allow opening Image/Video in MediaLibrary from Properties Panel [livingdocs-editor #4846 v74.13.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4846)
-* :new: Upgrade semantic release [livingdocs-server #4096 v157.5.7](https://github.com/livingdocsIO/livingdocs-server/pull/4096)
-* :new: Fix date remote update [livingdocs-editor #4844 v74.12.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4844)
-* :new: add more information to the remoteError from airship [livingdocs-server #4091 v157.5.7](https://github.com/livingdocsIO/livingdocs-server/pull/4091)
-* :new: fix(button group): fix usage of li-button-group vue component [livingdocs-editor #4845 v74.12.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4845)
-* :new: Extend print metadata [livingdocs-server #4078 v157.5.6](https://github.com/livingdocsIO/livingdocs-server/pull/4078)
+
+Bugs
+* Ensure script execution from angular templates when renderered in Vue [livingdocs-editor #4899 v74.13.19](https://github.com/livingdocsIO/livingdocs-editor/pull/4899)
+* Character Counter: The character counter now works correctly after a component got transformed [livingdocs-editor #4886 v74.13.12](https://github.com/livingdocsIO/livingdocs-editor/pull/4886)
+* Kanban Boards: fix race condition from user and metadata update event triggered searches  [livingdocs-editor #4877 v74.13.9](https://github.com/livingdocsIO/livingdocs-editor/pull/4877)
+* Fix update concept for imatrics [livingdocs-editor #4873 v74.13.7](https://github.com/livingdocsIO/livingdocs-editor/pull/4873)
+* Handle files on drop from hugo for images [livingdocs-editor #4866 v74.13.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4866)
+* Fix endless redirect after login with custom startpage [livingdocs-editor #4856 v74.13.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4856)
+* Print: Only load/require the print feature if it's configured [livingdocs-server #4088 v157.5.5](https://github.com/livingdocsIO/livingdocs-server/pull/4088)
+* Fix potential event loop blocking by logging circular references [livingdocs-server #4068 v157.5.2](https://github.com/livingdocsIO/livingdocs-server/pull/4068)
+* Translations: Show all * related translations [livingdocs-editor #4816 v74.9.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4816)
+* Fix date after remote update [livingdocs-editor #4844 v74.12.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4844)
+
+Features
+* Set default value in metadata of a data source [livingdocs-editor #4854 v74.13.8](https://github.com/livingdocsIO/livingdocs-editor/pull/4854)
+* Media: Allow opening Image/Video in MediaLibrary from Properties Panel [livingdocs-editor #4846 v74.13.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4846)
+* Print: Extend print metadata [livingdocs-server #4078 v157.5.6](https://github.com/livingdocsIO/livingdocs-server/pull/4078)
+* Service switch for schema form [livingdocs-editor #4853 v74.13.17](https://github.com/livingdocsIO/livingdocs-editor/pull/4853)
+
+Breaking Changes
 * :new: Improvement/button group [livingdocs-editor #4825 v74.12.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4825)
-* :new: Only load/require the print feature if it's configured [livingdocs-server #4088 v157.5.5](https://github.com/livingdocsIO/livingdocs-server/pull/4088)
-* :new: Fix/Loader Color [livingdocs-editor #4840 v74.11.6](https://github.com/livingdocsIO/livingdocs-editor/pull/4840)
-* :new: Fix/Top Banner [livingdocs-editor #4837 v74.11.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4837)
-* :new: fix(references): Fix image and language composite id generation [livingdocs-server #4080 v157.5.4](https://github.com/livingdocsIO/livingdocs-server/pull/4080)
-* :new: Fix backfilling of the content_type_id column on the document_publication_events table [livingdocs-server #4075 v157.5.3](https://github.com/livingdocsIO/livingdocs-server/pull/4075)
-* :new: Document list: Correctly update internal state when dragging item out of list [livingdocs-editor #4832 v74.11.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4832)
-* :new: Multilist Editor: inbox and search card actions [livingdocs-editor #4831 v74.11.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4831)
-* :new: Upgrade to pino v7 [livingdocs-server #4068 v157.5.2](https://github.com/livingdocsIO/livingdocs-server/pull/4068)
-* :new: Multilist Editor: apply configured filters for the document search [livingdocs-editor #4830 v74.11.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4830)
-* :new: Fix/User Avatar [livingdocs-editor #4828 v74.11.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4828)
-* :new: fix(environments): Use files bucket [livingdocs-server #4069 v157.5.1](https://github.com/livingdocsIO/livingdocs-server/pull/4069)
-* :new: Video reference form upload [livingdocs-editor #4823 v74.11.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4823)
-* :new: feat(schema-form): Use updated video reference schema [livingdocs-editor #4824 v74.10.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4824)
-* :new: feat(references): Change media schemas [livingdocs-server #4067 v157.5.0](https://github.com/livingdocsIO/livingdocs-server/pull/4067)
-* :new: 🐞 Translation Action in Editor Toolbar (show all related translations) [livingdocs-editor #4816 v74.9.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4816)
-* :new: Video include [livingdocs-editor #4796 v74.9.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4796)
-* :new: Video include [livingdocs-server #4054 v157.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4054)
-* :new: design improvements for document-list and soft-lock [livingdocs-editor #4820 v74.8.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4820)
+
+API
+* Remove renderInProcess option of renderPipeline [livingdocs-server #4106 v157.6.1](https://github.com/livingdocsIO/livingdocs-server/pull/4106)
+* Public API: replace asset [livingdocs-server #4109 v157.7.0](https://github.com/livingdocsIO/livingdocs-server/pull/4109)
+* Add server config `auth.accessTokenCacheSize` to increase the token cache size on heavy used servers [livingdocs-server #4118 v157.7.1](https://github.com/livingdocsIO/livingdocs-server/pull/4118)
+
+Design
+* Normalize language labels [livingdocs-editor #4897 v74.14.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4897)
+
+
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -127,6 +105,16 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 
 ## Highlights
+
+## Video Includes
+
+TODO: add a description
+
+* References
+  * [TODO: Documentation]()
+  * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4796)
+  * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4054)
+  * [Video reference form upload](https://github.com/livingdocsIO/livingdocs-editor/pull/4823)
 
 ## Breaking Changes :fire:
 
