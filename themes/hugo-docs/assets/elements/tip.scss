@@ -1,0 +1,6 @@
+.tip {
+  @extend %font-s-xs;
+  padding: $space-m;
+  background-color: $color-grey-8;
+  border-radius: 12px;
+}
