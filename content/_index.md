@@ -10,7 +10,7 @@ renderTOC: false
   {{< illu-teaser
     image="illu-learn.svg"
     flag="Learn"
-    title="The most important concepts of Livingdocs making using and configuring our product much easier"
+    title="The most important concepts of Livingdocs to make using and configuring our product much easier"
     link="/learn/"
   >}}
 
