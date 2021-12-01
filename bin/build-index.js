@@ -1,5 +1,4 @@
 const fs = require('fs')
-const lunr = require('lunr')
 const {Parser} = require("htmlparser2")
 const {DomHandler} = require("domhandler")
 const {getText, hasAttrib, getAttributeValue} = require('domutils')
@@ -18,30 +17,35 @@ function buildIndex (file) {
 function parseDocument (index, {url, section, categories, title, description, body}) {
   const dom = getDom(body)
 
-  let segmentUrl = url
-  let sectionTitle = title || ''
-  let sectionText = description || ''
+  let current = {
+    url,
+    section,
+    categories,
+    title,
+    description: description || '',
+    body: '',
+  }
+
+  index.push(current)
   for (const elem of dom) {
     if (elem.type === 'text') {
       if (!elem.data.trim()) continue
-      sectionText += `\n${elem.data.trim()}`
+      current.body += `\n${elem.data.trim()}`
     } else if (elem.type === 'tag') {
       if (elem.name.startsWith('h')) {
-        index.push({
-          url: segmentUrl,
+        const sectionTitle = getText(elem).trim()
+        current = {
+          url: hasAttrib(elem, 'id') ? `${url}#${getAttributeValue(elem, 'id')}` : url,
           section: section,
-          categories: [],
-          title: (sectionTitle || '').trim(),
+          categories,
+          title: sectionTitle,
           description: sectionTitle === title ? (description || '').trim() : '',
-          body: (sectionText || '').trim(),
-        })
+          body: '',
+        }
 
-        segmentUrl = url
-        if (hasAttrib(elem, 'id')) segmentUrl += `#${getAttributeValue(elem, 'id')}`
-        sectionTitle = getText(elem)
-        sectionText = ''
+        index.push(current)
       } else {
-        sectionText += `\n${getText(elem)}`
+        current.body += `\n${getText(elem)}`
       }
     }
   }
