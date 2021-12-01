@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "clipboard": "^2.0.6",
-    "domhandler": "^4.0.0",
-    "domutils": "^2.4.4",
-    "glob": "^7.1.6",
-    "htmlparser2": "^6.0.0",
+    "clipboard": "^2.0.8",
+    "domhandler": "^4.3.0",
+    "domutils": "^2.8.0",
+    "glob": "^7.2.0",
+    "htmlparser2": "^7.2.0",
     "lunr": "^2.3.9"
   },
   "devDependencies": {
