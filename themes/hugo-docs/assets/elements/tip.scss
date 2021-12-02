@@ -1,6 +1,17 @@
 .tip {
-  @extend %font-s-xs;
   padding: $space-m;
   background-color: $color-grey-8;
   border-radius: 12px;
+  hyphens: auto;
+
+  &__title {
+    @extend %font-s-xs;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: $space-s;
+  }
+
+  &__text {
+    @extend %font-s-xs;
+  }
 }
