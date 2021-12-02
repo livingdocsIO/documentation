@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Task Cards: Fix link positioning [livingdocs-editor #4912 v74.14.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4912)
 
 Bugs
 * Ensure script execution from angular templates when renderered in Vue [livingdocs-editor #4899 v74.13.19](https://github.com/livingdocsIO/livingdocs-editor/pull/4899)
