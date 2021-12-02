@@ -7,6 +7,10 @@
   }
 
   @include media-query(desktop) {
+    width: calc(100vw - #{$page-sidebar-width + $space-m + $space-l});
+  }
+
+  @include media-query(widescreen) {
     width: calc(100vw - #{$page-sidebar-width + 2 * $space-l});
   }
 

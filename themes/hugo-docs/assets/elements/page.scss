@@ -44,7 +44,7 @@
       position: static;
       overflow: visible;
       width: 100%;
-      padding-right: $space-l;
+      padding-right: $space-m;
       padding-left: $page-sidebar-width + $space-l;
       box-shadow: none;
     }
@@ -53,6 +53,7 @@
       display: flex;
       flex-direction: column;
       align-items: left;
+      padding-right: $space-l;
     }
 
     .show-navigation & {
