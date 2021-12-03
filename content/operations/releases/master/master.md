@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Change publication hooks api [livingdocs-server #4123 v158.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4123)
 * :new: Fix pathname lookup to not fail [livingdocs-editor #4914 v74.14.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4914)
 * :new: Task Cards: Fix link positioning [livingdocs-editor #4912 v74.14.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4912)
 
