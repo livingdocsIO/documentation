@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix pathname lookup to not fail [livingdocs-editor #4914 v74.14.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4914)
 * :new: Task Cards: Fix link positioning [livingdocs-editor #4912 v74.14.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4912)
 
 Bugs
