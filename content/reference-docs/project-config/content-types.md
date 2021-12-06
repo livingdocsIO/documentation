@@ -480,7 +480,7 @@ The print options allow you to enable the WoodWing Studio print connector on a c
 
 {{< added-in release-2021-11 >}}
 
-The document inbox feature can be used in parallel with, or as a replacement for, the list assignment feature. It provides a way for users to indicate that a document should be listed within another document without the need to know which specific list it should appear on.
+The document inbox feature allows document references to be assigned to another document. It provides a way for users to indicate that a document should be listed within another document without the need to know which specific list it should appear on. It can be used in parallel with, or as a replacement for, the list assignment feature.
   
 An example use-case would be: When Editor User A finishes an article they would like to tell CvD User B (Chef vom Dienst - a role that is in charge of the frontpage at many newsrooms) to publish the teaser to that article on the frontpage. If the frontpage is compiled from multiple lists, it's not User A's job to decide into which list the article should go, as it's User B deciding that. Once assigned, User B will be able to see the article in the inbox column of the multi-list editor view for the frontpage.
 
