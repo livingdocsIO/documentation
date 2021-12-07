@@ -331,6 +331,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v157.2.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.14): fix: Fix typo in handle checks of documents and media library config
 - [v157.2.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.13): fix(data-migration-run): use correct contentType argument name
 - [v157.2.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.12): fix(media-library): Fix support for running the livingdocs server against postgres replicas
 - [v157.2.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.11): fix(document-lists): Sort results by id
