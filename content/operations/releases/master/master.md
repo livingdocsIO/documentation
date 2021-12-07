@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: in data-migration-run use correct contentType argument name [livingdocs-server #4127 v158.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4127)
 * :new: Fix postgres replica compatiblity [livingdocs-server #4130 v158.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4130)
 * :new: Make basePath config optional [livingdocs-editor #4917 v74.14.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4917)
 * :new: Change publication hooks api [livingdocs-server #4123 v158.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4123)
