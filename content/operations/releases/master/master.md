@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix document cleanup to not break documents [livingdocs-server #4137 v159.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4137)
 * :new: Document inbox extension [livingdocs-server #4081 v159.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4081)
 * :new: Document inbox extension [livingdocs-editor #4852 v74.15.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4852)
 * :new: feat(document-lists): Store created_by and updated_by userId [livingdocs-server #4121 v158.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4121)
