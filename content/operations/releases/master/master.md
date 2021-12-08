@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(document-lists): Store created_by and updated_by userId [livingdocs-server #4121 v158.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4121)
 * :new: Upgrade dependencies [livingdocs-server #4138 v158.0.4](https://github.com/livingdocsIO/livingdocs-server/pull/4138)
 * :new: update framework to 22.0.3 [livingdocs-server #4132 v158.0.3](https://github.com/livingdocsIO/livingdocs-server/pull/4132)
 * :new: udpate framework to 22.0.3 [livingdocs-editor #4919 v74.14.6](https://github.com/livingdocsIO/livingdocs-editor/pull/4919)
