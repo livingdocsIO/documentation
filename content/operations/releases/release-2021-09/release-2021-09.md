@@ -610,6 +610,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v154.0.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.48): chore(public-api): Fix shaky document import test
 - [v154.0.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.47): fix(data-migration-run): use correct contentType argument name
 - [v154.0.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.46): fix(document-lists): Sort results by id
 - [v154.0.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.45): fix: Support a `accessTokenCacheSize` config to increase the token cache size on heavy used servers
