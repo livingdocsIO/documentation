@@ -212,7 +212,7 @@ You are highly encouraged to refactor your markup / custom stylesheets to not us
 In the SCSS file you have configured as `CUSTOM_STYLE_PATH_BEFORE` or `CUSTOM_STYLE_PATH_AFTER` add this line at the top:
 
 ```sass
-@import "~styles/backwards-compatibiliy/release-2021-11.scss";
+@import "~styles/backwards-compatibility/release-2021-11";
 ```
 
 This will define the removed classes and variables within your SCSS file tree. Your Sass files will compile again and your custom UI will most probably look just fine. From there on you can refactor your code and remove the `@import "~styles/backwards-compatibiliy/release-2021-11.scss";` after you are done. We will keep this file around for some time, but it will eventually get removed. If you have any questions about this, don't hesitate to contact us.
