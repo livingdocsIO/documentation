@@ -46,7 +46,7 @@ metadata: [{
   handle: 'slug',
   plugin: 'li-text',
 }, {
-  handle: 'slug',
+  handle: 'seo',
   plugin: 'li-seo'
 }]
 ```
