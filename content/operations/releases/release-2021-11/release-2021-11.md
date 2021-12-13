@@ -340,6 +340,7 @@ References:
 - [v157.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.9): return revision also in case metadata_id is null
 
 ### Livingdocs Editor Patches
+- [v74.4.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.38): fix(notificatins): Stacking
 - [v74.4.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.37): fix(service start screen): Activity feed
 - [v74.4.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.36): fix(dialog): don't close on click outside to not close dialogs opening other dialogs automatically
 - [v74.4.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.35): fix: Fix pathname lookup to not fail
