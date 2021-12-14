@@ -19,9 +19,10 @@ body {
 }
 
 em {
-  background-color: $color-cyan-2;
+  background-color: rgba($color-cyan-2, 0.4);
   padding-right: 0.2em;
   padding-left: 0.2em;
+  -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   font-style: normal;
 }

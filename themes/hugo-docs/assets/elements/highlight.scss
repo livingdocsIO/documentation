@@ -8,7 +8,7 @@
 code {
   font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
   font-size: 0.9em;
-  color: $color-black;
+  color: $color-grey-2;
   background: rgba($color-violet-1, .1);
   border-radius: $rounded-corners;
   padding: 1px 5px;
@@ -26,7 +26,7 @@ code {
 .chroma {
   position: relative;
   padding: $space-s $space-m;
-  margin: $space-l 0;
+  margin: 0 0 $space-l;
   background: $color-grey-9;
   border-radius: $rounded-corners;
   border: 1px solid $color-grey-6;
@@ -34,7 +34,6 @@ code {
 
   code {
     background: none;
-    color: inherit;
     border: none;
     padding: 0;
 
