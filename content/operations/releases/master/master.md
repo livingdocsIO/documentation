@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Add component property to all components in the public api [livingdocs-editor #4932 v74.16.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4932)
 * :new: Migrate knex queries to db.sql [livingdocs-server #4143 v159.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4143)
 * :new: Upgrade to elasticsearch 7.16.1 [livingdocs-server #4144 v159.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4144)
 * :new: Make language labels more flexible [livingdocs-editor #4921 v74.15.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4921)
