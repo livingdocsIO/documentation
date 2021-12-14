@@ -1,14 +1,10 @@
 ---
 title: Public API
+renderTOC: false
 menus:
   reference-docs:
     weight: 1
 ---
-
-Documentation for the lastest API: [edit.livingdocs.io/public-api](https://edit.livingdocs.io/public-api)
-
-_Note: You can find the Public API documentation for your current version in your own Livingdocs Editor._
-
 
 ## Video Guide
 
