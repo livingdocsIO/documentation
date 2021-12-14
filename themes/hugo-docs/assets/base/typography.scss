@@ -32,6 +32,12 @@ h5 {
   }
 }
 
+$gitfiles: 'https://livingdocsio.github.io/livingdocs-design-assets/docs/site-2021';
+@font-face {
+  font-family: li-Specialchars;
+  src: url($gitfiles+'/fonts/li-specialchars.otf');
+}
+
 p {
   @extend %font-s;
   margin: 0 0 $space-m;
@@ -59,7 +65,7 @@ p {
   font-weight: 500;
   font-size: 22px;
   @include media-query (desktop) {
-    font-size: 30px;
+    font-size: 26px; /* not the same value as on li website (30px) */
   }
   line-height: 135%;
 }

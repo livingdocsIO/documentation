@@ -2,6 +2,7 @@
   color: $color-green-1;
 
   &::after {
-    content: " /";
+    content: '\a0/';
+    font-family: li-specialchars;
   }
 }
