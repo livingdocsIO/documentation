@@ -1,0 +1,60 @@
+.response {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1.5 * $space-m;
+  border-radius: $rounded-corners;
+  overflow: hidden;
+
+  &__code {
+    @extend %font-s-xs;
+    line-height: 2 * $space-m;
+    padding: 0 $space-s;
+    color: $color-white;
+    background-color: $color-grey-3;
+  }
+  
+  &__name {
+    @extend %font-s-xs;
+    line-height: 2 * $space-m;
+    padding: 0 $space-s;
+    color: $color-black;
+    background-color: $color-grey-6;
+  }
+
+  &__endpoint {
+    @extend %font-s-xs;
+    line-height: 2 * $space-m;
+    padding: 0 $space-s;
+    color: $color-black;
+    background-color: $color-grey-8;
+  }
+
+  &--error {
+    .response {
+      &__code {
+        background-color: $color-red-1;
+      }
+
+      &__name {
+        background-color: $color-red-2;
+      }
+    }
+  }
+
+  &--success {
+    .response {
+      &__code {
+        background-color: $color-green-1;
+      }
+
+      &__name {
+        background-color: $color-green-2;
+      }
+    }
+  }
+
+  &--clickable {
+    cursor: pointer;
+    user-select: none;
+  }
+}

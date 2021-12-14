@@ -326,6 +326,17 @@ conent.addEventListener('click', (evt) => {
 })
 
 /**
+ * Response Code Visibility
+ */
+ const responses = document.querySelectorAll('.response')
+
+ responses.forEach(function(response) {
+  response.addEventListener('click', (evt) => {
+    evt.target.parentNode.parentNode.querySelector('.api-example__response-code').classList.toggle('show')
+  })
+ })
+
+/**
  * Header while Scrolling
  */
 let lastScrollingPosition = 0

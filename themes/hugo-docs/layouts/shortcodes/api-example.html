@@ -1,0 +1,74 @@
+{{- $title := .Get "title" -}}
+{{- $showResponseCode := .Get "showResponseCode" -}}
+{{- $responseBlurry := .Get "responseBlurry" -}}
+
+{{- $segments := split .Inner "--query--" -}}
+
+{{- $segmentsQuery := split (index $segments 1) "--endpoint--" -}}
+{{- $segmentsEndpoint := split (index $segmentsQuery 1) "--parameters--" -}}
+{{- $segmentsParameters := split (index $segmentsEndpoint 1) "--description--" -}}
+{{- $segmentsDescription := split (index $segmentsParameters 1) "--response--" -}}
+{{- $segmentsResponse := split (index $segmentsDescription 1) "-----" -}}
+
+{{- $query := index $segmentsQuery 0 | markdownify -}}
+{{- $endpoint := index $segmentsEndpoint 0 | markdownify -}}
+{{- $parameters := index $segmentsParameters 0 | markdownify -}}
+{{- $description := index $segmentsDescription 0 | markdownify -}}
+
+<div class="api-example{{ with (eq $title "") }} api-example--no-title{{ end }}{{ if $showResponseCode }} api-example--show-response-code{{ end }}">
+
+  {{- with (ne $title "") -}}
+    <h3 class="api-example__title">{{ $title }}</h3>
+  {{- end -}}
+
+  {{- with (ne $query "") -}}
+    <h4>Curl Example</h4>
+    {{- $query -}}
+  {{- end -}}
+
+  {{- with (ne $endpoint "") -}}
+    <h4>Endpoint</h4>
+    {{- $endpoint -}}
+  {{- end -}}
+
+  {{- with (ne $parameters "") -}}
+    <h4>Parameters</h4>
+    {{- $parameters -}}
+  {{- end -}}
+
+  {{- with (ne $description "") -}}
+    <div class="api-example__description">
+      <h4>Description</h4>
+      {{- $description -}}
+    </div>
+  {{- end -}}
+
+  {{- with (ne (index $segmentsResponse 0) "") -}}
+    <div class="api-example__response">
+      <h3>Response{{ with (eq $responseBlurry true) }} (may differ in details){{ end }}</h3>
+
+      {{- range $item, $segmentsResponse -}}
+        {{- $code := index (split $item "---") 0  | markdownify -}}
+        {{- $endpoint := index (split $item "---") 1 | markdownify -}}
+        {{- $script := index (split $item "---") 2 | markdownify -}}
+
+        <div>
+          <div class="response{{ with (eq $code "200") }} response--success{{ end }}{{ with (ne $code "200") }} response--error{{ end }}">
+            <div class="response__code">{{ $code }}</div>
+            {{- with (eq $code "200") -}}<div class="response__name">OK</div>{{- end -}}
+            {{- with (eq $code "401") -}}<div class="response__name">Unauthorized</div>{{- end -}}
+            {{- with (eq $code "403") -}}<div class="response__name">Forbidden</div>{{- end -}}
+            {{- with (eq $code "404") -}}<div class="response__name">Not Found</div>{{- end -}}
+            {{- with (ne $endpoint "") -}}<div class="response__endpoint">{{ $endpoint }}</div>{{- end -}}
+          </div>
+  
+          <div class="api-example__response-code">
+            {{- $script -}}
+          </div>
+        </div>
+      {{- end -}}
+
+    </div>
+  {{- end -}}
+  
+</div>

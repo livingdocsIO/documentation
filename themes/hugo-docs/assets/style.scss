@@ -11,7 +11,10 @@
 @import "base/spacing-elements";
 @import "base/typography";
 
+@import "elements/general";
+
 @import "elements/anchor";
+@import "elements/api-example";
 @import "elements/article";
 @import "elements/badge";
 @import "elements/buttons";
@@ -19,7 +22,6 @@
 @import "elements/cols";
 @import "elements/flag";
 @import "elements/footer";
-@import "elements/general";
 @import "elements/github";
 @import "elements/header";
 @import "elements/highlight";
@@ -33,6 +35,7 @@
 @import "elements/pagination";
 @import "elements/pill";
 @import "elements/release-header";
+@import "elements/response";
 @import "elements/search-box";
 @import "elements/search-results-document";
 @import "elements/search-results-line";
