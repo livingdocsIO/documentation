@@ -9,7 +9,6 @@ menus:
 
 {{< api-example
   title="Compose a Publication"
-  responseCode=200
 >}}
 
 --query--
