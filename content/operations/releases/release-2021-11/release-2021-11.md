@@ -331,6 +331,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v157.2.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.16): fix(duplicate-filter): Set fallback list length to 3
 - [v157.2.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.15): chore(public-api): Fix shaky document import test
 - [v157.2.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.14): fix: Fix typo in handle checks of documents and media library config
 - [v157.2.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.13): fix(data-migration-run): use correct contentType argument name
