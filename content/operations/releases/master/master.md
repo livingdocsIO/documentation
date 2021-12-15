@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(duplicate-filter): Set fallback list length to 3 [livingdocs-server #4099 v159.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/4099)
 * :new: fix(properties-panel): Prevent transformation of pinned components [livingdocs-editor #4926 v74.16.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4926)
 * :new: Publish Control - Part 2: Clean up existing publish workflow [livingdocs-server #4141 v159.1.3](https://github.com/livingdocsIO/livingdocs-server/pull/4141)
 * :new: Remove support to delete filter sets in other projects [livingdocs-editor #4933 v74.16.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4933)
