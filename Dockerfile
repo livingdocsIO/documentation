@@ -1,7 +1,7 @@
 FROM livingdocs/node:16 as builder
 ADD package*.json /app/
 WORKDIR /app
-RUN apk add hugo --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community && npm ci
+RUN apk add hugo && npm ci
 ADD . /app
 RUN npm run build
 
