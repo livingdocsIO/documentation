@@ -9,7 +9,7 @@ menus:
 ## `import`
 
 The Import API provides a possibility to programmatically create Documents. One popular use case is to funnel Documents from news aggregators into Livingdocs.
-Another very commen use case is [importing old articles]({{< ref "/guides/setup/import-legacy-system-documents.md" >}}) and having Livingdocs as the single sourth of truth.
+Another very common use case is [importing old articles]({{< ref "/guides/setup/import-legacy-system-documents.md" >}}) and having Livingdocs as the single source of truth.
 The Import API saves your raw documents appropriately - to database and Elasticsearch.
 
 The Import function has the following signature
