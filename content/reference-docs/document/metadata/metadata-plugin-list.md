@@ -331,11 +331,11 @@ metadata: [{
   ...,
   type: 'li-list-reference',
   config: {
-    enableCount: true,      // enable configuration of number of articles
-    defaultCount: 3,        // number of articles shown by default
+    enableCount: true,      // enable UI configuration of number of articles (default: false)
+    defaultCount: 3,        // number of articles shown by default (default: 3)
     minCount: 2,            // minimum number of articles
-    maxCount,               // maximum number of articles
-    enableListEditing: true // allow to create/edit list inline
+    maxCount: 6,            // maximum number of articles
+    enableListEditing: true // allow to create/edit list inline (default: false)
   }
 }]
 ```
