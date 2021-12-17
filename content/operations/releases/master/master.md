@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(navigation): Collapsible groups [livingdocs-editor #4935 v74.17.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4935)
 * :new: Publish Control - Part 3: Add new hooks to the instant publishing process [livingdocs-server #4146 v159.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4146)
 * :new: Support modules in metadataPlugins config [livingdocs-server #4148 v159.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4148)
 * :new: Fix console bugs for comments  [livingdocs-editor #4936 v74.16.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4936)
