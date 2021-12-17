@@ -14,9 +14,10 @@ menus:
   "customerId": "{{< a href="#customer" title="<customerId config>">}}",
 
   "logs": "{{< a href="#logging" title="<logging config>">}}",
+
+  // services
   "server": "{{< a href="#server" title="<http server config>" >}}",
   "editor": "{{< a href="#editor" title="<editor config>">}}",
-
   "db": "{{< a href="#postgres-database" title="<postgres database config>">}}",
   "redis": "{{< a href="#redis-database" title="<redis database config>">}}",
 
@@ -48,6 +49,9 @@ menus:
   // routing feature
   "routing": "{{< a href="#routing" title="<routing config>">}}",
   "kv": "{{< a href="#routing" title="<routing storage config>">}}"
+
+  // plugins
+  "metadataPlugins": "{{< a href="#metadata-plugins" title="<metadata plugins config>">}}",
 }
 ```
 
@@ -1162,4 +1166,26 @@ hugo: {
     xmlRoot: 'articleUpload'  // XML root element for print endpoints
   }
 }
+```
+
+## Plugins
+
+#### Metadata Plugins
+
+Define where your metadata plugins are localized.
+
+```js
+// option 1: provide a folder, where all *.js files are loaded
+metadataPlugins: path.resolve('./example-server/plugins/metadata')
+
+// option 2: any requireable file can be referenced
+//   If the require fails and the passed string points to a directory, we glob the whole directory for `*.js` files
+//   Modules can point to other modules or schemas directly
+//   Attention:
+//     Relative paths are currently always resolved relative to the current working directory.
+//     Therefore, either require a file, or use absolute paths if you want to load them in a module.
+metadataPlugins: ['some-module', require('./another-local-module'), require.resolve('./plugins/li-text')]
+
+// ./another-local-module.js
+module.exports = [{name: 'some-plugin', ...wholePluginDeclaration}, require.resolve('./another-module')]
 ```
