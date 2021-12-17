@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Support modules in metadataPlugins config [livingdocs-server #4148 v159.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4148)
 * :new: Fix console bugs for comments  [livingdocs-editor #4936 v74.16.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4936)
 * :new: fix(duplicate-filter): Set fallback list length to 3 [livingdocs-server #4099 v159.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/4099)
 * :new: fix(properties-panel): Prevent transformation of pinned components [livingdocs-editor #4926 v74.16.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4926)
