@@ -6,33 +6,46 @@ menus:
     parent: Server Extensions
 ---
 
-APIs are provided to allow hooking into the document (pre/un)publication process
-and into the rendering pipeline. Hooks are executed within the corresponding
-transaction thus you can for example abort a publish process by returning the
-callback with an error in your hook implementation. If you don't need the
-reliability of a transaction, you can also use [events]({{< ref "./server-events" >}}) which are fire and forget.
+TODOOOOOOOOOOOO: describe the registerPublicationServerHooks better.
+TODOOOOOOOOOOOO: go through every existing hook and update the example + add new hooks
 
-Although these hooks should preferably be registered before the server gets
-initialized (using [Server Initialized Hooks]({{< ref "/reference-docs/server-extensions/server-initalization" >}})), it is also possible to
-register them at runtime using the same APIs. (This is particularly handy for
-testing purpose, but also useful if you create projects or channels at runtime
-and need to set hooks for these.)
+`Server Hooks` allow you to influence the (pre/un)publication process of a document. You can either change the document or for example abort the publish process by throwing an error. There are two alternatives to server hooks
 
-There are two ways of registering hooks: on a specific project or server-wide.
-Registering hooks server-wide is only possible for publication hooks.
-You can register as many hooks as you need, they
-will be executed in the same order they got registered.
+- [Metadata Plugins]({{< ref "/reference-docs/server-extensions/metadata-plugins" >}}) which can modify single metadata fields
+- [Events]({{< ref "./server-events" >}}) which are fire and forget
+
+These server hooks have to be registered during initialisation with [liServer.registerInitializedHook]({{< ref "/reference-docs/server-extensions/server-initalization" >}}).
+
+There are two ways of registering hooks:
+- for a specific project - as many as you need, executed in the order they got registered
+- server-wide - only publication hooks
 
 
 ## Publication Hooks
 
-#### registerPublicationHooks()
+### Process and Hooks Overview
 
-The `prepublish`, `publish` and `unpublish` hooks are set on the `documents` feature:
 
-* `prepublishHookAsync`: `({documentVersion}) { return {documentVersion} }`
-* `publishHookAsync`: `({documentType, {documentVersion, renditions}}) { return }`
-* `unpublishHookAsync`: `({doumentType, {documentVersion}}) { return }`
+|Name|Supported in|Editor Feedback|Added in|Deprecated in|
+|-|-|-|-|-|
+|preparePublishHook|Instant Publish|✅|release-2022-03||
+|prepublishHook|Instant Publish|✅||release-2022-03|
+|publishHook|Instant Publish|✅||release-2022-03|
+|postPublishHook|Instant Publish|✅|release-2022-03||
+|unPublishHook|Instant Publish|✅|||
+
+![](https://user-images.githubusercontent.com/172394/146718398-5414fe96-cf3a-44e9-9f1f-5f57e1e8172f.png)
+
+
+### registerPublicationHooks()
+
+The `preparePublishHook`, `prepublishHook`, `publishHook`, `postPublishHook` and `unpublishHook` hooks are set on the `documents` feature:
+
+* `preparePublishHookAsync`: `({documentVersion}) {return}`
+* `prepublishHookAsync`: `({documentVersion}) {return {documentVersion}}`
+* `publishHookAsync`: `({documentType, {documentVersion, renditions}}) {return}`
+* `postPublishHookAsync`: `({documentVersion}) {return}`
+* `unpublishHookAsync`: `({doumentType, {documentVersion}}) {return}`
 
 
 Example:
@@ -40,25 +53,22 @@ Example:
 const appConfig = require('./conf')
 const liServer = require('@livingdocs/server')(appConfig)
 
-liServer.registerInitializedHook((done) => {
+liServer.registerInitializedHook(() => {
   liServer.features.api('li-documents').registerPublicationHooks({
     projectHandle: 'your-awesome-project',
     channelHandle: 'default',
-    async prepublishHookAsync ({documentVersion}) { return {documentVersion} },
-    async publishHookAsync ({documentType, payload}) { // payload = {documentVersion, renditions}
-      liServer.log.info(`publishHookAsync called for documentType: ${documentType}!`)
-      liServer.log.debug({
-        documentVersion: payload.documentVersion,
-        renditions: payload.renditions
-      })
+    async preparePublishHookAsync ({documentVersion}) { return },
+    async postPublishHookAsync ({documentVersion}) {
+      liServer.log.info(`postPublishHookAsync called for documentType: ${documentVersion.documentType}!`)
+      liServer.log.debug({documentVersion: documentVersion})
       return
     },
-    async unpublishHookAsync ({documentType, payload}) { // payload = {documentVersion}
-      liServer.log.info(`unpublishHookAsync called for documentType: ${documentType}!`)
-      liServer.log.debug({documentVersion: payload.documentVersion})
+    async unpublishHookAsync ({documentVersion}) {
+      liServer.log.info(`unpublishHookAsync called for documentType: ${documentVersion.documentType}!`)
+      liServer.log.debug({documentVersion})
       return
     }
-  }, done)
+  })
 })
 ```
 
@@ -67,10 +77,10 @@ These hooks run **before** projects specific ones.
 
 Example of a server-wide publishHook registration:
 ```js
-registerPublicationServerHooks({publishHook: myOtherHook}, done)
+registerPublicationServerHooks({publishHook: myOtherHook})
 ```
 
-#### prepublishHookAsync()
+### prepublishHookAsync()
 
 The prepublish hook allows modifications of the [DocumentVersion]({{< ref "/reference-docs/server-extensions/document-version.md" >}}). For this reason any prepublish hook should always return `{documentVersion}`, allowing it to be modified by the next hook or to be published.
 
@@ -89,7 +99,7 @@ async prepublishHookAsync ({documentVersion}) {
 }
 ```
 
-#### publishHookAsync()
+### publishHookAsync()
 
 Upon every publish event in Livingdocs, e.g. when a user presses the "Publish"
 button in the editor, this hook method is called.
@@ -108,7 +118,7 @@ E.g. If you want to use the HTML of a rendered article, you can access it as `re
 async publishHookAsync ({documentType, payload}) {...}
 ```
 
-#### unpublishHookAsync()
+### unpublishHookAsync()
 
 Just as with the publish hook, you can also configure a method that reacts to
 unpublish events.
@@ -156,7 +166,7 @@ liServer.registerInitializedHook((done) => {
 
 ## List Hooks
 
-#### registerListHooks()
+### registerListHooks()
 
 There is one hook for the `document-lists` feature. The hook can be registerd
 through `registerListHooks()`.
@@ -181,7 +191,7 @@ liServer.registerInitializedHook((done) => {
 })
 ```
 
-#### listUpdateHookAsync()
+### listUpdateHookAsync()
 
 The payload described here has a custom format where it gives the added and
 removed `documentId`s. An example how to use that hook would be to have Elasticsearch
