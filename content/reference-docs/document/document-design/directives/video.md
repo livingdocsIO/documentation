@@ -17,7 +17,7 @@ menus:
   html: dedent`
     <div class="m-asset-image m-asset-image--numbered">
       <div class="m-asset-image__image">
-        <video class="responsive-img" doc-video="video" />
+        <video class="responsive-img" doc-video="video">
       </div>
       <div class="m-asset-image__options">
         <div class="a-asset-input" doc-editable="caption">Caption</div>

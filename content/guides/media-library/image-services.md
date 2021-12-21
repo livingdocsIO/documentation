@@ -245,7 +245,7 @@ module.exports =
     <img class="teaser__img"
         src="<%= article.teaserImage %>"
         srcset="<%= article.srcSet %>"
-        sizes="(min-width: 1024px) 100vw, 50vw"/>
+        sizes="(min-width: 1024px) 100vw, 50vw">
   </div>
 </a>
 ```

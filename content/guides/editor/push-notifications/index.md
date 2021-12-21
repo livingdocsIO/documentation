@@ -150,7 +150,7 @@ template.html
     </div>
     <div ng-if="$ctrl.hasPushNotifications()">
       <span class="ld-rich-item__push-notifications ld-rich-item__secondary">
-        <ld-icon name="bell" class="ld-icon ld-icon--default ld-icon--small"/>
+        <ld-icon name="bell" class="ld-icon ld-icon--default ld-icon--small"></ld-icon>
         {{$ctrl.pushNotificationsSent()}}
         push notification{{ $ctrl.pushNotificationsSent() > 1 ? 's' : ''}}
       </span>
@@ -162,9 +162,9 @@ template.html
          ng-if="$ctrl.hasPastPublication() || $ctrl.hasFuturePublication()">
       <div class="ld-rich-item__published-icon">
         <ld-icon name="check" class="ld-icon ld-icon--small ld-icon--cyan"
-                 ng-if="$ctrl.hasPastPublication()"/>
+                 ng-if="$ctrl.hasPastPublication()"></ld-icon>
         <ld-icon name="calendar-clock" class="ld-icon ld-icon--small"
-                 ng-if="$ctrl.hasFuturePublication()"/>
+                 ng-if="$ctrl.hasFuturePublication()"></ld-icon>
       </div>
       <div class="ld-rich-item__published-date">
         <div title="last published: {{$ctrl.document.updatedAt | moment: 'datetime'}}">

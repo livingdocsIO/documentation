@@ -156,7 +156,7 @@ module.exports = {
   html: dedent`
   <div class="m-asset-image">
     <div class="m-asset-image__image">
-      <img doc-image="image" />
+      <img doc-image="image">
     </div>
     <div class="m-asset-image__options">
       <div class="a-asset-input" doc-editable="caption">Caption</div>

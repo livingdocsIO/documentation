@@ -63,7 +63,7 @@ copy: [{
 
 ## Document Copy Basics
 
-{{< img src="copy-basics.png" alt="copy-basics" >}}<br/>
+{{< img src="copy-basics.png" alt="copy-basics" >}}<br>
 ([original diagram ressource](https://www.draw.io/#G0B2rv2Pw26xPLT3hXQ3BsZU1lWlE))
 
 The copy features can copy content into a new document of the same or a different `contentType`.
