@@ -331,6 +331,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v157.2.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.18): fix(document-relations): Do not throw an error when there are no relations
 - [v157.2.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.17): test(metadata-plugins): Write more tests for metadata plugin lookups
 - [v157.2.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.16): fix(duplicate-filter): Set fallback list length to 3
 - [v157.2.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.15): chore(public-api): Fix shaky document import test
