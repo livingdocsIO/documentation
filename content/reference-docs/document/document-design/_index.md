@@ -118,7 +118,7 @@ components: [
           ]
         }
       ],
-      html: '<div class="m-asset-image m-asset-image--numbered">\n  <div class="m-asset-image__image">\n    <img doc-image="image" />\n  </div>\n  <div class="m-asset-image__options">\n    <div class="a-asset-input" doc-editable="caption">Caption</div>\n    <div class="a-asset-input" doc-editable="source">Source</div>\n  </div>\n</div>'
+      html: '<div class="m-asset-image m-asset-image--numbered">\n  <div class="m-asset-image__image">\n    <img doc-image="image">\n  </div>\n  <div class="m-asset-image__options">\n    <div class="a-asset-input" doc-editable="caption">Caption</div>\n    <div class="a-asset-input" doc-editable="source">Source</div>\n  </div>\n</div>'
     },
     {
       name: 'insta',
