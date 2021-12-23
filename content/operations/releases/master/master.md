@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Table dashboard: First draft of component [livingdocs-editor #4934 v74.19.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4934)
 * :new: Do not throw an error when there are no relations [livingdocs-server #4153 v159.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4153)
 * :new: Fix «click outside» handling [livingdocs-editor #4925 v74.18.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4925)
 * :new: System Fonts instead of Roboto [livingdocs-editor #4659 v74.18.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4659)
