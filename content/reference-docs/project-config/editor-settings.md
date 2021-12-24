@@ -344,10 +344,11 @@ editorSettings: {
 
 The `dashboards` entry allows you to configure custom dashboards, e.g. for authors (data-records) or proofreading (tasks).
 
-There are 3 `types` of custom dashboards (`type` property):
+There are 4 `types` of custom dashboards (`type` property):
 - `dashboard`
 - `kanbanBoard`
 - `taskBoard` (predefined `kanbanBoard` for a task)
+- `tableDashboard`
 
 Kanban Boards are very similar to dashboards, except for having multiple result columns. Each result column shows a list of documents just as a single column dashboard does. The documents cannot be manually sorted or moved between columns, instead each column typically has its own filter settings.
 
@@ -363,7 +364,7 @@ Identifier for a custom dashboard. Is also used as a reference for the [main nav
 
 #### type
 
-Type of the dashboard, one of these: `dashboard`, `kanbanBoard`, `taskBoard`
+Type of the dashboard, one of these: `dashboard`, `kanbanBoard`, `taskBoard`, `tableDashboard`
 
 #### displayFilters
 
@@ -469,6 +470,82 @@ dashboards: [{
   }]
 }]
 ```
+
+### Example: Table Dashboard
+
+{{< added-in release-2022-03 >}}
+
+```js
+dashboards: [{
+  handle: 'example-table-dashboard',
+  type: 'tableDashboard',
+  pageTitle: 'Table Dashboard Title',
+  baseFilters: [
+    {type: 'documentType', value: 'article'}
+  ],
+  displayFilters: [
+    'channels',
+    'documentState',
+    'contentType',
+    'timeRange',
+    'language',
+    'category'
+  ],
+  sort: '-updated_at',
+  columns: [
+    {
+      label: 'Title',
+
+      minWidth: 100,  // minimum width in pixels
+
+      growFactor: 1,  // share of the remaining space after
+                      // minWidth of all columns has been allocated
+                      // (works like flex-grow in CSS)
+
+      priority: 1     // If there is not enough space for all columns
+                      // keep those with priority 1, then 2, etc.
+
+      // Name of the Vue component used for this column
+      componentName: 'liTableDashboardCellMain',
+
+      // Custom options passed to the above component
+      componentOptions: {}
+    },
+    {
+      label: 'Description',
+      minWidth: 200,
+      growFactor: 3,
+      priority: 3,
+
+      // Columns can also display a metadata property instead of using a custom component
+      metadataPropertyName: 'description',
+
+      // default false, if true, metadata property can be edited inline in the dashboard
+      editable: true
+    }
+  ]
+}]
+```
+
+#### Supported metadata properties
+
+The following [metadata plugin types]({{< ref "/reference-docs/document/metadata/metadata-plugin-list" >}})
+are supported in the table dashboard as of `release-2022-03`:
+- `li-boolean`
+- `li-text`
+- `li-category`
+- `li-document-reference`
+
+#### Upstream components
+
+The `liTableDashboardCellMain` upstream component can be used to display document thumbnail and title:
+
+{{< img src="images/table_dashboard_main_cell.png" alt="liTableDashboardCellMain upstream component" >}}
+
+#### Custom components
+
+Custom components of type [tableDashboardCell]({{< ref "/reference-docs/editor-extensions/vue-component-registry#tabledashboardcell" >}})
+can be used to render custom content inside a table cell.
 
 ## startPage
 

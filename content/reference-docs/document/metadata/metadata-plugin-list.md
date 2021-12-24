@@ -13,30 +13,31 @@ Go to [Metadata]({{< ref "/reference-docs/document/metadata" >}}) to get an over
 You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-examples" >}}) in the downstream.
 
 
-| Metadata Plugin                             | Metadata Plugin Type   | Description                                  | Usage (D = Document, M = Media Library Entries) | Default UI                                        |
-| ------------------------------------------- | ---------------------- | -------------------------------------------- | ----------------------------------------------- | ------------------------------------------------- |
-| [Boolean](#li-boolean)                      | li-boolean             | Boolean                                      | D, M                                            | checkbox                                          |
-| [Category](#li-category)                    | li-category            | category                                     | D                                               | select                                            |
-| [Date/Time validity](#li-datetime-validity) | li-datetime-validity   | Date                                         | M                                               | 2 date/time inputs                                |
-| [Date/Time](#li-datetime)                   | li-datetime            | Date                                         | D, M                                            | date/time input                                   |
-| [Dependencies](#li-dependencies)            | li-dependencies        | Livingdocs framework dependencies definition | D                                               | no UI                                             |
-| [Desk-Net](#li-desknet-integration)         | li-desknet-integration | Desk-Net Integration                         | D                                               | Link to Desk-Net distribution entry               |
-| [Document Target Length](#li-target-length) | li-target-length       | Target length in characters for a document   | D                                               | number input or length slider                     |
-| [Google Vision](#li-google-vision)          | li-google-vision       | Google Vision Autotagging for Images         | M                                               | specialized UI, no config possible                |
-| [Image](#li-image)                          | li-image               | Images                                       | D, M                                            | Image selection/upload/crops                      |
-| [iMatrics](#li-imatrics-nlp-tags)           | li-imatrics-nlp-tags   | iMatrics tag management                      | D                                               | manage tags                                       |
-| [Integer](#li-integer)                      | li-integer             | Integer                                      | D, M                                            | number input                                      |
-| [Language](#li-language)                    | li-language            | Language                                     | D                                               | select                                            |
-| [Named Crops](#li-named-crops)              | li-named-crops         | Default Crops for Images                     | M                                               | crop management UI                                |
-| [Numeric List](#li-numeric-list)            | li-numeric-list        | Array of Numbers                             | D, M                                            | multi number input                                |
-| [Poster Image](#li-poster-image)            | li-poster-image        | Poster Image for Videos                      | M (Video)                                       | image selection                                   |
-| [Publish Date](#li-publish-date)            | li-publish-date        | Holds first publication date, user editable  | D                                               | date/time input                                   |
-| [Reference List](#li-reference-list)        | li-reference-list      | Multiple references to other documents       | D, M                                            | document selection (dialog)                       |
-| [Reference](#li-reference)                  | li-reference           | A reference to another document              | D, M                                            | document selection (dialog)                       |
-| [Retresco](#li-retresco)                    | li-retresco            | Retresco tag management                      | D                                               | manage tags                                       |
-| [String List](#li-string-list)              | li-string-list         | Array of Strings                             | D, M                                            | multiselect                                       |
-| [String](#li-text)                          | li-text                | String                                       | D, M                                            | text, textarea, select                            |
-| [Transcoding State](#li-transcoding-state)  | li-transcoding-state   | State of external transcoding job            | M (Video)                                       | trigger transcoding, current job progress, result |
+| Metadata Plugin                             | Metadata Plugin Type   | Description                                  | Usage (D = Document, M = Media Library Entries, T = Table Dashboard) | Default UI                                        |
+| ------------------------------------------- | ---------------------- | -------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------- |
+| [Boolean](#li-boolean)                      | li-boolean             | Boolean                                      | D, M, T                                                              | checkbox                                          |
+| [Category](#li-category)                    | li-category            | category                                     | D, T                                                                 | select                                            |
+| [Date/Time validity](#li-datetime-validity) | li-datetime-validity   | Date                                         | M                                                                    | 2 date/time inputs                                |
+| [Date/Time](#li-datetime)                   | li-datetime            | Date                                         | D, M                                                                 | date/time input                                   |
+| [Dependencies](#li-dependencies)            | li-dependencies        | Livingdocs framework dependencies definition | D                                                                    | no UI                                             |
+| [Desk-Net](#li-desknet-integration)         | li-desknet-integration | Desk-Net Integration                         | D                                                                    | Link to Desk-Net distribution entry               |
+| [Document Reference](#li-document-reference)| li-document-reference  | A reference to another document              | D, M, T                                                              | document selection (dialog)                       |
+| [Document Target Length](#li-target-length) | li-target-length       | Target length in characters for a document   | D                                                                    | number input or length slider                     |
+| [Google Vision](#li-google-vision)          | li-google-vision       | Google Vision Autotagging for Images         | M                                                                    | specialized UI, no config possible                |
+| [Image](#li-image)                          | li-image               | Images                                       | D, M                                                                 | Image selection/upload/crops                      |
+| [iMatrics](#li-imatrics-nlp-tags)           | li-imatrics-nlp-tags   | iMatrics tag management                      | D                                                                    | manage tags                                       |
+| [Integer](#li-integer)                      | li-integer             | Integer                                      | D, M                                                                 | number input                                      |
+| [Language](#li-language)                    | li-language            | Language                                     | D                                                                    | select                                            |
+| [Named Crops](#li-named-crops)              | li-named-crops         | Default Crops for Images                     | M                                                                    | crop management UI                                |
+| [Numeric List](#li-numeric-list)            | li-numeric-list        | Array of Numbers                             | D, M                                                                 | multi number input                                |
+| [Poster Image](#li-poster-image)            | li-poster-image        | Poster Image for Videos                      | M (Video)                                                            | image selection                                   |
+| [Publish Date](#li-publish-date)            | li-publish-date        | Holds first publication date, user editable  | D                                                                    | date/time input                                   |
+| [Reference List](#li-reference-list)        | li-reference-list      | Multiple references to other documents       | D, M                                                                 | document selection (dialog)                       |
+| [Reference](#li-reference)                  | li-reference           | A reference to another document              | D, M                                                                 | document selection (dialog)                       |
+| [Retresco](#li-retresco)                    | li-retresco            | Retresco tag management                      | D                                                                    | manage tags                                       |
+| [String List](#li-string-list)              | li-string-list         | Array of Strings                             | D, M                                                                 | multiselect                                       |
+| [String](#li-text)                          | li-text                | String                                       | D, M, T                                                              | text, textarea, select                            |
+| [Transcoding State](#li-transcoding-state)  | li-transcoding-state   | State of external transcoding job            | M (Video)                                                            | trigger transcoding, current job progress, result |
 
 ## li-boolean
 **Data Format**: Boolean\
@@ -97,6 +98,17 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 }
 ```
 **Default UI**: Link to Desk-Net distribution entry
+
+## li-document-reference
+**Data Format**:
+```js
+{
+  reference: {
+    id: <String>
+  }
+}
+```
+**Default UI**: Document Selection (Dialog) (`liMetaReferenceForm`)
 
 ## li-document-soft-lock
 **Data Format**:
