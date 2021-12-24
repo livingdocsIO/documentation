@@ -16,6 +16,7 @@ Livingdocs provides an API to register custom components written in VueJS. They 
 - [dashboardCard](#dashboardcard)
 - [searchFilter](#searchfilter)
 - [liDocumentListCardExtension](#liDocumentListCardExtension)
+- [tableDashboardCell](#tableDashboardCell)
 
 Depending on the `type`, you will get different `props` defined on your component. Please see below for details.
 
@@ -134,7 +135,7 @@ this.$el.dispatchEvent(event)
 
 A `dashboardCard` is used to render a single search result in a dashboard.
 
-These are the `props` which are provided to your vue component:
+These are the `props` which are provided to your Vue component:
 ```js
 props: {
   result: {
@@ -159,7 +160,7 @@ props: {
 ### searchFilter
 A `searchFilter` registers a Vue component as filter for the search UI.
 
-These are the `props` which are provided to your vue component:
+These are the `props` which are provided to your Vue component:
 ```js
 props: {
   filter: {
@@ -176,7 +177,7 @@ A full example can be seen [here]({{< ref "/guides/editor/custom-dashboard-filte
 A `liDocumentListCardExtension` registers a Vue component that can be configured to be displayed on `liDocumentListCard` dashboard cards.
 [here]({{< ref "/guides/editor/custom-dashboard-filters#register-custom-vue-component-filter" >}})
 
-These are the `props` which are provided to your vue component:
+These are the `props` which are provided to your Vue component:
 ```js
 props: {
   options: {
@@ -195,3 +196,25 @@ The `options` object looks like this:
 
 Valid `inject`:
 - `authedHttp`
+
+### tableDashboardCell
+
+{{< added-in release-2022-03 >}}
+
+A `tableDashboardCell` registers a Vue component that can be configured to be displayed in a `tableDashboard` column.
+
+These are the `props` which are provided to your Vue component:
+```js
+props: {
+  // Instance of the Document model
+  document: {
+    type: Object,
+    required: true
+  },
+  // Custom options provided through `componentOptions` in the dashboard config
+  options: {
+    type: Object,
+    required: true
+  }
+}
+```
