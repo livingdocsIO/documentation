@@ -1,6 +1,10 @@
 # Handsontable Iframe Example
 
-If you want to run a handsontable we have configured an example include function with an iframe modal. Below is a guide to setting up the include function and some basic configuration for Handsontable, which you will need to run separately.
+We have configured an example include table using an iframe modal and Handsontable where you can create an include as a Livingdocs component which renders a table of data, configured using Handsontable.
+
+To get this feature working you need to do the following things:
+- Set up an include component in the Livingdocs server
+- Set up Handsontable as a separate application with functions to send and receive data as a post message
 
 The modal will let you input data into a handsontable, as below:
 
@@ -8,8 +12,7 @@ The modal will let you input data into a handsontable, as below:
 
 And save it to Livingdocs, a simple table render is seen below:
 
-{{< img src="Rendered-Handsontable.png" alt="Menu Preview" >}}
-
+{{< img src="Rendered-Handsontable.png" alt="Rendered handsontable" >}}
 
 ## Setting up the Include function on the Server
 
@@ -19,28 +22,52 @@ For this example, the Handsontable include is a very basic iframe and modal. The
 
 The data from the table is returned as an array of arrays, where each array is a row of data.
 
-A simple set up works as below:
+To get the component working, create a file in components with the following code:
 
 ```javascript
+module.exports = {
+  name: 'handsontable',
+  label: 'handsontable',
+  directives: [{
+    name: 'handsontable',
+    type: 'include',
+    service: 'handsontable',
+    defaultParams: {
+      isDefault: true
+    }
+  }],
+  html: `<div doc-include="handsontable" height="400" width="600" style="border: 0;">Handson</div>`
+}
+```
+
+Ensure default Params is set to true for the post messaging to work.
+
+Then in the directory `plugins/includes/` you need the following code:
+
+```javascript
+module.exports = {
   name: 'handsontable',
   uiComponents: [{
     type: 'iframe-modal',
     sidebarLabel: 'Handsontable Element',
     sidebarButton: 'Configure',
     modalTitle: 'Configure Handsontable',
-    modalContentUrl: 'http://localhost:8000'
+    modalContentUrl: 'the url of your handsontable application'
   }],
   rendering: {
     type: 'function',
     render: renderHandsontable
   }
+}
 ```
+
+Once these two files are created, you must register the Handsontable in the includesAPI in `runtime_config.js`. You must also list the component in `design_settings.js` and require it in the `index.js` file.
 
 ## Rendering the returned table in Livingdocs
 
 At the moment, the include expects a JSON array of table data. If you want to configure your own rendering from the contents of the table, you can use `params.innerData` on the server and configure the iframe render function.
 
-The rendering function:
+For this example the data is simply rendered by row with the below function:
 
 ```javascript
 async function renderHandsontable (params) {
@@ -70,6 +97,69 @@ function renderArray (array) {
   }).join('')
 }
 ```
+## Sending and receiving data with Livingdocs
+
+The function for the iframe modal to send messages is already written in the Editor, it can be found in the includes index file.
+
+The listener function looks like this:
+
+```javascript
+function setupMessageListener (scope, iframe, target, directive) {
+    return function messageListener (msg) {
+      if (msg.origin !== target) return
+      if (msg.data.query === 'config') {
+        const message = {query: 'config', params: directive.getParams()}
+        iframe.contentWindow.postMessage(message, target)
+      } else if (msg.data.action) {
+        scope.dispatch(msg.data)
+      }
+    }
+}
+```
+
+In your separate handsontable application you will need two functions to communicate with livingdocs.
+
+This function sends data and configs to Livingdocs using postMessage:
+
+```javascript
+await window.parent.postMessage(
+          {
+            params: {
+              innerData: dataArray
+            },
+            action: "update",
+          },
+          "*"
+        );
+```
+
+If the user chooses to reopen the configuration and edit the content, the configuration is received by this function with a config query post message:
+
+```javascript
+async function getConfig() {
+        await window.parent.postMessage(
+          {
+            query: "config",
+          },
+          "*"
+        );
+        await window.addEventListener(
+          "message",
+          (event) => {
+            if (event.data.query === "config") {
+              if (event.data.params.innerData) {
+                dataArray = event.data.params.innerData;
+              } else {
+                dataArray = dataArray
+              }
+            }
+          },
+          false
+        );
+      }
+```
+
+The `dataArray` will need to be configured depending on whether or not you are using a framework - but in this function it is updated if there have been previous changes.
 
 ## Handsontable Example Code and Configuration
 
@@ -127,32 +217,61 @@ manualRowMove: true,
 licenseKey: "non-commercial-and-evaluation",
 }
 ```
+
 Then depending on how you want to render Handsontable will depend on how you give it the `dataArray`. For example, when built with vue you can use a content object which is reactive.
 
 A useful starter dataArray is `[['false', 'A header', 'Another Header', 'A third header', 'An Example Date', 'A fourth header', 'An example checkbox', 'A fifth header'],['false', 'Some content', 'Some more content', 'Third content', '10/11/2021', 'Fourth content', true, 'Final content']]`
 
 This will configure your table with a row of headers and a row of data, to add rows simply use right click "insert row below".
 
-## Sending and receiving data with Livingdocs
+### An example set up in Vue.js
 
-This component sends data and configs to and from Livingdocs using postMessage. The function to update Livingdocs is in App.vue.
+An example set up in vue is found in the Handsontable demo sandbox here: [Handsontable Sandbox](https://codesandbox.io/s/handsontable-vue-data-grid-hello-world-app-5qgo7?from-embed=&file=/src/App.vue)
+
+To set up your own application using vue, you can copy and paste a lot of the code from Handsontable, then follow these steps:
+
+- Create an `App.vue` which renders a `DataGrid.vue` as below:
+
+```html
+<template>
+  <div id="app">
+    <DataGrid v-if='showDataGrid' v-bind:content='content' id="tableHTML" />
+    <button v-on:click="save()">Save</button>
+  </div>
+</template>
+```
+- Inside this file either use your own data array, the simple array above or import the data from the `constants.js` file in the sandbox. Once you have this, return the data as reactive and set a conditional to ensure it has loaded the data before rendering:
 
 ```javascript
-await window.parent.postMessage(
+data () {
+    return {
+      content: reactive(demoData),
+      showDataGrid: false
+    }
+  }
+```
+- Write two functions to communicate with the livingdocs modal:
+
+```javascript
+methods: {
+    save() {
+      const vm = this;
+      async function handleSubmit() {
+        await window.parent.postMessage(
           {
             params: {
-              innerData: dataArray
+              innerData: vm.content
             },
             action: "update",
           },
           "*"
         );
-```
-
-If the user chooses to reopen the configuration and edit the content, the configuration is received by this component with a config query post message:
-
-```javascript
-async function getConfig() {
+      }
+      handleSubmit();
+    },
+     getTableData() {
+      const vm = this;
+      async function getConfig() {
         await window.parent.postMessage(
           {
             query: "config",
@@ -164,9 +283,9 @@ async function getConfig() {
           (event) => {
             if (event.data.query === "config") {
               if (event.data.params.innerData) {
-                dataArray = event.data.params.innerData;
+                vm.content = event.data.params.innerData;
               } else {
-                dataArray = reactive(dataArray)
+                vm.content = reactive(demoData)
               }
                vm.showDataGrid = true
             }
@@ -174,9 +293,38 @@ async function getConfig() {
           false
         );
       }
+      getConfig();
+    },
+  },
+  mounted() {
+    this.getTableData();
+  }
+}
+```
+- In a DataGrid.vue add the settings above into hotSettings and have the data be this.content, along with adding "content" as props and components as HotTable, as below:
+
+```javascript
+export default {
+  name: "DataGrid",
+  props: ["content"],
+  data: function () {
+    return {
+      hotSettings: {
+        height: 450,
+        colHeaders: true,
+        ...as above
+        licenseKey: "non-commercial-and-evaluation",
+      },
+      data: this.content,
+    };
+  },
+  components: {
+    HotTable,
+  },
+};
 ```
 
-Again, the `dataArray` will need to be configured depending on whether or not you are using a framework.
+- Once these files are set up, run the components however you feel best, change the url inside the include component in Livingdocs and it will run as expected.
 
 ## Documentation
 
