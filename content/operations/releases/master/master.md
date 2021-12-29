@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Select text over multiple editables [livingdocs-editor #4638 v74.19.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4638)
 * :new: Rewrite database queries - Preparation for non-transactional query pool [livingdocs-server #4157 v159.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4157)
 * :new: fix(document-list): Reorganise tests [livingdocs-editor #4946 v74.19.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4946)
 * :new: Table dashboard: first draft of config [livingdocs-server #4145 v159.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4145)
