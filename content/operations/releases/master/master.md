@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Drop callback support in project api [livingdocs-server #4160 v160.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4160)
 * :new: update framework to 22.1.2 [livingdocs-server #4159 v159.4.1](https://github.com/livingdocsIO/livingdocs-server/pull/4159)
 * :new: Select text over multiple editables [livingdocs-editor #4638 v74.19.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4638)
 * :new: Rewrite database queries - Preparation for non-transactional query pool [livingdocs-server #4157 v159.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4157)
