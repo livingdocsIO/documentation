@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Support queue deletion in the indexing dashboard [livingdocs-server #4161 v160.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4161)
 * :new: Support queue deletion in the indexing dashboard [livingdocs-editor #4947 v74.20.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4947)
 * :new: Drop callback support in project api [livingdocs-server #4160 v160.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4160)
 * :new: update framework to 22.1.2 [livingdocs-server #4159 v159.4.1](https://github.com/livingdocsIO/livingdocs-server/pull/4159)
