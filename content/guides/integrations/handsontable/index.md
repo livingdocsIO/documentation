@@ -99,23 +99,7 @@ function renderArray (array) {
 ```
 ## Sending and receiving data with Livingdocs
 
-The function for the iframe modal to send messages is already written in the Editor, it can be found in the includes index file.
-
-The listener function looks like this:
-
-```javascript
-function setupMessageListener (scope, iframe, target, directive) {
-    return function messageListener (msg) {
-      if (msg.origin !== target) return
-      if (msg.data.query === 'config') {
-        const message = {query: 'config', params: directive.getParams()}
-        iframe.contentWindow.postMessage(message, target)
-      } else if (msg.data.action) {
-        scope.dispatch(msg.data)
-      }
-    }
-}
-```
+The function for the iframe modal to send messages is already written in the Editor, it waits for a config request before sending configs with a postMessage back to the iframe.
 
 In your separate handsontable application you will need two functions to communicate with livingdocs.
 
