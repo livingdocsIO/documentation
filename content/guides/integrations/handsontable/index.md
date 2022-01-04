@@ -4,8 +4,6 @@ description: Build an iframe modal for a configurable Handsontable
 weight: 7
 ---
 
-# Handsontable Iframe Example
-
 We have configured an example include table using an iframe modal and Handsontable where you can create an include as a Livingdocs component which renders a table of data, configured using Handsontable.
 
 To get this feature working you need to do the following things:
