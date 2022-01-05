@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Vue Metadata Plugins: Iteration 1 [livingdocs-editor #4836 v74.21.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4836)
 * :new: feat(projectConfig): add valueBefore to patches [livingdocs-server #4164 v161.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4164)
 * :new: Add svg imageprocessing test [livingdocs-server #4166 v161.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4166)
 * :new: fix(notification-list): stops notifications covering each other up [livingdocs-editor #4948 v74.20.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4948)
