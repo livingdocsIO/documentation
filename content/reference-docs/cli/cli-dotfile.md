@@ -26,29 +26,27 @@ The dotfile's format is YAML (and thus JSON works as well).
 environments:
   local:
     host: http://localhost:9000
-    token: local-token
-    distFolder: ./config-sync/local
-  development:
-    host: https://server-development.example.dev
-    token: dev-token
-    distFolder: ./config-sync/development
+    sourceFolder: ./project-config/local
+    distFolder: ./sync/local
   staging:
     host: https://server-staging.example.dev
     token: staging-token
-    distFolder: ./config-sync/staging
+    sourceFolder: ./project-config/staging
+    distFolder: ./sync/staging
   production:
     host: https://server-production.example.dev
     token: production-Token
-    distFolder: ./config-sync/production
+    sourceFolder: ./project-config/production
+    distFolder: ./sync/production
 alias:
-  dev: development
-
+  st: staging
 ```
 
 Note: it is recommended to add a production token with only
 read access (or simply dont add a prouction token at all). When publishing a new config you can supply a write token via `--token` argument.
 
 How to use these configs in the terminal:
+
 ```sh
 # with `env` param
 npx livingdocs-cli project-config:download --env development
@@ -57,7 +55,7 @@ npx livingdocs-cli project-config:download --env development
 npx livingdocs-cli project-config:download -e development
 
 # in shorthand form and also using an alias
-npx livingdocs-cli project-config:download -e dev
+npx livingdocs-cli project-config:download -e st
 ```
 
 ## Example: Multiple projects & environments
@@ -66,39 +64,43 @@ npx livingdocs-cli project-config:download -e dev
 
 ```yaml
 projects:
-  projectA:
+  daily-planet:
     environments:
-      development:
+      ci:
         host: https://server-development.exampleA.dev
         token: dev-token
-        distFolder: ./sync-projectA/development
+        sourceFolder: ./daily-planet/ci
+        distFolder: ./sync/daily-planet/ci
       production:
         host: https://server-production.exampleA.dev
         token: production-Token
-        distFolder: ./sync-projectA/production
-  projectB:
+        sourceFolder: ./daily-planet/production
+        distFolder: ./sync/daily-planet/production
+  daily-prophet:
     environments:
-      development:
+      ci:
         host: https://server-development.exampleB.dev
         token: dev-token
-        distFolder: ./sync-projectB/development
+        sourceFolder: ./daily-prophet/ci
+        distFolder: ./sync/daily-prophet/ci
       production:
         host: https://server-production.exampleB.dev
         token: production-Token
-        distFolder: ./sync-projectB/production
+        sourceFolder: ./daily-prophet/production
+        distFolder: ./sync/daily-prophet/production
 alias:
-  dev: development
-
+  prod: production
 ```
 
 How to use these configs in the terminal:
+
 ```sh
 # # with `project` and `env` params
-npx livingdocs-cli project-config:download --project projectA --env development
+npx livingdocs-cli project-config:download --project projectA --env production
 
 # in shorthand form
-npx livingdocs-cli project-config:download -p projectA -e development
+npx livingdocs-cli project-config:download -p projectA -e production
 
 # in shorthand form and using an alias
-npx livingdocs-cli project-config:download -p projectA -e dev
+npx livingdocs-cli project-config:download -p projectA -e prod
 ```
