@@ -1,12 +1,14 @@
 ---
 title: CLI
-renderSummaries: false
+renderSummaries: true
 renderTOC: false
 menus:
   reference-docs:
     weight: 6
 ---
 
-#### Repo
+## Repo
 
 {{< github "livingdocsIO/livingdocs-cli" "Livingdocs command line utility" >}}
+
+## Documentation
