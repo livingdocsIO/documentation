@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(article list): don't log errors when a document has no language [livingdocs-editor #4952 v74.21.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4952)
 * :new: Remove channel_id, metadata_id, document_type and content_type columns from the documents table [livingdocs-server #4165 v161.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4165)
 * :new: Vue Metadata Plugins: Iteration 1 [livingdocs-editor #4836 v74.21.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4836)
 * :new: feat(projectConfig): add valueBefore to patches [livingdocs-server #4164 v161.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4164)
