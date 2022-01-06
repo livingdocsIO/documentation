@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(notifications): console error removed [livingdocs-editor #4950 v74.21.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4950)
 * :new: fix(document list button): Changed naming convention for button [livingdocs-editor #4953 v74.21.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4953)
 * :new: fix(article list): don't log errors when a document has no language [livingdocs-editor #4952 v74.21.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4952)
 * :new: Remove channel_id, metadata_id, document_type and content_type columns from the documents table [livingdocs-server #4165 v161.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4165)
