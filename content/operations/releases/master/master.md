@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(hugodrag): Update so images can be dragged from hugo correctly [livingdocs-editor #4954 v74.21.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4954)
 * :new: fix(notifications): console error removed [livingdocs-editor #4950 v74.21.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4950)
 * :new: fix(document list button): Changed naming convention for button [livingdocs-editor #4953 v74.21.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4953)
 * :new: fix(article list): don't log errors when a document has no language [livingdocs-editor #4952 v74.21.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4952)
