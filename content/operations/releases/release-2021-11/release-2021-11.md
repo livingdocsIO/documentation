@@ -344,6 +344,7 @@ References:
 - [v157.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.9): return revision also in case metadata_id is null
 
 ### Livingdocs Editor Patches
+- [v74.4.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.41): fix: upgrade framework to 21.1.7
 - [v74.4.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.40): fix(document-list): Reorganise tests
 - [v74.4.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.39): fix(dialogs): simplify outside click handling for dialogs opened through the dialogService
 - [v74.4.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.38): fix(notificatins): Stacking
