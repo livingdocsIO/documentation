@@ -345,6 +345,7 @@ References:
 - [v157.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.9): return revision also in case metadata_id is null
 
 ### Livingdocs Editor Patches
+- [v74.4.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.44): fix(notification-list): stops notifications covering each other up
 - [v74.4.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.43): fix(navigation-toolbar): button positioning
 - [v74.4.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.42): fix(hugoDrag): hugo metadata now is populated
 - [v74.4.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.41): fix: upgrade framework to 21.1.7
