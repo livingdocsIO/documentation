@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(force reset email): users now emailed after force reset [livingdocs-server #4170 v161.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4170)
 * :new: Allow to delete documents with a missing contentType config [livingdocs-server #4169 v161.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4169)
 * :new: fix(hugodrag): Update so images can be dragged from hugo correctly [livingdocs-editor #4954 v74.21.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4954)
 * :new: fix(notifications): console error removed [livingdocs-editor #4950 v74.21.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4950)
