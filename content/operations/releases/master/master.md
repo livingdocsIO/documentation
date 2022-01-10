@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix(alert styling): Whats new user menu icon positioning fix [livingdocs-editor #4943 v74.21.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4943)
 
 
 Bugs
