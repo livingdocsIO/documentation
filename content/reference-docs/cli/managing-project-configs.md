@@ -13,8 +13,6 @@ In case you store your project configurations in the database you will need
 to make sure that both changes made in production as well as new changes added
 for new features all end up at the right time in all your environments.
 
-https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/master/setup/projects/boilerplate/index.js
-
 ## Set up CLI environment variables
 
 For easier working with multiple projects and environments first set up
