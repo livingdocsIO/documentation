@@ -646,6 +646,7 @@ References:
 - [v154.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.15): openid-connect: Support HTTP_PROXY environment variable in Issuer.discover call
 
 ### Livingdocs Editor Patches
+- [v72.13.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.53): fix(draggable list inbox): backported fix for list inbox
 - [v72.13.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.52): fix(notificatins): Stacking
 - [v72.13.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.51): fix: Fix pathname lookup to not fail
 - [v72.13.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.50): fix(media source drop handler): Use correct target component
