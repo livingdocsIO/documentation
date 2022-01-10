@@ -16,7 +16,7 @@ You can use a dotfile to store these params conveniently and pass
 `env` and `project` to commands instead of
 using e.g. the `LI_TOKEN` environment variable.
 
-The dotfile's format is YAML (and thus JSON works as well).
+The dotfile's format is YAML (and thus JSON works as well). And the CLI will look for the dotfile in the current working directory.
 
 ## Example: Multiple environments
 
