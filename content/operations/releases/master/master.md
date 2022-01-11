@@ -1,17 +1,17 @@
 ---
 type: release-notes
-title: February 2022 Release
-description: Release notes for release-2022-02
+title: March 2022 Release
+description: Release notes for release-2022-03
 excludeFromSearch: true
 ---
 
 {{< release-header
-  title="February 2022 Release"
+  title="March 2022 Release"
   upcoming=true
   legacy=false
   current=false
   maintained=false
-  branchHandle="release-2022-02"
+  branchHandle="release-2022-03"
 >}}
 
 ## Caveat :fire:
