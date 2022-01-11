@@ -16,7 +16,7 @@
 {{- $parameters := index $segmentsParameters 0 | markdownify -}}
 {{- $description := index $segmentsDescription 0 | markdownify -}}
 
-<div class="api-example{{ with (eq $title "") }} api-example--no-title{{ end }}{{ if $beta }} api-example--beta{{ end }}">
+<div class="api-example{{ with (eq $title "") }} api-example--no-title{{ end }}{{ if $beta }} api-example--beta{{ end }}{{ if $showResponseCode }} api-example--show-response-code{{ end }}">
 
   {{- with (ne $title "") -}}
     <h2 class="api-example__title">{{ $title }}</h2>
