@@ -8,38 +8,33 @@ menus:
 ---
 
 {{< api-example
-  title="My Title"
+  title="Check API Status"
 >}}
 
 --query--
 
 ```bash
-ACCESS_
+curl -k -X GET "https://edit.livingdocs.io/proxy/api/api/v1/health" \
+  -H "Accept: application/json"
 ```
 
 --endpoint--
 ```
-GET api/v1/
+GET api/v1/health
 ```
 
 --parameters--
-|Name|Type|Notes|
-|-|-|-|
-|:channelHandle|string|The handle of the channel for which you want to get the events.|
 
 --description--
 
 --response--
 200
 ---
-api/v1/
 ---
 ```js
-[
-  {
-    "id": 1111
-  }
-]
+{
+  "status": "ok"
+}
 ```
 
 {{< /api-example >}}
