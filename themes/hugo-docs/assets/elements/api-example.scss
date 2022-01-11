@@ -30,6 +30,17 @@ $api-example-padding: $space-m;
     margin-bottom: $space-m;
   }
 
+  td {
+    &:first-child {
+      white-space: nowrap;
+      width: 20%;
+    }
+
+    &:last-child {
+      width: 60%;
+    }
+  }
+
   &__description,
   p {
     @extend %font-s-xs;
@@ -60,6 +71,24 @@ $api-example-padding: $space-m;
         display: block;
         max-height: none;
       }
+    }
+  }
+
+  &--beta {
+    outline: 2px solid $color-yellow-2;
+    position: relative;
+
+    &::after {
+      @extend %font-xxs;
+      content: 'Beta';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: $color-yellow-2;
+      text-transform: uppercase;
+      padding: 0 $space-s 0 $space-s + 2px; 
+      border-radius: 0 8px 0 12px;
     }
   }
 
