@@ -56,5 +56,11 @@
   &--clickable {
     cursor: pointer;
     user-select: none;
+    transition: outline $transition-time ease-in;
+    outline: 1px solid transparent;
+
+    &:hover {
+      outline-color: $color-black;
+    }
   }
 }
