@@ -1,4 +1,5 @@
 {{- $title := .Get "title" -}}
+{{- $beta := .Get "beta" -}}
 {{- $showResponseCode := .Get "showResponseCode" -}}
 {{- $responseBlurry := .Get "responseBlurry" -}}
 
@@ -15,10 +16,17 @@
 {{- $parameters := index $segmentsParameters 0 | markdownify -}}
 {{- $description := index $segmentsDescription 0 | markdownify -}}
 
-<div class="api-example{{ with (eq $title "") }} api-example--no-title{{ end }}{{ if $showResponseCode }} api-example--show-response-code{{ end }}">
+<div class="api-example{{ with (eq $title "") }} api-example--no-title{{ end }}{{ if $beta }} api-example--beta{{ end }}">
 
   {{- with (ne $title "") -}}
-    <h3 class="api-example__title">{{ $title }}</h3>
+    <h2 class="api-example__title">{{ $title }}</h2>
+  {{- end -}}
+
+  {{- with (ne $description "") -}}
+    <div class="api-example__description">
+      <h4>Description</h4>
+      {{- $description -}}
+    </div>
   {{- end -}}
 
   {{- with (ne $query "") -}}
@@ -36,16 +44,9 @@
     {{- $parameters -}}
   {{- end -}}
 
-  {{- with (ne $description "") -}}
-    <div class="api-example__description">
-      <h4>Description</h4>
-      {{- $description -}}
-    </div>
-  {{- end -}}
-
   {{- with (ne (index $segmentsResponse 0) "") -}}
     <div class="api-example__response">
-      <h3>Response{{ with (eq $responseBlurry true) }} (may differ in details){{ end }}</h3>
+      <h4>Response{{ with (eq $responseBlurry true) }} (may differ in details){{ end }}</h4>
 
       {{- range $item, $segmentsResponse -}}
         {{- $code := index (split $item "---") 0  | markdownify -}}
@@ -56,9 +57,14 @@
           <div class="response{{ with (eq $code "200") }} response--success{{ end }}{{ with (ne $code "200") }} response--error{{ end }}">
             <div class="response__code">{{ $code }}</div>
             {{- with (eq $code "200") -}}<div class="response__name">OK</div>{{- end -}}
+            {{- with (eq $code "301") -}}<div class="response__name">Moved Permanently</div>{{- end -}}
+            {{- with (eq $code "400") -}}<div class="response__name">Bad Request</div>{{- end -}}
             {{- with (eq $code "401") -}}<div class="response__name">Unauthorized</div>{{- end -}}
             {{- with (eq $code "403") -}}<div class="response__name">Forbidden</div>{{- end -}}
             {{- with (eq $code "404") -}}<div class="response__name">Not Found</div>{{- end -}}
+            {{- with (eq $code "409") -}}<div class="response__name">Conflict</div>{{- end -}}
+            {{- with (eq $code "429") -}}<div class="response__name">Usage Limit Exceeded</div>{{- end -}}
+            {{- with (eq $code "500") -}}<div class="response__name">Bad Request</div>{{- end -}}
             {{- with (ne $endpoint "") -}}<div class="response__endpoint">{{ $endpoint }}</div>{{- end -}}
           </div>
   
