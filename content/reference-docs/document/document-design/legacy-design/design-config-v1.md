@@ -161,7 +161,7 @@ In a component the aspect ratios can be defined per image directive. In the foll
 </script>
 
 <figure class="figure">
-    <img doc-image="image" />
+    <img doc-image="image">
 </figure>
 ```
 

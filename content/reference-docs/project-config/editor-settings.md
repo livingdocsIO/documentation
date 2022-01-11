@@ -340,7 +340,7 @@ Any release before `release-2021-03` takes the following config
 ### Dashboard Cards
 With `release-2021-09` you can configure the card used to show results in dashboards. You do this by configuring your own dashboard card in the project config under `editorSettings.dashboardCardConfigurations` and then define this card per mediaType as you please.
 
-```
+```js
 // projectConfig.editorSettings
 
 dashboardCardConfigurations: [
@@ -372,6 +372,16 @@ dashboardCardConfigurations: [
 
 This will define a card `myImageCard` to be used in `mediaType.editor.dashboard.card.name`. See the See [Media Type config example]({{< ref "/reference-docs/project-config/media-types.md" >}}).
 
+### Prefilling Behavior
+Then there are 2 configs to define the behavior when Images are inserted into a Document from the Media Library:
+- `mediaLibrary.altTextPrefilling: {metadataPropertyName: ''}`: a metadata property handle from which the `alt` attribute on an image tag is filled.
+- `mediaLibrary.componentDirectivesPrefilling`: an array of mappings to prefill `doc-editable` directives with Media Library Entry Metadata
+```js
+[
+  {metadataPropertyName: 'source', directiveName: 'source'},
+  {metadataPropertyName: 'caption', directiveName: 'caption'}
+]
+```
 
 ## Document Lists
 ```js
@@ -397,16 +407,6 @@ documentLists: {
 ### baseFilters
 
 [Base Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/base-filter" >}}) are invisible filters and applied to every search (including the default result list).
-### Behavior
-Then there are 2 configs to define the behavior when Images are inserted into a Document from the Media Library:
-- `mediaLibrary.altTextPrefilling: {metadataPropertyName: ''}`: a metadata property handle from which the `alt` attribute on an image tag is filled.
-- `mediaLibrary.componentDirectivesPrefilling`: an array of mappings to prefill `doc-editable` directives with Media Library Entry Metadata
-```js
-[
-  {metadataPropertyName: 'source', directiveName: 'source'},
-  {metadataPropertyName: 'caption', directiveName: 'caption'}
-]
-```
 
 ## Text Formatting
 

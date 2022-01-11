@@ -7,8 +7,8 @@ weight: 4
 {{< added-in release-2021-11 >}}
 
 The multilist editor lets a user view and edit multiple document lists in one screen. It is available by default if
-[List Teasers]({{< ref "/guides/documents/includes/list-teasers" >}}) are configured such that list teaser
-components are available for pages.
+[List Teasers]({{< ref "/guides/documents/includes/list-teasers" >}}) with `paramsSchema` are configured such that
+list teaser components are available for pages.
 
 The multilist editor is accessible from the editor toolbar while editing a page:
 

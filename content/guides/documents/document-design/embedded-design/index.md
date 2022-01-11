@@ -4,7 +4,7 @@ description: How to add an existing design to a project configuration
 weight: 5
 ---
 
-Embedded designs are around for a while now and several Livingdocs customers use them productively. The main difference to a reference design is that embedded designs are stored in the Livingdocs server database and are part of the project config. This means that updates to an embedded design are done via the CLI as described [here]({{< ref "/reference-docs/cli/managing-configs" >}}).
+Embedded designs are around for a while now and several Livingdocs customers use them productively. The main difference to a reference design is that embedded designs are stored in the Livingdocs server database and are part of the project config. This means that updates to an embedded design are done via the CLI as described [here]({{< ref "/reference-docs/cli/managing-project-configs" >}}).
 
 The main benefit for customers is that they can completely separate Livingdocs designs from whatever technology they want to use in the frontend. E.g. Swisscom has embedded designs in the server project and uses the HTML framework nitro in the frontend (without any dependency on Livingdocs).
 

@@ -34,7 +34,7 @@ The presented setup assumes a workflow with different content-types for online a
 ### Setup a print content-type
 
 In order to follow this example we advise you to use our [Service](https://edit.livingdocs.io) with the pre-configured Sandbox. The example can of course be applied to any Livingdocs project with a configurable project config.
-First of all, use the [CLI]({{< ref "/reference-docs/cli/managing-configs" >}}) to download the project config of your service project to your local computer and open it with a code editor of your choice.
+First of all, use the [CLI]({{< ref "/reference-docs/cli/managing-project-configs" >}}) to download the project config of your service project to your local computer and open it with a code editor of your choice.
 In our service Sandbox we already have a content-type for an online article. It has the handle `regular`. So the first thing we need to do is to add a content-type for the print article. It will look as follows:
 ```js
 {
@@ -191,7 +191,7 @@ A few things to note:
 - we copy from the content-type `regular` to the content-type `woodwing`, this is our online to print copy configuration
 - again we only apply the conversion to a subset of the available components for demo purposes. For more details on the available conversion rules see [here]({{< ref "/guides/editor/document-copy" >}})
 
-As before, use the [CLI]({{< ref "/reference-docs/cli/managing-configs" >}}) to publish the changes to your project config.
+As before, use the [CLI]({{< ref "/reference-docs/cli/managing-project-configs" >}}) to publish the changes to your project config.
 
 You will now have a "Copy" button in the topbar of an online article. When pressing it, you have the option to copy it to a print article. If you do so, a new print article (with the preview and layout selection) is created for you and the component of the online article are mapped to the print article according to the configured rules.
 

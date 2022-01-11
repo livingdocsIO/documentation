@@ -331,6 +331,11 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v157.2.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.20): fix(force reset email): user emailed, delay removed
+- [v157.2.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.19): fix(image-processing): Allow application/xml mimetype to support svg image uploads
+- [v157.2.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.18): fix(document-relations): Do not throw an error when there are no relations
+- [v157.2.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.17): test(metadata-plugins): Write more tests for metadata plugin lookups
+- [v157.2.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.16): fix(duplicate-filter): Set fallback list length to 3
 - [v157.2.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.15): chore(public-api): Fix shaky document import test
 - [v157.2.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.14): fix: Fix typo in handle checks of documents and media library config
 - [v157.2.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.13): fix(data-migration-run): use correct contentType argument name
@@ -340,6 +345,12 @@ References:
 - [v157.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.9): return revision also in case metadata_id is null
 
 ### Livingdocs Editor Patches
+- [v74.4.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.44): fix(notification-list): stops notifications covering each other up
+- [v74.4.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.43): fix(navigation-toolbar): button positioning
+- [v74.4.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.42): fix(hugoDrag): hugo metadata now is populated
+- [v74.4.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.41): fix: upgrade framework to 21.1.7
+- [v74.4.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.40): fix(document-list): Reorganise tests
+- [v74.4.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.39): fix(dialogs): simplify outside click handling for dialogs opened through the dialogService
 - [v74.4.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.38): fix(notificatins): Stacking
 - [v74.4.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.37): fix(service start screen): Activity feed
 - [v74.4.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.36): fix(dialog): don't close on click outside to not close dialogs opening other dialogs automatically

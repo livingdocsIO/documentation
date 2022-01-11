@@ -164,7 +164,7 @@ liServer.features.api('li-design-loader').load({name, version}, cb)
 
 ### Content fixes for drag'n'drop huGO articles
 
-- `HugoArticle` class was parsing only paragraphs (`</p>`-tags). We are now parsing subtitles as well (`<h2/>`-tags).
+- `HugoArticle` class was parsing only paragraphs (`<p>`-tags). We are now parsing subtitles as well (`<h2>`-tags).
 
 ## New `body` property in `HugoArticle`
 

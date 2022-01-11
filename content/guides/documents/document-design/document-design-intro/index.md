@@ -13,7 +13,7 @@ It also lists the CSS and/or Javascript dependencies that need to be loaded to r
 both in the editor and when rendering it on the server side.
 
 
-**Note**:<br/>
+**Note**:<br>
 The [boilerplate server](https://github.com/livingdocsIO/livingdocs-server-boilerplate) has an embedded design. The entry point for your project config is in "setup/seeding.js". This file requires a complete [project config]({{< ref "/reference-docs/project-config" >}}) that also contains the two relevant design configs `design_settings.js` and the `components` folder.
 
 _Good to know:_ you might come across the notion of a "reference design". Reference designs are basically the same as embedded designs, but live externally, e.g. on an S3 bucket and are referenced in a project. The downside of reference designs is that they can not be customized in the context of a single project.

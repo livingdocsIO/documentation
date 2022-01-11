@@ -19,11 +19,11 @@ This guide assumes that you are familiar with the possibilities to register an I
       type: 'li-list-reference',
       preload: true, // Populate referenced article data
       config: {
-        enableCount: true, // Show the count option within the editor UI
-        defaultCount: 3,
-        minCount: 2,
-        maxCount: 6,
-        enableListEditing: true // Enable list creation and editing within the editor UI
+        enableCount: true,      // enable UI configuration of number of articles (default: false)
+        defaultCount: 3,        // number of articles shown by default (default: 3)
+        minCount: 2,            // minimum number of articles
+        maxCount: 6,            // maximum number of articles
+        enableListEditing: true // allow to create/edit list inline (default: false)
       }
     }
   ],

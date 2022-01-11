@@ -610,6 +610,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v154.0.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.49): fix(duplicate-filter): Set fallback list length to 3
 - [v154.0.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.48): chore(public-api): Fix shaky document import test
 - [v154.0.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.47): fix(data-migration-run): use correct contentType argument name
 - [v154.0.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.46): fix(document-lists): Sort results by id
@@ -645,6 +646,7 @@ References:
 - [v154.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.15): openid-connect: Support HTTP_PROXY environment variable in Issuer.discover call
 
 ### Livingdocs Editor Patches
+- [v72.13.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.53): fix(draggable list inbox): backported fix for list inbox
 - [v72.13.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.52): fix(notificatins): Stacking
 - [v72.13.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.51): fix: Fix pathname lookup to not fail
 - [v72.13.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v72.13.50): fix(media source drop handler): Use correct target component

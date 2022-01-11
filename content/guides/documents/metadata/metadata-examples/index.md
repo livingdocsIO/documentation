@@ -186,7 +186,7 @@ Add the following files in `plugins/metadata/bp-slug/form`:
       <input class="ld-text-input ld-text-input--full-width"
         ng-change="$ctrl.enteringText()"
         type="text"
-        ng-model="$ctrl.slug"/>
+        ng-model="$ctrl.slug">
     </div>
   </div>
   ```
