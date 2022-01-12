@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Support breaking project config changes [livingdocs-editor #4957 v74.23.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4957)
 * :new: Show year in edit history when it's not the current year [livingdocs-editor #4964 v74.22.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4964)
 * :new: Fix(alert styling): Whats new user menu icon positioning fix [livingdocs-editor #4943 v74.21.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4943)
 
