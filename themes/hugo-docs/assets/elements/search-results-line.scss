@@ -1,8 +1,12 @@
 .search-results-line {
   color: $color-black;
 
-  // clean up once search results are stable
-  // &__title {
-  //   font-weight: 500;
-  // }
+  &__title {
+    font-weight: 500;
+  }
+
+  &__text {
+    @extend %font-s-xs;
+    color: $color-grey-3;
+  }
 }
