@@ -45,7 +45,7 @@ The editor supports some material design icons by default ([list of supported ic
 If you develop an UI extensions like an include, a metadata component or a component sidebar, you can embed icons from the [li-icon collection](https://github.com/livingdocsIO/livingdocs-editor/blob/master/server/li_icon.paths.txt) like this:
 
 ```html
-<li-icon name="arrow-right" class="li-icon li-icon--small"></li-icon>
+<li-icon name="arrow arrow--right" class="li-icon li-icon--small"></li-icon>
 ```
 
 Another option is to embed your SVG directly in the html:

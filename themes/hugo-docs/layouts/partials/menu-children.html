@@ -6,7 +6,7 @@
 <ul class="{{ with .class }}{{ . }} {{ end }}topics">
   {{ range .Children }}
       <li class="topic topic-level-{{ $level }}{{ if ($currentPage.IsMenuCurrent $menu .) }} active{{ end }}{{ if ($currentPage.HasMenuCurrent $menu .) }} open{{ end }}" style="--menu-level: {{ $level }}">
-          <a href="{{ .URL }}">{{ if .HasChildren }}<span class="arrow-down"></span>{{ end }}{{ .Name }}</a>
+          <a href="{{ .URL }}">{{ if .HasChildren }}<span class="arrow arrow--topic"></span>{{ end }}{{ .Name }}</a>
           {{- partial "menu-children" (dict "menu" $menu "context" $currentPage "level" $level "HasChildren" .HasChildren "Children" .Children) -}}
       </li>
   {{- end -}}
