@@ -1,14 +1,27 @@
-.response {
+.code-teaser {
+  @include box-shadow;
   display: inline-flex;
+  max-width: 100%;
   align-items: center;
-  margin-bottom: $space-m;
   border-radius: $rounded-corners;
   overflow: hidden;
 
+  &__interaction {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: $space-m;
+    height: 2 * $space-m;
+    background-color: $color-white;
+  }
+
   &__code {
     @extend %font-s-xs;
+    min-width: 2 * $space-m;
     line-height: 2 * $space-m;
-    padding: 0 $space-s;
+    padding: 0 $space-xs;
+    text-align: center;
     color: $color-white;
     background-color: $color-grey-3;
   }
@@ -19,6 +32,7 @@
     padding: 0 $space-s;
     color: $color-black;
     background-color: $color-grey-6;
+    white-space: nowrap;
   }
 
   &__endpoint {
@@ -26,11 +40,18 @@
     line-height: 2 * $space-m;
     padding: 0 $space-s;
     color: $color-black;
-    background-color: $color-grey-8;
+    background-color: $color-white;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__interaction + &__endpoint {
+    border-left: 1px solid $color-grey-6;
   }
 
   &--error {
-    .response {
+    .code-teaser {
       &__code {
         background-color: $color-red-1;
       }
@@ -42,7 +63,7 @@
   }
 
   &--success {
-    .response {
+    .code-teaser {
       &__code {
         background-color: $color-green-1;
       }
@@ -53,14 +74,24 @@
     }
   }
 
-  &--clickable {
+  &--with-interaction {
     cursor: pointer;
     user-select: none;
-    transition: outline $transition-time ease-in;
-    outline: 1px solid transparent;
 
     &:hover {
-      outline-color: $color-black;
+      @include box-shadow(highlight);
+    }
+
+    .code-teaser {
+      &__interaction {
+        display: flex;
+      }
+    }
+  }
+
+  &--open {
+    .arrow {
+      @extend .arrow--up;
     }
   }
 }

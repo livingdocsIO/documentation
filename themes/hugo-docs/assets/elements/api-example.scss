@@ -5,6 +5,7 @@ $api-example-padding: $space-m;
   padding: $api-example-padding $api-example-padding 0;
   margin-bottom: $space-l;
   border-radius: 3 * $rounded-corners;
+  overflow: hidden;
 
   @include media-query(widescreen) {
     $shift: '50% + #{$page-sidebar-width + $space-l} - 50vw';
@@ -46,30 +47,22 @@ $api-example-padding: $space-m;
     @extend %font-s-xs;
   }
 
-  &__response-code {
-    display: none;
-    max-height: $space-m;
-    overflow: hidden;
+  &__curl {
+    margin-top: $space-m;
 
-    &.show {
-      display: block;
-      max-height: none;
+    .chroma {
+      margin-bottom: 0;
     }
+  }
+
+  &__response-entry {
+    margin-bottom: $space-m;
   }
 
   &--no-title {
     h4 {
       &:first-child {
         margin-top: 0;
-      }
-    }
-  }
-
-  &--show-response-code {
-    .api-example {
-      &__response-code {
-        display: block;
-        max-height: none;
       }
     }
   }
@@ -89,12 +82,6 @@ $api-example-padding: $space-m;
       text-transform: uppercase;
       padding: 0 $space-s 0 $space-s + 2px; 
       border-radius: 0 8px 0 12px;
-    }
-  }
-
-  &:not(.api-example--show-response-code) {
-    .response {
-      @extend .response--clickable;
     }
   }
 }

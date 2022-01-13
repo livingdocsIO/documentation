@@ -1,0 +1,17 @@
+.teaser-and-code {
+  &__code {
+    display: none;
+    max-height: $space-m;
+    margin-top: $space-m;
+    overflow: hidden;
+
+    &.show {
+      display: block;
+      max-height: none;
+    }
+  }
+
+  .chroma {
+    margin-bottom: 0;
+  }
+}

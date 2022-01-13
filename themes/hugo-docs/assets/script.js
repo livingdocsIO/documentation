@@ -328,11 +328,12 @@ conent.addEventListener('click', (evt) => {
 /**
  * Response Code Visibility
  */
- const responses = document.querySelectorAll('.response')
+ const teaserAndCodes = document.querySelectorAll('.teaser-and-code')
 
- responses.forEach(function(response) {
-  response.addEventListener('click', (evt) => {
-    evt.target.parentNode.parentNode.querySelector('.api-example__response-code').classList.toggle('show')
+ teaserAndCodes.forEach(function(teaserAndCode) {
+  teaserAndCode.querySelector('.code-teaser--with-interaction').addEventListener('click', (evt) => {
+    evt.target.closest('.teaser-and-code').querySelector('.code-teaser').classList.toggle('code-teaser--open')
+    evt.target.closest('.teaser-and-code').querySelector('.teaser-and-code__code').classList.toggle('show')
   })
  })
 
