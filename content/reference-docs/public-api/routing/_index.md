@@ -1,7 +1,7 @@
 ---
-title: Get Started
+title: Routing
 renderTOC: false
-weight: 1
+weight: 8
 menus:
   reference-docs:
     parent: Public API

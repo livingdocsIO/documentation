@@ -1,10 +1,10 @@
 ---
-title: Status
-weight: 1
+title: Health
+weight: 12
 renderTOC: false
 menus:
   reference-docs:
-    parent: Health 
+    parent: Public API
 ---
 
 {{< api-example

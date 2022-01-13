@@ -328,14 +328,16 @@ conent.addEventListener('click', (evt) => {
 /**
  * Response Code Visibility
  */
- const teaserAndCodes = document.querySelectorAll('.teaser-and-code')
+const teaserAndCodes = document.querySelectorAll('.teaser-and-code')
 
- teaserAndCodes.forEach(function(teaserAndCode) {
-  teaserAndCode.querySelector('.code-teaser--with-interaction').addEventListener('click', (evt) => {
-    evt.target.closest('.teaser-and-code').querySelector('.code-teaser').classList.toggle('code-teaser--open')
-    evt.target.closest('.teaser-and-code').querySelector('.teaser-and-code__code').classList.toggle('show')
-  })
- })
+teaserAndCodes.forEach(function(teaserAndCode) {
+  if (teaserAndCode.querySelector('.code-teaser--with-interaction') != undefined) {
+    teaserAndCode.querySelector('.code-teaser--with-interaction').addEventListener('click', (evt) => {
+      evt.target.closest('.teaser-and-code').querySelector('.code-teaser').classList.toggle('code-teaser--open')
+      evt.target.closest('.teaser-and-code').querySelector('.teaser-and-code__code').classList.toggle('show')
+    })
+  }
+})
 
 /**
  * Header while Scrolling

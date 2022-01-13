@@ -4,7 +4,7 @@ weight: 2
 renderTOC: false
 menus:
   reference-docs:
-    parent: Routing / Menus
+    parent: Routing
 ---
 
 {{< api-example

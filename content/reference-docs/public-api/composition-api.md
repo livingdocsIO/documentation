@@ -1,10 +1,10 @@
 ---
-title: Publication
-weight: 2
+title: Composition API
+weight: 3
 renderTOC: false
 menus:
   reference-docs:
-    parent: Composition API
+    parent: Public API
 ---
 
 {{< api-example
