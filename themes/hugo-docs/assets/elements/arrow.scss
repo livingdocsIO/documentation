@@ -1,0 +1,32 @@
+.arrow {
+  display: flex;
+  position: relative;
+  width: 4px;
+  height: 4px;
+  border: solid currentColor;
+  border-width: 0 1px 1px 0;
+  padding: 2px;
+  transform-origin: 75% 75%;
+  transform: rotate(45deg) translate(-1px, 2px);
+
+  &--right {
+    transform: rotate(-45deg); // define xy transforms once we use this modifier
+  }
+
+  &--left {
+    transform: rotate(135deg); // define xy transforms once we use this modifier
+  }
+
+  &--up {
+    transform: rotate(-135deg) translate(2px, -1px);
+  }
+
+  &--topic {
+    position: absolute;
+    right: 14px;
+    top: calc(50% - 4px);
+    margin-bottom: 3px;
+    margin-right: $space-s;
+    cursor: pointer;
+  }
+}
