@@ -33,11 +33,12 @@ $api-example-padding: $space-m;
 
   td {
     &:first-child {
-      white-space: nowrap;
+      hyphens: auto;
       width: 20%;
     }
 
     &:last-child {
+      hyphens: auto;
       width: 60%;
     }
   }
