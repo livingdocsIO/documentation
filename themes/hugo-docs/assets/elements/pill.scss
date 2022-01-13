@@ -9,11 +9,11 @@
   cursor: pointer;
   user-select: none;
 
-  transition: outline $transition-time ease-in;
-  outline: 1px solid transparent;
+  transition: border $transition-time ease-in;
+  border: 1px solid transparent;
 
   &:hover {
-    outline-color: $color-black;
+    border-color: $color-black;
   }
 
   &.is-active {

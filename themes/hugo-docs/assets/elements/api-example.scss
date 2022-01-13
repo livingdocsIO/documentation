@@ -68,7 +68,7 @@ $api-example-padding: $space-m;
   }
 
   &--beta {
-    outline: 2px solid $color-yellow-2;
+    border: 2px solid $color-yellow-2;
     position: relative;
 
     &::after {
