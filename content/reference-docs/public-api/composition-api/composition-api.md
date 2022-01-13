@@ -14,10 +14,22 @@ menus:
 --query--
 
 ```bash
-POST api/beta/composition/:documentId
+ACCESS_TOKEN=ey1234
+curl -k -X POST "https://edit.livingdocs.io/proxy/api/api/beta/composition/:documentId" \
+  -H "Accept: application/json" \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  -H 'Content-Type: application/json; charset=utf-8' \
+  --data-binary @- << EOF 
+ {
+    "fields": ["systemdata", "content", "metadata", "includes", "html"]
+  } 
+EOF
 ```
 
 --endpoint--
+```
+POST api/beta/composition/:documentId
+```
 
 --parameters--
 

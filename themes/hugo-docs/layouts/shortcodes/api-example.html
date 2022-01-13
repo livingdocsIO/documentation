@@ -16,7 +16,7 @@
 {{- $parameters := index $segmentsParameters 0 | markdownify -}}
 {{- $description := index $segmentsDescription 0 | markdownify -}}
 
-<div class="api-example{{ with (eq $title "") }} api-example--no-title{{ end }}{{ if $beta }} api-example--beta{{ end }}{{ if $showResponseCode }} api-example--show-response-code{{ end }}">
+<div class="api-example{{ with (eq $title "") }} api-example--no-title{{ end }}{{ if $beta }} api-example--beta{{ end }}">
 
   {{- with (ne $title "") -}}
     <h2 class="api-example__title">{{ $title }}</h2>
@@ -30,8 +30,22 @@
   {{- end -}}
 
   {{- with (ne $query "") -}}
-    <h4>Curl Example</h4>
-    {{- $query -}}
+    <div class="api-example__curl">
+      <div class="teaser-and-code">
+        <div class="teaser-and-code__teaser">
+          <div class="code-teaser{{ with (ne $showResponseCode true) }} code-teaser--with-interaction{{ end }}">
+            <div class="code-teaser__interaction">
+              <span class="arrow"></span>
+            </div>
+            <div class="code-teaser__endpoint">Curl Example</div>
+          </div>
+        </div>
+  
+        <div class="teaser-and-code__code">
+          {{- $query -}}
+        </div>
+      </div>
+    </div>
   {{- end -}}
 
   {{- with (ne $endpoint "") -}}
@@ -53,23 +67,30 @@
         {{- $endpoint := index (split $item "---") 1 | markdownify -}}
         {{- $script := index (split $item "---") 2 | markdownify -}}
 
-        <div>
-          <div class="response{{ with (eq $code "200") }} response--success{{ end }}{{ with (ne $code "200") }} response--error{{ end }}">
-            <div class="response__code">{{ $code }}</div>
-            {{- with (eq $code "200") -}}<div class="response__name">OK</div>{{- end -}}
-            {{- with (eq $code "301") -}}<div class="response__name">Moved Permanently</div>{{- end -}}
-            {{- with (eq $code "400") -}}<div class="response__name">Bad Request</div>{{- end -}}
-            {{- with (eq $code "401") -}}<div class="response__name">Unauthorized</div>{{- end -}}
-            {{- with (eq $code "403") -}}<div class="response__name">Forbidden</div>{{- end -}}
-            {{- with (eq $code "404") -}}<div class="response__name">Not Found</div>{{- end -}}
-            {{- with (eq $code "409") -}}<div class="response__name">Conflict</div>{{- end -}}
-            {{- with (eq $code "429") -}}<div class="response__name">Usage Limit Exceeded</div>{{- end -}}
-            {{- with (eq $code "500") -}}<div class="response__name">Bad Request</div>{{- end -}}
-            {{- with (ne $endpoint "") -}}<div class="response__endpoint">{{ $endpoint }}</div>{{- end -}}
-          </div>
-  
-          <div class="api-example__response-code">
-            {{- $script -}}
+        <div class="api-example__response-entry">
+          <div class="teaser-and-code">
+            <div class="teaser-and-code__teaser">
+              <div class="code-teaser{{ with (ne $showResponseCode true) }} code-teaser--with-interaction{{ end }}{{ with (eq $code "200") }} code-teaser--success{{ end }}{{ with (ne $code "200") }} code-teaser--error{{ end }}">
+                <div class="code-teaser__interaction">
+                  <span class="arrow"></span>
+                </div>
+                
+                <div class="code-teaser__code">{{ $code }}</div>
+                {{- with (eq $code "200") -}}<div class="code-teaser__name">OK</div>{{- end -}}
+                {{- with (eq $code "301") -}}<div class="code-teaser__name">Moved Permanently</div>{{- end -}}
+                {{- with (eq $code "400") -}}<div class="code-teaser__name">Bad Request</div>{{- end -}}
+                {{- with (eq $code "401") -}}<div class="code-teaser__name">Unauthorized</div>{{- end -}}
+                {{- with (eq $code "403") -}}<div class="code-teaser__name">Forbidden</div>{{- end -}}
+                {{- with (eq $code "404") -}}<div class="code-teaser__name">Not Found</div>{{- end -}}
+                {{- with (eq $code "409") -}}<div class="code-teaser__name">Conflict</div>{{- end -}}
+                {{- with (eq $code "429") -}}<div class="code-teaser__name">Usage Limit Exceeded</div>{{- end -}}
+                {{- with (eq $code "500") -}}<div class="code-teaser__name">Bad Request</div>{{- end -}}
+                {{- with (ne $endpoint "") -}}<div class="code-teaser__endpoint">{{ $endpoint }}</div>{{- end -}}
+              </div>
+            </div>
+            <div class="teaser-and-code__code{{ if $showResponseCode }} show{{ end }}">
+              {{- $script -}}
+            </div>
           </div>
         </div>
       {{- end -}}
