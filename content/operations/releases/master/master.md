@@ -149,7 +149,7 @@ TODO: update migration section
 - Is it a simple migration? (fast/easy downgradable)
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run `livingdocs-server migrate up` to update to the newest database scheme
 # migration - 111-add-comments-table.js
 #   create comments table + add events to the stream_events_types table
 livingdocs-server migrate up
