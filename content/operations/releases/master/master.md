@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Metadata: Ensure client side validation works in Vue Metadata Forms [livingdocs-editor #4971 v74.23.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4971)
 * :new: Remove /public-api endpoint in the Editor and change link to the publicApi documentation [livingdocs-editor #4970 v74.23.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4970)
 * :new: fix(buttonType): Button types re-added for new li-buttons [livingdocs-editor #4965 v74.23.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4965)
 * :new: 🐞 Video: fix 'unsupported architecture' error on server start [livingdocs-server #4173 v161.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4173)
