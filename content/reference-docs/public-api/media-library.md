@@ -259,3 +259,130 @@ api/v1/mediaLibrary?externalId=ex-1&systemName=externalSystem
 ```
 
 {{< /api-example >}}
+
+{{< api-example
+  title="Get Incoming Publication References for a Media Library Entry"
+  release="release-2022-03"
+>}}
+
+--query--
+
+```bash
+ACCESS_TOKEN=ey1234
+curl -k -X GET "https://edit.livingdocs.io/proxy/api/api/v1/mediaLibrary/:mediaId/incomingDocumentReferences" \
+  -H "Accept: application/json" \
+  -H "Authorization: Bearer $ACCESS_TOKEN"
+```
+
+--endpoint--
+```
+GET api/v1/mediaLibrary/:mediaId/incomingDocumentReferences
+```
+
+--parameters--
+|Name|Type|Required|Notes|
+|-|-|-|-|
+|:mediaId|string|x||
+|?limit|integer||A limit for how much published documents to retrieve. Defaults to 100. Max. 100.|
+|?offset|integer||An offset into the query. Useful when getting more than 100 results (pagination).|
+
+--description--
+
+--response--
+200
+---
+---
+```js
+[
+  {
+    "id": 2,
+    "references": [
+      {
+        "id": "9fKagDCiN6sb",
+        "type": "image",
+        "location": "image-directive",
+        "componentId": "doc-1ev8345oj0",
+        "componentName": "image",
+        "directiveName": "image"
+      },
+      {
+        "id": "9fKagDCiN6sb",
+        "type": "image",
+        "location": "metadata",
+        "propertyName": "teaserImage"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "references": [
+      {
+        "id": "9fKagDCiN6sb",
+        "type": "image",
+        "location": "image-directive",
+        "componentId": "doc-1euq8lq1o0",
+        "componentName": "image",
+        "directiveName": "image"
+      },
+      {
+        "id": "9fKagDCiN6sb",
+        "type": "image",
+        "location": "metadata",
+        "propertyName": "teaserImage"
+      }
+    ]
+  }
+]
+```
+
+{{< /api-example >}}
+
+{{< api-example
+  title="Get Incoming Media References for a Media Library Entry"
+  release="release-2022-03"
+>}}
+
+--query--
+
+```bash
+ACCESS_TOKEN=ey1234
+curl -k -X GET "https://edit.livingdocs.io/proxy/api/api/v1/mediaLibrary/:mediaId/incomingMediaReferences" \
+  -H "Accept: application/json" \
+  -H "Authorization: Bearer $ACCESS_TOKEN"
+```
+
+--endpoint--
+```
+GET api/v1/mediaLibrary/:mediaId/incomingMediaReferences
+```
+
+--parameters--
+|Name|Type|Required|Notes|
+|-|-|-|-|
+|:mediaId|string|x||
+|?limit|integer||A limit for how much published documents to retrieve. Defaults to 100. Max. 100.|
+|?offset|integer||An offset into the query. Useful when getting more than 100 results (pagination).|
+
+--description--
+
+--response--
+200
+---
+---
+```js
+[
+  {
+    "id": "B1LPgANhJFpo",
+    "references": [
+      {
+        "id": "9fKagDCiN6sb",
+        "type": "image",
+        "location": "metadata",
+        "propertyName": "imageLink"
+      }
+    ]
+  }
+]
+```
+
+{{< /api-example >}}
