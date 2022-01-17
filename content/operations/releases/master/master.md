@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(webpack): Lock mini-css-extract-plugin version to 2.4 [livingdocs-editor #4972 v74.23.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4972)
 * :new: fix(webhookEvent): webhook event now fired when documents unpublished [livingdocs-server #4174 v161.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4174)
 * :new: Make Desk-Net category optional [livingdocs-server #4176 v161.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4176)
 * :new: Metadata: Ensure client side validation works in Vue Metadata Forms [livingdocs-editor #4971 v74.23.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4971)
