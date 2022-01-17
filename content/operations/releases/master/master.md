@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Main navigation groups [livingdocs-server #4152 v161.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4152)
 * :new: feat(navigation): Add support for groups [livingdocs-editor #4937 v74.24.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4937)
 * :new: Fix node 14 compatibility in `livingdocs-server key-generate convert-hs256` [livingdocs-server #4182 v161.2.5](https://github.com/livingdocsIO/livingdocs-server/pull/4182)
 * :new: fix(webpack): Lock mini-css-extract-plugin version to 2.4 [livingdocs-editor #4972 v74.23.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4972)
