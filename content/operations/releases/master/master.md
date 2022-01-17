@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(webhookEvent): webhook event now fired when documents unpublished [livingdocs-server #4174 v161.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4174)
 * :new: Make Desk-Net category optional [livingdocs-server #4176 v161.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4176)
 * :new: Metadata: Ensure client side validation works in Vue Metadata Forms [livingdocs-editor #4971 v74.23.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4971)
 * :new: Remove /public-api endpoint in the Editor and change link to the publicApi documentation [livingdocs-editor #4970 v74.23.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4970)
