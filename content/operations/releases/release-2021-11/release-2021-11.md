@@ -331,6 +331,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v157.2.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.23): fix(tokens): Improve the accessTokenSigningKeys configuration to throw on misconfiguration edge cases
 - [v157.2.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.22): fix: Upgrade @livingdocs/conf to v3 to update jsonpointer
 - [v157.2.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.21): fix(desknet): make category optional
 - [v157.2.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.20): fix(force reset email): user emailed, delay removed
