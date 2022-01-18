@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Improve accessTokenSigningKeys misconfiguration errors [livingdocs-server #4184 v162.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4184)
 * :new: feat(search): Don't search for exact document id matches [livingdocs-server #4155 v162.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4155)
 * :new: feat(search): Show tooltip for document id match [livingdocs-editor #4941 v74.25.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4941)
 * :new: Main navigation groups [livingdocs-server #4152 v161.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4152)
