@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(environments): Move editable.js locales to correct location [livingdocs-editor #4939 v74.26.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4939)
 * :new: fix(comments toolbar): comments data now from workspace [livingdocs-editor #4962 v74.25.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4962)
 * :new: fix(workspaceUnloading): Workspace is unloaded now if softLocked [livingdocs-editor #4977 v74.25.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4977)
 * :new: Improve accessTokenSigningKeys misconfiguration errors [livingdocs-server #4184 v162.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4184)
