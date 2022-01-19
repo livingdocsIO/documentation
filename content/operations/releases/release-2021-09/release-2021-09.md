@@ -610,6 +610,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v154.0.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.50): fix(search): Use the index name as fallback in case there's no alias to query
 - [v154.0.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.49): fix(duplicate-filter): Set fallback list length to 3
 - [v154.0.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.48): chore(public-api): Fix shaky document import test
 - [v154.0.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.47): fix(data-migration-run): use correct contentType argument name
