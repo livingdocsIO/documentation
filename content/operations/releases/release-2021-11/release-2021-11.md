@@ -331,6 +331,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v157.2.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.25): fix(sso): Convert arguments in strategybuilder to an object to fix wrongly passed parameters
 - [v157.2.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.24): fix(search): Use the index name as fallback in case there's no alias to query
 - [v157.2.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.23): fix(tokens): Improve the accessTokenSigningKeys configuration to throw on misconfiguration edge cases
 - [v157.2.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.22): fix: Upgrade @livingdocs/conf to v3 to update jsonpointer
