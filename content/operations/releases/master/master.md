@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix SSO strategy builder parameters [livingdocs-server #4192 v162.0.3](https://github.com/livingdocsIO/livingdocs-server/pull/4192)
 * :new: Use correct elasticsearch client for index search [livingdocs-server #4189 v162.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4189)
 * :new: fix(environments): Move editable.js locales to correct location [livingdocs-editor #4939 v74.26.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4939)
 * :new: fix(comments toolbar): comments data now from workspace [livingdocs-editor #4962 v74.25.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4962)
