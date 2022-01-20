@@ -350,6 +350,7 @@ References:
 - [v157.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.9): return revision also in case metadata_id is null
 
 ### Livingdocs Editor Patches
+- [v74.4.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.48): fix: enable show comments after creating a new comment
 - [v74.4.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.47): fix(historyStyling): Removed tag has correct padding
 - [v74.4.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.46): fix(workspaceUnloading): Workspace is unloaded now if softLocked
 - [v74.4.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.45): fix(buttonType): Button types re-added for new li-buttons
