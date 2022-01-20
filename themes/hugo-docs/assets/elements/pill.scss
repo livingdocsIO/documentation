@@ -1,5 +1,4 @@
 .pill {
-  @include ellipsis;
   @extend %font-s-xs;
   padding: 4px $space-s;
   color: $color-black;
@@ -8,6 +7,7 @@
   border-radius: 15px;
   cursor: pointer;
   user-select: none;
+  white-space: nowrap;
 
   transition: border $transition-time ease-in;
   border: 1px solid transparent;

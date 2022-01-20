@@ -20,16 +20,23 @@
   }
 
   &__header {
+    @include mobile-scroll();
     @include box-shadow();
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: $space-xs;
     position: relative;
     padding: 1.5 * $space-s;
+    overflow-x: auto;
+
+    @include media-query(tablet) {
+      justify-content: center;
+    }
   }
 
   &__main {
+    @include mobile-scroll();
     overflow: auto;
   }
 }
