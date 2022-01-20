@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix: Project Settings Screens [livingdocs-editor #4984 v74.26.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4984)
 * :new: fix: enable show comments after creating a new comment [livingdocs-editor #4976 v74.26.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4976)
 * :new: Fix SSO strategy builder parameters [livingdocs-server #4192 v162.0.3](https://github.com/livingdocsIO/livingdocs-server/pull/4192)
 * :new: Use correct elasticsearch client for index search [livingdocs-server #4189 v162.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4189)
