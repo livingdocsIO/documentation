@@ -38,13 +38,20 @@ metadata: [{
   handle: 'title',
   plugin: 'li-text',
   config: {
+    // li-text specific configs
     maxLength: 200,
+
+    // general configs available for all plugins
     required: true,
     requiredErrorMessage: 'please provide a title'
   }
 }, {
   handle: 'slug',
   plugin: 'li-text',
+  config: {
+    // Do not display this field in the Editor
+    hideFromForm: true
+  }
 }, {
   handle: 'seo',
   plugin: 'li-seo'
