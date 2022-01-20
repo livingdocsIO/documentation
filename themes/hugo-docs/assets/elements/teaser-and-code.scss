@@ -12,6 +12,7 @@
       opacity 1.5 * $transition-time ease;
 
     &.show {
+      height: auto;
       margin-top: $space-m;
       opacity: 1;
     }
