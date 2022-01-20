@@ -333,8 +333,17 @@ const teaserAndCodes = document.querySelectorAll('.teaser-and-code')
 teaserAndCodes.forEach(function(teaserAndCode) {
   if (teaserAndCode.querySelector('.code-teaser--with-interaction') != undefined) {
     teaserAndCode.querySelector('.code-teaser--with-interaction').addEventListener('click', (evt) => {
-      evt.target.closest('.teaser-and-code').querySelector('.code-teaser').classList.toggle('code-teaser--open')
-      evt.target.closest('.teaser-and-code').querySelector('.teaser-and-code__code').classList.toggle('show')
+      const highlight = evt.target.closest('.teaser-and-code').querySelector('.highlight')
+      const teaser = evt.target.closest('.teaser-and-code').querySelector('.code-teaser')
+      const code = evt.target.closest('.teaser-and-code').querySelector('.teaser-and-code__code')
+
+      const codeHeight = code.offsetHeight
+      let targetHeight = highlight.offsetHeight + 1 // + 1 to make up for calculation inacurracy
+      if (codeHeight > 0) targetHeight = 0
+
+      teaser.classList.toggle('code-teaser--open')
+      code.classList.toggle('show')
+      code.style.height=`${targetHeight}px`
     })
   }
 })

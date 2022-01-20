@@ -1,13 +1,19 @@
 .teaser-and-code {
   &__code {
-    display: none;
-    max-height: $space-m;
-    margin-top: $space-m;
+    height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     overflow: hidden;
+    opacity: 0;
+
+    transition:
+      height 1.5 * $transition-time ease,
+      margin-top 1.5 * $transition-time ease,
+      opacity 1.5 * $transition-time ease;
 
     &.show {
-      display: block;
-      max-height: none;
+      margin-top: $space-m;
+      opacity: 1;
     }
   }
 
