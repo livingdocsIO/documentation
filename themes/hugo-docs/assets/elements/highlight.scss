@@ -1,6 +1,10 @@
 .highlight {
   @include explode-to-max-width;
   position: relative;
+
+  &--nested-1 {
+    @include explode-to-max-width(1);
+  }
 }
 
 // generated using

@@ -1,28 +1,25 @@
 $api-example-padding: $space-m;
 
 .api-example {
+  @include explode-to-max-width;
   @include box-shadow;
   padding: $api-example-padding $api-example-padding 0;
   margin-bottom: $space-l;
   border-radius: 3 * $rounded-corners;
   overflow: hidden;
 
-  @include media-query(widescreen) {
-    $shift: '50% + #{$page-sidebar-width + $space-l} - 50vw';
-    width: calc(100% + 2 * #{$api-example-padding} - 2 * (#{$shift}));
-    margin-right: calc(#{$shift});
-  }
-
-  @include media-query(ultrawide) {
-    $shift: '50% + #{$page-sidebar-width + $space-l - $breakpoint-ultrawide / 2}';
-    width: calc(100% + 2 * #{$api-example-padding} - 2 * (#{$shift}));
-    margin-right: calc(#{$shift});
-  }
-
   &__title {
     padding-bottom: $space-m;
     margin-top: 0;
     border-bottom: 1px solid $color-grey-6;
+  }
+
+  .highlight {
+    @extend .highlight--nested-1;
+  }
+
+  table {
+    @extend .table--nested-1;
   }
 
   table,
