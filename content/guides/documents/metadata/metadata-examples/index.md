@@ -119,7 +119,6 @@ module.exports = {
     },
     ui: {
       compononent: 'bpSlugForm',
-      service: 'bpSlugService',
       config: {
         label: 'Slug',
         placeholder: 'Set a slug'
@@ -131,11 +130,11 @@ module.exports = {
 
 This defines a `metadata` property `slug`. It has a custom metadata `plugin` set to `bp-slug`. We are going to see later on how to define this plugin.
 
-There is also a custom component for the the form in editor defined via `ui.component`. It describes how the editor displays the `slug` metadata. It has a form: `bpSlugForm`, and a custom service `bpSlugService`.
+There is also a custom component for the the form in editor defined via `ui.component`. It describes how the editor displays the `slug` metadata.
 
-The component is an Angular component and the custom service refers to some business logic code defined separately in the Editor.
+This custom component is implemented with Vue and registered through the vueComponentRegistry.
 
-The `bp` prefix stands for one of our downstream named: *boilerplate*. It's generally a good practice to prefix custom components in Angular as all components are registered globally.
+The `bp` prefix stands for one of our downstream named: *boilerplate*. It's generally a good practice to prefix custom components to not clash with with any potential components from Livingdocs.
 
 Next step is to create a file to implement a simple custom server plugin.
 `plugins/metadata/bp-slug.js`:
@@ -158,97 +157,62 @@ module.exports = {
 
 #### Editor
 
-In the editor we need to create the form defined in the server as `'bp-slug-form'`.
+In the editor we need to create the form defined in the metadata configuration: `bpSlugForm`.
 
 Add the following files in `plugins/metadata/bp-slug/form`:
 
 - `index.js`
   ```js
   module.exports = (editorModule) => {
-    editorModule.component('bpSlugForm', {
-      template: require('./template.html'),
-      controller: require('./controller'),
-      bindings: {
-        name: '@', // The name of the metadata field:'slug'
-        type: '@' // The type of document for which this form is used: 'article'
-      }
+    editorModule.vueComponentRegistry.registerComponent({
+      type: 'metadataPlugin',
+      name: 'bpSlugForm',
+      component: require('./bp-slug-form.vue').default
     })
   }
   ```
 
-- `template.html`
+- `bp-slug-form.vue`
   ```html
-  <div class="ld-form-group ld-form-group--horizontal">
-    <div class="ld-form-group__label">
-      <label>{{$ctrl.label}}</label>
-    </div>
-    <div class="ld-form-group__content">
-      <input class="ld-text-input ld-text-input--full-width"
-        ng-change="$ctrl.enteringText()"
+  <template>
+    <div class="bp-slug-form">
+      <input
+        :id="id"
+        :value="value"
+        :placeholder="placeholder"
+        :disabled="disabled"
         type="text"
-        ng-model="$ctrl.slug">
+        @input="handleInput($event.target.value)"
+      >
     </div>
-  </div>
-  ```
-
-- `controller.js`
-  ```js
-  module.exports = class BpSlugController {
-    static get $inject () { return ['editor'] }
-
-    constructor (editor) {
-      const metadataForm = editor.workspace.metadataForm
-      const {service, label} = metadataForm.getFormConfig(this.name, this.type)
-      this.service = metadataForm.getService(service)
-      this.slug = this.service.get(this.name)
-      this.label = label
+  </template>
+  <script>
+  export default {
+    name: 'BpSlugForm',
+    props: {
+      value: {
+        type: String,
+        default: undefined
+      }
+      handle: {
+        type: String,
+        required: true
+      },
+      uiConfig: {
+        type: Object,
+        default: undefined
+      }
+    },
+    computed: {
+      placeholder () {
+        return this.uiConfig?.placeholder || `Enter a ${this.handle}`
+      }
+    },
+    methods: {
+      handleInput (value) {
+        this.$emit('input', value?.replace(/ /g, '-'))
+      }
     }
-
-    enteringText () {
-      this.slug = this.service.set(this.name, this.slug)
-    }
   }
+  </script>
   ```
-
-In the server there was also a custom service named: `'bpSlugService'`, we need to create it.
-
-Add `plugins/metadata/bp-slug/service/index.js`:
-```js
-class BpSlugService {
-
-  constructor (metadata, $injector) {
-    this.metadata = metadata
-  }
-
-  set (identifier, slug) {
-    const normalized = slug.replace(/ /g, '-')
-    this.metadata.set(identifier, normalized)
-    return normalized
-  }
-
-  get (identifier) {
-    return this.metadata.get(identifier)
-  }
-
-}
-
-module.exports = ({metadata, $injector}) => {
-  return new BpSlugService(metadata, $injector)
-}
-```
-
-Finally, the form and the service are to be registered.
-
-In `app/editor.js`:
-
-```js
-const editorModule = window.angular.module('livingdocs-editor')
-
-require('../plugins/metadata/bp-slug/form/bp-slug')(editorModule)
-
-liEditor.metadataServices
-  .register(
-    'bpSlugService',
-    require('../plugins/metadata/bp-slug/service')
-  )
-```
