@@ -147,10 +147,10 @@ We integrated `Retresco` tagging system to automatically add tags to a document 
 
 ## Video Includes
 
-TODO@ajwild: add a description + documentation
+Video includes provide a more flexible approach to embedding videos within a document than using the standard media library entry directly. The media library approach does not have an integrated solution for video transcoding, so it would only be possible to render the original video file to HTML. On the other hand, using an include service allows you to hook into an external service or data store which could provide the transcoded assets you require.
 
 * References
-  * [TODO: Documentation]()
+  * [Documentation]({{< ref "/guides/media-library/video-includes" >}})
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4796)
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4054)
   * [Video reference form upload](https://github.com/livingdocsIO/livingdocs-editor/pull/4823)
