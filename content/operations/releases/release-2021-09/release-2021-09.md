@@ -164,6 +164,10 @@ We removed Callback support in several server API's as we noticed many bugs orig
 - 🔥 remove callback support for tasksApi (`server.features.api('li-tasks')`) functions. Only promise based calls are supported
 - 🔥 remove callback support for designsApi (`server.features.api('li-designs')`) functions. Only promise based calls are supported
 - 🔥 remove callback support for cacheApi (`server.features.api('li-cache')`) functions. Only promise based calls are supported
+- 🔥 remove callback support for includesApi (`server.features.api('li-includes')`) functions. Only promise based calls are supported
+- 🔥 remove callback support for publicApi (`server.features.api('li-public-api')`) functions. Only promise based calls are supported
+- 🔥 remove callback support for importApi (`server.features.api('li-import')`) functions. Only promise based calls are supported
+- 🔥 remove callback support for documentListApi (`server.features.api('li-document-lists')`) functions. Only promise based calls are supported
 - 🔥 remove callback support for migrationApi (`server.features.api('li-migrations')`) functions. Only promise based calls are supported
 - 🔥 remove callback support for emailApi (`server.features.api('li-emails')`) functions. Only promise based calls are supported
 - 🔥 remove callback support for routingApi (`server.features.api('li-routing')`) functions. Only promise based calls are supported
