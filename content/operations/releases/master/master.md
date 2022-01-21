@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Server configuration: Expose mediaLibrary.images.processing.lossy.maxDimension [livingdocs-server #4187 v162.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4187)
 * :new: Automatic named crops: Take into account maxDimension from server config [livingdocs-editor #4981 v74.27.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4981)
 * :new: Improvement/buttons and small visual improvements [livingdocs-editor #4985 v74.26.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4985)
 * :new: Fix: Project Settings Screens [livingdocs-editor #4984 v74.26.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4984)
