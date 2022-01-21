@@ -11,6 +11,7 @@ menus:
 The Livingdocs Editor can be customized by using your own components. Components are referenced by name in configurations. For Livingdocs to pick up your components, you need to register them first.
 Livingdocs provides an API to register custom components written in VueJS. They are always register with a certain type. The supported types are:
 
+- [metadataPlugin](#metadataPlugin)
 - [includeParamsSidebarForm](#includeparamssidebarform)
 - [dashboardCard](#dashboardcard)
 - [searchFilter](#searchfilter)
@@ -34,6 +35,76 @@ As you can see, [Vue Single File Components](https://vuejs.org/v2/guide/single-f
 
 
 ## Types
+
+### metadataPlugin
+
+A `metadataPlugin` is used to render a metadata plugin UI in the Metadata Form.
+
+These are the `props` which are provided to your vue component:
+```js
+props: {
+  value: {
+    // type is depending on the metadata plugin
+    // you should be specific here in your component
+    type: [Object, String, Array, Number, Boolean],
+    required: true
+  },
+  disabled: {
+    type: Boolean,
+    default: false
+  },
+  id: {
+    type: String,
+    required: true
+  },
+  handle: {
+    type: String,
+    required: true
+  },
+  config: {
+    type: Object,
+    required: true
+  },
+  uiConfig: {
+    type: Object,
+    required: true
+  },
+  // a reactive read-only object with keys for every
+  // metadata property on the document/media library entry
+  metadataProperties: {
+    type: Object,
+    required: true
+  },
+  // holding a video or image or file property when the metadata form
+  // is loaded in the media library, empty object otherwise
+  entities: {
+    type: Object,
+    required: true
+  },
+  // only given if configured
+  dataProvider: {
+    type: Object,
+    default: undefined
+  }
+}
+```
+
+### searchFilter
+A `searchFilter` registers a Vue component as filter for the search UI.
+
+These are the `props` which are provided to your vue component:
+```js
+props: {
+  filter: {
+    type: Object,
+    default: () => {}
+  }
+},
+```
+
+A full example can be seen [here]({{< ref "/guides/editor/custom-dashboard-filters#register-custom-vue-component-filter" >}})
+
+
 
 ### includeParamsSidebarForm
 
