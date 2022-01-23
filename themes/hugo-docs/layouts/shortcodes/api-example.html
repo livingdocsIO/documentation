@@ -16,24 +16,24 @@
 {{- $parameters := index $segmentsParameters 0 | markdownify -}}
 {{- $description := index $segmentsDescription 0 | markdownify -}}
 
-<div class="api-example{{ with (eq $title "") }} api-example--no-title{{ end }}{{ if $beta }} api-example--beta{{ end }}">
+<div class="api-example{{ if (eq $title "") }} api-example--no-title{{ end }}{{ if $beta }} api-example--beta{{ end }}">
 
-  {{- with (ne $title "") -}}
+  {{- if (ne $title "") -}}
     <h2 class="api-example__title">{{ $title }}</h2>
   {{- end -}}
 
-  {{- with (ne $description "") -}}
+  {{- if (ne $description "") -}}
     <div class="api-example__description">
       <h4>Description</h4>
       {{- $description -}}
     </div>
   {{- end -}}
 
-  {{- with (ne $query "") -}}
+  {{- if (ne $query "") -}}
     <div class="api-example__curl">
       <div class="teaser-and-code">
         <div class="teaser-and-code__teaser">
-          <div class="code-teaser{{ with (ne $showResponseCode true) }} code-teaser--with-interaction{{ end }}">
+          <div class="code-teaser{{ if (ne $showResponseCode true) }} code-teaser--with-interaction{{ end }}">
             <div class="code-teaser__interaction">
               <span class="arrow"></span>
             </div>
@@ -48,19 +48,19 @@
     </div>
   {{- end -}}
 
-  {{- with (ne $endpoint "") -}}
+  {{- if (ne $endpoint "") -}}
     <h4>Endpoint</h4>
     {{- $endpoint -}}
   {{- end -}}
 
-  {{- with (ne $parameters "") -}}
+  {{- if (ne $parameters "") -}}
     <h4>Parameters</h4>
     {{- $parameters -}}
   {{- end -}}
 
-  {{- with (ne (index $segmentsResponse 0) "") -}}
+  {{- if (ne (index $segmentsResponse 0) "") -}}
     <div class="api-example__response">
-      <h4>Response{{ with (eq $responseBlurry true) }} (may differ in details){{ end }}</h4>
+      <h4>Response{{ if (eq $responseBlurry true) }} (may differ in details){{ end }}</h4>
 
       {{- range $item, $segmentsResponse -}}
         {{- $code := index (split $item "---") 0  | markdownify -}}
@@ -70,22 +70,22 @@
         <div class="api-example__response-entry">
           <div class="teaser-and-code">
             <div class="teaser-and-code__teaser">
-              <div class="code-teaser{{ with (ne $showResponseCode true) }} code-teaser--with-interaction{{ end }}{{ with (eq $code "200") }} code-teaser--success{{ end }}{{ with (ne $code "200") }} code-teaser--error{{ end }}">
+              <div class="code-teaser{{ if (ne $showResponseCode true) }} code-teaser--with-interaction{{ end }}{{ if (eq $code "200") }} code-teaser--success{{ end }}{{ if (ne $code "200") }} code-teaser--error{{ end }}">
                 <div class="code-teaser__interaction">
                   <span class="arrow"></span>
                 </div>
                 
                 <div class="code-teaser__code">{{ $code }}</div>
-                {{- with (eq $code "200") -}}<div class="code-teaser__name">OK</div>{{- end -}}
-                {{- with (eq $code "301") -}}<div class="code-teaser__name">Moved Permanently</div>{{- end -}}
-                {{- with (eq $code "400") -}}<div class="code-teaser__name">Bad Request</div>{{- end -}}
-                {{- with (eq $code "401") -}}<div class="code-teaser__name">Unauthorized</div>{{- end -}}
-                {{- with (eq $code "403") -}}<div class="code-teaser__name">Forbidden</div>{{- end -}}
-                {{- with (eq $code "404") -}}<div class="code-teaser__name">Not Found</div>{{- end -}}
-                {{- with (eq $code "409") -}}<div class="code-teaser__name">Conflict</div>{{- end -}}
-                {{- with (eq $code "429") -}}<div class="code-teaser__name">Usage Limit Exceeded</div>{{- end -}}
-                {{- with (eq $code "500") -}}<div class="code-teaser__name">Bad Request</div>{{- end -}}
-                {{- with (ne $endpoint "") -}}<div class="code-teaser__endpoint">{{ $endpoint }}</div>{{- end -}}
+                {{- if (eq $code "200") -}}<div class="code-teaser__name">OK</div>{{- end -}}
+                {{- if (eq $code "301") -}}<div class="code-teaser__name">Moved Permanently</div>{{- end -}}
+                {{- if (eq $code "400") -}}<div class="code-teaser__name">Bad Request</div>{{- end -}}
+                {{- if (eq $code "401") -}}<div class="code-teaser__name">Unauthorized</div>{{- end -}}
+                {{- if (eq $code "403") -}}<div class="code-teaser__name">Forbidden</div>{{- end -}}
+                {{- if (eq $code "404") -}}<div class="code-teaser__name">Not Found</div>{{- end -}}
+                {{- if (eq $code "409") -}}<div class="code-teaser__name">Conflict</div>{{- end -}}
+                {{- if (eq $code "429") -}}<div class="code-teaser__name">Usage Limit Exceeded</div>{{- end -}}
+                {{- if (eq $code "500") -}}<div class="code-teaser__name">Bad Request</div>{{- end -}}
+                {{- if (ne $endpoint "") -}}<div class="code-teaser__endpoint">{{ $endpoint }}</div>{{- end -}}
               </div>
             </div>
             <div class="teaser-and-code__code{{ if $showResponseCode }} show{{ end }}">
