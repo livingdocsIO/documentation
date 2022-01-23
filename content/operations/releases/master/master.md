@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: oEmbed Include [livingdocs-editor #4942 v74.28.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4942)
 * :new: Fix google vision API [livingdocs-server #4198 v162.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4198)
 * :new: fix: reopen comment doesn't mark the comment [livingdocs-editor #4987 v74.27.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4987)
 * :new: Server configuration: Expose mediaLibrary.images.processing.lossy.maxDimension [livingdocs-server #4187 v162.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4187)
