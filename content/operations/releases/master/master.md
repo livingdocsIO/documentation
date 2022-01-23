@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Remove Support for tasks-v1 [livingdocs-server #4196 v163.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4196)
 * :new: Remove Support for tasks-v1 [livingdocs-editor #4361 v75.0.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4361)
 * :new: oEmbed Include [livingdocs-server #4156 v162.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4156)
 * :new: oEmbed Include [livingdocs-editor #4942 v74.28.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4942)
