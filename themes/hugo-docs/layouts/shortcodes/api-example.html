@@ -1,4 +1,5 @@
 {{- $title := .Get "title" -}}
+{{- $release := .Get "release" -}}
 {{- $beta := .Get "beta" -}}
 {{- $showResponseCode := .Get "showResponseCode" -}}
 {{- $responseBlurry := .Get "responseBlurry" -}}
@@ -20,6 +21,10 @@
 
   {{- if (ne $title "") -}}
     <h2 class="api-example__title">{{ $title }}</h2>
+  {{- end -}}
+
+  {{- if (ne $release "") -}}
+    {{- partial "added-in" (dict "release" $release "block" true) -}}
   {{- end -}}
 
   {{- if (ne $description "") -}}
