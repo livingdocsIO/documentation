@@ -1,1 +1,3 @@
-<span class="added-in">Added in: <a href="/operations/releases/{{ .Get 0 }}/{{ .Get 0 }}/"><code>{{ .Get 0 }}</code></a></span>{{- "" -}}
+{{- $release := .Get 0 -}}
+{{- $block := .Get 1 -}}
+{{- partial "added-in" (dict "release" $release "block" $block) -}}
