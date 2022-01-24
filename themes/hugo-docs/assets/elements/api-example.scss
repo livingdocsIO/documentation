@@ -15,11 +15,11 @@ $api-example-padding: $space-m;
   }
 
   .highlight {
-    @extend .highlight--nested-1;
+    @extend .highlight--fit-parent;
   }
 
   table {
-    @extend .table--nested-1;
+    @extend .table--fit-parent;
   }
 
   table,

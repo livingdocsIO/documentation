@@ -6,8 +6,9 @@ table {
   border-spacing: 0;
   border-collapse: collapse;
 
-  &--nested-1 {
-    @include explode-to-max-width(1);
+  &--fit-parent {
+    width: 100%;
+    margin-right: 0;
   }
 }
 
