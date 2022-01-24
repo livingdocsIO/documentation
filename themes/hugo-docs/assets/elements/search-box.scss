@@ -23,6 +23,7 @@
     @include mobile-scroll();
     @include box-shadow();
     display: flex;
+    flex-shrink: 0;
     justify-content: flex-start;
     align-items: center;
     gap: $space-xs;
