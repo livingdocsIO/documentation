@@ -46,12 +46,12 @@
 
   ul {
     @extend %font-s-xs;
-    margin: 0;
-    color: darken($color-cyan-1, 5%);
-    padding: 0;
-    list-style-position: inside;
-  }
+    padding-left: 2 * $space-s;
 
+    li {
+      margin-bottom: $space-xs;
+    }
+  }
 }
 
 .section-teaser--guides {
