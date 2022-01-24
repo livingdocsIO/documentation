@@ -22,7 +22,12 @@
         ul { // scss-lint:disable SelectorDepth
           list-style-type: none;
           padding: 0;
-          margin-left: $space-s;
+          margin-left: 14px;
+        }
+
+        // this gets rid of empty toc hierarchy levels
+        & > ul:first-child:last-child {
+          margin-left: 0;
         }
       }
     }
