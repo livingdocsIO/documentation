@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Publish Control Queue - Part 1 [livingdocs-server #4193 v164.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4193)
 * :new: fix(iframe button styles): Now flex and correct styles [livingdocs-editor #4993 v75.0.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4993)
 * :new: Do not support callbacks in documentApi/projectApi/channelConfig/pushNotifications/pusherApi [livingdocs-server #4194 v164.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4194)
 * :new: Remove Support for tasks-v1 [livingdocs-server #4196 v163.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4196)
