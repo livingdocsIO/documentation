@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(search): Only search by id for valid 4 byte integers [livingdocs-editor #4996 v75.0.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4996)
 * :new: feat(tests): add drone config for nzz multicluster tests [livingdocs-server #4195 v164.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4195)
 * :new: fix(includes): pass paramsSchemaExtension to includes core api getter [livingdocs-editor #4994 v75.0.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4994)
 * :new: Publish Control Queue - Part 1 [livingdocs-server #4193 v164.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4193)
