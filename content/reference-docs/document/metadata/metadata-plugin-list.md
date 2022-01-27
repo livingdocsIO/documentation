@@ -3,51 +3,66 @@ title: Metadata Plugin List
 menus:
   reference-docs:
     parent: Metadata
+renderTOC: false
 ---
 
-## Text Input
+## Overview
 
-ContentType metadata config:
+This overview contains a list of all available metadata plugins ready to use.
+
+|Metadata Field|Metadata Plugin Type|Description|
+|-|-|-|
+|[Text](#text)|li-text|Text field|
+|[Textarea](#textarea)|li-text|Textarea field|
+|[Select Box](#select-box)|||
+|[Multiselect Box](#multiselect-box)|||
+|[Image](#image)|||
+|[Checkbox](#checkbox)|||
+|[Datetime](#datetime)|||
+|[Reference](#reference)|||
+|[Reference List](#reference-list)|||
+|[List Reference](#list-reference)|||
+|[Slug](#slug)|||
+|[Metadata Translations](#metadata-translations)|||
+
+Go to [Metadata]({{< ref "/reference-docs/document/metadata" >}}) to get an overview of the metadata concept.
+
+## Text
+
+With `li-text` you can add a simple text field.
+
+### UI
+
+{{< img src="./images/max-length.png" alt="Shows how the max length behavior affects the editor" >}}
+
+### Config
+
 ```js
+// projectConfig contentType[].metadata
 metadata: [{
   handle: 'title',
   type: 'li-text',
   ui: {
-    component: 'liMetaTextForm',
-    service: 'customServicePlugin', // optional
     label: 'foo', // optional, takes camelized name otherwise
     config: {
       placeholder: 'bar', // optional, takes camelized name otherwise
       readOnly: false, // optional, false by default
-      maxLength: 200 // optional, integer, not used by default. Enables small UI, see screenshow below
+      maxLength: 200 // optional, integer, not used by default. Enables small UI when set, see screenshow below
     }
   }
 }]
 ```
 
-You need to make sure that your server-side metadata field is of type `li-text` otherwise you will get errors.
-`readOnly` and `maxLength` let you customize the behavior of the text input. The text input will automatically display some visual help if a `maxLength` is set:
-
-{{< img src="./images/max-length.png" alt="Shows how the max length behavior is affects the editor" >}}
-
-The `service` option lets you customize the business logic of a metadata form field. Check the section [registering a metadata service](#registering-a-metadata-service) later on how to register a service.
-The service plugin for a text input allows you to customize the logic for the following methods:
-
+#### Storage
 ```js
-{
-  // init the value of the text input
-  init (identifier) {},
-
-  // set the value
-  set (identifier, text) {}
+metadata: {
+  title: 'string'
 }
 ```
 
-There is a sample implementation in `plugins/metadata_services/default_text_service.coffee` to help you get started.
+## Textarea
 
-## Textarea input
-
-This is almost exactly the same as the text input, except for the `rows` config.
+With `li-text` you can add a textarea field too. The difference to [Text](#text) is that you have to define `ui.config.rows`.
 
 ContentType metadata config:
 ```js
@@ -61,7 +76,6 @@ metadata: [{
   },
   ui: {
     component: 'liMetaTextareaForm',
-    service: 'customServicePlugin', // optional
     label: 'foo', // optional, takes camelized name otherwise
     config: {
       placeholder: 'bar', // optional, takes camelized name otherwise
@@ -72,23 +86,6 @@ metadata: [{
   }
 }]
 ```
-
-You need to make sure that your server-side metadata field is of type `li-text` otherwise you will get errors.
-`readOnly` and `maxLength` let you customize the behavior of the text input.
-The `service` option lets you customize the business logic of a metadata form field. Check the section [registering a metadata service](#registering-a-metadata-service) later on how to register a service.
-The service plugin for a textarea input is exactly the same as for the text input and allows you to customize the logic for the following methods:
-
-```js
-{
-  // init the value of the text input
-  init (identifier) {},
-
-  // set the value
-  set (identifier, text) {}
-}
-```
-
-There is a sample implementation in `plugins/metadata_services/default_text_service.coffee` to help you get started.
 
 ## Select Box
 
