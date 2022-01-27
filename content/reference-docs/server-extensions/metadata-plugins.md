@@ -8,7 +8,7 @@ menus:
 
 ## Overview
 
-A metadata plugin defines the format and validation of a metadata value. It also defines how this value is indexed in elasticsearch in the publication index.
+A metadata plugin defines the format and validation of a metadata value. It also defines how this value is indexed in the elasticsearch publication index.
 
 There are synchronous hooks for update, publish and unpublish events.
 
@@ -84,3 +84,6 @@ module.exports = {
   }
 }
 ```
+
+## References
+- [Metadata]({{< ref "/reference-docs/document/metadata" >}})

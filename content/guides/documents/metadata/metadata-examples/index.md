@@ -216,3 +216,6 @@ Add the following files in `plugins/metadata/bp-slug/form`:
   }
   </script>
   ```
+
+## References
+- [Metadata]({{< ref "/reference-docs/document/metadata" >}})
