@@ -82,23 +82,21 @@ contentTypes: [{
       disableEditTitleAtToolbar: false
     },
 
-    frontend: {
-      // One or multiple deliveryLinks are show in the publish panel
-      // They should point to your frontends
-      // url can be a pattern containing these placeholders:
-      // :path
-      // :routingPath
-      // :id
-      // :projectId
-      // :slug
-      deliveryLinks: [
-        {
-          url: 'http://localhost:9999/:slug',
-          icon: 'link-variant',
-          label: 'Publish link'
-        }
-      ]
-    }
+    // One or multiple deliveryLinks are show in the publish panel
+    // They should point to your frontends
+    // url can be a pattern containing these placeholders:
+    // :path
+    // :routingPath
+    // :id
+    // :projectId
+    // :slug
+    deliveryLinks: [
+      {
+        url: 'http://localhost:9999/:slug',
+        icon: 'link-variant',
+        label: 'Publish link'
+      }
+    ]
   },
 
   // if enabled is true this content-type will use the WoodWing
