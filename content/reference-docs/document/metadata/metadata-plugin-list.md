@@ -8,57 +8,92 @@ renderTOC: false
 
 ## Overview
 
-This overview contains a list of all available metadata plugins ready to use.
-
-|Metadata Field|Metadata Plugin Type|Description|
-|-|-|-|
-|[Text](#text)|li-text|Text field|
-|[Textarea](#textarea)|li-text|Textarea field|
-|[Select Box](#select-box)|||
-|[Multiselect Box](#multiselect-box)|||
-|[Image](#image)|||
-|[Checkbox](#checkbox)|||
-|[Datetime](#datetime)|||
-|[Reference](#reference)|||
-|[Reference List](#reference-list)|||
-|[List Reference](#list-reference)|||
-|[Slug](#slug)|||
-|[Metadata Translations](#metadata-translations)|||
-
+This overview contains a list of all metadata plugins provided by Livingdocs.
 Go to [Metadata]({{< ref "/reference-docs/document/metadata" >}}) to get an overview of the metadata concept.
+You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-examples" >}}) in the downstream.
 
-## Text
 
-With `li-text` you can add a simple text field.
+| Metadata Plugin                | Metadata Plugin Type | Description                | UI                     |
+| ------------------------------ | -------------------- | -------------------------- | ---------------------- |
+| [String](#li-text)             | li-text              | Stores a String            | text, textarea, select |
+| [String List](#li-string-list) | li-string-list       | Stores an Array of Strings | multiselect            |
+
+
+## li-text
+**Data Format**: String
+**UI**: text input, textarea, select
 
 ### UI
+- Renders a select element if a `dataProvider` is configured
+- Renders a textarea if `ui.component` is set to `LiMetaFormTextarea`
+- Renders a text input otherwise
 
 {{< img src="./images/max-length.png" alt="Shows how the max length behavior affects the editor" >}}
 
 ### Config
 
 ```js
-// projectConfig contentType[].metadata
+// contentType[].metadata / mediaType[].metadata
 metadata: [{
   handle: 'title',
   type: 'li-text',
+  config: {
+    maxLength: 200,   // optional
+    useAsTitle: true, // default: false, synchronises the value with document.title if true
+    dataProvider: {   // optional: any dataProvider
+      type: 'labelValuePair',
+      items: [
+        {label: 'Item A', value: 'a'},
+        {label: 'Item B', value: 'b'},
+        {label: 'Item C', value: 'c'}
+      ]
+    }
+  },
   ui: {
-    label: 'foo', // optional, takes camelized name otherwise
+    label: 'foo', // optional
+    component: 'LiMetaFormTextarea' // optional
     config: {
-      placeholder: 'bar', // optional, takes camelized name otherwise
-      readOnly: false, // optional, false by default
-      maxLength: 200 // optional, integer, not used by default. Enables small UI when set, see screenshow below
+      placeholder: 'bar', // optional
+      readOnly: true,     // default: false
     }
   }
 }]
 ```
 
-#### Storage
+## li-string-list
+**Data Format**: Array of Strings
+**UI**: Multiselect
+
+### UI
+Always renders a Multiselect UI. Needs a `dataProvider` to work.
+
+### Config
+
 ```js
-metadata: {
-  title: 'string'
-}
+// contentType[].metadata / mediaType[].metadata
+metadata: [{
+  handle: 'myStringList',
+  type: 'li-string-list',
+  config: {
+    dataProvider: { // required: any dataProvider
+      type: 'labelValuePair',
+      items: [
+        {label: 'Item A', value: 'a'},
+        {label: 'Item B', value: 'b'},
+        {label: 'Item C', value: 'c'}
+      ]
+    }
+  },
+  ui: {
+    label: 'foo', // optional
+    config: {
+      readOnly: true, // default: false
+    }
+  }
+}]
 ```
+
+# Legacy Docs
 
 ## Textarea
 
