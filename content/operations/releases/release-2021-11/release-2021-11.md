@@ -351,6 +351,7 @@ References:
 - [v157.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.9): return revision also in case metadata_id is null
 
 ### Livingdocs Editor Patches
+- [v74.4.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.53): chore: adapt test by adding fields on the search documents query
 - [v74.4.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.52): minor change
 - [v74.4.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.51): fix(includes): pass paramsSchemaExtension to includes core api getter
 - [v74.4.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.50): removed unnecessary line of code
