@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: add project_id to the fields on the search documents query [livingdocs-editor #4998 v75.0.7](https://github.com/livingdocsIO/livingdocs-editor/pull/4998)
 * :new: fix: vue sidebars are mounted twice [livingdocs-editor #5000 v75.0.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5000)
 * :new: Queue metrics [livingdocs-server #4203 v164.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4203)
 * :new: fix: prevent editing of deleted documents [livingdocs-editor #4974 v75.0.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4974)
