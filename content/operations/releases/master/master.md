@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: vue sidebars are mounted twice [livingdocs-editor #5000 v75.0.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5000)
 * :new: Queue metrics [livingdocs-server #4203 v164.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4203)
 * :new: fix: prevent editing of deleted documents [livingdocs-editor #4974 v75.0.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4974)
 * :new: Named Crops: fix preview [livingdocs-editor #4992 v75.0.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4992)
