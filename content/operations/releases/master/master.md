@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(search): Add exact ID match to draft and publication searches [livingdocs-server #4210 v164.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4210)
 * :new: fix(media-library): Set reference in video include drop handler [livingdocs-editor #4999 v75.0.8](https://github.com/livingdocsIO/livingdocs-editor/pull/4999)
 * :new: fix: add project_id to the fields on the search documents query [livingdocs-editor #4998 v75.0.7](https://github.com/livingdocsIO/livingdocs-editor/pull/4998)
 * :new: fix: vue sidebars are mounted twice [livingdocs-editor #5000 v75.0.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5000)
