@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: bump framework to version 22.1.5 [livingdocs-editor #5010 v75.1.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5010)
 * :new: fix: bump framework to version 22.1.5 [livingdocs-server #4213 v164.4.3](https://github.com/livingdocsIO/livingdocs-server/pull/4213)
 * :new: Remove the `isActive` condition of `li-project-secrets` feature [livingdocs-server #4208 v164.4.2](https://github.com/livingdocsIO/livingdocs-server/pull/4208)
 * :new: improvement/li-mails-update [livingdocs-server #4211 v164.4.1](https://github.com/livingdocsIO/livingdocs-server/pull/4211)
