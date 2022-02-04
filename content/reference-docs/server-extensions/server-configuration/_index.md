@@ -1131,7 +1131,12 @@ There is a general `integrations` configuration for small integrations that can 
       allowed: true
     },
     imatrics: {
-      allowed: true
+      allowed: true,
+      ensureExtraction: true
+    },
+    retresco: {
+      allowed: true,
+      ensureExtraction: true
     },
     woodwingAssets: {
       allowed: true

@@ -49,6 +49,22 @@ settings: {
         value: 'de'
       }
     },
+    retresco: {
+      enabled: true,
+      apiEndpoint: 'https://<subdomain>.rtrsupport.de/',
+      username: '<username>',
+      password: {
+        $secretRef: {
+          name: '<secret-name>'
+        }
+      },
+      // The component.directive combinations used to extract specific strings.
+      // The first match will be used, but multiple values can be provided so that many
+      // content types can be supported.
+      titleMatches: ['header.title'],
+      supertitleMatches: ['header.catchline'],
+      teaserMatches: ['header.lead', 'p.text']
+    },
     comyan: {
       enabled: true,
       buttonLabel: 'open comyan'
@@ -217,6 +233,7 @@ In general all integrations are under the `integrations` key. We still have some
 Available plugins are:
 - Desk-Net (planning)
 - iMatrics (text auto-tagging)
+- Retresco (text auto-tagging)
 - Google Vision (image auto-tagging)
 - Comyan (external image storage)
 
@@ -243,6 +260,12 @@ imatrics: {
 ```
 
 NOTE: for this to work, the name of the key needs to be unique for every update of the key. You can e.g. append the current date to ensure this or use any other form of unique string appending.
+
+### Retresco
+
+{{< added-in release-2022-03 block >}}
+
+As with [iMatrics](#imatrics) above, the secure secrets feature is used to store the password for the Basic authentication used by the Retresco API. Please note that the integration must also be enabled in the [server config]({{< ref "/reference-docs/server-extensions/server-configuration/#integrations" >}}).
 
 ## Includes
 *has UI support*
