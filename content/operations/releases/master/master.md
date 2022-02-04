@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: chore(tests): Fix flaky tests [livingdocs-editor #5018 v75.1.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5018)
 * :new: fix(resolvecard): comment card buttons realigned [livingdocs-editor #5014 v75.1.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5014)
 * :new: Fix WoodWing Assets [livingdocs-server #4216 v164.4.4](https://github.com/livingdocsIO/livingdocs-server/pull/4216)
 * :new: Load media sources in parallel [livingdocs-editor #5001 v75.1.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5001)
