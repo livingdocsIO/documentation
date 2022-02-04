@@ -212,14 +212,13 @@ If you activate the translation feature, then the `language` metadata plugin on 
 
 Since integrations typically require a correct connection to be establised we strongly advise to use our UIs under "Project Setup" to set them up.
 
-In general all integrations are under the `integrations` key. We still have some legacy markup where the integration is directly on the root (`desknet` and `netlify`), but we will move those in the future.
+In general all integrations are under the `integrations` key. We still have some legacy markup where the integration is directly on the root (`desknet`), but this will be moved in the future.
 
 Available plugins are:
 - Desk-Net (planning)
 - iMatrics (text auto-tagging)
 - Google Vision (image auto-tagging)
 - Comyan (external image storage)
-- Netlify (static rendering)
 
 ### Imatrics
 
