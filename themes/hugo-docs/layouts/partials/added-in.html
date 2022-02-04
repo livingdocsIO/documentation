@@ -1,4 +1,4 @@
-{{- $href := "/operations/releases/{{ .release }}/{{ .release }}/" -}}
+{{- $href := print "/operations/releases/" .release "/" .release "/" -}}
 {{- if .block -}}
 <p class="added-in">Added in: <a href="{{ $href }}"><code>{{ .release }}</code></a></p>
 {{- else -}}
