@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix: Undo doesn't work if you delete a bullet point list [livingdocs-editor #5012 v75.1.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5012)
 * :new: update framework to 23.0.0 [livingdocs-server #4217 v164.4.5](https://github.com/livingdocsIO/livingdocs-server/pull/4217)
 * :new: Move several components at once [livingdocs-editor #4956 v75.1.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4956)
 * :new: chore(tests): Fix flaky tests [livingdocs-editor #5018 v75.1.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5018)
