@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix date time range bookmark [livingdocs-editor #5002 v75.2.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5002)
 * :new: feat: create li-target-length metadata plugin [livingdocs-server #4212 v164.5.0](https://github.com/livingdocsIO/livingdocs-server/pull/4212)
 * :new: feat: create li-meta-target-length form [livingdocs-editor #5009 v75.2.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5009)
 * :new: Fix: Undo doesn't work if you delete a bullet point list [livingdocs-editor #5012 v75.1.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5012)
