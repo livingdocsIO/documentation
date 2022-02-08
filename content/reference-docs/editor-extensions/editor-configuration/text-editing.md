@@ -73,6 +73,8 @@ Example:
       handle: 'bluecolor',
       // the tag which is set around the selection
       tagName: 'span',
+      // if trim is set to true, whitespaces on the left and right of the selection are removed
+      trim: true,
       // the icon which will be displayed. Only existing icons in the editor can be used.
       icon: 'format-color-highlight',
       // the attributes which are set on the tag
@@ -140,6 +142,8 @@ app: {
       boldMarkup: {
         type: 'tag',
         name: 'strong',
+        // if trim is set to true, whitespaces on the left and right of the selection are removed
+        trim: true,
         attribs: {
           'class': 'foo'
         }
@@ -147,6 +151,8 @@ app: {
       italicMarkup: {
         type: 'tag',
         name: 'em',
+        // if trim is set to true, whitespaces on the left and right of the selection are removed
+        trim: true,
         attribs: {
           'class': 'bar'
         }
@@ -154,6 +160,8 @@ app: {
       linkMarkup: {
         type: 'tag',
         name: 'a',
+        // if trim is set to true, whitespaces on the left and right of the selection are removed
+        trim: true,
         attribs: {
           'class': 'foo bar'
         }

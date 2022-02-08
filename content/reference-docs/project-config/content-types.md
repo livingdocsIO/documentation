@@ -397,6 +397,8 @@ Example:
  customElements: [{
       label: 'blue color',
       handle: 'bluecolor',
+      // if trim is set to true, whitespaces on the left and right of the selection are removed
+      trim: true,
       // the tag which is set around the selection
       tagName: 'span',
       // the icon which will be displayed. Only existing icons in the editor can be used.
