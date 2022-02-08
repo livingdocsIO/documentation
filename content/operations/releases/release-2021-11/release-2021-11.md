@@ -352,6 +352,7 @@ References:
 - [v157.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.9): return revision also in case metadata_id is null
 
 ### Livingdocs Editor Patches
+- [v74.4.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.57): chore: address comment
 - [v74.4.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.56): fix(resolvecard): comment card buttons realigned
 - [v74.4.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.55): fix: bump framework to version 21.1.8
 - [v74.4.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.54): fix(buttonStyling): iframe buttons styled
