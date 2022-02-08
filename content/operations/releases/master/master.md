@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Configure a maximum connection lifetime in postgres [livingdocs-server #4220 v164.6.0](https://github.com/livingdocsIO/livingdocs-server/pull/4220)
 * :new: Allow trim config in project config [livingdocs-server #4222 v164.5.1](https://github.com/livingdocsIO/livingdocs-server/pull/4222)
 * :new: Apply custom trim config [livingdocs-editor #5021 v75.2.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5021)
 * :new: Fix date time range bookmark [livingdocs-editor #5002 v75.2.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5002)
