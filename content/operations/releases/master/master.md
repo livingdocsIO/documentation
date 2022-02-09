@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: add property componentGroups in the content_type_config [livingdocs-editor #5024 v75.2.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5024)
 * :new: feat: add a hook to transform the webhook request [livingdocs-server #4218 v164.7.0](https://github.com/livingdocsIO/livingdocs-server/pull/4218)
 * :new: Configure a maximum connection lifetime in postgres [livingdocs-server #4220 v164.6.0](https://github.com/livingdocsIO/livingdocs-server/pull/4220)
 * :new: Allow trim config in project config [livingdocs-server #4222 v164.5.1](https://github.com/livingdocsIO/livingdocs-server/pull/4222)
