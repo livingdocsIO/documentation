@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(articleMetadata): Metadata now requested from server [livingdocs-editor #5023 v75.2.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5023)
 * :new: fix(filterOverlap): Date Time pop up fits in modal) [livingdocs-editor #5028 v75.2.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5028)
 * :new: fix: add property componentGroups in the content_type_config [livingdocs-editor #5024 v75.2.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5024)
 * :new: feat: add a hook to transform the webhook request [livingdocs-server #4218 v164.7.0](https://github.com/livingdocsIO/livingdocs-server/pull/4218)
