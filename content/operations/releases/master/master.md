@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Char Counter: new UI & li-target-length integration [livingdocs-editor #4997 v75.4.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4997)
 * :new: feat: add api token scope for desk-net [livingdocs-server #4225 v164.8.0](https://github.com/livingdocsIO/livingdocs-server/pull/4225)
 * :new: feat: add api token scope for desk-net in the API Token creation [livingdocs-editor #5025 v75.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5025)
 
