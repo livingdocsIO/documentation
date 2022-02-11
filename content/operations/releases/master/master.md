@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat: add api token scope for desk-net in the API Token creation [livingdocs-editor #5025 v75.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5025)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
