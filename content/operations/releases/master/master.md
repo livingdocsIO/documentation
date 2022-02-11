@@ -26,73 +26,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* :new: fix(articleMetadata): Metadata now requested from server [livingdocs-editor #5023 v75.2.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5023)
-* :new: fix(filterOverlap): Date Time pop up fits in modal) [livingdocs-editor #5028 v75.2.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5028)
-* :new: fix: add property componentGroups in the content_type_config [livingdocs-editor #5024 v75.2.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5024)
-* :new: feat: add a hook to transform the webhook request [livingdocs-server #4218 v164.7.0](https://github.com/livingdocsIO/livingdocs-server/pull/4218)
-* :new: Configure a maximum connection lifetime in postgres [livingdocs-server #4220 v164.6.0](https://github.com/livingdocsIO/livingdocs-server/pull/4220)
-* :new: Allow trim config in project config [livingdocs-server #4222 v164.5.1](https://github.com/livingdocsIO/livingdocs-server/pull/4222)
-* :new: Apply custom trim config [livingdocs-editor #5021 v75.2.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5021)
-* :new: Fix date time range bookmark [livingdocs-editor #5002 v75.2.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5002)
-* :new: feat: create li-target-length metadata plugin [livingdocs-server #4212 v164.5.0](https://github.com/livingdocsIO/livingdocs-server/pull/4212)
-* :new: feat: create li-meta-target-length form [livingdocs-editor #5009 v75.2.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5009)
-* :new: Fix: Undo doesn't work if you delete a bullet point list [livingdocs-editor #5012 v75.1.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5012)
-* :new: update framework to 23.0.0 [livingdocs-server #4217 v164.4.5](https://github.com/livingdocsIO/livingdocs-server/pull/4217)
-* :new: Move several components at once [livingdocs-editor #4956 v75.1.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4956)
-* :new: chore(tests): Fix flaky tests [livingdocs-editor #5018 v75.1.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5018)
-* :new: fix(resolvecard): comment card buttons realigned [livingdocs-editor #5014 v75.1.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5014)
-* :new: Fix WoodWing Assets [livingdocs-server #4216 v164.4.4](https://github.com/livingdocsIO/livingdocs-server/pull/4216)
-* :new: Load media sources in parallel [livingdocs-editor #5001 v75.1.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5001)
-* :new: fix: bump framework to version 22.1.5 [livingdocs-editor #5010 v75.1.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5010)
-* :new: fix: bump framework to version 22.1.5 [livingdocs-server #4213 v164.4.3](https://github.com/livingdocsIO/livingdocs-server/pull/4213)
-* :new: Remove the `isActive` condition of `li-project-secrets` feature [livingdocs-server #4208 v164.4.2](https://github.com/livingdocsIO/livingdocs-server/pull/4208)
-* :new: improvement/li-mails-update [livingdocs-server #4211 v164.4.1](https://github.com/livingdocsIO/livingdocs-server/pull/4211)
-* :new: feat(search): Add exact ID match to draft and publication searches [livingdocs-server #4210 v164.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4210)
-* :new: fix(media-library): Set reference in video include drop handler [livingdocs-editor #4999 v75.0.8](https://github.com/livingdocsIO/livingdocs-editor/pull/4999)
-* :new: fix: add project_id to the fields on the search documents query [livingdocs-editor #4998 v75.0.7](https://github.com/livingdocsIO/livingdocs-editor/pull/4998)
-* :new: fix: vue sidebars are mounted twice [livingdocs-editor #5000 v75.0.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5000)
-* :new: Queue metrics [livingdocs-server #4203 v164.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4203)
-* :new: fix: prevent editing of deleted documents [livingdocs-editor #4974 v75.0.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4974)
-* :new: Named Crops: fix preview [livingdocs-editor #4992 v75.0.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4992)
-* :new: Ignore contentType misconfiguration when converting to v1 [livingdocs-server #4204 v164.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4204)
-* :new: fix(search): Only search by id for valid 4 byte integers [livingdocs-editor #4996 v75.0.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4996)
-* :new: feat(tests): add drone config for nzz multicluster tests [livingdocs-server #4195 v164.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4195)
-* :new: fix(includes): pass paramsSchemaExtension to includes core api getter [livingdocs-editor #4994 v75.0.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4994)
-* :new: Publish Control Queue - Part 1 [livingdocs-server #4193 v164.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4193)
-* :new: fix(iframe button styles): Now flex and correct styles [livingdocs-editor #4993 v75.0.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4993)
-* :new: Do not support callbacks in documentApi/projectApi/channelConfig/pushNotifications/pusherApi [livingdocs-server #4194 v164.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4194)
-* :new: Remove Support for tasks-v1 [livingdocs-server #4196 v163.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4196)
-* :new: Remove Support for tasks-v1 [livingdocs-editor #4361 v75.0.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4361)
-* :new: oEmbed Include [livingdocs-server #4156 v162.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4156)
-* :new: oEmbed Include [livingdocs-editor #4942 v74.28.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4942)
-* :new: Fix google vision API [livingdocs-server #4198 v162.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4198)
-* :new: fix: reopen comment doesn't mark the comment [livingdocs-editor #4987 v74.27.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4987)
-* :new: Server configuration: Expose mediaLibrary.images.processing.lossy.maxDimension [livingdocs-server #4187 v162.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4187)
-* :new: Automatic named crops: Take into account maxDimension from server config [livingdocs-editor #4981 v74.27.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4981)
-* :new: Improvement/buttons and small visual improvements [livingdocs-editor #4985 v74.26.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4985)
-* :new: Fix: Project Settings Screens [livingdocs-editor #4984 v74.26.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4984)
-* :new: fix: enable show comments after creating a new comment [livingdocs-editor #4976 v74.26.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4976)
-* :new: Fix SSO strategy builder parameters [livingdocs-server #4192 v162.0.3](https://github.com/livingdocsIO/livingdocs-server/pull/4192)
-* :new: Use correct elasticsearch client for index search [livingdocs-server #4189 v162.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4189)
-* :new: fix(environments): Move editable.js locales to correct location [livingdocs-editor #4939 v74.26.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4939)
-* :new: fix(comments toolbar): comments data now from workspace [livingdocs-editor #4962 v74.25.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4962)
-* :new: fix(workspaceUnloading): Workspace is unloaded now if softLocked [livingdocs-editor #4977 v74.25.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4977)
-* :new: Improve accessTokenSigningKeys misconfiguration errors [livingdocs-server #4184 v162.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4184)
-* :new: feat(search): Don't search for exact document id matches [livingdocs-server #4155 v162.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4155)
-* :new: feat(search): Show tooltip for document id match [livingdocs-editor #4941 v74.25.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4941)
-* :new: Main navigation groups [livingdocs-server #4152 v161.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4152)
-* :new: feat(navigation): Add support for groups [livingdocs-editor #4937 v74.24.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4937)
-* :new: Fix node 14 compatibility in `livingdocs-server key-generate convert-hs256` [livingdocs-server #4182 v161.2.5](https://github.com/livingdocsIO/livingdocs-server/pull/4182)
-* :new: fix(webpack): Lock mini-css-extract-plugin version to 2.4 [livingdocs-editor #4972 v74.23.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4972)
-* :new: fix(webhookEvent): webhook event now fired when documents unpublished [livingdocs-server #4174 v161.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4174)
-* :new: Make Desk-Net category optional [livingdocs-server #4176 v161.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4176)
-* :new: Metadata: Ensure client side validation works in Vue Metadata Forms [livingdocs-editor #4971 v74.23.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4971)
-* :new: Remove /public-api endpoint in the Editor and change link to the publicApi documentation [livingdocs-editor #4970 v74.23.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4970)
-* :new: fix(buttonType): Button types re-added for new li-buttons [livingdocs-editor #4965 v74.23.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4965)
-* :new: 🐞 Video: fix 'unsupported architecture' error on server start [livingdocs-server #4173 v161.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4173)
-* :new: Support breaking project config changes [livingdocs-editor #4957 v74.23.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4957)
-* :new: Show year in edit history when it's not the current year [livingdocs-editor #4964 v74.22.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4964)
-* :new: Fix(alert styling): Whats new user menu icon positioning fix [livingdocs-editor #4943 v74.21.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4943)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -163,10 +96,13 @@ With this release we improved some behavior during editing a document:
 - Select text over multiple editables
 - Fix arrow movement past empty doc-optional editables
 - Allow formats to be set over links if the beginning or end is at a boundary
+- Support copy of multiple components
+- Support dragging multiple components from clipboard
 
 References:
 - [PR 1](https://github.com/livingdocsIO/livingdocs-editor/pull/4919)
 - [PR 2](https://github.com/livingdocsIO/livingdocs-editor/pull/4638)
+- [PR 3](https://github.com/livingdocsIO/livingdocs-editor/pull/4956)
 
 ## Document Inbox Extensions
 
@@ -182,7 +118,10 @@ TODO: add description + documentation
 TODO: add description + documentation + decide if the feature is already part of the release
 
 References:
-* [Server Publish Control - Part III](https://github.com/livingdocsIO/livingdocs-server/pull/4146)
+* [Server Publish Control - Part 1 - Refactoring - Move render functions into publicationDelivery](https://github.com/livingdocsIO/livingdocs-server/pull/4193)
+* [Server Publish Control - Part 2 - Clean up existing publish workflow](https://github.com/livingdocsIO/livingdocs-server/pull/4193)
+* [Server Publish Control - Part 3 - Add new hooks to the instant publishing process](https://github.com/livingdocsIO/livingdocs-server/pull/4146)
+* [Server Publish Control - Part 4 - Publish Control API](https://github.com/livingdocsIO/livingdocs-server/pull/4146)
 
 ## Table Dashboards
 
@@ -198,6 +137,15 @@ TODO: add description + documentation
 
 References:
 * [Iteration 1](https://github.com/livingdocsIO/livingdocs-editor/pull/4836)
+
+## oEmbed Include
+
+TODO@ajwild: add description + documentation
+
+References:
+* [Documentation](TODO)
+* [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4942)
+* [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4156)
 
 
 ## Breaking Changes :fire:
@@ -241,6 +189,23 @@ References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4163)
 Those changes shouldn't affect any downstream, but in case there are direct sql queries against the database, you need to switch to queries that use the `content_type_id` column.
 
 References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4165)
+
+
+### Remove support for callbacks in multiple server API's :fire:
+
+We removed Callback support in several server API's as we noticed many bugs originating from mixing callbacks and promises. So we continue to phase out callbacks in all APIs. In the next releases we will continue with the removal of callbacks in server API's. All server API's already support Promises, therefore you can prepare the downstream migration from Callbacks to Promises.
+
+An example how to migrate the APIs you will find in [September 2021 Release]({{< ref "operations/releases/release-2021-09/release-2021-09.md" >}})
+
+- 🔥 remove callback support of `channelConfig` (`server.features.api('li-channel-configs').write`) functions. Only promise based calls are supported
+- 🔥 remove callback support of `documentApi` (`server.features.api('li-documents').document`) functions. Only promise based calls are supported
+- 🔥 remove callback support of `pushNotifications` (`server.features.api('li-push-notifications').publication`) functions. Only promise based calls are supported
+- 🔥 remove callback support of `publicationApi` (`server.features.api('li-documents').publication`) functions. Only promise based calls are supported
+- 🔥 remove callback support of `pusherApi` (`server.features.api('li-pusher-authentication')`) functions. Only promise based calls are supported
+
+References:
+* [server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4194)
+
 
 ### publishHook / unpublishHook parameter change :fire:
 
@@ -307,6 +272,25 @@ In case you're making use of the above mentioned classes in your downstream:
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4825)
 
+### Document Search - Don't search for exact document id matches :fire:
+
+:fire: `server.features.api('li-documents').document.find()` will no longer search by id if the search string is numeric.
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4155)
+
+### Remove Support for tasks-v1 :fire:
+
+Tasks v1 is deprecated since 2 years. We removed it, because no customers use it to our knowledge.
+
+**Steps to do for downstreams**
+- delete editor config `app.taskTypes`
+- delete metadata plugin projectConfig with type `li-tasks`
+- delete elasticsearch document mapping for li-tasks (see [example](https://github.com/livingdocsIO/livingdocs-server/pull/3625/files))
+- configure `tasks-v2`, if you want to continue using tasks, e.g.
+  - [Proofreading Task Guide](https://docs.livingdocs.io/guides/editor/proofreading-task/)
+  - [Add a custom task](https://docs.livingdocs.io/guides/editor/review-task/)
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4196)
 
 
 
@@ -393,16 +377,28 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 * Data Source: Set default value in metadata of a data source [livingdocs-editor #4854 v74.13.8](https://github.com/livingdocsIO/livingdocs-editor/pull/4854)
 * Print: Extend print metadata [livingdocs-server #4078 v157.5.6](https://github.com/livingdocsIO/livingdocs-server/pull/4078)
 * Includes: Service switch for schema form [livingdocs-editor #4853 v74.13.17](https://github.com/livingdocsIO/livingdocs-editor/pull/4853)
+* Queue metrics for Redis [livingdocs-server #4203 v164.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4203)
+* Navigation: Add main navigation group config [livingdocs-server #4152 v161.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4152)
+* Document Search: Show tooltip for document id match [livingdocs-editor #4941 v74.25.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4941)
+* Load media sources in parallel [livingdocs-editor #5001 v75.1.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5001)
+* Added `li-meta-target-length` plugin/form [livingdocs-editor #5009 v75.2.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5009)
+* Text editing: Allow trim config [livingdocs-editor #5021 v75.2.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5021)
+* Add `transformWebhookRequest` to transform the webhook request [livingdocs-server #4218 v164.7.0](https://github.com/livingdocsIO/livingdocs-server/pull/4218)
 
 ### Design
 
 * Normalize language labels [livingdocs-editor #4897 v74.14.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4897)
 * Use System Fonts instead of Roboto [livingdocs-editor #4659 v74.18.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4659)
+* Improvement/buttons and small visual improvements [livingdocs-editor #4985 v74.26.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4985)
+* doc-link UI: fix button look [livingdocs-editor #4993 v75.0.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4993)
+* design update of li-mails-update [livingdocs-server #4211 v164.4.1](https://github.com/livingdocsIO/livingdocs-server/pull/4211)
 
 ### Improvements
 
 * Support modules in metadataPlugins config [livingdocs-server #4148 v159.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4148)
 * Migrate knex queries to db.sql / prep for non-transactional query pool [livingdocs-server #4157 v159.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4157)
+* Project Config: Support breaking project config changes [livingdocs-editor #4957 v74.23.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4957)
+* DB: Configure a maximum connection lifetime in postgres [livingdocs-server #4220 v164.6.0](https://github.com/livingdocsIO/livingdocs-server/pull/4220)
 
 ### Bugfixes
 
@@ -412,6 +408,10 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
   * Kanban Boards: fix race condition from user and metadata update event triggered searches  [livingdocs-editor #4877 v74.13.9](https://github.com/livingdocsIO/livingdocs-editor/pull/4877)
   * Character Counter: The character counter now works correctly after a component got transformed [livingdocs-editor #4886 v74.13.12](https://github.com/livingdocsIO/livingdocs-editor/pull/4886)
   * Prevent transformation of pinned components [livingdocs-editor #4926 v74.16.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4926)
+  * Undo doesn't work if you delete a bullet point list [livingdocs-editor #5012 v75.1.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5012)
+  * Prevent editing of deleted documents [livingdocs-editor #4974 v75.0.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4974)
+  * History: Show year in edit history when it's not the current year [livingdocs-editor #4964 v74.22.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4964)
+  * Named Crops: Take into account server config 'maxDimension' for automatic cropping [livingdocs-editor #4981 v74.27.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4981)
 * UI
   * Stops notifications covering each other up [livingdocs-editor #4948 v74.20.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4948)
   * Fix «click outside» handling [livingdocs-editor #4925 v74.18.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4925)
@@ -429,6 +429,18 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
   * Fix update concept for imatrics [livingdocs-editor #4873 v74.13.7](https://github.com/livingdocsIO/livingdocs-editor/pull/4873)
 * Authorization
   * Send email after force resetting a user [livingdocs-server #4170 v161.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4170)
+* Server
+  * Video: fix 'unsupported architecture' error on server start [livingdocs-server #4173 v161.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4173)
+  * Webhooks: fire webhook event on 'document.unpublished' event [livingdocs-server #4174 v161.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4174)
+  * Fix WoodWing assets integration [livingdocs-server #4216 v164.4.4](https://github.com/livingdocsIO/livingdocs-server/pull/4216)
+  * Search: Use correct elasticsearch client for 'indexingApi.search' and 'indexingApi.get'  [livingdocs-server #4189 v162.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4189)
+  * Desk-Net: Make Desk-Net category optional [livingdocs-server #4176 v161.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4176)
+* Comments
+  * Update comments flyout correctly [livingdocs-editor #4962 v74.25.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4962)
+  * Card buttons realigned [livingdocs-editor #5014 v75.1.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5014)
+* Includes
+  * Pass paramsSchemaExtension to includes core api getter [livingdocs-editor #4994 v75.0.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4994)
+  * Set reference in video include drop handler [livingdocs-editor #4999 v75.0.8](https://github.com/livingdocsIO/livingdocs-editor/pull/4999)
 
 
 ## Patches
