@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Publish Control: Part 1 [livingdocs-editor #5004 v75.7.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5004)
 * :new: fix: bump framework to version 23.0.2 [livingdocs-editor #5033 v75.6.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5033)
 * :new: fix: prevent editing of deleted documents [livingdocs-server #4178 v164.10.1](https://github.com/livingdocsIO/livingdocs-server/pull/4178)
 * :new: feat: filter out concepts based on the imatrics config 'ignoredConceptTypes' [livingdocs-editor #5031 v75.6.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5031)
