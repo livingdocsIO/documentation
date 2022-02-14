@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: from iMatrics concepts get only the fields that are needed [livingdocs-server #4226 v164.10.0](https://github.com/livingdocsIO/livingdocs-server/pull/4226)
 * :new: Table dashboard: metadata editing [livingdocs-server #4223 v164.9.0](https://github.com/livingdocsIO/livingdocs-server/pull/4223)
 * :new: Table dashboard: metadata editing [livingdocs-editor #5022 v75.5.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5022)
 * :new: Fix cpu metrics on prometheus /metrics endpoint [livingdocs-server #4227 v164.8.1](https://github.com/livingdocsIO/livingdocs-server/pull/4227)
