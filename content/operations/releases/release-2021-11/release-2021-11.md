@@ -331,6 +331,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v157.2.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.31): fix(mediaLibrary): fallback to ffprobe system binary when ffprobe-static has no binaries
 - [v157.2.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.30): chore: adapt tests with the new conceptFields
 - [v157.2.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.28): chore: Sign drone file
 - [v157.2.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.27): fix: bump framework to version 21.1.8
