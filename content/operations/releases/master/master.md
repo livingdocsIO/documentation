@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Improvement/vue select [livingdocs-editor #5035 v75.7.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5035)
 * :new: Publish Control - Part 4: Publish Control API [livingdocs-server #4188 v165.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4188)
 * :new: Metadata filtering [livingdocs-server #4228 v165.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4228)
 * :new: Publish Control: Part 1 [livingdocs-editor #5004 v75.7.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5004)
