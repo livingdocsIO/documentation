@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(retresco): Add Retresco integration [livingdocs-server #4215 v165.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4215)
 * :new: feat(secrets): Allow secrets to be seeded [livingdocs-server #4230 v165.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4230)
 * :new: Improvement/vue select [livingdocs-editor #5035 v75.7.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5035)
 * :new: Publish Control - Part 4: Publish Control API [livingdocs-server #4188 v165.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4188)
