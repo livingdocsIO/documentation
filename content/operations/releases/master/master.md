@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(secrets): Allow secrets to be seeded [livingdocs-server #4230 v165.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4230)
 * :new: Improvement/vue select [livingdocs-editor #5035 v75.7.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5035)
 * :new: Publish Control - Part 4: Publish Control API [livingdocs-server #4188 v165.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4188)
 * :new: Metadata filtering [livingdocs-server #4228 v165.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4228)
