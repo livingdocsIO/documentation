@@ -1,6 +1,7 @@
 ---
 title: Setup Windows Environment
 description: Setup requirements like docker and WSL in Windows
+weight: 5
 ---
 
 - Install docker for windows
