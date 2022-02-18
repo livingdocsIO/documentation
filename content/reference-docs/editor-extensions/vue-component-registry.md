@@ -11,7 +11,7 @@ menus:
 The Livingdocs Editor can be customized by using your own components. Components are referenced by name in configurations. For Livingdocs to pick up your components, you need to register them first.
 Livingdocs provides an API to register custom components written in VueJS. They are always register with a certain type. The supported types are:
 
-- [metadataPlugin](#metadataPlugin)
+- [metadataPlugin](#metadataplugin)
 - [includeParamsSidebarForm](#includeparamssidebarform)
 - [dashboardCard](#dashboardcard)
 - [searchFilter](#searchfilter)
