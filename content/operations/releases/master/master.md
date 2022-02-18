@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(retresco): Handle projects without retresco config in prepublishHookAsync [livingdocs-server #4244 v165.3.1](https://github.com/livingdocsIO/livingdocs-server/pull/4244)
 * :new: Metadata: Use Vue based form renderer by default [livingdocs-editor #5016 v76.0.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5016)
 * :new: feat(retresco): Add Retresco integration [livingdocs-editor #5013 v75.8.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5013)
 * :new: feat(retresco): Add Retresco integration [livingdocs-server #4215 v165.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4215)
