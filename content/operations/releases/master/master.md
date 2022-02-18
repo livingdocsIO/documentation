@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Metadata: render default UI component per type in metadata form [livingdocs-editor #5041 v77.0.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5041)
 * :new: Metadata: Allow omitting ui.component configuration [livingdocs-server #4240 v165.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4240)
 * :new: fix(retresco): Handle projects without retresco config in prepublishHookAsync [livingdocs-server #4244 v165.3.1](https://github.com/livingdocsIO/livingdocs-server/pull/4244)
 * :new: Metadata: Use Vue based form renderer by default [livingdocs-editor #5016 v76.0.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5016)
