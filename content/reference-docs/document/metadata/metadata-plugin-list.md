@@ -14,10 +14,10 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 
 
 | Metadata Plugin                             | Metadata Plugin Type   | Description                                  | Usage (D = Document, M = Media Library Entries) | Default UI                                        |
-| ------------------------------------------- | ---------------------- | -------------------------------------------- | ----------------------------------------------- |
+| ------------------------------------------- | ---------------------- | -------------------------------------------- | ----------------------------------------------- | ------------------------------------------------- |
 | [Boolean](#li-boolean)                      | li-boolean             | Boolean                                      | D, M                                            | checkbox                                          |
 | [Category](#li-category)                    | li-category            | category                                     | D                                               | select                                            |
-| [Date/Time validity](#li-datetime-validity) | li-datetime-validity   | category                                     | M                                               | 2 date/time inputs                                |
+| [Date/Time validity](#li-datetime-validity) | li-datetime-validity   | Date                                         | M                                               | 2 date/time inputs                                |
 | [Date/Time](#li-datetime)                   | li-datetime            | Date                                         | D, M                                            | date/time input                                   |
 | [Dependencies](#li-dependencies)            | li-dependencies        | Livingdocs framework dependencies definition | D                                               | no UI                                             |
 | [Desk-Net](#li-desknet-integration)         | li-desknet-integration | Desk-Net Integration                         | D                                               | Link to Desk-Net distribution entry               |
@@ -39,24 +39,24 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Transcoding State](#li-transcoding-state)  | li-transcoding-state   | State of external transcoding job            | M (Video)                                       | trigger transcoding, current job progress, result |
 
 ## li-boolean
-**Data Format**: Boolean
-**Default UI**: checkbox (`liMetaCheckboxForm`)
+* Data Format: Boolean
+* Default UI: checkbox (`liMetaCheckboxForm`)
 
 ## li-category
-**Data Format**: `{id: <String>, path: <String>}`
-**Default UI**: select with category tree view and search
+* Data Format: `{id: <String>, path: <String>}`
+* Default UI: select with category tree view and search
 
 ## li-datetime-validity
-**Data Format**: `{from: ISO8601 String, to: ISO8601 String}`
-**Default UI**: 2 date/time inputs (`liMetaDateTimeValidityForm`)
+* Data Format: `{from: ISO8601 String, to: ISO8601 String}`
+* Default UI: 2 date/time inputs (`liMetaDateTimeValidityForm`)
 
 ## li-datetime
-**Data Format**: `<ISO8601 String>`
-**Default UI**: 2 date/time inputs (`liMetaDatetimeForm`)
+* Data Format: `<ISO8601 String>`
+* Default UI: 2 date/time inputs (`liMetaDatetimeForm`)
 
 ## li-dependencies
-**Data Format**:
-```
+* Data Format
+```js
 {
   js: [
     {
@@ -84,11 +84,11 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   ]
 }
 ```
-**Default UI**: no UI
+* Default UI: no UI
 
 ## li-desknet-integration
-**Data Format**:
-```
+* Data Format
+```js
 {
   id: <Integer>,
   publicationId: <Integer>,
@@ -96,11 +96,11 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   categoryId: <Integer>
 }
 ```
-**Default UI**: Link to Desk-Net distribution entry
+* Default UI: Link to Desk-Net distribution entry
 
 ## li-document-soft-lock
-**Data Format**:
-```
+* Data Format
+```js
 {
   userId: <Integer>,
   userName: <String>,
@@ -108,16 +108,16 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   tabId: <String>
 }
 ```
-**Default UI**: no UI
+* Default UI: no UI
 
 
 ## li-google-vision
-**Data Format**: `{}`
-**Default UI**: specialed UI in the Media Library Image Detail View, no config possible
+* Data Format: `{}`
+* Default UI: specialed UI in the Media Library Image Detail View, no config possible
 
 ## li-image
-**Data Format**: 
-```
+* Data Format
+```js
 {
   originalUrl: <String,
   url: <String>,
@@ -131,11 +131,11 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   ]
 }
 ```
-**Default UI**: UI to select/upload/delete/crop an image (`liMetaImageForm`)
+* Default UI: UI to select/upload/delete/crop an image (`liMetaImageForm`)
 
 ## li-imatrics-nlp-tags
-**Data Format**: 
-```
+* Data Format
+```js
 {
   contentVersion: <String>,
   concepts: [
@@ -151,28 +151,28 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   ]
 }
 ```
-**Default UI**: manage tags, add new tag suggestions (`liMetaIMatricsForm`)
+* Default UI: manage tags, add new tag suggestions (`liMetaIMatricsForm`)
 
 ## li-integer
-**Data Format**: `<Integer>`
-**Default UI**: number input (`liMetaIntegerForm`)
-No UI is rendered if the `handle` is `lastProofreadRevision`.
+* Data Format: `<Integer>`
+* Default UI: number input (`liMetaIntegerForm`)
+* No UI is rendered if the `handle` is `lastProofreadRevision`.
 
 ## li-language
-**Data Format**:
-```
+* Data Format
+```js
 {
   locale: <String>,
   label: <String>,
   groupId: <String>
 }
 ```
-**Default UI**: language selection
-This works together with the `languageSelection` service.
+* Default UI: language selection
+* This works together with the `languageSelection` service.
 
 ## li-named-crops
-**Data Format**:
-```
+* Data Format
+```js
 {
   crops: [
     {
@@ -186,15 +186,15 @@ This works together with the `languageSelection` service.
   ]
 }
 ```
-**Default UI**: crop management (`liMetaNamedCropsForm`)
+* Default UI: crop management (`liMetaNamedCropsForm`)
 
 ## li-numeric-list
-**Data Format**: `[<Number>]`
-**Default UI**: input for multiple numbers (`liMetaNumericListForm`)
+* Data Format: `[<Number>]`
+* Default UI: input for multiple numbers (`liMetaNumericListForm`)
 
 ## li-poster-image
-**Data Format**: 
-```
+* Data Format
+```js
 {
   originalUrl: <String>,
   url: <String>,
@@ -215,16 +215,15 @@ This works together with the `languageSelection` service.
   ]
 }
 ```
-**Default UI**: Poster Image selection, has some special UI within Video Media Library Entries (`liMetaPosterImageForm`)
+* Default UI: Poster Image selection, has some special UI within Video Media Library Entries (`liMetaPosterImageForm`)
 
-li-publish-date
 ## li-publish-date
-**Data Format**: `<ISO8601 String>`
-**Default UI**: date/time input (`liMetaDatetimeForm`)
+* Data Format: `<ISO8601 String>`
+* Default UI: date/time input (`liMetaDatetimeForm`)
 
 ## li-reference-list
-**Data Format**:
-```
+* Data Format
+```js
 {
   $ref: 'documents',
   references: [{
@@ -232,11 +231,11 @@ li-publish-date
   }]
 }
 ```
-**Default UI**: Document Selection (Dialog) (`liMetaReferenceForm`)
+* Default UI: Document Selection (Dialog) (`liMetaReferenceForm`)
 
 ## li-reference
-**Data Format**:
-```
+* Data Format
+```js
 {
   $ref: 'document',
   reference: {
@@ -244,11 +243,11 @@ li-publish-date
   }
 }
 ```
-**Default UI**: Document Selection (Dialog) (`liMetaReferenceForm`)
+* Default UI: Document Selection (Dialog) (`liMetaReferenceForm`)
 
 ## li-retresco
-**Data Format**:
-```
+* Data Format
+```js
 {
   contentVersion: <String>,
   entities: [{
@@ -261,17 +260,15 @@ li-publish-date
   }]
 }
 ```
-**Default UI**: Retresco tag management (`liMetaRetrescoForm`)
+* Default UI: Retresco tag management (`liMetaRetrescoForm`)
 
 ## li-string-list
-**Data Format**: Array of Strings
-**Default UI**: Multiselect
-
-### UI
-Always renders a Multiselect UI. Needs a `dataProvider` to work.
-
-### Config
-
+* Data Format: Array of Strings
+* Default UI: Multiselect
+* UI
+  * Always renders a Multiselect UI.
+  * Needs a `dataProvider` to work.
+* Config
 ```js
 // contentType[].metadata / mediaType[].metadata
 metadata: [{
@@ -297,19 +294,17 @@ metadata: [{
 ```
 
 ## li-target-length
-**Data Format**: `{characters: <Number>}`
-**Default UI**: Number input (`LiMetaTargetLengthForm`)
-
-Doesn't work if the editor config `metadata.useAngularBasedFormRendering` is `true`.
-### Config
-
+* Data Format: `{characters: <Number>}`
+* Default UI: Number input (`LiMetaTargetLengthForm`)
+* Doesn't work if the editor config `metadata.useAngularBasedFormRendering` is `true`.
+* Config
 ```js
 // contentType[].metadata / mediaType[].metadata
 metadata: [{
   handle: 'targetLength',
   type: 'li-target-length',
   // optional, allows picking a step instead of entering an exact number
-  ui: { 
+  ui: {
     config: {
       steps: [
         {
@@ -329,18 +324,13 @@ metadata: [{
 ```
 
 ## li-text
-**Data Format**: String
-**Default UI**: text input, textarea, select
-
-### UI
-- Renders a select element if a `dataProvider` is configured
-- Renders a textarea if `ui.component` is set to `LiMetaFormTextarea`
-- Renders a text input otherwise
-
-{{< img src="./images/max-length.png" alt="Shows how the max length behavior affects the editor" >}}
-
-### Config
-
+* Data Format: String<br>
+* Default UI: text input, textarea, select
+* UI
+  * Renders a select element if a `dataProvider` is configured
+  * Renders a textarea if `ui.component` is set to `LiMetaFormTextarea`
+  * Renders a text input otherwise {{< img src="./images/max-length.png" >}}
+* Config
 ```js
 // contentType[].metadata / mediaType[].metadata
 metadata: [{
@@ -370,8 +360,8 @@ metadata: [{
 ```
 
 ## li-transcoding-state
-**Data Format**:
-```
+* Data Format
+```js
 {
   commands: [{
     assetKey: <String>,
@@ -386,7 +376,8 @@ metadata: [{
   }]
 }
 ```
-**Default UI**: UI to trigger transcodings, see progress and the result in the end (`liMetaTranscodingStateForm`)
+* Default UI: UI to trigger transcodings, see progress and the result in the end (`liMetaTranscodingStateForm`)
+
 
 
 # Legacy Docs
