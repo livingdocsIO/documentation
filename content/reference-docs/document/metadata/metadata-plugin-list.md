@@ -39,23 +39,23 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Transcoding State](#li-transcoding-state)  | li-transcoding-state   | State of external transcoding job            | M (Video)                                       | trigger transcoding, current job progress, result |
 
 ## li-boolean
-* Data Format: Boolean
-* Default UI: checkbox (`liMetaCheckboxForm`)
+**Data Format**: Boolean\
+**Default UI**: checkbox (`liMetaCheckboxForm`)
 
 ## li-category
-* Data Format: `{id: <String>, path: <String>}`
-* Default UI: select with category tree view and search
+**Data Format**: `{id: <String>, path: <String>}`\
+**Default UI**: select with category tree view and search
 
 ## li-datetime-validity
-* Data Format: `{from: ISO8601 String, to: ISO8601 String}`
-* Default UI: 2 date/time inputs (`liMetaDateTimeValidityForm`)
+**Data Format**: `{from: ISO8601 String, to: ISO8601 String}`\
+**Default UI**: 2 date/time inputs (`liMetaDateTimeValidityForm`)
 
 ## li-datetime
-* Data Format: `<ISO8601 String>`
-* Default UI: 2 date/time inputs (`liMetaDatetimeForm`)
+**Data Format**: `<ISO8601 String>`\
+**Default UI**: 2 date/time inputs (`liMetaDatetimeForm`)
 
 ## li-dependencies
-* Data Format
+**Data Format**:
 ```js
 {
   js: [
@@ -84,10 +84,10 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   ]
 }
 ```
-* Default UI: no UI
+**Default UI**: no UI
 
 ## li-desknet-integration
-* Data Format
+**Data Format**:
 ```js
 {
   id: <Integer>,
@@ -96,10 +96,10 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   categoryId: <Integer>
 }
 ```
-* Default UI: Link to Desk-Net distribution entry
+**Default UI**: Link to Desk-Net distribution entry
 
 ## li-document-soft-lock
-* Data Format
+**Data Format**:
 ```js
 {
   userId: <Integer>,
@@ -108,15 +108,15 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   tabId: <String>
 }
 ```
-* Default UI: no UI
+**Default UI**: no UI
 
 
 ## li-google-vision
-* Data Format: `{}`
-* Default UI: specialed UI in the Media Library Image Detail View, no config possible
+**Data Format**: `{}`\
+**Default UI**: specialed UI in the Media Library Image Detail View, no config possible
 
 ## li-image
-* Data Format
+**Data Format**:
 ```js
 {
   originalUrl: <String,
@@ -131,10 +131,10 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   ]
 }
 ```
-* Default UI: UI to select/upload/delete/crop an image (`liMetaImageForm`)
+**Default UI**: UI to select/upload/delete/crop an image (`liMetaImageForm`)
 
 ## li-imatrics-nlp-tags
-* Data Format
+**Data Format**:
 ```js
 {
   contentVersion: <String>,
@@ -151,15 +151,15 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   ]
 }
 ```
-* Default UI: manage tags, add new tag suggestions (`liMetaIMatricsForm`)
+**Default UI**: manage tags, add new tag suggestions (`liMetaIMatricsForm`)
 
 ## li-integer
-* Data Format: `<Integer>`
-* Default UI: number input (`liMetaIntegerForm`)
+**Data Format**: `<Integer>`\
+**Default UI**: number input (`liMetaIntegerForm`)
 * No UI is rendered if the `handle` is `lastProofreadRevision`.
 
 ## li-language
-* Data Format
+**Data Format**:
 ```js
 {
   locale: <String>,
@@ -167,11 +167,11 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   groupId: <String>
 }
 ```
-* Default UI: language selection
+**Default UI**: language selection
 * This works together with the `languageSelection` service.
 
 ## li-named-crops
-* Data Format
+**Data Format**:
 ```js
 {
   crops: [
@@ -186,14 +186,14 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   ]
 }
 ```
-* Default UI: crop management (`liMetaNamedCropsForm`)
+**Default UI**: crop management (`liMetaNamedCropsForm`)
 
 ## li-numeric-list
-* Data Format: `[<Number>]`
-* Default UI: input for multiple numbers (`liMetaNumericListForm`)
+**Data Format**: `[<Number>]`\
+**Default UI**: input for multiple numbers (`liMetaNumericListForm`)
 
 ## li-poster-image
-* Data Format
+**Data Format**:
 ```js
 {
   originalUrl: <String>,
@@ -215,14 +215,14 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   ]
 }
 ```
-* Default UI: Poster Image selection, has some special UI within Video Media Library Entries (`liMetaPosterImageForm`)
+**Default UI**: Poster Image selection, has some special UI within Video Media Library Entries (`liMetaPosterImageForm`)
 
 ## li-publish-date
-* Data Format: `<ISO8601 String>`
-* Default UI: date/time input (`liMetaDatetimeForm`)
+**Data Format**: `<ISO8601 String>`\
+**Default UI**: date/time input (`liMetaDatetimeForm`)
 
 ## li-reference-list
-* Data Format
+**Data Format**:
 ```js
 {
   $ref: 'documents',
@@ -231,10 +231,10 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   }]
 }
 ```
-* Default UI: Document Selection (Dialog) (`liMetaReferenceForm`)
+**Default UI**: Document Selection (Dialog) (`liMetaReferenceForm`)
 
 ## li-reference
-* Data Format
+**Data Format**:
 ```js
 {
   $ref: 'document',
@@ -243,10 +243,10 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   }
 }
 ```
-* Default UI: Document Selection (Dialog) (`liMetaReferenceForm`)
+**Default UI**: Document Selection (Dialog) (`liMetaReferenceForm`)
 
 ## li-retresco
-* Data Format
+**Data Format**:
 ```js
 {
   contentVersion: <String>,
@@ -260,15 +260,15 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
   }]
 }
 ```
-* Default UI: Retresco tag management (`liMetaRetrescoForm`)
+**Default UI**: Retresco tag management (`liMetaRetrescoForm`)
 
 ## li-string-list
-* Data Format: Array of Strings
-* Default UI: Multiselect
-* UI
-  * Always renders a Multiselect UI.
-  * Needs a `dataProvider` to work.
-* Config
+**Data Format**: Array of Strings\
+**Default UI**: Multiselect
+
+Needs a `dataProvider` to work.
+
+**Config**
 ```js
 // contentType[].metadata / mediaType[].metadata
 metadata: [{
@@ -294,10 +294,12 @@ metadata: [{
 ```
 
 ## li-target-length
-* Data Format: `{characters: <Number>}`
-* Default UI: Number input (`LiMetaTargetLengthForm`)
-* Doesn't work if the editor config `metadata.useAngularBasedFormRendering` is `true`.
-* Config
+**Data Format**: `{characters: <Number>}`\
+**Default UI**: Number input (`LiMetaTargetLengthForm`)
+
+Doesn't work if the editor config `metadata.useAngularBasedFormRendering` is `true`.
+
+**Config**
 ```js
 // contentType[].metadata / mediaType[].metadata
 metadata: [{
@@ -324,22 +326,25 @@ metadata: [{
 ```
 
 ## li-text
-* Data Format: String<br>
-* Default UI: text input, textarea, select
-* UI
+**Data Format**: String<br>\
+**Default UI**: text input, textarea, select\
+**UI**:
   * Renders a select element if a `dataProvider` is configured
   * Renders a textarea if `ui.component` is set to `LiMetaFormTextarea`
   * Renders a text input otherwise {{< img src="./images/max-length.png" >}}
-* Config
+  
+**Config**
 ```js
 // contentType[].metadata / mediaType[].metadata
 metadata: [{
   handle: 'title',
   type: 'li-text',
   config: {
-    maxLength: 200,   // optional
-    useAsTitle: true, // default: false, synchronises the value with document.title if true
-    dataProvider: {   // optional: any dataProvider
+    maxLength: 200,                         // optional
+    required: true,                         // optional, default: false
+    requiredErrorMessage: 'Provide a title' // optional
+    useAsTitle: true,                       // default: false, synchronises the value with document.title if true
+    dataProvider: {                         // optional: any dataProvider
       type: 'labelValuePair',
       items: [
         {label: 'Item A', value: 'a'},
@@ -349,18 +354,19 @@ metadata: [{
     }
   },
   ui: {
-    label: 'foo', // optional
+    label: 'foo',                   // optional
     component: 'LiMetaFormTextarea' // optional
     config: {
-      placeholder: 'bar', // optional
-      readOnly: true,     // default: false
+      placeholder: 'bar',           // optional
+      readOnly: true,               // default: false
+      rows: 10                      // optional, only applicable for LiMetaFormTextarea, integer, 5 by default
     }
   }
 }]
 ```
 
 ## li-transcoding-state
-* Data Format
+**Data Format**:
 ```js
 {
   commands: [{
@@ -376,134 +382,11 @@ metadata: [{
   }]
 }
 ```
-* Default UI: UI to trigger transcodings, see progress and the result in the end (`liMetaTranscodingStateForm`)
+**Default UI**: UI to trigger transcodings, see progress and the result in the end (`liMetaTranscodingStateForm`)
 
 
 
 # Legacy Docs
-
-## Textarea
-
-With `li-text` you can add a textarea field too. The difference to [Text](#text) is that you have to define `ui.config.rows`.
-
-ContentType metadata config:
-```js
-metadata: [{
-  ...,
-  handle: 'description',
-  type: 'li-text',
-  config: {
-    required: true,
-    requiredErrorMessage: 'Please provide a description',
-  },
-  ui: {
-    component: 'liMetaTextareaForm',
-    label: 'foo', // optional, takes camelized name otherwise
-    config: {
-      placeholder: 'bar', // optional, takes camelized name otherwise
-      readOnly: false, // optional, false by default
-      maxLength: 200, // optional, integer, not used by default
-      rows: 10 // optional, integer, 5 by default
-    }
-  }
-}]
-```
-
-## Select Box
-
-ContentType metadata config:
-```js
-metadata: [{
-  ...,
-  ui: {
-    component: 'liMetaSelectForm',
-    service: 'customServicePlugin', // mandatory
-    label: 'foo', // optional, takes camelized name otherwise
-    config: {
-      placeholder: 'bar' // optional, takes camelized name otherwise
-    }
-  }
-}]
-```
-
-You need to make sure that your server-side metadata field is of type `li-enum` or a suitable format you defined yourself in a customized server, otherwise you will get errors.
-The `service` option lets you customize the business logic of a metadata form field. Check the section [registering a metadata service](#registering-a-metadata-service) later on how to register a service.
-The service plugin for a select box allows you to customize the logic for the following methods:
-
-```js
-{
-  // asynchronous
-  // needs to call cb with cb(null, selectables) or cb(error)
-  // the selectables need to be in the format {name: 'name', value: 'value'}
-  getSelectables (callback) {},
-
-  // called when the select box is first rendered and needs to get an initial value
-  // you will probably use `metadata.get` to get the required value
-  initSelection (identifier) {},
-
-  // executed when a user select an item.
-  // the identifier is the name of your metadata field, the selection contains the name/value pair
-  // you will probably call `metadata.set` in here
-  select (identifier, selection) {},
-
-  // true if you want to define your own directive for the display of results in the select box
-  // false otherwise
-  hasCustomItem () {},
-
-  // the name of a directive that you want to use to render the items (lines) in the select box when
-  // it is opened. This is handy for example if you want to render them in a hierarchical view.
-  // make sure that you require the directive in your service so it is loaded.
-  getCustomItem () {}
-}
-```
-
-There is a sample implementation in `plugins/metadata_services/default_select_service.coffee` to help you get started.
-
-## Multiselect Box
-
-ContentType metadata config:
-```js
-metadata: [{
-  ...,
-  ui: {
-    component: 'liMetaMultiselectForm',
-    service: 'customServicePlugin', // mandatory
-    label: 'foo', // optional, takes camelized name otherwise
-    config: {
-      placeholder: 'bar' // optional, takes camelized name otherwise
-    }
-  }
-}]
-```
-
-You need to make sure that your server-side metadata field is of a suitable format you defined yourself in a customized server (there is no core data type for multiselects), otherwise you will get errors.
-The `service` option lets you customize the business logic of a metadata form field. Check the section [registering a metadata service](#registering-a-metadata-service) later on how to register a service.
-The service plugin for a multiselect box allows you to customize the logic for the following methods:
-
-```js
-{
-  // asynchronous
-  // needs to call cb with cb(null, selectables) or cb(error)
-  // the selectables need to be in the format {name: 'name', value: 'value'}
-  getSelectables () {},
-
-  // called when the select box is first rendered and needs to get an initial value
-  // you will probably use `metadata.get` to get the required value
-  initSelection (identifier) {},
-
-  // executed when a user adds a selection to the multiselection.
-  // the identifier is the name of your metadata field, the selection contains the name/value pair
-  // you will probably call `metadata.set` in here
-  select (identifier, selection) {},
-
-  // executed when a user removes a selection of the multiselect.
-  // the identifier is the name of your metadata field
-  // you will probably call `metadata.set` in here
-  unselect (identifier) {}
-}
-```
-
-There is a sample implementation in `plugins/metadata_services/default_multiselect_service.coffee` to help you get started.
 
 
 ## Image
@@ -542,21 +425,6 @@ fieldExtractor: [
 ```
 This would autofill the metadata property 'teaserImage' with the first image
 from the document in a 'image' component.
-
-## Checkbox
-
-ContentType metadata config:
-```js
-metadata: [{
-  ...,
-  ui: {
-    component: 'liMetaCheckboxForm',
-    label: 'foo' // optional, takes camelized name otherwise
-  }
-}]
-```
-
-You need to make sure that your server-side metadata field is of type `li-boolean` or a suitable custom format, otherwise you will get errors.
 
 ## Datetime
 
