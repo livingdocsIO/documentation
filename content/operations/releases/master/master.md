@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Link validation errors to the specific component [livingdocs-editor #5048 v77.0.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5048)
 * :new: Publication Control - Part 6: Storage [livingdocs-server #4242 v165.5.0](https://github.com/livingdocsIO/livingdocs-server/pull/4242)
 * :new: Metadata: render default UI component per type in metadata form [livingdocs-editor #5041 v77.0.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5041)
 * :new: Metadata: Allow omitting ui.component configuration [livingdocs-server #4240 v165.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4240)
