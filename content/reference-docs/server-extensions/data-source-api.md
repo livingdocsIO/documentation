@@ -6,7 +6,7 @@ menus:
     parent: Server Extensions
 ---
 
-The DataSource API provides a simple way to fetch/transform any DataSource (e.g. a public gist or another URL) and provide the results to any server feature or use it in the editor as a data source for metadata or filters.
+The DataSource API (or Data Source API) provides a simple way to fetch/transform any DataSource (e.g. a public gist or another URL) and provide the results to any server feature or use it in the editor as a data source for metadata or filters.
 
 The current version supports binding a DataSource to a metadata field, which will be described in more detail in the example section.
 
@@ -29,7 +29,7 @@ You can register a DataSource (e.g. `labelValuePairDataSource`) and use it as da
 
 **Final result on the editor publish screen**
 
-{{< img src="images/datasource-dropdown.png" alt="Datasource Dropdown" >}}
+{{< img src="images/datasource-dropdown.png" alt="DataSource Dropdown" >}}
 
 **Register a DataSource on the server**
 
@@ -74,7 +74,7 @@ metadata = [{
   // only 'li-enum' is supported
   type: 'li-enum',
   ui: {
-    label: 'Data Source Example',
+    label: 'DataSource Example',
     // only 'liMetaSelectForm' is supported
     component: 'liMetaSelectForm'
   },
