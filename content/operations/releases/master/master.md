@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(imatrics): Remove load more button from tags dashboard [livingdocs-editor #5042 v77.0.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5042)
 * :new: Expose metadata object on `documentWriteModel.metadata` [livingdocs-server #4250 v165.6.0](https://github.com/livingdocsIO/livingdocs-server/pull/4250)
 * :new: Imatrics updates [livingdocs-server #4241 v165.5.1](https://github.com/livingdocsIO/livingdocs-server/pull/4241)
 * :new: Link validation errors to the specific component [livingdocs-editor #5048 v77.0.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5048)
