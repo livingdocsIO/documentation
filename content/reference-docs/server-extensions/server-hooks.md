@@ -6,19 +6,23 @@ menus:
     parent: Server Extensions
 ---
 
-TODOOOOOOOOOOOO: describe the registerPublicationServerHooks better.
-TODOOOOOOOOOOOO: go through every existing hook and update the example + add new hooks
+`Server Hooks` allow you to
+- **Influence the publication process**
+- Influence the document rendering
+- Get notified about list updates
 
-`Server Hooks` allow you to influence the (pre/un)publication process of a document. You can either change the document or for example abort the publish process by throwing an error. There are two alternatives to server hooks
+**Use Cases of a Server Hook**
+- Modify a document
+- Abort the publish process and return an error to the server
+- Notify other systems
 
+**Alternatives to Server Hooks**
 - [Metadata Plugins]({{< ref "/reference-docs/server-extensions/metadata-plugins" >}}) which can modify single metadata fields
-- [Events]({{< ref "./server-events" >}}) which are fire and forget
+- [Events]({{< ref "./server-events" >}}) (fire and forget)
 
-These server hooks have to be registered during initialisation with [liServer.registerInitializedHook]({{< ref "/reference-docs/server-extensions/server-initalization" >}}).
-
-There are two ways of registering hooks:
-- for a specific project - as many as you need, executed in the order they got registered
-- server-wide - only publication hooks
+**2 Types of Server Hooks**
+- Project specific hooks: register as many as you need, executed in the order they got registered
+- Server wide hooks: run on every project, but are only allowed for publication hooks
 
 
 ## Publication Hooks
@@ -26,7 +30,7 @@ There are two ways of registering hooks:
 ### Process and Hooks Overview
 
 
-|Name|Supported in|Editor Feedback|Added in|Deprecated in|
+|Name|Supported in|Editor Feedback|Added in|Removed in|
 |-|-|-|-|-|
 |preparePublishHook|Instant Publish|✅|release-2022-03||
 |prepublishHook|Instant Publish|✅||release-2022-03|
@@ -36,11 +40,13 @@ There are two ways of registering hooks:
 
 ![](https://user-images.githubusercontent.com/172394/146718398-5414fe96-cf3a-44e9-9f1f-5f57e1e8172f.png)
 
+### Register a Publication Hook
 
-### registerPublicationHooks()
+**Two ways of registering a Publication Hook**
+- `registerPublicationHooks`: Register as many hooks as you need, executed in the order they got registered
+- `registerPublicationServerHooks`: Hooks are executed on all projects. These hooks run before project specific ones.
 
-The `preparePublishHook`, `prepublishHook`, `publishHook`, `postPublishHook` and `unpublishHook` hooks are set on the `documents` feature:
-
+**API of Publication Hooks**
 * `preparePublishHookAsync`: `({documentVersion}) {return}`
 * `prepublishHookAsync`: `({documentVersion}) {return {documentVersion}}`
 * `publishHookAsync`: `({documentType, {documentVersion, renditions}}) {return}`
@@ -48,12 +54,16 @@ The `preparePublishHook`, `prepublishHook`, `publishHook`, `postPublishHook` and
 * `unpublishHookAsync`: `({doumentType, {documentVersion}}) {return}`
 
 
-Example:
+**Example**
 ```js
 const appConfig = require('./conf')
 const liServer = require('@livingdocs/server')(appConfig)
 
 liServer.registerInitializedHook(() => {
+  liServer.features.api('li-documents').registerPublicationServerHooks({
+    async preparePublishHookAsync ({documentVersion}) { return }
+  })
+
   liServer.features.api('li-documents').registerPublicationHooks({
     projectHandle: 'your-awesome-project',
     channelHandle: 'default',
@@ -72,22 +82,20 @@ liServer.registerInitializedHook(() => {
 })
 ```
 
-Hooks can be registered for all projects.
-These hooks run **before** projects specific ones.
+### preparePublishHookAsync()
 
-Example of a server-wide publishHook registration:
+The `preparePublishHookAsync` hook allows modifications of the [DocumentVersion]({{< ref "/reference-docs/server-extensions/document-version.md" >}}) before a document will be published.
+
+**Use Cases**
+* Modify document (DocumentVersion)
+* Error feedback with throwing an error (document will not be published)
+
+**Example**
 ```js
-registerPublicationServerHooks({publishHook: myOtherHook})
-```
-
-### prepublishHookAsync()
-
-The prepublish hook allows modifications of the [DocumentVersion]({{< ref "/reference-docs/server-extensions/document-version.md" >}}). For this reason any prepublish hook should always return `{documentVersion}`, allowing it to be modified by the next hook or to be published.
-
-```js
-async prepublishHookAsync ({documentVersion}) {
+async preparePublishHookAsync ({documentVersion}) {
   if (documentVersion.metadata.title === 'Let me pass') {
-    return {documentVersion}
+    // modify the document here
+    return
   } else {
     // Example Validation Error for a metadata property
     const err = new Error('Invalid Title')
@@ -99,23 +107,23 @@ async prepublishHookAsync ({documentVersion}) {
 }
 ```
 
-### publishHookAsync()
+### postPublishHookAsync()
 
-Upon every publish event in Livingdocs, e.g. when a user presses the "Publish"
-button in the editor, this hook method is called.
-But they do run in the same transaction and if an error is returned the publish
-action will be reverted.
+The `postPublishHookAsync` hook will be called after a document has been published. Any change to the `DocumentVersion` has no effect. A use case for this hook is to inform remote systems about the publication of a document.
 
-You get two parameters that your custom implementation can use:
-the [DocumentVersion]({{< ref "/reference-docs/server-extensions/document-version.md" >}}) which contains all
-information about the document and the `renditions` object which contains all
-rendered renditions that you defined for your channels.
+**Use Cases**
+* Notify other systems
 
-E.g. If you want to use the HTML of a rendered article, you can access it as `renditions.webarticle.html`.
-
+**Example**
 ```js
-// payload = {documentVersion, renditions}
-async publishHookAsync ({documentType, payload}) {...}
+async postPublishHookAsync ({documentVersion}) {
+ axios.post(`https://my-remote-service.com/publish/${documentVersion.projectId}`,
+  {
+    documentId: documentVersion.id,
+    projectId: documentVersion.projectId,
+    publicationId: documentVersion.getLastPublicationId (),
+  })
+}
 ```
 
 ### unpublishHookAsync()
