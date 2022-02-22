@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Validate if a publication hook does exist [livingdocs-server #4255 v165.6.3](https://github.com/livingdocsIO/livingdocs-server/pull/4255)
 * :new: Prevent double click on migration accept button [livingdocs-editor #5049 v77.0.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5049)
 * :new: Intercept and assert error logs in tests [livingdocs-server #4253 v165.6.2](https://github.com/livingdocsIO/livingdocs-server/pull/4253)
 * :new: Metadata: cleanup/fix some Vue Metadata Form rendering [livingdocs-editor #5046 v77.0.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5046)
