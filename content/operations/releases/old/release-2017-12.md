@@ -73,9 +73,9 @@ The behaviour of `registerPublicationHooks` changes. It allows registering a pub
 liServer.features.api('li-documents').registerPublicationHooks({
   projectHandle: 'your-awesome-project',
   channelHandle: 'some-channel',
-  prepublishHook: (documentVersion, callback) => { callback(null, documentVersion) },
-  publishHook: ({documentType, payload}, callback) => { callback() },
-  unpublishHook: ({documentType, payload}, callback) => { callback() }
+  prepublishHook (documentVersion, callback) { callback(null, documentVersion) },
+  publishHook ({documentType, payload}, callback) { callback() },
+  unpublishHook ({documentType, payload}, callback) { callback() }
 }, done)
 ```
 
@@ -85,9 +85,9 @@ liServer.features.api('li-documents').registerPublicationHooks({
  liServer.features.api('li-documents').registerPublicationHooks({
    projectHandle: 'your-awesome-project',
    channelHandle: 'some-channel',
-+  prepublishHook: (documentVersion, callback) => { callback(null, documentVersion) },
-   publishHook: ({documentType, payload}, callback) => { callback() },
-   unpublishHook: ({documentType, payload}, callback) => { callback() }
++  prepublishHook (documentVersion, callback) { callback(null, documentVersion) },
+   publishHook ({documentType, payload}, callback) { callback() },
+   unpublishHook ({documentType, payload}, callback) { callback() }
  }, done)
 ```
 

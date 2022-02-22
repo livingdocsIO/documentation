@@ -126,8 +126,8 @@ async unpublishHookAsync ({documentType, payload}) {...}
 
 These hook into the `render-pipeline` feature. The `beforeRenderHook` is called right before a document gets rendered.
 
-* `beforeRenderHook`:
-    * `({documentType, rendition}, callback)`
+* `beforeRenderHook`: `({documentType, rendition}, callback)`
+* `beforeRenderHookAsync`: `({documentType, rendition})`
 
 Here is a full example including server initialization:
 
@@ -139,17 +139,15 @@ liServer.registerInitializedHook((done) => {
   liServer.features.api('li-render-pipeline').registerRenderHooks({
     projectHandle: 'your-interesting-project',
     channelHandle: 'some-channel',
-    beforeRenderHook: ({contentType, rendition}, callback) => {
+    async beforeRenderHookAsync ({contentType, rendition}) {
       if (['interview', 'biography'].includes(contentType)) {
         liServer.log.info("We're about to render something about somebody!")
         // do something with the rendition:
         const livingdoc = rendition.getLivingdoc()
         const galleryTeasers = livingdoc.componentTree.find('gallery-teaser')
 
-        return extendGalleryTeasers(galleryTeasers, rendition, callback)
+        return extendGalleryTeasers(galleryTeasers, rendition)
       }
-
-      callback()
     }
   }, done)
 })
@@ -172,7 +170,7 @@ liServer.registerInitializedHook((done) => {
   liServer.features.api('li-document-lists').registerListHooks({
     projectHandle: 'your-interesting-project',
     channelHandle: 'some-channel',
-    listUpdateHookAsync: ({projectId, listId, remove, add}) => {
+    listUpdateHookAsync ({projectId, listId, remove, add}) {
       console.info(
         `The list with id '${listId}' in the project '${projectId}' has changes.`,
         `removing ${remove.length} things, adding ${add.length} things.`
