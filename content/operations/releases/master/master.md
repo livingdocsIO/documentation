@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Intercept and assert error logs in tests [livingdocs-server #4253 v165.6.2](https://github.com/livingdocsIO/livingdocs-server/pull/4253)
 * :new: Metadata: cleanup/fix some Vue Metadata Form rendering [livingdocs-editor #5046 v77.0.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5046)
 * :new: Metadata: Log deprecation messages for unnecessary ui.component config [livingdocs-editor #5045 v77.0.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5045)
 * :new: fix(imatrics): Update API mock with regular API changes [livingdocs-server #4254 v165.6.1](https://github.com/livingdocsIO/livingdocs-server/pull/4254)
