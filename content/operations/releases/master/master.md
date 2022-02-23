@@ -242,28 +242,17 @@ References:
 * [server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4194)
 
 
-### publishHook / unpublishHook parameter change :fire:
+### unpublishHook parameter change :fire:
 
-:fire: Change the parameters in `publishHook` and `unpublishHook`.
-- `params.payload.documentVersion` moved to `params.documentVersion`. This `documentVersion` doesn't run through the render pipeline anymore. Please use `params.render()` to get the old behavior if you need to.
-- `params.payload.renditions` got removed. Please use `params.render()` or the rendition api directly if you need to create a rendition. The usage of this function is discouraged as the publish hook gets executed within a transaction and it will degrade the performance and can cause deadlocks.
+:fire: Change the parameters in `unpublishHook`.
+- `params.payload.documentVersion` moved to `params.documentVersion`.
 - Access of `params.payload` now throws an error
-- `document.publish` event doesn't receive the renditions anymore
-- `document.publish` event now receives the raw `documentVersion`, where `metadataPlugin.onRender` wasn't called.
 
 **Migration example**
 ```js
-async publishHookAsync (params) {
+async unpublishHookAsync ({documentVersion}) {
   // params.payload.documentVersion moved to params.documentVersion
-  await doSomething(params.documentVersion)
-
-  // params.payload.renditions got removed.
-  // The render-pipeline doesn't get called anymore.
-  // You can still call it explicitly, but that's discouraged
-  // as the publishHook is executed within a transaction
-  // and expensive operations will reduce the performance and can cause deadlocks:
-  const {documentVersion, renditions} = await params.render()
-  await pushRenditionsToExternalService(renditions)
+  await doSomething(documentVersion)
 }
 ```
 
@@ -377,13 +366,11 @@ Add `replaceAsset` operation at `PATCH api/v1/mediaLibrary/:id` | [PR](https://g
 
 #### hooksApi
 
-TODO: Add link to documentation
-
 🎁 Add `preparePublishHookAsync` to the instant publishing process
 🎁 Add `postPublishHookAsync` to the instant publishing process
 
 References:
-* [Documentation]()
+* [Documentation]({{< ref "/reference-docs/server-extensions/server-hooks" >}})
 * [Server Pull Request](https://github.com/livingdocsIO/livingdocs-server/pull/4146)
 
 #### documentApi
