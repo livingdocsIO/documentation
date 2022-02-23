@@ -48,8 +48,6 @@ menus:
 
 **API of Publication Hooks**
 * `preparePublishHookAsync`: `({documentVersion}) {return}`
-* `prepublishHookAsync`: `({documentVersion}) {return {documentVersion}}`
-* `publishHookAsync`: `({documentType, {documentVersion, renditions}}) {return}`
 * `postPublishHookAsync`: `({documentVersion}) {return}`
 * `unpublishHookAsync`: `({doumentType, {documentVersion}}) {return}`
 
@@ -109,7 +107,7 @@ async preparePublishHookAsync ({documentVersion}) {
 
 ### postPublishHookAsync()
 
-The `postPublishHookAsync` hook will be called after a document has been published. Any change to the `DocumentVersion` has no effect. A use case for this hook is to inform remote systems about the publication of a document.
+The `postPublishHookAsync` hook will be called after a document has been published. Any change to the [DocumentVersion]({{< ref "/reference-docs/server-extensions/document-version.md" >}}) has no effect. A use case for this hook is to inform remote systems about the publication of a document.
 
 **Use Cases**
 * Notify other systems
@@ -128,15 +126,10 @@ async postPublishHookAsync ({documentVersion}) {
 
 ### unpublishHookAsync()
 
-Just as with the publish hook, you can also configure a method that reacts to
-unpublish events.
-
-Just as in the publishHook you get a [DocumentVersion]({{< ref "/reference-docs/server-extensions/document-version.md" >}}) object for the document that was
-unpublished.
+The `unpublishHookAsync` hook will be called after a document has been unpublished. Any change to the [DocumentVersion]({{< ref "/reference-docs/server-extensions/document-version.md" >}}) has no effect. A use case for this hook is to inform remote systems about the unpublication of a document.
 
 ```js
-// payload = {documentVersion}
-async unpublishHookAsync ({documentType, payload}) {...}
+async unpublishHookAsync ({documentVersion}) {...}
 ```
 
 
