@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(document fields): metadata, metadata.* and project_id set as default [livingdocs-server #4260 v165.6.5](https://github.com/livingdocsIO/livingdocs-server/pull/4260)
 * :new: Fix migrations [livingdocs-server #4258 v165.6.4](https://github.com/livingdocsIO/livingdocs-server/pull/4258)
 * :new: Validate if a publication hook does exist [livingdocs-server #4255 v165.6.3](https://github.com/livingdocsIO/livingdocs-server/pull/4255)
 * :new: Prevent double click on migration accept button [livingdocs-editor #5049 v77.0.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5049)
