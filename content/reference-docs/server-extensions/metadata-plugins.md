@@ -34,11 +34,16 @@ module.exports = {
     type: 'string'
   },
 
-  // @param value property value after onPublish has been called.
-  // @param config {Object} config property of `metadata configuration`
-  // @return If you return `false` or even better a `string` with an explanation
-  //   this will be treated as a failed validation. All other return values
-  //   count as valid.
+  /**
+  * Validate only gets triggered for metadata.onPreparePublish hook
+  * If the validation fails, the publish process will be aborted
+  *
+  * @param {} value value of the metadata field.
+  * @param {Object} config config property of `metadata configuration`
+  * @return If you return `false` or even better a `string` with an explanation
+  *   this will be treated as a failed validation. All other return values
+  *   count as valid.
+  **/
   validate: function (value, config) {
     // Example implementation
     if (value.length > 20) {
@@ -60,10 +65,11 @@ module.exports = {
     return newValue
   },
 
-  // The onPublish event will be called before a document gets published
+  // The onPreparePublish event will be called before a document gets published
   // @return the value you assign to the metadata field, if you don't return
   //    the value will be undefined
-  onPublish: function(newValue, oldValue, config, documentVersion) {
+  // introduced in: release-2021-03 (is a replacement for onPublish hook)
+  onPreparePublish: function(newValue, oldValue, config, documentVersion) {
     // CUSTOMIZE: your implementation
     return newValue
   },
