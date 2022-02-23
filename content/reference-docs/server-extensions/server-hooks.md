@@ -35,10 +35,10 @@ menus:
 |preparePublishHook|Instant Publish|✅|release-2022-03||
 |prepublishHook|Instant Publish|✅||release-2022-03|
 |publishHook|Instant Publish|✅||release-2022-03|
-|postPublishHook|Instant Publish|✅|release-2022-03||
-|unPublishHook|Instant Publish|✅|||
+|postPublishHook|Instant Publish||release-2022-03||
+|unPublishHook|Instant Publish|✅|release-2017-01||
 
-![](https://user-images.githubusercontent.com/172394/146718398-5414fe96-cf3a-44e9-9f1f-5f57e1e8172f.png)
+{{< img src="images/publishing-instant.png">}}
 
 ### Register a Publication Hook
 

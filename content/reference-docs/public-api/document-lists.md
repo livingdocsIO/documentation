@@ -69,7 +69,7 @@ api/v1/document-lists/1
           "events": [
             "onUpdate",
             "onUpdate",
-            "onPublish"
+            "onPreparePublish"
           ]
         },
         "testDependency": "li-test-dependency.onUpdate is correct"
