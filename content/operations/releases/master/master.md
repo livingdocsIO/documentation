@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Update livingdocs-integration.json to point to release-2022-03 by default [livingdocs-editor #5054 v77.0.8](https://github.com/livingdocsIO/livingdocs-editor/pull/5054)
 * :new: Throw error on invalid offsets [livingdocs-server #4261 v165.6.6](https://github.com/livingdocsIO/livingdocs-server/pull/4261)
 * :new: fix(iframe styling): semantic title tags not affected in iframes [livingdocs-editor #5052 v77.0.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5052)
 * :new: fix(document fields): Fields only added in the server [livingdocs-editor #5051 v77.0.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5051)
