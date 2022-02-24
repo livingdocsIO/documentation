@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Do not support callbacks in hugoApi [livingdocs-server #3938 v169.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/3938)
 * :new: Fix/save status and component list [livingdocs-editor #5058 v77.0.9](https://github.com/livingdocsIO/livingdocs-editor/pull/5058)
 * :new: Rename `metadata.onPublish` hook to `metadata.onPreparePublish` hook [livingdocs-server #4264 v168.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4264)
 * :new: Remove Server Hook `publishHook` [livingdocs-server #4259 v167.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4259)
