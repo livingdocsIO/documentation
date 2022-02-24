@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Revert typo of hugo config getter [livingdocs-server #4266 v169.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4266)
 * :new: Show error messages when include service is not registered [livingdocs-editor #5056 v77.0.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5056)
 * :new: Do not support callbacks in hugoApi [livingdocs-server #3938 v169.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/3938)
 * :new: Fix/save status and component list [livingdocs-editor #5058 v77.0.9](https://github.com/livingdocsIO/livingdocs-editor/pull/5058)
