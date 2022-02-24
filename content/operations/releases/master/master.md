@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Rename `metadata.onPublish` hook to `metadata.onPreparePublish` hook [livingdocs-server #4264 v168.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4264)
 * :new: Remove Server Hook `publishHook` [livingdocs-server #4259 v167.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4259)
 * :new: Remove Server Hook `prepublishHook` [livingdocs-server #4257 v166.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4257)
 * :new: Update livingdocs-integration.json to point to release-2022-03 by default [livingdocs-server #4265 v165.6.7](https://github.com/livingdocsIO/livingdocs-server/pull/4265)
