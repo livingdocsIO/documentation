@@ -135,13 +135,12 @@ async unpublishHookAsync ({documentVersion}) {...}
 
 ## Render Hooks
 
-These hook into the `render-pipeline` feature. The `beforeRenderHook` is called right before a document gets rendered.
+The `beforeRenderHookAsync` is called right before a document gets rendered.
 
-* `beforeRenderHook`: `({documentType, rendition}, callback)`
+API:
 * `beforeRenderHookAsync`: `({documentType, rendition})`
 
-Here is a full example including server initialization:
-
+Example:
 ```js
 const appConfig = require('./conf')
 const liServer = require('@livingdocs/server')(appConfig)
@@ -169,10 +168,9 @@ liServer.registerInitializedHook((done) => {
 
 ### registerListHooks()
 
-There is one hook for the `document-lists` feature. The hook can be registerd
-through `registerListHooks()`.
+There is one hook for the `document-lists` feature. The hook can be registered through `registerListHooks()`.
 
-Here is a full example:
+Example:
 ```js
 const appConfig = require('./conf')
 const liServer = require('@livingdocs/server')(appConfig)
@@ -200,7 +198,7 @@ reindex the documents which got added/removed from a list.
 
 ```js
 listUpdateHookAsync: ({
-  trx, // a knex transaction object
+  trx,
   eventSource, // which api method triggers the hook 'updateList' or `removeDocumentFromList`
   projectId,
   channelId,
