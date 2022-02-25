@@ -356,6 +356,7 @@ References:
 - [v157.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.9): return revision also in case metadata_id is null
 
 ### Livingdocs Editor Patches
+- [v74.4.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.65): fix: set default value for minResolution on li-image-crop
 - [v74.4.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.64): fix(documentFields): All fields added for downstream data
 - [v74.4.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.63): fix(proofReading Buttons): Flex style added
 - [v74.4.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.62): fix(type styling moved): Type styling separated for semantic tags
