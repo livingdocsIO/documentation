@@ -82,13 +82,17 @@ The following lists all events, before the comma, the name of the event and behi
   - user.email.change, `(eventName, identity)`
   - user.login.success, `(eventName, {user})`
   - user.login.fail, `(eventName, {error})`
+  - user.login.new-device, `(eventName, {userId, identityId})`
+  - user.newsletter, `(eventName, {newsletter, userId, email, displayName})`
 
 - document
   - document.update, `(eventName, {user, documentVersion})`
   - document.delete, `(eventName, {user, documentVersion})`
   - document.create, `(eventName, {user, documentVersion})`
-  - document.publish, `(eventName, {user, documentVersion, renditions})`
+  - document.publish, `(eventName, {user, documentVersion})`
   - document.unpublish, `(eventName, {user, documentVersion})`
+  - document.copy, `(eventName, {documentVersion, originalDocumentId, isTranslation})`
+  - document.transform, `(eventName, {documentVersion, originalContentType})`
 
 - document_list
   - document_list.delete, `(eventName, {user, documentList})`
@@ -111,3 +115,7 @@ The following lists all events, before the comma, the name of the event and behi
 - project
   - project.create, `(eventName, {project})`
   - project.update, `(eventName, {project})`
+  - project-config.update, `(eventName, {projectId, channelId, indexId})`
+
+- category
+  - category.update, `(eventName, {pointer, value, projectId, user})`
