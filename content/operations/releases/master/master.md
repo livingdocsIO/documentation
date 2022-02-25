@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Table dashboard: support for li-category / li-document-reference [livingdocs-editor #5043 v77.1.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5043)
 * :new: Table dashboard: config for li-category / li-document-reference [livingdocs-server #4243 v170.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4243)
 * :new: iFrame UI: ensure mouseup events don't reach the framework interactive page [livingdocs-editor #5066 v77.0.15](https://github.com/livingdocsIO/livingdocs-editor/pull/5066)
 * :new: fix(center buttons): load more article buttons centered [livingdocs-editor #5062 v77.0.14](https://github.com/livingdocsIO/livingdocs-editor/pull/5062)
