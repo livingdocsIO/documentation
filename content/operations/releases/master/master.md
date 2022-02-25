@@ -28,52 +28,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 ## PRs to Categorize
 * :new: fix: set default value for minResolution on li-image-crop [livingdocs-editor #5057 v77.0.11](https://github.com/livingdocsIO/livingdocs-editor/pull/5057)
 * :new: Revert typo of hugo config getter [livingdocs-server #4266 v169.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4266)
-* :new: Show error messages when include service is not registered [livingdocs-editor #5056 v77.0.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5056)
-* :new: Do not support callbacks in hugoApi [livingdocs-server #3938 v169.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/3938)
-* :new: Fix/save status and component list [livingdocs-editor #5058 v77.0.9](https://github.com/livingdocsIO/livingdocs-editor/pull/5058)
-* :new: Rename `metadata.onPublish` hook to `metadata.onPreparePublish` hook [livingdocs-server #4264 v168.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4264)
-* :new: Remove Server Hook `publishHook` [livingdocs-server #4259 v167.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4259)
-* :new: Remove Server Hook `prepublishHook` [livingdocs-server #4257 v166.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4257)
-* :new: Update livingdocs-integration.json to point to release-2022-03 by default [livingdocs-server #4265 v165.6.7](https://github.com/livingdocsIO/livingdocs-server/pull/4265)
-* :new: Update livingdocs-integration.json to point to release-2022-03 by default [livingdocs-editor #5054 v77.0.8](https://github.com/livingdocsIO/livingdocs-editor/pull/5054)
-* :new: Throw error on invalid offsets [livingdocs-server #4261 v165.6.6](https://github.com/livingdocsIO/livingdocs-server/pull/4261)
-* :new: fix(iframe styling): semantic title tags not affected in iframes [livingdocs-editor #5052 v77.0.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5052)
-* :new: fix(document fields): Fields only added in the server [livingdocs-editor #5051 v77.0.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5051)
-* :new: fix(document fields): metadata, metadata.* and project_id set as default [livingdocs-server #4260 v165.6.5](https://github.com/livingdocsIO/livingdocs-server/pull/4260)
-* :new: Fix migrations [livingdocs-server #4258 v165.6.4](https://github.com/livingdocsIO/livingdocs-server/pull/4258)
-* :new: Validate if a publication hook does exist [livingdocs-server #4255 v165.6.3](https://github.com/livingdocsIO/livingdocs-server/pull/4255)
-* :new: Prevent double click on migration accept button [livingdocs-editor #5049 v77.0.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5049)
-* :new: Intercept and assert error logs in tests [livingdocs-server #4253 v165.6.2](https://github.com/livingdocsIO/livingdocs-server/pull/4253)
-* :new: Metadata: cleanup/fix some Vue Metadata Form rendering [livingdocs-editor #5046 v77.0.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5046)
-* :new: Metadata: Log deprecation messages for unnecessary ui.component config [livingdocs-editor #5045 v77.0.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5045)
-* :new: fix(imatrics): Update API mock with regular API changes [livingdocs-server #4254 v165.6.1](https://github.com/livingdocsIO/livingdocs-server/pull/4254)
-* :new: fix(imatrics): Remove load more button from tags dashboard [livingdocs-editor #5042 v77.0.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5042)
-* :new: Expose metadata object on `documentWriteModel.metadata` [livingdocs-server #4250 v165.6.0](https://github.com/livingdocsIO/livingdocs-server/pull/4250)
-* :new: Imatrics updates [livingdocs-server #4241 v165.5.1](https://github.com/livingdocsIO/livingdocs-server/pull/4241)
-* :new: Link validation errors to the specific component [livingdocs-editor #5048 v77.0.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5048)
-* :new: Publication Control - Part 6: Storage [livingdocs-server #4242 v165.5.0](https://github.com/livingdocsIO/livingdocs-server/pull/4242)
-* :new: Metadata: render default UI component per type in metadata form [livingdocs-editor #5041 v77.0.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5041)
-* :new: Metadata: Allow omitting ui.component configuration [livingdocs-server #4240 v165.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4240)
-* :new: fix(retresco): Handle projects without retresco config in prepublishHookAsync [livingdocs-server #4244 v165.3.1](https://github.com/livingdocsIO/livingdocs-server/pull/4244)
-* :new: Metadata: Use Vue based form renderer by default [livingdocs-editor #5016 v76.0.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5016)
-* :new: feat(retresco): Add Retresco integration [livingdocs-editor #5013 v75.8.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5013)
-* :new: feat(retresco): Add Retresco integration [livingdocs-server #4215 v165.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4215)
-* :new: feat(secrets): Allow secrets to be seeded [livingdocs-server #4230 v165.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4230)
-* :new: Improvement/vue select [livingdocs-editor #5035 v75.7.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5035)
-* :new: Publish Control - Part 4: Publish Control API [livingdocs-server #4188 v165.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4188)
-* :new: Metadata filtering [livingdocs-server #4228 v165.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4228)
-* :new: Publish Control: Part 1 [livingdocs-editor #5004 v75.7.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5004)
-* :new: fix: bump framework to version 23.0.2 [livingdocs-editor #5033 v75.6.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5033)
-* :new: fix: prevent editing of deleted documents [livingdocs-server #4178 v164.10.1](https://github.com/livingdocsIO/livingdocs-server/pull/4178)
-* :new: feat: filter out concepts based on the imatrics config 'ignoredConceptTypes' [livingdocs-editor #5031 v75.6.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5031)
-* :new: fix: from iMatrics concepts get only the fields that are needed [livingdocs-server #4226 v164.10.0](https://github.com/livingdocsIO/livingdocs-server/pull/4226)
-* :new: Table dashboard: metadata editing [livingdocs-server #4223 v164.9.0](https://github.com/livingdocsIO/livingdocs-server/pull/4223)
-* :new: Table dashboard: metadata editing [livingdocs-editor #5022 v75.5.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5022)
-* :new: Fix cpu metrics on prometheus /metrics endpoint [livingdocs-server #4227 v164.8.1](https://github.com/livingdocsIO/livingdocs-server/pull/4227)
-* :new: Char Counter: new UI & li-target-length integration [livingdocs-editor #4997 v75.4.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4997)
-* :new: feat: add api token scope for desk-net [livingdocs-server #4225 v164.8.0](https://github.com/livingdocsIO/livingdocs-server/pull/4225)
-* :new: feat: add api token scope for desk-net in the API Token creation [livingdocs-editor #5025 v75.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5025)
-
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
@@ -124,16 +78,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Highlights
 
-## Video Includes
-
-TODO: add a description + documentation
-
-* References
-  * [TODO: Documentation]()
-  * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4796)
-  * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4054)
-  * [Video reference form upload](https://github.com/livingdocsIO/livingdocs-editor/pull/4823)
-
 ## Editing improvements
 
 With this release we improved some behavior during editing a document:
@@ -151,39 +95,57 @@ References:
 - [PR 2](https://github.com/livingdocsIO/livingdocs-editor/pull/4638)
 - [PR 3](https://github.com/livingdocsIO/livingdocs-editor/pull/4956)
 
+## Vue Metadata Plugins
+
+A much requested feature was adding metadata plugins with a custom Vue component. Finally we have it!
+
+References:
+* [Guide - Slug example implementation](https://docs.livingdocs.io/guides/documents/metadata/metadata-examples/)
+* [Documentation - List of available metadata plugins](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
+* [Documentation - Register a metadata plugin via Vue component registry](https://docs.livingdocs.io/reference-docs/editor-extensions/vue-component-registry)
+
+## Table Dashboards
+
+TODO@roman: add description + documentation
+
+References:
+* [Documentation]()
+* [config PR](https://github.com/livingdocsIO/livingdocs-server/pull/4145)
+* [component PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4934)
+* [metadata editing PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5022)
+
+## Retresco integration
+
+We integrated `Retresco` tagging system to automatically add tags to a document with a nice UI. The supported functionality is:
+- automated adding of tags (via Retresco) to a Livingdocs document
+- ability to change tags via Editor
+
+* References
+  * [Documentation](https://docs.livingdocs.io/reference-docs/project-config/settings/)
+  * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5013)
+  * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4215)
+
+## Video Includes
+
+TODO@ajwild: add a description + documentation
+
+* References
+  * [TODO: Documentation]()
+  * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4796)
+  * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4054)
+  * [Video reference form upload](https://github.com/livingdocsIO/livingdocs-editor/pull/4823)
+
 ## Document Inbox Extensions
 
-TODO: add description + documentation
+TODO@ajwild: add description + documentation
 
-* :new: Document inbox extension [livingdocs-editor #4852 v74.15.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4852)
 * -> Add to inbox from media library dashboard:
 * -> Document inbox side-panel in the editor:
 * -> Updated the dashboard results group header used when there are multiple media sources
 
-## Publish Control
-
-TODO: add description + documentation + decide if the feature is already part of the release
-
-References:
-* [Server Publish Control - Part 1 - Refactoring - Move render functions into publicationDelivery](https://github.com/livingdocsIO/livingdocs-server/pull/4193)
-* [Server Publish Control - Part 2 - Clean up existing publish workflow](https://github.com/livingdocsIO/livingdocs-server/pull/4193)
-* [Server Publish Control - Part 3 - Add new hooks to the instant publishing process](https://github.com/livingdocsIO/livingdocs-server/pull/4146)
-* [Server Publish Control - Part 4 - Publish Control API](https://github.com/livingdocsIO/livingdocs-server/pull/4146)
-
-## Table Dashboards
-
-TODO: add description + documentation
-
-References:
-* [config PR](https://github.com/livingdocsIO/livingdocs-server/pull/4145)
-* [component PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4934)
-
-## Vue Metadata Plugins
-
-TODO: add description + documentation
-
-References:
-* [Iteration 1](https://github.com/livingdocsIO/livingdocs-editor/pull/4836)
+* References
+  * [TODO: Documentation]()
+  * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4852)
 
 ## oEmbed Include
 
@@ -226,7 +188,7 @@ liServer.db.begin(async (trx) => {
 })
 ```
 
-References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4163)
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4163)
 
 ### Remove columns from documents / document_publication_events table :fire:
 
@@ -235,7 +197,7 @@ References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4163)
 
 Those changes shouldn't affect any downstream, but in case there are direct sql queries against the database, you need to switch to queries that use the `content_type_id` column.
 
-References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4165)
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4165)
 
 
 ### Remove support for callbacks in multiple server API's :fire:
@@ -249,10 +211,97 @@ An example how to migrate the APIs you will find in [September 2021 Release]({{<
 - 🔥 remove callback support of `pushNotifications` (`server.features.api('li-push-notifications').publication`) functions. Only promise based calls are supported
 - 🔥 remove callback support of `publicationApi` (`server.features.api('li-documents').publication`) functions. Only promise based calls are supported
 - 🔥 remove callback support of `pusherApi` (`server.features.api('li-pusher-authentication')`) functions. Only promise based calls are supported
+- 🔥 remove callback support of `hugoApi` (`server.features.api('li-hugo')`) functions. Only promise based calls are supported
+
 
 References:
-* [server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4194)
+* [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4194)
+* [Server PR2](https://github.com/livingdocsIO/livingdocs-server/pull/3938)
 
+
+### Remove prepublishHook :fire:
+
+🔥 removed server hook `prepublishHook`
+🔥 renamed server config `integrations.retresco.registerPrepublishHook` to `integrations.retresco.registerPreparePublishHook`
+
+If you want to keep the functionality of the `prepublishHook`, you can use the `preparePublishHook`. For alternatives and explanations check the [Server Hooks documentation](https://docs.livingdocs.io/reference-docs/server-extensions/server-hooks/#publication-hooks)
+
+```js
+// migrate from
+async prepublishHookAsync ({documentVersion}) {
+  // modify documentVersion
+  return {documentVersion}
+}
+// to
+async preparePublishHookAsync ({documentVersion}) {
+  // modify documentVersion
+  return
+}
+```
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4257)
+
+
+### Remove publishHook :fire:
+
+🔥 removed `publishHook` (throws an error on server startup)
+
+If you want to keep the functionality of the `publishHook`, you can use the `preparePublishHook` (modify the document) or `postPublishHook` (notify other systems). For more explanations check the [Server Hooks documentation](https://docs.livingdocs.io/reference-docs/server-extensions/server-hooks/#publication-hooks)
+
+**Example 1 - migration from publishHook to preparePublishHook**
+```js
+// migrate from
+async publishHookAsync ({documentVersion}) {
+  // modify documentVersion
+  return {documentVersion}
+}
+// to
+async preparePublishHookAsync ({documentVersion}) {
+  // modify documentVersion
+  return
+}
+```
+
+**Example 2 - migration from publishHook to postPublishHook**
+```js
+// migrate from
+async publishHookAsync ({documentVersion}) {
+  // notify other system
+  return {documentVersion}
+}
+// to
+async postPublishHookAsync ({documentVersion}) {
+  // notify other system
+  return
+}
+```
+
+**Example 3 - migrate document rendering**
+```js
+// if you have used the document rendering in the publication hook, you can still use the functionality
+// but you have to go over the publicationApi
+
+async publishHookAsync (params) {
+  const {documentVersion, renditions} = await params.render()
+  await pushRenditionsToExternalService(renditions)
+  return {documentVersion}
+}
+// to
+async postPublishHookAsync (params) {
+  const publicationApi = server.features.api('li-documents').publication
+  const {documentVersion, renditions} = await publicationApi.render(params.documentVersion)
+  await pushRenditionsToExternalService(renditions)
+  return
+}
+```
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4259)
+
+### Rename metadata.onPublish hook to metadata.onPreparePublish hook :fire:
+
+🔥 rename `metadata.onPublish` hook to `metadata.onPreparePublish` hook (API stays same)
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4264)
 
 ### unpublishHook parameter change :fire:
 
@@ -284,7 +333,79 @@ We removed Callback support in several server API's as we noticed many bugs orig
 
 You can find migration a migration example [here]({{< ref "/content/operations/releases/release-2021-09/release-2021-09.md#example-how-to-migrate" >}}).
 
-References: [projectApi PR](https://github.com/livingdocsIO/livingdocs-server/pull/4160)
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4160)
+
+### Document Search - Don't search for exact document id matches :fire:
+
+:fire: `server.features.api('li-documents').document.find()` will no longer search by id if the search string is numeric.
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4155)
+
+### Remove Support for tasks-v1 :fire:
+
+Tasks v1 is deprecated since 2 years. We removed it, because no customers use it to our knowledge.
+
+**Steps to do for downstreams**
+- delete editor config `app.taskTypes`
+- delete metadata plugin projectConfig with type `li-tasks`
+- delete elasticsearch document mapping for li-tasks (see [example](https://github.com/livingdocsIO/livingdocs-server/pull/3625/files))
+- configure `tasks-v2`, if you want to continue using tasks, e.g.
+  - [Proofreading Task Guide](https://docs.livingdocs.io/guides/editor/proofreading-task/)
+  - [Add a custom task](https://docs.livingdocs.io/guides/editor/review-task/)
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4196)
+
+### desk-net access removed for read API token :fire:
+
+:fire: removed `desk-net` access for document read API token
+
+If you want to have access to Desk Net with your API token, you need to add the "desk-net integration API access" via API tokens in the editor
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4225)
+
+### Render default UI component per metadata type :fire:
+
+For some metadata plugins, a default UI component is now rendered if `config.hideFromForm` is not set to `true` for a specific metadata property.
+
+add `hideFromForm: true` to the metadata config for any metadata property you want to see **not** rendered and is not in this list:
+`li-dependencies`, `li-document-lock`, `li-google-vision`, `li-media-language`, `li-metadata-translations`, `li-moderated-collab`, `li-print`, `li-push-notifications`, `li-routing`, `li-task-v2`.
+
+```js
+// contentType config
+{
+  metadata: [
+    {
+      handle: 'myText',
+      type: 'li-text',
+      config: {
+        hideFromForm: true
+      }
+    }
+  ]
+}
+```
+
+References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5041)
+
+
+### Use Vue based form rendering by default :fire:
+
+🔥 editor config `app.metadata.useVueBasedFormRendering` has no effect anymore (remove the config)
+
+Any downstream AngularJS based custom UI component should work as expected. If you have any problems, please do this:
+- Tell your contact at Livingdocs about the problem you see. We will make sure to fix the issue.
+- Set editor config `app.metadata.useAngularBasedFormRendering: true` in your editor config to temporarily switch back to the Angular based form rendering. This will be possible for `release-2022-03` only and removed in `release-2022-05`.
+
+References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5016)
+
+### Filter unconfigured metadata in publicApi :fire:
+
+Unconfigured metadata are now filtered from the `publicApi`. After a project configuration is updated the metadata properties not configured anymore will be filtered immediately. When saving a document from the editor with an unconfigured property the save will now succeed and unconfigured properties are 'ghosted' in the save operation. The importer will still throw errors for unconfigured metadata properties.
+
+🔥 Filter unconfigured properties from `public Api`
+
+References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4228)
+
 
 ### Button group improvement :fire:
 
@@ -307,26 +428,6 @@ In case you're making use of the above mentioned classes in your downstream:
 - See the **style guide screenshot below** for examples
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4825)
-
-### Document Search - Don't search for exact document id matches :fire:
-
-:fire: `server.features.api('li-documents').document.find()` will no longer search by id if the search string is numeric.
-
-References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4155)
-
-### Remove Support for tasks-v1 :fire:
-
-Tasks v1 is deprecated since 2 years. We removed it, because no customers use it to our knowledge.
-
-**Steps to do for downstreams**
-- delete editor config `app.taskTypes`
-- delete metadata plugin projectConfig with type `li-tasks`
-- delete elasticsearch document mapping for li-tasks (see [example](https://github.com/livingdocsIO/livingdocs-server/pull/3625/files))
-- configure `tasks-v2`, if you want to continue using tasks, e.g.
-  - [Proofreading Task Guide](https://docs.livingdocs.io/guides/editor/proofreading-task/)
-  - [Add a custom task](https://docs.livingdocs.io/guides/editor/review-task/)
-
-References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4196)
 
 
 
@@ -361,6 +462,46 @@ livingdocs-server key-generate convert-hs256 'some-secret-for-hmac256-token-sign
 References:
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4062)
 
+### Config ui.component in metadata plugin config
+
+Configuring `ui.component` with the default component name for a type is now deprecated. Please consult the [documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list) to learn about the default components per type. If you have the default component configured, please remove the `ui.component` configuration.
+
+An example:
+```js
+// contentType config
+{
+  metadata: [
+    {
+      handle: 'title',
+      type: 'li-text',
+      ui: {
+        component: 'liMetaTextForm'
+      }
+    }
+  ]
+}
+
+// can be configured like this with the same effect:
+{
+  metadata: [
+    {
+      handle: 'title',
+      type: 'li-text'
+    }
+  ]
+}
+```
+
+References:
+- [Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
+- [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5041)
+
+
+### Deprecate documentWriteModel.metadataContent
+
+Deprecate `documentWriteModel.metadataContent` use `documentWriteModel.metadata` instead.
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4250)
 
 ## APIs :gift:
 
@@ -415,9 +556,10 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 * Navigation: Add main navigation group config [livingdocs-server #4152 v161.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4152)
 * Document Search: Show tooltip for document id match [livingdocs-editor #4941 v74.25.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4941)
 * Load media sources in parallel [livingdocs-editor #5001 v75.1.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5001)
-* Added `li-meta-target-length` plugin/form [livingdocs-editor #5009 v75.2.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5009)
+* Metadata Plugin: New plugin char counter `li-target-length` introduced [livingdocs-editor #5009 v75.2.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5009)
 * Text editing: Allow trim config [livingdocs-editor #5021 v75.2.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5021)
 * Add `transformWebhookRequest` to transform the webhook request [livingdocs-server #4218 v164.7.0](https://github.com/livingdocsIO/livingdocs-server/pull/4218)
+* Project seeding: Allow secrets to be seeded [livingdocs-server #4230 v165.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4230)
 
 ### Design
 
@@ -426,6 +568,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 * Improvement/buttons and small visual improvements [livingdocs-editor #4985 v74.26.3](https://github.com/livingdocsIO/livingdocs-editor/pull/4985)
 * doc-link UI: fix button look [livingdocs-editor #4993 v75.0.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4993)
 * design update of li-mails-update [livingdocs-server #4211 v164.4.1](https://github.com/livingdocsIO/livingdocs-server/pull/4211)
+* Improvement Vue select [livingdocs-editor #5035 v75.7.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5035)
 
 ### Improvements
 
@@ -433,6 +576,26 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 * Migrate knex queries to db.sql / prep for non-transactional query pool [livingdocs-server #4157 v159.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4157)
 * Project Config: Support breaking project config changes [livingdocs-editor #4957 v74.23.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4957)
 * DB: Configure a maximum connection lifetime in postgres [livingdocs-server #4220 v164.6.0](https://github.com/livingdocsIO/livingdocs-server/pull/4220)
+* Server Hooks: Throw if a publication hook does not exist [livingdocs-server #4255 v165.6.3](https://github.com/livingdocsIO/livingdocs-server/pull/4255)
+* Includes: Show error messages when include service is not registered [livingdocs-editor #5056 v77.0.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5056)
+
+
+
+feature
+
+
+bugs
+
+
+
+improvement
+
+
+Security
+* Security: Throw error on invalid offsets [livingdocs-server #4261 v165.6.6](https://github.com/livingdocsIO/livingdocs-server/pull/4261)
+
+
+
 
 ### Bugfixes
 
@@ -446,9 +609,11 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
   * Prevent editing of deleted documents [livingdocs-editor #4974 v75.0.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4974)
   * History: Show year in edit history when it's not the current year [livingdocs-editor #4964 v74.22.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4964)
   * Named Crops: Take into account server config 'maxDimension' for automatic cropping [livingdocs-editor #4981 v74.27.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4981)
+  * Prevent editing of deleted documents [livingdocs-server #4178 v164.10.1](https://github.com/livingdocsIO/livingdocs-server/pull/4178)
 * UI
   * Stops notifications covering each other up [livingdocs-editor #4948 v74.20.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4948)
   * Fix «click outside» handling [livingdocs-editor #4925 v74.18.1](https://github.com/livingdocsIO/livingdocs-editor/pull/4925)
+  * Prevent double click on migration accept button [livingdocs-editor #5049 v77.0.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5049)
 * Print
   * Only load/require the print feature if it's configured [livingdocs-server #4088 v157.5.5](https://github.com/livingdocsIO/livingdocs-server/pull/4088)
 * Performance
@@ -469,6 +634,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
   * Fix WoodWing assets integration [livingdocs-server #4216 v164.4.4](https://github.com/livingdocsIO/livingdocs-server/pull/4216)
   * Search: Use correct elasticsearch client for 'indexingApi.search' and 'indexingApi.get'  [livingdocs-server #4189 v162.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4189)
   * Desk-Net: Make Desk-Net category optional [livingdocs-server #4176 v161.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4176)
+  * Migration: do not run prepareMigration.start for version bumps [livingdocs-server #4258 v165.6.4](https://github.com/livingdocsIO/livingdocs-server/pull/4258)
 * Comments
   * Update comments flyout correctly [livingdocs-editor #4962 v74.25.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4962)
   * Card buttons realigned [livingdocs-editor #5014 v75.1.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5014)
