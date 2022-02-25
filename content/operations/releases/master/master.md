@@ -26,8 +26,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* :new: fix: set default value for minResolution on li-image-crop [livingdocs-editor #5057 v77.0.11](https://github.com/livingdocsIO/livingdocs-editor/pull/5057)
-* :new: Revert typo of hugo config getter [livingdocs-server #4266 v169.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4266)
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
@@ -161,16 +159,15 @@ References:
 
 ### Migrate the database :fire:
 
-TODO: update migration section
-
-- Expected duration?
-- Possible data losses?
-- Is it a simple migration? (fast/easy downgradable)
+It's a simple/fast migration with no expected data losses.
 
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database scheme
-# migration - 111-add-comments-table.js
-#   create comments table + add events to the stream_events_types table
+# migration - 173-add-user-ids-to-document-lists.js
+# migration - 174-add-range-query-functions.js
+# migration - 175-drop-documents-content-type-document-type-and-channel.js
+# migration - 176-publish-control.js
+# migration - 177-document_revisions-document_id-deferrable.js
 livingdocs-server migrate up
 ```
 
@@ -507,9 +504,11 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4
 
 ### Public API
 
-TODO: Add link to documentation
+Add `replaceAsset` operation at `PATCH api/v1/mediaLibrary/:id`
 
-Add `replaceAsset` operation at `PATCH api/v1/mediaLibrary/:id` | [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4109) | [Documentation]()
+References:
+- [Documentation]({{< ref "/reference-docs/public-api/media-library" >}})
+- [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4109)
 
 ### Server Config
 
@@ -534,12 +533,10 @@ References:
 
 remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({documentVersion, renderInProcess})`. The parameter didn't have any effect anymore | [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4106)
 
-
-
-
-## Internal Changes
-
 ## Other Changes
+
+### Security
+* Throw error on invalid offsets [livingdocs-server #4261 v165.6.6](https://github.com/livingdocsIO/livingdocs-server/pull/4261)
 
 ### Features
 
@@ -578,23 +575,6 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 * DB: Configure a maximum connection lifetime in postgres [livingdocs-server #4220 v164.6.0](https://github.com/livingdocsIO/livingdocs-server/pull/4220)
 * Server Hooks: Throw if a publication hook does not exist [livingdocs-server #4255 v165.6.3](https://github.com/livingdocsIO/livingdocs-server/pull/4255)
 * Includes: Show error messages when include service is not registered [livingdocs-editor #5056 v77.0.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5056)
-
-
-
-feature
-
-
-bugs
-
-
-
-improvement
-
-
-Security
-* Security: Throw error on invalid offsets [livingdocs-server #4261 v165.6.6](https://github.com/livingdocsIO/livingdocs-server/pull/4261)
-
-
 
 
 ### Bugfixes

@@ -72,17 +72,32 @@ PATCH api/v1/mediaLibrary/:id
 |Name|Type|Required|Notes|
 |-|-|-|-|
 |version|string||current mediaLibraryEntry version. When set on update the version is checked.|
-|patches|array|x|an array of patches to execute. Each entry is an object with the following keys:<br><br>**operation** only setMetadataProperty is available at the moment<br>**propertyName** string of the propertyName<br>**value** string or object for the new value. If set to null or value is not set it will remove the property.|
+|patches|array|x|an array of patches to execute. Each entry is an object with the following keys:<br><br>**operation** setMetadataProperty or replaceAsset<br>**propertyName** string of the propertyName (only for setMetadataProperty)<br>**value** string or object for the new value. If set to null or value is not set it will remove the property for setMetadataProperty. **required** for replaceAsset operation.|
 
 #### Example Request
 ```js
 {
-  "version": "current mediaLibraryEntry version",
+  "version": "1",
   "patches": [
     {
+      // update a single metadata property
       "operation": "setMetadataProperty",
       "propertyName": "title",
       "value": "updated title"
+    },
+    {
+      // replace the asset
+      "operation": "replaceAsset",
+      "value": {
+        // the file with this key should exist in the configured storage
+        key: '2021/11/23/my-new-file.png',
+        url: 'https://example.com/my-new-file.png',
+        size: 10000,
+        width: 1000,
+        height: 800,
+        filename: 'my-new-file.png',
+        mimeType: 'image/png'
+      }
     }
   ]
 }
