@@ -56,7 +56,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 |-|-|
 |Node|16|
 |NPM|7|
-|Postgres|14.1|
+|Postgres|14|
 |Elasticsearch|7|
 |Redis|6|
 |Livingdocs Server Docker Image|livingdocs/server-base:16|
@@ -68,8 +68,8 @@ These are the release notes of the upcoming release (pull requests merged to mas
 |-|-|
 |Node|14|
 |NPM|7|
-|Postgres|9.6 (Deprecated Postgres 9, 10, 11)|
-|Elasticsearch|6.x|
+|Postgres|11 (Deprecated Postgres 11)|
+|Elasticsearch|6.x (Deprecated)|
 |Redis|5|
 |Livingdocs Server Docker Image|livingdocs/server-base:14.3|
 |Livingdocs Editor Docker Image|livingdocs/editor-base:14.3|
@@ -172,6 +172,10 @@ It's a simple/fast migration with no expected data losses.
 # migration - 177-document_revisions-document_id-deferrable.js
 livingdocs-server migrate up
 ```
+
+### Remove Support for Postgres 9 + 10 :fire:
+
+:fire: Support for Postgres 9 + 10 has been removed, Please Update to Postgres 14 (11+ is supported).
 
 ### Migrate knex transactions to pg :fire:
 
@@ -435,6 +439,10 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 ### Postgres
 
 Postgres 11 is now deprecated. Please update to Postgres 14.1 whenever possible.
+
+### Elasticsearch
+
+Elasticsearch 6.x is now deprecated. Please update to Elasticsearch 7 whenever possible.
 
 ### Configuration `auth.accessTokenSecret`
 
