@@ -57,7 +57,7 @@ menus:
 const appConfig = require('./conf')
 const liServer = require('@livingdocs/server')(appConfig)
 
-liServer.registerInitializedHook(() => {
+liServer.registerInitializedHook(async () => {
   liServer.features.api('li-documents').registerPublicationServerHooks({
     async preparePublishHookAsync ({documentVersion}) { return }
   })
@@ -145,7 +145,7 @@ Example:
 const appConfig = require('./conf')
 const liServer = require('@livingdocs/server')(appConfig)
 
-liServer.registerInitializedHook((done) => {
+liServer.registerInitializedHook(async () => {
   liServer.features.api('li-render-pipeline').registerRenderHooks({
     projectHandle: 'your-interesting-project',
     channelHandle: 'some-channel',
@@ -159,7 +159,7 @@ liServer.registerInitializedHook((done) => {
         return extendGalleryTeasers(galleryTeasers, rendition)
       }
     }
-  }, done)
+  })
 })
 ```
 
@@ -175,7 +175,7 @@ Example:
 const appConfig = require('./conf')
 const liServer = require('@livingdocs/server')(appConfig)
 
-liServer.registerInitializedHook((done) => {
+liServer.registerInitializedHook(async () => {
   liServer.features.api('li-document-lists').registerListHooks({
     projectHandle: 'your-interesting-project',
     channelHandle: 'some-channel',
@@ -186,7 +186,7 @@ liServer.registerInitializedHook((done) => {
       )
       return
     }
-  }, done)
+  })
 })
 ```
 
