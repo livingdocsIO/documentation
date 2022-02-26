@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Deprecate postgres older than v12 [livingdocs-server #4274 v171.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4274)
 * :new: feat(public-api): Add document latestDraft beta endpoint [livingdocs-server #4224 v171.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4224)
 * :new: Publish Control 2 [livingdocs-editor #5026 v77.2.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5026)
 * :new: Remove server config `search.documentsMetadataFields` [livingdocs-server #4273 v171.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4273)
