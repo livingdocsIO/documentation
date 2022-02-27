@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: chore(public-api): Supress and assert deprecation warnings [livingdocs-server #4277 v171.1.3](https://github.com/livingdocsIO/livingdocs-server/pull/4277)
 * :new: Deprecate elasticsearch v6 [livingdocs-server #4276 v171.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4276)
 * :new: Deprecate postgres older than v12 [livingdocs-server #4274 v171.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4274)
 * :new: feat(public-api): Add document latestDraft beta endpoint [livingdocs-server #4224 v171.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4224)
