@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: scroll to an editable only when scroll is manually triggered [livingdocs-editor #5044 v77.2.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5044)
 * :new: Prevent user from adding duplicates within Retresco and iMatrics [livingdocs-editor #5068 v77.2.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5068)
 * :new: fix(document editing toolbar): reliably close flyouts on outside click [livingdocs-editor #5067 v77.2.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5067)
 * :new: fix(retresco): Update Cypress tests to match mock API changes [livingdocs-editor #5071 v77.2.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5071)
