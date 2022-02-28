@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(retresco): Update Cypress tests to match mock API changes [livingdocs-editor #5071 v77.2.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5071)
 * :new: Replace request with axios [livingdocs-server #4278 v171.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/4278)
 * :new: chore(public-api): Supress and assert deprecation warnings [livingdocs-server #4277 v171.1.3](https://github.com/livingdocsIO/livingdocs-server/pull/4277)
 * :new: Deprecate elasticsearch v6 [livingdocs-server #4276 v171.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4276)
