@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(publicApi): add id to nodes in menu [livingdocs-server #4282 v171.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4282)
 * :new: fix: scroll to an editable only when scroll is manually triggered [livingdocs-editor #5044 v77.2.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5044)
 * :new: Prevent user from adding duplicates within Retresco and iMatrics [livingdocs-editor #5068 v77.2.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5068)
 * :new: fix(document editing toolbar): reliably close flyouts on outside click [livingdocs-editor #5067 v77.2.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5067)
