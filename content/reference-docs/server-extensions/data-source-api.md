@@ -34,34 +34,36 @@ You can register a DataSource (e.g. `labelValuePairDataSource`) and use it as da
 **Register a DataSource on the server**
 
 ```js
-const dataSourcesApi = liServer.features.api('li-data-sources')
+liServer.features.register('data-sources', async function (feature, server) {
+  const dataSourcesApi = server.features.api('li-data-sources')
 
-// register code on the server
-dataSourcesApi.register({
-  handle: 'labelValuePairDataSource',
-  // result for labelValuePair = [{label, value}, ...]
-  dataFormat: 'labelValuePair',
-  // fetch data from your external service (or provide a static list)
-  // projectId/userId is always passed (guaranteed by the server)
-  // params will be passed by the requester (e.g. a metadata plugin on the editor which passes the documentId)
-  async fetch ({projectId, userId, params}) {
-    const fetchedData = {
-      'categories': [
-        {'id': '1', 'category': 'Bücher'},
-        {'id': '2', 'category': 'News'},
-        {'id': '3', 'category': 'Wirtschaft', isDefault: true},
-        {'id': '4', 'category': 'International'}
-      ]
+  // register code on the server
+  dataSourcesApi.register({
+    handle: 'labelValuePairDataSource',
+    // result for labelValuePair = [{label, value}, ...]
+    dataFormat: 'labelValuePair',
+    // fetch data from your external service (or provide a static list)
+    // projectId/userId is always passed (guaranteed by the server)
+    // params will be passed by the requester (e.g. a metadata plugin on the editor which passes the documentId)
+    async fetch ({projectId, userId, params}) {
+      const fetchedData = {
+        'categories': [
+          {'id': '1', 'category': 'Bücher'},
+          {'id': '2', 'category': 'News'},
+          {'id': '3', 'category': 'Wirtschaft', isDefault: true},
+          {'id': '4', 'category': 'International'}
+        ]
+      }
+
+      // your returned data format must match with the 'dataFormat'
+      return fetchedData.categories.map((i) => ({
+        label: i.category,
+        value: i.id,
+        // optional - if true this is the initial value
+        isDefault: !!i.isDefault
+      }))
     }
-
-    // your returned data format must match with the 'dataFormat'
-    return fetchedData.categories.map((i) => ({
-      label: i.category,
-      value: i.id,
-      // optional - if true this is the initial value
-      isDefault: !!i.isDefault
-    }))
-  }
+  })
 })
 ```
 
