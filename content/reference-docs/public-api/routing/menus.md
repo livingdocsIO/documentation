@@ -51,12 +51,14 @@ api/v1/menus/web
     "maxDepth": 1,
     "nodes": [
       {
+        "id": "11111111-0601-4c2b-a3b5-4da19b6d3bde",
         "label": "My Index",
         "path": "/",
         "type": "uri",
         "target": "_self",
         "nodes": [
           {
+            "id": "22222222-0601-4c2b-a3b5-4da19b6d3bde",
             "documentId": 71,
             "label": "Other Page",
             "type": "path",
@@ -66,12 +68,14 @@ api/v1/menus/web
         ]
       },
       {
+        "id": "33333333-0601-4c2b-a3b5-4da19b6d3bde",
         "label": "Arbitrary URL",
         "type": "uri",
         "uri": "http://example.com",
         "nodes": []
       },
       {
+        "id": "44444444-0601-4c2b-a3b5-4da19b6d3bde",
         "label": "Other But External URL Link",
         "type": "uri",
         "uri": "http://foo.bar",
