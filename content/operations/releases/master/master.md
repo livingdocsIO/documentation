@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Publication Control - Part 7: Storage [livingdocs-server #4268 v171.1.7](https://github.com/livingdocsIO/livingdocs-server/pull/4268)
 * :new: fix: bump framework to version 23.0.4 [livingdocs-editor #5070 v77.2.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5070)
 * :new: fix: bump framework to version 23.0.3 [livingdocs-server #4269 v171.1.6](https://github.com/livingdocsIO/livingdocs-server/pull/4269)
 * :new: fix(publicApi): add id to nodes in menu [livingdocs-server #4282 v171.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4282)
