@@ -34,41 +34,81 @@ editorSettings: {
       }
     }
   ],
-   mainNavigation: [
+  mainNavigation: [
     {liItem: 'articles'},
-    // liItem is a shortcut, one can also define it's own config
-    {
-      label: 'My Custom Articles',
-      route: {
-        name: 'app.articles'
-      },
-      icon: 'file-document',
-      scope: 'readArticles',
-      group: 'dashboards' // one of 'dashboards', 'preferences', 'admin'
-    },
     {liItem: 'pages'},
-    { // custom task dashboard
-      label: 'Proofreading',
-      dashboard: 'kanban-proofreading',
-      icon: 'clipboard-check'
-    },
     { // custom document dashboard
+      handle: 'authors',
       label: 'Authors',
       dashboard: 'authors-dashboard',
       icon: 'account'
+    },
+    { // custom task dashboard
+      handle: 'proofreading',
+      label: 'Proofreading',
+      dashboard: 'kanban-proofreading',
+      icon: 'clipboard-check'
     },
     {liItem: 'mediaLibrary'},
     {liItem: 'lists'},
     {liItem: 'menus'},
     {liItem: 'contentSetup'},
     { // external link
+      handle: 'website',
       label: 'Livingdocs Website',
-      icon: 'rocket',
       href: 'https://www.livingdocs.io',
-      group: 'preferences'
+      icon: 'rocket'
     },
     {liItem: 'projectSettings'},
     {liItem: 'serverAdmin'}
+  ],
+  mainNavigationGroups: [
+    {
+      handle: 'documents',
+      label: 'Documents',
+      // items is an array of liItem or handle strings
+      items: [
+        'articles',
+        'my-custom-articles',
+        'pages',
+        'authors'
+      ]
+    },
+    {
+      handle: 'mediaLibrary',
+      label: 'Media Library',
+      items: ['mediaLibrary'] // Media library types are split, but remain in the same group
+    },
+    {
+      handle: 'workflow',
+      label: 'Workflow',
+      items: ['proofreading'] // Using the handle of the custom mainNavigation menu item
+    },
+    {
+      handle: 'content-management',
+      label: 'Content Management',
+      secondary: true, // Group uses a grey background and is collapsed by default
+      items: [
+        'lists',
+        'menus'
+      ]
+    },
+    {
+      // No label property makes the group non-collapsible, and appear like top-level items
+      handle: 'website',
+      secondary: true,
+      items: ['website']
+    },
+    {
+      handle: 'preferences',
+      label: 'Settings', // Update the label name of the preferences group
+      secondary: true,
+      items: [
+        'contentSetup',
+        'projectSettings',
+        'serverAdmin'
+      ]
+    }
   ],
   dashboards: [{
     handle: 'kanban-proofreading',
@@ -183,12 +223,122 @@ Makes it possible to configure custom entries within the Livingdocs user menu. I
 
 ## Main Navigation
 
-Configures the main navigation in Livingdocs.
-You can either configure a predefined `liItem`, link a custom dashboard or link an external page.
+The main navigation menu items are configured using the `mainNavigation` array. Within this array you can either specify a predefined `liItem`, link to a custom dashboard, or link to an external page. If the `mainNavigation` array is not provided then all core `liItem` menu items will be added by default.
 
-The possible values for `liItem` are: 'articles', 'pages', 'dataRecords', 'mediaLibrary', 'proofreading', 'lists', 'menus', 'tags' (imatrics), 'contentSetup', 'projectSettings', 'serverAdmin' (enterprise only)
+### `liItem`
 
-For custom dashboards you configure the handle of your custom dashboard (see below) in the `dashboard` key. For external links you set the `href` property. For both you can define: `icon` (visual icon in the main nav), `group` (any of 'preferences', 'dashboards', 'custom', 'top') and `label` (visual title).
+The possible values for `liItem` are: 'articles', 'pages', 'dataRecords', 'mediaLibrary', 'proofreading', 'lists', 'menus', 'tags' (imatrics), 'contentSetup', 'projectSettings', and 'serverAdmin' (enterprise only).
+
+For each item you can either use the default properties defined by Livingdocs:
+
+```js
+editorSettings: {
+  mainNavigation: [
+    {liItem: 'articles'}
+  ]
+}
+```
+
+Or you can overwrite any of the default values:
+
+```js
+{
+  liItem: 'articles',
+  label: 'Articles',
+  icon: 'file-document',
+  scope: 'readArticles'
+}
+```
+
+### Custom Dashboard
+
+To link to custom dashboards you can provide the handle of your [custom dashboard](#dashboards) in the `dashboard` property:
+
+```js
+{
+  liItem: 'proofreading',
+  label: 'Proofreading',
+  dashboard: 'kanban-proofreading',
+  icon: 'clipboard-check',
+  scope: 'publishArticles'
+}
+```
+
+### External Link
+
+To link to an external page you should set the `href` property:
+
+```js
+{
+  handle: 'my-website',
+  label: 'Livingdocs',
+  href: 'https://livingdocs.io',
+  icon: 'web'
+}
+```
+
+### Customizing menu items
+
+You can customize the scopes that you assign to a menu item to control access rights. Menu items that the user does not have access to will be hidden. See [all available scopes]({{< ref "/guides/authentication/access-rights#available-scopes" >}}).
+
+You can also customize the icons by providing an icon string. Please see the [Icons]({{< ref "/guides/editor/icons" >}}) guide for further details of the icons available.
+
+To remove an entry, simply delete it from the `mainNavigation` array. If you have not defined the `mainNavigation` array, and are relying on the core menu items, then you will need to configure the array with the menu items you would like to include.
+
+### Main Navigation Groups
+
+By default the main navigation items will be placed as top-level items in the menu, with the exception of 'contentSetup', 'projectSettings', and 'serverAdmin', which will be added to the 'preferences' and 'admin' groups.
+
+To create custom groups for menu items you can use the `mainNavigationGroups` configuration. Within this array you should create an object for each group, and then define the menu items which belong to it by adding their `handle` or `liItem` value as a string in the items array. A group `handle` should be defined, and it's also possible to provide a `label` string, and to change the style by setting the boolean `secondary` property.
+
+```js
+editorSettings: {
+  mainNavigation: [
+    // ...
+  ],
+  mainNavigationGroups: [
+    {
+      // Simple group linking to liItem menu items
+      handle: 'documents',
+      label: 'Documents',
+      items: [
+        'articles',
+        'pages',
+        'authors'
+      ]
+    },
+    {
+      // The {liItem: 'mediaLibrary'} will be split into a separate dashboard for each media type
+      handle: 'media',
+      label: 'Media Library',
+      items: ['mediaLibrary']
+    },
+    {
+      // A group for custom workflow dashboards
+      handle: 'workflow',
+      label: 'Workflow',
+      items: ['proofreading', 'review']
+    },
+    {
+      // Top-level external link (no label)
+      handle: 'website',
+      secondary: true, // Grey background
+      items: ['website']
+    },
+    {
+      // Merge the admin and preferences groups, and change the label name
+      handle: 'preferences',
+      label: 'Settings',
+      secondary: true,
+      items: [
+        'contentSetup',
+        'projectSettings',
+        'serverAdmin'
+      ]
+    }
+  ]
+}
+```
 
 ## Dashboards
 
