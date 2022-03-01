@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: bump framework to version 23.0.5 [livingdocs-editor #5074 v77.3.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5074)
 * :new: Bump minor version for release management [livingdocs-server #4283 v171.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4283)
 * :new: Bump minor version for release management [livingdocs-editor #5072 v77.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5072)
 * :new: fix(table dashboard): Handle li-text properties with data provider (s… [livingdocs-editor #5075 v77.2.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5075)
