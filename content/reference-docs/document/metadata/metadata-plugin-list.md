@@ -21,6 +21,7 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Date/Time](#li-datetime)                   | li-datetime            | Date                                         | D, M                                            | date/time input                                   |
 | [Dependencies](#li-dependencies)            | li-dependencies        | Livingdocs framework dependencies definition | D                                               | no UI                                             |
 | [Desk-Net](#li-desknet-integration)         | li-desknet-integration | Desk-Net Integration                         | D                                               | Link to Desk-Net distribution entry               |
+| [Document Target Length](#li-target-length) | li-target-length       | Target length in characters for a document   | D                                               | number input or length slider                     |
 | [Google Vision](#li-google-vision)          | li-google-vision       | Google Vision Autotagging for Images         | M                                               | specialized UI, no config possible                |
 | [Image](#li-image)                          | li-image               | Images                                       | D, M                                            | Image selection/upload/crops                      |
 | [iMatrics](#li-imatrics-nlp-tags)           | li-imatrics-nlp-tags   | iMatrics tag management                      | D                                               | manage tags                                       |
@@ -34,7 +35,6 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Reference](#li-reference)                  | li-reference           | A reference to another document              | D, M                                            | document selection (dialog)                       |
 | [Retresco](#li-retresco)                    | li-retresco            | Retresco tag management                      | D                                               | manage tags                                       |
 | [String List](#li-string-list)              | li-string-list         | Array of Strings                             | D, M                                            | multiselect                                       |
-| [Document Target Length](#li-target-length) | li-target-length       | Target length in characters for a document   | D                                               | number input or length slider                     |
 | [String](#li-text)                          | li-text                | String                                       | D, M                                            | text, textarea, select                            |
 | [Transcoding State](#li-transcoding-state)  | li-transcoding-state   | State of external transcoding job            | M (Video)                                       | trigger transcoding, current job progress, result |
 
