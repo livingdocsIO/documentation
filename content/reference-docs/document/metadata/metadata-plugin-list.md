@@ -262,6 +262,8 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 ```
 **Default UI**: Retresco tag management (`liMetaRetrescoForm`)
 
+Please see the [Retresco integration guide]({{< ref "/guides/integrations/retresco" >}}) for details on how to setup the integration.
+
 ## li-string-list
 **Data Format**: Array of Strings\
 **Default UI**: Multiselect
