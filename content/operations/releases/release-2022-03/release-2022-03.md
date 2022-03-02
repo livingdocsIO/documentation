@@ -25,36 +25,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: We don't guarantee stable APIs. They can still change until the official release
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
-## PRs to Categorize
-* :new: fix: bump framework to version 23.0.5 [livingdocs-editor #5074 v77.3.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5074)
-* :new: Bump minor version for release management [livingdocs-server #4283 v171.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4283)
-* :new: Bump minor version for release management [livingdocs-editor #5072 v77.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5072)
-* :new: fix(table dashboard): Handle li-text properties with data provider (s… [livingdocs-editor #5075 v77.2.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5075)
-* :new: Publication Control - Part 7: Storage [livingdocs-server #4268 v171.1.7](https://github.com/livingdocsIO/livingdocs-server/pull/4268)
-* :new: fix: bump framework to version 23.0.4 [livingdocs-editor #5070 v77.2.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5070)
-* :new: fix: bump framework to version 23.0.3 [livingdocs-server #4269 v171.1.6](https://github.com/livingdocsIO/livingdocs-server/pull/4269)
-* :new: fix(publicApi): add id to nodes in menu [livingdocs-server #4282 v171.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4282)
-* :new: fix: scroll to an editable only when scroll is manually triggered [livingdocs-editor #5044 v77.2.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5044)
-* :new: Prevent user from adding duplicates within Retresco and iMatrics [livingdocs-editor #5068 v77.2.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5068)
-* :new: fix(document editing toolbar): reliably close flyouts on outside click [livingdocs-editor #5067 v77.2.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5067)
-* :new: fix(retresco): Update Cypress tests to match mock API changes [livingdocs-editor #5071 v77.2.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5071)
-* :new: Replace request with axios [livingdocs-server #4278 v171.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/4278)
-* :new: chore(public-api): Supress and assert deprecation warnings [livingdocs-server #4277 v171.1.3](https://github.com/livingdocsIO/livingdocs-server/pull/4277)
-* :new: Deprecate elasticsearch v6 [livingdocs-server #4276 v171.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4276)
-* :new: Deprecate postgres older than v12 [livingdocs-server #4274 v171.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4274)
-* :new: feat(public-api): Add document latestDraft beta endpoint [livingdocs-server #4224 v171.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4224)
-* :new: Publish Control 2 [livingdocs-editor #5026 v77.2.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5026)
-* :new: Remove server config `search.documentsMetadataFields` [livingdocs-server #4273 v171.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4273)
-* :new: Table dashboard: support for li-category / li-document-reference [livingdocs-editor #5043 v77.1.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5043)
-* :new: Table dashboard: config for li-category / li-document-reference [livingdocs-server #4243 v170.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4243)
-* :new: iFrame UI: ensure mouseup events don't reach the framework interactive page [livingdocs-editor #5066 v77.0.15](https://github.com/livingdocsIO/livingdocs-editor/pull/5066)
-* :new: fix(center buttons): load more article buttons centered [livingdocs-editor #5062 v77.0.14](https://github.com/livingdocsIO/livingdocs-editor/pull/5062)
-* :new: ProjectSecrets: tolerate missing projectConfigs config [livingdocs-server #4272 v170.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4272)
-* :new: feat(warnings): Setup lib module for emitting process warnings [livingdocs-server #4186 v170.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4186)
-* :new: Fix target length reactivity [livingdocs-editor #5061 v77.0.13](https://github.com/livingdocsIO/livingdocs-editor/pull/5061)
-* :new: fix(retresco): Make tag list expandable [livingdocs-editor #5055 v77.0.12](https://github.com/livingdocsIO/livingdocs-editor/pull/5055)
-* :new: Remove `mediaLibraryEntry.added` server event [livingdocs-server #4270 v170.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4270)
-
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
 ## Newsletter
@@ -135,10 +105,11 @@ References:
 TODO@roman: add description + documentation
 
 References:
-* [Documentation]()
-* [config PR](https://github.com/livingdocsIO/livingdocs-server/pull/4145)
-* [component PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4934)
-* [metadata editing PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5022)
+* [TODO: Documentation]()
+* [Config PR](https://github.com/livingdocsIO/livingdocs-server/pull/4145)
+* [Component PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4934)
+* [Metadata editing PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5022)
+* [Support for li-category / li-document-reference](https://github.com/livingdocsIO/livingdocs-editor/pull/5043)
 
 ## Retresco integration
 
@@ -384,6 +355,20 @@ Tasks v1 is deprecated since 2 years. We removed it, because no customers use it
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4196)
 
+### Remove server config search.documentsMetadataFields :fire:
+
+🔥 remove server config `search.documentsMetadataFields`
+
+This config must not be defined anymore, because all metadata are returned when calling the editing API endpoint `/documents`.
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4273)
+
+### Remove server event mediaLibraryEntry.added :fire:
+
+🔥 remove server event `mediaLibraryEntry.added`. Use `mediaLibraryEntry.create` instead (same API)
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4270)
+
 ### desk-net access removed for read API token :fire:
 
 :fire: removed `desk-net` access for document read API token
@@ -435,6 +420,173 @@ Unconfigured metadata are now filtered from the `publicApi`. After a project con
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4228)
 
+### Remove group property in mainNavigation config :fire:
+
+:fire: Remove support for the `group` property within an `editorSettings.mainNavigation` item.
+
+#### Required Actions
+
+**Old configuration**
+
+The old configuration relied on a `group` property of a `mainNavigation` menu item object to set the group. The possible groups were `top`, `dashboards`, `custom`, `preferences`, and `admin`. The menu items defined using `liItem` would use the group of that item type, and any other custom menu items would be assigned to the `dashboards` group if a group was not specified.
+
+```js
+editorSettings: {
+  // ...
+  mainNavigation: [
+    {liItem: 'articles'}, // defaults to dashboard group
+    {liItem: 'pages'}, // defaults to dashboard group
+    {liItem: 'mediaLibrary'}, // defaults to dashboard group
+    {
+      label: 'Authors',
+      dashboard: 'authors-dashboard',
+      icon: 'account'
+      // group not specified so it defaults to dashboard group
+    },
+    {
+      label: 'Proofreading',
+      dashboard: 'kanban-proofreading',
+      icon: 'clipboard-check',
+      group: 'custom' // assigned to custom group
+    },
+    {
+      label: 'Livingdocs Website',
+      icon: 'rocket',
+      href: 'https://www.livingdocs.io',
+      group: 'preferences' // assigned to preferences group
+    },
+    {liItem: 'contentSetup'}, // defaults to preferences group
+    {liItem: 'projectSettings'}, // defaults to preferences group
+    {
+      liItem: 'serverAdmin',
+      group: 'preferences' // assigned to preferences group instead of default admin group
+    }
+  ]
+  // ...
+}
+```
+
+**New configuration**
+
+The new configuration uses a new `mainNavigationGroups` array which provides more flexibility. You can create your own collapsible groups with a label of your choice, and set the style using the `secondary` property. Menu groups and their items will appear in the order they are defined within the arrays. It's also possible to have top-level menu items by not specifying a label.
+
+To re-create the old configuration above you would define the following:
+
+```js
+editorSettings: {
+  // ...
+  // groups are no longer defined in mainNavigation, so delete the group property
+  mainNavigation: [
+    {liItem: 'articles'},
+    {liItem: 'pages'},
+    {liItem: 'mediaLibrary'},
+    {
+      handle: 'authors', // add new handle property for custom navigation items
+      label: 'Authors',
+      dashboard: 'authors-dashboard',
+      icon: 'account'
+    },
+    {
+      handle: 'proofreading',
+      label: 'Proofreading',
+      dashboard: 'kanban-proofreading',
+      icon: 'clipboard-check'
+    },
+    {
+      handle: 'website',
+      label: 'Livingdocs Website',
+      href: 'https://www.livingdocs.io',
+      icon: 'rocket'
+    },
+    {liItem: 'contentSetup'},
+    {liItem: 'projectSettings'},
+    {liItem: 'serverAdmin'}
+  ],
+  mainNavigationGroups: [
+    {
+      handle: 'dashboards',
+      label: 'Dashboards',
+      items: [
+        'articles',
+        'pages',
+        'mediaLibrary',
+        'authors'
+      ]
+    },
+    {
+      handle: 'custom',
+      label: 'Custom',
+      items: ['proofreading']
+    },
+    {
+      handle: 'preferences',
+      label: 'Preferences',
+      secondary: true,
+      items: [
+        'website',
+        'contentSetup',
+        'projectSettings',
+        'serverAdmin'
+      ]
+    }
+  ],
+  // ...
+}
+```
+
+Instead of trying to replicate the menu exactly as it was, it may make more sense to utilise the new functionality:
+
+```js
+editorSettings: {
+  // ...
+  mainNavigation: [
+    // Same as the other new configuration example above
+  ],
+  mainNavigationGroups: [
+    {
+      // Rename dashboards to documents
+      handle: 'documents',
+      label: 'Documents',
+      items: [
+        'articles',
+        'pages',
+        'authors'
+      ]
+    },
+    {
+      // Move the images, videos and files dashboards into a media group
+      handle: 'media',
+      label: 'Media Library',
+      items: ['mediaLibrary']
+    },
+    {
+      // Give the custom dashboard a more meaningful name
+      handle: 'workflow',
+      label: 'Workflow',
+      items: ['proofreading']
+    },
+    {
+      // Move the website link to a top-level menu item (don't define a label for the group)
+      handle: 'website',
+      secondary: true,
+      items: ['website']
+    },
+    {
+      // Update the label name of the preferences group
+      handle: 'preferences',
+      label: 'Settings',
+      secondary: true,
+      items: [
+        'contentSetup',
+        'projectSettings',
+        'serverAdmin'
+      ]
+    }
+  ],
+  // ...
+}
+```
+
 
 ### Button group improvement :fire:
 
@@ -468,7 +620,7 @@ Postgres 11 is now deprecated. Please update to Postgres 14.1 whenever possible.
 
 ### Elasticsearch
 
-Elasticsearch 6.x is now deprecated. Please update to Elasticsearch 7 whenever possible.
+Elasticsearch 6.x is now deprecated. Please update to Elasticsearch 7 or OpenSearch.
 
 ### Configuration `auth.accessTokenSecret`
 
@@ -540,17 +692,34 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4
 
 ### Public API
 
-Add `replaceAsset` operation at `PATCH api/v1/mediaLibrary/:id`
+#### Media Library
+
+🎁 Add `replaceAsset` operation at `PATCH api/v1/mediaLibrary/:id`
 
 References:
 - [Documentation]({{< ref "/reference-docs/public-api/media-library" >}})
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4109)
+
+#### Document Draft
+
+🎁 Added new publicApi endpoint `GET /api/beta/documents/:documentId/latestDraft` to get the latest draft of a document
+
+References:
+- [Documentation]({{< ref "/reference-docs/public-api/beta/latest-draft" >}})
+- [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4224)
 
 ### Server Config
 
 🎁 Support a `accessTokenCacheSize` config to increase the token cache size on heavy used servers | [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4118)
 
 ### Server APIs
+
+#### publicApi getLatestDraftBeta
+
+🎁 Added `liServer.features.api('li-public-api').getLatestDraftBeta({projectId, documentId, renditionHandles})` to get the latest draft of a document via server Api
+
+References:
+- [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4224)
 
 #### hooksApi
 
@@ -612,7 +781,6 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 * Server Hooks: Throw if a publication hook does not exist [livingdocs-server #4255 v165.6.3](https://github.com/livingdocsIO/livingdocs-server/pull/4255)
 * Includes: Show error messages when include service is not registered [livingdocs-editor #5056 v77.0.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5056)
 
-
 ### Bugfixes
 
 * Editor
@@ -624,6 +792,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
   * Undo doesn't work if you delete a bullet point list [livingdocs-editor #5012 v75.1.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5012)
   * Prevent editing of deleted documents [livingdocs-editor #4974 v75.0.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4974)
   * History: Show year in edit history when it's not the current year [livingdocs-editor #4964 v74.22.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4964)
+  * Scroll to an editable only when scroll is manually triggered [livingdocs-editor #5044 v77.2.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5044)
   * Named Crops: Take into account server config 'maxDimension' for automatic cropping [livingdocs-editor #4981 v74.27.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4981)
   * Prevent editing of deleted documents [livingdocs-server #4178 v164.10.1](https://github.com/livingdocsIO/livingdocs-server/pull/4178)
 * UI
@@ -651,6 +820,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
   * Search: Use correct elasticsearch client for 'indexingApi.search' and 'indexingApi.get'  [livingdocs-server #4189 v162.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4189)
   * Desk-Net: Make Desk-Net category optional [livingdocs-server #4176 v161.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4176)
   * Migration: do not run prepareMigration.start for version bumps [livingdocs-server #4258 v165.6.4](https://github.com/livingdocsIO/livingdocs-server/pull/4258)
+  * ProjectSecrets: Tolerate missing `projectConfigs` config [livingdocs-server #4272 v170.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4272)
 * Comments
   * Update comments flyout correctly [livingdocs-editor #4962 v74.25.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4962)
   * Card buttons realigned [livingdocs-editor #5014 v75.1.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5014)
