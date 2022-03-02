@@ -478,19 +478,37 @@ The print options allow you to enable the WoodWing Studio print connector on a c
 
 ## Document Inbox
 
-{{< added-in release-2021-11 >}}
+{{< added-in release-2021-11 >}}, and media library support {{< added-in release-2022-03 >}}
 
-The document inbox feature allows document references to be assigned to another document. It provides a way for users to indicate that a document should be listed within another document without the need to know which specific list it should appear on. It can be used in parallel with, or as a replacement for, the list assignment feature.
-  
-An example use-case would be: When Editor User A finishes an article they would like to tell CvD User B (Chef vom Dienst - a role that is in charge of the frontpage at many newsrooms) to publish the teaser to that article on the frontpage. If the frontpage is compiled from multiple lists, it's not User A's job to decide into which list the article should go, as it's User B deciding that. Once assigned, User B will be able to see the article in the inbox column of the multi-list editor view for the frontpage.
+The document inbox feature allows document and media references to be assigned to another document.
 
-The inbox assignment UI will be displayed on the publish screen for the content types listed within the content types array. The document search dialog used for the inbox assignment will be automatically filtered by the content type(s) which will accept the document being published.
+### Configuration
 
-Example:
+The following configuration allows the "page" content type to accept "regular" and "another-handle" documents, and "image" and "video" media library entries, into its inbox. The inbox assignment UI will be displayed for the "regular" and "another-handle" content types on the publication screen. The "Send to inbox" link will be accessible in the context menu of the "image" and "video" media library entires on their dashboards.
+
 ```js
-// Allows current content type to accept "regular" and "another-handle" documents into its inbox.
-// The inbox assignment UI will be displayed for those content types.
-inbox: {
-  contentTypes: ['regular', 'another-handle']
+{
+  handle: 'page',
+  // ...
+  inbox: {
+    contentTypes: ['regular', 'another-handle'],
+    mediaTypes: ['image', 'video']
+  }
 }
 ```
+
+### Documents
+
+The document inbox for content types provides a way for users to indicate that a document should be listed within another document without the need to know which specific list it should appear on. It can be used in parallel with, or as a replacement for, the list assignment feature.
+
+An example use-case would be: When Editor User A finishes an article they would like to tell CvD User B (Chef vom Dienst - a role that is in charge of the frontpage at many newsrooms) to publish the teaser to that article on the frontpage. If the frontpage is compiled from multiple lists, it's not User A's job to decide into which list the article should go, as it's User B deciding that. Once assigned, User B will be able to see the article in the inbox column of the multi-list editor view for the frontpage.
+
+The inbox assignment UI will be displayed on the publish screen for any content type listed within an `inbox.contentTypes` array. The document search dialog used for the inbox assignment will display documents with content type(s) that accept the content type of the document which is being published.
+
+### Media Library Entries
+
+When a content type is configured to accept media library entries into its inbox it allows users to send images, videos, and files to specific documents. This can be achieved directly from the media library dashboards by using the "Send to inbox" link within the content menu of media library entries.
+
+An example use-case would be: A user is interested in adding images to a document they are working on, but they are unsure which to use from an initial search, and would like to view a larger version of the images or get some additional context from the metadata. The user can search through the media library and then assign the images to the document they are working on. Once assigned to a document's inbox the media can be dragged from the Inbox sidebar when the user is editing the document.
+
+The "Send to inbox" option will only be displayed in a media library entry's context menu if there is at least one content type which is configured to accept it. The document search dialog used for the inbox assignment will display documents with content type(s) that accept the media type of the media library entry.
