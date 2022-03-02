@@ -267,6 +267,8 @@ NOTE: for this to work, the name of the key needs to be unique for every update 
 
 As with [iMatrics](#imatrics) above, the secure secrets feature is used to store the password for the Basic authentication used by the Retresco API. Please note that the integration must also be enabled in the [server config]({{< ref "/reference-docs/server-extensions/server-configuration/#integrations" >}}).
 
+Please see the [Retresco integration guide]({{< ref "/guides/integrations/retresco" >}}) for details on how to setup the integration.
+
 ## Includes
 *has UI support*
 
