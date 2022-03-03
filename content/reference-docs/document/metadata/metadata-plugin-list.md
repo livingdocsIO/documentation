@@ -344,6 +344,7 @@ metadata: [{
     required: true,                         // optional, default: false
     requiredErrorMessage: 'Provide a title' // optional
     useAsTitle: true,                       // default: false, synchronises the value with document.title if true
+    translatable: true,                     // default: false, translations are only supported for data-record and mediaLibrary
     dataProvider: {                         // optional: any dataProvider
       type: 'labelValuePair',
       items: [
