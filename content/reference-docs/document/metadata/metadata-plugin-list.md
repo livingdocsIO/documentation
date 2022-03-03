@@ -351,7 +351,7 @@ metadata: [{
       type: 'labelValuePair',
       items: [
         {label: 'Item A', value: 'a'},
-        {label: 'Item B', value: 'b'},
+        {label: 'Item B', value: 'b', isDefault: true}, // isDefault sets the value if document opened the first time
         {label: 'Item C', value: 'c'}
       ]
     }
