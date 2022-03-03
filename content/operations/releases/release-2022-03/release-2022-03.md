@@ -834,6 +834,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v171.1.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.9): fix(framework): update to 23.0.6
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
