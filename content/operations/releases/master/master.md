@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Improve importer errors when autopublish fails [livingdocs-server #4293 v171.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4293)
 * :new: fix: error logs for deprecated components  [livingdocs-editor #5082 v77.3.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5082)
 * :new: fix(character counter): only show target length if one is defined [livingdocs-editor #5079 v77.3.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5079)
 * :new: Migrate event generation tests to promises [livingdocs-server #4288 v171.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4288)
