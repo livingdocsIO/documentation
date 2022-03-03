@@ -9,6 +9,21 @@ menus:
 
 This section explains how you setup the server to render `doc-include`s and gives an exhaustive listing of all options. It does not explain how to create custom editor user interfaces, this will be explained [here]({{< ref "/reference-docs/document/includes/editor-customization" >}}).
 
+## Core include services
+
+### oEmbed
+
+{{< added-in release-2022-03 block >}}
+
+The oEmbed include service (`li-oembed-service`) allows users to embed content (such as photos, videos, or iframes) by providing a link to a resource, without having to worry about embed scripts. The include service has a small number of core providers, but it can easily be extended with additional providers or a catch-all provider.
+
+Core oEmbed providers:
+- TikTok (`li-tiktok`)
+- Twitter (`li-twitter`)
+- Vimeo (`li-vimeo`)
+- YouTube (`li-youtube`)
+
+For details on how to setup and configure an oEmbed include please read the [guide]({{< ref "/guides/documents/includes/oembed" >}}).
 
 ## Registration of an include renderer in the server
 
