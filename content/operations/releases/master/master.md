@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Only cancel drags in the editor that also originated in the editor [livingdocs-editor #5078 v77.3.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5078)
 * :new: fix(document-inbox): Align the remove button in assignment form [livingdocs-editor #5085 v77.3.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5085)
 * :new: Improve importer errors when autopublish fails [livingdocs-server #4293 v171.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4293)
 * :new: fix: error logs for deprecated components  [livingdocs-editor #5082 v77.3.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5082)
