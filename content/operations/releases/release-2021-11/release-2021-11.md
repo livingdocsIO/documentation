@@ -331,6 +331,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v157.2.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.34): fix(projectSecrets): tolerate missing projectConfigs config
 - [v157.2.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.33): fix(publicApi): add id to nodes in menu
 - [v157.2.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.32): fix(pagination): Introduce `after` query string validation in /latestPublications of public api
 - [v157.2.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.31): fix(mediaLibrary): fallback to ffprobe system binary when ffprobe-static has no binaries
