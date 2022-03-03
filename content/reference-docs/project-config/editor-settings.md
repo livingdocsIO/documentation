@@ -38,13 +38,13 @@ editorSettings: {
     {liItem: 'articles'},
     {liItem: 'pages'},
     { // custom document dashboard
-      handle: 'authors',
+      handle: 'authors', // Used with mainNavigationGroups from release-2022-03
       label: 'Authors',
       dashboard: 'authors-dashboard',
       icon: 'account'
     },
     { // custom task dashboard
-      handle: 'proofreading',
+      handle: 'proofreading', // Used with mainNavigationGroups from release-2022-03
       label: 'Proofreading',
       dashboard: 'kanban-proofreading',
       icon: 'clipboard-check'
@@ -54,14 +54,16 @@ editorSettings: {
     {liItem: 'menus'},
     {liItem: 'contentSetup'},
     { // external link
-      handle: 'website',
+      handle: 'website', // Used with mainNavigationGroups from release-2022-03
       label: 'Livingdocs Website',
       href: 'https://www.livingdocs.io',
-      icon: 'rocket'
+      icon: 'rocket',
+      group: 'preferences' // Used for grouping before release-2022-03
     },
     {liItem: 'projectSettings'},
     {liItem: 'serverAdmin'}
   ],
+  // Added in release-2022-03
   mainNavigationGroups: [
     {
       handle: 'documents',
@@ -69,7 +71,6 @@ editorSettings: {
       // items is an array of liItem or handle strings
       items: [
         'articles',
-        'my-custom-articles',
         'pages',
         'authors'
       ]
@@ -256,13 +257,14 @@ To link to custom dashboards you can provide the handle of your [custom dashboar
 
 ```js
 {
-  liItem: 'proofreading',
-  label: 'Proofreading',
-  dashboard: 'kanban-proofreading',
+  label: 'My Custom Dashboard',
+  dashboard: 'my-custom-dashboard',
   icon: 'clipboard-check',
   scope: 'publishArticles'
 }
 ```
+
+The shorthand `liItem: 'proofreading'` can be used to point to a dashboard named `kanban-proofreading`.
 
 ### External Link
 
@@ -270,7 +272,6 @@ To link to an external page you should set the `href` property:
 
 ```js
 {
-  handle: 'my-website',
   label: 'Livingdocs',
   href: 'https://livingdocs.io',
   icon: 'web'
@@ -287,9 +288,11 @@ To remove an entry, simply delete it from the `mainNavigation` array. If you hav
 
 ### Main Navigation Groups
 
-By default the main navigation items will be placed as top-level items in the menu, with the exception of 'contentSetup', 'projectSettings', and 'serverAdmin', which will be added to the 'preferences' and 'admin' groups.
+{{< added-in release-2022-03 block >}}
 
 To create custom groups for menu items you can use the `mainNavigationGroups` configuration. Within this array you should create an object for each group, and then define the menu items which belong to it by adding their `handle` or `liItem` value as a string in the items array. A group `handle` should be defined, and it's also possible to provide a `label` string, and to change the style by setting the boolean `secondary` property.
+
+By default the main navigation items will be placed as top-level items in the menu, with the exception of 'contentSetup', 'projectSettings', and 'serverAdmin', which will be added to the 'preferences' and 'admin' groups.
 
 ```js
 editorSettings: {
@@ -339,6 +342,8 @@ editorSettings: {
   ]
 }
 ```
+
+For releases prior to release-2022-03 you should specify a `group` property on the menu item within the `mainNavigation` array. The available values are 'admin', 'preferences', 'dashboards', 'custom', and 'top'.
 
 ## Dashboards
 
