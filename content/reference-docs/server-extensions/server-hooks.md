@@ -96,10 +96,13 @@ async preparePublishHookAsync ({documentVersion}) {
     return
   } else {
     // Example Validation Error for a metadata property
-    const err = new Error('Invalid Title')
-    err.name = 'MetadataValidationError'
-    err.metadataProperty = 'title'
+    const err = new Error('Metadata Errors')
+    err.name = 'MetadataValidationErrors'
     err.status = 400
+    err.invalidMetadata = [{
+      metadataProperty: 'title'
+      message: 'Invalid Title',
+    }]
     throw err
   }
 }
