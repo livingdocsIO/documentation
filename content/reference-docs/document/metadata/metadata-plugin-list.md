@@ -359,7 +359,7 @@ metadata: [{
     requiredErrorMessage: 'Provide a title' // optional
     useAsTitle: true,                       // default: false, synchronises the value with document.title if true
     translatable: true,                     // default: false, translations are only supported for data-record and mediaLibrary
-    dataProvider: {                         // optional: any dataProvider
+    dataProvider: {                         // optional: list of items (like in the example) or DataSource
       type: 'labelValuePair',
       items: [
         {label: 'Item A', value: 'a'},
@@ -370,7 +370,6 @@ metadata: [{
   },
   ui: {
     label: 'foo',                   // optional
-    component: 'LiMetaFormTextarea' // optional
     config: {
       placeholder: 'bar',           // optional
       readOnly: true,               // default: false
