@@ -840,6 +840,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v77.2.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.15): fix(metadata): Allow fallback for component rendering
 - [v77.2.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.14): fix(framework): update to 23.0.8
 - [v77.2.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.13): chore(inline-add): fix cypress helper
 - [v77.2.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.12): fix(document-inbox): Align the remove button in assignment form
