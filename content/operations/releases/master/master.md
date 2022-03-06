@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: update framework to 23.1.4 [livingdocs-editor #5095 v77.4.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5095)
 * :new: fix(metadata): Allow fallback for component rendering [livingdocs-editor #5092 v77.4.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5092)
 * :new: Publish Control: metadata status [livingdocs-editor #5077 v77.4.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5077)
 * :new: Only cancel drags in the editor that also originated in the editor [livingdocs-editor #5078 v77.3.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5078)
