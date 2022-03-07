@@ -32,11 +32,11 @@ menus:
 
 |Name|Supported in|Editor Feedback|Added in|Removed in|
 |-|-|-|-|-|
-|preparePublishHook|Instant Publish|✅|release-2022-03||
-|prepublishHook|Instant Publish|✅||release-2022-03|
-|publishHook|Instant Publish|✅||release-2022-03|
-|postPublishHook|Instant Publish||release-2022-03||
-|unPublishHook|Instant Publish|✅|release-2017-01||
+|preparePublishHookAsync|Instant Publish|✅|release-2022-03||
+|prepublishHookAsync|Instant Publish|✅||release-2022-03|
+|publishHookAsync|Instant Publish|✅||release-2022-03|
+|postPublishHookAsync|Instant Publish||release-2022-03||
+|unpublishHookAsync|Instant Publish|✅|release-2017-01||
 
 {{< img src="images/publish-workflow.png">}}
 
