@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(character counter): Combined icons [livingdocs-editor #5097 v77.4.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5097)
 * :new: Remove callbacks for Server Hooks (Breaking Change) || Add app/breaking-changes [livingdocs-server #4306 v172.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4306)
 * :new: Make s3 `accessKeyId` and `secretAccessKey` optional on ECS and EKS [livingdocs-server #4303 v171.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4303)
 * :new: update framework to 23.1.4 [livingdocs-server #4305 v171.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4305)
