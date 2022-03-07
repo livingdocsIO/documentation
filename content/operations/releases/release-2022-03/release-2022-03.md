@@ -102,10 +102,23 @@ References:
 
 ## Table Dashboards
 
-TODO@roman: add description + documentation
+Table dashboards are a new flexible type of dashboards where individual columns can be configured.
+This release contains a first iteration, the full functionality will be provided with the next release.
+
+The following functionality is available in this release:
+* Basic configuration of table dashboards (main menu entry, filters, column layout)
+* Display and inline editing for these metadata properties: `li-text`, `li-boolean`, `li-category`, `li-document-reference`
+* Default column component that displays document thumbnail and title
+* Custom components can be configured to render the content of a table cell
+
+The following functionality will be added in the next release:
+* Table dashboard used as default for articles, pages, and data records
+* Document creation from a table dashboard
+* New filter configuration
+* Inline editing of more metadata properties
 
 References:
-* [TODO: Documentation]()
+* [Documentation]({{< ref "/reference-docs/project-config/editor-settings#example-table-dashboard" >}})
 * [Config PR](https://github.com/livingdocsIO/livingdocs-server/pull/4145)
 * [Component PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4934)
 * [Metadata editing PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5022)
