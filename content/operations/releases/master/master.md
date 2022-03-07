@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Make sure no real integrations are in e2e tests [livingdocs-server #4308 v172.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4308)
 * :new: fix(character counter): Combined icons [livingdocs-editor #5097 v77.4.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5097)
 * :new: Remove callbacks for Server Hooks (Breaking Change) || Add app/breaking-changes [livingdocs-server #4306 v172.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4306)
 * :new: Make s3 `accessKeyId` and `secretAccessKey` optional on ECS and EKS [livingdocs-server #4303 v171.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4303)
