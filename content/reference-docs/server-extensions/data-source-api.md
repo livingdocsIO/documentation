@@ -10,18 +10,10 @@ The DataSource API (or Data Source API) provides a simple way to fetch/transform
 
 The current version supports binding a DataSource to a metadata field, which will be described in more detail in the example section.
 
-## Supported Metadata UI Components
-
-`liMetaSelectForm` supports this types
-  - li-string-list
-  - li-numeric-list
-  - li-text
-  - li-enum
-  - li-integer
-
-`liMetaMultiselectForm` supports this types
-  - li-string-list
-  - li-numeric-list
+## Metadata plugins with DataSource support
+- li-text
+- li-string-list
+- find more metadata plugins [here]({{< ref "/reference-docs/document/metadata/metadata-plugin-list" >}}) with `DataSource` support
 
 ## Example - Bind a DataSource to a Metadata Field
 
@@ -34,6 +26,8 @@ You can register a DataSource (e.g. `labelValuePairDataSource`) and use it as da
 **Register a DataSource on the server**
 
 ```js
+const axios = require('axios')
+
 liServer.features.register('data-sources', async function (feature, server) {
   const dataSourcesApi = server.features.api('li-data-sources')
 
@@ -42,25 +36,31 @@ liServer.features.register('data-sources', async function (feature, server) {
     handle: 'labelValuePairDataSource',
     // result for labelValuePair = [{label, value}, ...]
     dataFormat: 'labelValuePair',
-    // fetch data from your external service (or provide a static list)
-    // projectId/userId is always passed (guaranteed by the server)
-    // params will be passed by the requester (e.g. a metadata plugin on the editor which passes the documentId)
+    /**
+     * Fetch data from your external service (or provide a static list)
+     *
+     * Errors are handled by default. If you know you're DataSource,
+     *   you can throw your own error messages
+     *
+     * @param {Object} params
+     * @param {Number} params.projectId
+     * @param {Number} params.userId
+     * @param {Object} params.params params will be passed by the requester
+     *   (e.g. a metadata plugin on the editor which passes the documentId)
+     * @returns {Object} {label, value, ?isDefault}
+     */
     async fetch ({projectId, userId, params}) {
-      const fetchedData = {
-        'categories': [
-          {'id': '1', 'category': 'Bücher'},
-          {'id': '2', 'category': 'News'},
-          {'id': '3', 'category': 'Wirtschaft', isDefault: true},
-          {'id': '4', 'category': 'International'}
-        ]
-      }
+      const {data: fetchedData} = await axios({
+        method: 'get',
+        url: 'https://swissbib.ch/mapportal.json'
+      })
 
       // your returned data format must match with the 'dataFormat'
-      return fetchedData.categories.map((i) => ({
-        label: i.category,
-        value: i.id,
+      return fetchedData?.data.map((lib) => ({
+        label: lib.group.label.de,
+        value: lib.group.code
         // optional - if true this is the initial value
-        isDefault: !!i.isDefault
+        // isDefault: true
       }))
     }
   })
@@ -73,12 +73,9 @@ liServer.features.register('data-sources', async function (feature, server) {
 // content-type config on the server
 metadata = [{
   handle: 'dummy',
-  // only 'li-enum' is supported
-  type: 'li-enum',
+  type: 'li-text',
   ui: {
-    label: 'DataSource Example',
-    // only 'liMetaSelectForm' is supported
-    component: 'liMetaSelectForm'
+    label: 'DataSource Example'
   },
   config: {
     dataProvider: {
