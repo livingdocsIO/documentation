@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Make s3 `accessKeyId` and `secretAccessKey` optional on ECS and EKS [livingdocs-server #4303 v171.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4303)
 * :new: update framework to 23.1.4 [livingdocs-server #4305 v171.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4305)
 * :new: update framework to 23.1.4 [livingdocs-editor #5095 v77.4.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5095)
 * :new: fix(metadata): Allow fallback for component rendering [livingdocs-editor #5092 v77.4.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5092)
