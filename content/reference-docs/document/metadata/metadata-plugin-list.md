@@ -289,13 +289,16 @@ metadata: [{
   handle: 'myStringList',
   type: 'li-string-list',
   config: {
-    dataProvider: { // required: any dataProvider
+    dataProvider: { // required
+      // Option 1 - list of items
       type: 'labelValuePair',
       items: [
         {label: 'Item A', value: 'a'},
-        {label: 'Item B', value: 'b'},
+        {label: 'Item B', value: 'b', isDefault: true}, // isDefault sets the value if document opened the first time
         {label: 'Item C', value: 'c'}
       ]
+      // Option 2 - DataSource
+      dataSource: 'labelValuePairDataSource'
     }
   },
   ui: {
@@ -346,7 +349,7 @@ metadata: [{
   * Renders a select element if a `dataProvider` is configured
   * Renders a textarea if `ui.component` is set to `LiMetaFormTextarea`
   * Renders a text input otherwise {{< img src="./images/max-length.png" >}}
-  
+
 **Config**
 ```js
 // contentType[].metadata / mediaType[].metadata
@@ -359,13 +362,16 @@ metadata: [{
     requiredErrorMessage: 'Provide a title' // optional
     useAsTitle: true,                       // default: false, synchronises the value with document.title if true
     translatable: true,                     // default: false, translations are only supported for data-record and mediaLibrary
-    dataProvider: {                         // optional: list of items (like in the example) or DataSource
+    dataProvider: {                         // optional
+      // Option 1 - list of items
       type: 'labelValuePair',
       items: [
         {label: 'Item A', value: 'a'},
         {label: 'Item B', value: 'b', isDefault: true}, // isDefault sets the value if document opened the first time
         {label: 'Item C', value: 'c'}
       ]
+      // Option 2 - DataSource
+      dataSource: 'labelValuePairDataSource'
     }
   },
   ui: {
