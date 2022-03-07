@@ -38,7 +38,7 @@ menus:
 |postPublishHook|Instant Publish||release-2022-03||
 |unPublishHook|Instant Publish|✅|release-2017-01||
 
-{{< img src="images/publishing-instant.png">}}
+{{< img src="images/publish-workflow.png">}}
 
 ### Register a Publication Hook
 
