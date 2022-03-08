@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Metadata Plugins: Add configSchema and uiSchema Validation and Fallback [livingdocs-server #4296 v174.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4296)
 * :new: Replace metadata plugin `li-media-language` with `li-metadata-translations` [livingdocs-server #4310 v173.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4310)
 * :new: Make sure no real integrations are in e2e tests [livingdocs-server #4308 v172.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4308)
 * :new: fix(character counter): Combined icons [livingdocs-editor #5097 v77.4.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5097)
