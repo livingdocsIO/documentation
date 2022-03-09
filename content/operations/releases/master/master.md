@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Metadata Plugin li-enum: Load select form when componentName = 'liMetaSelectForm' [livingdocs-editor #5101 v77.4.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5101)
 * :new: Lazy publish hook registration [livingdocs-server #4309 v174.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4309)
 * :new: Metadata Plugins: Add configSchema and uiSchema Validation and Fallback [livingdocs-server #4296 v174.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4296)
 * :new: Replace metadata plugin `li-media-language` with `li-metadata-translations` [livingdocs-server #4310 v173.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4310)
