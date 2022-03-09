@@ -834,6 +834,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v171.1.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.14): fix(designs): Make the designs config optional
 - [v171.1.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.13): chore: Revert changes applied in cherry-pick
 - [v171.1.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.12): fix(blob-store): Make s3 `accessKeyId` and `secretAccessKey` optional on ECS and EKS
 - [v171.1.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.11): fix(framework): update to 23.0.8
