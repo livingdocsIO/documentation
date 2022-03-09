@@ -67,7 +67,7 @@ module.exports = {
   *   count as valid.
   **/
   // OPTIONAL
-  validate: function (value, config) {
+  validate (value, config) {
     // Example implementation
     if (value.length > 20) {
       return 'The value is too long'
@@ -84,7 +84,7 @@ module.exports = {
   // @return the value you assign to the metadata field, if you don't return
   //    the value will be undefined
   // OPTIONAL
-  onUpdate: function(newValue, oldValue, config, documentVersion) {
+  onUpdate (newValue, oldValue, config, documentVersion) {
     // CUSTOMIZE: your implementation
     return newValue
   },
@@ -94,7 +94,7 @@ module.exports = {
   //    the value will be undefined
   // introduced in: release-2022-03 (is a replacement for onPublish hook)
   // OPTIONAL
-  onPreparePublish: function(newValue, oldValue, config, documentVersion) {
+  onPreparePublish (newValue, oldValue, config, documentVersion) {
     // CUSTOMIZE: your implementation
     return newValue
   },
@@ -103,7 +103,7 @@ module.exports = {
   // @return the value you assign to the metadata field, if you don't return
   //    the value will be undefined
   // OPTIONAL
-  onUnpublish: function(newValue, oldValue, config, documentVersion) {
+  onUnpublish (newValue, oldValue, config, documentVersion) {
     // your implementation
     return newValue
   },
@@ -112,7 +112,7 @@ module.exports = {
   // USE THE RENDER PIPELINE INSTEAD.
   // The onRender event will be called before a document gets rendered
   // OPTIONAL
-  onRender: function(newValue, oldValue, config, documentVersion) {
+  onRender (newValue, oldValue, config, documentVersion) {
     // your implementation
   }
 }
