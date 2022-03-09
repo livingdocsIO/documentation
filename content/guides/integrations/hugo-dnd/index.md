@@ -207,7 +207,7 @@ You might want to store data that's embedded in each `hugoArticle` thus you need
 
 module.exports = {
   name: 'hugo',
-  schema: {
+  storageSchema: {
     additionalProperties: false,
     properties: {
       id: {

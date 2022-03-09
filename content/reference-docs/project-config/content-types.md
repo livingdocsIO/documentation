@@ -162,25 +162,21 @@ The schema of the metadata array looks as follows:
     config: ms.obj({
       required: 'boolean',
       requiredErrorMessage: 'string'
+      // more properties possible for specific metadata types
     }),
     ui: ms.obj({
       component: 'string:required',
-      service: 'string', // any of the available here https://docs.livingdocs.io/reference-documentation/editor/metadata
       label: 'string',
       config: ms.obj({
-        canReset: 'boolean',
-        limitTo: 'integer',
-        maxSelectable: 'integer',
-        placeholder: 'string',
         readOnly: 'boolean',
-        rows: 'integer', // for select service
-        sortable: 'boolean' // for li-reference-list
+        // more properties possible for specific metadata types
       })
     })
   }))
 ```
 
-We advise to use the "Project Setup" UI for metadata changes if possible.
+Get a list of available [metadata plugins]({{< ref "/reference-docs/document/metadata/metadata-plugin-list" >}})
+
 
 ## Metadata Groups
 *has UI support*

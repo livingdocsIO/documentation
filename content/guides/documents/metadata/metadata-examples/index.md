@@ -66,7 +66,7 @@ metadataPlugins: path.resolve('./plugins/metadata')
 ```js
 module.exports = {
   name: 'customerName-pluginName',
-  schema: {
+  storageSchema: {
     type: 'string'
   },
   validate: (value, config) => {
@@ -141,7 +141,7 @@ Next step is to create a file to implement a simple custom server plugin.
 ```js
 mmodule.exports = {
   name: 'bp-slug',
-  schema: {
+  storageSchema: {
     type: 'string'
   }
 }
