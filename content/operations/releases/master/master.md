@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(subsript icon): Show the icon in text formatting toolbar [livingdocs-editor #5102 v77.4.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5102)
 * :new: fix(context menu): Close on click outside [livingdocs-editor #5104 v77.4.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5104)
 * :new: Make the designs config optional [livingdocs-server #4323 v175.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4323)
 * :new: Deprecate metadata plugin li-media-language [livingdocs-server #4315 v175.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4315)
