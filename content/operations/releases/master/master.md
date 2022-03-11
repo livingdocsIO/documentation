@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix: add deprecated document.hasDraft getter for BC [livingdocs-editor #5109 v77.4.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5109)
 * :new: Replace _.get with native optional chaining operator
  [livingdocs-server #4322 v175.0.3](https://github.com/livingdocsIO/livingdocs-server/pull/4322)
 * :new: fix(subsript icon): Show the icon in text formatting toolbar [livingdocs-editor #5102 v77.4.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5102)
