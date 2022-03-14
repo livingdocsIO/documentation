@@ -836,6 +836,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v171.1.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.20): fix(publish): Parse publication date
 - [v171.1.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.19): fix(queue): Do not run the queue cleanup when no consumers are active
 - [v171.1.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.18): fix: Revert a de-callbackify, that accidentally landed in the release
 - [v171.1.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.17): fix: hugo article drag and drop
