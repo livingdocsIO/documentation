@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: hugo article drag and drop [livingdocs-server #4329 v175.0.6](https://github.com/livingdocsIO/livingdocs-server/pull/4329)
 * :new: fix: drag and drop of hugo images [livingdocs-server #4331 v175.0.5](https://github.com/livingdocsIO/livingdocs-server/pull/4331)
 * :new: Fix document publish state in editor dashboard [livingdocs-server #4326 v175.0.4](https://github.com/livingdocsIO/livingdocs-server/pull/4326)
 * :new: Fix: add deprecated document.hasDraft getter for BC [livingdocs-editor #5109 v77.4.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5109)
