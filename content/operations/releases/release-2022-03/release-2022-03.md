@@ -852,6 +852,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v77.2.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.22): fix(media library): build correct search query for multi mediaType case without grouping
 - [v77.2.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.21): fix: increase max bar height for text formating popup
 - [v77.2.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.20): fix(metadata): don't log deprecation notice when liMetaTextareaForm is configured
 - [v77.2.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.19): chore(document): cleanup styleguide and tests by removing hasDraft usage
