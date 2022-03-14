@@ -836,6 +836,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v171.1.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.18): fix: Revert a de-callbackify, that accidentally landed in the release
 - [v171.1.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.17): fix: hugo article drag and drop
 - [v171.1.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.16): fix: drag and drop of hugo images
 - [v171.1.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.15): fix: Add revision_id to default document search respond fields as we're depending on it in the editor dashboard
