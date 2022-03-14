@@ -145,18 +145,6 @@ Video includes provide a more flexible approach to embedding videos within a doc
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4054)
   * [Video reference form upload](https://github.com/livingdocsIO/livingdocs-editor/pull/4823)
 
-## Document Inbox Extensions
-
-TODO@ajwild: add description + documentation
-
-* -> Add to inbox from media library dashboard:
-* -> Document inbox side-panel in the editor:
-* -> Updated the dashboard results group header used when there are multiple media sources
-
-* References
-  * [TODO: Documentation]()
-  * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4852)
-
 ## oEmbed Include
 
 The oEmbed include service allows users to embed content (such as photos, videos, or iframes) by providing a link to a resource, without having to worry about embed scripts. The include service has a small number of core providers (TikTok, Twitter, Vimeo, YouTube), but it can easily be extended with additional providers, or with a generic catch-all provider.

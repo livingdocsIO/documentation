@@ -106,6 +106,14 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Highlights
 
+## Document Inbox Extensions
+
+Media Library Entries can now sent to a document inbox and put into a document via drag + drop.
+
+* References
+  * [Documentation](https://docs.livingdocs.io/reference-docs/project-config/content-types/#document-inbox)
+  * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4852)
+
 ## Breaking Changes :fire:
 
 ### Migrate the database :fire:
