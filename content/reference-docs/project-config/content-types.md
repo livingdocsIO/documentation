@@ -495,11 +495,19 @@ The following configuration allows the "page" content type to accept "regular" a
 
 ### Documents
 
-The document inbox for content types provides a way for users to indicate that a document should be listed within another document without the need to know which specific list it should appear on. It can be used in parallel with, or as a replacement for, the list assignment feature.
+The document inbox for content types provides a way for users to indicate that a document should be listed within another document without the need to know which specific list it should appear on. It can be used in parallel with, or as a replacement for, the list assignment feature. The multilist editor (see screenshot below) is only visible if you have a list in your document.
 
 An example use-case would be: When Editor User A finishes an article they would like to tell CvD User B (Chef vom Dienst - a role that is in charge of the frontpage at many newsrooms) to publish the teaser to that article on the frontpage. If the frontpage is compiled from multiple lists, it's not User A's job to decide into which list the article should go, as it's User B deciding that. Once assigned, User B will be able to see the article in the inbox column of the multi-list editor view for the frontpage.
 
 The inbox assignment UI will be displayed on the publish screen for any content type listed within an `inbox.contentTypes` array. The document search dialog used for the inbox assignment will display documents with content type(s) that accept the content type of the document which is being published.
+
+Send document to another document (publish screen):
+
+![image](https://user-images.githubusercontent.com/172394/158125497-a9a8ecb5-5674-4f28-a111-79a3ae344932.png)
+
+Open multilist editor in the Editor:
+
+![image](https://user-images.githubusercontent.com/172394/158125447-5bea2ff6-cc84-4579-9f17-40efb79b350e.png)
 
 ### Media Library Entries
 
@@ -508,3 +516,11 @@ When a content type is configured to accept media library entries into its inbox
 An example use-case would be: A user is interested in adding images to a document they are working on, but they are unsure which to use from an initial search, and would like to view a larger version of the images or get some additional context from the metadata. The user can search through the media library and then assign the images to the document they are working on. Once assigned to a document's inbox the media can be dragged from the Inbox sidebar when the user is editing the document.
 
 The "Send to inbox" option will only be displayed in a media library entry's context menu if there is at least one content type which is configured to accept it. The document search dialog used for the inbox assignment will display documents with content type(s) that accept the media type of the media library entry.
+
+Send an asset to a document inbox (Media Library):
+
+![image](https://user-images.githubusercontent.com/5101376/143496169-f06c3e4d-7ed9-4a20-ab0f-87a9f9232178.png)
+
+Show asset inbox of a document in the Editor:
+
+![image](https://user-images.githubusercontent.com/172394/158125175-42a1758a-d388-46ff-a0c0-57cc7dfcbfec.png)
