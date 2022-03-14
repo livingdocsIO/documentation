@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: transform prefillConfig from V1 to V2 [livingdocs-editor #5108 v77.4.9](https://github.com/livingdocsIO/livingdocs-editor/pull/5108)
 * :new: fix(publish): Parse publication date [livingdocs-server #4341 v175.0.8](https://github.com/livingdocsIO/livingdocs-server/pull/4341)
 * :new: fix: increase max bar height for text formating popup [livingdocs-editor #5111 v77.4.8](https://github.com/livingdocsIO/livingdocs-editor/pull/5111)
 * :new: Disable queue cleanup when no consumers are active [livingdocs-server #4328 v175.0.7](https://github.com/livingdocsIO/livingdocs-server/pull/4328)
