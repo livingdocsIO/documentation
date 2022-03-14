@@ -379,6 +379,14 @@ If you want to have access to Desk Net with your API token, you need to add the 
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4225)
 
+### Filter unconfigured metadata in publicApi :fire:
+
+Unconfigured metadata are now filtered from the `publicApi`. After a project configuration is updated the metadata properties not configured anymore will be filtered immediately. When saving a document from the editor with an unconfigured property the save will now succeed and unconfigured properties are 'ghosted' in the save operation. The importer will still throw errors for unconfigured metadata properties.
+
+🔥 Filter unconfigured properties from `public Api`
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4228)
+
 ### Render default UI component per metadata type :fire:
 
 For some metadata plugins, a default UI component is now rendered if `config.hideFromForm` is not set to `true` for a specific metadata property.
@@ -413,14 +421,6 @@ Any downstream AngularJS based custom UI component should work as expected. If y
 - Set editor config `app.metadata.useAngularBasedFormRendering: true` in your editor config to temporarily switch back to the Angular based form rendering. This will be possible for `release-2022-03` only and removed in `release-2022-05`.
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5016)
-
-### Filter unconfigured metadata in publicApi :fire:
-
-Unconfigured metadata are now filtered from the `publicApi`. After a project configuration is updated the metadata properties not configured anymore will be filtered immediately. When saving a document from the editor with an unconfigured property the save will now succeed and unconfigured properties are 'ghosted' in the save operation. The importer will still throw errors for unconfigured metadata properties.
-
-🔥 Filter unconfigured properties from `public Api`
-
-References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4228)
 
 ### Remove group property in mainNavigation config :fire:
 
