@@ -159,10 +159,11 @@ TODO@ajwild: add description + documentation
 
 ## oEmbed Include
 
-TODO@ajwild: add description + documentation
+The oEmbed include service allows users to embed content (such as photos, videos, or iframes) by providing a link to a resource, without having to worry about embed scripts. The include service has a small number of core providers (TikTok, Twitter, Vimeo, YouTube), but it can easily be extended with additional providers, or with a generic catch-all provider.
 
 References:
-* [Documentation](TODO)
+
+* [Guide](https://docs.livingdocs.io/guides/documents/includes/oembed/)
 * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4942)
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4156)
 
