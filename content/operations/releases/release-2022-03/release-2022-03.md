@@ -850,6 +850,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v77.2.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.20): fix(metadata): don't log deprecation notice when liMetaTextareaForm is configured
 - [v77.2.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.19): chore(document): cleanup styleguide and tests by removing hasDraft usage
 - [v77.2.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.18): fix(subsript icon): Show the icon in text formatting toolbar
 - [v77.2.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.17): fix: Handle cmd/ctrl+click correctly in 2 more places
