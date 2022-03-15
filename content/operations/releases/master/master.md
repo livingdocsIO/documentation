@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: clean up props sent to li-button-group.vue [livingdocs-editor #5119 v77.4.11](https://github.com/livingdocsIO/livingdocs-editor/pull/5119)
 * :new: Support any third party blob-store module in the storage config [livingdocs-server #4334 v176.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4334)
 * :new: Fix: Media Library multi-source boards [livingdocs-editor #5112 v77.4.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5112)
 * :new: fix: transform prefillConfig from V1 to V2 [livingdocs-editor #5108 v77.4.9](https://github.com/livingdocsIO/livingdocs-editor/pull/5108)
