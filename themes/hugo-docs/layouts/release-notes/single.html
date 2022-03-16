@@ -19,4 +19,10 @@
   {{ end }}
 </div>
 
+<style>
+  /*  The release notes table of content is too noisy. We hide the third level  */
+  nav#TableOfContents li li li {
+    display: none;
+  }
+</style>
 {{ partial "html-footer.html" . }}
