@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(metadata): save $ref: document for li-document-reference value [livingdocs-editor #5120 v77.4.12](https://github.com/livingdocsIO/livingdocs-editor/pull/5120)
 * :new: ♻️  Document Creation 1: Improve naming + parameters [livingdocs-server #4344 v176.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4344)
 * :new: fix: clean up props sent to li-button-group.vue [livingdocs-editor #5119 v77.4.11](https://github.com/livingdocsIO/livingdocs-editor/pull/5119)
 * :new: Support any third party blob-store module in the storage config [livingdocs-server #4334 v176.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4334)
