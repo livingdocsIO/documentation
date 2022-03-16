@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix content type update support [livingdocs-server #4350 v176.0.4](https://github.com/livingdocsIO/livingdocs-server/pull/4350)
 * :new: fix: bump framework to version 23.1.5 [livingdocs-server #4348 v176.0.3](https://github.com/livingdocsIO/livingdocs-server/pull/4348)
 * :new: fix: bump framework to version 23.1.5 [livingdocs-editor #5124 v77.4.13](https://github.com/livingdocsIO/livingdocs-editor/pull/5124)
 * :new: fix(metadata): correctly require $ref: document for document-reference [livingdocs-server #4346 v176.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4346)
