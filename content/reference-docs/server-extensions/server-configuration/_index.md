@@ -33,7 +33,6 @@ menus:
 
   "projects": "{{< a href="#projects" title="<projects config>">}}",
   "projectConfigs": "{{< a href="#project-configs" title="<project-config config>">}}"
-  "render_pipeline": "{{< a href="#render-pipeline" title="<render pipeline config>">}}",
   "categories": "{{< a href="#categories" title="<categories config>">}}",
 
   // Configure the elasticsearch behavior
@@ -504,20 +503,6 @@ livingdocs-server key-generate enc --alg dir --enc A256GCM
 ```
 This generates a synchronous encryption key using the A256GCM encoding.
 Call `livingdocs-server key-generate` for a description of all possible parameters.
-
-#### Render Pipeline
-
-Configure the worker configuration that is used to render Livingdoc Documents.
-
-```js
-render_pipeline: {
-  worker_strategy: 'worker-nodes',
-  max_concurrent_workers: Math.max(require('os').cpus().length - 1, 1),
-  executions_per_worker: 300, // number of render jobs before workers are restarted
-  execution_timeout: 1000 * 20 // timeout in milliseconds
-}
-```
-
 
 #### Routing
 
