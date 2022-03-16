@@ -854,6 +854,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v77.2.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.24): fix: bump framework to version 23.0.9
 - [v77.2.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.23): fix(metadata): save $ref: document for li-document-reference value
 - [v77.2.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.22): fix(media library): build correct search query for multi mediaType case without grouping
 - [v77.2.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.21): fix: increase max bar height for text formating popup
