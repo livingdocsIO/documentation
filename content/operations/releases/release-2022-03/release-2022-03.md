@@ -74,7 +74,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Highlights
 
-## Editing improvements
+### Editing improvements
 
 With this release we improved some behavior during editing a document:
 - Support insert on ENTER on last editable of a multi-editable component
@@ -91,7 +91,7 @@ References:
 - [PR 2](https://github.com/livingdocsIO/livingdocs-editor/pull/4638)
 - [PR 3](https://github.com/livingdocsIO/livingdocs-editor/pull/4956)
 
-## Vue Metadata Plugins
+### Vue Metadata Plugins
 
 A much requested feature was adding metadata plugins with a custom Vue component. Finally we have it!
 
@@ -100,7 +100,7 @@ References:
 * [Documentation - List of available metadata plugins](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
 * [Documentation - Register a metadata plugin via Vue component registry](https://docs.livingdocs.io/reference-docs/editor-extensions/vue-component-registry)
 
-## Table Dashboards
+### Table Dashboards
 
 Table dashboards are a new flexible type of dashboards where individual columns can be configured.
 This release contains a first iteration, the full functionality will be provided with the next release.
@@ -124,7 +124,7 @@ References:
 * [Metadata editing PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5022)
 * [Support for li-category / li-document-reference](https://github.com/livingdocsIO/livingdocs-editor/pull/5043)
 
-## Retresco integration
+### Retresco integration
 
 We integrated `Retresco` tagging system to automatically add tags to a document with a nice UI. The supported functionality is:
 - automated adding of tags (via Retresco) to a Livingdocs document
@@ -135,7 +135,7 @@ We integrated `Retresco` tagging system to automatically add tags to a document 
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5013)
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4215)
 
-## Video Includes
+### Video Includes
 
 Video includes provide a more flexible approach to embedding videos within a document than using the standard media library entry directly. The media library approach does not have an integrated solution for video transcoding, so it would only be possible to render the original video file to HTML. On the other hand, using an include service allows you to hook into an external service or data store which could provide the transcoded assets you require.
 
@@ -145,7 +145,7 @@ Video includes provide a more flexible approach to embedding videos within a doc
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4054)
   * [Video reference form upload](https://github.com/livingdocsIO/livingdocs-editor/pull/4823)
 
-## oEmbed Include
+### oEmbed Include
 
 The oEmbed include service allows users to embed content (such as photos, videos, or iframes) by providing a link to a resource, without having to worry about embed scripts. The include service has a small number of core providers (TikTok, Twitter, Vimeo, YouTube), but it can easily be extended with additional providers, or with a generic catch-all provider.
 
