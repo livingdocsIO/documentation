@@ -331,6 +331,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v157.2.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.36): fix(documents): Fix content type update support
 - [v157.2.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.35): fix: remove unconfigured metadata properties
 - [v157.2.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.34): fix(projectSecrets): tolerate missing projectConfigs config
 - [v157.2.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.33): fix(publicApi): add id to nodes in menu
