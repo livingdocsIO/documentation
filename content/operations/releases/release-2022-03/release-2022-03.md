@@ -836,6 +836,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v171.1.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.22): fix(metadata): correctly require $ref: document for document-reference
 - [v171.1.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.21): fix(blob-store): Support any third party blob-store module in the storage config
 - [v171.1.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.20): fix(publish): Parse publication date
 - [v171.1.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.19): fix(queue): Do not run the queue cleanup when no consumers are active
