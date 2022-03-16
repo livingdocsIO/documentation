@@ -50,7 +50,7 @@ menus:
   "kv": "{{< a href="#routing" title="<routing storage config>">}}"
 
   // plugins
-  "metadataPlugins": "{{< a href="#metadata-plugins" title="<metadata plugins config>">}}",
+  "metadataPlugins": "{{< a href="#metadata-plugins" title="<metadata plugins config>">}}"
 }
 ```
 
@@ -590,7 +590,7 @@ search: {
     'pushNotifications.*'
   ],
   // your optional custom elasticsearch search function
-  queryBuilderPlugin: path.resolve('/path/to/your/own/search/function')
+  queryBuilderPlugin: require.resolve('./path/to/your-own-search-function')
 }
 ```
 
@@ -636,7 +636,7 @@ elasticIndex: {
 
   // The concurrency defines how many requests the livingdocs-server is doing
   // in parallel on every single process.
-  concurrency: 5,
+  concurrency: 2,
 
   // The batchSize defines how many documents/entries should be
   // aggregated into a single elasticsearch /_bulk request.
@@ -669,7 +669,7 @@ elasticIndex: {
       enabled: true,
 
       // Overrides the elasticIndex.concurrency config for a specific index
-      concurrency: 5,
+      concurrency: 2,
 
       // Overrides the elasticIndex.batchSize config for a specific index
       batchSize: 5,
@@ -804,11 +804,11 @@ mediaLibrary: {
     },
     // max upload values of Livingdocs API endpoints
     uploadRestrictions: {
-      maxFileSize: 15 * 1000 * 1000, // 15MB, default 15MB
-      maxResolution: 24 * 1000 * 1000 // 24MP,  default 24 mega-pixels
+      maxFileSize: '15mb',
     },
     processing: {
-      maxFileSize: 15 * 1000 * 1000, // 15MB, default 15MB
+      maxResolution: 24 * 1000 * 1000 // 24MP,  default 24 mega-pixels
+      maxFileSize: '15mb',
       maxConcurrentProcesses: 5, // default 5
       lossy: {
         // max pixel width or height
@@ -850,7 +850,7 @@ mediaLibrary: {
     },
     // max upload values of Livingdocs API endpoints
     uploadRestrictions: {
-      maxFileSize: 100 * 1000 * 1000 // 100MB, default 100MB
+      maxFileSize: '100mb'
     }
   },
 
@@ -871,7 +871,7 @@ mediaLibrary: {
     // max upload values of Livingdocs API endpoints
     uploadRestrictions: {
       allowedMimeTypes: ['application/pdf'],
-      maxFileSize: 100 * 1000 * 1000 // 100MB, default 100MB
+      maxFileSize: '100mb'
     }
   }
 
@@ -901,7 +901,7 @@ mediaLibrary: {
       url: 'https://foobar.com/images/upload'
     },
     uploadRestrictions: {
-      maxFileSize: 15 * 1000 * 1000 // 15MB, defaults to 15MB.
+      maxFileSize: '15mb'
     }
   }
 }
