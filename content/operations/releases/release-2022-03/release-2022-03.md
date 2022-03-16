@@ -27,23 +27,14 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
-## Newsletter
-
-* Newsletter: **TODO**
-* Subscribe here: https://confirmsubscription.com/h/j/61B064416E79453D
-
-
 ## Webinar
 
-### Features
+* Feature Webinar Recording: **TODO**
+* [Feature Webinar Documentation](https://docs.google.com/document/d/1Q6q-oHw9pyizaSdhTd53wHqXO9SSI5P-tY1PONXm38M/edit)
+* Dev Webinar Recording: **TODO**
+* [Dev Webinar Slides](https://docs.google.com/presentation/d/1zVHReczCh04A9RgBqDlAA0_JxlQLpw5CzdK1-SrCpfE/edit#slide=id.g5d9a6eb16f_1_0)
+* [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
-* Recording: **TODO**
-* Documentation: **TODO**
-
-### Developers
-
-* Recording: **TODO**
-* Slides: **TODO**
 
 ## System Requirements
 
