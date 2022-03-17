@@ -54,6 +54,7 @@ Renditions are only available if configured in the `contentType` configuration.
       {
         "id": "doc-1b8i1ksh10",
         "identifier": "timeline.head",
+        "component": "head",
         "content": {
           "title": "a title",
           "text": "some lead"
@@ -62,6 +63,7 @@ Renditions are only available if configured in the `contentType` configuration.
       {
         "id": "doc-1b8i1ksh20",
         "identifier": "timeline.normal",
+        "component": "normal",
         "content": {
           "caption": "my caption"
         },
@@ -72,6 +74,7 @@ Renditions are only available if configured in the `contentType` configuration.
       {
         "id": "doc-1b8i1ksh30",
         "identifier": "timeline.p",
+        "component": "p",
         "content": {
           "text": "first paragraph"
         }
@@ -79,15 +82,9 @@ Renditions are only available if configured in the `contentType` configuration.
       {
         "id": "doc-1b8i1me1d0",
         "identifier": "timeline.p",
+        "component": "p",
         "content": {
-          "text": "second"
-        }
-      },
-      {
-        "id": "doc-1b8i1mfei0",
-        "identifier": "timeline.p",
-        "content": {
-          "text": "and third one. :)"
+          "text": "second paragraph"
         }
       }
     ],
