@@ -73,6 +73,7 @@ The response is a JSON object with 5 possible top-level properties:
     {
       "id": "doc-1b8i1ksh10",
       "identifier": "timeline.head",
+      "component": "head",
       "content": {
         "title": "a title",
         "text": "some lead"
@@ -81,6 +82,7 @@ The response is a JSON object with 5 possible top-level properties:
     {
       "id": "doc-1b8i1ksh20",
       "identifier": "timeline.normal",
+      "component": "normal",
       "content": {
         "caption": "my caption"
       },
@@ -91,6 +93,7 @@ The response is a JSON object with 5 possible top-level properties:
     {
       "id": "doc-1b8i1ksh30",
       "identifier": "timeline.p",
+      "component": "p",
       "content": {
         "text": "first paragraph"
       }
@@ -98,15 +101,9 @@ The response is a JSON object with 5 possible top-level properties:
     {
       "id": "doc-1b8i1me1d0",
       "identifier": "timeline.p",
+      "component": "p",
       "content": {
-        "text": "second"
-      }
-    },
-    {
-      "id": "doc-1b8i1mfei0",
-      "identifier": "timeline.p",
-      "content": {
-        "text": "and third one. :)"
+        "text": "second paragraph"
       }
     }
   ],
@@ -122,6 +119,7 @@ The response is a JSON object with 5 possible top-level properties:
           {
             "id": "doc-1b8i1ksh10",
             "identifier": "timeline.head",
+            "component": "head",
             "content": {
               "title": "a title",
               "text": "some lead"
@@ -130,6 +128,7 @@ The response is a JSON object with 5 possible top-level properties:
           {
             "id": "doc-1b8i1ksh20",
             "identifier": "timeline.normal",
+            "component": "normal",
             "content": {
               "caption": "my caption"
             },
@@ -140,6 +139,7 @@ The response is a JSON object with 5 possible top-level properties:
           {
             "id": "doc-1b8i1ksh30",
             "identifier": "timeline.p",
+            "component": "p",
             "content": {
               "text": "first paragraph"
             }
@@ -147,15 +147,9 @@ The response is a JSON object with 5 possible top-level properties:
           {
             "id": "doc-1b8i1me1d0",
             "identifier": "timeline.p",
+            "component": "p",
             "content": {
-              "text": "second"
-            }
-          },
-          {
-            "id": "doc-1b8i1mfei0",
-            "identifier": "timeline.p",
-            "content": {
-              "text": "and third one. :)"
+              "text": "second paragraph"
             }
           }
         ],

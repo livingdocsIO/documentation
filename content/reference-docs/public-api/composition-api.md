@@ -73,6 +73,7 @@ We plan to add additional functionalities like automatic design updates of docum
     {
       "id": "doc-1b8i1ksh10",
       "identifier": "timeline.head",
+      "component": "head",
       "content": {
         "title": "a title",
         "text": "some lead"
@@ -81,6 +82,7 @@ We plan to add additional functionalities like automatic design updates of docum
     {
       "id": "doc-2c95a77x14",
       "identifier": "timeline.teaser",
+      "component": "teaser",
       "content": {
         "embed-teaser": {
           "service": "embed-teaser",
