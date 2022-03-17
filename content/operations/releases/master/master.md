@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Metadata: add li-video-reference type [livingdocs-server #4345 v176.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4345)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
