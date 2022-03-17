@@ -828,42 +828,9 @@ Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
 - [v171.1.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.24): fix(documents): Fix content type update support
-- [v171.1.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.23): fix: bump framework to version 23.0.9
-- [v171.1.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.22): fix(metadata): correctly require $ref: document for document-reference
-- [v171.1.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.21): fix(blob-store): Support any third party blob-store module in the storage config
-- [v171.1.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.20): fix(publish): Parse publication date
-- [v171.1.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.19): fix(queue): Do not run the queue cleanup when no consumers are active
-- [v171.1.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.18): fix: Revert a de-callbackify, that accidentally landed in the release
-- [v171.1.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.17): fix: hugo article drag and drop
-- [v171.1.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.16): fix: drag and drop of hugo images
-- [v171.1.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.15): fix: Add revision_id to default document search respond fields as we're depending on it in the editor dashboard
-- [v171.1.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.14): fix(designs): Make the designs config optional
-- [v171.1.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.13): chore: Revert changes applied in cherry-pick
-- [v171.1.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.12): fix(blob-store): Make s3 `accessKeyId` and `secretAccessKey` optional on ECS and EKS
-- [v171.1.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.11): fix(framework): update to 23.0.8
-- [v171.1.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.10): fix(retresco): Skip in-text linking
-- [v171.1.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.9): fix(framework): update to 23.0.6
-- [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
 - [v77.2.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.24): fix: bump framework to version 23.0.9
-- [v77.2.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.23): fix(metadata): save $ref: document for li-document-reference value
-- [v77.2.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.22): fix(media library): build correct search query for multi mediaType case without grouping
-- [v77.2.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.21): fix: increase max bar height for text formating popup
-- [v77.2.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.20): fix(metadata): don't log deprecation notice when liMetaTextareaForm is configured
-- [v77.2.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.19): chore(document): cleanup styleguide and tests by removing hasDraft usage
-- [v77.2.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.18): fix(subsript icon): Show the icon in text formatting toolbar
-- [v77.2.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.17): fix: Handle cmd/ctrl+click correctly in 2 more places
-- [v77.2.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.16): fix(character counter): Combined icons
-- [v77.2.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.15): fix(metadata): Allow fallback for component rendering
-- [v77.2.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.14): fix(framework): update to 23.0.8
-- [v77.2.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.13): chore(inline-add): fix cypress helper
-- [v77.2.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.12): fix(document-inbox): Align the remove button in assignment form
-- [v77.2.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.11): fix(framework): update to 23.0.6
-- [v77.2.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.10): fix: error logs for  and  components
-- [v77.2.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.9): fix(character counter): only show target length if one is defined
-- [v77.2.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.8): fix: apply the disabled attribute correctly
-- [v??.?.?](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v??.?.?): text
 
   ---
   **Icon Legend**

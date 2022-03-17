@@ -26,69 +26,17 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* :new: Fix content type update support [livingdocs-server #4350 v176.0.4](https://github.com/livingdocsIO/livingdocs-server/pull/4350)
-* :new: fix: bump framework to version 23.1.5 [livingdocs-server #4348 v176.0.3](https://github.com/livingdocsIO/livingdocs-server/pull/4348)
-* :new: fix: bump framework to version 23.1.5 [livingdocs-editor #5124 v77.4.13](https://github.com/livingdocsIO/livingdocs-editor/pull/5124)
-* :new: fix(metadata): correctly require $ref: document for document-reference [livingdocs-server #4346 v176.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4346)
-* :new: fix(metadata): save $ref: document for li-document-reference value [livingdocs-editor #5120 v77.4.12](https://github.com/livingdocsIO/livingdocs-editor/pull/5120)
-* :new: ♻️  Document Creation 1: Improve naming + parameters [livingdocs-server #4344 v176.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4344)
-* :new: fix: clean up props sent to li-button-group.vue [livingdocs-editor #5119 v77.4.11](https://github.com/livingdocsIO/livingdocs-editor/pull/5119)
-* :new: Support any third party blob-store module in the storage config [livingdocs-server #4334 v176.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4334)
-* :new: Fix: Media Library multi-source boards [livingdocs-editor #5112 v77.4.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5112)
-* :new: fix: transform prefillConfig from V1 to V2 [livingdocs-editor #5108 v77.4.9](https://github.com/livingdocsIO/livingdocs-editor/pull/5108)
-* :new: fix(publish): Parse publication date [livingdocs-server #4341 v175.0.8](https://github.com/livingdocsIO/livingdocs-server/pull/4341)
-* :new: fix: increase max bar height for text formating popup [livingdocs-editor #5111 v77.4.8](https://github.com/livingdocsIO/livingdocs-editor/pull/5111)
-* :new: Disable queue cleanup when no consumers are active [livingdocs-server #4328 v175.0.7](https://github.com/livingdocsIO/livingdocs-server/pull/4328)
-* :new: fix: hugo article drag and drop [livingdocs-server #4329 v175.0.6](https://github.com/livingdocsIO/livingdocs-server/pull/4329)
-* :new: fix: drag and drop of hugo images [livingdocs-server #4331 v175.0.5](https://github.com/livingdocsIO/livingdocs-server/pull/4331)
-* :new: Fix document publish state in editor dashboard [livingdocs-server #4326 v175.0.4](https://github.com/livingdocsIO/livingdocs-server/pull/4326)
-* :new: Fix: add deprecated document.hasDraft getter for BC [livingdocs-editor #5109 v77.4.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5109)
-* :new: Replace _.get with native optional chaining operator
- [livingdocs-server #4322 v175.0.3](https://github.com/livingdocsIO/livingdocs-server/pull/4322)
-* :new: fix(subsript icon): Show the icon in text formatting toolbar [livingdocs-editor #5102 v77.4.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5102)
-* :new: fix(context menu): Close on click outside [livingdocs-editor #5104 v77.4.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5104)
-* :new: Make the designs config optional [livingdocs-server #4323 v175.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4323)
-* :new: Deprecate metadata plugin li-media-language [livingdocs-server #4315 v175.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4315)
-* :new: Feat: move Google Vision integrations credentials to secret storage [livingdocs-server #4235 v175.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4235)
-* :new: Metadata Plugin li-enum: Load select form when componentName = 'liMetaSelectForm' [livingdocs-editor #5101 v77.4.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5101)
-* :new: Lazy publish hook registration [livingdocs-server #4309 v174.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4309)
-* :new: Metadata Plugins: Add configSchema and uiSchema Validation and Fallback [livingdocs-server #4296 v174.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4296)
-* :new: Replace metadata plugin `li-media-language` with `li-metadata-translations` [livingdocs-server #4310 v173.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4310)
-* :new: Make sure no real integrations are in e2e tests [livingdocs-server #4308 v172.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4308)
-* :new: fix(character counter): Combined icons [livingdocs-editor #5097 v77.4.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5097)
-* :new: Remove callbacks for Server Hooks (Breaking Change) || Add app/breaking-changes [livingdocs-server #4306 v172.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4306)
-* :new: Make s3 `accessKeyId` and `secretAccessKey` optional on ECS and EKS [livingdocs-server #4303 v171.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4303)
-* :new: update framework to 23.1.4 [livingdocs-server #4305 v171.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4305)
-* :new: update framework to 23.1.4 [livingdocs-editor #5095 v77.4.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5095)
-* :new: fix(metadata): Allow fallback for component rendering [livingdocs-editor #5092 v77.4.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5092)
-* :new: Publish Control: metadata status [livingdocs-editor #5077 v77.4.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5077)
-* :new: Only cancel drags in the editor that also originated in the editor [livingdocs-editor #5078 v77.3.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5078)
-* :new: fix(document-inbox): Align the remove button in assignment form [livingdocs-editor #5085 v77.3.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5085)
-* :new: Improve importer errors when autopublish fails [livingdocs-server #4293 v171.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4293)
-* :new: fix: error logs for deprecated components  [livingdocs-editor #5082 v77.3.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5082)
-* :new: fix(character counter): only show target length if one is defined [livingdocs-editor #5079 v77.3.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5079)
-* :new: Migrate event generation tests to promises [livingdocs-server #4288 v171.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4288)
-* :new: fix: make metadata transformed checkbox clickable [livingdocs-editor #5063 v77.3.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5063)
+
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
-## Newsletter
-
-* Newsletter: **TODO**
-* Subscribe here: https://confirmsubscription.com/h/j/61B064416E79453D
-
-
 ## Webinar
 
-### Features
-
-* Recording: **TODO**
-* Documentation: **TODO**
-
-### Developers
-
-* Recording: **TODO**
-* Slides: **TODO**
+* Feature Webinar Recording: **TODO**
+* Feature Webinar Documentation: **TODO**
+* Dev Webinar Recording: **TODO**
+* Dev Webinar Slides: **TODO**
+* Release Newsletter Subscription: **TODO**
 
 ## System Requirements
 
@@ -119,7 +67,15 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Highlights
 
-## Document Inbox Extensions
+### Publish Control
+
+TODO
+- Do we announce Publish Control already?
+- And if yes, how? (Beta vs full fledged feature)
+- Is there already documentation, how should it look like?
+- Should we add a guide how to migrate from custom solutions to Publish Control?
+
+### Document Inbox Extensions
 
 Media Library Entries can now sent to a document inbox and put into a document via drag + drop.
 
@@ -136,7 +92,57 @@ Media Library Entries can now sent to a document inbox and put into a document v
 livingdocs-server migrate up
 ```
 
+### Remove callbacks for Server Hooks
+
+All callback-based server hooks have been removed (throw an error on registration). Please visit the [server hooks documentation](https://docs.livingdocs.io/reference-docs/server-extensions/server-hooks/) to find examples of how to implement server hooks based on a promise.
+
+**Publish Hooks**
+- 🔥 remove `preparePublishHook` / `preparePublishHookCb` (throw err on registration)
+- 🔥 remove `postPublishHook` / `postPublishHookCb` (throw err on registration)
+- 🔥 remove `unpublishHook` / `unpublishHookCb` (throw err on registration)
+
+**List Hooks**
+- 🔥 remove `listUpdateHook` / `listUpdateHookCb` (throw err on registration)
+- 🔥 remove support for 'getExternalList' of server hook 'registerListHooks' (throws err on registration) // fyi: has no effect since 1 year
+
+**Render Hooks**
+- 🔥 remove `beforeRenderHook` / `beforeRenderCb` (throw err on registration)
+- 🔥 remove callback for `registerRenderHooks` (throws err on registration)
+
+### Metadata Plugins: Add configSchema and uiSchema Validation
+
+We added 2 properties `configSchema` and `uiSchema` to a metadata plugin where one can define a schema validation. If you want to know more about the motivation and a fallback, you get some insights [here](https://github.com/livingdocsIO/livingdocs-server/pull/4296).
+
+#### li-text
+
+Add strict validation for `li-enum` (check [here](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-text) what config options you have)
+
+- 🔥 `metadata[].ui.config.maxLength` has no effect, remove the property. Use `metadata[].config.maxLength` instead.
+- 🔥 `metadata[].ui.config.label` has no effect, remove the property. Use `metadata[].ui.label` instead.
+- 🔥 `metadata[].ui.config.canReset` has no effect, remove the property. The UI handles reset more smart without a config.
+- 🔥 `metadata[].ui` does not allow additional properties (throws on project config update)
+- 🔥 `metadata[].config` does not allow additional properties (throws on project config update)
+
+#### li-enum
+
+- 🔥 add strict validation for `li-enum` (check [here](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-enum) what config options you have)
+- 🔥 a static `dataProvider` is required (a `DataSource` is not allowed)
+
+
+References:
+- [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
+- [li-text PR](https://github.com/livingdocsIO/livingdocs-server/pull/4296)
+- [li-enum PR](https://github.com/livingdocsIO/livingdocs-server/pull/4316)
+
 ## Deprecations
+
+### deprecate metadata plugin li-media-language
+
+Deprecate metadata plugin `li-media-language`, use `li-metadata-translations` instead (same config).
+
+References:
+- [Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
+- [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4315)
 
 ## APIs :gift:
 
@@ -150,8 +156,19 @@ livingdocs-server migrate up
 
 ### Improvements
 
+* Server
+  * Hooks: Lazy publish hook registration [livingdocs-server #4309 v174.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4309)
+  * Storage: Support any third party blob-store module in the storage config [livingdocs-server #4334 v176.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4334)
+* Editor
+  * Improve mouse selection [livingdocs-editor #5095 v77.4.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5095)
+
 ### Bugfixes
 
+* Editor
+  * Drag and Drop: Only cancel drags in the editor that also originated in the editor [livingdocs-editor #5078 v77.3.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5078)
+  * Allow Angular fallback behaviour for metadata component rendering [livingdocs-editor #5092 v77.4.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5092)
+  * Show Subscript icon in text formatting toolbar [livingdocs-editor #5102 v77.4.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5102)
+  * Replace non breaking spaces with normal spaces when pasting on an editable. [livingdocs-editor #5124 v77.4.13](https://github.com/livingdocsIO/livingdocs-editor/pull/5124)
 
 ## Patches
 
