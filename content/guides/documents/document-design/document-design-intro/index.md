@@ -81,12 +81,12 @@ Now that we have a new component we want to add it to newly created articles by 
 
 Navigate to the content-type file `article.js` and add the following JSON just after `components`.
 ```js
-  defaultContent: [{
-    identifier: 'header',
-    position: 'fixed'
-  }, {
-    identifier: 'paragraph'
-  }],
+defaultContent: [{
+  component: 'header',
+  position: 'fixed'
+}, {
+  component: 'paragraph'
+}],
 ```
 
 Again, restart your server. In case of success you will see a line on the CLI like this:

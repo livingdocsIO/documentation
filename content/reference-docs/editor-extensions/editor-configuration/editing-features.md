@@ -275,18 +275,18 @@ pinComponents: {
 
 Pinning is triggered by the `position` property on the component. You can also pin components over the `defaultContent` by setting the `position` to `fixed` in the JSON:
 ```js
-"defaultContent": [
+defaultContent: [
   {
-    "identifier": "living-times.article-container",
-    "containers": {
-      "header": [
+    component: "article-container",
+    containers: {
+      header: [
         {
-          "identifier": "living-times.head",
-          "position": "fixed"
+          component: "head",
+          position: "fixed"
         }
       ],
-      "main": [
-        { "identifier": "living-times.image" }
+      main: [
+        { component: "image" }
       ]
     }
   }

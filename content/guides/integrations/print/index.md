@@ -60,15 +60,15 @@ In our service Sandbox we already have a content-type for an online article. It 
   }],
   editorWrapper: '<article class="nzz-standard doc-section" itemscope itemtype="http://schema.org/NewsArticle"></article>',
   defaultContent: [{
-      identifier: 'catchline'
+    component: 'catchline'
   }, {
-      identifier: 'headline'
+    component: 'headline'
   }, {
-      identifier: 'lead'
+    component: 'lead'
   }, {
-      identifier: 'byline'
+    component: 'byline'
   }, {
-      identifier: 'paragraph'
+    component: 'paragraph'
   }],
   metadata: [{
     handle: 'title',
