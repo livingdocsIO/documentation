@@ -13,12 +13,12 @@ index 9d851a7..e4e1e6e 100644
    }, {
      name: 'tweet'
    }],
- 
+
 +  defaultContent: [{
-+    identifier: 'header',
++    component: 'header',
 +    position: 'fixed'
 +  }, {
-+    identifier: 'paragraph'
++    component: 'paragraph'
 +  }],
 +
    metadata: [{

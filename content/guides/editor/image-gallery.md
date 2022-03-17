@@ -188,19 +188,19 @@ module.exports = {
 
   defaultContent: [
     {
-      identifier: 'asset-content',
+      component: 'asset-content',
       position: 'fixed',
       containers: {
         header: [
-          {identifier: 'asset-head-gallery', position: 'fixed'}
+          {component: 'asset-head-gallery', position: 'fixed'}
         ],
         body: [
           {
-            identifier: 'asset-container-gallery',
+            component: 'asset-container-gallery',
             containers: {
               gallery: [
-                {identifier: 'asset-image'},
-                {identifier: 'asset-image'}
+                {component: 'asset-image'},
+                {component: 'asset-image'}
               ]
             }
           }
