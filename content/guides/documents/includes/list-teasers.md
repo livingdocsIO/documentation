@@ -114,7 +114,6 @@ This guide assumes that you are familiar with the possibilities to register an I
     label: 'show byline',
     default: true
   }],
-  properties: ['teaser-type'],
   html: `
     <a class="teaser" doc-link="link">
       <img class="responsive-img" doc-image="image">
