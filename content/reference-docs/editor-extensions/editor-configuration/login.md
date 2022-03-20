@@ -17,7 +17,7 @@ auth: {
 }
 ```
 
-Only strategies of type `link` are supported at the moment. For an example see our [Github login guide]({{< ref "/guides/authentication/github-login" >}}).
+Only strategies of type `link` are supported at the moment. For an example see our [AzureAD login guide]({{< ref "/guides/authentication/azuread-login" >}}).
 
 ### Login screen
 
