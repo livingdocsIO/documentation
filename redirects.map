@@ -20,7 +20,7 @@
 /evaluation-guide/metadata-examples /guides/documents/metadata/metadata-examples/;
 /guides/access/access_hooks /guides/access/access-hooks/;
 /guides/access/access_rights /guides/authentication/access-rights/;
-/guides/github-login /guides/authentication/github-login/;
+/guides/azuread-login /guides/authentication/azuread-login/;
 /guides/imports/dpa-import /guides/integrations/dpa-import/;
 /guides/imports/import-legacy-system-documents /guides/integrations/import-legacy-system-documents/;
 /guides/includes-embeds/article_and_list_includes /guides/documents/includes/embedded-teaser-and-list/;
