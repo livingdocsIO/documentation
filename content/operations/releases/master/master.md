@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Replace if/then schema validation with discriminator [livingdocs-server #4357 v176.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4357)
 * :new: Fix component schema to support the component attribute added in release-2022-03 [livingdocs-server #4354 v176.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4354)
 * :new: fix: add origins to document directive data for uploaded media (image, video) [livingdocs-editor #5122 v77.4.14](https://github.com/livingdocsIO/livingdocs-editor/pull/5122)
 * :new: Metadata: add li-video-reference type [livingdocs-server #4345 v176.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4345)
