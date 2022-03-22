@@ -45,7 +45,7 @@ module.exports = {
             // assert group here
             await transferLocalIdentityToAzure(claims)
             return claims
-          }
+          },
           // set the access to projects with specific groups
           // on the basis of the claims. This is used for new users
           // which are not registered locally
