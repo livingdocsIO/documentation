@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix the use of directiveMappings for Hugo upload [livingdocs-editor #5137 v77.4.16](https://github.com/livingdocsIO/livingdocs-editor/pull/5137)
 * :new: Fix/mails [livingdocs-server #4358 v176.1.3](https://github.com/livingdocsIO/livingdocs-server/pull/4358)
 * :new: fix: handle undefined preview src's when replacing images [livingdocs-editor #5133 v77.4.15](https://github.com/livingdocsIO/livingdocs-editor/pull/5133)
 * :new: Replace if/then schema validation with discriminator [livingdocs-server #4357 v176.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4357)
