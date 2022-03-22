@@ -113,6 +113,25 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 ```
 **Default UI**: Document Selection (Dialog) (`liMetaReferenceForm`)
 
+```js
+// contentType[].metadata / mediaType[].metadata
+metadata: [{
+  handle: 'reference',
+  type: 'li-document-reference',
+  config: {
+    documentType: 'article',       // one of article, page, data-record, optional,
+    contentType: 'my-content-type' // optional, filters the document selection
+  },
+  ui: {
+    label: 'foo',                  // optional
+    config: {
+      readOnly: true,              // default: false
+      style: 'default'             // 'default' or 'teaser' ('default' is the default for metadata, 'teaser' is the default for include paramsSchema)
+    }
+  }
+}]
+```
+
 ## li-enum
 
 A `li-enum` metadata field shows a select form based on a statically defined list. On publish the selected value gets validated against the defined static list. With that you can assure that only specific values gets published.
