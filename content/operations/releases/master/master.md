@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: remove 'href' dependency of linked documents on formating toolbar [livingdocs-editor #5135 v77.4.17](https://github.com/livingdocsIO/livingdocs-editor/pull/5135)
 * :new: fix(public-api): Use type and not mediaType for incoming references [livingdocs-server #4363 v176.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4363)
 * :new: return hugoPicture for new and old Media [livingdocs-server #4359 v176.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/4359)
 * :new: fix the use of directiveMappings for Hugo upload [livingdocs-editor #5137 v77.4.16](https://github.com/livingdocsIO/livingdocs-editor/pull/5137)
