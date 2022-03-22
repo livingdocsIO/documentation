@@ -831,6 +831,7 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.24): fix(documents): Fix content type update support
 
 ### Livingdocs Editor Patches
+- [v77.2.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.27): fix: use the directiveMappings for Hugo upload
 - [v77.2.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.26): fix: initialize previewSrc in the case of replacing images
 - [v77.2.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.25): fix: add origins for hugo images
 - [v77.2.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.24): fix: bump framework to version 23.0.9
