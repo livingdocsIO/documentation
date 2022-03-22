@@ -827,6 +827,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v171.1.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.27): fix(public-api): Use type and not mediaType for incoming references
 - [v171.1.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.26): fix: hugo-controller return hugoPicture for new and old Media
 - [v171.1.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.25): fix(component): Fix component schema to support the component attribute added in release-2022-03
 - [v171.1.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.24): fix(documents): Fix content type update support
