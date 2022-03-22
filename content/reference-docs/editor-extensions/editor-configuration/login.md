@@ -17,7 +17,7 @@ auth: {
 }
 ```
 
-Only strategies of type `link` are supported at the moment. For an example see our [AzureAD login guide]({{< ref "/guides/authentication/azuread-login" >}}).
+Only strategies of type `link` are supported at the moment. For an example see our [AzureAD login guide]({{< ref "/guides/authentication/azure-ad-login" >}}).
 
 ### Login screen
 
