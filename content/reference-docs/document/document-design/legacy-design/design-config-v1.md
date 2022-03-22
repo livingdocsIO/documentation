@@ -73,6 +73,7 @@ The `defaultComponents` configuration tells the editor which components should b
 "defaultComponents": {
   "paragraph": "p", // The default component to insert when pressing Enter
   "image": "image"  // The component to insert when dragging an image into the document.
+  "video": "video"  // The component to insert when dragging a video into the document.
 }
 ```
 
