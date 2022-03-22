@@ -7,7 +7,7 @@ weight: 2
 ## SSO example with Azure AD
 To use SSO with OpenID Connect we have a strategy `li-authentication-openid-connect` to use in the `auth.connections` config. With this strategy, you can use a SSO Service (AzureAD, Google, Facebook, ...) which supports the OpenID Connect for authentication.  
 
-To enable AzureAD SSO for Livingdocs, add the config below to the server config in `auth.connections`. It creates a setup for SSO with AzureAD and shows the button for that on the login page. It is also using the existing local user from Livingdocs and transfers it to an AzureAD User. The already written articles with this user will still be assigned to the same user. It isn't possible to log in with the local login after the first login with AzureAD. The match of the user is done with the email address.
+To enable AzureAD SSO for Livingdocs, add the config below to the server config in `auth.connections`. It creates a setup for SSO with AzureAD and shows the button for that on the login page. It is also using the existing user from Livingdocs and create an AzureAD Identity. The already written articles with this user will still be assigned to the same user. The match of the user is done with the email address.
 
 ```js
 const nanoid = require('nanoid/generate')
@@ -72,7 +72,7 @@ module.exports = {
 }
 
 let db
-// Update the local already existing identity to an AzureAD identity
+// create a new AzureAD identity for the existing user
 async function transferLocalIdentityToAzure (claims) {
   if (!db) db = require('../../app/server').db
 
