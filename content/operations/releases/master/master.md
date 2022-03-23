@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Metadata Plugins for support in paramsSchema [livingdocs-server #4352 v176.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4352)
 * :new: temporarily allow metadata plugin config `ui.component: 'liMetaTextareaForm'` for `li-text` [livingdocs-server #4353 v176.1.6](https://github.com/livingdocsIO/livingdocs-server/pull/4353)
 * :new: Replace console.warn with errorLog.deprecation [livingdocs-editor #5125 v77.4.18](https://github.com/livingdocsIO/livingdocs-editor/pull/5125)
 * :new: fix: remove 'href' dependency of linked documents on formating toolbar [livingdocs-editor #5135 v77.4.17](https://github.com/livingdocsIO/livingdocs-editor/pull/5135)
