@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: remove documentId from contentValidationError [livingdocs-editor #5144 v77.4.19](https://github.com/livingdocsIO/livingdocs-editor/pull/5144)
 * :new: fix(retresco): Load entities from any metadata handle [livingdocs-server #4365 v176.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4365)
 * :new: Metadata Plugins for support in paramsSchema [livingdocs-server #4352 v176.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4352)
 * :new: temporarily allow metadata plugin config `ui.component: 'liMetaTextareaForm'` for `li-text` [livingdocs-server #4353 v176.1.6](https://github.com/livingdocsIO/livingdocs-server/pull/4353)
