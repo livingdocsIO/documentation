@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Run events and publication hooks after transaction commit [livingdocs-server #4369 v177.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4369)
 * :new: Support parallel execution of `livingdocs-server migrate up` [livingdocs-server #4366 v177.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4366)
 * :new: Fix style for li-meta-document-reference default variant [livingdocs-editor #5145 v77.6.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5145)
 * :new: 🐞 Better error for parallel import of the same document [livingdocs-server #4367 v176.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4367)
