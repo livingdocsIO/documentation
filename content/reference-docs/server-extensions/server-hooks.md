@@ -51,7 +51,7 @@ menus:
 * `preparePublishHookAsync`: `({documentVersion}) {return}`
 * `postPublishHookAsync`: `({documentVersion}) {return}`
 * `postUnpublishHookAsync`: `({documentVersion}) {return}`
-* {{< removed-in "release-2022-05" >}}: `unpublishHookAsync`: `({doumentType, documentVersion}) {return}`
+* {{< removed-in release-2022-05 >}}: `unpublishHookAsync`: `({documentType, documentVersion}) {return}`
 
 
 **Example**
@@ -67,21 +67,21 @@ liServer.registerInitializedHook(async () => {
   liServer.features.api('li-documents').registerPublicationHooks({
     projectHandle: 'your-awesome-project',
     channelHandle: 'default',
-    // {{< added-in "release-2022-03" >}}
+    // {{< added-in release-2022-03 >}}
     async preparePublishHookAsync ({documentVersion}) { return },
-    // {{< added-in "release-2022-03" >}}
+    // {{< added-in release-2022-03 >}}
     async postPublishHookAsync ({documentVersion}) {
       liServer.log.info(`postPublishHookAsync called for documentType: ${documentVersion.documentType}!`)
       liServer.log.debug({documentVersion: documentVersion})
       return
     },
-    // {{< removed-in "release-2022-05" >}}
+    // {{< removed-in release-2022-05 >}}
     async unpublishHookAsync ({documentVersion}) {
       liServer.log.info(`unpublishHookAsync called for documentType: ${documentVersion.documentType}!`)
       liServer.log.debug({documentVersion})
       return
     }
-    // {{< added-in "release-2022-05" >}}
+    // {{< added-in release-2022-05 >}}
     async postUnpublishHookAsync ({documentVersion}) {
       liServer.log.info(`unpublishHookAsync called for documentType: ${documentVersion.documentType}!`)
       liServer.log.debug({documentVersion})
@@ -139,7 +139,7 @@ async postPublishHookAsync ({documentVersion}) {
 ```
 
 ### unpublishHookAsync
-{{< removed-in "release-2022-05" block >}}
+{{< removed-in release-2022-05 block >}}
 
 The `unpublishHookAsync` hook will be called after a document has been unpublished. Any change to the [DocumentVersion]({{< ref "/reference-docs/server-extensions/document-version.md" >}}) has no effect. A use case for this hook is to inform remote systems about the unpublication of a document.
 
