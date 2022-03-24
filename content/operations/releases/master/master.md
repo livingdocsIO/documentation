@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: postUnpublishHook [livingdocs-server #4371 v177.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4371)
 * :new: Remove documentId from contentValidationError [livingdocs-server #4373 v177.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4373)
 * :new: Run events and publication hooks after transaction commit [livingdocs-server #4369 v177.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4369)
 * :new: Support parallel execution of `livingdocs-server migrate up` [livingdocs-server #4366 v177.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4366)
