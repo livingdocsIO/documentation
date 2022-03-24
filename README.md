@@ -45,6 +45,10 @@ Check your titles by reading the table of contents generated on the right side o
 {{< added-in release-2021-03 >}}
 ```
 
+```markdown
+{{< removed-in release-2021-03 >}}
+```
+
 *Note: Shortcode templates can be found in `themes/hugo-docs/layouts/shortcodes`.*
 
 
