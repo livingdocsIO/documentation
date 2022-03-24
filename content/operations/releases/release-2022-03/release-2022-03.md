@@ -2,7 +2,6 @@
 type: release-notes
 title: March 2022 Release
 description: Release notes for release-2022-03
-excludeFromSearch: true
 aliases:
   - /operations/releases/release-2022-03/release-2022-03/
 ---
@@ -16,20 +15,11 @@ aliases:
   branchHandle="release-2022-03"
 >}}
 
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to master).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
-
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
 ## Webinar
 
-* Feature Webinar Recording: **TODO**
+* [Feature Webinar Recording](https://vimeo.com/689700259)
 * [Feature Webinar Documentation](https://docs.google.com/document/d/1Q6q-oHw9pyizaSdhTd53wHqXO9SSI5P-tY1PONXm38M/edit)
 * [Dev Webinar Recording](https://us02web.zoom.us/rec/share/3PJ4JlYAfe7gHDVVjtkKjh406DY--4A3ff8e6za0zJoFHxJD8jTCp0-5Rlo4kqw.pg0eSiN_KP64BZDp) | PW: is21?#Z6
 * [Dev Webinar Slides](https://docs.google.com/presentation/d/1zVHReczCh04A9RgBqDlAA0_JxlQLpw5CzdK1-SrCpfE/edit?usp=sharing)
@@ -828,17 +818,9 @@ Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
-- [v171.1.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.27): fix(public-api): Use type and not mediaType for incoming references
-- [v171.1.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.26): fix: hugo-controller return hugoPicture for new and old Media
-- [v171.1.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.25): fix(component): Fix component schema to support the component attribute added in release-2022-03
-- [v171.1.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.24): fix(documents): Fix content type update support
 
 ### Livingdocs Editor Patches
 - [v77.2.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.28): fix: remove 'href' dependency of linked documents on formating toolbar
-- [v77.2.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.27): fix: use the directiveMappings for Hugo upload
-- [v77.2.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.26): fix: initialize previewSrc in the case of replacing images
-- [v77.2.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.25): fix: add origins for hugo images
-- [v77.2.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.24): fix: bump framework to version 23.0.9
 
   ---
   **Icon Legend**
