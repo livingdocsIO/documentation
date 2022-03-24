@@ -1,0 +1,6 @@
+{{- $href := print "/operations/releases/" .release "/" .release "/" -}}
+{{- if .block -}}
+<p class="removed-in">Removed in: <a href="{{ $href }}"><code>{{ .release }}</code></a></p>
+{{- else -}}
+<span class="removed-in">Removed in: <a href="{{ $href }}"><code>{{ .release }}</code></a></span>
+{{- end -}}

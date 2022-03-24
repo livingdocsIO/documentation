@@ -36,7 +36,8 @@ menus:
 |prepublishHookAsync|Instant Publish|✅||release-2022-03|
 |publishHookAsync|Instant Publish|✅||release-2022-03|
 |postPublishHookAsync|Instant Publish||release-2022-03||
-|unpublishHookAsync|Instant Publish|✅|release-2017-01||
+|unpublishHookAsync|Instant Publish|✅|release-2017-01|release-2022-05|
+|postUnpublishHookAsync|Instant Publish|✅|release-2022-05||
 
 {{< img src="images/publish-workflow.png">}}
 
@@ -49,7 +50,8 @@ menus:
 **API of Publication Hooks**
 * `preparePublishHookAsync`: `({documentVersion}) {return}`
 * `postPublishHookAsync`: `({documentVersion}) {return}`
-* `unpublishHookAsync`: `({doumentType, {documentVersion}}) {return}`
+* `postUnpublishHookAsync`: `({documentVersion}) {return}`
+* {{< removed-in "release-2022-05" >}}: `unpublishHookAsync`: `({doumentType, documentVersion}) {return}`
 
 
 **Example**
@@ -65,13 +67,22 @@ liServer.registerInitializedHook(async () => {
   liServer.features.api('li-documents').registerPublicationHooks({
     projectHandle: 'your-awesome-project',
     channelHandle: 'default',
+    // {{< added-in "release-2022-03" >}}
     async preparePublishHookAsync ({documentVersion}) { return },
+    // {{< added-in "release-2022-03" >}}
     async postPublishHookAsync ({documentVersion}) {
       liServer.log.info(`postPublishHookAsync called for documentType: ${documentVersion.documentType}!`)
       liServer.log.debug({documentVersion: documentVersion})
       return
     },
+    // {{< removed-in "release-2022-05" >}}
     async unpublishHookAsync ({documentVersion}) {
+      liServer.log.info(`unpublishHookAsync called for documentType: ${documentVersion.documentType}!`)
+      liServer.log.debug({documentVersion})
+      return
+    }
+    // {{< added-in "release-2022-05" >}}
+    async postUnpublishHookAsync ({documentVersion}) {
       liServer.log.info(`unpublishHookAsync called for documentType: ${documentVersion.documentType}!`)
       liServer.log.debug({documentVersion})
       return
@@ -108,7 +119,7 @@ async preparePublishHookAsync ({documentVersion}) {
 }
 ```
 
-### postPublishHookAsync()
+### postPublishHookAsync
 
 The `postPublishHookAsync` hook will be called after a document has been published. Any change to the [DocumentVersion]({{< ref "/reference-docs/server-extensions/document-version.md" >}}) has no effect. A use case for this hook is to inform remote systems about the publication of a document.
 
@@ -118,21 +129,40 @@ The `postPublishHookAsync` hook will be called after a document has been publish
 **Example**
 ```js
 async postPublishHookAsync ({documentVersion}) {
- axios.post(`https://my-remote-service.com/publish/${documentVersion.projectId}`,
+ axios.post(`https://my-remote-service.com/publish`,
   {
-    documentId: documentVersion.id,
     projectId: documentVersion.projectId,
-    publicationId: documentVersion.getLastPublicationId (),
+    documentId: documentVersion.id,
+    publicationId: documentVersion.getLastPublicationId(),
   })
 }
 ```
 
-### unpublishHookAsync()
+### unpublishHookAsync
+{{< removed-in "release-2022-05" block >}}
 
 The `unpublishHookAsync` hook will be called after a document has been unpublished. Any change to the [DocumentVersion]({{< ref "/reference-docs/server-extensions/document-version.md" >}}) has no effect. A use case for this hook is to inform remote systems about the unpublication of a document.
 
 ```js
 async unpublishHookAsync ({documentVersion}) {...}
+```
+
+### postUnpublishHookAsync
+
+The `postUnpublishHookAsync` hook will be called after a document has been unpublished or a published document gets deleted. Any change to the [DocumentVersion]({{< ref "/reference-docs/server-extensions/document-version.md" >}}) has no effect. A use case for this hook is to inform remote systems about the unpublish of a document.
+
+**Use Cases**
+* Notify other systems
+
+**Example**
+```js
+async postUnpublishHookAsync ({documentVersion}) {
+ axios.post(`https://my-remote-service.com/unpublish`,
+  {
+    projectId: documentVersion.projectId,
+    documentId: documentVersion.id
+  })
+}
 ```
 
 
