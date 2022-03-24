@@ -8,7 +8,7 @@ description: Release notes for release-2021-11
   title="November 2021 Release"
   upcoming=false
   legacy=false
-  current=true
+  current=false
   maintained=true
   branchHandle="release-2021-11"
 >}}

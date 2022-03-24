@@ -10,8 +10,8 @@ aliases:
   title="March 2022 Release"
   upcoming=true
   legacy=false
-  current=false
-  maintained=false
+  current=true
+  maintained=true
   branchHandle="release-2022-03"
 >}}
 
