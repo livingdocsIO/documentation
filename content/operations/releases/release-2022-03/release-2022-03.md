@@ -820,6 +820,7 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
 
 ### Livingdocs Editor Patches
+- [v77.2.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.29): fix(metadata): Enable multiple default values
 - [v77.2.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.28): fix: remove 'href' dependency of linked documents on formating toolbar
 
   ---
