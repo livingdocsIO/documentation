@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Table dashboard: Loading/empty state, document count, highlight  [livingdocs-editor #5147 v77.7.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5147)
 * :new: fix(metadata): Enable multiple default values [livingdocs-editor #5146 v77.6.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5146)
 * :new: postUnpublishHook [livingdocs-server #4371 v177.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4371)
 * :new: Remove documentId from contentValidationError [livingdocs-server #4373 v177.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4373)
