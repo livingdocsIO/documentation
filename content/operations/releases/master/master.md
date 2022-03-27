@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: bump framework to version 23.1.6 [livingdocs-server #4372 v177.1.3](https://github.com/livingdocsIO/livingdocs-server/pull/4372)
 * :new: 🐞 Import: Throw better error on publish with missing required metadata [livingdocs-server #4376 v177.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4376)
 * :new: Send webhooks and notifications with transactions [livingdocs-server #4374 v177.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4374)
 * :new: Table dashboard: Loading/empty state, document count, highlight  [livingdocs-editor #5147 v77.7.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5147)
