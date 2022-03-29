@@ -202,6 +202,13 @@ References:
 * [Server PR2](https://github.com/livingdocsIO/livingdocs-server/pull/3938)
 
 
+### Reject registering unknown publication hooks :fire:
+
+Until now, you were able to register a publication hook with any name, even when the hook had no effect.
+
+🔥 Only support the registration of well-known [Publication Hooks](https://docs.livingdocs.io/reference-docs/server-extensions/server-hooks/#publication-hooks)
+
+
 ### Remove prepublishHook :fire:
 
 🔥 removed server hook `prepublishHook`
