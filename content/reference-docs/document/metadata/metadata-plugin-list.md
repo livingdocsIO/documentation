@@ -129,7 +129,8 @@ metadata: [{
   config: {
     required: true,                          // optional, default: false
     requiredErrorMessage: 'Provide a title', // optional
-    dataProvider: {                          // required
+    dataProvider: { 
+      type: 'labelValuePair',                // required
       items: [
         {label: 'Tag A', value: 'a'},
         {label: 'Tag B', value: 'b', isDefault: true}, // isDefault sets the value if document opened the first time
