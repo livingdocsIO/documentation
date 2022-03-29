@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: 🐞 Import: Throw better error when contentType does not exist [livingdocs-server #4378 v177.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4378)
 * :new: 🐞 Import: Throw better error on update and publish with missing required metadata [livingdocs-server #4379 v177.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/4379)
 * :new: Improvement/User Colors [livingdocs-editor #5127 v77.8.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5127)
 * :new: feat: add 'trimLeadingAndTrailingWhitespaces' config [livingdocs-editor #5136 v77.8.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5136)
