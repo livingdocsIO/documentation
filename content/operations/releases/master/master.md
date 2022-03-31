@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(singleImageCrop): automatic crop fixed [livingdocs-editor #5150 v77.8.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5150)
 * :new: Metadata: correctly update Vue metadata form after remoteUpdate [livingdocs-editor #5157 v77.8.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5157)
 * :new: chore(deps): bump minimist from 1.2.5 to 1.2.6 [livingdocs-server #4377 v177.1.7](https://github.com/livingdocsIO/livingdocs-server/pull/4377)
 * :new: 🐞 Improve Import Error Messages [livingdocs-server #4381 v177.1.6](https://github.com/livingdocsIO/livingdocs-server/pull/4381)
