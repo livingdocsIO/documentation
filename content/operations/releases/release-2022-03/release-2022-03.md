@@ -828,6 +828,7 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
 
 ### Livingdocs Editor Patches
+- [v77.2.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.34): fix(metadata): fix deprecation log messages for ui.component configs
 - [v77.2.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.33): fix(Safari): insert component doesn't select everything
 - [v77.2.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.32): fix: wrap text for long document titles on document lists
 - [v77.2.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.31): fix(singleImageCrop): automatic crop fixed
