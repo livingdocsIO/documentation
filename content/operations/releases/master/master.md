@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(metadata): fix deprecation log messages for ui.component configs [livingdocs-editor #5164 v77.8.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5164)
 * :new: fix(Safari): insert component doesn't select everything [livingdocs-editor #5149 v77.8.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5149)
 * :new: fix: wrap text for long document titles on document lists [livingdocs-editor #5161 v77.8.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5161)
 * :new: fix(singleImageCrop): automatic crop fixed [livingdocs-editor #5150 v77.8.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5150)
