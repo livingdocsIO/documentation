@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Remove Q drop handler [livingdocs-editor #5169 v78.0.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5169)
 * :new: Metadata: li-document-reference dashboard config [livingdocs-server #4392 v177.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4392)
 * :new: Dashboards: maybe use table-dashboard in document selection dialog [livingdocs-editor #5141 v77.9.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5141)
 * :new: fix(metadata): fix deprecation log messages for ui.component configs [livingdocs-editor #5164 v77.8.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5164)
