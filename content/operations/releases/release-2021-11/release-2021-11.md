@@ -361,6 +361,7 @@ References:
 - [v157.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.9): return revision also in case metadata_id is null
 
 ### Livingdocs Editor Patches
+- [v74.4.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.69): fix: wrap text for long document titles on document lists
 - [v74.4.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.68): fix: use the directiveMappings for Hugo upload
 - [v74.4.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.67): fix: add origins for hugo images
 - [v74.4.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.66): fix(center buttons): load more article buttons centered
