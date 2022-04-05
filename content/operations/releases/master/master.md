@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Pass more info to the Editor for Import Logs [livingdocs-server #4383 v178.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4383)
 * :new: Improve Showed Infos for Import Logs [livingdocs-editor #5154 v78.0.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5154)
 * :new: Improvement/link update (button/link issue pt.2) [livingdocs-editor #5171 v78.0.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5171)
 * :new: fix(button group): pass boolean vue prop with binding [livingdocs-editor #5170 v78.0.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5170)
