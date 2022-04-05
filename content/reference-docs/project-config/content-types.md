@@ -32,6 +32,7 @@ contentTypes: [{
 
   editorWrapper: '<div class="doc-section"></div>',
   defaultContent: [{component: 'title', position: 'fixed'}],
+  defaultMetadata: {author: 'Mister X'}, // {{< added-in release-2022-05 >}}
 
   // define the server-side metadata
   metadata: [{
