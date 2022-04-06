@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Publish Control: fix unpublish schedule [livingdocs-server #4397 v178.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4397)
 * :new: Text Formatting Toolbar: allow specialChars and comments on plainText directives [livingdocs-editor #5175 v78.0.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5175)
 * :new: fix(metadata): correctly apply startcase for default placeholder based on handle [livingdocs-editor #5156 v78.0.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5156)
 * :new: Pass more info to the Editor for Import Logs [livingdocs-server #4383 v178.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4383)
