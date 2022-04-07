@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Text Formatting: show the toolbar for plainText directive even if only quotes are possible [livingdocs-editor #5182 v78.1.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5182)
 * :new: Documents: Expose Editing API for Publish Control UI [livingdocs-server #4279 v178.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4279)
 * :new: Publish Control: add basic document history [livingdocs-editor #5069 v78.1.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5069)
 * :new: Publish Control: fix unpublish schedule [livingdocs-server #4397 v178.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4397)
