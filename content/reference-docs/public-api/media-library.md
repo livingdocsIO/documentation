@@ -98,6 +98,11 @@ PATCH api/v1/mediaLibrary/:id
         filename: 'my-new-file.png',
         mimeType: 'image/png'
       }
+    },
+    {
+      // revoke the asset
+      // {{< added-in release-2022-05 >}}
+      "operation": "revokeAsset"
     }
   ]
 }
