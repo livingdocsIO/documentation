@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: ♻️  MediaLibrary: Rename files with _ to - [livingdocs-server #4401 v178.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4401)
 * :new: Improvement/link update (button/link issue pt.3) [livingdocs-editor #5180 v78.1.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5180)
 * :new: Text Formatting: show the toolbar for plainText directive even if only quotes are possible [livingdocs-editor #5182 v78.1.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5182)
 * :new: Documents: Expose Editing API for Publish Control UI [livingdocs-server #4279 v178.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4279)
