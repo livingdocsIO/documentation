@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Media Library: combine baseFilters on search for multiple mediaTypes [livingdocs-editor #5181 v78.3.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5181)
 * :new: Publish Control: Scheduled Unpublish [livingdocs-editor #5177 v78.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5177)
 * :new: Publish Control: Document Inbox Assignment [livingdocs-editor #5185 v78.2.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5185)
 * :new: ♻️  MediaLibrary: Rename files with _ to - [livingdocs-server #4401 v178.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4401)
