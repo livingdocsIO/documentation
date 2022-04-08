@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(vue-i18n): implementing vue-i18n [livingdocs-editor #5179 v78.5.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5179)
 * :new: feat(table dashboard): Add 'set/change homepage' component in header [livingdocs-editor #5183 v78.4.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5183)
 * :new: Media Library: combine baseFilters on search for multiple mediaTypes [livingdocs-editor #5181 v78.3.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5181)
 * :new: Publish Control: Scheduled Unpublish [livingdocs-editor #5177 v78.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5177)
