@@ -828,6 +828,7 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
 
 ### Livingdocs Editor Patches
+- [v77.2.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.36): fix: add createdBy queryType
 - [v77.2.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.35): fix(metadata): correctly apply startcase for default placeholder based on handle
 - [v77.2.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.34): fix(metadata): fix deprecation log messages for ui.component configs
 - [v77.2.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.33): fix(Safari): insert component doesn't select everything
