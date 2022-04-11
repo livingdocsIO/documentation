@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix/Loading Overlay [livingdocs-editor #5191 v78.8.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5191)
 * :new: feat(desknet): Add Desk-Net platform select metadata plugin [livingdocs-editor #5155 v78.8.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5155)
 * :new: feat(desknet): Add Desk-Net schedule side panel [livingdocs-editor #5134 v78.7.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5134)
 * :new: Devices on Profile Page [livingdocs-server #4400 v178.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4400)
