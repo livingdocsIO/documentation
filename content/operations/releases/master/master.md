@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(desknet): Add Desk-Net schedule side panel [livingdocs-editor #5134 v78.7.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5134)
 * :new: Devices on Profile Page [livingdocs-server #4400 v178.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4400)
 * :new: Devices on Profile Page [livingdocs-editor #5184 v78.6.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5184)
 * :new: fix(retresco): Add details to Retresco error logs [livingdocs-server #4403 v178.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4403)
