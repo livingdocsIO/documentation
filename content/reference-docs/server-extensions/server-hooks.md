@@ -27,6 +27,8 @@ menus:
 
 ## Publication Hooks
 
+With publication hooks you can influence the [`Document Publication Lifecycle`]({{< ref "/reference-docs/server-extensions/server-events#available-events" >}}) for example by changing content before the publication.
+
 ### Process and Hooks Overview
 
 
@@ -38,8 +40,6 @@ menus:
 |postPublishHookAsync|Instant Publish||release-2022-03||
 |unpublishHookAsync|Instant Publish|✅|release-2017-01|release-2022-05|
 |postUnpublishHookAsync|Instant Publish|✅|release-2022-05||
-
-{{< img src="images/publish-workflow.png">}}
 
 ### Register a Publication Hook
 

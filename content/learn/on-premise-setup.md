@@ -2,7 +2,7 @@
 title: On Premise Setup
 menus:
   learn:
-    weight: 2
+    weight: 3
 ---
 
 ## Get Code Access

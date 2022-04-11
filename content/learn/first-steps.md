@@ -3,7 +3,7 @@ title: First Steps
 draft: true
 menus:
   learn:
-    weight: 2
+    weight: 4
 ---
 
 ## Get Started with Livingdocs as a Service
