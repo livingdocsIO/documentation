@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: ♻️  ProjectConfig: use kebab case for all file names [livingdocs-server #4411 v178.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4411)
 * :new: Fix/Avatar [livingdocs-editor #5195 v78.10.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5195)
 * :new: feat: admins can create empty projects from the ui [livingdocs-editor #5152 v78.10.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5152)
 * :new: 🐞  Reject invalid schema in projectConfig designSettings and editorSettings [livingdocs-server #4410 v178.3.1](https://github.com/livingdocsIO/livingdocs-server/pull/4410)
