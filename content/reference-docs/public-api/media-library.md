@@ -100,8 +100,7 @@ PATCH api/v1/mediaLibrary/:id
       }
     },
     {
-      // revoke the asset
-      // {{< added-in release-2022-05 >}}
+      // revoke the asset (added-in release-2022-05)
       "operation": "revokeAsset"
     }
   ]
