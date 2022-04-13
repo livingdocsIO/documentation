@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Revoke Asset via Public API [livingdocs-server #4402 v178.5.0](https://github.com/livingdocsIO/livingdocs-server/pull/4402)
 * :new: Skip failing Cypress Retresco tests [livingdocs-editor #5198 v78.10.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5198)
 * :new: Temporary Schema Validation Fix for projectConfig.editorSettings [livingdocs-server #4412 v178.4.1](https://github.com/livingdocsIO/livingdocs-server/pull/4412)
 * :new: ♻️  ProjectConfig: use kebab case for all file names [livingdocs-server #4411 v178.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4411)
