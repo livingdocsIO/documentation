@@ -90,19 +90,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * :new: render paramsSchema with li-metadata-form-component [livingdocs-editor #5132 v77.5.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5132)
 * :new: fix: remove documentId from contentValidationError [livingdocs-editor #5144 v77.4.19](https://github.com/livingdocsIO/livingdocs-editor/pull/5144)
 * :new: fix(retresco): Load entities from any metadata handle [livingdocs-server #4365 v176.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4365)
-* :new: Metadata Plugins for support in paramsSchema [livingdocs-server #4352 v176.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4352)
-* :new: temporarily allow metadata plugin config `ui.component: 'liMetaTextareaForm'` for `li-text` [livingdocs-server #4353 v176.1.6](https://github.com/livingdocsIO/livingdocs-server/pull/4353)
-* :new: Replace console.warn with errorLog.deprecation [livingdocs-editor #5125 v77.4.18](https://github.com/livingdocsIO/livingdocs-editor/pull/5125)
-* :new: fix: remove 'href' dependency of linked documents on formating toolbar [livingdocs-editor #5135 v77.4.17](https://github.com/livingdocsIO/livingdocs-editor/pull/5135)
-* :new: fix(public-api): Use type and not mediaType for incoming references [livingdocs-server #4363 v176.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4363)
-* :new: return hugoPicture for new and old Media [livingdocs-server #4359 v176.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/4359)
-* :new: fix the use of directiveMappings for Hugo upload [livingdocs-editor #5137 v77.4.16](https://github.com/livingdocsIO/livingdocs-editor/pull/5137)
-* :new: Fix/mails [livingdocs-server #4358 v176.1.3](https://github.com/livingdocsIO/livingdocs-server/pull/4358)
-* :new: fix: handle undefined preview src's when replacing images [livingdocs-editor #5133 v77.4.15](https://github.com/livingdocsIO/livingdocs-editor/pull/5133)
-* :new: Replace if/then schema validation with discriminator [livingdocs-server #4357 v176.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4357)
-* :new: Fix component schema to support the component attribute added in release-2022-03 [livingdocs-server #4354 v176.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4354)
-* :new: fix: add origins to document directive data for uploaded media (image, video) [livingdocs-editor #5122 v77.4.14](https://github.com/livingdocsIO/livingdocs-editor/pull/5122)
-* :new: Metadata: add li-video-reference type [livingdocs-server #4345 v176.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4345)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -229,6 +216,10 @@ References:
 
 ### Features
 
+* Metadata:
+  * add li-video-reference plugin [livingdocs-server #4345 v176.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4345)
+  * add li-color plugin [livingdocs-server #4352 v176.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4352)
+
 ### Design
 
 ### Improvements
@@ -246,6 +237,14 @@ References:
   * Allow Angular fallback behaviour for metadata component rendering [livingdocs-editor #5092 v77.4.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5092)
   * Show Subscript icon in text formatting toolbar [livingdocs-editor #5102 v77.4.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5102)
   * Replace non breaking spaces with normal spaces when pasting on an editable. [livingdocs-editor #5124 v77.4.13](https://github.com/livingdocsIO/livingdocs-editor/pull/5124)
+  * Hugo: Add origins to document directive data for uploaded media (image, video) [livingdocs-editor #5122 v77.4.14](https://github.com/livingdocsIO/livingdocs-editor/pull/5122)
+  * Toolbar: Show linked documents in the formatting toolbar even if href is empty [livingdocs-editor #5135 v77.4.17](https://github.com/livingdocsIO/livingdocs-editor/pull/5135)
+  * Media:
+    * Handle undefined preview src's when replacing images [livingdocs-editor #5133 v77.4.15](https://github.com/livingdocsIO/livingdocs-editor/pull/5133)
+    * Use directiveMappings for Hugo upload [livingdocs-editor #5137 v77.4.16](https://github.com/livingdocsIO/livingdocs-editor/pull/5137)
+    * Return hugoPicture in editing API for new and old Media [livingdocs-server #4359 v176.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/4359)
+* Server
+  * Public API: Use type and not mediaType for incoming references [livingdocs-server #4363 v176.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4363)
 
 ## Patches
 
