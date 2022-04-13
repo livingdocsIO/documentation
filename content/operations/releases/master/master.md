@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(multiListEditor): Service always found [livingdocs-editor #5203 v78.11.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5203)
 * :new: fix: revert `trimLeadingAndTrailingWhitespaces` config [livingdocs-editor #5202 v78.11.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5202)
 * :new: Table Dashboard: allow for main cell configuration [livingdocs-editor #5194 v78.11.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5194)
 * :new: Table Dashboard: add proper validation for table dashboard main cell component [livingdocs-server #4409 v178.6.0](https://github.com/livingdocsIO/livingdocs-server/pull/4409)
