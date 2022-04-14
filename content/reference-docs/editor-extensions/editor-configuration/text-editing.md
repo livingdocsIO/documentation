@@ -304,7 +304,7 @@ app: {
 },
 spellcheck: {
   isEnabled: true,
-  'host': 'http://your-spellcheck-server.com/spellcheck'
+  'host': 'http://your-spellcheck-server.com'
 }
 ```
 
@@ -314,7 +314,7 @@ individual paragraphs.
 
 Example request:
 ```http
-GET http://your-spellcheck-server.com/spellcheck?text=foobar
+GET http://your-spellcheck-server.com/spellcheck/check?text=foobar
 ```
 
 Spellcheck response with no corrections:
