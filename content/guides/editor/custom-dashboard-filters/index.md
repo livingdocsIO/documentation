@@ -17,7 +17,7 @@ Hint: If you want to create a filter with metadata, make sure they are setup cor
 
 ## Custom List v2 Filter
 
-#### Example
+##### Example
 
 `searchFilters.registerListV2` registers an object where you can configure a filter object which is used to render the search UI.
 
@@ -83,7 +83,7 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
 
 Hint: Look into [Filter Query Types]({{< ref "/reference-docs/editor-extensions/editor-configuration/base-filter.md" >}}) to find possible `{type, value}` combinations for the `filter.options` in the `mount` function.
 
-#### isDefault option
+##### isDefault option
 
 When `isDefault: true` (see example above), the default option will be added to the search query by default. As soon as one selects a filter manually, the default filter option will be ignored.
 
@@ -97,7 +97,7 @@ Filters for the media-library need to define the `dataType`
 $emit('update:filter', {type: 'metadata', key:'transformed', dataType: 'boolean', value: true})
 ```
 
-#### Example
+##### Example
 
 `vueComponentRegistry.registerComponent({type: 'searchFilter'})` registers a Vue component as filter for the search UI. Below you can see a minimal example:
 
@@ -141,7 +141,7 @@ export default {
 
 ## Custom Angular Component Filter
 
-#### Example
+##### Example
 
 `searchFilters.registerAngularComponent` registers an Angular component as filter for the search UI.
 Display is controlled with the `filters` key in the configuration.
@@ -193,7 +193,7 @@ liEditor.searchFilters.registerAngularComponent('test', {
 
 Deprecated since: [`release-2020-02`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-02.md)
 
-#### Example
+##### Example
 
 `searchFilters.registerList` registers a filter based on a config object to create an Angular directive for the search UI.
 Display is controlled with the `filters` key in the configuration.
