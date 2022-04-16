@@ -7,22 +7,17 @@ weight: 7
 It is possible to register a custom filter and use it as a [displayFilter]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) for dashboards or search modals.
 
 At the moment there are 4 types of custom filters
-- [Register Custom List v2 Filter](#register-custom-list-v2-filter)
-  - [Example](#example)
-  - [isDefault option](#isdefault-option)
-- [Register Custom List Filter](#register-custom-list-filter)
-  - [Example](#example-1)
-- [Register Custom Vue Component Filter](#register-custom-vue-component-filter)
-  - [Example](#example-2)
-- [Register Custom Angular Component Filter](#register-custom-angular-component-filter)
-  - [Example](#example-3)
+- [Custom List v2 Filter](#register-custom-list-v2-filter)
+- [Custom Vue Component Filter](#register-custom-vue-component-filter)
+- [Custom Angular Component Filter](#register-custom-angular-component-filter)
+- [Custom List Filter (deprecated)](#register-custom-list-filter)
 
 Hint: If you want to create a filter with metadata, make sure they are setup correctly in the ElasticSearch index (`search.metadata_mapping` config in the server)
 
 
-## Register Custom List v2 Filter
+## Custom List v2 Filter
 
-### Example
+#### Example
 
 `searchFilters.registerListV2` registers an object where you can configure a filter object which is used to render the search UI.
 
@@ -88,60 +83,13 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
 
 Hint: Look into [Filter Query Types]({{< ref "/reference-docs/editor-extensions/editor-configuration/base-filter.md" >}}) to find possible `{type, value}` combinations for the `filter.options` in the `mount` function.
 
-### isDefault option
+#### isDefault option
 
 When `isDefault: true` (see example above), the default option will be added to the search query by default. As soon as one selects a filter manually, the default filter option will be ignored.
 
 
-## Register Custom List Filter
 
-Deprecated since: [`release-2020-02`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-02.md)
-
-### Example
-
-`searchFilters.registerList` registers a filter based on a config object to create an Angular directive for the search UI.
-Display is controlled with the `filters` key in the configuration.
-
-There are two flavors to this function
-
-```js
-liEditor.searchFilters.registerList('creation-date', ['session', 'config', (session, config) => {
-  const channels = _map(session.project.channels, (channel) => ({
-    id: channel.id,
-    label: channel.label,
-    // type and value are used in the query builder
-    type: 'channelId',
-    value: channel.id
-  }))
-
-  return {
-    title: 'Filter by channels',
-    options: channels
-  }
-}])
-
-liEditor.searchFilters.registerList('creationDate', {
-  title: 'Filter by creation date',
-  options: [{
-    id: '2015',
-    label: 'Created in 2015',
-    type: 'dateRange',
-    key: 'created_at',
-    from: new Date('2015-01-01'),
-    to: new Date('2016-01-01')
-  }, {
-    id: '2016',
-    label: 'Created in 2016',
-    type: 'dateRange',
-    key: 'created_at',
-    from: new Date('2016-01-01'),
-    to: new Date('2017-01-01'),
-    isDefault: true
-  }]
-})
-```
-
-## Register Custom Vue Component Filter
+## Custom Vue Component Filter
 
 [`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-03.md)
 Filters for the media-library need to define the `dataType`
@@ -149,7 +97,7 @@ Filters for the media-library need to define the `dataType`
 $emit('update:filter', {type: 'metadata', key:'transformed', dataType: 'boolean', value: true})
 ```
 
-### Example
+#### Example
 
 `vueComponentRegistry.registerComponent({type: 'searchFilter'})` registers a Vue component as filter for the search UI. Below you can see a minimal example:
 
@@ -191,9 +139,9 @@ export default {
 </script>
 ```
 
-## Register Custom Angular Component Filter
+## Custom Angular Component Filter
 
-### Example
+#### Example
 
 `searchFilters.registerAngularComponent` registers an Angular component as filter for the search UI.
 Display is controlled with the `filters` key in the configuration.
@@ -238,5 +186,53 @@ liEditor.searchFilters.registerAngularComponent('test', {
       }
     }
   }
+})
+```
+
+## Custom List Filter
+
+Deprecated since: [`release-2020-02`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-02.md)
+
+#### Example
+
+`searchFilters.registerList` registers a filter based on a config object to create an Angular directive for the search UI.
+Display is controlled with the `filters` key in the configuration.
+
+There are two flavors to this function
+
+```js
+liEditor.searchFilters.registerList('creation-date', ['session', 'config', (session, config) => {
+  const channels = _map(session.project.channels, (channel) => ({
+    id: channel.id,
+    label: channel.label,
+    // type and value are used in the query builder
+    type: 'channelId',
+    value: channel.id
+  }))
+
+  return {
+    title: 'Filter by channels',
+    options: channels
+  }
+}])
+
+liEditor.searchFilters.registerList('creationDate', {
+  title: 'Filter by creation date',
+  options: [{
+    id: '2015',
+    label: 'Created in 2015',
+    type: 'dateRange',
+    key: 'created_at',
+    from: new Date('2015-01-01'),
+    to: new Date('2016-01-01')
+  }, {
+    id: '2016',
+    label: 'Created in 2016',
+    type: 'dateRange',
+    key: 'created_at',
+    from: new Date('2016-01-01'),
+    to: new Date('2017-01-01'),
+    isDefault: true
+  }]
 })
 ```
