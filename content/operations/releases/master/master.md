@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: migrate from referenced to embedded design [livingdocs-server #4413 v178.6.2](https://github.com/livingdocsIO/livingdocs-server/pull/4413)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
