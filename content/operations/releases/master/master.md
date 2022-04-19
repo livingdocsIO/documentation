@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(retresco): Reduce update frequency by ignoring scores [livingdocs-editor #5211 v78.12.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5211)
 * :new: Fix retresco imatrics metadata update [livingdocs-editor #5200 v78.12.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5200)
 * :new: Example Server Config Polishing [livingdocs-server #4420 v178.6.3](https://github.com/livingdocsIO/livingdocs-server/pull/4420)
 * :new: fix(charCounter): position now fixed [livingdocs-editor #5209 v78.12.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5209)
