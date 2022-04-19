@@ -350,6 +350,10 @@ metadata: [
 **Default UI**: Document Selection (Dialog) (`liMetaReferenceForm`)
 
 ## li-reference
+
+A `li-reference` metadata field shows a reference to another document. To select a document one gets provided a Document Selection Modal.
+If you don't want to use the `prefillAuthor` property, use [li-document-reference](#li-document-reference).
+
 **Storage Format**:
 ```js
 {
@@ -360,6 +364,36 @@ metadata: [
 }
 ```
 **Default UI**: Document Selection (Dialog) (`liMetaReferenceForm`)
+
+**Project Config**
+```js
+metadata: [
+  {
+    handle: 'reference',
+    type: 'li-reference',
+    config: {
+      referenceType: 'document',               // required (only value 'document' is possible)
+      documentType: 'data-record',             // optional
+      contentType: 'author',                   // optional
+      prefillAuthor: true                      // optional, default: false
+      required: true,                          // optional, default: false
+      requiredErrorMessage: 'Provide a title'  // optional
+    },
+    ui: {
+      component: 'liMetaReferenceForm',
+      label: 'foo',                   // optional
+      config: {
+        searchOnlyPublished: true
+        displayFilters: ['timeRange']
+      }
+    }
+  }
+]
+```
+
+References:
+* [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter" >}})
+
 
 ## li-retresco
 **Storage Format**:
@@ -633,29 +667,6 @@ The service plugin for a datetime allows you to customize the logic for the foll
 ```
 
 There is a sample implementation in `plugins/metadata_services/default_date_service.coffee` to help you get started.
-
-## Reference
-
-ContentType metadata config for a single reference:
-```js
-metadata: [
-  {
-    ...,
-    type: 'li-reference',
-    config: {
-      referenceType: 'document',
-    },
-    ui: {
-      component: 'liMetaReferenceForm'
-      config: {
-          // enables display filters for the reference modal
-          // see: "Register a Custom Display Filter" for general filter documentation
-          displayFilters: []
-      }
-    }
-  }
-]
-```
 
 ## Reference List
 
