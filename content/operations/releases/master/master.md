@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(loadMoreListInbox): buttons centered [livingdocs-editor #5210 v78.12.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5210)
 * :new: fix: positioning of `li-form-select` inside text formatting popover [livingdocs-editor #5213 v78.12.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5213)
 * :new: fix(failedCypressTest): test removed [livingdocs-editor #5219 v78.12.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5219)
 * :new: fix: add support for video in component directives [livingdocs-server #4421 v178.6.4](https://github.com/livingdocsIO/livingdocs-server/pull/4421)
