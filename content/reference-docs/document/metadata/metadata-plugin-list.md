@@ -133,7 +133,7 @@ metadata: [
       published: true,               // optional, shorthand for publication displayFilter, default: false
     },
     ui: {
-      label: 'foo',                  // optional
+      label: 'foo',                  // optional, takes camelized name otherwise
       config: {
         // style: 'default' -> default for metadata
         // style: 'teaser' -> default for include paramsSchema
@@ -183,9 +183,10 @@ metadata: [
       }
     },
     ui: {
-      label: 'foo',                   // optional
+      label: 'foo',                   // optional, takes camelized name otherwise
       config: {
         readOnly: true,               // default: false
+        placeholder: 'foo',           // optional, takes camelized name otherwise
       }
     }
   }
@@ -383,8 +384,8 @@ metadata: [
       published: true,                         // optional, shorthand for publication displayFilter, default: false
     },
     ui: {
+      label: 'foo',                            // optional, takes camelized name otherwise
       component: 'liMetaReferenceForm',
-      label: 'foo',                   // optional
       config: {
         displayFilters: ['timeRange']
       }
@@ -443,7 +444,7 @@ metadata: [
       }
     },
     ui: {
-      label: 'foo', // optional
+      label: 'foo', // optional, takes camelized name otherwise
       config: {
         readOnly: true, // default: false
       }
@@ -519,9 +520,9 @@ metadata: [
       }
     },
     ui: {
-      label: 'foo',                   // optional
+      label: 'foo',                   // optional, takes camelized name otherwise
       config: {
-        placeholder: 'bar',           // optional
+        placeholder: 'bar',           // optional, takes camelized name otherwise
         readOnly: true,               // default: false
         rows: 10                      // optional, only applicable for LiMetaFormTextarea, integer, 5 by default
       }
@@ -643,8 +644,8 @@ metadata: [
     ...,
     ui: {
       component: 'liMetaDatetimeForm',
-      service: 'customServicePlugin', // optional
-      label: 'foo' // optional, takes camelized name otherwise
+      service: 'customServicePlugin',  // optional
+      label: 'foo'                     // optional, takes camelized name otherwise
     }
   }
 ]
@@ -719,46 +720,3 @@ metadata: [
   }
 ]
 ```
-
-## Slug
-
-ContentType metadata config:
-```js
-metadata: [
-  {
-    ...,
-    ui: {
-      component: 'liMetaSlugForm',
-      service: 'customServicePlugin', // optional
-      label: 'foo', // optional, takes camelized name otherwise
-      config: {
-        placeholder: 'bar', // optional, takes camelized name otherwise
-        canReset: false // optional, false by default
-      }
-    }
-  }
-]
-```
-
-You need to make sure that your server-side metadata field is of type `li-text` or a suitable custom format, otherwise you will get errors.
-The `canReset` option if set to true renders a reset button next to the slug input that resets the input to its initial value.
-The `service` option lets you customize the business logic of a metadata form field. Check the section "registering a metadata service" later on how to register a service.
-The service plugin for a slug allows you to customize the logic for the following methods:
-
-```js
-{
-  // define the logic for the initial value of a slug
-  // For example: existing value or normalized metadata title
-  initSlug (identifier) {},
-
-  // gives you the unnormalized slug input (user input) and lets you define your custom
-  // normalization logic (depending on what you want to allow in a URL)
-  setSlug (identifier, slug) {},
-
-  // only important if `canReset` is set to true
-  // defines to what value the field will be reset
-  resetSlug (identifier) {}
-}
-```
-
-There is a sample implementation in `plugins/metadata_services/default_slug_service.coffee` to help you get started.
