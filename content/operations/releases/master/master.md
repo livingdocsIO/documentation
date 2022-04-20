@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(failedCypressTest): test removed [livingdocs-editor #5219 v78.12.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5219)
 * :new: fix: add support for video in component directives [livingdocs-server #4421 v178.6.4](https://github.com/livingdocsIO/livingdocs-server/pull/4421)
 * :new: Desknet schedule improvements [livingdocs-editor #5212 v78.12.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5212)
 * :new: fix(retresco): Reduce update frequency by ignoring scores [livingdocs-editor #5211 v78.12.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5211)
