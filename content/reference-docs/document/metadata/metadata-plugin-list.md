@@ -130,6 +130,7 @@ metadata: [
     config: {
       documentType: 'article',       // optional, one of article, page, data-record
       contentType: 'my-content-type' // optional, filters the document selection
+      published: true,               // optional, shorthand for publication displayFilter, default: false
     },
     ui: {
       label: 'foo',                  // optional
@@ -138,7 +139,6 @@ metadata: [
         useDashboard: '',            // optional, reference to a custom dashboard
         baseFilters: [],             // optional, filters that the user can set in the UI (below the search input)
         displayFilters: [],          // optional, invisible filters and applied to every search (including the default result list)
-        published: true,             // optional, shorthand for publication displayFilter, default: false
       }
     }
   }
