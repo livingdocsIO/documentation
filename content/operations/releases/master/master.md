@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Remove Angular Metadata Form Renderer, deprecate Metadata Services [livingdocs-editor #5217 v79.0.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5217)
 * :new: Li document reference config [livingdocs-server #4424 v178.7.0](https://github.com/livingdocsIO/livingdocs-server/pull/4424)
 * :new: Document Published State: fix state for systems without publishControl nor customPublicationDateField [livingdocs-editor #5214 v78.12.8](https://github.com/livingdocsIO/livingdocs-editor/pull/5214)
 * :new: fix(loadMoreListInbox): buttons centered [livingdocs-editor #5210 v78.12.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5210)
