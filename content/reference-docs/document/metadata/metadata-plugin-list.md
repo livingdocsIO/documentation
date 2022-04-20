@@ -379,13 +379,13 @@ metadata: [
       contentType: 'author',                   // optional
       prefillAuthor: true                      // optional, default: false
       required: true,                          // optional, default: false
-      requiredErrorMessage: 'Provide a title'  // optional
+      requiredErrorMessage: 'Provide a title'  // optional,
+      published: true,                         // optional, shorthand for publication displayFilter, default: false
     },
     ui: {
       component: 'liMetaReferenceForm',
       label: 'foo',                   // optional
       config: {
-        searchOnlyPublished: true
         displayFilters: ['timeRange']
       }
     }
