@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Li document reference config [livingdocs-server #4424 v178.7.0](https://github.com/livingdocsIO/livingdocs-server/pull/4424)
 * :new: Document Published State: fix state for systems without publishControl nor customPublicationDateField [livingdocs-editor #5214 v78.12.8](https://github.com/livingdocsIO/livingdocs-editor/pull/5214)
 * :new: fix(loadMoreListInbox): buttons centered [livingdocs-editor #5210 v78.12.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5210)
 * :new: fix: positioning of `li-form-select` inside text formatting popover [livingdocs-editor #5213 v78.12.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5213)
