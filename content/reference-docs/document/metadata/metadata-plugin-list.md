@@ -16,6 +16,7 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | Metadata Plugin                                    | Metadata Plugin Type     | Description                                   | Usage (D = Document, M = Media Library Entries, T = Table Dashboard, I = Includes) | Default UI                                                 |
 | -------------------------------------------------- | ------------------------ | --------------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------- |
 | [Boolean](#li-boolean)                             | li-boolean               | Boolean                                       | D, M, T                                                              | checkbox                                                   |
+| [Color](#li-color)                             | li-color               | Color Code                                       | D, M, T, I                                                              | text                                                   |
 | [Category](#li-category)                           | li-category              | category                                      | D, T                                                                 | select                                                     |
 | [Date/Time validity](#li-datetime-validity)        | li-datetime-validity     | Date                                          | M                                                                    | 2 date/time inputs                                         |
 | [Date/Time](#li-datetime)                          | li-datetime              | Date                                          | D, M                                                                 | date/time input                                            |
@@ -45,6 +46,32 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 ## li-boolean
 **Storage Format**: Boolean\
 **Default UI**: checkbox (`liMetaCheckboxForm`)
+
+## li-color
+
+If you enter a HEX color code (e.g. `#8CBA51`) into a `li-color` metadata field, you get a preview of the color on the right side of the text field.
+
+
+**Storage Format**: String\
+**Default UI**: text\
+**UI**: Renders a text element + color field
+
+![image](https://user-images.githubusercontent.com/172394/164286195-51beb096-492d-4f7f-b8e7-4623db658125.png)
+
+**Project Config**
+```js
+metadata: [
+  {
+    handle: 'color',
+    type: 'li-color',
+    config: {
+      required: true,                          // optional, default: false
+      requiredErrorMessage: 'Provide a color', // optional
+      translatable: true,                      // default: false, translations are only supported for data-record and mediaLibrary
+    }
+  }
+]
+```
 
 ## li-category
 **Storage Format**: `{id: <String>, path: <String>}`\
