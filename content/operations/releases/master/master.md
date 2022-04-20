@@ -26,20 +26,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* :new: Fix document state deprecations [livingdocs-editor #5206 v79.0.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5206)
-* :new: Remove Angular Metadata Form Renderer, deprecate Metadata Services [livingdocs-editor #5217 v79.0.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5217)
-* :new: Li document reference config [livingdocs-server #4424 v178.7.0](https://github.com/livingdocsIO/livingdocs-server/pull/4424)
-* :new: Document Published State: fix state for systems without publishControl nor customPublicationDateField [livingdocs-editor #5214 v78.12.8](https://github.com/livingdocsIO/livingdocs-editor/pull/5214)
-* :new: fix(loadMoreListInbox): buttons centered [livingdocs-editor #5210 v78.12.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5210)
-* :new: fix: positioning of `li-form-select` inside text formatting popover [livingdocs-editor #5213 v78.12.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5213)
-* :new: fix(failedCypressTest): test removed [livingdocs-editor #5219 v78.12.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5219)
-* :new: fix: add support for video in component directives [livingdocs-server #4421 v178.6.4](https://github.com/livingdocsIO/livingdocs-server/pull/4421)
-* :new: Desknet schedule improvements [livingdocs-editor #5212 v78.12.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5212)
-* :new: fix(retresco): Reduce update frequency by ignoring scores [livingdocs-editor #5211 v78.12.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5211)
-* :new: Fix retresco imatrics metadata update [livingdocs-editor #5200 v78.12.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5200)
-* :new: Example Server Config Polishing [livingdocs-server #4420 v178.6.3](https://github.com/livingdocsIO/livingdocs-server/pull/4420)
-* :new: fix(charCounter): position now fixed [livingdocs-editor #5209 v78.12.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5209)
-* :new: migrate from referenced to embedded design [livingdocs-server #4413 v178.6.2](https://github.com/livingdocsIO/livingdocs-server/pull/4413)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -183,23 +169,12 @@ All callback-based server hooks have been removed (throw an error on registratio
 
 ### Metadata Plugins: Add configSchema and uiSchema Validation :fire:
 
-We added 2 properties `configSchema` and `uiSchema` to a metadata plugin where one can define a schema validation. If you want to know more about the motivation and a fallback, you get some insights [here](https://github.com/livingdocsIO/livingdocs-server/pull/4296).
+We added 2 properties `configSchema` and `uiSchema` to a metadata plugin where one can define a schema validation. If you want to know more about the motivation and a fallback (`metadataPluginsToIgnoreForConfigValidation`), you get some insights [here](https://github.com/livingdocsIO/livingdocs-server/pull/4296).
 
-#### li-text
-
-Add strict validation for `li-enum` (check [here](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-text) what config options you have)
-
-- 🔥 `metadata[].ui.config.maxLength` has no effect, remove the property. Use `metadata[].config.maxLength` instead.
-- 🔥 `metadata[].ui.config.label` has no effect, remove the property. Use `metadata[].ui.label` instead.
-- 🔥 `metadata[].ui.config.canReset` has no effect, remove the property. The UI handles reset more smart without a config.
-- 🔥 `metadata[].ui` does not allow additional properties (throws on project config update)
-- 🔥 `metadata[].config` does not allow additional properties (throws on project config update)
-
-#### li-enum
-
-- 🔥 add strict validation for `li-enum` (check [here](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-enum) what config options you have)
-- 🔥 a static `dataProvider` is required (a `DataSource` is not allowed)
-
+- :fire: Add strict validation for [`li-enum`](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-enum)
+- :fire: Add strict validation for [`li-text`](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-text)
+- :fire: Add strict validation for [`li-reference`](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-reference)
+- :fire: Add strict validation for [`li-document-reference`](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-document-reference)
 
 References:
 - [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
@@ -263,10 +238,18 @@ References:
 - [Documentation](https://docs.livingdocs.io/reference-docs/server-extensions/server-hooks/)
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4371)
 
+### Remove metadata plugin form fallback 'useAngularBasedFormRendering' :fire:
+
+:fire: Opt-in to the Angular based form rendering (editor config `metadata.useAngularBasedFormRendering`) is not possible anymore.
+
+References:
+- [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5217)
+
 ### Remove Q drop handler :fire:
 
 The drag and drop handling for the Q toolbox (by NZZ) for Q before March 2017 is removed since it's not in use anymore.
 
+References:
 - [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5169)
 
 
@@ -294,13 +277,35 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5
 
 ## Deprecations
 
-### deprecate metadata plugin li-media-language
+### Deprecate metadata plugin li-media-language
 
 Deprecate metadata plugin `li-media-language`, use `li-metadata-translations` instead (same config).
 
 References:
 - [Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4315)
+
+### Metadata Services
+
+Metadata Services are deprecated.
+- core plugins: Use a `DataSource` or a `dataProvider` instead.
+- plugins: Use a `DataSource`, `dataProvider` or embed the service logic directly into your Vue component.
+
+```js
+// Example
+{
+  handle: 'municipalities',
+  type: 'municipalities',
+  ui: {
+    component: 'liMetaSelectForm',
+    service: 'municipalities', // <------------------ DEPRECATED
+  },
+  config: { /* ... */ }
+}
+```
+
+References:
+- [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5217)
 
 ## APIs :gift:
 
@@ -352,10 +357,16 @@ References:
   * [Toolbar: Show linked documents in the formatting toolbar even if href is empty](https://github.com/livingdocsIO/livingdocs-editor/pull/5135)
   * [Cropping: 'Reset to automatic' button on image crop feature works when only one crop is configured](https://github.com/livingdocsIO/livingdocs-editor/pull/5150)
   * [Drag + Drop: Insert component doesn't select everything (in Safari)](https://github.com/livingdocsIO/livingdocs-editor/pull/5149)
-  * [Text Formatting Toolbar: Allow specialChars and comments on plainText directives](https://github.com/livingdocsIO/livingdocs-editor/pull/5175)
+  * [Add support for video in component directives](https://github.com/livingdocsIO/livingdocs-server/pull/4421)
+  * Text Formatting Toolbar
+    * [Allow specialChars and comments on plainText directives](https://github.com/livingdocsIO/livingdocs-editor/pull/5175)
+    * [Fix positioning of `li-form-select`](https://github.com/livingdocsIO/livingdocs-editor/pull/5213)
 * Server
   * [Public API: Use type and not mediaType for incoming references](https://github.com/livingdocsIO/livingdocs-server/pull/4363)
-  * [Retresco: Load entities from any metadata handle](https://github.com/livingdocsIO/livingdocs-server/pull/4365)
+  * Retresco
+    * [Load entities from any metadata handle](https://github.com/livingdocsIO/livingdocs-server/pull/4365)
+    * [Reduce update frequency by ignoring scores](https://github.com/livingdocsIO/livingdocs-editor/pull/5211)
+  * [Migration: fix migration from referenced to embedded design](https://github.com/livingdocsIO/livingdocs-server/pull/4413)
   * [Transaction: Run events and publication hooks after transaction commit](https://github.com/livingdocsIO/livingdocs-server/pull/4369)
 * Media:
   * [Handle undefined preview src's when replacing images](https://github.com/livingdocsIO/livingdocs-editor/pull/5133)
