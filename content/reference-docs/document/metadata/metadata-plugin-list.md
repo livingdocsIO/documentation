@@ -135,7 +135,10 @@ metadata: [
     ui: {
       label: 'foo',                  // optional
       config: {
-        style: 'default',            // 'default' or 'teaser' ('default' is the default for metadata, 'teaser' is the default for include paramsSchema)
+        // style: 'default' -> default for metadata
+        // style: 'teaser' -> default for include paramsSchema
+        // style: 'minimal' -> only show a selection element with a title (no modal)
+        style: 'default',
         useDashboard: '',            // optional, reference to a custom dashboard
         baseFilters: [],             // optional, filters that the user can set in the UI (below the search input)
         displayFilters: [],          // optional, invisible filters and applied to every search (including the default result list)
@@ -372,7 +375,6 @@ metadata: [
     handle: 'reference',
     type: 'li-reference',
     config: {
-      referenceType: 'document',               // required (only value 'document' is possible)
       documentType: 'data-record',             // optional
       contentType: 'author',                   // optional
       prefillAuthor: true                      // optional, default: false
