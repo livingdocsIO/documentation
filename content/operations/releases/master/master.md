@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Improvement/publish control polish [livingdocs-editor #5218 v79.0.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5218)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
