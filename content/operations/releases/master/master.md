@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Support reference filter in editingApi /documents?reference=document:123 [livingdocs-server #4419 v178.8.2](https://github.com/livingdocsIO/livingdocs-server/pull/4419)
 * :new: Publish Control Sidepanel: Show Tasks if any running [livingdocs-editor #5188 v79.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5188)
 * :new: li-enum: allow ui.config.placeholder [livingdocs-server #4427 v178.8.1](https://github.com/livingdocsIO/livingdocs-server/pull/4427)
 * :new: chore(removeDocuments): Document label removed [livingdocs-editor #5233 v79.2.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5233)
