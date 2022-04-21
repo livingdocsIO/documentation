@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Document Creation - Part II - Create Document with default template [livingdocs-editor #5174 v80.0.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5174)
 * :new: Add reference filter [livingdocs-editor #5208 v79.3.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5208)
 * :new: Support reference filter in editingApi /documents?reference=document:123 [livingdocs-server #4419 v178.8.2](https://github.com/livingdocsIO/livingdocs-server/pull/4419)
 * :new: Publish Control Sidepanel: Show Tasks if any running [livingdocs-editor #5188 v79.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5188)
