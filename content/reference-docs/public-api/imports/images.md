@@ -19,7 +19,7 @@ curl -k -X POST "https://edit.livingdocs.io/proxy/api/api/v1/import/images" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H 'Content-Type: application/json; charset=utf-8' \
-  --data-binary @- << EOF 
+  --data-binary @- << EOF
   {
     "systemName": "identifier-for-your-system",
     "webhook": "https://my-domain.com/webhooks/image-import",
@@ -33,7 +33,7 @@ curl -k -X POST "https://edit.livingdocs.io/proxy/api/api/v1/import/images" \
         }
       }
     ]
-  } 
+  }
 EOF
 ```
 
@@ -48,7 +48,7 @@ POST api/v1/import/images
 |systemName|string|x|Identifier for the system you are importing from, e.g. an archive.|
 |webhook|uri||Endpoint at the importing system that gets notified by POST when import job is done. Notification contains the id of the import job, the state and an overview.|
 |context|object||An object that is passed as context in the body of the request to the webhook. Limited to 8192 Bytes.|
-|images|array|x|An array of images to import. Each entry is an object with the following keys, all of which are required:<br><br>**url:** a URL to an image record, no data urls allowed, must be an image, allowed types: png, jpg, gif, svg<br>**id:** a unique id (stored as externalId in Livingdocs) that identifies the image on your end, must be unique within your project<br>**fileName:** the title that the image should get in livingdocs<br>**metadata:** An object of metadata according to your project config|
+|images|array|x|An array of images to import. Each entry is an object with the following keys, all of which are required:<br><br>**url:** a URL to an image file, no data urls allowed, must be an image, allowed types: png, jpg, gif, svg<br>**id:** a unique id (stored as externalId in Livingdocs) that identifies the image on your end, must be unique within your project<br>**fileName:** the title that the image should get in livingdocs<br>**metadata:** An object of metadata according to your project config<br>**mediaType** the handle of one of the mediaTypes from your project configuration|
 
 #### Example Request
 ```js
