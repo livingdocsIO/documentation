@@ -824,6 +824,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v171.1.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.34): fix: add video to component directives schema
 - [v171.1.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.33): fix: generate a new release
 - [v171.1.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.32): fix: wrong migration test
 - [v171.1.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.31): fix(hugoError): callback removed
