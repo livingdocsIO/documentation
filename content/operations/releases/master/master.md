@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(retresco): Add live analysis option [livingdocs-editor #5205 v79.1.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5205)
 * :new: feat(retresco): Add live analysis option [livingdocs-server #4415 v178.8.0](https://github.com/livingdocsIO/livingdocs-server/pull/4415)
 * :new: Remove not supported editor config `useAngularBasedFormRendering` [livingdocs-editor #5226 v79.0.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5226)
 * :new: Improvement/publish control polish [livingdocs-editor #5218 v79.0.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5218)
