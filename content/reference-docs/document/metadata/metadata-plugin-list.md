@@ -369,6 +369,8 @@ If you don't want to use the `prefillAuthor` property, use [li-document-referenc
 ```
 **Default UI**: Document Selection (Dialog) (`liMetaReferenceForm`)
 
+![image](https://user-images.githubusercontent.com/172394/164621716-d7dc9fb7-bd6f-4dd5-bc7b-157edd327c34.png)
+
 **Project Config**
 ```js
 metadata: [
