@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: li-document-reference minimal style [livingdocs-editor #5230 v80.2.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5230)
 * :new: Infinite scroll for li-form-select / li-form-multiselect [livingdocs-editor #5235 v80.1.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5235)
 * :new: Metadata li-color: add ui.config schema validation [livingdocs-server #4433 v178.9.2](https://github.com/livingdocsIO/livingdocs-server/pull/4433)
 * :new: Metadata: add placeholder to li-color metadata plugin [livingdocs-editor #5238 v80.0.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5238)
