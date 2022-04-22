@@ -49,7 +49,9 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 
 ## li-color
 
-If you enter a HEX color code (e.g. `#8CBA51`) into a `li-color` metadata field, you get a preview of the color on the right side of the text field.
+li-color will provide you with 2 settings (based on `useInputTypeColor`)
+* `useInputTypeColor: true` - color picker which stores the HEX color code
+* `useInputTypeColor: false` - text field where you have to enter the HEX color code (e.g. `#8CBA51`)
 
 
 **Storage Format**: String\
@@ -67,7 +69,15 @@ metadata: [
     config: {
       required: true,                          // optional, default: false
       requiredErrorMessage: 'Provide a color', // optional
-      translatable: true,                      // default: false, translations are only supported for data-record and mediaLibrary
+      translatable: true,                      // optional, default: false, translations are only supported for data-record and mediaLibrary
+    },
+    ui: {
+      label: 'your label',
+      config: {
+        useInputTypeColor: false,              // optional, default: true, shows a color picker
+        readOnly: true,                        // optional, default: false
+        placeholder: 'foo',                    // optional, takes camelized name otherwise
+      }
     }
   }
 ]
@@ -212,7 +222,7 @@ metadata: [
     ui: {
       label: 'foo',                   // optional, takes camelized name otherwise
       config: {
-        readOnly: true,               // default: false
+        readOnly: true,               // optional, default: false
         placeholder: 'foo',           // optional, takes camelized name otherwise
       }
     }
@@ -475,7 +485,7 @@ metadata: [
     ui: {
       label: 'foo', // optional, takes camelized name otherwise
       config: {
-        readOnly: true, // default: false
+        readOnly: true, // optional, default: false
       }
     }
   }
@@ -535,7 +545,7 @@ metadata: [
       required: true,                          // optional, default: false
       requiredErrorMessage: 'Provide a title', // optional
       useAsTitle: true,                        // default: false, synchronises the value with document.title if true
-      translatable: true,                      // default: false, translations are only supported for data-record and mediaLibrary
+      translatable: true,                      // optional, default: false, translations are only supported for data-record and mediaLibrary
       dataProvider: {                          // optional
         // Option 1 - list of items
         type: 'labelValuePair',
@@ -552,7 +562,7 @@ metadata: [
       label: 'foo',                   // optional, takes camelized name otherwise
       config: {
         placeholder: 'bar',           // optional, takes camelized name otherwise
-        readOnly: true,               // default: false
+        readOnly: true,               // optional, default: false
         rows: 10                      // optional, only applicable for LiMetaFormTextarea, integer, 5 by default
       }
     }
@@ -608,7 +618,7 @@ paramsSchema: [
     config: {
       required: true,                          // optional, default: false
       requiredErrorMessage: 'Provide a video', // optional
-      translatable: true,
+      translatable: true,                      // optional, default: false, translations are only supported for data-record and mediaLibrary
     },
     ui: {
       config: {
