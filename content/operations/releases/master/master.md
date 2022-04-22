@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Metadata: li-reference [livingdocs-editor #5223 v80.0.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5223)
 * :new: Document Creation - Part II - Add Template Basic Functionality [livingdocs-server #4395 v178.9.0](https://github.com/livingdocsIO/livingdocs-server/pull/4395)
 * :new: Document Creation - Part II - Create Document with default template [livingdocs-editor #5174 v80.0.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5174)
 * :new: Add reference filter [livingdocs-editor #5208 v79.3.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5208)
