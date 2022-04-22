@@ -44,8 +44,33 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Video Reference](#li-video-reference)             | li-video-reference       | A reference to a video (and a poster image)   | D, M, I                                                              | Upload/Media Library Picker for a Video and a Poster Image |
 
 ## li-boolean
+
+A simple checkbox which you can turn on/off.
+
 **Storage Format**: Boolean\
-**Default UI**: checkbox (`liMetaCheckboxForm`)
+**Default UI**: checkbox\
+**UI**: Renders a checkbox
+
+**Project Config**
+```js
+metadata: [
+  {
+    handle: 'color',
+    type: 'li-color',
+    config: {
+
+    },
+    type: 'li-boolean',
+    ui: {
+      label: 'foo',                            // optional, takes camelized name otherwise
+      config: {
+        readOnly: true                         // optional, default: false
+      }
+    }
+  }
+]
+```
+
 
 ## li-color
 
