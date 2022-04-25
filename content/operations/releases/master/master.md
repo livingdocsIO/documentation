@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Feat table dashboard publish state [livingdocs-editor #5243 v80.4.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5243)
 * :new: Support any valid http url in the webhook form of the project config [livingdocs-editor #5242 v80.3.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5242)
 * :new: feat(publish control): Add delivery links [livingdocs-editor #5237 v80.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5237)
 * :new: Publish Control: Remove List Assignment from Metadata Screen [livingdocs-editor #5239 v80.2.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5239)
