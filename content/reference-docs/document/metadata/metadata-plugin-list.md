@@ -433,7 +433,34 @@ metadata: [
 
 ## li-numeric-list
 **Storage Format**: `[<Number>]`\
-**Default UI**: input for multiple numbers (`liMetaNumericListForm`)
+**Default UI**: input for multiple numbers (`liMetaNumericList`)
+
+{{< img src="./li-numeric-list-example.png" alt="Numeric List Example" >}}
+
+**Project Config**
+
+```js
+metadata: [
+  {
+    handle: 'otherIds',
+    type: 'li-numeric-list',
+    config: {
+      // common
+      required: true,                                   // optional, default: false
+      requiredErrorMessage: 'Custom required message',  // optional
+      // specific
+      maxItems: 5,                                      // optional
+    },
+    ui: {
+      label: 'foo',                   // optional, takes camelized name otherwise
+      config: {
+        placeholder: 'bar',           // optional, takes capitalized handle name otherwise
+        readOnly: true                // optional, default: false
+      }
+    }
+  }
+]
+```
 
 ## li-poster-image
 **Storage Format**:
