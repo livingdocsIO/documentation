@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Project secrets webhooks config [livingdocs-server #4438 v178.10.0](https://github.com/livingdocsIO/livingdocs-server/pull/4438)
 * :new: Enable webhook delivery when adding the frist webhook [livingdocs-editor #5250 v80.5.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5250)
 * :new: feat(table dashboard): Add support for li-string-list [livingdocs-editor #5245 v80.5.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5245)
 * :new: Feat table dashboard publish state [livingdocs-editor #5243 v80.4.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5243)
