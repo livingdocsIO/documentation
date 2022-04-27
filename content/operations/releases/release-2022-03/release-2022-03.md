@@ -834,6 +834,7 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
 
 ### Livingdocs Editor Patches
+- [v77.2.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.43): fix(loadMoreListInbox): buttons centered
 - [v77.2.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.42): fix(charCounter): position now fixed
 - [v77.2.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.41): fix: transform prefillConfig from V1 to V2
 - [v77.2.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.40): fix(query-types): add reference filter
