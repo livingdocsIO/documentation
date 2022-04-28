@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Webhook integrations to the secret storage with new branch name [livingdocs-editor #5258 v80.8.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5258)
 * :new: feat: move password to secure storage for woodwing assets [livingdocs-server #4219 v179.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4219)
 * :new: Table dashboard polishing 1 [livingdocs-editor #5251 v80.7.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5251)
 * :new: feat(hugo): Fallback field for hugo image import [livingdocs-editor #5247 v80.6.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5247)
