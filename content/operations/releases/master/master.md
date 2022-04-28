@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Change batching logic to ranges in migrations feature [livingdocs-server #4441 v179.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4441)
 * :new: Improvement/list assignment [livingdocs-editor #5248 v80.5.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5248)
 * :new: Update package-lock.json of server [livingdocs-editor #5252 v80.5.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5252)
 * :new: Remove Project Config v1 [livingdocs-server #4435 v179.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4435)
