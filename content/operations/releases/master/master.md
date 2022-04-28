@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Update package-lock.json of server [livingdocs-editor #5252 v80.5.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5252)
 * :new: Remove Project Config v1 [livingdocs-server #4435 v179.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4435)
 * :new: Remove Channel Config v1 [livingdocs-editor #5241 v80.5.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5241)
 * :new: Project secrets webhooks config [livingdocs-server #4438 v178.10.0](https://github.com/livingdocsIO/livingdocs-server/pull/4438)
