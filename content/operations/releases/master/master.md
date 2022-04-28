@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Table dashboard polishing 1 [livingdocs-editor #5251 v80.7.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5251)
 * :new: feat(hugo): Fallback field for hugo image import [livingdocs-editor #5247 v80.6.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5247)
 * :new: 🐞 Show active upload button in upload center when EXIF extraction provides new data [livingdocs-editor #5253 v80.5.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5253)
 * :new: Change batching logic to ranges in migrations feature [livingdocs-server #4441 v179.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4441)
