@@ -824,6 +824,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v171.1.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.36): chore: Use raw queries for embeddable sql statements
 - [v171.1.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.35): fix(document): Allow searching by a reference in /documents?reference=document:id
 - [v171.1.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.34): fix: add video to component directives schema
 - [v171.1.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.33): fix: generate a new release
