@@ -118,7 +118,30 @@ metadata: [
 
 ## li-datetime
 **Storage Format**: `<ISO8601 String>`\
-**Default UI**: 2 date/time inputs (`liMetaDatetimeForm`)
+**Default UI**: 2 date/time inputs (`liMetaDatetimeForm`)\
+**UI**: Renders a date and time picker element
+
+![image](https://user-images.githubusercontent.com/172394/165904353-a9e02ad2-dd64-48ca-9b31-803d4279467e.png)
+
+**Project Config**
+```js
+metadata: [
+  {
+    handle: 'title',
+    type: 'li-datetime',
+    config: {
+      required: true,                          // optional, default: false
+      requiredErrorMessage: 'Provide a title'  // optional
+    },
+    ui: {
+      label: 'foo',                   // optional, takes camelized name otherwise
+      config: {
+        readOnly: true                // optional, default: false
+      }
+    }
+  }
+]
+```
 
 ## li-dependencies
 **Storage Format**:
