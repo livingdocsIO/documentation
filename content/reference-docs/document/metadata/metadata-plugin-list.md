@@ -54,12 +54,6 @@ A simple checkbox which you can turn on/off.
 **Project Config**
 ```js
 metadata: [
-  {
-    handle: 'color',
-    type: 'li-color',
-    config: {
-
-    },
     type: 'li-boolean',
     ui: {
       label: 'foo',                            // optional, takes camelized name otherwise
@@ -127,11 +121,11 @@ metadata: [
 ```js
 metadata: [
   {
-    handle: 'title',
+    handle: 'date',
     type: 'li-datetime',
     config: {
       required: true,                          // optional, default: false
-      requiredErrorMessage: 'Provide a title'  // optional
+      requiredErrorMessage: 'Provide a date'   // optional
     },
     ui: {
       label: 'foo',                   // optional, takes camelized name otherwise
@@ -334,9 +328,33 @@ metadata: [
 **Default UI**: manage tags, add new tag suggestions (`liMetaIMatricsForm`)
 
 ## li-integer
+
 **Storage Format**: `<Integer>`\
-**Default UI**: number input (`liMetaIntegerForm`)
-* No UI is rendered if the `handle` is `lastProofreadRevision`.
+**Default UI**: number input (`liMetaIntegerForm`)\
+**UI**: Renders a number input. No UI is rendered if the `handle` is `lastProofreadRevision`.
+
+**Project Config**
+```js
+metadata: [
+  {
+    handle: 'integer',
+    type: 'li-integer',
+    config: {
+      minValue: 1,                              // optional
+      maxValue: 50,                             // optional
+      required: true,                           // optional, default: false
+      requiredErrorMessage: 'Provide a number'  // optional
+    },
+    ui: {
+      label: 'foo',                   // optional, takes camelized name otherwise
+      config: {
+        placeholder: 'bar',           // optional, takes camelized name otherwise
+        readOnly: true,               // optional, default: false
+      }
+    }
+  }
+]
+```
 
 ## li-language
 **Storage Format**:
