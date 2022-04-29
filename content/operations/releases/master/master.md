@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat: add `remountScripts` config for include_service [livingdocs-server #4439 v179.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4439)
 * :new: fix(documentType): Document type dynamically changes [livingdocs-editor #5255 v80.8.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5255)
 * :new: Improvement/table dashboard pt2 [livingdocs-editor #5261 v80.8.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5261)
 * :new: Table dashboard polishing 3 [livingdocs-editor #5262 v80.8.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5262)
