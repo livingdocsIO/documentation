@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Table dashboard polishing 3 [livingdocs-editor #5262 v80.8.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5262)
 * :new: Import Log: fix back button [livingdocs-editor #5260 v80.8.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5260)
 * :new: Webhook integrations to the secret storage with new branch name [livingdocs-editor #5258 v80.8.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5258)
 * :new: feat: move password to secure storage for woodwing assets [livingdocs-server #4219 v179.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4219)
