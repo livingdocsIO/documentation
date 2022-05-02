@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix/team-content-type-removal [livingdocs-server #4448 v179.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4448)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
