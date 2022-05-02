@@ -141,7 +141,7 @@ One useful property on components within the default content is the `position: f
 
 ## Default Metadata
 
-The default [metadata]({{< ref "/reference-docs/document/metadata" >}}) defines what metadata are pre-set on your document upon creation.
+The default [metadata]({{< ref "/reference-docs/document/metadata" >}}) defines what metadata properties are predefined on your document upon creation.
 
 Passed metadata (via Editor on document creation) are preferred over default metadata. The merging is done property by property on the top level of every metadata field.
 
