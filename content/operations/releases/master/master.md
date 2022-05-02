@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Choose the right component in schema-component-mapping [livingdocs-editor #5227 v80.9.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5227)
 * :new: fix(documentRemoved): from embedded list [livingdocs-editor #5267 v80.9.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5267)
 * :new: fix/team-content-type-removal [livingdocs-server #4448 v179.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4448)
 
