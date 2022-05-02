@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(Teams): Microsoft Teams integration  [livingdocs-server #4408 v179.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4408)
 * :new: fix(document-inbox): Simplify config check for media [livingdocs-editor #5277 v80.10.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5277)
 * :new: Media Library: don't insert image/video component if not allowed from drop [livingdocs-editor #5274 v80.10.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5274)
 * :new: Switch loglevel to `info` in the `livingdocs-server` cli [livingdocs-server #4399 v179.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4399)
