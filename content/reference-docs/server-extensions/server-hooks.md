@@ -27,7 +27,7 @@ menus:
 
 ## Publication Hooks
 
-With publication hooks you can influence the [`Document Publication Lifecycle`]({{< ref "/reference-docs/server-extensions/server-events#available-events" >}}) for example by changing content before the publication.
+With publication hooks you can influence the [`Document Publication Lifecycle`]({{< ref "/reference-docs/server-extensions/server-events#available-events" >}}). E.g. manipulate the content before a publish happens.
 
 ### Process and Hooks Overview
 
