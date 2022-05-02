@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Media Library: don't insert image/video component if not allowed from drop [livingdocs-editor #5274 v80.10.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5274)
 * :new: Switch loglevel to `info` in the `livingdocs-server` cli [livingdocs-server #4399 v179.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4399)
 * :new: Metadata Plugins:  re-add component schema definition [livingdocs-server #4449 v179.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4449)
 * :new: Publish Control: Polish [livingdocs-editor #5271 v80.10.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5271)
