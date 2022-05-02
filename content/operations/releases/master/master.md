@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Metadata Plugins:  re-add component schema definition [livingdocs-server #4449 v179.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4449)
 * :new: Publish Control: Polish [livingdocs-editor #5271 v80.10.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5271)
 * :new: Improvement/checkbox [livingdocs-editor #5266 v80.9.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5266)
 * :new: Move comyan secure request to server [livingdocs-server #4426 v179.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4426)
