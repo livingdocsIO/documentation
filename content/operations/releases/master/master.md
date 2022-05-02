@@ -26,47 +26,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* :new: feat: add `remountScripts` config for include_service [livingdocs-editor #5246 v80.9.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5246)
-* :new: feat: add `remountScripts` config for include_service [livingdocs-server #4439 v179.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4439)
-* :new: fix(documentType): Document type dynamically changes [livingdocs-editor #5255 v80.8.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5255)
-* :new: Improvement/table dashboard pt2 [livingdocs-editor #5261 v80.8.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5261)
-* :new: Table dashboard polishing 3 [livingdocs-editor #5262 v80.8.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5262)
-* :new: Import Log: fix back button [livingdocs-editor #5260 v80.8.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5260)
-* :new: Webhook integrations to the secret storage with new branch name [livingdocs-editor #5258 v80.8.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5258)
-* :new: feat: move password to secure storage for woodwing assets [livingdocs-server #4219 v179.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4219)
-* :new: Table dashboard polishing 1 [livingdocs-editor #5251 v80.7.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5251)
-* :new: feat(hugo): Fallback field for hugo image import [livingdocs-editor #5247 v80.6.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5247)
-* :new: 🐞 Show active upload button in upload center when EXIF extraction provides new data [livingdocs-editor #5253 v80.5.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5253)
-* :new: Change batching logic to ranges in migrations feature [livingdocs-server #4441 v179.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4441)
-* :new: Improvement/list assignment [livingdocs-editor #5248 v80.5.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5248)
-* :new: Update package-lock.json of server [livingdocs-editor #5252 v80.5.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5252)
-* :new: Remove Project Config v1 [livingdocs-server #4435 v179.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4435)
-* :new: Remove Channel Config v1 [livingdocs-editor #5241 v80.5.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5241)
-* :new: Project secrets webhooks config [livingdocs-server #4438 v178.10.0](https://github.com/livingdocsIO/livingdocs-server/pull/4438)
-* :new: Enable webhook delivery when adding the frist webhook [livingdocs-editor #5250 v80.5.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5250)
-* :new: feat(table dashboard): Add support for li-string-list [livingdocs-editor #5245 v80.5.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5245)
-* :new: Feat table dashboard publish state [livingdocs-editor #5243 v80.4.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5243)
-* :new: Support any valid http url in the webhook form of the project config [livingdocs-editor #5242 v80.3.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5242)
-* :new: feat(publish control): Add delivery links [livingdocs-editor #5237 v80.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5237)
-* :new: Publish Control: Remove List Assignment from Metadata Screen [livingdocs-editor #5239 v80.2.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5239)
-* :new: li-document-reference minimal style [livingdocs-editor #5230 v80.2.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5230)
-* :new: Infinite scroll for li-form-select / li-form-multiselect [livingdocs-editor #5235 v80.1.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5235)
-* :new: Metadata li-color: add ui.config schema validation [livingdocs-server #4433 v178.9.2](https://github.com/livingdocsIO/livingdocs-server/pull/4433)
-* :new: Metadata: add placeholder to li-color metadata plugin [livingdocs-editor #5238 v80.0.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5238)
-* :new: Metadata: Validate li-reference and li-document-reference [livingdocs-server #4425 v178.9.1](https://github.com/livingdocsIO/livingdocs-server/pull/4425)
-* :new: Metadata: li-reference [livingdocs-editor #5223 v80.0.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5223)
-* :new: Document Creation - Part II - Add Template Basic Functionality [livingdocs-server #4395 v178.9.0](https://github.com/livingdocsIO/livingdocs-server/pull/4395)
-* :new: Document Creation - Part II - Create Document with default template [livingdocs-editor #5174 v80.0.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5174)
-* :new: Add reference filter [livingdocs-editor #5208 v79.3.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5208)
-* :new: Support reference filter in editingApi /documents?reference=document:123 [livingdocs-server #4419 v178.8.2](https://github.com/livingdocsIO/livingdocs-server/pull/4419)
-* :new: Publish Control Sidepanel: Show Tasks if any running [livingdocs-editor #5188 v79.3.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5188)
-* :new: li-enum: allow ui.config.placeholder [livingdocs-server #4427 v178.8.1](https://github.com/livingdocsIO/livingdocs-server/pull/4427)
-* :new: chore(removeDocuments): Document label removed [livingdocs-editor #5233 v79.2.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5233)
-* :new: Metadata: improve label rendering logic [livingdocs-editor #5231 v79.1.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5231)
-* :new: feat(retresco): Add live analysis option [livingdocs-editor #5205 v79.1.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5205)
-* :new: feat(retresco): Add live analysis option [livingdocs-server #4415 v178.8.0](https://github.com/livingdocsIO/livingdocs-server/pull/4415)
-* :new: Remove not supported editor config `useAngularBasedFormRendering` [livingdocs-editor #5226 v79.0.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5226)
-* :new: Improvement/publish control polish [livingdocs-editor #5218 v79.0.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5218)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -122,6 +81,8 @@ TODO
 * [Scheduled Unpublish](https://github.com/livingdocsIO/livingdocs-editor/pull/5177)
 * [Document Inbox Assignment](https://github.com/livingdocsIO/livingdocs-editor/pull/5185)
 * [Homepage](https://github.com/livingdocsIO/livingdocs-editor/pull/5183)
+* [Design Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/5218)
+* [Sidepanel: Show Tasks if any running](https://github.com/livingdocsIO/livingdocs-editor/pull/5188)
 
 
 ### Table Dashboards
@@ -135,8 +96,10 @@ The following functionality has been added:
 * Document creation from a table dashboard
 * New filter configuration
 * Inline editing of more metadata properties
+* Show publish state and allow quick publish under certain conditions
+* Display and inline editing for these metadata properties: `li-string-list`
 
-The following functionality has been added last release:
+The following functionality has been added in release-2021-03:
 * Basic configuration of table dashboards (main menu entry, filters, column layout)
 * Display and inline editing for these metadata properties: `li-text`, `li-boolean`, `li-category`, `li-document-reference`
 * Default column component that displays document thumbnail and title
@@ -146,11 +109,13 @@ The following functionality has been added last release:
 
 References:
 * [Documentation]({{< ref "/reference-docs/project-config/editor-settings#example-table-dashboard" >}})
-* [useLegacyDashbaords PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5142)
+* [useLegacyDashboards PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5142)
 * [Added features to Table Dashboards PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5147)
 * [Table Dashboard in document selection dialog PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5141)
 * [Load documents from postgres by default](https://github.com/livingdocsIO/livingdocs-editor/pull/5173)
 * [Allow for main cell configuration](https://github.com/livingdocsIO/livingdocs-editor/pull/5194)
+* [Add support for li-string-list](https://github.com/livingdocsIO/livingdocs-editor/pull/5245)
+* [Publish state](https://github.com/livingdocsIO/livingdocs-editor/pull/5243)
 
 ### Desknet Integration
 
@@ -221,6 +186,7 @@ References:
 - [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
 - [li-text PR](https://github.com/livingdocsIO/livingdocs-server/pull/4296)
 - [li-enum PR](https://github.com/livingdocsIO/livingdocs-server/pull/4316)
+- [li-reference | li-document-reference PR](https://github.com/livingdocsIO/livingdocs-server/pull/4425)
 
 
 ### Remove Knex Support :fire:
@@ -278,6 +244,107 @@ documentsApi.registerPublicationHooks({
 References:
 - [Documentation](https://docs.livingdocs.io/reference-docs/server-extensions/server-hooks/)
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4371)
+
+
+### Remove Channel Config v1 (Project Config) :fire:
+
+#### project config v1 (channel config v1) 🔥
+
+❗❗❗🔥🔥🔥 remove any support of project config v1. All your project configs must use the [project config v2 format](https://docs.livingdocs.io/reference-docs/project-config/)
+
+#### channelApi
+
+- 🔥 `channelApi.setHomepage` returns `undefined` (return value before was channel-config-v1)
+- 🔥 `channelApi.transformToConfigurableChannel` returns `undefined` (return value before was channel-config-v1)
+- 🔥 `channelApi.createConfigurableChannel` returns `channel` with `channel.configV2`instead of `channel.config` (channel-config-v1) - see below
+- 🔥 remove `channelApi.deleteChannel` (no replacement for this function)
+- 🔥 remove `channelApi.getChannelConfigByConfigHandleSync` (channelConfig v1) - use `channelConfigApi.read.getFullConfig` (channelConfig v2) instead
+
+#### Remove channel.config (channel-config v1) property :fire:
+
+Before this change when you load a channel e.g. `const channel = await channelApi.getDefaultChannel(...)` you had a property `channel.config` with a channel-config v1. This property is not available anymore for all the API's below (If you need the channel config, you can load it via `channelConfigApi.read.getFullConfig(...)`.
+
+Affected API's
+* 🔥 `channelApi.getChannelsByProject`
+* 🔥 `channelApi.getDefaultChannel`
+* 🔥 `channelApi.createChannel`
+* 🔥 `channelApi.getChannelByName`
+* 🔥 `channelApi.getChannel`
+* 🔥 `channelApi.createConfigurableChannel`
+
+##### channelApi.getContentTypeConfig :fire:
+
+:fire: remove `channelApi.getContentTypeConfig`
+
+```js
+// old
+const contentTypeConfig = channelApi.getContentTypeConfig(...)
+
+// new
+const channelConfigApi = server.features.api('li-channel-configs')
+const channelConfig = await channelConfigApi.read.getFullConfig({projectId, channelId})
+const contentTypeConfig = channelConfig.contentTypesByHandle[contentType]
+```
+
+##### channelApi.getAllContentTypeConfigs :fire:
+
+🔥 remove `channelApi.getAllContentTypeConfigs`
+
+```js
+// old
+const contentTypeConfigs = channelApi.getAllContentTypeConfigs(...)
+
+// new
+const channelConfigApi = server.features.api('li-channel-configs')
+const channelConfig = await channelConfigApi.read.getFullConfig({projectId, channelId})
+const contentTypeConfig = channelConfig.contentTypes
+```
+
+##### channelApi.getChannelCopyConfigs :fire:
+
+🔥 remove `channelApi.getChannelCopyConfigs`
+
+```js
+// old
+const contentTypeConfigs = channelApi.getChannelCopyConfigs(...)
+
+// new
+const channelConfigApi = server.features.api('li-channel-configs')
+const channelConfig = await channelConfigApi.read.getFullConfig({projectId, channelId})
+const copyConfigs = channelConfig.settings.copy
+```
+
+
+##### channelApi.getChannelConfig :fire:
+
+:fire: remove `channelApi.getChannelConfig `
+
+```js
+// old
+const contentTypeConfig = channelApi.getChannelConfig(...)
+
+// new
+const channelConfigApi = server.features.api('li-channel-configs')
+const channelConfig = await channelConfigApi.read.getFullConfig({projectId, channelId})
+```
+
+#### channelConfigApi
+
+- 🔥 remove `channelConfigApi.write.convertConfigVersion` (no replacement)
+- 🔥 remove `channelConfigApi.read.getStaticFormat` (channelConfig v1) - use `channelConfigApi.read.getFullConfig` (channelConfig v2) instead
+
+#### documentAPI
+
+- 🔥 `documentApi.setHomepage` returns `undefined` (return value before was channel-config-v1)
+
+#### livingdocs-server CLI
+
+- 🔥 remove task `livingdocs-server parse-channel-config-v1-to-v2` (no replacement)
+
+References:
+- [Project Config v2 Format](https://docs.livingdocs.io/reference-docs/project-config/)
+- [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4435)
+
 
 ### Remove metadata plugin form fallback 'useAngularBasedFormRendering' :fire:
 
@@ -348,34 +415,49 @@ Metadata Services are deprecated.
 References:
 - [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5217)
 
+### Untitle Document Label :fire:
+
+:fire: Remove editorConfig `app.untitledDocumentLabel`. There is no replacement for this config. If nothing is set, the title will be automatically set to 'Untitled'
+
+References:
+- [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5174)
+
+
 ## APIs :gift:
 
 [Revoke Asset via Public API](https://github.com/livingdocsIO/livingdocs-server/pull/4402)
 
 ## Other Changes
 
-### Security
+### Design
+* [Better contrast for user colors](https://github.com/livingdocsIO/livingdocs-editor/pull/5127)
+* [Improvement/list assignment](https://github.com/livingdocsIO/livingdocs-editor/pull/5248)
 
 ### Features
 
 * Metadata:
-  * [add li-video-reference plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4345)
-  * [add li-color plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4352)
+  * [Add li-video-reference plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4345)
+  * [Add li-color plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4352)
+  * [Add li-document-reference minimal style](https://github.com/livingdocsIO/livingdocs-editor/pull/5230)
 * [Devices on Profile Page](https://github.com/livingdocsIO/livingdocs-editor/pull/5184)
 * [Render paramsSchema with li-metadata-form-component](https://github.com/livingdocsIO/livingdocs-editor/pull/5132)
 * [Admins can create empty projects via UI](https://github.com/livingdocsIO/livingdocs-editor/pull/5152)
-
-### Design
-* [Better contrast for user colors](https://github.com/livingdocsIO/livingdocs-editor/pull/5127)
+* [Retresco: Add live analysis option](https://github.com/livingdocsIO/livingdocs-editor/pull/5205)
+* [Filter: Add reference filter support](https://github.com/livingdocsIO/livingdocs-server/pull/4419)
+* [Webhooks: Support project-secrets for webhooks config](https://github.com/livingdocsIO/livingdocs-server/pull/4438)
+* [Woodwing: Support project-secrets for Woodwing config](https://github.com/livingdocsIO/livingdocs-server/pull/4219)
 
 ### Improvements
 
 * Editor
   * [Improve mouse selection](https://github.com/livingdocsIO/livingdocs-editor/pull/5095)
+  * [Show documentType in UI instead of 'Documents'](https://github.com/livingdocsIO/livingdocs-editor/pull/5255)
+  * [Force the scripts inside the html of an include to re-run when its html is re-rendered.](https://github.com/livingdocsIO/livingdocs-editor/pull/5246)
 * Server
   * [Hooks: Lazy publish hook registration](https://github.com/livingdocsIO/livingdocs-server/pull/4309)
   * [Storage: Support any third party blob-store module in the storage config](https://github.com/livingdocsIO/livingdocs-server/pull/4334)
-  * [Migration: Support parallel execution of `livingdocs-server migrate up`](https://github.com/livingdocsIO/livingdocs-server/pull/4366)
+  * [Database Migration: Support parallel execution of `livingdocs-server migrate up`](https://github.com/livingdocsIO/livingdocs-server/pull/4366)
+  * [Data Migration: Change batching logic to ranges in migrations feature for faster queries](https://github.com/livingdocsIO/livingdocs-server/pull/4441)
 * Import
   * [Improve Showed Infos for Import Logs in Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5154)
   * [Improve Import Error Messages](https://github.com/livingdocsIO/livingdocs-server/pull/4381)
@@ -386,6 +468,7 @@ References:
 * Metadata:
   * [Support multiple `isDefault` for li-form-multiselect](https://github.com/livingdocsIO/livingdocs-editor/pull/5146)
   * [Correctly apply startcase for default placeholder based on handle](https://github.com/livingdocsIO/livingdocs-editor/pull/5156)
+  * [Infinite scroll for li-form-select / li-form-multiselect](https://github.com/livingdocsIO/livingdocs-editor/pull/5235)
 
 ### Bugfixes
 
@@ -399,6 +482,7 @@ References:
   * [Cropping: 'Reset to automatic' button on image crop feature works when only one crop is configured](https://github.com/livingdocsIO/livingdocs-editor/pull/5150)
   * [Drag + Drop: Insert component doesn't select everything (in Safari)](https://github.com/livingdocsIO/livingdocs-editor/pull/5149)
   * [Add support for video in component directives](https://github.com/livingdocsIO/livingdocs-server/pull/4421)
+  * [Show active upload button in upload center when EXIF extraction provides new data](https://github.com/livingdocsIO/livingdocs-editor/pull/5253)
   * Text Formatting Toolbar
     * [Allow specialChars and comments on plainText directives](https://github.com/livingdocsIO/livingdocs-editor/pull/5175)
     * [Fix positioning of `li-form-select`](https://github.com/livingdocsIO/livingdocs-editor/pull/5213)
