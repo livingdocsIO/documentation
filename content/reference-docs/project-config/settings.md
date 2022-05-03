@@ -58,6 +58,7 @@ settings: {
           name: '<secret-name>'
         }
       },
+      enableLiveAnalysis: true,
       // The component.directive combinations used to extract specific strings.
       // The first match will be used, but multiple values can be provided so that many
       // content types can be supported.
