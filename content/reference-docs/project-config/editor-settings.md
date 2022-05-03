@@ -514,7 +514,13 @@ dashboards: [{
       componentName: 'liTableDashboardCellMain',
 
       // Custom options passed to the above component
-      componentOptions: {}
+      componentOptions: {
+        image: {
+          metadataPropertyName: 'teaserImage'
+        },
+        clampTitle: false,
+        showContentType: true
+      }
     },
     {
       label: 'Description',
@@ -535,17 +541,51 @@ dashboards: [{
 #### Supported metadata properties
 
 The following [metadata plugin types]({{< ref "/reference-docs/document/metadata/metadata-plugin-list" >}})
-are supported in the table dashboard as of `release-2022-03`:
+are supported in the table dashboard:
 - `li-boolean`
 - `li-text`
 - `li-category`
 - `li-document-reference`
+- `li-string-list` ({{< added-in release-2022-05 >}})
 
 #### Upstream components
 
-The `liTableDashboardCellMain` upstream component can be used to display document thumbnail and title:
+##### liTableDashboardCellMain
+
+The `liTableDashboardCellMain` upstream component can be used to display document thumbnail, title, content type, and last modification / author:
+
+Options:
+```js
+componentOptions: {
+  image: {
+    // Name of metadata property to be used for thumbnail image
+    metadataPropertyName: 'teaserImage'
+  },
+  // Clamp title to max 3 rows
+  clampTitle: false,
+  // Show content type tag
+  showContentType: true
+}
+```
 
 {{< img src="images/table_dashboard_main_cell.png" alt="liTableDashboardCellMain upstream component" >}}
+
+##### liTableDashboardCellLanguage
+
+{{< added-in release-2022-05 >}}
+
+The `liTableDashboardCellLanguage` upstream component can be used to display the document language:
+
+{{< img src="images/table_dashboard_language_cell.png" alt="liTableDashboardCellLanguage upstream component" >}}
+
+##### liTableDashboardCellPublishState
+
+{{< added-in release-2022-05 >}}
+
+The `liTableDashboardCellPublishState` upstream component can be used to display publish state and quick publish button
+(only shown if metadata has been edited directly within the table dashboard):
+
+{{< img src="images/table_dashboard_publish_state_cell.png" alt="liTableDashboardCellPublishState upstream component" >}}
 
 #### Custom components
 

@@ -84,17 +84,16 @@ TODO
 
 ### Table Dashboards
 
-TODO@beni: is this description correct?
-
 Table dashboards are a new flexible type of dashboards where individual columns can be configured.
 
-The following functionality has been added:
-* Table dashboard used as default for articles, pages, and data records
+The following functionality has been added in this release:
 * Document creation from a table dashboard
-* New filter configuration
-* Inline editing of more metadata properties
 * Show publish state and allow quick publish under certain conditions
-* Display and inline editing for these metadata properties: `li-string-list`
+* Display and inline editing for `li-string-list` metadata properties
+* First step towards using table dashboard as default for articles, pages, and data records
+  * There are reasonable defaults for filters and dashboard columns depending on document type
+  * Can be enabled, by setting `documents.useLegacyDashboards` to `false` in the editor config
+  * Not enabled by default yet because some features are still missing and will be added in the next release (see below)
 
 The following functionality has been added in release-2021-03:
 * Basic configuration of table dashboards (main menu entry, filters, column layout)
@@ -102,15 +101,18 @@ The following functionality has been added in release-2021-03:
 * Default column component that displays document thumbnail and title
 * Custom components can be configured to render the content of a table cell
 
+Still missing features for fully replacing legacy dashboards that will be added in the next release:
+* Search tooltip for document id matches
+* Document drag & drop
+
 References:
 * [Documentation]({{< ref "/reference-docs/project-config/editor-settings#example-table-dashboard" >}})
-* [useLegacyDashboards PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5142)
-* [Added features to Table Dashboards PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5147)
+* [Default Table Dashboards PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5142)
 * [Table Dashboard in document selection dialog PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5141)
-* [Load documents from postgres by default](https://github.com/livingdocsIO/livingdocs-editor/pull/5173)
-* [Allow for main cell configuration](https://github.com/livingdocsIO/livingdocs-editor/pull/5194)
-* [Add support for li-string-list](https://github.com/livingdocsIO/livingdocs-editor/pull/5245)
-* [Publish state](https://github.com/livingdocsIO/livingdocs-editor/pull/5243)
+* [Load documents from postgres by default PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5173)
+* [Allow for main cell configuration PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5194)
+* [Add support for li-string-list PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5245)
+* [Publish state and quick publish PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5243)
 
 ### Desknet Integration
 
