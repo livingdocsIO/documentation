@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: 🧪  Add projectConfig Validation to colt.createConfigChannel [livingdocs-server #4451 v180.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4451)
 * :new: Metadata: li-integer -> add strict schema validation [livingdocs-server #4446 v180.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4446)
 * :new: Update livingdocs-integration.json for Release [livingdocs-server #4453 v179.4.1](https://github.com/livingdocsIO/livingdocs-server/pull/4453)
 * :new: Update livingdocs-integration.json for Release [livingdocs-editor #5278 v80.11.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5278)
