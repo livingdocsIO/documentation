@@ -8,6 +8,7 @@ weight: 1
 - Create Livingdocs documents directly from Desk-Net.
 - Sync publication status between the two domains.
 - Exchange and sync any data that is relevant to your workflow.
+- View Desk-Net story planning lists in Livingdocs
 
 
 ## Video Guide
@@ -206,7 +207,7 @@ Again to the settings of content type `'regular'`, add the following:
 
 And we're all set. From now on, whenever you create a new story on Desk-Net with a scheduled publication date or change the scheduled publication date on an existing story *and* the story at hand is assigned to a platform connected to Livingdocs, the metadata of the document will have an up-to-date property `desknetPublicationDate` with the date as value.
 
-#### <a name="desknet-properties"></a>What are the available Desk-Net properties?
+#### What are the available Desk-Net properties?
 
 When determining mapping results we analyze an enriched version of the result of [GetElement](https://api.desk-net.com/#api-Element-GetElement) on the Desk-Net API.
 
@@ -222,7 +223,7 @@ Additionally, all elements have
 - a property `publication` which always points at the one connected to the platformId set up in the current project config.
 - a property `publications[]` which contains all publications, and at least one which is the same as the one at `publication`.
 
-You can find a full example at [the end of this document](#full-example).
+You can find a full example at [the end of this document](#full-desk-net-element-example).
 
 #### What are the available Livingdocs properties?
 
@@ -321,30 +322,30 @@ Now, we have to a) add a metadata plugin and b) a transform mapping to the setti
 }
 ```
 
-### API
+## API
 
-#### Import functions
+### Import functions
 
 ```js
 async function myImportTransform (desknetApi, element, document): any
 ```
 
-- `desknetApi` – A [set of helper functions](#desknet-api) to make requests to the Desk-Net API.
-- `element` – The Desk-Net [element](#full-example)
+- `desknetApi` – A [set of helper functions](#desk-net-api) to make requests to the Desk-Net API.
+- `element` – The Desk-Net [element](#full-desk-net-element-example)
 - `document` – Optional. The Livingdocs document. Only provided if it's an update operation.
 
-#### Export functions
+### Export functions
 
 ```js
 async function myExportTransform (desknetApi, element, document): Object
 ```
 
-- `desknetApi` – A [set of helper functions](#desknet-api) to make requests to the Desk-Net API.
+- `desknetApi` – A [set of helper functions](#desk-net-api) to make requests to the Desk-Net API.
 - `value` – The value of the metadata field at `target` (see config section above).
-- `element` – The Desk-Net [element](#full-example)
+- `element` – The Desk-Net [element](#full-desk-net-element-example)
 - `document` – The Livingdocs document.
 
-#### `registerTransform`
+### `registerTransform`
 
 ```js
 function registerTransform (handle, transform): void
@@ -352,7 +353,7 @@ function registerTransform (handle, transform): void
 - `handle` – String, a unique transform name.
 - `transform` – A transform function
 
-#### `unregisterTransform`
+### `unregisterTransform`
 
 ```js
 function unregisterTransform (handle): void
@@ -360,7 +361,7 @@ function unregisterTransform (handle): void
 - `handle` – String, a unique transform name.
 
 
-#### <a name="desknet-api"></a>Desknet API
+### Desk-Net API
 
 A set of helper functions to make authorized requests to the Desk-Net API.
 
@@ -392,9 +393,9 @@ const myImportTransform = async (desknetApi, element, document) => {
  – [GetType](https://api.desk-net.com/#api-Type-GetType)
 
 - `async function getFullElement (elementId)` –
-This function resolves to a Desk-Net element [with prefetched values](#desknet-properties).
+This function resolves to a Desk-Net element [with prefetched values](#what-are-the-available-desk-net-properties).
 
-##### <a name="full-example"></a>Full Desk-Net element example
+#### Full Desk-Net element example
 ```json
 {
    "id": 1111111111111,
@@ -485,3 +486,62 @@ This function resolves to a Desk-Net element [with prefetched values](#desknet-p
    }
 }
 ```
+
+## Story Planning Schedule in Livingdocs
+
+{{< added-in release-2022-05 block >}}
+
+An optional step is to enable the story planning side panel within the Livingdocs editor. This can be configured to only display for certain content types, for example pages to help with page management. This step can also be done without mapping Desk-Net values, but this will result in the side panel displaying document titles instead of document reference cards.
+
+### Setup
+
+#### Project config
+
+Extend the `desknet` object in your project config with the following:
+
+```js
+{
+  // ...
+  desknet: {
+    scheduleEnabled: true,
+    // ...
+  }
+}
+```
+
+#### Content type config
+
+Add the `li-desknet-platforms` metadata plugin to the content type that you would like the side panel enabled for:
+
+```js
+{
+  handle: 'page',
+  documentType: 'page',
+  // ...
+  metadata: [
+    // ...
+    {
+      handle: 'desknet-platforms',
+      type: 'li-desknet-platforms',
+      ui: {
+        label: 'Desk-Net Platforms',
+        config: {
+          placeholder: 'Select a Desk-Net platform or category'
+        }
+      }
+    }
+  ]
+}
+```
+
+#### Adding a platform or category to a page
+
+Once you have made the config changes above you should be able to see a disabled Desk-Net button in the editor toolbar when viewing a document of the configured content type. To enable the button you need to go to the metadata screen of the document and select any relevant platforms, categories, or subcategories. Articles within the selected tree branches will be displayed in the side panel.
+
+{{< img src="desknet-schedule-metadata-field.png" alt="Desk-Net Platforms metadata input" >}}
+
+### Using the side panel
+
+At the moment the side panel is for information only. A user can change the date to see the scheduled articles in the configured platforms or categories. However, the ability to create teasers by dragging articles from the side panel will be added soon.
+
+{{< img src="desknet-schedule-side-panel.png" alt="Desk-Net Schedule side panel in Livingdocs" >}}

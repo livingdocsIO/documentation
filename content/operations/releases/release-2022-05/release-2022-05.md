@@ -114,14 +114,13 @@ References:
 
 ### Desknet Integration
 
-TODO:
-- do we already announce the desknet integration?
-- documentation is missing, when and how do we add that?
+The Desk-Net integration has been extended to provide a preview of scheduled stories within a side panel in the Livingdocs editor. At the moment the side panel is for information only. A user can change the date to see the scheduled articles in the configured platforms or categories. However, the ability to create teasers by dragging articles from the side panel will be added soon.
 
 References:
-* [Documentation@TODO](https://github.com/livingdocsIO/livingdocs-editor/pull/5134)
-* [Desk-Net Schedule Side Panel](https://github.com/livingdocsIO/livingdocs-editor/pull/5134)
-* [Metadata Plugin li-desknet-platforms](https://github.com/livingdocsIO/livingdocs-editor/pull/5155)
+* [Documentation](https://docs.livingdocs.io/guides/integrations/desknet/#story-planning-schedule-in-livingdocs)
+* [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4396)
+* [Editor PR: Desk-Net Schedule Side Panel](https://github.com/livingdocsIO/livingdocs-editor/pull/5134)
+* [Editor PR: Metadata Plugin li-desknet-platforms](https://github.com/livingdocsIO/livingdocs-editor/pull/5155)
 
 ### Internationalization i18n
 
