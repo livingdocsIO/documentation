@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Bump minor version for release management [livingdocs-server #4450 v179.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4450)
 * :new: Bump minor version for release management [livingdocs-editor #5273 v80.11.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5273)
 * :new: feat(Teams): Microsoft Teams integration  [livingdocs-server #4408 v179.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4408)
 * :new: fix(document-inbox): Simplify config check for media [livingdocs-editor #5277 v80.10.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5277)
