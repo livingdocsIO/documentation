@@ -171,7 +171,7 @@ async postUnpublishHookAsync ({documentVersion}) {
 The `beforeRenderHookAsync` is called right before a document gets rendered.
 
 API:
-* `beforeRenderHookAsync`: `({documentType, rendition})`
+* `beforeRenderHookAsync`: `({documentType, rendition, renditionNames})`
 
 Example:
 ```js
@@ -182,7 +182,7 @@ liServer.registerInitializedHook(async () => {
   liServer.features.api('li-render-pipeline').registerRenderHooks({
     projectHandle: 'your-interesting-project',
     channelHandle: 'some-channel',
-    async beforeRenderHookAsync ({contentType, rendition}) {
+    async beforeRenderHookAsync ({contentType, rendition, renditionNames}) {
       if (['interview', 'biography'].includes(contentType)) {
         liServer.log.info("We're about to render something about somebody!")
         // do something with the rendition:
