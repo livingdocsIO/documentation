@@ -25,22 +25,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: We don't guarantee stable APIs. They can still change until the official release
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
-## PRs to Categorize
-* :new: Bump minor version for release management [livingdocs-server #4450 v179.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4450)
-* :new: Bump minor version for release management [livingdocs-editor #5273 v80.11.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5273)
-* :new: feat(Teams): Microsoft Teams integration  [livingdocs-server #4408 v179.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4408)
-* :new: fix(document-inbox): Simplify config check for media [livingdocs-editor #5277 v80.10.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5277)
-* :new: Media Library: don't insert image/video component if not allowed from drop [livingdocs-editor #5274 v80.10.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5274)
-* :new: Switch loglevel to `info` in the `livingdocs-server` cli [livingdocs-server #4399 v179.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4399)
-* :new: Metadata Plugins:  re-add component schema definition [livingdocs-server #4449 v179.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4449)
-* :new: Publish Control: Polish [livingdocs-editor #5271 v80.10.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5271)
-* :new: Improvement/checkbox [livingdocs-editor #5266 v80.9.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5266)
-* :new: Move comyan secure request to server [livingdocs-server #4426 v179.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4426)
-* :new: Choose the right component in schema-component-mapping [livingdocs-editor #5227 v80.9.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5227)
-* :new: fix(documentRemoved): from embedded list [livingdocs-editor #5267 v80.9.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5267)
-* :new: fix/team-content-type-removal [livingdocs-server #4448 v179.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4448)
-
-
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
 ## Webinar
@@ -118,8 +102,6 @@ The following functionality has been added in release-2021-03:
 * Default column component that displays document thumbnail and title
 * Custom components can be configured to render the content of a table cell
 
-
-
 References:
 * [Documentation]({{< ref "/reference-docs/project-config/editor-settings#example-table-dashboard" >}})
 * [useLegacyDashboards PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5142)
@@ -161,13 +143,6 @@ Media Library Entries can now sent to a document inbox and put into a document v
 
 
 ## Breaking Changes :fire:
-
-### Migrate the database :fire:
-
-```sh
-# run `livingdocs-server migrate up` to update to the newest database scheme
-livingdocs-server migrate up
-```
 
 ### Remove callbacks for Server Hooks :fire:
 
@@ -444,7 +419,8 @@ References:
 
 ### Design
 * [Better contrast for user colors](https://github.com/livingdocsIO/livingdocs-editor/pull/5127)
-* [Improvement/list assignment](https://github.com/livingdocsIO/livingdocs-editor/pull/5248)
+* [Improve List assignment design](https://github.com/livingdocsIO/livingdocs-editor/pull/5248)
+* [Improve Checkbox design](https://github.com/livingdocsIO/livingdocs-editor/pull/5266)
 
 ### Features
 
@@ -512,6 +488,8 @@ References:
   * [Return hugoPicture in editing API for new and old Media](https://github.com/livingdocsIO/livingdocs-server/pull/4359)
   * [Combine baseFilters on search for multiple mediaTypes](https://github.com/livingdocsIO/livingdocs-editor/pull/5181)
   * [Don't allow switching between language tabs while metadata is being saved](https://github.com/livingdocsIO/livingdocs-editor/pull/5199)
+  * [Don't insert image/video component if not allowed from drop](https://github.com/livingdocsIO/livingdocs-editor/pull/5274)
+
 
 ## Patches
 
