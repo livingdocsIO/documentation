@@ -38,41 +38,56 @@ These are the release notes of the upcoming release (pull requests merged to mas
 ## System Requirements
 
 ### Suggested
-|Name|Version|
-|-|-|
-|Node|16|
-|NPM|7|
-|Postgres|14|
-|Elasticsearch|7|
-|Redis|6|
-|Livingdocs Server Docker Image|livingdocs/server-base:16|
-|Livingdocs Editor Docker Image|livingdocs/editor-base:16|
-|Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
+| Name                           | Version                                                                                  |
+| ------------------------------ | ---------------------------------------------------------------------------------------- |
+| Node                           | 16                                                                                       |
+| NPM                            | 7                                                                                        |
+| Postgres                       | 14                                                                                       |
+| Elasticsearch                  | 7                                                                                        |
+| Redis                          | 6                                                                                        |
+| Livingdocs Server Docker Image | livingdocs/server-base:16                                                                |
+| Livingdocs Editor Docker Image | livingdocs/editor-base:16                                                                |
+| Browser Support                | Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67 |
 
 ### Minimal
-|Name|Version|
-|-|-|
-|Node|14|
-|NPM|7|
-|Postgres|11 (Deprecated Postgres 11)|
-|Elasticsearch|6.x (Deprecated)|
-|Redis|5|
-|Livingdocs Server Docker Image|livingdocs/server-base:14.3|
-|Livingdocs Editor Docker Image|livingdocs/editor-base:14.3|
-|Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
+| Name                           | Version                                                                                  |
+| ------------------------------ | ---------------------------------------------------------------------------------------- |
+| Node                           | 14                                                                                       |
+| NPM                            | 7                                                                                        |
+| Postgres                       | 11 (Deprecated Postgres 11)                                                              |
+| Elasticsearch                  | 6.x (Deprecated)                                                                         |
+| Redis                          | 5                                                                                        |
+| Livingdocs Server Docker Image | livingdocs/server-base:14.3                                                              |
+| Livingdocs Editor Docker Image | livingdocs/editor-base:14.3                                                              |
+| Browser Support                | Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67 |
 
 
 ## Highlights
 
 ### Publish Control
+Livingdocs is introducing a new Publish Flow. We call it «Publish Control» and will combine and standardize all things around publishing, scheduling publications and distribution features (lists, inboxes) in a central place.
+Since this affecting the key feature of publishing content, the timing of rolling out the new features can be completely controlled by you.
 
-TODO@beni: Description
+We encourage you to enable the «Publish Control» Feature on your test/staging environments to see, test and understand the new possibilities. Please reach out with any feedback you have. If the existing feature set already covers your requirements, you are encouraged to roll out the change to your newsroom when feasible. We believe the new publish flow is significantly more clear to users.
+
+We will maintain both, the existing «Prepare Publication» as well as the new «Publish Control» flows at least until September 2022 Release. Please reach out to your Customer Solutions manager with feedback and your possible schedule for switching the publish flow. We like to phase out the «Prepare Publication» flow and eventually enforce the «Publish Control» flow.
+
+The following capabilities are part of «Publish Control» with the May Release:
+- All the things on the «Prepare Publish» Screen are distributed to either the Publish Control Panel or the new Metadata Screen, both are reachable from the Document Editing Toolbar.
+- Immediate publish / unpublish of documents
+- Scheduled publish / unpublish of documents
+
+The following capabilities will follow with the July / September Releases:
+- Embargo mangement, documents with an embargo defined cannot get published
+- marking publications as significant (to show your readers, when an existing article got a significant update)
+- management of a date (with user edit possibilities) to show as the publication date to your readers
+
+Consult the [Guide on «Publish Control»]]({{< ref "/guides/editor/publish-control" >}}) to learn how to configure this feature.
 
 * [Documentation TODO]()
 * [Basic Document History](https://github.com/livingdocsIO/livingdocs-editor/pull/5069)
 * [Scheduled Unpublish](https://github.com/livingdocsIO/livingdocs-editor/pull/5177)
 * [Document Inbox Assignment](https://github.com/livingdocsIO/livingdocs-editor/pull/5185)
-* [Homepage](https://github.com/livingdocsIO/livingdocs-editor/pull/5183)
 * [Design Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/5218)
 * [Sidepanel: Show Tasks if any running](https://github.com/livingdocsIO/livingdocs-editor/pull/5188)
 
