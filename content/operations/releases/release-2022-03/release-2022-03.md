@@ -836,6 +836,7 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
 
 ### Livingdocs Editor Patches
+- [v77.2.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.51): fix(document): consider future metadata based publication date a schedule only for published documents
 - [v77.2.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.50): fix(softLock): Button inline
 - [v77.2.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.49): fix(translation manager): Use correct locale for checking if there is a new asset
 - [v77.2.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.48): fix: remove bluewin/nzz test pipeline for release-2022-03
