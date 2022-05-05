@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(softLock): Button inline [livingdocs-editor #5269 v80.11.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5269)
 * :new: Fix Webpack Build [livingdocs-editor #5289 v80.11.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5289)
 * :new: Fix translated asset replacement [livingdocs-editor #5275 v80.11.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5275)
 * :new: Move @intlify/vue-i18n-loader from devDependencies to dependencies [livingdocs-editor #5284 v80.11.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5284)
