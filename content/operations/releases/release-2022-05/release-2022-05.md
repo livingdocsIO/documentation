@@ -498,6 +498,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v80.10.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.6): fix: move @intlify/vue-i18n-loader from devDependencies to dependencies
 - [v80.10.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.5): fix(relative time): i18n
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v??.?.?): text
 
