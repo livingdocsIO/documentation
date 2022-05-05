@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Document State: fix metadata based publish schedule [livingdocs-editor #5297 v80.11.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5297)
 * :new: fix(softLock): Button inline [livingdocs-editor #5269 v80.11.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5269)
 * :new: Fix Webpack Build [livingdocs-editor #5289 v80.11.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5289)
 * :new: Fix translated asset replacement [livingdocs-editor #5275 v80.11.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5275)
