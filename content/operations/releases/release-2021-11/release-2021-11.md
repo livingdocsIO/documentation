@@ -361,6 +361,7 @@ References:
 - [v157.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.9): return revision also in case metadata_id is null
 
 ### Livingdocs Editor Patches
+- [v74.4.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.73): fix(translation manager): Use correct locale for checking if there is a new asset
 - [v74.4.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.72): fix(hugo): Fallback field for hugo image import
 - [v74.4.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.71): fix: remove nzz downstream test
 - [v74.4.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v74.4.70): fix(multiListEditor): Service always found
