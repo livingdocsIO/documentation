@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix translated asset replacement [livingdocs-editor #5275 v80.11.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5275)
 * :new: Move @intlify/vue-i18n-loader from devDependencies to dependencies [livingdocs-editor #5284 v80.11.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5284)
 * :new: Publish Control: i18n / narrow screen improvements [livingdocs-editor #5282 v80.11.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5282)
 * :new: Depr improvements [livingdocs-server #4455 v181.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4455)
