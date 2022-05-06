@@ -498,6 +498,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v80.10.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.11): fix(editing toolbar): move app-menu to the top row for narrow screens
 - [v80.10.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.10): fix(document): consider future metadata based publication date a schedule only for published documents
 - [v80.10.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.9): fix(softLock): Button inline
 - [v80.10.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.8): fix(translation manager): Use correct locale for checking if there is a new asset
