@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat: allow formatting of log levels as strings [livingdocs-server #4458 v181.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4458)
 * :new: Editing Toolbar Improvements [livingdocs-editor #5296 v80.11.8](https://github.com/livingdocsIO/livingdocs-editor/pull/5296)
 * :new: Document State: fix metadata based publish schedule [livingdocs-editor #5297 v80.11.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5297)
 * :new: fix(softLock): Button inline [livingdocs-editor #5269 v80.11.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5269)
