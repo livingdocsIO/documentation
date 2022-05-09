@@ -55,6 +55,10 @@ A simple checkbox which you can turn on/off.
 ```js
 metadata: [
     type: 'li-boolean',
+    config: {
+      // common
+      hideFromForm: false                      // optional, default: false
+    }
     ui: {
       label: 'foo',                            // optional, takes camelized name otherwise
       config: {
@@ -86,9 +90,12 @@ metadata: [
     handle: 'color',
     type: 'li-color',
     config: {
+      // common
+      hideFromForm: false,                     // optional, default: false
       required: true,                          // optional, default: false
-      requiredErrorMessage: 'Provide a color', // optional
-      translatable: true,                      // optional, default: false, translations are only supported for data-record and mediaLibrary
+      requiredErrorMessage: 'Provide a value', // optional
+      // specific
+      translatable: true                       // optional, default: false, translations are only supported for data-record and mediaLibrary
     },
     ui: {
       label: 'your label',
@@ -124,8 +131,10 @@ metadata: [
     handle: 'date',
     type: 'li-datetime',
     config: {
+      // common
+      hideFromForm: false,                     // optional, default: false
       required: true,                          // optional, default: false
-      requiredErrorMessage: 'Provide a date'   // optional
+      requiredErrorMessage: 'Provide a value'  // optional
     },
     ui: {
       label: 'foo',                   // optional, takes camelized name otherwise
@@ -207,9 +216,14 @@ metadata: [
     handle: 'reference',
     type: 'li-document-reference',
     config: {
-      documentType: 'article',       // optional, one of article, page, data-record
-      contentType: 'my-content-type' // optional, filters the document selection
-      published: true,               // optional, shorthand for publication displayFilter, default: false
+      // common
+      hideFromForm: false,                     // optional, default: false
+      required: true,                          // optional, default: false
+      requiredErrorMessage: 'Provide a value', // optional
+      // specific
+      documentType: 'article',                 // optional, one of article, page, data-record
+      contentType: 'my-content-type'           // optional, filters the document selection
+      published: true,                         // optional, shorthand for publication displayFilter, default: false
     },
     ui: {
       label: 'foo',                  // optional, takes camelized name otherwise
@@ -250,8 +264,11 @@ metadata: [
     handle: 'tags',
     type: 'li-enum',
     config: {
+      // common
+      hideFromForm: false,                     // optional, default: false
       required: true,                          // optional, default: false
-      requiredErrorMessage: 'Provide a title', // optional
+      requiredErrorMessage: 'Provide a value', // optional
+      // specific
       dataProvider: {                          // required
         type: 'labelValuePair',                // required
         items: [
@@ -340,10 +357,13 @@ metadata: [
     handle: 'integer',
     type: 'li-integer',
     config: {
-      minValue: 1,                              // optional
-      maxValue: 50,                             // optional
-      required: true,                           // optional, default: false
-      requiredErrorMessage: 'Provide a number'  // optional
+      // common
+      hideFromForm: false,                     // optional, default: false
+      required: true,                          // optional, default: false
+      requiredErrorMessage: 'Provide a value', // optional
+      // specific
+      minValue: 1,                             // optional
+      maxValue: 50                             // optional
     },
     ui: {
       label: 'foo',                   // optional, takes camelized name otherwise
@@ -481,11 +501,14 @@ metadata: [
     handle: 'reference',
     type: 'li-reference',
     config: {
+      // common
+      hideFromForm: false,                     // optional, default: false
+      required: true,                          // optional, default: false
+      requiredErrorMessage: 'Provide a value', // optional
+      // specific
       documentType: 'data-record',             // optional
       contentType: 'author',                   // optional
       prefillAuthor: true                      // optional, default: false
-      required: true,                          // optional, default: false
-      requiredErrorMessage: 'Provide a title'  // optional,
       published: true,                         // optional, shorthand for publication displayFilter, default: false
     },
     ui: {
@@ -536,6 +559,11 @@ metadata: [
     handle: 'myStringList',
     type: 'li-string-list',
     config: {
+      // common
+      hideFromForm: false,                     // optional, default: false
+      required: true,                          // optional, default: false
+      requiredErrorMessage: 'Provide a value', // optional
+      // specific
       dataProvider: { // required
         // Option 1 - list of items
         type: 'labelValuePair',
@@ -607,9 +635,12 @@ metadata: [
     handle: 'title',
     type: 'li-text',
     config: {
-      maxLength: 200,                          // optional
+      // common
+      hideFromForm: false,                     // optional, default: false
       required: true,                          // optional, default: false
-      requiredErrorMessage: 'Provide a title', // optional
+      requiredErrorMessage: 'Provide a value', // optional
+      // specific
+      maxLength: 200,                          // optional
       useAsTitle: true,                        // default: false, synchronises the value with document.title if true
       translatable: true,                      // optional, default: false, translations are only supported for data-record and mediaLibrary
       dataProvider: {                          // optional
@@ -682,8 +713,11 @@ paramsSchema: [
     handle: 'video',
     type: 'li-video-reference',
     config: {
+      // common
+      hideFromForm: false,                     // optional, default: false
       required: true,                          // optional, default: false
-      requiredErrorMessage: 'Provide a video', // optional
+      requiredErrorMessage: 'Provide a value', // optional
+      // specific
       translatable: true,                      // optional, default: false, translations are only supported for data-record and mediaLibrary
     },
     ui: {
@@ -710,6 +744,11 @@ metadata: [
     handle: 'teaserImage',
     type: 'li-image',
     config: {
+      // common
+      hideFromForm: false,                     // optional, default: false
+      required: true,                          // optional, default: false
+      requiredErrorMessage: 'Provide a value', // optional
+      // specific
       imageRatios: ['16:9', '1:1']
     },
     ui: {
@@ -789,6 +828,11 @@ metadata: [
     ...,
     type: 'li-reference-list',
     config: {
+      // common
+      hideFromForm: false,                     // optional, default: false
+      required: true,                          // optional, default: false
+      requiredErrorMessage: 'Provide a value', // optional
+      // specific
       referenceType: 'documents'
       displayFilters: []
     },
@@ -816,6 +860,11 @@ metadata: [
     ...,
     type: 'li-list-reference',
     config: {
+      // common
+      hideFromForm: false,                     // optional, default: false
+      required: true,                          // optional, default: false
+      requiredErrorMessage: 'Provide a value', // optional
+      // specific
       enableCount: true,      // enable UI configuration of number of articles (default: false)
       defaultCount: 3,        // number of articles shown by default (default: 3)
       minCount: 2,            // minimum number of articles
