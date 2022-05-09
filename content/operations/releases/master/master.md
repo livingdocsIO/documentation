@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Better Validation Errors for Schemas with Discriminator Schema  [livingdocs-server #4473 v182.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4473)
 * :new: fix(quoteIcons): now grey and blue [livingdocs-editor #5268 v80.11.12](https://github.com/livingdocsIO/livingdocs-editor/pull/5268)
 * :new: Use an explicit postgres schema during database migrations [livingdocs-server #4457 v182.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4457)
 * :new: 🐞 Add support for common metadata property `hideFromForm` in Schemas [livingdocs-server #4469 v181.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4469)
