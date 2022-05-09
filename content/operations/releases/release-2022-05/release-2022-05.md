@@ -497,6 +497,7 @@ References:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v179.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.3): fix: incorporate PR feeback
 - [v179.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.2): fix: allow formatting of log levels as strings
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
