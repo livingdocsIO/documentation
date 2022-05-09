@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Error Pointer: Replace array number with handle|name|label|plugin|type [livingdocs-server #4462 v181.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4462)
 * :new: Fix publish control producer [livingdocs-server #4466 v181.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4466)
 * :new: Desk-Net tests and error handling improvements [livingdocs-editor #5302 v80.11.11](https://github.com/livingdocsIO/livingdocs-editor/pull/5302)
 * :new: fix(softLock): Now correctly spaced [livingdocs-editor #5301 v80.11.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5301)
