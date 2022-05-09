@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Desk-Net tests and error handling improvements [livingdocs-editor #5302 v80.11.11](https://github.com/livingdocsIO/livingdocs-editor/pull/5302)
 * :new: fix(softLock): Now correctly spaced [livingdocs-editor #5301 v80.11.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5301)
 * :new: 🐞 Make metadata plugins compatible with project settings again [livingdocs-server #4464 v181.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4464)
 * :new: Unpublish Document via Public API [livingdocs-server #4459 v181.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4459)
