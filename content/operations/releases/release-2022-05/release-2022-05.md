@@ -66,14 +66,9 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ### Publish Control
 
-TODO@beni: Could you add a description?
+TODO@beni: Description
 
-TODO
-- Do we announce Publish Control already?
-- And if yes, how? (Beta vs full fledged feature)
-- Is there already documentation, how should it look like?
-- Should we add a guide how to migrate from custom solutions to Publish Control?
-
+* [Documentation TODO]()
 * [Basic Document History](https://github.com/livingdocsIO/livingdocs-editor/pull/5069)
 * [Scheduled Unpublish](https://github.com/livingdocsIO/livingdocs-editor/pull/5177)
 * [Document Inbox Assignment](https://github.com/livingdocsIO/livingdocs-editor/pull/5185)
@@ -123,13 +118,6 @@ References:
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4396)
 * [Editor PR: Desk-Net Schedule Side Panel](https://github.com/livingdocsIO/livingdocs-editor/pull/5134)
 * [Editor PR: Metadata Plugin li-desknet-platforms](https://github.com/livingdocsIO/livingdocs-editor/pull/5155)
-
-### Internationalization i18n
-
-TODO@beni: Is this already something to announce? And if yes, how?
-
-References:
-* [Internationalization i18n Iteration 1](https://github.com/livingdocsIO/livingdocs-editor/pull/5179)
 
 
 ### Document Inbox Extensions
