@@ -485,6 +485,7 @@ References:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v179.3.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.8): fix(project-config): load an old designConfig with correct designVersion for an embedded design
 - [v179.3.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.7): fix(channel-config): fix transformToPointer to not throw during property deconstruction
 - [v179.3.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.6): fix(metadata): add support for config.hideFromForm in metadata plugins
 - [v179.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.5): fix: incorporate PR feedback
