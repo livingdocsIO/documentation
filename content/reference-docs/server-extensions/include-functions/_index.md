@@ -154,7 +154,10 @@ module.exports = {
         return {html: ''}
       }
     },
-    blockEditorInteraction: 'initial'
+    blockEditorInteraction: 'initial',
+
+    // Remounts the scripts that are inside the html of an include when this html is re-rendered
+    remountScripts: true
   }
 }
 ```
