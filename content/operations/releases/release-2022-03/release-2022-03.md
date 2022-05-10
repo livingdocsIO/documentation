@@ -824,6 +824,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v171.1.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.40): fix(project-config): load an old designConfig with correct designVersion for an embedded design
 - [v171.1.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.39): fix(channel-config): fix transformToPointer to not throw during property deconstruction
 - [v171.1.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.38): fix: incorporate PR feedback
 - [v171.1.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.37): chore(tests): Test added
