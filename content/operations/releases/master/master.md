@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: 🐞 Public API: allows to unpublish a document via import [livingdocs-server #4485 v184.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4485)
 * :new: 🔥 Remove support for core plugin whitelist [livingdocs-server #4484 v184.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4484)
 * :new: Better feedback on metadata plugin registration [livingdocs-server #4483 v183.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4483)
 * :new: 🐞 Project Config: load an old designConfig with correct designVersion for an embedded design [livingdocs-server #4479 v182.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4479)
