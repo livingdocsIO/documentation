@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Better feedback on metadata plugin registration [livingdocs-server #4483 v183.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4483)
 * :new: 🐞 Project Config: load an old designConfig with correct designVersion for an embedded design [livingdocs-server #4479 v182.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4479)
 * :new: Better Validation Errors for Schemas with Discriminator Schema  [livingdocs-server #4473 v182.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4473)
 * :new: fix(quoteIcons): now grey and blue [livingdocs-editor #5268 v80.11.12](https://github.com/livingdocsIO/livingdocs-editor/pull/5268)
