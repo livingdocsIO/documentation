@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: camelize project columns returned from database [livingdocs-server #4489 v184.0.3](https://github.com/livingdocsIO/livingdocs-server/pull/4489)
 * :new: Table dashboard drag+drop [livingdocs-editor #5313 v80.12.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5313)
 * :new: 🐞 Import: Unpublish document by externalId [livingdocs-server #4488 v184.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4488)
 * :new: 🐞 ImportLog: Show 'unpublished' in import log [livingdocs-editor #5318 v80.11.13](https://github.com/livingdocsIO/livingdocs-editor/pull/5318)
