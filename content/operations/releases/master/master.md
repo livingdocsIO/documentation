@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: don't initialize delivery links on content type initialization [livingdocs-editor #5314 v80.12.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5314)
 * :new: fix: camelize project columns returned from database [livingdocs-server #4489 v184.0.3](https://github.com/livingdocsIO/livingdocs-server/pull/4489)
 * :new: Table dashboard drag+drop [livingdocs-editor #5313 v80.12.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5313)
 * :new: 🐞 Import: Unpublish document by externalId [livingdocs-server #4488 v184.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4488)
