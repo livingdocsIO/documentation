@@ -9,10 +9,7 @@ menus:
 
 ## Introduction
 
-Every document can have metadata. Which metadata properties a document has is defined by its `contentType`. A metadata object consists of key-value pairs where the key is unique per document.
-
-Every metadata property has a type which is called a `metadata plugin`.
-Livingdocs offers pre-made [plugins]({{< ref "/reference-docs/document/metadata/metadata-plugin-list" >}}) for a wide array of data types like strings, dates or references to other documents. Where this is not enough, it's possible to create your own metadata plugins (see [references](#references) for more info).
+Every document is defined by it's `contentType` and every `contentType` has to define it's metadata. The metadata object (storage) consists of key-value pairs where the key is unique per document.
 
 Example of a metadata object as it could be returned by the Public API:
 ```json
@@ -30,33 +27,52 @@ Example of a metadata object as it could be returned by the Public API:
 
 ## Configuration
 
-A metadata configuration describes the metadata properties. Each `contentType` must provide its own configuration.
+A metadata configuration describes the metadata properties each `contentType` (or `mediaType` or `include`) can have.
 
 ```js
 // Metadata configuration example in a contentType
-metadata: [{
-  handle: 'title',
-  plugin: 'li-text',
-  config: {
-    // li-text specific configs
-    maxLength: 200,
+metadata: [
+  {
+    handle: 'title',
+    type: 'li-text',
+    config: {
+      // general configs available for all plugins
+      required: true,
+      requiredErrorMessage: 'please provide a title',
+      hideFromForm: false
 
-    // general configs available for all plugins
-    required: true,
-    requiredErrorMessage: 'please provide a title'
+      // li-text specific configs
+      maxLength: 200,
+    }
+  },
+  {
+    handle: 'description',
+    type: 'li-text'
+  },
+  {
+    handle: 'reference',
+    type: 'li-document-reference',
+    config: {
+      contentType: 'gallery'
+    },
+    ui: {
+      label: 'Gallery',
+    }
   }
-}, {
-  handle: 'slug',
-  plugin: 'li-text',
-  config: {
-    // Do not display this field in the Editor
-    hideFromForm: true
-  }
-}, {
-  handle: 'seo',
-  plugin: 'li-seo'
-}]
+]
 ```
+
+## Livingdocs Metadata Plugins
+
+Livingdocs offers metadata [plugins]({{< ref "/reference-docs/document/metadata/metadata-plugin-list" >}}) for a wide array of data types like strings, dates or references to other documents. These plugins should fulfill the most common use cases and have a strict schema.
+
+:information_source: A combination of metadata `type` (plugin) and configuration defines how the UI in the editor looks and in what format data are stored.
+
+
+## Create your own Plugins
+
+If the provided plugins do not fulfill your needs, you can create your own metadata plugin. Check this [guide]({{< ref "/guides/documents/metadata/metadata-examples" >}}) for an example.
+
 
 ## References
 

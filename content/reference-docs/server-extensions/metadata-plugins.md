@@ -8,19 +8,17 @@ menus:
 
 ## Overview
 
-A metadata plugin defines the format and validation of a metadata value. It also defines how this value is indexed in the elasticsearch publication index.
+With a metadata plugin these things can be defined
+- plugin name
+- storage schema
+- config and ui config schema
+- on publish validation
+- hooks for the document update and publication process
 
-There are synchronous hooks for update, publish and unpublish events.
-
-If a custom metadata plugin should appear in the Prepare Publish screen in the Editor
-there also must be a UI plugin in the editor which can render the form UI.
-
-You can find the implementations of the Livingdocs metadata plugins here: [plugins/metadata](https://github.com/livingdocsIO/livingdocs-server/tree/master/plugins/metadata) on the livingdocs-server.
+You can find Livingdocs metadata plugins here: [plugins/metadata](https://github.com/livingdocsIO/livingdocs-server/tree/master/plugins/metadata) on the livingdocs-server.
 
 
-## Write a Custom Plugin
-
-When the behavior of the standard plugins are not enough, you can write custom plugins.
+## Schema of a Metadata Plugin
 
 ```js
 module.exports = {
