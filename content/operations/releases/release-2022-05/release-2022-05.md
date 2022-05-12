@@ -485,6 +485,7 @@ References:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v179.3.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.11): chore: add tests for `findProjects()`
 - [v179.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.10): fix(import): unpublish document by externalId
 - [v179.3.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.9): fix(publicApi): allow to pass id/checksum/flags.unpublish only via /api/v1/import/documents
 - [v179.3.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.8): fix(project-config): load an old designConfig with correct designVersion for an embedded design
