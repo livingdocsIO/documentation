@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(softLock): Soft Lock not disabled by entering publish screen [livingdocs-editor #5322 v80.12.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5322)
 * :new: Enter key submits li-schema-form [livingdocs-editor #5332 v80.12.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5332)
 * :new: 🎁  Use project config design when not passing infos to the import [livingdocs-server #4495 v184.0.4](https://github.com/livingdocsIO/livingdocs-server/pull/4495)
 * :new: fix: don't initialize delivery links on content type initialization [livingdocs-editor #5314 v80.12.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5314)
