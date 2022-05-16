@@ -70,7 +70,7 @@ customerId: 'daily-planet'
 
 ```js
 logs: {
-  enabled: true,
+  enabled: true, // default: true
 
   // possible log levels: 'error', 'warn', 'info', 'debug', 'trace'
   level: 'warn',
@@ -78,10 +78,23 @@ logs: {
   // use `true` for development to have a formatted output
   pretty: false,
 
-  // enable request logs
-  logRequests: true
+  // enable http request logs
+  // (requests logs always have a log level of 'info' and will be logged
+  // regardless of the configured log level)
+  logRequests: true,
+
+  // Pass custom pino formatters (these are ignored when: `pretty: true`)
+  // Pino Documentation: https://github.com/pinojs/pino/blob/master/docs/api.md#formatters-object
+  formatters: {
+
+    // This example will log levels as strings instead of the default numbers
+    level(label, level) {
+      return { level: label };
+    },
+  },
 }
 ```
+
 ## Services
 
 #### Server
