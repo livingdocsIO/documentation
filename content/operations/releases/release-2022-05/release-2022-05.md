@@ -499,6 +499,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v80.10.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.18): fix(softLock): Soft Lock not disabled by entering publish screen
 - [v80.10.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.17): fix: don't initialize delivery links on content type initialization
 - [v80.10.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.16): fix(import): also show unpublished state
 - [v80.10.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.15): fix(quoteIcons): Grey and blue
