@@ -839,6 +839,7 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
 
 ### Livingdocs Editor Patches
+- [v77.2.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.55): fix(main-navigation): Allow loading when user has no project
 - [v77.2.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.54): fix(softLock): Soft Lock not disabled by entering publish screen
 - [v77.2.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.53): fix(quoteIcons): Grey and blue
 - [v77.2.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.52): fix(softLock): Now correctly spaced
