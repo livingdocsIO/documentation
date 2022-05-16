@@ -47,7 +47,7 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 
 A simple checkbox which you can turn on/off.
 
-If you want to have the field checked on during document creation, you can do that via [defaultMetadata](({{< ref "/reference-docs/project-config/content-types/#default-metadata" >}})) in your projectConfig.
+If you want to have the field checked on during document creation, you can do that via [defaultMetadata]({{< ref "/reference-docs/project-config/content-types#default-metadata" >}}) in your projectConfig.
 
 **Storage Format**: Boolean\
 **Default UI**: checkbox\

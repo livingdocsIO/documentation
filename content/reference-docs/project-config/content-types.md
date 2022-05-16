@@ -129,7 +129,6 @@ contentTypes: [{
 ```
 
 ## Default Content
-*has UI support*
 
 The default content defines what components are pre-set on your document upon creation.
 
@@ -139,11 +138,26 @@ The default content is simply a (valid) Livingdocs JSON applying to your design.
 
 One useful property on components within the default content is the `position: fixed` property. It allows to fix a component in place, useful, e.g. for headers. [Read more]({{< ref "/reference-docs/editor-extensions/editor-configuration#pin-components" >}})
 
+```js
+defaultContent: [
+  {
+    component: 'title',
+    position: 'fixed'
+  }
+]
+```
+
 ## Default Metadata
 
 The default [metadata]({{< ref "/reference-docs/document/metadata" >}}) defines what metadata properties are predefined on your document upon creation.
 
 Passed metadata (via Editor on document creation) are preferred over default metadata. The merging is done property by property on the top level of every metadata field.
+
+```js
+defaultMetadata: { // Added in: release-2022-05
+  author: 'Mister X'
+}
+```
 
 
 ## Editor Wrapper
