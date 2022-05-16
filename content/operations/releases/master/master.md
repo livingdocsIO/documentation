@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Improvement/li-Switch [livingdocs-editor #5324 v80.12.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5324)
 * :new: fix(main-navigation): Allow loading when user has no project [livingdocs-editor #5333 v80.12.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5333)
 * :new: fix(softLock): Soft Lock not disabled by entering publish screen [livingdocs-editor #5322 v80.12.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5322)
 * :new: Enter key submits li-schema-form [livingdocs-editor #5332 v80.12.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5332)
