@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix desknet update function [livingdocs-server #4452 v184.0.6](https://github.com/livingdocsIO/livingdocs-server/pull/4452)
 * :new: fix(responsive): Now fits inside page always [livingdocs-editor #5315 v80.12.9](https://github.com/livingdocsIO/livingdocs-editor/pull/5315)
 * :new: Comments fix [livingdocs-editor #5153 v80.12.8](https://github.com/livingdocsIO/livingdocs-editor/pull/5153)
 * :new: Fix import when `untouched` behavior [livingdocs-server #4492 v184.0.5](https://github.com/livingdocsIO/livingdocs-server/pull/4492)
