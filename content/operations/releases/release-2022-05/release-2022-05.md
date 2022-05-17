@@ -500,6 +500,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v80.10.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.20): fix(metadata): properly pass documentId to getDataProvider
 - [v80.10.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.19): fix(main-navigation): Allow loading when user has no project
 - [v80.10.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.18): fix(softLock): Soft Lock not disabled by entering publish screen
 - [v80.10.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.17): fix: don't initialize delivery links on content type initialization
