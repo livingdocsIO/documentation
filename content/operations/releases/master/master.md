@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Legacy dashboard: Make Cmd/Ctrl + click work again to open documents in new tab [livingdocs-editor #5293 v80.12.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5293)
 * :new: Improvement/li-Switch [livingdocs-editor #5324 v80.12.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5324)
 * :new: fix(main-navigation): Allow loading when user has no project [livingdocs-editor #5333 v80.12.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5333)
 * :new: fix(softLock): Soft Lock not disabled by entering publish screen [livingdocs-editor #5322 v80.12.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5322)
