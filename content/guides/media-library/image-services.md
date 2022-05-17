@@ -267,16 +267,31 @@ Example of registering an image service:
 ```js
 const myImageService = {
   name: 'myImageService',
+  hasBrowserPlugin: true
   supportsCrop: true,
   supportsWidth: true,
+  supportsVideoConversion: true, // default: false
+  // Either allowedMimeTypes or disabledMimeTypes can be defined.
+  // If you define both of them, disabledMimeTypes will be ignored.
+  // If neither is defined, all mime types are allowed.
+  allowedMimeTypes: ['image/jpeg', 'image/png'],
+  disabledMimeTypes: ['image/gif', 'image/webp'],
 
   // This is not a real-world example. It just rewrites
   // the url to go through myproxy.com and embeds the width
   // and image url in the path of the generated url.
   getUrl: function (imageUrl, {crop, width}) {
-    return imageUrl || ''
+    imageUrl = imageUrl || ''
 
     return `https://myproxy.com/w${width}/${imageUrl}`
+  },
+  // Return an image url without any cropping applied. This is used
+  // e.g for the cropping interface. This is not a real-world example neither,
+  // it just rewrites the url to go through myproxy.com.
+  getUncroppedUrl: function (imageUrl) {
+    imageUrl = imageUrl || ''
+
+    return `https://myproxy.com/${imageUrl}`
   }
 }
 
