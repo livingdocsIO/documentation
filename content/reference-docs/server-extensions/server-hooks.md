@@ -50,6 +50,7 @@ With publication hooks you can influence the [`Document Publication Lifecycle`](
 **API of Publication Hooks**
 * `preparePublishHookAsync`: `({documentVersion}) {return}`
 * `postPublishHookAsync`: `({documentVersion}) {return}`
+* `preUnpublishHookAsync`: `({documentVersion}) {return}`
 * `postUnpublishHookAsync`: `({documentVersion}) {return}`
 * {{< removed-in release-2022-05 >}}: `unpublishHookAsync`: `({documentType, documentVersion}) {return}`
 
@@ -82,8 +83,14 @@ liServer.registerInitializedHook(async () => {
       return
     }
     // {{< added-in release-2022-05 >}}
+    async preUnpublishHookAsync ({documentVersion}) {
+      liServer.log.info(`preUnpublishHookAsync called for documentType: ${documentVersion.documentType}!`)
+      liServer.log.debug({documentVersion})
+      return
+    },
+    // {{< added-in release-2022-05 >}}
     async postUnpublishHookAsync ({documentVersion}) {
-      liServer.log.info(`unpublishHookAsync called for documentType: ${documentVersion.documentType}!`)
+      liServer.log.info(`postUnpublishHookAsync called for documentType: ${documentVersion.documentType}!`)
       liServer.log.debug({documentVersion})
       return
     }
