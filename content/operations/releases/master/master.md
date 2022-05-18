@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: remove targetLength when it is set to nothing. [livingdocs-editor #5352 v80.12.11](https://github.com/livingdocsIO/livingdocs-editor/pull/5352)
 * :new: Draft: ensure remoteDocument reactive state is up to date [livingdocs-editor #5354 v80.12.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5354)
 * :new: Fix desknet update function [livingdocs-server #4452 v184.0.6](https://github.com/livingdocsIO/livingdocs-server/pull/4452)
 * :new: fix(responsive): Now fits inside page always [livingdocs-editor #5315 v80.12.9](https://github.com/livingdocsIO/livingdocs-editor/pull/5315)
