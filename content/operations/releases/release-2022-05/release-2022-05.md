@@ -501,6 +501,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v80.10.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.25): fix: remove flyout backdrop logic from the toolbar
 - [v80.10.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.24): fix: remove targetLength when it is set to nothing
 - [v80.10.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.23): fix(draft): ensure remote document state is recomputed after syncAfterPropertyUpdate
 - [v80.10.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.22): fix(responsive): Now fits inside page always
