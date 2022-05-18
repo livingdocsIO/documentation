@@ -451,6 +451,8 @@ designs: {
 
 ```js
 documents: {
+  // enable/disable the publish control consumers. With readonly processes, you should configure that
+  enableConsumers: true,
   selectedImageService: 'imgix',
   imageServices: {
     imgix: {} // imageService specific configuration
