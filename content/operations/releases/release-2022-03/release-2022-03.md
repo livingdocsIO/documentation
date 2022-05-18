@@ -841,6 +841,7 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
 
 ### Livingdocs Editor Patches
+- [v77.2.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.59): fix: remove targetLength when it is set to nothing
 - [v77.2.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.58): fix(responsive): Now fits inside page always
 - [v77.2.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.57): fix(legacy dashboard): Make Cmd/Ctrl + click work again to open documents in new tab
 - [v77.2.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.56): fix(frameworkBump): to 23.0.11
