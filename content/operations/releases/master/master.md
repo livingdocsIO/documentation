@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(FrameworkVersion): bump to 23.2.5 [livingdocs-server #4510 v184.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4510)
 * :new: fix: tag proxy suggestion [livingdocs-editor #5372 v80.14.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5372)
 * :new: fix: bump framework to version 23.2.4 [livingdocs-server #4506 v184.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4506)
 * :new: fix: bump framework to version 23.2.4 [livingdocs-editor #5365 v80.14.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5365)
