@@ -424,6 +424,7 @@ References:
 * [Filter: Add reference filter support](https://github.com/livingdocsIO/livingdocs-server/pull/4419)
 * [Webhooks: Support project-secrets for webhooks config](https://github.com/livingdocsIO/livingdocs-server/pull/4438)
 * [Woodwing: Support project-secrets for Woodwing config](https://github.com/livingdocsIO/livingdocs-server/pull/4219)
+* [Comyan: Support project-secrets for Comyan config](https://github.com/livingdocsIO/livingdocs-server/pull/4426)
 
 ### Improvements
 
