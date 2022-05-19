@@ -841,6 +841,7 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
 
 ### Livingdocs Editor Patches
+- [v77.2.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.61): fix: close previous flyout when opening another one
 - [v77.2.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.60): fix: remove flyout backdrop logic from the toolbar
 - [v77.2.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.59): fix: remove targetLength when it is set to nothing
 - [v77.2.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.58): fix(responsive): Now fits inside page always
