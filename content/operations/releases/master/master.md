@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: bump framework to version 23.2.4 [livingdocs-server #4506 v184.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4506)
 * :new: fix: bump framework to version 23.2.4 [livingdocs-editor #5365 v80.14.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5365)
 * :new: fix: move clipboard `metakey` deselection on `mousedown` [livingdocs-editor #5310 v80.14.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5310)
 * :new: Feat/Collapse Indicator [livingdocs-editor #5343 v80.14.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5343)
