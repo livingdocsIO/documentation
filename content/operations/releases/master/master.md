@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Feat/Collapse Indicator [livingdocs-editor #5343 v80.14.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5343)
 * :new: Remove Component Library and ContentType config UI [livingdocs-editor #5342 v80.13.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5342)
 * :new: Remove Component Library and ContentType config UI [livingdocs-server #4502 v184.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4502)
 * :new: fix: close opened flyouts when the back button is clicked [livingdocs-editor #5361 v80.12.13](https://github.com/livingdocsIO/livingdocs-editor/pull/5361)
