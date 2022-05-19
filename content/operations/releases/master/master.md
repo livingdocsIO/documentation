@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: close opened flyouts when the back button is clicked [livingdocs-editor #5361 v80.12.13](https://github.com/livingdocsIO/livingdocs-editor/pull/5361)
 * :new: fix: remove flyout backdrop logic from the toolbar [livingdocs-editor #5312 v80.12.12](https://github.com/livingdocsIO/livingdocs-editor/pull/5312)
 * :new: fix: remove targetLength when it is set to nothing. [livingdocs-editor #5352 v80.12.11](https://github.com/livingdocsIO/livingdocs-editor/pull/5352)
 * :new: Draft: ensure remoteDocument reactive state is up to date [livingdocs-editor #5354 v80.12.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5354)
