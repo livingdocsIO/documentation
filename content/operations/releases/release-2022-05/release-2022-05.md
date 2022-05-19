@@ -502,6 +502,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v80.10.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.27): fix(resolvedCount): resolved count reactive on delete
 - [v80.10.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.26): fix: close previous flyout when opening another one
 - [v80.10.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.25): fix: remove flyout backdrop logic from the toolbar
 - [v80.10.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.24): fix: remove targetLength when it is set to nothing
