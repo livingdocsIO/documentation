@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Dashboards: Ignore documentType filter when contentType filter present [livingdocs-editor #5368 v80.15.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5368)
 * :new: Improve metadata form [livingdocs-editor #5249 v80.15.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5249)
 * :new: Table dashboard document id search [livingdocs-editor #5347 v80.15.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5347)
 * :new: fix(FrameworkVersion): bump to 23.2.5 [livingdocs-editor #5374 v80.14.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5374)
