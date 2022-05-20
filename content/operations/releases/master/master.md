@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: add reactivity for remoteDocument [livingdocs-editor #5380 v80.15.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5380)
 * :new: Support elasticsearch v8, redis v7, node v18 [livingdocs-server #4512 v184.1.3](https://github.com/livingdocsIO/livingdocs-server/pull/4512)
 * :new: Dashboards: Ignore documentType filter when contentType filter present [livingdocs-editor #5368 v80.15.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5368)
 * :new: Improve metadata form [livingdocs-editor #5249 v80.15.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5249)
