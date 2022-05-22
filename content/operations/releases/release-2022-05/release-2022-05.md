@@ -82,7 +82,7 @@ The following capabilities will follow with the July / September Releases:
 - marking publications as significant (to show your readers, when an existing article got a significant update)
 - management of a date (with user edit possibilities) to show as the publication date to your readers
 
-Consult the [Guide on «Publish Control»]]({{< ref "/guides/editor/publish-control" >}}) to learn how to configure this feature.
+Consult the [Guide on «Publish Control»]({{< ref "/guides/editor/publish-control" >}}) to learn how to configure this feature.
 
 * [Documentation TODO]()
 * [Basic Document History](https://github.com/livingdocsIO/livingdocs-editor/pull/5069)
