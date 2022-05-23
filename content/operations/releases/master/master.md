@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat: hide empty metadata form navigation [livingdocs-editor #5385 v80.16.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5385)
 * :new: Improvement/Block Icons pt.4 [livingdocs-editor #5382 v80.15.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5382)
 * :new: fix: add reactivity for remoteDocument [livingdocs-editor #5380 v80.15.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5380)
 * :new: Support elasticsearch v8, redis v7, node v18 [livingdocs-server #4512 v184.1.3](https://github.com/livingdocsIO/livingdocs-server/pull/4512)
