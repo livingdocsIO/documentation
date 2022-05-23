@@ -501,6 +501,7 @@ References:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v179.3.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.16): fix(document validation): component length validation now working
 - [v179.3.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.15): chore(example server): use an table dashboard with useDashboard in service teaser component
 - [v179.3.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.14): fix: tests for desk-net api
 - [v179.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.13): fix(hooks): Implement `preUnpublishHookAsync` as replacement for `unpublishHookAsync`
