@@ -203,12 +203,14 @@ Get a list of available [metadata plugins]({{< ref "/reference-docs/document/met
 ## Metadata Groups
 *has UI support*
 
-The Metadata Groups allow you to logically group the fields for display on the publish panel.
+The Metadata Groups allow you to logically group the fields into collapsible cards. By default all the cards are expanded but can be configured to be collapsed with the property `metadataGroups[].expanded: false`.
+Once a card has been manually collapsed/expanded in the UI, then this state will be saved in the local storage of the browser and the card will show in that state even after a page reload.
 
 The schema looks as follows:
 ```js
   metadataGroups: ms.arrayOf(ms.strictObj({
     label: 'string',
+    expanded: ms.boolean(), // optional, default is true
     properties: ms.arrayOf(ms.string())
   }))
 ```
@@ -216,6 +218,7 @@ e.g.:
 ```js
   metadataGroups: [{
       label: 'SEO',
+      expanded: false,
       properties: ['keywords', 'title']
   }]
 ```
