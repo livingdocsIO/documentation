@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Component Max Length validation not working [livingdocs-server #4511 v184.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4511)
 * :new: 🐞Dashboards: correctly apply useDashboard from li-document-reference ui.config [livingdocs-editor #5383 v80.16.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5383)
 * :new: Dashboards for include references [livingdocs-server #4515 v184.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/4515)
 * :new: feat: hide empty metadata form navigation [livingdocs-editor #5385 v80.16.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5385)
