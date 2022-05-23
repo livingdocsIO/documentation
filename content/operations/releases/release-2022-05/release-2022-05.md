@@ -518,6 +518,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v80.10.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.33): fix: bump framework to version 23.1.11
 - [v80.10.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.32): chore(clipboard): Add Windows/Linux multi-select support
 - [v80.10.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.31): fix(dashboards): correctly apply useDashboard config from li-document-rerefencee ui config
 - [v80.10.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.30): fix(li-publish-toolbar): hide and show avatar/app-menu according to screen size
