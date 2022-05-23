@@ -843,6 +843,7 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
 
 ### Livingdocs Editor Patches
+- [v77.2.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.64): chore(clipboard): Add Windows/Linux multi-select support
 - [v77.2.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.63): fix(FrameworkVersion): bump to 23.0.13
 - [v77.2.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.62): fix(resolvedCount): resolved count reactive on delete
 - [v77.2.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.61): fix: close previous flyout when opening another one
