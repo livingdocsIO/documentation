@@ -519,6 +519,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v80.10.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.35): fix(metadata): don't log deprecation notice when liMetaTextareaForm is configured
 - [v80.10.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.34): fix: tag proxy suggestion
 - [v80.10.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.33): fix: bump framework to version 23.1.11
 - [v80.10.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.32): chore(clipboard): Add Windows/Linux multi-select support
