@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: 🐞Dashboards: correctly apply useDashboard from li-document-reference ui.config [livingdocs-editor #5383 v80.16.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5383)
 * :new: Dashboards for include references [livingdocs-server #4515 v184.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/4515)
 * :new: feat: hide empty metadata form navigation [livingdocs-editor #5385 v80.16.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5385)
 * :new: Improvement/Block Icons pt.4 [livingdocs-editor #5382 v80.15.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5382)
