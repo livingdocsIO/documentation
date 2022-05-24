@@ -84,7 +84,7 @@ The following capabilities will follow with the July / September Releases:
 
 Consult the [Guide on «Publish Control»]({{< ref "/guides/editor/publish-control" >}}) to learn how to configure this feature.
 
-* [Documentation TODO]()
+* [Guide](https://docs.livingdocs.io/guides/editor/publish-control/)
 * [Basic Document History](https://github.com/livingdocsIO/livingdocs-editor/pull/5069)
 * [Scheduled Unpublish](https://github.com/livingdocsIO/livingdocs-editor/pull/5177)
 * [Document Inbox Assignment](https://github.com/livingdocsIO/livingdocs-editor/pull/5185)
@@ -214,9 +214,10 @@ References:
 ### Remove unpublishHook / add postUnpublishHook :fire:
 
 - :fire: Remove the `unpublishHook` in `registerPublicationHooks` and `registerPublicationServerHooks`
-- 🎁 Introduce the `postUnpublishHook`
+- 🎁 Introduce the `postUnpublishHookAsync`
+- 🎁 Introduce the `preUnpublishHookAsync`
 
-Please migrate your `unpublishHookAsync` hooks to `postUnpublishHookAsync`. The new hook is now executed outside transactions.
+Please migrate your `unpublishHookAsync` hooks to `postUnpublishHookAsync` or `preUnpublishHookAsync`. The new hook is now executed outside transactions.
 
 ```diff
 const documentsApi = liServer.features.api('li-documents')
@@ -481,7 +482,11 @@ References:
     * [Allow specialChars and comments on plainText directives](https://github.com/livingdocsIO/livingdocs-editor/pull/5175)
     * [Fix positioning of `li-form-select`](https://github.com/livingdocsIO/livingdocs-editor/pull/5213)
 * Server
-  * [Public API: Use type and not mediaType for incoming references](https://github.com/livingdocsIO/livingdocs-server/pull/4363)
+  * Public API
+    * [Use type and not mediaType for incoming references](https://github.com/livingdocsIO/livingdocs-server/pull/4363)
+    * [Allow to pass id/checksum/flags.unpublish via /api/v1/import/documents](https://github.com/livingdocsIO/livingdocs-server/pull/4485)
+    * [Use project config design when not passing design to the import](https://github.com/livingdocsIO/livingdocs-server/pull/4495)
+    * [Allow to unpublish a document by externalId](https://github.com/livingdocsIO/livingdocs-server/pull/4488)
   * Retresco
     * [Load entities from any metadata handle](https://github.com/livingdocsIO/livingdocs-server/pull/4365)
     * [Reduce update frequency by ignoring scores](https://github.com/livingdocsIO/livingdocs-editor/pull/5211)
@@ -502,57 +507,10 @@ Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
 - [v179.3.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.16): fix(document validation): component length validation now working
-- [v179.3.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.15): chore(example server): use an table dashboard with useDashboard in service teaser component
-- [v179.3.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.14): fix: tests for desk-net api
-- [v179.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.13): fix(hooks): Implement `preUnpublishHookAsync` as replacement for `unpublishHookAsync`
-- [v179.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.12): fix(import): use project config design when not passing infos to the import
-- [v179.3.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.11): chore: add tests for `findProjects()`
-- [v179.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.10): fix(import): unpublish document by externalId
-- [v179.3.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.9): fix(publicApi): allow to pass id/checksum/flags.unpublish only via /api/v1/import/documents
-- [v179.3.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.8): fix(project-config): load an old designConfig with correct designVersion for an embedded design
-- [v179.3.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.7): fix(channel-config): fix transformToPointer to not throw during property deconstruction
-- [v179.3.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.6): fix(metadata): add support for config.hideFromForm in metadata plugins
-- [v179.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.5): fix: incorporate PR feedback
-- [v179.3.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.4): fix(metadata): make plugins compatible with project settings again
-- [v179.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.3): fix: incorporate PR feeback
-- [v179.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.2): fix: allow formatting of log levels as strings
-- [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
+
 
 ### Livingdocs Editor Patches
 - [v80.10.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.36): fix(noComments): Allow component deletion without comments
-- [v80.10.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.35): fix(metadata): don't log deprecation notice when liMetaTextareaForm is configured
-- [v80.10.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.34): fix: tag proxy suggestion
-- [v80.10.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.33): fix: bump framework to version 23.1.11
-- [v80.10.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.32): chore(clipboard): Add Windows/Linux multi-select support
-- [v80.10.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.31): fix(dashboards): correctly apply useDashboard config from li-document-rerefencee ui config
-- [v80.10.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.30): fix(li-publish-toolbar): hide and show avatar/app-menu according to screen size
-- [v80.10.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.29): fix(dashboards): centralize the knowledge about the visible documen types on dashboards
-- [v80.10.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.28): fix(FrameworkVersion): bump to 23.1.10
-- [v80.10.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.27): fix(resolvedCount): resolved count reactive on delete
-- [v80.10.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.26): fix: close previous flyout when opening another one
-- [v80.10.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.25): fix: remove flyout backdrop logic from the toolbar
-- [v80.10.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.24): fix: remove targetLength when it is set to nothing
-- [v80.10.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.23): fix(draft): ensure remote document state is recomputed after syncAfterPropertyUpdate
-- [v80.10.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.22): fix(responsive): Now fits inside page always
-- [v80.10.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.21): fix(legacy dashboard): Make Cmd/Ctrl + click work again to open documents in new tab
-- [v80.10.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.20): fix(metadata): properly pass documentId to getDataProvider
-- [v80.10.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.19): fix(main-navigation): Allow loading when user has no project
-- [v80.10.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.18): fix(softLock): Soft Lock not disabled by entering publish screen
-- [v80.10.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.17): fix: don't initialize delivery links on content type initialization
-- [v80.10.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.16): fix(import): also show unpublished state
-- [v80.10.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.15): fix(quoteIcons): Grey and blue
-- [v80.10.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.14): fix(softLock): Now correctly spaced
-- [v80.10.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.13): chore(desknet): Add platforms metadata tests
-- [v80.10.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.12): fix(metadata): Use documentType in labels instead of articles
-- [v80.10.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.11): fix(editing toolbar): move app-menu to the top row for narrow screens
-- [v80.10.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.10): fix(document): consider future metadata based publication date a schedule only for published documents
-- [v80.10.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.9): fix(softLock): Button inline
-- [v80.10.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.8): fix(translation manager): Use correct locale for checking if there is a new asset
-- [v80.10.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.7): fix: update vue-loader from 15.9.7 to 15.9.8
-- [v80.10.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.6): fix: move @intlify/vue-i18n-loader from devDependencies to dependencies
-- [v80.10.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.5): fix(relative time): i18n
-- [v??.?.?](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v??.?.?): text
-
   ---
   **Icon Legend**
   * Breaking changes: :fire:
