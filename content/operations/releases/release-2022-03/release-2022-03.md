@@ -824,6 +824,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v171.1.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.46): fix: create new version to deploy to npm
 - [v171.1.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.45): fix: wrong brackets after rebase
 - [v171.1.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.44): fix(dependencies): update vulnerable dependencies
 - [v171.1.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.43): fix(FrameworkVersion): bump to 23.0.13
