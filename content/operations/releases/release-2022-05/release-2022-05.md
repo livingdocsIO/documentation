@@ -506,6 +506,7 @@ References:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v179.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.17): fix: desknet integration api updates correctly to desk-net
 - [v179.3.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.16): fix(document validation): component length validation now working
 
 
