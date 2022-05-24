@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(comments): Comments without components no longer break [livingdocs-editor #5397 v80.17.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5397)
 * :new: add custom-field desk-net api [livingdocs-server #4517 v184.1.6](https://github.com/livingdocsIO/livingdocs-server/pull/4517)
 * :new: feat(media library): Add id search tooltip [livingdocs-editor #5389 v80.17.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5389)
 * :new: fix(softLock): Soft lock object can be empty [livingdocs-editor #5394 v80.16.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5394)
