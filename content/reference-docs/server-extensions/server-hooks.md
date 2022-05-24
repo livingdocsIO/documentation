@@ -172,6 +172,34 @@ async postUnpublishHookAsync ({documentVersion}) {
 }
 ```
 
+### preUnpublishHookAsync
+
+The `preUnpublishHookAsync` hook allows modifications of the [DocumentVersion]({{< ref "/reference-docs/server-extensions/document-version.md" >}}) before a document will be unpublished.
+
+**Use Cases**
+* Modify document (DocumentVersion)
+* Error feedback with throwing an error (document will not be unpublished)
+
+**Example**
+```js
+async preUnpublishHookAsync ({documentVersion}) {
+  if (documentVersion.metadata.title === 'Let me pass') {
+    // modify the document here
+    return
+  } else {
+    // Example Validation Error for a metadata property
+    const err = new Error('Metadata Errors')
+    err.name = 'MetadataValidationErrors'
+    err.status = 400
+    err.invalidMetadata = [{
+      metadataProperty: 'title'
+      message: 'Document cannot be unpublished because ...',
+    }]
+    throw err
+  }
+}
+```
+
 
 ## Render Hooks
 
