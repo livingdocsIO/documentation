@@ -511,6 +511,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.38): fix(comments): Comments without components no longer break
 - [v80.10.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.37): fix(softLock): Soft lock object can be empty
 - [v80.10.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.36): fix(noComments): Allow component deletion without comments
   ---
