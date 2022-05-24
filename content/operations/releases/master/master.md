@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(media library): Add id search tooltip [livingdocs-editor #5389 v80.17.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5389)
 * :new: fix(softLock): Soft lock object can be empty [livingdocs-editor #5394 v80.16.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5394)
 * :new: fix(noComments): Allow component deletion without comments [livingdocs-editor #5391 v80.16.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5391)
 * :new: Component Max Length validation not working [livingdocs-server #4511 v184.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4511)
