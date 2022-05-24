@@ -845,6 +845,7 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
 
 ### Livingdocs Editor Patches
+- [v77.2.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.68): fix(comments): Comments without components no longer break
 - [v77.2.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.67): fix(softLock): Soft lock object can be empty
 - [v77.2.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.66): fix(noComments): Allow component deletion without comments
 - [v77.2.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.65): fix: tag proxy suggestion
