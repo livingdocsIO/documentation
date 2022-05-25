@@ -18,6 +18,8 @@ using e.g. the `LI_TOKEN` environment variable.
 
 The dotfile's format is YAML (and thus JSON works as well). And the CLI will look for the dotfile in the current working directory.
 
+If you are using [Livingdocs Service](edit.livingdocs.io), you need to set the production host as `https://server.livingdocs.io`.
+
 ## Example: Multiple environments
 
 `.livingdocs-cli` file in the root of your working directory:
