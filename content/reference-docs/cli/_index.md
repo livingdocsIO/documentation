@@ -13,7 +13,7 @@ menus:
 
 ## Documentation
 
-The CLI is used to modify setting in a live Livingdocs project, without the need to touch its code. 
+The `livingdocs-cli` is used to update a Livingdocs Project Config. 
 
 It's the only way of changing project config and components if you are using the [Livingdocs Service](https://edit.livingdocs.io/).
 
