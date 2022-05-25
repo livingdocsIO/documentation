@@ -18,19 +18,22 @@ An example:
 settings: {
   handle: 'magazine',
   languages: {
-    available: [{
-      label: 'German',
-      locale: 'de'
-    }, {
-      label: 'English',
-      locale: 'en'
-    }],
+    available: [
+      {
+        label: 'German',
+        locale: 'de'
+      },
+      {
+        label: 'English',
+        locale: 'en'
+      }
+    ],
     defaultLanguage: {
       label: 'German',
       locale: 'de'
     },
     requiredOnCreation: true,
-    translationWorkflow: true
+    translationWorkflow: true // shows "translate" icon on the toolbar
   },
   integrations: {
     // NOTE: imatrics uses our secure $secretRef method that will be used by all plugins in future
@@ -221,10 +224,10 @@ settings: {
 
 Livingdocs allows you to define documents in multiple languages as well as integrating a translation workflow to translate a document from one language to the other.
 
-The `languages` key defines which languages are available for documents.
-The `defaultLanguage` defines a default to create new documents in.
-The `requiredOnCreation` flag, if true, forces the user to choose a language before creating a document.
-The `translationWorkflow` flag, if true, enables the translation tools in Livingdocs.
+* `languages` defines which languages are available for documents.
+* `defaultLanguage` set a default language for new documents created.
+* `requiredOnCreation: true` flag, forces the user to choose a language before creating a document.
+* `translationWorkflow: true` flag, enables the translation tools in Livingdocs (shows "translate" icon on the toolbar). This feature is only available for documents and pages (but not for a data-record).
 
 If you activate the translation feature, then the `language` metadata plugin on a document will contain a `groupId`. You can use this in the `languageGroupId` parameter of the [Publication Search public API](https://edit.livingdocs.io/public-api) (under "Search Publications") call to retrieve all translations of a document.
 
