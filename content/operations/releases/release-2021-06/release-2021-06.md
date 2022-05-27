@@ -2,6 +2,7 @@
 type: release-notes
 title: June 2021 Release
 description: Release notes for release-2021-06
+hideSectionTeaser: true
 excludeFromSearch: true
 ---
 

@@ -2,6 +2,7 @@
 type: release-notes
 title: November 2018 Release
 description: Release notes for release-2018-11
+hideSectionTeaser: true
 excludeFromSearch: true
 ---
 

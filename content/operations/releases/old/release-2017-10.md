@@ -2,6 +2,7 @@
 type: release-notes
 title: October 2017 Release
 description: Release notes for release-2018-10
+hideSectionTeaser: true
 excludeFromSearch: true
 ---
 

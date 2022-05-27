@@ -1,5 +1,6 @@
 ---
 title: Publish NPM Modules
+hideSectionTeaser: true
 ---
 
 All public and private packages belong to the [@livingdocs organization](https://www.npmjs.com/org/livingdocs).

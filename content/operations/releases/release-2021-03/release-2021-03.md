@@ -2,6 +2,7 @@
 type: release-notes
 title: March 2021 Release
 description: Release notes for release-2021-03
+hideSectionTeaser: true
 excludeFromSearch: true
 ---
 

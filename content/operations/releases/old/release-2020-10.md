@@ -2,6 +2,7 @@
 type: release-notes
 title: October 2020 Release
 description: Release notes for release-2020-10
+hideSectionTeaser: true
 excludeFromSearch: true
 ---
 

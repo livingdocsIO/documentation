@@ -2,6 +2,7 @@
 type: release-notes
 title: June 2018 Release
 description: Release notes for release-2018-06
+hideSectionTeaser: true
 excludeFromSearch: true
 ---
 

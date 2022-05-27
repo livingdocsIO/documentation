@@ -1,5 +1,7 @@
 ---
 title: Video Tour
+thumb: "tour.png"
+weight: 1
 menus:
   learn:
     weight: 1

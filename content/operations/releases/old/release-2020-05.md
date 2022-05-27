@@ -2,6 +2,7 @@
 type: release-notes
 title: May 2020 Release
 description: Release notes for release-2020-05
+hideSectionTeaser: true
 excludeFromSearch: true
 ---
 

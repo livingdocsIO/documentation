@@ -1,6 +1,7 @@
 ---
 title: Public API
 renderTOC: false
+weight: 1
 menus:
   reference-docs:
     weight: 1

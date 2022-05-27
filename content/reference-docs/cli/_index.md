@@ -2,6 +2,7 @@
 title: CLI
 renderSummaries: true
 renderTOC: false
+weight: 6
 menus:
   reference-docs:
     weight: 6

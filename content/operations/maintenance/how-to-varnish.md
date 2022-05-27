@@ -1,5 +1,6 @@
 ---
 title: Varnish
+hideSectionTeaser: true
 ---
 
 Using varnish is quite simple, but configure and interpret varnish needs some time to understand. This section gives you the most important sources and commands to understand varnish better.

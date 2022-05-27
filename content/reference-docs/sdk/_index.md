@@ -2,6 +2,7 @@
 title: SDK
 renderSummaries: false
 renderTOC: false
+weight: 7
 menus:
   reference-docs:
     weight: 7

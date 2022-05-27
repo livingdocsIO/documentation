@@ -1,5 +1,7 @@
 ---
 title: On Premise Setup
+thumb: "setup.png"
+weight: 3
 menus:
   learn:
     weight: 3

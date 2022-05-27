@@ -1,5 +1,7 @@
 ---
 title: Document Lifecycle
+thumb: "lifecycle.png"
+weight: 2
 menus:
   learn:
     weight: 2

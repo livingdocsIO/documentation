@@ -1,5 +1,6 @@
 ---
 title: Access @livingdocs organisation on NPM
+hideSectionTeaser: true
 ---
 
 ## NPM tokens

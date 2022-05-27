@@ -1,5 +1,6 @@
 ---
 title: How to release a hotfix step by step
+hideSectionTeaser: true
 ---
 
 Let v28 be the newest version. A customer needs a patch release for their older version v27.6.0.

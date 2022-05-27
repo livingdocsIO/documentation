@@ -1,5 +1,6 @@
 ---
 title: Generating NPM tokens
+hideSectionTeaser: true
 ---
 
 You can find a pre-generated tokens with read access in the **secrets**

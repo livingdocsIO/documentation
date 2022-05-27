@@ -2,6 +2,7 @@
 type: release-notes
 title: September 2019 Release
 description: Release notes for release-2019-09
+hideSectionTeaser: true
 excludeFromSearch: true
 ---
 

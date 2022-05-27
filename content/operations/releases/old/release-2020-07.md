@@ -2,6 +2,7 @@
 type: release-notes
 title: July 2020 Release
 description: Release notes for release-2020-07
+hideSectionTeaser: true
 excludeFromSearch: true
 ---
 

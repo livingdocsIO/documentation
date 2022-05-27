@@ -1,5 +1,6 @@
 ---
 title: NPM Packages
+hideSectionTeaser: true
 ---
 
 ## Livingdocs npm packages

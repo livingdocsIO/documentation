@@ -2,6 +2,7 @@
 type: release-notes
 title: November 2021 Release
 description: Release notes for release-2021-11
+hideSectionTeaser: true
 ---
 
 {{< release-header

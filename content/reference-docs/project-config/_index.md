@@ -1,6 +1,7 @@
 ---
 title: Project Config
 renderSummaries: false
+weight: 2
 menus:
   reference-docs:
     weight: 2

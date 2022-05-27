@@ -2,6 +2,7 @@
 type: release-notes
 title: December 2019 Release
 description: Release notes for release-2019-12
+hideSectionTeaser: true
 excludeFromSearch: true
 ---
 

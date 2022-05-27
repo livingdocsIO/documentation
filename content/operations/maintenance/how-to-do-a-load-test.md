@@ -1,5 +1,6 @@
 ---
 title: How to do a Load Test
+hideSectionTeaser: true
 ---
 
 Before you start with testing it's very important to understand **what** and **how** you want to test. The article [what is the difference between performance-, load- and stress testing](http://www.softwaretestinghelp.com/what-is-performance-testing-load-testing-stress-testing/) is a good place to start.

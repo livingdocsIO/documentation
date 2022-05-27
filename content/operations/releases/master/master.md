@@ -3,6 +3,7 @@ type: release-notes
 title: July 2022 Release
 description: Release notes for release-2022-07
 excludeFromSearch: true
+hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2022-07/release-2022-07/
 ---

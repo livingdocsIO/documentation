@@ -2,6 +2,7 @@
 type: release-notes
 title: August 2017 Release
 description: Release notes for release-2018-08
+hideSectionTeaser: true
 excludeFromSearch: true
 ---
 
