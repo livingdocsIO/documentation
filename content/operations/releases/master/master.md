@@ -26,6 +26,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Publish Control: embargo [livingdocs-server #4523 v184.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4523)
 * :new: fix(Reverted comment deletion) [livingdocs-editor #5401 v80.17.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5401)
 * :new: fix(comments): Comments without components no longer break [livingdocs-editor #5397 v80.17.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5397)
 * :new: add custom-field desk-net api [livingdocs-server #4517 v184.1.6](https://github.com/livingdocsIO/livingdocs-server/pull/4517)
