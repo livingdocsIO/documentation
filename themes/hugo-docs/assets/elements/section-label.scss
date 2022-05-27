@@ -1,5 +1,6 @@
 .section-label {
   @extend %font-xs;
+  display: block;
   padding: $space-xs $space-m;
   margin: 2 * $space-m 0 $space-xs 0;
   text-transform: uppercase;
