@@ -3,18 +3,6 @@
   align-items: center;
 
   &__dot {
-    height: 1.5 * $space-m;
-  }
-
-  &__brandname {
-    @extend %font-s;
-    display: none;
-    margin: 0 0 0 $space-s;
-    color: $color-black;
-    font-weight: 500;
-
-    @include media-query(desktop) {
-      display: block;
-    }
+    height: 3.5 * $space-s;
   }
 }

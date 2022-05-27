@@ -7,7 +7,7 @@
   margin: 0 auto;
   position: fixed;
   border-bottom: 1px solid $color-grey-6;
-  padding: 0 22px;
+  padding: 0 $space-m;
   z-index: 2;
   top: 0;
   right: 0;
@@ -31,7 +31,7 @@
   &__burger {
     width: 1.5 * $space-m;
     height: 1.5 * $space-m;
-    margin-left: 1.5 * $space-s;
+    margin-right: $space-m;
     cursor: pointer;
     user-select: none;
 

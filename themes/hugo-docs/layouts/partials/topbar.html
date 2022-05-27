@@ -1,12 +1,5 @@
 <nav class="header" id="header">
   <div class="header__left">
-    <div class="header__brand">
-      <a class="logo" href="/">
-        {{ $li := resources.Get "svg/li.svg" | fingerprint }}
-        <img src="{{ $li.RelPermalink }}" alt="livingdocs" class="logo__dot"/>
-        <p class="logo__brandname">Livingdocs Docu</p>
-      </a>
-    </div>
     <div class="header__burger">
       <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M30 -9.04872e-08L0 -3.8147e-06L9.69846e-07 30L30 30L30 -9.04872e-08Z"/>
@@ -14,6 +7,12 @@
         <rect x="5" y="15" width="20" height="1" fill="#141414"/>
         <rect x="5" y="22" width="20" height="1" fill="#141414"/>
       </svg>
+    </div>
+    <div class="header__brand">
+      <a class="logo" href="/">
+        {{ $li := resources.Get "svg/li-docs.svg" | fingerprint }}
+        <img src="{{ $li.RelPermalink }}" alt="livingdocs" class="logo__dot"/>
+      </a>
     </div>
   </div>
   <div class="header__center">
