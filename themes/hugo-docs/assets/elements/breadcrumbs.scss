@@ -4,11 +4,13 @@
   padding: 0;
   margin: 0 0 $space-m 0;
   display: flex;
+  gap: $space-xs;
   list-style: none;
   text-transform: uppercase;
 
   li {
-    padding-right: $space-xs;;
+    display: flex;
+    gap: $space-xs;
 
     &::before {
       content: '/';
