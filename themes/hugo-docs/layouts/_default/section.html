@@ -16,12 +16,21 @@
         {{ if (ne (.Param "renderSummaries") false) }}
           <div class="section-teasers">
             {{ range .Pages.ByWeight }}
-            <div class="section-teaser">
-              <a class="section-teaser__link"  href="{{ .RelPermalink }}">
-                <h3 class="section-teaser__title">{{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}</h3>
-                {{ with .Description}}<p class="section-teaser__text">{{ . }}</p>{{ end }}
-              </a>
-            </div>
+              {{ if (ne (.Param "hideSectionTeaser") true) }}
+                <div class="section-teaser">
+                  <a class="section-teaser__link"  href="{{ .RelPermalink }}">
+                    {{ if .Param "thumb" }}
+                      <div class="section-teaser__thumb">
+                        <img class="section-teaser__image" src='{{ .Param "thumb" }}' />
+                      </div>
+                    {{ end }}
+                    <div class="section-teaser__content">
+                      <h3 class="section-teaser__title">{{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}</h3>
+                      {{ with .Description}}<p class="section-teaser__text">{{ . }}</p>{{ end }}
+                    </div>
+                  </a>
+                </div>
+              {{ end }}
             {{ end }}
           </div>
         {{ end }}

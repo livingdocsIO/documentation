@@ -14,23 +14,42 @@
     @include box-shadow();
     display: flex;
     flex-direction: column;
-    justify-content: center;
     height: 100%;
-    padding: $space-m;
-    border: 1px solid transparent;
     border-radius: 3 * $rounded-corners;
     background-color: $color-white;
-    transition: border-color $transition-time;
+    overflow: hidden;
 
     &:hover {
       @include box-shadow(highlight);
-      border-color: $color-cyan-1;
     }
+  }
+
+  &__thumb {
+    position: relative;
+    height: 2 * $space-m;
+    background-color: $color-grey-8;
+  }
+
+  &__image {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: $space-m;
+    height: $space-m;
+    width: $space-m;
+    filter: saturate(0)
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+    padding: $space-m;
   }
 
   &__title {
     margin: 0;
-    color: $color-cyan-1;
+    color: $color-green-1;
   }
 
   &__text {
@@ -38,10 +57,6 @@
     margin-top: $space-s;
     margin-bottom: 0;
     color: $color-grey-2;
-  }
-
-  h3 {
-    margin-bottom: 5px;
   }
 
   ul {

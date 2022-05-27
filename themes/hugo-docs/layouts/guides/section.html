@@ -23,19 +23,28 @@
               <h2 class="section__title">{{ .Key.Title }}</h2>
               <div class="section-teasers">
                 {{ range .Pages.ByWeight }}
-                <div class="section-teaser section-teaser--guides" 
-                  {{ if .Params.TeaserColor }} style="--teaser-color: {{ .Params.TeaserColor }}" {{ end }}>
-                  <a class="section-teaser__link"  href="{{ .RelPermalink }}">
-                    <h3 class="section-teaser__title">{{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}</h3>
-                    {{ with .Description}}<p class="section-teaser__text">{{ . }}</p>{{ end }}
-                    <ul>
-                    {{ range .Params.bullets }}
-                      <li>{{ . }}</li>
-                    {{ end }}
-                    </ul>
-                    <!-- <div>{{ range .Params.Tags }} <span>{{ . }}</span> {{ end }}</div> -->
-                  </a>
-                </div>
+                  {{ if (ne (.Param "hideSectionTeaser") true) }}
+                    <div class="section-teaser section-teaser--guides" 
+                      {{ if .Params.TeaserColor }} style="--teaser-color: {{ .Params.TeaserColor }}" {{ end }}>
+                      <a class="section-teaser__link"  href="{{ .RelPermalink }}">
+                        {{ if .Param "thumb" }}
+                          <div class="section-teaser__thumb">
+                            <img class="section-teaser__image" src='{{ .Param "thumb" }}' />
+                          </div>
+                        {{ end }}
+                        <div class="section-teaser__content">
+                          <h3 class="section-teaser__title">{{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}</h3>
+                          {{ with .Description}}<p class="section-teaser__text">{{ . }}</p>{{ end }}
+                          <ul>
+                          {{ range .Params.bullets }}
+                            <li>{{ . }}</li>
+                          {{ end }}
+                          </ul>
+                          <!-- <div>{{ range .Params.Tags }} <span>{{ . }}</span> {{ end }}</div> -->
+                        </div>
+                      </a>
+                    </div>
+                  {{ end }}
                 {{ end }}
               </div>
             </div>
