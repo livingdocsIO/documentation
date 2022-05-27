@@ -52,6 +52,10 @@ renderTOC: false
   >}}
 {{< /cols >}}
 
+{{< cols >}}
+  {{< newsletter-form >}}
+{{< /cols >}}
+
 ## Feedback
 
 Please let us know about gaps or errors in our documentation at [documentation@livingdocs.io](mailto:documentation@livingdocs.io) or you can do a pull request on https://github.com/livingdocsIO/livingdocs.

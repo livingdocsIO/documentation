@@ -10,8 +10,9 @@ weight: 1
 
 We announce roughly every 2 months a new release. You can find more information in the sections below.
 
-## 📬 Release Newsletter
-[Subscribe to the release newsletter](https://confirmsubscription.com/h/j/61B064416E79453D) to get notified with a rundown of the latest features and improvements as soon as a new release is ready.
+Subscribe to the release newsletter to get notified with a rundown of the latest features and improvements as soon as a new release is ready.
+
+{{< newsletter-form >}}
 
 ## Release Notes
 

@@ -1,0 +1,40 @@
+.input-field {
+  position: relative;
+  text-align: left;
+
+  &__input {
+    @extend %font-forms;
+    height: 2.25 * $space-m;
+    width: 100%;
+    padding: $space-xs 0;
+    border: 0 solid $color-white;
+    border-bottom-width: 1px;
+    border-radius: 0 !important;
+    background-color: transparent;
+    transition: border-color $transition-time ease;
+    color: $color-white;
+
+    &:focus,
+    &[value],
+    &[value=''],
+    &:not(:placeholder-shown) {
+      + .input-field__label {
+        transform: scale(.75) translate(0, -20px);
+      }
+    }
+  }
+
+  &__label {
+    @extend %font-forms;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2 * $space-m;
+    padding: $space-xs 0;
+    line-height: 2 * $space-m - 2 * $space-xs;
+    color: $color-white;
+    transform-origin: 0 0;
+    transition: transform $transition-time ease;
+    cursor: text;
+  }
+}
