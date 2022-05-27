@@ -3,6 +3,10 @@
   align-items: center;
 
   &__dot {
-    height: 3.5 * $space-s;
+    height: 3 * $space-s;
+
+    @include media-query(tablet) {
+      height: 3.5 * $space-s;
+    }
   }
 }
