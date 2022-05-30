@@ -29,7 +29,7 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Image](#li-image)                                 | li-image                 | Images                                        | D, M                                                                 | Image selection/upload/crops                               |
 | [iMatrics](#li-imatrics-nlp-tags)                  | li-imatrics-nlp-tags     | iMatrics tag management                       | D                                                                    | manage tags                                                |
 | [Integer](#li-integer)                             | li-integer               | Integer                                       | D, M                                                                 | number input                                               |
-| [Language](#li-language)                           | li-language              | Language                                      | D                                                                    | select                                                     |
+| [Language](#li-language)                           | li-language              | Language                                      | D                                                                    | no Ui                                                     |
 | [Metadata Translations](#li-metadata-translations) | li-metadata-translations | Enable metadata translations                  | D (data record only), M                                              | translation UI                                             |
 | [Named Crops](#li-named-crops)                     | li-named-crops           | Default Crops for Images                      | M                                                                    | crop management UI                                         |
 | [Numeric List](#li-numeric-list)                   | li-numeric-list          | Array of Numbers                              | D, M                                                                 | multi number input                                         |
@@ -380,6 +380,12 @@ metadata: [
 ```
 
 ## li-language
+
+When adding `li-language`, it allows a user to translate articles and pages into different languages. Additionally you need to enable [translationWorkflow and requiredOnCreation]({{< ref "/reference-docs/project-config/settings" >}}).
+
+Data Records also support translations, but need to add the metadata plugin [li-metadata-translations]({{< ref "/reference-docs/document/metadata/metadata-plugin-list#li-metadata-translations" >}}).
+
+
 **Storage Format**:
 ```js
 {
@@ -388,8 +394,16 @@ metadata: [
   groupId: <String>
 }
 ```
-**Default UI**: language selection
-* This works together with the `languageSelection` service.
+**Default UI**: no UI\
+**Project Config**
+```js
+metadata: [
+  {
+    handle: 'language',
+    type: 'li-language'
+  }
+]
+```
 
 ## li-metadata-translations
 
