@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Link Tool: Show original URL instead of redirect target in website info [livingdocs-editor #5406 v80.17.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5406)
 * :new: Dashboards: only allow dragging cards if document export is configured [livingdocs-editor #5404 v80.17.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5404)
 * :new: Publish Control: embargo [livingdocs-server #4523 v184.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4523)
 * :new: fix(Reverted comment deletion) [livingdocs-editor #5401 v80.17.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5401)
