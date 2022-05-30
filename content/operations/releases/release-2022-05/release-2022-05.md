@@ -30,11 +30,11 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Webinar
 
-* Feature Webinar Recording: **TODO**
-* Feature Webinar Documentation: **TODO**
-* Dev Webinar Recording: **TODO**
-* Dev Webinar Slides: **TODO**
-* Release Newsletter Subscription: **TODO**
+* [Feature Webinar Recording](https://us02web.zoom.us/rec/share/v12qQmhzFapWgEQlvkVQvbZ799NygIds2xQhORmr8nbuaHH2V_fwIXfIdlBhUIr-.94_CFTpelSShSYM9)  | PW: 4mD&%sFf
+* [Feature Webinar Documentation](https://docs.google.com/document/d/18CzhM6Ybb8e6HnTZxe8HNZpUrP2UnsdfYKn2WfWCsCs/edit)
+* [Dev Webinar Recording](https://us02web.zoom.us/rec/share/SKWGrs3GbasNHGVsAyWmWXtLplxHcE-k-WQEQyERi7vKCr9UEtgJ8CcR6qMjklGD.dBTffS9__GUo5fYq) | PW: 4EW7.+jh
+* [Dev Webinar Slides](https://docs.google.com/presentation/d/11NaPp1FFmYE3P_tXBsejfJDGbpBQhIWhJ-JMrKu13lM/edit?usp=sharing)
+* [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ## System Requirements
 
