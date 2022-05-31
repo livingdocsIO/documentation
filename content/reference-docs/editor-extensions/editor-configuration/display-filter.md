@@ -11,8 +11,8 @@ Possible values for `displayFilters` are:
   displayFilters: ['liDateTimeRange']
 
   // custom config
-  //   documentPropertyName 'createdAt'/'updatedAt'
-  //   metadataPropertyName -> filter by any of your metadata date fields
+  //   documentPropertyName: Supports 'createdAt'/'updatedAt', defaults to updatedAt
+  //   metadataPropertyName: Supports any of your metadata date fields
   displayFilters: [{filterName: 'liDateTimeRange', config: {documentPropertyName: 'createdAt'}}]
   displayFilters: [{filterName: 'liDateTimeRange', config: {metadataPropertyName: 'publicationDate'}}]
   ```
