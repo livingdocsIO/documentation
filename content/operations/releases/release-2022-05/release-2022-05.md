@@ -515,6 +515,7 @@ References:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v179.3.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.20): fix: incorporate feedback
 - [v179.3.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.19): fix(print): Expose Desk-Net metadata in print export
 - [v179.3.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.18): fix(project-config): replace pointer error message also on a deeper value
 - [v179.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.17): fix: desknet integration api updates correctly to desk-net
