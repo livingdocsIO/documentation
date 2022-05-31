@@ -181,6 +181,14 @@ References:
 - [li-enum PR](https://github.com/livingdocsIO/livingdocs-server/pull/4316)
 - [li-reference | li-document-reference PR](https://github.com/livingdocsIO/livingdocs-server/pull/4425)
 
+### Metadata Plugins: Better feedback on metadata plugin registration :fire:
+
+🍬 When registering a downstream metadata plugin beginning with `li-`you get a warning that you should use your own prefix.
+🔥 When registering a metadata plugin twice, you get now an error message (before, the second plugin was ignored, which lead to confusion).
+
+References:
+- [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4483)
+
 
 ### Remove Knex Support :fire:
 
