@@ -72,7 +72,7 @@ PATCH api/v1/mediaLibrary/:id
 |Name|Type|Required|Notes|
 |-|-|-|-|
 |version|string||current mediaLibraryEntry version. When set on update the version is checked.|
-|patches|array|x|an array of patches to execute. Each entry is an object with the following keys:<br><br>**operation** `setMetadataProperty`, `replaceAsset`, `revokeAsset` or `archiveAsset`<br>**propertyName** string of the propertyName (only for setMetadataProperty)<br>**value** string or object for the new value. If set to null or value is not set it will remove the property for setMetadataProperty. **required** for replaceAsset operation.|
+|patches|array|x|an array of patches to execute. Each entry is an object with the following keys:<br><br>**operation** `setMetadataProperty`, `replaceAsset`, `revokeAsset` or `archive`<br>**propertyName** string of the propertyName (only for setMetadataProperty)<br>**value** string or object for the new value. If set to null or value is not set it will remove the property for setMetadataProperty. **required** for replaceAsset operation.|
 
 #### Example Request
 ```js
@@ -105,7 +105,7 @@ PATCH api/v1/mediaLibrary/:id
     },
     {
       // archives a Media Library Entry (added-in release-2022-07)
-      "operation": "archiveAsset"
+      "operation": "archive"
     }
   ]
 }
