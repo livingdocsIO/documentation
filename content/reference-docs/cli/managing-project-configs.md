@@ -32,8 +32,8 @@ You can download a project config with the `project-config:download` command. Th
 
 `--format`:
 
-* `js` (default): will create an index.js and place all properties into separate files. This is much easier to read and edit. The components are defined as JSON, as described in the [components documentation](../project-config/components.md).
-* `js/html`: This works the same as the `js` format except that components will be stored in HTML files. This is the recommended format as it is easy to read and edit.
+* `js` (default): will create an index.js and place all properties into separate files. This is the recommended format as it's easy to read and edit. The components are defined as JSON, as described in the [components documentation](../project-config/components.md).
+* `js/html`: This works the same as the `js` format except that components will be stored in HTML files. This is an experimental format.
 * `json`: will download the full config into a single JSON file. These can get quite large especially if the design is included in the project config.
 
 ```sh

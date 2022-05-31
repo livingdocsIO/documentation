@@ -18,8 +18,6 @@ using e.g. the `LI_TOKEN` environment variable.
 
 The dotfile's format is YAML (and thus JSON works as well). And the CLI will look for the dotfile in the current working directory.
 
-If you are using [Livingdocs Service](edit.livingdocs.io), you need to set the production host as `https://server.livingdocs.io`.
-
 ## Example: Multiple environments
 
 `.livingdocs-cli` file in the root of your working directory:
@@ -27,7 +25,7 @@ If you are using [Livingdocs Service](edit.livingdocs.io), you need to set the p
 ```yaml
 environments:
   local:
-    host: http://localhost:9000
+    host: http://localhost:9090
     sourceFolder: ./project-config/local
     distFolder: ./sync/local
   staging:
@@ -44,8 +42,32 @@ alias:
   st: staging
 ```
 
+## Parameters
+### Host
+
+The hostname of your Livingdocs Server.
+
+If you are using [Livingdocs Service](https://edit.livingdocs.io/), you need to set the production host as `https://server.livingdocs.io`.
+
+When running the server locally, the host should be set to `http://localhost:9090`.
+
+### Token
+
+API token used for authentication. This is different for each environment and each project.
+
 Note: it is recommended to add a production token with only
 read access (or simply dont add a prouction token at all). When publishing a new config you can supply a write token via `--token` argument.
+### sourceFolder
+
+The source folder for the project config that are going to be published/uploaded.
+Can be the same as the distFolder. 
+
+### distFolder
+
+The destination folder for the project config downloaded.
+Can be the same as sourceFolder.
+
+## Usage
 
 How to use these configs in the terminal:
 
