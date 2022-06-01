@@ -76,17 +76,21 @@ const to = new Date('2015-04-05T20:00')
 {type: 'sortBy', value: '-created_at'},
 {type: 'sortBy', value: 'title'}
 
-// media Index base filter for metadata
-{type: 'metadata', key: 'foo', value: 'bar', dataType: 'keyword'}
-{type: 'metadata', key: 'transformed', value: true, dataType: 'boolean'}
-// metadata plugin with a set key in the index_behavior
-{type: 'metadata', key: 'googleVision.labels', value: 'Vogel', dataType: 'keyword'}
-
 // reference (added-in release-2022-03)
 {type: 'reference', value: 'document:123'}
 {type: 'reference', value: 'image:W8GRbmju4grG'}
 {type: 'reference', value: 'file:A7JRa4mS3xBQ'}
 {type: 'reference', value: 'video:P2rSblad3aUS'}
+
+// state for the mediaLibrary (added-in release-2022-07)
+{type: 'state', value: 'active'}
+{type: 'state', value: 'revoked'}
+
+// media Index base filter for metadata
+{type: 'metadata', key: 'foo', value: 'bar', dataType: 'keyword'}
+{type: 'metadata', key: 'transformed', value: true, dataType: 'boolean'}
+// metadata plugin with a set key in the index_behavior
+{type: 'metadata', key: 'googleVision.labels', value: 'Vogel', dataType: 'keyword'}
 ```
 
 
