@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(publish-control): add embargo [livingdocs-editor #5364 v80.18.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5364)
 * :new: fix: update Upload button status when the upload is cancelled [livingdocs-editor #5381 v80.17.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5381)
 * :new: feat(print): Expose Desk-Net metadata in print export [livingdocs-server #4526 v184.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4526)
 * :new: Link Tool: Show original URL instead of redirect target in website info [livingdocs-editor #5406 v80.17.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5406)
