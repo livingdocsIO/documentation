@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Document Editing Toolbar: config for document teaser dashboards [livingdocs-server #4525 v184.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4525)
 * :new: Archive Asset via Public API [livingdocs-server #4532 v184.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4532)
 * :new: feat(publish-control): add embargo [livingdocs-editor #5364 v80.18.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5364)
 * :new: fix: update Upload button status when the upload is cancelled [livingdocs-editor #5381 v80.17.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5381)
