@@ -504,6 +504,7 @@ References:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v179.3.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.22): fix: still allow to set deprecated metadata property ui.service for li-enum and li-text
 - [v179.3.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.21): fix: rename deprecated property schema to storageSchema for li-media-language
 - [v179.3.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.20): fix: incorporate feedback
 - [v179.3.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.19): fix(print): Expose Desk-Net metadata in print export
