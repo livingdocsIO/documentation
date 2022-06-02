@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(targetLength): Don’t allow negative values [livingdocs-editor #5411 v80.20.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5411)
 * :new: feat(publish control):  embargo date validation [livingdocs-editor #5413 v80.20.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5413)
 * :new: Desk-Net tests and error handling improvements [livingdocs-server #4456 v184.4.1](https://github.com/livingdocsIO/livingdocs-server/pull/4456)
 * :new: Document Drag & Drop: Add Document Dashboard to Editing Toolbar [livingdocs-editor #5405 v80.19.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5405)
