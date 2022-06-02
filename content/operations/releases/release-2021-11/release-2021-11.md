@@ -8,9 +8,9 @@ hideSectionTeaser: true
 {{< release-header
   title="November 2021 Release"
   upcoming=false
-  legacy=false
+  legacy=true
   current=false
-  maintained=true
+  maintained=false
   branchHandle="release-2021-11"
 >}}
 

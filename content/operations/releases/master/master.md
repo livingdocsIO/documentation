@@ -13,7 +13,7 @@ aliases:
   upcoming=true
   legacy=false
   current=false
-  maintained=false
+  maintained=true
   branchHandle="release-2022-07"
 >}}
 

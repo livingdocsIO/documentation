@@ -10,23 +10,12 @@ aliases:
 
 {{< release-header
   title="May 2022 Release"
-  upcoming=true
+  upcoming=false
   legacy=false
-  current=false
-  maintained=false
+  current=true
+  maintained=true
   branchHandle="release-2022-05"
 >}}
-
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to master).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
-
-**Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
 ## Webinar
 
@@ -527,6 +516,8 @@ Here is a list of all patches after the release has been announced.
 - [v80.10.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.38): fix(comments): Comments without components no longer break
 - [v80.10.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.37): fix(softLock): Soft lock object can be empty
 - [v80.10.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.36): fix(noComments): Allow component deletion without comments
+-
+
   ---
   **Icon Legend**
   * Breaking changes: :fire:

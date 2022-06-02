@@ -24,9 +24,9 @@ Subscribe to the release newsletter to get notified with a rundown of the latest
 |Name|Upcoming|Current|Maintained|Legacy|
 |-|-|-|-|-|
 |[July 2022 Release]({{< ref "operations/releases/master/master" >}})|✅||||
-|[May 2022 Release]({{< ref "operations/releases/release-2022-05/release-2022-05" >}})|✅||||
-|[March 2022 Release]({{< ref "operations/releases/release-2022-03/release-2022-03" >}})||✅|✅||
-|[November 2021 Release]({{< ref "operations/releases/release-2021-11/release-2021-11" >}})|||✅||
+|[May 2022 Release]({{< ref "operations/releases/release-2022-05/release-2022-05" >}})||✅|✅||
+|[March 2022 Release]({{< ref "operations/releases/release-2022-03/release-2022-03" >}})|||✅||
+|[November 2021 Release]({{< ref "operations/releases/release-2021-11/release-2021-11" >}})||||✅|
 |[September 2021 Release]({{< ref "operations/releases/release-2021-09/release-2021-09.md" >}})||||✅|
 |[June 2021 Release]({{< ref "operations/releases/release-2021-06/release-2021-06.md" >}})||||✅|
 |[March 2021 Release]({{< ref "operations/releases/release-2021-03/release-2021-03.md" >}})||||✅|
