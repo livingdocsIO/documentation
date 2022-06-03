@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(publish-control-embargo): UX improvements [livingdocs-editor #5417 v80.21.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5417)
 * :new: fix(isPublished): Publish screen no longer says 'unpublished' when scheduled [livingdocs-editor #5418 v80.20.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5418)
 * :new: fix(i18n): apply proposed change from '{$t(...)}' to '{{ $t(...) }}' [livingdocs-editor #5419 v80.20.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5419)
 * :new: fix(targetLength): Don’t allow negative values [livingdocs-editor #5411 v80.20.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5411)
