@@ -38,6 +38,14 @@ $gitfiles: 'https://livingdocsio.github.io/livingdocs-design-assets/docs/site-20
   src: url($gitfiles+'/fonts/li-specialchars.otf');
 }
 
+@font-face {
+  font-family: "Material Design Icons";
+  src:  url($gitfiles+'/fonts/materialdesignicons-webfont.woff2') format('woff2'),
+        url($gitfiles+'/fonts/materialdesignicons-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 p {
   @extend %font-s;
   margin: 0 0 $space-m;

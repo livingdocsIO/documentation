@@ -24,9 +24,13 @@
     }
   }
 
-  &__thumb {
-    position: relative;
+  &__icon {
+    display: flex;
+    align-items: center;
     height: 2 * $space-m;
+    padding: 0 $space-m;
+    color: $color-grey-4;
+    font-size: $space-m;
     background-color: $color-grey-8;
   }
 

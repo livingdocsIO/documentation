@@ -27,9 +27,9 @@
                     <div class="section-teaser section-teaser--guides" 
                       {{ if .Params.TeaserColor }} style="--teaser-color: {{ .Params.TeaserColor }}" {{ end }}>
                       <a class="section-teaser__link"  href="{{ .RelPermalink }}">
-                        {{ if .Param "thumb" }}
-                          <div class="section-teaser__thumb">
-                            <img class="section-teaser__image" src='{{ .Param "thumb" }}' />
+                        {{ if .Param "icon" }}
+                          <div class="section-teaser__icon">
+                            <div class="mdi mdi-{{ .Param "icon" }}"></div>
                           </div>
                         {{ end }}
                         <div class="section-teaser__content">
