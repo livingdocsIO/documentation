@@ -1,7 +1,8 @@
 ---
 title: Release Notes
 linkTitle: Release Notes
-description: Get a list of releases with its release notes
+description: Check out our future, present and past releases in detail.
+icon: alert-decagram
 menu: operations
 weight: 1
 ---

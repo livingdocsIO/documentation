@@ -1,6 +1,8 @@
 ---
 title: System Architecture
 linkTitle: Architecture
+description: Learn about how Livingdocs is structured.
+icon: ruler-square-compass
 menu: operations
 ---
 

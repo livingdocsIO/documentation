@@ -1,6 +1,7 @@
 ---
 title: On Premise Setup
-thumb: "setup.png"
+description: Learn how to get your local install of Livingdocs rolling.
+icon: download
 weight: 3
 menus:
   learn:

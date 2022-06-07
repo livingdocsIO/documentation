@@ -1,5 +1,7 @@
 ---
 title: Hosting Livingdocs
+description: What to consider when self-hosting Livingdocs.
+icon: server
 menu: operations
 ---
 

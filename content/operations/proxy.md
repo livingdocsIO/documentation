@@ -1,6 +1,8 @@
 ---
 title: Running Livingdocs behind a proxy
 linkTitle: Proxy Setup
+description: How to run Livingdocs behind a proxy.
+icon: arrow-decision
 menu: operations
 ---
 

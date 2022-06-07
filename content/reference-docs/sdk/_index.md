@@ -1,5 +1,7 @@
 ---
 title: SDK
+description: Get started with integrating Livingdocs into your application quickly.
+icon: hammer-wrench
 renderSummaries: false
 renderTOC: false
 weight: 7

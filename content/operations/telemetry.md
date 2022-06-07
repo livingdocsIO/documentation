@@ -1,6 +1,7 @@
 ---
 title: Telemetry
 description: Use opentelemetry to get metrics and traces out of the Livingdocs Server instance.
+icon: axis-arrow
 menu: operations
 ---
 

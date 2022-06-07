@@ -1,5 +1,7 @@
 ---
 title: Docker
+description: We recommend to use Docker, as we will constantly keep it up to date with the application.
+icon: docker
 menu: operations
 ---
 

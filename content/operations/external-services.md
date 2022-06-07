@@ -1,5 +1,7 @@
 ---
 title: External Services
+description: Additionally to the mandatory dependency on the databases livingdocs also depends on external services.
+icon: toolbox
 menu: operations
 ---
 

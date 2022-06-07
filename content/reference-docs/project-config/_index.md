@@ -1,5 +1,7 @@
 ---
 title: Project Config
+description: ContentTypes, integrations, editor settings and other project specific configurations.
+icon: cog
 renderSummaries: false
 weight: 2
 menus:

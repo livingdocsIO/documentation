@@ -1,5 +1,7 @@
 ---
-title: High Availibility Setup
+title: High Availability Setup
+description: Learn everything about keeping your system, up and running.
+icon: calendar-check
 menu: operations
 ---
 

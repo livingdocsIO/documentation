@@ -1,6 +1,7 @@
 ---
 title: Video Tour
-thumb: "tour.png"
+description: Watch our videos to learn about the most important concepts in Livingdocs.
+icon: play-circle
 weight: 1
 menus:
   learn:

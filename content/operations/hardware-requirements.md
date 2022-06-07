@@ -1,5 +1,7 @@
 ---
 title: Hardware Requirements
+description: Find a general evaluation and some example installations in here.
+icon: laptop
 menu: operations
 tags: [operations]
 ---

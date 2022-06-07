@@ -1,5 +1,7 @@
 ---
 title: CLI
+description: Manage your Livingdocs Project Config on the command line.
+icon: console-line
 renderSummaries: true
 renderTOC: false
 weight: 6
