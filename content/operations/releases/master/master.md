@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: 🔥 Drop postgres10 support [livingdocs-server #4541 v185.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4541)
 * :new: feat(publish-control-enbargo): Collapsible Section and Sync Status [livingdocs-editor #5422 v80.23.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5422)
 * :new: feat(editor): viewAfterDocumentCreation 'metadata' support [livingdocs-editor #5424 v80.22.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5424)
 * :new: View after document creation [livingdocs-server #4539 v184.5.0](https://github.com/livingdocsIO/livingdocs-server/pull/4539)
