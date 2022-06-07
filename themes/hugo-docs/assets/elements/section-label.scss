@@ -1,14 +1,20 @@
 .section-label {
   @extend %font-xs;
+  line-height: calc(15px * 1.45);
   display: block;
-  padding: $space-xs $space-m;
-  margin: 2 * $space-m 0 $space-xs 0;
+  padding: $space-s $space-m;
+  margin: 2 * $space-m 0 0 0;
   text-transform: uppercase;
   color: $color-grey-4;
 
   @include media-query(desktop) {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: $space-xs;
+    padding-bottom: $space-xs;
+  }
+
+  &.active {
+    color: $color-cyan-1;
+    background-color: rgba($color-cyan-2, 0.4);
   }
 
   &--table-of-contents {
