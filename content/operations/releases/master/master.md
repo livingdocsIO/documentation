@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: View after document creation [livingdocs-server #4539 v184.5.0](https://github.com/livingdocsIO/livingdocs-server/pull/4539)
 * :new: fix(dependencies): update vulnerable version of karma [livingdocs-editor #5425 v80.21.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5425)
 * :new: feat(publish-control-embargo): UX improvements [livingdocs-editor #5417 v80.21.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5417)
 * :new: fix(isPublished): Publish screen no longer says 'unpublished' when scheduled [livingdocs-editor #5418 v80.20.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5418)
