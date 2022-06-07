@@ -1,5 +1,5 @@
-<li-warning>
+<div class="warning">
   {{ $warn := resources.Get "svg/warning.svg" | fingerprint }}
-  <img src="{{ $warn.RelPermalink }}" alt="" class="icon">
+  <img src="{{ $warn.RelPermalink }}" alt="" class="warning__icon">
   {{ .Inner }}
-</li-warning>
+</div>

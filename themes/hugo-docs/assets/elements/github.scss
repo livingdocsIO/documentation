@@ -2,35 +2,40 @@
   border: 1px solid $color-grey-5;
   border-radius: $rounded-corners;
   padding: $space-m;
-  max-width: 4.5 * $space-xl;
   margin-bottom: $space-m;
-}
 
-.repo-link {
-  padding-left: $space-xs;
-  color: $color-blue-1;
-}
+  &__icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+  }
 
-.repo-desc {
-  @extend %font-s-xs;
-  padding-top: $space-s;
-  margin-bottom: $space-s;
-  color: $color-grey-2;
-}
+  &__link {
+    padding-left: $space-xs;
+    color: $color-blue-1;
+  }
 
-.repo-info {
-  @extend %font-xxs;
-  color: $color-grey-2;
-  margin-bottom: 0;
-}
+  &__desc {
+    @extend %font-s-xs;
+    padding-top: $space-s;
+    margin-bottom: $space-s;
+    color: $color-grey-2;
+  }
 
-.repo-lang-color {
-  position: relative;
-  top: 1px;
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border: 1px solid $color-yellow-1;
-  border-radius: 50%;
-  background-color: $color-yellow-2;
+  &__info {
+    @extend %font-xxs;
+    color: $color-grey-2;
+    margin-bottom: 0;
+  }
+
+  &__lang-color {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid $color-yellow-1;
+    border-radius: 50%;
+    background-color: $color-yellow-2;
+  }
 }

@@ -6,6 +6,7 @@
 @import "base/breakpoints";
 @import "base/colors";
 @import "base/colors-chroma";
+@import "base/materialdesignicons";
 @import "base/mixins";
 @import "base/spaces";
 @import "base/spacing-elements";
@@ -28,10 +29,9 @@
 @import "elements/github";
 @import "elements/header";
 @import "elements/highlight";
-@import "elements/icon";
 @import "elements/illu-teaser";
 @import "elements/input-field";
-@import "elements/li-elems";
+@import "elements/warning";
 @import "elements/list";
 @import "elements/logo";
 @import "elements/menu-search";
