@@ -91,7 +91,7 @@
 
   &--open {
     .arrow {
-      @extend .arrow--up;
+      @extend .arrow--down;
     }
   }
 }

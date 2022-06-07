@@ -40,7 +40,7 @@
         <div class="teaser-and-code__teaser">
           <div class="code-teaser{{ if (ne $showResponseCode true) }} code-teaser--with-interaction{{ end }}">
             <div class="code-teaser__interaction">
-              <span class="arrow"></span>
+              <span class="arrow arrow--right"></span>
             </div>
             <div class="code-teaser__endpoint">Curl Example</div>
           </div>
@@ -77,7 +77,7 @@
             <div class="teaser-and-code__teaser">
               <div class="code-teaser{{ if (ne $showResponseCode true) }} code-teaser--with-interaction{{ end }}{{ if (eq $code "200") }} code-teaser--success{{ end }}{{ if (ne $code "200") }} code-teaser--error{{ end }}">
                 <div class="code-teaser__interaction">
-                  <span class="arrow"></span>
+                  <span class="arrow arrow--right"></span>
                 </div>
                 
                 <div class="code-teaser__code">{{ $code }}</div>

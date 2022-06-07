@@ -9,6 +9,10 @@
   transform-origin: 75% 75%;
   transform: rotate(45deg) translate(-1px, 2px);
 
+  &--down {
+    transform: rotate(45deg);
+  }
+
   &--right {
     transform: rotate(-45deg); // define xy transforms once we use this modifier
   }
