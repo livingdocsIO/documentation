@@ -514,6 +514,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.42): fix(allow no multiselection): behaviour for multiselect configurable
 - [v80.10.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.41): fix(dependencies): update vulnerable version of karma
 - [v80.10.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.40): fix(isPublished): Pre publish control metadata plugins have correct published state
 - [v80.10.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.39): fix(deletedComments): Only resolved threads removed with component
