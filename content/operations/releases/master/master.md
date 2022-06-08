@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(dashboards): show create document on table dashboards [livingdocs-editor #5432 v80.23.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5432)
 * :new: fix: custom elements on formatting toolbar [livingdocs-editor #5415 v80.23.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5415)
 * :new: fix(allow no multiselection): behaviour for multiselect configurable [livingdocs-editor #5416 v80.23.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5416)
 * :new: 🔥 Drop postgres10 support [livingdocs-server #4541 v185.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4541)
