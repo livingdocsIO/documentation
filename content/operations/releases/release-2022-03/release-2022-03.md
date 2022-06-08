@@ -848,6 +848,7 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
 
 ### Livingdocs Editor Patches
+- [v77.2.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.72): fix(allow no multiselection): behaviour for multiselect configurable
 - [v77.2.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.71): fix(dependencies): update vulnerable version of karma
 - [v77.2.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.70): fix(isPublished): Pre publish control metadata plugins have correct published state
 - [v77.2.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.69): fix(deletedComments): Only resolved threads removed with component
