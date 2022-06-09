@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: 🔥 Remove beta incoming references [livingdocs-server #4544 v186.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4544)
 * :new: feat(publish-control-significant-update) UI component base structure and code refactoring [livingdocs-editor #5429 v80.24.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5429)
 * :new: fix(dashboards): show create document on table dashboards [livingdocs-editor #5432 v80.23.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5432)
 * :new: fix: custom elements on formatting toolbar [livingdocs-editor #5415 v80.23.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5415)
