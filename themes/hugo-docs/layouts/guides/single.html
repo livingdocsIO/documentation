@@ -12,6 +12,7 @@
         {{ if gt (len (split .RelPermalink "/")) 4 }}
         <li> <a href="{{.CurrentSection.RelPermalink}}">{{ .CurrentSection.Title }}</a></li>
         {{ end }}
+        <li> <a href="{{.RelPermalink}}">{{ .Title }}</a></li>
       </ul>
 
       <h1 class="article__title">

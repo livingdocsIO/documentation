@@ -4,12 +4,15 @@
   {{ partial "sidebar.html" . }}
   <main class="page__content">
     <article class="section">
-      {{ if gt (len (split .RelPermalink "/")) 3 }}
+      {{ if gt (len (split .RelPermalink "/")) 2 }}
       <ul id="breadcrumbs" class="breadcrumbs">
-        <li><a href="/guides">Guides</a></li>
+        {{ if gt (len (split .RelPermalink "/")) 3 }}
+          <li><a href="/guides">Guides</a></li>
+        {{ end }}
         {{ if gt (len (split .RelPermalink "/")) 4 }}
         <li> <a href="{{.CurrentSection.Parent.RelPermalink}}">{{ .CurrentSection.Parent.Title }}</a></li>
         {{ end }}
+        <li> <a href="{{.RelPermalink}}">{{ .Title }}</a></li>
       </ul>
       {{ end }}
 
