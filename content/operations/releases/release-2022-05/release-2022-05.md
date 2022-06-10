@@ -514,6 +514,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.44): fix: improve reactivity for live changes by other users
 - [v80.10.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.43): fix(dashboards): show create document on table dashboards
 - [v80.10.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.42): fix(allow no multiselection): behaviour for multiselect configurable
 - [v80.10.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.41): fix(dependencies): update vulnerable version of karma
