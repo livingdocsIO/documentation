@@ -13,6 +13,10 @@
   &__title {
     position: relative;
     margin-top: 0;
+
+    &:first-child {
+      margin-top: -5px; // -5px to make up for line-height related superfluous space on top of title
+    }
   }
 
   &__content {

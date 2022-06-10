@@ -96,7 +96,7 @@
     right: $space-m;
     bottom: 0;
     width: $toc-width;
-    padding-top: $space-l;
+    padding-top: $space-l - 8px; // -8px to make up for line-height related superfluous space on top of title
     padding-bottom: $space-l;
     overflow-y: auto;
     transition: top $transition-time;
