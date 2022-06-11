@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat: Add schema for link-directive. [livingdocs-server #4496 v186.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4496)
 * :new: Fix/Various Small Fixes [livingdocs-editor #5441 v80.24.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5441)
 * :new: fix: improve reactivity for live changes by other users [livingdocs-editor #5436 v80.24.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5436)
 * :new: improvement(async linting): Add async linting to project [livingdocs-editor #5428 v80.24.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5428)
