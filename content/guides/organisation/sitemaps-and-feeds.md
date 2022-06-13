@@ -27,7 +27,7 @@ The Sitemap index points to individual months, that contain all the actual entri
 Several Sitemaps for various content types could be created if they are individually linked in the robots.txt file.
 ## **Sitemap entries**
 
-The Sitemap entries follow the schema `sitemap.YYYY-MM.xml` or if it has more than the suggested limit of entries it will be split into a separate file such as `sitemap.YYYY-MM.2.xml`. We suggest keeping the limits the livingdocs API provides.
+The Sitemap entries follow the schema `sitemap.YYYY-MM.xml` or if it has more than the suggested limit of entries it will be split into a separate file such as `sitemap.YYYY-MM.2.xml`. We suggest keeping the limits the Livingdocs API provides.
 
 ## **Feeds**
 
@@ -164,7 +164,7 @@ Note: This still result still needs to be consumed in the delivery, similar to t
 
 
 ## **Live Delivery Setup**
-This live demo of a minimal delivery runs against a real livingdocs instance.
+This live demo of a minimal delivery runs against a real Livingdocs instance.
 
 You can explore the following routes in the example
 - `/robots.txt`

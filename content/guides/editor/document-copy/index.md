@@ -1,6 +1,6 @@
 ---
 title: Document Copy
-description: Set up the livingdocs server configuration to support copying content into other content types.
+description: Set up the Livingdocs Server configuration to support copying content into other content types.
 weight: 2
 ---
 

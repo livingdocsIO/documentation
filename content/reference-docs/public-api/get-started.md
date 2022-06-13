@@ -8,7 +8,7 @@ menus:
 ---
 
 ## Authorization
-To work with the public Api first go to the Project Settings page in the livingdocs editor and create an `AccessToken`.
+To work with the public Api first go to the Project Settings page in the Livingdocs Editor and create an `AccessToken`.
 
 Embed the `AccessToken` in the header of every HTTP request as shown below.
 

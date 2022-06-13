@@ -142,7 +142,7 @@ References:
 
 ## Editable Teasers :tada:
 
-Editable teasers are embedded editable livingdocs components. Technically editable teasers are doc-includes returning livingdocs components, which can be edited like any other component. For more information read the [documentation](https://github.com/livingdocsIO/livingdocs/pull/354) and look into the [example](https://github.com/livingdocsIO/livingdocs-server/pull/3235) on the example-server.
+Editable teasers are embedded editable Livingdocs components. Technically editable teasers are doc-includes returning Livingdocs components, which can be edited like any other component. For more information read the [documentation](https://github.com/livingdocsIO/livingdocs/pull/354) and look into the [example](https://github.com/livingdocsIO/livingdocs-server/pull/3235) on the example-server.
 
 Attention: Editable teasers do not work with the render pipeline v1 (which most of the customers are using at the moment). This should be fixed in an upcoming release.
 
@@ -162,7 +162,7 @@ We introduce videos in Livingdocs with these abilities:
 - upload videos and set metadata in editor via drag + drop / upload button
 - import videos via public API
 - Add project configuration for mediaVideo MediaType
-- Add new directive `doc-video` in a livingdocs design
+- Add new directive `doc-video` in a Livingdocs design
 
 In the upcoming releases we will bring in some improvements and make the video feature more stable.
 
@@ -324,7 +324,7 @@ With the improved [authentication workflow](https://github.com/livingdocsIO/livi
 With cookies being set on a new URL, the SSO Logins need to be re-configured. Do the following:
 
 1. Make sure your `editor__public_host` env variable is set to the editor URL (e.g. `https://edit.livingdocs.io`)
-2. Change all callback URLs for your SSO provider to the pattern `https://{editorUrl}/proxy/auth/{provider}/callback`. For the livingdocs service this looked e.g. as follows: `auth__connections__github__config__callbackURL = https://edit.livingdocs.io/proxy/auth/github/callback`. (NOTE: depending on your traefik setup it might also require `proxy/api` instead of `/proxy`).
+2. Change all callback URLs for your SSO provider to the pattern `https://{editorUrl}/proxy/auth/{provider}/callback`. For the Livingdocs service this looked e.g. as follows: `auth__connections__github__config__callbackURL = https://edit.livingdocs.io/proxy/auth/github/callback`. (NOTE: depending on your traefik setup it might also require `proxy/api` instead of `/proxy`).
 3. In the settings for your social providers, allow the new callback URLs (for FB for example we had to allow the redirect URL `https://edit.livingdocs.io/proxy/auth/facebook/callback` in our Facebook app)
 
 
@@ -421,7 +421,7 @@ const axios = require('axios').create({..., withCredentials: true})
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4015)
 
 ## CSS Stylesheets vh is not supported anymore :fire:
-Because of changes in the editor we need to replace the vh unit in the design assets. This is done automatically but the css assets in the design should support CORS when the files are on a different domain then your livingdocs editor. Otherwise we can't read the CSS Rules and it can lead to an unexpected behavior in the editor.
+Because of changes in the editor we need to replace the vh unit in the design assets. This is done automatically but the css assets in the design should support CORS when the files are on a different domain then your Livingdocs Editor. Otherwise we can't read the CSS Rules and it can lead to an unexpected behavior in the editor.
 If CORS can't be enabled on the css assets it should be replaced with a unit which does not directly base on the height of the viewport.
 
 # APIs :gift:

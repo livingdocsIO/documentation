@@ -212,7 +212,7 @@ For the User interface you can group your components. This is done via the `grou
 
 ## Metadata
 
-This section allows you to configure the livingdocs metadata extractor for the document's content. For example you might want to extract the content of a title component automatically to a metadata field 'title' in your CMS.
+This section allows you to configure the Livingdocs metadata extractor for the document's content. For example you might want to extract the content of a title component automatically to a metadata field 'title' in your CMS.
 The configuration allows you for each requested metadata field to define which <component>.<directive> combinations should be used for extraction and in what order.
 There are two types of content that can be extracted: text and images. You can define which one you want in the parameter 'type'.
 

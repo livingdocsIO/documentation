@@ -352,8 +352,8 @@ The Imatrics configuration is now integrated into the integrations, therefore we
 By default the editor now uses a strict set of CSS files which don't support Sass variables anymore.
 In case you want to add custom CSS styles, you'll need to declare one of the environment variables based on the desired order.
 
-The styles in `CUSTOM_STYLE_PATH_BEFORE` get loaded before the livingdocs editor styles,
-and the styles in `CUSTOM_STYLE_PATH_AFTER` get loaded after the livingdocs editor styles.
+The styles in `CUSTOM_STYLE_PATH_BEFORE` get loaded before the Livingdocs Editor styles,
+and the styles in `CUSTOM_STYLE_PATH_AFTER` get loaded after the Livingdocs Editor styles.
 
 As there are separate build processes for the upstream and downstream Sass files now, there is no need anymore to `@include` the upstream editor styles in your custom Sass file.
 

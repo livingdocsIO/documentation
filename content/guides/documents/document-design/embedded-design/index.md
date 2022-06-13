@@ -31,7 +31,7 @@ With the checked out code, you can run the following command from the cli:
 ./bin/run project-config:import-design --designUri="https://your-design-host.com/path-to-your-design/your-version" -d="/path/on/your/drive"
 ```
 
-The path on your drive needs to be a project config folder. This can either be an existing project config in your server project (if you have this) or one that you downloaded via the livingdocs cli.
+The path on your drive needs to be a project config folder. This can either be an existing project config in your server project (if you have this) or one that you downloaded via the Livingdocs cli.
 
 The task will create a file `design_settings` and a `components` folder with all components and link them in the config respectively.
 

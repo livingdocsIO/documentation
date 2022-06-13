@@ -100,7 +100,7 @@ for the diff_overlays is unloaded now
 - [v36.9.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.9): fix(metadata-plugins): remove unnecessary ng-if
 - [v36.9.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.8): fix(package): update @livingdocs/framework to version 11.8.2
 - [v36.9.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.7): fix(links): check if link attributes are allowed before setting defaults
-- [v36.9.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.6): fix(dependencies): update livingdocs framework
+- [v36.9.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.6): fix(dependencies): update Livingdocs framework
 - [v36.9.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.5): fix(print): Use document state notification for remote lock
 - [v36.9.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.4): fix(project-setup): fix metadata form preview
 - [v36.9.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.3): fix(fastify): add cache-control everywhere

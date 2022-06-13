@@ -161,7 +161,7 @@ livingdocs-server migrate up
 ### Migrate knex transactions to pg :fire:
 
 💣  The knex instance on `liServer.db.connection` is deprecated
-:fire: Knex transactions aren't compatible with livingdocs anymore. Please use `db.begin` instead:
+:fire: Knex transactions aren't compatible with Livingdocs anymore. Please use `db.begin` instead:
 
 ```js
 const db = liServer.db

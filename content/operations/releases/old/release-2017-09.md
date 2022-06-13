@@ -192,7 +192,7 @@ Each time when the metadata was applied to the document (e.g. `document.update()
 
 Image components can now also be defined as default components. A use case may be an image gallery where a different component should be used for images by default.
 
-Example `component configuration` in a livingdocs design:
+Example `component configuration` in a Livingdocs design:
 ```js
 {
   name: 'gallery',

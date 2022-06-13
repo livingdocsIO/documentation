@@ -50,6 +50,6 @@ Notable required configurations and our recommended best practices are described
 
 **Avoiding CORS**
 
-The preferred solution is to serve the livingdocs server instance on the same domain as the editor to prevent CORS requests and have a better security as we don't need to make the login cookies accessible on multiple domains. Please expose the livingdocs server instance on `/proxy/api` and then in the `livingdocs-editor` environment configs, configure the _host:_ `module.exports={api: {host: '/proxy/api'}}`
+The preferred solution is to serve the Livingdocs Server instance on the same domain as the editor to prevent CORS requests and have a better security as we don't need to make the login cookies accessible on multiple domains. Please expose the Livingdocs Server instance on `/proxy/api` and then in the `livingdocs-editor` environment configs, configure the _host:_ `module.exports={api: {host: '/proxy/api'}}`
 
-Alternatively you can use _proxiedHost_ instead of _host_ to proxy to a dns name of an internal service that's not accessible from the internet. We'll automatically set up a http/websocket proxy on `/proxy/api`.
+Alternatively you can use _proxiedHost_ instead of _host_ to proxy to a dns name of an internal service that is not accessible from the internet. We will automatically set up a http/websocket proxy on `/proxy/api`.

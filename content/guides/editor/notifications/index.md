@@ -162,4 +162,4 @@ As soon as the comments are enabled it is possible to mention another user in a 
    - `users:read`
    - `users:read.mail`
 7. install the app on the workspace
-8. Add `Bot User OAuth Token` to the livingdocs `notifications.channels.slack.botUserToken` config
+8. Add `Bot User OAuth Token` to the Livingdocs `notifications.channels.slack.botUserToken` config

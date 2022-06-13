@@ -8,7 +8,7 @@ menus:
 
 Livingdocs provides a powerful server CLI where you can execute maintenance and administration tasks.
 
-To execute a livingdocs-server CLI command, go to your livingdocs server folder and
+To execute a livingdocs-server CLI command, go to your Livingdocs Server folder and
 - run `npx livingdocs-server` to get help for all available commands (see the list below)
 - run `npx livingdocs-server <command>` to get help for a specific command
 
