@@ -58,7 +58,7 @@ How to require the editor in your package.json:
 
 This release introduce multi language support in the Livingdocs core. A more detailed description about the setup and the feature can be found in the [documentation](https://docs.livingdocs.io/walkthroughs/setup_multilanguage.html).
 
-The activation of the feature requires a re-index of elasticsearch (including the new mapping): `grunt search-index:document:reset`
+The activation of the feature requires a re-index of Elasticsearch (including the new mapping): `grunt search-index:document:reset`
 
 [server PR #1881](https://github.com/livingdocsIO/livingdocs-server/pull/1881) / [editor PR #1929](https://github.com/livingdocsIO/livingdocs-editor/pull/1929)
 
