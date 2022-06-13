@@ -1,11 +1,11 @@
 ---
 title: External Services
-description: Additionally to the mandatory dependency on the databases livingdocs also depends on external services.
+description: Additionally to the mandatory dependency on the databases Livingdocs also depends on external services.
 icon: toolbox
 menu: operations
 ---
 
-Additionally to the mandatory dependency on the databases (postgres, redis and elasticsearch), livingdocs also depends on a few external services. Many of them are configurable and optional.
+In addition to the mandatory database dependencies (Postgres, Redis and Elasticsearch), Livingdocs also depends on a few external services. Many of them are configurable and optional.
 
 Please consult the list below in case your security team needs to verify and whitelist them in your http proxy.
 

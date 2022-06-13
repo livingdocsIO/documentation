@@ -76,7 +76,7 @@ There are several important things to note in the example:
 2. the use of `li-language` **must be unique within a content-type**, i.e. you can only have one metadata property in a content-type that uses the `li-language` plugin
 3. the form arrangement uses a select box with the core service `languageSelection`, we strongly advise you to use our core metadata service
 
-Once you have the metadata field defined on the content-type, you also need to update your custom elasticsearch metadata mapping with an entry as follows:
+Once you have the metadata field defined on the content-type, you also need to update your custom Elasticsearch metadata mapping with an entry as follows:
 
 ```json
 {

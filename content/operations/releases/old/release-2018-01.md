@@ -79,7 +79,7 @@ If you have installed the `October Release 2017` or `December Release 2017`, you
 ```
 
 
-### Updated elasticsearch mapping
+### Updated Elasticsearch mapping
 
 The `contentType` was added to the `documents` index.
 

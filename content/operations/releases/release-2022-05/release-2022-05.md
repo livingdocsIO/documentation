@@ -109,7 +109,7 @@ References:
 * [Documentation]({{< ref "/reference-docs/project-config/editor-settings#example-table-dashboard" >}})
 * [Default Table Dashboards PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5142)
 * [Table Dashboard in document selection dialog PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5141)
-* [Load documents from postgres by default PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5173)
+* [Load documents from Postgres by default PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5173)
 * [Allow for main cell configuration PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5194)
 * [Add support for li-string-list PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5245)
 * [Publish state and quick publish PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5243)

@@ -291,7 +291,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3
 
 :fire: **The MediaLibrary is now active by default**
 Both on the editor and server side.
-The editor UI can be disabled but the server side feature is always active storing data in postgres and indexing into elasticsearch.
+The editor UI can be disabled but the server side feature is always active storing data in Postgres and indexing into Elasticsearch.
 
 Disable the MediaLibrary UI:
 ```js
@@ -302,7 +302,7 @@ editorSettings: {
   }
 }
 ```
-Configure an elasticsearch index name for the `mediaLibraryIndex` (otherwise a default name will be used):
+Configure an Elasticsearch index name for the `mediaLibraryIndex` (otherwise a default name will be used):
 ```js
 // static server config
 search: {

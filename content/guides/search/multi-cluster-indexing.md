@@ -8,9 +8,9 @@ weight: 3
 
 Livingdocs depends on Elasticsearch for search and filters of documents that are served to the Livingdocs Editor and the Public Api.
 
-Normally elasticsearch clusters with more than 3 hosts already provide quite high availability. But such a cluster isn't exempt from a total failure in case the whole datacenter loses connectity. To protect systems against complete datacenter failures, Elasticsearch advises to index documents in parallel on two different isolated clusters.
+Normally, Elasticsearch clusters with more than 3 hosts already provide quite high availability. But such a cluster isn't exempt from a total failure in case the whole datacenter loses connectity. To protect systems against complete datacenter failures, Elasticsearch advises to index documents in parallel on two different isolated clusters.
 
-Livingdocs supports indexing to multiple independent elasticsearch clusters using the elasticsearch index cluster configuration.
+Livingdocs supports indexing to multiple independent Elasticsearch clusters using the Elasticsearch index cluster configuration.
 This can be used to greatly improve the resiliency when your data spans multiple datacenters.
 It can also be used to do cluster upgrades by configuring a new cluster and index to it at the same time while the old cluster is still running.
 
