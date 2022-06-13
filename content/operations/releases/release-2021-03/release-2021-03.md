@@ -167,9 +167,9 @@ References:
 ### Multi Cluster Indexing :tada:
 
 There are a bunch of new features for indexing
-- Support multiple elasticsearch clusters during indexing
+- Support multiple Elasticsearch clusters during indexing
 - Add config to enable/disable consumers (e.g. to disable consumers for a delivery instance)
-- Custom indexes can target a specific elasticsearch cluster
+- Custom indexes can target a specific Elasticsearch cluster
 - Improved error handling
 
 References:

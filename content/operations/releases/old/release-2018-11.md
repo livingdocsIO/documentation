@@ -179,8 +179,8 @@ grunt migrate
 
 ## Teaser images
 
-### Update custom elasticsearch document mapping
-When using a custom elasticsearch document mapping (the mapping can be found at `search: metadata_mapping` usually in the all environment config), and you used teaser images at the publish screen, the elasticsearch mapping of the corresponding field needs to be updated with a `ratio` property.
+### Update custom Elasticsearch document mapping
+When using a custom Elasticsearch document mapping (the mapping can be found at `search: metadata_mapping` usually in the all environment config), and you used teaser images at the publish screen, the Elasticsearch mapping of the corresponding field needs to be updated with a `ratio` property.
 
 ```
 "teaserImage": {

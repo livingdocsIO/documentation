@@ -9,16 +9,16 @@ menu: operations
 See the [hardware requirements]({{< ref "/operations/hardware-requirements.md" >}}) for the requirements of each application and the services.
 
 ### Applications
-The server and delivery are both applications written in node.js. Node.js is single threaded, but it can handle concurrency through the asynchronous event loop. If a node.js process crashes, it has to be restarted and it is not able to accept requests during startup.
+The server and delivery are both applications written in Node.js. Node.js is single threaded, but it can handle concurrency through the asynchronous event loop. If a Node.js process crashes, it has to be restarted and it is not able to accept requests during startup.
 
-For a production setup, node.js processes should always be redundant to prevent downtime in case of crashes.
+For a production setup, Node.js processes should always be redundant to prevent downtime in case of crashes.
 
 ### Docker
 We recommend to use Docker as we provide Dockerfiles for every application and service. Compatibility is ensured with every release.
 
 #### Services
-Both elasticsearch and postgres will need a persistent volume mounted.
-Any custom configuration, as well as the supported versions for elasticsearch and postgres are visible in the respective Dockerfile.
+Both Elasticsearch and Postgres will need a persistent volume mounted.
+Any custom configuration, as well as the supported versions for Elasticsearch and Postgres are visible in the respective Dockerfile.
 
 - https://github.com/livingdocsIO/dockerfile-elasticsearch
 - https://github.com/livingdocsIO/dockerfile-postgres
@@ -32,7 +32,7 @@ Any system level dependency and the required environment variables are visible i
 
 #### Container data volumes
 
-Both the containers for server and editor are stateless. The elasticsearch and postgres containers data directory needs to be mounted to the host on with a data volume.
+Both the containers for server and editor are stateless. The Elasticsearch and Postgres containers data directory needs to be mounted to the host on with a data volume.
 
 #### Health checks
 - **Editor**: HTTP GET /status, Port 9000

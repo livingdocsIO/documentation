@@ -150,7 +150,7 @@ https://github.com/livingdocsIO/docker#livingdocsodyssey
 
 #### Redis Database
 
-Livingdocs uses redis worker queue for imports and elasticsearch indexing.
+Livingdocs uses Redis worker queue for imports and Elasticsearch indexing.
 A functional setup is mandatory.
 
 ```js
@@ -575,7 +575,7 @@ document is correctly updated.
 
 #### Search
 
-Configure the elasticsearch instance used by the search feature.
+Configure the Elasticsearch instance used by the search feature.
 
 ```js
 search: {
@@ -616,7 +616,7 @@ default the article list query gets no metadata.
 
 ##### queryBuilderPlugin
 
-`queryBuilderPlugin` is the path to your custom elasticsearch query.
+`queryBuilderPlugin` is the path to your custom Elasticsearch query.
 
 If you know Elasticsearch, it's simple to define your own [search request body](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html) function.
 The simplest possible query function looks like this:
@@ -982,10 +982,10 @@ We support these types for indexing
 
 ##### Document Metadata Mapping in Elasticsearch
 
-When you want to index your metadata image fields in elasticsearch (e.g. for dashboard filters), you have to define the elasticsearch metadata mapping, e.g.
+When you want to index your metadata image fields in Elasticsearch (e.g. for dashboard filters), you have to define the Elasticsearch metadata mapping, e.g.
 
 ```js
-// the elasticsearch metadata mapping file is defined in the environment config at 'search.metadata_mapping'
+// the Elasticsearch metadata mapping file is defined in the environment config at 'search.metadata_mapping'
     "teaserImage": {
       "properties": {
         "crops": {

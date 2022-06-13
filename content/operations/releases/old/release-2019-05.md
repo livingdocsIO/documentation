@@ -213,9 +213,9 @@ A more detailled description and an example configuration can be found in the [d
 
 ## Improve speed of reindexing :gift:
 
-Depending on how many documents you have stored, the re-indexing into elasticsearch needed some time. For production this has been a challenge for a long time, when you did an upgrade where data migrations were involved or even an elasticsearch mapping update.
+Depending on how many documents you have stored, the re-indexing into Elasticsearch needed some time. For production this has been a challenge for a long time, when you did an upgrade where data migrations were involved or even an Elasticsearch mapping update.
 
-Since the January 2019 release, we have continually improved the indexing speed. The optimisation results in a `10x - 100x` speed improvement and an average indexing speed of `1000 docs/s`. The indexing speed depends on your elasticsearch configuration and the size of your documents.
+Since the January 2019 release, we have continually improved the indexing speed. The optimisation results in a `10x - 100x` speed improvement and an average indexing speed of `1000 docs/s`. The indexing speed depends on your Elasticsearch configuration and the size of your documents.
 
 
 

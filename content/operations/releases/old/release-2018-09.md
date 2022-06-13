@@ -174,7 +174,7 @@ Livingdocs can now be fully used on a tablet and has full read support on phones
 
 ## Indexing API and index separation :gift: :fire:
 
-This change improves the speed and reliability of (re)indexing documents to elasticsearch.
+This change improves the speed and reliability of (re)indexing documents to Elasticsearch.
 
 * Redis is required as a dependency
 * New Redis config is required:
