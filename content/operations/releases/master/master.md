@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Create media library entry for comyan in editor [livingdocs-server #4546 v186.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4546)
 * :new: feat: Add reference to link-directive. [livingdocs-editor #5323 v80.25.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5323)
 * :new: feat: Add schema for link-directive. [livingdocs-server #4496 v186.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4496)
 * :new: Fix/Various Small Fixes [livingdocs-editor #5441 v80.24.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5441)
