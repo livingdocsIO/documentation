@@ -210,7 +210,7 @@ One can now define a custom entry point on login or when switching projects. For
 
 ## Custom User Menu :tada:
 
-Now it's possible to define custom entries within the livingdocs user menu.
+Now it's possible to define custom entries within the Livingdocs user menu.
 
 ![image](https://user-images.githubusercontent.com/39759830/87947563-cf065480-caa3-11ea-890a-8735dfaf8ebc.png)
 

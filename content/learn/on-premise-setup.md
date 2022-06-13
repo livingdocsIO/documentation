@@ -136,7 +136,7 @@ Server Config Keys to update:
 
 #### NPM Access Token
 
-To access private livingdocs repositories you need to create an npm user with an access token. We can then grant your npm user read access to our @livingdocs packages (e.g. `@livingdocs/livingdocs-server` and `@livingdocs/livingdocs-editor`).
+To access private Livingdocs repositories you need to create an npm user with an access token. We can then grant your npm user read access to our @livingdocs packages (e.g. `@livingdocs/livingdocs-server` and `@livingdocs/livingdocs-editor`).
 
 We recommend adding an `.npmrc` file to your server and editor repositories so everyone in your team can run `npm install` seamlessly.
 

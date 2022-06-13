@@ -105,7 +105,7 @@ function renderArray (array) {
 
 The function for the iframe modal to send messages is already written in the Editor, it waits for a config request before sending configs with a postMessage back to the iframe.
 
-In your separate handsontable application you will need two functions to communicate with livingdocs.
+In your separate handsontable application you will need two functions to communicate with Livingdocs.
 
 This function sends data and configs to Livingdocs using postMessage:
 
@@ -238,7 +238,7 @@ data () {
     }
   }
 ```
-- Write two functions to communicate with the livingdocs modal:
+- Write two functions to communicate with the Livingdocs modal:
 
 ```javascript
 methods: {

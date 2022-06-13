@@ -247,7 +247,7 @@ Asymmetric Algorithms:
 
 The preferred signing algorithm is `EdDSA`, which is an asymmetric one.
 The main benefit of an asymmetric algorithm is that you could use our tokens in some of your own applications running as separate processes.
-That process can then be configured with just the public key to verify livingdocs access tokens.
+That process can then be configured with just the public key to verify Livingdocs access tokens.
 This allows several processes to consume our api client tokens without contacting our server instance for verification. But this is only meant for internal usage at companies. Don't send the tokens to third parties!
 
 A json web key set of the configured keys is exposed on `http://localhost:9090/.well-known/jwks.json`.

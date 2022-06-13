@@ -131,7 +131,7 @@ Check out the Client API reference documentation below for the respective method
 
 #### I need my own design
 
-Currently, you can only use embedded designs in your livingdocs editor. [getting started with your own design](https://developers.livingdocs.io/getting_started)
+Currently, you can only use embedded designs in your Livingdocs Editor. [getting started with your own design](https://developers.livingdocs.io/getting_started)
 
 Otherwise you can use one of the given design in the editor and adapt the rendering on your side.
 For the delivery rendering you can have a local copy of our magazine design and adjust the HTML / CSS for the rendering. This means that you will write in the Livingdocs editor in our prebuilt design but render to your own custom design using the SDK.

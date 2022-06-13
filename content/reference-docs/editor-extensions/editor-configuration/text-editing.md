@@ -340,10 +340,10 @@ textcount: {
 }
 ```
 
-#### Excluding components and directives (configured in the livingdocs component library)
+#### Excluding components and directives (configured in the Livingdocs component library)
 
 It is also possible to only count the text of selected components or directives. This
-is configured in the component library of a livingdocs design.
+is configured in the component library of a Livingdocs design.
 
 Exclude whole components from the text counter (example component config):
 ```js

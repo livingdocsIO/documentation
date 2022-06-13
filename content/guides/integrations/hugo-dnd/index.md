@@ -6,13 +6,13 @@ weight: 3
 
 ## Basic Configuration
 
-To enable dragging both images and documents from _huGO+_ into livingdocs you first need to configure `hugo.resource`
+To enable dragging both images and documents from _huGO+_ into Livingdocs you first need to configure `hugo.resource`
 in the [server configuration]({{< ref "/reference-docs/server-extensions/server-configuration" >}})
 
 
 ## Image Drag and Drop
 
-Images can be dragged onto a livingdocs document directly from _huGO+_ after the basic configuration is set up.
+Images can be dragged onto a Livingdocs document directly from _huGO+_ after the basic configuration is set up.
 
 Note: you can restrict from which sources images can be uploaded, e.g. you could allow only uploads from _huGO+_.
 See [Image Source Policy]({{< ref "/reference-docs/editor-extensions/editor-configuration/image-source-policy.md" >}})
@@ -20,7 +20,7 @@ See [Image Source Policy]({{< ref "/reference-docs/editor-extensions/editor-conf
 
 ## Document Drag and Drop
 
-In case you use _huGO+_ as Digital Assets Management software, you can import articles from huGO+ by dragging and dropping them onto a livingdocs dashboard.
+In case you use _huGO+_ as Digital Assets Management software, you can import articles from huGO+ by dragging and dropping them onto a Livingdocs dashboard.
 
 There are two types of articles available for imports:
 * Agency articles

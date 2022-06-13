@@ -489,7 +489,7 @@ Server | Feature | Map article design layout to layout engine [Read more](#map-a
 
 ### Map article design layout to layout engine
 
-The print API will now receive the selected livingdocs design layout with every call and map it to the `layoutEngine` param used by huGO.
+The print API will now receive the selected Livingdocs design layout with every call and map it to the `layoutEngine` param used by huGO.
 
 It replaces the environment based `layoutEngine` config with a `layoutEngines` config that can list a number of layout engines supported by huGO. Each layout engine is associated with a design layout so a single LD instance can support multiple layout engines.
 
