@@ -73,7 +73,7 @@ For now we’ll only expose `hugo.resource.images`, which is used by the hugo im
 - [v85.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.13): fix(tasks): exit process after transform channel task
 - [v85.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.12): fix: Properly provide the leveldown options to the levelup instance
 - [v85.3.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.11): chore: Fix javascript syntax error in node 8
-- [v85.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.10): fix: Fix a server crash initiated by a postgres hostname comparison in the routes storage. Also fix the redis master lock setup.
+- [v85.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.10): fix: Fix a server crash initiated by a Postgres hostname comparison in the routes storage. Also fix the redis master lock setup.
 - [v85.3.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.9): fix: rename auth:namespace to auth:issuer
 - [v85.3.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.8): fix(request-logger): extend with user id through verified token
 - [v85.3.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.7): fix: Upgrade to @livingdocs/framework@^12.6.3

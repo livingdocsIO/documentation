@@ -459,7 +459,7 @@ In the server the `documentListApi` returns the inbox size of every list.
   * Consider `canReset: true` for a li-meta-slug-form :beetle: https://github.com/livingdocsIO/livingdocs-editor/pull/1914
   * Guard for undefined user in revision history :beetle: https://github.com/livingdocsIO/livingdocs-editor/pull/1907
 * Elasticsearch
-  * make elasticsearch apiVersion configurable
+  * make Elasticsearch apiVersion configurable
     [#1754](https://github.com/livingdocsIO/livingdocs-server/pull/1754) :gift:
   * replace top-level filter parameter with post_filter
     [#1726](https://github.com/livingdocsIO/livingdocs-server/pull/1726) :wrench:

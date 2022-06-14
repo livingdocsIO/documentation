@@ -608,7 +608,7 @@ Customers need more informations when a migration fails.
 - [v114.0.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.40): fix(comments): Add maxThreadCount config property
 - [v114.0.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.39): fix(policies): Introduce a more strict schema and allow additional properties
 - [v114.0.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.38): fix(publish): Fix the indexing for document publish calls that are nested in a transaction
-- [v114.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.37): fix(indexing): Change how we create the redis instance in the indexing controller as it didn't respect the sentinel config
+- [v114.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.37): fix(indexing): Change how we create the Redis instance in the indexing controller as it didn't respect the sentinel config
 - [v114.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.36): fix(airship): enable push notifications for web channel as well
 - [v114.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.35): fix(includes): Add interaction blocker config
 - [v114.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.34): fix(websocket): Rewrite the url for websockets as we do it for requests if /proxy/api is present
@@ -640,7 +640,7 @@ Customers need more informations when a migration fails.
 - [v57.33.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.48): fix(conflict): Hide comments in conflict mode
 - [v57.33.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.47): fix(split-pane): Minimize sidebar on conflict
 - [v57.33.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.46): chore: Fix the livingdocs-integration.json for the release-2020-12 in bluewin
-- [v57.33.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.45): fix(ci): Use our docker images instead of the official docker image
+- [v57.33.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.45): fix(ci): Use our Docker images instead of the official Docker image
 - [v57.33.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.44): fix(includes): Add interaction blocker config
 - [v57.33.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.43): chore: adapt cypress tests
 - [v57.33.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.42): fix: correctly navigate back from a custom dashboard

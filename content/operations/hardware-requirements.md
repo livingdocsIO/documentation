@@ -31,7 +31,7 @@ The requirements for the databases of course depend on the amount of data you wa
 
 #### Postgresql
 
-The database requirements are comparable to any other Postgres installation. There is an [extensive guide on postgres hardware](https://wiki.postgresql.org/wiki/Database_Hardware) optimized for high performance.
+The database requirements are comparable to any other Postgres installation. There is an [extensive guide on Postgres hardware](https://wiki.postgresql.org/wiki/Database_Hardware) optimized for high performance.
 
 #### Elasticsearch
 

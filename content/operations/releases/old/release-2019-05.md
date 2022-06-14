@@ -306,7 +306,7 @@ livingdocs-server migrate up
   * Fix menu item move [livingdocs-editor #2634](https://github.com/livingdocsIO/livingdocs-editor/pull/2634) :beetle:
   * Fix that multiselect shortcut does exit print publish screen again [livingdocs-editor #2613](https://github.com/livingdocsIO/livingdocs-editor/pull/2613) :beetle:
   * Fix that lists are sorted alphabetically again [livingdocs-editor #2609](https://github.com/livingdocsIO/livingdocs-editor/pull/2609) :beetle:
-  * Fix elasticsearch 6 support for optional date filters [livingdocs-server #2335](https://github.com/livingdocsIO/livingdocs-server/pull/2335) :beetle:
+  * Fix Elasticsearch 6 support for optional date filters [livingdocs-server #2335](https://github.com/livingdocsIO/livingdocs-server/pull/2335) :beetle:
 * Print
   * fix(printModal): delete keys and add remove button [livingdocs-editor #2622](https://github.com/livingdocsIO/livingdocs-editor/pull/2622) :gift:
   * Guard the access of publicationPreset if its undefined [livingdocs-editor #2619](https://github.com/livingdocsIO/livingdocs-editor/pull/2619) :gift:

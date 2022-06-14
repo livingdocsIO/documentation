@@ -252,7 +252,7 @@ For details on the configuration and how it interacts with the metadata configur
 ## Routing
 *has UI support*
 
-The routing setting defines how the routes cache (redis) builds lookup route entries for this content-type. We advise you to use the UI under "Project Setup - Categories / Routing" to setup your routing config.
+The routing setting defines how the routes cache (Redis) builds lookup route entries for this content-type. We advise you to use the UI under "Project Setup - Categories / Routing" to setup your routing config.
 
 Example:
 ```js

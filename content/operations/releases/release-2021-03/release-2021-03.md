@@ -755,11 +755,11 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4
 
 ### Node 12 Support
 
-💣 Node 12 is deprecated. Please upgrade your docker images and local environments to node 14.
+💣 Node 12 is deprecated. Please upgrade your Docker images and local environments to node 14.
 
 This follows our upgrade cycle that we drop the old lts version one year after the introduction of the [current LTS version](https://nodejs.org/en/about/releases/).
 
-In your docker images change
+In your Docker images change
 - `FROM livingdocs/server-base:12` to `FROM livingdocs/server-base:14` or `:15`
 - `FROM livingdocs/editor-base:12` to `FROM livingdocs/editor-base:14` or `:15`
 - `FROM livingdocs/node:12` to `FROM livingdocs/node:14` or `:15`
@@ -958,7 +958,7 @@ colt().createConfigProject('project', {...})
 - [v124.5.79](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.79): chore: update npm read token
 - [v124.5.78](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.78): fix: add proxy for image crop downloads
 - [v124.5.77](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.77): fix(server): Replace broken http-terminator with lil-http-terminator that doesn't have any dependencies
-- [v124.5.76](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.76): fix(elasticsearch): Do not push the `_type` in elasticsearch 7 bulk payloads
+- [v124.5.76](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.76): fix(elasticsearch): Do not push the `_type` in Elasticsearch 7 bulk payloads
 - [v124.5.75](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.75): fix: Trigger another release as npm publish failed again
 - [v124.5.74](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.74): fix(indexing): Fix context filter/normalization during bulk index
 - [v124.5.73](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.73): fix: Upgrade to @livingdocs/framework@18.6.7
@@ -982,10 +982,10 @@ colt().createConfigProject('project', {...})
 - [v124.5.55](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.55): chore(document-migrations): Lower the concurrency to 2 as we're running multiple processes most times
 - [v124.5.54](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.54): chore: Update todo script on drone
 - [v124.5.53](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.53): test(image-upload-proxy): Write a test that the filename gets passed to the multipart request
-- [v124.5.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.52): fix(elasticsearch): Fix elasticsearch bulk retries by matching failed entries in reverse order
-- [v124.5.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.51): fix(indexing): Retry bulk requests that respond with a 429 error when elasticsearch is overloaded
+- [v124.5.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.52): fix(elasticsearch): Fix Elasticsearch bulk retries by matching failed entries in reverse order
+- [v124.5.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.51): fix(indexing): Retry bulk requests that respond with a 429 error when Elasticsearch is overloaded
 - [v124.5.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.50): chore(file-upload): Support node 12 with its broken Readable.from support for Buffers
-- [v124.5.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.49): fix(search): Invoke search requests against elasticsearch with the correct publication index
+- [v124.5.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.49): fix(search): Invoke search requests against Elasticsearch with the correct publication index
 - [v124.5.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.48): fix(emails): Upgrade the SES configuration to the newest aws sdk v2 to get rid of deprecation messages
 - [v124.5.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.47): fix(indexing): Fix channelId comparison in live indexing
 - [v124.5.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.46): fix(group_projection): add archived to return object
@@ -998,7 +998,7 @@ colt().createConfigProject('project', {...})
 - [v124.5.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.39): test(import): check response format of input in more detail
 - [v124.5.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.38): fix(indexing): Resume indexing after a process and queue got paused
 - [v124.5.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.37): fix(document-copy): Rewrite the document-copy config loader to promises to ensure that the promises always resolve
-- [v124.5.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.36): fix(queue): Automatically delete consumers where the consumer group in redis got deleted manually
+- [v124.5.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.36): fix(queue): Automatically delete consumers where the consumer group in Redis got deleted manually
 - [v124.5.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.35): chore: simplify code
 - [v124.5.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.34): fix(public-api): allow to set 'publicationDate' flag on import
 - [v124.5.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v124.5.33): fix: correctly log in users that create their accounts with SSO

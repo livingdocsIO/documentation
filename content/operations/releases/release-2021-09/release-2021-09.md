@@ -522,7 +522,7 @@ References:
   * Delay media indexing and notifications [livingdocs-server #3709](https://github.com/livingdocsIO/livingdocs-server/pull/3709) :gift:
   * Support a `maxCpuFunction` to retrieve the maximum cpu threshold during indexing [livingdocs-server #3701](https://github.com/livingdocsIO/livingdocs-server/pull/3701) :gift:
   * Add indexing config for li-datetime-validity plugin [livingdocs-server #3774](https://github.com/livingdocsIO/livingdocs-server/pull/3774) :gift:
-  * Prevent implicit index creation in elasticsearch [livingdocs-server #3772](https://github.com/livingdocsIO/livingdocs-server/pull/3772) :gift:
+  * Prevent implicit index creation in Elasticsearch [livingdocs-server #3772](https://github.com/livingdocsIO/livingdocs-server/pull/3772) :gift:
 * History
   * Allow to restore metadata [livingdocs-editor #4538](https://github.com/livingdocsIO/livingdocs-editor/pull/4538) :gift:
 * Auto replace image when media library has changed [livingdocs-editor #4554](https://github.com/livingdocsIO/livingdocs-editor/pull/4554) :gift:
@@ -545,7 +545,7 @@ References:
 * Performance:
   * Streaming of image uploads [livingdocs-server #3758](https://github.com/livingdocsIO/livingdocs-server/pull/3758) :gift:
   * Streaming of file uploads [livingdocs-server #3738](https://github.com/livingdocsIO/livingdocs-server/pull/3738) :gift:
-  * Only load the document content from postgres when requested [livingdocs-server #3721](https://github.com/livingdocsIO/livingdocs-server/pull/3721) :gift:
+  * Only load the document content from Postgres when requested [livingdocs-server #3721](https://github.com/livingdocsIO/livingdocs-server/pull/3721) :gift:
   * Fix AJV memory leak [livingdocs-server #3803](https://github.com/livingdocsIO/livingdocs-server/pull/3803) :gift:
   * Remove jQuery from the framework [livingdocs-server #3913](https://github.com/livingdocsIO/livingdocs-server/pull/3913) :gift:
 * AWS: Upgrade AWS SES to use signature V4 [livingdocs-server #3730](https://github.com/livingdocsIO/livingdocs-server/pull/3730) :gift:
@@ -631,7 +631,7 @@ References:
 - [v154.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.37): fix: Upgrade to pino v7
 - [v154.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.36): chore: check type of assets
 - [v154.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.35): fix: use the updated release-notes-patch repo
-- [v154.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.34): fix(postgres): Fix support for postgres 14 that has some query logic change (maybe accidental)
+- [v154.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.34): fix(postgres): Fix support for Postgres 14 that has some query logic change (maybe accidental)
 - [v154.0.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.33): chore(build): Upgrade to @livingdocs/secure-password
 - [v154.0.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.32): test: update tests for comments mentioning
 - [v154.0.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.31): fix(imagemagick): Support imagemagick uploads again
@@ -640,7 +640,7 @@ References:
 - [v154.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.27): fix(telemetry): Fix opentelemetry span creation in the job queue
 - [v154.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.26): chore: remove content-disposition and let the editor decide how to get the file
 - [v154.0.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.25): test(push notifications): Add tests for airship
-- [v154.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.24): fix(elasticsearch): Get rid `"./*": "./*"` deprecation message coming from a package.json require of elasticsearch
+- [v154.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.24): fix(elasticsearch): Get rid `"./*": "./*"` deprecation message coming from a package.json require of Elasticsearch
 - [v154.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.23): test: adapt tests
 - [v154.0.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.22): chore(blob-store): Isolate the computeKey tests more
 - [v154.0.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v154.0.21): fix(project-config): Lower the minimum metadata handle length to two characters

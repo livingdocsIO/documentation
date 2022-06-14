@@ -42,7 +42,7 @@ Both the containers for server and editor are stateless. The Elasticsearch and P
 - **Redis**: TCP, Port 6379
 
 #### Deployment
-We recommend building docker images on CI and pushing them to the registry. Deployment can be done manually or triggered by CI continuously.
+We recommend building Docker images on CI and pushing them to the registry. Deployment can be done manually or triggered by CI continuously.
 
 ## Operating Livingdocs
 

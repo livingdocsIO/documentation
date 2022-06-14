@@ -66,7 +66,7 @@ This allows e.g. migrations to access the iMatrics API.
 - [v103.3.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v103.3.18): fix(media-library): Fix a migration where we've accidentally dropped the title of media library entries
 
 In this migration, we're setting the title on the media library entry again if it isn't present.
-- [v103.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v103.3.17): fix: Adapt docker compose to new postgres version
+- [v103.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v103.3.17): fix: Adapt Docker compose to new Postgres version
 - [v103.3.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v103.3.16): fix(print-api): Improve logging
 
 Make Print-API debug logs JSON format and more informative (adds `host`, `action..).

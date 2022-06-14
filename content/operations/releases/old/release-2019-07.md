@@ -207,7 +207,7 @@ For the next version of access management (hooks for now), we need to refactor t
 We're dropping support for node 8. Please use node 10 from now on.
 
 ### Needed Actions :fire:
-- :fire: To upgrade the node version in your docker files, please change all occurences of `livingdocs/server-base:8` in your project to `livingdocs/server-base:10.0`.
+- :fire: To upgrade the node version in your Docker files, please change all occurences of `livingdocs/server-base:8` in your project to `livingdocs/server-base:10.0`.
 - :recycle: We now use a more secure imagemagick policy by default. If you need to overwrite our imagemagick policy, please use such a declaration in your Dockerfile to use the default policy
 
 ```
