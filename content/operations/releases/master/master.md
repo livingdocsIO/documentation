@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Comyan image usage [livingdocs-server #4545 v186.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4545)
 * :new: test(dependabot): test dependabot for release-2022-XX branches [livingdocs-editor #5458 v80.26.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5458)
 * :new: Fix/Docked Navigation [livingdocs-editor #5448 v80.26.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5448)
 * :new: feat(dependabot): Add dependabot configuration to repository [livingdocs-editor #5452 v80.26.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5452)
