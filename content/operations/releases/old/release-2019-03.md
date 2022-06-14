@@ -42,7 +42,7 @@ How to require the server in your package.json:
 - [v76.8.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v76.8.12): fix(search): resolve channel correctly
 - [v76.8.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v76.8.11): fix: Work around alpine linux issue in droneci tagging
 - [v76.8.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v76.8.8): resolve hugo author when dnd
-- [v76.8.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v76.8.7): elasticsearch: Fix optional date filters in elasticsearch 6
+- [v76.8.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v76.8.7): Elasticsearch: Fix optional date filters in Elasticsearch 6
 - [v76.8.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v76.8.6): merge: fix json schema
 - [v76.8.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v76.8.5): lock: store tab id
 - [v76.8.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v76.8.4): push-notifications: add placeholder id mappings for local env conf
@@ -68,7 +68,7 @@ How to require the editor in your package.json:
 - [v35.36.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v35.36.29): fix(print): Remove unneeded bottom bar CSS
 
 Removes a workaround that is no longer needed. This fixes a display bug where the bottom preview image was covered by the print preview bottom bar.
-- [v35.36.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v35.36.28): fix(dependencies): update livingdocs framework
+- [v35.36.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v35.36.28): fix(dependencies): update Livingdocs framework
 - [v35.36.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v35.36.27): fix(print): Use document state notification for remote lock
 - [v35.36.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v35.36.26): fix(print): Tweak print preview bottom bar
 
@@ -186,7 +186,7 @@ livingdocs-server migrate up
   * New task to create admin user (`livingdocs-server create-admin-user`) [livingdocs-server #2288](https://github.com/livingdocsIO/livingdocs-server/pull/2288) :gift:
   * New task to create admin users (`livingdocs-server create-admin-users`) [livingdocs-server #2259](https://github.com/livingdocsIO/livingdocs-server/pull/2259) :gift:
   * New task to add a design (`livingdocs-server add-design`) [livingdocs-server #2259](https://github.com/livingdocsIO/livingdocs-server/pull/2259) :gift:
-  * New task to flush redis db (`livingdocs-server redis-flushdb`) [livingdocs-server #2279](https://github.com/livingdocsIO/livingdocs-server/pull/2279) :gift:
+  * New task to flush Redis db (`livingdocs-server redis-flushdb`) [livingdocs-server #2279](https://github.com/livingdocsIO/livingdocs-server/pull/2279) :gift:
 * Improvements
   * Add density to image convert config [livingdocs-server #2303](https://github.com/livingdocsIO/livingdocs-server/pull/2303) :wrench:
   * Deep camelize ignore [livingdocs-server #2316](https://github.com/livingdocsIO/livingdocs-server/pull/2316) :wrench:

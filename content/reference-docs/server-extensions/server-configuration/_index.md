@@ -141,11 +141,11 @@ db: {
 }
 ```
 
-To not create too many connections against postgres, we suggest to use a connection pooler running using `transaction` mode.
+To not create too many connections against Postgres, we suggest to use a connection pooler running using `transaction` mode.
 
 Amazon, Google Cloud and other hosters also offer solutions for that.
 
-Self-hosted solutions could use [pgbouncer](https://www.pgbouncer.org/) or [odyssey](https://github.com/yandex/odyssey). We have some docker images for them in our docker registry.
+Self-hosted solutions could use [pgbouncer](https://www.pgbouncer.org/) or [odyssey](https://github.com/yandex/odyssey). We have Docker images for them in our Docker registry.
 https://github.com/livingdocsIO/docker#livingdocsodyssey
 
 #### Redis Database
