@@ -239,7 +239,7 @@ elasticIndex: {
 
 To support future updates, we did an internal update where we define Elasticsearch aliases pointing on an index. With this change, you need to re-index the publication index used for the public API search endpoint.
 
-After the deployment, please **immediately** run this cli task (the publication index will be empty after the deployment):
+After the deployment, please **immediately** run this CLI task (the publication index will be empty after the deployment):
 
 ```bash
 livingdocs-server elasticsearch-index --handle=li-publications -y
@@ -577,7 +577,7 @@ References:
 
 ### Livingdocs Server Patches
 - [v114.0.59](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.59): chore: rerun checks
-- [v114.0.58](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.58): fix(design): add new cli command design-set-active
+- [v114.0.58](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.58): fix(design): add new CLI command design-set-active
 - [v114.0.57](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.57): fix: update integration test because of an outdated github API
 - [v114.0.56](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.56): fix(hugo): require auth on all print routes
 - [v114.0.55](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.55): fix(print-api): Force `no-cache` for print API requests

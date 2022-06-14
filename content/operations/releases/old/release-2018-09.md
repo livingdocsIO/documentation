@@ -330,7 +330,7 @@ app: {
 
 * Chore
   * Introduce Content Behavior [livingdocs-editor #2170](https://github.com/livingdocsIO/livingdocs-editor/pull/2170) :gift: :gift: :gift:
-  * Support `--reporter` option in test cli [livingdocs-server #2042](https://github.com/livingdocsIO/livingdocs-server/pull/2042) :wrench:
+  * Support `--reporter` option in test CLI [livingdocs-server #2042](https://github.com/livingdocsIO/livingdocs-server/pull/2042) :wrench:
   * Throw a MetadataValidationError during autosave [livingdocs-server #2054](https://github.com/livingdocsIO/livingdocs-server/pull/2054) :wrench:
   * Add component properties styles to styleguide  [livingdocs-editor #2219](https://github.com/livingdocsIO/livingdocs-editor/pull/2219) :chore:
 

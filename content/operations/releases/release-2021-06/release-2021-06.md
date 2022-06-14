@@ -686,10 +686,10 @@ References:
 - [v135.1.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.52): fix(indexing): Improve the indexing to handle deleted projects or content types
 - [v135.1.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.51): fix: unsubscribe url in notifications mail template
 - [v135.1.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.50): chore(hugo): add tests for drop image
-- [v135.1.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.48): fix(design): add new cli command design-set-active
+- [v135.1.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.48): fix(design): add new CLI command design-set-active
 - [v135.1.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.47): chore(revision): add test for metadata
 - [v135.1.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.46): fix(project-delete): Delete media_library_entries, types and events correctly when deleting a project
-- [v135.1.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.45): fix(migrations): incorporate pr feedback
+- [v135.1.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.45): fix(migrations): incorporate PR feedback
 - [v135.1.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.44): chore: change the slack messages template
 - [v135.1.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.43): fix: read channelId from documentVersion
 - [v135.1.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.42): fix(datetime validity): allow undefined to/from values
