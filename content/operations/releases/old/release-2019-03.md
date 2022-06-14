@@ -191,7 +191,7 @@ livingdocs-server migrate up
   * Add density to image convert config [livingdocs-server #2303](https://github.com/livingdocsIO/livingdocs-server/pull/2303) :wrench:
   * Deep camelize ignore [livingdocs-server #2316](https://github.com/livingdocsIO/livingdocs-server/pull/2316) :wrench:
   * Improve config loading [livingdocs-server #2301](https://github.com/livingdocsIO/livingdocs-server/pull/2301) :wrench:
-  * Promise support in lib cli [livingdocs-server #2249](https://github.com/livingdocsIO/livingdocs-server/pull/2249) :wrench:
+  * Promise support in lib CLI [livingdocs-server #2249](https://github.com/livingdocsIO/livingdocs-server/pull/2249) :wrench:
   * Provide project id and channel id to list update hook [livingdocs-server #2260](https://github.com/livingdocsIO/livingdocs-server/pull/2260) :wrench:
   * Map Metadata from Default Content [livingdocs-editor #2516](https://github.com/livingdocsIO/livingdocs-editor/pull/2516) :wrench:
   * Improve cypress helpers [livingdocs-editor #2503](https://github.com/livingdocsIO/livingdocs-editor/pull/2503) :wrench:

@@ -222,7 +222,7 @@ Detailed documentation on the new public API endpoints is in the public API docu
 
 Reindexing will often be used when one wants to have updated metadatadata and design for deliveries.
 A server administrator can now reindex documents via the `Operations` panel (Server Administration -> Operations) in the editor.
-The reindexing mechanism is the same as via the `livingdocs-server` cli.
+The reindexing mechanism is the same as via the `livingdocs-server` CLI.
 
 ![elasticsearch-operations](https://user-images.githubusercontent.com/431376/62135777-1750c380-b2e3-11e9-8ec5-b5d23d2c7102.gif)
 

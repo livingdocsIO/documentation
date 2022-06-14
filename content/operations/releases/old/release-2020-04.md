@@ -98,7 +98,7 @@ How to require the editor in your package.json:
 - [v49.5.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.12): fix(references): behaviour when record is deleted
 - [v49.5.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.11): fix: correct image uploads and small delay upon submittion of image metadata
 - [v49.5.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.10): fix: correctly replace images on DnD
-- [v49.5.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.9): fix: cleanup pr and integrate feedback
+- [v49.5.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.9): fix: cleanup PR and integrate feedback
 - [v49.5.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.8): fix(document): moved reference update to server
 - [v49.5.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.7): chore: rename variable
 - [v49.5.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.6): fix(publish): show metadata validation error

@@ -502,7 +502,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3
 - :fire: `indexingApi.document.addJob` got removed. Please use `indexingApi.addBackgroundIndexingJobsByBatches` instead
 - :fire: `indexingApi.media.addMediaUpdate` moved to `indexingApi.addMediaUpdate`
 - :fire: `indexingApi.media.reindex` got replaced by `indexingApi.addBackgroundIndexingJobsByBatches`
-- :fire: The cli tasks `es-media-reindex` and `es-search-reindex` got replaced by `elasticsearch-index`
+- :fire: The CLI tasks `es-media-reindex` and `es-search-reindex` got replaced by `elasticsearch-index`
   ```bash
   livingdocs-server elasticsearch-index --handle li-media
   livingdocs-server elasticsearch-index --handle li-documents

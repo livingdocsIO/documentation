@@ -85,7 +85,7 @@ the promise where the design is already loaded
 
 Fixed the revision_service the design are now loaded before a revision
 is shown
-- [v36.9.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.16): code: incorporate pr feedback
+- [v36.9.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.16): code: incorporate PR feedback
 - [v36.9.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.15): fix(dashboard): make it possible to pass componentName per config
 - [v36.9.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.14): fix(history): re-add bold styles, revisions topbar
 - [v36.9.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.13): fix(tasks): task can be restarted without deleting the task

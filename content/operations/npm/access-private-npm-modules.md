@@ -24,7 +24,7 @@ echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
 
 **Never add write tokens to the `.npmrc` file**
 
-If you need to override a read-only token in the `.npmrc` file (eg. when you want to temporarily use a token with write access), you can pass the write token as cli arg.
+If you need to override a read-only token in the `.npmrc` file (eg. when you want to temporarily use a token with write access), you can pass the write token as CLI arg.
 
 ```sh
 npm --//registry.npmjs.org/:_authToken=<fill-in-your-write-token>

@@ -11,7 +11,7 @@ All public and private packages belong to the [@livingdocs organization](https:/
 To publish packages, you need a write access token. Only publish using access tokens belonging to the organization. You can find a pre-generated tokens with write access in the **secrets**
 
 
-If you need to override a read-only token in the `.npmrc` file (eg. when you want to temporarily use a token with write access), you can pass the write token as cli arg.
+If you need to override a read-only token in the `.npmrc` file (eg. when you want to temporarily use a token with write access), you can pass the write token as CLI arg.
 
 ```sh
 npm --//registry.npmjs.org/:_authToken=<fill-in-your-write-token>
