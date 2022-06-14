@@ -300,7 +300,7 @@ metadata: [
 A `li-external-id` metadata field can be used to save an external id of another system. For example if you want to have an article reference to your original system. At the moment `li-external-id` has no UI and can only be set via the public API import.
 
 **Storage Format**: `<String>`\
-**Default UI**: no UI
+**Default UI**: no UI\
 **Project Config**
 ```js
 // contentType[].metadata / mediaType[].metadata
