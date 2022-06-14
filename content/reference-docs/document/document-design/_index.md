@@ -483,10 +483,8 @@ componentProperties: ms.arrayOf(ms.allOf([{
 ```
 
 ### Component Groups
-*has UI support*
 
 With component groups you can visually group together similar components, e.g. "Text components" for use in the Livingdocs editor sidebar.
-We advise you to use the UI in "Project Setup - Component Library" to create and re-arrange groups.
 
 ### Default Components
 

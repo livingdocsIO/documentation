@@ -70,7 +70,7 @@ contentTypes: [{
   // You'll find the renditions example further below
   renditions: require.resolve('./path/to/rendition/config'),
 
-  // Configuration for the Editor behaviour, has UI support
+  // Configuration for the Editor behaviour
   editor: {
     ui: {
       // flag whether the list assignment on the publish (metadata)
@@ -171,7 +171,6 @@ Defines a HTML string that wraps the document when used in the editor. Use the c
 The example above would put a padding of 20px on documents in the editor to give some space on the sides.
 
 ## Metadata
-*has UI support*
 
 Metadata can be freely configured for each content-type. An article might have different metadata fields than an image gallery.
 
@@ -201,7 +200,6 @@ Get a list of available [metadata plugins]({{< ref "/reference-docs/document/met
 
 
 ## Metadata Groups
-*has UI support*
 
 The Metadata Groups allow you to logically group the fields into collapsible cards. By default all the cards are expanded but can be configured to be collapsed with the property `metadataGroups[].expanded: false`.
 Once a card has been manually collapsed/expanded in the UI, then this state will be saved in the local storage of the browser and the card will show in that state even after a page reload.
@@ -224,7 +222,6 @@ e.g.:
 ```
 
 ## Components and Component Groups
-*has UI support*
 
 The `components` entry tells the Livingdocs editor which subset of all components in the design should be usable within a content-type. For example, a gallery should probably only have images.
 The groups allow you to define how the components are shown in the Livingdocs editor sidebar of a document.
@@ -250,9 +247,8 @@ The `publicationIndex` config allows you to define how documents of this content
 For details on the configuration and how it interacts with the metadata configuration, see our section on [searching publications]({{< ref "/guides/search/publication-index.md" >}}).
 
 ## Routing
-*has UI support*
 
-The routing setting defines how the routes cache (Redis) builds lookup route entries for this content-type. We advise you to use the UI under "Project Setup - Categories / Routing" to setup your routing config.
+The routing setting defines how the routes cache (Redis) builds lookup route entries for this content-type.
 
 Example:
 ```js
@@ -320,14 +316,10 @@ The schema is as follows:
 Apart from the general settings (`renderSettings`) you define an entry for each teaser (`teasers`) giving it the Livingdocs component (from the design) that should be used for rendering as well as a mapping of metadata values to component directives. See our guide on [teaser preview guide]({{< ref "/guides/editor/teaser-preview" >}}) for more details.
 
 ## Desk-Net
-*has UI support*
-
-We advise you to setup the Desk-Net configuration in the Editor via the "Project Setup" entry.
 
 See our [Desk-Net plugin guide]({{< ref "/guides/integrations/desknet" >}}) for comprehensive infos (custom code parts require enterprise version).
 
 ## Renditions
-*enterprise only*
 
 Renditions can only be changed in the enterprise model since they require custom code.
 
@@ -363,7 +355,6 @@ module.exports = {
 ```
 
 ## Enable Push Notifications for a ContentType
-*enterprise only*
 
 To enable push notifications for a specific content type you must have a metadata field called `pushNotifications`. Name and plugin must match exactly.
 

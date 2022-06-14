@@ -14,13 +14,7 @@ Once the soft lock is enabled for a content-type (e.g. articles) a "Lock" button
 
 ## Enable soft lock
 
-### Configurable Metadata config
-
-If you are running with the (new) configurable metadata config, you can configure this plugin over the UI. Just navigate to the Project Setup, select the desired content-type (e.g. articles), head over to the Metadata tab and add the Metadata Plugin "Document Soft Lock". In the sidebar you can set the desired timeout for the soft lock in minutes.
-
-### Static Metadata config
-
-If you still have a static JSON configuration, you can add the following code snippet to your metadata configuration array:
+Add the following metadata json to the content-type for which you want a the soft lock to be active:
 ```
 {
   handle: 'documentSoftLock',

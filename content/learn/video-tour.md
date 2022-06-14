@@ -24,9 +24,7 @@ A Livingdocs project is easiest understood as a publication. This can be a newsp
 
 ## Project Setup
 
-This is where you configure your publication. A publication might have different content-types like articles or image galleries. Those in turn have metadata and component sets out of which editors can create content. All those things can be configured in the "Project Setup" section of Livingdocs.
-
-{{< vimeo id="426285528" class="video-wrapper" >}}
+This is where you configure your publication. A publication might have different content-types like articles or image galleries. Those in turn have metadata and component sets out of which editors can create content. In order to manage all of those settings you will use the Livingdocs CLI that is explained in the next chapter.
 
 
 ## Project Config
