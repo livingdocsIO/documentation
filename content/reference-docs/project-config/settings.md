@@ -220,7 +220,6 @@ settings: {
 ```
 
 ## Languages / Translations
-*has UI support*
 
 Livingdocs allows you to define documents in multiple languages as well as integrating a translation workflow to translate a document from one language to the other.
 
@@ -232,9 +231,6 @@ Livingdocs allows you to define documents in multiple languages as well as integ
 If you activate the translation feature, then the `language` metadata plugin on a document will contain a `groupId`. You can use this in the `languageGroupId` parameter of the [Publication Search public API](https://edit.livingdocs.io/public-api) (under "Search Publications") call to retrieve all translations of a document.
 
 ## Integrations
-*has UI support*
-
-Since integrations typically require a correct connection to be establised we strongly advise to use our UIs under "Project Setup" to set them up.
 
 In general all integrations are under the `integrations` key. We still have some legacy markup where the integration is directly on the root (`desknet`), but this will be moved in the future.
 
@@ -248,7 +244,6 @@ Available plugins are:
 ### Imatrics
 
 Imatrics already uses our new secure secrets feature that will in future be used by all plugins.
-There is full UI support for it, so if you use the UI to configure the plugin you don't need to know anything more.
 If you are using a seeding process, e.g. via the CLI then you need to manually generate a key and reference it in your project config:
 ```
 // NOTE: you need to choose a unique name, an easy way is to append the current date to the string 'imatrics-' as done below
@@ -285,11 +280,10 @@ As with [iMatrics](#imatrics) above, the secure secrets feature is used to store
 
 
 ## Includes
-*has UI support*
 
 Includes allow you to render parts of your document from a remote location. For example you can create a component called `highcharts` that uses a service directive in the HTML lik `<div doc-include="highcharts"></div>`. Everything inside that div will be rendered from the remote service "highcharts".
 
-The service itself is configured in the config (see example at the top). We advise you to use the UI under "Project Setup" to setup the remote service.
+The service itself is configured in the config (see example at the top).
 The `handle` is the service name that is also used in the `doc-include` directive of the component.
 In the `rendering` object you define the URL of your micro-service where the rendering is done as well as a timeout to indicate when it should fail.
 `blockEditorInteraction` can be used to alter the interactivity of the include within the editor. Not setting this value, or selecting "No" in the UI, will result in the default experience of the include being rendered and interactive within the editor. Passing a value of `'always'` will block all interaction with the include in the editor, and using `'initial'` will block the first click only.
@@ -299,9 +293,8 @@ The `config` parameter can contain arbitrary (fixed) data that are sent to your 
 
 
 ## Webhooks
-*has UI support*
 
-Webhooks allow you to receive notifications for events from within Livingdocs and react to them. We advise you to use the UI under "Project Setup" to define your webhooks.
+Webhooks allow you to receive notifications for events from within Livingdocs and react to them.
 
 For details on the parameters see our [Webhooks]({{< ref "/reference-docs/server-extensions/webhooks" >}}) documentation.
 

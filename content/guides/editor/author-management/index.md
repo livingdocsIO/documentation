@@ -7,83 +7,85 @@ bullets:
 weight: 1
 ---
 
-Livingdocs provides the ability to manage authors as structured data within their own content-types. Those can be linked as document references in articles in order to assign an author to a document. In some situations we want to provide a prefilling option for the author by using the currently logged in user. This saves time for the journalists so they don't always have to explicitly link their author record.
+Livingdocs provides the ability to manage authors as structured data within their own content-types. Those can be linked as document references in articles in order to assign an author to a document.
 
 ## Configuration
 
-The author management can be completely setup using the Project Setup and Server Admin UIs.
+The author management can be completely setup using the Project Setup.
 
 ### Author content type
 
-If you don't have an author content-type yet, create one in the Project setup by selecting the "Author" behavior as shown in the screenshot below.
+If you don't have an author content-type yet, create one in the via the CLI as follows.
 
-{{< img src="author-content-type.png" alt="Author Content Type" >}}
-
-Note that only one content-type in a project can have the "Author" behavior. In the metadata for your "Author" content-type you will want to add fields such as a profile picture, biography, etc.
-Once you're done setting up your author content-type, publish it.
-
-If you don't want to use the UI, you can also add the author content type programmatically. A sample JSON is shown below:
-```json
+```
 {
-  "id": "3",
-  "handle": "author",
-  "documentType": "data-record",
-  "isAuthor": true,
-  "info": {
-    "label": "Author"
-  },
-  "metadata": [
+  handle: 'author', 
+  documentType: 'data-record',
+  isAuthor: true,
+  info: {
+    label: 'Author'
+  }, 
+  metadata: [
     {
-      "id": "14",
-      "handle": "title",
-      "type": "li-text",
-      "ui": {
-        "component": "liMetaTextForm"
-      },
-      "config": {
-        "maxLength": 200
+      id: '27', 
+      handle: 'prename', 
+      type: 'li-text', 
+      ui: {
+        component: 'liMetaTextForm', 
+        config: {
+          label: 'Prename', 
+          placeholder: 'Enter a prename...', 
+          maxLength: 200
+        }
+      }, 
+      config: {
+        maxLength: 200
       }
     },
     {
-      "id": "15",
-      "handle": "prename",
-      "type": "li-text",
-      "ui": {
-        "component": "liMetaTextForm"
+      id: '28', 
+      handle: 'surname', 
+      type: 'li-text', 
+      ui: {
+        component: 'liMetaTextForm', 
+        config: {
+          label: 'Surname', 
+          placeholder: 'Enter a surname...', 
+          maxLength: 200
+        }
+      }, 
+      config: {
+        maxLength: 200
       }
     },
     {
-      "id": "16",
-      "handle": "surname",
-      "type": "li-text",
-      "ui": {
-        "component": "liMetaTextForm"
-      }
-    },
-    {
-      "id": "17",
-      "handle": "shortname",
-      "type": "li-text",
-      "ui": {
-        "component": "liMetaTextForm"
+      id: '29', 
+      handle: 'shortname', 
+      type: 'li-text', 
+      ui: {
+        component: 'liMetaTextForm', 
+        config: {
+          label: 'Shortname', 
+          placeholder: 'Enter a shortname (abbreviation)...', 
+          maxLength: 200
+        }
+      }, 
+      config: {
+        maxLength: 200
       }
     }
-  ]
-}
+  }
 ```
+
+Note that only one content-type in a project can have the `isAuthor` flag. In the metadata for your "Author" content-type you will want to add fields such as a profile picture, biography, etc.
+Once you're done setting up your author content-type, publish it via the CLI.
 
 Note that internally, the `documentType` is `data-record` with a special flag `isAuthor`.
 
 ### Author reference
 
-In order to select an author for an article we need to reference it in the metadata of the article. The screenshot below shows the situation.
+In order to select an author for an article we need to reference it in the metadata of the article. The following JSON shows a metadata field of an article that holds a list of authors for it:
 
-{{< img src="./link-author-in-article.png" alt="Link Author" >}}
-
-The selected metadata property must be of type `reference` or `reference-list` depending on whether there is only one author or if there can be multiple ones.
-In the "Advanced" tab you also have the option to select the prefilling option. If this is selected an author record is automatically assigned in the metadata property using the currently logged in user.
-
-If you don't want to use the UI, you can also add the metadata property programmatically. A sample JSON is shown below:
 ```json
 {
   "handle": "authors",
@@ -101,6 +103,8 @@ If you don't want to use the UI, you can also add the metadata property programm
   }
 }
 ```
+
+The selected metadata property must be of type `reference` or `reference-list` depending on whether there is only one author or if there can be multiple ones.
 
 ### Prefilling configuration
 

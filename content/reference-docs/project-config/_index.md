@@ -16,8 +16,6 @@ Each project has its own project config which defines `contentTypes`, integratio
 
 The project config is stored in the database and has a history. It can be updated at runtime.
 
-The project config has wide UI support. Basically the whole section "Project Setup" in the Livingdocs Main Navigation allows setting parts of the Project config via UI options. The parts that have UI support are marked in the documentation.
-
 ## Top-Level properties
 
 The project config is a JSON file with many top-level properties to organize the configuration. Some top-level properties are an object like e.g. `editorSettings` while others are arrays like e.g. the `contentTypes`.
