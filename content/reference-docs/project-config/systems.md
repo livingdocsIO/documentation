@@ -16,11 +16,11 @@ An example:
 ```js
 systems: [
   {
-    handle: 'polopoly',
+    handle: 'cms',
     type: 'source',
     url: {
-      origin: 'https://polopoly.de',
-      pathPattern: '/{{id}}/{{metadata.polopolyId}}'
+      origin: 'https://cms.de',
+      pathPattern: '/{{id}}/{{metadata.cmsId}}'
     }
   }
 ]
@@ -30,4 +30,4 @@ systems: [
 
 A system of type `source` defines an URL with `origin` and a `pathPattern`. The `pathPattern` can have placeholders which will be replaced with real values during runtime to build the final URL to the source system.
 - `{{id}}`              -> replaced by Livingdocs `documentId`
-- `{{metadata.luxId}}`  -> replaced by a metadata field with the handle `luxId`
+- `{{metadata.cmsId}}`  -> replaced by a metadata field with the handle `cmsId`
