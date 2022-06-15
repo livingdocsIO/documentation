@@ -504,6 +504,7 @@ References:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v179.3.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.24): fix(framework): Bumped to 23.1.12
 - [v179.3.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.23): chore(comyan): adapt tests
 - [v179.3.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.22): fix: still allow to set deprecated metadata property ui.service for li-enum and li-text
 - [v179.3.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.21): fix: rename deprecated property schema to storageSchema for li-media-language
