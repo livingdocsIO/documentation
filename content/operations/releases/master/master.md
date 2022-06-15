@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(integrations): existing pictures are not imported multiple times from hugo [livingdocs-server #4554 v186.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4554)
 * :new: fix(security): vue warning printing secret in console [livingdocs-editor #5480 v80.27.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5480)
 * :new: fix(frameworkBump): 23.3.2 [livingdocs-editor #5476 v80.27.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5476)
 * :new: fix(frameworkBump): 23.3.2 [livingdocs-server #4551 v186.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4551)
