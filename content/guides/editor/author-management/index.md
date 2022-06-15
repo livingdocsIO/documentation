@@ -80,7 +80,7 @@ If you don't have an author content-type yet, create one on the server via the C
 Note that only one content-type in a project can have the `isAuthor` flag. In the metadata for your "Author" content-type you will want to add fields such as a profile picture, biography, etc.
 Once you're done setting up your author content-type, publish it via the CLI.
 
-Note that internally, the `documentType` is `data-record` with a special flag `isAuthor`.
+Note that internally, the `documentType` is a `data-record` with a special flag `isAuthor`.
 
 ### Author reference
 
