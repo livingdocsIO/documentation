@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(security): vue warning printing secret in console [livingdocs-editor #5480 v80.27.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5480)
 * :new: fix(frameworkBump): 23.3.2 [livingdocs-editor #5476 v80.27.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5476)
 * :new: fix(frameworkBump): 23.3.2 [livingdocs-server #4551 v186.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4551)
 * :new: Fix/Side Panel Spacing [livingdocs-editor #5460 v80.27.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5460)
