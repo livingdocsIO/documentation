@@ -825,6 +825,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v171.1.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.49): fix(frameworkBump): March release
 - [v171.1.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.48): fix(print): Expose Desk-Net metadata in print export
 - [v171.1.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.47): fix(project-config): replace pointer error message also on a deeper value
 - [v171.1.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.46): fix: create new version to deploy to npm
