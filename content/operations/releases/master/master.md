@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(frameworkBump): 23.3.2 [livingdocs-server #4551 v186.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4551)
 * :new: Fix/Side Panel Spacing [livingdocs-editor #5460 v80.27.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5460)
 * :new: Show revoked images on the MediaLibrary Dashboard [livingdocs-server #4534 v186.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4534)
 * :new: table dashboard config resilience [livingdocs-editor #5434 v80.26.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5434)
