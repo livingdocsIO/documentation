@@ -516,6 +516,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.48): fix(framework): Bumped to 23.1.12
 - [v80.10.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.47): fix(metadata): ensure the UI updates after an async selection service return
 - [v80.10.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.46): fix(metadata): ensure the UI updates after an async selection service returns
 - [v80.10.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.45): chore(comyan): easier access control
