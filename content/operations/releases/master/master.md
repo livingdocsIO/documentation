@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: table dashboard config resilience [livingdocs-editor #5434 v80.26.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5434)
 * :new: chore(deps): bump css-loader from 6.2.0 to 6.7.1 [livingdocs-editor #5454 v80.26.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5454)
 * :new: Comyan image usage [livingdocs-server #4545 v186.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4545)
 * :new: test(dependabot): test dependabot for release-2022-XX branches [livingdocs-editor #5458 v80.26.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5458)
