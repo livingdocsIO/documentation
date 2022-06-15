@@ -15,7 +15,7 @@ The author management can be completely setup using the Project Setup.
 
 ### Author content type
 
-If you don't have an author content-type yet, create one in the via the CLI as follows.
+If you don't have an author content-type yet, create one on the server via the CLI as follows:
 
 ```
 {
