@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Feat publish control embargo improvements [livingdocs-editor #5479 v80.28.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5479)
 * :new: fix(dependabot): disable dependency update for release branches (only security updates enabled) [livingdocs-editor #5475 v80.27.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5475)
 * :new: fix(integrations): existing pictures are not imported multiple times from hugo [livingdocs-server #4554 v186.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4554)
 * :new: fix(security): vue warning printing secret in console [livingdocs-editor #5480 v80.27.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5480)
