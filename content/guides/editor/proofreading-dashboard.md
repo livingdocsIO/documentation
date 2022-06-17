@@ -39,7 +39,7 @@ References:
 - [How to customise a proofreading task]({{< ref "./proofreading-task.md" >}})
 - [How to configure a metadata field]({{< ref "/reference-docs/server-extensions/metadata-plugins" >}})
 
-### Add my-proofreading to elasticsearch
+### Add my-proofreading to Elasticsearch
 The metadata field `my-proofreading` should be searchable by the proofreading dashboard later. Therefore you have to extend the Elasticsearch document mapping.
 You will find an example on the [server](https://github.com/livingdocsIO/livingdocs-server/blob/cb91a7913149293e2d8562f98c085bb46da41d60/example-server/metadata/es_metadata_mapping_v6.json#L59-L118).
 

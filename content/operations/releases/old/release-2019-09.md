@@ -73,7 +73,7 @@ For now we’ll only expose `hugo.resource.images`, which is used by the hugo im
 - [v85.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.13): fix(tasks): exit process after transform channel task
 - [v85.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.12): fix: Properly provide the leveldown options to the levelup instance
 - [v85.3.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.11): chore: Fix javascript syntax error in node 8
-- [v85.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.10): fix: Fix a server crash initiated by a postgres hostname comparison in the routes storage. Also fix the redis master lock setup.
+- [v85.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.10): fix: Fix a server crash initiated by a Postgres hostname comparison in the routes storage. Also fix the redis master lock setup.
 - [v85.3.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.9): fix: rename auth:namespace to auth:issuer
 - [v85.3.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.8): fix(request-logger): extend with user id through verified token
 - [v85.3.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v85.3.7): fix: Upgrade to @livingdocs/framework@^12.6.3
@@ -222,7 +222,7 @@ Detailed documentation on the new public API endpoints is in the public API docu
 
 Reindexing will often be used when one wants to have updated metadatadata and design for deliveries.
 A server administrator can now reindex documents via the `Operations` panel (Server Administration -> Operations) in the editor.
-The reindexing mechanism is the same as via the `livingdocs-server` cli.
+The reindexing mechanism is the same as via the `livingdocs-server` CLI.
 
 ![elasticsearch-operations](https://user-images.githubusercontent.com/431376/62135777-1750c380-b2e3-11e9-8ec5-b5d23d2c7102.gif)
 

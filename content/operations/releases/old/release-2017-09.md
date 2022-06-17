@@ -83,7 +83,7 @@ Server | Bugfix | Enable metadata in import. [Read more](#enable-metadata-in-imp
 Server | Feature | Channel configuration: Hooks are now registered on the feature. | [#1589](https://github.com/livingdocsIO/livingdocs-server/pull/1589) | [#1348](https://github.com/livingdocsIO/livingdocs-planning/issues/1348)
 Server | BREAKING CHANGE | Removе deprecated doc-include methods and pusher endpoint. [Read More](#removing-deprecated-doc-include-methods) | [#1613](https://github.com/livingdocsIO/livingdocs-server/pull/1613) | [#1430](https://github.com/livingdocsIO/livingdocs-planning/issues/1430)
 Server | Feature | Add `getRoyaltyRecipients` endpoint | [#1606](https://github.com/livingdocsIO/livingdocs-server/commit/1606) | -
-Server | BREAKING CHANGE, Feature | `grunt-setup` works now properly within a docker container. [Read More](#grunt-setup-works-now-properly-within-a-docker-container) | [#1617](https://github.com/livingdocsIO/livingdocs-server/pull/1617) | [#1041](https://github.com/livingdocsIO/livingdocs-planning/issues/1041)
+Server | BREAKING CHANGE, Feature | `grunt-setup` works now properly within a Docker container. [Read More](#grunt-setup-works-now-properly-within-a-docker-container) | [#1617](https://github.com/livingdocsIO/livingdocs-server/pull/1617) | [#1041](https://github.com/livingdocsIO/livingdocs-planning/issues/1041)
 Server | Feature | Add document count to document-list endpoint. | [#1627](https://github.com/livingdocsIO/livingdocs-server/pull/1627) | [#1471](https://github.com/livingdocsIO/livingdocs-planning/issues/1471)
 Server | Bugfix | Log errors instead of crashing on registration | [#commit](https://github.com/livingdocsIO/livingdocs-server/commit/7b91543) | -
 Editor | Bugfix | Show build settings on admin screen. | [#1646](https://github.com/livingdocsIO/livingdocs-editor/pull/1646) | -
@@ -166,7 +166,7 @@ Please use `includeApi.resolveInclude` to render an include.
 
 - The config option `config.docker.enabled` has been replaced by `config.db.run_db_setup_commands_within_docker_container`.
 
-- `config.db.run_db_setup_commands_within_docker_container` defaults to `true` and executes the db commands during `grunt setup` in a docker container. `grunt setup` is not supported, when you start docker containers with `docker-compose` and point to a container by a dns name.
+- `config.db.run_db_setup_commands_within_docker_container` defaults to `true` and executes the db commands during `grunt setup` in a Docker container. `grunt setup` is not supported, when you start Docker containers with `docker-compose` and point to a container by a dns name.
 
 - `config.db.run_db_setup_commands_within_docker_container = false` executes the db commands during `grunt setup` on the host system. For that `createdb` and `dropdb` needs to be available as binaries on the host system.
 
@@ -192,7 +192,7 @@ Each time when the metadata was applied to the document (e.g. `document.update()
 
 Image components can now also be defined as default components. A use case may be an image gallery where a different component should be used for images by default.
 
-Example `component configuration` in a livingdocs design:
+Example `component configuration` in a Livingdocs design:
 ```js
 {
   name: 'gallery',

@@ -17,7 +17,7 @@ As a customer, you can get a token to access them and install them in your custo
 ## Boilerplate projects
 
 We provide boilerplate projects that you can copy for your own customization project.
-They contain the minimal setup along with a docker setup to get you started quickly.
+They contain the minimal setup along with a Docker setup to get you started quickly.
 
 - Example server: https://github.com/livingdocsIO/livingdocs-editor-boilerplate
 - Example editor: https://github.com/livingdocsIO/livingdocs-server-boilerplate

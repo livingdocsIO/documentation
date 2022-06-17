@@ -8,9 +8,9 @@ menus:
 
 ## How to use the logger
 
-We use the logging library [pino](https://getpino.io/#/) in most of the livingdocs projects.
+We use the logging library [pino](https://getpino.io/#/) in most of the Livingdocs projects.
 
-The livingdocs server configures a pino instance and exposes it on `liServer.log`.
+The Livingdocs Server configures a pino instance and exposes it on `liServer.log`.
 
 A few examples how to use the logger:
 ```js
@@ -51,7 +51,7 @@ In this example `ns` is short for namespace. And we use this property to identif
 use in the livingdocs-server. You can also use other properties in your child
 loggers.
 
-Every livingdocs `feature` instance already has a child logger declared using a `ns` with the feature name as value.
+Every Livingdocs `feature` instance already has a child logger declared using a `ns` with the feature name as value.
 
 
 ### What does the log output look like?

@@ -98,7 +98,7 @@ How to require the editor in your package.json:
 - [v49.5.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.12): fix(references): behaviour when record is deleted
 - [v49.5.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.11): fix: correct image uploads and small delay upon submittion of image metadata
 - [v49.5.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.10): fix: correctly replace images on DnD
-- [v49.5.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.9): fix: cleanup pr and integrate feedback
+- [v49.5.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.9): fix: cleanup PR and integrate feedback
 - [v49.5.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.8): fix(document): moved reference update to server
 - [v49.5.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.7): chore: rename variable
 - [v49.5.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v49.5.6): fix(publish): show metadata validation error
@@ -352,8 +352,8 @@ The Imatrics configuration is now integrated into the integrations, therefore we
 By default the editor now uses a strict set of CSS files which don't support Sass variables anymore.
 In case you want to add custom CSS styles, you'll need to declare one of the environment variables based on the desired order.
 
-The styles in `CUSTOM_STYLE_PATH_BEFORE` get loaded before the livingdocs editor styles,
-and the styles in `CUSTOM_STYLE_PATH_AFTER` get loaded after the livingdocs editor styles.
+The styles in `CUSTOM_STYLE_PATH_BEFORE` get loaded before the Livingdocs Editor styles,
+and the styles in `CUSTOM_STYLE_PATH_AFTER` get loaded after the Livingdocs Editor styles.
 
 As there are separate build processes for the upstream and downstream Sass files now, there is no need anymore to `@include` the upstream editor styles in your custom Sass file.
 

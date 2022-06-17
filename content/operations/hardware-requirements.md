@@ -31,7 +31,7 @@ The requirements for the databases of course depend on the amount of data you wa
 
 #### Postgresql
 
-The database requirements are comparable to any other postgres installation. There is an [extensive guide on postgres hardware](https://wiki.postgresql.org/wiki/Database_Hardware) optimized for high performance.
+The database requirements are comparable to any other Postgres installation. There is an [extensive guide on Postgres hardware](https://wiki.postgresql.org/wiki/Database_Hardware) optimized for high performance.
 
 #### Elasticsearch
 
@@ -75,7 +75,7 @@ Service | Specs | |
 
 ### Scaled production setup at NZZ
 
-The setup at NZZ is hosted on Amazon cloud services and managed by a third party service provider. Please not that NZZ uses an external system for delivery.
+The setup at NZZ is hosted on Amazon cloud services and managed by a third party service provider. Please note that NZZ uses an external system for delivery.
 
 - 100-200 journalists working in the editor
 - ~100k documents in the database

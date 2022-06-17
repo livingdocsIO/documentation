@@ -109,7 +109,7 @@ References:
 * [Documentation]({{< ref "/reference-docs/project-config/editor-settings#example-table-dashboard" >}})
 * [Default Table Dashboards PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5142)
 * [Table Dashboard in document selection dialog PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5141)
-* [Load documents from postgres by default PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5173)
+* [Load documents from Postgres by default PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5173)
 * [Allow for main cell configuration PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5194)
 * [Add support for li-string-list PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5245)
 * [Publish state and quick publish PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5243)
@@ -504,6 +504,9 @@ References:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v179.3.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.25): fix(cut and paste): Does not affect undo
+- [v179.3.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.24): fix(framework): Bumped to 23.1.12
+- [v179.3.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.23): chore(comyan): adapt tests
 - [v179.3.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.22): fix: still allow to set deprecated metadata property ui.service for li-enum and li-text
 - [v179.3.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.21): fix: rename deprecated property schema to storageSchema for li-media-language
 - [v179.3.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.20): fix: incorporate feedback
@@ -514,6 +517,11 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.49): fix(cut and paste): Does not affect undo
+- [v80.10.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.48): fix(framework): Bumped to 23.1.12
+- [v80.10.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.47): fix(metadata): ensure the UI updates after an async selection service return
+- [v80.10.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.46): fix(metadata): ensure the UI updates after an async selection service returns
+- [v80.10.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.45): chore(comyan): easier access control
 - [v80.10.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.44): fix: improve reactivity for live changes by other users
 - [v80.10.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.43): fix(dashboards): show create document on table dashboards
 - [v80.10.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.42): fix(allow no multiselection): behaviour for multiselect configurable

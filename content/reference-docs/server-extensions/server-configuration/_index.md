@@ -141,16 +141,16 @@ db: {
 }
 ```
 
-To not create too many connections against postgres, we suggest to use a connection pooler running using `transaction` mode.
+To not create too many connections against Postgres, we suggest to use a connection pooler running using `transaction` mode.
 
 Amazon, Google Cloud and other hosters also offer solutions for that.
 
-Self-hosted solutions could use [pgbouncer](https://www.pgbouncer.org/) or [odyssey](https://github.com/yandex/odyssey). We have some docker images for them in our docker registry.
+Self-hosted solutions could use [pgbouncer](https://www.pgbouncer.org/) or [odyssey](https://github.com/yandex/odyssey). We have Docker images for them in our Docker registry.
 https://github.com/livingdocsIO/docker#livingdocsodyssey
 
 #### Redis Database
 
-Livingdocs uses redis worker queue for imports and elasticsearch indexing.
+Livingdocs uses Redis worker queue for imports and Elasticsearch indexing.
 A functional setup is mandatory.
 
 ```js
@@ -247,7 +247,7 @@ Asymmetric Algorithms:
 
 The preferred signing algorithm is `EdDSA`, which is an asymmetric one.
 The main benefit of an asymmetric algorithm is that you could use our tokens in some of your own applications running as separate processes.
-That process can then be configured with just the public key to verify livingdocs access tokens.
+That process can then be configured with just the public key to verify Livingdocs access tokens.
 This allows several processes to consume our api client tokens without contacting our server instance for verification. But this is only meant for internal usage at companies. Don't send the tokens to third parties!
 
 A json web key set of the configured keys is exposed on `http://localhost:9090/.well-known/jwks.json`.
@@ -575,7 +575,7 @@ document is correctly updated.
 
 #### Search
 
-Configure the elasticsearch instance used by the search feature.
+Configure the Elasticsearch instance used by the search feature.
 
 ```js
 search: {
@@ -616,7 +616,7 @@ default the article list query gets no metadata.
 
 ##### queryBuilderPlugin
 
-`queryBuilderPlugin` is the path to your custom elasticsearch query.
+`queryBuilderPlugin` is the path to your custom Elasticsearch query.
 
 If you know Elasticsearch, it's simple to define your own [search request body](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html) function.
 The simplest possible query function looks like this:
@@ -982,10 +982,10 @@ We support these types for indexing
 
 ##### Document Metadata Mapping in Elasticsearch
 
-When you want to index your metadata image fields in elasticsearch (e.g. for dashboard filters), you have to define the elasticsearch metadata mapping, e.g.
+When you want to index your metadata image fields in Elasticsearch (e.g. for dashboard filters), you have to define the Elasticsearch metadata mapping, e.g.
 
 ```js
-// the elasticsearch metadata mapping file is defined in the environment config at 'search.metadata_mapping'
+// the Elasticsearch metadata mapping file is defined in the environment config at 'search.metadata_mapping'
     "teaserImage": {
       "properties": {
         "crops": {

@@ -397,7 +397,7 @@ References:
 * Routing
   * Use routing channel config cache only during warm up phase [livingdocs-server #2592](https://github.com/livingdocsIO/livingdocs-server/pull/2592) :gift:
   * Prevent multiple slashes in routing [livingdocs-server #2542](https://github.com/livingdocsIO/livingdocs-server/pull/2542) :beetle:
-  * Fix redis setup [livingdocs-server #2575](https://github.com/livingdocsIO/livingdocs-server/pull/2575) :beetle:
+  * Fix Redis setup [livingdocs-server #2575](https://github.com/livingdocsIO/livingdocs-server/pull/2575) :beetle:
   * Debug logs [livingdocs-server #2550](https://github.com/livingdocsIO/livingdocs-server/pull/2550) :wrench:
 * Hugo
   * Expose hugo config to the editor [livingdocs-server #2627](https://github.com/livingdocsIO/livingdocs-server/pull/2627) :gift:

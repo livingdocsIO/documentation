@@ -258,7 +258,7 @@ Note also that we prefer here to write the `sizes` attribute directly in the tem
 
 Important: You will have to add image services to both your `server` and `editor`.
 
-An image service in livingdocs is basically just a url transformer that
+An image service in Livingdocs is basically just a url transformer that
 allows to proxy image requests through a 'real' image service like imgix and
 write params to the url dynamically to define e.g. the `width` or crop
 of an image.

@@ -179,8 +179,8 @@ grunt migrate
 
 ## Teaser images
 
-### Update custom elasticsearch document mapping
-When using a custom elasticsearch document mapping (the mapping can be found at `search: metadata_mapping` usually in the all environment config), and you used teaser images at the publish screen, the elasticsearch mapping of the corresponding field needs to be updated with a `ratio` property.
+### Update custom Elasticsearch document mapping
+When using a custom Elasticsearch document mapping (the mapping can be found at `search: metadata_mapping` usually in the all environment config), and you used teaser images at the publish screen, the Elasticsearch mapping of the corresponding field needs to be updated with a `ratio` property.
 
 ```
 "teaserImage": {
@@ -218,7 +218,7 @@ metadata:
 
 ##  Replaced Webpack Dev-server with a custom node server :gift: :fire:
 
-This change migrated from a traditional webpack setup to a custom node server with built in webpack support. The consequence is to have a much faster build cycle. The build scripts are now provided as an executable (`bin`) to the downstream. You can run `./node_modules/.bin/livingdocs-editor watch` or `./node_modules/.bin/liivngdocs-editor build` in the downstreams to run the dev server or build the final docker container.
+This change migrated from a traditional webpack setup to a custom node server with built in webpack support. The consequence is to have a much faster build cycle. The build scripts are now provided as an executable (`bin`) to the downstream. You can run `./node_modules/.bin/livingdocs-editor watch` or `./node_modules/.bin/liivngdocs-editor build` in the downstreams to run the dev server or build the final Docker container.
 
 ### Migration guide
 
@@ -232,7 +232,7 @@ const config = require('../../../../config')
 const config = require('appConfig')
 ```
 
-#### How to build a docker container
+#### How to build a Docker container
 ```bash
 # previous setup, all dev dependencies were deployed to production
 docker build -t livingdocs-editor:production .
@@ -304,7 +304,7 @@ For test instructions, build instructions and supported environment variables an
   * Fix readonly authorization [livingdocs-editor #2317](https://github.com/livingdocsIO/livingdocs-editor/pull/2317) [livingdocs-server #2120](https://github.com/livingdocsIO/livingdocs-server/pull/2120) :beetle:
   * Fix link popover in Safari [livingdocs-editor #2310](https://github.com/livingdocsIO/livingdocs-editor/pull/2310) :beetle:
   * Fix the version.json fallback interval [livingdocs-editor #2300](https://github.com/livingdocsIO/livingdocs-editor/pull/2300) :beetle:
-  * Fix the comparison of elasticsearch mappings on sequential runs [livingdocs-server #2143](https://github.com/livingdocsIO/livingdocs-server/pull/2143) :beetle:
+  * Fix the comparison of Elasticsearch mappings on sequential runs [livingdocs-server #2143](https://github.com/livingdocsIO/livingdocs-server/pull/2143) :beetle:
   * Bring document route checker up to date with newest routing change [livingdocs-server #2124](https://github.com/livingdocsIO/livingdocs-server/pull/2124) :beetle:
   * Fix unpublish route [livingdocs-server #2085](https://github.com/livingdocsIO/livingdocs-server/pull/2085) :beetle:
   * Reorganize toolbar action css to fix paddings [livingdocs-editor #2395](https://github.com/livingdocsIO/livingdocs-editor/pull/2395) :gift:

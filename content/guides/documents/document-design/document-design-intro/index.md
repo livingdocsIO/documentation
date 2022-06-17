@@ -98,21 +98,4 @@ Create a new article in the editor. It should have an empty header followed by a
 
 [Git patch for those changes](add-default-content.patch)
 
-#### Make a change over the UI
-
-So far, we've changed the configuration files by hand. Livingdocs provides extensive user interfaces to edit the project configuration directly from the browser. Let's do this next, to make our "Header" component the first component in the list.
-
-In the main navigation (burger menu) navigate to "Project Setup" and there in the side menu to "Component Library". You should see your "Header" component at the bottom of the "Text" group. Drag the "Header" component with the drag handler to the top position.
-
-{{< img src="rearrange-component.png" alt="Rearrange component" >}}
-
-You will also see that on the top right a new button "Prepare Publication" appeared. Click it.
-
-{{< img src="publish-config.png" alt="Publish Config" >}}
-
-This is the publication screen for your project config. Every change is shown in a diff view where you can review your changes. This is the same JSON that you edited manually in the boilerplate before.
-
-If you're fine with your changes, scroll to the bottom and click "Publish Changes".
-Navigate to any article and in the "Insert" sidebar the header will now be in first place.
-
 Congratulations, you've taken your first steps in a Livingdocs Design! To learn more about designs, refer to [the design reference documentation]({{< ref "/reference-docs/document/document-design" >}}).

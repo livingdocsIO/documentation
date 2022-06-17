@@ -38,13 +38,13 @@ This short guide explains how to set up and use the service with your own design
 
 ## Download project config from service
 
-With the cli tool `livingdocs-cli` (), you can down- and upload project configs and embedded designs.
+With the CLI tool `livingdocs-cli` (), you can down- and upload project configs and embedded designs.
 
 ### Preconditions
 
 * Registered on [Livingdocs Service](https://edit.livingdocs.io/)
 * Created an API token
-* installed cli `livingdocs-cli` -&gt; `npm install -g livingdocs-cli`
+* installed CLI `livingdocs-cli` -&gt; `npm install -g livingdocs-cli`
 
 ### Example
 

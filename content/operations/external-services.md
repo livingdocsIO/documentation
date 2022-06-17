@@ -1,11 +1,11 @@
 ---
 title: External Services
-description: Additionally to the mandatory dependency on the databases livingdocs also depends on external services.
+description: Additionally to the mandatory dependency on the databases Livingdocs also depends on external services.
 icon: toolbox
 menu: operations
 ---
 
-Additionally to the mandatory dependency on the databases (postgres, redis and elasticsearch), livingdocs also depends on a few external services. Many of them are configurable and optional.
+In addition to the mandatory database dependencies (Postgres, Redis and Elasticsearch), Livingdocs also depends on a few external services. Many of them are configurable and optional.
 
 Please consult the list below in case your security team needs to verify and whitelist them in your http proxy.
 
@@ -61,7 +61,7 @@ The following external service hosts have to be whitelisted on the proxy for the
 ### Server
 The following external service hosts have to be whitelisted on the proxy for the server. This concerns the network where the server process is running.
 
-- The host to your livingdocs design server (eg. http://api.livingdocs.io if you're using the default design server)
+- The host to your Livingdocs design server (eg. http://api.livingdocs.io if you're using the default design server)
 - The hosts for the configured S3 buckets
   - eg. for images: `livingdocs-evaluation-images.s3.amazonaws.com`
   - eg. for designs: `livingdocs-evaluation-designs.s3.amazonaws.com`
@@ -70,8 +70,8 @@ The following external service hosts have to be whitelisted on the proxy for the
 - Any host your customizations are using
 
 ### Delivery
-- The host to your livingdocs design server (eg. http://api.livingdocs.io if you're using the default design server)
-- The host to your livingdocs server (if it's not in the same network)
+- The host to your Livingdocs design server (eg. http://api.livingdocs.io if you're using the default design server)
+- The host to your Livingdocs Server (if it's not in the same network)
 
 ### Connecting to external services through a proxy
 

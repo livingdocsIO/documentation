@@ -17,10 +17,10 @@ If no images are imported, a lot more documents could be imported.
 
 ## Custom document IDs
 
-During a migration of an existing system, it's best practice to migrate all entries of the old system into livingdocs.
+During a migration of an existing system, it is best practice to migrate all entries of the old system into Livingdocs.
 To ease the migration, we want to support user-defined identifiers, so a custom import script can reuse existing identifiers.
 
-To prevent issues with the id generation of postgres, we'll make the maximum allowed id configurable.
+To prevent issues with the id generation of Postgres, we will make the maximum allowed id configurable.
 
 ## Example
 SQL to execute to prevent conflicts when new documents are generated:

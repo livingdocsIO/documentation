@@ -85,7 +85,7 @@ the promise where the design is already loaded
 
 Fixed the revision_service the design are now loaded before a revision
 is shown
-- [v36.9.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.16): code: incorporate pr feedback
+- [v36.9.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.16): code: incorporate PR feedback
 - [v36.9.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.15): fix(dashboard): make it possible to pass componentName per config
 - [v36.9.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.14): fix(history): re-add bold styles, revisions topbar
 - [v36.9.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.13): fix(tasks): task can be restarted without deleting the task
@@ -100,7 +100,7 @@ for the diff_overlays is unloaded now
 - [v36.9.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.9): fix(metadata-plugins): remove unnecessary ng-if
 - [v36.9.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.8): fix(package): update @livingdocs/framework to version 11.8.2
 - [v36.9.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.7): fix(links): check if link attributes are allowed before setting defaults
-- [v36.9.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.6): fix(dependencies): update livingdocs framework
+- [v36.9.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.6): fix(dependencies): update Livingdocs framework
 - [v36.9.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.5): fix(print): Use document state notification for remote lock
 - [v36.9.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.4): fix(project-setup): fix metadata form preview
 - [v36.9.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v36.9.3): fix(fastify): add cache-control everywhere
@@ -213,9 +213,9 @@ A more detailled description and an example configuration can be found in the [d
 
 ## Improve speed of reindexing :gift:
 
-Depending on how many documents you have stored, the re-indexing into elasticsearch needed some time. For production this has been a challenge for a long time, when you did an upgrade where data migrations were involved or even an elasticsearch mapping update.
+Depending on how many documents you have stored, the re-indexing into Elasticsearch needed some time. For production this has been a challenge for a long time, when you did an upgrade where data migrations were involved or even an Elasticsearch mapping update.
 
-Since the January 2019 release, we have continually improved the indexing speed. The optimisation results in a `10x - 100x` speed improvement and an average indexing speed of `1000 docs/s`. The indexing speed depends on your elasticsearch configuration and the size of your documents.
+Since the January 2019 release, we have continually improved the indexing speed. The optimisation results in a `10x - 100x` speed improvement and an average indexing speed of `1000 docs/s`. The indexing speed depends on your Elasticsearch configuration and the size of your documents.
 
 
 
@@ -306,7 +306,7 @@ livingdocs-server migrate up
   * Fix menu item move [livingdocs-editor #2634](https://github.com/livingdocsIO/livingdocs-editor/pull/2634) :beetle:
   * Fix that multiselect shortcut does exit print publish screen again [livingdocs-editor #2613](https://github.com/livingdocsIO/livingdocs-editor/pull/2613) :beetle:
   * Fix that lists are sorted alphabetically again [livingdocs-editor #2609](https://github.com/livingdocsIO/livingdocs-editor/pull/2609) :beetle:
-  * Fix elasticsearch 6 support for optional date filters [livingdocs-server #2335](https://github.com/livingdocsIO/livingdocs-server/pull/2335) :beetle:
+  * Fix Elasticsearch 6 support for optional date filters [livingdocs-server #2335](https://github.com/livingdocsIO/livingdocs-server/pull/2335) :beetle:
 * Print
   * fix(printModal): delete keys and add remove button [livingdocs-editor #2622](https://github.com/livingdocsIO/livingdocs-editor/pull/2622) :gift:
   * Guard the access of publicationPreset if its undefined [livingdocs-editor #2619](https://github.com/livingdocsIO/livingdocs-editor/pull/2619) :gift:

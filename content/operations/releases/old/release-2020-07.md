@@ -66,7 +66,7 @@ This allows e.g. migrations to access the iMatrics API.
 - [v103.3.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v103.3.18): fix(media-library): Fix a migration where we've accidentally dropped the title of media library entries
 
 In this migration, we're setting the title on the media library entry again if it isn't present.
-- [v103.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v103.3.17): fix: Adapt docker compose to new postgres version
+- [v103.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v103.3.17): fix: Adapt Docker compose to new Postgres version
 - [v103.3.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v103.3.16): fix(print-api): Improve logging
 
 Make Print-API debug logs JSON format and more informative (adds `host`, `action..).
@@ -210,7 +210,7 @@ One can now define a custom entry point on login or when switching projects. For
 
 ## Custom User Menu :tada:
 
-Now it's possible to define custom entries within the livingdocs user menu.
+Now it's possible to define custom entries within the Livingdocs user menu.
 
 ![image](https://user-images.githubusercontent.com/39759830/87947563-cf065480-caa3-11ea-890a-8735dfaf8ebc.png)
 
@@ -291,7 +291,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3
 
 :fire: **The MediaLibrary is now active by default**
 Both on the editor and server side.
-The editor UI can be disabled but the server side feature is always active storing data in postgres and indexing into elasticsearch.
+The editor UI can be disabled but the server side feature is always active storing data in Postgres and indexing into Elasticsearch.
 
 Disable the MediaLibrary UI:
 ```js
@@ -302,7 +302,7 @@ editorSettings: {
   }
 }
 ```
-Configure an elasticsearch index name for the `mediaLibraryIndex` (otherwise a default name will be used):
+Configure an Elasticsearch index name for the `mediaLibraryIndex` (otherwise a default name will be used):
 ```js
 // static server config
 search: {

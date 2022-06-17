@@ -9,7 +9,7 @@ on-premise: true
 
 ## Editor extension points
 
-Possible livingdocs editor UI customizations:
+Possible Livingdocs Editor UI customizations:
 
 - custom Angular factories or services (for use in other customizations)
 - custom Angular components for metadata fields

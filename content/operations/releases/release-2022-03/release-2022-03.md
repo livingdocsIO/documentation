@@ -161,7 +161,7 @@ livingdocs-server migrate up
 ### Migrate knex transactions to pg :fire:
 
 💣  The knex instance on `liServer.db.connection` is deprecated
-:fire: Knex transactions aren't compatible with livingdocs anymore. Please use `db.begin` instead:
+:fire: Knex transactions aren't compatible with Livingdocs anymore. Please use `db.begin` instead:
 
 ```js
 const db = liServer.db
@@ -339,7 +339,7 @@ Tasks v1 is deprecated since 2 years. We removed it, because no customers use it
 **Steps to do for downstreams**
 - delete editor config `app.taskTypes`
 - delete metadata plugin projectConfig with type `li-tasks`
-- delete elasticsearch document mapping for li-tasks (see [example](https://github.com/livingdocsIO/livingdocs-server/pull/3625/files))
+- delete Elasticsearch document mapping for li-tasks (see [example](https://github.com/livingdocsIO/livingdocs-server/pull/3625/files))
 - configure `tasks-v2`, if you want to continue using tasks, e.g.
   - [Proofreading Task Guide](https://docs.livingdocs.io/guides/editor/proofreading-task/)
   - [Add a custom task](https://docs.livingdocs.io/guides/editor/review-task/)
@@ -768,7 +768,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 * Support modules in metadataPlugins config [livingdocs-server #4148 v159.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4148)
 * Migrate knex queries to db.sql / prep for non-transactional query pool [livingdocs-server #4157 v159.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4157)
 * Project Config: Support breaking project config changes [livingdocs-editor #4957 v74.23.0](https://github.com/livingdocsIO/livingdocs-editor/pull/4957)
-* DB: Configure a maximum connection lifetime in postgres [livingdocs-server #4220 v164.6.0](https://github.com/livingdocsIO/livingdocs-server/pull/4220)
+* DB: Configure a maximum connection lifetime in Postgres [livingdocs-server #4220 v164.6.0](https://github.com/livingdocsIO/livingdocs-server/pull/4220)
 * Server Hooks: Throw if a publication hook does not exist [livingdocs-server #4255 v165.6.3](https://github.com/livingdocsIO/livingdocs-server/pull/4255)
 * Includes: Show error messages when include service is not registered [livingdocs-editor #5056 v77.0.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5056)
 
@@ -798,7 +798,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
   * Ensure script execution from angular templates when renderered in Vue [livingdocs-editor #4899 v74.13.19](https://github.com/livingdocsIO/livingdocs-editor/pull/4899)
 * Storage
   * Fix date after remote update [livingdocs-editor #4844 v74.12.2](https://github.com/livingdocsIO/livingdocs-editor/pull/4844)
-  * Postgres: Fix postgres replica compatiblity [livingdocs-server #4130 v158.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4130)
+  * Postgres: Fix Postgres replica compatiblity [livingdocs-server #4130 v158.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4130)
   * Fix metadata autofill when drag and drop a Hugo image [livingdocs-editor #4954 v74.21.4](https://github.com/livingdocsIO/livingdocs-editor/pull/4954)
   * Handle files on drop from hugo for images [livingdocs-editor #4866 v74.13.5](https://github.com/livingdocsIO/livingdocs-editor/pull/4866)
   * Fix update concept for imatrics [livingdocs-editor #4873 v74.13.7](https://github.com/livingdocsIO/livingdocs-editor/pull/4873)
@@ -808,7 +808,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
   * Video: fix 'unsupported architecture' error on server start [livingdocs-server #4173 v161.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4173)
   * Webhooks: fire webhook event on 'document.unpublished' event [livingdocs-server #4174 v161.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4174)
   * Fix WoodWing assets integration [livingdocs-server #4216 v164.4.4](https://github.com/livingdocsIO/livingdocs-server/pull/4216)
-  * Search: Use correct elasticsearch client for 'indexingApi.search' and 'indexingApi.get'  [livingdocs-server #4189 v162.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4189)
+  * Search: Use correct Elasticsearch client for 'indexingApi.search' and 'indexingApi.get'  [livingdocs-server #4189 v162.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4189)
   * Desk-Net: Make Desk-Net category optional [livingdocs-server #4176 v161.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4176)
   * Migration: do not run prepareMigration.start for version bumps [livingdocs-server #4258 v165.6.4](https://github.com/livingdocsIO/livingdocs-server/pull/4258)
   * ProjectSecrets: Tolerate missing `projectConfigs` config [livingdocs-server #4272 v170.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4272)
@@ -825,6 +825,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v171.1.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.49): fix(frameworkBump): March release
 - [v171.1.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.48): fix(print): Expose Desk-Net metadata in print export
 - [v171.1.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.47): fix(project-config): replace pointer error message also on a deeper value
 - [v171.1.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.46): fix: create new version to deploy to npm
@@ -848,6 +849,10 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
 
 ### Livingdocs Editor Patches
+- [v77.2.76](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.76): fix(cut and paste): Does not affect undo
+- [v77.2.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.75): fix(multiListEditor): Service always found
+- [v77.2.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.74): fix(frameworkBump): March release
+- [v77.2.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.73): fix(metadata): ensure the UI updates after an async selection service returns
 - [v77.2.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.72): fix(allow no multiselection): behaviour for multiselect configurable
 - [v77.2.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.71): fix(dependencies): update vulnerable version of karma
 - [v77.2.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.70): fix(isPublished): Pre publish control metadata plugins have correct published state

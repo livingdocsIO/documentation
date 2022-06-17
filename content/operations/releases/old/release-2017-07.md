@@ -40,7 +40,7 @@ Component | Type | Description | PRs | Issues
 Editor | Bugfix | Server-side metadata changes will be shown in the publish screen | [#1588](https://github.com/livingdocsIO/livingdocs-editor/pull/1588), [#1585](https://github.com/livingdocsIO/livingdocs-editor/pull/1585) | [#1325](https://github.com/livingdocsIO/livingdocs-planning/issues/1325), [#1261](https://github.com/livingdocsIO/livingdocs-planning/issues/1261)
 Editor | Bugfix | Teaser image cropping is now applied in srcset definitions | [#1606](https://github.com/livingdocsIO/livingdocs-editor/pull/1606) | [#1258](https://github.com/livingdocsIO/livingdocs-planning/issues/1258)
 Editor | Improvement | Editor’s default font-size was changed to 14px | [#1587](https://github.com/livingdocsIO/livingdocs-editor/pull/1587) | [#1029](https://github.com/livingdocsIO/livingdocs-planning/issues/1029)
-Editor | BREAKING CHANGE | This pr removes `grunt` and therefore also `grunt deploy`. [Read more](#remove-grunt-from-editor) | [#1608](https://github.com/livingdocsIO/livingdocs-editor/pull/1608) | -
+Editor | BREAKING CHANGE | This PR removes `grunt` and therefore also `grunt deploy`. [Read more](#remove-grunt-from-editor) | [#1608](https://github.com/livingdocsIO/livingdocs-editor/pull/1608) | -
 Editor | Bugfix | Link in List Tool should not be shown while dragging | [#1615](https://github.com/livingdocsIO/livingdocs-editor/pull/1615) | [#1224](https://github.com/livingdocsIO/livingdocs-planning/issues/1224)
 Editor, Server | Feature | Adapt Print API for WoodWing | [#1611](https://github.com/livingdocsIO/livingdocs-editor/pull/1611), [#1567](https://github.com/livingdocsIO/livingdocs-server/pull/1567) | -
 Server | Improvement | Redis retries on error | [#1534](https://github.com/livingdocsIO/livingdocs-server/pull/1534), [#1530](https://github.com/livingdocsIO/livingdocs-server/pull/1530), [#1552](https://github.com/livingdocsIO/livingdocs-server/pull/1552) | [#1231](https://github.com/livingdocsIO/livingdocs-planning/issues/1231)
@@ -54,10 +54,10 @@ Framework | Bugfix | Image service configuration is correctly merged | [#238](ht
 
 ## Remove Grunt from Editor
 
-- This pr removes `grunt` and therefore also `grunt deploy`.
+- This PR removes `grunt` and therefore also `grunt deploy`.
 - This change has an impact on your setup in case you're using `grunt deploy` or any other `grunt` script.
-- We've completely removed the script without replacement.
-- In case you're using `grunt deploy` to deploy to s3, please use the s3 cli directly.
+- We have completely removed the script without replacement.
+- In case you're using `grunt deploy` to deploy to s3, please use the s3 CLI directly.
 
 ## Configurable asset and image storage
 
@@ -116,7 +116,7 @@ Framework | Bugfix | Image service configuration is correctly merged | [#238](ht
   }
   ```
 
-  This pr also moves the config `images.public` and `files.public` to `images.public_url` and `files.public_url`.
+  This PR also moves the config `images.public` and `files.public` to `images.public_url` and `files.public_url`.
   e.g.
   ```js
   images: {

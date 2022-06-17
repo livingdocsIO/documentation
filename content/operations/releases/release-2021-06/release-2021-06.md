@@ -221,7 +221,7 @@ livingdocs-server migrate up
 
 - Change the content of the `.nvmrc` in your project root to `16`
 - Change the `engines.node` declaration in the `package.json` to `>=16`
-- Change the docker image versions in your `Dockerfile` to `livingdocs/server-base:16.0` / `livingdocs/editor-base:16.0`
+- Change the Docker image versions in your `Dockerfile` to `livingdocs/server-base:16.0` / `livingdocs/editor-base:16.0`
 
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4256)
 
@@ -637,7 +637,7 @@ References:
 * Lists: Fix config schema validation [livingdocs-server #3579](https://github.com/livingdocsIO/livingdocs-server/pull/3579) :beetle:
 * Indexing
   * Do not delete consumers when we can't transfer the pending messages [livingdocs-server #3581](https://github.com/livingdocsIO/livingdocs-server/pull/3581) :beetle:
-  * Fix typo in xtransferexit and reduce the redis calls during xcleanup [livingdocs-server #3584](https://github.com/livingdocsIO/livingdocs-server/pull/3584) :beetle:
+  * Fix typo in xtransferexit and reduce the Redis calls during xcleanup [livingdocs-server #3584](https://github.com/livingdocsIO/livingdocs-server/pull/3584) :beetle:
   * Queue Fixes [livingdocs-server #3607](https://github.com/livingdocsIO/livingdocs-server/pull/3607) :beetle:
   * Resume indexing after a process and queue got paused [livingdocs-server #3615](https://github.com/livingdocsIO/livingdocs-server/pull/3615) :beetle:
 * Media Sources: Fix Unsplash plugin [livingdocs-server #3588](https://github.com/livingdocsIO/livingdocs-server/pull/3588) :beetle:
@@ -668,7 +668,7 @@ References:
 - [v135.1.70](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.70): fix(indexing): Do not trigger a catchup job with the publication indexing to not trigger an 'Invalid Index Job' message
 - [v135.1.69](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.69): fix(log): Improve handling of circular references and functions in pino: https://github.com/davidmarkclements/fast-safe-stringify/pull/52
 - [v135.1.68](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.68): fix(server): Replace broken http-terminator with lil-http-terminator that doesn't have any dependencies
-- [v135.1.67](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.67): fix(elasticsearch): Do not push the `_type` in elasticsearch 7 bulk payloads
+- [v135.1.67](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.67): fix(elasticsearch): Do not push the `_type` in Elasticsearch 7 bulk payloads
 - [v135.1.66](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.66): fix(github-sso): Migrate to another github passport module that's more up to date
 - [v135.1.65](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.65): fix(media library): correctly validate maxItems on li-string-list and li-numeric-list
 - [v135.1.64](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.64): fix(indexing): Fix context filter/normalization during bulk index
@@ -686,16 +686,16 @@ References:
 - [v135.1.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.52): fix(indexing): Improve the indexing to handle deleted projects or content types
 - [v135.1.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.51): fix: unsubscribe url in notifications mail template
 - [v135.1.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.50): chore(hugo): add tests for drop image
-- [v135.1.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.48): fix(design): add new cli command design-set-active
+- [v135.1.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.48): fix(design): add new CLI command design-set-active
 - [v135.1.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.47): chore(revision): add test for metadata
 - [v135.1.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.46): fix(project-delete): Delete media_library_entries, types and events correctly when deleting a project
-- [v135.1.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.45): fix(migrations): incorporate pr feedback
+- [v135.1.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.45): fix(migrations): incorporate PR feedback
 - [v135.1.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.44): chore: change the slack messages template
 - [v135.1.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.43): fix: read channelId from documentVersion
 - [v135.1.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.42): fix(datetime validity): allow undefined to/from values
 - [v135.1.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.41): fix(media): add read-only metadata field
 - [v135.1.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.40): fix: allow to add only ids instead of range for processBatch
-- [v135.1.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.39): fix(media-library): Fix the li_jsonb_patch function in postgres to properly set keys that include a slash
+- [v135.1.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.39): fix(media-library): Fix the li_jsonb_patch function in Postgres to properly set keys that include a slash
 - [v135.1.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.38): chore(ajv): Add benchmark/ajv-compile.js script
 - [v135.1.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.37): chore: Use date-fns instead of moment
 - [v135.1.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.36): fix: add comment.resolve action to notifications
@@ -708,18 +708,18 @@ References:
 - [v135.1.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.29): chore(document-migrations): Lower the concurrency to 2 as we're running multiple processes most times
 - [v135.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.28): chore(migrations): Improve the job status logs
 - [v135.1.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.27): fix(cli): fix data migration run link
-- [v135.1.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.26): fix(redis): Fix support for redis sentinel with the `livingdocs-server redis-flushdb` command
+- [v135.1.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.26): fix(redis): Fix support for Redis sentinel with the `livingdocs-server redis-flushdb` command
 - [v135.1.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.25): fix: add indexing config for datetime-validity plugin
 - [v135.1.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.24): fix(iptc extraction): add an additional safety check to not run into errors in getValueForStorage
-- [v135.1.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.23): fix(elasticsearch): Fix elasticsearch bulk retries by matching failed entries in reverse order
+- [v135.1.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.23): fix(elasticsearch): Fix Elasticsearch bulk retries by matching failed entries in reverse order
 - [v135.1.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.22): test(sitemaps): Use the correct timestamp in tests
 - [v135.1.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.21): fix(user): Don't throw when reactivating users without occupations
-- [v135.1.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.20): fix(indexing): Retry bulk requests that respond with a 429 error when elasticsearch is overloaded
+- [v135.1.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.20): fix(indexing): Retry bulk requests that respond with a 429 error when Elasticsearch is overloaded
 - [v135.1.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.19): fix(import): Make config type mappings optional
 - [v135.1.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.18): fix(li-users): Do not respond with duplicate users in the userApi.findMany and userApi.findByProjectId methods
 - [v135.1.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.17): chore(import): Pass documentVersion from the controller
 - [v135.1.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.16): fix(file-upload): Do not handle files as strings when calculating the byte size
-- [v135.1.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.15): fix(search): Invoke search requests against elasticsearch with the correct publication index
+- [v135.1.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.15): fix(search): Invoke search requests against Elasticsearch with the correct publication index
 - [v135.1.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.14): test(sitemaps): use datefns instead of magic strings
 - [v135.1.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.13): fix(files): Fix exposed `files.publicUrl` in `/serverConfiguration` endpoint
 - [v135.1.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v135.1.12): fix(import): Delay media indexing and notifications

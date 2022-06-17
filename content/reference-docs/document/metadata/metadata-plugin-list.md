@@ -24,6 +24,7 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Desk-Net](#li-desknet-integration)                | li-desknet-integration   | Desk-Net Integration                          | D                                                                    | Link to Desk-Net distribution entry                        |
 | [Document Reference](#li-document-reference)       | li-document-reference    | A reference to another document               | D, M, T                                                              | document selection (dialog)                                |
 | [Enum](#li-enum)                                   | li-enum                  | string from static list, validated on publish | D, M, T                                                              | select                                                     |
+| [External Id](#li-external-id)                                   | li-external-id                  | id marker for an external system | D, M, T                                                              | select                                                     |
 | [Document Target Length](#li-target-length)        | li-target-length         | Target length in characters for a document    | D                                                                    | number input or length slider                              |
 | [Google Vision](#li-google-vision)                 | li-google-vision         | Google Vision Autotagging for Images          | M                                                                    | specialized UI, no config possible                         |
 | [Image](#li-image)                                 | li-image                 | Images                                        | D, M                                                                 | Image selection/upload/crops                               |
@@ -287,6 +288,31 @@ metadata: [
         readOnly: true,               // optional, default: false
         placeholder: 'foo',           // optional, takes camelized name otherwise
       }
+    }
+  }
+]
+```
+
+## li-external-id
+
+{{< added-in release-2022-07 block>}}
+
+A `li-external-id` metadata field can be used to save an external id of another system. For example if you want to have an article reference to your original system. At the moment `li-external-id` has no UI and can only be set via the public API import.
+
+**Storage Format**: `<String>`\
+**Default UI**: no UI\
+**Project Config**
+```js
+// contentType[].metadata / mediaType[].metadata
+metadata: [
+  {
+    handle: 'externalId',
+    type: 'li-external-id',
+    config: {
+      // no config values are allowed
+    },
+    ui: {
+      // no ui config values are allowed
     }
   }
 ]

@@ -142,7 +142,7 @@ References:
 
 ## Editable Teasers :tada:
 
-Editable teasers are embedded editable livingdocs components. Technically editable teasers are doc-includes returning livingdocs components, which can be edited like any other component. For more information read the [documentation](https://github.com/livingdocsIO/livingdocs/pull/354) and look into the [example](https://github.com/livingdocsIO/livingdocs-server/pull/3235) on the example-server.
+Editable teasers are embedded editable Livingdocs components. Technically editable teasers are doc-includes returning Livingdocs components, which can be edited like any other component. For more information read the [documentation](https://github.com/livingdocsIO/livingdocs/pull/354) and look into the [example](https://github.com/livingdocsIO/livingdocs-server/pull/3235) on the example-server.
 
 Attention: Editable teasers do not work with the render pipeline v1 (which most of the customers are using at the moment). This should be fixed in an upcoming release.
 
@@ -162,7 +162,7 @@ We introduce videos in Livingdocs with these abilities:
 - upload videos and set metadata in editor via drag + drop / upload button
 - import videos via public API
 - Add project configuration for mediaVideo MediaType
-- Add new directive `doc-video` in a livingdocs design
+- Add new directive `doc-video` in a Livingdocs design
 
 In the upcoming releases we will bring in some improvements and make the video feature more stable.
 
@@ -239,7 +239,7 @@ elasticIndex: {
 
 To support future updates, we did an internal update where we define Elasticsearch aliases pointing on an index. With this change, you need to re-index the publication index used for the public API search endpoint.
 
-After the deployment, please **immediately** run this cli task (the publication index will be empty after the deployment):
+After the deployment, please **immediately** run this CLI task (the publication index will be empty after the deployment):
 
 ```bash
 livingdocs-server elasticsearch-index --handle=li-publications -y
@@ -324,7 +324,7 @@ With the improved [authentication workflow](https://github.com/livingdocsIO/livi
 With cookies being set on a new URL, the SSO Logins need to be re-configured. Do the following:
 
 1. Make sure your `editor__public_host` env variable is set to the editor URL (e.g. `https://edit.livingdocs.io`)
-2. Change all callback URLs for your SSO provider to the pattern `https://{editorUrl}/proxy/auth/{provider}/callback`. For the livingdocs service this looked e.g. as follows: `auth__connections__github__config__callbackURL = https://edit.livingdocs.io/proxy/auth/github/callback`. (NOTE: depending on your traefik setup it might also require `proxy/api` instead of `/proxy`).
+2. Change all callback URLs for your SSO provider to the pattern `https://{editorUrl}/proxy/auth/{provider}/callback`. For the Livingdocs service this looked e.g. as follows: `auth__connections__github__config__callbackURL = https://edit.livingdocs.io/proxy/auth/github/callback`. (NOTE: depending on your traefik setup it might also require `proxy/api` instead of `/proxy`).
 3. In the settings for your social providers, allow the new callback URLs (for FB for example we had to allow the redirect URL `https://edit.livingdocs.io/proxy/auth/facebook/callback` in our Facebook app)
 
 
@@ -421,7 +421,7 @@ const axios = require('axios').create({..., withCredentials: true})
 References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4015)
 
 ## CSS Stylesheets vh is not supported anymore :fire:
-Because of changes in the editor we need to replace the vh unit in the design assets. This is done automatically but the css assets in the design should support CORS when the files are on a different domain then your livingdocs editor. Otherwise we can't read the CSS Rules and it can lead to an unexpected behavior in the editor.
+Because of changes in the editor we need to replace the vh unit in the design assets. This is done automatically but the css assets in the design should support CORS when the files are on a different domain then your Livingdocs Editor. Otherwise we can't read the CSS Rules and it can lead to an unexpected behavior in the editor.
 If CORS can't be enabled on the css assets it should be replaced with a unit which does not directly base on the height of the viewport.
 
 # APIs :gift:
@@ -577,7 +577,7 @@ References:
 
 ### Livingdocs Server Patches
 - [v114.0.59](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.59): chore: rerun checks
-- [v114.0.58](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.58): fix(design): add new cli command design-set-active
+- [v114.0.58](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.58): fix(design): add new CLI command design-set-active
 - [v114.0.57](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.57): fix: update integration test because of an outdated github API
 - [v114.0.56](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.56): fix(hugo): require auth on all print routes
 - [v114.0.55](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.55): fix(print-api): Force `no-cache` for print API requests
@@ -608,7 +608,7 @@ Customers need more informations when a migration fails.
 - [v114.0.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.40): fix(comments): Add maxThreadCount config property
 - [v114.0.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.39): fix(policies): Introduce a more strict schema and allow additional properties
 - [v114.0.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.38): fix(publish): Fix the indexing for document publish calls that are nested in a transaction
-- [v114.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.37): fix(indexing): Change how we create the redis instance in the indexing controller as it didn't respect the sentinel config
+- [v114.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.37): fix(indexing): Change how we create the Redis instance in the indexing controller as it didn't respect the sentinel config
 - [v114.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.36): fix(airship): enable push notifications for web channel as well
 - [v114.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.35): fix(includes): Add interaction blocker config
 - [v114.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v114.0.34): fix(websocket): Rewrite the url for websockets as we do it for requests if /proxy/api is present
@@ -640,7 +640,7 @@ Customers need more informations when a migration fails.
 - [v57.33.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.48): fix(conflict): Hide comments in conflict mode
 - [v57.33.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.47): fix(split-pane): Minimize sidebar on conflict
 - [v57.33.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.46): chore: Fix the livingdocs-integration.json for the release-2020-12 in bluewin
-- [v57.33.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.45): fix(ci): Use our docker images instead of the official docker image
+- [v57.33.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.45): fix(ci): Use our Docker images instead of the official Docker image
 - [v57.33.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.44): fix(includes): Add interaction blocker config
 - [v57.33.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.43): chore: adapt cypress tests
 - [v57.33.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v57.33.42): fix: correctly navigate back from a custom dashboard

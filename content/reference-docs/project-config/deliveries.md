@@ -41,7 +41,7 @@ The `Internal Document Links` feature will construct a URL to a document based o
 
 - `:id` (document.id, always available)
 - `:projectId`, (document.projectId, always available)
-- `:slug` (document.metadata.slug, available if you have a metadata property with the handle slug and it is indexed in elasticsearch)
+- `:slug` (document.metadata.slug, available if you have a metadata property with the handle slug and it is indexed in Elasticsearch)
 
 This URL is then inserted into to `a` tags `href` attribute within the document.
 Additionally a `data-li-document-ref` attribute is written containing the `document.id`.

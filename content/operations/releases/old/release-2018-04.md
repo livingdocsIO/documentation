@@ -72,7 +72,7 @@ A more detailed description and examples can be found in the [documentation](htt
 
 ## Postgres :wrench:
 
-We dropped the `plv8` extension. This will make deployment/maintenance easier for self-hosted databases and allows to easily upgrade to postgres v10.
+We dropped the `plv8` extension. This will make deployment/maintenance easier for self-hosted databases and allows to easily upgrade to Postgres v10.
 
 **This change won't affect you** unless you're using the extension by yourself in your custom code. The migration will require permission to drop the extension.
 

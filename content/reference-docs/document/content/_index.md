@@ -80,9 +80,9 @@ The rendering works by iterating over the list of components (document JSON), fo
 
 A Livingdocs document is an abstract representation of an HTML document. It's structure is inspired by [web components](http://www.w3.org/TR/components-intro/), which is a set of working draft documents at the W3C with the aim to leverage reusable components for the Web platform.
 
-In Livingdocs the components that can be used are defined in a Livingdocs `Design`. Just like the DOM represents a tree of HTML elements a `Livingdoc` represents a tree of `components`.
+In Livingdocs the components that can be used are defined in a Livingdocs `Design`. Just like the DOM represents a tree of HTML elements a `livingdoc` represents a tree of `components`.
 
-From the user's perspective a `livingdoc` is a page with a list of components that can be dragged around, selected, edited and deleted individually. The same is true for developers: all action in the editor map to livingdocs framework actions that can be scripted as well.
+From the user's perspective a `livingdoc` is a page with a list of components that can be dragged around, selected, edited and deleted individually. The same is true for developers: all action in the editor map to Livingdocs framework actions that can be scripted as well.
 
 ### Headless approach for multi channel publishing
 
