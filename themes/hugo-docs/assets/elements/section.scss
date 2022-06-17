@@ -3,10 +3,6 @@
   word-break: break-word;
   width: 100%;
 
-  @include media-query(ultrawide) {
-    max-width: 750px;
-  }
-
   &__title {
     position: relative;
     margin-top: 0;

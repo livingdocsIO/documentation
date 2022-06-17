@@ -1,13 +1,12 @@
 .section-teaser {
   flex-grow: 1;
-  margin: $space-s;
   width: 100%;
   min-height: $space-xl;
   cursor: pointer;
 
   @include media-query(tablet) {
     width: 40%;
-    max-width: calc(50% - #{2 * $space-s});
+    max-width: calc(50% - #{$space-s});
   }
 
   &__link {

@@ -1,7 +1,20 @@
 .section-teasers {
   display: flex;
   flex-wrap: wrap;
-  box-pack: justify;
+  gap: $space-m;
   justify-content: space-between;
-  margin: 0 -12px;
+
+  &--wide {
+    @include media-query(desktop) {
+      width: calc(100vw - #{$page-sidebar-width + $space-m + $space-l});
+    }
+  
+    @include media-query(widescreen) {
+      width: calc(100vw - #{$page-sidebar-width + 2 * $space-l});
+    }
+  
+    @include media-query(ultrawide) {
+      width: #{$breakpoint-ultrawide - $page-sidebar-width - 2 * $space-l};
+    }
+  }
 }
