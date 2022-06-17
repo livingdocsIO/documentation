@@ -849,6 +849,7 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
 
 ### Livingdocs Editor Patches
+- [v77.2.76](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.76): fix(cut and paste): Does not affect undo
 - [v77.2.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.75): fix(multiListEditor): Service always found
 - [v77.2.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.74): fix(frameworkBump): March release
 - [v77.2.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.73): fix(metadata): ensure the UI updates after an async selection service returns
