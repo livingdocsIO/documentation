@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(metadata-forms): hide empty metadata form cards [livingdocs-editor #5492 v80.29.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5492)
 * :new: fix(cut and paste): Does not affect undo [livingdocs-editor #5486 v80.28.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5486)
 * :new: Improvement/Block Icons pt.5 [livingdocs-editor #5487 v80.28.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5487)
 * :new: Feat publish control embargo improvements [livingdocs-editor #5479 v80.28.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5479)
