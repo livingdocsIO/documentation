@@ -1,5 +1,5 @@
 ---
-title: Systems
+title: External Systems
 weight: 11
 menus:
   reference-docs:
@@ -10,11 +10,11 @@ menus:
 
 
 
-Systems define a relation to another system. Currently we support only systems of type `source` which defines a relation to the origin of a document.
+External Systems define a relation to a source system. External Systems usually have stored the original document which will be one way synced to Livingdocs via Import.
 
 An example:
 ```js
-systems: [
+externalSystems: [
   {
     handle: 'cms',
     type: 'source',
@@ -26,8 +26,6 @@ systems: [
 ]
 ```
 
-## Source System
-
-A system of type `source` defines an URL with `origin` and a `pathPattern`. The `pathPattern` can have placeholders which will be replaced with real values during runtime to build the final URL to the source system.
+An External System defines an URL with `origin` and a `pathPattern`. The `pathPattern` can have placeholders which will be replaced with real values during runtime to build the final URL to the source system.
 - `{{id}}`              -> replaced by Livingdocs `documentId`
 - `{{metadata.cmsId}}`  -> replaced by a metadata field with the handle `cmsId`
