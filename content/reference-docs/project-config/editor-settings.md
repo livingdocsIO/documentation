@@ -568,6 +568,7 @@ are supported in the table dashboard:
 - `li-category`
 - `li-document-reference`
 - `li-string-list` ({{< added-in release-2022-05 >}})
+- `li-desknet-integration` ({{< added-in release-2022-07 >}})
 
 #### Upstream components
 
