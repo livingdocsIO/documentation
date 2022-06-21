@@ -336,6 +336,7 @@ count text within certain components.
 ```js
 textcount: {
   isEnabled: true,
+  showEditableCount: true // shows the chars of the selected doc-editable
   timeout: 200
 }
 ```
