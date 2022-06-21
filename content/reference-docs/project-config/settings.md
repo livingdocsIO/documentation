@@ -67,6 +67,7 @@ settings: {
       enabled: true,
       buttonLabel: 'open comyan'
       mediaSystem: {
+        additionalApiQueryString: 'foo=bar' // in case of proxy use, set `svcURLFormat=api`
         credentials: {
           username: 'user',
           password: {
@@ -76,7 +77,8 @@ settings: {
           }
         },
         baseUrl: 'https://example.com/MediaSystem',
-      }
+      },
+      storageBaseUrl: 'https://storage.proxy.com/' // set this if comyan serves your images through a proxy
     },
     googleVision: {
       enabled: true,
