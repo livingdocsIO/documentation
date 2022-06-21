@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Chore/Post Project-Setup-Removal Cleaning [livingdocs-editor #5494 v80.30.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5494)
 * :new: improve UI behavior when toggling sidepanels [livingdocs-editor #5495 v80.30.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5495)
 * :new: ♻️ Example Server: Make example-server configs easier to copy [livingdocs-server #4557 v186.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4557)
 * :new: feat(publish-control-significant-update): implement significant update checkbox and show publication date [livingdocs-editor #5442 v80.30.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5442)
