@@ -15,14 +15,14 @@ Once the soft lock is enabled for a content-type (e.g. articles) a "Lock" button
 ## Enable soft lock
 
 Add the following metadata JSON to the content-type for which you want a soft lock to be active:
-```
+```js
 {
   handle: 'documentSoftLock',
   type: 'li-document-soft-lock',
   config: {
     lockTimeout: 5 // change to your desired timeout in minutes
   }
- }
+}
 ```
 
 Note: you have to do this for each content-type that you want to have the soft lock functionality, e.g. articles and pages.

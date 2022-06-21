@@ -10,25 +10,28 @@ The categories are normally used together with the routing system to represent t
 
 You can define an array of available categories:
 ```js
-categories: [{
-  id: 'home',
-  label: 'Home',
-  path: '/',
-  parent:
-  archived: false,
-  metadata: {
-    foo: 'bar' // You can store arbitrary data here
+categories: [
+  {
+    id: 'home',
+    label: 'Home',
+    path: '/',
+    parent:
+    archived: false,
+    metadata: {
+      foo: 'bar' // You can store arbitrary data here
+    }
+  },
+  {
+    id: 'breaking-news',
+    label: 'Breaking News',
+    path: '/breaking',
+    parent: 'home',
+    archived: false,
+    metadata: {
+      bar: 'foo'
+    }
   }
-}, {
-  id: 'breaking-news',
-  label: 'Breaking News',
-  path: '/breaking',
-  parent: 'home',
-  archived: false,
-  metadata: {
-    bar: 'foo'
-  }
-}]
+]
 ```
 
 Categories can have a path for the routing.

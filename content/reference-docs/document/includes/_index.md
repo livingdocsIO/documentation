@@ -36,18 +36,20 @@ You should be familiar with [Livingdocs directives]({{< ref "/reference-docs/doc
 {
   "name": "example",
   "label": "Example Component",
-  "directives": [{
-    "name": "example-include",
-    "type": "include",
-    "service": "your-include-service",
-    "defaultParams": {
-      "layout": "mostViewed"
-    },
-    "config": {
-      "minCount": 3,
-      "maxCount": 6
+  "directives": [
+    {
+      "name": "example-include",
+      "type": "include",
+      "service": "your-include-service",
+      "defaultParams": {
+        "layout": "mostViewed"
+      },
+      "config": {
+        "minCount": 3,
+        "maxCount": 6
+      }
     }
-  }]
+  ]
 }
 </script>
 

@@ -187,7 +187,9 @@ auth: {
   accessTokenSecret: 'GpA^xLH5$qLzWcqEvZmE3imYwVf68kXa1JR5rP*NFRUyRPQRtbVwWk3bHusD',
 
   // The secret used to sign JWT tokens
-  accessTokenSigningKeys: [{"crv":"Ed25519","d":"fake-private-key","x":"fake-x","kty":"OKP","kid":"211027-fmJi","alg":"EdDSA","use":"sig"}],
+  accessTokenSigningKeys: [
+    {"crv":"Ed25519","d":"fake-private-key","x":"fake-x","kty":"OKP","kid":"211027-fmJi","alg":"EdDSA","use":"sig"}
+  ],
 
   // The refresh interval of tokens used in the editor
   accessTokenTtl: '12h',
@@ -405,17 +407,23 @@ If a design is requested the design loader will execute these steps in the given
 
 ```js
 designLoader: {
-  hostedDesigns: [{ // optional
-    designName: 'timeline',
+  // optional
+  hostedDesigns: [
+    {
+      designName: 'timeline',
 
-    // The final request for timeline design v1.0.0 will go to this url:
-    // -> http://assets.livingdocs.io/timeline/1.0.0
-    url: 'http://assets.livingdocs.io/timeline'
-  }],
-  localDesigns: [{ // optional
-    path: '/designs/timeline/v1.1.0' // path to design
-  }],
-  designRepository: { // optional, defaults to the local design server
+      // The final request for timeline design v1.0.0 will go to this url:
+      // -> http://assets.livingdocs.io/timeline/1.0.0
+      url: 'http://assets.livingdocs.io/timeline'
+    }
+  ],
+  // optional
+  localDesigns: [
+    // path to design
+    {path: '/designs/timeline/v1.1.0'}
+  ],
+  // optional, defaults to the local design server
+  designRepository: {
     remoteHost: 'http://api.livingdocs.io'
   },
   cacheSize: 100 // optional, defaults to '20'
@@ -504,9 +512,9 @@ The channel and contentType config is described in detail here: [channel config]
 
 ```js
 secretEncryptionKeys: [
-      {"kty":"oct","k":"foo","kid":"newKey","alg":"A256GCMKW","enc":"A256GCM","use":"enc"},
-      {"kid":"oldKey","kty":"oct","k":"bar","alg": "dir","enc": "A128CBC-HS256"}
-    ]
+  {"kty":"oct","k":"foo","kid":"newKey","alg":"A256GCMKW","enc":"A256GCM","use":"enc"},
+  {"kid":"oldKey","kty":"oct","k":"bar","alg": "dir","enc": "A128CBC-HS256"}
+]
 ```
 
 The `secretEncryptionKeys` config is required if you want to use secrets in the project config, e.g. the secret key for imatrics.
@@ -585,7 +593,9 @@ search: {
   // configuration using the elasticsearch.js client configuration object.
   // For more details about the configuration,
   // please consult the elasticsearch client documentation. https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/basic-config.html
-  elasticsearchClient: {node: 'http://localhost:9200'}
+  elasticsearchClient: {
+    node: 'http://localhost:9200'
+  }
 
   articleDocumentIndex: 'li-local-documents',
   numberOfReplicas: 1,
@@ -628,7 +638,7 @@ The simplest possible query function looks like this:
 // @returns {Object} Elasticsearch body.query
 module.exports = function (searchQuery) {
   return {
-    match : { 'document.title' : searchQuery }
+    match: {'document.title' : searchQuery}
   }
 }
 ```
@@ -757,23 +767,27 @@ pushNotifications: {
   enabled: true,
   airship: {
       apiUrl: 'https://go.urbanairship.com'
-      apiAuthKeys: [{
-        // must be base64 encoded '<App key>:<master secret key>'
-        apiAuthKey: 'SECRET',
+      apiAuthKeys: [
+        {
+          // must be base64 encoded '<App key>:<master secret key>'
+          apiAuthKey: 'SECRET',
 
-        // must match with the platform handle
-        handle: 'li-website'
-      }],
-      deepLinks: [{
-        // must match with the platform handle
-        handle: 'li-website',
+          // must match with the platform handle
+          handle: 'li-website'
+        }
+      ],
+      deepLinks: [
+        {
+          // must match with the platform handle
+          handle: 'li-website',
 
-        // {articleId} will be replaced with the id from the document
-        urlTemplate: 'az://artikel/{articleId}',
+          // {articleId} will be replaced with the id from the document
+          urlTemplate: 'az://artikel/{articleId}',
 
-        // fallback Url in case the deep link doesn't work
-        fallbackUrl: 'https://livingdocs.io'
-      }],
+          // fallback Url in case the deep link doesn't work
+          fallbackUrl: 'https://livingdocs.io'
+        }
+      ],
     deviceTypes: ['android', 'ios']
   }
 }
@@ -836,13 +850,15 @@ mediaLibrary: {
         maxDimension: 6000 // default 6000
       },
       // optional - Convert your image during upload into another format
-      convert: [{
-        sourceFormat: 'pdf',
-        targetFormat: 'png',
-        // density is only available with processingStrategy 'imagemagick'
-        // If the sourceFormat is a vector based format you can define the density (dpi) which should be used to create the pixel based format.
-        density: 300
-      }]
+      convert: [
+        {
+          sourceFormat: 'pdf',
+          targetFormat: 'png',
+          // density is only available with processingStrategy 'imagemagick'
+          // If the sourceFormat is a vector based format you can define the density (dpi) which should be used to create the pixel based format.
+          density: 300
+        }
+      ]
     }
   },
 

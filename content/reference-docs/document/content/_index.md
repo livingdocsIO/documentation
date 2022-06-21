@@ -16,21 +16,24 @@ A Livingdocs document is a structured JSON tree representation. It holds a (nest
 A simple Livingdocs document JSON defining a header and a paragraph:
 ```js
 {
-  content: [{
-    identifier: 'header',
-    content: {
-      title: 'Publishing has never been easier',
-      subline: 'Livingdocs',
-      image: {
-        url: 'https://server.livingdocs.io/api/v1/images/collaboration.jpg?id=MQkvMjAxOS83LzIyLzJiZTcwZWI2LTIxYjMtNDBiMy04MmRkLWY4OTY5ZGE4YjBmMy5qcGVnCTQ4NQ%3D%3D&w=1024&auto=format'
+  content: [
+    {
+      identifier: 'header',
+      content: {
+        title: 'Publishing has never been easier',
+        subline: 'Livingdocs',
+        image: {
+          url: 'https://server.livingdocs.io/api/v1/images/collaboration.jpg?id=MQkvMjAxOS83LzIyLzJiZTcwZWI2LTIxYjMtNDBiMy04MmRkLWY4OTY5ZGE4YjBmMy5qcGVnCTQ4NQ%3D%3D&w=1024&auto=format'
+        }
+      }
+    },
+    {
+      identifier: 'paragraph',
+      content: {
+        text: 'Livingdocs is a modern Digital Content Creation and Publishing System in use at a large variety of media companies.'
       }
     }
-  }, {
-    identifier: 'paragraph',
-    content: {
-      text: 'Livingdocs is a modern Digital Content Creation and Publishing System in use at a large variety of media companies.'
-    }
-  }],
+  ],
   design: {
     name: 'livingdocs',
     version: '0.0.1'
@@ -50,19 +53,24 @@ A simple Livingdocs design defining the two components used in the document abov
       js: ['/scripts.js', '/asset-gallery.js']
     }
   },
-  components: [{
-    name: 'header',
-    html: '<div class="head"><span doc-editable="subline"><h1 class="head__title"      doc-editable="title">Title</h1><div class="figure"><img doc-image="image"</div></div>',
-    label: 'Header',
-    directives: [{
-      name: 'title',
-      plainText: true
-    }]
-  }, {
-    name: 'paragraph',
-    html: '<p doc-editable="text">Tell your story</p>',
-    label: 'Paragraph'
-  }]
+  components: [
+    {
+      name: 'header',
+      html: '<div class="head"><span doc-editable="subline"><h1 class="head__title"      doc-editable="title">Title</h1><div class="figure"><img doc-image="image"</div></div>',
+      label: 'Header',
+      directives: [
+        {
+          name: 'title',
+          plainText: true
+        }
+      ]
+    },
+    {
+      name: 'paragraph',
+      html: '<p doc-editable="text">Tell your story</p>',
+      label: 'Paragraph'
+    }
+  ]
 }
 ```
 

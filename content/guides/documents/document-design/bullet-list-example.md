@@ -14,16 +14,18 @@ module.exports = {
   label: 'Bullet List',
   name: 'bullet-list',
   properties: ['list-type'],
-  directives: [{
-    name: 'list',
-    type: 'container',
-    defaultComponents: {
-      paragraph: 'bullet-list-item'
-    },
-    defaultContent: [{
-      component: 'bullet-list-item'
-    }]
-  }],
+  directives: [
+    {
+      name: 'list',
+      type: 'container',
+      defaultComponents: {
+        paragraph: 'bullet-list-item'
+      },
+      defaultContent: [
+        {component: 'bullet-list-item'}
+      ]
+    }
+  ],
   html: `<ul doc-container="list" class="ld-list"></ul>`
 }
 ```

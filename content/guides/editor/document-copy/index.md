@@ -49,15 +49,19 @@ if the document has a certain contentType.
 
 Project config `/settings`
 ```js
-copy: [{
-  source: {
-    contentType: 'fantasy'
-  },
-  targets: [{
-    contentType: 'another-content-type',
-    allowTransform: true
-  }]
-}]
+copy: [
+  {
+    source: {
+      contentType: 'fantasy'
+    },
+    targets: [
+      {
+        contentType: 'another-content-type',
+        allowTransform: true
+      }
+    ]
+  }
+]
 ```
 
 
@@ -90,41 +94,45 @@ location of the corresponding instruction config in `target.instructionPath`
 
 ```js
 // copy config in the source channel
-copy: [{
-  source: {
-    contentType: 'fantasy'
-  },
-
-  targets: [{
-    contentType: 'regular',
-
-    // Path to a config of instructions to be applied when transforming one component to another
-    instructionPath: require.resolve('../conversions/basic-to-eternal-bliss.js')
-
-    // Metadata config
-    metadata: {
-      map: [
-        // copies source.title to target.catchline
-        {'from': 'title', 'to': 'catchline'},
-
-        // copies systemdata.id to target.copySourceId.
-        {'from': 'systemdata.id', 'to': 'copySourceId'},
-
-        // syntactic sugar for:
-        // [
-        //   {'from': 'title', 'to': 'title'},
-        //   {'from': 'tasks', 'to': 'tasks'}
-        // ]
-        'title', 'tasks',
-
-        // NOT IMPLEMENTED: computes the new value based on a passed function
-        {from: 'title', to: function(d) {return d.toUpperCase()}}
-      ]
+copy: [
+  {
+    source: {
+      contentType: 'fantasy'
     },
-    // a document can be transformed
-    allowTransform: true
-  }]
-}]
+
+    targets: [
+      {
+        contentType: 'regular',
+
+        // Path to a config of instructions to be applied when transforming one component to another
+        instructionPath: require.resolve('../conversions/basic-to-eternal-bliss.js')
+
+        // Metadata config
+        metadata: {
+          map: [
+            // copies source.title to target.catchline
+            {'from': 'title', 'to': 'catchline'},
+
+            // copies systemdata.id to target.copySourceId.
+            {'from': 'systemdata.id', 'to': 'copySourceId'},
+
+            // syntactic sugar for:
+            // [
+            //   {'from': 'title', 'to': 'title'},
+            //   {'from': 'tasks', 'to': 'tasks'}
+            // ]
+            'title', 'tasks',
+
+            // NOT IMPLEMENTED: computes the new value based on a passed function
+            {from: 'title', to: function(d) {return d.toUpperCase()}}
+          ]
+        },
+        // a document can be transformed
+        allowTransform: true
+      }
+    ]
+  }
+]
 ```
 
 #### Instruction Config
@@ -135,60 +143,66 @@ module.exports = {
   to: 'eternal-bliss@1.6.0',
 
   // Instructions on which components/directives are transformed to which in the target design
-  componentConversions: [{
+  componentConversions: [
+    {
+      // Component with multiple directives
+      match: 'header'
+      result: [
+        {
+          component: 'subtitle',
+          directives: {
+            'title': {takeFrom: 'catchline'}
+          }
+        },
+        {
+          component: 'headline'
+          directives: {
+            'title': {takeFrom: 'title'}
+          }
+        }
+      ]
+    },
+    {
 
-    // Component with multiple directives
-    match: 'header'
-    result: [{
-      component: 'subtitle',
-      directives: {
-        'title': {takeFrom: 'catchline'}
+      // Example of a custom transformation using the framework API on the matched component
+      match: 'image',
+      process: ({matchedComponent, resultDoc}) => {
+        component = resultDoc.createComponent('image')
+        imageDirective = matchedComponent.directives.get('image')
+        imageDirective.copyTo(component.directives.get('src'))
+        component.setContent('text', matchedComponent.getContent('caption'))
+
+        conversionLog.addImage({
+          livingdoc: resultDoc,
+          id: component.id,
+          data: imageDirective.getContent()
+        })
+
+        return [component]
       }
-    }, {
-      component: 'headline'
-      directives: {
-        'title': {takeFrom: 'title'}
-      }
-    }]
-  }, {
-
-    // Example of a custom transformation using the framework API on the matched component
-    match: 'image',
-    process: ({matchedComponent, resultDoc}) => {
-      component = resultDoc.createComponent('image')
-      imageDirective = matchedComponent.directives.get('image')
-      imageDirective.copyTo(component.directives.get('src'))
-      component.setContent('text', matchedComponent.getContent('caption'))
-
-      conversionLog.addImage({
-        livingdoc: resultDoc,
-        id: component.id,
-        data: imageDirective.getContent()
-      })
-
-      return [component]
+    },
+    {
+      // Excluded components are ignored during copying:
+      match: 'responsive-image',
+      exclude: true
+    },
+    {
+      // OPTIONAL: matches all components without instructions and copies or excludes them.
+      // CAREFUL: if you copy all components, they have to be defined in both designs!
+      match: '*',
+      copy: true // OR exclude: true
     }
-  }, {
-
-    // Excluded components are ignored during copying:
-    match: 'responsive-image',
-    exclude: true
-  }, {
-
-    // OPTIONAL: matches all components without instructions and copies or excludes them.
-    // CAREFUL: if you copy all components, they have to be defined in both designs!
-    match: '*',
-    copy: true // OR exclude: true
-  }],
-
+  ],
 
   // Prefixes a component directive after a copy
   // This example adds the prefix 'Kopie von' to the directive 'title' in the component 'header'
-  prefix: [{
-    component: 'header',
-    directive: 'title',
-    text: 'Kopie von '
-  }]
+  prefix: [
+    {
+      component: 'header',
+      directive: 'title',
+      text: 'Kopie von '
+    }
+  ]
 
   // Allows for custom changes on the target document after the copy is done just before it is saved,
   // useful if the other options in the copy API are too limiting
@@ -215,11 +229,13 @@ If you want to copy an article from `channel 1` -> `channel 2`, you need a trans
 #### Example Config
 
 ```js
-copy: [{
-  source: {channelHandle: 'web', contentType: 'default'},
-  targets: [{channelHandle: 'print', contentType: 'regular'}],
-  instructionPath: require.resolve('../conversions/basic-to-eternal-bliss.js')
-}]
+copy: [
+  {
+    source: {channelHandle: 'web', contentType: 'default'},
+    targets: [{channelHandle: 'print', contentType: 'regular'}],
+    instructionPath: require.resolve('../conversions/basic-to-eternal-bliss.js')
+  }
+]
 ```
 
 #### (1.2) Layout Copy (Layout L1 to Layout L2)
@@ -230,11 +246,13 @@ Usually a copy can be done **without** an instruction. If a design has several l
 #### Example Config
 
 ```js
-copy: [{
-  source: {contentType: 'default'},
-  targets: [{contentType: 'regular'}],
-  instructionPath: require.resolve('../conversions/basic-default-to-basic-regular.js')
-}]
+copy: [
+  {
+    source: {contentType: 'default'},
+    targets: [{contentType: 'regular'}],
+    instructionPath: require.resolve('../conversions/basic-default-to-basic-regular.js')
+  }
+]
 ```
 
 ### (2) Clone Copy
@@ -246,9 +264,11 @@ This scenario copies all components from one contentType to another contentType.
 #### Example Config
 
 ```js
-copy: [{
-  source: {contentType: 'default'},
-  targets: [{contentType: 'regular'}],
-  instructionPath: require.resolve('../conversions/basic-default-to-basic-regular.js')
-}]
+copy: [
+  {
+    source: {contentType: 'default'},
+    targets: [{contentType: 'regular'}],
+    instructionPath: require.resolve('../conversions/basic-default-to-basic-regular.js')
+  }
+]
 ```

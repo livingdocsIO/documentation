@@ -123,24 +123,13 @@ The user has the chance to manually change the extracted Metadata before the ima
 module.exports = {
   handle: 'image',
   type: 'mediaImage',
-  // ...
   exifExtraction: {
     mappings: [
-      {
-        field: 'Title',
-        metadataPropertyName: 'title'
-      },
-      {
-        field: 'Description',
-        metadataPropertyName: 'description'
-      },
-      {
-        field: 'Credit Line',
-        metadataPropertyName: 'credit'
-      }
+      {field: 'Title', metadataPropertyName: 'title'},
+      {field: 'Description', metadataPropertyName: 'description'},
+      {field: 'Credit Line', metadataPropertyName: 'credit'}
     ]
   },
-  // ...
 }
 ```
 
@@ -253,20 +242,20 @@ module.exports = {
   name: 'image',
   label: 'Image',
   iconUrl: `https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_image.svg`,
-  directives: [{
-    name: 'image',
-    type: 'image',
-    // for images in documents, only the desktop and mobile namedCrops
-    // are used, the desktop is the default (shown in the document)
-    // the mobile crop can be added by a user at will
-    namedCrops: [{
-      name: 'desktop', // the name references the handle of a namedCrop in the designSettings
-      isDefault: true
-    }, {
-      name: 'mobile',
-      isOptional: true
-    }]
-  }],
+  directives: [
+    {
+      name: 'image',
+      type: 'image',
+      // for images in documents, only the desktop and mobile namedCrops
+      // are used, the desktop is the default (shown in the document)
+      // the mobile crop can be added by a user at will
+      namedCrops: [
+        // the name references the handle of a namedCrop in the designSettings
+        {name: 'desktop', isDefault: true},
+        {name: 'mobile', isOptional: true}
+      ]
+    }
+  ],
   html: dedent`
     <div class="m-asset-image m-asset-image--numbered">
       <div class="m-asset-image__image">
@@ -296,14 +285,8 @@ module.exports = {
       type: 'li-image',
       config: {
         namedCrops: [
-          {
-            name: 'desktop',
-            isDefault: true
-          },
-          {
-            name: 'mobile',
-            isOptional: true
-          }
+          {name: 'desktop', isDefault: true},
+          {name: 'mobile', isOptional: true}
         ]
       },
       ui: {component: 'liMetaImageForm'}
@@ -312,10 +295,9 @@ module.exports = {
       handle: 'socialMediaTeaserImage',
       type: 'li-image',
       config: {
-        namedCrops: [{
-          name: 'socialMediaTeaser',
-          isDefault: true
-        }]
+        namedCrops: [
+          {name: 'socialMediaTeaser', isDefault: true}
+        ]
       },
       ui: {component: 'liMetaImageForm'}
     }
@@ -384,17 +366,13 @@ module.exports = {
     // the dashboard seen by users when opening Images/Videos from the document editor
     dashboard: {
       displayFilters: [
-        {
-          filterName: 'liDateTimeRange'
-        }
+        {filterName: 'liDateTimeRange'}
       ]
     },
     // the dashboard opened through the main navigation
     managementDashboard: {
       displayFilters: [
-        {
-          filterName: 'liDateTimeRange'
-        }
+        {filterName: 'liDateTimeRange'}
       ]
     }
   }
@@ -426,13 +404,15 @@ module.exports = {
     label: 'Poster Images'
   },
   hidden: true, // This makes sure these images are not shown in the regular Image Library
-  metadata: [{
-    handle: 'title',
-    type: 'li-text',
-    ui: {
-      component: 'liMetaTextForm'
+  metadata: [
+    {
+      handle: 'title',
+      type: 'li-text',
+      ui: {
+        component: 'liMetaTextForm'
+      }
     }
-  }]
+  ]
 }
 ```
 
@@ -573,47 +553,49 @@ module.exports = {
     description: ''
   },
   // any metadata configuration as you know it from contentTypes already
-  metadata: [{
-    handle: 'title',
-    type: 'li-text',
-    config: {
-      required: true, // if a metadata property is required, the user will see a form to enter the metadata during upload
-      requiredErrorMessage: 'Please provide a title',
-      maxLength: 200,
-      index: true
+  metadata: [
+    {
+      handle: 'title',
+      type: 'li-text',
+      config: {
+        required: true, // if a metadata property is required, the user will see a form to enter the metadata during upload
+        requiredErrorMessage: 'Please provide a title',
+        maxLength: 200,
+        index: true
+      },
+      ui: {component: 'liMetaTextForm'}
     },
-    ui: {component: 'liMetaTextForm'}
-  },
-  {
-    handle: 'description',
-    type: 'li-text',
-    config: {
-      index: true
+    {
+      handle: 'description',
+      type: 'li-text',
+      config: {
+        index: true
+      },
+      ui: {component: 'liMetaTextForm'}
     },
-    ui: {component: 'liMetaTextForm'}
-  },
-  {
-    handle: 'credit',
-    type: 'li-text',
-    config: {
-      required: true,
-      requiredErrorMessage: 'Please provide a source',
-      index: true
-    },
-    ui: {component: 'liMetaTextForm'}
-  }],
+    {
+      handle: 'credit',
+      type: 'li-text',
+      config: {
+        required: true,
+        requiredErrorMessage: 'Please provide a source',
+        index: true
+      },
+      ui: {component: 'liMetaTextForm'}
+    }
+  ],
   editor: {
     // the dashboard seen by users when opening from the document editor
     dashboard: {
-      displayFilters: [{
-        filterName: 'liDateTimeRange'
-      }]
+      displayFilters: [
+        {filterName: 'liDateTimeRange'}
+      ]
     },
     // the dashboard opened through the main navigation
     managementDashboard: {
-      displayFilters: [{
-        filterName: 'liDateTimeRange'
-      }]
+      displayFilters: [
+        {filterName: 'liDateTimeRange'}
+      ]
     }
   }
 }
@@ -631,16 +613,17 @@ As a next step, you have to add the `li-metadata-translations` metadata plugin t
 ```js
 //media-types/image.js
 module.exports = {
-metadata: [
-  {
-    handle: 'language',
-    type: 'li-metadata-translations',
-    ui: {
-      component: 'liMetaSelectForm',
-      service: 'languageSelection'
+  metadata: [
+    {
+      handle: 'language',
+      type: 'li-metadata-translations',
+      ui: {
+        component: 'liMetaSelectForm',
+        service: 'languageSelection'
+      }
     }
-  }
-]
+  ]
+}
 ```
 
 ### Translatable metadata properties
@@ -649,13 +632,14 @@ Now you can configure any metadata property in a `mediaType` to be translatable 
 ```js
 //media-types/image.js
 module.exports = {
-metadata: [
-  {
-    config: {
-      translatable: true
-    }
-  },
-]
+  metadata: [
+    {
+      config: {
+        translatable: true
+      }
+    },
+  ]
+}
 ```
 
 ### Translatable assets (image/video/file)
@@ -673,8 +657,7 @@ module.exports = {
     replaceable: true
   },
   //...
-
-// ...
+}
 ```
 
 #### Caveats

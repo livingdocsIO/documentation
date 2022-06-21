@@ -17,16 +17,18 @@ If defined on any other tag, enables users to set a background image CSS propert
   name: 'image',
   label: 'Bild',
   iconUrl: `https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_image.svg`,
-  directives: [{
-    name: 'image',
-    type: 'image',
-    recommendedRatios: ['16:9', '1:1', '4:3', '3:4'],
-    srcSet: {
-        defaultWidth: 1024,
-        widths: [2048, 1024, 620],
-        sizes: ['100vw']
+  directives: [
+    {
+      name: 'image',
+      type: 'image',
+      recommendedRatios: ['16:9', '1:1', '4:3', '3:4'],
+      srcSet: {
+          defaultWidth: 1024,
+          widths: [2048, 1024, 620],
+          sizes: ['100vw']
+      }
     }
-  }],
+  ],
   html: dedent`
     <div class="m-asset-image m-asset-image--numbered">
       <div class="m-asset-image__image">

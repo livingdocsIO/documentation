@@ -16,11 +16,13 @@ module.exports = {
   name: 'youtube',
   label: 'Youtube',
   iconUrl: 'https://example.com/foo-icon',
-  directives: [{
-    name: 'youtubeInclude',
-    type: 'include',
-    service: 'youtubeIncludeService'
-  }],
+  directives: [
+    {
+      name: 'youtubeInclude',
+      type: 'include',
+      service: 'youtubeIncludeService'
+    }
+  ],
   // The innerHTML of the div containing the `doc-include` attribute
   // will be replaced by the return value of the service
   html: `

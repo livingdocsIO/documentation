@@ -32,6 +32,7 @@ Here is an overview of the top level properties. You can find detailed documenta
   components: [{...}, {...}],
   designSettings: {...},
   deliveries: [{...}, {...}],
+  externalSystems: [{...}],
   notifications: {...},
   import: {...},
   export: {...}

@@ -95,7 +95,8 @@ module.exports = {
           'comment.add'
         ]
       // 2nd group: Interested in publishing changes
-      }, {
+      },
+      {
         handle: 'publish',
         label: 'Publish Events',
         description: 'Publish events',

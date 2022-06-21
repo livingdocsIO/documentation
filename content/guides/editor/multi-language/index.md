@@ -32,18 +32,16 @@ On the server, we first need to provide which languages we want to support in ou
 settings: {
   languages: {
     // defines the languages that a user can select for a document
-    available: [{
-      label: 'German',
-      locale: 'de'
-    }, {
-      label: 'English',
-      locale: 'en'
-    }],
+    available: [
+      {label: 'German', locale: 'de'},
+      {label: 'English', locale: 'en'}
+    ],
     // used to create new documents
     defaultLanguage: {
       label: 'German',
       locale: 'de'
     },
+  }
 }
 ```
 
@@ -57,18 +55,20 @@ The language of a document is stored within the documents metadata. In order to 
 given below.
 
 ```js
-metadata: [{
-  handle: 'language',
-  plugin: 'li-language',
-  ui: {
-    component: 'liMetaSelectForm',
-    service: 'languageSelection',
-    config: {
-      label: 'Language',
-      placeholder: 'select language..'
+metadata: [
+  {
+    handle: 'language',
+    plugin: 'li-language',
+    ui: {
+      component: 'liMetaSelectForm',
+      service: 'languageSelection',
+      config: {
+        label: 'Language',
+        placeholder: 'select language..'
+      }
     }
   }
-}]
+]
 ```
 
 There are several important things to note in the example:

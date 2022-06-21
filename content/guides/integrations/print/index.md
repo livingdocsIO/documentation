@@ -43,44 +43,36 @@ In our service Sandbox we already have a content-type for an online article. It 
   info: {
     label: 'Print Article'
   },
-  components: [{
-    name: 'paragraph'
-  }, {
-    name: 'toptitle'
-  }, {
-    name: 'catchline'
-  }, {
-    name: 'headline'
-  }, {
-    name: 'print-subtitle'
-  }, {
-    name: 'lead'
-  }, {
-    name: 'byline'
-  }],
+  components: [
+    {name: 'paragraph'},
+    {name: 'toptitle'},
+    {name: 'catchline'},
+    {name: 'headline'},
+    {name: 'print-subtitle'},
+    {name: 'lead'},
+    {name: 'byline'}
+  ],
   editorWrapper: '<article class="nzz-standard doc-section" itemscope itemtype="http://schema.org/NewsArticle"></article>',
-  defaultContent: [{
-    component: 'catchline'
-  }, {
-    component: 'headline'
-  }, {
-    component: 'lead'
-  }, {
-    component: 'byline'
-  }, {
-    component: 'paragraph'
-  }],
-  metadata: [{
-    handle: 'title',
-    type: 'li-text',
-    config: {
-      maxLength: 200,
-      useAsTitle: true
-    },
-    ui: {
-      component: 'liMetaTextForm'
+  defaultContent: [
+    {component: 'catchline'},
+    {component: 'headline'},
+    {component: 'lead'},
+    {component: 'byline'},
+    {component: 'paragraph'}
+  ],
+  metadata: [
+    {
+      handle: 'title',
+      type: 'li-text',
+      config: {
+        maxLength: 200,
+        useAsTitle: true
+      },
+      ui: {
+        component: 'liMetaTextForm'
+      }
     }
-  }],
+  ],
   print: {
     enabled: true,
     enableStepZooming: true,
@@ -134,57 +126,73 @@ In order to copy a print article from an existing online article, we will use th
 
 In the `settings` section of your project config add a config as follows:
 ```js
-copy: [{
-  source: {
-    contentType: 'regular'
-  },
-  targets: [{
-    contentType: 'woodwing',
-    metadata: {
-      map: ['title']
+copy: [
+  {
+    source: {
+      contentType: 'regular'
     },
-    instructions: {
-      componentConversions: [{
-        match: 'article-container',
-        exclude: true
-      }, {
-        match: 'head',
-        result: [{
-          component: 'catchline',
-          directives: {
-            title: {takeFrom: 'flag'}
-          }
-        }, {
-          component: 'headline',
-          directives: {
-            title: {takeFrom: 'title'}
-          }
-        }, {
-          component: 'lead',
-          directives: {
-            text: {takeFrom: 'text'}
-          }
-        }, {
-          component: 'byline',
-          directives: {
-            text: {takeFrom: 'author'}
-          }
-        }]
-      }, {
-        match: 'subtitle',
-        result: [{
-          component: 'print-subtitle',
-          directives: {
-            title: {takeFrom: 'title'}
-          }
-        }]
-      }, {
-        match: 'paragraph',
-        copy: true
-      }]
-    }
-  }]
-}]
+    targets: [
+      {
+        contentType: 'woodwing',
+        metadata: {
+          map: ['title']
+        },
+        instructions: {
+          componentConversions: [
+            {
+              match: 'article-container',
+              exclude: true
+            },
+            {
+              match: 'head',
+              result: [
+                {
+                  component: 'catchline',
+                  directives: {
+                    title: {takeFrom: 'flag'}
+                  }
+                },
+                {
+                  component: 'headline',
+                  directives: {
+                    title: {takeFrom: 'title'}
+                  }
+                },
+                {
+                  component: 'lead',
+                  directives: {
+                    text: {takeFrom: 'text'}
+                  }
+                },
+                {
+                  component: 'byline',
+                  directives: {
+                    text: {takeFrom: 'author'}
+                  }
+                }
+              ]
+            },
+            {
+              match: 'subtitle',
+              result: [
+                {
+                  component: 'print-subtitle',
+                  directives: {
+                    title: {takeFrom: 'title'}
+                  }
+                }
+              ]
+            },
+            {
+              match: 'paragraph',
+              copy: true
+            }
+          ]
+        }
+      }
+    ]
+  }
+]
 ```
 
 A few things to note:

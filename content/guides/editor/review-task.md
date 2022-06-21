@@ -21,27 +21,29 @@ The screenshot below shows the task in question.
 On the server we need to configure a new metadata field `review` (more about metadata fields you can read [here]({{< ref "/reference-docs/document/metadata" >}}))
 
 ```js
-metadata: [{
-  // metadata field name
-  handle: 'review',
-  // plugin
-  type: 'li-task-v2',
-  config: {
-    label: 'Review',
-    showInTaskList: true,
-    // define beforeLabel/afterLabel of the 3 states requested/accepted/completed
-    requested: {
-      beforeLabel: 'Request review',
-      afterLabel: 'Review requested'
-    },
-    accepted: {
-      beforeLabel: 'Begin review',
-      afterLabel: 'Started with review'
-    },
-    completed: {
-      beforeLabel: 'Finish review',
-      afterLabel: 'Review finished'
+metadata: [
+  {
+    // metadata field name
+    handle: 'review',
+    // plugin
+    type: 'li-task-v2',
+    config: {
+      label: 'Review',
+      showInTaskList: true,
+      // define beforeLabel/afterLabel of the 3 states requested/accepted/completed
+      requested: {
+        beforeLabel: 'Request review',
+        afterLabel: 'Review requested'
+      },
+      accepted: {
+        beforeLabel: 'Begin review',
+        afterLabel: 'Started with review'
+      },
+      completed: {
+        beforeLabel: 'Finish review',
+        afterLabel: 'Review finished'
+      }
     }
   }
-}]
+]
 ```

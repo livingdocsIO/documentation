@@ -41,22 +41,28 @@ Please manually check the migrated design before pushing it to a productive syst
 In your server project you will want to add a seeding config containing your new design. An example for a local seeding config is given below.
 
 In app/server.js
-```
+```js
 await tasksApi.setupProjects({
     users: [],
-    projects: [{
-      __recreateIfExists: false,
-      __update: true,
-      handle: 'my-project',
-      label: 'Foo Bar',
-      owner: ':developer',
-      groups: [{
-          label: 'Editors',
-          scope: ['articles:read', 'articles:write']
-      }],
-      groupMemberships: {'Editors': [':editor']},
-      config: require('path/to/your/config')
-    }]
+    projects: [
+      {
+        __recreateIfExists: false,
+        __update: true,
+        handle: 'my-project',
+        label: 'Foo Bar',
+        owner: ':developer',
+        groups: [
+          {
+            label: 'Editors',
+            scope: ['articles:read', 'articles:write']
+          }
+        ],
+        groupMemberships: {
+          'Editors': [':editor']
+        },
+        config: require('path/to/your/config')
+      }
+    ]
 }, {useDevUsers: true})
 ```
 
@@ -76,14 +82,14 @@ In the `design_settings` file (see above), you can specify the location where yo
 ```js
 {
   v: 2,
-  settings: {/* omitted for illustration purpose */},
-  editorSettings: {/* omitted for illustration purpose */},
+  settings: { /* omitted for illustration purpose */ },
+  editorSettings: { /* omitted for illustration purpose */ },
   designSettings: {
     assets: [
       'https://cdn.example.com/1.0.0/styles.css',
       'https://cdn.example.com/1.0.0/scripts.js'
     ],
-    componentGroups: {/* omitted for illustration purpose */}
+    componentGroups: { /* omitted for illustration purpose */ }
   }
 }
 ```

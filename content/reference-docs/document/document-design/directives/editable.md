@@ -15,13 +15,15 @@ Defined on an HTML tag so that the user can edit the text within.
   name: 'p',
   label: 'Paragraph',
   iconUrl: "https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_text.svg",
-  directives: [{
-    name: 'text',
-    type: 'editable',
-    plainText: true,
-    excludeFromTextCount: true,
-    maxLength: 20
-  }],
+  directives: [
+    {
+      name: 'text',
+      type: 'editable',
+      plainText: true,
+      excludeFromTextCount: true,
+      maxLength: 20
+    }
+  ],
   html: dedent`
     <p class="text" doc-editable="text">
       Paragraph

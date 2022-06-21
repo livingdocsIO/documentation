@@ -34,13 +34,9 @@ The `export` property is an object which contains an `allowedProjects` property.
   ...projectConfig,
   export: {
     allowedProjects: [
-      {
-        // Allow documents to be exported to the "service-clone" project
-        handle: 'service-clone'
-      },
-      {
-        handle: 'another-service'
-      }
+      // Allow documents to be exported to the "service-clone" project
+      {handle: 'service-clone'},
+      {handle: 'another-service' }
     ]
   }
 }
@@ -112,7 +108,7 @@ const importReport = await server.features.api('li-import').importDocumentAndMed
 
 The response contains the new `documentId` if it was created successfully, a list of errors, and diffs for the content and metadata. This should provide you with enough information to identify which components and metadata properties have been modified, and allow you to take any further actions that may be necessary.
 
-```js
+```json
 {
   "documentId": 6,
   "errors": [

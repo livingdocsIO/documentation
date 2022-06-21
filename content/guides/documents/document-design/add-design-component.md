@@ -34,10 +34,12 @@ In the design repository, create a new file named `h3.html` in `src/components/H
 In `src/config.json` add a new `"h3"` element to the `components` array:
 ```json
 {
-  "groups": [{
+  "groups": [
+    {
     "label": "Headers",
     "components": ["head", "hero", "title", "h3"]
-  }]
+    }
+  ]
 }
 ```
 

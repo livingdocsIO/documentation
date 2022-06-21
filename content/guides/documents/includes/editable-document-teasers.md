@@ -15,19 +15,21 @@ An example of an includes return value:
 {
   // if editableContent is true, the user can locally edit the content
   editableContent: true,
-  content: [{
-    id: `teaser-${documentId}`,
-    // a Component with the name `teaser` needs to be configured in the design
-    component: 'teaser',
-    // the content contains the values for the directives configured on the `teaser` component
-    content: {
-      image: metadata.teaserImage,
-      title: documentVersion.title,
-      lead: 'Lead',
-      byline: 'Byline',
-      link: {href: 'https://example.com'}
+  content: [
+    {
+      id: `teaser-${documentId}`,
+      // a Component with the name `teaser` needs to be configured in the design
+      component: 'teaser',
+      // the content contains the values for the directives configured on the `teaser` component
+      content: {
+        image: metadata.teaserImage,
+        title: documentVersion.title,
+        lead: 'Lead',
+        byline: 'Byline',
+        link: {href: 'https://example.com'}
+      }
     }
-  }
+  ]
 }
 ```
 
@@ -63,19 +65,23 @@ This is how your Teaser Component looks like in this case:
   name: 'teaser-include',
   label: 'Teaser',
   iconUrl: 'URL to an SVG icon',
-  directives: [{
-    name: 'teaser',
-    type: 'include',
-    service: 'editable-teaser',
-    paramsSchemaExtension: [{
-      name: 'article',
-      config: {
-        // configure base filters for the article search modal
-        contentType: ['regular'], // only document of contentType 'regular'
-        published: true // only published documents
-      }
-    }]
-  }],
+  directives: [
+    {
+      name: 'teaser',
+      type: 'include',
+      service: 'editable-teaser',
+      paramsSchemaExtension: [
+        {
+          name: 'article',
+          config: {
+            // configure base filters for the article search modal
+            contentType: ['regular'], // only document of contentType 'regular'
+            published: true // only published documents
+          }
+        }
+      ]
+    }
+  ],
   html: `
     <div doc-include="teaser">
       <div>Link an Article</div>

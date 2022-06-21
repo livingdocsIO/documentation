@@ -57,17 +57,20 @@ module.exports = {
   // The ui configuration is used to configure the user interface
   // in the editor. For the core include `embed-teaser` the UI
   // components already exist
-  uiComponents: [{
-    type: 'angular-modal',
-    sidebarLabel: 'Assign Teaser to content block',
-    sidebarButton: 'Link Article',
-    modalTitle: 'Article Search',
-    modalContentComponent: 'liEmbedTeaserIncludeModal'
-  }, {
-    type: 'angular-component',
-    sidebarLabel: ' ',
-    sidebarContentComponent: 'liEmbedTeaserLink'
-  }],
+  uiComponents: [
+    {
+      type: 'angular-modal',
+      sidebarLabel: 'Assign Teaser to content block',
+      sidebarButton: 'Link Article',
+      modalTitle: 'Article Search',
+      modalContentComponent: 'liEmbedTeaserIncludeModal'
+    },
+    {
+      type: 'angular-component',
+      sidebarLabel: ' ',
+      sidebarContentComponent: 'liEmbedTeaserLink'
+    }
+  ],
   rendering: {
     type: 'function',
     async render (params, options) {

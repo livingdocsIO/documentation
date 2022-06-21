@@ -14,17 +14,19 @@ menus:
   name: 'video',
   label: 'Video',
   iconUrl: `https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_image.svg`,
-  directives: [{
-    name: 'video',
-    type: 'video',
-    video: {
-      controls: 'true',
-      loop: 'false',
-      autoplay: 'false',
-      muted: 'false',
-      preload: 'auto'
+  directives: [
+    {
+      name: 'video',
+      type: 'video',
+      video: {
+        controls: 'true',
+        loop: 'false',
+        autoplay: 'false',
+        muted: 'false',
+        preload: 'auto'
+      }
     }
-  }],
+  ],
   html: dedent`
     <div class="m-asset-image m-asset-image--numbered">
       <div class="m-asset-image__image">

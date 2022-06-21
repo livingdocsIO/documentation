@@ -36,15 +36,18 @@ publicationIndex: {
       type: 'li-datetime'
     }
   },
-  filters: [{
-    label: 'News',
-    type: 'li-boolean',
-    filterField: 'news'
-  }, {
-    label: 'Authors',
-    type: 'li-reference-list',
-    filterField: 'authors'
-  }]
+  filters: [
+    {
+      label: 'News',
+      type: 'li-boolean',
+      filterField: 'news'
+    },
+    {
+      label: 'Authors',
+      type: 'li-reference-list',
+      filterField: 'authors'
+    }
+  ]
 }
 ```
 
@@ -54,13 +57,11 @@ The `scheduledPublishing` set allows you to define `on` and `off` dates. When se
 
 Lastly, the `filters` array allows customers to register custom filters for indexing. Filters are always indexed as elastic keywords, e.g. the definition above could result in the following elastic instance:
 ```js
-filters: [{
-  "value": "news=true"
-}, {
-  "value": "authors=1"
-}, {
-  "value": "authors=4"
-}]
+filters: [
+  {"value": "news=true"},
+  {"value": "authors=1"},
+  {"value": "authors=4"}
+]
 ```
 As you can see, the filters are indexed as key/value strings. This brings with it the limitation that you can not execute operations on it, e.g. you can not query for something like 'all author ids greater than 5'. You can query for exact matches, e.g. 'all news articles' or contains queries, e.g. 'all documents where author 1 is among the authors'.
 
@@ -113,14 +114,17 @@ The query allows the following entries:
 - `filters`, an array of the generically defined custom filters (see "Indexing"), defined as follows
 
 ```js
-filters: [{
-  key: 'news',
-  value: true
-}, {
-  key: 'authors',
-  concatenate: 'AND', // default is OR
-  value: ['1', '4']
-}]
+filters: [
+  {
+    key: 'news',
+    value: true
+  },
+  {
+    key: 'authors',
+    concatenate: 'AND', // default is OR
+    value: ['1', '4']
+  }
+]
 ```
 
 As you can see you can either pass a simple string value or an array to the filter query. In case of an array you can define if the values should be concatenated with OR (default) or AND.

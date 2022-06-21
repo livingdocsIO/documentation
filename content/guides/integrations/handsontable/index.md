@@ -28,18 +28,20 @@ The data from the table is returned as an array of arrays, where each array is a
 
 To get the component working, create a file in components with the following code:
 
-```javascript
+```js
 module.exports = {
   name: 'handsontable',
   label: 'handsontable',
-  directives: [{
-    name: 'handsontable',
-    type: 'include',
-    service: 'handsontable',
-    defaultParams: {
-      isDefault: true
+  directives: [
+    {
+      name: 'handsontable',
+      type: 'include',
+      service: 'handsontable',
+      defaultParams: {
+        isDefault: true
+      }
     }
-  }],
+  ],
   html: `<div doc-include="handsontable" height="400" width="600" style="border: 0;">Handson</div>`
 }
 ```
@@ -48,16 +50,18 @@ Ensure default Params is set to true for the post messaging to work.
 
 Then in the directory `plugins/includes/` you need the following code:
 
-```javascript
+```js
 module.exports = {
   name: 'handsontable',
-  uiComponents: [{
-    type: 'iframe-modal',
-    sidebarLabel: 'Handsontable Element',
-    sidebarButton: 'Configure',
-    modalTitle: 'Configure Handsontable',
-    modalContentUrl: 'the url of your handsontable application'
-  }],
+  uiComponents: [
+    {
+      type: 'iframe-modal',
+      sidebarLabel: 'Handsontable Element',
+      sidebarButton: 'Configure',
+      modalTitle: 'Configure Handsontable',
+      modalContentUrl: 'the url of your handsontable application'
+    }
+  ],
   rendering: {
     type: 'function',
     render: renderHandsontable
@@ -230,7 +234,7 @@ To set up your own application using vue, you can copy and paste a lot of the co
 ```
 - Inside this file either use your own data array, the simple array above or import the data from the `constants.js` file in the sandbox. Once you have this, return the data as reactive and set a conditional to ensure it has loaded the data before rendering:
 
-```javascript
+```js
 data () {
     return {
       content: reactive(demoData),
@@ -240,49 +244,48 @@ data () {
 ```
 - Write two functions to communicate with the Livingdocs modal:
 
-```javascript
+```js
 methods: {
-    save() {
-      const vm = this;
-      async function handleSubmit() {
-        await window.parent.postMessage(
-          {
-            params: {
-              innerData: vm.content
-            },
-            action: "update",
+  save() {
+    const vm = this;
+    async function handleSubmit() {
+      await window.parent.postMessage(
+        {
+          params: {
+            innerData: vm.content
           },
-          "*"
-        );
-      }
-      handleSubmit();
-    },
-     getTableData() {
-      const vm = this;
-      async function getConfig() {
-        await window.parent.postMessage(
-          {
-            query: "config",
-          },
-          "*"
-        );
-        await window.addEventListener(
-          "message",
-          (event) => {
-            if (event.data.query === "config") {
-              if (event.data.params.innerData) {
-                vm.content = event.data.params.innerData;
-              } else {
-                vm.content = reactive(demoData)
-              }
-               vm.showDataGrid = true
+          action: "update",
+        },
+        "*"
+      );
+    }
+    handleSubmit();
+  },
+  getTableData() {
+    const vm = this;
+    async function getConfig() {
+      await window.parent.postMessage(
+        {
+          query: "config",
+        },
+        "*"
+      );
+      await window.addEventListener(
+        "message",
+        (event) => {
+          if (event.data.query === "config") {
+            if (event.data.params.innerData) {
+              vm.content = event.data.params.innerData;
+            } else {
+              vm.content = reactive(demoData)
             }
-          },
-          false
-        );
-      }
-      getConfig();
-    },
+              vm.showDataGrid = true
+          }
+        },
+        false
+      );
+    }
+    getConfig();
   },
   mounted() {
     this.getTableData();
@@ -291,7 +294,7 @@ methods: {
 ```
 - In a DataGrid.vue add the settings above into hotSettings and have the data be this.content, along with adding "content" as props and components as HotTable, as below:
 
-```javascript
+```js
 export default {
   name: "DataGrid",
   props: ["content"],

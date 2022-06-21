@@ -48,31 +48,33 @@ The configuration of webhooks is stored in `channelConfig.settings.webhooks`.
 ```js
 webhooks: {
   active: true
-  configurations: [{
-    handle: 'my-webhook',
-    label: 'My Webhook',
-    description: 'A description for future self and coworkers',
-    url: 'https://example.com/my-webhook-endpoint',
-    secret: 'a-secret-token-to-sign-the-request'
-    active: true
-    events: [
-      'document.publish',
-      'document.unpublish',
-      {
-        name: 'document.update',
-        changeFilter: {
-          metadataProperties: [
-            'title'
-          ]
-        }
-      },
-      'mediaLibraryEntry.create',
-      'mediaLibraryEntry.archive',
-      'mediaLibraryEntry.revoke',
-      'mediaLibraryEntry.update'
-    ]
-  }
-}]
+  configurations: [
+    {
+      handle: 'my-webhook',
+      label: 'My Webhook',
+      description: 'A description for future self and coworkers',
+      url: 'https://example.com/my-webhook-endpoint',
+      secret: 'a-secret-token-to-sign-the-request'
+      active: true
+      events: [
+        'document.publish',
+        'document.unpublish',
+        {
+          name: 'document.update',
+          changeFilter: {
+            metadataProperties: [
+              'title'
+            ]
+          }
+        },
+        'mediaLibraryEntry.create',
+        'mediaLibraryEntry.archive',
+        'mediaLibraryEntry.revoke',
+        'mediaLibraryEntry.update'
+      ]
+    }
+  ]
+}
 ```
 
 ## Payload

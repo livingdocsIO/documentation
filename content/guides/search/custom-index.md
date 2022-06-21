@@ -54,35 +54,37 @@ elasticIndex: {
 
   // A custom index can be registered here
   // The live indexing hooks call every custom index and handle them
-  customIndexes: [{
-    // Used as index identifier in the API's and CLI
-    handle: 'my-custom-publication',
+  customIndexes: [
+    {
+      // Used as index identifier in the API's and CLI
+      handle: 'my-custom-publication',
 
-    // file to define the mapping and the transformation of the documents
-    indexInitializationFile: require.resolve('../../app/search/my-custom-publication/init.js'),
+      // file to define the mapping and the transformation of the documents
+      indexInitializationFile: require.resolve('../../app/search/my-custom-publication/init.js'),
 
-    // The context is passed to the 'processBatch' and 'createBatches' function
-    // With that it's possible to search/index documents based on the context
-    context: {
-      projectHandle: 'myProjectHandle',
-      channelHandle: 'myChannelHandle',
-      documentType: 'page',
-      contentType: 'regular',
-      isPublished: true,
-      myCustomField: 'hello world'
-    },
+      // The context is passed to the 'processBatch' and 'createBatches' function
+      // With that it's possible to search/index documents based on the context
+      context: {
+        projectHandle: 'myProjectHandle',
+        channelHandle: 'myChannelHandle',
+        documentType: 'page',
+        contentType: 'regular',
+        isPublished: true,
+        myCustomField: 'hello world'
+      },
 
-    // When disabled, the index will be ignored for all operations
-    enabled: true, // default: true
+      // When disabled, the index will be ignored for all operations
+      enabled: true, // default: true
 
-    // Define the alias pointing to your elastic index
-    // The default for the alias is the index.handle config (in this example - 'my-custom-publication')
-    alias: 'an-alias',
+      // Define the alias pointing to your elastic index
+      // The default for the alias is the index.handle config (in this example - 'my-custom-publication')
+      alias: 'an-alias',
 
-    // In case you want to target a specific elasticsearch cluster, reference the specific cluster by handle.
-    // By default all clusters declared in elasticIndex.clusters are used as target.
-    clusters: ['default']
-  }]
+      // In case you want to target a specific elasticsearch cluster, reference the specific cluster by handle.
+      // By default all clusters declared in elasticIndex.clusters are used as target.
+      clusters: ['default']
+    }
+  ]
 },
 ```
 

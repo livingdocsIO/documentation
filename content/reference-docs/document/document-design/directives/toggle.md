@@ -23,12 +23,14 @@ Component Definition:
 {
   name: 'header',
   label: 'Header',
-  directives: [{
-    name: 'showOverline',
-    type: 'toggle',
-    label: 'Show Overline',
-    default: false
-  }],
+  directives: [
+    {
+      name: 'showOverline',
+      type: 'toggle',
+      label: 'Show Overline',
+      default: false
+    }
+  ],
   html: dedent`
     <div class="header">
       <h3 doc-toggle="showOverline"   doc-editable="overline"></h3>

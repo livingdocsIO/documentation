@@ -76,11 +76,13 @@ This guide assumes that you are familiar with the possibilities to register an I
   name: 'my-list-teaser-component',
   label: 'Teaser List', // Displayed in the editor UI as the component name
   iconUrl: 'https://www.example.com/my/icon.svg', // Provide a URL to an SVG icon
-  directives: [{
-    name: 'my-teaser-list-directive',
-    type: 'include',
-    service: 'my-teaser-list-service'
-  }],
+  directives: [
+    {
+      name: 'my-teaser-list-directive',
+      type: 'include',
+      service: 'my-teaser-list-service'
+    }
+  ],
   // The "Select a List" placeholder element is displayed when
   // `{doNotRender: true}` is returned by the service
   html: `
@@ -94,26 +96,31 @@ This guide assumes that you are familiar with the possibilities to register an I
 {
   name: 'my-teaser-component',
   label: 'Teaser',
-  directives: [{
-    name: 'image',
-    type: 'image',
-    allowOriginalRatio: true,
-    imageRatios: ['16:9', '1:1', '4:3', '3:4']
-  }, {
-    type: 'editable',
-    name: 'title',
-    maxLength: 10
-  }, {
-    type: 'toggle',
-    name: 'showLead',
-    label: 'show lead',
-    default: false
-  }, {
-    type: 'toggle',
-    name: 'showByline',
-    label: 'show byline',
-    default: true
-  }],
+  directives: [
+    {
+      name: 'image',
+      type: 'image',
+      allowOriginalRatio: true,
+      imageRatios: ['16:9', '1:1', '4:3', '3:4']
+    },
+    {
+      type: 'editable',
+      name: 'title',
+      maxLength: 10
+    },
+    {
+      type: 'toggle',
+      name: 'showLead',
+      label: 'show lead',
+      default: false
+    },
+    {
+      type: 'toggle',
+      name: 'showByline',
+      label: 'show byline',
+      default: true
+    }
+  ],
   html: `
     <a class="teaser" doc-link="link">
       <img class="responsive-img" doc-image="image">

@@ -45,10 +45,7 @@ metadata: [
       maxLength: 200,
     }
   },
-  {
-    handle: 'description',
-    type: 'li-text'
-  },
+  {handle: 'description', type: 'li-text'},
   {
     handle: 'reference',
     type: 'li-document-reference',

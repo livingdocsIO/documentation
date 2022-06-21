@@ -20,17 +20,15 @@ On the server, we first need to provide which languages we want to support in ou
 ```js
 settings: {
   languages: {
-    available: [{
-      label: 'German',
-      locale: 'de'
-    }, {
-      label: 'English',
-      locale: 'en'
-    }],
+    available: [
+      {label: 'German', locale: 'de'},
+      {label: 'English', locale: 'en'}
+    ],
     defaultLanguage: {
       label: 'German',
       locale: 'de'
-    },
+    }
+  }
 }
 ```
 
@@ -41,16 +39,17 @@ As a next step, you have to add the `li-metadata-translations` metadata plugin t
 ```js
 //content-types/author.js
 module.exports = {
-metadata: [
-  {
-    handle: 'language',
-    type: 'li-metadata-translations',
-    ui: {
-      component: 'liMetaSelectForm',
-      service: 'languageSelection'
+  metadata: [
+    {
+      handle: 'language',
+      type: 'li-metadata-translations',
+      ui: {
+        component: 'liMetaSelectForm',
+        service: 'languageSelection'
+      }
     }
-  }
-]
+  ]
+}
 ```
 
 ### Translatable metadata properties
@@ -60,16 +59,17 @@ For every metadata property in a Data Record, you can set `config.translatable: 
 ```js
 //content-types/author.js
 module.exports = {
-documentType: 'data-record',
-metadata: [
-  {
-    handle: 'title',
-    type: 'li-text',
-    config: {
-      maxLength: 200,
-      translatable: true // <-------- add this property
-    },
-    ui: {component: 'liMetaTextForm'}
-  }
-]
+  documentType: 'data-record',
+  metadata: [
+    {
+      handle: 'title',
+      type: 'li-text',
+      config: {
+        maxLength: 200,
+        translatable: true // <-------- add this property
+      },
+      ui: {component: 'liMetaTextForm'}
+    }
+  ]
+}
 ```

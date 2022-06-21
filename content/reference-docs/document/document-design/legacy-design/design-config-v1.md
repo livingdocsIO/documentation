@@ -97,17 +97,9 @@ The settings in `componentProperties` will add configuration options to your com
     "label": "Position",
     "type": "select",
     "options": [
-      {
-        "caption": "Default"
-      },
-      {
-        "caption": "Left",
-        "value": "position-left"
-      },
-      {
-        "caption": "Right",
-        "value": "position-right"
-      }
+      {"caption": "Default"},
+      {"caption": "Left", "value": "position-left"},
+      {"caption": "Right", "value": "position-right"}
     ]
   },
 }
@@ -182,9 +174,9 @@ be used.
     "caption": "Article",
     "wrapper": "<div class=\"funky-wrapper doc-section\"></div>",
     "defaultContent": [
-      { "component": "head" },
-      { "component": "normal" },
-      { "component": "p" }
+      {"component": "head"},
+      {"component": "normal"},
+      {"component": "p"}
     ],
     "groups": [...] // Overwrites the default groups config.
   }
@@ -200,10 +192,12 @@ For the User interface you can group your components. This is done via the `grou
   {
     "label": "Headers",
     "components": ["hero", "head", "title"]
-  }, {
+  },
+  {
     "label": "Text",
     "components": ["subtitle", "p", "quote", "aside"]
-  }, {
+  },
+  {
     "label": "Images",
     "components": ["image", "peephole"]
   }
@@ -222,7 +216,8 @@ metadata: [
     identifier: 'title',
     type: 'text',
     matches: ['hero.title', 'head.title', 'title.title']
-  }, {
+  },
+  {
     identifier: 'teaserImage',
     type: 'image',
     matches: ['hero.image', 'image.image'],

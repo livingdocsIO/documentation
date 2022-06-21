@@ -25,7 +25,8 @@ So far we have seen configurations where a `doc-include` directive has one inclu
             "minCount": 5,
             "maxCount": 5
           }
-        }, {
+        },
+        {
           "service": "categoryList",
           "label": "Automatic List",
           "defaultParams": {
@@ -35,7 +36,8 @@ So far we have seen configurations where a `doc-include` directive has one inclu
             "minCount": 5,
             "maxCount": 5
           }
-        }, {
+        },
+        {
           "service": "scheduledList",
           "label": "Scheduled List",
           "defaultParams": {

@@ -16,7 +16,7 @@ menus:
 
 ## When to use the CLI
 
-The `livingdocs-cli` is used to update a Livingdocs [Project Config](.././project-config). 
+The `livingdocs-cli` is used to update a Livingdocs [Project Config](.././project-config).
 
 It's the only way of changing project config and components if you are using the [Livingdocs Service](https://edit.livingdocs.io/).
 
@@ -24,7 +24,7 @@ The CLI is not made to interact with the [Public API](.././public-api). For that
 
 ## Installation
 
-``` 
+```
 npm install -g livingdocs-cli
 ```
 
@@ -34,4 +34,3 @@ livingdocs-cli --help
 ```
 
 You can now start [managing project config](./managing-project-configs).
-

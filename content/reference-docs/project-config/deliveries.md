@@ -12,28 +12,31 @@ As of December 2020 this is used to enable the `Internal Document Links` feature
 An example:
 ```js
 // deliveries is configured at projectConfig.deliveries
-deliveries: [{
-  handle: 'web',
-  label: 'Website',
-  isPrimary: true,
-  icon: 'book-open',
-  url: {
-    origin: 'https://example.com',
-    // the available variables in the pattern are:
-    // - :id (document.id)
-    // - :projectId (document.projectId)
-    // - :slug (document.metadata.slug)
-    pathPattern: '/article/:id'
+deliveries: [
+  {
+    handle: 'web',
+    label: 'Website',
+    isPrimary: true,
+    icon: 'book-open',
+    url: {
+      origin: 'https://example.com',
+      // the available variables in the pattern are:
+      // - :id (document.id)
+      // - :projectId (document.projectId)
+      // - :slug (document.metadata.slug)
+      pathPattern: '/article/:id'
+    }
+  },
+  {
+    handle: 'app',
+    label: 'App',
+    icon: 'rocket',
+    url: {
+      origin: 'https://example.com',
+      pathPattern: '/app/article/:id'
+    }
   }
-}, {
-  handle: 'app',
-  label: 'App',
-  icon: 'rocket',
-  url: {
-    origin: 'https://example.com',
-    pathPattern: '/app/article/:id'
-  }
-}]
+]
 ```
 
 ## pathPattern

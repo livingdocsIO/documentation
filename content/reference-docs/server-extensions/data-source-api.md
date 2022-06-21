@@ -71,17 +71,19 @@ liServer.features.register('data-sources', async function (feature, server) {
 
 ```js
 // content-type config on the server
-metadata = [{
-  handle: 'dummy',
-  type: 'li-text',
-  ui: {
-    label: 'DataSource Example'
-  },
-  config: {
-    dataProvider: {
-      // this is the dataSource handle registered on the server
-      dataSource: 'labelValuePairDataSource'
+metadata = [
+  {
+    handle: 'dummy',
+    type: 'li-text',
+    ui: {
+      label: 'DataSource Example'
+    },
+    config: {
+      dataProvider: {
+        // this is the dataSource handle registered on the server
+        dataSource: 'labelValuePairDataSource'
+      }
     }
   }
-}]
+]
 ```

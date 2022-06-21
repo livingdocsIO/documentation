@@ -15,15 +15,18 @@ Style directives allow a user to set style properties like a background color th
 {
   name: 'article-header',
   label: 'Artikelkopf',
-  directives: [{
-    name: 'background',
-    type: 'style',
-    properties: ['css-background-color']
-  }, {
-    name: 'title',
-    type: 'editable',
-    plainText: true
-  }],
+  directives: [
+    {
+      name: 'background',
+      type: 'style',
+      properties: ['css-background-color']
+    },
+    {
+      name: 'title',
+      type: 'editable',
+      plainText: true
+    }
+  ],
   html: dedent`
     <header class="header">
       <section class="header__section" doc-style="background">

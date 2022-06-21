@@ -17,33 +17,24 @@ If you want to set a link on an image for example, just wrap the `<img>` tag in 
   name: 'web-teaser',
   label: 'Web Teaser',
   iconUrl: 'https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-icons/icon_component_teaser_with_image.svg',
-  directives: [{
-    name: 'link',
-    type: 'link',
-    prefill: { // optional
-      title: {
-          key: 'title',
-          provider: 'iframely'
-      },
-      site: {
-          key: 'site',
-          provider: 'iframely'
-      },
-      headline: {
-          key: 'author',
-          provider: 'iframely'
-      },
-      image: {
-          key: 'image',
-          provider: 'iframely'
+  directives: [
+    {
+      name: 'link',
+      type: 'link',
+      prefill: { // optional
+        title: {key: 'title', provider: 'iframely'},
+        site: {key: 'site', provider: 'iframely'},
+        headline: {key: 'author', provider: 'iframely'},
+        image: {key: 'image', provider: 'iframely'}
       }
+    },
+    {
+      name: 'image',
+      type: 'image',
+      imageRatios: ['16:9'],
+      allowOriginalRatio: false
     }
-  }, {
-    name: 'image',
-    type: 'image',
-    imageRatios: ['16:9'],
-    allowOriginalRatio: false
-  }],
+  ],
   html: dedent`
     <div class="teaser">
       <a doc-link="link">

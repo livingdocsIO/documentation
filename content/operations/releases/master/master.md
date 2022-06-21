@@ -129,7 +129,13 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * :new: 🔥 Remove support for core plugin whitelist [livingdocs-server #4484 v184.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4484)
 * :new: Better feedback on metadata plugin registration [livingdocs-server #4483 v183.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4483)
 * :new: 🐞 Project Config: load an old designConfig with correct designVersion for an embedded design [livingdocs-server #4479 v182.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4479)
-* :new: Better Validation Errors for Schemas with Discriminator Schema  [livingdocs-server #4473 v182.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4473)
+
+
+
+
+
+
+
 * :new: fix(quoteIcons): now grey and blue [livingdocs-editor #5268 v80.11.12](https://github.com/livingdocsIO/livingdocs-editor/pull/5268)
 * :new: Use an explicit Postgres schema during database migrations [livingdocs-server #4457 v182.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4457)
 * :new: 🐞 Add support for common metadata property `hideFromForm` in Schemas [livingdocs-server #4469 v181.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4469)
@@ -137,23 +143,16 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * :new: Fix publish control producer [livingdocs-server #4466 v181.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4466)
 * :new: Desk-Net tests and error handling improvements [livingdocs-editor #5302 v80.11.11](https://github.com/livingdocsIO/livingdocs-editor/pull/5302)
 * :new: fix(softLock): Now correctly spaced [livingdocs-editor #5301 v80.11.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5301)
-* :new: 🐞 Make metadata plugins compatible with project settings again [livingdocs-server #4464 v181.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4464)
-* :new: Unpublish Document via Public API [livingdocs-server #4459 v181.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4459)
-* :new: fix(metadata): Use documentType in labels instead of articles [livingdocs-editor #5279 v80.11.9](https://github.com/livingdocsIO/livingdocs-editor/pull/5279)
-* :new: feat: allow formatting of log levels as strings [livingdocs-server #4458 v181.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4458)
-* :new: Editing Toolbar Improvements [livingdocs-editor #5296 v80.11.8](https://github.com/livingdocsIO/livingdocs-editor/pull/5296)
-* :new: Document State: fix metadata based publish schedule [livingdocs-editor #5297 v80.11.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5297)
-* :new: fix(softLock): Button inline [livingdocs-editor #5269 v80.11.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5269)
-* :new: Fix Webpack Build [livingdocs-editor #5289 v80.11.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5289)
-* :new: Fix translated asset replacement [livingdocs-editor #5275 v80.11.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5275)
-* :new: Move @intlify/vue-i18n-loader from devDependencies to dependencies [livingdocs-editor #5284 v80.11.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5284)
-* :new: Publish Control: i18n / narrow screen improvements [livingdocs-editor #5282 v80.11.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5282)
-* :new: Depr improvements [livingdocs-server #4455 v181.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4455)
-* :new: 🧪  Add projectConfig Validation to colt.createConfigChannel [livingdocs-server #4451 v180.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4451)
-* :new: Metadata: li-integer -> add strict schema validation [livingdocs-server #4446 v180.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4446)
-* :new: Update livingdocs-integration.json for Release [livingdocs-server #4453 v179.4.1](https://github.com/livingdocsIO/livingdocs-server/pull/4453)
-* :new: Update livingdocs-integration.json for Release [livingdocs-editor #5278 v80.11.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5278)
-* :new: feat(Teams): Microsoft Teams integration  [livingdocs-server #4408 v179.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4408)
+
+
+Features
+* [Allow formatting of log levels as strings](https://github.com/livingdocsIO/livingdocs-server/pull/4458)
+
+Improvement
+* [Better Validation Errors for Schemas with Discriminator Schema](https://github.com/livingdocsIO/livingdocs-server/pull/4473)
+
+
+
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -195,6 +194,12 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Highlights
 
+### Microsoft Teams Integration
+
+TODO: Is this a highlight? Is the feature ready? Is the feature documented?
+
+* [Microsoft Teams Integration](https://github.com/livingdocsIO/livingdocs-server/pull/4408)
+
 ## Breaking Changes :fire:
 
 ### Migrate the database :fire:
@@ -204,9 +209,33 @@ These are the release notes of the upcoming release (pull requests merged to mas
 livingdocs-server migrate up
 ```
 
+### Metadata Plugins: Add configSchema and uiSchema Validation :fire:
+
+We added 2 properties `configSchema` and `uiSchema` to a metadata plugin where one can define a schema validation. If you want to know more about the motivation and a fallback (`metadataPluginsToIgnoreForConfigValidation`), you get some insights [here](https://github.com/livingdocsIO/livingdocs-server/pull/4296).
+
+References:
+- [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
+- [li-integer PR](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-integer)
+
+### Remove Several Server Configs :fire:
+
+* 🔥 remove deprecated `serverConfig.levelUpAdpater`, use `serverConfig.kv.levelUpAdapter` instead
+* 🔥 remove deprecated `serverConfig.levelDbAdapter`, use `serverConfig.kv.levelUpAdapter` instead
+* 🔥 remove deprecated `serverConfig.db`, use `serverConfig.kv.levelUpAdapter` instead
+  * ℹ️ Only `serverConfig.kv.levelUpAdapter` has an effect on the routing feature.
+* 🔥 remove deprecated `serverConfig.search.imageDocumentIndex`, `use serverConfig.search.mediaLibraryIndex` instead
+
+References:
+- [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4455)
+
 ## Deprecations
 
 ## APIs :gift:
+
+### Unpublish Document via Public API
+
+* [Documentation](https://docs.livingdocs.io/reference-docs/public-api/imports/documents/)
+* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4459)
 
 ## Other Changes
 

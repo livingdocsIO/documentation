@@ -58,7 +58,6 @@ In your main server config, enable the `desknet` feature by simply adding the fo
 
 ```js
 {
-  // ...
   desknet: {
     enabled: true
   }
@@ -72,7 +71,6 @@ Add the following to the project config of the project you want to connect with 
 
 ```js
 {
-  // ...
   desknet: {
     credentials: {
 
@@ -122,13 +120,10 @@ Add the following to the project config of the project you want to connect with 
       //    Else If this value is 'myType2', take content type 'gallery'
       // Else take the standard content type
       source: 'publication.type.name',
-      mapping: [{
-        source: 'myType1',
-        target: 'page'
-      }, {
-        source: 'myType2',
-        target: 'gallery'
-      }]
+      mapping: [
+        {source: 'myType1', target: 'page'},
+        {source: 'myType2', target: 'gallery'}
+      ]
     }
   }
 }
@@ -157,9 +152,7 @@ Add the plugin to the settings of content type `'regular'`:
 ```js
 {
   handle: 'regular'
-  // ...
   metadata: [
-    // ...
     {
       handle: 'desknetPublicationDate',
       type: 'li-datetime',
@@ -171,7 +164,6 @@ Add the plugin to the settings of content type `'regular'`:
         }
       }
     }
-    // ...
   ]
 }
 ```
@@ -185,7 +177,6 @@ Again to the settings of content type `'regular'`, add the following:
 ```js
 {
   handle: 'regular'
-  // ...
   desknet: {
     // A list of mapping objects. Each mapping object describes one metadata field.
     metadata: [
@@ -287,9 +278,7 @@ Now, we have to a) add a metadata plugin and b) a transform mapping to the setti
 ```js
 {
   handle: 'regular'
-  // ...
   metadata: [
-    // ...
     {
       handle: 'hasPrint',
       type: 'li-boolean',
@@ -300,7 +289,6 @@ Now, we have to a) add a metadata plugin and b) a transform mapping to the setti
         }
       }
     }
-    // ...
   ],
   desknet: {
     // A list of mapping objects. Each mapping object describes one metadata field.
@@ -501,10 +489,8 @@ Extend the `desknet` object in your project config with the following:
 
 ```js
 {
-  // ...
   desknet: {
     scheduleEnabled: true,
-    // ...
   }
 }
 ```
@@ -519,7 +505,6 @@ Add the `li-desknet-platforms` metadata plugin to the content type that you woul
   documentType: 'page',
   // ...
   metadata: [
-    // ...
     {
       handle: 'desknet-platforms',
       type: 'li-desknet-platforms',

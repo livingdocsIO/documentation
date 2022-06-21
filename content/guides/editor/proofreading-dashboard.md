@@ -20,19 +20,21 @@ Key features
 As a first step, you have to configure a proofreading task metadata field. Later this field will be used to show documents on the right place on the proofreading dashboard (sort order, filter, status)
 
 ```js
-metadata: [{
-  // handle of the proofreading metadata field
-  handle: 'my-proofreading',
-  type: 'li-task-v2',
-  config: {
-    label: 'My Proofreading',
-    realtimeNotification: true,
-    showInTaskList: true,
-    // handle of the proofreading dashboard (the dashboard will be configured later in the editor)
-    linkToDashboard: 'my-kanban-proofreading',
-    setPriority: true
+metadata: [
+  {
+    // handle of the proofreading metadata field
+    handle: 'my-proofreading',
+    type: 'li-task-v2',
+    config: {
+      label: 'My Proofreading',
+      realtimeNotification: true,
+      showInTaskList: true,
+      // handle of the proofreading dashboard (the dashboard will be configured later in the editor)
+      linkToDashboard: 'my-kanban-proofreading',
+      setPriority: true
+    }
   }
-}]
+]
 ```
 
 References:
@@ -48,14 +50,16 @@ You will find an example on the [server](https://github.com/livingdocsIO/livingd
 As a second step you have to register a custom dashboard in the project config.
 
 ```js
-dashboards: [{
-  handle: 'my-kanban-proofreading',
-  type: 'taskBoard',
-  pageTitle: 'My Proofreading',
-  // This is the name of the previously added metadata field on the server
-  taskName: 'my-proofreading',
-  displayFilters: ['documentState', 'timeRange']
-}]
+dashboards: [
+  {
+    handle: 'my-kanban-proofreading',
+    type: 'taskBoard',
+    pageTitle: 'My Proofreading',
+    // This is the name of the previously added metadata field on the server
+    taskName: 'my-proofreading',
+    displayFilters: ['documentState', 'timeRange']
+  }
+]
 ```
 
 References:
@@ -90,11 +94,13 @@ The default card on the `My Proofreading` dashboard is quite simple. If you want
 
 ```js
 // extend the custom dashboard config from step 2 with your own card
-dashboards: [{
-  handle: 'my-kanban-proofreading',
-  // other config options ...
-  componentName: 'myProofreadingCard'
-}]
+dashboards: [
+  {
+    handle: 'my-kanban-proofreading',
+    // other config options ...
+    componentName: 'myProofreadingCard'
+  }
+]
 ```
 
 As last step you have to register your own card `myProofreadingCard` in your downstream as an angular component.

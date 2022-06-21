@@ -50,16 +50,14 @@ componentProperties: {
     cssProperty: 'background-color'
   }
   'css-class': {
-    type: 'option'
+    type: 'option',
     value: 'capitalize'
   }
   'css-class-selection': {
-    type: 'select'
+    type: 'select',
     options: [
-      caption: 'Default'
-    ,
-      caption: 'Red'
-      value: 'color--red'
+      {caption: 'Default'},
+      {caption: 'Red', value: 'color--red'}
     ]
   }
 }

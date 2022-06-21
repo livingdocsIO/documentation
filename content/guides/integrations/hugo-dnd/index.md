@@ -204,7 +204,6 @@ You might want to store data that's embedded in each `hugoArticle` thus you need
 #### Metadata plugin
 ```js
 // plugins/metadata/hugo.js
-
 module.exports = {
   name: 'hugo',
   storageSchema: {

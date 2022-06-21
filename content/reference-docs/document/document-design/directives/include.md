@@ -16,17 +16,19 @@ Includes allow you to define parts of your markup that will be controlled from a
   name: 'echo',
   label: 'Echo',
   iconUrl: 'https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_image.svg',
-  directives: [{
-    name: 'foo',
-    type: 'include',
-    service: 'foo-service',
-    config: {
-      language: 'en'
-    },
-    defaultParams: {
-      tag: 'livingdocs'
+  directives: [
+    {
+      name: 'foo',
+      type: 'include',
+      service: 'foo-service',
+      config: {
+        language: 'en'
+      },
+      defaultParams: {
+        tag: 'livingdocs'
+      }
     }
-  }],
+  ],
   html: dedent`
     <div doc-include="foo">
       <div>Foo Service</div>

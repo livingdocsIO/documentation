@@ -19,14 +19,8 @@ settings: {
   handle: 'magazine',
   languages: {
     available: [
-      {
-        label: 'German',
-        locale: 'de'
-      },
-      {
-        label: 'English',
-        locale: 'en'
-      }
+      {label: 'German', locale: 'de'},
+      {label: 'English', locale: 'en'}
     ],
     defaultLanguage: {
       label: 'German',
@@ -107,47 +101,53 @@ settings: {
     }
   },
 
-  includeServices: [{
-    handle: 'echo-service',
-    rendering: {
-      type: 'remote',
-      url: 'http://localhost:3000',
-      timeout: 3000
-    },
-    config: {
-      foo: 'bar'
-    },
-    paramsSchema: [{
-      type: 'li-text',
-      handle: 'json',
-      config: {
-          maxLength: 200
+  includeServices: [
+    {
+      handle: 'echo-service',
+      rendering: {
+        type: 'remote',
+        url: 'http://localhost:3000',
+        timeout: 3000
       },
-      ui: {
-        component: 'liMetaTextareaForm',
-        config: {
-          label: 'Json',
-          placeholder: '{ "foo": "bar" }'
+      config: {
+        foo: 'bar'
+      },
+      paramsSchema: [
+        {
+          type: 'li-text',
+          handle: 'json',
+          config: {
+              maxLength: 200
+          },
+          ui: {
+            component: 'liMetaTextareaForm',
+            config: {
+              label: 'Json',
+              placeholder: '{ "foo": "bar" }'
+            }
+          }
         }
-      }
-    }],
-    defaultParams: {
-      title: 'defaultTitle'
-    },
-    blockEditorInteraction: 'initial'
-  }],
+      ],
+      defaultParams: {
+        title: 'defaultTitle'
+      },
+      blockEditorInteraction: 'initial'
+    }
+  ],
 
   webhooks: {
     active: true,
-    configurations: [{
-      active: true,
-      handle: 'publish-hook',
-      label: 'Publish Hook',
-      description: '',
-      url: 'https://foo.bar.com/my-webhook',
-      secret: 'foo-bar',
-      events: ['document.published']
-    }]
+    configurations: [
+      {
+        active: true,
+        handle: 'publish-hook',
+        label: 'Publish Hook',
+        description: '',
+        url: 'https://foo.bar.com/my-webhook',
+        secret: 'foo-bar',
+        events: ['document.published']
+      }
+    ]
   },
 
   copy: [{
@@ -155,47 +155,53 @@ settings: {
       channelHandle: 'web',
       contentType: 'regular'
     },
-    targets: [{
-      channelHandle: 'web',
-      contentType: 'kolumne',
-      metadata: {
-        map: [
-          'title',
-          'headline',
-          'authors',
-          'description',
-          'teaserImage',
-          'publishDate'
+    targets: [
+      {
+        channelHandle: 'web',
+        contentType: 'kolumne',
+        metadata: {
+          map: [
+            'title',
+            'headline',
+            'authors',
+            'description',
+            'teaserImage',
+            'publishDate'
+          ]
+        },
+        componentConversions: [
+          {
+            match: 'article-container',
+            exclude: true
+          },
+          {
+            match: 'head',
+            result: [
+              {
+                component: 'catchline',
+                directives: {title: {takeFrom: 'flag'}}
+              },
+              {
+                component: 'headline',
+                directives: {title: {takeFrom: 'title'}}
+              }
+            ]
+          }
         ]
-      },
-      componentConversions: [{
-        match: 'article-container',
-        exclude: true
-      }, {
-        match: 'head',
-        result: [{
-          component: 'catchline',
-          directives: {title: {takeFrom: 'flag'}}
-        }, {
-          component: 'headline',
-          directives: {title: {takeFrom: 'title'}}
-        }]
-      }]
-    }]
+      }
+    ]
   }],
 
   // This setting can be overwritten in the `contentType` config
-  imageSourcePolicy: [{
-    provider: 'upload',
-    enabled: true
-  }, {
-    provider: 'hugo',
-    enabled: false
-  }, {
-    provider: 'url',
-    enabled: true,
-    hosts: ['//pixabay.com']
-  }],
+  imageSourcePolicy: [
+    {provider: 'upload', enabled: true},
+    {provider: 'hugo', enabled: false},
+    {
+      provider: 'url',
+      enabled: true,
+      hosts: ['//pixabay.com']
+    }
+  ],
 
   // setup the push notification feature if applicable
   // for this to work you also must:
@@ -204,15 +210,18 @@ settings: {
   // IMPORTANT: value can not contain more than three comma separated entries
   // see firebase conditions for more details.
   pushNotifications: {
-    topics: [{
-      handle: 'breaking-news',
-      label: 'Breaking News',
-      value: 'ios_de_breakingnews, android_de_breakingnews'
-    }, {
-      handle: 'sport',
-      label: 'Sport',
-      value: 'ios_de_sports, android_de_sports'
-    }]
+    topics: [
+      {
+        handle: 'breaking-news',
+        label: 'Breaking News',
+        value: 'ios_de_breakingnews, android_de_breakingnews'
+      },
+      {
+        handle: 'sport',
+        label: 'Sport',
+        value: 'ios_de_sports, android_de_sports'
+      }
+    ]
   }
 
   editMode: 'default'

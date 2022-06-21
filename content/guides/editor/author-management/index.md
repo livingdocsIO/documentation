@@ -17,64 +17,65 @@ The author management can be completely setup using the Project Setup.
 
 If you don't have an author content-type yet, create one on the server via the [CLI](https://docs.livingdocs.io/reference-docs/cli/) as follows:
 
-```
+```js
 {
-  handle: 'author', 
+  handle: 'author',
   documentType: 'data-record',
   isAuthor: true,
   info: {
     label: 'Author'
-  }, 
+  },
   metadata: [
     {
-      id: '27', 
-      handle: 'prename', 
-      type: 'li-text', 
+      id: '27',
+      handle: 'prename',
+      type: 'li-text',
       ui: {
-        component: 'liMetaTextForm', 
+        component: 'liMetaTextForm',
         config: {
-          label: 'Prename', 
-          placeholder: 'Enter a prename...', 
+          label: 'Prename',
+          placeholder: 'Enter a prename...',
           maxLength: 200
         }
-      }, 
+      },
       config: {
         maxLength: 200
       }
     },
     {
-      id: '28', 
-      handle: 'surname', 
-      type: 'li-text', 
+      id: '28',
+      handle: 'surname',
+      type: 'li-text',
       ui: {
-        component: 'liMetaTextForm', 
+        component: 'liMetaTextForm',
         config: {
-          label: 'Surname', 
-          placeholder: 'Enter a surname...', 
+          label: 'Surname',
+          placeholder: 'Enter a surname...',
           maxLength: 200
         }
-      }, 
+      },
       config: {
         maxLength: 200
       }
     },
     {
-      id: '29', 
-      handle: 'shortname', 
-      type: 'li-text', 
+      id: '29',
+      handle: 'shortname',
+      type: 'li-text',
       ui: {
-        component: 'liMetaTextForm', 
+        component: 'liMetaTextForm',
         config: {
-          label: 'Shortname', 
-          placeholder: 'Enter a shortname (abbreviation)...', 
+          label: 'Shortname',
+          placeholder: 'Enter a shortname (abbreviation)...',
           maxLength: 200
         }
-      }, 
+      },
       config: {
         maxLength: 200
       }
     }
-  }
+  ]
+}
 ```
 
 Note that only one content-type in a project can have the `isAuthor` flag. In the metadata for your "Author" content-type you will want to add fields such as a profile picture, biography, etc.

@@ -111,27 +111,30 @@ editorSettings: {
       ]
     }
   ],
-  dashboards: [{
-    handle: 'kanban-proofreading',
-    type: 'taskBoard',
-    pageTitle: 'Proofreading',
-    taskName: 'proofreading',
-    throttleTime: 2000, // ms
-    displayFilters: ['documentState', 'timeRange']
-  }, {
-    handle: 'authors-dashboard',
-    type: 'dashboard',
-    pageTitle: 'Author Management',
-    entityLabel: 'Author',
-    baseFilters: [
-      {type: 'documentType', value: 'data-record'},
-      {type: 'sortBy', value: '-updated_at'}
-    ],
-    displayFilters: ['documentState', 'timeRange'],
-    sort: '-updated_at',
-    fields: ['metadata.*'],
-    componentName: 'bluewinDashboardListItem'
-  }],
+  dashboards: [
+    {
+      handle: 'kanban-proofreading',
+      type: 'taskBoard',
+      pageTitle: 'Proofreading',
+      taskName: 'proofreading',
+      throttleTime: 2000, // ms
+      displayFilters: ['documentState', 'timeRange']
+    },
+    {
+      handle: 'authors-dashboard',
+      type: 'dashboard',
+      pageTitle: 'Author Management',
+      entityLabel: 'Author',
+      baseFilters: [
+        {type: 'documentType', value: 'data-record'},
+        {type: 'sortBy', value: '-updated_at'}
+      ],
+      displayFilters: ['documentState', 'timeRange'],
+      sort: '-updated_at',
+      fields: ['metadata.*'],
+      componentName: 'bluewinDashboardListItem'
+    }
+  ],
   // Added in release-2021-09
   // you can define configured cards here, they can then be referenced
   // within a mediaType defining the card to be used for rendering in a dashboard
@@ -394,86 +397,102 @@ Sort the result, possible values are:
 
 ### Example: Dashboard
 ```js
-dashboards: [{
-  handle: 'gallery-dashboard',
-  type: 'dashboard',
-  pageTitle: 'Gallery Board',
-  // Label used to describe the documents in this Dashboard
-  entityLabel: 'Article',
-  // Invisible base filters applied to every search (including the default result list)
-  baseFilters: [{type: 'documentType', value: 'article'}],
-  // Filters shown to the user below the search input
-  displayFilters: ['documentState', 'timeRange'],
-  sort: '-updated_at',
-  // fields to be returned from the server (not all metadata fields are returned by default)
-  fields: ['metadata.*'],
-  // Enterprise only: This is the name of the vue component used in the result list
-  componentName: 'liHeroCard',
-  // Enterprise only: The componentOptions are injected into the component
-  // `liHeroCard` (in this example)
-  componentOptions: {teaserImage: 'teaserImage'},
-  // Enterprise only: CSS class set as a wrapper around the result list
-  cssWrapper: 'li-result-columns'
-}]
+dashboards: [
+  {
+    handle: 'gallery-dashboard',
+    type: 'dashboard',
+    pageTitle: 'Gallery Board',
+    // Label used to describe the documents in this Dashboard
+    entityLabel: 'Article',
+    // Invisible base filters applied to every search (including the default result list)
+    baseFilters: [{type: 'documentType', value: 'article'}],
+    // Filters shown to the user below the search input
+    displayFilters: ['documentState', 'timeRange'],
+    sort: '-updated_at',
+    // fields to be returned from the server (not all metadata fields are returned by default)
+    fields: ['metadata.*'],
+    // Enterprise only: This is the name of the vue component used in the result list
+    componentName: 'liHeroCard',
+    // Enterprise only: The componentOptions are injected into the component
+    // `liHeroCard` (in this example)
+    componentOptions: {teaserImage: 'teaserImage'},
+    // Enterprise only: CSS class set as a wrapper around the result list
+    cssWrapper: 'li-result-columns'
+  }
+]
 ```
 
 ### Example: Taskboard (simple config)
 
 ```js
-dashboards: [{
-  handle: 'kanban-proofreading',
-  type: 'taskBoard',
-  pageTitle: 'Proofreading',
-  // This is the name of a metadataProperty of `type: 'li-task-v2'`
-  taskName: 'proofreading',
-  displayFilters: ['documentState', 'timeRange']
-}]
+dashboards: [
+  {
+    handle: 'kanban-proofreading',
+    type: 'taskBoard',
+    pageTitle: 'Proofreading',
+    // This is the name of a metadataProperty of `type: 'li-task-v2'`
+    taskName: 'proofreading',
+    displayFilters: ['documentState', 'timeRange']
+  }
+]
 ```
 
 ### Example: Kanbanboard (full config)
 
 ```js
-dashboards: [{
-  handle: 'kanban-proofreading',
-  type: 'kanbanBoard',
-  pageTitle: 'Proofreading',
-  // Label used to describe the documents in this KanbanBoard
-  entityLabel: 'Article',
-  displayFilters: [],
-  // Base filters are applied to all columns
-  baseFilters: [{type: 'documentType', value: 'article'}],
-  // This is the name of the angular component to use in all columns
-  // (can also be defined for each columns separately)
-  componentName: 'liTaskCard',
-  // include all metadata properties in the search response data
-  fields: ['metadata.*'],
-  // Set the target when clicking on a card. Currently supported:
-  // - 'article' (default setting)
-  // - 'tasks'
-  openState: 'tasks',
-  showFooter: true,
-  columns: [{
-    handle: 'requested',
-    label: 'Needs Proofreading',
-    // Filter applied for this column on top of the `baseFilter`
-    columnFilter: [{type: 'metadata', key: 'proofreading.state', value: 'requested'}],
-    sort: [`metadata.proofreading.priority`, `metadata.proofreading.deadline`]
-    // The componentOptions are injected into the component `liTaskCard` (in this example)
-    componentOptions: {column: 'todo', taskName: 'proofreading'}
-  }, {
-    handle: 'in-progress',
-    label: 'In Progress',
-    columnFilter: [{type: 'metadata', key: 'proofreading.state', value: 'accepted'}],
-    sort: [`metadata.proofreading.priority`, `-metadata.proofreading.accepted.date`],
-    componentOptions: {column: 'doing', taskName: 'proofreading'}
-  }, {
-    handle: 'done',
-    label: 'Finished Proofreading',
-    columnFilter: [{type: 'metadata', key: 'proofreading.state', value: 'completed'}],
-    sort: [`-metadata.proofreading.completed.date`],
-    componentOptions: {column: 'done', taskName: 'proofreading'}
-  }]
-}]
+dashboards: [
+  {
+    handle: 'kanban-proofreading',
+    type: 'kanbanBoard',
+    pageTitle: 'Proofreading',
+    // Label used to describe the documents in this KanbanBoard
+    entityLabel: 'Article',
+    displayFilters: [],
+    // Base filters are applied to all columns
+    baseFilters: [{type: 'documentType', value: 'article'}],
+    // This is the name of the angular component to use in all columns
+    // (can also be defined for each columns separately)
+    componentName: 'liTaskCard',
+    // include all metadata properties in the search response data
+    fields: ['metadata.*'],
+    // Set the target when clicking on a card. Currently supported:
+    // - 'article' (default setting)
+    // - 'tasks'
+    openState: 'tasks',
+    showFooter: true,
+    columns: [
+      {
+        handle: 'requested',
+        label: 'Needs Proofreading',
+        // Filter applied for this column on top of the `baseFilter`
+        columnFilter: [
+          {type: 'metadata', key: 'proofreading.state', value: 'requested'}
+        ],
+        sort: [`metadata.proofreading.priority`, `metadata.proofreading.deadline`]
+        // The componentOptions are injected into the component `liTaskCard` (in this example)
+        componentOptions: {column: 'todo', taskName: 'proofreading'}
+      },
+      {
+        handle: 'in-progress',
+        label: 'In Progress',
+        columnFilter: [
+          {type: 'metadata', key: 'proofreading.state', value: 'accepted'}
+        ],
+        sort: [`metadata.proofreading.priority`, `-metadata.proofreading.accepted.date`],
+        componentOptions: {column: 'doing', taskName: 'proofreading'}
+      },
+      {
+        handle: 'done',
+        label: 'Finished Proofreading',
+        columnFilter: [
+          {type: 'metadata', key: 'proofreading.state', value: 'completed'}
+        ],
+        sort: [`-metadata.proofreading.completed.date`],
+        componentOptions: {column: 'done', taskName: 'proofreading'}
+      }
+    ]
+  }
+]
 ```
 
 ### Example: Table Dashboard
@@ -481,61 +500,63 @@ dashboards: [{
 {{< added-in release-2022-03 >}}
 
 ```js
-dashboards: [{
-  handle: 'example-table-dashboard',
-  type: 'tableDashboard',
-  pageTitle: 'Table Dashboard Title',
-  baseFilters: [
-    {type: 'documentType', value: 'article'}
-  ],
-  displayFilters: [
-    'channels',
-    'documentState',
-    'contentType',
-    'timeRange',
-    'language',
-    'category'
-  ],
-  sort: '-updated_at',
-  columns: [
-    {
-      label: 'Title',
+dashboards: [
+  {
+    handle: 'example-table-dashboard',
+    type: 'tableDashboard',
+    pageTitle: 'Table Dashboard Title',
+    baseFilters: [
+      {type: 'documentType', value: 'article'}
+    ],
+    displayFilters: [
+      'channels',
+      'documentState',
+      'contentType',
+      'timeRange',
+      'language',
+      'category'
+    ],
+    sort: '-updated_at',
+    columns: [
+      {
+        label: 'Title',
 
-      minWidth: 100,  // minimum width in pixels
+        minWidth: 100,  // minimum width in pixels
 
-      growFactor: 1,  // share of the remaining space after
-                      // minWidth of all columns has been allocated
-                      // (works like flex-grow in CSS)
+        growFactor: 1,  // share of the remaining space after
+                        // minWidth of all columns has been allocated
+                        // (works like flex-grow in CSS)
 
-      priority: 1     // If there is not enough space for all columns
-                      // keep those with priority 1, then 2, etc.
+        priority: 1     // If there is not enough space for all columns
+                        // keep those with priority 1, then 2, etc.
 
-      // Name of the Vue component used for this column
-      componentName: 'liTableDashboardCellMain',
+        // Name of the Vue component used for this column
+        componentName: 'liTableDashboardCellMain',
 
-      // Custom options passed to the above component
-      componentOptions: {
-        image: {
-          metadataPropertyName: 'teaserImage'
-        },
-        clampTitle: false,
-        showContentType: true
+        // Custom options passed to the above component
+        componentOptions: {
+          image: {
+            metadataPropertyName: 'teaserImage'
+          },
+          clampTitle: false,
+          showContentType: true
+        }
+      },
+      {
+        label: 'Description',
+        minWidth: 200,
+        growFactor: 3,
+        priority: 3,
+
+        // Columns can also display a metadata property instead of using a custom component
+        metadataPropertyName: 'description',
+
+        // default false, if true, metadata property can be edited inline in the dashboard
+        editable: true
       }
-    },
-    {
-      label: 'Description',
-      minWidth: 200,
-      growFactor: 3,
-      priority: 3,
-
-      // Columns can also display a metadata property instead of using a custom component
-      metadataPropertyName: 'description',
-
-      // default false, if true, metadata property can be edited inline in the dashboard
-      editable: true
-    }
-  ]
-}]
+    ]
+  }
+]
 ```
 
 #### Supported metadata properties
@@ -639,7 +660,7 @@ dashboardCardConfigurations: [
       }
     }
   }
-}
+]
 ```
 
 This will define a card `myImageCard` to be used in `mediaType.editor.dashboard.card.name`. See the See [Media Type config example]({{< ref "/reference-docs/project-config/media-types.md" >}}).
@@ -702,18 +723,20 @@ textFormatting: {
 
 Extend the text formatting toolbar with custom configured elements. The elements will be shown after the default elements. Add this configuration to the textFormatting configuration above.
 ```js
- customElements: [{
-      label: 'blue color',
-      handle: 'bluecolor',
-      // if trim is set to true, whitespaces on the left and right of the selection are removed
-      trim: true,
-      // the tag which is set around the selection
-      tagName: 'span',
-      // the icon which will be displayed. Only existing icons in the editor can be used.
-      icon: 'format-color-highlight',
-      // the attributes which are set on the tag
-      attributes: [{name: 'class', value: 'blue'}]
-    }]
+ customElements: [
+  {
+    label: 'blue color',
+    handle: 'bluecolor',
+    // if trim is set to true, whitespaces on the left and right of the selection are removed
+    trim: true,
+    // the tag which is set around the selection
+    tagName: 'span',
+    // the icon which will be displayed. Only existing icons in the editor can be used.
+    icon: 'format-color-highlight',
+    // the attributes which are set on the tag
+    attributes: [{name: 'class', value: 'blue'}]
+  }
+]
 ```
 
 Following attribute types can be added to a customElement:
@@ -730,11 +753,13 @@ Following attribute types can be added to a customElement:
     handle: 'authorlink',
     tagName: 'span',
     icon: 'file-link',
-    attributes: [{
-      handle: 'documentref',
-      type: 'li-reference',
-      config: {referenceType: 'document', contentType: 'author'}
-    }]
+    attributes: [
+      {
+        handle: 'documentref',
+        type: 'li-reference',
+        config: {referenceType: 'document', contentType: 'author'}
+      }
+    ]
   }
   ```
 - li-enum
@@ -770,11 +795,13 @@ Following attribute types can be added to a customElement:
     handle: 'input',
     tagName: 'span',
     icon: 'format-color-highlight',
-    attributes: [{
-      handle: 'input',
-      type: 'li-text',
-      name: 'data-input'
-    }]
+    attributes: [
+      {
+        handle: 'input',
+        type: 'li-text',
+        name: 'data-input'
+      }
+    ]
   }
   ```
 

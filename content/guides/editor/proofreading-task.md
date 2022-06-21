@@ -16,51 +16,53 @@ The screenshot below shows the task in question.
 On the server we need to configure a new metadata field `proofreading` (more about metadata fields you can read [here]({{< ref "/reference-docs/document/metadata" >}}))
 
 ```js
-metadata: [{
-  // metadata field name
-  handle: 'proofreading',
-  // plugin
-  type: 'li-task-v2',
-  config: {
-    label: 'Proofreading',
-    // allows to assign a user to a task
-    assignUsers: true,
-    showInTaskList: true,
-    // flag to control if the card should be updated automatically on custom dashboard
-    realtimeNotification: true,
-    // flag to declare that this metadata field is a proofreading task
-    isProofreading: true
-    // flag to control the differ from the poofreading feature in the editor
-    updateLastProofreadRevision: true,
-    // you can pick a deadline date in the editor when starting with a task
-    requestDeadline: true,
-    // define a link from the task to a dashboard. 'kanban-proofreading' is the handle of the dashboard in the editor-config
-    linkToDashboard: 'kanban-proofreading',
-    // flag to enable an option to mark a task as a high priority task
-    setPriority: true,
-    // define beforeLabel/afterLabel of the 3 states requested/accepted/completed
-    assignUsers: true,
-    // flag to enable an option to assign a user to a task.
-    // if the 'notifications' feature is activated, assigned users will always get an email/slack/* notification
-    requested: {
-      beforeLabel: 'Request proofreading',
-      afterLabel: 'Proofreading requested'
-    },
-    accepted: {
-      beforeLabel: 'Begin proofreading',
-      afterLabel: 'Started with proofreading'
-    },
-    completed: {
-      beforeLabel: 'Finish proofreading',
-      afterLabel: 'Proofreading finished'
-    },
-    // when the relative deadline date is nearer than the relative time in the config,
-    // a task is set as highly urgent
-    urgency: {
-      high: {value: 2, unit: 'hours'}
+metadata: [
+  {
+    // metadata field name
+    handle: 'proofreading',
+    // plugin
+    type: 'li-task-v2',
+    config: {
+      label: 'Proofreading',
+      // allows to assign a user to a task
+      assignUsers: true,
+      showInTaskList: true,
+      // flag to control if the card should be updated automatically on custom dashboard
+      realtimeNotification: true,
+      // flag to declare that this metadata field is a proofreading task
+      isProofreading: true
+      // flag to control the differ from the poofreading feature in the editor
+      updateLastProofreadRevision: true,
+      // you can pick a deadline date in the editor when starting with a task
+      requestDeadline: true,
+      // define a link from the task to a dashboard. 'kanban-proofreading' is the handle of the dashboard in the editor-config
+      linkToDashboard: 'kanban-proofreading',
+      // flag to enable an option to mark a task as a high priority task
+      setPriority: true,
+      // define beforeLabel/afterLabel of the 3 states requested/accepted/completed
+      assignUsers: true,
+      // flag to enable an option to assign a user to a task.
+      // if the 'notifications' feature is activated, assigned users will always get an email/slack/* notification
+      requested: {
+        beforeLabel: 'Request proofreading',
+        afterLabel: 'Proofreading requested'
+      },
+      accepted: {
+        beforeLabel: 'Begin proofreading',
+        afterLabel: 'Started with proofreading'
+      },
+      completed: {
+        beforeLabel: 'Finish proofreading',
+        afterLabel: 'Proofreading finished'
+      },
+      // when the relative deadline date is nearer than the relative time in the config,
+      // a task is set as highly urgent
+      urgency: {
+        high: {value: 2, unit: 'hours'}
+      }
     }
   }
-}]
+]
 ```
 
 Additionally, you need to extend the metadata mapping defined in your server config under `search.metadataMapping` for the property `proofreading`.

@@ -51,14 +51,16 @@ module.exports = {
     <div doc-container="gallery"></div>
   </div>
   `,
-  directives: [{
-    name: 'gallery',
-    type: 'container',
-    allowedChildren: ['asset-image'],
-    defaultComponents: {
-      image: 'asset-image'
+  directives: [
+    {
+      name: 'gallery',
+      type: 'container',
+      allowedChildren: ['asset-image'],
+      defaultComponents: {
+        image: 'asset-image'
+      }
     }
-  }]
+  ]
 }
 ```
 
@@ -70,11 +72,13 @@ module.exports = {
   label: 'Asset Content',
   description: 'Main container for assets',
   iconUrl: 'https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-icons/icon_component_1_column.svg',
-  directives: [{
-    name: 'header',
-    type: 'container',
-    allowedChildren: ['asset-head-gallery']
-  }],
+  directives: [
+    {
+      name: 'header',
+      type: 'container',
+      allowedChildren: ['asset-head-gallery']
+    }
+  ],
   html: dedent`
   <article class="o-asset-content">
     <header class="o-asset-content__header" doc-container="header">
@@ -123,11 +127,13 @@ module.exports = {
     </div>
   </div>
   `,
-  directives: [{
-    type: 'editable',
-    name: 'title',
-    excludeFromTextCount: true
-  }]
+  directives: [
+    {
+      type: 'editable',
+      name: 'title',
+      excludeFromTextCount: true
+    }
+  ]
 }
 ```
 
@@ -139,20 +145,24 @@ module.exports = {
   label: 'Asset Image',
   description: 'Image with caption',
   iconUrl: 'https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-icons/icon_component_image.svg',
-  directives: [{
-    name: 'image',
-    type: 'image',
-    imageRatios: ['16:9', '1:1', '4:3', '3:4'],
-    allowOriginalRatio: true
-  }, {
-    name: 'caption',
-    type: 'editable',
-    excludeFromTextCount: true
-  }, {
-    name: 'source',
-    type: 'editable',
-    excludeFromTextCount: true
-  }],
+  directives: [
+    {
+      name: 'image',
+      type: 'image',
+      imageRatios: ['16:9', '1:1', '4:3', '3:4'],
+      allowOriginalRatio: true
+    },
+    {
+      name: 'caption',
+      type: 'editable',
+      excludeFromTextCount: true
+    },
+    {
+      name: 'source',
+      type: 'editable',
+      excludeFromTextCount: true
+    }
+  ],
   html: dedent`
   <div class="m-asset-image">
     <div class="m-asset-image__image">
@@ -361,20 +371,22 @@ module.exports = {
   name: 'gallery-teaser',
   label: 'Image Gallery Teaser',
   iconUrl: 'https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-icons/icon_component_slideshow.svg',
-  directives: [{
-    name: 'gallery',
-    type: 'include',
-    service: 'gallery-teaser',
-    paramsSchemaExtension: [
-      {
-        name: 'teaser',
-        config: {
-          contentType: ['gallery'],
-          published: true
+  directives: [
+    {
+      name: 'gallery',
+      type: 'include',
+      service: 'gallery-teaser',
+      paramsSchemaExtension: [
+        {
+          name: 'teaser',
+          config: {
+            contentType: ['gallery'],
+            published: true
+          }
         }
-      }
-    ]
-  }],
+      ]
+    }
+  ],
   // placeholder as svg base64 encoded
   // https://github.com/livingdocsIO/livingdocs-design-assets/blob/master/docs/placeholders/placeholder-inline-gallery.svg
   html: `
@@ -410,12 +422,14 @@ module.exports = {
     </div>
   </div>`,
   label: 'Image Gallery Hero Template',
-  directives: [{
-    name: 'image',
-    type: 'image',
-    imageRatios: ['16:9'],
-    allowOriginalRatio: false
-  }]
+  directives: [
+    {
+      name: 'image',
+      type: 'image',
+      imageRatios: ['16:9'],
+      allowOriginalRatio: false
+    }
+  ]
 }
 ```
 
@@ -425,17 +439,17 @@ module.exports = {
 // your-project/index.js
 {
   designSettings: {
-    componentGroups: [{
-      name: 'includes',
-      label: 'Includes',
-      components: [
-        // ...
-        'gallery-teaser'
-      ]
-    }]
+    componentGroups: [
+      {
+        name: 'includes',
+        label: 'Includes',
+        components: [
+          'gallery-teaser'
+        ]
+      }
+    ]
   },
   components: [
-    // ...
     require('./components/gallery-teaser'),
     require('./components/gallery-teaser-resolved')
   ]
@@ -443,9 +457,8 @@ module.exports = {
 
 // your-project/content-types/article.js
 module.exports = {
-  // ...
   components: [
-    // ...
     {name: 'gallery-teaser'}
-  ],
+  ]
+}
 ```

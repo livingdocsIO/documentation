@@ -16,7 +16,6 @@ First you need to add 2 [metadata]({{< ref "/reference-docs/document/metadata" >
 ```js
 // content-type
 metadata: [
-  // ...
   {
     handle: 'publishDate',
     type: 'li-datetime',
@@ -51,8 +50,7 @@ publicationIndex: {
       type: 'li-datetime'
     }
   }
-  // ...
-},
+}
 ```
 
 The `sortDate` defines the date that is used to sort results in a publication search query. By default it’s just the `createdAt` timestamp of the publication. The configuration allows you to choose a separate metadata property from your metadata set that is used. The property must be a date type. A common use case is to take a metadata property that defines a first publication date (first time of publish).
@@ -69,7 +67,7 @@ Finally, you can enable the scheduled publishing UI in the Editor via editor con
 // editor config
 document: {
   customPublicationDateField: 'publishDate'
-},
+}
 ```
 
 ![image](https://user-images.githubusercontent.com/172394/136512341-830a9453-f67e-43c1-9183-fed384b4b650.png)

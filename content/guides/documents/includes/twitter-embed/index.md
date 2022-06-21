@@ -21,7 +21,7 @@ In the design you will define the component.
       "caption": "Article",
       "wrapper": "<div>Some wrapper</div>",
       "groups": [
-        { "label": "Twitter Include", "components": ["twitterIncludeComponent"] }
+        {"label": "Twitter Include", "components": ["twitterIncludeComponent"]}
       ]
     }
   ],
@@ -32,11 +32,13 @@ In the design you will define the component.
       "html": "<div doc-include='twitterInclude' class='placeholder'><div className='example-inline-placeholder-styles' style='min-height: 100px;outline: 1px dashed rgba(0, 0, 0, 0.2);position: relative;'/></div>",
       "label": "Twitter Include",
       "description": "Embed a tweet",
-      "directives": [{
-        "name": "twitterInclude",
-        "type": "include",
-        "service": "twitterInclude"
-      }]
+      "directives": [
+        {
+          "name": "twitterInclude",
+          "type": "include",
+          "service": "twitterInclude"
+        }
+      ]
     }
   ]
 }
@@ -100,10 +102,9 @@ async function renderTweet (params, options) {
     doNotRender: false,
     embed: 'liTwitterRenderPlugin', // Twitter rendering plugin registered in the editor.
     dependencies: {
-      js: [{
-        src: 'https://platform.twitter.com/widgets.js',
-        namespace: 'includes.twitter'
-      }]
+      js: [
+        {src: 'https://platform.twitter.com/widgets.js', namespace: 'includes.twitter'}
+      ]
     }
   }
 }

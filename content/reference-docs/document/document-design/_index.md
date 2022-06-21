@@ -36,11 +36,13 @@ Components are the building blocks of Livingdocs documents. In essence a compone
   name: 'p',
   label: 'Paragraph',
   iconUrl: 'https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_text.svg',
-  directives: [{
-    name: 'p',
-    type: 'editable',
-    plainText: true
-  }],
+  directives: [
+    {
+      name: 'p',
+      type: 'editable',
+      plainText: true
+    }
+  ],
   html: '<p class="text" doc-editable="text">\n  Paragraph\n</p>'
 ```
 
@@ -145,7 +147,6 @@ An example:
 ```js
 // projectConfig.designSettings:
 designSettings: {
-
     assets: {
       css: [
         'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'
@@ -169,12 +170,7 @@ designSettings: {
       // configuration for the 'srcSet' render strategy
       srcSet: {
         defaultWidth: 1024,
-        widths: [
-          2048,
-          1024,
-          620,
-          320
-        ],
+        widths: [2048, 1024, 620, 320],
         sizes: ['100vw']
       },
 
@@ -187,17 +183,20 @@ designSettings: {
       }
     },
 
-    componentProperties: [{
+    componentProperties: [
+      {
         label: 'Lead',
         type: 'option',
         value: 'paragraph--lead',
         name: 'paragraph-style-lead'
-    }, {
+      },
+      {
         label: 'Background Color',
         type: 'style',
         cssProperty: 'background-color',
         name: 'css-background-color'
-    }],
+      }
+    ],
 
     componentGroups: [
       {

@@ -54,18 +54,21 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
   //
   // @param data injected result from datasource.fetch
   //
-  // @example options = [{
+  // @example options = [
+  //   {
   //     id: 'regular',
   //     label: 'Regular Article',
   //     type: 'contentType',
   //     value: 'regular'
-  //   }, {
+  //   },
+  //   {
   //     id: 'page',
   //     label: 'Page',
   //     type: 'contentType',
   //     value: 'page',
   //     isDefault: true
-  //   }]
+  //   }
+  // ]
   async mount ({data, filter}) {
     const options = data.contentTypes.map((ct) => {
       return {
@@ -218,21 +221,24 @@ liEditor.searchFilters.registerList('creation-date', ['session', 'config', (sess
 
 liEditor.searchFilters.registerList('creationDate', {
   title: 'Filter by creation date',
-  options: [{
-    id: '2015',
-    label: 'Created in 2015',
-    type: 'dateRange',
-    key: 'created_at',
-    from: new Date('2015-01-01'),
-    to: new Date('2016-01-01')
-  }, {
-    id: '2016',
-    label: 'Created in 2016',
-    type: 'dateRange',
-    key: 'created_at',
-    from: new Date('2016-01-01'),
-    to: new Date('2017-01-01'),
-    isDefault: true
-  }]
+  options: [
+    {
+      id: '2015',
+      label: 'Created in 2015',
+      type: 'dateRange',
+      key: 'created_at',
+      from: new Date('2015-01-01'),
+      to: new Date('2016-01-01')
+    },
+    {
+      id: '2016',
+      label: 'Created in 2016',
+      type: 'dateRange',
+      key: 'created_at',
+      from: new Date('2016-01-01'),
+      to: new Date('2017-01-01'),
+      isDefault: true
+    }
+  ]
 })
 ```

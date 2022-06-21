@@ -103,18 +103,9 @@ mediaTypes: [{
   ],
   exifExtraction: {
     mappings: [
-      {
-        field: 'Title',
-        metadataPropertyName: 'title'
-      },
-      {
-        field: 'Source',
-        metadataPropertyName: 'source'
-      },
-      {
-        field: 'Description',
-        metadataPropertyName: 'caption'
-      }
+      {field: 'Title', metadataPropertyName: 'title'},
+      {field: 'Source', metadataPropertyName: 'source'},
+      {field: 'Description', metadataPropertyName: 'caption'}
     ]
   },
   mediaSources: [
@@ -134,9 +125,7 @@ mediaTypes: [{
   editor: {
     dashboard: { // the dashboard opened from the Document Editor
       displayFilters: [
-        {
-          filterName: 'liDateTimeRange'
-        }
+        {filterName: 'liDateTimeRange'}
       ],
       card: {
         name: 'liMediaLibraryCard' // this is the default, can be changed to another card
@@ -144,9 +133,7 @@ mediaTypes: [{
     },
     managementDashboard: { // the dashboard opened from the Main Navigation
       displayFilters: [
-        {
-          filterName: 'liDateTimeRange'
-        }
+        {filterName: 'liDateTimeRange'}
       ]
     }
   }

@@ -15,17 +15,19 @@ Container directives allow you to nest lists of Livingdocs components. Common ex
 {
   name: 'bullet-list',
   label: 'Bullet List',
-  directives: [{
-    name: 'list',
-    type: 'container',
-    defaultComponents: {
-      paragraph: 'bullet-list-item'
-    },
-    defaultContent: [{
-      component: 'bullet-list-item'
-    }],
-    allowedChildren: ['bullet-list-item']
-  }],
+  directives: [
+    {
+      name: 'list',
+      type: 'container',
+      defaultComponents: {
+        paragraph: 'bullet-list-item'
+      },
+      defaultContent: [
+        {component: 'bullet-list-item'}
+      ],
+      allowedChildren: ['bullet-list-item']
+    }
+  ],
   html: dedent`
     <ul doc-container="list" class="ld-list"></ul>
   `

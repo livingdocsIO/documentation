@@ -19,113 +19,129 @@ We plan to allow to move all layout options which are currently defined in the d
 ## Example
 
 ```js
-contentTypes: [{
-  handle: 'gallery',
-  documentType: 'article', // either 'article', 'page' or 'data-record'
-  isAuthor: false, // only true if this content-type represents an author, must be 'data-record'
+contentTypes: [
+  {
+    handle: 'gallery',
+    documentType: 'article', // either 'article', 'page' or 'data-record'
+    isAuthor: false, // only true if this content-type represents an author, must be 'data-record'
 
-  info: {
-    label: 'Boilerplate Article',
-    description: 'The most simple article',
-    icon: 'file-outline'
-  },
-
-  editorWrapper: '<div class="doc-section"></div>',
-  defaultContent: [{component: 'title', position: 'fixed'}],
-  defaultMetadata: {author: 'Mister X'}, // {{< added-in release-2022-05 >}}
-
-  // define the server-side metadata
-  metadata: [{
-    handle: 'author',
-    type: 'li-text',
-    ui: {component: 'liMetaTextForm'}
-  }, {
-    handle: 'description',
-    type: 'li-text',
-    config: {
-      required: true,
-      requiredErrorMessage: 'please provide a short description'
-    },
-    ui: {component: 'liMetaTextForm'}
-  }],
-
-  metadataGroups: [{
-    label: 'text',
-    properties: ['description']
-  }],
-
-  // Overwrites config in `settings`
-  imageSourcePolicy: [{
-    provider: 'upload',
-    enabled: true
-  }, {
-    provider: 'hugo',
-    enabled: false
-  }, {
-    provider: 'url',
-    enabled: true,
-    hosts: ['//pixabay.com']
-  }],
-
-  // You'll find the renditions example further below
-  renditions: require.resolve('./path/to/rendition/config'),
-
-  // Configuration for the Editor behaviour
-  editor: {
-    ui: {
-      // flag whether the list assignment on the publish (metadata)
-      // screen should be shown for this content-type
-      showListAssignment: true,
-      // flag whether the component list in the sidebar should show icons and
-      // desriptions (true) or only the titles (false)
-      useExpandedComponentStyle: true,
-      // flag whether the document title at the toolbar can be edited
-      disableEditTitleAtToolbar: false
+    info: {
+      label: 'Boilerplate Article',
+      description: 'The most simple article',
+      icon: 'file-outline'
     },
 
-    // One or multiple deliveryLinks are show in the publish panel
-    // They should point to your frontends
-    // url can be a pattern containing these placeholders:
-    // :path
-    // :routingPath
-    // :id
-    // :projectId
-    // :slug
-    deliveryLinks: [
+    editorWrapper: '<div class="doc-section"></div>',
+    defaultContent: [
+      {component: 'title', position: 'fixed'}
+    ],
+    // {{< added-in release-2022-05 >}}
+    defaultMetadata: {
+      author: 'Mister X'
+    },
+
+    // define the server-side metadata
+    metadata: [
       {
-        url: 'http://localhost:9999/:slug',
-        icon: 'link-variant',
-        label: 'Publish link'
+        handle: 'author',
+        type: 'li-text',
+        ui: {component: 'liMetaTextForm'}
+      },
+      {
+        handle: 'description',
+        type: 'li-text',
+        config: {
+          required: true,
+          requiredErrorMessage: 'please provide a short description'
+        },
+        ui: {component: 'liMetaTextForm'}
       }
-    ]
-  },
+    ],
 
-  // if enabled is true this content-type will use the WoodWing
-  // print layout selection and preview
-  print: {
-    enabled: false,
-    enableStepZooming: true,
-    componentMap: {
-      toptitle: {
-        title: 'toptitle'
+    metadataGroups: [
+      {
+        label: 'text',
+        properties: ['description']
       }
+    ],
+
+    // Overwrites config in `settings`
+    imageSourcePolicy: [
+      {
+        provider: 'upload',
+        enabled: true
+      },
+      {
+        provider: 'hugo',
+        enabled: false
+      },
+      {
+        provider: 'url',
+        enabled: true,
+        hosts: ['//pixabay.com']
+      }
+    ],
+
+    // You'll find the renditions example further below
+    renditions: require.resolve('./path/to/rendition/config'),
+
+    // Configuration for the Editor behaviour
+    editor: {
+      ui: {
+        // flag whether the list assignment on the publish (metadata)
+        // screen should be shown for this content-type
+        showListAssignment: true,
+        // flag whether the component list in the sidebar should show icons and
+        // desriptions (true) or only the titles (false)
+        useExpandedComponentStyle: true,
+        // flag whether the document title at the toolbar can be edited
+        disableEditTitleAtToolbar: false
+      },
+
+      // One or multiple deliveryLinks are show in the publish panel
+      // They should point to your frontends
+      // url can be a pattern containing these placeholders:
+      // :path
+      // :routingPath
+      // :id
+      // :projectId
+      // :slug
+      deliveryLinks: [
+        {
+          url: 'http://localhost:9999/:slug',
+          icon: 'link-variant',
+          label: 'Publish link'
+        }
+      ]
+    },
+
+    // if enabled is true this content-type will use the WoodWing
+    // print layout selection and preview
+    print: {
+      enabled: false,
+      enableStepZooming: true,
+      componentMap: {
+        toptitle: {
+          title: 'toptitle'
+        }
+      }
+    },
+
+    // With 'documentCreationDisabled: true',
+    // you can't create documents with this content-type
+    documentCreationDisabled: true, // default false
+
+    // either show 'edit' or 'publish' view after creating a document
+    viewAfterDocumentCreation: 'publish', // default is 'edit'
+
+    // Allows the current content type ("gallery") to accept
+    // "regular" and "another-handle" documents into its inbox.
+    // The inbox assignment UI will be displayed for those content types.
+    inbox: {
+      contentTypes: ['regular', 'another-handle']
     }
-  },
-
-  // With 'documentCreationDisabled: true',
-  // you can't create documents with this content-type
-  documentCreationDisabled: true, // default false
-
-  // either show 'edit' or 'publish' view after creating a document
-  viewAfterDocumentCreation: 'publish', // default is 'edit'
-
-  // Allows the current content type ("gallery") to accept
-  // "regular" and "another-handle" documents into its inbox.
-  // The inbox assignment UI will be displayed for those content types.
-  inbox: {
-    contentTypes: ['regular', 'another-handle']
   }
-}]
+]
 ```
 
 ## Default Content
@@ -206,19 +222,21 @@ Once a card has been manually collapsed/expanded in the UI, then this state will
 
 The schema looks as follows:
 ```js
-  metadataGroups: ms.arrayOf(ms.strictObj({
-    label: 'string',
-    expanded: ms.boolean(), // optional, default is true
-    properties: ms.arrayOf(ms.string())
-  }))
+metadataGroups: ms.arrayOf(ms.strictObj({
+  label: 'string',
+  expanded: ms.boolean(), // optional, default is true
+  properties: ms.arrayOf(ms.string())
+}))
 ```
 e.g.:
 ```js
-  metadataGroups: [{
-      label: 'SEO',
-      expanded: false,
-      properties: ['keywords', 'title']
-  }]
+metadataGroups: [
+  {
+    label: 'SEO',
+    expanded: false,
+    properties: ['keywords', 'title']
+  }
+]
 ```
 
 ## Components and Component Groups
@@ -228,16 +246,23 @@ The groups allow you to define how the components are shown in the Livingdocs ed
 
 Example:
 ```js
-components: [{name: 'subtitle'}, {name: 'paragarph'}, {name: 'image'}],
-componentGroups: [{
-  name: 'text',
-  label: 'Text',
-  components: ['subtitle', 'paragraph']
-}, {
-  name: 'media',
-  label: 'Media',
-  components: ['image']
-}]
+components: [
+  {name: 'subtitle'},
+  {name: 'paragraph'},
+  {name: 'image'}
+],
+componentGroups: [
+  {
+    name: 'text',
+    label: 'Text',
+    components: ['subtitle', 'paragraph']
+  },
+  {
+    name: 'media',
+    label: 'Media',
+    components: ['image']
+  }
+]
 ```
 
 ## Public API config
@@ -270,17 +295,21 @@ You may set a `contentType` specific sourcePolicy here.
 
 ```js
 {
-  sourcePolicy: [{
-    provider: 'upload',
-    enabled: false
-  }, {
-    provider: 'hugo',
-    enabled: true
-  }, {
-    provider: 'url',
-    enabled: true,
-    hosts: ['https://cdn.pixabay.com']
-  }]
+  sourcePolicy: [
+    {
+      provider: 'upload',
+      enabled: false
+    },
+    {
+      provider: 'hugo',
+      enabled: true
+    },
+    {
+      provider: 'url',
+      enabled: true,
+      hosts: ['https://cdn.pixabay.com']
+    }
+  ]
 }
 ```
 
@@ -359,10 +388,9 @@ module.exports = {
 To enable push notifications for a specific content type you must have a metadata field called `pushNotifications`. Name and plugin must match exactly.
 
 ```js
-metadata: [{
-  handle: 'pushNotifications',
-  type: 'li-push-notifications'
-}]
+metadata: [
+  {handle: 'pushNotifications', type: 'li-push-notifications'}
+]
 ```
 
 With this in place you can set the project configuration for your push notification topics \(see example config above\) and the firebase configuration in the [server config]({{< ref "/reference-docs/server-extensions/server-configuration#push-notifications" >}}).
@@ -404,18 +432,20 @@ Extend the text formatting toolbar with custom configured elements. The elements
 
 Example:
 ```js
- customElements: [{
-      label: 'blue color',
-      handle: 'bluecolor',
-      // if trim is set to true, whitespaces on the left and right of the selection are removed
-      trim: true,
-      // the tag which is set around the selection
-      tagName: 'span',
-      // the icon which will be displayed. Only existing icons in the editor can be used.
-      icon: 'format-color-highlight',
-      // the attributes which are set on the tag
-      attributes: [{name: 'class', value: 'blue'}]
-    }]
+customElements: [
+  {
+    label: 'blue color',
+    handle: 'bluecolor',
+    // if trim is set to true, whitespaces on the left and right of the selection are removed
+    trim: true,
+    // the tag which is set around the selection
+    tagName: 'span',
+    // the icon which will be displayed. Only existing icons in the editor can be used.
+    icon: 'format-color-highlight',
+    // the attributes which are set on the tag
+    attributes: [{name: 'class', value: 'blue'}]
+  }
+]
 ```
 
 Following attribute types can be added to a customElement:
@@ -432,11 +462,13 @@ Following attribute types can be added to a customElement:
     handle: 'authorlink',
     tagName: 'span',
     icon: 'file-link',
-    attributes: [{
-      handle: 'documentref',
-      type: 'li-reference',
-      config: {referenceType: 'document', contentType: 'author'}
-    }]
+    attributes: [
+      {
+        handle: 'documentref',
+        type: 'li-reference',
+        config: {referenceType: 'document', contentType: 'author'}
+      }
+    ]
   }
   ```
 - li-enum
@@ -472,11 +504,13 @@ Following attribute types can be added to a customElement:
     handle: 'input',
     tagName: 'span',
     icon: 'format-color-highlight',
-    attributes: [{
-      handle: 'input',
-      type: 'li-text',
-      name: 'data-input'
-    }]
+    attributes: [
+      {
+        handle: 'input',
+        type: 'li-text',
+        name: 'data-input'
+      }
+    ]
   }
   ```
 

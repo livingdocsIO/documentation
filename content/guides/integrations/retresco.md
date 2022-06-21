@@ -71,16 +71,9 @@ You will need to add the metadata plugin for all content types that you would li
 
 ```js
 {
-  // ...
   metadata: [
-    // ...
-    {
-      handle: 'retresco',
-      type: 'li-retresco'
-    }
-    // ...
+    {handle: 'retresco', type: 'li-retresco'}
   ]
-  // ...
 }
 ```
 
@@ -99,13 +92,15 @@ The Retresco entities will be stored in the document's metadata using the metada
 ```js
 {
   contentVersion: '1006.2', // <revision-id>.<revision-version>
-  entities: [{
-    id: '3f9d52ff1f8c660174c0ac44d141cc71e5de0569',
-    name: 'Zürich',
-    type: 'location',
-    score: 16.924834941594718, // Only when not user-added
-    userAdded: false,
-    inappropriate: false, // Entity removed (but still visible in the UI with strikethrough)
-  }]
+  entities: [
+    {
+      id: '3f9d52ff1f8c660174c0ac44d141cc71e5de0569',
+      name: 'Zürich',
+      type: 'location',
+      score: 16.924834941594718, // Only when not user-added
+      userAdded: false,
+      inappropriate: false, // Entity removed (but still visible in the UI with strikethrough)
+    }
+  ]
 }
 ```

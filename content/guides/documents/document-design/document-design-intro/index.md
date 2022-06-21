@@ -31,11 +31,13 @@ module.exports = {
   name: 'header',
   label: 'Header',
   iconUrl: 'https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-icons/icon_component_header_and_image.svg',
-  directives: [{
-    name: 'image',
-    type: 'image',
-    imageRatios: ['16:9', '4:3']
-  }],
+  directives: [
+    {
+      name: 'image',
+      type: 'image',
+      imageRatios: ['16:9', '4:3']
+    }
+  ],
   html: dedent`
   <div>
     <h2 doc-editable="title">
@@ -81,12 +83,10 @@ Now that we have a new component we want to add it to newly created articles by 
 
 Navigate to the content-type file `article.js` and add the following JSON just after `components`.
 ```js
-defaultContent: [{
-  component: 'header',
-  position: 'fixed'
-}, {
-  component: 'paragraph'
-}],
+defaultContent: [
+  {component: 'header', position: 'fixed'},
+  {component: 'paragraph'}
+],
 ```
 
 Again, restart your server. In case of success you will see a line on the CLI like this:
