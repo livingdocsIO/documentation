@@ -347,7 +347,7 @@ References:
 
 ### Removed support for defaultContent in Design Config v1 :fire:
 
-:fire: Because we changed interally the approach how to create a new document, we got rid of the support for `designV1.defaultContent` and `designV1.layouts[].defaultContent`. Please move the declaration of `defaultContent` into the Project Config `contentType.defaultContent`.
+:fire: Because we changed interally the approach how to create a new document, we removed support for `designV1.defaultContent` and `designV1.layouts[].defaultContent`. Please move the declaration of `defaultContent` into the Project Config `contentType.defaultContent`.
 
 References:
 - [Documentation](https://docs.livingdocs.io/reference-docs/document/document-design/legacy-design/design-config-v1-to-v2/)
