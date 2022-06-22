@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: External Systems [livingdocs-server #4548 v186.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4548)
 * :new: Remove unused shell-only upload [livingdocs-editor #5471 v80.30.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5471)
 * :new: Chore/Post Project-Setup-Removal Cleaning [livingdocs-editor #5494 v80.30.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5494)
 * :new: improve UI behavior when toggling sidepanels [livingdocs-editor #5495 v80.30.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5495)
