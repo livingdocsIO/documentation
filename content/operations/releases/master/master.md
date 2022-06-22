@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Remove option to use comyan images in media library [livingdocs-server #4562 v188.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4562)
 * :new: visiblePublicationDate & significantPublicationDate [livingdocs-server #4555 v187.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4555)
 * :new: feat(publish-control-embargo): auto refresh when embargo has expired [livingdocs-editor #5500 v80.32.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5500)
 * :new: Links to an External System [livingdocs-editor #5443 v80.31.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5443)
