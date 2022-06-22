@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(publish-control-embargo): auto refresh when embargo has expired [livingdocs-editor #5500 v80.32.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5500)
 * :new: Links to an External System [livingdocs-editor #5443 v80.31.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5443)
 * :new: External Systems [livingdocs-server #4548 v186.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4548)
 * :new: Remove unused shell-only upload [livingdocs-editor #5471 v80.30.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5471)
