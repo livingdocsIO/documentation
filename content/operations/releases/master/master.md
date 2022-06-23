@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: 🐞 Pass the expected Access Hook params on Document Creation [livingdocs-server #4565 v188.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4565)
 * :new: feat(publish-control-embargo): expect and translate api errors by code [livingdocs-editor #5503 v80.33.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5503)
 * :new: Remove option to use comyan images in media library [livingdocs-server #4562 v188.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4562)
 * :new: visiblePublicationDate & significantPublicationDate [livingdocs-server #4555 v187.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4555)
