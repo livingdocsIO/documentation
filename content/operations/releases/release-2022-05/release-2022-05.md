@@ -512,6 +512,7 @@ References:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v179.3.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.27): fix: fix access control hook on document creation
 - [v179.3.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.26): refactor: remove unnecessary params spreading
 - [v179.3.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.25): fix(cut and paste): Does not affect undo
 - [v179.3.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.24): fix(framework): Bumped to 23.1.12
