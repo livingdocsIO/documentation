@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: 🐞 Prevent image download when GoogleVision is disabled [livingdocs-server #4567 v188.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4567)
 * :new: Improvement/Block Icons pt.6 [livingdocs-editor #5499 v80.33.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5499)
 * :new: 🐞 Pass the expected Access Hook params on Document Creation [livingdocs-server #4565 v188.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4565)
 * :new: feat(publish-control-embargo): expect and translate api errors by code [livingdocs-editor #5503 v80.33.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5503)
