@@ -27,144 +27,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* :new: 🐞 Prevent image download when GoogleVision is disabled [livingdocs-server #4567 v188.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4567)
-* :new: Improvement/Block Icons pt.6 [livingdocs-editor #5499 v80.33.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5499)
-* :new: 🐞 Pass the expected Access Hook params on Document Creation [livingdocs-server #4565 v188.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4565)
-* :new: feat(publish-control-embargo): expect and translate api errors by code [livingdocs-editor #5503 v80.33.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5503)
-* :new: Remove option to use comyan images in media library [livingdocs-server #4562 v188.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4562)
-* :new: visiblePublicationDate & significantPublicationDate [livingdocs-server #4555 v187.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4555)
-* :new: feat(publish-control-embargo): auto refresh when embargo has expired [livingdocs-editor #5500 v80.32.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5500)
-* :new: Links to an External System [livingdocs-editor #5443 v80.31.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5443)
-* :new: External Systems [livingdocs-server #4548 v186.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4548)
-* :new: Remove unused shell-only upload [livingdocs-editor #5471 v80.30.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5471)
-* :new: Chore/Post Project-Setup-Removal Cleaning [livingdocs-editor #5494 v80.30.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5494)
-* :new: improve UI behavior when toggling sidepanels [livingdocs-editor #5495 v80.30.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5495)
-* :new: ♻️ Example Server: Make example-server configs easier to copy [livingdocs-server #4557 v186.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4557)
-* :new: feat(publish-control-significant-update): implement significant update checkbox and show publication date [livingdocs-editor #5442 v80.30.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5442)
-* :new: feat(metadata-forms): hide empty metadata form cards [livingdocs-editor #5492 v80.29.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5492)
-* :new: fix(cut and paste): Does not affect undo [livingdocs-editor #5486 v80.28.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5486)
-* :new: Improvement/Block Icons pt.5 [livingdocs-editor #5487 v80.28.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5487)
-* :new: Feat publish control embargo improvements [livingdocs-editor #5479 v80.28.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5479)
-* :new: fix(dependabot): disable dependency update for release branches (only security updates enabled) [livingdocs-editor #5475 v80.27.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5475)
-* :new: fix(integrations): existing pictures are not imported multiple times from hugo [livingdocs-server #4554 v186.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4554)
-* :new: fix(security): vue warning printing secret in console [livingdocs-editor #5480 v80.27.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5480)
-* :new: fix(frameworkBump): 23.3.2 [livingdocs-editor #5476 v80.27.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5476)
-* :new: fix(frameworkBump): 23.3.2 [livingdocs-server #4551 v186.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4551)
-* :new: Fix/Side Panel Spacing [livingdocs-editor #5460 v80.27.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5460)
-* :new: Show revoked images on the MediaLibrary Dashboard [livingdocs-server #4534 v186.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4534)
-* :new: table dashboard config resilience [livingdocs-editor #5434 v80.26.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5434)
-* :new: chore(deps): bump css-loader from 6.2.0 to 6.7.1 [livingdocs-editor #5454 v80.26.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5454)
-* :new: Comyan image usage [livingdocs-server #4545 v186.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4545)
-* :new: test(dependabot): test dependabot for release-2022-XX branches [livingdocs-editor #5458 v80.26.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5458)
-* :new: Fix/Docked Navigation [livingdocs-editor #5448 v80.26.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5448)
-* :new: feat(dependabot): Add dependabot configuration to repository [livingdocs-editor #5452 v80.26.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5452)
-* :new: Metadata: ensure UI update after async selection service returns [livingdocs-editor #5445 v80.25.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5445)
-* :new: feat(publish-control-embargo): disable form [livingdocs-editor #5435 v80.25.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5435)
-* :new: Create media library entry for comyan in editor [livingdocs-server #4546 v186.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4546)
-* :new: feat: Add reference to link-directive. [livingdocs-editor #5323 v80.25.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5323)
-* :new: feat: Add schema for link-directive. [livingdocs-server #4496 v186.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4496)
-* :new: Fix/Various Small Fixes [livingdocs-editor #5441 v80.24.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5441)
-* :new: fix: improve reactivity for live changes by other users [livingdocs-editor #5436 v80.24.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5436)
-* :new: improvement(async linting): Add async linting to project [livingdocs-editor #5428 v80.24.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5428)
-* :new: improvement(async linting): Add async linting to project [livingdocs-server #4540 v186.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4540)
-* :new: 🔥 Remove beta incoming references [livingdocs-server #4544 v186.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4544)
-* :new: feat(publish-control-significant-update) UI component base structure and code refactoring [livingdocs-editor #5429 v80.24.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5429)
-* :new: fix(dashboards): show create document on table dashboards [livingdocs-editor #5432 v80.23.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5432)
-* :new: fix: custom elements on formatting toolbar [livingdocs-editor #5415 v80.23.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5415)
-* :new: fix(allow no multiselection): behaviour for multiselect configurable [livingdocs-editor #5416 v80.23.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5416)
-* :new: 🔥 Drop Postgres10 support [livingdocs-server #4541 v185.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4541)
-* :new: feat(publish-control-enbargo): Collapsible Section and Sync Status [livingdocs-editor #5422 v80.23.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5422)
-* :new: feat(editor): viewAfterDocumentCreation 'metadata' support [livingdocs-editor #5424 v80.22.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5424)
-* :new: View after document creation [livingdocs-server #4539 v184.5.0](https://github.com/livingdocsIO/livingdocs-server/pull/4539)
-* :new: fix(dependencies): update vulnerable version of karma [livingdocs-editor #5425 v80.21.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5425)
-* :new: feat(publish-control-embargo): UX improvements [livingdocs-editor #5417 v80.21.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5417)
-* :new: fix(isPublished): Publish screen no longer says 'unpublished' when scheduled [livingdocs-editor #5418 v80.20.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5418)
-* :new: fix(i18n): apply proposed change from '{$t(...)}' to '{{ $t(...) }}' [livingdocs-editor #5419 v80.20.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5419)
-* :new: fix(targetLength): Don’t allow negative values [livingdocs-editor #5411 v80.20.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5411)
-* :new: feat(publish control):  embargo date validation [livingdocs-editor #5413 v80.20.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5413)
-* :new: Desk-Net tests and error handling improvements [livingdocs-server #4456 v184.4.1](https://github.com/livingdocsIO/livingdocs-server/pull/4456)
-* :new: Document Drag & Drop: Add Document Dashboard to Editing Toolbar [livingdocs-editor #5405 v80.19.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5405)
-* :new: Document Editing Toolbar: config for document teaser dashboards [livingdocs-server #4525 v184.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4525)
-* :new: Archive Asset via Public API [livingdocs-server #4532 v184.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4532)
-* :new: feat(publish-control): add embargo [livingdocs-editor #5364 v80.18.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5364)
-* :new: fix: update Upload button status when the upload is cancelled [livingdocs-editor #5381 v80.17.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5381)
-* :new: feat(print): Expose Desk-Net metadata in print export [livingdocs-server #4526 v184.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4526)
-* :new: Link Tool: Show original URL instead of redirect target in website info [livingdocs-editor #5406 v80.17.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5406)
-* :new: Dashboards: only allow dragging cards if document export is configured [livingdocs-editor #5404 v80.17.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5404)
-* :new: Publish Control: embargo [livingdocs-server #4523 v184.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4523)
-* :new: fix(Reverted comment deletion) [livingdocs-editor #5401 v80.17.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5401)
-* :new: fix(comments): Comments without components no longer break [livingdocs-editor #5397 v80.17.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5397)
-* :new: add custom-field desk-net api [livingdocs-server #4517 v184.1.6](https://github.com/livingdocsIO/livingdocs-server/pull/4517)
-* :new: feat(media library): Add id search tooltip [livingdocs-editor #5389 v80.17.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5389)
-* :new: fix(softLock): Soft lock object can be empty [livingdocs-editor #5394 v80.16.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5394)
-* :new: fix(noComments): Allow component deletion without comments [livingdocs-editor #5391 v80.16.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5391)
-* :new: Component Max Length validation not working [livingdocs-server #4511 v184.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4511)
-* :new: 🐞Dashboards: correctly apply useDashboard from li-document-reference ui.config [livingdocs-editor #5383 v80.16.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5383)
-* :new: Dashboards for include references [livingdocs-server #4515 v184.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/4515)
-* :new: feat: hide empty metadata form navigation [livingdocs-editor #5385 v80.16.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5385)
-* :new: Improvement/Block Icons pt.4 [livingdocs-editor #5382 v80.15.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5382)
-* :new: fix: add reactivity for remoteDocument [livingdocs-editor #5380 v80.15.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5380)
-* :new: Support Elasticsearch v8, redis v7, node v18 [livingdocs-server #4512 v184.1.3](https://github.com/livingdocsIO/livingdocs-server/pull/4512)
-* :new: Dashboards: Ignore documentType filter when contentType filter present [livingdocs-editor #5368 v80.15.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5368)
-* :new: Improve metadata form [livingdocs-editor #5249 v80.15.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5249)
-* :new: Table dashboard document id search [livingdocs-editor #5347 v80.15.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5347)
-* :new: fix(FrameworkVersion): bump to 23.2.5 [livingdocs-editor #5374 v80.14.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5374)
-* :new: fix(FrameworkVersion): bump to 23.2.5 [livingdocs-server #4510 v184.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4510)
-* :new: fix: tag proxy suggestion [livingdocs-editor #5372 v80.14.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5372)
-* :new: fix: bump framework to version 23.2.4 [livingdocs-server #4506 v184.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4506)
-* :new: fix: bump framework to version 23.2.4 [livingdocs-editor #5365 v80.14.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5365)
-* :new: fix: move clipboard `metakey` deselection on `mousedown` [livingdocs-editor #5310 v80.14.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5310)
-* :new: Feat/Collapse Indicator [livingdocs-editor #5343 v80.14.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5343)
-* :new: Remove Component Library and ContentType config UI [livingdocs-editor #5342 v80.13.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5342)
-* :new: Remove Component Library and ContentType config UI [livingdocs-server #4502 v184.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4502)
-* :new: fix: close opened flyouts when the back button is clicked [livingdocs-editor #5361 v80.12.13](https://github.com/livingdocsIO/livingdocs-editor/pull/5361)
-* :new: fix: remove flyout backdrop logic from the toolbar [livingdocs-editor #5312 v80.12.12](https://github.com/livingdocsIO/livingdocs-editor/pull/5312)
-* :new: fix: remove targetLength when it is set to nothing. [livingdocs-editor #5352 v80.12.11](https://github.com/livingdocsIO/livingdocs-editor/pull/5352)
-* :new: Draft: ensure remoteDocument reactive state is up to date [livingdocs-editor #5354 v80.12.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5354)
-* :new: Fix desknet update function [livingdocs-server #4452 v184.0.6](https://github.com/livingdocsIO/livingdocs-server/pull/4452)
-* :new: fix(responsive): Now fits inside page always [livingdocs-editor #5315 v80.12.9](https://github.com/livingdocsIO/livingdocs-editor/pull/5315)
-* :new: Comments fix [livingdocs-editor #5153 v80.12.8](https://github.com/livingdocsIO/livingdocs-editor/pull/5153)
-* :new: Fix import when `untouched` behavior [livingdocs-server #4492 v184.0.5](https://github.com/livingdocsIO/livingdocs-server/pull/4492)
-* :new: 🐞  Metadata: Properly pass documentId to getDataProvider [livingdocs-editor #5337 v80.12.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5337)
-* :new: Legacy dashboard: Make Cmd/Ctrl + click work again to open documents in new tab [livingdocs-editor #5293 v80.12.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5293)
-* :new: Improvement/li-Switch [livingdocs-editor #5324 v80.12.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5324)
-* :new: fix(main-navigation): Allow loading when user has no project [livingdocs-editor #5333 v80.12.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5333)
-* :new: fix(softLock): Soft Lock not disabled by entering publish screen [livingdocs-editor #5322 v80.12.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5322)
-* :new: Enter key submits li-schema-form [livingdocs-editor #5332 v80.12.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5332)
-* :new: 🎁  Use project config design when not passing infos to the import [livingdocs-server #4495 v184.0.4](https://github.com/livingdocsIO/livingdocs-server/pull/4495)
-* :new: fix: don't initialize delivery links on content type initialization [livingdocs-editor #5314 v80.12.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5314)
-* :new: fix: camelize project columns returned from database [livingdocs-server #4489 v184.0.3](https://github.com/livingdocsIO/livingdocs-server/pull/4489)
-* :new: Table dashboard drag+drop [livingdocs-editor #5313 v80.12.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5313)
-* :new: 🐞 Import: Unpublish document by externalId [livingdocs-server #4488 v184.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4488)
-* :new: 🐞 ImportLog: Show 'unpublished' in import log [livingdocs-editor #5318 v80.11.13](https://github.com/livingdocsIO/livingdocs-editor/pull/5318)
-* :new: 🐞 Public API: allows to unpublish a document via import [livingdocs-server #4485 v184.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4485)
-* :new: 🔥 Remove support for core plugin whitelist [livingdocs-server #4484 v184.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4484)
-* :new: Better feedback on metadata plugin registration [livingdocs-server #4483 v183.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4483)
-* :new: 🐞 Project Config: load an old designConfig with correct designVersion for an embedded design [livingdocs-server #4479 v182.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4479)
-
-
-
-
-
-
-
-* :new: fix(quoteIcons): now grey and blue [livingdocs-editor #5268 v80.11.12](https://github.com/livingdocsIO/livingdocs-editor/pull/5268)
-* :new: Use an explicit Postgres schema during database migrations [livingdocs-server #4457 v182.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4457)
-* :new: 🐞 Add support for common metadata property `hideFromForm` in Schemas [livingdocs-server #4469 v181.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4469)
-* :new: Error Pointer: Replace array number with handle|name|label|plugin|type [livingdocs-server #4462 v181.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4462)
-* :new: Fix publish control producer [livingdocs-server #4466 v181.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4466)
-* :new: Desk-Net tests and error handling improvements [livingdocs-editor #5302 v80.11.11](https://github.com/livingdocsIO/livingdocs-editor/pull/5302)
-* :new: fix(softLock): Now correctly spaced [livingdocs-editor #5301 v80.11.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5301)
-
-
-Features
-* [Allow formatting of log levels as strings](https://github.com/livingdocsIO/livingdocs-server/pull/4458)
-
-Improvement
-* [Better Validation Errors for Schemas with Discriminator Schema](https://github.com/livingdocsIO/livingdocs-server/pull/4473)
-
-
-
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -178,6 +40,8 @@ Improvement
 * Release Newsletter Subscription: **TODO**
 
 ## System Requirements
+
+TODO: check if this list is still true
 
 ### Suggested
 |Name|Version|
@@ -206,28 +70,111 @@ Improvement
 
 ## Highlights
 
-### Microsoft Teams Integration
+### Publish Control - Iteration 2
 
-TODO: Is this a highlight? Is the feature ready? Is the feature documented?
+TODO: add a description
 
-* [Microsoft Teams Integration](https://github.com/livingdocsIO/livingdocs-server/pull/4408)
+Consult the [Guide on «Publish Control»]({{< ref "/guides/editor/publish-control" >}}) to learn how to configure this feature.
+
+* [Guide](https://docs.livingdocs.io/guides/editor/publish-control/)
+* [PR: Significant Update](https://github.com/livingdocsIO/livingdocs-editor/pull/5429)
+* [PR: Embargo](https://github.com/livingdocsIO/livingdocs-editor/pull/5364)
+* [PR: Embargo date validation](https://github.com/livingdocsIO/livingdocs-editor/pull/5413)
+* [PR: Embargo Collapsible Section and Sync Status](https://github.com/livingdocsIO/livingdocs-editor/pull/5422)
+* [PR: Translate API errors by code](https://github.com/livingdocsIO/livingdocs-editor/pull/5503)
+* [PR: visiblePublicationDate & significantPublicationDate](https://github.com/livingdocsIO/livingdocs-server/pull/4555)
+* [PR: auto refresh UI when embargo has expired](https://github.com/livingdocsIO/livingdocs-editor/pull/5500)
+
+### Drag + Drop of Document Teasers
+
+TODO: add description + guide
+
+
+### Dashboard Improvements
+
+Currently we are working hard on the improvement of Dashboards. Here you have a list of changes:
+
+**Table Dashboard**
+* [Drag + Drop](https://github.com/livingdocsIO/livingdocs-editor/pull/5313)
+* [Document ID search](https://github.com/livingdocsIO/livingdocs-editor/pull/5347)
+
+**Media Library Dashboard**
+* [Media ID search](https://github.com/livingdocsIO/livingdocs-editor/pull/5389)
+* [Show revoked images](https://github.com/livingdocsIO/livingdocs-server/pull/4534)
+
+**Includes**
+* [Define Dashboards for Include References](https://github.com/livingdocsIO/livingdocs-server/pull/4515)
+
+**Document Editing Toolbar**
+* [Document Teaser Dashboards: Config for Dashboards in Document Editing Toolbar](https://github.com/livingdocsIO/livingdocs-server/pull/4525)
+
+# External Systems
+
+External Systems define a relation to a source system. Usually this is used when an old CMS imports articles to Livingdocs.
+This first version provides links to the source system via the Table Dashboard action menu.
+
+* [Documentation External Systems](https://docs.livingdocs.io/reference-docs/project-config/external-systems/)
+* [Documentation Metadata Plugin li-external-id](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-external-id)
+* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5443)
+* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4548)
+
+## Comyan Integration
+
+We did a few important step to make the Comyan integration better.
+
+- Added a [Guide TODO]() how to integrate Comyan
+- Improved Security
+- Use the JSON API from Comyan instead of XML (better handling of special characters)
+- Improved asset duplication check
+- Image usage report to Comyan
+
+* [Guide TODO]()
+* [PR: Use JSON format](https://github.com/livingdocsIO/livingdocs-server/pull/4546)
+* [PR: Use MediaLibraryEntry model in the editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5439)
+* [PR: Move Comyan secure request to server](https://github.com/livingdocsIO/livingdocs-server/pull/4426)
+* [PR: Image usage report](https://github.com/livingdocsIO/livingdocs-server/pull/4545)
+
+### Desk Net Publication Status Sync
+
+TODO: add description + guide
+
+* [PR: Categories and Publications are mapped correctly](https://github.com/livingdocsIO/livingdocs-server/pull/4517)
+* [PR: Better error handling on server](https://github.com/livingdocsIO/livingdocs-server/pull/4456)
+* [PR: Better error handling on editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5302)
+* [PR: Fix update function](https://github.com/livingdocsIO/livingdocs-server/pull/4452)
+
+### Directive doc-link uses new link UI
+
+TODO: add a description
+
+* [PR: New UI for doc-link directive](https://github.com/livingdocsIO/livingdocs-editor/pull/5323)
+
+* [PR: Add Document Dashboard to Editing Toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/5405)
 
 ## Breaking Changes :fire:
 
 ### Migrate the database :fire:
+
+TODO: update migrations
 
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database scheme
 livingdocs-server migrate up
 ```
 
-### Metadata Plugins: Add configSchema and uiSchema Validation :fire:
+### Drop Postgres 10 support :fire:
 
-We added 2 properties `configSchema` and `uiSchema` to a metadata plugin where one can define a schema validation. If you want to know more about the motivation and a fallback (`metadataPluginsToIgnoreForConfigValidation`), you get some insights [here](https://github.com/livingdocsIO/livingdocs-server/pull/4296).
+🔥 Drop Postgres 10 support
+
+* [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4541)
+
+### Remove Component Library and ContentType config UI :fire:
+
+:fire: The possibility to view edit components and content-types and their metadata is removed from the Project Config UI in the editor.
+This feature hasn't been used by customers in production for a while, and it was badly maintained. We want to invest more into the CLI instead.
 
 References:
-- [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
-- [li-integer PR](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-integer)
+- [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5342)
 
 ### Remove Several Server Configs :fire:
 
@@ -240,9 +187,143 @@ References:
 References:
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4455)
 
+### Change DB config preference :fire:
+
+🔥 Change db preference of server config - `db.*` configs override `db.connectionString` values
+
+References:
+- [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4457)
+
+### Remove option to use comyan images in media library :fire:
+
+Initially, we implemented the option to have a media library entry that points to an external comyan image without uploading the image in Livingdocs. Since no customers is using this and we don't want to use the media library this way, we remove the option.
+
+:fire: The Project Config flag `settings.integrations.comyan.uploadImagesFromComyan` has been removed. If you have this set to `true` you can just remove it, no change in behavior will result. If you have this set to `false` please contact us as the option is not supported anymore.
+
+References:
+- [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4562)
+
+### Remove Deprecated Incoming References from public API (beta endpoints) :fire:
+
+🔥 Remove `incoming*References` endpoints that have moved to `/api/v1/*` from `/api/beta/*`.
+
+- 🔥 Remove beta endpoint `/api/beta/documents/:documentID/incomingDocumentReferences`
+- 🔥 Remove beta endpoint `/api/beta/documents/:id/incomingMediaReferences`
+- 🔥 Remove beta endpoint `/api/beta/mediaLibrary/:mediaId/incomingDocumentReferences`
+- 🔥 Remove beta endpoint `/api/beta/mediaLibrary/:mediaId/incomingMediaReferences`
+
+- [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4544)
+
+### Remove deprecated publicationApi functions :fire:
+
+- :fire: Remove `publicationApi.getLatestPublications`.
+  Please migrate to `publicationApi.getLatestPublicationsV2`.
+    Here's the exact implementation of the old logic using the new function:
+    ```js
+    async function getLatestPublications ({
+      offset, limit,
+      project_id, // eslint-disable-line
+      projectId = project_id,
+      channelId
+    }) {
+      if (limit > 100) {
+        throw validationError('getLatestPublications: maximum limit is 100')
+      }
+
+      const documentVersions = await publicationApi.getLatestPublicationsV2({
+        projectId,
+        channelId,
+        offset,
+        limit: limit || 100,
+        sort: ['publishedAt', 'desc']
+      })
+
+      return {documentVersions}
+    }
+    ```
+- :fire: Remove `publicationApi.getPublicationsByDate`.
+  Please migrate to `publicationApi.getLatestPublicationsV2`.
+
+  Here's the exact implementation of the old logic using the new function:
+  ```js
+  function getPublicationsByDate ({projectId, createdAt, limit, offset}) {
+    if (!projectId) throw validationError(`The parameter projectId is required.`)
+
+    return publicationApi.getLatestPublicationsV2({
+      projectId,
+      limit,
+      offset,
+      documentType: 'article',
+      publishedAt: createdAt,
+      sort: ['publishedAt', 'desc']
+    })
+  }
+  ```
+
+References:
+- [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4555)
+
+### Metadata Plugins: Add configSchema and uiSchema Validation :fire:
+
+We added 2 properties `configSchema` and `uiSchema` to a metadata plugin where one can define a schema validation. If you want to know more about the motivation and a fallback (`metadataPluginsToIgnoreForConfigValidation`), you get some insights [here](https://github.com/livingdocsIO/livingdocs-server/pull/4296).
+
+References:
+- [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
+- [li-integer PR](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-integer)
+
+### Error on Metadata Plugin registration :fire:
+
+🔥 When registering a metadata plugin twice, you get now an error message (before, the second plugin was ignored, which lead to confusion).
+
+References:
+- [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4483)
+
+### Remove Core Plugin Whitelist :fire:
+
+🔥 Server config `documents.metadata.corePluginWhitelist` removed. Core metadata plugins can not be whitelisted anymore. All plugins are loaded.
+
+References:
+- [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4484)
+
+### Design Class Updates :fire:
+
+:fire: renamed `.ld-switch` to `.li-switch`
+:fire: The <input> element no longer requires the class `ld-switch__toggle`
+
+Should you have any switch buttons in your downstream, update your markup according to the changes mentioned above.
+
+References:
+- [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5324)
+
+### Design Cleaning :fire:
+
+After removing the whole Project Setup from Livingdocs some cleaning was necessary. No longer needed CSS had to go. At the same time some underused or generally unused CSS also was removed.
+
+**The following CSS classes have been deleted:**
+`.api-client-item__name`, `.api-client-item__scopes`, `.ld-application-menu__button`, `.ld-article-panel--alternative-bg`, `.ld-article-panel--styleguide`, `.ld-burst--half`, `.ld-burst--slim`, `.ld-burst--negative-sides`, `.ld-comp-crumbs` and BEM children, `.ld-component-list--thirds`, `.ld-component-list--halves`, `.ld-component-list__action--hover`, `.ld-component-list__item--highlight`, `.ld-component-list__item--new`, `.service-turned-off`, `.ld-document-filter`, `.ld-drop-zone` and BEM children, `.ld-legend`, `.ld-metadata-panel` and modifiers as well as BEM children, `.ld-navigation`, `.ld-panel__header__title--has-action`, `.ld-panel__header__title-action`, `.violation-item`, `.monaco-iframe-container`, `.ld-box`, `.ld-user-archived`, `.configuration-section`, `.service-turned-off`, `.configuration-section--last`, `.ld-splash`, `.ld-page__header`, `.ld-page__title`, `.ld-page--narrow-centered`, `.ld-arrange` and modifiers as well as BEM children, `.ld-card--flat-bare`, `.ld-card--bare`, `.ld-circle`, `.li-droplist-entry--tabs`, `.ld-article-list-panel`, `.ld-document-state-icon` and modifiers as well as BEM children, `.li-tab`and modifiers, `.ld-media-edit-image`
+
+**Required Actions**
+You are highly encouraged to update your markup if you should be using any of the deleted or renamed classes. In order to ease that process, there is a file you can `@import` in your custom SCSS to get support for the mentioned classes and variables:
+In the SCSS file you have configured as `CUSTOM_STYLE_PATH_BEFORE` or `CUSTOM_STYLE_PATH_AFTER` add this line at the top:
+```sass
+@import "~styles/backwards-compatibility/release-2022-07.scss";
+```
+This will define the removed classes within your SCSS file tree. Your custom UI will most probably look just fine. From there on you can refactor your code and remove the `@import "~styles/backwards-compatibility/release-2022-07.scss";` after you are done. We will keep this file around for some time, but it will eventually get removed. If you have any questions about this, don't hesitate to contact us.
+
+References:
+- [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5494)
+
+
 ## Deprecations
 
 ## APIs :gift:
+
+### Archive Asset via Public API
+
+Allows the patch operation `archive` via public API to archive an asset.
+
+* [Documentation](https://docs.livingdocs.io/reference-docs/public-api/media-library/)
+* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4532)
 
 ### Unpublish Document via Public API
 
@@ -254,12 +335,33 @@ References:
 ### Security
 
 ### Design
+* [Collapse Indicator](https://github.com/livingdocsIO/livingdocs-editor/pull/5343)
+* [Design Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/5382)
+* [Design Improvements II](https://github.com/livingdocsIO/livingdocs-editor/pull/5441)
 
 ### Features
+* [Metadata View: Groups are now shown in separate and collapsible cards](https://github.com/livingdocsIO/livingdocs-editor/pull/5249)
+* [Allow formatting of log levels as strings](https://github.com/livingdocsIO/livingdocs-server/pull/4458)
+* [Add 'metadata' option for viewAfterDocumentCreation setting](https://github.com/livingdocsIO/livingdocs-editor/pull/5424)
 
 ### Improvements
+* [Import: Use Project Config design when not passing infos to the import](https://github.com/livingdocsIO/livingdocs-server/pull/4495)
+* [Link Tool: Show original URL instead of redirect target in website info](https://github.com/livingdocsIO/livingdocs-editor/pull/5406)
+* [Config Feedback: Project Config: Human readable error pointer](https://github.com/livingdocsIO/livingdocs-server/pull/4462)
+* [Config Feedback: Improved feedback on Metadata Plugin registration](https://github.com/livingdocsIO/livingdocs-server/pull/4483)
+* [Better Validation Errors for Schemas with Discriminator Schema](https://github.com/livingdocsIO/livingdocs-server/pull/4473)
 
 ### Bugfixes
+* [Prevent image download when GoogleVision is disabled](https://github.com/livingdocsIO/livingdocs-server/pull/4567)
+* [Fix Cut and Paste](https://github.com/livingdocsIO/livingdocs-editor/pull/5476)
+* [Document Soft Lock not disabled by entering Publish View](https://github.com/livingdocsIO/livingdocs-editor/pull/5322)
+* [Document Soft Lock: An empty Softlock does not change publish behavior anymore](https://github.com/livingdocsIO/livingdocs-editor/pull/5394)
+* [Formatting Toolbar: Don't show custom elements when editable is on plainText mode.](https://github.com/livingdocsIO/livingdocs-editor/pull/5415)
+* [Allow loading of main navigation (and whole UI) when user has no project assigned](https://github.com/livingdocsIO/livingdocs-editor/pull/5333)
+* [Comments: Deleted with parent component | Multiple words not highlighted | Thread count is reactive](https://github.com/livingdocsIO/livingdocs-editor/pull/5153)
+* [Comments: Comments on previously deleted components no longer stop the editor from showing all the existing comments](https://github.com/livingdocsIO/livingdocs-editor/pull/5397)
+* [Dashboards: Ignore documentType filter when contentType filter present](https://github.com/livingdocsIO/livingdocs-editor/pull/5368)
+* [Update Upload button status when the upload is cancelled](https://github.com/livingdocsIO/livingdocs-editor/pull/5381)
 
 ## Patches
 
