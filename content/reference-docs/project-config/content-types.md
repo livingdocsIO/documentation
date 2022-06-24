@@ -131,8 +131,8 @@ contentTypes: [
     // you can't create documents with this content-type
     documentCreationDisabled: true, // default false
 
-    // either show 'edit' or 'publish' view after creating a document
-    viewAfterDocumentCreation: 'publish', // default is 'edit'
+    // defines where to go after creating a document
+    viewAfterDocumentCreation: 'publish'
 
     // Allows the current content type ("gallery") to accept
     // "regular" and "another-handle" documents into its inbox.
@@ -174,6 +174,20 @@ defaultMetadata: { // Added in: release-2022-05
   author: 'Mister X'
 }
 ```
+
+
+## viewAfterDocuments
+
+With `viewAfterDocumentCreation` you can define to which view you are redirected after a document has been created.
+
+```js
+viewAfterDocumentCreation: 'publish'
+}
+```
+
+- `publish` redirects to the 'publish view'
+- `edit` redirects to the 'editor view' (default)
+- `metadata` redirects to the 'metadata view'
 
 
 ## Editor Wrapper
