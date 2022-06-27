@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(cacheIdentifier): now defined [livingdocs-editor #5508 v80.33.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5508)
 * :new: Fix message typo in error message [livingdocs-server #4568 v188.0.3](https://github.com/livingdocsIO/livingdocs-server/pull/4568)
 * :new: fix(image drop): shows error alert when the drop position is not allowed [livingdocs-editor #5414 v80.33.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5414)
 
