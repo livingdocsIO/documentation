@@ -1,7 +1,7 @@
 ---
 title: Image Gallery
 description: Walkthrough of how to setup an image gallery and a gallery teaser
-weight: 12
+weight: 14
 ---
 
 ## Goal

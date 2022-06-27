@@ -1,7 +1,7 @@
 ---
 title: Icons
 description: All you need to know how one can use icons in Livingdocs
-weight: 14
+weight: 17
 ---
 
 ## Overview
