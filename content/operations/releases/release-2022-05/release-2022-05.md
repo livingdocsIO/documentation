@@ -528,6 +528,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.51): fix(cacheIdentifier): now defined
 - [v80.10.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.50): fix(editor): improve UI behavior when toggling sidepanels
 - [v80.10.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.49): fix(cut and paste): Does not affect undo
 - [v80.10.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.48): fix(framework): Bumped to 23.1.12
