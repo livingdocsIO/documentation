@@ -1,7 +1,7 @@
 ---
 title: Review Task
 description: Configure a review or any other task to cover collaboration workflows.
-weight: 10
+weight: 13
 ---
 
 This guide will show you how to add a custom `review` task. If you want to know how to add a custom proofreading tasks, you can read more [here]({{< ref "proofreading-task.md" >}})

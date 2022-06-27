@@ -1,7 +1,7 @@
 ---
 title: Push Notifications
 description: Setup push notifications with a custom dashboard item
-weight: 12
+weight: 15
 ---
 
 This guide explains 2 things:

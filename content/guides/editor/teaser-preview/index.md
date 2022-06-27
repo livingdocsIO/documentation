@@ -1,7 +1,7 @@
 ---
 title: Teaser Previews
 description: Show teaser previews in the prepare publish screen
-weight: 13
+weight: 16
 ---
 
 {{< img src="teaser-preview.gif" alt="Teaser Preview" >}}
