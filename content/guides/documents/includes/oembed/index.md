@@ -14,6 +14,13 @@ The oEmbed include service (`li-oembed-service`) allows users to embed content (
 - Twitter (`li-twitter`)
 - Vimeo (`li-vimeo`)
 - YouTube (`li-youtube`)
+- Podigee (`li-podigee`) {{< added-in release-2022-07 >}}
+- Datawrapper (`li-datawrapper`) {{< added-in release-2022-07 >}}
+- Spotify (`li-spotify`) {{< added-in release-2022-07 >}}
+- Instagram (`li-instagram`), ATTENTION: requires credentials {{< added-in release-2022-07 >}}
+- Facebook (`li-facebook-post`), ATTENTION: requires credentials {{< added-in release-2022-07 >}}
+
+A note on Facebook and Instagram: Meta is not allowing public access to oembed endpoints. You need to provide credentials of a valid Facebook App in order for this to work. In addition your facebook app also needs to undergo a review process for the Oembed Read permissions. See below for more information. 
 
 ## Server Configuration
 
@@ -190,3 +197,26 @@ module.exports = {
   `
 }
 ```
+
+## Facebook and Instagram (Meta)
+
+The company Meta is requiring a review process for all parties that want to embed their content using oEmbed. To get it running with Livingdocs, you will need to do the following:
+1. Create a Facebook App (if you don't already have one) on https://developers.facebook.com/
+2. In your Facebook App, navigate to "App Review" -> "Requests" and request a new review. Then select the "Oembed Read" permissions request and fill out all required data for the review. Plan in a couple of days for Meta to process your request.
+3. Once you have the permissions, you need to add the appId and secret to Livingdocs as follows:
+```
+oembed: {
+  credentials: {
+    facebook: {
+      clientId: 'your-client-id',
+      clientSecret: 'your-client-secret'
+    }
+  },
+  allowedCoreProviders: [{
+    name: 'li-instagram'
+  }, {
+    name: 'li-facebook-post'
+  }]
+}
+```
+
