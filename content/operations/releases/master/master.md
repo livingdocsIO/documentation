@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(link): Add $ref to link directive value [livingdocs-editor #5515 v80.35.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5515)
 * :new: Teaser Drag and Drop [livingdocs-server #4556 v188.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4556)
 * :new: 🐉 Dragon Drop [livingdocs-editor #5356 v80.35.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5356)
 * :new: feat(publish-control-edit-publication-date): connect API with UI to edit publication date [livingdocs-editor #5507 v80.34.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5507)
