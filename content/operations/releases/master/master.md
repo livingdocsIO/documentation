@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Meta oEmbeds (Instagram, Facebook) [livingdocs-server #4570 v188.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4570)
 * :new: fix(references): Use $ref when extracting doc-link references [livingdocs-server #4571 v188.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4571)
 * :new: fix(link): Add $ref to link directive value [livingdocs-editor #5515 v80.35.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5515)
 * :new: Teaser Drag and Drop [livingdocs-server #4556 v188.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4556)
