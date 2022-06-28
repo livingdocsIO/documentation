@@ -32,10 +32,10 @@ If you like to reset the visible publication when a significant update is made, 
   // ...
   publishControl: {
     visiblePublicationDateOverride: true, // default: false,
-    significantPublicationDate: true // default: false
-    resetVisiblePublicationDateOverrideOnSignificantUpdate: true // default: false
+    significantPublicationDate: true, // default: false
+    resetVisiblePublicationDateOverrideOnSignificantUpdate: true, // default: false
     visiblePublicationDatePreference: [
-      'publishControl.visiblePublicationDateOverride' // show visible publication override date (the date that is set when editing the date manually) if defined
+      'publishControl.visiblePublicationDateOverride', // show visible publication override date (the date that is set when editing the date manually) if defined
       'publishControl.significantPublicationDate', // fallback to significant publication date if defined
       'publishControl.firstPublicationDate' // fallback to first publication date
     ]
