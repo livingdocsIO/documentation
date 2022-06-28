@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: 🐉 Dragon Drop [livingdocs-editor #5356 v80.35.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5356)
 * :new: feat(publish-control-edit-publication-date): connect API with UI to edit publication date [livingdocs-editor #5507 v80.34.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5507)
 * :new: Publish Control: Implement `setVisiblePublicationDateOverride` and `resetVisiblePublicationDateOverrideOnSignificantUpdate` [livingdocs-server #4563 v188.0.4](https://github.com/livingdocsIO/livingdocs-server/pull/4563)
 * :new: fix(cacheIdentifier): now defined [livingdocs-editor #5508 v80.33.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5508)
