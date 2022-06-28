@@ -36,7 +36,7 @@ The preferences of which date is shown, can be configured with the help of the `
   publishControl: {
     visiblePublicationDateOverride: true, // default: false,
     visiblePublicationDatePreference: [
-      'publishControl.visiblePublicationDateOverride' // show visible publication override date (the date that is set when editing the date manually) if defined
+      'publishControl.visiblePublicationDateOverride', // show visible publication override date (the date that is set when editing the date manually) if defined
       'metadata.publicationDate', // fallback to metadata publication date (the date defined in a custom metadata field) if defined
       'publishControl.firstPublicationDate' // fallback to first publication date
     ]
