@@ -512,6 +512,7 @@ References:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v179.3.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.29): fix(hugo): Add `assetPath` hugo config
 - [v179.3.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.28): fix: do not download image when google vision is disabled
 - [v179.3.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.27): fix: fix access control hook on document creation
 - [v179.3.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.26): refactor: remove unnecessary params spreading
