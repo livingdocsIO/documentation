@@ -1,11 +1,11 @@
 ---
-title: Publish Control
+title: Publish Control Basics
 description: Publish, unpublish, scheduled publish, scheduled unpublish documents
 weight: 1
 ---
 ## Overview
 
-The «Publish Control» feature allows users to manage all things publishing and distribution of documents.
+The «Publish Control» feature allows users to manage the publication and distribution flow of documents.
 
 ## Configuration
 
@@ -20,7 +20,7 @@ In it's most basic form, Publish Control allows for immediate publish and unpubl
 }
 ```
 
-You can enable the single capabilities per content-type:
+You can enable the single capabilities per content-type, in this case Scheduled Publishing:
 
 ```js
 {

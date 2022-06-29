@@ -1,7 +1,7 @@
 ---
 title: Publication Embargo
 description: Add an embargo to prevent the publication of an article.
-weight: 10
+weight: 6
 ---
 
 This guide will show you how to set a publication embargo to prevent the publication of an article.

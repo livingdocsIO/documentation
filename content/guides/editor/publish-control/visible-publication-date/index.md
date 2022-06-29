@@ -1,7 +1,7 @@
 ---
-title: Publication Date
+title: Visible Publication Date
 description: View and edit the visible publication date.
-weight: 11
+weight: 5
 ---
 
 This guide will show you how to view and edit the visible publication date of an article. One can find the publication date in the lower section of the publication control panel.
@@ -40,6 +40,20 @@ The preferences of which date is shown, can be configured with the help of the `
       'metadata.publicationDate', // fallback to metadata publication date (the date defined in a custom metadata field) if defined
       'publishControl.firstPublicationDate' // fallback to first publication date
     ]
+  }
+}
+```
+
+### Access to visiblePublicationDate
+
+All APIs provide the `visiblePublicationDate` via `systemdata`, e.g.
+
+```JSON
+{
+  "systemdata": {
+    "documentId": 42,
+    "documentType": "article",
+    "visiblePublicationDate": "2022-06-27T07:32:01.977Z"
   }
 }
 ```
