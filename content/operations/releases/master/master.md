@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(hugo): Use configured hugo assetPath [livingdocs-editor #5522 v80.36.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5522)
 * :new: fix(hugo): Add `assetPath` hugo config [livingdocs-server #4575 v188.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4575)
 * :new: fix(liDateRangeFilter): documentPropertyName config supported [livingdocs-editor #5410 v80.36.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5410)
 * :new: add podigee oembed [livingdocs-server #4572 v188.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4572)
