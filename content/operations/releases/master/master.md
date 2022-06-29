@@ -324,7 +324,12 @@ This will define the removed classes within your SCSS file tree. Your custom UI 
 References:
 - [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5494)
 
+### Multi Selection can be disabled :fire:
 
+Whilst we continue to refine the selection across multiple components we have enabled a config to turn it off. In the editable settings set `multiEditablesTextSelection: false`.
+
+- [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5416)
+- [Documentation](https://docs.livingdocs.io/reference-docs/editor-extensions/editor-configuration/editing-features/#multi-select-and-multi-text-select)
 ## Deprecations
 
 ## APIs :gift:
