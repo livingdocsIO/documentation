@@ -529,6 +529,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.53): fix(hugo): Use configured hugo assetPath
 - [v80.10.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.52): fix(liDateRangeFilter): documentPropertyName config supported
 - [v80.10.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.51): fix(cacheIdentifier): now defined
 - [v80.10.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.50): fix(editor): improve UI behavior when toggling sidepanels
