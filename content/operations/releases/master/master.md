@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(hugo): Add `assetPath` to `filterHugoConfig()` [livingdocs-server #4580 v188.3.2](https://github.com/livingdocsIO/livingdocs-server/pull/4580)
 * :new: Serve systemdata.visiblePublicationDate only with published documents [livingdocs-server #4574 v188.3.1](https://github.com/livingdocsIO/livingdocs-server/pull/4574)
 * :new: Media library: Support id, key, filename, url in search [livingdocs-server #4398 v188.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4398)
 * :new: Realtime API: Add Pusher to application event mapping for publish events [livingdocs-editor #5519 v80.36.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5519)
