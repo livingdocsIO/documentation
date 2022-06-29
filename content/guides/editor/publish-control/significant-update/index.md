@@ -1,7 +1,7 @@
 ---
 title: Significant Update
 description: Mark changes as significant update.
-weight: 12
+weight: 4
 ---
 
 This guide will show you how to publish changes marked as "Significant update".
