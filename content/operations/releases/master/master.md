@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Media library: Support id, key, filename, url in search [livingdocs-server #4398 v188.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4398)
 * :new: Realtime API: Add Pusher to application event mapping for publish events [livingdocs-editor #5519 v80.36.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5519)
 * :new: Realtime API: Send publish/unpublish events [livingdocs-server #4573 v188.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4573)
 * :new: fix(hugo): Use configured hugo assetPath [livingdocs-editor #5522 v80.36.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5522)
