@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: add podigee oembed [livingdocs-server #4572 v188.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4572)
 * :new: Publish Control: confirm step for publish now and scheduled publish active [livingdocs-editor #5512 v80.36.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5512)
 * :new: Meta oEmbeds (Instagram, Facebook) [livingdocs-server #4570 v188.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4570)
 * :new: fix(references): Use $ref when extracting doc-link references [livingdocs-server #4571 v188.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4571)
