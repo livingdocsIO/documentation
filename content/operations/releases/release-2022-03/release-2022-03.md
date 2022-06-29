@@ -851,6 +851,7 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
 
 ### Livingdocs Editor Patches
+- [v77.2.80](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.80): fix(hugo): Use configured hugo assetPath
 - [v77.2.79](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.79): fix(liDateRangeFilter): documentPropertyName config supported
 - [v77.2.78](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.78): fix(cacheIdentifier): now defined
 - [v77.2.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.77): fix(text-formatting): Keep links closer to user input
