@@ -825,6 +825,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v171.1.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.51): fix(hugo): Add `assetPath` hugo config
 - [v171.1.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.50): fix(cut and paste): Does not affect undo
 - [v171.1.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.49): fix(frameworkBump): March release
 - [v171.1.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.48): fix(print): Expose Desk-Net metadata in print export
