@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Bump minor version for release management [livingdocs-server #4583 v189.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4583)
 * :new: fix(desknet): Update project config UI [livingdocs-editor #5530 v80.38.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5530)
 * :new: feat(desknet): Add publication status table dashboard cell [livingdocs-editor #5408 v80.38.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5408)
 * :new: Desk-Net Refactor [livingdocs-server #4576 v189.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4576)
