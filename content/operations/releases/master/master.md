@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Update livingdocs-integration.json for release management [livingdocs-server #4584 v189.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4584)
 * :new: Bump minor version for release management [livingdocs-editor #5527 v80.39.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5527)
 * :new: Bump minor version for release management [livingdocs-server #4583 v189.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4583)
 * :new: fix(desknet): Update project config UI [livingdocs-editor #5530 v80.38.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5530)
