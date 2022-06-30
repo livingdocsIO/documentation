@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Add spotify and data wrapper [livingdocs-server #4579 v189.1.3](https://github.com/livingdocsIO/livingdocs-server/pull/4579)
 * :new: fix(print): Make desknet print metadata configurable [livingdocs-server #4561 v189.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4561)
 * :new: Update livingdocs-integration.json for release management [livingdocs-editor #5528 v80.39.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5528)
 
