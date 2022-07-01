@@ -17,41 +17,6 @@ aliases:
   branchHandle="release-2022-07"
 >}}
 
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to master).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
-
-## PRs to Categorize
-* :new: fix(desknet): Update project config UI [livingdocs-editor #5530 v80.38.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5530)
-* :new: feat(desknet): Add publication status table dashboard cell [livingdocs-editor #5408 v80.38.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5408)
-* :new: Desk-Net Refactor [livingdocs-server #4576 v189.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4576)
-* :new: Update only remotely changed metadata properties [livingdocs-editor #5518 v80.37.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5518)
-* :new: fix(hugo): Add `assetPath` to `filterHugoConfig()` [livingdocs-server #4580 v188.3.2](https://github.com/livingdocsIO/livingdocs-server/pull/4580)
-* :new: Serve systemdata.visiblePublicationDate only with published documents [livingdocs-server #4574 v188.3.1](https://github.com/livingdocsIO/livingdocs-server/pull/4574)
-* :new: Media library: Support id, key, filename, url in search [livingdocs-server #4398 v188.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4398)
-* :new: Realtime API: Add Pusher to application event mapping for publish events [livingdocs-editor #5519 v80.36.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5519)
-* :new: Realtime API: Send publish/unpublish events [livingdocs-server #4573 v188.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4573)
-* :new: fix(hugo): Use configured hugo assetPath [livingdocs-editor #5522 v80.36.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5522)
-* :new: fix(hugo): Add `assetPath` hugo config [livingdocs-server #4575 v188.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4575)
-* :new: fix(liDateRangeFilter): documentPropertyName config supported [livingdocs-editor #5410 v80.36.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5410)
-* :new: add podigee oembed [livingdocs-server #4572 v188.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4572)
-* :new: Publish Control: confirm step for publish now and scheduled publish active [livingdocs-editor #5512 v80.36.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5512)
-* :new: Meta oEmbeds (Instagram, Facebook) [livingdocs-server #4570 v188.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4570)
-* :new: fix(references): Use $ref when extracting doc-link references [livingdocs-server #4571 v188.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4571)
-* :new: fix(link): Add $ref to link directive value [livingdocs-editor #5515 v80.35.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5515)
-
-
-
-
-Improvements
-* [Images: Shows Error when the drop position is not allowed](https://github.com/livingdocsIO/livingdocs-editor/pull/5414)
-
-
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
 ## Webinar
@@ -95,7 +60,11 @@ TODO: check if this list is still true
 
 ### Publish Control - Iteration 2
 
-TODO: add a description
+The second iteration of Publish Control comes with more features:
+- Embargo (prevent the publication of a document)
+- Significant update
+- Visible Publication Date
+- Auto refresh the UI when Publish Control data have changed
 
 Consult the [Guide on «Publish Control»]({{< ref "/guides/editor/publish-control" >}}) to learn how to configure this feature.
 
@@ -111,10 +80,13 @@ Consult the [Guide on «Publish Control»]({{< ref "/guides/editor/publish-contr
 
 ### Drag + Drop of Document Teasers
 
-TODO: add description + guide
+We enable you to drag + drop Document Cards onto a document to create Teaser Components. You need to configure Teaser Components using an Include Service with a `li-document-reference` param to make it work.
 
+* [Guide](https://docs.livingdocs.io/guides/documents/includes/document-teasers/)
 * [PR: Editor integration](https://github.com/livingdocsIO/livingdocs-editor/pull/5356)
 * [PR: Teaser Drag and Drop](https://github.com/livingdocsIO/livingdocs-server/pull/4556)
+* [PR: Add Document Dashboard to Editing Toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/5405)
+* [Document Teaser Dashboards: Config for Dashboards in Document Editing Toolbar](https://github.com/livingdocsIO/livingdocs-server/pull/4525)
 
 ### 🐉 Dragon Drop
 
@@ -149,9 +121,6 @@ Currently we are working hard on the improvement of Dashboards. Here you have a 
 **Includes**
 * [Define Dashboards for Include References](https://github.com/livingdocsIO/livingdocs-server/pull/4515)
 
-**Document Editing Toolbar**
-* [Document Teaser Dashboards: Config for Dashboards in Document Editing Toolbar](https://github.com/livingdocsIO/livingdocs-server/pull/4525)
-
 # External Systems
 
 External Systems define a relation to a source system. Usually this is used when an old CMS imports articles to Livingdocs.
@@ -164,15 +133,14 @@ This first version provides links to the source system via the Table Dashboard a
 
 ## Comyan Integration
 
-We did a few important step to make the Comyan integration better.
+We did a few more steps to make the Comyan integration better.
 
-- Added a [Guide TODO]() how to integrate Comyan
 - Improved Security
 - Use the JSON API from Comyan instead of XML (better handling of special characters)
 - Improved asset duplication check
 - Image usage report to Comyan
 
-* [Guide TODO]()
+* [Project Config Example](https://docs.livingdocs.io/reference-docs/project-config/settings/#comyan)
 * [PR: Use JSON format](https://github.com/livingdocsIO/livingdocs-server/pull/4546)
 * [PR: Use MediaLibraryEntry model in the editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5439)
 * [PR: Move Comyan secure request to server](https://github.com/livingdocsIO/livingdocs-server/pull/4426)
@@ -180,29 +148,31 @@ We did a few important step to make the Comyan integration better.
 
 ### Desk Net Publication Status Sync
 
-TODO: add description + guide
+TODO@ajwild: add description + (guide)
 
 * [PR: Categories and Publications are mapped correctly](https://github.com/livingdocsIO/livingdocs-server/pull/4517)
 * [PR: Better error handling on server](https://github.com/livingdocsIO/livingdocs-server/pull/4456)
 * [PR: Better error handling on editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5302)
 * [PR: Fix update function](https://github.com/livingdocsIO/livingdocs-server/pull/4452)
+* [PR: Desk-Net Refactoring](https://github.com/livingdocsIO/livingdocs-server/pull/4576)
 
-### Directive doc-link uses new link UI
 
-TODO: add a description
+### New oEmbed Integration
 
-* [PR: New UI for doc-link directive](https://github.com/livingdocsIO/livingdocs-editor/pull/5323)
+We added new oEmbed include services for Facebook, Instagram, Spotify, Datawrapper and Podigee.
 
-* [PR: Add Document Dashboard to Editing Toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/5405)
+* [Guide](https://docs.livingdocs.io/guides/documents/includes/oembed/)
+* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4570)
 
 ## Breaking Changes :fire:
 
 ### Migrate the database :fire:
 
-TODO: update migrations
+It's a simple/fast migration with no expected data losses.
 
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database scheme
+# migration -178-extend-media-library-state.js
 livingdocs-server migrate up
 ```
 
@@ -329,6 +299,28 @@ References:
 References:
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4484)
 
+### Desk Net Config Update :fire:
+
+- 🔥 `server.features.api('li-desknet-integration').integrationApi` moved to `server.features.api('li-desknet-integration')`
+- 🔥 `projectConfig.settings.desknet.enabled` must be set to `true` to use all Desk-Net features
+- 🔥 `projectConfig.settings.desknet.platformId` is no longer used to determine which publication to use. The `publicationId` stored in metadata is used, with a fallback to the one provided by Desk-Net in the request data.
+- 🔥 `projectConfig.settings.desknet.credentials` is now required
+- 🔥 `projectConfig.settings.desknet.contentTypes.standard` is now required
+- 🔥 `desknetApi.handlers.createFromDesknet()` and `desknetApi.handlers.updateFromDesknet()` will not define the `cmsEditLink` property in the return value if there is no publication linked in the metadata
+- 🔥 `desknetApi.handlers.updateFromDesknet()` will not update the metadata if the update request is for a publication which does not match the `publicationId` stored in the metadata value
+- 🔥 `desknetApi.libs` are no longer exposed
+- 🔥 `desknetApi.hooks` are no longer exposed
+- 🔥 `desknetApi.handlers` have been moved to desknetApi root
+- 🔥 `desknetApi.getFullElement()` is no longer exposed
+- 🔥 `desknetApi.getElement()` is no longer exposed
+- 🔥 `desknetApi.sendUpdateRequestToDesknet()` is no longer exposed
+- 🔥 `desknetApi` methods will throw errors instead of logging warnings
+- 🔥 `publication.id` and `publication.platform` are required for `POST /publication` endpoint
+- 🔥 `publication.id` is required for `PUT /publication/:id` endpoint
+
+References:
+- [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4576)
+
 ### Design Class Updates :fire:
 
 :fire: renamed `.ld-switch` to `.li-switch`
@@ -392,8 +384,12 @@ Allows the patch operation `archive` via public API to archive an asset.
 * [Metadata View: Groups are now shown in separate and collapsible cards](https://github.com/livingdocsIO/livingdocs-editor/pull/5249)
 * [Allow formatting of log levels as strings](https://github.com/livingdocsIO/livingdocs-server/pull/4458)
 * [Add 'metadata' option for viewAfterDocumentCreation setting](https://github.com/livingdocsIO/livingdocs-editor/pull/5424)
+* [Media Library: Support id, key, filename, url in search](https://github.com/livingdocsIO/livingdocs-server/pull/4398)
+* [Directive doc-links support now also document references (beside external links)](https://github.com/livingdocsIO/livingdocs-editor/pull/5323)
 
 ### Improvements
+* [Images: Shows Error when the drop position is not allowed](https://github.com/livingdocsIO/livingdocs-editor/pull/5414)
+* [Update only remotely changed metadata properties](https://github.com/livingdocsIO/livingdocs-editor/pull/5518)
 * [Import: Use Project Config design when not passing infos to the import](https://github.com/livingdocsIO/livingdocs-server/pull/4495)
 * [Link Tool: Show original URL instead of redirect target in website info](https://github.com/livingdocsIO/livingdocs-editor/pull/5406)
 * [Config Feedback: Project Config: Human readable error pointer](https://github.com/livingdocsIO/livingdocs-server/pull/4462)
