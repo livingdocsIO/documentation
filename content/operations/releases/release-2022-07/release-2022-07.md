@@ -121,7 +121,7 @@ Currently we are working hard on the improvement of Dashboards. Here you have a 
 **Includes**
 * [Define Dashboards for Include References](https://github.com/livingdocsIO/livingdocs-server/pull/4515)
 
-# External Systems
+### External Systems
 
 External Systems define a relation to a source system. Usually this is used when an old CMS imports articles to Livingdocs.
 This first version provides links to the source system via the Table Dashboard action menu.
@@ -131,7 +131,7 @@ This first version provides links to the source system via the Table Dashboard a
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5443)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4548)
 
-## Comyan Integration
+### Comyan Integration
 
 We did a few more steps to make the Comyan integration better.
 
