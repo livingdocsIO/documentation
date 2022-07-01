@@ -58,20 +58,11 @@ Get familiar with the new features and decied what you want to enable for `Publi
 
 ### 4) Backwards Compatibility for the Delivery
 
-We assume your delivery has some publication flow logic and as long as you don't access to the [Visible Publication Date]({{< ref "/guides/editor/publish-control/visible-publication-date" >}}), you have to make your application backwards compatible.
+We assume your delivery has some publication logic based on metadata fields and as long as you don't have all data in the [Visible Publication Date]({{< ref "/guides/editor/publish-control/visible-publication-date" >}}), you have to make your application backwards compatible.
 
-A simple solution is to take the data from Publish Control and put them in your old metadata fields.
+We propose a 3 step process
+- 1) Deploy/Update your frontend/delivery to be able to consume both metadata and Publish Control fields in systemdata
+- 2) Deploy/Update your server with enabled Publish Control and a configured [Visible Publication Date]({{< ref "/guides/editor/publish-control/visible-publication-date" >}}) with a fallback to the metadata fields and set the metadata fields to readOnly or hide them
+- 3) Deploy/Update your frontend/delivery to fetch Publish Control fields in systemdata only
 
-If you had implemented a scheduled publish field in `metadata.scheduleDate`, you can ...
-
-TODO: whats the best solution?
-- if you have your own plugin, update the on? metadata hook
-- if you have used li-datetime, copy paste the plugin and do the same as before
-- onPreparePublish server hook doesn't work because for scheduled publishing there is not publish data yet
-- 3 step migration process?
-  - 1) update frontend to fetch both data (publishcontrol + metadata)
-  - 2) switch server
-  - 3) update frontend to fetch publishcontrol only
-
-
-TODO: provide a migration script where you can put data from metadata.publishField to visiblePublication date?
+If you ask yourself if you could remove the old metadata fields. The answer is no. But as soon as we provide a migration script where the old metadata can be written to Publish Control, you are able to remove them.
