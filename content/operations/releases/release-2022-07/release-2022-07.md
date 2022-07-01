@@ -29,13 +29,11 @@ aliases:
 
 ## System Requirements
 
-TODO: check if this list is still true
-
 ### Suggested
 |Name|Version|
 |-|-|
 |Node|16|
-|NPM|7|
+|NPM|8|
 |Postgres|14|
 |Elasticsearch|7|
 |Redis|6|
