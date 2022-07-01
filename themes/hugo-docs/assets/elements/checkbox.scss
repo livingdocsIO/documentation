@@ -3,6 +3,7 @@
   gap: $space-s;
 
   &__checkbox {
+    flex-shrink: 0;
     -webkit-appearance: none;
     appearance: none;
     display: grid;
@@ -34,6 +35,7 @@
   
   &__label {
     @extend %font-forms;
+    text-align: left;
     font-weight: normal;
     color: $color-black;
   }
