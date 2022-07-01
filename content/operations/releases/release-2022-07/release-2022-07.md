@@ -27,8 +27,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* :new: Bump minor version for release management [livingdocs-editor #5527 v80.39.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5527)
-* :new: Bump minor version for release management [livingdocs-server #4583 v189.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4583)
 * :new: fix(desknet): Update project config UI [livingdocs-editor #5530 v80.38.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5530)
 * :new: feat(desknet): Add publication status table dashboard cell [livingdocs-editor #5408 v80.38.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5408)
 * :new: Desk-Net Refactor [livingdocs-server #4576 v189.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4576)
@@ -46,13 +44,12 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * :new: Meta oEmbeds (Instagram, Facebook) [livingdocs-server #4570 v188.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4570)
 * :new: fix(references): Use $ref when extracting doc-link references [livingdocs-server #4571 v188.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4571)
 * :new: fix(link): Add $ref to link directive value [livingdocs-editor #5515 v80.35.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5515)
-* :new: Teaser Drag and Drop [livingdocs-server #4556 v188.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4556)
-* :new: 🐉 Dragon Drop [livingdocs-editor #5356 v80.35.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5356)
-* :new: feat(publish-control-edit-publication-date): connect API with UI to edit publication date [livingdocs-editor #5507 v80.34.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5507)
-* :new: Publish Control: Implement `setVisiblePublicationDateOverride` and `resetVisiblePublicationDateOverrideOnSignificantUpdate` [livingdocs-server #4563 v188.0.4](https://github.com/livingdocsIO/livingdocs-server/pull/4563)
-* :new: fix(cacheIdentifier): now defined [livingdocs-editor #5508 v80.33.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5508)
-* :new: Fix message typo in error message [livingdocs-server #4568 v188.0.3](https://github.com/livingdocsIO/livingdocs-server/pull/4568)
-* :new: fix(image drop): shows error alert when the drop position is not allowed [livingdocs-editor #5414 v80.33.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5414)
+
+
+
+
+Improvements
+* [Images: Shows Error when the drop position is not allowed](https://github.com/livingdocsIO/livingdocs-editor/pull/5414)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -110,11 +107,32 @@ Consult the [Guide on «Publish Control»]({{< ref "/guides/editor/publish-contr
 * [PR: Translate API errors by code](https://github.com/livingdocsIO/livingdocs-editor/pull/5503)
 * [PR: visiblePublicationDate & significantPublicationDate](https://github.com/livingdocsIO/livingdocs-server/pull/4555)
 * [PR: auto refresh UI when embargo has expired](https://github.com/livingdocsIO/livingdocs-editor/pull/5500)
+* [PR: setVisiblePublicationDateOverride | resetVisiblePublicationDateOverrideOnSignificantUpdate](https://github.com/livingdocsIO/livingdocs-server/pull/4563)
 
 ### Drag + Drop of Document Teasers
 
 TODO: add description + guide
 
+* [PR: Editor integration](https://github.com/livingdocsIO/livingdocs-editor/pull/5356)
+* [PR: Teaser Drag and Drop](https://github.com/livingdocsIO/livingdocs-server/pull/4556)
+
+### 🐉 Dragon Drop
+
+We provide you a completely rewritten and improved Drag n' Drop logic in the Livingdocs Editor. Below is a list of changes.
+
+* The drop target is selected by an algorithm that detects the likely intended target. It no longer inspects the element under the cursor.
+* All targets are fully validated for the current drag payload. When starting a drag it is possible to declare multiple component names which should be validated. This is used e.g. for document drops where multiple teaser components are candidates to be used. And which one will be used depends on the selected drag target. But no drag targets where none of these options are valid should be proposed to the user.
+* New placement logic for drag markers. The markers should be more consistent and intuitive especially at the end of containers.
+* Support of vertical drag markers e.g. in flexbox containers
+* Display of multiple drag markers at the same time when there are multiple targets in close proximity. This happens if placement of a component is not restricted and there are containers in use.
+* Small animations to make space for the current drop target. This especially helps at the beginning and end of containers where there often is no space between the container and the component.
+* New container highlighting that highlights the parent container of the current target (except if it’s the root container)
+* Directives are now a primary drop target as well. Users see clearly if a drop will replace a directive (e.g. on an image drop) or insert a new component
+* There is no more display of placement violations this would not make sense anymore with the new drop placement algorithm where the next likely target is selected.
+* Drags are properly canceled when ending the drag outside of the iframe.
+
+References:
+* [PR: Framework](https://github.com/livingdocsIO/livingdocs-framework/pull/653)
 
 ### Dashboard Improvements
 
