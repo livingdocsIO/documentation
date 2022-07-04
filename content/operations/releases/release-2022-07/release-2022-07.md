@@ -415,6 +415,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v80.38.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.3): fix(scroll in readonly): Fixed for metadata screen
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v??.?.?): text
 
   ---
