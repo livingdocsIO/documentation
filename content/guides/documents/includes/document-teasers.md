@@ -31,7 +31,7 @@ Here is an example includes configuration to consider for the editable teaser us
     preload: true,
     render (params, context) {
       // params.article.reference.id contains the id of the linked document
-      // params.article.value contains the Document (because preload: true is configured)
+      // params.article.value contains the DocumentVersion (because preload: true is configured)
       // you want to render the teaser here. Either as HTML or use the possibility of Embedded Documents
       return params.article.reference.id
     }
