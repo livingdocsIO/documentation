@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(referenceMigration): Supports all list configs [livingdocs-server #4594 v189.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/4594)
 * :new: fix(scroll in readonly): Fixed for metadata screen [livingdocs-editor #5531 v80.39.3](https://github.com/livingdocsIO/livingdocs-editor/pull/5531)
 * :new: Dashboards: Fix query / filter cache identifiers [livingdocs-editor #5532 v80.39.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5532)
 * :new: Add spotify and data wrapper [livingdocs-server #4579 v189.1.3](https://github.com/livingdocsIO/livingdocs-server/pull/4579)
