@@ -332,6 +332,7 @@ References:
 ## Patches
 
 ### Livingdocs Server Patches
+- [v157.2.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.38): fix(referenceMigration): Supports all list configs
 - [v157.2.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.37): fix: hugo-controller return hugoPicture for new and old Media
 - [v157.2.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.36): fix(documents): Fix content type update support
 - [v157.2.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v157.2.35): fix: remove unconfigured metadata properties
