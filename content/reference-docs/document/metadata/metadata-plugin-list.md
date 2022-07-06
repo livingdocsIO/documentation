@@ -190,10 +190,64 @@ metadata: [
   id: <Integer>,
   publicationId: <Integer>,
   platformId: <Integer>,
-  categoryId: <Integer>
+  categoryId: <Integer>,
+  publicationStatusId: <Integer> // {{< added-in release-2022-07 >}}
 }
 ```
 **Default UI**: Link to Desk-Net distribution entry
+
+**Project Config**
+```js
+metadata: [
+  {
+    handle: 'desknet',
+    type: 'li-desknet-integration',
+    config: {
+      // {{< added-in release-2022-07 >}}
+      publicationStatus: {
+        fallbackPublicationStatusId: '2',
+        matchers: [
+          {
+            type: 'publication',
+            value: 'published', // Only 'published' supported
+            publicationStatusId: '5'
+          },
+          {
+            type: 'task',
+            taskName: 'proofreading',
+            value: 'completed', // 'requested', 'accepted', 'completed'
+            publicationStatusId: '4'
+          },
+          {
+            type: 'metadata',
+            propertyName: 'prepared',
+            value: true, // <String>, <Number>, <Boolean>, <Array>, <Object>
+            publicationStatusId: '3'
+          }
+        ]
+      }
+    },
+    ui: {
+      label: 'Desk-Net',
+      config: {
+        // {{< added-in release-2022-07 >}}
+        publicationStatus: {
+          labels: [
+            {
+              publicationStatusId: '5',
+              label: 'Published',
+              // optional, any SVG (ideally using viewBox)
+              icon: '<svg viewBox="0 0 9 9" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h9v9H0z"/></svg>',
+              // optional, any CSS colour string
+              color: '#f00'
+            }
+          ]
+        }
+      }
+    }
+  }
+]
+```
 
 ## li-document-reference
 
