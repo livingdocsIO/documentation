@@ -2,7 +2,6 @@
 type: release-notes
 title: May 2022 Release
 description: Release notes for release-2022-05
-excludeFromSearch: true
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2022-05/release-2022-05/
@@ -12,7 +11,7 @@ aliases:
   title="May 2022 Release"
   upcoming=false
   legacy=false
-  current=true
+  current=false
   maintained=true
   branchHandle="release-2022-05"
 >}}

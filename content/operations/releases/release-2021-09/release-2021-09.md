@@ -3,6 +3,7 @@ type: release-notes
 title: September 2021 Release
 description: Release notes for release-2021-09
 hideSectionTeaser: true
+excludeFromSearch: true
 ---
 
 {{< release-header
