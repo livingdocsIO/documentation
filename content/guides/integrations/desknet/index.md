@@ -10,21 +10,13 @@ weight: 1
 - Exchange and sync any data that is relevant to your workflow.
 - View Desk-Net story planning lists in Livingdocs
 
-
-## Video Guide
-
-We have a video on Vimeo explaining the necessary steps to configure Desk-Net through our UI.
-
-{{< vimeo id="368750546" class="video-wrapper" >}}
-
-
 ## Setup
 
 ### Prerequisites
 
 - You should have a Desk-Net account and a set of valid API credentials to authorize Livingdocs to access the Desk-Net HTTP API.
-- You should be somewhat familiar with the Desk-Net data entities (Stories, Publications, Platforms and so on). A technical overview can be found [here](https://api.desk-net.com)
-- You should know about the different Livingdocs configuration levels/methods, namely the [project config]({{< ref "/reference-docs/project-config" >}}) and the [content type config]({{< ref "/reference-docs/project-config/content-types.md" >}}))
+- You should be somewhat familiar with the Desk-Net data entities (Stories, Publications, Platforms and so on). A technical overview can be found [here](https://api.desk-net.com).
+- You should know about the different Livingdocs configuration levels/methods, namely the [project config]({{< ref "/reference-docs/project-config" >}}) and the [content type config]({{< ref "/reference-docs/project-config/content-types.md" >}})).
 - You should be familiar with how to [set up custom metadata fields]({{< ref "/reference-docs/server-extensions/metadata-plugins" >}}) for your content types.
 - For local development, we strongly suggest you use:
    - some kind of http tunnel solution like [ngrok](https://ngrok.com). This is useful, when you want to redirect messages from Desk-Net to your local server.
@@ -32,25 +24,28 @@ We have a video on Vimeo explaining the necessary steps to configure Desk-Net th
 
 ### Basic configuration
 
-#### 1. Create a public API token for the project you want to connect with Desk-Net
+#### 1. Create a public API token
 
-- In the project menu, select "Project Access".
+- Make sure you are in the project you want to connect with Desk-Net
+- In the main project menu select "Project Admin"
+- Then select "Api Tokens" in the left menu
+- Click the "Add API Token" button on the right
+- Enter a descriptive name, provide permission for desk-net integration API access, and click the "Create Token" button:
+{{< img src="desknet-token.png" alt="Create API Token" >}}
+- In the list of tokens, select "Show" for your newly created token, then copy the token to your clipboard, we're going to use it in a minute
 
-{{< img src="desknet-token-1.png" alt="Menu Preview" >}}
-- Then select "Api Tokens", enter a descriptive name and click "Create token".
-
-{{< img src="desknet-token-2.png" alt="Api Token" >}}.
-
-- In the list of tokens, select "Show" for your newly created token, copy the token and temp-store it somewhere, we're going to use it in a minute.
-
-#### 2. Register the token with Desk-Net
+#### 2. Setup integration in Desk-Net
 
 - Log into your Desk-Net account
-- Go to "Publication Platforms"
-- Click "Edit" for the platform you want to connect with Livingdocs. Select the tab "Advanced Settings".
-- Fill in the form "Data / export API". Replace the domain part in the URL with your server domain. Under "API secret", enter the Livingdocs Public API token we created in the last step.
-
-{{< img src="desknet-config.png" alt="Desk-Net form" >}}
+- Click on the "Settings / Admin" icon in the top right and select "Platforms" from the menu that appears
+- Click on the platform you want to connect with Livingdocs and go to the "Integrations" tab
+- Click on the "Livingdocs / Forward Publishing" option
+- Paste your token from Livingdocs into the "API secret" field
+- Type any value into the "API user" field (it isn't used)
+- Enter the path to your Livingdocs server's Desk-Net integration root enpoint into the "URL" field (e.g. https://example.com/api/v1/desknet-integration)
+{{< img src="desknet-config.png" alt="Desk-Net Integration" >}}
+- Click on "Test Connection" button to make sure Desk-Net can communicate with Livingdocs
+- Optionally, select which publication statuses you would like to trigger updates to Livingdocs
 
 #### 3. Enable the Desk-Net feature
 
@@ -66,51 +61,46 @@ In your main server config, enable the `desknet` feature by simply adding the fo
 
 #### 4. Connect a Livingdocs project to Desk-Net
 
-
 Add the following to the project config of the project you want to connect with Desk-Net:
 
 ```js
 {
   desknet: {
+    enabled: true,
+
+    // Optional. See "Story Planning Schedule in Livingdocs" section below
+    scheduleEnabled: true,
+
     credentials: {
-
-      // Desk-Net client ID
       clientId: '******',
-
-      // Desk-Net client secret
-      clientSecret: '********'
+      clientSecret: {
+        // {{< added-in release-2022-07 >}}
+        // Use the "npx livingdocs-server secret-add" command.
+        // clientSecret was a string in earlier releases.
+        $secretRef: {
+          name: '******'
+        }
+      }
     },
 
-    // This is the ID of the Desk-Net platform you're connecting with. The easiest way to get
-    // this ID is to use an HTTP client like Postman and request the platforms of your Desk-Net account.
-    // https://desk-net.com/api/v1_0_0/platforms/
-    platformId: 6666666,
+    // Optional. Default: "title". The path used to extract the title from the Desk-Net element.
+    titlePath: '',
 
-    // Desk-Net and Livingdocs have different concepts of what a publication is. In Desk-Net, a story can have
-    // one of several freely configurable publication status. Which of those statuses actually means «published»
-    // is completely arbitrary. In Livingdocs however, a document is either published or not. So whenever we try to
-    // determine / sync the publication status of either of two entities, we have to define a way to translate between those two concepts.
-    // Again, the ID's of those statuses are not obvious. https://desk-net.com/api/v1_0_0/publication-status/ should provide you
-    // with the ID's needed.
     publicationStatus: {
-
-      // This is the ID of the status, that in Desk-Net describes a published story.
-      publishedStatus: 5,
-
-      // This is the ID of the status, that Livingdocs should send to Desk-Net if a document gets unpublished.
-      unpublishedStatus: 1,
-
-      // Otional. If this key is set to true, the publication status is getting synced everytime
-      // a change happens in either Livingdocs or Desk-Net. This
-      // basically allows you to publish Livingdocs documents directly from Desk-Net. Whether that is desirable or
-      // not depends on your workflow.
+      // Optional. If this key is set to true, the publication status will be synced everytime
+      // it is updated in Desk-Net. This basically allows you to publish Livingdocs documents
+      // directly from Desk-Net. Whether that is desirable or not depends on your workflow.
       sync: false
+
+      // Deprecated. The old way to calculate the publication status before the matchers were
+      // introduced to the li-desknet-integration metadata plugin in release-2022-07.
+      publishedStatus: 5,
+      unpublishedStatus: 1
     },
 
-    // With this setting, we can control what kind of document should get created, when Desk-Net reports a new story.
     contentTypes: {
-
-      // The default content type.
+      // The default content type to create in Livingdocs when a new story is created
+      // (or reaches a trigger level) in Desk-Net.
       standard: 'regular',
 
       // Optional. These two settings can be used to describe a more sophisticated content type lookup.
@@ -129,8 +119,87 @@ Add the following to the project config of the project you want to connect with 
 }
 ```
 
-With all this in place, whenever we create a new story in Desk-Net that is assigned to the platform connected to Livingdocs, we'll have
-a Livingdocs document created and linked with the Desk-Net element entity that represents the story.
+#### 5. Add metadata plugin to content types
+
+Add the following metadata plugin to all content types that can be created using the "contentTypes" configuration above:
+
+```js
+{
+  handle: 'desknet',
+  type: 'li-desknet-integration',
+
+  // {{< added-in release-2022-07 >}}
+  // Optional. The config can be used if you intend to keep Desk-Net's publication status up-to-date
+  // with the status of the document in Livingdocs. It is required if you intend to publish a
+  // document in Livingdocs when updating the publication status in Desk-Net.
+  config: {
+    publicationStatus: {
+      // Optional. The fallback is used when no matcher condition is met for a document.
+      fallbackPublicationStatusId: 3,
+
+      // Matchers provide a way to synchronise the state of a Livingdocs document to Desk-Net.
+      // You can use publication, task, or metadata matchers to calculate a Desk-Net
+      // publication status id value. You can find the publicationStatusId value using the
+      // Desk-Net API, or by inspecting network requests in the Statuses page in Desk-Net.
+      matchers: [
+        {
+          // Defining a publicationStatusId for the published status is required if you intend to
+          // publish a document in Livingdocs when updating the publication status in Desk-Net.
+          type: 'publication',
+          value: 'published',
+          publicationStatusId: 5
+        },
+        {
+          type: 'task',
+          taskName: 'proofreading',
+          value: 'completed', // The "value" of a task can be requested, accepted, or completed
+          publicationStatusId: 25912
+        },
+        {
+          type: 'metadata',
+          propertyName: 'my-custom-plugin.status', // uses lodash.get()
+          value: 'in-progress', // compares with lodash.isEqual()
+          publicationStatusId: 123
+        }
+      ]
+    }
+  },
+
+  // {{< added-in release-2022-07 >}}
+  // Optional. Only required if you intend to display the current publication status in a
+  // table dashboard cell.
+  ui: {
+    config: {
+      publicationStatus: {
+        labels: [
+          {
+            publicationStatusId: 5,
+            label: 'Published',
+            // SVG icons can be minimised and optimised using https://jakearchibald.github.io/svgomg/
+            // The SVG icon should have a viewBox property to scale properly.
+            icon: '<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 15 17"><path class="colour" d="M.333 1.447v14.334h14.334V1.447H.333zM13.11 14.224H1.891V3.004h11.22v11.22z"/><circle class="colour" cx="7.5" cy="8.749" r="2.042"/></svg>',
+            color: '#778397'
+          },
+          {
+            publicationStatusId: 25912,
+            label: 'Proofreading Completed',
+            icon: '<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 15 17"><path class="colour" d="M.042 15.778.05 1.445l4.091.003-.008 14.333zM9.537 15.781h-4.09l.008-14.334h4.09l-.008 14.334zM14.992 15.781H10.9l.009-14.334H15l-.008 14.334z"/></svg>',
+            color: '#b56eef'
+          },
+          {
+            publicationStatusId: 123,
+            label: 'In Progress',
+            icon: '<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 15 17"><path class="colour" d="M0 1.25v14.5h14.5V1.25H0zm5.901 12.208L1.767 9.05l1.208-1.13 2.921 3.116L12.3 4.158l1.211 1.129-7.61 8.171z"/></svg>',
+            color: '#82e580'
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+With all this in place, whenever we create a new story in Desk-Net that is assigned to the platform connected to Livingdocs, we'll have a Livingdocs document created and linked with the Desk-Net element entity that represents the story.
 
 ## Mapping Desk-Net values to Livingdocs document metadata
 
@@ -145,13 +214,13 @@ As an example, let's say we want to achieve the following:
 
 Let's do this, then!
 
-#### 1. Define a metadata plugin on the content type
+### 1. Define a metadata plugin on the content type
 
 Add the plugin to the settings of content type `'regular'`:
 
 ```js
 {
-  handle: 'regular'
+  handle: 'regular',
   metadata: [
     {
       handle: 'desknetPublicationDate',
@@ -170,7 +239,7 @@ Add the plugin to the settings of content type `'regular'`:
 
 As mentioned before, we won't go further into how to set up metadata at this point, but you can read all about that [here]({{< ref "/reference-docs/document/metadata" >}}).
 
-#### 2. Set up a mapping that defines how to translate from Desk-Net to Livingdocs
+### 2. Set up a mapping that defines how to translate from Desk-Net to Livingdocs
 
 Again to the settings of content type `'regular'`, add the following:
 
@@ -181,15 +250,18 @@ Again to the settings of content type `'regular'`, add the following:
     // A list of mapping objects. Each mapping object describes one metadata field.
     metadata: [
       {
-        // Optional. If set to true, every time we change the publication status in Livingdocs, the update
-        // broadcast to Desk-Net will include the source path associated to the target value. The inverse result of
-        // the mapping, so to speak.
-        sync: false,
-
         // The path to the value on the Desk-Net element
         source: 'publication.single.start.date',
         // The path to the Livingdocs metadata property
-        target: 'metadata.desknetPublicationDate'
+        target: 'metadata.desknetPublicationDate',
+
+        // Optional. Enable or disable sync from Livingdocs to Desk-Net (only applies one-way).
+        // Every time we publish or unpublish a document in Livingdocs we update the element on
+        // Desk-Net. Setting sync to true will set the source property, with the value taken
+        // from the target property of the Livingdocs document. Essentially, this is the
+        // inverse of the logic used when creating or updating a document in Livingdocs. When
+        // sync is false then the current Desk-Net value will be returned to Desk-Net.
+        sync: false
       }
     ]
   }
@@ -198,7 +270,7 @@ Again to the settings of content type `'regular'`, add the following:
 
 And we're all set. From now on, whenever you create a new story on Desk-Net with a scheduled publication date or change the scheduled publication date on an existing story *and* the story at hand is assigned to a platform connected to Livingdocs, the metadata of the document will have an up-to-date property `desknetPublicationDate` with the date as value.
 
-#### What are the available Desk-Net properties?
+### What are the available Desk-Net properties?
 
 When determining mapping results we analyze an enriched version of the result of [GetElement](https://api.desk-net.com/#api-Element-GetElement) on the Desk-Net API.
 
@@ -216,7 +288,7 @@ Additionally, all elements have
 
 You can find a full example at [the end of this document](#full-desk-net-element-example).
 
-#### What are the available Livingdocs properties?
+### What are the available Livingdocs properties?
 
 Everything in metadata. Nothing else. So whatever metadata plugins you have set up in your content type config, you can write to and read from them freely, as long as the data types correlate. If they don't, you probably want to use a transform function.
 
@@ -224,7 +296,7 @@ Everything in metadata. Nothing else. So whatever metadata plugins you have set 
 
 ### Introduction
 
-In cases, where trivial source/target mappings simply don't cut it, you can write and register custom transform functions to handle the data translation between the entities.
+In cases where trivial source/target mappings simply don't cut it, you can write and register custom transform functions to handle the data translation between the entities.
 
 There are two kinds of transform functions:
 - *Import functions* handle incoming data from Desk-Net.
@@ -285,7 +357,7 @@ Now, we have to a) add a metadata plugin and b) a transform mapping to the setti
       ui: {
         config: {
           readOnly: true,
-          label: 'Desk-Net – Planned publication'
+          label: 'Desk-Net - Is planned for Print'
         }
       }
     }
@@ -325,13 +397,13 @@ async function myImportTransform (desknetApi, element, document): any
 ### Export functions
 
 ```js
-async function myExportTransform (desknetApi, element, document): Object
+async function myExportTransform (desknetApi, value, element, document): Object
 ```
 
 - `desknetApi` – A [set of helper functions](#desk-net-api) to make requests to the Desk-Net API.
 - `value` – The value of the metadata field at `target` (see config section above).
-- `element` – The Desk-Net [element](#full-desk-net-element-example)
-- `document` – The Livingdocs document.
+- `element` – The element properties generated using the [metadata mapping](#mapping-desk-net-values-to-livingdocs-document-metadata).
+- `document` – The subset of the Livingdocs document, including the id, title and metadata.
 
 ### `registerTransform`
 
