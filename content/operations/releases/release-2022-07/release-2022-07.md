@@ -146,14 +146,11 @@ We did a few more steps to make the Comyan integration better.
 
 ### Desk Net Publication Status Sync
 
-TODO@ajwild: add description + (guide)
+The `li-desknet-integration` metadata plugin has been extended to support one-way synchronisation of the publication status from Livingdocs to Desk-Net. A new config property provides a priority-based set of instructions used to calculate the Desk-Net publication status value and send it to the Desk-Net API. There is also the option of configuring a table dashboard cell to display the publication status.
 
-* [PR: Categories and Publications are mapped correctly](https://github.com/livingdocsIO/livingdocs-server/pull/4517)
-* [PR: Better error handling on server](https://github.com/livingdocsIO/livingdocs-server/pull/4456)
-* [PR: Better error handling on editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5302)
-* [PR: Fix update function](https://github.com/livingdocsIO/livingdocs-server/pull/4452)
 * [PR: Desk-Net Refactoring](https://github.com/livingdocsIO/livingdocs-server/pull/4576)
-
+* [PR: Add Desk-Net table dashboard cell](https://github.com/livingdocsIO/livingdocs-editor/pull/5408)
+* [PR: Update project config UI](https://github.com/livingdocsIO/livingdocs-editor/pull/5530)
 
 ### New oEmbed Integration
 
