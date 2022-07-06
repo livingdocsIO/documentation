@@ -74,6 +74,7 @@ Consult the [Guide on «Publish Control»]({{< ref "/guides/editor/publish-contr
 * [PR: visiblePublicationDate & significantPublicationDate](https://github.com/livingdocsIO/livingdocs-server/pull/4555)
 * [PR: auto refresh UI when embargo has expired](https://github.com/livingdocsIO/livingdocs-editor/pull/5500)
 * [PR: setVisiblePublicationDateOverride | resetVisiblePublicationDateOverrideOnSignificantUpdate](https://github.com/livingdocsIO/livingdocs-server/pull/4563)
+* [PR: Index visiblePublicationDate on publication index](https://github.com/livingdocsIO/livingdocs-server/pull/4592)
 
 ### Drag + Drop of Document Teasers
 
@@ -159,7 +160,8 @@ TODO@ajwild: add description + (guide)
 We added new oEmbed include services for Facebook, Instagram, Spotify, Datawrapper and Podigee.
 
 * [Guide](https://docs.livingdocs.io/guides/documents/includes/oembed/)
-* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4570)
+* [PR: Instagram + Facebook](https://github.com/livingdocsIO/livingdocs-server/pull/4570)
+* [PR: Datawrapper + Spotify](https://github.com/livingdocsIO/livingdocs-server/pull/4579)
 
 ## Breaking Changes :fire:
 
