@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Metadata Plugin li-tree [livingdocs-server #4591 v189.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4591)
 * :new: fix(MetadataForm closes): With faulty component link [livingdocs-editor #5563 v80.39.8](https://github.com/livingdocsIO/livingdocs-editor/pull/5563)
 * :new: Fix comyan error log [livingdocs-server #4607 v189.1.7](https://github.com/livingdocsIO/livingdocs-server/pull/4607)
 * :new: Fix link edit options [livingdocs-editor #5554 v80.39.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5554)
