@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(metadata): correct metadata service deprecation notice [livingdocs-editor #5552 v80.39.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5552)
 * :new: fix(deps): update dependency wait-on from 6.0.0 to v6.0.1 (master) [livingdocs-editor #5559 v80.39.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5559)
 * :new: fix: 'what is new' link sends to releases docs [livingdocs-server #4603 v189.1.6](https://github.com/livingdocsIO/livingdocs-server/pull/4603)
 
