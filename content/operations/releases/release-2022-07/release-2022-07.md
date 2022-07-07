@@ -418,6 +418,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v80.38.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.7): fix(MetadataForm closes): With faulty component link
 - [v80.38.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.6): fix(metadata): don't log deprecation notice when liMetaTextareaForm is configured
 - [v80.38.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.5): fix(metadata): correct metadata service deprecation notice
 - [v80.38.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.4): fix(dashboards): query and filter caches are not shared anymore between different unrelated document selection dialogs
