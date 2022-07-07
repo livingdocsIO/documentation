@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(deps): update dependency moment from 2.29.3 to 2.29.4 [security] (master) [livingdocs-server #4612 v189.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4612)
 * :new: fix(deps): update dependency http-proxy-agent from 2.1.0 to v5 (master) [livingdocs-editor #5575 v80.39.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5575)
 * :new: fix(deps): update dependency monaco-editor-webpack-plugin from 4.1.1 to v4.2.0 (master) [livingdocs-editor #5570 v80.39.9](https://github.com/livingdocsIO/livingdocs-editor/pull/5570)
 * :new: Metadata Plugin li-tree [livingdocs-server #4591 v189.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4591)
