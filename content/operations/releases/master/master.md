@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix: 'what is new' link sends to releases docs [livingdocs-server #4603 v189.1.6](https://github.com/livingdocsIO/livingdocs-server/pull/4603)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
