@@ -511,6 +511,7 @@ References:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v179.3.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.32): fix(comyan): fix error log
 - [v179.3.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.31): fix(referenceMigration): Supports all list configs
 - [v179.3.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.30): fix(print): Use previously hardcoded fields as fallback
 - [v179.3.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.29): fix(hugo): Add `assetPath` hugo config
