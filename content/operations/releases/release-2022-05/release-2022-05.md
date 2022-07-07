@@ -530,6 +530,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.56): fix(scroll in readonly): Fixed for metadata screen
 - [v80.10.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.55): fix(dashboards): query and filter caches are not shared anymore between different unrelated document selection dialogs
 - [v80.10.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.54): fix: only update remotely changed metadata properties
 - [v80.10.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.53): fix(hugo): Use configured hugo assetPath
