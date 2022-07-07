@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix link edit options [livingdocs-editor #5554 v80.39.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5554)
 * :new: fix(deps): update dependency @4tw/cypress-drag-drop from 2.1.0 to v2.2.1 (master) [livingdocs-editor #5561 v80.39.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5561)
 * :new: fix(metadata): correct metadata service deprecation notice [livingdocs-editor #5552 v80.39.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5552)
 * :new: fix(deps): update dependency wait-on from 6.0.0 to v6.0.1 (master) [livingdocs-editor #5559 v80.39.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5559)
