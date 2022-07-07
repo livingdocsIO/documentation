@@ -412,6 +412,7 @@ Allows the patch operation `archive` via public API to archive an asset.
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v189.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.5): fix(comyan): fix error log
 - [v189.0.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.4): chore(indexing): Index publish control values
 - [v189.0.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.3): fix(referenceMigration): Supports all list configs
 - [v189.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.2): fix(oembed): add spotify and data wrapper
