@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(deps): update dependency fast-json-stringify from 5.0.2 to v5.0.6 (master) [livingdocs-server #4614 v189.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4614)
 * :new: fix(deps): update dependency pino-http from 8.1.0 to v8.1.1 (master) [livingdocs-server #4619 v189.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4619)
 * :new: fix(deps): update dependency moment from 2.29.3 to 2.29.4 [security] (master) [livingdocs-server #4612 v189.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4612)
 * :new: fix(deps): update dependency http-proxy-agent from 2.1.0 to v5 (master) [livingdocs-editor #5575 v80.39.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5575)
