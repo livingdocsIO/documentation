@@ -32,7 +32,9 @@ There are a a few different setups implemented from customers and we can't handl
 ### 1) Disable Prepare Publish
 
 - Remove the editor config `document: {customPublicationDateField: 'publishDate'}`
-- Remove the publicationIndex in your Project Config `contentTypes['your-content-type'].publicationIndex`
+- Remove publicationIndex properties in your Project Config 
+  - `contentTypes['your-content-type'].publicationIndex.sortDate`
+  - `contentTypes['your-content-type'].publicationIndex.scheduledPublishing`
 
 ### 2) Enable Publish Control
 
