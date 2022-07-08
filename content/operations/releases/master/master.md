@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(deps): update dependency @elastic/elasticsearch7 from 7.16.0 to v7.17.0 (master) [livingdocs-server #4622 v189.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4622)
 * :new: fix(deps): update dependency fast-json-stringify from 5.0.2 to v5.0.6 (master) [livingdocs-server #4614 v189.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4614)
 * :new: fix(deps): update dependency pino-http from 8.1.0 to v8.1.1 (master) [livingdocs-server #4619 v189.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4619)
 * :new: fix(deps): update dependency moment from 2.29.3 to 2.29.4 [security] (master) [livingdocs-server #4612 v189.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4612)
