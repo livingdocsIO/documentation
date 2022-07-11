@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(desknet): Don't forward error status code to editor [livingdocs-server #4634 v189.2.9](https://github.com/livingdocsIO/livingdocs-server/pull/4634)
 * :new: fix(li-tree): fix and simplify the config/storage schema [livingdocs-server #4633 v189.2.8](https://github.com/livingdocsIO/livingdocs-server/pull/4633)
 
 
