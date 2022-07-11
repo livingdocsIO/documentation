@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(desknet): Use matchers to calculate published status [livingdocs-server #4605 v189.2.6](https://github.com/livingdocsIO/livingdocs-server/pull/4605)
 * :new: fix(hugo): Allow setting componentName in directiveMappings [livingdocs-editor #5491 v80.39.13](https://github.com/livingdocsIO/livingdocs-editor/pull/5491)
 * :new: fix(hugo): Allow setting componentName in directiveMappings [livingdocs-editor #5491 v80.39.13](https://github.com/livingdocsIO/livingdocs-editor/pull/5491)
 * :new: fix(hugo): Add `componentName` to `directiveMappings` [livingdocs-server #4604 v189.2.5](https://github.com/livingdocsIO/livingdocs-server/pull/4604)
