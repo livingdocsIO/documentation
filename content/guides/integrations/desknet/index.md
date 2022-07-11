@@ -141,6 +141,8 @@ Add the following metadata plugin to all content types that can be created using
       // You can use publication, task, or metadata matchers to calculate a Desk-Net
       // publication status id value. You can find the publicationStatusId value using the
       // Desk-Net API, or by inspecting network requests in the Statuses page in Desk-Net.
+      // The order of matchers is important. The array is iterated through from first to last,
+      // with the publicationStatusId taken from the earliest document state match.
       matchers: [
         {
           // Defining a publicationStatusId for the published status is required if you intend to
