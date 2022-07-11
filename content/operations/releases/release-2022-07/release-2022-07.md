@@ -351,7 +351,6 @@ Whilst we continue to refine the selection across multiple components we have en
 
 - [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5416)
 - [Documentation](https://docs.livingdocs.io/reference-docs/editor-extensions/editor-configuration/editing-features/#multi-select-and-multi-text-select)
-## Deprecations
 
 ## APIs :gift:
 

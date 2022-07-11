@@ -28,27 +28,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## PRs to Categorize
 * :new: fix(li-tree): fix and simplify the config/storage schema [livingdocs-server #4633 v189.2.8](https://github.com/livingdocsIO/livingdocs-server/pull/4633)
-* :new: fix(desknet): Send null publication status to clear property [livingdocs-server #4611 v189.2.7](https://github.com/livingdocsIO/livingdocs-server/pull/4611)
-* :new: fix(desknet): Use matchers to calculate published status [livingdocs-server #4605 v189.2.6](https://github.com/livingdocsIO/livingdocs-server/pull/4605)
-* :new: fix(hugo): Allow setting componentName in directiveMappings [livingdocs-editor #5491 v80.39.13](https://github.com/livingdocsIO/livingdocs-editor/pull/5491)
-* :new: fix(hugo): Allow setting componentName in directiveMappings [livingdocs-editor #5491 v80.39.13](https://github.com/livingdocsIO/livingdocs-editor/pull/5491)
-* :new: fix(hugo): Add `componentName` to `directiveMappings` [livingdocs-server #4604 v189.2.5](https://github.com/livingdocsIO/livingdocs-server/pull/4604)
-* :new: fix(significant-update): change button copy when significant checkbox is ticked [livingdocs-editor #5566 v80.39.12](https://github.com/livingdocsIO/livingdocs-editor/pull/5566)
-* :new: fix: option component properties with string value [livingdocs-editor #5579 v80.39.11](https://github.com/livingdocsIO/livingdocs-editor/pull/5579)
-* :new: fix(deps): update dependency @elastic/elasticsearch7 from 7.16.0 to v7.17.0 (master) [livingdocs-server #4622 v189.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4622)
-* :new: fix(deps): update dependency fast-json-stringify from 5.0.2 to v5.0.6 (master) [livingdocs-server #4614 v189.2.3](https://github.com/livingdocsIO/livingdocs-server/pull/4614)
-* :new: fix(deps): update dependency pino-http from 8.1.0 to v8.1.1 (master) [livingdocs-server #4619 v189.2.2](https://github.com/livingdocsIO/livingdocs-server/pull/4619)
-* :new: fix(deps): update dependency moment from 2.29.3 to 2.29.4 [security] (master) [livingdocs-server #4612 v189.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4612)
-* :new: fix(deps): update dependency http-proxy-agent from 2.1.0 to v5 (master) [livingdocs-editor #5575 v80.39.10](https://github.com/livingdocsIO/livingdocs-editor/pull/5575)
-* :new: fix(deps): update dependency monaco-editor-webpack-plugin from 4.1.1 to v4.2.0 (master) [livingdocs-editor #5570 v80.39.9](https://github.com/livingdocsIO/livingdocs-editor/pull/5570)
-* :new: Metadata Plugin li-tree [livingdocs-server #4591 v189.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4591)
-* :new: fix(MetadataForm closes): With faulty component link [livingdocs-editor #5563 v80.39.8](https://github.com/livingdocsIO/livingdocs-editor/pull/5563)
-* :new: Fix comyan error log [livingdocs-server #4607 v189.1.7](https://github.com/livingdocsIO/livingdocs-server/pull/4607)
-* :new: Fix link edit options [livingdocs-editor #5554 v80.39.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5554)
-* :new: fix(deps): update dependency @4tw/cypress-drag-drop from 2.1.0 to v2.2.1 (master) [livingdocs-editor #5561 v80.39.6](https://github.com/livingdocsIO/livingdocs-editor/pull/5561)
-* :new: fix(metadata): correct metadata service deprecation notice [livingdocs-editor #5552 v80.39.5](https://github.com/livingdocsIO/livingdocs-editor/pull/5552)
-* :new: fix(deps): update dependency wait-on from 6.0.0 to v6.0.1 (master) [livingdocs-editor #5559 v80.39.4](https://github.com/livingdocsIO/livingdocs-editor/pull/5559)
-* :new: fix: 'what is new' link sends to releases docs [livingdocs-server #4603 v189.1.6](https://github.com/livingdocsIO/livingdocs-server/pull/4603)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -90,6 +69,11 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Highlights
 
+### Metadata Plugin li-tree
+
+* [Documentation: TODO](?)
+* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4591)
+
 ### Microsoft Teams Integration
 
 TODO: Is this a highlight? Is the feature ready? Is the feature documented?
@@ -120,6 +104,7 @@ livingdocs-server migrate up
 ### Improvements
 
 ### Bugfixes
+* Editable links: Show current (and not configured link) [livingdocs-editor #5554 v80.39.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5554)
 
 ## Patches
 
