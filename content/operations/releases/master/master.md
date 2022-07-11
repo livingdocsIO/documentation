@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(hugo): Add `componentName` to `directiveMappings` [livingdocs-server #4604 v189.2.5](https://github.com/livingdocsIO/livingdocs-server/pull/4604)
 * :new: fix(significant-update): change button copy when significant checkbox is ticked [livingdocs-editor #5566 v80.39.12](https://github.com/livingdocsIO/livingdocs-editor/pull/5566)
 * :new: fix: option component properties with string value [livingdocs-editor #5579 v80.39.11](https://github.com/livingdocsIO/livingdocs-editor/pull/5579)
 * :new: fix(deps): update dependency @elastic/elasticsearch7 from 7.16.0 to v7.17.0 (master) [livingdocs-server #4622 v189.2.4](https://github.com/livingdocsIO/livingdocs-server/pull/4622)
