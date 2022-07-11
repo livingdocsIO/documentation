@@ -68,7 +68,7 @@ Add the following to the project config of the project you want to connect with 
   desknet: {
     enabled: true,
 
-    // Optional. See "Story Planning Schedule in Livingdocs" section below
+    // See "Story Planning Schedule in Livingdocs" section below
     scheduleEnabled: true,
 
     credentials: {
@@ -129,7 +129,7 @@ Add the following metadata plugin to all content types that can be created using
   type: 'li-desknet-integration',
 
   // {{< added-in release-2022-07 >}}
-  // Optional. The config can be used if you intend to keep Desk-Net's publication status up-to-date
+  // The config can be used if you intend to keep Desk-Net's publication status up-to-date
   // with the status of the document in Livingdocs. It is required if you intend to publish a
   // document in Livingdocs when updating the publication status in Desk-Net.
   config: {
@@ -168,8 +168,7 @@ Add the following metadata plugin to all content types that can be created using
   },
 
   // {{< added-in release-2022-07 >}}
-  // Optional. Only required if you intend to display the current publication status in a
-  // table dashboard cell.
+  // Only required if you intend to display the current publication status in a table dashboard cell
   ui: {
     config: {
       publicationStatus: {
@@ -328,7 +327,7 @@ liServer.registerInitializedHook(async () => {
 
   const {
     registerTransform
-  } = liServer.features.api('li-integrations-desknet-api')
+  } = liServer.features.api('li-desknet-integration')
 
 
   // Takes two arguments:
