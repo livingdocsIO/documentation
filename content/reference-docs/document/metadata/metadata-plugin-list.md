@@ -206,6 +206,8 @@ metadata: [
       // {{< added-in release-2022-07 >}}
       publicationStatus: {
         fallbackPublicationStatusId: '2',
+        // The order of matchers is important. The array is iterated through from first to last,
+        // with the publicationStatusId taken from the earliest document state match.
         matchers: [
           {
             type: 'publication',
