@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(li-tree): fix and simplify the config/storage schema [livingdocs-server #4633 v189.2.8](https://github.com/livingdocsIO/livingdocs-server/pull/4633)
 * :new: fix(desknet): Send null publication status to clear property [livingdocs-server #4611 v189.2.7](https://github.com/livingdocsIO/livingdocs-server/pull/4611)
 * :new: fix(desknet): Use matchers to calculate published status [livingdocs-server #4605 v189.2.6](https://github.com/livingdocsIO/livingdocs-server/pull/4605)
 * :new: fix(hugo): Allow setting componentName in directiveMappings [livingdocs-editor #5491 v80.39.13](https://github.com/livingdocsIO/livingdocs-editor/pull/5491)
