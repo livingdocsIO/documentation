@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(deps): update dependency env-ci from 7.1.0 to v7.2.1 (master) [livingdocs-editor #5584 v80.39.14](https://github.com/livingdocsIO/livingdocs-editor/pull/5584)
 * :new: 🔥 Drop Postgres11 support [livingdocs-server #4631 v190.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4631)
 * :new: Fix session extension to reject on revocation [livingdocs-server #4623 v189.2.10](https://github.com/livingdocsIO/livingdocs-server/pull/4623)
 * :new: fix(desknet): Don't forward error status code to editor [livingdocs-server #4634 v189.2.9](https://github.com/livingdocsIO/livingdocs-server/pull/4634)
