@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(image-processing): Custom handling for gif files [livingdocs-server #4644 v190.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4644)
 * :new: 🍬 Linting configuration modification `curly` -> ["multi-line", "consistent"] [livingdocs-server #4643 v190.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4643)
 * :new: fix(deps): update dependency env-ci from 7.1.0 to v7.2.1 (master) [livingdocs-editor #5584 v80.39.14](https://github.com/livingdocsIO/livingdocs-editor/pull/5584)
 * :new: 🔥 Drop Postgres11 support [livingdocs-server #4631 v190.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4631)
