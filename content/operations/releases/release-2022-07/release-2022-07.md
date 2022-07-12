@@ -408,6 +408,7 @@ Allows the patch operation `archive` via public API to archive an asset.
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v189.0.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.11): chore(lib): Change deprecated buffer.slice() to .subarray()
 - [v189.0.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.10): chore(logging): Fix the dev string formatter to always include a newline at the start
 - [v189.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.9): fix(desknet): Don't forward error status code to editor
 - [v189.0.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.8): chore(desknet): Reduce code repetition in tests
