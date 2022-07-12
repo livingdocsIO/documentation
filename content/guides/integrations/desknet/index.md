@@ -68,9 +68,6 @@ Add the following to the project config of the project you want to connect with 
   desknet: {
     enabled: true,
 
-    // Optional. See "Story Planning Schedule in Livingdocs" section below
-    scheduleEnabled: true,
-
     credentials: {
       clientId: '******',
       clientSecret: {
@@ -556,18 +553,6 @@ This function resolves to a Desk-Net element [with prefetched values](#what-are-
 An optional step is to enable the story planning side panel within the Livingdocs editor. This can be configured to only display for certain content types, for example pages to help with page management. This step can also be done without mapping Desk-Net values, but this will result in the side panel displaying document titles instead of document reference cards.
 
 ### Setup
-
-#### Project config
-
-Extend the `desknet` object in your project config with the following:
-
-```js
-{
-  desknet: {
-    scheduleEnabled: true,
-  }
-}
-```
 
 #### Content type config
 
