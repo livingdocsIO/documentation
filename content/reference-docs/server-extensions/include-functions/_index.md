@@ -22,6 +22,11 @@ Core oEmbed providers:
 - Twitter (`li-twitter`)
 - Vimeo (`li-vimeo`)
 - YouTube (`li-youtube`)
+- Podigee (`li-podigee`) {{< added-in release-2022-07 >}}
+- Datawrapper (`li-datawrapper`) {{< added-in release-2022-07 >}}
+- Spotify (`li-spotify`) {{< added-in release-2022-07 >}}
+- Instagram (`li-instagram`), ATTENTION: requires credentials {{< added-in release-2022-07 >}}
+- Facebook (`li-facebook-post`), ATTENTION: requires credentials {{< added-in release-2022-07 >}}
 
 For details on how to setup and configure an oEmbed include please read the [guide]({{< ref "/guides/documents/includes/oembed" >}}).
 
