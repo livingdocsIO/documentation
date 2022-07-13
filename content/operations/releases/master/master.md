@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(deps): update dependency html-loader from 3.1.2 to v4 (master) [livingdocs-editor #5591 v80.39.17](https://github.com/livingdocsIO/livingdocs-editor/pull/5591)
 * :new: Include Service Forms: UI correctly updates when user changes data in paramsSchema based forms [livingdocs-editor #5517 v80.39.16](https://github.com/livingdocsIO/livingdocs-editor/pull/5517)
 * :new: fix(editor): background color is editable and shows color preview [livingdocs-editor #5590 v80.39.15](https://github.com/livingdocsIO/livingdocs-editor/pull/5590)
 * :new: fix(image-processing): Custom handling for gif files [livingdocs-server #4644 v190.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4644)
