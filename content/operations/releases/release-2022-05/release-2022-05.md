@@ -511,6 +511,7 @@ References:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v179.3.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.34): fix(include services): allow baseFilters and displayFilters in paramsSchema ui.config
 - [v179.3.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.33): fix(image-processing): Add format to GIF metadata extraction
 - [v179.3.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.32): fix(comyan): fix error log
 - [v179.3.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.31): fix(referenceMigration): Supports all list configs
