@@ -43,7 +43,7 @@ For testing purposes the service at https://webhook.site may come in handy. It g
 
 ### Configuration storage
 
-The configuration of webhooks is stored in `channelConfig.settings.webhooks`.
+The configuration of webhooks is stored in Project Config`settings.webhooks`.
 
 ```js
 webhooks: {
