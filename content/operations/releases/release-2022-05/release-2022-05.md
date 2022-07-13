@@ -532,6 +532,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.60): fix(includes): ensure selected values are visible in paramsSchema form by updating the local params state
 - [v80.10.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.59): fix: option component properties with string value
 - [v80.10.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.58): fix(deps): update dependency moment from 2.29.3 to 2.29.4 [security]
 - [v80.10.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.57): fix(MetadataForm closes): With faulty component link
