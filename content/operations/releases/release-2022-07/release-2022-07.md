@@ -421,6 +421,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v80.38.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.11): fix(editor): background color is editable and shows color preview
 - [v80.38.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.10): fix: option component properties with string value
 - [v80.38.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.9): fix(significant-update): change button copy when significant checkbox is ticked
 - [v80.38.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.8): fix(deps): update dependency moment from 2.29.3 to 2.29.4 [security]
