@@ -423,6 +423,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v80.38.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.14): fix(metadata): Avoid metadata reset while collaborative editing
 - [v80.38.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.13): fix(auth): prevents an infinite loop when a user session is revoked
 - [v80.38.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.12): fix(includes): ensure selected values are visible in paramsSchema form by updating the local params state
 - [v80.38.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.11): fix(editor): background color is editable and shows color preview
