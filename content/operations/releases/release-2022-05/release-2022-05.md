@@ -533,6 +533,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.62): fix(metadata): Avoid metadata reset while collaborative editing
 - [v80.10.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.61): fix(dashboards): ensure create button without when contentType filters are defined, also for custom dashboards
 - [v80.10.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.60): fix(includes): ensure selected values are visible in paramsSchema form by updating the local params state
 - [v80.10.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.59): fix: option component properties with string value
