@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(deps): update dependency ioredis from 5.1.0 to v5.2.0 (master) [livingdocs-server #4658 v190.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4658)
 * :new: fix(deps): update dependency @google-cloud/storage from 6.2.2 to v6.2.3 (master) [livingdocs-server #4656 v190.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/4656)
 * :new: fix(deps): update dependency axios from 0.23.0 to ^0.27.0 (master) [livingdocs-server #4626 v190.1.3](https://github.com/livingdocsIO/livingdocs-server/pull/4626)
 * :new: chore(blob-storage): Remove `package.json` from `lib/blob-store` [livingdocs-server #4651 v190.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4651)
