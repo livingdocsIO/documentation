@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(metadata): Avoid metadata reset while collaborative editing [livingdocs-editor #5596 v80.39.18](https://github.com/livingdocsIO/livingdocs-editor/pull/5596)
 * :new: 🔥 Drop Redis <v5 support and deprecate v5 [livingdocs-server #4639 v191.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4639)
 * :new: fix(deps): update dependency ioredis from 5.1.0 to v5.2.0 (master) [livingdocs-server #4658 v190.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4658)
 * :new: fix(deps): update dependency @google-cloud/storage from 6.2.2 to v6.2.3 (master) [livingdocs-server #4656 v190.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/4656)
