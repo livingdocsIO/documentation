@@ -29,7 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 ## PRs to Categorize
 * :new: fix(desknet): Don't use scheduleEnabled project config property [livingdocs-server #4647 v191.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4647)
 * :new: fix(desknet): Don't use scheduleEnabled project config property [livingdocs-editor #5589 v80.39.22](https://github.com/livingdocsIO/livingdocs-editor/pull/5589)
-* :new: Fix: Ensure UI updates when images/videos are edited in Embedded Documents [livingdocs-editor #5608 v80.39.21](https://github.com/livingdocsIO/livingdocs-editor/pull/5608)
+* :new: Fix: Ensure UI updates when images/videos are edited in Embedded Documents [livingdocs-editor #5608 v80.39.22](https://github.com/livingdocsIO/livingdocs-editor/pull/5608)
 * :new: Dashboards: Show correct contentType selection on create from custom dashboards [livingdocs-editor #5602 v80.39.21](https://github.com/livingdocsIO/livingdocs-editor/pull/5602)
 * :new: Test/Flatter Design [livingdocs-editor #5605 v80.39.20](https://github.com/livingdocsIO/livingdocs-editor/pull/5605)
 * :new: Fix: Dashboard Create Button available when contentType filters defined, also for custom dashboards [livingdocs-editor #5598 v80.39.19](https://github.com/livingdocsIO/livingdocs-editor/pull/5598)
