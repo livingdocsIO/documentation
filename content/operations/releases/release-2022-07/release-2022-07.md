@@ -423,6 +423,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v80.38.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.16): fix(dashboards): show the correct content type selection on custom dashboards
 - [v80.38.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.15): fix(dashboards): ensure create button without when contentType filters are defined, also for custom dashboards
 - [v80.38.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.14): fix(metadata): Avoid metadata reset while collaborative editing
 - [v80.38.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.13): fix(auth): prevents an infinite loop when a user session is revoked
