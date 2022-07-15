@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Dashboards: Show correct contentType selection on create from custom dashboards [livingdocs-editor #5602 v80.39.21](https://github.com/livingdocsIO/livingdocs-editor/pull/5602)
 * :new: Test/Flatter Design [livingdocs-editor #5605 v80.39.20](https://github.com/livingdocsIO/livingdocs-editor/pull/5605)
 * :new: Fix: Dashboard Create Button available when contentType filters defined, also for custom dashboards [livingdocs-editor #5598 v80.39.19](https://github.com/livingdocsIO/livingdocs-editor/pull/5598)
 * :new: fix(deps): update dependency @google-cloud/translate from 6.3.1 to v7 (master) [livingdocs-server #4659 v191.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4659)
