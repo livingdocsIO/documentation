@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix: Ensure UI updates when images/videos are edited in Embedded Documents [livingdocs-editor #5608 v80.39.22](https://github.com/livingdocsIO/livingdocs-editor/pull/5608)
 * :new: Dashboards: Show correct contentType selection on create from custom dashboards [livingdocs-editor #5602 v80.39.21](https://github.com/livingdocsIO/livingdocs-editor/pull/5602)
 * :new: Dashboards: Show correct contentType selection on create from custom dashboards [livingdocs-editor #5602 v80.39.21](https://github.com/livingdocsIO/livingdocs-editor/pull/5602)
 * :new: Test/Flatter Design [livingdocs-editor #5605 v80.39.20](https://github.com/livingdocsIO/livingdocs-editor/pull/5605)
