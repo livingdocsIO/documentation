@@ -423,6 +423,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v80.38.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.19): fix(dashboards): Calculate target dashboard on create dialog close
 - [v80.38.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.18): fix(dashboards): Only allow opening print select from create dialog
 - [v80.38.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.17): fix(embedded documents): ensure UI updates when images/videos in embedded documents are edited
 - [v80.38.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.16): fix(dashboards): show the correct content type selection on custom dashboards
