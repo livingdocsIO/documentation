@@ -32,8 +32,9 @@ There are different configurable properties when using Livingdocs Server logging
 logs: {
   enabled: true, // default: true
 
+  // Shows logs with log level `level` or higher
   // Possible log levels: 'error', 'warn', 'info', 'debug', 'trace'
-  level: 'warn',
+  level: 'info',
 
   // use `true` for development to have a formatted output
   pretty: false,
@@ -54,17 +55,15 @@ logs: {
   // Pino Documentation: https://github.com/pinojs/pino/blob/master/docs/api.md#formatters-object
   formatters: {
     // This example will log levels as strings instead of the default numbers
-    level(label, level) {
-      return { level: label }
+    level (label, level) {
+      return {level: label}
     },
     // Changes the shape of the bindings. 
     // It will be called every time a child logger is created.
     // The default shape is {pid, hostname}
     bindings (bindings) {
       return {
-        pid: bindings.pid,
-        hostname: bindings.hostname,
-        project: binding.project
+        project: bindings.project
       }
     },
     // Changes the shape of the log object.
@@ -75,6 +74,11 @@ logs: {
     }
   }
 }
+```
+
+For example, with the previous configuration the generated logs will look like:
+```
+{"level":"success","time":1658147523276,"project":"livingdocs-server","ns":"li-tasks/setupProjects","customer":"Livingdocs","msg":"Created - project 'e2e-blank' "}
 ```
 
 ### Handling errors in the logs
