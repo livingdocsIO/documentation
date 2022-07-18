@@ -20,8 +20,8 @@ aliases:
 
 ## Webinar
 
-* Feature Webinar Recording: **TODO**
-* Feature Webinar Documentation: **TODO**
+* [Feature Webinar Recording](https://us02web.zoom.us/rec/share/FdAZSgHXfI3v9lJ32BciGSe5bib-p6xR8as9GKfHYxGVoSRxjVmnevw46VjHzanK.JVoGWecl3P--05f3) | PW: G?0ufQ8x
+* [Feature Webinar Documentation](https://docs.google.com/presentation/d/1-VEy7SswXLiBoNTHXq0R1vLbqSvUBf0njLG_OwQncJ8/edit?usp=sharing)
 * Dev Webinar Recording: **TODO**
 * Dev Webinar Slides: **TODO**
 * Release Newsletter Subscription: **TODO**
