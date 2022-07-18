@@ -420,7 +420,6 @@ Here is a list of all patches after the release has been announced.
 - [v189.0.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.4): chore(indexing): Index publish control values
 - [v189.0.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.3): fix(referenceMigration): Supports all list configs
 - [v189.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.2): fix(oembed): add spotify and data wrapper
-- [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
 - [v80.38.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.19): fix(dashboards): Calculate target dashboard on create dialog close
@@ -440,7 +439,6 @@ Here is a list of all patches after the release has been announced.
 - [v80.38.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.5): fix(metadata): correct metadata service deprecation notice
 - [v80.38.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.4): fix(dashboards): query and filter caches are not shared anymore between different unrelated document selection dialogs
 - [v80.38.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.3): fix(scroll in readonly): Fixed for metadata screen
-- [v??.?.?](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v??.?.?): text
 
   ---
   **Icon Legend**
