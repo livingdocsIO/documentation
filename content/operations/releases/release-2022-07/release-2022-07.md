@@ -22,8 +22,8 @@ aliases:
 
 * [Feature Webinar Recording](https://us02web.zoom.us/rec/share/FdAZSgHXfI3v9lJ32BciGSe5bib-p6xR8as9GKfHYxGVoSRxjVmnevw46VjHzanK.JVoGWecl3P--05f3) | PW: G?0ufQ8x
 * [Feature Webinar Documentation](https://docs.google.com/presentation/d/1-VEy7SswXLiBoNTHXq0R1vLbqSvUBf0njLG_OwQncJ8/edit?usp=sharing)
-* Dev Webinar Recording: **TODO**
-* Dev Webinar Slides: **TODO**
+* [Dev Webinar Recording](https://us02web.zoom.us/rec/play/Za9Bwa_HWO_XNjkbPYS4sxcikZDJflChNNDO77N5_iEWNb4O9Wrmpcgy0G8ao9i7-O6H6rF6aiadU929.K32CH7SQx_5PMxBS?_x_zm_rhtaid=787&_x_zm_rtaid=YVxjEXPJS32jPQbax5Udbg.1658152637191.ee80e1986548741e08aa51c12b2fc5cc&autoplay=true&continueMode=true&startTime=1658149391000) | PW: =Nh0L^Z6
+* [Dev Webinar Slides](https://docs.google.com/presentation/d/1aYhOhXc0wEi4KfiWHnFXxOin3OeC30aon6_d5GQoY0o/edit?usp=sharing)
 * [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ## System Requirements
