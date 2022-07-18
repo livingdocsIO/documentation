@@ -24,7 +24,7 @@ aliases:
 * [Feature Webinar Documentation](https://docs.google.com/presentation/d/1-VEy7SswXLiBoNTHXq0R1vLbqSvUBf0njLG_OwQncJ8/edit?usp=sharing)
 * Dev Webinar Recording: **TODO**
 * Dev Webinar Slides: **TODO**
-* Release Newsletter Subscription: **TODO**
+* [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ## System Requirements
 
