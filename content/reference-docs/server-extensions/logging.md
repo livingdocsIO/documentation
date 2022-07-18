@@ -25,6 +25,60 @@ log.warn('Requiring lib/something is deprecated.')
 log.error({err: new Error('noooo!')}, 'ouch!')
 ```
 
+### Logging options
+
+There are different configurable properties when using Livingdocs Server logging. The snippet below contains all the possible parameters to configure the logs.
+``` js
+logs: {
+  enabled: true, // default: true
+
+  // Possible log levels: 'error', 'warn', 'info', 'debug', 'trace'
+  level: 'warn',
+
+  // use `true` for development to have a formatted output
+  pretty: false,
+
+  // Enable http request logs
+  // (requests logs always have a log level of 'info' and will be logged
+  // regardless of the configured log level)
+  logRequests: true,
+
+  // Pass pid and hostname properties to pino logger, this information will be added to each log
+  // default: {}, pino will take the information from process.pid and os.hostname
+  // Set to `undefined` to avoid adding `pid`, `hostname` to each log
+  base: {
+    project: 'livingdocs-server'
+  },
+
+  // Pass custom pino formatters (these are ignored when: `pretty: true`)
+  // Pino Documentation: https://github.com/pinojs/pino/blob/master/docs/api.md#formatters-object
+  formatters: {
+    // This example will log levels as strings instead of the default numbers
+    level(label, level) {
+      return { level: label }
+    },
+    // Changes the shape of the bindings. 
+    // It will be called every time a child logger is created.
+    // The default shape is {pid, hostname}
+    bindings (bindings) {
+      return {
+        pid: bindings.pid,
+        hostname: bindings.hostname,
+        project: binding.project
+      }
+    },
+    // Changes the shape of the log object.
+    // This example will add `customer` property to the logs
+    // By default it will not change to shape of the log object.
+    log (object) {
+      return {...object, customer: 'Livingdocs'}
+    }
+  }
+}
+```
+
+### Handling errors in the logs
+
 In order for the passed object or Error to be logged as JSON it must be passed as the first param. And this object should not have any of the following root-level keys: `level`, `time`, `msg`.
 
 If Errors are passed as an attribute of an object,
@@ -36,7 +90,6 @@ Make sure you always pass it directly or use `err` or `error` attributes. That b
 - ✅ `log.error(new Error())`
 - ✅ `log.error({err: new Error()})`
 - ✅ `log.error({error: new Error()})`
-
 
 ### Creating a child logger
 
