@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Fix comyan proxy case [livingdocs-server #4667 v191.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4667)
 * :new: Register Document Create Function [livingdocs-server #4606 v191.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4606)
 * :new: fix(dashboards): Calculate target dashboard on create dialog close [livingdocs-editor #5612 v80.39.24](https://github.com/livingdocsIO/livingdocs-editor/pull/5612)
 * :new: fix(dashboards): Only allow opening print select from create dialog [livingdocs-editor #5611 v80.39.23](https://github.com/livingdocsIO/livingdocs-editor/pull/5611)
