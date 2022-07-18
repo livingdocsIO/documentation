@@ -554,6 +554,36 @@ dashboards: [
         // default false, if true, metadata property can be edited inline in the dashboard
         editable: true
       }
+    ],
+
+    // adds custom create flows to the dashboard (e.g. custom button, custom create modal, custom create function)
+    // {{< added-in release-2022-09 >}}
+    documentCreationFlows: [
+      {
+        handle: 'breakingNews',
+        // register a createFunction with documentApi.registerCreateFunction
+        // default createFunction handle: 'liDefaultCreationFunction'
+        createFunction: 'breakingNews',
+        createButtonLabel: 'Create Breaking News',
+
+        // shows title and urgency field in the create modal
+        // the config is the same as for metadata plugins
+        paramsSchema: [
+          {handle: 'title', type: 'li-text'},
+          {handle: 'urgency', type: 'li-number'},
+        ],
+
+        // values passed to paramsSchema fields as initial value
+        defaultParams: {
+          urgency: 5
+        },
+
+        // additional info for your createFunction
+        context: {
+          projectType: 'flex',
+          contentType: 'regular'
+        }
+      }
     ]
   }
 ]
