@@ -687,6 +687,7 @@ documentLists: {
     name: 'myDocumentListCard'
   },
   dashboard: {
+    useDashboard: 'myCustomDashboard' // added in release-2022-09
     displayFilters: [],
     baseFilters: [
       {type: 'documentType', value: 'article'},
