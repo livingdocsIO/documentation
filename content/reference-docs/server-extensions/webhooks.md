@@ -11,8 +11,8 @@ You can configure multiple webhooks that are called on only one or multiple even
 
 ## List of Available Hooks
 
-- `document.published`
-- `document.unpublished`
+- `document.publish`
+- `document.unpublish`
 - `document.update`
 - `mediaLibraryEntry.create`
 - `mediaLibraryEntry.archive`
