@@ -534,6 +534,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.64): fix(properties): Update UI on change
 - [v80.10.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.63): fix(dashboards): show the correct content type selection on custom dashboards
 - [v80.10.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.62): fix(metadata): Avoid metadata reset while collaborative editing
 - [v80.10.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.61): fix(dashboards): ensure create button without when contentType filters are defined, also for custom dashboards
