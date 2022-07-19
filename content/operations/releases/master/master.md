@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(publish control): don't allow publish/publish schedule until draft is saved [livingdocs-editor #5618 v80.39.25](https://github.com/livingdocsIO/livingdocs-editor/pull/5618)
 * :new: Fix comyan proxy case [livingdocs-server #4667 v191.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4667)
 * :new: Register Document Create Function [livingdocs-server #4606 v191.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4606)
 * :new: fix(dashboards): Calculate target dashboard on create dialog close [livingdocs-editor #5612 v80.39.24](https://github.com/livingdocsIO/livingdocs-editor/pull/5612)
