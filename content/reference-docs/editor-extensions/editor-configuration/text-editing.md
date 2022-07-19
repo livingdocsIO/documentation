@@ -324,7 +324,7 @@ Spellcheck response with no corrections:
 
 Spellcheck response with corrections:
 ```json
-{"status":false, "bad":[{"word":"falsch","pos":0,"suggest":["Falsch"]}]}
+{"status":false, "bad":[{"word":"falsch","pos":0}]}
 ```
 
 
