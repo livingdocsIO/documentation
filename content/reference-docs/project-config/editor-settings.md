@@ -696,6 +696,20 @@ documentLists: {
   }
 }
 ```
+## Inline Links
+added in `release-2022-09`
+```js
+inlineLinks: {
+  dashboard: {
+    useDashboard: 'myCustomDashboard'
+    displayFilters: [],
+    baseFilters: [
+      {type: 'documentType', value: 'article'},
+      {type: 'documentState', value: 'published'}
+    ]
+  }
+}
+```
 ### displayFilters
 
 [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter" >}}) are filters that the user can set in the UI (below the search input).
