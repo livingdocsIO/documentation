@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: feat(metadata): Add li-desknet-schedule metadata plugin [livingdocs-editor #5627 v80.41.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5627)
 * :new: feat(desknet): Create li-desknet-schedule metadata plugin [livingdocs-server #4673 v191.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4673)
 * :new: Deliveries: Add build to deliveries + webhook [livingdocs-server #4670 v191.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4670)
 * :new: Project Config - Webhook: Add webhook event 'document.build' [livingdocs-editor #5628 v80.40.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5628)
