@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Default Table Dashboards [livingdocs-editor #5498 v80.42.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5498)
 * :new: Default Table Dashboards [livingdocs-server #4671 v191.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4671)
 * :new: fix: remove category filter from query when last category is removed [livingdocs-editor #5582 v80.41.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5582)
 * :new: feat(metadata): Add li-desknet-schedule metadata plugin [livingdocs-editor #5627 v80.41.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5627)
