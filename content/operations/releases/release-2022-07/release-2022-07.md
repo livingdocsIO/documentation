@@ -423,6 +423,7 @@ Here is a list of all patches after the release has been announced.
 - [v189.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.2): fix(oembed): add spotify and data wrapper
 
 ### Livingdocs Editor Patches
+- [v80.38.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.22): fix: update currentValue of category filter after reseting filters
 - [v80.38.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.21): fix(media library): ensure the new poster image is set and saved after "use frame as poster image"
 - [v80.38.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.20): fix(publish control): don't allow publish/publish schedule until draft is saved
 - [v80.38.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.19): fix(dashboards): Calculate target dashboard on create dialog close
