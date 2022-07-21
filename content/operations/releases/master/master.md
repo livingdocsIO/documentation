@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Project Config - Webhook: Add webhook event 'document.build' [livingdocs-editor #5628 v80.40.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5628)
 * :new: fix(desknet): Support any handle for li-desknet-integration [livingdocs-server #4672 v191.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4672)
 * :new: Fix Media Library: make "use frame as poster image" work again [livingdocs-editor #5620 v80.39.26](https://github.com/livingdocsIO/livingdocs-editor/pull/5620)
 * :new: fix(publish control): don't allow publish/publish schedule until draft is saved [livingdocs-editor #5618 v80.39.25](https://github.com/livingdocsIO/livingdocs-editor/pull/5618)
