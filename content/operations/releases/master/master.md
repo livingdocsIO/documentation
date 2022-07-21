@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Deliveries: Add build to deliveries + webhook [livingdocs-server #4670 v191.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4670)
 * :new: Project Config - Webhook: Add webhook event 'document.build' [livingdocs-editor #5628 v80.40.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5628)
 * :new: fix(desknet): Support any handle for li-desknet-integration [livingdocs-server #4672 v191.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4672)
 * :new: Fix Media Library: make "use frame as poster image" work again [livingdocs-editor #5620 v80.39.26](https://github.com/livingdocsIO/livingdocs-editor/pull/5620)
