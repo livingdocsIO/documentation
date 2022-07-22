@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: fix(char counter): correctly show char counter when deleting a container component [livingdocs-editor #5615 v80.44.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5615)
 * :new: Fix imatrics project settings [livingdocs-editor #5373 v80.44.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5373)
 * :new: Document Creation Flows: Hide default create function properties [livingdocs-server #4676 v191.5.1](https://github.com/livingdocsIO/livingdocs-server/pull/4676)
 * :new: feat(li-tree) add li-tree metadata plugin [livingdocs-editor #5580 v80.44.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5580)
