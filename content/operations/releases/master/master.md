@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* :new: Prototype: Add Document Build Button [livingdocs-editor #5629 v80.43.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5629)
 * :new: Default Table Dashboards [livingdocs-editor #5498 v80.42.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5498)
 * :new: Default Table Dashboards [livingdocs-server #4671 v191.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4671)
 * :new: fix: remove category filter from query when last category is removed [livingdocs-editor #5582 v80.41.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5582)
