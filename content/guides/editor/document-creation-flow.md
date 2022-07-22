@@ -102,27 +102,34 @@ liServer.registerInitializedHook(async () => {
 
     // params and context are coming from Document Creation Flow
     // and can differ from flow to flow
-    // please check if passed params are valid
     async create ({projectConfig, userId, params = {}, context = {}}) {
-      if (!params.contentType) throw new Error("param 'contentType' is required")
+
+      // you should validate params/context and you can throw an error
+      if (!context.projectType) throw new Error("context 'projectType' is required")
+      const contentType = context.projectType === 'flex'
+        ? 'flex'
+        : 'regular'
+
+      const title = params.title || `Untitled`
 
       const metadata = {
-        ...projectConfig.contentTypesByHandle[params.contentType]?.defaultMetadata,
-        ...params.metadata,
+        ...projectConfig.contentTypesByHandle[contentType]?.defaultMetadata,
+        title,
+        urgency: params.urgency,
         projectType: context.projectType
       }
 
       // response format of the registered create function
       return {
         // mandatory properties of return object
-        title: params.title || `Untitled`,
-        contentType: params.contentType,
+        title,
+        contentType,
         // optional properties of return object
-        content: [],
-        metadata,
-        designVersion: params.designVersion,
-        metadataSource: params.metadataSource,
-        translations: params.translations
+        content: [],                                  // default: []
+        metadata,                                     // default: {}
+        designVersion: '1.0.0',                       // default: project designVersion
+        metadataSource: {},                           // default: {}
+        translations: []                              // default: []
       }
     }
   })
