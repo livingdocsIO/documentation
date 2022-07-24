@@ -27,51 +27,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* :new: feat(document-creation-flow): add document creation flow button and dialog [livingdocs-editor #5637 v80.45.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5637)
-* :new: fix(char counter): correctly show char counter when deleting a container component [livingdocs-editor #5615 v80.44.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5615)
-* :new: Fix imatrics project settings [livingdocs-editor #5373 v80.44.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5373)
-* :new: Document Creation Flows: Hide default create function properties [livingdocs-server #4676 v191.5.1](https://github.com/livingdocsIO/livingdocs-server/pull/4676)
-* :new: feat(li-tree) add li-tree metadata plugin [livingdocs-editor #5580 v80.44.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5580)
-* :new: Fix Component Properties: correctly set the configured string value instead of boolean for option property [livingdocs-editor #5634 v80.43.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5634)
-* :new: Prototype: Trigger Document Build via Editing API [livingdocs-server #4675 v191.5.0](https://github.com/livingdocsIO/livingdocs-server/pull/4675)
-* :new: Prototype: Add Document Build Button [livingdocs-editor #5629 v80.43.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5629)
-* :new: Default Table Dashboards [livingdocs-editor #5498 v80.42.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5498)
-* :new: Default Table Dashboards [livingdocs-server #4671 v191.4.0](https://github.com/livingdocsIO/livingdocs-server/pull/4671)
-* :new: fix: remove category filter from query when last category is removed [livingdocs-editor #5582 v80.41.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5582)
-* :new: feat(metadata): Add li-desknet-schedule metadata plugin [livingdocs-editor #5627 v80.41.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5627)
-* :new: feat(desknet): Create li-desknet-schedule metadata plugin [livingdocs-server #4673 v191.3.0](https://github.com/livingdocsIO/livingdocs-server/pull/4673)
-* :new: Deliveries: Add build to deliveries + webhook [livingdocs-server #4670 v191.2.0](https://github.com/livingdocsIO/livingdocs-server/pull/4670)
-* :new: Project Config - Webhook: Add webhook event 'document.build' [livingdocs-editor #5628 v80.40.0](https://github.com/livingdocsIO/livingdocs-editor/pull/5628)
-* :new: fix(desknet): Support any handle for li-desknet-integration [livingdocs-server #4672 v191.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4672)
-* :new: Fix Media Library: make "use frame as poster image" work again [livingdocs-editor #5620 v80.39.26](https://github.com/livingdocsIO/livingdocs-editor/pull/5620)
-* :new: fix(publish control): don't allow publish/publish schedule until draft is saved [livingdocs-editor #5618 v80.39.25](https://github.com/livingdocsIO/livingdocs-editor/pull/5618)
-* :new: Fix comyan proxy case [livingdocs-server #4667 v191.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4667)
-* :new: Register Document Create Function [livingdocs-server #4606 v191.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4606)
-* :new: fix(dashboards): Calculate target dashboard on create dialog close [livingdocs-editor #5612 v80.39.24](https://github.com/livingdocsIO/livingdocs-editor/pull/5612)
-* :new: fix(dashboards): Only allow opening print select from create dialog [livingdocs-editor #5611 v80.39.23](https://github.com/livingdocsIO/livingdocs-editor/pull/5611)
-* :new: fix(desknet): Don't use scheduleEnabled project config property [livingdocs-server #4647 v191.0.2](https://github.com/livingdocsIO/livingdocs-server/pull/4647)
-* :new: fix(desknet): Don't use scheduleEnabled project config property [livingdocs-editor #5589 v80.39.22](https://github.com/livingdocsIO/livingdocs-editor/pull/5589)
-* :new: Fix: Ensure UI updates when images/videos are edited in Embedded Documents [livingdocs-editor #5608 v80.39.22](https://github.com/livingdocsIO/livingdocs-editor/pull/5608)
-* :new: Dashboards: Show correct contentType selection on create from custom dashboards [livingdocs-editor #5602 v80.39.21](https://github.com/livingdocsIO/livingdocs-editor/pull/5602)
-* :new: Test/Flatter Design [livingdocs-editor #5605 v80.39.20](https://github.com/livingdocsIO/livingdocs-editor/pull/5605)
-* :new: Fix: Dashboard Create Button available when contentType filters defined, also for custom dashboards [livingdocs-editor #5598 v80.39.19](https://github.com/livingdocsIO/livingdocs-editor/pull/5598)
-* :new: fix(deps): update dependency @google-cloud/translate from 6.3.1 to v7 (master) [livingdocs-server #4659 v191.0.1](https://github.com/livingdocsIO/livingdocs-server/pull/4659)
-* :new: fix(metadata): Avoid metadata reset while collaborative editing [livingdocs-editor #5596 v80.39.18](https://github.com/livingdocsIO/livingdocs-editor/pull/5596)
-* :new: 🔥 Drop Redis <v5 support and deprecate v5 [livingdocs-server #4639 v191.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4639)
-* :new: fix(deps): update dependency ioredis from 5.1.0 to v5.2.0 (master) [livingdocs-server #4658 v190.1.5](https://github.com/livingdocsIO/livingdocs-server/pull/4658)
-* :new: fix(deps): update dependency @google-cloud/storage from 6.2.2 to v6.2.3 (master) [livingdocs-server #4656 v190.1.4](https://github.com/livingdocsIO/livingdocs-server/pull/4656)
-* :new: fix(deps): update dependency axios from 0.23.0 to ^0.27.0 (master) [livingdocs-server #4626 v190.1.3](https://github.com/livingdocsIO/livingdocs-server/pull/4626)
-* :new: chore(blob-storage): Remove `package.json` from `lib/blob-store` [livingdocs-server #4651 v190.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4651)
-* :new: fix(deps): update dependency html-loader from 3.1.2 to v4 (master) [livingdocs-editor #5591 v80.39.17](https://github.com/livingdocsIO/livingdocs-editor/pull/5591)
-* :new: Include Service Forms: UI correctly updates when user changes data in paramsSchema based forms [livingdocs-editor #5517 v80.39.16](https://github.com/livingdocsIO/livingdocs-editor/pull/5517)
-* :new: fix(editor): background color is editable and shows color preview [livingdocs-editor #5590 v80.39.15](https://github.com/livingdocsIO/livingdocs-editor/pull/5590)
-* :new: fix(image-processing): Custom handling for gif files [livingdocs-server #4644 v190.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4644)
-* :new: 🍬 Linting configuration modification `curly` -> ["multi-line", "consistent"] [livingdocs-server #4643 v190.1.0](https://github.com/livingdocsIO/livingdocs-server/pull/4643)
-* :new: fix(deps): update dependency env-ci from 7.1.0 to v7.2.1 (master) [livingdocs-editor #5584 v80.39.14](https://github.com/livingdocsIO/livingdocs-editor/pull/5584)
-* :new: 🔥 Drop Postgres11 support [livingdocs-server #4631 v190.0.0](https://github.com/livingdocsIO/livingdocs-server/pull/4631)
-* :new: Fix session extension to reject on revocation [livingdocs-server #4623 v189.2.10](https://github.com/livingdocsIO/livingdocs-server/pull/4623)
-* :new: fix(desknet): Don't forward error status code to editor [livingdocs-server #4634 v189.2.9](https://github.com/livingdocsIO/livingdocs-server/pull/4634)
-* :new: fix(li-tree): fix and simplify the config/storage schema [livingdocs-server #4633 v189.2.8](https://github.com/livingdocsIO/livingdocs-server/pull/4633)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -103,9 +58,9 @@ These are the release notes of the upcoming release (pull requests merged to mas
 |-|-|
 |Node|14|
 |NPM|7|
-|Postgres|11 (Deprecated Postgres 11)|
+|Postgres|12|
 |Elasticsearch|6.x (Deprecated)|
-|Redis|5|
+|Redis|5 (Deprecated)|
 |Livingdocs Server Docker Image|livingdocs/server-base:14.3|
 |Livingdocs Editor Docker Image|livingdocs/editor-base:14.3|
 |Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
@@ -115,8 +70,11 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ### Metadata Plugin li-tree
 
+TODO: add description
+
 * [Documentation: TODO](?)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4591)
+* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5580)
 
 ### Microsoft Teams Integration
 
@@ -124,16 +82,126 @@ TODO: Is this a highlight? Is the feature ready? Is the feature documented?
 
 * [Microsoft Teams Integration](https://github.com/livingdocsIO/livingdocs-server/pull/4408)
 
+### Document Creation Flow
+
+With a Document Creation Flow you can configure how a document gets created:
+
+* Define a create button (only supported for Table Dashboards)
+* Define fields on the document creation modal
+* Register a create function to parse the data which creates the document
+
+References:
+* [Guide]({{< ref "/guides/editor/document-creation-flow" >}})
+* [PR: Register Create Function](https://github.com/livingdocsIO/livingdocs-server/pull/4606)
+* [PR: Document Creation Flow Config](https://github.com/livingdocsIO/livingdocs-server/pull/4635)
+* [PR: Editor Project Config - Webhook: Add webhook event 'document.build'](https://github.com/livingdocsIO/livingdocs-editor/pull/5628)
+* [PR: Add Create Button to Dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/5637)
+
+### Deliveries: Status and Build Triggers
+
+For infinite products like an e-paper there is usually a "build" stage involved. With the new Deliveries feature we allow a customer to trigger a remote system to kick off a build and report the status of the build back to Livingdocs. This allows an editor to get a better view on the infinite product life cycle. These are the features:
+
+- Trigger a build of a remote build system in the Publish Control view
+- Get an overview of the build state in the Publish Control view
+- Allow a remote build system to report its status back to Livingdocs
+
+References:
+* [Guide TODO]({{< ref "/guides/editor/document-creation-flow" >}})
+* [PR: Server Config + Webhook + Events](https://github.com/livingdocsIO/livingdocs-server/pull/4670)
+
+### Table Dashboards (full working version)
+
+TODO@beni: how we want to exactly announce/describe the Table Dashboards?
+
+Table Dashboards are a flexible type of dashboards where individual columns can be configured. From the September release on this is the new standard Dashboard and old versions should be migrated to these new type of Dashboard
+
+The following functionality has been added in this release:
+* Design improvements
+* Hugo Drop
+* Main Cell Configuration possibilities
+* Cross Project Document Drag&Drop
+* Show number of documents / empty state
+* Highlight document in Table Dashboard when coming back from document
+* Set/change homepage
+
+The following functionality has been added in past releases
+* release-2021-07
+  * Search tooltip for document id matches
+  * Document drag & drop
+* release-2021-05
+  * Document creation from a table dashboard
+  * Show publish state and allow quick publish under certain conditions
+  * Display and inline editing for `li-string-list` metadata properties
+  * First step towards using table dashboard as default for articles, pages, and data records
+    * There are reasonable defaults for filters and dashboard columns depending on document type
+    * Can be enabled, by setting `documents.useLegacyDashboards` to `false` in the editor config
+    * Not enabled by default yet because some features are still missing and will be added in the next release (see below)
+* release-2021-03
+  * Basic configuration of table dashboards (main menu entry, filters, column layout)
+  * Display and inline editing for these metadata properties: `li-text`, `li-boolean`, `li-category`, `li-document-reference`
+  * Default column component that displays document thumbnail and title
+  * Custom components can be configured to render the content of a table cell
+
+References:
+* [Documentation]({{< ref "/reference-docs/project-config/editor-settings#example-table-dashboard" >}})
+* [PR: Default Table Dashboards on Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5498)
+* [PR: Default Table Dashboards on Server](https://github.com/livingdocsIO/livingdocs-server/pull/4671)
+
+### Desk-Net: Schedule Extensions + Production Features
+
+TODO@Alex: add a nice description
+
+References:
+* [Documentation?](?)
+* [PR: li-desknet-schedule metadata plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4673)
+* [PR: Add li-desknet-schedule metadata plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/5627)
+
+
+
 ## Breaking Changes :fire:
 
 ### Migrate the database :fire:
+
+TODO: add db migrations
 
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database scheme
 livingdocs-server migrate up
 ```
 
+### Remove Support for Postgres 11 :fire:
+
+🔥 Support for Postgres 11 has been removed. Please Update to Postgres 16 (12+ is supported).
+
+### Remove Support for Redis <5 :fire:
+
+🔥 Support for Redis <5 has been removed. Please Update to Redis 6 (5+ is supported).
+
 ## Deprecations
+
+### Dashboards Configs ❗❗❗
+
+The following configurations are deprecated and will be removed in the future. If you need them longer than `release-2022-11`, please think about a plan with timing to not depend on the Legacy Dashboards anymore and let your Customer Solutions Manager know about it. We will find a solution.
+
+Deprecated Editor Configs:
+* `app.filters.inlineArticleList`
+* `app.filters.articleList`
+* `app.filters.pageList`
+* `app.filters.dataRecordList`
+* `app.filters.menuList`
+* `search.articleSearch.listItemComponent`
+
+* [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5498)
+
+### Redis 5
+
+Redis 5 has been deprecated. Please Update to Redis 6.
+
+### Desk-Net scheduleEnabled
+
+Please remove `projectConfig.settings.desknet.scheduleEnabled`, because it has no longer has any effect. The schedule will be enabled when Desk-Net is enabled in the server config, and the content type has the li-desknet-platforms metadata plugin.
+
+* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4647)
 
 ## APIs :gift:
 
@@ -142,13 +210,15 @@ livingdocs-server migrate up
 ### Security
 
 ### Design
+* [Dashboards: Flatter Design](https://github.com/livingdocsIO/livingdocs-editor/pull/5605)
 
 ### Features
 
 ### Improvements
 
 ### Bugfixes
-* Editable links: Show current (and not configured link) [livingdocs-editor #5554 v80.39.7](https://github.com/livingdocsIO/livingdocs-editor/pull/5554)
+* [Editable links: Show current (and not configured link)](https://github.com/livingdocsIO/livingdocs-editor/pull/5554)
+* [Desk-Net: Support any handle for li-desknet-integration](https://github.com/livingdocsIO/livingdocs-server/pull/4672)
 
 ## Patches
 
