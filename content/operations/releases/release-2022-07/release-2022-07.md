@@ -408,6 +408,7 @@ Allows the patch operation `archive` via public API to archive an asset.
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v189.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.16): fix: test new patching mechanism iteration 2
 - [v189.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.15): fix: test new patching mechanism
 - [v189.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.14): fix(comyan): use proxy for all requests
 - [v189.0.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.13): fix(media-library): Fix media library index to include the id first as we query by `media_type_id, id`, in which case the index can be used
