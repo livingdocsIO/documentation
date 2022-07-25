@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Server Version</th>
+      <th>Editor Version</th>
+      <th>Upcoming</th>
+      <th>Current</th>
+      <th>Maintained</th>
+      <th>Legacy</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range sort $.Site.Data.releases "sortId" "desc" }}
+    <tr>
+      <td><a href="https://docs.livingdocs.io/{{ .ref }}">{{ .name }}</a></td>
+      <td> {{ .key }} {{ if isset . "serverVersion"}} ({{ .serverVersion }}) {{ end }}</td>
+      <td> {{ .key }} {{ if isset . "editorVersion"}} ({{ .editorVersion }}) {{ end }}</td>
+      <td>{{ if eq .upcoming true}} ✅ {{ end }}</td>
+      <td>{{ if eq .current true}} ✅ {{ end }}</td>
+      <td>{{ if eq .maintained true}} ✅ {{ end }}</td>
+      <td>{{ if eq .legacy true}} ✅ {{ end }}</td>
+    </tr>
+    {{ end }}
+  </tbody>
+</table>

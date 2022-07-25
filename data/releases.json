@@ -1,12 +1,16 @@
 {
     "master": {
+        "id": 1,
         "key": "master",
         "name": "September 2022",
         "ref": "operations/releases/master/master",
         "upcoming": true,
         "current": false,
         "maintained": false,
-        "legacy": false
+        "legacy": false,
+        "sortId": 33,
+        "editorVersion": "v80.45.0",
+        "serverVersion": "v191.5.3"
     },
     "release-2022-07": {
         "key": "release-2022-07",
@@ -16,6 +20,7 @@
         "current": true,
         "maintained": true,
         "legacy": false,
+        "sortId": 32,
         "editorVersion": "v80.38.23",
         "serverVersion": "v189.0.19"
     },
@@ -27,6 +32,7 @@
         "current": false,
         "maintained": true,
         "legacy": false,
+        "sortId": 31,
         "editorVersion": "v80.10.67",
         "serverVersion": "v179.3.35"
     },
@@ -38,6 +44,7 @@
         "current": false,
         "maintained": false,
         "legacy": true,
+        "sortId": 30,
         "editorVersion": "v77.2.81",
         "serverVersion": "v171.1.54"
     },
@@ -49,6 +56,7 @@
         "current": false,
         "maintained": false,
         "legacy": true,
+        "sortId": 29,
         "editorVersion": "v74.4.74",
         "serverVersion": "v157.2.38"
     },
@@ -60,6 +68,7 @@
         "current": false,
         "maintained": false,
         "legacy": true,
+        "sortId": 28,
         "editorVersion": "v72.13.54",
         "serverVersion": "v154.0.50"
     },
@@ -71,6 +80,7 @@
         "current": false,
         "maintained": false,
         "legacy": true,
+        "sortId": 27,
         "editorVersion": "v67.6.83",
         "serverVersion": "v135.1.84"
     },
@@ -82,6 +92,7 @@
         "current": false,
         "maintained": false,
         "legacy": true,
+        "sortId": 26,
         "editorVersion": "v63.8.73",
         "serverVersion": "v124.5.83"
     },
@@ -93,6 +104,7 @@
         "current": false,
         "maintained": false,
         "legacy": true,
+        "sortId": 25,
         "editorVersion": "v57.33.63",
         "serverVersion": "v114.0.60"
     },
@@ -103,7 +115,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 24
     },
     "release-2020-07": {
         "key": "release-2020-07",
@@ -112,7 +125,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 23
     },
     "release-2020-05": {
         "key": "release-2020-05",
@@ -121,7 +135,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 22
     },
     "release-2020-04": {
         "key": "release-2020-04",
@@ -130,7 +145,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 21
     },
     "release-2020-02": {
         "key": "release-2020-02",
@@ -139,7 +155,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 20
     },
     "release-2019-12": {
         "key": "release-2019-12",
@@ -148,7 +165,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 19
     },
     "release-2019-09": {
         "key": "release-2019-09",
@@ -157,7 +175,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 18
     },
     "release-2019-07": {
         "key": "release-2019-07",
@@ -166,7 +185,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 17
     },
     "release-2019-05": {
         "key": "release-2019-05",
@@ -175,7 +195,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 16
     },
     "release-2019-03": {
         "key": "release-2019-03",
@@ -184,7 +205,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 15
     },
     "release-2019-01": {
         "key": "release-2019-01",
@@ -193,7 +215,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 14
     },
     "release-2018-11": {
         "key": "release-2018-11",
@@ -202,7 +225,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 13
     },
     "release-2018-09": {
         "key": "release-2018-09",
@@ -211,7 +235,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 12
     },
     "release-2018-06": {
         "key": "release-2018-06",
@@ -220,7 +245,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 11
     },
     "release-2018-05": {
         "key": "release-2018-05",
@@ -229,7 +255,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 10
     },
     "release-2018-04": {
         "key": "release-2018-04",
@@ -238,7 +265,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 9
     },
     "release-2018-03": {
         "key": "release-2018-03",
@@ -247,7 +275,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 8
     },
     "release-2018-02": {
         "key": "release-2018-02",
@@ -256,7 +285,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 7
     },
     "release-2018-01": {
         "key": "release-2018-01",
@@ -265,7 +295,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 6
     },
     "release-2017-12": {
         "key": "release-2017-12",
@@ -274,7 +305,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 5
     },
     "release-2017-10": {
         "key": "release-2017-10",
@@ -283,7 +315,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 4
     },
     "release-2017-09": {
         "key": "release-2017-09",
@@ -292,7 +325,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 3
     },
     "release-2017-08": {
         "key": "release-2017-08",
@@ -301,7 +335,8 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 2
     },
     "release-2017-07": {
         "key": "release-2017-07",
@@ -310,6 +345,7 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": true
+        "legacy": true,
+        "sortId": 1
     }
 }
