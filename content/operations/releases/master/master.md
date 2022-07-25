@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Test new release notes patching mechanism - iteration 2](https://github.com/livingdocsIO/livingdocs-server/pull/4682)
 * [Test patching release notes](https://github.com/livingdocsIO/livingdocs-server/pull/4681)
 
 
