@@ -408,6 +408,7 @@ Allows the patch operation `archive` via public API to archive an asset.
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v189.0.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.21): fix: test new patching mechanism iteration 3
 - [v189.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.18): fix: test new patching mechanism iteration 3
 - [v189.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.17): fix: test new patching mechanism iteration 3
 - [v189.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.16): fix: test new patching mechanism iteration 2
