@@ -534,6 +534,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.67): fix(char counter): correctly show char counter when deleting a compnent with children
 - [v80.10.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.66): fix(component properties): correctly set the configured string value instead of a boolean for option properties
 - [v80.10.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.65): fix(publish control): don't allow publish/publish schedule until draft is saved
 - [v80.10.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.64): fix(properties): Update UI on change
