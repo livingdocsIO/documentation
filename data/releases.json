@@ -1,6 +1,6 @@
 {
-  "release-2022-09": {
-    "key": "release-2022-09",
+  "master": {
+    "key": "master",
     "name": "September 2022",
     "ref": "operations/releases/master/master",
     "upcoming": true,
