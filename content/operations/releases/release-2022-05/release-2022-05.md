@@ -534,6 +534,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.70): fix(add member): Test fixed
 - [v80.10.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.69): fix: remove non breaking space
 - [v80.10.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.68): fix(text-formatting): Handle custom formatting attributes as optional
 - [v80.10.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.67): fix(char counter): correctly show char counter when deleting a compnent with children
