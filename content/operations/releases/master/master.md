@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix li-tree metadata plugin dashboard config](https://github.com/livingdocsIO/livingdocs-editor/pull/5642)
 * [fix(li-tree): fix document config shorthand filter](https://github.com/livingdocsIO/livingdocs-server/pull/4685)
 * [fix(deps): update dependency ws from 8.8.0 to v8.8.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4665)
 * [fix(deps): update dependency ioredis from 5.2.0 to v5.2.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4666)
