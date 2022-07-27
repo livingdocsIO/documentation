@@ -6,6 +6,7 @@ excludeFromSearch: true
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2022-09/
+  - /operations/releases/release-2022-09/release-2022-09/
 ---
 
 {{< release-header
