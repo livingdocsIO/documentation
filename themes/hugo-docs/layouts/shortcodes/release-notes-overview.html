@@ -11,9 +11,10 @@
     </tr>
   </thead>
   <tbody>
+    {{ $page := .Site.Home }}
     {{ range sort $.Site.Data.releases "sortId" "desc" }}
     <tr>
-      <td><a href="https://docs.livingdocs.io/{{ .ref }}">{{ .name }}</a></td>
+      <td><a href="{{ ref $page .ref }}">{{ .name }}</a></td>
       <td> {{ .key }} {{ if isset . "serverVersion"}} ({{ .serverVersion }}) {{ end }}</td>
       <td> {{ .key }} {{ if isset . "editorVersion"}} ({{ .editorVersion }}) {{ end }}</td>
       <td>{{ if eq .upcoming true}} ✅ {{ end }}</td>

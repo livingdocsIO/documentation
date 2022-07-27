@@ -4,6 +4,8 @@ title: June 2021 Release
 description: Release notes for release-2021-06
 hideSectionTeaser: true
 excludeFromSearch: true
+aliases:
+  - /operations/releases/release-2021-06/release-2021-06/
 ---
 
 {{< release-header

@@ -188,7 +188,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4
 
 We removed Callback support in several server API's as we noticed many bugs originating from mixing callbacks and promises. So we continue to phase out callbacks in all APIs. In the next releases we will continue with the removal of callbacks in server API's. All server API's already support Promises, therefore you can prepare the downstream migration from Callbacks to Promises.
 
-An example how to migrate the APIs you will find in [September 2021 Release]({{< ref "operations/releases/release-2021-09/release-2021-09.md" >}})
+An example how to migrate the APIs you will find in [September 2021 Release]({{< ref "operations/releases/release-2021-09.md" >}})
 
 - 🔥 remove callback support of `channelConfig` (`server.features.api('li-channel-configs').write`) functions. Only promise based calls are supported
 - 🔥 remove callback support of `documentApi` (`server.features.api('li-documents').document`) functions. Only promise based calls are supported
@@ -322,7 +322,7 @@ We removed Callback support in several server API's as we noticed many bugs orig
 
 - 🔥 remove callback support for projectApi (`server.features.api('li-projects')`) functions. Only promise based calls are supported
 
-You can find migration a migration example [here]({{< ref "/content/operations/releases/release-2021-09/release-2021-09.md#example-how-to-migrate" >}}).
+You can find migration a migration example [here]({{< ref "/content/operations/releases/release-2021-09.md#example-how-to-migrate" >}}).
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4160)
 
