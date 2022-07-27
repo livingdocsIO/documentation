@@ -23,6 +23,7 @@ In your local configuration, set the storage strategy to `azure-blob-storage` an
 ```js
 {
   images: {
+    publicUrl: 'https://my-storage-account.blob.core.windows.net/my-container/',
     storage: {
       strategy: 'azure-blob-storage',
       config: {
@@ -32,6 +33,7 @@ In your local configuration, set the storage strategy to `azure-blob-storage` an
     }
   },
   files: {
+    publicUrl: 'https://my-storage-account.blob.core.windows.net/my-container/',
     storage: {
       strategy: 'azure-blob-storage',
       config: {
@@ -42,6 +44,7 @@ In your local configuration, set the storage strategy to `azure-blob-storage` an
   },
   designs: {
     assets: {
+      publicUrl: 'https://my-storage-account.blob.core.windows.net/my-container/',
       storage: {
         strategy: 'azure-blob-storage',
         config: {
