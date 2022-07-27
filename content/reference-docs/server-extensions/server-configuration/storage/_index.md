@@ -127,8 +127,8 @@ storage: {
 
 ### Azure Blob Storage
 
-The Azure Blob Storeage just needs a container name and a Blob Service SAS URL.
-Please consult the [detailed instructions]({{< ref "/reference-docs/server-extensions/server-configuration/storage/azure-blob-storage" >}}) to generate the Shared Access Signature (SAS) used in `blobServiceSasUrl` from Azure Portal.
+The Azure Blob Storage just needs a container name and a Blob Service SAS URL.
+Please consult the [detailed instructions]({{< ref "/reference-docs/server-extensions/server-configuration/storage/azure-blob-storage" >}}) to generate the Shared Access Signature (SAS) used as `blobServiceSasUrl` generated through Azure Portal.
 
 ```js
 storage: {
