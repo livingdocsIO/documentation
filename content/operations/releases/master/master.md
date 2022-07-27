@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fastest-levenshtein from 1.0.12 to v1.0.14 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4688)
 * [Filters: allow documentType and contentType config for contentType filter](https://github.com/livingdocsIO/livingdocs-editor/pull/5652)
 * [fix(deps): update dependency aws-sdk from 2.1162.0 to v2.1182.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4625)
 * [remove not needed non breaking space in print preview](https://github.com/livingdocsIO/livingdocs-editor/pull/5645)
