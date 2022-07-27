@@ -82,7 +82,7 @@ storage: {
 If you use an http proxy like [squid](http://squid-cache.org/), you can declare the `HTTPS_PROXY` environment variable, which then configures the aws client.
 e.g. `HTTPS_PROXY=http://localhost:3128 node index.js`
 
-Or you can explicitly configure it with the options provided by the aws sdk:
+Or you can explicitly configure it with the options provided by the AWS SDK:
 
 ```js
 storage: {
@@ -101,8 +101,8 @@ storage: {
 
 ### Google Cloud Storage
 
-The google cloud storage just needs a bucket name and a credentials object.
-Please consult the [detailed instructions]({{< ref "/reference-docs/server-extensions/server-configuration/storage/google-cloud-storage" >}}) to retrieve the `credentials` from google.
+The Google Cloud Storage just needs a bucket name and a credentials object.
+Please consult the [detailed instructions]({{< ref "/reference-docs/server-extensions/server-configuration/storage/google-cloud-storage" >}}) to retrieve the `credentials` from Google.
 
 ```js
 storage: {
@@ -121,6 +121,21 @@ storage: {
       auth_provider_x509_cert_url: 'https://www.googleapis.com/oauth2/v1/certs',
       client_x509_cert_url: '******'
     }
+  }
+}
+```
+
+### Azure Blob Storage
+
+The Azure Blob Storeage just needs a container name and a Blob Service SAS URL.
+Please consult the [detailed instructions]({{< ref "/reference-docs/server-extensions/server-configuration/storage/azure-blob-storage" >}}) to generate the Shared Access Signature (SAS) used in `blobServiceSasUrl` from Azure Portal.
+
+```js
+storage: {
+  strategy: 'azure-blob-storage',
+  config: {
+    blobServiceSasUrl: 'https://my-storage-account.blob.core.windows.net/?sv=202X-XX-XX&ss=b&srt=sco&sp=rwdlaciytfx&se',
+    containerName: 'my-container-name'
   }
 }
 ```
