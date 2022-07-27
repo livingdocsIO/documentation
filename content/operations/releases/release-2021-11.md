@@ -4,6 +4,8 @@ title: November 2021 Release
 description: Release notes for release-2021-11
 hideSectionTeaser: true
 excludeFromSearch: true
+aliases:
+  - /operations/releases/release-2021-11/release-2021-11/
 ---
 
 {{< release-header

@@ -3,7 +3,7 @@
         "id": 1,
         "key": "master",
         "name": "September 2022",
-        "ref": "operations/releases/master/master",
+        "ref": "/operations/releases/master.md",
         "upcoming": true,
         "current": false,
         "maintained": false,
@@ -15,7 +15,7 @@
     "release-2022-07": {
         "key": "release-2022-07",
         "name": "July 2022",
-        "ref": "operations/releases/release-2022-07/release-2022-07",
+        "ref": "/operations/releases/release-2022-07.md",
         "upcoming": false,
         "current": true,
         "maintained": true,
@@ -27,7 +27,7 @@
     "release-2022-05": {
         "key": "release-2022-05",
         "name": "May 2022",
-        "ref": "operations/releases/release-2022-05/release-2022-05",
+        "ref": "/operations/releases/release-2022-05.md",
         "upcoming": false,
         "current": false,
         "maintained": true,
@@ -39,7 +39,7 @@
     "release-2022-03": {
         "key": "release-2022-03",
         "name": "March 2022",
-        "ref": "operations/releases/release-2022-03/release-2022-03",
+        "ref": "/operations/releases/release-2022-03.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -51,7 +51,7 @@
     "release-2021-11": {
         "key": "release-2021-11",
         "name": "November 2021",
-        "ref": "operations/releases/release-2021-11/release-2021-11",
+        "ref": "/operations/releases/release-2021-11.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -63,7 +63,7 @@
     "release-2021-09": {
         "key": "release-2021-09",
         "name": "September 2021",
-        "ref": "operations/releases/release-2021-09/release-2021-09",
+        "ref": "/operations/releases/release-2021-09.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -75,7 +75,7 @@
     "release-2021-06": {
         "key": "release-2021-06",
         "name": "June 2021",
-        "ref": "operations/releases/release-2021-06/release-2021-06",
+        "ref": "/operations/releases/release-2021-06.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -87,7 +87,7 @@
     "release-2021-03": {
         "key": "release-2021-03",
         "name": "March 2021",
-        "ref": "operations/releases/release-2021-03/release-2021-03",
+        "ref": "/operations/releases/release-2021-03.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -99,7 +99,7 @@
     "release-2020-12": {
         "key": "release-2020-12",
         "name": "December 2020",
-        "ref": "operations/releases/release-2020-12/release-2020-12",
+        "ref": "/operations/releases/old/release-2020-12.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -111,7 +111,7 @@
     "release-2020-10": {
         "key": "release-2020-10",
         "name": "October 2020",
-        "ref": "operations/releases/release-2020-10/release-2020-10",
+        "ref": "/operations/releases/old/release-2020-10.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -121,7 +121,7 @@
     "release-2020-07": {
         "key": "release-2020-07",
         "name": "July 2020",
-        "ref": "operations/releases/release-2020-07/release-2020-07",
+        "ref": "/operations/releases/old/release-2020-07.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -131,7 +131,7 @@
     "release-2020-05": {
         "key": "release-2020-05",
         "name": "May 2020",
-        "ref": "operations/releases/release-2020-05/release-2020-05",
+        "ref": "/operations/releases/old/release-2020-05.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -141,7 +141,7 @@
     "release-2020-04": {
         "key": "release-2020-04",
         "name": "April 2020",
-        "ref": "operations/releases/release-2020-04/release-2020-04",
+        "ref": "/operations/releases/old/release-2020-04.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -151,7 +151,7 @@
     "release-2020-02": {
         "key": "release-2020-02",
         "name": "February 2020",
-        "ref": "operations/releases/release-2020-02/release-2020-02",
+        "ref": "/operations/releases/old/release-2020-02.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -161,7 +161,7 @@
     "release-2019-12": {
         "key": "release-2019-12",
         "name": "December 2019",
-        "ref": "operations/releases/release-2019-12/release-2019-12",
+        "ref": "/operations/releases/old/release-2019-12.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -171,7 +171,7 @@
     "release-2019-09": {
         "key": "release-2019-09",
         "name": "September 2019",
-        "ref": "operations/releases/release-2019-09/release-2019-09",
+        "ref": "/operations/releases/old/release-2019-09.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -181,7 +181,7 @@
     "release-2019-07": {
         "key": "release-2019-07",
         "name": "July 2019",
-        "ref": "operations/releases/release-2019-07/release-2019-07",
+        "ref": "/operations/releases/old/release-2019-07.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -191,7 +191,7 @@
     "release-2019-05": {
         "key": "release-2019-05",
         "name": "May 2019",
-        "ref": "operations/releases/release-2019-05/release-2019-05",
+        "ref": "/operations/releases/old/release-2019-05.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -201,7 +201,7 @@
     "release-2019-03": {
         "key": "release-2019-03",
         "name": "March 2019",
-        "ref": "operations/releases/release-2019-03/release-2019-03",
+        "ref": "/operations/releases/old/release-2019-03.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -211,7 +211,7 @@
     "release-2019-01": {
         "key": "release-2019-01",
         "name": "January 2019",
-        "ref": "operations/releases/release-2019-01/release-2019-01",
+        "ref": "/operations/releases/old/release-2019-01.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -221,7 +221,7 @@
     "release-2018-11": {
         "key": "release-2018-11",
         "name": "November 2018",
-        "ref": "operations/releases/release-2018-11/release-2018-11",
+        "ref": "/operations/releases/old/release-2018-11.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -231,7 +231,7 @@
     "release-2018-09": {
         "key": "release-2018-09",
         "name": "September 2018",
-        "ref": "operations/releases/release-2018-09/release-2018-09",
+        "ref": "/operations/releases/old/release-2018-09.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -241,7 +241,7 @@
     "release-2018-06": {
         "key": "release-2018-06",
         "name": "June 2018",
-        "ref": "operations/releases/release-2018-06/release-2018-06",
+        "ref": "/operations/releases/old/release-2018-06.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -251,7 +251,7 @@
     "release-2018-05": {
         "key": "release-2018-05",
         "name": "May 2018",
-        "ref": "operations/releases/release-2018-05/release-2018-05",
+        "ref": "/operations/releases/old/release-2018-05.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -261,7 +261,7 @@
     "release-2018-04": {
         "key": "release-2018-04",
         "name": "April 2018",
-        "ref": "operations/releases/release-2018-04/release-2018-04",
+        "ref": "/operations/releases/old/release-2018-04.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -271,7 +271,7 @@
     "release-2018-03": {
         "key": "release-2018-03",
         "name": "March 2018",
-        "ref": "operations/releases/release-2018-03/release-2018-03",
+        "ref": "/operations/releases/old/release-2018-03.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -281,7 +281,7 @@
     "release-2018-02": {
         "key": "release-2018-02",
         "name": "February 2018",
-        "ref": "operations/releases/release-2018-02/release-2018-02",
+        "ref": "/operations/releases/old/release-2018-02.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -291,7 +291,7 @@
     "release-2018-01": {
         "key": "release-2018-01",
         "name": "January 2018",
-        "ref": "operations/releases/release-2018-01/release-2018-01",
+        "ref": "/operations/releases/old/release-2018-01.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -301,7 +301,7 @@
     "release-2017-12": {
         "key": "release-2017-12",
         "name": "December 2017",
-        "ref": "operations/releases/release-2017-12/release-2017-12",
+        "ref": "/operations/releases/old/release-2017-12.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -311,7 +311,7 @@
     "release-2017-10": {
         "key": "release-2017-10",
         "name": "October 2017",
-        "ref": "operations/releases/release-2017-10/release-2017-10",
+        "ref": "/operations/releases/old/release-2017-10.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -321,7 +321,7 @@
     "release-2017-09": {
         "key": "release-2017-09",
         "name": "September 2017",
-        "ref": "operations/releases/release-2017-09/release-2017-09",
+        "ref": "/operations/releases/old/release-2017-09.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -331,7 +331,7 @@
     "release-2017-08": {
         "key": "release-2017-08",
         "name": "August 2017",
-        "ref": "operations/releases/release-2017-08/release-2017-08",
+        "ref": "/operations/releases/old/release-2017-08.md",
         "upcoming": false,
         "current": false,
         "maintained": false,
@@ -341,7 +341,7 @@
     "release-2017-07": {
         "key": "release-2017-07",
         "name": "July 2017",
-        "ref": "operations/releases/release-2017-07/release-2017-07",
+        "ref": "/operations/releases/old/release-2017-07.md",
         "upcoming": false,
         "current": false,
         "maintained": false,

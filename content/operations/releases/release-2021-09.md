@@ -4,6 +4,8 @@ title: September 2021 Release
 description: Release notes for release-2021-09
 hideSectionTeaser: true
 excludeFromSearch: true
+aliases:
+  - /operations/releases/release-2021-09/release-2021-09/
 ---
 
 {{< release-header
