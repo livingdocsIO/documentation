@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Filters: allow documentType and contentType config for contentType filter](https://github.com/livingdocsIO/livingdocs-editor/pull/5652)
 * [fix(deps): update dependency aws-sdk from 2.1162.0 to v2.1182.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4625)
 * [remove not needed non breaking space in print preview](https://github.com/livingdocsIO/livingdocs-editor/pull/5645)
 * [fix li-tree metadata plugin dashboard config](https://github.com/livingdocsIO/livingdocs-editor/pull/5642)
