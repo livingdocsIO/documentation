@@ -511,6 +511,7 @@ References:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v179.3.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.38): fix(desknet): Don't display documents from other projects in schedule
 - [v179.3.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.36): fix(media-library): Fix media library index to include the id first as we query by `media_type_id, id`, in which case the index can be used
 - [v179.3.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.35): fix(comyan): use proxy for all requests
 - [v179.3.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.34): fix(include services): allow baseFilters and displayFilters in paramsSchema ui.config
