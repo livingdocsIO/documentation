@@ -14,7 +14,7 @@ In order to integrate Azure Blob with Livingdocs, you need to make sure you have
 
 * An [Azure Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal). **Please note:** Configure desired `Storage account name`, `Region`, `Performance` and `Redundancy` to your needs.
 * At least one [container](https://docs.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal) on your Azure Blob Storage.
-* [SAS Token](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/document-translation/create-sas-tokens?tabs=Containers) with Storage Account or Container permission to write and read blobs into the Storage Account.
+* [SAS Token](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview#sas-token) in your Storage Account under `Security + Network/Shared Access Signature` blade. Configure the token to have write, read, delete permission in `Blob` service for `Container` and `Object` resource types. (NOTE: Take into account that the SAS token must start with `?`, which is not given when created in container menu).
 
 ## Configuring the Livingdocs Server to use Azure Blob Storage as storage
 
@@ -23,33 +23,36 @@ In your local configuration, set the storage strategy to `azure-blob-storage` an
 ```js
 {
   images: {
-    publicUrl: 'https://my-storage-account.blob.core.windows.net/my-container/',
+    publicUrl: 'https://my-storage-account.blob.core.windows.net/my-container-name/',
     storage: {
       strategy: 'azure-blob-storage',
       config: {
-        blobServiceSasUrl: 'https://my-storage-account.blob.core.windows.net/?my-SAS-token',
+        storageAccountName: 'my-storage-account'
+        sasToken: '?my-sas-token',
         containerName: 'my-container-name'
       }
     }
   },
   files: {
-    publicUrl: 'https://my-storage-account.blob.core.windows.net/my-container/',
+    publicUrl: 'https://my-storage-account.blob.core.windows.net/my-container-name/',
     storage: {
       strategy: 'azure-blob-storage',
       config: {
-        blobServiceSasUrl: 'https://my-storage-account.blob.core.windows.net/?my-SAS-token',
+        storageAccountName: 'my-storage-account'
+        sasToken: '?my-sas-token',
         containerName: 'my-container-name'
       }
     }
   },
   designs: {
     assets: {
-      publicUrl: 'https://my-storage-account.blob.core.windows.net/my-container/',
+      publicUrl: 'https://my-storage-account.blob.core.windows.net/my-container-name/',
       storage: {
         strategy: 'azure-blob-storage',
         config: {
-            blobServiceSasUrl: 'https://my-storage-account.blob.core.windows.net/?my-SAS-token',
-            containerName: 'my-container-name'
+          storageAccountName: 'my-storage-account'
+          sasToken: '?my-sas-token',            
+          containerName: 'my-container-name'
         }
       }
     }
@@ -60,12 +63,12 @@ In your local configuration, set the storage strategy to `azure-blob-storage` an
 
 ## Setting up ImgIX with Azure Blob and Livingdocs
 
-1. Generate a [SAS token](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/document-translation/create-sas-tokens?tabs=Containers) from the Storage Account settings in Azure Portal.
+1. Generate a [SAS token](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview#sas-token) from the Storage Account settings in Azure Portal or use the same as Livingdocs Server in previous section.
 2. Log into your imgIX account and go to the [Sources section](https://dashboard.imgix.com/sources).
 3. Select "New Source"
 4. Select "Microsoft Azure" from the Source Type dropdown.
 5. Use the SAS Token from above to connect imgIX to your Storage Account.
-5. Set the Storage Account and Container name to the same name as you did in the Livingdocs config. **This is mandatory**
+5. Set the Storage Account and Container name with the same name used in the Livingdocs Server config. **This is mandatory**
 6. Set the subdomain (`my-subdomain`) and path prefix (`my-path-prefix`) as you see fit.
 
 In your local Livingdocs config, adjust the `documents` settings as follows:
