@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Metadata: new type li-date](https://github.com/livingdocsIO/livingdocs-editor/pull/5658)
 * [fix: disable toolbar actions on conflict mode](https://github.com/livingdocsIO/livingdocs-editor/pull/5657)
 * [Enable Publish Control for Data Records](https://github.com/livingdocsIO/livingdocs-editor/pull/5656)
 * [feat(li-issue-management): add li-issue-management plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4686)
