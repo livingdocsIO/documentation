@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(retresco): a maxLength config can be set to prevent API errors](https://github.com/livingdocsIO/livingdocs-server/pull/4677)
 * [Issue Management](https://github.com/livingdocsIO/livingdocs-editor/pull/5643)
 * [Metadata li date](https://github.com/livingdocsIO/livingdocs-server/pull/4698)
 * [Metadata: new type li-date](https://github.com/livingdocsIO/livingdocs-editor/pull/5658)
