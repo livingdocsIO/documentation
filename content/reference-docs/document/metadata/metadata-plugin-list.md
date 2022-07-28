@@ -18,6 +18,7 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Boolean](#li-boolean)                             | li-boolean               | Boolean                                       | D, M, T                                                                            | checkbox                                                   |
 | [Color](#li-color)                                 | li-color                 | Color Code                                    | D, M, T, I                                                                         | text                                                       |
 | [Category](#li-category)                           | li-category              | category                                      | D, T                                                                               | select                                                     |
+| [Date](#li-date)                                   | li-date                  | Date                                          | D, M                                                                               | date input                                                |
 | [Date/Time validity](#li-datetime-validity)        | li-datetime-validity     | Date                                          | M                                                                                  | 2 date/time inputs                                         |
 | [Date/Time](#li-datetime)                          | li-datetime              | Date                                          | D, M                                                                               | date/time input                                            |
 | [Dependencies](#li-dependencies)                   | li-dependencies          | Livingdocs framework dependencies definition  | D                                                                                  | no UI                                                      |
@@ -117,6 +118,34 @@ metadata: [
 ## li-category
 **Storage Format**: `{id: <String>, path: <String>}`\
 **Default UI**: select with category tree view and search
+
+## li-date
+{{< added-in release-2022-09 >}}
+**Storage Format**: `<ISO8601 String>`\
+**UI**: Renders a date picker element
+
+**Project Config**
+```js
+metadata: [
+  {
+    handle: 'date',
+    type: 'li-date',
+    config: {
+      // common
+      hideFromForm: false,                     // optional, default: false
+      required: true,                          // optional, default: false
+      requiredErrorMessage: 'Provide a value'  // optional
+      translatable: false                      // optional, default: false
+    },
+    ui: {
+      label: 'foo',                   // optional, takes camelized name otherwise
+      config: {
+        readOnly: true                // optional, default: false
+      }
+    }
+  }
+]
+```
 
 ## li-datetime-validity
 **Storage Format**: `{from: ISO8601 String, to: ISO8601 String}`\
