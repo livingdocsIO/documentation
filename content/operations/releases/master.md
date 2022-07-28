@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix: disable toolbar actions on conflict mode](https://github.com/livingdocsIO/livingdocs-editor/pull/5657)
 * [Enable Publish Control for Data Records](https://github.com/livingdocsIO/livingdocs-editor/pull/5656)
 * [feat(li-issue-management): add li-issue-management plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4686)
 * [chore(deps): update dependency pino-socket from 5.0.0 to v5.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4696)
