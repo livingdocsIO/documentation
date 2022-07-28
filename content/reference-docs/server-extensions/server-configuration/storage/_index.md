@@ -127,14 +127,15 @@ storage: {
 
 ### Azure Blob Storage
 
-The Azure Blob Storage just needs a container name and a Blob Service SAS URL.
-Please consult the [detailed instructions]({{< ref "/reference-docs/server-extensions/server-configuration/storage/azure-blob-storage" >}}) to generate the Shared Access Signature (SAS) used as `blobServiceSasUrl` generated through Azure Portal.
+The Azure Blob Storage provider just needs a Storage Account name, container name, and generate a SAS token with read, write, create and delete access to the Azure Storage Account.
+Please consult the [detailed instructions]({{< ref "/reference-docs/server-extensions/server-configuration/storage/azure-blob-storage" >}}) to generate the Shared Access Signature (SAS) for `sasToken` config parameter.
 
 ```js
 storage: {
   strategy: 'azure-blob-storage',
   config: {
-    blobServiceSasUrl: 'https://my-storage-account.blob.core.windows.net/?sv=202X-XX-XX&ss=b&srt=sco&sp=rwdlaciytfx&se',
+    storageAccountName: 'my-storage-account'
+    sasToken: '?my-sas-token',
     containerName: 'my-container-name'
   }
 }
