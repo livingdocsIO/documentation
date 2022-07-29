@@ -527,7 +527,7 @@ dashboards: [
                         // minWidth of all columns has been allocated
                         // (works like flex-grow in CSS)
 
-        priority: 1     // If there is not enough space for all columns
+        priority: 1,    // If there is not enough space for all columns
                         // keep those with priority 1, then 2, etc.
 
         // Name of the Vue component used for this column
