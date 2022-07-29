@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(multiple references): parsing/validation now correct](https://github.com/livingdocsIO/livingdocs-server/pull/4703)
 * [feat(desknet): Link Desk-Net elements using external ids](https://github.com/livingdocsIO/livingdocs-server/pull/4680)
 * [feat: add ids for components of defaultContent](https://github.com/livingdocsIO/livingdocs-server/pull/4699)
 * [feat(desknet): Implement schedule filtering](https://github.com/livingdocsIO/livingdocs-server/pull/4678)
