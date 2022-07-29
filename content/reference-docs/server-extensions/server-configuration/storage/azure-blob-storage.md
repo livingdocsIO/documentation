@@ -14,7 +14,7 @@ In order to integrate Azure Blob with Livingdocs, you need to make sure you have
 
 * An [Azure Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal). **Please note:** Configure desired `Storage account name`, `Region`, `Performance` and `Redundancy` to your needs.
 * At least one [container](https://docs.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal) on your Azure Blob Storage.
-* [SAS Token](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview#sas-token) in your Storage Account under `Security + Network/Shared Access Signature` blade. Configure the token to have write, read, delete permission in `Blob` service for `Container` and `Object` resource types. (NOTE: Take into account that the SAS token must start with `?`, which is not given when created in container menu).
+* [SAS Token](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview#sas-token) in your Storage Account under `Security + Network/Shared Access Signature` blade. Configure the token to have write, read, delete permission in `Blob` service for `Object` resource types.
 
 ## Configuring the Livingdocs Server to use Azure Blob Storage as storage
 
