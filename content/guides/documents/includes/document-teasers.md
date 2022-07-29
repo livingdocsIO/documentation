@@ -90,7 +90,7 @@ editorSettings: {
     type: 'tableDashboard',
     pageTitle: 'Articles',
     baseFilters: [
-      {type: 'contentType', value: 'article'}
+      {type: 'documentType', value: 'article'} // This must be set to 'documentType'
     ],
     displayFilters: [
       'channels',
@@ -143,11 +143,12 @@ By adding this dashboard to `contentType.editor.documentEditingToolbar.documentD
       ]
     },
   }
-  
+
 }
 ```
 
 ## Enabling Drag and Drop to create Teaser Components
+
 All there is to do now, is adding a bit of config to let the system know, which Teaser Component should be created when dropping an Article card from that dashboard onto the Document. This is done in the Article Content-Type:
 
 ```
@@ -163,4 +164,15 @@ All there is to do now, is adding a bit of config to let the system know, which 
     }
   ]
 }
+```
+
+And adding the allowed import and export config to the project config:
+
+```
+import: {
+    allowedProjects: [{ handle: "exampleHandle" }],
+  },
+  export: {
+    allowedProjects: [{ handle: "exampleHandle" }],
+  }
 ```
