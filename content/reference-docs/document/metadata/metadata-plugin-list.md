@@ -781,8 +781,9 @@ metadata: [
 **Default UI**: text input, textarea, select\
 **UI**:
   * Renders a select element if a `dataProvider` is configured
-  * Renders a textarea if `ui.component` is set to `LiMetaFormTextarea`
-  * Renders a text input otherwise {{< img src="./images/max-length.png" >}}
+  * With `release-2022-09`: Renders an autogrowing reasonably sized textarea otherwise
+  * Before `release-2022-09`: Renders a textarea if `ui.component` is set to `LiMetaFormTextarea`
+  * Before `release-2022-09`: Renders a text input otherwise {{< img src="./images/max-length.png" >}}
 
 **Project Config**
 ```js
@@ -796,7 +797,11 @@ metadata: [
       required: true,                          // optional, default: false
       requiredErrorMessage: 'Provide a value', // optional
       // specific
+      minLength: 100,                          // optional, added in release-2022-09
       maxLength: 200,                          // optional
+      recommendedMinLength: 110,               // optional, added in release-2022-09
+      recommendedMaxLength: 150,               // optional, added in release-2022-09
+      allowNewlines: false                     // default: undefined, added in release-2022-09, validated if set. Effect on ui: newlines are stripped uf not true and ui.config.rows is undefined and ui.component is not liMetaTextareaForm
       useAsTitle: true,                        // default: false, synchronises the value with document.title if true
       translatable: true,                      // optional, default: false, translations are only supported for data-record and mediaLibrary
       dataProvider: {                          // optional
