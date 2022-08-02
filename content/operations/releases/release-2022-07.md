@@ -427,6 +427,7 @@ Here is a list of all patches after the release has been announced.
 - [v189.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.2): fix(oembed): add spotify and data wrapper
 
 ### Livingdocs Editor Patches
+- [v80.38.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.28): fix(framework): update to 24.0.5
 - [v80.38.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.27): fix: don't trigger click event for disabled buttons
 - [v80.38.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.25): fix: remove non breaking space
 - [v80.38.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.24): fix(text-formatting): Handle custom formatting attributes as optional
