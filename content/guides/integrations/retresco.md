@@ -55,7 +55,8 @@ The default behaviour is to analyse the text on the idle event, typically 5 seco
         enableLiveAnalysis: true,
         titleMatches: ['header.title'],
         supertitleMatches: ['header.catchline'],
-        teaserMatches: ['p.text']
+        teaserMatches: ['p.text'],
+        maxTextLength: 10000 // Optional
       }
       // ...
     }
@@ -84,6 +85,9 @@ Finally, a secret must be added for the relevant `<project-handle>`. The `<secre
 ```bash
 npx livingdocs-server secret-add --project="<project-handle>" --name="<secret-name>" --value="<password>"
 ```
+
+### maxTextLength
+The Retresco API can have issues if the text sent for analysis is too long (more than 10.000 characters). To avoid errors with longform articles, you can set a maxTextLength, this will limit the number of characters of the text in the request.
 
 ## Metadata
 
