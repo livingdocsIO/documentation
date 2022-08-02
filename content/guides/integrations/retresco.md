@@ -36,6 +36,8 @@ You can also optionally provide the text extraction "matches". `titleMatches`, `
 
 The default behaviour is to analyse the text on the idle event, typically 5 seconds after a user stops typing, so that the tags are always up-to-date with the content. If you would like to prevent text analysis while a user is working on a document it is possible to set `enableLiveAnalysis: false`. Once disabled the only way the tags will be updated is by the user clicking the refresh button in the metadata form, or at the time of publication.
 
+The Retresco API can have issues if the text sent for analysis is too long (more than 10.000 characters). To avoid errors with longform articles, you can optionally set a `maxTextLength`, this will limit the number of characters of text being sent in the request.
+
 ```js
 {
   // ...
@@ -86,8 +88,6 @@ Finally, a secret must be added for the relevant `<project-handle>`. The `<secre
 npx livingdocs-server secret-add --project="<project-handle>" --name="<secret-name>" --value="<password>"
 ```
 
-### maxTextLength
-The Retresco API can have issues if the text sent for analysis is too long (more than 10.000 characters). To avoid errors with longform articles, you can set a maxTextLength, this will limit the number of characters of the text in the request.
 
 ## Metadata
 
