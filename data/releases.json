@@ -9,8 +9,8 @@
         "maintained": false,
         "legacy": false,
         "sortId": 33,
-        "editorVersion": "v80.49.1",
-        "serverVersion": "v191.7.1"
+        "editorVersion": "v80.50.1",
+        "serverVersion": "v191.10.1"
     },
     "release-2022-07": {
         "key": "release-2022-07",
@@ -22,7 +22,7 @@
         "legacy": false,
         "sortId": 32,
         "editorVersion": "v80.38.27",
-        "serverVersion": "v189.0.19"
+        "serverVersion": "v189.0.20"
     },
     "release-2022-05": {
         "key": "release-2022-05",
@@ -34,7 +34,7 @@
         "legacy": false,
         "sortId": 31,
         "editorVersion": "v80.10.72",
-        "serverVersion": "v179.3.38"
+        "serverVersion": "v179.3.39"
     },
     "release-2022-03": {
         "key": "release-2022-03",
