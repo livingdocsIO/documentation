@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(metadata): Highlight error for Vue Select inputs](https://github.com/livingdocsIO/livingdocs-editor/pull/5675)
 * [update framework to 24.1.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5677)
 * [update framework to 24.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4714)
 * [Deliveries Build: show only deliveries defined on the contentType](https://github.com/livingdocsIO/livingdocs-editor/pull/5669)
