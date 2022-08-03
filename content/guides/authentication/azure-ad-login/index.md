@@ -119,24 +119,24 @@ To configure OpenID in Azure Active Directory, you have to go follow the steps d
 
 Open the [Azure Portal](https://portal.azure.com/) and go to Azure Active Directory, via search bar or on the service list.
 
-{{< img src="0 go to active directory".png" alt="Azure Active Directory in Azure Portal" >}}
+{{< img src="0-goto-AAD".png" alt="Azure Active Directory in Azure Portal" >}}
 
 On the left sidebar, click on `App registrations`. Then create a new registration with `+ New registration` button.
 
-{{< img src="1 create app registration".png" alt="App registration in Azure Portal" >}}
+{{< img src="1-create-registration".png" alt="App registration in Azure Portal" >}}
 
 Define a name for the application and choose the access depending on your requirements (default: `Single tenant`). In the redirect URI group, specify `Web` in platform drop down and your redirect URI should look like `https://<my-domain-name>/proxy/api/auth/azure/callback`. Finally, click `Register` to create the registration.
 
-{{< img src="2 app callback url".png" alt="Define callback URL in Azure Portal" >}}
+{{< img src="2-app-callback-url".png" alt="Define callback URL in Azure Portal" >}}
 
 In the registration view left sidebar, go to `Authentication` menu. Enable `Access tokens (used for implicit flows)` and `ID tokens (used for implicit and hybrid flows)`, then save.
 
-{{< img src="3 enable id and access tokens".png" alt="Enable OpenID and Token in Azure Portal" >}}
+{{< img src="3-enable-access-tokens".png" alt="Enable OpenID and Token in Azure Portal" >}}
 
 In the registration view left sidebar, go to `Certificates & secrets` menu. Add a client secret with `+ New client secret`, add a description to identify the secret and expiration date. Finally `Add` the client secret.
 
-{{< img src="4 add client secret".png" alt="Generate client secret in Azure Portal" >}}
+{{< img src="4-add-client-secret".png" alt="Generate client secret in Azure Portal" >}}
 
 In the list of client secrets copy the newly created secret ID to use in Livingdocs Server configuration `clientSecret` parameter.
 
-{{< img src="5 copy client secret id".png" alt="Copy client secret in Azure Portal" >}}
+{{< img src="5-copy-client-secret".png" alt="Copy client secret in Azure Portal" >}}
