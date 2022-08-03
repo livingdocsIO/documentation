@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [feat(metadata): Store date in li-desknet-schedule plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4706)
 * [fix(deliveries): Ensure optional url property is handled correctly](https://github.com/livingdocsIO/livingdocs-editor/pull/5672)
 * [fix(camelcase): Content type filter](https://github.com/livingdocsIO/livingdocs-editor/pull/5676)
 * [fix: avoid loading content when retrieving lists](https://github.com/livingdocsIO/livingdocs-server/pull/4712)
