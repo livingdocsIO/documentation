@@ -825,6 +825,7 @@ remove `renderInProcess` option in `renderPipeline.renderDocumentVersion({docume
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v171.1.55](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.55): fix: avoid loading content when retrieving lists
 - [v171.1.54](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.54): fix(image-processing): Add format to GIF metadata extraction
 - [v171.1.53](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.53): fix(print): Use previously hardcoded fields as fallback
 - [v171.1.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.52): fix(hugo): Add assetPath to filterHugoConfig()
