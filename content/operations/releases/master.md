@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Metadata: li-text enhancements](https://github.com/livingdocsIO/livingdocs-server/pull/4707)
 * [update framework to 24.1.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5679)
 * [Issue management add document](https://github.com/livingdocsIO/livingdocs-editor/pull/5668)
 * [Issue Management: allow documentCreationFlows config](https://github.com/livingdocsIO/livingdocs-server/pull/4708)
