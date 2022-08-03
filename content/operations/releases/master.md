@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deliveries): Ensure optional url property is handled correctly](https://github.com/livingdocsIO/livingdocs-editor/pull/5672)
 * [fix(camelcase): Content type filter](https://github.com/livingdocsIO/livingdocs-editor/pull/5676)
 * [fix: avoid loading content when retrieving lists](https://github.com/livingdocsIO/livingdocs-server/pull/4712)
 * [fix(metadata): Highlight error for Vue Select inputs](https://github.com/livingdocsIO/livingdocs-editor/pull/5675)
