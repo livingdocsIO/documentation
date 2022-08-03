@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Issue Management: allow documentCreationFlows config](https://github.com/livingdocsIO/livingdocs-server/pull/4708)
 * [update framework to 24.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4723)
 * [Fix external systems](https://github.com/livingdocsIO/livingdocs-editor/pull/5670)
 * [fix(desknet): Return full document for schedule](https://github.com/livingdocsIO/livingdocs-server/pull/4713)
