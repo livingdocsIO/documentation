@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix external systems](https://github.com/livingdocsIO/livingdocs-editor/pull/5670)
 * [fix(desknet): Return full document for schedule](https://github.com/livingdocsIO/livingdocs-server/pull/4713)
 * [feat(desknet): Limit schedule to a specific date using metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/5664)
 * [feat(metadata): Store date in li-desknet-schedule plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4706)
