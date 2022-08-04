@@ -37,8 +37,8 @@ module.exports = {
         // example for google: https://accounts.google.com/.well-known/openid-configuration
         issuer: 'https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration',
         config: {
-          clientId: azureConfig.clientId,        
-          clientSecret: azureConfig.clientSecret,
+          clientId: azureConfig.clientId,
+          clientSecret: azureConfig.clientSecret, // Check `Configuring OpenID in Azure AD` section for a guide
           scope: 'openid email profile',
           async extractClaims ({tokenSet}) {
             const claims = tokenSet.claims()
