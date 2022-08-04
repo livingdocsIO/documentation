@@ -14,7 +14,7 @@ In order to integrate Azure Blob with Livingdocs, you need to make sure you have
 
 * An [Azure Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal).
 * At least one [container](https://docs.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal) on your Azure Storage Account.
-* [SAS Token](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview#sas-token) 
+* [SAS Token](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview#sas-token).
 
 ### Create Storage Account
 
@@ -101,7 +101,7 @@ In your local configuration, set the storage strategy to `azure-blob-storage` an
 
 1. Generate a [SAS token](https://docs.imgix.com/setup/creating-sources/microsoft-azure) from the Storage Account settings in Azure Portal.
 2. Log into your imgIX account and go to the [Sources section](https://dashboard.imgix.com/sources).
-3. Select "New Source"
+3. Select "New Source".
 4. Select "Microsoft Azure" from the Source Type dropdown.
 5. Use the SAS Token from above to connect imgIX to your Storage Account.
 5. Set the Storage Account and Container name with the same name used in the Livingdocs Server config. **This is mandatory**
