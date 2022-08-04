@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(metadata): ensure $ref: documents on li-issue-management](https://github.com/livingdocsIO/livingdocs-editor/pull/5681)
 * [fix(li-issue-management): make config schema a strict obj](https://github.com/livingdocsIO/livingdocs-server/pull/4724)
 * [Metadata: li-text enhancements](https://github.com/livingdocsIO/livingdocs-editor/pull/5663)
 * [Metadata: li-text enhancements](https://github.com/livingdocsIO/livingdocs-server/pull/4707)
