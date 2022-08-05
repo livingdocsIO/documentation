@@ -21,6 +21,7 @@ Here is an example includes configuration to consider for the editable teaser us
     {
       handle: 'article',
       type: 'li-document-reference',
+      preload: true,
       ui: {
         label: 'Teaser'
       }
@@ -28,7 +29,6 @@ Here is an example includes configuration to consider for the editable teaser us
   ],
   rendering: {
     type: 'function',
-    preload: true,
     render (params, context) {
       // params.article.reference.id contains the id of the linked document
       // params.article.value contains the DocumentVersion (because preload: true is configured)
