@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency exifreader from 4.5.0 to v4.5.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4715)
 * [Fix login redirect when session expired using OpenID](https://github.com/livingdocsIO/livingdocs-editor/pull/5684)
 * [Metadata Form Feedback Rail](https://github.com/livingdocsIO/livingdocs-editor/pull/5665)
 * [fix(metadata): ensure $ref: documents on li-issue-management](https://github.com/livingdocsIO/livingdocs-editor/pull/5681)
