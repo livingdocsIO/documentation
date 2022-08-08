@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add a new endpoint (`/auth/me/profile`) with reduced privileges for regular users](https://github.com/livingdocsIO/livingdocs-server/pull/4726)
 * [feat(document-inbox): manual sorting](https://github.com/livingdocsIO/livingdocs-editor/pull/5683)
 * [fix(metadata-form-navigation): support long titles in the metadata form navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/5685)
 * [Issue Management - add article dialog](https://github.com/livingdocsIO/livingdocs-editor/pull/5662)
