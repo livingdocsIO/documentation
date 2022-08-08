@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(metadata-form-navigation): support long titles in the metadata form navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/5685)
 * [Issue Management - add article dialog](https://github.com/livingdocsIO/livingdocs-editor/pull/5662)
 * [Desk-Net: Allow drag and drop of schedule entries if linked with a document](https://github.com/livingdocsIO/livingdocs-editor/pull/5690)
 * [Back Button: Find the best dashboard to navigate to if article was opened directly](https://github.com/livingdocsIO/livingdocs-editor/pull/5680)
