@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Desk-Net: Allow drag and drop of schedule entries if linked with a document](https://github.com/livingdocsIO/livingdocs-editor/pull/5690)
 * [Back Button: Find the best dashboard to navigate to if article was opened directly](https://github.com/livingdocsIO/livingdocs-editor/pull/5680)
 * [fix(deps): update dependency aws-sdk from 2.1182.0 to v2.1189.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4701)
 * [fix(deps): update dependency exifreader from 4.5.0 to v4.5.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4715)
