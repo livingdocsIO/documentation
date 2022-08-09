@@ -1,6 +1,6 @@
 ---
 title: Search Customization
-weight: 10
+weight: 11
 menus:
   reference-docs:
     parent: Server Extensions

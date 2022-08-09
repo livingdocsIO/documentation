@@ -1,6 +1,6 @@
 ---
 title: DocumentVersion
-weight: 12
+weight: 13
 description: Model of a document on the server.
 menus:
   reference-docs:

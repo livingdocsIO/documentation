@@ -1,6 +1,6 @@
 ---
 title: DataSource API
-weight: 6
+weight: 7
 menus:
   reference-docs:
     parent: Server Extensions
