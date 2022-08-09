@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Scroll to component when clicking on 'go to component' in error message in metadata form when publish control is enabled](https://github.com/livingdocsIO/livingdocs-editor/pull/5691)
 * [Modify endpoint used to change the user name with reduced privileges](https://github.com/livingdocsIO/livingdocs-editor/pull/5686)
 * [Add a new endpoint (`/auth/me/profile`) with reduced privileges for regular users](https://github.com/livingdocsIO/livingdocs-server/pull/4726)
 * [feat(document-inbox): manual sorting](https://github.com/livingdocsIO/livingdocs-editor/pull/5683)
