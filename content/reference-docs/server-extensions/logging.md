@@ -1,6 +1,6 @@
 ---
 title: Logging
-weight: 11
+weight: 12
 menus:
   reference-docs:
     parent: Server Extensions

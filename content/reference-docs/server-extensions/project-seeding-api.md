@@ -1,16 +1,12 @@
 ---
 title: Project Seeding API
-weight: 10
+weight: 6
 menus:
   reference-docs:
     parent: Server Extensions
 ---
 
 The Project Seeding API provides a simple way to programmatically seed projects. A common use case might be to set up an example project.
-
-```js
-const tasksApi = liServer.features.api('li-tasks')
-```
 
 ## Configuration
 
@@ -36,45 +32,6 @@ Example: `seeding.js`
   ],
 
   projects: [
-    // project with multi-channel configuration
-    {
-    __recreateIfItExists: false,
-
-    handle: 'my-multi-channel-project', // required
-    owner: ':john', // required, the _importHandle of a user
-    // user groups
-    groups: [{
-      label: 'Editors',
-      scope: ['articles:read', 'articles:write', 'articles:publish'],
-      policies: [
-        {
-          effect: 'ALLOW',
-          action: 'metadata.update'
-        }
-      ]
-    }, {
-      label: 'Readers',
-      scope: ['articles:read']
-    }],
-    groupMemberships: {
-      'Editors': [':john'], // :john is the '_importHandle' of a user
-      'Readers': [':clark']
-    },
-    channels: [{
-      handle: 'web',
-      label: 'Web',
-      designName: 'my-design',
-      designVersion: ':latest',
-      staticConfig: 'web'
-    }, {
-      handle: 'print',
-      label: 'Print',
-      designName: 'another-design',
-      designVersion: ':latest',
-      staticConfig: 'print'
-    }],
-    secrets: [{name: 'my-secret', value: 'super-secret'}]
-  },
   // project with embedded design
   {
     __recreateIfItExists: false,
@@ -105,6 +62,47 @@ Example: `seeding.js`
       designVersion: ':some-version'
     },
     config: require('./projects/website') // the project config
+  },
+  // project with multi-channel configuration
+    {
+    __recreateIfItExists: false,
+
+    handle: 'my-multi-channel-project', // required
+    owner: ':john', // required, the _importHandle of a user
+    // user groups
+    groups: [{
+      label: 'Editors',
+      scope: ['articles:read', 'articles:write', 'articles:publish'],
+      policies: [
+        {
+          effect: 'ALLOW',
+          action: 'metadata.update'
+        }
+      ]
+    }, {
+      label: 'Readers',
+      scope: ['articles:read']
+    }],
+    groupMemberships: {
+      'Editors': [':john'], // :john is the '_importHandle' of a user
+      'Readers': [':clark']
+    },
+    channels: [{
+      handle: 'web',
+      label: 'Web',
+      designName: 'my-design',
+      designVersion: ':latest',
+      // If staticConfig if provided the channel config will be
+      // stored in the cache as well.
+      staticConfig: 'web'
+    }, {
+      handle: 'print',
+      label: 'Print',
+      designName: 'another-design',
+      designVersion: ':latest',
+      staticConfig: 'print'
+    }],
+    secrets: [{name: 'my-secret', value: 'super-secret'}]
   }]
 }
 ```
@@ -118,9 +116,9 @@ You can define users in two places:
 ### Projects
 
 Project configurations can be of three types:
-- Multi-channel
+- Multi-channel Configuration (where only referenced designs can be used)
 - Embedded design
-- Reference design
+- Referenced design
 
 #### Groups
 
@@ -139,7 +137,7 @@ Project configurations can be of three types:
 
 #### Secrets
 
-Secret values for usage inside a project. Example usage may be for `api-secrets` of external services.
+Secret values for usage inside a project. Example usage may be for API secrets of external services.
 
 
 ## Usage

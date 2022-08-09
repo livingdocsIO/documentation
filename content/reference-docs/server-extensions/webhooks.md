@@ -1,6 +1,6 @@
 ---
 title: Webhooks
-weight: 9
+weight: 10
 menus:
   reference-docs:
     parent: Server Extensions

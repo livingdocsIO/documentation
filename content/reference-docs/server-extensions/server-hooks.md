@@ -1,6 +1,6 @@
 ---
 title: Server Hooks
-weight: 8
+weight: 9
 menus:
   reference-docs:
     parent: Server Extensions

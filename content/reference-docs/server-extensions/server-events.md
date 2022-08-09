@@ -1,6 +1,6 @@
 ---
 title: Server Events
-weight: 7
+weight: 8
 menus:
   reference-docs:
     parent: Server Extensions
