@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix: bump framework to version 24.2.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5699)
 * [fix(deps): update dependency fastest-levenshtein from 1.0.14 to v1.0.16 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4727)
 * [Systemmetadata preparation](https://github.com/livingdocsIO/livingdocs-server/pull/4735)
 * [feat(translations): german translations in editor and main navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/5693)
