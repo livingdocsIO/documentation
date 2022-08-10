@@ -10,6 +10,11 @@ menus:
 ## Authorization
 To work with the public Api first go to the Project Settings page in the Livingdocs Editor and create an `AccessToken`.
 
+Project admins can create new `AccessToken` by going to `Menu` > `Preferences` > `Project Admin`, from the project landing page.
+On the sidebar, go to `Api Tokens` and start the token creation flow with `Add Api Token`, as seen in the image below.
+
+{{< img src="./access-token-creation.png" alt="AccessToken creation menu" >}}
+
 Embed the `AccessToken` in the header of every HTTP request as shown below.
 
 
