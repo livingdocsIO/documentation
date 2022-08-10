@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fastest-levenshtein from 1.0.14 to v1.0.16 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4727)
 * [Systemmetadata preparation](https://github.com/livingdocsIO/livingdocs-server/pull/4735)
 * [feat(translations): german translations in editor and main navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/5693)
 * [Scroll to component when clicking on 'go to component' in error message in metadata form when publish control is enabled](https://github.com/livingdocsIO/livingdocs-editor/pull/5691)
