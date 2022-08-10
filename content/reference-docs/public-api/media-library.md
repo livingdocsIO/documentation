@@ -8,7 +8,7 @@ menus:
 ---
 
 {{< api-example
-  title="Get a Single Media Library Entry"
+  title="Get a Single Media Library Entry (public-api:read)"
 >}}
 
 --query--
@@ -51,7 +51,7 @@ api/v1/mediaLibrary/:id
 {{< /api-example >}}
 
 {{< api-example
-  title="Patch a Media Library Entry"
+  title="Patch a Media Library Entry (public-api:write)"
 >}}
 
 --query--
@@ -172,7 +172,7 @@ api/v1/mediaLibrary/:id
 {{< /api-example >}}
 
 {{< api-example
-  title="Get Media Library Entries"
+  title="Get Media Library Entries (public-api:read)"
 >}}
 
 --query--
@@ -269,7 +269,7 @@ api/v1/mediaLibrary?externalId=ex-1&systemName=externalSystem
 {{< /api-example >}}
 
 {{< api-example
-  title="Get Incoming Publication References for a Media Library Entry"
+  title="Get Incoming Publication References for a Media Library Entry (public-api:read)"
   release="release-2022-03"
 >}}
 
@@ -346,7 +346,7 @@ GET api/v1/mediaLibrary/:mediaId/incomingDocumentReferences
 {{< /api-example >}}
 
 {{< api-example
-  title="Get Incoming Media References for a Media Library Entry"
+  title="Get Incoming Media References for a Media Library Entry (public-api:read)"
   release="release-2022-03"
 >}}
 

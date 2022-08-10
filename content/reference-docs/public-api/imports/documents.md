@@ -8,7 +8,7 @@ menus:
 ---
 
 {{< api-example
-  title="Import Documents"
+  title="Import Documents (public-api:write)"
 >}}
 
 --query--
@@ -116,7 +116,7 @@ api/v1/import/documents
 {{< /api-example >}}
 
 {{< api-example
-  title="Check Import Status for Documents"
+  title="Check Import Status for Documents (public-api:write)"
 >}}
 
 --query--

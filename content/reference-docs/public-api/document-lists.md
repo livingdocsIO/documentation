@@ -8,7 +8,7 @@ menus:
 ---
 
 {{< api-example
-  title="Get List by Id"
+  title="Get List by Id (public-api:read)"
 >}}
 
 --query--
@@ -84,7 +84,7 @@ api/v1/document-lists/1
 {{< /api-example >}}
 
 {{< api-example
-  title="Get Lists"
+  title="Get Lists (public-api:read)"
 >}}
 
 --query--

@@ -8,7 +8,7 @@ menus:
 ---
 
 {{< api-example
-  title="Get a Category With all Information"
+  title="Get a Category with all Information (public-api:read)"
 >}}
 
 --query--
@@ -84,7 +84,7 @@ api/v1/categories/123abc?inheritMetadata=true
 {{< /api-example >}}
 
 {{< api-example
-  title="Get Categories for a Project"
+  title="Get Categories for a Project (public-api:read)"
 >}}
 
 --query--

@@ -8,7 +8,7 @@ menus:
 ---
 
 {{< api-example
-  title="Resolve a Path to a Document"
+  title="Resolve a Path to a Document (public-api:read)"
 >}}
 
 --query--

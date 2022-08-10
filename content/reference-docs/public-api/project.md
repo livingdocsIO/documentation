@@ -8,7 +8,7 @@ menus:
 ---
 
 {{< api-example
-  title="Get Project Configuration"
+  title="Get Project Configuration (public-api:read)"
 >}}
 
 --query--
@@ -119,10 +119,16 @@ Your `AccessToken` is valid for a single project. This endpoint tells you the de
 --query--
 
 ```bash
-GET api/v1/channels/:channelHandle
+ACCESS_TOKEN=ey1234
+curl -k -X GET "https://edit.livingdocs.io/proxy/api/api/v1/channels/:channelHandle" \
+  -H "Accept: application/json" \
+  -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
 
 --endpoint--
+```
+GET api/v1/channels/:channelHandle
+```
 
 --parameters--
 |Name|Type|Notes|
@@ -212,10 +218,16 @@ GET api/v1/channels/:channelHandle
 --query--
 
 ```bash
-GET api/v1/design/:designVersion
+ACCESS_TOKEN=ey1234
+curl -k -X GET "https://edit.livingdocs.io/proxy/api/api/v1/design/:designVersion" \
+  -H "Accept: application/json" \
+  -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
 
 --endpoint--
+```
+GET api/v1/design/:designVersion
+```
 
 --parameters--
 |Name|Type|Notes|
