@@ -1,6 +1,6 @@
 ---
 title: Publication Events
-weight: 3
+weight: 5
 renderTOC: false
 menus:
   reference-docs:
@@ -8,7 +8,7 @@ menus:
 ---
 
 {{< api-example
-  title="Get Publication Events"
+  title="Get Publication Events (public-api:read)"
 >}}
 
 --query--

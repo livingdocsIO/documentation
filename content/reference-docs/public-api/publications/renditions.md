@@ -1,6 +1,6 @@
 ---
 title: Renditions
-weight: 4
+weight: 7
 renderTOC: false
 menus:
   reference-docs:
@@ -8,7 +8,7 @@ menus:
 ---
 
 {{< api-example
-  title="Get Specific Renditions for a Publication"
+  title="Get Specific Renditions for a Publication (public-api:read)"
 >}}
 
 --query--

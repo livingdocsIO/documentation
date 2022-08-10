@@ -1,6 +1,6 @@
 ---
 title: Incoming References
-weight: 5
+weight: 6
 renderTOC: false
 menus:
   reference-docs:
@@ -8,7 +8,7 @@ menus:
 ---
 
 {{< api-example
-  title="Get Incoming Publication References for a Document"
+  title="Get Incoming Publication References for a Document (public-api:read)"
   release="release-2022-03"
 >}}
 
