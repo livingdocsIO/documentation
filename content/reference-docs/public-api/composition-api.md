@@ -8,7 +8,7 @@ menus:
 ---
 
 {{< api-example
-  title="Compose a Publication"
+  title="Compose a Publication (public-api:read)"
 >}}
 
 --query--

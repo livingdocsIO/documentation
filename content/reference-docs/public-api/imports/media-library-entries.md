@@ -8,7 +8,7 @@ menus:
 ---
 
 {{< api-example
-  title="Import Media Library Entries"
+  title="Import Media Library Entries (public-api:write)"
 >}}
 
 --query--

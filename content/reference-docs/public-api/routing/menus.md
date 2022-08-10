@@ -8,7 +8,7 @@ menus:
 ---
 
 {{< api-example
-  title="Get Menus for a Channel"
+  title="Get Menus for a Channel (public-api:read)"
 >}}
 
 --query--
