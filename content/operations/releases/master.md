@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Document Editing: Correctly handle multiple dashboard actions](https://github.com/livingdocsIO/livingdocs-editor/pull/5697)
 * [Teasers: allow drag from dashboards in document editing toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/5706)
 * [fix: bump framework to version 24.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4738)
 * [Dragon Drop refinements](https://github.com/livingdocsIO/livingdocs-editor/pull/5688)
