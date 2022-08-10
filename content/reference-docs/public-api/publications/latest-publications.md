@@ -1,6 +1,6 @@
 ---
 title: Latest Publications 
-weight: 2
+weight: 3
 renderTOC: false
 menus:
   reference-docs:
@@ -8,7 +8,7 @@ menus:
 ---
 
 {{< api-example
-  title="Get Latest Publications"
+  title="Get Latest Publications (public-api:read)"
 >}}
 
 --query--
