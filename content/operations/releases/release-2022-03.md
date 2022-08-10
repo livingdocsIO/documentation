@@ -696,7 +696,7 @@ References:
 🎁 Added new publicApi endpoint `GET /api/beta/documents/:documentId/latestDraft` to get the latest draft of a document
 
 References:
-- [Documentation]({{< ref "/reference-docs/public-api/beta/latest-draft" >}})
+- [Documentation]({{< ref "/reference-docs/public-api/publications/latest-draft-beta" >}})
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4224)
 
 ### Server Config

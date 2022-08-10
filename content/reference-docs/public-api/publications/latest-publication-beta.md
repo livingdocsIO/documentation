@@ -1,15 +1,15 @@
 ---
-title: Latest Publication
-identifier: Beta Latest Publication
-weight: 1
+title: Latest Publication Beta
+identifier: Latest Publication Beta
+weight: 2
 renderTOC: false
 menus:
   reference-docs:
-    parent: Beta
+    parent: Publications 
 ---
 
 {{< api-example
-  title="Get Latest Publication"
+  title="Get Latest Publication (public-api:read)"
   beta=true
 >}}
 
