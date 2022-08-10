@@ -539,6 +539,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.73): chore: pin version for vue and vue-template-compiler
 - [v80.10.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.72): fix: don't trigger click event for disabled buttons
 - [v80.10.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.71): fix(dashboards): don't jump to top of result list on load-more
 - [v80.10.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.70): fix(add member): Test fixed
