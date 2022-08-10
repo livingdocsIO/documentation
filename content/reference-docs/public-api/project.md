@@ -113,7 +113,7 @@ Your `AccessToken` is valid for a single project. This endpoint tells you the de
 {{< /api-example >}}
 
 {{< api-example
-  title="Get Channel Configuration"
+  title="Get Channel Configuration (public-api:read)"
 >}}
 
 --query--
@@ -212,7 +212,7 @@ GET api/v1/channels/:channelHandle
 {{< /api-example >}}
 
 {{< api-example
-  title="Get Design Configuration"
+  title="Get Design Configuration (public-api:read)"
 >}}
 
 --query--
