@@ -23,7 +23,10 @@ Here is an example includes configuration to consider for the editable teaser us
       type: 'li-document-reference',
       preload: true,
       ui: {
-        label: 'Teaser'
+        label: 'Teaser',
+        config: {
+            useDashboard: 'articles-simple'
+          }
       }
     }
   ],
@@ -80,7 +83,8 @@ Here is an example includes configuration to consider for the editable teaser us
 Now you want to configure a Teaser Dashboard for use in the Editor. For this, you configure an article dashboard first, then you can make use of it in the page ContentType.
 
 Dashboards are configured in the Project Config editorSettings.
-```
+
+```js
 // Project Config
 // ...
 editorSettings: {
@@ -106,7 +110,7 @@ editorSettings: {
         label: 'Title',
         minWidth: 100,
         growFactor: 1,
-        priority: 1
+        priority: 1,
         componentName: 'liTableDashboardCellMain',
         componentOptions: {
           image: {
@@ -125,7 +129,9 @@ editorSettings: {
 
 By adding this dashboard to `contentType.editor.documentEditingToolbar.documentDashboards`, users will see a new button in the toolbar to open the dashboard in a side panel.
 
-```
+{{< img src="./toolbar-teaser.png" alt="Teaser button in toolbar" >}}
+
+```js
 // page.js
 {
   handle: 'page',
@@ -151,7 +157,7 @@ By adding this dashboard to `contentType.editor.documentEditingToolbar.documentD
 
 All there is to do now, is adding a bit of config to let the system know, which Teaser Component should be created when dropping an Article card from that dashboard onto the Document. This is done in the Article Content-Type:
 
-```
+```js
 // article.js
 {
   handle: 'article',
@@ -168,7 +174,7 @@ All there is to do now, is adding a bit of config to let the system know, which 
 
 And adding the allowed import and export config to the project config:
 
-```
+```js
 import: {
     allowedProjects: [{ handle: "exampleHandle" }],
   },
