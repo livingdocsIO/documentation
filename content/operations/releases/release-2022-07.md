@@ -432,6 +432,7 @@ Here is a list of all patches after the release has been announced.
 - [v189.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.2): fix(oembed): add spotify and data wrapper
 
 ### Livingdocs Editor Patches
+- [v80.38.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.34): fix(go-to-component): fix ready check
 - [v80.38.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.33): fix: bump framework to version 24.0.7
 - [v80.38.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.32): chore(vue-template-compiler): update version
 - [v80.38.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.31): fix(metadata-form-navigation): support long titles in the metadata form navigation
