@@ -1,15 +1,15 @@
 ---
-title: Latest Draft
-identifier: Beta Latest Draft
-weight: 3
+title: Latest Draft Beta
+identifier: Latest Draft Beta
+weight: 8
 renderTOC: false
 menus:
   reference-docs:
-    parent: Beta
+    parent: Publications 
 ---
 
 {{< api-example
-  title="Get Latest Draft"
+  title="Get Latest Draft (public-api:write, public-api:drafts:read)"
   release="release-2022-03"
   beta=true
 >}}
@@ -35,7 +35,8 @@ GET api/beta/documents/:documentId/latestDraft
 |?renditions|string||A comma-separated list of rendition handles. Example: `?renditions=web,json`|
 
 --description--
-This endpoint returns the most recent draft version of a document.  
+This endpoint returns the most recent draft version of a document.
+A token with permission 
 The response is a JSON object with 5 possible top-level properties:
 
 - systemdata
