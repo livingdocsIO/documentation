@@ -8,7 +8,8 @@ menus:
 ---
 
 {{< api-example
-  title="Get Publication Events (public-api:read)"
+  title="Get Publication Events"
+  scopes="public-api:read"
 >}}
 
 --query--

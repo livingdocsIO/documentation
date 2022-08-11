@@ -8,7 +8,8 @@ menus:
 ---
 
 {{< api-example
-  title="Get Latest Publication (public-api:read)"
+  title="Get Latest Publication"
+  scopes="public-api:read"
 >}}
 
 --query--

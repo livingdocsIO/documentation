@@ -8,7 +8,8 @@ menus:
 ---
 
 {{< api-example
-  title="Import Videos (public-api:write)"
+  title="Import Videos"
+  scopes="public-api:write"
 >}}
 
 --query--
