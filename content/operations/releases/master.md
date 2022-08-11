@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @google-cloud/storage from 6.2.3 to v6.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4729)
 * [Fix fake progress bar for image drops on embedded livingdoc](https://github.com/livingdocsIO/livingdocs-editor/pull/5708)
 * [Document Editing: Correctly handle multiple dashboard actions](https://github.com/livingdocsIO/livingdocs-editor/pull/5697)
 * [Teasers: allow drag from dashboards in document editing toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/5706)
