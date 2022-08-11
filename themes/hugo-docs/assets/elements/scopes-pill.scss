@@ -1,0 +1,19 @@
+.scopes-pill {
+    display: flex;
+    flex-direction: column;
+    gap: $space-m;
+    padding-top: $space-s;
+    padding-bottom: 2 * $space-m;
+    margin-bottom: 2 * $space-m;
+    border-bottom: 1px solid $color-black;
+  
+    &__badges {
+      display: flex;
+      gap: $space-s;
+    }
+  
+    &__title {
+      @extend %font-xl;
+    }
+  }
+  

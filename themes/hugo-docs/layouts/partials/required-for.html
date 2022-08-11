@@ -1,0 +1,5 @@
+{{- if .block -}}
+<p class="required-for">Required scope: <code>{{ .scopes }}</code></p>
+{{- else -}}
+<span class="required-for">Required scope: <code>{{ .scopes }}</code></span>
+{{- end -}}

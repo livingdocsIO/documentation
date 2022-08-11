@@ -1,5 +1,6 @@
 {{- $title := .Get "title" -}}
 {{- $release := .Get "release" -}}
+{{- $scopes := .Get "scopes" -}}
 {{- $beta := .Get "beta" -}}
 {{- $showResponseCode := .Get "showResponseCode" -}}
 {{- $responseBlurry := .Get "responseBlurry" -}}
@@ -25,6 +26,10 @@
 
   {{- if (ne $release "") -}}
     {{- partial "added-in" (dict "release" $release "block" true) -}}
+  {{- end -}}
+
+  {{- if (ne $scopes "") -}}
+    {{- partial "required-for" (dict "scopes" $scopes "block" true) -}}
   {{- end -}}
 
   {{- if (ne $description "") -}}
