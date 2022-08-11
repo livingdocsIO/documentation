@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Table Dashboards: Restore Editable Cells](https://github.com/livingdocsIO/livingdocs-editor/pull/5710)
 * [Dashboards: compute entity labels with best effort from baseFilters](https://github.com/livingdocsIO/livingdocs-editor/pull/5696)
 * [fix(deps): update dependency @google-cloud/storage from 6.2.3 to v6.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4729)
 * [Fix fake progress bar for image drops on embedded livingdoc](https://github.com/livingdocsIO/livingdocs-editor/pull/5708)
