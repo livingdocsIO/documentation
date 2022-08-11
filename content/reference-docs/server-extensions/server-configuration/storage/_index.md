@@ -26,11 +26,17 @@ At the moment we have a fixed set of supported strategies:
 storage: {
   // an alias to our supported abstract blob stores
   strategy: 'strategy-name',
+  computeKey({projectId, mimeType, extension, dateString, uid}) {
+    return `${projectId}/${dateString}/${uid}${extension}`
+  },
   // configuration that gets passed to the abstract blob store
   config: {...}
 }
 ```
 
+`computeKey()` is an optional parameter that can be provided if you want a custom path for your media files.
+The default configuration will return `{dateString}/{uid}{ext}`, but you can use the provided parameters on `computeKey()` 
+to compose a key that matches your needs, e.g. separating media by projectId for team expenditure with `{projectId}/{dateString}/{uid}{extension}`.
 
 ## Strategies
 
