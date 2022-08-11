@@ -8,7 +8,8 @@ menus:
 ---
 
 {{< api-example
-  title="Get a Sitemap's Index (public-api:read)"
+  title="Get a Sitemap's Index"
+  scopes="public-api:read"
 >}}
 
 --query--
@@ -62,7 +63,8 @@ GET api/v1/sitemaps/index
 {{< /api-example >}}
 
 {{< api-example
-  title="Get a Sitemap's Entries (public-api:read)"
+  title="Get a Sitemap's Entries"
+  scopes="public-api:read"
 >}}
 
 --query--

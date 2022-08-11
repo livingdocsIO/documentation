@@ -8,7 +8,8 @@ menus:
 ---
 
 {{< api-example
-  title="Import Images (public-api:write)"
+  title="Import Images"
+  scopes="public-api:write"
 >}}
 
 --query--
@@ -104,7 +105,8 @@ api/v1/import/images
 {{< /api-example >}}
 
 {{< api-example
-  title="Check Import Status for Images (public-api:write)"
+  title="Check Import Status for Images"
+  scopes="public-api:write"
 >}}
 
 --query--

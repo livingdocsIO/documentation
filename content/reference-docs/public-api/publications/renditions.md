@@ -8,7 +8,8 @@ menus:
 ---
 
 {{< api-example
-  title="Get Specific Renditions for a Publication (public-api:read)"
+  title="Get Specific Renditions for a Publication"
+  scopes="public-api:read"
 >}}
 
 --query--
