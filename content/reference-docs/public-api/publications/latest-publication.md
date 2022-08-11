@@ -48,7 +48,7 @@ The response is a JSON object with 4 possible top-level properties:
     "projectId": 1,
     "channelId": 1,
     "documentId": 1,
-    "contentType": "article",
+    "contentType": "regular",
     "documentType": "article",
     "publicationId": 1,
     "firstPublicationDate": "2021-03-16T14:08:11:686Z",
