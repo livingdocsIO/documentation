@@ -36,7 +36,7 @@ storage: {
 
 `computeKey()` is an optional parameter that can be provided if you want a custom path for your media files.
 The default configuration will return `{dateString}/{uid}{ext}`, but you can use the provided parameters on `computeKey()` 
-to compose a key that matches your needs, e.g. separating media by projectId for team expenditure with `{projectId}/{dateString}/{uid}{extension}`.
+to compose a key blueprint that matches your needs, e.g. separate media by projectId with `{projectId}/{dateString}/{uid}{extension}`.
 
 ## Strategies
 
