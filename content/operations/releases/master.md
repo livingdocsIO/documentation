@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix: filtering of unknown components during document copy](https://github.com/livingdocsIO/livingdocs-server/pull/4737)
 * [fix(new article creation): create function fixed](https://github.com/livingdocsIO/livingdocs-editor/pull/5714)
 * [feat(translations): more german translations in the editor view](https://github.com/livingdocsIO/livingdocs-editor/pull/5713)
 * [Table Dashboards: Restore Editable Cells](https://github.com/livingdocsIO/livingdocs-editor/pull/5710)
