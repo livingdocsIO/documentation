@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Custom key for storage](https://github.com/livingdocsIO/livingdocs-server/pull/4674)
 * [Fix/dashboard actions and the word "new"](https://github.com/livingdocsIO/livingdocs-editor/pull/5715)
 * [fix(metadataForm): Closed when history is clicked](https://github.com/livingdocsIO/livingdocs-editor/pull/5716)
 * [fix: filtering of unknown components during document copy](https://github.com/livingdocsIO/livingdocs-server/pull/4737)
