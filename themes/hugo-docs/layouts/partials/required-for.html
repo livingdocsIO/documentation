@@ -1,5 +1,14 @@
 {{- if .block -}}
-<p class="required-for">Required scope: <code>{{ .scopes }}</code></p>
+<p class="required-for">Required scope:
+    {{ $items := split .scopes ","}}
+    {{ range $item := $items }} 
+        <code>{{ $item }}</code>
+    {{ end }}</p>
 {{- else -}}
-<span class="required-for">Required scope: <code>{{ .scopes }}</code></span>
+<span class="required-for">Required scope:
+    {{ $items := split .scopes ","}}
+    {{ range $item := $items }} 
+        <code>{{ $item }}</code>
+    {{ end }}
+  </span>
 {{- end -}}
