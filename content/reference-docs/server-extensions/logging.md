@@ -51,26 +51,20 @@ logs: {
     project: 'livingdocs-server'
   },
 
+  // An object containing functions for custom serialization of objects
+  // These functions should return an JSONifiable object and they should never throw
+  serializers: {},
+
+  // Enables or disables the inclusion of a timestamp in the log message (with `true` or `false`)
+  // If a function is supplied, it must synchronously return a partial JSON string representation of the time
+  timestamp: () => `,"time":"${new Date(Date.now()).toISOString()}"`,
+
   // Pass custom pino formatters (these are ignored when: `pretty: true`)
   // Pino Documentation: https://github.com/pinojs/pino/blob/master/docs/api.md#formatters-object
   formatters: {
     // This example will log levels as strings instead of the default numbers
     level (label, level) {
       return {level: label}
-    },
-    // Changes the shape of the bindings. 
-    // It will be called every time a child logger is created.
-    // The default shape is {pid, hostname}
-    bindings (bindings) {
-      return {
-        project: bindings.project
-      }
-    },
-    // Changes the shape of the log object.
-    // This example will add `customer` property to the logs
-    // By default it will not change to shape of the log object.
-    log (object) {
-      return {...object, customer: 'Livingdocs'}
     }
   }
 }
