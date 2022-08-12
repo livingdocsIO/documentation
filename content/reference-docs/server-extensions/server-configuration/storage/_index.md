@@ -26,8 +26,8 @@ At the moment we have a fixed set of supported strategies:
 storage: {
   // an alias to our supported abstract blob stores
   strategy: 'strategy-name',
-  computeKey({projectId, mimeType, extension, dateString, uid}) {
-    return `${projectId}/${dateString}/${uid}${extension}`
+  computeKey({projectId, mimeType, extension, dateString, randomString}) {
+    return `${projectId}/${dateString}/${randomString}${extension}`
   },
   // configuration that gets passed to the abstract blob store
   config: {...}
@@ -35,8 +35,8 @@ storage: {
 ```
 
 `computeKey()` is an optional parameter that can be provided if you want a custom path for your media files.
-The default configuration will return `{dateString}/{uid}{ext}`, but you can use the provided parameters on `computeKey()` 
-to compose a key blueprint that matches your needs, e.g. separate media by projectId with `{projectId}/{dateString}/{uid}{extension}`.
+The default configuration will return `{dateString}/{randomString}{ext}`, but you can use the provided parameters on `computeKey()` 
+to compose a key blueprint that matches your needs, e.g. separate media by projectId with `{projectId}/{dateString}/{randomString}{extension}`.
 
 ## Strategies
 
