@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency nodemailer from 6.7.7 to v6.7.8 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4749)
 * [fix(deps): update dependency @google-cloud/translate from 7.0.0 to v7.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4747)
 * [fix(deps): update dependency @azure/storage-blob from 12.10.0 to v12.11.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4728)
 * [Custom key for storage](https://github.com/livingdocsIO/livingdocs-server/pull/4674)
