@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency denque from 2.0.1 to v2.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4752)
 * [fix(deps): update dependency date-fns from 2.28.0 to v2.29.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4751)
 * [fix(deps): update dependency aws-sdk from 2.1189.0 to v2.1194.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4750)
 * [fix(deps): update dependency nodemailer from 6.7.7 to v6.7.8 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4749)
