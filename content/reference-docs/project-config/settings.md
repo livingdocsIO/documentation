@@ -62,7 +62,7 @@ settings: {
       titleMatches: ['header.title'],
       supertitleMatches: ['header.catchline'],
       teaserMatches: ['header.lead', 'p.text'],
-      maxTextLength: 100
+      maxTextLength: 100 // {{< added-in release-2022-09 >}}
     },
     comyan: {
       enabled: true,
