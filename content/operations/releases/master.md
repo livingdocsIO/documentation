@@ -28,87 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* [fix(deps): update dependency denque from 2.0.1 to v2.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4752)
-* [fix(deps): update dependency date-fns from 2.28.0 to v2.29.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4751)
-* [fix(deps): update dependency aws-sdk from 2.1189.0 to v2.1194.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4750)
-* [fix(deps): update dependency nodemailer from 6.7.7 to v6.7.8 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4749)
-* [fix(deps): update dependency @google-cloud/translate from 7.0.0 to v7.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4747)
-* [fix(deps): update dependency @azure/storage-blob from 12.10.0 to v12.11.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4728)
-* [Custom key for storage](https://github.com/livingdocsIO/livingdocs-server/pull/4674)
-* [Fix/dashboard actions and the word "new"](https://github.com/livingdocsIO/livingdocs-editor/pull/5715)
-* [fix(metadataForm): Closed when history is clicked](https://github.com/livingdocsIO/livingdocs-editor/pull/5716)
-* [fix: filtering of unknown components during document copy](https://github.com/livingdocsIO/livingdocs-server/pull/4737)
-* [fix(new article creation): create function fixed](https://github.com/livingdocsIO/livingdocs-editor/pull/5714)
-* [feat(translations): more german translations in the editor view](https://github.com/livingdocsIO/livingdocs-editor/pull/5713)
-* [Table Dashboards: Restore Editable Cells](https://github.com/livingdocsIO/livingdocs-editor/pull/5710)
-* [Dashboards: compute entity labels with best effort from baseFilters](https://github.com/livingdocsIO/livingdocs-editor/pull/5696)
-* [fix(deps): update dependency @google-cloud/storage from 6.2.3 to v6.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4729)
-* [Fix fake progress bar for image drops on embedded livingdoc](https://github.com/livingdocsIO/livingdocs-editor/pull/5708)
-* [Document Editing: Correctly handle multiple dashboard actions](https://github.com/livingdocsIO/livingdocs-editor/pull/5697)
-* [Teasers: allow drag from dashboards in document editing toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/5706)
-* [fix: bump framework to version 24.2.1](https://github.com/livingdocsIO/livingdocs-server/pull/4738)
-* [Dragon Drop refinements](https://github.com/livingdocsIO/livingdocs-editor/pull/5688)
-* [Add `public-api:drafts:read` scope in token permission list](https://github.com/livingdocsIO/livingdocs-editor/pull/5700)
-* [Add `public-api:drafts:read` scope used in `/latestDraft` endpoint](https://github.com/livingdocsIO/livingdocs-server/pull/4739)
-* [fix: bump framework to version 24.2.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5699)
-* [fix(deps): update dependency fastest-levenshtein from 1.0.14 to v1.0.16 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4727)
-* [Systemmetadata preparation](https://github.com/livingdocsIO/livingdocs-server/pull/4735)
-* [feat(translations): german translations in editor and main navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/5693)
-* [Scroll to component when clicking on 'go to component' in error message in metadata form when publish control is enabled](https://github.com/livingdocsIO/livingdocs-editor/pull/5691)
-* [Modify endpoint used to change the user name with reduced privileges](https://github.com/livingdocsIO/livingdocs-editor/pull/5686)
-* [Add a new endpoint (`/auth/me/profile`) with reduced privileges for regular users](https://github.com/livingdocsIO/livingdocs-server/pull/4726)
-* [feat(document-inbox): manual sorting](https://github.com/livingdocsIO/livingdocs-editor/pull/5683)
-* [fix(metadata-form-navigation): support long titles in the metadata form navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/5685)
-* [Issue Management - add article dialog](https://github.com/livingdocsIO/livingdocs-editor/pull/5662)
-* [Desk-Net: Allow drag and drop of schedule entries if linked with a document](https://github.com/livingdocsIO/livingdocs-editor/pull/5690)
-* [Back Button: Find the best dashboard to navigate to if article was opened directly](https://github.com/livingdocsIO/livingdocs-editor/pull/5680)
-* [fix(deps): update dependency aws-sdk from 2.1182.0 to v2.1189.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4701)
-* [fix(deps): update dependency exifreader from 4.5.0 to v4.5.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4715)
-* [Fix login redirect when session expired using OpenID](https://github.com/livingdocsIO/livingdocs-editor/pull/5684)
-* [Metadata Form Feedback Rail](https://github.com/livingdocsIO/livingdocs-editor/pull/5665)
-* [fix(metadata): ensure $ref: documents on li-issue-management](https://github.com/livingdocsIO/livingdocs-editor/pull/5681)
-* [fix(li-issue-management): make config schema a strict obj](https://github.com/livingdocsIO/livingdocs-server/pull/4724)
-* [Metadata: li-text enhancements](https://github.com/livingdocsIO/livingdocs-editor/pull/5663)
-* [Metadata: li-text enhancements](https://github.com/livingdocsIO/livingdocs-server/pull/4707)
-* [update framework to 24.1.2](https://github.com/livingdocsIO/livingdocs-editor/pull/5679)
-* [Issue management add document](https://github.com/livingdocsIO/livingdocs-editor/pull/5668)
-* [Issue Management: allow documentCreationFlows config](https://github.com/livingdocsIO/livingdocs-server/pull/4708)
-* [update framework to 24.1.2](https://github.com/livingdocsIO/livingdocs-server/pull/4723)
-* [Fix external systems](https://github.com/livingdocsIO/livingdocs-editor/pull/5670)
-* [fix(desknet): Return full document for schedule](https://github.com/livingdocsIO/livingdocs-server/pull/4713)
-* [feat(desknet): Limit schedule to a specific date using metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/5664)
-* [feat(metadata): Store date in li-desknet-schedule plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4706)
-* [fix(deliveries): Ensure optional url property is handled correctly](https://github.com/livingdocsIO/livingdocs-editor/pull/5672)
-* [fix(camelcase): Content type filter](https://github.com/livingdocsIO/livingdocs-editor/pull/5676)
-* [fix: avoid loading content when retrieving lists](https://github.com/livingdocsIO/livingdocs-server/pull/4712)
-* [fix(metadata): Highlight error for Vue Select inputs](https://github.com/livingdocsIO/livingdocs-editor/pull/5675)
-* [update framework to 24.1.1](https://github.com/livingdocsIO/livingdocs-editor/pull/5677)
-* [update framework to 24.1.1](https://github.com/livingdocsIO/livingdocs-server/pull/4714)
-* [Deliveries Build: show only deliveries defined on the contentType](https://github.com/livingdocsIO/livingdocs-editor/pull/5669)
-* [Simplify Create Wizard](https://github.com/livingdocsIO/livingdocs-editor/pull/5633)
-* [fix(multiple references): parsing/validation now correct](https://github.com/livingdocsIO/livingdocs-server/pull/4703)
-* [feat(desknet): Link Desk-Net elements using external ids](https://github.com/livingdocsIO/livingdocs-server/pull/4680)
-* [feat: add ids for components of defaultContent](https://github.com/livingdocsIO/livingdocs-server/pull/4699)
-* [feat(desknet): Implement schedule filtering](https://github.com/livingdocsIO/livingdocs-server/pull/4678)
-* [fix: add ui option for retresco maxTextLength config](https://github.com/livingdocsIO/livingdocs-editor/pull/5659)
-* [fix(retresco): a maxLength config can be set to prevent API errors](https://github.com/livingdocsIO/livingdocs-server/pull/4677)
-* [Issue Management](https://github.com/livingdocsIO/livingdocs-editor/pull/5643)
-* [Metadata li date](https://github.com/livingdocsIO/livingdocs-server/pull/4698)
-* [Metadata: new type li-date](https://github.com/livingdocsIO/livingdocs-editor/pull/5658)
-* [fix: disable toolbar actions on conflict mode](https://github.com/livingdocsIO/livingdocs-editor/pull/5657)
-* [Enable Publish Control for Data Records](https://github.com/livingdocsIO/livingdocs-editor/pull/5656)
-* [feat(li-issue-management): add li-issue-management plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4686)
-* [chore(deps): update dependency pino-socket from 5.0.0 to v5.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4696)
-* [fix(deps): update dependency fastest-levenshtein from 1.0.12 to v1.0.14 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4688)
-* [Filters: allow documentType and contentType config for contentType filter](https://github.com/livingdocsIO/livingdocs-editor/pull/5652)
-* [fix(deps): update dependency aws-sdk from 2.1162.0 to v2.1182.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4625)
-* [remove not needed non breaking space in print preview](https://github.com/livingdocsIO/livingdocs-editor/pull/5645)
-* [fix li-tree metadata plugin dashboard config](https://github.com/livingdocsIO/livingdocs-editor/pull/5642)
-* [fix(li-tree): fix document config shorthand filter](https://github.com/livingdocsIO/livingdocs-server/pull/4685)
-* [fix(deps): update dependency ws from 8.8.0 to v8.8.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4665)
-* [fix(deps): update dependency ioredis from 5.2.0 to v5.2.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4666)
-* [Test new release notes patching mechanism - iteration 2](https://github.com/livingdocsIO/livingdocs-server/pull/4682)
-* [Test patching release notes](https://github.com/livingdocsIO/livingdocs-server/pull/4681)
+
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -150,6 +70,20 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Highlights
 
+### Metadata Plugin li-text improvements
+
+Add new config options `minLength`, `recommendedMinLength`, `maxLength`, `recommendedMaxLength` and a better visual feedback if the values are exceeded or fallen below.
+
+* [PR: new li-text config options](https://github.com/livingdocsIO/livingdocs-editor/pull/5663)
+* [PR: li-text form feedback](https://github.com/livingdocsIO/livingdocs-editor/pull/5665)
+
+### Metadata Plugin li-date
+
+The metadata plugin `li-date` allows to set a date **without** time.
+
+* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4698)
+* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5658)
+
 ### Metadata Plugin li-tree
 
 TODO: add description
@@ -158,11 +92,13 @@ TODO: add description
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4591)
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5580)
 
-### Microsoft Teams Integration
+### Metadata Plugin li-issue-management
 
-TODO: Is this a highlight? Is the feature ready? Is the feature documented?
+TODO: add description
 
-* [Microsoft Teams Integration](https://github.com/livingdocsIO/livingdocs-server/pull/4408)
+* [Documentation: TODO](?)
+* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5662)
+* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4686)
 
 ### Document Creation Flow
 
@@ -178,6 +114,8 @@ References:
 * [PR: Document Creation Flow Config](https://github.com/livingdocsIO/livingdocs-server/pull/4635)
 * [PR: Editor Project Config - Webhook: Add webhook event 'document.build'](https://github.com/livingdocsIO/livingdocs-editor/pull/5628)
 * [PR: Add Create Button to Dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/5637)
+* [PR: Simplify Create Wizard](https://github.com/livingdocsIO/livingdocs-editor/pull/5633)
+* [PR: Allow Flow Config on editorSettings.documentCreationFlows](https://github.com/livingdocsIO/livingdocs-server/pull/4708)
 
 ### Deliveries: Status and Build Triggers
 
@@ -237,6 +175,15 @@ References:
 * [Documentation?](?)
 * [PR: li-desknet-schedule metadata plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4673)
 * [PR: Add li-desknet-schedule metadata plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/5627)
+* [PR: Schedule filtering](https://github.com/livingdocsIO/livingdocs-server/pull/4678)
+* [PR: Link Desk-Net elements using external ids](https://github.com/livingdocsIO/livingdocs-server/pull/4680)
+* [Limit schedule to a specific date using metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/5664)
+
+### Split Revision/Systemmetadata
+
+TODO: Do we announce that officially? If yes, how?
+
+* [PR: System metadata preparation](https://github.com/livingdocsIO/livingdocs-server/pull/4735)
 
 
 
@@ -285,6 +232,12 @@ Please remove `projectConfig.settings.desknet.scheduleEnabled`, because it has n
 
 * [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4647)
 
+### Deprecate ui.config.rows of li-text
+
+Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace it with `config.allowNewlines: true`, if you want to allow newline characters stored.
+
+* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4707)
+
 ## APIs :gift:
 
 ## Other Changes
@@ -295,12 +248,32 @@ Please remove `projectConfig.settings.desknet.scheduleEnabled`, because it has n
 * [Dashboards: Flatter Design](https://github.com/livingdocsIO/livingdocs-editor/pull/5605)
 
 ### Features
+* [Define storage.computeKey() function to compute the storage path fo a Media Library asset](https://github.com/livingdocsIO/livingdocs-server/pull/4674)
+* [Enable Publish Control for Data Records](https://github.com/livingdocsIO/livingdocs-editor/pull/5656)
+* [Public API: /latestDraft allows access with token 'public-api:drafts:read'](https://github.com/livingdocsIO/livingdocs-server/pull/4739)
 
 ### Improvements
+
+* [Project Config: Add maxTextLength config for Retresco Integration](https://github.com/livingdocsIO/livingdocs-server/pull/4677)
+* [Editor Back Button: Find the best dashboard to navigate to if article was opened directly](https://github.com/livingdocsIO/livingdocs-editor/pull/5680)
+* [Document Inbox: allow manual sorting](https://github.com/livingdocsIO/livingdocs-editor/pull/5683)
+* [Administration: Regular users can modify their first-/last-name](https://github.com/livingdocsIO/livingdocs-server/pull/4726)
+* [Dragon Drop: Allow to replace teaser images in resolved includes](https://github.com/livingdocsIO/livingdocs-editor/pull/5688)
+* [Dashboards: compute entity labels with best effort from baseFilters](https://github.com/livingdocsIO/livingdocs-editor/pull/5696)
 
 ### Bugfixes
 * [Editable links: Show current (and not configured link)](https://github.com/livingdocsIO/livingdocs-editor/pull/5554)
 * [Desk-Net: Support any handle for li-desknet-integration](https://github.com/livingdocsIO/livingdocs-server/pull/4672)
+* [Document Copy: Filter unknown components during copy](https://github.com/livingdocsIO/livingdocs-server/pull/4737)
+* [Fix fake progress bar for image drops on embedded livingdoc](https://github.com/livingdocsIO/livingdocs-editor/pull/5708)
+* [Document Editing: Correctly handle multiple dashboard actions](https://github.com/livingdocsIO/livingdocs-editor/pull/5697)
+* [Fix login redirect when session expired using OpenID](https://github.com/livingdocsIO/livingdocs-editor/pull/5684)
+* [Deliveries: Ensure optional url property is handled correctly](https://github.com/livingdocsIO/livingdocs-editor/pull/5672)
+* [Avoid loading content when retrieving lists](https://github.com/livingdocsIO/livingdocs-server/pull/4712)
+* [Disable editing toolbar actions on conflict mode](https://github.com/livingdocsIO/livingdocs-editor/pull/5657)
+* [Add IDs for components of defaultContent on document creation](https://github.com/livingdocsIO/livingdocs-server/pull/4699)
+* [Highlight error for Vue Select inputs](https://github.com/livingdocsIO/livingdocs-editor/pull/5675)
+* [Fix issues related with pasting over selected text that contained formatting tags.](https://github.com/livingdocsIO/livingdocs-editor/pull/5699)
 
 ## Patches
 
