@@ -61,7 +61,8 @@ settings: {
       // content types can be supported.
       titleMatches: ['header.title'],
       supertitleMatches: ['header.catchline'],
-      teaserMatches: ['header.lead', 'p.text']
+      teaserMatches: ['header.lead', 'p.text'],
+      maxTextLength: 100
     },
     comyan: {
       enabled: true,
