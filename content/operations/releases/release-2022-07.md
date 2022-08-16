@@ -408,6 +408,7 @@ Allows the patch operation `archive` via public API to archive an asset.
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v189.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.27): fix(errors): At some places, objects are thrown. Until that is fixed, the error handler should fall back to the legacy formatter.
 - [v189.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.26): fix: bump framework to version 24.0.7
 - [v189.0.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.25): fix(db): Test against postgres 11 again in release branch
 - [v189.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.24): fix: add checks for `undefined` when getting notification channels
