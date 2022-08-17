@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Updating the angular legacy library to support later versions of SortableJS](https://github.com/livingdocsIO/livingdocs-editor/pull/5726)
 * [Delivery Status Reporting](https://github.com/livingdocsIO/livingdocs-server/pull/4731)
 * [fix(deps): update dependency aws-sdk from 2.1194.0 to v2.1196.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4761)
 * [fix(deps): update dependency @google-cloud/storage from 6.4.0 to v6.4.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4760)
