@@ -408,6 +408,7 @@ Allows the patch operation `archive` via public API to archive an asset.
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v189.0.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.29): fix(deps): update dependency @google-cloud/translate from 6.3.1 to v7 (backported)
 - [v189.0.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.28): fix(import): Does not affect 'touched' documents
 - [v189.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.27): fix(errors): At some places, objects are thrown. Until that is fixed, the error handler should fall back to the legacy formatter.
 - [v189.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.26): fix: bump framework to version 24.0.7
