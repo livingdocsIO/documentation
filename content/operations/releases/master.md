@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1194.0 to v2.1196.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4761)
 * [fix(deps): update dependency @google-cloud/storage from 6.4.0 to v6.4.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4760)
 * [Fix import api to ensure untouched flag is respected](https://github.com/livingdocsIO/livingdocs-server/pull/4762)
 * [Deliveries: status and build triggers](https://github.com/livingdocsIO/livingdocs-editor/pull/5723)
