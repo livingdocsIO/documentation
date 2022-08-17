@@ -511,6 +511,7 @@ References:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v179.3.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.42): fix(import): Does not affect 'touched' documents
 - [v179.3.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.41): fix: bump framework to version 23.1.14
 - [v179.3.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.40): fix: add checks for `undefined` when getting notification channels
 - [v179.3.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v179.3.39): fix(multiple references): parsing/validation now correct
