@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [🐞 Fix number reference ids in includes and li-issue-management](https://github.com/livingdocsIO/livingdocs-editor/pull/5724)
 * [fix(metadata): use strings for ids in li-issue-management](https://github.com/livingdocsIO/livingdocs-server/pull/4746)
 * [Safe error serializer that handles circular references](https://github.com/livingdocsIO/livingdocs-server/pull/4758)
 
