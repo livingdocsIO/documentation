@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix import api to ensure untouched flag is respected](https://github.com/livingdocsIO/livingdocs-server/pull/4762)
 * [Deliveries: status and build triggers](https://github.com/livingdocsIO/livingdocs-editor/pull/5723)
 * [🐞 Fix number reference ids in includes and li-issue-management](https://github.com/livingdocsIO/livingdocs-editor/pull/5724)
 * [fix(metadata): use strings for ids in li-issue-management](https://github.com/livingdocsIO/livingdocs-server/pull/4746)
