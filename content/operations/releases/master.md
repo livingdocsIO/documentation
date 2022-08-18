@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [li-meta-issue-management: remove pages](https://github.com/livingdocsIO/livingdocs-editor/pull/5698)
 * [Document creation flow dialog validation and translation](https://github.com/livingdocsIO/livingdocs-editor/pull/5704)
 * [Updating the angular legacy library to support later versions of SortableJS](https://github.com/livingdocsIO/livingdocs-editor/pull/5726)
 * [Delivery Status Reporting](https://github.com/livingdocsIO/livingdocs-server/pull/4731)
