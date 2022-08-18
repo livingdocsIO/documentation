@@ -28,18 +28,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* [Handle undefined value for 'text' prop on metadata form feedback length component](https://github.com/livingdocsIO/livingdocs-editor/pull/5725)
-* [li-meta-issue-management: remove pages](https://github.com/livingdocsIO/livingdocs-editor/pull/5698)
-* [Document creation flow dialog validation and translation](https://github.com/livingdocsIO/livingdocs-editor/pull/5704)
-* [Updating the angular legacy library to support later versions of SortableJS](https://github.com/livingdocsIO/livingdocs-editor/pull/5726)
-* [Delivery Status Reporting](https://github.com/livingdocsIO/livingdocs-server/pull/4731)
-* [fix(deps): update dependency aws-sdk from 2.1194.0 to v2.1196.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4761)
-* [fix(deps): update dependency @google-cloud/storage from 6.4.0 to v6.4.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4760)
-* [Fix import api to ensure untouched flag is respected](https://github.com/livingdocsIO/livingdocs-server/pull/4762)
-* [Deliveries: status and build triggers](https://github.com/livingdocsIO/livingdocs-editor/pull/5723)
-* [🐞 Fix number reference ids in includes and li-issue-management](https://github.com/livingdocsIO/livingdocs-editor/pull/5724)
-* [fix(metadata): use strings for ids in li-issue-management](https://github.com/livingdocsIO/livingdocs-server/pull/4746)
-* [Safe error serializer that handles circular references](https://github.com/livingdocsIO/livingdocs-server/pull/4758)
 
 
 
@@ -138,8 +126,11 @@ For infinite products like an e-paper there is usually a "build" stage involved.
 - Allow a remote build system to report its status back to Livingdocs
 
 References:
-* [Guide TODO]({{< ref "/guides/editor/document-creation-flow" >}})
+* [Guide TODO]()
 * [PR: Server Config + Webhook + Events](https://github.com/livingdocsIO/livingdocs-server/pull/4670)
+* [PR: Delivery Status Reporting](https://github.com/livingdocsIO/livingdocs-server/pull/4731)
+* [PR: Delivery Status Fetching](https://github.com/livingdocsIO/livingdocs-server/pull/4740)
+* [PR: UI](https://github.com/livingdocsIO/livingdocs-editor/pull/5723)
 
 ### Table Dashboards (full working version)
 
@@ -272,6 +263,7 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 * [Administration: Regular users can modify their first-/last-name](https://github.com/livingdocsIO/livingdocs-server/pull/4726)
 * [Dragon Drop: Allow to replace teaser images in resolved includes](https://github.com/livingdocsIO/livingdocs-editor/pull/5688)
 * [Dashboards: compute entity labels with best effort from baseFilters](https://github.com/livingdocsIO/livingdocs-editor/pull/5696)
+* [Safe error serializer that handles circular references](https://github.com/livingdocsIO/livingdocs-server/pull/4758)
 
 ### Bugfixes
 * [Editable links: Show current (and not configured link)](https://github.com/livingdocsIO/livingdocs-editor/pull/5554)
@@ -286,6 +278,7 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 * [Add IDs for components of defaultContent on document creation](https://github.com/livingdocsIO/livingdocs-server/pull/4699)
 * [Highlight error for Vue Select inputs](https://github.com/livingdocsIO/livingdocs-editor/pull/5675)
 * [Fix issues related with pasting over selected text that contained formatting tags.](https://github.com/livingdocsIO/livingdocs-editor/pull/5699)
+* [ImportApi: ensure untouched flag is respected](https://github.com/livingdocsIO/livingdocs-server/pull/4762)
 
 ## Patches
 
