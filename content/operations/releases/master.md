@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Display "Run Automatic Placement" button in Desk-Net Schedule side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/5728)
 * [fix(deps): update dependency pino from 8.4.1 to v8.4.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4753)
 * [fix(alignment): Document title in list cards](https://github.com/livingdocsIO/livingdocs-editor/pull/5719)
 * [Close side panels when opening the insert panel](https://github.com/livingdocsIO/livingdocs-editor/pull/5735)
