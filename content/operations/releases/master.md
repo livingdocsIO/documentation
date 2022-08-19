@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(alignment): Document title in list cards](https://github.com/livingdocsIO/livingdocs-editor/pull/5719)
 * [Close side panels when opening the insert panel](https://github.com/livingdocsIO/livingdocs-editor/pull/5735)
 * [Confirm remove page action in li-publish-control-delivery](https://github.com/livingdocsIO/livingdocs-editor/pull/5734)
 * [Make pages in issue management sortable](https://github.com/livingdocsIO/livingdocs-editor/pull/5732)
