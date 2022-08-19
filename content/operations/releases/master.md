@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Group build status now by publications in li-publish-control-delivery](https://github.com/livingdocsIO/livingdocs-editor/pull/5733)
 * [Make pages in issue management sortable](https://github.com/livingdocsIO/livingdocs-editor/pull/5732)
 * [fix(deps): update dependency aws-sdk from 2.1197.0 to v2.1198.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4772)
 * [fix(deps): update dependency aws-sdk from 2.1196.0 to v2.1197.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4767)
