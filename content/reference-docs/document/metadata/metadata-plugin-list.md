@@ -906,7 +906,7 @@ metadata: [
       requiredErrorMessage: 'Provide a value',      // optional
       // specific
       maxDepth: 3,                                  // default: undefined | tree depth
-      allowedTypes: ['group', 'document', 'link']   // default: ['group', 'document', 'link']
+      allowedTypes: ['group', 'document', 'link'],  // default: ['group', 'document', 'link']
 
       // settings for document link
       document: {
