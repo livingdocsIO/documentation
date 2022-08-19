@@ -28,13 +28,8 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* [Group build status now by publications in li-publish-control-delivery](https://github.com/livingdocsIO/livingdocs-editor/pull/5733)
 * [Make pages in issue management sortable](https://github.com/livingdocsIO/livingdocs-editor/pull/5732)
-* [fix(deps): update dependency aws-sdk from 2.1197.0 to v2.1198.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4772)
-* [fix(deps): update dependency aws-sdk from 2.1196.0 to v2.1197.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4767)
 * [Design/Finite Issue](https://github.com/livingdocsIO/livingdocs-editor/pull/5731)
-* [Delivery Status Fetching](https://github.com/livingdocsIO/livingdocs-server/pull/4740)
-* [fix(deps): update dependency jose from 4.8.3 to v4.9.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4768)
 
 
 
@@ -105,6 +100,7 @@ TODO: add description
 
 * [Documentation: TODO](?)
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5662)
+* [PR: Editor - Sortable Issues](https://github.com/livingdocsIO/livingdocs-editor/pull/5732)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4686)
 
 ### Document Creation Flow
@@ -249,6 +245,18 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 * [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4707)
 
 ## APIs :gift:
+
+### Delivery Status
+
+🎁 Add server API `publicationApi.getDeliveryStatusReport({projectId, documentId})`
+🎁 Add server API `publicationApi.triggerBuild` -> fires a new [Server Event]({{< ref "/reference-docs/server-extensions/server-events" >}}) `document.build`
+🎁 Add `POST /api/v1/documents/:documentId/addDeliveryStatus` endpoint to Public API
+🎁 Add [Server Event]({{< ref "/reference-docs/server-extensions/server-events" >}}) `document.build`
+🎁 Add [Webhook Event]({{< ref "/reference-docs/server-extensions/webhooks" >}}) `document.build`
+
+* [Documentation: TODO]()
+* [PR: Delivery Status Fetching](https://github.com/livingdocsIO/livingdocs-server/pull/4740)
+* [PR: Delivery Status Reporting](https://github.com/livingdocsIO/livingdocs-server/pull/4731)
 
 ## Other Changes
 
