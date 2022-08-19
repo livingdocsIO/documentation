@@ -837,8 +837,6 @@ The plugin `li-tree` lets you set up a tree with items of the 3 possible types `
 - link -> link to an external URL
 - document -> link to another Livingdocs document
 
-With `defaultAttributes` you can define your custom key/value pairs which will be shown and editable in the UI.
-
 **Storage Format**
 ```js
 // schweiz -> link
@@ -853,21 +851,12 @@ With `defaultAttributes` you can define your custom key/value pairs which will b
     label: 'Schweiz',
     type: 'link',
     href: '/schweiz',
-    attributes: {
-      target: '_self',
-      title: 'Schweiz',
-      rel: 'nofollow'
-    },
     items: [
       {
         id: 'menu-zuerich',
         label: 'Zürich',
         type: 'link',
-        href: '/zuerich',
-        attributes: {
-          target: '_self',
-          rel: 'nofollow'
-        }
+        href: '/zuerich'
       },
       {
         id: 'menu-bern',
@@ -875,10 +864,6 @@ With `defaultAttributes` you can define your custom key/value pairs which will b
         type: 'document',
         reference: {
           id: '42'
-        },
-        attributes: {
-          target: '_self',
-          rel: 'nofollow'
         }
       }
     ]
@@ -887,17 +872,12 @@ With `defaultAttributes` you can define your custom key/value pairs which will b
     id: 'menu-deutschland',
     label: 'Deutschland',
     type: 'group',
-    attributes: {},
     items: [
       {
         id: 'menu-hamburg',
         label: 'Hamburg',
         type: 'link',
-        href: '/hamburg',
-        attributes: {
-          target: '_self',
-          rel: 'nofollow'
-        }
+        href: '/hamburg'
       },
       {
         id: 'menu-berlin',
@@ -905,10 +885,6 @@ With `defaultAttributes` you can define your custom key/value pairs which will b
         type: 'document',
         reference: {
           id: '991'
-        },
-        attributes: {
-          target: '_self',
-          rel: 'nofollow'
         }
       }
     ]
@@ -930,27 +906,12 @@ metadata: [
       requiredErrorMessage: 'Provide a value',      // optional
       // specific
       maxDepth: 3,                                  // default: undefined | tree depth
-      allowedTypes: ['group', 'document', 'link'],  // default: ['group', 'document', 'link']
+      allowedTypes: ['group', 'document', 'link']   // default: ['group', 'document', 'link']
 
       // settings for document link
       document: {
-        defaultAttributes: {
-          rel: 'next',                              // HTML a tag rel attribute -> https://www.w3schools.com/tags/tag_a.asp
-          target: '_blank',                         // HTML a tag target attribute -> https://www.w3schools.com/tags/tag_a.asp
-          tag: ''                                   // free additional key/value pairs, set a default value and change it in the UI
-        },
-        contentTypes: ['regular'],                  // default: all   | only be able to link contentType 'regular'
-        published: true,                            // default: false | only be able to link published document
-      },
-
-      // settings for external link
-      link: {
-        defaultAttributes: {                        // define default values for different additional attributes
-          rel: 'external',                          // HTML a tag rel attribute -> https://www.w3schools.com/tags/tag_a.asp
-          target: '_blank',                         // HTML a tag target attribute -> https://www.w3schools.com/tags/tag_a.asp
-          otherSystemId: ''                         // additional key/value pairs
-        },
-        allowedDomains: ['https://my-page.de']      // only allow these domains to add a link
+        contentType: ['regular'],                   // default: all   | only be able to link contentType 'regular' | string or array of strings
+        published: true                             // default: false | only be able to link published document
       }
     },
     ui: {
