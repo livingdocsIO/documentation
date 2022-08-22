@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Remove metadata li-text properties `ui.component` + `ui.config.rows`](https://github.com/livingdocsIO/livingdocs-server/pull/4780)
 * [Add config on `contentType.desknet` to disable desknet title sync on update and on publish](https://github.com/livingdocsIO/livingdocs-server/pull/4757)
 * [Media Library: hide mediaType dashboards from nav and toolbar if only hidden mediaTypes available](https://github.com/livingdocsIO/livingdocs-editor/pull/5742)
 * [Add `mediaIndex` configuration in `li-category` plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4774)
