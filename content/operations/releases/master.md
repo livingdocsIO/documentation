@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Tests and some small fixes](https://github.com/livingdocsIO/livingdocs-server/pull/4785)
 * [chore(deps): update dependency pino-pretty from 8.1.0 to v9 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4769)
 * [Use exact lookup for matching content-types in dashbaord](https://github.com/livingdocsIO/livingdocs-editor/pull/5745)
 * [Desk-Net Schedule side panel improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/5751)
