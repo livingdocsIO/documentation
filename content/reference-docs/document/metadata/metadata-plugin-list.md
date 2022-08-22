@@ -18,7 +18,7 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Boolean](#li-boolean)                             | li-boolean               | Boolean                                       | D, M, T                                                                            | checkbox                                                   |
 | [Color](#li-color)                                 | li-color                 | Color Code                                    | D, M, T, I                                                                         | text                                                       |
 | [Category](#li-category)                           | li-category              | category                                      | D, T                                                                               | select                                                     |
-| [Date](#li-date)                                   | li-date                  | Date                                          | D, M                                                                               | date input                                                |
+| [Date](#li-date)                                   | li-date                  | Date                                          | D, M                                                                               | date input                                                 |
 | [Date/Time validity](#li-datetime-validity)        | li-datetime-validity     | Date                                          | M                                                                                  | 2 date/time inputs                                         |
 | [Date/Time](#li-datetime)                          | li-datetime              | Date                                          | D, M                                                                               | date/time input                                            |
 | [Dependencies](#li-dependencies)                   | li-dependencies          | Livingdocs framework dependencies definition  | D                                                                                  | no UI                                                      |
@@ -29,6 +29,7 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Document Target Length](#li-target-length)        | li-target-length         | Target length in characters for a document    | D                                                                                  | number input or length slider                              |
 | [Google Vision](#li-google-vision)                 | li-google-vision         | Google Vision Autotagging for Images          | M                                                                                  | specialized UI, no config possible                         |
 | [Image](#li-image)                                 | li-image                 | Images                                        | D, M                                                                               | Image selection/upload/crops                               |
+| [Issue Management](#li-issue-management)           | li-issue-management      | Issue Management                              | D                                                                                  | no UI                                                      |
 | [iMatrics](#li-imatrics-nlp-tags)                  | li-imatrics-nlp-tags     | iMatrics tag management                       | D                                                                                  | manage tags                                                |
 | [Integer](#li-integer)                             | li-integer               | Integer                                       | D, M                                                                               | number input                                               |
 | [Language](#li-language)                           | li-language              | Language                                      | D                                                                                  | no Ui                                                      |
@@ -438,6 +439,63 @@ metadata: [
 }
 ```
 **Default UI**: UI to select/upload/delete/crop an image (`liMetaImageForm`)
+
+## li-issue-management
+
+{{< added-in release-2022-09 >}}
+
+The `li-issue-management` metadata field can be used to manage issues (a data-record with references to pages).
+
+{{< img src="./images/li-issue-management-overview.png" alt="Issue management overview" >}}
+
+* View status: page publication status, article count and publication status
+* Create and add a new page
+* Open and edit a page
+* View Articles
+* Remove a page reference (will not delete the page, only remove the reference from this issue (data-record)
+* Disable / enable a page reference for this issue (data-record)
+* Change order of pages
+
+{{< img src="./images/li-issue-management-view-articles.png" alt="Issue management view articles" >}}
+
+See articles of the selected page.
+
+{{< img src="./images/li-issue-management-remove.png" alt="Issue management remove page" >}}
+
+Removing a page reference has to be confirmed in a second state, to prevent accidental removal.
+
+**Storage Format**
+
+```js
+{
+  "$ref": "documents",
+  "references": [
+    {
+      "id": "359",
+      "inactive": true
+    },
+    {
+      "id": "358"
+    }
+  ]
+}
+```
+
+**Project Config**
+
+```js
+metadata: [{
+  handle: 'pages',
+  type: 'li-issue-management',
+  ui: {
+    config: {
+      documentCreationFlows: [{
+        useDocumentCreationFlow: 'digitaleAusgabePage' // document creation flow function to call, wenn adding a new page
+      }]
+    }
+  }
+}]
+```
 
 ## li-imatrics-nlp-tags
 **Storage Format**:
