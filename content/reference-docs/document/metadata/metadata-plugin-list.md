@@ -29,7 +29,7 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Document Target Length](#li-target-length)        | li-target-length         | Target length in characters for a document    | D                                                                                  | number input or length slider                              |
 | [Google Vision](#li-google-vision)                 | li-google-vision         | Google Vision Autotagging for Images          | M                                                                                  | specialized UI, no config possible                         |
 | [Image](#li-image)                                 | li-image                 | Images                                        | D, M                                                                               | Image selection/upload/crops                               |
-| [Issue Management](#li-issue-management)           | li-issue-management      | Issue Management                              | D                                                                                  | no UI                                                      |
+| [Issue Management](#li-issue-management)           | li-issue-management      | Issue Management                              | D                                                                                  | List of linked documents with actions to manage references |
 | [iMatrics](#li-imatrics-nlp-tags)                  | li-imatrics-nlp-tags     | iMatrics tag management                       | D                                                                                  | manage tags                                                |
 | [Integer](#li-integer)                             | li-integer               | Integer                                       | D, M                                                                               | number input                                               |
 | [Language](#li-language)                           | li-language              | Language                                      | D                                                                                  | no Ui                                                      |
@@ -444,6 +444,8 @@ metadata: [
 
 {{< added-in release-2022-09 block >}}
 
+**Default UI**: List of linked documents with actions to manage references
+
 The `li-issue-management` metadata field can be used to manage issues (a data-record with references to pages).
 
 {{< img src="./images/li-issue-management-overview.png" alt="Issue management overview" >}}
@@ -490,7 +492,7 @@ metadata: [{
   ui: {
     config: {
       documentCreationFlows: [{
-        useDocumentCreationFlow: 'digitaleAusgabePage' // document creation flow function to call, wenn adding a new page
+        useDocumentCreationFlow: 'digitaleAusgabePage' // document creation flow function to call, when the "add page" button is clicked - see https://docs.livingdocs.io/guides/editor/document-creation-flow/#goal
       }]
     }
   }
