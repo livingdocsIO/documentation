@@ -139,6 +139,15 @@ contentTypes: [
     // The inbox assignment UI will be displayed for those content types.
     inbox: {
       contentTypes: ['regular', 'another-handle']
+    },
+
+    desknet: {
+      title: {
+        // Defines if the document title should be synced on document update from
+        // either way, livingdocs -> desknet or desknet -> livingdocs.
+        // By default it is synced.
+        sync: false
+      }
     }
   }
 ]
