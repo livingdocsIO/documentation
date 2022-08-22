@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Refactor properties panel embedded document overrides](https://github.com/livingdocsIO/livingdocs-editor/pull/5718)
 * [Update naming convention from `channelConfigs` to `projectConfigs` in error message](https://github.com/livingdocsIO/livingdocs-server/pull/4776)
 * [Display "Run Automatic Placement" button in Desk-Net Schedule side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/5728)
 * [fix(deps): update dependency pino from 8.4.1 to v8.4.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4753)
