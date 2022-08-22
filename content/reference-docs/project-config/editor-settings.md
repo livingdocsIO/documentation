@@ -11,6 +11,7 @@ The editor settings control the behavior of your editor UX, in particular:
 - [main navigation]({{< ref "editor-settings#main-navigation" >}})
 - [dashboards]({{< ref "editor-settings#dashboards" >}})
 - [start page]({{< ref "editor-settings#startpage" >}})
+- [document creation flow]({{< ref "editor-settings#document-creation-flow" >}})
 - [media library]({{< ref "editor-settings#media-library" >}})
 - [document lists]({{< ref "editor-settings#document-lists" >}})
 - [text formatting]({{< ref "editor-settings#text-formatting" >}})
@@ -63,7 +64,7 @@ editorSettings: {
     {liItem: 'projectSettings'},
     {liItem: 'serverAdmin'}
   ],
-  // Added in release-2022-03
+  // {{< added-in release-2022-03 >}}
   mainNavigationGroups: [
     {
       handle: 'documents',
@@ -135,7 +136,7 @@ editorSettings: {
       componentName: 'bluewinDashboardListItem'
     }
   ],
-  // Added in release-2021-09
+  // {{< added-in release-2021-09 >}}
   // you can define configured cards here, they can then be referenced
   // within a mediaType defining the card to be used for rendering in a dashboard
   dashboardCardConfigurations: [
@@ -497,7 +498,7 @@ dashboards: [
 
 ### Example: Table Dashboard
 
-{{< added-in release-2022-03 >}}
+{{< added-in release-2022-03 block >}}
 
 ```js
 dashboards: [
@@ -556,34 +557,10 @@ dashboards: [
       }
     ],
 
-    // adds custom create flows to the dashboard (e.g. custom button, custom create modal, custom create function)
+    // adds a Document Creation Flow to the dashboard (e.g. custom button, custom create modal, custom create function)
     // {{< added-in release-2022-09 >}}
     documentCreationFlows: [
-      {
-        handle: 'breakingNews',
-        // register a createFunction with documentApi.registerCreateFunction
-        // default createFunction handle: 'liDefaultCreationFunction'
-        createFunction: 'breakingNews',
-        createButtonLabel: 'Create Breaking News',
-
-        // shows title and urgency field in the create modal
-        // the config is the same as for metadata plugins
-        paramsSchema: [
-          {handle: 'title', type: 'li-text'},
-          {handle: 'urgency', type: 'li-number'},
-        ],
-
-        // values passed to paramsSchema fields as initial value
-        defaultParams: {
-          urgency: 5
-        },
-
-        // additional info for your createFunction
-        context: {
-          projectType: 'flex',
-          contentType: 'regular'
-        }
-      }
+      {useDocumentCreationFlow: 'breakingNews'}
     ]
   }
 ]
@@ -624,7 +601,7 @@ componentOptions: {
 
 ##### liTableDashboardCellLanguage
 
-{{< added-in release-2022-05 >}}
+{{< added-in release-2022-05 block >}}
 
 The `liTableDashboardCellLanguage` upstream component can be used to display the document language:
 
@@ -632,7 +609,7 @@ The `liTableDashboardCellLanguage` upstream component can be used to display the
 
 ##### liTableDashboardCellPublishState
 
-{{< added-in release-2022-05 >}}
+{{< added-in release-2022-05 block >}}
 
 The `liTableDashboardCellPublishState` upstream component can be used to display publish state and quick publish button
 (only shown if metadata has been edited directly within the table dashboard):
@@ -647,6 +624,45 @@ can be used to render custom content inside a table cell.
 ## startPage
 
 Set custom `startPage: {path: '/my-custom-path'}}` to set the path used to render on login or when switching projects.
+
+## Document Creation Flow
+
+{{< added-in release-2022-09 block >}}
+
+With a Document Creation Flow you can define how a document gets created (e.g. create button for a Dashboard).
+
+Check that [guide]({{< ref "/guides/editor/document-creation-flow" >}}) for more information.
+
+```js
+// projectConfig.editorSettings
+documentCreationFlows: [
+  {
+    handle: 'breakingNews',
+    // register a createFunction with documentApi.registerCreateFunction
+    // default createFunction handle: 'liDefaultCreationFunction'
+    createFunction: 'breakingNews',
+    createButtonLabel: 'Create Breaking News',
+
+    // shows title and urgency field in the create modal
+    // the config is the same as for metadata plugins
+    paramsSchema: [
+      {handle: 'title', type: 'li-text'},
+      {handle: 'urgency', type: 'li-number'},
+    ],
+
+    // values passed to paramsSchema fields as initial value
+    defaultParams: {
+      urgency: 5
+    },
+
+    // additional info for your createFunction
+    context: {
+      projectType: 'flex',
+      contentType: 'regular'
+    }
+  }
+]
+```
 
 ## Media Library
 
@@ -717,7 +733,7 @@ documentLists: {
     name: 'myDocumentListCard'
   },
   dashboard: {
-    useDashboard: 'myCustomDashboard' // added in release-2022-09
+    useDashboard: 'myCustomDashboard' // {{< added-in release-2022-09 >}}
     displayFilters: [],
     baseFilters: [
       {type: 'documentType', value: 'article'},
@@ -727,7 +743,9 @@ documentLists: {
 }
 ```
 ## Inline Links
-added in `release-2022-09`
+
+{{< added-in release-2022-09 block >}}
+
 ```js
 inlineLinks: {
   dashboard: {

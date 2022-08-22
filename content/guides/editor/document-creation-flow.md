@@ -16,7 +16,7 @@ With a Document Creation Flow you can configure how a document gets created:
 
 ## Goal
 
-With this walkthrough we show you how to define a simple Document Creation Flow.
+With this walkthrough we show you how to define a Document Creation Flow.
 
 
 ## Guide
@@ -24,62 +24,67 @@ With this walkthrough we show you how to define a simple Document Creation Flow.
 ### Add a Document Creation Flow to the ProjectConfig
 
 ```js
-projectConfig.editorSettings.dashboards: [
-{
-    // the first part of the dashboard config ist just for completeness
-    handle: 'articlesSimple',
-    type: 'tableDashboard',
-    pageTitle: 'Articles',
-    baseFilters: [
-      {type: 'documentType', value: 'article'}
-    ],
-    displayFilters: ['timeRange'],
-    sort: '-updated_at',
-    columns: [
-      {
-        label: 'Article',
-        minWidth: 375,
-        growFactor: 2,
-        priority: 1,
-        componentName: 'liTableDashboardCellMain',
-        componentOptions: {
-          image: {
-            metadataPropertyName: 'teaserImage'
-          },
-          clampTitle: false,
-          showContentType: true
-        }
+projectConfig.editorSettings = {
+  // define a create flow which will be used later on the dashboard 'articleSimple'
+  documentCreationFlows: [
+    {
+      handle: 'breakingNews',
+      // register a createFunction with documentApi.registerCreateFunction (later in the guide)
+      createFunction: 'breakingNews',
+      createButtonLabel: 'Create Breaking News',
+
+      // shows title and urgency field in the create modal
+      // the config is the same as for metadata plugins
+      paramsSchema: [
+        {handle: 'title', type: 'li-text'},
+        {handle: 'urgency', type: 'li-number'},
+      ],
+
+      // values passed to paramsSchema fields as initial value
+      defaultParams: {
+        urgency: 5
+      },
+
+      // additional info for your createFunction
+      context: {
+        projectType: 'flex'
       }
-    ],
-    // ... here is the interesting part
-    // define a create flow for the dashboard
-    documentCreationFlows: [
-      {
-        handle: 'breakingNews',
-        // register a createFunction with documentApi.registerCreateFunction (later in the guide)
-        createFunction: 'breakingNews',
-        createButtonLabel: 'Create Breaking News',
-
-        // shows title and urgency field in the create modal
-        // the config is the same as for metadata plugins
-        paramsSchema: [
-          {handle: 'title', type: 'li-text'},
-          {handle: 'urgency', type: 'li-number'},
-        ],
-
-        // values passed to paramsSchema fields as initial value
-        defaultParams: {
-          urgency: 5
-        },
-
-        // additional info for your createFunction
-        context: {
-          projectType: 'flex'
+    }
+  ]
+  dashboards: [
+    {
+      handle: 'articlesSimple',
+      type: 'tableDashboard',
+      pageTitle: 'Articles',
+      baseFilters: [
+        {type: 'documentType', value: 'article'}
+      ],
+      displayFilters: ['timeRange'],
+      sort: '-updated_at',
+      columns: [
+        {
+          label: 'Article',
+          minWidth: 375,
+          growFactor: 2,
+          priority: 1,
+          componentName: 'liTableDashboardCellMain',
+          componentOptions: {
+            image: {
+              metadataPropertyName: 'teaserImage'
+            },
+            clampTitle: false,
+            showContentType: true
+          }
         }
-      }
-    ]
-  }
-]
+      ],
+      // use the previously defined Document Creation Flow
+      // to be applied to the dashboard
+      documentCreationFlows: [
+        {useDocumentCreationFlow: 'breakingNews'}
+      ]
+    }
+  ]
+}
 ```
 
 When you go to the dashboard in the editor, you will see a "Create Breaking News" button.
