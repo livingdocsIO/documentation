@@ -588,7 +588,17 @@ Add the `li-desknet-platforms` metadata plugin to the content type that you woul
         }
       }
     }
-  ]
+  ],
+
+  // Optional
+  desknet: {
+    title: {
+      // Defines if the document title should be synced on document update from
+      // either way, livingdocs -> desknet or desknet -> livingdocs.
+      // By default it is synced.
+      sync: false
+    }
+  }
 }
 ```
 
