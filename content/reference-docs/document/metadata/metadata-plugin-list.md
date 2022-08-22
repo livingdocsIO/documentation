@@ -442,7 +442,7 @@ metadata: [
 
 ## li-issue-management
 
-{{< added-in release-2022-09 >}}
+{{< added-in release-2022-09 block >}}
 
 The `li-issue-management` metadata field can be used to manage issues (a data-record with references to pages).
 
