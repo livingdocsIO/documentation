@@ -435,6 +435,7 @@ Here is a list of all patches after the release has been announced.
 - [v189.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.2): fix(oembed): add spotify and data wrapper
 
 ### Livingdocs Editor Patches
+- [v80.38.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.40): fix(metadata): show required errors when metadata form is opened from publish panel error
 - [v80.38.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.39): fix(alignment): Document title in list cards
 - [v80.38.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.38): fix: close side bar panels when opening the insert panel
 - [v80.38.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.37): fix(update): Angular-legacy library to support sortablejs
