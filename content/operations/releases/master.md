@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use exact lookup for matching content-types in dashbaord](https://github.com/livingdocsIO/livingdocs-editor/pull/5745)
 * [Desk-Net Schedule side panel improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/5751)
 * [Remove metadata li-text properties `ui.component` + `ui.config.rows`](https://github.com/livingdocsIO/livingdocs-server/pull/4780)
 * [Add config on `contentType.desknet` to disable desknet title sync on update and on publish](https://github.com/livingdocsIO/livingdocs-server/pull/4757)
