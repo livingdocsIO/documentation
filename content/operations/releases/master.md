@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add missing Testrail numbers for Publish Control tests](https://github.com/livingdocsIO/livingdocs-editor/pull/5754)
 * [Update livingdocs-integration.json for Release Management](https://github.com/livingdocsIO/livingdocs-server/pull/4789)
 
 
