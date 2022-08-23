@@ -436,6 +436,7 @@ Here is a list of all patches after the release has been announced.
 - [v189.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.2): fix(oembed): add spotify and data wrapper
 
 ### Livingdocs Editor Patches
+- [v80.38.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.43): fix(publish state): Line Wrap
 - [v80.38.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.42): fix: make sure selected items fit inside the dropdown
 - [v80.38.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.41): fix(logging): To find multilist editor bug
 - [v80.38.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.40): fix(metadata): show required errors when metadata form is opened from publish panel error
