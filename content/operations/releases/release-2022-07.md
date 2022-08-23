@@ -11,7 +11,7 @@ aliases:
   title="July 2022 Release"
   upcoming=false
   legacy=false
-  current=false
+  current=true
   maintained=true
   branchHandle="release-2022-07"
 >}}
