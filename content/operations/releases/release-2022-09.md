@@ -18,41 +18,6 @@ aliases:
   branchHandle="release-2022-09"
 >}}
 
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to master).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
-
-## PRs to Categorize
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/4788)
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/5752)
-* [Tests and some small fixes](https://github.com/livingdocsIO/livingdocs-server/pull/4785)
-* [chore(deps): update dependency pino-pretty from 8.1.0 to v9 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4769)
-* [Use exact lookup for matching content-types in dashbaord](https://github.com/livingdocsIO/livingdocs-editor/pull/5745)
-* [Desk-Net Schedule side panel improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/5751)
-* [Remove metadata li-text properties `ui.component` + `ui.config.rows`](https://github.com/livingdocsIO/livingdocs-server/pull/4780)
-* [Add config on `contentType.desknet` to disable desknet title sync on update and on publish](https://github.com/livingdocsIO/livingdocs-server/pull/4757)
-* [Media Library: hide mediaType dashboards from nav and toolbar if only hidden mediaTypes available](https://github.com/livingdocsIO/livingdocs-editor/pull/5742)
-* [Add `mediaIndex` configuration in `li-category` plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4774)
-* [Systemmetadata preparation - part 2](https://github.com/livingdocsIO/livingdocs-server/pull/4778)
-* [Adding temporary logging to help debug multilist editor bug](https://github.com/livingdocsIO/livingdocs-editor/pull/5738)
-* [Desk-Net Schedule: Use a Table Dashboard to show Articles](https://github.com/livingdocsIO/livingdocs-editor/pull/5736)
-* [Desk net schedule dashboard](https://github.com/livingdocsIO/livingdocs-server/pull/4775)
-* [fix(publish control): fix label typo](https://github.com/livingdocsIO/livingdocs-editor/pull/5743)
-* [Refactor properties panel embedded document overrides](https://github.com/livingdocsIO/livingdocs-editor/pull/5718)
-* [Update naming convention from `channelConfigs` to `projectConfigs` in error message](https://github.com/livingdocsIO/livingdocs-server/pull/4776)
-* [Display "Run Automatic Placement" button in Desk-Net Schedule side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/5728)
-* [fix(deps): update dependency pino from 8.4.1 to v8.4.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4753)
-* [fix(alignment): Document title in list cards](https://github.com/livingdocsIO/livingdocs-editor/pull/5719)
-* [Close side panels when opening the insert panel](https://github.com/livingdocsIO/livingdocs-editor/pull/5735)
-* [Confirm remove page action in li-publish-control-delivery](https://github.com/livingdocsIO/livingdocs-editor/pull/5734)
-* [Make pages in issue management sortable](https://github.com/livingdocsIO/livingdocs-editor/pull/5732)
-* [Design/Finite Issue](https://github.com/livingdocsIO/livingdocs-editor/pull/5731)
-
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -197,7 +162,7 @@ References:
 
 ### Desk-Net: Schedule Extensions + Production Features
 
-TODO@Alex: add a nice description
+TODO@Alex: add a nice description + do you have planned to write a documentation?
 
 References:
 * [Documentation?](?)
@@ -205,11 +170,14 @@ References:
 * [PR: Add li-desknet-schedule metadata plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/5627)
 * [PR: Schedule filtering](https://github.com/livingdocsIO/livingdocs-server/pull/4678)
 * [PR: Link Desk-Net elements using external ids](https://github.com/livingdocsIO/livingdocs-server/pull/4680)
-* [Limit schedule to a specific date using metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/5664)
+* [PR: Limit schedule to a specific date using metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/5664)
+* [PR: Display "Run Automatic Placement" button in Desk-Net Schedule side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/5728)
+* [PR: Desk-Net Schedule: Use a Table Dashboard to show Articles](https://github.com/livingdocsIO/livingdocs-editor/pull/5736)
+* [PR: Desk-Net Schedule side panel improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/5751)
 
 ### Split Revision/Systemmetadata
 
-TODO: Do we announce that officially? If yes, how?
+TODO@Marc: Do we announce that officially? If yes, how?
 
 * [PR: System metadata preparation](https://github.com/livingdocsIO/livingdocs-server/pull/4735)
 
@@ -250,9 +218,70 @@ Deprecated Editor Configs:
 
 * [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5498)
 
+### Metadata Plugin li-text
+
+🔥 metadata type `li-text`: remove property `ui.component`
+🔥 metadata type `li-text`: remove property `ui.config.rows`
+
+#### restore to the old behavior
+
+To restore to the old behavior is not 100% possible because the updated version of `li-text` is smarter and needs less config. One important change is that the field extends its size automatically based on the amount of content added.
+
+If you have defined `LiMetaTextareaForm` as UI component or set `rows`, you have now to set `allowNewlines: true`.
+
+For other changes please consult the [documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-text)
+
+#### Backward Compatibility Mode
+
+If you have issues with the update, you can enable the [backward compatibility mode](https://github.com/livingdocsIO/livingdocs-server/pull/4296) where li-text configs are not validated.
+
+❗ Only need that mode until you solved your issues with li-text! This mode is only thought for a short time period to migrate the old metadata.
+
+```js
+// server config
+// ignore validation for metadata plugin  'li-text' and 'li-string-list', all other plugins are validated
+metadataPluginsToIgnoreForConfigValidation: ['li-text', 'li-string-list'],
+```
+
+* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4780)
+
+
+### Systemdata
+
+Normalize `documentWriteModel.systemdata` and `documentVersion.systemdata`.
+Old properties are defined as getters and emit deprecation warnings (`LIDEP018`), new properties are enumerable on the object.
+
+- `systemdata.project_id` > `systemdata.projectId`
+- `systemdata.channel_id` > `systemdata.channelId`
+- `systemdata.document_id` > `systemdata.documentId`
+- `systemdata.revision_id` > `systemdata.revisionId`
+- `systemdata.remote_id` > `systemdata.remoteId`
+- `systemdata.content_type` > `systemdata.contentType`
+- `systemdata.document_type` > `systemdata.documentType`
+- `systemdata.designDescriptor` > `systemdata.design`
+- `systemdata.publication_id` > `systemdata.publicationId`
+- `systemdata.publication_date` > `systemdata.lastPublicationDate`
+- `systemdata.first_publication_date` > `systemdata.firstPublicationDate`
+
+### All HTTP APIs: Remove support for contentType: 'multipart/form-data'"
+
+- :fire: Remove `multer` module by removing support for `contentType: 'multipart/form-data'` configs on route declarations (`LIBREAKING011`). Please come to us if the server doesn't start anymore because of that (as stated in the error message).
+- :fire: Remove [jsonp](https://en.wikipedia.org/wiki/JSONP) callback support as there was never a need for it and it wasn't documented at all.
+
+* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4785)
+
 ### Redis 5
 
 Redis 5 has been deprecated. Please Update to Redis 6.
+
+### Document Publication Lifecycle Update
+
+:fire: Move server hook `preparePublish` hooks after metadata plugin `onPreparePublish` hooks (see [Diagram](https://docs.livingdocs.io/learn/document-lifecycle/document-publication/)).
+
+During the migration to the `preparePublish` hooks, the order accidentally changed. Before, the `prePublish` hooks were run after the metadata plugin `onPublish` hooks.
+This has the effect that required metadata are always present in the `preparePublish` hooks, unlike before where they still could be missing.
+
+* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4778)
 
 ### Desk-Net scheduleEnabled
 
@@ -301,6 +330,7 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 * [Dragon Drop: Allow to replace teaser images in resolved includes](https://github.com/livingdocsIO/livingdocs-editor/pull/5688)
 * [Dashboards: compute entity labels with best effort from baseFilters](https://github.com/livingdocsIO/livingdocs-editor/pull/5696)
 * [Safe error serializer that handles circular references](https://github.com/livingdocsIO/livingdocs-server/pull/4758)
+* [Support `mediaIndex` configuration in `li-category` plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4774)
 
 ### Bugfixes
 * [Editable links: Show current (and not configured link)](https://github.com/livingdocsIO/livingdocs-editor/pull/5554)
@@ -316,6 +346,8 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 * [Highlight error for Vue Select inputs](https://github.com/livingdocsIO/livingdocs-editor/pull/5675)
 * [Fix issues related with pasting over selected text that contained formatting tags.](https://github.com/livingdocsIO/livingdocs-editor/pull/5699)
 * [ImportApi: ensure untouched flag is respected](https://github.com/livingdocsIO/livingdocs-server/pull/4762)
+* [Confirm remove page action in li-publish-control-delivery](https://github.com/livingdocsIO/livingdocs-editor/pull/5734)
+* [Media Library: Don't show Media Library Navigation/Toolbar Buttons for types with only hidden mediaTypes](https://github.com/livingdocsIO/livingdocs-editor/pull/5742)
 
 ## Patches
 
