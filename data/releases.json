@@ -14,7 +14,7 @@
     },
     "release-2022-09": {
         "id": 1,
-        "key": "master",
+        "key": "release-2022-09",
         "name": "September 2022",
         "ref": "/operations/releases/release-2022-09.md",
         "upcoming": true,
