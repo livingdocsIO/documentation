@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Update livingdocs-integration.json for Release Management](https://github.com/livingdocsIO/livingdocs-server/pull/4789)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
