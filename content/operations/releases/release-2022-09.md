@@ -75,17 +75,17 @@ The metadata plugin `li-date` allows to set a date **without** time.
 
 ### Metadata Plugin li-tree
 
-TODO: add description
+`li-tree` lets you set up a tree with items of the 3 possible types `group`, `link`, `document`.
 
-* [Documentation: TODO](?)
+* [Documentation]({{< ref "/reference-docs/document/metadata/metadata-plugin-list#li-tree" >}})
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4591)
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5580)
 
 ### Metadata Plugin li-issue-management
 
-TODO: add description
+The `li-issue-management` metadata plugin can be used to manage issues (a data-record with references to pages).
 
-* [Documentation: TODO](?)
+* [Documentation]({{< ref "/reference-docs/document/metadata/metadata-plugin-list#li-issue-management" >}})
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5662)
 * [PR: Editor - Sortable Issues](https://github.com/livingdocsIO/livingdocs-editor/pull/5732)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4686)
@@ -116,7 +116,8 @@ For infinite products like an e-paper there is usually a "build" stage involved.
 - Allow a remote build system to report its status back to Livingdocs
 
 References:
-* [Guide TODO]()
+
+* [Guide]({{< ref "/guides/editor/publish-control/delivery" >}})
 * [PR: Server Config + Webhook + Events](https://github.com/livingdocsIO/livingdocs-server/pull/4670)
 * [PR: Delivery Status Reporting](https://github.com/livingdocsIO/livingdocs-server/pull/4731)
 * [PR: Delivery Status Fetching](https://github.com/livingdocsIO/livingdocs-server/pull/4740)
