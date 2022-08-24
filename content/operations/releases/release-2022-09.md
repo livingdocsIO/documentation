@@ -357,6 +357,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.5): fix(metadata): don't error in any case when metadata properties are updated
 - [v81.20.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.4): fix(publish state): Line Wrap
 - [v81.20.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.3): fix: update framework version to release-2022-09
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v??.?.?): text
