@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Adding a Setter and Getter to draft.js](https://github.com/livingdocsIO/livingdocs-editor/pull/5771)
 * [User cannot change list inbox during publish and conflict notification is sticky](https://github.com/livingdocsIO/livingdocs-editor/pull/5763)
 * [Metadata: Fix some error cases on property update with validation](https://github.com/livingdocsIO/livingdocs-editor/pull/5766)
 * [Close document copy popup when clicking on X or outside the popup](https://github.com/livingdocsIO/livingdocs-editor/pull/5755)
