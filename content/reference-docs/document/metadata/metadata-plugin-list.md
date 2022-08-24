@@ -446,7 +446,7 @@ metadata: [
 
 **Default UI**: List of linked documents with actions to manage references
 
-The `li-issue-management` metadata field can be used to manage issues (a data-record with references to pages).
+The `li-issue-management` metadata plugin can be used to manage issues (a data-record with references to pages).
 
 {{< img src="./images/li-issue-management-overview.png" alt="Issue management overview" >}}
 
