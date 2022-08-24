@@ -22,7 +22,8 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Date/Time validity](#li-datetime-validity)        | li-datetime-validity     | Date                                          | M                                                                                  | 2 date/time inputs                                         |
 | [Date/Time](#li-datetime)                          | li-datetime              | Date                                          | D, M                                                                               | date/time input                                            |
 | [Dependencies](#li-dependencies)                   | li-dependencies          | Livingdocs framework dependencies definition  | D                                                                                  | no UI                                                      |
-| [Desk-Net](#li-desknet-integration)                | li-desknet-integration   | Desk-Net Integration                          | D                                                                                  | Link to Desk-Net distribution entry                        |
+| [Desk-Net Integration](#li-desknet-integration)                | li-desknet-integration   | Desk-Net Integration                          | D, T                                                                                  | Link to Desk-Net distribution entry                        |
+| [Desk-Net Schedule](#li-desknet-schedule)                | li-desknet-schedule   | Desk-Net Schedule                          | D                                                                                  | Platform/category select and date input                        |
 | [Document Reference](#li-document-reference)       | li-document-reference    | A reference to another document               | D, M, T                                                                            | document selection (dialog)                                |
 | [Enum](#li-enum)                                   | li-enum                  | string from static list, validated on publish | D, M, T                                                                            | select                                                     |
 | [External Id](#li-external-id)                     | li-external-id           | id marker for an external system              | D, M, T                                                                            | select                                                     |
@@ -214,6 +215,9 @@ metadata: [
 **Default UI**: no UI
 
 ## li-desknet-integration
+
+This plugin is used to connect Desk-Net stories with Livingdocs documents. There are numerous options available to synchronise data between the two platforms. Further details can be found in the [Desk-Net Integration Guide]({{< ref "/guides/integrations/desknet" >}}).
+
 **Storage Format**:
 ```js
 {
@@ -224,7 +228,11 @@ metadata: [
   publicationStatusId: <Integer> // {{< added-in release-2022-07 >}}
 }
 ```
-**Default UI**: Link to Desk-Net distribution entry
+
+**Default UI**:
+
+Document Metadata: Read-only link to Desk-Net distribution entry\
+Table Dashboard: Read-only Desk-Net publication/platform status
 
 **Project Config**
 ```js
@@ -275,6 +283,53 @@ metadata: [
             }
           ]
         }
+      }
+    }
+  }
+]
+```
+
+## li-desknet-schedule
+
+{{< added-in release-2022-09 block >}}
+
+This plugin will allow a user to select Desk-Net platforms and categories that they would like to view in the Desk-Net Schedule side panel. Once selected the Desk-Net button in the editor becomes active and the side panel can be opened. It is possible to lock the schedule to a specific date, as well as filter the Desk-Net stories that are displayed. Further details can be found in the [Desk-Net Integration Guide]({{< ref "/guides/integrations/desknet#story-planning-schedule-in-livingdocs" >}}).
+
+**Storage Format**:
+```js
+{
+  platforms: [
+    {
+      platformId: <Integer>,
+      categoryId: <Integer>
+    }
+  ],
+  date: <ISO8601 String>
+}
+```
+**Default UI**:
+Platform/category select and date input
+
+**Project Config**
+```js
+metadata: [
+  {
+    handle: 'desknetSchedule',
+    type: 'li-desknet-schedule',
+    config: {
+      filters: {
+        linkedDocumentsOnly: true,
+        elementStatusIds: [1, 2, 10322, 10332],
+        publicationStatusIds: [5]
+      }),
+      desknetExternalElementIdMetadataPath: 'myExternalSystem.id',
+      automaticPlacementCreationFlowHandle: 'myDesknetGenerateContentFlow'
+    },
+    ui: {
+      label: 'Desk-Net Schedule',
+      config: {
+        placeholder: 'Select a Desk-Net platform or category',
+        useDashboard: 'articlesSimple'
       }
     }
   }

@@ -141,19 +141,40 @@ contentTypes: [
       contentTypes: ['regular', 'another-handle']
     },
 
+    // Delivery build button and status to be shown in the Publish Control panel
+    deliveries: [
+      { deliveryName: 'web', isPrimary: true }
+    ],
+
+    // See the "Desk-Net Integration" guide for further details
     desknet: {
       title: {
         // Defines if the document title should be synced on document update from
         // either way, livingdocs -> desknet or desknet -> livingdocs.
         // By default it is synced.
         sync: false
-      }
-    },
-
-    // Delivery build button and status to be shown in the Publish Control panel
-    deliveries: [
-      { deliveryName: 'web', isPrimary: true }
-    ]
+      },
+      // Link and optionally synchronise Desk-Net element values with Livingdocs metadata
+      metadata: [
+        {
+          sync: false,
+          source: 'slug',
+          target: 'metadata.desknetWorkingTitle'
+        }, {
+          sync: true,
+          source: 'publication.scope',
+          target: 'metadata.targetLength.characters'
+        }
+      ],
+      // A more customisable way to link Desk-Net element values with Livingdocs metadata
+      metadataTransforms: [
+        {
+          importFunctionHandle: 'getPrintPublicationDate',
+          exportFunctionHandle: null,
+          target: 'metadata.desknetPublicationDate'
+        }
+      ]
+    }
   }
 ]
 ```

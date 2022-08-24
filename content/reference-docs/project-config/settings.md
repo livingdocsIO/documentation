@@ -104,6 +104,36 @@ settings: {
     }
   },
 
+  // See the "Desk-Net Integration" guide for further details
+  desknet: {
+    enabled: true,
+    credentials: {
+      clientId: 'my-desknet-client-id',
+      clientSecret: {
+        $secretRef: {
+          name: 'my-desknet-secret-ref'
+        }
+      }
+    },
+    titlePath: 'slug', // Default: "title"
+    publicationStatus: {
+      sync: false,
+      publishedStatus: 5, // Deprecated
+      unpublishedStatus: 1 // Deprecated
+    },
+    contentTypes: {
+      standard: 'regular', // Required. The default content type to create.
+      // Configuration of additional content types that can be created
+      source: 'publication.type.name',
+      mapping: [
+        {
+          source: 'article', // publication.type.name value
+          target: 'regular' // Livingdocs content type handle
+        }
+      ]
+    }
+  },
+
   includeServices: [
     {
       handle: 'echo-service',

@@ -1,5 +1,5 @@
 ---
-title: Desk-Net integration
+title: Desk-Net Integration
 description: Integrate Desk-Net with Livingdocs
 weight: 1
 ---
@@ -68,9 +68,6 @@ Add the following to the project config of the project you want to connect with 
   desknet: {
     enabled: true,
 
-    // See "Story Planning Schedule in Livingdocs" section below
-    scheduleEnabled: true,
-
     credentials: {
       clientId: '******',
       clientSecret: {
@@ -121,80 +118,98 @@ Add the following to the project config of the project you want to connect with 
 
 #### 5. Add metadata plugin to content types
 
-Add the following metadata plugin to all content types that can be created using the "contentTypes" configuration above:
+Add the `li-desknet-integration` metadata plugin to all content types that can be created using the "contentTypes" configuration in the previous step:
 
 ```js
 {
-  handle: 'desknet',
-  type: 'li-desknet-integration',
+  handle: 'article',
+  documentType: 'article',
+  // ...
+  metadata: [
+    // ...
+    {
+      handle: 'desknet',
+      type: 'li-desknet-integration',
 
-  // {{< added-in release-2022-07 >}}
-  // The config can be used if you intend to keep Desk-Net's publication status up-to-date
-  // with the status of the document in Livingdocs. It is required if you intend to publish a
-  // document in Livingdocs when updating the publication status in Desk-Net.
-  config: {
-    publicationStatus: {
-      // Optional. The fallback is used when no matcher condition is met for a document.
-      fallbackPublicationStatusId: 3,
+      // {{< added-in release-2022-07 >}}
+      // The config can be used if you intend to keep Desk-Net's publication status up-to-date
+      // with the status of the document in Livingdocs. It is required if you intend to publish a
+      // document in Livingdocs when updating the publication status in Desk-Net.
+      config: {
+        publicationStatus: {
+          // Optional. The fallback is used when no matcher condition is met for a document.
+          fallbackPublicationStatusId: 3,
 
-      // Matchers provide a way to synchronise the state of a Livingdocs document to Desk-Net.
-      // You can use publication, task, or metadata matchers to calculate a Desk-Net
-      // publication status id value. You can find the publicationStatusId value using the
-      // Desk-Net API, or by inspecting network requests in the Statuses page in Desk-Net.
-      // The order of matchers is important. The array is iterated through from first to last,
-      // with the publicationStatusId taken from the earliest document state match.
-      matchers: [
-        {
-          // Defining a publicationStatusId for the published status is required if you intend to
-          // publish a document in Livingdocs when updating the publication status in Desk-Net.
-          type: 'publication',
-          value: 'published',
-          publicationStatusId: 5
-        },
-        {
-          type: 'task',
-          taskName: 'proofreading',
-          value: 'completed', // The "value" of a task can be requested, accepted, or completed
-          publicationStatusId: 25912
-        },
-        {
-          type: 'metadata',
-          propertyName: 'my-custom-plugin.status', // uses lodash.get()
-          value: 'in-progress', // compares with lodash.isEqual()
-          publicationStatusId: 123
+          // Matchers provide a way to synchronise the state of a Livingdocs document to Desk-Net.
+          // You can use publication, task, or metadata matchers to calculate a Desk-Net
+          // publication status id value. You can find the publicationStatusId value using the
+          // Desk-Net API, or by inspecting network requests in the Statuses page in Desk-Net.
+          // The order of matchers is important. The array is iterated through from first to last,
+          // with the publicationStatusId taken from the earliest document state match.
+          matchers: [
+            {
+              // Defining a publicationStatusId for the published status is required if you intend to
+              // publish a document in Livingdocs when updating the publication status in Desk-Net.
+              type: 'publication',
+              value: 'published',
+              publicationStatusId: 5
+            },
+            {
+              type: 'task',
+              taskName: 'proofreading',
+              value: 'completed', // The "value" of a task can be requested, accepted, or completed
+              publicationStatusId: 25912
+            },
+            {
+              type: 'metadata',
+              propertyName: 'my-custom-plugin.status', // uses lodash.get()
+              value: 'in-progress', // compares with lodash.isEqual()
+              publicationStatusId: 123
+            }
+          ]
         }
-      ]
-    }
-  },
+      },
 
-  // {{< added-in release-2022-07 >}}
-  // Only required if you intend to display the current publication status in a table dashboard cell
-  ui: {
-    config: {
-      publicationStatus: {
-        labels: [
-          {
-            publicationStatusId: 5,
-            label: 'Published',
-            // SVG icons can be minimised and optimised using https://jakearchibald.github.io/svgomg/
-            // The SVG icon should have a viewBox property to scale properly.
-            icon: '<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 15 17"><path class="colour" d="M.333 1.447v14.334h14.334V1.447H.333zM13.11 14.224H1.891V3.004h11.22v11.22z"/><circle class="colour" cx="7.5" cy="8.749" r="2.042"/></svg>',
-            color: '#778397'
-          },
-          {
-            publicationStatusId: 25912,
-            label: 'Proofreading Completed',
-            icon: '<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 15 17"><path class="colour" d="M.042 15.778.05 1.445l4.091.003-.008 14.333zM9.537 15.781h-4.09l.008-14.334h4.09l-.008 14.334zM14.992 15.781H10.9l.009-14.334H15l-.008 14.334z"/></svg>',
-            color: '#b56eef'
-          },
-          {
-            publicationStatusId: 123,
-            label: 'In Progress',
-            icon: '<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 15 17"><path class="colour" d="M0 1.25v14.5h14.5V1.25H0zm5.901 12.208L1.767 9.05l1.208-1.13 2.921 3.116L12.3 4.158l1.211 1.129-7.61 8.171z"/></svg>',
-            color: '#82e580'
+      // {{< added-in release-2022-07 >}}
+      // Only required if you intend to display the current publication status in a table dashboard cell
+      ui: {
+        config: {
+          publicationStatus: {
+            labels: [
+              {
+                publicationStatusId: 5,
+                label: 'Published',
+                // SVG icons can be minimised and optimised using https://jakearchibald.github.io/svgomg/
+                // The SVG icon should have a viewBox property to scale properly.
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 15 17"><path class="colour" d="M.333 1.447v14.334h14.334V1.447H.333zM13.11 14.224H1.891V3.004h11.22v11.22z"/><circle class="colour" cx="7.5" cy="8.749" r="2.042"/></svg>',
+                color: '#778397'
+              },
+              {
+                publicationStatusId: 25912,
+                label: 'Proofreading Completed',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 15 17"><path class="colour" d="M.042 15.778.05 1.445l4.091.003-.008 14.333zM9.537 15.781h-4.09l.008-14.334h4.09l-.008 14.334zM14.992 15.781H10.9l.009-14.334H15l-.008 14.334z"/></svg>',
+                color: '#b56eef'
+              },
+              {
+                publicationStatusId: 123,
+                label: 'In Progress',
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 15 17"><path class="colour" d="M0 1.25v14.5h14.5V1.25H0zm5.901 12.208L1.767 9.05l1.208-1.13 2.921 3.116L12.3 4.158l1.211 1.129-7.61 8.171z"/></svg>',
+                color: '#82e580'
+              }
+            ]
           }
-        ]
+        }
       }
+    }
+  ],
+
+  // Optional
+  desknet: {
+    title: {
+      // Defines if the document title should be synced on document update from
+      // either way, livingdocs -> desknet or desknet -> livingdocs.
+      // By default it is synced.
+      sync: false
     }
   }
 }
@@ -550,27 +565,15 @@ This function resolves to a Desk-Net element [with prefetched values](#what-are-
 
 ## Story Planning Schedule in Livingdocs
 
-{{< added-in release-2022-05 block >}}
+{{< added-in release-2022-09 block >}}
 
 An optional step is to enable the story planning side panel within the Livingdocs editor. This can be configured to only display for certain content types, for example pages to help with page management. This step can also be done without mapping Desk-Net values, but this will result in the side panel displaying document titles instead of document reference cards.
 
 ### Setup
 
-#### Project config
-
-Extend the `desknet` object in your project config with the following:
-
-```js
-{
-  desknet: {
-    scheduleEnabled: true,
-  }
-}
-```
-
 #### Content type config
 
-Add the `li-desknet-platforms` metadata plugin to the content type that you would like the side panel enabled for:
+Add the `li-desknet-schedule` metadata plugin to the content type that you would like the side panel enabled for:
 
 ```js
 {
@@ -578,27 +581,34 @@ Add the `li-desknet-platforms` metadata plugin to the content type that you woul
   documentType: 'page',
   // ...
   metadata: [
+    // ...
     {
-      handle: 'desknet-platforms',
-      type: 'li-desknet-platforms',
+      handle: 'desknet-schedule',
+      type: 'li-desknet-schedule',
+      config: {
+        // Optionally filter the documents which are displayed in the side panel
+        filters: {
+          linkedDocumentsOnly: true,
+          elementStatusIds: [1, 2, 10322, 10332],
+          publicationStatusIds: [5]
+        }),
+        // Only required if li-desknet-integration is not used.
+        // It will compare the metadata value from the path provided
+        // with the externalElement.id property in the Desk-Net element.
+        desknetExternalElementIdMetadataPath: 'myExternalSystem.id',
+        // Enable a button in the side panel which triggers a create flow
+        automaticPlacementCreationFlowHandle: 'myDesknetGenerateContentFlow'
+      },
       ui: {
-        label: 'Desk-Net Platforms',
+        label: 'Desk-Net Schedule',
         config: {
-          placeholder: 'Select a Desk-Net platform or category'
+          placeholder: 'Select a Desk-Net platform or category',
+          // Use a custom table dashboard for the side panel
+          useDashboard: 'articlesSimple'
         }
       }
     }
-  ],
-
-  // Optional
-  desknet: {
-    title: {
-      // Defines if the document title should be synced on document update from
-      // either way, livingdocs -> desknet or desknet -> livingdocs.
-      // By default it is synced.
-      sync: false
-    }
-  }
+  ]
 }
 ```
 
@@ -610,6 +620,135 @@ Once you have made the config changes above you should be able to see a disabled
 
 ### Using the side panel
 
-At the moment the side panel is for information only. A user can change the date to see the scheduled articles in the configured platforms or categories. However, the ability to create teasers by dragging articles from the side panel will be added soon.
+A user can change the date to see the scheduled articles in the configured platforms or categories. If the Desk-Net story is linked to a document in Livingdocs then it is possible to drag the story on to the page to create a teaser.
 
 {{< img src="desknet-schedule-side-panel.png" alt="Desk-Net Schedule side panel in Livingdocs" >}}
+
+### Automatic Teaser Placement
+
+Along with manually dragging stories from the side bar on to the page to create teasers, it is also possible to register a document create flow to update or re-generate the content for the current document.
+
+This feature should be considered beta. It is likely that we will refactor this in the future because the `registerCreateFunction` and `create` naming is not ideal for this scenario, where we are actually updating or generating content.
+
+#### Register Create Function
+
+To begin with you should register a new create function in your server runtime config. Below is an example function which demonstrates the possibility of merging existing document content with new content which is generated from the Desk-Net Schedule:
+
+```js
+liServer.registerInitializedHook(async () => {
+  const documentApi = liServer.features.api('li-documents').document
+  documentApi.registerCreateFunction({
+    handle: 'generateTeasersFromDesknetSchedule',
+    async create ({projectConfig, userId, params = {}, context = {}}) {
+      // Extract Desk-Net elements from schedule tree
+      function extractElements (accumulator, node) {
+        const elements = node.elements || []
+        const nestedElements = node.categories?.reduce(extractElements, []) || []
+        return [
+          ...accumulator,
+          ...elements,
+          ...nestedElements
+        ]
+      }
+      const document = context.document
+      // Keep the first title (if it exists)
+      const title = document.content.find((c) => c.identifier === `${document.design.name}.title`)
+      // Generate a paragraph for each Desk-Net element
+      const elements = (params.schedule || []).reduce(extractElements, [])
+      const elementComponents = elements.map((element, index) => ({
+        content: {text: `${index + 1}. ${element.title}`},
+        identifier: `${document.design.name}.p`
+      }))
+
+      return {
+        content: [
+          title,
+          ...elementComponents
+        ].filter(Boolean)
+      }
+    }
+  })
+})
+```
+
+The main differences between this "generate content" function and a standard create function is that we provide the current `document` in the `context` object so that it is possible to re-use existing components. In addition to this, the return value should be an object that only contains a `content` property which is a [component tree]({{< ref "/reference-docs/document/content/component-tree" >}}) (an array of component objects).
+
+The Desk-Net Schedule loaded in the editor is passed to the function as `params.schedule`, and it has the following tree structure:
+
+```js
+[
+  {
+    id: 1,
+    label: 'Platform 1',
+    breadcrumbs: ['Platform 1'],
+    categories: [
+      {
+        id: 2,
+        label: 'Category 1',
+        breadcrumbs: ['Platform 1', 'Category 1'],
+        categories: [
+          {
+            id: 3,
+            label: 'Subcategory 1',
+            breadcrumbs: ['Platform 1', 'Category 1', 'Subcategory 1'],
+            elements: [
+              {
+                // Full Desk-Net element
+                id: 4,
+                title: 'Article 1',
+                publication: {},
+                // ...
+                // Additional linked document (if available)
+                document: {}
+              }
+            ]
+          }
+        ],
+        elements: [{id: 5, title: 'Article 2', publication: {...}}]
+      },
+      {id: 6, label: 'Category 3', breadcrumbs: [...], categories: [...], elements: [...]}
+    ],
+    elements: [{id: 7, title: 'Article 2', publication: {...}}]
+  },
+  {id: 8, label: 'Platform 2', breadcrumbs: [...], categories: [...], elements: [...]}
+]
+```
+
+The `elements` array will contain [full Desk-Net elements](#full-desk-net-element-example) with an additional `document` property if a link between the Desk-Net element and a Livingdocs document can be found.
+
+#### Update Project Config
+
+The next step is to link the create function to a document creation flow. You can do this by modifying `editorSettings` in your project config:
+
+```js
+{
+  // ...
+  editorSettings: {
+    // ...
+    documentCreationFlows: [
+      // ...
+      {
+        handle: 'myDesknetGenerateContentFlow',
+        createFunction: 'generateTeasersFromDesknetSchedule',
+        createButtonLabel: 'Generate Teasers' // Default: "Run Automatic Placement"
+      }
+    ]
+  }
+}
+```
+
+#### Update Metadata Plugin
+
+Finally, you need to update the `li-desknet-schedule` metadata plugin with the `automaticPlacementCreationFlowHandle`. Once this is setup then a button will be added to the Desk-Net Schedule side panel to trigger the document update.
+
+```js
+{
+  handle: 'desknetSchedule',
+  type: 'li-desknet-schedule',
+  config: {
+    automaticPlacementCreationFlowHandle: 'myDesknetGenerateContentFlow'
+    // ...
+  }
+  // ...
+}
+```

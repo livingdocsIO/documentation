@@ -163,18 +163,28 @@ References:
 
 ### Desk-Net: Schedule Extensions + Production Features
 
-TODO@Alex: add a nice description + do you have planned to write a documentation?
+The Desk-Net integration has been extended with some new features:
+* Fixing the Desk-Net Schedule side panel to a specific date
+* Filtering the documents displayed in the Desk-Net Schedule side panel by story status, platform status, and whether they have been imported to Livingdocs
+* Linking Livingdocs documents to Desk-Net using a metadata value when li-desknet-integration is not used
+* Registering a server function to handle the placement of teasers into a document using the Desk-Net Schedule data
 
 References:
-* [Documentation?](?)
-* [PR: li-desknet-schedule metadata plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4673)
-* [PR: Add li-desknet-schedule metadata plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/5627)
-* [PR: Schedule filtering](https://github.com/livingdocsIO/livingdocs-server/pull/4678)
-* [PR: Link Desk-Net elements using external ids](https://github.com/livingdocsIO/livingdocs-server/pull/4680)
-* [PR: Limit schedule to a specific date using metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/5664)
-* [PR: Display "Run Automatic Placement" button in Desk-Net Schedule side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/5728)
-* [PR: Desk-Net Schedule: Use a Table Dashboard to show Articles](https://github.com/livingdocsIO/livingdocs-editor/pull/5736)
-* [PR: Desk-Net Schedule side panel improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/5751)
+* Documentation:
+  * [Desk-Net Integration Guide]({{< ref "/guides/integrations/desknet" >}})
+* li-desknet-schedule Metadata Plugin:
+  * [Server PR: li-desknet-schedule metadata plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4673)
+  * [Editor PR: li-desknet-schedule metadata plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/5627)
+  * [Server PR: Schedule filtering](https://github.com/livingdocsIO/livingdocs-server/pull/4678)
+  * [Server PR: Link Desk-Net elements using external ids](https://github.com/livingdocsIO/livingdocs-server/pull/4680)
+  * [Server PR: Limit schedule to a specific date](https://github.com/livingdocsIO/livingdocs-server/pull/4706)
+  * [Editor PR: Limit schedule to a specific date](https://github.com/livingdocsIO/livingdocs-editor/pull/5664)
+* Automatic Placement:
+  * [Server PR: Update document using Desk-Net Schedule](https://github.com/livingdocsIO/livingdocs-server/pull/4766)
+  * [Editor PR: Display "Run Automatic Placement" button in Desk-Net Schedule side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/5728)
+* UI Improvements:
+  * [Editor PR: Desk-Net Schedule: Use a Table Dashboard to show Articles](https://github.com/livingdocsIO/livingdocs-editor/pull/5736)
+  * [Editor PR: Desk-Net Schedule side panel improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/5751)
 
 ### Split Revision/Systemmetadata
 
@@ -284,9 +294,13 @@ This has the effect that required metadata are always present in the `preparePub
 
 * [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4778)
 
+### Metadata Plugin li-desknet-platforms
+
+The `li-desknet-platforms` metadata plugin has been replaced by `li-desknet-schedule`. The `li-desknet-platforms` plugin stored an array of objects containing `platformId` and `categoryId` values. The new `li-desknet-schedule` storage schema is an object with a `platforms` property which stores this array, along with a new `date` property. The new plugin also has some additional config options.
+
 ### Desk-Net scheduleEnabled
 
-Please remove `projectConfig.settings.desknet.scheduleEnabled`, because it has no longer has any effect. The schedule will be enabled when Desk-Net is enabled in the server config, and the content type has the li-desknet-platforms metadata plugin.
+Please remove `projectConfig.settings.desknet.scheduleEnabled`, because it has no longer has any effect. The schedule will be enabled when Desk-Net is enabled in the server config, and the content type has the li-desknet-schedule metadata plugin.
 
 * [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4647)
 
