@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [User cannot change list inbox during publish and conflict notification is sticky](https://github.com/livingdocsIO/livingdocs-editor/pull/5763)
 * [Metadata: Fix some error cases on property update with validation](https://github.com/livingdocsIO/livingdocs-editor/pull/5766)
 * [Close document copy popup when clicking on X or outside the popup](https://github.com/livingdocsIO/livingdocs-editor/pull/5755)
 * [fix(deps): update dependency aws-sdk from 2.1199.0 to v2.1200.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4787)
