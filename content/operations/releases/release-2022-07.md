@@ -436,6 +436,7 @@ Here is a list of all patches after the release has been announced.
 - [v189.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.2): fix(oembed): add spotify and data wrapper
 
 ### Livingdocs Editor Patches
+- [v80.38.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.47): fix(draft): Fix bug preventing publication of data records
 - [v80.38.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.46): fix(listInbox): Cannot remove doc during publish
 - [v80.38.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.45): fix(metadata): don't error in any case when metadata properties are updated
 - [v80.38.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.44): fix: close document copy popup when clicking on X or outside the popup
