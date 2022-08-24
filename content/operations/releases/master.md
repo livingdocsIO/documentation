@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency ioredis from 5.2.2 to v5.2.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4792)
 * [Adding a Setter and Getter to draft.js](https://github.com/livingdocsIO/livingdocs-editor/pull/5771)
 * [User cannot change list inbox during publish and conflict notification is sticky](https://github.com/livingdocsIO/livingdocs-editor/pull/5763)
 * [Metadata: Fix some error cases on property update with validation](https://github.com/livingdocsIO/livingdocs-editor/pull/5766)
