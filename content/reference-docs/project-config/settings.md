@@ -148,7 +148,12 @@ settings: {
         description: '',
         url: 'https://foo.bar.com/my-webhook',
         secret: 'foo-bar',
-        events: ['document.published']
+        events: [{
+          name: 'document.build',
+          conditions: {
+            deliveryHandles: ['web']
+          }
+        }]
       }
     ]
   },

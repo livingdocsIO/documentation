@@ -25,6 +25,13 @@ deliveries: [
       // - :projectId (document.projectId)
       // - :slug (document.metadata.slug)
       pathPattern: '/article/:id'
+    },
+    // optionally customize the build button
+    build: {
+      enabled: true,
+      triggerButtonLabel: 'Build',
+      retriggerButtonLabel: 'Build again',
+      retryButtonLabel: 'Retry'
     }
   },
   {
