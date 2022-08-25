@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Log framework violations after initialization](https://github.com/livingdocsIO/livingdocs-editor/pull/5765)
 * [fix(deps): update dependency fastify from 3.29.1 to v4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4660)
 * [fix(deps): update dependency aws-sdk from 2.1200.0 to v2.1202.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4797)
 * [Update postgres docker image to natively supported ARM version](https://github.com/livingdocsIO/livingdocs-server/pull/4794)
