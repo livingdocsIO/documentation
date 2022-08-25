@@ -220,19 +220,19 @@ livingdocs-server migrate up
 The following configurations are deprecated and will be removed in the future. If you need them longer than `release-2022-11`, please think about a plan with timing to not depend on the Legacy Dashboards anymore and let your Customer Solutions Manager know about it. We will find a solution.
 
 Deprecated Editor Configs:
-* `app.filters.inlineArticleList`
-* `app.filters.articleList`
-* `app.filters.pageList`
-* `app.filters.dataRecordList`
-* `app.filters.menuList`
-* `search.articleSearch.listItemComponent`
+- `app.filters.inlineArticleList`
+- `app.filters.articleList`
+- `app.filters.pageList`
+- `app.filters.dataRecordList`
+- `app.filters.menuList`
+- `search.articleSearch.listItemComponent`
 
 * [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5498)
 
 ### Metadata Plugin li-text
 
-🔥 metadata type `li-text`: remove property `ui.component`
-🔥 metadata type `li-text`: remove property `ui.config.rows`
+- :fire: metadata type `li-text`: remove property `ui.component`
+- :fire: metadata type `li-text`: remove property `ui.config.rows`
 
 #### restore to the old behavior
 
@@ -314,11 +314,11 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 
 ### Delivery Status
 
-🎁 Add server API `publicationApi.getDeliveryStatusReport({projectId, documentId})`
-🎁 Add server API `publicationApi.triggerBuild` -> fires a new [Server Event]({{< ref "/reference-docs/server-extensions/server-events" >}}) `document.build`
-🎁 Add `POST /api/v1/documents/:documentId/addDeliveryStatus` endpoint to Public API
-🎁 Add [Server Event]({{< ref "/reference-docs/server-extensions/server-events" >}}) `document.build`
-🎁 Add [Webhook Event]({{< ref "/reference-docs/server-extensions/webhooks" >}}) `document.build`
+- :gift: Add server API `publicationApi.getDeliveryStatusReport({projectId, documentId})`
+- :gift: Add server API `publicationApi.triggerBuild` -> fires a new [Server Event]({{< ref "/reference-docs/server-extensions/server-events" >}}) `document.build`
+- :gift: Add `POST /api/v1/documents/:documentId/addDeliveryStatus` endpoint to Public API
+- :gift: Add [Server Event]({{< ref "/reference-docs/server-extensions/server-events" >}}) `document.build`
+- :gift: Add [Webhook Event]({{< ref "/reference-docs/server-extensions/webhooks" >}}) `document.build`
 
 * [Documentation: TODO]()
 * [PR: Delivery Status Fetching](https://github.com/livingdocsIO/livingdocs-server/pull/4740)
