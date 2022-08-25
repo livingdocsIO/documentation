@@ -575,7 +575,7 @@ The print options allow you to enable the WoodWing Studio print connector on a c
 
 {{< added-in release-2021-11 >}}, and media library support {{< added-in release-2022-03 >}}
 
-The document inbox feature allows document and media references to be assigned to another document.
+The document inbox feature allows document and media references to be assigned to another document. Currently pages can accept documents or media library entries to their inbox, articles can only accept media library entries.
 
 ### Configuration
 
@@ -587,6 +587,18 @@ The following configuration allows the "page" content type to accept "regular" a
   // ...
   inbox: {
     contentTypes: ['regular', 'another-handle'],
+    mediaTypes: ['image', 'video']
+  }
+}
+```
+
+For regular article content types add only the mediaTypes config to accept images and videos which can be dragged directly into the document. We do not currently support other content types inside of articles. The config will look something like this:
+
+```js
+{
+  handle: 'regular',
+  // ...
+  inbox: {
     mediaTypes: ['image', 'video']
   }
 }
