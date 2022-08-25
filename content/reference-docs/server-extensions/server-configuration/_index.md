@@ -510,22 +510,19 @@ The channel and contentType config is described in detail here: [channel config]
 
 #### Project configs
 
+The `secretEncryptionKeys` config is required if you want to use secrets in the project config, e.g. the secret key for imatrics.
+Since we never exchange the project config secrets between parties, synchronous encryption methods are good enough.
+More information on secret use can be found at [Project secrets page]({{< ref "../../../guides/setup/project-secrets" >}}).
+
 ```js
 secretEncryptionKeys: [
-  {"kty":"oct","k":"foo","kid":"newKey","alg":"A256GCMKW","enc":"A256GCM","use":"enc"},
-  {"kid":"oldKey","kty":"oct","k":"bar","alg": "dir","enc": "A128CBC-HS256"}
+  // Encryption key used for encryption
+  {"kty":"oct","k":"7U6k5S_HXSujMpr2u7YjRkZLQO6LUK2vFYFHVbfNJ_g","kid":"220824-xmBI","alg":"dir","enc":"A256GCM","use":"enc"},
+  // Encryption keys used for decryption only, to support key rotations
+  {"kty":"oct","k":"XY4J0qe3fkI_XrWsfKNVUl7paxltR-_KuYdS2XFmqRI","kid":"220824-DDS1","alg":"dir","enc":"A256GCM","use":"enc"},
+  {"kty":"oct","k":"abBKmiI624FWw1B0yevJEI6AowC4AqDQbLkZx_pSmVM","kid":"220824-aiiA","alg":"dir","enc":"A256GCM","use":"enc"}
 ]
 ```
-
-The `secretEncryptionKeys` config is required if you want to use secrets in the project config, e.g. the secret key for imatrics.
-Since we never exchange the project config secrets between parties, synchronous encryption methods are fine. The config also supports key rotation, just add a new key to the beginning of the array and it will then use this.
-
-If you need to generate a new key, you can use our helper cli tool:
-```
-livingdocs-server key-generate enc --alg dir --enc A256GCM
-```
-This generates a synchronous encryption key using the A256GCM encoding.
-Call `livingdocs-server key-generate` for a description of all possible parameters.
 
 #### Routing
 

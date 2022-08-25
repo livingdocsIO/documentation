@@ -119,6 +119,8 @@ Add the following to the project config of the project you want to connect with 
 }
 ```
 
+For more information on how to use secrets, please check [Project Secrets](../../setup/project-secrets).
+
 #### 5. Add metadata plugin to content types
 
 Add the following metadata plugin to all content types that can be created using the "contentTypes" configuration above:

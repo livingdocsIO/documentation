@@ -88,6 +88,7 @@ Finally, a secret must be added for the relevant `<project-handle>`. The `<secre
 npx livingdocs-server secret-add --project="<project-handle>" --name="<secret-name>" --value="<password>"
 ```
 
+For more information on how to use secrets, please check [Project Secrets](../setup/project-secrets).
 
 ## Metadata
 
