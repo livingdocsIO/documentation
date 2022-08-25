@@ -148,7 +148,12 @@ contentTypes: [
         // By default it is synced.
         sync: false
       }
-    }
+    },
+
+    // Delivery build button and status to be shown in the Publish Control panel
+    deliveries: [
+      { deliveryName: 'web', isPrimary: true }
+    ]
   }
 ]
 ```

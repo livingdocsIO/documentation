@@ -14,6 +14,7 @@ You can configure multiple webhooks that are called on only one or multiple even
 - `document.publish`
 - `document.unpublish`
 - `document.update`
+- `document.build`
 - `mediaLibraryEntry.create`
 - `mediaLibraryEntry.archive`
 - `mediaLibraryEntry.update`
@@ -137,6 +138,21 @@ The payload sent to your webhook endpoints looks like this. The `deliveryId` is 
   "metadataPropertyChanges": [
     "title"
   ]
+}
+```
+
+`document.build`
+```json
+{  
+  "event": "document.build",
+  "deliveryId": "2Xwe-gvuB_JsK3_4bJerT",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "documentId": 179,
+  "publicationId": 322,
+  "deliveryHandle": "web",
+  "reportId": "2SG2MAA9RwPn"
 }
 ```
 
