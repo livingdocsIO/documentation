@@ -24,7 +24,6 @@ To execute a livingdocs-server CLI command, go to your Livingdocs Server folder 
 |elasticsearch-delete-index|Delete Elasticsearch index|
 |elasticsearch-index|Index documents into Elasticsearch|
 |migrate|Execute database migrations|
-|parse-channel-config-v1-to-v2|Parse a channel-config from v1(deprecated) to v2|
 |project-seed|Setup multiple projects with a seed configuration|
 |project-delete|Delete a project|
 |project-truncate|Truncate documents/events|
