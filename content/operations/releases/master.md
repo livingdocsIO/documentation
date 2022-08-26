@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Change renovate configuration, reduce amount of PRs  and automerge patches](https://github.com/livingdocsIO/livingdocs-server/pull/4734)
 * [Dashboards: no default create buttons when documentCreationFlows configured on the dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/5776)
 * [Save open/closed state of metadata cards for each contentType separately](https://github.com/livingdocsIO/livingdocs-editor/pull/5761)
 * [Log framework violations after initialization](https://github.com/livingdocsIO/livingdocs-editor/pull/5765)
