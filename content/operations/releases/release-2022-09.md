@@ -372,6 +372,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.9): fix: use require instead of import for VUE composition apis
 - [v81.20.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.8): fix(dashboards): when a dashboard holds a configured document creation flow button(s), no default create button is shown
 - [v81.20.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.7): fix(draft): Fix bug preventing publication of data records
 - [v81.20.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.6): fix(listInbox): Cannot remove doc during publish
