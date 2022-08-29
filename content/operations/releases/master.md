@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Handle cases where no teaserComponents are configured](https://github.com/livingdocsIO/livingdocs-editor/pull/5788)
 * [fix(deps): update dependency aws-sdk from 2.1203.0 to v2.1204.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4805)
 * [fix: send correct options to setupProjects() function.](https://github.com/livingdocsIO/livingdocs-server/pull/4730)
 * [fix: crop button for named crops](https://github.com/livingdocsIO/livingdocs-editor/pull/5778)
