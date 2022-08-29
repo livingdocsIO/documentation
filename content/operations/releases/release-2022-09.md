@@ -372,6 +372,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.13): fix: log framework violations after initialization
 - [v81.20.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.12): fix(dashboards): Add back button fallback
 - [v81.20.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.11): fix(document editing toolbar): enable flyouts opened from hidden actions on narrow screens
 - [v81.20.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.10): fix: handle cases where no teaserComponents are configured
