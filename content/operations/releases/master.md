@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix: Browser crashes when clicking on history button in editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5785)
 * [fix(deps): update dependency cloudinary from 1.30.1 to v1.31.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4806)
 * [Add back button fallback routes](https://github.com/livingdocsIO/livingdocs-editor/pull/5789)
 * [fix(deps): update dependency fastify from 4.5.2 to v4.5.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4803)
