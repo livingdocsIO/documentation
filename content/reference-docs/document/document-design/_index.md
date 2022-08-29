@@ -517,3 +517,71 @@ fieldExtractor: [
   - `cssProperty` for `doc-style`
   - Other design directives are currently not supported.
 - `matches` defines an array of component.directive pairs from which the content should be synced into the metadata field. E.g. for a component named "title" that has a doc-editable directive "title", you would write "title.title". When `type` is set to `cssProperty` one can define which CSS property to extract, e.g. `color`.
+
+### Component Prefilling
+
+Livingdocs supports two types of component prefilling; author and author-email. Components with an `author` directive can have the author or their email automatically filled. If these components are in the default content of an document type they are prefilled on document creation and are also prefilled when new components are dragged from the insert panel. This is only supported in the editor and not for document import.
+
+You can enable Prefilled Components by adding them to the Design Settings:
+
+```js
+{
+  v: 2,
+  ...
+  designSettings: {
+    prefilledComponents: [{
+      component: 'title',
+      content: [{
+        directive: 'author',
+        value: 'author', // can be 'author' or 'author-email'
+        type: 'computed'
+      }]
+    }]
+  }
+}
+```
+
+As a second step you have to add a Design Component `title` which contains a directive `author`. After that, when you add the `title` component to a document, or it is in the `defaultContent`, the `author` should be prefilled automatically.
+
+An example Title component:
+
+```js
+{
+  name: 'title',
+  label: 'Title',
+  iconUrl: 'https://livingdocs-assets.s3.amazonaws.com/magazine-design/assets/images/icons-components/icon_header_simple.svg',
+  directives: [{
+    type: 'editable',
+    name: 'title'
+  },
+  {
+    type: 'editable',
+    name: 'author'
+  }],
+  html: dedent`
+  <section>
+    <h2 doc-editable="title">
+
+      Title
+    </h2>
+    <p doc-editable="author"></p>
+    </ section>
+  `
+}
+```
+
+And including it in the default content will have it filled on creation:
+
+```js
+{
+  handle: 'regular',
+  documentType: 'article',
+  info: {
+    label: 'Regular Article'
+  },
+  ...
+  defaultContent: [
+    {component: 'title'}
+  ]
+}
+```
