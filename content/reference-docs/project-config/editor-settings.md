@@ -168,9 +168,12 @@ editorSettings: {
   },
   mediaLibrary: {
     showUi: true, // default true
-    altTextPrefilling: {
-      metadataPropertyName: 'caption'
-    },
+    altTextPrefilling: [
+      {
+        metadataPropertyName: 'caption',
+        onlyOnComponents: ['image'] // {{< added-in release-2022-11 >}}
+      }
+    ],
     componentDirectivesPrefilling: [
       {metadataPropertyName: 'source', directiveName: 'source'},
       {metadataPropertyName: 'caption', directiveName: 'caption'}
@@ -714,14 +717,26 @@ This will define a card `myImageCard` to be used in `mediaType.editor.dashboard.
 
 ### Prefilling Behavior
 Then there are 2 configs to define the behavior when Images are inserted into a Document from the Media Library:
-- `mediaLibrary.altTextPrefilling: {metadataPropertyName: ''}`: a metadata property handle from which the `alt` attribute on an image tag is filled.
-- `mediaLibrary.componentDirectivesPrefilling`: an array of mappings to prefill `doc-editable` directives with Media Library Entry Metadata
+
+#### Alt Text Prefilling
 ```js
-[
+mediaLibrary.altTextPrefilling: [
+  {
+    metadataPropertyName: 'title',
+    onlyOnComponents: ['image'] // {{< added-in release-2022-11 >}}
+  }
+]
+```
+Provide a metadata property handle from which the `alt` attribute on an image tag is filled. This value will also be stored within the document content using the `altText` property on the directive content. To limit the prefilling to a subset of components you can optionally provide an array of component names using the `onlyOnComponents` property. Providing multiple objects within the array will allow you to have fallbacks when the metadata property has no value, or to specify different properties for different components.
+
+#### Component Directives Prefilling
+```js
+mediaLibrary.componentDirectivesPrefilling: [
   {metadataPropertyName: 'source', directiveName: 'source'},
   {metadataPropertyName: 'caption', directiveName: 'caption'}
 ]
 ```
+An array of mappings to prefill `doc-editable` directives with Media Library Entry Metadata.
 
 ## Document Lists
 ```js
