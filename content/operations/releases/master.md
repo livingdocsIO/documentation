@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add back button fallback routes](https://github.com/livingdocsIO/livingdocs-editor/pull/5789)
 * [fix(deps): update dependency fastify from 4.5.2 to v4.5.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4803)
 * [Document Editing Toolbar: Enable toolbar buttons opening flyouts when they are grouped/hidden for narrow screens](https://github.com/livingdocsIO/livingdocs-editor/pull/5787)
 * [Handle cases where no teaserComponents are configured](https://github.com/livingdocsIO/livingdocs-editor/pull/5788)
