@@ -372,6 +372,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.15): fix(text only buttons): Spacing
 - [v81.20.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.14): fix(history): Prevent app from crashing when toggling history
 - [v81.20.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.13): fix: log framework violations after initialization
 - [v81.20.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.12): fix(dashboards): Add back button fallback
