@@ -34,7 +34,7 @@ const v1 = {
   ],
 
   defaultComponents: {}, // move this to v2.designSettings.defaultComponents
-  prefilledComponents: {}, // TODO: put it into v2.designSettings.prefilledComponents
+  prefilledComponents: {}, // move this to v2.designSettings.prefilledComponents
   groups: [], // move this to v2.designSettings.componentGroups
   metadata: {}, // move this to v2.designSettings.fieldExtractor
   defaultContent, // move this to contentType.defaultContent
