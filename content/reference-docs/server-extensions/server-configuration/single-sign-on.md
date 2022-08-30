@@ -13,7 +13,7 @@ The Single sign-on feature, also known as SSO, allows you to:
 
 ## Configuration
 
-In the following example we set three different providers: Github, Google and Facebook.
+In the following example we set different providers: Azure, Github, Google and Facebook.
 
 ```js
   auth: {

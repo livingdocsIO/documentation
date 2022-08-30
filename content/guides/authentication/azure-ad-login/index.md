@@ -122,16 +122,25 @@ To configure OpenID in Azure Active Directory, you have to go follow the steps d
 {{< img src="0-goto-AAD.png" alt="Azure Active Directory in Azure Portal" >}}
 
 2. On the left sidebar, click on `App registrations`. Then create a new registration with `+ New registration` button.
-{{< img src="1-create-registration.png" alt="App registration in Azure Portal" >}}
+{{< img src="1-create-registration.png" alt="App registration" >}}
 
 3. Define a name for the application and choose the access depending on your requirements (default: `Single tenant`). In the redirect URI group, specify `Web` in platform drop down and your redirect URI should look like `https://<my-domain-name>/proxy/api/auth/azure/callback`. Finally, click `Register` to create the registration.
-{{< img src="2-app-callback-url.png" alt="Define callback URL in Azure Portal" >}}
+{{< img src="2-app-callback-url.png" alt="Define callback URL" >}}
 
 4. In the registration view left sidebar, go to `Authentication` menu. Enable `Access tokens (used for implicit flows)` and `ID tokens (used for implicit and hybrid flows)`, then save.
-{{< img src="3-enable-access-tokens.png" alt="Enable OpenID and Token in Azure Portal" >}}
+{{< img src="3-enable-access-tokens.png" alt="Enable OpenID and Token" >}}
 
 5. In the registration view left sidebar, go to `Certificates & secrets` menu. Add a client secret with `+ New client secret`, add a description to identify the secret and expiration date. Finally `Add` the client secret.
-{{< img src="4-add-client-secret.png" alt="Generate client secret in Azure Portal" >}}
+{{< img src="4-add-client-secret.png" alt="Generate client secret" >}}
 
 6. In the list of client secrets copy the newly created secret ID to use in Livingdocs Server configuration `clientSecret` parameter.
-{{< img src="5-copy-client-secret.png" alt="Copy client secret in Azure Portal" >}}
+{{< img src="5-copy-client-secret.png" alt="Copy client secret" >}}
+
+7. Go back to the registered app list (Azure Active Directory > App registrations) and choose the one you just created. Configure the claims used in the app registration in `Token configuration` section. You can specify AD group types and token used.
+{{< img src="6-configure-scopes.png" alt="Configure scopes in registered app" >}}
+
+8. To add users or groups to the app registration go to `Configure your organization`.
+{{< img src="7-open-config-organization.png" alt="Open 'Configure your organization' in registered app" >}}
+
+9. Go to `Users and groups` on the sidebar. You should see `+ Add user/group` to add the users that need access to the app.
+{{< img src="8-users-and-groups.png" alt="Add users and groups in enterprise application" >}}
