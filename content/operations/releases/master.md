@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Pass the advanced formatting configuration from Editor to Editable config](https://github.com/livingdocsIO/livingdocs-editor/pull/5721)
 * [Always emit an update event when extractor updates the metadataForm](https://github.com/livingdocsIO/livingdocs-editor/pull/5786)
 * [Fix/Text Only Buttons](https://github.com/livingdocsIO/livingdocs-editor/pull/5799)
 * [Fix: Browser crashes when clicking on history button in editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5785)
