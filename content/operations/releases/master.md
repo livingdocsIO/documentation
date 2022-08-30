@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Specific asset loading](https://github.com/livingdocsIO/livingdocs-server/pull/4791)
 * [Improve placement of text formatting toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/5790)
 * [Specific asset loading](https://github.com/livingdocsIO/livingdocs-editor/pull/5808)
 * [Archived documents are removed from multi-list inbox](https://github.com/livingdocsIO/livingdocs-editor/pull/5810)
