@@ -1062,7 +1062,7 @@ metadata: [
   }]
 }
 ```
-**Default UI**: UI to trigger transcodings, see progress and the result in the end (`liMetaTranscodingStateForm`)
+**Default UI**: UI to trigger transcodings, see progress and the result in the end
 
 ## li-video-reference
 
