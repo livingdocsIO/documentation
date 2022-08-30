@@ -436,6 +436,7 @@ Here is a list of all patches after the release has been announced.
 - [v189.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.2): fix(oembed): add spotify and data wrapper
 
 ### Livingdocs Editor Patches
+- [v80.38.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.52): fix(archived documents): Are removed from multilist inbox
 - [v80.38.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.51): fix(li-metadata-form): save open/closed state of metadata cards for each contentType seperatly
 - [v80.38.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.50): fix(metadata-mapper): always emit event when updating metadata
 - [v80.38.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.49): fix(document editing toolbar): enable flyouts opened from hidden actions on narrow screens
