@@ -372,6 +372,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.18): fix(archived documents): Are removed from multilist inbox
 - [v81.20.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.17): fix(li-metadata-form): save open/closed state of metadata cards for each contentType seperatly
 - [v81.20.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.16): fix(metadata-mapper): always emit event when updating metadata
 - [v81.20.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.15): fix(text only buttons): Spacing
