@@ -436,6 +436,7 @@ Here is a list of all patches after the release has been announced.
 - [v189.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.2): fix(oembed): add spotify and data wrapper
 
 ### Livingdocs Editor Patches
+- [v80.38.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.50): fix(metadata-mapper): always emit event when updating metadata
 - [v80.38.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.49): fix(document editing toolbar): enable flyouts opened from hidden actions on narrow screens
 - [v80.38.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.48): chore(deps): Update `jwt-decode` from ^2.1.0 to ^3.1.2, includes workaround to use CommonJS as `require()`
 - [v80.38.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.47): fix(draft): Fix bug preventing publication of data records
