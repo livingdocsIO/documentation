@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Always emit an update event when extractor updates the metadataForm](https://github.com/livingdocsIO/livingdocs-editor/pull/5786)
 * [Fix/Text Only Buttons](https://github.com/livingdocsIO/livingdocs-editor/pull/5799)
 * [Fix: Browser crashes when clicking on history button in editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5785)
 * [fix(deps): update dependency cloudinary from 1.30.1 to v1.31.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4806)
