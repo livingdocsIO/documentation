@@ -540,6 +540,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.76](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.76): fix(metadata): don't error in any case when metadata properties are updated
 - [v80.10.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.75): fix(metadata-mapper): always emit event when updating metadata
 - [v80.10.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.74): fix(metadata): show required errors when metadata form is opened from publish panel error
 - [v80.10.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.73): chore: pin version for vue and vue-template-compiler
