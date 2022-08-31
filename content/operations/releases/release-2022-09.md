@@ -186,13 +186,6 @@ References:
   * [Editor PR: Desk-Net Schedule: Use a Table Dashboard to show Articles](https://github.com/livingdocsIO/livingdocs-editor/pull/5736)
   * [Editor PR: Desk-Net Schedule side panel improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/5751)
 
-### Split Revision/Systemmetadata
-
-TODO@Marc: Do we announce that officially? If yes, how?
-
-* [PR: System metadata preparation](https://github.com/livingdocsIO/livingdocs-server/pull/4735)
-
-
 
 ## Breaking Changes :fire:
 
@@ -214,6 +207,8 @@ livingdocs-server migrate up
 🔥 Support for Redis <5 has been removed. Please Update to Redis 6 (5+ is supported).
 
 ## Deprecations
+
+TODO: move breaking from deprcations onto the right place
 
 ### Dashboards Configs ❗❗❗
 

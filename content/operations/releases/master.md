@@ -105,6 +105,12 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Highlights
 
+### Split Revision/Systemmetadata
+
+TODO@Marc, how to communicate that?
+
+* [PR: System metadata preparation](https://github.com/livingdocsIO/livingdocs-server/pull/4735)
+
 ### Microsoft Teams Integration
 
 TODO: Is this a highlight? Is the feature ready? Is the feature documented?
