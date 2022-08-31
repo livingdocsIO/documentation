@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Show warning for deleted project only in the first login](https://github.com/livingdocsIO/livingdocs-editor/pull/5796)
 * [Remove li-desknet-platforms metadata plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/5779)
 * [Remove li-desknet-platforms metadata plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4799)
 * [Specific asset loading](https://github.com/livingdocsIO/livingdocs-server/pull/4791)
