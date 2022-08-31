@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [System metadata](https://github.com/livingdocsIO/livingdocs-server/pull/4807)
 * [Limit alt text prefilling by component](https://github.com/livingdocsIO/livingdocs-editor/pull/5798)
 * [Use default vue component for `li-desknet-integration` plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/5813)
 * [Allow limiting alt text prefilling by component](https://github.com/livingdocsIO/livingdocs-server/pull/4809)
