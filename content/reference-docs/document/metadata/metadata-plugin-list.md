@@ -1063,7 +1063,20 @@ metadata: [
 }
 ```
 **Default UI**: UI to trigger transcodings, see progress and the result in the end
+  * With `release-2022-11`: Renders a default UI and no longer accepts a `ui.component` option
 
+**Project Config**
+```js
+metadata: [
+  {
+    handle: 'transcoding',
+    type: 'li-transcoding-state',
+    ui: {
+      label: 'My Transcoding'     // optional, takes "Transcoding State" otherwise
+    }
+  }
+]
+```
 ## li-video-reference
 
 {{< added-in release-2022-03 >}}
