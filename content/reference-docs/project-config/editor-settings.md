@@ -175,8 +175,14 @@ editorSettings: {
       }
     ],
     componentDirectivesPrefilling: [
-      {metadataPropertyName: 'source', directiveName: 'source'},
-      {metadataPropertyName: 'caption', directiveName: 'caption'}
+      {
+        metadataPropertyName: 'source',
+        directiveName: 'image.source' // Component prefix {{< added-in release-2022-11 >}}
+      },
+      {
+        metadataPropertyName: 'caption',
+        directiveName: 'caption' // Applies to all components with a caption directive
+      }
     ],
     // removed with release-2021-09, move filters to a mediaType
     dashboard: {
@@ -732,11 +738,17 @@ Provide a metadata property handle from which the `alt` attribute on an image ta
 #### Component Directives Prefilling
 ```js
 mediaLibrary.componentDirectivesPrefilling: [
-  {metadataPropertyName: 'source', directiveName: 'source'},
-  {metadataPropertyName: 'caption', directiveName: 'caption'}
+  {
+    metadataPropertyName: 'source',
+    directiveName: 'image.source' // Component prefix {{< added-in release-2022-11 >}}
+  },
+  {
+    metadataPropertyName: 'caption',
+    directiveName: 'caption' // Applies to all components with a caption directive
+  }
 ]
 ```
-An array of mappings to prefill `doc-editable` directives with Media Library Entry Metadata.
+An array of mappings to prefill `doc-editable` directives with Media Library Entry Metadata. The metadata value must be a string. The directive name can be prefixed with a component name to limit where the prefill will be used, for example "image.source". To limit the prefilling to multiple components you will need to add multiple objects to the array.
 
 ## Document Lists
 ```js
