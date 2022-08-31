@@ -191,38 +191,24 @@ References:
 
 ### Migrate the database :fire:
 
-TODO: add db migrations
-
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database scheme
+# migration 179-fix-media-library-index.js
+#   alter media library index
+# migration 180-inbox-insert-item.js
+#   add 3 psql function to handle inbox
+# migration 181-add-document-publication-delivery-statuses.js
+#   add table document_publication_delivery_status_reports
 livingdocs-server migrate up
 ```
 
 ### Remove Support for Postgres 11 :fire:
 
-🔥 Support for Postgres 11 has been removed. Please Update to Postgres 16 (12+ is supported).
+:fire: Support for Postgres 11 has been removed. Please Update to Postgres 16 (12+ is supported).
 
 ### Remove Support for Redis <5 :fire:
 
-🔥 Support for Redis <5 has been removed. Please Update to Redis 6 (5+ is supported).
-
-## Deprecations
-
-TODO: move breaking from deprcations onto the right place
-
-### Dashboards Configs ❗❗❗
-
-The following configurations are deprecated and will be removed in the future. If you need them longer than `release-2022-11`, please think about a plan with timing to not depend on the Legacy Dashboards anymore and let your Customer Solutions Manager know about it. We will find a solution.
-
-Deprecated Editor Configs:
-- `app.filters.inlineArticleList`
-- `app.filters.articleList`
-- `app.filters.pageList`
-- `app.filters.dataRecordList`
-- `app.filters.menuList`
-- `search.articleSearch.listItemComponent`
-
-* [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5498)
+:fire: Support for Redis <5 has been removed. Please Update to Redis 6 (5+ is supported).
 
 ### Metadata Plugin li-text
 
@@ -251,6 +237,39 @@ metadataPluginsToIgnoreForConfigValidation: ['li-text', 'li-string-list'],
 
 * [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4780)
 
+### All HTTP APIs: Remove support for contentType: 'multipart/form-data'"
+
+- :fire: Remove `multer` module by removing support for `contentType: 'multipart/form-data'` configs on route declarations (`LIBREAKING011`). Please come to us if the server doesn't start anymore because of that (as stated in the error message).
+- :fire: Remove [jsonp](https://en.wikipedia.org/wiki/JSONP) callback support as there was never a need for it and it wasn't documented at all.
+
+* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4785)
+
+### Document Publication Lifecycle Update
+
+:fire: Move server hook `preparePublish` hooks after metadata plugin `onPreparePublish` hooks (see [Diagram](https://docs.livingdocs.io/learn/document-lifecycle/document-publication/)).
+
+During the migration to the `preparePublish` hooks, the order accidentally changed. Before, the `prePublish` hooks were run after the metadata plugin `onPublish` hooks.
+This has the effect that required metadata are always present in the `preparePublish` hooks, unlike before where they still could be missing.
+
+* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4778)
+
+
+## Deprecations
+
+### Dashboards Configs ❗❗❗
+
+The following configurations are deprecated and will be removed in the future. If you need them longer than `release-2022-11`, please think about a plan with timing to not depend on the Legacy Dashboards anymore and let your Customer Solutions Manager know about it. We will find a solution.
+
+Deprecated Editor Configs:
+- `app.filters.inlineArticleList`
+- `app.filters.articleList`
+- `app.filters.pageList`
+- `app.filters.dataRecordList`
+- `app.filters.menuList`
+- `search.articleSearch.listItemComponent`
+
+* [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5498)
+
 
 ### Systemdata
 
@@ -269,25 +288,9 @@ Old properties are defined as getters and emit deprecation warnings (`LIDEP018`)
 - `systemdata.publication_date` > `systemdata.lastPublicationDate`
 - `systemdata.first_publication_date` > `systemdata.firstPublicationDate`
 
-### All HTTP APIs: Remove support for contentType: 'multipart/form-data'"
-
-- :fire: Remove `multer` module by removing support for `contentType: 'multipart/form-data'` configs on route declarations (`LIBREAKING011`). Please come to us if the server doesn't start anymore because of that (as stated in the error message).
-- :fire: Remove [jsonp](https://en.wikipedia.org/wiki/JSONP) callback support as there was never a need for it and it wasn't documented at all.
-
-* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4785)
-
 ### Redis 5
 
 Redis 5 has been deprecated. Please Update to Redis 6.
-
-### Document Publication Lifecycle Update
-
-:fire: Move server hook `preparePublish` hooks after metadata plugin `onPreparePublish` hooks (see [Diagram](https://docs.livingdocs.io/learn/document-lifecycle/document-publication/)).
-
-During the migration to the `preparePublish` hooks, the order accidentally changed. Before, the `prePublish` hooks were run after the metadata plugin `onPublish` hooks.
-This has the effect that required metadata are always present in the `preparePublish` hooks, unlike before where they still could be missing.
-
-* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4778)
 
 ### Metadata Plugin li-desknet-platforms
 
@@ -307,7 +310,7 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 
 ## APIs :gift:
 
-### Delivery Status
+### Publication Delivery
 
 - :gift: Add server API `publicationApi.getDeliveryStatusReport({projectId, documentId})`
 - :gift: Add server API `publicationApi.triggerBuild` -> fires a new [Server Event]({{< ref "/reference-docs/server-extensions/server-events" >}}) `document.build`
@@ -315,7 +318,7 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 - :gift: Add [Server Event]({{< ref "/reference-docs/server-extensions/server-events" >}}) `document.build`
 - :gift: Add [Webhook Event]({{< ref "/reference-docs/server-extensions/webhooks" >}}) `document.build`
 
-* [Documentation: TODO]()
+* [Guide](https://docs.livingdocs.io/guides/editor/publish-control/delivery/)
 * [PR: Delivery Status Fetching](https://github.com/livingdocsIO/livingdocs-server/pull/4740)
 * [PR: Delivery Status Reporting](https://github.com/livingdocsIO/livingdocs-server/pull/4731)
 
