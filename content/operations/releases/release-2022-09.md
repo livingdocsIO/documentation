@@ -371,6 +371,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.21): chore: improve comment
 - [v81.20.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.20): fix: update framework to latest release-2022-09 patch 24.3.3
 - [v81.20.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.19): chore(text-formatting): Remove AngularJS component link directive
 - [v81.20.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.18): fix(archived documents): Are removed from multilist inbox
