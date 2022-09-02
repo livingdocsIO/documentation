@@ -210,28 +210,29 @@ module.exports = {
     additionalProperties: false,
     properties: {
       id: {
-        plugin: 'li-text'
+        type: 'string'
       },
       category: {
-        plugin: 'li-text'
+        type: 'string'
       },
       urgency: {
-        plugin: 'li-number'
+        type: 'string'
       },
       source: {
-        plugin: 'li-text'
+        type: 'string'
       },
       timestamp: {
-        plugin: 'li-datetime'
+        type: 'string',
+        format: 'date-time'
       },
       service: {
-        plugin: 'li-text'
+        type: 'string'
       },
       keywords: {
-        plugin: 'li-text'
+        type: 'string'
       },
       note: {
-        plugin: 'li-text'
+        type: 'string'
       }
     }
   }
