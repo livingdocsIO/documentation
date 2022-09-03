@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fast-json-stringify from 5.1.0 to v5.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4826)
 * [fix(documentSoftLock): Counter alginment](https://github.com/livingdocsIO/livingdocs-editor/pull/5826)
 * [Fix transactions during project create and project config updates](https://github.com/livingdocsIO/livingdocs-server/pull/4818)
 * [Standardise the alt text and directive prefilling](https://github.com/livingdocsIO/livingdocs-editor/pull/5821)
