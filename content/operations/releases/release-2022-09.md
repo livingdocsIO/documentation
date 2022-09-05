@@ -125,41 +125,10 @@ References:
 
 ### Table Dashboards (full working version)
 
-TODO@beni: how we want to exactly announce/describe the Table Dashboards?
-
-Table Dashboards are a flexible type of dashboards where individual columns can be configured. From the September release on this is the new standard Dashboard and old versions should be migrated to these new type of Dashboard
-
-The following functionality has been added in this release:
-* Design improvements
-* Hugo Drop
-* Main Cell Configuration possibilities
-* Cross Project Document Drag&Drop
-* Show number of documents / empty state
-* Highlight document in Table Dashboard when coming back from document
-* Set/change homepage
-
-The following functionality has been added in past releases
-* release-2021-07
-  * Search tooltip for document id matches
-  * Document drag & drop
-* release-2021-05
-  * Document creation from a table dashboard
-  * Show publish state and allow quick publish under certain conditions
-  * Display and inline editing for `li-string-list` metadata properties
-  * First step towards using table dashboard as default for articles, pages, and data records
-    * There are reasonable defaults for filters and dashboard columns depending on document type
-    * Can be enabled, by setting `documents.useLegacyDashboards` to `false` in the editor config
-    * Not enabled by default yet because some features are still missing and will be added in the next release (see below)
-* release-2021-03
-  * Basic configuration of table dashboards (main menu entry, filters, column layout)
-  * Display and inline editing for these metadata properties: `li-text`, `li-boolean`, `li-category`, `li-document-reference`
-  * Default column component that displays document thumbnail and title
-  * Custom components can be configured to render the content of a table cell
+Table Dashboards are a flexible type of dashboards where individual columns can be configured. From the September release on this is the new standard Dashboard and old versions should be migrated to these new type of Dashboard.
 
 References:
 * [Documentation]({{< ref "/reference-docs/project-config/editor-settings#example-table-dashboard" >}})
-* [PR: Default Table Dashboards on Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5498)
-* [PR: Default Table Dashboards on Server](https://github.com/livingdocsIO/livingdocs-server/pull/4671)
 
 ### Desk-Net: Schedule Extensions + Production Features
 
