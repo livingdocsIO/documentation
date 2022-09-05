@@ -116,6 +116,6 @@ Also, you need to make sure that you always migrate from the last version of you
 
 There is currently no support for bump from a reference design to an embedded design over the CLI, but the UI allows you to do so.
 
-Navigate to "Project Setup / Design Migration". If your project config is setup correctly and contains an embedded design then you will have the option to choose "migrate to embedded design" in the Design Bump setup. Just check this and make sure the version of the reference design and the embedded design are correct.
+Navigate to "Project Setup / Design Migration". If your project config is setup correctly and contains an embedded design then you will have the option to choose "migrate to embedded design" in the Design Bump setup. The option is only shown when you already have a document created with the embedded Design version. Just check this and make sure the version of the reference design and the embedded design are correct.
 
 {{< img src="bump-to-embedded-design.png" alt="Embedded Design Bump" >}}
