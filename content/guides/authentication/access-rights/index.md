@@ -41,11 +41,11 @@ Pages:
 
 Data:
 
-- `readData`, users that can read data
-- `createData`, users that can create data
-- `writeData`, users that can write data
-- `publishData`, users that can publish data
-- `unpublishData`, users that can unpublish data
+- `readDataRecords`, users that can read data
+- `createDataRecords`, users that can create data
+- `writeDataRecords`, users that can write data
+- `publishDataRecords`, users that can publish data
+- `unpublishDataRecords`, users that can unpublish data
 
 Lists (main menu entry):
 
