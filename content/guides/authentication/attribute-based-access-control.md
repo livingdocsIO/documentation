@@ -45,8 +45,8 @@ policies: [
       // effect - 'ALLOW' or 'DENY' - access based on an action and a resource
       // action - what kind of action you want to do
       // resource - where you want to execute an action
-      {effect: 'DENY', action: 'metadata.update', resource: {handle: 'proofreading', attribute: 'priority'}},
-      {effect: 'DENY', action: 'metadata.update', resource: {handle: 'proofreading'}},
+      {effect: 'DENY', action: 'document.metadata.update', resource: {handle: 'proofreading', attribute: 'priority'}},
+      {effect: 'DENY', action: 'document.metadata.update', resource: {handle: 'proofreading'}},
       {effect: 'ALLOW', action: 'dashboard.get', resource: {handle: 'kanban-proofreading'}}
     ]
   }
@@ -62,7 +62,7 @@ At the moment these actions are supported and will be evaluated client-side. All
 // handle = metadata property name
 {
   effect: 'DENY',
-  action: 'metadata.update',
+  action: 'document.metadata.update',
   resource: {handle: 'proofreading'}
 }
 
@@ -71,7 +71,7 @@ At the moment these actions are supported and will be evaluated client-side. All
 // attribute = proerty of metadata field
 {
   effect: 'DENY',
-  action: 'metadata.update',
+  action: 'document.metadata.update',
   resource: {handle: 'proofreading', attribute: 'priority'}
 }
 
