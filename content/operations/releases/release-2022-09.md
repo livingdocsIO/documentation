@@ -341,6 +341,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.23): fix(documentSoftLock): Counter alginment
 - [v81.20.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.22): fix: close document copy popup when clicking on X or outside the popup
 - [v81.20.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.21): chore: improve comment
 - [v81.20.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.20): fix: update framework to latest release-2022-09 patch 24.3.3
