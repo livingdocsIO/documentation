@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Table Dashboards: provide a documentLoader to dashboard cards](https://github.com/livingdocsIO/livingdocs-editor/pull/5805)
 * [Error Message when Password does not match the username is now centered](https://github.com/livingdocsIO/livingdocs-editor/pull/5829)
 * [fix(deps): update dependency fast-json-stringify from 5.1.0 to v5.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4826)
 * [fix(documentSoftLock): Counter alginment](https://github.com/livingdocsIO/livingdocs-editor/pull/5826)
