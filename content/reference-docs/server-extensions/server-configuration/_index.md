@@ -16,7 +16,7 @@ menus:
   "logs": "{{< a href="#logging" title="<logging config>">}}",
 
   // services
-  "server": "{{< a href="#server" title="<http server config>" >}}",
+  "httpServer": "{{< a href="#http-server" title="<http server config>" >}}",
   "editor": "{{< a href="#editor" title="<editor config>">}}",
   "db": "{{< a href="#postgres-database" title="<postgres database config>">}}",
   "redis": "{{< a href="#redis-database" title="<redis database config>">}}",
@@ -97,12 +97,33 @@ logs: {
 
 ## Services
 
-#### Server
+#### HTTP Server
 
 ```js
-server: {
+httpServer: {
+  // The http listen address
+  // In case ipv6 is disabled on the host, you should use `0.0.0.0`
+  host: '::',
   port: 9090,
-  max_json_request_size: '100kb'
+  maxRequestBodySize: '500kb',
+  xForwardedForTrustIps: 'loopback,uniquelocal,172.17.0.0/24',
+
+  // Enable gzip compression for all responses, usually you want to do this in the loadbalancer instead
+  useGzipCompression: false,
+
+  // Serve the json formatted using
+  // two spaces if set to true
+  prettyJsonStringify: false,
+
+  // Optionally, instead of host and port,
+  // you can use a unix socket path
+  // path: '/path/to/unix.socket
+
+  // If this config is present,
+  // an https server will be started.
+  // The options are passed as `https.createServer(opts)`
+  https: {key, cert}
+
 }
 ```
 
