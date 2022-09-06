@@ -336,6 +336,7 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v194.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.5): chore(httpServer): Log deprecation warnings about server configs that moved to httpServer
 - [v194.0.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.4): fix(issue-management): enable composition api
 - [v194.0.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.3): fix: add assets property to contentType config
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
