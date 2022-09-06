@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(Session): Styling updated when expired](https://github.com/livingdocsIO/livingdocs-editor/pull/5832)
 * [fix(deps): update dependency jose from 4.9.0 to v4.9.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4821)
 * [httpServer config and system metadata fixes](https://github.com/livingdocsIO/livingdocs-server/pull/4830)
 * [Table Dashboards: provide a documentLoader to dashboard cards](https://github.com/livingdocsIO/livingdocs-editor/pull/5805)
