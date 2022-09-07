@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Cut and paste components](https://github.com/livingdocsIO/livingdocs-editor/pull/5824)
 * [fix(framework): Update to 24.5.0](https://github.com/livingdocsIO/livingdocs-server/pull/4836)
 * [Update Elasticsearch document index on all publish events](https://github.com/livingdocsIO/livingdocs-server/pull/4834)
 * [fix(Session): Styling updated when expired](https://github.com/livingdocsIO/livingdocs-editor/pull/5832)
