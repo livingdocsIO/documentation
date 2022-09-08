@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix/Small Release Fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/5836)
 * [`cheerio` can be passed from downstream implementation to `CheerioHtml` in `params` argument](https://github.com/livingdocsIO/livingdocs-server/pull/4812)
 * [Cut and paste components](https://github.com/livingdocsIO/livingdocs-editor/pull/5824)
 * [fix(framework): Update to 24.5.0](https://github.com/livingdocsIO/livingdocs-server/pull/4836)
