@@ -343,6 +343,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.27): fix(desknet-create): resolve includes
 - [v81.20.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.26): fix(insert panel): Divider visibility
 - [v81.20.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.25): fix(Session): Styling updated when expired
 - [v81.20.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.24): fix(table dashboards): provide a documentLoader to dashboard cards
