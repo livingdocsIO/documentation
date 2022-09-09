@@ -36,7 +36,7 @@ EOF
 
 --endpoint--
 ```
-GET api/v1/documents/:documentId/addDeliveryStatus
+POST api/v1/documents/:documentId/addDeliveryStatus
 ```
 
 --parameters--
