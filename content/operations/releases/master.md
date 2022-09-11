@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fast-json-stringify from 5.2.0 to v5.3.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4844)
 * [fix(deps): update dependency aws-sdk from 2.1209.0 to v2.1213.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4843)
 * [Resolve Includes after creating a page from desk-net](https://github.com/livingdocsIO/livingdocs-editor/pull/5841)
 * [The insert panel/edit state persists when someone closes the copy button](https://github.com/livingdocsIO/livingdocs-editor/pull/5834)
