@@ -295,6 +295,8 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 
 ### Security
 
+* [Cheerio is now an optional dependency, downstream has to include it](https://github.com/livingdocsIO/livingdocs-server/pull/4838)
+
 ### Design
 * [Dashboards: Flatter Design](https://github.com/livingdocsIO/livingdocs-editor/pull/5605)
 
