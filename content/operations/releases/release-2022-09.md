@@ -173,11 +173,11 @@ livingdocs-server migrate up
 
 ### Remove Support for Postgres 11 :fire:
 
-:fire: Support for Postgres 11 has been removed. Please Update to Postgres 16 (12+ is supported).
+:fire: Support for Postgres 11 has been removed. Please Update to Postgres 14 (12+ is supported).
 
 ### Remove Support for Redis <5 :fire:
 
-:fire: Support for Redis <5 has been removed. Please Update to Redis 6 (5+ is supported).
+:fire: Support for Redis <5 has been removed. Please Update to Redis 7 (5+ is supported).
 
 ### Metadata Plugin li-text
 
@@ -259,7 +259,7 @@ Old properties are defined as getters and emit deprecation warnings (`LIDEP018`)
 
 ### Redis 5
 
-Redis 5 has been deprecated. Please Update to Redis 6.
+Redis 5 has been deprecated. Please Update to Redis 7.
 
 ### Metadata Plugin li-desknet-platforms
 
