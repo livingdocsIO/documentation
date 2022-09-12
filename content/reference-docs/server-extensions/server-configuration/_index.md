@@ -1133,6 +1133,7 @@ assetManagement: {
 Custom previews are a way to display a custom preview of a document. This could be a custom mobile preview, a preview of a finished article living on the frontend or anything that fits the specific customer need. You will need to enable the feature and register a custom render function that will contain the `documentId`.
 
 ```js
+// all.js
 preview: {
   enabled: true
 }
@@ -1140,9 +1141,11 @@ preview: {
 
 ```js
 liServer.registerInitializedHook(async () => {
-  const previewApi = liServer.features.api('li-preview')
+  const previewApi = liServer.features.api
+  const documentApi = liServer.features.api('li-documents').document('li-preview')
   const renderFunction = async ({documentId}) => {
-    return {html: '<div>HTML FROM RENDER FUNCTION </div>'}
+  const doc = await documentApi.getLatestDocument(documentId)
+    return {html: `<div><h1>${doc.title}</h1><p>This is a custom preview</p></div>`}
   }
   previewApi.registerRenderFunction(renderFunction)
 })
@@ -1150,6 +1153,18 @@ liServer.registerInitializedHook(async () => {
 
 {{< img src="images/custom_preview.png" alt="Teaser Preview" >}}
 
+
+Alternatively, your render function can just return the url with rendered html. It can be useful when your document is rendered on an external system or to have a preview of your published article on the delivery.
+
+```js
+liServer.registerInitializedHook(async () => {
+  const previewApi = liServer.features.api('li-preview')
+  const renderFunction = async ({documentId}) => {
+    return {previewUrl: `https://website.io/article/${documentId}`}
+  }
+  previewApi.registerRenderFunction(renderFunction)
+})
+```
 ## Integrations
 
 
