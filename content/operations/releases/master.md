@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix user details](https://github.com/livingdocsIO/livingdocs-editor/pull/5783)
 * [Allow null values for 'validFrom' and 'validTo' to be able to unset their values](https://github.com/livingdocsIO/livingdocs-server/pull/4801)
 * [fix(deps): update dependency fast-json-stringify from 5.2.0 to v5.3.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4844)
 * [fix(deps): update dependency aws-sdk from 2.1209.0 to v2.1213.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4843)
