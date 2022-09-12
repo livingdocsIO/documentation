@@ -344,6 +344,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.29): fix: clearing of 'validFrom' and 'validTo'
 - [v81.20.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.28): fix(copyButton): Article State persists on cancel
 - [v81.20.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.27): fix(desknet-create): resolve includes
 - [v81.20.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.26): fix(insert panel): Divider visibility
