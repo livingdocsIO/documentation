@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fast-glob from 3.2.11 to v3.2.12 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4842)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
