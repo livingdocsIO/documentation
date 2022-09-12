@@ -336,6 +336,7 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v194.0.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.7): fix: allow null values for 'validFrom' and 'validTo'.
 - [v194.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.6): fix(google-vision): Rework google vision feature register function and set to disable by default
 - [v194.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.5): chore(httpServer): Log deprecation warnings about server configs that moved to httpServer
 - [v194.0.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.4): fix(issue-management): enable composition api
