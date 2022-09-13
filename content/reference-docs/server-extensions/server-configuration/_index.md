@@ -1141,8 +1141,8 @@ preview: {
 
 ```js
 liServer.registerInitializedHook(async () => {
-  const previewApi = liServer.features.api
-  const documentApi = liServer.features.api('li-documents').document('li-preview')
+  const previewApi = liServer.features.api('li-preview')
+  const documentApi = liServer.features.api('li-documents').document
   const renderFunction = async ({documentId}) => {
   const doc = await documentApi.getLatestDocument(documentId)
     return {html: `<div><h1>${doc.title}</h1><p>This is a custom preview</p></div>`}
