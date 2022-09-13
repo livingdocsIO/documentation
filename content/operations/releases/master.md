@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix: add custom preview render example](https://github.com/livingdocsIO/livingdocs-server/pull/4840)
 * [fix(deps): update dependency fast-glob from 3.2.11 to v3.2.12 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4842)
 
 
