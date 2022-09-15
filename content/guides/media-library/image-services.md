@@ -263,6 +263,8 @@ allows to proxy image requests through a 'real' image service like imgix and
 write params to the url dynamically to define e.g. the `width` or crop
 of an image.
 
+We support the setting of allowed or disabled mime types which defines which mime types the custom image service will handle but does not stop upload in the editor itself. This is for cases where you want to use different image services for different mime types.
+
 Example of registering an image service:
 ```js
 const myImageService = {
@@ -273,7 +275,7 @@ const myImageService = {
   supportsVideoConversion: true, // default: false
   // Either allowedMimeTypes or disabledMimeTypes can be defined.
   // If you define both of them, disabledMimeTypes will be ignored.
-  // If neither is defined, all mime types are allowed.
+  // If neither is defined, all mime types will be handled by this service
   allowedMimeTypes: ['image/jpeg', 'image/png'],
   disabledMimeTypes: ['image/gif', 'image/webp'],
 
