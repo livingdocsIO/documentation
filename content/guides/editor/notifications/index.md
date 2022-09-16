@@ -65,6 +65,9 @@ module.exports = {
 }
 ```
 
+The `enableConsumers` is the configuration used to enable/disable the email, slack consumers.
+By default, they will be enabled in server instances that define `roles: ['worker']` in server configuration.
+
 
 ### Project config
 Certain _actions groups_ can be defined within the [project config for notifications]({{< ref "/reference-docs/project-config/notifications.md" >}}).
