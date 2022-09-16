@@ -15,6 +15,8 @@ menus:
 
   "logs": "{{< a href="#logging" title="<logging config>">}}",
 
+  "roles": "{{< a href="#roles" title="<roles config>">}}",
+
   // services
   "httpServer": "{{< a href="#http-server" title="<http server config>" >}}",
   "editor": "{{< a href="#editor" title="<editor config>">}}",
@@ -62,6 +64,16 @@ The `customerId` property is a string which is used to identify the server. It w
 
 ```js
 customerId: 'daily-planet'
+```
+
+## Roles
+
+{{< added-in release-2022-11 >}}
+
+[More info about roles]({{< ref "../roles" >}})
+
+```js
+roles: ['write', 'worker'] // default: ['write', 'worker']
 ```
 
 ## Logging
@@ -480,7 +492,7 @@ designs: {
 
 ```js
 documents: {
-  // enable/disable the publish control consumers. With readonly processes, you should configure that
+  // enable/disable the publish control consumers. With read-only processes, you should configure that
   enableConsumers: true,
   selectedImageService: 'imgix',
   imageServices: {
@@ -494,9 +506,12 @@ documents: {
 ```
 
 See [image service configuration]({{< ref "/guides/media-library/image-services.md" >}}) for more information.
+
 The `paginationFindConfig` allows you to set how many documents you can see on the documents dashboard.
 Defaults to max. 100 documents.
 
+The `enableConsumers` is the configuration used to enable/disable the publish control consumers.
+By default, they will be enabled in server instances that define `roles: ['worker']` in server configuration.
 
 #### Document-lists
 
