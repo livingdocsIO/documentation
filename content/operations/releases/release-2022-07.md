@@ -408,6 +408,7 @@ Allows the patch operation `archive` via public API to archive an asset.
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v189.0.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.33): fix(billing): add a test for users that are not valid yet
 - [v189.0.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.32): fix(desknet): Get default content from content type, not settings
 - [v189.0.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.31): chore(httpServer): Log deprecation warnings about server configs that moved to httpServer
 - [v189.0.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.30): chore(desknet): Add tests for title sync
