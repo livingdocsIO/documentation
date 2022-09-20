@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Do not mutate global metadata plugin objects](https://github.com/livingdocsIO/livingdocs-server/pull/4862)
 * [The component Link icon now always remounts with a selection change](https://github.com/livingdocsIO/livingdocs-editor/pull/5848)
 * [fix(desknet): Get default content from content type, not settings](https://github.com/livingdocsIO/livingdocs-server/pull/4853)
 * [fix: add custom preview render example](https://github.com/livingdocsIO/livingdocs-server/pull/4840)
