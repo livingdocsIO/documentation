@@ -439,6 +439,7 @@ Here is a list of all patches after the release has been announced.
 - [v189.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.2): fix(oembed): add spotify and data wrapper
 
 ### Livingdocs Editor Patches
+- [v80.38.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.58): chore(prepare-publish): implement code review feedback
 - [v80.38.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.57): fix(ComponentLink): Now moves with componentSelection
 - [v80.38.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.56): fix(copyButton): Article State persists on cancel
 - [v80.38.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.55): fix(Session): Styling updated when expired
