@@ -37,7 +37,7 @@ POST api/beta/composition/:documentId
 |Name|Type|Notes|
 |-|-|-|
 |fields|array\<string>|A list of the properties which should be computed and returned.<br>Default: ['systemdata', 'content', 'metadata', 'includes', 'html', 'design']|
-|metadata.preload|object|You can pass metadata properties which should be resolved.<br>This only works for properties of type 'li-reference', 'li-reference-list' and 'li-list-reference'<br>Example: `{myProp: true}`|
+|metadata.preload|object|You can pass metadata properties which should be resolved.<br>This only works for properties of type 'li-reference', 'li-document-reference', 'li-reference-list' and 'li-list-reference'<br>Example: `{metadata: {preload: {myProp: true}}}`|
 |resolveIncludes|boolean|Resolve includes. If `true` then 'includes' will be populated and includes will be resolved in the rendered `html`|
 |renderOptions.decodeHtml|boolean|Decode html entities into unicode|
 |renderOptions.renderDirectiveInfo|boolean|Add attributes with the directive name to directive elements.|
