@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(metadata): add strict ui schema for li-target-length](https://github.com/livingdocsIO/livingdocs-server/pull/4827)
 * [fix/invitation mail](https://github.com/livingdocsIO/livingdocs-server/pull/4858)
 * [Fix the toggling of li-component-link.vue with multiple links](https://github.com/livingdocsIO/livingdocs-editor/pull/5851)
 * [fix(deps): update dependency date-fns from 2.29.2 to v2.29.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4861)
