@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Move validity icon to avoid duration overlap](https://github.com/livingdocsIO/livingdocs-editor/pull/5863)
 * [Hide teaser format select when no transforms are available](https://github.com/livingdocsIO/livingdocs-editor/pull/5862)
 * [fix(metadata): add strict ui schema for li-target-length](https://github.com/livingdocsIO/livingdocs-server/pull/4827)
 * [fix/invitation mail](https://github.com/livingdocsIO/livingdocs-server/pull/4858)
