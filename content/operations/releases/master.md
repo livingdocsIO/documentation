@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(metadata): fix vue type of reference label to not log error](https://github.com/livingdocsIO/livingdocs-editor/pull/5869)
 * [Added expectedOrActualPublicationDate as a sort field for dashboards](https://github.com/livingdocsIO/livingdocs-server/pull/4828)
 * [fix cleanup-metadata command which was throwing error](https://github.com/livingdocsIO/livingdocs-server/pull/4802)
 * [Move validity icon to avoid duration overlap](https://github.com/livingdocsIO/livingdocs-editor/pull/5863)
