@@ -25,6 +25,7 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Desk-Net Integration](#li-desknet-integration)                | li-desknet-integration   | Desk-Net Integration                          | D, T                                                                                  | Link to Desk-Net distribution entry                        |
 | [Desk-Net Schedule](#li-desknet-schedule)                | li-desknet-schedule   | Desk-Net Schedule                          | D                                                                                  | Platform/category select and date input                        |
 | [Document Reference](#li-document-reference)       | li-document-reference    | A reference to another document               | D, M, T                                                                            | document selection (dialog)                                |
+| [Document References](#li-document-references)       | li-document-references    | A list of references to other documents               | D, M, I                                                                            | document selection (dialog)                                |
 | [Enum](#li-enum)                                   | li-enum                  | string from static list, validated on publish | D, M, T                                                                            | select                                                     |
 | [External Id](#li-external-id)                     | li-external-id           | id marker for an external system              | D, M, T                                                                            | select                                                     |
 | [Document Target Length](#li-target-length)        | li-target-length         | Target length in characters for a document    | D                                                                                  | number input or length slider                              |
@@ -359,8 +360,8 @@ A `li-document-reference` metadata field shows a reference to another document. 
 // contentType[].metadata / mediaType[].metadata
 metadata: [
   {
-    handle: 'reference',
-    type: 'li-document-reference',
+    handle: 'references',
+    type: 'li-document-references',
     config: {
       // common
       hideFromForm: false,                     // optional, default: false
@@ -374,10 +375,7 @@ metadata: [
     ui: {
       label: 'foo',                  // optional, takes camelized name otherwise
       config: {
-        // style: 'default' -> default for metadata
-        // style: 'teaser' -> default for include paramsSchema
-        // style: 'minimal' -> only show a selection element with a title (no modal)
-        style: 'default',
+        style: 'default',            // optional, defaults to 'default'. Other options: 'teaser'
         useDashboard: '',            // optional, reference to a custom dashboard
         baseFilters: [],             // optional, filters that the user can set in the UI (below the search input)
         displayFilters: [],          // optional, invisible filters and applied to every search (including the default result list)
@@ -391,6 +389,60 @@ References:
 * [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter" >}})
 * [Base Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/base-filter" >}})
 
+## li-document-references
+
+{{< added-in release-2022-11 >}}
+
+A `li-document-references` metadata field is a list of references to other documents. A Document Selection Dialog is shown, based on shorthand queries and `useDashboard` to select documents.
+
+**Storage Format**:
+```js
+{
+  $ref: 'documents',
+  references: [{
+    id: <String>
+  }]
+}
+```
+**Default UI**: Document Selection (Dialog) (`liMetaReferenceForm`)
+
+![image](https://user-images.githubusercontent.com/172394/163945540-02557891-ee21-42c5-a03e-4bfb1723e228.png)
+
+**Project Config**
+```js
+// contentType[].metadata / mediaType[].metadata
+metadata: [
+  {
+    handle: 'reference',
+    type: 'li-document-references',
+    config: {
+      // common
+      hideFromForm: false,                     // optional, default: false
+      required: true,                          // optional, default: false
+      requiredErrorMessage: 'Provide a value', // optional
+      // specific
+      documentType: 'article',                 // optional, one of article, page, data-record
+      contentType: 'my-content-type'           // optional, filters the document selection
+      published: true,                         // optional, shorthand for publication baseFilter, default: false
+    },
+    ui: {
+      label: 'foo',                  // optional, takes camelized name otherwise
+      config: {
+        // style: 'default' -> default for metadata
+        // style: 'teaser' -> default for include paramsSchema
+        style: 'default',
+        useDashboard: '',            // optional, reference to a custom dashboard
+        baseFilters: [],             // optional, filters that the user can set in the UI (below the search input)
+        displayFilters: [],          // optional, invisible filters and applied to every search (including the default result list)
+      }
+    }
+  }
+]
+```
+
+References:
+* [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter" >}})
+* [Base Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/base-filter" >}})
 
 
 ## li-enum
@@ -736,6 +788,9 @@ metadata: [
 **Default UI**: date/time input (`liMetaDatetimeForm`)
 
 ## li-reference-list
+
+With `release-2022-11` this is superseeded by `li-document-references`.
+
 **Storage Format**:
 ```js
 {
@@ -780,7 +835,7 @@ metadata: [
       documentType: 'data-record',             // optional
       contentType: 'author',                   // optional
       prefillAuthor: true                      // optional, default: false
-      published: true,                         // optional, shorthand for publication displayFilter, default: false
+      published: true,                         // optional, shorthand for publication baseFilter, default: false
     },
     ui: {
       label: 'foo',                            // optional, takes camelized name otherwise
