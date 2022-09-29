@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(billing): show existing users in detail month view](https://github.com/livingdocsIO/livingdocs-editor/pull/5854)
 * [fix(users): return correct user occupation](https://github.com/livingdocsIO/livingdocs-server/pull/4864)
 * [Add roles write and worker for public-api endpoints, defined with instance configuration](https://github.com/livingdocsIO/livingdocs-server/pull/4814)
 * [Add image fieldExtractor to planning-system project](https://github.com/livingdocsIO/livingdocs-server/pull/4872)
