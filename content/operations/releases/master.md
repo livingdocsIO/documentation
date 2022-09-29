@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(users): return correct user occupation](https://github.com/livingdocsIO/livingdocs-server/pull/4864)
 * [Add roles write and worker for public-api endpoints, defined with instance configuration](https://github.com/livingdocsIO/livingdocs-server/pull/4814)
 * [Add image fieldExtractor to planning-system project](https://github.com/livingdocsIO/livingdocs-server/pull/4872)
 * [fix(metadata): fix vue type of reference label to not log error](https://github.com/livingdocsIO/livingdocs-editor/pull/5869)
