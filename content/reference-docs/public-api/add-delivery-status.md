@@ -1,7 +1,7 @@
 ---
 title: Add Delivery Status
 identifier: Add Delivery Status
-weight: 13
+weight: 14
 renderTOC: false
 menus:
   reference-docs:
@@ -21,7 +21,7 @@ curl -k -X POST "https://edit.livingdocs.io/proxy/api/api/v1/documents/:document
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H 'Content-Type: application/json; charset=utf-8' \
-  --data-binary @- << EOF 
+  --data-binary @- << EOF
   {
     "reportId": "2SG2MAA9RwPn",
     "projectId": 1,
@@ -30,7 +30,7 @@ curl -k -X POST "https://edit.livingdocs.io/proxy/api/api/v1/documents/:document
     "deliveryHandle": "web",
     "status": "success",
     "message": "Message with <strong>html</strong>"
-  } 
+  }
 EOF
 ```
 

@@ -1,10 +1,10 @@
 ---
 title: Menus
-weight: 2
+weight: 12
 renderTOC: false
 menus:
   reference-docs:
-    parent: Routing
+    parent: Public API
 ---
 
 {{< api-example

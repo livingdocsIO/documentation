@@ -1,10 +1,10 @@
 ---
-title: Path
-weight: 1
+title: Routing
+weight: 13
 renderTOC: false
 menus:
   reference-docs:
-    parent: Routing
+    parent: Public API
 ---
 
 {{< api-example
