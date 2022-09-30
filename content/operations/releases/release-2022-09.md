@@ -339,6 +339,7 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v194.0.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.11): fix(hugo-api): Make royaltyRecipients path configurable
 - [v194.0.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.10): fix: add index for user_id in user_occupations
 - [v194.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.9): fix(desknet): Get default content from content type, not settings
 - [v194.0.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.8): fix(cheerio): `cheerio` can be passed from downstream implementation to `CheerioHtml` in `params` argument, wrapper around cheerio require
