@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [German translation for comments toggles are no longer mixed up](https://github.com/livingdocsIO/livingdocs-editor/pull/5876)
 * [Fix prepare-publication endless loop](https://github.com/livingdocsIO/livingdocs-editor/pull/5871)
 * [Set timestamps for precision date to 12:00 UTC](https://github.com/livingdocsIO/livingdocs-editor/pull/5872)
 * [fix(billing): show existing users in detail month view](https://github.com/livingdocsIO/livingdocs-editor/pull/5854)
