@@ -350,6 +350,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.39): fix(editor): fix prepare-publication endless loop
 - [v81.20.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.38): fix(German Comments): Mix up corrected
 - [v81.20.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.37): fix: remove unnecessary newline
 - [v81.20.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.36): fix(metadata): fix vue type of reference label to not log error
