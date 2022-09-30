@@ -53,16 +53,16 @@ POST api/v1/import/mediaLibrary
       "externalId": "6hedie82",
       "mediaType": "image",
       "asset": {
-        "key": "2020/1/22/3a2ede93.jpeg",
-        "url": "http://li.s3.amazonaws.com/2020/1/22/3a2ede93.jpeg",
-        "size": 290339,
-        "width": 1200,
-        "height": 750,
-        "filename": "image.jpg",
+        "key": "2022/08/25/d6068c02-ca85-421d-948d-ee0e2c15f372.jpeg",
+        "url": "https://livingdocs-images-development.s3.amazonaws.com/2022/08/25/d6068c02-ca85-421d-948d-ee0e2c15f372.jpeg",
+        "size": 34910,
+        "width": 640,
+        "height": 427,
+        "filename": "super-mario.jpeg",
         "mimeType": "image/jpeg"
       },
       "metadata": {
-        "title": "Custom title"
+        "title": "This is Super Mario!"
       }
     }
   ]
