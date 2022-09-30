@@ -7,14 +7,15 @@ menus:
 ---
 
 The editor settings control the behavior of your editor UX, in particular:
-- [user menu]({{< ref "editor-settings#user-menu" >}})
-- [main navigation]({{< ref "editor-settings#main-navigation" >}})
-- [dashboards]({{< ref "editor-settings#dashboards" >}})
-- [start page]({{< ref "editor-settings#startpage" >}})
-- [document creation flow]({{< ref "editor-settings#document-creation-flow" >}})
-- [media library]({{< ref "editor-settings#media-library" >}})
-- [document lists]({{< ref "editor-settings#document-lists" >}})
-- [text formatting]({{< ref "editor-settings#text-formatting" >}})
+- [User menu]({{< ref "editor-settings#user-menu" >}})
+- [Main navigation]({{< ref "editor-settings#main-navigation" >}})
+- [Dashboards]({{< ref "editor-settings#dashboards" >}})
+- [Start page]({{< ref "editor-settings#startpage" >}})
+- [Document creation flow]({{< ref "editor-settings#document-creation-flow" >}})
+- [Media library]({{< ref "editor-settings#media-library" >}})
+- [Document lists]({{< ref "editor-settings#document-lists" >}})
+- [Inline links]({{< ref "editor-settings#inline-links" >}})
+- [Text formatting]({{< ref "editor-settings#text-formatting" >}})
 
 An example:
 ```js
@@ -378,7 +379,7 @@ Custom dashboards have some basic properties in common which are described in mo
 
 #### handle
 
-Identifier for a custom dashboard. Is also used as a reference for the [main navigation](#main-navigation)
+Identifier for a custom dashboard. It's also used as a reference for the [main navigation](#main-navigation)
 
 #### type
 
@@ -398,13 +399,16 @@ With `release-2021-03` the `baseFilters` for the Media Library Dashboards are de
 
 #### sort
 
-Sort the result, possible values are:
-- `relevance` (default),
+It's a shorthand to define `sortBy` properties applied to `baseFilters`. 
+Defines the order of the elements in a dashboard.
+Possible values are:
+
+- `-updated_at` / `updated_at` (Default),
 - `-created_at` / `created_at`,
-- `-updated_at` / `updated_at`
-- a metadata property e.g. `metadata.proofreading.priority`
+- `title`
+- any metadata property e.g. `metadata.proofreading.priority`
 
-
+When a query string is present, sorting is defined by the `relevance` with the search term.
 ### Example: Dashboard
 ```js
 dashboards: [
@@ -773,6 +777,10 @@ documentLists: {
 
 {{< added-in release-2022-09 block >}}
 
+
+{{< img src="images/inline_links.png" alt="image" >}}
+
+
 ```js
 inlineLinks: {
   dashboard: {
@@ -785,6 +793,9 @@ inlineLinks: {
   }
 }
 ```
+### useDashboard
+
+`useDashboard` defines which dashboard is going to be renderered when the user clicks on `Extended Search`.
 ### displayFilters
 
 [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter" >}}) are filters that the user can set in the UI (below the search input).
