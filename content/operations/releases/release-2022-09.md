@@ -351,6 +351,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.41): fix(toolbar): Handle anchor links as internal
 - [v81.20.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.40): fix(creation-flow): Prefill values after creating document
 - [v81.20.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.39): fix(editor): fix prepare-publication endless loop
 - [v81.20.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.38): fix(German Comments): Mix up corrected
