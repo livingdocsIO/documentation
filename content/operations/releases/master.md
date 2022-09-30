@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Translate search](https://github.com/livingdocsIO/livingdocs-editor/pull/5874)
 * [fix(hugo-api): Make royaltyRecipients path configurable](https://github.com/livingdocsIO/livingdocs-server/pull/4870)
 * [Prefill values after creating document using the new creation flow](https://github.com/livingdocsIO/livingdocs-editor/pull/5879)
 * [German translation for comments toggles are no longer mixed up](https://github.com/livingdocsIO/livingdocs-editor/pull/5876)
