@@ -33,7 +33,7 @@ GET api/v1/publications/search
 |?categories|string|Comma separated list of category ids for which documents should be found. Categories are concatenated with OR. Example: 'sport,fashion'|
 |?languages|string|Comma separated list of languages for which documents should be found. Languages are concatenated with OR. Example: 'en,de'|
 |?languageGroupId|string|A GroupId used to fetch all translations of a document Using the ?languages param a document in a specific language can be fetched. Example: '?languageGroupId=47?language=de'|
-|?contentTypes|string|Comma separated list of content-types for which documents should be found. Content types are concatenated with OR. Example: 'article,author'|
+|?contentTypes|string|Comma separated list of content-types for which documents should be found. Content types are concatenated with OR. Example: 'regular,author'|
 |?fields|string|Filters which (comma separated) properties are included in the response. Defaults to 'systemdata,metadata,content' (no renditions). Use 'id' if you only want to retrieve the ids of the published documents. Useful (and faster) if you are fully synchronizing your frontend with the publication events.|
 |?limit|integer|A limit for how much published documents to retrieve. Defaults to 10. Max. 100.|
 |?offset|integer|An offset into the query. Useful when getting more than 100 results (pagination)|
@@ -183,7 +183,7 @@ api/v1/publications/search?categories=sport,fashion&languages=en
 -----
 200
 ---
-api/v1/publications/search?contentTypes=article,gallery&limit=10&offset=10
+api/v1/publications/search?contentTypes=regular,gallery&limit=10&offset=10
 ---
 ```js
 [
@@ -192,7 +192,7 @@ api/v1/publications/search?contentTypes=article,gallery&limit=10&offset=10
       "projectId": 1,
       "channelId": 1,
       "documentId": 1,
-      "contentType": "article",
+      "contentType": "regular",
       "documentType": "article",
       "layout": "regular",
       "design": {
