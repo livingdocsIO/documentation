@@ -47,58 +47,85 @@ POST api/v1/import/mediaLibrary
 #### Example Request
 ```js
 {
-  "mediaLibraryEntries": [
-    {
-      "id": "custom-1",
-      "systemName": "externalSystem",
-      "externalId": "6hedie82",
-      "mediaType": "image",
-      "asset": {
-        "key": "2022/08/25/d6068c02-ca85-421d-948d-ee0e2c15f372.jpeg",
-        "url": "https://livingdocs-images-development.s3.amazonaws.com/2022/08/25/d6068c02-ca85-421d-948d-ee0e2c15f372.jpeg",
-        "size": 34910,
-        "width": 640,
-        "height": 427,
-        "filename": "super-mario.jpeg",
-        "mimeType": "image/jpeg"
-      },
-      "metadata": {
-        "title": "An image title"
-      },
-      "translations": [
+    "mediaLibraryEntries": [
         {
-            "locale": "fr",
+            "id": "custom-1",
+            "systemName": "externalSystem",
+            "externalId": "6hedie82",
+            "mediaType": "image",
+            "asset": {
+                "key": "2022/08/25/d6068c02-ca85-421d-948d-ee0e2c15f372.jpeg",
+                "url": "https://livingdocs-images-development.s3.amazonaws.com/2022/08/25/d6068c02-ca85-421d-948d-ee0e2c15f372.jpeg",
+                "size": 34910,
+                "width": 640,
+                "height": 427,
+                "filename": "super-mario.jpeg",
+                "mimeType": "image/jpeg"
+            },
             "metadata": {
-                "title": "Un titre d'image"
-            }
-        }
-      ]
-    },
-    {
-      "id": "custom-2",
-      "systemName": "externalSystem",
-      "externalId": "ahedie8x",
-      "mediaType": "file",
-      "asset": {
-        "key": "2022/09/30/a1cb173d-e85f-498b-996e-5ce46058e9b9.pdf",
-        "url": "https://livingdocs-files-development.s3.amazonaws.com/2022/09/30/a1cb173d-e85f-498b-996e-5ce46058e9b9.pdf",
-        "size": 3028,
-        "filename": "a-simple-pdf.pdf",
-        "mimeType": "application/pdf"
-    },
-      "metadata": {
-        "title": "A simple PDF"
-      },
-      "translations": [
+                "title": "An image title"
+            },
+            "translations": [
+                {
+                    "locale": "fr",
+                    "metadata": {
+                        "title": "Un titre d'image"
+                    }
+                }
+            ]
+        },
         {
-            "locale": "fr",
+            "id": "custom-2",
+            "systemName": "externalSystem",
+            "externalId": "ahedie8x",
+            "mediaType": "file",
+            "asset": {
+                "key": "2022/09/30/a1cb173d-e85f-498b-996e-5ce46058e9b9.pdf",
+                "url": "https://livingdocs-files-development.s3.amazonaws.com/2022/09/30/a1cb173d-e85f-498b-996e-5ce46058e9b9.pdf",
+                "size": 3028,
+                "filename": "a-simple-pdf.pdf",
+                "mimeType": "application/pdf"
+            },
             "metadata": {
-                "title": "Un simple PDF"
-            }
+                "title": "A simple PDF"
+            },
+            "translations": [
+                {
+                    "locale": "fr",
+                    "metadata": {
+                        "title": "Un simple PDF"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "custom-3",
+            "systemName": "externalSystem",
+            "externalId": "srfhediess",
+            "mediaType": "video",
+            "asset": {
+                "key": "2022/09/30/2804fc3d-098d-4f8f-b25c-c6c15583d672.mp4",
+                "url": "https://livingdocs-videos-development.s3.amazonaws.com/2022/09/30/2804fc3d-098d-4f8f-b25c-c6c15583d672.mp4",
+                "size": 8633462,
+                "width": 1280,
+                "height": 720,
+                "duration": 35.241667,
+                "filename": "fire.mp4",
+                "mimeType": "video/mp4"
+            },
+            "metadata": {
+                "title": "This is a fire"
+            },
+            "translations": [
+                {
+                    "locale": "fr",
+                    "metadata": {
+                        "title": "C'est un feu"
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 }
 ```
 
