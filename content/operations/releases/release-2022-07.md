@@ -440,6 +440,7 @@ Here is a list of all patches after the release has been announced.
 - [v189.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.2): fix(oembed): add spotify and data wrapper
 
 ### Livingdocs Editor Patches
+- [v80.38.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.62): fix(teaser): set default params
 - [v80.38.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.61): fix(toolbar): Handle anchor links as internal
 - [v80.38.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.60): fix(media-library): Move validity icon to avoid duration overlap
 - [v80.38.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.59): fix(li-component-link): update link if component changed
