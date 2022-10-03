@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [feat(metadata): add li-document-references plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4871)
 * [feat(metadata): add li-document-references plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/5873)
 * [fix(toolbar): Handle anchor links as internal](https://github.com/livingdocsIO/livingdocs-editor/pull/5847)
 * [Translate search](https://github.com/livingdocsIO/livingdocs-editor/pull/5874)
