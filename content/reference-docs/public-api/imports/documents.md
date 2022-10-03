@@ -20,12 +20,12 @@ curl -k -X POST "https://edit.livingdocs.io/proxy/api/api/v1/import/documents" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H 'Content-Type: application/json; charset=utf-8' \
-  --data-binary @- << EOF 
+  --data-binary @- << EOF
   {
     "systemName": "identifier-for-your-system",
     "webhook": "https://my-domain.com/webhooks/document-import",
     "documents": []
-  } 
+  }
 EOF
 ```
 
@@ -40,7 +40,7 @@ POST api/v1/import/documents
 |systemName|string|x|Identifier for the system you are importing from, e.g. an archive|
 |webhook|uri||Endpoint at the importing system that gets notified by POST when import job is done. Notification contains the id of the import job, the state and an overview.|
 |context|object||An object that is passed as context in the body of the request to the webhook. Limited to 8192 Bytes.|
-|documents|array|x|An array of documents to import. Each entry is an object with the following keys:<br><br>**id:** a unique id (stored as externalId in Livingdocs) that identifies the document on your end, must be unique within your project.<br>**title:** the title that the document should get in livingdocs<br>**checksum:** string to identify changes, e.g. an updated_at timestamp<br>**contentType:** the content type that the document should get in livingdocs<br>**publicationDate:** sets the date of a publication. 'autoPublish' flag must be set for this to have an effect.<br>**livingdoc:** A valid livingdoc declaration (content / design), must conform to your channel-config otherwise throws a validation error / release-2022-07: if no design is set it takes the design of the Project Config.<br>**metadata:** An object of metadata, must conform to your channel-config otherwise throws a validation error<br>**flags:** (optional) define additional import logic:<br>'autoPublish': publishes imported documents immediately<br>'unpublish': unpublishes imported documents immediately (release-2022-07)<br>'onlyOverwriteUntouched': only update documents that have no manual changes in livingdocs<br>'neverOverwrite': never update documents through the import API|
+|documents|array|x|An array of documents to import. Each entry is an object with the following keys:<br><br>**id:** a unique id (stored as externalId in Livingdocs) that identifies the document on your end, must be unique within your project.<br>**title:** the title that the document should get in livingdocs<br>**checksum:** string to identify changes, e.g. an updated_at timestamp<br>**contentType:** the content type that the document should get in livingdocs<br>**publicationDate:** sets the date of a publication. 'autoPublish' flag must be set for this to have an effect.<br>**livingdoc:** A valid livingdoc declaration (content / design), must conform to your channel-config otherwise throws a validation error / release-2022-07: if no design is set it takes the design of the Project Config.<br>**metadata:** An object of metadata, must conform to your channel-config otherwise throws a validation error<br>**translations:** An object of translations<br>**flags:** (optional) define additional import logic:<br>'autoPublish': publishes imported documents immediately<br>'unpublish': unpublishes imported documents immediately (release-2022-07)<br>'onlyOverwriteUntouched': only update documents that have no manual changes in livingdocs<br>'neverOverwrite': never update documents through the import API|
 
 #### Example Request
 ```js
@@ -76,6 +76,14 @@ POST api/v1/import/documents
       "metadata": {
         "description": "foo"
       },
+      "translations": [
+        {
+          "locale": "fr",
+          "metadata": {
+            "description": "foo FR"
+          }
+        }
+      ]
       "flags": {
         "autoPublish": true
       }
