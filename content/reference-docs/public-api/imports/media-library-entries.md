@@ -20,10 +20,10 @@ curl -k -X POST "https://edit.livingdocs.io/proxy/api/api/v1/import/mediaLibrary
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H 'Content-Type: application/json; charset=utf-8' \
-  --data-binary @- << EOF 
+  --data-binary @- << EOF
   {
     "mediaLibraryEntries": []
-  } 
+  }
 EOF
 ```
 
@@ -39,9 +39,10 @@ POST api/v1/import/mediaLibrary
 |mediaLibraryEntries.id|string||Custom id (Allowed characters: a-z, A-Z, 0-9, and -). If omitted a random id will be generated.|
 |mediaLibraryEntries.systemName|string||A string identifiyng the external system where the asset is imported from. It is recommended that you always set this value and it is required if you provide an `externalId`.|
 |mediaLibraryEntries.externalId|string||Must be unique in combination with `systemName`.|
-|mediaLibraryEntries.mediaType|string|x|Currently only `image` is supported.|
+|mediaLibraryEntries.mediaType|string|x|`image`, `video` (release-2022-09), `file` (release-2022-09)|
 |mediaLibraryEntries.asset|object|x||
 |mediaLibraryEntries.metadata|object|||
+|mediaLibraryEntries.translations|object||
 
 #### Example Request
 ```js
@@ -62,17 +63,49 @@ POST api/v1/import/mediaLibrary
         "mimeType": "image/jpeg"
       },
       "metadata": {
-        "title": "This is Super Mario!"
-      }
+        "title": "An image title"
+      },
+      "translations": [
+        {
+            "locale": "fr",
+            "metadata": {
+                "title": "Un titre d'image"
+            }
+        }
+      ]
+    },
+    {
+      "id": "custom-2",
+      "systemName": "externalSystem",
+      "externalId": "ahedie8x",
+      "mediaType": "file",
+      "asset": {
+        "key": "2022/09/30/a1cb173d-e85f-498b-996e-5ce46058e9b9.pdf",
+        "url": "https://livingdocs-files-development.s3.amazonaws.com/2022/09/30/a1cb173d-e85f-498b-996e-5ce46058e9b9.pdf",
+        "size": 3028,
+        "filename": "a-simple-pdf.pdf",
+        "mimeType": "application/pdf"
+    },
+      "metadata": {
+        "title": "A simple PDF"
+      },
+      "translations": [
+        {
+            "locale": "fr",
+            "metadata": {
+                "title": "Un simple PDF"
+            }
+        }
+      ]
     }
   ]
 }
 ```
 
 --description--
-When you can upload images to the configured Media Library storage (e.g. AWS S3) yourself it is possible to create Media Library Entries through the API.
+When you can upload images, videos or files to the configured Media Library storage (e.g. AWS S3) yourself it is possible to create Media Library Entries through the API.
 
-This has the advantage that the entris will be included in the response directly in contrast to the importImages endpoint where you only get a job id.
+This has the advantage that the entries will be included in the response directly in contrast e.g. to the `api/v1/import/images` endpoint where you only get a `jobId`.
 
 You can also provide a custom id to entries which helps with importing documents where images in the document should be referenced with the correct `mediaId` maybe even before creating the Media Library Entries themselves.
 
