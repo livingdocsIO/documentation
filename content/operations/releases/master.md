@@ -28,38 +28,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* [fix(deps): update dependency @google-cloud/storage from 6.4.2 to v6.5.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4869)
-* [Allow to import video and file Media Library Entries via public API](https://github.com/livingdocsIO/livingdocs-server/pull/4876)
-* [Set defaultParams when teaser is dropped](https://github.com/livingdocsIO/livingdocs-editor/pull/5886)
-* [feat(metadata): add li-document-references plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4871)
-* [feat(metadata): add li-document-references plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/5873)
-* [fix(toolbar): Handle anchor links as internal](https://github.com/livingdocsIO/livingdocs-editor/pull/5847)
-* [Translate search](https://github.com/livingdocsIO/livingdocs-editor/pull/5874)
-* [fix(hugo-api): Make royaltyRecipients path configurable](https://github.com/livingdocsIO/livingdocs-server/pull/4870)
-* [Prefill values after creating document using the new creation flow](https://github.com/livingdocsIO/livingdocs-editor/pull/5879)
-* [German translation for comments toggles are no longer mixed up](https://github.com/livingdocsIO/livingdocs-editor/pull/5876)
-* [Fix prepare-publication endless loop](https://github.com/livingdocsIO/livingdocs-editor/pull/5871)
-* [Set timestamps for precision date to 12:00 UTC](https://github.com/livingdocsIO/livingdocs-editor/pull/5872)
-* [fix(billing): show existing users in detail month view](https://github.com/livingdocsIO/livingdocs-editor/pull/5854)
-* [fix(users): return correct user occupation](https://github.com/livingdocsIO/livingdocs-server/pull/4864)
-* [Add roles write and worker for public-api endpoints, defined with instance configuration](https://github.com/livingdocsIO/livingdocs-server/pull/4814)
-* [Add image fieldExtractor to planning-system project](https://github.com/livingdocsIO/livingdocs-server/pull/4872)
-* [fix(metadata): fix vue type of reference label to not log error](https://github.com/livingdocsIO/livingdocs-editor/pull/5869)
-* [Added expectedOrActualPublicationDate as a sort field for dashboards](https://github.com/livingdocsIO/livingdocs-server/pull/4828)
-* [fix cleanup-metadata command which was throwing error](https://github.com/livingdocsIO/livingdocs-server/pull/4802)
-* [Move validity icon to avoid duration overlap](https://github.com/livingdocsIO/livingdocs-editor/pull/5863)
-* [Hide teaser format select when no transforms are available](https://github.com/livingdocsIO/livingdocs-editor/pull/5862)
-* [fix(metadata): add strict ui schema for li-target-length](https://github.com/livingdocsIO/livingdocs-server/pull/4827)
-* [fix/invitation mail](https://github.com/livingdocsIO/livingdocs-server/pull/4858)
-* [Fix the toggling of li-component-link.vue with multiple links](https://github.com/livingdocsIO/livingdocs-editor/pull/5851)
-* [fix(deps): update dependency date-fns from 2.29.2 to v2.29.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4861)
-* [fix(preparePublish): Validation visible for angular plugins](https://github.com/livingdocsIO/livingdocs-editor/pull/5852)
-* [Fix desknet config](https://github.com/livingdocsIO/livingdocs-server/pull/4865)
-* [Do not mutate global metadata plugin objects](https://github.com/livingdocsIO/livingdocs-server/pull/4862)
-* [The component Link icon now always remounts with a selection change](https://github.com/livingdocsIO/livingdocs-editor/pull/5848)
-* [fix(desknet): Get default content from content type, not settings](https://github.com/livingdocsIO/livingdocs-server/pull/4853)
-* [fix: add custom preview render example](https://github.com/livingdocsIO/livingdocs-server/pull/4840)
-* [fix(deps): update dependency fast-glob from 3.2.11 to v3.2.12 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4842)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -100,6 +68,24 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 
 ## Highlights
+
+### Roles for Read and Write Instances
+
+We introduce `roles` to define the type of server
+- read (all server have read access by default)
+- write (stores data)
+- worker (executes jobs like indexing)
+
+* [Documentation](https://docs.livingdocs.io/reference-docs/server-extensions/roles/)
+* [PR: Roles](https://github.com/livingdocsIO/livingdocs-server/pull/4814)
+
+### Metadata Plugin li-document-references
+
+A `li-document-references` metadata field is a list of references to other documents.
+
+* [Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-document-references)
+* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4871)
+* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5873)
 
 ### Cut and paste Components
 
@@ -276,6 +262,13 @@ httpServer: {
 
 ## APIs :gift:
 
+### Set Media Library Entries via Public API
+
+Allows to set or update file/video Media Library Entries via Public API.
+
+* [Documentation](https://docs.livingdocs.io/reference-docs/public-api/imports/media-library-entries/)
+* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4876)
+
 ## Other Changes
 
 ### Security
@@ -292,6 +285,7 @@ httpServer: {
 * [Improve placement of text formatting toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/5790)
 * [Log framework violations after initialization](https://github.com/livingdocsIO/livingdocs-editor/pull/5765)
 * [Table Dashboards: provide a documentLoader to dashboard cards](https://github.com/livingdocsIO/livingdocs-editor/pull/5805)
+* [Hide teaser format select when no transforms are available](https://github.com/livingdocsIO/livingdocs-editor/pull/5862)
 
 ### Bugfixes
 
@@ -310,6 +304,13 @@ httpServer: {
 * [Always emit an update event when extractor updates the metadataForm](https://github.com/livingdocsIO/livingdocs-editor/pull/5786)
 * [Pass the advanced formatting configuration from Editor to Editable config](https://github.com/livingdocsIO/livingdocs-editor/pull/5721)
 * [Archived documents are removed from multi-list inbox](https://github.com/livingdocsIO/livingdocs-editor/pull/5810)
+* [Fix prepare-publication endless loop](https://github.com/livingdocsIO/livingdocs-editor/pull/5871)
+* [Billing: Show existing users in detail month view](https://github.com/livingdocsIO/livingdocs-editor/pull/5854)
+* [Billing: Show user occupations correctly in the user list](https://github.com/livingdocsIO/livingdocs-server/pull/4864)
+* [PreparePublish: Validation visible for Angular plugins](https://github.com/livingdocsIO/livingdocs-editor/pull/5852)
+* [Do not mutate global metadata plugin objects](https://github.com/livingdocsIO/livingdocs-server/pull/4862)
+* [Component Link: Icon remounts with a selection change](https://github.com/livingdocsIO/livingdocs-editor/pull/5848)
+* [Component Link: Fix toggling with multiple links](https://github.com/livingdocsIO/livingdocs-editor/pull/5851)
 
 
 ## Patches
