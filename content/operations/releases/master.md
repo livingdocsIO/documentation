@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency jose from 4.9.2 to v4.9.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4867)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
