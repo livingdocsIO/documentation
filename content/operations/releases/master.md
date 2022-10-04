@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @google-cloud/storage from 6.4.2 to v6.5.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4869)
 * [Allow to import video and file Media Library Entries via public API](https://github.com/livingdocsIO/livingdocs-server/pull/4876)
 * [Set defaultParams when teaser is dropped](https://github.com/livingdocsIO/livingdocs-editor/pull/5886)
 * [feat(metadata): add li-document-references plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4871)
