@@ -34,6 +34,9 @@ First, the `elasticIndex` server config needs to be added.
 // conf/environments/local.js
 elasticIndex: {
 
+  // Enables background ElasticSearch indexers
+  enableConsumers: true
+
   // Size of batches for background indexing
   batchSize: 1000, // default: 1000
 

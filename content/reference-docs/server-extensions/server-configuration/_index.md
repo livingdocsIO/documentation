@@ -23,6 +23,9 @@ menus:
   "db": "{{< a href="#postgres-database" title="<postgres database config>">}}",
   "redis": "{{< a href="#redis-database" title="<redis database config>">}}",
 
+  "import": "{{< a href="#import-jobs" title="<import config>">}}",
+  "documentMigration": "{{< a href="#document-migration" title="<document migration config>">}}",
+
   "auth": "{{< a href="#authentication" title="<authentication config>">}}",
   "emails": "{{< a href="#user-management-emails" title="<user management emails>">}}",
 
@@ -46,6 +49,7 @@ menus:
   "pushNotifications": "{{< a href="#push-notifications" title="<push notification config>">}}",
   "preview": "{{< a href="#custom-previews" title="<preview config>">}}",
   "integrations": "{{< a href="#integrations" title="<integrations config>">}}",
+  "notifications": "{{< a href="#notifications" title="<notifications config>">}}",
 
   // routing feature
   "routing": "{{< a href="#routing" title="<routing config>">}}",
@@ -325,6 +329,45 @@ auth: {
 }
 ```
 
+#### Import Jobs
+
+```js
+import: {
+  // Enables the consumer import job hook when set to `true`
+  // To be modified in read-only server instances
+  // Can also be modified removing `['worker']` role, which disables consumers
+  enableConsumers: true,
+  // Defines limits and properties for job imports
+  jobs: {
+    batchSize: 1000,
+    maxRetries: 10,
+    concurrency: 10,
+    retryDelay: 1000,
+    maxCpu: 80,
+    documentDailyLimit: 0,
+    imageDailyLimit: 0,
+    videoDailyLimit: 0
+  }
+}
+```
+
+#### Document Migration
+
+```js
+documentMigration: {
+  // Enables the consumer document migration hook when set to `true`
+  // To be modified in read-only server instances
+  // Can also be modified removing `['worker']` role, which disables consumers
+  enableConsumers: true,
+  // Defines scheduler limits for document migration
+  scheduler: {
+    batchSize: 100,
+    maxRetries: 1,
+    concurrency: 2
+  }
+}
+```
+
 #### User Management Emails
 
 ```js
@@ -492,7 +535,9 @@ designs: {
 
 ```js
 documents: {
-  // enable/disable the publish control consumers. With read-only processes, you should configure that
+  // Enables the publish control consumers
+  // To be modified in read-only server instances
+  // Can also be modified removing `['worker']` role, which disables consumers
   enableConsumers: true,
   selectedImageService: 'imgix',
   imageServices: {
@@ -500,7 +545,7 @@ documents: {
   },
   paginationFindConfig: {
     default: 50, // default is the batch size
-    limit: 100 // limit is the max.
+    limit: 100 // limit is the max
   }
 }
 ```
@@ -510,8 +555,7 @@ See [image service configuration]({{< ref "/guides/media-library/image-services.
 The `paginationFindConfig` allows you to set how many documents you can see on the documents dashboard.
 Defaults to max. 100 documents.
 
-The `enableConsumers` is the configuration used to enable/disable the publish control consumers.
-By default, they will be enabled in server instances that define `roles: ['worker']` in server configuration.
+The `enableConsumers` is the configuration used to enable/disable the publish control consumers. By default, they it will be enabled in server instances that define `roles: ['worker']` in server configuration.
 
 #### Document-lists
 
@@ -566,6 +610,9 @@ secretEncryptionKeys: [
 routing: {
   enabled: false,
   indexing: {
+    // Enables routing indexer
+    // To be modified in read-only server instances
+    // Can also be modified removing `['worker']` role, which disables consumers
     enabled: true,
     debug_routes: false,
     // number of publication events to process in each batch
@@ -687,17 +734,22 @@ Integrate custom Elasticsearch indexes. If you want to know more (with all possi
 ```js
 // conf/environments/local.js
 elasticIndex: {
+  // Enables background ElasticSearch indexers
+  // To be modified in read-only server instances
+  // Can also be modified removing `['worker']` role, which disables consumers
+  enableConsumers: true
+
   // If this option is configured, every index name will be prefixed.
   // We advise to configure this in case you don't use credentials per environment (dev/stage/prod).
   // The indexes are created with the following pattern: `${indexNamePrefix}-${index.handle}-index`
   indexNamePrefix: 'your-company-local',
 
   // The concurrency defines how many requests the livingdocs-server is doing
-  // in parallel on every single process.
+  // in parallel on every single process
   concurrency: 2,
 
   // The batchSize defines how many documents/entries should be
-  // aggregated into a single elasticsearch /_bulk request.
+  // aggregated into a single elasticsearch /_bulk request
   batchSize: 100,
 
   // Define the maximum cpu threshold of the elasticsearch cluster
@@ -1209,12 +1261,39 @@ There is a general `integrations` configuration for small integrations that can 
 }
 ```
 
+## Notifications
+
+```js
+  notifications: {
+    // Enables notification feature over specified channels: slack, email
+    enabled: false,
+    // Enables consumer jobs for the specified channels
+    // To be modified in read-only server instances
+    // Can also be modified removing `['worker']` role, which disables consumers
+    enableConsumers: true,
+    // Defines channels to use: slack, email
+    channels: {
+      email: {
+        enabled: false,
+        fromAddress: 'noreply@livingdocs.dev'
+      },
+      slack: {
+        enabled: false
+      }
+    }
+  },
+```
+
 ## Webhooks
 
-To disable the webhooks feature, add this:
 ```js
 webhooks: {
-  enabled: false
+  // Enables webhooks feature
+  enabled: true,
+  // Enables webhook consumer hook
+  // To be modified in read-only server instances
+  // Can also be modified removing `['worker']` role, which disables consumers
+  enableConsumers: true
 }
 ```
 
