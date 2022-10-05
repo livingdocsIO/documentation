@@ -352,6 +352,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.47): fix(metadata): Fix legacy configs with document reference dialogs
 - [v81.20.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.46): fix(dashboards): Always use create wizard for multi-channel projects
 - [v81.20.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.45): fix(realtime): Handle wrapped error objects from Pusher
 - [v81.20.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.44): fix(mismatched): Password realigned
