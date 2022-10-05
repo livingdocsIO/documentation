@@ -352,6 +352,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.45): fix(realtime): Handle wrapped error objects from Pusher
 - [v81.20.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.44): fix(mismatched): Password realigned
 - [v81.20.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.43): fix(teaser): set default params
 - [v81.20.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.41): fix(toolbar): Handle anchor links as internal
