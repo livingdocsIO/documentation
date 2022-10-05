@@ -339,6 +339,7 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v194.0.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.13): test(import): mediaLibraryEntry import - fix tests after open up schema again
 - [v194.0.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.12): fix(publicApi): Allow to import MediaLibraryEntries of type video
 - [v194.0.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.11): fix(hugo-api): Make royaltyRecipients path configurable
 - [v194.0.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.10): fix: add index for user_id in user_occupations
