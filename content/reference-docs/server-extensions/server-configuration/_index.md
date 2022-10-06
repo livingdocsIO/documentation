@@ -612,7 +612,7 @@ routing: {
   indexing: {
     // Enables routing indexer
     // To be modified in read-only server instances
-    // Can also be modified removing `['worker']` role, which disables consumers
+    // Can also be modified removing `['worker']` role, which disables indexer from routing API
     enabled: true,
     debug_routes: false,
     // number of publication events to process in each batch
