@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency body-parser from 1.20.0 to v1.20.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4885)
 * [Import media library entries fix](https://github.com/livingdocsIO/livingdocs-server/pull/4880)
 * [Only handle `true` for legacy searchOnlyPublished in document reference metadata plugins](https://github.com/livingdocsIO/livingdocs-editor/pull/5896)
 * [Fix legacy dashboard configs with document reference dialogs](https://github.com/livingdocsIO/livingdocs-editor/pull/5895)
