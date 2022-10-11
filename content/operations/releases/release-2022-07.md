@@ -408,6 +408,7 @@ Allows the patch operation `archive` via public API to archive an asset.
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v189.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.35): fix(google-vision): Rework google vision feature register function and set to disable by default
 - [v189.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.34): fix(hugo-api): Make royaltyRecipients path configurable
 - [v189.0.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.33): fix(billing): add a test for users that are not valid yet
 - [v189.0.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.32): fix(desknet): Get default content from content type, not settings
