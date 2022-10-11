@@ -83,7 +83,7 @@ POST api/v1/import/documents
             "description": "foo FR"
           }
         }
-      ]
+      ],
       "flags": {
         "autoPublish": true
       }
