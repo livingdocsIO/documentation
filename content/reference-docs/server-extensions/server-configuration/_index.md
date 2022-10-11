@@ -687,13 +687,6 @@ search: {
   // based on metadata.
   metadataMapping: require.resolve('../some/path/metadata/es_metadata_mapping'),
 
-  // Metadata fields that will be forwarded to the livigndocs-editor when
-  // a document search is performed. This forwarding is needed to e.g show
-  // the open tasks in the dashboard article list.
-  documentsMetadataFields: [
-    'tasks.*',
-    'pushNotifications.*'
-  ],
   // your optional custom elasticsearch search function
   queryBuilderPlugin: require.resolve('./path/to/your-own-search-function')
 }
@@ -701,8 +694,7 @@ search: {
 
 ##### documentsMetadataFields
 
-The `documentsMetadataFields` array whitelists metadata that can be used in the dashboard. By
-default the article list query gets no metadata.
+DEPRECATED since [release-2022-03](https://docs.livingdocs.io/operations/releases/release-2022-03/#remove-server-config-searchdocumentsmetadatafields-): This config must not be defined anymore, because all metadata are returned when calling the editingApi `/documents`.
 
 ##### queryBuilderPlugin
 
