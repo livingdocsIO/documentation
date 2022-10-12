@@ -89,13 +89,15 @@ const searchBox = search.querySelector('.search-box')
 const searchResults = search.querySelector('.search-results')
 
 document.addEventListener("DOMContentLoaded", function() {
+  const urlQueryParameter = new URL(window.location.href).searchParams.get('q')
+  if (urlQueryParameter) searchInput.value = urlQueryParameter
+
   searchInput.focus()
 
   let activeSearchFilters = getCookie('li-documentation-search-filters')
-  console.log(activeSearchFilters)
   if (activeSearchFilters !== undefined) {
     const filterHandles = activeSearchFilters.split(',')
-  
+
     const searchFilters = document.querySelectorAll('.js-search-filter')
     searchFilters.forEach(function(searchFilter) {
       const handle = searchFilter.getAttribute('data-filter-handle')
@@ -224,9 +226,7 @@ function changeSearchFocus (direction) {
   }
 }
 
-searchInput.addEventListener('keyup', (e) => {
-  startSearch(e)
-})
+searchInput.addEventListener('keyup', (e) => { startSearch(e) })
 
 // prevent browser default key actions
 window.addEventListener("keydown", function(e) {
