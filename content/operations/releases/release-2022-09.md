@@ -353,6 +353,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.49): fix: ignore htmlmin from webpack on two html files
 - [v81.20.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.48): fix(metadata): Only handle `true` for legacy searchOnlyPublished
 - [v81.20.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.47): fix(metadata): Fix legacy configs with document reference dialogs
 - [v81.20.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.46): fix(dashboards): Always use create wizard for multi-channel projects
