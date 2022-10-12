@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [ignore htmlmin from webpack on two html files](https://github.com/livingdocsIO/livingdocs-editor/pull/5884)
 * [chore(deps): bump vm2 from 3.9.8 to 3.9.11](https://github.com/livingdocsIO/livingdocs-server/pull/4887)
 * [fix(deps): update dependency body-parser from 1.20.0 to v1.20.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4885)
 * [Import media library entries fix](https://github.com/livingdocsIO/livingdocs-server/pull/4880)
