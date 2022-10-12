@@ -152,11 +152,8 @@ document.body.addEventListener('click', (evt) => {
 
 let searchWorker
 searchInput.addEventListener('focus', (evt) => {
-  if (searchInput.value) showSearchResults()
-  if (!searchWorker) {
-    searchWorker = createSearchWorker()
-    searchWorker.search({index: window.searchJson, query: '', limit: 0})
-  }
+  if (!searchWorker) searchWorker = createSearchWorker()
+  startSearch({})
 })
 
 async function startSearch (e) {
