@@ -441,6 +441,7 @@ Here is a list of all patches after the release has been announced.
 - [v189.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.2): fix(oembed): add spotify and data wrapper
 
 ### Livingdocs Editor Patches
+- [v80.38.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.65): fix(documentList): Icon is reactive
 - [v80.38.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.64): fix(mismatched): Password realigned
 - [v80.38.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.63): fix: ignore htmlmin from webpack on two html files
 - [v80.38.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.62): fix(teaser): set default params
