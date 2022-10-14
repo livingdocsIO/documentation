@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add German translations to editor History view](https://github.com/livingdocsIO/livingdocs-editor/pull/5901)
 * [Fix the list inbox reactivity on list publish](https://github.com/livingdocsIO/livingdocs-editor/pull/5911)
 * [Angular Parse error fixed in ld-include-modal](https://github.com/livingdocsIO/livingdocs-editor/pull/5909)
 * [ignore htmlmin from webpack on two html files](https://github.com/livingdocsIO/livingdocs-editor/pull/5884)
