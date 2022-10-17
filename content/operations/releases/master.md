@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Deprecate support for `metadataPluginsToIgnoreForConfigValidation` server config](https://github.com/livingdocsIO/livingdocs-server/pull/4898)
 * [Add german translations for lists](https://github.com/livingdocsIO/livingdocs-editor/pull/5903)
 * [Document list sync](https://github.com/livingdocsIO/livingdocs-editor/pull/5853)
 * [fix(deps): update dependency pino from 8.6.0 to v8.6.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4895)
