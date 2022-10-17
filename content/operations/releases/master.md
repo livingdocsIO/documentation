@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add German translations for media section in main navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/5915)
 * [fix(multi-language): prefill with default language on creation modal](https://github.com/livingdocsIO/livingdocs-editor/pull/5902)
 * [Elasticsearch Indexing extensions](https://github.com/livingdocsIO/livingdocs-server/pull/4837)
 * [Add German translations to editor History view](https://github.com/livingdocsIO/livingdocs-editor/pull/5901)
