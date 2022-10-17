@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix/Small Spacing Issues](https://github.com/livingdocsIO/livingdocs-editor/pull/5918)
 * [Deprecate support for `metadataPluginsToIgnoreForConfigValidation` server config](https://github.com/livingdocsIO/livingdocs-server/pull/4898)
 * [Add german translations for lists](https://github.com/livingdocsIO/livingdocs-editor/pull/5903)
 * [Document list sync](https://github.com/livingdocsIO/livingdocs-editor/pull/5853)
