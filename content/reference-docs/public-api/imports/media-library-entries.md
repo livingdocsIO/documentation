@@ -70,6 +70,15 @@ POST api/v1/import/mediaLibrary
                     "locale": "fr",
                     "metadata": {
                         "title": "Un titre d'image"
+                    },
+                    "asset": {
+                        "key": "2022/08/25/another-asset.jpeg",
+                        "url": "https://livingdocs-images-development.s3.amazonaws.com/2022/08/25/another-asset.jpeg",
+                        "size": 34910,
+                        "width": 640,
+                        "height": 427,
+                        "filename": "super-mario-modified.jpeg",
+                        "mimeType": "image/jpeg"
                     }
                 }
             ]
@@ -94,7 +103,14 @@ POST api/v1/import/mediaLibrary
                     "locale": "fr",
                     "metadata": {
                         "title": "Un simple PDF"
-                    }
+                    },
+                    "asset": {
+                        "key": "2022/09/30/another-asset.pdf",
+                        "url": "https://livingdocs-files-development.s3.amazonaws.com/2022/09/30/another-asset.pdf",
+                        "size": 3028,
+                        "filename": "a-simple-pdf-fr.pdf",
+                        "mimeType": "application/pdf"
+                    },
                 }
             ]
         },
@@ -121,7 +137,17 @@ POST api/v1/import/mediaLibrary
                     "locale": "fr",
                     "metadata": {
                         "title": "C'est un feu"
-                    }
+                    },
+                    "asset": {
+                        "key": "2022/09/30/another-asset.mp4",
+                        "url": "https://livingdocs-videos-development.s3.amazonaws.com/2022/09/30/another-asset.mp4",
+                        "size": 8633462,
+                        "width": 1280,
+                        "height": 720,
+                        "duration": 35.241667,
+                        "filename": "fire-fr.mp4",
+                        "mimeType": "video/mp4"
+                    },
                 }
             ]
         }
