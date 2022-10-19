@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/4779)
 * [Allow translated assets for a MediaLibraryEntries import via public API](https://github.com/livingdocsIO/livingdocs-server/pull/4904)
 * [Patch systemmetadata instead of overwriting it](https://github.com/livingdocsIO/livingdocs-server/pull/4900)
 * [Fix/Small Spacing Issues](https://github.com/livingdocsIO/livingdocs-editor/pull/5918)
