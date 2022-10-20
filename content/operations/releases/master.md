@@ -69,10 +69,10 @@ These are the release notes of the upcoming release (pull requests merged to mas
 ### Suggested
 |Name|Version|
 |-|-|
-|Node|16|
+|Node|18|
 |NPM|8|
 |Postgres|14|
-|Elasticsearch|7|
+|Elasticsearch<br/>OpenSearch|8.x<br/>2|
 |Redis|7|
 |Livingdocs Server Docker Image|livingdocs/server-base:16|
 |Livingdocs Editor Docker Image|livingdocs/editor-base:16|
@@ -84,7 +84,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 |Node|14|
 |NPM|7|
 |Postgres|12|
-|Elasticsearch|6.x (Deprecated)|
+|Elasticsearch<br/>OpenSearch|7.x<br/>1|
 |Redis|5 (Deprecated)|
 |Livingdocs Server Docker Image|livingdocs/server-base:14.3|
 |Livingdocs Editor Docker Image|livingdocs/editor-base:14.3|

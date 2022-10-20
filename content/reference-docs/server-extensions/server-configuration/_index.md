@@ -679,7 +679,7 @@ search: {
 
   articleDocumentIndex: 'li-local-documents',
   numberOfReplicas: 1,
-  apiVersion: '2.4', // optional, defaults to '2.4'
+  apiVersion: '8.4.3', // optional, defaults to the elasticsearch version, falls back to '8.4.3'
   log: null, // use 'trace' to debug the search feature (warning: very verbose)
 
   // The metadata mapping determines which metadata fields will be indexed
