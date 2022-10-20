@@ -355,6 +355,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.54): fix: include target in component Link
 - [v81.20.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.53): fix: make sure selected items fit inside the dropdown
 - [v81.20.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.52): code(multi-language): incorporate review feedback
 - [v81.20.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.51): fix(documentList): Icon is reactive
