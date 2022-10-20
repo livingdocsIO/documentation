@@ -225,8 +225,11 @@ function changeSearchFocus (direction) {
 
 searchInput.addEventListener('keyup', (e) => { startSearch(e) })
 
-// prevent browser default key actions
+// prevent browser default key actions as they are captured by the search input
 window.addEventListener("keydown", function(e) {
+  // Do not prevent CMD+ArrowUp/ArrowDown
+  if (e.metaKey) return
+
   if(["ArrowUp","ArrowDown"].indexOf(e.code) > -1) {
       e.preventDefault();
   }
