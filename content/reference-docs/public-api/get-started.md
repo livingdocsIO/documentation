@@ -7,8 +7,14 @@ menus:
     parent: Public API
 ---
 
+## OpenAPI
+
+Livingdocs Public API is also defined in an [OpenAPI v3 specification file](https://livingdocsio.github.io/openapi/livingdocs-openapi.json).
+
+Thanks to the OpenAPI specification, it's possible to quickly test the API using [Swagger UI](https://petstore.swagger.io/?url=https://livingdocsio.github.io/openapi/livingdocs-openapi.json). And import the full collection of existing API endpoints into Insomnia or Postman. For authorized requests it's still required to obtain an `AccessToken` as described below.
+
 ## Authorization
-To work with the public Api first go to the Project Settings page in the Livingdocs Editor and create an `AccessToken`.
+To work with the Public API first go to the Project Settings page in the Livingdocs Editor and create an `AccessToken`.
 
 Project admins can create new `AccessToken` by going to `Menu` > `Preferences` > `Project Admin`, from the project landing page.
 On the sidebar, go to `Api Tokens` and start the token creation flow with `Add Api Token`, as seen in the image below.
