@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [feat(meta-image-video): implement code review feedback](https://github.com/livingdocsIO/livingdocs-editor/pull/5935)
 * [Fix/Document Search and Styleguide](https://github.com/livingdocsIO/livingdocs-editor/pull/5931)
 * [Add German translations for metadata of videos and images](https://github.com/livingdocsIO/livingdocs-editor/pull/5917)
 * [Support Postgres v15, Drop Elasticsearch v6](https://github.com/livingdocsIO/livingdocs-server/pull/4907)
