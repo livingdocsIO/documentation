@@ -855,6 +855,7 @@ Here is a list of all patches after the release has been announced.
 - [v171.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v171.1.28): fix(retresco): Load entities from any metadata handle
 
 ### Livingdocs Editor Patches
+- [v77.2.83](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.83): fix(findIdfromUrl): Updated regex finder
 - [v77.2.82](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.82): fix(lists): fix document state deprecations
 - [v77.2.81](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.81): fix(hugo): Fallback field for hugo image import
 - [v77.2.80](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v77.2.80): fix(hugo): Use configured hugo assetPath
