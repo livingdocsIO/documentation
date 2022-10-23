@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency pino-socket from 7.1.0 to v7.3.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4917)
 * [Add german translation for video preview](https://github.com/livingdocsIO/livingdocs-editor/pull/5942)
 * [Focal point selection for images with named crops](https://github.com/livingdocsIO/livingdocs-editor/pull/5916)
 * [Focal point support for `li-image` and `li-named-crops`](https://github.com/livingdocsIO/livingdocs-server/pull/4893)
