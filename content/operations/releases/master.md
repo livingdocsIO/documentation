@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fast-json-stringify from 5.3.0 to v5.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4924)
 * [fix(deps): update dependency cloudinary from 1.31.0 to v1.32.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4922)
 * [chore(deps): update dependency pino-socket from 7.1.0 to v7.3.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4917)
 * [Add german translation for video preview](https://github.com/livingdocsIO/livingdocs-editor/pull/5942)
