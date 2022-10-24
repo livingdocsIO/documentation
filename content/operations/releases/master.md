@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fastify from 4.8.1 to v4.9.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4925)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
