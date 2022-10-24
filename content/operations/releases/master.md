@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Set correct height on iframe](https://github.com/livingdocsIO/livingdocs-editor/pull/5933)
 * [Table dashboard support for new `li-push-messages` plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/5833)
 * [New `li-push-messages` plugin with custom API endpoint](https://github.com/livingdocsIO/livingdocs-server/pull/4829)
 * [Configurable spellcheck styling](https://github.com/livingdocsIO/livingdocs-editor/pull/5943)
