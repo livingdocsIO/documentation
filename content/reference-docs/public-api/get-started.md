@@ -7,12 +7,6 @@ menus:
     parent: Public API
 ---
 
-## OpenAPI
-
-Livingdocs Public API is also defined in an [OpenAPI v3 specification file](https://livingdocsio.github.io/openapi/livingdocs-openapi.json).
-
-Thanks to the OpenAPI specification, it's possible to quickly test the API using [Swagger UI](https://petstore.swagger.io/?url=https://livingdocsio.github.io/openapi/livingdocs-openapi.json). And import the full collection of existing API endpoints into Insomnia or Postman. For authorized requests it's still required to obtain an `AccessToken` as described below.
-
 ## Authorization
 To work with the Public API first go to the Project Settings page in the Livingdocs Editor and create an `AccessToken`.
 
@@ -38,7 +32,7 @@ ACCESS_TOKEN=ey1234
 curl -k -X GET "http://localhost:9090/api/v1/project"
   -H "Accept: application/json"
   -H "Authorization: Bearer $ACCESS_TOKEN"
-``` 
+```
 
 ### Auth Example with Axios
 
@@ -143,7 +137,7 @@ Don't forget to replace [your token.](https://edit.livingdocs.io/access/111/publ
 --query--
 
 ```bash
-curl -H 'Authorization: Bearer your_token' \ 
+curl -H 'Authorization: Bearer your_token' \
 https://server.livingdocs.io/api/v1/documents/latestPublications
 ```
 
