@@ -1,4 +1,17 @@
 {
+    "release-2023-01": {
+        "id": 1,
+        "key": "release-2023-01",
+        "name": "January 2023",
+        "ref": "/operations/releases/release-2023-01.md",
+        "upcoming": true,
+        "current": false,
+        "maintained": true,
+        "legacy": false,
+        "sortId": 34,
+        "editorVersion": "v85.11.0",
+        "serverVersion": "v200.1.4"
+    },
     "master": {
         "id": 1,
         "key": "master",

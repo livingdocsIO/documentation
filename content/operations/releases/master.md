@@ -28,46 +28,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* [Document list sync notification](https://github.com/livingdocsIO/livingdocs-editor/pull/5941)
-* [Attach userId to client-document-list.updated event](https://github.com/livingdocsIO/livingdocs-server/pull/4911)
-* [fix(deps): update dependency ua-parser-js from 1.0.2 to v1.0.32 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4915)
-* [fix(deps): update dependency fast-json-stringify from 5.3.0 to v5.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4924)
-* [fix(deps): update dependency cloudinary from 1.31.0 to v1.32.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4922)
-* [chore(deps): update dependency pino-socket from 7.1.0 to v7.3.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4917)
-* [Add german translation for video preview](https://github.com/livingdocsIO/livingdocs-editor/pull/5942)
-* [Focal point selection for images with named crops](https://github.com/livingdocsIO/livingdocs-editor/pull/5916)
-* [Focal point support for `li-image` and `li-named-crops`](https://github.com/livingdocsIO/livingdocs-server/pull/4893)
-* [Enable publish control through config](https://github.com/livingdocsIO/livingdocs-editor/pull/5932)
-* [include target in component link](https://github.com/livingdocsIO/livingdocs-editor/pull/5924)
-* [Updated Find Document Id from URL function in Deliveries](https://github.com/livingdocsIO/livingdocs-editor/pull/5908)
-* [feat(meta-image-video): implement code review feedback](https://github.com/livingdocsIO/livingdocs-editor/pull/5935)
-* [Fix/Document Search and Styleguide](https://github.com/livingdocsIO/livingdocs-editor/pull/5931)
-* [Add German translations for metadata of videos and images](https://github.com/livingdocsIO/livingdocs-editor/pull/5917)
-* [Support Postgres v15, Drop Elasticsearch v6](https://github.com/livingdocsIO/livingdocs-server/pull/4907)
-* [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/4779)
-* [Allow translated assets for a MediaLibraryEntries import via public API](https://github.com/livingdocsIO/livingdocs-server/pull/4904)
-* [Patch systemmetadata instead of overwriting it](https://github.com/livingdocsIO/livingdocs-server/pull/4900)
-* [Fix/Small Spacing Issues](https://github.com/livingdocsIO/livingdocs-editor/pull/5918)
-* [Deprecate support for `metadataPluginsToIgnoreForConfigValidation` server config](https://github.com/livingdocsIO/livingdocs-server/pull/4898)
-* [Add german translations for lists](https://github.com/livingdocsIO/livingdocs-editor/pull/5903)
-* [Document list sync](https://github.com/livingdocsIO/livingdocs-editor/pull/5853)
-* [fix(deps): update dependency pino from 8.6.0 to v8.6.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4895)
-* [Document list sync](https://github.com/livingdocsIO/livingdocs-server/pull/4863)
-* [Add German translations for media section in main navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/5915)
-* [fix(multi-language): prefill with default language on creation modal](https://github.com/livingdocsIO/livingdocs-editor/pull/5902)
-* [Elasticsearch Indexing extensions](https://github.com/livingdocsIO/livingdocs-server/pull/4837)
-* [Add German translations to editor History view](https://github.com/livingdocsIO/livingdocs-editor/pull/5901)
-* [Fix the list inbox reactivity on list publish](https://github.com/livingdocsIO/livingdocs-editor/pull/5911)
-* [Angular Parse error fixed in ld-include-modal](https://github.com/livingdocsIO/livingdocs-editor/pull/5909)
-* [ignore htmlmin from webpack on two html files](https://github.com/livingdocsIO/livingdocs-editor/pull/5884)
-* [chore(deps): bump vm2 from 3.9.8 to 3.9.11](https://github.com/livingdocsIO/livingdocs-server/pull/4887)
-* [fix(deps): update dependency body-parser from 1.20.0 to v1.20.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4885)
-* [Import media library entries fix](https://github.com/livingdocsIO/livingdocs-server/pull/4880)
-* [Only handle `true` for legacy searchOnlyPublished in document reference metadata plugins](https://github.com/livingdocsIO/livingdocs-editor/pull/5896)
-* [Fix legacy dashboard configs with document reference dialogs](https://github.com/livingdocsIO/livingdocs-editor/pull/5895)
-* [Always use create wizard for multi-channel projects](https://github.com/livingdocsIO/livingdocs-editor/pull/5893)
-* [Handle wrapped and unwrapped error objects from Pusher](https://github.com/livingdocsIO/livingdocs-editor/pull/5891)
-* [fix(deps): update dependency jose from 4.9.2 to v4.9.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4867)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -87,8 +47,8 @@ These are the release notes of the upcoming release (pull requests merged to mas
 |-|-|
 |Node|18|
 |NPM|8|
-|Postgres|14|
-|Elasticsearch<br/>OpenSearch|8.x<br/>2|
+|Postgres|15|
+|Elasticsearch<br/>OpenSearch|8.x<br/>v2.3.0|
 |Redis|7|
 |Livingdocs Server Docker Image|livingdocs/server-base:16|
 |Livingdocs Editor Docker Image|livingdocs/editor-base:16|
@@ -109,15 +69,17 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Highlights
 
+### Public API - Open API Specification
+
+The [Livingdocs Public API]({{< ref "/reference-docs/public-api" >}}) can be tested and consumed with an [OpenAPI v3 specification file](https://livingdocsio.github.io/openapi/livingdocs-openapi.json).
+
+Thanks to the [OpenAPI specification](https://swagger.io/specification/), it's possible to quickly test the API using [Swagger UI](https://petstore.swagger.io/?url=https://livingdocsio.github.io/openapi/livingdocs-openapi.json). And import the full collection of existing API endpoints into Insomnia or Postman.
+
 ### Roles for Read and Write Instances
 
-We introduce `roles` to define the type of server
-- read (all server have read access by default)
-- write (stores data)
-- worker (executes jobs like indexing)
+The [Livingdocs Public API]({{< ref "/reference-docs/public-api" >}}) can be tested and consumed with an [OpenAPI v3 specification file](https://livingdocsio.github.io/openapi/livingdocs-openapi.json).
 
-* [Documentation](https://docs.livingdocs.io/reference-docs/server-extensions/roles/)
-* [PR: Roles](https://github.com/livingdocsIO/livingdocs-server/pull/4814)
+Thanks to the [OpenAPI specification](https://swagger.io/specification/), it's possible to quickly test the API using [Swagger UI](https://petstore.swagger.io/?url=https://livingdocsio.github.io/openapi/livingdocs-openapi.json). And import the full collection of existing API endpoints into Insomnia or Postman.
 
 ### Metadata Plugin li-document-references
 
@@ -127,13 +89,13 @@ A `li-document-references` metadata field is a list of references to other docum
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4871)
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5873)
 
-### Cut and paste Components
+### i18n - Editor available in German
 
-Similar to copy/paste one can now also cut/paste components.
-
-* [PR: Cut and paste components](https://github.com/livingdocsIO/livingdocs-editor/pull/5824)
+TODO: do we already announce that? Is it ready for prime? description?
 
 ### Separation of Revision Metadata and System Metadata
+
+TODO: how we want to announce that?
 
 We introduce "System Metadata" for data which only needs to be stored per document and need no history like the existing Revision Metadata. Typically System Metadata are used for handling state on a document like proofreading, language settings, integration settings and a lot more.
 
@@ -144,11 +106,50 @@ To understand the possibilities and use cases better, you can read the [TODO: Do
 * [PR: System Metadata Preparation II](https://github.com/livingdocsIO/livingdocs-server/pull/4778)
 * [PR: System Metadata](https://github.com/livingdocsIO/livingdocs-server/pull/4807)
 
-### Microsoft Teams Integration
+### Roles for Read and Write Instances
 
-TODO: Is this a highlight? Is the feature ready? Is the feature documented?
+We introduce `roles` to define the type of server
+- read (all server have read access by default)
+- write (stores data)
+- worker (executes jobs like indexing)
 
-* [Microsoft Teams Integration](https://github.com/livingdocsIO/livingdocs-server/pull/4408)
+* [Documentation](https://docs.livingdocs.io/reference-docs/server-extensions/roles/)
+* [PR: Roles](https://github.com/livingdocsIO/livingdocs-server/pull/4814)
+
+### Reindexing CLI task improvements
+
+Elasticsearch Indexing CLI (`livingdocs-server elasticsearch-index`) got some improvements:
+- add `--ids=1,2,3,4` to index specific document id's
+- add `--ids-file=file-with-ids.txt` to index specific document id's passed by a file
+
+* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4837)
+
+### Push Notification
+
+TODO: description
+
+### Synced Table Dashboards
+
+TODO: description
+
+### Document Lists Sync (Autorefresh)
+
+When another user updates a List (List Assignment or publishing a List), users with the (Multi-)List Editor open will see these changes immediately on their screen.
+
+* [PR: List Sync](https://github.com/livingdocsIO/livingdocs-editor/pull/5853)
+* [PR: Sync Notification](https://github.com/livingdocsIO/livingdocs-editor/pull/5941)
+
+### Focal Point Cropping
+
+Automatic crops are a great way to define multiple crops of an image, but automatic crops could cut off the important subject in the image. There is where focal point cropping comes into the game by letting users choose where in the image the main subject is and all automatic crops will make sure it is visible in the frame.
+
+* [PR: Focal point selection for images](https://github.com/livingdocsIO/livingdocs-editor/pull/5916)
+
+### Cut and paste Components
+
+Similar to copy/paste one can now also cut/paste components.
+
+* [PR: Cut and paste components](https://github.com/livingdocsIO/livingdocs-editor/pull/5824)
 
 
 ## Breaking Changes :fire:
@@ -162,7 +163,11 @@ TODO: add db migrations
 livingdocs-server migrate up
 ```
 
-### Separation of Revision Metadata and System Metadata
+### Drop Elasticsearch v6 :fire:
+
+[Drop support for Elasticsearch v6](https://github.com/livingdocsIO/livingdocs-server/pull/4907)
+
+### Separation of Revision Metadata and System Metadata :fire:
 
 We introduce "System Metadata" for data which only needs to be stored per document and need no history like the existing Revision Metadata. Typically System Metadata are used for handling state on a document like proofreading, language settings, integration settings and a lot more.
 
@@ -183,7 +188,7 @@ References:
 * [PR: System Metadata Preparation II](https://github.com/livingdocsIO/livingdocs-server/pull/4778)
 * [PR: System Metadata](https://github.com/livingdocsIO/livingdocs-server/pull/4807)
 
-### Break metadata plugin li-desknet-integration | li-transcoding-state
+### Break metadata plugin li-desknet-integration | li-transcoding-state :fire:
 
 * :fire: `ui.component` option for `li-transcoding-state` metadata plugin has been removed (it uses a default component)
 * :fire: `ui.component` option for `li-desknet-integration` metadata plugin has been removed (it uses a default component)
@@ -192,8 +197,33 @@ References:
 * [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/4782)
 * [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5813)
 
+### IndexingApi background indexing job :fire:
 
-### Remove li-desknet-platforms metadata plugin
+Remove `indexingApi.addPublicationBackgroundIndexingJobsByIds`.
+Please use `indexIndexingApi.addBackgroundIndexingJobsByIds` that supports also cluster parameters.
+
+```diff
+- indexIndexingApi.addPublicationBackgroundIndexingJobsByIds({
+-   context: {projectId: 1},
+-   ids
+- })
++ indexIndexingApi.addBackgroundIndexingJobsByIds({
++   handle: 'custom-index-handle',
++   context: {projectId: 1},
++   ids
++ })
+```
+
+* [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/4837)
+
+### Remove Regex support in Delivery :fire:
+
+Remove any regular expressions from `pathPattern` configs and update them according to our [examples](https://docs.livingdocs.io/reference-docs/project-config/deliveries/#pathpattern).
+
+* [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5908)
+
+
+### Remove li-desknet-platforms metadata plugin :fire:
 
 The metadata plugin `li-desknet-platforms` has been replaced by `li-desknet-schedule`, which has a different storage schema and additional config options.
 
@@ -241,7 +271,7 @@ module.exports = {
 * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5779)
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4799)
 
-### Standardise the alt text and directive prefilling
+### Standardise the alt text and directive prefilling :fire:
 
 :fire: Change the processing order of altTextPrefilling and componentDirectivesPrefilling so that the result is more understandable.
 
@@ -300,20 +330,29 @@ httpServer: {
 },
 ```
 
+### Metadata Plugin Config Validation
+
+* Deprecate support for `metadataPluginsToIgnoreForConfigValidation`
+
+* [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4898)
+
+
 ## APIs :gift:
 
-### Set Media Library Entries via Public API
+### Public API
 
-Allows to set or update file/video Media Library Entries via Public API.
-
-* [Documentation](https://docs.livingdocs.io/reference-docs/public-api/imports/media-library-entries/)
-* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4876)
+* [Allow to import video and file Media Library Entries via public API - Documentation](https://docs.livingdocs.io/reference-docs/public-api/imports/media-library-entries/)
+* [Allow to import video and file Media Library Entries via public API - PR](https://github.com/livingdocsIO/livingdocs-server/pull/4876)
+* [Allow translated assets for a MediaLibraryEntries import - Documentation](https://docs.livingdocs.io/reference-docs/public-api/imports/media-library-entries/)
+* [Allow translated assets for a MediaLibraryEntries import - PR](https://github.com/livingdocsIO/livingdocs-server/pull/4904)
 
 ## Other Changes
 
 ### Security
 
 ### Design
+
+* [Fix/Document Search and Styleguide](https://github.com/livingdocsIO/livingdocs-editor/pull/5931)
 
 ### Features
 
@@ -351,7 +390,10 @@ Allows to set or update file/video Media Library Entries via Public API.
 * [Do not mutate global metadata plugin objects](https://github.com/livingdocsIO/livingdocs-server/pull/4862)
 * [Component Link: Icon remounts with a selection change](https://github.com/livingdocsIO/livingdocs-editor/pull/5848)
 * [Component Link: Fix toggling with multiple links](https://github.com/livingdocsIO/livingdocs-editor/pull/5851)
-
+* [doc-link directive: target option for links get saved](https://github.com/livingdocsIO/livingdocs-editor/pull/5924)
+* [Use default language on document creation](https://github.com/livingdocsIO/livingdocs-editor/pull/5902)
+* [Comments are shown on the right position](https://github.com/livingdocsIO/livingdocs-editor/pull/5884)
+* [List inbox is reactiv again on publish](https://github.com/livingdocsIO/livingdocs-editor/pull/5911)
 
 ## Patches
 
