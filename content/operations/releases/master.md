@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Document list sync notification](https://github.com/livingdocsIO/livingdocs-editor/pull/5941)
 * [Attach userId to client-document-list.updated event](https://github.com/livingdocsIO/livingdocs-server/pull/4911)
 * [fix(deps): update dependency ua-parser-js from 1.0.2 to v1.0.32 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4915)
 * [fix(deps): update dependency fast-json-stringify from 5.3.0 to v5.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4924)
