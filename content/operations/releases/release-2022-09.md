@@ -355,6 +355,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.57): fix: full body iframe height and better growth detection
 - [v81.20.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.56): fix(media-library): Restore upload center placeholders
 - [v81.20.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.55): fix(findIdfromUrl): Updated regex finder
 - [v81.20.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.54): fix: include target in component Link
