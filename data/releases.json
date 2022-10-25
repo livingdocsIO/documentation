@@ -9,8 +9,8 @@
         "maintained": true,
         "legacy": false,
         "sortId": 35,
-        "editorVersion": "v85.11.0",
-        "serverVersion": "v200.1.4"
+        "editorVersion": "v85.16.0",
+        "serverVersion": "v200.4.0"
     },
     "release-2022-11": {
         "id": 1,
@@ -22,8 +22,8 @@
         "maintained": true,
         "legacy": false,
         "sortId": 34,
-        "editorVersion": "v85.16.0",
-        "serverVersion": "v200.6.0"
+        "editorVersion": "v85.15.1",
+        "serverVersion": "v200.3.3"
     },
     "release-2022-09": {
         "id": 1,
