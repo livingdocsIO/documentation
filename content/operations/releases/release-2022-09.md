@@ -2,7 +2,7 @@
 type: release-notes
 title: September 2022 Release
 description: Release notes for release-2022-09
-excludeFromSearch: true
+excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2022-09/

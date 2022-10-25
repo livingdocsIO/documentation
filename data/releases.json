@@ -1,29 +1,29 @@
 {
-    "release-2023-01": {
+    "master": {
         "id": 1,
-        "key": "release-2023-01",
+        "key": "master",
         "name": "January 2023",
-        "ref": "/operations/releases/release-2023-01.md",
+        "ref": "/operations/releases/master.md",
         "upcoming": true,
         "current": false,
         "maintained": true,
         "legacy": false,
-        "sortId": 34,
+        "sortId": 35,
         "editorVersion": "v85.11.0",
         "serverVersion": "v200.1.4"
     },
-    "master": {
+    "release-2022-11": {
         "id": 1,
-        "key": "master",
+        "key": "release-2022-11",
         "name": "November 2022",
-        "ref": "/operations/releases/master.md",
+        "ref": "/operations/releases/release-2022-11.md",
         "upcoming": true,
         "current": false,
         "maintained": true,
         "legacy": false,
         "sortId": 34,
         "editorVersion": "v85.16.0",
-        "serverVersion": "v200.4.0"
+        "serverVersion": "v200.6.0"
     },
     "release-2022-09": {
         "id": 1,
@@ -44,8 +44,8 @@
         "ref": "/operations/releases/release-2022-07.md",
         "upcoming": false,
         "current": false,
-        "maintained": true,
-        "legacy": false,
+        "maintained": false,
+        "legacy": true,
         "sortId": 32,
         "editorVersion": "v80.38.68",
         "serverVersion": "v189.0.37"

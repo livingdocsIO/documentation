@@ -3,6 +3,7 @@ type: release-notes
 title: July 2022 Release
 description: Release notes for release-2022-07
 hideSectionTeaser: true
+excludeFromSearch: false
 aliases:
   - /operations/releases/release-2022-07/release-2022-07/
 ---
@@ -10,9 +11,9 @@ aliases:
 {{< release-header
   title="July 2022 Release"
   upcoming=false
-  legacy=false
+  legacy=true
   current=false
-  maintained=true
+  maintained=false
   branchHandle="release-2022-07"
 >}}
 
