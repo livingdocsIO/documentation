@@ -160,6 +160,8 @@ References:
 
 ### Migrate the database :fire:
 
+It's a simple/fast migration with no expected data losses.
+
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database scheme
 # migration 179-fix-media-library-index.js

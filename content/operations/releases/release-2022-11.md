@@ -158,10 +158,14 @@ Similar to copy/paste one can now also cut/paste components.
 
 ### Migrate the database :fire:
 
-TODO: add db migrations
+It's a simple/fast migration with no expected data losses.
 
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database scheme
+# migration 182-add-started_at-index-on-users_occupations.js
+#   add index on user_occupations.started_at
+# migration 183-add-user_id-index-on-users_occupations.js
+#   add index on user_occupations.user_id
 livingdocs-server migrate up
 ```
 
