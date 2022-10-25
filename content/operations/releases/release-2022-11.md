@@ -11,9 +11,9 @@ aliases:
 
 {{< release-header
   title="November 2022 Release"
-  upcoming=false
+  upcoming=true
   legacy=false
-  current=true
+  current=false
   maintained=true
   branchHandle="release-2022-11"
 >}}
@@ -26,14 +26,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
 - :fire: We don't guarantee stable APIs. They can still change until the official release
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
-
-## PRs to Categorize
-* [Set correct height on iframe](https://github.com/livingdocsIO/livingdocs-editor/pull/5933)
-* [Table dashboard support for new `li-push-messages` plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/5833)
-* [New `li-push-messages` plugin with custom API endpoint](https://github.com/livingdocsIO/livingdocs-server/pull/4829)
-* [Configurable spellcheck styling](https://github.com/livingdocsIO/livingdocs-editor/pull/5943)
-* [Translate character count in properties panel](https://github.com/livingdocsIO/livingdocs-editor/pull/5946)
-* [Restore upload center placeholders](https://github.com/livingdocsIO/livingdocs-editor/pull/5945)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -132,7 +124,11 @@ Elasticsearch Indexing CLI (`livingdocs-server elasticsearch-index`) got some im
 
 ### Push Notification
 
-TODO: description
+TODO@Dominik: description
+
+* [Documentation: TODO@Dominik](TODO@Dominik)
+* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5833)
+* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4829)
 
 ### Synced Table Dashboards
 
@@ -371,6 +367,7 @@ httpServer: {
 * [Log framework violations after initialization](https://github.com/livingdocsIO/livingdocs-editor/pull/5765)
 * [Table Dashboards: provide a documentLoader to dashboard cards](https://github.com/livingdocsIO/livingdocs-editor/pull/5805)
 * [Hide teaser format select when no transforms are available](https://github.com/livingdocsIO/livingdocs-editor/pull/5862)
+* [Configurable spellcheck styling](https://github.com/livingdocsIO/livingdocs-editor/pull/5943)
 
 ### Bugfixes
 
@@ -400,6 +397,8 @@ httpServer: {
 * [Use default language on document creation](https://github.com/livingdocsIO/livingdocs-editor/pull/5902)
 * [Comments are shown on the right position](https://github.com/livingdocsIO/livingdocs-editor/pull/5884)
 * [List inbox is reactiv again on publish](https://github.com/livingdocsIO/livingdocs-editor/pull/5911)
+* [Set height of iframe in editor correctly](https://github.com/livingdocsIO/livingdocs-editor/pull/5933)
+
 
 ## Patches
 
