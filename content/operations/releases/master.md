@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Handle focal point in metadata forms](https://github.com/livingdocsIO/livingdocs-editor/pull/5953)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
