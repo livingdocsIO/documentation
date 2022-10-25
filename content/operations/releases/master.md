@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/4929)
 * [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/5949)
 * [fix(deps): update dependency @azure/storage-blob from 12.11.0 to v12.12.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4918)
 * [fix(deps): update dependency @livingdocs/framework from 24.5.0 to v24.6.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4919)
