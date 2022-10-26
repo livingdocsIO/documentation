@@ -20,10 +20,10 @@ curl -k -X POST "https://edit.livingdocs.io/proxy/api/api/beta/composition/:docu
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H 'Content-Type: application/json; charset=utf-8' \
-  --data-binary @- << EOF 
+  --data-binary @- << EOF
  {
     "fields": ["systemdata", "content", "metadata", "includes", "html"]
-  } 
+  }
 EOF
 ```
 
@@ -63,8 +63,10 @@ We plan to add additional functionalities like automatic design updates of docum
     "contentType": "article",
     "documentType": "article",
     "publicationId": 1,
-    "firstPublicationDate": "2021-03-16T14:08:11:686Z",
-    "updatedAt": "2021-03-18T16:32:04.170Z",
+    "firstPublicationDate": "2022-03-16T14:08:11:000Z",
+    "significantPublicationDate": "2022-10-26T07:25:00.000Z",
+    "visiblePublicationDate": "2022-10-27T06:00:00.000Z",
+    "updatedAt": "2023-03-18T16:32:04.170Z",
     "design": {
       "name": "timeline",
       "version": "1.1.0"
@@ -119,8 +121,10 @@ We plan to add additional functionalities like automatic design updates of docum
           "contentType": "article",
           "documentType": "article",
           "publicationId": 7,
-          "firstPublicationDate": "2021-03-17T14:08:11:686Z",
-          "updatedAt": "2021-03-18T17:32:04.170Z",
+          "firstPublicationDate": "2022-03-16T14:08:11:000Z",
+          "significantPublicationDate": "2022-10-26T07:25:00.000Z",
+          "visiblePublicationDate": "2022-10-27T06:00:00.000Z",
+          "updatedAt": "2023-03-18T17:32:04.170Z",
           "design": {
             "name": "timeline",
             "version": "1.1.0"

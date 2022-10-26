@@ -52,8 +52,10 @@ The response is a JSON object with 4 possible top-level properties:
     "contentType": "regular",
     "documentType": "article",
     "publicationId": 1,
-    "firstPublicationDate": "2021-03-16T14:08:11:686Z",
-    "updatedAt": "2021-03-18T16:32:04.170Z",
+    "firstPublicationDate": "2022-03-16T14:08:11:000Z",
+    "significantPublicationDate": "2022-10-26T07:25:00.000Z",
+    "visiblePublicationDate": "2022-10-27T06:00:00.000Z",
+    "updatedAt": "2023-03-18T16:32:04.170Z",
     "layout": "regular",
     "design": {
       "name": "timeline",

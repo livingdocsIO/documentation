@@ -37,7 +37,7 @@ GET api/beta/documents/:documentId/latestDraft
 
 --description--
 This endpoint returns the most recent draft version of a document.
-A token with permission 
+A token with permission
 The response is a JSON object with 5 possible top-level properties:
 
 - systemdata
@@ -58,8 +58,10 @@ The response is a JSON object with 5 possible top-level properties:
     "documentId": 603,
     "contentType": "regular",
     "documentType": "article",
-    "firstPublicationDate": "2022-02-22T16:33:42.836Z",
-    "updatedAt": "2022-02-22T16:33:42.836Z",
+    "firstPublicationDate": "2022-03-16T14:08:11:000Z",
+    "significantPublicationDate": "2022-10-26T07:25:00.000Z",
+    "visiblePublicationDate": "2022-10-27T06:00:00.000Z",
+    "updatedAt": "2023-02-22T16:33:42.836Z",
     "design": {
       "name": "living-times",
       "version": "1.0.4"
