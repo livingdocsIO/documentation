@@ -341,6 +341,7 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v194.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.16): fix(desknet): get all desknet entries in search
 - [v194.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.15): fix(media-library): Allow to add translation assets into a MediaLibraryEntry
 - [v194.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.14): fix: incorporate feedback
 - [v194.0.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.13): test(import): mediaLibraryEntry import - fix tests after open up schema again
