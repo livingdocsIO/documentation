@@ -73,11 +73,6 @@ The [Livingdocs Public API]({{< ref "/reference-docs/public-api" >}}) can be tes
 
 Thanks to the [OpenAPI specification](https://swagger.io/specification/), it's possible to quickly test the API using [Swagger UI](https://petstore.swagger.io/?url=https://livingdocsio.github.io/openapi/livingdocs-openapi.json). And import the full collection of existing API endpoints into Insomnia or Postman.
 
-### Roles for Read and Write Instances
-
-The [Livingdocs Public API]({{< ref "/reference-docs/public-api" >}}) can be tested and consumed with an [OpenAPI v3 specification file](https://livingdocsio.github.io/openapi/livingdocs-openapi.json).
-
-Thanks to the [OpenAPI specification](https://swagger.io/specification/), it's possible to quickly test the API using [Swagger UI](https://petstore.swagger.io/?url=https://livingdocsio.github.io/openapi/livingdocs-openapi.json). And import the full collection of existing API endpoints into Insomnia or Postman.
 
 ### Metadata Plugin li-document-references
 
@@ -86,10 +81,6 @@ A `li-document-references` metadata field is a list of references to other docum
 * [Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-document-references)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4871)
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5873)
-
-### i18n - Editor available in German
-
-TODO: do we already announce that? Is it ready for prime? description?
 
 ### Separation of Revision Metadata and System Metadata
 
@@ -129,10 +120,6 @@ TODO@Dominik: description
 * [Documentation: TODO@Dominik](TODO@Dominik)
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5833)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4829)
-
-### Synced Table Dashboards
-
-TODO: description
 
 ### Document Lists Sync (Autorefresh)
 

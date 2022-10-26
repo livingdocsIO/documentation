@@ -80,6 +80,14 @@ TODO: Is this a highlight? Is the feature ready? Is the feature documented?
 
 * [Microsoft Teams Integration](https://github.com/livingdocsIO/livingdocs-server/pull/4408)
 
+### i18n - Editor available in German
+
+TODO: description
+
+### Synced Table Dashboards
+
+TODO: description
+
 ## Breaking Changes :fire:
 
 ### Migrate the database :fire:
