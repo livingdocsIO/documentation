@@ -409,6 +409,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.5): fix(desknet): get all desknet entries in search
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
