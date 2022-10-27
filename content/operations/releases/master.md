@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(list cards): Rocket](https://github.com/livingdocsIO/livingdocs-editor/pull/5973)
 * [Fix Desknet schedule limit](https://github.com/livingdocsIO/livingdocs-server/pull/4933)
 * [Remaining translations for `features/properties` directory](https://github.com/livingdocsIO/livingdocs-editor/pull/5954)
 * [Do not remove link/reference when updating label name in li-tree](https://github.com/livingdocsIO/livingdocs-editor/pull/5960)
