@@ -88,6 +88,18 @@ References extracted from the content of a document provide details of the item 
 }
 ```
 
+#### List
+
+```js
+{
+  type: 'list',
+  id: '4',
+  location: 'include-directive',
+  count: 3,
+  propertyName: 'myList',
+}
+```
+
 ### Within metadata
 
 References extracted from the metadata of a document or media library entry also provide details of the item they are referencing (`id` and `type`), but only require simple contextual information (`location: 'metadata'` and `propertyName`) to help locate the reference.
