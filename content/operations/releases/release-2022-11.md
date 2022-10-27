@@ -67,20 +67,25 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Highlights
 
+### Focal Point Cropping
+
+Automatic crops are a great way to define multiple crops of an image, but automatic crops could cut off the important subject in the image. There is where focal point cropping comes into the game by letting users choose where in the image the main subject is and all automatic crops will make sure it is visible in the frame.
+
+* [PR: Focal point selection for images](https://github.com/livingdocsIO/livingdocs-editor/pull/5916)
+
+### Push Notification
+
+TODO@Dominik: description
+
+* [Documentation: TODO@Dominik](TODO@Dominik)
+* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5833)
+* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4829)
+
 ### Public API - Open API Specification
 
 The [Livingdocs Public API]({{< ref "/reference-docs/public-api" >}}) can be tested and consumed with an [OpenAPI v3 specification file](https://livingdocsio.github.io/openapi/livingdocs-openapi.json).
 
 Thanks to the [OpenAPI specification](https://swagger.io/specification/), it's possible to quickly test the API using [Swagger UI](https://petstore.swagger.io/?url=https://livingdocsio.github.io/openapi/livingdocs-openapi.json). And import the full collection of existing API endpoints into Insomnia or Postman.
-
-
-### Metadata Plugin li-document-references
-
-A `li-document-references` metadata field is a list of references to other documents.
-
-* [Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-document-references)
-* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4871)
-* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5873)
 
 ### Separation of Revision Metadata and System Metadata
 
@@ -94,6 +99,27 @@ To understand the possibilities and use cases better, you can read the [TODO: Do
 * [PR: System Metadata Preparation](https://github.com/livingdocsIO/livingdocs-server/pull/4735)
 * [PR: System Metadata Preparation II](https://github.com/livingdocsIO/livingdocs-server/pull/4778)
 * [PR: System Metadata](https://github.com/livingdocsIO/livingdocs-server/pull/4807)
+
+### Document Lists Sync (Autorefresh)
+
+When another user updates a List (List Assignment or publishing a List), users with the (Multi-)List Editor open will see these changes immediately on their screen.
+
+* [PR: List Sync](https://github.com/livingdocsIO/livingdocs-editor/pull/5853)
+* [PR: Sync Notification](https://github.com/livingdocsIO/livingdocs-editor/pull/5941)
+
+### Cut and paste Components
+
+Similar to copy/paste one can now also cut/paste components.
+
+* [PR: Cut and paste components](https://github.com/livingdocsIO/livingdocs-editor/pull/5824)
+
+### Metadata Plugin li-document-references
+
+A `li-document-references` metadata field is a list of references to other documents.
+
+* [Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-document-references)
+* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4871)
+* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5873)
 
 ### Roles for Read and Write Instances
 
@@ -112,34 +138,6 @@ Elasticsearch Indexing CLI (`livingdocs-server elasticsearch-index`) got some im
 - add `--ids-file=file-with-ids.txt` to index specific document id's passed by a file
 
 * [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4837)
-
-### Push Notification
-
-TODO@Dominik: description
-
-* [Documentation: TODO@Dominik](TODO@Dominik)
-* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5833)
-* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4829)
-
-### Document Lists Sync (Autorefresh)
-
-When another user updates a List (List Assignment or publishing a List), users with the (Multi-)List Editor open will see these changes immediately on their screen.
-
-* [PR: List Sync](https://github.com/livingdocsIO/livingdocs-editor/pull/5853)
-* [PR: Sync Notification](https://github.com/livingdocsIO/livingdocs-editor/pull/5941)
-
-### Focal Point Cropping
-
-Automatic crops are a great way to define multiple crops of an image, but automatic crops could cut off the important subject in the image. There is where focal point cropping comes into the game by letting users choose where in the image the main subject is and all automatic crops will make sure it is visible in the frame.
-
-* [PR: Focal point selection for images](https://github.com/livingdocsIO/livingdocs-editor/pull/5916)
-
-### Cut and paste Components
-
-Similar to copy/paste one can now also cut/paste components.
-
-* [PR: Cut and paste components](https://github.com/livingdocsIO/livingdocs-editor/pull/5824)
-
 
 ## Breaking Changes :fire:
 
