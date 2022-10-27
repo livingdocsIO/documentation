@@ -175,6 +175,20 @@ db: {
   pool_min: 1,
   pool_max: 20,
   ssl: false
+  // migrate user: Used to run database migrations
+  // Gets created automatically with `livingdocs-server database create`
+  migrate: {
+    username: 'li_test_owner',
+    password: 'something2'
+  },
+
+  // Superuser that has permissions to create the users above
+  setup: {
+    username: 'postgres',
+    password: 'something3',
+    writeRole: `role_database_write`,
+    readRole: `role_database_read`
+  }
 }
 ```
 
