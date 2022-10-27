@@ -102,20 +102,20 @@ To understand the possibilities and use cases better, you can read the [TODO: Do
 
 ### Document Lists Sync (Autorefresh)
 
-When another user updates a List (List Assignment or publishing a List), users with the (Multi-)List Editor open will see these changes immediately on their screen.
+Collaboratively managing Document Lists became much easier. Livingdocs now synchronises all changes so any user always sees the latest version of a Document List. Therefore, no more conflicting changes resulting in error messages and tedious reloads will occur.
 
 * [PR: List Sync](https://github.com/livingdocsIO/livingdocs-editor/pull/5853)
 * [PR: Sync Notification](https://github.com/livingdocsIO/livingdocs-editor/pull/5941)
 
 ### Cut and paste Components
 
-Similar to copy/paste one can now also cut/paste components.
+Cutting and pasting components makes reordering components within a long document much easier. Cutting components moves them into the Clipboard from where they can be dragged to their new position.
 
 * [PR: Cut and paste components](https://github.com/livingdocsIO/livingdocs-editor/pull/5824)
 
 ### Metadata Plugin li-document-references
 
-A `li-document-references` metadata field is a list of references to other documents.
+To replace the existing `li-reference-list` metadata plugin with it's more modern variant, `li-document-references` is introduced. It allows a more flexible configuration for the dashboard in use to search documents by the means of the `useDashboard` config as you know it from `li-document-reference`.
 
 * [Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-document-references)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4871)
