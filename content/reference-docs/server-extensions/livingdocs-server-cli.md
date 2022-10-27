@@ -38,3 +38,33 @@ To execute a livingdocs-server CLI command, go to your Livingdocs Server folder 
 |secret-reencrypt|Re-encrypt all secrets with the configured encryption key|
 |key-generate|Generate a signing or encryption json web key|
 |completion|generate completion script for livingdocs-server CLI|
+
+
+# Create PostgreSQL database
+
+The livingdocs-server utility allows you to easily manage your PostgreSQL database. When you execute `livingdocs-server database create`, the database will be created with the provided superuser, but it will also configure a `migrate` (owner) user and write user as specified in the Server configuration, if configuration bellow are not defined it will take default values.
+
+```js
+  db: {
+    // name of the databse
+    database: 'li_test',
+
+    // write user: gets created automatically
+    username: 'user_li_test_write',
+    password: 'something',
+
+    // migrate user: gets created automatically, used to run database migrations
+    migrate: {
+      username: 'li_test_owner',
+      password: 'something2'
+    },
+
+    // this is the superuser that has permissions to create the users above
+    setup: {
+      username: 'postgres',
+      password: 'something3',
+      writeRole: `role_database_write`,
+      readRole: `role_database_read`
+    }
+  },
+```
