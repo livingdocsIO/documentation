@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Re-add type to indexing job success log](https://github.com/livingdocsIO/livingdocs-server/pull/4930)
 * [fix(list cards): Rocket](https://github.com/livingdocsIO/livingdocs-editor/pull/5973)
 * [Fix Desknet schedule limit](https://github.com/livingdocsIO/livingdocs-server/pull/4933)
 * [Remaining translations for `features/properties` directory](https://github.com/livingdocsIO/livingdocs-editor/pull/5954)
