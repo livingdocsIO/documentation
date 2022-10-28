@@ -358,6 +358,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.59): fix(li-tree): do not remove link/reference when updatinglabel name
 - [v81.20.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.58): fix(publish): Back returns to custom dashboard after create
 - [v81.20.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.57): fix: full body iframe height and better growth detection
 - [v81.20.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.56): fix(media-library): Restore upload center placeholders
