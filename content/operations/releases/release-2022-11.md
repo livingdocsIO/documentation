@@ -394,6 +394,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.8): fix(desknet): Don't try to save null values for metadata properties
 - [v200.3.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.7): fix(includes): load drafts in preview
 - [v200.3.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.6): fix(indexing): Correctly apply updatedAt filter during indexing of media library entries
 - [v200.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.5): fix(desknet): get all desknet entries in search
