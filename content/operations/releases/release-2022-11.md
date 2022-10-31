@@ -399,6 +399,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.6): chore(li-tree): implement code review feedback
 - [v85.15.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.5): fix(li-tree): do not remove link/reference when updatinglabel name
 - [v85.15.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.4): fix(publish): Back returns to custom dashboard after create
 - [v85.15.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.3): test(focal-point): add focal point in image metadata tests
