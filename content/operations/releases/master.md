@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Load drafts in includes](https://github.com/livingdocsIO/livingdocs-server/pull/4936)
 * [li-tree: prevent nesting when maxDepth is set to 0 and respect complete tree depth when comparing to maxDepth](https://github.com/livingdocsIO/livingdocs-editor/pull/5970)
 * [Respect allowTypes and make type 'group' the default type for li-tree](https://github.com/livingdocsIO/livingdocs-editor/pull/5964)
 * [Don't try to save null values in Desk-Net metadata plugin storage object](https://github.com/livingdocsIO/livingdocs-server/pull/4937)
