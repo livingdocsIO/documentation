@@ -359,6 +359,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.61): chore(li-tree): implement code review feedback
 - [v81.20.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.60): chore(li-tree): implement code review feedback
 - [v81.20.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.59): fix(li-tree): do not remove link/reference when updatinglabel name
 - [v81.20.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.58): fix(publish): Back returns to custom dashboard after create
