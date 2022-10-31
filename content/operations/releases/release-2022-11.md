@@ -55,7 +55,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 ### Minimal
 |Name|Version|
 |-|-|
-|Node|14|
+|Node|14.17.0|
 |NPM|7|
 |Postgres|12|
 |Elasticsearch<br/>OpenSearch|7.x<br/>1|
