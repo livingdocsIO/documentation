@@ -403,6 +403,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.8): fix(li-media-language): Remove all code references to `li-media-language`, metadata plugin no longer supported.
 - [v85.15.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.7): chore(li-tree): implement code review feedback
 - [v85.15.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.6): chore(li-tree): implement code review feedback
 - [v85.15.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.5): fix(li-tree): do not remove link/reference when updatinglabel name
