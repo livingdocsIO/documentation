@@ -71,6 +71,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 Automatic crops are a great way to define multiple crops of an image, but automatic crops could cut off the important subject in the image. There is where focal point cropping comes into the game by letting users choose where in the image the main subject is and all automatic crops will make sure it is visible in the frame.
 
+* [Documentation](https://docs.livingdocs.io/guides/media-library/media-library-setup/#focal-point-cropping)
 * [PR: Focal point selection for images](https://github.com/livingdocsIO/livingdocs-editor/pull/5916)
 
 ### Push Notification
