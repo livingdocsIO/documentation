@@ -309,23 +309,24 @@ module.exports = {
 
 ### Focal Point Cropping
 
-For images where [Named Crops](#named-crops) are configured, focal point cropping is always enabled since `release-2022-11`.
+With `release-2022-11` focal point cropping was introduced.
 
-Focal point selection is supported in the cropping tool where named crop variants are available.
+Focal point selection is supported on [`li-named-crops`](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-named-crops) and [`li-image`](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-image) whenever multiple crops are present.
+
 
 #### Where automatic cropping struggles
-Each named crop starts with an automatic crop, choosing the default aspect ratio. This does not always lead to ideal results.
+Each crop starts with an automatic crop, choosing the default aspect ratio. This does not always lead to ideal results.
 
 This image of a chapel in front of the famous Matterhorn in the swiss alps is a good example where automatic crops would normally struggle.
 
-The named crop _Mobile_ defines an upright aspect ratio of 3:4. By default, the 3:4 crop is centered within the original image.
+The _Mobile_ crop defines an upright aspect ratio of 3:4. By default, the 3:4 crop is centered within the original image.
 But in this case, it cuts off both subjects.
 ![Screenshot showing default cropping cuts off main subjects](fp_crop_default.png)
 
 #### Focal Point Mode
 
 With the cropping tool opened, click on _Set Focal Point_ to go into focal point selection mode.
-In this mode, all possible named crops are showing a live preview on the right side, also those that where not yet added in the previous view.
+In this mode, all possible crops are showing a live preview on the right side, also those that where not yet added in the previous view.
 On the left side, the original image is shown with slightly faded colors and a circle indicating the current focal point position.
 
 By default, the focal point is the center of the image. This is also true if the focal point is not defined at all.
