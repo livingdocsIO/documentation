@@ -307,6 +307,61 @@ module.exports = {
 }
 ```
 
+### Focal Point Cropping
+
+For images where [Named Crops](#named-crops) are configured, focal point cropping is always enabled since `release-2022-11`.
+
+Focal point selection is supported in the cropping tool where named crop variants are available.
+
+#### Where automatic cropping struggles
+Each named crop starts with an automatic crop, choosing the default aspect ratio. This does not always lead to ideal results.
+
+This image of a chapel in front of the famous Matterhorn in the swiss alps is a good example where automatic crops would normally struggle.
+
+The named crop _Mobile_ defines an upright aspect ratio of 3:4. By default, the 3:4 crop is centered within the original image.
+But in this case, it cuts off both subjects.
+![Screenshot showing default cropping cuts off main subjects](fp_crop_default.png)
+
+#### Focal Point Mode
+
+With the cropping tool opened, click on _Set Focal Point_ to go into focal point selection mode.
+In this mode, all possible named crops are showing a live preview on the right side, also those that where not yet added in the previous view.
+On the left side, the original image is shown with slightly faded colors and a circle indicating the current focal point position.
+
+By default, the focal point is the center of the image. This is also true if the focal point is not defined at all.
+![Screenshot showing the focal point in the center of the image](fp_select_center.png)
+
+#### Changing the Focal Point
+
+Let's say we'd like the _Matterhorn_ to be our main subject in this image.
+While in focal point mode, click on the subject inside the left image to update the focal point.
+Notice how the previews on the right side are updated. The 3:4 _Mobile_ crop looks a lot better now.
+![Screenshot showing the focal point on the Matterhorn](fp_select_mountain.png)
+
+We changed our mind and we'd like to put the focal point on the nice chapel.
+Just click on it and observe how the previews are changing.
+For best results, use the previews to fine-tune the focal point by making slight adjustments.
+
+![Screenshot showing the focal point on the chapel](fp_select_chapel.png)
+
+#### Apply the Focal Point
+
+Once you're happy with the previews, click on _Apply Focal Point_.
+This will bring you back to the normal crop view.
+
+**Hint**: After you've made changes to the focal point, don't forget to click on _Save_.
+When clicking on cancel or closing the window without saving, focal point changes are lost.
+
+#### Backwards Compatibility
+
+Focal point cropping is fully backwards compatible and does not need or have any configuration.
+
+Images can now have a `focalPoint` property with `x` and `y` coordinates.
+However, each image starts with no focal point defined.
+
+It will only be set if a user explicitly selected a focal point.
+In all other cases, the automatic crop calculation falls back to the center crop as it was before `release_2022-11`.
+
 ## Videos
 Since `release-2021-03` you can manage your Videos with the Livingdocs Media Library as well. It works pretty similar to the images. The solution still has some shortcomings you need to be aware of:
 
