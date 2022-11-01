@@ -74,11 +74,17 @@ Automatic crops are a great way to define multiple crops of an image, but automa
 * [Documentation](https://docs.livingdocs.io/guides/media-library/media-library-setup/#focal-point-cropping)
 * [PR: Focal point selection for images](https://github.com/livingdocsIO/livingdocs-editor/pull/5916)
 
-### Push Notification
+### Push Messages
 
-TODO@Dominik: description
+As an alternative to the existing [Push Notifications](https://docs.livingdocs.io/guides/editor/push-notifications) feature,
+we developed the more flexible `li-push-messages` plugin. The two features may be merged in the future,
+but for now they co-exist independently.
 
-* [Documentation: TODO@Dominik](TODO@Dominik)
+- Dynamic input form based on message schema
+- Works with table dashboards
+- Implement your own push function
+
+* [Documentation](https://docs.livingdocs.io/guides/editor/push-messages)
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5833)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4829)
 
