@@ -24,8 +24,6 @@ curl -k -X POST "https://edit.livingdocs.io/proxy/api/api/v1/documents/:document
   --data-binary @- << EOF
   {
     "reportId": "2SG2MAA9RwPn",
-    "projectId": 1,
-    "documentId": 1,
     "publicationId": 524,
     "deliveryHandle": "web",
     "status": "success",
@@ -40,16 +38,14 @@ POST api/v1/documents/:documentId/addDeliveryStatus
 ```
 
 --parameters--
-| Name           | Type    | Required | Notes                                                                                           |
-| -------------- | ------- | -------- | ----------------------------------------------------------------------------------------------- |
-| :documentId    | integer | x        |                                                                                                 |
-| reportId       | string  |          | if provided this will update the record, otherwise it will create a new one with a new reportId |
-| projectId      | string  |          |                                                                                                 |
-| documentId     | string  |          |                                                                                                 |
-| publicationId  | string  | x        |                                                                                                 |
-| deliveryHandle | string  | x        |                                                                                                 |
-| status         | string  | x        | One of: "success", "failed", "in-progress"                                                      |
-| message        | string  |          | String or sanitized HTML                                                                        |
+| Name           | Type     | Required | Notes                                                                                           |
+| -------------- | -------  | -------- | ----------------------------------------------------------------------------------------------- |
+| :documentId    | integer  | x        |                                                                                                 |
+| reportId       | string   |          | if provided this will update the record, otherwise it will create a new one with a new reportId |
+| publicationId  | integer  | x        |                                                                                                 |
+| deliveryHandle | string   | x        |                                                                                                 |
+| status         | string   | x        | One of: "success", "failed", "in-progress"                                                      |
+| message        | string   |          | String or sanitized HTML                                                                        |
 
 --description--
 This endpoint allows to provide updates for a document/publication regarding its status in an external delivery system (e.g. page build status in a static site generator).<br>
