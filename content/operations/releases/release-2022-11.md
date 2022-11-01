@@ -394,6 +394,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.10): fix(li-media-language): Remove support for `li-media-language`
 - [v200.3.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.9): fix(desknet): Check value changed before publication status sync
 - [v200.3.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.8): fix(desknet): Don't try to save null values for metadata properties
 - [v200.3.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.7): fix(includes): load drafts in preview
