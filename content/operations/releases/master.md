@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Remove support for `li-media-language`](https://github.com/livingdocsIO/livingdocs-server/pull/4899)
 * [Check Desk-Net publication status changed before sync](https://github.com/livingdocsIO/livingdocs-server/pull/4947)
 * [Load drafts in includes](https://github.com/livingdocsIO/livingdocs-server/pull/4936)
 * [li-tree: prevent nesting when maxDepth is set to 0 and respect complete tree depth when comparing to maxDepth](https://github.com/livingdocsIO/livingdocs-editor/pull/5970)
