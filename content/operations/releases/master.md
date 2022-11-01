@@ -68,20 +68,20 @@ These are the release notes of the upcoming release (pull requests merged to mas
 |Postgres|14|
 |Elasticsearch<br/>OpenSearch|8.x<br/>2|
 |Redis|7|
-|Livingdocs Server Docker Image|livingdocs/server-base:16|
-|Livingdocs Editor Docker Image|livingdocs/editor-base:16|
+|Livingdocs Server Docker Image|livingdocs/server-base:18|
+|Livingdocs Editor Docker Image|livingdocs/editor-base:18|
 |Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
 
 ### Minimal
 |Name|Version|
 |-|-|
-|Node|14|
-|NPM|7|
+|Node|16|
+|NPM|8|
 |Postgres|12|
 |Elasticsearch<br/>OpenSearch|7.x<br/>1|
 |Redis|5 (Deprecated)|
-|Livingdocs Server Docker Image|livingdocs/server-base:14.3|
-|Livingdocs Editor Docker Image|livingdocs/editor-base:14.3|
+|Livingdocs Server Docker Image|livingdocs/server-base:16.3|
+|Livingdocs Editor Docker Image|livingdocs/editor-base:16.3|
 |Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
 
 
