@@ -70,12 +70,18 @@ imageDirective.setContent({
   mimeType: 'image/jpeg',
   imageService: 'resrc.it',
   crop: {x: 100, y: 50, width: 200, height: 200},
-  origins: [{name: 'uez463x8ie39', identifier: 'hugo'}]
+  origins: [{name: 'uez463x8ie39', identifier: 'hugo'}],
+  focalPoint: {x: 234, y:123}
 })
 
 // Update the crop
 imageDirective.setCrop({x: 0, y: 0, width: 250, height: 250})
 ```
+
+Please notice that the (optional) `focalPoint` property needs to be within the image `width` and `height` bounds.
+However, the focal point is not necessarily related to the `crop`.
+The focal point gives the automatic cropping capabilities a hint what to include in the crop.
+But the user may still adjust the crop manually which ignores, but still remembers the focal point. 
 
 #### Video
 
