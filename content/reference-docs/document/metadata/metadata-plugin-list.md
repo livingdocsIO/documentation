@@ -533,7 +533,7 @@ metadata: [
 **Storage Format**:
 ```js
 {
-  originalUrl: <String,
+  originalUrl: <String>,
   url: <String>,
   mediaId: <String>,
   height: <Integer>,
@@ -542,7 +542,11 @@ metadata: [
   imageService: <String>,
   crops: [
     <Object>
-  ]
+  ],
+  focalPoint: {
+    x: <Integer>,
+    y: <Integer>
+  }
 }
 ```
 **Default UI**: UI to select/upload/delete/crop an image (`liMetaImageForm`)
@@ -722,7 +726,11 @@ metadata: [
       height: <Integer>,
       isAutomatic: <Boolean>
     }
-  ]
+  ],
+  focalPoint: {
+    x: <Integer>,
+    y: <Integer>
+  }
 }
 ```
 **Default UI**: crop management (`liMetaNamedCropsForm`)
