@@ -541,6 +541,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.78](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.78): chore(drone): Add `shrinkwrap` command in downstream test script, remove NZZ since they use `release-2022-07` already
 - [v80.10.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.77): chore: improve comment
 - [v80.10.76](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.76): fix(metadata): don't error in any case when metadata properties are updated
 - [v80.10.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.75): fix(metadata-mapper): always emit event when updating metadata
