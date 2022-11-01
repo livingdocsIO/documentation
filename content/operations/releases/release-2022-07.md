@@ -409,6 +409,7 @@ Allows the patch operation `archive` via public API to archive an asset.
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v189.0.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.38): fix(desknet): Check value changed before publication status sync
 - [v189.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.37): fix(print): Use previously hardcoded fields as fallback
 - [v189.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.36): fix: incorporate feedback
 - [v189.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.35): fix(google-vision): Rework google vision feature register function and set to disable by default
