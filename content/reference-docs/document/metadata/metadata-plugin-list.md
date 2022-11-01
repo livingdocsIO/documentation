@@ -14,7 +14,7 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 
 
 | Metadata Plugin                                    | Metadata Plugin Type     | Description                                   | Usage (D = Document, M = Media Library Entries, T = Table Dashboard, I = Includes) | Default UI                                                 |
-| -------------------------------------------------- | ------------------------ | --------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+|----------------------------------------------------|--------------------------|-----------------------------------------------|------------------------------------------------------------------------------------|------------------------------------------------------------|
 | [Boolean](#li-boolean)                             | li-boolean               | Boolean                                       | D, M, T                                                                            | checkbox                                                   |
 | [Color](#li-color)                                 | li-color                 | Color Code                                    | D, M, T, I                                                                         | text                                                       |
 | [Category](#li-category)                           | li-category              | category                                      | D, T                                                                               | select                                                     |
@@ -22,10 +22,10 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Date/Time validity](#li-datetime-validity)        | li-datetime-validity     | Date                                          | M                                                                                  | 2 date/time inputs                                         |
 | [Date/Time](#li-datetime)                          | li-datetime              | Date                                          | D, M                                                                               | date/time input                                            |
 | [Dependencies](#li-dependencies)                   | li-dependencies          | Livingdocs framework dependencies definition  | D                                                                                  | no UI                                                      |
-| [Desk-Net Integration](#li-desknet-integration)                | li-desknet-integration   | Desk-Net Integration                          | D, T                                                                                  | Link to Desk-Net distribution entry                        |
-| [Desk-Net Schedule](#li-desknet-schedule)                | li-desknet-schedule   | Desk-Net Schedule                          | D                                                                                  | Platform/category select and date input                        |
+| [Desk-Net Integration](#li-desknet-integration)    | li-desknet-integration   | Desk-Net Integration                          | D, T                                                                               | Link to Desk-Net distribution entry                        |
+| [Desk-Net Schedule](#li-desknet-schedule)          | li-desknet-schedule      | Desk-Net Schedule                             | D                                                                                  | Platform/category select and date input                    |
 | [Document Reference](#li-document-reference)       | li-document-reference    | A reference to another document               | D, M, T                                                                            | document selection (dialog)                                |
-| [Document References](#li-document-references)       | li-document-references    | A list of references to other documents               | D, M, I                                                                            | document selection (dialog)                                |
+| [Document References](#li-document-references)     | li-document-references   | A list of references to other documents       | D, M, I                                                                            | document selection (dialog)                                |
 | [Enum](#li-enum)                                   | li-enum                  | string from static list, validated on publish | D, M, T                                                                            | select                                                     |
 | [External Id](#li-external-id)                     | li-external-id           | id marker for an external system              | D, M, T                                                                            | select                                                     |
 | [Document Target Length](#li-target-length)        | li-target-length         | Target length in characters for a document    | D                                                                                  | number input or length slider                              |
@@ -40,6 +40,7 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Numeric List](#li-numeric-list)                   | li-numeric-list          | Array of Numbers                              | D, M                                                                               | multi number input                                         |
 | [Poster Image](#li-poster-image)                   | li-poster-image          | Poster Image for Videos                       | M (Video)                                                                          | image selection                                            |
 | [Publish Date](#li-publish-date)                   | li-publish-date          | Holds first publication date, user editable   | D                                                                                  | date/time input                                            |
+| [Push Messages](#li-push-messages)                 | li-push-messages         | Manages creation and storage of push messages | D, T                                                                               | Table dashboard button launches dialog with input form     |
 | [Reference List](#li-reference-list)               | li-reference-list        | Multiple references to other documents        | D, M                                                                               | document selection (dialog)                                |
 | [Reference](#li-reference)                         | li-reference             | A reference to another document               | D, M                                                                               | document selection (dialog)                                |
 | [Retresco](#li-retresco)                           | li-retresco              | Retresco tag management                       | D                                                                                  | manage tags                                                |
@@ -794,6 +795,60 @@ metadata: [
 ## li-publish-date
 **Storage Format**: `<ISO8601 String>`\
 **Default UI**: date/time input (`liMetaDatetimeForm`)
+
+## li-push-messages
+
+{{< added-in release-2022-11 block >}}
+
+**Storage Format**:
+```js
+{
+  messages: [{
+    id: <String>,
+    sentAt: <ISO8601 String>,
+    userId: <Number>,
+    params: <Object>
+  }]
+}
+```
+
+**Default UI**: Push messages dialog launched from table dashboard
+
+{{< img src="./images/li-push-messages-dashboard.png" alt="Push Messages on Table Dashboard" >}}
+
+{{< img src="./images/li-push-messages-dialog.png" alt="Push Messages Dialog Form" >}}
+
+
+**Project Config**
+```js
+metadata: [
+  {
+    type: 'li-push-messages',
+    handle: 'myPushMessages',             // Name of the metadata field
+    ui: {
+      label: 'Push Me'                    // Optional, controls button label on table dashboards
+    },
+    config: {
+      paramsSchema: [                     // Defines schema of message object
+        {
+          type: 'li-text',                // One of: li-text, li-boolean, li-integer, li-date, li-datetime
+          handle: 'messageText',          // Property name on message object
+          config: {                       // Config based on type (li-text here)
+            required: true,
+            maxLength: 120,
+            recommendedMaxLength: 100
+          }
+        }
+      ],
+      handlerName: 'myPushMessageHandler' // Optional, name of the registered function to send the message
+    }
+  }
+]
+```
+
+**Further guides**
+- See how to [show push button on a table dashboard](https://docs.livingdocs.io/guides/editor/push-messages/#show-push-button-on-a-table-dashboard)
+- See how to [register custom function](https://docs.livingdocs.io/guides/editor/push-messages/#register-custom-function) 
 
 ## li-reference-list
 
