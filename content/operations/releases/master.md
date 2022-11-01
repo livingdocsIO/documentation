@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @google-cloud/storage from 6.5.4 to v6.6.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4940)
 * [Unpublish Now calls correct endpoint](https://github.com/livingdocsIO/livingdocs-editor/pull/5914)
 * [Unpublish Now is implemented editor side and uses the new publish control endpoint](https://github.com/livingdocsIO/livingdocs-server/pull/4892)
 * [Remove all code references to `li-media-language`](https://github.com/livingdocsIO/livingdocs-editor/pull/5927)
