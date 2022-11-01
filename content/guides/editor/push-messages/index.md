@@ -10,7 +10,7 @@ weight: 15
 TODO: explain why the feature exists, when it should be used over push notifications etc.
 
 1. Configure a metadata field on the content types that should support push messages
-2. Show the metadata field on a table dashboard
+2. Show the push button in a table dashboard column
 3. Register custom function to send push messages
 
 ## Configure metadata field
@@ -21,30 +21,30 @@ article.js
 ```js
 {
   type: 'li-push-messages',
-  handle: 'myPushMessages',           // Name of the metadata field
+  handle: 'myPushMessages',             // Name of the metadata field
   ui: {
-    label: 'Push'                     // Optional, controls button label on table dashboards
+    label: 'Push'                       // Optional, controls button label on table dashboards
   },
   config: {
-    paramsSchema: [                   // Defines schema of message object
+    paramsSchema: [                     // Defines schema of message object
       {
-        type: 'li-text',              // One of: li-text, li-boolean, li-integer, li-date, li-datetime
-        handle: 'messageText',        // Property name on message object
-        config: {                     // Config based on type (li-text here)
+        type: 'li-text',                // One of: li-text, li-boolean, li-integer, li-date, li-datetime
+        handle: 'messageText',          // Property name on message object
+        config: {                       // Config based on type (li-text here)
           required: true,
           maxLength: 120,
           recommendedMaxLength: 100
         }
       }
     ],
-    handlerName: 'sendMyPushMessage'  // Name of the registered function to send the message
+    handlerName: 'myPushMessageHandler' // Optional, name of the registered function to send the message
   }
 }
 ```
 
 TODO: Show a screenshot or add a text explaining how the params schema controls the dialog form
 
-## Show it on a table dashboard
+## Show push button on a table dashboard
 
 Adding the push message button on a table dashboard is simple:
 
@@ -71,6 +71,45 @@ columns: [
 
 ## Register custom function
 
-The `li-push-messages` plugin handles everything regarding the user interface and message persistence.
+The `li-push-messages` plugin handles everything regarding the user interface and saves the messages to the database.
 But it does not actually send push messages anywhere. Instead, it lets you register your own function to do that job.
+
+- Register push message handler after server initialization
+- Handler function can be `async`, returned value will be ignored
+- Push message will not be saved if handler throws an error
+
+TODO: link to server boilerplate 
+
+```js
+module.exports = function (liServer) {
+  // Register function after server initialization
+  liServer.registerInitializedHook(async function () {
+
+    const log = liServer.log.child({ns: 'push-messages-hooks'})
+    const pushMessagesApi = liServer.features.api('li-documents').pushMessages
+    
+    pushMessagesApi.registerPushMessageHandler({
+      // Name must be unique across projects
+      name: 'myPushMessageHandler',
+
+      /**
+       * @async
+       * @param {object} args
+       * @param {object} args.projectConfig
+       * @param {number} args.userId
+       * @param {string} args.documentId
+       * @param {string} args.metadataPropertyName
+       * @param {string} args.pushMessageId - Id the push message will have
+       * @param {object} args.params - The message object, following paramsSchema
+       * @return {Promise<void>}
+       */
+      async handler (args) {
+        log.info(
+          `Handling push message for metadata property name "${args.metadataPropertyName}"`
+        )
+      }
+    })
+  })
+}
+```
 
