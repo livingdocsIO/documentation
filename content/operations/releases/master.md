@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Drop support for node 14](https://github.com/livingdocsIO/livingdocs-server/pull/4954)
 * [Drop support for node 14](https://github.com/livingdocsIO/livingdocs-editor/pull/5990)
 * [fix(deps): update dependency jose from 4.9.3 to v4.10.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4943)
 * [fix(deps): update dependency @google-cloud/storage from 6.5.4 to v6.6.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4940)
