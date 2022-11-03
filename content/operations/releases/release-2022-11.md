@@ -76,15 +76,14 @@ Automatic crops are a great way to define multiple crops of an image, but automa
 
 ### Push Messages
 
-As an alternative to the existing [Push Notifications](https://docs.livingdocs.io/guides/editor/push-notifications) feature,
-we developed the more flexible `li-push-messages` plugin. The two features may be merged in the future,
-but for now they co-exist independently.
+A new metadata plugin which does all the User Interface and database work required to send Push Messages,
+but gives you the control over what and how to send.
 
-- Dynamic input form based on message schema
-- Works with table dashboards
-- Implement your own push function
+- Send Push Messages directly from Table Dashboards
+- Dynamic message format based on Params Schema
+- Implement your own push function to send messages anywhere
 
-* [Documentation](https://docs.livingdocs.io/guides/editor/push-messages)
+* [Documentation]({{< ref "/reference-docs/document/metadata/metadata-plugin-list#li-push-messages" >}})
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5833)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4829)
 

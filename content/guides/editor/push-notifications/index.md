@@ -13,6 +13,8 @@ Livingdocs supports three push notification services.
 - Urban airship
 - Ethinking
 
+For other push services, use the [`li-push-messages` metadata plugin]({{< ref "/reference-docs/document/metadata/metadata-plugin-list#li-push-messages" >}}) instead of Push Notifications.
+
 The resulting feature looks as follows.
 
 {{< img src="article.png" alt="Article UI" >}}
