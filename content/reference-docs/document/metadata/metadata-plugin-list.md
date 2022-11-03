@@ -800,6 +800,23 @@ metadata: [
 
 {{< added-in release-2022-11 block >}}
 
+As an alternative to the existing [Push Notifications]({{< ref "/guides/editor/push-notifications" >}}) feature,
+we introduced the more flexible `li-push-messages` metadata plugin.
+
+Use Push **Messages** if you like to send messages directly from Table Dashboards and if you need
+a flexible message format.
+
+Use Push **Notifications** if you need to send notifications directly from the Editor Toolbar or if you'd like
+to use a predefined push service like Google Firebase.
+
+The two features may be merged in the future, but for now they co-exist independently.
+
+|                | Push Notifications                        | Push Messages           |
+|----------------|-------------------------------------------|-------------------------|
+| Accessed from  | Editor Toolbar Action                     | Table Dashboards        |
+| Push Services  | Google Firebase, Urban airship, Ethinking | Custom Implementation   |
+| Message Format | Fixed (Message + Topic)                   | Dynamic (Params Schema) |
+
 **Storage Format**:
 ```js
 {
@@ -812,7 +829,7 @@ metadata: [
 }
 ```
 
-**Default UI**: Push messages dialog launched from table dashboard
+**Default UI**: Push messages dialog launched from Table Dashboard
 
 {{< img src="./images/li-push-messages-dashboard.png" alt="Push Messages on Table Dashboard" >}}
 
@@ -820,13 +837,15 @@ metadata: [
 
 
 **Project Config**
+
+[Content Type]({{< ref "/reference-docs/project-config/content-types" >}}) config:
 ```js
 metadata: [
   {
     type: 'li-push-messages',
     handle: 'myPushMessages',             // Name of the metadata field
     ui: {
-      label: 'Push Me'                    // Optional, controls button label on table dashboards
+      label: 'Push Me'                    // Optional, controls button label on Table Dashboards
     },
     config: {
       paramsSchema: [                     // Defines schema of message object
@@ -846,9 +865,63 @@ metadata: [
 ]
 ```
 
-**Further guides**
-- See how to [show push button on a table dashboard](https://docs.livingdocs.io/guides/editor/push-messages/#show-push-button-on-a-table-dashboard)
-- See how to [register custom function](https://docs.livingdocs.io/guides/editor/push-messages/#register-custom-function) 
+[Table Dashboard]({{< ref "/reference-docs/project-config/editor-settings#example-table-dashboard" >}}) config:
+```js
+columns: [
+  ...,
+  {
+    label: 'My push messages',
+    metadataPropertyName: 'myPushMessages',
+    minWidth: 70,
+    growFactor: 1,
+    priority: 1
+  }
+]
+```
+
+**Custom function**
+
+The `li-push-messages` metadata plugin handles everything regarding the user interface and saves the messages to the database.
+But it does not actually send push messages anywhere. Instead, it lets you register your own function to do that job.
+
+- Register Push Message handler after server initialization
+- Handler function can be `async`, returned value will be ignored
+- Push Message will not be saved if handler throws an error
+
+Example configuration from [Livingdocs server boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/master/app/hooks/push-messages-hooks.js):
+
+```js
+module.exports = function (liServer) {
+  // Register function after server initialization
+  liServer.registerInitializedHook(async function () {
+
+    const log = liServer.log.child({ns: 'push-messages-hooks'})
+    const pushMessagesApi = liServer.features.api('li-documents').pushMessages
+    
+    pushMessagesApi.registerPushMessageHandler({
+      // Name must be unique across projects
+      name: 'myPushMessageHandler',
+
+      /**
+       * @async
+       * @param {object} args
+       * @param {object} args.projectConfig
+       * @param {number} args.userId
+       * @param {string} args.documentId
+       * @param {string} args.metadataPropertyName
+       * @param {string} args.pushMessageId - Id the push message will have
+       * @param {object} args.params - The message object, following paramsSchema
+       * @return {Promise<void>}
+       */
+      async handler (args) {
+        log.info(
+          `Handling push message for metadata property name "${args.metadataPropertyName}"`
+        )
+      }
+    })
+  })
+}
+```
 
 ## li-reference-list
 

@@ -444,6 +444,12 @@ metadata: [
 
 With this in place you can set the project configuration for your push notification topics \(see example config above\) and the firebase configuration in the [server config]({{< ref "/reference-docs/server-extensions/server-configuration#push-notifications" >}}).
 
+## Enable Push Messages for a ContentType
+
+To enable Push Messages for a specific content type you must have a metadata field of type [`li-push-messages`]({{< ref "/reference-docs/document/metadata/metadata-plugin-list#li-push-messages" >}}).
+
+You can configure it multiple times on the same ContentType and the handle does not have any special naming conventions. 
+
 ## Text Formatting
 
 The text formatting toolbar can be customized per content-type in addition to the global config in the [editor settings]({{< ref "editor-settings" >}}).
