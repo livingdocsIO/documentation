@@ -361,6 +361,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.63): fix(resetFilterButton): Correctly styled
 - [v81.20.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.62): fix(unpublishNow): Calls correct server endpoint
 - [v81.20.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.61): chore(li-tree): implement code review feedback
 - [v81.20.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.60): chore(li-tree): implement code review feedback
