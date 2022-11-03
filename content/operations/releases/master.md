@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Upgrade to fastify v4](https://github.com/livingdocsIO/livingdocs-editor/pull/6003)
 * [issue-management plugin UX improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/5985)
 * [Drop support for node 14](https://github.com/livingdocsIO/livingdocs-server/pull/4954)
 * [Drop support for node 14](https://github.com/livingdocsIO/livingdocs-editor/pull/5990)
