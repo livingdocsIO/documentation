@@ -405,6 +405,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.12): fix(issue-management): improve UX
 - [v85.15.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.11): fix(resetFilterButton): Correctly styled
 - [v85.15.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.10): fix(webpack): Remove deprecated file-loader and extract-loader
 - [v85.15.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.9): fix(unpublishNow): Calls correct server endpoint
