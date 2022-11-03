@@ -327,6 +327,32 @@ Spellcheck response with corrections:
 {"status":false, "bad":[{"word":"falsch","pos":0}]}
 ```
 
+**Underline technique** ({{< added-in release-2022-03 >}})
+
+Misspelled text is highlighted with a dotted red underline in the editor.
+There are two ways how to render such an underline:
+
+- Using the CSS `text-decoration` property
+- Using the CSS `border-bottom` property
+
+If both the Livingdocs spellcheck component and the surrounded text component (e.g. a [link directive]({{< ref "/reference-docs/document/content/directives-models#link" >}})) use the same technique, then only one line will be visible.
+The following graphic shows which combinations are valid: 
+
+| Spellcheck      | Other Component         |
+|-----------------|-------------------------|
+| border          | text-decoration         |
+| text-decoration | border                  |
+| none            | text-decoration, border |
+
+Please configure a valid combination using the `spellcheck.underline` setting.
+The default value is `border`.
+
+```js
+spellcheck: {
+  isEnabled: true,
+  underline: 'text-decoration'
+}
+```
 
 ## Character Counter
 
