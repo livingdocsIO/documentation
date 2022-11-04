@@ -126,6 +126,10 @@ In order for real-time collaboration to work as designed you will have to set up
 Server Config Keys to update:
   * `pusher.*`
 
+Once you have created a `Pusher` channel, you can go to `App settings` and make sure `enable authorized connections` is toggled off (default value). If you enable this setting, you might encounter a `Websocket error` when idling in the editor's landing page.
+
+NOTE: Disabling this setting should not have any side effects since malicious users would need to log in into the editor to access open those websockets.
+
 #### Email (e.g. AWS SES)
 
 The livingdocs-server needs to send mails for things like password resets or user notifications. For this you should configure an E-Mail with a trusted domain of yours which you should also communicate to your users so they know from which sender to expect Livingdocs E-Mails. We recommend to create different E-Mail accounts for different environments.
