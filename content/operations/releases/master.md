@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [li-tree: respect 'link' and 'document' type](https://github.com/livingdocsIO/livingdocs-editor/pull/5991)
 * [Do not access unconfigured metadata properties in retresco](https://github.com/livingdocsIO/livingdocs-server/pull/4959)
 * [Fix link to documentation for design migrations](https://github.com/livingdocsIO/livingdocs-server/pull/4961)
 * [fix(metadata): correct metadata.ui.service deprecation notice](https://github.com/livingdocsIO/livingdocs-editor/pull/5993)
