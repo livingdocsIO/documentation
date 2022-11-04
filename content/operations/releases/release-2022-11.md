@@ -405,6 +405,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.14): fix(li-tree): reset search results properly
 - [v85.15.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.13): fix(metadata): correct metadata.ui.service deprecation notice
 - [v85.15.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.12): fix(issue-management): improve UX
 - [v85.15.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.11): fix(resetFilterButton): Correctly styled
