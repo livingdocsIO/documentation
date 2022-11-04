@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix link to documentation for design migrations](https://github.com/livingdocsIO/livingdocs-server/pull/4961)
 * [fix(metadata): correct metadata.ui.service deprecation notice](https://github.com/livingdocsIO/livingdocs-editor/pull/5993)
 * [fix(deps): update dependency pusher-js from 7.0.6 to v7.4.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/5610)
 * [Upgrade to fastify v4](https://github.com/livingdocsIO/livingdocs-editor/pull/6003)
