@@ -361,6 +361,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.66): fix(li-tree): reset search results properly
 - [v81.20.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.65): fix(metadata): ensure teaser card in li-document-references doesn't overflow
 - [v81.20.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.64): fix(issue-management): improve UX
 - [v81.20.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.63): fix(resetFilterButton): Correctly styled
