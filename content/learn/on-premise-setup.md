@@ -128,7 +128,7 @@ Server Config Keys to update:
 
 Once you have created a `Pusher` channel, you can go to `App settings` and make sure `enable authorized connections` is toggled off (default value). If you enable this setting, you might encounter a `Websocket error` when idling in the editor's landing page.
 
-NOTE: Disabling this setting should not have any side effects since malicious users would need to log in into the editor to access open those websockets.
+NOTE: Disabling this setting should not have any side effect. Malicious users would need to log in to the editor to access those websockets.
 
 #### Email (e.g. AWS SES)
 
