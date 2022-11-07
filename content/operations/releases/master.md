@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency ioredis from 5.2.3 to v5.2.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4964)
 * [Move metadata view inside closable panel within article screen](https://github.com/livingdocsIO/livingdocs-editor/pull/6019)
 * [Fix jumping Push Messages form bug](https://github.com/livingdocsIO/livingdocs-editor/pull/6020)
 * [Prevent refreshing table dashboard when loading more elements](https://github.com/livingdocsIO/livingdocs-editor/pull/6012)
