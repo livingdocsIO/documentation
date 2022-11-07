@@ -327,7 +327,7 @@ Spellcheck response with corrections:
 {"status":false, "bad":[{"word":"falsch","pos":0}]}
 ```
 
-**Underline technique** ({{< added-in release-2022-03 >}})
+**Underline technique** ({{< added-in release-2022-11 >}})
 
 Misspelled text is highlighted with a dotted red underline in the editor.
 There are two ways how to render such an underline:
