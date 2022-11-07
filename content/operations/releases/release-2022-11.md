@@ -36,7 +36,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * Feature Webinar Documentation: **TODO**
 * Dev Webinar Recording: **TODO**
 * Dev Webinar Slides: **TODO**
-* Release Newsletter Subscription: **TODO**
+* [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ## System Requirements
 
@@ -93,15 +93,10 @@ The [Livingdocs Public API]({{< ref "/reference-docs/public-api" >}}) can be tes
 
 Thanks to the [OpenAPI specification](https://swagger.io/specification/), it's possible to quickly test the API using [Swagger UI](https://petstore.swagger.io/?url=https://livingdocsio.github.io/openapi/livingdocs-openapi.json). And import the full collection of existing API endpoints into Insomnia or Postman.
 
-### Separation of Revision Metadata and System Metadata
+### System Metadata
 
-TODO: how we want to announce that?
+Livingdocs supports configurable metadata since a long time. In this release, we're introducing "System Metadata" properties, which have different versioning behavior and don't affect the draft state. This is useful for metadata properties that are not part of the content, but are used for internal purposes. Typically System Metadata Properties are used for behavioral extensions of the Livingdocs system, like Proofreading tasks or Push Notifications and other extensions. At the moment this is an internal feature and only specific properties use this functionality.
 
-We introduce "System Metadata" for data which only needs to be stored per document and need no history like the existing Revision Metadata. Typically System Metadata are used for handling state on a document like proofreading, language settings, integration settings and a lot more.
-
-To understand the possibilities and use cases better, you can read the [TODO: Documentation]().
-
-* [TODO: Documentation]()
 * [PR: System Metadata Preparation](https://github.com/livingdocsIO/livingdocs-server/pull/4735)
 * [PR: System Metadata Preparation II](https://github.com/livingdocsIO/livingdocs-server/pull/4778)
 * [PR: System Metadata](https://github.com/livingdocsIO/livingdocs-server/pull/4807)
@@ -130,9 +125,9 @@ To replace the existing `li-reference-list` metadata plugin with it's more moder
 ### Roles for Read and Write Instances
 
 We introduce `roles` to define the type of server
-- read (all server have read access by default)
-- write (stores data)
-- worker (executes jobs like indexing)
+- `read` (all server have read access by default)
+- `write` (stores data)
+- `worker` (executes jobs like indexing)
 
 * [Documentation](https://docs.livingdocs.io/reference-docs/server-extensions/roles/)
 * [PR: Roles](https://github.com/livingdocsIO/livingdocs-server/pull/4814)
@@ -140,14 +135,17 @@ We introduce `roles` to define the type of server
 ### Reindexing CLI task improvements
 
 Elasticsearch Indexing CLI (`livingdocs-server elasticsearch-index`) got some improvements:
-- add `--ids=1,2,3,4` to index specific document id's
-- add `--ids-file=file-with-ids.txt` to index specific document id's passed by a file
+- add `--ids=1,2,3,4` argument to index specific document id's
+- add `--ids-file=file-with-ids.txt` argument to index specific document id's passed by a file
+- add `--since=2022-10-11` argument to index changes since a specific iso date
+- add `--until=1h` argument to index changes until a relative time or iso date
+- add `--wait` flag to wait for index completion. The processing still only takes place in other processes, not in the cli process.
 
 * [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4837)
 
 ## Breaking Changes :fire:
 
-### Migrate the database :fire:
+### Migrate the Postgres Database :fire:
 
 It's a simple/fast migration with no expected data losses.
 
@@ -162,7 +160,8 @@ livingdocs-server migrate up
 
 ### Drop Elasticsearch v6 :fire:
 
-[Drop support for Elasticsearch v6](https://github.com/livingdocsIO/livingdocs-server/pull/4907)
+[Drop support for Elasticsearch v6](https://github.com/livingdocsIO/livingdocs-server/pull/4907).
+Please upgrade to Elasticsearch v8 or OpenSearch v2.3.0.
 
 ### Separation of Revision Metadata and System Metadata :fire:
 

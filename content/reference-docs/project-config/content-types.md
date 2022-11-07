@@ -217,7 +217,6 @@ With `viewAfterDocumentCreation` you can define to which view you are redirected
 
 ```js
 viewAfterDocumentCreation: 'publish'
-}
 ```
 
 - `publish` redirects to the 'publish view'

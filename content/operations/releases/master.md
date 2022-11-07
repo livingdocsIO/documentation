@@ -73,7 +73,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * Feature Webinar Documentation: **TODO**
 * Dev Webinar Recording: **TODO**
 * Dev Webinar Slides: **TODO**
-* Release Newsletter Subscription: **TODO**
+* [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ## System Requirements
 
@@ -120,7 +120,7 @@ TODO: description
 
 ## Breaking Changes :fire:
 
-### Migrate the database :fire:
+### Migrate the Postgres Database :fire:
 
 TODO: add db migrations
 
