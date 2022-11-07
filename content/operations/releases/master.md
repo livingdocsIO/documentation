@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [🐞 Prevent Browser Freeze when opening a metadata search dashboard for li-document-reference](https://github.com/livingdocsIO/livingdocs-editor/pull/6005)
 * [Metadata: ensure teaser card in li-document-references doesn't overflow](https://github.com/livingdocsIO/livingdocs-editor/pull/6006)
 * [li-tree: respect 'link' and 'document' type](https://github.com/livingdocsIO/livingdocs-editor/pull/5991)
 * [Do not access unconfigured metadata properties in retresco](https://github.com/livingdocsIO/livingdocs-server/pull/4959)
