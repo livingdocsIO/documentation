@@ -362,6 +362,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.69): fix(conflictUI): Discard and Apply buttons correctly positioned
 - [v81.20.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.68): fix: prevent refreshing table dashboard when loading more elements
 - [v81.20.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.67): fix: prevent endless calling of finalDashboardConfig by moving it from a computed property to the creation lifecycle
 - [v81.20.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.66): fix(li-tree): reset search results properly
