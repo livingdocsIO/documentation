@@ -412,6 +412,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.19): fix(conflictUI): Discard and Apply buttons correctly positioned
 - [v85.15.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.18): fix: wrap article metadata view in closable panel
 - [v85.15.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.17): fix: prevent refreshing table dashboard when loading more elements
 - [v85.15.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.16): fix: prevent endless calling of finalDashboardConfig by moving it from a computed property to the creation lifecycle
