@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Improve li-link directive positioning](https://github.com/livingdocsIO/livingdocs-editor/pull/5996)
 * [fix(conflictUI): Discard and Apply buttons correctly positioned](https://github.com/livingdocsIO/livingdocs-editor/pull/5995)
 * [Fix includes paramsSchema `config.published` handling](https://github.com/livingdocsIO/livingdocs-server/pull/4970)
 * [fix(deps): update dependency ioredis from 5.2.3 to v5.2.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4964)
