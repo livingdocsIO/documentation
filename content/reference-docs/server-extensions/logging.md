@@ -43,6 +43,13 @@ logs: {
   // (requests logs always have a log level of 'info' and will be logged
   // regardless of the configured log level)
   logRequests: true,
+  
+  // Logging logs to memory for testing (should only be used in test environment)
+  // One can intercept the logs and test expectations, e.g.
+  //   const logs = test.liServer.log.intercept()
+  //   ...some code...
+  //   expect(logs[0].msg).to.equal(`Unconfigured metadata properties: 'someNewField'`)
+  logToMemoryForTests: true,
 
   // Pass pid and hostname properties to pino logger, this information will be added to each log
   // default: {}, pino will take the information from process.pid and os.hostname
