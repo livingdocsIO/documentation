@@ -49,6 +49,7 @@ logs: {
   //   const logs = test.liServer.log.intercept()
   //   ...some code...
   //   expect(logs[0].msg).to.equal(`Unconfigured metadata properties: 'someNewField'`)
+  //   test.liServer.log.intercept.restore() <--- like for a spy you have to restore the interception 
   logToMemoryForTests: true,
 
   // Pass pid and hostname properties to pino logger, this information will be added to each log
