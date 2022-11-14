@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [TLS Support in redis](https://github.com/livingdocsIO/livingdocs-server/pull/4982)
 * [Update `@xmldom/xmldom` to a newer release [security]](https://github.com/livingdocsIO/livingdocs-server/pull/4976)
 * [Restore editor toolbar action button labels for collapsed groups](https://github.com/livingdocsIO/livingdocs-editor/pull/6030)
 * [Improve li-link directive positioning](https://github.com/livingdocsIO/livingdocs-editor/pull/5996)
