@@ -33,7 +33,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 ## Webinar
 
 * Feature Webinar Recording: **TODO**
-* Feature Webinar Documentation: **TODO**
+* [Feature Webinar Documentation](https://docs.google.com/presentation/d/1bVlACdvJoM_wZWOcsTy3XGPvEzej5sTFVYWtAqGcd6k)
 * Dev Webinar Recording: **TODO**
 * Dev Webinar Slides: **TODO**
 * [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
