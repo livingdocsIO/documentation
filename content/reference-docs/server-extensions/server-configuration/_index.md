@@ -816,7 +816,8 @@ pusher: {
   app_id: '108378',
   key: 'dda3c0ca58ed2f649ea8',
   secret: '*****',
-  cluster: 'eu'
+  cluster: 'eu',
+  proxy: process.env.HTTP_PROXY
 }
 ```
 
