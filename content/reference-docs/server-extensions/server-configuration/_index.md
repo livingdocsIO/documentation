@@ -222,8 +222,18 @@ redis: {
   ],
 
   // Optional username and password
+  // This will also be used for the sentinel authorization.
   username: 'string',
-  password: 'string'
+  password: 'string',
+
+  // If redis is configured to support tls,
+  // the `tls` object must be defined and point to
+  // the certificate authority and optionally
+  // to a certifcate for client side authorization.
+  // Please check out the supported {{< a title="TLS Connect Options" href="https://nodejs.org/api/tls.html#tlscreatesecurecontextoptions" >}}.
+  tls: {
+    ca: require.resolve('./path/to/ca.cert')
+  }
 }
 ```
 
