@@ -32,7 +32,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Webinar
 
-* Feature Webinar Recording: **TODO**
+* [Feature Webinar Recording](https://us02web.zoom.us/rec/share/hdMzoDQaiMjRHpsk_lNy2MEdSRzRGqRJMOkuqiTUR5EzGPIiB8ESriEEGATw5TFP.0jGCoTVt8nDaY3O9) | Passcode: E2JLj+4g
 * [Feature Webinar Documentation](https://docs.google.com/presentation/d/1bVlACdvJoM_wZWOcsTy3XGPvEzej5sTFVYWtAqGcd6k)
 * Dev Webinar Recording: **TODO**
 * Dev Webinar Slides: **TODO**
