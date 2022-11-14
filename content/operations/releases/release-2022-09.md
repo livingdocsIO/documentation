@@ -341,6 +341,7 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v194.0.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.21): fix(redis): Set sentinel username and password if credentials are set
 - [v194.0.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.20): fix(includes): Fix paramsSchema `config.published` handling
 - [v194.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.19): fix(unPublishNow): Workflow improved/implemented
 - [v194.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.18): fix(desknet): Check value changed before publication status sync
