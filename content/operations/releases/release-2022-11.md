@@ -413,6 +413,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.21): fix(dashboards): task boards have no cts
 - [v85.15.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.20): fix(toolbar): Restore action button group labels
 - [v85.15.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.19): fix(conflictUI): Discard and Apply buttons correctly positioned
 - [v85.15.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.18): fix: wrap article metadata view in closable panel
