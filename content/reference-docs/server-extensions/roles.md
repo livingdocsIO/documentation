@@ -17,6 +17,10 @@ We recommend one of the following configurations:
  - one instance with `roles: ['write', 'worker']` (default)
  - for reliability sensitive setups deploy two instances, one with `roles: 'write'` and another instance with `roles: 'worker'`
 
+All possible combinations per use case, can be seen below:
+
+{{< img src="images/roles-configurations.png" alt="Possible `roles` configuration per use case" >}}
+
 ## Roles: 'write'
 
 This role should be used in all instances that require the ability to mutate the database. 
