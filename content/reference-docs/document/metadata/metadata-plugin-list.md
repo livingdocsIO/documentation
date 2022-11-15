@@ -1064,6 +1064,7 @@ metadata: [
     // optional, allows picking a step instead of entering an exact number
     ui: {
       config: {
+        acceptedCharacterDifference: 20, // Range above and below `value` considered accepted
         steps: [
           {
             label: 'S', // use a short one, e.g. "S" "M" "L"
