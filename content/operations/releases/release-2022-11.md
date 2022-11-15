@@ -399,6 +399,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.15): fix(errors): Remove `isPublicAPI` from `req` properties
 - [v200.3.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.14): fix(redis): Set sentinel username and password if credentials are set
 - [v200.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.13): fix(lists): Create list endpoint required `lists:publish` permission, changed to `lists:manage` to match permission description
 - [v200.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.12): fix(includes): Fix paramsSchema `config.published` handling
