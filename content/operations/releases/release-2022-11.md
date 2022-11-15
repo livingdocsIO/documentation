@@ -48,8 +48,8 @@ These are the release notes of the upcoming release (pull requests merged to mas
 |Postgres|15|
 |Elasticsearch<br/>OpenSearch|8.x<br/>v2.3.0|
 |Redis|7|
-|Livingdocs Server Docker Image|livingdocs/server-base:16|
-|Livingdocs Editor Docker Image|livingdocs/editor-base:16|
+|Livingdocs Server Docker Image|livingdocs/server-base:18|
+|Livingdocs Editor Docker Image|livingdocs/editor-base:18|
 |Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
 
 ### Minimal
