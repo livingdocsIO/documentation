@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix contentTypes lookup for task boards](https://github.com/livingdocsIO/livingdocs-editor/pull/6032)
 * [Fix Pusher authentication](https://github.com/livingdocsIO/livingdocs-editor/pull/6033)
 * [Error log improvements](https://github.com/livingdocsIO/livingdocs-server/pull/4926)
 * [TLS Support in redis](https://github.com/livingdocsIO/livingdocs-server/pull/4982)
