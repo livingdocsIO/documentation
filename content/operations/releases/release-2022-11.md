@@ -34,8 +34,8 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 * [Feature Webinar Recording](https://us02web.zoom.us/rec/share/hdMzoDQaiMjRHpsk_lNy2MEdSRzRGqRJMOkuqiTUR5EzGPIiB8ESriEEGATw5TFP.0jGCoTVt8nDaY3O9) | Passcode: E2JLj+4g
 * [Feature Webinar Documentation](https://docs.google.com/presentation/d/1bVlACdvJoM_wZWOcsTy3XGPvEzej5sTFVYWtAqGcd6k)
-* Dev Webinar Recording: **TODO**
-* Dev Webinar Slides: **TODO**
+* [Dev Webinar Recording](https://us02web.zoom.us/rec/share/Ng_SOGE_p7BdgEbfCcwAgP39az4XLasklhqzMsD107ORuO94sq5qEKajOFjb8VQP.jBgqsTBMFQq3RFw7) | Passcode: CB!HH4c?
+* [Dev Webinar Slides](https://docs.google.com/presentation/d/1sICTF2SQPPGYiq0-IZ-DQ_qtdkL2x12eeP07WwSwyyQ)
 * [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ## System Requirements
