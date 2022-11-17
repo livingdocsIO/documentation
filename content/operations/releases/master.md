@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add `acceptedCharacterDifference` property to `li-target-length` metadata plugin schema](https://github.com/livingdocsIO/livingdocs-server/pull/4975)
 * [Add `acceptedCharacterDifference` property to `li-target-length` metadata plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/6029)
 * [fix(print): Add params to print export](https://github.com/livingdocsIO/livingdocs-server/pull/4986)
 * [Migrate await-busboy to busboy](https://github.com/livingdocsIO/livingdocs-server/pull/4985)
