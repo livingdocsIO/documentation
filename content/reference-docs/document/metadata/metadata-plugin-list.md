@@ -1083,6 +1083,10 @@ metadata: [
 ]
 ```
 
+**Default UI**: Difference, Total Characters, Target Range, Characters in Focussed Component
+
+{{< img src="./images/li-target-length.png" alt="Target Length Indicator" >}}
+
 ## li-text
 **Storage Format**: String\
 **Default UI**: text input, textarea, select\
