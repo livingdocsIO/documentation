@@ -364,6 +364,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.71): fix: correctly compute minHeight with an incomplete config
 - [v81.20.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.70): fix: update framework 24.3.4
 - [v81.20.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.69): fix(conflictUI): Discard and Apply buttons correctly positioned
 - [v81.20.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.68): fix: prevent refreshing table dashboard when loading more elements
