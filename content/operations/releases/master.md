@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Correctly compute minHeight of li-text with an incomplete *length config](https://github.com/livingdocsIO/livingdocs-editor/pull/6044)
 * [Metadata mapping for Public API Project Endpoint Fixed](https://github.com/livingdocsIO/livingdocs-server/pull/4958)
 * [Update framework 24.7.1](https://github.com/livingdocsIO/livingdocs-editor/pull/6040)
 * [Add `acceptedCharacterDifference` property to `li-target-length` metadata plugin schema](https://github.com/livingdocsIO/livingdocs-server/pull/4975)
