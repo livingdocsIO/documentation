@@ -414,6 +414,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.24): fix: correctly compute minHeight with an incomplete config
 - [v85.15.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.23): fix(list cards): Rocket
 - [v85.15.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.22): fix: update framework v24.6.2
 - [v85.15.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.21): fix(dashboards): task boards have no cts
