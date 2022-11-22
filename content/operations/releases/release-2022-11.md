@@ -399,6 +399,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.17): fix(webhooks): Restrict webhook handle length
 - [v200.3.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.16): fix(print): Add params to print export
 - [v200.3.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.15): fix(errors): Remove `isPublicAPI` from `req` properties
 - [v200.3.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.14): fix(redis): Set sentinel username and password if credentials are set
