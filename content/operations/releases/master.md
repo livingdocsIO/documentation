@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix: searching article will not behave like an external link](https://github.com/livingdocsIO/livingdocs-editor/pull/6048)
 * [Restrict webhook handle length](https://github.com/livingdocsIO/livingdocs-server/pull/4993)
 * [Correctly compute minHeight of li-text with an incomplete *length config](https://github.com/livingdocsIO/livingdocs-editor/pull/6044)
 * [Metadata mapping for Public API Project Endpoint Fixed](https://github.com/livingdocsIO/livingdocs-server/pull/4958)
