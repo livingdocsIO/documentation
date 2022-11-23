@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Feat/Character Counter](https://github.com/livingdocsIO/livingdocs-editor/pull/6052)
 * [Update `fastify` to 4.10.2 [security]](https://github.com/livingdocsIO/livingdocs-server/pull/4997)
 * [fix: searching article will not behave like an external link](https://github.com/livingdocsIO/livingdocs-editor/pull/6048)
 * [Restrict webhook handle length](https://github.com/livingdocsIO/livingdocs-server/pull/4993)
