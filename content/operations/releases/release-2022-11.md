@@ -399,6 +399,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.19): chore(documents): Adopt firstPublicationDate behavior in tests that were recently added on master
 - [v200.3.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.18): fix(fastify): Update `fastify` to 4.10.2, to patch a security vulnerability
 - [v200.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.17): fix(webhooks): Restrict webhook handle length
 - [v200.3.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.16): fix(print): Add params to print export
