@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Handle `published: false` in legacy dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/6011)
 * [chore(deps): update dependency @google-cloud/translate from 7.0.3 to v7.0.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4977)
 * [Fix date sort order on users admin screen](https://github.com/livingdocsIO/livingdocs-editor/pull/6054)
 * [Replace old `nodemon` by new `node --watch`](https://github.com/livingdocsIO/livingdocs-server/pull/5002)
