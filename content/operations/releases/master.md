@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency hpagent from 1.1.0 to v1.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5006)
 * [Support removal of metadata properties by using `null`](https://github.com/livingdocsIO/livingdocs-server/pull/5007)
 * [Handle `published: false` in legacy dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/6011)
 * [chore(deps): update dependency @google-cloud/translate from 7.0.3 to v7.0.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/4977)
