@@ -11,9 +11,9 @@ aliases:
 
 {{< release-header
   title="November 2022 Release"
-  upcoming=true
+  upcoming=false
   legacy=false
-  current=false
+  current=true
   maintained=true
   branchHandle="release-2022-11"
 >}}
