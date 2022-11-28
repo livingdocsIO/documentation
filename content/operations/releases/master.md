@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Upgrade to elasticsearch client v8](https://github.com/livingdocsIO/livingdocs-server/pull/5009)
 * [fix(deps): update dependency @livingdocs/framework from 24.7.0 to v24.7.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5004)
 * [fix(deps): update dependency hpagent from 1.1.0 to v1.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5006)
 * [Support removal of metadata properties by using `null`](https://github.com/livingdocsIO/livingdocs-server/pull/5007)
