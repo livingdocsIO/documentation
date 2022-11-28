@@ -399,6 +399,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.20): fix(elasticsearch): Always use v7 of the elasticsearch client. v8 changed the api and we can't use it in the release
 - [v200.3.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.19): chore(documents): Adopt firstPublicationDate behavior in tests that were recently added on master
 - [v200.3.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.18): fix(fastify): Update `fastify` to 4.10.2, to patch a security vulnerability
 - [v200.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.17): fix(webhooks): Restrict webhook handle length
