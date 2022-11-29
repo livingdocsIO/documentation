@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Make project_id mandatory in documentApi.find](https://github.com/livingdocsIO/livingdocs-server/pull/5017)
 * [Fix error logging](https://github.com/livingdocsIO/livingdocs-server/pull/5013)
 * [Publish Control: more clarity when a document can't get published right now](https://github.com/livingdocsIO/livingdocs-editor/pull/6057)
 * [Upgrade to elasticsearch client v8](https://github.com/livingdocsIO/livingdocs-server/pull/5009)
