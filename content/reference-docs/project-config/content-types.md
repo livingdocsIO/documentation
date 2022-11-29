@@ -101,7 +101,6 @@ contentTypes: [
       // One or multiple deliveryLinks are show in the publish panel
       // They should point to your frontends
       // url can be a pattern containing these placeholders:
-      // :path
       // :routingPath
       // :id
       // :projectId
@@ -447,7 +446,7 @@ With this in place you can set the project configuration for your push notificat
 
 To enable Push Messages for a specific content type you must have a metadata field of type [`li-push-messages`]({{< ref "/reference-docs/document/metadata/metadata-plugin-list#li-push-messages" >}}).
 
-You can configure it multiple times on the same ContentType and the handle does not have any special naming conventions. 
+You can configure it multiple times on the same ContentType and the handle does not have any special naming conventions.
 
 ## Text Formatting
 
