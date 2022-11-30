@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [li-team: add li-team config schema and validation](https://github.com/livingdocsIO/livingdocs-server/pull/4974)
 * [li-team: add li-meta-team plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/6024)
 * [Make project_id mandatory in documentApi.find](https://github.com/livingdocsIO/livingdocs-server/pull/5017)
 * [Fix error logging](https://github.com/livingdocsIO/livingdocs-server/pull/5013)
