@@ -390,6 +390,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.22): fix(indexing): Handle missing metadata while indexing
 - [v200.3.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.21): chore: Adopt elasticsearch version
 - [v200.3.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.20): fix(elasticsearch): Always use v7 of the elasticsearch client. v8 changed the api and we can't use it in the release
 - [v200.3.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.19): chore(documents): Adopt firstPublicationDate behavior in tests that were recently added on master
