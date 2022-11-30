@@ -339,7 +339,7 @@ And we will also gradually introduce new configuration options which can be defi
 ### Needed Actions :fire:
 - :fire: migrate the db with `livingdocs-server migrate up`
   - If there are problems with the automatic db migration you can skip it with `EXPORT SKIP_DB_MIGRATION_119=true`
-  - There is also a manual migration that will migrate projects individually in `db/manual-migrations/005-migrate-channel-config-streams.js`
+  - There is also a manual migration that will migrate projects individually in `./node_modules/@livingdocs/server/db/manual-migrations/005-migrate-channel-config-streams.js`
 - :fire: Check and update your code to not use removed functions
 
 You can find a much more detailed description of the rewrite in the [Rewrite Channel Config PR](https://github.com/livingdocsIO/livingdocs-server/pull/2432).

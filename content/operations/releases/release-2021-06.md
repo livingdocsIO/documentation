@@ -183,7 +183,7 @@ This time we have a rather high amount of breaking changes, therefore we grouped
 
 In order for a delivery to know when a document was first published, we want to provide the firstPublicationDate when a Publication is fetched from the Public API. To be able to fullfill that goal we need a db migration.
 
-For productive systems please run a manual migration using `node ./db/manual-migrations/007-populate-first-publication-date.js` to process the documents in batches. The manual migration must be done before `livingdocs-server migrate up`, which contains the same migration, but locks the database by ~10s for 100k documents.
+For productive systems please run a manual migration using `node ./node_modules/@livingdocs/server/db/manual-migrations/007-populate-first-publication-date.js` to process the documents in batches. The manual migration must be done before `livingdocs-server migrate up`, which contains the same migration, but locks the database by ~10s for 100k documents.
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3505)
 
@@ -191,7 +191,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3
 
 Tidy-up after populating `document_revisions.metadata_id` as part of the `firstPublicationDate` feature in [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3505)
 
-For productive systems please run a manual migration using `node ./db/manual-migrations/008-move-metadata_id.js` to process the documents in batches. The manual migration must be done before `livingdocs-server migrate up`, which contains the same migration, but locks the database. We propose to have enough disk space left for this migration (2 x used disk space by the database). After the migration, the disk space should be smaller, but during the migration, it will grow.
+For productive systems please run a manual migration using `node ./node_modules/@livingdocs/server/db/manual-migrations/008-move-metadata_id.js` to process the documents in batches. The manual migration must be done before `livingdocs-server migrate up`, which contains the same migration, but locks the database. We propose to have enough disk space left for this migration (2 x used disk space by the database). After the migration, the disk space should be smaller, but during the migration, it will grow.
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3518)
 
