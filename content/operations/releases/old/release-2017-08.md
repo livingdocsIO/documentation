@@ -233,4 +233,4 @@ In the coming September or October release we plan to introduce `contentTypes`. 
 
 With this release the `documents` database table contains a new column `content_type`. This column should be set for every document. This release ensures that every new document has a `contentType` set. If a document has a layout, the contentType will be set to the layout. Otherwise the contentType will be set to the documentType.
 
-For all existing documents a manual migration will have to be run. We created a manual migration as this is a long running operation for databases with many documents. The migration can be found in `db/manual-migrations/002-write-content-type.js`.
+For all existing documents a manual migration will have to be run. We created a manual migration as this is a long running operation for databases with many documents. The migration can be found in `./node_modules/@livingdocs/server/db/manual-migrations/002-write-content-type.js`.

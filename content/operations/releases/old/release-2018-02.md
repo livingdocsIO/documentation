@@ -55,7 +55,7 @@ How to require the editor in your package.json:
 
 ## Manual migration script to fix content types :beetle:
 
-In the current releases (january & february) the content_type column on the publication events table is missing all the data. The script db/manual-migrations/004-write-content-type-on-events-table.js inserts that data in a non-blocking script.
+In the current releases (january & february) the content_type column on the publication events table is missing all the data. The script ./node_modules/@livingdocs/server/db/manual-migrations/004-write-content-type-on-events-table.js inserts that data in a non-blocking script.
 
 We won't do a blocking migration as that might cause downtime for big customers (we'll need to find good solutions for that in the future). Please run the regular migration and after that apply the manual one. A blocking migration that makes sure that all columns are `NOT NULLABLE` will follow in the february or march release.
 

@@ -75,7 +75,7 @@ Before you can deploy the January release, you have to run a manual database mig
 If you have installed the `October Release 2017` or `December Release 2017`, you can execute the manual migration with
 
 ```bash
-`NODE_ENV=<env> ENVIRONMENT=<env> node node_modules/@livingdocs/server/db/manual-migrations/002-write-content-type.js`
+`NODE_ENV=<env> ENVIRONMENT=<env> node ./node_modules/@livingdocs/server/db/manual-migrations/002-write-content-type.js`
 ```
 
 
