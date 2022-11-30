@@ -122,9 +122,6 @@ copy: [
             //   {'from': 'tasks', 'to': 'tasks'}
             // ]
             'title', 'tasks',
-
-            // NOT IMPLEMENTED: computes the new value based on a passed function
-            {from: 'title', to: function(d) {return d.toUpperCase()}}
           ]
         },
         // a document can be transformed
