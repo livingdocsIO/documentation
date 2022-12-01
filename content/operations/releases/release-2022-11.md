@@ -149,7 +149,7 @@ It's a simple/fast migration with no expected data losses.
 livingdocs-server migrate up
 ```
 
-### Fix firstPublicationDate to documents table :fire:
+### Fix firstPublicationDate to documents table (Post Deployment) :fire:
 
 If you have unpublished a document while running release-2022-07 or release-2022-09 then you may have inaccurate values for the `document.systemdata.firstPublicationDate`. Below is a comparison of the change in the four most recent versions:
 
