@@ -10,7 +10,7 @@ aliases:
 ---
 
 {{< release-header
-  title="January 2022 Release"
+  title="January 2023 Release"
   upcoming=true
   legacy=false
   current=false
@@ -166,6 +166,47 @@ TODO: add db migrations
 # run `livingdocs-server migrate up` to update to the newest database scheme
 livingdocs-server migrate up
 ```
+
+### Fix firstPublicationDate to documents table (Post Deployment) :fire:
+
+This script was backported to release-2022-11, so it has been added again for release-2023-01 in case anyone missed it. If you already ran the script with the previous release upgrade you do not need to run it again.
+
+If you have unpublished a document while running release-2022-07 or release-2022-09 then you may have inaccurate values for the `document.systemdata.firstPublicationDate`. Below is a comparison of the change in the four most recent versions:
+
+First publish:
+release-2022-07 and release-2022-09: Set `firstPublicationDate`
+release-2022-05 and release-2022-11: Set `firstPublicationDate`
+
+Republish while published:
+release-2022-07 and release-2022-09: Keep `firstPublicationDate`
+release-2022-05 and release-2022-11: Keep `firstPublicationDate`
+
+Unpublish:
+release-2022-07 and release-2022-09: Remove `firstPublicationDate`
+release-2022-05 and release-2022-11: Keep `firstPublicationDate`
+
+Republish after unpublish:
+release-2022-07 and release-2022-09: Set `firstPublicationDate`
+release-2022-05 and release-2022-11: Keep `firstPublicationDate`
+
+Essentially the old behaviour and the new "fixed" behaviour is to set `firstPublicationDate` once and never modify it. This property will still exist even when the document is unpublished. For release-2022-07 and release-2022-09 the difference in behaviour was that the `firstPublicationDate` would be cleared on unpublish and set again at the next publish.
+
+If you would like to correct the `firstPublicationDate` property for all of your articles you can run:
+```bash
+node ./node_modules/@livingdocs/server/db/manual-migrations/009-fix-first-publication-date.js
+```
+
+This script performs the following actions:
+
+1. Check that `first_publication_id` has been set (same as the script 007-populate-first-publication-data.js)
+2. Move `firstPublicationDate` from `data` to `data.publishControl`
+3. Remove `data.firstPublicationDate`
+4. If `firstPublicationDate` is not set then use the value from the first publication
+5. If `firstPublicationDate` is set then use the value from the first publication when the first publication is older
+
+It is highly recommended that you run this script because it is performing a data migration as well as fixing the values.
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4957)
 
 ## Deprecations
 
