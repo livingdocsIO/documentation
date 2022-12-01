@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix: allow li-document-reference besides li-reference properties for additionalInfo on mediaLibraryCard](https://github.com/livingdocsIO/livingdocs-editor/pull/6069)
 * [li team disable switch](https://github.com/livingdocsIO/livingdocs-editor/pull/6064)
 * [li-tree: improve link selection when there is only one search result](https://github.com/livingdocsIO/livingdocs-editor/pull/6065)
 * [feat(homescreen): add dashboard source registry](https://github.com/livingdocsIO/livingdocs-server/pull/5016)
