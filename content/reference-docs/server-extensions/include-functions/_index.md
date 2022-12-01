@@ -13,8 +13,6 @@ This section explains how you setup the server to render `doc-include`s and give
 
 ### oEmbed
 
-{{< added-in release-2022-03 block >}}
-
 The oEmbed include service (`li-oembed-service`) allows users to embed content (such as photos, videos, or iframes) by providing a link to a resource, without having to worry about embed scripts. The include service has a small number of core providers, but it can easily be extended with additional providers or a catch-all provider.
 
 Core oEmbed providers:
@@ -27,6 +25,7 @@ Core oEmbed providers:
 - Spotify (`li-spotify`) {{< added-in release-2022-07 >}}
 - Instagram (`li-instagram`), ATTENTION: requires credentials {{< added-in release-2022-07 >}}
 - Facebook (`li-facebook-post`), ATTENTION: requires credentials {{< added-in release-2022-07 >}}
+- Dailymotion (`li-dailymotion`) {{< added-in release-2023-01 >}}
 
 For details on how to setup and configure an oEmbed include please read the [guide]({{< ref "/guides/documents/includes/oembed" >}}).
 
