@@ -450,6 +450,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.28): fix(media library): allow li-document-reference additionalInfo besides li-reference
 - [v85.15.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.27): fix(dashboards): Handle `published: false` in legacy dashboards
 - [v85.15.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.26): chore(publish-control): fix E2E tests
 - [v85.15.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.25): refactor: optimize code for internal vs external link handling
