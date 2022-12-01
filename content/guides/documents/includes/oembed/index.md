@@ -4,8 +4,6 @@ description: oEmbed
 weight: 1
 ---
 
-{{< added-in release-2022-03 block >}}
-
 The oEmbed include service (`li-oembed-service`) allows users to embed content (such as photos, videos, or iframes) by providing a link to a resource, without having to worry about embed scripts. The include service has a small number of core providers, but it can easily be extended with additional providers, or with a generic catch-all provider.
 
 ## Core oEmbed Providers
@@ -19,6 +17,7 @@ The oEmbed include service (`li-oembed-service`) allows users to embed content (
 - Spotify (`li-spotify`) {{< added-in release-2022-07 >}}
 - Instagram (`li-instagram`), ATTENTION: requires credentials {{< added-in release-2022-07 >}}
 - Facebook (`li-facebook-post`), ATTENTION: requires credentials {{< added-in release-2022-07 >}}
+- Dailymotion (`li-dailymotion`) {{< added-in release-2023-01 >}}
 
 A note on Facebook and Instagram: Meta is not allowing public access to oembed endpoints. You need to provide credentials of a valid Facebook App in order for this to work. In addition your facebook app also needs to undergo a review process for the Oembed Read permissions. See below for more information. 
 
