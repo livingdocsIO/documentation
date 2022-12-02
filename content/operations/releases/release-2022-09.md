@@ -365,6 +365,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.74): fix(table dashboard): don't show the empty state while loading a search result but the old result until the new one is ready
 - [v81.20.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.73): fix(dashboards): Handle `published: false` in legacy dashboards
 - [v81.20.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.72): refactor: optimize code for internal vs external link handling
 - [v81.20.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.71): fix: correctly compute minHeight with an incomplete config
