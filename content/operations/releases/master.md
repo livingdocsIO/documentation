@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Remove documents.path property](https://github.com/livingdocsIO/livingdocs-server/pull/5001)
 * [Remove deprecated document.path](https://github.com/livingdocsIO/livingdocs-editor/pull/6062)
 * [li-tree: only header to be draggable](https://github.com/livingdocsIO/livingdocs-editor/pull/6068)
 * [Introduce transform document functions](https://github.com/livingdocsIO/livingdocs-server/pull/5010)
