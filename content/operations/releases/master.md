@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [li-tree: only header to be draggable](https://github.com/livingdocsIO/livingdocs-editor/pull/6068)
 * [Introduce transform document functions](https://github.com/livingdocsIO/livingdocs-server/pull/5010)
 * [feat(oembed): Add Dailymotion provider](https://github.com/livingdocsIO/livingdocs-server/pull/4910)
 * [Fix: allow li-document-reference besides li-reference properties for additionalInfo on mediaLibraryCard](https://github.com/livingdocsIO/livingdocs-editor/pull/6069)
