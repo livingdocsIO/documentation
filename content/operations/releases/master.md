@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Push Messages: Check if document is published ](https://github.com/livingdocsIO/livingdocs-server/pull/5023)
 * [fix(metadata): li-publish-date failing validation](https://github.com/livingdocsIO/livingdocs-server/pull/5022)
 * [Fix table dashboard loading](https://github.com/livingdocsIO/livingdocs-editor/pull/6071)
 * [Remove documents.path property](https://github.com/livingdocsIO/livingdocs-server/pull/5001)
