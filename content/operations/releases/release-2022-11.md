@@ -450,6 +450,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.29): fix(table dashboard): don't show the empty state while loading a search result but the old result until the new one is ready
 - [v85.15.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.28): fix(media library): allow li-document-reference additionalInfo besides li-reference
 - [v85.15.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.27): fix(dashboards): Handle `published: false` in legacy dashboards
 - [v85.15.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.26): chore(publish-control): fix E2E tests
