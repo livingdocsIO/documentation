@@ -132,6 +132,11 @@ httpServer: {
   // two spaces if set to true
   prettyJsonStringify: false,
 
+  // Added in `release-2022-11`
+  // Enable stack traces in error responses
+  // Default: true if the env variable ENVIRONMENT incudes dev/test, false otherwise
+  showStackTraces: false,
+
   // Optionally, instead of host and port,
   // you can use a unix socket path
   // path: '/path/to/unix.socket
@@ -140,7 +145,6 @@ httpServer: {
   // an https server will be started.
   // The options are passed as `https.createServer(opts)`
   https: {key, cert}
-
 }
 ```
 
