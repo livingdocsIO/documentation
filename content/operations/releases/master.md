@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Publish Control: add customBuilt NZZ publish control behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/6015)
 * [Add dynamic indexing to draftIndex and li-team](https://github.com/livingdocsIO/livingdocs-server/pull/5000)
 * [Only show push button in Table Dashboards on published documents](https://github.com/livingdocsIO/livingdocs-editor/pull/6075)
 * [Distribution Planning (Part 1)](https://github.com/livingdocsIO/livingdocs-editor/pull/6077)
