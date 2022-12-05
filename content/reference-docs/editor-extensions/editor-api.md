@@ -1,6 +1,6 @@
 ---
 title: Editor API
-weight: 2
+weight: 3
 menus:
   reference-docs:
     parent: Editor Extensions

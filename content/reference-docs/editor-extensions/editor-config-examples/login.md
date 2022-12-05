@@ -2,7 +2,7 @@
 title: Login
 menus:
   reference-docs:
-    parent: Editor Config
+    parent: Editor Config Examples
 ---
 
 In addition to the Livingdocs login, you can configure additional login providers.

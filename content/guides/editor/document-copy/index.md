@@ -36,7 +36,7 @@ For more advanced scenarios, it's possible to define a copy config on the server
   - convert livingdoc components
   - map metadata
 
-To get a rough understanding of the copy feature with a server configuration, read [Document Copy Basics](#document-copy-basics) first. The [Copy Config Example](#copy-config-example) section provides an overview of a basic copy config. To get a better feeling of what copy scenarios are supported, visit the [Copy Use Cases](#copy-use-cases).
+To get a rough understanding of the copy feature with a server configuration, read [Document Copy Basics](#document-copy-basics) first. The [Copy Config Example](#copy-config-example) section provides an overview of a basic copy config. To get a better feeling of what copy scenarios are supported, visit the [Copy Use Cases](#copy-config-examples).
 
 ### (C) Transform a document (use at own risk)
 

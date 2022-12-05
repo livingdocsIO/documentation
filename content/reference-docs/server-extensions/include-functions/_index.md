@@ -122,7 +122,7 @@ module.exports = {
 
 #### Generated sidebar
 
-The generated sidebar allows you to quickly create new includes. You will be limited to the API's provided by Livingdocs but our API is built to catch most of the common use-cases.
+The generated sidebar allows you to quickly create new includes. You will be limited to the API's provided by Livingdocs but our API is built to catch most of the common config-examples.
 
 ```js
 // Example include service using the paramsSchema

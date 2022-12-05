@@ -15,7 +15,7 @@ in the [server configuration]({{< ref "/reference-docs/server-extensions/server-
 Images can be dragged onto a Livingdocs document directly from _huGO+_ after the basic configuration is set up.
 
 Note: you can restrict from which sources images can be uploaded, e.g. you could allow only uploads from _huGO+_.
-See [Image Source Policy]({{< ref "/reference-docs/editor-extensions/editor-configuration/image-source-policy.md" >}})
+See [Image Source Policy]({{< ref "/reference-docs/editor-extensions/editor-config-examples/image-source-policy.md" >}})
 
 
 ## Document Drag and Drop

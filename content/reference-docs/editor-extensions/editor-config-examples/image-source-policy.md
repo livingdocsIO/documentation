@@ -2,7 +2,7 @@
 title: Images Configuration
 menus:
   reference-docs:
-    parent: Editor Config
+    parent: Editor Config Examples
 ---
 
 #### Source Policy

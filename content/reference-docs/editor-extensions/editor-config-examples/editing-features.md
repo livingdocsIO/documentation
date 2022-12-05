@@ -2,7 +2,7 @@
 title: Document Editing Features
 menus:
   reference-docs:
-    parent: Editor Config
+    parent: Editor Config Examples
 ---
 
 All of the following options concern the editor environment configuration files, so for example `config/environments/all.js` in the [boilerplate editor](https://github.com/livingdocsIO/livingdocs-editor-boilerplate). We list all available config options here where necessary with links to other pages.

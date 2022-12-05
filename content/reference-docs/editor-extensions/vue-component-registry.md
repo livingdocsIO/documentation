@@ -1,7 +1,7 @@
 ---
 title: Vue Component Registry
 description: Implement a custom Vue component that can be used in dashboards and filters.
-weight: 3
+weight: 6
 menus:
   reference-docs:
     parent: Editor Extensions

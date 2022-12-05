@@ -2,7 +2,7 @@
 title: Image cropping
 menus:
   reference-docs:
-    parent: Editor Config
+    parent: Editor Config Examples
 ---
 
 The image cropping in Livingdocs is implemented as an open-source library available [here](https://github.com/livingdocsIO/srcissors).

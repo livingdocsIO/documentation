@@ -387,13 +387,13 @@ Type of the dashboard, one of these: `dashboard`, `kanbanBoard`, `taskBoard`, `t
 
 #### displayFilters
 
-[Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) are filters that the user can set in the UI (below the search input).
+[Display Filters]({{< ref "/reference-docs/editor-extensions/editor-config-examples/display-filter.md" >}}) are filters that the user can set in the UI (below the search input).
 
 With `release-2021-03` the `displayFilters` for the Media Library Dashboards are defined on the [Media Type]({{< ref "/reference-docs/project-config/media-types.md" >}}).
 
 #### baseFilters
 
-[Base Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/base-filter.md" >}}) are invisible filters and applied to every search (including the default result list).
+[Base Filters]({{< ref "/reference-docs/editor-extensions/editor-config-examples/base-filter.md" >}}) are invisible filters and applied to every search (including the default result list).
 
 With `release-2021-03` the `baseFilters` for the Media Library Dashboards are defined on the [Media Type]({{< ref "/reference-docs/project-config/media-types.md" >}}).
 
@@ -687,8 +687,8 @@ As of `release-2021-03` the `baseFilters` and `displayFilters` are to be configu
 See [Media Type]({{< ref "/reference-docs/project-config/media-types.md" >}}) documentation for more information.
 
 Any release before `release-2021-03` takes the following config
-- `mediaLibrary.dashboard.displayFilters`: an array of [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) for the Dashboard accessible via the Main Navigation
-- `mediaLibrary.editorSelection.displayFilters`: an array of [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) for the Dashboard accessible via the Media Button in the Document Editing Toolbar
+- `mediaLibrary.dashboard.displayFilters`: an array of [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-config-examples/display-filter.md" >}}) for the Dashboard accessible via the Main Navigation
+- `mediaLibrary.editorSelection.displayFilters`: an array of [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-config-examples/display-filter.md" >}}) for the Dashboard accessible via the Media Button in the Document Editing Toolbar
 
 ### Dashboard Cards
 With `release-2021-09` you can configure the card used to show results in dashboards. You do this by configuring your own dashboard card in the project config under `editorSettings.dashboardCardConfigurations` and then define this card per mediaType as you please.
@@ -798,10 +798,10 @@ inlineLinks: {
 `useDashboard` defines which dashboard is going to be renderered when the user clicks on `Extended Search`.
 ### displayFilters
 
-[Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter" >}}) are filters that the user can set in the UI (below the search input).
+[Display Filters]({{< ref "/reference-docs/editor-extensions/editor-config-examples/display-filter" >}}) are filters that the user can set in the UI (below the search input).
 ### baseFilters
 
-[Base Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/base-filter" >}}) are invisible filters and applied to every search (including the default result list).
+[Base Filters]({{< ref "/reference-docs/editor-extensions/editor-config-examples/base-filter" >}}) are invisible filters and applied to every search (including the default result list).
 
 ## Text Formatting
 

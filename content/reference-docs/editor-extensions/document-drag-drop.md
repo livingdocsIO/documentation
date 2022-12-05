@@ -1,7 +1,7 @@
 ---
 title: Document Drag & Drop
 description: Implement a custom Drag & Drop handler in the editor.
-weight: 4
+weight: 5
 menus:
   reference-docs:
     parent: Editor Extensions

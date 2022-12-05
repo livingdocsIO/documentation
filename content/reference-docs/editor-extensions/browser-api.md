@@ -1,7 +1,7 @@
 ---
 title: Accessing the document content in the browser
 draft: true
-weight: 3
+weight: 4
 menus:
   reference-docs:
     parent: Editor Extensions

@@ -112,7 +112,7 @@ Note: if you did your [own dashboard item]({{< ref "../push-notifications#add-a-
 
 ## Editor
 
-The editor side is relatively easy to configure. You only need to add the provided language [display filter]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) to your dashboard so that you are able to filter documents by language. This is done in the editor environment config file.
+The editor side is relatively easy to configure. You only need to add the provided language [display filter]({{< ref "/reference-docs/editor-extensions/editor-config-examples/display-filter.md" >}}) to your dashboard so that you are able to filter documents by language. This is done in the editor environment config file.
 
 ```js
 {

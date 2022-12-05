@@ -2,7 +2,7 @@
 title: Main Navigation
 menus:
   reference-docs:
-    parent: Editor Config
+    parent: Editor Config Examples
 ---
 
 This documentation describes the configuration possibilities of the main navigation within the editor (instance-wide). The basic configuration of the main navigation has to be set in the [project config]({{< ref "/reference-docs/project-config/editor-settings" >}}).

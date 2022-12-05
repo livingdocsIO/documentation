@@ -2,7 +2,7 @@
 title: Text Editing Config
 menus:
   reference-docs:
-    parent: Editor Config
+    parent: Editor Config Examples
 ---
 
 Most of the text editing is handled by [editable.js](https://github.com/livingdocsIO/editable.js), an open-source library, maintained by Livingdocs. The Livingdocs editor allows different configurations to adapt the behavior of editable.js.

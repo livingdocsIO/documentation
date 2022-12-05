@@ -387,8 +387,8 @@ metadata: [
 ```
 
 References:
-* [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter" >}})
-* [Base Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/base-filter" >}})
+* [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-config-examples/display-filter" >}})
+* [Base Filters]({{< ref "/reference-docs/editor-extensions/editor-config-examples/base-filter" >}})
 
 ## li-document-references
 
@@ -442,8 +442,8 @@ metadata: [
 ```
 
 References:
-* [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter" >}})
-* [Base Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/base-filter" >}})
+* [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-config-examples/display-filter" >}})
+* [Base Filters]({{< ref "/reference-docs/editor-extensions/editor-config-examples/base-filter" >}})
 
 
 ## li-enum
@@ -985,7 +985,7 @@ metadata: [
 ```
 
 References:
-* [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter" >}})
+* [Display Filters]({{< ref "/reference-docs/editor-extensions/editor-config-examples/display-filter" >}})
 
 
 ## li-retresco

@@ -2,7 +2,7 @@
 title: Search and Filters
 menus:
   reference-docs:
-    parent: Editor Config
+    parent: Editor Config Examples
 ---
 
 {{< img src="images/search-filters.png" alt="Search filters" >}}
@@ -12,7 +12,7 @@ menus:
 Filters on a dashboard are highly customisable in Livingdocs.
 
 - One can define filters in a dashboard (`displayFilters`)
-- One can use [Core DisplayFilter]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) or [Custom DisplayFilter]({{< ref "/guides/editor/custom-dashboard-filters" >}}).
+- One can use [Core DisplayFilter]({{< ref "/reference-docs/editor-extensions/editor-config-examples/display-filter.md" >}}) or [Custom DisplayFilter]({{< ref "/guides/editor/custom-dashboard-filters" >}}).
 - One can define the default search behaviour (`defaultQueries`/`emptySearchQueries`)
 
 Example:
@@ -91,7 +91,7 @@ filters: {
 
 - `displayFilters`
 
-  The filters that are shown to the user. One can use [Core DisplayFilter]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) or [Custom DisplayFilter]({{< ref "/guides/editor/custom-dashboard-filters" >}}).
+  The filters that are shown to the user. One can use [Core DisplayFilter]({{< ref "/reference-docs/editor-extensions/editor-config-examples/display-filter.md" >}}) or [Custom DisplayFilter]({{< ref "/guides/editor/custom-dashboard-filters" >}}).
 
 - `defaultQueries`
 

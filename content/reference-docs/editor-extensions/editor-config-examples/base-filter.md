@@ -10,8 +10,8 @@ Base filters are used in different places and have a common format to construct 
 
 There are different places, where one can define base filter:
 - `baseFilters` (used in [custom dashboards]({{< ref "/reference-docs/project-config/editor-settings" >}}))
-- `defaultQueries` (used in [default dashboards]({{< ref "/reference-docs/editor-extensions/editor-configuration/default-dashboard-filter#filter-config-properties-see-example" >}}))
-- `emptySearchQueries` (used in [default dashboards]({{< ref "/reference-docs/editor-extensions/editor-configuration/default-dashboard-filter#filter-config-properties-see-example" >}}))
+- `defaultQueries` (used in [default dashboards]({{< ref "/reference-docs/editor-extensions/editor-config-examples/default-dashboard-filter#filter-config-properties-see-example" >}}))
+- `emptySearchQueries` (used in [default dashboards]({{< ref "/reference-docs/editor-extensions/editor-config-examples/default-dashboard-filter#filter-config-properties-see-example" >}}))
 
 At all this places, one can use the same query format, e.g.
 
