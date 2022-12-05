@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Home Screen Example Config](https://github.com/livingdocsIO/livingdocs-server/pull/5020)
 * [escape error messages on login screen](https://github.com/livingdocsIO/livingdocs-editor/pull/6079)
 * [fix(deps): update dependency pino from 8.6.1 to v8.7.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5036)
 * [fix(deps): update dependency jose from 4.10.4 to v4.11.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5032)
