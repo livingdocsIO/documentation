@@ -152,12 +152,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Highlights
 
-### Microsoft Teams Integration
-
-TODO: Is this a highlight? Is the feature ready? Is the feature documented?
-
-* [Microsoft Teams Integration](https://github.com/livingdocsIO/livingdocs-server/pull/4408)
-
 ### i18n - Editor available in German
 
 TODO: description
