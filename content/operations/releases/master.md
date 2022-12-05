@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Only show push button in Table Dashboards on published documents](https://github.com/livingdocsIO/livingdocs-editor/pull/6075)
 * [Distribution Planning (Part 1)](https://github.com/livingdocsIO/livingdocs-editor/pull/6077)
 * [Distribution Planning (Part 1)](https://github.com/livingdocsIO/livingdocs-server/pull/5029)
 * [feat(li-tree): always save changes](https://github.com/livingdocsIO/livingdocs-editor/pull/6074)
