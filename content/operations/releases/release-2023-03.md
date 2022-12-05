@@ -48,6 +48,21 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Highlights
 
+### Planning System
+
+* [Server: Document Transform Functions](https://github.com/livingdocsIO/livingdocs-server/pull/5010)
+* [Create and transform UI](https://github.com/livingdocsIO/livingdocs-editor/pull/6060)
+
+### Homescreen
+
+* [Server: Dashboard Sources](https://github.com/livingdocsIO/livingdocs-server/pull/5016)
+* [Home Screen Example Config](https://github.com/livingdocsIO/livingdocs-server/pull/5020)
+
+### Metadata Plugin li-team
+
+* [li-team: add li-team config schema and validation](https://github.com/livingdocsIO/livingdocs-server/pull/4974)
+* [li-team: add li-meta-team plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/6024)
+
 ### Microsoft Teams Integration
 
 TODO: Is this a highlight? Is the feature ready? Is the feature documented?
