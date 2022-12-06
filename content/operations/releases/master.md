@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(translation): pointer events blocked during loading](https://github.com/livingdocsIO/livingdocs-editor/pull/6066)
 * [fix: update livingdocs-integration.js](https://github.com/livingdocsIO/livingdocs-editor/pull/6095)
 * [fix: update livingdocs-integration.js](https://github.com/livingdocsIO/livingdocs-server/pull/5051)
 * [Round crop coordinates when using focal point tool](https://github.com/livingdocsIO/livingdocs-editor/pull/6091)
