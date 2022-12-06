@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/5048)
 * [Search for distributions by best date](https://github.com/livingdocsIO/livingdocs-server/pull/5047)
 * [Sort by relevance](https://github.com/livingdocsIO/livingdocs-server/pull/5045)
 * [Dashboard pageSize](https://github.com/livingdocsIO/livingdocs-editor/pull/6086)
