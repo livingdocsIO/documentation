@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Bugfix for teams dashboards on homescreen](https://github.com/livingdocsIO/livingdocs-editor/pull/6088)
 * [Add link to document in distribution planning table](https://github.com/livingdocsIO/livingdocs-editor/pull/6087)
 * [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/5048)
 * [Search for distributions by best date](https://github.com/livingdocsIO/livingdocs-server/pull/5047)
