@@ -451,6 +451,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.34): fix(loader): added and styled for translation card
 - [v85.15.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.33): fix(count): For reference list
 - [v85.15.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.32): fix(focalPoint): make sure crop coordinates are rounded when using focal point tool
 - [v85.15.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.31): fix(li-push-messages): only show push button on published documents
