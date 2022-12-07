@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix dynamic indexing](https://github.com/livingdocsIO/livingdocs-server/pull/5049)
 * [Fix broken document creation button](https://github.com/livingdocsIO/livingdocs-editor/pull/6099)
 * [fix(translation): pointer events blocked during loading](https://github.com/livingdocsIO/livingdocs-editor/pull/6066)
 * [fix: update livingdocs-integration.js](https://github.com/livingdocsIO/livingdocs-editor/pull/6095)
