@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add expectedOrActualPublicationDate property to systemdata](https://github.com/livingdocsIO/livingdocs-server/pull/5050)
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
