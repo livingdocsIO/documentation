@@ -1,9 +1,9 @@
 {
-    "release-2023-03": {
+    "master": {
         "id": 1,
-        "key": "release-2023-03",
+        "key": "master",
         "name": "March 2023",
-        "ref": "/operations/releases/release-2023-03.md",
+        "ref": "/operations/releases/master.md",
         "upcoming": true,
         "current": false,
         "maintained": true,
@@ -12,11 +12,11 @@
         "editorVersion": "",
         "serverVersion": ""
     },
-    "master": {
+    "release-2023-01": {
         "id": 1,
-        "key": "master",
+        "key": "release-2023-01",
         "name": "January 2023",
-        "ref": "/operations/releases/master.md",
+        "ref": "/operations/releases/release-2023-01.md",
         "upcoming": true,
         "current": false,
         "maintained": true,
