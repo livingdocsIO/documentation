@@ -251,6 +251,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v87.5.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.5): fix(loader): added and styled for translation card
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v??.?.?): text
 
   ---
