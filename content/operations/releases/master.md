@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [ Use docvalues instead of source when we query ids only](https://github.com/livingdocsIO/livingdocs-server/pull/5053)
 * [copy bug with multiple services](https://github.com/livingdocsIO/livingdocs-editor/pull/6112)
 * [Update German translation for "Close" in Document Lists side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/6107)
 * [Add expectedOrActualPublicationDate property to systemdata](https://github.com/livingdocsIO/livingdocs-server/pull/5050)
