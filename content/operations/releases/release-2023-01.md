@@ -251,6 +251,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v87.5.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.8): fix(li-document-creation-flow-button): null-safe access to `documentCreationFlow`
 - [v87.5.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.7): fix: change to selected service on copy
 - [v87.5.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.6): fix(document-lists): Update German translation for "Close"
 - [v87.5.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.5): fix(loader): added and styled for translation card
