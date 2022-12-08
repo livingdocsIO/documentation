@@ -446,6 +446,7 @@ Here is a list of all patches after the release has been announced.
 - [v189.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v189.0.2): fix(oembed): add spotify and data wrapper
 
 ### Livingdocs Editor Patches
+- [v80.38.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.71): fix: change to selected service on copy
 - [v80.38.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.70): fix(table dashboard): first loading
 - [v80.38.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.69): fix: prevent refreshing table dashboard when loading more elements
 - [v80.38.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.38.68): fix(media-library): Restore upload center placeholders
