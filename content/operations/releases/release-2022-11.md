@@ -451,6 +451,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.37): fix(metadata): Change calculation for li-text input height
 - [v85.15.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.36): fix: change to selected service on copy
 - [v85.15.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.35): fix(document-lists): Update German translation for "Close"
 - [v85.15.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.34): fix(loader): added and styled for translation card
