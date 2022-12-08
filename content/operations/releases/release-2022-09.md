@@ -366,6 +366,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.78](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.78): fix: change to selected service on copy
 - [v81.20.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.77): fix(translationCard): loading state correct
 - [v81.20.76](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.76): fix(count): For reference list
 - [v81.20.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.75): fix: escape error messages on login screen
