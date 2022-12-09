@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Queue background processing](https://github.com/livingdocsIO/livingdocs-server/pull/5054)
 * [Fix console errors when no 'to' date is set for date time validity](https://github.com/livingdocsIO/livingdocs-editor/pull/6106)
 * [Add `isCancel` functionality for `axios` children](https://github.com/livingdocsIO/livingdocs-editor/pull/6118)
 * [Change calculation for li-text input height](https://github.com/livingdocsIO/livingdocs-editor/pull/6111)
