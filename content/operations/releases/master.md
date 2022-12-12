@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [The inline List editor publish button is only clickable when dirty](https://github.com/livingdocsIO/livingdocs-editor/pull/6121)
 * [Team: add user to team as owner during create flow](https://github.com/livingdocsIO/livingdocs-editor/pull/6078)
 * [Queue background processing](https://github.com/livingdocsIO/livingdocs-server/pull/5054)
 * [Fix console errors when no 'to' date is set for date time validity](https://github.com/livingdocsIO/livingdocs-editor/pull/6106)
