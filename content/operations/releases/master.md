@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Metadata: li-integer with dataProvider](https://github.com/livingdocsIO/livingdocs-server/pull/5058)
 * [Metadata: li-integer with dataProvider](https://github.com/livingdocsIO/livingdocs-editor/pull/6124)
 * [fix(deps): update dependency @google-cloud/storage from 6.7.0 to v6.8.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5056)
 * [The inline List editor publish button is only clickable when dirty](https://github.com/livingdocsIO/livingdocs-editor/pull/6121)
