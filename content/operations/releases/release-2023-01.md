@@ -251,6 +251,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v87.5.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.12): fix(search): Fix load more button translation for list search
 - [v87.5.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.11): fix(inlineListEditor): Only publishable when dirty
 - [v87.5.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.10): fix(dateTimevalidity): Does not error without 'to' date
 - [v87.5.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.9): fix(metadata): Change calculation for li-text input height
