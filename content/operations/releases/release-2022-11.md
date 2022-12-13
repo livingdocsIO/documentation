@@ -429,6 +429,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.24): fix(cli reencrypt): now uses correct stringify
 - [v200.3.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.23): fix(li-push-messages): check if document is published
 - [v200.3.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.22): fix(indexing): Handle missing metadata while indexing
 - [v200.3.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.21): chore: Adopt elasticsearch version
