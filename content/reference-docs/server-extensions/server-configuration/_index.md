@@ -266,7 +266,7 @@ auth: {
 
   // Declares authentication strategies in livingdocs
   // Please see the connections.local configuration below
-  connections: "{{< a href="#auth-connections-local" title="<connections>">}}"
+  connections: "{{< a href="#authconnectionslocal" title="<connections>">}}"
 }
 ```
 
