@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Expose Comyan API](https://github.com/livingdocsIO/livingdocs-server/pull/5069)
 * [CLI command "Secret reencrypt" now uses correct stringify function ](https://github.com/livingdocsIO/livingdocs-server/pull/5064)
 * [Upgrade to cheerio@1.0.0-rc.12](https://github.com/livingdocsIO/livingdocs-server/pull/5063)
 * [Synchronise remote metadata changes](https://github.com/livingdocsIO/livingdocs-editor/pull/5861)
