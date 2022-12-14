@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix revision history to use correct ordering](https://github.com/livingdocsIO/livingdocs-server/pull/5071)
 * [fix(li-date-time-range-filter): prevent filter dropdown to be cut off](https://github.com/livingdocsIO/livingdocs-editor/pull/6140)
 * [Responsive Table Component](https://github.com/livingdocsIO/livingdocs-editor/pull/6134)
 * [Expose Comyan API](https://github.com/livingdocsIO/livingdocs-server/pull/5069)
