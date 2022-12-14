@@ -51,9 +51,7 @@ This are all available `queryTypes` which can be used to form a filter query.
 {type: 'channelId', value: 2}
 
 // dateRange
-const from = new Date('2016-01-23T15:00')
-const to = new Date('2015-04-05T20:00')
-{type: 'dateRange', key: 'created_at', from, to}
+{type: 'dateRange', key: 'created_at', from: '2016-01-23T15:00', to: '2015-04-05T20:00'}
 
 // documentState (value: 'published', 'unpublished', 'deleted', 'draft', 'publishedWithDraft')
 {type: 'documentState', value: 'published'}
@@ -62,10 +60,17 @@ const to = new Date('2015-04-05T20:00')
 {type: 'metadata', key: 'foo', value: 'bar'}
 {type: 'metadata', key: 'foo', value: {exists: true}}
 {type: 'metadata', key: 'foo.bar.id', value: 42}
-
-const from = new Date('2016-01-23T15:00')
-const to = new Date('2015-04-05T20:00')
-{type: 'metadata', key: 'publicationDate', value: {dateFilter: {from, to}}}
+{type: 'metadata', key: 'foo.bar.id', value: [42, 43]}
+{
+  type: 'metadata',
+  key: 'publicationDate',
+  value: {
+    dateFilter: {
+      from: '2015-04-05T20:00',
+      to: '2016-01-23T15:00'
+    }
+  }
+}
 
 // task (multiple taskName and taskValue combinations possible)
 // taskValue: 'todo', 'doing', 'done'
@@ -75,6 +80,7 @@ const to = new Date('2015-04-05T20:00')
 // sortBy (multiple values possible)
 {type: 'sortBy', value: '-created_at'},
 {type: 'sortBy', value: 'title'}
+{type: 'sortBy', value: 'metadata.department'}
 
 // reference (added-in release-2022-03)
 {type: 'reference', value: 'document:123'}
@@ -85,14 +91,7 @@ const to = new Date('2015-04-05T20:00')
 // state for the mediaLibrary (added-in release-2022-07)
 {type: 'state', value: 'active'}
 {type: 'state', value: 'revoked'}
-
-// media Index base filter for metadata
-{type: 'metadata', key: 'foo', value: 'bar', dataType: 'keyword'}
-{type: 'metadata', key: 'transformed', value: true, dataType: 'boolean'}
-// metadata plugin with a set key in the index_behavior
-{type: 'metadata', key: 'googleVision.labels', value: 'Vogel', dataType: 'keyword'}
 ```
-
 
 ## Filter Query Examples
 
