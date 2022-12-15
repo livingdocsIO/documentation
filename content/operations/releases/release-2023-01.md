@@ -258,6 +258,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v87.5.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.15): fix(deps): update dependency moment-timezone from 0.5.34 to 0.5.35 [security]
 - [v87.5.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.14): fix(medialibrary): Fix error where uploading images by restricted user would fail
 - [v87.5.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.13): fix(autosave): Add scheduled save when autosave.stopped
 - [v87.5.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.12): fix(search): Fix load more button translation for list search
