@@ -638,6 +638,58 @@ can be used to render custom content inside a table cell.
 
 Set custom `startPage: {path: '/my-custom-path'}}` to set the path used to render on login or when switching projects.
 
+## Home Screen
+
+{{< added-in release-2023-01 block >}}
+
+When configured on a project, the home screen will be the start page on login or when switching projects.
+
+**Notice**: The [startPage]({{< ref "/reference-docs/project-config/editor-settings#startpage" >}}) config will have no effect if a home screen is configured in the same project.
+
+The home screen can display multiple [Table Dashboard]({{< ref "/reference-docs/project-config/editor-settings#example-table-dashboard" >}}) on the same page and has [Document Creation Flow]({{< ref "/reference-docs/project-config/editor-settings#document-creation-flows" >}}) buttons in the main toolbar.
+
+```js
+// projectConfig.editorSettings
+homeScreen: {
+  dashboards: [
+    {
+      // Handle of the dashboard to show
+      useDashboard: 'articles',
+      // Hides the dashboard search input field (optional, default: false)
+      hideSearchInput: true,
+      // Title to show over the dashboard (optional, default: dashboard.pageTitle)
+      dashboardTitle: 'Recommended Articles',
+      // Use a custom dashboard source (see dashboard sources documentation below)
+      dashboardSourceHandle: 'recommendedArticlesSource'
+    },
+    {
+      useDashboard: 'example-table-dashboard'
+    }
+  ],
+  documentCreationFlows: [
+    {
+      // Handle of a Document Creation Flow  
+      useDocumentCreationFlow: 'articles'
+    },
+    {
+      useDocumentCreationFlow: 'breakingNews',
+      // Render as primary button
+      primary: true
+    }
+  ] 
+}
+```
+
+### Dashboard Sources
+
+Dashboards on the home screen are eligible of using [Dashboard Sources]({{< ref "/reference-docs/server-extensions/dashboard-source-api" >}}). This means the Table Dashboards can display documents, that are not returned by the regular document search.
+A use case for this could be a personalized list of recommended articles that are determined by custom queries or even an external system.
+
+**Limitations**:
+- No display filters or base filters available
+- Maximum number of results are limited to 35
+- No pagination supported
+
 ## Document Creation Flow
 
 {{< added-in release-2022-09 block >}}

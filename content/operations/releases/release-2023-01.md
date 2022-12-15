@@ -96,7 +96,12 @@ TODO: description
 
 ### Synced Table Dashboards
 
-TODO: description
+### Home Screen
+
+Project home screen with multiple Table Dashboards and Document Creation Flow buttons on it.
+
+* [Documentation]({{< ref "/reference-docs/project-config/editor-settings#home-screen" >}})
+* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6082)
 
 ## Breaking Changes :fire:
 
