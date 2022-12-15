@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Update Livingdocs Framework 24.8.1](https://github.com/livingdocsIO/livingdocs-editor/pull/6145)
 * [li-tree: listen for remote updates and add unit tests](https://github.com/livingdocsIO/livingdocs-editor/pull/6105)
 * [Use responsive table for distributions](https://github.com/livingdocsIO/livingdocs-editor/pull/6143)
 * [Fix revision history to use correct ordering](https://github.com/livingdocsIO/livingdocs-server/pull/5071)
