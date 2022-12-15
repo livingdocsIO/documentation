@@ -832,6 +832,8 @@ The two features may be merged in the future, but for now they co-exist independ
 | Push Services  | Google Firebase, Urban airship, Ethinking | Custom Implementation   |
 | Message Format | Fixed (Message + Topic)                   | Dynamic (Params Schema) |
 
+**Notice**: Push Messages can only be sent on published documents. If the document is not published, the Table Dashboard won't show the button.
+
 **Storage Format**:
 ```js
 {
