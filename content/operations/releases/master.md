@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Prevent manual source with image config sync update and always pass `focalPoint` when initialising image cropper](https://github.com/livingdocsIO/livingdocs-editor/pull/6141)
 * [Home screen refinements](https://github.com/livingdocsIO/livingdocs-editor/pull/6149)
 * [Add home screen `dashboardTitle` config](https://github.com/livingdocsIO/livingdocs-server/pull/5074)
 * [Filters: deprecate register / registerList / registerAngularComponent custom filters](https://github.com/livingdocsIO/livingdocs-editor/pull/6150)
