@@ -453,6 +453,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.43): fix(metadata): Always pass focalPoint when initialising image cropper
 - [v85.15.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.42): fix(deps): update dependency moment-timezone from 0.5.34 to 0.5.35 [security]
 - [v85.15.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.41): fix(li-date-time-range-filter): prevent filter dropdown to be cut off
 - [v85.15.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.40): fix(search): Fix load more button translation for list search
