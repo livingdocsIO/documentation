@@ -258,6 +258,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v87.5.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.17): fix(metadata): Always pass focalPoint when initialising image cropper
 - [v87.5.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.16): fix(filters): deprecate list and angular component custom filters
 - [v87.5.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.15): fix(deps): update dependency moment-timezone from 0.5.34 to 0.5.35 [security]
 - [v87.5.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.14): fix(medialibrary): Fix error where uploading images by restricted user would fail
