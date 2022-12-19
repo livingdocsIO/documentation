@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore: enable 'view on hugo' button for release testing](https://github.com/livingdocsIO/livingdocs-server/pull/5087)
 * [empty UserId from desknet](https://github.com/livingdocsIO/livingdocs-server/pull/5086)
 * [add system user for empty userid](https://github.com/livingdocsIO/livingdocs-editor/pull/6161)
 * [Use faster /documents?idOnly query for the search on table dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/6152)
