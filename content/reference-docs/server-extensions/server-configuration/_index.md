@@ -1320,6 +1320,7 @@ The HuGO integration has it's own top level config:
 
 ```js
 hugo: {
+  assetPath: 'hugo.customer.com',
   resource: {
     enabled: true,
     host: 'hugo-api.customer.com',
