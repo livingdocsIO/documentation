@@ -341,6 +341,7 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v194.0.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.25): fix(desknet): Prevent empty userId from Desk-Net
 - [v194.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.24): fix(metadata): li-publish-date failing validation
 - [v194.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.23): fix(logs): Error logs were missing the stack sometimes due to missing `...serializers` in `serializers`
 - [v194.0.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.22): fix(print): Add params to print export
