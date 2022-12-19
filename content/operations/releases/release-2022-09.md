@@ -366,6 +366,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.81](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.81): fix: add system user for empty userid
 - [v81.20.80](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.80): fix(metadata): Prevent manual source with image config sync update
 - [v81.20.79](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.79): fix(inlineListEditor): Only publishable when dirty
 - [v81.20.78](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.78): fix: change to selected service on copy
