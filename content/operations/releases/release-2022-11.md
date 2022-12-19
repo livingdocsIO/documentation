@@ -429,6 +429,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.27): fix(desknet): Prevent empty userId from Desk-Net
 - [v200.3.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.26): chore: Fix DocumentEntity save tests that use the documents repo
 - [v200.3.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.25): fix(comyan): expose api
 - [v200.3.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.24): fix(cli reencrypt): now uses correct stringify
