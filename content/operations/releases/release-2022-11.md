@@ -455,6 +455,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.45): fix(namedCrops): Delete button works correctly
 - [v85.15.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.44): fix: add system user for empty userid
 - [v85.15.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.43): fix(metadata): Always pass focalPoint when initialising image cropper
 - [v85.15.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.42): fix(deps): update dependency moment-timezone from 0.5.34 to 0.5.35 [security]
