@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [The delete button for named crops removes only the desired crop](https://github.com/livingdocsIO/livingdocs-editor/pull/6167)
 * [fix(deps): update dependency @livingdocs/framework from 24.8.0 to v24.8.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5082)
 * [fix(deps): update dependency aws-sdk from 2.1267.0 to v2.1278.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5084)
 * [Home Screen: send the user back to the home screen if coming from there](https://github.com/livingdocsIO/livingdocs-editor/pull/6158)
