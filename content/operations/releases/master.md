@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fixes 400 error from Iframely when initialised with an empty url](https://github.com/livingdocsIO/livingdocs-editor/pull/5926)
 * [Extend back button to recognise metadata base filters](https://github.com/livingdocsIO/livingdocs-editor/pull/6153)
 * [Drop imagemagick support](https://github.com/livingdocsIO/livingdocs-server/pull/5095)
 * [Filter Refactoring: remove deprecated list filters replaced by listV2](https://github.com/livingdocsIO/livingdocs-editor/pull/6166)
