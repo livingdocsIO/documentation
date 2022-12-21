@@ -541,6 +541,7 @@ Here is a list of all patches after the release has been announced.
 
 
 ### Livingdocs Editor Patches
+- [v80.10.80](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.80): fix(history): Prevent app from crashing when toggling history
 - [v80.10.79](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.79): fix(media-library): Restore upload center placeholders
 - [v80.10.78](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.78): chore(drone): Add `shrinkwrap` command in downstream test script, remove NZZ since they use `release-2022-07` already
 - [v80.10.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v80.10.77): chore: improve comment
