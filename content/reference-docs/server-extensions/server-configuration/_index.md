@@ -920,7 +920,6 @@ Below you see a full mediaLibrary config (with default values).
 mediaLibrary: {
   // define behavior for images in Livingdocs (upload, upload processing, storage)
   images: {
-    processingStrategy: 'libvips' // 'libvips' (default), 'imagemagick'
     publicUrl: 'https://livingdocs-images-dev.s3.amazonaws.com', // base url of the storage
     // {{< a ref="/reference-docs/server-extensions/server-configuration/storage" title="Storage Configuration" >}}
     storage: {
@@ -955,10 +954,7 @@ mediaLibrary: {
       convert: [
         {
           sourceFormat: 'pdf',
-          targetFormat: 'png',
-          // density is only available with processingStrategy 'imagemagick'
-          // If the sourceFormat is a vector based format you can define the density (dpi) which should be used to create the pixel based format.
-          density: 300
+          targetFormat: 'png'
         }
       ]
     }
