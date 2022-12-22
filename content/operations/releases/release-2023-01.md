@@ -260,6 +260,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v87.5.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.21): chore(li-link-edit): tests added
 - [v87.5.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.20): fix(namedCrops): Delete button works correctly
 - [v87.5.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.19): fix: add system user for empty userid
 - [v87.5.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.18): fix(home screen): return to home screen with back button from article if opened from home screen
