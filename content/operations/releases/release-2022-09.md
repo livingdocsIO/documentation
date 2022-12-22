@@ -367,6 +367,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.84](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.84): fix(metadata): Wrap document references in default list
 - [v81.20.83](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.83): chore(li-link-edit): tests added
 - [v81.20.82](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.82): fix(namedCrops): Delete button works correctly
 - [v81.20.81](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.81): fix: add system user for empty userid
