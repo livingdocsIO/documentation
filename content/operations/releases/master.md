@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix image upload error with images >2MB](https://github.com/livingdocsIO/livingdocs-server/pull/5101)
 * [fix(public API): support id range for publicationEvents](https://github.com/livingdocsIO/livingdocs-server/pull/5098)
 * [Planning System: transform document visuals](https://github.com/livingdocsIO/livingdocs-editor/pull/6139)
 * [Prevent metadata document reference overflow](https://github.com/livingdocsIO/livingdocs-editor/pull/6179)
