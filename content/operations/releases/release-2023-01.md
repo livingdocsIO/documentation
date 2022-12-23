@@ -253,6 +253,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.8): test(image-processing): Add a timeout to the extractHeader tests and use a larger file
 - [v208.3.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.7): fix: add test for id range parameter for PublicationEvents
 - [v208.3.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.6): fix(desknet): Prevent empty userId from Desk-Net
 - [v208.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.5): chore: Fix DocumentEntity save tests that use the documents repo
