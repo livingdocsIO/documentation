@@ -219,3 +219,5 @@ props: {
   }
 }
 ```
+
+A guide to creating simple custom cells can be found [here]({{< ref "/guides/editor/custom-table-dashboard-cells.md" >}})
