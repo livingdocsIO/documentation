@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(project config): don't mark webhook secret input as required anymore](https://github.com/livingdocsIO/livingdocs-editor/pull/6192)
 * [fix(deps): update dependency sharp from 0.31.2 to v0.31.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5105)
 * [fix(deps): update dependency fast-json-stringify from 5.4.1 to v5.5.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5108)
 * [Upload error handling for unsupported image formats](https://github.com/livingdocsIO/livingdocs-editor/pull/6183)
