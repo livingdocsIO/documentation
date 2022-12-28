@@ -9,7 +9,6 @@ It is possible to register a custom filter and use it as a [displayFilter]({{< r
 At the moment there are 4 types of custom filters
 - [Custom List v2 Filter](#register-custom-list-v2-filter)
 - [Custom Vue Component Filter](#register-custom-vue-component-filter)
-- [Custom Angular Component Filter](#register-custom-angular-component-filter)
 
 Hint: If you want to create a filter with metadata, make sure they are setup correctly in the ElasticSearch index (`search.metadata_mapping` config in the server)
 
@@ -139,54 +138,4 @@ export default {
   }
 }
 </script>
-```
-
-## Custom Angular Component Filter
-
-##### Example
-
-`searchFilters.registerAngularComponent` registers an Angular component as filter for the search UI.
-Display is controlled with the `filters` key in the configuration.
-
-```js
-liEditor.searchFilters.registerAngularComponent('test', {
-  bindings: {
-    value: '=',
-    config: '='
-  },
-  template: `
-    <div
-      ng-class="{'is-set': $ctrl.isActive}"
-      class="ld-filter"
-      ng-click="$ctrl.toggleProjectFilter()"
-      ng-if="$ctrl.hasPrint"
-    >
-      <div class="ld-dropdown__text">
-        Show print documents
-      </div>
-    </div>
-  `,
-  controller: class PrintController {
-    static get $inject () { return ['session'] }
-
-    constructor (session) {
-      this.session = session
-      this.channel = _find(session.project.channels, {handle: 'print'}) || {}
-      this.hasPrint = !!this.channel.id
-    }
-
-    $doCheck () {
-      this.isActive = this.value.get()
-    }
-
-    toggleProjectFilter () {
-      if (this.channel.id) this.isActive = !this.isActive
-      if (this.isActive && this.channel.id) {
-        this.value.set({type: 'channelId', value: this.channel.id})
-      } else {
-        this.value.set()
-      }
-    }
-  }
-})
 ```
