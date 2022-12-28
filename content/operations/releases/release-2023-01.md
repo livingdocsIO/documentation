@@ -253,6 +253,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.10): fix(comyan): expose api
 - [v208.3.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.9): fix(homeScreen): add dashboardTitle config
 - [v208.3.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.8): test(image-processing): Add a timeout to the extractHeader tests and use a larger file
 - [v208.3.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.7): fix: add test for id range parameter for PublicationEvents
