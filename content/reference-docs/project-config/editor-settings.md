@@ -589,6 +589,7 @@ are supported in the table dashboard:
 - `li-document-reference`
 - `li-string-list` ({{< added-in release-2022-05 >}})
 - `li-desknet-integration` ({{< added-in release-2022-07 >}})
+- `li-integer` ({{< added-in release-2023-03 >}})
 
 #### Upstream components
 
