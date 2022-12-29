@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use correct key in date filter](https://github.com/livingdocsIO/livingdocs-server/pull/5112)
 * [Stop the monaco editor logging with every change](https://github.com/livingdocsIO/livingdocs-editor/pull/6186)
 * [Relative Time consolidation](https://github.com/livingdocsIO/livingdocs-editor/pull/6193)
 * [document-list: on remote update no notification pop up](https://github.com/livingdocsIO/livingdocs-editor/pull/6137)
