@@ -253,6 +253,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.12): fix(date-filter): Use a more strict date, boolean and date range parsing
 - [v208.3.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.11): fix(date-filter): use correct key
 - [v208.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.10): fix(comyan): expose api
 - [v208.3.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.9): fix(homeScreen): add dashboardTitle config
