@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Relative Time consolidation](https://github.com/livingdocsIO/livingdocs-editor/pull/6193)
 * [document-list: on remote update no notification pop up](https://github.com/livingdocsIO/livingdocs-editor/pull/6137)
 * [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/5040)
 * [fix(project config): don't mark webhook secret input as required anymore](https://github.com/livingdocsIO/livingdocs-editor/pull/6192)
