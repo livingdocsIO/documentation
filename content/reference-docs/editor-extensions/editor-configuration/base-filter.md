@@ -91,6 +91,9 @@ This are all available `queryTypes` which can be used to form a filter query.
 // state for the mediaLibrary (added-in release-2022-07)
 {type: 'state', value: 'active'}
 {type: 'state', value: 'revoked'}
+
+// userInTeam (added in release-2023-03)
+{type: 'userInTeam', key: 'myTeamMetadataPropertyName'}
 ```
 
 ## Filter Query Examples
