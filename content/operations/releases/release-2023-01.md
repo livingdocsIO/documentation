@@ -267,6 +267,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v87.5.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.25): fix(comyan): remove unsupported config from the ui
 - [v87.5.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.24): fix(document lists): Code removed
 - [v87.5.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.23): fix(homeScreen): use unique key to loop over home screen dashboards
 - [v87.5.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.22): fix(metadata): Wrap document references in default list
