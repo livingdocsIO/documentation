@@ -141,16 +141,12 @@ See [here]({{< ref "./text-editing.md#spellcheck" >}})
 ```js
 {
   app: {
-    useHistoryStatistics: true,
     useHistoryRestore: true
   }
 }
 ```
 
-The `useHistoryStatistics` option will show a small statistics/activity panel at the top of the document history sidebar.
 The `useHistoryRestore` option enables / disables the restore functionality in the document history, i.e. the ability to restore the opened document to an older revision.
-
-Both options are recommended.
 
 ### Diff View
 ```js
