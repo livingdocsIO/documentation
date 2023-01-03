@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [li-integer: add Table Dashboard component](https://github.com/livingdocsIO/livingdocs-editor/pull/6194)
 * [Activate media library entry replacements for all documents](https://github.com/livingdocsIO/livingdocs-editor/pull/6178)
 * [Remove unused marketing feature](https://github.com/livingdocsIO/livingdocs-editor/pull/6201)
 * [chore(deps): update dependency eslint from 8.30.0 to v8.31.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5125)
