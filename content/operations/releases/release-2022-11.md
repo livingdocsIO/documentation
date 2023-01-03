@@ -457,6 +457,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.49): fix(upload): handle unsupported images in browser
 - [v85.15.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.48): fix(document lists): Code removed
 - [v85.15.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.47): fix(metadata): Wrap document references in default list
 - [v85.15.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.46): chore(li-link-edit): tests added
