@@ -429,6 +429,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.29): fix(xmldom): Update `@xmldom/xmldom` to a newer release that includes fix for security vulnerability
 - [v200.3.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.28): fix: add test for id range parameter for PublicationEvents
 - [v200.3.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.27): fix(desknet): Prevent empty userId from Desk-Net
 - [v200.3.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.26): chore: Fix DocumentEntity save tests that use the documents repo
