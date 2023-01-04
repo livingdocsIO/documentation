@@ -267,6 +267,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v87.5.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.27): fix: detect media changes by asset.key
 - [v87.5.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.26): fix(upload): handle unsupported images in browser
 - [v87.5.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.25): fix(comyan): remove unsupported config from the ui
 - [v87.5.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.24): fix(document lists): Code removed
