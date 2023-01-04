@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency axios from 0.27.2 to v1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5128)
 * [li-integer: add Table Dashboard component](https://github.com/livingdocsIO/livingdocs-editor/pull/6194)
 * [Activate media library entry replacements for all documents](https://github.com/livingdocsIO/livingdocs-editor/pull/6178)
 * [Remove unused marketing feature](https://github.com/livingdocsIO/livingdocs-editor/pull/6201)
