@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix: show correct li-document-reference style everwhere](https://github.com/livingdocsIO/livingdocs-editor/pull/6219)
 * [Upgrade `socket.io` to fix critical vulnerability [security]](https://github.com/livingdocsIO/livingdocs-editor/pull/6208)
 * [Upgrade `resolve-url-loader` to fix `loader-utils` critical vulnerability](https://github.com/livingdocsIO/livingdocs-editor/pull/6212)
 * [fix(deps): update dependency axios from 0.27.2 to v1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5128)
