@@ -457,6 +457,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.52): fix: show configured style of li-document-reference in creation flow dialogs and includes
 - [v85.15.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.51): fix(security): Upgrade `socket.io` to fix critical vulnerability
 - [v85.15.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.50): fix(security): Upgrade `resolve-url-loader` to fix `loader-utils` critical vulnerability
 - [v85.15.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.49): fix(upload): handle unsupported images in browser
