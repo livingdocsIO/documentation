@@ -267,6 +267,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v87.5.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.29): fix(security): Upgrade `socket.io` to fix critical vulnerability
 - [v87.5.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.28): fix(security): Upgrade `resolve-url-loader` to fix `loader-utils` critical vulnerability
 - [v87.5.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.27): fix: detect media changes by asset.key
 - [v87.5.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.26): fix(upload): handle unsupported images in browser
