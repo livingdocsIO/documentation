@@ -368,6 +368,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.86](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.86): fix(security): Upgrade `socket.io` to fix critical vulnerability
 - [v81.20.85](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.85): fix(security): Upgrade `resolve-url-loader` to fix `loader-utils` critical vulnerability
 - [v81.20.84](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.84): fix(metadata): Wrap document references in default list
 - [v81.20.83](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.83): chore(li-link-edit): tests added
