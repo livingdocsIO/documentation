@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1286.0 to v2.1290.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5142)
 * [Creation Flow: use new UI for contentType selection, title entry, language selection](https://github.com/livingdocsIO/livingdocs-editor/pull/6199)
 * [Fix: show correct li-document-reference style everwhere](https://github.com/livingdocsIO/livingdocs-editor/pull/6219)
 * [Upgrade `socket.io` to fix critical vulnerability [security]](https://github.com/livingdocsIO/livingdocs-editor/pull/6208)
