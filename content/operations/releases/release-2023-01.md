@@ -18,39 +18,6 @@ aliases:
   branchHandle="release-2023-01"
 >}}
 
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to master).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
-
-## PRs to Categorize
-* [Fix dynamic indexing](https://github.com/livingdocsIO/livingdocs-server/pull/5049)
-* [Fix broken document creation button](https://github.com/livingdocsIO/livingdocs-editor/pull/6099)
-* [fix(translation): pointer events blocked during loading](https://github.com/livingdocsIO/livingdocs-editor/pull/6066)
-* [fix: update livingdocs-integration.js](https://github.com/livingdocsIO/livingdocs-editor/pull/6095)
-* [fix: update livingdocs-integration.js](https://github.com/livingdocsIO/livingdocs-server/pull/5051)
-* [Round crop coordinates when using focal point tool](https://github.com/livingdocsIO/livingdocs-editor/pull/6091)
-* [Bugfix for teams dashboards on homescreen](https://github.com/livingdocsIO/livingdocs-editor/pull/6088)
-* [Add link to document in distribution planning table](https://github.com/livingdocsIO/livingdocs-editor/pull/6087)
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/5048)
-* [Search for distributions by best date](https://github.com/livingdocsIO/livingdocs-server/pull/5047)
-* [Sort by relevance](https://github.com/livingdocsIO/livingdocs-server/pull/5045)
-* [Dashboard pageSize](https://github.com/livingdocsIO/livingdocs-editor/pull/6086)
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/5044)
-* [Enable indexing of all contentType metadata properties](https://github.com/livingdocsIO/livingdocs-server/pull/5043)
-* [Remove `error_details` in 5XX responses](https://github.com/livingdocsIO/livingdocs-server/pull/4988)
-* [Publish Control: add customBuilt NZZ publish control behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/6015)
-* [Add dynamic indexing to draftIndex and li-team](https://github.com/livingdocsIO/livingdocs-server/pull/5000)
-* [Only show push button in Table Dashboards on published documents](https://github.com/livingdocsIO/livingdocs-editor/pull/6075)
-* [Distribution Planning (Part 1)](https://github.com/livingdocsIO/livingdocs-editor/pull/6077)
-* [Distribution Planning (Part 1)](https://github.com/livingdocsIO/livingdocs-server/pull/5029)
-* [feat(li-tree): always save changes](https://github.com/livingdocsIO/livingdocs-editor/pull/6074)
-* [fix(deps): update dependency ws from 8.8.1 to v8.11.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5038)
-
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
 ## Webinar
@@ -82,19 +49,13 @@ These are the release notes of the upcoming release (pull requests merged to mas
 |NPM|8|
 |Postgres|12|
 |Elasticsearch<br/>OpenSearch|7.x<br/>1|
-|Redis|5 (Deprecated)|
+|Redis|6.2|
 |Livingdocs Server Docker Image|livingdocs/server-base:16.3|
 |Livingdocs Editor Docker Image|livingdocs/editor-base:16.3|
 |Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
 
 
 ## Highlights
-
-### i18n - Editor available in German
-
-TODO: description
-
-### Synced Table Dashboards
 
 ### Home Screen
 
@@ -107,16 +68,24 @@ Project home screen with multiple Table Dashboards and Document Creation Flow bu
 
 ### Migrate the Postgres Database :fire:
 
-TODO: add db migrations
+It's a simple/fast migration with no expected data losses.
 
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database scheme
+# migration 184-increase-webhook-handle-length.js
+#   limit webhook handle to 50 characters
+# migration 185-li-get-leaf-of-revision-history.js
+#   add psql function li_get_leaf_of_revision_history
 livingdocs-server migrate up
 ```
 
-### Drop support for node 14
+### Drop support for node v14
 
 🔥 Drop support for node 14, use node v18 instead.
+
+### Drop support for Redis < v6.2
+
+🔥 The minimal required Redis version is v6.2.
 
 ### Upgrade to elasticsearch client v8
 
@@ -148,6 +117,11 @@ Please see the examples of elasticsearch how to use it: https://www.elastic.co/g
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/5009)
 
+### Don't expose error_details in 5xx response
+
+🔥 5XX responses will no longer contain `body.error_details` object, still the whole error response will be logged.
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4988)
 
 ### Remove metadata plugin li-media-language
 
@@ -264,7 +238,6 @@ Here is a list of all patches after the release has been announced.
 - [v208.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.5): chore: Fix DocumentEntity save tests that use the documents repo
 - [v208.3.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.4): test: Simplify the tests
 - [v208.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.3): fix(cli reencrypt): now uses correct stringify
-- [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
 - [v87.5.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.31): fix(security): Applies all security patches that do not have the patch in a breaking version
@@ -294,7 +267,6 @@ Here is a list of all patches after the release has been announced.
 - [v87.5.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.7): fix: change to selected service on copy
 - [v87.5.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.6): fix(document-lists): Update German translation for "Close"
 - [v87.5.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.5): fix(loader): added and styled for translation card
-- [v??.?.?](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v??.?.?): text
 
   ---
   **Icon Legend**

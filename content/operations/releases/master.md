@@ -119,6 +119,29 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Highlights
 
+### Dynamic Indexing
+
+TODO: Description
+TODO: find out to what feature this PR belongs.
+
+* [Documentation]()
+* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/5000)
+
+### Distribution Planning
+
+TODO: Description
+
+* [Documentation]()
+* [PR: Editor Part I](https://github.com/livingdocsIO/livingdocs-editor/pull/6077)
+
+### i18n - Editor available in German
+
+TODO: description
+
+### Synced Table Dashboards
+
+TODO: description
+
 ### Planning System
 
 * [Server: Document Transform Functions](https://github.com/livingdocsIO/livingdocs-server/pull/5010)
