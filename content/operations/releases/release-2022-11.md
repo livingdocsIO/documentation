@@ -13,7 +13,7 @@ aliases:
   title="November 2022 Release"
   upcoming=false
   legacy=false
-  current=true
+  current=false
   maintained=true
   branchHandle="release-2022-11"
 >}}
