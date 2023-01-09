@@ -227,6 +227,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.14): fix(import): Ignore duplicate import webhook delivery report error
 - [v208.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.13): fix(date-filter): Do not match a date as date range
 - [v208.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.12): fix(date-filter): Use a more strict date, boolean and date range parsing
 - [v208.3.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.11): fix(date-filter): use correct key
