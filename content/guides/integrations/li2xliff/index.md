@@ -1,0 +1,150 @@
+---
+title: Using li2xliff and CAT tools for translating Livingdocs content
+description: Configure our li2xliff library to send Livingdocs content to CAT tools
+weight: 14
+---
+
+## li2Xliff
+
+We have created a library which converts Livingdocs JSON to XLIFF - the XML format required by CAT tools to mark, translate and update content - and to convert XLIFF back to Livingdocs content.
+
+The library exports two functions which can be required:
+
+```js
+const {createXliff, updateContent} = require('@livingdocs/li2xliff')
+```
+
+### createXliff
+
+`createXliff` converts Livingdoc content to XLIFF and requires Livingdoc content and a config object:
+
+```js
+  const xliffContent = createXliff({
+          content: documentVersion.content, // Livingdoc Content
+          config: {
+            targetLanguage: config.targetLanguage, // Required
+            srcLanguage: config.srcLanguage // Required
+          }
+        })
+```
+
+The config object has two required properties, a target language and a source language (so, if you want to translate your German articles to English, your source language is German, target language is English).
+
+It can be extended with the following optional configs:
+
+```js
+excludeEditables: [{
+    component: 'title',
+    editables: ['title', 'author'] // this will not translate title or author editables inside title components
+    },
+    {
+    component: 'header',
+    editables: ['title'] // this will not translate titles inside header components
+    }],
+  excludeTags: ['strong', 'a'] // this will translate content inside of strong and anchor tags, but will not preserve the formatting
+```
+
+To exclude certain editables you must define a parent component for each editable to be excluded. To exclude tags simply define an array of formatting tags you would not like to appear in the translated document.
+
+### updateContent
+
+`updateContent` requires the Livingdoc you created by pressing translate and the xliff returned by the CAT tool:
+
+```js
+const {content, errors} = updateContent({content: documentVersion.content, xliff})
+```
+
+It returns the translated content and, if there are any, an array of errors.
+
+## Registering Translation Function
+
+
+In your Livingdocs Server instance you can subscribe to [server events]({{< ref "/content/reference-docs/server-extensions/server-events.md" >}}) such as document creation. Then you can send your Livingdoc content for translation.
+
+Here we have an example function:
+
+
+```js
+function registerTranslationHooks ({liServer, config}) {
+    liServer.events.subscribe('document.create',
+    async (eventName, data) => {
+      try {
+        const documentVersion = data.documentVersion
+        const xliffContent = createXliff({
+          content: documentVersion.content,
+          config: {
+            targetLanguage: config.targetLanguage,
+            srcLanguage: config.srcLanguage
+          }
+        })
+
+        // Here you would send your xliff to your CAT tool of choice
+
+      } catch (err) {
+        log.error(err)
+      }
+    })
+}
+```
+
+And to add the translation function to the server use an [initialized hook]({{< ref "/content/reference-docs/server-extensions/server-initalization.md" >}}):
+
+```js
+register: function ({liServer}) {
+    if (liServer.config.get('translations:enabled', false)) {
+      liServer.registerInitializedHook(function () {
+        registerTranslationHooks({liServer, config})
+      })
+      registerApi({liServer, config})
+    }
+  }
+```
+
+
+And you can then use a [webhook]({{< ref "/reference-docs/server-extensions/webhooks.md" >}}) to listen to your CAT service to know when to update your Livingdoc afterwards, summarised:
+
+```js
+function registerApi ({liServer, config}) {
+  liServer.features.register('translations', function (feature, server) {
+    feature.registerResource({
+      controller: {
+        async writeTranslation (req, res) {
+          try {
+            const documentApi = liServer.features.api('li-documents').document // Get the document API
+            const documentWriteModel = await documentApi.getDocumentWriteModel({projectId, documentId})
+            const documentVersion = documentWriteModel.toDocumentVersion()
+            // Here you need to get your xliff from your CAT Tool and pass it to updateContent:
+            const {content, errors} = updateContent({content: documentVersion.content, xliff})
+            // Handle any errors in updating the content
+            await documentApi.updateV2({
+              document: documentWriteModel,
+              update: {
+                ...documentVersion,
+                ...{revision: {...documentVersion.revisionEntity, ...{data: {content}}}},
+              },
+              isSystemUpdate: true
+            })
+            log.info({documentId: documentVersion.id}, `Target document updated.`)
+            res.success()
+          } catch (err) {
+            log.error(err)
+          }
+        }
+      },
+      routes: {
+        title: 'translation webhook',
+        path: '/translation',
+        endpoints: [{
+          path: '/',
+          method: 'post',
+          auth: '',
+          action: 'writeTranslation',
+          body: ms.obj()
+        }]
+      }
+    })
+  })
+}
+```
+
+This is a simplified rendition of a registered webhook which can be called by your CAT tool to let Livingdocs know the translation is complete - you can then write a function to get your XLIFF back and update the document with the document API. You can extend it to update metadata and handle errors and logging more extensively.
