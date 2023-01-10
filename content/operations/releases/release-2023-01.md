@@ -241,6 +241,7 @@ Here is a list of all patches after the release has been announced.
 - [v208.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.3): fix(cli reencrypt): now uses correct stringify
 
 ### Livingdocs Editor Patches
+- [v87.5.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.32): fix(deps): update dependency fastify from 4.9.2 to 4.10.2 [security]
 - [v87.5.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.31): fix(security): Applies all security patches that do not have the patch in a breaking version
 - [v87.5.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.30): fix: show configured style of li-document-reference in creation flow dialogs and includes
 - [v87.5.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.29): fix(security): Upgrade `socket.io` to fix critical vulnerability
