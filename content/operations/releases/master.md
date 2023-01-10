@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @opentelemetry/instrumentation-pg from 0.33.0 to ^0.34.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5119)
 * [fix(deps): update dependency pusher from 5.0.1 to v5.1.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5127)
 * [Update modules via `npm update`, latest non-breaking version of modules](https://github.com/livingdocsIO/livingdocs-editor/pull/6223)
 * [Ignore duplicate import webhook delivery report](https://github.com/livingdocsIO/livingdocs-server/pull/5148)
