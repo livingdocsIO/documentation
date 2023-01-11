@@ -19,13 +19,15 @@ const {createXliff, updateContent} = require('@livingdocs/li2xliff')
 `createXliff` converts Livingdoc content to XLIFF and requires Livingdoc content and a config object:
 
 ```js
-  const xliffContent = createXliff({
-          content: documentVersion.content, // Livingdoc Content
-          config: {
-            targetLanguage: config.targetLanguage, // Required
-            srcLanguage: config.srcLanguage // Required
-          }
-        })
+  const xliffContent = createXliff(
+    {
+      content: documentVersion.content, // Livingdoc Content
+      config: {
+        targetLanguage: config.targetLanguage, // Required
+        srcLanguage: config.srcLanguage // Required
+      }
+    }
+  )
 ```
 
 The config object has two required properties, a target language and a source language (so, if you want to translate your German articles to English, your source language is German, target language is English).
@@ -33,15 +35,17 @@ The config object has two required properties, a target language and a source la
 It can be extended with the following optional configs:
 
 ```js
-excludeEditables: [{
+excludeEditables: [
+  {
     component: 'title',
     editables: ['title', 'author'] // this will not translate title or author editables inside title components
     },
     {
     component: 'header',
     editables: ['title'] // this will not translate titles inside header components
-    }],
-  excludeTags: ['strong', 'a'] // this will translate content inside of strong and anchor tags, but will not preserve the formatting
+  }
+],
+excludeTags: ['strong', 'a'] // this will translate content inside of strong and anchor tags, but will not preserve the formatting
 ```
 
 To exclude certain editables you must define a parent component for each editable to be excluded. To exclude tags simply define an array of formatting tags you would not like to appear in the translated document.
