@@ -8,10 +8,6 @@ The access hook feature allows to register a function on the server that interce
 
 A hook can return a permission error (with a 403 `status` property) which is consumed by the editor.
 
-## Beta Stage
-
-The implementation of the access hooks is in an beta stage and could change in the future. We might introduce policies that will replace the hooks at a later step. So please make sure you don't implement complex logic using the hooks.
-
 ## Example: Prevent Document Updates
 
 Here you see a simple example which rejects a document update when the title is set to 'examplePermissionError'.
