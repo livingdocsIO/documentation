@@ -201,10 +201,6 @@ It is highly recommended that you run this script because it is performing a dat
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4957)
 
-## Deprecations
-
-## APIs :gift:
-
 ## Other Changes
 
 ### Features
