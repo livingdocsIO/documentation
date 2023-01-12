@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix `Cannot set headers after they are sent to the client` error on `POST /api/v1/import/mediaLibrary`](https://github.com/livingdocsIO/livingdocs-server/pull/5161)
 * [Force host to IPv4 localhost in `retresco-api-mock`](https://github.com/livingdocsIO/livingdocs-server/pull/5159)
 * [check documentType delete permissions](https://github.com/livingdocsIO/livingdocs-server/pull/5155)
 * [Use new dynamic metadata property paths in distribution planning query](https://github.com/livingdocsIO/livingdocs-server/pull/5154)
