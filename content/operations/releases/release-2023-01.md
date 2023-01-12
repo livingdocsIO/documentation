@@ -223,6 +223,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.16): fix(public-api): Fix `Cannot set headers after they are sent to the client` error on `POST /api/v1/import/mediaLibrary`
 - [v208.3.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.15): fix: check documentType delete permissions
 - [v208.3.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.14): fix(import): Ignore duplicate import webhook delivery report error
 - [v208.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.13): fix(date-filter): Do not match a date as date range
