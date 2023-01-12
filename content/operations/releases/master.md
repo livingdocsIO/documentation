@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use new dynamic metadata property paths in distribution planning query](https://github.com/livingdocsIO/livingdocs-server/pull/5154)
 * [Enable dynamic indexing for li-distribution-planning metadata plugin](https://github.com/livingdocsIO/livingdocs-server/pull/5153)
 * [fix(deps): update dependency @opentelemetry/instrumentation-pg from 0.33.0 to ^0.34.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5119)
 * [fix(deps): update dependency pusher from 5.0.1 to v5.1.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5127)
