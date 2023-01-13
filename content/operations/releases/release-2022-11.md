@@ -460,6 +460,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.55): chore(soft lock): no helper function, better lock check
 - [v85.15.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.54): fix(basePath): Always load webpack assets with the absolute path
 - [v85.15.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.53): fix(security): Applies all security patches that do not have the patch in a breaking version
 - [v85.15.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.52): fix: show configured style of li-document-reference in creation flow dialogs and includes
