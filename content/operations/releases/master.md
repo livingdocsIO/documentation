@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Improvement/Filter Dropdowns](https://github.com/livingdocsIO/livingdocs-editor/pull/6244)
 * [DocumentSoftLock UI Updates for locked user](https://github.com/livingdocsIO/livingdocs-editor/pull/6238)
 * [Fix `Cannot set headers after they are sent to the client` error on `POST /api/v1/import/mediaLibrary`](https://github.com/livingdocsIO/livingdocs-server/pull/5161)
 * [Force host to IPv4 localhost in `retresco-api-mock`](https://github.com/livingdocsIO/livingdocs-server/pull/5159)
