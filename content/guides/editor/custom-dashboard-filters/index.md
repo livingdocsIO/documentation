@@ -7,8 +7,8 @@ weight: 7
 It is possible to register a custom filter and use it as a [DisplayFilter]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) for Dashboards or search modals.
 
 At the moment there are 2 types of custom filters
-- [Custom List v2 Filter](#register-custom-list-v2-filter)
-- [Custom Vue Component Filter](#register-custom-vue-component-filter)
+- [Custom List v2 Filter](#custom-list-v2-filter)
+- [Custom Vue Component Filter](#custom-vue-component-filter)
 
 Hint: If you want to create a filter with metadata, make sure they are setup correctly in the ElasticSearch index (`search.metadata_mapping` config in the server)
 
