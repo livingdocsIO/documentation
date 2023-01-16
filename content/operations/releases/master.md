@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Planning System: distributionChannelGroups and navigation component](https://github.com/livingdocsIO/livingdocs-editor/pull/6230)
 * [fix(deps): update dependency nodemailer from 6.8.0 to v6.9.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5165)
 * [Api Consumer Management](https://github.com/livingdocsIO/livingdocs-editor/pull/6243)
 * [Improvement/Filter Dropdowns](https://github.com/livingdocsIO/livingdocs-editor/pull/6244)
