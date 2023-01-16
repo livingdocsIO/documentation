@@ -4,9 +4,9 @@ description: Create custom filters with you own UI
 weight: 7
 ---
 
-It is possible to register a custom filter and use it as a [displayFilter]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) for dashboards or search modals.
+It is possible to register a custom filter and use it as a [DisplayFilter]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) for Dashboards or search modals.
 
-At the moment there are 4 types of custom filters
+At the moment there are 2 types of custom filters
 - [Custom List v2 Filter](#register-custom-list-v2-filter)
 - [Custom Vue Component Filter](#register-custom-vue-component-filter)
 
