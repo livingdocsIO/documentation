@@ -22,8 +22,8 @@ aliases:
 
 ## Webinar
 
-* Feature Webinar Recording: **TODO**
-* Feature Webinar Documentation: **TODO**
+* [Feature Webinar Recording](https://us02web.zoom.us/rec/share/njfTVMspn7_cU2VBLw8Io1QcDukoFvlbHm5TwYJJ_iJNabGMMOHkAWdtatCiYwpl.rAkqpWECUhxoUtg5) | Passcode: y1Dw?P0X
+* [Feature Webinar Slides](https://docs.google.com/presentation/d/1_XFPtkkRGRmYY5-815pLSCkT0k7E5Vso2djNUawE3oA)
 * Dev Webinar Recording: **TODO**
 * Dev Webinar Slides: **TODO**
 * [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
