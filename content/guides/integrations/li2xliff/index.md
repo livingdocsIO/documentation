@@ -1,12 +1,20 @@
 ---
-title: Using li2xliff and CAT tools for translating Livingdocs content
+title: Assisted translation with CAT tool
 description: Configure our li2xliff library to send Livingdocs content to CAT tools
 weight: 14
 ---
 
 ## li2Xliff
 
-We have created a library which converts Livingdocs JSON to XLIFF - the XML format required by CAT tools to mark, translate and update content - and to convert XLIFF back to Livingdocs content.
+We have created a library which converts Livingdocs JSON to XLIFF - the XML format required by computer-assisted translation (CAT) tools to mark, translate and update content - and to convert XLIFF back to Livingdocs content. A CAT tool offers translators a faster and easier way to translate content and can be supported with machine translation. 
+
+The library can be found [here](https://github.com/livingdocsIO/Li2Xliff)
+
+To install:
+
+```js
+npm install @livingdocs/li2xliff
+```
 
 The library exports two functions which can be required:
 
@@ -62,6 +70,7 @@ It returns the translated content and, if there are any, an array of errors.
 
 ## Registering Translation Function
 
+To enable the functionality in Livingdocs you will need to activate multiple languages and translations. The documentation can be found [here]({{< ref "/content/reference-docs/project-config/settings.md#languages--translations" >}})
 
 In your Livingdocs Server instance you can subscribe to [server events]({{< ref "/content/reference-docs/server-extensions/server-events.md" >}}) such as document creation. Then you can send your Livingdoc content for translation.
 
