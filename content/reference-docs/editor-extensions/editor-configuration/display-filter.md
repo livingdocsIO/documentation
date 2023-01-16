@@ -8,13 +8,24 @@ There are 3 types of Display Filters: `listV2`, `metadataPropertyName` and `cust
 Some Display Filters are provided by Livingdocs and can be configured without additional code. It is possible though to provide your own custom filters, [there is a guide]({{< ref "/guides/editor/custom-dashboard-filters" >}}) explaining the details.
 
 Usually you configure `displayFilters` in dashboard configurations like this:
-```
+
+```js
 {
   handle: "myDashboard",
-  displayFilters: [
-    "aFilterName", // shorthand for {filterName: "aFilterName"}
-    {filterName: "anotherFilterName", config: {some: "configToPass"}} // some filters take a config object
-    {metadataPropertyName: "myMetadataProperty"} // gives you a filter for this metadata property, caveats apply, see below, added in release-2023-03
+  displayFilters: [   
+    // shorthand for {filterName: "aFilterName"}
+    "aFilterName",
+  
+    // some filters take a config object
+    {
+      filterName: "anotherFilterName",
+      config: {
+        some: "configToPass"
+       }
+    },
+     
+    // gives you a filter for this metadata property, caveats apply, see below, added in release-2023-03
+    {metadataPropertyName: "myMetadataProperty"}
   ],
   // ...
 }
