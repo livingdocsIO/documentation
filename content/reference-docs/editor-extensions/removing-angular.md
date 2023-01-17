@@ -9,9 +9,12 @@ menus:
 
 Until now you could have editor extension both in Vue and Angular. Starting from `release-2023-01` we have decided to deprecate the support to Angular extensions to focus on core and Vue components. 
 
+Moving to core features will result in a better developer experience: less code on your side. Which also means: less bugs, less maintenance and easier updates.
+
+
 **The support to Angular plugins will be dropped from `release-2023-09`**
 
-Migrating from AngularJS to Vue can be a complex process, especially if you have a lot of downstream custom plugins. 
+Migrating away from AngularJS can be a complex process, especially if you have a lot of downstream custom plugins. 
 
 That's why we want to leave you enough time to make the transition, but it's important to discuss it together beforehand to overcome any blocking points.
 
@@ -73,9 +76,9 @@ At the moment there are 4 types of custom filters
 - [Custom List v2 Filter]({{< ref "guides/editor/custom-dashboard-filters#custom-list-v2-filter">}})
 - [Custom Vue Component Filter]({{< ref "guides/editor/custom-dashboard-filters#custom-vue-component-filter">}})
 
-Make sure to migrate any filters that are being used in the AngularJS code.
+Make sure to migrate all your custom Angular filters.
 
 
-In general, migrating from AngularJS to Vue requires careful planning. By following the guidelines outlined in this guide, you can make the migration process as smooth and successful as possible.
+In general, migrating from AngularJS plugins to core plugins requires careful planning. By following the guidelines outlined in this guide, you can make the migration process as smooth and successful as possible.
 
 If you have any questions, please contact us.
