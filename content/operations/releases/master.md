@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(relative time): work with date objects and date strings](https://github.com/livingdocsIO/livingdocs-editor/pull/6239)
 * [fix publish control list assignment](https://github.com/livingdocsIO/livingdocs-editor/pull/6251)
 * [fix(document lists): show configured displayFilters again](https://github.com/livingdocsIO/livingdocs-editor/pull/6248)
 * [Search dynamic metadata text fields of drafts](https://github.com/livingdocsIO/livingdocs-server/pull/5169)
