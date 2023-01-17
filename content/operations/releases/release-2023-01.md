@@ -239,6 +239,7 @@ Here is a list of all patches after the release has been announced.
 - [v208.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.3): fix(cli reencrypt): now uses correct stringify
 
 ### Livingdocs Editor Patches
+- [v87.5.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.35): fix(li-date-time-range-filter): prevent filter dropdown to be cut off
 - [v87.5.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.34): chore(soft lock): no helper function, better lock check
 - [v87.5.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.33): fix(basePath): Always load webpack assets with the absolute path
 - [v87.5.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.32): fix(deps): update dependency fastify from 4.9.2 to 4.10.2 [security]
