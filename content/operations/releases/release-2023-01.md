@@ -201,6 +201,27 @@ It is highly recommended that you run this script because it is performing a dat
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4957)
 
+## Deprecations
+
+### Deprecate Dashboard Display Filters
+
+These Dashboard Display Filters get deprecated:
+- `coreApi.searchFilters.register`
+- `coreApi.searchFilters.registerList`
+- `coreApi.searchFilters.registerAngularComponent`
+
+Update the deprecated filter to the supported [Display Filters](https://docs.livingdocs.io/reference-docs/editor-extensions/editor-configuration/display-filter/) from the core.
+- Named Filters
+- Metadata Filters
+- ListV2 Filters
+
+If you can't handle your requirements with core filters it's best to contact your Customer Solutions manager to get inputs for solutions (one option is to create your custom Vue component, but that should be prevented whenever possible)
+
+Breaking Change: `release-2023-03`
+
+References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6150)
+
+
 ## Other Changes
 
 ### Features
