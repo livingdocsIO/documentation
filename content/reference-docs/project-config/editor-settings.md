@@ -164,6 +164,7 @@ editorSettings: {
       }
     }
   ],
+  // The startPage config has no effect if a home screen is configured in the same project.
   startPage: {
     path: '/articles'
   },
@@ -638,6 +639,8 @@ can be used to render custom content inside a table cell.
 ## startPage
 
 Set custom `startPage: {path: '/my-custom-path'}}` to set the path used to render on login or when switching projects.
+
+**Notice**: The startPage config will have no effect if a home screen is configured in the same project.
 
 ## Home Screen
 
