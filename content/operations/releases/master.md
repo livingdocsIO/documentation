@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix li-team unit tests](https://github.com/livingdocsIO/livingdocs-editor/pull/6256)
 * [rel='sponsored' can be added to link as HTML attribute](https://github.com/livingdocsIO/livingdocs-editor/pull/6245)
 * [Api client design](https://github.com/livingdocsIO/livingdocs-editor/pull/6254)
 
