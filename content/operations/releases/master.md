@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix/emoji empty state](https://github.com/livingdocsIO/livingdocs-editor/pull/6260)
 * [Fix/filter buttons](https://github.com/livingdocsIO/livingdocs-editor/pull/6259)
 * [Table Dashboards: don't log errors in mixed content type scenarios](https://github.com/livingdocsIO/livingdocs-editor/pull/6252)
 * [Make livingdoc optional in import api](https://github.com/livingdocsIO/livingdocs-server/pull/5172)
