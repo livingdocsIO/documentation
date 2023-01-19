@@ -378,8 +378,8 @@ metadata: [
       config: {
         style: 'default',            // optional, defaults to 'default'. Other options: 'teaser'
         useDashboard: '',            // optional, reference to a custom dashboard
-        baseFilters: [],             // optional, filters that the user can set in the UI (below the search input)
-        displayFilters: [],          // optional, invisible filters and applied to every search (including the default result list)
+        baseFilters: [],             // optional, invisible filters and applied to every search (including the default result list)
+        displayFilters: [],          // optional, filters that the user can set in the UI (below the search input)
       }
     }
   }
@@ -433,8 +433,8 @@ metadata: [
         // style: 'teaser' -> default for include paramsSchema
         style: 'default',
         useDashboard: '',            // optional, reference to a custom dashboard
-        baseFilters: [],             // optional, filters that the user can set in the UI (below the search input)
-        displayFilters: [],          // optional, invisible filters and applied to every search (including the default result list)
+        baseFilters: [],             // optional, invisible filters and applied to every search (including the default result list)
+        displayFilters: [],          // optional, filters that the user can set in the UI (below the search input)
       }
     }
   }
