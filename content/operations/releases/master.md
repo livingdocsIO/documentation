@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Dashboards: redirect to home when navigating to unknown dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/6262)
 * [🐞 Fix auto-updating images in editable teasers](https://github.com/livingdocsIO/livingdocs-editor/pull/6257)
 * [fix/emoji empty state](https://github.com/livingdocsIO/livingdocs-editor/pull/6260)
 * [Fix/filter buttons](https://github.com/livingdocsIO/livingdocs-editor/pull/6259)
