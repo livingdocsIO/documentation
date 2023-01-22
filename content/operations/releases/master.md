@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @4tw/cypress-drag-drop from 2.2.1 to v2.2.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6265)
 * [fix(deps): update dependency aws-sdk from 2.1295.0 to v2.1299.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5184)
 * [Remove Buffer polyfill from the Webpack config](https://github.com/livingdocsIO/livingdocs-editor/pull/6263)
 * [Dashboards: redirect to home when navigating to unknown dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/6262)
