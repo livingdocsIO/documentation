@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Remove documents of deleted content type from publication index ](https://github.com/livingdocsIO/livingdocs-server/pull/5145)
 * [fix(portal-popper-dropdown): fix outside event exceptions](https://github.com/livingdocsIO/livingdocs-editor/pull/6273)
 * [chore(deps): update dependency eslint from 8.31.0 to v8.32.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6269)
 * [fix(deps): update dependency ua-parser-js from 1.0.32 to v1.0.33 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5186)
