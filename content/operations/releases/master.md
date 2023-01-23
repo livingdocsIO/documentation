@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [api-consumer-management last used date producer-consumer](https://github.com/livingdocsIO/livingdocs-server/pull/5170)
 * [Remove documents of deleted content type from publication index ](https://github.com/livingdocsIO/livingdocs-server/pull/5145)
 * [fix(portal-popper-dropdown): fix outside event exceptions](https://github.com/livingdocsIO/livingdocs-editor/pull/6273)
 * [chore(deps): update dependency eslint from 8.31.0 to v8.32.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6269)
