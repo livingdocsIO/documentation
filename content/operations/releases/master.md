@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Generate project config json schema](https://github.com/livingdocsIO/livingdocs-server/pull/5180)
 * [Do not send new device emails for archived users](https://github.com/livingdocsIO/livingdocs-server/pull/5179)
 * [fix(deps): update dependency fastify from 4.11.0 to v4.12.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5185)
 * [Use custom function registry ](https://github.com/livingdocsIO/livingdocs-server/pull/5139)
