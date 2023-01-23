@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency eslint from 8.31.0 to v8.32.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6269)
 * [fix(deps): update dependency ua-parser-js from 1.0.32 to v1.0.33 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5186)
 * [Generate project config json schema](https://github.com/livingdocsIO/livingdocs-server/pull/5180)
 * [Do not send new device emails for archived users](https://github.com/livingdocsIO/livingdocs-server/pull/5179)
