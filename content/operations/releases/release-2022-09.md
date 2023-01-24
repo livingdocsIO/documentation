@@ -369,6 +369,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v81.20.88](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.88): fix(metadata): Re-render metadata form every time panel is opened
 - [v81.20.87](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.87): fix(security): Applies all security patches that do not have the patch in a breaking version
 - [v81.20.86](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.86): fix(security): Upgrade `socket.io` to fix critical vulnerability
 - [v81.20.85](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v81.20.85): fix(security): Upgrade `resolve-url-loader` to fix `loader-utils` critical vulnerability
