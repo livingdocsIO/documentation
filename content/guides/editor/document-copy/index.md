@@ -205,12 +205,7 @@ module.exports = {
   // useful if the other options in the copy API are too limiting
   afterConversion: ({sourceMetadata, convertedDocument}) => {
     return doCustomStuff({sourceMetadata, convertedDocument})
-  },
-
-  // true = copy the component, even when the target contentType doesn't know the component
-  // false = ignore a component when the target contentType doesn't know the component
-  // NOT IMPLEMENTED: currently everything will be copied (is the same as `true`)
-  copyUnknownComponents: false
+  }
 }
 ```
 
