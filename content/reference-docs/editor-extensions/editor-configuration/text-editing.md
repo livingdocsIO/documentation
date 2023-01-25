@@ -396,7 +396,8 @@ Exclude individual directives from the text counter (example component config):
 
 ## Links
 
-{{< img src="images/links.png" alt="Links" >}}
+{{< img src="images/inline_links.png" alt="Links" >}}
+
 
 #### Options
 If you set the internal hosts as regex, you can define default behavior for internal and external links.
@@ -420,3 +421,9 @@ If you configure `deliveries` in your [Project Config]({{< ref "/reference-docs/
   }
 }
 ```
+
+### Link Search settings
+
+You can customise the behaviour of the link search, in the [editor settings]({{< ref "/reference-docs/project-config/editor-settings#inline-links" >}}) (in the server), by defining filters or by using a custom dashboard. 
+
+
