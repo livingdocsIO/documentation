@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix/Document Reference](https://github.com/livingdocsIO/livingdocs-editor/pull/6277)
 * [Document Creation: ensure disabled content types don't show up in selection](https://github.com/livingdocsIO/livingdocs-editor/pull/6281)
 * [Dashboards/Create: make it work with multichannel setups](https://github.com/livingdocsIO/livingdocs-editor/pull/6275)
 * [fix(deps): update dependency @livingdocs/framework from 24.8.1 to v24.8.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6271)
