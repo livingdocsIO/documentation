@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(document creation): fix document create dialog](https://github.com/livingdocsIO/livingdocs-editor/pull/6285)
 * [Improve metadata form validation](https://github.com/livingdocsIO/livingdocs-editor/pull/6185)
 * [Enable character counter for all document types and when min/max length is set](https://github.com/livingdocsIO/livingdocs-editor/pull/5331)
 * [Fix/Document Reference](https://github.com/livingdocsIO/livingdocs-editor/pull/6277)
