@@ -10,8 +10,7 @@ To use SSO with OpenID Connect we have a strategy `li-authentication-openid-conn
 To enable AzureAD SSO for Livingdocs, add the config below to the server config in `auth.connections`. It creates a setup for SSO with AzureAD and shows the button for that on the login page. It is also using the existing user from Livingdocs and create an AzureAD Identity. The already written articles with this user will still be assigned to the same user. The match of the user is done with the email address.
 
 ```js
-const nanoid = require('nanoid/generate')
-const alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+const { nanoid } = require('nanoid')
 const azureConfig = JSON.parse(process.env.auth_azure || '{}')
 
 module.exports = {
@@ -104,7 +103,7 @@ async function transferLocalIdentityToAzure (claims) {
       user_id
     )
     VALUES (
-      ${nanoid(alphabet, 12)},
+      ${nanoid(12)},
       'azure',
       ${claims.sub},
       ${{email: claims.email, name: claims.name}},
