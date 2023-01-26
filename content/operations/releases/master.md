@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Implement li-meta-etc metadata plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/6255)
 * [Support custom date formats in legacy elasticsearch mapping](https://github.com/livingdocsIO/livingdocs-server/pull/5190)
 * [fix(document creation): fix document create dialog](https://github.com/livingdocsIO/livingdocs-editor/pull/6285)
 * [Improve metadata form validation](https://github.com/livingdocsIO/livingdocs-editor/pull/6185)
