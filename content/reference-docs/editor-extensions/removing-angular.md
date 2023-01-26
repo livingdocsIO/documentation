@@ -61,8 +61,8 @@ In case you need a more complex UI and logic, you can use a Vue component to ren
 
 ## Dashboard Card and Cells
 
-In `release-2023-05`we introduced [Table Dashboards]({{< ref "/reference-docs/project-config/editor-settings#example-table-dashboard">}}), a more powerful and customisable dashboard. If you have not migrate done it already, you should migrate your dashboard to table dashboards.
-Table dashboard makes very easy to add any metadata to the table columns and also edit them.
+In `release-2022-05`we introduced [Table Dashboards]({{< ref "/reference-docs/project-config/editor-settings#example-table-dashboard">}}), a more powerful and customisable dashboard. If you have not migrate done it already, you should migrate your dashboard to Table Dashboards.
+Table Dashboard makes very easy to add any metadata to the table columns and also edit them.
 
 Dashboard Cells can still be customised using Vue components. Custom components
 Custom components of type [tableDashboardCell]({{< ref "reference-docs/editor-extensions/vue-component-registry#tabledashboardcell">}}) can be used to render custom content inside a table cell.
@@ -72,7 +72,7 @@ If some information are missing from your Dashboard Cell, discuss it with your C
 
 It is possible to register a custom filter and use it as a [displayFilter]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) for dashboards or search modals.
 
-At the moment there are 4 types of custom filters
+At the moment there are 2 types of custom filters
 - [Custom List v2 Filter]({{< ref "guides/editor/custom-dashboard-filters#custom-list-v2-filter">}})
 - [Custom Vue Component Filter]({{< ref "guides/editor/custom-dashboard-filters#custom-vue-component-filter">}})
 

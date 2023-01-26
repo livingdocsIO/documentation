@@ -5,7 +5,7 @@ weight: 15
 ---
 
 **Push Notifications are currently deprecated, as they were implemented using Angular. 
-Angular support is going to be dropped in release-2022-09.
+Angular support is going to be dropped in release-2023-09.
 Please use the [`li-push-messages` metadata plugin]({{< ref "/reference-docs/document/metadata/metadata-plugin-list#li-push-messages" >}}) instead.**
 
 This guide explains 2 things:
