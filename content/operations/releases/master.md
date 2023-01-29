@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pusher-js from 7.4.0 to v7.6.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6293)
 * [fix(deps): update dependency axios from 1.2.3 to v1.2.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5197)
 * [fix(deps): update dependency ioredis from 5.2.5 to v5.3.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5201)
 * [Fix error logged in `triggerDigest()`](https://github.com/livingdocsIO/livingdocs-editor/pull/6286)
