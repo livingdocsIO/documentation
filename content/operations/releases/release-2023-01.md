@@ -244,6 +244,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.19): fix(public-api): Fix `mutating` property on route declaration of composition api
 - [v208.3.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.18): fix(search): Support custom date format dd.MM.yyyy in legacy elasticsearch mappings
 - [v208.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.17): fix: extend test for filtering unknown components when nested default content is defined in the contentType
 - [v208.3.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.16): fix(public-api): Fix `Cannot set headers after they are sent to the client` error on `POST /api/v1/import/mediaLibrary`
