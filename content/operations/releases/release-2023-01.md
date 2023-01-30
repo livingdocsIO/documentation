@@ -263,6 +263,7 @@ Here is a list of all patches after the release has been announced.
 - [v208.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.3): fix(cli reencrypt): now uses correct stringify
 
 ### Livingdocs Editor Patches
+- [v87.5.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.40): fix(deps): bump ua-parser-js from 0.7.32 to 0.7.33
 - [v87.5.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.39): fix(focalPoint): avoid creating empty object as focal point
 - [v87.5.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.38): fix(document reference): Class typo
 - [v87.5.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.37): fix: Replace jsonwebtoken with jose
