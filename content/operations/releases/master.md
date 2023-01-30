@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Project stats reporting](https://github.com/livingdocsIO/livingdocs-server/pull/5195)
 * [chore(deps): bump ua-parser-js from 0.7.32 to 0.7.33](https://github.com/livingdocsIO/livingdocs-editor/pull/6300)
 * [Annotate composition api as read-only](https://github.com/livingdocsIO/livingdocs-server/pull/5204)
 * [fix(focalPoint): avoid creating empty object as focal point](https://github.com/livingdocsIO/livingdocs-editor/pull/6297)
