@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Distribution Planning Improvements](https://github.com/livingdocsIO/livingdocs-server/pull/5208)
 * [Fix iframely directive prefill on doc-link](https://github.com/livingdocsIO/livingdocs-editor/pull/6291)
 * [Task enhancements - li-user-select with avatars for li-team and tasks](https://github.com/livingdocsIO/livingdocs-editor/pull/6282)
 * [Project stats reporting](https://github.com/livingdocsIO/livingdocs-server/pull/5195)
