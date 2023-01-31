@@ -341,6 +341,7 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v194.0.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.28): fix(local-authentication): Make the current_password validation more strict
 - [v194.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.27): fix: extend test for filtering unknown components when nested default content is defined in the contentType
 - [v194.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.26): fix(xmldom): Update `@xmldom/xmldom` to a newer release that includes fix for security vulnerability
 - [v194.0.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.25): fix(desknet): Prevent empty userId from Desk-Net
