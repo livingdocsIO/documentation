@@ -429,6 +429,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.36): fix(local-authentication): Make the current_password validation more strict
 - [v200.3.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.35): fix(public-api): Fix `mutating` property on route declaration of composition api
 - [v200.3.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.34): fix: extend test for filtering unknown components when nested default content is defined in the contentType
 - [v200.3.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.33): fix(import): Ignore duplicate import webhook delivery report error
