@@ -465,6 +465,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.60): chore(images): fix image crop tests to test the correct thing
 - [v85.15.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.59): fix(images): do not auto-update images for includes
 - [v85.15.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.58): fix(deps): bump ua-parser-js from 0.7.32 to 0.7.33
 - [v85.15.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.57): fix(focalPoint): avoid creating empty object as focal point
