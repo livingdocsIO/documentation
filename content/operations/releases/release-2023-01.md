@@ -115,7 +115,24 @@ Please see the examples of elasticsearch how to use it: https://www.elastic.co/g
   },
 ```
 
-References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/5009)
+### Stricter search queries
+
+- 🔥 Filters on unavailable properties throw an error.
+- 🔥 Elasticsearch `exists` queries on objects not supported anymore. Please use a specific sub-property instead.
+
+   e.g. To filter for documents that have no category assigned, you need to use `category.reference.id` instead of `category` in the editor search filter:
+  ```diff
+  {
+    id: 'without-category',
+    label: 'Without category',
+    type: 'metadata',
+  -  key: 'category',
+  +  key: 'category.reference.id',
+    value: {exists: false}
+  }
+  ```
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/5000)
 
 ### Don't expose error_details in 5xx response
 
