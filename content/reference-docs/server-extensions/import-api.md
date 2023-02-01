@@ -33,28 +33,35 @@ const importLog = await import({importJob, rawDocument, shouldCreateNew, updateC
 
 ### `rawDocument`
 
-`rawDocument` consists of a serialised `livingdoc` and a `metadata` object.
+`rawDocument` is an `object` that contains the content of the document.
+
+* `design`: An `object` with `name` and `version` properties.
+* `content`: An `array` of livingdocs components
+* `metadata`: An `object` containing the metadata of your Document
+* `livingdoc` (deprecated in release-2023-03): Can contain the `design` and `content` attributes above.
+
 
 Example how to build a `rawDocument` object:
 ```js
 const livingdoc = framework.createLivingdoc({
-  content: {
+  content: [{
     component: 'title',
-    content: {
-      title: 'Moby Dick'
-    }
-  },
+    content: {title: 'Moby Dick'}
+  }],
   design: {name: 'my-design', version: '1.0.0'}
-})
+}).serialize()
 
 const rawDocument = {
-  metadata: {
-    title: 'Moby Dick'
-  },
+  metadata: {title: 'Moby Dick'},
+
+  // Deprecated in release-2023-03
   livingdoc: livingdoc.serialize()
+
+  // {{< added-in release-2021-03 >}}
+  content: livingdoc.content,
+  design: livingdoc.design
 }
 ```
-
 
 ### `shouldCreateNew`
 
