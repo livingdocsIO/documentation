@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Channel and project endpoints deprecated and channelConfig aliased](https://github.com/livingdocsIO/livingdocs-server/pull/5178)
 * [Persist current result list on reload](https://github.com/livingdocsIO/livingdocs-editor/pull/6316)
 * [Fix api clients rotation in progress](https://github.com/livingdocsIO/livingdocs-editor/pull/6315)
 * [fix(deps): update dependency babel-loader from 8.3.0 to v9 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6296)
