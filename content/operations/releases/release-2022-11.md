@@ -465,6 +465,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.62): fix(dashboard-reload): persist current result list
 - [v85.15.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.61): fix(autosave): Add scheduled save when autosave.stopped
 - [v85.15.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.60): chore(images): fix image crop tests to test the correct thing
 - [v85.15.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.59): fix(images): do not auto-update images for includes
