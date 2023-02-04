@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @fastify/reply-from from 8.3.1 to v8.4.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6321)
 * [Channel and project endpoints deprecated and channelConfig aliased](https://github.com/livingdocsIO/livingdocs-server/pull/5178)
 * [Persist current result list on reload](https://github.com/livingdocsIO/livingdocs-editor/pull/6316)
 * [Fix api clients rotation in progress](https://github.com/livingdocsIO/livingdocs-editor/pull/6315)
