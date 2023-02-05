@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency @google-cloud/translate from 7.0.5 to v7.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5224)
 * [fix(deps): update dependency dataloader from 2.1.0 to v2.2.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5227)
 * [fix(deps): update dependency axios from 1.2.6 to v1.3.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5226)
 * [fix(deps): update dependency @fastify/reply-from from 8.3.1 to v8.4.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6321)
