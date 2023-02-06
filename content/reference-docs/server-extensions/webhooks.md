@@ -55,6 +55,10 @@ webhooks: {
       label: 'My Webhook',
       description: 'A description for future self and coworkers',
       url: 'https://example.com/my-webhook-endpoint',
+      // sign request with HTTP header 'x-livingdocs-signature'
+      //   1) empty                                   -> no sign request
+      //   2) 'a-secret-token-to-sign-the-request'    -> sign request with token
+      //   3) {$secretRef: {name: 'webhook-local'}}   -> sign request with project secret
       secret: 'a-secret-token-to-sign-the-request'
       active: true
       events: [
