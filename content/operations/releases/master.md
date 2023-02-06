@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency date-fns from 2.28.0 to v2.29.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6272)
 * [chore(deps): update dependency mocha from 10.0.0 to v10.2.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6270)
 * [fix(deps): update dependency openid-client from 5.3.4 to v5.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5229)
 * [chore(deps): update dependency @google-cloud/translate from 7.0.5 to v7.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5224)
