@@ -137,9 +137,8 @@ module.exports = {
           maxLength: 200
         },
         ui: {
-          component: 'liMetaTextareaForm',
+          label: 'Youtube settings',
           config: {
-            label: 'Youtube settings',
             placeholder: 'Paste Embed Code or URL'
           }
         }
