@@ -81,6 +81,9 @@ module.exports = {
       // When options preview is true the request comes from a livingdocs
       // editor while a user is editing a document.
       const isPreview = options?.preview === true
+      
+      // If you want to report back an include error to the UI, you can return HTML
+      // return {html: `<div class="include-render-error"><h2>Maybe a typo?</h2><p>The document can't be found.</p></div>`}
 
       // It does not render an unpublished document on the public API
       if (isPreview && paramsAreInsufficient(params)) {
