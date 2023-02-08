@@ -429,6 +429,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.38): fix(designs): Fix transaction support
 - [v200.3.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.37): fix(scheduled-publishing): Coerce schedule dates to a proper iso date with time zone
 - [v200.3.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.36): fix(local-authentication): Make the current_password validation more strict
 - [v200.3.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.35): fix(public-api): Fix `mutating` property on route declaration of composition api
