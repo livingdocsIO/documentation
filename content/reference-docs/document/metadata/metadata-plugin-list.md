@@ -15,37 +15,37 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 
 | Metadata Plugin                                    | Metadata Plugin Type     | Description                                   | Usage (D = Document, M = Media Library Entries, T = Table Dashboard, I = Includes, F = Display Filters) | Default UI                                                 |
 |----------------------------------------------------|--------------------------|-----------------------------------------------|------------------------------------------------------------------------------------|------------------------------------------------------------|
-| [Boolean](#li-boolean)                             | li-boolean               | Boolean                                       | D, M, T                                                                            | checkbox                                                   |
+| [Boolean](#li-boolean)                             | li-boolean               | Boolean                                       | D, M, T, I                                                                         | checkbox                                                   |
 | [Color](#li-color)                                 | li-color                 | Color Code                                    | D, M, T, I                                                                         | text                                                       |
 | [Category](#li-category)                           | li-category              | category                                      | D, T, F                                                                            | select                                                     |
-| [Date](#li-date)                                   | li-date                  | Date                                          | D, M                                                                               | date input                                                 |
+| [Date](#li-date)                                   | li-date                  | Date                                          | D, M, I                                                                            | date input                                                 |
 | [Date/Time validity](#li-datetime-validity)        | li-datetime-validity     | Date                                          | M                                                                                  | 2 date/time inputs                                         |
-| [Date/Time](#li-datetime)                          | li-datetime              | Date                                          | D, M                                                                               | date/time input                                            |
+| [Date/Time](#li-datetime)                          | li-datetime              | Date                                          | D, M, I                                                                            | date/time input                                            |
 | [Dependencies](#li-dependencies)                   | li-dependencies          | Livingdocs framework dependencies definition  | D                                                                                  | no UI                                                      |
 | [Desk-Net Integration](#li-desknet-integration)    | li-desknet-integration   | Desk-Net Integration                          | D, T                                                                               | Link to Desk-Net distribution entry                        |
 | [Desk-Net Schedule](#li-desknet-schedule)          | li-desknet-schedule      | Desk-Net Schedule                             | D                                                                                  | Platform/category select and date input                    |
-| [Document Reference](#li-document-reference)       | li-document-reference    | A reference to another document               | D, M, T                                                                            | document selection (dialog)                                |
+| [Document Reference](#li-document-reference)       | li-document-reference    | A reference to another document               | D, M, T, I                                                                         | document selection (dialog)                                |
 | [Document References](#li-document-references)     | li-document-references   | A list of references to other documents       | D, M, I                                                                            | document selection (dialog)                                |
-| [Enum](#li-enum)                                   | li-enum                  | string from static list, validated on publish | D, M, T                                                                            | select                                                     |
+| [Enum](#li-enum)                                   | li-enum                  | string from static list, validated on publish | D, M, T, I                                                                         | select                                                     |
 | [External Id](#li-external-id)                     | li-external-id           | id marker for an external system              | D, M, T                                                                            | select                                                     |
 | [Document Target Length](#li-target-length)        | li-target-length         | Target length in characters for a document    | D                                                                                  | number input or length slider                              |
 | [Google Vision](#li-google-vision)                 | li-google-vision         | Google Vision Autotagging for Images          | M                                                                                  | specialized UI, no config possible                         |
 | [Image](#li-image)                                 | li-image                 | Images                                        | D, M                                                                               | Image selection/upload/crops                               |
 | [Issue Management](#li-issue-management)           | li-issue-management      | Issue Management                              | D                                                                                  | List of linked documents with actions to manage references |
 | [iMatrics](#li-imatrics-nlp-tags)                  | li-imatrics-nlp-tags     | iMatrics tag management                       | D                                                                                  | manage tags                                                |
-| [Integer](#li-integer)                             | li-integer               | Integer                                       | D, M, F                                                                            | number input                                               |
+| [Integer](#li-integer)                             | li-integer               | Integer                                       | D, M, F, I                                                                         | number input                                               |
 | [Language](#li-language)                           | li-language              | Language                                      | D                                                                                  | no Ui                                                      |
 | [Metadata Translations](#li-metadata-translations) | li-metadata-translations | Enable metadata translations                  | D (data record only), M                                                            | translation UI                                             |
 | [Named Crops](#li-named-crops)                     | li-named-crops           | Default Crops for Images                      | M                                                                                  | crop management UI                                         |
-| [Numeric List](#li-numeric-list)                   | li-numeric-list          | Array of Numbers                              | D, M                                                                               | multi number input                                         |
+| [Numeric List](#li-numeric-list)                   | li-numeric-list          | Array of Numbers                              | D, M, I                                                                            | multi number input                                         |
 | [Poster Image](#li-poster-image)                   | li-poster-image          | Poster Image for Videos                       | M (Video)                                                                          | image selection                                            |
 | [Publish Date](#li-publish-date)                   | li-publish-date          | Holds first publication date, user editable   | D                                                                                  | date/time input                                            |
 | [Push Messages](#li-push-messages)                 | li-push-messages         | Manages creation and storage of push messages | D, T                                                                               | Table dashboard button launches dialog with input form     |
 | [Reference List](#li-reference-list)               | li-reference-list        | Multiple references to other documents        | D, M                                                                               | document selection (dialog)                                |
 | [Reference](#li-reference)                         | li-reference             | A reference to another document               | D, M                                                                               | document selection (dialog)                                |
 | [Retresco](#li-retresco)                           | li-retresco              | Retresco tag management                       | D                                                                                  | manage tags                                                |
-| [String List](#li-string-list)                     | li-string-list           | Array of Strings                              | D, M, T                                                                            | multiselect                                                |
-| [String](#li-text)                                 | li-text                  | String                                        | D, M, T                                                                            | text, textarea, select                                     |
+| [String List](#li-string-list)                     | li-string-list           | Array of Strings                              | D, M, T, I                                                                         | multiselect                                                |
+| [String](#li-text)                                 | li-text                  | String                                        | D, M, T, I                                                                         | text, textarea, select                                     |
 | [Tree](#li-tree)                                   | li-tree                  | Tree with link, document, group               | D                                                                                  | tree                                                       |
 | [Transcoding State](#li-transcoding-state)         | li-transcoding-state     | State of external transcoding job             | M (Video)                                                                          | trigger transcoding, current job progress, result          |
 | [Video Reference](#li-video-reference)             | li-video-reference       | A reference to a video (and a poster image)   | D, M, I                                                                            | Upload/Media Library Picker for a Video and a Poster Image |
@@ -361,8 +361,8 @@ A `li-document-reference` metadata field shows a reference to another document. 
 // contentType[].metadata / mediaType[].metadata
 metadata: [
   {
-    handle: 'references',
-    type: 'li-document-references',
+    handle: 'reference',
+    type: 'li-document-reference',
     config: {
       // common
       hideFromForm: false,                     // optional, default: false
@@ -370,7 +370,7 @@ metadata: [
       requiredErrorMessage: 'Provide a value', // optional
       // specific
       documentType: 'article',                 // optional, one of article, page, data-record
-      contentType: 'my-content-type'           // optional, filters the document selection
+      contentType: 'my-content-type',          // optional, filters the document selection
       published: true,                         // optional, shorthand for publication displayFilter, default: false
     },
     ui: {
@@ -414,7 +414,7 @@ A `li-document-references` metadata field is a list of references to other docum
 // contentType[].metadata / mediaType[].metadata
 metadata: [
   {
-    handle: 'reference',
+    handle: 'references',
     type: 'li-document-references',
     config: {
       // common
@@ -423,7 +423,7 @@ metadata: [
       requiredErrorMessage: 'Provide a value', // optional
       // specific
       documentType: 'article',                 // optional, one of article, page, data-record
-      contentType: 'my-content-type'           // optional, filters the document selection
+      contentType: 'my-content-type',          // optional, filters the document selection
       published: true,                         // optional, shorthand for publication baseFilter, default: false
     },
     ui: {
@@ -481,7 +481,7 @@ metadata: [
       label: 'foo',                   // optional, takes camelized name otherwise
       config: {
         readOnly: true,               // optional, default: false
-        placeholder: 'foo',           // optional, takes camelized name otherwise
+        placeholder: 'foo'           // optional, takes camelized name otherwise
       }
     }
   }
@@ -653,7 +653,7 @@ metadata: [
       requiredErrorMessage: 'Provide a value', // optional
       // specific
       minValue: 1,                             // optional
-      maxValue: 50                             // optional
+      maxValue: 50,                             // optional
       translatable: true,                      // optional, default: false, translations are only supported for data-record and mediaLibrary
       dataProvider: {                          // optional, added in release-2023-03
         // Option 1 - list of items
@@ -671,7 +671,7 @@ metadata: [
       label: 'foo',                   // optional, takes camelized name otherwise
       config: {
         placeholder: 'bar',           // optional, takes camelized name otherwise
-        readOnly: true,               // optional, default: false
+        readOnly: true                // optional, default: false
       }
     }
   }
@@ -914,7 +914,7 @@ module.exports = function (liServer) {
 
     const log = liServer.log.child({ns: 'push-messages-hooks'})
     const pushMessagesApi = liServer.features.api('li-documents').pushMessages
-    
+
     pushMessagesApi.registerPushMessageHandler({
       // Name must be unique across projects
       name: 'myPushMessageHandler',
