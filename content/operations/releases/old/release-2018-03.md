@@ -6,7 +6,7 @@ hideSectionTeaser: true
 excludeFromSearch: true
 ---
 
-{{< release-header 
+{{< release-header
   title="March 2018 Release"
   upcoming=false
   legacy=true
@@ -89,7 +89,7 @@ filters: {
 This tells the editor to provide `sortBy` -> `-updated_at` in case there is no search query input available.
 
 
-For a more detailed description have a look at the [documentation](https://docs.livingdocs.io/reference-docs/editor-configuration/search-filters.html), the [server PR #1885](https://github.com/livingdocsIO/livingdocs-server/pull/1885) and the [editor PR #1939](https://github.com/livingdocsIO/livingdocs-editor/pull/1939)
+For a more detailed description have a look at the [documentation](https://docs.livingdocs.io/reference/editor-configuration/search-filters.html), the [server PR #1885](https://github.com/livingdocsIO/livingdocs-server/pull/1885) and the [editor PR #1939](https://github.com/livingdocsIO/livingdocs-editor/pull/1939)
 
 
 ## Project toggle support (alpha) :gift: :fire:

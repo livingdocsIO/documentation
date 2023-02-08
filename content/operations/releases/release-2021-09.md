@@ -85,7 +85,7 @@ Therefore we provide a server event and a webhook, both named `mediaLibraryEntry
 This feature allows you to register your own dashboard card in the Media Library. The default card `liMediaLibraryCard`, allows to be extended with additional metadata fields.
 
 * References
-  * [Documentation: Search for 'dashboardCardConfigurations'](https://docs.livingdocs.io/reference-docs/project-config/editor-settings)
+  * [Documentation: Search for 'dashboardCardConfigurations'](https://docs.livingdocs.io/reference/project-config/editor-settings)
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4500)
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3779)
 
@@ -94,7 +94,7 @@ This feature allows you to register your own dashboard card in the Media Library
 This feature allows you to register your own dashboard card in the Document List.
 
 * References
-  * [Documentation](https://docs.livingdocs.io/reference-docs/project-config/editor-settings/#document-lists)
+  * [Documentation](https://docs.livingdocs.io/reference/project-config/editor-settings/#document-lists)
   * [Editor Preparation PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4553)
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4591)
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3876)

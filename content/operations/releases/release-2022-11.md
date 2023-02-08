@@ -74,13 +74,13 @@ but gives you the control over what and how to send.
 - Dynamic message format based on Params Schema
 - Implement your own push function to send messages anywhere
 
-* [Documentation]({{< ref "/reference-docs/document/metadata/metadata-plugin-list#li-push-messages" >}})
+* [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-push-messages" >}})
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5833)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4829)
 
 ### Public API - Open API Specification
 
-The [Livingdocs Public API]({{< ref "/reference-docs/public-api" >}}) can be tested and consumed with an [OpenAPI v3 specification file](https://livingdocsio.github.io/openapi/livingdocs-openapi.json).
+The [Livingdocs Public API]({{< ref "/reference/public-api" >}}) can be tested and consumed with an [OpenAPI v3 specification file](https://livingdocsio.github.io/openapi/livingdocs-openapi.json).
 
 Thanks to the [OpenAPI specification](https://swagger.io/specification/), it's possible to quickly test the API using [Swagger UI](https://petstore.swagger.io/?url=https://livingdocsio.github.io/openapi/livingdocs-openapi.json). And import the full collection of existing API endpoints into Insomnia or Postman.
 
@@ -109,7 +109,7 @@ Cutting and pasting components makes reordering components within a long documen
 
 To replace the existing `li-reference-list` metadata plugin with it's more modern variant, `li-document-references` is introduced. It allows a more flexible configuration for the dashboard in use to search documents by the means of the `useDashboard` config as you know it from `li-document-reference`.
 
-* [Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-document-references)
+* [Documentation](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-document-references)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4871)
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5873)
 
@@ -120,7 +120,7 @@ We introduce `roles` to define the type of server
 - `write` (stores data)
 - `worker` (executes jobs like indexing)
 
-* [Documentation](https://docs.livingdocs.io/reference-docs/server-extensions/roles/)
+* [Documentation](https://docs.livingdocs.io/customising/server/roles/)
 * [PR: Roles](https://github.com/livingdocsIO/livingdocs-server/pull/4814)
 
 ### Reindexing CLI task improvements
@@ -244,7 +244,7 @@ Please use `indexIndexingApi.addBackgroundIndexingJobsByIds` that supports also 
 
 ### Remove Regex support in Delivery :fire:
 
-Remove any regular expressions from `pathPattern` configs and update them according to our [examples](https://docs.livingdocs.io/reference-docs/project-config/deliveries/#pathpattern).
+Remove any regular expressions from `pathPattern` configs and update them according to our [examples](https://docs.livingdocs.io/reference/project-config/deliveries/#pathpattern).
 
 * [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5908)
 
@@ -367,9 +367,9 @@ httpServer: {
 
 ### Public API
 
-* [Allow to import video and file Media Library Entries via public API - Documentation](https://docs.livingdocs.io/reference-docs/public-api/imports/media-library-entries/)
+* [Allow to import video and file Media Library Entries via public API - Documentation](https://docs.livingdocs.io/reference/public-api/imports/media-library-entries/)
 * [Allow to import video and file Media Library Entries via public API - PR](https://github.com/livingdocsIO/livingdocs-server/pull/4876)
-* [Allow translated assets for a MediaLibraryEntries import - Documentation](https://docs.livingdocs.io/reference-docs/public-api/imports/media-library-entries/)
+* [Allow translated assets for a MediaLibraryEntries import - Documentation](https://docs.livingdocs.io/reference/public-api/imports/media-library-entries/)
 * [Allow translated assets for a MediaLibraryEntries import - PR](https://github.com/livingdocsIO/livingdocs-server/pull/4904)
 
 ## Other Changes

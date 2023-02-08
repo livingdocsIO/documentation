@@ -5,7 +5,7 @@ weight: 2
 ---
 
 This guide will show you how to add a custom Include for Youtube. We will show the implementation for the design, server and editor.
-This is more of a quick-guide where you can just copy and paste code. For a deeper understanding you can dive into [server-customization]({{< ref "/reference-docs/document/includes" >}}) and [editor-customization]({{< ref "/reference-docs/document/includes/editor-customization" >}})
+This is more of a quick-guide where you can just copy and paste code. For a deeper understanding you can dive into [server-customization]({{< ref "/reference/document/includes" >}}) and [editor-customization]({{< ref "/reference/document/includes/editor-customization" >}})
 
 ## Design definition
 

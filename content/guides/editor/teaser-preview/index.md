@@ -6,11 +6,11 @@ weight: 16
 
 {{< img src="teaser-preview.gif" alt="Teaser Preview" >}}
 
-The Teaser Previews add an additional read-only view to the publication section of the Livingdocs Editor. It is by default disabled and can only be enabled and configured through a [content type config]({{< ref "/reference-docs/project-config/content-types#teaser-previews" >}}).
+The Teaser Previews add an additional read-only view to the publication section of the Livingdocs Editor. It is by default disabled and can only be enabled and configured through a [content type config]({{< ref "/reference/project-config/content-types#teaser-previews" >}}).
 
 We basically configure a mapping that translates a subset of the **_current document_** (the one we are editing / publishing) into a state that gets rendered using components from your design. Further we can also control the dimensions and look of the preview.
 
-**Please note**: This documentation assumes that you have a [channel]({{< ref "/reference-docs/project-config" >}}) and a [design]({{< ref "/guides/documents/document-design" >}}) and at least one [content type]({{< ref "/reference-docs/project-config/content-types" >}}) properly set up.
+**Please note**: This documentation assumes that you have a [channel]({{< ref "/reference/project-config" >}}) and a [design]({{< ref "/guides/documents/document-design" >}}) and at least one [content type]({{< ref "/reference/project-config/content-types" >}}) properly set up.
 
 
 ## Minimalist example
@@ -47,7 +47,7 @@ This roughly translates into the following:
 
 ## Source object schema
 
-A subset of a document structure that you will be able to write lookups against. The `metadata` object gives access to all properties you set up using [metadata plugins]({{< ref "/reference-docs/document/metadata" >}})
+A subset of a document structure that you will be able to write lookups against. The `metadata` object gives access to all properties you set up using [metadata plugins]({{< ref "/reference/document/metadata" >}})
 
 ```js
 {
@@ -157,7 +157,7 @@ In a design, with a teaser component `teaser`:
 </div>
 ```
 
-Extend a [content-type config]({{< ref "/reference-docs/project-config/content-types.md" >}}):
+Extend a [content-type config]({{< ref "/reference/project-config/content-types.md" >}}):
 
 ```js
 contentTypes: [
@@ -205,7 +205,7 @@ In a design, with a teaser component `embed-teaser`:
 </div>
 ```
 
-Extend a [content-type config]({{< ref "/reference-docs/project-config/content-types.md" >}}):
+Extend a [content-type config]({{< ref "/reference/project-config/content-types.md" >}}):
 
 ```js
 contentTypes: [

@@ -4,7 +4,7 @@ description: Create custom filters with you own UI
 weight: 7
 ---
 
-It is possible to register a custom filter and use it as a [DisplayFilter]({{< ref "/reference-docs/editor-extensions/editor-configuration/display-filter.md" >}}) for Dashboards or search modals.
+It is possible to register a custom filter and use it as a [DisplayFilter]({{< ref "/customising/advanced/editor-configuration/display-filter.md" >}}) for Dashboards or search modals.
 
 At the moment there are 2 types of custom filters
 - [Custom List v2 Filter](#custom-list-v2-filter)
@@ -82,7 +82,7 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
 })
 ```
 
-Hint: Look into [Filter Query Types]({{< ref "/reference-docs/editor-extensions/editor-configuration/base-filter.md" >}}) to find possible `{type, value}` combinations for the `filter.options` in the `mount` function.
+Hint: Look into [Filter Query Types]({{< ref "/customising/advanced/editor-configuration/base-filter.md" >}}) to find possible `{type, value}` combinations for the `filter.options` in the `mount` function.
 
 ##### isDefault option
 

@@ -40,7 +40,7 @@ module.exports = {
   },
 
   // A valid email configuration is required:
-  // https://docs.livingdocs.io/reference-docs/server-config/config#user-management-emails
+  // https://docs.livingdocs.io/customising/server/server-config/config#user-management-emails
   emails: {
     transports: {
       default: {
@@ -70,7 +70,7 @@ By default, they will be enabled in server instances that define `roles: ['worke
 
 
 ### Project config
-Certain _actions groups_ can be defined within the [project config for notifications]({{< ref "/reference-docs/project-config/notifications.md" >}}).
+Certain _actions groups_ can be defined within the [project config for notifications]({{< ref "/reference/project-config/notifications.md" >}}).
 
 With the _action groups_ you can define the types of changes a certain group is interested in.
 

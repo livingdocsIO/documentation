@@ -14,7 +14,7 @@ both in the editor and when rendering it on the server side.
 
 
 **Note**:<br>
-The [boilerplate server](https://github.com/livingdocsIO/livingdocs-server-boilerplate) has an embedded design. The entry point for your project config is in "setup/seeding.js". This file requires a complete [project config]({{< ref "/reference-docs/project-config" >}}) that also contains the two relevant design configs `design_settings.js` and the `components` folder.
+The [boilerplate server](https://github.com/livingdocsIO/livingdocs-server-boilerplate) has an embedded design. The entry point for your project config is in "setup/seeding.js". This file requires a complete [project config]({{< ref "/reference/project-config" >}}) that also contains the two relevant design configs `design_settings.js` and the `components` folder.
 
 _Good to know:_ you might come across the notion of a "reference design". Reference designs are basically the same as embedded designs, but live externally, e.g. on an S3 bucket and are referenced in a project. The downside of reference designs is that they can not be customized in the context of a single project.
 
@@ -55,7 +55,7 @@ Lets recap what we have.
 
 Every component defines a `name` to reference it in the system, a `label` and `iconUrl` for display and an `html` containing the markup.
 
-The HTML itself contains declarative directives that are prepended with `doc-`, in our example `doc-editable` and `doc-image` ([learn all about directives]({{< ref "/reference-docs/document/document-design">}})). Those tell the Livingdocs editor where the users can edit content.
+The HTML itself contains declarative directives that are prepended with `doc-`, in our example `doc-editable` and `doc-image` ([learn all about directives]({{< ref "/reference/document/document-design">}})). Those tell the Livingdocs editor where the users can edit content.
 
 The directives themselves can contain configuration, referenced in the `directives` property. In our example we tell the Livingdocs editor that we want to give the image preset ratios of '16:9' and '4:3'.
 
@@ -98,4 +98,4 @@ Create a new article in the editor. It should have an empty header followed by a
 
 [Git patch for those changes](add-default-content.patch)
 
-Congratulations, you've taken your first steps in a Livingdocs Design! To learn more about designs, refer to [the design reference documentation]({{< ref "/reference-docs/document/document-design" >}}).
+Congratulations, you've taken your first steps in a Livingdocs Design! To learn more about designs, refer to [the design reference documentation]({{< ref "/reference/document/document-design" >}}).

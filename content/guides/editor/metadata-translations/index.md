@@ -15,7 +15,7 @@ This guide explains you how to enable metadata translations for Data Records.
 
 ## Add Available Languages
 
-On the server, we first need to provide which languages we want to support in our project. This is defined per [project]({{< ref "/reference-docs/project-config" >}}). Add these top-level properties to your project config:
+On the server, we first need to provide which languages we want to support in our project. This is defined per [project]({{< ref "/reference/project-config" >}}). Add these top-level properties to your project config:
 
 ```js
 settings: {

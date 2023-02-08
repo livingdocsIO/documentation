@@ -80,8 +80,8 @@ A much requested feature was adding metadata plugins with a custom Vue component
 
 References:
 * [Guide - Slug example implementation](https://docs.livingdocs.io/guides/documents/metadata/metadata-examples/)
-* [Documentation - List of available metadata plugins](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
-* [Documentation - Register a metadata plugin via Vue component registry](https://docs.livingdocs.io/reference-docs/editor-extensions/vue-component-registry)
+* [Documentation - List of available metadata plugins](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list)
+* [Documentation - Register a metadata plugin via Vue component registry](https://docs.livingdocs.io/customising/advanced/editor/vue-component-registry)
 
 ### Table Dashboards
 
@@ -101,7 +101,7 @@ The following functionality will be added in the next release:
 * Inline editing of more metadata properties
 
 References:
-* [Documentation]({{< ref "/reference-docs/project-config/editor-settings#example-table-dashboard" >}})
+* [Documentation]({{< ref "/reference/project-config/editor-settings#example-table-dashboard" >}})
 * [Config PR](https://github.com/livingdocsIO/livingdocs-server/pull/4145)
 * [Component PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4934)
 * [Metadata editing PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5022)
@@ -114,7 +114,7 @@ We integrated `Retresco` tagging system to automatically add tags to a document 
 - ability to change tags via Editor
 
 * References
-  * [Documentation](https://docs.livingdocs.io/reference-docs/project-config/settings/)
+  * [Documentation](https://docs.livingdocs.io/reference/project-config/settings/)
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5013)
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4215)
 
@@ -208,7 +208,7 @@ References:
 
 Until now, you were able to register a publication hook with any name, even when the hook had no effect.
 
-🔥 Only support the registration of well-known [Publication Hooks](https://docs.livingdocs.io/reference-docs/server-extensions/server-hooks/#publication-hooks)
+🔥 Only support the registration of well-known [Publication Hooks](https://docs.livingdocs.io/customising/server/server-hooks/#publication-hooks)
 
 
 ### Remove prepublishHook :fire:
@@ -216,7 +216,7 @@ Until now, you were able to register a publication hook with any name, even when
 🔥 removed server hook `prepublishHook`
 🔥 renamed server config `integrations.retresco.registerPrepublishHook` to `integrations.retresco.registerPreparePublishHook`
 
-If you want to keep the functionality of the `prepublishHook`, you can use the `preparePublishHook`. For alternatives and explanations check the [Server Hooks documentation](https://docs.livingdocs.io/reference-docs/server-extensions/server-hooks/#publication-hooks)
+If you want to keep the functionality of the `prepublishHook`, you can use the `preparePublishHook`. For alternatives and explanations check the [Server Hooks documentation](https://docs.livingdocs.io/customising/server/server-hooks/#publication-hooks)
 
 ```js
 // migrate from
@@ -238,7 +238,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4
 
 🔥 removed `publishHook` (throws an error on server startup)
 
-If you want to keep the functionality of the `publishHook`, you can use the `preparePublishHook` (modify the document) or `postPublishHook` (notify other systems). For more explanations check the [Server Hooks documentation](https://docs.livingdocs.io/reference-docs/server-extensions/server-hooks/#publication-hooks)
+If you want to keep the functionality of the `publishHook`, you can use the `preparePublishHook` (modify the document) or `postPublishHook` (notify other systems). For more explanations check the [Server Hooks documentation](https://docs.livingdocs.io/customising/server/server-hooks/#publication-hooks)
 
 **Example 1 - migration from publishHook to preparePublishHook**
 ```js
@@ -641,7 +641,7 @@ References:
 
 ### Config ui.component in metadata plugin config
 
-Configuring `ui.component` with the default component name for a type is now deprecated. Please consult the [documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list) to learn about the default components per type. If you have the default component configured, please remove the `ui.component` configuration.
+Configuring `ui.component` with the default component name for a type is now deprecated. Please consult the [documentation](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list) to learn about the default components per type. If you have the default component configured, please remove the `ui.component` configuration.
 
 An example:
 ```js
@@ -670,7 +670,7 @@ An example:
 ```
 
 References:
-- [Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
+- [Documentation](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list)
 - [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5041)
 
 
@@ -689,7 +689,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4
 🎁 Add `replaceAsset` operation at `PATCH api/v1/mediaLibrary/:id`
 
 References:
-- [Documentation]({{< ref "/reference-docs/public-api/media-library" >}})
+- [Documentation]({{< ref "/reference/public-api/media-library" >}})
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4109)
 
 #### Document Draft
@@ -697,7 +697,7 @@ References:
 🎁 Added new publicApi endpoint `GET /api/beta/documents/:documentId/latestDraft` to get the latest draft of a document
 
 References:
-- [Documentation]({{< ref "/reference-docs/public-api/publications/latest-draft-beta" >}})
+- [Documentation]({{< ref "/reference/public-api/publications/latest-draft-beta" >}})
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4224)
 
 ### Server Config
@@ -719,7 +719,7 @@ References:
 🎁 Add `postPublishHookAsync` to the instant publishing process
 
 References:
-* [Documentation]({{< ref "/reference-docs/server-extensions/server-hooks" >}})
+* [Documentation]({{< ref "/customising/server/server-hooks" >}})
 * [Server Pull Request](https://github.com/livingdocsIO/livingdocs-server/pull/4146)
 
 #### documentApi

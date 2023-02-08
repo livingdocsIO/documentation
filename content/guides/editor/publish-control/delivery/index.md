@@ -8,7 +8,7 @@ For infinite products like an e-paper there is usually a “build” stage invol
 
 ![delivery](./delivery.png)
 
-As soon as the document has been published, the delivery section will show up. Clicking on the build button will trigger the [Webhook]({{< ref "/reference-docs/server-extensions/webhooks" >}}) `document.build` which in turn will trigger the delivery build in the external system, as configured in the Project Config `settings`.
+As soon as the document has been published, the delivery section will show up. Clicking on the build button will trigger the [Webhook]({{< ref "/reference/webhooks" >}}) `document.build` which in turn will trigger the delivery build in the external system, as configured in the Project Config `settings`.
 The external build system can report back the current build status with an optional message via public API. The status and an optional message are reflected in the delivery section of the Publish Control, as seen above.
 
 Update the status (from an external system) back to Livingdocs:
@@ -27,7 +27,7 @@ Payload:
 }
 ```
 
-See [addDeliveryStatus]({{< ref "/reference-docs/public-api/add-delivery-status" >}}) in the Public API documentation for more information.
+See [addDeliveryStatus]({{< ref "/reference/public-api/add-delivery-status" >}}) in the Public API documentation for more information.
 
 ## Add Webhooks and Deliveries to your Project Config
 

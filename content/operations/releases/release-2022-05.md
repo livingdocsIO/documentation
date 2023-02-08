@@ -106,7 +106,7 @@ Still missing features for fully replacing legacy dashboards that will be added 
 * Document drag & drop
 
 References:
-* [Documentation]({{< ref "/reference-docs/project-config/editor-settings#example-table-dashboard" >}})
+* [Documentation]({{< ref "/reference/project-config/editor-settings#example-table-dashboard" >}})
 * [Default Table Dashboards PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5142)
 * [Table Dashboard in document selection dialog PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5141)
 * [Load documents from Postgres by default PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5173)
@@ -130,7 +130,7 @@ References:
 Media Library Entries can now sent to a document inbox and put into a document via drag + drop.
 
 * References
-  * [Documentation](https://docs.livingdocs.io/reference-docs/project-config/content-types/#document-inbox)
+  * [Documentation](https://docs.livingdocs.io/reference/project-config/content-types/#document-inbox)
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4852)
 
 
@@ -140,7 +140,7 @@ Media Library Entries can now sent to a document inbox and put into a document v
 
 ### Remove callbacks for Server Hooks :fire:
 
-All callback-based server hooks have been removed (throw an error on registration). Please visit the [server hooks documentation](https://docs.livingdocs.io/reference-docs/server-extensions/server-hooks/) to find examples of how to implement server hooks based on a promise.
+All callback-based server hooks have been removed (throw an error on registration). Please visit the [server hooks documentation](https://docs.livingdocs.io/customising/server/server-hooks/) to find examples of how to implement server hooks based on a promise.
 
 **Publish Hooks**
 - 🔥 remove `preparePublishHook` / `preparePublishHookCb` (throw err on registration)
@@ -159,13 +159,13 @@ All callback-based server hooks have been removed (throw an error on registratio
 
 We added 2 properties `configSchema` and `uiSchema` to a metadata plugin where one can define a schema validation. If you want to know more about the motivation and a fallback (`metadataPluginsToIgnoreForConfigValidation`), you get some insights [here](https://github.com/livingdocsIO/livingdocs-server/pull/4296).
 
-- :fire: Add strict validation for [`li-enum`](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-enum)
-- :fire: Add strict validation for [`li-text`](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-text)
-- :fire: Add strict validation for [`li-reference`](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-reference)
-- :fire: Add strict validation for [`li-document-reference`](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-document-reference)
+- :fire: Add strict validation for [`li-enum`](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-enum)
+- :fire: Add strict validation for [`li-text`](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-text)
+- :fire: Add strict validation for [`li-reference`](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-reference)
+- :fire: Add strict validation for [`li-document-reference`](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-document-reference)
 
 References:
-- [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
+- [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list)
 - [li-text PR](https://github.com/livingdocsIO/livingdocs-server/pull/4296)
 - [li-enum PR](https://github.com/livingdocsIO/livingdocs-server/pull/4316)
 - [li-reference | li-document-reference PR](https://github.com/livingdocsIO/livingdocs-server/pull/4425)
@@ -233,7 +233,7 @@ documentsApi.registerPublicationHooks({
 ```
 
 References:
-- [Documentation](https://docs.livingdocs.io/reference-docs/server-extensions/server-hooks/)
+- [Documentation](https://docs.livingdocs.io/customising/server/server-hooks/)
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4371)
 
 
@@ -241,7 +241,7 @@ References:
 
 #### project config v1 (channel config v1) 🔥
 
-❗❗❗🔥🔥🔥 remove any support of project config v1. All your project configs must use the [project config v2 format](https://docs.livingdocs.io/reference-docs/project-config/)
+❗❗❗🔥🔥🔥 remove any support of project config v1. All your project configs must use the [project config v2 format](https://docs.livingdocs.io/reference/project-config/)
 
 #### channelApi
 
@@ -333,7 +333,7 @@ const channelConfig = await channelConfigApi.read.getFullConfig({projectId, chan
 - 🔥 remove task `livingdocs-server parse-channel-config-v1-to-v2` (no replacement)
 
 References:
-- [Project Config v2 Format](https://docs.livingdocs.io/reference-docs/project-config/)
+- [Project Config v2 Format](https://docs.livingdocs.io/reference/project-config/)
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4435)
 
 
@@ -350,7 +350,7 @@ References:
 :fire: Because we changed interally the approach how to create a new document, we removed support for `designV1.defaultContent` and `designV1.layouts[].defaultContent`. Please move the declaration of `defaultContent` into the Project Config `contentType.defaultContent`.
 
 References:
-- [Documentation](https://docs.livingdocs.io/reference-docs/document/document-design/legacy-design/design-config-v1-to-v2/)
+- [Documentation](https://docs.livingdocs.io/reference/document/document-design/legacy-design/design-config-v1-to-v2/)
 
 ### Remove Q drop handler :fire:
 
@@ -389,7 +389,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5
 Deprecate metadata plugin `li-media-language`, use `li-metadata-translations` instead (same config).
 
 References:
-- [Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
+- [Documentation](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list)
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4315)
 
 ### Metadata Services

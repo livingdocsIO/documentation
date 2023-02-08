@@ -6,7 +6,7 @@ weight: 14
 
 ## li2Xliff
 
-We have created a library which converts Livingdocs JSON to XLIFF - the XML format required by computer-assisted translation (CAT) tools to mark, translate and update content - and to convert XLIFF back to Livingdocs content. A CAT tool offers translators a faster and easier way to translate content and can be supported with machine translation. 
+We have created a library which converts Livingdocs JSON to XLIFF - the XML format required by computer-assisted translation (CAT) tools to mark, translate and update content - and to convert XLIFF back to Livingdocs content. A CAT tool offers translators a faster and easier way to translate content and can be supported with machine translation.
 
 The library can be found [here](https://github.com/livingdocsIO/Li2Xliff)
 
@@ -70,9 +70,9 @@ It returns the translated content and, if there are any, an array of errors.
 
 ## Registering Translation Function
 
-To enable the functionality in Livingdocs you will need to activate multiple languages and translations. The documentation can be found [here]({{< ref "/content/reference-docs/project-config/settings.md#languages--translations" >}})
+To enable the functionality in Livingdocs you will need to activate multiple languages and translations. The documentation can be found [here]({{< ref "/content/reference/project-config/settings.md#languages--translations" >}})
 
-In your Livingdocs Server instance you can subscribe to [server events]({{< ref "/content/reference-docs/server-extensions/server-events.md" >}}) such as document creation. Then you can send your Livingdoc content for translation.
+In your Livingdocs Server instance you can subscribe to [server events]({{< ref "/content/customising/advanced/server-events.md" >}}) such as document creation. Then you can send your Livingdoc content for translation.
 
 Here we have an example function:
 
@@ -100,7 +100,7 @@ function registerTranslationHooks ({liServer, config}) {
 }
 ```
 
-And to add the translation function to the server use an [initialized hook]({{< ref "/content/reference-docs/server-extensions/server-initalization.md" >}}):
+And to add the translation function to the server use an [initialized hook]({{< ref "/content/customising/server/server-initalization.md" >}}):
 
 ```js
 register: function ({liServer}) {
@@ -114,7 +114,7 @@ register: function ({liServer}) {
 ```
 
 
-And you can then use a [webhook]({{< ref "/reference-docs/server-extensions/webhooks.md" >}}) to listen to your CAT service to know when to update your Livingdoc afterwards, summarised:
+And you can then use a [webhook]({{< ref "/reference/webhooks" >}}) to listen to your CAT service to know when to update your Livingdoc afterwards, summarised:
 
 ```js
 function registerApi ({liServer, config}) {

@@ -12,23 +12,23 @@ This guide will walk you through setting up a basic Media Library for your proje
 At heart, the Media Library is based around configured `Media Types`. You might be familiar already with the concept of `Content Types`. `Media Types` are very similar.
 You can configure as many different `Media Types` as you want. Usually you want to have at least 1 for Images (in fact, if you don't define one yourself, there is one added automatically at runtime).
 
-See the [mediaType reference]({{< ref "/reference-docs/project-config/media-types.md" >}}) for a full reference of the `mediaType` configuration options.
+See the [mediaType reference]({{< ref "/reference/project-config/media-types.md" >}}) for a full reference of the `mediaType` configuration options.
 
 When you have configured mediaTypes, you will get buttons to let users insert `Images` and `Videos` from the Document Editing Toolbar automatically.
 ![Editing Toolbar](editing-toolbar.png)
 
-The [Main Navigation]({{< ref "/reference-docs/project-config/editor-settings#main-navigation" >}}) will automatically hold entries for `Images` and `Videos` as well if you have a `liItem: 'mediaLibrary'` entry in your `mainNavigation` config.
+The [Main Navigation]({{< ref "/reference/project-config/editor-settings#main-navigation" >}}) will automatically hold entries for `Images` and `Videos` as well if you have a `liItem: 'mediaLibrary'` entry in your `mainNavigation` config.
 
 ## Images
 
 ### Server Config
-First, you need to make sure your Media Library can [store images]({{< ref "/reference-docs/server-extensions/server-configuration#media-library-dam" >}}).
+First, you need to make sure your Media Library can [store images]({{< ref "/customising/server-configuration#media-library-dam" >}}).
 
 ### Image Services
 To render images in documents, Livingdocs uses so called [Image Services]({{< ref "/guides/media-library/image-services.md" >}}). You need to [configure one in your project]({{< ref "/guides/media-library/image-services.md#configuring-an-image-service" >}}) to make use of images in documents.
 
 ### Basic Media Type
-Let's setup a `mediaType` for the images first. You add it to your [project config]({{< ref "/reference-docs/project-config" >}}) in an array at the top-level property `mediaTypes`.
+Let's setup a `mediaType` for the images first. You add it to your [project config]({{< ref "/reference/project-config" >}}) in an array at the top-level property `mediaTypes`.
 
 ```js
 //media-types/image.js
@@ -113,9 +113,9 @@ module.exports = {
 
 ### IPTC extraction
 Since many image files (especially those you get from image agencies) hold metadata defined by the IPTC standard, you want to configure extraction for certain metadata fields, so your users don't have to manually type them.
-You do this by adding the `exifExtraction` property to the `mediaType`. See [the list of all IPTC fields]({{< ref "/reference-docs/project-config/media-types.md#exif-extraction" >}}) and how to configure them.
+You do this by adding the `exifExtraction` property to the `mediaType`. See [the list of all IPTC fields]({{< ref "/reference/project-config/media-types.md#exif-extraction" >}}) and how to configure them.
 
-The exif extraction will run when an image is imported through the [Import API]({{< ref "/reference-docs/server-extensions/import-api.md" >}}) or when a user uploads an image through the UI.
+The exif extraction will run when an image is imported through the [Import API]({{< ref "/customising/advanced/import-api.md" >}}) or when a user uploads an image through the UI.
 The user has the chance to manually change the extracted Metadata before the image is actually stored in the Media Library.
 
 ```js
@@ -153,7 +153,7 @@ We are going to configure strategy 1 in this guide. There are 4 points where we 
 4. Metadata: `li-image` metadata properties (for a teaser image for example)
 
 #### designSettings
-In the [designSettings]({{< ref "/reference-docs/project-config/design-settings" >}}) of the project config, all the `namedCrops` need to be configured. You can then use all or some of them in `mediaType`s and `doc-image` directives.
+In the [designSettings]({{< ref "/reference/project-config/design-settings" >}}) of the project config, all the `namedCrops` need to be configured. You can then use all or some of them in `mediaType`s and `doc-image` directives.
 
 ```js
 projectConfig.designSettings: {
@@ -235,7 +235,7 @@ module.exports = {
 ```
 
 #### doc-image directive
-Now we need to configure the `namedCrops` on the [doc-image]({{< ref "/reference-docs/document/document-design/directives/image.md" >}}) directive of our image component in the [design]({{< ref "/reference-docs/document/document-design" >}}).
+Now we need to configure the `namedCrops` on the [doc-image]({{< ref "/reference/document/document-design/directives/image.md" >}}) directive of our image component in the [design]({{< ref "/reference/document/document-design" >}}).
 
 ```js
 module.exports = {
@@ -271,7 +271,7 @@ module.exports = {
 ```
 
 #### Metadata li-image
-Last but not least, we configure the namedCrops on our teaserImage components. In this example, there are two teasers, one used internally called `Teaser Image` and one for social media shares called `Social Media Teaser Image`. We are going to configure both. This goes into the metadata configuration of a [contentType]({{< ref "/reference-docs/project-config/content-types.md" >}}).
+Last but not least, we configure the namedCrops on our teaserImage components. In this example, there are two teasers, one used internally called `Teaser Image` and one for social media shares called `Social Media Teaser Image`. We are going to configure both. This goes into the metadata configuration of a [contentType]({{< ref "/reference/project-config/content-types.md" >}}).
 
 ```js
 module.exports = {
@@ -311,7 +311,7 @@ module.exports = {
 
 With `release-2022-11` focal point cropping was introduced.
 
-Focal point selection is supported on [`li-named-crops`](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-named-crops) and [`li-image`](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-image) whenever multiple crops are present.
+Focal point selection is supported on [`li-named-crops`](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-named-crops) and [`li-image`](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-image) whenever multiple crops are present.
 
 
 #### Where automatic cropping struggles
@@ -373,10 +373,10 @@ Nevertheless if you find solutions to these problems outside of Livingdocs, you 
 
 ### Server Config
 
-You need to make sure your Media Library can [store videos]({{< ref "/reference-docs/server-extensions/server-configuration#media-library-dam" >}}).
+You need to make sure your Media Library can [store videos]({{< ref "/customising/server-configuration#media-library-dam" >}}).
 
 ### Basic Media Type
-Let's setup a `mediaType` for the videos. You add it to your [project config]({{< ref "/reference-docs/project-config" >}}) in an array at the top-level property `mediaTypes`.
+Let's setup a `mediaType` for the videos. You add it to your [project config]({{< ref "/reference/project-config" >}}) in an array at the top-level property `mediaTypes`.
 
 ```js
 //media-types/video.js
@@ -449,7 +449,7 @@ Images stored with this metadata plugin will contain one crop in the aspect rati
 Poster Images are stored withing the Media Library as images when uploaded through the poster image metadata plugin or a frame of the video is selected. You probably want to configure a separate `mediaType` for these, since there are different requirements to the metadata.
 
 #### mediaType for the images
-Don't forget to add this the the `mediaTypes` in your [project config]({{< ref "/reference-docs/project-config" >}}).
+Don't forget to add this the the `mediaTypes` in your [project config]({{< ref "/reference/project-config" >}}).
 
 ```js
 // /media-types/poster-image.js
@@ -538,7 +538,7 @@ module.exports = {
 
 #### Transcoding Service implementation
 An external transcoding service can be connected to Livingdocs as follows:
-- Use [webhooks]({{< ref "/reference-docs/server-extensions/webhooks" >}}) to get notified about transcoding requests.
+- Use [webhooks]({{< ref "/reference/webhooks" >}}) to get notified about transcoding requests.
 - Use the public API (mediaLibrary GET) to fetch information about a transcoding request.
 - Use the public API (mediaLibrary PATCH) to update the transcoding state.
 
@@ -594,10 +594,10 @@ Since `release-2021-06` you can manage other files than videos and images with t
 
 ### Server Config
 
-You need to make sure your Media Library can [store files]({{< ref "/reference-docs/server-extensions/server-configuration#media-library-dam" >}}).
+You need to make sure your Media Library can [store files]({{< ref "/customising/server-configuration#media-library-dam" >}}).
 
 ### Basic Media Type
-Let's setup a `mediaType` for the files. You add it to your [project config]({{< ref "/reference-docs/project-config" >}}) in an array at the top-level property `mediaTypes`.
+Let's setup a `mediaType` for the files. You add it to your [project config]({{< ref "/reference/project-config" >}}) in an array at the top-level property `mediaTypes`.
 
 ```js
 //media-types/file.js

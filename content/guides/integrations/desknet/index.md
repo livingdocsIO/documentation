@@ -16,8 +16,8 @@ weight: 1
 
 - You should have a Desk-Net account and a set of valid API credentials to authorize Livingdocs to access the Desk-Net HTTP API.
 - You should be somewhat familiar with the Desk-Net data entities (Stories, Publications, Platforms and so on). A technical overview can be found [here](https://api.desk-net.com).
-- You should know about the different Livingdocs configuration levels/methods, namely the [project config]({{< ref "/reference-docs/project-config" >}}) and the [content type config]({{< ref "/reference-docs/project-config/content-types.md" >}})).
-- You should be familiar with how to [set up custom metadata fields]({{< ref "/reference-docs/server-extensions/metadata-plugins" >}}) for your content types.
+- You should know about the different Livingdocs configuration levels/methods, namely the [project config]({{< ref "/reference/project-config" >}}) and the [content type config]({{< ref "/reference/project-config/content-types.md" >}})).
+- You should be familiar with how to [set up custom metadata fields]({{< ref "/customising/server/metadata-plugins" >}}) for your content types.
 - For local development, we strongly suggest you use:
    - some kind of http tunnel solution like [ngrok](https://ngrok.com). This is useful, when you want to redirect messages from Desk-Net to your local server.
    - a HTTP API client like [Postman](https://www.getpostman.com/). Very handy to explore the Desk-Net API. Certain configuration settings also need you to provide Desk-Net entity ID's, which are not easily (or not at all) accessible via the Desk-Net UI.
@@ -255,7 +255,7 @@ Add the plugin to the settings of content type `'regular'`:
 }
 ```
 
-As mentioned before, we won't go further into how to set up metadata at this point, but you can read all about that [here]({{< ref "/reference-docs/document/metadata" >}}).
+As mentioned before, we won't go further into how to set up metadata at this point, but you can read all about that [here]({{< ref "/reference/document/metadata" >}}).
 
 ### 2. Set up a mapping that defines how to translate from Desk-Net to Livingdocs
 
@@ -337,7 +337,7 @@ Let's do another example:
 - We *don't* want this field to be editable in Livingdocs.
 - The technical label for this field on the metadata should be `hasPrint` and the actual label should read «Desk-Net – Is planned for Print»
 
-First, we have to write and register the transforms. As we have to register transforms before the server actually starts, but only after the application is properly up and running, we use a [hook]({{< ref "/reference-docs/server-extensions/server-hooks" >}}) for that:
+First, we have to write and register the transforms. As we have to register transforms before the server actually starts, but only after the application is properly up and running, we use a [hook]({{< ref "/customising/server/server-hooks" >}}) for that:
 
 ```js
 liServer.registerInitializedHook(async () => {
@@ -673,7 +673,7 @@ liServer.registerInitializedHook(async () => {
 })
 ```
 
-The main differences between this "generate content" function and a standard create function is that we provide the current `document` in the `context` object so that it is possible to re-use existing components. In addition to this, the return value should be an object that only contains a `content` property which is a [component tree]({{< ref "/reference-docs/document/content/component-tree" >}}) (an array of component objects).
+The main differences between this "generate content" function and a standard create function is that we provide the current `document` in the `context` object so that it is possible to re-use existing components. In addition to this, the return value should be an object that only contains a `content` property which is a [component tree]({{< ref "/reference/document/content/component-tree" >}}) (an array of component objects).
 
 The Desk-Net Schedule loaded in the editor is passed to the function as `params.schedule`, and it has the following tree structure:
 

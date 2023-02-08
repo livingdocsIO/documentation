@@ -61,7 +61,7 @@ aliases:
 
 Project home screen with multiple Table Dashboards and Document Creation Flow buttons on it.
 
-* [Documentation]({{< ref "/reference-docs/project-config/editor-settings#home-screen" >}})
+* [Documentation]({{< ref "/reference/project-config/editor-settings#home-screen" >}})
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6082)
 
 ## Breaking Changes :fire:
@@ -227,7 +227,7 @@ These Dashboard Display Filters get deprecated:
 - `coreApi.searchFilters.registerList`
 - `coreApi.searchFilters.registerAngularComponent`
 
-Update the deprecated filter to the supported [Display Filters](https://docs.livingdocs.io/reference-docs/editor-extensions/editor-configuration/display-filter/) from the core.
+Update the deprecated filter to the supported [Display Filters](https://docs.livingdocs.io/customising/advanced/editor-configuration/display-filter/) from the core.
 - Named Filters
 - Metadata Filters
 - ListV2 Filters

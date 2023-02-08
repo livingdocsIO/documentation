@@ -4,9 +4,9 @@ description: Setup push notifications with a custom dashboard item
 weight: 15
 ---
 
-**Push Notifications are currently deprecated, as they were implemented using Angular. 
+**Push Notifications are currently deprecated, as they were implemented using Angular.
 Angular support is going to be dropped in release-2023-09.
-Please use the [`li-push-messages` metadata plugin]({{< ref "/reference-docs/document/metadata/metadata-plugin-list#li-push-messages" >}}) instead.**
+Please use the [`li-push-messages` metadata plugin]({{< ref "/reference/document/metadata/metadata-plugin-list#li-push-messages" >}}) instead.**
 
 This guide explains 2 things:
 1. how to enable the push notifications feature in the [Livingdocs Server boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate)
@@ -17,7 +17,7 @@ Livingdocs supports three push notification services.
 - Urban airship
 - Ethinking
 
-For other push services, use the [`li-push-messages` metadata plugin]({{< ref "/reference-docs/document/metadata/metadata-plugin-list#li-push-messages" >}}) instead of Push Notifications.
+For other push services, use the [`li-push-messages` metadata plugin]({{< ref "/reference/document/metadata/metadata-plugin-list#li-push-messages" >}}) instead of Push Notifications.
 
 The resulting feature looks as follows.
 
@@ -32,9 +32,9 @@ The resulting feature looks as follows.
 ## Enable push notifications
 
 To enable push notifications you need to do 3 things:
-1. setup the firebase config in your [server configuration]({{< ref "/reference-docs/server-extensions/server-configuration#push-notifications" >}}), you will need to create a Google firebase key for this
-2. in every channel that should support push notifications, [configure the required metadata field]({{< ref "/reference-docs/project-config/content-types.md#push-notifications" >}})
-3. in every channel that should support push notifications, [configure your topics]({{< ref "/reference-docs/project-config/content-types.md#push-notifications" >}})
+1. setup the firebase config in your [server configuration]({{< ref "/customising/server-configuration#push-notifications" >}}), you will need to create a Google firebase key for this
+2. in every channel that should support push notifications, [configure the required metadata field]({{< ref "/reference/project-config/content-types.md#push-notifications" >}})
+3. in every channel that should support push notifications, [configure your topics]({{< ref "/reference/project-config/content-types.md#push-notifications" >}})
 4. setup the push notifications field in your Elasticsearch mapping
 
 The [Livingdocs Server boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate) has commented out sections for all three things so you can check there.
@@ -81,9 +81,9 @@ After doing those three things, push notifications are enabled and you can see t
 ## Add a custom dashboard item
 
 You need to do 3 things to have your custom dashboard item that shows push notification information:
-1. [whitelist the push notification metadata for use in the dashboard]({{< ref "/reference-docs/server-extensions/server-configuration#search" >}})
+1. [whitelist the push notification metadata for use in the dashboard]({{< ref "/customising/server-configuration#search" >}})
 2. create an angular component for the dashboard item
-3. [configure the angular component in the editor]({{<ref "/reference-docs/editor-extensions/editor-configuration#dashboard" >}})
+3. [configure the angular component in the editor]({{<ref "/customising/advanced/editor-configuration#dashboard" >}})
 
 Below is a sample implementation for (2).
 

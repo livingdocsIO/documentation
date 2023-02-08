@@ -32,7 +32,7 @@ mediaLibrary: {
   images: {
     // base url of the storage
     publicUrl: 'https://livingdocs-images-dev.s3.amazonaws.com',
-    // {{< a ref="/reference-docs/server-extensions/server-configuration/storage" title="Storage Configuration" >}}
+    // {{< a ref="/customising/server-configuration/storage" title="Storage Configuration" >}}
     storage: {
       strategy: 's3',
       prefix: 'images/' // optional, the storage key will be prefixed (Added in: release-2021-06)
@@ -59,7 +59,7 @@ mediaLibrary: {
 ```
 
 This will route image upload requests from Livingdocs to your chosen URL instead of S3.
-For details please see the reference documentation for the [server configuration]({{< ref "/reference-docs/server-extensions/server-configuration" >}})
+For details please see the reference documentation for the [server configuration]({{< ref "/customising/server-configuration" >}})
 
 
 ### Delivery

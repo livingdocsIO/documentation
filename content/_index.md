@@ -17,7 +17,7 @@ renderTOC: false
   {{< cols >}}
     {{< tip
       title="Evaluation"
-      text="If you are already in contact with us and have access to our repositories we recommend our [On Premise Setup](/learn/on-premise-setup) to set up Livingdocs locally (in case you haven't you can contact us at <contact@livingdocs.io>)."
+      text="If you are already in contact with us and have access to our repositories we recommend our [On Premise Setup](/operations/on-premise-setup) to set up Livingdocs locally (in case you haven't you can contact us at <contact@livingdocs.io>)."
     >}}
 
     {{< tip
@@ -32,9 +32,9 @@ renderTOC: false
 {{< cols >}}
   {{< illu-teaser
     image="illu-referrence.png"
-    flag="Reference Docs"
+    flag="Documentation"
     title="Look up all specifications of our interfaces"
-    link="/reference-docs/"
+    link="/reference/"
   >}}
 
   {{< illu-teaser

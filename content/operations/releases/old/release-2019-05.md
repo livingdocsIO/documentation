@@ -6,7 +6,7 @@ hideSectionTeaser: true
 excludeFromSearch: true
 ---
 
-{{< release-header 
+{{< release-header
   title="May 2019 Release"
   upcoming=false
   legacy=true
@@ -143,7 +143,7 @@ We did a lot of improvements to the default search algorithm. The most important
 
 * References
   * [server PR #2395](https://github.com/livingdocsIO/livingdocs-server/pull/2395)
-  * [documentation](https://github.com/livingdocsIO/livingdocs/blob/master/reference-docs/server-configuration/config.md#querybuilderplugin)
+  * [documentation](https://github.com/livingdocsIO/livingdocs/blob/master/reference/server-configuration/config.md#querybuilderplugin)
 
 
 

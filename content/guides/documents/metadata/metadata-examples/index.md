@@ -92,11 +92,11 @@ This defines a metadata property `slug` (handle). It uses a custom metadata plug
 
 There is also a custom component for the form in editor defined via `ui.component`. It describes how the editor displays the `slug` metadata.
 
-This custom component is implemented with Vue and registered through the [Vue Component Registry]({{< ref "/reference-docs/editor-extensions/vue-component-registry" >}}).
+This custom component is implemented with Vue and registered through the [Vue Component Registry]({{< ref "/customising/advanced/editor/vue-component-registry" >}}).
 
 The `bp` prefix stands for one of our downstreams, named: *boilerplate*. You should prefix your metadata plugins to not clash with any potential components from Livingdocs.
 
-1. Add a new metadata plugin to `./plugins/metadata/bp-slug.js`. Check the [reference docs]({{< ref "/reference-docs/server-extensions/metadata-plugins" >}}) to find all validation and hook options.
+1. Add a new metadata plugin to `./plugins/metadata/bp-slug.js`. Check the [reference docs]({{< ref "/customising/server/metadata-plugins" >}}) to find all validation and hook options.
 
 ```js
 module.exports = {
@@ -170,7 +170,7 @@ liEditor.vueComponentRegistry.registerComponent({
 ```
 
 ## References
-- [Intro Metadata]({{< ref "/reference-docs/document/metadata" >}})
-- [Metadata Plugin List]({{< ref "/reference-docs/document/metadata/metadata-plugin-list" >}})
-- [Metadata Plugin Server Extension]({{< ref "/reference-docs/server-extensions/metadata-plugins" >}})
-- [Vue Component Registry]({{< ref "/reference-docs/editor-extensions/vue-component-registry" >}})
+- [Intro Metadata]({{< ref "/reference/document/metadata" >}})
+- [Metadata Plugin List]({{< ref "/reference/document/metadata/metadata-plugin-list" >}})
+- [Metadata Plugin Server Extension]({{< ref "/customising/server/metadata-plugins" >}})
+- [Vue Component Registry]({{< ref "/customising/advanced/editor/vue-component-registry" >}})
