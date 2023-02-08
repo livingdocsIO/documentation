@@ -94,7 +94,7 @@ The multilist editor lets a user view and edit multiple document lists in one sc
 We introduce the "Document Inbox" feature to support teams with splitted responsibilities. In bigger editorial teams there are different roles (e.g. writing an article and orchestrating pages). As an example: Editor A writes an article and put it to the inbox of the front page. Editor B then can decide into which list of the front page the article should go.
 
 * References
-  * [Documentation]({{< ref "../../../../reference-docs/project-config/content-types.md#document-inbox" >}})
+  * [Documentation]({{< ref "../../../../reference/project-config/content-types.md#document-inbox" >}})
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3911)
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4661)
 
@@ -106,7 +106,7 @@ We added 3 new possibilities to select data for custom attributes in the text fo
 * Select a document reference
 * Text input
 
-* [Documentation](https://docs.livingdocs.io/reference-docs/project-config/editor-settings/#text-formatting)
+* [Documentation](https://docs.livingdocs.io/reference/project-config/editor-settings/#text-formatting)
 * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4799)
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4060)
 

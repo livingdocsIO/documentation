@@ -6,7 +6,7 @@ hideSectionTeaser: true
 excludeFromSearch: true
 ---
 
-{{< release-header 
+{{< release-header
   title="February 2018 Release"
   upcoming=false
   legacy=true
@@ -92,7 +92,7 @@ routing: {
 
 For details see: [Server PR #1673](https://github.com/livingdocsIO/livingdocs-server/pull/1673)
 
-For documentation see: [Documentation](https://docs.livingdocs.io/reference-docs/server-public-api/routing-system.html)
+For documentation see: [Documentation](https://docs.livingdocs.io/reference/r-public-api/routing-system.html)
 
 
 ## Support for Animated gifs in the Images Editing API :gift:

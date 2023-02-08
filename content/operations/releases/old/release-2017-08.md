@@ -6,7 +6,7 @@ hideSectionTeaser: true
 excludeFromSearch: true
 ---
 
-{{< release-header 
+{{< release-header
   title="August 2017 Release"
   upcoming=false
   legacy=true
@@ -115,7 +115,7 @@ liServer.registerInitializedHook((done) => {
 
 You can register as many hooks as you'd like. They will be executed sequentially (and always in registration order), which means that no two hooks ever run in parallel and instead each hook waits until the previous one is done executing before running.
 
-For more documentation regarding initializing a Livingdocs Server please refer to the following [link](https://github.com/livingdocsIO/livingdocs/blob/master/reference-docs/server-extensions/server-initalization.md).
+For more documentation regarding initializing a Livingdocs Server please refer to the following [link](https://github.com/livingdocsIO/livingdocs/blob/master/customising/server/server-initalization.md).
 
 ## Allow integrators to use different node versions
 

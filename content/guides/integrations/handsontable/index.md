@@ -20,7 +20,7 @@ And save it to Livingdocs, a simple table render is seen below:
 
 ## Setting up the Include function on the Server
 
-For in-depth documentation on Include functions, check out the documentation here: [Livingdocs Include](https://docs.livingdocs.io/reference-docs/server-extensions/include-functions/)
+For in-depth documentation on Include functions, check out the documentation here: [Livingdocs Include](https://docs.livingdocs.io/customising/server/include-functions/)
 
 For this example, the Handsontable include is a very basic iframe and modal. The iframe renders returned JSON from the modal, which hosts the Handsontable example server.
 

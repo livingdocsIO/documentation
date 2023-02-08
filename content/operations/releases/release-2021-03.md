@@ -93,8 +93,8 @@ Define which media library metadata are indexed and define dashboard filter for 
 
 References:
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3389)
-  * [Documentation plugin](https://docs.livingdocs.io/reference-docs/server-config/config#setting-up-the-media-library-elastic-search-mapping)
-  * [Documentation mediaTypes](https://docs.livingdocs.io/reference-docs/project-config/media_types)
+  * [Documentation plugin](https://docs.livingdocs.io/reference/server-config/config#setting-up-the-media-library-elastic-search-mapping)
+  * [Documentation mediaTypes](https://docs.livingdocs.io/reference/project-config/media_types)
   * [Documentation baseFilters](https://docs.livingdocs.io/reference/base_filter#example-5-filter-by-metadata-with-datatype-keyword-for-mediaindex)
   * [Documentation custom Display Filter](https://docs.livingdocs.io/guides/register_custom_dashboard_filters_#register-custom-vue-component-filter)
 
@@ -543,7 +543,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3
 
 #### Removed 'li-netlify-publish-hooks' feature :fire:
 
-🔥 Removes the `li-netlify-publish-hooks` feature (which seems not to be used by anyone) as the more generic webhooks feature already offers the same behavior. The [webhook](https://docs.livingdocs.io/reference-docs/server-initalization/webhooks) documentation can help to migrate the feature.
+🔥 Removes the `li-netlify-publish-hooks` feature (which seems not to be used by anyone) as the more generic webhooks feature already offers the same behavior. The [webhook](https://docs.livingdocs.io/reference/server-initalization/webhooks) documentation can help to migrate the feature.
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3362)
 
@@ -556,7 +556,7 @@ A metadata field of type `li-image` has a new property `isAutomatic`, e.g. `teas
 
 ```js
 // 1) search in the project config for all metadata fields with type 'li-image' (e.g. teaserImage)
-// 2) Open the Elasticsearch mapping file defined in the server config 'search.metadataMapping' (see https://docs.livingdocs.io/reference-docs/server-config/config#search)
+// 2) Open the Elasticsearch mapping file defined in the server config 'search.metadataMapping' (see https://docs.livingdocs.io/reference/server-config/config#search)
 // 3) Update the mapping definition with 'isAutomatic' for all metadata fields of type 'li-image'
 
 // metadata-mapping.js

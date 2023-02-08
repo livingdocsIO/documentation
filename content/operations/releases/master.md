@@ -231,7 +231,7 @@ These Dashboard Display Filters are not supported anymore:
 - `coreApi.searchFilters.registerList`
 - `coreApi.searchFilters.registerAngularComponent`
 
-Update the deprecated filter to the supported [Display Filters](https://docs.livingdocs.io/reference-docs/editor-extensions/editor-configuration/display-filter/) from the core.
+Update the deprecated filter to the supported [Display Filters](https://docs.livingdocs.io/customising/advanced/editor-configuration/display-filter/) from the core.
 - Named Filters
 - Metadata Filters
 - ListV2 Filters
@@ -254,8 +254,8 @@ References: [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6153)
 ### Deprecate appConfig.ui.welcome
 
 The editor config `appConfig.ui.welcome` is deprecated and will be removed in `release-2023-03`.
-- Option 1: Configure your welcome screen in the Project Config via [startPage]({{< ref "/reference-docs/project-config/editor-settings#startpage" >}})
-- Option 2: Switch to a [Home Screen]({{< ref "/reference-docs/project-config/editor-settings#home-screen" >}})
+- Option 1: Configure your welcome screen in the Project Config via [startPage]({{< ref "/reference/project-config/editor-settings#startpage" >}})
+- Option 2: Switch to a [Home Screen]({{< ref "/reference/project-config/editor-settings#home-screen" >}})
 
 Breaking Change: `release-2023-03`
 

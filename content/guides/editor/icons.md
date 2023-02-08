@@ -8,12 +8,12 @@ weight: 17
 
 Icons are widely used and supported in the editor.
 
-- [Content Type Icon]({{< ref "../../../../reference-docs/project-config/content-types.md#example" >}})
-- [Deliveries Icon]({{< ref "../../../../reference-docs/project-config/deliveries.md" >}})
-- [Design Component Icon]({{< ref "../../reference-docs/document/document-design#component-properties" >}})
-- [Main Navigation Icon]({{< ref "../../../../reference-docs/editor-extensions/editor-configuration/menu-and-dashboards.md#menu-items" >}})
-- [User Menu Icon]({{< ref "../../../../reference-docs/editor-extensions/editor-configuration/menu-and-dashboards.md" >}})
-- [Text Formatting Toolbar Icon]({{< ref "../../../reference-docs/editor-extensions/editor-configuration/text-editing.md#custom-elements" >}})
+- [Content Type Icon]({{< ref "/reference/project-config/content-types.md#example" >}})
+- [Deliveries Icon]({{< ref "/reference/project-config/deliveries.md" >}})
+- [Design Component Icon]({{< ref "../../reference/document/document-design#component-properties" >}})
+- [Main Navigation Icon]({{< ref "/customising/advanced/editor-configuration/menu-and-dashboards.md#menu-items" >}})
+- [User Menu Icon]({{< ref "/customising/advanced/editor-configuration/menu-and-dashboards.md" >}})
+- [Text Formatting Toolbar Icon]({{< ref "../../../customising/advanced/editor-configuration/text-editing.md#custom-elements" >}})
 - [Icons in UI extensions](#icons-in-ui-extensions)
 
 In every case mentioned before, you can set an icon of the supported [li-icon collection](https://github.com/livingdocsIO/livingdocs-editor/blob/master/server/li_icon.paths.txt). If your icon is not supported, you can [register a material design icon](#register-a-material-design-icon).

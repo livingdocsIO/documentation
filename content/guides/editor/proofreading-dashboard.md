@@ -39,7 +39,7 @@ metadata: [
 
 References:
 - [How to customise a proofreading task]({{< ref "./proofreading-task.md" >}})
-- [How to configure a metadata field]({{< ref "/reference-docs/server-extensions/metadata-plugins" >}})
+- [How to configure a metadata field]({{< ref "/customising/server/metadata-plugins" >}})
 
 ### Add my-proofreading to Elasticsearch
 The metadata field `my-proofreading` should be searchable by the proofreading dashboard later. Therefore you have to extend the Elasticsearch document mapping.
@@ -63,11 +63,11 @@ dashboards: [
 ```
 
 References:
-- [Project Config]({{< ref "/reference-docs/project-config/editor-settings" >}})
+- [Project Config]({{< ref "/reference/project-config/editor-settings" >}})
 
 ## 3) Add your custom dashboard to the menu
 
-As third step you can add the custom dashboard to the [main navigation]({{< ref "/reference-docs/project-config/editor-settings" >}}).
+As third step you can add the custom dashboard to the [main navigation]({{< ref "/reference/project-config/editor-settings" >}}).
 
 ```js
 {
@@ -85,7 +85,7 @@ How to test it
 - go to the `My Proofreading` dashboard via the menu and look if your task is on the board
 
 References:
-- [Project Config]({{< ref "/reference-docs/project-config/editor-settings" >}})
+- [Project Config]({{< ref "/reference/project-config/editor-settings" >}})
 
 
 ## 4) Customise a card on the dashboard

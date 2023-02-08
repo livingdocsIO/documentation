@@ -34,7 +34,7 @@ The project-config is the source for the project setup. It's a huge JSON file th
 {{< vimeo id="426287530" class="video-wrapper" >}}
 
 
-[Project Config Documentation](/reference-docs/project-config)
+[Project Config Documentation](/reference/project-config)
 
 (You might come across the term "channel-config", this is just the old name of the project config)
 
@@ -44,7 +44,7 @@ The Design is a part of the project-config \(subproperties `designSettings` and 
 
 {{< vimeo id="429647905" class="video-wrapper" >}}
 
-[Document Design Documentation](/reference-docs/document/document-design)
+[Document Design Documentation](/reference/document/document-design)
 
 ## CLI \(comand-line-interface\)
 
@@ -52,7 +52,7 @@ The [Livingdocs CLI](https://github.com/livingdocsIO/livingdocs-cli) allows you 
 
 {{< vimeo id="429648531" class="video-wrapper" >}}
 
-[CLI Documentation](/reference-docs/cli-sdk)
+[CLI Documentation](/reference/cli-sdk)
 
 ## Users
 
@@ -66,7 +66,7 @@ This is where you can interact with Livingdocs over a REST interface. The API al
 
 {{< vimeo id="429650615" class="video-wrapper" >}}
 
-[Public API Documentation](/reference-docs/public-api)
+[Public API Documentation](/reference/public-api)
 
 ## Livingdocs on Vimeo
 

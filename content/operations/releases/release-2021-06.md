@@ -346,8 +346,8 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3
 
 - :fire: remove serverConfig `assetManagement` (googleVision and enabled has no effect since release-2020-07)
 - :fire: remove serverConfig `mediaLibrary.enabled` (had no effect since release-2020-07)
-- :fire: remove serverConfig `mediaLibrary.types` (had no effect since release-2020-07) use [mediaTypes](https://docs.livingdocs.io/enterprise/reference-docs/project-config/media_types/) instead
-- :fire: remove serverConfig `mediaLibrary.autoTagging` (googleVision has no effect since release-2020-07) use [project integrations](https://docs.livingdocs.io/enterprise/reference-docs/server-configuration/#google-vision-api) instead
+- :fire: remove serverConfig `mediaLibrary.types` (had no effect since release-2020-07) use [mediaTypes](https://docs.livingdocs.io/enterprise/reference/project-config/media_types/) instead
+- :fire: remove serverConfig `mediaLibrary.autoTagging` (googleVision has no effect since release-2020-07) use [project integrations](https://docs.livingdocs.io/enterprise/reference/server-configuration/#google-vision-api) instead
 - :fire: remove serverConfig `mediaLibrary.paginationSize` (had no effect since release-2020-07)
 
 References:

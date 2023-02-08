@@ -77,7 +77,7 @@ EOF
 
 {{< added-in release-2021-03 >}}
 
-When importing articles from legacy systems, you should be setting the `publicationDate`. The `publicationDate` can be found in the [public api documentation](https://edit.livingdocs.io/public-api) or [import api reference documentation]({{< ref "/reference-docs/server-extensions/import-api.md" >}}).
+When importing articles from legacy systems, you should be setting the `publicationDate`. The `publicationDate` can be found in the [public api documentation](https://edit.livingdocs.io/public-api) or [import api reference documentation]({{< ref "/customising/advanced/import-api.md" >}}).
 
 The `publicationDate` controls when an article has been published, updated and is important for the search to function properly.
 

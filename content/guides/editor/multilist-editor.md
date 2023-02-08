@@ -15,6 +15,6 @@ The multilist editor is accessible from the editor toolbar while editing a page:
 {{< img src="./multilist-editor-button.png" alt="Button to access multilist editor" >}}
 
 It lets a user move documents between all lists that are included on the page, and between lists and the page's
-[Document Inbox]({{< ref "/reference-docs/project-config/content-types#document-inbox" >}}):
+[Document Inbox]({{< ref "/reference/project-config/content-types#document-inbox" >}}):
 
 {{< img src="./multilist-editor-interface.png" alt="Multilist editor interface" >}}

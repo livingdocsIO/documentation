@@ -6,7 +6,7 @@ hideSectionTeaser: true
 excludeFromSearch: true
 ---
 
-{{< release-header 
+{{< release-header
   title="July 2020 Release"
   upcoming=false
   legacy=true
@@ -246,7 +246,7 @@ It's now possible to integrate a custom document preview via the server side `pr
 
 References:
   * [PR Documentation](https://github.com/livingdocsIO/livingdocs/pull/309)
-  * [Documentation](/reference-docs/server-extensions/server-configuration/#custom-previews)
+  * [Documentation](/customising/server-configuration/#custom-previews)
 
 # Breaking Changes :fire:
 

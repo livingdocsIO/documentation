@@ -6,7 +6,7 @@ hideSectionTeaser: true
 excludeFromSearch: true
 ---
 
-{{< release-header 
+{{< release-header
   title="December 2017 Release"
   upcoming=false
   legacy=true
@@ -385,7 +385,7 @@ Editor | Bugfix | addTask method invocation | [#1725](https://github.com/livingd
 
 ### Inline error messages for metadata screen
 
-We've updated the documentation regarding the feature: https://docs.livingdocs.io/walkthroughs/metadata/metadata-examples.html and https://docs.livingdocs.io/reference-docs/editor-configuration/metadata.html.
+We've updated the documentation regarding the feature: https://docs.livingdocs.io/walkthroughs/metadata/metadata-examples.html and https://docs.livingdocs.io/reference/editor-configuration/metadata.html.
 
 ### Handle repeated drag-and-drop imports properly
 

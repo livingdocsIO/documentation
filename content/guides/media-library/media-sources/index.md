@@ -17,7 +17,7 @@ If you have integrated a Media Source properly, the Livingdocs editor also shows
 To integrate a Media Source into Livingdocs you have to do 3 things:
 - write a media source plugin (search/import function)
 - register the plugin
-- configure the Media Source on a [Media Type]({{< ref "/reference-docs/project-config/media-types.md" >}}) in the project config.
+- configure the Media Source on a [Media Type]({{< ref "/reference/project-config/media-types.md" >}}) in the project config.
 
 ### Step 1 - Write a Media Source Plugin
 
@@ -101,7 +101,7 @@ liServer.registerInitializedHook(async () => {
 
 ### Step 3 - Configure the Media Source
 
-As a last step, a Media Source needs to be added to a [Media Type]({{< ref "/reference-docs/project-config/media-types.md" >}}) in the project config. It's important that the plugin property of the Media Source config matches the handle of the plugin. The media source config also has a `config` property which will be passed to the plugin on runtime.
+As a last step, a Media Source needs to be added to a [Media Type]({{< ref "/reference/project-config/media-types.md" >}}) in the project config. It's important that the plugin property of the Media Source config matches the handle of the plugin. The media source config also has a `config` property which will be passed to the plugin on runtime.
 
 ```js
 // mediaTypes in project config

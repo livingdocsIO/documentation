@@ -6,7 +6,7 @@ hideSectionTeaser: true
 excludeFromSearch: true
 ---
 
-{{< release-header 
+{{< release-header
   title="October 2020 Release"
   upcoming=false
   legacy=true
@@ -309,10 +309,10 @@ References:
 
 ## Customise Editor UI with Vue for Doc Includes :gift:
 
-Implement a [custom Editor UI](https://docs.livingdocs.io/reference-docs/includes/editor_customization) for doc-includes with Vue.
+Implement a [custom Editor UI](https://docs.livingdocs.io/reference/includes/editor_customization) for doc-includes with Vue.
 
 References:
-  * [Documentation (custom Editor UI)](https://docs.livingdocs.io/reference-docs/includes/editor_customization)
+  * [Documentation (custom Editor UI)](https://docs.livingdocs.io/reference/des/editor_customization)
   * [Documentation (Twitter Example)](https://github.com/livingdocsIO/livingdocs/pull/312)
   * [Documentation (doc-include)](https://docs.livingdocs.io/evaluation-guide/intro#summary-of-a-doc-include)
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/3768)

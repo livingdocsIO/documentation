@@ -125,8 +125,8 @@ Currently we are working hard on the improvement of Dashboards. Here you have a 
 External Systems define a relation to a source system. Usually this is used when an old CMS imports articles to Livingdocs.
 This first version provides links to the source system via the Table Dashboard action menu.
 
-* [Documentation External Systems](https://docs.livingdocs.io/reference-docs/project-config/external-systems/)
-* [Documentation Metadata Plugin li-external-id](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-external-id)
+* [Documentation External Systems](https://docs.livingdocs.io/reference/project-config/external-systems/)
+* [Documentation Metadata Plugin li-external-id](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-external-id)
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5443)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4548)
 
@@ -139,7 +139,7 @@ We did a few more steps to make the Comyan integration better.
 - Improved asset duplication check
 - Image usage report to Comyan
 
-* [Project Config Example](https://docs.livingdocs.io/reference-docs/project-config/settings/#comyan)
+* [Project Config Example](https://docs.livingdocs.io/reference/project-config/settings/#comyan)
 * [PR: Use JSON format](https://github.com/livingdocsIO/livingdocs-server/pull/4546)
 * [PR: Use MediaLibraryEntry model in the editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5439)
 * [PR: Move Comyan secure request to server](https://github.com/livingdocsIO/livingdocs-server/pull/4426)
@@ -279,8 +279,8 @@ References:
 We added 2 properties `configSchema` and `uiSchema` to a metadata plugin where one can define a schema validation. If you want to know more about the motivation and a fallback (`metadataPluginsToIgnoreForConfigValidation`), you get some insights [here](https://github.com/livingdocsIO/livingdocs-server/pull/4296).
 
 References:
-- [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list)
-- [li-integer PR](https://docs.livingdocs.io/reference-docs/document/metadata/metadata-plugin-list/#li-integer)
+- [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list)
+- [li-integer PR](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-integer)
 
 ### Error on Metadata Plugin registration :fire:
 
@@ -351,7 +351,7 @@ References:
 Whilst we continue to refine the selection across multiple components we have enabled a config to turn it off. In the editable settings set `multiEditablesTextSelection: false`.
 
 - [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5416)
-- [Documentation](https://docs.livingdocs.io/reference-docs/editor-extensions/editor-configuration/editing-features/#multi-select-and-multi-text-select)
+- [Documentation](https://docs.livingdocs.io/customising/advanced/editor-configuration/editing-features/#multi-select-and-multi-text-select)
 
 ## APIs :gift:
 
@@ -359,12 +359,12 @@ Whilst we continue to refine the selection across multiple components we have en
 
 Allows the patch operation `archive` via public API to archive an asset.
 
-* [Documentation](https://docs.livingdocs.io/reference-docs/public-api/media-library/)
+* [Documentation](https://docs.livingdocs.io/reference/public-api/media-library/)
 * [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4532)
 
 ### Unpublish Document via Public API
 
-* [Documentation](https://docs.livingdocs.io/reference-docs/public-api/imports/documents/)
+* [Documentation](https://docs.livingdocs.io/reference/public-api/imports/documents/)
 * [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4459)
 
 ## Other Changes

@@ -19,7 +19,7 @@ The oEmbed include service (`li-oembed-service`) allows users to embed content (
 - Facebook (`li-facebook-post`), ATTENTION: requires credentials {{< added-in release-2022-07 >}}
 - Dailymotion (`li-dailymotion`) {{< added-in release-2023-01 >}}
 
-A note on Facebook and Instagram: Meta is not allowing public access to oembed endpoints. You need to provide credentials of a valid Facebook App in order for this to work. In addition your facebook app also needs to undergo a review process for the Oembed Read permissions. See below for more information. 
+A note on Facebook and Instagram: Meta is not allowing public access to oembed endpoints. You need to provide credentials of a valid Facebook App in order for this to work. In addition your facebook app also needs to undergo a review process for the Oembed Read permissions. See below for more information.
 
 ## Server Configuration
 
@@ -164,7 +164,7 @@ module.exports = {
 
 ## Component
 
-The core Livingdocs oEmbed feature does not include a component, so you will need to create and register your own in your [document design]({{< ref "/reference-docs/document/document-design/#components" >}}).
+The core Livingdocs oEmbed feature does not include a component, so you will need to create and register your own in your [document design]({{< ref "/reference/document/document-design/#components" >}}).
 Careful: You will want to register only **one** component for all embeds since the `li-oembed-service` assumes a generic concept. If you for example do a component for tiktok and one for podigee both using the `li-oembed-service` then users would be able to insert podigee embeds in tiktok components and vice versa. This leads to data inconsitencies.
 If you want an embed component for a specific embed like e.g. datawrapper, consider doing an [include]({{< ref "/guides/documents/includes/twitter-embed/index.md" >}}) and providing a custom user interface such as a search modal to serach for datawrapper graphics from inside of Livingdocs.
 An example generic oEmbed component can be seen below. The important part is to use the `li-oembed-service` include service. You can then set your own label and icon, and style the placeholder. When the oEmbed provider returns valid HTML then it will directly replace the inner HTML of the element with the `doc-include` directive.
