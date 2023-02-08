@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Push-messages with `li-string-list` example](https://github.com/livingdocsIO/livingdocs-server/pull/5234)
 * [Fix transaction support for designs](https://github.com/livingdocsIO/livingdocs-server/pull/5235)
 * [Task enhancements - task card header](https://github.com/livingdocsIO/livingdocs-editor/pull/6289)
 * [Prevent item removed from multi-list editor from being re-added when sorting](https://github.com/livingdocsIO/livingdocs-editor/pull/6333)
