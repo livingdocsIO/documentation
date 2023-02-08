@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Plugin definition for `li-buy-in`](https://github.com/livingdocsIO/livingdocs-server/pull/5216)
 * [Metadata form for `li-buy-in` plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/6308)
 * [fix(supportCrops): false checker](https://github.com/livingdocsIO/livingdocs-editor/pull/6329)
 * [fix(supportsCrop): checks for false value](https://github.com/livingdocsIO/livingdocs-editor/pull/6326)
