@@ -282,6 +282,7 @@ Here is a list of all patches after the release has been announced.
 - [v208.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.3): fix(cli reencrypt): now uses correct stringify
 
 ### Livingdocs Editor Patches
+- [v87.5.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.46): fix(multilist): Prevent removed item from being re-added on sort
 - [v87.5.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.45): fix(supportCrops): false checker
 - [v87.5.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.44): fix(supportsCrop): checks for false value
 - [v87.5.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.43): fix(version): minor commit for version control
