@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Task enhancements - task card header](https://github.com/livingdocsIO/livingdocs-editor/pull/6289)
 * [Prevent item removed from multi-list editor from being re-added when sorting](https://github.com/livingdocsIO/livingdocs-editor/pull/6333)
 * [Plugin definition for `li-buy-in`](https://github.com/livingdocsIO/livingdocs-server/pull/5216)
 * [Metadata form for `li-buy-in` plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/6308)
