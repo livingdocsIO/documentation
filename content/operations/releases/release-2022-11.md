@@ -466,6 +466,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.66): fix(li-link-edit): Fix error logged in `triggerDigest()`
 - [v85.15.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.65): fix(multilist): Prevent removed item from being re-added on sort
 - [v85.15.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.64): fix(supportCrops): false checker
 - [v85.15.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.63): fix(supportsCrop): checks for false value
