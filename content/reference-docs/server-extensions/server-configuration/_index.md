@@ -570,6 +570,9 @@ documents: {
   paginationFindConfig: {
     default: 50, // default is the batch size
     limit: 100 // limit is the max
+  },
+  history: {
+    anonymizeAfter: '30 days'
   }
 }
 ```
@@ -580,6 +583,8 @@ The `paginationFindConfig` allows you to set how many documents you can see on t
 Defaults to max. 100 documents.
 
 The `enableConsumers` is the configuration used to enable/disable the publish control consumers. By default, they it will be enabled in server instances that define `roles: ['worker']` in server configuration.
+
+The `history.anonymizeAfter` setting is used to remove the traceability of certain persons work after a given amount of time. This requirement comes typically from the workers council that don't want that it is possible to trace back who did what over a long period of time. Technically, after the given time, no `user_id` is sent along with revision entities anymore and they are marked as "anonymized" in the UI. The time is a "milliseconds" string, meaning that you can type things like '30 days' or '5 minutes'.
 
 #### Document-lists
 
