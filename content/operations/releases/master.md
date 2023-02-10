@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Task enhancements - table dashboard task list](https://github.com/livingdocsIO/livingdocs-server/pull/5230)
 * [Improvement/pitch metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/6340)
 * [🚀 Lint Strict Mode](https://github.com/livingdocsIO/livingdocs-server/pull/5239)
 * [Task enhancements - table dashboard task list](https://github.com/livingdocsIO/livingdocs-editor/pull/6325)
