@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency open from 8.4.0 to v8.4.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6346)
 * [fix(deps): update dependency fastify from 4.12.0 to v4.13.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5250)
 * [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/5246)
 * [Example Server Buy-In Dashboard](https://github.com/livingdocsIO/livingdocs-server/pull/5233)
