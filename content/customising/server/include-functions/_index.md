@@ -81,7 +81,7 @@ module.exports = {
       // When options preview is true the request comes from a livingdocs
       // editor while a user is editing a document.
       const isPreview = options?.preview === true
-      
+
       // If you want to report back an include error to the UI, you can return HTML
       // return {html: `<div class="include-render-error"><h2>Maybe a typo?</h2><p>The document can't be found.</p></div>`}
 
@@ -176,15 +176,12 @@ module.exports = {
 
 The `uiComponents` array allows you to define a list of ui elements that are rendered in the sidebar upon selection of the `doc-include` (top to bottom). As you register your own component or helper provided by livingdocs, you have more choices but the development time increases as well.
 
-You can choose between 3 types of custom UI components.
+You can choose between 2 types of custom UI components.
 
 1. `vue-component`, sidebar user interface
 
 2. `iframe-modal`, as above user interface in a modal dialog but loaded as an iframe (e.g. if you want to implement your UI outside of Livingdocs)
 
-3. `angular-component`, sidebar user interface
-
-4. `angular-modal`, user interface in a modal dialog (if more space is required), button in the sidebar to open the modal
 
 ##### vue-component
 
@@ -239,48 +236,6 @@ const message = {
 // the 2nd parameter is the 'targetOrigin'. Set this to the origin of your Livingdocs Editor instance.
 window.parent.postMessage(message, "*");
 ```
-
-
-##### angular-component
-
-The `uiComponents` config for `angular-component` looks as follows:
-```js
-{
-  // required, fixed name
-  type: 'angular-component',
-  // required, displayed as a label in the sidebar
-  sidebarLabel: 'Foo Bar',
-  // required, the custom angular component to be rendered in the sidebar
-  // this custom component has to be registered in the editor and
-  // names must match
-  sidebarContentComponent: 'myIncludeSidebarComponent'
-}
-```
-
-The angular component `myIncludeSidebarComponent` is required to be registered in the editor. We explain [here]({{< ref "/reference/document/includes/editor-customization" >}}) how to do this.
-
-##### angular-modal
-
-The `uiComponents` config for `angular-modal` looks as follows:
-```js
-{
-  // required, fixed name
-  type: 'angular-modal',
-  // required, displayed as a label in the sidebar
-  sidebarLabel: 'Assign Teaser to content block',
-  // required, text for the button that opens the modal dialog
-  sidebarButton: 'Link Article',
-  // required, title in the modal dialog
-  modalTitle: 'Article Search',
-  // required, the custom angular component to be rendered in the modal dialog
-  // this custom component has to be registered in the editor and
-  // names must match
-  modalContentComponent: 'myIncludeModalComponent'
-}
-```
-
-Again, the angular component `myIncludeModalComponent` is required to be registered in the editor.
-
 
 ### Include rendering options
 
