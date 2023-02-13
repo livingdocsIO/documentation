@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Document Creation: Pass metadata to custom create function](https://github.com/livingdocsIO/livingdocs-server/pull/5232)
 * [Make buy-in comment optional](https://github.com/livingdocsIO/livingdocs-editor/pull/6349)
 * [fix(deps): update dependency pino from 8.8.0 to v8.10.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5251)
 * [fix(deps): update dependency open from 8.4.0 to v8.4.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6346)
