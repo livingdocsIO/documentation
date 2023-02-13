@@ -4,9 +4,7 @@ description: Register an include service to render teasers which can be edited o
 weight: 4
 ---
 
-With [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md) a new possibility to resolve includes is available. This feature is still somewhat experimental and some use cases are not covered yet.
-
-You can return Livingdocs Document JSON from an [include resolve function]({{< ref "./" >}}).
+With [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md) a new possibility to resolve includes is available. You can return Livingdocs Document JSON from an [include resolve function]({{< ref "./" >}}).
 If you mark the return value as editable, a user can overwrite the single directive values within the local document. These overwrites will be stored and sent to the include resolve function for consideration.
 This allows the implementation of an Editable Teaser workflow.
 
