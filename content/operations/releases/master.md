@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency ioredis from 5.3.0 to v5.3.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5252)
 * [Publish Control Import](https://github.com/livingdocsIO/livingdocs-server/pull/5253)
 * [fix(project publish): cannot have a baserevision of 0](https://github.com/livingdocsIO/livingdocs-server/pull/5210)
 * [Distribution planning table dashboard improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6352)
