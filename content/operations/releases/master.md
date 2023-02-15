@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Table Dashboard Add Distribution Cell](https://github.com/livingdocsIO/livingdocs-editor/pull/6357)
 * [Add patch method to documentProxy](https://github.com/livingdocsIO/livingdocs-editor/pull/6350)
 * [Document patching](https://github.com/livingdocsIO/livingdocs-server/pull/5231)
 * [Update dependencies to remove `taffydb` vulnerability](https://github.com/livingdocsIO/livingdocs-server/pull/5255)
