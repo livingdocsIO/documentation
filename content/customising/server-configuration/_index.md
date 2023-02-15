@@ -765,7 +765,7 @@ elasticIndex: {
   // Can also be modified removing `['worker']` role, which disables consumers
   enableConsumers: true
 
-  // If this option is configured, every index name will be prefixed.
+  // If this option is configured, the custom indexes and publication index name will be prefixed.
   // We advise to configure this in case you don't use credentials per environment (dev/stage/prod).
   // The indexes are created with the following pattern: `${indexNamePrefix}-${index.handle}-index`
   indexNamePrefix: 'your-company-local',
