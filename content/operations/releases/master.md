@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Update dependencies to remove `taffydb` vulnerability](https://github.com/livingdocsIO/livingdocs-server/pull/5255)
 * [Improvement/Publish Control Layout](https://github.com/livingdocsIO/livingdocs-editor/pull/6353)
 * [fix(deps): update dependency ioredis from 5.3.0 to v5.3.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5252)
 * [Publish Control Import](https://github.com/livingdocsIO/livingdocs-server/pull/5253)
