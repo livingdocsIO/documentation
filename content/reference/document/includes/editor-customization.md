@@ -5,10 +5,8 @@ menus:
     parent: Includes
 ---
 
-In order to provide a custom User Interface for your includes, you can register custom Vue or AngularJS components.
+In order to provide a custom User Interface for your includes, you can register custom Vue components.
 Another option is to configure an iframe that you serve from any webserver.
-
-The possibility to use AngularJS will be phased out in the future. If you are doing something new, use Vue.
 
 In order to actually render content, you need to configure the server to do so, [see here]({{< ref "/customising/server/include-functions" >}}) how that works.
 
