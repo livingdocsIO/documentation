@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use the planning system enabled state from server configuration](https://github.com/livingdocsIO/livingdocs-editor/pull/6359)
 * [fix(buy-in): wording adjustment](https://github.com/livingdocsIO/livingdocs-editor/pull/6358)
 * [Table Dashboard Add Distribution Cell](https://github.com/livingdocsIO/livingdocs-editor/pull/6357)
 * [Add patch method to documentProxy](https://github.com/livingdocsIO/livingdocs-editor/pull/6350)
