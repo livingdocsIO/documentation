@@ -26,7 +26,7 @@ Examples when a `version bump` is the right choice:
 - changes in the design's wrapper or any of the layout's wrappers
 - changes in the assets of a design
 - adding a new directive to a component (will be empty)
-- adding a new layout
+- adding a new Content Type
 - moving a directive from one HTML tag to another in the same component
 - removing or adding a `doc-optional` directive (`doc-optional` is never breaking)
 - removing or changing a component property on a component (will be silently ignored)
@@ -102,50 +102,6 @@ Once you started a migration, it will run for all your documents (in the same pr
 #### Report: not_applied_documents
 
 Documents can't be migrated when they are actively edited by users. Therefore a report after the end of a migration shows `not_applied_documents`. These document have to be migrated again until no user is actively editing the documents.
-
-
-## Example: Use Livingdocs Server for a data migration
-
-If you need more data for a data migration, it's sometimes necessary to require the Livingdocs Server in a migration.
-
-In this example we will first require and then initialise the Livingdocs Server. After this is done, you can continue with your migrations and change the needed data.
-
-
-```js
-// file: app/data-migrations/use-server-for-migration.js
-
-// When you need the livingdocs server, you can require the server here
-const liServer = require('../server')
-let initialized
-
-//  systemdata:
-//    document_id: 1
-//    content_type: 'regular'
-module.exports = {
-  async migrateAsync ({serializedLivingdoc, metadata, systemdata}) {
-
-    // initialisation of the livingdocs server
-    if (!initialized) {
-      await liServer.initialize()
-      initialized = true
-    }
-
-    // Load the necessary data via livingdocs server
-    const documentApi = liServer.features.api('li-documents').document
-    const draft = await documentApi.getLatestDocument(systemdata.document_id)
-
-    // Make your wanted changes in 'serializedLivingdoc' and 'metadata'
-    // ...
-
-    // commit the revision migration, e.g.
-    //   return {metadata, serializedLivingdoc}
-    //   return {serializedLivingdoc}
-    //   return {metadata}
-    return {metadata}
-  }
-}
-```
-
 
 ## Performance of Migrations
 
