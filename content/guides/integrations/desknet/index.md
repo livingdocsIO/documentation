@@ -28,11 +28,10 @@ weight: 1
 
 - Make sure you are in the project you want to connect with Desk-Net
 - In the main project menu select "Project Admin"
-- Then select "Api Tokens" in the left menu
-- Click the "Add API Token" button on the right
-- Enter a descriptive name, provide permission for desk-net integration API access, and click the "Create Token" button:
-{{< img src="desknet-token.png" alt="Create API Token" >}}
-- In the list of tokens, select "Show" for your newly created token, then copy the token to your clipboard, we're going to use it in a minute
+- Then select "Api Clients" in the left menu
+- Click the "Add API Client" button on the right
+- Enter a descriptive name, provide permission for desk-net integration API access, and click the "Create" button
+- The token will be displayed in the table, copy it and save it in a safe place, we will use it later. Please note that the token will not be displayed again after you leave the page
 
 #### 2. Setup integration in Desk-Net
 
