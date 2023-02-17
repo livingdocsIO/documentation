@@ -429,6 +429,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.39): fix(deps): update dependency ua-parser-js from 1.0.32 to v1.0.33
 - [v200.3.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.38): fix(designs): Fix transaction support
 - [v200.3.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.37): fix(scheduled-publishing): Coerce schedule dates to a proper iso date with time zone
 - [v200.3.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.36): fix(local-authentication): Make the current_password validation more strict
