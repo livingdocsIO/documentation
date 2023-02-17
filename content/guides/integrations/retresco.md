@@ -111,3 +111,19 @@ The Retresco entities will be stored in the document's metadata using the metada
   ]
 }
 ```
+
+## Re-enrich Documents
+
+If you want to use the re-enrich feature from Retresco, you will need to configure the webhook and token in Retresco's website.
+
+The Livingdocs webhook URL is `https://<livingdocs-server>/api/v1/retresco/re-enrich`. The token can be obtained by a project administrator user in the Livingdocs Editor following the steps below:
+
+- Make sure you are in the project you want to enable the Retresco hook
+- In the main project menu select "Project Admin"
+- Then select "Api Clients" in the left menu
+- Click the "Add API Client" button on the right
+- Define desired expiration date from the dropdown
+- Enter a descriptive name, provide permission for retresco hook access, and click the "Create" button
+- The token will be displayed in the table, copy it and save it in a safe place, you will have to use it on Retresco's website. Please note that the token will not be displayed again after you leave the page
+
+The webhook will be called by Retresco when the user modifies entities that apply to one or multiple documents. The webhook will generate a job queue that will handle document enrichment and update the metadata asynchronously.
