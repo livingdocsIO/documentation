@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency karma-sourcemap-loader from 0.3.8 to ^0.4.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6348)
 * [Improve distributions navigation](https://github.com/livingdocsIO/livingdocs-server/pull/5258)
 * [Improve distributions navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/6354)
 * [fix(table dashboard): Best date](https://github.com/livingdocsIO/livingdocs-editor/pull/6368)
