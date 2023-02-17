@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Feat/Bundle Actions](https://github.com/livingdocsIO/livingdocs-editor/pull/6361)
 * [Provide channels in document dashboards compilation for toolbar action](https://github.com/livingdocsIO/livingdocs-editor/pull/6362)
 * [Use the planning system enabled state from server configuration](https://github.com/livingdocsIO/livingdocs-editor/pull/6359)
 * [fix(buy-in): wording adjustment](https://github.com/livingdocsIO/livingdocs-editor/pull/6358)
