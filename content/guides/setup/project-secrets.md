@@ -76,5 +76,5 @@ The `kid` attribute is used to find the correct decryption key for a certain val
 After the new encryption key is configured and deployed everywhere, you can reencrypt the secrets using:
 
 ```bash
-$ livingdocs-server secret-reeencrypt
+$ livingdocs-server secret-reencrypt
 ```
