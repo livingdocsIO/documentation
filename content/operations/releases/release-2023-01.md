@@ -261,6 +261,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.23): fix(security): Update `undici` module to latest non-vulnerable version
 - [v208.3.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.22): fix(designs): Fix transaction support
 - [v208.3.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.21): fix(scheduled-publishing): Coerce schedule dates to a proper iso date with time zone
 - [v208.3.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.20): fix(local-authentication): Make the current_password validation more strict
