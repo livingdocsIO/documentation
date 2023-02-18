@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency ws from 8.12.0 to v8.12.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5274)
 * [fix(deps): update dependency @opentelemetry/instrumentation-dns from 0.31.1 to v0.31.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5271)
 * [Update `undici` module to latest non-vulnerable version](https://github.com/livingdocsIO/livingdocs-server/pull/5261)
 * [chore(deps): update dependency karma-sourcemap-loader from 0.3.8 to ^0.4.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6348)
