@@ -216,7 +216,7 @@ Here is sample code in JavaScript to validate the signature in your endpoint:
 
 ```js
 // set payload to the body received with the request to your endpoint
-const payload = request.body
+const payload = JSON.stringify(request.body)
 const signature = request.headers['x-livingdocs-signature']
 
 // secret needs to be the same you configured with the webhook in livingdocs
