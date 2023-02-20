@@ -40,7 +40,7 @@ POST api/v1/import/documents
 |systemName|string|x|Identifier for the system you are importing from, e.g. an archive|
 |webhook|uri||Endpoint at the importing system that gets notified by POST when import job is done. Notification contains the id of the import job, the state and an overview.|
 |context|object||An object that is passed as context in the body of the request to the webhook. Limited to 8192 Bytes.|
-|documents|array|x|An array of documents to import. Each entry is an object with the following keys:<br><br>**id:** a unique id (stored as externalId in Livingdocs) that identifies the document on your end, must be unique within your project.<br>**title:** the title that the document should get in livingdocs<br>**checksum:** string to identify changes, e.g. an updated_at timestamp<br>**contentType:** the content type that the document should get in livingdocs<br>**publicationDate:** sets the date of a publication. 'autoPublish' flag must be set for this to have an effect.<br>**content:** An array of livingdocs components, must conform to your channel-config otherwise throws a validation error<br>**design:** An object with `name` and `version`. <br>`release-2022-07`: if no design is set it takes the design of the Project Config<br>**livingdoc:** An object with `content` and `design` documented above.<br>Deprecated in `release-2023-03`<br>**metadata:** An object of metadata, must conform to your channel-config otherwise throws a validation error<br>**translations:** An object of translations<br>**flags:** (optional) define additional import logic:<br>`autoPublish`: publishes imported documents immediately<br>`unpublish`: unpublishes imported documents immediately (release-2022-07)<br>`onlyOverwriteUntouched`: only update documents that have no manual changes in livingdocs<br>`neverOverwrite`: never update documents through the import API|
+|documents|array|x|An array of documents to import. Each entry is an object with the following keys:<br><br>**id:** a unique id (stored as externalId in Livingdocs) that identifies the document on your end, must be unique within your project.<br>**title:** the title that the document should get in livingdocs<br>**checksum:** string to identify changes, e.g. an updated_at timestamp<br>**contentType:** the content type that the document should get in livingdocs<br>**publicationDate:** (optional) sets the date of a publication. 'autoPublish' flag must be set for this to have an effect.<br>**content:** (optional) An array of livingdocs components, must conform to your channel-config otherwise throws a validation error<br>**design:** (optional) An object with `name` and `version`. <br>`release-2022-07`: if no design is set it takes the design of the Project Config<br>**metadata:** (optional) An object of metadata, must conform to your channel-config otherwise throws a validation error<br>**translations:** (optional) An object of translations<br>**flags:** (optional) define additional import logic:<br>`autoPublish`: publishes imported documents immediately<br>`unpublish`: unpublishes imported documents immediately (release-2022-07)<br>`onlyOverwriteUntouched`: only update documents that have no manual changes in livingdocs<br>`neverOverwrite`: never update documents through the import API|
 
 #### Example Request
 ```js
@@ -57,21 +57,19 @@ POST api/v1/import/documents
       "contentType": "article",
       "checksum": "xyz456",
       "publicationDate": "1999-03-18T17:27:00.107Z",
-      "livingdoc": {
-        "content": [
-          {
-            "identifier": "header",
-            "content": {
-              "catchline": "imported catchline",
-              "title": "imported title",
-              "author": "imported author"
-            }
+      "content": [
+        {
+          "identifier": "header",
+          "content": {
+            "catchline": "imported catchline",
+            "title": "imported title",
+            "author": "imported author"
           }
-        ],
-        "design": {
-          "name": "living-times",
-          "version": "1.0.1"
         }
+      ],
+      "design": {
+        "name": "living-times",
+        "version": "1.0.1"
       },
       "metadata": {
         "description": "foo"
