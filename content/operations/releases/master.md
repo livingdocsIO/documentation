@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Implement li-distribution-schedule metadata plugin](https://github.com/livingdocsIO/livingdocs-server/pull/5283)
 * [Fix: Correctly apply url stored filter state on dashboard load](https://github.com/livingdocsIO/livingdocs-editor/pull/6365)
 * [Fix duplicate webhook errors, acknowledge jobs on conflict](https://github.com/livingdocsIO/livingdocs-server/pull/5284)
 * [fix(deps): update dependency lru-cache from 7.14.1 to v7.16.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5281)
