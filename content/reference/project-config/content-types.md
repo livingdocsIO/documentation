@@ -233,6 +233,8 @@ Defines a HTML string that wraps the document when used in the editor. Use the c
 
 The example above would put a padding of 20px on documents in the editor to give some space on the sides.
 
+The editor wrapper holds all other content and serves as the overarching container for all components, so no content can be dropped outside of this wrapper.
+
 ## Metadata
 
 Metadata can be freely configured for each content-type. An article might have different metadata fields than an image gallery.
