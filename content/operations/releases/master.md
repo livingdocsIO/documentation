@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Feat/Context Menu](https://github.com/livingdocsIO/livingdocs-editor/pull/6366)
 * [Distribution Channels: Types](https://github.com/livingdocsIO/livingdocs-server/pull/5257)
 * [Team system plugin copy improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6376)
 * [fix(deps): update dependency @livingdocs/framework from 24.10.1 to v24.11.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6345)
