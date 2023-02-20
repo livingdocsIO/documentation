@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Team system plugin copy improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6376)
 * [fix(deps): update dependency @livingdocs/framework from 24.10.1 to v24.11.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6345)
 * [Team improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6373)
 * [fix(deps): update dependency dataloader from 2.2.1 to v2.2.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6369)
