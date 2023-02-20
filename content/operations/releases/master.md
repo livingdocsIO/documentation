@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Team improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6373)
 * [fix(deps): update dependency dataloader from 2.2.1 to v2.2.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6369)
 * [fix(deps): update dependency monaco-editor-webpack-plugin from 4.2.0 to v7 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/5576)
 * [Implement li-distribution-schedule metadata plugin](https://github.com/livingdocsIO/livingdocs-server/pull/5283)
