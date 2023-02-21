@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix date range on occupation screen](https://github.com/livingdocsIO/livingdocs-editor/pull/6385)
 * [fix(dialogs): don't close on mousedown within and mouseup outside dialog in chromium](https://github.com/livingdocsIO/livingdocs-editor/pull/6384)
 * [Real-time distribution planning updates](https://github.com/livingdocsIO/livingdocs-editor/pull/6371)
 * [Fix table dashboard not resizing when window width changes](https://github.com/livingdocsIO/livingdocs-editor/pull/6381)
