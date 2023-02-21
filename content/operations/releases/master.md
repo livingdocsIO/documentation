@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Improvement/Publish Control](https://github.com/livingdocsIO/livingdocs-editor/pull/6377)
 * [Fix date range on occupation screen](https://github.com/livingdocsIO/livingdocs-editor/pull/6385)
 
 
