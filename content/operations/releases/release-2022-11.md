@@ -429,6 +429,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.42): fix(indexing): Always pass the contentTypeId used for indexing filtering
 - [v200.3.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.41): fix(webhooks): Acknowledge and delete duplicated webhook requests
 - [v200.3.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.40): fix(security): Update `taffydb` modules to latest non-vulnerable version
 - [v200.3.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.39): fix(deps): update dependency ua-parser-js from 1.0.32 to v1.0.33
