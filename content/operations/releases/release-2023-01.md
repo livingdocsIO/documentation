@@ -261,6 +261,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.27): fix(indexing): Always pass the contentTypeId used for indexing filtering
 - [v208.3.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.26): fix(webhooks): Acknowledge and delete duplicated webhook requests
 - [v208.3.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.25): fix(security): Update `taffydb` modules to latest non-vulnerable version
 - [v208.3.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.24): fix(deps): update dependency ua-parser-js from 1.0.32 to v1.0.33
