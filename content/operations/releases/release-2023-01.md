@@ -287,6 +287,7 @@ Here is a list of all patches after the release has been announced.
 - [v208.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.3): fix(cli reencrypt): now uses correct stringify
 
 ### Livingdocs Editor Patches
+- [v87.5.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.49): chore(drone): Disable Bluewin pipeline
 - [v87.5.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.48): fix(dashboard-reload): persist current result list
 - [v87.5.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.47): fix(li-link-edit): Fix error logged in `triggerDigest()`
 - [v87.5.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.46): fix(multilist): Prevent removed item from being re-added on sort
