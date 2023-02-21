@@ -169,22 +169,18 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ### Suggested
 
+TODO
+
 ### Minimal
+
+TODO
 
 
 ## Highlights
 
-### API Consumer Management
-
-With the new API Consumer Management feature you are now able to manage the lifecycle for tokens, e.g.
-- manage token rotation
-- manage token suspension
-- manage token expiration
-
-* [Editor: API Consumer Management](https://github.com/livingdocsIO/livingdocs-editor/pull/6243)
-
 ### Homescreen
 
+* [Documentation](TODO)
 * [Server: Dashboard Sources](https://github.com/livingdocsIO/livingdocs-server/pull/5016)
 * [Home Screen Example Config](https://github.com/livingdocsIO/livingdocs-server/pull/5020)
 
@@ -194,48 +190,63 @@ With the new API Consumer Management feature you are now able to manage the life
 TODO: Description
 TODO: find out to what feature this PR belongs.
 
-* [Documentation]()
+* [Documentation](TODO)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/5000)
 
 ### Distribution Planning
 
 TODO: Description
 
-* [Documentation]()
+* [Documentation](TODO)
 * [PR: Editor Part I](https://github.com/livingdocsIO/livingdocs-editor/pull/6077)
 
-### i18n - Editor available in German
-
-TODO: description
-
-### Synced Table Dashboards
-
-TODO: description
 
 ### Planning System
 
-Metadata Fields
-- li-etc (planning system)
-- li-buy-in (planning system)
-
 Tasks feature enhancements
+Distribution Planning
 
+* [Documentation](TODO)
 * [Server: Document Transform Functions](https://github.com/livingdocsIO/livingdocs-server/pull/5010)
 * [Create and transform UI](https://github.com/livingdocsIO/livingdocs-editor/pull/6060)
 * [Distribution Channel Groups and Navigation Component](https://github.com/livingdocsIO/livingdocs-editor/pull/6230)
+* [Metadata Plugin: li-estimated-time-of-completion](https://github.com/livingdocsIO/livingdocs-server/pull/5176)
+* [Metadata Plugin: li-buy-in](https://github.com/livingdocsIO/livingdocs-editor/pull/6308)
+* [Metadata Plugin: li-integer - dataProvider support](TODO)
+* [Distribution Planning: Table Cells](https://github.com/livingdocsIO/livingdocs-editor/pull/6303)
+* [Table Dashboard Cell: Buy-In](https://github.com/livingdocsIO/livingdocs-editor/pull/6332)
+* [Table Dashboard Cell: Distribution](https://github.com/livingdocsIO/livingdocs-editor/pull/6357)
 
+### API Consumer Management
+
+With the new API Consumer Management feature you are now able to manage the lifecycle for tokens, e.g.
+- manage token rotation
+- manage token suspension
+- manage token expiration
+
+* [Documentation](TODO)
+* [Design](https://github.com/livingdocsIO/livingdocs-editor/pull/6254)
+* [Editor: API Consumer Management](https://github.com/livingdocsIO/livingdocs-editor/pull/6243)
+* [Server: API Consumer Management](https://github.com/livingdocsIO/livingdocs-server/pull/5170)
 
 
 ### Metadata Plugin li-team
 
+* [Documentation](TODO)
 * [li-team: add li-team config schema and validation](https://github.com/livingdocsIO/livingdocs-server/pull/4974)
 * [li-team: add li-meta-team plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/6024)
 
-### Microsoft Teams Integration
 
-TODO: Is this a highlight? Is the feature ready? Is the feature documented?
+### Anonymize User History
 
-* [Microsoft Teams Integration](https://github.com/livingdocsIO/livingdocs-server/pull/4408)
+TODO: Description
+
+* [Documentation](TODO)
+
+
+
+
+
 
 ## Breaking Changes :fire:
 
@@ -292,6 +303,23 @@ The Editor Config `appConfig.app.sidePanelItems` is removed, move the config to 
 
 References: [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6153)
 
+### Document Revision Creation
+
+Previously we created a new revision for document updates when any of the following conditions were true:
+- First change after publication
+- User did not make the previous change
+- Revision is over 15 minutes old
+- Revision has not been updated for over 2 minutes
+
+:fire: The rules above still apply, but only when revision data has changed. Changes to `Document Title`, `System Metadata`and `Publish Control` data will not create a new revision.
+
+References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5231)
+
+
+
+
+
+
 
 ## Deprecations
 
@@ -315,21 +343,87 @@ Breaking Change: not defined yet
 References: [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6136)
 
 
+# Public API - Project Endpoints
+
+- Deprecate `/api/v1/project` -> use `/api/v1/projectConfig` instead
+- Deprecate `/api/v1/channels` -> use `/api/v1/projectConfig` instead
+- Deprecate `/api/v1/channels/:channelHandle` -> use `/api/v1/projectConfig` instead
+
+Breaking Change: `release-2023-11`
+
+References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/5178)
+
+
+
+
+
+
 ## APIs :gift:
+
+### Import API - Payload
+
+:gift: Make `content` and `metadata` optional in payload -> easier to handle `Data Records` with that.
+Pass `content` and `design` on the top level of a document payload instead in a livingdoc
+
+```js
+{
+  "systemName": "identifier-for-your-system",
+  ...
+  "documents": [
+    {
+      "title": "test import",
+      ...
+      // before, deprecated
+      "livingdoc": {
+        "content": [ ... ],
+        "design": {
+          "name": "living-times",
+          "version": "1.0.1"
+        }
+      },
+      // now
+      "content": [ ... ],
+      "design": {
+        "name": "living-times",
+        "version": "1.0.1"
+      }
+    }
+  ]
+}
+```
+
+* [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/5172)
+
+
+### Import API - Publish Control
+
+TODO
+
+* [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/5253)
+
+
+
+
 
 ## Other Changes
 
-### Security
-
-### Design
-
 ### Features
+
+* [Table Dashboard Cell for Task List](https://github.com/livingdocsIO/livingdocs-editor/pull/6325)
+* [Anonymized History after some time](https://github.com/livingdocsIO/livingdocs-editor/pull/6284)
+* [rel='sponsored' can be added to a HTML link in Text Formatting Toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/6245)
+* [Extend Focal Point Handling](https://github.com/livingdocsIO/livingdocs-editor/pull/6355)
 
 ### Improvements
 * [Improve synchronisation of remote metadata changes](https://github.com/livingdocsIO/livingdocs-editor/pull/5861)
 * [Metadata: li-integer supports dataProvider](https://github.com/livingdocsIO/livingdocs-editor/pull/6124)
+* [Project Config: Prevent duplicate declarations](https://github.com/livingdocsIO/livingdocs-server/pull/5215)
+* [Support custom date formats in legacy elasticsearch mapping](https://github.com/livingdocsIO/livingdocs-server/pull/5190)
 
 ### Bugfixes
+* [Do not send new device emails for archived users](https://github.com/livingdocsIO/livingdocs-server/pull/5179)
+* [DisplayFilters: correctly apply url stored state again on reload](https://github.com/livingdocsIO/livingdocs-editor/pull/6365)
+* [doc-link: Iframely directive prefill fixed](https://github.com/livingdocsIO/livingdocs-editor/pull/6291)
 
 
 ## Patches
