@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix table dashboard not resizing when window width changes](https://github.com/livingdocsIO/livingdocs-editor/pull/6381)
 * [Angular Display Filters (temporarily for NZZ)](https://github.com/livingdocsIO/livingdocs-editor/pull/6324)
 * [Handle publication days in distribution planning navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/6364)
 * [Remove clock icon in distribution table cell](https://github.com/livingdocsIO/livingdocs-editor/pull/6378)
