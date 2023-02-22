@@ -315,6 +315,7 @@ TODO
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.2): fix(retresco): Fix reported error while the tests run. Use a blocking Redis connection in tests
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
