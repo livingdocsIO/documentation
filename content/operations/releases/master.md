@@ -330,76 +330,9 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
-- [v208.3.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.26): fix(webhooks): Acknowledge and delete duplicated webhook requests
-- [v208.3.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.25): fix(security): Update `taffydb` modules to latest non-vulnerable version
-- [v208.3.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.24): fix(deps): update dependency ua-parser-js from 1.0.32 to v1.0.33
-- [v208.3.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.23): fix(security): Update `undici` module to latest non-vulnerable version
-- [v208.3.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.22): fix(designs): Fix transaction support
-- [v208.3.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.21): fix(scheduled-publishing): Coerce schedule dates to a proper iso date with time zone
-- [v208.3.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.20): fix(local-authentication): Make the current_password validation more strict
-- [v208.3.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.19): fix(public-api): Fix `mutating` property on route declaration of composition api
-- [v208.3.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.18): fix(search): Support custom date format dd.MM.yyyy in legacy elasticsearch mappings
-- [v208.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.17): fix: extend test for filtering unknown components when nested default content is defined in the contentType
-- [v208.3.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.16): fix(public-api): Fix `Cannot set headers after they are sent to the client` error on `POST /api/v1/import/mediaLibrary`
-- [v208.3.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.15): fix: check documentType delete permissions
-- [v208.3.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.14): fix(import): Ignore duplicate import webhook delivery report error
-- [v208.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.13): fix(date-filter): Do not match a date as date range
-- [v208.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.12): fix(date-filter): Use a more strict date, boolean and date range parsing
-- [v208.3.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.11): fix(date-filter): use correct key
-- [v208.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.10): fix(comyan): expose api
-- [v208.3.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.9): fix(homeScreen): add dashboardTitle config
-- [v208.3.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.8): test(image-processing): Add a timeout to the extractHeader tests and use a larger file
-- [v208.3.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.7): fix: add test for id range parameter for PublicationEvents
-- [v208.3.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.6): fix(desknet): Prevent empty userId from Desk-Net
-- [v208.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.5): chore: Fix DocumentEntity save tests that use the documents repo
-- [v208.3.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.4): test: Simplify the tests
-- [v208.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.3): fix(cli reencrypt): now uses correct stringify
 
 ### Livingdocs Editor Patches
-- [v87.5.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.48): fix(dashboard-reload): persist current result list
-- [v87.5.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.47): fix(li-link-edit): Fix error logged in `triggerDigest()`
-- [v87.5.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.46): fix(multilist): Prevent removed item from being re-added on sort
-- [v87.5.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.45): fix(supportCrops): false checker
-- [v87.5.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.44): fix(supportsCrop): checks for false value
-- [v87.5.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.43): fix(version): minor commit for version control
-- [v87.5.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.42): fix(scheduled-publishing): Send iso dates with timestamp to the server
-- [v87.5.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.41): fix: make builds feedback more visible
-- [v87.5.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.40): fix(deps): bump ua-parser-js from 0.7.32 to 0.7.33
-- [v87.5.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.39): fix(focalPoint): avoid creating empty object as focal point
-- [v87.5.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.38): fix(document reference): Class typo
-- [v87.5.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.37): fix: Replace jsonwebtoken with jose
-- [v87.5.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.36): fix(images): do not auto-update images for includes
-- [v87.5.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.35): fix(li-date-time-range-filter): prevent filter dropdown to be cut off
-- [v87.5.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.34): chore(soft lock): no helper function, better lock check
-- [v87.5.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.33): fix(basePath): Always load webpack assets with the absolute path
-- [v87.5.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.32): fix(deps): update dependency fastify from 4.9.2 to 4.10.2 [security]
-- [v87.5.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.31): fix(security): Applies all security patches that do not have the patch in a breaking version
-- [v87.5.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.30): fix: show configured style of li-document-reference in creation flow dialogs and includes
-- [v87.5.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.29): fix(security): Upgrade `socket.io` to fix critical vulnerability
-- [v87.5.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.28): fix(security): Upgrade `resolve-url-loader` to fix `loader-utils` critical vulnerability
-- [v87.5.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.27): fix: detect media changes by asset.key
-- [v87.5.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.26): fix(upload): handle unsupported images in browser
-- [v87.5.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.25): fix(comyan): remove unsupported config from the ui
-- [v87.5.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.24): fix(document lists): Code removed
-- [v87.5.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.23): fix(homeScreen): use unique key to loop over home screen dashboards
-- [v87.5.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.22): fix(metadata): Wrap document references in default list
-- [v87.5.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.21): chore(li-link-edit): tests added
-- [v87.5.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.20): fix(namedCrops): Delete button works correctly
-- [v87.5.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.19): fix: add system user for empty userid
-- [v87.5.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.18): fix(home screen): return to home screen with back button from article if opened from home screen
-- [v87.5.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.17): fix(metadata): Always pass focalPoint when initialising image cropper
-- [v87.5.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.16): fix(filters): deprecate list and angular component custom filters
-- [v87.5.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.15): fix(deps): update dependency moment-timezone from 0.5.34 to 0.5.35 [security]
-- [v87.5.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.14): fix(medialibrary): Fix error where uploading images by restricted user would fail
-- [v87.5.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.13): fix(autosave): Add scheduled save when autosave.stopped
-- [v87.5.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.12): fix(search): Fix load more button translation for list search
-- [v87.5.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.11): fix(inlineListEditor): Only publishable when dirty
-- [v87.5.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.10): fix(dateTimevalidity): Does not error without 'to' date
-- [v87.5.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.9): fix(metadata): Change calculation for li-text input height
-- [v87.5.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.8): fix(li-document-creation-flow-button): null-safe access to `documentCreationFlow`
-- [v87.5.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.7): fix: change to selected service on copy
-- [v87.5.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.6): fix(document-lists): Update German translation for "Close"
-- [v87.5.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.5): fix(loader): added and styled for translation card
+
 
   ---
   **Icon Legend**
