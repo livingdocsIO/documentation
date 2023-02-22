@@ -1,9 +1,20 @@
 {
     "master": {
-        "id": 1,
         "key": "master",
-        "name": "March 2023",
+        "name": "May 2023",
         "ref": "/operations/releases/master.md",
+        "upcoming": true,
+        "current": false,
+        "maintained": false,
+        "legacy": false,
+        "sortId": 37,
+        "editorVersion": "v90.34.0",
+        "serverVersion": "v213.7.0"
+    },
+    "release-2023-03": {
+        "key": "release-2023-03",
+        "name": "March 2023",
+        "ref": "/operations/releases/release-2023-03.md",
         "upcoming": true,
         "current": false,
         "maintained": false,
@@ -13,7 +24,6 @@
         "serverVersion": "v213.7.1"
     },
     "release-2023-01": {
-        "id": 1,
         "key": "release-2023-01",
         "name": "January 2023",
         "ref": "/operations/releases/release-2023-01.md",
@@ -26,7 +36,6 @@
         "serverVersion": "v208.3.27"
     },
     "release-2022-11": {
-        "id": 1,
         "key": "release-2022-11",
         "name": "November 2022",
         "ref": "/operations/releases/release-2022-11.md",
