@@ -5,7 +5,6 @@ description: Release notes for release-2023-05
 excludeFromSearch: true
 hideSectionTeaser: true
 aliases:
-  - /operations/releases/master
   - /operations/releases/release-2023-05/
   - /operations/releases/release-2023-05/release-2023-05/
 ---
