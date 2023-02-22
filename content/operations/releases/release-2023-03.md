@@ -303,6 +303,7 @@ TODO
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.7.222](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.7.222): fix(retresco): Fix reported error while the tests run. Use a blocking Redis connection in tests
 - [v213.7.104](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.7.104): fix(retresco): Fix reported error while the tests run. Use a blocking Redis connection in tests
 - [v213.7.102](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.7.102): fix(retresco): Fix reported error while the tests run. Use a blocking Redis connection in tests
 - [v213.7.100](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.7.100): fix(retresco): Fix reported error while the tests run. Use a blocking Redis connection in tests
