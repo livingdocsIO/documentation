@@ -29,6 +29,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Set defaultBranch to upstream-release-2023-05](https://github.com/livingdocsIO/livingdocs-server/pull/5296)
 * [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/6391)
 * [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/5295)
 * [fix(deps): update dependency resolve-url-loader from 3.1.5 to v5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/5577)
