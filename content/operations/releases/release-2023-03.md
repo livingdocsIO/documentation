@@ -307,6 +307,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v90.33.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.6): fix(drag-and-drop): Fix issue where drag-and-drop from the SVG starting in the clipboard would result in an error
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v??.?.?): text
 
   ---
