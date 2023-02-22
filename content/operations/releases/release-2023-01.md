@@ -288,6 +288,7 @@ Here is a list of all patches after the release has been announced.
 - [v208.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.3): fix(cli reencrypt): now uses correct stringify
 
 ### Livingdocs Editor Patches
+- [v87.5.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.51): fix(drag-and-drop): Fix issue where drag-and-drop from the SVG starting in the clipboard would result in an error
 - [v87.5.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.50): fix(deps): update dependency fastify
 - [v87.5.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.49): chore(drone): Disable Bluewin pipeline
 - [v87.5.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.48): fix(dashboard-reload): persist current result list
