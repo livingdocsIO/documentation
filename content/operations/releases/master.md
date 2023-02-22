@@ -29,15 +29,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* [Set defaultBranch to upstream-release-2023-05](https://github.com/livingdocsIO/livingdocs-editor/pull/6392)
-* [Set defaultBranch to upstream-release-2023-05](https://github.com/livingdocsIO/livingdocs-server/pull/5296)
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/6391)
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/5295)
-* [fix(deps): update dependency resolve-url-loader from 3.1.5 to v5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/5577)
-* [Fix contentTypeId parameter for live indexing](https://github.com/livingdocsIO/livingdocs-server/pull/5291)
-* [Retresco retagging hook](https://github.com/livingdocsIO/livingdocs-server/pull/5254)
-* [Improvement/Publish Control](https://github.com/livingdocsIO/livingdocs-editor/pull/6377)
-* [Fix date range on occupation screen](https://github.com/livingdocsIO/livingdocs-editor/pull/6385)
 
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -163,6 +154,14 @@ Remove the server config property `mediaLibrary.images.processingStrategy`.
 
 References:
 * [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/5095)
+
+
+### Do not support running the core tests in a downstream editor :fire:
+
+:fire: Remove testing core editor tests from a downstream with `npm explore @livingdocs/editor -- npm test`
+:fire: If you copied the testing setup of Livingdocs, you have to add `"angular-mocks": "^1.8.3"` in your `devDependencies`.
+
+Another recommended cleanup step is to move all `chai`, `mocha`, `karma` and `sinon` packages from `dependencies` to `devDependencies`
 
 
 ### Remove Dashboard Display Filters :fire:
