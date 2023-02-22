@@ -36,6 +36,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [Fix retresco reported error that appears on tests](https://github.com/livingdocsIO/livingdocs-server/pull/5294)
 * [Fix retresco reported error that appears on tests](https://github.com/livingdocsIO/livingdocs-server/pull/5294)
 * [Fix retresco reported error that appears on tests](https://github.com/livingdocsIO/livingdocs-server/pull/5294)
+* [Fix retresco reported error that appears on tests](https://github.com/livingdocsIO/livingdocs-server/pull/5294)
 * [fix: link to public api documentation in api clients page](https://github.com/livingdocsIO/livingdocs-editor/pull/6399)
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
