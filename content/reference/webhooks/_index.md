@@ -6,61 +6,36 @@ menus:
     weight: 4
 ---
 
-Webhooks are registered HTTP endpoints that are called on specific events.
-You can configure multiple webhooks that are called on only one or multiple events.
-
-## List of Available Hooks
-
-- `document.publish`
-- `document.unpublish`
-- `document.update`
-- `document.build`
-- `mediaLibraryEntry.create`
-- `mediaLibraryEntry.archive`
-- `mediaLibraryEntry.update`
-- `mediaLibraryEntry.revoke`
+A Webhook notifies another system via a HTTP POST request about a change in Livingdocs, e.g. when a document has been published. You can configure multiple Webhooks that are called on only one or multiple events.
 
 ## Configuration
 
-The feature is enabled by default, you can disable it in your [server configuration]({{< ref "/customising/server-configuration#webhooks" >}}).
+The Webhooks feature is enabled by default, but can get disabled via [Server Configuration]({{< ref "/customising/server-configuration#webhooks" >}}).
 
-In the project menu, select "Project Setup", then select "Webhooks" in the "Configuration" section of the menu. You can activate/deactivate all your configured webhooks using the setting "deliver webhooks on events".
-
-{{< img src="./webhooks.png" alt="Webhooks Configuration" >}}
-
-Add a new Webhook by clicking "Add Webhook" or edit an existing one by clicking on it's entry in the list. This shows a form to configure the webhook.
-
-- `handle` needs to be unique on your project
-- `label` is used for UI only
-- `description` is only visible in this form and can be used to document the reason for this webhook or other humans to talk to for questions about the endpoint
-- `url` will be called with a POST request when a selected event happens
-- `secret` is used to sign the request. Use this to [secure your webhooks](#securing-your-webhooks)
-- `active` needs to be `true` for this webhook to be called
-- `events` let's you define which events should trigger your webhook
-
-For testing purposes the service at https://webhook.site may come in handy. It gives you an URL you can use to send webhooks to and look at all the requests in a webinterface.
-
-{{< img src="./webhook-detail.png" alt="Webhooks Configuration" >}}
-
-### Configuration storage
-
-The configuration of webhooks is stored in Project Config`settings.webhooks`.
+One or multiple Webhooks are configured via [Project Config]({{< ref "/reference/project-config" >}}) (see example below):
 
 ```js
+// Project Config settings.webhooks
 webhooks: {
   active: true
   configurations: [
     {
+      // unique handle per project
       handle: 'my-webhook',
+      // shown label in UI
       label: 'My Webhook',
       description: 'A description for future self and coworkers',
+      // called url with a POST request when a selected event happens
       url: 'https://example.com/my-webhook-endpoint',
       // sign request with HTTP header 'x-livingdocs-signature'
       //   1) empty                                   -> no sign request
       //   2) 'a-secret-token-to-sign-the-request'    -> sign request with token
       //   3) {$secretRef: {name: 'webhook-local'}}   -> sign request with project secret
+      // see below a more detailled description
       secret: 'a-secret-token-to-sign-the-request'
+      // a webhook only gets called when this is set to true
       active: true
+      // this webhook only gets called when this event happens
       events: [
         'document.publish',
         'document.unpublish',
@@ -69,6 +44,16 @@ webhooks: {
           changeFilter: {
             metadataProperties: [
               'title'
+            ]
+          }
+        },
+        {
+          name: 'document.build',
+          conditions: {
+            // deliveries configured in the Project Config
+            deliveryHandles: [
+              'web',
+              'desktop'
             ]
           }
         },
@@ -82,15 +67,43 @@ webhooks: {
 }
 ```
 
+## List of Available Webhook Events
+
+- `document.publish`
+- `document.unpublish`
+- `document.update`
+- `document.build`
+- `mediaLibraryEntry.create`
+- `mediaLibraryEntry.archive`
+- `mediaLibraryEntry.revoke`
+- `mediaLibraryEntry.update`
+
+## Testing Webhooks
+
+For quickly testing Webhooks we use https://webhook.site. It gives you an URL you can use to send webhooks to and look at all the requests in a webinterface.
+
+
+## Webhook Config via Editor UI
+
+We strongly propose adding Webhook configs via Project Config, but we also provide a UI in the Editor.
+
+In the project menu, select "Project Setup", then select "Webhooks" in the "Configuration" section of the menu. You can activate/deactivate all your configured webhooks using the setting "deliver webhooks on events".
+
+{{< img src="./webhooks.png" alt="Webhooks Configuration" >}}
+
+Add a new Webhook by clicking "Add Webhook" or edit an existing one by clicking on it's entry in the list. This shows a form to configure the webhook.
+
+{{< img src="./webhook-detail.png" alt="Webhooks Configuration" >}}
+
 ## Payload
 
-The payload sent to your webhook endpoints looks like this. The `deliveryId` is unique for every call.
+Here is an example payload sent to your url set in the Webhook configuration.
 
 `document.publish`
 ```json
 {
   "event": "document.publish",
-  "deliveryId": "qy8qoxQPVCES1VDneg4FE",
+  "deliveryId": "qy8qoxQPVCES1VDneg4FE", // unique id on every call
   "projectId": 3,
   "projectHandle": "service",
   "webhookHandle": "handle",
@@ -208,11 +221,12 @@ The payload sent to your webhook endpoints looks like this. The `deliveryId` is 
 }
 ```
 
-## Securing your webhooks
-If you have defined a `secret` for your webhook, Livingdocs uses this to create a signature of the payload and sends it with the request in the HTTP header `x-livingdocs-signature`.
+## Validate Webhook Signature on your Endpoint
+
+If you have defined a `secret` for your Webhook, Livingdocs creates a signature of the payload and sends it with the request in the HTTP header `x-livingdocs-signature`.
 The signature is created using HMAC-SHA256 and will be sent in `x-livingdocs-signature` in the form `sha256=<hex digest>` for example `sha256=d8a47af83666a771d57117aa28ef8d3243a3de43`.
 
-Here is sample code in JavaScript to validate the signature in your endpoint:
+Here is sample code in JavaScript to validate the signature on your endpoint:
 
 ```js
 // set payload to the body received with the request to your endpoint
@@ -236,11 +250,14 @@ if (crypto.timingSafeEqual(payloadSignature, checksum)) {
 }
 ```
 
-## Transform your webhooks
+## Transform your Webhook Request
+
 If you want to change the `HTTP method`, `url` or `header` of your webhook request, you can do it by extending the import configuration with the `transformWebhookRequest` method. When called, this method will accept an object like this one: `{method, url, headers}`, and it should return the same object with the possibly mutated values.
 
-Here is an example that adds an authorization header to the request:
-```
+Here is an example that adds an authorization header to the request in the [Server Configuration]({{< ref "/customising/server-configuration#import-jobs" >}}):
+
+```js
+// Server Configuration
 import: {
   transformWebhookRequest ({method, url, headers}) {
     if (url.startsWith('https://some-api.com/')) {
