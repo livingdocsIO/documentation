@@ -58,6 +58,8 @@ Distribution Planning
 * [Table Dashboard Cell: Buy-In](https://github.com/livingdocsIO/livingdocs-editor/pull/6332)
 * [Table Dashboard Cell: Distribution](https://github.com/livingdocsIO/livingdocs-editor/pull/6357)
 * [PR: Editor Part I](https://github.com/livingdocsIO/livingdocs-editor/pull/6077)
+* [li-team: add li-team config schema and validation](https://github.com/livingdocsIO/livingdocs-server/pull/4974)
+* [li-team: add li-meta-team plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/6024)
 
 ### API Consumer Management
 
@@ -119,12 +121,6 @@ TODO: find out to what feature this PR belongs.
 
 * [Documentation](TODO)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/5000)
-
-### Metadata Plugin li-team
-
-* [Documentation](TODO)
-* [li-team: add li-team config schema and validation](https://github.com/livingdocsIO/livingdocs-server/pull/4974)
-* [li-team: add li-meta-team plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/6024)
 
 ## Breaking Changes :fire:
 
