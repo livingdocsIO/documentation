@@ -57,6 +57,7 @@ Distribution Planning
 * [Distribution Planning: Table Cells](https://github.com/livingdocsIO/livingdocs-editor/pull/6303)
 * [Table Dashboard Cell: Buy-In](https://github.com/livingdocsIO/livingdocs-editor/pull/6332)
 * [Table Dashboard Cell: Distribution](https://github.com/livingdocsIO/livingdocs-editor/pull/6357)
+* [PR: Editor Part I](https://github.com/livingdocsIO/livingdocs-editor/pull/6077)
 
 ### API Consumer Management
 
@@ -118,14 +119,6 @@ TODO: find out to what feature this PR belongs.
 
 * [Documentation](TODO)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/5000)
-
-### Distribution Planning
-
-TODO: Description
-
-* [Documentation](TODO)
-* [PR: Editor Part I](https://github.com/livingdocsIO/livingdocs-editor/pull/6077)
-
 
 ### Metadata Plugin li-team
 
