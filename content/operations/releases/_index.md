@@ -7,11 +7,8 @@ menu: operations
 weight: 1
 ---
 
-## Overview
-
-We announce roughly every 2 months a new release. You can find more information in the sections below.
-
-Subscribe to the release newsletter to get notified with a rundown of the latest features and improvements as soon as a new release is ready.
+Every odd month (January, March, May, July, September, November), a new Livindocs release is provided. 
+Subscribe to the release newsletter to get notified with a rundown of the latest features and improvements and join the webinars where the release is presented mid month.
 
 {{< newsletter-form >}}
 
