@@ -41,29 +41,6 @@ TODO
 
 ## Highlights
 
-### Homescreen
-
-* [Documentation](TODO)
-* [Server: Dashboard Sources](https://github.com/livingdocsIO/livingdocs-server/pull/5016)
-* [Home Screen Example Config](https://github.com/livingdocsIO/livingdocs-server/pull/5020)
-
-
-### Dynamic Indexing
-
-TODO: Description
-TODO: find out to what feature this PR belongs.
-
-* [Documentation](TODO)
-* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/5000)
-
-### Distribution Planning
-
-TODO: Description
-
-* [Documentation](TODO)
-* [PR: Editor Part I](https://github.com/livingdocsIO/livingdocs-editor/pull/6077)
-
-
 ### Planning System
 
 Tasks feature enhancements
@@ -93,13 +70,21 @@ With the new API Consumer Management feature you are now able to manage the life
 * [Editor: API Consumer Management](https://github.com/livingdocsIO/livingdocs-editor/pull/6243)
 * [Server: API Consumer Management](https://github.com/livingdocsIO/livingdocs-server/pull/5170)
 
+## Notable Features
 
-### Metadata Plugin li-team
+### Retresco Queued Retagging
 
-* [Documentation](TODO)
-* [li-team: add li-team config schema and validation](https://github.com/livingdocsIO/livingdocs-server/pull/4974)
-* [li-team: add li-meta-team plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/6024)
+TODO
 
+### Metadata Property Display Filters
+
+TODO
+
+### link rel="sponsored"
+
+TODO: Description
+
+* [rel='sponsored' can be added to a HTML link in Text Formatting Toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/6245)
 
 ### Anonymize User History
 
@@ -107,10 +92,46 @@ TODO: Description
 
 * [Documentation](TODO)
 
+## Small Improvements
+
+### Comments
+
+TODO
+
+### Publish Control
+
+TODO
+
+* [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/5253)
+
+### Homescreen
+
+* [Documentation](TODO)
+* [Server: Dashboard Sources](https://github.com/livingdocsIO/livingdocs-server/pull/5016)
+* [Home Screen Example Config](https://github.com/livingdocsIO/livingdocs-server/pull/5020)
 
 
+### Dynamic Indexing
+
+TODO: Description
+TODO: find out to what feature this PR belongs.
+
+* [Documentation](TODO)
+* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/5000)
+
+### Distribution Planning
+
+TODO: Description
+
+* [Documentation](TODO)
+* [PR: Editor Part I](https://github.com/livingdocsIO/livingdocs-editor/pull/6077)
 
 
+### Metadata Plugin li-team
+
+* [Documentation](TODO)
+* [li-team: add li-team config schema and validation](https://github.com/livingdocsIO/livingdocs-server/pull/4974)
+* [li-team: add li-meta-team plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/6024)
 
 ## Breaking Changes :fire:
 
@@ -267,23 +288,12 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/5172)
 
 
-### Import API - Publish Control
-
-TODO
-
-* [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/5253)
-
-
-
-
-
 ## Other Changes
 
 ### Features
 
 * [Table Dashboard Cell for Task List](https://github.com/livingdocsIO/livingdocs-editor/pull/6325)
 * [Anonymized History after some time](https://github.com/livingdocsIO/livingdocs-editor/pull/6284)
-* [rel='sponsored' can be added to a HTML link in Text Formatting Toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/6245)
 * [Extend Focal Point Handling](https://github.com/livingdocsIO/livingdocs-editor/pull/6355)
 
 ### Improvements
