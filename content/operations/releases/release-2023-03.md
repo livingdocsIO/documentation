@@ -215,7 +215,7 @@ Breaking Change: not defined yet
 References: [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6136)
 
 
-# Public API - Project Endpoints
+### Public API - Project Endpoints
 
 - Deprecate `/api/v1/project` -> use `/api/v1/projectConfig` instead
 - Deprecate `/api/v1/channels` -> use `/api/v1/projectConfig` instead
