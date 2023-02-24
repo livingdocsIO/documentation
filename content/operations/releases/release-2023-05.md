@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix query performance with big tables](https://github.com/livingdocsIO/livingdocs-server/pull/5303)
 * [Fix: Publish Control Button changes state after publish / draft creation](https://github.com/livingdocsIO/livingdocs-editor/pull/6403)
 * [Fix/distribution dashboard layout](https://github.com/livingdocsIO/livingdocs-editor/pull/6407)
 * [Fix queue waiting delay when a queue did not return results](https://github.com/livingdocsIO/livingdocs-server/pull/5301)
