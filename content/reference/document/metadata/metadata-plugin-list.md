@@ -46,6 +46,7 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [String List](#li-string-list)                     | li-string-list           | Array of Strings                              | D, M, T, I                                                                                              | multiselect                                                |
 | [String](#li-text)                                 | li-text                  | String                                        | D, M, T, I                                                                                              | text, textarea, select                                     |
 | [Task List](#li-task-list)                         | li-task-list             | List of tasks                                 | T                                                                                                       | task list in table dashboard                               |
+| [Team](#li-team)                                   | li-team                  | Show user avatars associated with the document| D, T                                                                                                    | team in metadata form or dashboard                         |
 | [Tree](#li-tree)                                   | li-tree                  | Tree with link, document, group               | D                                                                                                       | tree                                                       |
 | [Transcoding State](#li-transcoding-state)         | li-transcoding-state     | State of external transcoding job             | M (Video)                                                                                               | trigger transcoding, current job progress, result          |
 | [Video Reference](#li-video-reference)             | li-video-reference       | A reference to a video (and a poster image)   | D, M, I                                                                                                 | Upload/Media Library Picker for a Video and a Poster Image |
@@ -1163,6 +1164,79 @@ metadata: [
 The task list meta data plugin `li-task-list` is a read only component which is used in the table dashboard. It gives an overview of current tasks connected with the given document.
 
 [See Table Dashboard Config]({{< ref "/reference/project-config/editor-settings#upstream-components" >}})
+
+## li-team
+
+{{< added-in release-2023-03 >}}
+
+The team meta data plugin `li-team` enables a user to associate other users with the current document by adding or removing them from the teams plugin. Additionally one user can be marked as the owner. The owner can not be removed from the team.
+The plugin is available in the metadata form and the table dashboard.
+
+**Notice**: The li-team plugin is only available if the planning system is enabled.
+
+**Storage Format**:
+
+```js
+{
+  // 'id' and '*By' keys are always user ids
+  owner: {
+    id: <Number>,
+    assignedAt: <ISO8601 String>,
+    assignedBy: <Number>
+  },
+  activeUsers: {
+    id: <Number>,
+    addedAt: <ISO8601 String>,
+    addedBy: <Number>
+  },
+  inactiveUsers: ms.arrayOf(ms.strictObj({
+    id: <Number>,
+    addedAt: <ISO8601 String>,
+    addedBy: <Number>,
+    removedAt: <ISO8601 String>,
+    removedBy: <Number>'
+  }))
+}
+```
+
+**Default UI**
+
+Metadata form:
+
+{{< img src="./images/li-team-meta.png" alt="Team plugin in the meta data" >}}
+
+Dashboard:
+
+{{< img src="./images/li-team-dashboard.png" alt="Team plugin in the table dashboard" >}}
+
+**Project Config**
+
+[Content Type]({{< ref "/reference/project-config/content-types" >}}) config:
+
+```js
+metadata: [
+  {
+    handle: 'myTeam',
+    type: 'li-team'
+  }
+]
+```
+
+[Table Dashboard]({{< ref "/reference/project-config/editor-settings#example-table-dashboard" >}}) config:
+
+```js
+columns: [
+  ...,
+  {
+    label: 'Team',
+    metadataPropertyName: 'myTeam',
+    editable: true,
+    minWidth: 200,
+    growFactor: 1,
+    priority: 2
+  }
+]
+```
 
 ## li-tree
 
