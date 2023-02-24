@@ -11,10 +11,10 @@ The screenshot below shows the task in question.
 {{< img src="images/custom-review-task.png" alt="Custom Task" >}}
 
 #### Basic information about tasks
+
 - You can add as much tasks as you want (additionally to the `review` task)
 - A task has 3 states: `requested`, `accepted`, `completed`.
 - A task can be configured individually on the server.
-
 
 ## Server plugin
 
@@ -30,6 +30,8 @@ metadata: [
     config: {
       label: 'Review',
       showInTaskList: true,
+      // define custom task icon
+      icon: 'flashlight',
       // define beforeLabel/afterLabel of the 3 states requested/accepted/completed
       requested: {
         beforeLabel: 'Request review',

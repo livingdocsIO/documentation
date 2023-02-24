@@ -631,6 +631,31 @@ The `liTableDashboardCellPublishState` upstream component can be used to display
 
 {{< img src="images/table_dashboard_publish_state_cell.png" alt="liTableDashboardCellPublishState upstream component" >}}
 
+##### liTableDashboardCellTaskList
+
+{{< added-in release-2023-03 >}}
+
+The `liTableDashboardCellTaskList` gives an overview of current tasks connected with the given document.
+
+{{< img src="images/table-dashboard-task-list.png" alt="liTableDashboardCellTaskList upstream component" >}}
+
+```js
+columns: [
+  ...,
+  {
+    label: 'Tasks',
+    editable: false,
+    minWidth: 150,
+    growFactor: 0,
+    priority: 2,
+    componentName: 'liTableDashboardCellTaskList',
+    componentOptions: {
+      tasks: ['proofreading'] // filter which tasks to show
+    }
+  }
+]
+```
+
 #### Custom components
 
 Custom components of type [tableDashboardCell]({{< ref "/customising/advanced/editor/vue-component-registry#tabledashboardcell" >}})
