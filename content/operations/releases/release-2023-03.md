@@ -43,9 +43,6 @@ TODO
 
 ### Planning System
 
-Tasks feature enhancements
-Distribution Planning
-
 * [Documentation](TODO)
 * [Server: Document Transform Functions](https://github.com/livingdocsIO/livingdocs-server/pull/5010)
 * [Create and transform UI](https://github.com/livingdocsIO/livingdocs-editor/pull/6060)
@@ -60,6 +57,14 @@ Distribution Planning
 * [PR: Editor Part I](https://github.com/livingdocsIO/livingdocs-editor/pull/6077)
 * [li-team: add li-team config schema and validation](https://github.com/livingdocsIO/livingdocs-server/pull/4974)
 * [li-team: add li-meta-team plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/6024)
+
+#### Task List
+
+The task list meta data plugin `li-task-list` is a read only component which is used in the table dashboard. It gives an overview of current tasks connected with the given document.
+
+* [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-task-list" >}})
+* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6325)
+* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/5230)
 
 ### API Consumer Management
 
@@ -281,7 +286,6 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 
 ### Features
 
-* [Table Dashboard Cell for Task List](https://github.com/livingdocsIO/livingdocs-editor/pull/6325)
 * [Anonymized History after some time](https://github.com/livingdocsIO/livingdocs-editor/pull/6284)
 * [Extend Focal Point Handling](https://github.com/livingdocsIO/livingdocs-editor/pull/6355)
 

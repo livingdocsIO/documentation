@@ -10,7 +10,6 @@ The screenshot below shows the task in question.
 
 {{< img src="images/custom-proofreading-task.png" alt="Custom Task" >}}
 
-
 ## Server plugin
 
 On the server we need to configure a new metadata field `proofreading` (more about metadata fields you can read [here]({{< ref "/reference/document/metadata" >}}))
@@ -39,6 +38,8 @@ metadata: [
       linkToDashboard: 'kanban-proofreading',
       // flag to enable an option to mark a task as a high priority task
       setPriority: true,
+      // define custom task icon
+      icon: 'flashlight',
       // define beforeLabel/afterLabel of the 3 states requested/accepted/completed
       assignUsers: true,
       // flag to enable an option to assign a user to a task.
