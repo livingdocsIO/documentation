@@ -55,16 +55,25 @@ TODO
 * [Table Dashboard Cell: Buy-In](https://github.com/livingdocsIO/livingdocs-editor/pull/6332)
 * [Table Dashboard Cell: Distribution](https://github.com/livingdocsIO/livingdocs-editor/pull/6357)
 * [PR: Editor Part I](https://github.com/livingdocsIO/livingdocs-editor/pull/6077)
-* [li-team: add li-team config schema and validation](https://github.com/livingdocsIO/livingdocs-server/pull/4974)
-* [li-team: add li-meta-team plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/6024)
 
-#### Task List
+#### Task List Plugin
 
 The task list meta data plugin `li-task-list` is a read only component which is used in the table dashboard. It gives an overview of current tasks connected with the given document.
 
 * [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-task-list" >}})
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6325)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/5230)
+
+#### Team Plugin
+
+The team meta data plugin `li-team` enables a user to associate other users with the current document by adding or removing them from the teams plugin. Additionally one user can be marked as the owner. The owner can not be removed from the team.
+The plugin is available in the metadata form and the table dashboard.
+
+**Notice**: The li-team plugin is only available if the planning system is enabled.
+
+* [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-team" >}})
+* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6024)
+* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4974)
 
 ### API Consumer Management
 
