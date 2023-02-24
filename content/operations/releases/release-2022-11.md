@@ -471,6 +471,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.70): fix(publish control): ensure button state changes on publish/draft creation
 - [v85.15.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.69): fix: defaultParams from directive
 - [v85.15.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.68): fix(drag-and-drop): Fix issue where drag-and-drop from the SVG starting in the clipboard would result in an error
 - [v85.15.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.67): fix(occupations): Migrate to utc time queries on the billing screen
