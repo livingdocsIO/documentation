@@ -56,6 +56,16 @@ TODO
 * [Table Dashboard Cell: Distribution](https://github.com/livingdocsIO/livingdocs-editor/pull/6357)
 * [PR: Editor Part I](https://github.com/livingdocsIO/livingdocs-editor/pull/6077)
 
+#### Estimated Time of Completion Plugin
+
+The estimated time of completion meta data plugin `li-estimated-time-of-completion` enables a user to set an estimated time of completion for the current document. The plugin is available in the metadata form.
+
+**Notice**: The li-estimated-time-of-completion plugin is only available if the planning system is enabled.
+
+* [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-estimated-time-of-completion" >}})
+* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6255)
+* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/5176)
+
 #### Task List Plugin
 
 The task list meta data plugin `li-task-list` is a read only component which is used in the table dashboard. It gives an overview of current tasks connected with the given document.
