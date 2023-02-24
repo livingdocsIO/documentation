@@ -249,21 +249,3 @@ if (crypto.timingSafeEqual(payloadSignature, checksum)) {
   // abort, this is not a valid request
 }
 ```
-
-## Transform your Webhook Request
-
-If you want to change the `HTTP method`, `url` or `header` of your webhook request, you can do it by extending the import configuration with the `transformWebhookRequest` method. When called, this method will accept an object like this one: `{method, url, headers}`, and it should return the same object with the possibly mutated values.
-
-Here is an example that adds an authorization header to the request in the [Server Configuration]({{< ref "/customising/server-configuration#import-jobs" >}}):
-
-```js
-// Server Configuration
-import: {
-  transformWebhookRequest ({method, url, headers}) {
-    if (url.startsWith('https://some-api.com/')) {
-      headers['Authorization'] = 'Bearer sometoken'
-    }
-    return {method, url, headers}
-  }
-}
-```
