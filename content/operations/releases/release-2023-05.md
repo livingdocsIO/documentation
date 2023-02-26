@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency lru-cache from 7.16.1 to v7.16.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5312)
 * [fix(deps): update dependency @azure/storage-blob from 12.12.0 to v12.13.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5316)
 * [Fix query performance with big tables](https://github.com/livingdocsIO/livingdocs-server/pull/5303)
 * [Fix: Publish Control Button changes state after publish / draft creation](https://github.com/livingdocsIO/livingdocs-editor/pull/6403)
