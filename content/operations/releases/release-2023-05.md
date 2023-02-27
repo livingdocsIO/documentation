@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency axios from 0.27.2 to v1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6295)
 * [Make foreign key constraints deferrable](https://github.com/livingdocsIO/livingdocs-server/pull/5308)
 * [Restrict maximum postgres query parameters](https://github.com/livingdocsIO/livingdocs-server/pull/5327)
 * [Fix axios 1 http querystring compatibility](https://github.com/livingdocsIO/livingdocs-server/pull/5325)
