@@ -76,5 +76,21 @@ api/v1/routing/resolve?path=/does/not/exist
   "error": "Not Found"
 }
 ```
+-----
+410
+---
+api/v1/routing/resolve?path=/unpublished-document-123.html
+---
+```js
+[
+    {
+        "type": "unpublished",
+        "resource": {
+            "id": 123,
+            "statusCode": 410
+        }
+    }
+]
+```
 
 {{< /api-example >}}
