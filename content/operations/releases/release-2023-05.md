@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency open from 8.4.1 to v8.4.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6409)
 * [fix(deps): update dependency pino from 8.10.0 to v8.11.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5324)
 * [Fix renovate platformAutomerge](https://github.com/livingdocsIO/livingdocs-server/pull/5317)
 * [fix(deps): update dependency lru-cache from 7.16.1 to v7.16.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5312)
