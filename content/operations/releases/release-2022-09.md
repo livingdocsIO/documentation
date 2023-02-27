@@ -341,6 +341,7 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v194.0.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.31): fix(document-lists): Support list updates with a lot of document ids
 - [v194.0.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.30): fix(performance): Give postgres better query hints by adding a project_id to content type joins
 - [v194.0.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.29): fix(scheduled-publishing): Coerce schedule dates to a proper iso date with time zone
 - [v194.0.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v194.0.28): fix(local-authentication): Make the current_password validation more strict
