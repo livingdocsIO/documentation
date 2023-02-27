@@ -341,6 +341,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.6): fix(document-lists): Support list updates with a lot of document ids
 - [v213.6.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.5): fix: Fix axios 1 querystring compatibility in the document search
 - [v213.6.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.4): fix(queue): Fix waiting delay increment when a fetch returned an empty result set
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
