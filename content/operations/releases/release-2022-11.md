@@ -429,6 +429,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.44): fix(document-lists): Support list updates with a lot of document ids
 - [v200.3.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.43): fix(performance): Give postgres better query hints by adding a project_id to content type joins
 - [v200.3.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.42): fix(indexing): Always pass the contentTypeId used for indexing filtering
 - [v200.3.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.41): fix(webhooks): Acknowledge and delete duplicated webhook requests
