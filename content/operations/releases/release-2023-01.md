@@ -261,6 +261,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.29): fix(document-lists): Support list updates with a lot of document ids
 - [v208.3.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.28): fix(performance): Give postgres better query hints by adding a project_id to content type joins
 - [v208.3.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.27): fix(indexing): Always pass the contentTypeId used for indexing filtering
 - [v208.3.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.26): fix(webhooks): Acknowledge and delete duplicated webhook requests
