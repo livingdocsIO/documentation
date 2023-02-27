@@ -31,12 +31,28 @@ aliases:
 ## System Requirements
 
 ### Suggested
-
-TODO
+|Name|Version|
+|-|-|
+|Node|18|
+|NPM|8|
+|Postgres|14|
+|Elasticsearch<br/>OpenSearch|8.x<br/>2|
+|Redis|7|
+|Livingdocs Server Docker Image|livingdocs/server-base:18|
+|Livingdocs Editor Docker Image|livingdocs/editor-base:18|
+|Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
 
 ### Minimal
-
-TODO
+|Name|Version|
+|-|-|
+|Node|16|
+|NPM|8|
+|Postgres|12|
+|Elasticsearch<br/>OpenSearch|7.x<br/>1|
+|Redis|6.2|
+|Livingdocs Server Docker Image|livingdocs/server-base:16.3|
+|Livingdocs Editor Docker Image|livingdocs/editor-base:16.3|
+|Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
 
 
 ## Highlights
@@ -150,7 +166,7 @@ TODO: find out to what feature this PR belongs.
 
 ### Migrate the Postgres Database :fire:
 
-TODO: add db migrations
+It's a simple/fast migration with no expected data losses.
 
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database scheme
