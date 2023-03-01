@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Don't show unconfigured content types in distribution planning table dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/6417)
 * [Handle import and webhook jobs immediately instead of using the waiting logic that requires less redis connections](https://github.com/livingdocsIO/livingdocs-server/pull/5333)
 * [fix(deps): update dependency axios from 0.27.2 to v1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6295)
 * [Make foreign key constraints deferrable](https://github.com/livingdocsIO/livingdocs-server/pull/5308)
