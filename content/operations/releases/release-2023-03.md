@@ -347,6 +347,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.9): fix(distribution-planning): Don't show unconfigured content types
 - [v90.33.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.8): fix(publish control): ensure button state changes on publish/draft creation
 - [v90.33.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.7): fix(distribution dashboard): Time cell
 
