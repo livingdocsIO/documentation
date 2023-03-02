@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Update `@livingdocs/framework` to include fix for imgIX URL generation](https://github.com/livingdocsIO/livingdocs-editor/pull/6428)
 * [Provides a server configuration to remove leading directory for ImgIX service](https://github.com/livingdocsIO/livingdocs-server/pull/5339)
 * [Don't show unconfigured content types in distribution planning table dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/6417)
 * [Handle import and webhook jobs immediately instead of using the waiting logic that requires less redis connections](https://github.com/livingdocsIO/livingdocs-server/pull/5333)
