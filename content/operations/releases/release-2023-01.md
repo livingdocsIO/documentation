@@ -291,6 +291,7 @@ Here is a list of all patches after the release has been announced.
 - [v208.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.3): fix(cli reencrypt): now uses correct stringify
 
 ### Livingdocs Editor Patches
+- [v87.5.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.54): fix(kanban board): reloads results correctly when result is less than page size
 - [v87.5.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.53): fix(publish control): ensure button state changes on publish/draft creation
 - [v87.5.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.52): fix: defaultParams from directive
 - [v87.5.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.51): fix(drag-and-drop): Fix issue where drag-and-drop from the SVG starting in the clipboard would result in an error
