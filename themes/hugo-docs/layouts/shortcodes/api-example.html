@@ -50,7 +50,7 @@
             <div class="code-teaser__endpoint">Curl Example</div>
           </div>
         </div>
-  
+
         <div class="teaser-and-code__code">
           {{- $query -}}
         </div>
@@ -84,7 +84,7 @@
                 <div class="code-teaser__interaction">
                   <span class="arrow arrow--right"></span>
                 </div>
-                
+
                 <div class="code-teaser__code">{{ $code }}</div>
                 {{- if (eq $code "200") -}}<div class="code-teaser__name">OK</div>{{- end -}}
                 {{- if (eq $code "301") -}}<div class="code-teaser__name">Moved Permanently</div>{{- end -}}
@@ -107,5 +107,5 @@
 
     </div>
   {{- end -}}
-  
+
 </div>
