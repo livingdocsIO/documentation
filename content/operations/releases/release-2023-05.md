@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Refactoring: Document Migration V2](https://github.com/livingdocsIO/livingdocs-server/pull/5334)
 * [Fix broken display filters in legacy dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/6431)
 * [Update `@livingdocs/framework` to include fix for imgIX URL generation](https://github.com/livingdocsIO/livingdocs-editor/pull/6428)
 * [Provides a server configuration to remove leading directory for ImgIX service](https://github.com/livingdocsIO/livingdocs-server/pull/5339)
