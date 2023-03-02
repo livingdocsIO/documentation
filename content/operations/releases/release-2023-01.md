@@ -292,6 +292,7 @@ Here is a list of all patches after the release has been announced.
 - [v208.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.3): fix(cli reencrypt): now uses correct stringify
 
 ### Livingdocs Editor Patches
+- [v87.5.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.55): fix(framework): Update `@livingdocs/framework` version to include latest fix for imgIX URL generation
 - [v87.5.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.54): fix(kanban board): reloads results correctly when result is less than page size
 - [v87.5.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.53): fix(publish control): ensure button state changes on publish/draft creation
 - [v87.5.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.52): fix: defaultParams from directive
