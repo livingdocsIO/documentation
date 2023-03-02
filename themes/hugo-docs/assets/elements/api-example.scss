@@ -12,6 +12,11 @@ $api-example-padding: $space-m;
     padding-bottom: $space-m;
     margin-top: 0;
     border-bottom: 1px solid $color-grey-6;
+
+    .anchor {
+      top: 15px;
+      left: -17px;
+    }
   }
 
   .highlight {
