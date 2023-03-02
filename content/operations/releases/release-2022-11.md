@@ -472,6 +472,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.71): fix(kanban board): reloads results correctly when result is less than page size
 - [v85.15.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.70): fix(publish control): ensure button state changes on publish/draft creation
 - [v85.15.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.69): fix: defaultParams from directive
 - [v85.15.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.68): fix(drag-and-drop): Fix issue where drag-and-drop from the SVG starting in the clipboard would result in an error
