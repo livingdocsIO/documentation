@@ -126,4 +126,4 @@ The Livingdocs webhook URL is `https://<livingdocs-server>/api/v1/retresco/re-en
 - Enter a descriptive name, provide permission for retresco hook access, and click the "Create" button
 - The token will be displayed in the table, copy it and save it in a safe place, you will have to use it on Retresco's website. Please note that the token will not be displayed again after you leave the page
 
-The webhook will be called by Retresco when the user modifies entities that apply to one or multiple documents. The webhook will generate a job queue that will handle document enrichment and update the metadata asynchronously.
+The HTTP endpoint will be called by Retresco when the user modifies entities that apply to one or multiple documents. The request will generate a job queue that will handle document enrichment and update the metadata asynchronously.

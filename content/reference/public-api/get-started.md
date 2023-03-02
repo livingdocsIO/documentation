@@ -13,7 +13,7 @@ To work with the Public API first go to the Project Settings page in the Livingd
 Project admins can create new `AccessToken` by going to `Menu` > `Preferences` > `Project Admin`, from the project landing page.
 On the sidebar, go to `Api Clients` and start the token creation flow with `Add Api Client` on the right.
 
-In the create token dialog, you can set the name of the token, description (optional), expiration date and permissions. You can click `Create` to generate the token with the chosen permissions. The token will be generate and you can copy it to your clipboard.
+In the create token dialog, you can set the name of the token, description (optional), expiration date and permissions. You can click `Create` to generate the token with the chosen permissions. The token will be generated and you can copy it to your clipboard.
 
 Embed the `AccessToken` in the header of every HTTP request as shown below.
 
