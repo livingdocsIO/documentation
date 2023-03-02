@@ -1,4 +1,5 @@
 ---
+type: guides
 title: Dealing with Design Changes
 bullets:
   - Version Bumps

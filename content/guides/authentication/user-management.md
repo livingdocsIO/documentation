@@ -1,4 +1,5 @@
 ---
+type: guides
 title: User Management
 description: Assign permissions to users through groups.
 weight: 5

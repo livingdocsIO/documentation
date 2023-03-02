@@ -1,4 +1,5 @@
 ---
+type: guides
 title: Single Sign-On
 description: Learn how to setup SSO with the example of AzureAD.
 weight: 2

@@ -1,4 +1,5 @@
 ---
+type: guides
 title: Publish a Design with ldm
 description: Upload a design to a Livingdocs Server with ldm (Livingdocs Design Manager)
 weight: 6

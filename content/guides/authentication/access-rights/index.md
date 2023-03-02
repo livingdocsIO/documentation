@@ -1,4 +1,5 @@
 ---
+type: guides
 title: Access Rights and Groups
 description: Learn how to manage groups and their permissions.
 weight: 1

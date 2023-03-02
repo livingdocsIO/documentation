@@ -1,4 +1,5 @@
 ---
+type: guides
 title: Access Hooks
 description: Implement special rules for document access. E.g. reject updates based on a documents category.
 weight: 4

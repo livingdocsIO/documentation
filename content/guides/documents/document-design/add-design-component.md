@@ -1,4 +1,5 @@
 ---
+type: guides
 title: Add a Component to a Design
 description: Add a new component to an existing design
 weight: 2

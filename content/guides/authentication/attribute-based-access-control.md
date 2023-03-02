@@ -1,4 +1,5 @@
 ---
+type: guides
 title: Attribute Based Access Control
 description: Use ABAC to extend the permission system.
 weight: 3

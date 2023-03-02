@@ -1,4 +1,5 @@
 ---
+type: guides
 title: 'Example Component: Bullet List'
 description: Create a bullet list component
 weight: 3
