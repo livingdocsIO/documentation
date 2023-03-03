@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add `li-buy-in` planning system guard](https://github.com/livingdocsIO/livingdocs-editor/pull/6444)
 * [Fix typos in localisation](https://github.com/livingdocsIO/livingdocs-editor/pull/6434)
 * [Fix/distribution flyouts](https://github.com/livingdocsIO/livingdocs-editor/pull/6439)
 * [Remove some internal yargs apis](https://github.com/livingdocsIO/livingdocs-server/pull/5346)
