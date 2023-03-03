@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix `li-meta-integer` display filter error](https://github.com/livingdocsIO/livingdocs-editor/pull/6433)
 * [Data Migration Log Improvement](https://github.com/livingdocsIO/livingdocs-server/pull/5298)
 * [Refactoring: Document Migration V2](https://github.com/livingdocsIO/livingdocs-server/pull/5334)
 * [Fix broken display filters in legacy dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/6431)
