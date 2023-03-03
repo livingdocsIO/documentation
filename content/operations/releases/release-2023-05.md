@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Remove some internal yargs apis](https://github.com/livingdocsIO/livingdocs-server/pull/5346)
 * [Fix `li-meta-integer` display filter error](https://github.com/livingdocsIO/livingdocs-editor/pull/6433)
 * [Data Migration Log Improvement](https://github.com/livingdocsIO/livingdocs-server/pull/5298)
 * [Refactoring: Document Migration V2](https://github.com/livingdocsIO/livingdocs-server/pull/5334)
