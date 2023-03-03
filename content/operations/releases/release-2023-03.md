@@ -341,6 +341,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.10): fix(lib): Get require("~lib") to work again with newer npm versions
 - [v213.6.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.9): test(distribution-planning): Create documents in series again to fix expectations
 - [v213.6.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.8): chore(framework): Update `@livingdocs/framework` version
 - [v213.6.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.7): chore: PR feedback
