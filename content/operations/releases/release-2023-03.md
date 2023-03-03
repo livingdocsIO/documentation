@@ -349,6 +349,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.12): fix(li-meta-integer-filter): don't emit change if no integer selected
 - [v90.33.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.11): fix(framework): Update `@livingdocs/framework` version to include latest fix for imgIX URL generation
 - [v90.33.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.10): fix(kanban board): reloads results correctly when result is less than page size
 - [v90.33.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.9): fix(distribution-planning): Don't show unconfigured content types
