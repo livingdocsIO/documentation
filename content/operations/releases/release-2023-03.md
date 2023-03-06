@@ -351,6 +351,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.15): fix(li-list-assignments): avoid flickering after list was selected
 - [v90.33.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.14): fix(dashboards): correctly apply filter state from store on inintial search
 - [v90.33.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.13): fix(distribution flyouts): Overflow and layout
 - [v90.33.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.12): fix(li-meta-integer-filter): don't emit change if no integer selected
