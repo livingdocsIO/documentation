@@ -86,6 +86,8 @@ metadata: [
 
 {{< added-in release-2023-03 block >}}
 
+**Notice**: The li-buy-in plugin is only available if the planning system is enabled.
+
 As part of the planning system, users want to ask for buy-in when writing an article or pitching an idea.
 Other users can express their backing by accepting a buy-in request.
 The presence, absence or status of a buy-in request has no effect on permissions and is just a communication tool.
