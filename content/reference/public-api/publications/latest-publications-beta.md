@@ -82,8 +82,8 @@ The response is an array of objects with 4 possible top-level properties:
     "content": [
       {
         "id": "doc-1b8i1ksh10",
-        "identifier": "timeline.head",
         "component": "head",
+        "identifier": "timeline.head",
         "content": {
           "title": "a title",
           "text": "some lead"
@@ -91,8 +91,8 @@ The response is an array of objects with 4 possible top-level properties:
       },
       {
         "id": "doc-1b8i1ksh20",
-        "identifier": "timeline.normal",
         "component": "normal",
+        "identifier": "timeline.normal",
         "content": {
           "caption": "my caption"
         },
@@ -102,16 +102,16 @@ The response is an array of objects with 4 possible top-level properties:
       },
       {
         "id": "doc-1b8i1ksh30",
-        "identifier": "timeline.p",
         "component": "p",
+        "identifier": "timeline.p",
         "content": {
           "text": "first paragraph"
         }
       },
       {
         "id": "doc-1b8i1me1d0",
-        "identifier": "timeline.p",
         "component": "p",
+        "identifier": "timeline.p",
         "content": {
           "text": "second paragraph"
         }
@@ -152,8 +152,8 @@ The response is an array of objects with 4 possible top-level properties:
     "content": [
       {
         "id": "doc-1b8i1ksh10",
-        "identifier": "timeline.head",
         "component": "head",
+        "identifier": "timeline.head",
         "content": {
           "title": "a title",
           "text": "some lead"
@@ -161,8 +161,8 @@ The response is an array of objects with 4 possible top-level properties:
       },
       {
         "id": "doc-1b8i1ksh20",
-        "identifier": "timeline.normal",
         "component": "normal",
+        "identifier": "timeline.normal",
         "content": {
           "caption": "my caption"
         },
@@ -172,16 +172,16 @@ The response is an array of objects with 4 possible top-level properties:
       },
       {
         "id": "doc-1b8i1ksh30",
-        "identifier": "timeline.p",
         "component": "p",
+        "identifier": "timeline.p",
         "content": {
           "text": "first paragraph"
         }
       },
       {
         "id": "doc-1b8i1me1d0",
-        "identifier": "timeline.p",
         "component": "p",
+        "identifier": "timeline.p",
         "content": {
           "text": "second paragraph"
         }

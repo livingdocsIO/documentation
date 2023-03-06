@@ -654,12 +654,12 @@ liServer.registerInitializedHook(async () => {
       }
       const document = context.document
       // Keep the first title (if it exists)
-      const title = document.content.find((c) => c.identifier === `${document.design.name}.title`)
+      const title = document.content.find((c) => c.component === 'title')
       // Generate a paragraph for each Desk-Net element
       const elements = (params.schedule || []).reduce(extractElements, [])
       const elementComponents = elements.map((element, index) => ({
+        component: 'p',
         content: {text: `${index + 1}. ${element.title}`},
-        identifier: `${document.design.name}.p`
       }))
 
       return {

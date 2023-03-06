@@ -69,8 +69,8 @@ api/v1/publications/search?search=Obama
     "content": [
       {
         "id": "doc-1b8i1ksh10",
-        "identifier": "timeline.head",
         "component": "head",
+        "identifier": "timeline.head",
         "content": {
           "title": "Obama re-elected",
           "text": "some lead"
@@ -78,8 +78,8 @@ api/v1/publications/search?search=Obama
       },
       {
         "id": "doc-1b8i1ksh20",
-        "identifier": "timeline.normal",
         "component": "normal",
+        "identifier": "timeline.normal",
         "content": {
           "caption": "my caption"
         },
@@ -89,16 +89,16 @@ api/v1/publications/search?search=Obama
       },
       {
         "id": "doc-1b8i1ksh30",
-        "identifier": "timeline.p",
         "component": "p",
+        "identifier": "timeline.p",
         "content": {
           "text": "first paragraph"
         }
       },
       {
         "id": "doc-1b8i1me1d0",
-        "identifier": "timeline.p",
         "component": "p",
+        "identifier": "timeline.p",
         "content": {
           "text": "second paragraph"
         }
@@ -142,8 +142,8 @@ api/v1/publications/search?categories=sport,fashion&languages=en
     "content": [
       {
         "id": "doc-1b8i1ksh10",
-        "identifier": "timeline.head",
         "component": "head",
+        "identifier": "timeline.head",
         "content": {
           "title": "Bayern to win Champions League",
           "text": "some lead"
@@ -151,8 +151,8 @@ api/v1/publications/search?categories=sport,fashion&languages=en
       },
       {
         "id": "doc-1b8i1ksh20",
-        "identifier": "timeline.normal",
         "component": "normal",
+        "identifier": "timeline.normal",
         "content": {
           "caption": "my caption"
         },
@@ -162,16 +162,16 @@ api/v1/publications/search?categories=sport,fashion&languages=en
       },
       {
         "id": "doc-1b8i1ksh30",
-        "identifier": "timeline.p",
         "component": "p",
+        "identifier": "timeline.p",
         "content": {
           "text": "first paragraph"
         }
       },
       {
         "id": "doc-1b8i1me1d0",
-        "identifier": "timeline.p",
         "component": "p",
+        "identifier": "timeline.p",
         "content": {
           "text": "second paragraph"
         }
@@ -215,8 +215,8 @@ api/v1/publications/search?contentTypes=regular,gallery&limit=10&offset=10
     "content": [
       {
         "id": "doc-1b8i1ksh10",
-        "identifier": "timeline.head",
         "component": "head",
+        "identifier": "timeline.head",
         "content": {
           "title": "Bayern to win Champions League",
           "text": "some lead"
@@ -224,8 +224,8 @@ api/v1/publications/search?contentTypes=regular,gallery&limit=10&offset=10
       },
       {
         "id": "doc-1b8i1ksh20",
-        "identifier": "timeline.normal",
         "component": "normal",
+        "identifier": "timeline.normal",
         "content": {
           "caption": "my caption"
         },
@@ -235,16 +235,16 @@ api/v1/publications/search?contentTypes=regular,gallery&limit=10&offset=10
       },
       {
         "id": "doc-1b8i1ksh30",
-        "identifier": "timeline.p",
         "component": "p",
+        "identifier": "timeline.p",
         "content": {
           "text": "first paragraph"
         }
       },
       {
         "id": "doc-1b8i1me1d0",
-        "identifier": "timeline.p",
         "component": "p",
+        "identifier": "timeline.p",
         "content": {
           "text": "second paragraph"
         }
