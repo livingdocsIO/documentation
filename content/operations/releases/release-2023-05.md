@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Dynamic metadata for Publication indexing](https://github.com/livingdocsIO/livingdocs-server/pull/5362)
 * [Feat/Component Icons V2](https://github.com/livingdocsIO/livingdocs-server/pull/5177)
 * [Feat/Component Icons V2](https://github.com/livingdocsIO/livingdocs-editor/pull/6402)
 * [Default Editor configuration](https://github.com/livingdocsIO/livingdocs-editor/pull/6446)
