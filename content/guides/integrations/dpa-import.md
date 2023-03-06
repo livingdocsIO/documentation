@@ -110,20 +110,6 @@ mapDocument: function (abstractArticle) {
         delete component.content.source
         return component
       })
-      .wrap({
-        identifier: 'article-container',
-        position: 'fixed',
-        containers: {header: [], main: []}
-      }, [
-        {identifier: 'head', target: 'header', repeat: 'once'},
-        {identifier: 'head', target: 'main', repeat: 'all'},
-        {identifier: 'paragraph', target: 'main', repeat: 'all'},
-        {identifier: 'image', target: 'main', repeat: 'all'},
-        {identifier: 'subtitle', target: 'main', repeat: 'all'},
-        {identifier: 'free-html', target: 'main', repeat: 'all'},
-        {identifier: 'iframe', target: 'main', repeat: 'all'},
-        {identifier: 'tweet', target: 'main', repeat: 'all'}
-      ])
       .content()
 
     return {content, design: {name: 'p:1109:1057', version: '1.0.0'}}
