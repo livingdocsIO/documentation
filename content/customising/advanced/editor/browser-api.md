@@ -21,7 +21,7 @@ const design = livingdoc.design
 ## Working with designs
 
 ```js
-// Get all component identifiers of a design as an array
+// Get all components of a design as an array
 doc.design.get('timeline').list()
 
 // Get an individual component template

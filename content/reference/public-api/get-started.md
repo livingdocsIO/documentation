@@ -176,8 +176,8 @@ https://server.livingdocs.io/api/v1/documents/latestPublications
     "content": [
       {
         "id": "doc-1b8i1ksh10",
-        "identifier": "timeline.head",
         "component": "head",
+        "identifier": "timeline.head",
         "content": {
           "title": "a title",
           "text": "some lead"
@@ -185,8 +185,8 @@ https://server.livingdocs.io/api/v1/documents/latestPublications
       },
       {
         "id": "doc-1b8i1ksh20",
-        "identifier": "timeline.normal",
         "component": "normal",
+        "identifier": "timeline.normal",
         "content": {
           "caption": "my caption"
         },
@@ -196,16 +196,16 @@ https://server.livingdocs.io/api/v1/documents/latestPublications
       },
       {
         "id": "doc-1b8i1ksh30",
-        "identifier": "timeline.p",
         "component": "p",
+        "identifier": "timeline.p",
         "content": {
           "text": "first paragraph"
         }
       },
       {
         "id": "doc-1b8i1me1d0",
-        "identifier": "timeline.p",
         "component": "p",
+        "identifier": "timeline.p",
         "content": {
           "text": "second paragraph"
         }
@@ -238,8 +238,8 @@ https://server.livingdocs.io/api/v1/documents/latestPublications
     "content": [
       {
         "id": "doc-1b8i1ksh10",
-        "identifier": "timeline.head",
         "component": "head",
+        "identifier": "timeline.head",
         "content": {
           "title": "a title",
           "text": "some lead"
@@ -247,8 +247,8 @@ https://server.livingdocs.io/api/v1/documents/latestPublications
       },
       {
         "id": "doc-1b8i1ksh20",
-        "identifier": "timeline.normal",
         "component": "normal",
+        "identifier": "timeline.normal",
         "content": {
           "caption": "my caption"
         },
@@ -258,16 +258,16 @@ https://server.livingdocs.io/api/v1/documents/latestPublications
       },
       {
         "id": "doc-1b8i1ksh30",
-        "identifier": "timeline.p",
         "component": "p",
+        "identifier": "timeline.p",
         "content": {
           "text": "first paragraph"
         }
       },
       {
         "id": "doc-1b8i1me1d0",
-        "identifier": "timeline.p",
         "component": "p",
+        "identifier": "timeline.p",
         "content": {
           "text": "second paragraph"
         }

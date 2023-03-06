@@ -70,23 +70,23 @@ The response is a JSON object with 5 possible top-level properties:
   "content": [
     {
       "id": "doc-1fsh4faeo0",
-      "identifier": "living-times.article-container",
       "component": "article-container",
+      "identifier": "living-times.article-container",
       "position": "fixed",
       "containers": {
         "main": [
           {
             "id": "doc-1fsh4faeo3",
-            "identifier": "living-times.paragraph",
             "component": "paragraph",
+            "identifier": "living-times.paragraph",
             "content": {
               "text": "First paragraph published."
             }
           },
           {
             "id": "doc-1fsh4g83l0",
-            "identifier": "living-times.paragraph",
             "component": "paragraph",
+            "identifier": "living-times.paragraph",
             "content": {
               "text": "Second paragraph unpublished."
             }

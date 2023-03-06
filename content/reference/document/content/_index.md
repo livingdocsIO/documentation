@@ -18,7 +18,7 @@ A simple Livingdocs document JSON defining a header and a paragraph:
 {
   content: [
     {
-      identifier: 'header',
+      component: 'header',
       content: {
         title: 'Publishing has never been easier',
         subline: 'Livingdocs',
@@ -28,7 +28,7 @@ A simple Livingdocs document JSON defining a header and a paragraph:
       }
     },
     {
-      identifier: 'paragraph',
+      component: 'paragraph',
       content: {
         text: 'Livingdocs is a modern Digital Content Creation and Publishing System in use at a large variety of media companies.'
       }

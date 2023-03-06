@@ -41,10 +41,11 @@ const documentVersion = {
   // gets the content Livingdocs data format (JSON), e.g.
   // [
   //   {
+  //     component: "title",
   //     identifier: "p:3:4.title",
   //     id: "doc-1f7380g1q0",
   //     content: {
-  //       title: "This is a title
+  //       title: "This is a title"
   //     }
   //   }
   // ]
