@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @google-cloud/storage from 6.9.3 to v6.9.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5353)
 * [fix(deps): update dependency lru-cache from 7.17.0 to v7.17.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5355)
 * [`mediaIndex` normalisation, renamed to `indexing`](https://github.com/livingdocsIO/livingdocs-server/pull/5365)
 * [Dynamic metadata for Publication indexing](https://github.com/livingdocsIO/livingdocs-server/pull/5362)
