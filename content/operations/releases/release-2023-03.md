@@ -143,10 +143,9 @@ TODO: Description
 
 TODO
 
-### Publish Control
+### Publish Control Import API Support
 
-TODO
-
+You can now set `publishControl.firstPublicationDate` and `publishControl.lastPublicationDate` when importing documents using the Import API.
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/5253)
 
 ### Homescreen
