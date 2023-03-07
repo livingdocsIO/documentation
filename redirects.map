@@ -72,7 +72,7 @@
 /reference-docs/server-config/single_sign-on /customising/server-configuration/single-sign-on/;
 /reference-docs/server-config/teaser-preview-config /guides/editor/teaser-preview/;
 /reference-docs/server-config/webhooks /reference/webhooks/;
-/reference-docs/public-api/ /reference/public-api/;
+/reference-docs/public-api /reference/public-api/;
 /enterprise/reference-docs/server-api/events /customising/server/events/;
 /enterprise/reference-docs/server-configuration/webhooks /reference/webhooks/;
 /enterprise/reference-docs/editor-api /reference/editor-api/;
