@@ -148,12 +148,6 @@ TODO
 You can now set `publishControl.firstPublicationDate` and `publishControl.lastPublicationDate` when importing documents using the Import API.
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/5253)
 
-### Homescreen
-
-* [Documentation](TODO)
-* [Server: Dashboard Sources](https://github.com/livingdocsIO/livingdocs-server/pull/5016)
-* [Home Screen Example Config](https://github.com/livingdocsIO/livingdocs-server/pull/5020)
-
 ## Breaking Changes :fire:
 
 ### Migrate the Postgres Database :fire:
@@ -314,7 +308,6 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 ### Features
 
 * [Anonymized History after some time](https://github.com/livingdocsIO/livingdocs-editor/pull/6284)
-* [Extend Focal Point Handling](https://github.com/livingdocsIO/livingdocs-editor/pull/6355)
 
 ### Improvements
 * [Improve synchronisation of remote metadata changes](https://github.com/livingdocsIO/livingdocs-editor/pull/5861)
