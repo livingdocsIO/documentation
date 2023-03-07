@@ -121,7 +121,9 @@ TODO
 
 ### Metadata Property Display Filters
 
-TODO
+A new type of [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter" >}})) is introduced: `metadataPropertyName`.
+
+With these filters, you will be able to easily configure a filter for any metadata property on your documents. Currently, only 2 types of metadata properties are supported: `li-integer` and `li-category`. Support for other types will be added in future releases.
 
 ### link rel="sponsored"
 
