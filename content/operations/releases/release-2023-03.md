@@ -154,15 +154,6 @@ You can now set `publishControl.firstPublicationDate` and `publishControl.lastPu
 * [Server: Dashboard Sources](https://github.com/livingdocsIO/livingdocs-server/pull/5016)
 * [Home Screen Example Config](https://github.com/livingdocsIO/livingdocs-server/pull/5020)
 
-
-### Dynamic Indexing
-
-TODO: Description
-TODO: find out to what feature this PR belongs.
-
-* [Documentation](TODO)
-* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/5000)
-
 ## Breaking Changes :fire:
 
 ### Migrate the Postgres Database :fire:
