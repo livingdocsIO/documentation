@@ -117,7 +117,10 @@ With the new API Consumer Management feature you are now able to manage the life
 
 ### Retresco Queued Retagging
 
-TODO
+A new hook is introduced to the Retresco integration. It allows document re-enrich functionality with Retresco tags in a queued manner. This is useful if you want to re-enrich a large number of documents in a batch.
+
+* [Documentation]({{< ref "/guides/integrations/retresco#re-enrich-documents" >}})
+* [Server PR: Retresco retagging hook](https://github.com/livingdocsIO/livingdocs-server/pull/5254)
 
 ### Metadata Property Display Filters
 
@@ -127,9 +130,9 @@ With these filters, you will be able to easily configure a filter for any metada
 
 ### link rel="sponsored"
 
-TODO: Description
+You can now add `rel="sponsored"` tag to an HTML link in the text formatting toolbar. This is useful if you want to mark links as sponsored for search engines.
 
-* [rel='sponsored' can be added to a HTML link in Text Formatting Toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/6245)
+* [Editor PR: rel='sponsored' can be added to a HTML link in Text Formatting Toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/6245)
 
 ### Anonymize User History
 
