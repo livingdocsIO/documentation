@@ -60,17 +60,17 @@ aliases:
 ### Planning System
 
 * [Documentation](TODO)
-* [Server: Document Transform Functions](https://github.com/livingdocsIO/livingdocs-server/pull/5010)
-* [Create and transform UI](https://github.com/livingdocsIO/livingdocs-editor/pull/6060)
-* [Distribution Channel Groups and Navigation Component](https://github.com/livingdocsIO/livingdocs-editor/pull/6230)
-* [Metadata Plugin: li-estimated-time-of-completion](https://github.com/livingdocsIO/livingdocs-server/pull/5176)
-* [Metadata Plugin: li-buy-in](https://github.com/livingdocsIO/livingdocs-editor/pull/6308)
-* [Metadata Plugin: li-distribution-schedule](https://github.com/livingdocsIO/livingdocs-server/pull/5283)
-* [Metadata Plugin: li-integer - dataProvider support](https://github.com/livingdocsIO/livingdocs-editor/pull/6124)
-* [Distribution Planning: Table Cells](https://github.com/livingdocsIO/livingdocs-editor/pull/6303)
-* [Table Dashboard Cell: Buy-In](https://github.com/livingdocsIO/livingdocs-editor/pull/6332)
-* [Table Dashboard Cell: Distribution](https://github.com/livingdocsIO/livingdocs-editor/pull/6357)
-* [PR: Editor Part I](https://github.com/livingdocsIO/livingdocs-editor/pull/6077)
+* [PR Server: Document Transform Functions](https://github.com/livingdocsIO/livingdocs-server/pull/5010)
+* [PR Editor: Create and transform UI](https://github.com/livingdocsIO/livingdocs-editor/pull/6060)
+* [PR Editor: Distribution Channel Groups and Navigation Component](https://github.com/livingdocsIO/livingdocs-editor/pull/6230)
+* [PR Server: Metadata Plugin: li-estimated-time-of-completion](https://github.com/livingdocsIO/livingdocs-server/pull/5176)
+* [PR Editor: Metadata Plugin: li-buy-in](https://github.com/livingdocsIO/livingdocs-editor/pull/6308)
+* [PR Server: Metadata Plugin: li-distribution-schedule](https://github.com/livingdocsIO/livingdocs-server/pull/5283)
+* [PR Editor: Metadata Plugin: li-integer - dataProvider support](https://github.com/livingdocsIO/livingdocs-editor/pull/6124)
+* [PR Editor: Distribution Planning: Table Cells](https://github.com/livingdocsIO/livingdocs-editor/pull/6303)
+* [PR Editor: Table Dashboard Cell: Buy-In](https://github.com/livingdocsIO/livingdocs-editor/pull/6332)
+* [PR Editor: Table Dashboard Cell: Distribution](https://github.com/livingdocsIO/livingdocs-editor/pull/6357)
+* [PR Editor: Distribution Planning (Part 1)](https://github.com/livingdocsIO/livingdocs-editor/pull/6077)
 
 #### Estimated Time of Completion Plugin
 
@@ -79,16 +79,16 @@ The estimated time of completion meta data plugin `li-estimated-time-of-completi
 **Notice**: The li-estimated-time-of-completion plugin is only available if the planning system is enabled.
 
 * [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-estimated-time-of-completion" >}})
-* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6255)
-* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/5176)
+* [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6255)
+* [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/5176)
 
 #### Task List Plugin
 
 The task list meta data plugin `li-task-list` is a read only component which is used in the table dashboard. It gives an overview of current tasks connected with the given document.
 
 * [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-task-list" >}})
-* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6325)
-* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/5230)
+* [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6325)
+* [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/5230)
 
 #### Team Plugin
 
@@ -98,8 +98,8 @@ The plugin is available in the metadata form and the table dashboard.
 **Notice**: The li-team plugin is only available if the planning system is enabled.
 
 * [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-team" >}})
-* [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6024)
-* [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4974)
+* [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6024)
+* [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/4974)
 
 ### API Consumer Management
 
@@ -109,9 +109,9 @@ With the new API Consumer Management feature you are now able to manage the life
 - manage token expiration
 
 * [Documentation](TODO)
-* [Design](https://github.com/livingdocsIO/livingdocs-editor/pull/6254)
-* [Editor: API Consumer Management](https://github.com/livingdocsIO/livingdocs-editor/pull/6243)
-* [Server: API Consumer Management](https://github.com/livingdocsIO/livingdocs-server/pull/5170)
+* [PR Editor: Design](https://github.com/livingdocsIO/livingdocs-editor/pull/6254)
+* [PR Editor: API Consumer Management](https://github.com/livingdocsIO/livingdocs-editor/pull/6243)
+* [PR Server: API Consumer Management](https://github.com/livingdocsIO/livingdocs-server/pull/5170)
 
 ## Notable Features
 
@@ -120,11 +120,11 @@ With the new API Consumer Management feature you are now able to manage the life
 A new hook is introduced to the Retresco integration. It allows document re-enrich functionality with Retresco tags in a queued manner. This is useful if you want to re-enrich a large number of documents in a batch.
 
 * [Documentation]({{< ref "/guides/integrations/retresco#re-enrich-documents" >}})
-* [Server PR: Retresco retagging hook](https://github.com/livingdocsIO/livingdocs-server/pull/5254)
+* [PR Server: Retresco retagging hook](https://github.com/livingdocsIO/livingdocs-server/pull/5254)
 
 ### Metadata Property Display Filters
 
-A new type of [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter" >}})) is introduced: `metadataPropertyName`.
+A new type of [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter" >}}) is introduced: `metadataPropertyName`.
 
 With these filters, you will be able to easily configure a filter for any metadata property on your documents. Currently, only 2 types of metadata properties are supported: `li-integer` and `li-category`. Support for other types will be added in future releases.
 
@@ -132,13 +132,14 @@ With these filters, you will be able to easily configure a filter for any metada
 
 You can now add `rel="sponsored"` tag to an HTML link in the text formatting toolbar. This is useful if you want to mark links as sponsored for search engines.
 
-* [Editor PR: rel='sponsored' can be added to a HTML link in Text Formatting Toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/6245)
+* [PR Editor: rel='sponsored' can be added to a HTML link in Text Formatting Toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/6245)
 
 ### Anonymize User History
 
 TODO: Description
 
 * [Documentation](TODO)
+* [PR Editor: Anonymized History after specified time](https://github.com/livingdocsIO/livingdocs-editor/pull/6284)
 
 ## Small Improvements
 
@@ -149,7 +150,7 @@ TODO
 ### Publish Control Import API Support
 
 You can now set `publishControl.firstPublicationDate` and `publishControl.lastPublicationDate` when importing documents using the Import API.
-* [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/5253)
+* [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/5253)
 
 ## Breaking Changes :fire:
 
@@ -205,14 +206,15 @@ Update the deprecated filter to the supported [Display Filters](https://docs.liv
 If you can't handle your requirements with core filters it's best to contact your Customer Solutions manager to get inputs for solutions (one option is to create your custom Vue component, but that should be prevented whenever possible).
 
 References:
-- [PR Server](https://github.com/livingdocsIO/livingdocs-editor/pull/6166)
-- [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6136)
+* [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6166)
+* [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6136)
 
 ### Remove Editor Config appConfig.app.sidePanelItems :fire:
 
 The Editor Config `appConfig.app.sidePanelItems` is removed, move the config to the Project Config `editorSettings.mainNavigation`.
 
-References: [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6153)
+References:
+* [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6153)
 
 ### Document Revision Creation
 
@@ -224,7 +226,8 @@ Previously we created a new revision for document updates when any of the follow
 
 :fire: The rules above still apply, but only when revision data has changed. Changes to `Document Title`, `System Metadata`and `Publish Control` data will not create a new revision.
 
-References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5231)
+References:
+* [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/5231)
 
 
 
@@ -310,7 +313,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 
 ### Features
 
-* [Anonymized History after some time](https://github.com/livingdocsIO/livingdocs-editor/pull/6284)
+* [Anonymized History after specified time](https://github.com/livingdocsIO/livingdocs-editor/pull/6284)
 
 ### Improvements
 * [Improve synchronisation of remote metadata changes](https://github.com/livingdocsIO/livingdocs-editor/pull/5861)
