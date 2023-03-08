@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Handle pitch and bundle independent of publish control](https://github.com/livingdocsIO/livingdocs-editor/pull/6463)
 * [Deprecate Identifier](https://github.com/livingdocsIO/livingdocs-server/pull/5289)
 * [Update framework](https://github.com/livingdocsIO/livingdocs-editor/pull/6451)
 * [fix(deps): update dependency jose from 4.12.2 to v4.13.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5372)
