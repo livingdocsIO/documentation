@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Transform pitch to bundle](https://github.com/livingdocsIO/livingdocs-editor/pull/6464)
 * [Handle pitch and bundle independent of publish control](https://github.com/livingdocsIO/livingdocs-editor/pull/6463)
 * [Deprecate Identifier](https://github.com/livingdocsIO/livingdocs-server/pull/5289)
 * [Update framework](https://github.com/livingdocsIO/livingdocs-editor/pull/6451)
