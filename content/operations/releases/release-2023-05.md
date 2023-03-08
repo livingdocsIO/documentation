@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Update framework](https://github.com/livingdocsIO/livingdocs-editor/pull/6451)
 * [fix(deps): update dependency jose from 4.12.2 to v4.13.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5372)
 * [fix(deps): update dependency cloudinary from 1.34.0 to v1.35.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5357)
 * [fix(deps): update dependency @google-cloud/storage from 6.9.3 to v6.9.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5353)
