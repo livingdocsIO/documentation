@@ -336,6 +336,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.18): fix(task list): show only the assigned user, never the requester
 - [v90.33.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.17): fix(li-buy-in): add planning system guard
 - [v90.33.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.16): fix: remove animations from overflow table rows
 - [v90.33.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.15): fix(li-list-assignments): avoid flickering after list was selected
