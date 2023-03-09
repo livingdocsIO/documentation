@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix Task List](https://github.com/livingdocsIO/livingdocs-editor/pull/6468)
 * [Add `li-bundled-documents` metadata plugin](https://github.com/livingdocsIO/livingdocs-server/pull/5381)
 * [Bundle panel with empty state](https://github.com/livingdocsIO/livingdocs-editor/pull/6467)
 * [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/5375)
