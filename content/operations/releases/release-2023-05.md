@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1331.0 to v2.1332.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5383)
 * [Fix Task List](https://github.com/livingdocsIO/livingdocs-editor/pull/6468)
 * [Add `li-bundled-documents` metadata plugin](https://github.com/livingdocsIO/livingdocs-server/pull/5381)
 * [Bundle panel with empty state](https://github.com/livingdocsIO/livingdocs-editor/pull/6467)
