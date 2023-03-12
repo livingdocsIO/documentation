@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency webpack from 5.75.0 to v5.76.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6480)
 * [chore(deps): update dependency eslint from 8.35.0 to v8.36.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5387)
 * [Allow dashboard request to exclude revision content](https://github.com/livingdocsIO/livingdocs-server/pull/5382)
 * [Don't load document content in table dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/6474)
