@@ -1,5 +1,5 @@
 ---
-title: Metadata Plugins
+title: Custom Metadata Plugins
 description:
 weight: 1
 menus:
