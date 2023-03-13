@@ -74,9 +74,9 @@ aliases:
 
 #### Estimated Time of Completion Plugin
 
-The estimated time of completion meta data plugin `li-estimated-time-of-completion` enables a user to set an estimated time of completion for the current document. The plugin is available in the metadata form.
+The Estimated Time of Completion Metadata Plugin `li-estimated-time-of-completion` enables a user to set an estimated time of completion for the current document. The plugin is available in the Metadata Form.
 
-**Notice**: The li-estimated-time-of-completion plugin is only available if the planning system is enabled.
+**Notice**: The li-estimated-time-of-completion plugin is only available if the Planning System is enabled.
 
 * [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-estimated-time-of-completion" >}})
 * [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6255)
@@ -84,7 +84,7 @@ The estimated time of completion meta data plugin `li-estimated-time-of-completi
 
 #### Task List Plugin
 
-The task list meta data plugin `li-task-list` is a read only component which is used in the table dashboard. It gives an overview of current tasks connected with the given document.
+The Task List Metadata Plugin `li-task-list` is a read only component which is used in the Table Dashboard. It gives an overview of current tasks connected with the given document.
 
 * [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-task-list" >}})
 * [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6325)
@@ -92,10 +92,10 @@ The task list meta data plugin `li-task-list` is a read only component which is 
 
 #### Team Plugin
 
-The team meta data plugin `li-team` enables a user to associate other users with the current document by adding or removing them from the teams plugin. Additionally one user can be marked as the owner. The owner can not be removed from the team.
-The plugin is available in the metadata form and the table dashboard.
+The team Metadata Plugin `li-team` enables a user to associate other users with the current document by adding or removing them from the teams plugin. Additionally one user can be marked as the owner. The owner can not be removed from the team.
+The plugin is available in the Metadata Form and the Table Dashboard.
 
-**Notice**: The li-team plugin is only available if the planning system is enabled.
+**Notice**: The li-team plugin is only available if the Planning System is enabled.
 
 * [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-team" >}})
 * [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6024)
