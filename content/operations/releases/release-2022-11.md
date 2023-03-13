@@ -474,6 +474,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.74): fix: detect media changes by asset.key
 - [v85.15.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.73): fix(dashboards): Don't load document content in table dashboards
 - [v85.15.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.72): fix(li-list-assignments): avoid flickering after list was selected
 - [v85.15.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.71): fix(kanban board): reloads results correctly when result is less than page size
