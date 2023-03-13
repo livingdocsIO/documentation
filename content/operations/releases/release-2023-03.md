@@ -97,7 +97,7 @@ The plugin is available in the Metadata Form and the Table Dashboard.
 
 The Task List Table Dashboard Cell `liTableDashboardCellTaskList` is a read only component for the Table Dashboard. It gives an overview of current tasks connected with the given document.
 
-* [Documentation]({{< ref "/reference/project-config/editor-settings#upstream-components" >}})
+* [Documentation]({{< ref "/reference/project-config/editor-settings#litabledashboardcelltasklist" >}})
 * [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6325)
 * [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/5230)
 
