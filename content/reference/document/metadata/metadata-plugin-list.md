@@ -575,8 +575,17 @@ metadata: [
   {
     handle: 'estimatedTimeOfCompletion',
     type: 'li-estimated-time-of-completion',
+    config: {
+      // common
+      hideFromForm: false,                      // optional, default: false
+      required: false,                          // optional, default: false
+      requiredErrorMessage: 'Provide a value',  // optional
+    },
     ui: {
-      label: 'Ready for publication'
+      label: 'Ready for publication',           // optional, takes camelized name otherwise
+      config: {
+        readOnly: false,                        // optional, default: false
+      }
     }
   }
 ]
@@ -1344,7 +1353,19 @@ Dashboard:
 metadata: [
   {
     handle: 'myTeam',
-    type: 'li-team'
+    type: 'li-team',
+    config: {
+      // common
+      hideFromForm: false,                      // optional, default: false
+      required: false,                          // optional, default: false
+      requiredErrorMessage: 'Provide a value',  // optional
+    },
+    ui: {
+      label: 'My Team',                         // optional, takes camelized name otherwise
+      config: {
+        readOnly: false,                        // optional, default: false
+      }
+    }
   }
 ]
 ```
