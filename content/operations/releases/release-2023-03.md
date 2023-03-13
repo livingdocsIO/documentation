@@ -82,14 +82,6 @@ The Estimated Time of Completion Metadata Plugin `li-estimated-time-of-completio
 * [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6255)
 * [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/5176)
 
-#### Task List Plugin
-
-The Task List Metadata Plugin `li-task-list` is a read only component which is used in the Table Dashboard. It gives an overview of current tasks connected with the given document.
-
-* [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-task-list" >}})
-* [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6325)
-* [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/5230)
-
 #### Team Plugin
 
 The team Metadata Plugin `li-team` enables a user to associate other users with the current document by adding or removing them from the teams plugin. Additionally one user can be marked as the owner. The owner can not be removed from the team.
@@ -100,6 +92,14 @@ The plugin is available in the Metadata Form and the Table Dashboard.
 * [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-team" >}})
 * [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6024)
 * [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/4974)
+
+#### Task List Table Dashboard Cell
+
+The Task List Table Dashboard Cell `liTableDashboardCellTaskList` is a read only component for the Table Dashboard. It gives an overview of current tasks connected with the given document.
+
+* [Documentation]({{< ref "/reference/project-config/editor-settings#upstream-components" >}})
+* [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6325)
+* [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/5230)
 
 ### API Consumer Management
 

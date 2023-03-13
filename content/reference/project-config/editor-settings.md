@@ -633,7 +633,7 @@ The `liTableDashboardCellPublishState` upstream component can be used to display
 
 ##### liTableDashboardCellTaskList
 
-{{< added-in release-2023-03 >}}
+{{< added-in release-2023-03 block >}}
 
 The `liTableDashboardCellTaskList` gives an overview of current tasks connected with the given document.
 

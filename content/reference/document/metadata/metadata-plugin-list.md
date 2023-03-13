@@ -47,7 +47,6 @@ You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-e
 | [Retresco](#li-retresco)                                         | li-retresco                     | Retresco tag management                        | D                                                                                                       | manage tags                                                |
 | [String List](#li-string-list)                                   | li-string-list                  | Array of Strings                               | D, M, T, I                                                                                              | multiselect                                                |
 | [String](#li-text)                                               | li-text                         | String                                         | D, M, T, I                                                                                              | text, textarea, select                                     |
-| [Task List](#li-task-list)                                       | li-task-list                    | List of tasks                                  | T                                                                                                       | task list in Table Dashboard                               |
 | [Team](#li-team)                                                 | li-team                         | Show user avatars associated with the document | D, T                                                                                                    | team in Metadata Form or dashboard                         |
 | [Tree](#li-tree)                                                 | li-tree                         | Tree with link, document, group                | D                                                                                                       | tree                                                       |
 | [Transcoding State](#li-transcoding-state)                       | li-transcoding-state            | State of external transcoding job              | M (Video)                                                                                               | trigger transcoding, current job progress, result          |
@@ -542,7 +541,7 @@ References:
 
 ## li-estimated-time-of-completion
 
-{{< added-in release-2023-03 >}}
+{{< added-in release-2023-03 block >}}
 
 The Estimated Time of Completion Metadata Plugin `li-estimated-time-of-completion` enables a user to set an estimated time of completion for the current document. The plugin is available in the Metadata Form.
 
@@ -1293,17 +1292,9 @@ metadata: [
 ]
 ```
 
-## li-task-list
-
-{{< added-in release-2023-03 >}}
-
-The task list metadata plugin `li-task-list` is a read only component which is used in the Table Dashboard. It gives an overview of current tasks connected with the given document.
-
-[See Table Dashboard Config]({{< ref "/reference/project-config/editor-settings#upstream-components" >}})
-
 ## li-team
 
-{{< added-in release-2023-03 >}}
+{{< added-in release-2023-03 block >}}
 
 The team metadata plugin `li-team` enables a user to associate other users with the current document by adding or removing them from the teams plugin. Additionally one user can be marked as the owner. The owner can not be removed from the team.
 The plugin is available in the Metadata Form and the Table Dashboard.
