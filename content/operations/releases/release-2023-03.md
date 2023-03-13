@@ -108,7 +108,7 @@ With the new API Consumer Management feature you are now able to manage the life
 - manage token suspension
 - manage token expiration
 
-* [Documentation](TODO)
+* [Documentation]({{< ref "/reference/public-api/get-started#authorization" >}})
 * [PR Editor: Design](https://github.com/livingdocsIO/livingdocs-editor/pull/6254)
 * [PR Editor: API Consumer Management](https://github.com/livingdocsIO/livingdocs-editor/pull/6243)
 * [PR Server: API Consumer Management](https://github.com/livingdocsIO/livingdocs-server/pull/5170)
@@ -136,16 +136,14 @@ You can now add `rel="sponsored"` tag to an HTML link in the text formatting too
 
 ### Anonymize User History
 
-TODO: Description
+You can now configure timespan in the server configuration after which the revision history will be anonymized.
+After said time, the editor does not receive a `user_id` with the revisions response and thus can not render the associated users but renders a fallback "Anonymous User".
 
-* [Documentation](TODO)
+* [Documentation]({{< ref "/customising/server-configuration#documents" >}})
 * [PR Editor: Anonymized History after specified time](https://github.com/livingdocsIO/livingdocs-editor/pull/6284)
+* [PR Server: Anonymized History after specified time](https://github.com/livingdocsIO/livingdocs-server/pull/5191)
 
 ## Small Improvements
-
-### Comments
-
-TODO
 
 ### Publish Control Import API Support
 
