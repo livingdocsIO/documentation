@@ -12,46 +12,46 @@ This overview contains a list of all metadata plugins provided by Livingdocs.
 Go to [Metadata]({{< ref "/reference/document/metadata" >}}) to get an overview of the metadata concept.
 You can [create your own plugins]({{< ref "/guides/documents/metadata/metadata-examples" >}}) in the downstream.
 
-| Metadata Plugin                                                  | Metadata Plugin Type            | Description                                    | Usage (D = Document, M = Media Library Entries, T = Table Dashboard, I = Includes, F = Display Filters) | Default UI                                           |
-|------------------------------------------------------------------|---------------------------------|------------------------------------------------| ------------------------------------------------------------------------------------------------- |------------------------------------------------------|
-| [Boolean](#li-boolean)                                           | li-boolean                      | Boolean                                        | D, M, T, I                                                                                        | checkbox                                             |
-| [Buy-In](#li-buy-in)                                             | li-buy-in                       | Buy-in workflow timeline and actions           | D, T                                                                                              | Placeholder for inital status                 |
-| [Color](#li-color)                                               | li-color                        | Color Code                                     | D, M, T, I                                                                                        | text                                                 |
-| [Category](#li-category)                                         | li-category                     | category                                       | D, T, F                                                                                           | select                                               |
-| [Date](#li-date)                                                 | li-date                         | Date                                           | D, M, I                                                                                           | date input                                           |
-| [Date/Time validity](#li-datetime-validity)                      | li-datetime-validity            | Date                                           | M                                                                                                 | 2 date/time inputs                                   |
-| [Date/Time](#li-datetime)                                        | li-datetime                     | Date                                           | D, M, I                                                                                           | date/time input                                      |
-| [Dependencies](#li-dependencies)                                 | li-dependencies                 | Livingdocs framework dependencies definition   | D                                                                                                 | no UI                                                |
-| [Desk-Net Integration](#li-desknet-integration)                  | li-desknet-integration          | Desk-Net Integration                           | D, T                                                                                              | Link to Desk-Net distribution entry                  |
-| [Desk-Net Schedule](#li-desknet-schedule)                        | li-desknet-schedule             | Desk-Net Schedule                              | D                                                                                                 | Platform/category select and date input              |
-| [Document Reference](#li-document-reference)                     | li-document-reference           | A reference to another document                | D, M, T, I                                                                                        | document selection (dialog)                          |
-| [Document References](#li-document-references)                   | li-document-references          | A list of references to other documents        | D, M, I                                                                                           | document selection (dialog)                          |
-| [Enum](#li-enum)                                                 | li-enum                         | string from static list, validated on publish  | D, M, T, I                                                                                        | select                                               |
-| [Estimated Time Of Completion](#li-estimated-time-of-completion) | li-estimated-time-of-completion | Estimated time of completion of a document     | D                                                                                                 | buttons to select estimated time of completion from  |
-| [External Id](#li-external-id)                                   | li-external-id                  | id marker for an external system               | D, M, T                                                                                           | select                                               |
-| [Document Target Length](#li-target-length)                      | li-target-length                | Target length in characters for a document     | D                                                                                                 | number input or length slider                        |
-| [Google Vision](#li-google-vision)                               | li-google-vision                | Google Vision Autotagging for Images           | M                                                                                                 | specialized UI, no config possible                   |
-| [Image](#li-image)                                               | li-image                        | Images                                         | D, M                                                                                              | Image selection/upload/crops                         |
-| [Issue Management](#li-issue-management)                         | li-issue-management             | Issue Management                               | D                                                                                                 | List of linked documents with actions to manage references |
-| [iMatrics](#li-imatrics-nlp-tags)                                | li-imatrics-nlp-tags            | iMatrics tag management                        | D                                                                                                 | manage tags                                          |
-| [Integer](#li-integer)                                           | li-integer                      | Integer                                        | D, M, F, I                                                                                        | number input                                         |
-| [Language](#li-language)                                         | li-language                     | Language                                       | D                                                                                                 | no Ui                                                |
-| [Metadata Translations](#li-metadata-translations)               | li-metadata-translations        | Enable metadata translations                   | D (data record only), M                                                                           | translation UI                                       |
-| [Named Crops](#li-named-crops)                                   | li-named-crops                  | Default Crops for Images                       | M                                                                                                 | crop management UI                                   |
-| [Numeric List](#li-numeric-list)                                 | li-numeric-list                 | Array of Numbers                               | D, M, I                                                                                           | multi number input                                   |
-| [Poster Image](#li-poster-image)                                 | li-poster-image                 | Poster Image for Videos                        | M (Video)                                                                                         | image selection                                      |
-| [Publish Date](#li-publish-date)                                 | li-publish-date                 | Holds first publication date, user editable    | D                                                                                                 | date/time input                                      |
-| [Push Messages](#li-push-messages)                               | li-push-messages                | Manages creation and storage of push messages  | D, T                                                                                              | Table dashboard button launches dialog with input form |
-| [Reference List](#li-reference-list)                             | li-reference-list               | Multiple references to other documents         | D, M                                                                                              | document selection (dialog)                          |
-| [Reference](#li-reference)                                       | li-reference                    | A reference to another document                | D, M                                                                                              | document selection (dialog)                          |
-| [Retresco](#li-retresco)                                         | li-retresco                     | Retresco tag management                        | D                                                                                                 | manage tags                                          |
-| [String List](#li-string-list)                                   | li-string-list                  | Array of Strings                               | D, M, T, I                                                                                        | multiselect                                          |
-| [String](#li-text)                                               | li-text                         | String                                         | D, M, T, I                                                                                        | text, textarea, select                               |
-| [Task List](#li-task-list)                                       | li-task-list                    | List of tasks                                  | T                                                                                                 | task list in table dashboard                         |
-| [Team](#li-team)                                                 | li-team                         | Show user avatars associated with the document | D, T                                                                                              | team in metadata form or dashboard                   |
-| [Tree](#li-tree)                                                 | li-tree                         | Tree with link, document, group                | D                                                                                                 | tree                                                 |
-| [Transcoding State](#li-transcoding-state)                       | li-transcoding-state            | State of external transcoding job              | M (Video)                                                                                         | trigger transcoding, current job progress, result    |
-| [Video Reference](#li-video-reference)                           | li-video-reference              | A reference to a video (and a poster image)    | D, M, I                                                                                           | Upload/Media Library Picker for a Video and a Poster Image |
+| Metadata Plugin                                                  | Metadata Plugin Type            | Description                                    | Usage (D = Document, M = Media Library Entries, T = Table Dashboard, I = Includes, F = Display Filters) | Default UI                                                 |
+| ---------------------------------------------------------------- | ------------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| [Boolean](#li-boolean)                                           | li-boolean                      | Boolean                                        | D, M, T, I                                                                                              | checkbox                                                   |
+| [Buy-In](#li-buy-in)                                             | li-buy-in                       | Buy-in workflow timeline and actions           | D, T                                                                                                    | Placeholder for initial status                             |
+| [Color](#li-color)                                               | li-color                        | Color Code                                     | D, M, T, I                                                                                              | text                                                       |
+| [Category](#li-category)                                         | li-category                     | category                                       | D, T, F                                                                                                 | select                                                     |
+| [Date](#li-date)                                                 | li-date                         | Date                                           | D, M, I                                                                                                 | date input                                                 |
+| [Date/Time validity](#li-datetime-validity)                      | li-datetime-validity            | Date                                           | M                                                                                                       | 2 date/time inputs                                         |
+| [Date/Time](#li-datetime)                                        | li-datetime                     | Date                                           | D, M, I                                                                                                 | date/time input                                            |
+| [Dependencies](#li-dependencies)                                 | li-dependencies                 | Livingdocs framework dependencies definition   | D                                                                                                       | no UI                                                      |
+| [Desk-Net Integration](#li-desknet-integration)                  | li-desknet-integration          | Desk-Net Integration                           | D, T                                                                                                    | Link to Desk-Net distribution entry                        |
+| [Desk-Net Schedule](#li-desknet-schedule)                        | li-desknet-schedule             | Desk-Net Schedule                              | D                                                                                                       | Platform/category select and date input                    |
+| [Document Reference](#li-document-reference)                     | li-document-reference           | A reference to another document                | D, M, T, I                                                                                              | document selection (dialog)                                |
+| [Document References](#li-document-references)                   | li-document-references          | A list of references to other documents        | D, M, I                                                                                                 | document selection (dialog)                                |
+| [Enum](#li-enum)                                                 | li-enum                         | string from static list, validated on publish  | D, M, T, I                                                                                              | select                                                     |
+| [Estimated Time Of Completion](#li-estimated-time-of-completion) | li-estimated-time-of-completion | Estimated time of completion of a document     | D                                                                                                       | buttons to select Estimated Time of Completion from        |
+| [External Id](#li-external-id)                                   | li-external-id                  | id marker for an external system               | D, M, T                                                                                                 | select                                                     |
+| [Document Target Length](#li-target-length)                      | li-target-length                | Target length in characters for a document     | D                                                                                                       | number input or length slider                              |
+| [Google Vision](#li-google-vision)                               | li-google-vision                | Google Vision Autotagging for Images           | M                                                                                                       | specialized UI, no config possible                         |
+| [Image](#li-image)                                               | li-image                        | Images                                         | D, M                                                                                                    | Image selection/upload/crops                               |
+| [Issue Management](#li-issue-management)                         | li-issue-management             | Issue Management                               | D                                                                                                       | List of linked documents with actions to manage references |
+| [iMatrics](#li-imatrics-nlp-tags)                                | li-imatrics-nlp-tags            | iMatrics tag management                        | D                                                                                                       | manage tags                                                |
+| [Integer](#li-integer)                                           | li-integer                      | Integer                                        | D, M, F, I                                                                                              | number input                                               |
+| [Language](#li-language)                                         | li-language                     | Language                                       | D                                                                                                       | no Ui                                                      |
+| [Metadata Translations](#li-metadata-translations)               | li-metadata-translations        | Enable metadata translations                   | D (data record only), M                                                                                 | translation UI                                             |
+| [Named Crops](#li-named-crops)                                   | li-named-crops                  | Default Crops for Images                       | M                                                                                                       | crop management UI                                         |
+| [Numeric List](#li-numeric-list)                                 | li-numeric-list                 | Array of Numbers                               | D, M, I                                                                                                 | multi number input                                         |
+| [Poster Image](#li-poster-image)                                 | li-poster-image                 | Poster Image for Videos                        | M (Video)                                                                                               | image selection                                            |
+| [Publish Date](#li-publish-date)                                 | li-publish-date                 | Holds first publication date, user editable    | D                                                                                                       | date/time input                                            |
+| [Push Messages](#li-push-messages)                               | li-push-messages                | Manages creation and storage of push messages  | D, T                                                                                                    | Table Dashboard button launches dialog with input form     |
+| [Reference List](#li-reference-list)                             | li-reference-list               | Multiple references to other documents         | D, M                                                                                                    | document selection (dialog)                                |
+| [Reference](#li-reference)                                       | li-reference                    | A reference to another document                | D, M                                                                                                    | document selection (dialog)                                |
+| [Retresco](#li-retresco)                                         | li-retresco                     | Retresco tag management                        | D                                                                                                       | manage tags                                                |
+| [String List](#li-string-list)                                   | li-string-list                  | Array of Strings                               | D, M, T, I                                                                                              | multiselect                                                |
+| [String](#li-text)                                               | li-text                         | String                                         | D, M, T, I                                                                                              | text, textarea, select                                     |
+| [Task List](#li-task-list)                                       | li-task-list                    | List of tasks                                  | T                                                                                                       | task list in Table Dashboard                               |
+| [Team](#li-team)                                                 | li-team                         | Show user avatars associated with the document | D, T                                                                                                    | team in Metadata Form or dashboard                         |
+| [Tree](#li-tree)                                                 | li-tree                         | Tree with link, document, group                | D                                                                                                       | tree                                                       |
+| [Transcoding State](#li-transcoding-state)                       | li-transcoding-state            | State of external transcoding job              | M (Video)                                                                                               | trigger transcoding, current job progress, result          |
+| [Video Reference](#li-video-reference)                           | li-video-reference              | A reference to a video (and a poster image)    | D, M, I                                                                                                 | Upload/Media Library Picker for a Video and a Poster Image |
 
 ## li-boolean
 
@@ -86,9 +86,9 @@ metadata: [
 
 {{< added-in release-2023-03 block >}}
 
-**Notice**: The li-buy-in plugin is only available if the planning system is enabled.
+**Notice**: The li-buy-in plugin is only available if the Planning System is enabled.
 
-As part of the planning system, users want to ask for buy-in when writing an article or pitching an idea.
+As part of the Planning System, users want to ask for buy-in when writing an article or pitching an idea.
 Other users can express their backing by accepting a buy-in request.
 The presence, absence or status of a buy-in request has no effect on permissions and is just a communication tool.
 
@@ -544,9 +544,9 @@ References:
 
 {{< added-in release-2023-03 >}}
 
-The estimated time of completion meta data plugin `li-estimated-time-of-completion` enables a user to set an estimated time of completion for the current document. The plugin is available in the metadata form.
+The Estimated Time of Completion Metadata Plugin `li-estimated-time-of-completion` enables a user to set an estimated time of completion for the current document. The plugin is available in the Metadata Form.
 
-**Notice**: The li-estimated-time-of-completion plugin is only available if the planning system is enabled.
+**Notice**: The li-estimated-time-of-completion plugin is only available if the Planning System is enabled.
 
 **Storage Format**:
 
@@ -561,11 +561,11 @@ The estimated time of completion meta data plugin `li-estimated-time-of-completi
 
 **Default UI**
 
-Metadata form:
+Metadata Form:
 
-{{< img src="./images/li-estimated-time-of-completion-buttons.png" alt="Estimated time of completion plugin buttons" >}}
-{{< img src="./images/li-estimated-time-of-completion-single-date.png" alt="Estimated time of completion plugin single date" >}}
-{{< img src="./images/li-estimated-time-of-completion-date-range.png" alt="Estimated time of completion plugin date range" >}}
+{{< img src="./images/li-estimated-time-of-completion-buttons.png" alt="Estimated Time of Completion Metadata Plugin buttons" >}}
+{{< img src="./images/li-estimated-time-of-completion-single-date.png" alt="Estimated Time of Completion Metadata Plugin single date" >}}
+{{< img src="./images/li-estimated-time-of-completion-date-range.png" alt="Estimated Time of Completion Metadata Plugin date range" >}}
 
 **Project Config**
 
@@ -1297,7 +1297,7 @@ metadata: [
 
 {{< added-in release-2023-03 >}}
 
-The task list meta data plugin `li-task-list` is a read only component which is used in the table dashboard. It gives an overview of current tasks connected with the given document.
+The task list metadata plugin `li-task-list` is a read only component which is used in the Table Dashboard. It gives an overview of current tasks connected with the given document.
 
 [See Table Dashboard Config]({{< ref "/reference/project-config/editor-settings#upstream-components" >}})
 
@@ -1305,10 +1305,10 @@ The task list meta data plugin `li-task-list` is a read only component which is 
 
 {{< added-in release-2023-03 >}}
 
-The team meta data plugin `li-team` enables a user to associate other users with the current document by adding or removing them from the teams plugin. Additionally one user can be marked as the owner. The owner can not be removed from the team.
-The plugin is available in the metadata form and the table dashboard.
+The team metadata plugin `li-team` enables a user to associate other users with the current document by adding or removing them from the teams plugin. Additionally one user can be marked as the owner. The owner can not be removed from the team.
+The plugin is available in the Metadata Form and the Table Dashboard.
 
-**Notice**: The li-team plugin is only available if the planning system is enabled.
+**Notice**: The li-team plugin is only available if the Planning System is enabled.
 
 **Storage Format**:
 
@@ -1337,13 +1337,13 @@ The plugin is available in the metadata form and the table dashboard.
 
 **Default UI**
 
-Metadata form:
+Metadata Form:
 
 {{< img src="./images/li-team-meta.png" alt="Team plugin in the meta data" >}}
 
 Dashboard:
 
-{{< img src="./images/li-team-dashboard.png" alt="Team plugin in the table dashboard" >}}
+{{< img src="./images/li-team-dashboard.png" alt="Team plugin in the Table Dashboard" >}}
 
 **Project Config**
 
