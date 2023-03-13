@@ -337,6 +337,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.20): fix(buy-in): remove 2nd line of empty state
 - [v90.33.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.19): fix(dashboards): Don't load document content in table dashboards
 - [v90.33.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.18): fix(task list): show only the assigned user, never the requester
 - [v90.33.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.17): fix(li-buy-in): add planning system guard
