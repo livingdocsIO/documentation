@@ -341,6 +341,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.22): fix(dashboards): don't show the open task count since we have a separate cell for this now
 - [v90.33.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.21): fix(distribution-planning): Use yyyy-MM-dd for fixed date request
 - [v90.33.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.20): fix(buy-in): remove 2nd line of empty state
 - [v90.33.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.19): fix(dashboards): Don't load document content in table dashboards
