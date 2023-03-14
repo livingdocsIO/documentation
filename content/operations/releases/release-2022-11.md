@@ -429,6 +429,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.47): fix: update framework version
 - [v200.3.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.46): fix(documents): Allow dashboard request to exclude revision content
 - [v200.3.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.45): fix(lib): Get require("~lib") to work again with newer npm versions
 - [v200.3.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.44): fix(document-lists): Support list updates with a lot of document ids
