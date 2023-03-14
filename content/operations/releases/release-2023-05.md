@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix Desk-Net Schedule automatic placement errors due to schedule properties](https://github.com/livingdocsIO/livingdocs-editor/pull/6470)
 * [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/5399)
 * [fix: update framework version](https://github.com/livingdocsIO/livingdocs-server/pull/5400)
 * [fix: bump framework version](https://github.com/livingdocsIO/livingdocs-editor/pull/6504)
