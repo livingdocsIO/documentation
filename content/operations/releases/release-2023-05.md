@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Create and add documents to bundle](https://github.com/livingdocsIO/livingdocs-editor/pull/6488)
 * [Use yyyy-MM-dd format date query parameter for Distribution Planning Schedule fixed date request](https://github.com/livingdocsIO/livingdocs-editor/pull/6471)
 * [fix: remove 2nd line of buy-in empty state](https://github.com/livingdocsIO/livingdocs-editor/pull/6482)
 * [fix(deps): update dependency webpack from 5.75.0 to v5.76.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6480)
