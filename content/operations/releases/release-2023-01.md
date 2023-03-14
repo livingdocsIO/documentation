@@ -261,6 +261,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.35): fix: update framework version
 - [v208.3.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.34): fix(distribution-planning): Remove document content from response
 - [v208.3.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.33): fix: Upgrade to sharp 0.31.3
 - [v208.3.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.32): fix(lib): Get require("~lib") to work again with newer npm versions
