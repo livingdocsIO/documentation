@@ -295,6 +295,7 @@ Here is a list of all patches after the release has been announced.
 - [v208.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.3): fix(cli reencrypt): now uses correct stringify
 
 ### Livingdocs Editor Patches
+- [v87.5.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.59): fix: bump framework version
 - [v87.5.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.58): fix(document tooltip): shows scheduled docs
 - [v87.5.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.57): fix(dashboards): Don't load document content in table dashboards
 - [v87.5.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.56): fix(table dashboards): don't log errors in mixed content type scenarios
