@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix: contentType displayFilter works correctly with contentTypes not from the defaultChannel](https://github.com/livingdocsIO/livingdocs-editor/pull/6502)
 * [Remove document from bundle](https://github.com/livingdocsIO/livingdocs-editor/pull/6497)
 * [Shows scheduled doc tooltip ](https://github.com/livingdocsIO/livingdocs-editor/pull/6494)
 * [Create and add documents to bundle](https://github.com/livingdocsIO/livingdocs-editor/pull/6488)
