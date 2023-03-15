@@ -54,7 +54,7 @@ They are separately listed here:
 - `contentType`: uses the content-types configuration in your server to filter for different content-types, e.g. galleries or regular articles.
 - `channels` give the user a dropdown to filter by a specific channel. The concept of channels will be removed, if you aren't using them yet, don't start doing so.
 ## Metadata Filters
-{{< added-in release-2021-03 >}}
+{{< added-in release-2023-03 >}}
 Listed here are the supported metadata types, you would configure the filters for them with a `metadataPropertyName` with the `handle` of a property of this type that is configured in your `contentType`s/`mediaType`s.
 Support for more types will be added as needed. Contact your Customer Solutions Manager for potential [Implementation Partnerships](https://livingdocs.io/en/livingdocs-2022-2023-roadmap).
 ### Supported Types
