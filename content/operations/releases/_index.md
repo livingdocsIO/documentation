@@ -1,6 +1,6 @@
 ---
-title: Release Notes
-linkTitle: Release Notes
+title: Technical Release Notes
+linkTitle: Technical Release Notes
 description: Check out our future, present and past releases in detail.
 icon: alert-decagram
 menu: operations
@@ -12,7 +12,7 @@ Subscribe to the release newsletter to get notified with a rundown of the latest
 
 {{< newsletter-form >}}
 
-## Release Notes
+## Technical Release Notes
 
 * **Current Release**: The latest announced release
 * **Maintained Releases**: Get security fixes and severe bug fixes.
