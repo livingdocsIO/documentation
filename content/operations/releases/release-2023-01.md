@@ -261,6 +261,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.36): fix(password-validation): Generic error (5XX) was used for Password input verification and error properties where removed, replaced with `validationError` which will return clearer 4XX error
 - [v208.3.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.35): fix: update framework version
 - [v208.3.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.34): fix(distribution-planning): Remove document content from response
 - [v208.3.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.33): fix: Upgrade to sharp 0.31.3
