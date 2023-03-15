@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Show distribution toolbar action on bundles](https://github.com/livingdocsIO/livingdocs-editor/pull/6514)
 * [Also anonymise in changes calls](https://github.com/livingdocsIO/livingdocs-server/pull/5404)
 * [fix(deps): update dependency aws-sdk from 2.1334.0 to v2.1335.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5405)
 * [fix(create): correctly check if contentType is on defaultChannel](https://github.com/livingdocsIO/livingdocs-editor/pull/6510)
