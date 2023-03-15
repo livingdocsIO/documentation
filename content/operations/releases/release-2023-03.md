@@ -24,8 +24,8 @@ aliases:
 
 * [Feature Webinar Recording](https://us02web.zoom.us/rec/share/dRvC-FtjfueWcmcvxVY6-rz8Ac_-x83tpCYdHckhEZzRIEFH1V3eu5nJsUsmj2pC.Sua3lgYxjTjcdBxH) | Passcode: B?^VPv7.
 * [Feature Webinar Slides](https://docs.google.com/presentation/d/1k2r0uP5Vg_-rBN6RWTFivR7c0Wy-B_XxPcHStDGINqg)
-* Dev Webinar Recording: **TODO**
-* Dev Webinar Slides: **TODO**
+* [Dev Webinar Recording](https://us02web.zoom.us/rec/share/vzIxocWVH6hGvI-QJB4cKj73gZrh4E97F4hEhgwnDP1DkM8mPHEB76ShwkpRb0sJ.ulrwLKkx_urrJaP1)  | Passcode: +yp9#sTZ
+* [Dev Webinar Slides](https://docs.google.com/presentation/d/1zXVo9CQ5U99ectwgW7cAU1m4ZqmHWWihdp4tcvUYfEs/edit?usp=sharing)
 * [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ## System Requirements
