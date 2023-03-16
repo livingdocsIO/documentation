@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @fastify/reply-from from 9.0.0 to v9.0.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6517)
 * [Remove app-level unnecessary scrollbar](https://github.com/livingdocsIO/livingdocs-editor/pull/6519)
 * [fix(deps): update dependency @livingdocs/framework from 24.13.1 to v24.13.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5414)
 * [fix(display filter): ensure custom vue display filters get the config object](https://github.com/livingdocsIO/livingdocs-editor/pull/6512)
