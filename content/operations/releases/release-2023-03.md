@@ -344,6 +344,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.27): fix: pass the correct config object to custom angular display filters
 - [v90.33.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.26): fix(create): correctly check if contentType on defaultChannel to use the right code path during creation
 - [v90.33.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.25): fix(desknet): Fix automatic placement errors due to schedule properties
 - [v90.33.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.24): fix: bump framework version
