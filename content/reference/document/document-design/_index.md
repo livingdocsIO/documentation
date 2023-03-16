@@ -509,6 +509,13 @@ fieldExtractor: [
 ]
 ```
 
+By default the field extractor is not enabled for pages. You can configure it in the global editor config with the following field in the metadata object: 
+```
+  metadata: {
+    fieldExtractorOnPage: true
+  }
+  ```
+
 **Properties**
 - `identifier` - metadata field handle, you want to sync to
 - `type` data type
