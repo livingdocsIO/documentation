@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(creation flow): Allow content type boxes to text wrap their labels](https://github.com/livingdocsIO/livingdocs-editor/pull/6523)
 * [Fix finite products config](https://github.com/livingdocsIO/livingdocs-server/pull/5417)
 * [Issue navigation](https://github.com/livingdocsIO/livingdocs-server/pull/5413)
 * [fix(deps): update dependency @fastify/reply-from from 9.0.0 to v9.0.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6517)
