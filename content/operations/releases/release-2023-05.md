@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix li-datetime filter date parsing](https://github.com/livingdocsIO/livingdocs-editor/pull/6531)
 * [Search DSL](https://github.com/livingdocsIO/livingdocs-server/pull/5421)
 * [Support caching for byIds dataloader](https://github.com/livingdocsIO/livingdocs-editor/pull/6528)
 * [Fix/Scrollbar Issues](https://github.com/livingdocsIO/livingdocs-editor/pull/6522)
