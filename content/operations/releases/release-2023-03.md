@@ -344,6 +344,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.30): fix(insert panel): Spacing
 - [v90.33.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.29): fix(creation flow): Made content type boxes keep their size
 - [v90.33.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.28): fix: remove unnecessary, layout breaking `app__notifications` div
 - [v90.33.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.27): fix: pass the correct config object to custom angular display filters
