@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency mini-css-extract-plugin from 2.7.3 to v2.7.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6526)
 * [fix(deps): update dependency sass from 1.59.2 to v1.59.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6527)
 * [fix(deps): update dependency style-loader from 3.3.1 to v3.3.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6538)
 * [fix(deps): update dependency exifreader from 4.11.0 to v4.11.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5428)
