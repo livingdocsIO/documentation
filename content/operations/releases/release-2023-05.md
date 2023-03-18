@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1337.0 to v2.1338.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5430)
 * [Don't show metadata button for legacy publication](https://github.com/livingdocsIO/livingdocs-editor/pull/6540)
 * [Remove support of .documents and .publications properties on search results](https://github.com/livingdocsIO/livingdocs-server/pull/5427)
 * [fix(deps): update babel (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6516)
