@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency style-loader from 3.3.1 to v3.3.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6538)
 * [fix(deps): update dependency exifreader from 4.11.0 to v4.11.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5428)
 * [fix(deps): update dependency aws-sdk from 2.1337.0 to v2.1338.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5430)
 * [Don't show metadata button for legacy publication](https://github.com/livingdocsIO/livingdocs-editor/pull/6540)
