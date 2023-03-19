@@ -261,6 +261,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.38): fix(redis): Include Breaking change message for versions lower than version 6.2
 - [v208.3.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.37): chore: Upgrade to redis 6.2 as that's the minimal version supported in this release
 - [v208.3.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.36): fix(password-validation): Generic error (5XX) was used for Password input verification and error properties where removed, replaced with `validationError` which will return clearer 4XX error
 - [v208.3.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.35): fix: update framework version
