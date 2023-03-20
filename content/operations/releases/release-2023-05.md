@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(document selection): ensure filters are applied when using legacy dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/6550)
 * [Don't hide table dashboard flyouts on mouseleave](https://github.com/livingdocsIO/livingdocs-editor/pull/6515)
 * [Ignore test files in metadata plugin loader](https://github.com/livingdocsIO/livingdocs-server/pull/5434)
 * [fix: add favicon.ico and apple-touch-icon](https://github.com/livingdocsIO/livingdocs-editor/pull/6551)
