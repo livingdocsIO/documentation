@@ -345,6 +345,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.32): fix(image_form): hide download button when no crops are available
 - [v90.33.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.31): fix(vue): Fix default parameter of components that should fallback to an empty object
 - [v90.33.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.30): fix(insert panel): Spacing
 - [v90.33.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.29): fix(creation flow): Made content type boxes keep their size
