@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Hide download button when no crops are available](https://github.com/livingdocsIO/livingdocs-editor/pull/6541)
 * [Fix content type changes on documents](https://github.com/livingdocsIO/livingdocs-server/pull/5432)
 * [fix(deps): update dependency webpack from 5.76.1 to v5.76.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6543)
 * [fix(deps): update dependency mini-css-extract-plugin from 2.7.3 to v2.7.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6526)
