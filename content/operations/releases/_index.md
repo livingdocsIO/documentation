@@ -58,5 +58,3 @@ npm update @livingdocs/editor
 // and then you can commit the change
 npm list | grep @livingdocs/editor
 ```
-
-Info: [Rili (Beta)](https://rili.cluster.livingdocs.io/) is a small helper service to find out the latest version of a release.
