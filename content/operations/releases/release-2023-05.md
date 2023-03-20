@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Ignore test files in metadata plugin loader](https://github.com/livingdocsIO/livingdocs-server/pull/5434)
 * [fix: add favicon.ico and apple-touch-icon](https://github.com/livingdocsIO/livingdocs-editor/pull/6551)
 * [Hide download button when no crops are available](https://github.com/livingdocsIO/livingdocs-editor/pull/6541)
 * [Fix content type changes on documents](https://github.com/livingdocsIO/livingdocs-server/pull/5432)
