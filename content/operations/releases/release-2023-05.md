@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Make the job queue waitNext more reliable](https://github.com/livingdocsIO/livingdocs-server/pull/5447)
 * [Fix redis xtrimdelivered](https://github.com/livingdocsIO/livingdocs-server/pull/5449)
 * [Bundle panel in article metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/6562)
 * [Support expectedOrActualPublicationDate filters in the search](https://github.com/livingdocsIO/livingdocs-server/pull/5448)
