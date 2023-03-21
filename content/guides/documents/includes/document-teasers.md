@@ -155,7 +155,9 @@ By adding this dashboard to `contentType.editor.documentEditingToolbar.documentD
 
 ## Enabling Drag and Drop to create Teaser Components
 
-All there is to do now, is adding a bit of config to let the system know, which Teaser Component should be created when dropping an Article card from that dashboard onto the Document. This is done in the Article Content-Type:
+All there is to do now, is adding a bit of config to let the system know, which Teaser Component should be created when dropping an Article card (source) from that dashboard into any document (target). 
+
+This is done in the source content Content-Type, in this case `article.js`:
 
 ```js
 // article.js
@@ -172,10 +174,18 @@ All there is to do now, is adding a bit of config to let the system know, which 
 }
 ```
 
-And adding the allowed import and export config to the project config:
+
+`teaserComponents` is an array, as we support multiple teaser components from the same source content type. For example, you could have several teaser components with different sizes (S, M, L, XL). 
+The first teaser component in the array will be the default one. 
+
+The teaserComponents config must be added only to the source content type (`article`), not in the teaser component nor in the target content type.
+
+## Allow Import and Export in the Project Config
+
+And adding the [allowed import and export config]({{< ref "/reference/project-config/import-export" >}})to the project config:
 
 ```js
-import: {
+  import: {
     allowedProjects: [{ handle: "exampleHandle" }],
   },
   export: {
