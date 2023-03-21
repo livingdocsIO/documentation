@@ -218,6 +218,7 @@ redis: {
   // Configure a specific redis primary, defaults to 'localhost'
   host: 'redis',
   port: 6379,
+  db: 0,  // {default: 0}
 
   // Or configure {{< a title="redis sentinel" href="https://redis.io/topics/sentinel" >}}
   masterName: 'livingdocs-develop',
@@ -675,6 +676,7 @@ kv: {
     prefix: 'li:r',
     host: process.env.redis__host,
     port: process.env.redis__port || 6379,
+    db: 0, // {default: 0}
     sentinels: process.env.redis_sentinels && JSON.parse(process.env.redis_sentinels),
     masterName: process.env.redis_masterName
   }
