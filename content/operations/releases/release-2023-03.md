@@ -347,6 +347,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.38): fix(li-table-dashboard-cell-context-menu): filter out hidden actions
 - [v90.33.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.37): fix(embedded documents): allow document references on any param, not just 'article'
 - [v90.33.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.36): fix(menu tool): apply filters.menuList when not using legacy dashboards
 - [v90.33.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.35): fix(document selection): ensure filters are applied when using legacy dashboards
