@@ -330,6 +330,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.17): fix(redis): Coerce strings to numbers. There was an inconsistency with some integers where `tonumber('0')` fails as it requires a base with that.
 - [v213.6.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.16): fix: improve isTestFile regex
 - [v213.6.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.15): test: Fix test description in app/features/retresco/retresco-api.test.js
 - [v213.6.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.14): fix(password-validation): Generic error (5XX) was used for Password input verification and error properties where removed, replaced with `validationError` which will return clearer 4XX error
