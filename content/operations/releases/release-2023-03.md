@@ -330,6 +330,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.18): fix(dataSource): allow dataSources to return integers as values
 - [v213.6.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.17): fix(redis): Coerce strings to numbers. There was an inconsistency with some integers where `tonumber('0')` fails as it requires a base with that.
 - [v213.6.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.16): fix: improve isTestFile regex
 - [v213.6.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.15): test: Fix test description in app/features/retresco/retresco-api.test.js
