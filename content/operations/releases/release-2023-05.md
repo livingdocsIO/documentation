@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency webpack from 5.76.2 to v5.76.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6576)
 * [Wait for correct publish event in publication test](https://github.com/livingdocsIO/livingdocs-server/pull/5461)
 * [Feat/Toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/6041)
 * [Show ldNotify message for bundle actions](https://github.com/livingdocsIO/livingdocs-editor/pull/6573)
