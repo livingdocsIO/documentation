@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Improve bundle dashboard cells](https://github.com/livingdocsIO/livingdocs-editor/pull/6571)
 * [fix(deps): update dependency fastify from 4.14.1 to v4.15.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6561)
 * [Don't render hidden context-menu actions](https://github.com/livingdocsIO/livingdocs-editor/pull/6563)
 * [Make the job queue waitNext more reliable](https://github.com/livingdocsIO/livingdocs-server/pull/5447)
