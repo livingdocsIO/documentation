@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Buy-In: improve wording](https://github.com/livingdocsIO/livingdocs-editor/pull/6581)
 * [Fix/Bundle-Thumbs](https://github.com/livingdocsIO/livingdocs-editor/pull/6580)
 * [fix(deps): update dependency aws-sdk from 2.1339.0 to v2.1341.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5458)
 * [Improve postgres transaction error handling](https://github.com/livingdocsIO/livingdocs-server/pull/5467)
