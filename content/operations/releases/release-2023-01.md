@@ -261,6 +261,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.42): fix(sort): correctly support arrays
 - [v208.3.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.41): fix(redis): Coerce strings to numbers. There was an inconsistency with some integers where `tonumber('0')` fails as it requires a base with that.
 - [v208.3.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.40): fix(redis): Add breaking change message and code for unsupported redis <v6.2 which was missing from previous PR
 - [v208.3.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.39): fix: improve isTestFile regex
