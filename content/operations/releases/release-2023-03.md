@@ -330,6 +330,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.21): fix(dashboard): allow allowQuickPublish option for publish state dashboard cell
 - [v213.6.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.20): fix(sort): correctly support arrays
 - [v213.6.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.19): chore: Log warnings about deleted content types that are still present on postgres
 - [v213.6.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.18): fix(dataSource): allow dataSources to return integers as values
