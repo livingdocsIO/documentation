@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency wait-on from 6.0.1 to v7 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6545)
 * [Fix: show quick publish on dashboards only when reasonable](https://github.com/livingdocsIO/livingdocs-editor/pull/6585)
 * [fix(dashboard): allow allowQuickPublish option for publish state dashboard cell](https://github.com/livingdocsIO/livingdocs-server/pull/5474)
 * [fix(deps): update dependency moment-timezone from 0.5.41 to v0.5.42 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6591)
