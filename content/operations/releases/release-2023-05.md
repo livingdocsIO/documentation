@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(dashboard): allow allowQuickPublish option for publish state dashboard cell](https://github.com/livingdocsIO/livingdocs-server/pull/5474)
 * [fix(deps): update dependency moment-timezone from 0.5.41 to v0.5.42 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6591)
 * [fix(deps): update dependency sass from 1.59.3 to v1.60.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6583)
 * [fix(deps): update dependency sharp from 0.31.3 to ^0.32.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5479)
