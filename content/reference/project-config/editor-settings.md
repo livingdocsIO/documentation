@@ -627,7 +627,21 @@ The `liTableDashboardCellLanguage` upstream component can be used to display the
 {{< added-in release-2022-05 block >}}
 
 The `liTableDashboardCellPublishState` upstream component can be used to display publish state and quick publish button
-(only shown if metadata has been edited directly within the table dashboard):
+(only shown if metadata has been edited directly within the table dashboard).
+
+With `release-2023-05` and following, `allowQuickPublish: true` is required to show the quick publish button.
+```js
+{
+  label: 'Published',
+  minWidth: 200,
+  growFactor: 0,
+  priority: 2,
+  componentName: 'liTableDashboardCellPublishState',
+  componentOptions: {
+    allowQuickPublish: true
+  }
+},
+```
 
 {{< img src="images/table_dashboard_publish_state_cell.png" alt="liTableDashboardCellPublishState upstream component" >}}
 
