@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Allow links that can not be parsed by iframely in li-tree](https://github.com/livingdocsIO/livingdocs-editor/pull/6603)
 * [Dashboards: consider componentOptions.allowQuickPublish for publish state cell](https://github.com/livingdocsIO/livingdocs-editor/pull/6601)
 * [Archive unused content and media types](https://github.com/livingdocsIO/livingdocs-server/pull/5475)
 * [fix(deps): update dependency @livingdocs/framework from 24.13.2 to v24.13.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5482)
