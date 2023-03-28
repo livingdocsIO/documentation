@@ -352,6 +352,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.44): fix(teasers): allow component creation by document drop with any param handle for the document reference
 - [v90.33.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.43): fix(dashboards): take componentOptions.allowQuickPublish into account for liTableDashboardCellPublishState if defined
 - [v90.33.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.42): fix(dashboards): show quick publish only when reasonable
 - [v90.33.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.41): fix(li-integer): correctly treat 0 value
