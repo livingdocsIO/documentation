@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [New title component in document edit toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/6600)
 * [Add test case for corrupted image from imago](https://github.com/livingdocsIO/livingdocs-server/pull/5410)
 * [Issue Navigation MVP](https://github.com/livingdocsIO/livingdocs-editor/pull/6548)
 * [fix(deps): update dependency aws-sdk from 2.1343.0 to v2.1344.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5489)
