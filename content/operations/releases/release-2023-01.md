@@ -304,6 +304,7 @@ Here is a list of all patches after the release has been announced.
 - [v208.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.3): fix(cli reencrypt): now uses correct stringify
 
 ### Livingdocs Editor Patches
+- [v87.5.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.65): fix(li-comment-mention): fix undefined session console error
 - [v87.5.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.64): fix(li-tree): allow unparsable links
 - [v87.5.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.63): fix(dashboards): show quick publish only when reasonable
 - [v87.5.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.62): fix(li-table-dashboard-cell-context-menu): filter out hidden actions
