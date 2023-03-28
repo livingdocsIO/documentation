@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Dashboards: require componentOptions.allowQuickPublish to show publish button in dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/6602)
 * [Design/color update](https://github.com/livingdocsIO/livingdocs-editor/pull/6610)
 * [Replace simple metalman useage with schema API generator](https://github.com/livingdocsIO/livingdocs-server/pull/5490)
 * [New title component in document edit toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/6600)
