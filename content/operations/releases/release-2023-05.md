@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Rotate npm read token](https://github.com/livingdocsIO/livingdocs-editor/pull/6616)
 * [Add metadata search in publications](https://github.com/livingdocsIO/livingdocs-server/pull/5443)
 * [fix(deps): update dependency exifreader from 4.11.1 to v4.12.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5494)
 * [Dashboards: require componentOptions.allowQuickPublish to show publish button in dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/6602)
