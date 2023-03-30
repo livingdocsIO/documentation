@@ -83,7 +83,7 @@ After doing those three things, push notifications are enabled and you can see t
 You need to do 3 things to have your custom dashboard item that shows push notification information:
 1. [whitelist the push notification metadata for use in the dashboard]({{< ref "/customising/server-configuration#search" >}})
 2. create an angular component for the dashboard item
-3. [configure the angular component in the editor]({{<ref "/customising/advanced/editor-configuration#dashboard" >}})
+3. [configure the angular component in the editor]({{< ref "/customising/advanced/editor-configuration#dashboard" >}})
 
 Below is a sample implementation for (2).
 
