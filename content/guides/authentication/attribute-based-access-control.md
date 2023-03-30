@@ -9,7 +9,7 @@ Attribute Based Access Control (ABAC) is an authorization strategy that defines 
 
 ## Alpha Stage
 
-The implementation of ABAC is in an alpha stage and will change in the future. We might introduce more policies or even skip the feature again. Currently the config is defined on a group on the project access UI.
+The implementation of ABAC is in an alpha stage and will change in the future. We might introduce more policies or even skip the feature again. Currently the config is defined on a group on the project access UI. It can also be defined within the [seeding config]({{< ref "/customising/server/project-seeding-api#configuration" >}}).
 
 ## Rules, actions and effects
 
@@ -37,21 +37,30 @@ This is the sequence of how the policy framework evaluates if an `action` is all
 With the following policy config a member of the group `Reader` is allowed to load the proofreading dashboard, but is not allowed to update a proofreading task.
 
 ```js
-// server config
-policies: [
-  {
-    // when a user is assigned to a group 'Reader', the defined policies are evaluated
-    group: 'Reader',
-    policies: [
-      // effect - 'ALLOW' or 'DENY' - access based on an action and a resource
-      // action - what kind of action you want to do
-      // resource - where you want to execute an action
-      {effect: 'DENY', action: 'document.metadata.update', resource: {handle: 'proofreading', attribute: 'priority'}},
-      {effect: 'DENY', action: 'document.metadata.update', resource: {handle: 'proofreading'}},
-      {effect: 'ALLOW', action: 'dashboard.get', resource: {handle: 'kanban-proofreading'}}
-    ]
-  }
-]
+// seeding config
+{
+  // ...
+  projects: [
+    {
+      // ...
+      groups: [
+        // ...
+        {
+          label: 'Readers',
+          scope: ['articles:read'],
+          policies: [
+            // effect - 'ALLOW' or 'DENY' - access based on an action and a resource
+            // action - what kind of action you want to do
+            // resource - where you want to execute an action
+            {effect: 'DENY', action: 'document.metadata.update', resource: {handle: 'proofreading', attribute: 'priority'}},
+            {effect: 'DENY', action: 'document.metadata.update', resource: {handle: 'proofreading'}},
+            {effect: 'ALLOW', action: 'dashboard.get', resource: {handle: 'kanban-proofreading'}}
+          ]
+        }
+      ]
+    }
+  ]
+}
 ```
 
 ## Supported actions
