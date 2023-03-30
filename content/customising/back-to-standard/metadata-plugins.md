@@ -13,7 +13,7 @@ menus:
 Most custom metadata plugins can be migrated to [core plugins]({{< ref "reference/document/metadata/metadata-plugin-list#overview">}}). The core plugins are constantly improved and new ones will be added.
 
 Some thoughts/inputs for a migration:
-- The storage format for Metadata fields should have only one level. Then it's easier to switch to core plugins and your deliveries are simpler too. E.g. having `metadata: {seoTitle, seoDescription}` is simpler to handle as `metadata: {seo: {title, description}}`.
+- The storage format for Metadata fields should have only one level. Then it's easier to switch to core plugins and your deliveries are simpler too. E.g. having `metadata: {seoTitle, seoDescription}` is simpler to handle than `metadata: {seo: {title, description}}`.
 - When the storage data type of the custom plugin and the core plugin is the same, a migration is easy, you can just update the Project Config and replace the downstream `my-custom-text` with `li-text`
 - When you have some validation in your plugin (e.g. reject on publish), you can replace that part with a [PreparePublishHook]({{< ref "/customising/server/server-hooks" >}})
 - When you copy metadata you can replace that part with a [PreparePublishHook]({{< ref "/customising/server/server-hooks" >}})
