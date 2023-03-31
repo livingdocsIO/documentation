@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Chore/tags numberdots labels and breadcrumbs](https://github.com/livingdocsIO/livingdocs-editor/pull/6628)
 * [Fix "Has local changes" for editable teasers](https://github.com/livingdocsIO/livingdocs-editor/pull/6627)
 * [Drop callback support in group queries](https://github.com/livingdocsIO/livingdocs-server/pull/5512)
 * [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/5511)
