@@ -352,6 +352,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.47): fix(use_embedded_overrides): Fix "Has local changes" for editable teasers - make sure it shows when there are changes for editable teasers that have been edited for the first time
 - [v90.33.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.46): fix(li-tree): allow unparsable links
 - [v90.33.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.45): fix(li-comment-mention): fix undefined session console error
 - [v90.33.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.44): fix(teasers): allow component creation by document drop with any param handle for the document reference
