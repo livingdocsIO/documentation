@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [extend airship log](https://github.com/livingdocsIO/livingdocs-server/pull/5391)
 * [Fix error where links to other documents would fail to save the document](https://github.com/livingdocsIO/livingdocs-editor/pull/6625)
 * [Include `target` property to LinkDirective schema](https://github.com/livingdocsIO/livingdocs-server/pull/5507)
 * [Chore/tags numberdots labels and breadcrumbs](https://github.com/livingdocsIO/livingdocs-editor/pull/6628)
