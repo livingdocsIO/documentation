@@ -330,6 +330,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.24): fix: extend airship log
 - [v213.6.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.23): fix(link-directive): Include `target` property to LinkDirective schema
 - [v213.6.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.22): chore: Add a comment about elasticsearch version conflicts in the delete_by_query call
 - [v213.6.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.21): fix(dashboard): allow allowQuickPublish option for publish state dashboard cell
