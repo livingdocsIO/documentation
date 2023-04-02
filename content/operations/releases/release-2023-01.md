@@ -261,6 +261,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.45): fix: extend airship log
 - [v208.3.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.44): fix(link-directive): Include `target` property to LinkDirective schema
 - [v208.3.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.43): chore: Add a comment about elasticsearch version conflicts in the delete_by_query call
 - [v208.3.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.42): fix(sort): correctly support arrays
