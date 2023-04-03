@@ -7,7 +7,7 @@ menu: operations
 weight: 1
 ---
 
-Every odd month (January, March, May, July, September, November), a new Livindocs release is provided. 
+Every odd month (January, March, May, July, September, November), a new Livindocs release is provided.
 Subscribe to the release newsletter to get notified with a rundown of the latest features and improvements and join the webinars where the release is presented mid month.
 
 {{< newsletter-form >}}
@@ -18,6 +18,8 @@ Subscribe to the release newsletter to get notified with a rundown of the latest
 * **Maintained Releases**: Get security fixes and severe bug fixes.
 * **Upcoming Release**: You can already read about the features, improvements and fixes of the next release. But be aware that the release notes are auto generated and will be manually fixed before we officially anounce the new release.
 * **Legacy Release**: Legacy releases do not receive bugfixes anymore. If you use an old release please notify us (release@livingdocs.io) so we are aware and can inform you of critical fixes in newer releases.
+
+:exclamation: Check the [Back to Standard Roadmap]({{< ref "/customising/back-to-standard" >}}) and inform you about important upcoming deprecations and breaking changes and reasons.
 
 {{< release-notes-overview >}}
 
