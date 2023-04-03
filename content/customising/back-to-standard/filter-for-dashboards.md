@@ -27,10 +27,10 @@ New: Switch to [Table Dashboards]({{< ref "/reference/project-config/editor-sett
 
 Migrate from Editor Config `app.filters.inlineArticleList` to Project Config [inlineLinks]({{< ref "/reference/project-config/editor-settings#inline-links">}})
 
-## Migrate documentListList
+## Migrate `documentListList`
 
 Migrate from Editor Config `app.filters.documentListList` to Project Config [documentLists]({{< ref "/reference/project-config/editor-settings#document-lists">}})
 
-## menuList
+## Migrate `menuList`
 
 Currently there is no replacement. We will find a solution and inform you via release notes (and here).
