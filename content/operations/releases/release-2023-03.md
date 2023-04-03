@@ -354,6 +354,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.49): fix(image): Use crop in getUpdatedAutomaticCrops() calculation
 - [v90.33.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.48): fix(li-component-link): Fix error where links to other documents would fail to save the document
 - [v90.33.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.47): fix(use_embedded_overrides): Fix "Has local changes" for editable teasers - make sure it shows when there are changes for editable teasers that have been edited for the first time
 - [v90.33.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.46): fix(li-tree): allow unparsable links
