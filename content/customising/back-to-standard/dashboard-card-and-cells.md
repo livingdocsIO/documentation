@@ -1,11 +1,11 @@
 ---
 title: Dashboard Card and Cells
 description:
-weight: 4
+weight: 5
 menus:
   customising:
     parent: Back to Standard
-    weight: 4
+    weight: 5
 ---
 
 ## Dashboard Card and Cells

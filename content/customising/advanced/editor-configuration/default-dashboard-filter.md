@@ -20,6 +20,7 @@ Example:
 // static editor config
 filters: {
   // filter groups
+  // deprecated, use Table Dashboards instead
   articleList: {
     // visible filters on the top of the dashboard
     // core filter plugins and custom filter plugins can be defined here
@@ -29,6 +30,7 @@ filters: {
     // invisibile
     emptySearchQueries: [{type: 'documentType', value: 'article'}]
   },
+  // deprecated, use projectConfig editorSettings.inlineLinks
   inlineArticleList: {
     displayFilters: [],
     defaultQueries: [
@@ -41,6 +43,7 @@ filters: {
       {type: 'sortBy', value: '-updated_at'}
     ]
   },
+  // deprecated, use Table Dashboards instead
   pageList: {
     displayFilters: [],
     defaultQueries: [
@@ -52,6 +55,7 @@ filters: {
       {type: 'sortBy', value: '-updated_at'}
     ]
   },
+  // deprecated, use Table Dashboards instead
   dataRecordList: {
     displayFilters: ['timeRange'],
     defaultQueries: [
