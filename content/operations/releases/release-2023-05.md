@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add globally unique ID on Elasticsearch entries](https://github.com/livingdocsIO/livingdocs-server/pull/5465)
 * [Use crop in getUpdatedAutomaticCrops() calculation](https://github.com/livingdocsIO/livingdocs-editor/pull/6624)
 * [fix(deps): update dependency fast-json-stringify from 5.6.2 to v5.7.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5522)
 * [fix(deps): update dependency ua-parser-js from 1.0.34 to v1.0.35 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5521)
