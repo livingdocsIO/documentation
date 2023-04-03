@@ -31,7 +31,16 @@ If you miss a section, please get in contact with us.
 
 Migrating away from AngularJS can be a complex process, especially if you have a lot of downstream custom plugins. That's why we want to leave you enough time to make the transition.
 
-- `release-2023-01` - deprecate Angular extensions
-- `release-2023-09` - remove support for Angular extensions
+### release-2023-01
+
+⏳ Deprecate Angular Extensions
+
+### release-2023-07
+
+🔥 Remove support for Angular Dashboard Filters
+
+### release-2023-09
+
+🔥 Remove support for Angular Metadata
 
 ## Topics
