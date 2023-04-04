@@ -476,6 +476,7 @@ Here is a list of all patches after the release has been announced.
 - [v??.?.?](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v??.?.?): text
 
 ### Livingdocs Editor Patches
+- [v85.15.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.77): fix(draft): Use remote metadata source when updating metadata
 - [v85.15.76](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.76): fix(vue): Fix default parameter of components that should fallback to an empty object
 - [v85.15.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.75): fix: bump framework version november
 - [v85.15.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v85.15.74): fix: detect media changes by asset.key
