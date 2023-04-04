@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1348.0 to v2.1349.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5524)
 * [`rel` property was being overwritten by the `partialLinkAttributes`](https://github.com/livingdocsIO/livingdocs-editor/pull/6641)
 * [Remove not used editing API endpoint /hugo/print/royalty-recipients](https://github.com/livingdocsIO/livingdocs-server/pull/5525)
 * [Use remote metadata source when updating metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/6633)
