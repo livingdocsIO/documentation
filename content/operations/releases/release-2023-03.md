@@ -358,6 +358,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.51): fix(display filter): pass the correct config object to display filter fetch functions
 - [v90.33.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.50): fix(draft): Use remote metadata source when updating metadata
 - [v90.33.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.49): fix(image): Use crop in getUpdatedAutomaticCrops() calculation
 - [v90.33.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.48): fix(li-component-link): Fix error where links to other documents would fail to save the document
