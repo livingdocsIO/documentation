@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix documents filters query for editor](https://github.com/livingdocsIO/livingdocs-server/pull/5536)
 * [Publish Control: allow manual publication date override before first publish & visual clarity](https://github.com/livingdocsIO/livingdocs-editor/pull/6643)
 * [Fix menu drag and drop behaviour](https://github.com/livingdocsIO/livingdocs-editor/pull/6646)
 * [Fix axios metadata and filters serialization](https://github.com/livingdocsIO/livingdocs-editor/pull/6647)
