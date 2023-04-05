@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency webpack from 5.76.3 to v5.78.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6661)
 * [fix(deps): update dependency human-format from 1.0.0 to v1.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6660)
 * [Fix documents filters query for editor](https://github.com/livingdocsIO/livingdocs-server/pull/5536)
 * [Publish Control: allow manual publication date override before first publish & visual clarity](https://github.com/livingdocsIO/livingdocs-editor/pull/6643)
