@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Cache access control user details by project](https://github.com/livingdocsIO/livingdocs-server/pull/5534)
 * [Ensure mentioneeIds is on all comment schemas](https://github.com/livingdocsIO/livingdocs-server/pull/5531)
 * [fix(deps): update dependency aws-sdk from 2.1349.0 to v2.1350.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5530)
 * [Document Access Control Foundation](https://github.com/livingdocsIO/livingdocs-server/pull/5440)
