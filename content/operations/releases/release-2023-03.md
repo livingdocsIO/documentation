@@ -358,6 +358,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.54): fix: Do not rely on axios serialization of `metadata` and `filters` attributes. It has depth limits
 - [v90.33.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.53): Update app/features/publish/publish-control/publish-control-info/li-publish-control-visible-date.vue
 - [v90.33.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.52): fix(rel-attribute): `rel` property was being overwritten by the `...partialLinkAttributes` contents
 - [v90.33.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.51): fix(display filter): pass the correct config object to display filter fetch functions
