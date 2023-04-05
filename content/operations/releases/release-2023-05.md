@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Ensure mentioneeIds is on all comment schemas](https://github.com/livingdocsIO/livingdocs-server/pull/5531)
 * [fix(deps): update dependency aws-sdk from 2.1349.0 to v2.1350.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5530)
 * [Document Access Control Foundation](https://github.com/livingdocsIO/livingdocs-server/pull/5440)
 * [fix(deps): update dependency aws-sdk from 2.1348.0 to v2.1349.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5524)
