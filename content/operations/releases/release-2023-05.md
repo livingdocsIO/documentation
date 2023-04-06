@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Working-Title improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6622)
 * [Replace document scopes with document policies](https://github.com/livingdocsIO/livingdocs-editor/pull/6634)
 * [fix(deps): update dependency aws-sdk from 2.1350.0 to v2.1351.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5539)
 * [Deprecate `useAsTitle` sync](https://github.com/livingdocsIO/livingdocs-editor/pull/6652)
