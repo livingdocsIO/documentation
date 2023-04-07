@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Account for missing width/height in image cropper](https://github.com/livingdocsIO/livingdocs-editor/pull/6667)
 * [Introducing user stats per request done against server](https://github.com/livingdocsIO/livingdocs-server/pull/5533)
 * [Working Title: Handle copy&paste and don't sanitize anymore](https://github.com/livingdocsIO/livingdocs-editor/pull/6664)
 * [Working-Title improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6622)
