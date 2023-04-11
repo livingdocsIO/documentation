@@ -358,6 +358,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.57): fix: prevent syncing empty metadata title
 - [v90.33.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.56): fix(image-cropper): account for missing width
 - [v90.33.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.55): fix(menu): fix drag and drop handler - quick fix
 - [v90.33.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.54): fix: Do not rely on axios serialization of `metadata` and `filters` attributes. It has depth limits
