@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency semver from 7.3.8 to v7.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5549)
 * [fix(deps): update dependency aws-sdk from 2.1353.0 to v2.1354.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5546)
 * [fix(deps): update dependency lru-cache from 9.0.0 to v9.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5548)
 * [fix(deps): update dependency lru-cache from 8.0.5 to v9 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5545)
