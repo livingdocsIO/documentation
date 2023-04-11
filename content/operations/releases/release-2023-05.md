@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 24.13.3 to v24.13.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5551)
 * [Remove support for `search.host` server configuration](https://github.com/livingdocsIO/livingdocs-server/pull/5540)
 * [Prevent syncing empty metadata title](https://github.com/livingdocsIO/livingdocs-editor/pull/6665)
 * [fix(deps): update dependency semver from 7.3.8 to v7.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5549)
