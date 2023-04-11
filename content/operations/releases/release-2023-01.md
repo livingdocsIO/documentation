@@ -310,6 +310,7 @@ Here is a list of all patches after the release has been announced.
 - [v208.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.3): fix(cli reencrypt): now uses correct stringify
 
 ### Livingdocs Editor Patches
+- [v87.5.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.69): fix: prevent syncing empty metadata title
 - [v87.5.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.68): fix: apply menu list filters for table dashboards
 - [v87.5.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.67): fix(draft): Use remote metadata source when updating metadata
 - [v87.5.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.66): fix(li-integer): correctly treat 0 value
