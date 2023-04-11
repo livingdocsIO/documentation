@@ -26,4 +26,12 @@ Some thoughts/inputs for a migration:
 
 ### Migrate Custom Plugins -> Vue Plugins
 
-Always consider a migration to a core plugin first. If that is not possible (after you spoke with us) another option is to write a custom plugin with Vue - See a [Vue guide]({{< ref "/guides/documents/metadata/metadata-examples">}}).
+Always consider a migration to a core plugin first (see the strategies above). If that is not possible (after you spoke with us) another option is to write a custom plugin with Vue.
+
+Typical Questions:
+- Q: I had a service in the Angular plugin, how to replace?
+- A: Integrate the service logic in your Custom Vue Plugin.
+
+References:
+- [Vue Metadata Plugin Guide]({{< ref "/guides/documents/metadata/metadata-examples">}})
+- [Vue Metadata Plugin API](https://docs.livingdocs.io/customising/advanced/editor/vue-component-registry/#metadataplugin)
