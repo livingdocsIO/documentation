@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Translate `editor`, `tags`, `notifications`, `print`, `article`, `publish`, `metadata/plugins/forms`](https://github.com/livingdocsIO/livingdocs-editor/pull/6673)
 * [fix(deps): update dependency xml2js from 0.4.23 to 0.5.0 [security] (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5547)
 * [Azure Blob Storage config Schema validation didn't include custom `computeKey()` function](https://github.com/livingdocsIO/livingdocs-server/pull/5555)
 * [fix(deps): update dependency aws-sdk from 2.1354.0 to v2.1356.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5552)
