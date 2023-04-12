@@ -59,7 +59,6 @@ aliases:
 
 ### Planning System
 
-* [Documentation](TODO)
 * [PR Server: Document Transform Functions](https://github.com/livingdocsIO/livingdocs-server/pull/5010)
 * [PR Editor: Create and transform UI](https://github.com/livingdocsIO/livingdocs-editor/pull/6060)
 * [PR Editor: Distribution Channel Groups and Navigation Component](https://github.com/livingdocsIO/livingdocs-editor/pull/6230)
