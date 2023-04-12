@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1356.0 to v2.1357.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5562)
 * [fix(deps): update dependency jose from 4.13.1 to v4.13.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5561)
 * [Translate `editor`, `tags`, `notifications`, `print`, `article`, `publish`, `metadata/plugins/forms`](https://github.com/livingdocsIO/livingdocs-editor/pull/6673)
 * [fix(deps): update dependency xml2js from 0.4.23 to 0.5.0 [security] (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5547)
