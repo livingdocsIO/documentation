@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 24.13.3 to v24.13.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6680)
 * [fix(deps): update dependency lru-cache from 9.0.1 to v9.0.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5566)
 * [fix(deps): update dependency cypress from 10.11.0 to v12 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6413)
 * [🔥 Remove coreApi.metadataLifecycle](https://github.com/livingdocsIO/livingdocs-editor/pull/6678)
