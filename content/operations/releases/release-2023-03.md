@@ -333,6 +333,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.26): fix(blob-storage): Azure Blob Storage config Schema validation didn't include custom `computeKey()` function
 - [v213.6.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.25): chore: Use the new elasticsearch environment variable with the drone tests
 - [v213.6.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.24): fix: extend airship log
 - [v213.6.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.23): fix(link-directive): Include `target` property to LinkDirective schema
