@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1358.0 to v2.1359.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5579)
 * [Working title expression replacement](https://github.com/livingdocsIO/livingdocs-server/pull/5528)
 * [🍬 Log invalid metadata type in contentType[].publicationIndex config](https://github.com/livingdocsIO/livingdocs-server/pull/5570)
 * [fix(deps): update dependency cloudinary from 1.35.0 to v1.36.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5568)
