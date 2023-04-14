@@ -265,6 +265,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.48): fix: log invalid metadata type in contentType[].publicationIndex config
 - [v208.3.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.47): fix(security): Fix security vulnerabilities from `xml2js` and `vm2`
 - [v208.3.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.46): fix(blob-storage): Azure Blob Storage config Schema validation didn't include custom `computeKey()` function
 - [v208.3.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.45): fix: extend airship log
