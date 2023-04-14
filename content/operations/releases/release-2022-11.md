@@ -429,6 +429,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.49): fix: log invalid metadata type in contentType[].publicationIndex config
 - [v200.3.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.48): fix: improve isTestFile regex
 - [v200.3.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.47): fix: update framework version
 - [v200.3.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.46): fix(documents): Allow dashboard request to exclude revision content
