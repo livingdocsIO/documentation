@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency jose from 4.13.2 to v4.14.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5580)
 * [fix(deps): update dependency aws-sdk from 2.1358.0 to v2.1359.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5579)
 * [Working title expression replacement](https://github.com/livingdocsIO/livingdocs-server/pull/5528)
 * [🍬 Log invalid metadata type in contentType[].publicationIndex config](https://github.com/livingdocsIO/livingdocs-server/pull/5570)
