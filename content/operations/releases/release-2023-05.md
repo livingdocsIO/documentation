@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Working title expression replacement](https://github.com/livingdocsIO/livingdocs-server/pull/5528)
 * [🍬 Log invalid metadata type in contentType[].publicationIndex config](https://github.com/livingdocsIO/livingdocs-server/pull/5570)
 * [fix(deps): update dependency cloudinary from 1.35.0 to v1.36.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5568)
 * [fix(deps): update dependency @livingdocs/framework from 24.13.3 to v24.13.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6680)
