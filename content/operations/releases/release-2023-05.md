@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency ioredis from 5.3.1 to v5.3.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5581)
 * [fix(deps): update dependency sass from 1.60.0 to v1.62.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6666)
 * [chore(deps): update dependency jose from 4.13.2 to v4.14.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6686)
 * [fix(deps): update dependency jose from 4.13.2 to v4.14.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5580)
