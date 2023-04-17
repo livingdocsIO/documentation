@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency material-design-icons-svg from 3.2.0 to v3.3.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6697)
 * [Fix Display Filter: allow searching options by typing again](https://github.com/livingdocsIO/livingdocs-editor/pull/6687)
 * [fix(deps): update dependency @uirouter/angularjs from 1.0.30 to v1.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6689)
 * [fix(deps): update dependency ioredis from 5.3.1 to v5.3.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5581)
