@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Draft delivery builds](https://github.com/livingdocsIO/livingdocs-server/pull/5550)
 * [Remove legacy `li-authentication-sso` authentication](https://github.com/livingdocsIO/livingdocs-editor/pull/6684)
 * [Add `secret-show` task, this task will printout all the secretRefs defined in a project](https://github.com/livingdocsIO/livingdocs-server/pull/5582)
 * [Log deprecation for `behaveAsLiImage` configuration](https://github.com/livingdocsIO/livingdocs-editor/pull/6695)
