@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Log deprecation for `behaveAsLiImage` configuration](https://github.com/livingdocsIO/livingdocs-editor/pull/6695)
 * [Rewrite tasks to vue](https://github.com/livingdocsIO/livingdocs-editor/pull/6414)
 * [Add support for delivery draftBuilds](https://github.com/livingdocsIO/livingdocs-editor/pull/6672)
 * [fix(deps): update dependency material-design-icons-svg from 3.2.0 to v3.3.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6697)
