@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Display Filter li-team](https://github.com/livingdocsIO/livingdocs-editor/pull/6577)
 * [Improvement/Moved Sections in Publish Control](https://github.com/livingdocsIO/livingdocs-editor/pull/6701)
 * [Realtime update for issue/page/article status in issue navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/6649)
 * [Emit `document.publish` and `document.unpublish` also for the topic `private-documents-projectId=<id>`](https://github.com/livingdocsIO/livingdocs-server/pull/5564)
