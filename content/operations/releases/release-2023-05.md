@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency lru-cache from 9.0.3 to v9.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5589)
 * [Improvement/Document Access Control Polish](https://github.com/livingdocsIO/livingdocs-editor/pull/6699)
 * [Home Screen: My tasks columns with empty state](https://github.com/livingdocsIO/livingdocs-editor/pull/6700)
 * [Display Filter li-team](https://github.com/livingdocsIO/livingdocs-editor/pull/6577)
