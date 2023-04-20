@@ -362,6 +362,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.60): fix(metadata): Keep automatic metadata source for fallback title
 - [v90.33.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.59): fix(display filter): restore search by typing functionality for listv2 filters
 - [v90.33.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.58): fix(dashboard permissions): angular dashboard init correctly called
 - [v90.33.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.57): fix: prevent syncing empty metadata title
