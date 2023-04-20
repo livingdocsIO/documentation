@@ -265,6 +265,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.51): fix(vm2): Upgrade `vm2` module to patch a security vulnerability
 - [v208.3.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.50): fix(blob-storage): Fix blob storage download logic to await the file before streaming it
 - [v208.3.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.49): fix(routing): Fix `routing` indexing behavior that breaks CLI tasks when `routing.indexing.enabled` is enabled without `worker` role
 - [v208.3.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.48): fix: log invalid metadata type in contentType[].publicationIndex config
