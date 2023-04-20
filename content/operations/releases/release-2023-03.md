@@ -333,6 +333,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.30): fix(vm2): Upgrade `vm2` module to patch a security vulnerability
 - [v213.6.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.29): fix(blob-storage): Fix blob storage download logic to await the file before streaming it
 - [v213.6.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.28): fix(routing): Fix `routing` indexing behavior that breaks CLI tasks when `routing.indexing.enabled` is enabled without `worker` role
 - [v213.6.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.27): fix: log invalid metadata type in contentType[].publicationIndex config
