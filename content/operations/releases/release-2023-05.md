@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use document creation flow when author prefill config is empty](https://github.com/livingdocsIO/livingdocs-editor/pull/6708)
 * [fix(metadata): Keep automatic metadata source for fallback title](https://github.com/livingdocsIO/livingdocs-editor/pull/6702)
 * [fix(deps): update dependency axios from 1.3.5 to v1.3.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5595)
 * [fix(deps): update dependency axios from 1.3.5 to v1.3.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6704)
