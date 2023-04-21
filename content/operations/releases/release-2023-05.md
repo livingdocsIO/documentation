@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix/Task Action Numberdot](https://github.com/livingdocsIO/livingdocs-editor/pull/6710)
 * [fix(deps): update dependency aws-sdk from 2.1361.0 to v2.1362.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5603)
 * [Allow Retresco Re-enrich concurrency configuration via server configuration](https://github.com/livingdocsIO/livingdocs-server/pull/5601)
 * [fix(deps): update dependency webpack from 5.79.0 to v5.80.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6705)
