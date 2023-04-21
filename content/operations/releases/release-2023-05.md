@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency webpack from 5.79.0 to v5.80.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6705)
 * [Fix/Breadcrumbs and Distribution Planning Cells](https://github.com/livingdocsIO/livingdocs-editor/pull/6638)
 * [fix(deps): update dependency jose from 4.14.0 to v4.14.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5602)
 * [Upgrade `vm2` module to patch a security vulnerability](https://github.com/livingdocsIO/livingdocs-server/pull/5598)
