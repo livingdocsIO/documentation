@@ -60,7 +60,8 @@ The Retresco API can have issues if the text sent for analysis is too long (more
         titleMatches: ['header.title'],
         supertitleMatches: ['header.catchline'],
         teaserMatches: ['p.text'],
-        maxTextLength: 10000 // Optional
+        maxTextLength: 10000, // Optional
+        enrichConcurrency: 5 // Optional
       }
       // ...
     }
@@ -113,6 +114,7 @@ The Retresco entities will be stored in the document's metadata using the metada
 ```
 
 ## Re-enrich Documents
+{{< added-in release-2023-03 >}}
 
 If you want to use the re-enrich feature from Retresco, you will need to configure the webhook and token in Retresco's website.
 
@@ -126,4 +128,6 @@ The Livingdocs webhook URL is `https://<livingdocs-server>/api/v1/retresco/re-en
 - Enter a descriptive name, provide permission for retresco hook access, and click the "Create" button
 - The token will be displayed in the table, copy it and save it in a safe place, you will have to use it on Retresco's website. Please note that the token will not be displayed again after you leave the page
 
-The HTTP endpoint will be called by Retresco when the user modifies entities that apply to one or multiple documents. The request will generate a job queue that will handle document enrichment and update the metadata asynchronously.
+The HTTP endpoint will be called by Retresco when the user modifies entities that apply to one or multiple documents. The request will generate a job queue that will handle document enrichment and update the metadata asynchronously. The document will be automatically published if enrichment was the only change since the last publication, i.e. there wasn't a draft for the document.
+
+It is possible to configure the enrich job concurrency by setting the `integrations:retresco:enrichConcurrency` property in the server configuration. The value must be a positive integer. Retresco recommends a maximum value of 10 concurrent request to their enrich endpoint. Their enrich endpoint takes 0.5s-1s to process a request.
