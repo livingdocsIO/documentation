@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Planning Boards: new dashboard type with a day/week stepper against bestDate](https://github.com/livingdocsIO/livingdocs-editor/pull/6694)
 * [Example: daily & weekly planning boards](https://github.com/livingdocsIO/livingdocs-server/pull/5495)
 * [Sync content and media types of static configs during server start](https://github.com/livingdocsIO/livingdocs-server/pull/5606)
 * [Fix/Task Action Numberdot](https://github.com/livingdocsIO/livingdocs-editor/pull/6710)
