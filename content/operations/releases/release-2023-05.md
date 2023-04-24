@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(vue component registry): don't register angular wrapper components when not needed](https://github.com/livingdocsIO/livingdocs-editor/pull/6722)
 * [fix(deps): update dependency lru-cache from 9.1.0 to v9.1.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5612)
 * [chore(deps): update dependency eslint from 8.38.0 to v8.39.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5610)
 * [Multi Channel: fix dashboard / create dialog behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/6720)
