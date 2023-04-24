@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cloudinary from 1.36.1 to v1.36.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5614)
 * [Access Control Policies](https://github.com/livingdocsIO/livingdocs-server/pull/5565)
 * [Support documentType wildcard policies to ease the migration](https://github.com/livingdocsIO/livingdocs-editor/pull/6731)
 * [Search: correctly handle query caching](https://github.com/livingdocsIO/livingdocs-editor/pull/6725)
