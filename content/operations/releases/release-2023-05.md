@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Support documentType wildcard policies to ease the migration](https://github.com/livingdocsIO/livingdocs-editor/pull/6731)
 * [Search: correctly handle query caching](https://github.com/livingdocsIO/livingdocs-editor/pull/6725)
 * [fix(deps): update dependency aws-sdk from 2.1362.0 to v2.1363.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5611)
 * [fix(vue component registry): don't register angular wrapper components when not needed](https://github.com/livingdocsIO/livingdocs-editor/pull/6722)
