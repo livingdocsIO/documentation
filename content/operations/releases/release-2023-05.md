@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Expose document version property in realtime notifications](https://github.com/livingdocsIO/livingdocs-server/pull/5613)
 * [Fix e2e seeding for cypress](https://github.com/livingdocsIO/livingdocs-server/pull/5617)
 * [fix(deps): update dependency aws-sdk from 2.1363.0 to v2.1364.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5615)
 * [fix(deps): update dependency cloudinary from 1.36.1 to v1.36.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5614)
