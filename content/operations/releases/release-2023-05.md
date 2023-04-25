@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/5620)
 * [Upgrade srcissors and improve crop normalization](https://github.com/livingdocsIO/livingdocs-editor/pull/6734)
 * [Migrate history to vue](https://github.com/livingdocsIO/livingdocs-editor/pull/6496)
 * [Update documents in tables on realtime update events](https://github.com/livingdocsIO/livingdocs-editor/pull/6729)
