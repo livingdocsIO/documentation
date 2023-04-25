@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Migrate history to vue](https://github.com/livingdocsIO/livingdocs-editor/pull/6496)
 * [Update documents in tables on realtime update events](https://github.com/livingdocsIO/livingdocs-editor/pull/6729)
 * [Add created and deleted realtime notifications](https://github.com/livingdocsIO/livingdocs-server/pull/5616)
 * [Expose document version property in realtime notifications](https://github.com/livingdocsIO/livingdocs-server/pull/5613)
