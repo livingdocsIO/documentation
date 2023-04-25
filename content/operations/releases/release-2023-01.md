@@ -317,6 +317,7 @@ Here is a list of all patches after the release has been announced.
 - [v208.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.3): fix(cli reencrypt): now uses correct stringify
 
 ### Livingdocs Editor Patches
+- [v87.5.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.72): fix: improve crop normalization and update srcissors
 - [v87.5.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.71): fix(dependencies): Update `webpack` and `xml2js` to patch vulnerabilities
 - [v87.5.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.70): fix(metadata): Keep automatic metadata source for fallback title
 - [v87.5.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.69): fix: prevent syncing empty metadata title
