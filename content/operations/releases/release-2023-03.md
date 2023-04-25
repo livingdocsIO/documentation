@@ -365,6 +365,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.64): fix: improve crop normalization and update srcissors
 - [v90.33.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.63): fix(dependencies): Update `webpack` to patch vulnerability
 - [v90.33.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.62): fix(dashboards): enhance multi-channel behavior for dashboards/create flows
 - [v90.33.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.61): fix(li-tree): keep invalid items in tree and mark as unsaved
