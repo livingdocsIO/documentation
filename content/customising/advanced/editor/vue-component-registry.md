@@ -43,6 +43,7 @@ A `metadataPlugin` is used to render a metadata plugin UI in the Metadata Form.
 
 These are the `props` which are provided to your vue component:
 ```js
+inject: ['authedHttp'], // authed axios client e.g. to call custom livingdocs server endpoints
 props: {
   value: {
     // type is depending on the metadata plugin
