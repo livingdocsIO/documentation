@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Improve use_issue composable performance and use the composable to load documents in li-meta-issue-management](https://github.com/livingdocsIO/livingdocs-editor/pull/6728)
 * [fix(deps): update dependency jose from 4.14.1 to v4.14.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5624)
 * [fix(deps): update dependency sass from 1.62.0 to v1.62.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6743)
 * [fix(deps): update dependency aws-sdk from 2.1364.0 to v2.1365.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5621)
