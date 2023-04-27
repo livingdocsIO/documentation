@@ -65,6 +65,21 @@ contentTypes: [
       }
     ],
 
+    // added in release-2023-05
+    metadataPreviews: [
+      {
+        iframe: {
+          src: 'https://example.com/my-preview.html',
+          sandbox: 'allow-scripts',
+          height: 300,
+          width: 300
+        },
+        metadataProperties: [
+          'description'
+        ]
+      }
+    ]
+
     // Overwrites config in `settings`
     imageSourcePolicy: [
       {
@@ -286,6 +301,61 @@ metadataGroups: [
     properties: ['keywords', 'title']
   }
 ]
+```
+
+## Metadata Previews
+
+{{< added-in release-2023-05 >}}
+With Metadata Previews, you can show the user how the value of a certain metadata property will be visually represented.
+This enables things like manual line-break optimization.
+
+You can configure multiple previews and define which metadata properties influence the visual representation. The user will then see your iframe rendered whenever one of these properties is in focus.
+
+```js
+metadataPreviews: [
+  {
+    iframe: {
+      src: 'https://example.com/my-preview.html',
+      sandbox: 'allow-scripts',
+      height: 300,
+      width: 300
+    },
+    metadataProperties: [
+      // you can have multiple properties here
+      'description'
+    ]
+  }
+]
+```
+
+The iframe communicates with Livingdocs via a postMessage interface. You have to send a `ready` status when the script in your iframe is ready to listen for `metadata.update` messages and will receive them initially, and then whenever one of the configured `metadataProperties` is changed.
+
+Here is an example script to include in your iframe:
+```html
+<script>
+  // it's important to have livingdocsEditorOrigin set to the origin you are serving
+  // the Livingdocs Editor on.
+  const livingdocsEditorOrigin = 'https://localhost:9000'
+
+  window.addEventListener("message", (event) => {
+    // check if the message is actually coming from Livingdocs Editor
+    if (event.origin !== parentOrigin) return
+    
+    // event.data looks like this:
+    // {
+    //   action: 'metadata.update',
+    //   metadataProperties: {
+    //     // all properties that are configured in this `metadataPreview` are included
+    //     description: ''
+    //   }
+    // }
+  });
+
+  // send a status: ready as soon as the `message` event listener is set up.
+  window.parent.postMessage({
+    status: 'ready'
+  }, livingdocsEditorOrigin)
+</script>
 ```
 
 ## Components and Component Groups
