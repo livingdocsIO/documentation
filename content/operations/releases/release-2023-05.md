@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Home Screen: My tasks config](https://github.com/livingdocsIO/livingdocs-server/pull/5588)
 * [Add translations for `features/authentication` UI components](https://github.com/livingdocsIO/livingdocs-editor/pull/6721)
 * [Improve use_issue composable performance and use the composable to load documents in li-meta-issue-management](https://github.com/livingdocsIO/livingdocs-editor/pull/6728)
 * [fix(deps): update dependency jose from 4.14.1 to v4.14.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5624)
