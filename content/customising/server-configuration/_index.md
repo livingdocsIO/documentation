@@ -588,6 +588,10 @@ documents: {
   },
   history: {
     anonymizeAfter: '30 days'
+  },
+  realtimeUpdates: {
+    enabled: true, // Enabled by default - set to false to disable the feature
+    pollingInterval: 1000 * 60 // Time in milliseconds between dashboard updates
   }
 }
 ```
@@ -600,6 +604,8 @@ Defaults to max. 100 documents.
 The `enableConsumers` is the configuration used to enable/disable the publish control consumers. By default, they it will be enabled in server instances that define `roles: ['worker']` in server configuration.
 
 The `history.anonymizeAfter` setting is used to remove the traceability of certain persons work after a given amount of time. This requirement comes typically from the workers council that don't want that it is possible to trace back who did what over a long period of time. Technically, after the given time, no `user_id` is sent along with revision entities anymore and they are marked as "anonymized" in the UI. The time is a "milliseconds" string, meaning that you can type things like '30 days' or '5 minutes'.
+
+The `realtimeUpdates` property controls the behaviour of dashboard updates. Documents displayed on a dashboard will automatically update, and a refresh button will be displayed when there are new results available. The realtime update feature is enabled by default, with a polling interval of 60 seconds, so if you need to disable it for any reason then set `enabled: false`. You can lower the polling interval for more regular updates, but this will increase the load on your server and databases due to more frequent requests from clients. If you change the values you will need to wait for clients to refresh the page and load the latest server config.
 
 #### Document-lists
 
