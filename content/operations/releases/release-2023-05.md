@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency yargs from 17.7.1 to v17.7.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5630)
 * [fix(deps): update dependency sharp from 0.32.0 to v0.32.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5629)
 * [Home Screen: My tasks config](https://github.com/livingdocsIO/livingdocs-server/pull/5588)
 * [Add translations for `features/authentication` UI components](https://github.com/livingdocsIO/livingdocs-editor/pull/6721)
