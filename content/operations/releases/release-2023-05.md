@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update babel from 7.21.4 to v7.21.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6760)
 * [Metadata Previews](https://github.com/livingdocsIO/livingdocs-editor/pull/6738)
 * [Metadata Previews](https://github.com/livingdocsIO/livingdocs-server/pull/5618)
 * [Access control improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6749)
