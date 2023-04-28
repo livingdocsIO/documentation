@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency webpack from 5.80.0 to v5.81.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6746)
 * [Display own requested and accepted tasks on home screen](https://github.com/livingdocsIO/livingdocs-editor/pull/6741)
 * [fix(deps): update dependency aws-sdk from 2.1365.0 to v2.1367.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5625)
 * [fix(deps): update dependency fastify from 4.16.3 to v4.17.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5631)
