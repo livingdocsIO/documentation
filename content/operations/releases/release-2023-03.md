@@ -333,6 +333,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.33): fix: add x-compressed-zip extension
 - [v213.6.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.32): fix(project-configs): Sync content_type_ids and media_type_ids of static project configs during server start
 - [v213.6.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.31): fix(retresco): Allow Retresco Re-enrich concurrency configuration via `integrations.retresco.reenrichConcurrency`
 - [v213.6.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.30): fix(vm2): Upgrade `vm2` module to patch a security vulnerability
