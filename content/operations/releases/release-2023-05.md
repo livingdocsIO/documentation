@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(filter bar item): min height added](https://github.com/livingdocsIO/livingdocs-editor/pull/6752)
 * [🐞 Fix a memory leak in the report after a data migration](https://github.com/livingdocsIO/livingdocs-server/pull/5636)
 * [fix(deps): update dependency webpack from 5.80.0 to v5.81.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6746)
 * [Display own requested and accepted tasks on home screen](https://github.com/livingdocsIO/livingdocs-editor/pull/6741)
