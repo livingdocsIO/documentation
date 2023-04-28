@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Metadata Previews](https://github.com/livingdocsIO/livingdocs-server/pull/5618)
 * [Access control improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6749)
 * [Access control improvements](https://github.com/livingdocsIO/livingdocs-server/pull/5632)
 * [Only show my tasks if planning system enabled](https://github.com/livingdocsIO/livingdocs-editor/pull/6751)
