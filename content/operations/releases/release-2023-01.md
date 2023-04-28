@@ -265,6 +265,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.54](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.54): fix: fix data migration memory leak (report at the end) with a lot of migrated documents
 - [v208.3.53](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.53): fix: add x-compressed-zip extension
 - [v208.3.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.52): fix(project-configs): Sync content_type_ids and media_type_ids of static project configs during server start
 - [v208.3.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.51): fix(vm2): Upgrade `vm2` module to patch a security vulnerability
