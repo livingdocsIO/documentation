@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1367.0 to v2.1368.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5643)
 * [Simplify behaviors](https://github.com/livingdocsIO/livingdocs-editor/pull/6711)
 * [fix(deps): update dependency axios from 1.3.6 to v1.4.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6761)
 * [fix(deps): update babel from 7.21.4 to v7.21.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6760)
