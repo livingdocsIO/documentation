@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency jose from 4.14.3 to v4.14.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5645)
 * [fix(deps): update dependency aws-sdk from 2.1367.0 to v2.1368.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5643)
 * [Simplify behaviors](https://github.com/livingdocsIO/livingdocs-editor/pull/6711)
 * [fix(deps): update dependency axios from 1.3.6 to v1.4.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6761)
