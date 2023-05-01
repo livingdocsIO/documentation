@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1368.0 to v2.1369.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5648)
 * [add x-compressed-zip extension to mime](https://github.com/livingdocsIO/livingdocs-server/pull/5604)
 * [Disable inline editing of table dashboard rows when a user is not allowed to edit documents](https://github.com/livingdocsIO/livingdocs-editor/pull/6766)
 * [Re-introduce start of month use to compute billing for user occupation](https://github.com/livingdocsIO/livingdocs-server/pull/5647)
