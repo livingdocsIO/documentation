@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Re-introduce start of month use to compute billing for user occupation](https://github.com/livingdocsIO/livingdocs-server/pull/5647)
 * [Dashboard access control](https://github.com/livingdocsIO/livingdocs-editor/pull/6762)
 * [Add `Concurrent Users` column to billing table](https://github.com/livingdocsIO/livingdocs-editor/pull/6683)
 * [Concurrent users reporting](https://github.com/livingdocsIO/livingdocs-server/pull/5597)
