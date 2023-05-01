@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Extend documents server config with `realtimeUpdates` property](https://github.com/livingdocsIO/livingdocs-server/pull/5626)
 * [Disable global Pusher events](https://github.com/livingdocsIO/livingdocs-server/pull/5627)
 * [Terms & Privacy Statement for Signup from iframe](https://github.com/livingdocsIO/livingdocs-editor/pull/6759)
 * [fix(deps): update dependency date-fns from 2.29.3 to v2.30.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5646)
