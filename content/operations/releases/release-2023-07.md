@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Improvement/Release Polish Dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/6775)
 * [Access control improvements - Part 3](https://github.com/livingdocsIO/livingdocs-server/pull/5657)
 * [Add workaround to allow republish when data migrations do not apply changes to documents](https://github.com/livingdocsIO/livingdocs-server/pull/5653)
 * [Fix occupations again, remove duplicate months](https://github.com/livingdocsIO/livingdocs-server/pull/5652)
