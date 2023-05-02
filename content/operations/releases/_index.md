@@ -46,7 +46,7 @@ Every release gets a `label` ([dist-tag](https://docs.npmjs.com/cli/v7/commands/
 
 As soon as a maintained release is out, we only add bug fixes and security patches to a release. When a new patch version arrives, the label `release-2021-09` will automatically moved to the latest patch version. This means, you can patch your project with this workflow:
 
-```js
+```bash
 // install definition in package-lock.json
 npm ci
 
