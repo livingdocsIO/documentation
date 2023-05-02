@@ -1,5 +1,17 @@
 {
     "master": {
+        "key": "release-2023-07",
+        "name": "Juli 2023",
+        "ref": "/operations/releases/release-2023-07.md",
+        "upcoming": true,
+        "current": false,
+        "maintained": false,
+        "legacy": false,
+        "sortId": 37,
+        "editorVersion": "v94.12.0",
+        "serverVersion": "v226.4.0"
+    },
+    "release-2023-05": {
         "key": "release-2023-05",
         "name": "May 2023",
         "ref": "/operations/releases/release-2023-05.md",
