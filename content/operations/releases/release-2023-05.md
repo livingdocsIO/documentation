@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pdfjs-dist from 2.16.105 to v3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6485)
 * [fix(deps): update dependency pusher-js from 7.6.0 to v8 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6544)
 * [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/6769)
 * [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/5651)
