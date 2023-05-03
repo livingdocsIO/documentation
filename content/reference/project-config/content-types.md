@@ -24,6 +24,8 @@ contentTypes: [
     handle: 'gallery',
     documentType: 'article', // either 'article', 'page' or 'data-record'
     isAuthor: false, // only true if this content-type represents an author, must be 'data-record'
+    // added in release-2023-05
+    displayTitlePattern: '{{metadata.title}}', // optional, defaults to undefined
 
     info: {
       label: 'Boilerplate Article',
@@ -217,6 +219,17 @@ defaultContent: [
 ]
 ```
 
+## displayTitlePattern
+
+{{< added-in release-2023-05 >}}
+
+The `displayTitlePattern` configures how the Working Title of a document is displayed in the Livingdocs Editor. You can configure a string containing replacements for metadata properties, e.g. `{{metadata.author}}`. The Working Title will be in sync with the metadata properties defined in the replacement, hence it won't be possible to edit the title directly in the toolbar, only through the metadata properties. If `displayTitlePattern` is undefined, the Working Title will display the `document.title` property, allowing users to edit the title in the editor toolbar.
+
+Example configuration will display the author and title in the working title:
+```js
+displayTitlePattern: '{{metadata.author}} - {{metadata.title}}'
+``` 
+
 ## Default Metadata
 
 The default [metadata]({{< ref "/reference/document/metadata" >}}) defines what metadata properties are predefined on your document upon creation.
@@ -311,6 +324,7 @@ metadataGroups: [
 ## Metadata Previews
 
 {{< added-in release-2023-05 >}}
+
 With Metadata Previews, you can show the user how the value of a certain metadata property will be visually represented.
 This enables things like manual line-break optimization.
 

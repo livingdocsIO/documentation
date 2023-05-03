@@ -40,12 +40,28 @@ These are the release notes of the upcoming release (pull requests merged to mas
 ## System Requirements
 
 ### Suggested
-
-TODO
+|Name|Version|
+|-|-|
+|Node|18|
+|NPM|8|
+|Postgres|14|
+|Elasticsearch<br/>OpenSearch|8.x<br/>2|
+|Redis|7|
+|Livingdocs Server Docker Image|livingdocs/server-base:18|
+|Livingdocs Editor Docker Image|livingdocs/editor-base:18|
+|Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
 
 ### Minimal
-
-TODO
+|Name|Version|
+|-|-|
+|Node|16|
+|NPM|8|
+|Postgres|12|
+|Elasticsearch<br/>OpenSearch|7.x<br/>1|
+|Redis|6.2|
+|Livingdocs Server Docker Image|livingdocs/server-base:16.3|
+|Livingdocs Editor Docker Image|livingdocs/editor-base:16.3|
+|Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
 
 
 ## Highlights
@@ -64,15 +80,19 @@ TODO: Description
 
 ### Working Title
 
-TODO: Description
+Managing the title of an article inside and outside of the newsroom has been a challenge in the past. The Header Title of an article can change throughout the lifetime of the article. The Working Title feature allows for a clear separation between the newsroom title (Working Title) and the Article Title (Header Title) in the published frontend. With this separation in the Editor, the external representation of the title can be changed without affecting the internal title.
 
-* [Documentation](TODO)
+To accomplish that `displayTitlePattern` has been introduced to content-type configuration. `displayTitlePattern` accepts a replacement string using metadata fields to compose the Working title, e.g. `{{metadata.title}}`. The expression can be used to combine different fields of an article to compose the shown title. So, editors will be able to change the Header title and the Teaser title independently of the Working Title.
 
-### Publication/Draft Index
+The `useAsTitle` option has been will deprecated and will be removed in `release-2023-07`.
 
-TODO: Description
+#### Porting from `useAsTitle` to `displayTitlePattern`
+If you are currently using an `li-text` plugin with `useAsTitle: true`, please migrate to `displayTitlePattern`. You will want to remove the `useAsTitle` from the metadata and introduce `displayTitlePattern: '{{metadata.title}}'` to maintain the functionality, where `title` is handle for an `li-text` plugin. Please bear in mind that Editor toolbar behaviour will change and it will no longer be possible to change the title of the article from the toolbar. The title will be editable in the `li-text` plugin.
 
-* [Documentation](TODO)
+* [Documentation]({{< ref "/reference/project-config/content-types#displayTitlePattern" >}})
+* [PR Editor: Working Title behaviour](https://github.com/livingdocsIO/livingdocs-editor/pull/6600)
+* [PR Editor: Working Title UI polish](https://github.com/livingdocsIO/livingdocs-editor/pull/6693)
+* [PR Server: displayTitlePattern expression replacements](https://github.com/livingdocsIO/livingdocs-server/pull/5528)
 
 ### Home Screen - Part 2
 
@@ -94,10 +114,10 @@ TODO: Description
 
 ### Concurrent License Model: Billing Report
 
-TODO: Description
+Concurrent License Model has been introduced to Livingdocs. Users' requests to the Livingdocs Server are timestamped for reporting purposes. A background job aggregates  this timestamps in 30-minute buckets as concurrent users. Billing Report view will now report a new column with maximum concurrent users per month.
 
-* [Documentation](TODO)
-
+* [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6683)
+* [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/5597)
 
 ### Synced Table Dashboards
 
