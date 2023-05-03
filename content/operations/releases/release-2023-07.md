@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pusher from 5.1.2 to v5.1.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5667)
 * [Fix/Confirm Button](https://github.com/livingdocsIO/livingdocs-editor/pull/6779)
 * [Remove realtime updates from use_issue and watch metadata updates instead](https://github.com/livingdocsIO/livingdocs-editor/pull/6750)
 * [fix(deps): update dependency aws-sdk from 2.1369.0 to v2.1370.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5663)
