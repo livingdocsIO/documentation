@@ -712,13 +712,10 @@ Configure the Elasticsearch instance used by the search feature.
 
 ```js
 search: {
-  // Configures the elasticsearch search cluster
-  host: 'http://localhost:9200',
-  // Instead of `host`, you can also declare the
-  // configuration using the elasticsearch.js client configuration object.
   // For more details about the configuration,
   // please consult the elasticsearch client documentation. https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/basic-config.html
   elasticsearchClient: {
+    // Configures the elasticsearch search cluster
     node: 'http://localhost:9200'
   }
 
