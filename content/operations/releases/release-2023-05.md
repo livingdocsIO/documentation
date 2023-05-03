@@ -440,6 +440,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.5): fix(retresco): Add workaround to allow republish when data migrations or imports have created a draft, but no changes were applied to the document
 
 ### Livingdocs Editor Patches
+- [v94.10.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.5): fix(use_issue): remove realtime update but update issue metadata when issue metadata changes in issue-management
 - [v94.10.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.4): fix(dashboards): Fix compilation failure due to content type label
 - [v94.10.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.3): fix(bundle management): Content Type Selection
 
