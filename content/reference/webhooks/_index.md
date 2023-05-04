@@ -73,6 +73,7 @@ webhooks: {
 - `document.unpublish`
 - `document.update`
 - `document.build`
+- `document.build.draft`
 - `mediaLibraryEntry.create`
 - `mediaLibraryEntry.archive`
 - `mediaLibraryEntry.revoke`
@@ -168,6 +169,20 @@ Here is an example payload sent to your url set in the Webhook configuration.
   "webhookHandle": "handle",
   "documentId": 179,
   "publicationId": 322,
+  "deliveryHandle": "web",
+  "reportId": "2SG2MAA9RwPn"
+}
+```
+
+`document.build.draft`
+```json
+{
+  "event": "document.build",
+  "deliveryId": "2Xwe-gvuB_JsK3_4bJerT",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "documentId": 179,
   "deliveryHandle": "web",
   "reportId": "2SG2MAA9RwPn"
 }

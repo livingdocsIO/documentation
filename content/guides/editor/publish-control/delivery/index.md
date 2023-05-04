@@ -1,14 +1,16 @@
 ---
-title: Publication Delivery
-description: Trigger deliveries and see delivery build status.
+title: Delivery Builds
+description: Trigger builds for specific deliveries and show the delivery build status in the Editor.
 weight: 6
 ---
 
-For infinite products like an e-paper there is usually a “build” stage involved. With the new Deliveries feature we allow a user to trigger a remote system to kick off a delivery build and report the status of the build back to Livingdocs. This allows an editor to get a better view on the infinite product life cycle. These are the features:
+For finite products like an e-paper there is usually a “build” stage involved. With the new Deliveries feature we allow a user to trigger a remote system to kick off a delivery build and report the status of the build back to Livingdocs. This allows an editor to get a better view on the finite product life cycle. These are the features:
 
 ![delivery](./delivery.png)
 
-As soon as the document has been published, the delivery section will show up. Clicking on the build button will trigger the [Webhook]({{< ref "/reference/webhooks" >}}) `document.build` which in turn will trigger the delivery build in the external system, as configured in the Project Config `settings`.
+## Delivery Builds for publications
+
+The delivery section in the Publish Panel will show delivery builds for the current document once it is published. Clicking on the build button will trigger the [Webhook]({{< ref "/reference/webhooks" >}}) `document.build` which in turn will trigger the delivery build in the external system, as configured in the Project Config `settings`.
 The external build system can report back the current build status with an optional message via public API. The status and an optional message are reflected in the delivery section of the Publish Control, as seen above.
 
 Update the status (from an external system) back to Livingdocs:
@@ -21,7 +23,7 @@ Payload:
 {
   "reportId": "2SG2MAA9RwPn",
   "publicationId": 524,
-  "deliveryHandle": "mobile",
+  "deliveryHandle": "web",
   "status": "success",
   "message": "More info see <a href=\"https://google.ch\" target=\"_blank\">here</a>"
 }
@@ -85,6 +87,7 @@ Configure the available deliveries for this project and optionally customize the
       },
       build: {
         enabled: true,
+        type: 'publication',
         triggerButtonLabel: 'Build',
         retriggerButtonLabel: 'Build again',
         retryButtonLabel: 'Retry'
@@ -112,4 +115,54 @@ Configure which data-records have a build button and build status in the publish
   ]
 }
 
+```
+
+## Delivery Builds for Drafts
+
+You can also configure delivery builds for drafts. These are available before a document is published and no `publicationId` is tracked in the build status.
+
+These are the differences of a draft build:
+
+Use `type: 'draft'` in the delivery config:
+
+```js
+build: {
+  enabled: true,
+  type: 'draft',
+  triggerButtonLabel: 'Build',
+  retriggerButtonLabel: 'Build again',
+  retryButtonLabel: 'Retry'
+}
+```
+
+Use the event name `document.build.draft` in the webhook config:
+
+```js
+events: [
+  {
+    name: 'document.build.draft',
+    conditions: {
+      deliveryHandles: ['draftDelivery']
+    }
+  }
+]
+```
+
+The webhook works the same as for delivery builds of type `publication` but there will be no publicationId in the event even if the document is published.
+
+This also means when you report your status you don't have to include the `publicationId` in your request.
+
+Here is an example:
+
+`POST /api/v1/documents/360/addDeliveryStatus`
+
+Payload:
+
+```json
+{
+  "reportId": "2SG2MAA9RwPn",
+  "deliveryHandle": "draftDelivery",
+  "status": "success",
+  "message": "More info see <a href=\"https://google.ch\" target=\"_blank\">here</a>"
+}
 ```
