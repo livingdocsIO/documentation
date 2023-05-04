@@ -218,9 +218,13 @@ defaultContent: [
 
 {{< added-in release-2023-05 >}}
 
-The `displayTitlePattern` configures how the Working Title of a document is displayed in the Livingdocs Editor. You can configure a string containing replacements for metadata properties, e.g. `{{metadata.author}}`. The Working Title will be in sync with the metadata properties defined in the replacement, hence it won't be possible to edit the title directly in the toolbar, only through the metadata properties. If `displayTitlePattern` is undefined, the Working Title will display the `document.title` property, allowing users to edit the title in the editor toolbar.
+Without this configuration, the `document.title` property holds a value representing the internal Working Title of a Document and users can change it via the Editor Toolbar.
 
-Example configuration will display the author and title in the working title:
+If you like the Working Title (`document.title` property) to be computed based on metadata fields, you can achieve that by configuring the `displayTitlePattern` on a Content Type using string replacements for metadata fields, e.g. `{{metadata.author}}`. Bear in mind that the usage of `displayTitlePattern` makes the Working Title readonly in the Editor Toolbar and users cannot change it from there.
+
+**Limitations**: Metadata fields referenced in `displayTitlePattern` must be of type `li-text`.
+
+Example configuration will display the author and title in the Working Title:
 ```js
 displayTitlePattern: '{{metadata.author}} - {{metadata.title}}'
 ``` 

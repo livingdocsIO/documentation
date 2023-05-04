@@ -285,16 +285,13 @@ TODO: Description
 
 ### Working Title
 
-Managing the title of an article inside and outside of the newsroom has been a challenge in the past. The Header Title of an article can change throughout the lifetime of the article. The Working Title feature allows for a clear separation between the newsroom title (Working Title) and the Article Title (Header Title) in the published frontend. With this separation in the Editor, the external representation of the title can be changed without affecting the internal title.
+Managing the title of an article inside and outside of the newsroom has been a challenge in the past. The public Article Title can change throughout an articles' lifetime. The Working Title feature allows for a clear separation between the internal newsroom title (Working Title) and the public Article Title in the published frontend. With this separation in the Editor, the public representation of the Article Title can be changed without affecting the internal Working Title.
 
-To accomplish that `displayTitlePattern` has been introduced to content-type configuration. `displayTitlePattern` accepts a replacement string using metadata fields to compose the Working title, e.g. `{{metadata.title}}`. The expression can be used to combine different fields of an article to compose the shown title. So, editors will be able to change the Header title and the Teaser title independently of the Working Title.
+However, in some cases it's desired to keep the Working Title and Article Title in sync. To accomplish that, we introduced the [displayTitlePattern]({{< ref "/reference/project-config/content-types#displaytitlepattern" >}}) Content Type configuration, which allows to compute a readonly version of the Working Title based on other metadata fields.
 
-The `useAsTitle` option has been will deprecated and will be removed in `release-2023-07`.
+Please note that the now deprecated `useAsTitle` flag needs to be [migrated]({{< ref "#porting-useastitle-to-displaytitlepattern" >}}) to `displayTitlePattern`.
 
-#### Porting from `useAsTitle` to `displayTitlePattern`
-If you are currently using an `li-text` plugin with `useAsTitle: true`, please migrate to `displayTitlePattern`. You will want to remove the `useAsTitle` from the metadata and introduce `displayTitlePattern: '{{metadata.title}}'` to maintain the functionality, where `title` is handle for an `li-text` plugin. Please bear in mind that Editor toolbar behaviour will change and it will no longer be possible to change the title of the article from the toolbar. The title will be editable in the `li-text` plugin.
-
-* [Documentation]({{< ref "/reference/project-config/content-types#displayTitlePattern" >}})
+* [Documentation - displayTitlePattern]({{< ref "/reference/project-config/content-types#displaytitlepattern" >}})
 * [PR Editor: Working Title behaviour](https://github.com/livingdocsIO/livingdocs-editor/pull/6600)
 * [PR Editor: Working Title UI polish](https://github.com/livingdocsIO/livingdocs-editor/pull/6693)
 * [PR Server: displayTitlePattern expression replacements](https://github.com/livingdocsIO/livingdocs-server/pull/5528)
@@ -410,6 +407,10 @@ References: [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6446)
 ## Deprecations
 
 :exclamation: Check the [Back to Standard Roadmap]({{< ref "/customising/back-to-standard" >}}) and inform you about important upcoming deprecations and breaking changes and reasons.
+
+### Porting `useAsTitle` to `displayTitlePattern`
+The `useAsTitle` option has been deprecated and **will be removed in `release-2023-07`**.
+If you are currently using an `li-text` plugin with `useAsTitle: true`, please migrate to [displayTitlePattern]({{< ref "/reference/project-config/content-types#displaytitlepattern" >}}). You will want to remove the `useAsTitle` from the metadata and introduce `displayTitlePattern: '{{metadata.title}}'` to maintain the functionality, where `title` is handle for an `li-text` plugin. Please bear in mind that Editor toolbar behaviour will change, and it will no longer be possible to change the title of the article from the toolbar. The title will be editable in the `li-text` plugin. Please also make sure that `document.title` is no longer accessed in custom code, e.g. in Includes since this would leak the internal Working Title to the public.
 
 ### Rename mediaIndex to indexing
 
