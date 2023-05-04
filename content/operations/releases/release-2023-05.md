@@ -60,89 +60,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [Access Control Policies](https://github.com/livingdocsIO/livingdocs-server/pull/5565)
 * [Support documentType wildcard policies to ease the migration](https://github.com/livingdocsIO/livingdocs-editor/pull/6731)
 * [Search: correctly handle query caching](https://github.com/livingdocsIO/livingdocs-editor/pull/6725)
-* [fix(vue component registry): don't register angular wrapper components when not needed](https://github.com/livingdocsIO/livingdocs-editor/pull/6722)
-* [chore(deps): update dependency eslint from 8.38.0 to v8.39.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5610)
-* [Multi Channel: fix dashboard / create dialog behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/6720)
-* [fix(planning boards): enable only if planningSystem is enabled](https://github.com/livingdocsIO/livingdocs-editor/pull/6718)
-* [Planning Boards: new dashboard type with a day/week stepper against bestDate](https://github.com/livingdocsIO/livingdocs-editor/pull/6694)
-* [Example: daily & weekly planning boards](https://github.com/livingdocsIO/livingdocs-server/pull/5495)
-* [Sync content and media types of static configs during server start](https://github.com/livingdocsIO/livingdocs-server/pull/5606)
-* [Fix/Task Action Numberdot](https://github.com/livingdocsIO/livingdocs-editor/pull/6710)
-* [Allow Retresco Re-enrich concurrency configuration via server configuration](https://github.com/livingdocsIO/livingdocs-server/pull/5601)
-* [Fix/Breadcrumbs and Distribution Planning Cells](https://github.com/livingdocsIO/livingdocs-editor/pull/6638)
-* [Upgrade `vm2` module to patch a security vulnerability](https://github.com/livingdocsIO/livingdocs-server/pull/5598)
-* [Use document creation flow when author prefill config is empty V2](https://github.com/livingdocsIO/livingdocs-editor/pull/6709)
-* [Use document creation flow when author prefill config is empty](https://github.com/livingdocsIO/livingdocs-editor/pull/6708)
-* [fix(metadata): Keep automatic metadata source for fallback title](https://github.com/livingdocsIO/livingdocs-editor/pull/6702)
-* [Issue Management UI/UX improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6691)
-* [Fix blob storage download logic when using Azure Blob Storage](https://github.com/livingdocsIO/livingdocs-server/pull/5591)
-* [Improvement/Document Access Control Polish](https://github.com/livingdocsIO/livingdocs-editor/pull/6699)
-* [Home Screen: My tasks columns with empty state](https://github.com/livingdocsIO/livingdocs-editor/pull/6700)
-* [Display Filter li-team](https://github.com/livingdocsIO/livingdocs-editor/pull/6577)
-* [Improvement/Moved Sections in Publish Control](https://github.com/livingdocsIO/livingdocs-editor/pull/6701)
-* [Realtime update for issue/page/article status in issue navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/6649)
-* [Emit `document.publish` and `document.unpublish` also for the topic `private-documents-projectId=<id>`](https://github.com/livingdocsIO/livingdocs-server/pull/5564)
-* [Draft delivery builds](https://github.com/livingdocsIO/livingdocs-server/pull/5550)
-* [Remove legacy `li-authentication-sso` authentication](https://github.com/livingdocsIO/livingdocs-editor/pull/6684)
-* [Add `secret-show` task, this task will printout all the secretRefs defined in a project](https://github.com/livingdocsIO/livingdocs-server/pull/5582)
-* [Log deprecation for `behaveAsLiImage` configuration](https://github.com/livingdocsIO/livingdocs-editor/pull/6695)
-* [Rewrite tasks to vue](https://github.com/livingdocsIO/livingdocs-editor/pull/6414)
-* [Add support for delivery draftBuilds](https://github.com/livingdocsIO/livingdocs-editor/pull/6672)
-* [Fix Display Filter: allow searching options by typing again](https://github.com/livingdocsIO/livingdocs-editor/pull/6687)
-* [Working title expression replacement](https://github.com/livingdocsIO/livingdocs-server/pull/5528)
-* [🍬 Log invalid metadata type in contentType[].publicationIndex config](https://github.com/livingdocsIO/livingdocs-server/pull/5570)
-* [🔥 Remove coreApi.metadataLifecycle](https://github.com/livingdocsIO/livingdocs-editor/pull/6678)
-* [fix(dashboard permissions): angular dashboard init correctly called](https://github.com/livingdocsIO/livingdocs-editor/pull/6675)
-* [Translate `editor`, `tags`, `notifications`, `print`, `article`, `publish`, `metadata/plugins/forms`](https://github.com/livingdocsIO/livingdocs-editor/pull/6673)
-* [Azure Blob Storage config Schema validation didn't include custom `computeKey()` function](https://github.com/livingdocsIO/livingdocs-server/pull/5555)
-* [Issue navigation UI polish](https://github.com/livingdocsIO/livingdocs-editor/pull/6613)
-* [Remove support for `search.host` server configuration](https://github.com/livingdocsIO/livingdocs-server/pull/5540)
-* [Prevent syncing empty metadata title](https://github.com/livingdocsIO/livingdocs-editor/pull/6665)
-* [Account for missing width/height in image cropper](https://github.com/livingdocsIO/livingdocs-editor/pull/6667)
-* [Introducing user stats per request done against server](https://github.com/livingdocsIO/livingdocs-server/pull/5533)
-* [Working Title: Handle copy&paste and don't sanitize anymore](https://github.com/livingdocsIO/livingdocs-editor/pull/6664)
-* [Working-Title improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6622)
-* [Replace document scopes with document policies](https://github.com/livingdocsIO/livingdocs-editor/pull/6634)
-* [Deprecate `useAsTitle` sync](https://github.com/livingdocsIO/livingdocs-editor/pull/6652)
-* [Fix documents filters query for editor](https://github.com/livingdocsIO/livingdocs-server/pull/5536)
-* [Publish Control: allow manual publication date override before first publish & visual clarity](https://github.com/livingdocsIO/livingdocs-editor/pull/6643)
-* [Fix menu drag and drop behaviour](https://github.com/livingdocsIO/livingdocs-editor/pull/6646)
-* [Fix axios metadata and filters serialization](https://github.com/livingdocsIO/livingdocs-editor/pull/6647)
-* [Cache access control user details by project](https://github.com/livingdocsIO/livingdocs-server/pull/5534)
-* [Ensure mentioneeIds is on all comment schemas](https://github.com/livingdocsIO/livingdocs-server/pull/5531)
-* [Document Access Control Foundation](https://github.com/livingdocsIO/livingdocs-server/pull/5440)
-* [`rel` property was being overwritten by the `partialLinkAttributes`](https://github.com/livingdocsIO/livingdocs-editor/pull/6641)
-* [Remove not used editing API endpoint /hugo/print/royalty-recipients](https://github.com/livingdocsIO/livingdocs-server/pull/5525)
-
-
-Improvements
-* [Redis: Make the Job Queue waitNext more reliable](https://github.com/livingdocsIO/livingdocs-server/pull/5447)
-* [Postgres: Improve transaction error handling](https://github.com/livingdocsIO/livingdocs-server/pull/5467)
-* [Postgres: Do not close pool clients on query errors](https://github.com/livingdocsIO/livingdocs-server/pull/5438)
-* [Postgres: Fix query performance with big tables](https://github.com/livingdocsIO/livingdocs-server/pull/5303)
-* [Postgres: Restrict maximum query parameters (65000 max)](https://github.com/livingdocsIO/livingdocs-server/pull/5327)
-* [Archive unused Content- and Media-Types](https://github.com/livingdocsIO/livingdocs-server/pull/5475)
-
-Bugs
-* [Search: Only query configured Content Types](https://github.com/livingdocsIO/livingdocs-server/pull/5454)
-* [Search: Fix support for arrays in draft query sort option](https://github.com/livingdocsIO/livingdocs-server/pull/5468)
-* [Dashboards: Don't hide table dashboard flyouts on mouseleave](https://github.com/livingdocsIO/livingdocs-editor/pull/6515)
-* [Dashboards: correctly apply stored display filter states on initial search](https://github.com/livingdocsIO/livingdocs-editor/pull/6440)
-* [Dashboards: show quick publish on dashboards only when reasonable](https://github.com/livingdocsIO/livingdocs-editor/pull/6585)
-* [Document Teasers: Allow document drop with any param handle for the reference](https://github.com/livingdocsIO/livingdocs-editor/pull/6595)
-* [ImgIX: properly compute URL when server option stripPathPrefix is set](https://github.com/livingdocsIO/livingdocs-editor/pull/6428)
-* [Includes: apply defaultParams correctly when having multiple services](https://github.com/livingdocsIO/livingdocs-editor/pull/6372)
-* [Metadata Plugin: li-integer - correctly treat 0 value](https://github.com/livingdocsIO/livingdocs-editor/pull/6587)
-* [Editable Teasers: Fix "Has local changes" behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/6627)
-
-Design
-* [Design/Color Update](https://github.com/livingdocsIO/livingdocs-editor/pull/6610)
-* [Bundle-Thumbs](https://github.com/livingdocsIO/livingdocs-editor/pull/6580)
-* [Toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/6041)
-* [Scrollbar](https://github.com/livingdocsIO/livingdocs-editor/pull/6522)
-* [Distribution Flyouts](https://github.com/livingdocsIO/livingdocs-editor/pull/6439)
-* [Icons V2](https://github.com/livingdocsIO/livingdocs-server/pull/5177)
-* [Icons V2](https://github.com/livingdocsIO/livingdocs-editor/pull/6402)
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
@@ -394,6 +311,30 @@ liServer.features.api('li-indexing').get({
 
 References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5465)
 
+### Access Control feature adds permission checks + input validation :fire:
+
+:fire: `liServer.features.api('li-access-control').verifyAction()` additionally handles restricted user and content type permission checks, in addition to the existing registered access control hooks. If you have issues, please contact us.
+:fire: `liServer.features.api('li-access-control')` API methods now have strict input validation. If you have issues, please contact us.
+
+References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5440)
+
+### Moved Server Config search.host :fire:
+
+:fire: Removed Server Config `search.host` (used by the Elasticsearch Client). Please use `search.elasticsearchClient.node` instead.
+
+References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5540)
+
+### Removed Editor metadataLifecycle :fire:
+
+:fire: Removed Editors `coreApi.metadataLifecycle` function, please use [contentType.defaultMetadata](https://docs.livingdocs.io/reference/project-config/content-types/#default-metadata) instead
+
+References: [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6678)
+
+### Removed Editor metadataLifecycle :fire:
+
+:fire: Remove legacy `li-authentication-sso` authentication
+
+References: [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6684)
 
 ## Deprecations
 
@@ -418,7 +359,25 @@ indexing: {
 }
 ```
 
+Breaking Change: `release-2023-07`
+
 * [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5365)
+
+
+### behaveAsLiImage
+
+Deprecate `behaveAsLiImage` for custom metadata plugins. Replace your custom image metadata plugins with `li-image`
+
+Breaking Change: `release-2023-07`
+
+* [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6695)
+
+## APIs :gift:
+
+### livingdocs-server secret-show
+
+Introduce `livingdocs-server secret-show` CLI task to display the currently defined `secretRefs` of a project
+
 
 ## Patched Vulnerabilities
 
@@ -446,11 +405,40 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 
 ## Other Changes
 
+### Design
+* [Design/Color Update](https://github.com/livingdocsIO/livingdocs-editor/pull/6610)
+* [Bundle-Thumbs](https://github.com/livingdocsIO/livingdocs-editor/pull/6580)
+* [Toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/6041)
+* [Scrollbar](https://github.com/livingdocsIO/livingdocs-editor/pull/6522)
+* [Distribution Flyouts](https://github.com/livingdocsIO/livingdocs-editor/pull/6439)
+* [Icons V2](https://github.com/livingdocsIO/livingdocs-server/pull/5177)
+* [Icons V2](https://github.com/livingdocsIO/livingdocs-editor/pull/6402)
+
 ### Features
+* [Draft Delivery Builds](https://github.com/livingdocsIO/livingdocs-server/pull/5550)
+* [Display Filter: li-team](https://github.com/livingdocsIO/livingdocs-editor/pull/6577)
 
 ### Improvements
+* [Redis: Make the Job Queue waitNext more reliable](https://github.com/livingdocsIO/livingdocs-server/pull/5447)
+* [Postgres: Improve transaction error handling](https://github.com/livingdocsIO/livingdocs-server/pull/5467)
+* [Postgres: Do not close pool clients on query errors](https://github.com/livingdocsIO/livingdocs-server/pull/5438)
+* [Postgres: Fix query performance with big tables](https://github.com/livingdocsIO/livingdocs-server/pull/5303)
+* [Postgres: Restrict maximum query parameters (65000 max)](https://github.com/livingdocsIO/livingdocs-server/pull/5327)
+* [Archive unused Content- and Media-Types](https://github.com/livingdocsIO/livingdocs-server/pull/5475)
+* [Publish Control: allow manual publication date override before first publish](https://github.com/livingdocsIO/livingdocs-editor/pull/6643)
+* [Statistics: Record last time a user did a request to the server](https://github.com/livingdocsIO/livingdocs-server/pull/5533)
 
 ### Bugfixes
+* [Search: Only query configured Content Types](https://github.com/livingdocsIO/livingdocs-server/pull/5454)
+* [Search: Fix support for arrays in draft query sort option](https://github.com/livingdocsIO/livingdocs-server/pull/5468)
+* [Dashboards: Don't hide table dashboard flyouts on mouseleave](https://github.com/livingdocsIO/livingdocs-editor/pull/6515)
+* [Dashboards: correctly apply stored display filter states on initial search](https://github.com/livingdocsIO/livingdocs-editor/pull/6440)
+* [Dashboards: show quick publish on dashboards only when reasonable](https://github.com/livingdocsIO/livingdocs-editor/pull/6585)
+* [Document Teasers: Allow document drop with any param handle for the reference](https://github.com/livingdocsIO/livingdocs-editor/pull/6595)
+* [ImgIX: properly compute URL when server option stripPathPrefix is set](https://github.com/livingdocsIO/livingdocs-editor/pull/6428)
+* [Includes: apply defaultParams correctly when having multiple services](https://github.com/livingdocsIO/livingdocs-editor/pull/6372)
+* [Metadata Plugin: li-integer - correctly treat 0 value](https://github.com/livingdocsIO/livingdocs-editor/pull/6587)
+* [Editable Teasers: Fix "Has local changes" behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/6627)
 
 
 ## Patches
