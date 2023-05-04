@@ -113,6 +113,11 @@ contentTypes: [
         disableEditTitleAtToolbar: false
       },
 
+      // Delay in ms before all possible drag locations are shown with
+      // a grey placeholder after hovering over the document with no
+      // valid drop location.
+      dragPreviewDelay: 1500,
+
       // One or multiple deliveryLinks are show in the publish panel
       // They should point to your frontends
       // url can be a pattern containing these placeholders:
@@ -340,7 +345,7 @@ Here is an example script to include in your iframe:
   window.addEventListener("message", (event) => {
     // check if the message is actually coming from Livingdocs Editor
     if (event.origin !== parentOrigin) return
-    
+
     // event.data looks like this:
     // {
     //   action: 'metadata.update',
@@ -530,24 +535,26 @@ Enable or disable the existing elements for text formatting.
 
 Example:
 ```js
-textFormatting: {
-  bold: true,
-  italic: true,
-  superscript: false,
-  subscript: false,
-  link: true,
-  specialChars: false,
-  quotes: ['„', '“'],
-  singleQuotes: ['‚', '‘']
-  apostrophe: '’',
-  locales: {
-    de: {
-      quotes: ['„', '“'],
-      singleQuotes: ['‚', '‘']
-    },
-    en: {
-      quotes: ['“', '”'],
-      singleQuotes: ['‘', '’']
+editor: {
+  textFormatting: {
+    bold: true,
+    italic: true,
+    superscript: false,
+    subscript: false,
+    link: true,
+    specialChars: false,
+    quotes: ['„', '“'],
+    singleQuotes: ['‚', '‘']
+    apostrophe: '’',
+    locales: {
+      de: {
+        quotes: ['„', '“'],
+        singleQuotes: ['‚', '‘']
+      },
+      en: {
+        quotes: ['“', '”'],
+        singleQuotes: ['‘', '’']
+      }
     }
   }
 }
@@ -642,6 +649,24 @@ Following attribute types can be added to a customElement:
 **Restrictions**
 
 There can be only one attribute with a type in the attributes array. Static values can be added as many as needed.
+
+## Document Editing Toolbar
+
+Configure available dashboards while editing a document.
+
+```js
+editor: {
+  documentEditingToolbar: {
+    documentDashboards: [
+      {
+        label: 'Teaser',
+        useDashboard: 'articles-simple',
+        published: true
+      }
+    ]
+  },
+}
+```
 
 ## Print
 
