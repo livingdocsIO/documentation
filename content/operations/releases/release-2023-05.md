@@ -431,6 +431,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.5): fix(retresco): Add workaround to allow republish when data migrations or imports have created a draft, but no changes were applied to the document
 
 ### Livingdocs Editor Patches
+- [v94.10.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.9): fix(images): Debounce image crop changes by 500ms to prevent burst requests against the image service
 - [v94.10.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.8): fix(filter management): Confirm button
 - [v94.10.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.7): fix(document createion flow): still disabled in channels
 - [v94.10.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.6): fix(table dashboard): Test
