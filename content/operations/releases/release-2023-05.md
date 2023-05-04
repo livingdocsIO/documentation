@@ -27,40 +27,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: We don't guarantee stable APIs. They can still change until the official release
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
-## PRs to Categorize
-* [improvement(overflow cells): Visual](https://github.com/livingdocsIO/livingdocs-editor/pull/6755)
-* [Publish Control: date improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6747)
-* [add x-compressed-zip extension to mime](https://github.com/livingdocsIO/livingdocs-server/pull/5604)
-* [Disable inline editing of table dashboard rows when a user is not allowed to edit documents](https://github.com/livingdocsIO/livingdocs-editor/pull/6766)
-* [Re-introduce start of month use to compute billing for user occupation](https://github.com/livingdocsIO/livingdocs-server/pull/5647)
-* [Dashboard access control](https://github.com/livingdocsIO/livingdocs-editor/pull/6762)
-* [Add `Concurrent Users` column to billing table](https://github.com/livingdocsIO/livingdocs-editor/pull/6683)
-* [Concurrent users reporting](https://github.com/livingdocsIO/livingdocs-server/pull/5597)
-* [Extend documents server config with `realtimeUpdates` property](https://github.com/livingdocsIO/livingdocs-server/pull/5626)
-* [Disable global Pusher events](https://github.com/livingdocsIO/livingdocs-server/pull/5627)
-* [Terms & Privacy Statement for Signup from iframe](https://github.com/livingdocsIO/livingdocs-editor/pull/6759)
-* [Simplify behaviors](https://github.com/livingdocsIO/livingdocs-editor/pull/6711)
-* [Metadata Previews](https://github.com/livingdocsIO/livingdocs-editor/pull/6738)
-* [Metadata Previews](https://github.com/livingdocsIO/livingdocs-server/pull/5618)
-* [Access control improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6749)
-* [Access control improvements](https://github.com/livingdocsIO/livingdocs-server/pull/5632)
-* [Only show my tasks if planning system enabled](https://github.com/livingdocsIO/livingdocs-editor/pull/6751)
-* [fix(filter bar item): min height added](https://github.com/livingdocsIO/livingdocs-editor/pull/6752)
-* [🐞 Fix a memory leak in the report after a data migration](https://github.com/livingdocsIO/livingdocs-server/pull/5636)
-* [Display own requested and accepted tasks on home screen](https://github.com/livingdocsIO/livingdocs-editor/pull/6741)
-* [Home Screen: My tasks config](https://github.com/livingdocsIO/livingdocs-server/pull/5588)
-* [Add translations for `features/authentication` UI components](https://github.com/livingdocsIO/livingdocs-editor/pull/6721)
-* [Improve use_issue composable performance and use the composable to load documents in li-meta-issue-management](https://github.com/livingdocsIO/livingdocs-editor/pull/6728)
-* [Upgrade srcissors and improve crop normalization](https://github.com/livingdocsIO/livingdocs-editor/pull/6734)
-* [Migrate history to vue](https://github.com/livingdocsIO/livingdocs-editor/pull/6496)
-* [Update documents in tables on realtime update events](https://github.com/livingdocsIO/livingdocs-editor/pull/6729)
-* [Add created and deleted realtime notifications](https://github.com/livingdocsIO/livingdocs-server/pull/5616)
-* [Expose document version property in realtime notifications](https://github.com/livingdocsIO/livingdocs-server/pull/5613)
-* [Fix e2e seeding for cypress](https://github.com/livingdocsIO/livingdocs-server/pull/5617)
-* [Access Control Policies](https://github.com/livingdocsIO/livingdocs-server/pull/5565)
-* [Support documentType wildcard policies to ease the migration](https://github.com/livingdocsIO/livingdocs-editor/pull/6731)
-* [Search: correctly handle query caching](https://github.com/livingdocsIO/livingdocs-editor/pull/6725)
-
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
 ## Webinar
@@ -147,12 +113,9 @@ TODO: Description
 
 
 
-
-
-
-
-
 ## Breaking Changes :fire:
+
+### Back to Standard
 
 :exclamation: Check the [Back to Standard Roadmap]({{< ref "/customising/back-to-standard" >}}) and inform you about important upcoming deprecations and breaking changes and reasons.
 
@@ -164,8 +127,6 @@ It's a simple/fast migration with no expected data losses.
 # run `livingdocs-server migrate up` to update to the newest database scheme
 livingdocs-server migrate up
 ```
-
-TODO: check migration
 
 ### Add default settings for Editor Config :fire:
 
@@ -330,13 +291,30 @@ References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5540)
 
 References: [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6678)
 
-### Removed Editor metadataLifecycle :fire:
+### Removed li-authentication-sso Authentication :fire:
 
 :fire: Remove legacy `li-authentication-sso` authentication
 
 References: [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6684)
 
+### Removed groupsApi.getScopesOfUser :fire:
+
+:fire: Remove `liServer.features.api('li-groups').getScopesOfUser()`
+
+References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5565)
+
+### Groups API :fire:
+
+:fire: Moved `groupsApi.setAccessPolicy` to `groupsApi.setPermissions`
+:fire: Use `groupsApi.setPermissions` with the parameters `data: {policies: [], scope: ''}`
+:fire: `groupsApi.updateGroup` does not support scope parameter anymore.
+
+References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5632)
+
+
 ## Deprecations
+
+### Back to Standard
 
 :exclamation: Check the [Back to Standard Roadmap]({{< ref "/customising/back-to-standard" >}}) and inform you about important upcoming deprecations and breaking changes and reasons.
 
@@ -361,7 +339,7 @@ indexing: {
 
 Breaking Change: `release-2023-07`
 
-* [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5365)
+References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5365)
 
 
 ### behaveAsLiImage
@@ -370,7 +348,7 @@ Deprecate `behaveAsLiImage` for custom metadata plugins. Replace your custom ima
 
 Breaking Change: `release-2023-07`
 
-* [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6695)
+References: [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6695)
 
 ## APIs :gift:
 
@@ -378,30 +356,6 @@ Breaking Change: `release-2023-07`
 
 Introduce `livingdocs-server secret-show` CLI task to display the currently defined `secretRefs` of a project
 
-
-## Patched Vulnerabilities
-
-We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
-
-### Livingdocs Server
-This release we have patched the following vulnerabilities in the Livingdocs Server:
-* [CVE-2023-29017](https://github.com/advisories/GHSA-7jxr-cg7f-gpgv) patched in `vm2` v3.9.16
-* [CVE-2023-0842](https://nvd.nist.gov/vuln/detail/CVE-2023-0842) patched in `xml2js` v0.5.0
-* [CVE-2023-30547](https://github.com/advisories/GHSA-ch3r-j5x3-6q2m) patched in `vm2` v3.9.17
-
-We are aware of the following vulnerabilities in the Livingdocs Server:
-* [CVE-2023-26102](https://cwe.mitre.org/data/definitions/1321.html) has yet to be patched by `rangy` but we have proposed a fix in [this PR](https://github.com/timdown/rangy/pull/482)
-  This vulnerability is not exploitable in the Livingdocs Server.
-
-### Livingdocs Editor
-This release we have patched the following vulnerabilities in the Livingdocs Editor:
-* [CVE-2023-0842](https://nvd.nist.gov/vuln/detail/CVE-2023-0842) patched in `xml2js` v0.5.0
-* [CVE-2022-37603](https://github.com/advisories/GHSA-3rfm-jhwj-7488) patched in `webpack` v5.76.0
-
-We are aware of the following vulnerabilities in the Livingdocs Editor:
-* [CVE-2023-26102](https://cwe.mitre.org/data/definitions/1321.html) has yet to be patched by `rangy` but we have proposed a fix in [this PR](https://github.com/timdown/rangy/pull/482)
-  This vulnerability is not exploitable in the Livingdocs Editor because `rangy` module is scoped in the `livingdocs-framework` and not exposed to the users.
-* [CVE-2023-26116](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26118](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26117](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2022-25869](https://cwe.mitre.org/data/definitions/79.html), [CVE-2022-25844](https://cwe.mitre.org/data/definitions/770.html) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
 
 ## Other Changes
 
@@ -429,6 +383,9 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 * [Statistics: Record last time a user did a request to the server](https://github.com/livingdocsIO/livingdocs-server/pull/5533)
 
 ### Bugfixes
+* [Files: Add x-compressed-zip extension support](https://github.com/livingdocsIO/livingdocs-server/pull/5604)
+* [Images: Image crops can't have negative coordinates](https://github.com/livingdocsIO/livingdocs-editor/pull/6734)
+* [Document Search: Fix query cache behavior for li-document-reference and li-document-references search](https://github.com/livingdocsIO/livingdocs-editor/pull/6725)
 * [Search: Only query configured Content Types](https://github.com/livingdocsIO/livingdocs-server/pull/5454)
 * [Search: Fix support for arrays in draft query sort option](https://github.com/livingdocsIO/livingdocs-server/pull/5468)
 * [Dashboards: Don't hide table dashboard flyouts on mouseleave](https://github.com/livingdocsIO/livingdocs-editor/pull/6515)
@@ -439,7 +396,32 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 * [Includes: apply defaultParams correctly when having multiple services](https://github.com/livingdocsIO/livingdocs-editor/pull/6372)
 * [Metadata Plugin: li-integer - correctly treat 0 value](https://github.com/livingdocsIO/livingdocs-editor/pull/6587)
 * [Editable Teasers: Fix "Has local changes" behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/6627)
+* [Data Migration: Fix memory leak in the report after a data migration](https://github.com/livingdocsIO/livingdocs-server/pull/5636)
 
+
+## Vulnerability Patches
+
+We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
+
+### Livingdocs Server
+This release we have patched the following vulnerabilities in the Livingdocs Server:
+* [CVE-2023-29017](https://github.com/advisories/GHSA-7jxr-cg7f-gpgv) patched in `vm2` v3.9.16
+* [CVE-2023-0842](https://nvd.nist.gov/vuln/detail/CVE-2023-0842) patched in `xml2js` v0.5.0
+* [CVE-2023-30547](https://github.com/advisories/GHSA-ch3r-j5x3-6q2m) patched in `vm2` v3.9.17
+
+We are aware of the following vulnerabilities in the Livingdocs Server:
+* [CVE-2023-26102](https://cwe.mitre.org/data/definitions/1321.html) has yet to be patched by `rangy` but we have proposed a fix in [this PR](https://github.com/timdown/rangy/pull/482)
+  This vulnerability is not exploitable in the Livingdocs Server.
+
+### Livingdocs Editor
+This release we have patched the following vulnerabilities in the Livingdocs Editor:
+* [CVE-2023-0842](https://nvd.nist.gov/vuln/detail/CVE-2023-0842) patched in `xml2js` v0.5.0
+* [CVE-2022-37603](https://github.com/advisories/GHSA-3rfm-jhwj-7488) patched in `webpack` v5.76.0
+
+We are aware of the following vulnerabilities in the Livingdocs Editor:
+* [CVE-2023-26102](https://cwe.mitre.org/data/definitions/1321.html) has yet to be patched by `rangy` but we have proposed a fix in [this PR](https://github.com/timdown/rangy/pull/482)
+  This vulnerability is not exploitable in the Livingdocs Editor because `rangy` module is scoped in the `livingdocs-framework` and not exposed to the users.
+* [CVE-2023-26116](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26118](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26117](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2022-25869](https://cwe.mitre.org/data/definitions/79.html), [CVE-2022-25844](https://cwe.mitre.org/data/definitions/770.html) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
 
 ## Patches
 

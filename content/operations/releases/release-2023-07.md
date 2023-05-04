@@ -88,7 +88,7 @@ TODO: Description
 * [Microsoft Teams Integration](https://github.com/livingdocsIO/livingdocs-server/pull/4408)
 
 
-## Breaking Changes :fire:
+### Back to Standard
 
 :exclamation: Check the [Back to Standard Roadmap]({{< ref "/customising/back-to-standard" >}}) and inform you about important upcoming deprecations and breaking changes and reasons.
 
@@ -105,8 +105,11 @@ TODO: check migration
 
 ## Deprecations
 
+### Back to Standard
+
 :exclamation: Check the [Back to Standard Roadmap]({{< ref "/customising/back-to-standard" >}}) and inform you about important upcoming deprecations and breaking changes and reasons.
 
+## APIs :gift:
 
 ## Other Changes
 
