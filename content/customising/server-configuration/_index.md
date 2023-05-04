@@ -955,7 +955,7 @@ mediaLibrary: {
       maxFileSize: '15mb',
     },
     processing: {
-      maxResolution: 24 * 1000 * 1000 // 24MP,  default 24 mega-pixels
+      maxResolution: 24 * 1000 * 1000, // 24MP,  default 24 mega-pixels
       maxFileSize: '15mb',
       maxConcurrentProcesses: 5, // default 5
       lossy: {
@@ -966,7 +966,7 @@ mediaLibrary: {
       }
       lossless: {
         // max pixel width or height
-        maxDimension: 6000 // default 6000
+        maxDimension: 6000, // default 6000
       },
       // optional - Convert your image during upload into another format
       convert: [
@@ -985,7 +985,7 @@ mediaLibrary: {
     // {{< a ref="/customising/server-configuration/storage" title="Storage Configuration" >}}
     storage: {
       strategy: 's3',
-      prefix: 'videos/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
+      prefix: 'videos/', // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
       config: {
         // the videos must be public-read to be shown in the editor
         params: {ACL: 'public-read'},
@@ -1007,7 +1007,7 @@ mediaLibrary: {
     // {{< a ref="/customising/server-configuration/storage" title="Storage Configuration" >}}
     storage: {
       strategy: 's3',
-      prefix: 'files/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
+      prefix: 'files/', // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
       config: {
         bucket: 'livingdocs-files-dev',
         region: 'eu-central-1',
