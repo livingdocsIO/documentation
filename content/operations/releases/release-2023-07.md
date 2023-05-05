@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(tasks): Deadline](https://github.com/livingdocsIO/livingdocs-editor/pull/6791)
 * [Fix/Comments With Mentions](https://github.com/livingdocsIO/livingdocs-editor/pull/6794)
 * [Fix missing translations](https://github.com/livingdocsIO/livingdocs-editor/pull/6780)
 * [Enhance content type & media type sync logs with project id context](https://github.com/livingdocsIO/livingdocs-server/pull/5674)
