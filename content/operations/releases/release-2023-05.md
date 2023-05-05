@@ -84,8 +84,6 @@ Managing the title of an article inside and outside of the newsroom has been a c
 
 However, in some cases it's desired to keep the Working Title and Article Title in sync. To accomplish that, we introduced the [displayTitlePattern]({{< ref "/reference/project-config/content-types#displaytitlepattern" >}}) Content Type configuration, which allows to compute a readonly version of the Working Title based on other metadata fields.
 
-Please note that the now deprecated `useAsTitle` flag needs to be [migrated]({{< ref "#porting-useastitle-to-displaytitlepattern" >}}) to `displayTitlePattern`.
-
 * [Documentation - displayTitlePattern]({{< ref "/reference/project-config/content-types#displaytitlepattern" >}})
 * [PR Editor: Working Title behaviour](https://github.com/livingdocsIO/livingdocs-editor/pull/6600)
 * [PR Editor: Working Title UI polish](https://github.com/livingdocsIO/livingdocs-editor/pull/6693)
