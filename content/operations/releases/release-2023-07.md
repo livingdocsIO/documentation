@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [♻️ Remove asset server from example-server](https://github.com/livingdocsIO/livingdocs-server/pull/5673)
 * [fix(deps): update dependency aws-sdk from 2.1370.0 to v2.1372.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5668)
 * [fix(deps): update dependency https-proxy-agent from 5.0.1 to v6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6790)
 * [Refactor project config cache sync](https://github.com/livingdocsIO/livingdocs-server/pull/5665)
