@@ -265,6 +265,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.56](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.56): fix(project-config): Enhance content type & media type sync logs with project id context
 - [v208.3.55](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.55): fix(project-config): Set higher request body size for the project config post endpoints
 - [v208.3.54](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.54): fix: fix data migration memory leak (report at the end) with a lot of migrated documents
 - [v208.3.53](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.53): fix: add x-compressed-zip extension
