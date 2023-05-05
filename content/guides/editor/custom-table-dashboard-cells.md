@@ -78,7 +78,7 @@ coreApi.vueComponentRegistry.registerComponent({
 })
 ```
 
-And can be configured for use in a Table Dashboard in the Project Config editor in the [editor settings]({{< ref "/reference-docs/project-config/editor-settings.md">}}) in the server:
+And can be configured for use in a Table Dashboard in the Project Config editor in the [editor settings]({{< ref "/reference/project-config/editor-settings.md">}}) in the server:
 
 ```js
 columns: [
