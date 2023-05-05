@@ -371,6 +371,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.68): chore(resolve conflicts): li_proposal
 - [v90.33.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.67): fix(images): Debounce image crop changes by 500ms to prevent burst requests against the image service
 - [v90.33.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.66): fix(document createion flow): still disabled in channels
 - [v90.33.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.65): fix(filter bar item): min height added
