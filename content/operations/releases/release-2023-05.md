@@ -428,6 +428,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v226.3.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.7): fix(project-config): Enhance content type & media type sync logs with project id context
 - [v226.3.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.6): fix(project-config): Set higher request body size for the project config post endpoints
 - [v226.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.5): fix(retresco): Add workaround to allow republish when data migrations or imports have created a draft, but no changes were applied to the document
 
