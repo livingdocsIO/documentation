@@ -333,6 +333,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.38): fix(project-config): Enhance content type & media type sync logs with project id context
 - [v213.6.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.37): fix(project-config): Set higher request body size for the project config post endpoints
 - [v213.6.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.36): fix(retresco): Add workaround to allow republish when data migrations or imports have created a draft, but no changes were applied to the document
 - [v213.6.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.35): fix: trigger new release
