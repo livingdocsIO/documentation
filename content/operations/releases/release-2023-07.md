@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency https-proxy-agent from 6.0.0 to v6.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6806)
 * [fix(deps): update dependency aws-sdk from 2.1372.0 to v2.1373.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5687)
 * [fix(deps): update dependency http-proxy-agent from 6.0.0 to v6.0.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6805)
 * [Check if document is published before accessing properties in Retresco enrichment](https://github.com/livingdocsIO/livingdocs-server/pull/5682)
