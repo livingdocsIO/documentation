@@ -759,36 +759,50 @@ Removing a page reference has to be confirmed in a second step, to prevent accid
 
 **Project Config**
 
+Project config Root:
+
+The finiteProducts config array describes the available finite products (issues). Each issue `issueContentType` can have a different set of member contentTypes `issueMemberContentTypes`.
+
 ```js
 {
   ...
   finiteProducts: [{
     issueContentType: 'issue',
     issueMemberContentTypes: ['page']
-  }]
+  }].
+  ...
 }
 ```
 
 Issue contentType:
+
+Each `li-issue-management` metadata plugin presents an issue-group inside an issue.
 
 ```js
 {
   handle: 'issue',
   documentType: 'data-record',
   ...
-  metadata: [{
-    handle: 'sport',
-    type: 'li-issue-management',
-    config: {index: true},
-    ui: {
-      label: 'Sport',
-      config: {
-        documentCreationFlows: [{
-          useDocumentCreationFlow: 'digitaleAusgabePage' // document creation flow function to call, when the "add page" button is clicked - see https://docs.livingdocs.io/guides/editor/document-creation-flow/#goal
-        }]
+  metadata: [
+    {
+      handle: 'local',
+      type: 'li-issue-management',
+      config: {index: true}, // Needed to find a parent issue of a page. If a parent issue is found for a page, then the page will be shown with an issue navigation on top.
+      ui: {
+        label: 'Local',
+        config: {
+          documentCreationFlows: [{
+            useDocumentCreationFlow: 'digitaleAusgabePage' // document creation flow function to call, when the "add page" button is clicked - see https://docs.livingdocs.io/guides/editor/document-creation-flow/#goal
+          }]
+        }
       }
-    }
-  }]
+    },
+    {
+      handle: 'sport',
+      type: 'li-issue-management',
+      ...
+    },
+  ]
 }
 ```
 
