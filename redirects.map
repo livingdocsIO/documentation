@@ -22,7 +22,7 @@
 /guides/azure-ad-login /guides/authentication/azure-ad-login/;
 /guides/imports/dpa-import /guides/integrations/dpa-import/;
 /guides/imports/import-legacy-system-documents /guides/integrations/import-legacy-system-documents/;
-/guides/includes-embeds/article_and_list_includes /guides/documents/includes/embedded-teaser-and-list/;
+/guides/includes-embeds/article_and_list_includes /guides/documents/includes/document-teasers/;
 /guides/includes-embeds/article_teasers /guides/documents/includes/document-teasers/;
 /guides/includes-embeds/embedded_documents /guides/documents/includes/editable-document-teasers/;
 /guides/includes-embeds/twitter_include_embed /guides/documents/includes/twitter-embed/;

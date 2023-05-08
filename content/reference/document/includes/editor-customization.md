@@ -1,7 +1,8 @@
 ---
-title: Include User Interfaces
+title: Include UI
 menus:
   reference:
+    weight: 2
     parent: Includes
 ---
 
