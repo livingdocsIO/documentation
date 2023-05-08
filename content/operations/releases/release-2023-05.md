@@ -326,6 +326,16 @@ References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5565)
 
 References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5632)
 
+### Metadata Plugin li-issue-management
+
+- :fire: metadata type `li-issue-management`: requires `finiteProducts` project config from now on. See [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-issue-management" >}})
+- :fire: metadata type `li-issue-management`: requires `config: {index: true},` metadata config from now on. See [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-issue-management" >}})
+
+Adding `index: true` config requires elasticsearch to be re-indexed:
+
+```bash
+livingdocs-server elasticsearch-index --handle=li-issue-management -y
+```
 
 ## Deprecations
 
