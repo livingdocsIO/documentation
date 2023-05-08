@@ -61,5 +61,3 @@ It can be important for your case that you can create components which can inclu
 Apart from third-party content, teasers on overview pages are also currently handled as includes in Livingdocs.
 
 [create includes]({{< ref "../reference/document/includes" >}})
-
-[teaser and teaser list example]({{< ref "/guides/documents/includes/embedded-teaser-and-list" >}})

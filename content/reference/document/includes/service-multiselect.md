@@ -2,6 +2,7 @@
 title: Includes with Multiple Services
 menus:
   reference:
+    weight: 3
     parent: Includes
 ---
 
