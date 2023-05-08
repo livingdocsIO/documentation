@@ -707,21 +707,38 @@ The `li-issue-management` metadata plugin can be used to manage issues (a data-r
 
 {{< img src="./images/li-issue-management-overview.png" alt="Issue management overview" >}}
 
-* View status: page publication status, article count and publication status
-* Create and add a new page
-* Open and edit a page
-* View Articles
-* Remove a page reference (will not delete the page, only remove the reference from this issue (data-record)
-* Disable / enable a page reference for this issue (data-record)
+Note: The status of pages and articles does not update automatically. Please refresh the page to get an up-to-date overview.
+
+Issue management plugin:
+
+* Page status, article count and status
+* Create and add new pages
+* Open pages
+* View and open page articles
+* Remove pages (this will not delete the page, only remove the reference from this issue)
+* Disable / enable a page reference for this issue
 * Change order of pages
+
+Issue navigation:
+
+* Navigate between the issue and its pages
+* Summary status of page and its articles
+
+{{< img src="./images/li-issue-management-page-view.png" alt="Issue management page view" >}}
+
+The issue navigation is also visible when navigating to a page that belongs to an issue.
+
+The issue navigation can only show one issue at a time. If a page is connected to two issues then only the first issue will be shown in the issue navigation.
+
+When a contentType (in this example a "page") is a member of an issue, then then all the "Un-/Publish" buttons in the publish control will be named "Release/Withdraw". See Project Config below.
 
 {{< img src="./images/li-issue-management-view-articles.png" alt="Issue management view articles" >}}
 
-See articles of the selected page.
+See and open articles of the selected page.
 
 {{< img src="./images/li-issue-management-remove.png" alt="Issue management remove page" >}}
 
-Removing a page reference has to be confirmed in a second state, to prevent accidental removal.
+Removing a page reference has to be confirmed in a second step, to prevent accidental removal.
 
 **Storage Format**
 
@@ -743,17 +760,36 @@ Removing a page reference has to be confirmed in a second state, to prevent acci
 **Project Config**
 
 ```js
-metadata: [{
-  handle: 'pages',
-  type: 'li-issue-management',
-  ui: {
-    config: {
-      documentCreationFlows: [{
-        useDocumentCreationFlow: 'digitaleAusgabePage' // document creation flow function to call, when the "add page" button is clicked - see https://docs.livingdocs.io/guides/editor/document-creation-flow/#goal
-      }]
+{
+  ...
+  finiteProducts: [{
+    issueContentType: 'issue',
+    issueMemberContentTypes: ['page']
+  }]
+}
+```
+
+Issue contentType:
+
+```js
+{
+  handle: 'issue',
+  documentType: 'data-record',
+  ...
+  metadata: [{
+    handle: 'sport',
+    type: 'li-issue-management',
+    config: {index: true},
+    ui: {
+      label: 'Sport',
+      config: {
+        documentCreationFlows: [{
+          useDocumentCreationFlow: 'digitaleAusgabePage' // document creation flow function to call, when the "add page" button is clicked - see https://docs.livingdocs.io/guides/editor/document-creation-flow/#goal
+        }]
+      }
     }
-  }
-}]
+  }]
+}
 ```
 
 ## li-imatrics-nlp-tags
