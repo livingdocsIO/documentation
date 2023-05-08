@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Remove unused behavior file](https://github.com/livingdocsIO/livingdocs-editor/pull/6803)
 * [Fix/Collab Cards](https://github.com/livingdocsIO/livingdocs-editor/pull/6810)
 * [fix(deps): update dependency https-proxy-agent from 6.0.0 to v6.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6806)
 * [fix(deps): update dependency aws-sdk from 2.1372.0 to v2.1373.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5687)
