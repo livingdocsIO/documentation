@@ -1,20 +1,20 @@
 ---
-title: Include UI
+title: Includes Editor API
 menus:
   reference:
-    weight: 2
+    weight: 3
     parent: Includes
 ---
 
 In order to provide a custom User Interface for your includes, you can register custom Vue components.
 Another option is to configure an iframe that you serve from any webserver.
 
-In order to actually render content, you need to configure the server to do so, [see here]({{< ref "/customising/server/include-functions" >}}) how that works.
+In order to actually render content, you need to configure the server to do so, [see here]({{< ref "/reference/document/includes/server-customization" >}}) how that works.
 
 
 ### Include User Interface with paramsSchema
 This is the most simple way to render a UI for the include. It doesn't need any code in the editor.
-[See here]({{< ref "/customising/server/include-functions#generated-sidebar" >}}) for an example.
+[See here]({{< ref "/reference/document/includes/server-customization#paramsSchema" >}}) for an example.
 
 ### Custom Include User Interface with Vue
 Here is an example of an include User Interface Vue Component:
@@ -108,7 +108,7 @@ The component `myInstagramInclude` can then be used as the `sidebarContentCompon
 
 ### Custom Include User Interface with an iframe
 
-In the [server configuration]({{< ref "/customising/server/include-functions#include-ui-options" >}}) we learned that you can also register an external iframe as a user interface in a modal.
+In the [server configuration]({{< ref "/reference/document/includes/server-customization" >}}) we learned that you can also register an external iframe as a user interface in a modal.
 The Livingdocs modal which will contain the iframe listens to `postMessage`s for updates. You can use this to update the include params or close the modal without any changes:
 ```js
 window.top.postMessage({action: 'update', params: {someParam: "test"}})

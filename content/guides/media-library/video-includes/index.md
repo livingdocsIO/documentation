@@ -83,14 +83,11 @@ module.exports = function ({liServer, framework}) {
         // value and posterImageValue are the preloaded media library entries
         const {reference, value, posterImageValue} = params['video-param'] || {}
 
-        if (!reference?.id && context.preview) {
-          // Display the component placeholder in the editor
-          return {doNotRender: true}
-        }
-        if (!value) {
-          // Render an empty container - this could also be another placeholder or error message
-          return {content: []}
-        }
+        // Display the component placeholder in the editor
+        if (!reference?.id && context.preview) return {doNotRender: true}
+
+        // Render an empty container - this could also be another placeholder or error message
+        if (!value) return {content: []}
 
         const posterImageUrl = posterImageValue
           ? imageService.getUrl(posterImageValue.asset.url)

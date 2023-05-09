@@ -34,9 +34,21 @@ Here is an example includes configuration to consider for the editable teaser us
     type: 'function',
     render (params, context) {
       // params.article.reference.id contains the id of the linked document
-      // params.article.value contains the DocumentVersion (because preload: true is configured)
-      // you want to render the teaser here. Either as HTML or use the possibility of Embedded Documents
-      return params.article.reference.id
+      // params.article.value contains part of the DocumentVersion ({systemdata, metadata}) of the include (because preload: true is configured)
+      const documentVersion = params.article.value
+      return {
+        content: [{
+          id: `teaser-${documentVersion.systemdata.documentId}`,
+          component: 'teaser',
+          content: {
+            image: parseImageData(documentVersion.metadata.teaserImage),
+            title: documentVersion.metadata.title,
+            lead: 'lead from include',
+            byline: 'byline from include',
+            link: 'https://example.com'
+          }
+        }]
+      }
     }
   }
 }
@@ -155,7 +167,7 @@ By adding this dashboard to `contentType.editor.documentEditingToolbar.documentD
 
 ## Enabling Drag and Drop to create Teaser Components
 
-All there is to do now, is adding a bit of config to let the system know, which Teaser Component should be created when dropping an Article card (source) from that dashboard into any document (target). 
+All there is to do now, is adding a bit of config to let the system know, which Teaser Component should be created when dropping an Article card (source) from that dashboard into any document (target).
 
 This is done in the source content Content-Type, in this case `article.js`:
 
@@ -175,8 +187,8 @@ This is done in the source content Content-Type, in this case `article.js`:
 ```
 
 
-`teaserComponents` is an array, as we support multiple teaser components from the same source content type. For example, you could have several teaser components with different sizes (S, M, L, XL). 
-The first teaser component in the array will be the default one. 
+`teaserComponents` is an array, as we support multiple teaser components from the same source content type. For example, you could have several teaser components with different sizes (S, M, L, XL).
+The first teaser component in the array will be the default one.
 
 The teaserComponents config must be added only to the source content type (`article`), not in the teaser component nor in the target content type.
 

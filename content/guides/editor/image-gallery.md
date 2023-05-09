@@ -285,28 +285,22 @@ module.exports = function ({publicationApi}) {
     ],
     rendering: {
       type: 'function',
-      render (params, options) {
-        return renderTeaser({params, options, publicationApi})
+      render (params, context) {
+        return renderTeaser({params, context, publicationApi})
       }
     }
   }
 }
 
-async function renderTeaser ({params, options, publicationApi}) {
-  const isPreview = options && options.preview === true
-  const documentId = _.get(params, 'teaser.reference.id')
-  if (!documentId) {
-    if (!isPreview) {
-      // When not rendering a preview an include with not enough
-      // params will simply not be rendered.
-      // This is accomplished by returning an empty string.
-      return {html: ''}
-    } else {
-      // When rendering a preview we can return undefined so the include
-      // placeholder will still be shown.
-      return {doNotRender: true}
-    }
-  }
+async function renderTeaser ({params, context, publicationApi}) {
+  const isPreview = context?.preview === true
+  const documentId = params?.teaser?.reference?.id
+
+  // Return an empty string when no gallery is assigned and an API is doing the request
+  if (!documentId && !isPreview) return {html: ''}
+
+  // Show the include placeholder for the editor when no gallery is assigned
+  else if (!documentId && isPreview) return {doNotRender: true}
 
   try {
     const documentVersion = await publicationApi.getLatestPublication({documentId})

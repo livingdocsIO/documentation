@@ -2,7 +2,7 @@
 title: Includes with Multiple Services
 menus:
   reference:
-    weight: 3
+    weight: 4
     parent: Includes
 ---
 
@@ -68,4 +68,4 @@ The example shows one component "Top News". This component has only one directiv
 
 The screenshot above shows the multiselect option in the sidebar. The rendering of the selected "Top News" component will always look the same only the underlying `doc-include` service (and thus the editor user interface as well as the server rendering) change.
 
-In order to have the same look across all services, all registered [service renderers]({{< ref "/customising/server/include-functions" >}}) on the server must render into the same HTML template.
+In order to have the same look across all services, all registered [service renderers]({{< ref "/reference/document/includes/server-customization" >}}) on the server must render into the same HTML template.
