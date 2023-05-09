@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Disable table dashboard update polling by default](https://github.com/livingdocsIO/livingdocs-editor/pull/6807)
 * [Fix error when removing page from issue and improve E2E tests](https://github.com/livingdocsIO/livingdocs-editor/pull/6814)
 * [🐞 Fix Broken Navigation after MediaLibrary Asset Upload](https://github.com/livingdocsIO/livingdocs-editor/pull/6812)
 * [fix(deps): update dependency unsplash-js from 7.0.15 to v7.0.16 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5688)
