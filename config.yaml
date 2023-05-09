@@ -8,7 +8,7 @@ enableGitInfo: true
 enableEmoji: true
 enableInlineShortcodes: true
 enableRobotsTXT: true
-googleAnalytics: UA-47320912-2
+googleAnalytics: GTM-K6QTH5K
 
 markup:
   goldmark:
