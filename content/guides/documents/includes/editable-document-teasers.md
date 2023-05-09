@@ -4,8 +4,9 @@ description: Register an include service to render teasers which can be edited o
 weight: 4
 ---
 
-With [`release-2020-12`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2020-12.md) a new possibility to resolve includes is available. You can return Livingdocs Document JSON from an [include resolve function]({{< ref "./" >}}).
-If you mark the return value as editable, a user can overwrite the single directive values within the local document. These overwrites will be stored and sent to the include resolve function for consideration.
+Editable Document Teasers based on [Includes]({{< ref "/reference/document/includes" >}}) and an extended version of [Document Teasers]({{< ref "/guides/documents/includes/document-teasers" >}}) provide a simple way to setup teasers and the possiblity to define the UI with a `paramsSchema`.
+
+If you set `editableContent: true` as return value, a user can overwrite the single directive values within the local document. These overwrites will be stored and sent to the include resolve function for consideration.
 This allows the implementation of an Editable Teaser workflow.
 
 An example of an includes return value:
@@ -15,13 +16,13 @@ An example of an includes return value:
   editableContent: true,
   content: [
     {
-      id: `teaser-${documentId}`,
+      id: `teaser-${documentVersion.systemdata.documentId}`,
       // a Component with the name `teaser` needs to be configured in the design
       component: 'teaser',
       // the content contains the values for the directives configured on the `teaser` component
       content: {
-        image: metadata.teaserImage,
-        title: documentVersion.title,
+        image: documentVersion.metadata.teaserImage,
+        title: documentVersion.metadata.title,
         lead: 'Lead',
         byline: 'Byline',
         link: {href: 'https://example.com'}
@@ -50,8 +51,8 @@ Here is an example includes configuration to consider for the editable teaser us
   ],
   rendering: {
     type: 'function',
-    render (params, options) {
-      return renderTeaser({params, options, publicationApi, documentApi})
+    render (params, context) {
+      return renderTeaser({params, context, publicationApi, documentApi})
     }
   }
 }
@@ -93,3 +94,7 @@ This is how your Teaser Component looks like in this case:
 - `editableContent` has no effect when more than one component is returned.
 - The includes won't be resolved when you load the publication via Public API `api/v1/documents/:documentId/latestPublication`.
 - When requesting a web rendition of a publication, the components returned from the include resolver won't be part of rendered html for now.
+
+## References
+
+- [Includes Overview]({{< ref "/reference/document/includes" >}})

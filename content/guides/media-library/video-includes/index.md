@@ -6,7 +6,7 @@ weight: 4
 
 {{< added-in release-2022-03 block >}}
 
-Video includes provide a more flexible approach to embedding videos within a document than using the standard media library entry directly. The media library approach does not have an integrated solution for video transcoding, so it would only be possible to render the original video file to HTML. On the other hand, using an include service allows you to hook into an external service or data store which could provide the transcoded assets you require.
+Video includes are based on [Includes]({{< ref "/reference/document/includes" >}}) and provide a more flexible approach to embedding videos within a document than using the standard media library entry directly. The media library approach does not have an integrated solution for video transcoding, so it would only be possible to render the original video file to HTML. On the other hand, using an include service allows you to hook into an external service or data store which could provide the transcoded assets you require.
 
 ## Example
 
@@ -22,7 +22,6 @@ The example include service below uses [Video.js](https://videojs.com/) as the p
 
 ```js
 // includes/video.js
-
 const {nanoid} = require('nanoid')
 
 function getAspectRatio ({width, height}) {
@@ -253,3 +252,7 @@ module.exports = {
   `
 }
 ```
+
+## References
+
+- [Includes Overview]({{< ref "/reference/document/includes" >}})

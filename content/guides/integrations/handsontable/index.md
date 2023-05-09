@@ -20,7 +20,7 @@ And save it to Livingdocs, a simple table render is seen below:
 
 ## Setting up the Include function on the Server
 
-For in-depth documentation on Include functions, check out the documentation here: [Livingdocs Includes]({{< ref "/reference/document/includes" >}})
+For in-depth documentation on Include functions, check out the documentation here: [Includes Overview]({{< ref "/reference/document/includes" >}})
 
 For this example, the Handsontable include is a very basic iframe and modal. The iframe renders returned JSON from the modal, which hosts the Handsontable example server.
 
@@ -317,8 +317,8 @@ export default {
 
 - Once these files are set up, run the components however you feel best, change the url inside the include component in Livingdocs and it will run as expected.
 
-## Documentation
+## References
 
-- [Livingdocs](https://docs.livingdocs.io/)
+- [Includes Overview]({{< ref "/reference/document/includes" >}})
 - [Handsontable](https://handsontable.com/docs)
 - [Handsontable Demo](https://handsontable.com/demo)

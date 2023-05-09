@@ -6,7 +6,7 @@ menus:
     parent: Includes
 ---
 
-In this section you get an overview of basic principles of includes.
+In this section you get an overview of basic principles of includes. If you want to know more about Includes in general, go to [Includes Overview]({{< ref "/reference/document/includes" >}}).
 
 ## Summary of a doc-include
 
