@@ -29,7 +29,7 @@ This guide assumes that you are familiar with the possibilities to register an I
   ],
   rendering: {
     type: 'function',
-    async render (params, context) {
+    async render (params, options) {
       // The "list" property is from the "handle" above
       // The "reference.id" is defined by the "li-list-reference" schema
       // "params.list.$ref" would contain the type, in this case "document"

@@ -1,5 +1,5 @@
 ---
-title: Include Introduction
+title: Includes Introduction
 menus:
   reference:
     weight: 1
@@ -81,7 +81,7 @@ It is important to understand that a `doc-include` service ("your-include-servic
 
 ## What are the customizations
 
-The [server customization]({{< ref "/customising/server/include-functions" >}}) is a custom server function which defines the rendering as a Design Component (or HTML).
+The [server customization]({{< ref "/reference/document/includes/server-customization" >}}) is a custom server function which defines the rendering as a Design Component (or HTML).
 The [editor customization]({{< ref "/reference/document/includes/editor-customization" >}}) can be done in 2 different ways: a schema describing the params or a Vue component.
 
 Both customizations are optional.

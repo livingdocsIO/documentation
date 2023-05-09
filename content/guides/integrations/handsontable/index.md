@@ -20,7 +20,7 @@ And save it to Livingdocs, a simple table render is seen below:
 
 ## Setting up the Include function on the Server
 
-For in-depth documentation on Include functions, check out the documentation here: [Livingdocs Include](https://docs.livingdocs.io/customising/server/include-functions/)
+For in-depth documentation on Include functions, check out the documentation here: [Livingdocs Includes]({{< ref "/reference/document/includes" >}})
 
 For this example, the Handsontable include is a very basic iframe and modal. The iframe renders returned JSON from the modal, which hosts the Handsontable example server.
 
@@ -115,40 +115,40 @@ This function sends data and configs to Livingdocs using postMessage:
 
 ```javascript
 await window.parent.postMessage(
-          {
-            params: {
-              innerData: dataArray
-            },
-            action: "update",
-          },
-          "*"
-        );
+  {
+    params: {
+      innerData: dataArray
+    },
+    action: "update",
+  },
+  "*"
+);
 ```
 
 If the user chooses to reopen the configuration and edit the content, the configuration is received by this function with a config query post message:
 
 ```javascript
 async function getConfig() {
-        await window.parent.postMessage(
-          {
-            query: "config",
-          },
-          "*"
-        );
-        await window.addEventListener(
-          "message",
-          (event) => {
-            if (event.data.query === "config") {
-              if (event.data.params.innerData) {
-                dataArray = event.data.params.innerData;
-              } else {
-                dataArray = dataArray
-              }
-            }
-          },
-          false
-        );
+  await window.parent.postMessage(
+    {
+      query: "config",
+    },
+    "*"
+  );
+  await window.addEventListener(
+    "message",
+    (event) => {
+      if (event.data.query === "config") {
+        if (event.data.params.innerData) {
+          dataArray = event.data.params.innerData;
+        } else {
+          dataArray = dataArray
+        }
       }
+    },
+    false
+  );
+}
 ```
 
 The `dataArray` will need to be configured depending on whether or not you are using a framework - but in this function it is updated if there have been previous changes.
