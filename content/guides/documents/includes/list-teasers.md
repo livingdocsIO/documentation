@@ -4,7 +4,7 @@ description: Register an include service to embed a list
 weight: 4
 ---
 
-With [`release-2021-09`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-09.md) a simpler way to setup list teasers is introduced. It is based on [Includes]({{< ref "/reference/document/includes" >}}) and the possiblity to define the UI with a `paramsSchema`. Please see [Article Teasers]({{< ref "/guides/documents/includes/document-teasers" >}}) for information on setting up individual document teasers.
+List Teasers are based on [Includes]({{< ref "/reference/document/includes" >}}) and use `paramsSchema` to define the UI.
 
 This guide assumes that you are familiar with the possibilities to register an Include Service and how to use it in a Component.
 
@@ -29,7 +29,7 @@ This guide assumes that you are familiar with the possibilities to register an I
   ],
   rendering: {
     type: 'function',
-    async render (params, options) {
+    async render (params, context) {
       // The "list" property is from the "handle" above
       // The "reference.id" is defined by the "li-list-reference" schema
       // "params.list.$ref" would contain the type, in this case "document"
@@ -49,12 +49,12 @@ This guide assumes that you are familiar with the possibilities to register an I
       return {
         // Render multiple "teaser" components
         content: params.list.values.map(({metadata, systemdata}) => ({
-          id: `list-teaser-${systemdata.documentId}`,
+          id: `list-teaser-${documentVersion.systemdata.documentId}`,
           component: 'my-teaser-component', // The component is defined below
           content: {
             // Provide the necessary properties for the component
-            image: metadata.teaserImage,
-            title: metadata.title,
+            image: documentVersion.metadata.teaserImage,
+            title: documentVersion.metadata.title,
             showLead: true,
             lead: 'lead from include',
             showByline: true,
@@ -135,3 +135,7 @@ This guide assumes that you are familiar with the possibilities to register an I
   `
 }
 ```
+
+## References
+
+- [Includes Overview]({{< ref "/reference/document/includes" >}})

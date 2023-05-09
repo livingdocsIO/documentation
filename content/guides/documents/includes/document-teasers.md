@@ -4,7 +4,7 @@ description: Configuring Document Teasers including drag and drop support
 weight: 3
 ---
 
-Document Teasers based on [Includes]({{< ref "/reference/document/includes" >}}) provide a simple way to setup teasers and the possiblity to define the UI with a `paramsSchema`. Please see [Article List Teasers]({{< ref "/guides/documents/includes/list-teasers" >}}) for information on setting up lists of document teasers.
+Document Teasers based on [Includes]({{< ref "/reference/document/includes" >}}) provide a simple way to setup teasers and the possiblity to define the UI with a `paramsSchema`.
 
 With [`release-2022-07`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2022-07.md) the possibility to drag and drop Document Cards onto a document to create Teaser Components was introduced. You need to configure Teaser Components using an Include Service with a `li-document-reference` param to make it work.
 
@@ -32,7 +32,7 @@ Here is an example includes configuration to consider for the editable teaser us
   ],
   rendering: {
     type: 'function',
-    render (params, context) {
+    async render (params, context) {
       // params.article.reference.id contains the id of the linked document
       // params.article.value contains part of the DocumentVersion ({systemdata, metadata}) of the include (because preload: true is configured)
       const documentVersion = params.article.value
@@ -98,7 +98,6 @@ Dashboards are configured in the Project Config editorSettings.
 
 ```js
 // Project Config
-// ...
 editorSettings: {
   dashboards: [
     {
@@ -194,7 +193,7 @@ The teaserComponents config must be added only to the source content type (`arti
 
 ## Allow Import and Export in the Project Config
 
-And adding the [allowed import and export config]({{< ref "/reference/project-config/import-export" >}})to the project config:
+And adding the [allowed import and export config]({{< ref "/reference/project-config/import-export" >}}) to the project config:
 
 ```js
   import: {
@@ -204,3 +203,7 @@ And adding the [allowed import and export config]({{< ref "/reference/project-co
     allowedProjects: [{ handle: "exampleHandle" }],
   }
 ```
+
+## References
+
+- [Includes Overview]({{< ref "/reference/document/includes" >}})

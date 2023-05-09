@@ -4,8 +4,10 @@ description: Register an include service to render a youtube video
 weight: 2
 ---
 
+Deprecated: This approach is still working, but we propose to use [oEmbed]({{< ref "/guides/documents/includes/oembed" >}}) for Youtube instead.
+
 This guide will show you how to add a custom Include for Youtube. We will show the implementation for the design, server and editor.
-This is more of a quick-guide where you can just copy and paste code. For a deeper understanding you can dive into [server-customization]({{< ref "/reference/document/includes" >}}) and [editor-customization]({{< ref "/reference/document/includes/editor-customization" >}})
+This is more of a quick-guide where you can just copy and paste code. For a deeper understanding you can dive into [Includes Overview]({{< ref "/reference/document/includes" >}})
 
 ## Design definition
 
@@ -88,9 +90,9 @@ module.exports = {
   }
 }
 
-async function renderYoutube ({url}, options) {
+async function renderYoutube ({url}, context) {
   if (!url) {
-    return options.preview
+    return context.preview
       ? {doNotRender: true} // render the placeholder in the editor
       : {html: ''} // do not render anything
   }
@@ -123,3 +125,7 @@ And once a user enters a link, the youtube component is complete:
 ## Editor - Triggering a custom script
 Youtube should already be rendering without any further integration.
 If your include does not render correctly, you might need to trigger rendering on changes. See the example [here]({{< ref "twitter-embed#editor-sidebar-and-trigger-twitter-script" >}}) to learn how to run code when new content is injected into the document.
+
+## References
+
+- [Includes Overview]({{< ref "/reference/document/includes" >}})

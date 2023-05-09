@@ -10,7 +10,7 @@ In order to provide a custom User Interface for your includes, you can register 
 Another option is to configure an iframe that you serve from any webserver.
 
 In order to actually render content, you need to configure the server to do so, [see here]({{< ref "/reference/document/includes/server-customization" >}}) how that works.
-
+To get more information about Includes in general, visit the [Includes Overview]({{< ref "/reference/document/includes" >}}).
 
 ### Include User Interface with paramsSchema
 This is the most simple way to render a UI for the include. It doesn't need any code in the editor.

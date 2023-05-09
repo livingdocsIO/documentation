@@ -7,7 +7,7 @@ menus:
 ---
 
 This section gives an exhaustive listing of all options for Includes on the server side.
-To get more information about Includes in general, visit the [Includes Reference Section]({{< ref "/reference/document/includes" >}})
+To get more information about Includes in general, visit the [Includes Overview]({{< ref "/reference/document/includes" >}}).
 
 ## Example
 
@@ -74,11 +74,6 @@ module.exports = {
     }
   ],
 
-  // pass some static values to a custom UI or to the render function (e.g. default values)
-  config: {
-    foo: 'bar'
-  },
-
   rendering: {
     // 'function' or 'remote'
     type: 'function',
@@ -140,7 +135,8 @@ module.exports = {
         // Render the include
         // Option 1 - return a Livingdocs Component (try to prefer that option)
         return {
-          // overwrite the directives of the rendered content (only possible when returning 1 component)
+          // if editableContent is true, the user can overwrite the content for this specific teaser
+          // caveat: only possible when returning 1 component
           editableContent: true,
           content: [{
             id: `teaser-${your-documentId}`,
@@ -175,6 +171,15 @@ module.exports = {
         }
       }
     }
+  },
+
+  // pass values to the render function
+  config: {
+    foo: 'bar'
+  },
+
+  defaultParams: {
+    count: 5
   },
 
   // undefined (default), 'always' or 'initial'
@@ -336,3 +341,13 @@ The config property `blockEditorInteraction` can be `'always'`, `'initial'`, or 
 ## remountScripts
 
 Remounts the scripts that are inside the html of an include when this html is re-rendered.
+
+## config
+
+Passes any value to the render function.
+
+```js
+config: {
+  foo: 'bar'
+}
+``

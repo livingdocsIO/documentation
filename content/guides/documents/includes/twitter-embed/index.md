@@ -4,8 +4,10 @@ description: Register an include service to render a tweet
 weight: 1
 ---
 
+Deprecated: This approach is still working, but we propose to use [oEmbed]({{< ref "/guides/documents/includes/oembed" >}}) for Twitter instead.
+
 This guide will show you how to add a custom Include for Twitter. We will show the implementation for the design, server and editor.
-This is more of a quick-guide where you can just copy and paste code. For a deeper understanding you can dive into [server-customization]({{< ref "/reference/document/includes" >}}) and [editor-customization]({{< ref "/reference/document/includes/editor-customization" >}})
+This is more of a quick-guide where you can just copy and paste code. For a deeper understanding you can dive into [Includes Overview]({{< ref "/reference/document/includes" >}}).
 
 
 ## Design definition
@@ -80,9 +82,9 @@ module.exports = {
   }
 }
 
-async function renderTweet (params, options) {
+async function renderTweet (params, context) {
   if (!params.embedLink) {
-    return options.preview
+    return context.preview
       ? {doNotRender: true} // render the placeholder in the editor
       : {html: ''} // do not render anything
   }
@@ -204,3 +206,7 @@ liEditor.includeRenderPlugins.register('liTwitterRenderPlugin', {
   }
 })
 ```
+
+## References
+
+- [Includes Overview]({{< ref "/reference/document/includes" >}})

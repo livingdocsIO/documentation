@@ -456,3 +456,7 @@ module.exports = {
   ]
 }
 ```
+
+## References
+
+- [Includes Overview]({{< ref "/reference/document/includes" >}})
