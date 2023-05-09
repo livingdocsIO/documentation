@@ -353,7 +353,7 @@ References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5632)
 Adding `index: true` config requires elasticsearch to be re-indexed:
 
 ```bash
-livingdocs-server elasticsearch-index --handle=li-issue-management -y
+livingdocs-server elasticsearch-index --handle=li-documents -y
 ```
 
 ## Deprecations
