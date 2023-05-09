@@ -104,6 +104,12 @@ copy: [
       {
         contentType: 'regular',
 
+        // custom label shown with the copy target item (added in release-2023-05)
+        label: 'Web Article',
+
+        // custom icon shown with the copy target item (added in release-2023-05)
+        icon: 'web',
+
         // Path to a config of instructions to be applied when transforming one component to another
         instructionPath: require.resolve('../conversions/basic-to-eternal-bliss.js')
 
