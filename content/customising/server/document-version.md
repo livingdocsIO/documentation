@@ -10,7 +10,7 @@ menus:
 
 ## The documentVersion object
 
-The `documentVersion` is a core object and is returned in a lot of server API calls. It contains information about a document like content, systemdata, metadata and the lastest publication.
+The `documentVersion` is a core object and is returned in a lot of server API calls. It contains information about a document like content, systemdata, metadata and the latest publication.
 
 ## The documentVersion Interface
 
