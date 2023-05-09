@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Support a server-side logout to invalidate the session](https://github.com/livingdocsIO/livingdocs-editor/pull/6813)
 * [Support a server-side logout to invalidate the session](https://github.com/livingdocsIO/livingdocs-server/pull/5691)
 * [Disable table dashboard update polling by default](https://github.com/livingdocsIO/livingdocs-editor/pull/6807)
 * [Fix error when removing page from issue and improve E2E tests](https://github.com/livingdocsIO/livingdocs-editor/pull/6814)
