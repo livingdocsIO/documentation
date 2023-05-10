@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Working Title: do not enforce working title when displayTitlePattern is set](https://github.com/livingdocsIO/livingdocs-editor/pull/6796)
 * [Distribution improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6808)
 * [🐞 Show Dashboard when ES and PG is in an inconsistent state](https://github.com/livingdocsIO/livingdocs-editor/pull/6820)
 * [Support a server-side logout to invalidate the session](https://github.com/livingdocsIO/livingdocs-editor/pull/6813)
