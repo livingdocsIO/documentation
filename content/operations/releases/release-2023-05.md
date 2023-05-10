@@ -483,6 +483,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.5): fix(retresco): Add workaround to allow republish when data migrations or imports have created a draft, but no changes were applied to the document
 
 ### Livingdocs Editor Patches
+- [v94.10.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.17): fix(distribution-planning): Keep distributions up-to-date by polling
 - [v94.10.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.16): fix: not loading dashboard when ES and PG is in an inconsistent state
 - [v94.10.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.15): fix(distribution planning): fix translations
 - [v94.10.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.14): fix(table-dashboard): Disable update polling by default
