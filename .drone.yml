@@ -20,7 +20,7 @@ steps:
       from_secret: DOCKER_PASSWORD
 
 - name: release
-  image: livingdocs/semantic-release:v1.2.2
+  image: livingdocs/semantic-release:v2.1.1
   environment:
     GH_TOKEN:
       from_secret: GH_TOKEN
@@ -57,6 +57,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 4af11fdba734b38a5fb198944e0f2ccca1696da2b0111aeb3e37bf8cd7de2dd5
+hmac: ea8d9ad2448f59d641542f6599671a2f65c5ddc2a06ac04e6626418798b1c8bb
 
 ...
