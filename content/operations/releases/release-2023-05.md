@@ -483,6 +483,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.5): fix(retresco): Add workaround to allow republish when data migrations or imports have created a draft, but no changes were applied to the document
 
 ### Livingdocs Editor Patches
+- [v94.10.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.15): fix(distribution planning): fix translations
 - [v94.10.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.14): fix(table-dashboard): Disable update polling by default
 - [v94.10.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.13): fix(collab cards): Time tooltip position
 - [v94.10.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.12): fix(tasks): Deadline
