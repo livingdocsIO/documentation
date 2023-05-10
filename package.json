@@ -9,9 +9,7 @@
     "domutils": "^3.0.0",
     "glob": "^7.2.0",
     "htmlparser2": "^7.2.0",
-    "lunr": "^2.3.9"
-  },
-  "devDependencies": {
+    "lunr": "^2.3.9",
     "opener": "^1.5.2"
   },
   "scripts": {
