@@ -1,4 +1,4 @@
-FROM livingdocs/node:16 as builder
+FROM livingdocs/node:18 as builder
 ADD package*.json /app/
 WORKDIR /app
 RUN apk add hugo && npm ci
