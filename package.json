@@ -8,7 +8,7 @@
     "domhandler": "^4.3.0",
     "domutils": "^2.8.0",
     "glob": "^7.2.0",
-    "htmlparser2": "^7.2.0",
+    "htmlparser2": "^8.0.0",
     "lunr": "^2.3.9"
   },
   "devDependencies": {
