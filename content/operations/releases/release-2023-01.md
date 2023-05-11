@@ -321,6 +321,7 @@ Here is a list of all patches after the release has been announced.
 - [v208.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.3): fix(cli reencrypt): now uses correct stringify
 
 ### Livingdocs Editor Patches
+- [v87.5.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.75): fix(publish control): allow opening publish control panel when text in editable is selected
 - [v87.5.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.74): fix: remove session from MediaLibraryEntry
 - [v87.5.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.73): fix(images): Debounce image crop changes by 500ms to prevent burst requests against the image service
 - [v87.5.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v87.5.72): fix: improve crop normalization and update srcissors
