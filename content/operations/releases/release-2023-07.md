@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cypress from 12.11.0 to v12.12.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6819)
 * [Fix etc in li-document-best-date](https://github.com/livingdocsIO/livingdocs-editor/pull/6824)
 * [Fix: disable publish buttons in publish control if document is locked](https://github.com/livingdocsIO/livingdocs-editor/pull/6828)
 * [Working Title: do not enforce working title when displayTitlePattern is set](https://github.com/livingdocsIO/livingdocs-editor/pull/6796)
