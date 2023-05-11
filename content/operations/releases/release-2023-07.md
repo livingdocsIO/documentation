@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(translation): layout search placeholder](https://github.com/livingdocsIO/livingdocs-editor/pull/6836)
 * [Fix content type filters for secondary channels](https://github.com/livingdocsIO/livingdocs-server/pull/5698)
 * [Do not include srcissors dev dependencies in editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6837)
 * [fix(deps): update dependency cypress from 12.11.0 to v12.12.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6819)
