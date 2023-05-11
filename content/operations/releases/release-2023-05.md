@@ -484,6 +484,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.5): fix(retresco): Add workaround to allow republish when data migrations or imports have created a draft, but no changes were applied to the document
 
 ### Livingdocs Editor Patches
+- [v94.10.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.21): fix(translation): layout search placeholder
 - [v94.10.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.19): fix(publish control): allow opening publish control panel when text in editable is selected
 - [v94.10.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.18): fix(publish control): disable unpublish buttons for foreign locked documents
 - [v94.10.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.17): fix(distribution-planning): Keep distributions up-to-date by polling
