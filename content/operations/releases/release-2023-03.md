@@ -372,6 +372,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.72): fix(srcissors): Update srcissors to not include dev dependencies
 - [v90.33.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.71): fix(publish control): allow opening publish control panel when text in editable is selected
 - [v90.33.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.70): fix(publish control): disable unpublish buttons for foreign locked documents
 - [v90.33.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.69): fix: remove session from MediaLibraryEntry
