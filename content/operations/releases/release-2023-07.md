@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Copy target icon and label config](https://github.com/livingdocsIO/livingdocs-editor/pull/6800)
 * [Copy target icon and label config](https://github.com/livingdocsIO/livingdocs-server/pull/5681)
 * [fix(translation): layout search placeholder](https://github.com/livingdocsIO/livingdocs-editor/pull/6836)
 * [Fix content type filters for secondary channels](https://github.com/livingdocsIO/livingdocs-server/pull/5698)
