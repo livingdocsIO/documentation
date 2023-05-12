@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Allow removal of last distribution from a document on metadata form](https://github.com/livingdocsIO/livingdocs-editor/pull/6804)
 * [fix(distribution planning): don't show proposals section when not used](https://github.com/livingdocsIO/livingdocs-editor/pull/6844)
 * [Make dev string formatter more reliable with custom input](https://github.com/livingdocsIO/livingdocs-server/pull/5707)
 * [fix(deps): update dependency aws-sdk from 2.1375.0 to v2.1377.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5697)
