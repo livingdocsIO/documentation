@@ -476,6 +476,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v226.3.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.11): fix(retresco): Fix retresco date comparison during publish, write a test
 - [v226.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.10): chore(project-configs): Return a validationError instance in channelApi.createConfigurableChannel
 - [v226.3.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.9): fix(retresco): Check if document is published before accessing properties in Retresco enrichment, include a test for unpublished documents
 - [v226.3.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.8): fix(displayTitlePattern): Remove `displayTitlePattern` from article content type in Service project since it isn't a relevant use case
