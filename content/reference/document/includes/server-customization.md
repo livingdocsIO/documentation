@@ -157,7 +157,14 @@ module.exports = {
           html,
           // optionally you can also pass dependencies either as raw code or from a source
           // dependencies: {
-          //   css: [{src: 'http://cdn.cloudflare.com/...'}],
+          //   css: [
+          //     {
+          //       src: 'http://cdn.cloudflare.com/...'
+          //     },
+          //     {
+          //       code: ... your css
+          //     }
+          //   ],
           //   js: [
           //     {
           //       src: 'https://instagram.com/embed.js',
@@ -185,7 +192,7 @@ module.exports = {
   // undefined (default), 'always' or 'initial'
   blockEditorInteraction: undefined,
 
-  // Remounts the scripts that are inside the html of an include when this html is re-rendered
+  // Remounts the scripts and returned js dependencies that are inside the html of an include when this html is re-rendered
   remountScripts: true
 }
 ```
