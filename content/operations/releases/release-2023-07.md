@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1375.0 to v2.1377.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5697)
 * [Fix retresco enrich date comparison](https://github.com/livingdocsIO/livingdocs-server/pull/5703)
 * [fix(distribution planning): don't show time when add to planning for channels without time](https://github.com/livingdocsIO/livingdocs-editor/pull/6843)
 * [Fix Legacy Dashboards: initial load takes cached filter value into account now](https://github.com/livingdocsIO/livingdocs-editor/pull/6830)
