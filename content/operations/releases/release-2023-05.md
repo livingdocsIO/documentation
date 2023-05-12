@@ -486,6 +486,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.5): fix(retresco): Add workaround to allow republish when data migrations or imports have created a draft, but no changes were applied to the document
 
 ### Livingdocs Editor Patches
+- [v94.10.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.24): fix(distribution-planning): Clear metadata value using null
 - [v94.10.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.23): fix(legacy dashboards): wait for filter ready for initial load to take filter values from cache into account
 - [v94.10.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.22): fix(distribution planning): don't show time when add to planning for channels without time
 - [v94.10.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.21): fix(translation): layout search placeholder
