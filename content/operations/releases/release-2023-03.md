@@ -333,6 +333,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.41): fix(retresco): Fix retresco date comparison during publish, write a test
 - [v213.6.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.40): fix(search): Search secondary channels again
 - [v213.6.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.39): fix(retresco): Check if document is published before accessing properties in Retresco enrichment, include a test for unpublished documents
 - [v213.6.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.38): fix(project-config): Enhance content type & media type sync logs with project id context
