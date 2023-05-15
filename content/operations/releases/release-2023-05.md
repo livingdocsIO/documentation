@@ -2,7 +2,7 @@
 type: release-notes
 title: May 2023 Release
 description: Release notes for release-2023-05
-excludeFromSearch: true
+excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2023-05/
@@ -11,23 +11,12 @@ aliases:
 
 {{< release-header
   title="May 2023 Release"
-  upcoming=true
+  upcoming=false
   legacy=false
-  current=false
-  maintained=false
+  current=true
+  maintained=true
   branchHandle="release-2023-05"
 >}}
-
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to master).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
-
-**Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
 ## Webinar
 
