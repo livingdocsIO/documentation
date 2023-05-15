@@ -412,6 +412,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.25): fix(home screen): load tasks only if feature enabled
 - [v94.10.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.24): fix(distribution-planning): Clear metadata value using null
 
 
