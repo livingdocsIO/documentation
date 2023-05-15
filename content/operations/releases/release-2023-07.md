@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @fastify/reply-from from 9.0.1 to v9.0.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6859)
 * [ViewManager refactoring](https://github.com/livingdocsIO/livingdocs-editor/pull/6841)
 * [My Tasks: shorten query by omitting the contentType](https://github.com/livingdocsIO/livingdocs-editor/pull/6850)
 * [Buy-In: consider editable config in dashboard cell](https://github.com/livingdocsIO/livingdocs-editor/pull/6853)
