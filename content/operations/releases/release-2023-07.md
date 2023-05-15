@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [ViewManager refactoring](https://github.com/livingdocsIO/livingdocs-editor/pull/6841)
 * [My Tasks: shorten query by omitting the contentType](https://github.com/livingdocsIO/livingdocs-editor/pull/6850)
 * [Buy-In: consider editable config in dashboard cell](https://github.com/livingdocsIO/livingdocs-editor/pull/6853)
 * [Home Screen My Tasks: load tasks only if feature enabled](https://github.com/livingdocsIO/livingdocs-editor/pull/6852)
