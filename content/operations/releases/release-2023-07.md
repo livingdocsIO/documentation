@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Buy-In: consider editable config in dashboard cell](https://github.com/livingdocsIO/livingdocs-editor/pull/6853)
 * [Home Screen My Tasks: load tasks only if feature enabled](https://github.com/livingdocsIO/livingdocs-editor/pull/6852)
 * [fix(deps): update opentelemetry from 0.39.0 to v0.39.1 (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/5711)
 * [fix(deps): update dependency semver from 7.5.0 to v7.5.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6849)
