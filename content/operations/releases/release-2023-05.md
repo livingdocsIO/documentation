@@ -185,6 +185,14 @@ contentSecurityPolicy: `frame-ancestors 'self';`
 
 References: [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6446)
 
+### Remove Editor Config appConfig.app.ui.welcome :fire:
+
+🔥 Remove legacy Editor Config `appConfig.app.ui.welcome`
+
+As a replacement, please use the new Home Screen instead. See [Home Screen]({{< ref "/reference/project-config/editor-settings#home-screen">}}) or [Start Page]({{< ref "/reference/project-config/editor-settings#startpage">}}).
+
+References: [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6712)
+
 ### Remove Gravatar support for profile images :fire:
 
 🔥 Gravatar is no longer supported for profile images
