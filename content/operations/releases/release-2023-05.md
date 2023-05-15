@@ -53,70 +53,6 @@ aliases:
 |Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
 
 
-## Highlights
-
-### Document Access Control
-
-TODO: Description
-
-* [Documentation](TODO)
-
-### Planning System (Bundles)
-
-TODO: Description
-
-* [Documentation](TODO)
-
-### Working Title
-
-Managing the title of an article inside and outside of the newsroom has been a challenge in the past. The public Article Title can change throughout an articles' lifetime. The Working Title feature allows for a clear separation between the internal newsroom title (Working Title) and the public Article Title in the published frontend. With this separation in the Editor, the public representation of the Article Title can be changed without affecting the internal Working Title.
-
-However, in some cases it's desired to keep the Working Title and Article Title in sync. To accomplish that, we introduced the [displayTitlePattern]({{< ref "/reference/project-config/content-types#displaytitlepattern" >}}) Content Type configuration, which allows to compute a readonly version of the Working Title based on other metadata fields.
-
-* [Documentation - displayTitlePattern]({{< ref "/reference/project-config/content-types#displaytitlepattern" >}})
-* [PR Editor: Working Title behaviour](https://github.com/livingdocsIO/livingdocs-editor/pull/6600)
-* [PR Editor: Working Title UI polish](https://github.com/livingdocsIO/livingdocs-editor/pull/6693)
-* [PR Server: displayTitlePattern expression replacements](https://github.com/livingdocsIO/livingdocs-server/pull/5528)
-
-### Home Screen - Part 2
-
-TODO: Description
-
-* [Documentation](TODO)
-
-### Issue Management - Navigation
-
-TODO: Description
-
-* [Documentation](TODO)
-
-### Metadata Preview
-
-TODO: Description
-
-* [Documentation](TODO)
-
-### Concurrent License Model: Billing Report
-
-Concurrent License Model has been introduced to Livingdocs. Users' requests to the Livingdocs Server are timestamped for reporting purposes. A background job aggregates  this timestamps in 30-minute buckets as concurrent users. Billing Report view will now report a new column with maximum concurrent users per month.
-
-* [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6683)
-* [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/5597)
-
-### Synced Table Dashboards
-
-TODO: Description
-
-* [Documentation](TODO)
-
-### i18n - Editor available in German
-
-TODO: Description
-
-* [Documentation](TODO)
-
-
-
 ## Breaking Changes :fire:
 
 ### Back to Standard
@@ -474,36 +410,9 @@ Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
-- [v226.3.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.11): fix(retresco): Fix retresco date comparison during publish, write a test
-- [v226.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.10): chore(project-configs): Return a validationError instance in channelApi.createConfigurableChannel
-- [v226.3.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.9): fix(retresco): Check if document is published before accessing properties in Retresco enrichment, include a test for unpublished documents
-- [v226.3.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.8): fix(displayTitlePattern): Remove `displayTitlePattern` from article content type in Service project since it isn't a relevant use case
-- [v226.3.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.7): fix(project-config): Enhance content type & media type sync logs with project id context
-- [v226.3.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.6): fix(project-config): Set higher request body size for the project config post endpoints
-- [v226.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.5): fix(retresco): Add workaround to allow republish when data migrations or imports have created a draft, but no changes were applied to the document
 
 ### Livingdocs Editor Patches
 - [v94.10.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.24): fix(distribution-planning): Clear metadata value using null
-- [v94.10.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.23): fix(legacy dashboards): wait for filter ready for initial load to take filter values from cache into account
-- [v94.10.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.22): fix(distribution planning): don't show time when add to planning for channels without time
-- [v94.10.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.21): fix(translation): layout search placeholder
-- [v94.10.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.19): fix(publish control): allow opening publish control panel when text in editable is selected
-- [v94.10.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.18): fix(publish control): disable unpublish buttons for foreign locked documents
-- [v94.10.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.17): fix(distribution-planning): Keep distributions up-to-date by polling
-- [v94.10.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.16): fix: not loading dashboard when ES and PG is in an inconsistent state
-- [v94.10.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.15): fix(distribution planning): fix translations
-- [v94.10.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.14): fix(table-dashboard): Disable update polling by default
-- [v94.10.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.13): fix(collab cards): Time tooltip position
-- [v94.10.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.12): fix(tasks): Deadline
-- [v94.10.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.11): fix(li mention): Spacing
-- [v94.10.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.10): fix(translations): Add missing translations strings in already translated views
-- [v94.10.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.9): fix(images): Debounce image crop changes by 500ms to prevent burst requests against the image service
-- [v94.10.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.8): fix(filter management): Confirm button
-- [v94.10.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.7): fix(document createion flow): still disabled in channels
-- [v94.10.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.6): fix(table dashboard): Test
-- [v94.10.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.5): fix(use_issue): remove realtime update but update issue metadata when issue metadata changes in issue-management
-- [v94.10.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.4): fix(dashboards): Fix compilation failure due to content type label
-- [v94.10.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.3): fix(bundle management): Content Type Selection
 
 
   ---
