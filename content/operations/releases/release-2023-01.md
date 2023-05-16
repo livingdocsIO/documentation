@@ -1,7 +1,7 @@
 ---
 type: release-notes
 title: January 2023 Release
-description: Release notes for release-2023-01
+description: Technical Release Notes for release-2023-01
 excludeFromSearch: false
 hideSectionTeaser: true
 aliases:

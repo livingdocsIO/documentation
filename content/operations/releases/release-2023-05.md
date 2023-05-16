@@ -1,7 +1,7 @@
 ---
 type: release-notes
 title: May 2023 Release
-description: Release notes for release-2023-05
+description: Technical Release Notes for release-2023-05
 excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
@@ -17,6 +17,11 @@ aliases:
   maintained=true
   branchHandle="release-2023-05"
 >}}
+
+To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/livingdocs-release-may-2023).
+To learn about the necessary actions to update Livingdocs to `release-2023-05`, read on.
+
+**Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
 ## Webinar
 
@@ -54,7 +59,6 @@ aliases:
 
 ## Features
 
-- [Blog Post May Release](https://livingdocs.io/en/livingdocs-release-may-2023)
 - German UI
 - Document Access Control
 - Issue Management: Navigation and Preview

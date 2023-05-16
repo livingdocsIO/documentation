@@ -1,7 +1,7 @@
 ---
 type: release-notes
 title: July 2023 Release
-description: Release notes for release-2023-07
+description: Technical Release Notes for release-2023-07
 excludeFromSearch: true
 hideSectionTeaser: true
 aliases:
@@ -90,6 +90,9 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [Design/Release Polish and Fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/6771)
 * [Update defaultBranch to release-2023-07](https://github.com/livingdocsIO/livingdocs-editor/pull/6770)
 
+
+To get an overview about new functionality, read the [Release Notes](TODO).
+To learn about the necessary actions to update Livingdocs to `release-2023-07`, read on.
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
