@@ -52,6 +52,26 @@ aliases:
 |Livingdocs Editor Docker Image|livingdocs/editor-base:16.3|
 |Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
 
+## Features
+
+- [Blog Post May Release](https://livingdocs.io/en/livingdocs-release-may-2023)
+- German UI
+- Document Access Control
+- Issue Management: Navigation and Preview
+- [Metadata Preview]({{< ref "/reference/project-config/content-types#metadata-previews" >}})
+- [Working Title]({{< ref "/reference/project-config/content-types#displaytitlepattern" >}})
+- Document Editing Toolbar
+
+### German UI
+
+To enable the German UI in the Editor, you have to set `locale` in the Editor config.
+```js
+app: {
+  locale: 'de'
+}
+```
+
+In future, you will be able to configure your own labels for metadata properties in several languages, allowing individual users to switch between languages at their discretion for complete multi-language UI experience.
 
 ## Breaking Changes :fire:
 
