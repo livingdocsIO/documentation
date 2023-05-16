@@ -111,28 +111,17 @@ TODO
 
 TODO
 
+## Features
 
-## Highlights
+TODO (featureset not 100% defined yet)
 
-### Advanced Search Filters Foundation
-
-TODO: Description
-
-* [Documentation](TODO)
-
-
-### Display Filters ListV2 with OR combination
-
-TODO: Description
-
-* [Documentation](TODO)
-
-### Microsoft Teams Integration
-
-TODO: Description
-
-* [Documentation](TODO)
-* [Microsoft Teams Integration](https://github.com/livingdocsIO/livingdocs-server/pull/4408)
+- [Blog Post July Release TODO]()
+- Config Labels Translation
+- Advanced Search Filters Foundation
+- Display Filters ListV2 with OR combination
+- Serach Filters on Public API
+- Multilanguage Menu Tool
+- Ticker Tool
 
 
 ### Back to Standard
