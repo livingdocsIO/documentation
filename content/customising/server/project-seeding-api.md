@@ -42,7 +42,13 @@ Example: `seeding.js`
     owner: ':clark',
     groups: [{
       label: 'Editors',
-      scope: ['articles:read', 'articles:write', 'articles:publish']
+      policies: [
+        {effect: 'ALLOW', action: 'document.create', contentType: '*'},
+        {effect: 'ALLOW', action: 'document.read', contentType: '*'},
+        {effect: 'ALLOW', action: 'document.update', contentType: '*'},
+        {effect: 'ALLOW', action: 'document.publish', contentType: '*'},
+        {effect: 'ALLOW', action: 'document.delete', contentType: '*'},
+      ]
     }],
     groupMemberships: {
       'Editors': [':john'],
@@ -73,16 +79,18 @@ Example: `seeding.js`
     // user groups
     groups: [{
       label: 'Editors',
-      scope: ['articles:read', 'articles:write', 'articles:publish'],
       policies: [
-        {
-          effect: 'ALLOW',
-          action: 'metadata.update'
-        }
+        {effect: 'ALLOW',  action: 'document.create', contentType: 'regular'},
+        {effect: 'ALLOW',  action: 'document.read', contentType: 'regular'},
+        {effect: 'ALLOW',  action: 'document.update', contentType: 'regular'},
+        {effect: 'ALLOW',  action: 'document.delete', contentType: 'regular'},
+        {effect: 'ALLOW',  action: 'document.publish', contentType: 'regular'}
       ]
     }, {
       label: 'Readers',
-      scope: ['articles:read']
+      policies: [
+        {effect: 'ALLOW',  action: 'document.read', contentType: 'regular'}
+      ]
     }],
     groupMemberships: {
       'Editors': [':john'], // :john is the '_importHandle' of a user
@@ -125,7 +133,7 @@ Project configurations can be of three types:
 
 - [Available scopes for groups]({{< ref "/guides/authentication/access-rights" >}})
 - Available policy effects: `ALLOW`, `DENY`
-- Available policy actions: `document.metadata.update`, `metadata.update`, `document.publish`, `document.create`, `document.update`, `document.get`, `dashboard.get`
+- Available policy actions: `document.metadata.update`, `metadata.update`, `document.create`, `document.read`, `document.update`, `document.delete`, `document.publish`, `dashboard.get`
 
 #### Group Memberships
 
