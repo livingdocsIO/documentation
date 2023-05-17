@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix kanban board initial search](https://github.com/livingdocsIO/livingdocs-editor/pull/6866)
 * [fix(home screen): show tasks again after query optimization](https://github.com/livingdocsIO/livingdocs-editor/pull/6865)
 * [`li-tree` design overhaul](https://github.com/livingdocsIO/livingdocs-editor/pull/6842)
 * [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/5716)
