@@ -436,6 +436,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.28): fix(distribution planning): don't show proposals section when not used
 - [v94.10.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.27): fix(home screen): show tasks again after query optimization
 - [v94.10.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.26): fix(buy-in): consider editable config in dashboard cell
 - [v94.10.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.25): fix(home screen): load tasks only if feature enabled
