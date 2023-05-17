@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(home screen): show tasks again after query optimization](https://github.com/livingdocsIO/livingdocs-editor/pull/6865)
 * [`li-tree` design overhaul](https://github.com/livingdocsIO/livingdocs-editor/pull/6842)
 * [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/5716)
 * [fix(deps): update dependency @fastify/reply-from from 9.0.1 to v9.0.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6859)
