@@ -375,6 +375,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.74): fix(kanban boards): correctly apply filters for initial search
 - [v90.33.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.73): fix(legacy dashboards): wait for filter ready for initial load to take filter values from cache into account
 - [v90.33.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.72): fix(srcissors): Update srcissors to not include dev dependencies
 - [v90.33.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.71): fix(publish control): allow opening publish control panel when text in editable is selected
