@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(billing): show concurrents only if reported](https://github.com/livingdocsIO/livingdocs-editor/pull/6864)
 * [Distribution Planning: fix return to distribution planning after article open](https://github.com/livingdocsIO/livingdocs-editor/pull/6861)
 * [Fix kanban board initial search](https://github.com/livingdocsIO/livingdocs-editor/pull/6866)
 * [fix(home screen): show tasks again after query optimization](https://github.com/livingdocsIO/livingdocs-editor/pull/6865)
