@@ -45,6 +45,7 @@ With publication hooks you can influence the [`Document Publication Lifecycle`](
 |preparePublishHookAsync|Instant Publish|✅|release-2022-03||
 |prepublishHookAsync|Instant Publish|✅||release-2022-03|
 |publishHookAsync|Instant Publish|✅||release-2022-03|
+|preUnpublishHookAsync|Instant Publish|✅||release-2022-05|
 |postPublishHookAsync|Instant Publish||release-2022-03||
 |unpublishHookAsync|Instant Publish|✅|release-2017-01|release-2022-05|
 |postUnpublishHookAsync|Instant Publish|✅|release-2022-05||
