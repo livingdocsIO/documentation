@@ -9,7 +9,8 @@ menus:
 This section gives an exhaustive listing of all options for Includes on the server side.
 To get more information about Includes in general, visit the [Includes Overview]({{< ref "/reference/document/includes" >}}).
 
-## Example
+We recommend where possible going down the paramsSchema route for includes. This saves writing custom sidebar components and covers most  include cases. Where it does not, please get in touch with your customer solutions manager before writing custom components to see if we can extend this option for your use case.
+## Registering your include
 
 ```js
 // runtime config
@@ -21,6 +22,80 @@ liServer.features.register('include-services', async function (feature, server) 
   ])
 }
 ```
+
+
+## paramsSchema
+
+`paramsSchema` allows you to generate UI sidebar options in the Editor for Includes. With that you can choose and pass these options to influence the rendering. Look into this [Overview]({{< ref "reference/document/metadata/metadata-plugin-list#overview">}}) to see what plugins are supported for Includes.
+
+```js
+module.exports = {
+  name: 'teaser',
+  paramsSchema: [
+    {
+      // the data from article will be passed to the render function via 'params.article.value'
+      handle: 'article',
+      type: 'li-document-reference',
+      preload: true, // Populate referenced article data
+      ui: {
+        label: 'Teaser',
+        config: {
+            useDashboard: 'articles-simple'
+          }
+      }
+    }
+  ],
+  rendering: {
+    type: 'function',
+    async render (params, context) {
+      // Here you can use the publicationApi to get your document
+      // You can then return the content of the linked document with ease, Livingdocs will render
+      // it exactly as you see it in the document itself
+      const id = params.infobox.reference.id
+      const publication = await publicationApi.getPublicationsByDocumentIds([id])
+      const content = publication[0].revisionEntity.data.content
+      return {
+        content
+      }
+      // Alternatively, you can render some custom content based on the metadata information
+      // If you have metadata with teaser content anyway, this is the simplest and most effective solution
+      return {
+        content: [{
+          id: `teaser-${documentVersion.documentId}`,
+          component: 'teaser',
+          content: {
+            image: parseImageData(documentVersion.metadata.teaserImage),
+            title: documentVersion.title,
+            lead: 'lead from include',
+            byline: 'byline from include',
+            link: 'https://example.com'
+          }
+        }]
+      }
+    }
+  }
+}
+```
+
+This example uses a helper function for teaserImage data:
+```js
+function parseImageData (teaserImage) {
+  // The teaser image is of type li-image but the editable-teaser service
+  // requires LivingdocsImageDirective, so this picks the correct values
+  return {
+    url: teaserImage.url,
+    originalUrl: teaserImage.originalUrl,
+    mediaId: teaserImage.mediaId,
+    imageService: teaserImage.imageService,
+    width: teaserImage.width,
+    height: teaserImage.height,
+    mimeType: teaserImage.mimeType,
+    focalPoint: teaserImage.focalPoint
+  }
+}
+```
+
+## All options
 
 Below is a list of all options (it's not a running example)
 
@@ -194,48 +269,6 @@ module.exports = {
 
   // Remounts the scripts and returned js dependencies that are inside the html of an include when this html is re-rendered
   remountScripts: true
-}
-```
-
-## paramsSchema
-
-`paramsSchema` allows you to generate UI sidebar options in the Editor for Includes. With that you can choose and pass these options to influence the rendering. Look into that [Overview]({{< ref "reference/document/metadata/metadata-plugin-list#overview">}}) to see what plugins are supported for Includes.
-
-```js
-module.exports = {
-  name: 'teaser',
-  paramsSchema: [
-    {
-      // the data from article will be passed to the render function via 'params.article.value'
-      handle: 'article',
-      type: 'li-document-reference',
-      preload: true, // Populate referenced article data
-      ui: {
-        label: 'Teaser',
-        config: {
-            useDashboard: 'articles-simple'
-          }
-      }
-    }
-  ],
-  rendering: {
-    type: 'function',
-    async render (params, context) {
-      return {
-        content: [{
-          id: `teaser-${documentVersion.documentId}`,
-          component: 'teaser',
-          content: {
-            image: parseImageData(documentVersion.metadata.teaserImage),
-            title: documentVersion.title,
-            lead: 'lead from include',
-            byline: 'byline from include',
-            link: 'https://example.com'
-          }
-        }]
-      }
-    }
-  }
 }
 ```
 
