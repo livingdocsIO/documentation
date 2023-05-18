@@ -433,6 +433,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v226.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.13): fix(reports): report concurrent users only when concurrent billing is enabled
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
