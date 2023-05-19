@@ -437,6 +437,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.32): fix(teaser preview): Layout
 - [v94.10.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.31): fix(display filters): don't render container for listV2 filters with no options
 - [v94.10.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.30): fix(billing): show concurrents only if reported
 - [v94.10.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.29): fix(distribution planning): return to correct state after opening an article from distribution planning screen
