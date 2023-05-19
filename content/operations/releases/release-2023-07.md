@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix/Teaser Preview](https://github.com/livingdocsIO/livingdocs-editor/pull/6880)
 * [Display Filters: don't render empty container for listV2 filters with no options](https://github.com/livingdocsIO/livingdocs-editor/pull/6873)
 * [Fix User Reports: show concurrents only when enabled](https://github.com/livingdocsIO/livingdocs-server/pull/5718)
 * [fix(billing): show concurrents only if reported](https://github.com/livingdocsIO/livingdocs-editor/pull/6864)
