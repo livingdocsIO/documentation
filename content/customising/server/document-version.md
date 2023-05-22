@@ -8,30 +8,30 @@ menus:
     weight: 4
 ---
 
-## The documentVersion object
-
 The `documentVersion` is a core object and is returned in a lot of server API calls. It contains information about a document like content, systemdata, metadata and the latest publication.
 
-## The documentVersion Interface
+## DocumentVersion API
 
 ```js
 const documentVersion = {
-  // unique document id (the same as is in the URL of the editor when you have the document opened)
+  // unique document id
+  // (the same as is in the URL of the editor when you have the document opened)
   id,
 
   // alias to id
   documentId,
 
-  // every project defines contentTypes e.g. 'article', 'gallery' with different settings like metadata
+  // every project defines contentTypes e.g. 'article', 'gallery'
+  // with different settings like metadata
   contentType,
 
-  // 'article' or 'page' or 'data-record'
+  // 'article', 'page' or 'data-record'
   documentType,
 
-  // id of the project that this document belongs to
+  // id of the project this document belongs to
   projectId,
 
-  // id of the channel that this document belongs to
+  // id of the channel this document belongs to
   channelId,
 
   // gets the name and version of the design that this document was created with
@@ -54,7 +54,7 @@ const documentVersion = {
   // title of the document
   title,
 
-  // metadata object e.g.
+  // metadata proxy (see for more info below) e.g.
   //   {
   //     title: 'This is a title',
   //     slug: 'this-is-a-title'
@@ -97,4 +97,39 @@ const documentVersion = {
   // ]
   references
 }
+```
+
+## documentVersion.metadata
+
+`documentVersion.metadata` is a proxy of the metadata object. You can't access a metadata property which is not in the Project Config (even when the data are stored in the database).
+
+There are two options to access a metadata property:
+
+###  Get a single Metadata property
+
+```js
+const title = documentVersion.metadata.title
+```
+
+If you try to access a metadata property which is not in the Project Config, you get this error message:
+
+```js
+Failed to get unconfigured Metadata property 'myCustomField'
+```
+
+To prevent that error message you can test if a metadata property is defined in the Project Config:
+
+```js
+if ('myCustomField' in documentVersion.metadata) {
+  const myCustomField = documentVersion.metadata.myCustomField
+  // ...
+}
+```
+
+
+### Get all Metadata properties
+
+```js
+// toJSON() returns a Javascript object
+const metadata = documentVersion.metadata.toJSON()
 ```
