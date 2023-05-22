@@ -9,7 +9,7 @@ menus:
 This section gives an exhaustive listing of all options for Includes on the server side.
 To get more information about Includes in general, visit the [Includes Overview]({{< ref "/reference/document/includes" >}}).
 
-We recommend where possible going down the paramsSchema route for includes. This saves writing custom sidebar components and covers most  include cases. Where it does not, please get in touch with your customer solutions manager before writing custom components to see if we can extend this option for your use case.
+We recommend where possible going down the paramsSchema route for includes. This saves writing custom sidebar components and covers most  include cases. Where it does not, please get in touch with your customer solutions manager before writing custom components to see if we can extend the paramsSchema for your use case.
 ## Registering your include
 
 ```js
@@ -28,7 +28,7 @@ liServer.features.register('include-services', async function (feature, server) 
 
 `paramsSchema` allows you to generate UI sidebar options in the Editor for Includes. With that you can choose and pass these options to influence the rendering. Look into this [Overview]({{< ref "reference/document/metadata/metadata-plugin-list#overview">}}) to see what plugins are supported for Includes.
 
-If you want to be able to load document metadata and content it's important to set `preload: true`. 
+If you want to be able to load document metadata and content it's important to set `preload: true`.
 
 ```js
 module.exports = {
