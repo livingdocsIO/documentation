@@ -58,7 +58,6 @@ function searchInIndex (index, {query, filterTags, limit}) {
 		const url = ref.url
 		const title = highlight('title', ref.title, byField)
 		const description = highlight('description', ref.description, byField)
-		const keywords = highlight('keywords', (ref.keywords || []).join(', '), byField)
 		const tags = ref.section ? ref.section.split(',').map((l) => l.trim() ? `<div class="tag tag--spaced">${l.trim()}</div>` : '').join('') : ''
 
     const passesFilter = ref.section && filterTags ? ref.section.split(',').some(item => filterTags.includes(item)) : false
@@ -69,7 +68,7 @@ function searchInIndex (index, {query, filterTags, limit}) {
         results: [],
         title: `${tags}${doc.title === ref.title ? '' : `<a href="${documentUrl}" class="search-results-document__title">${doc.title}</a>`}`
       }
-      byDoc[documentUrl].results.push({url, title, description, keywords})
+      byDoc[documentUrl].results.push({url, title, description})
       byDoc[documentUrl].score += match.score
     }
 	}
