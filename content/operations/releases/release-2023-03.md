@@ -333,6 +333,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.43): fix: desk-net status sync back without config
 - [v213.6.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.42): fix(logging): Make dev string formatter more reliable with custom input
 - [v213.6.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.41): fix(retresco): Fix retresco date comparison during publish, write a test
 - [v213.6.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.40): fix(search): Search secondary channels again
