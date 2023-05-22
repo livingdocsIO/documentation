@@ -28,6 +28,8 @@ liServer.features.register('include-services', async function (feature, server) 
 
 `paramsSchema` allows you to generate UI sidebar options in the Editor for Includes. With that you can choose and pass these options to influence the rendering. Look into this [Overview]({{< ref "reference/document/metadata/metadata-plugin-list#overview">}}) to see what plugins are supported for Includes.
 
+If you want to be able to load document metadata and content it's important to set `preload: true`. 
+
 ```js
 module.exports = {
   name: 'teaser',
