@@ -1,5 +1,6 @@
 # Livingdocs Documentation
 
+
 ## Local Setup
 
 This documentation is built using [Hugo](https://gohugo.io/).
