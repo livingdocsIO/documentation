@@ -58,7 +58,7 @@ function searchInIndex (index, {query, filterTags, limit}) {
 		const url = ref.url
 		const title = highlight('title', ref.title, byField)
 		const description = highlight('description', ref.description, byField)
-		const keywords = highlight('keywords', ref.keywords, byField)
+		const keywords = highlight('keywords', (ref.keywords || []).join(', '), byField)
 		const tags = ref.section ? ref.section.split(',').map((l) => l.trim() ? `<div class="tag tag--spaced">${l.trim()}</div>` : '').join('') : ''
 
     const passesFilter = ref.section && filterTags ? ref.section.split(',').some(item => filterTags.includes(item)) : false
@@ -86,7 +86,8 @@ function matchesOfFields ({matchData: {metadata}}) {
 	for (const match in metadata) {
 		for (const field in metadata[match]) {
 			if (!byField[field]) byField[field] = []
-			byField[field].push(...metadata[match][field].position)
+			const positions = metadata[match][field].position.filter((el) => el !== undefined)
+			byField[field].push(...positions)
 		}
 	}
 
