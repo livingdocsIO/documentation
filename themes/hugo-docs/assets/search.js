@@ -17,6 +17,7 @@ function initializeIndex (searchJson) {
 				this.field('title')
 				this.field('description')
 				this.field('body')
+				this.field('keywords')
 				this.metadataWhitelist = ['position']
 
 				for (const doc of documents) {
@@ -57,18 +58,18 @@ function searchInIndex (index, {query, filterTags, limit}) {
 		const url = ref.url
 		const title = highlight('title', ref.title, byField)
 		const description = highlight('description', ref.description, byField)
+		const keywords = highlight('keywords', ref.keywords, byField)
 		const tags = ref.section ? ref.section.split(',').map((l) => l.trim() ? `<div class="tag tag--spaced">${l.trim()}</div>` : '').join('') : ''
 
     const passesFilter = ref.section && filterTags ? ref.section.split(',').some(item => filterTags.includes(item)) : false
-    
+
     if (passesFilter) {
       byDoc[documentUrl] = byDoc[documentUrl] || {
         score: 0,
         results: [],
         title: `${tags}${doc.title === ref.title ? '' : `<a href="${documentUrl}" class="search-results-document__title">${doc.title}</a>`}`
       }
-  
-      byDoc[documentUrl].results.push({url, title, description})
+      byDoc[documentUrl].results.push({url, title, description, keywords})
       byDoc[documentUrl].score += match.score
     }
 	}

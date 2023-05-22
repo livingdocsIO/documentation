@@ -5,6 +5,11 @@ menus:
   reference:
     weight: 1
     parent: Document
+keywords:
+- include
+- includes
+- doc-includes
+- doc-include
 ---
 
 Includes are the Livingdocs equivalent to [Edge Side Includes](https://en.wikipedia.org/wiki/Edge_Side_Includes). They are extremely powerful in what they allow you to achieve but mastering them takes a bit of effort. Read the [introduction]({{< ref "/reference/document/includes/introduction" >}}) to get deeper into the topic.

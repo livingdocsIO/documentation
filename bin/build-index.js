@@ -14,7 +14,7 @@ function buildIndex (file) {
   fs.writeFileSync(file, JSON.stringify(index))
 }
 
-function parseDocument (index, {url, section, categories, title, description, body}) {
+function parseDocument (index, {url, section, categories, title, description, body, keywords}) {
   const dom = getDom(body)
 
   let current = {
@@ -24,6 +24,7 @@ function parseDocument (index, {url, section, categories, title, description, bo
     title,
     description: description || '',
     body: '',
+    keywords: ''
   }
 
   index.push(current)
@@ -41,6 +42,7 @@ function parseDocument (index, {url, section, categories, title, description, bo
           title: sectionTitle,
           description: sectionTitle === title ? (description || '').trim() : '',
           body: '',
+          keywords: (keywords || []).join(', ')
         }
 
         index.push(current)

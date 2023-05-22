@@ -97,11 +97,26 @@ weight: 6
 
 ### Properties
 
-* `excludeFromSearch: true` - a document will not be in search results
-* `draft: true` - a document will not be rendered. Start your server with `npm run start -- -D` to see drafts for development
-* `renderEditButton: false` - don't show the edit button for updating a document at github
-* `renderSummaries: false` - don't show document teaser cards
-* `renderTOC: false` - don't show table of contents on the right side of the page
+```js
+// a document will not be in search results
+excludeFromSearch: true
+
+// a document will not be rendered. Start your server with `npm run start -- -D` to see drafts for development
+draft: true
+
+// don't show the edit button for updating a document at github
+renderEditButton: false
+
+// don't show document teaser cards
+renderSummaries: false
+
+// don't show table of contents on the right side of the page
+renderTOC: false
+
+// helps search engine to find alternative words which is not in the body of the document
+keywords:
+  - myKeyword
+```
 
 ### Teaser Properties
 

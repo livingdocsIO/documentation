@@ -5,6 +5,19 @@ menus:
   customising:
     parent: Server Extensions
     weight: 2
+keywords:
+- preparePublishHook
+- preparePublishHookAsync
+- prepublishHook
+- prepublishHookAsync
+- publishHook
+- publishHookAsync
+- postPublishHook
+- postPublishHookAsync
+- unpublishHook
+- unpublishHookAsync
+- postUnpublishHook
+- postUnpublishHookAsync
 ---
 
 `Server Hooks` allow you to
