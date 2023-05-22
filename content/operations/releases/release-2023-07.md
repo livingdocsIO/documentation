@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Improvement/User Avatar Sizes](https://github.com/livingdocsIO/livingdocs-editor/pull/6862)
 * [Improvement/Metadata View](https://github.com/livingdocsIO/livingdocs-editor/pull/6884)
 * [Publish Control: don't show publish/unpublish buttons in wrong state until panel reopen](https://github.com/livingdocsIO/livingdocs-editor/pull/6885)
 * [Fix/Teaser Preview](https://github.com/livingdocsIO/livingdocs-editor/pull/6880)
