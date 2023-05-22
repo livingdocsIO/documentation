@@ -317,8 +317,8 @@ async function renderTeaser ({params, context, publicationApi}) {
       component: 'gallery-teaser-resolved',
       content: {
         title: documentVersion.title,
-        image: _.get(documentVersion, 'metadataEntity.data.teaserImage.url'),
-        text: _.get(documentVersion, 'metadataEntity.data.description')
+        image: documentVersion.teaserImage.url
+        text: documentVersion.description
       }
     }]
 

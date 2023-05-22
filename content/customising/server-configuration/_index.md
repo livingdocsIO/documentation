@@ -177,8 +177,8 @@ db: {
   port: '5432',
   user: 'postgres',
   database: 'li_local',
-  pool_min: 1,
-  pool_max: 20,
+  pool_min: 1,  // pool size per process
+  pool_max: 20, // pool size per process
   ssl: false
   // migrate user: Used to run database migrations
   // Gets created automatically with `livingdocs-server database create`
