@@ -438,6 +438,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.36): fix(table-dashboard): Don't check for dashboard source updates
 - [v94.10.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.35): fix(document creation): set metadata title property with useAsTitle during creation
 - [v94.10.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.34): fix(editable teasers): apply overrides when inserting a component from clipboard
 - [v94.10.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.33): fix(publish control): don't show publish/unpublish buttons in wrong state until panel reopen
