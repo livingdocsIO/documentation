@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Don't check for table dashboard updates when using dashboard source](https://github.com/livingdocsIO/livingdocs-editor/pull/6902)
 * [Fix: set metadata title (useAsTitle) property during creation](https://github.com/livingdocsIO/livingdocs-editor/pull/6894)
 * [Display Filter Bar: wait for async filters to be loaded before checking usability of listV2 filters](https://github.com/livingdocsIO/livingdocs-editor/pull/6896)
 * [Search DSL](https://github.com/livingdocsIO/livingdocs-server/pull/5715)
