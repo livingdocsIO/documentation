@@ -376,6 +376,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.80](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.80): fix(display filters): wait for all filters initialized to compute usable listV2 filters
 - [v90.33.79](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.79): fix(editable teasers): apply overrides when inserting a component from clipboard
 - [v90.33.78](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.78): fix(publish control): don't show publish/unpublish buttons in wrong state until panel reopen
 - [v90.33.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.77): fix(tasks): show all started tasks in publish control panel, not just currently accepted ones
