@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Remove proposals feature](https://github.com/livingdocsIO/livingdocs-editor/pull/6910)
 * [Make `li-tree` translatable](https://github.com/livingdocsIO/livingdocs-editor/pull/6879)
 * [fix(li-publish-control-embargo): respect setTimeout max delay value](https://github.com/livingdocsIO/livingdocs-editor/pull/6906)
 * [Don't check for table dashboard updates when using dashboard source](https://github.com/livingdocsIO/livingdocs-editor/pull/6902)
