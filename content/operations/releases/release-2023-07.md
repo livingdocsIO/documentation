@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Set distribution planning metadata value to null when removing last distribution](https://github.com/livingdocsIO/livingdocs-editor/pull/6921)
 * [fix(deps): update dependency aws-sdk from 2.1384.0 to v2.1386.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5731)
 * [Metadata plugin labels in multiple languages](https://github.com/livingdocsIO/livingdocs-editor/pull/6797)
 * [Metadata plugin labels in multiple languages](https://github.com/livingdocsIO/livingdocs-server/pull/5680)
