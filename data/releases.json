@@ -1,7 +1,7 @@
 {
     "master": {
         "key": "release-2023-07",
-        "name": "Juli 2023",
+        "name": "July 2023",
         "ref": "/operations/releases/release-2023-07.md",
         "upcoming": true,
         "current": false,
