@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Metadata plugin labels in multiple languages](https://github.com/livingdocsIO/livingdocs-editor/pull/6797)
 * [Metadata plugin labels in multiple languages](https://github.com/livingdocsIO/livingdocs-server/pull/5680)
 * [Pass oembed params to the parseResponse function of the oembed provider](https://github.com/livingdocsIO/livingdocs-server/pull/5721)
 * [fix(deps): update dependency nodemailer from 6.9.2 to v6.9.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5734)
