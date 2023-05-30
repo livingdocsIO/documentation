@@ -439,6 +439,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.39): fix(distribution-planning): Set null when removing last distribution
 - [v94.10.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.38): fix: treat filter v2 options with `exists` as valid selection
 - [v94.10.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.37): fix(li-publish-control-embargo): respect setTimeout max delay value
 - [v94.10.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.36): fix(table-dashboard): Don't check for dashboard source updates
