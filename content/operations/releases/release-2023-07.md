@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix Editable Teaser override clearing](https://github.com/livingdocsIO/livingdocs-editor/pull/6925)
 * [fix(deps): update dependency https-proxy-agent to v7.0.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6917)
 * [fix(deps): update dependency c8 from 7.13.0 to v7.14.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5733)
 * [fix(deps): update dependency cypress from 12.12.0 to v12.13.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6905)
