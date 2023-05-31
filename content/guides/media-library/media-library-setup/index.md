@@ -526,10 +526,7 @@ module.exports = {
     // ...
     {
       handle: 'transcoding',
-      type: 'li-transcoding-state',
-      ui: {
-        component: 'liMetaTranscodingStateForm'
-      }
+      type: 'li-transcoding-state'
     }
   ],
   // ...
