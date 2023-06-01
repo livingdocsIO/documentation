@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Update distributions optimistically](https://github.com/livingdocsIO/livingdocs-editor/pull/6924)
 * [Dashboard language filter for `li-tree` document selection](https://github.com/livingdocsIO/livingdocs-editor/pull/6912)
 * [Add reactivity for `li-tasks-toolbar-action` for tasks updates](https://github.com/livingdocsIO/livingdocs-editor/pull/6923)
 * [Fix Editable Teaser override clearing](https://github.com/livingdocsIO/livingdocs-editor/pull/6925)
