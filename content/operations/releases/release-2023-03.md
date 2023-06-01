@@ -377,6 +377,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.84](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.84): fix(redirect): state given over URL
 - [v90.33.83](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.83): fix: treat filter v2 options with `exists` as valid selection
 - [v90.33.82](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.82): fix(li-publish-control-embargo): respect setTimeout max delay value
 - [v90.33.81](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.81): fix(document creation): set metadata title property with useAsTitle during creation
