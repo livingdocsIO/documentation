@@ -28,7 +28,7 @@ Publish later and un-publish later is by default disabled.
   // ...
   publishControl: {
     publishSchedule: true, // default: false
-    unpublishSchedule: true // default: false
+    unpublishSchedule: true // default: false, rarely used, only enable that with a very specific reason
   }
 }
 ```
