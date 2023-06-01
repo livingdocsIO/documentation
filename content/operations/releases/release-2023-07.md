@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @4tw/cypress-drag-drop from 2.2.3 to v2.2.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6936)
 * [fix(deps): update dependency lru-cache from 9.1.1 to v9.1.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5736)
 * [fix(deps): update dependency aws-sdk from 2.1386.0 to v2.1388.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5735)
 * [fix(redirect): state given over URL](https://github.com/livingdocsIO/livingdocs-editor/pull/6931)
