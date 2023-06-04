@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1389.0 to v2.1390.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5739)
 * [fix(deps): update dependency aws-sdk from 2.1388.0 to v2.1389.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5737)
 * [Hide distributions from removed distribution channels](https://github.com/livingdocsIO/livingdocs-editor/pull/6914)
 * [Support translatable label in metadata conflict message](https://github.com/livingdocsIO/livingdocs-editor/pull/6935)
