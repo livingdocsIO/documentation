@@ -28,7 +28,7 @@ You can enable the single capabilities per content-type, in this case Scheduled 
   // ...
   publishControl: {
     publishSchedule: true, // default: false
-    unpublishSchedule: true, // default: false
+    unpublishSchedule: true // default: false, rarely used, only enable that with a very specific reason
   }
 }
 ```
