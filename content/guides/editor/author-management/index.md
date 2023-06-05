@@ -31,7 +31,6 @@ If you don't have an author content-type yet, create one on the server via the [
       handle: 'prename',
       type: 'li-text',
       ui: {
-        component: 'liMetaTextForm',
         config: {
           label: 'Prename',
           placeholder: 'Enter a prename...',
@@ -47,7 +46,6 @@ If you don't have an author content-type yet, create one on the server via the [
       handle: 'surname',
       type: 'li-text',
       ui: {
-        component: 'liMetaTextForm',
         config: {
           label: 'Surname',
           placeholder: 'Enter a surname...',
@@ -63,7 +61,6 @@ If you don't have an author content-type yet, create one on the server via the [
       handle: 'shortname',
       type: 'li-text',
       ui: {
-        component: 'liMetaTextForm',
         config: {
           label: 'Shortname',
           placeholder: 'Enter a shortname (abbreviation)...',
@@ -87,20 +84,20 @@ Note that internally, the `documentType` is a `data-record` with a special flag 
 
 In order to select an author for an article we need to reference it in the metadata of the article. The following JSON shows a metadata field of an article that holds a list of authors for it:
 
-```json
+```js
 {
-  "handle": "authors",
-  "type": "li-reference-list",
-  "config": {
-    "referenceType": "documents",
-    "documentType": "data-record",
-    "contentType": "author",
-    "prefillAuthor": true
+  handle: 'authors',
+  type: 'li-document-references',
+  config: {
+    referenceType: 'documents',
+    documentType: 'data-record',
+    contentType: 'author',
+    prefillAuthor: true
   },
-  "ui": {
-    "component": "liMetaReferenceForm",
-    "label": "authors",
-    "displayFilters": []
+  ui: {
+    component: 'liMetaReferenceForm',
+    label: 'authors',
+    displayFilters: []
   }
 }
 ```

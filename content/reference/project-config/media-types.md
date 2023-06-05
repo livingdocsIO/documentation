@@ -65,13 +65,11 @@ mediaTypes: [{
         required: true,
         requiredErrorMessage: 'Please provide a title',
         index: true
-      },
-      ui: {component: 'liMetaTextForm'}
+      }
     },
     {
       handle: 'caption',
-      type: 'li-text',
-      ui: {component: 'liMetaTextForm'}
+      type: 'li-text'
     },
     {
       handle: 'source',
@@ -80,18 +78,15 @@ mediaTypes: [{
         required: true,
         requiredErrorMessage: 'Please provide a source',
         index: true
-      },
-      ui: {component: 'liMetaTextForm'}
+      }
     },
     {
       handle: 'note',
-      type: 'li-text',
-      ui: {component: 'liMetaTextareaForm'}
+      type: 'li-text'
     },
     {
       handle: 'validDateRange',
-      type: 'li-datetime-validity',
-      ui: {component: 'liMetaDateTimeValidityForm'}
+      type: 'li-datetime-validity'
     },
     {
       handle: 'googleVision',
@@ -148,8 +143,7 @@ mediaTypes: [{
         required: true,
         requiredErrorMessage: 'Please provide a title',
         maxLength: 200
-      },
-      ui: {component: 'liMetaTextForm'}
+      }
     }
   ]
 }, {
@@ -163,8 +157,7 @@ mediaTypes: [{
         required: true,
         requiredErrorMessage: 'Please provide a title',
         maxLength: 200
-      },
-      ui: {component: 'liMetaTextForm'}
+      }
     }
   ]
 }]

@@ -48,16 +48,14 @@ module.exports = {
         requiredErrorMessage: 'Please provide a title',
         maxLength: 200,
         index: true
-      },
-      ui: {component: 'liMetaTextForm'}
+      }
     },
     {
       handle: 'description',
       type: 'li-text',
       config: {
         index: true
-      },
-      ui: {component: 'liMetaTextForm'}
+      }
     },
     {
       handle: 'credit',
@@ -66,8 +64,7 @@ module.exports = {
         required: true,
         requiredErrorMessage: 'Please provide a source',
         index: true
-      },
-      ui: {component: 'liMetaTextForm'}
+      }
     },
     {
       handle: 'namedCrops',
@@ -85,8 +82,7 @@ module.exports = {
         ]
       },
       ui: {
-        label: 'Named Crops',
-        component: 'liMetaNamedCropsForm'
+        label: 'Named Crops'
       }
     }
   ],
@@ -225,8 +221,7 @@ module.exports = {
         ]
       },
       ui: {
-        label: 'Named Crops',
-        component: 'liMetaNamedCropsForm'
+        label: 'Named Crops'
       }
     }
   ],
@@ -288,8 +283,7 @@ module.exports = {
           {name: 'desktop', isDefault: true},
           {name: 'mobile', isOptional: true}
         ]
-      },
-      ui: {component: 'liMetaImageForm'}
+      }
     },
     {
       handle: 'socialMediaTeaserImage',
@@ -298,8 +292,7 @@ module.exports = {
         namedCrops: [
           {name: 'socialMediaTeaser', isDefault: true}
         ]
-      },
-      ui: {component: 'liMetaImageForm'}
+      }
     }
     // ...
   ],
@@ -396,16 +389,14 @@ module.exports = {
         requiredErrorMessage: 'Please provide a title',
         maxLength: 200,
         index: true
-      },
-      ui: {component: 'liMetaTextForm'}
+      }
     },
     {
       handle: 'description',
       type: 'li-text',
       config: {
         index: true
-      },
-      ui: {component: 'liMetaTextForm'}
+      }
     },
     {
       handle: 'credit',
@@ -414,8 +405,7 @@ module.exports = {
         required: true,
         requiredErrorMessage: 'Please provide a source',
         index: true
-      },
-      ui: {component: 'liMetaTextForm'}
+      }
     }
   ],
   editor: {
@@ -463,10 +453,7 @@ module.exports = {
   metadata: [
     {
       handle: 'title',
-      type: 'li-text',
-      ui: {
-        component: 'liMetaTextForm'
-      }
+      type: 'li-text'
     }
   ]
 }
@@ -487,7 +474,6 @@ module.exports = {
       handle: 'posterImage',
       type: 'li-poster-image',
       ui: {
-        component: 'liMetaPosterImageForm',
         config: {
           uploadMediaType: 'posterImage' // this is the handle of the mediaType used for uploaded images
         }
@@ -615,16 +601,14 @@ module.exports = {
         requiredErrorMessage: 'Please provide a title',
         maxLength: 200,
         index: true
-      },
-      ui: {component: 'liMetaTextForm'}
+      }
     },
     {
       handle: 'description',
       type: 'li-text',
       config: {
         index: true
-      },
-      ui: {component: 'liMetaTextForm'}
+      }
     },
     {
       handle: 'credit',
@@ -633,8 +617,7 @@ module.exports = {
         required: true,
         requiredErrorMessage: 'Please provide a source',
         index: true
-      },
-      ui: {component: 'liMetaTextForm'}
+      }
     }
   ],
   editor: {

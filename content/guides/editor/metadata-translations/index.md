@@ -67,8 +67,7 @@ module.exports = {
       config: {
         maxLength: 200,
         translatable: true // <-------- add this property
-      },
-      ui: {component: 'liMetaTextForm'}
+      }
     }
   ]
 }

@@ -46,8 +46,7 @@ contentTypes: [
     metadata: [
       {
         handle: 'author',
-        type: 'li-text',
-        ui: {component: 'liMetaTextForm'}
+        type: 'li-text'
       },
       {
         handle: 'description',
@@ -55,8 +54,7 @@ contentTypes: [
         config: {
           required: true,
           requiredErrorMessage: 'please provide a short description'
-        },
-        ui: {component: 'liMetaTextForm'}
+        }
       }
     ],
 
@@ -232,7 +230,7 @@ If you like the Working Title (`document.title` property) to be computed based o
 Example configuration will display the author and title in the Working Title:
 ```js
 displayTitlePattern: '{{metadata.author}} - {{metadata.title}}'
-``` 
+```
 
 ## Default Metadata
 

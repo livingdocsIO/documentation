@@ -153,7 +153,6 @@ settings: {
               maxLength: 200
           },
           ui: {
-            component: 'liMetaTextareaForm',
             config: {
               label: 'Json',
               placeholder: '{ "foo": "bar" }'

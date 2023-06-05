@@ -67,9 +67,6 @@ In our service Sandbox we already have a content-type for an online article. It 
       config: {
         maxLength: 200,
         useAsTitle: true // deprecated
-      },
-      ui: {
-        component: 'liMetaTextForm'
       }
     }
   ],

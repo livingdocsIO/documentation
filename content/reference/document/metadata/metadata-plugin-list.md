@@ -94,7 +94,7 @@ The presence, absence or status of a buy-in request has no effect on permissions
 - A buy-in request is closed after it was accepted or declined by one other person
 - Users cannot respond to their own buy-in requests
 - All other users with read and write permissions to the document can respond to a buy-in request
-- Buy-in requests can be answered by returning them to the creator, e.g. to clarify questions before accepting the request 
+- Buy-in requests can be answered by returning them to the creator, e.g. to clarify questions before accepting the request
 - Closed buy-in requests can be reopened an unlimited number of times
 - Buy-in requests can be answered directly from a Table Dashboard
 - Expired buy-in requests remain in their state, but may disappear from Table Dashboards (depends on config)
@@ -1187,7 +1187,6 @@ metadata: [
     },
     ui: {
       label: 'foo',                            // optional, takes camelized name otherwise
-      component: 'liMetaReferenceForm',
       config: {
         displayFilters: ['timeRange']
       }

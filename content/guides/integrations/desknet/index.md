@@ -243,7 +243,6 @@ Add the plugin to the settings of content type `'regular'`:
       handle: 'desknetPublicationDate',
       type: 'li-datetime',
       ui: {
-        component: 'liMetaDatetimeForm',
         config: {
           readOnly: true,
           label: 'Desk-Net – Planned publication'
