@@ -433,6 +433,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v226.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.17): chore(documents): Remove ordering from getPublicationReferences call as it behaves buggy
 - [v226.3.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.16): test: desk-net hooks tests
 - [v226.3.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.15): fix: also support camel case in systemdata for a Data Migration
 - [v226.3.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.14): fix: desk-net status sync back without config
