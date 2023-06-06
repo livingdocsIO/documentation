@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [don't overwrite url_to_published_content in desk-net api](https://github.com/livingdocsIO/livingdocs-server/pull/5748)
 * [Translate more config labels](https://github.com/livingdocsIO/livingdocs-editor/pull/6909)
 * [Translate more config labels](https://github.com/livingdocsIO/livingdocs-server/pull/5705)
 * [fix: extend openIdConnect with state](https://github.com/livingdocsIO/livingdocs-server/pull/5741)
