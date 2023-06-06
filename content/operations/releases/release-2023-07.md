@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Translate more config labels](https://github.com/livingdocsIO/livingdocs-editor/pull/6909)
 * [Translate more config labels](https://github.com/livingdocsIO/livingdocs-server/pull/5705)
 * [fix: extend openIdConnect with state](https://github.com/livingdocsIO/livingdocs-server/pull/5741)
 * [fix(properties panel): Spacings](https://github.com/livingdocsIO/livingdocs-editor/pull/6941)
