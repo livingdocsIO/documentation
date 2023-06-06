@@ -1,10 +1,10 @@
 ---
 title: Search
-weight: 5
+weight: 8
 renderTOC: false
 menus:
   reference:
-    parent: Public API
+    parent: Publications 
 ---
 
 {{< api-example
