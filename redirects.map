@@ -82,3 +82,4 @@
 /enterprise/guides/elasticsearch-indexing/custom-index /guides/search/custom-index/;
 /enterprise/guides/sitemaps-and-feeds /guides/organisation/sitemaps-and-feeds/;
 /enterprise/guides/auth /guides/authentication/;
+/reference/public-api/publications/latest-draft-beta /reference/public-api/drafts/latest-draft-beta/;
