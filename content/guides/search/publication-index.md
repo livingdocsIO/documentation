@@ -4,7 +4,7 @@ description: How to use and configure the publication index of Livingdocs.
 weight: 1
 ---
 
-The publication index is an elastic search index that allows developers to do queries in order to retrieve published documents from Livingdocs.
+The publication index is an Elasticsearch index that allows developers to do queries in order to retrieve published documents from Livingdocs.
 
 There are two parts to the feature:
 - the indexing side that defines how values are indexed to the publication index
@@ -18,6 +18,8 @@ Two larger concepts are configurable by customers:
 - the date logic, in particular sort date and scheduled publishing
 - generic filter values from custom metadata fields that can be used to query
 
+### Sort Date
+
 The definition of the custom indexing is done in the project config at `contentTypes['your-content-type'].publicationIndex`. Below is a sample configuration for an article content-type.
 
 ```js
@@ -25,45 +27,11 @@ publicationIndex: {
   sortDate: {
     fieldName: 'publishDate',
     type: 'li-datetime'
-  },
-  scheduledPublishing: {
-    on: {
-      fieldName: 'publishDate',
-      type: 'li-datetime'
-    },
-    off: {
-      fieldName: 'unpublishDate',
-      type: 'li-datetime'
-    }
-  },
-  filters: [
-    {
-      label: 'News',
-      type: 'li-boolean',
-      filterField: 'news'
-    },
-    {
-      label: 'Authors',
-      type: 'li-reference-list',
-      filterField: 'authors'
-    }
-  ]
+  }
 }
 ```
 
-The `sortDate` defines the date that is used to sort results in a publication search query. By default it's just the `createdAt` timestamp of the publication. The configuration allows you to choose a separate metadata property from your metadata set that is used. **The property must be a date type.** A common use case is to take a metadata property that defines a first publication date (first time of publish).
-
-The `scheduledPublishing` set allows you to define `on` and `off` dates. When set, all search queries to the publication index will automatically exclude publications that have a `sortDate` outside of the `on` and `off` bounds. This is how customers can define future publish and un-publish actions for an article, e.g. when there are blocking periods on the content due to confidentiality or copyright.
-
-Lastly, the `filters` array allows customers to register custom filters for indexing. Filters are always indexed as elastic keywords, e.g. the definition above could result in the following elastic instance:
-```js
-filters: [
-  {"value": "news=true"},
-  {"value": "authors=1"},
-  {"value": "authors=4"}
-]
-```
-As you can see, the filters are indexed as key/value strings. This brings with it the limitation that you can not execute operations on it, e.g. you can not query for something like 'all author ids greater than 5'. You can query for exact matches, e.g. 'all news articles' or contains queries, e.g. 'all documents where author 1 is among the authors'.
+The `sortDate` defines the date that is used to sort results in a publication search query. By default it's just the `visiblePublicationDate` timestamp of the publication. The configuration allows you to choose a separate metadata property from your metadata set that is used. **The property must be a date type.** A common use case is to take a metadata property that defines a first publication date (first time of publish).
 
 ### Metadata Plugins
 
@@ -84,9 +52,30 @@ If you define `getValue`, you can return 3 things:
 - an array, will create a `key=val` entry for each entry in the array
 - an object, will create a `key.objectKey=val` entry for each objectKey in the object
 
+Once you have made sure your metadata plugin supports indexing you also need to enable indexing on the metadata property defined in the content type config:
+```js
+{
+  handle: 'regular',
+  documentType: 'article',
+  // ...
+  metadata: [
+    // ...
+    {
+      handle: 'priority',
+      type: 'li-integer',
+      config: {
+        index: true
+      }
+    }
+  ]
+}
+```
+
+You will need to re-index your existing documents to populate the values in Elasticsearch.
+
 ## Search Publications
 
-After setting up your publication index you can use either the public API or the core's search API (enterprise only) to query for published documents. The documentation for the public API can be found here: [https://edit.livingdocs.io/public-api](https://edit.livingdocs.io/public-api) \(under "search Publications"\).
+After setting up your publication index you can use either the public API or the core's search API (enterprise only) to query for published documents. The documentation for the public API can be found here: [Public API Publications Search]({{< ref "reference/public-api/publications/search" >}}).
 
 The core API allows you all the options of the public API plus some additional ones. To get the search API, do the following in your server-side feature:
 ```js
@@ -116,18 +105,17 @@ The query allows the following entries:
 ```js
 filters: [
   {
-    key: 'news',
-    value: true
+    key: 'metadata.news',
+    term: true
   },
   {
-    key: 'authors',
-    concatenate: 'AND', // default is OR
-    value: ['1', '4']
+    key: 'metadata.authors',
+    term: ['1', '4']
   }
 ]
 ```
 
-As you can see you can either pass a simple string value or an array to the filter query. In case of an array you can define if the values should be concatenated with OR (default) or AND.
+For further details on how to define filters please see the [Public API]({{< ref "/reference/public-api/publications/search#search-filters" >}}) documentation.
 
 ## Task Support
 
