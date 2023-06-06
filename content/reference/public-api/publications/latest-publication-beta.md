@@ -5,7 +5,7 @@ weight: 2
 renderTOC: false
 menus:
   reference:
-    parent: Publications 
+    parent: Publications
 ---
 
 {{< api-example
