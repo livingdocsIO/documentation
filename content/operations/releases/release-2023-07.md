@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(issue card): Header](https://github.com/livingdocsIO/livingdocs-editor/pull/6942)
 * [Support new baseFilters schema in project config](https://github.com/livingdocsIO/livingdocs-editor/pull/6939)
 * [Support new baseFilters schema in project config](https://github.com/livingdocsIO/livingdocs-server/pull/5742)
 * [Translatable `li-tree` plugin](https://github.com/livingdocsIO/livingdocs-server/pull/5726)
