@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/5754)
 * [Cleanup postgres tables](https://github.com/livingdocsIO/livingdocs-server/pull/5751)
 * [Add Api endpoint for incoming references for drafts](https://github.com/livingdocsIO/livingdocs-server/pull/5743)
 * [don't overwrite url_to_published_content in desk-net api](https://github.com/livingdocsIO/livingdocs-server/pull/5748)
