@@ -442,6 +442,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.45): fix(li-publish-control-embargo): keep UTC date
 - [v94.10.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.44): fix(distribution-planning): Fix time tag position in schedule panel
 - [v94.10.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.43): fix(redirect): state given over URL
 - [v94.10.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.42): fix(distribution-planning): Process queue while retrying save
