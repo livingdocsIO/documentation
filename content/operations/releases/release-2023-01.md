@@ -265,6 +265,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.59](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.59): chore(data-migrations): Support new date range structure on data migration document filter query
 - [v208.3.58](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.58): fix: also support camel case in systemdata for a Data Migration
 - [v208.3.57](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.57): fix: desk-net status sync back without config
 - [v208.3.56](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.56): fix(project-config): Enhance content type & media type sync logs with project id context
