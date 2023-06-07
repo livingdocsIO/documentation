@@ -38,8 +38,8 @@ To learn about the necessary actions to update Livingdocs to `release-2023-05`, 
 |-|-|
 |Node|18|
 |NPM|8|
-|Postgres|14|
-|Elasticsearch<br/>OpenSearch|8.x<br/>2|
+|Postgres|15|
+|Elasticsearch<br/>OpenSearch|8.x<br/>v2.3.0|
 |Redis|7|
 |Livingdocs Server Docker Image|livingdocs/server-base:18|
 |Livingdocs Editor Docker Image|livingdocs/editor-base:18|
