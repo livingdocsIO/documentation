@@ -80,11 +80,11 @@ After setting up your publication index you can use either the public API or the
 The core API allows you all the options of the public API plus some additional ones. To get the search API, do the following in your server-side feature:
 ```js
 module.exports = function (feature, server) {
-  const searchManager = server.features.api('li-search').searchManager
+  const searchApi = server.features.api('li-search')
 }
 ```
 
-To query publications you use the `searchPublications` method on the `searchManager`. It takes the 2 parameters `query` and `options`.
+To query publications you use the `searchPublications` method on the `searchApi`. It takes the 2 parameters `query` and `options`.
 
 Allowed options are:
 - `offset`, from which position to count results, useful for pagination, default 0

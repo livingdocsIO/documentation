@@ -289,7 +289,7 @@ All conditions must be met for a publication to be included in the results.
 {
   and: [
     {key: 'metadata.news', term: true},
-    {key: 'metadata.teaserImage', exists: false}
+    {key: 'metadata.teaserImage.mediaId', exists: false}
   ]
 }
 ```
@@ -301,15 +301,15 @@ Any condition can be met for a publication to be included in the results.
 ```js
 {
   or: [
-    {key: 'metadata.language.locale', term: 'de'},
-    {key: 'metadata.language.locale', term: 'fr'}
+    {key: 'metadata.image.mediaId', exists: true},
+    {key: 'metadata.teaserImage.mediaId', exists: true}
   ]
 }
 ```
 
 #### NOT
 
-This operator negates the expression(s) contained within. When an array is provided, the publications will not match any condition in the array.
+This operator negates the expression contained within.
 
 ```js
 {
@@ -317,12 +317,16 @@ This operator negates the expression(s) contained within. When an array is provi
 }
 ```
 
+To negate multiple conditions nest another logical operator within.
+
 ```js
 {
-  not: [
-    {key: 'metadata.language.locale', term: 'de'},
-    {key: 'metadata.language.locale', term: 'fr'}
-  ]
+  not: {
+    or: [
+      {key: 'metadata.news', term: false},
+      {key: 'metadata.language.locale', term: 'fr'}
+    ]
+  }
 }
 ```
 
@@ -330,12 +334,23 @@ This operator negates the expression(s) contained within. When an array is provi
 
 #### Term
 
-The standard value comparison behaviour. If the `key` property references a text field with a `text` type then the value must contain or match the provided value. For all other types, including a text field with a `keyword` type, then an exact match is required.
+The standard value comparison behaviour.
+
+An exact match is required, although some type coercion may be applied.
 
 ```js
 {
   key: 'metadata.title',
   term: 'My Title'
+}
+```
+
+An array can also be provided as the 'term' value, which behaves like an OR operator.
+
+```js
+{
+  key: 'metadata.language.locale',
+  term: ['de', 'fr']
 }
 ```
 
@@ -350,6 +365,8 @@ Search within a range.
 }
 ```
 
+Multiple range terms ('gt', 'gte', 'lt', 'lte') can be combined.
+
 ```js
 {
   key: 'metadata.count',
@@ -361,9 +378,11 @@ Search within a range.
 
 Check if a property has been set.
 
+When querying a metadata property with an object value, always use the key of a leaf node (e.g. `metadata.teaserImage.mediaId`), because the parent itself (e.g. `metadata.teaserImage`) is not indexed.
+
 ```js
 {
-  key: 'metadata.teaserImage',
+  key: 'metadata.teaserImage.mediaId',
   exists: true
 }
 ```
@@ -372,25 +391,16 @@ Check if a property has been set.
 
 |Property|Type|Notes|
 |--------|----|-----|
-|projectId|long|
-|channelId|long|
-|documentId|long|
-|publicationId|long|
-|contentType|keyword|
-|language|keyword|
-|categoryId|keyword|
-|title|text|
-|text|text (german_html_analyzer)|
-|references|keyword[ ]|
-|firstPublicationDate|date (strict_date_time)|
-|lastPublicationDate|date (strict_date_time)|
-|significantPublicationDate|date (strict_date_time)|
-|visiblePublicationDate|date (strict_date_time)|
-|sortDate|date (strict_date_time)|[1]({{< ref "#fields-note-1" >}})|
-|metadata.*|Any|[2]({{< ref "#fields-note-2" >}})|
+|documentId|long||
+|contentType|keyword||
+|references|keyword[ ]||
+|firstPublicationDate|date (strict_date_time)||
+|lastPublicationDate|date (strict_date_time)||
+|significantPublicationDate|date (strict_date_time)||
+|visiblePublicationDate|date (strict_date_time)||
+|metadata.*|Any|[1]({{< ref "#fields-note-1" >}})|
 
-1. <span id="fields-note-1"></span>This is the same as visiblePublicationDate, unless overriden with `projectConfig.publicationIndex.sortDate`
-2. <span id="fields-note-2"></span>Metadata fields must be indexed. Please read the [Publication Index]({{< ref "/guides/search/publication-index" >}}) guide for further information.
+1. <span id="fields-note-1"></span>Metadata fields must be indexed. Please read the [Publication Index]({{< ref "/guides/search/publication-index" >}}) guide for further information. Details of the storage schema and indexing for each plugin are not currently documented, but can be found by inspecting the code.
 
 ### Example
 
