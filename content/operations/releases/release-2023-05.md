@@ -79,10 +79,6 @@ In future, you will be able to configure your own labels for metadata properties
 
 ## Breaking Changes :fire:
 
-### Back to Standard
-
-:exclamation: Check the [Back to Standard Roadmap]({{< ref "/customising/back-to-standard" >}}) and inform you about important upcoming deprecations and breaking changes and reasons.
-
 ### Migrate the Postgres Database :fire:
 
 It's a simple/fast migration with no expected data losses.
@@ -314,10 +310,6 @@ livingdocs-server elasticsearch-index --handle=li-documents -y
 ```
 
 ## Deprecations
-
-### Back to Standard
-
-:exclamation: Check the [Back to Standard Roadmap]({{< ref "/customising/back-to-standard" >}}) and inform you about important upcoming deprecations and breaking changes and reasons.
 
 ### Porting `useAsTitle` to `displayTitlePattern`
 The `useAsTitle` option has been deprecated and **will be removed in `release-2023-07`**.

@@ -150,9 +150,6 @@ You can now set `publishControl.firstPublicationDate` and `publishControl.lastPu
 * [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/5253)
 
 ## Breaking Changes :fire:
-
-:exclamation: Check the [Back to Standard Roadmap]({{< ref "/customising/back-to-standard" >}}) and inform you about important upcoming deprecations and breaking changes and reasons.
-
 ### Migrate the Postgres Database :fire:
 
 It's a simple/fast migration with no expected data losses.
@@ -235,8 +232,6 @@ References:
 
 
 ## Deprecations
-
-:exclamation: Check the [Back to Standard Roadmap]({{< ref "/customising/back-to-standard" >}}) and inform you about important upcoming deprecations and breaking changes and reasons.
 
 ### Deprecate appConfig.ui.welcome
 

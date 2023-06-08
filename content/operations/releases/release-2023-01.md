@@ -66,8 +66,6 @@ Project home screen with multiple Table Dashboards and Document Creation Flow bu
 
 ## Breaking Changes :fire:
 
-:exclamation: Check the [Back to Standard Roadmap]({{< ref "/customising/back-to-standard" >}}) and inform you about important upcoming deprecations and breaking changes and reasons.
-
 ### Migrate the Postgres Database :fire:
 
 It's a simple/fast migration with no expected data losses.
@@ -221,8 +219,6 @@ It is highly recommended that you run this script because it is performing a dat
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4957)
 
 ## Deprecations
-
-:exclamation: Check the [Back to Standard Roadmap]({{< ref "/customising/back-to-standard" >}}) and inform you about important upcoming deprecations and breaking changes and reasons.
 
 ### Deprecate Dashboard Display Filters
 

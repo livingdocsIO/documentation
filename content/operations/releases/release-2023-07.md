@@ -192,10 +192,6 @@ TODO (featureset not 100% defined yet)
 - Ticker Tool
 
 
-### Back to Standard
-
-:exclamation: Check the [Back to Standard Roadmap]({{< ref "/customising/back-to-standard" >}}) and inform you about important upcoming deprecations and breaking changes and reasons.
-
 ### Migrate the Postgres Database :fire:
 
 It's a simple/fast migration with no expected data losses.
@@ -208,10 +204,6 @@ livingdocs-server migrate up
 TODO: check migration
 
 ## Deprecations
-
-### Back to Standard
-
-:exclamation: Check the [Back to Standard Roadmap]({{< ref "/customising/back-to-standard" >}}) and inform you about important upcoming deprecations and breaking changes and reasons.
 
 ## APIs :gift:
 
