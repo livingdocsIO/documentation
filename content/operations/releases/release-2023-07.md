@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Upgrade `vm2` to fix security vulnerabilities](https://github.com/livingdocsIO/livingdocs-server/pull/5764)
 * [Public API Search Filters](https://github.com/livingdocsIO/livingdocs-server/pull/5744)
 * [Fix display filters that are showing as active without a selected value](https://github.com/livingdocsIO/livingdocs-editor/pull/6945)
 * [Persist UTC format for embargo date](https://github.com/livingdocsIO/livingdocs-editor/pull/6944)
