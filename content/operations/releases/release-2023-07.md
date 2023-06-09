@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1393.0 to v2.1394.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5769)
 * [fix(deps): update dependency @livingdocs/framework from 24.15.0 to v24.15.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5768)
 * [Upgrade `socket.io-parser` and `engine.io` to fix security vulnerabilities](https://github.com/livingdocsIO/livingdocs-editor/pull/6951)
 * [Remove seed api](https://github.com/livingdocsIO/livingdocs-server/pull/5767)
