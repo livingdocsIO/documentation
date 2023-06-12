@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Remove `useAsTitle`](https://github.com/livingdocsIO/livingdocs-editor/pull/6949)
 * [Multiselect li-display-filter-list-v2](https://github.com/livingdocsIO/livingdocs-server/pull/5762)
 * [fix(deps): update dependency aws-sdk from 2.1394.0 to v2.1395.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5777)
 * [fix(deps): update dependency cloudinary from 1.37.0 to v1.37.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5775)
