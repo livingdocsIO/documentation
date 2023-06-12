@@ -1439,11 +1439,12 @@ columns: [
 
 {{< added-in release-2022-09 >}}
 
-The plugin `li-tree` lets you set up a tree with items of the 3 possible types `group`, `link`, `document`.
+The plugin `li-tree` lets you set up a tree with items of the 4 possible types `group`, `link`, `document`, `multilang`.
 
 * group -> a structural item without a link, just a label
 * link -> link to an external URL
 * document -> link to another Livingdocs document
+* multilang -> a special kind of item that holds links or documents with a label per language
 
 **Storage Format**
 
@@ -1451,7 +1452,7 @@ The plugin `li-tree` lets you set up a tree with items of the 3 possible types `
 // schweiz -> link
 //   zürich -> link
 //   bern -> document
-// deutschland -> group
+// deutschland -> multilang
 //   hamburg -> link
 //   berlin -> document
 [
@@ -1479,8 +1480,15 @@ The plugin `li-tree` lets you set up a tree with items of the 3 possible types `
   },
   {
     id: 'menu-deutschland',
-    label: 'Deutschland',
-    type: 'group',
+    type: 'multilang',
+    translations: {
+      de: {
+        label: 'Deutschland'
+      },
+      en: {
+        label: 'Germany'
+      }
+    },
     items: [
       {
         id: 'menu-hamburg',
@@ -1517,7 +1525,8 @@ metadata: [
       requiredErrorMessage: 'Provide a value',      // optional
       // specific
       maxDepth: 3,                                  // default: undefined | tree depth
-      allowedTypes: ['group', 'document', 'link'],  // default: ['group', 'document', 'link']
+      allowedTypes: ['group', 'document', 'link'],  // default: ['group', 'document', 'link'], multilang is configured seperatly
+      multilang: true,                             // optional, default: false
 
       // settings for document link
       document: {
@@ -1540,6 +1549,28 @@ metadata: [
   }
 ]
 ```
+
+**Multi-Language Handling**
+
+To enable multi-language support in the tree, a new config property called `multilang` has been introduced.
+The available languages and the default language are inherited from the project's [Multi-Language configuration]({{< ref "/guides/editor/multi-language" >}}).
+
+When Multi-Language support is enabled for a tree, it appears as shown below:
+{{< img src="./images/li-tree-multilang.png" alt="Screenshot of the li-tree plugin displaying a multilang item." >}}
+
+In this case, the tree item is classified as `multilang` because it already contains two languages (de and en).
+
+However, when adding a new item to the tree, only the default language is initially included, and additional languages can be added as needed.
+
+**If only the default language is present, the item type will be either group, link, or document, but not multilang.**
+
+This behavior simplifies the process of enabling Multi-Language support for existing trees, as there is no need to migrate data.
+Similarly, when disabling Multi-Language support for a tree that has translations, the user interface will display only the default language, while the underlying data structure retains the translations.
+
+Tree items of type `multilang` can contain various types of links within their translations object.
+For example, the English link could refer to a document, while the German link could be a URL.
+It still adheres to the allowed types configuration, which means that mixed link types are possible, but only if they are included in the list of allowed types. 
+
 
 ## li-transcoding-state
 **Storage Format**:
