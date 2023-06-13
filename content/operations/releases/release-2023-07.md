@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Component Move: scroll components into view after move by keyboard](https://github.com/livingdocsIO/livingdocs-editor/pull/6940)
 * [fix(deps): update dependency aws-sdk from 2.1395.0 to v2.1396.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5781)
 * [fix(deps): update fastify (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6958)
 * [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/5780)
