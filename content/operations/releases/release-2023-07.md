@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency c8 from 7.14.0 to v8 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5784)
 * [Distribution Planning: show team column in proposal/planned tables](https://github.com/livingdocsIO/livingdocs-editor/pull/6851)
 * [Use `$t()` instead of undefined `this.$t()` in `li-unsaved-dialog`](https://github.com/livingdocsIO/livingdocs-editor/pull/6959)
 * [Component Move: scroll components into view after move by keyboard](https://github.com/livingdocsIO/livingdocs-editor/pull/6940)
