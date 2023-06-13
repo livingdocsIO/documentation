@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency css-loader from 6.7.3 to v6.7.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6977)
 * [chore(deps): update dependency jose from 4.14.1 to v4.14.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6967)
 * [fix(deps): update dependency c8 from 7.14.0 to v8 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5784)
 * [Distribution Planning: show team column in proposal/planned tables](https://github.com/livingdocsIO/livingdocs-editor/pull/6851)
