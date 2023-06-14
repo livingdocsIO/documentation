@@ -28,6 +28,15 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Translate more config labels](https://github.com/livingdocsIO/livingdocs-editor/pull/6937)
+* [Improve scroll behavior when moving components with shortcut](https://github.com/livingdocsIO/livingdocs-editor/pull/6961)
+* [fix(deps): update dependency @fastify/reply-from from 9.0.1 to v9.0.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6974)
+* [fix(deps): update dependency css-loader from 6.7.3 to v6.7.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6977)
+* [chore(deps): update dependency jose from 4.14.1 to v4.14.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6967)
+* [fix(deps): update dependency c8 from 7.14.0 to v8 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5784)
+* [Distribution Planning: show team column in proposal/planned tables](https://github.com/livingdocsIO/livingdocs-editor/pull/6851)
+* [Use `$t()` instead of undefined `this.$t()` in `li-unsaved-dialog`](https://github.com/livingdocsIO/livingdocs-editor/pull/6959)
+* [Component Move: scroll components into view after move by keyboard](https://github.com/livingdocsIO/livingdocs-editor/pull/6940)
 * [fix(deps): update dependency aws-sdk from 2.1395.0 to v2.1396.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5781)
 * [fix(deps): update fastify (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6958)
 * [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/5780)
