@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency style-loader from 3.3.2 to v3.3.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6982)
 * [Translate more config labels](https://github.com/livingdocsIO/livingdocs-server/pull/5738)
 * [Translate more config labels](https://github.com/livingdocsIO/livingdocs-editor/pull/6937)
 * [Improve scroll behavior when moving components with shortcut](https://github.com/livingdocsIO/livingdocs-editor/pull/6961)
