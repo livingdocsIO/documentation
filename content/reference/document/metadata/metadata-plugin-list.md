@@ -248,6 +248,9 @@ metadata: [
 **Storage Format**: `{from: ISO8601 String, to: ISO8601 String}`\
 **Default UI**: 2 date/time inputs (`liMetaDateTimeValidityForm`)
 
+This plugin should be used only in the Media Library. 
+The intended use case is the following:
+an image has a limited validity, for example due to copyright, so can be used only for a certain period of time. After that period, the copyright expires and the image should be removed from the website.
 ## li-datetime
 **Storage Format**: `<ISO8601 String>`\
 **Default UI**: 2 date/time inputs (`liMetaDatetimeForm`)\
