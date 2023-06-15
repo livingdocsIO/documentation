@@ -435,6 +435,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.48): fix(indexing): Fix queue log formatting on indexing dashboard
 - [v94.10.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.47): fix(li-unsaved-dialog): Use `$t()` instead of undefined `this.$t()`, when adding translations to vue template
 - [v94.10.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.46): fix(dependencies): Upgrade `engine.io` and `socket.io-parser` to fix security vulnerabilities CVE-2023-31125 and CVE-2023-32695
 - [v94.10.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.45): fix(li-publish-control-embargo): keep UTC date
