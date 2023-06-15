@@ -24,6 +24,8 @@ The `customerId` property is required in the server config to help identify the 
 
 The project config requires two new properties, one which allows documents to be exported to specific projects, and another which configures how to import documents from other projects.
 
+[Import & Export in the Project config]({{< ref "/reference/project-config/import-export" >}})
+
 #### Source project
 
 The `export` property is an object which contains an `allowedProjects` property. The `allowedProjects` property is an array of objects containing a `handle` property, which indicates the projects you would like to export to.
