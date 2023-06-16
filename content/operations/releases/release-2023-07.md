@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Make indexing bulk requests more reliable](https://github.com/livingdocsIO/livingdocs-server/pull/5788)
 * [fix(deps): update dependency sass from 1.62.1 to v1.63.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6987)
 * [fix(deps): update dependency lru-cache from 9.1.2 to v10 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5787)
 * [fix(deps): update dependency style-loader from 3.3.2 to v3.3.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6982)
