@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Translate any config label which has not been translated yet](https://github.com/livingdocsIO/livingdocs-editor/pull/6962)
 * [improvement(publication state): Stacking](https://github.com/livingdocsIO/livingdocs-editor/pull/6991)
 * [Make indexing bulk requests more reliable](https://github.com/livingdocsIO/livingdocs-server/pull/5788)
 * [fix(deps): update dependency sass from 1.62.1 to v1.63.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6987)
