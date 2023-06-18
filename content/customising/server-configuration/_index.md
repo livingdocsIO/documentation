@@ -1234,6 +1234,8 @@ assetManagement: {
 
 #### Custom previews
 
+Deprecated with release-2023-07 and removed with release-2023-09. Read [the guide on custom previews]({{< ref "/guides/editor/document-previews" >}}) to learn how to use `documentPreview` functions.
+
 Custom previews are a way to display a custom preview of a document. This could be a custom mobile preview, a preview of a finished article living on the frontend or anything that fits the specific customer need. You will need to enable the feature and register a custom render function that will contain the `documentId`.
 
 ```js
