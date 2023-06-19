@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Distribution Planning Screens Polish](https://github.com/livingdocsIO/livingdocs-editor/pull/6904)
 * [Support significantPublicationDate on document import](https://github.com/livingdocsIO/livingdocs-server/pull/5794)
 * [Fix Metadata Previews: properly remove message event listeners on destroyed](https://github.com/livingdocsIO/livingdocs-editor/pull/7001)
 * [Document Preview Functions](https://github.com/livingdocsIO/livingdocs-server/pull/5786)
