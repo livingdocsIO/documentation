@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update fastify (master) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/6971)
 * [fix(deps): update dependency webpack from 5.80.0 to v5.87.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6997)
 * [Prevent unsaved document data while processing remote updates](https://github.com/livingdocsIO/livingdocs-editor/pull/6934)
 * [Fix error when transforming component](https://github.com/livingdocsIO/livingdocs-editor/pull/6992)
