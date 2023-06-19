@@ -246,11 +246,16 @@ TODO (featureset not 100% defined yet)
 
 - [Blog Post July Release TODO]()
 - Config Labels Translation
+- [Copy Target Icon and Label Config](#copy-target-icon-and-label-config)
 - Advanced Search Filters Foundation
 - [Display Filters ListV2 with OR combination](#display-filters-listv2-with-or-combination)
 - Serach Filters on Public API
 - Multilanguage Menu Tool
 - Ticker Tool
+
+### Copy Target Icon and Label Config
+
+The copy target config has been extended to support an icon and a label. [Learn more]({{< ref "/guides/editor/document-copy/index.md#setup-config" >}})
 
 ### Display Filters ListV2 with OR combination
 
