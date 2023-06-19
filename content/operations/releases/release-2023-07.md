@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix Metadata Previews: properly remove message event listeners on destroyed](https://github.com/livingdocsIO/livingdocs-editor/pull/7001)
 * [Document Preview Functions](https://github.com/livingdocsIO/livingdocs-server/pull/5786)
 * [Publish Control: honor contentType.print config for button labels (deprecate prepare publish flow)](https://github.com/livingdocsIO/livingdocs-editor/pull/6999)
 * [fix(deps): update fastify (master) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/6971)
