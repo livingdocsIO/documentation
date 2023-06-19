@@ -8,14 +8,18 @@ It is possible to register a custom filter and use it as a [DisplayFilter]({{< r
 
 At the moment there are 2 types of custom filters
 - [Custom List v2 Filter](#custom-list-v2-filter)
+      - [Example Single Value Filter](#example-single-value-filter)
+      - [Example Multi Value Filter](#example-multi-value-filter)
+      - [isDefault option](#isdefault-option)
 - [Custom Vue Component Filter](#custom-vue-component-filter)
+      - [Example](#example)
 
 Hint: If you want to create a filter with metadata, make sure they are setup correctly in the ElasticSearch index (`search.metadata_mapping` config in the server)
 
 
 ## Custom List v2 Filter
 
-##### Example
+##### Example Single Value Filter
 
 `searchFilters.registerListV2` registers an object where you can configure a filter object which is used to render the search UI.
 
@@ -54,13 +58,11 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
   //
   // @example options = [
   //   {
-  //     id: 'regular',
   //     label: 'Regular Article',
   //     type: 'contentType',
   //     value: 'regular'
   //   },
   //   {
-  //     id: 'page',
   //     label: 'Page',
   //     type: 'contentType',
   //     value: 'page',
@@ -70,7 +72,6 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
   async mount ({data, filter}) {
     const options = data.contentTypes.map((ct) => {
       return {
-        id: ct.handle,
         label: ct.info.label,
         // these props are used for creating a search request (see 'Filter Query Types' link below)
         type: 'contentType',
@@ -83,6 +84,47 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
 ```
 
 Hint: Look into [Filter Query Types]({{< ref "/customising/advanced/editor-configuration/base-filter.md" >}}) to find possible `{type, value}` combinations for the `filter.options` in the `mount` function.
+
+##### Example Multi Value Filter
+
+image {{< img src="multi-filter-dropdown.png" alt="Filter Dropdown" >}}
+
+```js
+liEditor.searchFilters.registerListV2('MultiSelectV2Filter', {
+  multiple: true, // allow multiple selections
+  label: {en: 'Multi Select', de: 'Mehrfachauswahl'},
+  datasource: {
+    fetch ({user}) {
+      return [{
+        label: {en: 'Published Articles', de: 'Publizierte Artikel'},
+        filter: {key: 'lastPublicationId', exists: true}
+      },
+      {
+        label: {en: 'My Articles', de: 'Meine Artikel'},
+        filter: {key: 'ownerId', term: user.id}
+      }]
+    }
+  },
+
+  mount ({data, filter}) {
+    filter.options = data
+  }
+})
+```
+
+The selected values are `OR` combined in the search query.
+
+Request payload if both filters from above are selected:
+
+```js
+[
+  ...,
+  { "or": [
+    { "key": "lastPublicationId", "exists": true },
+    { "key": "ownerId", "term":1 }
+  ]}
+]
+```
 
 ##### isDefault option
 

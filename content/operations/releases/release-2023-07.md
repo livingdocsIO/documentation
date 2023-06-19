@@ -213,18 +213,7 @@ TODO
 
 TODO
 
-## Features
-
-TODO (featureset not 100% defined yet)
-
-- [Blog Post July Release TODO]()
-- Config Labels Translation
-- Advanced Search Filters Foundation
-- Display Filters ListV2 with OR combination
-- Serach Filters on Public API
-- Multilanguage Menu Tool
-- Ticker Tool
-
+## Breaking Changes 🔥
 
 ### Migrate the Postgres Database :fire:
 
@@ -238,6 +227,22 @@ livingdocs-server migrate up
 TODO: check migration
 
 ## Deprecations
+
+## Features
+
+TODO (featureset not 100% defined yet)
+
+- [Blog Post July Release TODO]()
+- Config Labels Translation
+- Advanced Search Filters Foundation
+- [Display Filters ListV2 with OR combination](#display-filters-listv2-with-or-combination)
+- Serach Filters on Public API
+- Multilanguage Menu Tool
+- Ticker Tool
+
+### Display Filters ListV2 with OR combination
+
+The Filters ListV2 have been extended to support multiple selections. The selected values are `OR` combined in the search query. [Learn more]({{< ref "/guides/editor/custom-dashboard-filters/index.md#example-multi-value-filter" >}})
 
 ## APIs :gift:
 
