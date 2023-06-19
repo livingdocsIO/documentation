@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Document Preview Functions](https://github.com/livingdocsIO/livingdocs-server/pull/5786)
 * [Publish Control: honor contentType.print config for button labels (deprecate prepare publish flow)](https://github.com/livingdocsIO/livingdocs-editor/pull/6999)
 * [fix(deps): update fastify (master) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/6971)
 * [fix(deps): update dependency webpack from 5.80.0 to v5.87.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6997)
