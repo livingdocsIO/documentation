@@ -245,13 +245,13 @@ TODO: check migration
 TODO (featureset not 100% defined yet)
 
 - [Blog Post July Release TODO]()
-- Config Labels Translation
 - [Copy Target Icon and Label Config](#copy-target-icon-and-label-config)
 - Advanced Search Filters Foundation
 - [Display Filters ListV2 with OR combination](#display-filters-listv2-with-or-combination)
 - Serach Filters on Public API
 - Multilanguage Menu Tool
 - Ticker Tool
+- [UI and label config multi-language support](#ui-and-label-config-multi-language-support)
 
 ### Copy Target Icon and Label Config
 
@@ -260,6 +260,10 @@ The copy target config has been extended to support an icon and a label. [Learn 
 ### Display Filters ListV2 with OR combination
 
 The Filters ListV2 have been extended to support multiple selections. The selected values are `OR` combined in the search query. [Learn more]({{< ref "/guides/editor/custom-dashboard-filters/index.md#example-multi-value-filter" >}})
+
+### UI and label config multi-language support
+
+With this release, we introduced multi-language support for the UI and label config. Currently we support English and German as UI languages [Learn more]({{< ref "/content/guides/editor/multi-language-ui/index.md" >}})
 
 ## APIs :gift:
 
