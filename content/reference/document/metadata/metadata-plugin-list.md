@@ -1556,7 +1556,7 @@ metadata: [
 **Multi-Language Handling**
 
 To enable multi-language support in the tree, a new config property called `multilang` has been introduced.
-The available languages and the default language are inherited from the project's [Multi-Language configuration]({{< ref "/guides/editor/multi-language" >}}).
+The available languages and the default language are inherited from the project's [Multi-Language configuration]({{< ref "/guides/editor/multi-language-content" >}}).
 
 When Multi-Language support is enabled for a tree, it appears as shown below:
 {{< img src="./images/li-tree-multilang.png" alt="Screenshot of the li-tree plugin displaying a multilang item." >}}

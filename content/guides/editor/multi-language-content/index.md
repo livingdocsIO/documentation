@@ -1,5 +1,5 @@
 ---
-title: Enable Multi-Language
+title: Enable Multi-Language Content
 bullets:
   - Configure languages
   - Assign languages to documents
@@ -17,6 +17,7 @@ The metadata screen gets a new language select box if the multi-language feature
 {{< img src="metadata.png" alt="Dashboard UI" >}}
 
 #### Related Infos
+
 - Read the [metadata translations for Data Records]({{< ref "/guides/editor/metadata-translations" >}}) guide to learn how to use translations for Data Records.
 - Read the [setting up the Media Library]({{< ref "/guides/media-library/media-library-setup" >}}) guide to learn how to configure translations for your Images, Videos and Files.
 - Get a list of available [metadata plugins]({{< ref "/reference/document/metadata/metadata-plugin-list" >}})
@@ -32,13 +33,17 @@ On the server, we first need to provide which languages we want to support in ou
 settings: {
   languages: {
     // defines the languages that a user can select for a document
-    available: [
-      {label: 'German', locale: 'de'},
-      {label: 'English', locale: 'en'}
-    ],
+    available: [{
+      label: {en: 'German', de: 'Deutsch'},
+      locale: 'de'
+    },
+    {
+      label: {en: 'English', de: 'Englisch'},
+      locale: 'en'
+    }],
     // used to create new documents
     defaultLanguage: {
-      label: 'German',
+      label: {en: 'German', de: 'Deutsch'},
       locale: 'de'
     },
   }

@@ -640,7 +640,7 @@ module.exports = {
 ## Metadata Translations
 The Media Library supports metadata translations since `release-2021-06`. Here you learn how to configure it.
 
-First, you have to configure the available languages in the system as [described here]({{< ref "/guides/editor/multi-language.md" >}})
+First, you have to configure the available languages in the system as [described here]({{< ref "/guides/editor/multi-language-content.md" >}})
 
 ### Add Plugin to Enable Translations
 
