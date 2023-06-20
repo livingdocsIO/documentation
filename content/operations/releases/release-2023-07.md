@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Migrate some properties panel sections to Vue](https://github.com/livingdocsIO/livingdocs-editor/pull/6993)
 * [Log deprecation with removal date for behaveAsLiImage configuration](https://github.com/livingdocsIO/livingdocs-editor/pull/7003)
 * [Fix langLocale aliases in the draft search](https://github.com/livingdocsIO/livingdocs-server/pull/5796)
 * [Distribution Planning Screens Polish](https://github.com/livingdocsIO/livingdocs-editor/pull/6904)
