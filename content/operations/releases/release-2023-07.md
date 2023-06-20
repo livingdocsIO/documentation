@@ -27,6 +27,41 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: We don't guarantee stable APIs. They can still change until the official release
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
+## Tech Release Notes Creation Guidelines (TODO move to release cut checklist)
+
+- System Requirements
+  - Suggested
+  - Minimal
+- Breaking Changes 🔥
+  - list related PRs (for internal use, customers don't have access to code base)
+  - explain how to migrate or configs to change with example
+  - Migrate the Postgres Database :fire:
+    - always the same standard migration command
+- Deprecations
+  - list related PRs (for internal use, customers don't have access to code base)
+  - explain how to migrate or change configs and downstream customization to keep things compatible
+- APIs :gift:
+  - list related PRs (for internal use, customers don't have access to code base)
+  - example of how to use the new API
+  - link to documentation
+- Features :gift:
+  - only list features that have some kind of config changes - write these notes with the developers in mind (if the feature is listed here then it should also be in the dev webinar and vice versa)
+  - Small description with config changes example
+  - link to documentation
+- Improvements
+  - only list technical improvements or improvements that need a config change - write these notes with the developers in mind
+  - Small description with code example
+  - link to documentation (if there is any)
+- Bugfixes :beetle:
+  - Bugfixes are fixes made during the release cycle
+  - Description
+- Patches
+  - Bugfixes are fixes made after this release and are backported into this release
+  - Livingdocs Server Patches
+    - Description
+  - Livingdocs Editor Patches
+    - Description
+
 ## PRs to Categorize
 * [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/5814)
 * [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/7053)
@@ -76,15 +111,11 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [Prevent unsaved document data while processing remote updates](https://github.com/livingdocsIO/livingdocs-editor/pull/6934)
 * [Fix error when transforming component](https://github.com/livingdocsIO/livingdocs-editor/pull/6992)
 * [fix(deps): update dependency @livingdocs/framework from 25.0.1 to v25.0.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6994)
-* [Translate any config label which has not been translated yet](https://github.com/livingdocsIO/livingdocs-server/pull/5782)
-* [Translate any config label which has not been translated yet](https://github.com/livingdocsIO/livingdocs-editor/pull/6962)
 * [improvement(publication state): Stacking](https://github.com/livingdocsIO/livingdocs-editor/pull/6991)
 * [Make indexing bulk requests more reliable](https://github.com/livingdocsIO/livingdocs-server/pull/5788)
 * [fix(deps): update dependency sass from 1.62.1 to v1.63.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6987)
 * [fix(deps): update dependency lru-cache from 9.1.2 to v10 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5787)
 * [fix(deps): update dependency style-loader from 3.3.2 to v3.3.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6982)
-* [Translate more config labels](https://github.com/livingdocsIO/livingdocs-server/pull/5738)
-* [Translate more config labels](https://github.com/livingdocsIO/livingdocs-editor/pull/6937)
 * [Improve scroll behavior when moving components with shortcut](https://github.com/livingdocsIO/livingdocs-editor/pull/6961)
 * [fix(deps): update dependency @fastify/reply-from from 9.0.1 to v9.0.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6974)
 * [fix(deps): update dependency css-loader from 6.7.3 to v6.7.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6977)
@@ -100,10 +131,8 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [fix/Publish Control Status](https://github.com/livingdocsIO/livingdocs-editor/pull/6955)
 * [Remove `useAsTitle`](https://github.com/livingdocsIO/livingdocs-server/pull/5763)
 * [Remove `useAsTitle`](https://github.com/livingdocsIO/livingdocs-editor/pull/6949)
-* [Multiselect li-display-filter-list-v2](https://github.com/livingdocsIO/livingdocs-server/pull/5762)
 * [fix(deps): update dependency aws-sdk from 2.1394.0 to v2.1395.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5777)
 * [fix(deps): update dependency cloudinary from 1.37.0 to v1.37.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5775)
-* [Multiselect li-display-filter-list-v2](https://github.com/livingdocsIO/livingdocs-editor/pull/6943)
 * [Do not expose internal elasticsearch mapping keys to Search DSL](https://github.com/livingdocsIO/livingdocs-server/pull/5773)
 * [fix(deps): update dependency aws-sdk from 2.1393.0 to v2.1394.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5769)
 * [fix(deps): update dependency @livingdocs/framework from 24.15.0 to v24.15.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5768)
@@ -119,8 +148,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [Cleanup postgres tables](https://github.com/livingdocsIO/livingdocs-server/pull/5751)
 * [Add Api endpoint for incoming references for drafts](https://github.com/livingdocsIO/livingdocs-server/pull/5743)
 * [don't overwrite url_to_published_content in desk-net api](https://github.com/livingdocsIO/livingdocs-server/pull/5748)
-* [Translate more config labels](https://github.com/livingdocsIO/livingdocs-editor/pull/6909)
-* [Translate more config labels](https://github.com/livingdocsIO/livingdocs-server/pull/5705)
 * [fix: extend openIdConnect with state](https://github.com/livingdocsIO/livingdocs-server/pull/5741)
 * [fix(properties panel): Spacings](https://github.com/livingdocsIO/livingdocs-editor/pull/6941)
 * [fix(issue card): Header](https://github.com/livingdocsIO/livingdocs-editor/pull/6942)
@@ -130,7 +157,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [fix(deps): update dependency aws-sdk from 2.1389.0 to v2.1390.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5739)
 * [fix(deps): update dependency aws-sdk from 2.1388.0 to v2.1389.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5737)
 * [Hide distributions from removed distribution channels](https://github.com/livingdocsIO/livingdocs-editor/pull/6914)
-* [Support translatable label in metadata conflict message](https://github.com/livingdocsIO/livingdocs-editor/pull/6935)
 * [fix(deps): update dependency @4tw/cypress-drag-drop from 2.2.3 to v2.2.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6936)
 * [fix(deps): update dependency lru-cache from 9.1.1 to v9.1.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5736)
 * [fix(deps): update dependency aws-sdk from 2.1386.0 to v2.1388.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5735)
@@ -144,8 +170,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [fix(deps): update dependency cypress from 12.12.0 to v12.13.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6905)
 * [Set distribution planning metadata value to null when removing last distribution](https://github.com/livingdocsIO/livingdocs-editor/pull/6921)
 * [fix(deps): update dependency aws-sdk from 2.1384.0 to v2.1386.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5731)
-* [Metadata plugin labels in multiple languages](https://github.com/livingdocsIO/livingdocs-editor/pull/6797)
-* [Metadata plugin labels in multiple languages](https://github.com/livingdocsIO/livingdocs-server/pull/5680)
 * [Pass oembed params to the parseResponse function of the oembed provider](https://github.com/livingdocsIO/livingdocs-server/pull/5721)
 * [fix(deps): update dependency nodemailer from 6.9.2 to v6.9.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5734)
 * [fix(deps): update dependency pg from 8.10.0 to v8.11.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5713)
@@ -185,8 +209,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [Fix retresco enrich date comparison](https://github.com/livingdocsIO/livingdocs-server/pull/5703)
 * [fix(distribution planning): don't show time when add to planning for channels without time](https://github.com/livingdocsIO/livingdocs-editor/pull/6843)
 * [Fix Legacy Dashboards: initial load takes cached filter value into account now](https://github.com/livingdocsIO/livingdocs-editor/pull/6830)
-* [Copy target icon and label config](https://github.com/livingdocsIO/livingdocs-editor/pull/6800)
-* [Copy target icon and label config](https://github.com/livingdocsIO/livingdocs-server/pull/5681)
 * [fix(translation): layout search placeholder](https://github.com/livingdocsIO/livingdocs-editor/pull/6836)
 * [Fix content type filters for secondary channels](https://github.com/livingdocsIO/livingdocs-server/pull/5698)
 * [Do not include srcissors dev dependencies in editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6837)
@@ -229,10 +251,10 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [Access control improvements - Part 3](https://github.com/livingdocsIO/livingdocs-server/pull/5657)
 * [Add workaround to allow republish when data migrations do not apply changes to documents](https://github.com/livingdocsIO/livingdocs-server/pull/5653)
 * [Fix occupations again, remove duplicate months](https://github.com/livingdocsIO/livingdocs-server/pull/5652)
-* [Fix legacy dashboard compilation failure due to content type label](https://github.com/livingdocsIO/livingdocs-editor/pull/6773)
 * [Design/Release Polish and Fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/6771)
 * [Update defaultBranch to release-2023-07](https://github.com/livingdocsIO/livingdocs-editor/pull/6770)
 
+## Intro
 
 To get an overview about new functionality, read the [Release Notes](TODO).
 To learn about the necessary actions to update Livingdocs to `release-2023-07`, read on.
@@ -259,6 +281,8 @@ TODO
 
 ## Breaking Changes 🔥
 
+TODO - with PRs (for internal use)
+
 ### Migrate the Postgres Database :fire:
 
 It's a simple/fast migration with no expected data losses.
@@ -272,16 +296,20 @@ TODO: check migration
 
 ## Deprecations
 
-## Features
+## APIs :gift:
 
-TODO (featureset not 100% defined yet)
+TODO - with PRs (for internal use)
 
-- [Blog Post July Release TODO]()
+## Features :gift:
+
+TODO - no PRs as customers have no access to code
+
+- [Blog Post July Release]() // TODO
 - [Copy Target Icon and Label Config](#copy-target-icon-and-label-config)
 - Advanced Search Filters Foundation
 - [Display Filters ListV2 with OR combination](#display-filters-listv2-with-or-combination)
-- Serach Filters on Public API
-- Multilanguage Menu Tool
+- Search Filters on Public API
+- Multi-language Menu Tool
 - Ticker Tool
 - [UI and label config multi-language support](#ui-and-label-config-multi-language-support)
 
@@ -289,35 +317,43 @@ TODO (featureset not 100% defined yet)
 
 The copy target config has been extended to support an icon and a label. [Learn more]({{< ref "/guides/editor/document-copy/index.md#setup-config" >}})
 
+TODO add new config example
+
 ### Display Filters ListV2 with OR combination
 
 The Filters ListV2 have been extended to support multiple selections. The selected values are `OR` combined in the search query. [Learn more]({{< ref "/guides/editor/custom-dashboard-filters/index.md#example-multi-value-filter" >}})
+
+TODO add new config example
 
 ### UI and label config multi-language support
 
 With this release, we introduced multi-language support for the UI and label config. Currently we support English and German as UI languages [Learn more]({{< ref "/content/guides/editor/multi-language-ui/index.md" >}})
 
-## APIs :gift:
+TODO add new config example
 
-## Other Changes
+## Improvements
 
-### Features
+TODO - no PRs as customers have no access to code
 
-### Improvements
+## Bugfixes
 
-### Bugfixes
-
+TODO - no PRs as customers have no access to code
 
 ## Patches
+
+TODO - no PRs as customers have no access to code
 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
+TODO
+
 ### Livingdocs Editor Patches
 - [v95.0.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.5): fix(quick publish): correctly show quick publish button if allowed
 
+TODO
 
   ---
   **Icon Legend**
