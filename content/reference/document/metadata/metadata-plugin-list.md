@@ -248,7 +248,7 @@ metadata: [
 **Storage Format**: `{from: ISO8601 String, to: ISO8601 String}`\
 **Default UI**: 2 date/time inputs (`liMetaDateTimeValidityForm`)
 
-This plugin should be used only in the Media Library. 
+This plugin should be used only in the Media Library.
 The intended use case is the following:
 an image has a limited validity, for example due to copyright, so can be used only for a certain period of time. After that period, the copyright expires and the image should be removed from the website.
 ## li-datetime
@@ -640,7 +640,7 @@ metadata: [
 
 {{< added-in release-2022-07 block>}}
 
-A `li-external-id` metadata field can be used to save an external id of another system. For example if you want to have an article reference to your original system. At the moment `li-external-id` has no UI and can only be set via the public API import.
+A `li-external-id` metadata field can be used to save an external id of another system. For example if you want to have an article reference to your original system. At the moment `li-external-id` by default renders a text area in the UI. If you want to hide it add the config object with `hideFromForm: true`
 
 **Storage Format**: `<String>`\
 **Default UI**: no UI\
@@ -652,7 +652,7 @@ metadata: [
     handle: 'externalId',
     type: 'li-external-id',
     config: {
-      // no config values are allowed
+      hideFromForm: true // default false
     },
     ui: {
       // no ui config values are allowed
@@ -1572,7 +1572,7 @@ Similarly, when disabling Multi-Language support for a tree that has translation
 
 Tree items of type `multilang` can contain various types of links within their translations object.
 For example, the English link could refer to a document, while the German link could be a URL.
-It still adheres to the allowed types configuration, which means that mixed link types are possible, but only if they are included in the list of allowed types. 
+It still adheres to the allowed types configuration, which means that mixed link types are possible, but only if they are included in the list of allowed types.
 
 
 ## li-transcoding-state
