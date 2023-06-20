@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Support version check when updating media](https://github.com/livingdocsIO/livingdocs-server/pull/5793)
 * [Ticker Feature](https://github.com/livingdocsIO/livingdocs-editor/pull/7004)
 * [Document Previews](https://github.com/livingdocsIO/livingdocs-editor/pull/6978)
 * [Ticker Feature](https://github.com/livingdocsIO/livingdocs-server/pull/5797)
