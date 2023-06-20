@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cypress from 12.14.0 to v12.15.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7009)
 * [Replace various test domains with example.com](https://github.com/livingdocsIO/livingdocs-server/pull/5800)
 * [Support version check when updating media](https://github.com/livingdocsIO/livingdocs-server/pull/5793)
 * [Ticker Feature](https://github.com/livingdocsIO/livingdocs-editor/pull/7004)
