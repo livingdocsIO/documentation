@@ -52,9 +52,6 @@ This are all available `queryTypes` which can be used to form a filter query.
 // dateRange
 {key: "updatedAt", range: { gte: "2023-06-21T07:55:00.000Z", lte: "2023-06-23T07:55:00.000Z" }}
 
-// documentState (term: 'published', 'unpublished', 'deleted', 'draft', 'publishedWithDraft')
-{key: 'documentState', term: 'published'}
-
 // metadata
 {key: 'metadata.foo', term: 'bar'}
 {key: 'metadata.foo', exists: true}
@@ -68,11 +65,6 @@ This are all available `queryTypes` which can be used to form a filter query.
 {key: 'metadata.proofreading.state', taskValue: 'pending'}
 {key: 'metadata.review.state', taskValue: 'done'}
 
-// sortBy (multiple values possible)
-{key: 'sortBy', term: '-created_at'}
-{key: 'sortBy', term: 'title'}
-{key: 'sortBy', term: 'metadata.department'}
-
 // reference
 {key: 'references', term: ['document:123']}
 {key: 'references', term: ['image:W8GRbmju4grG']}
@@ -82,9 +74,6 @@ This are all available `queryTypes` which can be used to form a filter query.
 // state for the mediaLibrary (added-in release-2022-07)
 {key: 'state', term: 'active'}
 {key: 'state', term: 'revoked'}
-
-// userInTeam (added in release-2023-03)
-{key: 'userInTeam', key: 'myTeamMetadataPropertyName'}
 ```
 
 ### Example - Filter by documentType
