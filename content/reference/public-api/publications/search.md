@@ -389,16 +389,16 @@ When querying a metadata property with an object value, always use the key of a 
 
 ### Filter Fields
 
-|Property|Type|Notes|
-|--------|----|-----|
-|documentId|long||
-|contentType|keyword||
-|references|keyword[ ]||
-|firstPublicationDate|date (strict_date_time)||
-|lastPublicationDate|date (strict_date_time)||
-|significantPublicationDate|date (strict_date_time)||
-|visiblePublicationDate|date (strict_date_time)||
-|metadata.*|Any|[1]({{< ref "#fields-note-1" >}})|
+| Property                   | Type                    | Notes                             |
+| -------------------------- | ----------------------- | --------------------------------- |
+| documentId                 | long                    |                                   |
+| contentType                | keyword                 |                                   |
+| references                 | keyword[ ]              |                                   |
+| firstPublicationDate       | date (strict_date_time) |                                   |
+| lastPublicationDate        | date (strict_date_time) |                                   |
+| significantPublicationDate | date (strict_date_time) |                                   |
+| visiblePublicationDate     | date (strict_date_time) |                                   |
+| metadata.*                 | Any                     | [1]({{< ref "#fields-note-1" >}}) |
 
 1. <span id="fields-note-1"></span>Metadata fields must be indexed. Please read the [Publication Index]({{< ref "/guides/search/publication-index" >}}) guide for further information. Details of the storage schema and indexing for each plugin are not currently documented, but can be found by inspecting the code.
 
