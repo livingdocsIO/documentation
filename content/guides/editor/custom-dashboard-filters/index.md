@@ -59,13 +59,11 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
   // @example options = [
   //   {
   //     label: 'Regular Article',
-  //     type: 'contentType',
-  //     value: 'regular'
+  //     filter: {key: 'contentType', term: 'regular'}
   //   },
   //   {
   //     label: 'Page',
-  //     type: 'contentType',
-  //     value: 'page',
+  //     filter: {key: 'contentType', term: 'page'},
   //     isDefault: true
   //   }
   // ]
@@ -74,8 +72,7 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
       return {
         label: ct.info.label,
         // these props are used for creating a search request (see 'Filter Query Types' link below)
-        type: 'contentType',
-        value: ct.handle
+        filter: {key: 'contentType', term: ct.handle}
       }
     })
     filter.options = options
@@ -137,7 +134,11 @@ When `isDefault: true` (see example above), the default option will be added to 
 [`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-03.md)
 Filters for the media-library need to define the `dataType`
 ```js
+// before release-2023-07
 $emit('update:filter', {type: 'metadata', key:'transformed', dataType: 'boolean', value: true})
+
+// after release-2023-07, uses the new Search DSL
+$emit('update:filter', {filter: {key:'metadata.transformed', term: true}})
 ```
 
 ##### Example
@@ -157,7 +158,7 @@ After registering the filter, the vue component will recieve a prop called `filt
 <template>
   <!-- the 'update:filter' event is required -->
   <div
-    @click="$emit('update:filter', {type: 'dateRange', amount: 24, value: 'h'})">
+    @click="$emit('update:filter', {filter: {key: 'updatedAt', range: {gte: 'now-24h'}})">
   Filter logic
   </div>
 </template>
