@@ -2,129 +2,120 @@
 title: Base Filter
 ---
 
-Base filters are used to filter the resultset on a dashboard or a search modal.
+Base filters are used to filter the result set on a dashboard or a search modal.
 They can be visible (`displayFilter`) or invisible (all other types).
 Base filters are used in different places and have a common format to construct the filter query.
 
 ## Filter Query Format
 
 There are different places, where one can define base filter:
+
 - `baseFilters` (used in [custom dashboards]({{< ref "/reference/project-config/editor-settings" >}}))
 - `defaultQueries` (used in [default dashboards]({{< ref "/customising/advanced/editor-configuration/default-dashboard-filter#filter-config-properties-see-example" >}}))
 - `emptySearchQueries` (used in [default dashboards]({{< ref "/customising/advanced/editor-configuration/default-dashboard-filter#filter-config-properties-see-example" >}}))
 
-At all this places, one can use the same query format, e.g.
+At all these places, one can use the same query format, e.g.
 
 ```js
-{type: 'documentType', value: 'article'}
+{key: 'documentType', term: 'article'}
 ```
 
-The query format always has a `type` and most of the time a `value`. You can see some examples in the next section.
+Learn more about the filter queries format [here]({{< ref "/content/reference/public-api/publications/search.md" >}})
 
-## Filter Query Types
+## Filter Query Examples
 
 This are all available `queryTypes` which can be used to form a filter query.
 
 ```js
-// documentType {type: 'string', value: string || array}
-{type: 'documentType', value: 'article'}
-{type: 'documentType', value: ['article', 'page']}
+// documentType {key: 'string', term: string || array}
+{key: 'documentType', term: 'article'}
+{key: 'documentType', term: ['article', 'page']}
 
 // locale
-{type: 'locale', value: 'de-DE'}
+{key: 'locale', term: 'de-DE'}
 
 // channelHandle
-{type: 'channelHandle', value: 'web'}
+{key: 'channelHandle', term: 'web'}
 
-// contentType {type: 'string', value: string || array}
-{type: 'contentType', value: 'regular'}
-{type: 'contentType', value: ['regular', 'news']}
+// contentType {key: 'string', term: string || array}
+{key: 'contentType', term: 'regular'}
 
-// notContentType{type: 'string', value: string || array}
-{type: 'notContentType', value: 'regular'}
-{type: 'notContentType', value: ['regular', 'news']}
+// not contentType {key: 'string', term: string || array}
+{not: {key: 'contentType', term: 'regular'}}
 
 // ownerId
-{type: 'ownerId', value: 1}
+{key: 'ownerId', term: 1}
 
 // channelId
-{type: 'channelId', value: 2}
+{key: 'channelId', term: 2}
 
 // dateRange
-{type: 'dateRange', key: 'created_at', from: '2016-01-23T15:00', to: '2015-04-05T20:00'}
+{key: "updatedAt", range: { gte: "2023-06-21T07:55:00.000Z", lte: "2023-06-23T07:55:00.000Z" }}
 
-// documentState (value: 'published', 'unpublished', 'deleted', 'draft', 'publishedWithDraft')
-{type: 'documentState', value: 'published'}
+// documentState (term: 'published', 'unpublished', 'deleted', 'draft', 'publishedWithDraft')
+{key: 'documentState', term: 'published'}
 
-// metadata (multiple key, value combinations possible)
-{type: 'metadata', key: 'foo', value: 'bar'}
-{type: 'metadata', key: 'foo', value: {exists: true}}
-{type: 'metadata', key: 'foo.bar.id', value: 42}
-{type: 'metadata', key: 'foo.bar.id', value: [42, 43]}
+// metadata
+{key: 'metadata.foo', term: 'bar'}
+{key: 'metadata.foo', exists: true}
+{key: 'metadata.teaserImage.mediaId', exists: true}
 {
-  type: 'metadata',
-  key: 'publicationDate',
-  value: {
-    dateFilter: {
-      from: '2015-04-05T20:00',
-      to: '2016-01-23T15:00'
-    }
-  }
+  key: 'metadata.publicationDate',
+  range: { gte: "2023-06-21T07:55:00.000Z", lte: "2023-06-23T07:55:00.000Z" }
 }
 
-// task (multiple taskName and taskValue combinations possible)
-// taskValue: 'todo', 'doing', 'done'
-{type: 'task', taskName: 'proofreading', taskValue: 'pending'},
-{type: 'task', taskName: 'review', taskValue: 'done'}
+// tasks
+{key: 'metadata.proofreading.state', taskValue: 'pending'}
+{key: 'metadata.review.state', taskValue: 'done'}
 
 // sortBy (multiple values possible)
-{type: 'sortBy', value: '-created_at'},
-{type: 'sortBy', value: 'title'}
-{type: 'sortBy', value: 'metadata.department'}
+{key: 'sortBy', term: '-created_at'}
+{key: 'sortBy', term: 'title'}
+{key: 'sortBy', term: 'metadata.department'}
 
-// reference (added-in release-2022-03)
-{type: 'reference', value: 'document:123'}
-{type: 'reference', value: 'image:W8GRbmju4grG'}
-{type: 'reference', value: 'file:A7JRa4mS3xBQ'}
-{type: 'reference', value: 'video:P2rSblad3aUS'}
+// reference
+{key: 'references', term: ['document:123']}
+{key: 'references', term: ['image:W8GRbmju4grG']}
+{key: 'references', term: ['file:A7JRa4mS3xBQ']}
+{key: 'references', term: ['video:P2rSblad3aUS']}
 
 // state for the mediaLibrary (added-in release-2022-07)
-{type: 'state', value: 'active'}
-{type: 'state', value: 'revoked'}
+{key: 'state', term: 'active'}
+{key: 'state', term: 'revoked'}
 
 // userInTeam (added in release-2023-03)
-{type: 'userInTeam', key: 'myTeamMetadataPropertyName'}
+{key: 'userInTeam', key: 'myTeamMetadataPropertyName'}
 ```
 
-## Filter Query Examples
+### Example - Filter by documentType
 
-#### Example 1 - filter by documentType
 ```js
 baseFilters: [
-  {type: 'documentType', value: 'article'}
+  {key: 'documentType', term: 'article'}
 ]
 ```
 
 This would reduce the search to only articles (no pages).
 
+### Example - Filter by metadata with key/value
 
-#### Example 2 - filter by metadata with key/value
 ```js
 baseFilters: [
-  {type: 'metadata', key: 'foo', value: 'bar'}
+  {key: 'metadata.foo', term: 'bar'}
 ]
 ```
 
 This would filter for only documents that have the value `bar` in the metadata field `foo`. You have to make sure that `foo` is an indexed metadata field.
 
-#### Example 3 - filter by metadata with objects
+### Example - Filter by metadata with objects
+
 ```js
 defaultQueries: [
-  {type: 'metadata', key: 'author.reference.id', value: 42}
+  {key: 'metadata.author.reference.id', term: 42}
 ]
 ```
 
-More complex metadata fields are indexed as an object (instead of key/value). In this case one can filter based on subproperties.
+More complex metadata fields are indexed as an object (instead of key/value). In this case one can filter based on subproberies.
 
 ```js
 // This is how the metadata field has been indexed into the search index
@@ -139,23 +130,23 @@ More complex metadata fields are indexed as an object (instead of key/value). In
 }
 ```
 
-This example would filter documents that have the value `42` in the metadata field `author` with propreties `reference.id`. You have to make sure that `author` is an indexed metadata field.
+This example would filter documents that have the value `42` in the metadata field `author` with properties `reference.id`. You have to make sure that `author` is an indexed metadata field.
 
+### Example 4 - filter by task
 
-#### Example 4 - filter by task
-```
+```js
 defaultQueries: [
-  {type: 'task', taskName: 'proofreading', taskValue: 'done'}
+  { key: "metadata.proofreading.state", term: "requested" }
 ]
 ```
 
 This would filter for only documents that have had a successful proofreading. The core only exposes the `proofreading` task, but you can define your own custom tasks. The values are `todo`, `doing`, `done` for the 3 states that a task can have.
 
+### Example 5 - filter by metadata with dataType keyword for mediaIndex
 
-#### Example 5 - filter by metadata with dataType keyword for mediaIndex
 ```js
 baseFilters: [
-  {type: 'metadata', key: 'transformed', value: true, dataType: 'boolean'}
+  {key: 'metadata.transformed', term: true }
 ]
 ```
 
