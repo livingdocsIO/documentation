@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Ticker Feature](https://github.com/livingdocsIO/livingdocs-editor/pull/7004)
 * [Document Previews](https://github.com/livingdocsIO/livingdocs-editor/pull/6978)
 * [Ticker Feature](https://github.com/livingdocsIO/livingdocs-server/pull/5797)
 * [Migrate some properties panel sections to Vue](https://github.com/livingdocsIO/livingdocs-editor/pull/6993)
