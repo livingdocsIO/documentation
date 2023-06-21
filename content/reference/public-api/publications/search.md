@@ -35,7 +35,8 @@ GET api/v1/publications/search
 |?languageGroupId|string|A GroupId used to fetch all translations of a document Using the ?languages param a document in a specific language can be fetched. Example: '?languageGroupId=47?language=de'|
 |?contentTypes|string|Comma separated list of content-types for which documents should be found. Content types are concatenated with OR. Example: 'regular,author'|
 |?filters|string|A JSON string which follows the [search filters query DSL]({{< ref "#search-filters" >}}).|
-|?fields|string|Filters which (comma separated) properties are included in the response. Defaults to 'systemdata,metadata,content' (no renditions). Use 'id' if you only want to retrieve the ids of the published documents. Useful (and faster) if you are fully synchronizing your frontend with the publication events.|
+|?sort|string|Comma separated list of sort properties. Any of the [Filter Fields]({{< ref "#filter-fields" >}}) can be used, and also sortDate, which can be defined using the [Publication Index]({{< ref "/guides/search/publication-index" >}}) config, or will be the [Visible Publication Date]({{< ref "/guides/editor/publish-control/visible-publication-date" >}}).<br>Most metadata properties can be used to sort, but not those indexed as 'text' or 'boolean'.<br>The sort order can be reversed by prefixing the property with a '-'.<br>Documents which don't have an indexed value will appear at the end of the results.|
+|?fields|string|Comma separated list of properties to include in the response. Defaults to 'systemdata,metadata,content' (no renditions). Use 'id' if you only want to retrieve the ids of the published documents. Useful (and faster) if you are fully synchronizing your frontend with the publication events.|
 |?limit|integer|A limit for how much published documents to retrieve. Defaults to 10. Max. 100.|
 |?offset|integer|An offset into the query. Useful when getting more than 100 results (pagination)|
 
