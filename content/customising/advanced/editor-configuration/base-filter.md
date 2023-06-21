@@ -104,7 +104,7 @@ defaultQueries: [
 ]
 ```
 
-More complex metadata fields are indexed as an object (instead of key/value). In this case one can filter based on subproberies.
+More complex metadata fields are indexed as an object (instead of key/value). In this case one can filter based on subproperties.
 
 ```js
 // This is how the metadata field has been indexed into the search index
