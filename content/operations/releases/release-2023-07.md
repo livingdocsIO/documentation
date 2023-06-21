@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency webpack from 5.87.0 to v5.88.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7014)
 * [fix(deps): update dependency sass from 1.63.4 to v1.63.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7012)
 * [Fix legacy search baseFilters](https://github.com/livingdocsIO/livingdocs-editor/pull/7010)
 * [Add config for 'hide from form' for li-external-id](https://github.com/livingdocsIO/livingdocs-server/pull/5799)
