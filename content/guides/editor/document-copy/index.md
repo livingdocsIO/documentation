@@ -52,7 +52,7 @@ Project config `/settings`
 copy: [
   {
     source: {
-      contentType: 'fantasy'
+      contentType: 'fantasy',
     },
     targets: [
       {
@@ -111,7 +111,7 @@ copy: [
         icon: 'web',
 
         // Path to a config of instructions to be applied when transforming one component to another
-        instructionPath: require.resolve('../conversions/basic-to-eternal-bliss.js')
+        instructionPath: require.resolve('../conversions/basic-to-eternal-bliss.js'),
 
         // Metadata config
         metadata: {
@@ -149,7 +149,7 @@ module.exports = {
   componentConversions: [
     {
       // Component with multiple directives
-      match: 'header'
+      match: 'header',
       result: [
         {
           component: 'subtitle',
@@ -158,7 +158,7 @@ module.exports = {
           }
         },
         {
-          component: 'headline'
+          component: 'headline',
           directives: {
             'title': {takeFrom: 'title'}
           }
