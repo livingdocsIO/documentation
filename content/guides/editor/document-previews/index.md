@@ -47,7 +47,7 @@ documentApi.registerPreviewFunction({
 
 With the functions registered, you now define the Document Previews in the project config on `editorSettings`.
 
-```
+```js
 // editorSettings
 {
   documentPreviews: [
