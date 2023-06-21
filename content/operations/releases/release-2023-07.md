@@ -106,45 +106,20 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [Fix Metadata Previews: properly remove message event listeners on destroyed](https://github.com/livingdocsIO/livingdocs-editor/pull/7001)
 * [Document Preview Functions](https://github.com/livingdocsIO/livingdocs-server/pull/5786)
 * [Publish Control: honor contentType.print config for button labels (deprecate prepare publish flow)](https://github.com/livingdocsIO/livingdocs-editor/pull/6999)
-* [fix(deps): update fastify (master) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/6971)
-* [fix(deps): update dependency webpack from 5.80.0 to v5.87.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6997)
 * [Prevent unsaved document data while processing remote updates](https://github.com/livingdocsIO/livingdocs-editor/pull/6934)
 * [Fix error when transforming component](https://github.com/livingdocsIO/livingdocs-editor/pull/6992)
-* [fix(deps): update dependency @livingdocs/framework from 25.0.1 to v25.0.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6994)
 * [improvement(publication state): Stacking](https://github.com/livingdocsIO/livingdocs-editor/pull/6991)
 * [Make indexing bulk requests more reliable](https://github.com/livingdocsIO/livingdocs-server/pull/5788)
-* [fix(deps): update dependency sass from 1.62.1 to v1.63.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6987)
-* [fix(deps): update dependency lru-cache from 9.1.2 to v10 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5787)
-* [fix(deps): update dependency style-loader from 3.3.2 to v3.3.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6982)
 * [Improve scroll behavior when moving components with shortcut](https://github.com/livingdocsIO/livingdocs-editor/pull/6961)
-* [fix(deps): update dependency @fastify/reply-from from 9.0.1 to v9.0.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6974)
-* [fix(deps): update dependency css-loader from 6.7.3 to v6.7.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6977)
-* [chore(deps): update dependency jose from 4.14.1 to v4.14.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6967)
-* [fix(deps): update dependency c8 from 7.14.0 to v8 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5784)
 * [Distribution Planning: show team column in proposal/planned tables](https://github.com/livingdocsIO/livingdocs-editor/pull/6851)
-* [Use `$t()` instead of undefined `this.$t()` in `li-unsaved-dialog`](https://github.com/livingdocsIO/livingdocs-editor/pull/6959)
 * [Component Move: scroll components into view after move by keyboard](https://github.com/livingdocsIO/livingdocs-editor/pull/6940)
-* [fix(deps): update dependency aws-sdk from 2.1395.0 to v2.1396.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5781)
-* [fix(deps): update fastify (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6958)
-* [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/5780)
 * [Canvas UI: Directive Areas w/ progress bar, doc-image, doc-link](https://github.com/livingdocsIO/livingdocs-editor/pull/6913)
 * [fix/Publish Control Status](https://github.com/livingdocsIO/livingdocs-editor/pull/6955)
-* [Remove `useAsTitle`](https://github.com/livingdocsIO/livingdocs-server/pull/5763)
-* [Remove `useAsTitle`](https://github.com/livingdocsIO/livingdocs-editor/pull/6949)
-* [fix(deps): update dependency aws-sdk from 2.1394.0 to v2.1395.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5777)
-* [fix(deps): update dependency cloudinary from 1.37.0 to v1.37.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5775)
 * [Do not expose internal elasticsearch mapping keys to Search DSL](https://github.com/livingdocsIO/livingdocs-server/pull/5773)
-* [fix(deps): update dependency aws-sdk from 2.1393.0 to v2.1394.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5769)
-* [fix(deps): update dependency @livingdocs/framework from 24.15.0 to v24.15.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5768)
-* [Upgrade `socket.io-parser` and `engine.io` to fix security vulnerabilities](https://github.com/livingdocsIO/livingdocs-editor/pull/6951)
-* [Remove seed api](https://github.com/livingdocsIO/livingdocs-server/pull/5767)
-* [fix(deps): update dependency cypress from 12.13.0 to v12.14.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6948)
-* [Upgrade `vm2` to fix security vulnerabilities](https://github.com/livingdocsIO/livingdocs-server/pull/5764)
 * [Public API Search Filters](https://github.com/livingdocsIO/livingdocs-server/pull/5744)
 * [Fix display filters that are showing as active without a selected value](https://github.com/livingdocsIO/livingdocs-editor/pull/6945)
 * [Persist UTC format for embargo date](https://github.com/livingdocsIO/livingdocs-editor/pull/6944)
 * [Improve data migration hasActiveRevisionsWithDesign query](https://github.com/livingdocsIO/livingdocs-server/pull/5755)
-* [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/5754)
 * [Cleanup postgres tables](https://github.com/livingdocsIO/livingdocs-server/pull/5751)
 * [Add Api endpoint for incoming references for drafts](https://github.com/livingdocsIO/livingdocs-server/pull/5743)
 * [don't overwrite url_to_published_content in desk-net api](https://github.com/livingdocsIO/livingdocs-server/pull/5748)
@@ -154,27 +129,15 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [Support new baseFilters schema in project config](https://github.com/livingdocsIO/livingdocs-editor/pull/6939)
 * [Support new baseFilters schema in project config](https://github.com/livingdocsIO/livingdocs-server/pull/5742)
 * [Translatable `li-tree` plugin](https://github.com/livingdocsIO/livingdocs-server/pull/5726)
-* [fix(deps): update dependency aws-sdk from 2.1389.0 to v2.1390.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5739)
-* [fix(deps): update dependency aws-sdk from 2.1388.0 to v2.1389.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5737)
 * [Hide distributions from removed distribution channels](https://github.com/livingdocsIO/livingdocs-editor/pull/6914)
-* [fix(deps): update dependency @4tw/cypress-drag-drop from 2.2.3 to v2.2.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6936)
-* [fix(deps): update dependency lru-cache from 9.1.1 to v9.1.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5736)
-* [fix(deps): update dependency aws-sdk from 2.1386.0 to v2.1388.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5735)
 * [fix(redirect): state given over URL](https://github.com/livingdocsIO/livingdocs-editor/pull/6931)
 * [Update distributions optimistically](https://github.com/livingdocsIO/livingdocs-editor/pull/6924)
 * [Dashboard language filter for `li-tree` document selection](https://github.com/livingdocsIO/livingdocs-editor/pull/6912)
 * [Add reactivity for `li-tasks-toolbar-action` for tasks updates](https://github.com/livingdocsIO/livingdocs-editor/pull/6923)
 * [Fix Editable Teaser override clearing](https://github.com/livingdocsIO/livingdocs-editor/pull/6925)
-* [fix(deps): update dependency https-proxy-agent to v7.0.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6917)
-* [fix(deps): update dependency c8 from 7.13.0 to v7.14.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5733)
-* [fix(deps): update dependency cypress from 12.12.0 to v12.13.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6905)
 * [Set distribution planning metadata value to null when removing last distribution](https://github.com/livingdocsIO/livingdocs-editor/pull/6921)
-* [fix(deps): update dependency aws-sdk from 2.1384.0 to v2.1386.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5731)
 * [Pass oembed params to the parseResponse function of the oembed provider](https://github.com/livingdocsIO/livingdocs-server/pull/5721)
-* [fix(deps): update dependency nodemailer from 6.9.2 to v6.9.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5734)
-* [fix(deps): update dependency pg from 8.10.0 to v8.11.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5713)
 * [Support camel case in systemdata for a Data Migration](https://github.com/livingdocsIO/livingdocs-server/pull/5727)
-* [Remove proposals feature](https://github.com/livingdocsIO/livingdocs-editor/pull/6910)
 * [Make `li-tree` translatable](https://github.com/livingdocsIO/livingdocs-editor/pull/6879)
 * [fix(li-publish-control-embargo): respect setTimeout max delay value](https://github.com/livingdocsIO/livingdocs-editor/pull/6906)
 * [Don't check for table dashboard updates when using dashboard source](https://github.com/livingdocsIO/livingdocs-editor/pull/6902)
@@ -194,28 +157,21 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [Fix kanban board initial search](https://github.com/livingdocsIO/livingdocs-editor/pull/6866)
 * [fix(home screen): show tasks again after query optimization](https://github.com/livingdocsIO/livingdocs-editor/pull/6865)
 * [`li-tree` design overhaul](https://github.com/livingdocsIO/livingdocs-editor/pull/6842)
-* [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/5716)
-* [fix(deps): update dependency @fastify/reply-from from 9.0.1 to v9.0.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6859)
 * [ViewManager refactoring](https://github.com/livingdocsIO/livingdocs-editor/pull/6841)
 * [My Tasks: shorten query by omitting the contentType](https://github.com/livingdocsIO/livingdocs-editor/pull/6850)
 * [Buy-In: consider editable config in dashboard cell](https://github.com/livingdocsIO/livingdocs-editor/pull/6853)
 * [Home Screen My Tasks: load tasks only if feature enabled](https://github.com/livingdocsIO/livingdocs-editor/pull/6852)
-* [fix(deps): update opentelemetry from 0.39.0 to v0.39.1 (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/5711)
-* [fix(deps): update dependency semver from 7.5.0 to v7.5.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6849)
 * [Allow removal of last distribution from a document on metadata form](https://github.com/livingdocsIO/livingdocs-editor/pull/6804)
 * [fix(distribution planning): don't show proposals section when not used](https://github.com/livingdocsIO/livingdocs-editor/pull/6844)
 * [Make dev string formatter more reliable with custom input](https://github.com/livingdocsIO/livingdocs-server/pull/5707)
-* [fix(deps): update dependency aws-sdk from 2.1375.0 to v2.1377.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5697)
 * [Fix retresco enrich date comparison](https://github.com/livingdocsIO/livingdocs-server/pull/5703)
 * [fix(distribution planning): don't show time when add to planning for channels without time](https://github.com/livingdocsIO/livingdocs-editor/pull/6843)
 * [Fix Legacy Dashboards: initial load takes cached filter value into account now](https://github.com/livingdocsIO/livingdocs-editor/pull/6830)
 * [fix(translation): layout search placeholder](https://github.com/livingdocsIO/livingdocs-editor/pull/6836)
 * [Fix content type filters for secondary channels](https://github.com/livingdocsIO/livingdocs-server/pull/5698)
 * [Do not include srcissors dev dependencies in editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6837)
-* [fix(deps): update dependency cypress from 12.11.0 to v12.12.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6819)
 * [Fix etc in li-document-best-date](https://github.com/livingdocsIO/livingdocs-editor/pull/6824)
 * [Fix: disable publish buttons in publish control if document is locked](https://github.com/livingdocsIO/livingdocs-editor/pull/6828)
-* [Working Title: do not enforce working title when displayTitlePattern is set](https://github.com/livingdocsIO/livingdocs-editor/pull/6796)
 * [Distribution improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6808)
 * [🐞 Show Dashboard when ES and PG is in an inconsistent state](https://github.com/livingdocsIO/livingdocs-editor/pull/6820)
 * [Support a server-side logout to invalidate the session](https://github.com/livingdocsIO/livingdocs-editor/pull/6813)
@@ -223,36 +179,23 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [Disable table dashboard update polling by default](https://github.com/livingdocsIO/livingdocs-editor/pull/6807)
 * [Fix error when removing page from issue and improve E2E tests](https://github.com/livingdocsIO/livingdocs-editor/pull/6814)
 * [🐞 Fix Broken Navigation after MediaLibrary Asset Upload](https://github.com/livingdocsIO/livingdocs-editor/pull/6812)
-* [fix(deps): update dependency unsplash-js from 7.0.15 to v7.0.16 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5688)
-* [Remove unused behavior file](https://github.com/livingdocsIO/livingdocs-editor/pull/6803)
 * [Fix/Collab Cards](https://github.com/livingdocsIO/livingdocs-editor/pull/6810)
-* [fix(deps): update dependency https-proxy-agent from 6.0.0 to v6.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6806)
-* [fix(deps): update dependency aws-sdk from 2.1372.0 to v2.1373.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5687)
-* [fix(deps): update dependency http-proxy-agent from 6.0.0 to v6.0.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6805)
 * [Check if document is published before accessing properties in Retresco enrichment](https://github.com/livingdocsIO/livingdocs-server/pull/5682)
 * [fix(table dashboard): Language Cell](https://github.com/livingdocsIO/livingdocs-editor/pull/6801)
-* [Remove `displayTitlePattern` from article content type in Service](https://github.com/livingdocsIO/livingdocs-server/pull/5678)
 * [fix(tasks): Deadline](https://github.com/livingdocsIO/livingdocs-editor/pull/6791)
 * [Fix/Comments With Mentions](https://github.com/livingdocsIO/livingdocs-editor/pull/6794)
 * [Fix missing translations](https://github.com/livingdocsIO/livingdocs-editor/pull/6780)
 * [Enhance content type & media type sync logs with project id context](https://github.com/livingdocsIO/livingdocs-server/pull/5674)
 * [♻️ Remove asset server from example-server](https://github.com/livingdocsIO/livingdocs-server/pull/5673)
-* [fix(deps): update dependency aws-sdk from 2.1370.0 to v2.1372.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5668)
-* [fix(deps): update dependency https-proxy-agent from 5.0.1 to v6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/6790)
 * [Refactor project config cache sync](https://github.com/livingdocsIO/livingdocs-server/pull/5665)
 * [fix(document createion flow): still disabled in channels](https://github.com/livingdocsIO/livingdocs-editor/pull/6781)
-* [fix(deps): update dependency pusher from 5.1.2 to v5.1.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5667)
 * [Fix/Confirm Button](https://github.com/livingdocsIO/livingdocs-editor/pull/6779)
 * [Remove realtime updates from use_issue and watch metadata updates instead](https://github.com/livingdocsIO/livingdocs-editor/pull/6750)
-* [fix(deps): update dependency aws-sdk from 2.1369.0 to v2.1370.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5663)
 * [Improvement/dashboards and tables](https://github.com/livingdocsIO/livingdocs-editor/pull/6754)
-* [fix(deps): update dependency cloudinary from 1.36.2 to v1.36.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5660)
 * [Improvement/Release Polish Dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/6775)
-* [Access control improvements - Part 3](https://github.com/livingdocsIO/livingdocs-server/pull/5657)
 * [Add workaround to allow republish when data migrations do not apply changes to documents](https://github.com/livingdocsIO/livingdocs-server/pull/5653)
 * [Fix occupations again, remove duplicate months](https://github.com/livingdocsIO/livingdocs-server/pull/5652)
 * [Design/Release Polish and Fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/6771)
-* [Update defaultBranch to release-2023-07](https://github.com/livingdocsIO/livingdocs-editor/pull/6770)
 
 ## Intro
 
@@ -264,24 +207,50 @@ To learn about the necessary actions to update Livingdocs to `release-2023-07`, 
 ## Webinar
 
 * Feature Webinar Recording: **TODO**
-* Feature Webinar Documentation: **TODO**
+* Feature Webinar Slides: **TODO**
 * Dev Webinar Recording: **TODO**
 * Dev Webinar Slides: **TODO**
 * [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
-## System Requirements
-
 ### Suggested
-
-TODO
+|Name|Version|
+|-|-|
+|Node|18|
+|NPM|8|
+|Postgres|15|
+|Elasticsearch<br/>OpenSearch|8.x<br/>v2.3.0|
+|Redis|7|
+|Livingdocs Server Docker Image|livingdocs/server-base:18|
+|Livingdocs Editor Docker Image|livingdocs/editor-base:18|
+|Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
 
 ### Minimal
-
-TODO
+|Name|Version|
+|-|-|
+|Node|16|
+|NPM|8|
+|Postgres|12|
+|Elasticsearch<br/>OpenSearch|7.x<br/>1|
+|Redis|6.2|
+|Livingdocs Server Docker Image|livingdocs/server-base:16.3|
+|Livingdocs Editor Docker Image|livingdocs/editor-base:16.3|
+|Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
 
 ## Breaking Changes 🔥
 
 TODO - with PRs (for internal use)
+
+### `useAsTitle`
+
+* [Remove `useAsTitle`](https://github.com/livingdocsIO/livingdocs-server/pull/5763)
+* [Remove `useAsTitle`](https://github.com/livingdocsIO/livingdocs-editor/pull/6949)
+
+### Seed Api
+* [Remove seed api](https://github.com/livingdocsIO/livingdocs-server/pull/5767)
+
+### Proposals feature
+* [Remove proposals feature](https://github.com/livingdocsIO/livingdocs-editor/pull/6910)
+
 
 ### Migrate the Postgres Database :fire:
 
@@ -335,9 +304,44 @@ TODO add new config example
 
 TODO - no PRs as customers have no access to code
 
+### Access Control
+* [Access control improvements - Part 3](https://github.com/livingdocsIO/livingdocs-server/pull/5657)
+
+
+### Working Title
+* [Working Title: do not enforce working title when displayTitlePattern is set](https://github.com/livingdocsIO/livingdocs-editor/pull/6796)
+* [Remove `displayTitlePattern` from article content type in Service](https://github.com/livingdocsIO/livingdocs-server/pull/5678)
+
+
 ## Bugfixes
 
 TODO - no PRs as customers have no access to code
+
+* [Use `$t()` instead of undefined `this.$t()` in `li-unsaved-dialog`](https://github.com/livingdocsIO/livingdocs-editor/pull/6959)
+
+
+## Vulnerability Patches
+
+We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
+
+### Livingdocs Server
+This release we have patched the following vulnerabilities in the Livingdocs Server:
+* [CVE-2023-32313](https://github.com/advisories/GHSA-p5gc-c584-jj6v) patched in `vm2` v3.9.19
+* [CVE-2023-32314](https://github.com/advisories/GHSA-whpj-8f3w-67p5) patched in `vm2` v3.9.19
+
+We are aware of the following vulnerabilities in the Livingdocs Server:
+* [CVE-2023-26102](https://cwe.mitre.org/data/definitions/1321.html) has yet to be patched by `rangy` but we have proposed a fix in [this PR](https://github.com/timdown/rangy/pull/482)
+  This vulnerability is not exploitable in the Livingdocs Server.
+
+### Livingdocs Editor
+This release we have patched the following vulnerabilities in the Livingdocs Editor:
+* [CVE-2023-32695](https://github.com/advisories/GHSA-cqmj-92xf-r6r9) patched in `socket.io-parser` v4.2.4
+* [CVE-2023-31125](https://github.com/advisories/GHSA-q9mw-68c2-j6m5) patched in `engine.io` v6.4.2
+
+We are aware of the following vulnerabilities in the Livingdocs Editor:
+* [CVE-2023-26102](https://cwe.mitre.org/data/definitions/1321.html) has yet to be patched by `rangy` but we have proposed a fix in [this PR](https://github.com/timdown/rangy/pull/482)
+  This vulnerability is not exploitable in the Livingdocs Editor because `rangy` module is scoped in the `livingdocs-framework` and not exposed to the users.
+* [CVE-2023-26116](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26118](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26117](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2022-25869](https://cwe.mitre.org/data/definitions/79.html), [CVE-2022-25844](https://cwe.mitre.org/data/definitions/770.html) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
 
 ## Patches
 
