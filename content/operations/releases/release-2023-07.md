@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sanitize-html from 2.10.0 to v2.11.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7013)
 * [Migrate document copy to new project config](https://github.com/livingdocsIO/livingdocs-server/pull/5805)
 * [fix(example servers): make sure teaser components outermost element i…](https://github.com/livingdocsIO/livingdocs-server/pull/5802)
 * [fix(deps): update dependency sass from 1.63.5 to v1.63.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7015)
