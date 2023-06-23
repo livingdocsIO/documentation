@@ -436,6 +436,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.50): fix(li-form-select): avoid dropdowns in text formatting popover to be cut off
 - [v94.10.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.49): fix(metadata preview): properly remove iframe message event listeners when unmounting the preview iframe
 - [v94.10.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.48): fix(indexing): Fix queue log formatting on indexing dashboard
 - [v94.10.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.47): fix(li-unsaved-dialog): Use `$t()` instead of undefined `this.$t()`, when adding translations to vue template
