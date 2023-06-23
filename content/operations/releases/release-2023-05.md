@@ -425,6 +425,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v226.3.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.21): chore(media-library): Return latest entry after update
 - [v226.3.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.20): fix(indexing): Add try/catch around elasticsearch payload creation to prevent full bulk failures if one document is faulty
 - [v226.3.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.19): fix(dependencies): Upgrade `vm2` and `@livingdocs/framework` to fix security vulnerabilities CVE-2023-32314
 - [v226.3.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.18): chore(data-migrations): Support new date range structure on data migration document filter query
