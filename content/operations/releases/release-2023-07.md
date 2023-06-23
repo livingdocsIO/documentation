@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Debounce `_fetchDocumentList()` call from displayFilter changes](https://github.com/livingdocsIO/livingdocs-editor/pull/7011)
 * [Fix text formatting dropdown](https://github.com/livingdocsIO/livingdocs-editor/pull/7006)
 * [Publish vs Release labels](https://github.com/livingdocsIO/livingdocs-editor/pull/7018)
 * [fix: use correct uiModel for embedded properties panel](https://github.com/livingdocsIO/livingdocs-editor/pull/7019)
