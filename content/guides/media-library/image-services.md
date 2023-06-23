@@ -282,7 +282,7 @@ const myImageService = {
   // This is not a real-world example. It just rewrites
   // the url to go through myproxy.com and embeds the width
   // and image url in the path of the generated url.
-  getUrl: function (imageUrl, {crop, width}) {
+  getUrl: function (imageUrl, {crop, width, originalDimensions}) {
     imageUrl = imageUrl || ''
 
     return `https://myproxy.com/w${width}/${imageUrl}`
