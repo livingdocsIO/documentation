@@ -1,0 +1,3 @@
+{{- $release := .Get 0 -}}
+{{- $href := print "/operations/releases/" $release "/" -}}
+<a href="{{ $href }}"><code>{{ $release }}</code></a>
