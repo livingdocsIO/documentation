@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 25.0.3 to v25.0.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7037)
 * [Add more multi-language support for config labels that I missed](https://github.com/livingdocsIO/livingdocs-editor/pull/7032)
 * [Debounce `_fetchDocumentList()` call from displayFilter changes](https://github.com/livingdocsIO/livingdocs-editor/pull/7011)
 * [Fix text formatting dropdown](https://github.com/livingdocsIO/livingdocs-editor/pull/7006)
