@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix relative date formatting](https://github.com/livingdocsIO/livingdocs-editor/pull/7026)
 * [Optimize Scroll into View of focused components](https://github.com/livingdocsIO/livingdocs-editor/pull/7024)
 * [fix(deps): update dependency @livingdocs/framework from 25.0.3 to v25.0.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7037)
 * [Add more multi-language support for config labels that I missed](https://github.com/livingdocsIO/livingdocs-editor/pull/7032)
