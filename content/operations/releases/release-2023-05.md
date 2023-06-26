@@ -437,6 +437,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.54): fix(li-publish-control-status): calculate if document is issue member independently of editor depenency
 - [v94.10.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.53): chore(legacy-search): Skip tests that call `_fetchDocumentList`
 - [v94.10.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.52): fix(dates): Fix relative date formatting and write tests for it
 - [v94.10.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.51): fix(issue-management): show release in place of publication if page is part of issue type
