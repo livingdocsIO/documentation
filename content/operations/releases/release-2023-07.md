@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Check version when updating media library metadata to prevent overwriting data modified using the Public API](https://github.com/livingdocsIO/livingdocs-editor/pull/7035)
 * [Show publish / release status in the table dashboard correctly](https://github.com/livingdocsIO/livingdocs-editor/pull/7028)
 * [Fix relative date formatting](https://github.com/livingdocsIO/livingdocs-editor/pull/7026)
 * [Optimize Scroll into View of focused components](https://github.com/livingdocsIO/livingdocs-editor/pull/7024)
