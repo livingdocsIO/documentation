@@ -171,7 +171,22 @@ TODO @ajwild
 
 The copy target config has been extended to support an icon and a label. [Learn more]({{< ref "/guides/editor/document-copy/index.md#setup-config" >}})
 
-TODO @ivester
+Copy config in project config:
+
+```js
+copy: [
+  {
+    source: {...},
+    targets: [
+      {
+        label: 'Web Article',
+        icon: 'web',
+        ...
+      }
+    ]
+  }
+]
+```
 
 ### Dashboard language filter for li-tree document selection
 
@@ -181,7 +196,19 @@ TODO @dfreier
 
 The Filters ListV2 have been extended to support multiple selections. The selected values are `OR` combined in the search query. [Learn more]({{< ref "/guides/editor/custom-dashboard-filters/index.md#example-multi-value-filter" >}})
 
-TODO @ivester @marcbachmann
+Configure a multi-value filter:
+
+```js
+liEditor.searchFilters.registerListV2('MultiSelectV2Filter', {
+  multiple: true, // allow multiple selections
+  datasource: {
+    ...
+  },
+  ...
+})
+```
+
+TODO @marcbachmann
 
 ### Document Preview
 
@@ -203,7 +230,30 @@ TODO @dfreier
 
 With this release, we introduced multi-language support for the UI and label config. Currently we support English and German as UI languages [Learn more]({{< ref "/content/guides/editor/multi-language-ui/index.md" >}})
 
-TODO @ivester
+Set UI language in editor config:
+
+```js
+app: {
+  locale: 'de'
+}
+```
+
+Configure multi language metadata plugin label in project config:
+
+```js
+metadata: [
+  {
+    handle: 'category',
+    ui: {
+      label: {
+        en: 'Category',
+        de: 'Kategorie'
+      },
+    },
+    ...
+  },
+]
+```
 
 ## Improvements
 
@@ -234,10 +284,6 @@ TODO @marcbachmann
 ### Improve scroll into view behavior
 
 TODO @dfreier @benib
-
-### Publish vs Release labels
-
-TODO @ivester
 
 ### Working Title
 
