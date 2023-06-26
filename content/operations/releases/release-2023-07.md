@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Vue Component Registry: seal registerComponent isCoreComponent upport after core components are registered](https://github.com/livingdocsIO/livingdocs-editor/pull/7045)
 * [Upgrade to node 20, drop node 16](https://github.com/livingdocsIO/livingdocs-server/pull/5809)
 * [Upgrade to node 20, drop node 16](https://github.com/livingdocsIO/livingdocs-editor/pull/7044)
 * [fix(framework): update framework to 25.0.6](https://github.com/livingdocsIO/livingdocs-editor/pull/7041)
