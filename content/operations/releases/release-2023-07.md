@@ -27,7 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: We don't guarantee stable APIs. They can still change until the official release
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
-## Tech Release Notes Creation Guidelines (TODO move to release cut checklist)
+## Tech Release Notes Creation Guidelines (// TODO move to release cut checklist)
 
 - System Requirements
   - Suggested
@@ -54,6 +54,10 @@ These are the release notes of the upcoming release (pull requests merged to mas
   - link to documentation (if there is any)
 - Bugfixes :beetle:
   - Bugfixes are fixes made during the release cycle
+  - List bugfixes which
+    - have been reported by customers
+    - which have fixed some major broken functionality (if we fixed an console error which most likely did not affect user's or developer's work then we don't need to list it here)
+    - which is a bug that existed in last release (sometimes we may break something on master during the release development and then fix it right away and the broken functionality never makes it into the release)
   - Description
 - Patches
   - Bugfixes are fixes made after this release and are backported into this release
@@ -95,107 +99,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [fix(deps): update dependency cypress from 12.14.0 to v12.15.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7009)
 * [Replace various test domains with example.com](https://github.com/livingdocsIO/livingdocs-server/pull/5800)
 * [Support version check when updating media](https://github.com/livingdocsIO/livingdocs-server/pull/5793)
-* [Ticker Feature](https://github.com/livingdocsIO/livingdocs-editor/pull/7004)
-* [Document Previews](https://github.com/livingdocsIO/livingdocs-editor/pull/6978)
-* [Ticker Feature](https://github.com/livingdocsIO/livingdocs-server/pull/5797)
-* [Migrate some properties panel sections to Vue](https://github.com/livingdocsIO/livingdocs-editor/pull/6993)
-* [Log deprecation with removal date for behaveAsLiImage configuration](https://github.com/livingdocsIO/livingdocs-editor/pull/7003)
-* [Fix langLocale aliases in the draft search](https://github.com/livingdocsIO/livingdocs-server/pull/5796)
-* [Distribution Planning Screens Polish](https://github.com/livingdocsIO/livingdocs-editor/pull/6904)
-* [Support significantPublicationDate on document import](https://github.com/livingdocsIO/livingdocs-server/pull/5794)
-* [Fix Metadata Previews: properly remove message event listeners on destroyed](https://github.com/livingdocsIO/livingdocs-editor/pull/7001)
-* [Document Preview Functions](https://github.com/livingdocsIO/livingdocs-server/pull/5786)
-* [Publish Control: honor contentType.print config for button labels (deprecate prepare publish flow)](https://github.com/livingdocsIO/livingdocs-editor/pull/6999)
-* [Prevent unsaved document data while processing remote updates](https://github.com/livingdocsIO/livingdocs-editor/pull/6934)
-* [Fix error when transforming component](https://github.com/livingdocsIO/livingdocs-editor/pull/6992)
-* [improvement(publication state): Stacking](https://github.com/livingdocsIO/livingdocs-editor/pull/6991)
-* [Make indexing bulk requests more reliable](https://github.com/livingdocsIO/livingdocs-server/pull/5788)
-* [Improve scroll behavior when moving components with shortcut](https://github.com/livingdocsIO/livingdocs-editor/pull/6961)
-* [Distribution Planning: show team column in proposal/planned tables](https://github.com/livingdocsIO/livingdocs-editor/pull/6851)
-* [Component Move: scroll components into view after move by keyboard](https://github.com/livingdocsIO/livingdocs-editor/pull/6940)
-* [Canvas UI: Directive Areas w/ progress bar, doc-image, doc-link](https://github.com/livingdocsIO/livingdocs-editor/pull/6913)
-* [fix/Publish Control Status](https://github.com/livingdocsIO/livingdocs-editor/pull/6955)
-* [Do not expose internal elasticsearch mapping keys to Search DSL](https://github.com/livingdocsIO/livingdocs-server/pull/5773)
-* [Public API Search Filters](https://github.com/livingdocsIO/livingdocs-server/pull/5744)
-* [Fix display filters that are showing as active without a selected value](https://github.com/livingdocsIO/livingdocs-editor/pull/6945)
-* [Persist UTC format for embargo date](https://github.com/livingdocsIO/livingdocs-editor/pull/6944)
-* [Improve data migration hasActiveRevisionsWithDesign query](https://github.com/livingdocsIO/livingdocs-server/pull/5755)
-* [Cleanup postgres tables](https://github.com/livingdocsIO/livingdocs-server/pull/5751)
-* [Add Api endpoint for incoming references for drafts](https://github.com/livingdocsIO/livingdocs-server/pull/5743)
-* [don't overwrite url_to_published_content in desk-net api](https://github.com/livingdocsIO/livingdocs-server/pull/5748)
-* [fix: extend openIdConnect with state](https://github.com/livingdocsIO/livingdocs-server/pull/5741)
-* [fix(properties panel): Spacings](https://github.com/livingdocsIO/livingdocs-editor/pull/6941)
-* [fix(issue card): Header](https://github.com/livingdocsIO/livingdocs-editor/pull/6942)
-* [Support new baseFilters schema in project config](https://github.com/livingdocsIO/livingdocs-editor/pull/6939)
-* [Support new baseFilters schema in project config](https://github.com/livingdocsIO/livingdocs-server/pull/5742)
-* [Translatable `li-tree` plugin](https://github.com/livingdocsIO/livingdocs-server/pull/5726)
-* [Hide distributions from removed distribution channels](https://github.com/livingdocsIO/livingdocs-editor/pull/6914)
-* [fix(redirect): state given over URL](https://github.com/livingdocsIO/livingdocs-editor/pull/6931)
-* [Update distributions optimistically](https://github.com/livingdocsIO/livingdocs-editor/pull/6924)
-* [Dashboard language filter for `li-tree` document selection](https://github.com/livingdocsIO/livingdocs-editor/pull/6912)
-* [Add reactivity for `li-tasks-toolbar-action` for tasks updates](https://github.com/livingdocsIO/livingdocs-editor/pull/6923)
-* [Fix Editable Teaser override clearing](https://github.com/livingdocsIO/livingdocs-editor/pull/6925)
-* [Set distribution planning metadata value to null when removing last distribution](https://github.com/livingdocsIO/livingdocs-editor/pull/6921)
-* [Pass oembed params to the parseResponse function of the oembed provider](https://github.com/livingdocsIO/livingdocs-server/pull/5721)
-* [Support camel case in systemdata for a Data Migration](https://github.com/livingdocsIO/livingdocs-server/pull/5727)
-* [Make `li-tree` translatable](https://github.com/livingdocsIO/livingdocs-editor/pull/6879)
-* [fix(li-publish-control-embargo): respect setTimeout max delay value](https://github.com/livingdocsIO/livingdocs-editor/pull/6906)
-* [Don't check for table dashboard updates when using dashboard source](https://github.com/livingdocsIO/livingdocs-editor/pull/6902)
-* [Fix: set metadata title (useAsTitle) property during creation](https://github.com/livingdocsIO/livingdocs-editor/pull/6894)
-* [Display Filter Bar: wait for async filters to be loaded before checking usability of listV2 filters](https://github.com/livingdocsIO/livingdocs-editor/pull/6896)
-* [Search DSL](https://github.com/livingdocsIO/livingdocs-server/pull/5715)
-* [desk-net status sync back without config](https://github.com/livingdocsIO/livingdocs-server/pull/5722)
-* [Fix Editable Teasers: Correctly apply overrides when inserting from clipboard](https://github.com/livingdocsIO/livingdocs-editor/pull/6891)
-* [Improvement/User Avatar Sizes](https://github.com/livingdocsIO/livingdocs-editor/pull/6862)
-* [Improvement/Metadata View](https://github.com/livingdocsIO/livingdocs-editor/pull/6884)
-* [Publish Control: don't show publish/unpublish buttons in wrong state until panel reopen](https://github.com/livingdocsIO/livingdocs-editor/pull/6885)
-* [Fix/Teaser Preview](https://github.com/livingdocsIO/livingdocs-editor/pull/6880)
-* [Display Filters: don't render empty container for listV2 filters with no options](https://github.com/livingdocsIO/livingdocs-editor/pull/6873)
-* [Fix User Reports: show concurrents only when enabled](https://github.com/livingdocsIO/livingdocs-server/pull/5718)
-* [fix(billing): show concurrents only if reported](https://github.com/livingdocsIO/livingdocs-editor/pull/6864)
-* [Distribution Planning: fix return to distribution planning after article open](https://github.com/livingdocsIO/livingdocs-editor/pull/6861)
-* [Fix kanban board initial search](https://github.com/livingdocsIO/livingdocs-editor/pull/6866)
-* [fix(home screen): show tasks again after query optimization](https://github.com/livingdocsIO/livingdocs-editor/pull/6865)
-* [`li-tree` design overhaul](https://github.com/livingdocsIO/livingdocs-editor/pull/6842)
-* [ViewManager refactoring](https://github.com/livingdocsIO/livingdocs-editor/pull/6841)
-* [My Tasks: shorten query by omitting the contentType](https://github.com/livingdocsIO/livingdocs-editor/pull/6850)
-* [Buy-In: consider editable config in dashboard cell](https://github.com/livingdocsIO/livingdocs-editor/pull/6853)
-* [Home Screen My Tasks: load tasks only if feature enabled](https://github.com/livingdocsIO/livingdocs-editor/pull/6852)
-* [Allow removal of last distribution from a document on metadata form](https://github.com/livingdocsIO/livingdocs-editor/pull/6804)
-* [fix(distribution planning): don't show proposals section when not used](https://github.com/livingdocsIO/livingdocs-editor/pull/6844)
-* [Make dev string formatter more reliable with custom input](https://github.com/livingdocsIO/livingdocs-server/pull/5707)
-* [Fix retresco enrich date comparison](https://github.com/livingdocsIO/livingdocs-server/pull/5703)
-* [fix(distribution planning): don't show time when add to planning for channels without time](https://github.com/livingdocsIO/livingdocs-editor/pull/6843)
-* [Fix Legacy Dashboards: initial load takes cached filter value into account now](https://github.com/livingdocsIO/livingdocs-editor/pull/6830)
-* [fix(translation): layout search placeholder](https://github.com/livingdocsIO/livingdocs-editor/pull/6836)
-* [Fix content type filters for secondary channels](https://github.com/livingdocsIO/livingdocs-server/pull/5698)
-* [Do not include srcissors dev dependencies in editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6837)
-* [Fix etc in li-document-best-date](https://github.com/livingdocsIO/livingdocs-editor/pull/6824)
-* [Fix: disable publish buttons in publish control if document is locked](https://github.com/livingdocsIO/livingdocs-editor/pull/6828)
-* [Distribution improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/6808)
-* [🐞 Show Dashboard when ES and PG is in an inconsistent state](https://github.com/livingdocsIO/livingdocs-editor/pull/6820)
-* [Support a server-side logout to invalidate the session](https://github.com/livingdocsIO/livingdocs-editor/pull/6813)
-* [Support a server-side logout to invalidate the session](https://github.com/livingdocsIO/livingdocs-server/pull/5691)
-* [Disable table dashboard update polling by default](https://github.com/livingdocsIO/livingdocs-editor/pull/6807)
-* [Fix error when removing page from issue and improve E2E tests](https://github.com/livingdocsIO/livingdocs-editor/pull/6814)
-* [🐞 Fix Broken Navigation after MediaLibrary Asset Upload](https://github.com/livingdocsIO/livingdocs-editor/pull/6812)
-* [Fix/Collab Cards](https://github.com/livingdocsIO/livingdocs-editor/pull/6810)
-* [Check if document is published before accessing properties in Retresco enrichment](https://github.com/livingdocsIO/livingdocs-server/pull/5682)
-* [fix(table dashboard): Language Cell](https://github.com/livingdocsIO/livingdocs-editor/pull/6801)
-* [fix(tasks): Deadline](https://github.com/livingdocsIO/livingdocs-editor/pull/6791)
-* [Fix/Comments With Mentions](https://github.com/livingdocsIO/livingdocs-editor/pull/6794)
-* [Fix missing translations](https://github.com/livingdocsIO/livingdocs-editor/pull/6780)
-* [Enhance content type & media type sync logs with project id context](https://github.com/livingdocsIO/livingdocs-server/pull/5674)
-* [♻️ Remove asset server from example-server](https://github.com/livingdocsIO/livingdocs-server/pull/5673)
-* [Refactor project config cache sync](https://github.com/livingdocsIO/livingdocs-server/pull/5665)
-* [fix(document createion flow): still disabled in channels](https://github.com/livingdocsIO/livingdocs-editor/pull/6781)
-* [Fix/Confirm Button](https://github.com/livingdocsIO/livingdocs-editor/pull/6779)
-* [Remove realtime updates from use_issue and watch metadata updates instead](https://github.com/livingdocsIO/livingdocs-editor/pull/6750)
-* [Improvement/dashboards and tables](https://github.com/livingdocsIO/livingdocs-editor/pull/6754)
-* [Improvement/Release Polish Dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/6775)
-* [Add workaround to allow republish when data migrations do not apply changes to documents](https://github.com/livingdocsIO/livingdocs-server/pull/5653)
-* [Fix occupations again, remove duplicate months](https://github.com/livingdocsIO/livingdocs-server/pull/5652)
-* [Design/Release Polish and Fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/6771)
 
 ## Intro
 
@@ -213,32 +116,32 @@ To learn about the necessary actions to update Livingdocs to `release-2023-07`, 
 * [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ### Suggested
-|Name|Version|
-|-|-|
-|Node|18|
-|NPM|8|
-|Postgres|15|
-|Elasticsearch<br/>OpenSearch|8.x<br/>v2.3.0|
-|Redis|7|
-|Livingdocs Server Docker Image|livingdocs/server-base:18|
-|Livingdocs Editor Docker Image|livingdocs/editor-base:18|
-|Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
+
+| Name                           | Version                                                                                  |
+| ------------------------------ | ---------------------------------------------------------------------------------------- |
+| Node                           | 18                                                                                       |
+| NPM                            | 8                                                                                        |
+| Postgres                       | 15                                                                                       |
+| Elasticsearch<br/>OpenSearch   | 8.x<br/>v2.3.0                                                                           |
+| Redis                          | 7                                                                                        |
+| Livingdocs Server Docker Image | livingdocs/server-base:18                                                                |
+| Livingdocs Editor Docker Image | livingdocs/editor-base:18                                                                |
+| Browser Support                | Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67 |
 
 ### Minimal
-|Name|Version|
-|-|-|
-|Node|16|
-|NPM|8|
-|Postgres|12|
-|Elasticsearch<br/>OpenSearch|7.x<br/>1|
-|Redis|6.2|
-|Livingdocs Server Docker Image|livingdocs/server-base:16.3|
-|Livingdocs Editor Docker Image|livingdocs/editor-base:16.3|
-|Browser Support|Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67|
+
+| Name                           | Version                                                                                  |
+| ------------------------------ | ---------------------------------------------------------------------------------------- |
+| Node                           | 16                                                                                       |
+| NPM                            | 8                                                                                        |
+| Postgres                       | 12                                                                                       |
+| Elasticsearch<br/>OpenSearch   | 7.x<br/>1                                                                                |
+| Redis                          | 6.2                                                                                      |
+| Livingdocs Server Docker Image | livingdocs/server-base:16.3                                                              |
+| Livingdocs Editor Docker Image | livingdocs/editor-base:16.3                                                              |
+| Browser Support                | Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67 |
 
 ## Breaking Changes 🔥
-
-TODO - with PRs (for internal use)
 
 ### `useAsTitle`
 
@@ -267,58 +170,112 @@ TODO: check migration
 
 ## APIs :gift:
 
-TODO - with PRs (for internal use)
+### Add Api endpoint for incoming references for drafts
+
+TODO @peyerluk
+
+### Public API Search Filters
+
+TODO @ajwild
 
 ## Features :gift:
 
-TODO - no PRs as customers have no access to code
-
 - [Blog Post July Release]() // TODO
 - [Copy Target Icon and Label Config](#copy-target-icon-and-label-config)
-- Advanced Search Filters Foundation
+- [Dashboard language filter for li-tree document selection](#dashboard-language-filter-for-li-tree-document-selection)
 - [Display Filters ListV2 with OR combination](#display-filters-listv2-with-or-combination)
-- Search Filters on Public API
-- Multi-language Menu Tool
-- Ticker Tool
+- [Document Preview](#document-preview)
+- [Search DSL](#search-dsl)
+- [Ticker](#ticker)
+- [Translatable li-tree plugin](#translatable-li-tree-plugin)
 - [UI and label config multi-language support](#ui-and-label-config-multi-language-support)
 
 ### Copy Target Icon and Label Config
 
 The copy target config has been extended to support an icon and a label. [Learn more]({{< ref "/guides/editor/document-copy/index.md#setup-config" >}})
 
-TODO add new config example
+TODO @ivester
+
+### Dashboard language filter for li-tree document selection
+
+TODO @dfreier
 
 ### Display Filters ListV2 with OR combination
 
 The Filters ListV2 have been extended to support multiple selections. The selected values are `OR` combined in the search query. [Learn more]({{< ref "/guides/editor/custom-dashboard-filters/index.md#example-multi-value-filter" >}})
 
-TODO add new config example
+TODO @ivester @marcbachmann
+
+### Document Preview
+
+TODO @benib
+
+### Search DSL
+
+TODO @marcbachmann
+
+### Ticker
+
+TODO @peyerluk
+
+### Translatable li-tree plugin
+
+TODO @dfreier
 
 ### UI and label config multi-language support
 
 With this release, we introduced multi-language support for the UI and label config. Currently we support English and German as UI languages [Learn more]({{< ref "/content/guides/editor/multi-language-ui/index.md" >}})
 
-TODO add new config example
+TODO @ivester
 
 ## Improvements
 
-TODO - no PRs as customers have no access to code
+- [Access Control](#access-control)
+- [Distribution Planning Improvements](#distribution-planning-improvements)
+- [Improve Component Area](#improve-component-area)
+- [Improve data migration hasActiveRevisionsWithDesign query](#improve-data-migration-hasactiverevisionswithdesign-query)
+- [Improve scroll behavior](#improve-scroll-behavior)
+- [Working Title](#working-title)
+- [Support significantPublicationDate on document import](#support-significantpublicationdate-on-document-import)
 
 ### Access Control
-* [Access control improvements - Part 3](https://github.com/livingdocsIO/livingdocs-server/pull/5657)
 
+TODO @marcbachmann
+
+### Distribution Planning Improvements
+
+TODO @ajwild @benib
+
+### Improve Component Area
+
+TODO @benib
+
+### Improve data migration hasActiveRevisionsWithDesign query
+
+TODO @marcbachmann
+
+### Improve scroll behavior
+
+TODO @dfreier @benib
 
 ### Working Title
-* [Working Title: do not enforce working title when displayTitlePattern is set](https://github.com/livingdocsIO/livingdocs-editor/pull/6796)
-* [Remove `displayTitlePattern` from article content type in Service](https://github.com/livingdocsIO/livingdocs-server/pull/5678)
 
+TODO @benib @JordiVM
+
+### Support significantPublicationDate on document import
+
+TODO @ajwild
 
 ## Bugfixes
 
-TODO - no PRs as customers have no access to code
-
-* [Use `$t()` instead of undefined `this.$t()` in `li-unsaved-dialog`](https://github.com/livingdocsIO/livingdocs-editor/pull/6959)
-
+* Fix Broken Navigation after MediaLibrary Asset Upload // TODO @peyerluk
+* Fix document createion flow: still disabled in channels // TODO @JSchenk8
+* Fix Editable Teaser override clearing // TODO @benib
+* Fix Legacy Dashboards: initial load takes cached filter value into account now // TODO @benib
+* Fix redirect: state given over URL // TODO @JSchenk8
+* Fix set metadata title (useAsTitle) property during creation // TODO @benib
+* Prevent unsaved document data while processing remote updates // TODO @ajwild
+* Use `$t()` instead of undefined `this.$t()` in `li-unsaved-dialog` // TODO @JordiVM
 
 ## Vulnerability Patches
 
@@ -339,25 +296,20 @@ This release we have patched the following vulnerabilities in the Livingdocs Edi
 * [CVE-2023-31125](https://github.com/advisories/GHSA-q9mw-68c2-j6m5) patched in `engine.io` v6.4.2
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
+
 * [CVE-2023-26102](https://cwe.mitre.org/data/definitions/1321.html) has yet to be patched by `rangy` but we have proposed a fix in [this PR](https://github.com/timdown/rangy/pull/482)
   This vulnerability is not exploitable in the Livingdocs Editor because `rangy` module is scoped in the `livingdocs-framework` and not exposed to the users.
 * [CVE-2023-26116](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26118](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26117](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2022-25869](https://cwe.mitre.org/data/definitions/79.html), [CVE-2022-25844](https://cwe.mitre.org/data/definitions/770.html) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
 
 ## Patches
 
-TODO - no PRs as customers have no access to code
-
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
-TODO
-
 ### Livingdocs Editor Patches
 - [v95.0.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.5): fix(quick publish): correctly show quick publish button if allowed
-
-TODO
 
   ---
   **Icon Legend**
