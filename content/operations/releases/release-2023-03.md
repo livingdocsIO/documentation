@@ -375,6 +375,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.87](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.87): fix(dates): Fix relative date formatting and write tests for it
 - [v90.33.86](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.86): fix(dependencies): Upgrade `engine.io` and `socket.io-parser` to fix security vulnerabilities CVE-2023-31125 and CVE-2023-32695, respectively
 - [v90.33.85](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.85): fix(li-publish-control-embargo): keep UTC date
 - [v90.33.84](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.84): fix(redirect): state given over URL
