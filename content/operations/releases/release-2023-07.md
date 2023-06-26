@@ -76,29 +76,6 @@ These are the release notes of the upcoming release (pull requests merged to mas
 * [Upgrade to node 20, drop node 16](https://github.com/livingdocsIO/livingdocs-editor/pull/7044)
 * [fix(framework): update framework to 25.0.6](https://github.com/livingdocsIO/livingdocs-editor/pull/7041)
 * [Do not change the working title if a display title pattern is configured](https://github.com/livingdocsIO/livingdocs-server/pull/5808)
-* [Do not send title to server with displayTitlePattern config](https://github.com/livingdocsIO/livingdocs-editor/pull/7040)
-* [Check version when updating media library metadata to prevent overwriting data modified using the Public API](https://github.com/livingdocsIO/livingdocs-editor/pull/7035)
-* [Show publish / release status in the table dashboard correctly](https://github.com/livingdocsIO/livingdocs-editor/pull/7028)
-* [Fix relative date formatting](https://github.com/livingdocsIO/livingdocs-editor/pull/7026)
-* [Optimize Scroll into View of focused components](https://github.com/livingdocsIO/livingdocs-editor/pull/7024)
-* [fix(deps): update dependency @livingdocs/framework from 25.0.3 to v25.0.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7037)
-* [Add more multi-language support for config labels that I missed](https://github.com/livingdocsIO/livingdocs-editor/pull/7032)
-* [Debounce `_fetchDocumentList()` call from displayFilter changes](https://github.com/livingdocsIO/livingdocs-editor/pull/7011)
-* [Fix text formatting dropdown](https://github.com/livingdocsIO/livingdocs-editor/pull/7006)
-* [Publish vs Release labels](https://github.com/livingdocsIO/livingdocs-editor/pull/7018)
-* [fix: use correct uiModel for embedded properties panel](https://github.com/livingdocsIO/livingdocs-editor/pull/7019)
-* [fix(deps): update dependency @livingdocs/framework from 25.0.2 to v25.0.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7021)
-* [fix(deps): update dependency sanitize-html from 2.10.0 to v2.11.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7013)
-* [Migrate document copy to new project config](https://github.com/livingdocsIO/livingdocs-server/pull/5805)
-* [fix(example servers): make sure teaser components outermost element i…](https://github.com/livingdocsIO/livingdocs-server/pull/5802)
-* [fix(deps): update dependency sass from 1.63.5 to v1.63.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7015)
-* [fix(deps): update dependency webpack from 5.87.0 to v5.88.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7014)
-* [fix(deps): update dependency sass from 1.63.4 to v1.63.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7012)
-* [Fix legacy search baseFilters](https://github.com/livingdocsIO/livingdocs-editor/pull/7010)
-* [Add config for 'hide from form' for li-external-id](https://github.com/livingdocsIO/livingdocs-server/pull/5799)
-* [fix(deps): update dependency cypress from 12.14.0 to v12.15.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7009)
-* [Replace various test domains with example.com](https://github.com/livingdocsIO/livingdocs-server/pull/5800)
-* [Support version check when updating media](https://github.com/livingdocsIO/livingdocs-server/pull/5793)
 
 ## Intro
 
@@ -234,7 +211,7 @@ TODO @ivester
 - [Distribution Planning Improvements](#distribution-planning-improvements)
 - [Improve Component Area](#improve-component-area)
 - [Improve data migration hasActiveRevisionsWithDesign query](#improve-data-migration-hasactiverevisionswithdesign-query)
-- [Improve scroll behavior](#improve-scroll-behavior)
+- [Improve scroll into view behavior](#improve-scroll-into-view-behavior)
 - [Working Title](#working-title)
 - [Support significantPublicationDate on document import](#support-significantpublicationdate-on-document-import)
 
@@ -254,9 +231,13 @@ TODO @benib
 
 TODO @marcbachmann
 
-### Improve scroll behavior
+### Improve scroll into view behavior
 
 TODO @dfreier @benib
+
+### Publish vs Release labels
+
+TODO @ivester
 
 ### Working Title
 
@@ -268,6 +249,7 @@ TODO @ajwild
 
 ## Bugfixes
 
+* Do not send title to server with displayTitlePattern config // TODO @marcbachmann
 * Fix Broken Navigation after MediaLibrary Asset Upload // TODO @peyerluk
 * Fix document createion flow: still disabled in channels // TODO @JSchenk8
 * Fix Editable Teaser override clearing // TODO @benib
