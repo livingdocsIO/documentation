@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(framework): update framework to 25.0.6](https://github.com/livingdocsIO/livingdocs-editor/pull/7041)
 * [Do not change the working title if a display title pattern is configured](https://github.com/livingdocsIO/livingdocs-server/pull/5808)
 * [Do not send title to server with displayTitlePattern config](https://github.com/livingdocsIO/livingdocs-editor/pull/7040)
 * [Check version when updating media library metadata to prevent overwriting data modified using the Public API](https://github.com/livingdocsIO/livingdocs-editor/pull/7035)
