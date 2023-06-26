@@ -157,7 +157,7 @@ TODO @ajwild
 
 ## Features :gift:
 
-- [Blog Post July Release]() // TODO
+- [July Release Notes]() // TODO
 - [Copy Target Icon and Label Config](#copy-target-icon-and-label-config)
 - [Dashboard language filter for li-tree document selection](#dashboard-language-filter-for-li-tree-document-selection)
 - [Display Filters ListV2 with OR combination](#display-filters-listv2-with-or-combination)
