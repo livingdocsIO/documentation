@@ -28,6 +28,8 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/5814)
+* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/7053)
 * [fix(deps): update dependency cypress from 12.15.0 to v12.16.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7051)
 * [Dashboards: ensure no errors are logged when legacy dashboards are used](https://github.com/livingdocsIO/livingdocs-editor/pull/7047)
 * [Vue Component Registry: seal registerComponent isCoreComponent upport after core components are registered](https://github.com/livingdocsIO/livingdocs-editor/pull/7045)
