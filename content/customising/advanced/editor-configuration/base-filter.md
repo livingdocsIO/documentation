@@ -17,7 +17,7 @@ There are different places, where one can define base filter:
 At all these places, one can use the same query format, e.g.
 
 ```js
-{key: 'documentType', term: 'article'}
+{key: 'contentType', term: 'regular'}
 ```
 
 Learn more about the filter queries format [here]({{< ref "/content/reference/public-api/publications/search.md" >}})
@@ -28,14 +28,10 @@ This are all available `queryTypes` which can be used to form a filter query.
 
 ```js
 // documentType {key: 'string', term: string || array}
-{key: 'documentType', term: 'article'}
-{key: 'documentType', term: ['article', 'page']}
+{key: 'documentType', term: ['article', 'page', 'data-record']}
 
 // locale
 {key: 'locale', term: 'de-DE'}
-
-// channelHandle
-{key: 'channelHandle', term: 'web'}
 
 // contentType {key: 'string', term: string || array}
 {key: 'contentType', term: 'regular'}
@@ -45,9 +41,6 @@ This are all available `queryTypes` which can be used to form a filter query.
 
 // ownerId
 {key: 'ownerId', term: 1}
-
-// channelId
-{key: 'channelId', term: 2}
 
 // dateRange
 {key: "updatedAt", range: { gte: "2023-06-21T07:55:00.000Z", lte: "2023-06-23T07:55:00.000Z" }}
