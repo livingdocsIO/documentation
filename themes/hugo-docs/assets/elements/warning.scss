@@ -13,4 +13,8 @@
     vertical-align: text-top;
     margin-right: $space-xs;
   }
+
+  :last-child {
+    margin-bottom: 0;
+  }
 }
