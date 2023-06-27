@@ -56,15 +56,13 @@ api/v1/categories/123abc
 api/v1/categories/123abc
 ---
 ```js
-[
-  {
-    "status": 400,
-    "error": "Bad Request",
-    "error_details": {
-      "message": "Use of the category API requires a configurable channel. The project you requested uses a static configuration though."
-    }
+{
+  "status": 400,
+  "error": "Bad Request",
+  "error_details": {
+    "message": "Use of the category API requires a configurable channel. The project you requested uses a static configuration though."
   }
-]
+}
 ```
 -----
 500
@@ -72,15 +70,13 @@ api/v1/categories/123abc
 api/v1/categories/123abc?inheritMetadata=true
 ---
 ```js
-[
-  {
-    "status": 500,
-    "error": "Bad Request",
-    "error_details": {
-      "message": "Inheritance queries can only be made up to a depth of 20."
-    }
+{
+  "status": 500,
+  "error": "Bad Request",
+  "error_details": {
+    "message": "Inheritance queries can only be made up to a depth of 20."
   }
-]
+}
 ```
 {{< /api-example >}}
 
@@ -138,14 +134,12 @@ api/v1/categories
 api/v1/categories
 ---
 ```js
-[
-  {
-    "status": 400,
-    "error": "Bad Request",
-    "error_details": {
-      "message": "Use of the category API requires a configurable channel. The project you requested uses a static configuration though."
-    }
+{
+  "status": 400,
+  "error": "Bad Request",
+  "error_details": {
+    "message": "Use of the category API requires a configurable channel. The project you requested uses a static configuration though."
   }
-]
+}
 ```
 {{< /api-example >}}
