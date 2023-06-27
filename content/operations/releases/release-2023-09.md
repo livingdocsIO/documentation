@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Update `nzz` downstream branch to `release-2023-09`](https://github.com/livingdocsIO/livingdocs-editor/pull/7054)
 * [Support routing cache refresh by using isolatedCacheFactory](https://github.com/livingdocsIO/livingdocs-server/pull/5812)
 
 To get an overview about new functionality, read the [Release Notes](TODO).
