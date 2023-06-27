@@ -1,0 +1,20 @@
+.info {
+  @extend %font-s;
+  display: block;
+  padding: $space-m;
+  margin-bottom: $space-m;
+  border-radius: $rounded-corners;
+  color: $color-black;
+  background-color: $color-grey-8;
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: text-top;
+    margin-right: $space-xs;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
