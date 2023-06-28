@@ -438,6 +438,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.59): fix: bump framework version to support original size in custom image service
 - [v94.10.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.58): fix(quick publish): correctly show quick publish button if allowed
 - [v94.10.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.57): chore: Downgrade node v18.16.1 to v18.14.1
 - [v94.10.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.56): fix(title): Always truncate the title and do not send the title to the server if a displayTitlePattern is active
