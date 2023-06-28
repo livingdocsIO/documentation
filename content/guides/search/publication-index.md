@@ -1,8 +1,13 @@
 ---
 title: Publication Index
-description: How to use and configure the publication index of Livingdocs.
+description: How to configure and use the publication index of Livingdocs.
 weight: 1
 ---
+
+{{< info >}}
+A version of this document for releases prior to {{< release "release-2023-07" >}} is available
+[here]({{< ref "/guides/search/publication-index-legacy" >}}).
+{{< /info >}}
 
 The publication index is an Elasticsearch index that allows developers to do queries in order to retrieve published documents from Livingdocs.
 
@@ -12,15 +17,9 @@ There are two parts to the feature:
 
 ## Indexing
 
-Some fields like `projectId`, `category` or `contentType` are indexed by default and can not be changed. You can see all the fields that are mapped by default in the mapping file for the publication index: https://github.com/livingdocsIO/livingdocs-server/blob/5f04a637bef5a2e7c766668b85ed5537a78ac296/app/features/indexing/publications/document-publication-mapping.json
-
-Two larger concepts are configurable by customers:
-- the date logic, in particular sort date and scheduled publishing
-- generic filter values from custom metadata fields that can be used to query
-
 ### Sort Date
 
-The definition of the custom indexing is done in the project config at `contentTypes['your-content-type'].publicationIndex`. Below is a sample configuration for an article content-type.
+The `sortDate` defines the date that is used to sort results in a publication search query. By default it's just the `visiblePublicationDate` timestamp of the publication. The configuration allows you to choose a separate metadata property from your metadata set that is used. **The property must be a date type.** A common use case is to take a metadata property that defines a first publication date (first time of publish). The definition of the custom indexing is done in the project config at `contentTypes['your-content-type'].publicationIndex`:
 
 ```js
 publicationIndex: {
@@ -31,28 +30,12 @@ publicationIndex: {
 }
 ```
 
-The `sortDate` defines the date that is used to sort results in a publication search query. By default it's just the `visiblePublicationDate` timestamp of the publication. The configuration allows you to choose a separate metadata property from your metadata set that is used. **The property must be a date type.** A common use case is to take a metadata property that defines a first publication date (first time of publish).
-
 ### Metadata Plugins
 
-The exact way how the `value` of the index is set (see above) is defined in the metadata plugin. All core metadata plugins have fixed value function that you can not change. In a custom metadata plugin you can define your own value function. An example looks as follows.
-```js
-publicationIndex: {
-  enabled: true,
-  getValue (obj) {
-    return obj?.reference?.id
-  }
-}
-```
-As with the channel-config, the metadata plugin can also have an entry `publicationIndex`.
-First of all, you need to set `enabled` to true so that indexing of this metadata plugin to the index is allowed. The `getValue` method is optional, if you don't define one, it will just index the whole value stored in the metadata entry.
-If you define `getValue`, you can return 3 things:
+Details of the core metadata plugins, along with their built-in indexing capabilities, can be found in the [Metadata Plugin List]({{< ref "/reference/document/metadata/metadata-plugin-list" >}}).
 
-- a string, will result in a simple `key=val` entry
-- an array, will create a `key=val` entry for each entry in the array
-- an object, will create a `key.objectKey=val` entry for each objectKey in the object
+To be able to filter documents using a metadata value you must ensure the metadata plugin supports indexing. You also need to enable indexing on the metadata property defined in the content type config:
 
-Once you have made sure your metadata plugin supports indexing you also need to enable indexing on the metadata property defined in the content type config:
 ```js
 {
   handle: 'regular',
@@ -71,52 +54,161 @@ Once you have made sure your metadata plugin supports indexing you also need to 
 }
 ```
 
-You will need to re-index your existing documents to populate the values in Elasticsearch.
+You will need to re-index your existing documents to populate the values in Elasticsearch after changing the content type config:
+```
+npx livingdocs-server elasticsearch-index --handle=li-publications
+```
 
-## Search Publications
+## Searching
 
-After setting up your publication index you can use either the public API or the core's search API (enterprise only) to query for published documents. The documentation for the public API can be found here: [Public API Publications Search]({{< ref "reference/public-api/publications/search" >}}).
+After setting up your publication index you can use either the public API or the core's search API (enterprise only) to query for published documents.
 
-The core API allows you all the options of the public API plus some additional ones. To get the search API, do the following in your server-side feature:
+### Public API
+
+The documentation for the public API can be found here: [Public API Publications Search]({{< ref "reference/public-api/publications/search" >}}). It contains details about the query DSL for filtering publications by metadata values. Examples can also be found below.
+
+```js
+const response = await fetch(`api/v1/publications/search?contentTypes=regular,author`)
+const results = await response.json()
+```
+
+The query allows the following entries:
+- `search`, string used for full-text search
+- `contentTypes`, string of comma separated content type handles (OR concatenated)
+- `categories`, string of comma separated category ids (OR concatenated)
+- `languages`, string of comma separated language handles (OR concatenated)
+- `languageGroupId`, string of a single language group
+- `filters`, JSON string (see [Filters]({{< ref "#filters" >}}))
+- `sort`, string of comma separated fields to sort by (see [Sort]({{< ref "#sort" >}}))
+- `fields`, string of comma separated fields to include for results (see [Fields]({{< ref "#fields" >}}))
+- `limit`, integer how many results to get, default 10
+- `offset`, integer from which position to count results, useful for pagination, default 0
+
+### Server Feature
+
+To query publications you can also use the `searchPublications` method on the `li-public-api` feature. In this case you provide an object containing query parameters very similar to those listed above, but you will always need to provide a `projectId` value.
+
 ```js
 module.exports = function (feature, server) {
-  const searchApi = server.features.api('li-search')
+  const publicApi = server.features.api('li-public-api')
+  const results = await publicApi.searchPublications({
+    projectId: 1,
+    contentTypes: ['regular', 'author']
+  })
 }
 ```
 
-To query publications you use the `searchPublications` method on the `searchApi`. It takes the 2 parameters `query` and `options`.
-
-Allowed options are:
-- `offset`, from which position to count results, useful for pagination, default 0
-- `limit`, how many results to get, default 10
-- `onlyId` flag, if set to `true` will only return the ids of the resulting documents (documentIds)
-
 The query allows the following entries:
 - `projectId`, mandatory, the projectId (int) for which documents are searched
-- `channelId`, the channelId (int) for which documents are searched
 - `searchTerm`, string used for full-text search
-- `categories`, an array of category ids (string) to filter for (OR concatenated)
-- `contentTypes`, an array of contentType handles (string) to filter for (OR concatenated)
-- `languages`, an array of language handles (string) to filter for (OR concatenated)
-- `excludeIds`, an array of ids that should be excluded, useful when performing duplication filtering
-- `dateFilter`, an elastic search date filter, e.g. `{gt: someDate}` that is applied to the `sortDate`
-- `filters`, an array of the generically defined custom filters (see "Indexing"), defined as follows
+- `contentTypes`, array of contentType handles (string) to filter for (OR concatenated)
+- `categories`, array of category ids (string) to filter for (OR concatenated)
+- `languages`, array of language handles (string) to filter for (OR concatenated)
+- `languageGroupId`, string of a single language group
+- `filters`, array or object (see [Filters]({{< ref "#filters" >}}))
+- `sort`, array of fields (string or object) to sort results by (see [Sort]({{< ref "#sort" >}}))
+- `fields`, array of fields (string) to include for results (see [Fields]({{< ref "#fields" >}}))
+- `limit`, integer of how many results to get, default 10
+- `offset`, integer from which position to count results, useful for pagination, default 0
+
+### Filters:
+
+Valid filter fields are:
+- `documentId`
+- `contentType`
+- `firstPublicationDate`
+- `lastPublicationDate`
+- `significantPublicationDate`
+- `visiblePublicationDate`
+- `metadata.*`
+
+The index type of each field will determine which query capabilities are supported:
+
+| Type    | Text          | Term          | Range         | Exists        | Sort          |
+| :------ | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: |
+| text    | {{< check >}} | {{< cross >}} | {{< cross >}} | {{< check >}} | {{< cross >}} |
+| keyword | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| integer | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| float   | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| double  | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| long    | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| date    | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| boolean | {{< cross >}} | {{< check >}} | {{< cross >}} | {{< check >}} | {{< cross >}} |
+
+An example of how the logical operators and query expressions can be combined to create a more complex query:
 
 ```js
-filters: [
-  {
-    key: 'metadata.news',
-    term: true
-  },
-  {
-    key: 'metadata.authors',
-    term: ['1', '4']
-  }
-]
+const filters = {
+  or: [
+    {
+      and: [
+        {
+          key: 'metadata.count',
+          range: {lte: 2}
+        },
+        {
+          key: 'metadata.author',
+          exists: true
+        },
+        {
+          not: {
+            key: 'metadata.title',
+            term: 'My Title'
+          }
+        }
+      ]
+    },
+    {
+      key: 'metadata.count',
+      term: 3
+    }
+  ]
+}
+
+// Public API request
+const response = await fetch(`api/v1/publications/search?filters=${JSON.stringify(filters)}`)
+const results = await response.json()
+
+// Public API server feature
+const publicApi = server.features.api('li-public-api')
+const results = await publicApi.searchPublications({projectId: 1, filters})
 ```
 
 For further details on how to define filters please see the [Public API]({{< ref "/reference/public-api/publications/search#search-filters" >}}) documentation.
 
-## Task Support
+### Fields
 
-There are the tasks `npx livingdocs-server elasticsearch-index --handle=li-publications` and `npx livingdocs-server elasticsearch-delete-index --handle=li-publications`. Those 2 tasks work exactly like the search index tasks for the drafts index. For details refer to the CLI documentation.
+Valid fields are:
+- `id`
+- `systemdata`
+- `metadata`
+- `content`
+
+If `id` is specified then all other fields will be ignored and the results will have the structure `{projectId: 1, documentId: 2}`.
+If you require the document id along with other data you will need to include `systemdata` in your query, and it will be defined at `systemdata.documentId`.
+
+The default fields are `['systemdata', 'metadata', 'content']`. Please be aware that by excluding `content`, or other fields that you do not require, you might be able to significantly reduce data transfer and database load.
+
+### Sort
+
+Valid sort fields are:
+- `relevance`
+- `sortDate`
+- `documentId`
+- `contentType`
+- `firstPublicationDate`
+- `lastPublicationDate`
+- `significantPublicationDate`
+- `visiblePublicationDate`
+- `metadata.*`
+
+The dafault sort order is `sortDate` descending (see [Sort Date]({{< ref "#sort-date" >}})), with `documentId` descending used as a fallback when multiple results have exactly the same `sortDate`.
+
+`relevance` will only have an affect if you provide a search term.
+
+Most metadata properties can be used to sort, but not those indexed as `text` or `boolean`.
+
+When a string is used to define the sort order, the order can be reversed by prefixing the property with a `-` (e.g. `-sortDate,documentId`).
+If you are calling the server method directly you can provide a string in the same format, but you can also provide an array of strings (e.g. `['-sortDate', 'documentId']`), or an object (e.g. `{sortDate: 'desc'}`), or an array of objects (e.g. `[{sortDate: 'desc'}, {documentId: 'asc'}]`).
+
+Documents which don't have an indexed value will appear at the end of the results.
