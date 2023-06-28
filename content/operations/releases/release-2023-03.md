@@ -375,6 +375,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.90](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.90): fix(quick publish): correctly show quick publish button if allowed
 - [v90.33.89](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.89): fix(dashboards): ensure no errors are logged when legacy dashboards are used
 - [v90.33.88](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.88): chore(legacy-search): Skip tests that call `_fetchDocumentList`
 - [v90.33.87](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.87): fix(dates): Fix relative date formatting and write tests for it
