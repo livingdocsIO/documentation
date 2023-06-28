@@ -30,12 +30,12 @@ GET api/v1/publications/search
 |Name|Type|Notes|
 |-|-|-|
 |?search|string|Search term to perform a full-text search with. For exact word matches use ", e.g. 'search="Ukulele"'|
+|?contentTypes|string|Comma separated list of content-types for which documents should be found. Content types are concatenated with OR. Example: 'regular,author'|
 |?categories|string|Comma separated list of category ids for which documents should be found. Categories are concatenated with OR. Example: 'sport,fashion'|
 |?languages|string|Comma separated list of languages for which documents should be found. Languages are concatenated with OR. Example: 'en,de'|
 |?languageGroupId|string|A GroupId used to fetch all translations of a document Using the ?languages param a document in a specific language can be fetched. Example: '?languageGroupId=47?language=de'|
-|?contentTypes|string|Comma separated list of content-types for which documents should be found. Content types are concatenated with OR. Example: 'regular,author'|
 |?filters|string|A JSON string which follows the [search filters query DSL]({{< ref "#search-filters" >}}).|
-|?sort|string|Comma separated list of sort properties. Any of the [Filter Fields]({{< ref "#filter-fields" >}}) can be used, and also sortDate, which can be defined using the [Publication Index]({{< ref "/guides/search/publication-index" >}}) config, or will be the [Visible Publication Date]({{< ref "/guides/editor/publish-control/visible-publication-date" >}}).<br>Most metadata properties can be used to sort, but not those indexed as 'text' or 'boolean'.<br>The sort order can be reversed by prefixing the property with a '-'.<br>Documents which don't have an indexed value will appear at the end of the results.|
+|?sort|string|Comma separated list of sort properties. Any of the [Sort Fields]({{< ref "#sort-fields" >}}) can be used.<br>The sort order can be reversed by prefixing the property with a '-'.
 |?fields|string|Comma separated list of properties to include in the response. Defaults to 'systemdata,metadata,content' (no renditions). Use 'id' if you only want to retrieve the ids of the published documents. Useful (and faster) if you are fully synchronizing your frontend with the publication events.|
 |?limit|integer|A limit for how much published documents to retrieve. Defaults to 10. Max. 100.|
 |?offset|integer|An offset into the query. Useful when getting more than 100 results (pagination)|
@@ -278,58 +278,35 @@ api/v1/publications/search?contentTypes=article&limit=999&fields=id
 
 {{< added-in release-2023-07 block >}}
 
-### Logical Operators
+Search filters can be used to filter documents using a custom query DSL.
 
-The logical operators allow you to group queries, and to change from the default AND behaviour of the top-level array. All logical operator values can be an object, or an array, containing logical operators or query expressions.
+### Filter Fields
 
-#### AND
+| Property                   | Type    |
+| :------------------------- | :------ |
+| documentId                 | long    |
+| contentType                | keyword |
+| firstPublicationDate       | date    |
+| lastPublicationDate        | date    |
+| significantPublicationDate | date    |
+| visiblePublicationDate     | date    |
+| metadata.*                 | Any     |
 
-All conditions must be met for a publication to be included in the results.
+Metadata fields must be indexed. Please read the [Publication Index]({{< ref "/guides/search/publication-index" >}}) guide for further information.
+Details of the core metadata plugins, along with their built-in indexing capabilities, can be found in the [Metadata Plugin List]({{< ref "/reference/document/metadata/metadata-plugin-list" >}}).
 
-```js
-{
-  and: [
-    {key: 'metadata.news', term: true},
-    {key: 'metadata.teaserImage.mediaId', exists: false}
-  ]
-}
-```
+The index type of each field will determine which query capabilities are supported:
 
-#### OR
-
-Any condition can be met for a publication to be included in the results.
-
-```js
-{
-  or: [
-    {key: 'metadata.image.mediaId', exists: true},
-    {key: 'metadata.teaserImage.mediaId', exists: true}
-  ]
-}
-```
-
-#### NOT
-
-This operator negates the expression contained within.
-
-```js
-{
-  not: {key: 'metadata.language.locale', term: 'de'}
-}
-```
-
-To negate multiple conditions nest another logical operator within.
-
-```js
-{
-  not: {
-    or: [
-      {key: 'metadata.news', term: false},
-      {key: 'metadata.language.locale', term: 'fr'}
-    ]
-  }
-}
-```
+| Type    | Text          | Term          | Range         | Exists        | Sort          |
+| :------ | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: |
+| text    | {{< check >}} | {{< cross >}} | {{< cross >}} | {{< check >}} | {{< cross >}} |
+| keyword | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| integer | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| float   | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| double  | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| long    | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| date    | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| boolean | {{< cross >}} | {{< check >}} | {{< cross >}} | {{< check >}} | {{< cross >}} |
 
 ### Query Expressions
 
@@ -388,24 +365,62 @@ When querying a metadata property with an object value, always use the key of a 
 }
 ```
 
-### Filter Fields
+### Logical Operators
 
-| Property                   | Type                    | Notes                             |
-| -------------------------- | ----------------------- | --------------------------------- |
-| documentId                 | long                    |                                   |
-| contentType                | keyword                 |                                   |
-| references                 | keyword[ ]              |                                   |
-| firstPublicationDate       | date (strict_date_time) |                                   |
-| lastPublicationDate        | date (strict_date_time) |                                   |
-| significantPublicationDate | date (strict_date_time) |                                   |
-| visiblePublicationDate     | date (strict_date_time) |                                   |
-| metadata.*                 | Any                     | [1]({{< ref "#fields-note-1" >}}) |
+The logical operators allow you to group queries, and to change from the default AND behaviour of the top-level array. All logical operator values can be an object, or an array, containing logical operators or query expressions.
 
-1. <span id="fields-note-1"></span>Metadata fields must be indexed. Please read the [Publication Index]({{< ref "/guides/search/publication-index" >}}) guide for further information. Details of the storage schema and indexing for each plugin are not currently documented, but can be found by inspecting the code.
+#### AND
+
+All conditions must be met for a publication to be included in the results.
+
+```js
+{
+  and: [
+    {key: 'metadata.news', term: true},
+    {key: 'metadata.teaserImage.mediaId', exists: false}
+  ]
+}
+```
+
+#### OR
+
+Any condition can be met for a publication to be included in the results.
+
+```js
+{
+  or: [
+    {key: 'metadata.image.mediaId', exists: true},
+    {key: 'metadata.teaserImage.mediaId', exists: true}
+  ]
+}
+```
+
+#### NOT
+
+This operator negates the expression contained within.
+
+```js
+{
+  not: {key: 'metadata.language.locale', term: 'de'}
+}
+```
+
+To negate multiple conditions nest another logical operator within.
+
+```js
+{
+  not: {
+    or: [
+      {key: 'metadata.news', term: false},
+      {key: 'metadata.language.locale', term: 'fr'}
+    ]
+  }
+}
+```
 
 ### Example
 
-A demonstration of how the logical operators and query expressions can be combined to create a more complex query:
+An example of how the logical operators and query expressions can be combined to create a more complex query:
 
 ```js
 const filters = JSON.stringify({
@@ -436,4 +451,28 @@ const filters = JSON.stringify({
 })
 
 const response = await fetch(`api/v1/publications/search?filters=${filters}`)
+const results = await response.json()
 ```
+
+## Sort Fields
+
+Valid sort fields are:
+- `relevance`
+- `sortDate`
+- `documentId`
+- `contentType`
+- `firstPublicationDate`
+- `lastPublicationDate`
+- `significantPublicationDate`
+- `visiblePublicationDate`
+- `metadata.*`
+
+The dafault sort order is `sortDate` descending (see [Sort Date]({{< ref "/guides/search/publication-index#sort-date" >}})), with `documentId` descending used as a fallback when multiple results have exactly the same `sortDate`.
+
+`relevance` will only have an affect if you provide a search term.
+
+Most metadata properties can be used to sort, but not those indexed as `text` or `boolean` (see [Filter Fields]({{< ref "#filter-fields" >}})).
+
+When a string is used to define the sort order, the order can be reversed by prefixing the property with a `-` (e.g. `-sortDate,documentId`).
+
+Documents which don't have an indexed value will appear at the end of the results.
