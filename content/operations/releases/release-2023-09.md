@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix quick publish](https://github.com/livingdocsIO/livingdocs-editor/pull/7055)
 * [fix(deps): update dependency @livingdocs/framework from 25.0.6 to v25.0.8 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7059)
 * [Upgrade to Vue 2.7.14](https://github.com/livingdocsIO/livingdocs-editor/pull/5666)
 * [Update `nzz` downstream branch to `release-2023-09`](https://github.com/livingdocsIO/livingdocs-editor/pull/7054)
