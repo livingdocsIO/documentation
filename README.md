@@ -43,11 +43,19 @@ Check your titles by reading the table of contents generated on the right side o
 ```
 
 ```markdown
-{{< added-in release-2021-03 >}}
+{{< added-in "release-2021-03" >}}
 ```
 
 ```markdown
-{{< removed-in release-2021-03 >}}
+{{< deprecated-in "release-2021-03" >}}
+```
+
+```markdown
+{{< removed-in "release-2021-03" >}}
+```
+
+```markdown
+{{< release "release-2021-03" >}}
 ```
 
 *Note: Shortcode templates can be found in `themes/hugo-docs/layouts/shortcodes`.*
