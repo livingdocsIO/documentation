@@ -18,54 +18,6 @@ aliases:
   branchHandle="release-2023-07"
 >}}
 
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to master).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
-
-## Tech Release Notes Creation Guidelines (// TODO move to release cut checklist)
-
-- System Requirements
-  - Suggested
-  - Minimal
-- Breaking Changes 🔥
-  - list related PRs (for internal use, customers don't have access to code base)
-  - explain how to migrate or configs to change with example
-  - Migrate the Postgres Database :fire:
-    - always the same standard migration command
-- Deprecations
-  - list related PRs (for internal use, customers don't have access to code base)
-  - explain how to migrate or change configs and downstream customization to keep things compatible
-- APIs :gift:
-  - list related PRs (for internal use, customers don't have access to code base)
-  - example of how to use the new API
-  - link to documentation
-- Features :gift:
-  - only list features that have some kind of config changes - write these notes with the developers in mind (if the feature is listed here then it should also be in the dev webinar and vice versa)
-  - Small description with config changes example
-  - link to documentation
-- Improvements
-  - only list technical improvements or improvements that need a config change - write these notes with the developers in mind
-  - Small description with code example
-  - link to documentation (if there is any)
-- Bugfixes :beetle:
-  - Bugfixes are fixes made during the release cycle
-  - List bugfixes which
-    - have been reported by customers
-    - which have fixed some major broken functionality (if we fixed an console error which most likely did not affect user's or developer's work then we don't need to list it here)
-    - which is a bug that existed in last release (sometimes we may break something on master during the release development and then fix it right away and the broken functionality never makes it into the release)
-  - Description
-- Patches
-  - Bugfixes are fixes made after this release and are backported into this release
-  - Livingdocs Server Patches
-    - Description
-  - Livingdocs Editor Patches
-    - Description
-
 ## PRs to Categorize
 * [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/5814)
 * [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/7053)
@@ -79,10 +31,10 @@ These are the release notes of the upcoming release (pull requests merged to mas
 
 ## Intro
 
+**Attention:** If you skipped one or more releases, please also check the technical release notes of the skipped releases.
+
 To get an overview about new functionality, read the [Release Notes](TODO).
 To learn about the necessary actions to update Livingdocs to `release-2023-07`, read on.
-
-**Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
 ## Webinar
 
@@ -120,19 +72,7 @@ To learn about the necessary actions to update Livingdocs to `release-2023-07`, 
 
 ## Breaking Changes 🔥
 
-### `useAsTitle`
-
-* [Remove `useAsTitle`](https://github.com/livingdocsIO/livingdocs-server/pull/5763)
-* [Remove `useAsTitle`](https://github.com/livingdocsIO/livingdocs-editor/pull/6949)
-
-### Seed Api
-* [Remove seed api](https://github.com/livingdocsIO/livingdocs-server/pull/5767)
-
-### Proposals feature
-* [Remove proposals feature](https://github.com/livingdocsIO/livingdocs-editor/pull/6910)
-
-
-### Migrate the Postgres Database :fire:
+### Migrate the Postgres Database 🔥
 
 It's a simple/fast migration with no expected data losses.
 
@@ -141,9 +81,77 @@ It's a simple/fast migration with no expected data losses.
 livingdocs-server migrate up
 ```
 
-TODO: check migration
+### Drop support for Node v16
+
+🔥 Drop support for Node 16 as it will reach End-of-life in September, use Node v20 instead.
+
+* [Server: Remove Nodev16 support](https://github.com/livingdocsIO/livingdocs-server/pull/5809)
+* [Editor: Remove Nodev16 support](https://github.com/livingdocsIO/livingdocs-editor/pull/7044)
+
+### Removal `useAsTitle` 🔥
+
+🔥 Support for `useAsTitle` has been removed.
+If you are currently using an `li-text` plugin with `useAsTitle: true`, please migrate to [displayTitlePattern]({{< ref "/reference/project-config/content-types#displaytitlepattern" >}}). You will have to remove the `useAsTitle` from the metadata and introduce `displayTitlePattern: '{{metadata.title}}'` to maintain the functionality, where `title` is handle for an `li-text` plugin.
+Please bear in mind that Editor toolbar behaviour will change, and it will no longer be possible to change the title of the article from the toolbar. The title will only be editable in the `li-text` plugin.
+Please also make sure that `document.title` is no longer accessed in custom code, e.g. in Includes since this would leak the internal Working Title to the public.
+
+* [Server: Remove `useAsTitle`](https://github.com/livingdocsIO/livingdocs-server/pull/5763)
+* [Editor: Remove `useAsTitle`](https://github.com/livingdocsIO/livingdocs-editor/pull/6949)
+
+### Removal `ui.component`
+
+🔥 Configuring `ui.component` for metadata plugins does not work anymore.
+
+### Rename searchPublications property `conditions` to `filters`
+
+🔥 Rename `conditions` property to `filters`
+When calling `searchManager.searchPublications()` directly, and providing the new `conditions` property in the first argument, please rename that property to `filters`.
+Please note that the old `filters` property was renamed to `legacyFilters`.
+This rename is part of the refactor done for the new [search DSL](#search-dsl).
+* [Rename `searchPublications()` property `conditions` to `filters`](https://github.com/livingdocsIO/livingdocs-server/pull/5744)
+
+### Rename searchPublications property `filters` to `legacyFilters`
+
+🔥 Rename `filters` property to `legacyFilters`
+When calling `searchManager.searchPublications()` directly, and providing the new `conditions` property in the first argument, please rename the property to `legacyFilters` for a quick backwards compatibility fix.
+The preferred update path would be to use `filters` from the new [search DSL](#search-dsl).
+
+* [Rename `searchPublications()` property `filters` to `legacyFilters`](https://github.com/livingdocsIO/livingdocs-server/pull/5744)
+
+### Removal Seed API
+
+🔥 Features wasn't in use an didn't cover any use case.
+
+* [Remove seed API](https://github.com/livingdocsIO/livingdocs-server/pull/5767)
+
+### Removal Proposals feature
+
+🔥 Features wasn't in use an didn't cover any use case.
+
+* [Remove proposals feature](https://github.com/livingdocsIO/livingdocs-editor/pull/6910)
+
+### Removal Cache feature
+
+🔥 Features wasn't in use an didn't cover any use case.
+
+* [Remove `li-cache` feature](https://github.com/livingdocsIO/livingdocs-server/pull/5751)
+
+### Removal `liImageProxy` feature
+
+🔥 Features wasn't in use an didn't cover any use case.
+
+* [Remove `liImageProxy` feature](https://github.com/livingdocsIO/livingdocs-server/pull/5772)
 
 ## Deprecations
+
+### `searchPublications()` property `legacyFilters`
+
+The `legacyFilters` property (previously named `filters`) of the first argument passed to `searchManager.searchPublications()` has been deprecated, and will be removed in `release-2023-09`.
+This only exists to provide a bit of additional time to migrate any queries to the new Search DSL.
+
+### Preview API
+
+Preview API is deprecated and removed with `release-2023-09`: `previewApi.registerRenderFunction`, migrate to `documentApi.registerPreviewFunction`.
 
 ## APIs :gift:
 
@@ -157,13 +165,13 @@ TODO @ajwild
 
 ## Features :gift:
 
-- [July Release Notes]() // TODO
+For a business level explanation of the new features please check [July Release Notes]() // TODO
+
 - [Copy Target Icon and Label Config](#copy-target-icon-and-label-config)
 - [Dashboard language filter for li-tree document selection](#dashboard-language-filter-for-li-tree-document-selection)
 - [Display Filters ListV2 with OR combination](#display-filters-listv2-with-or-combination)
 - [Document Preview](#document-preview)
 - [Search DSL](#search-dsl)
-- [Ticker](#ticker)
 - [Translatable li-tree plugin](#translatable-li-tree-plugin)
 - [UI and label config multi-language support](#ui-and-label-config-multi-language-support)
 
@@ -218,10 +226,6 @@ TODO @benib
 
 TODO @marcbachmann
 
-### Ticker
-
-TODO @peyerluk
-
 ### Translatable li-tree plugin
 
 TODO @dfreier
@@ -258,20 +262,14 @@ metadata: [
 ## Improvements
 
 - [Access Control](#access-control)
-- [Distribution Planning Improvements](#distribution-planning-improvements)
 - [Improve Component Area](#improve-component-area)
 - [Improve data migration hasActiveRevisionsWithDesign query](#improve-data-migration-hasactiverevisionswithdesign-query)
 - [Improve scroll into view behavior](#improve-scroll-into-view-behavior)
-- [Working Title](#working-title)
 - [Support significantPublicationDate on document import](#support-significantpublicationdate-on-document-import)
 
 ### Access Control
 
 TODO @marcbachmann
-
-### Distribution Planning Improvements
-
-TODO @ajwild @benib
 
 ### Improve Component Area
 
@@ -285,9 +283,6 @@ TODO @marcbachmann
 
 TODO @dfreier @benib
 
-### Working Title
-
-TODO @benib @JordiVM
 
 ### Support significantPublicationDate on document import
 
@@ -303,7 +298,7 @@ TODO @ajwild
 * Fix redirect: state given over URL // TODO @JSchenk8
 * Fix set metadata title (useAsTitle) property during creation // TODO @benib
 * Prevent unsaved document data while processing remote updates // TODO @ajwild
-* Use `$t()` instead of undefined `this.$t()` in `li-unsaved-dialog` // TODO @JordiVM
+* Use `$t()` instead of undefined `this.$t()` in `li-unsaved-dialog`
 
 ## Vulnerability Patches
 
