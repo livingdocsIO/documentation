@@ -18,16 +18,6 @@ aliases:
   branchHandle="release-2023-07"
 >}}
 
-## PRs to Categorize
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/5814)
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/7053)
-* [fix(deps): update dependency cypress from 12.15.0 to v12.16.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7051)
-* [Dashboards: ensure no errors are logged when legacy dashboards are used](https://github.com/livingdocsIO/livingdocs-editor/pull/7047)
-* [Vue Component Registry: seal registerComponent isCoreComponent upport after core components are registered](https://github.com/livingdocsIO/livingdocs-editor/pull/7045)
-* [Upgrade to node 20, drop node 16](https://github.com/livingdocsIO/livingdocs-server/pull/5809)
-* [Upgrade to node 20, drop node 16](https://github.com/livingdocsIO/livingdocs-editor/pull/7044)
-* [fix(framework): update framework to 25.0.6](https://github.com/livingdocsIO/livingdocs-editor/pull/7041)
-* [Do not change the working title if a display title pattern is configured](https://github.com/livingdocsIO/livingdocs-server/pull/5808)
 
 ## Intro
 
@@ -290,6 +280,7 @@ TODO @ajwild
 
 ## Bugfixes
 
+* Do not change the working title if a displayTitlePattern is configured
 * Do not send title to server with displayTitlePattern config // TODO @marcbachmann
 * Fix Broken Navigation after MediaLibrary Asset Upload // TODO @peyerluk
 * Fix document createion flow: still disabled in channels // TODO @JSchenk8
