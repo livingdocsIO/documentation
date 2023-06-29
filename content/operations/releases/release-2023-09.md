@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency webpack from 5.88.0 to v5.88.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7066)
 * [fix(deps): update dependency @livingdocs/framework from 25.1.0 to v25.1.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7065)
 * [Fix quick publish](https://github.com/livingdocsIO/livingdocs-editor/pull/7055)
 * [fix(deps): update dependency @livingdocs/framework from 25.0.6 to v25.0.8 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7059)
