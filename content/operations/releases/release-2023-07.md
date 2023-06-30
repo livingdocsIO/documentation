@@ -157,7 +157,7 @@ Preview API is deprecated and removed with `release-2023-09`: `previewApi.regist
 
 ### Add Api endpoint for incoming references for drafts
 
-New draft endpoint for incoming document references: /drafts/:documentId/incomingDocumentReferences. Needs public-api:drafts:read privileges.
+New draft endpoint for incoming document references: `/drafts/:documentId/incomingDocumentReferences`. Needs `public-api:drafts:read privileges`.
 
 TODO add link to documentation @peyerluk
 
