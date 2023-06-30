@@ -303,7 +303,7 @@ TODO @ajwild
 
 * Do not send title to server with displayTitlePattern config // TODO @marcbachmann
 * Fix Broken Navigation after MediaLibrary Asset Upload // TODO @peyerluk
-* Fix document createion flow: still disabled in channels // TODO @JSchenk8
+* Fix document creation flow: still disabled in channels // TODO @JSchenk8
 * Fix Editable Teaser override clearing // TODO @benib
 * Fix Legacy Dashboards: initial load takes cached filter value into account now // TODO @benib
 * Fix redirect: state given over URL // TODO @JSchenk8
