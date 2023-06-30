@@ -218,8 +218,6 @@ liEditor.searchFilters.registerListV2('MultiSelectV2Filter', {
 })
 ```
 
-TODO @marcbachmann
-
 ### Document Preview
 
 TODO @benib
@@ -296,11 +294,6 @@ TODO @benib
 ### Improve data migration hasActiveRevisionsWithDesign query
 
 TODO @marcbachmann
-
-### Improve scroll into view behavior
-
-TODO @dfreier @benib
-
 
 ### Support significantPublicationDate on document import
 
