@@ -1065,7 +1065,7 @@ metadata: [
     config: {
       paramsSchema: [                     // Defines schema of message object
         {
-          type: 'li-text',                // One of: li-text, li-boolean, li-integer, li-date, li-datetime
+          type: 'li-text',                // One of: li-text, li-boolean, li-integer, li-date, li-datetime, li-string-list
           handle: 'messageText',          // Property name on message object
           config: {                       // Config based on type (li-text here)
             required: true,
