@@ -294,7 +294,7 @@ TODO @ajwild
 * Do not change the working title if a displayTitlePattern is configured
 * Do not send title to server with displayTitlePattern config // TODO @marcbachmann
 * Fix Broken Navigation after MediaLibrary Asset Upload // TODO @peyerluk
-* [documentCreationDisabled flag still supported in multi channel projects](https://github.com/livingdocsIO/livingdocs-editor/pull/6781)
+* documentCreationDisabled flag still supported in multi channel projects
 * Fix Editable Teaser override clearing // TODO @benib
 * Fix Legacy Dashboards: initial load takes cached filter value into account now // TODO @benib
 * [Redirecting to home page improved to rely on state not URL](https://github.com/livingdocsIO/livingdocs-editor/pull/6931)
