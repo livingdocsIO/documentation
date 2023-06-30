@@ -297,7 +297,7 @@ TODO @marcbachmann
 
 ### Support significantPublicationDate on document import
 
-TODO @ajwild
+`significantPublicationDate` (Added in: release-2023-07) sets a date which can be used by deliveries to display to viewers [Learn more]({{< ref "/content/reference/public-api/imports/documents.md" >}})
 
 ## Bugfixes
 
