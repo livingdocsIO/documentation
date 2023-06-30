@@ -328,6 +328,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.48): fix(indexing): Fix `--ids=1,2,3` indexing for the drafts index
 - [v213.6.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.47): fix(indexing): Add try/catch around elasticsearch payload creation to prevent full bulk failures if one document is faulty
 - [v213.6.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.46): fix(dependencies): Upgrade `vm2` to fix security vulnerabilities CVE-2023-32314
 - [v213.6.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.45): chore(data-migrations): Support new date range structure on data migration document filter query
