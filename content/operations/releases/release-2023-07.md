@@ -297,7 +297,7 @@ TODO @ajwild
 * documentCreationDisabled flag still supported in multi channel projects
 * Fix Editable Teaser override clearing // TODO @benib
 * Fix Legacy Dashboards: initial load takes cached filter value into account now // TODO @benib
-* [Redirecting to home page improved to rely on state not URL](https://github.com/livingdocsIO/livingdocs-editor/pull/6931)
+* Redirecting to home page improved to rely on state not URL
 * Fix set metadata title (useAsTitle) property during creation // TODO @benib
 * Prevent unsaved document data while processing remote updates // TODO @ajwild
 * Use `$t()` instead of undefined `this.$t()` in `li-unsaved-dialog`
