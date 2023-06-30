@@ -294,10 +294,10 @@ TODO @ajwild
 * Do not change the working title if a displayTitlePattern is configured
 * Do not send title to server with displayTitlePattern config // TODO @marcbachmann
 * Fix Broken Navigation after MediaLibrary Asset Upload // TODO @peyerluk
-* Fix document creation flow: still disabled in channels // TODO @JSchenk8
+* [documentCreationDisabled flag still supported in multi channel projects](https://github.com/livingdocsIO/livingdocs-editor/pull/6781)
 * Fix Editable Teaser override clearing // TODO @benib
 * Fix Legacy Dashboards: initial load takes cached filter value into account now // TODO @benib
-* Fix redirect: state given over URL // TODO @JSchenk8
+* [Redirecting to home page improved to rely on state not URL](https://github.com/livingdocsIO/livingdocs-editor/pull/6931)
 * Fix set metadata title (useAsTitle) property during creation // TODO @benib
 * Prevent unsaved document data while processing remote updates // TODO @ajwild
 * Use `$t()` instead of undefined `this.$t()` in `li-unsaved-dialog`
