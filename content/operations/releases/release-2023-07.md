@@ -230,7 +230,23 @@ TODO @marcbachmann
 
 ### Translatable li-tree plugin
 
-TODO @dfreier
+li-tree plugin has new config `multilang` to support multiple languages on items [Learn more]({{< ref "/content/reference/document/metadata/metadata-plugin-list.md#li-tree" >}})
+
+Metadata config in project config:
+
+```js
+metadata: [
+  {
+    handle: 'tree',
+    type: 'li-tree',
+    config: {
+      multilang: true,
+      ...
+    },
+    ...
+  }
+]
+```
 
 ### UI and label config multi-language support
 
