@@ -277,15 +277,10 @@ metadata: [
 
 ## Improvements
 
-- [Access Control](#access-control)
 - [Improve Component Area](#improve-component-area)
 - [Improve data migration hasActiveRevisionsWithDesign query](#improve-data-migration-hasactiverevisionswithdesign-query)
 - [Improve scroll into view behavior](#improve-scroll-into-view-behavior)
 - [Support significantPublicationDate on document import](#support-significantpublicationdate-on-document-import)
-
-### Access Control
-
-TODO @marcbachmann
 
 ### Improve Component Area
 
