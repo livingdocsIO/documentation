@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1408.0 to v2.1409.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5840)
 * [Give labels better names](https://github.com/livingdocsIO/livingdocs-server/pull/5821)
 * [Fix tooltip label translation](https://github.com/livingdocsIO/livingdocs-editor/pull/7068)
 * [chore(deps): update dependency chai from 4.3.6 to v4.3.7 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5834)
