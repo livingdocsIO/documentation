@@ -425,6 +425,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v226.3.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.24): fix(indexing): Fix `--ids=1,2,3` indexing for the drafts index
 - [v226.3.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.23): fix: bump framework version to include original size for custom image service
 - [v226.3.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.22): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 - [v226.3.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.21): chore(media-library): Return latest entry after update
