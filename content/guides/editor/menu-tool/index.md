@@ -4,7 +4,7 @@ description: Use Data-Record and li-tree plugin to build a menu tool
 weight: 4
 ---
 
-The idea is to use the [`li-tree`]({{< ref "/reference/document/metadata/metadata-plugin-list#li-tree">}}) metadata plugin on a Data Record to define a menu tree structure along with additional metadata.
+The idea is to use the [`li-tree`]({{< ref "/reference/document/metadata/plugins/li-tree">}}) metadata plugin on a Data Record to define a menu tree structure along with additional metadata.
 Since each menu is just a document, it can be shown in dashboards and referenced in other documents.
 As with all documents in Livingdocs, this is a way to express what the content is, but not how it is rendered.
 

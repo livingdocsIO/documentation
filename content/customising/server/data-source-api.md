@@ -14,7 +14,7 @@ The current version supports binding a DataSource to a metadata field, which wil
 ## Metadata plugins with DataSource support
 - li-text
 - li-string-list
-- find more metadata plugins [here]({{< ref "/reference/document/metadata/metadata-plugin-list" >}}) with `DataSource` support
+- find more metadata plugins [here]({{< ref "/reference/document/metadata/plugins" >}}) with `DataSource` support
 
 ## Example - Bind a DataSource to a Metadata Field
 

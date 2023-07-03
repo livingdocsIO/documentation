@@ -171,6 +171,6 @@ liEditor.vueComponentRegistry.registerComponent({
 
 ## References
 - [Intro Metadata]({{< ref "/reference/document/metadata" >}})
-- [Metadata Plugin List]({{< ref "/reference/document/metadata/metadata-plugin-list" >}})
+- [Metadata Plugin List]({{< ref "/reference/document/metadata/plugins" >}})
 - [Metadata Plugin Server Extension]({{< ref "/customising/server/metadata-plugins" >}})
 - [Vue Component Registry]({{< ref "/customising/advanced/editor/vue-component-registry" >}})

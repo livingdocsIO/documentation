@@ -115,6 +115,8 @@ contentTypeConfig: |2
 additionalConfig: |
   ### Multi-Language Handling
 
+  {{< added-in release-2023-07 block >}}
+
   To enable multi-language support in the tree, a new config property called `multilang` has been introduced.
   The available languages and the default language are inherited from the project's [Multi-Language configuration]({{< ref "/guides/editor/multi-language-content" >}}).
 
@@ -133,4 +135,7 @@ additionalConfig: |
   Tree items of type `multilang` can contain various types of links within their translations object.
   For example, the English link could refer to a document, while the German link could be a URL.
   It still adheres to the allowed types configuration, which means that mixed link types are possible, but only if they are included in the list of allowed types.
+
+  If multi-language is enabled for `li-tree` and the Display Filters for the document selection dialog are specifying a language filter,
+  the dashboard will automatically preselect the correct language filter for an item. Users can still change the language filter setting.
 ---

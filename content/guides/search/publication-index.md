@@ -32,7 +32,7 @@ publicationIndex: {
 
 ### Metadata Plugins
 
-Details of the core metadata plugins, along with their built-in indexing capabilities, can be found in the [Metadata Plugin List]({{< ref "/reference/document/metadata/metadata-plugin-list" >}}).
+Details of the core metadata plugins, along with their built-in indexing capabilities, can be found in the [Metadata Plugin List]({{< ref "/reference/document/metadata/plugins" >}}).
 
 To be able to filter documents using a metadata value you must ensure the metadata plugin supports indexing. You also need to enable indexing on the metadata property defined in the content type config:
 

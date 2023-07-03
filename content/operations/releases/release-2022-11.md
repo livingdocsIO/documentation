@@ -74,7 +74,7 @@ but gives you the control over what and how to send.
 - Dynamic message format based on Params Schema
 - Implement your own push function to send messages anywhere
 
-* [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-push-messages" >}})
+* [Documentation]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}})
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5833)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4829)
 
@@ -109,7 +109,7 @@ Cutting and pasting components makes reordering components within a long documen
 
 To replace the existing `li-reference-list` metadata plugin with it's more modern variant, `li-document-references` is introduced. It allows a more flexible configuration for the dashboard in use to search documents by the means of the `useDashboard` config as you know it from `li-document-reference`.
 
-* [Documentation](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-document-references)
+* [Documentation](https://docs.livingdocs.io/reference/document/metadata/plugins/li-document-references)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4871)
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5873)
 

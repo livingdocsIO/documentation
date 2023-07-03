@@ -159,13 +159,13 @@ All callback-based server hooks have been removed (throw an error on registratio
 
 We added 2 properties `configSchema` and `uiSchema` to a metadata plugin where one can define a schema validation. If you want to know more about the motivation and a fallback (`metadataPluginsToIgnoreForConfigValidation`), you get some insights [here](https://github.com/livingdocsIO/livingdocs-server/pull/4296).
 
-- :fire: Add strict validation for [`li-enum`](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-enum)
-- :fire: Add strict validation for [`li-text`](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-text)
-- :fire: Add strict validation for [`li-reference`](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-reference)
-- :fire: Add strict validation for [`li-document-reference`](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-document-reference)
+- :fire: Add strict validation for [`li-enum`](https://docs.livingdocs.io/reference/document/metadata/plugins/li-enum)
+- :fire: Add strict validation for [`li-text`](https://docs.livingdocs.io/reference/document/metadata/plugins/li-text)
+- :fire: Add strict validation for [`li-reference`](https://docs.livingdocs.io/reference/document/metadata/plugins/li-reference)
+- :fire: Add strict validation for [`li-document-reference`](https://docs.livingdocs.io/reference/document/metadata/plugins/li-document-reference)
 
 References:
-- [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list)
+- [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference/document/metadata/plugins)
 - [li-text PR](https://github.com/livingdocsIO/livingdocs-server/pull/4296)
 - [li-enum PR](https://github.com/livingdocsIO/livingdocs-server/pull/4316)
 - [li-reference | li-document-reference PR](https://github.com/livingdocsIO/livingdocs-server/pull/4425)
@@ -389,7 +389,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5
 Deprecate metadata plugin `li-media-language`, use `li-metadata-translations` instead (same config).
 
 References:
-- [Documentation](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list)
+- [Documentation](https://docs.livingdocs.io/reference/document/metadata/plugins)
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4315)
 
 ### Metadata Services

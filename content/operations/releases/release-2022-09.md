@@ -77,7 +77,7 @@ The metadata plugin `li-date` allows to set a date **without** time.
 
 `li-tree` lets you set up a tree with items of the 3 possible types `group`, `link`, `document`.
 
-* [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-tree" >}})
+* [Documentation]({{< ref "/reference/document/metadata/plugins/li-tree" >}})
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4591)
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5580)
 
@@ -85,7 +85,7 @@ The metadata plugin `li-date` allows to set a date **without** time.
 
 The `li-issue-management` metadata plugin can be used to manage issues (a data-record with references to pages).
 
-* [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-issue-management" >}})
+* [Documentation]({{< ref "/reference/document/metadata/plugins/li-issue-management" >}})
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5662)
 * [PR: Editor - Sortable Issues](https://github.com/livingdocsIO/livingdocs-editor/pull/5732)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4686)
@@ -192,7 +192,7 @@ To restore to the old behavior is not 100% possible because the updated version 
 
 If you have defined `LiMetaTextareaForm` as UI component or set `rows`, you have now to set `allowNewlines: true`.
 
-For other changes please consult the [documentation](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-text)
+For other changes please consult the [documentation](https://docs.livingdocs.io/reference/document/metadata/plugins/li-text)
 
 #### Backward Compatibility Mode
 
