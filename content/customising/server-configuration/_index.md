@@ -962,7 +962,6 @@ mediaLibrary: {
     },
     processing: {
       maxResolution: 24 * 1000 * 1000, // 24MP,  default 24 mega-pixels
-      maxFileSize: '15mb',
       maxConcurrentProcesses: 5, // default 5
       lossy: {
         // max pixel width or height
