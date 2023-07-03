@@ -3,11 +3,10 @@ title: Base Filter (Legacy)
 hideSectionTeaser: true
 excludeFromSearch: true
 ---
+
 {{< warning >}}
-{{< deprecated-in release-2023-07 >}}
-<br>
 A new version of this document, for {{< release "release-2023-07" >}} and above, is available [here]({{< ref "/customising/advanced/editor-configuration/base-filter" >}}).
-{{</ warning >}}
+{{< /warning >}}
 
 Base filters are used to filter the resultset on a dashboard or a search modal.
 They can be visible (`displayFilter`) or invisible (all other types).
