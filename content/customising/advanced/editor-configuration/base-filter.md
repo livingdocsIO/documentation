@@ -2,6 +2,10 @@
 title: Base Filter
 ---
 
+{{< info >}}
+A version of this document for releases prior to {{< release "release-2023-07" >}} is available [here]({{< ref "/customising/advanced/editor-configuration/base-filter-legacy" >}}).
+{{< /info >}}
+
 Base filters are used to filter the result set on a dashboard or a search modal.
 They can be visible (`displayFilter`) or invisible (all other types).
 Base filters are used in different places and have a common format to construct the filter query.
@@ -27,23 +31,24 @@ Learn more about the filter queries format [here]({{< ref "/content/reference/pu
 This are all available `queryTypes` which can be used to form a filter query.
 
 ```js
-// documentType {key: 'string', term: string || array}
-{key: 'documentType', term: ['article', 'page', 'data-record']}
-
-// locale
-{key: 'locale', term: 'de-DE'}
-
 // contentType {key: 'string', term: string || array}
 {key: 'contentType', term: 'regular'}
 
 // not contentType {key: 'string', term: string || array}
 {not: {key: 'contentType', term: 'regular'}}
 
+// documentType {key: 'string', term: string || array}
+{key: 'documentType', term: 'article'}
+{key: 'documentType', term: ['article', 'page']}
+
+// language
+{key: 'language', term: 'de'}
+
 // ownerId
 {key: 'ownerId', term: 1}
 
 // dateRange
-{key: "updatedAt", range: { gte: "2023-06-21T07:55:00.000Z", lte: "2023-06-23T07:55:00.000Z" }}
+{key: 'updatedAt', range: {gte: '2023-06-21T07:55:00.000Z', lte: '2023-06-23T07:55:00.000Z'}}
 
 // metadata
 {key: 'metadata.foo', term: 'bar'}
@@ -51,7 +56,7 @@ This are all available `queryTypes` which can be used to form a filter query.
 {key: 'metadata.teaserImage.mediaId', exists: true}
 {
   key: 'metadata.publicationDate',
-  range: { gte: "2023-06-21T07:55:00.000Z", lte: "2023-06-23T07:55:00.000Z" }
+  range: {gte: '2023-06-21T07:55:00.000Z', lte: '2023-06-23T07:55:00.000Z'}
 }
 
 // tasks
@@ -68,16 +73,6 @@ This are all available `queryTypes` which can be used to form a filter query.
 {key: 'state', term: 'active'}
 {key: 'state', term: 'revoked'}
 ```
-
-### Example - Filter by documentType
-
-```js
-baseFilters: [
-  {key: 'documentType', term: 'article'}
-]
-```
-
-This would reduce the search to only articles (no pages).
 
 ### Example - Filter by metadata with key/value
 
@@ -114,17 +109,17 @@ More complex metadata fields are indexed as an object (instead of key/value). In
 
 This example would filter documents that have the value `42` in the metadata field `author` with properties `reference.id`. You have to make sure that `author` is an indexed metadata field.
 
-### Example 4 - filter by task
+### Example - Filter by task
 
 ```js
 defaultQueries: [
-  { key: "metadata.proofreading.state", term: "requested" }
+  { key: 'metadata.proofreading.state', term: 'requested' }
 ]
 ```
 
 This would filter for only documents that have had a successful proofreading. The core only exposes the `proofreading` task, but you can define your own custom tasks. The values are `todo`, `doing`, `done` for the 3 states that a task can have.
 
-### Example 5 - filter by metadata with dataType keyword for mediaIndex
+### Example - Filter by metadata with dataType keyword for mediaIndex
 
 ```js
 baseFilters: [
