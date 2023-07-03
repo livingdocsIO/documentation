@@ -157,7 +157,6 @@ TODO @ajwild
 
 For a business level explanation of the new features please check [July Release Notes]() // TODO
 
-- [Copy Target Icon and Label Config](#copy-target-icon-and-label-config)
 - [Dashboard language filter for li-tree document selection](#dashboard-language-filter-for-li-tree-document-selection)
 - [Display Filters ListV2 with OR combination](#display-filters-listv2-with-or-combination)
 - [Document Preview](#document-preview)
@@ -165,26 +164,6 @@ For a business level explanation of the new features please check [July Release 
 - [Translatable li-tree plugin](#translatable-li-tree-plugin)
 - [UI and label config multi-language support](#ui-and-label-config-multi-language-support)
 
-### Copy Target Icon and Label Config
-
-The copy target config has been extended to support an icon and a label. [Learn more]({{< ref "/guides/editor/document-copy/index.md#setup-config" >}})
-
-Copy config in project config:
-
-```js
-copy: [
-  {
-    source: {...},
-    targets: [
-      {
-        label: 'Web Article',
-        icon: 'web',
-        ...
-      }
-    ]
-  }
-]
-```
 
 ### Dashboard language filter for li-tree document selection
 
@@ -265,34 +244,45 @@ metadata: [
 
 ## Improvements
 
-- [Improve Component Area](#improve-component-area)
-- [Improve data migration hasActiveRevisionsWithDesign query](#improve-data-migration-hasactiverevisionswithdesign-query)
-- [Improve scroll into view behavior](#improve-scroll-into-view-behavior)
 - [Support significantPublicationDate on document import](#support-significantpublicationdate-on-document-import)
-
-### Improve Component Area
-
-TODO @benib
-
-### Improve data migration hasActiveRevisionsWithDesign query
-
-TODO @marcbachmann
+- [Copy Target Icon and Label Config](#copy-target-icon-and-label-config)
 
 ### Support significantPublicationDate on document import
 
-`significantPublicationDate` sets a date which can be used by deliveries to display to viewers [Learn more]({{< ref "/content/reference/public-api/imports/documents.md" >}})
+Property `significantPublicationDate` sets a date which deliveries can display to viewers [Learn more]({{< ref "/content/reference/public-api/imports/documents.md" >}})
+
+### Copy Target Icon and Label Config
+
+The copy target config has been extended to support an icon and a label. [Learn more]({{< ref "/guides/editor/document-copy/index.md#setup-config" >}})
+
+Copy config in project config:
+
+```js
+copy: [
+  {
+    source: {...},
+    targets: [
+      {
+        label: 'Web Article',
+        icon: 'web',
+        ...
+      }
+    ]
+  }
+]
+```
 
 ## Bugfixes
 
 * Do not change the working title if a displayTitlePattern is configured
-* Do not send title to server with displayTitlePattern config // TODO @marcbachmann
-* Fix Broken Navigation after MediaLibrary Asset Upload // TODO @peyerluk
+* Do not send title to server with displayTitlePattern config
+* Fix Broken Navigation after MediaLibrary Asset Upload
 * documentCreationDisabled flag still supported in multi channel projects
-* Fix Editable Teaser override clearing // TODO @benib
-* Fix Legacy Dashboards: initial load takes cached filter value into account now // TODO @benib
+* Fix Editable Teaser override clearing
+* Fix Legacy Dashboards: initial load takes cached filter value into account now
 * Redirecting to home page improved to rely on state not URL
-* Fix set metadata title (useAsTitle) property during creation // TODO @benib
-* Prevent unsaved document data while processing remote updates // TODO @ajwild
+* Fix set metadata title (useAsTitle) property during creation
+* Prevent unsaved document data while processing remote updates
 * Use `$t()` instead of undefined `this.$t()` in `li-unsaved-dialog`
 
 ## Vulnerability Patches
