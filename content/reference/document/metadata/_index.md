@@ -61,7 +61,7 @@ metadata: [
 
 ## Livingdocs Metadata Plugins
 
-Livingdocs offers metadata [plugins]({{< ref "/reference/document/metadata/metadata-plugin-list" >}}) for a wide array of data types like strings, dates or references to other documents. These plugins should fulfill the most common use cases and have a strict schema.
+Livingdocs offers metadata [plugins]({{< ref "/reference/document/metadata/plugins" >}}) for a wide array of data types like strings, dates or references to other documents. These plugins should fulfill the most common use cases and have a strict schema.
 
 :information_source: A combination of metadata `type` (plugin) and configuration defines how the UI in the editor looks and in what format data are stored.
 
@@ -73,6 +73,6 @@ If the provided plugins do not fulfill your needs, you can create your own metad
 
 ## References
 
-- [Metadata Plugin List]({{< ref "/reference/document/metadata/metadata-plugin-list" >}})
+- [Metadata Plugin List]({{< ref "/reference/document/metadata/plugins" >}})
 - [Metadata Plugin Guide]({{< ref "/guides/documents/metadata/metadata-examples" >}}).
 - [Metadata Plugin Server Extension]({{< ref "/customising/server/metadata-plugins" >}}).

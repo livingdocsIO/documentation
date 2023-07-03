@@ -77,7 +77,7 @@ The Estimated Time of Completion Metadata Plugin `li-estimated-time-of-completio
 
 **Notice**: The li-estimated-time-of-completion plugin is only available if the Planning System is enabled.
 
-* [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-estimated-time-of-completion" >}})
+* [Documentation]({{< ref "/reference/document/metadata/plugins/li-estimated-time-of-completion" >}})
 * [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6255)
 * [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/5176)
 
@@ -88,7 +88,7 @@ The plugin is available in the Metadata Form and the Table Dashboard.
 
 **Notice**: The li-team plugin is only available if the Planning System is enabled.
 
-* [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-team" >}})
+* [Documentation]({{< ref "/reference/document/metadata/plugins/li-team" >}})
 * [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/6024)
 * [PR Server](https://github.com/livingdocsIO/livingdocs-server/pull/4974)
 

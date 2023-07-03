@@ -582,7 +582,7 @@ dashboards: [
 
 #### Supported metadata properties
 
-The following [metadata plugin types]({{< ref "/reference/document/metadata/metadata-plugin-list" >}})
+The following [metadata plugin types]({{< ref "/reference/document/metadata/plugins" >}})
 are supported in the table dashboard:
 - `li-boolean`
 - `li-text`

@@ -20,7 +20,7 @@ The metadata screen gets a new language select box if the multi-language feature
 
 - Read the [metadata translations for Data Records]({{< ref "/guides/editor/metadata-translations" >}}) guide to learn how to use translations for Data Records.
 - Read the [setting up the Media Library]({{< ref "/guides/media-library/media-library-setup" >}}) guide to learn how to configure translations for your Images, Videos and Files.
-- Get a list of available [metadata plugins]({{< ref "/reference/document/metadata/metadata-plugin-list" >}})
+- Get a list of available [metadata plugins]({{< ref "/reference/document/metadata/plugins" >}})
 
 ## Server-side
 

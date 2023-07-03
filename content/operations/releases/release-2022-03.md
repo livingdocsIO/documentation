@@ -80,7 +80,7 @@ A much requested feature was adding metadata plugins with a custom Vue component
 
 References:
 * [Guide - Slug example implementation](https://docs.livingdocs.io/guides/documents/metadata/metadata-examples/)
-* [Documentation - List of available metadata plugins](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list)
+* [Documentation - List of available metadata plugins](https://docs.livingdocs.io/reference/document/metadata/plugins)
 * [Documentation - Register a metadata plugin via Vue component registry](https://docs.livingdocs.io/customising/advanced/editor/vue-component-registry)
 
 ### Table Dashboards
@@ -641,7 +641,7 @@ References:
 
 ### Config ui.component in metadata plugin config
 
-Configuring `ui.component` with the default component name for a type is now deprecated. Please consult the [documentation](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list) to learn about the default components per type. If you have the default component configured, please remove the `ui.component` configuration.
+Configuring `ui.component` with the default component name for a type is now deprecated. Please consult the [documentation](https://docs.livingdocs.io/reference/document/metadata/plugins) to learn about the default components per type. If you have the default component configured, please remove the `ui.component` configuration.
 
 An example:
 ```js
@@ -670,7 +670,7 @@ An example:
 ```
 
 References:
-- [Documentation](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list)
+- [Documentation](https://docs.livingdocs.io/reference/document/metadata/plugins)
 - [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5041)
 
 

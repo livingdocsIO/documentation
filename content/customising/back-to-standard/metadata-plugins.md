@@ -10,7 +10,7 @@ menus:
 
 ## Migrate Custom Plugins -> Core Plugins
 
-Most custom metadata plugins can be migrated to [core plugins]({{< ref "reference/document/metadata/metadata-plugin-list#overview">}}). The core plugins are constantly improved and new ones will be added.
+Most custom metadata plugins can be migrated to [core plugins]({{< ref "reference/document/metadata/plugins">}}). The core plugins are constantly improved and new ones will be added.
 
 Some thoughts/inputs for a migration:
 - The storage format for Metadata fields should have only one level. Then it's easier to switch to core plugins and your deliveries are simpler too. E.g. having `metadata: {seoTitle, seoDescription}` is simpler to handle than `metadata: {seo: {title, description}}`.

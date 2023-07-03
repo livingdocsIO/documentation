@@ -296,7 +296,7 @@ The schema of the metadata array looks as follows:
   }))
 ```
 
-Get a list of available [metadata plugins]({{< ref "/reference/document/metadata/metadata-plugin-list" >}})
+Get a list of available [metadata plugins]({{< ref "/reference/document/metadata/plugins" >}})
 
 
 ## Metadata Groups
@@ -537,7 +537,7 @@ With this in place you can set the project configuration for your push notificat
 
 ## Enable Push Messages for a ContentType
 
-To enable Push Messages for a specific content type you must have a metadata field of type [`li-push-messages`]({{< ref "/reference/document/metadata/metadata-plugin-list#li-push-messages" >}}).
+To enable Push Messages for a specific content type you must have a metadata field of type [`li-push-messages`]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}).
 
 You can configure it multiple times on the same ContentType and the handle does not have any special naming conventions.
 

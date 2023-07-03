@@ -126,7 +126,7 @@ External Systems define a relation to a source system. Usually this is used when
 This first version provides links to the source system via the Table Dashboard action menu.
 
 * [Documentation External Systems](https://docs.livingdocs.io/reference/project-config/external-systems/)
-* [Documentation Metadata Plugin li-external-id](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-external-id)
+* [Documentation Metadata Plugin li-external-id](https://docs.livingdocs.io/reference/document/metadata/plugins/li-external-id)
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5443)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4548)
 
@@ -279,8 +279,8 @@ References:
 We added 2 properties `configSchema` and `uiSchema` to a metadata plugin where one can define a schema validation. If you want to know more about the motivation and a fallback (`metadataPluginsToIgnoreForConfigValidation`), you get some insights [here](https://github.com/livingdocsIO/livingdocs-server/pull/4296).
 
 References:
-- [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list)
-- [li-integer PR](https://docs.livingdocs.io/reference/document/metadata/metadata-plugin-list/#li-integer)
+- [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference/document/metadata/plugins)
+- [li-integer PR](https://docs.livingdocs.io/reference/document/metadata/plugins/li-integer)
 
 ### Error on Metadata Plugin registration :fire:
 

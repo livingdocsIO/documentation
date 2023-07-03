@@ -281,7 +281,7 @@ References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5632)
 
 ### Metadata Plugin li-issue-management
 
-- :fire: metadata type `li-issue-management`: requires `finiteProducts` in the root of the project config from now on. See [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-issue-management" >}})
+- :fire: metadata type `li-issue-management`: requires `finiteProducts` in the root of the project config from now on. See [Documentation]({{< ref "/reference/document/metadata/plugins/li-issue-management" >}})
 
 **Project Config**
 
@@ -294,7 +294,7 @@ References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5632)
    ...
 ```
 
-- :fire: metadata type `li-issue-management`: requires `config: {index: true},` metadata config from now on. See [Documentation]({{< ref "/reference/document/metadata/metadata-plugin-list#li-issue-management" >}})
+- :fire: metadata type `li-issue-management`: requires `config: {index: true},` metadata config from now on. See [Documentation]({{< ref "/reference/document/metadata/plugins/li-issue-management" >}})
 
 ```diff
    handle: 'local',
