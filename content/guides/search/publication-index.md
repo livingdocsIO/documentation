@@ -124,16 +124,15 @@ Valid filter fields are:
 
 The index type of each field will determine which query capabilities are supported:
 
-| Type    | Text          | Term          | Range         | Exists        | Sort          |
-| :------ | :-----------: | :-----------: | :-----------: | :-----------: | :-----------: |
-| text    | {{< check >}} | {{< cross >}} | {{< cross >}} | {{< check >}} | {{< cross >}} |
-| keyword | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
-| integer | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
-| float   | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
-| double  | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
-| long    | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
-| date    | {{< cross >}} | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
-| boolean | {{< cross >}} | {{< check >}} | {{< cross >}} | {{< check >}} | {{< cross >}} |
+| Type    | Term          | Range         | Exists        | Sort          |
+| :------ | :-----------: | :-----------: | :-----------: | :-----------: |
+| keyword | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| integer | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| float   | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| double  | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| long    | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| date    | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
+| boolean | {{< check >}} | {{< cross >}} | {{< check >}} | {{< cross >}} |
 
 An example of how the logical operators and query expressions can be combined to create a more complex query:
 
