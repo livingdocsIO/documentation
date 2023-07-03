@@ -327,6 +327,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.6): fix(table dashboards): correctly error when custom tableDashboardCell components take editable prop
 - [v95.0.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.5): fix(quick publish): correctly show quick publish button if allowed
 
   ---
