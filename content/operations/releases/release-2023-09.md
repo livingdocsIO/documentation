@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Document Lists: allow publish control scheduled documents](https://github.com/livingdocsIO/livingdocs-editor/pull/7067)
 * [Improvement/Document Preview](https://github.com/livingdocsIO/livingdocs-editor/pull/7082)
 * [Dashboards: correctly error when custom tableDashboardCell takes editable prop](https://github.com/livingdocsIO/livingdocs-editor/pull/7079)
 * [fix(deps): update dependency fast-glob from 3.2.12 to v3.3.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5841)
