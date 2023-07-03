@@ -1,0 +1,102 @@
+{{ partial "default-above-content" . }}
+
+      <div class="article__content">
+        {{ if .Params.addedIn }}
+          {{ partial "added-in" (dict "release" .Params.addedIn "block" true) }}
+        {{ end }}
+        {{ if .Params.deprecatedIn }}
+          {{ partial "deprecated-in" (dict "release" .Params.deprecatedIn "block" true) }}
+        {{ end }}
+        {{ if .Params.removedIn }}
+          {{ partial "removed-in" (dict "release" .Params.removedIn "block" true) }}
+        {{ end }}
+
+        {{ if .Params.planningSystemOnly }}
+          {{ "**Notice**: The" | markdownify }} {{ .Title }} {{ "plugin is only available if the Planning System is enabled." | markdownify }}
+        {{ end }}
+
+        {{ "## Supported Features" | markdownify }}
+        <table style="width: auto; margin-top: 0;">
+          <tr>
+            <td>Document</td>
+            <td style="text-align: center;">{{ partial "check-cross" .Params.support.document }}</td>
+          </tr>
+          <tr>
+            <td>Media</td>
+            <td style="text-align: center;">{{ partial "check-cross" .Params.support.media }}</td>
+          </tr>
+          <tr>
+            <td>Table Dashboard</td>
+            <td style="text-align: center;">{{ partial "check-cross" .Params.support.tableDashboard }}</td>
+          </tr>
+          <tr>
+            <td>Include</td>
+            <td style="text-align: center;">{{ partial "check-cross" .Params.support.include }}</td>
+          </tr>
+          <tr>
+            <td>Display Filter</td>
+            <td style="text-align: center;">{{ partial "check-cross" .Params.support.displayFilter }}</td>
+          </tr>
+          <tr>
+            <td>Search Filter</td>
+            <td style="text-align: center;">{{ partial "check-cross" .Params.support.searchFilter }}</td>
+          </tr>
+          <tr>
+            <td>Search Sort</td>
+            <td style="text-align: center;">{{ partial "check-cross" .Params.support.searchSort }}</td>
+          </tr>
+        </table>
+
+        {{ if .Params.description }}
+          {{ "## Description" | markdownify }}
+          {{ .Params.description | .Page.RenderString }}
+        {{ end }}
+
+        {{ if .Params.defaultUI }}
+          {{ "## Default UI" | markdownify }}
+          {{ .Params.defaultUI | .Page.RenderString }}
+        {{ end }}
+
+        {{ if .Params.storageFormat }}
+          {{ "## Storage Format" | markdownify }}
+          {{ print "```js\n" .Params.storageFormat "\n```" | .Page.RenderString }}
+        {{ end }}
+
+        {{ if .Params.contentTypeConfig }}
+          {{ "## Content Type Config" | markdownify }}
+          {{ print "```js\n{\n  handle: 'myContentType',\n  // ...\n  metadata: [\n    {\n" .Params.contentTypeConfig "    }\n    // ...\n  ]\n}" | .Page.RenderString }}
+        {{ end }}
+
+        {{ if .Params.tableDashboardConfig }}
+          {{ "## Table Dashboard Config" | markdownify }}
+          {{ print "```js\n{\n  handle: 'myDashboard',\n  // ...\n" .Params.tableDashboardConfig "}" | .Page.RenderString }}
+        {{ end }}
+
+        {{ if .Params.additionalConfig }}
+          {{ "## Additional Config" | markdownify }}
+          {{ .Params.additionalConfig | .Page.RenderString }}
+        {{ end }}
+
+        <div class="article__footer">
+          {{ partial "footer.html" . }}
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <div class="page__toc">
+    <nav id="TableOfContents">
+      <ul>
+        <li><a href="#supported-features">Supported Features</a></li>
+        {{ if .Params.description }}<li><a href="#description">Description</a></li>{{ end }}
+        {{ if .Params.defaultUI }}<li><a href="#default-ui">Default UI</a></li>{{ end }}
+        {{ if .Params.storageformat }}<li><a href="#storage-format">Storage Format</a></li>{{ end }}
+        {{ if .Params.contentTypeConfig }}<li><a href="#content-type-config">Content Type Config</a></li>{{ end }}
+        {{ if .Params.tableDashboardConfig }}<li><a href="#table-dashboard-config">Table Dashboard Config</a></li>{{ end }}
+        {{ if .Params.additionalConfig }}<li><a href="#additional-config">Additional Config</a></li>{{ end }}
+      </ul>
+    </nav>
+  </div>
+</div>
+
+{{ partial "html-footer.html" . }}

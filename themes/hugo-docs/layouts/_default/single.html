@@ -1,29 +1,5 @@
-{{ partial "html-header.html" . }}
+{{ partial "default-above-content" . }}
 
-<div class="page">
-  {{ partial "sidebar.html" . }}
-  <main class="page__content">
-    <article class="article">
-      <h1 class="article__title">
-        {{ .Title }}
-        {{ if (ne (.Param "renderEditButton") false) }}
-          {{ partial "edit-page.html" . }}
-        {{ end }}
-      </h1>
+<div class="article__content">{{ .Content }}</div>
 
-      <div class="article__content">{{ .Content }}</div>
-
-      <div class="article__footer">
-        {{ partial "footer.html" . }}
-      </div>
-
-    </article>
-  </main>
-  {{ if (ne (.Param "renderTOC") false) }}
-  <div class="page__toc">
-    {{ .TableOfContents }}
-  </div>
-  {{ end }}
-</div>
-
-{{ partial "html-footer.html" . }}
+{{ partial "default-below-content" . }}
