@@ -1,7 +1,6 @@
 ---
 title: Search
 weight: 8
-renderTOC: false
 menus:
   reference:
     parent: Publications
