@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fast-glob from 3.2.12 to v3.3.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5841)
 * [fix(deps): update dependency @isaacs/ttlcache from 1.4.0 to v1.4.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5844)
 * [fix(deps): update dependency aws-sdk from 2.1408.0 to v2.1409.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5840)
 * [Give labels better names](https://github.com/livingdocsIO/livingdocs-server/pull/5821)
