@@ -11,7 +11,7 @@
           {{ partial "removed-in" (dict "release" .Params.removedIn "block" true) }}
         {{ end }}
 
-        {{ if .Params.planningSystemOnly }}
+        {{ if .Params.support.planningSystem }}
           {{ "**Notice**: The" | markdownify }} {{ .Title }} {{ "plugin is only available if the Planning System is enabled." | markdownify }}
         {{ end }}
 
@@ -38,12 +38,12 @@
             <td style="text-align: center;">{{ partial "check-cross" .Params.support.displayFilter }}</td>
           </tr>
           <tr>
-            <td>Search Filter</td>
-            <td style="text-align: center;">{{ partial "check-cross" .Params.support.searchFilter }}</td>
+            <td>Dynamic Indexing</td>
+            <td style="text-align: center;">{{ partial "check-cross" .Params.support.dynamicIndexing }}</td>
           </tr>
           <tr>
-            <td>Search Sort</td>
-            <td style="text-align: center;">{{ partial "check-cross" .Params.support.searchSort }}</td>
+            <td>System Metadata</td>
+            <td style="text-align: center;">{{ partial "check-cross" .Params.support.systemMetadata }}</td>
           </tr>
         </table>
 
