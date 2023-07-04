@@ -88,10 +88,6 @@ Please also make sure that `document.title` is no longer accessed in custom code
 * [Server: Remove `useAsTitle`](https://github.com/livingdocsIO/livingdocs-server/pull/5763)
 * [Editor: Remove `useAsTitle`](https://github.com/livingdocsIO/livingdocs-editor/pull/6949)
 
-### Removal `ui.component`
-
-🔥 Configuring `ui.component` for metadata plugins does not work anymore.
-
 ### Rename searchPublications property `conditions` to `filters`
 
 🔥 Rename `conditions` property to `filters`
