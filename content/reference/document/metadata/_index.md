@@ -16,12 +16,10 @@ Example of a metadata object as it could be returned by the Public API:
 {
   "title": "Doctor Who 2",
   "url": "/test/doctor-who",
-  "seo": {
-    "title": "BBC TV Show - Doctor Who",
-    "description": "Best TV show of all times",
-    "newsKeywords": "tv bbc",
-    "excludeFromSpiders": false
-  }
+  "seoTitle": "BBC TV Show - Doctor Who",
+  "seoDescription": "Best TV show of all times",
+  "seoNewsKeywords": "tv bbc",
+  "seoExcludeFromSpiders": false
 }
 ```
 
