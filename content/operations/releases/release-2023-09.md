@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Metadata Previews: show previews after errors and length feedback](https://github.com/livingdocsIO/livingdocs-editor/pull/7091)
 * [Clone dashboard config before modifying](https://github.com/livingdocsIO/livingdocs-editor/pull/7086)
 * [feat(ticker): allow metadata editing for ticker entries](https://github.com/livingdocsIO/livingdocs-editor/pull/7017)
 * [fix(deps): update dependency aws-sdk from 2.1409.0 to v2.1410.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5852)
