@@ -1,7 +1,82 @@
 ---
-title: Filter Migration
+title: Legacy Base Filter & Display Filter Migration
 description: Upgrade to the latest filter syntax
 ---
+
+
+### Custom Display Filters Migration
+```diff
+{
+-  id: 'published',
+   label: 'Published Documents',
+-  type: 'documentState',
+-  value: 'published'
+   // Migrate `type/value` combination to new `filter` attribute
+   // Please consult the list below
++  filter: {key: 'lastPublicationId', exists: true}
+}
+```
+
+### Custom Filters
+
+```diff
+{
+-  id: 'published',
+   label: 'Published Documents',
+-  type: 'customFilter',
+-  value: {foo: 'bar'}
+   // Migrate `customFilter` value to new `context` attribute
++  context: {foo: 'bar'}
+}
+```
+
+
+### Sorting
+
+
+```diff
+{
+-  id: 'sortByUpdated',
+   label: 'Recently updated documents first',
+-  type: 'sortBy',
+-  value: '-updated_at'
+   // Migrate `sortBy` value to new `sort` attribute
++  sort: '-updated_at'
+}
+```
+
+
+
+### Base Filter Migration
+
+fadsasd
+
+
+
+## Sorting
+
+Example dashboard config with sorting:
+```diff
+
+{
+  type: 'tableDashboard',
+  handle: 'gallery-dashboard',
+  pageTitle: 'Gallery Board',
+  // ...
+-  baseFilters: [
+-    {type: 'contentType', value: 'gallery'},
+-    {type: 'sortBy', value: '-updated_at'}
+-  ],
++  sort: '-updated_at',
++  baseFilters: [
++    {key: 'contentType', term: 'gallery'}
++  ]
+}
+````
+
+
+
+### Legacy Base Filter & Display Filter Migration
 
 The filter configuration has changed from `type` and `value` properties to `key` and [query expressions]({{< ref "/reference/public-api/publications/search#query-expressions" >}}). The current supported query expressions are `term`, `range` and `exists`.
 
@@ -21,9 +96,6 @@ As mentioned above, these are straight forward to migrate. The `type` property s
 
 The values should be of the correct type, so `string` for `'contentType'`, `'documentType'`, `'mediaType'`, `'reference'`, and `integer` for `id`, `channelId`, `ownerId`, `createdBy`. An array of values can also be passed, or you can use a `range` query expression, or `exists` if you want to know if the property has been indexed.
 
-## Custom Filters
-
-TODO: How is `type: 'customFilter'` used?
 
 ## Specific Filters
 
@@ -252,6 +324,3 @@ After:
 {key: `metadata.myTaskHandle.state`, term: 'completed'}
 ```
 
-## Sorting
-
-TODO: How is `type: 'sortBy'` used?
