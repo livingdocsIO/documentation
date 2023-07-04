@@ -56,7 +56,7 @@ To learn about the necessary actions to update Livingdocs to `release-2023-07`, 
 | Postgres                       | 12                                                                                       |
 | Elasticsearch<br/>OpenSearch   | 7.x<br/>1                                                                                |
 | Redis                          | 6.2                                                                                      |
-| Livingdocs Server Docker Image | livingdocs/server-base:18.5                                                              |
+| Livingdocs Server Docker Image | livingdocs/server-base:18.3                                                              |
 | Livingdocs Editor Docker Image | livingdocs/editor-base:18.5                                                              |
 | Browser Support                | Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67 |
 
