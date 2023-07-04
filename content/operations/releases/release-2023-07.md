@@ -308,6 +308,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.9): fix: clone dashboard config before modifying
 - [v95.0.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.8): chore: Do not add `dashboardConfig.published = true` filter if scheduled publishing is also active for lists
 - [v95.0.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.7): fix(document preview): Angular component
 - [v95.0.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.6): fix(table dashboards): correctly error when custom tableDashboardCell components take editable prop
