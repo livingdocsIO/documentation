@@ -367,6 +367,13 @@ import: {
   // To be modified in read-only server instances
   // Can also be modified removing `['worker']` role, which disables consumers
   enableConsumers: true,
+
+  // By default the livingdocs server automatically creates incremental document ids.
+  // If you want to import documents from an existing system, you can set this config
+  // to allow custom document ids below the threshold.
+  // Please consult {{< a ref="/guides/setup/import-legacy-system-documents" title="the guide" >}} for more details.
+  allowCustomIdsBelow: 10000,
+
   // Defines limits and properties for job imports
   jobs: {
     batchSize: 1000,
