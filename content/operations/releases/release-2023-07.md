@@ -157,17 +157,11 @@ TODO @ajwild
 
 For a business level explanation of the new features please check [July Release Notes]() // TODO
 
-- [Dashboard language filter for li-tree document selection](#dashboard-language-filter-for-li-tree-document-selection)
 - [Display Filters ListV2 with OR combination](#display-filters-listv2-with-or-combination)
 - [Document Preview](#document-preview)
 - [Search DSL](#search-dsl)
 - [Translatable li-tree plugin](#translatable-li-tree-plugin)
 - [UI and label config multi-language support](#ui-and-label-config-multi-language-support)
-
-
-### Dashboard language filter for li-tree document selection
-
-TODO @dfreier
 
 ### Display Filters ListV2 with OR combination
 
