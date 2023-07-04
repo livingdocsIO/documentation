@@ -1,82 +1,82 @@
 ---
-title: Legacy Base Filter & Display Filter Migration
-description: Upgrade to the latest filter syntax
+title: Display Filter & Base Filter Migration
+description: How to upgrade to the latest filter syntax
 ---
 
+## Display Filter Migration
 
-### Custom Display Filters Migration
+The structure of display filters has changed. Instead of the typical `type` and `value` properties alongside the `label` there are now three distinct properties that can be used to change the filter functionality. The main one is the `filter` property, which is an object containing the filter query using the new [Search Filters Query DSL]({{< ref "/reference/public-api/publications/search#search-filters" >}}). There is also a `context` property which can be used by [Custom Filters]({{< ref "#custom-filters" >}}). Finally, there is a `sort` property, which is a string that replaces the `'sortBy'` filter type.
+
+### Type/Value Filters
+
+The `type/value` combination should be migrated to new `filter` attribute:
+
 ```diff
-{
--  id: 'published',
-   label: 'Published Documents',
--  type: 'documentState',
--  value: 'published'
-   // Migrate `type/value` combination to new `filter` attribute
-   // Please consult the list below
-+  filter: {key: 'lastPublicationId', exists: true}
-}
+  {
+-   id: 'published',
+    label: 'Published Documents',
+-   type: 'documentState',
+-   value: 'published'
++   filter: {key: 'lastPublicationId', exists: true}
+  }
 ```
+
+For additional filter examples please see the [Migration Examples]({{< ref "#migration-examples" >}}) section below.
 
 ### Custom Filters
 
+Migrate the `customFilter` value to the new `context` attribute:
+
 ```diff
-{
--  id: 'published',
-   label: 'Published Documents',
--  type: 'customFilter',
--  value: {foo: 'bar'}
-   // Migrate `customFilter` value to new `context` attribute
-+  context: {foo: 'bar'}
-}
+  {
+-   id: 'published',
+    label: 'My Custom Filter',
+-   type: 'customFilter',
+-   value: {foo: 'bar'}
++   context: {foo: 'bar'}
+  }
 ```
 
+### SortBy Filter
+
+Migrate the `sortBy` value to the new `sort` attribute:
+
+```diff
+  {
+-   id: 'sortByUpdated',
+    label: 'Recently updated documents first',
+-   type: 'sortBy',
+-   value: '-updatedAt'
++   sort: '-updatedAt'
+  }
+```
+
+## Base Filter Migration
+
+Base Filters have not changed as significantly as Display Filters, as they are equivalent to the `filters` property within the Display Filter options. The same [Search Filters Query DSL]({{< ref "/reference/public-api/publications/search#search-filters" >}}) is used within the object.
 
 ### Sorting
 
+The `'sortBy'` filter should be replaced with a `sort` property on the root of the dashboard config:
 
 ```diff
-{
--  id: 'sortByUpdated',
-   label: 'Recently updated documents first',
--  type: 'sortBy',
--  value: '-updated_at'
-   // Migrate `sortBy` value to new `sort` attribute
-+  sort: '-updated_at'
-}
+  {
+    type: 'tableDashboard',
+    handle: 'gallery-dashboard',
+    pageTitle: 'Gallery Board',
+    // ...
+-   baseFilters: [
+-     {type: 'contentType', value: 'gallery'},
+-     {type: 'sortBy', value: '-updatedAt'}
+-   ],
++   sort: '-updatedAt',
++   baseFilters: [
++     {key: 'contentType', term: 'gallery'}
++   ]
+  }
 ```
 
-
-
-### Base Filter Migration
-
-fadsasd
-
-
-
-## Sorting
-
-Example dashboard config with sorting:
-```diff
-
-{
-  type: 'tableDashboard',
-  handle: 'gallery-dashboard',
-  pageTitle: 'Gallery Board',
-  // ...
--  baseFilters: [
--    {type: 'contentType', value: 'gallery'},
--    {type: 'sortBy', value: '-updated_at'}
--  ],
-+  sort: '-updated_at',
-+  baseFilters: [
-+    {key: 'contentType', term: 'gallery'}
-+  ]
-}
-````
-
-
-
-### Legacy Base Filter & Display Filter Migration
+### Filtering
 
 The filter configuration has changed from `type` and `value` properties to `key` and [query expressions]({{< ref "/reference/public-api/publications/search#query-expressions" >}}). The current supported query expressions are `term`, `range` and `exists`.
 
@@ -88,16 +88,15 @@ The new filter should look like this:
 ```js
 {key: 'contentType', term: 'regular'}
 ```
-Below you will find more specific example of how to migrate different filters.
+Below you will find specific examples of how to migrate different legacy filters. These objects can be used for `baseFilters`, the `displayFilters` `filters` property, and for [Public API Search Filters]({{< ref "/reference/public-api/publications/search#search-filters" >}}).
 
-## Simple Key / Value Filters
+## Migration Examples
+
+### Simple Key/Value Filters
 
 As mentioned above, these are straight forward to migrate. The `type` property should be renamed to `key`, and the `value` property should be renamed to `term`.
 
 The values should be of the correct type, so `string` for `'contentType'`, `'documentType'`, `'mediaType'`, `'reference'`, and `integer` for `id`, `channelId`, `ownerId`, `createdBy`. An array of values can also be passed, or you can use a `range` query expression, or `exists` if you want to know if the property has been indexed.
-
-
-## Specific Filters
 
 ### metadata
 
@@ -122,6 +121,8 @@ After:
 
 #### Exists
 
+Previously there was support for `exists` and `value.exists` properties, but this is now just the top-level `exists`, along with the `key`:
+
 Before:
 ```js
 {type: 'metadata', key: 'myMetadataHandle', exists: true}
@@ -137,6 +138,8 @@ For metadata values which are stored as objects you must always use a nested pro
 For example, if you would like to check if a task has been defined you should use `{key: 'metadata.myTaskHandle.state', exists: true}`, because `{key: 'metadata.myTaskHandle', exists: true}` will always return `false` because the object itself is not indexed, only the individual properties within it.
 
 #### Date Range / Range
+
+The `dateFilter` and `rangeFilter` properties have been replaced by the `range` property. If you're also using `from` and `to` you should replace them with `gte` and `lte`:
 
 Before:
 ```js
@@ -154,14 +157,9 @@ The `optional: true` parameter requires an OR filter to check for the existance 
 Before:
 ```js
 {type: 'metadata', key: 'myMetadataHandle', dateFilter: {gte: '2023-07-04T00:00:00.000Z', lt: '2023-07-05T00:00:00.000Z', optional: true}}
-{type: 'metadata', key: 'myMetadataHandle', rangeFilter: {gte: '2023-07-04T00:00:00.000Z', lt: '2023-07-05T00:00:00.000Z', optional: true}}
 ```
 After:
 ```js
-{or: [
-  {key: 'metadata.myMetadataHandle', exists: false},
-  {key: 'metadata.myMetadataHandle', range: {gte: '2023-07-04T00:00:00.000Z', lt: '2023-07-05T00:00:00.000Z'}}
-]}
 {or: [
   {key: 'metadata.myMetadataHandle', exists: false},
   {key: 'metadata.myMetadataHandle', range: {gte: '2023-07-04T00:00:00.000Z', lt: '2023-07-05T00:00:00.000Z'}}
@@ -200,35 +198,9 @@ After:
 {not: {key: 'contentType', term: ['author','page']}}
 ```
 
-### state
-
-Before:
-```js
-{type: 'state', value: 'revoked'}
-{type: 'state', value: 'revoked,archived'}
-{type: 'state', value: ['revoked', 'archived']}
-```
-After:
-```js
-{key: 'state', term: 'revoked'}
-{key: 'state', term: ['revoked', 'archived']}
-{key: 'state', term: ['revoked', 'archived']}
-```
-
-A state value of `'active'` requires an OR filter to handle unset states, as the default state is active, as well as those set to `'active'`:
-
-Before:
-```js
-{type: 'state', value: 'active'}
-{type: 'state', value: ['active', 'revoked']}
-```
-After:
-```js
-{or: [{key: 'state', exists: false}, {key: 'state', term: 'active'}]}
-{or: [{key: 'state', exists: false}, {key: 'state', term: ['active', 'revoked']}]}
-```
-
 ### dateRange
+
+The new `range` property supports `gte`, `lte`, `gt`, and `lt`:
 
 Before:
 ```js
@@ -259,6 +231,8 @@ After:
 
 ### published
 
+To see if a document is currently published you can check if `lastPublicationId` exists:
+
 Before:
 ```js
 {type: 'published', value: true}
@@ -271,6 +245,8 @@ After:
 ```
 
 ### documentState
+
+The various `'documentState'` filters can be replicated using other available properties:
 
 Before:
 ```js
@@ -289,6 +265,8 @@ After:
 
 ### userInTeam
 
+To recreate the `'userInTeam'` filter type there is a special `termPattern` property which uses the current user's id:
+
 Before:
 ```js
 {type: 'userInTeam', key: 'myTeamHandle'}
@@ -300,6 +278,8 @@ After:
 
 ### buyInNotExpired
 
+The `'buyInNotExpired'` replacement uses a relative time range:
+
 Before:
 ```js
 {type: 'buyInNotExpired', key: 'myBuyInHandle'}
@@ -309,18 +289,4 @@ After:
 {key: 'metadata.myBuyInHandle.workflow.expiryDate', range: {gte: 'now/d'}}
 ```
 
-### task
-
-Before:
-```js
-{type: 'task', taskName: 'myTaskHandle', taskValue: 'requested'}
-{type: 'task', taskName: 'myTaskHandle', taskValue: 'accepted'}
-{type: 'task', taskName: 'myTaskHandle', taskValue: 'completed'}
-```
-After:
-```js
-{key: `metadata.myTaskHandle.state`, term: 'requested'}
-{key: `metadata.myTaskHandle.state`, term: 'accepted'}
-{key: `metadata.myTaskHandle.state`, term: 'completed'}
-```
-
+The `/d` rounds to the start of the day. Along with `'now/d'` there is also support for `'now'`, `'now-1d'`, and `'now-1d/d'`.
