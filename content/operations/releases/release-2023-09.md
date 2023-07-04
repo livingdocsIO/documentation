@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1409.0 to v2.1410.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5852)
 * [fix(deps): update dependency fastify from 4.18.0 to v4.19.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7072)
 * [fix(deps): update dependency fastify from 4.19.1 to v4.19.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5851)
 * [Document Lists: allow publish control scheduled documents](https://github.com/livingdocsIO/livingdocs-server/pull/5847)
