@@ -1576,6 +1576,8 @@ Tree items of type `multilang` can contain various types of links within their t
 For example, the English link could refer to a document, while the German link could be a URL.
 It still adheres to the allowed types configuration, which means that mixed link types are possible, but only if they are included in the list of allowed types.
 
+If multi-language is enabled for `li-tree` and the Display Filters for the document selection dialog are specifying a language filter,
+the dashboard will automatically preselect the correct language filter for an item. Users can still change the language filter setting.
 
 ## li-transcoding-state
 **Storage Format**:
