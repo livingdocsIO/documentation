@@ -357,6 +357,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.13): fix(user): Improve li-user-avatar
 - [v95.0.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.12): fix(document lists): show correct label on card after publish control schedule is removed
 - [v95.0.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.11): fix(realtime): Notify user on Pusher connection error
 - [v95.0.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.10): fix(metadata previews): show previews after errors and length feedback
