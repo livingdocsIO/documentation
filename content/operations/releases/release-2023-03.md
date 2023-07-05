@@ -377,6 +377,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.93](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.93): fix(document lists): show correct label on card after publish control schedule is removed
 - [v90.33.92](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.92): fix: clone dashboard config before modifying
 - [v90.33.91](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.91): chore: Add scheduledOrPublished support on legacy documentState filter
 - [v90.33.90](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.90): fix(quick publish): correctly show quick publish button if allowed
