@@ -21,6 +21,9 @@ description: |
 defaultUI: Datetime input
 storageFormat: <ISO8601 String>
 contentTypeConfig: |2
-        handle: 'myHandle'
-        type: 'li-publish-date'
+        handle: 'myHandle',
+        type: 'li-publish-date',
+        config: {
+          index: true                              // optional, default: false, added in {{< release "release-2023-07" >}}
+        },
 ---

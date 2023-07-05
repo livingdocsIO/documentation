@@ -30,6 +30,9 @@ storageFormat: |
 contentTypeConfig: |2
         handle: 'myHandle'
         type: 'li-metadata-translations',
+        config: {
+          index: true                              // optional, default: false, added in {{< release "release-2023-07" >}}
+        },
         ui: {
           service: 'languageSelection'
         }

@@ -24,7 +24,8 @@ contentTypeConfig: |2
         type: 'li-google-vision',
         config: {
           // common
-          hideFromForm: false                      // optional, default: false
+          hideFromForm: false,                      // optional, default: false
+          index: true                              // optional, default: false, added in {{< release "release-2023-07" >}}
         }
         ui: {
           label: 'foo',                            // optional, default: start case of handle

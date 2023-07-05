@@ -32,6 +32,7 @@ contentTypeConfig: |2
           hideFromForm: false,                     // optional, default: false
           required: true,                          // optional, default: false
           requiredErrorMessage: 'Provide a value', // optional
+          index: true,                             // optional, default: false, added in {{< release "release-2023-07" >}}
           // specific
           referenceType: 'documents',              // required, must be 'documents'
           documentType: 'article',                 // optional, one of article, page, data-record

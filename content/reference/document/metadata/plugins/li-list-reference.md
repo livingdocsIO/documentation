@@ -30,7 +30,8 @@ contentTypeConfig: |2
           // common
           hideFromForm: false,                     // optional, default: false
           required: true,                          // optional, default: false
-          requiredErrorMessage: 'Provide a value',  // optional
+          requiredErrorMessage: 'Provide a value', // optional
+          index: true,                             // optional, default: false, added in {{< release "release-2023-07" >}}
           // specific
           defaultCount: true
         }

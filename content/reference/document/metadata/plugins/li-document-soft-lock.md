@@ -24,6 +24,6 @@ storageFormat: |
     tabId: <String>
   }
 contentTypeConfig: |2
-        handle: 'myHandle'
+        handle: 'myHandle',
         type: 'li-document-soft-lock'
 ---

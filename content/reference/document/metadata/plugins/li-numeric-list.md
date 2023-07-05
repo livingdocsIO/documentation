@@ -27,6 +27,7 @@ contentTypeConfig: |2
           // common
           required: true,                                   // optional, default: false
           requiredErrorMessage: 'Custom required message',  // optional
+          index: true,                                      // optional, default: false, added in {{< release "release-2023-07" >}}
           // specific
           maxItems: 5,                                      // optional
         },

@@ -22,6 +22,7 @@ contentTypeConfig: |2
         handle: 'myHandle'
         type: 'li-external-id',
         config: {
-          hideFromForm: true // default false
+          hideFromForm: true,     // default false
+          index: true             // optional, default: false, added in {{< release "release-2023-07" >}}
         }
 ---
