@@ -125,7 +125,7 @@ The preferred update path would be to use `filters` from the new [search DSL](#s
 
 ### Removal `liImageProxy` feature
 
-🔥 Features wasn't in use an didn't cover any use case.
+🔥 Features wasn't in use an didn't cover any use case. If you were still using it, you should use imgix or another Image Service provider instead. [More information]({{<ref "/content/guides/media-library/image-services.md">}}).
 
 * [Remove `liImageProxy` feature](https://github.com/livingdocsIO/livingdocs-server/pull/5772)
 
@@ -144,7 +144,7 @@ Preview API is deprecated and removed with `release-2023-09`: `previewApi.regist
 
 ### Add Api endpoint for incoming references for drafts
 
-New draft endpoint for incoming document references: `/drafts/:documentId/incomingDocumentReferences`. Needs `public-api:drafts:read privileges`. [learn more]({{<ref "/content/reference/public-api/drafts/incoming-references.md">}})
+New draft endpoint for incoming document references: `/drafts/:documentId/incomingDocumentReferences`. Needs `public-api:drafts:read privileges`. [Learn more]({{<ref "/content/reference/public-api/drafts/incoming-references.md">}})
 
 ### Public API Search Filters
 
