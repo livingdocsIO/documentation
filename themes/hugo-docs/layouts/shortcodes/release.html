@@ -1,3 +1,4 @@
 {{- $release := .Get 0 -}}
 {{- $href := print "/operations/releases/" $release "/" -}}
 <a href="{{ $href }}"><code>{{ $release }}</code></a>
+{{- /* Kill the newline! (Otherwise it will appear in the rendered markup) */ -}}
