@@ -65,8 +65,7 @@ In our service Sandbox we already have a content-type for an online article. It 
       handle: 'title',
       type: 'li-text',
       config: {
-        maxLength: 200,
-        useAsTitle: true // deprecated
+        maxLength: 200
       }
     }
   ],
