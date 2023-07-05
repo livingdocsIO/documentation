@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Notify user on Pusher connection error](https://github.com/livingdocsIO/livingdocs-editor/pull/7096)
 * [Metadata Previews: show previews after errors and length feedback](https://github.com/livingdocsIO/livingdocs-editor/pull/7091)
 * [Clone dashboard config before modifying](https://github.com/livingdocsIO/livingdocs-editor/pull/7086)
 * [feat(ticker): allow metadata editing for ticker entries](https://github.com/livingdocsIO/livingdocs-editor/pull/7017)
