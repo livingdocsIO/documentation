@@ -20,6 +20,7 @@ At the moment we have a fixed set of supported strategies:
 - [fs](#local-file-system)
 - [s3](#s3-object-storage)
 - [google-cloud-storage](#google-cloud-storage)
+- [azure-blob-storage](#azure-blob-storage)
 - [cloudinary](#cloudinary)
 
 ### Interface
