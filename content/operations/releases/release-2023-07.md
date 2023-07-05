@@ -147,7 +147,56 @@ New draft endpoint for incoming document references: `/drafts/:documentId/incomi
 
 ### Public API Search Filters
 
-TODO @ajwild
+A `filters` query parameter can now be provided to the `GET /api/v1/publications/search` endpoint.
+The filters value should be a JSON (stringified) array or object, using the correct [query DSL]({{< ref "/reference/public-api/publications/search#search-filters" >}}).
+```
+GET /api/v1/publications/search?filters=[{"key":"metadata.title","term":"My Title"}]
+```
+
+Each object must contain either a valid logical operator property ("and", "or", "not"), or a query expression property ("term", "exists", "range"). The logical operator values can be either arrays or objects. The query expression properties should have the value you are searching for, and they must be combined with a "key" property. The default top level array or object behaviour is that of an AND logical expression.
+
+Below is an example showing how query expressions and logical operators can be combined to create a complex query:
+
+```js
+const filters = {
+  or: [
+    {
+      and: [
+        {
+          key: 'metadata.count',
+          range: {lte: 2}
+        },
+        {
+          key: 'metadata.bool',
+          exists: true
+        },
+        {
+          not: {
+            key: 'metadata.title',
+            term: 'My Title'
+          }
+        }
+      ]
+    },
+    {
+      key: 'metadata.count',
+      term: 3
+    }
+  ]
+}
+
+// Public API request
+const response = await fetch(`api/v1/publications/search?filters=${JSON.stringify(filters)}`)
+const results = await response.json()
+```
+
+The `filters` object from the example above can also be passed to the `publicApi.searchPublications()` method.
+
+```js
+// Public API server feature
+const publicApi = server.features.api('li-public-api')
+const results = await publicApi.searchPublications({projectId: 1, filters})
+```
 
 ## Features :gift:
 
