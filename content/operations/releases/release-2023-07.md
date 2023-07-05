@@ -106,7 +106,8 @@ The preferred update path would be to use `filters` from the new [search DSL](#s
 
 ### Removal Seed API
 
-🔥 Features wasn't in use an didn't cover any use case.
+🔥 The Seed API feature has been removed. If you were still using it, you should consider using Document/Publication API or Import API instead.
+    You can find more information in [Import API documentation]({{< ref "/customising/advanced/import-api.md" >}}).
 
 * [Remove seed API](https://github.com/livingdocsIO/livingdocs-server/pull/5767)
 
@@ -200,13 +201,15 @@ const results = await publicApi.searchPublications({projectId: 1, filters})
 
 ## Features :gift:
 
-For a business level explanation of the new features please check [July Release Notes]() // TODO
+For a business level explanation of the new features please check [July Release Notes](TODO)
 
 - [Display Filters ListV2 with OR combination](#display-filters-listv2-with-or-combination)
 - [Document Preview](#document-preview)
 - [Search DSL](#search-dsl)
 - [Translatable li-tree plugin](#translatable-li-tree-plugin)
 - [UI and label config multi-language support](#ui-and-label-config-multi-language-support)
+- [Support significantPublicationDate on document import](#support-significantpublicationdate-on-document-import)
+- [Copy Target Icon and Label Config](#copy-target-icon-and-label-config)
 
 ### Display Filters ListV2 with OR combination
 
@@ -226,7 +229,72 @@ liEditor.searchFilters.registerListV2('MultiSelectV2Filter', {
 
 ### Document Preview
 
-TODO @benib
+You can use HTML or iFrame as return format when using the Document Preview feature.
+To enable Document Previews, you first need to register a preview function in the server. Then, define the handles in `editorSettings.documentPreviews` from the Project Config. Finally, enable the document preview in the desired content types. When using HTML scroll position will be preserved automatically when the user reloads the preview, but if you use iFrame you will have to let Livingdocs know using a postMessage interface. [Learn more]({{< ref "/guides/editor/document-previews/index.md" >}}).
+
+Register Document Preview Functions in the server:
+```js
+liServer.registerInitializedHook(async () => {
+  const documentApi = liServer.features.api('li-documents').document
+
+// return html ...
+documentApi.registerPreviewFunction({
+  handle: 'myHtmlPreviewFunction',
+  async getPreview ({projectConfig, documentId}) {
+    const doc = await documentApi.getLatestDocument(documentId)
+    return {
+      html: `<div><h1>Title: ${doc.title}</h1><p>This is a custom preview</p></div>`
+    }
+  }
+})
+
+// ... or an iframe
+documentApi.registerPreviewFunction({
+    handle: 'myIframePreviewFunction',
+    async getPreview ({projectConfig, documentId}) {
+      return {
+        iframe: {
+          src: `https://example.com/my-preview/${documentId}`,
+          sandbox: 'allow-same-origin' // make sure this is set if you want to preserve scroll position
+        }
+      }
+    }
+  })
+```
+
+Configure Document Previews in the project config:
+```js
+// editorSettings
+{
+  documentPreviews: [
+    {
+      handle: 'htmlPreview',
+      previewFunction: 'myHtmlPreviewFunction',
+      icon: 'book-edit',
+      label: 'Preview'
+    },
+    {
+      handle: 'iframePreview',
+      previewFunction: 'myIframePreviewFunction',
+      icon: 'pencil',
+      label: {
+        de: 'Meine Seite',
+        en: 'My Site'
+      }
+    }
+  ]
+}
+```
+
+Enable Document Previews in the content type config:
+```js
+{
+  handle: 'myContentType',
+  // ...
+  // for documentPreviews, define the handles of editorSettings.documentPreviews
+  documentPreviews: ['iframePreview', 'htmlPreview']
+}
+```
 
 ### Search DSL
 
@@ -281,11 +349,6 @@ metadata: [
 ]
 ```
 
-## Improvements
-
-- [Support significantPublicationDate on document import](#support-significantpublicationdate-on-document-import)
-- [Copy Target Icon and Label Config](#copy-target-icon-and-label-config)
-
 ### Support significantPublicationDate on document import
 
 Property `significantPublicationDate` sets a date which deliveries can display to viewers [Learn more]({{< ref "/content/reference/public-api/imports/documents.md" >}})
@@ -310,19 +373,6 @@ copy: [
   }
 ]
 ```
-
-## Bugfixes
-
-* Do not change the working title if a displayTitlePattern is configured
-* Do not send title to server with displayTitlePattern config
-* Fix Broken Navigation after MediaLibrary Asset Upload
-* documentCreationDisabled flag still supported in multi channel projects
-* Fix Editable Teaser override clearing
-* Fix Legacy Dashboards: initial load takes cached filter value into account now
-* Redirecting to home page improved to rely on state not URL
-* Fix set metadata title (useAsTitle) property during creation
-* Prevent unsaved document data while processing remote updates
-* Use `$t()` instead of undefined `this.$t()` in `li-unsaved-dialog`
 
 ## Vulnerability Patches
 

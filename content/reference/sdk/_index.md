@@ -160,27 +160,6 @@ const liSDK = require('@livingdocs/node-sdk')
  */
 const document = liSDK.document.create({design, content, config})
 
-// Configure an image service (If you define nothing, the default settings below will be used)
-// This configures Livindocs' image service (the same that is used on edit.livingdocs.io).
-// You can of course also specify your own here or change the parameters for image rendering.
-
-const config = {
-  imageServices: {
-    liImageProxy: {
-      host: 'https://server.livingdocs.io',
-      preferWebp: true,
-      backgroundImage: {
-        maxWidth: 2048
-      },
-      srcSet: {
-        defaultWidth: 1024,
-        widths: [2048, 1024, 620, 320],
-        sizes: ['100vw']
-      }
-    }
-  }
-}
-
 /**
  * @function document.visit Visits components in a ComponentTree.
  * @param document: Livingdoc
