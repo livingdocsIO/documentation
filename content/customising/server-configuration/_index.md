@@ -1089,15 +1089,15 @@ Then the media-library index must be created.
 livingdocs-server elasticsearch-index --handle li-media -y // ({{< added-in release-2021-03 >}})
 ```
 
-To index the metadata the plugin must support the mediaIndex and on the metadata in the mediaType the index must be enabled.
+To index the metadata the plugin must support `indexing` and on the metadata in the mediaType the index must be enabled.
 
-###### Enable mediaIndex on metadata plugin
-To enable the indexing for the Media Library in a plugin you have to add the `mediaIndex` config.
+###### Enable indexing on metadata plugin
+To enable the indexing for the Media Library in a plugin you have to add the `indexing` config.
 
 ```js
-  mediaIndex: {
+  indexing: {
     enabled: true,
-    index_behavior: [
+    behavior: [
       {
         // the type for the index
         type: 'text',
