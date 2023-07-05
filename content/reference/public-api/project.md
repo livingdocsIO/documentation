@@ -148,7 +148,6 @@ Your `AccessToken` is valid for a single project.
                         "recommendedMinLength": 50,
                         "recommendedMaxLength": 150,
                         "allowNewlines": false,
-                        "useAsTitle": true,
                         "required": false,
                         "hideFromForm": false,
                         "translatable": false
@@ -166,7 +165,6 @@ Your `AccessToken` is valid for a single project.
                         "allowNewlines": true,
                         "required": false,
                         "hideFromForm": false,
-                        "useAsTitle": false,
                         "translatable": false
                     },
                     "ui": {
@@ -210,8 +208,7 @@ Your `AccessToken` is valid for a single project.
                         "maxLength": 200,
                         "translatable": true,
                         "index": true,
-                        "hideFromForm": false,
-                        "useAsTitle": false
+                        "hideFromForm": false
                     },
                     "ui": {
                         "config": {
