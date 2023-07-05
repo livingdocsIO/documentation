@@ -38,6 +38,7 @@ contentTypeConfig: |2
           documentType: 'article',                 // optional, one of article, page, data-record
           contentType: 'my-content-type',          // optional, filters the document selection
           published: true,                         // optional, shorthand for publication displayFilter, default: false
+          index: true                              // optional, default: false, added in {{< release "release-2023-07" >}}
         },
         ui: {
           label: 'foo',                  // optional, takes camelized name otherwise

@@ -21,6 +21,9 @@ storageFormat: |
     path: <String>
   }
 contentTypeConfig: |2
-        handle: 'myHandle'
-        type: 'li-category'
+        handle: 'myHandle',
+        type: 'li-category',
+        config: {
+          index: true                              // optional, default: false, added in {{< release "release-2023-07" >}}
+        }
 ---

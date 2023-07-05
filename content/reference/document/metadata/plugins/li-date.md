@@ -23,8 +23,9 @@ contentTypeConfig: |2
           // common
           hideFromForm: false,                     // optional, default: false
           required: true,                          // optional, default: false
-          requiredErrorMessage: 'Provide a value'  // optional
-          translatable: false                      // optional, default: false
+          requiredErrorMessage: 'Provide a value', // optional
+          translatable: false,                     // optional, default: false
+          index: true                              // optional, default: false, added in {{< release "release-2023-07" >}}
         },
         ui: {
           label: 'foo',                   // optional, takes camelized name otherwise

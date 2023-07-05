@@ -41,6 +41,7 @@ metadata: [
 
       // li-text specific configs
       maxLength: 200,
+      index: true
     }
   },
   {handle: 'description', type: 'li-text'},
