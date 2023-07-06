@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Set `first_publication_id` of scheduled documents when they get published](https://github.com/livingdocsIO/livingdocs-server/pull/5858)
 * [Trim the title to 255 character max when importing documents](https://github.com/livingdocsIO/livingdocs-server/pull/5820)
 * [Various li-user-avatar improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/7105)
 * [Document Lists: show correct label on card after publish control schedule is removed](https://github.com/livingdocsIO/livingdocs-editor/pull/7101)
