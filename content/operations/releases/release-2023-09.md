@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix labels for cut and copy buttons in multiselect panel](https://github.com/livingdocsIO/livingdocs-editor/pull/7110)
 * [Fix cleanup metadata script](https://github.com/livingdocsIO/livingdocs-server/pull/5863)
 * [Metadata Feedback: show different items in correct order](https://github.com/livingdocsIO/livingdocs-editor/pull/7108)
 * [Set `first_publication_id` of scheduled documents when they get published](https://github.com/livingdocsIO/livingdocs-server/pull/5858)
