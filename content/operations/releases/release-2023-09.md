@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency openid-client from 5.4.2 to v5.4.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5867)
 * [Fix labels for cut and copy buttons in multiselect panel](https://github.com/livingdocsIO/livingdocs-editor/pull/7110)
 * [Fix cleanup metadata script](https://github.com/livingdocsIO/livingdocs-server/pull/5863)
 * [Metadata Feedback: show different items in correct order](https://github.com/livingdocsIO/livingdocs-editor/pull/7108)
