@@ -403,6 +403,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v231.0.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.4): fix(importer): trim title
 - [v231.0.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.3): test(document-lists): Test scheduled documents in document lists
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
