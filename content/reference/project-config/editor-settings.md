@@ -40,13 +40,13 @@ editorSettings: {
     {liItem: 'articles'},
     {liItem: 'pages'},
     { // custom document dashboard
-      handle: 'authors', // Used with mainNavigationGroups from release-2022-03
+      handle: 'authors',
       label: 'Authors',
       dashboard: 'authors-dashboard',
       icon: 'account'
     },
     { // custom task dashboard
-      handle: 'proofreading', // Used with mainNavigationGroups from release-2022-03
+      handle: 'proofreading',
       label: 'Proofreading',
       dashboard: 'kanban-proofreading',
       icon: 'clipboard-check'
@@ -56,16 +56,15 @@ editorSettings: {
     {liItem: 'menus'},
     {liItem: 'contentSetup'},
     { // external link
-      handle: 'website', // Used with mainNavigationGroups from release-2022-03
+      handle: 'website',
       label: 'Livingdocs Website',
       href: 'https://www.livingdocs.io',
       icon: 'rocket',
-      group: 'preferences' // Used for grouping before release-2022-03
+      group: 'preferences' // Used for grouping before {{< release "release-2022-03" >}}
     },
     {liItem: 'projectSettings'},
     {liItem: 'serverAdmin'}
   ],
-  // {{< added-in release-2022-03 >}}
   mainNavigationGroups: [
     {
       handle: 'documents',
@@ -137,7 +136,6 @@ editorSettings: {
       componentName: 'bluewinDashboardListItem'
     }
   ],
-  // {{< added-in release-2021-09 >}}
   // you can define configured cards here, they can then be referenced
   // within a mediaType defining the card to be used for rendering in a dashboard
   dashboardCardConfigurations: [
@@ -173,27 +171,19 @@ editorSettings: {
     altTextPrefilling: [
       {
         metadataPropertyName: 'caption',
-        onlyOnComponents: ['image'] // {{< added-in release-2022-11 >}}
+        onlyOnComponents: ['image']
       }
     ],
     componentDirectivesPrefilling: [
       {
         metadataPropertyName: 'source',
-        directiveName: 'image.source' // Component prefix {{< added-in release-2022-11 >}}
+        directiveName: 'image.source' // Component prefix
       },
       {
         metadataPropertyName: 'caption',
         directiveName: 'caption' // Applies to all components with a caption directive
       }
-    ],
-    // removed with release-2021-09, move filters to a mediaType
-    dashboard: {
-      displayFilters: ['timeRange']
-    },
-    // removed with release-2021-09, move filters to a mediaType
-    editorSelection: {
-      displayFilters: ['timeRange']
-    },
+    ]
   },
 
   documentLists: {
@@ -303,8 +293,6 @@ To remove an entry, simply delete it from the `mainNavigation` array. If you hav
 
 ### Main Navigation Groups
 
-{{< added-in release-2022-03 block >}}
-
 To create custom groups for menu items you can use the `mainNavigationGroups` configuration. Within this array you should create an object for each group, and then define the menu items which belong to it by adding their `handle` or `liItem` value as a string in the items array. A group `handle` should be defined, and it's also possible to provide a `label` string, and to change the style by setting the boolean `secondary` property.
 
 By default the main navigation items will be placed as top-level items in the menu, with the exception of 'contentSetup', 'projectSettings', and 'serverAdmin', which will be added to the 'preferences' and 'admin' groups.
@@ -358,7 +346,7 @@ editorSettings: {
 }
 ```
 
-For releases prior to release-2022-03 you should specify a `group` property on the menu item within the `mainNavigation` array. The available values are 'admin', 'preferences', 'dashboards', 'custom', and 'top'.
+For releases prior to {{< release "release-2022-03" >}} you should specify a `group` property on the menu item within the `mainNavigation` array. The available values are 'admin', 'preferences', 'dashboards', 'custom', and 'top'.
 
 ## Dashboards
 
@@ -390,13 +378,13 @@ Type of the dashboard, one of these: `dashboard`, `kanbanBoard`, `taskBoard`, `t
 
 [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter.md" >}}) are filters that the user can set in the UI (below the search input).
 
-With `release-2021-03` the `displayFilters` for the Media Library Dashboards are defined on the [Media Type]({{< ref "/reference/project-config/media-types.md" >}}).
+With {{< release "release-2021-03" >}} the `displayFilters` for the Media Library Dashboards are defined on the [Media Type]({{< ref "/reference/project-config/media-types.md" >}}).
 
 #### baseFilters
 
 [Base Filters]({{< ref "/customising/advanced/editor-configuration/base-filter.md" >}}) are invisible filters and applied to every search (including the default result list).
 
-With `release-2021-03` the `baseFilters` for the Media Library Dashboards are defined on the [Media Type]({{< ref "/reference/project-config/media-types.md" >}}).
+With {{< release "release-2021-03" >}} the `baseFilters` for the Media Library Dashboards are defined on the [Media Type]({{< ref "/reference/project-config/media-types.md" >}}).
 
 #### sort
 
@@ -512,8 +500,6 @@ dashboards: [
 
 ### Example: Table Dashboard
 
-{{< added-in release-2022-03 block >}}
-
 ```js
 dashboards: [
   {
@@ -572,7 +558,6 @@ dashboards: [
     ],
 
     // adds a Document Creation Flow to the dashboard (e.g. custom button, custom create modal, custom create function)
-    // {{< added-in release-2022-09 >}}
     documentCreationFlows: [
       {useDocumentCreationFlow: 'breakingNews'}
     ]
@@ -588,9 +573,9 @@ are supported in the table dashboard:
 - `li-text`
 - `li-category`
 - `li-document-reference`
-- `li-string-list` ({{< added-in release-2022-05 >}})
-- `li-desknet-integration` ({{< added-in release-2022-07 >}})
-- `li-integer` ({{< added-in release-2023-03 >}})
+- `li-string-list`
+- `li-desknet-integration`
+- `li-integer` ({{< added-in "release-2023-03" >}})
 
 #### Upstream components
 
@@ -616,20 +601,16 @@ componentOptions: {
 
 ##### liTableDashboardCellLanguage
 
-{{< added-in release-2022-05 block >}}
-
 The `liTableDashboardCellLanguage` upstream component can be used to display the document language:
 
 {{< img src="images/table_dashboard_language_cell.png" alt="liTableDashboardCellLanguage upstream component" >}}
 
 ##### liTableDashboardCellPublishState
 
-{{< added-in release-2022-05 block >}}
-
 The `liTableDashboardCellPublishState` upstream component can be used to display publish state and quick publish button
 (only shown if metadata has been edited directly within the table dashboard).
 
-With `release-2023-05` and following, `allowQuickPublish: true` is required to show the quick publish button.
+With {{< release "release-2023-05" >}} and following, `allowQuickPublish: true` is required to show the quick publish button.
 ```js
 {
   label: 'Published',
@@ -647,7 +628,7 @@ With `release-2023-05` and following, `allowQuickPublish: true` is required to s
 
 ##### liTableDashboardCellTaskList
 
-{{< added-in release-2023-03 block >}}
+{{< added-in "release-2023-03" block >}}
 
 The `liTableDashboardCellTaskList` gives an overview of current tasks connected with the given document.
 
@@ -682,8 +663,6 @@ Set custom `startPage: {path: '/my-custom-path'}}` to set the path used to rende
 **Notice**: The startPage config will have no effect if a home screen is configured in the same project.
 
 ## Home Screen
-
-{{< added-in release-2023-01 block >}}
 
 When configured on a project, the home screen will be the start page on login or when switching projects.
 
@@ -735,8 +714,6 @@ A use case for this could be a personalized list of recommended articles that ar
 
 ## Document Creation Flow
 
-{{< added-in release-2022-09 block >}}
-
 With a Document Creation Flow you can define how a document gets created (e.g. create button for a Dashboard).
 
 Check that [guide]({{< ref "/guides/editor/document-creation-flow" >}}) for more information.
@@ -775,18 +752,13 @@ documentCreationFlows: [
 ## Media Library
 
 ### Dashboards
-If you linked the media library on the `mainNavigation` (see above), Livingdocs automatically inserts separate dashboards per type (`mediaImage`/`mediaVideo`).
-If you only have `mediaImage` mediaTypes, you will see a Dashboard `Images`. If you also have `mediaVideo`, you will see `Videos` as well.
+If you linked the media library on the `mainNavigation` (see above), Livingdocs automatically inserts separate dashboards per type (`mediaImage`/`mediaVideo`/`mediaFiles`).
+You will only see the dashboards for the individual mediaTypes you have configured.
 
-As of `release-2021-03` the `baseFilters` and `displayFilters` are to be configured on the `mediaType` config.
 See [Media Type]({{< ref "/reference/project-config/media-types.md" >}}) documentation for more information.
 
-Any release before `release-2021-03` takes the following config
-- `mediaLibrary.dashboard.displayFilters`: an array of [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter.md" >}}) for the Dashboard accessible via the Main Navigation
-- `mediaLibrary.editorSelection.displayFilters`: an array of [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter.md" >}}) for the Dashboard accessible via the Media Button in the Document Editing Toolbar
-
 ### Dashboard Cards
-With `release-2021-09` you can configure the card used to show results in dashboards. You do this by configuring your own dashboard card in the project config under `editorSettings.dashboardCardConfigurations` and then define this card per mediaType as you please.
+You can configure the card used to show results in dashboards. You do this by configuring your own dashboard card in the project config under `editorSettings.dashboardCardConfigurations` and then define this card per mediaType as you please.
 
 ```js
 // projectConfig.editorSettings
@@ -828,7 +800,7 @@ Then there are 2 configs to define the behavior when Images are inserted into a 
 mediaLibrary.altTextPrefilling: [
   {
     metadataPropertyName: 'title',
-    onlyOnComponents: ['image'] // {{< added-in release-2022-11 >}}
+    onlyOnComponents: ['image']
   }
 ]
 ```
@@ -839,7 +811,7 @@ Provide a metadata property handle from which the `alt` attribute on an image ta
 mediaLibrary.componentDirectivesPrefilling: [
   {
     metadataPropertyName: 'source',
-    directiveName: 'image.source' // Component prefix {{< added-in release-2022-11 >}}
+    directiveName: 'image.source' // Component prefix
   },
   {
     metadataPropertyName: 'caption',
@@ -859,7 +831,7 @@ documentLists: {
     name: 'myDocumentListCard'
   },
   dashboard: {
-    useDashboard: 'myCustomDashboard' // {{< added-in release-2022-09 >}}
+    useDashboard: 'myCustomDashboard'
     displayFilters: [],
     baseFilters: [
       {type: 'documentType', value: 'article'},
@@ -868,13 +840,10 @@ documentLists: {
   }
 }
 ```
+
 ## Inline Links
 
-{{< added-in release-2022-09 block >}}
-
-
 {{< img src="images/inline_links.png" alt="image" >}}
-
 
 ```js
 inlineLinks: {
@@ -888,12 +857,15 @@ inlineLinks: {
   }
 }
 ```
+
 ### useDashboard
 
 `useDashboard` defines which dashboard is going to be renderered when the user clicks on `Extended Search`.
+
 ### displayFilters
 
 [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter" >}}) are filters that the user can set in the UI (below the search input).
+
 ### baseFilters
 
 [Base Filters]({{< ref "/customising/advanced/editor-configuration/base-filter" >}}) are invisible filters and applied to every search (including the default result list).

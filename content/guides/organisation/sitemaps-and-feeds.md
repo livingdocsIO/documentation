@@ -7,7 +7,6 @@ bullets:
 weight: 3
 ---
 
-{{< added-in release-2021-06 >}}
 # Sitemaps
 
 The `livingdocs-server` ships with a set of APIs to automatically create sitemaps. The full (public) API specification can be found in our public API documentation at https://edit.livingdocs.io/public-api

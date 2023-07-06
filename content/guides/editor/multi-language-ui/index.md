@@ -6,8 +6,8 @@ bullets:
 weight: 5
 ---
 
-This guide explains how to configure Livingdocs to show the UI in different languages. Starting with `release-2023-07` the default UI language can be configured and labels from the config, e.g. metadata plugin label, can be declared in multiple languages.
-With the next release (`release-2023-09`) a language switcher will be added to the UI.
+This guide explains how to configure Livingdocs to show the UI in different languages. Starting with {{< release "release-2023-07" >}} the default UI language can be configured and labels from the config, e.g. metadata plugin label, can be declared in multiple languages.
+With the next release ({{< release "release-2023-09" >}}) a language switcher will be added to the UI.
 
 UI in English:
 

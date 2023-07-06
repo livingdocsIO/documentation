@@ -131,7 +131,6 @@ When `isDefault: true` (see example above), the default option will be added to 
 
 ## Custom Vue Component Filter
 
-[`release-2021-03`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2021-03.md)
 Filters for the media-library need to define the `dataType`
 ```js
 // before release-2023-07

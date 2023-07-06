@@ -4,8 +4,6 @@ description: Embed videos with a custom player and externally transcoded assets
 weight: 4
 ---
 
-{{< added-in release-2022-03 block >}}
-
 Video includes are based on [Includes]({{< ref "/reference/document/includes" >}}) and provide a more flexible approach to embedding videos within a document than using the standard media library entry directly. The media library approach does not have an integrated solution for video transcoding, so it would only be possible to render the original video file to HTML. On the other hand, using an include service allows you to hook into an external service or data store which could provide the transcoded assets you require.
 
 ## Example

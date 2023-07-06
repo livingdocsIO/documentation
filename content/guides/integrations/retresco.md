@@ -4,8 +4,6 @@ description: Analyze documents and store entities in a metadata field with the R
 weight: 8
 ---
 
-{{< added-in release-2022-03 block >}}
-
 The [Retresco](https://www.retresco.com/) integration uses semantic analysis and keywording to tag documents with relevant entities. These entities are then stored within a document's metadata and can be used to categorise documents.
 
 Please be aware that Retresco may need to enable an additional feature on your setup for the integration to work. The key feature required is the `rtr_payload` object in the Retresco `POST /api/entities` response. This object should exist when there are one or more entities in the `rtr_*` arrays in the response. If the object is not returned then please contact Retresco to upgrade your instance so that is compatible with Livingdocs.
@@ -114,7 +112,7 @@ The Retresco entities will be stored in the document's metadata using the metada
 ```
 
 ## Re-enrich Documents
-{{< added-in release-2023-03 >}}
+{{< added-in "release-2023-03" block >}}
 
 If you want to use the re-enrich feature from Retresco, you will need to configure the webhook and token in Retresco's website.
 

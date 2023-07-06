@@ -10,7 +10,6 @@ menus:
 
 {{< api-example
   title="Get Incoming Draft References for a Document"
-  release="release-2022-07"
   scopes="public-api:drafts:read"
 >}}
 

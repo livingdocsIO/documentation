@@ -4,8 +4,6 @@ description: Walkthrough to set up a media source
 weight: 4
 ---
 
-{{< added-in release-2021-03 >}}
-
 With Media Sources you can integrate asset research/import into Livingdocs. Instead of having to log in to another platform like Unsplash and then drag + drop images into Livingdocs, you can have Unsplash assets search results available directly in Livingdocs.
 
 If you have integrated a Media Source properly, the Livingdocs editor also shows the search results of the Media Source which can be added to the document like any other asset via drag+drop.

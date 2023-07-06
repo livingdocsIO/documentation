@@ -6,8 +6,6 @@ menu:
     parent: Project Config
 ---
 
-{{< added-in release-2021-03 >}}
-
 You can configure `notifications` to enable the possibility that a user can get notifications for changes on a document.
 
 There is also a guide how to configure the notifications.
@@ -60,7 +58,6 @@ Possible action to register on at the moment:
 - comment.add
 - comment.resolve
 
-{{< added-in release-2021-06 >}}
 A user can be mentioned in comment. [Comments mentioning]({{< ref "/guides/editor/notifications.md#comments-mentioning" >}})
 
 The comments mentioning doesn't have to be configured. It will work automatically as soon as the comments and the notifications are enabled.

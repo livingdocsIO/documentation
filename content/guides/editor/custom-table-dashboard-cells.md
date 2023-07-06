@@ -4,8 +4,6 @@ description: Create a custom Table Dashboard cell
 weight: 14
 ---
 
-{{< added-in release-2022-03 >}}
-
 ## Motivation
 
 With the Table Dashboard introduced in March 2022 we have created upstream components configurable to suit most customer needs. We would highly recommend using these upstream components for several reasons:

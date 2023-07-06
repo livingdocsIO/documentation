@@ -4,8 +4,6 @@ description: Define a Document Creation Flow
 weight: 14
 ---
 
-{{< added-in release-2022-09 >}}
-
 ## Motivation
 
 With a Document Creation Flow you can configure how a document gets created:

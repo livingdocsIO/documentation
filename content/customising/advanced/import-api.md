@@ -39,7 +39,7 @@ const importLog = await import({importJob, rawDocument, shouldCreateNew, updateC
 * `design`: An `object` with `name` and `version` properties.
 * `content`: An `array` of livingdocs components
 * `metadata`: An `object` containing the metadata of your Document
-* `livingdoc` (deprecated in release-2023-03): Can contain the `design` and `content` attributes above.
+* `livingdoc`: Can contain the `design` and `content` attributes above. {{< deprecated-in "release-2023-03" >}}
 
 
 Example how to build a `rawDocument` object:
@@ -54,13 +54,11 @@ const livingdoc = framework.createLivingdoc({
 
 const rawDocument = {
   metadata: {title: 'Moby Dick'},
-
-  // Deprecated in release-2023-03
-  livingdoc: livingdoc.serialize()
-
-  // {{< added-in release-2021-03 >}}
   content: livingdoc.content,
-  design: livingdoc.design
+  design: livingdoc.design,
+
+  // {{< deprecated-in "release-2023-03" >}}
+  livingdoc: livingdoc.serialize()
 }
 ```
 

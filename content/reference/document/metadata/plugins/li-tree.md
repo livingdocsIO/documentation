@@ -115,7 +115,7 @@ contentTypeConfig: |2
 additionalConfig: |
   ### Multi-Language Handling
 
-  {{< added-in release-2023-07 block >}}
+  {{< added-in "release-2023-07" block >}}
 
   To enable multi-language support in the tree, a new config property called `multilang` has been introduced.
   The available languages and the default language are inherited from the project's [Multi-Language configuration]({{< ref "/guides/editor/multi-language-content" >}}).

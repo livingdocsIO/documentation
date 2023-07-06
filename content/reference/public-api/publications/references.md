@@ -9,7 +9,6 @@ menus:
 
 {{< api-example
   title="Get Incoming Publication References for a Document"
-  release="release-2022-03"
   scopes="public-api:read"
 >}}
 
@@ -79,7 +78,6 @@ GET api/v1/documents/:documentId/incomingDocumentReferences
 
 {{< api-example
   title="Get Incoming Media References for a Document"
-  release="release-2022-03"
   scopes="public-api:read"
 >}}
 

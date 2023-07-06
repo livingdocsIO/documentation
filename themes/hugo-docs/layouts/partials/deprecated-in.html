@@ -1,6 +1,6 @@
-{{ $href := print "/operations/releases/" .release "/" }}
-{{ if .block }}
+{{- $href := print "/operations/releases/" .release "/" -}}
+{{- if .block -}}
 <p class="deprecated-in">Deprecated in: <a href="{{ $href }}"><code>{{ .release }}</code></a></p>
-{{ else }}
+{{- else -}}
 <span class="deprecated-in">Deprecated in: <a href="{{ $href }}"><code>{{ .release }}</code></a></span>
-{{ end }}
+{{- end -}}

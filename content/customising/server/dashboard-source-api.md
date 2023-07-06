@@ -6,7 +6,6 @@ menus:
     parent: Server Extensions
     weight: 9
 ---
-{{< added-in release-2023-01 block >}}
 
 The DashboardSource API provides a simple way to populate a [home screen table dashboard]({{< ref "/reference/project-config/editor-settings#home-screen" >}}) with a custom list of documents.
 Register a custom function on the server that returns a list of document ids. Consolidate the [home screen documentation]({{< ref "/reference/project-config/editor-settings#home-screen" >}}), to see how it can be connected to a dashboard.
