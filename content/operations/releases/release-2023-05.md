@@ -443,6 +443,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.67): fix(editor): Fix labels for cut and copy buttons in multiselect panel
 - [v94.10.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.66): fix(metadata preview): show different previews in correct order
 - [v94.10.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.65): fix(document lists): show correct label on card after publish control schedule is removed
 - [v94.10.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.64): fix(realtime): Notify user on Pusher connection error
