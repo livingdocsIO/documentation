@@ -328,6 +328,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.50): chore: Update nzz tests to node 18
 - [v213.6.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.49): test(document-lists): Test scheduled documents in document lists
 - [v213.6.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.48): fix(indexing): Fix `--ids=1,2,3` indexing for the drafts index
 - [v213.6.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.47): fix(indexing): Add try/catch around elasticsearch payload creation to prevent full bulk failures if one document is faulty
