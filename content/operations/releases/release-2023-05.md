@@ -425,6 +425,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v226.3.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.27): fix(documents): Fix metadata_id query in document cleanup script
 - [v226.3.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.26): fix(documents): Set `first_publication_id` of scheduled documents when they get published
 - [v226.3.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.25): test(document-lists): Test scheduled documents in document lists
 - [v226.3.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.24): fix(indexing): Fix `--ids=1,2,3` indexing for the drafts index
