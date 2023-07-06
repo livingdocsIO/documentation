@@ -13,7 +13,7 @@ support:
   dynamicIndexing: true
   systemMetadata: false
   planningSystem: false
-description: With `release-2022-11` this is superseeded by [`li-document-references`]({{< ref "/reference/document/metadata/plugins/li-document-references" >}}).
+description: With {{< release "release-2022-11" >}} this is superseeded by [`li-document-references`]({{< ref "/reference/document/metadata/plugins/li-document-references" >}}).
 defaultUI: Document selection dialog.
 storageFormat: |
   {
@@ -32,7 +32,7 @@ contentTypeConfig: |2
           hideFromForm: false,                     // optional, default: false
           required: true,                          // optional, default: false
           requiredErrorMessage: 'Provide a value', // optional
-          index: true,                             // optional, default: false, added in {{< release "release-2023-07" >}}
+          index: true,                             // optional, default: false. {{< added-in "release-2023-07" >}}
           // specific
           referenceType: 'documents',              // required, must be 'documents'
           documentType: 'article',                 // optional, one of article, page, data-record

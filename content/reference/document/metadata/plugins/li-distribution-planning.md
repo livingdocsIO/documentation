@@ -33,6 +33,6 @@ contentTypeConfig: |2
         handle: 'myHandle',
         type: 'li-distribution-planning',
         config: {
-          index: true                              // optional, default: false, added in {{< release "release-2023-07" >}}
+          index: true                              // optional, default: false. {{< added-in "release-2023-07" >}}
         }
 ---

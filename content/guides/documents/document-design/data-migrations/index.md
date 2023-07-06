@@ -65,9 +65,9 @@ Livingdocs provides you a migration hook `migrateAsync` to implement. This hook 
 
 //  systemdata:
 //    document_id: 1
-//    documentId: 1             -> added in release-2023-01
+//    documentId: 1
 //    content_type: 'regular'
-//    contentType: 'regular'    -> added in release-2023-01
+//    contentType: 'regular'
 module.exports = {
   async migrateAsync ({serializedLivingdoc, metadata, systemdata}) {
     // do your stuff here

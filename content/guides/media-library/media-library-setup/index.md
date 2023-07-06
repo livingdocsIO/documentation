@@ -302,8 +302,6 @@ module.exports = {
 
 ### Focal Point Cropping
 
-With `release-2022-11` focal point cropping was introduced.
-
 Focal point selection is supported on [`li-named-crops`](https://docs.livingdocs.io/reference/document/metadata/plugins/li-named-crops) and [`li-image`](https://docs.livingdocs.io/reference/document/metadata/plugins/li-image) whenever multiple crops are present.
 
 
@@ -357,7 +355,8 @@ It will only be set if a user explicitly selected a focal point.
 In all other cases, the automatic crop calculation falls back to the center crop as it was before `release_2022-11`.
 
 ## Videos
-Since `release-2021-03` you can manage your Videos with the Livingdocs Media Library as well. It works pretty similar to the images. The solution still has some shortcomings you need to be aware of:
+
+Videos work in a similar way to images. The solution still has some shortcomings you need to be aware of:
 
 - No render strategies or video services like you know them from images are available yet. That means the system works well if you render from the JSON in the delivery, but not so well if you let Livingdocs do the rendering to HTML.
 - As with images, you don't want to deliver the original Video file to your customers directly but have some kind of transcoding to different formats and sizes. There is no integrated solution to this in Livingdocs yet.
@@ -573,7 +572,7 @@ Transcoding happens in the following sequence:
 
 ## Files
 
-Since `release-2021-06` you can manage other files than videos and images with the Livingdocs Media Library as well.
+You can also manage other files than videos and images with the Livingdocs Media Library as well.
 
 ### Server Config
 
@@ -638,7 +637,6 @@ module.exports = {
 ```
 
 ## Metadata Translations
-The Media Library supports metadata translations since `release-2021-06`. Here you learn how to configure it.
 
 First, you have to configure the available languages in the system as [described here]({{< ref "/guides/editor/multi-language-content.md" >}})
 
@@ -697,5 +695,5 @@ module.exports = {
 ```
 
 #### Caveats
-- With `release-2021-06`, using `li-named-crops` metadata plugin on `mediaImage` types in combination with asset translation has some suboptimal behaviors. This will be improved in a next release.
+- With {{< release "release-2021-06" >}}, using `li-named-crops` metadata plugin on `mediaImage` types in combination with asset translation has some suboptimal behaviors. This will be improved in a future release.
 - Both `translatable` and `replaceable` might need handling in your delivery regarding caching, fallback resolution when rendering different languages etc. You need to be aware of this and find solutions. Setting these assets triggers a `mediaLibraryEntry.update` event on the Events API and the webhooks in the same way as updating the metadata does.

@@ -4,8 +4,10 @@ description: Setup push notifications with a custom dashboard item
 weight: 15
 ---
 
+{{< removed-in "release-2023-09" block >}}
+
 **Push Notifications are currently deprecated, as they were implemented using Angular.
-Angular support is going to be dropped in release-2023-09.
+Angular support is going to be dropped in {{< release "release-2023-09" >}}.
 Please use the [`li-push-messages` metadata plugin]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}) instead.**
 
 This guide explains 2 things:

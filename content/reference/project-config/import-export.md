@@ -6,8 +6,6 @@ menus:
     parent: Project Config
 ---
 
-{{< added-in release-2021-06 >}}
-
 The following properties allow you to configure which projects documents can be imported from and exported to. Read the guide on [copying documents between projects]({{< ref "/guides/editor/project-document-copy" >}}) for more information.
 ## Import
 

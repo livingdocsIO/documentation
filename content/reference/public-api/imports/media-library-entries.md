@@ -39,7 +39,7 @@ POST api/v1/import/mediaLibrary
 |mediaLibraryEntries.id|string||Custom id (Allowed characters: a-z, A-Z, 0-9, and -). If omitted a random id will be generated.|
 |mediaLibraryEntries.systemName|string||A string identifiyng the external system where the asset is imported from. It is recommended that you always set this value and it is required if you provide an `externalId`.|
 |mediaLibraryEntries.externalId|string||Must be unique in combination with `systemName`.|
-|mediaLibraryEntries.mediaType|string|x|`image`, `video` (release-2022-09), `file` (release-2022-09)|
+|mediaLibraryEntries.mediaType|string|x|`image`, `video`, `file`|
 |mediaLibraryEntries.asset|object|x||
 |mediaLibraryEntries.metadata|object|||
 |mediaLibraryEntries.translations|object||

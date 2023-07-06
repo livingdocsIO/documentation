@@ -35,7 +35,7 @@ mediaLibrary: {
     // {{< a ref="/customising/server-configuration/storage" title="Storage Configuration" >}}
     storage: {
       strategy: 's3',
-      prefix: 'images/' // optional, the storage key will be prefixed (Added in: release-2021-06)
+      prefix: 'images/' // optional, the storage key will be prefixed
       config: {
         bucket: 'livingdocs-images-development',
         region: 'eu-central-1',
@@ -138,7 +138,7 @@ documents: {
     imgix: {
       host: 'https://livingdocs-dev.imgix.net',
       preferWebp: true, // default: true
-      secureToken: '<your-token>' // optional - {{< added-in release-2021-03 >}}
+      secureToken: '<your-token>' // optional
     }
   }
 }

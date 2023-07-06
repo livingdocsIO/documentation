@@ -102,11 +102,11 @@ PATCH api/v1/mediaLibrary/:id
       }
     },
     {
-      // revoke the asset (added-in release-2022-05)
+      // revoke the asset
       "operation": "revokeAsset"
     },
     {
-      // archives a Media Library Entry (added-in release-2022-07)
+      // archives a Media Library Entry
       "operation": "archive"
     }
   ]
@@ -273,7 +273,6 @@ api/v1/mediaLibrary?externalId=ex-1&systemName=externalSystem
 
 {{< api-example
   title="Get Incoming Publication References for a Media Library Entry"
-  release="release-2022-03"
   scopes="public-api:read"
 >}}
 
@@ -351,7 +350,6 @@ GET api/v1/mediaLibrary/:mediaId/incomingDocumentReferences
 
 {{< api-example
   title="Get Incoming Media References for a Media Library Entry"
-  release="release-2022-03"
   scopes="public-api:read"
 >}}
 

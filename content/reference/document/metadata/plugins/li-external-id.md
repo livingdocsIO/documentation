@@ -23,6 +23,6 @@ contentTypeConfig: |2
         type: 'li-external-id',
         config: {
           hideFromForm: true,     // default false
-          index: true             // optional, default: false, added in {{< release "release-2023-07" >}}
+          index: true             // optional, default: false. {{< added-in "release-2023-07" >}}
         }
 ---

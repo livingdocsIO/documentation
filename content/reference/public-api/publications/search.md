@@ -275,7 +275,7 @@ api/v1/publications/search?contentTypes=article&limit=999&fields=id
 
 ## Search Filters
 
-{{< added-in release-2023-07 block >}}
+{{< added-in "release-2023-07" block >}}
 
 Search filters can be used to filter documents using a custom query DSL.
 

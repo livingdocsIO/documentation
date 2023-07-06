@@ -70,7 +70,6 @@ Add the following to the project config of the project you want to connect with 
     credentials: {
       clientId: '******',
       clientSecret: {
-        // {{< added-in release-2022-07 >}}
         // Use the "npx livingdocs-server secret-add" command.
         // clientSecret was a string in earlier releases.
         $secretRef: {
@@ -89,7 +88,7 @@ Add the following to the project config of the project you want to connect with 
       sync: false
 
       // Deprecated. The old way to calculate the publication status before the matchers were
-      // introduced to the li-desknet-integration metadata plugin in release-2022-07.
+      // introduced to the li-desknet-integration metadata plugin in {{< release "release-2022-07" >}}.
       publishedStatus: 5,
       unpublishedStatus: 1
     },
@@ -132,7 +131,6 @@ Add the `li-desknet-integration` metadata plugin to all content types that can b
       handle: 'desknet',
       type: 'li-desknet-integration',
 
-      // {{< added-in release-2022-07 >}}
       // The config can be used if you intend to keep Desk-Net's publication status up-to-date
       // with the status of the document in Livingdocs. It is required if you intend to publish a
       // document in Livingdocs when updating the publication status in Desk-Net.
@@ -171,7 +169,6 @@ Add the `li-desknet-integration` metadata plugin to all content types that can b
         }
       },
 
-      // {{< added-in release-2022-07 >}}
       // Only required if you intend to display the current publication status in a table dashboard cell
       ui: {
         config: {
@@ -564,8 +561,6 @@ This function resolves to a Desk-Net element [with prefetched values](#what-are-
 ```
 
 ## Story Planning Schedule in Livingdocs
-
-{{< added-in release-2022-09 block >}}
 
 An optional step is to enable the story planning side panel within the Livingdocs editor. This can be configured to only display for certain content types, for example pages to help with page management. This step can also be done without mapping Desk-Net values, but this will result in the side panel displaying document titles instead of document reference cards.
 

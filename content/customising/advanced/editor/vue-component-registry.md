@@ -200,8 +200,6 @@ Valid `inject`:
 
 ### tableDashboardCell
 
-{{< added-in release-2022-03 >}}
-
 A `tableDashboardCell` registers a Vue component that can be configured to be displayed in a `tableDashboard` column.
 
 These are the `props` which are provided to your Vue component:

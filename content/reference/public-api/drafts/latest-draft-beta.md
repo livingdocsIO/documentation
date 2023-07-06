@@ -10,7 +10,6 @@ menus:
 
 {{< api-example
   title="Get Latest Draft"
-  release="release-2022-03"
   scopes="public-api:write, public-api:drafts:read"
   beta=true
 >}}

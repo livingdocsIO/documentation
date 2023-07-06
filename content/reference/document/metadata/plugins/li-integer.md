@@ -16,7 +16,7 @@ support:
 defaultUI: |
   * Renders a number input.
   * No UI is rendered if the `handle` is `lastProofreadRevision`.
-  * With `release-2023-03`: Renders a select element if a `dataProvider` is configured
+  * {{< added-in "release-2023-03" >}}: Renders a select element if a `dataProvider` is configured
 storageFormat: <Integer>
 contentTypeConfig: |2
         handle: 'myHandle'
@@ -26,12 +26,12 @@ contentTypeConfig: |2
           hideFromForm: false,                     // optional, default: false
           required: true,                          // optional, default: false
           requiredErrorMessage: 'Provide a value', // optional
-          index: true,                             // optional, default: false, added in {{< release "release-2023-07" >}}
+          index: true,                             // optional, default: false. {{< added-in "release-2023-07" >}}
           // specific
           minValue: 1,                             // optional
           maxValue: 50,                             // optional
           translatable: true,                      // optional, default: false, translations are only supported for data-record and mediaLibrary
-          dataProvider: {                          // optional, added in release-2023-03
+          dataProvider: {                          // optional. {{< added-in "release-2023-03" >}}
             // Option 1 - list of items
             type: 'labelValuePair',
             items: [

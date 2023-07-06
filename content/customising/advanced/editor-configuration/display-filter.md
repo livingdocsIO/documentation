@@ -24,7 +24,7 @@ Usually you configure `displayFilters` in dashboard configurations like this:
        }
     },
 
-    // gives you a filter for this metadata property, caveats apply, see below, added in release-2023-03
+    // gives you a filter for this metadata property, caveats apply, see below. {{< added-in "release-2023-03" >}}
     {metadataPropertyName: "myMetadataProperty"}
   ],
   // ...
@@ -36,6 +36,7 @@ There are 2 types of filters provided by Livingdocs for you to configure, some y
 They are separately listed here:
 
 ## Named Filters
+
 - `documentState`, unpublished, published, not yet published, my articles, needs proofreading, currently proofreading
 - `timeRange`, filter the search results in time ranges such as last 24 hours
 - `liDateTimeRange`, filter the search results in time ranges (quick filter + from/to range)
@@ -53,10 +54,14 @@ They are separately listed here:
 - `language`: uses the project configuration for [available languages]({{< ref "/reference/project-config/settings.md" >}}) to offer a select box to filter for languages (requires multi-language feature to be enabled)
 - `contentType`: uses the content-types configuration in your server to filter for different content-types, e.g. galleries or regular articles.
 - `channels` give the user a dropdown to filter by a specific channel. The concept of channels will be removed, if you aren't using them yet, don't start doing so.
+
 ## Metadata Filters
-{{< added-in release-2023-03 >}}
+
+{{< added-in "release-2023-03" block >}}
+
 Listed here are the supported metadata types, you would configure the filters for them with a `metadataPropertyName` with the `handle` of a property of this type that is configured in your `contentType`s/`mediaType`s.
 Support for more types will be added as needed. Contact your Customer Solutions Manager for potential [Implementation Partnerships](https://livingdocs.io/en/livingdocs-2022-2023-roadmap).
 ### Supported Types
+
 - `li-integer`
 - `li-category`

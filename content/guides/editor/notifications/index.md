@@ -145,7 +145,6 @@ Possible action to register on at the moment:
    {type: 'task.change', taskName: 'proofreading', statusChange: ['requested', 'accepted', 'completed']}
    ```
 
-{{< added-in release-2021-06 >}}
 #### Comments mentioning
 In a comment it is possible to mention a user with `@`. A dropdown will be shown and a user can be selected. This user will get a notification about the mentioning in a comment.
 

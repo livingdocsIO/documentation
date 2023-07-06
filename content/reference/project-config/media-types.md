@@ -25,7 +25,6 @@ If no `Media Type` config is provided it falls back to a default config where `t
 - Multiple Media Types of type `mediaImage` are supported, but at least one Media Type must have the handle `image`
 
 #### Add Configurability of Media Library Index / Multiple Videos
-{{< added-in release-2021-03 >}}
 
 - Includes `index` on config
 - You can configure which metadata should be indexed on the media index. The metadata plugin must support the media index. Set in `config` property `index:true`
@@ -40,7 +39,6 @@ If no `Media Type` config is provided it falls back to a default config where `t
 - Multiple Media Types of type `mediaVideo` are supported, but at least one Media Type must have the handle `video`
 
 #### Add File Support
-{{< added-in release-2021-06 >}}
 
 - Add file support with the new type `mediaFile`
 
@@ -249,9 +247,6 @@ Here is a complete list of fields you can use. Please consult https://www.iptc.o
 | Artwork or Object in the Image structure   | ArtworkOrObject                                              |
 
 ## Media Sources
-
-
-{{< added-in release-2021-03 block >}}
 
 This feature is only supported for mediaTypes of type `mediaImage`.
 

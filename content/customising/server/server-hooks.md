@@ -40,15 +40,12 @@ With publication hooks you can influence the [`Document Publication Lifecycle`](
 ### Process and Hooks Overview
 
 
-|Name|Supported in|Editor Feedback|Added in|Removed in|
-|-|-|-|-|-|
-|preparePublishHookAsync|Instant Publish|✅|release-2022-03||
-|prepublishHookAsync|Instant Publish|✅||release-2022-03|
-|publishHookAsync|Instant Publish|✅||release-2022-03|
-|preUnpublishHookAsync|Instant Publish|✅||release-2022-05|
-|postPublishHookAsync|Instant Publish||release-2022-03||
-|unpublishHookAsync|Instant Publish|✅|release-2017-01|release-2022-05|
-|postUnpublishHookAsync|Instant Publish|✅|release-2022-05||
+| Name                      | Supported in    | Editor Feedback |
+| ------------------------- | --------------- | :-------------: |
+| `preparePublishHookAsync` | Instant Publish | {{< check >}}   |
+| `postPublishHookAsync`    | Instant Publish |                 |
+| `preUnpublishHookAsync`   | Instant Publish | {{< check >}}   |
+| `postUnpublishHookAsync`  | Instant Publish | {{< check >}}   |
 
 ### Register a Publication Hook
 
@@ -61,7 +58,6 @@ With publication hooks you can influence the [`Document Publication Lifecycle`](
 * `postPublishHookAsync`: `({documentVersion}) {return}`
 * `preUnpublishHookAsync`: `({documentVersion}) {return}`
 * `postUnpublishHookAsync`: `({documentVersion}) {return}`
-* {{< removed-in release-2022-05 >}}: `unpublishHookAsync`: `({documentType, documentVersion}) {return}`
 
 
 **Example**
@@ -77,27 +73,17 @@ liServer.registerInitializedHook(async () => {
   liServer.features.api('li-documents').registerPublicationHooks({
     projectHandle: 'your-awesome-project',
     channelHandle: 'default',
-    // {{< added-in release-2022-03 >}}
     async preparePublishHookAsync ({documentVersion}) { return },
-    // {{< added-in release-2022-03 >}}
     async postPublishHookAsync ({documentVersion}) {
       liServer.log.info(`postPublishHookAsync called for documentType: ${documentVersion.documentType}!`)
       liServer.log.debug({documentVersion: documentVersion})
       return
     },
-    // {{< removed-in release-2022-05 >}}
-    async unpublishHookAsync ({documentVersion}) {
-      liServer.log.info(`unpublishHookAsync called for documentType: ${documentVersion.documentType}!`)
-      liServer.log.debug({documentVersion})
-      return
-    }
-    // {{< added-in release-2022-05 >}}
     async preUnpublishHookAsync ({documentVersion}) {
       liServer.log.info(`preUnpublishHookAsync called for documentType: ${documentVersion.documentType}!`)
       liServer.log.debug({documentVersion})
       return
     },
-    // {{< added-in release-2022-05 >}}
     async postUnpublishHookAsync ({documentVersion}) {
       liServer.log.info(`postUnpublishHookAsync called for documentType: ${documentVersion.documentType}!`)
       liServer.log.debug({documentVersion})
@@ -154,33 +140,6 @@ async postPublishHookAsync ({documentVersion}) {
 }
 ```
 
-### unpublishHookAsync
-{{< removed-in release-2022-05 block >}}
-
-The `unpublishHookAsync` hook will be called after a document has been unpublished. Any change to the [DocumentVersion]({{< ref "/customising/server/document-version.md" >}}) has no effect. A use case for this hook is to inform remote systems about the unpublication of a document.
-
-```js
-async unpublishHookAsync ({documentVersion}) {...}
-```
-
-### postUnpublishHookAsync
-
-The `postUnpublishHookAsync` hook will be called after a document has been unpublished or a published document gets deleted. Any change to the [DocumentVersion]({{< ref "/customising/server/document-version.md" >}}) has no effect. A use case for this hook is to inform remote systems about the unpublish of a document.
-
-**Use Cases**
-* Notify other systems
-
-**Example**
-```js
-async postUnpublishHookAsync ({documentVersion}) {
- axios.post(`https://my-remote-service.com/unpublish`,
-  {
-    projectId: documentVersion.projectId,
-    documentId: documentVersion.id
-  })
-}
-```
-
 ### preUnpublishHookAsync
 
 The `preUnpublishHookAsync` hook allows modifications of the [DocumentVersion]({{< ref "/customising/server/document-version.md" >}}) before a document will be unpublished.
@@ -206,6 +165,24 @@ async preUnpublishHookAsync ({documentVersion}) {
     }]
     throw err
   }
+}
+```
+
+### postUnpublishHookAsync
+
+The `postUnpublishHookAsync` hook will be called after a document has been unpublished or a published document gets deleted. Any change to the [DocumentVersion]({{< ref "/customising/server/document-version.md" >}}) has no effect. A use case for this hook is to inform remote systems about the unpublish of a document.
+
+**Use Cases**
+* Notify other systems
+
+**Example**
+```js
+async postUnpublishHookAsync ({documentVersion}) {
+ axios.post(`https://my-remote-service.com/unpublish`,
+  {
+    projectId: documentVersion.projectId,
+    documentId: documentVersion.id
+  })
 }
 ```
 

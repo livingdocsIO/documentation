@@ -63,8 +63,6 @@ menus:
 
 ## Customer
 
-{{< added-in release-2021-06 >}}
-
 The `customerId` property is a string which is used to identify the server. It will typically be the same across all of your environments, but if you use multiple Livingdocs servers for different projects you should give them different `customerId` values.
 
 ```js
@@ -72,8 +70,6 @@ customerId: 'daily-planet'
 ```
 
 ## Roles
-
-{{< added-in release-2022-11 >}}
 
 [More info about roles]({{< ref "/customising/server/roles" >}})
 
@@ -132,7 +128,6 @@ httpServer: {
   // two spaces if set to true
   prettyJsonStringify: false,
 
-  // Added in `release-2022-11`
   // Enable stack traces in error responses
   // Default: true if the env variable ENVIRONMENT incudes dev/test, false otherwise
   showStackTraces: false,
@@ -250,7 +245,7 @@ redis: {
 
 ```js
 auth: {
-  // Deprecated: Please use 'accessTokenSigningKeys' instead
+  // {{< deprecated-in "release-2021-11" >}}. Please use 'accessTokenSigningKeys' instead
   accessTokenSecret: 'GpA^xLH5$qLzWcqEvZmE3imYwVf68kXa1JR5rP*NFRUyRPQRtbVwWk3bHusD',
 
   // The secret used to sign JWT tokens
@@ -277,13 +272,13 @@ auth: {
 ```
 
 ### `auth.accessTokenSecret`
-Deprecated since `release-2021-11`, Please use `auth.accessTokenSigningKeys` instead.
+
+{{< deprecated-in "release-2021-11" >}}. Please use `auth.accessTokenSigningKeys` instead.
 
 The `accessTokenSecret` config was used to sign the JWT tokens together with the HMAC-based `HS256` algorithm.
 This setup got replaced with a more standardized one, which supports most signing algorithms and also key rotation.
 
 ### `auth.accessTokenSigningKeys`
-{{< added-in release-2021-11 >}}
 
 Livingdocs uses JWT tokens for client (browser and public api) authorization.
 The `accessTokenSigningKeys` configuration defines the signing and verification keys for the tokens.
@@ -565,7 +560,7 @@ designs: {
     // {{< a ref="/customising/server-configuration/storage" title="Storage Configuration" >}}
     storage: {
       strategy: 's3',
-      prefix: 'images/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
+      prefix: 'images/' // optional, the storage key will be prefixed
       config: {
         bucket: 'livingdocs-designs-dev',
         region: 'eu-west-1',
@@ -749,7 +744,9 @@ search: {
 
 ##### documentsMetadataFields
 
-DEPRECATED since [release-2022-03](https://docs.livingdocs.io/operations/releases/release-2022-03/#remove-server-config-searchdocumentsmetadatafields-): This config must not be defined anymore, because all metadata are returned when calling the editingApi `/documents`.
+{{< deprecated-in "release-2022-03" block >}}
+
+This config must not be defined anymore, because all metadata are returned when calling the editingApi `/documents`.
 
 ##### queryBuilderPlugin
 
@@ -931,21 +928,14 @@ For push notifications to be enabled you also need to follow the steps in the [c
 
 #### Media Library (DAM)
 
-The Media Library impacts editor in four ways:
-- You can pick images from the library which have been previously uploaded
-- You can see all the uploaded images and perform operations on them
-- You can edit the Metadata of images in a dedicated view, which is accessible over an image
-- You can enforce metadata on images before a user can upload them
-- Videos are supported
+The Media Library impacts editor in multiple ways:
+- You can pick images, videos, and files from the library which have been previously uploaded
+- You can see all the uploaded media and perform operations on them
+- You can edit the Metadata of media in a dedicated view, which is accessible over an image
+- You can enforce metadata on media before a user can upload them
+- Customized indexing of metadata is supported
 
-{{< added-in release-2021-03 >}}
-- Customize indexing of metadata is supported
-
-{{< added-in release-2021-06 >}}
-- Files are supported (for example PDFs)
-- We now support the following configs: `mediaLibrary.images` `mediaLibrary.videos` `mediaLibrary.files` is now supported.
-_Before the release-2021-06 - those configs were stored on the top-level 'images', 'videos', 'files'_
-
+We support the following configs: `mediaLibrary.images` `mediaLibrary.videos` `mediaLibrary.files`.
 Below you see a full mediaLibrary config (with default values).
 ```js
 mediaLibrary: {
@@ -955,7 +945,7 @@ mediaLibrary: {
     // {{< a ref="/customising/server-configuration/storage" title="Storage Configuration" >}}
     storage: {
       strategy: 's3',
-      prefix: 'images/' // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
+      prefix: 'images/' // optional, the storage key will be prefixed
       config: {
         bucket: 'livingdocs-images-development',
         region: 'eu-central-1',
@@ -997,7 +987,7 @@ mediaLibrary: {
     // {{< a ref="/customising/server-configuration/storage" title="Storage Configuration" >}}
     storage: {
       strategy: 's3',
-      prefix: 'videos/', // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
+      prefix: 'videos/', // optional, the storage key will be prefixed
       config: {
         // the videos must be public-read to be shown in the editor
         params: {ACL: 'public-read'},
@@ -1019,7 +1009,7 @@ mediaLibrary: {
     // {{< a ref="/customising/server-configuration/storage" title="Storage Configuration" >}}
     storage: {
       strategy: 's3',
-      prefix: 'files/', // optional, the storage key will be prefixed ({{< added-in release-2021-06 >}})
+      prefix: 'files/', // optional, the storage key will be prefixed
       config: {
         bucket: 'livingdocs-files-dev',
         region: 'eu-central-1',
@@ -1086,7 +1076,7 @@ The name of the Media index has to be configured:
 Then the media-library index must be created.
 
 ```js
-livingdocs-server elasticsearch-index --handle li-media -y // ({{< added-in release-2021-03 >}})
+livingdocs-server elasticsearch-index --handle li-media -y
 ```
 
 To index the metadata the plugin must support `indexing` and on the metadata in the mediaType the index must be enabled.
@@ -1240,7 +1230,10 @@ assetManagement: {
 
 #### Custom previews
 
-Deprecated with release-2023-07 and removed with release-2023-09. Read [the guide on custom previews]({{< ref "/guides/editor/document-previews" >}}) to learn how to use `documentPreview` functions.
+{{< deprecated-in "release-2023-07" block >}}
+{{< removed-in "release-2023-09" block >}}
+
+Read [the guide on custom previews]({{< ref "/guides/editor/document-previews" >}}) to learn how to use `documentPreview` functions.
 
 Custom previews are a way to display a custom preview of a document. This could be a custom mobile preview, a preview of a finished article living on the frontend or anything that fits the specific customer need. You will need to enable the feature and register a custom render function that will contain the `documentId`.
 

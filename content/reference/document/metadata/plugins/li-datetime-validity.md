@@ -32,6 +32,6 @@ contentTypeConfig: |2
         handle: 'myHandle',
         type: 'li-datetime',
         config: {
-          index: true                              // optional, default: false, added in {{< release "release-2023-07" >}}
+          index: true                              // optional, default: false. {{< added-in "release-2023-07" >}}
         }
 ---

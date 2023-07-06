@@ -6,10 +6,6 @@ menus:
     parent: Project Config
 ---
 
-{{< added-in release-2022-07 block >}}
-
-
-
 External Systems define a relation to a source system. External Systems usually have stored the original document which will be one way synced to Livingdocs via Import.
 
 An example:

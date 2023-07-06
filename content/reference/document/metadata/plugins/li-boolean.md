@@ -26,7 +26,7 @@ contentTypeConfig: |2
         config: {
           // common
           hideFromForm: false,                     // optional, default: false
-          index: true                              // optional, default: false, added in {{< release "release-2023-07" >}}
+          index: true                              // optional, default: false. {{< added-in "release-2023-07" >}}
         }
         ui: {
           label: 'foo',                            // optional, default: start case of handle

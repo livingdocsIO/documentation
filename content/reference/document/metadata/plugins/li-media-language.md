@@ -5,7 +5,7 @@ menus:
   reference:
     parent: Metadata Plugins
 summary: |
-  {{< deprecated-in release-2022-05 >}}. Use [`li-metadata-translations`]({{< ref "/reference/document/metadata/plugins/li-metadata-translations" >}}) instead.
+  {{< deprecated-in "release-2022-05" >}}. Use [`li-metadata-translations`]({{< ref "/reference/document/metadata/plugins/li-metadata-translations" >}}) instead.
 support:
   document: false
   media: true

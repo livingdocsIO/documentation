@@ -69,9 +69,12 @@ This are all available `queryTypes` which can be used to form a filter query.
 {key: 'references', term: ['file:A7JRa4mS3xBQ']}
 {key: 'references', term: ['video:P2rSblad3aUS']}
 
-// state for the mediaLibrary (added-in release-2022-07)
+// state for the mediaLibrary
 {key: 'state', term: 'active'}
 {key: 'state', term: 'revoked'}
+
+// userInTeam ({{< added-in "release-2023-03" >}})
+{key: 'metadata.myTeamHandle.activeUsers.id', termPattern: '{{ userId }}'}
 ```
 
 ### Example - Filter by metadata with key/value

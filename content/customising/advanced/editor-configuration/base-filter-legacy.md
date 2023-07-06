@@ -88,17 +88,17 @@ This are all available `queryTypes` which can be used to form a filter query.
 {type: 'sortBy', value: 'title'}
 {type: 'sortBy', value: 'metadata.department'}
 
-// reference (added-in release-2022-03)
+// reference
 {type: 'reference', value: 'document:123'}
 {type: 'reference', value: 'image:W8GRbmju4grG'}
 {type: 'reference', value: 'file:A7JRa4mS3xBQ'}
 {type: 'reference', value: 'video:P2rSblad3aUS'}
 
-// state for the mediaLibrary (added-in release-2022-07)
+// state for the mediaLibrary
 {type: 'state', value: 'active'}
 {type: 'state', value: 'revoked'}
 
-// userInTeam (added in release-2023-03)
+// userInTeam ({{< added-in "release-2023-03" >}})
 {type: 'userInTeam', key: 'myTeamMetadataPropertyName'}
 ```
 

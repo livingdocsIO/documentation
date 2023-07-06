@@ -26,13 +26,13 @@ contentTypeConfig: |2
           required: true,                          // optional, default: false
           requiredErrorMessage: 'Provide a value', // optional
           // specific
-          minLength: 100,                          // optional, added in release-2022-09
+          minLength: 100,                          // optional
           maxLength: 200,                          // optional
-          recommendedMinLength: 110,               // optional, added in release-2022-09
-          recommendedMaxLength: 150,               // optional, added in release-2022-09
-          allowNewlines: false,                    // default: undefined, added in release-2022-09, validated if set. Effect on ui: newlines are stripped uf not true and ui.config.rows is undefined and ui.component is not liMetaTextareaForm
-          useAsTitle: true,                        // optional, removed in {{< release "release-2023-07" >}}, migrate to `displayTitlePattern`
-          index: true,                             // optional, default: false, added in {{< release "release-2023-07" >}}
+          recommendedMinLength: 110,               // optional
+          recommendedMaxLength: 150,               // optional
+          allowNewlines: false,                    // default: undefined, validated if set. Effect on ui: newlines are stripped uf not true and ui.config.rows is undefined and ui.component is not liMetaTextareaForm
+          useAsTitle: true,                        // optional. {{< removed-in "release-2023-07" >}}, migrate to `displayTitlePattern`
+          index: true,                             // optional, default: false. {{< added-in "release-2023-07" >}}
           translatable: true,                      // optional, default: false, translations are only supported for data-record and mediaLibrary
           dataProvider: {                          // optional
             // Option 1 - list of items

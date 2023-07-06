@@ -6,7 +6,7 @@ weight: 3
 
 Document Teasers based on [Includes]({{< ref "/reference/document/includes" >}}) provide a simple way to setup teasers and the possiblity to define the UI with a `paramsSchema`.
 
-With [`release-2022-07`](https://github.com/livingdocsIO/livingdocs-release-notes/blob/master/releases/release-2022-07.md) the possibility to drag and drop Document Cards onto a document to create Teaser Components was introduced. You need to configure Teaser Components using an Include Service with a `li-document-reference` param to make it work.
+To drag and drop Document Cards onto a document to create Teaser Components you need to configure Teaser Components using an Include Service with a `li-document-reference` param to make it work.
 
 This guide assumes that you are familiar with the possibilities to register an Include Service and how to use it in a Component.
 

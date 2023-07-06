@@ -8,7 +8,7 @@ bullets:
 weight: 5
 ---
 
-{{< added-in release-2023-07 >}}
+{{< added-in "release-2023-07" block >}}
 
 ## Register Document Preview Functions
 

@@ -21,7 +21,7 @@
 <div class="api-example{{ if (eq $title "") }} api-example--no-title{{ end }}{{ if $beta }} api-example--beta{{ end }}">
 
   {{- if (ne $title "") -}}
-    <h2 id="{{ $title | urlize }}" class="api-example__title">{{ $title }}</h2>
+    <h2 id="{{ $title | urlize }}" class="api-example__title">{{ $title | markdownify }}</h2>
   {{- end -}}
 
   {{- if (ne $release "") -}}

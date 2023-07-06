@@ -24,8 +24,7 @@ contentTypes: [
     handle: 'gallery',
     documentType: 'article', // either 'article', 'page' or 'data-record'
     isAuthor: false, // only true if this content-type represents an author, must be 'data-record'
-    // added in release-2023-05
-    displayTitlePattern: '{{metadata.title}}', // optional, defaults to undefined
+    displayTitlePattern: '{{metadata.title}}', // optional, defaults to undefined. {{< added-in "release-2023-05" >}}
 
     info: {
       label: 'Boilerplate Article',
@@ -37,7 +36,6 @@ contentTypes: [
     defaultContent: [
       {component: 'title', position: 'fixed'}
     ],
-    // {{< added-in release-2022-05 >}}
     defaultMetadata: {
       author: 'Mister X'
     },
@@ -65,7 +63,7 @@ contentTypes: [
       }
     ],
 
-    // added in release-2023-05
+    // {{< added-in "release-2023-05" >}}
     metadataPreviews: [
       {
         iframe: {
@@ -219,7 +217,7 @@ defaultContent: [
 
 ## displayTitlePattern
 
-{{< added-in release-2023-05 >}}
+{{< added-in "release-2023-05" block >}}
 
 Without this configuration, the `document.title` property holds a value representing the internal Working Title of a Document and users can change it via the Editor Toolbar.
 
@@ -239,7 +237,7 @@ The default [metadata]({{< ref "/reference/document/metadata" >}}) defines what 
 Passed metadata (via Editor on document creation) are preferred over default metadata. The merging is done property by property on the top level of every metadata field.
 
 ```js
-defaultMetadata: { // Added in: release-2022-05
+defaultMetadata: {
   author: 'Mister X'
 }
 ```
@@ -325,7 +323,7 @@ metadataGroups: [
 
 ## Metadata Previews
 
-{{< added-in release-2023-05 >}}
+{{< added-in "release-2023-05" block >}}
 
 With Metadata Previews, you can show the user how the value of a certain metadata property will be visually represented.
 This enables things like manual line-break optimization.
@@ -689,8 +687,6 @@ editor: {
 The print options allow you to enable the WoodWing Studio print connector on a content-type. Refer to our [setup guide]({{< ref "/guides/integrations/print" >}}) in order to setup your project with the print connector. Note: before you consider productive use of a print connector you must get in contact with us. The provided WoodWing connector is only to be used for test purposes.
 
 ## Document Inbox
-
-{{< added-in release-2021-11 >}}, and media library support {{< added-in release-2022-03 >}}
 
 The document inbox feature allows document and media references to be assigned to another document. Currently pages can accept documents or media library entries to their inbox, articles can only accept media library entries.
 
