@@ -93,10 +93,10 @@ the error will just be coerced as string with `toString()` and not serialized wi
 
 Make sure you always pass it directly or use `err` or `error` attributes. That behaviour is defined by [`serializers`](https://getpino.io/#/docs/api?id=serializers-object)
 
-- ❌ `log.error({x: new Error()})`
-- ✅ `log.error(new Error())`
-- ✅ `log.error({err: new Error()})`
-- ✅ `log.error({error: new Error()})`
+- {{< cross >}} `log.error({x: new Error()})`
+- {{< check >}} `log.error(new Error())`
+- {{< check >}} `log.error({err: new Error()})`
+- {{< check >}} `log.error({error: new Error()})`
 
 ### Creating a child logger
 

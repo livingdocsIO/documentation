@@ -4,10 +4,10 @@
       <th>Name</th>
       <th>Server Version</th>
       <th>Editor Version</th>
-      <th>Upcoming</th>
-      <th>Current</th>
-      <th>Maintained</th>
-      <th>Legacy</th>
+      <th style="text-align: center;">Upcoming</th>
+      <th style="text-align: center;">Current</th>
+      <th style="text-align: center;">Maintained</th>
+      <th style="text-align: center;">Legacy</th>
     </tr>
   </thead>
   <tbody>
@@ -17,10 +17,10 @@
       <td><a href="{{ ref $page .ref }}">{{ .name }}</a></td>
       <td> {{ .key }} {{ if isset . "serverVersion"}} ({{ .serverVersion }}) {{ end }}</td>
       <td> {{ .key }} {{ if isset . "editorVersion"}} ({{ .editorVersion }}) {{ end }}</td>
-      <td>{{ if eq .upcoming true}} ✅ {{ end }}</td>
-      <td>{{ if eq .current true}} ✅ {{ end }}</td>
-      <td>{{ if eq .maintained true}} ✅ {{ end }}</td>
-      <td>{{ if eq .legacy true}} ✅ {{ end }}</td>
+      <td style="text-align: center;">{{ if eq .upcoming true}} {{ partial "check-cross" true }} {{ end }}</td>
+      <td style="text-align: center;">{{ if eq .current true}} {{ partial "check-cross" true }} {{ end }}</td>
+      <td style="text-align: center;">{{ if eq .maintained true}} {{ partial "check-cross" true }} {{ end }}</td>
+      <td style="text-align: center;">{{ if eq .legacy true}} {{ partial "check-cross" true }} {{ end }}</td>
     </tr>
     {{ end }}
   </tbody>
