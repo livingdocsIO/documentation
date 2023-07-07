@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Make scope selection for tokens work again](https://github.com/livingdocsIO/livingdocs-editor/pull/7113)
 * [fix(deps): update babel from 7.22.6 to v7.22.8 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/7119)
 * [fix(deps): update dependency openid-client from 5.4.2 to v5.4.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5867)
 * [Fix labels for cut and copy buttons in multiselect panel](https://github.com/livingdocsIO/livingdocs-editor/pull/7110)
