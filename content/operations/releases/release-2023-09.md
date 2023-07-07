@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency semver from 7.5.3 to v7.5.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5871)
 * [Fix translations and multi upload form for several plugins](https://github.com/livingdocsIO/livingdocs-editor/pull/7117)
 * [fix(deps): update dependency cypress from 12.16.0 to v12.17.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7120)
 * [Deprecate Filter Sets](https://github.com/livingdocsIO/livingdocs-editor/pull/7109)
