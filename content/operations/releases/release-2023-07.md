@@ -11,10 +11,10 @@ aliases:
 
 {{< release-header
   title="July 2023 Release"
-  upcoming=true
+  upcoming=false
   legacy=false
-  current=false
-  maintained=false
+  current=true
+  maintained=true
   branchHandle="release-2023-07"
 >}}
 
