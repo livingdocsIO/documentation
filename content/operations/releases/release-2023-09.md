@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 25.1.3 to v25.1.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5872)
 * [fix(deps): update dependency babel-loader from 9.1.2 to v9.1.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7127)
 * [fix(deps): update dependency semver from 7.5.3 to v7.5.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5871)
 * [Fix translations and multi upload form for several plugins](https://github.com/livingdocsIO/livingdocs-editor/pull/7117)
