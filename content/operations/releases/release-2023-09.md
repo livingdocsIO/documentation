@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency https-proxy-agent from 7.0.0 to v7.0.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7135)
 * [Document Inbox: generate displayFilters for target selection](https://github.com/livingdocsIO/livingdocs-editor/pull/7121)
 * [german UI labels: crops -> zuschnitte](https://github.com/livingdocsIO/livingdocs-editor/pull/7085)
 * [Provide format when sorting by date](https://github.com/livingdocsIO/livingdocs-server/pull/5870)
