@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Document Inbox: generate displayFilters for target selection](https://github.com/livingdocsIO/livingdocs-editor/pull/7121)
 * [german UI labels: crops -> zuschnitte](https://github.com/livingdocsIO/livingdocs-editor/pull/7085)
 * [Provide format when sorting by date](https://github.com/livingdocsIO/livingdocs-server/pull/5870)
 * [fix(deps): update dependency @livingdocs/framework from 25.1.3 to v25.1.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5872)
