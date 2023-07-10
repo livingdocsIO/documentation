@@ -93,14 +93,14 @@ Please also make sure that `document.title` is no longer accessed in custom code
 🔥 Rename `conditions` property to `filters`
 When calling `searchManager.searchPublications()` directly, and providing the new `conditions` property in the first argument, please rename that property to `filters`.
 Please note that the old `filters` property was renamed to `legacyFilters`.
-This rename is part of the refactor done for the new [search DSL](#search-dsl).
+This rename is part of the refactor done for the new [Search DSL](#search-dsl).
 * [Rename `searchPublications()` property `conditions` to `filters`](https://github.com/livingdocsIO/livingdocs-server/pull/5744)
 
 ### Rename searchPublications property `filters` to `legacyFilters`
 
 🔥 Rename `filters` property to `legacyFilters`
 When calling `searchManager.searchPublications()` directly, and providing the new `conditions` property in the first argument, please rename the property to `legacyFilters` for a quick backwards compatibility fix.
-The preferred update path would be to use `filters` from the new [search DSL](#search-dsl).
+The preferred update path would be to use `filters` from the new [Search DSL](#search-dsl).
 
 * [Rename `searchPublications()` property `filters` to `legacyFilters`](https://github.com/livingdocsIO/livingdocs-server/pull/5744)
 
@@ -134,7 +134,7 @@ The preferred update path would be to use `filters` from the new [search DSL](#s
 ### `searchPublications()` property `legacyFilters`
 
 The `legacyFilters` property (previously named `filters`) of the first argument passed to `searchManager.searchPublications()` has been deprecated, and will be removed in `release-2023-09`.
-This only exists to provide a bit of additional time to migrate any queries to the new Search DSL.
+This only exists to provide a bit of additional time to migrate any queries to the new [Search DSL](#search-dsl).
 
 ### Preview API
 
@@ -149,12 +149,11 @@ New draft endpoint for incoming document references: `/drafts/:documentId/incomi
 ### Public API Search Filters
 
 A `filters` query parameter can now be provided to the `GET /api/v1/publications/search` endpoint.
-The filters value should be a JSON (stringified) array or object, using the correct [query DSL]({{< ref "/reference/public-api/publications/search#search-filters" >}}).
+The filters value should be a JSON (stringified) array or object, using the new [Search DSL](#search-dsl).
+
 ```
 GET /api/v1/publications/search?filters=[{"key":"metadata.title","term":"My Title"}]
 ```
-
-Each object must contain either a valid logical operator property ("and", "or", "not"), or a query expression property ("term", "exists", "range"). The logical operator values can be either arrays or objects. The query expression properties should have the value you are searching for, and they must be combined with a "key" property. The default top level array or object behaviour is that of an AND logical expression.
 
 Below is an example showing how query expressions and logical operators can be combined to create a complex query:
 
@@ -198,6 +197,8 @@ The `filters` object from the example above can also be passed to the `publicApi
 const publicApi = server.features.api('li-public-api')
 const results = await publicApi.searchPublications({projectId: 1, filters})
 ```
+
+Please also check the [Public API Search DSL]({{< ref "/reference/public-api/publications/search#search-filters" >}}) documentation for more details.
 
 ## Features :gift:
 
@@ -298,11 +299,32 @@ Enable Document Previews in the content type config:
 
 ### Search DSL
 
-TODO @marcbachmann
+The elasticsearch indexing and filter functionality received major updates. With this release we're introducing a new search DSL, which can be used in base filters of dashboards and also in display filter implementations.
 
+Please follow the [migration guide for display filters and base filters]({{< ref "/guides/editor/filter-migration" >}}).  
+Please also check the [Public API Search DSL]({{< ref "/reference/public-api/publications/search#search-filters" >}}) documentation for details how to use it there.
+
+The new DSL builds up on logical operators (`and`, `or`, `not`), or a query expression property (`term`, `exists`, `range`). The logical operator values can be either arrays or objects. The query expression properties should have the value you are filtering for, and they must be combined with a `key` property. The default top level array or object behaviour is that of an AND logical expression.
+
+For example:
+```js
+[
+  {key: 'contentType', term: 'regular-article'},
+  {
+    or: [
+      {key: 'metadata.proofreadingTask.state', term: 'requested'},
+      {key: 'metadata.imageEnhancementTask.state', term: 'requested'}
+    ]
+  }
+]
+```
+
+By default all metadata properties in a custom metadata mapping are included. So you can filter them directly.
+
+Additionally we have a new `index: true` configuration [within the metadata property declaration]({{< ref "/guides/search/publication-index#metadata-plugins" >}}) to support automatic indexing without causing elasticsearch mapping conflicts. We advise to this new attribute instead of a static mapping.
 ### Translatable li-tree plugin
 
-li-tree plugin has new config `multilang` to support multiple languages on items [Learn more]({{< ref "/reference/document/metadata/plugins/li-tree" >}})
+li-tree plugin has new config `multilang` to support multiple languages on items: [Learn more]({{< ref "/reference/document/metadata/plugins/li-tree" >}})
 
 Metadata config in project config:
 
@@ -322,7 +344,7 @@ metadata: [
 
 ### UI and label config multi-language support
 
-With this release, we introduced multi-language support for the UI and label config. Currently we support English and German as UI languages [Learn more]({{< ref "/content/guides/editor/multi-language-ui/index.md" >}})
+With this release, we introduced multi-language support for the UI and label config. Currently we support English and German as UI languages: [Learn more]({{< ref "/content/guides/editor/multi-language-ui/index.md" >}})
 
 Set UI language in editor config:
 
@@ -351,7 +373,7 @@ metadata: [
 
 ### Support significantPublicationDate on document import
 
-Property `significantPublicationDate` sets a date which deliveries can display to viewers [Learn more]({{< ref "/content/reference/public-api/imports/documents.md" >}})
+Property `significantPublicationDate` sets a date which deliveries can display to viewers: [Learn more]({{< ref "/content/reference/public-api/imports/documents.md" >}})
 
 When performing a `POST api/v1/import/documents` request, you can define `significantPublicationDate` within `documents.[].publishControl` object. See example below:
 
@@ -373,7 +395,7 @@ When performing a `POST api/v1/import/documents` request, you can define `signif
 
 ### Copy Target Icon and Label Config
 
-The copy target config has been extended to support an icon and a label. [Learn more]({{< ref "/guides/editor/document-copy/index.md#setup-config" >}})
+The copy target config has been extended to support an icon and a label: [Learn more]({{< ref "/guides/editor/document-copy/index.md#setup-config" >}})
 
 Copy config in project config:
 
