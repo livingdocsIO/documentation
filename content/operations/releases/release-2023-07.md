@@ -451,6 +451,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.19): fix(document inbox): generate displayFilters instead of relying on filters.pageList config
 - [v95.0.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.18): fix(ui): crops -> zuschnitte
 - [v95.0.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.17): chore: Improve unique value computation
 - [v95.0.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.16): chore(deprecation): add a deprecation notice to the filter sets admin screen
