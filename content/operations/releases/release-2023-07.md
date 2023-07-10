@@ -353,7 +353,7 @@ metadata: [
 
 Property `significantPublicationDate` sets a date which deliveries can display to viewers [Learn more]({{< ref "/content/reference/public-api/imports/documents.md" >}})
 
-When performing a `POST api/v1/import/documents` request, you can define `significantPublicationDate` within `document.publishControl` object. See example below:
+When performing a `POST api/v1/import/documents` request, you can define `significantPublicationDate` within `documents.[].publishControl` object. See example below:
 
 ```js
 {
