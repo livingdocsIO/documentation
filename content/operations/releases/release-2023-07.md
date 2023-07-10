@@ -353,6 +353,24 @@ metadata: [
 
 Property `significantPublicationDate` sets a date which deliveries can display to viewers [Learn more]({{< ref "/content/reference/public-api/imports/documents.md" >}})
 
+in `POST api/v1/import/documents` request:
+
+```js
+{
+  "systemName": "identifier-for-your-system",
+  ...,
+  "documents": [
+    {
+      "id": "123abc",
+      ...,
+      "publishControl": {
+        "significantPublicationDate": "1999-03-19T17:27:00.107Z",
+      },
+    }
+  ]
+}
+```
+
 ### Copy Target Icon and Label Config
 
 The copy target config has been extended to support an icon and a label. [Learn more]({{< ref "/guides/editor/document-copy/index.md#setup-config" >}})
