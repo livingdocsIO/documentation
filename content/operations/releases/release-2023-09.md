@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Upgrade @livingdocs/conf](https://github.com/livingdocsIO/livingdocs-server/pull/5883)
 * [fix(deps): update dependency exifreader from 4.12.1 to v4.13.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5868)
 * [liEmbedTeaserIncludeModal: log deprecation for inlineArticleList based filter config (informally deprecated 6 years ago)](https://github.com/livingdocsIO/livingdocs-editor/pull/7133)
 * [fix(deps): update dependency https-proxy-agent from 7.0.0 to v7.0.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7135)
