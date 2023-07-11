@@ -452,6 +452,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.22): fix(publish control): show publication date only when a visiblePublicationDate is available (the article has been published before)
 - [v95.0.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.21): fix(back button): ignore kanban boards from potential navigation targets for user clarity
 - [v95.0.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.20): fix(article embed teaser): really deprecate liEmbedTeaserIncludeModal without directive.config.search config
 - [v95.0.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.19): fix(document inbox): generate displayFilters instead of relying on filters.pageList config
