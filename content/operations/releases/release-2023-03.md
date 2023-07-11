@@ -328,6 +328,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.52): fix(deps): Upgrade @livingdocs/conf to not merge arrays
 - [v213.6.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.51): fix(documents): Fix metadata_id query in document cleanup script
 - [v213.6.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.50): chore: Update nzz tests to node 18
 - [v213.6.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.49): test(document-lists): Test scheduled documents in document lists
