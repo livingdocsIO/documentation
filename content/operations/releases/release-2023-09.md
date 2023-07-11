@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Back Button: ignore kanban boards from potential navigation targets for more clarity](https://github.com/livingdocsIO/livingdocs-editor/pull/7140)
 * [Upgrade @livingdocs/conf](https://github.com/livingdocsIO/livingdocs-server/pull/5883)
 * [fix(deps): update dependency exifreader from 4.12.1 to v4.13.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5868)
 * [liEmbedTeaserIncludeModal: log deprecation for inlineArticleList based filter config (informally deprecated 6 years ago)](https://github.com/livingdocsIO/livingdocs-editor/pull/7133)
