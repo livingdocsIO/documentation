@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Publish Control: Show publication date (and override) only when document has been published](https://github.com/livingdocsIO/livingdocs-editor/pull/7132)
 * [Back Button: ignore kanban boards from potential navigation targets for more clarity](https://github.com/livingdocsIO/livingdocs-editor/pull/7140)
 * [Upgrade @livingdocs/conf](https://github.com/livingdocsIO/livingdocs-server/pull/5883)
 * [fix(deps): update dependency exifreader from 4.12.1 to v4.13.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5868)
