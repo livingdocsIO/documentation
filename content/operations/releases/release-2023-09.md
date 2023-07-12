@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Only allow editing of author mappings for current project](https://github.com/livingdocsIO/livingdocs-editor/pull/7151)
 * [Limit editor back button target to specific allow list](https://github.com/livingdocsIO/livingdocs-editor/pull/7149)
 * [Always show media library entry upload info](https://github.com/livingdocsIO/livingdocs-editor/pull/7150)
 * [Normalise language label in metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/7147)
