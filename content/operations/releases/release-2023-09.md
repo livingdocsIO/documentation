@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update babel from 7.22.8 to v7.22.9 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/7169)
 * [Disable create button when insufficient permission](https://github.com/livingdocsIO/livingdocs-editor/pull/7162)
 * [Take allowedChildren config into account for images from Media Sources.](https://github.com/livingdocsIO/livingdocs-editor/pull/7139)
 * [Only replace include references when changing language](https://github.com/livingdocsIO/livingdocs-editor/pull/7148)
