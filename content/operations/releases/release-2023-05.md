@@ -445,6 +445,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.72): fix(drop-handler): check if children allowed
 - [v94.10.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.71): fix(editor): Limit back button target to specific allow list
 - [v94.10.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.70): fix(media-library): Always show the media info, even if there's no user present (e.g. with imports)
 - [v94.10.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.69): fix(publish control): show publication date only when a visiblePublicationDate is available (the article has been published before)
