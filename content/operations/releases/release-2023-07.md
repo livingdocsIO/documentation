@@ -452,6 +452,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.25): fix(dashboards): Fix table dashboard li-integer select form hover state
 - [v95.0.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.24): fix(editor): Limit back button target to specific allow list
 - [v95.0.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.23): fix(media-library): Always show the media info, even if there's no user present (e.g. with imports)
 - [v95.0.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.22): fix(publish control): show publication date only when a visiblePublicationDate is available (the article has been published before)
