@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Take allowedChildren config into account for images from Media Sources.](https://github.com/livingdocsIO/livingdocs-editor/pull/7139)
 * [Only replace include references when changing language](https://github.com/livingdocsIO/livingdocs-editor/pull/7148)
 * [Support non-object values in select form (for li-integer)](https://github.com/livingdocsIO/livingdocs-editor/pull/7116)
 * [Only allow editing of author mappings for current project](https://github.com/livingdocsIO/livingdocs-editor/pull/7151)
