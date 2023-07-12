@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Always show media library entry upload info](https://github.com/livingdocsIO/livingdocs-editor/pull/7150)
 * [Normalise language label in metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/7147)
 * [fix(deps): update dependency sharp from 0.32.1 to v0.32.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5888)
 * [fix(deps): update dependency monaco-editor-webpack-plugin from 7.0.1 to v7.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7136)
