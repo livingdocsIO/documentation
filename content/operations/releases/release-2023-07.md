@@ -443,6 +443,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v231.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.9): fix(search): Don't provide format for Elasticsearch < 7.13.0
 - [v231.0.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.8): chore: Add lib/lazy.js
 - [v231.0.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.7): fix(search): Provide format when sorting by date
 - [v231.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.6): fix(documents): Fix metadata_id query in document cleanup script
