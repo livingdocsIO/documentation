@@ -4,7 +4,7 @@ description:
 weight: 1
 menus:
   customising:
-    parent: Back to Standard
+    parent: Angular Migration
     weight: 1
 ---
 
