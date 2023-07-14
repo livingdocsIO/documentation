@@ -447,6 +447,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.74): fix(lists): Include scheduled when calculating sort order
 - [v94.10.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.73): fix(dashboards): Reset pagination when resetting filters
 - [v94.10.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.72): fix(drop-handler): check if children allowed
 - [v94.10.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.71): fix(editor): Limit back button target to specific allow list
