@@ -443,6 +443,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v231.0.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.12): fix(lists): Return scheduled_in_inbox with find request
 - [v231.0.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.11): fix: Write .npmrc file before updating tag
 - [v231.0.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.10): fix: Tag active release as latest
 - [v231.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.9): fix(search): Don't provide format for Elasticsearch < 7.13.0
