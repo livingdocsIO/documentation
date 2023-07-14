@@ -455,6 +455,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.29): fix: Tag active release as latest
 - [v95.0.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.28): fix(dashboards): Reset pagination when resetting filters
 - [v95.0.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.27): fix(dashboards): Disable create button when insufficient permission
 - [v95.0.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.26): fix(drop-handler): check if children allowed
