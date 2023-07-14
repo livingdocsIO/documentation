@@ -381,6 +381,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.98](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.98): fix(lists): Include scheduled when calculating sort order
 - [v90.33.97](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.97): fix(dashboards): Reset pagination when resetting filters
 - [v90.33.96](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.96): fix(drop-handler): check if children allowed
 - [v90.33.95](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.95): fix(publish control): show publication date only when a visiblePublicationDate is available (the article has been published before)
