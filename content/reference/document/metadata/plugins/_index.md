@@ -1,5 +1,5 @@
 ---
-title: Metadata Plugins
+title: Metadata Plugins List
 type: metadata-plugins
 menus:
   reference:
