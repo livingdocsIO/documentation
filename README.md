@@ -13,12 +13,23 @@ brew install hugo
 # install dependencies
 npm install
 
-# then start the hugo server
+# start the hugo dev server
 npm start
-
-# To build the static page into `./public`, you can just run
-npm run build
 ```
+
+When working with the lunr search code it can be useful to test the real production setup, due to the way we edit the search index for production:
+
+```bash
+# build the static site into `./public`
+npm run build
+# or the uncompressed version
+npm run build:fast
+
+# serve the `./public` directory
+npm run start:production
+```
+
+When editing code you can run `npm run build:fast` in a separate terminal and then refresh the page to see the latest changes. This only takes 1-2 seconds.
 
 ## Contribution Guide
 
