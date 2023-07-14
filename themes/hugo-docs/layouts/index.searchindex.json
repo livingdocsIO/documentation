@@ -1,6 +1,7 @@
 [
   {{- range $index, $page := .Site.AllPages -}}
     {{- $entry := (dict "url" $page.RelPermalink) -}}
+    {{- $entry = merge $entry (dict "type" $page.Type) -}}
     {{- $entry = merge $entry (dict "section" $page.Section) -}}
     {{- $entry = merge $entry (dict "categories" $page.Params.categories) -}}
     {{- $entry = merge $entry (dict "keywords" $page.Params.keywords) -}}
