@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Ticker Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/7094)
 * [Don't report drafts in inbox for empty lists](https://github.com/livingdocsIO/livingdocs-server/pull/5895)
 * [Tag active release as latest](https://github.com/livingdocsIO/livingdocs-editor/pull/7174)
 * [Improvement/image crop polish](https://github.com/livingdocsIO/livingdocs-editor/pull/7173)
