@@ -3,7 +3,7 @@ title: li-enum
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: A select form based on a statically defined list.
 support:
   document: true

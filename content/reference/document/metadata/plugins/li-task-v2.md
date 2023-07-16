@@ -3,7 +3,7 @@ title: li-task-v2
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 support:
   document: true
   media: false

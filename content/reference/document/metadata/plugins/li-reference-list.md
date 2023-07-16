@@ -3,7 +3,7 @@ title: li-reference-list
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 support:
   document: true
   media: true

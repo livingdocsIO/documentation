@@ -3,7 +3,7 @@ title: li-estimated-time-of-completion
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Enables a user to set an estimated time of completion for the current document.
 support:
   document: true

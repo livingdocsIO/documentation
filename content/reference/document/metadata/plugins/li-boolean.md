@@ -3,7 +3,7 @@ title: li-boolean
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: A simple Boolean value store, represented in the UI with a checkbox which you can toggle on/off.
 support:
   document: true

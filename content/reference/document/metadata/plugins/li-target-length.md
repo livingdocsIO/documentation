@@ -3,7 +3,7 @@ title: li-target-length
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Provide a suggested total character count for the text in the document.
 support:
   document: true

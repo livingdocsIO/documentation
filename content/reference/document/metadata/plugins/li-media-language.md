@@ -3,7 +3,7 @@ title: li-media-language
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: |
   {{< deprecated-in "release-2022-05" >}}. Use [`li-metadata-translations`]({{< ref "/reference/document/metadata/plugins/li-metadata-translations" >}}) instead.
 support:

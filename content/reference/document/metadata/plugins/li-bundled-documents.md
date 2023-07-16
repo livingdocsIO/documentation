@@ -3,7 +3,7 @@ title: li-bundled-documents
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: A list of documents belonging to a bundle.
 support:
   document: true

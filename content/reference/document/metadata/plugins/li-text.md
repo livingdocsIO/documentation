@@ -3,7 +3,7 @@ title: li-text
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: A simple text value store.
 support:
   document: true

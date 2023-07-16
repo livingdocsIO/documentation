@@ -3,7 +3,7 @@ title: li-distribution-planning
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Enables the Distribution Planning panel, and allows documents to be assiged to a distribution schedule.
 support:
   document: true

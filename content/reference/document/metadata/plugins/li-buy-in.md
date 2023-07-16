@@ -3,7 +3,7 @@ title: li-buy-in
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Allows users to ask for buy-in when writing an article or pitching an idea. Other users can provide feedback.
 support:
   document: true

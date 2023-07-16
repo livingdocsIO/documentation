@@ -3,7 +3,7 @@ title: li-poster-image
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Set a poster image for a video.
 support:
   document: false

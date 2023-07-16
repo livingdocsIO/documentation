@@ -3,7 +3,7 @@ title: li-language
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Allows a user to translate articles and pages into different languages.
 support:
   document: true

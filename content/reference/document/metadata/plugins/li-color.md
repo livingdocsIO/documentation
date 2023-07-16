@@ -3,7 +3,7 @@ title: li-color
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Text input with color picker.
 support:
   document: true

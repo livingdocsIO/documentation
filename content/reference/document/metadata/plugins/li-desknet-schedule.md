@@ -3,7 +3,7 @@ title: li-desknet-schedule
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Allows a user to select Desk-Net platforms and categories that they would like to view in the Desk-Net Schedule side panel.
 support:
   document: true
