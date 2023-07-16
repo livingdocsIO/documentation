@@ -3,7 +3,7 @@ title: li-publish-date
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Holds the first publication date, which is user editable.
 support:
   document: true

@@ -3,7 +3,7 @@ title: li-date
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary:
 support:
   document: true

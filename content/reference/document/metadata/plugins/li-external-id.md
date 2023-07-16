@@ -3,7 +3,7 @@ title: li-external-id
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: An input field to save an external id of another system.
 support:
   document: true

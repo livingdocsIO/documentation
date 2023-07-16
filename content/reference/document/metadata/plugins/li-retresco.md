@@ -3,7 +3,7 @@ title: li-retresco
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Manage tags
 support:
   document: true

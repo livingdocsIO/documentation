@@ -3,7 +3,7 @@ title: li-metadata-translations
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Allows a user to translate media library and data-record metadata into different languages.
 support:
   document: true

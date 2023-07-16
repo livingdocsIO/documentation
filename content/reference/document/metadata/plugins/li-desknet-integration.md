@@ -3,7 +3,7 @@ title: li-desknet-integration
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Used to connect Desk-Net stories with Livingdocs documents.
 support:
   document: true

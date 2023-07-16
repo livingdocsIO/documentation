@@ -3,7 +3,7 @@ title: li-datetime-validity
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Set validity between a start and an end date/time.
 support:
   document: false

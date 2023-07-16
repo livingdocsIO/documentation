@@ -3,7 +3,7 @@ title: li-google-vision
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 support:
   document: false
   media: true

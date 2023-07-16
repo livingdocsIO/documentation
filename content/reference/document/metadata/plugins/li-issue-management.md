@@ -3,7 +3,7 @@ title: li-issue-management
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: A list of linked documents with actions to manage references.
 support:
   document: true

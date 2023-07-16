@@ -3,7 +3,7 @@ title: li-routing
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Define aliases.
 support:
   document: true

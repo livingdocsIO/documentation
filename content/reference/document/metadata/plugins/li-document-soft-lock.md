@@ -3,7 +3,7 @@ title: li-document-soft-lock
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Enables a user to temporarily lock a document while editing. 
 support:
   document: true

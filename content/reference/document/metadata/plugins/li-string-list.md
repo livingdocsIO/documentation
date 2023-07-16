@@ -3,7 +3,7 @@ title: li-string-list
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Multiselect
 support:
   document: true

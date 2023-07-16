@@ -3,7 +3,7 @@ title: li-distribution-schedule
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Allows a user to select Distribution Channels that they would like to view in the Distribution Schedule side panel.
 support:
   document: true

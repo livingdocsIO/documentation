@@ -3,7 +3,7 @@ title: li-push-messages
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Send custom push messages.
 support:
   document: true

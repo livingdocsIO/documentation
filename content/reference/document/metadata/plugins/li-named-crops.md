@@ -3,7 +3,7 @@ title: li-named-crops
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: Define Named Crops on a Media Library Image.
 support:
   document: false

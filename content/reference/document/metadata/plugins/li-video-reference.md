@@ -3,7 +3,7 @@ title: li-video-reference
 type: metadata-plugins
 menus:
   reference:
-    parent: Metadata Plugins
+    parent: Metadata Plugins List
 summary: A reference to a video (and a poster image).
 support:
   document: true
