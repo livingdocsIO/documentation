@@ -958,6 +958,7 @@ mediaLibrary: {
       maxFileSize: '15mb',
     },
     processing: {
+      failOn: 'warning', // 'warning' | 'error' | 'truncated' | 'none'
       maxResolution: 24 * 1000 * 1000, // 24MP,  default 24 mega-pixels
       maxConcurrentProcesses: 5, // default 5
       lossy: {
