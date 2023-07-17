@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix live indexing throttling](https://github.com/livingdocsIO/livingdocs-server/pull/5908)
 * [chore(deps): update dependency eslint from 8.44.0 to v8.45.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5905)
 * [chore(deps): update dependency eslint from 8.44.0 to v8.45.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7180)
 * [fix(deps): update dependency @livingdocs/framework from 25.1.4 to v25.1.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5903)
