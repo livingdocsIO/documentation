@@ -1,5 +1,11 @@
 const lunr = require('lunr')
 
+// Separate on any non-word value so that functions in code blocks will be returned in the results.
+// A search for "registerInitializedHook" would not find `liServer.registerInitializedHook(async`.
+// Original value: /[\s\-]+/
+lunr.tokenizer.separator = /[\W]+/
+lunr.QueryLexer.termSeparator = lunr.tokenizer.separator
+
 const indexes = {}
 const byRef = new Map()
 
