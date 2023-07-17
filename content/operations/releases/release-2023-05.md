@@ -425,6 +425,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v226.3.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.32): chore(elasticsearch): Increase index delay to 3 - 6 seconds during 429 errors
 - [v226.3.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.31): fix(lists): Return scheduled_in_inbox with find request
 - [v226.3.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.30): fix(search): Don't provide format for Elasticsearch < 7.13.0
 - [v226.3.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.29): fix(deps): Upgrade @livingdocs/conf to not merge arrays
