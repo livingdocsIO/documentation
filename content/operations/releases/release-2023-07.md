@@ -443,6 +443,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v231.0.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.13): chore(elasticsearch): Increase index delay to 3 - 6 seconds during 429 errors
 - [v231.0.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.12): fix(lists): Return scheduled_in_inbox with find request
 - [v231.0.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.11): fix: Write .npmrc file before updating tag
 - [v231.0.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.10): fix: Tag active release as latest
