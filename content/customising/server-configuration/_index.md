@@ -1215,19 +1215,6 @@ You can turn on detection of web entities separately. Refer to the Google Vision
 The credentials object is just the google service account json. We advise you to download the json from GCP and then entering the values here.
 The language enables a separate call to Google Translate API to translate the labels received from an image analysis. You GCP Account needs to have Google Translate API activated for this to work (will also infer costs).
 
-
-#####  Enforcing image metadata
-
-Below you see an example of enforcing image metadata. Before _any_ image can be uploaded, a modal will open promting the user to fill the metadata for the image before it goes into the media library.
-
-This will validate the required metadata properties for an image in the editor and the server, so you can ensure no image will be uploaded without proper metadata set on it.
-
-```js
-assetManagement: {
-  enabled: true,
-},
-```
-
 #### Custom previews
 
 {{< deprecated-in "release-2023-07" block >}}
