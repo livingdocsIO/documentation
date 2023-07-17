@@ -328,6 +328,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.54](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.54): fix(media-library): Add failOn config for processing corrupt image files
 - [v213.6.53](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.53): fix(lists): Return scheduled_in_inbox with find request
 - [v213.6.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.52): fix(deps): Upgrade @livingdocs/conf to not merge arrays
 - [v213.6.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.51): fix(documents): Fix metadata_id query in document cleanup script
