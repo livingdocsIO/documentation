@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix Directive Areas: make the UI work correctly with multiple directives with UI in the same component](https://github.com/livingdocsIO/livingdocs-editor/pull/7190)
 * [Metadata: remove ui.component config support for Livingdocs Metadata Plugins (`li-` prefixed)](https://github.com/livingdocsIO/livingdocs-server/pull/5811)
 * [Fix image processing process crashes](https://github.com/livingdocsIO/livingdocs-server/pull/5917)
 * [Remove Angular Metadata Support](https://github.com/livingdocsIO/livingdocs-editor/pull/7043)
