@@ -425,6 +425,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v226.3.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.34): fix(image-processing): Use .on listeners instead of .once to prevent process crashes on errors
 - [v226.3.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.33): fix(media-library): Add failOn config for processing corrupt image files
 - [v226.3.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.32): chore(elasticsearch): Increase index delay to 3 - 6 seconds during 429 errors
 - [v226.3.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.31): fix(lists): Return scheduled_in_inbox with find request
