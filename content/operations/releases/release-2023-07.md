@@ -2,7 +2,7 @@
 type: release-notes
 title: July 2023 Release
 description: Technical Release Notes for release-2023-07
-excludeFromSearch: true
+excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2023-07/
