@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix image processing process crashes](https://github.com/livingdocsIO/livingdocs-server/pull/5917)
 * [Remove Angular Metadata Support](https://github.com/livingdocsIO/livingdocs-editor/pull/7043)
 * [fix(deps): update dependency webpack from 5.88.1 to v5.88.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7187)
 * [Add failOn property to the image config for processing corrupt image files](https://github.com/livingdocsIO/livingdocs-server/pull/5909)
