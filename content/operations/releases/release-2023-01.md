@@ -261,6 +261,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.62](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.62): chore: Disable nzz-downstream tests as it's using release-2023-03 already
 - [v208.3.61](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.61): fix(indexing): Fix `--ids=1,2,3` indexing for the drafts index
 - [v208.3.60](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.60): fix(indexing): Add try/catch around elasticsearch payload creation to prevent full bulk failures if one document is faulty
 - [v208.3.59](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.59): chore(data-migrations): Support new date range structure on data migration document filter query
