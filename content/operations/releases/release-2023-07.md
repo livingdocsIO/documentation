@@ -459,6 +459,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.31): fix(directive areas): make directive area UI work correctly with multiple directives with UI
 - [v95.0.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.30): fix(lists): Include scheduled when calculating sort order
 - [v95.0.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.29): fix: Tag active release as latest
 - [v95.0.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.28): fix(dashboards): Reset pagination when resetting filters
