@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency dedent from 1.0.2 to v1.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5928)
 * [fix(deps): update dependency dedent from 0.7.0 to v1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5879)
 * [fix(deps): update dependency @google-cloud/storage from 6.11.0 to v6.12.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5898)
 * [Fix Directive Areas: make the UI work correctly with multiple directives with UI in the same component](https://github.com/livingdocsIO/livingdocs-editor/pull/7190)
