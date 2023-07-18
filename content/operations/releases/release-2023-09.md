@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pusher-js from 8.2.0 to v8.3.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7193)
 * [fix(deps): update dependency dedent from 1.0.2 to v1.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5928)
 * [fix(deps): update dependency dedent from 0.7.0 to v1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5879)
 * [fix(deps): update dependency @google-cloud/storage from 6.11.0 to v6.12.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5898)
