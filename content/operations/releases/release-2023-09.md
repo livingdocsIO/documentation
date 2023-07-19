@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [doc-image: ensure UI (upload button) appears after selecting the image directive](https://github.com/livingdocsIO/livingdocs-editor/pull/7196)
 * [fix(deps): update dependency dedent from 0.7.0 to v1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7137)
 * [fix(publish control panel): padding added](https://github.com/livingdocsIO/livingdocs-editor/pull/7189)
 * [fix(deps): update dependency pusher-js from 8.2.0 to v8.3.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7193)
