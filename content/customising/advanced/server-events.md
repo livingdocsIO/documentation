@@ -94,6 +94,9 @@ The following lists all events, before the comma, the name of the event and behi
   - document.unpublish, `(eventName, {user, documentVersion})`
   - document.copy, `(eventName, {documentVersion, originalDocumentId, isTranslation})`
   - document.transform, `(eventName, {documentVersion, originalContentType})`
+ 
+- publication
+  - publication.updated, `(eventName, {user, documentVersion})`
 
 - document_list
   - document_list.delete, `(eventName, {user, documentList})`
@@ -116,7 +119,6 @@ The following lists all events, before the comma, the name of the event and behi
 - project
   - project.create, `(eventName, {project})`
   - project.update, `(eventName, {project})`
-  - project-config.update, `(eventName, {projectId, channelId, indexId})`
 
 - category
   - category.update, `(eventName, {pointer, value, projectId, user})`
