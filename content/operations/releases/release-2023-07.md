@@ -459,6 +459,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.33): fix(doc-image): ensure doc-image UI is shown when image is selected
 - [v95.0.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.32): fix(publish control panel): padding added
 - [v95.0.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.31): fix(directive areas): make directive area UI work correctly with multiple directives with UI
 - [v95.0.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.30): fix(lists): Include scheduled when calculating sort order
