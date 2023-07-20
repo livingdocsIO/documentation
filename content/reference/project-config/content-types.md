@@ -751,12 +751,14 @@ Show asset inbox of a document in the Editor:
 
 ## Comments
 
-By default, comments are enabled. You can disable them by setting `editor.comments.isEnabled: false`.
+Comments can be enabled/disabled by Content Type.
 
 ```js
 editor: {
   comments: {
-    isEnabled: false
+    isEnabled: true
   }
 }
 ```
+
+You can also globally enable/disable comments via [Editor Config]({{< ref "/customising/advanced/editor-configuration/editing-features#comments" >}}).

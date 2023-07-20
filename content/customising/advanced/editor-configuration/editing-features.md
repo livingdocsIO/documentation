@@ -227,6 +227,7 @@ If the copy feature is enabled, it allows you to copy and transform documents.
 
 Comments are a great way for editors to communicate about a text.
 To enable it, add the following block to your editor config:
+
 ```js
 comments: {
   isEnabled: true,
@@ -239,7 +240,11 @@ comments: {
 
 The `defaultForDocumentType` section allows you to separately turn comments off for articles and pages.
 
+It's also possible to turn on/off [Comments]({{< ref "/reference/project-config/content-types#comments" >}}) for a specific Content Type.
+
 The notification feature needs to be enabled if the mentioned users should get a notification. [Notification feature]({{< ref "/reference/project-config/notifications.md" >}})
+
+
 
 ## Filter Sets
 
