@@ -751,14 +751,16 @@ Show asset inbox of a document in the Editor:
 
 ## Comments
 
-Comments can be enabled/disabled by Content Type.
+Comments can be globally enabled/disabled via [Editor Config]({{< ref "/customising/advanced/editor-configuration/editing-features#comments" >}}) for articles or pages.
+
+Once you did that globally, you can overrule the config her by Content Type.
 
 ```js
 editor: {
   comments: {
-    isEnabled: true
+    isEnabled: false
   }
 }
 ```
 
-You can also globally enable/disable comments via [Editor Config]({{< ref "/customising/advanced/editor-configuration/editing-features#comments" >}}).
+
