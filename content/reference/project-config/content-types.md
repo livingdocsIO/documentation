@@ -748,3 +748,15 @@ Send an asset to a document inbox (Media Library):
 Show asset inbox of a document in the Editor:
 
 ![image](https://user-images.githubusercontent.com/172394/158125175-42a1758a-d388-46ff-a0c0-57cc7dfcbfec.png)
+
+## Comments
+
+By default, comments are enabled. You can disable them by setting `editor.comments.isEnabled: false`.
+
+```js
+editor: {
+  comments: {
+    isEnabled: false
+  }
+}
+```
