@@ -450,6 +450,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.76](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.76): fix(comments): Disable comments for data records
 - [v94.10.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.75): fix(publish control panel): padding added
 - [v94.10.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.74): fix(lists): Include scheduled when calculating sort order
 - [v94.10.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.73): fix(dashboards): Reset pagination when resetting filters
