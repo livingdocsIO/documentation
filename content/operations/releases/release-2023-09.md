@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Disable comments for data records](https://github.com/livingdocsIO/livingdocs-editor/pull/7200)
 * [fix(deps): update dependency sass from 1.63.6 to v1.64.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7199)
 * [fix(deps): update dependency nodemailer from 6.9.3 to v6.9.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5930)
 * [doc-image: ensure UI (upload button) appears after selecting the image directive](https://github.com/livingdocsIO/livingdocs-editor/pull/7196)
