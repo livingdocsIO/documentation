@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sass from 1.63.6 to v1.64.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7199)
 * [fix(deps): update dependency nodemailer from 6.9.3 to v6.9.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5930)
 * [doc-image: ensure UI (upload button) appears after selecting the image directive](https://github.com/livingdocsIO/livingdocs-editor/pull/7196)
 * [fix(deps): update dependency dedent from 0.7.0 to v1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7137)
