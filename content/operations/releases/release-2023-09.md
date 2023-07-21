@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add separate Ticker lane](https://github.com/livingdocsIO/livingdocs-editor/pull/7191)
 * [fix(deps): update dependency cypress from 12.17.1 to v12.17.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7204)
 * [Disable comments for data records](https://github.com/livingdocsIO/livingdocs-editor/pull/7200)
 * [fix(deps): update dependency sass from 1.63.6 to v1.64.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7199)
