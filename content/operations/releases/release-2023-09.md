@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fast-glob from 3.3.0 to v3.3.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5939)
 * [fix(deps): update dependency sass from 1.64.0 to v1.64.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7209)
 * [fix(deps): update dependency cloudinary from 1.37.3 to v1.38.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5932)
 * [Add separate Ticker lane](https://github.com/livingdocsIO/livingdocs-editor/pull/7191)
