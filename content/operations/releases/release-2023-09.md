@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Update modules to patch security vulnerabilities](https://github.com/livingdocsIO/livingdocs-editor/pull/7214)
 * [Update `protobufjs`, `semver` and `word-wrap` to patch security vulnerabilities](https://github.com/livingdocsIO/livingdocs-server/pull/5940)
 * [Prevent unnecessary component blurs when collaborating](https://github.com/livingdocsIO/livingdocs-editor/pull/7212)
 * [fix(deps): update dependency sharp from 0.32.3 to v0.32.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5936)
