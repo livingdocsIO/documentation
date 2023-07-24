@@ -443,6 +443,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v231.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.16): fix(security): Update `protobufjs` (CVE-2023-36665), `semver` (CVE-2022-25883), `vm2` (CVE-2023-37466, CVE-2023-37903), `tough-cookie` (CVE-2023-26136) and  `word-wrap` (CVE-2023-26115) to patch security vulnerabilities
 - [v231.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.15): fix(image-processing): Use .on listeners instead of .once to prevent process crashes on errors
 - [v231.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.14): fix(media-library): Add failOn config for processing corrupt image files
 - [v231.0.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.13): chore(elasticsearch): Increase index delay to 3 - 6 seconds during 429 errors
