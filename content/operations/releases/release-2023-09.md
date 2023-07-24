@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(conflict view): Character Counter Overlap](https://github.com/livingdocsIO/livingdocs-editor/pull/7211)
 * [Example Server: allow visiblePublicationDateOverride for ticker entries](https://github.com/livingdocsIO/livingdocs-server/pull/5934)
 * [Fix/various small design fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/7206)
 * [fix(deps): update dependency fast-glob from 3.3.0 to v3.3.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7210)
