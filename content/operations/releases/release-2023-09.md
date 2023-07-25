@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add UI language switch](https://github.com/livingdocsIO/livingdocs-editor/pull/7181)
 * [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/5946)
 * [fix(deps): update dependency @livingdocs/framework from 25.1.5 to v25.1.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7222)
 * [Inline Add: make it work correctly in ticker entry](https://github.com/livingdocsIO/livingdocs-editor/pull/7213)
