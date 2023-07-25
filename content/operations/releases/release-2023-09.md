@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cloudinary from 1.38.0 to v1.39.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5948)
 * [Add missing parameter `entriesPerPage` in `getSitemapIndex` call](https://github.com/livingdocsIO/livingdocs-server/pull/5950)
 * [Ticker Panel Edit One Entry](https://github.com/livingdocsIO/livingdocs-editor/pull/7221)
 * [Add UI language switch](https://github.com/livingdocsIO/livingdocs-editor/pull/7181)
