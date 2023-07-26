@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Set document creation date based on firstPublicationDate during import](https://github.com/livingdocsIO/livingdocs-server/pull/5958)
 * [Check Vue metadata component is in registry](https://github.com/livingdocsIO/livingdocs-editor/pull/7228)
 * [Add li-document-reference-filter](https://github.com/livingdocsIO/livingdocs-editor/pull/7185)
 * [fix(deps): update dependency aws-sdk from 2.1420.0 to v2.1422.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5947)
