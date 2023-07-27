@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency dedent from 1.2.0 to v1.3.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7236)
 * [fix(deps): update dependency pino from 8.14.1 to v8.14.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5972)
 * [Also index systemMetadata properties present in the static mapping](https://github.com/livingdocsIO/livingdocs-server/pull/5967)
 * [fix publish control button state](https://github.com/livingdocsIO/livingdocs-editor/pull/7230)
