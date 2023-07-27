@@ -429,6 +429,7 @@ httpServer: {
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v200.3.53](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.53): fix(documents): Fix `metadataEntity` typo
 - [v200.3.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.52): fix(indexing): Fix `--ids=1,2,3` indexing for the drafts index
 - [v200.3.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.51): chore: Disable drone nzz tests, they are on a newer version
 - [v200.3.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v200.3.50): fix: fix data migration memory leak (report at the end) with a lot of migrated documents
