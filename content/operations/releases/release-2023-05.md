@@ -193,7 +193,6 @@ References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5480)
 
 ### Remove functions from projectConfigApi :fire:
 
-* :fire: Remove unused custom `liServer.log.log` and `liServer.log.success` levels. Use `liServer.log.info` instead.
 * :fire: Remove `projectSettings.draftAssets`. There is no replacement.
 * :fire: Remove `projectConfigApi.getDraft({projectId, channelId, draftName})`. There is no replacement.
 * :fire: Remove `projectConfigApi.createDraft({projectId, channelId, draftName})`. There is no replacement.
