@@ -272,9 +272,9 @@ References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5565)
 
 ### Groups API :fire:
 
-:fire: Moved `groupsApi.setAccessPolicy` to `groupsApi.setPermissions`
-:fire: Use `groupsApi.setPermissions` with the parameters `data: {policies: [], scope: ''}`
-:fire: `groupsApi.updateGroup` does not support scope parameter anymore.
+- :fire: Moved `groupsApi.setAccessPolicy` to `groupsApi.setPermissions`
+- :fire: Use `groupsApi.setPermissions` with the parameters `data: {policies: [], scope: ''}`
+- :fire: `groupsApi.updateGroup` does not support scope parameter anymore.
 
 References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5632)
 
