@@ -261,6 +261,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v208.3.64](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.64): fix(indexing): Also index systemMetadata properties present in the static mapping
 - [v208.3.63](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.63): fix(documents): Fix `metadataEntity` typo
 - [v208.3.62](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.62): chore: Disable nzz-downstream tests as it's using release-2023-03 already
 - [v208.3.61](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v208.3.61): fix(indexing): Fix `--ids=1,2,3` indexing for the drafts index
