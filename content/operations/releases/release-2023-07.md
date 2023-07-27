@@ -443,6 +443,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v231.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.19): fix(indexing): Also index systemMetadata properties present in the static mapping
 - [v231.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.18): chore(import): Always append the appendix to import errors
 - [v231.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.17): fix(sitemap): Add `entriesPerPage` to `getSitemapIndex` call
 - [v231.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.16): fix(security): Update `protobufjs` (CVE-2023-36665), `semver` (CVE-2022-25883), `vm2` (CVE-2023-37466, CVE-2023-37903), `tough-cookie` (CVE-2023-26136) and  `word-wrap` (CVE-2023-26115) to patch security vulnerabilities
