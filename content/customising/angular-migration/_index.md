@@ -40,5 +40,6 @@ Migrating away from AngularJS can be a complex process, especially if you have a
 ### release-2023-09
 
 🔥 Remove support for Angular Metadata
+🔥 Remove support for Legacy Dashboards
 
 ## Topics
