@@ -193,13 +193,13 @@ References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5480)
 
 ### Remove functions from projectConfigApi :fire:
 
-:fire: Remove unused custom `liServer.log.log` and `liServer.log.success` levels. Use `liServer.log.info` instead.
-:fire: Remove `projectSettings.draftAssets`. There is no replacement.
-:fire: Remove `projectConfigApi.getDraft({projectId, channelId, draftName})`. There is no replacement.
-:fire: Remove `projectConfigApi.createDraft({projectId, channelId, draftName})`. There is no replacement.
-:fire: Remove `projectConfigApi.updateDraft({projectId, channelId, draftName, channelConfig, ignore})`. There is no replacement.
-:fire: Remove `projectConfigApi.deleteDraft({projectId, channelId, draftName})`. There is no replacement.
-:fire: Remove `projectConfigApi.publishDraft({projectId, channelId, draftName, userId})`. There is no replacement.
+* :fire: Remove unused custom `liServer.log.log` and `liServer.log.success` levels. Use `liServer.log.info` instead.
+* :fire: Remove `projectSettings.draftAssets`. There is no replacement.
+* :fire: Remove `projectConfigApi.getDraft({projectId, channelId, draftName})`. There is no replacement.
+* :fire: Remove `projectConfigApi.createDraft({projectId, channelId, draftName})`. There is no replacement.
+* :fire: Remove `projectConfigApi.updateDraft({projectId, channelId, draftName, channelConfig, ignore})`. There is no replacement.
+* :fire: Remove `projectConfigApi.deleteDraft({projectId, channelId, draftName})`. There is no replacement.
+* :fire: Remove `projectConfigApi.publishDraft({projectId, channelId, draftName, userId})`. There is no replacement.
 
 References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5480)
 
