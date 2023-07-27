@@ -424,6 +424,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v226.3.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.36): chore(ci): Run nzz tests using node 18
 - [v226.3.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.35): fix(sitemap): Add `entriesPerPage` to `getSitemapIndex` call
 - [v226.3.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.34): fix(image-processing): Use .on listeners instead of .once to prevent process crashes on errors
 - [v226.3.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.33): fix(media-library): Add failOn config for processing corrupt image files
