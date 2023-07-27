@@ -462,6 +462,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.37): fix(li-task-list-item-tooltip): fix tooltip translation
 - [v95.0.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.36): fix(security): Update `semver` (CVE-2022-25883), `word-wrap` (CVE-2023-26115) and `tough-cookie` (CVE-2023-26136) to patch security vulnerabilities
 - [v95.0.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.35): fix(editor): Prevent unnecessary component blurs when collaborating
 - [v95.0.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.34): fix(comments): Disable comments for data records
