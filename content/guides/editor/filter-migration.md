@@ -102,6 +102,20 @@ The values should be of the correct type, so `string` for `'contentType'`, `'doc
 
 Metadata queries will vary based on the desired query expression and the value type.
 
+For metadata values which are stored as objects you must always use a nested property to check if it exists.
+For example, if you would like to check if a task has been defined you should use `{key: 'metadata.myTaskHandle.state', exists: true}`. Using `{key: 'metadata.myTaskHandle', exists: true}` will throw an error because the field `'metadata.myTaskHandle'` is not indexed, only the individual properties within it such as `'metadata.myTaskHandle.state'`.
+
+#### References
+
+References are stored as keywords, so you can use any of the query expressions listed below. The important thing to remember is to query the nested reference property where the id is stored, and not the top-level metadata handle.
+
+```js
+{key: 'metadata.myDocumentReference.reference.id', term: 1}
+{key: 'metadata.myDocumentReferences.references.id', term: 1}
+{key: 'metadata.myCategory.id', term: 1}
+{key: 'metadata.myVideoReference.reference.id', term: ['abc123', 'def456']}
+```
+
 #### Value / Term
 
 For standard term queries you should provide the correct value type, depending on the indexing config of the metadata plugin. You can also provide an array of values.
@@ -133,9 +147,6 @@ After:
 {key: 'metadata.myMetadataHandle', exists: true}
 {key: 'metadata.myMetadataHandle', exists: false}
 ```
-
-For metadata values which are stored as objects you must always use a nested property to check if it exists.
-For example, if you would like to check if a task has been defined you should use `{key: 'metadata.myTaskHandle.state', exists: true}`, because `{key: 'metadata.myTaskHandle', exists: true}` will always return `false` because the object itself is not indexed, only the individual properties within it.
 
 #### Date Range / Range
 
