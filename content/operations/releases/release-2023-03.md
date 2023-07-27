@@ -328,6 +328,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.59](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.59): fix(indexing): Also index systemMetadata properties present in the static mapping
 - [v213.6.58](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.58): fix(documents): Fix `metadataEntity` typo
 - [v213.6.57](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.57): fix(sitemap): Add `entriesPerPage` to `getSitemapIndex` call
 - [v213.6.56](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.56): fix(security): Update `protobufjs` (CVE-2023-36665), `semver` (CVE-2022-25883), `vm2` (CVE-2023-37466, CVE-2023-37903), `tough-cookie` (CVE-2023-26136) and  `word-wrap` (CVE-2023-26115) to patch security vulnerabilities
