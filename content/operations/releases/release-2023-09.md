@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [extend openid extractproject with userId](https://github.com/livingdocsIO/livingdocs-server/pull/5976)
 * [Fix/three cosmetical fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/7234)
 * [add userId to extractProjects in openId Strategy](https://github.com/livingdocsIO/livingdocs-server/pull/5975)
 * [fix(deps): update dependency dedent from 1.2.0 to v1.3.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7236)
