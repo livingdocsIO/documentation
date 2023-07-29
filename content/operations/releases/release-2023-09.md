@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(document import): copies metadata on drag](https://github.com/livingdocsIO/livingdocs-server/pull/5977)
 * [Prevent unnecessary saves after conflict resolution](https://github.com/livingdocsIO/livingdocs-editor/pull/7207)
 * [extend openid extractproject with userId](https://github.com/livingdocsIO/livingdocs-server/pull/5976)
 * [Fix/three cosmetical fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/7234)
