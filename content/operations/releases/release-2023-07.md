@@ -443,6 +443,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v231.0.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.20): fix(document import): copies metadata on drag
 - [v231.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.19): fix(indexing): Also index systemMetadata properties present in the static mapping
 - [v231.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.18): chore(import): Always append the appendix to import errors
 - [v231.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.17): fix(sitemap): Add `entriesPerPage` to `getSitemapIndex` call
