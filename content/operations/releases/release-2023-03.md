@@ -328,6 +328,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.60](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.60): fix(document import): copies metadata on drag
 - [v213.6.59](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.59): fix(indexing): Also index systemMetadata properties present in the static mapping
 - [v213.6.58](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.58): fix(documents): Fix `metadataEntity` typo
 - [v213.6.57](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.57): fix(sitemap): Add `entriesPerPage` to `getSitemapIndex` call
