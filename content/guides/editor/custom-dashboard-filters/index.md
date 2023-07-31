@@ -8,11 +8,11 @@ It is possible to register a custom filter and use it as a [DisplayFilter]({{< r
 
 At the moment there are 2 types of custom filters
 - [Custom List v2 Filter](#custom-list-v2-filter)
-      - [Example Single Value Filter](#example-single-value-filter)
-      - [Example Multi Value Filter](#example-multi-value-filter)
-      - [isDefault option](#isdefault-option)
+  - [Example Single Value Filter](#example-single-value-filter)
+  - [Example Multi Value Filter](#example-multi-value-filter)
+  - [isDefault option](#isdefault-option)
 - [Custom Vue Component Filter](#custom-vue-component-filter)
-      - [Example](#example)
+  - [Example](#example)
 
 Hint: If you want to create a filter with metadata, make sure they are setup correctly in the ElasticSearch index (`search.metadata_mapping` config in the server)
 
