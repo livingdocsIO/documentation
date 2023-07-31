@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Editor Canvas UI: Show doc-link and doc-image UI at the correct position](https://github.com/livingdocsIO/livingdocs-editor/pull/7242)
 * [fix(deps): update dependency aws-sdk from 2.1422.0 to v2.1425.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5966)
 * [fix(deps): update dependency dedent from 1.2.0 to v1.3.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5973)
 * [fix(document import): copies metadata on drag](https://github.com/livingdocsIO/livingdocs-server/pull/5977)
