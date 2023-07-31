@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Improvement/user avatar and badge](https://github.com/livingdocsIO/livingdocs-editor/pull/7245)
 * [Directive Areas: manage media-state per directive, move char-limit to directive-area](https://github.com/livingdocsIO/livingdocs-editor/pull/7223)
 * [Editor Canvas UI: Show doc-link and doc-image UI at the correct position](https://github.com/livingdocsIO/livingdocs-editor/pull/7242)
 * [fix(deps): update dependency aws-sdk from 2.1422.0 to v2.1425.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5966)
