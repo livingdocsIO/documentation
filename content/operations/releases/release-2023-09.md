@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pg from 8.11.1 to v8.11.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5986)
 * [fix(deps): update dependency dedent from 1.3.0 to v1.5.1 (master) - autoclosed](https://github.com/livingdocsIO/livingdocs-server/pull/5983)
 * [fix(deps): update dependency aws-sdk from 2.1425.0 to v2.1426.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5984)
 * [Improvement/user avatar and badge](https://github.com/livingdocsIO/livingdocs-editor/pull/7245)
