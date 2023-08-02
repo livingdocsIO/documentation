@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Metadata: remove compatibility mode for li-text (ui.components and ui.config.rows)](https://github.com/livingdocsIO/livingdocs-editor/pull/7249)
 * [fix(deps): update dependency sass from 1.64.1 to v1.64.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7251)
 * [fix(deps): update dependency pg from 8.11.1 to v8.11.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5986)
 * [fix(deps): update dependency dedent from 1.3.0 to v1.5.1 (master) - autoclosed](https://github.com/livingdocsIO/livingdocs-server/pull/5983)
