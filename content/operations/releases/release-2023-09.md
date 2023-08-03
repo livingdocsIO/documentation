@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1426.0 to v2.1428.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5988)
 * [Switch Webpack devtool setting to have less warnings](https://github.com/livingdocsIO/livingdocs-editor/pull/7252)
 * [The blob-store createReadStream returns a promise, await it](https://github.com/livingdocsIO/livingdocs-server/pull/5989)
 * [Metadata: rewrite li-image UI to Vue](https://github.com/livingdocsIO/livingdocs-editor/pull/7232)
