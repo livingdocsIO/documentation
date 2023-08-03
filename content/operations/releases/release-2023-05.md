@@ -453,6 +453,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.78](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.78): fix: switch webpack devtool setting to have less errors
 - [v94.10.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.77): fix(security): Update `semver` (CVE-2022-25883), `word-wrap` (CVE-2023-26115) and `tough-cookie` (CVE-2023-26136) to patch security vulnerabilities
 - [v94.10.76](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.76): fix(comments): Disable comments for data records
 - [v94.10.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.75): fix(publish control panel): padding added
