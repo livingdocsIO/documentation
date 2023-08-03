@@ -443,6 +443,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v231.0.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.22): fix(indexing): Expose lastPublicationDate, significantPublicationDate and visiblePublicationDate on document index
 - [v231.0.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.21): fix(woodwing): The blob-store createReadStream returns a promise, await it
 - [v231.0.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.20): fix(document import): copies metadata on drag
 - [v231.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.19): fix(indexing): Also index systemMetadata properties present in the static mapping
