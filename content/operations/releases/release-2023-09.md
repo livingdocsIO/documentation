@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Switch Webpack devtool setting to have less warnings](https://github.com/livingdocsIO/livingdocs-editor/pull/7252)
 * [The blob-store createReadStream returns a promise, await it](https://github.com/livingdocsIO/livingdocs-server/pull/5989)
 * [Metadata: rewrite li-image UI to Vue](https://github.com/livingdocsIO/livingdocs-editor/pull/7232)
 * [Metadata: remove compatibility mode for li-text (ui.components and ui.config.rows)](https://github.com/livingdocsIO/livingdocs-editor/pull/7249)
