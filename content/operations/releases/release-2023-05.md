@@ -424,6 +424,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v226.3.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.38): fix(woodwing): The blob-store createReadStream returns a promise, await it
 - [v226.3.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.37): fix(document import): copies metadata on drag
 - [v226.3.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.36): chore(ci): Run nzz tests using node 18
 - [v226.3.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.35): fix(sitemap): Add `entriesPerPage` to `getSitemapIndex` call
