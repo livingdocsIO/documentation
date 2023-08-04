@@ -97,6 +97,7 @@ liServer.registerInitializedHook(async () => {
 
 The `preparePublishHookAsync` hook allows modifications of the [DocumentVersion]({{< ref "/customising/server/document-version.md" >}}) before a document will be published.
 
+
 **Use Cases**
 * Modify document (DocumentVersion)
 * Error feedback with throwing an error (document will not be published)
@@ -119,6 +120,14 @@ async preparePublishHookAsync ({documentVersion}) {
     throw err
   }
 }
+```
+
+In case you need to change metadata properties, please always clone the origal value before mutating it. If you mutate an object directly, it can't be tracked and saved.
+
+Therefore always assign metadata properties on a root-level:
+```js
+const value = _.cloneDeep(documentVersion.metadata.category)
+documentVersion.metadata.category = Object.assign(value, {id: '123', name: 'new name'})`
 ```
 
 ### postPublishHookAsync
