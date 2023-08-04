@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @elastic/elasticsearch8 from 8.8.1 to v8.9.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5965)
 * [fix(deps): update dependency @livingdocs/framework from 25.1.6 to v25.1.7 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7256)
 * [fix(deps): update dependency @livingdocs/framework from 25.1.6 to v25.1.7 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5998)
 * [Expose lastPublicationDate, significantPublicationDate and visiblePublicationDate on document index](https://github.com/livingdocsIO/livingdocs-server/pull/5991)
