@@ -443,6 +443,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v231.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.24): fix(dashboard source): doesn't query by ID
 - [v231.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.23): fix(deps): update dependency @livingdocs/framework from 25.0.10 to v25.0.12
 - [v231.0.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.22): fix(indexing): Expose lastPublicationDate, significantPublicationDate and visiblePublicationDate on document index
 - [v231.0.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.21): fix(woodwing): The blob-store createReadStream returns a promise, await it
