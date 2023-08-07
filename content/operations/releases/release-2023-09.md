@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(display filter): fix sort filter](https://github.com/livingdocsIO/livingdocs-editor/pull/7258)
 * [Refactor li-link-edit and li-tree-link](https://github.com/livingdocsIO/livingdocs-editor/pull/7240)
 * [Dashboard Source no longer queries by user ID](https://github.com/livingdocsIO/livingdocs-server/pull/6007)
 * [fix(deps): update dependency pino-http from 8.3.3 to v8.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6006)
