@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Dashboard Source no longer queries by user ID](https://github.com/livingdocsIO/livingdocs-server/pull/6007)
 * [fix(deps): update dependency pino-http from 8.3.3 to v8.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6006)
 * [fix(deps): update dependency dedent from 1.3.0 to v1.5.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7247)
 * [fix(deps): update dependency @elastic/elasticsearch8 from 8.8.1 to v8.9.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/5965)
