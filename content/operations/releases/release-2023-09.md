@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update babel from 7.22.9 to v7.22.10 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/7263)
 * [Properties Panel State Management](https://github.com/livingdocsIO/livingdocs-editor/pull/7227)
 * [fix(display filter): fix sort filter](https://github.com/livingdocsIO/livingdocs-editor/pull/7258)
 * [fix(display filter): fix sort filter](https://github.com/livingdocsIO/livingdocs-editor/pull/7258)
