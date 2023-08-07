@@ -33,13 +33,10 @@ Migrating away from AngularJS can be a complex process, especially if you have a
 
 ⏳ Deprecate Angular Extensions
 
-### release-2023-07
-
-🔥 Remove support for Angular Dashboard Filters
-
 ### release-2023-09
 
-🔥 Remove support for Angular Metadata
-🔥 Remove support for Legacy Dashboards
+- 🔥 Remove support for Angular Metadata
+- 🔥 Remove support for Angular Dashboard Filters
+- 🔥 Remove support for Legacy Dashboards
 
 ## Topics
