@@ -424,6 +424,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v226.3.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.41): fix(dashboard source): doesn't query by ID
 - [v226.3.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.40): fix(importer): trim title
 - [v226.3.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.39): fix(deps): update dependency @livingdocs/framework from 24.13.8 to v24.13.10
 - [v226.3.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.38): fix(woodwing): The blob-store createReadStream returns a promise, await it
