@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add li-document-references-filter](https://github.com/livingdocsIO/livingdocs-editor/pull/7231)
 * [Add li-document-references-filter example config](https://github.com/livingdocsIO/livingdocs-server/pull/5959)
 * [Remove `li-preview` feature sources](https://github.com/livingdocsIO/livingdocs-server/pull/6008)
 * [Enforce Project handle verification](https://github.com/livingdocsIO/livingdocs-server/pull/5935)
