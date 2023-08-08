@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Don't update media state for components without media](https://github.com/livingdocsIO/livingdocs-editor/pull/7265)
 * [feat(i18n): apply same format to all i18n translation blocks](https://github.com/livingdocsIO/livingdocs-editor/pull/7264)
 * [Add li-document-references-filter](https://github.com/livingdocsIO/livingdocs-editor/pull/7231)
 * [Add li-document-references-filter example config](https://github.com/livingdocsIO/livingdocs-server/pull/5959)
