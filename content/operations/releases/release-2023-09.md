@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Remove support for `legacyFilters` property in `searchManager.searchPublications()`](https://github.com/livingdocsIO/livingdocs-server/pull/6002)
 * [Fix deleted user error during login](https://github.com/livingdocsIO/livingdocs-server/pull/6022)
 * [Fix images within the MediaLibrary change the size when Sharp is updated](https://github.com/livingdocsIO/livingdocs-server/pull/6016)
 * [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/6019)
