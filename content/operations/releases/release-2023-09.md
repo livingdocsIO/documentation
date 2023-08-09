@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix deleted user error during login](https://github.com/livingdocsIO/livingdocs-server/pull/6022)
 * [Fix images within the MediaLibrary change the size when Sharp is updated](https://github.com/livingdocsIO/livingdocs-server/pull/6016)
 * [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/6019)
 * [fix(deps): update dependency aws-sdk from 2.1430.0 to v2.1431.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6013)
