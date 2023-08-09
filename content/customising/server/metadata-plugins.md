@@ -12,6 +12,7 @@ menus:
 
 With a metadata plugin these things can be defined
 - plugin name
+- indexing configuration
 - storage schema
 - config and ui config schema
 
@@ -26,6 +27,22 @@ module.exports = {
   // Use the name as plugin value in the configuration
   // REQUIRED
   name: 'customername-pluginname',
+
+  // Indexing configuration
+  // Defines the elasticsearch mapping and the fields that are indexed
+  indexing: {
+    enabled: true,
+    behavior: [
+      {
+        type: 'text',
+        key: 'customerPluginName',
+        getValue (val) {
+          return val
+        }
+      },
+      {type: 'keyword'}
+    ]
+  },
 
   // JSON schema of stored value
   // https://json-schema.org/learn/getting-started-step-by-step.html
