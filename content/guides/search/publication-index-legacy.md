@@ -10,6 +10,9 @@ excludeFromSearch: true
 A new version of this document for {{< release "release-2023-07" >}} and above is available [here]({{< ref "/guides/search/publication-index" >}}).
 {{< /warning >}}
 
+{{< deprecated-in "release-2023-07" block >}}
+{{< removed-in "release-2023-09" block >}}
+
 The publication index is an elastic search index that allows developers to do queries in order to retrieve published documents from Livingdocs.
 
 There are two parts to the feature:
