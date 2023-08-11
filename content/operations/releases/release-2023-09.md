@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Media library sidepanel](https://github.com/livingdocsIO/livingdocs-editor/pull/7257)
 * [fix(deps): update dependency lru-cache from 10.0.0 to v10.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6028)
 * [fix(deps): update dependency aws-sdk from 2.1432.0 to v2.1433.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6024)
 * [Remove support for `legacyFilters` property in `searchManager.searchPublications()`](https://github.com/livingdocsIO/livingdocs-server/pull/6002)
