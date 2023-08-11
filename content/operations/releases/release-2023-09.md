@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pdfjs-dist from 3.8.162 to v3.9.179 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7244)
 * [fix(deps): update dependency aws-sdk from 2.1433.0 to v2.1434.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6027)
 * [Media library sidepanel](https://github.com/livingdocsIO/livingdocs-editor/pull/7257)
 * [fix(deps): update dependency lru-cache from 10.0.0 to v10.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6028)
