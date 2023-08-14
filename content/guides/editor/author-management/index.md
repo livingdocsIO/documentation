@@ -27,48 +27,45 @@ If you don't have an author content-type yet, create one on the server via the [
   },
   metadata: [
     {
-      id: '27',
-      handle: 'prename',
+      handle: 'forename',
       type: 'li-text',
-      ui: {
-        config: {
-          label: 'Prename',
-          placeholder: 'Enter a prename...',
-          maxLength: 200
-        }
-      },
       config: {
-        maxLength: 200
+        maxLength: 200,
+        allowNewlines: false
+      },
+      ui: {
+        label: 'Forename',
+        config: {
+          placeholder: 'Enter a forename'
+        }
       }
     },
     {
-      id: '28',
       handle: 'surname',
       type: 'li-text',
-      ui: {
-        config: {
-          label: 'Surname',
-          placeholder: 'Enter a surname...',
-          maxLength: 200
-        }
-      },
       config: {
-        maxLength: 200
+        maxLength: 200,
+        allowNewlines: false
+      },
+      ui: {
+        label: 'Surname',
+        config: {
+          placeholder: 'Enter a surname'
+        }
       }
     },
     {
-      id: '29',
       handle: 'shortname',
       type: 'li-text',
-      ui: {
-        config: {
-          label: 'Shortname',
-          placeholder: 'Enter a shortname (abbreviation)...',
-          maxLength: 200
-        }
-      },
       config: {
-        maxLength: 200
+        maxLength: 200,
+        allowNewlines: false
+      },
+      ui: {
+        label: 'Short Name',
+        config: {
+          placeholder: 'Enter a short name (abbreviation)'
+        }
       }
     }
   ]
@@ -77,8 +74,6 @@ If you don't have an author content-type yet, create one on the server via the [
 
 Note that only one content-type in a project can have the `isAuthor` flag. In the metadata for your "Author" content-type you will want to add fields such as a profile picture, biography, etc.
 Once you're done setting up your author content-type, publish it via the [CLI](https://docs.livingdocs.io/reference/cli/).
-
-Note that internally, the `documentType` is a `data-record` with a special flag `isAuthor`.
 
 ### Author reference
 
@@ -89,20 +84,20 @@ In order to select an author for an article we need to reference it in the metad
   handle: 'authors',
   type: 'li-document-references',
   config: {
-    referenceType: 'documents',
     documentType: 'data-record',
     contentType: 'author',
     prefillAuthor: true
   },
   ui: {
-    component: 'liMetaReferenceForm',
-    label: 'authors',
-    displayFilters: []
+    label: 'Authors',
+    config: {
+      displayFilters: []
+    }
   }
 }
 ```
 
-The selected metadata property must be of type `reference` or `reference-list` depending on whether there is only one author or if there can be multiple ones.
+The selected metadata property must be of type `li-document-reference` or `li-document-references`, depending on whether there is only one author or if there can be multiple authors.
 
 ### Prefilling configuration
 

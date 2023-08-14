@@ -37,12 +37,12 @@ Here is an example includes configuration to consider for the editable teaser us
 {
   name: 'editable-teaser',
   paramsSchema: [
-    // this will render a UI in the document editing sidebar to let the User select a document
+    // this will render a UI in the document editing sidebar to let the User select an article
     {
       handle: 'article',
-      type: 'li-reference',
+      type: 'li-document-reference',
       config: {
-        referenceType: 'document',
+        documentType: 'article',
       },
       ui: {
         label: 'Teaser'

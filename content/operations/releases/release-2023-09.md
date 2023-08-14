@@ -245,6 +245,10 @@ TODO: check migration
 
 ## Deprecations
 
+### Metadata Plugins li-reference and li-reference-list
+
+Please replace `li-reference` with `li-document-reference`, and `li-reference-list` with `li-document-references`. No data migration is required, but you will need to remove the `referenceType` property from the metadata plugin config if it is defined. If you encounter any other schema errors please see the documentation for the [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference" >}}) and [`li-document-references`]({{< ref "/reference/document/metadata/plugins/li-document-references" >}}) plugins for further details.
+
 ## APIs :gift:
 
 ## Other Changes

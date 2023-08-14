@@ -4,6 +4,8 @@ type: metadata-plugins
 menus:
   reference:
     parent: Metadata Plugins List
+summary: |
+  {{< deprecated-in "release-2023-09" >}}. Use [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference" >}}) instead.
 support:
   document: true
   media: true
@@ -13,10 +15,11 @@ support:
   dynamicIndexing: true
   systemMetadata: false
   planningSystem: false
+deprecatedIn: release-2023-09
 description: |
-  With `release-2022-03` this is superseeded by [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference" >}}).
+  With {{< release "release-2022-03" >}} this is superseeded by [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference" >}}).
 
-  A `li-reference` metadata field shows a reference to another document. To select a document one gets provided a Document Selection Modal.
+  Shows a reference to another document. A Document Selection Dialog is shown, based on shorthand queries and `useDashboard` to select documents.
 defaultUI: |
   Document selection dialog.
 

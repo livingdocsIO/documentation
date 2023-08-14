@@ -273,11 +273,8 @@ module.exports = function ({publicationApi}) {
     paramsSchema: [
       {
         handle: 'teaser',
-        type: 'li-reference',
+        type: 'li-document-reference',
         preload: true,
-        config: {
-          referenceType: 'document'
-        },
         ui: {
           label: 'Image Gallery'
         }

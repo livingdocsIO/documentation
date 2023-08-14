@@ -601,6 +601,7 @@ Following attribute types can be added to a customElement:
   e.g. add to the class attribute on the customElement the value blue `{name: 'class', value: 'blue'}`
 - li-reference
 
+  {{< deprecated-in "release-2023-09" block >}}
   Users can link a document. The attribute name is always `data-li-document-ref`. And the references are extracted as with a normal link to a document.
   ```js
   {
@@ -613,6 +614,25 @@ Following attribute types can be added to a customElement:
         handle: 'documentref',
         type: 'li-reference',
         config: {referenceType: 'document', contentType: 'author'}
+      }
+    ]
+  }
+  ```
+- li-document-reference
+
+  {{< added-in "release-2023-07" block >}}
+  Users can link a document. The attribute name is always `data-li-document-ref`. And the references are extracted as with a normal link to a document.
+  ```js
+  {
+    label: 'author link',
+    handle: 'authorlink',
+    tagName: 'span',
+    icon: 'file-link',
+    attributes: [
+      {
+        handle: 'documentref',
+        type: 'li-document-reference',
+        config: {contentType: 'author'}
       }
     ]
   }

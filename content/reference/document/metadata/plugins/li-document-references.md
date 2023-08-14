@@ -4,6 +4,7 @@ type: metadata-plugins
 menus:
   reference:
     parent: Metadata Plugins List
+summary: A list of references to other documents.
 support:
   document: true
   media: true
@@ -35,19 +36,24 @@ contentTypeConfig: |2
           hideFromForm: false,                     // optional, default: false
           required: true,                          // optional, default: false
           requiredErrorMessage: 'Provide a value', // optional
-          index: true,                              // optional, default: false. {{< added-in "release-2023-07" >}}
+          index: true,                             // optional, default: false. {{< added-in "release-2023-07" >}}
           // specific
           documentType: 'article',                 // optional, one of article, page, data-record
           contentType: 'my-content-type',          // optional, filters the document selection
           published: true,                         // optional, shorthand for publication displayFilter, default: false
+          prefillAuthor: true,                     // optional, add document creator if the prefilling configuration for the current user exists, default: false. {{< added-in "release-2023-09" >}}
+          min: 2,                                  // optional, minimum number of articles required. Use in combination with `required: true` if you would like to prevent `undefined` from being allowed. {{< added-in "release-2023-09" >}}
+          max: 4                                   // optional, maximum number of articles required. {{< added-in "release-2023-09" >}}
         },
         ui: {
-          label: 'foo',                  // optional, takes camelized name otherwise
+          label: 'foo',         // optional, takes camelized name otherwise
           config: {
-            style: 'default',            // optional, defaults to 'default'. Other options: 'teaser'
-            useDashboard: '',            // optional, reference to a custom dashboard
-            baseFilters: [],             // optional, invisible filters and applied to every search (including the default result list)
-            displayFilters: [],          // optional, filters that the user can set in the UI (below the search input)
+            style: 'default',   // optional, defaults to 'default'. Other options: 'teaser' | 'minimal'
+            useDashboard: '',   // optional, reference to a custom dashboard
+            baseFilters: [],    // optional, invisible filters and applied to every search (including the default result list)
+            displayFilters: [], // optional, filters that the user can set in the UI (below the search input)
+            sortable: true,     // optional, allow drag and drop sorting of items (not compatible with `style: 'minimal'`), default: false
+            readOnly: false     // optional, default: false
           }
         }
 ---
