@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Ticker config](https://github.com/livingdocsIO/livingdocs-server/pull/6029)
 * [Add translation block for translatable strings so the translation script will pick up these translations](https://github.com/livingdocsIO/livingdocs-editor/pull/7267)
 * [Add French and Italian translations](https://github.com/livingdocsIO/livingdocs-editor/pull/7269)
 * [fix(deps): update dependency pdfjs-dist from 3.8.162 to v3.9.179 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7244)
