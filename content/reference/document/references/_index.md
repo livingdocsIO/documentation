@@ -92,7 +92,7 @@ References extracted from the content of a document provide details of the item 
 
 References extracted from the metadata of a document or media library entry also provide details of the item they are referencing (`id` and `type`), but only require simple contextual information (`location: 'metadata'` and `propertyName`) to help locate the reference.
 
-#### li-reference
+#### li-document-reference
 
 ```js
 {
@@ -103,7 +103,7 @@ References extracted from the metadata of a document or media library entry also
 }
 ```
 
-#### li-reference-list
+#### li-document-references
 
 ```js
 {

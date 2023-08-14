@@ -66,7 +66,7 @@ Here is an example includes configuration to consider for the editable teaser us
       type: 'include',
       // refer to the include service handle
       service: 'teaser',
-      // extend the config for li-reference type input
+      // extend the config for li-document-reference type input
       paramsSchemaExtension: [
         {
           // refer to the handle of the services paramsSchema property
