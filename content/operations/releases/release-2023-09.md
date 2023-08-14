@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(li-resource-select): show results when multiple documents were found](https://github.com/livingdocsIO/livingdocs-editor/pull/7277)
 * [Improve French and Italian translations](https://github.com/livingdocsIO/livingdocs-editor/pull/7276)
 * [fix(deps): update dependency aws-sdk from 2.1434.0 to v2.1435.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6032)
 * [Use ticker metadata Plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/7273)
