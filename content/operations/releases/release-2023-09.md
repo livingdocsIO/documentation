@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add indexing for li-imatrics-nlp-tags, li-retresco and li-desknet-integration](https://github.com/livingdocsIO/livingdocs-server/pull/6039)
 * [Cross Project Content Sharing - Part 1](https://github.com/livingdocsIO/livingdocs-editor/pull/7279)
 * [Support translatable tags label in man navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/7284)
 * [Metadata: li-image drag & drop](https://github.com/livingdocsIO/livingdocs-editor/pull/7248)
