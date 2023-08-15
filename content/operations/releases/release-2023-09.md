@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cypress from 12.17.3 to v12.17.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7290)
 * [fix(deps): update dependency @livingdocs/framework from 25.1.7 to v25.1.8 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7289)
 * [Improvement/release polish](https://github.com/livingdocsIO/livingdocs-editor/pull/7282)
 * [Add indexing for li-imatrics-nlp-tags, li-retresco and li-desknet-integration](https://github.com/livingdocsIO/livingdocs-server/pull/6039)
