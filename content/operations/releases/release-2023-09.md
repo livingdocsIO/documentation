@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add li-meta-text-filter example config](https://github.com/livingdocsIO/livingdocs-server/pull/6034)
 * [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/6038)
 * [fix(li-resource-select): show results when multiple documents were found](https://github.com/livingdocsIO/livingdocs-editor/pull/7277)
 * [Improve French and Italian translations](https://github.com/livingdocsIO/livingdocs-editor/pull/7276)
