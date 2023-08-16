@@ -6,27 +6,22 @@ weight: 2
 
 ## Overview
 
-Livingdocs supports mechanisms to crop images and serve images in an optimised way to browsers and devices. This is done by uploading an original image and then cropping or resizing it on the fly through a SaaS image service depending
-
+Livingdocs has built-in support for image optimization ensuring images are responsive and served efficiently across different devices.
+When an image is uploaded to Livingdocs, it is stored in its original form. Then, as needed, Livingdocs interfaces with
+an image service (such as [imgix](https://imgix.com)) to dynamically crop or resize images according to specified parameters.
 
 There are 3 parts involved in image management:
 
 1. The **storage** of the images
-   Uploaded images are stored in a configurable key value store. Usually
-   we recommend S3.
-   The location in the key value store and the metadata of the image are also stored in the Media Library.
-3. The **delivery** through a SaaS image service
-   Livingdocs does not serve images to your end-users directly. For this you
-   can choose a service provider of your choice. In Livingdocs itself we have the `image-service` concept which simply is an url rewriter so that images get served through your SaaS provider. Currently we offer a pre-made image-service for imgix (Contact us to add other ones or do so yourself).
-2. The **render strategies** to create HTML markup
-   Image markup can be rendered in different ways depending on what you want to achieve (e.g. an `img` tag with a `srcset` attribute).
+   Uploaded images are stored in a configurable key value store (e.g. Amazon S3).
+2. The **delivery** through a SaaS image service (imgix or a custom one).
+3. The **render strategies** to create HTML markup (e.g. an `img` tag with a `srcset` attribute).
 
 
 ### Storage
 
-The storage of choice for Livingdocs is Amazon S3, the bucket is configured in the server like this:
+The storage of choice for Livingdocs is Amazon S3, a bucket can be set up in the server configuration like this:
 
-server configuration:
 ```js
 mediaLibrary: {
   images: {
@@ -35,7 +30,7 @@ mediaLibrary: {
     // {{< a ref="/customising/server-configuration/storage" title="Storage Configuration" >}}
     storage: {
       strategy: 's3',
-      prefix: 'images/' // optional, the storage key will be prefixed
+      prefix: 'images/' // optional prefix for the storage key
       config: {
         bucket: 'livingdocs-images-development',
         region: 'eu-central-1',
@@ -47,7 +42,7 @@ mediaLibrary: {
 }
 ```
 
-You can configure your own image storage using the following configuration:
+You can also configure your own image storage:
 ```js
 mediaLibrary: {
   images: {
@@ -59,25 +54,24 @@ mediaLibrary: {
 ```
 
 This will route image upload requests from Livingdocs to your chosen URL instead of S3.
-For details please see the reference documentation for the [server configuration]({{< ref "/customising/server-configuration" >}})
+For details please see the reference documentation for the [server configuration]({{< ref "/customising/server-configuration#media-library-dam" >}}).
 
 
 ### Delivery
 
-The delivery of the images is done through a URL-pattern-based web service. Out of the box, Livingdocs supports imgix (https://www.imgix.com/).
+Images are delivered via a web service that utilizes a URL pattern. Out of the box, Livingdocs supports [imgix](https://imgix.com/).
 
-To use imgix you have to create an account at imgix and configure your server as
-described [further down this document](#server-configuration).
+To use imgix you have to create an account and configure your server as described [further down in this document](#server-configuration).
 
-You can also use other image services as described at the end of this document.
+You can also use other image services as described [at the end of this document](#integrate-your-own-image-service).
 
 
 ### Render Strategies
 
-You can choose different render strategies how an image should be rendered in
+You can choose different render strategies for how an image should be rendered in
 HTML.
 
-Example of an image with a srcset attribute:
+Example of an image with a `srcset` attribute:
 ```html
 <img
   src="https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg?w=1024"
@@ -98,28 +92,34 @@ There are many more ways how an image can be rendered. And if you miss a strateg
 
 ## Why image services? - Some Background
 
-You might wonder why Livingdocs uses an image service to start with and does not just write the Amazon URL into an `img` tag's `src` attribute. Two reasons mainly:
+You might be wondering as to why Livingdocs relies on an image service in the first place, rather than directly embedding Amazon URLs into the `src` attribute of an `img` tag. There are two primary reasons for this approach:
+
 1. cropping
 2. different image widths (sizes) for different devices
 
-The first reason is easily explained. Livingdocs provides an image cropping tool (https://github.com/livingdocsIO/srcissors) in the Livingdocs editor that allows users to crop their images and change the aspect ratio. The Livingdocs server can not generate different versions of an image and deliver them. It gives this responsibility to a web service such as imgix. Currently, Livingdocs expects that a web service takes the cropping information in the form of a URL parameter (example of imgix: https://docs.imgix.com/apis/rendering/size/rect). This is the case for all services we know of.
+The first reason is easily explained. Livingdocs provides an image cropping tool (https://github.com/livingdocsIO/srcissors) in the editor which allows users to crop their images and change the aspect ratio. However, the Livingdocs server does not generate these different versions of the image and deliver them. Instead, it gives this responsibility to a web service such as imgix. Currently, Livingdocs expects that a web service takes the cropping information in the form of a URL parameter ([example of imgix](https://docs.imgix.com/apis/rendering/size/rect)). This is the case for all services we know of.
 
 The second reason for using an image service is to have images that are responsive. Put simply, you don't want to download a 5 Megapixel image on your mobile phone. Instead you want a website to be "smart" and download the image in such a size that the resolution is perfect for your device but the size is just as large as need be.
 
 Livingdocs support different strategies for responsive images:
+
 1. `srcset` images
 2. script-based plugin
 
-
-The first approach uses the an images `srcset` attribute. A good article on the topic is found here: https://ericportis.com/posts/2014/srcset-sizes/ The `srcset` attribute is supported by all major browsers. It is *not* supported in IE11 and below. Of course that does not mean that users can not see images on IE11 just that they are not responsive there.
+The first approach uses an images `srcset` attribute. A [good article on the topic can be found here](https://ericportis.com/posts/2014/srcset-sizes/). The `srcset` attribute is supported by all major browsers.
 
 Srcset only works for inline images (`img` tag). If you use a background image, you can currently set a max width. Read here on [why srcset does not work for background images]({{< ref "responsive-bg-images.md" >}}).
 
-The second approach expects you to provide a client-side Javascript that runs in the reader's browser, detects the respective device size and requests the optimal image for this size. We can provide such a script based on the now out-of-service service rescr.it. For another image service you would need to provide your own script.
+The second approach expects you to provide client-side javascript which runs in the reader's browser, detects the respective device size and requests the optimal image for this size.
 
+So, in summary the whole process looks like this:
 
-An Example of the whole process:
-A user uploads an image to the Livingdocs editor, the corresponding file is stored on Amazon S3 and the URL to the Amazon file is available on the component as `originalUrl`. The framework chooses the correct image service (e.g. imgix) for generating the correct HTML markup in the document that is shown in the Livingdocs editor. (The image service to be used is configured via `selectedImageService`. Let's say `imgix` is configured.) The framework loads the `imgix_image_service` and calls the `set` method which will generate an `img` tag with a URL that fits the imgix url specification (https://docs.imgix.com/setup/serving-images). The browser then renders the image by querying imgix for the respective image.
+- A user uploads an image to the Livingdocs editor,
+- the corresponding file is stored on S3 and
+- the URL to the file is made available on the component as the `originalUrl`.
+- Livingdocs chooses the image service for generating the HTML markup in the document that is shown in the editor. (The image service to be used is configured via `selectedImageService`. Let's say `imgix` is configured.)
+- Livingdocs loads the `imgix_image_service` and calls the `set` method which will generate an `img` tag with a URL that fits the imgix url specification (https://docs.imgix.com/setup/serving-images).
+- Finally, the browser then renders the image by querying imgix for the respective image.
 
 
 ## Configuring an image service
@@ -146,20 +146,18 @@ documents: {
 The `selectedImageService` field tells Livingdocs which image service should be used.
 The `imageServices` contains the configurations for one or more image services.
 
-You can in theory configure several images services in the server, but as of now only one can be used (the one specified in selectedImageService).
+You can in theory configure several images services in the server, but as of now only one can be active (the `selectedImageService`).
 
 The `host` is simply where your imgix images are served from.
-If `preferWebp` is set to `true` Livingdocs will pass the `auto=format` parameter (https://docs.imgix.com/apis/url/auto).
+If `preferWebp` is set to `true` Livingdocs will pass the [`auto=format` parameter](https://docs.imgix.com/apis/url/auto).
 When the optional property `secureToken` is set, the images are [secured](https://docs.imgix.com/setup/securing-images).
 
 
 #### Backwards compatible image rendering server config
 
-Until all your designs contain an `mediaRendering` config you should
-keep the server wide 'backgroundImage' and 'srcSet'
-imageServices configurations.
+Until all your designs contain a `mediaRendering` config you should
+keep the `backgroundImage` and `srcSet` in your server configuration.
 
-Server Config:
 ```js
 documents: {
   selectedImageService: 'imgix',
@@ -167,7 +165,6 @@ documents: {
     imgix: {
       host: 'https://livingdocs-dev.imgix.net',
       preferWebp: true,
-
       backgroundImage: {
         maxWidth: 2048
       },
@@ -189,10 +186,10 @@ documents: {
 
 #### Images in the Metadata of a Document
 
-Images in the metadata have a similar format to images in the document and also
+Images in the metadata have a similar format to images in the document and 
 use the same image service.
 
-Metadata fields of type `li-image` will contain the `srcset` in a specific `crop`, but not in the root. The reason for this is simply that you normally only want teaser images in a certain crop and in the metadata definition it is not even possible to have a metadata image without a crop definition.
+Metadata fields of type `li-image` will contain the `srcset` in a specific `crop`, but not in the root. The reason for this is that you normally want teaser images in a certain crop and it is not possible to have the metadata definition for the image without a crop definition.
 
 An example:
 ```js
@@ -256,12 +253,11 @@ Note also that we prefer here to write the `sizes` attribute directly in the tem
 
 ## Integrate your own image service
 
-Important: You will have to add image services to both your `server` and `editor`.
+**Important: You will have to add image services to both your `server` and `editor`!**
 
-An image service in Livingdocs is basically just a url transformer that
-allows to proxy image requests through a 'real' image service like imgix and
-write params to the url dynamically to define e.g. the `width` or crop
-of an image.
+An image service in Livingdocs is basically a url transformer allowing you to
+proxy image requests through a 'real' image service like imgix and write params
+to the url dynamically. For example, to define the `width` or crop of an image.
 
 We support the setting of allowed or disabled mime types which defines which mime types the custom image service will handle but does not stop upload in the editor itself. This is for cases where you want to use different image services for different mime types.
 
