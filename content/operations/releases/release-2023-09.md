@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add li-meta-string-list-filter and li-meta-enum-filter](https://github.com/livingdocsIO/livingdocs-editor/pull/7294)
 * [Add more example filters (li-meta-string-list-filter)](https://github.com/livingdocsIO/livingdocs-server/pull/6044)
 * [Fix user identities on admin screen](https://github.com/livingdocsIO/livingdocs-editor/pull/7291)
 * [Add "Go to" action to table dashboard context menu when in sidebar](https://github.com/livingdocsIO/livingdocs-editor/pull/7287)
