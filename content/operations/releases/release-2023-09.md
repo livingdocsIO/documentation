@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add "Go to" action to table dashboard context menu when in sidebar](https://github.com/livingdocsIO/livingdocs-editor/pull/7287)
 * [fix(deps): update dependency pg from 8.11.2 to v8.11.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6046)
 * [Fix user identities on admin screen](https://github.com/livingdocsIO/livingdocs-server/pull/6042)
 * [fix(deps): update dependency sharp from 0.32.4 to v0.32.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6041)
