@@ -4,11 +4,8 @@ description: Setup push notifications with a custom dashboard item
 weight: 15
 ---
 
-{{< removed-in "release-2023-09" block >}}
-
-**Push Notifications are currently deprecated, as they were implemented using Angular.
-Angular support is going to be dropped in {{< release "release-2023-09" >}}.
-Please use the [`li-push-messages` metadata plugin]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}) instead.**
+**Please don't use this functionality anymore. it will be removed eventually after a formal deprecation period that has not started yet.
+Use the [`li-push-messages` metadata plugin]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}) instead.**
 
 This guide explains 2 things:
 1. how to enable the push notifications feature in the [Livingdocs Server boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate)
