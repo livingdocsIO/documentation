@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Publish Control: Improve Visual Clarity](https://github.com/livingdocsIO/livingdocs-editor/pull/7292)
 * [Media Upload: show filename in upload list](https://github.com/livingdocsIO/livingdocs-editor/pull/7125)
 * [`li-scope-list` without prop mutations](https://github.com/livingdocsIO/livingdocs-editor/pull/7124)
 * [li-document-reference fixes and improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/7300)
