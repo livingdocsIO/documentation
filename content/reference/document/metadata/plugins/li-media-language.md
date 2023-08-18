@@ -5,7 +5,7 @@ menus:
   reference:
     parent: Metadata Plugins List
 summary: |
-  {{< deprecated-in "release-2022-05" >}}. Use [`li-metadata-translations`]({{< ref "/reference/document/metadata/plugins/li-metadata-translations" >}}) instead.
+  {{< removed-in "release-2023-09" >}}. Use [`li-metadata-translations`]({{< ref "/reference/document/metadata/plugins/li-metadata-translations" >}}) instead.
 support:
   document: false
   media: true
@@ -15,7 +15,7 @@ support:
   dynamicIndexing: false
   systemMetadata: false
   planningSystem: false
-deprecatedIn: release-2022-05
+removedIn: release-2023-09
 description: |
   Metadata type `li-media-language` has been replaced with [`li-metadata-translations`]({{< ref "/reference/document/metadata/plugins/li-metadata-translations" >}}).
 defaultUI: None
