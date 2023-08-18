@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1438.0 to v2.1439.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6052)
 * [Publish Control: Improve Visual Clarity](https://github.com/livingdocsIO/livingdocs-editor/pull/7292)
 * [Media Upload: show filename in upload list](https://github.com/livingdocsIO/livingdocs-editor/pull/7125)
 * [`li-scope-list` without prop mutations](https://github.com/livingdocsIO/livingdocs-editor/pull/7124)
