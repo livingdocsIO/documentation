@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Ticker properties panel](https://github.com/livingdocsIO/livingdocs-editor/pull/7295)
 * [Show and update value for li-meta-integer-filter when there is no dataProvider](https://github.com/livingdocsIO/livingdocs-editor/pull/7302)
 * [Remove `propertyConfig.config.behaveAsLiImage` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7307)
 * [Fix openid connect email sync](https://github.com/livingdocsIO/livingdocs-server/pull/6050)
