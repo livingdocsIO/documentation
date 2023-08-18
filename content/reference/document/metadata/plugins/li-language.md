@@ -22,7 +22,7 @@ defaultUI: None
 storageFormat: |
   {
     locale: <String>,
-    label: <String>,
+    label: <String>, // deprecated, will be removed in release-2024-01
     groupId: <String>
   }
 contentTypeConfig: |2
