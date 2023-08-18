@@ -55,9 +55,7 @@ languages from which a user can choose. The `defaultLanguage` must be contained 
 
 ### Metadata
 
-The language of a document is stored within the documents metadata. In order to enable this, we need to add a metadata field for every
-[content-type]({{< ref "/reference/project-config/content-types.md" >}}) that we want to have in multiple languages. An example is
-given below.
+The language of a document is stored within the documents metadata. In order to enable this, we need to add a metadata field for every [content-type]({{< ref "/reference/project-config/content-types.md" >}}) that we want to have in multiple languages. An example is given below.
 
 ```js
 metadata: [
@@ -90,7 +88,7 @@ Once you have the metadata field defined on the content-type, you also need to u
       "type": "object",
       "properties": {
         "locale": {"type": "string"},
-        "label": {"type": "string"}
+        "label": {"type": "string"} // deprecated, will be removed in release-2024-01
       }
     }
   }
