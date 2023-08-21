@@ -469,6 +469,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.45): fix(editor): Support li-document-reference in customElements
 - [v95.0.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.44): fix(main-nav): Support translatable tags label
 - [v95.0.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.43): fix(filters): Add isDefault flag on documentState filter
 - [v95.0.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.42): fix(deps): update dependency @livingdocs/framework from 25.0.10 to v25.0.12
