@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Support cross-project linking in Li-Tree and Inline Links](https://github.com/livingdocsIO/livingdocs-editor/pull/7313)
 * [Improve i18n support](https://github.com/livingdocsIO/livingdocs-editor/pull/7309)
 * [Add multi-lang label for distribution table team cell](https://github.com/livingdocsIO/livingdocs-editor/pull/7298)
 * [Breaking: Remove Legacy Dashboards & app.filters.* support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
