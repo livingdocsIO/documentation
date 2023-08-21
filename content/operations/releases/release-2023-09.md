@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Allow dragging inbox items to another document](https://github.com/livingdocsIO/livingdocs-editor/pull/7286)
 * [Display selection in minimal style li-document-reference](https://github.com/livingdocsIO/livingdocs-editor/pull/7317)
 * [Reference plugin feature parity](https://github.com/livingdocsIO/livingdocs-editor/pull/7274)
 * [Reference plugin feature parity](https://github.com/livingdocsIO/livingdocs-server/pull/6030)
