@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1439.0 to v2.1440.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6056)
 * [Support placeholder in integer filter](https://github.com/livingdocsIO/livingdocs-editor/pull/7312)
 * [Anchor linking](https://github.com/livingdocsIO/livingdocs-editor/pull/7299)
 * [Cross Project Content Sharing - Part 1](https://github.com/livingdocsIO/livingdocs-server/pull/6035)
