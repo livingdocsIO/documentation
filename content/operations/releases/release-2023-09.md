@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(button group): Spacing](https://github.com/livingdocsIO/livingdocs-editor/pull/7316)
 * [Anchor Linking](https://github.com/livingdocsIO/livingdocs-server/pull/6048)
 * [fix(tasks): listen to cancel event](https://github.com/livingdocsIO/livingdocs-editor/pull/7311)
 * [Remove legacy custom preview](https://github.com/livingdocsIO/livingdocs-editor/pull/7318)
