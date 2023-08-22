@@ -443,6 +443,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v231.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.26): chore(copy): try/catch
 - [v231.0.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.25): fix(editor): Add li-document-reference to textFormatting.customElements
 - [v231.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.24): fix(dashboard source): doesn't query by ID
 - [v231.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.23): fix(deps): update dependency @livingdocs/framework from 25.0.10 to v25.0.12
