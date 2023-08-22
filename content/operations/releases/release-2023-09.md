@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add `crossProjectContentSearch` display filter](https://github.com/livingdocsIO/livingdocs-editor/pull/7319)
 * [Fix hidden dorpdown in ld-modal](https://github.com/livingdocsIO/livingdocs-editor/pull/7325)
 * [Show asset info for translated media library assets](https://github.com/livingdocsIO/livingdocs-editor/pull/7322)
 * [fix(button group): Spacing](https://github.com/livingdocsIO/livingdocs-editor/pull/7316)
