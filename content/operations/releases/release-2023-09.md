@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(tasks): listen to cancel event](https://github.com/livingdocsIO/livingdocs-editor/pull/7311)
 * [Remove legacy custom preview](https://github.com/livingdocsIO/livingdocs-editor/pull/7318)
 * [Allow dragging inbox items to another document](https://github.com/livingdocsIO/livingdocs-editor/pull/7286)
 * [Display selection in minimal style li-document-reference](https://github.com/livingdocsIO/livingdocs-editor/pull/7317)
