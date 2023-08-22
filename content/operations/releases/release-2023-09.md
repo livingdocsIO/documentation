@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Disable request retries in development proxy](https://github.com/livingdocsIO/livingdocs-editor/pull/7332)
 * [Add public-api:cross-project scope to api client list](https://github.com/livingdocsIO/livingdocs-editor/pull/7330)
 * [Fix status flicker](https://github.com/livingdocsIO/livingdocs-editor/pull/7331)
 * [fix(deps): update dependency aws-sdk from 2.1440.0 to v2.1441.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6061)
