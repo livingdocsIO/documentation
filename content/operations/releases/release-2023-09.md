@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add a dedicated `GET /api/v1/cross-project-config` endpoint and `public-api:cross-project` scope](https://github.com/livingdocsIO/livingdocs-server/pull/6062)
 * [allow async afterConversion](https://github.com/livingdocsIO/livingdocs-server/pull/6057)
 * [Disable request retries in development proxy](https://github.com/livingdocsIO/livingdocs-editor/pull/7332)
 * [Add public-api:cross-project scope to api client list](https://github.com/livingdocsIO/livingdocs-editor/pull/7330)
