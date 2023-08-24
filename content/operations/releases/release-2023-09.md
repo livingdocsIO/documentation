@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Update translations](https://github.com/livingdocsIO/livingdocs-editor/pull/7340)
 * [Metadata Prominent Components (retresco & imatrics)](https://github.com/livingdocsIO/livingdocs-editor/pull/7305)
 * [fix(push message dialog): has correct padding](https://github.com/livingdocsIO/livingdocs-editor/pull/7336)
 * [Update label to unpublish published document](https://github.com/livingdocsIO/livingdocs-editor/pull/7334)
