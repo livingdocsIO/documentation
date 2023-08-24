@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency aws-sdk from 2.1441.0 to v2.1443.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6064)
 * [Update translations](https://github.com/livingdocsIO/livingdocs-editor/pull/7340)
 * [Metadata Prominent Components (retresco & imatrics)](https://github.com/livingdocsIO/livingdocs-editor/pull/7305)
 * [fix(push message dialog): has correct padding](https://github.com/livingdocsIO/livingdocs-editor/pull/7336)
