@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Ticker formatting toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/7335)
 * [Support indexing of li-routing metadata plugin within elasticsearch](https://github.com/livingdocsIO/livingdocs-server/pull/6066)
 * [fix(deps): update dependency aws-sdk from 2.1441.0 to v2.1443.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6064)
 * [Update translations](https://github.com/livingdocsIO/livingdocs-editor/pull/7340)
