@@ -470,6 +470,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.49): fix(push message dialog): has correct padding
 - [v95.0.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.48): fix(display-filter-dorpdown): fix hidden display filter dropdown in ld-modal
 - [v95.0.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.47): fix(button group): Spacing
 - [v95.0.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.46): fix(tasks): listen to cancel event
