@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(push message dialog): has correct padding](https://github.com/livingdocsIO/livingdocs-editor/pull/7336)
 * [Update label to unpublish published document](https://github.com/livingdocsIO/livingdocs-editor/pull/7334)
 * [Add a dedicated `GET /api/v1/cross-project-config` endpoint and `public-api:cross-project` scope](https://github.com/livingdocsIO/livingdocs-server/pull/6062)
 * [allow async afterConversion](https://github.com/livingdocsIO/livingdocs-server/pull/6057)
