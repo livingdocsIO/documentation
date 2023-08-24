@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @babel/core from 7.22.10 to v7.22.11 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7347)
 * [Allow to index ticker-host-reference](https://github.com/livingdocsIO/livingdocs-server/pull/6068)
 * [Refactor and test i18n](https://github.com/livingdocsIO/livingdocs-editor/pull/7337)
 * [Ticker formatting toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/7335)
