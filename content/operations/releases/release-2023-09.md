@@ -63,7 +63,7 @@ To learn about the necessary actions to update Livingdocs to `release-2023-09`, 
 | Redis                          | 6.2                                                                                      |
 | Livingdocs Server Docker Image | livingdocs/server-base:18.3                                                              |
 | Livingdocs Editor Docker Image | livingdocs/editor-base:18.5                                                              |
-| Browser Support                | Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67 |TODO
+| Browser Support                | Edge >= 80, Firefox >= 74, Chrome >= 80, Safari >= 13.1, iOS Safari >= 13.4, Opera >= 67 |
 
 
 ## Breaking Changes 🔥
@@ -79,56 +79,60 @@ livingdocs-server migrate up
 
 ### Drop support for AngularJS metadata plugins 🔥
 
-Custom AngularJS metadata plugins are no longer supported. You should migrate to core metadata plugins, full list [here](https://docs.livingdocs.io/reference/document/metadata/plugins/). If you cannot replace AngularJS plugins with core plugins: contact your Livingdocs customer manager before you write new plugins in Vue.
+Custom AngularJS metadata plugins are no longer supported. You should migrate to [core metadata plugins]({{< ref "/reference/document/metadata/plugins" >}}). If you cannot replace AngularJS plugins with core plugins: contact your Livingdocs customer manager before you write new plugins in Vue. You can find a [guide]({{< ref "/customising/angular-migration/metadata-plugins" >}}) to migrate your AngularJS metadata plugins to Vue.
 
 This includes Angular Metadata UI components, Metadata Services, mixing custom UI with Livingdocs core metadata types and custom types with Livingdocs UI components.
 
-* [Remove Angular Metadata Support](https://github.com/livingdocsIO/livingdocs-editor/pull/7043) 
+* [Editor PR: Remove Angular Metadata Support](https://github.com/livingdocsIO/livingdocs-editor/pull/7043) 
 
 ### Drop support for Legacy Dashboards 🔥
 
-Support for Legacy Dashboards has been removed in favor of the new Table Dashboards. If you are using a legacy dashboard, you should migrate to the new Table Dashboard. See [here](https://docs.livingdocs.io/reference/project-config/editor-settings/#example-table-dashboard/) for more information.
+Support for Legacy Dashboards has been removed in favor of the new Table Dashboards. If you are using a legacy dashboard, you should migrate to the new [Table Dashboard]({{< ref "/reference/project-config/editor-settings#example-table-dashboard" >}}).
 
-* [Remove Legacy Dashboards & `app.filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
+* [Editor PR: Remove Legacy Dashboards & `app.filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
 
 ### Drop support for `app.filters.pageList`, `app.filters.articleList`, `app.filters.inlineArticleList` and `app.filters.dataRecordList` 🔥
 
-Support for `app.filters.pageList`, `app.filters.articleList`, `app.filters.inlineArticleList` and `app.filters.dataRecordList` configurations has been removed. Please use specific Table Dashboards instead. See [here](https://docs.livingdocs.io/reference/project-config/editor-settings/#example-table-dashboard) for more information.
+Support for `app.filters.pageList`, `app.filters.articleList`, `app.filters.inlineArticleList` and `app.filters.dataRecordList` in Editor configuration has been removed. Please use specific [Table Dashboards]({{< ref "/reference/project-config/editor-settings#example-table-dashboard" >}}) instead.
 
-* [Remove Legacy Dashboards & `app.filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
+* [Editor PR: Remove Legacy Dashboards & `app.filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
 
 ### Drop support for `app.filters.documentListList` 🔥
 
-Configuration `app.filters.documentListList` has no effect anymore.
+Configuration `app.filters.documentListList` has no effect anymore. Configure the filters for the document-list search dashboard in the project config at `editorSettings.documentLists.dashboard.displayFilters`.
 
-* [Remove Legacy Dashboards & `app.filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
+* [Editor PR: Remove Legacy Dashboards & `app.filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
 
 ### Drop support for `app.documents.useLegacyDashboards` 🔥
 
 Configuring `app.documents.useLegacyDashboards` has no effect anymore.
 Support for Legacy Dashboards has been dropped. Livingdocs will automatically generate a Table Dashboard with default display filters if no dashboard is explicitly defined.
 
-* [Remove Legacy Dashboards & `app.filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
+* [Editor PR: Remove Legacy Dashboards & `app.filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
+
+### Drop support for `app.search.articleSearch.listItemComponent` 🔥
+
+Configuring `app.search.articleSearch.listItemComponent` has no effect anymore. Please use [Table Dashboards]({{< ref "/reference/project-config/editor-settings#example-table-dashboard" >}}) instead.
+
+* [Editor PR: Remove Legacy Dashboards & `app.filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
 
 ### Drop support for `legacyFilters` in `searchManager.searchPublications()` 🔥
 
-Customers calling `searchManager.searchPublications()` directly,
-and providing a `legacyFilters` property in the first argument, should update to the new `filters` DSL. New Search DSL changes described here:
-https://docs.livingdocs.io/reference/public-api/publications/search/
+Customers calling `searchManager.searchPublications()` directly, and providing a `legacyFilters` property in the first argument, should update to the new `filters` in the [new Search DSL]({{< ref "/reference/public-api/publications/search" >}}).
 
-* [Remove support for `legacyFilters` property in `searchManager.searchPublications()](https://github.com/livingdocsIO/livingdocs-server/pull/6002)
+* [Server PR: Remove support for `legacyFilters` property in `searchManager.searchPublications()](https://github.com/livingdocsIO/livingdocs-server/pull/6002)
 
 ### Drop support for `project.contentType.publicationIndex.scheduledPublishing` 🔥
 
-Please remove the `project.contentType.publicationIndex.scheduledPublishing` property from your project config and configure scheduled publishing using Publish Control as described [here](https://docs.livingdocs.io/guides/editor/publish-control/scheduled-publishing/).
+Please remove the `project.contentType.publicationIndex.scheduledPublishing` property from your project config and configure scheduled publishing using Publish Control as described [here]({{< ref "/guides/editor/publish-control/scheduled-publishing" >}}).
 
-* [Remove support for `project.contentType.publicationIndex.scheduledPublishing`](https://github.com/livingdocsIO/livingdocs-server/pull/6003)
+* [Server PR: Remove support for `project.contentType.publicationIndex.scheduledPublishing`](https://github.com/livingdocsIO/livingdocs-server/pull/6003)
 
 ### Drop support for `propertyConfig.config.behaveAsLiImage` 🔥
 
 Custom metadata plugins cannot use `propertyConfig.config.behaveAsLiImage` to take advantage of upstream `li-image` plugin features. Please use type `li-image` instead.
 
-* [Replace `teaserImage` type with `li-image` due `behaveAsLiImage` removal](https://github.com/livingdocsIO/livingdocs-server/pull/6053)
+* [Server PR: Replace `teaserImage` type with `li-image` due `behaveAsLiImage` removal](https://github.com/livingdocsIO/livingdocs-server/pull/6053)
 
 ### Structure changes in documents within `li-document-references` 🔥
 
@@ -159,55 +163,57 @@ references: [{
 }]
 ```
 
-* [Cross Project Content Sharing](https://github.com/livingdocsIO/livingdocs-server/pull/6035)
+* [Server PR: Cross Project Content Sharing](https://github.com/livingdocsIO/livingdocs-server/pull/6035)
 
 ### Drop backwards compatibility mode for `li-text` 🔥
 
-The backwards compatibility mode for `li-text` where `ui.component` and `ui.config.rows` were taken into account has been removed.
+The backwards compatibility mode for `li-text` for `ui.component` and `ui.config.rows` has been removed. If you still have `ui.component` or `ui.config.rows` in the metadata config for a `li-text` property, you have to move to `config.allowNewlines` and length Editor configurations: `config.minLength`, `config.maxLength`, `config.recommendedMinLength`, `config.recommendedMaxLength`.
 
-* [Remove backwards compatibility mode for `li-text`](https://github.com/livingdocsIO/livingdocs-editor/pull/7249)
+* [Editor PR: Remove backwards compatibility mode for `li-text`](https://github.com/livingdocsIO/livingdocs-editor/pull/7249)
 
 ### Drop support for `li-media-language` metadata plugin 🔥
 
 Metadata plugin type `li-media-language` got replaced with `li-metadata-translations`. Upgrade path using `li-metadata-translations` instead which supports the same config as `li-media-language`.
 
-* [Remove `li-media-language` metadata plugin](https://github.com/livingdocsIO/livingdocs-server/pull/6054)
+* [Server PR: Remove `li-media-language` metadata plugin](https://github.com/livingdocsIO/livingdocs-server/pull/6054)
 
 ### Preview API 🔥
 
-The previewApi (`li-preview`) feature support has been removed. Use `registerPreviewFunction` instead. See details [here](https://docs.livingdocs.io/customising/server-configuration/#custom-previews).
+The previewApi (`li-preview`) feature support has been removed. Use [`registerPreviewFunction`]({{< ref "/customising/server-configuration/#custom-previews" >}}) instead.
 
-* [Remove `li-preview` feature](https://github.com/livingdocsIO/livingdocs-server/pull/6008)
+* [Server PR: Remove `li-preview` feature](https://github.com/livingdocsIO/livingdocs-server/pull/6008)
 
 ## Deprecations
 
 ### `document.customPublicationDateField` is deprecated
 
-Using editor config `document.customPublicationDateField` is deprecated and will be removed with `release-2023-11`. Please migrate to `contentType.publishControl.publishSchedule`.
-
-* [Remove `document.customPublicationDateField` config](https://github.com/livingdocsIO/livingdocs-editor/pull/7259)
+Using Editor config `document.customPublicationDateField` is deprecated and will be removed with `release-2023-11`. Please migrate to `contentType.publishControl.publishSchedule`.
 
 ### `li-reference` metadata plugin is deprecated
 
-Metadata plugin type `li-reference` has been deprecated. Please replace it with `li-document-reference`. No data migration is required, but you will need to remove `referenceType` from the metadata plugin config. If you encounter any other schema errors please see the documentation for the [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference" >}}) plugin for further details.
+Metadata plugin type `li-reference` has been deprecated. Please replace it with `li-document-reference`. No data migration is required, but you will need to remove `referenceType` from the metadata plugin config. If you encounter any other schema errors please check the documentation for the [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference" >}}) plugin for further details.
 
 * [Reference plugin feature parity](https://github.com/livingdocsIO/livingdocs-server/pull/6030)
 
 ### `li-reference-list` metadata plugin is deprecated
 
-Metadata plugin type `li-reference-list` has been deprecated. Please replace it with `li-document-references`. No data migration is required, but you will need to remove `referenceType` from the metadata plugin config. If you encounter any other schema errors please see the documentation for the [`li-document-references`]({{< ref "/reference/document/metadata/plugins/li-document-references" >}}) plugin for further details.
+Metadata plugin type `li-reference-list` has been deprecated. Please replace it with `li-document-references`. No data migration is required, but you will need to remove `referenceType` from the metadata plugin config. If you encounter any other schema errors please check the documentation for the [`li-document-references`]({{< ref "/reference/document/metadata/plugins/li-document-references" >}}) plugin for further details.
 
 * [Reference plugin feature parity](https://github.com/livingdocsIO/livingdocs-server/pull/6030)
 
 ### `storageFormat.label` property within the `li-language` metadata plugin is deprecated
 
-The `storageFormat.label` property within the `li-language` metadata plugin is deprecated and will be removed in `release-2024-01`.
+The `storageFormat.label` property within the `li-language` metadata plugin is deprecated and will be removed in `release-2024-01`. There is no replacement for this property.
+
+### `uiComponent` property passed to `liServer.registerChannelConfigProperty` is deprecated
+
+`uiComponent` property used when registering Channel with `liServer.registerChannelConfigProperty` is deprecated and will be removed in `release-2024-01`. This property will be removed as part of the migration to Vue.js, therefore no replacement is provided.
 
 ## Features
 
 ### Ticker Tool
 
-Livingdocs now offers a tool to create ticker articles with ease. This feature uses a contentType as Ticker Host document, and another contentType as the Ticker Entry. The Ticker Host is used to create a new ticker article, and the Ticker Entry is used to create new entries in the ticker. The Ticker Host can be configured to allow only specific Ticker Entries, and the Ticker Entry can be configured to allow only specific Ticker Hosts.
+Livingdocs now offers a tool to create ticker articles with ease. This feature uses a contentType as Ticker Host document, and another contentType as the Ticker Entry. The Ticker Host is used to create a new ticker article, and the Ticker Entry is used to create new entries in the ticker. 
 
 An example Ticker Host contentType configuration:
 ```
@@ -222,97 +228,27 @@ ticker: {
   entryContentType: 'tickerEntry'
 },
 
-publishControl: {
-  publishSchedule: true,
-  unpublishSchedule: true,
-  embargo: true,
-  visiblePublicationDateOverride: true,
-  visiblePublicationDatePreference: [
-    'publishControl.visiblePublicationDateOverride',
-    'metadata.publicationDate',
-    'publishControl.firstPublicationDate'
-  ],
-  significantPublicationDate: true
-},
-
-components: [
-  {name: 'web-teaser'},
-  {name: 'title'},
-  {name: 'p'},
-  {name: 'button'},
-  {name: 'section-title'},
-  {name: 'image'},
-  {name: 'image-named-crops'},
-  {name: 'video'},
-  {name: 'video-include'},
-  {name: 'teaser-include'},
-  {name: 'teaser-include-small'},
-  {name: 'teaser-include-translated'},
-  {name: 'teaser-list-include'},
-  {name: 'teaser-list-include-params-schema'},
-  {name: 'insta'},
-  {name: 'echo'},
-  {name: 'youtube'},
-  {name: 'twitch'},
-  {name: 'social'},
-  {name: 'oembed-include'},
-  {name: 'free-html'},
-  {name: 'container'}
-],
-
-metadata: [
-  {
-    handle: 'title',
-    type: 'li-text',
-    ui: {
-      label: {
-        en: 'Title',
-        de: 'Titel'
-      }
-    }
-  }
-],
-
-editorWrapper: '<section class="container doc-section"></section>',
-defaultContent: [
-  {component: 'title'}
-]
+// ...the rest of your content type configuration
+// like metadata, components, publishControl etc.
 ```
 An example Ticker Entry contentType configuration:
 ```
 handle: 'tickerEntry',
-documentType: 'article',
-info: {
-  label: 'Ticker Entry'
-},
 
-// Content
-editorWrapper: '<section class="container doc-section" style="padding-bottom: 20px;"></section>',
-defaultContent: [
-  {
-    component: 'title'
-  }
-],
-
-components: [
-  {name: 'title'},
-  {name: 'p'}
-],
-
-// Metadata
 metadata: [
   {
     handle: 'tickerHost',
-    type: 'li-document-reference',
-    config: {
-      contentType: 'tickerHost'
-    }
+    type: 'li-ticker-host-reference'
   }
+  // ...possibly more metadata configs
 ]
-```
-Notice the Ticker Host contentType has a `ticker` property, which defines the Ticker Entry contentType. The Ticker Entry contentType has a `metadata` property, which defines the Ticker Host contentType. This is how the Ticker Host and Ticker Entry are linked together.
 
-For more information and limitations of the Ticker Tool, see [here]().
+// ...the rest of your content type configuration
+// like metadata, components, publishControl etc.
+```
+Notice the Ticker Host contentType has a `ticker` property, which defines the Ticker Entry contentType. The Ticker Entry contentType has a metadata property `tickerHost`, which defines the reference to the ticker host. This reference is set on creation of each ticker entry.
+
+Check the [Ticker Feature documentation]() for more details and limitations.
 
 ### Anchor Linking
 
@@ -337,7 +273,7 @@ To enable anchor linking for a project, at least one component with a doc-editab
 
 ### Display and Base Filters
 
-In the July 2023 release, we introduced in the possibility for users to create configurable filters. This release we extend the filter functionality to more core metadata plugins.
+In the July 2023 release, we introduced in the possibility for users to create configurable filters. With this release, we have added filter support for more core metadata plugins.
 
 We have added the possibility to configure display filters for the following metadata plugins:
 - `li-string-list` with `dataProvider`
@@ -351,13 +287,16 @@ We have added the possibility to configure base filters for the following metada
 - `li-retresco`
 - `li-imatrics-nlp-tags`
 
-For this filters to take effect you must index the metadata properties in Elasticsearch/Opensearch. To do so you have to define `index: true` in the metadata plugin config. See [here](https://docs.livingdocs.io/reference/document/metadata/plugins/#indexing) for more information.
+For these filters to take effect you must index the metadata properties in Elasticsearch/Opensearch. To do so you have to define `index: true` in the metadata plugin config. See [metatadata plugins]({{< ref "/reference/document/metadata/plugins/#indexing" >}}) for more information. Then, reindex the document using:
+```sh
+npx livingdocs-server elasticsearch-index --handle=li-documents -y
+```
 
 ### Multilanguage includes in French and Italian
 
-Livingdocs UI has been translated to more languages. We now support French and Italian on top of English and German. A new language switcher has been added to the user profile for a personalized experience. By default, the language defined in the editor configuration `app.locale` is used.
+Livingdocs UI has been translated to more languages. We now support French and Italian on top of English and German. A new language switcher has been added to the user profile for a personalized experience. By default, the language defined in the Editor configuration `app.locale` is used.
 
-Administrators can define which languages are available in the language dropdown by configuring `app.availableLocales` in the editor configuration. Supported languages are `en`, `de`, `fr` and `it`. The language switch stays hidden if `app.availableLocales` is `undefined` or `[]`.
+Administrators can define which languages are available in the language dropdown by configuring `app.availableLocales` in the Editor configuration. Supported languages are `en`, `de`, `fr` and `it`. The language switch stays hidden if `app.availableLocales` is `undefined` or `[]`.
 
 ```js
 app: {
