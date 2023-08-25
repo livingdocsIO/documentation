@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 25.2.0 to v26 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7348)
 * [Ignore deprecation log on Server start when running the tests](https://github.com/livingdocsIO/livingdocs-server/pull/6067)
 * [fix(deps): update dependency aws-sdk from 2.1443.0 to v2.1444.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6070)
 * [fix(deps): update dependency @babel/core from 7.22.10 to v7.22.11 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7347)
