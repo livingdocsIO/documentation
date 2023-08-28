@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(dashboard filters): Multi selects](https://github.com/livingdocsIO/livingdocs-editor/pull/7341)
 * [Iframe resizing & Spellcheck console errors](https://github.com/livingdocsIO/livingdocs-editor/pull/7342)
 * [Don't try to load document metadata for media dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/7353)
 * [Replace teasers](https://github.com/livingdocsIO/livingdocs-editor/pull/7167)
