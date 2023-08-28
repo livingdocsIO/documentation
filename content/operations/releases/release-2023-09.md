@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Do not persist control characters in postgres](https://github.com/livingdocsIO/livingdocs-server/pull/6079)
 * [fix(login): Spacing](https://github.com/livingdocsIO/livingdocs-editor/pull/7351)
 * [Improvement/release polish 2](https://github.com/livingdocsIO/livingdocs-editor/pull/7364)
 * [fix(dashboard filters): Multi selects](https://github.com/livingdocsIO/livingdocs-editor/pull/7341)
