@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency jquery from 3.7.0 to v3.7.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7369)
 * [Do not persist control characters in postgres](https://github.com/livingdocsIO/livingdocs-server/pull/6079)
 * [fix(login): Spacing](https://github.com/livingdocsIO/livingdocs-editor/pull/7351)
 * [Improvement/release polish 2](https://github.com/livingdocsIO/livingdocs-editor/pull/7364)
