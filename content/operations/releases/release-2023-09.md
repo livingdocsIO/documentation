@@ -348,6 +348,7 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+- [v100.8.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.2): fix: pass image original dimensions for crop preview
 - [v100.8.1](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.1): fix(release-2023-09): Update framework to 26.0.1 (release-2023-09 tag)
 
 
