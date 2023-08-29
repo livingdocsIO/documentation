@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/6082)
 * [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/7372)
 * [fix(deps): update dependency @livingdocs/framework from 26.0.0 to v26.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6081)
 * [fix(deps): update dependency @livingdocs/framework from 26.0.0 to v26.0.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7370)
