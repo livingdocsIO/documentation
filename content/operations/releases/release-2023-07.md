@@ -443,6 +443,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v231.0.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.28): fix(documents): Truncate title on creation
 - [v231.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.27): fix(db): Use special json stringify function where we've stringified objects manually
 - [v231.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.26): chore(copy): try/catch
 - [v231.0.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.25): fix(editor): Add li-document-reference to textFormatting.customElements
