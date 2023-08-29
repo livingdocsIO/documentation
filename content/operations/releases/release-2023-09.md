@@ -346,6 +346,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
 - [v100.8.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.2): fix: pass image original dimensions for crop preview
