@@ -31,7 +31,7 @@ metadata: [
 ]
 ```
 
-The metadata lives in the content-type config. You can for example add the above defition to the content-type file `article.js` to have a `catchline` metadata field on articles.
+The metadata lives in the content-type config. You can for example add the above definition to the content-type file `article.js` to have a `catchline` metadata field on articles.
 
 Some things to note:
 
