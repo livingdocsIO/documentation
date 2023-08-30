@@ -134,9 +134,11 @@ Custom metadata plugins cannot use `propertyConfig.config.behaveAsLiImage` to ta
 
 * [Server PR: Replace `teaserImage` type with `li-image` due `behaveAsLiImage` removal](https://github.com/livingdocsIO/livingdocs-server/pull/6053)
 
-### Structure changes in documents within `li-document-references` 🔥
+### Structure changes in references extracted from `li-document-references`
 
-We have refactored the structure of documents within `li-document-references` property. We have separated the references array into separate elements for each reference.
+We have changed the structure of references extracted from metadata properties with the type `li-document-references`.
+Every document member within the stored value of the metadata property is now listed separately as reference.
+
 Before:
 ```js
 references: [{
@@ -162,6 +164,18 @@ references: [{
   propertyName: 'referenceListTest'
 }]
 ```
+
+This change only affects newly updated documents. Existing documents will keep the old structure.
+To optionally update existing documents, run the following command:
+`node @livingdocs/server/db/manual-migrations/006-generate-references.js`
+
+The manual migration can be executed any time after the deployment.
+
+Affected API endpoints:
+- [`GET api/beta/documents/:documentId/latestPublication`]({{< ref "/reference/public-api/publications/latest-publication-beta" >}})
+- [`GET api/beta/documents/latestPublications`]({{< ref "/reference/public-api/publications/latest-publications-beta" >}})
+- [`GET api/v1/documents/:documentId/incomingDocumentReferences`]({{< ref "/reference/public-api/publications/references#get-incoming-publication-references-for-a-document" >}})
+- [`GET api/v1/documents/:documentId/incomingMediaReferences`]({{< ref "/reference/public-api/publications/references#get-incoming-media-references-for-a-document" >}})
 
 * [Server PR: Cross Project Content Sharing](https://github.com/livingdocsIO/livingdocs-server/pull/6035)
 
