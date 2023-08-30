@@ -99,7 +99,7 @@ Please try to capture a nice segment. If possible try to embed the text in a tex
 
 ### Icons
 
-Some icons where copied individually to `themes/hugo-docs/assets/svg` from
+Some icons were copied individually to `themes/hugo-docs/assets/svg` from
 <https://primer.style/octicons/>.
 
 ## Document Headers
