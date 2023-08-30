@@ -25,10 +25,6 @@ aliases:
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/livingdocs-release-september-2023).
 To learn about the necessary actions to update Livingdocs to `release-2023-09`, read on.
 
-## PRs to Categorize
-
-
-
 ## Webinar
 
 * Feature Webinar Recording: **TODO**
