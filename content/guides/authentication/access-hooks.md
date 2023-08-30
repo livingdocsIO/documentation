@@ -51,7 +51,7 @@ const accessControlApi = server.features.api('li-access-control')
 //
 // RETURN
 //   true or undefined or null - the document modification is allowed
-//   throw an error            - the document modification will be rejected, the error will be showed in the editor
+//   throw an error            - the document modification will be rejected, the error will be shown in the editor
 accessControlApi.registerHook(function ({action, projectId, userId, newDocument, documentVersion, nextDocument}) {
   switch (action) {
     case 'document.create': return true
