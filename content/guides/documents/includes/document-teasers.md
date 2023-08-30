@@ -11,7 +11,7 @@ To drag and drop Document Cards onto a document to create Teaser Components you 
 This guide assumes that you are familiar with the possibilities to register an Include Service and how to use it in a Component.
 
 ## Include Service
-Here is an example that includes configuration to consider for the editable teaser usecase:
+Here is an example includes configuration to consider for the editable teaser usecase:
 ```js
 {
   name: 'teaser',
