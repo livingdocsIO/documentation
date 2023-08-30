@@ -4,14 +4,14 @@ description: Configuring Document Teasers including drag and drop support
 weight: 3
 ---
 
-Document Teasers based on [Includes]({{< ref "/reference/document/includes" >}}) provide a simple way to setup teasers and the possiblity to define the UI with a `paramsSchema`.
+Document Teasers based on [Includes]({{< ref "/reference/document/includes" >}}) provide a simple way to setup teasers and the possibility to define the UI with a `paramsSchema`.
 
 To drag and drop Document Cards onto a document to create Teaser Components you need to configure Teaser Components using an Include Service with a `li-document-reference` param to make it work.
 
 This guide assumes that you are familiar with the possibilities to register an Include Service and how to use it in a Component.
 
 ## Include Service
-Here is an example includes configuration to consider for the editable teaser usecase:
+Here is an example that includes configuration to consider for the editable teaser usecase:
 ```js
 {
   name: 'teaser',
