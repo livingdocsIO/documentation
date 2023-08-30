@@ -78,7 +78,7 @@ At the moment these actions are supported and will be evaluated client-side. All
 
 // Update a property of a metadata field
 // handle = metadata property name
-// attribute = proerty of metadata field
+// attribute = property of metadata field
 {
   effect: 'DENY',
   action: 'document.metadata.update',
