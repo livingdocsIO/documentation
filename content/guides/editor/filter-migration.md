@@ -96,7 +96,7 @@ Below you will find specific examples of how to migrate different legacy filters
 
 ### Simple Key/Value Filters
 
-As mentioned above, these are straight forward to migrate. The `type` property should be renamed to `key`, and the `value` property should be renamed to `term`.
+As mentioned above, these are straightforward to migrate. The `type` property should be renamed to `key`, and the `value` property should be renamed to `term`.
 
 The values should be of the correct type, so `string` for `'contentType'`, `'documentType'`, `'mediaType'`, `'reference'`, and `integer` for `id`, `channelId`, `ownerId`, `createdBy`. An array of values can also be passed, or you can use a `range` query expression, or `exists` if you want to know if the property has been indexed.
 
@@ -165,7 +165,7 @@ After:
 {key: 'metadata.myMetadataHandle', range: {gte: '2023-07-04T00:00:00.000Z', lte: '2023-07-04T23:59:59.999Z'}}
 ```
 
-The `optional: true` parameter requires an OR filter to check for the existance of the value:
+The `optional: true` parameter requires an OR filter to check for the existence of the value:
 
 Before:
 ```js
