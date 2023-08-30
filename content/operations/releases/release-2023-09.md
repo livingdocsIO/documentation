@@ -2,7 +2,7 @@
 type: release-notes
 title: September 2023 Release
 description: Technical Release Notes for release-2023-09
-excludeFromSearch: true
+excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2023-09/
@@ -11,10 +11,10 @@ aliases:
 
 {{< release-header
   title="September 2023 Release"
-  upcoming=true
+  upcoming=false
   legacy=false
-  current=false
-  maintained=false
+  current=true
+  maintained=true
   branchHandle="release-2023-09"
 >}}
 
