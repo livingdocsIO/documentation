@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fastify from 4.22.0 to v4.22.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6093)
 * [fix(deps): update dependency fastify from 4.22.0 to v4.22.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7395)
 * [fix(deps): update dependency cypress from 12.17.4 to v13 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7378)
 * [Fix/editor scrolling #5028](https://github.com/livingdocsIO/livingdocs-editor/pull/7389)
