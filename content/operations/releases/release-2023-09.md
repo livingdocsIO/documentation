@@ -363,6 +363,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.6): chore(metadata): Compute whether li-image is in document context
 - [v100.8.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.5): fix(comments): Allow avatar size to be string or number for mentions
 - [v100.8.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.4): fix(editableCount): updated name
 - [v100.8.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.3): fix(viewEvents): make blur editable fire before blur component
