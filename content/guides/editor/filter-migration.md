@@ -3,6 +3,8 @@ title: Display Filter & Base Filter Migration
 description: How to upgrade to the latest filter syntax
 ---
 
+{{< added-in "release-2023-07" block >}}
+
 ## Display Filter Migration
 
 The structure of display filters has changed. Instead of the typical `type` and `value` properties alongside the `label` there are now three distinct properties that can be used to change the filter functionality. The main one is the `filter` property, which is an object containing the filter query using the new [Search Filters Query DSL]({{< ref "/reference/public-api/publications/search#search-filters" >}}). There is also a `context` property which can be used by [Custom Filters]({{< ref "#custom-filters" >}}). Finally, there is a `sort` property, which is a string that replaces the `'sortBy'` filter type.
