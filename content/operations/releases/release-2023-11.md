@@ -53,11 +53,29 @@ To learn about the necessary actions to update Livingdocs to `release-2023-11`, 
 
 ### Suggested
 
-TODO
+| Name                           | Version                                                                                  |
+| ------------------------------ | ---------------------------------------------------------------------------------------- |
+| Node                           | 20                                                                                       |
+| NPM                            | 9                                                                                        |
+| Postgres                       | 15                                                                                       |
+| Elasticsearch<br/>OpenSearch   | 8.x<br/>v2.3.0                                                                           |
+| Redis                          | 7                                                                                        |
+| Livingdocs Server Docker Image | livingdocs/server-base:20                                                                |
+| Livingdocs Editor Docker Image | livingdocs/editor-base:20                                                                |
+| Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
 
 ### Minimal
 
-TODO
+| Name                           | Version                                                                                  |
+| ------------------------------ | ---------------------------------------------------------------------------------------- |
+| Node                           | 18                                                                                       |
+| NPM                            | 9                                                                                        |
+| Postgres                       | 13                                                                                       |
+| Elasticsearch<br/>OpenSearch   | 7.x<br/>1                                                                                |
+| Redis                          | 6.2                                                                                      |
+| Livingdocs Server Docker Image | livingdocs/server-base:18.3                                                              |
+| Livingdocs Editor Docker Image | livingdocs/editor-base:18.5                                                              |
+| Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
 
 ## Breaking Changes 🔥
 
