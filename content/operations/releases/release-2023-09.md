@@ -365,6 +365,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.8): chore: Update chrome version in cypress
 - [v100.8.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.7): chore(metadata): Add tests for li-image and li-poster-image
 - [v100.8.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.6): chore(metadata): Compute whether li-image is in document context
 - [v100.8.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.5): fix(comments): Allow avatar size to be string or number for mentions
