@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Handle errors in custom getDocumentIds include functions](https://github.com/livingdocsIO/livingdocs-server/pull/6078)
 * [Change supported browser versions as we're using newer apis](https://github.com/livingdocsIO/livingdocs-editor/pull/7388)
 * [fix(deps): update dependency aws-sdk from 2.1444.0 to v2.1448.0 (master) - autoclosed](https://github.com/livingdocsIO/livingdocs-server/pull/6074)
 * [fix(deps): update dependency @babel/preset-env from 7.22.10 to v7.22.14 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7356)
