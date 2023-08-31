@@ -10,7 +10,7 @@ menus:
     weight: 6
 ---
 
-The SDK is a Node.js client for interacting with the Livingdocs [Public API]({{< ref "public-api">}}).
+The SDK is a Node.js client for interacting with the Livingdocs [Public API]({{< ref "/reference/public-api">}}).
 
 It can be used to quickly get started with Livingdocs in your application, for example for retrieving publications or searching through them.
 
@@ -28,7 +28,7 @@ If you're looking for a full-fledged use case, implemented using the SDK, consid
 ### Prerequisites
 
 - Minimum Node version: 14
-- Read the [Changelog](./CHANGELOG.md) to get up to date
+- Read the [Changelog](https://github.com/livingdocsIO/livingdocs-node-sdk/blob/master/CHANGELOG.md) to get up to date
 
 ### Getting started
 
@@ -131,7 +131,7 @@ Check out the Client API reference documentation below for the respective method
 
 #### I need my own design
 
-Currently, you can only use embedded designs in your Livingdocs Editor. [getting started with your own design](https://developers.livingdocs.io/getting_started)
+Currently, you can only use embedded designs in your Livingdocs Editor. [getting started with your own design]({{< ref "/reference/document/document-design" >}})
 
 Otherwise you can use one of the given design in the editor and adapt the rendering on your side.
 For the delivery rendering you can have a local copy of our magazine design and adjust the HTML / CSS for the rendering. This means that you will write in the Livingdocs editor in our prebuilt design but render to your own custom design using the SDK.
@@ -273,4 +273,4 @@ const publications = await liClient.search({search, categories, languages, conte
 
 #### Livingdoc Content Model API
 
-[Check out the reference docs](https://developers.livingdocs.io/reference/content-model)
+[Check out the reference docs]({{< ref "/reference/document/content/livingdocs-model" >}})
