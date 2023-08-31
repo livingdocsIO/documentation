@@ -360,6 +360,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v237.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.9): fix(references): Update after running hooks
 - [v237.2.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.8): fix(includes): Handle errors in custom getDocumentIds functions
 - [v237.2.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.7): fix(public-api): Remove non-functional renderOptions.decodeHtml in composition api
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
