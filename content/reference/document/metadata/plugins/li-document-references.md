@@ -10,11 +10,14 @@ support:
   media: true
   tableDashboard: false
   include: true
-  displayFilter: false
+  displayFilter: true
   dynamicIndexing: true
   systemMetadata: false
   planningSystem: false
-description: A `li-document-references` metadata field is a list of references to other documents. A Document Selection Dialog is shown, based on shorthand queries and `useDashboard` to select documents.
+description: |
+  A `li-document-references` metadata field is a list of references to other documents. A Document Selection Dialog is shown, based on shorthand queries and `useDashboard` to select documents.
+
+  [Display Filters]({{< ref "customising/advanced/editor-configuration/display-filter#named-filters" >}}) support {{< added-in "release-2023-09" >}}
 defaultUI: |
   Selected documents, or document selection dialog
 

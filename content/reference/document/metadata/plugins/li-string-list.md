@@ -10,11 +10,14 @@ support:
   media: true
   tableDashboard: true
   include: true
-  displayFilter: false
+  displayFilter: true
   dynamicIndexing: true
   systemMetadata: false
   planningSystem: false
-description: Requires a `dataProvider` to work.
+description: |
+  Requires a `dataProvider` to work.
+
+  [Display Filters]({{< ref "customising/advanced/editor-configuration/display-filter#named-filters" >}}) support {{< added-in "release-2023-09" >}}
 defaultUI: Multiselect input
 storageFormat: |
   [<String>]
