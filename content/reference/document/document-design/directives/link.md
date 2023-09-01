@@ -10,7 +10,7 @@ menus:
 A link directive generates a user interface in Livingdocs to enter a link or select a document reference. It can only be defined on `<a>` tags.
 If you want to set a link on an image for example, just wrap the `<img>` tag in an `<a>` tag and add a doc-link directive on the `<a>` tag.
 
-If you select a link by document reference, the shown search dashboard is the same as for [Inline Links](https://docs.livingdocs.io/reference/project-config/editor-settings/#inline-links)
+If you select a link by document reference, the shown search dashboard is the same as for [Inline Links]({{< ref "../../../project-config/editor-settings/#inline-links" >}})
 
 ## Example
 

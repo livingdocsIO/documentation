@@ -21,7 +21,8 @@ Defined on an HTML tag so that the user can edit the text within.
       type: 'editable',
       plainText: true,
       excludeFromTextCount: true,
-      maxLength: 20
+      maxLength: 20,
+      anchor: true
     }
   ],
   html: dedent`
@@ -79,3 +80,10 @@ The default placeholder that is shown in the editor as long as the directive is 
 `optional`, true | false
 
 If optional is set to true, then the directive will only be rendered if a value is actually filled in, otherwise the tag is skipped.
+
+`anchor`, true | false
+
+If enabled, directive can be selected as direct link target for [Inline Links]({{< ref "../../../project-config/editor-settings/#inline-links" >}}) and in [li-tree]({{< ref "../../metadata/plugins/li-tree" >}}).
+The content of the directive will be shown in the selection dialog.
+
+{{< img src="./anchor-link-dialog.png" alt="Anchor Link Dialog" >}}

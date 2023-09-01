@@ -5,6 +5,9 @@ menus:
   reference:
     parent: Metadata Plugins List
 summary: Tree with links, document references, and groups.
+keywords:
+  - anchor
+  - anchor linking
 support:
   document: true
   media: false
@@ -47,7 +50,9 @@ storageFormat: |
           label: 'Bern',
           type: 'document',
           reference: {
-            id: '42'
+            id: '42',
+            externalSystem: 'myExternalSystem', // optional, only if cross-project sharing enabled
+            directiveId: 'doc-1a2b3c4f5:subtitle' // optional, only if anchor linking enabled
           }
         }
       ]
@@ -138,4 +143,9 @@ additionalConfig: |
 
   If multi-language is enabled for `li-tree` and the Display Filters for the document selection dialog are specifying a language filter,
   the dashboard will automatically preselect the correct language filter for an item. Users can still change the language filter setting.
+
+  ### Anchor Links
+
+  To enable anchor linking (link to a section within a document), [configure editable directives]({{< ref "../../../document/document-design/directives/editable#other" >}}) in design settings.
+
 ---
