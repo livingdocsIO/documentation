@@ -290,11 +290,11 @@ To enable anchor linking for a project, at least one component with a doc-editab
 In the July 2023 release, we introduced in the possibility for users to create configurable filters. With this release, we have added filter support for more core metadata plugins.
 
 We have added the possibility to configure display filters for the following metadata plugins:
-- `li-string-list` with `dataProvider`
-- `li-enum` with `dataProvider`
-- `li-text` with `dataProvider`
 - `li-document-reference` with `style: minimal`
 - `li-document-references` with `style: minimal`
+- `li-enum`
+- `li-string-list` with `dataProvider`
+- `li-text` with `dataProvider`
 
 We have added the possibility to configure base filters for the following metadata plugins:
 - `li-desknet-integration`
@@ -302,9 +302,12 @@ We have added the possibility to configure base filters for the following metada
 - `li-imatrics-nlp-tags`
 
 For these filters to take effect you must index the metadata properties in Elasticsearch/Opensearch. To do so you have to define `index: true` in the metadata plugin config. See [metatadata plugins]({{< ref "/reference/document/metadata/plugins/#indexing" >}}) for more information. Then, reindex the document using:
+
 ```sh
 npx livingdocs-server elasticsearch-index --handle=li-documents -y
 ```
+
+For more information see [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter#named-filters" >}})
 
 ### Multilanguage includes in French and Italian
 

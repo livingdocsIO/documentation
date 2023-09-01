@@ -10,12 +10,14 @@ support:
   media: true
   tableDashboard: true
   include: true
-  displayFilter: false
+  displayFilter: true
   dynamicIndexing: true
   systemMetadata: false
   planningSystem: false
 description: |
   A `li-document-reference` metadata field shows a reference to another document. To select a document one gets provided a Document Selection Modal.
+
+  [Display Filters]({{< ref "customising/advanced/editor-configuration/display-filter#named-filters" >}}) support {{< added-in "release-2023-09" >}}
 defaultUI: |
   Selected document, or document selection dialog
 

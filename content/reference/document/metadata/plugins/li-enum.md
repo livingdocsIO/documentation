@@ -10,11 +10,14 @@ support:
   media: true
   tableDashboard: false
   include: true
-  displayFilter: false
+  displayFilter: true
   dynamicIndexing: true
   systemMetadata: false
   planningSystem: false
-description: A `li-enum` metadata field shows a select form based on a statically defined list. On publish the selected value gets validated against the defined static list. With that you can assure that only specific values gets published.
+description: |
+  A `li-enum` metadata field shows a select form based on a statically defined list. On publish the selected value gets validated against the defined static list. With that you can assure that only specific values gets published.
+
+  [Display Filters]({{< ref "customising/advanced/editor-configuration/display-filter#named-filters" >}}) support {{< added-in "release-2023-09" >}}
 defaultUI: |
   Select input
 

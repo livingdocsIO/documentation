@@ -10,11 +10,14 @@ support:
   media: true
   tableDashboard: true
   include: true
-  displayFilter: false
+  displayFilter: true
   dynamicIndexing: true
   systemMetadata: false
   planningSystem: false
-description: A simple text value store.
+description: |
+  A simple text value store.
+
+  [Display Filters]({{< ref "customising/advanced/editor-configuration/display-filter#named-filters" >}}) support {{< added-in "release-2023-09" >}}
 defaultUI: Renders a select element if a `dataProvider` is configured, otherwise renders an autogrowing reasonably sized textarea.
 storageFormat: <String>
 contentTypeConfig: |2
