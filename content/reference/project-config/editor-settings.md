@@ -4,6 +4,9 @@ weight: 2
 menus:
   reference:
     parent: Project Config
+keywords:
+  - anchor
+  - anchor linking
 ---
 
 The editor settings control the behavior of your editor UX, in particular:
@@ -869,6 +872,10 @@ inlineLinks: {
 ### baseFilters
 
 [Base Filters]({{< ref "/customising/advanced/editor-configuration/base-filter" >}}) are invisible filters and applied to every search (including the default result list).
+
+### Anchor Links
+
+To enable anchor linking (link to a section within a document), [configure editable directives]({{< ref "../document/document-design/directives/editable#other" >}}) in design settings.
 
 ## Text Formatting
 
