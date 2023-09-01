@@ -366,6 +366,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.10): chore(li-comment): fix eslint errors and some more formatting
 - [v100.8.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.9): improvement(li ticker): Empty state and responsiveness
 - [v100.8.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.8): chore: Update chrome version in cypress
 - [v100.8.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.7): chore(metadata): Add tests for li-image and li-poster-image
