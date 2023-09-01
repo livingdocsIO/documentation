@@ -7,9 +7,14 @@ menus:
 keywords:
   - anchor
   - anchor linking
+  - locale
+  - i18n
+  - multi-language
 ---
 
 The editor settings control the behavior of your editor UX, in particular:
+
+- [Multi-Language UI]({{< ref "editor-settings#multi-language-ui" >}})
 - [User menu]({{< ref "editor-settings#user-menu" >}})
 - [Main navigation]({{< ref "editor-settings#main-navigation" >}})
 - [Dashboards]({{< ref "editor-settings#dashboards" >}})
@@ -21,6 +26,7 @@ The editor settings control the behavior of your editor UX, in particular:
 - [Text formatting]({{< ref "editor-settings#text-formatting" >}})
 
 An example:
+
 ```js
 editorSettings: {
   userMenu: [
@@ -223,6 +229,19 @@ editorSettings: {
   }
 }
 ```
+
+## Multi-Language UI
+
+Configure UI languages(s) in editor:
+
+```js
+app: {
+  locale: 'de',
+  availableLocales: ['de', 'en', 'fr', 'it']
+}
+```
+
+For more details see the [Multi-Language UI guide]({{< ref "/guides/editor/multi-language-ui" >}}).
 
 ## User Menu
 

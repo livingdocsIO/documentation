@@ -4,30 +4,39 @@ bullets:
   - Configure Default UI Language
   - Translating Config Labels, Placeholders and Titles
 weight: 5
+keywords:
+  - locale
+  - i18n
+  - multi-language
+  - language switcher
+  - Italian
+  - French
+  - English
+  - German
+  - Translating Config
 ---
 
 This guide explains how to configure Livingdocs to show the UI in different languages. Starting with {{< release "release-2023-07" >}} the default UI language can be configured and labels from the config, e.g. metadata plugin label, can be declared in multiple languages.
-With the next release ({{< release "release-2023-09" >}}) a language switcher will be added to the UI.
+A language switcher has been added to user profile menu with {{< release "release-2023-09" >}}.
 
-UI in English:
-
-![english UI](ui-english.png)
-
-UI in German:
-
-![german UI](ui-german.png)
+![Language Switcher](language-switcher.png)
 
 ## Configure Default UI Language
 
-Set the default Editor UI language in the Editor config:
+Set the default Editor UI language in the [Editor config]({{< ref "/reference/project-config/editor-settings#multi-language-ui" >}}):
 
 ```js
 app: {
-  locale: 'de'
+  locale: 'de', // optional, language to show UI in - defaults to 'en'
+  availableLocales: ['de', 'en', 'fr', 'it'] // optional - languages available in UI language switcher
 }
 ```
 
-Currently the UI is available in English and German.
+If `app.availableLocales: undefined | undefined` then the language switcher will be hidden.
+
+As of {{< release "release-2023-07" >}}, the UI is available in English (`en`) and German (`de`).
+
+As of {{< release "release-2023-09" >}}, the UI is additionally available in French (`fr`) and Italian (`it`).
 
 ## Translating Config Labels, Placeholders and Titles
 
@@ -43,12 +52,16 @@ metadata: [
     ui: {
       label: {
         en: 'Category',
-        de: 'Kategorie'
+        de: 'Kategorie',
+        fr: 'Catégorie',
+        it: 'Categoria'
       },
       config: {
         placeholder: {
           en: 'Select a category',
-          de: 'Wählen Sie eine Kategorie aus'
+          de: 'Wählen Sie eine Kategorie aus',
+          fr: 'Sélectionnez une catégorie',
+          it: 'Seleziona una categoria'
         }
       }
     },
@@ -56,8 +69,24 @@ metadata: [
       dataProvider: {
         type: 'labelValuePair',
         items: [
-          {label: {en: 'Politics', de: 'Politik'}, value: 'politics'},
-          {label: {en: 'Economy', de: 'Wirtschaft'}, value: 'economy'}
+          {
+            label: {
+              en: 'Politics',
+              de: 'Politik',
+              fr: 'Politique',
+              it: 'Politica'
+            },
+            value: 'politics'
+          },
+          {
+            label: {
+              en: 'Economy',
+              de: 'Wirtschaft',
+              fr: 'Économie',
+              it: 'Economia'
+            },
+            value: 'economy'
+          },
         ]
       }
     }
@@ -65,6 +94,6 @@ metadata: [
 ]
 ```
 
-![label english](label-english.png)
+Metadata plugin displayed with German translations.
 
 ![label german](label-german.png)

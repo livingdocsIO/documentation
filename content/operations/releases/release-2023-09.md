@@ -309,16 +309,20 @@ npx livingdocs-server elasticsearch-index --handle=li-documents -y
 
 For more information see [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter#named-filters" >}})
 
-### Multilanguage includes in French and Italian
+For more information see [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter#named-filters" >}})
 
-Livingdocs UI has been translated to more languages. We now support French and Italian on top of English and German. A new language switcher has been added to the user profile for a personalized experience. By default, the language defined in the Editor configuration `app.locale` is used.
+### Language Switcher and Additional Support for French and Italian
+
+Livingdocs UI has been translated to more UI languages. We now support French and Italian on top of English and German. A new language switcher has been added to the user profile for a personalized experience. By default, the language defined in the Editor configuration `app.locale` is used.
 
 Administrators can define which languages are available in the language dropdown by configuring `app.availableLocales` in the Editor configuration. Supported languages are `en`, `de`, `fr` and `it`. The language switch stays hidden if `app.availableLocales` is `undefined` or `[]`.
 
+For more details see the [Multi-Language UI guide]({{< ref "/guides/editor/multi-language-ui" >}}).
+
 ```js
 app: {
-  locale: 'en',
-  availableLocales: ['en', 'de', 'fr', 'it']
+  locale: 'en', // optional, language to show UI in - defaults to 'en'
+  availableLocales: ['en', 'de', 'fr', 'it'] // optional - languages available in UI language switcher
 }
 ```
 
