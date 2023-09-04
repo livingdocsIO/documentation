@@ -472,6 +472,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.53): fix(workspace): show properties panel after history mode
 - [v95.0.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.52): chore(li-comment): fix eslint errors and some more formatting
 - [v95.0.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.51): fix: pass image original dimensions for crop preview
 - [v95.0.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.50): fix(login): Spacing
