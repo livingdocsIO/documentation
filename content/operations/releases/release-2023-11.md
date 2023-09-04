@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency jose from 4.14.5 to v4.14.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6098)
 * [fix(deps): update dependency https-proxy-agent from 7.0.1 to v7.0.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7416)
 * [Fix: Editor Sidebar breaks after opening history mode](https://github.com/livingdocsIO/livingdocs-editor/pull/7409)
 * [Ticker fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/7393)
