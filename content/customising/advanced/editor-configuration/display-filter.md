@@ -62,7 +62,7 @@ They are separately listed here:
 Listed here are the supported metadata types, you would configure the filters for them with a `metadataPropertyName` with the `handle` of a property of this type that is configured in your `contentType`s/`mediaType`s.
 Support for more types will be added as needed. Contact your Customer Solutions Manager for potential [Implementation Partnerships](https://livingdocs.io/en/livingdocs-2022-2023-roadmap).
 
-For these filters to take effect you must index the metadata properties in Elasticsearch/Opensearch. To do so you have to define `index: true` in the metadata plugin config. See [metatadata plugins]({{< ref "/reference/document/metadata/plugins/#indexing" >}}) for more information. After updating the config, one must re-index all the documents:
+For these filters to take effect you must index the metadata properties in Elasticsearch/Opensearch. To do so you have to define `config{ index: true }` in the metadata plugin config. See [metadata plugins]({{< ref "/reference/document/metadata/#configuration" >}}) for more information. After updating the config, one must re-index all the documents:
 
 ```sh
 npx livingdocs-server elasticsearch-index --handle=li-documents -y
@@ -70,18 +70,18 @@ npx livingdocs-server elasticsearch-index --handle=li-documents -y
 
 ### Supported Types
 
-- [`li-integer`]({{< ref "reference/document/metadata/plugins/li-integer">}})
-- [`li-category`]({{< ref "reference/document/metadata/plugins/li-category">}})
-- [`li-document-reference`]({{< ref "reference/document/metadata/plugins/li-document-reference">}}) {{< added-in "release-2023-09" >}}
+- [`li-integer`]({{< ref "/reference/document/metadata/plugins/li-integer">}})
+- [`li-category`]({{< ref "/reference/document/metadata/plugins/li-category">}})
+- [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference">}}) {{< added-in "release-2023-09" >}}
   - only supported for `minimal` style
   - shows a max of 1000 filter options
-- [`li-document-references`]({{< ref "reference/document/metadata/plugins/li-document-references">}}) {{< added-in "release-2023-09" >}}
+- [`li-document-references`]({{< ref "/reference/document/metadata/plugins/li-document-references">}}) {{< added-in "release-2023-09" >}}
   - only supported for `minimal` style
   - shows a max of 1000 filter options
-- [`li-enum`]({{< ref "reference/document/metadata/plugins/li-enum">}}) {{< added-in "release-2023-09" >}}
+- [`li-enum`]({{< ref "/reference/document/metadata/plugins/li-enum">}}) {{< added-in "release-2023-09" >}}
   - shows a max of 1000 filter options
-- [`li-text`]({{< ref "reference/document/metadata/plugins/li-text">}}) {{< added-in "release-2023-09" >}}
+- [`li-text`]({{< ref "/reference/document/metadata/plugins/li-text">}}) {{< added-in "release-2023-09" >}}
   - only supported if plugin has a `dataProvider`
   - shows a max of 1000 filter options
-- [`li-string-list`]({{< ref "reference/document/metadata/plugins/li-string-list">}}) {{< added-in "release-2023-09" >}}
+- [`li-string-list`]({{< ref "/reference/document/metadata/plugins/li-string-list">}}) {{< added-in "release-2023-09" >}}
   - shows a max of 1000 filter options
