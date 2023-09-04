@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix: Editor Sidebar breaks after opening history mode](https://github.com/livingdocsIO/livingdocs-editor/pull/7409)
 * [Ticker fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/7393)
 * [fix(deps): update dependency aws-sdk from 2.1448.0 to v2.1450.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6094)
 * [fix(deps): update dependency jose from 4.14.4 to v4.14.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6096)
