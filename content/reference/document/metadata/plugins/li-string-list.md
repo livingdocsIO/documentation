@@ -17,7 +17,7 @@ support:
 description: |
   Requires a `dataProvider` to work.
 
-  [Display Filters]({{< ref "customising/advanced/editor-configuration/display-filter#named-filters" >}}) support {{< added-in "release-2023-09" >}}
+  [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter#metadata-filters" >}}) support {{< added-in "release-2023-09" >}}
 defaultUI: Multiselect input
 storageFormat: |
   [<String>]
