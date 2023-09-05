@@ -371,6 +371,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.14): fix(li-link-edit): apply base filters in quick search
 - [v100.8.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.13): fix(workspace): show properties panel after history mode
 - [v100.8.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.12): chore(cypress): fix flaky media-library tests
 - [v100.8.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.11): fix(component lock): Restored look
