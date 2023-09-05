@@ -301,7 +301,7 @@ We have added the possibility to configure base filters for the following metada
 - `li-retresco`
 - `li-imatrics-nlp-tags`
 
-For these filters to take effect you must index the metadata properties in Elasticsearch/Opensearch. To do so you have to define `index: true` in the metadata plugin config. See [metatadata plugins]({{< ref "/reference/document/metadata/#configuration" >}}) for more information. Then, reindex the document using:
+For these filters to take effect you must index the metadata properties in Elasticsearch/Opensearch. To do so you have to define `index: true` in the metadata plugin config. See [metadata plugins]({{< ref "/reference/document/metadata/#configuration" >}}) for more information. Then, reindex the document using:
 
 ```sh
 npx livingdocs-server elasticsearch-index --handle=li-documents -y
