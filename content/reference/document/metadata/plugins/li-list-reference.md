@@ -10,7 +10,7 @@ support:
   tableDashboard: false
   include: true
   displayFilter: false
-  dynamicIndexing: true
+  searchIndexing: true
   systemMetadata: false
   planningSystem: false
 defaultUI: Selected list, or list selection dialog

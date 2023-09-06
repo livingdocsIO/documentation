@@ -12,7 +12,7 @@ support:
   tableDashboard: false
   include: false
   displayFilter: false
-  dynamicIndexing: false
+  searchIndexing: false
   systemMetadata: false
   planningSystem: false
 removedIn: release-2023-09

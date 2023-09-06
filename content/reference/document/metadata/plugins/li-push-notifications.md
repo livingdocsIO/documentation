@@ -10,7 +10,7 @@ support:
   tableDashboard: false
   include: false
   displayFilter: false
-  dynamicIndexing: false
+  searchIndexing: false
   systemMetadata: true
   planningSystem: false
 description: |

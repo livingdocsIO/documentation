@@ -11,7 +11,7 @@ support:
   tableDashboard: false
   include: true
   displayFilter: false
-  dynamicIndexing: true
+  searchIndexing: true
   systemMetadata: false
   planningSystem: false
 description: A `li-video-reference` metadata field shows a list of video references where one entry can be selected. Optionally a customer poster image can be defined. `li-video-reference` is only supported property in includes.

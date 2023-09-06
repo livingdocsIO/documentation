@@ -11,7 +11,7 @@ support:
   tableDashboard: false
   include: true
   displayFilter: false
-  dynamicIndexing: true
+  searchIndexing: true
   systemMetadata: false
   planningSystem: false
 defaultUI: Date input field

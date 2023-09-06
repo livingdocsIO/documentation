@@ -10,7 +10,7 @@ support:
   tableDashboard: false
   include: false
   displayFilter: false
-  dynamicIndexing: false
+  searchIndexing: false
   systemMetadata: false
   planningSystem: false
 defaultUI: UI to select, upload, delete, and crop an image

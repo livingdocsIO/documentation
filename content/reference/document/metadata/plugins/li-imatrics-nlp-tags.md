@@ -10,7 +10,7 @@ support:
   tableDashboard: false
   include: false
   displayFilter: false
-  dynamicIndexing: true
+  searchIndexing: true
   systemMetadata: false
   planningSystem: false
 defaultUI: Manage tags, add new tag suggestions
