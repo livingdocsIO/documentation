@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Cross Project Content Sharing - ImageServices](https://github.com/livingdocsIO/livingdocs-editor/pull/7417)
 * [Cross Project Content Sharing - ImageServices](https://github.com/livingdocsIO/livingdocs-server/pull/6100)
 * [fix(deps): update dependency @livingdocs/framework from 26.1.3 to v26.1.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6104)
 * [fix(deps): update dependency @livingdocs/framework from 26.1.3 to v26.1.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7422)
