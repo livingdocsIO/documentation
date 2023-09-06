@@ -11,7 +11,7 @@ support:
   tableDashboard: true
   include: false
   displayFilter: false
-  dynamicIndexing: true
+  searchIndexing: true
   systemMetadata: true
   planningSystem: true
 description: Enables the Distribution Planning panel, and allows documents to be assiged to a distribution schedule.

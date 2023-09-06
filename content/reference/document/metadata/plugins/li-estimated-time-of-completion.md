@@ -11,7 +11,7 @@ support:
   tableDashboard: false
   include: false
   displayFilter: false
-  dynamicIndexing: false
+  searchIndexing: false
   systemMetadata: true
   planningSystem: true
 addedIn: release-2023-03

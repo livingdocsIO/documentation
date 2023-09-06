@@ -11,7 +11,7 @@ support:
   tableDashboard: true
   include: false
   displayFilter: true
-  dynamicIndexing: true
+  searchIndexing: true
   systemMetadata: false
   planningSystem: false
 defaultUI: Select input, with category tree view and search

@@ -11,7 +11,7 @@ support:
   tableDashboard: false
   include: false
   displayFilter: false
-  dynamicIndexing: true
+  searchIndexing: true
   systemMetadata: false
   planningSystem: false
 defaultUI: UI to trigger transcodings, see progress and the end result.
