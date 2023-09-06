@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Correctly position apply and discard buttons in conflict UI](https://github.com/livingdocsIO/livingdocs-editor/pull/7425)
 * [Show selected filter value](https://github.com/livingdocsIO/livingdocs-editor/pull/7396)
 * [Cross Project Content Sharing - ImageServices](https://github.com/livingdocsIO/livingdocs-editor/pull/7417)
 * [Cross Project Content Sharing - ImageServices](https://github.com/livingdocsIO/livingdocs-server/pull/6100)
