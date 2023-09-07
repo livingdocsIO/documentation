@@ -457,6 +457,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.80](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.80): fix(translations): Task labels on history side panel and home screen
 - [v94.10.79](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.79): fix(deps): update dependency @livingdocs/framework from 24.13.8 to v24.13.10
 - [v94.10.78](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.78): fix: switch webpack devtool setting to have less errors
 - [v94.10.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.77): fix(security): Update `semver` (CVE-2022-25883), `word-wrap` (CVE-2023-26115) and `tough-cookie` (CVE-2023-26136) to patch security vulnerabilities
