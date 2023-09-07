@@ -23,8 +23,12 @@ curl -k -X GET "https://edit.livingdocs.io/proxy/api/api/v1/projectConfig" \
 
 --endpoint--
 ```
-GET api/v1/projectConfig
-GET api/v1/channelConfig ({{< deprecated-in "release-2023-03" >}})
+GET /api/v1/projectConfig
+```
+
+{{< deprecated-in "release-2023-03" >}}
+```
+GET api/v1/channelConfig
 ```
 
 --parameters--
