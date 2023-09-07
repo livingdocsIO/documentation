@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix `GET /notifications/subscriptions/:documentId` status code](https://github.com/livingdocsIO/livingdocs-server/pull/6113)
 * [fix(numberdot): Small](https://github.com/livingdocsIO/livingdocs-editor/pull/7438)
 * [Conflict UI fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/7428)
 * [fix(deps): update dependency aws-sdk from 2.1450.0 to v2.1452.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6103)
