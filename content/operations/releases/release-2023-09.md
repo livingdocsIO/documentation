@@ -372,6 +372,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.22): fix(dashboard): Clone media library dashboard configs to prevent mutations against original config objects
 - [v100.8.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.21): fix(numberdots): Rendering
 - [v100.8.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.20): fix(editor): Allow scrolling in conflict preview
 - [v100.8.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.19): fix(team filter): Element order
