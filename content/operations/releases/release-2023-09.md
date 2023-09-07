@@ -372,6 +372,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.20): fix(editor): Allow scrolling in conflict preview
 - [v100.8.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.19): fix(team filter): Element order
 - [v100.8.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.18): fix(translations): Task labels on history side panel and home screen
 - [v100.8.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.17): fix(editor): Correctly position apply and discard buttons in conflict UI
