@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix duplicated filters in media library dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/7444)
 * [Fix `GET /notifications/subscriptions/:documentId` status code](https://github.com/livingdocsIO/livingdocs-server/pull/6113)
 * [fix(numberdot): Small](https://github.com/livingdocsIO/livingdocs-editor/pull/7438)
 * [Conflict UI fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/7428)
