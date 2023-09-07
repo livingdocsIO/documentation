@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Conflict UI fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/7428)
 * [fix(deps): update dependency aws-sdk from 2.1450.0 to v2.1452.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6103)
 * [fix(team filter): Element order](https://github.com/livingdocsIO/livingdocs-editor/pull/7434)
 * [History side panel fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/7429)
