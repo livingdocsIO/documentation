@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(team filter): Element order](https://github.com/livingdocsIO/livingdocs-editor/pull/7434)
 * [History side panel fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/7429)
 * [fix(deps): update dependency nodemailer from 6.9.4 to v6.9.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6108)
 * [Correctly position apply and discard buttons in conflict UI](https://github.com/livingdocsIO/livingdocs-editor/pull/7425)
