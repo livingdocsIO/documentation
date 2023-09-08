@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Don't try to lock components which do not exist](https://github.com/livingdocsIO/livingdocs-editor/pull/7440)
 * [Prevent console error when computing CSS classes in history side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/7450)
 * [Handle less data being returned on initial panel open](https://github.com/livingdocsIO/livingdocs-editor/pull/7437)
 * [Don't send document content with history list](https://github.com/livingdocsIO/livingdocs-server/pull/6110)
