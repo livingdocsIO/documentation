@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Don't send document content with history list](https://github.com/livingdocsIO/livingdocs-server/pull/6110)
 * [fix(deps): update dependency @google-cloud/storage from 7.0.1 to v7.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6111)
 * [Fix duplicated filters in media library dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/7444)
 * [Fix `GET /notifications/subscriptions/:documentId` status code](https://github.com/livingdocsIO/livingdocs-server/pull/6113)
