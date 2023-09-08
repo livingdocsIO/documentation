@@ -167,7 +167,7 @@ references: [{
 
 This change only affects newly updated documents. Existing documents will keep the old structure.
 To optionally update existing documents, run the following command:
-`node @livingdocs/server/db/manual-migrations/006-generate-references.js`
+`node node_modules/@livingdocs/server/db/manual-migrations/006-generate-references.js`
 
 The manual migration can be executed any time after the deployment.
 
@@ -289,7 +289,7 @@ To enable anchor linking for a project, at least one component with a doc-editab
 
 In the July 2023 release, we introduced in the possibility for users to create configurable filters. With this release, we have added filter support for more core metadata plugins.
 
-We have added the possibility to configure display filters for the following metadata plugins:
+We have added the possibility to configure [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter#metadata-filters" >}}) for the following metadata plugins:
 - `li-document-reference` with `style: minimal`
 - `li-document-references` with `style: minimal`
 - `li-enum`
@@ -307,15 +307,11 @@ For these filters to take effect you must index the metadata properties in Elast
 npx livingdocs-server elasticsearch-index --handle=li-documents -y
 ```
 
-For more information see [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter#metadata-filters" >}})
-
 ### Language Switcher and Additional Support for French and Italian
 
 Livingdocs UI has been translated to more UI languages. We now support French and Italian on top of English and German. A new language switcher has been added to the user profile for a personalized experience. By default, the language defined in the Editor configuration `app.locale` is used.
 
-Administrators can define which languages are available in the language dropdown by configuring `app.availableLocales` in the Editor configuration. Supported languages are `en`, `de`, `fr` and `it`. The language switch stays hidden if `app.availableLocales` is `undefined` or `[]`.
-
-For more details see the [Multi-Language UI guide]({{< ref "/guides/editor/multi-language-ui" >}}).
+Administrators can define which languages are available in the language dropdown by configuring `app.availableLocales` in the Editor configuration. [Multi-Language UI]({{< ref "/guides/editor/multi-language-ui" >}}) supported languages are `en`, `de`, `fr` and `it`. The language switch stays hidden if `app.availableLocales` is `undefined` or `[]`.
 
 ```js
 app: {
@@ -324,16 +320,79 @@ app: {
 }
 ```
 
-### Publish Control UX improvements
-
-We have improved Publish Control UI to make it easier to use. No configuration changes are required from developers perspective to take advange of the improvements. The main improvements are:
-- The visual feedback for Metadata errors blocking a publish is improved
-- Unpublish Buttons use red text color now to be more clear about the potentially damaging effects
-- The confirm step presented when a publish is scheduled and the user clicks "Publish Now" has more visual clarity now
-
 ### Cross Project Content Sharing
 
+Cross Project Content Sharing enables users to link documents of another project.
+The external project can either be on the same or a different livingdocs cluster.
 
+There are some limitations to this feature:
+* In case documents of another Livingdocs instance should get embedded, the same Elasticsearch instance must be configured on the remote Livingdocs Server.
+* The content type of the external document that should get embeded must be of a content type present in the destination project configuration.
+* It only works for table dashboards that are shown in the metadata property context. Therefore you'll need to configure `useDashboard` on either `li-document-reference`, `li-document-references` or `li-tree` metadata plugins.
+
+To enable this feature you can configure your current server cluster with `clusterId` in the server configuration and the `externalSystems: []` in the project configuration, see code snippets below. You can generate `livingdocsServerToken` in the Livingdocs Server Project Admin page in the Editor under [Api Clients]({{< ref "/reference/public-api/get-started#authorization" >}}) you can create a new token with `Enable cross-project content sharing` checked.
+
+Server configuration:
+```js
+{
+  clusterId: 'my-cluster-id', // must be unique per database / livingdocs cluster
+}
+```
+
+Keep attention, if you change this config on an already-existing server, you will need to reindex document on Elasticsearch as document ids get prefixed using the cluster id.
+```sh
+npx livingdocs-server elasticsearch-index --handle=li-documents --recreate -y
+npx livingdocs-server elasticsearch-index --handle=li-publications --recreate -y
+```
+
+Include `externalSystems` in the project configuration that fetches documents from other projects:
+```js
+externalSystems: [
+  {
+    handle: 'myExternalSystem',
+    label: 'My System',
+    url: {
+      origin: 'https://example.com',
+      pathPattern: '/{{metadata.myExternalSystemId}}'
+    }
+  },
+  {
+    type: 'livingdocs',
+    handle: 'externalProject',
+    label: 'External Project',
+    livingdocsServerUrl: 'http://example.com:9090',
+    livingdocsServerToken: {
+      $secretRef: {name: 'crossProjectTokenOnRemoteProject'}
+    }
+  }
+],
+```
+
+Then create a dashboard that includes the `crossProjectContentSearch` filter.
+Use that dashboard on one of the metadata properties that should support embedding external documents.
+```js
+displayFilters: [
+  {filterName: 'crossProjectContentSearch', config: {filterLabel: 'Content Hubs'}}
+]
+```
+
+The dashboard must be referenced in a metadata property configuration.
+```js
+{
+  handle: 'relatedDocuments',
+  type: 'li-document-references',
+  config: {documentType: 'article'},
+  ui: {
+    label: {en: 'Related articles', de: 'Verwandte Artikel'},
+    config: {
+      // reference the dashboard here
+      useDashboard: 'articlesWithExternalDocuments',
+      sortable: true,
+      style: 'default'
+    }
+  }
+}
+```
 
 ## Vulnerability Patches
 
