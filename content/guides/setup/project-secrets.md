@@ -13,7 +13,7 @@ This step requires having done the encryption keys setup, see [Initial Server Se
 To create the secret and update it to the Livingdocs Server's database use:
 ```bash
 $ livingdocs-server secret-add --project=handle --name=secretname --value=secretvalue -y
-# We recommned using a standarized `secretName` to make management easier during operations, e.g. `secret-YYYY-MM`
+# We recommend using a standarized `secretName` to make management easier during operations, e.g. `secret-YYYY-MM`
 ```
 
 Reference those secrets using `{"$secretRef": {"name": "secretname"}}` in the project config. The code will handle that explicitly.

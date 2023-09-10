@@ -43,7 +43,7 @@ module.exports = {
 'use strict'
 module.exports = {
   // the server runs on port 9092
-  server: {
+  httpServer: {
     port: 9092
   },
 
