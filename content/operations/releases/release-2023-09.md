@@ -420,6 +420,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v237.2.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.11): fix(routing): Remove slug limitation of 30 characters
 - [v237.2.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.10): test(cross-project): Add a test for the /projects/cross-project-config endpoint
 - [v237.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.9): fix(references): Update after running hooks
 - [v237.2.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.8): fix(includes): Handle errors in custom getDocumentIds functions
