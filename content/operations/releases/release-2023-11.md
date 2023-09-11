@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Unsubscribe pusher topics](https://github.com/livingdocsIO/livingdocs-editor/pull/7456)
 * [fix(deps): update dependency ua-parser-js from 1.0.35 to v1.0.36 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6120)
 * [chore(deps): update dependency eslint from 8.48.0 to v8.49.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6117)
 * [chore(deps): update dependency eslint from 8.48.0 to v8.49.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7454)
