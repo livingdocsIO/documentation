@@ -427,6 +427,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.25): chore: Use animationFrame.digest instead of setTimeout
 - [v100.8.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.24): refactor(ticker): remove event handler again in li-ticker-entry
 - [v100.8.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.23): fix(ticker): Sidepanel and pagination
 - [v100.8.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.22): fix(dashboard): Clone media library dashboard configs to prevent mutations against original config objects
