@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add `li-push-messages-toolbar-action` in editor toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/7418)
 * [fix(deps): update dependency assert from 2.0.0 to v2.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7447)
 * [fix(deps): update dependency aws-sdk from 2.1453.0 to v2.1454.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6118)
 * [Unsubscribe pusher topics](https://github.com/livingdocsIO/livingdocs-editor/pull/7456)
