@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Destroy AngularJS wrapped Vue components when they are detatched from the DOM](https://github.com/livingdocsIO/livingdocs-editor/pull/7452)
 * [fix(deps): update dependency aws-sdk from 2.1454.0 to v2.1455.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6126)
 * [fix(deps): update dependency fastify from 4.22.2 to v4.23.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7463)
 * [Add `li-push-messages-toolbar-action` in editor toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/7418)
