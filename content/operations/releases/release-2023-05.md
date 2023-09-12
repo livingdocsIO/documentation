@@ -424,6 +424,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v226.3.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.43): fix(routing): Remove slug limitation of 30 characters
 - [v226.3.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.42): fix(documents): Truncate title on creation
 - [v226.3.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.41): fix(dashboard source): doesn't query by ID
 - [v226.3.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.40): fix(importer): trim title
