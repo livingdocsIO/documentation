@@ -473,6 +473,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.59): fix(angular-vue-wrapper): Destroy components when detatched from the DOM
 - [v95.0.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.58): fix(dashboard): Clone media library dashboard configs to prevent mutations against original config objects
 - [v95.0.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.57): fix(translations): Task labels on history side panel and home screen
 - [v95.0.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.56): fix(filter-bar): show selected filter value
