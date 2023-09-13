@@ -443,6 +443,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v231.0.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.30): fix(imageservice): bump framework to include original dimensions
 - [v231.0.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.29): fix(routing): Remove slug limitation of 30 characters
 - [v231.0.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.28): fix(documents): Truncate title on creation
 - [v231.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.27): fix(db): Use special json stringify function where we've stringified objects manually
