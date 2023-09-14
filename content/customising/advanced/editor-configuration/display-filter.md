@@ -68,6 +68,8 @@ For these filters to take effect you must index the metadata properties in Elast
 npx livingdocs-server elasticsearch-index --handle=li-documents -y
 ```
 
+If you configure a dashboard which displays multiple content types, and you want to be able to filter the results by a metadata property, then to achieve the most predictable search experience the metadata property should exist for all of the content types, and be configured with the same handle and configs. If you apply a filter which only exists on one content type, then all documents of the other content types will not be displayed in the results. An alternative approach would be to use separate dashboards, grouped by content types that are similar enough, so that the filterable metadata properties are the same for all of them.
+
 ### Supported Types
 
 - [`li-integer`]({{< ref "/reference/document/metadata/plugins/li-integer">}})
