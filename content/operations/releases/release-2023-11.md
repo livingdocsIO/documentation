@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6128)
 * [fix(li tasks): Deadline](https://github.com/livingdocsIO/livingdocs-editor/pull/7455)
 * [Push Messages: Make all content reachable through scrolling](https://github.com/livingdocsIO/livingdocs-editor/pull/7469)
 * [fix(deps): update dependency fastify from 4.23.0 to v4.23.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6133)
