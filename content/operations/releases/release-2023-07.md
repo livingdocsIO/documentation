@@ -474,6 +474,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.62): fix(li-push-messages): make all reachable through scrolling
 - [v95.0.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.61): fix(imageservice): bump framework to include original dimensions
 - [v95.0.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.60): fix(comments): Allow avatar size to be string or number for mentions
 - [v95.0.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.59): fix(angular-vue-wrapper): Destroy components when detatched from the DOM
