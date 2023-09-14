@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Push Messages: Make all content reachable through scrolling](https://github.com/livingdocsIO/livingdocs-editor/pull/7469)
 * [fix(deps): update dependency fastify from 4.23.0 to v4.23.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6133)
 * [fix(deps): update dependency fastify from 4.23.0 to v4.23.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7467)
 * [fix(deps): update dependency uuid from 9.0.0 to v9.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6129)
