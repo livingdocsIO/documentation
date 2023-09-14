@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fastify from 4.23.1 to v4.23.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7480)
 * [fix(deps): update dependency fastify from 4.23.1 to v4.23.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6138)
 * [Notification, media library and image cropping fix](https://github.com/livingdocsIO/livingdocs-server/pull/6134)
 * [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6128)
