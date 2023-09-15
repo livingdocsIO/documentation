@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @azure/storage-blob from 12.15.0 to v12.16.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6139)
 * [Add tests for link tool and li-tree](https://github.com/livingdocsIO/livingdocs-editor/pull/7468)
 * [fix(deps): update dependency sass from 1.66.1 to v1.67.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7481)
 * [fix(deps): update dependency cypress from 13.0.0 to v13.2.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7482)
