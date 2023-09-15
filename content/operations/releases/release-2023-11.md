@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sass from 1.66.1 to v1.67.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7481)
 * [fix(deps): update dependency cypress from 13.0.0 to v13.2.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7482)
 * [fix(deps): update dependency fastify from 4.23.1 to v4.23.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7480)
 * [fix(deps): update dependency fastify from 4.23.1 to v4.23.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6138)
