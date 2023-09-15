@@ -321,6 +321,8 @@ app: {
 Cross Project Content Sharing enables users to link documents of another project.
 The external project can either be on the same or a different livingdocs cluster.
 
+Please also see the [Cross Project Content Sharing Guide]({{< ref "/guides/integrations/cross-project-content-sharing">}}) where the setup steps are described in detail.
+
 There are some limitations to this feature:
 * In case documents of another Livingdocs instance should get embedded, the same Elasticsearch instance must be configured on the remote Livingdocs Server.
 * The content type of the external document that should get embeded must be of a content type present in the destination project configuration.
