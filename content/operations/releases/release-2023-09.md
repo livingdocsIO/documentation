@@ -429,6 +429,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.30): style(li-document-references): Use LiResourceDocument error states instead of inline ones
 - [v100.8.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.29): fix(tasks): Reset all state when removing a task
 - [v100.8.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.28): fix(li-push-messages): make all reachable through scrolling
 - [v100.8.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.27): fix(angular-vue-wrapper): Destroy components when detatched from the DOM
