@@ -12,10 +12,10 @@ An example:
 ```js
 externalSystems: [
   {
-    handle: 'cms',
-    isPrimary: true, // default: false
+    handle: 'legacy-cms',
+    label: 'Legacy CMS'
     url: {
-      origin: 'https://cms.de',
+      origin: 'https://legacy-cms.example.com',
       pathPattern: '/{{id}}/{{metadata.cmsId}}'
     }
   }
@@ -25,5 +25,3 @@ externalSystems: [
 An External System defines an URL with `origin` and a `pathPattern`. The `pathPattern` can have placeholders which will be replaced with real values during runtime to build the final URL to the source system.
 - `{{id}}`              -> replaced by Livingdocs `documentId`
 - `{{metadata.cmsId}}`  -> replaced by a metadata field with the handle `cmsId`
-
-If `isPrimary: true` is set for an External System this system will be preferred when only one link in the Editor can be displayed.

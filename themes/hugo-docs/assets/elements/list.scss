@@ -20,19 +20,13 @@ $list-number-gap: 1.5 * $space-s;
       margin-bottom: $space-m;
       list-style: none;
 
-      @for $i from 1 through 100 {
-        &[start='#{$i}'] {
-          counter-reset: listCounter $i - 1;
-        }
-      }
-
-      li {
-        counter-increment: listCounter;
+      > li {
+        counter-increment: listCounter1;
         position: relative;
         margin-bottom: $space-m;
 
         &::before {
-          content: counter(listCounter);
+          content: counter(listCounter1);
           display: inline-flex;
           justify-content: center;
           align-items: center;
@@ -47,6 +41,16 @@ $list-number-gap: 1.5 * $space-s;
           border-radius: 100%;
           color: $color-white;
           font-size: $list-number-font-factor * 1em;
+        }
+
+        ol {
+          > li {
+            counter-increment: listCounter2;
+
+            &::before {
+              content: counter(listCounter2);
+            }
+          }
         }
       }
     }
