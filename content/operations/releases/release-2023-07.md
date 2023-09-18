@@ -475,6 +475,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.65): fix(pills): print layout has translate hack
 - [v95.0.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.64): fix(iframe directive): Icon check
 - [v95.0.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.63): fix(tasks): Reset all state when removing a task
 - [v95.0.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.62): fix(li-push-messages): make all reachable through scrolling
