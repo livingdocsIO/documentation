@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Print Layout options have translate hack](https://github.com/livingdocsIO/livingdocs-editor/pull/7491)
 * [fix(iframe directive): Twitter logo](https://github.com/livingdocsIO/livingdocs-editor/pull/7487)
 * [fix(deps): update babel from 7.22.19 to v7.22.20 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/7486)
 * [Improve li-document-reference and references minimal style error handling](https://github.com/livingdocsIO/livingdocs-editor/pull/7484)
