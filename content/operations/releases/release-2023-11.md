@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 26.1.4 to v27 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6142)
 * [fix(deps): update dependency sharp from 0.32.5 to v0.32.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6141)
 * [Axios 401 error handling](https://github.com/livingdocsIO/livingdocs-editor/pull/7490)
 * [Allow li-document-reference include param with minimal style](https://github.com/livingdocsIO/livingdocs-server/pull/6132)
