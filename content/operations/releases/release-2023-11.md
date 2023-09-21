@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix reactivity issues for focal point previews](https://github.com/livingdocsIO/livingdocs-editor/pull/7495)
 * [fix(deps): update dependency ws from 8.14.1 to v8.14.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6145)
 * [fix(deps): update dependency @livingdocs/framework from 26.1.4 to v27 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6142)
 * [fix(deps): update dependency sharp from 0.32.5 to v0.32.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6141)
