@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Email config: prevent access of undefined](https://github.com/livingdocsIO/livingdocs-server/pull/6147)
 * [Fix/twitter and x](https://github.com/livingdocsIO/livingdocs-server/pull/6143)
 * [Destroy li-angular-component components when detached from the DOM](https://github.com/livingdocsIO/livingdocs-editor/pull/7464)
 * [Fix reactivity issues for focal point previews](https://github.com/livingdocsIO/livingdocs-editor/pull/7495)
