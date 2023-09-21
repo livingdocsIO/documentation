@@ -432,6 +432,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.35): fix(focalPoint): fix reactivity issues for preview crops
 - [v100.8.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.34): fix(axios): Log out the editor upon 401 errors in axios
 - [v100.8.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.33): fix(pills): print layout has translate hack
 - [v100.8.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.32): fix(iframe directive): Icon check
