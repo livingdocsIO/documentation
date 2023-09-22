@@ -389,6 +389,7 @@ Here is a list of all patches after the release has been announced.
 - [v213.6.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.3): fix(redis): Fix redis support in the repl
 
 ### Livingdocs Editor Patches
+- [v90.33.101](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.101): code(comments): always use the context from editable data
 - [v90.33.100](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.100): fix: switch webpack devtool setting to have less errors
 - [v90.33.99](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.99): fix(security): Update `semver` (CVE-2022-25883), `word-wrap` (CVE-2023-26115) and `tough-cookie` (CVE-2023-26136) to patch security vulnerabilities
 - [v90.33.98](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v90.33.98): fix(lists): Include scheduled when calculating sort order
