@@ -458,6 +458,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.83](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.83): code(comments): always use the context from editable data
 - [v94.10.82](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.82): fix(references): typo
 - [v94.10.81](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.81): fix(pills): print layout has translate hack
 - [v94.10.80](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.80): fix(translations): Task labels on history side panel and home screen
