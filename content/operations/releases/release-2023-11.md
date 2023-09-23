@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Update `aws-sdk` version from v2 to v3](https://github.com/livingdocsIO/livingdocs-server/pull/6114)
 * [Targeted comment highlighting updates](https://github.com/livingdocsIO/livingdocs-editor/pull/7504)
 * [Email config: prevent access of undefined](https://github.com/livingdocsIO/livingdocs-server/pull/6147)
 * [Fix/twitter and x](https://github.com/livingdocsIO/livingdocs-server/pull/6143)
