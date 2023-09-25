@@ -8,38 +8,37 @@ menus:
 ---
 
 ## Description
+
 The Livingdocs Editor can be customized by using your own components. Components are referenced by name in configurations. For Livingdocs to pick up your components, you need to register them first.
-Livingdocs provides an API to register custom components written in VueJS. They are always register with a certain type. The supported types are:
+Livingdocs provides an API to register components written in VueJS. Below you find a list of component types:
 
-- [metadataPlugin](#metadataplugin)
-- [includeParamsSidebarForm](#includeparamssidebarform)
-- [dashboardCard](#dashboardcard)
-- [searchFilter](#searchfilter)
-- [liDocumentListCardExtension](#liDocumentListCardExtension)
-- [tableDashboardCell](#tableDashboardCell)
+- [Metadata Plugin](#metadataplugin)
+- [Display Filter](#display-filter)
+- [Table Dashboard Cell](#table-dashboard-cell)
+- [Include Params Sidebar](#include-params-sidebar)
+- [Document List Card Extension](#li-document-list-card-extension)
 
-Depending on the `type`, you will get different `props` defined on your component. Please see below for details.
-
-To register a custom component to be used in the result list of a custom dashboard, you would call the API like this:
-
-```js
-const liEditor = require('@livingdocs/editor')()
-liEditor.vueComponentRegistry.registerComponent({
-  // type needs to be a valid type
-  type: 'type',
-  name: 'myComponent',
-  component: require('path/to/your/vue/component.vue').default
-})
-```
-
-As you can see, [Vue Single File Components](https://vuejs.org/v2/guide/single-file-components.html) are supported.
+Depending on the `type`, you will get different `props` defined on your component. [Vue Single File Components](https://vuejs.org/v2/guide/single-file-components.html) are supported. Please see below for details.
 
 
 ## Types
 
-### metadataPlugin
+### Metadata Plugin
 
-A `metadataPlugin` is used to render a metadata plugin UI in the Metadata Form.
+A `metadataPlugin` is used to render a metadata field in the Metadata View.
+
+**Registration**
+```js
+// registration in app/editor.js
+const liEditor = require('@livingdocs/editor')()
+liEditor.vueComponentRegistry.registerComponent({
+  type: 'metadataPlugin',
+  name: 'liSlugMetadata',
+  component: require('./components/metadata/li-slug-metadata.vue').default
+})
+```
+
+**Vue Props API**
 
 These are the `props` which are provided to your vue component:
 ```js
@@ -91,8 +90,22 @@ props: {
 }
 ```
 
-### searchFilter
-A `searchFilter` registers a Vue component as filter for the search UI.
+
+### Display Filter
+
+A `searchFilter` registers a Vue component as Display Filter for the search UI.
+
+**Registration**
+```js
+// registration in app/editor.js
+coreApi.vueComponentRegistry.registerComponent({
+    type: 'searchFilter',
+    name: 'liDateTimeRangeDisplayFilter',
+    component: require('./components/display-filter/li-date-time-range-display-filter.vue').default
+  })
+```
+
+**Vue Props API**
 
 These are the `props` which are provided to your vue component:
 ```js
@@ -106,101 +119,21 @@ props: {
 
 A full example can be seen [here]({{< ref "/guides/editor/custom-dashboard-filters#register-custom-vue-component-filter" >}})
 
-
-
-### includeParamsSidebarForm
-
-A `includeParamsSidebarForm` is used to render a form to manipulate `params` for `doc-include`s. [This Guide]({{< ref "/guides/documents/includes/twitter-embed" >}}) shows you how to use such a component.
-
-This component needs to take exactly one prop named `params`. It will contain an object with the params for the `doc-include`.
-```js
-props: {
-  params: {
-    type: Object,
-    required: true
-  }
-}
-```
-
-The component needs to emit a CustomEvent to tell Livingdocs when the params have changed. You can do this in a change event handler for example:
-```js
-const event = new CustomEvent('update:params', {
-  detail: this.paramsDraft,
-  bubbles: true
-})
-this.$el.dispatchEvent(event)
-```
-
-
-### dashboardCard
-
-A `dashboardCard` is used to render a single search result in a dashboard.
-
-These are the `props` which are provided to your Vue component:
-```js
-props: {
-  result: {
-    type: Object,
-    required: true
-  },
-  options: {
-    type: Object,
-    required: true
-  },
-  contextMenuActions: {
-    type: Array,
-    required: true
-  },
-  cardActions: {
-    type: Object,
-    required: true
-  }
-}
-```
-
-### searchFilter
-A `searchFilter` registers a Vue component as filter for the search UI.
-
-These are the `props` which are provided to your Vue component:
-```js
-props: {
-  filter: {
-    type: Object,
-    default: () => {}
-  }
-},
-```
-
-A full example can be seen [here]({{< ref "/guides/editor/custom-dashboard-filters#register-custom-vue-component-filter" >}})
-
-
-### liDocumentListCardExtension
-A `liDocumentListCardExtension` registers a Vue component that can be configured to be displayed on `liDocumentListCard` dashboard cards.
-[here]({{< ref "/guides/editor/custom-dashboard-filters#register-custom-vue-component-filter" >}})
-
-These are the `props` which are provided to your Vue component:
-```js
-props: {
-  options: {
-    type: Object
-  }
-},
-```
-The `options` object looks like this:
-```js
-{
-  column: '', // either empty (when in search column) or 'inbox', 'published', 'inline-list-edit`
-  listId: 1,
-  documentId: 2
-}
-```
-
-Valid `inject`:
-- `authedHttp`
-
-### tableDashboardCell
+### Table Dashboard Cell
 
 A `tableDashboardCell` registers a Vue component that can be configured to be displayed in a `tableDashboard` column.
+
+**Registration**
+```js
+// registration in app/editor.js
+coreApi.vueComponentRegistry.registerComponent({
+  type: 'tableDashboardCell',
+  name: 'liPublishTimeTableDashboardCell',
+  component: require('./components/table-dashboard-cell/li-publish-time-table-dashboard-cell.vue').default
+})
+```
+
+**Vue Props API**
 
 These are the `props` which are provided to your Vue component:
 ```js
@@ -219,3 +152,66 @@ props: {
 ```
 
 A guide to creating simple custom cells can be found [here]({{< ref "/guides/editor/custom-table-dashboard-cells.md" >}})
+
+
+### Include Params Sidebar
+
+A `includeParamsSidebarForm` is used to render a form to manipulate `params` for `doc-include`s. [This Guide]({{< ref "/guides/documents/includes/twitter-embed" >}}) shows you how to use such a component.
+
+**Registration**
+```js
+// registration in app/editor.js
+liEditor.vueComponentRegistry.registerComponent({
+  type: 'includeParamsSidebarForm',
+  name: 'liTwitterIncludeParams',
+  component: require('./components/include-params/li-twitter-include-params.vue').default
+})
+```
+
+**Vue Props API**
+
+This component needs to take exactly one prop named `params`. It will contain an object with the params for the `doc-include`.
+```js
+props: {
+  params: {
+    type: Object,
+    required: true
+  }
+}
+```
+
+**Notification API**
+
+The component needs to emit a CustomEvent to tell Livingdocs when the params have changed. You can do this in a change event handler for example:
+```js
+const event = new CustomEvent('update:params', {
+  detail: this.paramsDraft,
+  bubbles: true
+})
+this.$el.dispatchEvent(event)
+```
+
+
+### Document List Card Extension
+
+A `liDocumentListCardExtension` registers a Vue component that can be configured to be displayed on `liDocumentListCard` dashboard cards.
+
+**Vue Props API**
+
+These are the `props` which are provided to your Vue component:
+```js
+inject: ['authedHttp'], // authed axios client e.g. to call custom livingdocs server endpoints
+props: {
+  options: {
+    type: Object
+  }
+},
+```
+The `options` object looks like this:
+```js
+{
+  column: '', // either empty (when in search column) or 'inbox', 'published', 'inline-list-edit`
+  listId: 1,
+  documentId: 2
+}
+```
