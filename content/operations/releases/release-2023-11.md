@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add missing jsdoc for documentVersionFetcher](https://github.com/livingdocsIO/livingdocs-server/pull/5894)
 * [fix(deps): update dependency @livingdocs/secure-password from 5.0.1 to v5.0.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6152)
 * [fix(deps): update dependency pdfjs-dist from 3.10.111 to v3.11.174 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7519)
 * [fix(deps): update dependency @livingdocs/framework from 26.1.4 to v27 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7501)
