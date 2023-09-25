@@ -64,7 +64,7 @@ To learn about the necessary actions to update Livingdocs to `release-2023-09`, 
 
 ## Breaking Changes 🔥
 
-### Migrate the Postgres Database 🔥 
+### Migrate the Postgres Database 🔥
 
 It's a simple/fast migration with no expected data losses.
 
@@ -79,7 +79,7 @@ Custom AngularJS metadata plugins are no longer supported. You should migrate to
 
 This includes Angular Metadata UI components, Metadata Services, mixing custom UI with Livingdocs core metadata types and custom types with Livingdocs UI components.
 
-* [Editor PR: Remove Angular Metadata Support](https://github.com/livingdocsIO/livingdocs-editor/pull/7043) 
+* [Editor PR: Remove Angular Metadata Support](https://github.com/livingdocsIO/livingdocs-editor/pull/7043)
 
 ### Drop support for Legacy Dashboards 🔥
 
@@ -223,10 +223,10 @@ The `storageFormat.label` property within the `li-language` metadata plugin is d
 
 ### Ticker Tool
 
-Livingdocs now offers a tool to create ticker articles with ease. This feature uses a contentType as Ticker Host document, and another contentType as the Ticker Entry. The Ticker Host is used to create a new ticker article, and the Ticker Entry is used to create new entries in the ticker. 
+Livingdocs now offers a tool to create ticker articles with ease. This feature uses a contentType as Ticker Host document, and another contentType as the Ticker Entry. The Ticker Host is used to create a new ticker article, and the Ticker Entry is used to create new entries in the ticker.
 
 An example Ticker Host contentType configuration:
-```
+```js
 handle: 'tickerHost',
 documentType: 'article',
 info: {
@@ -242,7 +242,7 @@ ticker: {
 // like metadata, components, publishControl etc.
 ```
 An example Ticker Entry contentType configuration:
-```
+```js
 handle: 'tickerEntry',
 
 metadata: [
@@ -266,7 +266,7 @@ When selecting a document in the inline link edit tool or in `li-tree`, it is no
 
 To enable anchor linking for a project, at least one component with a doc-editable and `anchor: true` must be defined within the project config. For example:
 
-```
+```js
   name: 'title',
   label: 'Title',
   directives: [{
