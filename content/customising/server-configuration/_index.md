@@ -37,7 +37,6 @@ menus:
   "mediaLibrary": "{{< a href="#media-library-dam" title="<media library config>">}}",
   "documentLists": "{{< a href="#document-lists" title="<document list feature config>">}}",
 
-  "projects": "{{< a href="#projects" title="<projects config>">}}",
   "projectConfigs": "{{< a href="#project-configs" title="<project-config config>">}}"
   "categories": "{{< a href="#categories" title="<categories config>">}}",
 
@@ -623,23 +622,9 @@ The `paginationConfig` allows you to set how many documents you can see on the l
 Defaults to max. 1000 documents.
 
 
+#### Project Configs
 
-#### Projects
-
-
-```js
-projects: {
-
-  // Example static project configurations (still named channelConfigurations here)
-  channelConfigurations: [
-    require('./path/to/static-channel-config')
-  ]
-}
-```
-
-The channel and contentType config is described in detail here: [channel config]({{< ref "/reference/project-config" >}})
-
-#### Project configs
+Get more information about the `Project Config` [here]({{< ref "/reference/project-config" >}})
 
 The `secretEncryptionKeys` config is required if you want to use secrets in the project config, e.g. the secret key for imatrics.
 Since we never exchange the project config secrets between parties, synchronous encryption methods are good enough.
