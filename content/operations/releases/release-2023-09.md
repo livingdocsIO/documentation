@@ -432,6 +432,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.39): fix(server-admin): Use teaser style for author selection
 - [v100.8.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.38): fix: update avatar when changing user name
 - [v100.8.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.37): code(comments): always use the context from editable data
 - [v100.8.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.36): chore(realtime): Remove unused listener assignment to `this`
