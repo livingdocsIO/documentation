@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use metadata config from visible content types for metadata display filters](https://github.com/livingdocsIO/livingdocs-editor/pull/7500)
 * [Use teaser style for author selection on server admin user page](https://github.com/livingdocsIO/livingdocs-editor/pull/7525)
 * [Update avatar when changing user name](https://github.com/livingdocsIO/livingdocs-editor/pull/7522)
 * [Add missing jsdoc for documentVersionFetcher](https://github.com/livingdocsIO/livingdocs-server/pull/5894)
