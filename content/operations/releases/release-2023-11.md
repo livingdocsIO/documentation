@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Clean up DocumentVersion class](https://github.com/livingdocsIO/livingdocs-server/pull/6153)
 * [Fix error in link tool](https://github.com/livingdocsIO/livingdocs-editor/pull/7532)
 * [fix(deps): update dependency sass from 1.67.0 to v1.68.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7512)
 * [fix(deps): update dependency cloudinary from 1.40.0 to v1.41.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6158)
