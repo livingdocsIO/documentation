@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cloudinary from 1.40.0 to v1.41.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6158)
 * [fix(deps): update dependency axios from 1.5.0 to v1.5.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6155)
 * [fix(deps): update dependency axios from 1.5.0 to v1.5.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7531)
 * [Allow overflow in properties panel include params schema form so that select field options can be displayed](https://github.com/livingdocsIO/livingdocs-editor/pull/7498)
