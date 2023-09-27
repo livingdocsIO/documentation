@@ -432,6 +432,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.42): fix(li-link-edit): null-safe baseFilter access
 - [v100.8.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.41): fix(schema form): Box model
 - [v100.8.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.40): chore(display-filters): Warn when properties have different configs
 - [v100.8.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.39): fix(server-admin): Use teaser style for author selection
