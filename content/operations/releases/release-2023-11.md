@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 27.0.0 to v27.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6161)
 * [fix(deps): update dependency @livingdocs/framework from 27.0.0 to v27.0.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7537)
 * [Clean up DocumentVersion class](https://github.com/livingdocsIO/livingdocs-server/pull/6153)
 * [Fix error in link tool](https://github.com/livingdocsIO/livingdocs-editor/pull/7532)
