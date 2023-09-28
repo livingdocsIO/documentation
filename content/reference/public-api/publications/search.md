@@ -465,7 +465,7 @@ Valid sort fields are:
 - `visiblePublicationDate`
 - `metadata.*`
 
-The dafault sort order is `sortDate` descending (see [Sort Date]({{< ref "/guides/search/publication-index#sort-date" >}})), with `documentId` descending used as a fallback when multiple results have exactly the same `sortDate`.
+The default sort order is `sortDate` descending (see [Sort Date]({{< ref "/guides/search/publication-index#sort-date" >}})), with `documentId` descending used as a fallback when multiple results have exactly the same `sortDate`.
 
 `relevance` will only have an affect if you provide a search term.
 
