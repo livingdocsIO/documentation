@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency chai from 4.3.9 to v4.3.10 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7544)
 * [fix(deps): update dependency @smithy/node-http-handler from 2.1.5 to v2.1.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6164)
 * [fix(metadata): Bundle Separator](https://github.com/livingdocsIO/livingdocs-editor/pull/7541)
 * [Publish Control Error Handling improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/7527)
