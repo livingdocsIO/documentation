@@ -432,6 +432,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.46): fix(video transcoding): Visual
 - [v100.8.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.45): fix(locales): add fallback default locale
 - [v100.8.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.44): fix(metadata): Bundle Separator
 - [v100.8.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.43): chore(tasks): Replace moment with date-fns in task deadline API
