@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use plain objects with vue-select for minimal style li-document-reference(s)](https://github.com/livingdocsIO/livingdocs-editor/pull/7528)
 * [fix(video transcoding): Visual](https://github.com/livingdocsIO/livingdocs-editor/pull/7547)
 * [chore(deps): update dependency chai from 4.3.9 to v4.3.10 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7544)
 * [fix(deps): update dependency @smithy/node-http-handler from 2.1.5 to v2.1.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6164)
