@@ -243,7 +243,7 @@ defaultMetadata: {
 ```
 
 
-## viewAfterDocuments
+## viewAfterDocumentCreation
 
 With `viewAfterDocumentCreation` you can define to which view you are redirected after a document has been created.
 
