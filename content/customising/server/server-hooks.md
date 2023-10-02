@@ -37,7 +37,7 @@ keywords:
 
 With publication hooks you can influence the [`Document Publication Lifecycle`]({{< ref "/customising/advanced/server-events#available-events" >}}). E.g. manipulate the content before a publish happens.
 
-### Process and Hooks Overview
+### Overview
 
 
 | Name                      | Supported in    | Editor Feedback |
@@ -50,10 +50,12 @@ With publication hooks you can influence the [`Document Publication Lifecycle`](
 ### Register a Publication Hook
 
 **Two ways of registering a Publication Hook**
+
 - `registerPublicationHooks`: Register as many hooks as you need, executed in the order they got registered
 - `registerPublicationServerHooks`: Hooks are executed on all projects. These hooks run before project specific ones.
 
 **API of Publication Hooks**
+
 * `preparePublishHookAsync`: `({documentVersion}) {return}`
 * `postPublishHookAsync`: `({documentVersion}) {return}`
 * `preUnpublishHookAsync`: `({documentVersion}) {return}`
@@ -61,6 +63,7 @@ With publication hooks you can influence the [`Document Publication Lifecycle`](
 
 
 **Example**
+
 ```js
 const appConfig = require('./conf')
 const liServer = require('@livingdocs/server')(appConfig)
@@ -93,7 +96,7 @@ liServer.registerInitializedHook(async () => {
 })
 ```
 
-### preparePublishHookAsync()
+### preparePublishHookAsync
 
 The `preparePublishHookAsync` hook allows modifications of the [DocumentVersion]({{< ref "/customising/server/document-version.md" >}}) before a document will be published.
 
@@ -198,7 +201,7 @@ async postUnpublishHookAsync ({documentVersion}) {
 
 ## List Hooks
 
-### registerListHooks()
+### Register a List Hook
 
 There is one hook for the `document-lists` feature. The hook can be registered through `registerListHooks()`.
 
@@ -222,7 +225,7 @@ liServer.registerInitializedHook(async () => {
 })
 ```
 
-### listUpdateHookAsync()
+### listUpdateHookAsync
 
 The payload described here has a custom format where it gives the added and
 removed `documentId`s. An example how to use that hook would be to have Elasticsearch
