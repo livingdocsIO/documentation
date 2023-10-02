@@ -432,6 +432,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.48): fix(tasks): open tasks panel when article is opened from task board
 - [v100.8.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.47): chore(metadata): Standardise li-document-reference(s) templates
 - [v100.8.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.46): fix(video transcoding): Visual
 - [v100.8.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.45): fix(locales): add fallback default locale
