@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix: open tasks panel when article opened from task card click](https://github.com/livingdocsIO/livingdocs-editor/pull/7552)
 * [Fix AWS ClientSES use, missing `credentials` object](https://github.com/livingdocsIO/livingdocs-server/pull/6166)
 * [fix(deps): update dependency pino from 8.15.1 to v8.15.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6167)
 * [Use plain objects with vue-select for minimal style li-document-reference(s)](https://github.com/livingdocsIO/livingdocs-editor/pull/7528)
