@@ -615,7 +615,10 @@ componentOptions: {
   // Clamp title to max 3 rows
   clampTitle: false,
   // Show content type tag
-  showContentType: true
+  showContentType: true,
+  // Only works if no displayTitlePattern is configured on the contentType
+  allowTitleEdit: true
+  
 }
 ```
 
