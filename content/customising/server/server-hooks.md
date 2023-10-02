@@ -196,37 +196,6 @@ async postUnpublishHookAsync ({documentVersion}) {
 ```
 
 
-## Render Hooks
-
-The `beforeRenderHookAsync` is called right before a document gets rendered.
-
-API:
-* `beforeRenderHookAsync`: `({documentType, rendition, renditionNames})`
-
-Example:
-```js
-const appConfig = require('./conf')
-const liServer = require('@livingdocs/server')(appConfig)
-
-liServer.registerInitializedHook(async () => {
-  liServer.features.api('li-render-pipeline').registerRenderHooks({
-    projectHandle: 'your-interesting-project',
-    channelHandle: 'some-channel',
-    async beforeRenderHookAsync ({contentType, rendition, renditionNames}) {
-      if (['interview', 'biography'].includes(contentType)) {
-        liServer.log.info("We're about to render something about somebody!")
-        // do something with the rendition:
-        const livingdoc = rendition.getLivingdoc()
-        const galleryTeasers = livingdoc.componentTree.find('gallery-teaser')
-
-        return extendGalleryTeasers(galleryTeasers, rendition)
-      }
-    }
-  })
-})
-```
-
-
 ## List Hooks
 
 ### registerListHooks()

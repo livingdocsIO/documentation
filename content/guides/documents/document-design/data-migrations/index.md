@@ -9,10 +9,11 @@ weight: 4
 
 ## Overview
 
-The Livingdocs design is in some sense like a database. Instead of database columns you define directives on a component, e.g. an editable title (`doc-editable='title'`). The component's "database" now has a "column" title.
-Just as with a database you need to write data migrations if you make structural changes. This is necessary to adapt all existing documents to the new structure.
+When doing design changes it can be necessary to execute database migrations to update existing content. Common cases are if components are replaced with new components or if components are removed.
 
-The next chapter will describe which kinds of design changes require a `data migration` and which ones can be handled with a `version bump`. The section after shows the structure of a migration script. After that we look into CLI scripts to run migrations and last but not least we'll present some examples of migration scripts.
+Design changes should be planned so no downtime is required. E.g. when a component should be renamed it is best to introduce a new component first and make sure that consuming apps can dealt with both the old and new component. And once the new component is sucessfully introduced a migration can upate the old component to the new one with a data migration.
+
+This page describes which kinds of design changes require a `data migration` and which ones can be handled with a `version bump`. The next section shows the structure of a migration script. After that we look into CLI scripts to run migrations and last but not least we'll present some examples of migration scripts.
 
 ## Version Bump vs Data Migration
 
@@ -61,7 +62,7 @@ Livingdocs provides you a migration hook `migrateAsync` to implement. This hook 
 #### Example
 
 ```js
-// file: app/data-migrations/async-migration.js
+// file: /data-migrations/01-content-migration.js
 
 //  systemdata:
 //    document_id: 1
@@ -70,9 +71,7 @@ Livingdocs provides you a migration hook `migrateAsync` to implement. This hook 
 //    contentType: 'regular'
 module.exports = {
   async migrateAsync ({serializedLivingdoc, metadata, systemdata}) {
-    // do your stuff here
-
-    if (serializedLivingdoc.layout === 'regular') {
+    if (systemdata.content_type === 'regular') {
       // skip the revision from being migrated
       return
     }
@@ -86,10 +85,10 @@ module.exports = {
 }
 ```
 
-#### Data
-* editable - `serializedLivingdoc` - A serialised Livingdoc data model (JSON)
-* editable - `metadata`
-* read only - systemdata (`document_id`/`content_type` only)
+#### Params
+* `systemdata` - A read only object with info about the document. E.g. `document_id` and `content_type`
+* `serializedLivingdoc` - A serialised Livingdoc data model (JSON)
+* `metadata` - The metadata object
 
 
 ## Execute a Migration
