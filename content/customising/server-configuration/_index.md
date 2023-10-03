@@ -38,7 +38,9 @@ menus:
   "documentLists": "{{< a href="#document-lists" title="<document list feature config>">}}",
 
   "projectConfigs": "{{< a href="#project-configs" title="<project-config config>">}}"
-  "categories": "{{< a href="#categories" title="<categories config>">}}",
+
+  // Not recommended anymore
+  // "categories": "{{< a href="#categories" title="<categories config>">}}",
 
   // Configure the elasticsearch behavior
   "search": "{{< a href="#search" title="<search config>">}}",
@@ -677,7 +679,8 @@ kv: {
 
 Note: only use routing in production with redis. Memdown is only for tests or local development.
 
-#### Categories
+<!-- Not recommended anymore -->
+<!-- #### Categories
 
 ```js
 categories: {
@@ -695,7 +698,7 @@ that category in order to update the routing cache. Since this can be expensive 
 the `maxAutoRepublishes` setting limits the number of pages that are republished. We don't recommend going
 above 10 here.
 `hooksEnabled` should always be true. It makes sure that whenever a document is published the category on the
-document is correctly updated.
+document is correctly updated. -->
 
 
 #### Search
