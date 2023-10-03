@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk from 3.420.0 to v3.423.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6160)
 * [Grid, Table and Widths](https://github.com/livingdocsIO/livingdocs-editor/pull/7419)
 * [Command API](https://github.com/livingdocsIO/livingdocs-server/pull/6146)
 * [Fix: open tasks panel when article opened from task card click](https://github.com/livingdocsIO/livingdocs-editor/pull/7552)
