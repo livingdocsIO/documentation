@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Grid, Table and Widths](https://github.com/livingdocsIO/livingdocs-editor/pull/7419)
 * [Command API](https://github.com/livingdocsIO/livingdocs-server/pull/6146)
 * [Fix: open tasks panel when article opened from task card click](https://github.com/livingdocsIO/livingdocs-editor/pull/7552)
 * [Fix AWS ClientSES use, missing `credentials` object](https://github.com/livingdocsIO/livingdocs-server/pull/6166)
