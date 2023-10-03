@@ -39,9 +39,6 @@ menus:
 
   "projectConfigs": "{{< a href="#project-configs" title="<project-config config>">}}"
 
-  // Not recommended anymore
-  // "categories": "{{< a href="#categories" title="<categories config>">}}",
-
   // Configure the elasticsearch behavior
   "search": "{{< a href="#search" title="<search config>">}}",
   "elasticIndex": "{{< a href="#custom-elasticsearch-index" title="<elasticIndex config>">}}",
