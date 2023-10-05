@@ -328,6 +328,7 @@ Pass `content` and `design` on the top level of a document payload instead in a 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v213.6.62](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.62): fix(security): Update `sharp` to version `0.32.6` to patch CVE-2023-4863
 - [v213.6.61](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.61): fix(woodwing): The blob-store createReadStream returns a promise, await it
 - [v213.6.60](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.60): fix(document import): copies metadata on drag
 - [v213.6.59](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v213.6.59): fix(indexing): Also index systemMetadata properties present in the static mapping
