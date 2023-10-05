@@ -7,6 +7,8 @@ menus:
     parent: Public API
 ---
 
+{{< added-in "release-2023-11" block >}}
+
 {{< api-example
 title="Execute Commands on Documents"
 scopes="public-api:write"
@@ -29,14 +31,14 @@ PATCH api/v1/documents/:id/commands
 --parameters--
 |Name|Type|Required|Notes|
 |-|-|-|-|
-|version|string||Current document version. When set on update the version is checked.|
+|version|integer||Current document version. When set on update the version is checked.|
 |preconditions|array||An array of preconditions for command execution. Each entry is an object with at least a **type** property. Possible types: `isPublished`. See further details in example requests.|
 |commands|array|x|An array of commands to execute. Each entry is an object with at least an **operation** property. Possible operations: `setMetadataProperty`, `setEditableDirective` or `publish`. See further details in example requests.|
 
 #### Example Request
 ```js
 {
-  "version": "1", 
+  "version": 1, 
   "preconditions": [
     {
       // Asserts that the document is published or unpublished based on the value property
