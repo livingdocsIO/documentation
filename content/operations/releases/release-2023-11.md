@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Reduce websocket error messages](https://github.com/livingdocsIO/livingdocs-editor/pull/7558)
 * [chore(deps): update dependency pino-pretty from 10.2.2 to v10.2.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6174)
 * [fix(deps): update dependency openid-client from 5.5.0 to v5.6.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6173)
 * [fix(deps): update dependency pino from 8.15.3 to v8.15.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6172)
