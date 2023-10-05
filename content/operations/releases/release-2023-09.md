@@ -422,6 +422,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v237.2.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.14): fix(includes): allow onboarding platform
 - [v237.2.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.13): fix(includes): Allow li-document-reference with minimal style
 - [v237.2.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.12): fix(search): Always filter media library entries by cluster id
 - [v237.2.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.11): fix(routing): Remove slug limitation of 30 characters
