@@ -130,7 +130,7 @@ Custom metadata plugins cannot use `propertyConfig.config.behaveAsLiImage` to ta
 
 * [Server PR: Replace `teaserImage` type with `li-image` due `behaveAsLiImage` removal](https://github.com/livingdocsIO/livingdocs-server/pull/6053)
 
-### Structure changes in references extracted from `li-document-references`
+### Structure changes in references extracted from `li-document-references` 🔥
 
 We have changed the structure of references extracted from metadata properties with the type `li-document-references`.
 Every document member within the stored value of the metadata property is now listed separately as reference.
