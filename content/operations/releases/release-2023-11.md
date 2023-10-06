@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @google-cloud/storage from 7.1.0 to v7.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6185)
 * [Fix li-tree document links without deliveries configured](https://github.com/livingdocsIO/livingdocs-editor/pull/7562)
 * [fix(deps): update dependency pino from 8.15.5 to v8.15.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6184)
 * [fix(deps): update aws-sdk from 3.423.0 to v3.425.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6177)
