@@ -945,6 +945,7 @@ Following attribute types can be added to a customElement:
 - li-reference
 
   {{< deprecated-in "release-2023-09" block >}}
+  {{< removed-in "release-2023-11" block >}}
   Users can link a document. The attribute name is always `data-li-document-ref`. And the references are extracted as with a normal link to a document.
   ```js
   {
