@@ -5,7 +5,7 @@ menus:
   reference:
     parent: Metadata Plugins List
 summary: |
-  {{< deprecated-in "release-2023-09" >}}. Use [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference" >}}) instead.
+  {{< removed-in "release-2023-11" >}}. Use [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference" >}}) instead.
 support:
   document: true
   media: true
@@ -16,6 +16,7 @@ support:
   systemMetadata: false
   planningSystem: false
 deprecatedIn: release-2023-09
+removedIn: release-2023-11
 description: |
   With {{< release "release-2022-03" >}} this is superseeded by [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference" >}}).
 

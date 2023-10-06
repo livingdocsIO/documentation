@@ -53,7 +53,7 @@ publicationIndex: {
     },
     {
       label: 'Authors',
-      type: 'li-reference-list',
+      type: 'li-document-references',
       filterField: 'authors'
     }
   ]
