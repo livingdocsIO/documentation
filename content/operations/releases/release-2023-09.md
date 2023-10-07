@@ -85,32 +85,36 @@ This includes Angular Metadata UI components, Metadata Services, mixing custom U
 
 Support for Legacy Dashboards has been removed in favor of the new Table Dashboards. If you are using a legacy dashboard, you should migrate to the new [Table Dashboard]({{< ref "/reference/project-config/editor-settings#example-table-dashboard" >}}).
 
-* [Editor PR: Remove Legacy Dashboards & `app.filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
+* [Editor PR: Remove Legacy Dashboards & `filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
 
-### Drop support for `app.filters.pageList`, `app.filters.articleList`, `app.filters.inlineArticleList` and `app.filters.dataRecordList` 🔥
+### Drop support for most filters in Editor Config 🔥
 
-Support for `app.filters.pageList`, `app.filters.articleList`, `app.filters.inlineArticleList` and `app.filters.dataRecordList` in Editor configuration has been removed. Please use specific [Table Dashboards]({{< ref "/reference/project-config/editor-settings#example-table-dashboard" >}}) instead.
+Support for 4 Editor Config `filters.*` has been removed. Please use specific [Table Dashboards]({{< ref "/reference/project-config/editor-settings#example-table-dashboard" >}}) instead.
+- `filters.articleList`
+- `filters.dataRecordList`
+- `filters.inlineArticleList`
+- `filters.pageList`
 
-* [Editor PR: Remove Legacy Dashboards & `app.filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
+* [Editor PR: Remove Legacy Dashboards & `filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
 
-### Drop support for `app.filters.documentListList` 🔥
+### Drop support for Editor Config filters.documentListList 🔥
 
-Configuration `app.filters.documentListList` has no effect anymore. Configure the filters for the document-list search dashboard in the project config at `editorSettings.documentLists.dashboard.displayFilters`.
+The Editor Config `filters.documentListList` has no effect anymore. Configure the filters for the document-list search dashboard in the Project Config at `editorSettings.documentLists.dashboard.displayFilters`.
 
-* [Editor PR: Remove Legacy Dashboards & `app.filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
+* [Editor PR: Remove Legacy Dashboards & `filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
 
-### Drop support for `app.documents.useLegacyDashboards` 🔥
+### Drop support for Editor Config documents.useLegacyDashboards 🔥
 
-Configuring `app.documents.useLegacyDashboards` has no effect anymore.
+Editor Config `documents.useLegacyDashboards` has no effect anymore.
 Support for Legacy Dashboards has been dropped. Livingdocs will automatically generate a Table Dashboard with default display filters if no dashboard is explicitly defined.
 
-* [Editor PR: Remove Legacy Dashboards & `app.filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
+* [Editor PR: Remove Legacy Dashboards & `filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
 
-### Drop support for `app.search.articleSearch.listItemComponent` 🔥
+### Drop support for Editor Config search.articleSearch.listItemComponent 🔥
 
-Configuring `app.search.articleSearch.listItemComponent` has no effect anymore. Please use [Table Dashboards]({{< ref "/reference/project-config/editor-settings#example-table-dashboard" >}}) instead.
+Editor Config `search.articleSearch.listItemComponent` has no effect anymore. Please use [Table Dashboards]({{< ref "/reference/project-config/editor-settings#example-table-dashboard" >}}) instead.
 
-* [Editor PR: Remove Legacy Dashboards & `app.filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
+* [Editor PR: Remove Legacy Dashboards & `filters.*` support](https://github.com/livingdocsIO/livingdocs-editor/pull/7283)
 
 ### Drop support for `legacyFilters` in `searchManager.searchPublications()` 🔥
 
