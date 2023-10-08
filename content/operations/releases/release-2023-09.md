@@ -438,6 +438,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.54): fix(planning boards): always use correct dates for weekly interval stepper
 - [v100.8.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.53): fix(metadata): show error inputs with red border
 - [v100.8.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.52): fix(li-tree): disable document preview link if no url buildable
 - [v100.8.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.51): fix: proper handling of tel: and mailto: urls
