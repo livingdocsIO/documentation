@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix: make sure nzz special publish control behavior works again](https://github.com/livingdocsIO/livingdocs-editor/pull/7582)
 * [fix print mode with publish control](https://github.com/livingdocsIO/livingdocs-editor/pull/7580)
 * [fix(deps): update dependency sass from 1.69.0 to v1.69.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7578)
 * [fix(deps): update dependency pino from 8.15.6 to v8.15.7 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6192)
