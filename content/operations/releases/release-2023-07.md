@@ -476,6 +476,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.75): fix: update avatar when changing user name
 - [v95.0.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.74): fix(publish control): make print mode work
 - [v95.0.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.73): fix(tasks): open tasks panel when article is opened from task board
 - [v95.0.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.72): chore(tasks): Use _injector to get coreApi
