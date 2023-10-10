@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sass from 1.69.0 to v1.69.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7578)
 * [fix(deps): update dependency pino from 8.15.6 to v8.15.7 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6192)
 * [Fix: show metadata form error inputs with red border](https://github.com/livingdocsIO/livingdocs-editor/pull/7572)
 * [fix(deps): update dependency exifreader from 4.13.1 to v4.13.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6190)
