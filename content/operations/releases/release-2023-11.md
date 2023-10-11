@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Media library metadata validations (LIFEAT001)](https://github.com/livingdocsIO/livingdocs-editor/pull/7545)
 * [Media library metadata validations (LIFEAT001) ](https://github.com/livingdocsIO/livingdocs-server/pull/6165)
 * [fix(deps): update dependency sass from 1.69.1 to v1.69.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7586)
 * [fix: make sure nzz special publish control behavior works again](https://github.com/livingdocsIO/livingdocs-editor/pull/7582)
