@@ -438,6 +438,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.57): fix(publish control): remove content validation errors when user edits the directive
 - [v100.8.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.56): fix(publish control): make sure nzz special behavior for publish control works again
 - [v100.8.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.55): fix(print mode): make publish control work with print mode again
 - [v100.8.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.54): fix(planning boards): always use correct dates for weekly interval stepper
