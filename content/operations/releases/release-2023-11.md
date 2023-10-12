@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sass from 1.69.2 to v1.69.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7598)
 * [fix(deps): update dependency openid-client from 5.6.0 to v5.6.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6198)
 * [Only re-render a document list when it changes to prevent drag and drop events from failing](https://github.com/livingdocsIO/livingdocs-editor/pull/7592)
 * [Includes: improve reactivity in UI / paramsSchema based form](https://github.com/livingdocsIO/livingdocs-editor/pull/7588)
