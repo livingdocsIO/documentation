@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [coreApi: add registerIframePlugins()](https://github.com/livingdocsIO/livingdocs-editor/pull/7563)
 * [Metadata plugin context config for all upstream plugins](https://github.com/livingdocsIO/livingdocs-server/pull/6204)
 * [fix(deps): update dependency cypress from 13.2.0 to v13.3.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7536)
 * [fix(deps): update dependency @babel/core from 7.23.0 to v7.23.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7599)
