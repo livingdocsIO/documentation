@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency @livingdocs/core-server-includes from 3.0.1 to v4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6211)
 * [fix(deps): update dependency fastify from 4.23.2 to v4.24.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6199)
 * [fix(deps): update dependency fastify from 4.24.1 to v4.24.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7602)
 * [coreApi: add registerIframePlugins()](https://github.com/livingdocsIO/livingdocs-editor/pull/7563)
