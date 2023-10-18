@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sass from 1.69.3 to v1.69.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7604)
 * [Remove legacy `li-reference` and `li-reference-list` metadata plugins](https://github.com/livingdocsIO/livingdocs-editor/pull/7569)
 * [chore(deps): update dependency @livingdocs/core-server-includes from 3.0.1 to v4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6211)
 * [fix(deps): update dependency fastify from 4.23.2 to v4.24.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6199)
