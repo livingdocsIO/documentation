@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [🐞 Fix: create comment after visiting history](https://github.com/livingdocsIO/livingdocs-editor/pull/7605)
 * [Add `generate-schema` command, which generates the project config schema](https://github.com/livingdocsIO/livingdocs-server/pull/6208)
 * [fix(deps): update dependency webpack from 5.88.2 to v5.89.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7600)
 * [fix(deps): update aws-sdk from 3.428.0 to v3.430.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6210)
