@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fastify from 4.24.2 to v4.24.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6215)
 * [fix(deps): update aws-sdk from 3.430.0 to v3.431.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6212)
 * [fix(deps): update dependency @livingdocs/framework from 27.0.1 to v27.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7609)
 * [fix(deps): update dependency @livingdocs/framework from 27.0.1 to v27.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6213)
