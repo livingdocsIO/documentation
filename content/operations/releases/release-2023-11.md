@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 27.0.1 to v27.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7609)
 * [fix(deps): update dependency @livingdocs/framework from 27.0.1 to v27.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6213)
 * [Teasers: add unlink button to li-document-reference style teaser](https://github.com/livingdocsIO/livingdocs-editor/pull/7590)
 * [fix(deps): update dependency cypress from 13.3.1 to v13.3.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7608)
