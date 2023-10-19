@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Teasers: add unlink button to li-document-reference style teaser](https://github.com/livingdocsIO/livingdocs-editor/pull/7590)
 * [fix(deps): update dependency cypress from 13.3.1 to v13.3.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7608)
 * [🐞 Fix: create comment after visiting history](https://github.com/livingdocsIO/livingdocs-editor/pull/7605)
 * [Add `generate-schema` command, which generates the project config schema](https://github.com/livingdocsIO/livingdocs-server/pull/6208)
