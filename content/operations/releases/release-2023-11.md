@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @smithy/node-http-handler from 2.1.7 to v2.1.8 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6216)
 * [fix(deps): update dependency fastify from 4.24.2 to v4.24.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7611)
 * [fix(deps): update dependency fastify from 4.24.2 to v4.24.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6215)
 * [fix(deps): update aws-sdk from 3.430.0 to v3.431.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6212)
