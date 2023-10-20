@@ -440,6 +440,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.60): fix(security): Update `get-func-name` to version `2.0.2` to patch CVE-2023-43646
 - [v100.8.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.59): fix(comments): create comment after visiting history
 - [v100.8.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.58): fix(lists): Only re-render document list when it changes
 - [v100.8.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.57): fix(publish control): remove content validation errors when user edits the directive
