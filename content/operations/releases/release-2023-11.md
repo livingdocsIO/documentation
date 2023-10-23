@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pino from 8.16.0 to v8.16.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6230)
 * [Fix workspace spellcheck and disabled comments bugs](https://github.com/livingdocsIO/livingdocs-editor/pull/7620)
 * [Media Library Search: Boolean AND Operator](https://github.com/livingdocsIO/livingdocs-server/pull/6229)
 * [fix(deps): update aws-sdk from 3.431.0 to v3.433.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6224)
