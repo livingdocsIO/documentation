@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk from 3.431.0 to v3.433.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6224)
 * [fix(deps): update dependency nodemailer from 6.9.6 to v6.9.7 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6227)
 * [Expose Desknet's hostname under `projectConfig.settings.desknet.apiEndpoint`](https://github.com/livingdocsIO/livingdocs-server/pull/6162)
 * [fix(external ID): readonly config allowed](https://github.com/livingdocsIO/livingdocs-server/pull/6207)
