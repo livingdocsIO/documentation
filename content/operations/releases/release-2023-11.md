@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Remove support for config `document.customPublicationDateField`](https://github.com/livingdocsIO/livingdocs-editor/pull/7622)
 * [Comment shaky access-control test](https://github.com/livingdocsIO/livingdocs-server/pull/6228)
 * [Implement realtime websockets notifications to reduce the number of messages going through Pusher](https://github.com/livingdocsIO/livingdocs-server/pull/6206)
 * [fix(comyan): encode title when reporting usage](https://github.com/livingdocsIO/livingdocs-server/pull/6231)
