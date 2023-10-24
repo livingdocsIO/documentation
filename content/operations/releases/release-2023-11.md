@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cypress from 13.3.2 to v13.3.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7626)
 * [fix(deps): update dependency @google-cloud/storage from 7.3.1 to v7.3.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6235)
 * [Validate plugin configuration in various contexts](https://github.com/livingdocsIO/livingdocs-server/pull/6205)
 * [Don't show hidden form fields on multi-asset upload](https://github.com/livingdocsIO/livingdocs-editor/pull/7623)
