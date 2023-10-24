@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Validate plugin configuration in various contexts](https://github.com/livingdocsIO/livingdocs-server/pull/6205)
 * [Don't show hidden form fields on multi-asset upload](https://github.com/livingdocsIO/livingdocs-editor/pull/7623)
 * [Actors](https://github.com/livingdocsIO/livingdocs-server/pull/6217)
 * [Remove support for config `document.customPublicationDateField`](https://github.com/livingdocsIO/livingdocs-editor/pull/7622)
