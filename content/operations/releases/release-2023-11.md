@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Implement realtime websockets notifications to reduce the number of messages going through Pusher](https://github.com/livingdocsIO/livingdocs-server/pull/6206)
 * [fix(comyan): encode title when reporting usage](https://github.com/livingdocsIO/livingdocs-server/pull/6231)
 * [Add new downstream extension api methods](https://github.com/livingdocsIO/livingdocs-server/pull/6169)
 * [fix(deps): update dependency exifreader from 4.13.2 to v4.14.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6226)
