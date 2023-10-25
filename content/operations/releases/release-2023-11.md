@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(twitter oembed): supports x.com urls](https://github.com/livingdocsIO/livingdocs-server/pull/6237)
 * [Extend server api to add custom routes](https://github.com/livingdocsIO/livingdocs-server/pull/6221)
 * [fix(deps): update aws-sdk from 3.433.0 to v3.435.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6236)
 * [Refresh includes on document publish](https://github.com/livingdocsIO/livingdocs-editor/pull/7603)
