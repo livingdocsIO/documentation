@@ -16,8 +16,6 @@ support:
   planningSystem: false
 description: |
   This plugin is used to provide a suggested total character count for the text in the document.
-
-  It doesn't work if the editor config `metadata.useAngularBasedFormRendering` is `true`.
 defaultUI: |
   **Input**: Number input, or slider if `steps` are defined.
 
