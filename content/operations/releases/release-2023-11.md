@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Document commands response code 204 and actor support](https://github.com/livingdocsIO/livingdocs-server/pull/6246)
 * [Load dynamic metadata with inline document search](https://github.com/livingdocsIO/livingdocs-editor/pull/7630)
 * [Show the correct user within task steps](https://github.com/livingdocsIO/livingdocs-editor/pull/7631)
 * [fix(deps): update aws-sdk from 3.435.0 to v3.436.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6239)
