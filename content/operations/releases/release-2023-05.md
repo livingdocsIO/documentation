@@ -460,6 +460,7 @@ Here is a list of all patches after the release has been announced.
 - [v226.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.12): fix(logging): Make dev string formatter more reliable with custom input
 
 ### Livingdocs Editor Patches
+- [v94.10.85](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.85): fix(tasks): Use correct steps within task value
 - [v94.10.84](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.84): test: fix media library cypress test for image storage size
 - [v94.10.83](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.83): code(comments): always use the context from editable data
 - [v94.10.82](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v94.10.82): fix(references): typo
