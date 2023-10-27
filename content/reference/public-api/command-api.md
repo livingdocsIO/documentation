@@ -73,13 +73,13 @@ Execute a Document Command based on its `id`.
 All commands run in a single transaction.
 
 --response--
-200
+204
 ---
 api/v1/documents/:id/commands
 ---
 ```js
 {
-  "status": 200
+  "status": 204
 }
 ```
 -----
