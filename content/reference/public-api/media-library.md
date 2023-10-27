@@ -60,8 +60,8 @@ api/v1/mediaLibrary/:id
 
 ```bash
 ACCESS_TOKEN=ey1234
-curl -k -X PATCH "https://edit.livingdocs.io/proxy/api/api/v1/mediaLibrary/:id" \
-  -H "Accept: application/json" \
+curl -k -X PATCH "https://server.livingdocs.io/api/v1/mediaLibrary/:id" \
+  -H "Content-Type: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
 
@@ -285,7 +285,7 @@ api/v1/mediaLibrary?externalId=ex-1&systemName=externalSystem
 
 ```bash
 ACCESS_TOKEN=ey1234
-curl -k -X GET "https://edit.livingdocs.io/proxy/api/api/v1/mediaLibrary/:mediaId/incomingDocumentReferences" \
+curl -k -X GET "https://server.livingdocs.io/api/v1/mediaLibrary/:mediaId/incomingDocumentReferences" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
@@ -368,7 +368,7 @@ This endpoint returns all publications which link to this Media Library Entry (v
 
 ```bash
 ACCESS_TOKEN=ey1234
-curl -k -X GET "https://edit.livingdocs.io/proxy/api/api/v1/mediaLibrary/:mediaId/incomingMediaReferences" \
+curl -k -X GET "https://server.livingdocs.io/api/v1/mediaLibrary/:mediaId/incomingMediaReferences" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```

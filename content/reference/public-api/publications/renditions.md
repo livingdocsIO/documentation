@@ -16,7 +16,7 @@ menus:
 
 ```bash
 ACCESS_TOKEN=ey1234
-curl -k -X GET "https://edit.livingdocs.io/proxy/api/api/v1/documents/:documentId/latestPublication/renditions/:renditionHandles" \
+curl -k -X GET "https://server.livingdocs.io/api/v1/documents/:documentId/latestPublication/renditions/:renditionHandles" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```

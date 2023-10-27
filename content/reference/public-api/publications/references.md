@@ -16,7 +16,7 @@ menus:
 
 ```bash
 ACCESS_TOKEN=ey1234
-curl -k -X GET "https://edit.livingdocs.io/proxy/api/api/v1/documents/:documentId/incomingDocumentReferences" \
+curl -k -X GET "https://server.livingdocs.io/api/v1/documents/:documentId/incomingDocumentReferences" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
@@ -105,7 +105,7 @@ Find publications in a [Document List]({{< ref "/reference/public-api/document-l
 
 ```bash
 ACCESS_TOKEN=ey1234
-curl -k -X GET "https://edit.livingdocs.io/proxy/api/api/v1/documents/:documentId/incomingMediaReferences" \
+curl -k -X GET "https://server.livingdocs.io/api/v1/documents/:documentId/incomingMediaReferences" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```

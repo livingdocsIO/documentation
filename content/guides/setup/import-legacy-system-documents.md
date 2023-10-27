@@ -43,7 +43,7 @@ documents: {
 Example curl request to import a document with a custom document id:
 
 ```js
-curl -k -X POST "https://edit.livingdocs.io/proxy/api/v1/import/documents" \
+curl -k -X POST "https://server.livingdocs.io/api/v1/import/documents" \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer ey1234' \
   -H 'Content-Type: application/json; charset=utf-8' \
