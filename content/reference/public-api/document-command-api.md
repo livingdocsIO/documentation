@@ -18,9 +18,14 @@ scopes="public-api:write"
 
 ```bash
 ACCESS_TOKEN=ey1234
-curl -k -X PATCH "https://edit.livingdocs.io/proxy/api/api/v1/documents/:id/commands" \
-  -H "Accept: application/json" \
-  -H "Authorization: Bearer $ACCESS_TOKEN"
+curl -k -X PATCH "https://server.livingdocs.io/api/v1/documents/:id/commands" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $ACCESS_TOKEN" \
+  --data-binary @- << EOF
+  {
+    "commands": [{"operation": "setMetadataProperty", "propertyName": "title", "value": "updated title"}]
+  }
+EOF
 ```
 
 --endpoint--

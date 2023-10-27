@@ -16,7 +16,7 @@ menus:
 
 ```bash
 ACCESS_TOKEN=ey1234
-curl -k -X GET "https://edit.livingdocs.io/proxy/api/api/v1/projectConfig" \
+curl -k -X GET "https://server.livingdocs.io/api/v1/projectConfig" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
@@ -431,7 +431,7 @@ This endpoint returns the [Project Config]({{< ref "/reference/project-config" >
 
 ```bash
 ACCESS_TOKEN=ey1234
-curl -k -X GET "https://edit.livingdocs.io/proxy/api/api/v1/project" \
+curl -k -X GET "https://server.livingdocs.io/api/v1/project" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
@@ -538,7 +538,7 @@ Deprecated: Use `GET api/v1/projectConfig` instead.
 
 ```bash
 ACCESS_TOKEN=ey1234
-curl -k -X GET "https://edit.livingdocs.io/proxy/api/api/v1/channels/:channelHandle" \
+curl -k -X GET "https://server.livingdocs.io/api/v1/channels/:channelHandle" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
@@ -640,7 +640,7 @@ Deprecated: Use `GET api/v1/projectConfig` instead.
 
 ```bash
 ACCESS_TOKEN=ey1234
-curl -k -X GET "https://edit.livingdocs.io/proxy/api/api/v1/design/:designVersion" \
+curl -k -X GET "https://server.livingdocs.io/api/v1/design/:designVersion" \
   -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
