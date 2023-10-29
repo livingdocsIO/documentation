@@ -85,6 +85,18 @@ It's a simple/fast migration with no expected data losses.
 
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database scheme
+# migration 187-indexes-deferrable.js
+#   modifies constraints to be deferrable
+# migration 188-document_content_types-archive.js
+#   adds a new table to store archived content types
+# migration 189-delete-draft-project-config-indexes.js
+#   removes draft project config indexes
+# migration 190-enable-preview-builds.js
+#   adds a new column to store the preview build status
+# migration 191-add-concurrent-user-tracking.js
+#   adds a new table to store concurrent user information
+# migration 193-increase-document-title-length.js
+#   increases the length of the document title to 1000 characters
 livingdocs-server migrate up
 ```
 
