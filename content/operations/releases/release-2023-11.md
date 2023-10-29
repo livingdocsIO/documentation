@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency ua-parser-js from 1.0.36 to v1.0.37 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6253)
 * [Upgrade @livingdocs/fastify-webpack to get rid of fastify deprecation message](https://github.com/livingdocsIO/livingdocs-editor/pull/7637)
 * [Oembed params schema validation](https://github.com/livingdocsIO/livingdocs-server/pull/6240)
 * [fix(deps): update dependency @livingdocs/fastify-webpack from 4.0.0 to v4.0.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7638)
