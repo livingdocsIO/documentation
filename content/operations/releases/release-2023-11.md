@@ -18,15 +18,6 @@ aliases:
   branchHandle="release-2023-11"
 >}}
 
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to master).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
-
 To get an overview about new functionality, read the [Release Notes](TODO).
 To learn about the necessary actions to update Livingdocs to `release-2023-11`, read on.
 
@@ -77,7 +68,7 @@ It's a simple/fast migration with no expected data losses.
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database scheme
 # migration 194-actors.js
-#   add new table actors
+#   adds new table actors
 livingdocs-server migrate up
 ```
 
@@ -132,7 +123,7 @@ Please migrate to `contentType.publishControl.publishSchedule` within [Publish C
 
 ### Postgres v12 :warning:
 
-Postgres v12 support is deprecated and will be removed in January 2024 release (`release-2024-01`).
+Postgres v12 support is deprecated and will be removed in March 2024 release (`release-2024-03`).
 
 ### Document Patch API :warning:
 
@@ -199,7 +190,7 @@ This behaviour is enabled in the Media Library search, and it can be enabled per
 }
 ```
 
-### Push Notifications
+### Push Notifications :gift:
 
 The new Push Notification feature can trigger pushes from within the Article Editor Toolbar, in previous releases it could only trigger pushes on Dashboards.
 
@@ -207,25 +198,25 @@ Support to show the "Push" button for the new "Push Messages". Clicking the butt
 
 The "Push" button only shows if a `li-push-messages` metadata plugin is configured. For now, the button will take the first `li-push-messages` metadata plugin config it finds.
 
-### Teaser includes reload
+### Teaser includes reload :gift:
 
 If a document embeds teasers using includes, those teasers will get updated if referenced documents are updated.
 
-### Metadata validation
+### Metadata validation :gift:
 
 Introduction of metadata plugin validation in documents, media library and paramSchema. This will prevent unsupported usage of metadata plugin configurations on server side.
 
 Plugins used in other contexts than the ones stated in the [docs](https://docs.livingdocs.io/reference/document/metadata/plugins/), will now report an error during server startup.
 
-### Allow `tel:` and `mailto:` inline links
+### Allow `tel:` and `mailto:` inline links :gift:
 
 We have added support for `tel:` and `mailto:` URL links in the editor. This feature is enabled by default and doesn't require any configuration.
 
-## Vulnerability Patches
+## Vulnerability Patches :shield:
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
 
-### Livingdocs Server
+### Livingdocs Server :shield:
 
 This release we have patched the following vulnerabilities in the Livingdocs Server:
 * [CVE-2023-43646](https://github.com/advisories/GHSA-4q6p-r6v2-jvc5) patched in `get-func-name` v2.0.2
@@ -234,7 +225,7 @@ This release we have patched the following vulnerabilities in the Livingdocs Ser
 
 No known vulnerabilities are present in the Livingdocs Server.
 
-### Livingdocs Editor
+### Livingdocs Editor :shield:
 
 * [CVE-2023-43646](https://github.com/advisories/GHSA-4q6p-r6v2-jvc5) patched in `get-func-name` v2.0.2
 * [CVE-2023-45143](https://github.com/advisories/GHSA-wqq4-5wpv-mx2g) patched in `undici` v5.26.2
@@ -258,5 +249,6 @@ Here is a list of all patches after the release has been announced.
   **Icon Legend**
   * Breaking changes: :fire:
   * Feature: :gift:
+  * Security: :shield:
   * Bugfix: :beetle:
   * Chore: :wrench:
