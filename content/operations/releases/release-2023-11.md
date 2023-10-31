@@ -213,7 +213,7 @@ If a document embeds teasers using includes, those teasers will get updated if r
 
 ### Metadata validation
 
-Introduction of metadata plugin validation in documents, media library and paramSchema. This will prevent unsupported usage of metadata plugin configurations on server side. [Breaking change `Custom downstream plugins param schema validation changes`](#custom-downstream-plugins-param-schema-validation-changes-fire) is related to this feature so please read it carefully.
+Introduction of metadata plugin validation in documents, media library and paramSchema. This will prevent unsupported usage of metadata plugin configurations on server side.
 
 Plugins used in other contexts than the ones stated in the [docs](https://docs.livingdocs.io/reference/document/metadata/plugins/), will now report an error during server startup.
 
