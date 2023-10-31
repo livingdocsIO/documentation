@@ -69,14 +69,17 @@ const documentVersion = {
 
   // systemdata of a document, e.g.
   // {
-  //   project_id: 3,
-  //   channel_id: 4,
-  //   document_id: 10,
-  //   content_type: 'regular',
-  //   document_type: 'article',
-  //   publication_id: 19,
-  //   first_publication_date: '2021-06-01T07:36:15.474Z',
-  //   updated_at: '2021-06-01T07:53:20.291Z',
+  //   projectId: 3,
+  //   channelId: 4,
+  //   documentId: 10,
+  //   contentType: 'regular',
+  //   documentType: 'article',
+  //   publicationId: 19,
+  //   firstPublicationDate: '2021-06-01T07:36:15.474Z',
+  //   lastPublicationDate: '2021-06-01T07:40:22.574Z',
+  //   significantPublicationDate: '2021-06-01T07:40:22.574Z',
+  //   visiblePublicationDate: '2023-09-01T07:40:22.574Z',
+  //   expectedOrActualPublicationDate: '2023-09-01T07:40:22.574Z',
   //   design: {
   //       name: 'p:3:4',
   //       version: '7.0.0'
