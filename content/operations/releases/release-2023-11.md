@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/7645)
 * [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/6257)
 * [fix: improve error message for image upload from forbidden origin](https://github.com/livingdocsIO/livingdocs-editor/pull/7642)
 * [Log deprecation message when using Postgres v12](https://github.com/livingdocsIO/livingdocs-server/pull/6251)
