@@ -154,6 +154,64 @@ Please remove the 'enabled' property and use 'pollingEnabled' and/or 'websockets
 
 This deprecation is related to the [Teaser includes reload](#teaser-includes-reload) feature. Please read the feature documentation for more information.
 
+## APIs
+
+### Extend server API for downstreams :gift:
+
+We have extended the server API to allow downstreams to register custom routes and services. This allows downstreams to extend the server API with custom functionality.
+
+- Direct Extension Registration
+  - `liServer.registerPublicationHooks({...})`
+  - `liServer.registerGlobalPublicationHooks({...})`
+  - `liServer.registerListHooks({...})`
+
+- Data Sources
+  - `liServer.registerDataSource({...})`
+  - `liServer.registerDataSources([{...}, {...}])`
+
+- Create / Generate Functions
+  - `liServer.registerCreateFunction({...})`
+  - `liServer.registerTransformFunction({...})`
+  - `liServer.registerCreateFunctions([{...}, {...}])`
+  - `liServer.registerTransformFunctions([{...}, {...}])`
+
+- Includes
+  - `liServer.registerIncludeService({...})`
+  - `liServer.registerIncludeServices([{...}, {...}])`
+
+- Oembed Providers
+  - `liServer.registerOembedProvider({...})`
+  - `liServer.registerOembedProviders([{...}, {...}])`
+
+- Media Sources
+  - `liServer.registerMediaSource({...})`
+  - `liServer.registerMediaSources([{...}, {...}])`
+
+- Register Custom Routes
+  - `liServer.registerEditorRoutes({method, path, auth, action, ...})`
+  - `liServer.registerServerRoutes({method, path, auth, action, ...})`
+The params for both `registerEditorRoutes` and `registerServerRoutes` are the same.
+The difference is only in what values are accepted in the `auth` param. The editor routes accept user token scopes and the server routes accept no auth or api token scopes.
+
+By convention these methods would be called in a single file that starts the downstream server.
+
+`server/app/server.js`
+```js
+const liServer = require('@livigdocs/server')()
+
+liServer.registerInitializedHook(() => {
+  liServer.registerCreateFunctions([
+    require('./create-functions/article')
+  ])
+
+  // ...
+})
+```
+
+### Extend editor API for downstreams :gift:
+
+Expose IframePlugin register function via `liEditor`: `liEditor.registerIframePlugin({IframePlugin})`.
+
 ## Features
 
 {{< feature-info "Public api" "server" >}}
@@ -161,7 +219,7 @@ This deprecation is related to the [Teaser includes reload](#teaser-includes-rel
 
 The Command API is exposed on the Public API and allows external services to change document content and metadata and even publish, e.g. making article title A/B-test easier.
 
-Command API adds `PATCH /api/v1/documents/:documentId/commands` endpoint on the Public API, which accepts the following commands to be executed on the document: `setMetadataProperty`, `setEditableDirective` and `publish`. The scope scope to authenticate requests for this new endpoint is `public-api:write`.
+Command API adds `PATCH /api/v1/documents/:documentId/commands` endpoint on the Public API, which accepts the following commands to be executed on the document: `setMetadataProperty`, `setEditableDirective` and `publish`. The scope to authenticate requests for this new endpoint is `public-api:write`.
 
 More information about the Command API can be found in the [Command API documentation]({{< ref "reference/public-api/command-api.md" >}}).
 
@@ -183,6 +241,7 @@ With the introduction of the Command API, we needed a way to differenciate if a 
 
 Please run the migrations for this release to add the new `actors` table to your database. This migration will add Import users and API clients to `actors` table. The actor name will be used to show the actor that modified a document. When reporting modifications on a document users will be obscured and the UI will only report that a human did a modification, while API clients will be reported with their name.
 
+
 {{< feature-info "Search bar" "Editor" >}}
 ### Enhancded search syntax 'simple search' :gift:
 
@@ -195,7 +254,7 @@ This release we have improved query syntax to allow users to use special operato
 - `-` negates a single token
 - `"` wraps a number of tokens to signify a phrase for searching
 
-For example, the query `quick brown +fox -news` will search for documents containing `quick` and `brown` and `fox` and documents that do *not* contain `news`, i.e. `quick` AND `brown` AND `fox` AND NOT `news`.
+For example, the query `quick brown +fox -news` will search for documents containing `quick` and `brown` and `fox` and documents that do not contain `news`, i.e. `quick` AND `brown` AND `fox` AND NOT `news`.
 
 Previously the default operator was `OR`, which meant that the query `quick brown fox` was interpreted as `quick` OR `brown` OR `fox`, i.e. documents would match if they contained any of the three tokens.
 
@@ -264,7 +323,7 @@ No known vulnerabilities are present in the Livingdocs Server.
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
-* [CVE-2023-44270](https://github.com/advisories/GHSA-7fh5-64p2-3v2j) vulnerability in `postcss`, it affects linters using PostCSS to parse external Cascading Style Sheets (CSS). This module is a dependency of Vue-loader which requires further assessment before upgrading.
+* [CVE-2023-44270](https://github.com/advisories/GHSA-7fh5-64p2-3v2j) vulnerability in `postcss`, it affects linters using PostCSS to parse external Cascading Style Sheets (CSS). It is not exploitable in the editor as we don't load untrusted external CSS at build time.
 * [CVE-2023-26116](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26118](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26117](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2022-25869](https://cwe.mitre.org/data/definitions/79.html), [CVE-2022-25844](https://cwe.mitre.org/data/definitions/770.html) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
 
 ## Patches
