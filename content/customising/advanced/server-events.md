@@ -89,12 +89,12 @@ The following lists all events, before the comma, the name of the event and behi
 - document
   - document.update, `(eventName, {user, documentVersion})`
   - document.delete, `(eventName, {user, documentVersion})`
-  - document.create, `(eventName, {user, documentVersion})`
+  - document.create, `(eventName, {user, documentVersion})` <em>Note: this event is also triggered by document transforms</em>
   - document.publish, `(eventName, {user, documentVersion})`
   - document.unpublish, `(eventName, {user, documentVersion})`
   - document.copy, `(eventName, {documentVersion, originalDocumentId, isTranslation})`
   - document.transform, `(eventName, {documentVersion, originalContentType})`
- 
+
 - publication
   - publication.updated, `(eventName, {user, documentVersion})`
 
