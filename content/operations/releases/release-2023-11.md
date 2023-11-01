@@ -150,7 +150,8 @@ Command API adds `PATCH /api/v1/documents/:documentId/commands` endpoint on the 
 More information about the Command API can be found in the [Command API documentation]({{< ref "reference/public-api/command-api.md" >}}).
 
 An example of a `setMetadataProperty` command would look like this:
-```
+
+```shell
 ACCESS_TOKEN=ey1234
 curl -k -X PATCH "https://server.livingdocs.io/api/v1/documents/:id/commands" \
   -H "Content-Type: application/json" \
@@ -182,7 +183,7 @@ Using `|` (OR) operator will result in a match if any of the tokens are present 
 
 This behaviour is enabled in the Media Library search, and it can be enabled per dashboard for documents search with the following dashboard configuration:
 
-```
+```js
 {
   search: {
     strategy: "new"
