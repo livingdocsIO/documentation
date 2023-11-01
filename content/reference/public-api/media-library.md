@@ -299,6 +299,12 @@ GET api/v1/mediaLibrary/:mediaId/incomingDocumentReferences
 
 --description--
 
+This endpoint returns all publications which link to this Media Library Entry (via content or metadata)
+
+##### Use Cases
+
+- Useful to know if the Media Library Entry is in use when revoking or archiving
+
 --response--
 200
 ---
@@ -375,6 +381,8 @@ GET api/v1/mediaLibrary/:mediaId/incomingMediaReferences
 |?offset|integer||An offset into the query. Useful when getting more than 100 results (pagination).|
 
 --description--
+
+This endpoint returns all Media Library Entries which link to this Media Library Entry (via metadata)
 
 --response--
 200
