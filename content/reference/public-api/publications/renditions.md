@@ -32,13 +32,21 @@ GET api/v1/documents/:documentId/latestPublication/renditions/:renditionHandles
 |:renditionHandles|string|x|A comma-separated list of renditions handles, e.g. "web,name".|
 
 --description--
-##### Upcoming Deprecation
-Please note that we're working on offering a better alternative to the renditions with the `composition Api`.
 
-If you need the HTML for a document you can use the `composition Api` and pass the field `html`.
+With the Renditions Endpoint you can load different output formats of your publication like `RSS`, `XML`, `HTML` etc. Attention: A rendition is only available if the output format is configured in the [Content Type]({{< ref "/reference/project-config/content-types#renditions" >}}) configuration.
 
-##### Required Server Configuration
-Renditions are only available if configured in the `contentType` configuration.
+##### Use Cases
+
+- Provides a Publication for a delivery in another format like `RSS`, `XML` (so called `Rendition`)
+
+##### Alternatives
+
+
+- [Latest Publication API]({{< ref "/reference/public-api/publications/latest-publication" >}})
+- [Latest Publication API Beta]({{< ref "/reference/public-api/publications/latest-publication-beta" >}})
+- [Composition API]({{< ref "/reference/public-api/composition-api" >}})
+
+
 --response--
 200
 ---

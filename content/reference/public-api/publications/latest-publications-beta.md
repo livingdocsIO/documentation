@@ -42,14 +42,16 @@ GET api/beta/documents/latestPublications
 |?publishedAt.gte|string|Filter by publish date range.<br>Supported filters: `?publishedAt.gte`, `publishedAt.gt`, `publishedAt.lte`, `publishedAt.lt`.<br><br>Example: To retrieve all publications since a specific timestamp, use `?reverse&publishedAt.gte=2021-05-01T00:00:00.000Z`|
 
 --description--
-The response is an array of objects with 4 possible top-level properties:
+
+The endpoint provides an unresolved Publication with 4 possible top-level properties:
 - systemdata
 - metadata
 - content
 - references
 
-Use Cases:
-- Bulk export of data, e.g. a specific contentType
+##### Use Cases
+
+- Bulk export of data, e.g. a specific `Content Type`
 
 --response--
 200
