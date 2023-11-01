@@ -1,5 +1,5 @@
 ---
-title: Project
+title: Project Config
 weight: 2
 renderTOC: false
 menus:
@@ -8,7 +8,7 @@ menus:
 ---
 
 {{< api-example
-  title="Get Project Configuration"
+  title="Get Project Config"
   scopes="public-api:read"
 >}}
 
@@ -34,8 +34,8 @@ GET api/v1/channelConfig
 --parameters--
 
 --description--
+
 This endpoint returns the [Project Config]({{< ref "/reference/project-config" >}}).
-Your `AccessToken` is valid for a single project.
 
 --response--
 200
@@ -440,7 +440,6 @@ GET api/v1/project
 --parameters--
 
 --description--
-Your `AccessToken` is valid for a single project. This endpoint tells you the details and configuration of this project.
 
 Deprecated: Use `GET api/v1/projectConfig` instead.
 
