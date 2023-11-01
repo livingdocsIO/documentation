@@ -181,15 +181,7 @@ You can also use `"` to search for phrases, for example `quick "brown fox"` will
 
 Using `|` (OR) operator will result in a match if any of the tokens are present in the document, e.g. `quick | brown | fox` will match documents that contain `quick` OR `brown` OR `fox`, not necessarily all three. Which was the behaviour of search queries in previous releases.
 
-This behaviour is enabled in the Media Library search, and it can be enabled per dashboard for documents search with the following dashboard configuration:
-
-```js
-{
-  search: {
-    strategy: "new"
-  }
-}
-```
+This behaviour is enabled in the Media Library search. The search in the Article Editor is still using the old behaviour.
 
 ### Push Notifications :gift:
 
