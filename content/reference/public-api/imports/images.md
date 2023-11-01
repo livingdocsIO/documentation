@@ -26,11 +26,11 @@ curl -k -X POST "https://edit.livingdocs.io/proxy/api/api/v1/import/images" \
     "webhook": "https://my-domain.com/webhooks/image-import",
     "images": [
       {
-        "url": "https://nerdcore.de/wp-content/uploads/2019/02/cat1.jpeg",
+        "url": "https://placekitten.com/800/600",
         "id": "123abc",
-        "fileName": "foo",
+        "fileName": "cat",
         "metadata": {
-          "caption": "bar"
+          "caption": "foo"
         }
       }
     ]
@@ -61,11 +61,11 @@ POST api/v1/import/images
   },
   "images": [
     {
-      "url": "https://nerdcore.de/wp-content/uploads/2019/02/cat1.jpeg",
+      "url": "https://placekitten.com/800/600",
       "id": "123abc",
-      "fileName": "foo",
+      "fileName": "cat",
       "metadata": {
-        "caption": "bar"
+        "caption": "foo"
       }
     }
   ]
