@@ -35,6 +35,26 @@ GET api/v1/documents/:documentId/incomingDocumentReferences
 
 --description--
 
+This endpoint returns all publications which link to this document (via content or metadata)
+
+The example below finds a reference to ID 1 when requesting for incomingDocumentReference with ID 2.
+
+{{< img src="./references.png" alt="Component Property" >}}
+
+
+##### Use Cases
+
+- Find publications that link to this document for cache invalidation
+
+##### Alternatives
+
+- [Latest Publication API Beta]({{< ref "/reference/public-api/publications/latest-publication-beta" >}}) (reverse lookup vs lookup)
+
+
+##### Not Supported
+
+Find publications in a [Document List]({{< ref "/reference/public-api/document-lists" >}}) put on another document.
+
 --response--
 200
 ---
@@ -103,6 +123,8 @@ GET api/v1/documents/:documentId/incomingMediaReferences
 |?offset|integer||An offset into the query. Useful when getting more than 100 results (pagination).|
 
 --description--
+
+This endpoint returns all Media Library Entries which link to this document (via metadata - li-document-reference)
 
 --response--
 200
