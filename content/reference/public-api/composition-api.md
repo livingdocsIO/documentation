@@ -43,11 +43,22 @@ POST api/beta/composition/:documentId
 
 --description--
 
-The goal of the composition endpoint is to gather all required information to render a document in one endpoint and to work for different rendering strategies (e.g. render from JSON or use the prerendered Html). The composition Api supports rendering Html without any configuration, can preload references in metadata and can return resolved includes as JSON.
+The `Composition API` loads a Publication with all required information to render a whole document/page with one request.
 
-It offers optimised performance for all those tasks and will replace the RenderPipeline feature.
+##### Advantages
 
-We plan to add additional functionalities like automatic design updates of documents and more to the composition Api in upcoming releases and are open for inputs what we could add.
+- Make only one request to get all the required information to render a publication
+- High-performing and efficient preloading of references (e.g. lists, includes, other references)
+- Useful for a pull architecture
+
+##### Use Cases
+
+- Load a Publication with all required information to render a whole document/page within one request.
+
+##### Alternatives
+
+- [Latest Publication API]({{< ref "/reference/public-api/publications/latest-publication" >}})
+- [Latest Publication API Beta]({{< ref "/reference/public-api/publications/latest-publication-beta" >}})
 
 --response--
 200

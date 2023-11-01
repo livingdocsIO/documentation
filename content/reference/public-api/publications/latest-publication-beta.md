@@ -36,13 +36,31 @@ GET api/beta/documents/:documentId/latestPublication
 |?renditions|string||A comma-separated list of rendition handles. Example: `?renditions=web,json`|
 
 --description--
-The response is a JSON object with 5 possible top-level properties:
-
+The endpoint provides an unresolved Publication with 5 possible top-level properties:
 - systemdata
 - metadata
 - content
 - renditions
 - references
+
+##### Advantages
+
+- Be able to cache the response, because it only changes on a republish (does not contain resolved refs)
+- Faster than [Composition API]({{< ref "/reference/public-api/composition-api" >}})
+- Useful for a pull architecture
+- (deprecated) Supports the Render Pipeline with it's Renditions
+
+
+##### Use Cases
+
+- Load an unresolved Publication with all required information to render a document/page.
+- Export the unresolved Publication to another system and get changes via [Publication Events]({{< ref "/reference/public-api/publications/publication-events" >}}) or [Webhooks]({{< ref "/reference/webhooks" >}})
+- (deprecated) Provides a Publication via a [Rendition]({{< ref "/reference/project-config/content-types#renditions" >}}) for a delivery in another format like `RSS`, `XML`
+
+##### Alternatives
+
+- [Latest Publication API]({{< ref "/reference/public-api/publications/latest-publication" >}})
+- [Composition API]({{< ref "/reference/public-api/composition-api" >}})
 
 --response--
 200

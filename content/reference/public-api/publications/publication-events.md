@@ -43,6 +43,17 @@ GET api/v1/publicationEvents/:channelHandle
 
 --description--
 
+This endpoint returns publication events (`publish`, `unpublish`, `update`) for a project.
+
+##### Use Cases
+
+- Reliably fetch documents publication state changes to sync with another system
+- Cache invalidation management
+
+##### Alternatives
+
+- [Webhooks]({{< ref "/reference/webhooks" >}})
+
 --response--
 200
 ---
