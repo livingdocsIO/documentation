@@ -6,7 +6,7 @@ hideSectionTeaser: true
 excludeFromSearch: true
 ---
 
-{{< release-header 
+{{< release-header
   title="February 2020 Release"
   upcoming=false
   legacy=true
@@ -120,7 +120,7 @@ Fixes: An uploaded image might use the wrong dimensions of a previously selected
 The new publication search API allows customers to search and filter in the set of published documents. You can run your frontend search from it and use it to fetch documents for automated lists such as category lists or feed provider (SDA, DPA) lists. You can also configure custom sort dates as well as scheduled publishing, i.e. embargo dates for your content.
 
 References:
-  * [Public API Documentation (under "search Publications")](https://edit.livingdocs.io/public-api)
+  * [Public API - Search Publications]({{< ref "/reference/public-api/publications/search" >}})
   * [Documentation](https://docs.livingdocs.io/reference-documentation/server/publication-index)
   * [server PR #2695](https://github.com/livingdocsIO/livingdocs-server/pull/2695)
 
@@ -204,7 +204,7 @@ must be set to true if a free-html component is used and no [custom embedHandler
 It's now possible to fetch a design configuration via Public API.
 
 References:
-  * [Public API Documentation](https://edit.livingdocs.io/public-api)
+  * [Public API]({{< ref "/reference/public-api" >}})
   * [server PR #2617](https://github.com/livingdocsIO/livingdocs-server/pull/2617)
 
 ## CoreAPI - Improve API for Dashboard Filters :tada:

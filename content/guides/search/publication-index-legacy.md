@@ -95,7 +95,7 @@ If you define `getValue`, you can return 3 things:
 
 ## Search Publications
 
-After setting up your publication index you can use either the public API or the core's search API (enterprise only) to query for published documents. The documentation for the public API can be found here: [https://edit.livingdocs.io/public-api](https://edit.livingdocs.io/public-api) \(under "search Publications"\).
+After setting up your publication index you can use either the Public API or the core's search API (enterprise only) to query for published documents. The documentation for the Public API can be found here: [Public API - Search Publications]({{< ref "/reference/public-api/publications/search" >}}).
 
 The core API allows you all the options of the public API plus some additional ones. To get the search API, do the following in your server-side feature:
 ```js

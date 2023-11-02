@@ -47,17 +47,17 @@ The next step is to create your own metadata field. In the server, navigate into
 ## Delivery
 If you want deliver your documents to your Delivery Website you can use webhooks to get notified if a document got published.
 
-[use server hooks]({{< ref "../customising/server/server-hooks" >}})
+[use server hooks]({{< ref "/customising/server/server-hooks" >}})
 or
-[use webhooks]({{< ref "../reference/webhooks" >}})
+[use webhooks]({{< ref "/reference/webhooks" >}})
 
 ## Import
 You can import documents from your old application. There is a special API where you can create documents programmatically. So you have to transform the old format to the Livingdocs format and create an article.
 
-[import api](https://edit.livingdocs.io/public-api) (under "Import")
+[Import API]({{< ref "/reference/public-api/imports" >}})
 
 ## Include
 It can be important for your case that you can create components which can include rendered content from third-parties, e.g. facebook embeds.
 Apart from third-party content, teasers on overview pages are also currently handled as includes in Livingdocs.
 
-[create includes]({{< ref "../reference/document/includes" >}})
+[create includes]({{< ref "/reference/document/includes" >}})

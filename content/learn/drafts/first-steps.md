@@ -75,4 +75,4 @@ After modifying the project config and the design locally, you can publish the c
 
 ## Show documents on your frontend
 
-To render documents on your website, you have to load them via [Livingdocs public API](https://edit.livingdocs.io/public-api)
+To render documents on your website, you have to load them via [Public API]({{< ref "/reference/public-api" >}}).
