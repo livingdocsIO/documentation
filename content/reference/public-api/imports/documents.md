@@ -97,6 +97,11 @@ POST api/v1/import/documents
 --description--
 The document import does both create and update documents. The import remembers the `externalId` / `systemName` pair and if an import matches an existing pair, it will update (Hint: consider how to rebuild the externalId when you want to update documents). The document import in Livingdocs is asynchronous. You post a batch of documents that you want to import and get back an id with which you can query later to get your result.
 
+##### Use Cases
+
+- [Initial Import from a legacy system]({{< ref "/guides/setup/import-legacy-system-documents" >}})
+- Feed Imports e.g. [DPA Import]({{< ref "/guides/integrations/dpa-import" >}})
+
 --response--
 200
 ---

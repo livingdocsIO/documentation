@@ -162,6 +162,17 @@ This has the advantage that the entries will be included in the response directl
 
 You can also provide a custom id to entries which helps with importing documents where images in the document should be referenced with the correct `mediaId` maybe even before creating the Media Library Entries themselves.
 
+##### Use Cases
+
+- Initial import from an external system
+- Self managing asset upload and creating your own Media Library Entry (easier for imports to connect Media Library Entries with its documents)
+
+##### Alternatives
+
+- [Import Images]({{< ref "/reference/public-api/imports/images" >}})
+- [Import Videos]({{< ref "/reference/public-api/imports/videos" >}})
+
+
 --response--
 200
 ---
