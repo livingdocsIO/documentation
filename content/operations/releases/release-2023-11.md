@@ -242,6 +242,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.7): chore(includes): Adapt preloader tests for fallback serverServiceSchema
 - [v241.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.6): fix(http): Define longer `requestTimeout` on `liServer.httpServer` to avoid requests being cancelled by the socket timeout
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
