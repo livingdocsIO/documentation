@@ -46,9 +46,9 @@ The example below finds a reference to ID 1 when requesting for incomingDocument
 
 - Find publications that link to this document for cache invalidation
 
-##### Alternatives
+##### Notes
 
-- [Latest Publication API Beta]({{< ref "/reference/public-api/publications/latest-publication-beta" >}}) (reverse lookup vs lookup)
+- Eventual Consistency of Reference because of the usage of Elasticsearch
 
 
 ##### Not Supported

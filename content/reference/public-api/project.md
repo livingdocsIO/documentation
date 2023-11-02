@@ -37,6 +37,10 @@ GET api/v1/channelConfig
 
 This endpoint returns the [Project Config]({{< ref "/reference/project-config" >}}).
 
+##### Use Cases
+
+- Used by [Livingdocs CLI]({{< ref "/reference/cli" >}}) to download the Project Config
+
 --response--
 200
 ---
@@ -652,6 +656,10 @@ GET api/v1/design/:designVersion
 |:designVersion|string|Optional design version. Will take the current design version of a channel if none is passed.|
 
 --description--
+
+##### Use Cases
+
+- Load the appropriate Design Version for a document
 
 --response--
 200
