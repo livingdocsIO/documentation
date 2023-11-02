@@ -13,7 +13,6 @@
 code {
   font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
   font-size: 0.9em;
-  color: $color-grey-2;
   background: rgba($color-violet-1, .1);
   border-radius: $rounded-corners;
   padding: 1px 5px;
@@ -24,7 +23,8 @@ code {
   h4 &,
   h5 &,
   h6 & {
-    font-weight: 600;
+    padding: inherit;
+    background: transparent;
   }
 }
 
