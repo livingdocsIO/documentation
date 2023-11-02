@@ -33,7 +33,9 @@ GET api/v1/categories/:categoryId
 |?inheritMetadata|boolean||If set to "true" will inherit (but not overwrite) metadata properties from all parents Inheritance depth is limited to 20.|
 
 --description--
-You need to activate the Categories / Routing Feature in the Project Config in order to query categories.
+You need to activate the [Categories]({{< ref "/reference/project-config/categories" >}}) / [Routing]({{< ref "/reference/project-config/content-types#routing" >}}) feature in the Project Config in order to query categories.
+
+
 --response--
 200
 ---

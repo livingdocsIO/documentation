@@ -75,6 +75,14 @@ POST api/v1/import/images
 --description--
 The image import does both create and update images. The import remembers the `externalId` / `systemName` pair and if an import matches an existing pair, it will update (Hint: consider how to rebuild the externalId when you want to update images). The image import in Livingdocs is asynchronous. You post a batch of images that you want to import and get back an id with which you can query later to get your result.
 
+##### Use Cases
+
+- [Initial import from a legacy system]({{< ref "/guides/setup/import-legacy-system-documents" >}})
+
+##### Alternatives
+
+- [Import Media Library Entries]({{< ref "/reference/public-api/imports/media-library-entries" >}})
+
 --response--
 200
 ---

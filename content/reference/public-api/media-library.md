@@ -116,6 +116,11 @@ PATCH api/v1/mediaLibrary/:id
 --description--
 Patch a Media Library Entry by its `id`.
 
+##### Use Cases
+
+- Transcode a video
+- When having a separate DAM - update Livingdocs Media Library Entry
+
 --response--
 200
 ---
