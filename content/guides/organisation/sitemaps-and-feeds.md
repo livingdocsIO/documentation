@@ -9,7 +9,7 @@ weight: 3
 
 # Sitemaps
 
-The `livingdocs-server` ships with a set of APIs to automatically create sitemaps. The full (public) API specification can be found in our public API documentation at https://edit.livingdocs.io/public-api
+The `livingdocs-server` ships with a set of APIs to automatically create sitemaps. The full Public API specification can be found in our [Public API]({{< ref "/reference/public-api" >}}) documentation.
 
 This guide will focus on the setup of Sitemaps within a delivery and the downstream customizations that need to be done to set up Feeds.
 

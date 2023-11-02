@@ -274,7 +274,7 @@ Livingdocs allows you to define documents in multiple languages as well as integ
 * `requiredOnCreation: true` flag, forces the user to choose a language before creating a document.
 * `translationWorkflow: true` flag, enables the translation tools in Livingdocs (shows "translate" icon on the toolbar). This feature is only available for documents and pages (but not for a data-record).
 
-If you activate the translation feature, then the `language` metadata plugin on a document will contain a `groupId`. You can use this in the `languageGroupId` parameter of the [Publication Search public API](https://edit.livingdocs.io/public-api) (under "Search Publications") call to retrieve all translations of a document.
+If you activate the translation feature, then the `language` metadata plugin on a document will contain a `groupId`. You can use this in the `languageGroupId` parameter of the [Public API - Search Publications]({{< ref "/reference/public-api/publications/search" >}}) call to retrieve all translations of a document.
 
 If you want to use a computer assisted translation (CAT) tool to translate livingdocs content you can install our li2xliff library to convert documents to XLIFF for translation and list to [server events]({{< ref "/content/customising/advanced/server-events.md" >}}) to update content. You can follow our in-depth guide [here]({{< ref "/content/guides/integrations/li2xliff/index.md" >}})
 

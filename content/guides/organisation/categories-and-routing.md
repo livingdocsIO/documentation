@@ -52,8 +52,8 @@ configurable projects.
 ## Querying categories and resolving routes
 
 Route resolving is used if you want your delivery to know the document after a given route, e.g. when a ready puts in
-a link directly in the browser's address bar. Refer to the public API documentation for correct use: https://edit.livingdocs.io/public-api
+a link directly in the browser's address bar. Refer to the [Public API]({{< ref "/reference/public-api" >}}) documentation for correct use.
 
 Querying categories is most useful if you want to get specific metadata, e.g. ad campaign ids for a category.
-You can use the inheritance parameter to inherit from parent categories. Refer to the public API Documentation
-for correct use: https://edit.livingdocs.io/public-api
+You can use the inheritance parameter to inherit from parent categories. Refer to the [Public API]({{< ref "/reference/public-api" >}}) Documentation
+for correct use.
