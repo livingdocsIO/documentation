@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix non-clickable link options](https://github.com/livingdocsIO/livingdocs-editor/pull/7647)
 * [Fix plugin context configs](https://github.com/livingdocsIO/livingdocs-server/pull/6259)
 * [Pass options to document loader](https://github.com/livingdocsIO/livingdocs-editor/pull/7606)
 * [fix(deps): update dependency cypress from 13.3.3 to v13.4.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7644)
