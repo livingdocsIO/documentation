@@ -39,6 +39,7 @@ GET api/beta/documents/latestPublications
 |?contentTypes|string|Comma separated list of content types to use as filter.|
 |?documentTypes|string|Comma separated list of document types to use as filter.<br>Can be one of `article`, `page`, `data-record`.|
 |?id.gte|string|Filter by document id range.<br>Supported filters: `id.gte`, `id.gt`, `id.lte`, `id.lt`.<br><br>The id range filter is useful if you want to export a lot of documents. You can do many requests in parallel against the api, where you filter by the specific ranges.<br><br>This query is much more flexible than an offset-based filter and works with millions of documents.<br>**Request 1:** `?id.gt=0&id.lte=100`<br>**Request 2:** `?id.gt=100&id.lte=200`<br>**Request 3:** `?id.gt=200&id.lte=300`|
+|?id|string|Filter by one or multiple document ids.<br>**Example 1:** `?id=12`<br>**Example 2:** `?id=100,120,123`|
 |?publishedAt.gte|string|Filter by publish date range.<br>Supported filters: `?publishedAt.gte`, `publishedAt.gt`, `publishedAt.lte`, `publishedAt.lt`.<br><br>Example: To retrieve all publications since a specific timestamp, use `?reverse&publishedAt.gte=2021-05-01T00:00:00.000Z`|
 
 --description--
