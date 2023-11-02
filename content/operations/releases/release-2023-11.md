@@ -246,6 +246,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.11): fix(search): Support search.strategy config to allow switching to the simple query string
 - [v102.1.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.10): fix: don't prevent click events in li-link-edit
 - [v102.1.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.9): fix: only support getDocument
 
