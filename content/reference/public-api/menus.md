@@ -33,11 +33,26 @@ GET api/v1/menus/:channelHandle
 |?handle|string|Handle of the menu to retrieve.|
 
 --description--
-Menu items can be of three `type`s:
+
+Attention:
+
+Menus and this endpoint should not be used anymore. The [Menu Tool]({{< ref "/guides/editor/menu-tool" >}}) provides a better developer and user experience for managing menus.
+
+Menu items can be of three types:
 
 - uri for arbitrary URIs, mainly used for URLs
 - path for internal paths, such as when the menu item should link to an article or page
 - document is the same as path except it is used when routing is disabled
+
+
+
+##### Use Cases
+
+- Get menus for deliveries
+
+##### Alternatives
+
+- [Menu Tool]({{< ref "/guides/editor/menu-tool" >}})
 
 --response--
 200

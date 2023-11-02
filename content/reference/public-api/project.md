@@ -1,5 +1,5 @@
 ---
-title: Project Config
+title: Project Configuration
 weight: 2
 renderTOC: false
 menus:

@@ -27,6 +27,10 @@ GET api/v1/health
 
 --description--
 
+##### Use Cases
+
+- Health check for operations
+
 --response--
 200
 ---

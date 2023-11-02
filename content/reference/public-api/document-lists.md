@@ -37,6 +37,11 @@ GET api/v1/document-lists/:id
 --description--
 This endpoint resolves the referenced documents in a list.<br>
 The response is a JSON object including list information with resolved documents.
+
+##### Use Cases
+
+- Resolve a Document List in the delivery
+
 --response--
 200
 ---
