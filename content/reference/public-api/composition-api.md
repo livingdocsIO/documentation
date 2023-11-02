@@ -50,6 +50,8 @@ The `Composition API` loads a Publication with all required information to rende
 - Make only one request to get all the required information to render a publication
 - High-performing and efficient preloading of references (e.g. lists, includes, other references)
 - Useful for a pull architecture
+- Deduplication of document teasers
+- The only endpoint which is able to resolve includes
 
 ##### Use Cases
 
