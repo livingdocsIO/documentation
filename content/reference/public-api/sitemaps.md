@@ -35,6 +35,12 @@ GET api/v1/sitemaps/index
 
 --description--
 
+This endoint returns a sitemap index containing links to individual sitemap files. The [Sitemap Guide]({{< ref "/guides/organisation/sitemaps-and-feeds" >}}) explains how to setup sitemaps for a Livingdocs delivery.
+
+##### Use Cases
+
+- Provides a [Sitemap Index](https://www.sitemaps.org/protocol.html) for Deliveries (linked via robots.txt)
+
 --response--
 200
 ---
@@ -90,6 +96,10 @@ GET api/v1/sitemaps/entries
 |:entriesPerPage|string||Optional sitemap entry page size. Default 20000|
 
 --description--
+
+##### Use Cases
+
+- Provides [Sitemap Entries](https://www.sitemaps.org/protocol.html) for Deliveries
 
 --response--
 200

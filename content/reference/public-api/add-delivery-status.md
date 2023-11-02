@@ -48,8 +48,14 @@ POST api/v1/documents/:documentId/addDeliveryStatus
 | message        | string   |          | String or sanitized HTML                                                                        |
 
 --description--
+
 This endpoint allows to provide updates for a document/publication regarding its status in an external delivery system (e.g. page build status in a static site generator).<br>
-The response is a JSON object including the `reportId`.
+The response is a JSON object including the `reportId`.<br>
+If you want to know more about how to setup a Delivery Build, you can find a guide [here]({{< ref "/guides/editor/publish-control/delivery" >}}).
+
+##### Use Cases
+
+- Report build status of publications in an external system like an e-paper which has a "build" stage involved
 
 --response--
 200

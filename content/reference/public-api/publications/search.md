@@ -41,6 +41,13 @@ GET api/v1/publications/search
 
 --description--
 
+This endpoint allows searching and filtering for published documents.
+
+##### Use Cases
+
+- Automatic teaser lists like topic pages (filtered by Metadata properties)
+- [Ticker Tool]({{< ref "/operations/releases/release-2023-09#ticker-tool" >}})
+
 --response--
 200
 ---

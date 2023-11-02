@@ -36,14 +36,20 @@ GET api/beta/documents/:documentId/latestDraft
 
 --description--
 This endpoint returns the most recent draft version of a document.
-A token with permission
+
 The response is a JSON object with 5 possible top-level properties:
 
 - systemdata
 - metadata
 - content
 - references
-- renditions (if rendition handles are specified)
+- renditions (deprecated)
+
+##### Use Cases
+
+- Create a [Document Preview]({{< ref "/guides/editor/document-previews" >}}) with an external draft service
+- Automation: Fetch draft, modify draft with an external system, update a draft via [Command API]({{< ref "/reference/public-api/command-api" >}})
+
 
 --response--
 200
