@@ -1,0 +1,8 @@
+{{- $description := .Get 0 -}}
+{{- $repo := .Get 1 -}}
+<div class="feature-info">
+  <div class="feature-info-pill">
+    {{ if $repo }}<span class="feature-info-pill-header">{{ $repo }}</span>{{ end }}
+    <span class="feature-info-pill-content">{{ $description }}</span>
+  </div>
+</div>
