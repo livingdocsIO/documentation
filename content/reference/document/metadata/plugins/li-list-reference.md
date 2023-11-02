@@ -5,10 +5,12 @@ menus:
   reference:
     parent: Metadata Plugins List
 support:
-  document: true
+  document: false
   media: false
-  tableDashboard: false
   include: true
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: false

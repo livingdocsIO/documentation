@@ -8,8 +8,10 @@ summary: Used to connect Desk-Net stories with Livingdocs documents.
 support:
   document: true
   media: false
+  include: false
+  creationFlow: false
+  pushMessage: false
   tableDashboard: true
-  include: true
   displayFilter: false
   searchIndexing: true
   systemMetadata: false

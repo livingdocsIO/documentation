@@ -8,8 +8,10 @@ summary: Define Named Crops on a Media Library Image.
 support:
   document: false
   media: true
-  tableDashboard: false
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: false

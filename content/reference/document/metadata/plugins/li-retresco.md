@@ -8,8 +8,10 @@ summary: Manage tags
 support:
   document: true
   media: false
-  tableDashboard: false
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: false

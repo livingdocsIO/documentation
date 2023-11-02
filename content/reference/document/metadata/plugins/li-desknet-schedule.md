@@ -8,8 +8,10 @@ summary: Allows a user to select Desk-Net platforms and categories that they wou
 support:
   document: true
   media: false
-  tableDashboard: false
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: false

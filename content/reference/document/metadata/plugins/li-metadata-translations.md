@@ -8,8 +8,10 @@ summary: Allows a user to translate media library and data-record metadata into 
 support:
   document: true
   media: true
-  tableDashboard: false
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: false

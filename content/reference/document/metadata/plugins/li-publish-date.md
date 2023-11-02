@@ -8,8 +8,10 @@ summary: Holds the first publication date, which is user editable.
 support:
   document: true
   media: false
-  tableDashboard: false
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: false

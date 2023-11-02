@@ -8,8 +8,10 @@ summary: Enables a user to set an estimated time of completion for the current d
 support:
   document: true
   media: false
-  tableDashboard: false
   include: false
+  creationFlow: true
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: true

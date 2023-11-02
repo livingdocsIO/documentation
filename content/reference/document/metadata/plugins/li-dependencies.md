@@ -7,8 +7,10 @@ menus:
 support:
   document: true
   media: false
-  tableDashboard: false
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: false
