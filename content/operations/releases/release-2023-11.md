@@ -78,6 +78,8 @@ livingdocs-server migrate up
 `includesApi.registerService()` and `includesApi.registerServices()` behaviour has changed and are now synchronous methods.
 If you rely on its return value to be a Promise (e.g. when accessing `.then`), you have to update your code.
 
+But with this release it is recommended to use `liServer.registerIncludeServices()` directly.
+
 * [Server PR: Add new downstream extension API methods](https://github.com/livingdocsIO/livingdocs-server/pull/6169)
 
 {{< feature-info "Metadata plugins" "server" >}}
@@ -117,7 +119,7 @@ Please migrate to `contentType.publishControl.publishSchedule` within [Publish C
 * [Editor PR: Remove support for configuration `document.customPublicationDateField`](https://github.com/livingdocsIO/livingdocs-editor/pull/7622)
 
 {{< feature-info "Project configuration" "server" >}}
-### Remove `label` config of 'li-language' metadata plugin :fire:
+### Remove `label` config of `li-language` metadata plugin :fire:
 
 The deprecated `label` configuration for metadata properties of type `li-language` does not have an effect anymore. Please remove the `li-language` `label` from your metadata configs in contentType configurations.
 
@@ -125,7 +127,7 @@ The language labels are now supported natively in the Livingdocs Editor.
 
 * [Editor PR: Remove li-language's label property from the UI](https://github.com/livingdocsIO/livingdocs-editor/pull/7619)
 
-## Deprecations
+## Deprecations 🚧
 
 {{< feature-info "Operations" "server" >}}
 ### Postgres v12 :warning:
@@ -154,65 +156,8 @@ Please remove the 'enabled' property and use 'pollingEnabled' and/or 'websockets
 
 This deprecation is related to the [Teaser includes reload](#teaser-includes-reload) feature. Please read the feature documentation for more information.
 
-## APIs
 
-### Extend server API for downstreams :gift:
-
-We have extended the server API to allow downstreams to register custom routes and services. This allows downstreams to extend the server API with custom functionality.
-
-- Direct Extension Registration
-  - `liServer.registerPublicationHooks({...})`
-  - `liServer.registerGlobalPublicationHooks({...})`
-  - `liServer.registerListHooks({...})`
-
-- Data Sources
-  - `liServer.registerDataSource({...})`
-  - `liServer.registerDataSources([{...}, {...}])`
-
-- Create / Generate Functions
-  - `liServer.registerCreateFunction({...})`
-  - `liServer.registerTransformFunction({...})`
-  - `liServer.registerCreateFunctions([{...}, {...}])`
-  - `liServer.registerTransformFunctions([{...}, {...}])`
-
-- Includes
-  - `liServer.registerIncludeService({...})`
-  - `liServer.registerIncludeServices([{...}, {...}])`
-
-- Oembed Providers
-  - `liServer.registerOembedProvider({...})`
-  - `liServer.registerOembedProviders([{...}, {...}])`
-
-- Media Sources
-  - `liServer.registerMediaSource({...})`
-  - `liServer.registerMediaSources([{...}, {...}])`
-
-- Register Custom Routes
-  - `liServer.registerEditorRoutes({method, path, auth, action, ...})`
-  - `liServer.registerServerRoutes({method, path, auth, action, ...})`
-The params for both `registerEditorRoutes` and `registerServerRoutes` are the same.
-The difference is only in what values are accepted in the `auth` param. The editor routes accept user token scopes and the server routes accept no auth or api token scopes.
-
-By convention these methods would be called in a single file that starts the downstream server.
-
-`server/app/server.js`
-```js
-const liServer = require('@livigdocs/server')()
-
-liServer.registerInitializedHook(() => {
-  liServer.registerCreateFunctions([
-    require('./create-functions/article')
-  ])
-
-  // ...
-})
-```
-
-### Extend editor API for downstreams :gift:
-
-Expose IframePlugin register function via `liEditor`: `liEditor.registerIframePlugin({IframePlugin})`.
-
-## Features
+## Features 🎁
 
 {{< feature-info "Public api" "server" >}}
 ### Command API :gift:
@@ -274,6 +219,68 @@ editorSettings: {
   }]
 }
 ```
+
+
+{{< feature-info "liServer methods" "server" >}}
+### Add `liServer.register...()` methods :gift:
+
+We have extended the liServer API to allow to register extensions and
+custom routes. This simplifies the server initialization and also improves
+IDE autocomplete support.
+
+- Direct Extension Registration
+  - `liServer.registerPublicationHooks({...})`
+  - `liServer.registerGlobalPublicationHooks({...})`
+  - `liServer.registerListHooks({...})`
+
+- Data Sources
+  - `liServer.registerDataSource({...})`
+  - `liServer.registerDataSources([{...}, {...}])`
+
+- Create / Generate Functions
+  - `liServer.registerCreateFunction({...})`
+  - `liServer.registerTransformFunction({...})`
+  - `liServer.registerCreateFunctions([{...}, {...}])`
+  - `liServer.registerTransformFunctions([{...}, {...}])`
+
+- Includes
+  - `liServer.registerIncludeService({...})`
+  - `liServer.registerIncludeServices([{...}, {...}])`
+
+- Oembed Providers
+  - `liServer.registerOembedProvider({...})`
+  - `liServer.registerOembedProviders([{...}, {...}])`
+
+- Media Sources
+  - `liServer.registerMediaSource({...})`
+  - `liServer.registerMediaSources([{...}, {...}])`
+
+- Register Custom Routes
+  - `liServer.registerEditorRoutes({method, path, auth, action, ...})`
+  - `liServer.registerServerRoutes({method, path, auth, action, ...})`
+The params for both `registerEditorRoutes` and `registerServerRoutes` are the same.
+The difference is only in what values are accepted in the `auth` param. The editor routes accept user token scopes and the server routes accept no auth or api token scopes.
+
+By convention these methods would be called in a single file that starts the downstream server.
+
+`server/app/server.js`
+```js
+const liServer = require('@livigdocs/server')()
+
+liServer.registerInitializedHook(() => {
+  liServer.registerCreateFunctions([
+    require('./create-functions/article')
+  ])
+
+  // ...
+})
+```
+
+{{< feature-info "liEditor methods" "editor" >}}
+### Add `liEditor.registerIframePlugin()` :gift:
+
+Expose IframePlugin register function via `liEditor`: `liEditor.registerIframePlugin({IframePlugin})`.
+
 
 {{< feature-info "Project configuration" "server" >}}
 ### Push Notifications within articles :gift:
