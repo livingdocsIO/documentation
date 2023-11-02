@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to mas
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Preload li-tree document references](https://github.com/livingdocsIO/livingdocs-server/pull/6202)
 * [Support dashboardConfig.search.strategy config](https://github.com/livingdocsIO/livingdocs-server/pull/6268)
 * [Support dashboardConfig.search.strategy config](https://github.com/livingdocsIO/livingdocs-editor/pull/7655)
 * [Support dashboardConfig.search.strategy config](https://github.com/livingdocsIO/livingdocs-server/pull/6268)
