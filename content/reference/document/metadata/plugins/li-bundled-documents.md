@@ -8,8 +8,10 @@ summary: A list of documents belonging to a bundle.
 support:
   document: true
   media: false
-  tableDashboard: false
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: true

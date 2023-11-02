@@ -8,9 +8,11 @@ summary: Display team in metadata form or dashboard.
 support:
   document: true
   media: false
-  tableDashboard: true
   include: false
-  displayFilter: false
+  creationFlow: true
+  pushMessage: false
+  tableDashboard: true
+  displayFilter: true
   searchIndexing: true
   systemMetadata: true
   planningSystem: true

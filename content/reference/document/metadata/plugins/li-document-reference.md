@@ -8,8 +8,10 @@ summary: Shows a reference to another document.
 support:
   document: true
   media: true
-  tableDashboard: true
   include: true
+  creationFlow: true
+  pushMessage: true
+  tableDashboard: true
   displayFilter: true
   searchIndexing: true
   systemMetadata: false

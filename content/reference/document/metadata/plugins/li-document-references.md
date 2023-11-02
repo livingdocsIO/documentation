@@ -8,8 +8,10 @@ summary: A list of references to other documents.
 support:
   document: true
   media: true
-  tableDashboard: false
   include: true
+  creationFlow: true
+  pushMessage: true
+  tableDashboard: false
   displayFilter: true
   searchIndexing: true
   systemMetadata: false

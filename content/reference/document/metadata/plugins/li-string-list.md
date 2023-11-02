@@ -8,8 +8,10 @@ summary: Multiselect
 support:
   document: true
   media: true
-  tableDashboard: true
   include: true
+  creationFlow: true
+  pushMessage: true
+  tableDashboard: true
   displayFilter: true
   searchIndexing: true
   systemMetadata: false

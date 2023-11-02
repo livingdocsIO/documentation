@@ -8,8 +8,10 @@ summary: A reference to a video (and a poster image).
 support:
   document: true
   media: true
-  tableDashboard: false
   include: true
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: false

@@ -8,8 +8,10 @@ summary: Provide a suggested total character count for the text in the document.
 support:
   document: true
   media: false
-  tableDashboard: false
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: false

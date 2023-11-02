@@ -8,8 +8,10 @@ summary: Set a poster image for a video.
 support:
   document: false
   media: true
-  tableDashboard: false
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: false

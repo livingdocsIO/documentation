@@ -9,8 +9,8 @@ summary: |
 support:
   document: false
   media: true
-  tableDashboard: false
   include: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: false

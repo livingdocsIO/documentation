@@ -8,8 +8,10 @@ summary: State of external transcoding job.
 support:
   document: false
   media: true
-  tableDashboard: false
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: false

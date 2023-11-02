@@ -8,8 +8,10 @@ summary: Allows a user to select Distribution Channels that they would like to v
 support:
   document: true
   media: false
-  tableDashboard: false
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: true

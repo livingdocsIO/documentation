@@ -8,8 +8,10 @@ summary: An input field to save an external id of another system.
 support:
   document: true
   media: true
-  tableDashboard: false
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: false

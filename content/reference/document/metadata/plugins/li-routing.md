@@ -8,10 +8,12 @@ summary: Define aliases.
 support:
   document: true
   media: false
-  tableDashboard: false
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
-  searchIndexing: false
+  searchIndexing: true
   systemMetadata: false
   planningSystem: false
 defaultUI: None

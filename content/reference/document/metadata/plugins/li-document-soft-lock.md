@@ -8,8 +8,10 @@ summary: Enables a user to temporarily lock a document while editing.
 support:
   document: true
   media: false
-  tableDashboard: false
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: true

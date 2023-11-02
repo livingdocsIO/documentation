@@ -8,8 +8,10 @@ summary: Send custom push messages.
 support:
   document: true
   media: false
-  tableDashboard: true
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: true
   displayFilter: false
   searchIndexing: false
   systemMetadata: true

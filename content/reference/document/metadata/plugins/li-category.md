@@ -8,8 +8,10 @@ summary: Single category selection.
 support:
   document: true
   media: false
+  include: true
+  creationFlow: true
+  pushMessage: false
   tableDashboard: true
-  include: false
   displayFilter: true
   searchIndexing: true
   systemMetadata: false

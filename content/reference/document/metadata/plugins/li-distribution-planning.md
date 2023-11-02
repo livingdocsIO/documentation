@@ -8,8 +8,10 @@ summary: Enables the Distribution Planning panel, and allows documents to be ass
 support:
   document: true
   media: false
-  tableDashboard: true
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: true
   displayFilter: false
   searchIndexing: true
   systemMetadata: true

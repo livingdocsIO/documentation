@@ -8,8 +8,10 @@ summary: Text input with color picker.
 support:
   document: true
   media: true
-  tableDashboard: false
   include: true
+  creationFlow: true
+  pushMessage: true
+  tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: false

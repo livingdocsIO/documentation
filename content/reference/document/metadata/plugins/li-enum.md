@@ -8,8 +8,10 @@ summary: A select form based on a statically defined list.
 support:
   document: true
   media: true
-  tableDashboard: false
   include: true
+  creationFlow: true
+  pushMessage: true
+  tableDashboard: false
   displayFilter: true
   searchIndexing: true
   systemMetadata: false

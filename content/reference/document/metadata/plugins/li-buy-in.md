@@ -8,8 +8,10 @@ summary: Allows users to ask for buy-in when writing an article or pitching an i
 support:
   document: true
   media: false
-  tableDashboard: true
   include: false
+  creationFlow: false
+  pushMessage: false
+  tableDashboard: true
   displayFilter: false
   searchIndexing: true
   systemMetadata: true

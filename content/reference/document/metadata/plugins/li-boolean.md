@@ -8,8 +8,10 @@ summary: A simple Boolean value store, represented in the UI with a checkbox whi
 support:
   document: true
   media: true
-  tableDashboard: true
   include: true
+  creationFlow: true
+  pushMessage: true
+  tableDashboard: true
   displayFilter: false
   searchIndexing: true
   systemMetadata: false
