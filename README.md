@@ -69,6 +69,10 @@ Check your titles by reading the table of contents generated on the right side o
 {{< release "release-2021-03" >}}
 ```
 
+```markdown
+{{< feature-info "li-documents feature" "server" >}}
+```
+
 *Note: Shortcode templates can be found in `themes/hugo-docs/layouts/shortcodes`.*
 
 

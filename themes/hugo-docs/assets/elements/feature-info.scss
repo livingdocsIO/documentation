@@ -1,0 +1,32 @@
+.feature-info {
+  margin-top: 2em;
+  margin-bottom: -1em;
+}
+
+.feature-info-pill {
+  display: inline-block;
+  border-radius: 5px;
+
+  @extend %font-s-xs;
+  background-color: $color-cyan-2;
+}
+
+.feature-info-pill-header {
+  display: inline-block;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-transform: capitalize;
+  padding: 1px 10px;
+  padding-right: 5px;
+  color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.feature-info-pill-content {
+  display: inline-block;
+  padding: 1px 10px;
+}
+
+.feature-info-pill-header + .feature-info-pill-content {
+  padding-left: 5px;
+}
