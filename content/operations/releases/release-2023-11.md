@@ -72,6 +72,7 @@ It's a simple/fast migration with no expected data losses.
 livingdocs-server migrate up
 ```
 
+{{< feature-info "li-includes feature" "server" >}}
 ### `includeApi.registerService()` and `includeApi.registerServices()` are now synchronous methods :fire:
 
 `includesApi.registerService()` and `includesApi.registerServices()` behaviour has changed and are now synchronous methods.
@@ -79,6 +80,7 @@ If you rely on its return value to be a Promise (e.g. when accessing `.then`), y
 
 * [Server PR: Add new downstream extension API methods](https://github.com/livingdocsIO/livingdocs-server/pull/6169)
 
+{{< feature-info "Metadata plugins" "server" >}}
 ### `li-reference` and `li-reference-list` metadata plugins support has been removed :fire:
 
 Please replace `li-reference` with `li-document-reference` and `li-reference-list` with `li-document-references`.
@@ -88,7 +90,7 @@ If you were using `ui.config.searchOnlyPublished` on `li-reference` definitions,
 * [Server PR: Remove legacy li-reference and li-reference-list metadata plugins](https://github.com/livingdocsIO/livingdocs-server/pull/6186)
 * [Editor PR: Remove legacy li-reference and li-reference-list metadata plugins](https://github.com/livingdocsIO/livingdocs-editor/pull/7569)
 
-
+{{< feature-info "DocumentVersion" "server" >}}
 ### Remove old getter functions on DocumentVersion class :fire:
 
 Remove getter functions which have a replacement on the `DocumentVersion` class:
@@ -106,34 +108,47 @@ Remove getter functions which have a replacement on the `DocumentVersion` class:
 
 * [Server PR: Clean up DocumentVersion class](https://github.com/livingdocsIO/livingdocs-server/pull/6153)
 
-### Remove support for metadata based scheduling supported via editor's configuration `document.customPublicationDateField`
+{{< feature-info "Editor configuration" "editor" >}}
+### Remove support for metadata based scheduling supported via `customPublicationDateField` config
 
 Editor configuration parameter `document.customPublicationDateField` support has been removed. With this change metadata based scheduling is no longer supported.
 Please migrate to `contentType.publishControl.publishSchedule` within [Publish Control feature](https://docs.livingdocs.io/guides/editor/publish-control/publish-control-migration/).
 
 * [Editor PR: Remove support for configuration `document.customPublicationDateField`](https://github.com/livingdocsIO/livingdocs-editor/pull/7622)
 
-### Remove `metadata['li-language'].label` property support :fire:
+{{< feature-info "Project configuration" "server" >}}
+### Remove `label` config of 'li-language' metadata plugin :fire:
 
-`metadata['li-language'].label` won't be used in the editor anymore given native translations make the functionality redundant.
+The deprecated `label` configuration for metadata properties of type `li-language` does not have an effect anymore. Please remove the `li-language` `label` from your metadata configs in contentType configurations.
+
+The language labels are now supported natively in the Livingdocs Editor.
 
 * [Editor PR: Remove li-language's label property from the UI](https://github.com/livingdocsIO/livingdocs-editor/pull/7619)
 
 ## Deprecations
 
+{{< feature-info "Operations" "server" >}}
 ### Postgres v12 :warning:
 
 Postgres v12 support is deprecated and will be removed in March 2024 release (`release-2024-03`).
 
+{{< feature-info "li-documents feature" "server" >}}
 ### Document Patch API :warning:
 
 Document patch API `document.patch` has been deprecated, and will be removed in `release-2024-01`. Please replace it with `documentApi.executeDocumentCommands`. No data migration is required, but you will need to swap `patches` parameter with `commands`, and `user` with `userId`.
 
-### Endpoint `PATCH /document/:id` :warning: 
+{{< feature-info "Editor api" "server" >}}
+### Endpoint `PATCH /document/:id` :warning:
 
-Endpoint `PATCH /document/:id` has been deprecated, and will be removed in `release-2024-01`. Please replace it with `PATCH /document/:id/commands`. No data migration is required, but you will need to swap `patches` parameter with `commands`.
+This concerns an internal API used by the Livingdocs Editor which has been used
+in the past by customizations.
 
-### `serverConfig.documents.realtimeUpdates.enabled` :warning:
+The Endpoint `PATCH /document/:id` will be removed in `release-2024-01`. Please replace it with `PATCH /document/:id/commands`. No data migration is required, but you will need to swap `patches` parameter with `commands`.
+
+{{< feature-info "Server config" "server" >}}
+### Config option `realtimeUpdates.enabled` :warning:
+
+The options `serverConfig.documents.realtimeUpdates.enabled` is deprecated.
 
 Please remove the 'enabled' property and use 'pollingEnabled' and/or 'websocketsEnabled' instead. The value for 'enabled' will be transferred to 'pollingEnabled', if 'pollingEnabled' does not have a value defined.
 
@@ -141,6 +156,7 @@ This deprecation is related to the [Teaser includes reload](#teaser-includes-rel
 
 ## Features
 
+{{< feature-info "Public api" "server" >}}
 ### Command API :gift:
 
 The Command API is exposed on the Public API and allows external services to change document content and metadata and even publish, e.g. making article title A/B-test easier.
@@ -167,7 +183,11 @@ With the introduction of the Command API, we needed a way to differenciate if a 
 
 Please run the migrations for this release to add the new `actors` table to your database. This migration will add Import users and API clients to `actors` table. The actor name will be used to show the actor that modified a document. When reporting modifications on a document users will be obscured and the UI will only report that a human did a modification, while API clients will be reported with their name.
 
-### Search: Use AND operators instead of OR :gift: 
+{{< feature-info "Search bar" "Editor" >}}
+### Enhancded search syntax 'simple search' :gift:
+
+Users in the Editor can now use new syntax in the Media Library search bar
+and also in document dashboards that use the new config option `search` described below.
 
 This release we have improved query syntax to allow users to use special operator to improve text based search results. The new search query syntax supports the following operators:
 - `+` signifies AND operator
@@ -175,47 +195,56 @@ This release we have improved query syntax to allow users to use special operato
 - `-` negates a single token
 - `"` wraps a number of tokens to signify a phrase for searching
 
-For example, the query `quick brown +fox -news` will search for documents containing `quick` and `brown` and `fox` and documents that do *not* contain `news`, i.e. `quick` AND `brown` AND `fox` AND NOT `news`. Previously the default operator was `OR`, which meant that the query `quick brown fox` was interpreted as `quick` OR `brown` OR `fox`, i.e. documents would match if they contained any of the three tokens.
+For example, the query `quick brown +fox -news` will search for documents containing `quick` and `brown` and `fox` and documents that do *not* contain `news`, i.e. `quick` AND `brown` AND `fox` AND NOT `news`.
+
+Previously the default operator was `OR`, which meant that the query `quick brown fox` was interpreted as `quick` OR `brown` OR `fox`, i.e. documents would match if they contained any of the three tokens.
 
 You can also use `"` to search for phrases, for example `quick "brown fox"` will only match documents that contain the exact phrase `brown fox` and `quick`, e.g. `The quick fox is brown` wouldn't result in a match, but `The brown fox is quick` would.
 
 Using `|` (OR) operator will result in a match if any of the tokens are present in the document, e.g. `quick | brown | fox` will match documents that contain `quick` OR `brown` OR `fox`, not necessarily all three. Which was the behaviour of search queries in previous releases.
 
-This behaviour is enabled in the Media Library search, and it can be enabled per dashboard for documents with the following dashboard configuration:
+This behaviour is enabled in the Media Library search, and it can be enabled per dashboard for documents with the following dashboard configuration in your editorSettings within the project configuration:
 
 ```js
-{
-  search: {
-    strategy: "simple"
-  }
+editorSettings: {
+  dashboards: [{
+    // ...
+    search: {
+      strategy: "simple"
+    }
+  }]
 }
 ```
 
-### Push Notifications :gift:
+{{< feature-info "Project configuration" "server" >}}
+### Push Notifications within articles :gift:
 
-The new Push Notification feature can trigger pushes from within the Article Editor Toolbar, in previous releases it could only trigger pushes on Dashboards.
+The [Push Notifications]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}) feature can now trigger pushes from within the Article Editor Toolbar (previously it could only trigger pushes on Dashboards).
 
-Support to show the "Push" button for the new "Push Messages". Clicking the button will open the Push messages Dialog.
+If a `li-push-messages` metadata plugin is configured on a document a "Push" button will be availalbe in the document editor.
 
-The "Push" button only shows if a `li-push-messages` metadata plugin is configured. For now, the button will take the first `li-push-messages` metadata plugin config it finds.
-
+{{< feature-info "Document editing" "editor" >}}
 ### Teaser includes reload :gift:
 
 If a document embeds teasers using includes, those teasers will get updated if referenced documents are updated.
 
+{{< feature-info "Project configuration" "server" >}}
 ### Metadata validation :gift:
 
-Introduction of metadata plugin validation in documents, media library and paramSchema. This will prevent unsupported usage of metadata plugin configurations on server side.
+Introduction of metadata plugin validation in documents, media library and paramSchema. This will prevent using a metadata plugin in the wrong place in the project configuration to help spot configuration errors.
 
 Plugins used in other contexts than the ones stated in the [docs](https://docs.livingdocs.io/reference/document/metadata/plugins/), will now report an error during server startup.
 
+{{< feature-info "Document editing" "editor" >}}
 ### Allow `tel:` and `mailto:` inline links :gift:
 
 We have added support for `tel:` and `mailto:` URL links in the editor. This feature is enabled by default and doesn't require any configuration.
 
+
 ## Vulnerability Patches :shield:
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
+
 
 ### Livingdocs Server :shield:
 
@@ -225,6 +254,7 @@ This release we have patched the following vulnerabilities in the Livingdocs Ser
 * [CVE-2023-4863](https://nvd.nist.gov/vuln/detail/CVE-2023-4863) patched in `sharp` v0.32.6
 
 No known vulnerabilities are present in the Livingdocs Server.
+
 
 ### Livingdocs Editor :shield:
 
