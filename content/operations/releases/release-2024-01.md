@@ -83,6 +83,7 @@ To learn about the necessary actions to update Livingdocs to `release-2024-01`, 
 
 ## Breaking Changes 🔥
 
+{{< feature-info "Operations" "server" >}}
 ### Migrate the Postgres Database :fire:
 
 It's a simple/fast migration with no expected data losses.
@@ -91,6 +92,29 @@ It's a simple/fast migration with no expected data losses.
 # run `livingdocs-server migrate up` to update to the newest database scheme
 livingdocs-server migrate up
 ```
+
+{{< feature-info "Project config" "server" >}}
+### Custom downstream plugins paramSchema validation changes :fire:
+
+Plugins used in other contexts than the ones stated in the [docs](https://docs.livingdocs.io/reference/document/metadata/plugins/), will now report an error during server startup.
+
+All downstream plugins are supported by default in document metadata and media library metadata. But if a downstream plugin is used in include services, creation flows or push messages, that will now cause an error during startup.
+
+If a downstream plugin is being used in an include service params schema the following configuration needs to be added to the plugin declaration:
+
+```
+supportedPluginContexts: [
+  'documentMetadata',
+  'mediaLibraryEntryMetadata', 
+  'includeParams'
+]
+```
+
+You should remove the `serverConfig.useStrictSchemas` property if you set it in the previous release.
+
+Please contact your Livingdocs customer manager if you have any problems with the limitations imposed by the supported plugin contexts.
+
+* [Server PR: Validate plugin configuration in various contexts](https://github.com/livingdocsIO/livingdocs-server/pull/6205)
 
 TODO: check migration
 
@@ -101,6 +125,8 @@ TODO: check migration
 ## Features
 
 TODO (featureset not 100% defined yet)
+
+[Breaking change `Custom downstream plugins param schema validation changes`](#custom-downstream-plugins-param-schema-validation-changes-fire) is related to this feature so please read it carefully.
 
 ## Vulnerability Patches
 

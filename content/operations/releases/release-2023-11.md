@@ -139,13 +139,34 @@ Postgres v12 support is deprecated and will be removed in March 2024 release (`r
 
 Document patch API `document.patch` has been deprecated, and will be removed in `release-2024-01`. Please replace it with `documentApi.executeDocumentCommands`. No data migration is required, but you will need to swap `patches` parameter with `commands`, and `user` with `userId`.
 
-{{< feature-info "Editor api" "server" >}}
+{{< feature-info "Editing api" "server" >}}
 ### Endpoint `PATCH /document/:id` :warning:
 
 This concerns an internal API used by the Livingdocs Editor which has been used
 in the past by customizations.
 
 The Endpoint `PATCH /document/:id` will be removed in `release-2024-01`. Please replace it with `PATCH /document/:id/commands`. No data migration is required, but you will need to swap `patches` parameter with `commands`.
+
+{{< feature-info "Project config" "server" >}}
+### Custom downstream plugins paramSchema validation changes :warning:
+
+Plugins used in other contexts than the ones stated in the [docs](https://docs.livingdocs.io/reference/document/metadata/plugins/), will report an error during server startup.
+
+All downstream plugins are supported by default in document metadata and media library metadata. But if a downstream plugin is used in include services, creation flows or push messages, that will cause an error during startup.
+
+If a downstream plugin is being used in an include service params schema the following configuration needs to be added to the plugin declaration:
+
+```
+supportedPluginContexts: [
+  'documentMetadata',
+  'mediaLibraryEntryMetadata', 
+  'includeParams'
+]
+```
+
+To opt-in to the new schemas you can set `serverConfig.useStrictSchemas: true`. This will allow you to find any invalid useage of plugins and fix them before the next release.
+
+Please contact your Livingdocs customer manager if you have any problems with the limitations imposed by the supported plugin contexts.
 
 {{< feature-info "Server config" "server" >}}
 ### Config option `realtimeUpdates.enabled` :warning:
