@@ -81,7 +81,7 @@ The video import does both create and update videos. The import remembers the `e
 
 - [Initial import from a legacy system]({{< ref "/guides/setup/import-legacy-system-documents" >}})
 
-##### Alternatives
+##### Related
 
 - [Import Media Library Entries]({{< ref "/reference/public-api/imports/media-library-entries" >}})
 

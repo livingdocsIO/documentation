@@ -50,7 +50,7 @@ This endpoint returns publication events (`publish`, `unpublish`, `update`) for 
 - Reliably fetch documents publication state changes to sync with another system
 - Cache invalidation management
 
-##### Alternatives
+##### Related
 
 - [Webhooks]({{< ref "/reference/webhooks" >}})
 

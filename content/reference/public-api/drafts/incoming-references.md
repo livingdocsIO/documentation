@@ -38,7 +38,7 @@ GET api/v1/drafts/:documentId/incomingDocumentReferences
 
 This endpoint is functionally equivalent to the [Incoming Document References]({{< ref "/reference/public-api/publications/latest-publication-beta" >}}) endpoint for publications. But with this draft endpoint you will receive references from unpublished documents as well as references from the current state of documents even if these latest updates to the document are not published yet.
 
-##### Alternatives
+##### Related
 
 - [Incoming Document References]({{< ref "/reference/public-api/publications/latest-publication-beta" >}}) (for publications)
 

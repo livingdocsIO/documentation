@@ -54,7 +54,7 @@ The endpoint provides an unresolved Publication with 4 possible top-level proper
 -  Export the unresolved Publication to another system and get changes via [Publication Events]({{< ref "/reference/public-api/publications/publication-events" >}}) or [Webhooks]({{< ref "/reference/webhooks" >}})
 -  (deprecated) Provides a Publication via a [Rendition]({{< ref "/reference/project-config/content-types#renditions" >}}) for a delivery in another format like `RSS`, `XML`
 
-##### Alternatives
+##### Related
 
 - [Latest Publication API Beta]({{< ref "/reference/public-api/publications/latest-publication-beta" >}})
 - [Composition API]({{< ref "/reference/public-api/composition-api" >}})

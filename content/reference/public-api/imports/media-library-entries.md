@@ -165,9 +165,9 @@ You can also provide a custom id to entries which helps with importing documents
 ##### Use Cases
 
 - Initial import from an external system
-- Self managing asset upload and creating your own Media Library Entry (easier for imports to connect Media Library Entries with its documents)
+- Self managing asset upload (images, videos, files) and creating your own Media Library Entry (easier for imports to connect Media Library Entries with its documents)
 
-##### Alternatives
+##### Related
 
 - [Import Images]({{< ref "/reference/public-api/imports/images" >}})
 - [Import Videos]({{< ref "/reference/public-api/imports/videos" >}})

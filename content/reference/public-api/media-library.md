@@ -118,7 +118,7 @@ Patch a Media Library Entry by its `id`.
 
 ##### Use Cases
 
-- Transcode a video
+- Enhancing MediaLibraryEntries. For example, update the metadata after transcoding a video or analyzing the media with an external service.
 - When having a separate DAM - update Livingdocs Media Library Entry
 
 --response--
