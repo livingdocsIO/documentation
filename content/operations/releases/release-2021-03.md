@@ -130,7 +130,7 @@ References:
 
 ### Named Crops :tada:
 
-The Named Crops feature supports multiple crops per image in a document. This allows to preset crops on the master images in the Media Library and on demand overwrite those master crops on the placed image inside an article. Also, the API now provides several crops per image as defined in the named crops settings.
+The Named Crops feature supports multiple crops per image in a document. This allows to preset crops on the source images in the Media Library and on demand overwrite those crops on the image inside an article. Also, the API now provides several crops per image as defined in the named crops settings.
 
 <img width="589" src="https://user-images.githubusercontent.com/821875/103688930-dc9c9180-4f92-11eb-894d-45ae105e72a4.png">
 
