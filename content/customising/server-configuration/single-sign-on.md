@@ -36,7 +36,7 @@ In the following example we set different providers: Azure, Github, Google and F
             return ['owners']
           },
           // User will be created and logged into this project (enterprise use-case)
-          defaultProjectHandle: 'enterprise-web-print' // alternative 'defaultProjectId: 1'
+          defaultProjectHandle: 'daily-planet' // alternative 'defaultProjectId: 1'
         },
         ui: {
           label: 'AD',
@@ -59,7 +59,7 @@ In the following example we set different providers: Azure, Github, Google and F
             return ['owners']
           },
           // User will be created and logged into this project (enterprise use-case)
-          defaultProjectHandle: 'enterprise-web-print' // alternative 'defaultProjectId: 1'
+          defaultProjectHandle: 'daily-planet' // alternative 'defaultProjectId: 1'
         },
         ui: {
           label: 'Google',

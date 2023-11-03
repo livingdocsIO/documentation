@@ -29,11 +29,10 @@ You can register a DataSource (e.g. `labelValuePairDataSource`) and use it as da
 ```js
 const axios = require('axios')
 
-liServer.features.register('data-sources', async function (feature, server) {
-  const dataSourcesApi = server.features.api('li-data-sources')
+liServer.registerInitializedHook(() => {
 
   // register code on the server
-  dataSourcesApi.register({
+  liServer.registerDataSource({
     handle: 'labelValuePairDataSource',
     // result for labelValuePair = [{label, value}, ...]
     dataFormat: 'labelValuePair',

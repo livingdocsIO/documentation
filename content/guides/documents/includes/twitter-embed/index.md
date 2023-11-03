@@ -55,17 +55,13 @@ rendering the include with parameters filled in the editor.
 
 ```js
 // app/server.js
-liServer.features.register('custom-includes', require('app/includes'))
-
-// app/includes/index.js
-module.exports = async function (feature, server) {
-  const includesApi = server.features.api('li-includes')
-  await includesApi.registerServices([
-    require('../../plugins/includes/tweet')
+liServer.registerInitializedHook(() => {
+  liServer.registerIncludeServices([
+    require('./include-services/tweet')
   ])
-}
+})
 
-// ../../plugins/includes/tweet.js
+// app/include-services/tweet.js
 const fetch = require('node-fetch')
 module.exports = {
   name: 'twitterInclude',

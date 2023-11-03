@@ -6,7 +6,7 @@ weight: 2
 ---
 
 ## SSO example with Azure AD
-To use SSO with OpenID Connect we have a strategy `li-authentication-openid-connect` to use in the `auth.connections` config. With this strategy, you can use a SSO Service (AzureAD, Google, Facebook, ...) which supports the OpenID Connect for authentication.  
+To use SSO with OpenID Connect we have a strategy `li-authentication-openid-connect` to use in the `auth.connections` config. With this strategy, you can use a SSO Service (AzureAD, Google, Facebook, ...) which supports the OpenID Connect for authentication.
 
 To enable AzureAD SSO for Livingdocs, add the config below to the server config in `auth.connections`. It creates a setup for SSO with AzureAD and shows the button for that on the login page. It is also using the existing user from Livingdocs and create an AzureAD Identity. The already written articles with this user will still be assigned to the same user. The match of the user is done with the email address.
 
@@ -38,7 +38,7 @@ module.exports = {
         issuer: 'https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration',
         config: {
           clientId: azureConfig.clientId,
-          clientSecret: azureConfig.clientSecret, 
+          clientSecret: azureConfig.clientSecret,
           // Check `Configuring OpenID in Azure AD` section for a guide
           scope: 'openid email profile',
           async extractClaims ({tokenSet}) {
@@ -55,7 +55,7 @@ module.exports = {
           async extractProjects ({client, tokenSet, claims}) {
             // return a default
             return [{
-              projectHandle: 'enterprise-web-print',
+              projectHandle: 'daily-planet',
               groupLabels: ['owners', 'editors']
             }, {
               projectHandle: 'service',

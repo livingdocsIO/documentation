@@ -91,9 +91,11 @@ module.exports = {
 ### Step 2 - Register the Media Source Plugin
 
 ```js
-liServer.registerInitializedHook(async () => {
-  const mediaLibraryApi = liServer.features.api('li-media-library')
-  mediaLibraryApi.registerMediaSource(require('./plugins/media-sources/example_plugin'))
+// app/server.js
+liServer.registerInitializedHook(() => {
+  liServer.registerMediaSources([
+    require('./plugins/media-sources/example_plugin')
+  ])
 })
 ```
 

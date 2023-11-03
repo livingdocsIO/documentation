@@ -623,7 +623,7 @@ A user can change the date to see the scheduled articles in the configured platf
 
 Along with manually dragging stories from the side bar on to the page to create teasers, it is also possible to register a document create flow to update or re-generate the content for the current document.
 
-This feature should be considered beta. It is likely that we will refactor this in the future because the `registerCreateFunction` and `create` naming is not ideal for this scenario, where we are actually updating or generating content.
+This feature should be considered beta.
 
 #### Register Create Function
 
@@ -632,7 +632,7 @@ To begin with you should register a new create function in your server runtime c
 ```js
 liServer.registerInitializedHook(async () => {
   const documentApi = liServer.features.api('li-documents').document
-  documentApi.registerCreateFunction({
+  documentApi.registerGenerateFunction({
     handle: 'generateTeasersFromDesknetSchedule',
     async create ({projectConfig, userId, params = {}, context = {}}) {
       // Extract Desk-Net elements from schedule tree

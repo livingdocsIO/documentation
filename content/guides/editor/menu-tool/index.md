@@ -1,6 +1,6 @@
 ---
 title: Menu Tool
-description: Use Data-Record and li-tree plugin to build a menu tool 
+description: Use Data-Record and li-tree plugin to build a menu tool
 weight: 4
 ---
 
@@ -36,7 +36,7 @@ Make sure to add it to the projects' list of Content Types.
   info: {
     label: 'Menu'
   },
-  
+
   metadata: [
     {
       handle: 'name',
@@ -126,7 +126,7 @@ Add a Document Creation Flow and a Table Dashboard to your Editor Settings:
 And here the registered creation function:
 
 ```js
-documentApi.registerCreateFunction({
+liServer.registerCreateFunction({
   handle: 'createMenu',
   async create ({params = {}}) {
     return {

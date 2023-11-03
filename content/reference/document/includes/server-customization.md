@@ -13,14 +13,13 @@ We recommend where possible going down the paramsSchema route for includes. This
 ## Registering your include
 
 ```js
-// runtime config
-liServer.features.register('include-services', async function (feature, server) {
-  const includesApi = liServer.features.api('li-includes')
-  await includesApi.registerServices([
+// app/server.js
+liServer.registerInitializedHook(() => {
+  liServer.registerIncludeServices([
     // registers the include rendering service
-    require('./plugins/includes/teaser.js')
+    require('./include-services/teaser.js')
   ])
-}
+})
 ```
 
 
@@ -392,4 +391,4 @@ Passes any value to the render function.
 config: {
   foo: 'bar'
 }
-``
+```
