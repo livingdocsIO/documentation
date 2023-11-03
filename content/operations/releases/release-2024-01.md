@@ -20,7 +20,7 @@ aliases:
 
 ## Caveat :fire:
 
-These are the release notes of the upcoming release (pull requests merged to master).
+These are the release notes of the upcoming release (pull requests merged to the main branch).
 
 - :information_source: this document is updated automatically by a bot (pr's to categorize section)
 - :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
@@ -105,7 +105,7 @@ If a downstream plugin is being used in an include service params schema the fol
 ```
 supportedPluginContexts: [
   'documentMetadata',
-  'mediaLibraryEntryMetadata', 
+  'mediaLibraryEntryMetadata',
   'includeParams'
 ]
 ```

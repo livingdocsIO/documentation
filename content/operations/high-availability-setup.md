@@ -5,7 +5,7 @@ icon: calendar-check
 menu: operations
 ---
 
-_Architecture diagrams master files can be found [on google drive](https://docs.google.com/document/d/1TQhW3HtzurI78kinxUCqf5OxG3RSoiEURXEn4AIztP0/edit#heading=h.snjxmn1ywzn)_
+_Architecture diagrams source files can be found [on google drive](https://docs.google.com/document/d/1TQhW3HtzurI78kinxUCqf5OxG3RSoiEURXEn4AIztP0/edit#heading=h.snjxmn1ywzn)_
 
 ## Editing stack
 The editing stack is usually accessed by a limited number of editorial users and hence requirements for redundancy are lower than in the delivery stack. For that reason, we do not recommend to add a caching layer to the editing stack.

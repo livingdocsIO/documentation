@@ -24,8 +24,8 @@ Let v28 be the newest version. A customer needs a patch release for their older 
 2. Update package.json
 
   ```bash
-  # semantic-release only runs on master by default.
-  # Set release.branch to maintenance-v27.6.0 in package.json to enable semantic-release on your non-master branch.
+  # semantic-release only runs on main by default.
+  # Set release.branch to maintenance-v27.6.0 in package.json to enable semantic-release on your non-main branch.
   # semantic-release publishes the new version as `latest` by default.
   # As you're releasing an old version, set publishConfig.tag to prevent a release of the `latest` dist-tag
   # Both steps are required to not mess up other customers installations

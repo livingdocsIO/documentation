@@ -46,4 +46,4 @@ outputs:
   home: [HTML, RSS, SearchIndex]
 
 params:
-  branch: master
+  branch: main
