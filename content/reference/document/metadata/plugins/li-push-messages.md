@@ -93,8 +93,6 @@ additionalConfig: |
   - Handler function can be `async`, returned value will be ignored
   - Push Message will not be saved if handler throws an error
 
-  Example configuration from [Livingdocs server boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/master/app/hooks/push-messages-hooks.js):
-
   ```js
   module.exports = function (liServer) {
     // Register function after server initialization
