@@ -8,7 +8,7 @@ weight: 15
 Use the [`li-push-messages` metadata plugin]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}) instead.**
 
 This guide explains 2 things:
-1. how to enable the push notifications feature in the [Livingdocs Server boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate)
+1. how to enable the push notifications feature.
 2. how to do a custom dashboard item for your articles that shows push notification information
 
 Livingdocs supports three push notification services.
@@ -36,8 +36,8 @@ To enable push notifications you need to do 3 things:
 3. in every channel that should support push notifications, [configure your topics]({{< ref "/reference/project-config/content-types.md#push-notifications" >}})
 4. setup the push notifications field in your Elasticsearch mapping
 
-The [Livingdocs Server boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate) has commented out sections for all three things so you can check there.
-(4) is already done in the boilerplate server so if you are running with this, you don't need to do anything. Otherwise add the following ES mapping block to `app/search/custom-mappings/metadata.json`
+(4) Add the following ES mapping block to `app/search/custom-mappings/metadata.json`
+
 ```json
 {
   "pushNotifications": {

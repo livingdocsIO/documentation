@@ -23,7 +23,7 @@ abort without handling the drop.
 
 The following example recognises a custom mime type in the `DataTransfer` object and inserts an HTML component into the document at the dropLocation:
 
-Example code
+Example code in `app/editor.js`
 ```js
 liEditor.dropHandlers.register({
   name: 'customPlugin',
@@ -44,4 +44,3 @@ liEditor.dropHandlers.register({
   }
 })
 ```
-(Code location in editor-boilerplate: `app/editor.js`)

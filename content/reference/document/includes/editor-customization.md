@@ -122,6 +122,18 @@ The `params` stored in the document when the modal is opened are passed into the
 
 To make includes work in the Livingdocs Editor you sometimes have to execute some code inside the rendered document in the editor. For example when adding a twitter embed to a document you have to tell the twitter script to parse the page again and render the embed. In such cases you can use an onIncludeRendered hook in the editor.
 
- 1) [register](https://github.com/livingdocsIO/livingdocs-server-boilerplate/blob/add-include-example/plugins%2Fincludes%2Ftweet.js) a twitter include in the **server**<br>
- 2) [register](https://github.com/livingdocsIO/livingdocs-editor-boilerplate/pull/99/files#diff-beb9ebd19fcc1e56d5bdeda46106e930R54) a twitter include rendering plugin in the **editor**<br>
- 3) [trigger](https://github.com/livingdocsIO/livingdocs-editor-boilerplate/pull/99/files#diff-f2e50a0b2e458496f0fc57617c4a6a33) your script for a given include in the **editor**
+Example of the registration of an include render plugin:
+```js
+liEditor.includeRenderPlugins.register(name, pluginInstance)
+```
+
+Example pluginInstance from above:
+```js
+{
+  onIncludeRendered (err, {componentId, directiveName, includeValue, renderer}) {
+    if (err) return
+    const {twttr} = renderer.renderingContainer.window
+    twttr != null ? twttr.ready(() => twttr.widgets.load()) : undefined
+  }
+}
+```

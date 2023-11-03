@@ -11,8 +11,6 @@ Say, we want to add a new metadata field "catchline" for articles. The catchline
 
 ### Server
 
-(Note: we assume the use of the [Livingdocs server boilerplate](https://github.com/livingdocsIO/livingdocs-server-boilerplate) here)
-
 You will first need to configure this in your server.
 
 **Configuration Example with a Default Plugin**
@@ -35,7 +33,7 @@ The metadata lives in the content-type config. You can for example add the above
 
 Some things to note:
 
-1. A standard plugin is stored in [`plugins/metadata`](https://github.com/livingdocsIO/livingdocs-server/tree/master/plugins/metadata) and will automatically be loaded on the downstream and is always ready for usage. In our example we use `li-text`.
+1. Livigndocs offers a wide range of native metadata plugins which are loaded by default. In our example we use `li-text`.
 2. Open the `contentType` configuration file you want to edit and add the catchline config from the example to the metadata configuration. The field `catchline` is now available in documents with this `contentType`.
 3. By default, metadata is only stored in the database. When you also want to be the metadata field searchable via public API's publication search, you can read more [here]({{< ref "/guides/search/publication-index.md" >}}).
 

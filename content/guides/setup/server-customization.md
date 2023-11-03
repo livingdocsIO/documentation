@@ -7,13 +7,10 @@ on-premise: true
 ---
 
 If you use Livingdocs as on-premises software you can register plugins through a code API in both the editor and the server. Your projects will use a `package.json` file to install the core editor and server respectively as npm packages in a specific version.
-The boilerplate projects are small customizing setups that illustrate this.
 
 This document gives an overview of how to register custom features without going into detail on how to write any of them.
 
 ## Register a custom server feature
-
-(Refer to the [boilerplate server](https://github.com/livingdocsIO/livingdocs-server-boilerplate) to see real examples of this.)
 
 A custom server feature can contain any code you like. Common examples are bridges to third-party APIs or import features that import documents from some other source like an old legacy CMS.
 

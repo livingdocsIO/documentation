@@ -12,17 +12,8 @@ As a customer, you can get a token to access them and install them in your custo
 @livingdocs/framework
 @livingdocs/server
 @livingdocs/editor
+@livingdocs/livingdocs-cli
 ```
-
-## Boilerplate projects
-
-We provide boilerplate projects that you can copy for your own customization project.
-They contain the minimal setup along with a Docker setup to get you started quickly.
-
-- Example server: https://github.com/livingdocsIO/livingdocs-editor-boilerplate
-- Example editor: https://github.com/livingdocsIO/livingdocs-server-boilerplate
-- Example design: https://github.com/livingdocsIO/livingdocs-design-timeline
-
 
 ## Core APIs
 

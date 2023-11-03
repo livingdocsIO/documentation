@@ -91,12 +91,3 @@ A Livingdocs document is an abstract representation of an HTML document. It's st
 In Livingdocs the components that can be used are defined in a Livingdocs `Design`. Just like the DOM represents a tree of HTML elements a `livingdoc` represents a tree of `components`.
 
 From the user's perspective a `livingdoc` is a page with a list of components that can be dragged around, selected, edited and deleted individually. The same is true for developers: all action in the editor map to Livingdocs framework actions that can be scripted as well.
-
-### Headless approach for multi channel publishing
-
-Livingdocs is very different from other Content Management Systems in that it does not make any assumptions about how you deliver your content. From a Livingdocs perspective a single-page app, an integration into another CMS, or a native app are all the same. In essence, the Livingdocs delivery layer is:
-
-- a set of APIs that provide the necessary data to make rendering really easy
-- a set of boilerplate apps that you can fork and use if they fit your needs
-
-Livingdocs pre-renders content for you and delivers those pre-rendered documents over the API. This means that it gets the correct version of your design, fetches the right content of your document and renders everything to HTML. This makes writing HTML-based apps really easy. But you can also write JSON or XML based apps (or whatever other format you might need). The Livingdocs server defines a render pipeline where you can define what content you want to export into which formats. Every channel is always represented as a Livingdocs design which enables your users to write in every channel directly in the Livingdocs editor. This makes for real multi channel publishing: your users can write natively in every channel and delivery is fully customizable.

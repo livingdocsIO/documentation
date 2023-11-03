@@ -16,22 +16,6 @@ To get access you will need a Github account and drop us an email: <contact@livi
 
 Until you have access you can use our service at <https://edit.livingdocs.io> for your evaluation. All Livingdocs features except server- and editor extensions are also available in the service.
 
-
-## Boilerplates
-
-Once you have access you can download our boilerplates for the livingdocs-server and the livingdocs-editor.
-
-Both the server and the editor ship with a default configuration, that works out of the box with the Dockerfiles we provide.
-
-{{< warning >}}
-  If you get a <strong>404 - Not Found</strong> for the repos below this means you do not have access to Livingdocs on Github.
-{{< /warning >}}
-
-{{< github "livingdocsIO/livingdocs-editor-boilerplate" "[Private Repo] On Premise Editor Template" >}}
-
-{{< github "livingdocsIO/livingdocs-server-boilerplate" "[Private Repo] On Premise Server Template" >}}
-
-
 ## System Requirements
 
 ### Operating system
@@ -49,52 +33,9 @@ In order to setup and run a Livingdocs application on your local machine, you ne
 
 On a lower note, you'll also need active Github and Docker accounts respectively.
 
-## Download the Boilerplates
-
-### Get the code
-
-Create a new directory, change to it and clone our boilerplate repositories from Github:
-
-```bash
-git clone https://github.com/livingdocsIO/livingdocs-server-boilerplate
-git clone https://github.com/livingdocsIO/livingdocs-editor-boilerplate
-```
-
-Now, what did you get?
-
-Within `livingdocs-server-boilerplate` we have a default configuration for a Livingdocs Server instance. This server, once up and running, will take care of a variety of things, from persisting your documents to search indexation – however, it is exclusively data driven or [headless](https://en.wikipedia.org/wiki/Headless_software).
-
-The second folder `livingdocs-editor-boilerplate` contains a default configuration for a Livingdocs Editor instance, our editing user interface.
-
-### The `ENVIRONMENT` variable
-
-With this value, we determine under what kind of base premise the services should get run. At this point, we only need to know, that for a local setup we always want that value to be set to `local`.
-You can either call the following line before each and every script or permanently set the environment variable by adding the line to your `~/.zshrc` or `~/.bashrc`
-
-```bash
-export ENVIRONMENT=local
-```
-
-
-## Proceed with the Boilerplate READMEs
-
-Next, follow the instructions in each repository's README:
-
-{{< warning >}}
-  If you get a <strong>404 - Not Found</strong> for the repos below this means you do not have access to Livingdocs on Github.
-{{< /warning >}}
-
-{{< github "livingdocsIO/livingdocs-editor-boilerplate" "[Private Repo] On Premise Editor Template" >}}
-
-{{< github "livingdocsIO/livingdocs-server-boilerplate" "[Private Repo] On Premise Server Template" >}}
-
-
-**Please note**
-These boilerplates are _not_ meant to be used for anything else than local evaluation. They also include configurations for rate limited third-party API's that we provide for convenience reasons.
-
 ## Setting up required services and accounts
 
-For your convenience we provide evaluation accounts for e.g. image storage or sending mails so you can start exploring the boilerplate right away.
+For your convenience we provide evaluation accounts for e.g. image storage or sending mails.
 
 But before starting to develop in earnest you will have set up your own accounts.
 

@@ -32,7 +32,7 @@ Livingdocs has 2 main applications, the `livingdocs-editor` and the `livingdocs-
 
 For evaluation we already have added accounts for the 5 external services in the config files. They are limited to a specific amount of data but this shouldn't be a problem for the evaluation.
 
-For the `livingdocs-server` and `livingdocs-editor` we have a boilerplate which you can use to setup your own server and editor. These two repositories are private. Please contact us that you are interested to evaluate Livingdocs so we can give you access to the repository.
+For the `livingdocs-server` and `livingdocs-editor` we have a boilerplate which you can use to setup your own server and editor. This repository is private. Please contact us that you are interested to evaluate Livingdocs so we can give you access.
 
 ## Setup
 - Go through the setup documentation: [on premise setup]({{< ref "/operations/on-premise-setup.md" >}})
