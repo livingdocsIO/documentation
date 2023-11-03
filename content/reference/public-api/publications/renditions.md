@@ -39,7 +39,7 @@ With the Renditions Endpoint you can load different output formats of your publi
 
 - Provides a Publication for a delivery in another format like `RSS`, `XML` (so called `Rendition`)
 
-##### Alternatives
+##### Related
 
 
 - [Latest Publication API]({{< ref "/reference/public-api/publications/latest-publication" >}})

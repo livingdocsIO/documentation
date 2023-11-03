@@ -50,7 +50,7 @@ Menu items can be of three types:
 
 - Get menus for deliveries
 
-##### Alternatives
+##### Related
 
 - [Menu Tool]({{< ref "/guides/editor/menu-tool" >}})
 

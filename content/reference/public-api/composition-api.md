@@ -57,7 +57,7 @@ The `Composition API` loads a Publication with all required information to rende
 
 - Load a Publication with all required information to render a whole document/page within one request.
 
-##### Alternatives
+##### Related
 
 - [Latest Publication API]({{< ref "/reference/public-api/publications/latest-publication" >}})
 - [Latest Publication API Beta]({{< ref "/reference/public-api/publications/latest-publication-beta" >}})
