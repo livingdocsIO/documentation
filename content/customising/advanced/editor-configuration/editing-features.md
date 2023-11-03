@@ -5,7 +5,7 @@ menus:
     parent: Editor Config
 ---
 
-All of the following options concern the editor environment configuration files, so for example `config/environments/all.js` in the [boilerplate editor](https://github.com/livingdocsIO/livingdocs-editor-boilerplate). We list all available config options here where necessary with links to other pages.
+All of the following options concern the editor environment configuration files. These are typically located in `config/environments/`. We list all available config options here where necessary with links to other pages.
 
 ## Toolbar
 
@@ -148,29 +148,6 @@ See [here]({{< ref "./text-editing.md#spellcheck" >}})
 
 The `useHistoryRestore` option enables / disables the restore functionality in the document history, i.e. the ability to restore the opened document to an older revision.
 
-### Diff View
-```js
-app: {
-  history: {
-    diffUserColors: [
-      ['#B39CD0', '#FBEAFF'],
-      ['#F9F871', '#F6F2CB'],
-      ['#FF9671', '#FFE6D6'],
-      ['#D65DB1', '#EAADD4'],
-      ['#00C9A7', '#C7FCEC'],
-      ['#FFC75F', '#FFEDCB'],
-      ['#008F7A', '#55C6AE'],
-      ['#0089BA', '#5FBEF2'],
-      ['#C34A36', '#D99586'],
-      ['#FF6F91', '#FFE3EB']
-    ],
-    pageSize: 100
-  },
-}
-```
-The `diffUserColors` is an array with colors for the users in the diff view. You can set two colors for a user. The colors are always picked from beginning and given to a user in the diff view.
-The `pageSize` is the size of how many revisions are shown in the UI.
-
 ## Links
 
 See [here]({{< ref "./text-editing.md#links" >}})
@@ -203,8 +180,10 @@ Selecting multiple components at once allows editors to delete a bulk of compone
 The selection of text across multiple components by dragging inside of a text component is enabled by default but can be disabled in the editable settings:
 
 ```js
-editable: {
-  multiEditablesTextSelection: false,
+app: {
+  editable: {
+    multiEditablesTextSelection: false,
+  }
 }
 ```
 
