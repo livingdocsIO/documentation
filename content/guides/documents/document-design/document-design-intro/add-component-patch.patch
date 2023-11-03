@@ -1,7 +1,7 @@
-diff --git a/setup/projects/boilerplate/article.js b/setup/projects/boilerplate/article.js
+diff --git a/projects/boilerplate/article.js b/projects/boilerplate/article.js
 index 9d851a7..3b19156 100644
---- a/setup/projects/boilerplate/article.js
-+++ b/setup/projects/boilerplate/article.js
+--- a/projects/boilerplate/article.js
++++ b/projects/boilerplate/article.js
 @@ -21,6 +21,8 @@ module.exports = {
      name: 'title'
    }, {
@@ -11,10 +11,10 @@ index 9d851a7..3b19156 100644
    }, {
      name: 'image'
    }, {
-diff --git a/setup/projects/boilerplate/boilerplate_config.js b/setup/projects/boilerplate/boilerplate_config.js
+diff --git a/projects/boilerplate/boilerplate_config.js b/projects/boilerplate/boilerplate_config.js
 index b658c74..099f895 100644
---- a/setup/projects/boilerplate/boilerplate_config.js
-+++ b/setup/projects/boilerplate/boilerplate_config.js
+--- a/projects/boilerplate/boilerplate_config.js
++++ b/projects/boilerplate/boilerplate_config.js
 @@ -10,7 +10,8 @@ module.exports = {
      require('./components/title'),
      require('./components/paragraph'),
@@ -25,10 +25,10 @@ index b658c74..099f895 100644
    ],
    categories: require('./categories')
  }
-diff --git a/setup/projects/boilerplate/design_settings.js b/setup/projects/boilerplate/design_settings.js
+diff --git a/projects/boilerplate/design_settings.js b/projects/boilerplate/design_settings.js
 index 1754211..def6644 100644
---- a/setup/projects/boilerplate/design_settings.js
-+++ b/setup/projects/boilerplate/design_settings.js
+--- a/projects/boilerplate/design_settings.js
++++ b/projects/boilerplate/design_settings.js
 @@ -10,7 +10,7 @@ module.exports = {
    componentGroups: [{
      name: 'text',
