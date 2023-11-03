@@ -52,14 +52,13 @@ For an idea of websites which support oEmbed you can take a look at the oEmbed [
 During server initialization the oEmbed providers used by all projects need to be registered.
 
 ```js
-// runtime-config.js
-liServer.registerInitializedHook(async () => {
-  const oembedProviders = require('./providers')
-  liServer.features.api('li-oembed').registerProviders(oembedProviders)
+// app/server.js
+liServer.registerInitializedHook(() => {
+  liServer.registerOembedProviders(oembedProviders)
 })
 ```
 
-The parameter passed to the `registerProviders()` functions should be an array of provider objects.
+The parameter passed to the `registerOembedProviders()` function must be an array of provider objects.
 
 ```js
 // providers.js

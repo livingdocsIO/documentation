@@ -36,13 +36,8 @@ Feeds are highly customizable and no there is no 'one-fits-it-all' solution. We 
 You will need to add your own HTTP-API.
 
 ```js
-// Register the feature
-liServer.features.register('feeds', require('./feeds'))
-```
-
-```js
-// Setup the Feature - ./feeds/index.js
-module.exports = function (feature, server) {
+// /app/server.js
+liServer.registerInitializedHook(function () {
   const searchManager = server.features.api('li-search').searchManager
   const sitemapsApi = server.features.api('li-sitemaps')
 
@@ -51,40 +46,21 @@ module.exports = function (feature, server) {
     sitemapsApi
   })
 
-  const controller = require('./feeds_controller')({feedsApi})
-  const routes = require('./feeds_routes')
+  liServer.registerServerRoutes({
+    title: 'RSS Feeds',
+    description: 'Feed endpoints',
+    method: 'get',
+    prefix: '/daily-planet',
+    path: '/feed',
+    auth: 'public-api:read',
 
-  feature.registerResource({controller, routes})
-}
-```
-
-```js
-// Setup the Feature - ./feeds/feeds_routes.js
-module.exports = {
-  title: 'RSS Feeds',
-  description: 'Feed endpoints',
-  endpoints: [
-    {
-      path: 'custom/api/v1/feed',
-      auth: 'public-api:read',
-      method: 'get',
-      action: 'getFeed'
-    }
-  ]
-}
-```
-
-```js
-// Setup the Feature - ./feeds/feeds_controller.js
-module.exports = ({feedsApi}) => {
-  return {
-    async getFeed (req, res) {
+    async action (req, res) {
       const {channelId, projectId} = req.verifiedToken
       const feed = await feedsApi.getFeed({channelId, projectId})
       return res.success(feed)
     }
-  }
-}
+  })
+})
 ```
 
 ```js

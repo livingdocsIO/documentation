@@ -51,8 +51,8 @@ With publication hooks you can influence the [`Document Publication Lifecycle`](
 
 **Two ways of registering a Publication Hook**
 
-- `registerPublicationHooks`: Register as many hooks as you need, executed in the order they got registered
-- `registerPublicationServerHooks`: Hooks are executed on all projects. These hooks run before project specific ones.
+- `liServer.registerPublicationHooks()`: Register publication hooks per project.
+- `liServer.registerGlobalPublicationHooks()`: Register publication hooks that are executed on all projects (these hooks run before project specific ones).
 
 **API of Publication Hooks**
 
@@ -69,13 +69,14 @@ const appConfig = require('./conf')
 const liServer = require('@livingdocs/server')(appConfig)
 
 liServer.registerInitializedHook(async () => {
-  liServer.features.api('li-documents').registerPublicationServerHooks({
+  // Global publish hooks
+  liServer.registerGlobalPublicationHooks({
     async preparePublishHookAsync ({documentVersion}) { return }
   })
 
-  liServer.features.api('li-documents').registerPublicationHooks({
-    projectHandle: 'your-awesome-project',
-    channelHandle: 'default',
+  // Proejct-specific publish hooks
+  liServer.registerPublicationHooks({
+    projectHandle: 'daily-planet',
     async preparePublishHookAsync ({documentVersion}) { return },
     async postPublishHookAsync ({documentVersion}) {
       liServer.log.info(`postPublishHookAsync called for documentType: ${documentVersion.documentType}!`)
@@ -203,7 +204,7 @@ async postUnpublishHookAsync ({documentVersion}) {
 
 ### Register a List Hook
 
-There is one hook for the `document-lists` feature. The hook can be registered through `registerListHooks()`.
+There is one hook for the `document-lists` feature. The hook can be registered through `liServer.registerListHooks()`.
 
 Example:
 ```js
@@ -211,9 +212,8 @@ const appConfig = require('./conf')
 const liServer = require('@livingdocs/server')(appConfig)
 
 liServer.registerInitializedHook(async () => {
-  liServer.features.api('li-document-lists').registerListHooks({
-    projectHandle: 'your-interesting-project',
-    channelHandle: 'some-channel',
+  liServer.registerListHooks({
+    projectHandle: 'daily-planet',
     listUpdateHookAsync ({projectId, listId, remove, add}) {
       console.info(
         `The list with id '${listId}' in the project '${projectId}' has changes.`,

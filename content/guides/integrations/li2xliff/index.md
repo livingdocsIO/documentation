@@ -107,55 +107,45 @@ register: function ({liServer}) {
     if (liServer.config.get('translations:enabled', false)) {
       liServer.registerInitializedHook(function () {
         registerTranslationHooks({liServer, config})
+        registerTranslationRoute({liServer, config})
       })
-      registerApi({liServer, config})
     }
   }
 ```
 
-
 And you can then use a [webhook]({{< ref "/reference/webhooks" >}}) to listen to your CAT service to know when to update your Livingdoc afterwards, summarised:
 
 ```js
-function registerApi ({liServer, config}) {
-  liServer.features.register('translations', function (feature, server) {
-    feature.registerResource({
-      controller: {
-        async writeTranslation (req, res) {
-          try {
-            const documentApi = liServer.features.api('li-documents').document // Get the document API
-            const documentWriteModel = await documentApi.getDocumentWriteModel({projectId, documentId})
-            const documentVersion = documentWriteModel.toDocumentVersion()
-            // Here you need to get your xliff from your CAT Tool and pass it to updateContent:
-            const {content, errors} = updateContent({content: documentVersion.content, xliff})
-            // Handle any errors in updating the content
-            await documentApi.updateV2({
-              document: documentWriteModel,
-              update: {
-                ...documentVersion,
-                ...{revision: {...documentVersion.revisionEntity, ...{data: {content}}}},
-              },
-              isSystemUpdate: true
-            })
-            log.info({documentId: documentVersion.id}, `Target document updated.`)
-            res.success()
-          } catch (err) {
-            log.error(err)
-          }
-        }
-      },
-      routes: {
-        title: 'translation webhook',
-        path: '/translation',
-        endpoints: [{
-          path: '/',
-          method: 'post',
-          auth: '',
-          action: 'writeTranslation',
-          body: ms.obj()
-        }]
+function registerTranslationRoute ({liServer, config}) {
+  liServer.registerServerRoutes({
+    method: 'post',
+    prefix: '/daily-planet',
+    path: '/translation',
+    title: 'translation webhook',
+    body: ms.obj(),
+
+    async action (req, res) {
+      try {
+        const documentApi = liServer.features.api('li-documents').document // Get the document API
+        const documentWriteModel = await documentApi.getDocumentWriteModel({projectId, documentId})
+        const documentVersion = documentWriteModel.toDocumentVersion()
+        // Here you need to get your xliff from your CAT Tool and pass it to updateContent:
+        const {content, errors} = updateContent({content: documentVersion.content, xliff})
+        // Handle any errors in updating the content
+        await documentApi.updateV2({
+          document: documentWriteModel,
+          update: {
+            ...documentVersion,
+            ...{revision: {...documentVersion.revisionEntity, ...{data: {content}}}},
+          },
+          isSystemUpdate: true
+        })
+        log.info({documentId: documentVersion.id}, `Target document updated.`)
+        res.success()
+      } catch (err) {
+        log.error(err)
       }
-    })
+    }
   })
 }
 ```

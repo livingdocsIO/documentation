@@ -339,14 +339,12 @@ const galleryIsNotPublishedPlaceholder = dedent`
 ### Register "gallery-teaser" Include
 
 ```js
-// runtime-config.js
-const liServer = Server(require('../conf'))
-liServer.features.register('include-services', async function (feature, server) {
-  const includesApi = server.features.api('li-includes')
-  const publicationApi = server.features.api('li-documents').publication
+// app/server.js
+liServer.registerInitializedHook(() => {
+  const publicationApi = liServer.features.api('li-documents').publication
 
-  await includesApi.registerServices([
-    require('./plugins/includes/gallery-teaser')({publicationApi})
+  liServer.registerIncludeServices([
+    require('./include-services/gallery-teaser')({publicationApi})
   ])
 })
 ```

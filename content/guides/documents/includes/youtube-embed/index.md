@@ -43,19 +43,13 @@ This service has one main job - rendering the include with parameters filled in 
 
 ```js
 // app/server.js
-liServer.features.register('custom-includes', require('app/includes'))
-
-// app/includes/index.js
-module.exports = async function (feature, server) {
-  const includesApi = server.features.api('li-includes')
-
-  // register the include service
-  await includesApi.registerServices([
-    require('../../plugins/includes/youtubeService')
+liServer.registerInitializedHook(() => {
+  liServer.registerIncludeServices([
+    require('./include-services/youtube-service')
   ])
-}
+})
 
-// ../../plugins/includes/youtubeService.js
+// app/include-services/youtube-service.js
 module.exports = {
   name: 'youtubeIncludeService',
 

@@ -27,7 +27,7 @@ projectConfig.editorSettings = {
   documentCreationFlows: [
     {
       handle: 'breakingNews',
-      // register a createFunction with documentApi.registerCreateFunction (later in the guide)
+      // register a createFunction with liServer.registerCreateFunction() (later in the guide)
       createFunction: 'breakingNews',
       createButtonLabel: 'Create Breaking News',
 
@@ -98,9 +98,7 @@ Let's register the createFunction: `breakingNews`, the one you defined in the da
 
 ```js
 liServer.registerInitializedHook(async () => {
-  const documentApi = liServer.features.api('li-documents').document
-
-  documentApi.registerCreateFunction({
+  liServer.registerCreateFunction({
     handle: 'breakingNews',
 
     // params and context are coming from Document Creation Flow

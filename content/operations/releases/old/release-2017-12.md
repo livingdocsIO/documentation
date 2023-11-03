@@ -72,7 +72,7 @@ The behaviour of `registerPublicationHooks` changes. It allows registering a pub
 
 ```javascript
 liServer.features.api('li-documents').registerPublicationHooks({
-  projectHandle: 'your-awesome-project',
+  projectHandle: 'daily-planet',
   channelHandle: 'some-channel',
   prepublishHook (documentVersion, callback) { callback(null, documentVersion) },
   publishHook ({documentType, payload}, callback) { callback() },
@@ -84,7 +84,7 @@ liServer.features.api('li-documents').registerPublicationHooks({
 
 ```diff
  liServer.features.api('li-documents').registerPublicationHooks({
-   projectHandle: 'your-awesome-project',
+   projectHandle: 'daily-planet',
    channelHandle: 'some-channel',
 +  prepublishHook (documentVersion, callback) { callback(null, documentVersion) },
    publishHook ({documentType, payload}, callback) { callback() },

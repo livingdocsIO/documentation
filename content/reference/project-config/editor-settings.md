@@ -618,7 +618,7 @@ componentOptions: {
   showContentType: true,
   // Only works if no displayTitlePattern is configured on the contentType
   allowTitleEdit: true
-  
+
 }
 ```
 
@@ -748,7 +748,7 @@ Check that [guide]({{< ref "/guides/editor/document-creation-flow" >}}) for more
 documentCreationFlows: [
   {
     handle: 'breakingNews',
-    // register a createFunction with documentApi.registerCreateFunction
+    // register a createFunction with liServer.registerCreateFunction()
     // default createFunction handle: 'liDefaultCreationFunction'
     createFunction: 'breakingNews',
     createButtonLabel: 'Create Breaking News',
