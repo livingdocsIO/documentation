@@ -74,7 +74,7 @@ liServer.registerInitializedHook(async () => {
     async preparePublishHookAsync ({documentVersion}) { return }
   })
 
-  // Proejct-specific publish hooks
+  // Project-specific publish hooks
   liServer.registerPublicationHooks({
     projectHandle: 'daily-planet',
     async preparePublishHookAsync ({documentVersion}) { return },
