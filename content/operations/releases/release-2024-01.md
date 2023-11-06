@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Detect SVG uploads and store with .svg extension, or allow conversion using 'svg' type](https://github.com/livingdocsIO/livingdocs-server/pull/6273)
 * [Fix redirectHttpToHttps to use false as default](https://github.com/livingdocsIO/livingdocs-editor/pull/7646)
 * [Preload li-tree document references](https://github.com/livingdocsIO/livingdocs-server/pull/6202)
 * [Support dashboardConfig.search.strategy config](https://github.com/livingdocsIO/livingdocs-server/pull/6268)
