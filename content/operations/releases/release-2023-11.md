@@ -250,31 +250,31 @@ custom routes. This simplifies the server initialization and also improves
 IDE autocomplete support.
 
 - Direct Extension Registration
-  - `liServer.registerPublicationHooks({...})`
-  - `liServer.registerGlobalPublicationHooks({...})`
-  - `liServer.registerListHooks({...})`
+  - `liServer.registerPublicationHooks({...})`, previously `liServer.features.api('li-documents').registerPublicationHooks({...})`
+  - `liServer.registerGlobalPublicationHooks({...})`, previously `liServer.features.api('li-documents').registerPublicationServerHooks({...})`
+  - `liServer.registerListHooks({...})`, previously `liServer.features.api('li-document-lists').registerListHooks({...})`
 
 - Data Sources
-  - `liServer.registerDataSource({...})`
-  - `liServer.registerDataSources([{...}, {...}])`
+  - `liServer.registerDataSource({...})`, previously `liServer.features.api('li-data-sources').register({...})`
+  - `liServer.registerDataSources([{...}, {...}])`, previously `liServer.features.api('li-data-sources').register({...})`
 
 - Create / Generate Functions
-  - `liServer.registerCreateFunction({...})`
-  - `liServer.registerTransformFunction({...})`
-  - `liServer.registerCreateFunctions([{...}, {...}])`
-  - `liServer.registerTransformFunctions([{...}, {...}])`
+  - `liServer.registerCreateFunction({...})`, previously `liServer.features.api('li-documents').document.registerCreateFunction({...})`
+  - `liServer.registerTransformFunction({...})`, previously `liServer.features.api('li-documents').document.registerTransformFunction({...})`
+  - `liServer.registerCreateFunctions([{...}, {...}])`, previously `liServer.features.api('li-documents').document.registerCreateFunctions({...})`
+  - `liServer.registerTransformFunctions([{...}, {...}])`, previously `liServer.features.api('li-documents').document.registerTransformFunction({...})`
 
 - Includes
-  - `liServer.registerIncludeService({...})`
-  - `liServer.registerIncludeServices([{...}, {...}])`
+  - `liServer.registerIncludeService({...})`, previously `liServer.features.api('li-includes').registerServices({...})`
+  - `liServer.registerIncludeServices([{...}, {...}])`, previously `liServer.features.api('li-includes').registerServices([{...}, {...}])`
 
 - Oembed Providers
-  - `liServer.registerOembedProvider({...})`
-  - `liServer.registerOembedProviders([{...}, {...}])`
+  - `liServer.registerOembedProvider({...})`, previously `liServer.features.api('li-oembed').registerProvider({...})`
+  - `liServer.registerOembedProviders([{...}, {...}])`, previously `liServer.features.api('li-oembed').registerProviders([{...}, {...}])`
 
 - Media Sources
-  - `liServer.registerMediaSource({...})`
-  - `liServer.registerMediaSources([{...}, {...}])`
+  - `liServer.registerMediaSource({...})`, previously `liServer.features.api('li-media-library').registerMediaSource({...})`
+  - `liServer.registerMediaSources([{...}, {...}])`, previously `liServer.features.api('li-media-library').registerMediaSource({...})`
 
 - Register Custom Routes
   - `liServer.registerEditorRoutes({method, path, auth, action, ...})`
