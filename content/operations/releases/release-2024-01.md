@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Allow SVG pass-through to avoid error in Sharp image processing](https://github.com/livingdocsIO/livingdocs-server/pull/6290)
 * [Set avatar after loading user data](https://github.com/livingdocsIO/livingdocs-editor/pull/7617)
 * [Fix/small UI bugs 5086](https://github.com/livingdocsIO/livingdocs-editor/pull/7675)
 * [fix(deps): update dependency axios from 1.6.0 to v1.6.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7673)
