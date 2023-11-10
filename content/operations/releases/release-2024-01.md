@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency axios from 1.6.0 to v1.6.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6306)
 * [fix(deps): update dependency wait-on from 7.0.1 to v7.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7658)
 * [chore(deps): update dependency @babel/eslint-parser from 7.22.15 to v7.23.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7679)
 * [Allow SVG pass-through to avoid error in Sharp image processing](https://github.com/livingdocsIO/livingdocs-server/pull/6290)
