@@ -47,8 +47,8 @@ They are separately listed here:
   // custom config
   //   documentPropertyName: Supports 'createdAt'/'updatedAt', defaults to updatedAt
   //   metadataPropertyName: Supports any of your metadata date fields
-  displayFilters: [{filterName: 'liDateTimeRange', config: {documentPropertyName: 'createdAt'}}]
-  displayFilters: [{filterName: 'liDateTimeRange', config: {metadataPropertyName: 'publicationDate'}}]
+  displayFilters: [{filterName: 'liDateTimeRange', config: {documentPropertyName: 'createdAt', label: 'Created at'}}]
+  displayFilters: [{filterName: 'liDateTimeRange', config: {metadataPropertyName: 'publicationDate', label: 'Published at'}}]
   ```
 - `sortBy`: `relevance` (default), `creation_date`, `updated_at`, `alphabetical`
 - `language`: uses the project configuration for [available languages]({{< ref "/reference/project-config/settings.md" >}}) to offer a select box to filter for languages (requires multi-language feature to be enabled)
