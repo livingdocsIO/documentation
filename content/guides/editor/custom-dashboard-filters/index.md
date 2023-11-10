@@ -170,12 +170,24 @@ After registering the filter, the vue component will recieve a prop called `filt
 <script>
 export default {
   name: 'customFilter',
-  // synced with it's parent and the value in the localStorage
-  // updated via $emit('update:filter', {...data})
+  
   props: {
+    // synced with it's parent and the value in the localStorage
+    // updated via $emit('update:filter', {...data})
     filter: {
       type: Object,
       default () {}
+    },
+    // the config property defined when configuring the filter on a dashboard
+    config: {
+      type: Object,
+      required: true
+    },
+    // added in release-2023-11. Use it to change the UI of your filter when the user
+    // set a value
+    inDefaultState: {
+      type: Boolean,
+      required: true
     }
   }
 }
