@@ -359,6 +359,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.11): fix(editable): Revert editable.js upgrade as there have been issues on Firefox
 - [v241.0.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.10): fix: update wrong method call
 - [v241.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.9): fix(image-processing): Detect SVG uploads
 - [v241.0.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.8): chore(includes): Reduce loops when assigning preloaded li-tree values
