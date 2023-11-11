@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Normalize the 'Date Created' exif field to a full iso timestamp](https://github.com/livingdocsIO/livingdocs-server/pull/6300)
 * [Date Time Range Filter: allow label config](https://github.com/livingdocsIO/livingdocs-editor/pull/7680)
 * [chore(deps): update dependency eslint-plugin-jsdoc from 46.8.2 to v46.9.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6308)
 * [fix(deps): update dependency @livingdocs/framework from 27.2.1 to v27.2.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7682)
