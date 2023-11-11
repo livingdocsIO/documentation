@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency eslint-plugin-jsdoc from 46.8.2 to v46.9.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6308)
 * [fix(deps): update dependency @livingdocs/framework from 27.2.1 to v27.2.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7682)
 * [fix(deps): update dependency axios from 1.6.0 to v1.6.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6306)
 * [fix(deps): update dependency wait-on from 7.0.1 to v7.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7658)
