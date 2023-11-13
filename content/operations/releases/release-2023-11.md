@@ -369,6 +369,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.16): fix(realtime): Fix function rename that prevents teaser reloading
 - [v102.1.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.15): fix(ticker): Support rendering includes in multiple ticker entries
 - [v102.1.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.14): fix(display filters): allow a label configuration for liDateTimeRange display filter
 - [v102.1.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.13): fix(forms): ld-select
