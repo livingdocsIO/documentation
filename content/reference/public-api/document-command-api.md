@@ -1,5 +1,5 @@
 ---
-title: Command API
+title: Document Command API
 weight: 3
 renderTOC: false
 menus:

@@ -47,7 +47,7 @@ The response is a JSON object with 5 possible top-level properties:
 
 ##### Use Cases
 
-- Automation: Fetch draft, modify draft with an external system, update a draft via [Command API]({{< ref "/reference/public-api/command-api" >}})
+- Automation: Fetch draft, modify draft with an external system, update a draft via [Document Command API]({{< ref "/reference/public-api/document-command-api" >}})
 - Create a [Document Preview]({{< ref "/guides/editor/document-previews" >}}) with an external draft service
 - Drafts [Delivery Build]({{< ref "/guides/editor/publish-control/delivery" >}}) (Digital Ausgabe)
 

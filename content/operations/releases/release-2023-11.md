@@ -181,13 +181,13 @@ This deprecation is related to the [Teaser includes reload](#teaser-includes-rel
 ## Features 🎁
 
 {{< feature-info "Public api" "server" >}}
-### Command API :gift:
+### Document Command API :gift:
 
-The Command API is exposed on the Public API and allows external services to change document content and metadata and even publish, e.g. making article title A/B-test easier.
+The Document Command API is exposed on the Public API and allows external services to change document content and metadata and even publish, e.g. making article title A/B-test easier.
 
-Command API adds `PATCH /api/v1/documents/:documentId/commands` endpoint on the Public API, which accepts the following commands to be executed on the document: `setMetadataProperty`, `setEditableDirective` and `publish`. The scope to authenticate requests for this new endpoint is `public-api:write`.
+Document Command API adds `PATCH /api/v1/documents/:documentId/commands` endpoint on the Public API, which accepts the following commands to be executed on the document: `setMetadataProperty`, `setEditableDirective` and `publish`. The scope to authenticate requests for this new endpoint is `public-api:write`.
 
-More information about the Command API can be found in the [Command API documentation]({{< ref "reference/public-api/command-api.md" >}}).
+More information about the Document Command API can be found in the [Document Command API documentation]({{< ref "reference/public-api/document-command-api.md" >}}).
 
 An example of a `setMetadataProperty` command would look like this:
 
@@ -203,7 +203,7 @@ curl -k -X PATCH "https://server.livingdocs.io/api/v1/documents/:id/commands" \
 EOF
 ```
 
-With the introduction of the Command API, we needed a way to differenciate if a document was modified by a user (human) or a token (machine), therefore the 'actor' concept has been introduced. When a document is updated by a token via the Command API, the document will show the specific token that authorized the request.
+With the introduction of the Document Command API, we needed a way to differenciate if a document was modified by a user (human) or a token (machine), therefore the 'actor' concept has been introduced. When a document is updated by a token via the Document Command API, the document will show the specific token that authorized the request.
 
 Please run the migrations for this release to add the new `actors` table to your database. This migration will add Import users and API clients to `actors` table. The actor name will be used to show the actor that modified a document. When reporting modifications on a document users will be obscured and the UI will only report that a human did a modification, while API clients will be reported with their name.
 
