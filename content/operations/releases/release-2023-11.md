@@ -25,8 +25,8 @@ To learn about the necessary actions to update Livingdocs to `release-2023-11`, 
 
 ## Webinar
 
-* Feature Webinar Recording: **TODO**
-* Feature Webinar Documentation: **TODO**
+* [Feature Webinar Recording](https://us02web.zoom.us/rec/share/Itybn2qYQy8T4k4P4_JStpeOsz6pKfDZr2NZLefQWxqZoZ3DyuoR_Weja7AZYi40.aHaypmIkMkhB20YN) | Passcode: .9nrZ6&E
+* [Feature Webinar Documentation](https://docs.google.com/presentation/d/1upho7HMTD5o299quylTpuaepHoqxhxkfvtDp1lCYbj8/edit?usp=sharing)
 * Dev Webinar Recording: **TODO**
 * Dev Webinar Slides: **TODO**
 * [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
