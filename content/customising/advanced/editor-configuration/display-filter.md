@@ -47,6 +47,7 @@ They are separately listed here:
   // custom config
   //   documentPropertyName: Supports 'createdAt'/'updatedAt', defaults to updatedAt
   //   metadataPropertyName: Supports any of your metadata date fields
+  //   label is useful if you have multiple liDateTimeRange filters on one dashboard {{< added-in "release-2023-11" >}}
   displayFilters: [{filterName: 'liDateTimeRange', config: {documentPropertyName: 'createdAt', label: 'Created at'}}]
   displayFilters: [{filterName: 'liDateTimeRange', config: {metadataPropertyName: 'publicationDate', label: 'Published at'}}]
   ```
