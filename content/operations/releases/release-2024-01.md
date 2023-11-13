@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Reload Teaser Includes Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/7651)
 * [Fix function rename that prevents teaser reloading](https://github.com/livingdocsIO/livingdocs-editor/pull/7677)
 * [Support rendering includes in multiple ticker entries](https://github.com/livingdocsIO/livingdocs-editor/pull/7684)
 * [fix(deps): update dependency cookie from 0.5.0 to ^0.6.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6295)
