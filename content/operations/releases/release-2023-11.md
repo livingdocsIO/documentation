@@ -175,7 +175,7 @@ The options `serverConfig.documents.realtimeUpdates.enabled` is deprecated.
 
 Please remove the 'enabled' property and use 'pollingEnabled' and/or 'websocketsEnabled' instead. The value for 'enabled' will be transferred to 'pollingEnabled', if 'pollingEnabled' does not have a value defined.
 
-This deprecation is related to the [Teaser includes reload](#teaser-includes-reload) feature. Please read the feature documentation for more information.
+This deprecation is related to the [Teaser includes reload](#teaser-includes-reload-) feature. Please read the feature documentation for more information.
 
 
 ## Features 🎁
@@ -209,7 +209,7 @@ Please run the migrations for this release to add the new `actors` table to your
 
 
 {{< feature-info "Search bar" "Editor" >}}
-### Enhancded search syntax 'simple search' :gift:
+### Enhanced search syntax 'simple search' :gift:
 
 Users in the Editor can now use new syntax in the Media Library search bar
 and also in document dashboards that use the new config option `search` described below.
@@ -316,11 +316,11 @@ If a `li-push-messages` metadata plugin is configured on a document a "Push" but
 If a document embeds teasers using includes, those teasers will get updated if referenced documents are updated.
 
 {{< feature-info "Project configuration" "server" >}}
-### Metadata validation :gift:
+### ParamsSchema and Metadata config validation :gift:
 
 Introduction of metadata plugin validation in documents, media library and paramSchema. This will prevent using a metadata plugin in the wrong place in the project configuration to help spot configuration errors.
 
-Plugins used in other contexts than the ones stated in the [docs](https://docs.livingdocs.io/reference/document/metadata/plugins/), will now report an error during server startup.
+Plugins used in other contexts than the ones stated in the [docs]({{< ref "reference/document/metadata/plugins/" >}}), will now report an error during server startup.
 
 {{< feature-info "Document editing" "editor" >}}
 ### Allow `tel:` and `mailto:` inline links :gift:
