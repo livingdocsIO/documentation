@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Allow upload center scrolling on mobile](https://github.com/livingdocsIO/livingdocs-editor/pull/7686)
 * [Allow publish modal side panel scrolling on mobile](https://github.com/livingdocsIO/livingdocs-editor/pull/7685)
 * [Reload Teaser Includes Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/7651)
 * [Fix function rename that prevents teaser reloading](https://github.com/livingdocsIO/livingdocs-editor/pull/7677)
