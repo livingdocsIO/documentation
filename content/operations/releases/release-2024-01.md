@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pusher from 5.1.3 to v5.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6313)
 * [fix(deps): update dependency trackjs from 3.10.1 to v3.10.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7695)
 * [Allow upload center scrolling on mobile](https://github.com/livingdocsIO/livingdocs-editor/pull/7686)
 * [Allow publish modal side panel scrolling on mobile](https://github.com/livingdocsIO/livingdocs-editor/pull/7685)
