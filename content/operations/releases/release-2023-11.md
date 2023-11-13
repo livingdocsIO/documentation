@@ -362,6 +362,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.19): fix(media-library): Allow upload center scrolling on mobile
 - [v102.1.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.18): fix(image-crop): Prevent focal point button overlapping content
 - [v102.1.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.17): fix(realtime): Don't refresh includes when editable teaser is focused
 - [v102.1.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.16): fix(realtime): Fix function rename that prevents teaser reloading
