@@ -148,9 +148,9 @@ in the past by customizations.
 The Endpoint `PATCH /document/:id` will be removed in `release-2024-01`. Please replace it with `PATCH /document/:id/commands`. No data migration is required, but you will need to swap `patches` parameter with `commands`.
 
 {{< feature-info "Project config" "server" >}}
-### Custom downstream plugins paramSchema validation changes :warning:
+### Metadata plugins and paramSchema validation changes :warning:
 
-Plugins used in other contexts than the ones stated in the [docs](https://docs.livingdocs.io/reference/document/metadata/plugins/), will report an error during server startup.
+Plugins used in other contexts than the ones stated in the [docs](https://docs.livingdocs.io/reference/document/metadata/plugins/), will report an error during server startup with release-2024-01.
 
 All downstream plugins are supported by default in document metadata and media library metadata. But if a downstream plugin is used in include services, creation flows or push messages, that will cause an error during startup.
 
@@ -164,7 +164,7 @@ supportedPluginContexts: [
 ]
 ```
 
-To opt-in to the new schemas you can set `serverConfig.useStrictSchemas: true`. This will allow you to find any invalid useage of plugins and fix them before the next release.
+To opt-in to the new validation you can set `serverConfig.useStrictSchemas: true`. This will allow you to find any invalid usage of plugins and fix them before release-2024-01.
 
 Please contact your Livingdocs customer manager if you have any problems with the limitations imposed by the supported plugin contexts.
 
@@ -314,13 +314,6 @@ If a `li-push-messages` metadata plugin is configured on a document a "Push" but
 ### Teaser includes reload :gift:
 
 If a document embeds teasers using includes, those teasers will get updated if referenced documents are updated.
-
-{{< feature-info "Project configuration" "server" >}}
-### ParamsSchema and Metadata config validation :gift:
-
-Introduction of metadata plugin validation in documents, media library and paramSchema. This will prevent using a metadata plugin in the wrong place in the project configuration to help spot configuration errors.
-
-Plugins used in other contexts than the ones stated in the [docs]({{< ref "reference/document/metadata/plugins/" >}}), will now report an error during server startup.
 
 {{< feature-info "Document editing" "editor" >}}
 ### Allow `tel:` and `mailto:` inline links :gift:
