@@ -4,6 +4,7 @@ type: metadata-plugins
 menus:
   reference:
     parent: Metadata Plugins List
+summary: Legacy feature to send push messages. Use [`li-push-messages`]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}) instead.
 support:
   document: true
   media: false
@@ -16,7 +17,9 @@ support:
   systemMetadata: true
   planningSystem: false
 description: |
-  Support for `li-push-notifications` will soon be removed. Please use `li-push-messages` instead.
+  {{< warning >}}
+  Support for `li-push-notifications` will soon be removed. Please use [`li-push-messages`]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}) instead.
+  {{< /warning >}}
 defaultUI: Editor toolbar button which opens a dialog.
 storageFormat: |
   {

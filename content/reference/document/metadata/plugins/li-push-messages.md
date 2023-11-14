@@ -17,22 +17,19 @@ support:
   systemMetadata: true
   planningSystem: false
 description: |
-  As an alternative to the existing [Push Notifications]({{< ref "/guides/editor/push-notifications" >}}) feature,
-  we introduced the more flexible `li-push-messages` metadata plugin.
+  {{< info >}}
+  Push **Messages** has been introduced as an alternative to the existing [Push **Notifications**]({{< ref "/guides/editor/push-notifications" >}}) feature, which will soon be removed.
+  {{< /info >}}
 
-  Use Push **Messages** if you like to send messages directly from Table Dashboards and if you need
-  a flexible message format.
-
-  Use Push **Notifications** if you need to send notifications directly from the Editor Toolbar or if you'd like
-  to use a predefined push service like Google Firebase.
+  The Push Messages feature enables a user to send messages directly from Table Dashboards, and from the article editor ({{< added-in "release-2023-11" >}}), with a customisable message format.
 
   The two features may be merged in the future, but for now they co-exist independently.
 
-  |                | Push Notifications                        | Push Messages           |
-  |----------------|-------------------------------------------|-------------------------|
-  | Accessed from  | Editor Toolbar Action                     | Table Dashboards        |
-  | Push Services  | Google Firebase, Urban airship, Ethinking | Custom Implementation   |
-  | Message Format | Fixed (Message + Topic)                   | Dynamic (Params Schema) |
+  |                | Push Notifications                        | Push Messages                           |
+  |----------------|-------------------------------------------|-----------------------------------------|
+  | Accessed from  | Editor Toolbar Action                     | Editor Toolbar Action ({{< added-in "release-2023-11" >}}), Table Dashboards |
+  | Push Services  | Google Firebase, Urban airship, Ethinking | Custom Implementation                   |
+  | Message Format | Fixed (Message + Topic)                   | Dynamic (Params Schema)                 |
 
   **Notice**: Push Messages can only be sent on published documents. If the document is not published, the Table Dashboard won't show the button.
 defaultUI: |

@@ -4,8 +4,10 @@ description: Setup push notifications with a custom dashboard item
 weight: 15
 ---
 
-**Please don't use this functionality anymore. it will be removed eventually after a formal deprecation period that has not started yet.
-Use the [`li-push-messages` metadata plugin]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}) instead.**
+{{< warning >}}
+Please don't use this functionality anymore. it will be removed eventually after a formal deprecation period that has not started yet.
+Use the [`li-push-messages` metadata plugin]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}) instead.
+{{< /warning >}}
 
 This guide explains 2 things:
 1. how to enable the push notifications feature.
