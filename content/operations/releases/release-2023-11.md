@@ -171,9 +171,9 @@ Please contact your Livingdocs customer manager if you have any problems with th
 {{< feature-info "Server config" "server" >}}
 ### Config option `realtimeUpdates.enabled` :warning:
 
-The options `serverConfig.documents.realtimeUpdates.enabled` is deprecated.
+The option `serverConfig.documents.realtimeUpdates.enabled` has been deprecated. It will be removed in {{< release "release-2024-01" >}}.
 
-Please remove the 'enabled' property and use 'pollingEnabled' and/or 'websocketsEnabled' instead. The value for 'enabled' will be transferred to 'pollingEnabled', if 'pollingEnabled' does not have a value defined.
+Please remove the `enabled` property and use `pollingEnabled` and/or `websocketsEnabled` instead. The `enabled` value will be transferred to `pollingEnabled` if `pollingEnabled` does not have a value defined.
 
 This deprecation is related to the [Teaser includes reload](#teaser-includes-reload-) feature. Please read the feature documentation for more information.
 
@@ -311,9 +311,23 @@ The [Push Notifications]({{< ref "/reference/document/metadata/plugins/li-push-m
 If a `li-push-messages` metadata plugin is configured on a document a "Push" button will be availalbe in the document editor.
 
 {{< feature-info "Document editing" "editor" >}}
-### Teaser includes reload :gift:
+### Real-time teaser includes :gift:
 
-If a document embeds teasers using includes, those teasers will get updated if referenced documents are updated.
+Teasers can be reloaded automatically on all publish and unpublish events within the current project. This can be enabled by updating the server config:
+
+```js
+{
+  documents: {
+    realtimeUpdates: {
+      websocketsEnabled: true
+    }
+  }
+}
+```
+
+If there is a teaser list in the document then all teasers will be reloaded for every event (with throttling and jitter applied). If there are only document teasers then we only refresh if the specific document references are published or unpublished. There is throttling in place to prevent a client from making too many requests (default: 5 seconds), and a jitter is applied to spread the server load of multiple connected clients (set to half of `websocketsThrottling`).
+
+Note: Setting `websocketsEnabled: true` will also use the websocket events to update table dashboard rows, or indicate a new result is available within a table dashboard. More details about real-time updates can be found in the [Server Configuration]({{< ref "http://localhost:1313/customising/server-configuration/#documents" >}}) documentation.
 
 {{< feature-info "Document editing" "editor" >}}
 ### Allow `tel:` and `mailto:` inline links :gift:
