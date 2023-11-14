@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency axios from 1.6.1 to v1.6.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6320)
 * [Remove support for custom angular display filters (reintroduced for NZZ only)](https://github.com/livingdocsIO/livingdocs-editor/pull/7701)
 * [Allow multiple filters of same name with different config on one dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/7700)
 * [fix(deps): update dependency @smithy/node-http-handler from 2.1.8 to v2.1.9 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6314)
