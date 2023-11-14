@@ -589,8 +589,11 @@ documents: {
     anonymizeAfter: '30 days'
   },
   realtimeUpdates: {
-    enabled: true, // Enabled by default - set to false to disable the feature
-    pollingInterval: 1000 * 60 // Time in milliseconds between dashboard updates
+    enabled: true, // Default: false. {{< deprecated-in "release-2023-11" >}}.
+    pollingEnabled: true, // Default: false. {{< added-in "release-2023-11" >}}.
+    pollingInterval: '1m',
+    websocketsEnabled: true, // Default: false. {{< added-in "release-2023-11" >}}.
+    websocketsThrottling: '5s' // {{< added-in "release-2023-11" >}}.
   }
 }
 ```
@@ -604,7 +607,15 @@ The `enableConsumers` is the configuration used to enable/disable the publish co
 
 The `history.anonymizeAfter` setting is used to remove the traceability of certain persons work after a given amount of time. This requirement comes typically from the workers council that don't want that it is possible to trace back who did what over a long period of time. Technically, after the given time, no `user_id` is sent along with revision entities anymore and they are marked as "anonymized" in the UI. The time is a "milliseconds" string, meaning that you can type things like '30 days' or '5 minutes'.
 
-The `realtimeUpdates` property controls the behaviour of dashboard updates. Documents displayed on a dashboard will automatically update, and a refresh button will be displayed when there are new results available. The realtime update feature is enabled by default, with a polling interval of 60 seconds, so if you need to disable it for any reason then set `enabled: false`. You can lower the polling interval for more regular updates, but this will increase the load on your server and databases due to more frequent requests from clients. If you change the values you will need to wait for clients to refresh the page and load the latest server config.
+##### Realtime Updates
+
+The properties within `realtimeUpdates` control the behaviour of table dashboard updates, and, since {{< release "release-2023-11" >}}, teaser updates as well.
+
+Documents displayed on a table dashboard will automatically update when they have been modified by another user, and a refresh button will be displayed when there are new results available. You can lower the polling interval for more regular updates, but this will increase the load on your server and databases due to more frequent requests from clients.
+
+Since {{< release "release-2023-11" >}} the `realtimeUpdates` object has been extended with individual controls for updating the editor using polling and/or websockets. Both methods can be used in parallel. The deprecated `enabled` property will be used to control `pollingEnabled` if no value has been defined for `pollingEnabled`.
+
+The new `websocketsEnabled` property is also used for updating table dashboards, but instead of polling once per minute it listens to document update events and applies the changes in real-time. There is throttling in place to prevent a client from making too many requests (default: 5 seconds), and a jitter is applied to spread the server load of multiple connected clients (set to half of `websocketsThrottling`). Along with handling dashboard updates, the `websocketsEnabled` property is also used to control teaser updates while a user edits a document. If there is a teaser list in the document then all teasers will be reloaded for every publish or unpublish event within the project. If there are only document teasers in the document then we only refresh the teasers if the specific document references are published or unpublished.
 
 #### Document-lists
 
