@@ -376,6 +376,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.22): fix(url-util): Take subdomains into account when validating URL TLD
 - [v102.1.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.21): fix: allow for usage of the same filter twice with different config on one dashboard
 - [v102.1.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.20): fix(media-library): Fix error when opening media side panel in editor
 - [v102.1.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.19): fix(media-library): Allow upload center scrolling on mobile
