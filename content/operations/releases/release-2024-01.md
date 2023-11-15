@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Take subdomains into account when validating URL TLD](https://github.com/livingdocsIO/livingdocs-editor/pull/7703)
 * [fix(deps): update dependency axios from 1.6.1 to v1.6.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7705)
 * [fix(deps): update dependency axios from 1.6.1 to v1.6.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6320)
 * [Remove support for custom angular display filters (reintroduced for NZZ only)](https://github.com/livingdocsIO/livingdocs-editor/pull/7701)
