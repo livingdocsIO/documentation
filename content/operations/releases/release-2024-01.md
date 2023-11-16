@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency wait-on from 7.1.0 to v7.2.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7706)
 * [fix(deps): update dependency pino from 8.16.1 to v8.16.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6322)
 * [Take subdomains into account when validating URL TLD](https://github.com/livingdocsIO/livingdocs-editor/pull/7703)
 * [fix(deps): update dependency axios from 1.6.1 to v1.6.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7705)
