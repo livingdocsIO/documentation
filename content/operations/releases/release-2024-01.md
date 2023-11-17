@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Allow to reopen and edit links with invalid href](https://github.com/livingdocsIO/livingdocs-editor/pull/7710)
 * [Add loading and error states to the server admin indexing page](https://github.com/livingdocsIO/livingdocs-editor/pull/7713)
 * [Update translation script](https://github.com/livingdocsIO/livingdocs-editor/pull/7714)
 * [🔥 Feat/vanilla color variables](https://github.com/livingdocsIO/livingdocs-editor/pull/7711)
