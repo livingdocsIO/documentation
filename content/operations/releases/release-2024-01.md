@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add loading and error states to the server admin indexing page](https://github.com/livingdocsIO/livingdocs-editor/pull/7713)
 * [Update translation script](https://github.com/livingdocsIO/livingdocs-editor/pull/7714)
 * [🔥 Feat/vanilla color variables](https://github.com/livingdocsIO/livingdocs-editor/pull/7711)
 * [fix(deps): update aws-sdk from 3.450.0 to v3.451.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6321)
