@@ -95,9 +95,6 @@ contentTypes: [
       }
     ],
 
-    // You'll find the renditions example further below
-    renditions: require.resolve('./path/to/rendition/config'),
-
     // Configuration for the Editor behaviour
     editor: {
       ui: {
@@ -486,41 +483,6 @@ Apart from the general settings (`renderSettings`) you define an entry for each 
 
 See our [Desk-Net plugin guide]({{< ref "/guides/integrations/desknet" >}}) for comprehensive infos (custom code parts require enterprise version).
 
-## Renditions
-
-Renditions can only be changed in the enterprise model since they require custom code.
-
-Example `./path/to/rendition/config`:
-
-```js
-const CheerioHtml = require('../../../lib/render-pipeline/output/cheerio_html')
-
-module.exports = {
-  // a label
-  'web': {
-    output: {
-      // an output renderer
-      'html': {
-        outputRenderer: new CheerioHtml({
-          // middlewares for content alterations
-          middleware: [
-            addSocialLinks,
-            addPublicationDate
-          ]
-        }),
-        // resolve definitions for includes
-        resolveIncludes: ['embed-teaser', 'list', 'categoryList']
-      }
-    }
-  },
-  'app': {
-    output: {
-      'json': appRenderer
-    }
-  }
-}
-```
-
 ## Enable Push Notifications for a ContentType
 
 To enable push notifications for a specific content type you must have a metadata field called `pushNotifications`. Name and plugin must match exactly.
@@ -783,5 +745,3 @@ editor: {
   }
 }
 ```
-
-

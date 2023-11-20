@@ -119,25 +119,3 @@ If the include is resolved instead of the `<ld-include>` you see the actual HTML
   </a>
 </div>
 ```
-
-### How to configure the rendering option
-
-Includes are not resolved by default. Enable it in the [project configuration]({{< ref "/reference/project-config" >}}):
-
-```js
-module.exports = {
-
-  renditions: {
-    'web': {
-      output: {
-        'html': {
-          outputRenderer: new CheerioHtml(),
-          resolveIncludes: ['embed-teaser']
-        }
-      }
-    }
-  }
-}
-```
-
-The `resolveIncludes` array lists all includes that should be resolved inside of Livingdocs. You can configure this by channel and by rendition.
