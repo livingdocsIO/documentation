@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Close text formatting tooltip on click outside](https://github.com/livingdocsIO/livingdocs-editor/pull/7663)
 * [fix(deps): update dependency lru-cache from 10.0.2 to v10.0.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6327)
 * [Allow to reopen and edit links with invalid href](https://github.com/livingdocsIO/livingdocs-editor/pull/7710)
 * [Add loading and error states to the server admin indexing page](https://github.com/livingdocsIO/livingdocs-editor/pull/7713)
