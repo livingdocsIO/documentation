@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency jwt-decode from 3.1.2 to v4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7640)
 * [fix(http): agent updated to only support https](https://github.com/livingdocsIO/livingdocs-server/pull/6329)
 * [Close text formatting tooltip on click outside](https://github.com/livingdocsIO/livingdocs-editor/pull/7663)
 * [fix(deps): update dependency lru-cache from 10.0.2 to v10.0.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6327)
