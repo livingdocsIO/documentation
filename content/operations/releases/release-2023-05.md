@@ -436,8 +436,9 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v226.3.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.46): fix(http): agent updated to only support https
 - [v226.3.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.45): fix(indexing): Increase events to fetch if no group existed
-- [v226.3.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.44): fix(security): Update `sharp` to version `v226.3.45` to patch CVE-2023-4863
+- [v226.3.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.44): fix(security): Update `sharp` to version `v226.3.46` to patch CVE-2023-4863
 - [v226.3.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.43): fix(routing): Remove slug limitation of 30 characters
 - [v226.3.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.42): fix(documents): Truncate title on creation
 - [v226.3.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v226.3.41): fix(dashboard source): doesn't query by ID
