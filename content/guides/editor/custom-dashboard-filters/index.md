@@ -14,7 +14,7 @@ At the moment there are 2 types of custom filters
 - [Custom Vue Component Filter](#custom-vue-component-filter)
   - [Example](#example)
 
-Hint: If you want to create a filter with metadata, make sure they are setup correctly in the ElasticSearch index (`search.metadata_mapping` config in the server)
+Hint: If you want to create a filter with metadata, make sure they are setup correctly in the ElasticSearch index, using `config: {index: true}` on the [metadata property defined in the content type config]({{< ref "/content/guides/search/publication-index.md">}}).
 
 
 ## Custom List v2 Filter

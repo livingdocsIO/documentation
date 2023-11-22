@@ -71,7 +71,7 @@ and also supported by on-premise solutions like [minio](https://min.io/) or [cep
 
 The whole config object gets passed down to the [aws-sdk S3 class](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property).
 
-The `accessKeyId` and `secretAccessKey` are optional when running on AWS ECS/EKS/Fargate together with an [IAM service-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html). This simplifies token management and rotation within the AWS ecosystem.
+The `accessKeyId` and `secretAccessKey` are optional when running on AWS ECS/EKS/Fargate together with an [IAM service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html). This simplifies token management and rotation within the AWS ecosystem.
 
 ```js
 storage: {

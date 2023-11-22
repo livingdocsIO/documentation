@@ -207,6 +207,9 @@ With the introduction of the Document Command API, we needed a way to differenci
 
 Please run the migrations for this release to add the new `actors` table to your database. This migration will add Import users and API clients to `actors` table. The actor name will be used to show the actor that modified a document. When reporting modifications on a document users will be obscured and the UI will only report that a human did a modification, while API clients will be reported with their name.
 
+`userApi.findById()` using the import user id doesn't work anymore, but `projectApi.getImportUser(projectId)` still returns the same id as before.
+Every user has an `actorId` which is equal to `userId`.
+
 
 {{< feature-info "Search bar" "Editor" >}}
 ### Enhanced search syntax 'simple search' :gift:
