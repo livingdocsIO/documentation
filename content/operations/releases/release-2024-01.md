@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Show single media metadata in dashboard side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/7712)
 * [Allow handles that are 2 characters long](https://github.com/livingdocsIO/livingdocs-server/pull/6323)
 * [fix(deps): update dependency @smithy/node-http-handler from 2.1.9 to v2.1.10 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6335)
 * [fix(deps): update dependency jwt-decode from 3.1.2 to v4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7640)
