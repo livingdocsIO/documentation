@@ -366,6 +366,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.14): fix(project): Allow handles that are 2 characters long and improve validation error message
 - [v241.0.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.13): fix(http): agent updated to only support https
 - [v241.0.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.12): fix(exif-extraction): Normalize the `Date Created` exif field to a full iso timestamp supported everywhere
 - [v241.0.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.11): fix(editable): Revert editable.js upgrade as there have been issues on Firefox
