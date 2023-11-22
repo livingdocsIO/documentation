@@ -41,8 +41,9 @@ module.exports = {
       ui: {
         label: 'Teaser',
         config: {
-            useDashboard: 'articles-simple'
-          }
+          useDashboard: 'articles-simple',
+          style: 'teaser',
+        }
       }
     }
   ],
