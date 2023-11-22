@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/6194)
 * [fix(deps): update dependency exifreader from 4.16.0 to v4.17.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6328)
 * [Fix project create api client url](https://github.com/livingdocsIO/livingdocs-editor/pull/7721)
 * [Show single media metadata in dashboard side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/7712)
