@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 27.2.2 to v27.2.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6346)
 * [fix(deps): update dependency @livingdocs/framework from 27.2.2 to v27.2.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7724)
 * [Fix matcher to detect SVG images that include ` ` or `\n`](https://github.com/livingdocsIO/livingdocs-server/pull/6340)
 * [Support translations in media sources](https://github.com/livingdocsIO/livingdocs-editor/pull/7671)
