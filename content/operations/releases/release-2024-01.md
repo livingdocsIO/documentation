@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6348)
 * [Add high contrast theme toggle to user profile](https://github.com/livingdocsIO/livingdocs-editor/pull/7720)
 * [Allow deletion of global properties in user config](https://github.com/livingdocsIO/livingdocs-server/pull/6334)
 * [Improvement/Jan Release Polish](https://github.com/livingdocsIO/livingdocs-editor/pull/7726)
