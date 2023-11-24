@@ -456,6 +456,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.72): fix(admin): Fix api client url after creating a project in the admin UI
 - [v100.8.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.71): fix(li-link-edit): allow to reopen and edit links with invalid href
 - [v100.8.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.70): fix(url-util): Take subdomains into account when validating URL TLD
 - [v100.8.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.69): fix(framework): revert htmlparser2 and editable.js upgrade
@@ -467,7 +468,7 @@ Here is a list of all patches after the release has been announced.
 - [v100.8.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.63): fix(tasks): Use correct steps within task value
 - [v100.8.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.62): fix(media-library): Don't show hidden form field on multi-asset upload
 - [v100.8.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.61): fix(comments): safeguard comment highlighting if comments disabled
-- [v100.8.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.60): fix(security): Update `get-func-name` to version `v100.8.71` to patch CVE-2023-43646
+- [v100.8.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.60): fix(security): Update `get-func-name` to version `v100.8.72` to patch CVE-2023-43646
 - [v100.8.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.59): fix(comments): create comment after visiting history
 - [v100.8.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.58): fix(lists): Only re-render document list when it changes
 - [v100.8.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.57): fix(publish control): remove content validation errors when user edits the directive
