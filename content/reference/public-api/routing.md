@@ -17,7 +17,6 @@ menus:
 ```bash
 ACCESS_TOKEN=ey1234
 curl -k -X GET "https://server.livingdocs.io/api/v1/routing/resolve?path=:path" \
-  -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
 

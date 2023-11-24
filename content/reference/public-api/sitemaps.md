@@ -17,7 +17,6 @@ menus:
 ```bash
 ACCESS_TOKEN=ey1234
 curl -k -X GET "https://server.livingdocs.io/api/v1/sitemaps/index?baseUrl=https://livingdocs.io" \
-  -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
 
@@ -78,7 +77,6 @@ This endoint returns a sitemap index containing links to individual sitemap file
 ```bash
 ACCESS_TOKEN=ey1234
 curl -k -X GET "https://server.livingdocs.io/api/v1/sitemaps/entries?baseUrl=https://livingdocs.io&date=2021-05" \
-  -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
 

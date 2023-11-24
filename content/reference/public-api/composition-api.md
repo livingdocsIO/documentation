@@ -17,9 +17,8 @@ menus:
 ```bash
 ACCESS_TOKEN=ey1234
 curl -k -X POST "https://server.livingdocs.io/api/beta/composition/:documentId" \
-  -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
-  -H 'Content-Type: application/json; charset=utf-8' \
+  -H "Content-Type: application/json; charset=utf-8" \
   --data-binary @- << EOF
  {
     "fields": ["systemdata", "content", "metadata", "includes", "html"]
