@@ -151,7 +151,7 @@ To learn about the necessary actions to update Livingdocs to `release-2024-01`, 
 It's a simple/fast migration with no expected data losses.
 
 ```sh
-# run `livingdocs-server migrate up` to update to the newest database scheme
+# run `livingdocs-server migrate up` to update to the newest database schema
 livingdocs-server migrate up
 ```
 

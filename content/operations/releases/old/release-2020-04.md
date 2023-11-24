@@ -195,7 +195,7 @@ References:
 The migration is simple, the duration is short and there are no datalosses expected on up-/downgrade.
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run grunt migrate to update to the newest database schema
 # migration - 131-add-fields-to-assets.js
 #   add 2 fields to assets table
 # migration - 132-add-asset-import-errors.js

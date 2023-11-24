@@ -202,7 +202,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3
 It's a simple/fast migration with no expected data losses.
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run grunt migrate to update to the newest database schema
 # migration - 156-add-content-type-id-on-document-publication-events.js
 # migration - 157-add-documents-data-column.js
 # migration - 158-remove-metadata_id-columns.js

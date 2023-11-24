@@ -119,7 +119,7 @@ We added 3 new possibilities to select data for custom attributes in the text fo
 It's a simple/fast migration with no expected data losses.
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run grunt migrate to update to the newest database schema
 # migration - 167-add-document-inbox.js
 #   create new table document_inbox
 # migration - 168-add-started_at-index-on-import_jobs.js

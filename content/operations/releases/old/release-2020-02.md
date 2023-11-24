@@ -151,7 +151,7 @@ References:
 The migration is simple, the duration is short and there are no datalosses expected on up-/downgrade.
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run grunt migrate to update to the newest database schema
 # migration - 128-add-user-agent-access-tokens.js
 #   add field access_tokens.user_agent
 # migration - 129-add-index-user-id-created-at-access-tokens.js

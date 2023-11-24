@@ -273,7 +273,7 @@ References:
 ## Migrate the database
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run grunt migrate to update to the newest database schema
 # migration - 120-add-asset-collections.js
 #   create asset collection table
 # migration - 121-add-assets-to-indexes.js

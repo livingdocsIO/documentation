@@ -171,7 +171,7 @@ For a description of all additions check the related pull requests.
 ## Migrate the database
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run grunt migrate to update to the newest database schema
 # migration - 111-add-comments-table.js
 #   create comments table + add events to the stream_events_types table
 grunt migrate

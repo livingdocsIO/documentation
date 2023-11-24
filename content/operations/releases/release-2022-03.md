@@ -146,7 +146,7 @@ References:
 It's a simple/fast migration with no expected data losses.
 
 ```sh
-# run `livingdocs-server migrate up` to update to the newest database scheme
+# run `livingdocs-server migrate up` to update to the newest database schema
 # migration - 173-add-user-ids-to-document-lists.js
 # migration - 174-add-range-query-functions.js
 # migration - 175-drop-documents-content-type-document-type-and-channel.js

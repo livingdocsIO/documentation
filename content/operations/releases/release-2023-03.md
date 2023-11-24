@@ -155,7 +155,7 @@ You can now set `publishControl.firstPublicationDate` and `publishControl.lastPu
 It's a simple/fast migration with no expected data losses.
 
 ```sh
-# run `livingdocs-server migrate up` to update to the newest database scheme
+# run `livingdocs-server migrate up` to update to the newest database schema
 # migration 186-api-clients.js
 #   adds new table for API Clients and API Tokens
 # migration 193-increase-document-title-length.js

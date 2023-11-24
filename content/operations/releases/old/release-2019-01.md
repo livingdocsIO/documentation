@@ -170,7 +170,7 @@ Introduce a structural view of the document (tree view) in the split panel that 
 ## Migrate the database
 
 ```sh
-# run livingdocs-server migrate up to update to the newest database scheme
+# run livingdocs-server migrate up to update to the newest database schema
 # migration - 112-add-event-type-content-type-view-after-document-creation-updated.js
 #   add event ContentTypeViewAfterDocumentCreationUpdated to the stream_events_types table
 # migration - 113-add-event-type-content-type-document-creation-disabled-updated.js

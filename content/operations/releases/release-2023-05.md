@@ -84,7 +84,7 @@ In future, you will be able to configure your own labels for metadata properties
 It's a simple/fast migration with no expected data losses.
 
 ```sh
-# run `livingdocs-server migrate up` to update to the newest database scheme
+# run `livingdocs-server migrate up` to update to the newest database schema
 # migration 187-indexes-deferrable.js
 #   modifies constraints to be deferrable
 # migration 188-document_content_types-archive.js

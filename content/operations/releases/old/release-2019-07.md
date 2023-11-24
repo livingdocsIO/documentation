@@ -171,7 +171,7 @@ References:
 ## Migrate the database
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run grunt migrate to update to the newest database schema
 # migration - 118-add-configs-table.js
 #   create config_indexes + config_properties table
 # migration - 119-migrate-channel-configs.js
