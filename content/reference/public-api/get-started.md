@@ -21,7 +21,6 @@ Embed the `AccessToken` in the header of every HTTP request as shown below.
 ### Request HTTP headers
 
 ```
-Accept: application/json
 Authorization: Bearer ey1234
 ```
 
@@ -30,7 +29,6 @@ Authorization: Bearer ey1234
 ```bash
 ACCESS_TOKEN=ey1234
 curl -k -X GET "http://localhost:9090/api/v1/project"
-  -H "Accept: application/json"
   -H "Authorization: Bearer $ACCESS_TOKEN"
 ```
 
@@ -137,8 +135,8 @@ Don't forget to replace [your token.](https://edit.livingdocs.io/access/111/publ
 --query--
 
 ```bash
-curl -H 'Authorization: Bearer your_token' \
-https://server.livingdocs.io/api/v1/documents/latestPublications
+curl -k -X GET https://server.livingdocs.io/api/v1/documents/latestPublications \
+  -H "Authorization: Bearer your_token"
 ```
 
 --endpoint--

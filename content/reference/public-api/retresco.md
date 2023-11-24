@@ -18,9 +18,8 @@ menus:
 ```bash
 ACCESS_TOKEN=ey1234
 curl -k -X POST "https://server.livingdocs.io/api/v1/retresco/re-enrich" \
-  -H "Accept: application/json" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
-  -H 'Content-Type: application/json; charset=utf-8' \
+  -H "Content-Type: application/json; charset=utf-8" \
   --data-binary @- << EOF
   {
     "doc_ids": ["1", "2", "3"]

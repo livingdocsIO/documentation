@@ -14,8 +14,7 @@ menus:
 --query--
 
 ```bash
-curl -k -X GET "https://server.livingdocs.io/api/v1/health" \
-  -H "Accept: application/json"
+curl -k -X GET "https://server.livingdocs.io/api/v1/health"
 ```
 
 --endpoint--
