@@ -198,15 +198,15 @@ Here is a complete list of fields you can use. Please consult https://www.iptc.o
 | Time Created                               |                                                              |
 | Description                                | Caption/Abstract, Caption, description, caption              |
 | Description Writer                         | Writer/Editor, CaptionWriter                                 |
-| Headline                                   | headline                                                     |
-| Instructions                               | instructions                                                 |
+| Headline                                   |                                                              |
+| Instructions                               |                                                              |
 | Intellectual Genre                         | Object Attribute Reference                                   |
 | Job Id                                     | TransmissionReference, Original Transmission Reference       |
 | Keywords                                   | subject                                                      |
 | Province or State                          | State, Province/State                                        |
 | Rights Usage Terms                         | UsageTerms                                                   |
 | Scene Code                                 | Scene                                                        |
-| Source                                     | source                                                       |
+| Source                                     |                                                              |
 | Subject Code                               | Subject Reference                                            |
 | Sublocation (legacy)                       | Location, Sub-location                                       |
 | Title                                      | Object Name, title                                           |
