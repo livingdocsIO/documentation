@@ -382,6 +382,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.25): fix(admin): Fix api client url after creating a project in the admin UI
 - [v102.1.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.24): fix(link-tool): close tooltip on click outside
 - [v102.1.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.23): fix(li-link-edit): allow to reopen and edit links with invalid href
 - [v102.1.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.22): fix(url-util): Take subdomains into account when validating URL TLD
