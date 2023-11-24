@@ -67,7 +67,7 @@ To learn about the necessary actions to update Livingdocs to `release-2023-07`, 
 It's a simple/fast migration with no expected data losses.
 
 ```sh
-# run `livingdocs-server migrate up` to update to the newest database scheme
+# run `livingdocs-server migrate up` to update to the newest database schema
 # migration 192-remove-unused-columns.js
 #   removes unused columns from the database
 # migration 193-increase-document-title-length.js

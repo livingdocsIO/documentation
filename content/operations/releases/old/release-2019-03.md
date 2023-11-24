@@ -156,7 +156,7 @@ When you are in read-only mode, you also don't see live updates of other typing 
 ## Migrate the database
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run grunt migrate to update to the newest database schema
 #   112-add-event-type-content-type-view-after-document-creation-updated.js
 #   113-add-event-type-content-type-document-creation-disabled-updated.js
 #   114-alter-user-config-value.js

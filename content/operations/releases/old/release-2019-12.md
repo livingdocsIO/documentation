@@ -188,7 +188,7 @@ The database migration is expected to be fast, easy and without issues.
 The fields `channels.disabled_versions` and `channels.available_versions` are deleted, but were not used in the last release.
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run grunt migrate to update to the newest database schema
 # migration - 125-add-group-member-list-table.js
 #   fix the migration script for the group_project_members table
 # migration - 126-migrate-scope-column-to-text.js

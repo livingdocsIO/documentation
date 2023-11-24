@@ -243,7 +243,7 @@ References:
 It's a simple/fast migration with no expected data losses.
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run grunt migrate to update to the newest database schema
 # migration - 139-fix-title-on-media-library-entries.js
 #   set title on media_library_entries table
 # migration - 140-migration-log.js

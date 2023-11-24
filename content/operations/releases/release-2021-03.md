@@ -425,7 +425,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3
 It's a simple/fast migration with no expected data losses.
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run grunt migrate to update to the newest database schema
 # migration - 148-add-documents-project-id-not-null.js
 #   add index on media_library_entries.media_type_id
 # migration - 149-declare-expect_equal_version-as-immutable.js

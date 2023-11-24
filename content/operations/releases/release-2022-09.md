@@ -163,7 +163,7 @@ References:
 It's a simple/fast migration with no expected data losses.
 
 ```sh
-# run `livingdocs-server migrate up` to update to the newest database scheme
+# run `livingdocs-server migrate up` to update to the newest database schema
 # migration 179-fix-media-library-index.js
 #   alter media library index
 # migration 180-inbox-insert-item.js

@@ -263,7 +263,7 @@ See the [documentation](https://docs.livingdocs.io/reference-documentation/edito
 ## Migrate the database
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run grunt migrate to update to the newest database schema
 # migrations
 # - 112-add-event-type-content-type-view-after-document-creation-updated.js
 # - 113-add-event-type-content-type-document-creation-disabled-updated.js

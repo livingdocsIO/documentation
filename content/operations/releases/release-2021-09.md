@@ -149,7 +149,7 @@ You can now use the arrow keys on your keyboard to navigate between different te
 It's a simple/fast migration with no expected data losses.
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run grunt migrate to update to the newest database schema
 # migration - 166-add-media-library-state.js
 #   add row state to the table media_library_entries
 livingdocs-server migrate up

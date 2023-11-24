@@ -69,7 +69,7 @@ To learn about the necessary actions to update Livingdocs to `release-2023-09`, 
 It's a simple/fast migration with no expected data losses.
 
 ```sh
-# run `livingdocs-server migrate up` to update to the newest database scheme
+# run `livingdocs-server migrate up` to update to the newest database schema
 # migration 193-increase-document-title-length.js
 #   increases the length of the document title to 1000 characters
 livingdocs-server migrate up

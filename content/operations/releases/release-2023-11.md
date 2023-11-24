@@ -63,14 +63,17 @@ To learn about the necessary actions to update Livingdocs to `release-2023-11`, 
 
 ### Migrate the Postgres Database :fire:
 
-It's a simple/fast migration with no expected data losses.
-
 ```sh
-# run `livingdocs-server migrate up` to update to the newest database scheme
+# run `livingdocs-server migrate up` to update to the newest database schema
 # migration 194-actors.js
 #   adds new table actors
 livingdocs-server migrate up
 ```
+
+Before upgrading to November release, please upgrade to the latest `release-2023-09` v237.2.32. A patch was released to allow compatibility with the new database schema.
+The next step, you should run `livingdocs-server migrate up` from November release instance to apply the new User/Actors schema. New release instances will not work until the migrations above are applied.
+Previous release instances will continue to work with the new database schema after running the migrations. Finally, you can deploy the new release instances. 
+Note: After running the migration `userApi.findById()` using the import user id doesn't work anymore, but `projectApi.getImportUser(projectId)` still returns the same id as before.
 
 {{< feature-info "li-includes feature" "server" >}}
 ### `includeApi.registerService()` and `includeApi.registerServices()` are now synchronous methods :fire:

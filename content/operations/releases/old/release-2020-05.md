@@ -206,7 +206,7 @@ References:
 The migration is simple, the duration is short and there are no datalosses expected on up-/downgrade.
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run grunt migrate to update to the newest database schema
 # migration - 135-add-webhooks.js.js
 #   create webhooks table
 livingdocs-server migrate up

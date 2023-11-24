@@ -256,7 +256,7 @@ It's a simple migration with no expected data losses.
 The expected time for the image migration is 10'000 images / second.
 
 ```sh
-# run grunt migrate to update to the newest database scheme
+# run grunt migrate to update to the newest database schema
 # migration - 136-add-tag-suggestions.js
 #   create tag_suggestions table
 # migration - 137-migrate-assets.js

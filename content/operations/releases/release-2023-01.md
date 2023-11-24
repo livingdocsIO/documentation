@@ -71,7 +71,7 @@ Project home screen with multiple Table Dashboards and Document Creation Flow bu
 It's a simple/fast migration with no expected data losses.
 
 ```sh
-# run `livingdocs-server migrate up` to update to the newest database scheme
+# run `livingdocs-server migrate up` to update to the newest database schema
 # migration 184-increase-webhook-handle-length.js
 #   limit webhook handle to 50 characters
 # migration 185-li-get-leaf-of-revision-history.js

@@ -141,7 +141,7 @@ Elasticsearch Indexing CLI (`livingdocs-server elasticsearch-index`) got some im
 It's a simple/fast migration with no expected data losses.
 
 ```sh
-# run `livingdocs-server migrate up` to update to the newest database scheme
+# run `livingdocs-server migrate up` to update to the newest database schema
 # migration 182-add-started_at-index-on-users_occupations.js
 #   add index on user_occupations.started_at
 # migration 183-add-user_id-index-on-users_occupations.js
