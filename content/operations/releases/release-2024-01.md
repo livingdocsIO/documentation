@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency jose from 5.0.2 to v5.1.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6350)
 * [fix(deps): update dependency jose from 5.0.1 to v5.0.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6349)
 * [fix(deps): update dependency jose from 4.15.4 to v5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6238)
 * [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6348)
