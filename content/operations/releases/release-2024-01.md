@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency metalman-schema from 4.0.1 to v4.0.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6353)
 * [Feat/consolidated shadows](https://github.com/livingdocsIO/livingdocs-editor/pull/7730)
 * [fix(deps): update dependency jose from 5.0.2 to v5.1.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6350)
 * [fix(deps): update dependency jose from 5.0.1 to v5.0.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6349)
