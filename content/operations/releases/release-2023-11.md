@@ -375,6 +375,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.17): fix(media-library): Fix sort support in media library
 - [v241.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.16): fix(deps): Upgrade metalman-schema to fix response body transformation
 - [v241.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.15): fix(webhooks): Normalize webhooks configuration and consumer only enabled when instance is configured with role worker
 - [v241.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.14): fix(project): Allow handles that are 2 characters long and improve validation error message
