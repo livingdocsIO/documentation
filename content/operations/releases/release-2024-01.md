@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix Tasks: ensure tasks panel and toolbar button updates when another user changes the task state](https://github.com/livingdocsIO/livingdocs-editor/pull/7738)
 * [li-video-reference: show Media Library Entry label instead of generic "Video"](https://github.com/livingdocsIO/livingdocs-editor/pull/7732)
 * [Fix sort support in media library query](https://github.com/livingdocsIO/livingdocs-server/pull/6357)
 * [fix(deps): update dependency jose from 5.1.1 to v5.1.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6355)
