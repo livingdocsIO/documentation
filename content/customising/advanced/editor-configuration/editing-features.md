@@ -252,19 +252,6 @@ It's also possible to turn on/off [Comments]({{< ref "/reference/project-config/
 The notification feature needs to be enabled if the mentioned users should get a notification. [Notification feature]({{< ref "/reference/project-config/notifications.md" >}})
 
 
-
-## Filter Sets
-
-Filter Sets allow you to define bookmarks on combinations of filters such as "Last hour" and "Published" as a bookmark "Recently published".
-To enable the feature, add the following block to your editor config:
-```js
-filterSets: {
-  isEnabled: true
-}
-```
-
-All users will be able to see and choose filter sets. Only admins and project admins will be able to add and edit filter sets.
-
 ## Pin components
 
 Pinning of components enables a pin icon next to a component card in the sidebar. When clicked the component is pinned according to the rules:
