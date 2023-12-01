@@ -720,6 +720,15 @@ search: {
   elasticsearchClient: {
     // Configures the elasticsearch search cluster
     node: 'http://localhost:9200'
+    // AWS Credentials support for OpenSearch
+    // You can configure any AWS Credentials provider supported by the AWS SDK credentials-provider-node
+    // configuration provided: https://www.npmjs.com/package/@aws-sdk/credential-provider-node#supported-configuration
+    // Please make sure to always define aws object, even if you don't use AWS credentials 
+    aws: {
+      accessKeyId: '*****',
+      secretAccessKey: '*****',
+      region: 'eu-central-1'
+    }
   }
 
   articleDocumentIndex: 'li-local-documents',
@@ -734,6 +743,30 @@ search: {
 
   // your optional custom elasticsearch search function
   queryBuilderPlugin: require.resolve('./path/to/your-own-search-function')
+}
+```
+
+When configuring OpenSearch credentials you can use the `aws` object to configure AWS credentials.
+Please make sure to always define the `aws` object, even if you don't use AWS `accessKeyId` and `secretAccessKey`, since we use this config to determine if we should use AWS connection or Elasticsearch connection.
+
+For local development, you can use your local AWS profile defining the `AWS_PROFILE` environment variable, with the following livingdocs-server configuration:
+```js
+search: {
+  elasticsearchClient: {
+    aws: {
+      region: 'eu-central-1'
+    }
+  }
+}
+```
+For production, we recommend using AWS user's `accessKeyId` and `secretAccessKey` or in EKS you can use webIdentityToken by defining the `AWS_WEB_IDENTITY_TOKEN_FILE` environment variable, with the following livingdocs-server configuration:
+```js
+search: {
+  elasticsearchClient: {
+    aws: {
+      region: 'eu-central-1'
+    }
+  }
 }
 ```
 
