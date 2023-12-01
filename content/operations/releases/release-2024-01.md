@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Support visiblePublicationDateOverride on importApi](https://github.com/livingdocsIO/livingdocs-server/pull/6365)
 * [fix(deps): update dependency @livingdocs/framework from 27.2.3 to v27.2.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7750)
 * [Patch renovate config to include `release-2023-11`](https://github.com/livingdocsIO/livingdocs-server/pull/6369)
 * [fix(deps): update aws-sdk from 3.461.0 to v3.462.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6362)
