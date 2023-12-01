@@ -391,6 +391,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.29): fix(history): Upgrade @livingdocs/framework to fix include history
 - [v102.1.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.28): fix(tasks): ensure tasks panel and toolbar button updates when a task is updated by another user
 - [v102.1.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.27): improvement(icon link): Spacing
 - [v102.1.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.26): chore(collaboration): Set CollaborationUser values on creation
