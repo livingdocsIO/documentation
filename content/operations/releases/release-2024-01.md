@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk from 3.461.0 to v3.462.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6362)
 * [fix(deps): update dependency jose from 5.1.2 to v5.1.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6366)
 * [Improvement/media library scaling](https://github.com/livingdocsIO/livingdocs-editor/pull/7746)
 * [fix(deps): update babel from 7.23.3 to v7.23.5 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/7745)
