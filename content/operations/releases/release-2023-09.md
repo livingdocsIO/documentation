@@ -459,6 +459,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.75): fix(history): Upgrade @livingdocs/framework to fix include history
 - [v100.8.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.74): fix(tasks): ensure tasks panel and toolbar button updates when a task is updated by another user
 - [v100.8.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.73): chore(collaboration): Set CollaborationUser values on creation
 - [v100.8.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.72): fix(admin): Fix api client url after creating a project in the admin UI
@@ -473,7 +474,7 @@ Here is a list of all patches after the release has been announced.
 - [v100.8.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.63): fix(tasks): Use correct steps within task value
 - [v100.8.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.62): fix(media-library): Don't show hidden form field on multi-asset upload
 - [v100.8.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.61): fix(comments): safeguard comment highlighting if comments disabled
-- [v100.8.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.60): fix(security): Update `get-func-name` to version `v100.8.74` to patch CVE-2023-43646
+- [v100.8.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.60): fix(security): Update `get-func-name` to version `v100.8.75` to patch CVE-2023-43646
 - [v100.8.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.59): fix(comments): create comment after visiting history
 - [v100.8.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.58): fix(lists): Only re-render document list when it changes
 - [v100.8.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.57): fix(publish control): remove content validation errors when user edits the directive
