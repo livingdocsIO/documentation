@@ -375,6 +375,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.19): fix(history): Upgrade @livingdocs/framework to fix include history
 - [v241.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.18): fix(readme): Remove newlines
 - [v241.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.17): fix(media-library): Fix sort support in media library
 - [v241.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.16): fix(deps): Upgrade metalman-schema to fix response body transformation
