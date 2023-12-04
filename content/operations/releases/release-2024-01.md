@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [UI i18n](https://github.com/livingdocsIO/livingdocs-editor/pull/7579)
 * [fix(deps): update dependency sharp from 0.32.6 to ^0.33.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6363)
 * [fix(embedded documents): show the embedded doc properties per default again](https://github.com/livingdocsIO/livingdocs-editor/pull/7753)
 * [fix(deps): update dependency @google-cloud/storage from 7.6.0 to v7.7.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6367)
