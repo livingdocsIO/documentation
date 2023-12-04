@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @google-cloud/storage from 7.6.0 to v7.7.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6367)
 * [Secure Opensearch/Kibana](https://github.com/livingdocsIO/livingdocs-server/pull/6324)
 * [Support visiblePublicationDateOverride on importApi](https://github.com/livingdocsIO/livingdocs-server/pull/6365)
 * [fix(deps): update dependency @livingdocs/framework from 27.2.3 to v27.2.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7750)
