@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Expose `getLatestDraftsBeta` function in public api object](https://github.com/livingdocsIO/livingdocs-server/pull/6303)
 * [Event Actors](https://github.com/livingdocsIO/livingdocs-server/pull/6374)
 * [remove Filter Sets](https://github.com/livingdocsIO/livingdocs-editor/pull/7737)
 * [UI i18n](https://github.com/livingdocsIO/livingdocs-editor/pull/7579)
