@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add ability to unlock/steal a ticker entry lock from another user](https://github.com/livingdocsIO/livingdocs-editor/pull/7719)
 * [Canvas UI part 1](https://github.com/livingdocsIO/livingdocs-editor/pull/7757)
 * [Fix: close publish control panel when user clicks in content](https://github.com/livingdocsIO/livingdocs-editor/pull/7759)
 * [Media Library Lightbox](https://github.com/livingdocsIO/livingdocs-editor/pull/7739)
