@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Remove `enabled` config property from `serverConfig.documents.realtimeUpdates`](https://github.com/livingdocsIO/livingdocs-server/pull/6380)
 * [Add UI support for 'document.create', 'document.delete', and 'document.build.draft' webhooks](https://github.com/livingdocsIO/livingdocs-editor/pull/7760)
 * [Add support for document create and delete webhooks](https://github.com/livingdocsIO/livingdocs-server/pull/6376)
 * [fix(deps): update aws-sdk from 3.465.0 to v3.468.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6381)
