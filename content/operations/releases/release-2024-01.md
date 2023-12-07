@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk from 3.465.0 to v3.468.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6381)
 * [fix(deps): update dependency trackjs from 3.10.3 to v3.10.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7763)
 * [fix(deps): update dependency @smithy/node-http-handler from 2.1.10 to v2.2.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6377)
 * [Add ability to unlock/steal a ticker entry lock from another user](https://github.com/livingdocsIO/livingdocs-editor/pull/7719)
