@@ -37,6 +37,8 @@ webhooks: {
       active: true
       // this webhook only gets called when this event happens
       events: [
+        'document.create', // {{< added-in "release-2024-01" >}}
+        'document.delete', // {{< added-in "release-2024-01" >}}
         'document.publish',
         'document.unpublish',
         {
@@ -57,6 +59,16 @@ webhooks: {
             ]
           }
         },
+        {
+          name: 'document.build.draft',
+          conditions: {
+            // deliveries configured in the Project Config
+            deliveryHandles: [
+              'web',
+              'desktop'
+            ]
+          }
+        },
         'mediaLibraryEntry.create',
         'mediaLibraryEntry.archive',
         'mediaLibraryEntry.revoke',
@@ -69,6 +81,8 @@ webhooks: {
 
 ## List of Available Webhook Events
 
+- `document.create` ({{< added-in "release-2024-01" >}})
+- `document.delete` ({{< added-in "release-2024-01" >}})
 - `document.publish`
 - `document.unpublish`
 - `document.update`
@@ -81,7 +95,7 @@ webhooks: {
 
 ## Testing Webhooks
 
-For quickly testing Webhooks we use https://webhook.site. It gives you an URL you can use to send webhooks to and look at all the requests in a webinterface.
+For quickly testing Webhooks we use https://webhook.site. It gives you an URL you can use to send webhooks to and look at all the requests in a web interface.
 
 
 ## Webhook Config via Editor UI
@@ -99,6 +113,37 @@ Add a new Webhook by clicking "Add Webhook" or edit an existing one by clicking 
 ## Payload
 
 Here is an example payload sent to your url set in the Webhook configuration.
+
+`document.create`
+```json
+{
+  "event": "document.create",
+  "deliveryId": "KIOSZpPUt8X6X-FDlnLTX",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "test-1",
+  "documentId": 123,
+  "actor": {
+    "type": "user"
+  }
+}
+```
+
+`document.delete`
+```json
+{
+  "event": "document.delete",
+  "deliveryId": "Vulsdw3-y2JLqnE13NjPa",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "test-1",
+  "documentId": 123,
+  "actor": {
+    "type": "importer",
+    "name": "Importer"
+  }
+}
+```
 
 `document.publish`
 ```json
@@ -118,6 +163,10 @@ Here is an example payload sent to your url set in the Webhook configuration.
     "projectId": 3,
     "channelId": 4,
     "documentId": 179
+  },
+  "actor": {
+    "type": "api-client",
+    "name": "Publibot 3000"
   }
 }
 ```
@@ -140,6 +189,9 @@ Here is an example payload sent to your url set in the Webhook configuration.
     "projectId": 3,
     "channelId": 4,
     "documentId": 179
+  },
+  "actor": {
+    "type": "user"
   }
 }
 ```
@@ -155,7 +207,10 @@ Here is an example payload sent to your url set in the Webhook configuration.
   "documentId": 179,
   "metadataPropertyChanges": [
     "title"
-  ]
+  ],
+  "actor": {
+    "type": "user"
+  }
 }
 ```
 
@@ -170,7 +225,10 @@ Here is an example payload sent to your url set in the Webhook configuration.
   "documentId": 179,
   "publicationId": 322,
   "deliveryHandle": "web",
-  "reportId": "2SG2MAA9RwPn"
+  "reportId": "2SG2MAA9RwPn",
+  "actor": {
+    "type": "user"
+  }
 }
 ```
 
@@ -184,7 +242,10 @@ Here is an example payload sent to your url set in the Webhook configuration.
   "webhookHandle": "handle",
   "documentId": 179,
   "deliveryHandle": "web",
-  "reportId": "2SG2MAA9RwPn"
+  "reportId": "2SG2MAA9RwPn",
+  "actor": {
+    "type": "user"
+  }
 }
 ```
 
@@ -196,7 +257,10 @@ Here is an example payload sent to your url set in the Webhook configuration.
   "projectId": 3,
   "projectHandle": "service",
   "webhookHandle": "handle",
-  "mediaId": "PNIi08x4UdEA"
+  "mediaId": "PNIi08x4UdEA",
+  "actor": {
+    "type": "user"
+  }
 }
 ```
 
@@ -208,7 +272,10 @@ Here is an example payload sent to your url set in the Webhook configuration.
   "projectId": 3,
   "projectHandle": "service",
   "webhookHandle": "handle",
-  "mediaId": "PNIi08x4UdEA"
+  "mediaId": "PNIi08x4UdEA",
+  "actor": {
+    "type": "user"
+  }
 }
 ```
 
@@ -220,7 +287,10 @@ Here is an example payload sent to your url set in the Webhook configuration.
   "projectId": 3,
   "projectHandle": "service",
   "webhookHandle": "handle",
-  "mediaId": "PNIi08x4UdEA"
+  "mediaId": "PNIi08x4UdEA",
+  "actor": {
+    "type": "user"
+  }
 }
 ```
 
@@ -232,7 +302,10 @@ Here is an example payload sent to your url set in the Webhook configuration.
   "projectId": 3,
   "projectHandle": "service",
   "webhookHandle": "handle",
-  "mediaId": "PNIi08x4UdEA"
+  "mediaId": "PNIi08x4UdEA",
+  "actor": {
+    "type": "user"
+  }
 }
 ```
 
