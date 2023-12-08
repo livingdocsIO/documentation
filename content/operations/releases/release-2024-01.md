@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix delivery build realtime updates](https://github.com/livingdocsIO/livingdocs-editor/pull/7765)
 * [fix(deps): update dependency @livingdocs/framework from 27.2.4 to v27.2.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7767)
 * [fix(deps): update dependency @livingdocs/framework from 27.2.4 to v27.2.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6382)
 * [Remove `enabled` config property from `serverConfig.documents.realtimeUpdates`](https://github.com/livingdocsIO/livingdocs-server/pull/6380)
