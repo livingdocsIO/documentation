@@ -392,6 +392,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.32): fix(delivery-builds): start listening to realtime updates after publish
 - [v102.1.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.31): fix(editor): close publish control panel when user clicks into content to make room for properties panel
 - [v102.1.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.30): chore: fix cypress test for video includes
 - [v102.1.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.29): fix(history): Upgrade @livingdocs/framework to fix include history
