@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Remove support for custom Channel config property](https://github.com/livingdocsIO/livingdocs-editor/pull/7766)
 * [fix(deps): update dependency ws from 8.14.2 to v8.15.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6386)
 * [Fix/Media Library](https://github.com/livingdocsIO/livingdocs-editor/pull/7764)
 * [Fix delivery build realtime updates](https://github.com/livingdocsIO/livingdocs-editor/pull/7765)
