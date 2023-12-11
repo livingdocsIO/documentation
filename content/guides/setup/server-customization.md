@@ -3,10 +3,9 @@ title: Server Customization
 bullets:
   - Register a custom route
 weight: 1
-on-premise: true
 ---
 
-If you use Livingdocs as on-premises software you can register plugins through a code API in both the editor and the server. Your projects will use a `package.json` file to install the core editor and server respectively as npm packages in a specific version.
+You can register plugins through a code API in both the editor and the server. Your projects will use a `package.json` file to install the core editor and server respectively as npm packages in a specific version.
 
 This document gives an overview of how to register custom routes to extend server
 functionality without going into detail on how to write any of them.

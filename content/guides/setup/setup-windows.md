@@ -14,4 +14,3 @@ weight: 5
   - As information when you start the editor you have to type manually the url http://localhost:9000
 - Run all the docker commands in powershell (use docker desktop on windows)
   - You can connnect to the bash folders `\\wsl.localhost\Ubuntu\home`
-- Proceed with the [getting started]({{< ref "/operations/on-premise-setup" >}})

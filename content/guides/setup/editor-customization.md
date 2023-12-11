@@ -4,7 +4,6 @@ bullets:
   - Summary of available UI extension points
   - Customization examples
 weight: 2
-on-premise: true
 ---
 
 ## Editor extension points

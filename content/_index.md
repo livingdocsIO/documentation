@@ -16,11 +16,6 @@ renderTOC: false
 
   {{< cols >}}
     {{< tip
-      title="Evaluation"
-      text="If you are already in contact with us and have access to our repositories we recommend our [On Premise Setup](/operations/on-premise-setup) to set up Livingdocs locally (in case you haven't you can contact us at <contact@livingdocs.io>)."
-    >}}
-
-    {{< tip
       title="Having a first look on edit.livingdocs.io?"
       text="You can check out Livingdocs via our service at [edit.livingdocs.io](https://edit.livingdocs.io). This way you do not have to set up anything locally and can see quickly how our editor and our REST Api work. On the service you will be set up with a preconfigured project."
     >}}
