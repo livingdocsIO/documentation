@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Media Library: Move edit action from context-menu into card](https://github.com/livingdocsIO/livingdocs-editor/pull/7770)
 * [fix(deps): update dependency @opentelemetry/instrumentation-express from 0.33.3 to ^0.34.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6383)
 * [Remove support for custom Channel config property](https://github.com/livingdocsIO/livingdocs-editor/pull/7766)
 * [fix(deps): update dependency ws from 8.14.2 to v8.15.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6386)
