@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/6387)
 * [fix(deps): update babel from 7.23.5 to v7.23.6 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/7773)
 * [Media Library: Move edit action from context-menu into card](https://github.com/livingdocsIO/livingdocs-editor/pull/7770)
 * [fix(deps): update dependency @opentelemetry/instrumentation-express from 0.33.3 to ^0.34.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6383)
