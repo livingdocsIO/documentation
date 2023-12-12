@@ -392,6 +392,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.34): fix(li-link-edit): extend typeahead search baseFilters from useDashboard
 - [v102.1.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.33): fix(ticker): Stop editing ticker before deleting
 - [v102.1.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.32): fix(delivery-builds): start listening to realtime updates after publish
 - [v102.1.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.31): fix(editor): close publish control panel when user clicks into content to make room for properties panel
