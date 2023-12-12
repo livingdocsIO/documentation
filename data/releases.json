@@ -1,5 +1,17 @@
 {
     "master": {
+        "key": "release-2024-03",
+        "name": "March 2024",
+        "ref": "/operations/releases/release-2024-03.md",
+        "upcoming": true,
+        "current": false,
+        "maintained": false,
+        "legacy": false,
+        "sortId": 42,
+        "editorVersion": "v106.1.0",
+        "serverVersion": "v245.1.0"
+    },
+    "release-2024-01": {
         "key": "release-2024-01",
         "name": "January 2024",
         "ref": "/operations/releases/release-2024-01.md",
@@ -8,8 +20,8 @@
         "maintained": false,
         "legacy": false,
         "sortId": 41,
-        "editorVersion": "v106.1.0",
-        "serverVersion": "v245.1.0"
+        "editorVersion": "v106.0.2",
+        "serverVersion": "v245.0.1"
     },
     "release-2023-11": {
         "key": "release-2023-11",
