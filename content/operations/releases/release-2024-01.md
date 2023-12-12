@@ -246,6 +246,7 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+- [v106.0.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.3): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 
   ---
