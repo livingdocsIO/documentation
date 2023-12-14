@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 27.2.5 to v27.3.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7781)
 * [fix(deps): update aws-sdk from 3.470.0 to v3.473.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6389)
 * [fix(deps): update dependency ws from 8.15.0 to v8.15.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6388)
 
