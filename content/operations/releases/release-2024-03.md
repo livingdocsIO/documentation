@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Apply user theme after login](https://github.com/livingdocsIO/livingdocs-editor/pull/7788)
 * [fix(deps): update dependency fastify from 4.25.0 to v4.25.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6402)
 * [fix(deps): update dependency fastify from 4.25.0 to v4.25.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7786)
 * [chore(deps): update dependency pino-pretty from 10.2.3 to v10.3.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6398)
