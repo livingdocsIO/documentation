@@ -617,7 +617,12 @@ Since {{< release "release-2023-11" >}} the `realtimeUpdates` object has been ex
 
 The new `websocketsEnabled` property is also used for updating table dashboards, but instead of polling once per minute it listens to document update events and applies the changes in real-time. There is throttling in place to prevent a client from making too many requests (default: 5 seconds), and a jitter is applied to spread the server load of multiple connected clients (set to half of `websocketsThrottling`). Along with handling dashboard updates, the `websocketsEnabled` property is also used to control teaser updates while a user edits a document. If there is a teaser list in the document then all teasers will be reloaded for every publish or unpublish event within the project. If there are only document teasers in the document then we only refresh the teasers if the specific document references are published or unpublished.
 
-#### Document-lists
+If you are running the Livingdocs server locally using HTTPS with a self-signed certificate then you will need to start the editor with `NODE_TLS_REJECT_UNAUTHORIZED=0` to establish the websocket connection. This could either prefix the npm start script, be set or exported in the terminal, be added before the start command executed in the terminal, or defined in the runtime code by modifying `process.env`. Please be aware that this is for local development only and should not be needed or used in production. You should see the following warning displayed when node starts if it was applied correctly:
+```
+Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+```
+
+#### Document Lists
 
 ```js
  documentLists: {
