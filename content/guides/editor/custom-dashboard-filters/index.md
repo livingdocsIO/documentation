@@ -140,6 +140,29 @@ $emit('update:filter', {type: 'metadata', key:'transformed', dataType: 'boolean'
 $emit('update:filter', {filter: {key:'metadata.transformed', term: true}})
 ```
 
+The value of the emitted `filter` property must be an object. If you need to combine multiple properties these should be assigned to an `and`, `or`, or `not` property within the filter object:
+
+```js
+$emit('update:filter', {
+  filter: {
+    and: [
+      {
+        key: 'visiblePublicationDate',
+        range: {
+          gte: '2023-01-01T00:00:00.000Z',
+          lte: '2023-01-01T23:59:59.999Z'
+        }
+      },
+      {
+        key: 'lastPublicationDate',
+        exists: true
+      }
+    ]
+  }
+})
+
+```
+
 ##### Example
 
 `vueComponentRegistry.registerComponent({type: 'searchFilter'})` registers a Vue component as filter for the search UI. Below you can see a minimal example:
