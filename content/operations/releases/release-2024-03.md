@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add message to createSchemaApi validation errors](https://github.com/livingdocsIO/livingdocs-server/pull/6407)
 * [Fix/base spacing unit](https://github.com/livingdocsIO/livingdocs-editor/pull/7784)
 * [fix(deps): update dependency sharp from 0.33.0 to v0.33.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6408)
 * [Apply user theme after login](https://github.com/livingdocsIO/livingdocs-editor/pull/7788)
