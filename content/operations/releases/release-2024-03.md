@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use extracted mime type for file uploads](https://github.com/livingdocsIO/livingdocs-server/pull/6401)
 * [Support translated labels in huGO import dialog](https://github.com/livingdocsIO/livingdocs-editor/pull/7791)
 * [fix(deps): update dependency @livingdocs/framework from 27.3.0 to v27.3.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6415)
 * [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6400)
