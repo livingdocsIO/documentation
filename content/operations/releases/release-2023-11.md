@@ -395,6 +395,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.37): fix: resolve default components via container method
 - [v102.1.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.36): fix: add back the stopping of click event propagation
 - [v102.1.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.35): fix: support component drag&drop in safari 17.2
 - [v102.1.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.34): fix(li-link-edit): extend typeahead search baseFilters from useDashboard
