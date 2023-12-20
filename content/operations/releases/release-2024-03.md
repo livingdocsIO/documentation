@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 27.3.0 to v27.3.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6415)
 * [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6400)
 * [fix(deps): update dependency @elastic/elasticsearch8 from 8.10.0 to v8.11.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6393)
 * [Add message to createSchemaApi validation errors](https://github.com/livingdocsIO/livingdocs-server/pull/6407)
