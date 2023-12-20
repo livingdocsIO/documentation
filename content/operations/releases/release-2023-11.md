@@ -375,6 +375,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.22): chore: pin framework to 27.1.5
 - [v241.0.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.21): fix(media-library): Use extracted mime type for file uploads
 - [v241.0.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.20): fix(schema): Add message to createSchemaApi validation errors
 - [v241.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.19): fix(history): Upgrade @livingdocs/framework to fix include history
