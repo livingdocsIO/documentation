@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add defaultComponents to content type schema](https://github.com/livingdocsIO/livingdocs-server/pull/6384)
 * [Normalize file upload error code](https://github.com/livingdocsIO/livingdocs-server/pull/6414)
 * [Fix inline link tool in ticker entries](https://github.com/livingdocsIO/livingdocs-editor/pull/7802)
 * [fix(deps): update dependency cloudinary from 1.41.0 to v1.41.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6411)
