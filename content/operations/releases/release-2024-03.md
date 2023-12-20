@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Prefill teasers when dropped from side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/7795)
 * [Support content type level default components](https://github.com/livingdocsIO/livingdocs-editor/pull/7782)
 * [Add defaultComponents to content type schema](https://github.com/livingdocsIO/livingdocs-server/pull/6384)
 * [Normalize file upload error code](https://github.com/livingdocsIO/livingdocs-server/pull/6414)
