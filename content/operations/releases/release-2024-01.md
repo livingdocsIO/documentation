@@ -250,6 +250,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.8): fix(api): Improve asset proxy error handling
 - [v106.0.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.7): fix: add back the stopping of click event propagation
 - [v106.0.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.6): fix: support component drag&drop in safari 17.2
 - [v106.0.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.5): fix(themes): Move theme logic from bootstrap to session initialization
