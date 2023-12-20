@@ -251,6 +251,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.10): fix(editor): Prefill teasers when dropped from side panel
 - [v106.0.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.9): fix: resolve default components via container method
 - [v106.0.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.8): fix(api): Improve asset proxy error handling
 - [v106.0.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.7): fix: add back the stopping of click event propagation
