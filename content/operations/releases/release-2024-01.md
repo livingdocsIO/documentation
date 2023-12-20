@@ -244,6 +244,7 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.6): chore: pin framework to 27.2.7
 - [v245.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.5): fix(media-library): Normalize upload error code
 - [v245.0.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.4): fix(media-library): Use extracted mime type for file uploads
 - [v245.0.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.3): fix(schema): Add message to createSchemaApi validation errors
