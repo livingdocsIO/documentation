@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Hide update tasks link in publish control side panel when in read-only mode](https://github.com/livingdocsIO/livingdocs-editor/pull/7794)
 * [fix(deps): update aws-sdk from 3.474.0 to v3.478.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6412)
 * [Prefill teasers when dropped from side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/7795)
 * [Support content type level default components](https://github.com/livingdocsIO/livingdocs-editor/pull/7782)
