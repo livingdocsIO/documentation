@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Save ticker publication date on first attempt V3](https://github.com/livingdocsIO/livingdocs-editor/pull/7817)
 * [Reset all task properties on restart](https://github.com/livingdocsIO/livingdocs-editor/pull/7785)
 * [Allow downstream plugin in creation flow params](https://github.com/livingdocsIO/livingdocs-server/pull/6423)
 * [Hide update tasks link in publish control side panel when in read-only mode](https://github.com/livingdocsIO/livingdocs-editor/pull/7794)
