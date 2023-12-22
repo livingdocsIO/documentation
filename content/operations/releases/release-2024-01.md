@@ -252,6 +252,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.14): fix(delivery builds): fix label for relative time of build start
 - [v106.0.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.13): fix(ticker): Save publication date on first attempt
 - [v106.0.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.12): fix(tasks): Only show remove action when the task has a value
 - [v106.0.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.11): fix(publish-control): Hide update tasks link when in read-only mode
