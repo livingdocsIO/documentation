@@ -397,6 +397,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.39): fix(tasks): Only show remove action when the task has a value
 - [v102.1.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.38): fix(editor): Prefill teasers when dropped from side panel
 - [v102.1.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.37): fix: resolve default components via container method
 - [v102.1.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.36): fix: add back the stopping of click event propagation
