@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sass-loader from 13.3.2 to v13.3.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7826)
 * [chore(deps): update dependency jose from 5.1.3 to v5.2.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7825)
 * [fix(deps): update dependency fastify from 4.25.1 to v4.25.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6428)
 * [fix(deps): update dependency openid-client from 5.6.1 to v5.6.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6426)
