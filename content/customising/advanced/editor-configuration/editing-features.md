@@ -171,7 +171,35 @@ See [here]({{< ref "./text-editing.md#links" >}})
 ```
 
 The keyboard shortcuts allow you to customize which keys you want to use for common actions in Livingdocs.
-The actions (values) are fixed. You can define on which keys you want to execute the actions
+The actions (values) are fixed. You can define on which keys you want to execute the actions.
+
+The following actions are supported:
+- `prevent backspace`
+- `esc`
+- `enter`
+- `focus previous component`
+- `focus next component`
+- `move component up`
+- `move component down`
+- `delete component`
+- `undo`
+- `redo`
+- `insert middle dot`
+- `insert left guillemets`
+- `insert right guillemets`
+- `insert double low-9 quotation mark` inserts `„` {{< added-in "release-2023-11" >}}
+- `insert double high-reversed-9 quotation mark` inserts `‟` {{< added-in "release-2023-11" >}}
+- `insert en space`
+- `insert four-per-em space`
+- `insert en dash`
+- `insert figure dash` inserts `‒` {{< added-in "release-2023-11" >}}
+- `insert fract12`
+- `insert fract14`
+- `print interactive view`
+- `start multiselect mode`
+- `end multiselect mode`
+- `next card` highlights the next comment card
+- `previous card` highlights the previous comment card
 
 ## Multi Select and Multi Text Select
 
