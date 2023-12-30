@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency moment-timezone from 0.5.43 to v0.5.44 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7838)
 * [fix(deps): update babel from 7.23.6 to v7.23.7 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/7837)
 * [Translate "unpublished"](https://github.com/livingdocsIO/livingdocs-editor/pull/7831)
 * [fix(deps): update dependency sass from 1.69.5 to v1.69.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7834)
