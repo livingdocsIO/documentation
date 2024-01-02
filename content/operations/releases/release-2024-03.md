@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @smithy/node-http-handler from 2.2.1 to v2.2.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6446)
 * [fix(deps): update dependency nodemailer from 6.9.7 to v6.9.8 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6442)
 * [fix(deps): update dependency moment-timezone from 0.5.43 to v0.5.44 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7838)
 * [fix(deps): update babel from 7.23.6 to v7.23.7 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/7837)
