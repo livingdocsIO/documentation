@@ -13,7 +13,7 @@ aliases:
   title="November 2023 Release"
   upcoming=false
   legacy=false
-  current=true
+  current=false
   maintained=true
   branchHandle="release-2023-11"
 >}}

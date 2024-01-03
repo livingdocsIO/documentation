@@ -2,7 +2,7 @@
 type: release-notes
 title: January 2024 Release
 description: Technical Release Notes for release-2024-01
-excludeFromSearch: true
+excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2024-01/
@@ -11,10 +11,10 @@ aliases:
 
 {{< release-header
   title="January 2024 Release"
-  upcoming=true
+  upcoming=false
   legacy=false
-  current=false
-  maintained=false
+  current=true
+  maintained=true
   branchHandle="release-2024-01"
 >}}
 
@@ -168,13 +168,13 @@ New behavior added to the Media Library. When clicking a thumbnail on the Media 
 Hovering over the thumbnail will show the actions:
 - Pencil button links to full edit page
 - Magnifying glass button opens overlay with large image preview with the possibility to show a reduced set of metadata properties. The supported metadata property types are:
-- li-text
-- li-integer
-- li-boolean
-- li-date
-- li-datetime
-- li-enum
-- li-string-list
+  - li-text
+  - li-integer
+  - li-boolean
+  - li-date
+  - li-datetime
+  - li-enum
+  - li-string-list
 
 {{< feature-info "Public api" "server" >}}
 ### Event Actors :gift:
