@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix text in task notification emails](https://github.com/livingdocsIO/livingdocs-server/pull/6427)
 * [Improve ticker lock handling](https://github.com/livingdocsIO/livingdocs-editor/pull/7775)
 * [fix(deps): update dependency c8 from 8.0.1 to v9 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6450)
 * [fix(deps): update dependency axios from 1.6.3 to v1.6.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6448)
