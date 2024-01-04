@@ -253,6 +253,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.18): fix(workspace): Add cleanup fn to leaveWindow event handler response
 - [v106.0.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.17): fix(search): Hide load more button when returning to result groups
 - [v106.0.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.16): fix: translate unpublished
 - [v106.0.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.15): fix(shortcuts): allow shortcuts for double low-9 quotation mark and it's mirror
