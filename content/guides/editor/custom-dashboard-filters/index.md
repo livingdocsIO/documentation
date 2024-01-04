@@ -8,8 +8,9 @@ It is possible to register a custom filter and use it as a [DisplayFilter]({{< r
 
 At the moment there are 2 types of custom filters
 - [Custom List v2 Filter](#custom-list-v2-filter)
-  - [Example Single Value Filter](#example-single-value-filter)
-  - [Example Multi Value Filter](#example-multi-value-filter)
+  - [Example filter using static options](#example-filter-using-static-options)
+  - [Example multi value filter](#example-multi-value-filter)
+  - [Example filter using async data fetching](#example-filter-using-async-data-fetching)
   - [isDefault option](#isdefault-option)
 - [Custom Vue Component Filter](#custom-vue-component-filter)
   - [Example](#example)
@@ -19,7 +20,75 @@ Hint: If you want to create a filter with metadata, make sure they are setup cor
 
 ## Custom List v2 Filter
 
-##### Example Single Value Filter
+#### Example filter using static options
+
+```js
+liEditor.searchFilters.registerListV2('simpleV2Filter', {
+  datasource: {
+    fetch ({user}) {
+      return [{
+        label: {en: 'Published Articles', de: 'Publizierte Artikel'},
+        filter: {key: 'lastPublicationId', exists: true}
+      },
+      {
+        label: {en: 'My Articles by updatedAt', de: 'Meine Artikel nach updatedAt'},
+        sort: '-updatedAt',
+        filter: {key: 'ownerId', term: user.id}
+      }]
+    }
+  },
+
+  // 'mount()' is optional since release-2023-09
+  mount ({data, filter}) {
+    filter.options = data
+  }
+})
+```
+
+#### Example multi value filter
+
+image {{< img src="multi-filter-dropdown.png" alt="Filter Dropdown" >}}
+
+```js
+liEditor.searchFilters.registerListV2('multiSelectV2Filter', {
+  multiple: true, // allow multiple selections
+  label: {en: 'Multi Select', de: 'Mehrfachauswahl'},
+  datasource: {
+    fetch ({user}) {
+      return [{
+        label: {en: 'Published Articles', de: 'Publizierte Artikel'},
+        filter: {key: 'lastPublicationId', exists: true}
+      },
+      {
+        label: {en: 'My Articles by updatedAt', de: 'Meine Artikel nach updatedAt'},
+        sort: '-updatedAt',
+        filter: {key: 'ownerId', term: user.id}
+      }]
+    }
+  },
+
+  // 'mount()' is optional since release-2023-09
+  mount ({data, filter}) {
+    filter.options = data
+  }
+})
+```
+
+The selected values are `OR` combined in the search query.
+
+Request payload if both filters from above are selected:
+
+```js
+[
+  ...,
+  { "or": [
+    { "key": "lastPublicationId", "exists": true },
+    { "key": "ownerId", "term":1 }
+  ]}
+]
+```
+
+#### Example filter using async data fetching
 
 `searchFilters.registerListV2` registers an object where you can configure a filter object which is used to render the search UI.
 
@@ -82,52 +151,9 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
 
 Hint: Look into [Filter Query Types]({{< ref "/customising/advanced/editor-configuration/base-filter.md" >}}) to find possible `{type, value}` combinations for the `filter.options` in the `mount` function.
 
-##### Example Multi Value Filter
-
-image {{< img src="multi-filter-dropdown.png" alt="Filter Dropdown" >}}
-
-```js
-liEditor.searchFilters.registerListV2('MultiSelectV2Filter', {
-  multiple: true, // allow multiple selections
-  label: {en: 'Multi Select', de: 'Mehrfachauswahl'},
-  datasource: {
-    fetch ({user}) {
-      return [{
-        label: {en: 'Published Articles', de: 'Publizierte Artikel'},
-        filter: {key: 'lastPublicationId', exists: true}
-      },
-      {
-        label: {en: 'My Articles', de: 'Meine Artikel'},
-        filter: {key: 'ownerId', term: user.id}
-      }]
-    }
-  },
-
-  mount ({data, filter}) {
-    filter.options = data
-  }
-})
-```
-
-The selected values are `OR` combined in the search query.
-
-Request payload if both filters from above are selected:
-
-```js
-[
-  ...,
-  { "or": [
-    { "key": "lastPublicationId", "exists": true },
-    { "key": "ownerId", "term":1 }
-  ]}
-]
-```
-
-##### isDefault option
+#### isDefault option
 
 When `isDefault: true` (see example above), the default option will be added to the search query by default. As soon as one selects a filter manually, the default filter option will be ignored.
-
-
 
 ## Custom Vue Component Filter
 
@@ -161,9 +187,13 @@ $emit('update:filter', {
   }
 })
 
+// In case the DisplayFilter needs to configure a sort option, use the sort atribute
+// '-' indicates descending order
+// No prefix indicates ascending order
+$emit('update:filter', {sort: '-createdAt'})
 ```
 
-##### Example
+#### Example
 
 `vueComponentRegistry.registerComponent({type: 'searchFilter'})` registers a Vue component as filter for the search UI. Below you can see a minimal example:
 

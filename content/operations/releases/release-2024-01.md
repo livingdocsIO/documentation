@@ -18,131 +18,7 @@ aliases:
   branchHandle="release-2024-01"
 >}}
 
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to the main branch).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
-
-## PRs to Categorize
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/7777)
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/6387)
-* [fix(deps): update babel from 7.23.5 to v7.23.6 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/7773)
-* [Media Library: Move edit action from context-menu into card](https://github.com/livingdocsIO/livingdocs-editor/pull/7770)
-* [fix(deps): update dependency @opentelemetry/instrumentation-express from 0.33.3 to ^0.34.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6383)
-* [Remove support for custom Channel config property](https://github.com/livingdocsIO/livingdocs-editor/pull/7766)
-* [fix(deps): update dependency ws from 8.14.2 to v8.15.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6386)
-* [Fix/Media Library](https://github.com/livingdocsIO/livingdocs-editor/pull/7764)
-* [Fix delivery build realtime updates](https://github.com/livingdocsIO/livingdocs-editor/pull/7765)
-* [fix(deps): update dependency @livingdocs/framework from 27.2.4 to v27.2.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7767)
-* [fix(deps): update dependency @livingdocs/framework from 27.2.4 to v27.2.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6382)
-* [Remove `enabled` config property from `serverConfig.documents.realtimeUpdates`](https://github.com/livingdocsIO/livingdocs-server/pull/6380)
-* [Add UI support for 'document.create', 'document.delete', and 'document.build.draft' webhooks](https://github.com/livingdocsIO/livingdocs-editor/pull/7760)
-* [Add support for document create and delete webhooks](https://github.com/livingdocsIO/livingdocs-server/pull/6376)
-* [fix(deps): update aws-sdk from 3.465.0 to v3.468.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6381)
-* [fix(deps): update dependency trackjs from 3.10.3 to v3.10.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7763)
-* [fix(deps): update dependency @smithy/node-http-handler from 2.1.10 to v2.2.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6377)
-* [Add ability to unlock/steal a ticker entry lock from another user](https://github.com/livingdocsIO/livingdocs-editor/pull/7719)
-* [Canvas UI part 1](https://github.com/livingdocsIO/livingdocs-editor/pull/7757)
-* [Fix: close publish control panel when user clicks in content](https://github.com/livingdocsIO/livingdocs-editor/pull/7759)
-* [Media Library Lightbox](https://github.com/livingdocsIO/livingdocs-editor/pull/7739)
-* [Expose `getLatestDraftsBeta` function in public api object](https://github.com/livingdocsIO/livingdocs-server/pull/6303)
-* [Event Actors](https://github.com/livingdocsIO/livingdocs-server/pull/6374)
-* [remove Filter Sets](https://github.com/livingdocsIO/livingdocs-editor/pull/7737)
-* [UI i18n](https://github.com/livingdocsIO/livingdocs-editor/pull/7579)
-* [fix(deps): update dependency sharp from 0.32.6 to ^0.33.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6363)
-* [fix(embedded documents): show the embedded doc properties per default again](https://github.com/livingdocsIO/livingdocs-editor/pull/7753)
-* [fix(deps): update dependency @google-cloud/storage from 7.6.0 to v7.7.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6367)
-* [Secure Opensearch/Kibana](https://github.com/livingdocsIO/livingdocs-server/pull/6324)
-* [Support visiblePublicationDateOverride on importApi](https://github.com/livingdocsIO/livingdocs-server/pull/6365)
-* [fix(deps): update dependency @livingdocs/framework from 27.2.3 to v27.2.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7750)
-* [Patch renovate config to include `release-2023-11`](https://github.com/livingdocsIO/livingdocs-server/pull/6369)
-* [fix(deps): update aws-sdk from 3.461.0 to v3.462.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6362)
-* [fix(deps): update dependency jose from 5.1.2 to v5.1.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6366)
-* [Improvement/media library scaling](https://github.com/livingdocsIO/livingdocs-editor/pull/7746)
-* [fix(deps): update babel from 7.23.3 to v7.23.5 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/7745)
-* [fix(deps): update aws-sdk from 3.458.0 to v3.461.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6361)
-* [Fix Tasks: ensure tasks panel and toolbar button updates when another user changes the task state](https://github.com/livingdocsIO/livingdocs-editor/pull/7738)
-* [li-video-reference: show Media Library Entry label instead of generic "Video"](https://github.com/livingdocsIO/livingdocs-editor/pull/7732)
-* [Fix sort support in media library query](https://github.com/livingdocsIO/livingdocs-server/pull/6357)
-* [fix(deps): update dependency jose from 5.1.1 to v5.1.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6355)
-* [fix(deps): update aws-sdk from 3.456.0 to v3.458.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6354)
-* [fix(deps): update dependency metalman-schema from 4.0.1 to v4.0.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6353)
-* [Feat/consolidated shadows](https://github.com/livingdocsIO/livingdocs-editor/pull/7730)
-* [fix(deps): update dependency jose from 5.0.2 to v5.1.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6350)
-* [fix(deps): update dependency jose from 5.0.1 to v5.0.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6349)
-* [fix(deps): update dependency jose from 4.15.4 to v5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6238)
-* [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6348)
-* [Add high contrast theme toggle to user profile](https://github.com/livingdocsIO/livingdocs-editor/pull/7720)
-* [Allow deletion of global properties in user config](https://github.com/livingdocsIO/livingdocs-server/pull/6334)
-* [Improvement/Jan Release Polish](https://github.com/livingdocsIO/livingdocs-editor/pull/7726)
-* [fix(deps): update dependency lru-cache from 10.0.3 to v10.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6347)
-* [fix(deps): update dependency @livingdocs/framework from 27.2.2 to v27.2.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6346)
-* [fix(deps): update dependency @livingdocs/framework from 27.2.2 to v27.2.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7724)
-* [Fix matcher to detect SVG images that include ` ` or `\n`](https://github.com/livingdocsIO/livingdocs-server/pull/6340)
-* [Support translations in media sources](https://github.com/livingdocsIO/livingdocs-editor/pull/7671)
-* [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/6194)
-* [fix(deps): update dependency exifreader from 4.16.0 to v4.17.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6328)
-* [Fix project create api client url](https://github.com/livingdocsIO/livingdocs-editor/pull/7721)
-* [Show single media metadata in dashboard side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/7712)
-* [Allow handles that are 2 characters long](https://github.com/livingdocsIO/livingdocs-server/pull/6323)
-* [fix(deps): update dependency @smithy/node-http-handler from 2.1.9 to v2.1.10 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6335)
-* [fix(deps): update dependency jwt-decode from 3.1.2 to v4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7640)
-* [fix(http): agent updated to only support https](https://github.com/livingdocsIO/livingdocs-server/pull/6329)
-* [Close text formatting tooltip on click outside](https://github.com/livingdocsIO/livingdocs-editor/pull/7663)
-* [fix(deps): update dependency lru-cache from 10.0.2 to v10.0.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6327)
-* [Allow to reopen and edit links with invalid href](https://github.com/livingdocsIO/livingdocs-editor/pull/7710)
-* [Add loading and error states to the server admin indexing page](https://github.com/livingdocsIO/livingdocs-editor/pull/7713)
-* [Update translation script](https://github.com/livingdocsIO/livingdocs-editor/pull/7714)
-* [🔥 Feat/vanilla color variables](https://github.com/livingdocsIO/livingdocs-editor/pull/7711)
-* [fix(deps): update aws-sdk from 3.450.0 to v3.451.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6321)
-* [fix(deps): update dependency wait-on from 7.1.0 to v7.2.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7706)
-* [fix(deps): update dependency pino from 8.16.1 to v8.16.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6322)
-* [Take subdomains into account when validating URL TLD](https://github.com/livingdocsIO/livingdocs-editor/pull/7703)
-* [fix(deps): update dependency axios from 1.6.1 to v1.6.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7705)
-* [fix(deps): update dependency axios from 1.6.1 to v1.6.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6320)
-* [Remove support for custom angular display filters (reintroduced for NZZ only)](https://github.com/livingdocsIO/livingdocs-editor/pull/7701)
-* [Allow multiple filters of same name with different config on one dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/7700)
-* [fix(deps): update dependency @smithy/node-http-handler from 2.1.8 to v2.1.9 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6314)
-* [Fix error when opening media side panel in editor which has a display filter configured using `metadataPropertyName`](https://github.com/livingdocsIO/livingdocs-editor/pull/7696)
-* [fix(deps): update dependency pusher from 5.1.3 to v5.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6313)
-* [fix(deps): update dependency trackjs from 3.10.1 to v3.10.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7695)
-* [Allow upload center scrolling on mobile](https://github.com/livingdocsIO/livingdocs-editor/pull/7686)
-* [Allow publish modal side panel scrolling on mobile](https://github.com/livingdocsIO/livingdocs-editor/pull/7685)
-* [Reload Teaser Includes Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/7651)
-* [Fix function rename that prevents teaser reloading](https://github.com/livingdocsIO/livingdocs-editor/pull/7677)
-* [Support rendering includes in multiple ticker entries](https://github.com/livingdocsIO/livingdocs-editor/pull/7684)
-* [fix(deps): update dependency cookie from 0.5.0 to ^0.6.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6295)
-* [Normalize the 'Date Created' exif field to a full iso timestamp](https://github.com/livingdocsIO/livingdocs-server/pull/6300)
-* [Date Time Range Filter: allow label config](https://github.com/livingdocsIO/livingdocs-editor/pull/7680)
-* [chore(deps): update dependency eslint-plugin-jsdoc from 46.8.2 to v46.9.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6308)
-* [fix(deps): update dependency @livingdocs/framework from 27.2.1 to v27.2.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7682)
-* [fix(deps): update dependency axios from 1.6.0 to v1.6.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6306)
-* [fix(deps): update dependency wait-on from 7.0.1 to v7.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7658)
-* [chore(deps): update dependency @babel/eslint-parser from 7.22.15 to v7.23.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7679)
-* [Allow SVG pass-through to avoid error in Sharp image processing](https://github.com/livingdocsIO/livingdocs-server/pull/6290)
-* [Set avatar after loading user data](https://github.com/livingdocsIO/livingdocs-editor/pull/7617)
-* [Fix/small UI bugs 5086](https://github.com/livingdocsIO/livingdocs-editor/pull/7675)
-* [fix(deps): update dependency axios from 1.6.0 to v1.6.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7673)
-* [fix(deps): update dependency fast-glob from 3.3.1 to v3.3.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7672)
-* [fix(deps): update dependency fast-glob from 3.3.1 to v3.3.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6293)
-* [Detect SVG uploads and store with .svg extension, or allow conversion using 'svg' type](https://github.com/livingdocsIO/livingdocs-server/pull/6273)
-* [Fix redirectHttpToHttps to use false as default](https://github.com/livingdocsIO/livingdocs-editor/pull/7646)
-* [Preload li-tree document references](https://github.com/livingdocsIO/livingdocs-server/pull/6202)
-* [Support dashboardConfig.search.strategy config](https://github.com/livingdocsIO/livingdocs-server/pull/6268)
-* [Support dashboardConfig.search.strategy config](https://github.com/livingdocsIO/livingdocs-editor/pull/7655)
-* [Support dashboardConfig.search.strategy config](https://github.com/livingdocsIO/livingdocs-server/pull/6268)
-* [Fix non-clickable link options](https://github.com/livingdocsIO/livingdocs-editor/pull/7647)
-* [Fix plugin context configs](https://github.com/livingdocsIO/livingdocs-server/pull/6259)
-* [Pass options to document loader](https://github.com/livingdocsIO/livingdocs-editor/pull/7606)
-* [fix(deps): update dependency cypress from 13.3.3 to v13.4.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7644)
-* [fix(deps): update dependency @google-cloud/storage from 7.4.0 to v7.5.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6256)
-
-
-To get an overview about new functionality, read the [Release Notes](TODO).
+To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-january-2024).
 To learn about the necessary actions to update Livingdocs to `release-2024-01`, read on.
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -188,12 +64,14 @@ To learn about the necessary actions to update Livingdocs to `release-2024-01`, 
 {{< feature-info "Operations" "server" >}}
 ### Migrate the Postgres Database :fire:
 
-It's a simple/fast migration with no expected data losses.
+No upstream migrations were added this release.
 
-```sh
-# run `livingdocs-server migrate up` to update to the newest database schema
-livingdocs-server migrate up
-```
+{{< feature-info "Operations" "server" >}}
+### Drop support for Node v18.17 :fire:
+
+Drop support for Node versions below 18.17 due to a dependency. If you use Livingdocs' `livingdocs/server-base:18.3` or `livingdocs/editor-base:18.3` make sure you update to the latest Docker container images: `livingdocs/server-base:18.4` and `livingdocs/editor-base:18.4` or upgrade `livingdocs/server-base:20` and `livingdocs/editor-base:20`.
+
+* [Server: Remove Node <v18.17 support](https://github.com/livingdocsIO/livingdocs-server/pull/6363)
 
 {{< feature-info "Project config" "server" >}}
 ### Custom downstream plugins paramSchema validation changes :fire:
@@ -218,17 +96,205 @@ Please contact your Livingdocs customer manager if you have any problems with th
 
 * [Server PR: Validate plugin configuration in various contexts](https://github.com/livingdocsIO/livingdocs-server/pull/6205)
 
-TODO: check migration
+{{< feature-info "Server config" "server" >}}
+### Config option `realtimeUpdates.enabled` :fire:
 
-## Deprecations
+The option `serverConfig.documents.realtimeUpdates.enabled` has been removed. 
+Please remove the `enabled` property from your Server configuration and replace it with one or both of the following properties instead:
+  - `serverConfig.documents.realtimeUpdates.pollingEnabled`
+  - `serverConfig.documents.realtimeUpdates.websocketsEnabled`
 
-## APIs :gift:
+This breaking change concerns the [Teaser includes reload]({{< ref "operations/releases/release-2023-11#teaser-includes-reload" >}}) feature. Please read the feature documentation for more information.
+
+* [Server PR: Remove `enabled` config property from `serverConfig.documents.realtimeUpdates`](https://github.com/livingdocsIO/livingdocs-server/pull/6380)
+
+{{< feature-info "li-documents feature" "server" >}}
+### Document Patch API :fire:
+
+Document patch API `document.patch` support has been removed. Please replace it with `documentApi.executeDocumentCommands`. No data migration is required, but you will need to swap `patches` parameter with `commands`, and `user` with `userId`.
+
+* [Server PR: Remove document patch endpoint and method](https://github.com/livingdocsIO/livingdocs-server/pull/6378)
+
+{{< feature-info "Editing api" "server" >}}
+### Endpoint `PATCH /document/:id` :fire:
+
+This concerns an internal API used by the Livingdocs Editor which has been used
+in the past by customizations.
+
+The Endpoint `PATCH /document/:id` support has been removed. Please replace it with `PATCH /document/:id/commands`. No data migration is required, but you will need to swap `patches` parameter with `commands`.
+
+* [Server PR: Remove document patch endpoint and method](https://github.com/livingdocsIO/livingdocs-server/pull/6378)
+
+{{< feature-info "Publish Flow" "editor" >}}
+### Custom Channel config Properties via `uiComponent` property :fire:
+
+Support for custom Channel config Properties via `uiComponent` property has been removed.
+Please remove your property registration on the server `liServer.registerChannelConfigProperty()`.
+There isn't a replacement for this functionality.
+
+* [Server PR: Remove support for custom Channel config property](https://github.com/livingdocsIO/livingdocs-server/pull/6379)
+* [Editor PR: Remove support for custom Channel config property](https://github.com/livingdocsIO/livingdocs-editor/pull/7766)
+
+{{< feature-info "Publish Flow" "editor" >}}
+### Prepare Publish Flow feature :fire:
+
+Support for the Prepare Publish Flow is removed, Publish Control is always used. No action is required.
+
+* [Editor PR: Remove Prepare Publish Flow](https://github.com/livingdocsIO/livingdocs-editor/pull/7664)
+
+{{< feature-info "Dashboards" "editor" >}}
+### Filter Sets feature :fire:
+
+Filter Sets feature has been removed in favor of configuring multiple dashboards to provide fast access to different sets of documents for different roles.
+
+* [Editor PR: Remove Filter Sets](https://github.com/livingdocsIO/livingdocs-editor/pull/7737)
+
+## Deprecations :warning:
+
+No Deprecations listed this release.
 
 ## Features
 
-TODO (featureset not 100% defined yet)
+{{< feature-info "Media Library" "editor" >}}
+### Media Library UX improvements :gift:
 
-[Breaking change `Custom downstream plugins param schema validation changes`](#custom-downstream-plugins-param-schema-validation-changes-fire) is related to this feature so please read it carefully.
+When a user wants to compare metadata information of several different images, the detail view needs to be opened and the scrolling and pagination state of the dashboard is lost. We'd like to improve that by allowing the user to see a slightly stripped down detail view of the media entry directly in a side panel on the dashboard, so the context is not lost. Media Library Lightbox. When users are browsing the media library, they want a quick way to view the image in a larger size and also see some basic information about it.
+Move edit action from context-menu into card
+
+{{< feature-info "Public api" "server" >}}
+### Event Actors :gift:
+
+`actor` property has been added to the webhook payload. This property reports the actor that triggered the event. The use case can be defining a priority lane to prioritise events triggered by humans over machines or filter events by trigger actor.
+
+The following actors are supported:
+  - `user` - user triggered the event, user name is not reported in the webhook payload: `{type: 'user'}`
+  - `importer` - import actor triggered the event, actor name is reported in the webhook payload: `{type: 'importer', name: 'importer-name'}`
+  - `api-client` - api client triggered the event, actor name is reported in the webhook payload: `{type: 'api-client', name: 'api-client-name'}`
+
+Example webhook payload:
+
+```json
+{
+  "event": "document.delete",
+  "deliveryId": "Vulsdw3-y2JLqnE13NjPa",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "test-1",
+  "documentId": 123,
+  "actor": {
+    "type": "importer",
+    "name": "Importer"
+  }
+}
+```
+
+
+{{< feature-info "Operations" "server" >}}
+### Secure Opensearch/Kibana :gift:
+
+To improve security in the Livingdocs infrastructure, we have added a new authentication method to the Opensearch/Kibana stack. It is now possible to use AWS credentials methods to access the Opensearch/Kibana. The new configuration can be found in the [Server config withing `search` property]({{< ref "customising/server-configuration#search" >}}):
+
+```js
+search: {
+  elasticsearchClient: {
+    // AWS Credentials support for OpenSearch
+    // You can configure any AWS Credentials provider supported by the AWS SDK credentials-provider-node
+    // configuration provided: https://www.npmjs.com/package/@aws-sdk/credential-provider-node#supported-configuration
+    // Please make sure to always define aws object, even if you don't use AWS credentials 
+    aws: {
+      accessKeyId: '*****',
+      secretAccessKey: '*****',
+      region: 'eu-central-1'
+    }
+  }
+}
+```
+
+For production environments:
+- using AWS IAM Roles you can define a token with `accessKeyId` and `secretAccessKey` in the `aws` object
+- when running the Livingdocs Server in EKS, use the [IAM Roles for Service Accounts](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) feature to assign the required permissions to the Livingdocs Server pod.
+- when running the Livingdocs Server in ECS/Fargate, use the [IAM Roles for Tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html) feature to assign the required permissions to the Livingdocs Server task.
+
+For local development, AWS Profile credentials can be used when connecting to remote Opensearch/Kibana. In both cases make sure to define the `region` property.
+
+```js
+search: {
+  elasticsearchClient: {
+    aws: {
+      region: 'eu-central-1'
+    }
+  }
+}
+```
+
+{{< feature-info "Public api" "server" >}}
+### Support `publishControl.visiblePublicationDateOverride` on Import API :gift:
+
+The `publishControl.visiblePublicationDateOverride` property can now be set within the `documents` parameter when [importing articles via the Import API]({{< ref "reference/public-api/imports/documents#import-documents" >}}). This allows you to set the visible publication date override when importing documents. As with other publish related properties, `"flags": {"autoPublish": true}` must be defined when using the Public API.
+
+{{< feature-info "Webhooks" "server" >}}
+### Add support for 'document.create', and 'document.delete' webhooks :gift:
+
+New webhooks for document create and delete have been added to the [webhooks list]({{< ref "reference/webhooks#list-of-available-webhook-events" >}}). These webhooks are triggered when a document is created or deleted. Please find webhook payload examples below:
+
+```json
+{
+  "event": "document.create",
+  "deliveryId": "KIOSZpPUt8X6X-FDlnLTX",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "test-1",
+  "documentId": 123,
+  "actor": {
+    "type": "user"
+  }
+}
+```
+
+```json
+{
+  "event": "document.delete",
+  "deliveryId": "Vulsdw3-y2JLqnE13NjPa",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "test-1",
+  "documentId": 123,
+  "actor": {
+    "type": "api-client",
+    "name": "Publibot 3000"
+  }
+}
+```
+
+{{< feature-info "Media Library Search" "editor" >}}
+### Sort options of DisplayFilters are respected in Media Library :gift:
+
+The Media Library DisplayFilter respects sorting options. This adapts the behavior of the Table Dashboards. The sorting options are defined in the [DisplayFilter configuration]({{< ref "guides/editor/custom-dashboard-filters/index" >}}).
+
+This feature has also been backported to `release-2023-11` and `release-2023-09`.
+
+{{< feature-info "Project configuration" "server" >}}
+### Allow `contentType.defaultComponents` config :gift:
+
+Configuration `contentType.defaultComponents` has been added to the [project configuration]({{< ref "reference/project-config/content-types" >}}). This configuration allows you to define default components for a content type. The default components will be added to the document when the content type is selected. The default components are added to the end of the document.
+
+```js
+contentTypes: [
+  {
+    handle: 'gallery',
+    documentType: 'article',
+    defaultComponents: {
+      paragraph: 'p',
+      image: 'img',
+      video: 'video',
+      audio: 'audio',
+      html: 'html'
+    }
+  }
+]
+```
+
+This feature has also been backported to `release-2023-11`.
 
 ## Vulnerability Patches
 
@@ -236,8 +302,14 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 ### Livingdocs Server
 
+No known vulnerabilities. :tada:
+
 ### Livingdocs Editor
 
+We are aware of the following vulnerabilities in the Livingdocs Editor:
+
+* [CVE-2023-44270](https://github.com/advisories/GHSA-7fh5-64p2-3v2j) vulnerability in `postcss`, it affects linters using PostCSS to parse external Cascading Style Sheets (CSS). It is not exploitable in the editor as we don't load untrusted external CSS at build time.
+* [CVE-2023-26116](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26118](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26117](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2022-25869](https://cwe.mitre.org/data/definitions/79.html), [CVE-2022-25844](https://cwe.mitre.org/data/definitions/770.html) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
 
 ## Patches
 
