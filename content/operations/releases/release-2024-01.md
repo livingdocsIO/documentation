@@ -244,6 +244,7 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.8): fix(notifications): Use project defaultLocale for labels in task emails
 - [v245.0.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.7): fix: allow downstream plugin in creation flow params
 - [v245.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.6): chore: pin framework to 27.2.7
 - [v245.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.5): fix(media-library): Normalize upload error code
