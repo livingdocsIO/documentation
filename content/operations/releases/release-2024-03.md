@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Only recompile li-angular-component on deep value changes](https://github.com/livingdocsIO/livingdocs-editor/pull/7594)
 * [fix(deps): update dependency date-fns from 2.30.0 to v3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7793)
 * [fix(deps): update dependency date-fns from 2.30.0 to v3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6413)
 * [Add metadataProperty.config.label fallback for tasks](https://github.com/livingdocsIO/livingdocs-editor/pull/7845)
