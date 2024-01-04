@@ -398,6 +398,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.43): fix(workspace): Add cleanup fn to leaveWindow event handler response
 - [v102.1.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.42): fix: translate unpublished
 - [v102.1.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.41): fix(shortcuts): allow shortcuts for double low-9 quotation mark and it's mirror
 - [v102.1.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.40): fix(ticker): Save publication date on first attempt
