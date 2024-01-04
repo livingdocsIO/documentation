@@ -376,6 +376,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.24): fix(notifications): Use project defaultLocale for labels in task emails
 - [v241.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.23): fix: allow downstream plugin in creation flow params
 - [v241.0.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.22): chore: pin framework to 27.1.5
 - [v241.0.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.21): fix(media-library): Use extracted mime type for file uploads
