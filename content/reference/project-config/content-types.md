@@ -33,6 +33,14 @@ contentTypes: [
     },
 
     editorWrapper: '<div class="doc-section"></div>',
+
+    defaultComponents: {
+      paragraph: 'p',
+      image: 'img',
+      video: 'video',
+      audio: 'audio',
+      html: 'html'
+    },
     defaultContent: [
       {component: 'title', position: 'fixed'}
     ],

@@ -754,7 +754,10 @@ search: {
 When configuring OpenSearch credentials you can use the `aws` object to configure AWS credentials.
 Please make sure to always define the `aws` object, even if you don't use AWS `accessKeyId` and `secretAccessKey`, since we use this config to determine if we should use AWS connection or Elasticsearch connection.
 
-For local development, you can use your local AWS profile defining the `AWS_PROFILE` environment variable, with the following livingdocs-server configuration:
+For local development:
+- using AWS IAM Roles you can define a token with `accessKeyId` and `secretAccessKey` in the `aws` object
+- using local AWS Profile credentials can be used when connecting to remote Opensearch/Kibana
+With the configuration below:
 ```js
 search: {
   elasticsearchClient: {
@@ -764,7 +767,12 @@ search: {
   }
 }
 ```
-For production, we recommend using AWS user's `accessKeyId` and `secretAccessKey` or in EKS you can use webIdentityToken by defining the `AWS_WEB_IDENTITY_TOKEN_FILE` environment variable, with the following livingdocs-server configuration:
+
+For production environments:
+- using AWS IAM Roles you can define a token with `accessKeyId` and `secretAccessKey` in the `aws` object
+- when running the Livingdocs Server in EKS, use the [IAM Roles for Service Accounts](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) feature to assign the required permissions to the Livingdocs Server pod.
+- when running the Livingdocs Server in ECS/Fargate, use the [IAM Roles for Tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html) feature to assign the required permissions to the Livingdocs Server task.
+With the configuration below:
 ```js
 search: {
   elasticsearchClient: {
