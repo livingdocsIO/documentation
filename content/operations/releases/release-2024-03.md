@@ -157,6 +157,8 @@ livingdocs-server migrate up
 
 TODO: check migration
 
+[Breaking change `Custom downstream plugins param schema validation changes`](#custom-downstream-plugins-param-schema-validation-changes-fire) is related to this feature so please read it carefully.
+
 ## Deprecations
 
 ## APIs :gift:
@@ -165,7 +167,26 @@ TODO: check migration
 
 TODO (featureset not 100% defined yet)
 
-[Breaking change `Custom downstream plugins param schema validation changes`](#custom-downstream-plugins-param-schema-validation-changes-fire) is related to this feature so please read it carefully.
+{{< feature-info "Project configuration" "server" >}}
+### Allow `contentType.defaultComponents` config :gift:
+
+Configuration `contentType.defaultComponents` has been added to the [project configuration]({{< ref "reference/project-config/content-types" >}}). This configuration allows you to define default components for a content type. The default components will be added to the document when the content type is selected. The default components are added to the end of the document.
+
+```js
+contentTypes: [
+  {
+    handle: 'gallery',
+    documentType: 'article',
+    defaultComponents: {
+      paragraph: 'p',
+      image: 'img',
+      video: 'video',
+      audio: 'audio',
+      html: 'html'
+    }
+  }
+]
+```
 
 ## Vulnerability Patches
 
