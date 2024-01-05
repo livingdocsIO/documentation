@@ -15,6 +15,10 @@ support:
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+keywords:
+- iMatrics
+- concepts
+- ignoredConceptTypes
 defaultUI: Manage tags, add new tag suggestions
 storageFormat: |
   {
