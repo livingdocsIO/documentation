@@ -145,6 +145,21 @@ Postgres v12 support is deprecated and will be removed in March 2024 release (`r
 
 Document patch API `document.patch` has been deprecated, and will be removed in `release-2024-01`. Please replace it with `documentApi.executeDocumentCommands`. No data migration is required, but you will need to swap `patches` parameter with `commands`, and `user` with `userId`.
 
+{{< feature-info "Editor configuration" "editor" >}}
+### iFramely default extractor added by default :warning:
+`initializeOembedMetadataExtractor()` is deprecated and will be removed in `release-2024-01`.
+
+The following code should be removed from the editor configuration:
+```js
+// app/editor.js
+const Iframely = require('@livingdocs/editor/app/scripts/modules/iframely')
+const defaultExtractor = require('@livingdocs/editor/app/scripts/modules/iframely/default_metadata_extractor')
+Iframely.initializeOembedMetadataExtractor(defaultExtractor)
+```
+If initializeOembedMetadataExtractor() is called with a custom extractor please get in touch.
+
+* [Editor PR: iframely - always add default oembedExtractor](https://github.com/livingdocsIO/livingdocs-editor/pull/7564)
+
 {{< feature-info "Editing api" "server" >}}
 ### Endpoint `PATCH /document/:id` :warning:
 
@@ -162,7 +177,7 @@ All downstream plugins are supported by default in document metadata and media l
 
 If a downstream plugin is being used in an include service or creation flow params schema the following configuration needs to be added to the plugin declaration:
 
-```
+```js
 supportedPluginContexts: [
   'documentMetadata',
   'mediaLibraryEntryMetadata', 
