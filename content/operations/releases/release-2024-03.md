@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency chai from 4.3.10 to v4.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6465)
 * [Ensure correct order of documents on homepage dashboard](https://github.com/livingdocsIO/livingdocs-server/pull/6458)
 * [Make quick publish button more responsive in dashboard cell](https://github.com/livingdocsIO/livingdocs-editor/pull/7853)
 * [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/6457)
