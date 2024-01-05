@@ -125,7 +125,7 @@ The Endpoint `PATCH /document/:id` support has been removed. Please replace it w
 
 * [Server PR: Remove document patch endpoint and method](https://github.com/livingdocsIO/livingdocs-server/pull/6378)
 
-{{< feature-info "Publish Flow" "editor" >}}
+{{< feature-info "Channel config" "editor" >}}
 ### Custom Channel config Properties via `uiComponent` property :fire:
 
 Support for custom Channel config Properties via `uiComponent` property has been removed.
@@ -135,7 +135,7 @@ There isn't a replacement for this functionality.
 * [Server PR: Remove support for custom Channel config property](https://github.com/livingdocsIO/livingdocs-server/pull/6379)
 * [Editor PR: Remove support for custom Channel config property](https://github.com/livingdocsIO/livingdocs-editor/pull/7766)
 
-{{< feature-info "Publish Flow" "editor" >}}
+{{< feature-info "Editor UI" "editor" >}}
 ### Prepare Publish Flow feature :fire:
 
 Support for the Prepare Publish Flow is removed, Publish Control is always used. No action is required.
@@ -151,15 +151,29 @@ Filter Sets feature has been removed in favor of configuring multiple dashboards
 
 ## Deprecations :warning:
 
-No Deprecations listed this release.
+{{< feature-info "Document Components" "editor" >}}
+### `defaultComponents` in container directives :danger:
+
+Container directives can define `defaultComponents`, but the config has only an effect on direct children. With `release-2024-03`, nested containers inherit the `defaultComponents` from parent containers.
+Please add explicit `defaultComponents` to containers, if they shall not inherit the `defaultComponents` from parent containers.
 
 ## Features
 
 {{< feature-info "Media Library" "editor" >}}
 ### Media Library UX improvements :gift:
 
-When a user wants to compare metadata information of several different images, the detail view needs to be opened and the scrolling and pagination state of the dashboard is lost. We'd like to improve that by allowing the user to see a slightly stripped down detail view of the media entry directly in a side panel on the dashboard, so the context is not lost. Media Library Lightbox. When users are browsing the media library, they want a quick way to view the image in a larger size and also see some basic information about it.
-Move edit action from context-menu into card
+New behavior added to the Media Library. When clicking a thumbnail on the Media Library view, a sidepanel appears with reduced details. The sidepanel allows users to edit metadata properties, but media actions and multi-language edit are not available. This view allows you to quickly inspect the details of a media library entry without leaving the Media Library view.
+
+Hovering over the thumbnail will show the actions:
+- Pencil button links to full edit page
+- Magnifying glass button opens overlay with large image preview with the possibility to show a reduced set of metadata properties. The supported metadata property types are:
+- li-text
+- li-integer
+- li-boolean
+- li-date
+- li-datetime
+- li-enum
+- li-string-list
 
 {{< feature-info "Public api" "server" >}}
 ### Event Actors :gift:
@@ -187,7 +201,6 @@ Example webhook payload:
   }
 }
 ```
-
 
 {{< feature-info "Operations" "server" >}}
 ### Secure Opensearch/Kibana :gift:
@@ -233,7 +246,7 @@ search: {
 The `publishControl.visiblePublicationDateOverride` property can now be set within the `documents` parameter when [importing articles via the Import API]({{< ref "reference/public-api/imports/documents#import-documents" >}}). This allows you to set the visible publication date override when importing documents. As with other publish related properties, `"flags": {"autoPublish": true}` must be defined when using the Public API.
 
 {{< feature-info "Webhooks" "server" >}}
-### Add support for 'document.create', and 'document.delete' webhooks :gift:
+### Add support for 'document.create' and 'document.delete' webhooks :gift:
 
 New webhooks for document create and delete have been added to the [webhooks list]({{< ref "reference/webhooks#list-of-available-webhook-events" >}}). These webhooks are triggered when a document is created or deleted. Please find webhook payload examples below:
 
@@ -272,29 +285,6 @@ New webhooks for document create and delete have been added to the [webhooks lis
 The Media Library DisplayFilter respects sorting options. This adapts the behavior of the Table Dashboards. The sorting options are defined in the [DisplayFilter configuration]({{< ref "guides/editor/custom-dashboard-filters/index" >}}).
 
 This feature has also been backported to `release-2023-11` and `release-2023-09`.
-
-{{< feature-info "Project configuration" "server" >}}
-### Allow `contentType.defaultComponents` config :gift:
-
-Configuration `contentType.defaultComponents` has been added to the [project configuration]({{< ref "reference/project-config/content-types" >}}). This configuration allows you to define default components for a content type. The default components will be added to the document when the content type is selected. The default components are added to the end of the document.
-
-```js
-contentTypes: [
-  {
-    handle: 'gallery',
-    documentType: 'article',
-    defaultComponents: {
-      paragraph: 'p',
-      image: 'img',
-      video: 'video',
-      audio: 'audio',
-      html: 'html'
-    }
-  }
-]
-```
-
-This feature has also been backported to `release-2023-11`.
 
 ## Vulnerability Patches
 

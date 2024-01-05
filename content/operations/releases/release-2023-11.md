@@ -147,7 +147,7 @@ Document patch API `document.patch` has been deprecated, and will be removed in 
 
 {{< feature-info "Editor configuration" "editor" >}}
 ### iFramely default extractor added by default :warning:
-`initializeOembedMetadataExtractor()` is deprecated and will be removed in `release-2024-01`.
+`initializeOembedMetadataExtractor()` is deprecated and will be removed in `release-2024-03`.
 
 The following code should be removed from the editor configuration:
 ```js
