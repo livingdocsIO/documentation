@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fast-json-stringify from 5.9.2 to v5.10.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6469)
 * [fix(deps): update dependency cloudinary from 1.41.1 to v1.41.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6471)
 * [fix(deps): update dependency @babel/preset-env from 7.23.7 to v7.23.8 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7868)
 * [fix(deps): update dependency @fastify/reply-from from 9.4.0 to v9.5.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7852)
