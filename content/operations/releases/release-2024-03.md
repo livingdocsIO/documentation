@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency date-fns from 3.0.6 to v3.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7859)
 * [fix(deps): update dependency date-fns from 3.0.6 to v3.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6466)
 * [fix(deps): update dependency openid-client from 5.6.3 to v5.6.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6468)
 * [fix(deps): update dependency @livingdocs/framework from 27.3.5 to v27.3.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6467)
