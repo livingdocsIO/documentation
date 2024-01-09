@@ -414,6 +414,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.47): fix(text-formatting): Re-calculate the text formatting states when toggling bold/italic buttons
 - [v102.1.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.46): fix: avoid invalid component inserted after pressing enter
 - [v102.1.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.45): fix: make sure publish button is not rendered outside of table
 - [v102.1.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.44): fix(tasks): Add metadataProperty.config.label fallback
