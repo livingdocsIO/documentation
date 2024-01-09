@@ -80,13 +80,14 @@ Plugins used in other contexts than the ones stated in the [docs](https://docs.l
 
 All downstream plugins are supported by default in document metadata and media library metadata. But if a downstream plugin is used in include services, creation flows or push messages, that will now cause an error during startup.
 
-If a downstream plugin is being used in an include service params schema the following configuration needs to be added to the plugin declaration:
+If a downstream plugin is being used in an include service or a creation flow params schema the following configuration needs to be added to the plugin declaration:
 
 ```
 supportedPluginContexts: [
   'documentMetadata',
   'mediaLibraryEntryMetadata',
-  'includeParams'
+  'includeParams',
+  'creationFlowParams'
 ]
 ```
 
