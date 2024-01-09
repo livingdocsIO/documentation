@@ -34,7 +34,7 @@ POST api/v1/import/documents
 ```
 
 --parameters--
-|Name|Type|Rquired|Notes|
+|Name|Type|Required|Notes|
 |-|-|-|-|
 |systemName|string|x|Identifier for the system you are importing from, e.g. an archive|
 |webhook|uri||Endpoint at the importing system that gets notified by POST when import job is done. Notification contains the id of the import job, the state and an overview.|

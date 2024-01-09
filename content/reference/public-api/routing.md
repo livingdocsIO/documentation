@@ -26,7 +26,7 @@ GET api/v1/routing/resolve
 ```
 
 --parameters--
-|Name|Type|Rquired|Notes|
+|Name|Type|Required|Notes|
 |-|-|-|-|
 |?path|string|x|Path to the document.<br>Example 1: A page with a category `/news` can be found with `?path=/news.html`.<br>Example 2: A document with id 10, with category `/news` and a slug `hello` can be found with `?path=/magazin/hello-10.html'`.|
 
