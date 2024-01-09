@@ -391,6 +391,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.26): fix(imports): Remove result count rendering on imports page
 - [v241.0.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.25): fix(dashboard-sources): ensure correct order of returned documents
 - [v241.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.24): fix(notifications): Use project defaultLocale for labels in task emails
 - [v241.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.23): fix: allow downstream plugin in creation flow params
