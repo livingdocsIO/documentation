@@ -318,6 +318,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.24): fix(text-formatting): Re-calculate the text formatting states when toggling bold/italic buttons
 - [v106.0.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.23): fix(imports): Remove result count rendering on imports page
 - [v106.0.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.22): fix: avoid invalid component inserted after pressing enter
 - [v106.0.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.21): fix: make sure publish button is not rendered outside of table
