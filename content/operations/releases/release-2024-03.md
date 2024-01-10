@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 27.3.6 to v27.4.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7871)
 * [fix(deps): update dependency style-loader from 3.3.3 to v3.3.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7878)
 * [Fix text formatting button states](https://github.com/livingdocsIO/livingdocs-editor/pull/7863)
 * [fix(deps): update dependency @fastify/reply-from from 9.5.0 to 9.6.0 [security] (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7870)
