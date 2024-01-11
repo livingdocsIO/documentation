@@ -490,6 +490,7 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.2): fix(routing): Use isolatedCacheFactory instead of persistent in-process cache for route builders
 
 ### Livingdocs Editor Patches
+- [v95.0.85](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.85): chore(editor): Remove online listener from autosave on unload
 - [v95.0.84](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.84): fix(tasks): Add metadataProperty.config.label fallback
 - [v95.0.83](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.83): fix: support component drag&drop in safari 17.2
 - [v95.0.82](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.82): fix(tasks): ensure tasks panel and toolbar button updates when a task is updated by another user
@@ -497,7 +498,7 @@ Here is a list of all patches after the release has been announced.
 - [v95.0.80](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.80): fix(url-util): Take subdomains into account when validating URL TLD
 - [v95.0.79](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.79): fix(tasks): Use correct steps within task value
 - [v95.0.78](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.78): fix(spellcheck): make sure spellcheck is called on document open
-- [v95.0.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.77): fix(security): Update `get-func-name` to version `v95.0.84` to patch CVE-2023-43646
+- [v95.0.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.77): fix(security): Update `get-func-name` to version `v95.0.85` to patch CVE-2023-43646
 - [v95.0.76](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.76): chore(realtime): Use activity monitor composable instead of vueuse
 - [v95.0.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.75): fix: update avatar when changing user name
 - [v95.0.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v95.0.74): fix(publish control): make print mode work
