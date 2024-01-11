@@ -415,6 +415,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.49): fix(deps): Update dependency @livingdocs/framework from 27.1.6 to 27.1.7
 - [v102.1.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.48): chore(editor): Remove online listener from autosave on unload
 - [v102.1.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.47): fix(text-formatting): Re-calculate the text formatting states when toggling bold/italic buttons
 - [v102.1.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.46): fix: avoid invalid component inserted after pressing enter
