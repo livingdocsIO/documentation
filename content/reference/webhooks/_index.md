@@ -32,15 +32,41 @@ webhooks: {
       //   2) 'a-secret-token-to-sign-the-request'    -> sign request with token
       //   3) {$secretRef: {name: 'webhook-local'}}   -> sign request with project secret
       // see below a more detailled description
-      secret: 'a-secret-token-to-sign-the-request'
+      secret: 'a-secret-token-to-sign-the-request',
       // a webhook only gets called when this is set to true
-      active: true
+      active: true,
       // this webhook only gets called when this event happens
       events: [
         'document.create', // {{< added-in "release-2024-01" >}}
         'document.delete', // {{< added-in "release-2024-01" >}}
-        'document.publish',
-        'document.unpublish',
+        'document.publish'
+        {
+          name: 'document.publish',
+          // conditions that must be met to trigger the webhook
+          conditions: {
+            contentTypes: [
+              'regular'
+            ],
+            metadataProperties: [
+              {
+                name: 'description',
+                value: true
+              }
+            ]
+          }
+        },
+        {
+          name: 'document.unpublish',
+          // conditions that must be met to trigger the webhook
+          conditions: {
+            metadataProperties: [
+              {
+                name: 'description',
+                value: 'Example Description'
+              }
+            ]
+          }
+        },
         {
           name: 'document.update',
           changeFilter: {
@@ -82,12 +108,20 @@ webhooks: {
 ## List of Available Webhook Events
 
 - `document.create` ({{< added-in "release-2024-01" >}})
+  - Supported conditions: `contentTypes`, `metadataProperties`
 - `document.delete` ({{< added-in "release-2024-01" >}})
+  - Supported conditions: `contentTypes`, `metadataProperties`
 - `document.publish`
+  - Supported conditions: `contentTypes`, `metadataProperties`
 - `document.unpublish`
+  - Supported conditions: `contentTypes`, `metadataProperties`
 - `document.update`
+  - Supported conditions: `contentTypes`, `metadataProperties`
+  - Supported change filters: `metadataProperties`
 - `document.build`
+  - Supported conditions: `contentTypes`, `deliveryHandles`, `metadataProperties`
 - `document.build.draft`
+  - Supported conditions: `contentTypes`, `deliveryHandles`, `metadataProperties`
 - `mediaLibraryEntry.create`
 - `mediaLibraryEntry.archive`
 - `mediaLibraryEntry.revoke`
