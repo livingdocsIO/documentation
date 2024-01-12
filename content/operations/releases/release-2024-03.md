@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [feat(webhooks): Add UI for configuring webhook contentType conditions](https://github.com/livingdocsIO/livingdocs-editor/pull/7867)
 * [fix(deps): update aws-sdk from 3.485.0 to v3.489.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6478)
 * [Retry document saves indefinitely and when internet connection restored](https://github.com/livingdocsIO/livingdocs-editor/pull/7886)
 * [fix(deps): update dependency mini-css-extract-plugin from 2.7.6 to v2.7.7 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7883)
