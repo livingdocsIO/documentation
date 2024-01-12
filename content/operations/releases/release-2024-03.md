@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency copy-webpack-plugin from 12.0.0 to v12.0.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7897)
 * [Drop support for Postgres version 12](https://github.com/livingdocsIO/livingdocs-server/pull/6481)
 * [fix(deps): update aws-sdk from 3.489.0 to v3.490.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6484)
 * [feat(webhooks): Add UI for configuring webhook contentType conditions](https://github.com/livingdocsIO/livingdocs-editor/pull/7867)
