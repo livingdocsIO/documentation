@@ -39,7 +39,6 @@ webhooks: {
       events: [
         'document.create', // {{< added-in "release-2024-01" >}}
         'document.delete', // {{< added-in "release-2024-01" >}}
-        'document.publish'
         {
           name: 'document.publish',
           // conditions that must be met to trigger the webhook
@@ -108,20 +107,20 @@ webhooks: {
 ## List of Available Webhook Events
 
 - `document.create` ({{< added-in "release-2024-01" >}})
-  - Supported conditions: `contentTypes`, `metadataProperties`
+  - Supported conditions: `contentTypes`, `metadataProperties` ({{< added-in "release-2024-03" >}})
 - `document.delete` ({{< added-in "release-2024-01" >}})
-  - Supported conditions: `contentTypes`, `metadataProperties`
+  - Supported conditions: `contentTypes`, `metadataProperties` ({{< added-in "release-2024-03" >}})
 - `document.publish`
-  - Supported conditions: `contentTypes`, `metadataProperties`
+  - Supported conditions: `contentTypes`, `metadataProperties` ({{< added-in "release-2024-03" >}})
 - `document.unpublish`
-  - Supported conditions: `contentTypes`, `metadataProperties`
+  - Supported conditions: `contentTypes`, `metadataProperties` ({{< added-in "release-2024-03" >}})
 - `document.update`
-  - Supported conditions: `contentTypes`, `metadataProperties`
+  - Supported conditions: `contentTypes`, `metadataProperties` ({{< added-in "release-2024-03" >}})
   - Supported change filters: `metadataProperties`
 - `document.build`
-  - Supported conditions: `contentTypes`, `deliveryHandles`, `metadataProperties`
+  - Supported conditions: `contentTypes`, `deliveryHandles`, `metadataProperties` ({{< added-in "release-2024-03" >}})
 - `document.build.draft`
-  - Supported conditions: `contentTypes`, `deliveryHandles`, `metadataProperties`
+  - Supported conditions: `contentTypes`, `deliveryHandles`, `metadataProperties` ({{< added-in "release-2024-03" >}})
 - `mediaLibraryEntry.create`
 - `mediaLibraryEntry.archive`
 - `mediaLibraryEntry.revoke`
