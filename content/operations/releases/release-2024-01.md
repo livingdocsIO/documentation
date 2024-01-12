@@ -318,6 +318,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.28): fix(li-link-edit): apply correct default attributes for internal urls
 - [v106.0.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.27): fix: pass directive config.search.displayFilters and config.search.baseFilters to the Angular embed teaser
 - [v106.0.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.26): chore(editor): Remove online listener from autosave on unload
 - [v106.0.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.25): fix(deps): update dependency @livingdocs/editable.js from 5.0.0 to 5.0.2
