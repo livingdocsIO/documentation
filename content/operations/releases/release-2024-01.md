@@ -55,8 +55,8 @@ To learn about the necessary actions to update Livingdocs to `release-2024-01`, 
 | Postgres                       | (Deprecated Postgres v12)  12                                                            |
 | Elasticsearch<br/>OpenSearch   | 7.x<br/>1                                                                                |
 | Redis                          | 6.2                                                                                      |
-| Livingdocs Server Docker Image | livingdocs/server-base:18.3                                                              |
-| Livingdocs Editor Docker Image | livingdocs/editor-base:18.5                                                              |
+| Livingdocs Server Docker Image | livingdocs/server-base:18.4                                                              |
+| Livingdocs Editor Docker Image | livingdocs/editor-base:18.6                                                              |
 | Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
 
 ## Breaking Changes 🔥
@@ -69,7 +69,7 @@ No upstream migrations were added this release.
 {{< feature-info "Operations" "server" >}}
 ### Drop support for Node v18.17 :fire:
 
-Drop support for Node versions below 18.17 due to a dependency. If you use Livingdocs' `livingdocs/server-base:18.3` or `livingdocs/editor-base:18.3` make sure you update to the latest Docker container images: `livingdocs/server-base:18.4` and `livingdocs/editor-base:18.4` or upgrade `livingdocs/server-base:20` and `livingdocs/editor-base:20`.
+Drop support for Node versions below 18.17 due to a dependency. Use `livingdocs/server-base:20` and `livingdocs/editor-base:20` or the latest `livingdocs/server-base:18.x` or `livingdocs/editor-base:18.x` container images: `livingdocs/server-base:18.4` and `livingdocs/editor-base:18.6`.
 
 * [Server: Remove Node <v18.17 support](https://github.com/livingdocsIO/livingdocs-server/pull/6363)
 
