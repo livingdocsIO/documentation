@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix/shadows and docked content](https://github.com/livingdocsIO/livingdocs-editor/pull/7910)
 * [fix(deps): update dependency c8 from 9.0.0 to v9.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6487)
 * [fix(deps): update dependency sharp from 0.33.1 to v0.33.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6486)
 * [Fix inline link tool](https://github.com/livingdocsIO/livingdocs-editor/pull/7895)
