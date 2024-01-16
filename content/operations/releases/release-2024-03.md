@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Restore the functionality of directly opening the tasks side panel from the task notification email](https://github.com/livingdocsIO/livingdocs-server/pull/6493)
 * [Fix/vanilla CSS base spacing unit](https://github.com/livingdocsIO/livingdocs-editor/pull/7906)
 * [Commands API: 409 error and isPublishedAndHasNoChanges precondition
 ](https://github.com/livingdocsIO/livingdocs-server/pull/6489)
