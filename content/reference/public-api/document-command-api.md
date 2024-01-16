@@ -37,19 +37,21 @@ PATCH api/v1/documents/:id/commands
 |Name|Type|Required|Notes|
 |-|-|-|-|
 |version|integer||Current document version. When set on update the version is checked.|
-|preconditions|array||An array of preconditions for command execution. Each entry is an object with at least a **type** property. Possible types: `isPublished`. See further details in example requests.|
-|commands|array|x|An array of commands to execute. Each entry is an object with at least an **operation** property. Possible operations: `setMetadataProperty`, `setEditableDirective` or `publish`. See further details in example requests.|
+|preconditions|array||An array of preconditions for command execution. If a precondition assertion fails, no commands are executed and the request responds with a `429 Conflict` status.<br><br>Each entry is an object with at least a **type** property.<br><br>Possible types:<br>- `isPublished`: Document is currently public<br>- `isPublishedAndHasNoChanges`: Document is currently public and has no changes since last publish<br><br>See further details in example requests.|
+|commands|array|x|An array of commands to execute. Each entry is an object with at least an **operation** property.<br><br>Possible operations:<br>- `setMetadataProperty`<br>- `setEditableDirective`<br>- `publish`.<br><br>See further details in example requests.|
 
 #### Example Request
 ```js
 {
-  "version": 1, 
+  "version": 1,
   "preconditions": [
-    {
-      // Asserts that the document is published or unpublished based on the value property
-      "type": "isPublished",
-      "value": true
-    }
+    // Asserts that the document is published or
+    // unpublished based on the value property
+    {"type": "isPublished", "value": true}
+
+    // Asserts that the document is published and
+    // has no changes since last publish
+    // {"type": "isPublishedAndHasNoChanges"}
   ],
   "commands": [
     {
@@ -146,6 +148,15 @@ api/v1/documents/:id/commands
     "message": "The document you tried to update is outdated",
     "expectedVersion": 1,
     "currentVersion": 2
+  }
+}
+// or
+{
+  "status": 409,
+  "error": "Conflict",
+  "error_details": {
+    "name": "Conflict",
+    "message": "Precondition failed: 'isPublished'"
   }
 }
 ```
