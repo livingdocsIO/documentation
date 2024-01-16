@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(webhooks): Validate metadataProperty conditions only by value comparison](https://github.com/livingdocsIO/livingdocs-server/pull/6499)
 * [Composition API: Make sure we never load errors or null values into preloaded values](https://github.com/livingdocsIO/livingdocs-server/pull/6488)
 * [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6494)
 * [Restore the functionality of directly opening the tasks side panel from the task notification email](https://github.com/livingdocsIO/livingdocs-server/pull/6493)
