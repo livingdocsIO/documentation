@@ -391,6 +391,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.30): fix(composition-api): Make sure we never load errors or null values into preloaded values
 - [v241.0.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.29): fix(notifications): Use link which opens the task side panel
 - [v241.0.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.28): chore(commands): Add failed precondition name into conflict error
 - [v241.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.27): fix(deps): Update dependency @livingdocs/framework from 27.1.5 to 27.1.7
