@@ -428,6 +428,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v237.2.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.38): fix(notifications): Use link which opens the task side panel
 - [v237.2.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.37): fix(deps): Update dependency @livingdocs/framework from 26.0.7 to 26.0.9
 - [v237.2.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.36): fix(notifications): Use project defaultLocale for labels in task emails
 - [v237.2.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.35): fix(media-library): Use extracted mime type for file uploads
@@ -448,9 +449,9 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.20): fix(indexing): Increase events to fetch if no group existed
 - [v237.2.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.19): fix(comyan): encode title when reporting usage
 - [v237.2.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.18): fix(external ID): readoly config allowed
-- [v237.2.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.17): fix(security): Update `get-func-name` to version `v237.2.37` to patch CVE-2023-43646
+- [v237.2.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.17): fix(security): Update `get-func-name` to version `v237.2.38` to patch CVE-2023-43646
 - [v237.2.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.16): chore(example-server): Map additional metadata in copy instructions
-- [v237.2.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.15): fix(security): Update `sharp` to version `v237.2.37` to patch CVE-2023-4863
+- [v237.2.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.15): fix(security): Update `sharp` to version `v237.2.38` to patch CVE-2023-4863
 - [v237.2.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.14): fix(includes): allow onboarding platform
 - [v237.2.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.13): fix(includes): Allow li-document-reference with minimal style
 - [v237.2.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.12): fix(search): Always filter media library entries by cluster id
