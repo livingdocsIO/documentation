@@ -307,6 +307,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.12): fix(notifications): Use link which opens the task side panel
 - [v245.0.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.11): chore(commands): Add failed precondition name into conflict error
 - [v245.0.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.10): fix(imports): Remove result count rendering on imports page
 - [v245.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.9): fix(dashboard-sources): ensure correct order of returned documents
