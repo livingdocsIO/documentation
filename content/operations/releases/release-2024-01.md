@@ -25,8 +25,8 @@ To learn about the necessary actions to update Livingdocs to `release-2024-01`, 
 
 ## Webinar
 
-* Feature Webinar Recording: **TODO**
-* Feature Webinar Documentation: **TODO**
+* [Feature Webinar Recording](https://us02web.zoom.us/rec/share/9o-Nb7rIqNkO3C9ATe2D5b7aDv-ASn8et9UEum9glHnkBmHa7MZlyt3Cr7eBVLU.WJNKFH8Lv4nKGYWT) | Passcode: j@PkK@96
+* [Feature Webinar Documentation](https://docs.google.com/presentation/d/1HRI9w_mhPuIoMJeUUChel0aSqF8zu5d6CQJ_QgebqFE)
 * Dev Webinar Recording: **TODO**
 * Dev Webinar Slides: **TODO**
 * [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
