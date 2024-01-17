@@ -307,6 +307,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.15): fix: update package-lock for argon2
 - [v245.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.14): fix(deps): update dependency @livingdocs/secure-password from 5.0.2 to v5.0.3
 - [v245.0.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.13): fix(composition-api): Make sure we never load errors or null values into preloaded values
 - [v245.0.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.12): fix(notifications): Use link which opens the task side panel
