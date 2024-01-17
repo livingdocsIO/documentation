@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [feat(media-library): Add functionality to remove translated assets](https://github.com/livingdocsIO/livingdocs-editor/pull/7915)
 * [fix(deps): update dependency pdfjs-dist from 3.11.174 to v4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7670)
 * [fix(deps): update dependency @livingdocs/secure-password from 5.0.2 to v5.0.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6505)
 * [fix(webhooks): Validate metadataProperty conditions only by value comparison](https://github.com/livingdocsIO/livingdocs-server/pull/6499)
