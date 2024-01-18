@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cypress from 13.4.0 to v13.6.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7674)
 * [Make metadata mapping optional in draft indexer](https://github.com/livingdocsIO/livingdocs-server/pull/6511)
 * [fix(dashboards): Return to previous dashboard when returning from imported article state](https://github.com/livingdocsIO/livingdocs-editor/pull/7919)
 * [fix(deps): update dependency copy-webpack-plugin from 12.0.1 to v12.0.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7920)
