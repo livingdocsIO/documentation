@@ -420,6 +420,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.53): fix(dashboards): Fix tests
 - [v102.1.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.52): fix(account form): Syntax
 - [v102.1.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.51): fix(li-link-edit): apply correct default attributes for internal urls
 - [v102.1.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.50): fix: pass directive config.search.displayFilters and config.search.baseFilters to the Angular embed teaser
