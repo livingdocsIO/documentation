@@ -23,9 +23,9 @@ If defined on any other tag, enables users to set a background image CSS propert
       type: 'image',
       recommendedRatios: ['16:9', '1:1', '4:3', '3:4'],
       srcSet: {
-          defaultWidth: 1024,
-          widths: [2048, 1024, 620],
-          sizes: ['100vw']
+        defaultWidth: 1024,
+        widths: [2048, 1024, 620],
+        sizes: ['100vw']
       }
     }
   ],
@@ -66,9 +66,9 @@ The srcSet defines the parameters for [HTML srcsets](https://developer.mozilla.o
 Schema:
 ```
 srcSet: ms.obj({
-    defaultWidth: 'number',
-    widths: ms.arrayOf('number'),
-    sizes: ms.arrayOf('string')
+  defaultWidth: 'number',
+  widths: ms.arrayOf('number'),
+  sizes: ms.arrayOf('string')
 })
 ```
 
