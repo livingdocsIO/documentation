@@ -82,7 +82,7 @@ All downstream plugins are supported by default in document metadata and media l
 
 If a downstream plugin is being used in an include service or a creation flow params schema the following configuration needs to be added to the plugin declaration:
 
-```
+```js
 supportedPluginContexts: [
   'documentMetadata',
   'mediaLibraryEntryMetadata',
@@ -153,7 +153,7 @@ Filter Sets feature has been removed in favor of configuring multiple dashboards
 ## Deprecations :warning:
 
 {{< feature-info "Document Components" "editor" >}}
-### `defaultComponents` in container directives :danger:
+### `defaultComponents` in container directives :warning:
 
 Container directives can define `defaultComponents`, but the config has only an effect on direct children. With `release-2024-03`, nested containers inherit the `defaultComponents` from parent containers.
 Please add explicit `defaultComponents` to containers, if they shall not inherit the `defaultComponents` from parent containers.
