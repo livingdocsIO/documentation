@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency css-loader from 6.9.0 to v6.9.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7927)
 * [fix(deps): update dependency @livingdocs/framework from 27.4.0 to v27.4.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6513)
 * [fix(deps): update aws-sdk (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6510)
 * [fix(deps): update dependency cypress from 13.4.0 to v13.6.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7674)
