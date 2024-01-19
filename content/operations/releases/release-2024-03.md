@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Improvement/Media Library Asset View](https://github.com/livingdocsIO/livingdocs-editor/pull/7936)
 * [fix(deps): update dependency sass from 1.69.7 to v1.70.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7928)
 * [Allow more value types in data provider label value pair schema](https://github.com/livingdocsIO/livingdocs-server/pull/6521)
 * [Push Messages: allow push for published articles with unpublished changes from toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/7937)
