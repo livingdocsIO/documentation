@@ -168,7 +168,7 @@ in the past by customizations.
 
 The Endpoint `PATCH /document/:id` will be removed in `release-2024-01`. Please replace it with `PATCH /document/:id/commands`. No data migration is required, but you will need to swap `patches` parameter with `commands`.
 
-{{< feature-info "Project config" "server" >}}
+{{< feature-info "Project configuration" "server" >}}
 ### Metadata plugins and paramSchema validation changes :warning:
 
 Plugins used in other contexts than the ones stated in the [docs](https://docs.livingdocs.io/reference/document/metadata/plugins/), will report an error during server startup with release-2024-01.
@@ -190,7 +190,7 @@ To opt-in to the new validation you can set `serverConfig.useStrictSchemas: true
 
 Please contact your Livingdocs customer manager if you have any problems with the limitations imposed by the supported plugin contexts.
 
-{{< feature-info "Server config" "server" >}}
+{{< feature-info "Server configuration" "server" >}}
 ### Config option `realtimeUpdates.enabled` :warning:
 
 The option `serverConfig.documents.realtimeUpdates.enabled` has been deprecated. It will be removed in {{< release "release-2024-01" >}}.

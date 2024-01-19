@@ -61,19 +61,19 @@ To learn about the necessary actions to update Livingdocs to `release-2024-01`, 
 
 ## Breaking Changes 🔥
 
-{{< feature-info "Operations" "server" >}}
+{{< feature-info "Release" "server" >}}
 ### Migrate the Postgres Database :fire:
 
 No upstream migrations were added this release.
 
-{{< feature-info "Operations" "server" >}}
+{{< feature-info "Requirements" "server" >}}
 ### Drop support for Node v18.17 :fire:
 
 Drop support for Node versions below 18.17 due to a dependency. Use `livingdocs/server-base:20` and `livingdocs/editor-base:20` or the latest `livingdocs/server-base:18.x` or `livingdocs/editor-base:18.x` container images: `livingdocs/server-base:18.4` and `livingdocs/editor-base:18.6`.
 
 * [Server: Remove Node <v18.17 support](https://github.com/livingdocsIO/livingdocs-server/pull/6363)
 
-{{< feature-info "Project config" "server" >}}
+{{< feature-info "Project configuration" "server" >}}
 ### Custom downstream plugins paramSchema validation changes :fire:
 
 Plugins used in other contexts than the ones stated in the [docs](https://docs.livingdocs.io/reference/document/metadata/plugins/), will now report an error during server startup.
@@ -97,7 +97,7 @@ Please contact your Livingdocs customer manager if you have any problems with th
 
 * [Server PR: Validate plugin configuration in various contexts](https://github.com/livingdocsIO/livingdocs-server/pull/6205)
 
-{{< feature-info "Server config" "server" >}}
+{{< feature-info "Server configuration" "server" >}}
 ### Config option `realtimeUpdates.enabled` :fire:
 
 The option `serverConfig.documents.realtimeUpdates.enabled` has been removed. 
@@ -126,7 +126,7 @@ The Endpoint `PATCH /document/:id` support has been removed. Please replace it w
 
 * [Server PR: Remove document patch endpoint and method](https://github.com/livingdocsIO/livingdocs-server/pull/6378)
 
-{{< feature-info "Channel config" "editor" >}}
+{{< feature-info "Project configuration" "server" >}}
 ### Custom Channel config Properties via `uiComponent` property :fire:
 
 Support for custom Channel config Properties via `uiComponent` property has been removed.
@@ -152,7 +152,7 @@ Filter Sets feature has been removed in favor of configuring multiple dashboards
 
 ## Deprecations :warning:
 
-{{< feature-info "Document Components" "editor" >}}
+{{< feature-info "Project Configuration" "server"  >}}
 ### `defaultComponents` in container directives :warning:
 
 Container directives can define `defaultComponents`, but the config has only an effect on direct children. With `release-2024-03`, nested containers inherit the `defaultComponents` from parent containers.
@@ -203,7 +203,7 @@ Example webhook payload:
 }
 ```
 
-{{< feature-info "Operations" "server" >}}
+{{< feature-info "Server Configuration" "server" >}}
 ### Secure Opensearch/Kibana :gift:
 
 To improve security in the Livingdocs infrastructure, we have added a new authentication method to the Opensearch/Kibana stack. It is now possible to use AWS credentials methods to access the Opensearch/Kibana. The new configuration can be found in the [Server config withing `search` property]({{< ref "customising/server-configuration#search" >}}):
