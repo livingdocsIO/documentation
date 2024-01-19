@@ -292,10 +292,15 @@ This feature has also been backported to `release-2023-11` and `release-2023-09`
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
 
 ### Livingdocs Server
+This release we have patched the following vulnerabilities in the Livingdocs Editor:
+* [CVE-2023-26159](https://github.com/advisories/GHSA-jchw-25xp-jwwc) patched in `follow-redirects` v1.15.5
 
 No known vulnerabilities. :tada:
 
 ### Livingdocs Editor
+This release we have patched the following vulnerabilities in the Livingdocs Editor:
+* [CVE-2023-26159](https://github.com/advisories/GHSA-jchw-25xp-jwwc) patched in `follow-redirects` v1.15.5
+* [CVE-2023-51701](https://github.com/advisories/GHSA-v2v2-hph8-q5xp) patched in `@fastify/reply-from` v9.7.0
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 

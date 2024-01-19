@@ -407,6 +407,8 @@ This release we have patched the following vulnerabilities in the Livingdocs Ser
 * [CVE-2023-36665](https://github.com/advisories/GHSA-h755-8qp9-cq85) patched in `protobufjs` v7.2.4
 * [CVE-2022-25883](https://github.com/advisories/GHSA-c2qf-rxjj-qqgw) patched in `semver` v5.7.2, v6.3.1, v7.5.4
 * [CVE-2023-26115](https://github.com/advisories/GHSA-j8xg-fqg3-53r7) patched in `word-wrap` v1.2.4
+* [CVE-2023-26159](https://github.com/advisories/GHSA-jchw-25xp-jwwc) patched in `follow-redirects` v1.15.5
+* [CVE-2023-45857](https://github.com/advisories/GHSA-wf5p-g6vw-rhxx) patched in `axios` v1.6.5
 
 We are aware of the following vulnerabilities in the Livingdocs Server:
 * [CVE-2023-26102](https://cwe.mitre.org/data/definitions/1321.html) has yet to be patched by `rangy` but we have proposed a fix in [this PR](https://github.com/timdown/rangy/pull/482)
@@ -416,6 +418,10 @@ We are aware of the following vulnerabilities in the Livingdocs Server:
 This release we have patched the following vulnerabilities in the Livingdocs Editor:
 * [CVE-2022-26136](https://github.com/advisories/GHSA-72xf-g2v4-qvf3) patched in `tough-cookie` v4.1.3
 * [CVE-2022-25883](https://github.com/advisories/GHSA-c2qf-rxjj-qqgw) patched in `semver` v5.7.2, v6.3.1, v7.5.4
+* [CVE-2023-26159](https://github.com/advisories/GHSA-jchw-25xp-jwwc) patched in `follow-redirects` v1.15.5
+* [CVE-2023-51701](https://github.com/advisories/GHSA-v2v2-hph8-q5xp) patched in `@fastify/reply-from` v9.7.0
+* [CVE-2023-45857](https://github.com/advisories/GHSA-wf5p-g6vw-rhxx) patched in `axios` v1.6.5
+* [CVE-2023-46234](https://github.com/advisories/GHSA-x9w5-v3q2-3rhw) patched in `browserify-sign` v4.2.2
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
