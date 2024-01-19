@@ -421,6 +421,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.55): fix(push messages): allow push for published articles with unpublished changes
 - [v102.1.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.54): test(links): Add cypress tests
 - [v102.1.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.53): fix(dashboards): Fix tests
 - [v102.1.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.52): fix(account form): Syntax
