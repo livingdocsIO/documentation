@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix inline links for documents](https://github.com/livingdocsIO/livingdocs-editor/pull/7929)
 * [fix(deps): update aws-sdk from 3.490.0 to v3.495.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6517)
 * [fix(deps): update dependency cloudinary from 1.41.2 to v1.41.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6516)
 * [fix(deps): update dependency css-loader from 6.9.0 to v6.9.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7927)
