@@ -328,6 +328,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.34): fix(metadata): Feedback stacking
 - [v106.0.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.33): fix(push messages): allow push for published articles with unpublished changes
 - [v106.0.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.32): test(links): Add cypress tests
 - [v106.0.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.31): fix(dashboards): Fix tests
