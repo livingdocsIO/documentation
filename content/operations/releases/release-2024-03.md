@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Allow more value types in data provider label value pair schema](https://github.com/livingdocsIO/livingdocs-server/pull/6521)
 * [Push Messages: allow push for published articles with unpublished changes from toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/7937)
 * [Fix inline links for documents](https://github.com/livingdocsIO/livingdocs-editor/pull/7929)
 * [fix(deps): update aws-sdk from 3.490.0 to v3.495.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6517)
