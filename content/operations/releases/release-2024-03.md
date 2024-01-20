@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk from 3.495.0 to v3.496.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6525)
 * [Throw better error when calling unpublish on a document that's not public](https://github.com/livingdocsIO/livingdocs-server/pull/6522)
 * [fix(deps): update aws-sdk (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/6524)
 * [Improvement/Media Library Asset View](https://github.com/livingdocsIO/livingdocs-editor/pull/7936)
