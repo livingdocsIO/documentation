@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Throw better error when calling unpublish on a document that's not public](https://github.com/livingdocsIO/livingdocs-server/pull/6522)
 * [fix(deps): update aws-sdk (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/6524)
 * [Improvement/Media Library Asset View](https://github.com/livingdocsIO/livingdocs-editor/pull/7936)
 * [fix(deps): update dependency sass from 1.69.7 to v1.70.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7928)
