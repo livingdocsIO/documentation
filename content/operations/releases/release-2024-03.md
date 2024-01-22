@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Ticker fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/7952)
 * [fix(deps): update dependency @livingdocs/framework from 27.4.2 to v27.4.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7951)
 * [fix(deps): update dependency @livingdocs/framework from 27.4.2 to v27.4.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6528)
 * [Close dialogs when views get destroyed](https://github.com/livingdocsIO/livingdocs-editor/pull/7949)
