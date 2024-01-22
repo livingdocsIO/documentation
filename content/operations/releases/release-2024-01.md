@@ -329,6 +329,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.36): fix(ticker): Ensure currently created ticker entries never get removed as they are not present in the elasticsearch result for a few seconds
 - [v106.0.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.35): fix(table-dashboard): Update model when dashboardConfig changes
 - [v106.0.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.34): fix(metadata): Feedback stacking
 - [v106.0.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.33): fix(push messages): allow push for published articles with unpublished changes
