@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 27.4.5 to v27.4.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6535)
 * [Improvement/Tag and Numberdot](https://github.com/livingdocsIO/livingdocs-editor/pull/7958)
 * [Restrict public api search offset to 9999 entries](https://github.com/livingdocsIO/livingdocs-server/pull/6531)
 * [fix(deps): update dependency date-fns from 3.2.0 to v3.3.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7948)
