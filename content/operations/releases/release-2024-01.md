@@ -312,6 +312,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.17): fix(public-api): Restrict /search ids offset to 9'999 entries as elasticsearch only supports 10'000 and we prefetch 1 for the cursor
 - [v245.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.16): fix(documents): Throw better error when calling unpublish on a document that's not public
 - [v245.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.15): fix: update package-lock for argon2
 - [v245.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.14): fix(deps): update dependency @livingdocs/secure-password from 5.0.2 to v5.0.3
