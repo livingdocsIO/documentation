@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency date-fns from 3.2.0 to v3.3.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7948)
 * [fix(planning action): Visual](https://github.com/livingdocsIO/livingdocs-editor/pull/7954)
 * [Ticker fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/7952)
 * [fix(deps): update dependency @livingdocs/framework from 27.4.2 to v27.4.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7951)
