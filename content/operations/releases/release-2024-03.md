@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Restrict public api search offset to 9999 entries](https://github.com/livingdocsIO/livingdocs-server/pull/6531)
 * [fix(deps): update dependency date-fns from 3.2.0 to v3.3.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7948)
 * [fix(planning action): Visual](https://github.com/livingdocsIO/livingdocs-editor/pull/7954)
 * [Ticker fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/7952)
