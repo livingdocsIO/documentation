@@ -130,30 +130,24 @@ module.exports = {
 ```
 
 ### Named Crops
-With Livingocs, you can manage multiple crops per Image. We call it `Named Crops` and it works like this:
-- You can define the crops hold with an image in the Media Library
-- A user can edit these crops during upload or from within the Media Library Management Dashboard
-- Whenever an image is used in a document, the crops are copied into the document and can be changed locally within the document
+With Livingocs, you can manage multiple crops per image by using Named Crops. This works as follows:
 
-There are different strategies how to configure the crops:
+- You can define the crops associated with an image in the Media Library.
+- Users have the ability to edit these crops during the upload process or directly from the Media Library management dashboard.
+- Whenever an image is used in a document, the associated crops are duplicated into the document and can be locally modified within the document itself.
 
-1. Configure Named Crops with names after the usage, e.g. `desktop`, `mobile`
-2. Configure Named Crops with aspect ratio names, e.g. `16:9`, `4:3`
+We recommend configuring Named Crops using one the following naming schemes:
 
+1. Configure Named Crops with names based on usage, such as `desktop` and `mobile`.
+2. Configure Named Crops with aspect ratio names, such as `16:9` and `4:3`.
 
-We are going to configure strategy 1 in this guide. There are 4 points where we need to configure this:
+In this guide, we will be following naming scheme 1.
 
-1. designSettings
-2. mediaType
-3. Design: image components `doc-image` directive
-4. Metadata: `li-image` metadata properties (for a teaser image for example)
-
-#### designSettings
-In the [designSettings]({{< ref "/reference/project-config/design-settings" >}}) of the project config, all the `namedCrops` need to be configured. You can then use all or some of them in `mediaType`s and `doc-image` directives.
+To get started, first register all Named Crops in the [designSettings]({{< ref "/reference/project-config/design-settings" >}}) of the project configuration.
 
 ```js
 projectConfig.designSettings: {
-  //...
+  // ...
   namedCrops: [
     {
       handle: 'mobile',
@@ -178,15 +172,27 @@ projectConfig.designSettings: {
       imageRatios: ['16:9']
     }
   ],
-  //...
+  // ...
 }
 ```
 
-#### mediaType
-In order to hold default crops on images in the Media Library we configure the special purpose metadata plugin `li-named-crops`. It allows users to set crops during image upload and later on within the Media Library.
-These default crops will be copied into documents at the time an image is inserted into a document (well, a `doc-image` directive technically). They are copied so a user can change the crops locally for this specific usage of the image. Later changes to the crops in the Media Library won't affect the usages in `doc-image` anymore.
+Subsequently, you can reference and enable them on image directives and image metadata properties. Specifically, Livingdocs supports Named Crops in three places:
 
-To define which default crops to store in the Media Library, we configure a metadata property of type `li-named-crops` within the metadata config of a `mediaType` of type `mediaImage`.
+1. On media types with `li-named-crops`.
+2. On image directives with `doc-image`.
+3. On metadata properties with `li-image`.
+
+Each of these use cases will be covered in the remainder of this section.
+
+#### Media Types
+In order to define default crops for images in the Media Library, you must configure a metadata property of type `li-named-crops`. This plugin enables users to set crops during image upload and subsequently within the Media Library.
+
+The default crops are automatically copied into documents when an image is inserted (technically copied to a `doc-image` directive). This allows users to modify the crops for the specific usage of the image within the document. It's important to note that changes to the crops in the Media Library won't affect the usages in `doc-image` once the crops have been copied.
+
+To specify which default crops to store in the Media Library, you must configure a metadata property of type `li-named-crops` within the metadata config of a `mediaType` of type `mediaImage`. The crops support the following configuration properties:
+
+- `name`: Corresponds to the `handle` of the registered Named Crop.
+- `isOptional`: Allows the crop to be set optionally.
 
 ```js
 // media-types/image.js
@@ -229,8 +235,16 @@ module.exports = {
 }
 ```
 
-#### doc-image directive
-Now we need to configure the `namedCrops` on the [doc-image]({{< ref "/reference/document/document-design/directives/image.md" >}}) directive of our image component in the [design]({{< ref "/reference/document/document-design" >}}).
+#### Image Directives
+
+Named Crops specified on image directives `doc-image` define the crops of images embedded in documents. They inherit already defined crops from Media Types, as discussed before.
+
+You can configure crops on image directives in `namedCrops` in the [doc-image]({{< ref "/reference/document/document-design/directives/image.md" >}}) directive of the image component in the [design]({{< ref "/reference/document/document-design" >}}). They support the following configuration properties:
+
+- `name`: Corresponds to the `handle` of the registered Named Crop.
+- `isDefault`: Designates this crop as the image preview in the editor. Only one crop per image directive can be marked as the default, and it cannot simultaneously be marked as `isOptional`.
+- `isOptional`: Allows the crop to be set optionally.
+- `isDefaultIfSet`: Designates this crop as the image preview in the editor if the crop has been set, overriding the default one.
 
 ```js
 module.exports = {
@@ -247,7 +261,7 @@ module.exports = {
       namedCrops: [
         // the name references the handle of a namedCrop in the designSettings
         {name: 'desktop', isDefault: true},
-        {name: 'mobile', isOptional: true}
+        {name: 'mobile', isOptional: true, isDefaultIfSet: true}
       ]
     }
   ],
@@ -265,8 +279,13 @@ module.exports = {
 }
 ```
 
-#### Metadata li-image
-Last but not least, we configure the namedCrops on our teaserImage components. In this example, there are two teasers, one used internally called `Teaser Image` and one for social media shares called `Social Media Teaser Image`. We are going to configure both. This goes into the metadata configuration of a [contentType]({{< ref "/reference/project-config/content-types.md" >}}).
+#### Metadata Properties
+Lastly, Named Crops can also be configured on metadata properties of type `li-image`. These properties also inherit previously defined crops from Media Types. A potential use case for such metadata images could be defining teaser images or social media share images.
+
+The configuration is found in the metadata configuration of a [contentType]({{< ref "/reference/project-config/content-types.md" >}}). The crops support the following configuration properties:
+
+- `name`: Corresponds to the `handle` of the registered Named Crop.
+- `isOptional`: Allows the crop to be set optionally.
 
 ```js
 module.exports = {
@@ -280,7 +299,7 @@ module.exports = {
       type: 'li-image',
       config: {
         namedCrops: [
-          {name: 'desktop', isDefault: true},
+          {name: 'desktop'},
           {name: 'mobile', isOptional: true}
         ]
       }
@@ -290,7 +309,7 @@ module.exports = {
       type: 'li-image',
       config: {
         namedCrops: [
-          {name: 'socialMediaTeaser', isDefault: true}
+          {name: 'socialMediaTeaser'}
         ]
       }
     }
