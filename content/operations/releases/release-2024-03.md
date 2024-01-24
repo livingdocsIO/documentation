@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [feat(named-crops): Add isDefaultIfSet named crop config property](https://github.com/livingdocsIO/livingdocs-server/pull/6530)
 * [feat(named-crops): Add isDefaultIfSet named crop config property](https://github.com/livingdocsIO/livingdocs-editor/pull/7955)
 * [fix(deps): update dependency @livingdocs/framework from 27.4.5 to v27.4.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7960)
 * [fix(deps): update dependency @livingdocs/framework from 27.4.5 to v27.4.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6535)
