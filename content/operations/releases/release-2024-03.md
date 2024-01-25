@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency axios from 1.6.6 to v1.6.7 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7967)
 * [fix(deps): update dependency axios from 1.6.5 to v1.6.7 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6543)
 * [fix(deps): update dependency axios from 1.6.5 to v1.6.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7962)
 * [feat(named-crops): Add isDefaultIfSet named crop config property](https://github.com/livingdocsIO/livingdocs-server/pull/6530)
