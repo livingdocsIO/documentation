@@ -143,6 +143,11 @@ props: {
     type: Object,
     required: true
   },
+  // Relative URL to the document, e.g. /p/your-project/articles/178959
+  documentUrl: {
+    type: String,
+    default: undefined
+  },
   // Custom options provided through `componentOptions` in the dashboard config
   options: {
     type: Object,
