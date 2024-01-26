@@ -242,9 +242,9 @@ Named Crops specified on image directives `doc-image` define the crops of images
 You can configure crops on image directives in `namedCrops` in the [doc-image]({{< ref "/reference/document/document-design/directives/image.md" >}}) directive of the image component in the [design]({{< ref "/reference/document/document-design" >}}). They support the following configuration properties:
 
 - `name`: Corresponds to the `handle` of the registered Named Crop.
-- `isDefault`: Designates this crop as the image preview in the editor. Only one crop per image directive can be marked as the default, and it cannot simultaneously be marked as `isOptional`.
+- `isDefault`: Sets this crop as the main crop in `component.content.${directiveName}.crop`. As a result, it is rendered as the image preview in the editor. Only one crop per image directive can be marked as the default, and it cannot simultaneously be marked as `isOptional`.
 - `isOptional`: Allows the crop to be set optionally.
-- `isDefaultIfSet`: Designates this crop as the image preview in the editor if the crop has been set, overriding the default one.
+- `isDefaultIfSet`: If the crop is defined, it overrides the default crop by setting it as the main crop in `component.content.${directiveName}.crop`. As a result, it is rendered as the image preview in the editor.
 
 ```js
 module.exports = {
