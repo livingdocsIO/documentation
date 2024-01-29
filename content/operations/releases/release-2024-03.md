@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk from 3.498.0 to v3.501.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6539)
 * [fix(deps): update dependency @livingdocs/framework from 27.5.0 to v28 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7968)
 * [Fix errors when configuring non-existing dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/7969)
 * [fix(deps): update dependency axios from 1.6.6 to v1.6.7 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7967)
