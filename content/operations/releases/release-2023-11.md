@@ -428,6 +428,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.59): fix(external systems): show goTo action in dashboards only for documents without an externalSystem
 - [v102.1.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.58): fix(publish-control-panel): Update running task whenever publish control panel changes visibility state
 - [v102.1.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.57): fix(table-dashboard): Update model when dashboardConfig changes
 - [v102.1.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.56): fix(metadata): Feedback stacking
