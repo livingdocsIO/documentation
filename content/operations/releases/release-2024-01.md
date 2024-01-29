@@ -330,6 +330,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.38): fix(external systems): show goTo action in dashboards only for documents without an externalSystem
 - [v106.0.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.37): fix(publish-control-panel): Update running task whenever publish control panel changes visibility state
 - [v106.0.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.36): fix(ticker): Ensure currently created ticker entries never get removed as they are not present in the elasticsearch result for a few seconds
 - [v106.0.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.35): fix(table-dashboard): Update model when dashboardConfig changes
