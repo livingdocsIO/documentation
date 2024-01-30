@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Emit document update events on Pusher presence channel](https://github.com/livingdocsIO/livingdocs-server/pull/6547)
 * [Do not emit Pusher document update events](https://github.com/livingdocsIO/livingdocs-editor/pull/7972)
 * [fix(deps): update dependency webpack from 5.89.0 to v5.90.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7961)
 * [fix(deps): update dependency lru-cache from 10.1.0 to v10.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6544)
