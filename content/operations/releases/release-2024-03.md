@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pg-tsquery from 8.4.1 to v8.4.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6560)
 * [fix(deps): update dependency cloudinary from 1.41.3 to v2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6554)
 * [fix(deps): update dependency cypress from 13.6.3 to v13.6.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7979)
 * [Emit document update events on Pusher presence channel](https://github.com/livingdocsIO/livingdocs-server/pull/6547)
