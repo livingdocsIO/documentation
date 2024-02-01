@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency nodemailer from 6.9.8 to 6.9.9 [security] (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6567)
 * [fix(canvas): Trigger reactivity when removing an area from the canvas](https://github.com/livingdocsIO/livingdocs-editor/pull/7987)
 * [fix(deps): update dependency fastify from 4.25.2 to v4.26.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7976)
 * [fix(deps): update aws-sdk from 3.503.1 to v3.504.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6561)
