@@ -398,6 +398,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.34): fix(designs): Await async createReadStream
 - [v241.0.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.33): fix(realtime): Emit 'document.updated' to avoid collaboration UI issues
 - [v241.0.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.32): fix(security): Patch vulnerabilities `CVE-2023-26159` on `follow-redirects`
 - [v241.0.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.31): fix(deps): update dependency @livingdocs/secure-password from 5.0.2 to v5.0.3
