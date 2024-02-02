@@ -398,6 +398,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.36): fix(mediaLibrary): Map the state attribute on media library entries based on the archived flag
 - [v241.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.35): fix(openid-connect): Remove log when nonce expires in Redis
 - [v241.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.34): fix(designs): Await async createReadStream
 - [v241.0.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.33): fix(realtime): Emit 'document.updated' to avoid collaboration UI issues
