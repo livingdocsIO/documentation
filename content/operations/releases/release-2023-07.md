@@ -447,6 +447,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v231.0.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.47): chore: Remove nzz and onboarding downstreams from .drone.yml
 - [v231.0.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.46): fix(exif-extraction): Normalize the `Date Created` exif field to a full iso timestamp supported everywhere
 - [v231.0.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.45): chore(import): Mark unused import configs as deprecated
 - [v231.0.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.44): fix(notifications): Use link which opens the task side panel
@@ -459,9 +460,9 @@ Here is a list of all patches after the release has been announced.
 - [v231.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.37): fix(http): Define longer `requestTimeout` on `liServer.httpServer` to avoid requests being cancelled by the socket timeout
 - [v231.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.36): fix(indexing): Increase events to fetch if no group existed
 - [v231.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.35): fix(comyan): encode title when reporting usage
-- [v231.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.34): fix(security): Update `get-func-name` to version `v231.0.46` to patch CVE-2023-43646
+- [v231.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.34): fix(security): Update `get-func-name` to version `v231.0.47` to patch CVE-2023-43646
 - [v231.0.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.33): chore(example-server): Map additional metadata in copy instructions
-- [v231.0.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.32): fix(security): Update `sharp` to version `v231.0.46` to patch CVE-2023-4863
+- [v231.0.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.32): fix(security): Update `sharp` to version `v231.0.47` to patch CVE-2023-4863
 - [v231.0.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.31): fix(image-services): Always pass originalDimensions to getUrl
 - [v231.0.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.30): fix(imageservice): bump framework to include original dimensions
 - [v231.0.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v231.0.29): fix(routing): Remove slug limitation of 30 characters
