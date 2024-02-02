@@ -312,6 +312,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.20): fix(mediaLibrary): Map the state attribute on media library entries based on the archived flag
 - [v245.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.19): fix(openid-connect): Remove log when nonce expires in Redis
 - [v245.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.18): fix(realtime): Emit 'document.updated' to avoid collaboration UI issues
 - [v245.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.17): fix(public-api): Restrict /search ids offset to 9'999 entries as elasticsearch only supports 10'000 and we prefetch 1 for the cursor
