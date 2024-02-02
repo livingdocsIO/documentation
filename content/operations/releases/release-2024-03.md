@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Editable Includes: indicate when original changed](https://github.com/livingdocsIO/livingdocs-server/pull/6541)
 * [Remove log when nonce expires in Redis](https://github.com/livingdocsIO/livingdocs-server/pull/6566)
 * [fix(deps): update dependency fast-json-stringify from 5.10.0 to v5.11.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6568)
 * [fix(deps): update webpack (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/7991)
