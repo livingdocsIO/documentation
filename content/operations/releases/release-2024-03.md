@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency jose from 5.2.0 to v5.2.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6583)
 * [Fix media library entry state](https://github.com/livingdocsIO/livingdocs-server/pull/6570)
 * [fix(image-processing): Fix extracting metadata from large image headers](https://github.com/livingdocsIO/livingdocs-server/pull/6577)
 * [Editable Includes: indicate when original changed ](https://github.com/livingdocsIO/livingdocs-editor/pull/7963)
