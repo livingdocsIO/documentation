@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Do not suggest to refresh the browser on document load and save errors](https://github.com/livingdocsIO/livingdocs-editor/pull/7993)
 * [fix(publish-control-delivery): Show delivery state when opening publish control panel](https://github.com/livingdocsIO/livingdocs-editor/pull/7999)
 * [fix(deps): update dependency moment-timezone from 0.5.44 to v0.5.45 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7996)
 * [Chore/li Radius](https://github.com/livingdocsIO/livingdocs-editor/pull/7964)
