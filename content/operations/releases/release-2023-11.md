@@ -434,6 +434,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.62): fix(publish-control-delivery): Show delivery state when opening publish control panel
 - [v102.1.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.61): fix(canvas): Reassign state.areas to trigger reactivity
 - [v102.1.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.60): fix(realtime): Add version to refetch stub response in tests
 - [v102.1.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.59): fix(external systems): show goTo action in dashboards only for documents without an externalSystem
