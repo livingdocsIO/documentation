@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(filters): Reposition filter popups when selecting values](https://github.com/livingdocsIO/livingdocs-editor/pull/7982)
 * [fix(li-image): actually reload document images when content changed](https://github.com/livingdocsIO/livingdocs-editor/pull/8010)
 * [Fix/Multilist Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/8015)
 * [Do not suggest to refresh the browser on document load and save errors](https://github.com/livingdocsIO/livingdocs-editor/pull/7993)
