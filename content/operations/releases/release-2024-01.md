@@ -334,6 +334,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.42): fix(li-image): actually reload document images when content changed
 - [v106.0.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.41): fix(publish-control-delivery): Show delivery state when opening publish control panel
 - [v106.0.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.40): fix(canvas): Reassign state.areas to trigger reactivity
 - [v106.0.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.39): fix(realtime): Add version to refetch stub response in tests
