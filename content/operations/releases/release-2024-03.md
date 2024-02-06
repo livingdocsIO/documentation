@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @elastic/elasticsearch8 from 8.12.0 to v8.12.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6594)
 * [Add customer NPG for duplicate filtering [master] ](https://github.com/livingdocsIO/livingdocs-server/pull/6592)
 * [fix(filters): Reposition filter popups when selecting values](https://github.com/livingdocsIO/livingdocs-editor/pull/7982)
 * [fix(li-image): actually reload document images when content changed](https://github.com/livingdocsIO/livingdocs-editor/pull/8010)
