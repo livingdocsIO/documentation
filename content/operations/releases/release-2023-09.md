@@ -264,8 +264,6 @@ metadata: [
 ```
 Notice the Ticker Host contentType has a `ticker` property, which defines the Ticker Entry contentType. The Ticker Entry contentType has a metadata property `tickerHost`, which defines the reference to the ticker host. This reference is set on creation of each ticker entry.
 
-Check the [Ticker Feature documentation]() for more details and limitations.
-
 ### Anchor Linking
 
 When selecting a document in the inline link edit tool or in `li-tree`, it is now possible to also select a specific component within that document. The directiveId (= componentId:directiveName) will then be included in the URL hash part.
