@@ -435,6 +435,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.68): fix: Use input or change events instead of keyup
 - [v102.1.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.67): fix(popover): save on removing specialproviders and make custom elements work on vue popover
 - [v102.1.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.66): fix(video upload): showing transcoding when uploading single file
 - [v102.1.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.65): fix(filters): Reposition filter popups when selecting values
