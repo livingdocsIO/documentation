@@ -336,6 +336,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.48): fix(li-image): Do not allow picking images from a document that are not present in the media library
 - [v106.0.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.47): fix(link-edit): Return link data property for prefilling
 - [v106.0.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.46): fix: Use input or change events instead of keyup
 - [v106.0.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.45): fix(popover): save on removing specialproviders and make custom elements work on vue popover
