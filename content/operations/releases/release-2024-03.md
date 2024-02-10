@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add cacheKey to Home Screen dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/8037)
 * [fix(link-edit): Fixes iframely prefilling of components](https://github.com/livingdocsIO/livingdocs-editor/pull/8028)
 * [Use input or change events instead of keyup](https://github.com/livingdocsIO/livingdocs-editor/pull/8021)
 * [Allow `_` on project handle, add tests for valid/invalid handle names](https://github.com/livingdocsIO/livingdocs-server/pull/6597)
