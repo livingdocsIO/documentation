@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency jose from 5.2.1 to v5.2.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6606)
 * [feat(drop-handler): Allow woodwing drop on li-image](https://github.com/livingdocsIO/livingdocs-editor/pull/7998)
 * [Add cacheKey to Home Screen dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/8037)
 * [fix(link-edit): Fixes iframely prefilling of components](https://github.com/livingdocsIO/livingdocs-editor/pull/8028)
