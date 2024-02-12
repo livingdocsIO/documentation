@@ -312,6 +312,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.24): chore(example-server): use `li-push-messages` handler with longer execution time
 - [v245.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.23): fix(OIDC): Skip logging an error when thrown error is `nonce expired` during OIDC flow
 - [v245.0.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.22): fix: add npg for duplicate filtering
 - [v245.0.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.21): fix(image-processing): Fix extracting metadata from large image headers
