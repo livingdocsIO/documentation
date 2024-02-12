@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency https-proxy-agent from 7.0.2 to v7.0.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8058)
 * [Extend image structure](https://github.com/livingdocsIO/livingdocs-server/pull/6537)
 * [Fix push messages conflict](https://github.com/livingdocsIO/livingdocs-server/pull/6607)
 * [fix(li-table): Correctly compute whether a table cell is in the overflow](https://github.com/livingdocsIO/livingdocs-editor/pull/8052)
