@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [feat(drop-handler): Allow woodwing drop on li-image](https://github.com/livingdocsIO/livingdocs-editor/pull/7998)
 * [Add cacheKey to Home Screen dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/8037)
 * [fix(link-edit): Fixes iframely prefilling of components](https://github.com/livingdocsIO/livingdocs-editor/pull/8028)
 * [Use input or change events instead of keyup](https://github.com/livingdocsIO/livingdocs-editor/pull/8021)
