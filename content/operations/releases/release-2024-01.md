@@ -336,6 +336,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.50): fix(toolbar): Hide metadata overlay when opening tasks sidebar
 - [v106.0.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.49): chore(publish-control): Remove unused property
 - [v106.0.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.48): fix(li-image): Do not allow picking images from a document that are not present in the media library
 - [v106.0.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.47): fix(link-edit): Return link data property for prefilling
