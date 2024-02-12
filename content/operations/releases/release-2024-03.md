@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(li-table): Correctly compute whether a table cell is in the overflow](https://github.com/livingdocsIO/livingdocs-editor/pull/8052)
 * [fix(toolbar): Hide metadata overlay upon opening the tasks sidebar](https://github.com/livingdocsIO/livingdocs-editor/pull/7983)
 * [fix(publish-control): Clear content validation errors on publish](https://github.com/livingdocsIO/livingdocs-editor/pull/8045)
 * [fix(deps): update dependency jose from 5.2.1 to v5.2.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6606)
