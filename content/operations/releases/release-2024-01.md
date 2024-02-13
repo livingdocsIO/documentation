@@ -312,6 +312,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.26): chore(desknet): Add tests for token refresh
 - [v245.0.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.25): chore(example-server): use `li-push-messages` handler with longer execution time
 - [v245.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.24): chore(example-server): use `li-push-messages` handler with longer execution time
 - [v245.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.23): fix(OIDC): Skip logging an error when thrown error is `nonce expired` during OIDC flow
