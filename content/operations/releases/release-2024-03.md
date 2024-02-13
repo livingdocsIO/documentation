@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [feat(channel-configs): Add postValidate hooks](https://github.com/livingdocsIO/livingdocs-server/pull/6551)
 * [Check lock timeout when emitting metadata changes](https://github.com/livingdocsIO/livingdocs-editor/pull/8008)
 * [Media Library: Multiselect insert](https://github.com/livingdocsIO/livingdocs-editor/pull/8020)
 * [fix(deps): update dependency mini-css-extract-plugin from 2.7.7 to v2.8.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7992)
