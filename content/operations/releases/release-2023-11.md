@@ -398,6 +398,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.41): chore(desknet): Add tests for token refresh
 - [v241.0.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.40): chore(example-server): use `li-push-messages` handler with longer execution time
 - [v241.0.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.39): fix(project): Allow `_` on project name, add tests for valid/invalid handle names
 - [v241.0.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.38): fix(test): update to trigger a new release version
