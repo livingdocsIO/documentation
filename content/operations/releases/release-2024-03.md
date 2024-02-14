@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use dialog when selecting single media](https://github.com/livingdocsIO/livingdocs-editor/pull/8063)
 * [Retry Desk-Net requests which used an expired token](https://github.com/livingdocsIO/livingdocs-server/pull/6533)
 * [feat(channel-configs): Add postValidate hooks](https://github.com/livingdocsIO/livingdocs-server/pull/6551)
 * [Check lock timeout when emitting metadata changes](https://github.com/livingdocsIO/livingdocs-editor/pull/8008)
