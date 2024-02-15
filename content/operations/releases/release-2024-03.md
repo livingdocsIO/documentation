@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency webpack from 5.90.1 to v5.90.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8071)
 * [Improvement/Spacing Helper-Classes](https://github.com/livingdocsIO/livingdocs-editor/pull/7997)
 * [Multi select indicator](https://github.com/livingdocsIO/livingdocs-editor/pull/8065)
 * [Fix language switch shortcut](https://github.com/livingdocsIO/livingdocs-editor/pull/8066)
