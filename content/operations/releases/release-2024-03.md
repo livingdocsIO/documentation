@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Improvement/Spacing Helper-Classes](https://github.com/livingdocsIO/livingdocs-editor/pull/7997)
 * [Multi select indicator](https://github.com/livingdocsIO/livingdocs-editor/pull/8065)
 * [Fix language switch shortcut](https://github.com/livingdocsIO/livingdocs-editor/pull/8066)
 * [Use dialog when selecting single media](https://github.com/livingdocsIO/livingdocs-editor/pull/8063)
