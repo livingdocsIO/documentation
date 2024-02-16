@@ -339,6 +339,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.54): fix(ticker): Skip softLock checks for ticker entries
 - [v106.0.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.53): fix(document-preview): Post to wildcard if the origin uses a sandbox without `allow-same-site`. Without it postMessage doesn't work at all.
 - [v106.0.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.52): chore: Remove TODO, leave the comment about workspace initialization
 - [v106.0.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.51): fix(li-table): Correctly compute whether a table cell is in the overflow
