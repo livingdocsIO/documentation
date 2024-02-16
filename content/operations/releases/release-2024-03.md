@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Skip softLock checks for ticker entries](https://github.com/livingdocsIO/livingdocs-editor/pull/8075)
 * [fix(deps): update dependency @livingdocs/framework from 28.1.0 to v29 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6620)
 * [fix(deps): update dependency webpack from 5.90.1 to v5.90.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8071)
 * [Improvement/Spacing Helper-Classes](https://github.com/livingdocsIO/livingdocs-editor/pull/7997)
