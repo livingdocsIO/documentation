@@ -437,6 +437,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.75): fix(ticker): Skip softLock checks for ticker entries
 - [v102.1.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.74): chore: Remove TODO, leave the comment about workspace initialization
 - [v102.1.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.73): fix(li-table): Correctly compute whether a table cell is in the overflow
 - [v102.1.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.72): fix(toolbar): Hide metadata overlay when opening tasks sidebar
