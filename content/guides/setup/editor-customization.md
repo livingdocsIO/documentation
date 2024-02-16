@@ -71,10 +71,6 @@ liEditor.metadataServices
 //   Pinterest
 // ]
 
-const Iframely = require('@livingdocs/editor/app/scripts/modules/iframely')
-const defaultExtractor = require('@livingdocs/editor/app/scripts/modules/iframely/default_metadata_extractor')
-Iframely.initializeOembedMetadataExtractor(defaultExtractor)
-
 // Example of changing the date locale
 // moment = require('moment')
 // momentDe = require('moment/locale/de')
