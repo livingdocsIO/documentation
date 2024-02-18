@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Removed `initializeOembedMetadataExtractor()`](https://github.com/livingdocsIO/livingdocs-editor/pull/8074)
 * [Remove backwards compatibility support for the filter `{filterName: "category"}`](https://github.com/livingdocsIO/livingdocs-editor/pull/8073)
 * [fix(document-preview): Access iframe source only if it exists](https://github.com/livingdocsIO/livingdocs-editor/pull/8067)
 * [Skip softLock checks for ticker entries](https://github.com/livingdocsIO/livingdocs-editor/pull/8075)
