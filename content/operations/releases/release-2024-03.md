@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Close cropping dialog on cancel for `focalPointOnly` behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/8083)
 * [Use 1680px breakpoint for media library lightbox](https://github.com/livingdocsIO/livingdocs-editor/pull/8078)
 * [Removed `initializeOembedMetadataExtractor()`](https://github.com/livingdocsIO/livingdocs-editor/pull/8074)
 * [Remove backwards compatibility support for the filter `{filterName: "category"}`](https://github.com/livingdocsIO/livingdocs-editor/pull/8073)
