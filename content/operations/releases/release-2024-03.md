@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cypress from 13.6.4 to v13.6.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8091)
 * [Delete channel config key from cache if value is falsy](https://github.com/livingdocsIO/livingdocs-server/pull/6626)
 * [fix(deps): update dependency webpack from 5.90.2 to v5.90.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8088)
 * [fix(deps): update dependency pino from 8.18.0 to v8.19.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6622)
