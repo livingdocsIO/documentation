@@ -117,12 +117,12 @@ Document patch API `document.patch` support has been removed. Please replace it 
 * [Server PR: Remove document patch endpoint and method](https://github.com/livingdocsIO/livingdocs-server/pull/6378)
 
 {{< feature-info "Editing api" "server" >}}
-### Endpoint `PATCH /document/:id` :fire:
+### Endpoint `PATCH /documents/:id` :fire:
 
 This concerns an internal API used by the Livingdocs Editor which has been used
 in the past by customizations.
 
-The Endpoint `PATCH /document/:id` support has been removed. Please replace it with `PATCH /document/:id/commands`. No data migration is required, but you will need to swap `patches` parameter with `commands`.
+The Endpoint `PATCH /documents/:id` support has been removed. Please replace it with `PATCH /documents/:id/commands`. No data migration is required, but you will need to swap `patches` parameter with `commands`.
 
 * [Server PR: Remove document patch endpoint and method](https://github.com/livingdocsIO/livingdocs-server/pull/6378)
 
