@@ -438,6 +438,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.77): fix(workspace): Reload document on design change
 - [v102.1.76](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.76): fix(document-preview): Post to wildcard if the origin uses a sandbox without `allow-same-site`. Without it postMessage doesn't work at all.
 - [v102.1.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.75): fix(ticker): Skip softLock checks for ticker entries
 - [v102.1.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.74): chore: Remove TODO, leave the comment about workspace initialization
