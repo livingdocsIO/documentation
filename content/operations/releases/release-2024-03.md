@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(kanban-board): Metadata display filters](https://github.com/livingdocsIO/livingdocs-editor/pull/8064)
 * [Validate metadata property references in project config](https://github.com/livingdocsIO/livingdocs-server/pull/6623)
 * [fix(deps): update dependency @livingdocs/framework from 29.0.0 to v29.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6625)
 * [fix(deps): update dependency cypress from 13.6.5 to v13.6.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8100)
