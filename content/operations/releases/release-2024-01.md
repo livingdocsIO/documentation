@@ -340,6 +340,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.58): chore: Remove debug console log
 - [v106.0.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.57): fix(workspace): Reload document on design change
 - [v106.0.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.56): fix(lightbox): use 1680px breakpoint for metadata visibility
 - [v106.0.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.55): fix: close cropping dialog on cancel for `focalPointOnly` behavior
