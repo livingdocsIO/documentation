@@ -72,8 +72,8 @@ contentTypeConfig: |2
         }
 tableDashboardConfig: |2
     baseFilters: [
-      {type: 'buyInNotExpired', key: 'buyIn'}, // Only showing documents with non-expired buy-in requests
-      {type: 'metadata', key: 'buyIn.workflow.status', value: 'requested'} // Additional status filter
+      {key: 'metadata.myBuyInHandle.workflow.expiryDate', range: {gte: 'now/d'}}, // Only showing documents with non-expired buy-in requests
+      {key: 'metadata.myBuyInHandle.workflow.status', term: 'requested'} // Additional status filter
     ],
     columns: [
       {

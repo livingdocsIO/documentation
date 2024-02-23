@@ -55,7 +55,7 @@ projectConfig.editorSettings = {
       type: 'tableDashboard',
       pageTitle: 'Articles',
       baseFilters: [
-        {type: 'documentType', value: 'article'}
+        {key: 'documentType', term: 'article'}
       ],
       displayFilters: ['timeRange'],
       sort: '-updated_at',
