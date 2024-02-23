@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Conditional Components](https://github.com/livingdocsIO/livingdocs-server/pull/6523)
 * [fix(deps): update dependency @smithy/node-http-handler from 2.3.1 to v2.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6635)
 * [fix(deps): update dependency sanitize-html from 2.11.0 to v2.12.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8093)
 * [fix: Invalid metadata references in e2e example project](https://github.com/livingdocsIO/livingdocs-server/pull/6636)
