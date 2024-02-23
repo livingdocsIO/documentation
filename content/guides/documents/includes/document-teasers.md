@@ -105,7 +105,7 @@ editorSettings: {
     type: 'tableDashboard',
     pageTitle: 'Articles',
     baseFilters: [
-      {type: 'documentType', value: 'article'} // This must be set to 'documentType'
+      {key: 'documentType', term: 'article'} // This must be set to 'documentType'
     ],
     displayFilters: [
       'channels',

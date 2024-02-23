@@ -136,8 +136,7 @@ editorSettings: {
       pageTitle: 'Author Management',
       entityLabel: 'Author',
       baseFilters: [
-        {type: 'documentType', value: 'data-record'},
-        {type: 'sortBy', value: '-updated_at'}
+        {key: 'documentType', value: 'data-record'}
       ],
       displayFilters: ['documentState', 'timeRange'],
       sort: '-updated_at',
@@ -430,7 +429,7 @@ dashboards: [
     // Label used to describe the documents in this Dashboard
     entityLabel: 'Article',
     // Invisible base filters applied to every search (including the default result list)
-    baseFilters: [{type: 'documentType', value: 'article'}],
+    baseFilters: [{key: 'documentType', term: 'article'}],
     // Filters shown to the user below the search input
     displayFilters: ['documentState', 'timeRange'],
     sort: '-updated_at',
@@ -474,7 +473,7 @@ dashboards: [
     entityLabel: 'Article',
     displayFilters: [],
     // Base filters are applied to all columns
-    baseFilters: [{type: 'documentType', value: 'article'}],
+    baseFilters: [{key: 'documentType', term: 'article'}],
     // This is the name of the angular component to use in all columns
     // (can also be defined for each columns separately)
     componentName: 'liTaskCard',
@@ -491,9 +490,9 @@ dashboards: [
         label: 'Needs Proofreading',
         // Filter applied for this column on top of the `baseFilter`
         columnFilter: [
-          {type: 'metadata', key: 'proofreading.state', value: 'requested'}
+          {key: 'metadata.proofreading.state', term: 'requested'}
         ],
-        sort: [`metadata.proofreading.priority`, `metadata.proofreading.deadline`]
+        sort: [`metadata.proofreading.priority`, `metadata.proofreading.deadline`],
         // The componentOptions are injected into the component `liTaskCard` (in this example)
         componentOptions: {column: 'todo', taskName: 'proofreading'}
       },
@@ -501,7 +500,7 @@ dashboards: [
         handle: 'in-progress',
         label: 'In Progress',
         columnFilter: [
-          {type: 'metadata', key: 'proofreading.state', value: 'accepted'}
+          {key: 'metadata.proofreading.state', term: 'accepted'}
         ],
         sort: [`metadata.proofreading.priority`, `-metadata.proofreading.accepted.date`],
         componentOptions: {column: 'doing', taskName: 'proofreading'}
@@ -510,7 +509,7 @@ dashboards: [
         handle: 'done',
         label: 'Finished Proofreading',
         columnFilter: [
-          {type: 'metadata', key: 'proofreading.state', value: 'completed'}
+          {key: 'metadata.proofreading.state', term: 'completed'}
         ],
         sort: [`-metadata.proofreading.completed.date`],
         componentOptions: {column: 'done', taskName: 'proofreading'}
@@ -529,7 +528,7 @@ dashboards: [
     type: 'tableDashboard',
     pageTitle: 'Table Dashboard Title',
     baseFilters: [
-      {type: 'documentType', value: 'article'}
+      {key: 'documentType', term: 'article'}
     ],
     displayFilters: [
       'channels',
@@ -859,8 +858,8 @@ documentLists: {
     useDashboard: 'myCustomDashboard'
     displayFilters: [],
     baseFilters: [
-      {type: 'documentType', value: 'article'},
-      {type: 'documentState', value: 'published'}
+      {key: 'documentType', term: 'article'},
+      {key: 'lastPublicationId', exists: true}
     ]
   }
 }
@@ -876,8 +875,8 @@ inlineLinks: {
     useDashboard: 'myCustomDashboard'
     displayFilters: [],
     baseFilters: [
-      {type: 'documentType', value: 'article'},
-      {type: 'documentState', value: 'published'}
+      {key: 'documentType', term: 'article'},
+      {key: 'lastPublicationId', exists: true}
     ]
   }
 }
