@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency eslint from 8.56.0 to v8.57.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8107)
 * [Conditional Components](https://github.com/livingdocsIO/livingdocs-editor/pull/7947)
 * [Conditional Components](https://github.com/livingdocsIO/livingdocs-server/pull/6523)
 * [fix(deps): update dependency @smithy/node-http-handler from 2.3.1 to v2.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6635)
