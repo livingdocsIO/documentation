@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 29.0.0 to v29.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6625)
 * [fix(deps): update dependency cypress from 13.6.5 to v13.6.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8100)
 * [chore(deps): update dependency eslint-plugin-jsdoc from 48.1.0 to v48.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6634)
 * [Patch images in includes](https://github.com/livingdocsIO/livingdocs-server/pull/6631)
