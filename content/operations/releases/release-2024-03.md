@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Vulnerability patches February](https://github.com/livingdocsIO/livingdocs-server/pull/6637)
 * [Do not abort exif extraction with invalid dates](https://github.com/livingdocsIO/livingdocs-server/pull/6644)
 * [Don't warn about teaserComponents config after removing a teaser reference](https://github.com/livingdocsIO/livingdocs-editor/pull/8099)
 * [fix(deps): update aws-sdk from 3.515.0 to v3.521.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6641)
