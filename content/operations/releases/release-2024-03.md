@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Vulnerability patches February](https://github.com/livingdocsIO/livingdocs-editor/pull/8105)
 * [Vulnerability patches February](https://github.com/livingdocsIO/livingdocs-server/pull/6637)
 * [Do not abort exif extraction with invalid dates](https://github.com/livingdocsIO/livingdocs-server/pull/6644)
 * [Don't warn about teaserComponents config after removing a teaser reference](https://github.com/livingdocsIO/livingdocs-editor/pull/8099)
