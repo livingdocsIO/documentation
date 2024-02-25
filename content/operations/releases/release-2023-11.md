@@ -398,6 +398,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.43): fix(security): Patch vulnerabilities `CVE-2024-24758` on `undici` and `GHSA-9h6g-pr28-7cqp` on `nodemailer`
 - [v241.0.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.42): fix(memory-cache): Delete channel config key from cache if value is falsy
 - [v241.0.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.41): chore(desknet): Add tests for token refresh
 - [v241.0.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.40): chore(example-server): use `li-push-messages` handler with longer execution time
