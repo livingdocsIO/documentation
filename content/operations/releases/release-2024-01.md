@@ -312,6 +312,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.29): fix(security): Patch vulnerabilities `CVE-2024-24758` on `undici` and `GHSA-9h6g-pr28-7cqp` on `nodemailer`
 - [v245.0.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.28): fix(images): Do not abort exif extraction with invalid dates
 - [v245.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.27): fix(memory-cache): Delete channel config key from cache if value is falsy
 - [v245.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.26): chore(desknet): Add tests for token refresh
