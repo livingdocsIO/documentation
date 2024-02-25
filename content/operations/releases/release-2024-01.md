@@ -312,6 +312,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.28): fix(images): Do not abort exif extraction with invalid dates
 - [v245.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.27): fix(memory-cache): Delete channel config key from cache if value is falsy
 - [v245.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.26): chore(desknet): Add tests for token refresh
 - [v245.0.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.25): chore(example-server): use `li-push-messages` handler with longer execution time
