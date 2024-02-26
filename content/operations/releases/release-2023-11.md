@@ -439,6 +439,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.79](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.79): fix(media-library): Show better error message if a network error occurs
 - [v102.1.78](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.78): fix(properties): Don't warn about config when there is no reference
 - [v102.1.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.77): fix(workspace): Reload document on design change
 - [v102.1.76](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.76): fix(document-preview): Post to wildcard if the origin uses a sandbox without `allow-same-site`. Without it postMessage doesn't work at all.
