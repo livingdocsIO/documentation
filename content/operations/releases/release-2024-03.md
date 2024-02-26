@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @elastic/elasticsearch8 from 8.12.1 to v8.12.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6647)
 * [Vulnerability patches February](https://github.com/livingdocsIO/livingdocs-editor/pull/8105)
 * [Vulnerability patches February](https://github.com/livingdocsIO/livingdocs-server/pull/6637)
 * [Do not abort exif extraction with invalid dates](https://github.com/livingdocsIO/livingdocs-server/pull/6644)
