@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Remove `release-2023-07` from list of tracked branches on Renovate](https://github.com/livingdocsIO/livingdocs-editor/pull/8120)
 * [fix(deps): update dependency @elastic/elasticsearch8 from 8.12.1 to v8.12.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6647)
 * [Vulnerability patches February](https://github.com/livingdocsIO/livingdocs-editor/pull/8105)
 * [Vulnerability patches February](https://github.com/livingdocsIO/livingdocs-server/pull/6637)
