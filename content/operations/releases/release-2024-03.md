@@ -28,237 +28,10 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
-* [Media Library Scheduler](https://github.com/livingdocsIO/livingdocs-server/pull/6629)
-* [Allow number types in webhook metadata property conditions](https://github.com/livingdocsIO/livingdocs-server/pull/6648)
-* [Remove `release-2023-07` from list of tracked branches on Renovate](https://github.com/livingdocsIO/livingdocs-editor/pull/8120)
-* [fix(deps): update dependency @elastic/elasticsearch8 from 8.12.1 to v8.12.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6647)
-* [Vulnerability patches February](https://github.com/livingdocsIO/livingdocs-editor/pull/8105)
-* [Vulnerability patches February](https://github.com/livingdocsIO/livingdocs-server/pull/6637)
-* [Do not abort exif extraction with invalid dates](https://github.com/livingdocsIO/livingdocs-server/pull/6644)
-* [Don't warn about teaserComponents config after removing a teaser reference](https://github.com/livingdocsIO/livingdocs-editor/pull/8099)
-* [fix(deps): update aws-sdk from 3.515.0 to v3.521.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6641)
-* [chore(deps): update dependency eslint from 8.56.0 to v8.57.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6640)
-* [chore(deps): update dependency eslint from 8.56.0 to v8.57.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8107)
-* [Conditional Components](https://github.com/livingdocsIO/livingdocs-editor/pull/7947)
-* [Conditional Components](https://github.com/livingdocsIO/livingdocs-server/pull/6523)
-* [fix(deps): update dependency @smithy/node-http-handler from 2.3.1 to v2.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6635)
-* [fix(deps): update dependency sanitize-html from 2.11.0 to v2.12.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8093)
-* [fix: Invalid metadata references in e2e example project](https://github.com/livingdocsIO/livingdocs-server/pull/6636)
-* [fix(kanban-board): Metadata display filters](https://github.com/livingdocsIO/livingdocs-editor/pull/8064)
 * [Validate metadata property references in project config](https://github.com/livingdocsIO/livingdocs-server/pull/6623)
-* [fix(deps): update dependency @livingdocs/framework from 29.0.0 to v29.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6625)
-* [fix(deps): update dependency cypress from 13.6.5 to v13.6.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8100)
-* [chore(deps): update dependency eslint-plugin-jsdoc from 48.1.0 to v48.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6634)
-* [Patch images in includes](https://github.com/livingdocsIO/livingdocs-server/pull/6631)
-* [Fix memory leaks](https://github.com/livingdocsIO/livingdocs-editor/pull/8092)
-* [fix(deps): update dependency cypress from 13.6.4 to v13.6.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8091)
-* [Delete channel config key from cache if value is falsy](https://github.com/livingdocsIO/livingdocs-server/pull/6626)
-* [fix(deps): update dependency webpack from 5.90.2 to v5.90.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8088)
-* [fix(deps): update dependency pino from 8.18.0 to v8.19.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6622)
-* [Close cropping dialog on cancel for `focalPointOnly` behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/8083)
-* [Use 1680px breakpoint for media library lightbox](https://github.com/livingdocsIO/livingdocs-editor/pull/8078)
-* [Removed `initializeOembedMetadataExtractor()`](https://github.com/livingdocsIO/livingdocs-editor/pull/8074)
-* [Remove backwards compatibility support for the filter `{filterName: "category"}`](https://github.com/livingdocsIO/livingdocs-editor/pull/8073)
-* [fix(document-preview): Access iframe source only if it exists](https://github.com/livingdocsIO/livingdocs-editor/pull/8067)
-* [Skip softLock checks for ticker entries](https://github.com/livingdocsIO/livingdocs-editor/pull/8075)
-* [fix(deps): update dependency @livingdocs/framework from 28.1.0 to v29 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6620)
-* [fix(deps): update dependency webpack from 5.90.1 to v5.90.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8071)
-* [Improvement/Spacing Helper-Classes](https://github.com/livingdocsIO/livingdocs-editor/pull/7997)
-* [Multi select indicator](https://github.com/livingdocsIO/livingdocs-editor/pull/8065)
-* [Fix language switch shortcut](https://github.com/livingdocsIO/livingdocs-editor/pull/8066)
-* [Use dialog when selecting single media](https://github.com/livingdocsIO/livingdocs-editor/pull/8063)
-* [Retry Desk-Net requests which used an expired token](https://github.com/livingdocsIO/livingdocs-server/pull/6533)
 * [feat(channel-configs): Add postValidate hooks](https://github.com/livingdocsIO/livingdocs-server/pull/6551)
-* [Check lock timeout when emitting metadata changes](https://github.com/livingdocsIO/livingdocs-editor/pull/8008)
-* [Media Library: Multiselect insert](https://github.com/livingdocsIO/livingdocs-editor/pull/8020)
-* [fix(deps): update dependency mini-css-extract-plugin from 2.7.7 to v2.8.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7992)
-* [fix(deps): update dependency fastify from 4.26.0 to v4.26.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6611)
-* [fix(deps): update dependency https-proxy-agent from 7.0.2 to v7.0.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8058)
-* [Extend image structure](https://github.com/livingdocsIO/livingdocs-server/pull/6537)
-* [Fix push messages conflict](https://github.com/livingdocsIO/livingdocs-server/pull/6607)
-* [fix(li-table): Correctly compute whether a table cell is in the overflow](https://github.com/livingdocsIO/livingdocs-editor/pull/8052)
-* [fix(toolbar): Hide metadata overlay upon opening the tasks sidebar](https://github.com/livingdocsIO/livingdocs-editor/pull/7983)
-* [fix(publish-control): Clear content validation errors on publish](https://github.com/livingdocsIO/livingdocs-editor/pull/8045)
-* [fix(deps): update dependency jose from 5.2.1 to v5.2.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6606)
-* [feat(drop-handler): Allow woodwing drop on li-image](https://github.com/livingdocsIO/livingdocs-editor/pull/7998)
-* [Add cacheKey to Home Screen dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/8037)
-* [fix(link-edit): Fixes iframely prefilling of components](https://github.com/livingdocsIO/livingdocs-editor/pull/8028)
-* [Use input or change events instead of keyup](https://github.com/livingdocsIO/livingdocs-editor/pull/8021)
-* [Allow `_` on project handle, add tests for valid/invalid handle names](https://github.com/livingdocsIO/livingdocs-server/pull/6597)
-* [Save document on removing customElements and make them work on vue popover](https://github.com/livingdocsIO/livingdocs-editor/pull/8024)
-* [fix(video upload): showing transcoding when uploading for multiselect](https://github.com/livingdocsIO/livingdocs-editor/pull/8014)
-* [fix(deps): update dependency cloudinary from 2.0.0 to v2.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6596)
-* [fix(deps): update dependency @elastic/elasticsearch8 from 8.12.0 to v8.12.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6594)
-* [Add customer NPG for duplicate filtering [master] ](https://github.com/livingdocsIO/livingdocs-server/pull/6592)
-* [fix(filters): Reposition filter popups when selecting values](https://github.com/livingdocsIO/livingdocs-editor/pull/7982)
-* [fix(li-image): actually reload document images when content changed](https://github.com/livingdocsIO/livingdocs-editor/pull/8010)
-* [Fix/Multilist Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/8015)
-* [Do not suggest to refresh the browser on document load and save errors](https://github.com/livingdocsIO/livingdocs-editor/pull/7993)
-* [fix(publish-control-delivery): Show delivery state when opening publish control panel](https://github.com/livingdocsIO/livingdocs-editor/pull/7999)
-* [fix(deps): update dependency moment-timezone from 0.5.44 to v0.5.45 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7996)
-* [Chore/li Radius](https://github.com/livingdocsIO/livingdocs-editor/pull/7964)
-* [fix(deps): update dependency jose from 5.2.0 to v5.2.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6583)
 * [Fix media library entry state](https://github.com/livingdocsIO/livingdocs-server/pull/6570)
-* [fix(image-processing): Fix extracting metadata from large image headers](https://github.com/livingdocsIO/livingdocs-server/pull/6577)
-* [Editable Includes: indicate when original changed ](https://github.com/livingdocsIO/livingdocs-editor/pull/7963)
-* [Editable Includes: indicate when original changed](https://github.com/livingdocsIO/livingdocs-server/pull/6541)
-* [Remove log when nonce expires in Redis](https://github.com/livingdocsIO/livingdocs-server/pull/6566)
-* [fix(deps): update dependency fast-json-stringify from 5.10.0 to v5.11.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6568)
-* [fix(deps): update webpack (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/7991)
-* [fix(deps): update dependency nodemailer from 6.9.8 to 6.9.9 [security] (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6567)
-* [fix(canvas): Trigger reactivity when removing an area from the canvas](https://github.com/livingdocsIO/livingdocs-editor/pull/7987)
-* [fix(deps): update dependency fastify from 4.25.2 to v4.26.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7976)
-* [fix(deps): update aws-sdk from 3.503.1 to v3.504.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6561)
-* [fix(designs): Fix loading design assets](https://github.com/livingdocsIO/livingdocs-server/pull/6559)
-* [fix(deps): update dependency @livingdocs/framework from 28.0.0 to v28.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6563)
-* [fix(deps): update dependency @livingdocs/framework from 28.0.0 to v28.0.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7985)
-* [fix(deps): update dependency pg-tsquery from 8.4.1 to v8.4.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6560)
-* [fix(deps): update dependency cloudinary from 1.41.3 to v2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6554)
-* [fix(deps): update dependency cypress from 13.6.3 to v13.6.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7979)
-* [Emit document update events on Pusher presence channel](https://github.com/livingdocsIO/livingdocs-server/pull/6547)
-* [Do not emit Pusher document update events](https://github.com/livingdocsIO/livingdocs-editor/pull/7972)
-* [fix(deps): update dependency webpack from 5.89.0 to v5.90.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7961)
-* [fix(deps): update dependency lru-cache from 10.1.0 to v10.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6544)
-* [fix(deps): update aws-sdk from 3.498.0 to v3.501.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6539)
-* [fix(deps): update dependency @livingdocs/framework from 27.5.0 to v28 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7968)
-* [Fix errors when configuring non-existing dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/7969)
-* [fix(deps): update dependency axios from 1.6.6 to v1.6.7 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7967)
-* [fix(deps): update dependency axios from 1.6.5 to v1.6.7 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6543)
-* [fix(deps): update dependency axios from 1.6.5 to v1.6.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7962)
-* [feat(named-crops): Add isDefaultIfSet named crop config property](https://github.com/livingdocsIO/livingdocs-server/pull/6530)
-* [feat(named-crops): Add isDefaultIfSet named crop config property](https://github.com/livingdocsIO/livingdocs-editor/pull/7955)
-* [fix(deps): update dependency @livingdocs/framework from 27.4.5 to v27.4.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7960)
-* [fix(deps): update dependency @livingdocs/framework from 27.4.5 to v27.4.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6535)
-* [Improvement/Tag and Numberdot](https://github.com/livingdocsIO/livingdocs-editor/pull/7958)
-* [Restrict public api search offset to 9999 entries](https://github.com/livingdocsIO/livingdocs-server/pull/6531)
-* [fix(deps): update dependency date-fns from 3.2.0 to v3.3.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7948)
-* [fix(planning action): Visual](https://github.com/livingdocsIO/livingdocs-editor/pull/7954)
-* [Ticker fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/7952)
-* [fix(deps): update dependency @livingdocs/framework from 27.4.2 to v27.4.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7951)
-* [fix(deps): update dependency @livingdocs/framework from 27.4.2 to v27.4.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6528)
-* [Close dialogs when views get destroyed](https://github.com/livingdocsIO/livingdocs-editor/pull/7949)
-* [fix(deps): update aws-sdk from 3.495.0 to v3.496.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6525)
-* [Throw better error when calling unpublish on a document that's not public](https://github.com/livingdocsIO/livingdocs-server/pull/6522)
-* [fix(deps): update aws-sdk (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/6524)
-* [Improvement/Media Library Asset View](https://github.com/livingdocsIO/livingdocs-editor/pull/7936)
-* [fix(deps): update dependency sass from 1.69.7 to v1.70.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7928)
-* [Allow more value types in data provider label value pair schema](https://github.com/livingdocsIO/livingdocs-server/pull/6521)
-* [Push Messages: allow push for published articles with unpublished changes from toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/7937)
-* [Fix inline links for documents](https://github.com/livingdocsIO/livingdocs-editor/pull/7929)
-* [fix(deps): update aws-sdk from 3.490.0 to v3.495.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6517)
-* [fix(deps): update dependency cloudinary from 1.41.2 to v1.41.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6516)
-* [fix(deps): update dependency css-loader from 6.9.0 to v6.9.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7927)
-* [fix(deps): update dependency @livingdocs/framework from 27.4.0 to v27.4.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6513)
-* [fix(deps): update aws-sdk (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6510)
-* [fix(deps): update dependency cypress from 13.4.0 to v13.6.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7674)
-* [Make metadata mapping optional in draft indexer](https://github.com/livingdocsIO/livingdocs-server/pull/6511)
-* [fix(dashboards): Return to previous dashboard when returning from imported article state](https://github.com/livingdocsIO/livingdocs-editor/pull/7919)
-* [fix(deps): update dependency copy-webpack-plugin from 12.0.1 to v12.0.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7920)
-* [fix(deps): update dependency html-loader from 4.2.0 to v5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7918)
-* [feat(media-library): Add functionality to remove translated assets](https://github.com/livingdocsIO/livingdocs-server/pull/6492)
-* [feat(media-library): Add functionality to remove translated assets](https://github.com/livingdocsIO/livingdocs-editor/pull/7915)
-* [fix(deps): update dependency pdfjs-dist from 3.11.174 to v4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7670)
-* [fix(deps): update dependency @livingdocs/secure-password from 5.0.2 to v5.0.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6505)
-* [fix(webhooks): Validate metadataProperty conditions only by value comparison](https://github.com/livingdocsIO/livingdocs-server/pull/6499)
-* [Composition API: Make sure we never load errors or null values into preloaded values](https://github.com/livingdocsIO/livingdocs-server/pull/6488)
-* [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6494)
-* [Restore the functionality of directly opening the tasks side panel from the task notification email](https://github.com/livingdocsIO/livingdocs-server/pull/6493)
-* [Fix/vanilla CSS base spacing unit](https://github.com/livingdocsIO/livingdocs-editor/pull/7906)
-* [Commands API: 409 error and isPublishedAndHasNoChanges precondition
-](https://github.com/livingdocsIO/livingdocs-server/pull/6489)
-* [Fix/shadows and docked content](https://github.com/livingdocsIO/livingdocs-editor/pull/7910)
-* [fix(deps): update dependency c8 from 9.0.0 to v9.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6487)
-* [fix(deps): update dependency sharp from 0.33.1 to v0.33.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6486)
-* [Fix inline link tool](https://github.com/livingdocsIO/livingdocs-editor/pull/7895)
-* [🐞 Pass directive config.search.displayFilters|baseFilter to Angular Embed Teaser](https://github.com/livingdocsIO/livingdocs-editor/pull/7899)
-* [fix(deps): update dependency copy-webpack-plugin from 12.0.0 to v12.0.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7897)
-* [Drop support for Postgres version 12](https://github.com/livingdocsIO/livingdocs-server/pull/6481)
-* [fix(deps): update aws-sdk from 3.489.0 to v3.490.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6484)
-* [feat(webhooks): Add UI for configuring webhook contentType conditions](https://github.com/livingdocsIO/livingdocs-editor/pull/7867)
-* [fix(deps): update aws-sdk from 3.485.0 to v3.489.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6478)
-* [Retry document saves indefinitely and when internet connection restored](https://github.com/livingdocsIO/livingdocs-editor/pull/7886)
-* [fix(deps): update dependency mini-css-extract-plugin from 2.7.6 to v2.7.7 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7883)
-* [fix(deps): update dependency date-fns from 3.1.0 to v3.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6476)
-* [fix(deps): update dependency @livingdocs/editable.js from 5.0.0 to 5.0.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7881)
-* [fix(deps): update dependency @livingdocs/framework from 27.3.6 to v27.4.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7871)
-* [fix(deps): update dependency style-loader from 3.3.3 to v3.3.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7878)
-* [Fix text formatting button states](https://github.com/livingdocsIO/livingdocs-editor/pull/7863)
-* [fix(deps): update dependency @fastify/reply-from from 9.5.0 to 9.6.0 [security] (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7870)
-* [fix(deps): update dependency fast-json-stringify from 5.9.2 to v5.10.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6469)
-* [fix(deps): update dependency cloudinary from 1.41.1 to v1.41.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6471)
-* [fix(deps): update dependency @babel/preset-env from 7.23.7 to v7.23.8 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7868)
-* [fix(deps): update dependency @fastify/reply-from from 9.4.0 to v9.5.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7852)
-* [fix(deps): update dependency date-fns from 3.0.6 to v3.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7859)
-* [fix(deps): update dependency date-fns from 3.0.6 to v3.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6466)
-* [fix(deps): update dependency openid-client from 5.6.3 to v5.6.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6468)
-* [fix(deps): update dependency @livingdocs/framework from 27.3.5 to v27.3.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6467)
-* [fix(deps): update dependency axios from 1.6.4 to v1.6.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7857)
-* [fix(deps): update dependency @livingdocs/framework from 27.3.3 to v27.3.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7856)
-* [chore(deps): update dependency chai from 4.3.10 to v4.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6465)
-* [Ensure correct order of documents on homepage dashboard](https://github.com/livingdocsIO/livingdocs-server/pull/6458)
-* [Make quick publish button more responsive in dashboard cell](https://github.com/livingdocsIO/livingdocs-editor/pull/7853)
-* [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/6457)
-* [fix(deps): update dependency date-fns from 3.0.0 to v3.0.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7851)
-* [fix(deps): update dependency date-fns from 3.0.0 to v3.0.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6456)
 * [Unify Media Library Metadata schema with Document Metadata schema](https://github.com/livingdocsIO/livingdocs-server/pull/6391)
-* [Only recompile li-angular-component on deep value changes](https://github.com/livingdocsIO/livingdocs-editor/pull/7594)
-* [fix(deps): update dependency date-fns from 2.30.0 to v3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7793)
-* [fix(deps): update dependency date-fns from 2.30.0 to v3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6413)
-* [Add metadataProperty.config.label fallback for tasks](https://github.com/livingdocsIO/livingdocs-editor/pull/7845)
-* [Fix text in task notification emails](https://github.com/livingdocsIO/livingdocs-server/pull/6427)
-* [Improve ticker lock handling](https://github.com/livingdocsIO/livingdocs-editor/pull/7775)
-* [fix(deps): update dependency c8 from 8.0.1 to v9 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6450)
-* [fix(deps): update dependency axios from 1.6.3 to v1.6.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6448)
-* [fix(deps): update dependency axios from 1.6.3 to v1.6.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7842)
-* [Fix side panel media sources](https://github.com/livingdocsIO/livingdocs-editor/pull/7840)
-* [fix(deps): update dependency pino-http from 8.6.1 to v9 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6438)
-* [fix(deps): update dependency @smithy/node-http-handler from 2.2.1 to v2.2.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6446)
-* [fix(deps): update dependency nodemailer from 6.9.7 to v6.9.8 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6442)
-* [fix(deps): update dependency moment-timezone from 0.5.43 to v0.5.44 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7838)
-* [fix(deps): update babel from 7.23.6 to v7.23.7 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/7837)
-* [Translate "unpublished"](https://github.com/livingdocsIO/livingdocs-editor/pull/7831)
-* [fix(deps): update dependency sass from 1.69.5 to v1.69.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7834)
-* [fix(deps): update dependency @livingdocs/framework from 27.3.2 to v27.3.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6437)
-* [fix(deps): update dependency @livingdocs/framework from 27.3.2 to v27.3.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7832)
-* [fix(deps): update dependency pino-http from 8.6.0 to v8.6.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6436)
-* [Shortcuts: allow shortcut config to insert figure dash and ...](https://github.com/livingdocsIO/livingdocs-editor/pull/7823)
-* [fix(deps): update dependency moment from 2.29.4 to v2.30.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7827)
-* [fix(deps): update dependency ws from 8.15.1 to v8.16.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6433)
-* [fix(deps): update dependency axios from 1.6.2 to v1.6.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7828)
-* [fix(deps): update dependency axios from 1.6.2 to v1.6.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6434)
-* [fix(deps): update dependency pino from 8.17.1 to v8.17.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6431)
-* [fix(deps): update dependency sass-loader from 13.3.2 to v13.3.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7826)
-* [chore(deps): update dependency jose from 5.1.3 to v5.2.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7825)
-* [fix(deps): update dependency fastify from 4.25.1 to v4.25.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6428)
-* [fix(deps): update dependency openid-client from 5.6.1 to v5.6.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6426)
-* [Delivery Builds: Fix relative time label for build start](https://github.com/livingdocsIO/livingdocs-editor/pull/7821)
-* [Save ticker publication date on first attempt V3](https://github.com/livingdocsIO/livingdocs-editor/pull/7817)
-* [Reset all task properties on restart](https://github.com/livingdocsIO/livingdocs-editor/pull/7785)
-* [Allow downstream plugin in creation flow params](https://github.com/livingdocsIO/livingdocs-server/pull/6423)
-* [Hide update tasks link in publish control side panel when in read-only mode](https://github.com/livingdocsIO/livingdocs-editor/pull/7794)
-* [fix(deps): update aws-sdk from 3.474.0 to v3.478.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6412)
-* [Prefill teasers when dropped from side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/7795)
-* [Support content type level default components](https://github.com/livingdocsIO/livingdocs-editor/pull/7782)
-* [Add defaultComponents to content type schema](https://github.com/livingdocsIO/livingdocs-server/pull/6384)
-* [Normalize file upload error code](https://github.com/livingdocsIO/livingdocs-server/pull/6414)
-* [Fix inline link tool in ticker entries](https://github.com/livingdocsIO/livingdocs-editor/pull/7802)
-* [fix(deps): update dependency cloudinary from 1.41.0 to v1.41.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6411)
-* [Use extracted mime type for file uploads](https://github.com/livingdocsIO/livingdocs-server/pull/6401)
-* [Support translated labels in huGO import dialog](https://github.com/livingdocsIO/livingdocs-editor/pull/7791)
-* [fix(deps): update dependency @livingdocs/framework from 27.3.0 to v27.3.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6415)
-* [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6400)
-* [fix(deps): update dependency @elastic/elasticsearch8 from 8.10.0 to v8.11.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6393)
-* [Add message to createSchemaApi validation errors](https://github.com/livingdocsIO/livingdocs-server/pull/6407)
-* [Fix/base spacing unit](https://github.com/livingdocsIO/livingdocs-editor/pull/7784)
-* [fix(deps): update dependency sharp from 0.33.0 to v0.33.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6408)
-* [Apply user theme after login](https://github.com/livingdocsIO/livingdocs-editor/pull/7788)
-* [fix(deps): update dependency fastify from 4.25.0 to v4.25.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6402)
-* [fix(deps): update dependency fastify from 4.25.0 to v4.25.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7786)
-* [chore(deps): update dependency pino-pretty from 10.2.3 to v10.3.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6398)
-* [fix(deps): update dependency @livingdocs/framework from 27.2.5 to v27.3.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/7781)
-* [fix(deps): update aws-sdk from 3.470.0 to v3.473.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6389)
-* [fix(deps): update dependency ws from 8.15.0 to v8.15.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6388)
-
 
 
 To get an overview about new functionality, read the [Release Notes](TODO).
@@ -281,8 +54,8 @@ To learn about the necessary actions to update Livingdocs to `release-2024-03`, 
 | Name                           | Version                                                                                  |
 | ------------------------------ | ---------------------------------------------------------------------------------------- |
 | Node                           | 20                                                                                       |
-| NPM                            | 9                                                                                        |
-| Postgres                       | 15                                                                                       |
+| NPM                            | 10                                                                                        |
+| Postgres                       | 16                                                                                       |
 | Elasticsearch<br/>OpenSearch   | 8.x<br/>v2.3.0                                                                           |
 | Redis                          | 7                                                                                        |
 | Livingdocs Server Docker Image | livingdocs/server-base:20                                                                |
@@ -295,7 +68,7 @@ To learn about the necessary actions to update Livingdocs to `release-2024-03`, 
 | ------------------------------ | ---------------------------------------------------------------------------------------- |
 | Node                           | 18                                                                                       |
 | NPM                            | 9                                                                                        |
-| Postgres                       | (Deprecated Postgres v12)  12                                                            |
+| Postgres                       | 13                                                            |
 | Elasticsearch<br/>OpenSearch   | 7.x<br/>1                                                                                |
 | Redis                          | 6.2                                                                                      |
 | Livingdocs Server Docker Image | livingdocs/server-base:18.3                                                              |
@@ -311,20 +84,255 @@ It's a simple/fast migration with no expected data losses.
 
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database schema
+# migration 195-remove-filter-sets.js
+#   deletes filter_sets table, which is not used anymore
+# migration 196-document-schedule-at.js
+#   creates column schedule_at in documents table 
 livingdocs-server migrate up
 ```
 
-TODO: check migration
+{{< feature-info "Media Library" "server" >}}
+### Strict image validation :fire:
 
-[Breaking change `Custom downstream plugins param schema validation changes`](#custom-downstream-plugins-param-schema-validation-changes-fire) is related to this feature so please read it carefully.
+The metadata plugins `li-image` and `li-poster-image` now require a `mimeType` attribute.
+Image objects always have those attributes, so only tests might need an update to adapt to the new requirement.
 
-## Deprecations
+Enforce specific mimeType on `doc-image`, `doc-video`, `doc-audio`, `li-image` and `li-poster-image`.
+The mime type of `doc-image` must start with `image/`.
+The mime type of `doc-audio` must start with `audio/`.
+The mime type of `doc-video` must start with `video/`.
+
+Image directives now require an `originalUrl`, `mimeType`, `width` and `height`.
+Image objects always have those attributes, so it's most likely just your tests that need to be fixed.
+
+Long-deprecated `images`, `files` and `videos` objects in the Server config have been removed.
+They got migrated to `mediaLibrary.images`, `mediaLibrary.files` and `mediaLibrary.videos`, but backwards compatibility was in place for a long time. Please move the properties if you see errors. You can find the documentation at [Media Library DAM]({{< ref "customising/server-configuration/#media-library-dam" >}}).
+
+* [Server PR: Extend image structure](https://github.com/livingdocsIO/livingdocs-server/pull/6537)
+
+{{< feature-info "liEditor methods" "editor" >}}
+### `initializeOembedMetadataExtractor()` :fire:
+
+Support for `initializeOembedMetadataExtractor()`, previously used to initialize Oembed with custom extractors, has been removed with `release-2024-03`. If you are using the default extractor, you can safely remove the call to `initializeOembedMetadataExtractor()`. If `initializeOembedMetadataExtractor()` is used for custom extractors please contact your Livingdocs manager.
+
+* [Editor PR: Removed initializeOembedMetadataExtractor()](https://github.com/livingdocsIO/livingdocs-editor/pull/8074)
+
+{{< feature-info "DisplayFilters" "editor" >}}
+### displayFilters using `li-category` :fire:
+
+The filter `{filterName: "category"}` is no longer supported starting with `release-2024-03`. Please replace the filter `{filterName: "category"}` in the displayFilter config with filter `{metadataPropertyName: "category"}` or any other metadata property name of type li-category. This change allows you to use any handle of type `li-category` metadata.
+
+Old configuration:
+```
+displayFilters: [
+  ‘category’
+]
+```
+
+New configuration:
+```
+displayFilters: [
+  {metadataPropertyName: ‘category’}
+]
+```
+
+* [Editor PR: li-integer filter](https://github.com/livingdocsIO/livingdocs-editor/pull/6136)
+
+{{< feature-info "Styleguide" "server" >}}
+### Styleguide :fire:
+
+The Styleguide endpoint in the Server and the Editor view has been removed. If you are stil using `li-` prefixed CSS classes or Livingdocs SCSS files you should consider adapting your styles to the new CSS classes and SCSS files, as Livingdocs components might change in the future.
+
+* [Editor PR: Remove Styleguide](https://github.com/livingdocsIO/livingdocs-editor/pull/7872)
+
+{{< feature-info "Operations" "server" >}}
+### Postgres v12 support dropped :fire:
+
+Postgres v12 support has been dropped and will be end-of-life in November 2024. Please upgrade to Postgres v16.
+
+* [Server PR: Drop support Postgres v12](https://github.com/livingdocsIO/livingdocs-server/pull/6481)
+
+## Deprecations ⚠️
+
+### `isDefault` for `li-image` and `li-image-crops` ⚠️
+
+The `isDefault` property for named crops is deprecated in both `li-image` and `li-named-crops`. Downstreams should remove it from their configuration. Since the value had no effect, its removal will not impact any functionality. It will be remove in `release-2024-09`.
 
 ## APIs :gift:
 
 ## Features
 
-TODO (featureset not 100% defined yet)
+{{< feature-info "Livingdocs Feature" "server" >}}
+### Conditional Components :gift:
+
+Conditional components introduce the ability to render a component in the delivery based on `dateTime` condition. The conditions are stored with the component data and can be configured in the Livingdocs Editor.
+
+In the contentType config within the project config there is now a new option to define the component conditions you would like to enable:
+
+```js
+{
+  handle: 'regular',
+  // ...
+  components: [
+    {name: 'title'},
+    {name: 'paragraph', conditions: ['dateTime']},
+    // ...
+  ]
+}
+```
+
+Only `'dateTime'` is supported.
+
+The following Public API endpoints support conditional components:
+- `GET /api/v1/documents/:documentId/latestPublication`
+- `GET /api/v1/documents/latestPublications`
+- `GET /api/v1/documents/:documentId/latestPublication/renditions/:renditionHandles`
+- `GET /api/v1/publications/search`
+- `GET /api/v1/document-lists/:id`
+- `GET /api/beta/documents/:documentId/latestDraft`
+- `GET /api/beta/documents/:documentId/latestPublication`
+- `GET /api/beta/documents/latestPublications`
+- `POST /api/beta/composition/:documentId`
+
+All of the `GET` endpoints support `ignoreComponentConditions` and `componentConditions` query parameters. The `POST` endpoint supports `ignoreComponentConditions` and `componentConditions` in the request body.
+
+Along with the endpoints, the connected Public API methods also support `ignoreComponentConditions` and `componentConditions` arguments (existing arguments have been excluded for brevity):
+- `publicApi.getLatestPublication({ignoreComponentConditions, componentConditions})`
+- `publicApi.getLatestPublications({ignoreComponentConditions, componentConditions})`
+- `publicApi.getRenditions({ignoreComponentConditions, componentConditions})`
+- `publicApi.searchPublications({ignoreComponentConditions, componentConditions})`
+- `publicApi.getDocumentList({ignoreComponentConditions, componentConditions})`
+- `publicApi.getLatestDraftBeta({ignoreComponentConditions, componentConditions})`
+- `publicApi.getLatestDraftsBeta({ignoreComponentConditions, componentConditions})`
+
+`ignoreComponentConditions` is a boolean value which defaults to `false`. In other words, if you do not specify `ignoreComponentConditions=true` then the endpoints will only return the components in the content which pass the conditional checks.
+
+The `componentConditions` value is a JSON stringified object (or a plan object when send in the `POST` request body or provided directly to a Public API method) which contains the conditions you would like to apply. At the moment only `dateTime` is supported. An example of the query parameter would be `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`. A default of `new Date()` is used when component conditions should be applied and no `dateTime` is provided.
+
+Within the document content, the components now have a `conditions` property which sits alongside the `content` property. The `conditions` value is an object which contains a property for the supported conditions, currently only `dateTime`, and the value of the condition:
+
+```js
+{
+  "component": "title",
+  "identifier": "p:3:4.title",
+  "id": "doc-1hkpdrmnl0",
+  "content": {
+    "title": "My Document Title"
+  },
+  "conditions": {
+    "dateTime": {
+      "gte": "2024-02-11T23:00:00.000Z",
+      "lt": "2024-02-25T23:00:00.000Z"
+    }
+  }
+}
+```
+
+`gte` and `lt` properties are both optional. It is possible to set a start time (`gte`) without an end time (`lt`), and an end time without a start time. The `dateTime` property will not exist if both of the timestamps are removed.
+
+This feature is opt-in. If no component conditions are set in the document content then all components will be returned in the content.
+
+{{< feature-info "Media Library" "editor" >}}
+### Media Library validity change events :gift:
+
+
+
+{{< feature-info "Image storage" "server" >}}
+### Bucket independent image storage format :gift:
+
+That means changes of `documents.selectedImageService` are respected and image urls are changed in real time.
+
+The functionality can be enabled by setting `mediaLibrary.generateImageServiceUrlsOnRead` to `true`.
+When this is enabled, a new `key` attribute gets added on all asset objects.
+Image urls also get patched at the following locations:
+  - `doc-image`, `doc-audio`, `doc-file` directives
+  - `li-image` and `li-poster-image` metadata plugins (also on include params sub-property values)
+  - The `params` object of `doc-include` directives
+  - Any other object that has an `originalUrl` and `mimeType` attribute. If you have custom attributes using those attributes, please let us know.
+
+Watch out:
+- ⚠️ When you've configured a `storage.computeKey` function, a `storage.extractKey` config is now also required that can extract an asset `key` attribute from an url. If the functions do not result in the same key, the process does not start. 
+  Possible values are:
+  - `stripHostnamePrefix`, this removes just the hostname from the original url
+  - `stipDateStringPrefix`, this matches against our default `2024/01/01/filename.jpg` format.
+  - a function that must return a key without `/` prefix.
+    e.g. `(originalUrl) => new URL(originalUrl).pathname.replace('/', '')`
+- ⚠️ If you're still using a static elasticsearch mapping and not the `index: true` options on metadata properties, please add the `key` attribute to the image objects of your Elasticsearch mapping.
+
+{{< feature-info "Webhooks" "server" >}}
+### New webhook conditions `contentType` and `metadataPropertyName` :gift:
+
+New webhook conditions `contentType` and `metadataPropertyName` to allow for more fine-grained control when webhooks are triggered. The `contentType` condition allows you to specify which content types will trigger the webhook. The `metadataPropertyName` condition allows you to specify which metadata properties and its value the webhook should be triggered for, `conditions.metadataProperties` can be of any primitive metadata type (e.g. `li-boolean`, `li-text`, `li-integer`, `li-enum`, etc). All `document.*` [webhooks support the new conditions]({{< ref "/reference/webhooks#list-of-available-webhook-events" >}}). 
+
+```js
+{
+  name: 'document.update',
+  conditions: { // always AND combined
+    metadataProperties: [
+      {
+        name: 'thePropertyHandle',
+        value: '' // strings, numbers, and booleans are supported
+      }
+    ],
+    contentTypes: ['myArticle', 'someNewsletter']
+  }
+}
+```
+
+{{< feature-info "Named Crops" "editor" >}}
+### Named crops `isDefaultIfSet` configuration :gift:
+
+New [configuration property for named crops]({{< ref "/guides/media-library/media-library-setup#image-directives" >}}) `isDefaultIfSet` has been introduced. It specifies the default crop if the crop is set. As a result, it is rendered as the image preview in the editor. For example, an optional named crop becomes the default if it is set. It overwrites the named crop that has `isDefault: true`. 
+
+```js
+{
+  namedCrops: [
+    {name: 'desktop', isDefault: true},
+    {name: 'mobile', isOptional: true, isDefaultIfSet: true}
+  ]
+}
+```
+
+{{< feature-info "Command API" "server" >}}
+### Command API `isPublishedAndHasNoChanges` pre-condition :gift:
+
+New pre-condition `isPublishedAndHasNoChanges` was added to [Command API]({{< ref "reference/public-api/document-command-api" >}}). It checks if the document is published and has no changes. It can be passed as data payload in the `PATCH /api/v1/documents/:id/commands` endpoint. As previous pre-conditions, commands won't be executed if the pre-condition is not met and a 409 error will be returned.
+
+Example request:
+```json
+{
+  "version": 1,
+  "preConditions": [
+    // Asserts that the document is published and
+    // has no changes since last publish
+    {"type": "isPublishedAndHasNoChanges"}
+  ],
+  "commands": [
+    {
+      // update a single metadata property
+      "operation": "setMetadataProperty",
+      "propertyName": "title",
+      "value": "updated title", // send null to delete metadata property
+      "oldValue": "previous title" // optional, for conflict detection (not necessary when sending document version too)
+    },
+    {
+      // sets the content of an editable directive
+      "operation": "setEditableDirective",
+      "componentId": "doc-1a2b3c4d5",
+      "directiveName": "headline",
+      "value": "updated headline"
+    },
+    {
+      "operation": "publish"
+    }
+  ]
+}
+```
+
+{{< feature-info "Woodwing Integration" "editor" >}}
+### Allow drop from Woodwing on `li-image` metadata :gift:
+
+This improvement allows editors to drag images directly from WoodWing Assets into `li-image` metadata fields. No additional configuration is required.
 
 {{< feature-info "Project configuration" "server" >}}
 ### Allow `contentType.defaultComponents` config :gift:
@@ -353,8 +361,19 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 ### Livingdocs Server
 
-### Livingdocs Editor
+* [CVE-2024-24758](https://github.com/advisories/GHSA-3787-6prv-h9w3) patched in `undici` v5.28.3
+* [GHSA-9h6g-pr28-7cqp](https://github.com/advisories/GHSA-9h6g-pr28-7cqp) patched in `nodemailer` v6.9.9
+* [CVE-2023-26159](https://github.com/advisories/GHSA-jchw-25xp-jwwc) patched in `follow-redirects` v1.15.4
 
+### Livingdocs Editor
+* [CVE-2024-24758](https://github.com/advisories/GHSA-3787-6prv-h9w3) patched in `undici` v5.28.3
+* [CVE-2023-26159](https://github.com/advisories/GHSA-jchw-25xp-jwwc) patched in `follow-redirects` v1.15.4
+* [CVE-2023-51701](https://github.com/fastify/fastify-reply-from/security/advisories/GHSA-v2v2-hph8-q5xp) patched in `@fastify/reply-from` v9.6.0
+
+We are aware of the following vulnerabilities in the Livingdocs Editor:
+
+* [CVE-2023-44270](https://github.com/advisories/GHSA-7fh5-64p2-3v2j) vulnerability in `postcss`, it affects linters using PostCSS to parse external Cascading Style Sheets (CSS). It is not exploitable in the editor as we don't load untrusted external CSS at build time.
+* [CVE-2023-26116](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26118](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26117](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2022-25869](https://cwe.mitre.org/data/definitions/79.html), [CVE-2022-25844](https://cwe.mitre.org/data/definitions/770.html) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
 
 ## Patches
 
