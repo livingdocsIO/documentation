@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix: Media Library showing error in console](https://github.com/livingdocsIO/livingdocs-editor/pull/8129)
 * [Do not rely on order of events in webhooks tests](https://github.com/livingdocsIO/livingdocs-server/pull/6650)
 * [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/8126)
 * [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/6649)
