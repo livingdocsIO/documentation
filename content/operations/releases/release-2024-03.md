@@ -95,7 +95,7 @@ livingdocs-server migrate up
 {{< feature-info "Media Library" "server" >}}
 ### Strict image validation :fire:
 
-The metadata plugins `li-image` and `li-poster-image` now require a `mimeType` attribute.
+The metadata plugins [`li-image`]({{< ref "reference/document/metadata/plugins/li-image" >}}) and [`li-poster-image`]({{< ref "reference/document/metadata/plugins/li-poster-image" >}}) now require a `mimeType` attribute.
 Image objects always have those attributes, so only tests might need an update to adapt to the new requirement.
 
 Enforce specific mimeType on `doc-image`, `doc-video`, `doc-audio`, `li-image` and `li-poster-image`:
@@ -104,7 +104,7 @@ Enforce specific mimeType on `doc-image`, `doc-video`, `doc-audio`, `li-image` a
 * The mime type of `doc-audio` must start with `audio/`.
 * The mime type of `doc-video` must start with `video/`.
 
-Image directives now require an `originalUrl`, `mimeType`, `width` and `height`.
+[Image directives]({{< ref "reference/document/document-design/directives/image">}}) now require an `originalUrl`, `mimeType`, `width` and `height`.
 Image objects always have those attributes, so it's most likely just your tests that need to be fixed.
 
 * [Server PR: Extend image structure](https://github.com/livingdocsIO/livingdocs-server/pull/6537)
@@ -112,8 +112,9 @@ Image objects always have those attributes, so it's most likely just your tests 
 {{< feature-info "Server Config" "server" >}}
 ###  `images`, `files` and `videos` configs removed :fire:
 
-Long-deprecated `images`, `files` and `videos` objects in the Server config have been removed.
+Long-deprecated `images`, `files` and `videos` objects in the [Server config]({{< ref "customising/server-configuration">}}) have been removed.
 They got migrated to `mediaLibrary.images`, `mediaLibrary.files` and `mediaLibrary.videos`, but backwards compatibility was in place for a long time. Please move the properties if you see errors. You can find the documentation at [Media Library DAM]({{< ref "customising/server-configuration/#media-library-dam" >}}).
+
 * [Server PR: Extend image structure](https://github.com/livingdocsIO/livingdocs-server/pull/6537)
 
 {{< feature-info "liEditor Methods" "editor" >}}
@@ -126,7 +127,7 @@ Support for `initializeOembedMetadataExtractor()`, previously used to initialize
 {{< feature-info "DisplayFilters" "editor" >}}
 ### displayFilters using `li-category` :fire:
 
-The filter `{filterName: "category"}` is no longer supported starting with `release-2024-03`. Please replace the filter `{filterName: "category"}` in the displayFilter config with filter `{metadataPropertyName: "category"}` or any other metadata property name of type li-category. This change allows you to use any handle of type `li-category` metadata.
+The filter `{filterName: "category"}` is no longer supported starting with `release-2024-03`. Please replace the filter `{filterName: "category"}` in the [displayFilter config]({{< ref "customising/advanced/editor-configuration/display-filter#metadata-filters">}}) with filter `{metadataPropertyName: "category"}` or any other metadata property name of type li-category. This change allows you to use any handle of type `li-category` metadata.
 
 Old configuration:
 ```
@@ -147,7 +148,7 @@ displayFilters: [
 {{< feature-info "Styleguide" "editor" >}}
 ### Styleguide :fire:
 
-The Styleguide endpoint in the Server and the Editor view has been removed. If you are stil using `li-` prefixed CSS classes or Livingdocs SCSS files you should consider adapting your styles to the new CSS classes and SCSS files, as Livingdocs components might change in the future.
+The Styleguide endpoint in the Server and the Editor view has been removed. Previously, under `https://hostname/styleguide`. If you are stil using `li-` prefixed CSS classes or Livingdocs SCSS files you should consider adapting your styles to the new CSS classes and SCSS files, as Livingdocs components might change in the future.
 
 * [Editor PR: Remove Styleguide](https://github.com/livingdocsIO/livingdocs-editor/pull/7872)
 
@@ -214,7 +215,7 @@ Along with the endpoints, the connected Public API methods also support `ignoreC
 
 `ignoreComponentConditions` is a boolean value which defaults to `false`. In other words, if you do not specify `ignoreComponentConditions=true` then the endpoints will only return the components in the content which pass the conditional checks.
 
-The `componentConditions` value is a JSON stringified object (or a plan object when send in the `POST` request body or provided directly to a Public API method) which contains the conditions you would like to apply. At the moment only `dateTime` is supported. An example of the query parameter would be `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`. A default of `new Date()` is used when component conditions should be applied and no `dateTime` is provided.
+The `componentConditions` value is a JSON stringified object (or a plain object when send in the `POST` request body or provided directly to a Public API method) which contains the conditions you would like to apply. At the moment only `dateTime` is supported. An example of the query parameter would be `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`. A default of `new Date()` is used when component conditions should be applied and no `dateTime` is provided.
 
 Within the document content, the components now have a `conditions` property which sits alongside the `content` property. The `conditions` value is an object which contains a property for the supported conditions, currently only `dateTime`, and the value of the condition:
 
