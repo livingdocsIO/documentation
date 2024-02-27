@@ -114,6 +114,7 @@ Image objects always have those attributes, so it's most likely just your tests 
 
 Long-deprecated `images`, `files` and `videos` objects in the Server config have been removed.
 They got migrated to `mediaLibrary.images`, `mediaLibrary.files` and `mediaLibrary.videos`, but backwards compatibility was in place for a long time. Please move the properties if you see errors. You can find the documentation at [Media Library DAM]({{< ref "customising/server-configuration/#media-library-dam" >}}).
+* [Server PR: Extend image structure](https://github.com/livingdocsIO/livingdocs-server/pull/6537)
 
 {{< feature-info "liEditor Methods" "editor" >}}
 ### `initializeOembedMetadataExtractor()` :fire:
