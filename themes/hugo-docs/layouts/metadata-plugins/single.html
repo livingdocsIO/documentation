@@ -53,6 +53,10 @@
             <td>System Metadata</td>
             <td style="text-align: center;">{{ partial "check-cross" .Params.support.systemMetadata }}</td>
           </tr>
+          <tr>
+            <td>Webhook Conditions</td>
+            <td style="text-align: center;">{{ partial "check-cross" .Params.support.webhookConditions }}</td>
+          </tr>
         </table>
 
         {{ if .Params.description }}

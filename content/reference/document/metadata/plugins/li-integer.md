@@ -15,6 +15,7 @@ support:
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: true
 defaultUI: |
   * Renders a number input.
   * No UI is rendered if the `handle` is `lastProofreadRevision`.

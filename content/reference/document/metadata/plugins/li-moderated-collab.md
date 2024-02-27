@@ -15,6 +15,7 @@ support:
   searchIndexing: false
   systemMetadata: true
   planningSystem: false
+  webhookConditions: true
 description: No longer supported.
 defaultUI: None
 storageFormat: <Boolean>

@@ -20,116 +20,196 @@ webhooks: {
   active: true
   configurations: [
     {
-      // unique handle per project
+      // Unique handle per project
       handle: 'my-webhook',
-      // shown label in UI
+      // UI label
       label: 'My Webhook',
+      // UI description
       description: 'A description for future self and coworkers',
-      // called url with a POST request when a selected event happens
+      // URL to call with a POST request when one of the specified events occurs
       url: 'https://example.com/my-webhook-endpoint',
-      // sign request with HTTP header 'x-livingdocs-signature'
-      //   1) empty                                   -> no sign request
-      //   2) 'a-secret-token-to-sign-the-request'    -> sign request with token
-      //   3) {$secretRef: {name: 'webhook-local'}}   -> sign request with project secret
-      // see below a more detailled description
+      // Sign request with HTTP header 'x-livingdocs-signature'
+      //   1) undefined                               -> No signature
+      //   2) 'a-secret-token-to-sign-the-request'    -> Sign request with token
+      //   3) {$secretRef: {name: 'webhook-local'}}   -> Sign request with project secret
+      // See below: Validate Webhook Signature on your Endpoint
       secret: 'a-secret-token-to-sign-the-request',
-      // a webhook only gets called when this is set to true
+      // Enable webhook
       active: true,
-      // this webhook only gets called when this event happens
+      // The webhook is triggered only for the specified events when both
+      // the conditions and change filters are met
       events: [
-        'document.create', // {{< added-in "release-2024-01" >}}
-        'document.delete', // {{< added-in "release-2024-01" >}}
+        'document.create',
         {
-          name: 'document.publish',
-          // conditions that must be met to trigger the webhook
+          name: 'document.update',
           conditions: {
             contentTypes: [
               'regular'
-            ],
-            metadataProperties: [
-              {
-                name: 'description',
-                value: true
-              }
             ]
-          }
-        },
-        {
-          name: 'document.unpublish',
-          // conditions that must be met to trigger the webhook
-          conditions: {
-            metadataProperties: [
-              {
-                name: 'description',
-                value: 'Example Description'
-              }
-            ]
-          }
-        },
-        {
-          name: 'document.update',
+          },
           changeFilter: {
             metadataProperties: [
               'title'
             ]
           }
-        },
-        {
-          name: 'document.build',
-          conditions: {
-            // deliveries configured in the Project Config
-            deliveryHandles: [
-              'web',
-              'desktop'
-            ]
-          }
-        },
-        {
-          name: 'document.build.draft',
-          conditions: {
-            // deliveries configured in the Project Config
-            deliveryHandles: [
-              'web',
-              'desktop'
-            ]
-          }
-        },
-        'mediaLibraryEntry.create',
-        'mediaLibraryEntry.archive',
-        'mediaLibraryEntry.revoke',
-        'mediaLibraryEntry.update'
+        }
       ]
     }
   ]
 }
 ```
 
-## List of Available Webhook Events
+### Events
+
+Webhooks are triggered only when one of the specified events occurs. For each webhook, multiple events can be configured.
+
+```js
+events: [
+  'document.create',
+  {
+    name: 'document.update'
+  }
+]
+```
+
+The following events are supported:
 
 - `document.create` ({{< added-in "release-2024-01" >}})
-  - Supported conditions: `contentTypes`, `metadataProperties` ({{< added-in "release-2024-03" >}})
 - `document.delete` ({{< added-in "release-2024-01" >}})
-  - Supported conditions: `contentTypes`, `metadataProperties` ({{< added-in "release-2024-03" >}})
 - `document.publish`
-  - Supported conditions: `contentTypes`, `metadataProperties` ({{< added-in "release-2024-03" >}})
 - `document.unpublish`
-  - Supported conditions: `contentTypes`, `metadataProperties` ({{< added-in "release-2024-03" >}})
 - `document.update`
-  - Supported conditions: `contentTypes`, `metadataProperties` ({{< added-in "release-2024-03" >}})
-  - Supported change filters: `metadataProperties`
 - `document.build`
-  - Supported conditions: `contentTypes`, `deliveryHandles`, `metadataProperties` ({{< added-in "release-2024-03" >}})
 - `document.build.draft`
-  - Supported conditions: `contentTypes`, `deliveryHandles`, `metadataProperties` ({{< added-in "release-2024-03" >}})
 - `mediaLibraryEntry.create`
 - `mediaLibraryEntry.archive`
 - `mediaLibraryEntry.revoke`
 - `mediaLibraryEntry.update`
 
+### Conditions
+
+For more precise control over the triggering of webhooks, additional conditions can be defined for events. Webhooks will only be triggered if all conditions for an event are met.
+
+Three types of conditions are supported:
+
+- Content Types ({{< added-in "release-2024-03" >}})
+- Delivery Handles
+- Metadata Properties ({{< added-in "release-2024-03" >}})
+
+#### Content Types
+
+Conditions on content types enable the filtering of events from documents with a specific content type. Multiple content types can be specified, of which one must match for the webhook to be triggered.
+
+```js
+events: [
+  {
+    name: 'document.publish',
+    conditions: {
+      contentTypes: [
+        'regular'
+      ]
+    }
+  }
+]
+```
+
+Content type conditions are applicable to all document events, including:
+
+- `document.create`
+- `document.delete`
+- `document.publish`
+- `document.unpublish`
+- `document.update`
+- `document.build`
+- `document.build.draft`
+
+#### Delivery Handles
+
+Conditions on delivery handles enable the filtering of build events from documents with a specific delivery handle. Multiple delivery handles can be specified, of which one must match for the webhook to be triggered.
+
+```js
+events: [
+  {
+    name: 'document.build',
+    conditions: {
+      deliveryHandles: [
+        'web'
+      ]
+    }
+  }
+]
+```
+
+Delivery handle conditions are applicable to document build events, including:
+
+- `document.build`
+- `document.build.draft`
+
+#### Metadata Properties
+
+Conditions on metadata properties enable the filtering of events from documents with specific metadata properties. Multiple metadata properties can be specified, of which all must match for the webhook to be triggered.
+
+```js
+events: [
+  {
+    name: 'document.publish',
+    conditions: {
+      metadataProperties: [
+        {
+          name: 'description',
+          value: 'Some description'
+        }
+      ]
+    }
+  }
+]
+```
+
+Please note that metadata property conditions are supported only for metadata plugins that store primitive types (`boolean`, `number`, `string`). Consequently, conditions can be registered for the following metadata plugins:
+
+- [li-boolean]({{< ref "/reference/document/metadata/plugins/li-boolean" >}})
+- [li-color]({{< ref "/reference/document/metadata/plugins/li-color" >}})
+- [li-date]({{< ref "/reference/document/metadata/plugins/li-date" >}})
+- [li-datetime]({{< ref "/reference/document/metadata/plugins/li-datetime" >}})
+- [li-enum]({{< ref "/reference/document/metadata/plugins/li-enum" >}})
+- [li-external-id]({{< ref "/reference/document/metadata/plugins/li-external-id" >}})
+- [li-integer]({{< ref "/reference/document/metadata/plugins/li-integer" >}})
+- [li-moderated-collab]({{< ref "/reference/document/metadata/plugins/li-moderated-collab" >}})
+- [li-publish-date]({{< ref "/reference/document/metadata/plugins/li-publish-date" >}})
+- [li-text]({{< ref "/reference/document/metadata/plugins/li-text" >}})
+
+Metadata property conditions are applicable to all document events, including:
+
+- `document.create`
+- `document.delete`
+- `document.publish`
+- `document.unpublish`
+- `document.update`
+- `document.build`
+- `document.build.draft`
+
+### Change Filters
+
+Similar to conditions, change filters enable more precise control over when to trigger webhooks.
+
+However, change filters are not evaluated on the current document version but rather on the set of changes made to the document. The webhook is triggered only if at least one of the specified metadata properties has changed. Consequently, display filters are only supported for `document.update` events.
+
+```js
+events: [
+  {
+    name: 'document.update',
+    changeFilter: {
+      metadataProperties: [
+        'title'
+      ]
+    }
+  }
+]
+```
+
 ## Testing Webhooks
 
 For quickly testing Webhooks we use https://webhook.site. It gives you an URL you can use to send webhooks to and look at all the requests in a web interface.
-
 
 ## Webhook Config via Editor UI
 

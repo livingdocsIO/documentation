@@ -16,6 +16,7 @@ support:
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: true
 description: |
   A `li-enum` metadata field shows a select form based on a statically defined list. On publish the selected value gets validated against the defined static list. With that you can assure that only specific values gets published.
 

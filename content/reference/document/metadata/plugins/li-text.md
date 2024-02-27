@@ -16,6 +16,7 @@ support:
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: true
 description: |
   A simple text value store.
 
