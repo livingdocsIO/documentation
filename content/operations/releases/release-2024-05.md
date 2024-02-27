@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 29.2.2 to v29.3.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8137)
 * [fix(deps): update dependency mini-css-extract-plugin from 2.8.0 to v2.8.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8136)
 * [Fix: Media Library showing error in console](https://github.com/livingdocsIO/livingdocs-editor/pull/8129)
 * [Do not rely on order of events in webhooks tests](https://github.com/livingdocsIO/livingdocs-server/pull/6650)
