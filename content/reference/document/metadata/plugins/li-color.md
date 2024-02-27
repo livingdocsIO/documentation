@@ -16,6 +16,7 @@ support:
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: true
 description: |
   li-color will provide you with 2 settings (based on `useInputTypeColor`)
   * `useInputTypeColor: true` - color picker which stores the HEX color code

@@ -16,6 +16,7 @@ support:
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: true
 description: |
   Holds the first publication date, which is user editable.
 

@@ -16,6 +16,7 @@ support:
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: true
 defaultUI: Date input field
 storageFormat: <ISO8601 String>
 contentTypeConfig: |2

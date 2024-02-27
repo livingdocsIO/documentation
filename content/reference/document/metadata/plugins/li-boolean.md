@@ -16,6 +16,7 @@ support:
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: true
 description: |
   A simple Boolean value store, represented in the UI with a checkbox which you can toggle on/off.
 
