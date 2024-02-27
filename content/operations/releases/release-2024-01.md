@@ -342,6 +342,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.61): fix(display-filter): Reset filter if custom range is not defined properly
 - [v106.0.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.60): fix(security): Patch vulnerability `CVE-2024-24758` on `undici`
 - [v106.0.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.59): fix(properties): Don't warn about config when there is no reference
 - [v106.0.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.58): chore: Remove debug console log
