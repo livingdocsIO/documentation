@@ -383,6 +383,7 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+- [v110.1.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.7): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 
   ---
