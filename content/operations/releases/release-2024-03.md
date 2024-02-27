@@ -2,7 +2,7 @@
 type: release-notes
 title: March 2024 Release
 description: Technical Release Notes for release-2024-03
-excludeFromSearch: true
+excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2024-03/
@@ -11,21 +11,12 @@ aliases:
 
 {{< release-header
   title="March 2024 Release"
-  upcoming=true
+  upcoming=false
   legacy=false
-  current=false
-  maintained=false
+  current=true
+  maintained=true
   branchHandle="release-2024-03"
 >}}
-
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to the main branch).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
 * [Fix custom date range display filter](https://github.com/livingdocsIO/livingdocs-editor/pull/8122)
