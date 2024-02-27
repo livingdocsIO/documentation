@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix custom date range display filter](https://github.com/livingdocsIO/livingdocs-editor/pull/8122)
 * [Validate metadata property references in project config](https://github.com/livingdocsIO/livingdocs-server/pull/6623)
 * [feat(channel-configs): Add postValidate hooks](https://github.com/livingdocsIO/livingdocs-server/pull/6551)
 * [Fix media library entry state](https://github.com/livingdocsIO/livingdocs-server/pull/6570)
