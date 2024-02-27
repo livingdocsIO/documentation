@@ -88,7 +88,7 @@ It's a simple/fast migration with no expected data losses.
 # migration 195-remove-filter-sets.js
 #   deletes filter_sets table, which is not used anymore
 # migration 196-document-schedule-at.js
-#   creates column schedule_at in documents table 
+#   creates column schedule_at in documents table
 livingdocs-server migrate up
 ```
 
@@ -98,6 +98,8 @@ livingdocs-server migrate up
 The metadata plugins `li-image` and `li-poster-image` now require a `mimeType` attribute.
 Image objects always have those attributes, so only tests might need an update to adapt to the new requirement.
 
+-> links to the plugins help, because you quickly see what props are available
+
 Enforce specific mimeType on `doc-image`, `doc-video`, `doc-audio`, `li-image` and `li-poster-image`.
 The mime type of `doc-image` must start with `image/`.
 The mime type of `doc-audio` must start with `audio/`.
@@ -106,8 +108,12 @@ The mime type of `doc-video` must start with `video/`.
 Image directives now require an `originalUrl`, `mimeType`, `width` and `height`.
 Image objects always have those attributes, so it's most likely just your tests that need to be fixed.
 
+-> link to the image directive
+
 Long-deprecated `images`, `files` and `videos` objects in the Server config have been removed.
 They got migrated to `mediaLibrary.images`, `mediaLibrary.files` and `mediaLibrary.videos`, but backwards compatibility was in place for a long time. Please move the properties if you see errors. You can find the documentation at [Media Library DAM]({{< ref "customising/server-configuration/#media-library-dam" >}}).
+
+-> link to the server config
 
 * [Server PR: Extend image structure](https://github.com/livingdocsIO/livingdocs-server/pull/6537)
 
@@ -116,12 +122,16 @@ They got migrated to `mediaLibrary.images`, `mediaLibrary.files` and `mediaLibra
 
 Support for `initializeOembedMetadataExtractor()`, previously used to initialize Oembed with custom extractors, has been removed with `release-2024-03`. If you are using the default extractor, you can safely remove the call to `initializeOembedMetadataExtractor()`. If `initializeOembedMetadataExtractor()` is used for custom extractors please contact your Livingdocs manager.
 
+-> link, describe what a default extractor is
+
 * [Editor PR: Removed initializeOembedMetadataExtractor()](https://github.com/livingdocsIO/livingdocs-editor/pull/8074)
 
 {{< feature-info "DisplayFilters" "editor" >}}
 ### displayFilters using `li-category` :fire:
 
 The filter `{filterName: "category"}` is no longer supported starting with `release-2024-03`. Please replace the filter `{filterName: "category"}` in the displayFilter config with filter `{metadataPropertyName: "category"}` or any other metadata property name of type li-category. This change allows you to use any handle of type `li-category` metadata.
+
+-> a link to the filter helps to understand the context faster
 
 Old configuration:
 ```
@@ -144,12 +154,16 @@ displayFilters: [
 
 The Styleguide endpoint in the Server and the Editor view has been removed. If you are stil using `li-` prefixed CSS classes or Livingdocs SCSS files you should consider adapting your styles to the new CSS classes and SCSS files, as Livingdocs components might change in the future.
 
+-> add the relative url to the styleguide so the reader understands what is meant.
+
 * [Editor PR: Remove Styleguide](https://github.com/livingdocsIO/livingdocs-editor/pull/7872)
 
 {{< feature-info "Operations" "server" >}}
 ### Postgres v12 support dropped :fire:
 
 Postgres v12 support has been dropped and will be end-of-life in November 2024. Please upgrade to Postgres v16.
+
+-> is there some documentation of a proposal how to update (in operations)? or do you put that completely of to the customers, because they have different setups?
 
 * [Server PR: Drop support Postgres v12](https://github.com/livingdocsIO/livingdocs-server/pull/6481)
 
@@ -158,6 +172,8 @@ Postgres v12 support has been dropped and will be end-of-life in November 2024. 
 ### `isDefault` for `li-image` and `li-image-crops` ⚠️
 
 The `isDefault` property for named crops is deprecated in both `li-image` and `li-named-crops`. Downstreams should remove it from their configuration. Since the value had no effect, its removal will not impact any functionality. It will be remove in `release-2024-09`.
+
+-> link to plugins
 
 ## APIs :gift:
 
@@ -208,7 +224,7 @@ Along with the endpoints, the connected Public API methods also support `ignoreC
 
 `ignoreComponentConditions` is a boolean value which defaults to `false`. In other words, if you do not specify `ignoreComponentConditions=true` then the endpoints will only return the components in the content which pass the conditional checks.
 
-The `componentConditions` value is a JSON stringified object (or a plan object when send in the `POST` request body or provided directly to a Public API method) which contains the conditions you would like to apply. At the moment only `dateTime` is supported. An example of the query parameter would be `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`. A default of `new Date()` is used when component conditions should be applied and no `dateTime` is provided.
+The `componentConditions` value is a JSON stringified object (or a plain object when send in the `POST` request body or provided directly to a Public API method) which contains the conditions you would like to apply. At the moment only `dateTime` is supported. An example of the query parameter would be `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`. A default of `new Date()` is used when component conditions should be applied and no `dateTime` is provided.
 
 Within the document content, the components now have a `conditions` property which sits alongside the `content` property. The `conditions` value is an object which contains a property for the supported conditions, currently only `dateTime`, and the value of the condition:
 
@@ -252,7 +268,7 @@ Image urls also get patched at the following locations:
   - Any other object that has an `originalUrl` and `mimeType` attribute. If you have custom attributes using those attributes, please let us know.
 
 Watch out:
-- ⚠️ When you've configured a `storage.computeKey` function, a `storage.extractKey` config is now also required that can extract an asset `key` attribute from an url. If the functions do not result in the same key, the process does not start. 
+- ⚠️ When you've configured a `storage.computeKey` function, a `storage.extractKey` config is now also required that can extract an asset `key` attribute from an url. If the functions do not result in the same key, the process does not start.
   Possible values are:
   - `stripHostnamePrefix`, this removes just the hostname from the original url
   - `stipDateStringPrefix`, this matches against our default `2024/01/01/filename.jpg` format.
@@ -263,7 +279,7 @@ Watch out:
 {{< feature-info "Webhooks" "server" >}}
 ### New webhook conditions `contentType` and `metadataPropertyName` :gift:
 
-New webhook conditions `contentType` and `metadataPropertyName` to allow for more fine-grained control when webhooks are triggered. The `contentType` condition allows you to specify which content types will trigger the webhook. The `metadataPropertyName` condition allows you to specify which metadata properties and its value the webhook should be triggered for, `conditions.metadataProperties` can be of any primitive metadata type (e.g. `li-boolean`, `li-text`, `li-integer`, `li-enum`, etc). All `document.*` [webhooks support the new conditions]({{< ref "/reference/webhooks#list-of-available-webhook-events" >}}). 
+New webhook conditions `contentType` and `metadataPropertyName` to allow for more fine-grained control when webhooks are triggered. The `contentType` condition allows you to specify which content types will trigger the webhook. The `metadataPropertyName` condition allows you to specify which metadata properties and its value the webhook should be triggered for, `conditions.metadataProperties` can be of any primitive metadata type (e.g. `li-boolean`, `li-text`, `li-integer`, `li-enum`, etc). All `document.*` [webhooks support the new conditions]({{< ref "/reference/webhooks#list-of-available-webhook-events" >}}).
 
 ```js
 {
@@ -283,7 +299,7 @@ New webhook conditions `contentType` and `metadataPropertyName` to allow for mor
 {{< feature-info "Named Crops" "editor" >}}
 ### Named crops `isDefaultIfSet` configuration :gift:
 
-New [configuration property for named crops]({{< ref "/guides/media-library/media-library-setup#image-directives" >}}) `isDefaultIfSet` has been introduced. It specifies the default crop if the crop is set. As a result, it is rendered as the image preview in the editor. For example, an optional named crop becomes the default if it is set. It overwrites the named crop that has `isDefault: true`. 
+New [configuration property for named crops]({{< ref "/guides/media-library/media-library-setup#image-directives" >}}) `isDefaultIfSet` has been introduced. It specifies the default crop if the crop is set. As a result, it is rendered as the image preview in the editor. For example, an optional named crop becomes the default if it is set. It overwrites the named crop that has `isDefault: true`.
 
 ```js
 {
