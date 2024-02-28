@@ -342,6 +342,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.64): fix(url): Allow URLs without a TLD
 - [v106.0.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.63): fix(groups): Fix li-tag usage in angular. The `text=` attribute gets bound as variable
 - [v106.0.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.62): fix(media-library): no longer show error in console
 - [v106.0.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.61): fix(display-filter): Reset filter if custom range is not defined properly
