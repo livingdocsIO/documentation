@@ -81,6 +81,7 @@ The following events are supported:
 - `document.update`
 - `document.build`
 - `document.build.draft`
+- `publication.update`
 - `mediaLibraryEntry.create`
 - `mediaLibraryEntry.archive`
 - `mediaLibraryEntry.revoke`
@@ -113,7 +114,7 @@ events: [
 ]
 ```
 
-Content type conditions are applicable to all document events, including:
+Content type conditions are applicable to all document and publication events, including:
 
 - `document.create`
 - `document.delete`
@@ -122,6 +123,7 @@ Content type conditions are applicable to all document events, including:
 - `document.update`
 - `document.build`
 - `document.build.draft`
+- `publication.update`
 
 #### Delivery Handles
 
@@ -178,7 +180,7 @@ Please note that metadata property conditions are supported only for metadata pl
 - [li-publish-date]({{< ref "/reference/document/metadata/plugins/li-publish-date" >}})
 - [li-text]({{< ref "/reference/document/metadata/plugins/li-text" >}})
 
-Metadata property conditions are applicable to all document events, including:
+Metadata property conditions are applicable to all document and publication events, including:
 
 - `document.create`
 - `document.delete`
@@ -187,6 +189,7 @@ Metadata property conditions are applicable to all document events, including:
 - `document.update`
 - `document.build`
 - `document.build.draft`
+- `publication.update`
 
 ### Change Filters
 
