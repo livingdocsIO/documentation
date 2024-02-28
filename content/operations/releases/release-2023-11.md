@@ -439,6 +439,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.82](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.82): fix(url): Allow URLs without a TLD
 - [v102.1.81](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.81): fix(display-filter): Reset filter if custom range is not defined properly
 - [v102.1.80](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.80): fix(security): Patch vulnerability `CVE-2024-24758` on `undici`
 - [v102.1.79](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.79): fix(media-library): Show better error message if a network error occurs
