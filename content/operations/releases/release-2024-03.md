@@ -165,6 +165,15 @@ Postgres v12 support has been dropped and will be end-of-life in November 2024. 
 
 The `isDefault` property for named crops is deprecated in both `li-image` and `li-named-crops`. It should be removed from the configuration. Since the value had no effect, its removal will not impact any functionality. The configuration will no longer be allowed in `release-2024-09`.
 
+{{< feature-info "Project Configuration" "server"  >}}
+### `defaultComponents` in container directives :warning:
+
+In the release notes for `release-2024-01`, we announced that the behavior for `defaultComponents` in nested containers is going to have a breaking change.
+
+*After some considerations, we decided not to introduce this breaking change.* Nested containers in document content will not inherit the configuration of parent containers. 
+
+Default components are looked up in the direct parent container. If no config for the given type was found, it looks for a config in the documents' Content Type (new in `release-2024-03`) and then in the design config. It will *not* look into the configurations of parent containers.
+
 ## APIs :gift:
 
 ## Features
