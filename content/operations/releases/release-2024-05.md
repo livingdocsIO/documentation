@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update babel from 7.23.9 to v7.24.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/8146)
 * [Media Library Scheduler Improvements](https://github.com/livingdocsIO/livingdocs-server/pull/6653)
 * [fix(deps): update dependency @livingdocs/framework from 29.3.0 to v29.3.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8145)
 * [Fall back to default project if an invalid one is requested on authentication](https://github.com/livingdocsIO/livingdocs-server/pull/6652)
