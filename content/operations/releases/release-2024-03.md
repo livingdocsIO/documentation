@@ -88,7 +88,9 @@ It's a simple/fast migration with no expected data losses.
 # migration 195-remove-filter-sets.js
 #   deletes filter_sets table, which is not used anymore
 # migration 196-document-schedule-at.js
-#   creates column schedule_at in documents table
+#   creates column schedule_at in documents table and migrates any existing schedule timestamps
+# migration 197-media-library-schedule-at.js
+#   creates column schedule_at in media_library_entries table
 livingdocs-server migrate up
 ```
 
@@ -252,7 +254,61 @@ This feature is opt-in. If no component conditions are set in the document conte
 {{< feature-info "Media Library" "server" >}}
 ### Media Library validity change events :gift:
 
+There is now a media library scheduler running in the server which will emit `mediaLibraryEntry.active` and `mediaLibraryEntry.invalid` webhook events for values defined in the existing [`li-datetime-validity`]({{< ref "/reference/document/metadata/plugins/li-datetime-validity" >}}) plugin. Schedule jobs are created based on the 'from' and 'to' dates, and once the time is reached we recompute the media library entry state. If there is a state change we emit the relevant event.
 
+In addition to this there is a new [`li-invalid`]({{< ref "/reference/document/metadata/plugins/li-invalid" >}}) metadata plugin which has a boolean state. In the UI it is displayed as a checkbox in the media library entry metadata form, and overlays will be displayed on the media when viewed in the editor to indicate an invalid state. When it is toggled the media library entry state is computed, and if there is a state change we emit the relevant event.
+
+The [`li-invalid`]({{< ref "/reference/document/metadata/plugins/li-invalid" >}}) metadata plugin can be configured in the media type config:
+```js
+{
+  type: 'mediaImage',
+  handle: 'image',
+  // ...
+  metadata: [
+    // ...
+    {
+      handle: 'invalid',
+      type: 'li-invalid',
+      ui: {
+        label: 'Invalid'
+      },
+      config: {index: true}
+    }
+  ]
+}
+```
+
+The webhook payloads will look similar to the JSON below:
+```json
+{
+  "event": "mediaLibraryEntry.active",
+  "deliveryId": "Ty7XErALFZSi1b96G76KB",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "mediaId": "PNIi08x4UdEA",
+  // Actor available for immediate li-invalid and li-datetime-validity changes,
+  // but not when triggered by li-datetime-validity events
+  "actor": {
+    "type": "user"
+  }
+}
+```
+```json
+{
+  "event": "mediaLibraryEntry.invalid",
+  "deliveryId": "ql-_3zjSdCrHesEcAERFs",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "mediaId": "PNIi08x4UdEA",
+  // Actor available for immediate li-invalid and li-datetime-validity changes,
+  // but not when triggered by li-datetime-validity events
+  "actor": {
+    "type": "user"
+  }
+}
+```
 
 {{< feature-info "Image storage" "server" >}}
 ### Bucket independent image storage format :gift:
