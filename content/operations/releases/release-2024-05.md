@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency nodemailer from 6.9.10 to v6.9.11 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6664)
 * [Media Library Scheduler Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/8140)
 * [fix(deps): update babel from 7.23.9 to v7.24.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/8146)
 * [Media Library Scheduler Improvements](https://github.com/livingdocsIO/livingdocs-server/pull/6653)
