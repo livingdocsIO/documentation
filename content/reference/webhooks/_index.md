@@ -81,11 +81,13 @@ The following events are supported:
 - `document.update`
 - `document.build`
 - `document.build.draft`
-- `publication.update`
+- `publication.update` ({{< added-in "release-2024-03" >}})
 - `mediaLibraryEntry.create`
+- `mediaLibraryEntry.update`
 - `mediaLibraryEntry.archive`
 - `mediaLibraryEntry.revoke`
-- `mediaLibraryEntry.update`
+- `mediaLibraryEntry.active` ({{< added-in "release-2024-03" >}})
+- `mediaLibraryEntry.invalid` ({{< added-in "release-2024-03" >}})
 
 ### Conditions
 
@@ -365,6 +367,24 @@ Here is an example payload sent to your url set in the Webhook configuration.
 }
 ```
 
+`publication.update`
+```json
+{
+  "event": "publication.update",
+  "deliveryId": "2um3G07jkaMVp7TudVzAY",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "documentId": 187,
+  // Actor available for visiblePublicationDate changes,
+  // but not when triggered by conditional components
+  "actor": {
+    "type": "api-client",
+    "name": "Publibot 3000"
+  }
+}
+```
+
 `mediaLibraryEntry.create`
 ```json
 {
@@ -419,6 +439,40 @@ Here is an example payload sent to your url set in the Webhook configuration.
   "projectHandle": "service",
   "webhookHandle": "handle",
   "mediaId": "PNIi08x4UdEA",
+  "actor": {
+    "type": "user"
+  }
+}
+```
+
+`mediaLibraryEntry.active`
+```json
+{
+  "event": "mediaLibraryEntry.active",
+  "deliveryId": "Ty7XErALFZSi1b96G76KB",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "mediaId": "PNIi08x4UdEA",
+  // Actor available for immediate li-invalid and li-datetime-validity changes,
+  // but not when triggered by li-datetime-validity events
+  "actor": {
+    "type": "user"
+  }
+}
+```
+
+`mediaLibraryEntry.invalid`
+```json
+{
+  "event": "mediaLibraryEntry.invalid",
+  "deliveryId": "ql-_3zjSdCrHesEcAERFs",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "mediaId": "PNIi08x4UdEA",
+  // Actor available for immediate li-invalid and li-datetime-validity changes,
+  // but not when triggered by li-datetime-validity events
   "actor": {
     "type": "user"
   }
