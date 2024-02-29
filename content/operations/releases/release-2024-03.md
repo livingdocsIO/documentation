@@ -402,6 +402,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.11): fix(deps): Upgrade to @livingdocs/framework@29.2.3
 - [v110.1.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.10): fix(url): Allow URLs without a TLD
 - [v110.1.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.9): fix: update to latest editable.js version from allowed range
 - [v110.1.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.8): fix(groups): Fix li-tag usage in angular. The `text=` attribute gets bound as variable
