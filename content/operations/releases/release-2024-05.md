@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Don't emit actor in scheduled media library li-datetime-validity events](https://github.com/livingdocsIO/livingdocs-server/pull/6671)
 * [Fix named crops for imported images that don't have an imageService configured](https://github.com/livingdocsIO/livingdocs-editor/pull/8164)
 * [Avoid falling back to default project and issuing a warning when a valid project is provided during authentication](https://github.com/livingdocsIO/livingdocs-server/pull/6666)
 * [Use same base filters for media side panel multi-source summary and media type queries](https://github.com/livingdocsIO/livingdocs-editor/pull/8156)
