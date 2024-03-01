@@ -476,6 +476,7 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.6): fix(documents): Truncate title on creation
 
 ### Livingdocs Editor Patches
+- [v100.8.105](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.105): chore(vue-components): Use correct lifecycle method in li-angular-component
 - [v100.8.104](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.104): fix(url): Allow URLs without a TLD
 - [v100.8.103](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.103): fix(security): Patch vulnerability `CVE-2024-24758` on `undici`
 - [v100.8.102](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.102): fix(document-preview): Post to wildcard if the origin uses a sandbox without `allow-same-site`. Without it postMessage doesn't work at all.
@@ -520,7 +521,7 @@ Here is a list of all patches after the release has been announced.
 - [v100.8.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.63): fix(tasks): Use correct steps within task value
 - [v100.8.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.62): fix(media-library): Don't show hidden form field on multi-asset upload
 - [v100.8.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.61): fix(comments): safeguard comment highlighting if comments disabled
-- [v100.8.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.60): fix(security): Update `get-func-name` to version `v100.8.104` to patch CVE-2023-43646
+- [v100.8.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.60): fix(security): Update `get-func-name` to version `v100.8.105` to patch CVE-2023-43646
 - [v100.8.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.59): fix(comments): create comment after visiting history
 - [v100.8.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.58): fix(lists): Only re-render document list when it changes
 - [v100.8.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v100.8.57): fix(publish control): remove content validation errors when user edits the directive
