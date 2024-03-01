@@ -403,6 +403,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.15): chore(vue-components): Use correct lifecycle method in li-angular-component
 - [v110.1.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.14): chore(multi-select): Check group existance instead of using disabled flag
 - [v110.1.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.13): fix(media-library): Indicate when li-invalid is true
 - [v110.1.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.12): fix(dashboard): Use dashboard handle as fallback in cache key
