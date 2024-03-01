@@ -344,6 +344,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.67): chore(vue-components): Use correct lifecycle method in li-angular-component
 - [v106.0.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.66): fix(dashboard): Use dashboard handle as fallback in cache key
 - [v106.0.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.65): fix(deps): Upgrade to @livingdocs/framework@27.2.12
 - [v106.0.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.64): fix(url): Allow URLs without a TLD
