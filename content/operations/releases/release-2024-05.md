@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cloudinary from 2.0.1 to v2.0.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6674)
 * [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6665)
 * [Feat: Manual Document Status](https://github.com/livingdocsIO/livingdocs-editor/pull/8082)
 * [fix(deps): update aws-sdk from 3.523.0 to v3.525.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6668)
