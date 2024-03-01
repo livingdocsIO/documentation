@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Emit publication.update event when a document is republished](https://github.com/livingdocsIO/livingdocs-server/pull/6658)
 * [Only include project ID if it is a number](https://github.com/livingdocsIO/livingdocs-editor/pull/8157)
 * [Don't emit actor in scheduled media library li-datetime-validity events](https://github.com/livingdocsIO/livingdocs-server/pull/6671)
 * [Fix named crops for imported images that don't have an imageService configured](https://github.com/livingdocsIO/livingdocs-editor/pull/8164)
