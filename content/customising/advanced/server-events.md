@@ -96,7 +96,8 @@ The following lists all events, before the comma, the name of the event and behi
   - document.transform, `(eventName, {documentVersion, originalContentType})`
 
 - publication
-  - publication.updated, `(eventName, {user, documentVersion})`
+  - publication.update, `(eventName, {user, documentVersion})` ({{< added-in "release-2024-03" >}})
+  - publication.updated, `(eventName, {user, documentVersion})` ({{< deprecated-in "release-2024-03" >}})
 
 - document_list
   - document_list.delete, `(eventName, {user, documentList})`
