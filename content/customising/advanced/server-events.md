@@ -94,6 +94,8 @@ The following lists all events, before the comma, the name of the event and behi
   - document.unpublish, `(eventName, {user, documentVersion})`
   - document.copy, `(eventName, {documentVersion, originalDocumentId, isTranslation})`
   - document.transform, `(eventName, {documentVersion, originalContentType})`
+  - document.build `(eventName, {user, documentVersion, reportId, deliveryHandle})`
+  - document.build.draft `(eventName, {user, documentVersion, reportId, deliveryHandle})`
 
 - publication
   - publication.update, `(eventName, {user, documentVersion})` ({{< added-in "release-2024-03" >}})
@@ -115,7 +117,9 @@ The following lists all events, before the comma, the name of the event and behi
   - mediaLibraryEntry.create, `(eventName, {userId, projectId, mediaLibraryEntry})`
   - mediaLibraryEntry.update, `(eventName, {userId, projectId, id, changes})`
   - mediaLibraryEntry.archive, `(eventName, {userId, projectId, id})`
-  - mediaLibraryEntry.revoke, `(eventName, {userId, projectId, mediaLibraryEntry})`
+  - mediaLibraryEntry.revoke, `(eventName, {userId, projectId, id, mediaLibraryEntry})`
+  - mediaLibraryEntry.active, `(eventName, {userId, projectId, id})` ({{< added-in "release-2024-03" >}})
+  - mediaLibraryEntry.invalid, `(eventName, {userId, projectId, id})` ({{< added-in "release-2024-03" >}})
 
 - project
   - project.create, `(eventName, {project})`
