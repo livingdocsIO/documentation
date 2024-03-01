@@ -397,6 +397,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.5): fix(local-authentication): Allow null for projectId
 - [v248.5.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.4): fix(deps): Upgrade to @livingdocs/framework@29.2.3
 - [v248.5.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.3): fix(local-authentication): Adjust tests to new schema
 - [v248.5.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.2): fix(webhooks): Do not rely on order of events in tests
