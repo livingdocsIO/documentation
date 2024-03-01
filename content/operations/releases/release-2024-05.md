@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Emit debounced date when li-date-input is destroyed](https://github.com/livingdocsIO/livingdocs-editor/pull/8153)
 * [Do not throw errors when rendering list dashboards when multi-select is disabled](https://github.com/livingdocsIO/livingdocs-editor/pull/8155)
 * [fix(deps): update dependency express from 4.18.2 to v4.18.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6667)
 * [fix(deps): update dependency nodemailer from 6.9.10 to v6.9.11 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6664)
