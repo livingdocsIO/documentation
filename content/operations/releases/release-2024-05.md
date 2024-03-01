@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Avoid falling back to default project and issuing a warning when a valid project is provided during authentication](https://github.com/livingdocsIO/livingdocs-server/pull/6666)
 * [Use same base filters for media side panel multi-source summary and media type queries](https://github.com/livingdocsIO/livingdocs-editor/pull/8156)
 * [Emit debounced date when li-date-input is destroyed](https://github.com/livingdocsIO/livingdocs-editor/pull/8153)
 * [Do not throw errors when rendering list dashboards when multi-select is disabled](https://github.com/livingdocsIO/livingdocs-editor/pull/8155)
