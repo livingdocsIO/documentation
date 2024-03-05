@@ -147,6 +147,49 @@ displayFilters: [
 
 * [Editor PR: li-integer filter](https://github.com/livingdocsIO/livingdocs-editor/pull/6136)
 
+{{< feature-info "Metadata Plugins" "server" >}}
+### Changes in metadata plugin schemas :fire:
+
+The metadata plugin schemas are more strict. The server will throw an error for `uiSchema` errors. And log a deprecation for common misusage. There have been certain cases where `ui.config.label` was defined. Please remove that, replace it with `ui.label`.
+```diff
+    {
+      handle: 'teaserImage',
+      type: 'li-image',
+      ui: {
++        label: 'Teaser Image',
+-        config: {
+-          label: 'Teaser Image',
+-        }
+      }
+    }
+```
+
+Remove the default `uiSchema` for metadata properties of the media library.
+The schema below was defined as default.
+Plugins now need to list their properties explicitly if they need any of the properties in the config.
+  
+```js
+uiSchema: ms.obj({
+  component: 'string',
+  useDefaultComponent: 'boolean',
+  service: 'string',
+  placeholder: ms.$ref('LivingdocsTranslatableString'),
+  config: ms.obj({
+    canReset: 'boolean',
+    limitTo: 'integer',
+    maxSelectable: 'integer',
+    readOnly: 'boolean',
+    rows: 'integer', // for li-text (not used anymore since release-2022-09)
+    sortable: 'boolean', // for li-document-references
+    index: 'boolean'
+  })
+})
+```
+
+Please define a `uiSchema` and `configSchema` json schema on the custom metadata plugins. A deprecation is logged if a plugin doesn't define those. Use `uiSchema: null` to not allow any config at all.
+
+* [Server PR: Integration Media Library and Document Metadata schema](https://github.com/livingdocsIO/livingdocs-server/pull/6391)
+
 {{< feature-info "Styleguide" "editor" >}}
 ### Styleguide :fire:
 
@@ -181,7 +224,7 @@ Default components are looked up in the direct parent container. If no config fo
 
 ## Features
 
-{{< feature-info "New Feature" "Server/Editor" >}}
+{{< feature-info "New Feature" "server/editor" >}}
 ### Conditional Components :gift:
 
 Conditional components introduce the ability to render a component in the delivery based on `dateTime` condition. The conditions are stored with the component data and can be configured in the Livingdocs Editor.
