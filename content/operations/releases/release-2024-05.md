@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cloudinary from 2.0.2 to v2.0.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6679)
 * [fix(deps): update dependency fastify from 4.26.1 to v4.26.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6675)
 * [fix(deps): update dependency fastify from 4.26.1 to v4.26.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8171)
 * [fix(deps): update dependency cloudinary from 2.0.1 to v2.0.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6674)
