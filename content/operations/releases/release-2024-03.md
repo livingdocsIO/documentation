@@ -453,6 +453,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.8): fix: Remove mandatory durationSeconds from video directives
 - [v248.5.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.7): Chore: Add link to publication.updated deprecation message
 - [v248.5.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.6): fix(media-library): Don't emit actor in scheduled events
 - [v248.5.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.5): fix(local-authentication): Allow null for projectId
