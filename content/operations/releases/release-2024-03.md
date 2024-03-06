@@ -170,7 +170,7 @@ The `isDefault` property for named crops is deprecated in both `li-image` and `l
 
 In the release notes for `release-2024-01`, we announced that the behavior for `defaultComponents` in nested containers is going to have a breaking change.
 
-*After some considerations, we decided not to introduce this breaking change.* Nested containers in document content will not inherit the configuration of parent containers. 
+*After some considerations, we decided not to introduce this breaking change.* Nested containers in document content will not inherit the configuration of parent containers.
 
 Default components are looked up in the direct parent container. If no config for the given type was found, it looks for a config in the documents' Content Type (new in `release-2024-03`) and then in the design config. It will *not* look into the configurations of parent containers.
 
@@ -265,6 +265,10 @@ Image urls also get patched at the following locations:
   - `li-image` and `li-poster-image` metadata plugins (also on include params sub-property values)
   - The `params` object of `doc-include` directives
   - Any other object that has an `originalUrl` and `mimeType` attribute. If you have custom attributes using those attributes, please let us know.
+
+If you want to read more on how to compute URLs in the delivery read our guide [here]({{< ref "/guides/media-library/image-services.md/#delivery" >}})
+
+content/guides/media-library/image-services.md
 
 Watch out:
 - ⚠️ When you've configured a `storage.computeKey` function, a `storage.extractKey` config is now also required that can extract an asset `key` attribute from an url. If the functions do not result in the same key, the process does not start.
