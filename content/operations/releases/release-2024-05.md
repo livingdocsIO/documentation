@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add publication.update to the webhook UI](https://github.com/livingdocsIO/livingdocs-editor/pull/8180)
 * [Revert mandatory video directive durationSeconds schema change](https://github.com/livingdocsIO/livingdocs-server/pull/6677)
 * [Set asset.duration on mediaLibrary drop objects](https://github.com/livingdocsIO/livingdocs-editor/pull/8172)
 * [fix(deps): update dependency cloudinary from 2.0.2 to v2.0.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6679)
