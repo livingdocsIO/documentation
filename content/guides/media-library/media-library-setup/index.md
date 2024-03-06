@@ -112,7 +112,9 @@ Since many image files (especially those you get from image agencies) hold metad
 You do this by adding the `exifExtraction` property to the `mediaType`. See [the list of all IPTC fields]({{< ref "/reference/project-config/media-types.md#exif-extraction" >}}) and how to configure them.
 
 The exif extraction will run when an image is imported through the [Import API]({{< ref "/customising/advanced/import-api.md" >}}) or when a user uploads an image through the UI.
-The user has the chance to manually change the extracted Metadata before the image is actually stored in the Media Library.
+The user has the chance to manually change the extracted Metadata before the image is stored in the Media Library.
+
+It's allowed to have multiple mappings for one `metadataPropertyName`, the first property with content wins.
 
 ```js
 // media-types/image.js
@@ -121,9 +123,9 @@ module.exports = {
   type: 'mediaImage',
   exifExtraction: {
     mappings: [
-      {field: 'Title', metadataPropertyName: 'title'},
-      {field: 'Description', metadataPropertyName: 'description'},
-      {field: 'Credit Line', metadataPropertyName: 'credit'}
+      {metadataPropertyName: 'title', field: 'Title'},
+      {metadataPropertyName: 'description', field: 'Description'},
+      {metadataPropertyName: 'credit', field: 'Credit Line'}
     ]
   },
 }
