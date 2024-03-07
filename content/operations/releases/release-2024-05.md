@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Always load the design of ticker entries before rendering them](https://github.com/livingdocsIO/livingdocs-editor/pull/8183)
 * [Fix detect PayloadTooLarge API errors](https://github.com/livingdocsIO/livingdocs-editor/pull/8182)
 * [fix(deps): update dependency @livingdocs/framework from 29.3.1 to v29.3.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6680)
 * [fix(deps): update dependency @livingdocs/framework from 29.3.1 to v29.3.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8184)
