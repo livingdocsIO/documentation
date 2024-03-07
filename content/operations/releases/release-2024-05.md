@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix task don't notify user if he assigned himself](https://github.com/livingdocsIO/livingdocs-server/pull/6683)
 * [fix(deps): update dependency @livingdocs/framework from 29.3.2 to v29.3.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8190)
 * [Fix/Class Names](https://github.com/livingdocsIO/livingdocs-editor/pull/8188)
 * [Always load the design of ticker entries before rendering them](https://github.com/livingdocsIO/livingdocs-editor/pull/8183)
