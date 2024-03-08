@@ -312,6 +312,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.33): fix(document-inbox): Only retrieve documentId and title fields from elasticsearch
 - [v245.0.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.32): fix(local-authentication): Allow null for projectId
 - [v245.0.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.31): fix(deps): Upgrade to @livingdocs/framework@27.2.12
 - [v245.0.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.30): fix(local-authentication): Adjust tests to new schema
