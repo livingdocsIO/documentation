@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix error when proofreading invisible components](https://github.com/livingdocsIO/livingdocs-editor/pull/8195)
 * [Conditional Component Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/8127)
 * [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6681)
 * [fix(deps): update dependency openid-client from 5.6.4 to v5.6.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6693)
