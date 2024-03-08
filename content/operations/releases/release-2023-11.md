@@ -398,6 +398,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.45): fix(media-library): Append file extension to download url
 - [v241.0.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.44): fix(document-inbox): Only retrieve documentId and title fields from elasticsearch
 - [v241.0.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.43): fix(security): Patch vulnerabilities `CVE-2024-24758` on `undici` and `GHSA-9h6g-pr28-7cqp` on `nodemailer`
 - [v241.0.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.42): fix(memory-cache): Delete channel config key from cache if value is falsy
