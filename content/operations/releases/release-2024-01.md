@@ -347,6 +347,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.73): test: Use cy.spy instead of download request interceptor
 - [v106.0.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.72): fix(proofreading): skip highlighting of invisible component elements
 - [v106.0.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.71): fix(deps): Upgrade @livingdocs/framework@release-2024-01
 - [v106.0.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.70): fix(ticker): Always load the design of ticker entries before rendering them
