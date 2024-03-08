@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency nodemailer from 6.9.11 to v6.9.12 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6704)
 * [Fix media library file download extension](https://github.com/livingdocsIO/livingdocs-editor/pull/8201)
 * [Fix media library file download extension](https://github.com/livingdocsIO/livingdocs-server/pull/6699)
 * [Fix/Table Dashboard Main Cell](https://github.com/livingdocsIO/livingdocs-editor/pull/8197)
