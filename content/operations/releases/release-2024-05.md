@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix media library file download extension](https://github.com/livingdocsIO/livingdocs-server/pull/6699)
 * [Fix/Table Dashboard Main Cell](https://github.com/livingdocsIO/livingdocs-editor/pull/8197)
 * [Fix error when proofreading invisible components](https://github.com/livingdocsIO/livingdocs-editor/pull/8195)
 * [Conditional Component Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/8127)
