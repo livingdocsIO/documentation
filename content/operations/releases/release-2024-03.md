@@ -175,7 +175,7 @@ Default components are looked up in the direct parent container. If no config fo
 {{< feature-info "New Feature" "Server/Editor" >}}
 ### Conditional Components :gift:
 
-Conditional components introduce the ability to render a component in the delivery based on `dateTime` condition. The conditions are stored with the component data and can be configured in the Livingdocs Editor.
+Conditional components introduce the ability to render a component in the delivery based on a `dateTime` condition. The conditions are stored with the component data and can be configured in the Livingdocs Editor.
 
 In the contentType config within the project config there is now a new option to define the component conditions you would like to enable:
 

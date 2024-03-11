@@ -32,6 +32,8 @@ GET api/v1/document-lists/:id
 |?reverse|boolean||Pass 'reverse=false' to get the list in the same order as you see it in the editor. (the default is reverse=true for backwards compatibility reasons)|
 |?fields|string||Filters which (comma separated) document properties are included in the response. Defaults to 'systemdata,metadata' also accepts 'content' (no renditions).|
 |?limit|integer||A limit for how much documents to resolve for the requested list. Defaults to 100. Max. 100.|
+|?ignoreComponentConditions|boolean||Provides a way to opt out of component filtering and return all content regardless of whether each component passes the conditional checks.<br>{{< added-in "release-2024-03" >}}<br>Default: `false`|
+|?componentConditions|string||JSON stringified object which contains the component conditions you would like to apply.<br>{{< added-in "release-2024-03" >}}<br>Default: `dateTime: new Date()`<br>Example: `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`|
 
 --description--
 This endpoint resolves the referenced documents in a list.<br>

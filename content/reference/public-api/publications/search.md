@@ -37,6 +37,8 @@ GET api/v1/publications/search
 |?fields|string|Comma separated list of properties to include in the response. Defaults to 'systemdata,metadata,content' (no renditions). Use 'id' if you only want to retrieve the ids of the published documents. Useful (and faster) if you are fully synchronizing your frontend with the publication events.|
 |?limit|integer|A limit for how much published documents to retrieve. Defaults to 10. Max. 100.|
 |?offset|integer|An offset into the query. Useful when getting more than 100 results (pagination)|
+|?ignoreComponentConditions|boolean|Provides a way to opt out of component filtering and return all content regardless of whether each component passes the conditional checks.<br>{{< added-in "release-2024-03" >}}<br>Default: `false`|
+|?componentConditions|string|JSON stringified object which contains the component conditions you would like to apply.<br>{{< added-in "release-2024-03" >}}<br>Default: `dateTime: new Date()`<br>Example: `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`|
 
 --description--
 

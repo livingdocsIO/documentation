@@ -32,6 +32,8 @@ GET api/beta/documents/:documentId/latestDraft
 |-|-|-|-|
 |:documentId|integer|x||
 |?renditions|string||A comma-separated list of rendition handles. Example: `?renditions=web,json`|
+|?ignoreComponentConditions|boolean||Provides a way to opt out of component filtering and return all content regardless of whether each component passes the conditional checks.<br>{{< added-in "release-2024-03" >}}<br>Default: `false`|
+|?componentConditions|string||JSON stringified object which contains the component conditions you would like to apply.<br>{{< added-in "release-2024-03" >}}<br>Default: `dateTime: new Date()`<br>Example: `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`|
 
 --description--
 This endpoint returns the most recent draft version of a document.

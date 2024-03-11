@@ -408,6 +408,49 @@ componentGroups: [
 ]
 ```
 
+### Conditional Components
+
+{{< added-in "release-2024-03" block >}}
+
+Conditional components introduce the ability to render a component in the delivery based on a `dateTime` condition. The conditions are stored with the component data and can be input in the Livingdocs Editor.
+
+To enable the UI functionality you can modify the `components` array within the content type. Where you have a component defined such as `'paragraph'` or `{name: 'paragraph'}`, you can extend the object with a `conditions` property:
+
+```js
+components: [
+  {name: 'paragraph', conditions: ['dateTime']},
+]
+```
+
+All [Public API]({{< ref "/reference/public-api" >}}) endpoints that return document content support conditional components. `GET` endpoints support `ignoreComponentConditions` and `componentConditions` query parameters. `POST` endpoints support `ignoreComponentConditions` and `componentConditions` in the request body.
+
+`ignoreComponentConditions` is a boolean value which defaults to `false`. In other words, if you do not specify `ignoreComponentConditions=true` then the endpoints will only return the components in the content which pass the conditional checks.
+
+The `componentConditions` value is a JSON stringified object (or a plain object when send in the `POST` request body or provided directly to a Public API method) which contains the conditions you would like to apply. At the moment only `dateTime` is supported. An example of the query parameter would be `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`. A default of `new Date()` is used when component conditions should be applied and no `dateTime` is provided.
+
+Within the document content, the components now have a `conditions` property which sits alongside the `content` property. The `conditions` value is an object which contains a property for the supported conditions, currently only `dateTime`, and the value of the condition:
+
+```js
+{
+  "component": "title",
+  "identifier": "p:3:4.title",
+  "id": "doc-1hkpdrmnl0",
+  "content": {
+    "title": "My Document Title"
+  },
+  "conditions": {
+    "dateTime": {
+      "gte": "2024-02-11T23:00:00.000Z",
+      "lt": "2024-02-25T23:00:00.000Z"
+    }
+  }
+}
+```
+
+`gte` and `lt` properties are both optional. It is possible to set a start time (`gte`) without an end time (`lt`), and an end time without a start time. The `dateTime` property will not exist if both of the timestamps are removed.
+
+This feature is opt-in. If no component conditions are set in the document content then all components will be returned in the content. If you disable conditions at a later date the conditions will still be respected to avoid any unwanted/unscheduled data from being returned by the API.
+
 ## Public API config
 
 The `publicationIndex` config allows you to define how documents of this content-type are indexed into the elastic search publication index which in turn is used by the public API. You can for example change the date field by which API results are sorted.

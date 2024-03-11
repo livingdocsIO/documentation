@@ -33,6 +33,8 @@ GET api/beta/documents/:documentId/latestPublication
 |:documentId|integer|x||
 |?fields|string||Filters which (comma separated) properties are included in the response. Defaults to 'systemdata,metadata,content' (no renditions).|
 |?renditions|string||A comma-separated list of rendition handles. Example: `?renditions=web,json`|
+|?ignoreComponentConditions|boolean||Provides a way to opt out of component filtering and return all content regardless of whether each component passes the conditional checks.<br>{{< added-in "release-2024-03" >}}<br>Default: `false`|
+|?componentConditions|string||JSON stringified object which contains the component conditions you would like to apply.<br>{{< added-in "release-2024-03" >}}<br>Default: `dateTime: new Date()`<br>Example: `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`|
 
 --description--
 The endpoint provides an unresolved Publication with 5 possible top-level properties:
