@@ -453,6 +453,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.11): fix(deps): update dependency exifreader from 4.21.0 to v4.21.1
 - [v248.5.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.10): fix(task): don't notify user if he assigns himself
 - [v248.5.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.9): fix(document-inbox): Only retrieve documentId and title fields from elasticsearch
 - [v248.5.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.8): fix: Remove mandatory durationSeconds from video directives
