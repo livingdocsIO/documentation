@@ -245,9 +245,11 @@ This feature is opt-in. If no component conditions are set in the document conte
 {{< feature-info "Media Library" "server" >}}
 ### Media Library validity change events :gift:
 
-There is now a media library scheduler running in the server which will emit `mediaLibraryEntry.active` and `mediaLibraryEntry.invalid` webhook events for values defined in the existing [`li-datetime-validity`]({{< ref "/reference/document/metadata/plugins/li-datetime-validity" >}}) plugin. Schedule jobs are created based on the 'from' and 'to' dates, and once the time is reached we recompute the media library entry state. If there is a state change we emit the relevant event.
+There is now a media library scheduler running in the server which will emit `mediaLibraryEntry.active` and `mediaLibraryEntry.invalid` webhook events for values defined in the existing [`li-datetime-validity`]({{< ref "/reference/document/metadata/plugins/li-datetime-validity" >}}) plugin. Schedule jobs are created based on the 'from' and 'to' dates, and once the time is reached we recompute the media library entry state.
 
-In addition to this there is a new [`li-invalid`]({{< ref "/reference/document/metadata/plugins/li-invalid" >}}) metadata plugin which has a boolean state. In the UI it is displayed as a checkbox in the media library entry metadata form, and overlays will be displayed on the media when viewed in the editor to indicate an invalid state. When it is toggled the media library entry state is computed, and if there is a state change we emit the relevant event.
+In addition to this there is a new [`li-invalid`]({{< ref "/reference/document/metadata/plugins/li-invalid" >}}) metadata plugin which has a boolean state. In the UI it is displayed as a checkbox in the media library entry metadata form, and overlays will be displayed on the media when viewed in the editor to indicate an invalid state. When it is toggled the media library entry state is computed.
+
+If there is a state change we emit the relevant event. Please be aware that we emit a create or update event along side any state change event, so if you need a generic event use `mediaLibraryEntry.create` and `mediaLibraryEntry.update`, and for specific state events use `mediaLibraryEntry.archive`, `mediaLibraryEntry.revoke`, `mediaLibraryEntry.active` and `mediaLibraryEntry.invalid`.
 
 The [`li-invalid`]({{< ref "/reference/document/metadata/plugins/li-invalid" >}}) metadata plugin can be configured in the media type config:
 ```js
