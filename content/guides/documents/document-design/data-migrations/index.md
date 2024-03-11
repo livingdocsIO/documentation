@@ -90,6 +90,73 @@ module.exports = {
 * `serializedLivingdoc` - A serialised Livingdoc data model (JSON)
 * `metadata` - The metadata object
 
+#### Testing a migration
+
+Since migrations might be complex and could result in destructive changes, it is
+important to test them thoroughly. The best way to verify a migration works as expected is to write some tests for it.
+They should cover the structural differences between the old and the new content.
+Here is an example how such a test could look like:
+
+```js
+const assert = require("assert");
+
+const image = {
+  url: "...",
+  mediaId: "w0tuYoDXwhly",
+  width: 1054,
+  height: 1180,
+  mimeType: "image/png",
+  altText: "Tiger description",
+};
+
+// Here is the content you expect after the migration
+const goodContent = [
+  {
+    component: "my-image",
+    identifier: "p:1:1.my-image",
+    id: "doc-1hbdelpdn1",
+    content: { image, caption: "A climber climbs" },
+  },
+];
+
+// Here is the content you have before the migration
+const badContent = [
+  {
+    component: "my-image",
+    identifier: "p:1:1.my-image",
+    id: "doc-1hbdelpdn1",
+    content: { image, title: "Climbing", caption: "A climber climbs" },
+  },
+];
+
+const migration = require("./018_remove_gallery_title.js");
+
+const prune = (val) => JSON.parse(JSON.stringify(val));
+
+const returnValue = prune(
+  migration.migrateAsync({
+    systemdata: {
+      contentType: "gallery",
+    },
+    serializedLivingdoc: {
+      content: [
+        {
+          containers: {
+            header: {},
+            main: badContent,
+          },
+        },
+      ],
+    },
+  })
+);
+
+const result = returnValue.serializedLivingdoc.content[0].containers.main;
+
+result.forEach((component, index) => {
+  assert.deepEqual(component, goodContent[index]);
+});
+```
 
 ## Execute a Migration
 
