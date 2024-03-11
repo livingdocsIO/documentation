@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Remove schedule from archived documents](https://github.com/livingdocsIO/livingdocs-server/pull/6703)
 * [Fix/Meta Integer on Table Dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/8209)
 * [fix(deps): update dependency open from 10.0.4 to v10.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8205)
 * [Some UI label improvements for 2024-03](https://github.com/livingdocsIO/livingdocs-editor/pull/8207)
