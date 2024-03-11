@@ -39,6 +39,8 @@ POST api/beta/composition/:documentId
 |metadata.preload|object|You can pass metadata properties which should be resolved.<br>This only works for properties of type 'li-document-reference', 'li-document-references', 'li-list-reference' and 'li-tree'<br>Example: `{metadata: {preload: {myProp: true}}}`|
 |resolveIncludes|boolean|Resolve includes. If `true` then 'includes' will be populated and includes will be resolved in the rendered `html`|
 |renderOptions.renderDirectiveInfo|boolean|Add attributes with the directive name to directive elements.|
+|ignoreComponentConditions|boolean|Provides a way to opt out of component filtering and return all content regardless of whether each component passes the conditional checks.<br>{{< added-in "release-2024-03" >}}<br>Default: `false`|
+|componentConditions|string|JSON stringified object which contains the component conditions you would like to apply.<br>{{< added-in "release-2024-03" >}}<br>Default: `dateTime: new Date()`<br>Example: `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`|
 
 --description--
 
