@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency open from 10.0.4 to v10.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8205)
 * [Some UI label improvements for 2024-03](https://github.com/livingdocsIO/livingdocs-editor/pull/8207)
 * [fix(deps): update dependency exifreader from 4.21.0 to v4.21.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6705)
 * [fix(deps): update dependency nodemailer from 6.9.11 to v6.9.12 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6704)
