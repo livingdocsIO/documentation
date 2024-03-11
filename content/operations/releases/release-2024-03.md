@@ -466,6 +466,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.24): fix(conditional components): improve UI labels
 - [v110.1.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.23): fix(media-library): Append file extension to download url
 - [v110.1.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.22): fix(proofreading): skip highlighting of invisible component elements
 - [v110.1.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.21): fix(deps): Upgrade @livingdocs/framework@release-2024-03
