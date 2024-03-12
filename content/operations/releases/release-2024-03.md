@@ -456,9 +456,7 @@ contentTypes: [
     defaultComponents: {
       paragraph: 'p',
       image: 'img',
-      video: 'video',
-      audio: 'audio',
-      html: 'html'
+      video: 'video'
     }
   }
 ]
