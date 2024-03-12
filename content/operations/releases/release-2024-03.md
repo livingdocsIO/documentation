@@ -283,7 +283,22 @@ Within the document content, the components now have a `conditions` property whi
 
 `gte` and `lt` properties are both optional. It is possible to set a start time (`gte`) without an end time (`lt`), and an end time without a start time. The `dateTime` property will not exist if both of the timestamps are removed.
 
-This feature is opt-in. If no component conditions are set in the document content then all components will be returned in the content.
+Component conditions are only active when the document revision is published. Before publishing, the conditions considered to be part of the draft and will have no effect. When a component condition time passes the background scheduler will trigger a `publication.update` server event and process any configured webhooks, then schedule a future event if one exists.
+
+Below is an example of the `publication.update` webhook payload. The `actor` property is not available for events triggered by conditional components.
+
+```json
+{
+  "event": "publication.update",
+  "deliveryId": "2um3G07jkaMVp7TudVzAY",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "documentId": 187,
+}
+```
+
+This feature is opt-in. If no component conditions are set in the document content then all components will be returned in the content. If you disable conditions at a later date the conditions will still be respected to avoid any unwanted/unscheduled data from being returned by the API.
 
 {{< feature-info "Media Library" "server" >}}
 ### Media Library validity change events :gift:
