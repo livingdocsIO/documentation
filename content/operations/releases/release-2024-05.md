@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix/App Max Width Borders](https://github.com/livingdocsIO/livingdocs-editor/pull/8217)
 * [fix(deps): update dependency date-fns from 3.3.1 to v3.4.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8211)
 * [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/6710)
 * [Remove schedule from archived documents](https://github.com/livingdocsIO/livingdocs-server/pull/6703)
