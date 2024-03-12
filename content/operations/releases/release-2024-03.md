@@ -503,6 +503,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.26): fix(app max width): Borders
 - [v110.1.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.25): fix: ensure same mediaId and recreate crops after image was replaced
 - [v110.1.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.24): fix(conditional components): improve UI labels
 - [v110.1.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.23): fix(media-library): Append file extension to download url
