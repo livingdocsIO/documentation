@@ -26,7 +26,7 @@ aliases:
 * [Unify Media Library Metadata schema with Document Metadata schema](https://github.com/livingdocsIO/livingdocs-server/pull/6391)
 
 
-To get an overview about new functionality, read the [Release Notes](TODO).
+To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-march-2024).
 To learn about the necessary actions to update Livingdocs to `release-2024-03`, read on.
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -35,8 +35,8 @@ To learn about the necessary actions to update Livingdocs to `release-2024-03`, 
 
 * [Feature Webinar Recording](https://us02web.zoom.us/rec/share/J2j5GMMBacMVr7GdwwCRReM2nFQDQo3C6QGlhpQak1DAY8VA_JqW8yl6Gqftrb1u.NyG_kMexZ6DMsc-S) | Passcode: G%N^41+R
 * [Feature Webinar Documentation](https://docs.google.com/presentation/d/1RpNYURKUZZ3y3squnTZ68wDFsQhV2Vd6qJjpigR68BQ/edit?usp=sharing)
-* Dev Webinar Recording: **TODO**
-* Dev Webinar Slides: **TODO**
+* [Dev Webinar Recording](https://us02web.zoom.us/rec/share/IJLeHgN2ecSYIoyJ47GaDIBgrxIID7zK7UW-MQKWl_3letN_CD5wqT_2Vx-0j0A8.UTfMHsJdfV0aIqaz) | Passcode: Nwj3z%0t
+* [Dev Webinar Slides](https://docs.google.com/presentation/d/1PUPS02t1XDlAg90VSRkPRx7mhvrU_0bzik7ymrHeUzE/edit?usp=sharing)
 * [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ## System Requirements
