@@ -4,7 +4,7 @@ weight: 3
 menus:
   customising:
     parent: Server Extensions
-    weight: 3
+    weight: 4
 ---
 
 Livingdocs provides a powerful server CLI where you can execute maintenance and administration tasks.

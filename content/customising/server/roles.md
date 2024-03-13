@@ -4,7 +4,7 @@ weight: 12
 menus:
   customising:
     parent: Server Extensions
-    weight: 12
+    weight: 7
 ---
 
 Roles provide an easy way to scale out your Livingdocs Server instances when accessing only one Postgres instance.

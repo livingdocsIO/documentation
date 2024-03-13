@@ -4,5 +4,5 @@ weight: 6
 menus:
   customising:
     parent: Server Extensions
-    weight: 6
+    weight: 3
 ---

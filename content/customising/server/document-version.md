@@ -5,7 +5,7 @@ description: Model of a document on the server.
 menus:
   customising:
     parent: Server Extensions
-    weight: 4
+    weight: 5
 ---
 
 The `documentVersion` is a core object and is returned in a lot of server API calls. It contains information about a document like content, systemdata, metadata and the latest publication.
