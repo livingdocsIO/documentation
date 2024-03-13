@@ -20,4 +20,4 @@ As a customer, you can get a token to access them and install them in your custo
 Both the core server and the editor npm package expose an API when required
 
 - [Editor core API]({{< ref "/customising/advanced/editor/editor-api" >}})
-- [Server core API]({{< ref "/customising/server/data-source-api" >}})
+- [Server core API]({{< ref "/customising/server/server-api/data-source-api" >}})

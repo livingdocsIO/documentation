@@ -728,7 +728,7 @@ homeScreen: {
 
 ### Dashboard Sources
 
-Dashboards on the home screen are eligible of using [Dashboard Sources]({{< ref "/customising/server/dashboard-source-api" >}}). This means the Table Dashboards can display documents, that are not returned by the regular document search.
+Dashboards on the home screen are eligible of using [Dashboard Sources]({{< ref "/customising/server/server-api/data-source-api" >}}). This means the Table Dashboards can display documents, that are not returned by the regular document search.
 A use case for this could be a personalized list of recommended articles that are determined by custom queries or even an external system.
 
 **Limitations**:
