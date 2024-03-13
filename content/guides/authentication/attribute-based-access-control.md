@@ -9,7 +9,7 @@ Attribute Based Access Control (ABAC) is an authorization strategy that defines 
 
 ## Alpha Stage
 
-The implementation of ABAC is in an alpha stage and will change in the future. We might introduce more policies or even skip the feature again. Currently the config is defined on a group on the project access UI. It can also be defined within the [seeding config]({{< ref "/customising/server/project-seeding-api#configuration" >}}).
+The implementation of ABAC is in an alpha stage and will change in the future. We might introduce more policies or even skip the feature again. Currently the config is defined on a group on the project access UI. It can also be defined within the [seeding config]({{< ref "/customising/server/server-api/project-seeding-api#configuration" >}}).
 
 ## Rules, actions and effects
 

@@ -233,7 +233,7 @@ References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5512)
 Please use `projects[].groups[].policies` in your seeding config, or define the policies through the UI by visiting
 Project Administration -> Groups -> [Group] -> Edit Permissions.
 
-See [Project Seeding API]({{< ref "/customising/server/project-seeding-api" >}}) documentation for further details.
+See [Project Seeding API]({{< ref "/customising/server/server-api/project-seeding-api" >}}) documentation for further details.
 
 References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5505)
 
