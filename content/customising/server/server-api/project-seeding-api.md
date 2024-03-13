@@ -1,10 +1,9 @@
 ---
 title: Project Seeding API
-weight: 2
 menus:
   customising:
-    parent: Server Extensions
-    weight: 2
+    parent: Server API
+    weight: 3
 ---
 
 The Project Seeding API provides a simple way to programmatically seed projects. A common use case might be to set up an example project.

@@ -4,7 +4,7 @@ renderTOC: false
 menus:
   customising:
     parent: Server API
-    weight: 1
+    weight: 2
 ---
 
 The DataSource API (or Data Source API) provides a simple way to fetch/transform any DataSource (e.g. a public gist or another URL) and provide the results to any server feature or use it in the editor as a data source for metadata or filters.

@@ -1,10 +1,9 @@
 ---
 title: Public API
-weight: 7
 menus:
   customising:
-    parent: Server Extensions
-    weight: 10
+    parent: Server API
+    weight: 1
 ---
 
 The server Public API offers a way to programmatically access and utilize the same functionalities available through the [HTTP Public API]({{< ref "/reference/public-api" >}}) within Livingdocs. You can find further information about the API, including its functions and arguments, by visiting the [HTTP Public API]({{< ref "/reference/public-api" >}}) reference.
