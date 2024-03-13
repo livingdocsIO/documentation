@@ -65,6 +65,109 @@ To use imgix you have to create an account and configure your server as describe
 
 You can also use other image services as described [at the end of this document](#integrate-your-own-image-service).
 
+#### Computing the image URL in the delivery
+
+March Release Image Services and how to use them in the Delivery
+
+With the new image format {{< added-in "release-2024-03" >}} we have introduced a `key` property next to the `originalUrl`. This can be used to compute the path to the file on storage.
+
+The image object will now look like this:
+
+```json
+{
+  "key": "2024/01/23/0a704a7b-18fc-4a74-a31b-9fbf0ae7beb3.jpeg",
+  "width": 2048,
+  "height": 1329,
+  "mimeType": "image/jpeg",
+  "focalPoint": {
+    "x": 600,
+    "y": 250
+  },
+  // This is the default crop for the image
+  "crop": {
+    "x": 400,
+    "y": 100,
+    "width": 1200,
+    "height": 800,
+    "name": "desktop"
+  },
+  "crops": [
+    {
+      "x": 400,
+      "y": 100,
+      "width": 1200,
+      "height": 800,
+      "name": "desktop"
+    },
+    {
+      "x": 500,
+      "y": 200,
+      "width": 600,
+      "height": 800,
+      // this comes from image directive config on a
+      // component in the project config
+      "name": "mobile"
+    }
+  ],
+  // do not use in future
+  "originalUrl": "http://yourbucket.s3.aws.com/2024/01/23/0a704a7b-18fc-4a74-a31b-9fbf0ae7beb3.jpeg",
+  // do not use in future
+  "url": "https://images.yourdomain.io/2024/01/23/0a704a7b-18fc-4a74-a31b-9fbf0ae7beb3.jpeg?w=1024&auto=format",
+  // do not use in future
+  "imageService": "imgix"
+}
+```
+
+
+Before release-2024-03 we have the url in the image which has a default crop applied. This is not useable as it is only a default crop. We then have the `srcSets` which have hard coded cropped Urls.
+
+In the long term, we want to get rid of any hard coded URls.
+
+As of the March release the delivery can use the key to calculate the path to the file on storage. This means no more hard coded URLs and you have the ability to change image services and use signed URLs.
+
+Until you can use the key you need to use the originalUrl and calculate the resizing based on the width and height in the crop objects.
+
+In our framework we have a function to get the URL from teh original URL which we provide here to help in the delivery:
+
+
+```js
+
+const md5hex = require('blueimp-md5')
+const keyRegex = /^(?:https?:\/\/[^/]+\/|\/)?\/?([^?]+)/
+
+
+function getUrl (
+  value, // original URL
+  {crop, width, originalDimensions, focalPoint},
+  {preferWebp, host: targetHost, stripPathPrefix, secureToken}
+) {
+  let key = keyRegex.exec(value)?.[1]
+  if (stripPathPrefix) key = key.replace(stripPathPrefix, '')
+
+  let query = ''
+  if (crop) query += getCropPathPart(crop)
+  if (width) query += `&w=${width}`
+  if (preferWebp) query += `&auto=format`
+
+  // add signature s=<signature> to searchParams
+  // s must be on the last position! https://github.com/imgix/imgix-blueprint#securing-urls
+  if (secureToken) {
+    query += `&s=${md5hex(`${secureToken}/${key}${query.replace('&', '?')}`)}`
+  }
+
+  return `${targetHost}/${key}${query.replace('&', '?')}`
+}
+
+
+
+
+const getCropPathPart = function (c) {
+  return `/C=W${c.width},H${c.height},X${c.x},Y${c.y}`
+}
+```
+
+We recommend having an srcSet configured in your delivery, as the srcSet in Livingdocs is in the database and exists for all images that are created when it's available - so even changing it in Livingdocs does not change the data.
+
 
 ### Render Strategies
 
@@ -186,7 +289,7 @@ documents: {
 
 #### Images in the Metadata of a Document
 
-Images in the metadata have a similar format to images in the document and 
+Images in the metadata have a similar format to images in the document and
 use the same image service.
 
 Metadata fields of type `li-image` will contain the `srcset` in a specific `crop`, but not in the root. The reason for this is that you normally want teaser images in a certain crop and it is not possible to have the metadata definition for the image without a crop definition.
