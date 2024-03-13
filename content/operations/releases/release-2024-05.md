@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Cypress test for include overrides](https://github.com/livingdocsIO/livingdocs-editor/pull/8222)
 * [fix(e2e): navigate to dashboard after document was created](https://github.com/livingdocsIO/livingdocs-editor/pull/8225)
 * [Migrate `<li-document-results />` to Vue](https://github.com/livingdocsIO/livingdocs-editor/pull/8118)
 * [fix(deps): update dependency @smithy/node-http-handler from 2.4.2 to v2.4.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6713)
