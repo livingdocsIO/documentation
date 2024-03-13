@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fast-json-stringify from 5.12.0 to v5.13.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6714)
 * [Cypress test for include overrides](https://github.com/livingdocsIO/livingdocs-editor/pull/8222)
 * [fix(e2e): navigate to dashboard after document was created](https://github.com/livingdocsIO/livingdocs-editor/pull/8225)
 * [Migrate `<li-document-results />` to Vue](https://github.com/livingdocsIO/livingdocs-editor/pull/8118)
