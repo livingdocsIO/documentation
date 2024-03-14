@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Do not allow @assignment of api client and import users](https://github.com/livingdocsIO/livingdocs-editor/pull/8235)
 * [fix(distribution planning): Highlight](https://github.com/livingdocsIO/livingdocs-editor/pull/8240)
 * [Fix article create button without permission showing multiple errors](https://github.com/livingdocsIO/livingdocs-editor/pull/8227)
 * [fix(deps): update dependency sass from 1.71.1 to v1.72.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8231)
