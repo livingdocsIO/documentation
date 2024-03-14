@@ -442,6 +442,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.88](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.88): fix(comments): Do not allow `@assignment` of api client and import users
 - [v102.1.87](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.87): fix: ensure same mediaId and recreate crops after image was replaced
 - [v102.1.86](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.86): test: Use cy.spy instead of download request interceptor
 - [v102.1.85](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.85): fix(proofreading): skip highlighting of invisible component elements
