@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6716)
 * [Do not allow @assignment of api client and import users](https://github.com/livingdocsIO/livingdocs-editor/pull/8235)
 * [fix(distribution planning): Highlight](https://github.com/livingdocsIO/livingdocs-editor/pull/8240)
 * [Fix article create button without permission showing multiple errors](https://github.com/livingdocsIO/livingdocs-editor/pull/8227)
