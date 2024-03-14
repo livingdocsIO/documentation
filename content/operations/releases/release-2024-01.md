@@ -348,6 +348,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.75): fix(page): list button only enabled with permissions
 - [v106.0.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.74): fix: ensure same mediaId and recreate crops after image was replaced
 - [v106.0.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.73): test: Use cy.spy instead of download request interceptor
 - [v106.0.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.72): fix(proofreading): skip highlighting of invisible component elements
