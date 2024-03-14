@@ -518,6 +518,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.31): refactor: remove lodash get
 - [v110.1.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.30): fix(page): list button only enabled with permissions
 - [v110.1.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.29): test(editable-teasers): cypress tests for teaser override workflow
 - [v110.1.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.28): fix(e2e): navigate to dashboard after document was created
