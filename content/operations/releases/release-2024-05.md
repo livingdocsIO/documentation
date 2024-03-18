@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency axios from 1.6.7 to v1.6.8 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6721)
 * [fix(deps): update dependency axios from 1.6.7 to v1.6.8 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8250)
 * [Remove teaser transform warning](https://github.com/livingdocsIO/livingdocs-editor/pull/8232)
 * [fix(deps): update aws-sdk (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6716)
