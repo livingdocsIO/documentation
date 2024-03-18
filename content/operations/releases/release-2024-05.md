@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency date-fns from 3.4.0 to v3.6.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8245)
 * [fix(deps): update dependency date-fns from 3.4.0 to v3.6.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6720)
 * [fix(toolbar): Lock indicator](https://github.com/livingdocsIO/livingdocs-editor/pull/8246)
 * [fix(deps): update dependency polybooljs from 1.2.0 to v1.2.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8251)
