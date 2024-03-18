@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(toolbar): Lock indicator](https://github.com/livingdocsIO/livingdocs-editor/pull/8246)
 * [fix(deps): update dependency polybooljs from 1.2.0 to v1.2.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8251)
 * [fix(deps): update dependency axios from 1.6.7 to v1.6.8 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6721)
 * [fix(deps): update dependency axios from 1.6.7 to v1.6.8 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8250)
