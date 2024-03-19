@@ -17,7 +17,7 @@ Some thoughts/inputs for a migration:
 - When the storage data type of the custom plugin and the core plugin is the same, a migration is easy, you can just update the Project Config and replace the downstream `my-custom-text` with `li-text`
 - When you have some validation in your plugin (e.g. reject on publish), you can replace that part with a [PreparePublishHook]({{< ref "/customising/server/server-hooks" >}})
 - When you copy metadata you can replace that part with a [PreparePublishHook]({{< ref "/customising/server/server-hooks" >}})
-- Use a and a plugin which supports Data Sources when you load list of items, e.g.
+- Use a plugin which supports Data Sources when you load list of items, e.g.
   - editor -> remote host
   - editor -> custom server endpoint -> remote host
 - When having different storage formats between the downstream plugin and the core plugins to be replaced, you need to write a [Data Migration]({{< ref "/guides/documents/document-design/data-migrations" >}}). Please also consider that deliveries must support both formats until the migration is done.
