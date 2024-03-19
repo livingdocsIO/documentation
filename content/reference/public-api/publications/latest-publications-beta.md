@@ -31,8 +31,6 @@ GET api/beta/documents/latestPublications
 |Name|Type|Notes|
 |-|-|-|
 |?fields|string|Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content` (no renditions).|
-|?limit|integer|A limit for how much published documents to retrieve. Defaults to 100. Max. 100.|
-|?offset|integer|An offset into the query. Useful when getting more than 100 results (pagination)|
 |?reverse|boolean|Order publications in ascending order instead of the default descending order. This is useful if you want to paginate using a time based filter.|
 |?homepage|boolean|Return only the document labeled as homepage in the current project.|
 |?contentTypes|string|Comma separated list of content types to use as filter.|
@@ -42,6 +40,8 @@ GET api/beta/documents/latestPublications
 |?publishedAt.gte|string|Filter by publish date range.<br>Supported filters: `?publishedAt.gte`, `publishedAt.gt`, `publishedAt.lte`, `publishedAt.lt`.<br><br>Example: To retrieve all publications since a specific timestamp, use `?reverse&publishedAt.gte=2021-05-01T00:00:00.000Z`|
 |?ignoreComponentConditions|boolean|Provides a way to opt out of component filtering and return all content regardless of whether each component passes the conditional checks.<br>{{< added-in "release-2024-03" >}}<br>Default: `false`|
 |?componentConditions|string|JSON stringified object which contains the component conditions you would like to apply.<br>{{< added-in "release-2024-03" >}}<br>Default: `dateTime: new Date()`<br>Example: `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`|
+|?limit|integer|A limit for how much published documents to retrieve. Defaults to 100. Max. 100.|
+|?offset|integer|An offset into the query. Useful when getting more than 100 results (pagination). Limited to 10'000 entries. Prefer range based filters like id.get or publishedAt.gte.|
 
 --description--
 
