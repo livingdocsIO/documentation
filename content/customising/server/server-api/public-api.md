@@ -120,4 +120,13 @@ The query allows the following entries:
       key: 'metadata.title', term: 'My Article'
     }
   })
+
+  // get documents by id range
+  const documentVersions = await publicApi.searchPublications({
+    projectId: 12,
+    contentTypes: ['regular'],
+    filters: {
+      key: 'documentId', range: {gt: 0, lte: 100}
+    }
+  })
 ```
