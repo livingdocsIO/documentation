@@ -36,8 +36,45 @@ const documentVersion = await publicApi.getLatestPublication({projectId: 12, doc
 ```js
 const publicApi = liServer.features.api('li-public-api')
 
-// get publications with documentId 53 or 57
-const documentVersions = await publicApi.getLatestPublications({projectId: 12, documentId: [53, 57]})
+// get publications by ids
+const documentVersions = await publicApi.getLatestPublications({
+  projectId: 12,
+  documentId: [53, 57]
+})
+```
+
+The query allows the following entries:
+- `projectId`, mandatory, the projectId (int) for which documents are searched
+- `documentId`, filter by one, multiple or documentId ranges (Supported filters: id.gte, id.gt, id.lte, id.lt)
+- `contentTypes`, array of contentType handles (string) to filter for (OR concatenated)
+- `fields`, array of fields (string) to include for results (see [Fields]({{< ref "/guides/search/publication-index#fields" >}}))
+- `includeReferences`, default: false, adds `references` to [Fields]({{< ref "/guides/search/publication-index#fields" >}})
+- `publishedAt`, filter by publish date range. (Supported filters: publishedAt.gte, publishedAt.gt, publishedAt.lte, publishedAt.lt)
+- `reverse`, order publications in ascending order instead of the default descending order. This is useful if you want to paginate using a time based filter with publishedAt.
+- `limit`, integer of how many results to get, default 10
+- `after`, offset into the filter. Useful when getting more than 100 results (pagination). Max. 10000. Prefer range based filters like documentId.get or publishedAt.gte.
+
+
+### Examples
+
+```js
+// get multiple documents by id
+const documentVersions = await publicApi.getLatestPublications({
+  projectId: 12,
+  documentId: [53, 57]
+})
+
+// get documents by id range e.g. for exports
+const documentVersions = await publicApi.getLatestPublications({
+  projectId: 12,
+  documentId: {gt: 0, lte: 100}
+})
+
+// retrieve all publications since a specific timestamp
+const documentVersions = await publicApi.getLatestPublications({
+  projectId: 12,
+  publishedAt: {gte: '2021-05-01T00:00:00.000Z'}
+})
 ```
 
 ## Search Publications
