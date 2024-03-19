@@ -86,7 +86,7 @@ The query allows the following entries:
 
 ### Server Feature
 
-To query publications you can also use the `searchPublications` method on the `li-public-api` feature. In this case you provide an object containing query parameters very similar to those listed above, but you will always need to provide a `projectId` value.
+To query publications you can also use the `searchPublications` method on the `li-public-api` feature. In this case you provide an object containing query parameters very similar to those listed above, but you will always need to provide a `projectId` value. More info can be found [here]({{< ref "/customising/server/server-api/public-api" >}})
 
 ```js
 module.exports = function (feature, server) {
@@ -97,19 +97,6 @@ module.exports = function (feature, server) {
   })
 }
 ```
-
-The query allows the following entries:
-- `projectId`, mandatory, the projectId (int) for which documents are searched
-- `searchTerm`, string used for full-text search
-- `contentTypes`, array of contentType handles (string) to filter for (OR concatenated)
-- `categories`, array of category ids (string) to filter for (OR concatenated)
-- `languages`, array of language handles (string) to filter for (OR concatenated)
-- `languageGroupId`, string of a single language group
-- `filters`, array or object (see [Filters]({{< ref "#filters" >}}))
-- `sort`, array of fields (string or object) to sort results by (see [Sort]({{< ref "#sort" >}}))
-- `fields`, array of fields (string) to include for results (see [Fields]({{< ref "#fields" >}}))
-- `limit`, integer of how many results to get, default 10
-- `offset`, integer from which position to count results, useful for pagination, default 0
 
 ### Filters:
 
