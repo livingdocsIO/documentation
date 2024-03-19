@@ -68,7 +68,7 @@ The query allows the following entries:
 - `sort`, array of fields (string or object) to sort results by (see [Sort]({{< ref "/guides/search/publication-index#sort" >}}))
 - `fields`, array of fields (string) to include for results (see [Fields]({{< ref "/guides/search/publication-index#fields" >}}))
 - `limit`, integer of how many results to get, default 10
-- `offset`, integer from which position to count results, useful for pagination, default 0
+- `offset`, integer from which position to count results, useful for pagination, default 0. Max. 10000.
 
 ### Examples
 
