@@ -518,6 +518,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.36): chore(collaboration): Simplify collaboration bar to only use one event listener
 - [v110.1.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.35): fix(toolbar): Lock indicator
 - [v110.1.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.34): fix(properties-panel): Only show transforms when there are alternatives
 - [v110.1.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.33): fix(comments): Do not allow `@assignment` of api client and import users
