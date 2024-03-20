@@ -70,9 +70,9 @@ It returns the translated content and, if there are any, an array of errors.
 
 ## Registering Translation Function
 
-To enable the functionality in Livingdocs you will need to activate multiple languages and translations. The documentation can be found [here]({{< ref "/content/reference/project-config/settings.md#languages--translations" >}})
+To enable the functionality in Livingdocs you will need to activate multiple languages and translations. The documentation can be found [here]({{< ref "/reference/project-config/settings.md#languages--translations" >}})
 
-In your Livingdocs Server instance you can subscribe to [server events]({{< ref "/content/customising/advanced/server-events.md" >}}) such as document creation. Then you can send your Livingdoc content for translation.
+In your Livingdocs Server instance you can subscribe to [server events]({{< ref "/customising/advanced/server-events.md" >}}) such as document creation. Then you can send your Livingdoc content for translation.
 
 Here we have an example function:
 
@@ -100,7 +100,7 @@ function registerTranslationHooks ({liServer, config}) {
 }
 ```
 
-And to add the translation function to the server use an [initialized hook]({{< ref "/content/customising/server/server-initalization.md" >}}):
+And to add the translation function to the server use an [initialized hook]({{< ref "/customising/server/server-initalization.md" >}}):
 
 ```js
 register: function ({liServer}) {
