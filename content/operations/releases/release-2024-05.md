@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update babel from 7.24.1 to v7.24.3 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/8266)
 * [Timeline fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/8254)
 * [Fix save conflicts](https://github.com/livingdocsIO/livingdocs-editor/pull/8257)
 * [fix(deps): update dependency @aws-sdk/client-s3 from 3.535.0 to v3.537.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6726)
