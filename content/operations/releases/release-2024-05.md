@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix save conflicts](https://github.com/livingdocsIO/livingdocs-editor/pull/8257)
 * [fix(deps): update dependency @aws-sdk/client-s3 from 3.535.0 to v3.537.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6726)
 * [chore(deps): update dependency @babel/eslint-parser from 7.23.10 to v7.24.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8263)
 * [fix(deps): update dependency @livingdocs/framework from 29.3.3 to v29.3.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6725)
