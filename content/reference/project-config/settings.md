@@ -276,7 +276,7 @@ Livingdocs allows you to define documents in multiple languages as well as integ
 
 If you activate the translation feature, then the `language` metadata plugin on a document will contain a `groupId`. You can use this in the `languageGroupId` parameter of the [Public API - Search Publications]({{< ref "/reference/public-api/publications/search" >}}) call to retrieve all translations of a document.
 
-If you want to use a computer assisted translation (CAT) tool to translate livingdocs content you can install our li2xliff library to convert documents to XLIFF for translation and list to [server events]({{< ref "/content/customising/advanced/server-events.md" >}}) to update content. You can follow our in-depth guide [here]({{< ref "/content/guides/integrations/li2xliff/index.md" >}})
+If you want to use a computer assisted translation (CAT) tool to translate livingdocs content you can install our li2xliff library to convert documents to XLIFF for translation and list to [server events]({{< ref "/customising/advanced/server-events.md" >}}) to update content. You can follow our in-depth guide [here]({{< ref "/guides/integrations/li2xliff/index.md" >}})
 
 
 ## Integrations

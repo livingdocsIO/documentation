@@ -129,7 +129,7 @@ The preferred update path would be to use `filters` from the new [Search DSL](#s
 
 ### Removal `liImageProxy` feature
 
-🔥 Features wasn't in use an didn't cover any use case. If you were still using it, you should use imgix or another Image Service provider instead. [More information]({{<ref "/content/guides/media-library/image-services.md">}}).
+🔥 Features wasn't in use an didn't cover any use case. If you were still using it, you should use imgix or another Image Service provider instead. [More information]({{< ref "/guides/media-library/image-services.md" >}}).
 
 * [Remove `liImageProxy` feature](https://github.com/livingdocsIO/livingdocs-server/pull/5772)
 
@@ -148,7 +148,7 @@ Preview API is deprecated and removed with `release-2023-09`: `previewApi.regist
 
 ### Add Api endpoint for incoming references for drafts
 
-New draft endpoint for incoming document references: `/drafts/:documentId/incomingDocumentReferences`. Needs `public-api:drafts:read privileges`. [Learn more]({{<ref "/content/reference/public-api/drafts/incoming-references.md">}})
+New draft endpoint for incoming document references: `/drafts/:documentId/incomingDocumentReferences`. Needs `public-api:drafts:read privileges`. [Learn more]({{< ref "/reference/public-api/drafts/incoming-references.md" >}})
 
 ### Public API Search Filters
 
@@ -348,7 +348,7 @@ metadata: [
 
 ### UI and label config multi-language support
 
-With this release, we introduced multi-language support for the UI and label config. Currently we support English and German as UI languages: [Learn more]({{< ref "/content/guides/editor/multi-language-ui/index.md" >}})
+With this release, we introduced multi-language support for the UI and label config. Currently we support English and German as UI languages: [Learn more]({{< ref "/guides/editor/multi-language-ui/index.md" >}})
 
 Set UI language in editor config:
 
@@ -377,7 +377,7 @@ metadata: [
 
 ### Support significantPublicationDate on document import
 
-Property `significantPublicationDate` sets a date which deliveries can display to viewers: [Learn more]({{< ref "/content/reference/public-api/imports/documents.md" >}})
+Property `significantPublicationDate` sets a date which deliveries can display to viewers: [Learn more]({{< ref "/reference/public-api/imports/documents.md" >}})
 
 When performing a `POST api/v1/import/documents` request, you can define `significantPublicationDate` within `documents.[].publishControl` object. See example below:
 

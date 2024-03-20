@@ -323,7 +323,7 @@ We removed Callback support in several server API's as we noticed many bugs orig
 
 - 🔥 remove callback support for projectApi (`server.features.api('li-projects')`) functions. Only promise based calls are supported
 
-You can find migration a migration example [here]({{< ref "/content/operations/releases/release-2021-09.md#example-how-to-migrate" >}}).
+You can find migration a migration example [here]({{< ref "/operations/releases/release-2021-09.md#example-how-to-migrate" >}}).
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4160)
 
