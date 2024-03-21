@@ -504,6 +504,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.13): fix(lists): Define limit as option on `documentListModel.getInbox()`, as it is possible to retrieve more than 1010 leading to `Too many results` error
 - [v248.5.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.12): fix(documents): Remove publish control schedules when deleting documents
 - [v248.5.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.11): fix(deps): update dependency exifreader from 4.21.0 to v4.21.1
 - [v248.5.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.10): fix(task): don't notify user if he assigns himself
