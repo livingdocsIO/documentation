@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency express from 4.18.3 to v4.19.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6731)
 * [fix(deps): update dependency nodemailer from 6.9.12 to v6.9.13 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6730)
 * [fix(deps): update babel from 7.24.1 to v7.24.3 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/8266)
 * [Timeline fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/8254)
