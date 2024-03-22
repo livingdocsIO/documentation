@@ -520,6 +520,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.39): fix(deps): update dependency @livingdocs/framework from 29.2.5 to v29.2.6
 - [v110.1.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.38): fix(tasks): the task panel is not hidden anymore for narrow screens, so we can allow the toolbar action
 - [v110.1.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.37): fix(workspace): Do not try to lock components in read-only view
 - [v110.1.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.36): chore(collaboration): Simplify collaboration bar to only use one event listener
