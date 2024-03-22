@@ -398,6 +398,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.47): fix(lists): Define limit as option on `documentListModel.getInbox()`, as it is possible to retrieve more than 1010 leading to `Too many results` error
 - [v241.0.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.46): fix(deps): update dependency exifreader from 4.15.0 to v4.21.1
 - [v241.0.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.45): fix(media-library): Append file extension to download url
 - [v241.0.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.44): fix(document-inbox): Only retrieve documentId and title fields from elasticsearch
