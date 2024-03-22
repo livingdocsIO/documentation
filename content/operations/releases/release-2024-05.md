@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sanitize-html from 2.12.1 to v2.13.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8267)
 * [Tasks: show the toolbar action also on small screens](https://github.com/livingdocsIO/livingdocs-editor/pull/8271)
 * [Define limit on `documentListModel.getInbox()`](https://github.com/livingdocsIO/livingdocs-server/pull/6729)
 * [fix(deps): update dependency express from 4.18.3 to v4.19.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6731)
