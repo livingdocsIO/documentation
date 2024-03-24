@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sharp from 0.33.2 to v0.33.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6745)
 * [Fix renaming of dashboardType variable](https://github.com/livingdocsIO/livingdocs-editor/pull/8278)
 * [fix(deps): update dependency sanitize-html from 2.12.1 to v2.13.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8267)
 * [Tasks: show the toolbar action also on small screens](https://github.com/livingdocsIO/livingdocs-editor/pull/8271)
