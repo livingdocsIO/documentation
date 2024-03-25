@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk from 3.537.0 to v3.540.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6744)
 * [improvement(meta transcoding state): Visual](https://github.com/livingdocsIO/livingdocs-editor/pull/8277)
 * [fix(deps): update dependency sharp from 0.33.2 to v0.33.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6745)
 * [Fix renaming of dashboardType variable](https://github.com/livingdocsIO/livingdocs-editor/pull/8278)
