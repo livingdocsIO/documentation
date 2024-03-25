@@ -444,6 +444,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.91](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.91): fix(deps): update dependency @livingdocs/framework from 27.1.7 to v27.1.9
 - [v102.1.90](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.90): chore(collaboration): Simplify collaboration bar to only use one event listener
 - [v102.1.89](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.89): fix(properties-panel): Only show transforms when there are alternatives
 - [v102.1.88](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.88): fix(comments): Do not allow `@assignment` of api client and import users
