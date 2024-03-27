@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @elastic/elasticsearch8 from 8.12.2 to v8.13.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6747)
 * [Add `POST /media-library/upload`, `/upload-by-url` and `/upload-by-media-source`](https://github.com/livingdocsIO/livingdocs-server/pull/6722)
 * [Fix/Small Visual Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/8290)
 * [fix(deps): update dependency express from 4.19.1 to v4.19.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6746)
