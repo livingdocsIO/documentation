@@ -504,6 +504,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.15): fix(deps): update dependency @livingdocs/framework from 29.2.6 to v29.2.7
 - [v248.5.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.14): fix(deps): update dependency @livingdocs/framework from 29.2.5 to v29.2.6
 - [v248.5.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.13): fix(lists): Define limit as option on `documentListModel.getInbox()`, as it is possible to retrieve more than 1010 leading to `Too many results` error
 - [v248.5.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.12): fix(documents): Remove publish control schedules when deleting documents
