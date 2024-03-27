@@ -19,6 +19,8 @@ support:
 description: |
   The `li-issue-management` metadata plugin can be used to manage issues (a data-record with references to pages).
 
+  For it to work properly you will also need to define a [`finiteProducts`](../../../project-config/finite-products.md) config in the projectConfiguration.
+
   {{< img src="../images/li-issue-management-overview.png" alt="Issue management overview" >}}
 
   Note: The status of pages and articles does not update automatically. Please refresh the page to get an up-to-date overview.
