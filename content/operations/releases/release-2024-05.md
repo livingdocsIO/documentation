@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Prefill existing teasers when dropped from side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/8298)
 * [Pass `claim` property in include resolve request to improve duplicate filtering](https://github.com/livingdocsIO/livingdocs-editor/pull/8265)
 * [fix(deps): update dependency @livingdocs/framework from 29.3.4 to v29.3.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8295)
 * [fix(deps): update dependency @livingdocs/framework from 29.3.4 to v29.3.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6752)
