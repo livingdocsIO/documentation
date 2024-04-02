@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use `actorId` from request token for Desk-Net updates](https://github.com/livingdocsIO/livingdocs-server/pull/6724)
 * [fix(deps): update dependency pg from 8.11.3 to v8.11.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6757)
 * [Fix/History Stats](https://github.com/livingdocsIO/livingdocs-editor/pull/8305)
 * [Prefill existing teasers when dropped from side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/8298)
