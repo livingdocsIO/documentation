@@ -11,7 +11,7 @@ support:
   creationFlow: false
   pushMessage: false
   tableDashboard: false
-  displayFilter: false
+  displayFilter: true
   searchIndexing: true
   systemMetadata: false
   planningSystem: false

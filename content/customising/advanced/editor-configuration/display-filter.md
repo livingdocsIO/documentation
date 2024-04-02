@@ -92,6 +92,7 @@ All metadata properties in your `Content Type`|`Media Type` config can be used a
   - shows a max of 1000 filter options
 - [`li-string-list`]({{< ref "/reference/document/metadata/plugins/li-string-list">}}) {{< added-in "release-2023-09" >}}
   - shows a max of 1000 filter options
+- [`li-imatrics-nlp-tags`]({{< ref "/reference/document/metadata/plugins/li-imatrics-nlp-tags">}}) {{< added-in "release-2024-05" >}}
 
 
 A Metadata field is active as soon as you have set `config: { index: true }` for a [Metadata property]({{< ref "/reference/document/metadata/#configuration" >}}) and after reindexing all documents with `npx livingdocs-server elasticsearch-index --handle=li-documents -y`.
