@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update babel from 7.24.3 to v7.24.4 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/8311)
 * [iMatrics display filter](https://github.com/livingdocsIO/livingdocs-editor/pull/8294)
 * [iMatrics display filter](https://github.com/livingdocsIO/livingdocs-server/pull/6749)
 * [Hide media library buttons when `showUi: false`](https://github.com/livingdocsIO/livingdocs-editor/pull/8306)
