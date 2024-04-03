@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Hide media library buttons when `showUi: false`](https://github.com/livingdocsIO/livingdocs-editor/pull/8306)
 * [fix(deps): update dependency pg from 8.11.4 to v8.11.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6763)
 * [fix(deps): update dependency cypress from 13.7.1 to v13.7.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8307)
 * [Use `actorId` from request token for Desk-Net updates](https://github.com/livingdocsIO/livingdocs-server/pull/6724)
