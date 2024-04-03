@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [iMatrics display filter](https://github.com/livingdocsIO/livingdocs-editor/pull/8294)
 * [iMatrics display filter](https://github.com/livingdocsIO/livingdocs-server/pull/6749)
 * [Hide media library buttons when `showUi: false`](https://github.com/livingdocsIO/livingdocs-editor/pull/8306)
 * [fix(deps): update dependency pg from 8.11.4 to v8.11.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6763)
