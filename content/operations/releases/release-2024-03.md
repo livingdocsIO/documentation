@@ -504,6 +504,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.17): fix(hugo): Return promise from async controller functions
 - [v248.5.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.16): chore(desknet): Don't deprecate integration arguments in 2024-03
 - [v248.5.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.15): fix(deps): update dependency @livingdocs/framework from 29.2.6 to v29.2.7
 - [v248.5.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.14): fix(deps): update dependency @livingdocs/framework from 29.2.5 to v29.2.6
