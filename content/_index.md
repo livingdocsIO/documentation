@@ -16,8 +16,8 @@ renderTOC: false
 
   {{< cols >}}
     {{< tip
-      title="Having a first look on edit.livingdocs.io?"
-      text="You can check out Livingdocs via our service at [edit.livingdocs.io](https://edit.livingdocs.io). This way you do not have to set up anything locally and can see quickly how our editor and our REST Api work. On the service you will be set up with a preconfigured project."
+      title="Do you want to see Livingdocs?"
+      text="[Contact us](mailto:contact@livingdocs.io) to get a demo."
     >}}
   {{< /cols >}}
 {{< /cols >}}
