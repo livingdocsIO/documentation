@@ -1,5 +1,5 @@
 ---
-title: DashboardSource API
+title: Dashboard Source API
 weight: 7
 menus:
   customising:

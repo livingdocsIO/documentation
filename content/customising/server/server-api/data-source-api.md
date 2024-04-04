@@ -1,5 +1,5 @@
 ---
-title: DataSource API
+title: Data Source API
 renderTOC: false
 menus:
   customising:
