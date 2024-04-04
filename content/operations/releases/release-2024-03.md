@@ -123,14 +123,14 @@ Support for `initializeOembedMetadataExtractor()`, previously used to initialize
 The filter `{filterName: "category"}` is no longer supported starting with `release-2024-03`. Please replace the filter `{filterName: "category"}` in the [displayFilter config]({{< ref "customising/advanced/editor-configuration/display-filter#metadata-filters">}}) with filter `{metadataPropertyName: "category"}` or any other metadata property name of type li-category. This change allows you to use any handle of type `li-category` metadata.
 
 Old configuration:
-```
+```js
 displayFilters: [
   ‘category’
 ]
 ```
 
 New configuration:
-```
+```js
 displayFilters: [
   {metadataPropertyName: ‘category’}
 ]
