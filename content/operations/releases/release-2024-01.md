@@ -312,6 +312,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.37): fix(hugo): Return promise from async controller functions
 - [v245.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.36): fix(lists): Define limit as option on `documentListModel.getInbox()`, as it is possible to retrieve more than 1010 leading to `Too many results` error
 - [v245.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.35): fix(deps): update dependency exifreader from 4.17.0 to v4.21.1
 - [v245.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.34): fix(deps): Upgrade @livingdocs/framework@release-2024-01
