@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Assistants API](https://github.com/livingdocsIO/livingdocs-server/pull/6760)
 * [Await async hugo controller functions](https://github.com/livingdocsIO/livingdocs-server/pull/6765)
 * [Planning Boards: allow search strategy config](https://github.com/livingdocsIO/livingdocs-server/pull/6767)
 * [fix(deps): update babel from 7.24.3 to v7.24.4 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/8311)
