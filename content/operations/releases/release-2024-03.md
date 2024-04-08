@@ -125,14 +125,14 @@ The filter `{filterName: "category"}` is no longer supported starting with `rele
 Old configuration:
 ```js
 displayFilters: [
-  ‘category’
+  'category'
 ]
 ```
 
 New configuration:
 ```js
 displayFilters: [
-  {metadataPropertyName: ‘category’}
+  {metadataPropertyName: 'category'}
 ]
 ```
 
