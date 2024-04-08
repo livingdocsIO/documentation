@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency jose from 5.2.3 to v5.2.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6779)
 * [K-Menu with Assistants](https://github.com/livingdocsIO/livingdocs-editor/pull/8276)
 * [Assistants API](https://github.com/livingdocsIO/livingdocs-server/pull/6760)
 * [Await async hugo controller functions](https://github.com/livingdocsIO/livingdocs-server/pull/6765)
