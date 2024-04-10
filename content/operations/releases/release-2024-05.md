@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency exifreader from 4.21.1 to v4.22.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6780)
 * [Replace iMatrics suggestion management](https://github.com/livingdocsIO/livingdocs-editor/pull/8314)
 * [Replace iMatrics suggestion management](https://github.com/livingdocsIO/livingdocs-server/pull/6774)
 * [fix(deps): update dependency @elastic/elasticsearch8 from 8.13.0 to v8.13.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6783)
