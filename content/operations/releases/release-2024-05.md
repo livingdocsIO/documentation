@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency style-loader from 3.3.4 to v4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8321)
 * [fix(deps): update dependency mocha from 10.3.0 to v10.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6748)
 * [fix(deps): update dependency sass from 1.72.0 to v1.74.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8313)
 * [fix(deps): update dependency exifreader from 4.21.1 to v4.22.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6780)
