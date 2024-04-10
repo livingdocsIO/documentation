@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency dedent from 1.5.1 to v1.5.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8326)
 * [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6766)
 * [fix(deps): update aws-sdk from 3.540.0 to v3.552.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6777)
 * [fix(deps): update dependency ajv-formats from 2.1.1 to v3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6759)
