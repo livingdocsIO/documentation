@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cloudinary from 2.0.3 to v2.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6756)
 * [fix(deps): update dependency css-loader from 6.11.0 to v7 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8315)
 * [fix(deps): update dependency style-loader from 3.3.4 to v4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8321)
 * [fix(deps): update dependency mocha from 10.3.0 to v10.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6748)
