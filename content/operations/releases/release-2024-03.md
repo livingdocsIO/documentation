@@ -504,6 +504,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.19): fix(planning-system): make `bundleContentType` optional
 - [v248.5.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.18): fix(planning boards): allow search strategy config
 - [v248.5.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.17): fix(hugo): Return promise from async controller functions
 - [v248.5.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.16): chore(desknet): Don't deprecate integration arguments in 2024-03
