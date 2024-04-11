@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Optional Bundle](https://github.com/livingdocsIO/livingdocs-server/pull/6790)
 * [Close overlays when opening side panels](https://github.com/livingdocsIO/livingdocs-editor/pull/8330)
 * [fix(deps): update dependency @livingdocs/framework from 29.3.6 to v29.3.7 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8329)
 * [fix(deps): update dependency dedent from 1.5.2 to v1.5.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6788)
