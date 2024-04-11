@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency dedent from 1.5.2 to v1.5.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8328)
 * [fix(deps): update dependency dedent from 1.5.1 to v1.5.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6786)
 * [fix(deps): update dependency dedent from 1.5.1 to v1.5.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8326)
 * [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6766)
