@@ -525,6 +525,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.47): fix(planning system): don't make the user pick the contentType if only one option
 - [v110.1.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.46): fix(planning-system): make bundles optional
 - [v110.1.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.45): fix(screen-manager): Close overlay when opening side panels
 - [v110.1.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.44): fix: hide remaining media library button when `showUi: false`
