@@ -26,8 +26,23 @@ function initializeIndex (searchJson) {
 				this.metadataWhitelist = ['position']
 
 				for (const doc of documents) {
-					byRef.set(doc.url, doc)
-					this.add(doc)
+					// Doc.body contains encoded unicode characters. Mostly for tags like <p> and <code>.
+					// The basic tokenizer does not work correctly as the end of the unicode sequence
+					// is mixed together with regular text. This is a crude workaround to clean up the body.
+					//
+					// Without this cleanup words in links (e.g. [text](url)) or inline code blocks (e.g. `text`)
+					// would not be indexed correctly.
+					const cleanBody = doc.body
+						.replaceAll(/\\u003c(\/?)(p|code)\\u003e/g, ' ')
+						.replaceAll(/\\u003c|\\u003e/g, ' ')
+
+					const cleanedDoc = {
+						...doc,
+						body: cleanBody
+					}
+
+					byRef.set(doc.url, cleanedDoc)
+					this.add(cleanedDoc)
 				}
 			})
 
