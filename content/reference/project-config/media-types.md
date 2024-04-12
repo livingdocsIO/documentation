@@ -101,6 +101,13 @@ mediaTypes: [{
       {field: 'Description', metadataPropertyName: 'caption'}
     ]
   },
+  hugoExtraction: {
+    mappings: [
+      {field: 'title', metadataPropertyName: 'title'},
+      {field: 'caption', metadataPropertyName: 'caption'},
+      {field: 'source', metadataPropertyName: 'source'}
+    ]
+  },
   mediaSources: [
     {
       handle: 'example',
@@ -166,6 +173,7 @@ mediaTypes: [{
 The metadata follows the rules that also apply to document metadata [defined on a content-type]({{< ref "content-types.md#metadata" >}}). All the same metadata plugins are available. Different from the document metadata, media metadata does not have UI support as of now.
 
 ## Exif Extraction
+
 This feature is only supported for the `mediaImage` mediaType.
 
 Whenever in image file is stored in the Media Library, we can extract the IPTC data from the image file and store it in the metadata.
@@ -245,6 +253,12 @@ Here is a complete list of fields you can use. Please consult https://www.iptc.o
 | Property Release Status                    | PropertyReleaseStatus                                        |
 | Web Statement of Rights                    | WebStatement                                                 |
 | Artwork or Object in the Image structure   | ArtworkOrObject                                              |
+
+## Hugo Extraction
+
+When you use the image Drag&Drop from [Hugo+](https://sternwald.com/hugo/) you can configure mappings from Hugo fields to metadata properties similar to the exif extraction. For this you have to set the `hugoExtraction` property.
+
+This feature is only supported for the `mediaImage` mediaType.
 
 ## Media Sources
 
