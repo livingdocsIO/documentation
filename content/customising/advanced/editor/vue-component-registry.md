@@ -98,7 +98,7 @@ A `searchFilter` registers a Vue component as Display Filter for the search UI.
 **Registration**
 ```js
 // registration in app/editor.js
-coreApi.vueComponentRegistry.registerComponent({
+liEditor.vueComponentRegistry.registerComponent({
     type: 'searchFilter',
     name: 'liDateTimeRangeDisplayFilter',
     component: require('./components/display-filter/li-date-time-range-display-filter.vue').default
@@ -126,7 +126,7 @@ A `tableDashboardCell` registers a Vue component that can be configured to be di
 **Registration**
 ```js
 // registration in app/editor.js
-coreApi.vueComponentRegistry.registerComponent({
+liEditor.vueComponentRegistry.registerComponent({
   type: 'tableDashboardCell',
   name: 'liPublishTimeTableDashboardCell',
   component: require('./components/table-dashboard-cell/li-publish-time-table-dashboard-cell.vue').default
