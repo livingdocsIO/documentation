@@ -22,7 +22,7 @@ Below is an example dashboard cell showing the date and time property for a sche
 
 Custom Table Dashboard cells are passed two props, the document and custom options.
 
-```js
+```vue
 <template>
   <div>
      {{ publishDate }} at {{ publishTime }}
@@ -46,7 +46,7 @@ export default {
   },
   data() {
     return {
-      publishDate: this.getPublishDate()
+      publishDate: this.getPublishDate(),
       publishTime: this.getPublishTime()
     }
   },
@@ -69,7 +69,7 @@ export default {
 This must be registered in the vue component registry at the editor:
 
 ```js
-coreApi.vueComponentRegistry.registerComponent({
+liEditor.vueComponentRegistry.registerComponent({
   type: 'tableDashboardCell',
   name: 'customPublishTimeCell',
   component: require('../custom-publish-time-cell.vue').default
@@ -80,39 +80,39 @@ And can be configured for use in a Table Dashboard in the Project Config editor 
 
 ```js
 columns: [
-        {
-          label: 'Article',
-          minWidth: 375,
-          growFactor: 2,
-          priority: 1,
-          componentName: 'liTableDashboardCellMain',
-          componentOptions: {
-            image: {
-              metadataPropertyName: 'teaserImage'
-            },
-            clampTitle: false,
-            showContentType: true
-          }
-        },
-        {
-          label: 'Publish Time',
-          componentName: 'customPublishTimeCell',
-          editable: true,
-          minWidth: 200,
-          growFactor: 0,
-          priority: 2,
-          componentOptions: {
-          }
-        },
-        {
-          label: 'Category',
-          metadataPropertyName: 'category',
-          editable: false,
-          minWidth: 200,
-          growFactor: 0,
-          priority: 3
-        }
-      ]
+  {
+    label: 'Article',
+    minWidth: 375,
+    growFactor: 2,
+    priority: 1,
+    componentName: 'liTableDashboardCellMain',
+    componentOptions: {
+      image: {
+        metadataPropertyName: 'teaserImage'
+      },
+      clampTitle: false,
+      showContentType: true
+    }
+  },
+  {
+    label: 'Publish Time',
+    componentName: 'customPublishTimeCell',
+    minWidth: 200,
+    growFactor: 0,
+    priority: 2,
+    componentOptions: {
+      // Custom options passed to the component
+    }
+  },
+  {
+    label: 'Category',
+    metadataPropertyName: 'category',
+    editable: false,
+    minWidth: 200,
+    growFactor: 0,
+    priority: 3
+  }
+]
   ```
 
 This dashboard is pictured above and has three columns - the document title with a teaser image, scheduled publish time and the category.
