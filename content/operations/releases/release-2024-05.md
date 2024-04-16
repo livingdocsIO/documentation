@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sass-loader from 14.1.1 to v14.2.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8338)
 * [Clear stats extraction interval during queue shutdown](https://github.com/livingdocsIO/livingdocs-server/pull/6797)
 * [Improvement/li UI Feedback Replacement](https://github.com/livingdocsIO/livingdocs-editor/pull/8323)
 * [fix(imatrics): Remove imatrics:admin scope from database](https://github.com/livingdocsIO/livingdocs-server/pull/6785)
