@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pdfjs-dist from 4.0.379 to v4.1.392 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8337)
 * [fix(deps): update aws-sdk (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6792)
 * [fix(deps): update dependency sass-loader from 14.1.1 to v14.2.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8338)
 * [Clear stats extraction interval during queue shutdown](https://github.com/livingdocsIO/livingdocs-server/pull/6797)
