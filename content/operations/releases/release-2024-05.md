@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Skip invalid liItem navigation entries](https://github.com/livingdocsIO/livingdocs-editor/pull/8342)
 * [Add info logs for Desk-Net request tracking](https://github.com/livingdocsIO/livingdocs-server/pull/6800)
 * [Add liServer.onListen hook](https://github.com/livingdocsIO/livingdocs-server/pull/6802)
 * [fix(deps): update dependency sass-loader from 14.2.0 to v14.2.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8344)
