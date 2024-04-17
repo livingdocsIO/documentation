@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency ioredis from 5.3.2 to v5.4.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6805)
 * [Skip invalid liItem navigation entries](https://github.com/livingdocsIO/livingdocs-editor/pull/8342)
 * [Add info logs for Desk-Net request tracking](https://github.com/livingdocsIO/livingdocs-server/pull/6800)
 * [Add liServer.onListen hook](https://github.com/livingdocsIO/livingdocs-server/pull/6802)
