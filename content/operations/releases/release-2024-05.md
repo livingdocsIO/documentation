@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk from 3.554.0 to v3.556.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6804)
 * [Feat: recency boost for simple search](https://github.com/livingdocsIO/livingdocs-editor/pull/8304)
 * [Feat: add id lookup and recency boost for simple search](https://github.com/livingdocsIO/livingdocs-server/pull/6755)
 * [fix(deps): update dependency ioredis from 5.3.2 to v5.4.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6805)
