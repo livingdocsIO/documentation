@@ -504,6 +504,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.23): fix(project-secrets): Fix support for AWS Aurora for Postgres v14.9
 - [v248.5.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.22): fix(deps): update dependency ioredis from 5.3.2 to v5.4.1
 - [v248.5.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.21): fix(desknet): Add info logs for request tracking
 - [v248.5.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.20): chore(cypress): Make media library id search test less strict
