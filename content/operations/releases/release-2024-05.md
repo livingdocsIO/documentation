@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Retresco display filter](https://github.com/livingdocsIO/livingdocs-server/pull/6795)
 * [Render includes in timeline view](https://github.com/livingdocsIO/livingdocs-editor/pull/8341)
 * [fix(deps): update aws-sdk from 3.554.0 to v3.556.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6804)
 * [Feat: recency boost for simple search](https://github.com/livingdocsIO/livingdocs-editor/pull/8304)
