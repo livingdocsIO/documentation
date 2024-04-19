@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix AWS Aurora for Postgres 14.9 Support](https://github.com/livingdocsIO/livingdocs-server/pull/6813)
 * [Retresco display filter](https://github.com/livingdocsIO/livingdocs-editor/pull/8343)
 * [Retresco display filter](https://github.com/livingdocsIO/livingdocs-server/pull/6795)
 * [Render includes in timeline view](https://github.com/livingdocsIO/livingdocs-editor/pull/8341)
