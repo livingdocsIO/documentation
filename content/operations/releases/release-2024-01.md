@@ -312,6 +312,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.39): fix(project-secrets): Fix support for AWS Aurora for Postgres v14.9
 - [v245.0.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.38): fix(deps): update dependency ioredis from 5.3.2 to v5.4.1
 - [v245.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.37): fix(hugo): Return promise from async controller functions
 - [v245.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.36): fix(lists): Define limit as option on `documentListModel.getInbox()`, as it is possible to retrieve more than 1010 leading to `Too many results` error
