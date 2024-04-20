@@ -352,6 +352,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.86](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.86): fix(editor): Disable proofreading for history
 - [v106.0.85](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.85): fix(ticker): Reassign shallowReactive attributes to trigger reactivity
 - [v106.0.84](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.84): fix: hide remaining media library button when `showUi: false`
 - [v106.0.83](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.83): fix(editor): Prefill existing teasers when dropped from side panel
