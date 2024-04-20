@@ -529,6 +529,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.50): chore(documents): Log document conflict errors, so we have trackjs traces
 - [v110.1.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.49): fix(ticker): Reassign shallowReactive attributes to trigger reactivity
 - [v110.1.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.48): fix(timeline): Render includes in timeline view
 - [v110.1.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.47): fix(planning system): don't make the user pick the contentType if only one option
