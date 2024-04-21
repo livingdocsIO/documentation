@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix comyan drop error notification](https://github.com/livingdocsIO/livingdocs-editor/pull/8354)
 * [Update new Media Library `addEntry` function with google vision](https://github.com/livingdocsIO/livingdocs-server/pull/6798)
 * [Fix Document Saving - Part 4](https://github.com/livingdocsIO/livingdocs-editor/pull/8346)
 * [Fix ticker reactivity by reassigning shallowReactive attributes](https://github.com/livingdocsIO/livingdocs-editor/pull/8353)
