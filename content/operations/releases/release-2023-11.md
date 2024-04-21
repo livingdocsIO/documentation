@@ -446,6 +446,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.95](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.95): fix(editor): Disable proofreading for history
 - [v102.1.94](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.94): fix(ticker): Reassign shallowReactive attributes to trigger reactivity
 - [v102.1.93](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.93): fix: hide remaining media library button when `showUi: false`
 - [v102.1.92](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.92): fix: Blur components when exiting the edit mode
