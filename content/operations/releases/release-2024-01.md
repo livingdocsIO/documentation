@@ -312,6 +312,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.40): fix(planning boards): allow search strategy config
 - [v245.0.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.39): fix(project-secrets): Fix support for AWS Aurora for Postgres v14.9
 - [v245.0.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.38): fix(deps): update dependency ioredis from 5.3.2 to v5.4.1
 - [v245.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.37): fix(hugo): Return promise from async controller functions
