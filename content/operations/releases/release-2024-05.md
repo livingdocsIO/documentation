@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @google-cloud/storage from 7.10.0 to v7.10.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6823)
 * [Shortcuts: allow shortcut config to insert left and right double quotation mark](https://github.com/livingdocsIO/livingdocs-editor/pull/8362)
 * [Command API: `insertComponent`](https://github.com/livingdocsIO/livingdocs-server/pull/6816)
 * [fix(table dashboard): Cell Spacings](https://github.com/livingdocsIO/livingdocs-editor/pull/8361)
