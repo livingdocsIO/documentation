@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(table dashboard): Cell Spacings](https://github.com/livingdocsIO/livingdocs-editor/pull/8361)
 * [Fix lib/async-queue to await the processing](https://github.com/livingdocsIO/livingdocs-server/pull/6818)
 * [Dashboard with Document Statistics](https://github.com/livingdocsIO/livingdocs-editor/pull/8331)
 * [Document Statistics with indexing and filter DSL](https://github.com/livingdocsIO/livingdocs-server/pull/6789)
