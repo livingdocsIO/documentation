@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Shortcuts: allow shortcut config to insert left and right double quotation mark](https://github.com/livingdocsIO/livingdocs-editor/pull/8362)
 * [Command API: `insertComponent`](https://github.com/livingdocsIO/livingdocs-server/pull/6816)
 * [fix(table dashboard): Cell Spacings](https://github.com/livingdocsIO/livingdocs-editor/pull/8361)
 * [Fix lib/async-queue to await the processing](https://github.com/livingdocsIO/livingdocs-server/pull/6818)
