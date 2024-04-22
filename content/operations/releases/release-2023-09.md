@@ -432,6 +432,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v237.2.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.50): fix(queue): Properly await in lib/async-queue
 - [v237.2.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.49): fix(deps): update dependency @livingdocs/framework from 26.0.9 to v26.0.10
 - [v237.2.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.48): fix(lists): Define limit as option on `documentListModel.getInbox()`, as it is possible to retrieve more than 1010 leading to `Too many results` error
 - [v237.2.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.47): fix(security): Patch vulnerabilities `CVE-2024-24758` on `undici` and `GHSA-9h6g-pr28-7cqp` on `nodemailer`
@@ -464,9 +465,9 @@ Here is a list of all patches after the release has been announced.
 - [v237.2.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.20): fix(indexing): Increase events to fetch if no group existed
 - [v237.2.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.19): fix(comyan): encode title when reporting usage
 - [v237.2.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.18): fix(external ID): readoly config allowed
-- [v237.2.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.17): fix(security): Update `get-func-name` to version `v237.2.49` to patch CVE-2023-43646
+- [v237.2.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.17): fix(security): Update `get-func-name` to version `v237.2.50` to patch CVE-2023-43646
 - [v237.2.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.16): chore(example-server): Map additional metadata in copy instructions
-- [v237.2.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.15): fix(security): Update `sharp` to version `v237.2.49` to patch CVE-2023-4863
+- [v237.2.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.15): fix(security): Update `sharp` to version `v237.2.50` to patch CVE-2023-4863
 - [v237.2.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.14): fix(includes): allow onboarding platform
 - [v237.2.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.13): fix(includes): Allow li-document-reference with minimal style
 - [v237.2.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v237.2.12): fix(search): Always filter media library entries by cluster id
