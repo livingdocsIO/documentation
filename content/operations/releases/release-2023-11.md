@@ -398,6 +398,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.51): fix(queue): Properly await in lib/async-queue
 - [v241.0.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.50): fix(deps): update dependency ioredis from 5.3.2 to v5.4.1
 - [v241.0.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.49): fix(hugo): Return promise from async controller functions
 - [v241.0.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.48): fix(deps): update dependency @livingdocs/framework from 27.1.7 to v27.1.9
