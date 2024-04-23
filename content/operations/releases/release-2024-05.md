@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Improve assistant registry and add unique constraint to table](https://github.com/livingdocsIO/livingdocs-server/pull/6827)
 * [Fix "Tab" doesn't work anymore in forms](https://github.com/livingdocsIO/livingdocs-editor/pull/8365)
 * [fix(deps): update dependency @google-cloud/storage from 7.10.0 to v7.10.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6823)
 * [Shortcuts: allow shortcut config to insert left and right double quotation mark](https://github.com/livingdocsIO/livingdocs-editor/pull/8362)
