@@ -530,6 +530,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.52): fix: add LEFT_DOUBLE_QUOTATION_MARK + RIGHT_DOUBLE_QUOTATION_MARK for shortcuts
 - [v110.1.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.51): fix(comyan): correctly notify the user on comyan imageData loading error
 - [v110.1.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.50): chore(documents): Log document conflict errors, so we have trackjs traces
 - [v110.1.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.49): fix(ticker): Reassign shallowReactive attributes to trigger reactivity
