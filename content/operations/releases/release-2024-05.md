@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cypress from 13.8.0 to v13.8.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8370)
 * [fix(deps): update dependency cloudinary from 2.1.0 to v2.2.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6824)
 * [Improve assistant registry and add unique constraint to table](https://github.com/livingdocsIO/livingdocs-server/pull/6827)
 * [Fix "Tab" doesn't work anymore in forms](https://github.com/livingdocsIO/livingdocs-editor/pull/8365)
