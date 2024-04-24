@@ -131,3 +131,28 @@ baseFilters: [
 ```
 
 This would filter for only transformed assets.
+
+### Example - Filter by document statistics
+
+```js
+baseFilters: [
+  {
+    and: [
+      {key: 'statistics.componentCount.image', exists: false },
+      {
+        or: [
+          {key: 'statistics.characterCount', range: {gte: 1000}},
+          {key: 'statistics.componentCount.paragraphs', range: {gte: 3}}
+        ]
+      }
+    ]
+  }
+]
+```
+This would filter for documents without an image, but with +3 paragraphs or +1000 characters.
+To query for documents without a component, use the `exists: false` notation instead of a `range`, since components
+with zero-counts are not indexed.
+
+{{< info >}}
+Document statistics are not part of the publication index yet, so queries against statistics are not supported through the Public API! 
+{{< /info >}}

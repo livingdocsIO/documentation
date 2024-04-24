@@ -356,6 +356,12 @@ spellcheck: {
 
 ## Character Counter
 
+{{< info >}}
+{{< deprecated-in "release-2024-05" >}}.
+Please migrate to `projectConfig.editorSettings.textCount` (see [here]({{< ref "reference/project-config/editor-settings#text-count" >}})).
+{{< /info >}}
+
+
 A character counter can be configured. The counter can be limited to only
 count text within certain components.
 
