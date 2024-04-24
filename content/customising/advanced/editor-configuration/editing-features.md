@@ -187,6 +187,8 @@ The following actions are supported:
 - `insert middle dot`
 - `insert left guillemets`
 - `insert right guillemets`
+- `insert left double quotation mark` inserts `“` {{< added-in "release-2024-03" >}}
+- `insert right double quotation mark` inserts `”` {{< added-in "release-2024-03" >}}
 - `insert double low-9 quotation mark` inserts `„` {{< added-in "release-2023-11" >}}
 - `insert double high-reversed-9 quotation mark` inserts `‟` {{< added-in "release-2023-11" >}}
 - `insert en space`
