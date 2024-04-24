@@ -264,6 +264,59 @@ TODO: check migration
 
 TODO (featureset not 100% defined yet)
 
+{{< feature-info "New Feature" "server/editor" >}}
+### Document Statistics :gift:
+
+Document Statistics allow users to better understand the shape and completeness of an article by looking at a dashboard.
+Statistics include the component counts of a document as well as the character count.
+
+The feature builds on top of existing concepts, respectively extends them:
+- New table dashboard cell component [`liTableDashboardCellStatistics`]({{< ref "/reference/project-config/editor-settings#upstream-components" >}})
+- Query DSL for [Base Filters]({{< ref "/customising/advanced/editor-configuration/base-filter#example---filter-by-document-statistics" >}})
+- [Named Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter#named-filters" >}}) for `includedComponents`, `missingComponents` and `characterCount`
+
+Example Dashboard config excerpt:
+```js
+{
+  handle: 'articles',
+  type: 'tableDashboard',
+  baseFilters: [
+    {key: 'statistics.componentCounts.image', exists: true},
+    // ...
+  ],
+  displayFilters: [
+    'includedComponents',
+    'missingComponents',
+    {
+      filterName: 'characterCount',
+      config: {
+        thresholds: [100, 500, 200]
+      }
+    },
+    // ...
+  ],
+  columns: [
+    {
+      label: 'Statistics',
+      minWidth: 200,
+      growFactor: 1,
+      priority: 2,
+      componentName: 'liTableDashboardCellStatistics',
+      componentOptions: {
+        characterCount: true,
+        componentCount: [
+          'title',
+          'p',
+          'image',
+          'image-named-crops'
+        ]
+      }
+    },
+    // ...
+  ]
+}
+```
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
