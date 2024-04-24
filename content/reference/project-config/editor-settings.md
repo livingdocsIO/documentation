@@ -675,6 +675,46 @@ columns: [
 ]
 ```
 
+##### liTableDashboardCellStatistics
+
+
+{{< added-in "release-2024-05" block >}}
+
+The `liTableDashboardCellStatistics` displays Document Statistics such as component count, character count and line count (depending on provided `componentOptions`).
+
+{{< img src="images/table-dashboard-cell-statistics.png" alt="liTableDashboardCellStatistics upstream component" >}}
+
+To display the character count, set `componentOptions.characterCount` to `true`.
+If `projectConfig.editorSettings.textCount.lineCountFraction` is defined [here]({{< ref "reference/project-config/editor-settings#text-count" >}}), also the line count will be displayed.
+Please note that the character count in document statistics may deviate from the count shown in the document editor view.
+
+Component counts are shown for all components listed in the `componentOptions.compomnentCount` array.
+Please make sure to provide a pluralized label string for those components in their design declaration by separating the singular and plural label string with a pipe character (`|`).
+
+Example: `{label: 'Paragraph | Paragraphs', ...}` 
+
+```js
+columns: [
+  ...,
+  {
+    label: 'Statistics',
+    minWidth: 200,
+    growFactor: 1,
+    priority: 2,
+    componentName: 'liTableDashboardCellStatistics',
+    componentOptions: {
+      characterCount: true,
+      componentCount: [
+        'p',
+        'title',
+        'image',
+        'image-named-crops'
+      ]
+    }
+  }
+]
+```
+
 #### Custom components
 
 Custom components of type [tableDashboardCell]({{< ref "/customising/advanced/editor/vue-component-registry#tabledashboardcell" >}})
@@ -1026,3 +1066,49 @@ Following attribute types can be added to a customElement:
 **Restrictions**
 
 There can be only one attribute with a type in the attributes array. Static values can be added as many as needed.
+
+## Text Count
+{{< info >}}
+A version of this configuration for releases prior to {{< release "release-2024-05" >}} is available
+[here]({{< ref "/customising/advanced/editor-configuration/text-editing#character-counter" >}}).
+{{< /info >}}
+
+A character counter can be configured. The counter can be limited to only
+count text within certain components.
+
+```js
+textCount: {
+  isEnabled: true,
+  showEditableCount: true, // shows the chars of the selected doc-editable
+  timeout: 200,
+  lineCountFraction: 39.5 // required to calculate a line count based on character count
+}
+```
+
+{{< img src="images/text-count.png" alt="Character Count in a document" >}}
+
+#### Excluding components and directives (configured in the Livingdocs component library)
+
+It is also possible to only count the text of selected components or directives. This
+is configured in the component library of a Livingdocs design.
+
+Exclude whole components from the text counter (example component config):
+```js
+{
+  "name": "aside",
+  "label": "Aside",
+  "excludeFromTextCount": true
+}
+```
+
+Exclude individual directives from the text counter (example component config):
+```js
+{
+  "name": "quote",
+  "label": "Quote",
+  "directives": {
+    "text": {"excludeFromTextCount": true},
+    "source": {"excludeFromTextCount": true}
+  }
+}
+```
