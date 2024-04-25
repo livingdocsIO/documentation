@@ -73,7 +73,7 @@ The Livingdocs Server instances where the cross project configuration should be 
         handle: 'articlesWithExternalDocuments',
         type: 'tableDashboard',
         displayFilters: [
-          {filterName: 'crossProjectContentSearch', config: {filterLabel: 'Content Hubs'},
+          {filterName: 'crossProjectContentSearch', config: {filterLabel: 'Content Hubs'}},
           'contentType',
           'liDateTimeRange'
         ],
