@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Support pluralized component labels](https://github.com/livingdocsIO/livingdocs-editor/pull/8366)
 * [fix(deps): update dependency @fastify/reply-from from 9.7.0 to v9.8.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8363)
 * [fix(deps): update dependency mini-css-extract-plugin from 2.8.1 to v2.9.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8345)
 * [fix(deps): update dependency cypress from 13.8.0 to v13.8.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8370)
