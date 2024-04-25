@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pino from 8.20.0 to v9 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6833)
 * [Vulnerability patches April](https://github.com/livingdocsIO/livingdocs-editor/pull/8374)
 * [Fix/Directive Buttons](https://github.com/livingdocsIO/livingdocs-editor/pull/8369)
 * [Support pluralized component labels](https://github.com/livingdocsIO/livingdocs-editor/pull/8366)
