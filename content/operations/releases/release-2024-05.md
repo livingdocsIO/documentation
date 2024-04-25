@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Vulnerability patches April](https://github.com/livingdocsIO/livingdocs-editor/pull/8374)
 * [Fix/Directive Buttons](https://github.com/livingdocsIO/livingdocs-editor/pull/8369)
 * [Support pluralized component labels](https://github.com/livingdocsIO/livingdocs-editor/pull/8366)
 * [fix(deps): update dependency @fastify/reply-from from 9.7.0 to v9.8.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8363)
