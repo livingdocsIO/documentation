@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use Material Icons for Assistants](https://github.com/livingdocsIO/livingdocs-editor/pull/8379)
 * [fix(assistants): switch from `iconUrl` to `icon` (material icons)](https://github.com/livingdocsIO/livingdocs-server/pull/6839)
 * [fix(deps): update dependency lru-cache from 10.2.0 to v10.2.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6836)
 * [fix(deps): update dependency pino from 8.20.0 to v9 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6833)
