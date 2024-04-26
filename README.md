@@ -10,11 +10,28 @@ You can run it locally:
 # install hugo
 brew install hugo
 
+# if you use WSL2 you need to additionaly install xdg-utils and setup a environment link to your prefered browser
+# you simply can skip this step and skip the opener by 
+sudo apt-get install -y xdg-utils
+
 # install dependencies
 npm install
 
 # start the hugo dev server
 npm start
+```
+
+If you use WSL2 and want to use opener (automatically starts the browser) you need to additionaly install xdg-utils and
+setup default browser (see below) OR skip this instructions, do not use the opener (npm start) and just start the server with 'exec hugo serve'
+```bash
+# install xdg-utils
+brew install hugo
+
+# link the default browser (opener can't handle blanks in paths)
+ln -s /mnt/c/path/to/browser.exe /path/to/symlink
+
+# define the default browser as variable
+export BROWSER=~/path/to/symlink
 ```
 
 When working with the lunr search code it can be useful to test the real production setup, due to the way we edit the search index for production:
