@@ -261,6 +261,24 @@ TODO: check migration
 
 TODO (featureset not 100% defined yet)
 
+{{< feature-info "New Feature" "server/editor" >}}
+### Assistants :gift:
+
+We are happy to announce the first version of the Livingdocs Assistants Platform.
+Use it to understand the system and start learning, what can be done.
+
+Livingdocs Assistants are designed to understand the user's context, namely the current document and focused components.
+Assistants can generate an array of [Document Commands]({{< ref "/reference/public-api/document-command-api" >}}) that are then executed server-side.
+This feature allows for complex document manipulations through a simplified interface,
+initiated from the editor UI using the `Cmd+K` (macOS) or `Ctrl+K` (Windows/Linux) shortcut,
+where users can find and execute available Assistants.
+
+A guide how to implement an assistant can be found [here]({{< ref "/guides/editor/assistants" >}}).
+
+Please share your ideas for assistants with us, we would love to learn and gather more perspectives.
+
+
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
