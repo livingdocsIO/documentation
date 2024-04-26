@@ -368,6 +368,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.88](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.88): fix(security): Update vulnerable dependencies in `cypress/` and `server/`, namely `follow-redirects`, `@fastify/reply-from` and `undici`
 - [v106.0.87](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.87): fix(comyan): correctly notify the user on comyan imageData loading error
 - [v106.0.86](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.86): fix(editor): Disable proofreading for history
 - [v106.0.85](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.85): fix(ticker): Reassign shallowReactive attributes to trigger reactivity
