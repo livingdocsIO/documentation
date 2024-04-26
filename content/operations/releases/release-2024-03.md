@@ -485,14 +485,29 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 ### Livingdocs Server
 
+This release we have patched the following vulnerabilities in the Livingdocs Server:
 * [CVE-2024-24758](https://github.com/advisories/GHSA-3787-6prv-h9w3) patched in `undici` v5.28.3
 * [GHSA-9h6g-pr28-7cqp](https://github.com/advisories/GHSA-9h6g-pr28-7cqp) patched in `nodemailer` v6.9.9
 * [CVE-2023-26159](https://github.com/advisories/GHSA-jchw-25xp-jwwc) patched in `follow-redirects` v1.15.4
+* [CVE-2024-28176](https://github.com/advisories/GHSA-hhhv-q57g-882q) patched in `jose` v4.15.5
+* [CVE-2024-28849](https://github.com/advisories/GHSA-cxjh-pqwp-8mfp) patched in `follow-redirects` v1.15.6
+* [CVE-2024-28863](https://github.com/advisories/GHSA-f5x3-32g6-xq36) patched in `tar` v6.2.1
+* [CVE-2024-29041](https://github.com/advisories/GHSA-rv95-896h-c2vc) patched in `express` v4.19.2
+* [CVE-2024-30260](https://github.com/advisories/GHSA-m4v8-wqvr-p9f7) patched in `undici` v5.28.4
+* [CVE-2024-30261](https://github.com/advisories/GHSA-9qxr-qj54-h672) patched in `undici` v5.28.4
+
+No known vulnerabilities. :tada:
 
 ### Livingdocs Editor
+This release we have patched the following vulnerabilities in the Livingdocs Editor:
 * [CVE-2024-24758](https://github.com/advisories/GHSA-3787-6prv-h9w3) patched in `undici` v5.28.3
 * [CVE-2023-26159](https://github.com/advisories/GHSA-jchw-25xp-jwwc) patched in `follow-redirects` v1.15.4
 * [CVE-2023-51701](https://github.com/fastify/fastify-reply-from/security/advisories/GHSA-v2v2-hph8-q5xp) patched in `@fastify/reply-from` v9.6.0
+* [CVE-2024-28849](https://github.com/advisories/GHSA-cxjh-pqwp-8mfp) patched in `follow-redirects` v1.15.6
+* [CVE-2024-28863](https://github.com/advisories/GHSA-f5x3-32g6-xq36) patched in `tar` v6.2.1
+* [CVE-2024-29180](https://github.com/advisories/GHSA-wr3j-pwj9-hqq6) patched in `webpack-dev-middleware` v6.1.2
+* [CVE-2024-30260](https://github.com/advisories/GHSA-m4v8-wqvr-p9f7) patched in `undici` v5.28.4
+* [CVE-2024-30261](https://github.com/advisories/GHSA-9qxr-qj54-h672) patched in `undici` v5.28.4
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
