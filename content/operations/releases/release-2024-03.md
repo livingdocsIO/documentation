@@ -549,6 +549,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.55): fix(tests): adapt tests for better li-image metadata UI testing
 - [v110.1.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.54): fix(security): Update vulnerable dependencies in `cypress/` and `server/`, namely `follow-redirects` and `undici`
 - [v110.1.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.53): fix(security): Patch security vulnerabilities CVE-2024-30260 and CVE-2024-30261 in `undici`, CVE-2024-28863 in `tar`, CVE-2024-28849 in `follow-redirects`, and CVE-2024-29180 in `webpack-dev-middleware`
 - [v110.1.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.52): fix: add LEFT_DOUBLE_QUOTATION_MARK + RIGHT_DOUBLE_QUOTATION_MARK for shortcuts
