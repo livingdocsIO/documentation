@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Example AI Assistant using ChatGPT](https://github.com/livingdocsIO/livingdocs-server/pull/6825)
 * [fix(deps): update aws-sdk from 3.556.0 to v3.563.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6837)
 * [Use Material Icons for Assistants](https://github.com/livingdocsIO/livingdocs-editor/pull/8379)
 * [fix(assistants): switch from `iconUrl` to `icon` (material icons)](https://github.com/livingdocsIO/livingdocs-server/pull/6839)
