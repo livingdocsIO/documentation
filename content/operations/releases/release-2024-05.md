@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix li-image: make drop from comyan and woodwing work when image upload is disabled](https://github.com/livingdocsIO/livingdocs-editor/pull/8377)
 * [Implement new retresco getEntitiesByIds endpoint](https://github.com/livingdocsIO/livingdocs-server/pull/6835)
 * [Fix retresco display filter](https://github.com/livingdocsIO/livingdocs-editor/pull/8376)
 * [Update vulnerable dependencies in `cypress/` and `server/`](https://github.com/livingdocsIO/livingdocs-editor/pull/8380)
