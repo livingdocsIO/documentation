@@ -23,7 +23,7 @@ A simple Livingdocs document JSON defining a header and a paragraph:
         title: 'Publishing has never been easier',
         subline: 'Livingdocs',
         image: {
-          url: 'https://server.livingdocs.io/api/v1/images/collaboration.jpg?id=MQkvMjAxOS83LzIyLzJiZTcwZWI2LTIxYjMtNDBiMy04MmRkLWY4OTY5ZGE4YjBmMy5qcGVnCTQ4NQ%3D%3D&w=1024&auto=format'
+          url: 'https://livingdocs-images.imgix.net/2019/7/22/2be70eb6-21b3-40b3-82dd-f8969da8b0f3.jpeg?auto=format&w=1024'
         }
       }
     },

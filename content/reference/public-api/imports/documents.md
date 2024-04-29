@@ -111,22 +111,6 @@ api/v1/import/documents
   "id": "25bzj8j"
 }
 ```
------
-429
----
-api/v1/import/documents
----
-```js
-[
-  {
-    "status": 429,
-    "error": "Usage Limit Exceeded",
-    "error_details": {
-      "message": "Your plan does not allow you to upload more than 100 per day.\n      You already uploaded 99 in the last 24 hours and are trying to upload 10 more.\n      Please try again later."
-    }
-  }
-]
-```
 
 {{< /api-example >}}
 
