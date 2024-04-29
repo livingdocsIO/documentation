@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add file import support to public api](https://github.com/livingdocsIO/livingdocs-server/pull/6847)
 * [Add dynamic teaser lists](https://github.com/livingdocsIO/livingdocs-editor/pull/8228)
 * [Add dynamic teaser lists](https://github.com/livingdocsIO/livingdocs-server/pull/6715)
 * [Feat: simple search iteration improve tokenizer for languages](https://github.com/livingdocsIO/livingdocs-server/pull/6812)
