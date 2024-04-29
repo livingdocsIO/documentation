@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add Desk-Net Global metadata plugin form](https://github.com/livingdocsIO/livingdocs-editor/pull/8378)
 * [Desk-Net Global Integration](https://github.com/livingdocsIO/livingdocs-server/pull/6817)
 * [Check immediately whether shortcuts should be paused](https://github.com/livingdocsIO/livingdocs-editor/pull/8391)
 * [Add file import support to public api](https://github.com/livingdocsIO/livingdocs-server/pull/6847)
