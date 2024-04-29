@@ -461,6 +461,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.98](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.98): fix(li-date-time-range-filter): Select correct filter key
 - [v102.1.97](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.97): fix(security): Update vulnerable dependencies in `cypress/` and `server/`, namely `follow-redirects`, `@fastify/reply-from`, `axios` and `undici`
 - [v102.1.96](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.96): fix(security): Patch security vulnerabilities CVE-2024-30260 and CVE-2024-30261 in `undici`, CVE-2024-21501 in `sanitize-html`, CVE-2024-28863 in `tar`, CVE-2024-28849 in `follow-redirects`, and CVE-2024-29180 in `webpack-dev-middleware`
 - [v102.1.95](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.95): fix(editor): Disable proofreading for history
