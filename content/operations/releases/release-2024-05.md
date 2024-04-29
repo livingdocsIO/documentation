@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add dynamic teaser lists](https://github.com/livingdocsIO/livingdocs-editor/pull/8228)
 * [Add dynamic teaser lists](https://github.com/livingdocsIO/livingdocs-server/pull/6715)
 * [Feat: simple search iteration improve tokenizer for languages](https://github.com/livingdocsIO/livingdocs-server/pull/6812)
 * [fix(deps): update dependency @google-cloud/storage from 7.10.1 to v7.10.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6844)
