@@ -2,7 +2,7 @@
 type: release-notes
 title: May 2024 Release
 description: Technical Release Notes for release-2024-05
-excludeFromSearch: true
+excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2024-05/
@@ -13,8 +13,8 @@ aliases:
   title="May 2024 Release"
   upcoming=true
   legacy=false
-  current=false
-  maintained=false
+  current=true
+  maintained=true
   branchHandle="release-2024-05"
 >}}
 
