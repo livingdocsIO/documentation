@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update babel from 7.24.4 to v7.24.5 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/8396)
 * [Do not try to render includes with no value/params when using the Composition API](https://github.com/livingdocsIO/livingdocs-server/pull/6734)
 * [Add Desk-Net Global metadata plugin form](https://github.com/livingdocsIO/livingdocs-editor/pull/8378)
 * [Desk-Net Global Integration](https://github.com/livingdocsIO/livingdocs-server/pull/6817)
