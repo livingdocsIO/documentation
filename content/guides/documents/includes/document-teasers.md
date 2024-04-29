@@ -61,7 +61,7 @@ This component we add to the project settings under the `components` property to
     // Register the teaser-include component
     require('./components/teaser-include'),
     // the teaser itself will be created later and represents the content of the visible teaser
-    require('./components/my-teaser') 
+    require('./components/teaser-template') 
   ]
   //...
 }
@@ -93,7 +93,7 @@ And we define the component in the contentTypes we want to use them:
 
 ## Teaser Include Service
 We now can create the service we referenced above by the `service` property which will handle our include as desired. On the service we will
-reference our final `my-teaser` component within the return object sent to the editor. This way the editor knows what component to use as teaser and how to render its markup. This is an example of a return object sent by the service:
+reference our final `teaser-template` component within the return object sent to the editor. This way the editor knows what component to use as teaser and how to render its markup. This is an example of a return object sent by the service:
 
 ```js
 return {
@@ -102,9 +102,9 @@ return {
   content: [{
     id: 'some-unique-id',
     // here we define the desired component from which the teaser finally will be rendered
-    component: 'my-teaser',
+    component: 'teaser-template',
     content: {
-      // all directives defined here are references to the 'my-teaser' 
+      // all directives defined here are references to the 'teaser-template' 
       // component and will be populated later within the editor
     }
   }]
@@ -150,7 +150,7 @@ module.exports = function ({publicationApi, documentApi}) {
           editableContent: !params.readOnly,
           content: [{
             id: `teaser-${documentVersion.systemdata.documentId}`,
-            component: 'my-teaser',
+            component: 'teaser-template',
             content: {
               image: parseImageData(documentVersion.metadata.teaserImage),
               title: documentVersion.metadata.title,
@@ -214,12 +214,12 @@ Now we see already the outcome of the `teaser-include` and the `teaser-service` 
 For a detailed description of the include api see [Includes Server API]({{< ref "/reference/document/includes/server-customization" >}}).
 
 ## Teaser Component
-We now have a registered include component `teaser-include` and service `teaser-service` and it is time to define our teaser component `my-teaser` which will be rendered within the document (replacing the include's placeholder markup). Rembember we already registerd `my-teaser` [here]({{< ref "#register-components" >}}) for our project.
+We now have a registered include component `teaser-include` and service `teaser-service` and it is time to define our teaser component `teaser-template` which will be rendered within the document (replacing the include's placeholder markup). Rembember we already registerd `teaser-template` [here]({{< ref "#register-components" >}}) for our project.
 
 ```js
-// my-teaser.js
+// teaser-template.js
 module.exports = {
-  name: 'my-teaser',
+  name: 'teaser-template',
   label: 'Teaser Component',
   directives: [{
     name: 'image',
