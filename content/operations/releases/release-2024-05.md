@@ -254,6 +254,31 @@ dashboards: [
 ]
 ```
 
+{{< feature-info "Integrations" "editor" >}}
+### Display filter for `li-retresco`
+
+Add an indexed matadata property of type `li-retresco` to a content type:
+
+```
+{
+  handle: 'retresco',
+  type: 'li-retresco',
+  config: {index: true}
+}
+```
+
+Reference the metadata property in the display filter:
+
+```
+dashboards: [
+  {
+    displayFilters: [
+      {metadataPropertyName: 'retresco'}
+    ]
+  }
+]
+```
+
 {{< feature-info "Documents State" "editor" >}}
 ### Document statistics
 
