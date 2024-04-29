@@ -154,8 +154,7 @@ module.exports = function ({publicationApi, documentApi}) {
             content: {
               image: parseImageData(documentVersion.metadata.teaserImage),
               title: documentVersion.metadata.title,
-              lead: 'lead from include',
-              showByline: 'byline from include',
+              lead: documentVersion.metadata.lead,
               link: 'https://example.com'
             }
           }]
@@ -230,29 +229,16 @@ module.exports = {
     type: 'editable',
     name: 'title',
     maxLength: 10
-  }, {
-    type: 'toggle',
-    name: 'showLead',
-    label: {en: 'show lead', de: 'Lead anzeigen'},
-    default: false
-  }, {
-    type: 'toggle',
-    name: 'showByline',
-    label: {en: 'show byline', de: 'Byline anzeigen'},
-    default: true
   }],
   properties: ['teaser-type'],
   html: `
-    <a class="teaser" doc-link="link" style="display: block;">
+    <div class="teaser" doc-link="link" style="display: block;">
       <img class="responsive-img" doc-image="image">
       <h3 doc-editable="title">Title</h3>
-      <p class="text" doc-editable="lead" doc-toggle="showLead">
+      <p class="text" doc-editable="lead">
         Lead
       </p>
-      <p class="text" doc-editable="byline" doc-toggle="showByline">
-        Byline
-      </p>
-    </a>
+    </div>
   `
 }
 
