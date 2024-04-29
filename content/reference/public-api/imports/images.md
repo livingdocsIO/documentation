@@ -48,7 +48,7 @@ POST api/v1/import/images
 |systemName|string|x|Identifier for the system you are importing from, e.g. an archive.|
 |webhook|uri||Endpoint at the importing system that gets notified by POST when import job is done. Notification contains the id of the import job, the state and an overview.|
 |context|object||An object that is passed as context in the body of the request to the webhook. Limited to 8192 Bytes.|
-|images|array|x|An array of images to import. Each entry is an object with the following keys, all of which are required:<br><br>**url:** a URL to an image file, no data urls allowed, must be an image, allowed types: png, jpg, gif, svg<br>**id:** a unique id (stored as externalId in Livingdocs) that identifies the image on your end, must be unique within your project<br>**fileName:** the title that the image should get in livingdocs<br>**metadata:** An object of metadata according to your project config<br>**mediaType** the handle of one of the mediaTypes from your project configuration|
+|images|array|x|An array of images to import. Each entry is an object with the following keys, all of which are required:<br><br>**url:** a URL to an image file, no data urls allowed, allowed types: png, jpg, gif, svg<br>**id:** a unique id (stored as externalId in Livingdocs) that identifies the image on your end, must be unique within your project<br>**fileName:** the title that the image should get in livingdocs<br>**metadata:** An object of metadata according to your project config<br>**mediaType** the handle of one of the mediaTypes from your project configuration|
 
 #### Example Request
 ```js
@@ -94,22 +94,7 @@ api/v1/import/images
   "id": "25bzj8j"
 }
 ```
------
-429
----
-api/v1/import/images
----
-```js
-[
-  {
-    "status": 429,
-    "error": "Usage Limit Exceeded",
-    "error_details": {
-      "message": "Your plan does not allow you to upload more than 100 per day.\n      You already uploaded 99 in the last 24 hours and are trying to upload 10 more.\n      Please try again later."
-    }
-  }
-]
-```
+
 
 {{< /api-example >}}
 
@@ -156,8 +141,8 @@ api/v1/import/images/status?id=25bzj8j
       "title": "my image",
       "image": {
         "mediaId": "jjiwhsf23kdk",
-        "originalUrl": "https://server.livingdocs.io/api/v1/images/truck-in-flood-water?id=MQkvMjAxOS8xMS8yMS9hMjA5NzkwZS0xNTQ5LTQ2ZDktYjNjNy1jZWZlMjhjN2VhOTkuanBlZwk2NzM=",
-        "url": "https://server.livingdocs.io/api/v1/images/truck-in-flood-water?id=MQkvMjAxOS8xMS8yMS9hMjA5NzkwZS0xNTQ5LTQ2ZDktYjNjNy1jZWZlMjhjN2VhOTkuanBlZwk2NzM=?format=auto",
+        "originalUrl": "https://livingdocs-images.imgix.net/2019/11/21/a209790e-1549-46d9-b3c7-cefe28c7ea99.jpeg",
+        "url": "https://livingdocs-images.imgix.net/2019/11/21/a209790e-1549-46d9-b3c7-cefe28c7ea99.jpeg?auto=format",
         "width": 100,
         "height": 100,
         "mimeType": "image/png",
@@ -171,8 +156,8 @@ api/v1/import/images/status?id=25bzj8j
       "title": "my second image",
       "image": {
         "mediaId": "jjiwhsf23wer",
-        "originalUrl": "https://server.livingdocs.io/api/v1/images/truck-in-flood-water?id=MQkvMjAxOS8xMS8yMS9hMjA5NzkwZS0xNTQ5LTQ2ZDktYjNjNy1jZWZlMjhjN2VhOTkuanBlZwk2NzM=",
-        "url": "https://server.livingdocs.io/api/v1/images/truck-in-flood-water?id=MQkvMjAxOS8xMS8yMS9hMjA5NzkwZS0xNTQ5LTQ2ZDktYjNjNy1jZWZlMjhjN2VhOTkuanBlZwk2NzM=?format=auto",
+        "originalUrl": "https://livingdocs-images.imgix.net/2019/11/21/a209790e-1549-46d9-b3c7-cefe28c7ea99.jpeg?auto=format",
+        "url": "https://livingdocs-images.imgix.net/2019/11/21/a209790e-1549-46d9-b3c7-cefe28c7ea99.jpeg?auto=format",
         "width": 100,
         "height": 100,
         "mimeType": "image/png",
