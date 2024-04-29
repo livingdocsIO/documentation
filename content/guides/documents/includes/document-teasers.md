@@ -211,7 +211,7 @@ Now we see already the outcome of the `teaser-include` and the `teaser-service` 
 
 {{< img src="./teaser-include.png" alt="Empty Teaser Include" >}}
 
-For a detailed description of the include api see [Includes Server API]({{< ref "/reference/document/includes/server-customization/" >}}).
+For a detailed description of the include api see [Includes Server API]({{< ref "/reference/document/includes/server-customization" >}}).
 
 ## Teaser Component
 We now have a registered include component `teaser-include` and service `teaser-service` and it is time to define our teaser component `my-teaser` which will be rendered within the document (replacing the include's placeholder markup). Rembember we already registerd `my-teaser` [here]({{< ref "#register-components" >}}) for our project.
