@@ -232,7 +232,7 @@ module.exports = {
   }],
   properties: ['teaser-type'],
   html: `
-    <div class="teaser" doc-link="link" style="display: block;">
+    <div class="teaser" style="display: block;">
       <img class="responsive-img" doc-image="image">
       <h3 doc-editable="title">Title</h3>
       <p class="text" doc-editable="lead">
@@ -244,7 +244,8 @@ module.exports = {
 
 ```
 
-With the teaser finally in place we can link articles and the editor will populate the values as we return them out of our service. Also you can see the above directives of our teaser appear in a box on the sidebar (doc-toggles, doc-image).
+With the teaser finally in place we can link articles and the editor will populate the values as we return them out of our service. Also you can see the above directives of our teaser appear in a box on the sidebar (doc-image).
+
 {{< img src="./my-teaser.png" alt="Empty Teaser Include" >}}
 
 ## Document Dashboard in Editor
