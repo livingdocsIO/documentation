@@ -90,35 +90,26 @@ References:
 
 ## 4) Customise a card on the dashboard
 
-The default card on the `My Proofreading` dashboard is quite simple. If you want to implement your own card (with a custom behavior and also a custom look and feel), you have to register a card in your downstream editor and assign it to your custom dashboard.
+If the default dashboard card for proofreading dashboards doesn't meet all your requirements, you can bring your own dashboard card, which can differ both in design and behaviour.
+
+To do so, you need to create and register a custom Vue component of type `dashboardCard` in your downstream editor project. You can refer to one of our default dashboard cards (e.g. [`LiDocumentListCard`](https://github.com/livingdocsIO/livingdocs-editor/blob/11ea08daa015d81401fcd0bea644ca6fe7abe69b/app/features/search/dashboard_cards/li-document-list-card.vue)) to understand how to write such a component.
 
 ```js
-// extend the custom dashboard config from step 2 with your own card
-dashboards: [
-  {
-    handle: 'my-kanban-proofreading',
-    // other config options ...
-    componentName: 'myProofreadingCard'
-  }
-]
-```
-
-As last step you have to register your own card `myProofreadingCard` in your downstream as an angular component.
-
-```js
-angular.module('livingdocs-editor').component('myProofreadingCard', {
-  template: require('./my_proofreading_card.html'),
-  controller: require('./my_proofreading_controller.js'),
-  bindings: {
-    documentInfo: '<',
-    documentMetadata: '<',
-    actions: '<',
-    options: '<'
-  }
+app.vueComponentRegistry.registerComponent({
+  type: 'dashboardCard',
+  name: 'myProofreadingCard',
+  component: require('./li-proofreading-card.vue').default
 })
 ```
 
-If you want to have all features available in your own card, you can copy and modify our `liTaskCard` example from the upstream.
+Finally, you need to reference this component in the project config by setting `componentName` of your dashboard to your component's name.
 
-References:
-- [Example implementation 'liTaskCard'](https://github.com/livingdocsIO/livingdocs-editor/blob/f21c4c2ff6250f99f789a4e3528b76e3c3510b48/app/features/search/document_cards/li_task_card/li_task_card.js)
+```js
+dashboards: [
+  {
+    handle: 'my-kanban-proofreading',
+    componentName: 'myProofreadingCard',
+    // ...
+  }
+]
+```
