@@ -232,7 +232,7 @@ Add a new Webhook by clicking "Add Webhook" or edit an existing one by clicking 
 
 Here is an example payload sent to your url set in the Webhook configuration.
 
-`document.create`
+### `document.create`
 ```json
 {
   "event": "document.create",
@@ -247,7 +247,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 }
 ```
 
-`document.delete`
+### `document.delete`
 ```json
 {
   "event": "document.delete",
@@ -263,7 +263,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 }
 ```
 
-`document.publish`
+### `document.publish`
 ```json
 {
   "event": "document.publish",
@@ -289,7 +289,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 }
 ```
 
-`document.unpublish`
+### `document.unpublish`
 ```json
 {
   "event": "document.unpublish",
@@ -314,7 +314,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 }
 ```
 
-`document.update`
+### `document.update`
 ```json
 {
   "event": "document.update",
@@ -332,7 +332,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 }
 ```
 
-`document.build`
+### `document.build`
 ```json
 {
   "event": "document.build",
@@ -350,7 +350,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 }
 ```
 
-`document.build.draft`
+### `document.build.draft`
 ```json
 {
   "event": "document.build",
@@ -367,7 +367,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 }
 ```
 
-`publication.update`
+### `publication.update`
 ```json
 {
   "event": "publication.update",
@@ -385,7 +385,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 }
 ```
 
-`mediaLibraryEntry.create`
+### `mediaLibraryEntry.create`
 ```json
 {
   "event": "mediaLibraryEntry.create",
@@ -400,7 +400,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 }
 ```
 
-`mediaLibraryEntry.update`
+### `mediaLibraryEntry.update`
 ```json
 {
   "event": "mediaLibraryEntry.update",
@@ -415,7 +415,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 }
 ```
 
-`mediaLibraryEntry.archive`
+### `mediaLibraryEntry.archive`
 ```json
 {
   "event": "mediaLibraryEntry.archive",
@@ -430,7 +430,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 }
 ```
 
-`mediaLibraryEntry.revoke`
+### `mediaLibraryEntry.revoke`
 ```json
 {
   "event": "mediaLibraryEntry.revoke",
@@ -445,7 +445,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 }
 ```
 
-`mediaLibraryEntry.active`
+### `mediaLibraryEntry.active`
 ```json
 {
   "event": "mediaLibraryEntry.active",
@@ -462,7 +462,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 }
 ```
 
-`mediaLibraryEntry.invalid`
+### `mediaLibraryEntry.invalid`
 ```json
 {
   "event": "mediaLibraryEntry.invalid",
