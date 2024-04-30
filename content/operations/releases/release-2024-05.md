@@ -342,6 +342,7 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+- [v110.13.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.2): fix(deps): Upgrade @livingdocs/framework@release-2024-05
 
 
   ---
