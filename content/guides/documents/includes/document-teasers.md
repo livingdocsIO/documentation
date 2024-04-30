@@ -11,18 +11,18 @@ To drag and drop Document Cards onto a document to create Teaser Components you 
 This guide assumes that you are familiar with the possibilities to register an Include Service and how to use it in a Component.
 
 
-## Teaser Include Component
-First of all we create a teaser-include component which will be visible within the editor's sidebar. The directive of type `include` allows us to define a `service` we can then use to feed the include as well as the final teaser component.
+## Teaser Component
+First of all we create a article-teaser component which will be visible within the editor's sidebar. The directive of type `include` allows us to define a `service` we can then use to feed the include as well as the final teaser component.
 
 ```js
-// teaser-include.js
+// article-teaser.js
 module.exports = {
-  name: 'teaser-include',
+  name: 'article-teaser',
   label: 'Teaser',
   iconUrl: 'path/to/an/icon',
   directives: [
     {
-      name: 'teaser-include-dir-id',
+      name: 'teaser-include',
       type: 'include',
       // refer to the include service handle
       service: 'teaser-service',
@@ -43,7 +43,7 @@ module.exports = {
     }
   ],
   html: `
-    <div doc-include="teaser-include-dir-id">
+    <div doc-include="teaser-include">
       <div class="placeholder">Link an Article</div>
     </div>
   `
@@ -58,10 +58,10 @@ This component we add to the project settings under the `components` property to
   v: 2,
   //...
   components: [
-    // Register the teaser-include component
-    require('./components/teaser-include'),
+    // Register the article-teaser component
+    require('./components/article-teaser'),
     // the teaser itself will be created later and represents the content of the visible teaser
-    require('./components/teaser-template') 
+    require('./components/article-teaser-template') 
   ]
   //...
 }
@@ -76,7 +76,7 @@ And we define the component in the contentTypes we want to use them:
   // ...
   components: [
     // here we add it to the contentType so it is available within the sidebar
-    {name: 'teaser-include'}
+    {name: 'article-teaser'}
   ],
 
   // optionally you can group it within the sidebar
@@ -84,16 +84,19 @@ And we define the component in the contentTypes we want to use them:
     {
       name: 'text',
       label: {en: 'My Teasers', de: 'Meine Teaser'},
-      components: ['teaser-include']
+      components: ['article-teaser']
     }
   ]
 }
   
 ```
 
-## Teaser Include Service
+Now we have already defined the basic setup for our teaser as a include component. See [Include]({{< ref "/reference/document/document-design/directives/include" >}}) for detailed description of the include feature.
+
+
+## Teaser Service
 We now can create the service we referenced above by the `service` property which will handle our include as desired. On the service we will
-reference our final `teaser-template` component within the return object sent to the editor. This way the editor knows what component to use as teaser and how to render its markup. This is an example of a return object sent by the service:
+reference our final `article-teaser-template` component within the return object sent to the editor. This way the editor knows what component to use as teaser and how to render its markup. This is an example of a return object sent by the service:
 
 ```js
 return {
@@ -102,9 +105,9 @@ return {
   content: [{
     id: 'some-unique-id',
     // here we define the desired component from which the teaser finally will be rendered
-    component: 'teaser-template',
+    component: 'article-teaser-template',
     content: {
-      // all directives defined here are references to the 'teaser-template' 
+      // all directives defined here are references to the 'article-teaser-template' 
       // component and will be populated later within the editor
     }
   }]
@@ -150,7 +153,7 @@ module.exports = function ({publicationApi, documentApi}) {
           editableContent: !params.readOnly,
           content: [{
             id: `teaser-${documentVersion.systemdata.documentId}`,
-            component: 'teaser-template',
+            component: 'article-teaser-template',
             content: {
               image: parseImageData(documentVersion.metadata.teaserImage),
               title: documentVersion.metadata.title,
@@ -206,19 +209,19 @@ liServer.registerInitializedHook(() => {
 }
 ```
 
-Now we see already the outcome of the `teaser-include` and the `teaser-service` we added. When no article is referenced after addding the include to the document, the include's markup "Link an Article" is rendered. On the right side we see the defined `paramsSchema` from our service.
+Now we see already the outcome of the `article-teaser` and the `teaser-service` we added. When no article is referenced after addding the include to the document, the include's markup "Link an Article" is rendered. On the right side we see the defined `paramsSchema` from our service.
 
 {{< img src="./teaser-include.png" alt="Empty Teaser Include" >}}
 
 For a detailed description of the include api see [Includes Server API]({{< ref "/reference/document/includes/server-customization" >}}).
 
-## Teaser Component
-We now have a registered include component `teaser-include` and service `teaser-service` and it is time to define our teaser component `teaser-template` which will be rendered within the document (replacing the include's placeholder markup). Rembember we already registerd `teaser-template` [here]({{< ref "#register-components" >}}) for our project.
+## Teaser Template Component
+We now have a registered include component `article-teaser` and service `teaser-service` and it is time to define our teaser template component `article-teaser-template` which will be rendered within the document (replacing the include's placeholder markup). Rembember we already registerd `article-teaser-template` [here]({{< ref "#register-components" >}}) for our project.
 
 ```js
-// teaser-template.js
+// article-teaser-template.js
 module.exports = {
-  name: 'teaser-template',
+  name: 'article-teaser-template',
   label: 'Teaser Component',
   directives: [{
     name: 'image',
@@ -335,8 +338,8 @@ This is done in the source content Content-Type, in this case `article.js`:
   // ...
   teaserComponents: [
     {
-      component: 'teaser-include',
-      directiveName: 'teaser-include-dir-id'
+      component: 'article-teaser',
+      directiveName: 'teaser-include'
     }
   ]
 }
