@@ -14,12 +14,10 @@ renderTOC: false
     link="/learn/"
   >}}
 
-  {{< cols >}}
-    {{< tip
-      title="Do you want to see Livingdocs?"
-      text="[Contact us](mailto:contact@livingdocs.io) to get a demo."
-    >}}
-  {{< /cols >}}
+  {{< tip
+    title="Do you want to see Livingdocs?"
+    text="[Contact us](mailto:contact@livingdocs.io) to get a demo."
+  >}}
 {{< /cols >}}
 
 ## Discover our technology the way you like

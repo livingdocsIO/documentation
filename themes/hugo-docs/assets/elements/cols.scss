@@ -1,6 +1,7 @@
 .cols {
   @include media-query(tablet) {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: $space-m;
     width: 100%;
     margin-bottom: $space-l;
@@ -19,11 +20,19 @@
   }
 
   & > * {
-    flex-basis: 100%;
     margin-bottom: $space-m;
 
     @include media-query(tablet) {
+      grid-column: span 1;
       margin-bottom: 0;
+
+      &:first-child:nth-last-child(2) {
+        grid-column: span 2;
+      }
+
+      &:first-child:last-child {
+        grid-column: span 3;
+      }
     }
   }
 }

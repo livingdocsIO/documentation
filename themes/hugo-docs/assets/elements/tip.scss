@@ -13,5 +13,9 @@
 
   &__text {
     @extend %font-s-xs;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
