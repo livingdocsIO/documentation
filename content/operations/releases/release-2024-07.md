@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pdfjs-dist from 4.1.392 to v4.2.67 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8397)
 * [Do not track html tags in statistics.characterCount](https://github.com/livingdocsIO/livingdocs-server/pull/6851)
 
 
