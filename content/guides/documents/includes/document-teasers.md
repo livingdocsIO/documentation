@@ -157,8 +157,7 @@ module.exports = function ({publicationApi, documentApi}) {
             content: {
               image: parseImageData(documentVersion.metadata.teaserImage),
               title: documentVersion.metadata.title,
-              lead: documentVersion.metadata.lead,
-              link: 'https://example.com'
+              lead: documentVersion.metadata.lead
             }
           }]
         }
