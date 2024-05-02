@@ -36,12 +36,8 @@ These are the release notes of the upcoming release (pull requests merged to the
 * [Desk-Net Global Integration](https://github.com/livingdocsIO/livingdocs-server/pull/6817)
 * [Check immediately whether shortcuts should be paused](https://github.com/livingdocsIO/livingdocs-editor/pull/8391)
 * [Add file import support to public api](https://github.com/livingdocsIO/livingdocs-server/pull/6847)
-* [Add dynamic teaser lists](https://github.com/livingdocsIO/livingdocs-editor/pull/8228)
-* [Add dynamic teaser lists](https://github.com/livingdocsIO/livingdocs-server/pull/6715)
 * [Feat: simple search iteration improve tokenizer for languages](https://github.com/livingdocsIO/livingdocs-server/pull/6812)
 * [fix(deps): update dependency @google-cloud/storage from 7.10.1 to v7.10.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6844)
-
-
 
 To get an overview about new functionality, read the [Release Notes](TODO).
 To learn about the necessary actions to update Livingdocs to `release-2024-05`, read on.
@@ -231,6 +227,46 @@ Actors are created on demand.
 {{< feature-info "Teasers" "editor" >}}
 ### Dynamic Teaser Lists
 
+Dynamic Teaser Lists simplify the management and rendering of teaser lists within pages, providing an efficient solution for semi-automatic page management. This feature reduces the need for custom code compared to other solutions within Livingdocs. Additionally, it supports deduplication across all components in a page, ensuring each teaser is displayed at most once.
+
+Dynamic Teaser Lists can be created with the new `li-document-search` includes plugin, which supports filtering articles with base filters and display filters. Base filters are always applied and cannot be modified by editors, whereas display filters are rendered in the interface and adjustable by editors. Additionally, sorting order and a limit can be defined, with the latter also being adjustable by editors.
+
+Whenever a new article matches the configured conditions, it is passed to your include's render function. Consequently, Dynamic Teaser Lists contain other teasers over time as new articles match the conditions, without requiring editors to republish the page. Therefore, it is recommended to configure your delivery to repeatedly invalidate the cache for such pages and refetch them occasionally from the Composition API to obtain the latest state.
+
+To configure a Dynamic Teaser List, add the `li-document-search` to the `paramsSchema` of your include service:
+
+```js
+{
+  name: 'dynamic-teaser-list-service',
+  paramsSchema: [{
+    handle: 'teasers',
+    type: 'li-document-search',
+    config: {
+      contentTypes: [],    // optional, shorthand for contentType base filter
+      baseFilters: [],     // optional
+      displayFilters: [],  // optional
+      sort: '',            // optional
+      showLimit: true,     // optional, show limit input in UI
+      defaultLimit: 3,     // required, default number of included documents
+      minLimit: 1,         // optional if showLimit=true, minimum configurable limit in UI
+      maxLimit: 5          // required if showLimit=true, maximum configurable limit in UI
+    }
+  }],
+  rendering: {
+    type: 'function',
+    render (params, context) {
+      const content = params.teasers?.values
+        .map((document) => ({
+          component: 'teaser',
+          content: {
+            title: document.metadata.title
+          }
+        }))
+      return {content}
+    }
+  }
+}
+```
 
 {{< feature-info "Integrations" "editor" >}}
 ### Display filter for `li-imatrics-nlp-tags`
