@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @opentelemetry/instrumentation-dns from 0.36.0 to v0.36.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6859)
 * [Support statistics on the publication index](https://github.com/livingdocsIO/livingdocs-server/pull/6854)
 * [Feat: show delivery links on table dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/8340)
 * [Fix: Reset editable teaser state on blur](https://github.com/livingdocsIO/livingdocs-editor/pull/8404)
