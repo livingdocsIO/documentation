@@ -99,9 +99,9 @@ livingdocs-server migrate up
 ```
 
 {{< feature-info "Integrations" "server/editor" >}}
-### Remove iMatrics tag suggestion support :fire:
+### Migrate iMatrics Tag Suggestion Management :fire:
 
-The tag suggestion feature has been removed from the Livingdocs Editor and Server. Customers can find the functionality over at iMatrics website where they have introduced their own interface for managing tag suggestions.
+The tag suggestion management feature has been removed from the Livingdocs Editor and Server in favour of iMatrics' own tag suggestion functionality. Starting with this release, suggestions are created directly within iMatrics. Customers can find the new management interface in the iMatrics webportal.
 
 #### Required Actions
 
@@ -271,9 +271,11 @@ To configure a Dynamic Teaser List, add the `li-document-search` to the `paramsS
 {{< feature-info "Integrations" "editor" >}}
 ### Display filter for `li-imatrics-nlp-tags`
 
-Add an indexed metadata property of type `li-imatrics-nlp-tags` to a content type:
+The new display filter for iMatrics enables editors to filter documents on dashboards or in Dynamic Teaser Lists by iMatrics metadata properties.
 
-```
+To set it up, add an indexed metadata property of type `li-imatrics-nlp-tags` to a content type:
+
+```js
 {
   handle: 'imatrics',
   type: 'li-imatrics-nlp-tags',
@@ -283,7 +285,7 @@ Add an indexed metadata property of type `li-imatrics-nlp-tags` to a content typ
 
 Reference the metadata property in the display filter:
 
-```
+```js
 dashboards: [
   {
     displayFilters: [
@@ -296,9 +298,11 @@ dashboards: [
 {{< feature-info "Integrations" "editor" >}}
 ### Display filter for `li-retresco`
 
-Add an indexed matadata property of type `li-retresco` to a content type:
+The new display filter for Retresco enables editors to filter documents on dashboards by Retresco metadata properties.
 
-```
+To set it up, add an indexed matadata property of type `li-retresco` to a content type:
+
+```js
 {
   handle: 'retresco',
   type: 'li-retresco',
@@ -308,7 +312,7 @@ Add an indexed matadata property of type `li-retresco` to a content type:
 
 Reference the metadata property in the display filter:
 
-```
+```js
 dashboards: [
   {
     displayFilters: [
@@ -341,7 +345,9 @@ dashboards: [
 {{< feature-info "Integrations" "server" >}}
 ### Migration to iMatrics tag management
 
+The tag suggestion feature has been migrated to iMatrics' own tag suggestion functionality. Starting with this release, tag suggestions are created directly within iMatrics. Customers can find the new management interface in the iMatrics webportal.
 
+Check out the [breaking changes]({{< ref "#migrate-imatrics-tag-suggestion-management-fire" >}}) for guidance on migrating your tag suggestions.
 
 {{< feature-info "Media Library" "server" >}}
 ### File import via Public API
