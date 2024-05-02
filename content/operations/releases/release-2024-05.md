@@ -166,6 +166,8 @@ editorSettings: {
 {{< feature-info "Dashboards" "server" >}}
 ### Dashboards of type `dashboard` :warning:
 
+Livingdocs provides with Table Dashboards a structured and customizable approach to searching and managing documents. Since `release-2022-09`, they are the recommended way to create dashboards. Therefore, we are deprecating dashboards of type `dashboard` and will remove support for them in `release-2024-11`. Customers using dashboards of type `dashboard` should migrate to `tableDashboard`.
+
 {{< feature-info "Dashboards" "server" >}}
 ### Angular custom dashboard cards :warning:
 
