@@ -549,6 +549,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.57): fix(bundle): don't show "add to bundle" if no bundle configured
 - [v110.1.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.56): fix(li-date-time-range-filter): Select correct filter key
 - [v110.1.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.55): fix(tests): adapt tests for better li-image metadata UI testing
 - [v110.1.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.54): fix(security): Update vulnerable dependencies in `cypress/` and `server/`, namely `follow-redirects` and `undici`
