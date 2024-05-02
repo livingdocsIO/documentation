@@ -231,7 +231,7 @@ Dynamic Teaser Lists simplify the management and rendering of teaser lists withi
 
 Dynamic Teaser Lists can be created with the new `li-document-search` includes plugin, which supports filtering articles with base filters and display filters. Base filters are always applied and cannot be modified by editors, whereas display filters are rendered in the interface and adjustable by editors. Additionally, sorting order and a limit can be defined, with the latter also being adjustable by editors.
 
-Whenever a new article matches the configured conditions, it is passed to your include's render function. Consequently, Dynamic Teaser Lists contain other teasers over time as new articles match the conditions, without requiring editors to republish the page. Therefore, it is recommended to configure your delivery to repeatedly invalidate the cache for such pages and refetch them occasionally from the Composition API to obtain the latest state.
+Whenever a new article matches the configured conditions, it is passed to your include's render function. The conditions are applied on request. Therefore, Dynamic Teaser Lists may contain other teasers over time as new articles match the conditions, without requiring editors to republish the page. Thus, it is recommended to configure your delivery to repeatedly invalidate the cache for such pages and refetch them occasionally from the Composition API to obtain the latest state.
 
 To configure a Dynamic Teaser List, add the `li-document-search` to the `paramsSchema` of your include service:
 
