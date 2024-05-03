@@ -728,7 +728,7 @@ search: {
     // AWS Credentials support for OpenSearch
     // You can configure any AWS Credentials provider supported by the AWS SDK credentials-provider-node
     // configuration provided: https://www.npmjs.com/package/@aws-sdk/credential-provider-node#supported-configuration
-    // Please make sure to always define aws object, even if you don't use AWS credentials 
+    // Please make sure to always define aws object, even if you don't use AWS credentials
     aws: {
       accessKeyId: '*****',
       secretAccessKey: '*****',
@@ -1370,7 +1370,8 @@ The HuGO integration has it's own top level config:
 
 ```js
 hugo: {
-  assetPath: 'hugo.customer.com',
+  assetHost: 'https://hugoplus.dam.prd.sternwald.cloud' // (note: no final slash)
+  assetPath: '/#detail/doc', // optional, default: '/#detail/doc' (note: no final slash)
   resource: {
     enabled: true,
     host: 'hugo-api.customer.com',
@@ -1383,6 +1384,10 @@ hugo: {
   }
 }
 ```
+
+The `assetHost` is used to show a link to Hugo in the properties panel when a hugo image is used in a document.
+
+`resource` is used for both image and article drag & drop to connect to hugo.
 
 ## Plugins
 
