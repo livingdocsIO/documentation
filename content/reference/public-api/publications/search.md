@@ -301,6 +301,8 @@ Search filters can be used to filter documents using a custom query DSL.
 | lastPublicationDate        | date    |
 | significantPublicationDate | date    |
 | visiblePublicationDate     | date    |
+| statistics.characterCount  | integer |
+| statistics.componentCount.*| integer |
 | metadata.*                 | Any     |
 
 Metadata fields must be indexed. Please read the [Publication Index]({{< ref "/guides/search/publication-index" >}}) guide for further information.

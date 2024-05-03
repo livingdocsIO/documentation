@@ -686,7 +686,6 @@ The `liTableDashboardCellStatistics` displays Document Statistics such as compon
 
 To display the character count, set `componentOptions.characterCount` to `true`.
 If `projectConfig.editorSettings.textCount.lineCountFraction` is defined [here]({{< ref "reference/project-config/editor-settings#text-count" >}}), also the line count will be displayed.
-Please note that the character count in document statistics may deviate from the count shown in the document editor view.
 
 Component counts are shown for all components listed in the `componentOptions.compomnentCount` array.
 Please make sure to provide a pluralized label string for those components in their design declaration by separating the singular and plural label string with a pipe character (`|`).
