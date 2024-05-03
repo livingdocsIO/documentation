@@ -25,7 +25,7 @@ Cross Project Content Sharing enables you to share content between different Liv
 
 The Livingdocs Server instances where the cross project configuration should be supported, have some constraints:
 
-1. Instances need to set the `clusterId` server configuration. The config value must be unique per livingdocs cluster/installation.
+1. Instances need to set the `clusterId` via Server Config. The config value must be unique per Livingdocs cluster/installation.
 
     ```js
     {
@@ -41,7 +41,8 @@ The Livingdocs Server instances where the cross project configuration should be 
     livingdocs-server elasticsearch-index --handle=li-media -y
     ```
 
-2. If you want to link to other projects of another Livingdocs Cluster, please ensure that all the instances run against the same Elasticsearch Cluster.
+2. Instances need to set the same `indexNamePrefix` via Server Config (`elasticIndex.indexNamePrefix`)
+3. All instances need to run against the same Elasticsearch Cluster.
 
 ## Project Setup
 
