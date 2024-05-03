@@ -371,7 +371,7 @@ Example Dashboard config excerpt:
   handle: 'articles',
   type: 'tableDashboard',
   baseFilters: [
-    {key: 'statistics.componentCounts.image', exists: true},
+    {key: 'statistics.componentCount.image', exists: true},
     // ...
   ],
   displayFilters: [
