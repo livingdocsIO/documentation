@@ -59,9 +59,10 @@
           </tr>
         </table>
 
-        {{ if .Params.description }}
+        {{ if or (.Params.description) (.Content) }}
           {{ "## Description" | markdownify }}
-          {{ .Params.description | .Page.RenderString }}
+          {{ .Params.description | .Page.RenderString (dict "display" "block") }}
+          {{ .Content }}
         {{ end }}
 
         {{ if .Params.defaultUI }}
