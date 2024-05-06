@@ -79,6 +79,11 @@
           {{ print "```js\n{\n  handle: 'myContentType',\n  // ...\n  metadata: [\n    {\n" .Params.contentTypeConfig "    }\n    // ...\n  ]\n}" | .Page.RenderString }}
         {{ end }}
 
+        {{ if .Params.includeConfig }}
+          {{ "## Include Config" | markdownify }}
+          {{ print "```js\n{\n  name: 'myInclude',\n  paramsSchema: [\n    {\n" .Params.includeConfig "    }\n  ]\n}" | .Page.RenderString }}
+        {{ end }}
+
         {{ if .Params.tableDashboardConfig }}
           {{ "## Table Dashboard Config" | markdownify }}
           {{ print "```js\n{\n  handle: 'myDashboard',\n  // ...\n" .Params.tableDashboardConfig "}" | .Page.RenderString }}
