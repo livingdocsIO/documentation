@@ -438,6 +438,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v251.8.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.5): fix: Do not load publication references when loading drafts
 - [v251.8.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.4): test(search): Add publication statistics search filter tests
 - [v251.8.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.3): fix(statistics): Decode html entities before counting characters
 - [v251.8.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.2): fix(release-2024-05): Update framework to v29.3.7 (release-2024-05 tag)
