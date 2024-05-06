@@ -28,7 +28,7 @@ These steps happen on restore:
 To restore individual records there is a way if you go to the archived document by going to its page via url:
 https://editor.your-domain.com/p/:projectHandle/articles/:documentId
 
-Then you’ll should see the document in read-only mode.
+Then you should see the document in read-only mode.
 
 If you have not disabled the document restore feature explicitly via the editor config `app.useArchivedRestore: false` you’ll see an option to restore the document.
 
