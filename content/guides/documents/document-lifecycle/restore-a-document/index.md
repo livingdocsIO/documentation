@@ -18,7 +18,7 @@ These steps happen on delete:
 
 Restoring only makes the document visible again. It does not undo everything that happened when the document was deleted.
 
-These steps happen on delete:
+These steps happen on restore:
 
 * it is not marked as deleted anymore
 * it is added to the drafts elasticsearch index again
