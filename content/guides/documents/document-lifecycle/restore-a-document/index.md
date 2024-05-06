@@ -30,7 +30,7 @@ https://editor.your-domain.com/p/:projectHandle/articles/:documentId
 
 Then you should see the document in read-only mode.
 
-If you have not disabled the document restore feature explicitly via the editor config `app.useArchivedRestore: false` you’ll see an option to restore the document.
+If you have not disabled the document restore feature explicitly via the Editor Config `app.useArchivedRestore: false` you’ll see an option to restore the document.
 
 ## Manual restore via dev console
 
