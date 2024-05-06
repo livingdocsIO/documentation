@@ -34,7 +34,7 @@ If you have not disabled the document restore feature explicitly via the Editor 
 
 ## Manual restore via browser dev console
 
-You can use the `fetch` api via the console in the Chrome Dev Tools:
+You can use the `fetch` api via the console in the browser Dev Tools:
 
 ```js
 await fetch('https://editor.stage.your-domain.io/proxy/api/documents/restore/:documentId', {
