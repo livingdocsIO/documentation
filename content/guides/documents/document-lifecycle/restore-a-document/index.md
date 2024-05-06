@@ -32,7 +32,7 @@ Then you should see the document in read-only mode.
 
 If you have not disabled the document restore feature explicitly via the Editor Config `app.useArchivedRestore: false` you’ll see an option to restore the document.
 
-## Manual restore via dev console
+## Manual restore via browser dev console
 
 You can use the `fetch` api via the console in the Chrome Dev Tools:
 
