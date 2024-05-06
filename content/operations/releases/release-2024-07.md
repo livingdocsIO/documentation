@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 29.3.7 to v29.4.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8401)
 * [Support node v22](https://github.com/livingdocsIO/livingdocs-server/pull/6861)
 * [fix: comment UI labels](https://github.com/livingdocsIO/livingdocs-editor/pull/8407)
 * [fix(deps): update dependency @opentelemetry/instrumentation-dns from 0.36.0 to v0.36.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6859)
