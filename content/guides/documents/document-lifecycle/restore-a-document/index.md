@@ -20,7 +20,7 @@ Restoring only makes the document visible again. It does not undo everything tha
 
 These steps happen on delete:
 
-* it is no marked as deleted anymore
+* it is not marked as deleted anymore
 * it is added to the drafts elasticsearch index again
 
 ## Manual restore via Editor UI
