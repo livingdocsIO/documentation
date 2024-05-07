@@ -87,6 +87,10 @@ projectConfig.editorSettings = {
 
 When you go to the dashboard in the editor, you will see a "Create Breaking News" button.
 
+{{< info >}}
+Document Creation Flows don't support author prefilling. If author prefilling is configured, Livingdocs will default back to creation wizards.
+{{< /info >}}
+
 ### Register createFunction
 
 The first step defined a creation flow with flexible data (`paramsSchema`, `context`). Now you need to register a `createFunction` to define how your data gets parsed and how the document will be created.

@@ -107,3 +107,7 @@ If you want to prefill authors from the currently logged in user (see previous s
 
 For each project/channel combination you can assign an author record to the selected user. If this user subsequently logs in and creates an article, the author record will be prefilled to the metadata.
 This operation can only be performed via the UI.
+
+{{< info >}}
+Document Creation Flows don't support author prefilling. Livingdocs will ignore the configured Document Creation Flows and default back to creation wizards.
+{{< /info >}}
