@@ -49,12 +49,12 @@ This guide assumes that you are familiar with the possibilities to register an I
       return {
         // Render multiple "teaser" components
         content: params.list.values.map(({metadata, systemdata}) => ({
-          id: `list-teaser-${documentVersion.systemdata.documentId}`,
+          id: `list-teaser-${systemdata.documentId}`,
           component: 'my-teaser-component', // The component is defined below
           content: {
             // Provide the necessary properties for the component
-            image: documentVersion.metadata.teaserImage,
-            title: documentVersion.metadata.title,
+            image: metadata.teaserImage,
+            title: metadata.title,
             showLead: true,
             lead: 'lead from include',
             showByline: true,
