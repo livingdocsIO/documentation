@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/6876)
 * [fix(deps): update dependency semver from 7.6.0 to v7.6.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8416)
 * [Fix azure blob storage error propagation](https://github.com/livingdocsIO/livingdocs-server/pull/6869)
 * [fix(deps): update dependency sass from 1.76.0 to v1.77.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8412)
