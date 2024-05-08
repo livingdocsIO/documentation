@@ -462,6 +462,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.100](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.100): chore(deps): Remove worker check
 - [v102.1.99](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.99): fix(groups): Hide api clients from group invitation screen
 - [v102.1.98](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.98): fix(li-date-time-range-filter): Select correct filter key
 - [v102.1.97](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.97): fix(security): Update vulnerable dependencies in `cypress/` and `server/`, namely `follow-redirects`, `@fastify/reply-from`, `axios` and `undici`
