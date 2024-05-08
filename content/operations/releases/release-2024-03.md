@@ -550,6 +550,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.59): fix(groups): Hide api clients from group invitation screen
 - [v110.1.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.58): fix(editable teaser): show original reset now on blur
 - [v110.1.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.57): fix(bundle): don't show "add to bundle" if no bundle configured
 - [v110.1.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.56): fix(li-date-time-range-filter): Select correct filter key
