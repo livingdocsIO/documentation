@@ -30,6 +30,25 @@ settings: {
     translationWorkflow: true // shows "translate" icon on the toolbar
   },
   integrations: {
+    // Desk-Net Global Integration
+    // For the legacy Desk-Net Platform Integration see `settings.desknet`
+    // For further details see the "Desk-Net Global Integration" guide
+    desknet: {
+      enabled: true,
+      credentials: {
+        clientId: 'my-desknet-client-id',
+        clientSecret: {
+          $secretRef: {
+            name: 'my-desknet-secret'
+          }
+        }
+      },
+      createDocumentFunction: 'myCreateDocumentFunction',
+      createElementFunction: 'myCreateElementFunction',
+      incomingElementToDocumentCommandsFunction: 'myIncomingElementToDocumentCommandsFunction',
+      outgoingDocumentToElementFunction: 'myOutgoingDocumentToElementFunction',
+      outgoingDocumentToElementEventSources: ['publish', 'unpublish', 'update'] // Default: ['publish', 'unpublish']
+    },
     // NOTE: imatrics uses our secure $secretRef method that will be used by all plugins in future
     imatrics: {
       enabled: true,
@@ -105,6 +124,7 @@ settings: {
   },
 
   // Desk-Net Platform Integration (legacy)
+  // For the new Desk-Net Global Integration see `settings.integrations.desknet`
   // For further details see the "Desk-Net Platform Integration" guide
   desknet: {
     enabled: true,
