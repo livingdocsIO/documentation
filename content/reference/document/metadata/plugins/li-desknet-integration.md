@@ -17,6 +17,11 @@ support:
   systemMetadata: false
   planningSystem: false
 description: |
+  {{< warning >}}
+  Support for `li-desknet-integration` will eventually be removed.\
+  Please use [`li-desknet-global`]({{< ref "/reference/document/metadata/plugins/li-desknet-global" >}}) instead.
+  {{< /warning >}}
+
   This plugin is used to connect Desk-Net stories with Livingdocs documents. There are numerous options available to synchronise data between the two platforms. Further details can be found in the [Desk-Net Platform Integration Guide]({{< ref "/guides/integrations/desknet-legacy" >}}).
 defaultUI: |
   **Document Metadata**: Read-only link to Desk-Net distribution entry\
