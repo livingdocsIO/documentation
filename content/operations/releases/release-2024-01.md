@@ -369,6 +369,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.92](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.92): chore(deps): Remove worker check
 - [v106.0.91](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.91): fix(permissions): Also extract content types from `{not: {key: 'contentType', term: 'regular'}}` baseFilters to support permissions correctly
 - [v106.0.90](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.90): fix(li-date-time-range-filter): Select correct filter key
 - [v106.0.89](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.89): fix(tests): adapt tests for better li-image metadata UI testing
