@@ -532,7 +532,7 @@ Apart from the general settings (`renderSettings`) you define an entry for each 
 
 ## Desk-Net
 
-See our [Desk-Net plugin guide]({{< ref "/guides/integrations/desknet" >}}) for comprehensive infos (custom code parts require enterprise version).
+See our (legacy) [Desk-Net Platform Integration guide]({{< ref "/guides/integrations/desknet-legacy" >}}) for more info.
 
 ## Enable Push Notifications for a ContentType
 

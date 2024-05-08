@@ -104,7 +104,8 @@ settings: {
     }
   },
 
-  // See the "Desk-Net Integration" guide for further details
+  // Desk-Net Platform Integration (legacy)
+  // For further details see the "Desk-Net Platform Integration" guide
   desknet: {
     enabled: true,
     credentials: {

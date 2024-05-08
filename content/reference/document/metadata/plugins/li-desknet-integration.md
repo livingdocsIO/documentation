@@ -4,7 +4,7 @@ type: metadata-plugins
 menus:
   reference:
     parent: Metadata Plugins List
-summary: Used to connect Desk-Net stories with Livingdocs documents.
+summary: Legacy plugin to connect Desk-Net stories with Livingdocs documents using a publication platform.
 support:
   document: true
   media: false
@@ -17,7 +17,7 @@ support:
   systemMetadata: false
   planningSystem: false
 description: |
-  This plugin is used to connect Desk-Net stories with Livingdocs documents. There are numerous options available to synchronise data between the two platforms. Further details can be found in the [Desk-Net Integration Guide]({{< ref "/guides/integrations/desknet" >}}).
+  This plugin is used to connect Desk-Net stories with Livingdocs documents. There are numerous options available to synchronise data between the two platforms. Further details can be found in the [Desk-Net Platform Integration Guide]({{< ref "/guides/integrations/desknet-legacy" >}}).
 defaultUI: |
   **Document Metadata**: Read-only link to Desk-Net distribution entry\
   **Table Dashboard**: Read-only Desk-Net publication/platform status

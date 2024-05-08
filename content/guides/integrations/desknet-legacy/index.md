@@ -1,7 +1,6 @@
 ---
-title: Desk-Net Integration
+title: Desk-Net Platform Integration
 description: Integrate Desk-Net with Livingdocs
-weight: 1
 ---
 
 [Desk-Net](https://desk-net.com) is a planning tool for publication processes. This feature, if set up properly, lets you easily connect your Desk-Net world to your Livingdocs universe. Here's a few things you can do:
