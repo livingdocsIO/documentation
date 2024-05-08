@@ -438,6 +438,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v251.8.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.7): fix(retresco): Only filter entities in mock API if query is provided
 - [v251.8.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.6): fix(azure-blob-storage): Correctly handle processing errors by propagating to all the streams
 - [v251.8.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.5): fix: Do not load publication references when loading drafts
 - [v251.8.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.4): test(search): Add publication statistics search filter tests
