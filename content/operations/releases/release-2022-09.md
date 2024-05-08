@@ -140,7 +140,7 @@ The Desk-Net integration has been extended with some new features:
 
 References:
 * Documentation:
-  * [Desk-Net Integration Guide]({{< ref "/guides/integrations/desknet-legacy" >}})
+  * [Desk-Net Schedule Guide]({{< ref "/guides/integrations/desknet-schedule" >}})
 * li-desknet-schedule Metadata Plugin:
   * [Server PR: li-desknet-schedule metadata plugin](https://github.com/livingdocsIO/livingdocs-server/pull/4673)
   * [Editor PR: li-desknet-schedule metadata plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/5627)
