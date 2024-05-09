@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency semver from 7.6.1 to v7.6.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8444)
 * [fix(deps): update dependency semver from 7.6.1 to v7.6.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6884)
 * [fix(deps): update aws-sdk from 3.569.0 to v3.572.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6882)
 * [Fix dashboard permissions for baseFilters with a `not contentType` declaration](https://github.com/livingdocsIO/livingdocs-editor/pull/8435)
