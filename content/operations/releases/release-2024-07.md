@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix call to assertFunction generator [master]](https://github.com/livingdocsIO/livingdocs-server/pull/6888)
 * [fix(deps): update dependency @livingdocs/framework from 29.4.1 to v29.4.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6885)
 * [fix(deps): update dependency @livingdocs/framework from 29.4.1 to v29.4.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8445)
 * [fix(deps): update dependency semver from 7.6.1 to v7.6.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8444)
