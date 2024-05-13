@@ -311,6 +311,57 @@ dashboards: [
 {{< feature-info "Search" "editor" >}}
 ### Document search improvements
 
+In this release we improve the "simple" search strategy based on feedback we received. When searching for document ids we again show the document in the table dashboard as it was in the old search mechanism. We also add the recency boosting from the old search to the simple search and give the option to decide on which field it should be applied.
+
+To configure the recency boosting add the `propertyName` in the dashboard configs:
+
+```js
+{
+  handle: 'articles',
+  type: 'tableDashboard',
+  search: {
+    strategy: 'simple',
+    recencyBoost: {
+      propertyName: 'updated_at'
+    }
+  }
+  // ...
+}
+```
+
+Next we are improving language support by using language specific fields which are configured with the correct elasticsearch analyzers. This will also enable to exact match a word when a search term is written in quotes. To enable it you have to set the `useLanguageSpecificFields` in the elasticindex settings:
+
+```js
+{
+  elasticIndex: {
+    indexNamePrefix: 'li-example',
+    indexSettings: {
+      useLanguageSpecificFields: true
+    },
+    // ...
+  },
+}
+```
+
+We also add the option to configure a german decompounder which will break up compound words. This needs two files a dictionary and a file with hyphenation patterns. Specify the path to those in the settings:
+```js
+{
+  elasticIndex: {
+    indexNamePrefix: 'li-example',
+    indexSettings: {
+      useLanguageSpecificFields: true,
+      germanDecompounder: {
+        enabled: true,
+        dictionary: 'decompounder/dictionary-de.txt',
+        hyphenation: 'decompounder/de_DR.xml'
+      }
+    },
+    // ...
+  },
+}
+```
+
+Note that both the language specific fields and the german decompounder need a recreation of the elastic index.
 
 
 {{< feature-info "Document State" "editor" >}}
