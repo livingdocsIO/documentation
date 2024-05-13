@@ -52,7 +52,7 @@ liServer.registerAssistant({
   handle: 'enhanceArticle',
   label: 'Enhance Article',
   description: 'Optimize article elements like metadata and structure.',
-  iconUrl: 'url_to_icon',
+  icon: 'wizard-hat',
 
   async assist({document, projectConfig, focusedComponentId}) {
     // Ensure the context is suitable for this assistant
