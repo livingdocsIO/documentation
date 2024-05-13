@@ -21,7 +21,7 @@ description: |
   See [`li-desknet-integration`]({{< ref "/reference/document/metadata/plugins/li-desknet-integration" >}}) for details about the legacy plugin.
   {{< /info >}}
 
-  The `li-desknet-global` plugin is used to connect Desk-Net stories with Livingdocs documents. There are numerous options available to synchronise data between the two platforms.
+  The `li-desknet-global` plugin is used to connect Desk-Net stories with Livingdocs documents. There are numerous options available to synchronise data between the two platforms. Further details can be found in the [Desk-Net Global Integration Guide]({{< ref "/guides/integrations/desknet" >}}).
 defaultUI: Link to Desk-Net story, or optional button to create a Desk-Net story
 storageFormat: |
   {
