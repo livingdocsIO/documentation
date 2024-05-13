@@ -186,8 +186,6 @@ This feature allows for complex document manipulations through a simplified inte
 initiated from the editor UI using the `Cmd+K` (macOS) or `Ctrl+K` (Windows/Linux) shortcut,
 where users can find and execute available Assistants.
 
-A guide how to implement an assistant can be found [here]({{< ref "/guides/editor/assistants" >}}).
-
 Please share your ideas for assistants with us, we would love to learn and gather more perspectives.
 
 #### Register an assistant
@@ -234,14 +232,7 @@ Please share your ideas for assistants with us, we would love to learn and gathe
 })
 ```
 
-Possible properties on `context`:
-- `projectConfig`
-- `documentId` (optional)
-- `document` (optional)
-- `focusedComponentId` (optional)
-
-Commands are executed with an assistant actor (one per project/assistant combination).
-Actors are created on demand.
+The full guide how to implement an assistant can be found [here]({{< ref "/guides/editor/assistants" >}}).
 
 {{< feature-info "Teasers" "editor" >}}
 ### Dynamic Teaser Lists
