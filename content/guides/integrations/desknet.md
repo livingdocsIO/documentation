@@ -107,7 +107,7 @@ liServer.registerInitializedHook(() => {
 
 The `createDocumentFunction` is called whenever an un-linked Desk-Net story is created or updated.
 
-The `element` provided by Desk-Net is forwarded to the function, along with the `desknetApi`.
+The `element` provided by Desk-Net is forwarded to the function, along with the `desknetApi`. For details of the values contained within the `element` please see the [Get Element](https://api.desk-net.com/#api-Element-GetElement) section of the Desk-Net API documentation.
 
 If you wish to create a document the function should return an object with a `document` property containing document data. The `title` and `contentType` properties are required, and `content`, `designVersion`, `metadata`, `metadataSource`, and `translations` are all optional.
 
@@ -138,7 +138,7 @@ The `createElementFunction` is used to create a Desk-Net story from a Livingdocs
 
 The function will be called with a `document` property and the `desknetApi`.
 
-The function should return an object containing an `element` property. Due to the constraints enforced by the Desk-Net API the `element` object must contain at least one of the following: Publication platform, Task, Group. The Livingdocs code will handle setting the `externalElement` value and sending the request to Desk-Net.
+The function should return an object containing an `element` property. Due to the constraints enforced by the Desk-Net API the `element` object must contain at least one of the following: Publication platform, Task, Group. The Livingdocs code will handle setting the `externalElement` value and sending the request to Desk-Net. For details of the values you can provide within the `element` please see the [Update Element](https://api.desk-net.com/#api-Element-UpdateElement) section of the Desk-Net API documentation.
 
 If you do not want to create a Desk-Net story for the specific document then the function can throw an error and the message will be displayed to the user.
 
@@ -170,7 +170,7 @@ If you do not want to create a Desk-Net story for the specific document then the
 
 The `incomingElementToDocumentCommandsFunction` is called every time a linked Desk-Net story is updated.
 
-It is called with the `element` from Desk-Net, the Livingdocs `document`, and the `desknetApi`.
+It is called with the `element` from Desk-Net, the Livingdocs `document`, and the `desknetApi`. For details of the values contained within the `element` please see the [Get Element](https://api.desk-net.com/#api-Element-GetElement) section of the Desk-Net API documentation.
 
 The expected return value is an object with a `commands` array. The function can optionally return a `preconditions` array as well. For further details on what can be within the `commands` and `preconditions` arrays please see the [Document Command API]({{< ref "/reference/public-api/document-command-api" >}}) reference documentation.
 
