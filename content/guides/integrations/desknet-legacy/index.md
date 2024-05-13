@@ -4,8 +4,7 @@ description: Integrate Desk-Net with Livingdocs using a publication platform
 ---
 
 {{< warning >}}
-  The Desk-Net Platform Integration will eventually be removed.\
-  Please use the [Desk-Net Global Integration]({{< ref "/guides/integrations/desknet" >}}) guide instead.
+  The Desk-Net Platform Integration will eventually be removed. For new setups please use the [Desk-Net Global Integration]({{< ref "/guides/integrations/desknet" >}}) guide instead, or for upgrading from the platform integration to the global integration please read the [Desk-Net Migration]({{< ref "/guides/integrations/desknet-migration" >}}) guide.
 {{< /warning >}}
 
 [Desk-Net](https://desk-net.com) is a planning tool for publication processes. This feature, if set up properly, lets you easily connect your Desk-Net world to your Livingdocs universe. Here's a few things you can do:
