@@ -11,35 +11,14 @@ aliases:
 
 {{< release-header
   title="May 2024 Release"
-  upcoming=true
+  upcoming=false
   legacy=false
   current=true
   maintained=true
   branchHandle="release-2024-05"
 >}}
 
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to the main branch).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
-
-## PRs to Categorize
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/8398)
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/6850)
-* [fix(deps): update babel from 7.24.4 to v7.24.5 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/8396)
-* [Do not try to render includes with no value/params when using the Composition API](https://github.com/livingdocsIO/livingdocs-server/pull/6734)
-* [Add Desk-Net Global metadata plugin form](https://github.com/livingdocsIO/livingdocs-editor/pull/8378)
-* [Desk-Net Global Integration](https://github.com/livingdocsIO/livingdocs-server/pull/6817)
-* [Check immediately whether shortcuts should be paused](https://github.com/livingdocsIO/livingdocs-editor/pull/8391)
-* [Add file import support to public api](https://github.com/livingdocsIO/livingdocs-server/pull/6847)
-* [Feat: simple search iteration improve tokenizer for languages](https://github.com/livingdocsIO/livingdocs-server/pull/6812)
-* [fix(deps): update dependency @google-cloud/storage from 7.10.1 to v7.10.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6844)
-
-To get an overview about new functionality, read the [Release Notes](TODO).
+To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-may-2024).
 To learn about the necessary actions to update Livingdocs to `release-2024-05`, read on.
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -354,7 +333,29 @@ Check out the [breaking changes]({{< ref "#migrate-imatrics-tag-suggestion-manag
 {{< feature-info "Media Library" "server" >}}
 ### File import via Public API
 
+For a long time, the Livingdocs Server has supported images and videos import via the Public API. With this release, we also added support for general file imports (e.g. PDF). Now, for all media types, files can be imported into the Livingdocs Media Library from external systems, such as DAMs or similar.
 
+An [additional endpoint]({{< ref "/reference/public-api/imports/files#import-files" >}}) has been introduced `POST api/v1/import/files` to support [Public API file imports]({{< ref "/reference/public-api/imports/files" >}}). Similar to images and videos imports, the endpoint requires parameters an array `files` and `systemName` as input and returns the media library's file id. 
+
+```js
+{
+  "systemName": "identifier-for-your-system",
+  "webhook": "https://my-domain.com/webhooks/file-import",
+  "context": {
+    "myIdentifier": "some-identifier-sent-to-the-webhook"
+  },
+  "files": [
+    {
+      "url": "https://placekitten.com/800/600",
+      "id": "123abc",
+      "fileName": "cat",
+      "metadata": {
+        "caption": "foo"
+      }
+    }
+  ]
+}
+```
 
 {{< feature-info "New Feature" "server/editor" >}}
 ### Document Statistics :gift:
