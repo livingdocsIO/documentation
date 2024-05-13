@@ -171,11 +171,8 @@ As part of our ongoing migration from Angular to Vue, we are deprecating Angular
 
 ## Features
 
-{{< feature-info "Assistants" "server" >}}
-### Livingdocs Assistants
-
 {{< feature-info "New Feature" "server/editor" >}}
-### Assistants :gift:
+### Livingdocs Assistants :gift:
 
 We are happy to announce the first version of the Livingdocs Assistants Platform.
 Use it to understand the system and start learning, what can be done.
