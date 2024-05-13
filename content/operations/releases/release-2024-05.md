@@ -332,11 +332,6 @@ dashboards: [
 ]
 ```
 
-{{< feature-info "Documents State" "editor" >}}
-### Document statistics
-
-
-
 {{< feature-info "Search" "editor" >}}
 ### Document search improvements
 
