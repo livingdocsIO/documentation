@@ -5,7 +5,7 @@ weight: 1
 ---
 
 {{< info >}}
-  See the [Desk-Net Platform Integration]({{< ref "/guides/integrations/desknet-legacy" >}}) guide for details about the legacy integration.
+  See the [Desk-Net Platform Integration]({{< ref "/guides/integrations/desknet-legacy" >}}) guide for details about the legacy integration, or read the [Desk-Net Migration]({{< ref "/guides/integrations/desknet-migration" >}}) guide for details on upgrading from the platform integration to the global integration.
 {{< /info >}}
 
 ## Setup
