@@ -340,7 +340,57 @@ dashboards: [
 {{< feature-info "Document State" "editor" >}}
 ### Manual document status
 
+Many Newsrooms work with a manual status that progresses linearly. The new `li-manual-document-status` allows to accomadate such usecases by giving the possibility to define a set of statuses along with hex colors.
 
+To configure the manual document status add a metadata property of type `li-document-status` to a content type:
+
+```js
+{
+  handle: 'manualDocumentStatus',
+  type: 'li-manual-document-status',
+  config: {
+    index: true,
+    placeholder: { en: 'Select status', de: 'Status wählen' },
+    statuses: [
+      {
+        value: 'in-progress',
+        label: {en: 'In progress', de: 'In Arbeit'},
+        color: '#E04D66'
+      },
+      {
+        value: 'edited',
+        label: {en: 'Edited', de: 'Redigiert'},
+        color: '#1251CE'
+      },
+      {
+        value: 'ready-for-online',
+        label: {en: 'Ready for online', de: 'Fertig für Online'},
+        color: '#954FBD'
+      },
+      {
+        value: 'finished',
+        label: {en: 'Finished', de: 'Fertig/Schlusskorrigiert'},
+        color: '#1FC47A'
+      }
+    ]
+  },
+  ui: {
+    label: {en: 'Manual status', de: 'Manueller Status'}
+  }
+}
+```
+
+Reference the metadata property in the display filter:
+
+```js
+dashboards: [
+  {
+    displayFilters: [
+      {metadataPropertyName: 'manualDocumentStatus'}
+    ]
+  }
+]
+```
 
 {{< feature-info "Integrations" "server" >}}
 ### Desk-net Global Integration
