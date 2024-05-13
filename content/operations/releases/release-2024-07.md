@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk from 3.572.0 to v3.574.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6889)
 * [chore(deps): update dependency jose from 5.2.4 to v5.3.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8448)
 * [Fix call to assertFunction generator [master]](https://github.com/livingdocsIO/livingdocs-server/pull/6888)
 * [fix(deps): update dependency @livingdocs/framework from 29.4.1 to v29.4.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6885)
