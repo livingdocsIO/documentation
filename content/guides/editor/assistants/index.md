@@ -54,7 +54,8 @@ liServer.registerAssistant({
   description: 'Optimize article elements like metadata and structure.',
   icon: 'wizard-hat',
 
-  async assist({document, projectConfig, focusedComponentId}) {
+  async assist({context}) {
+    const {document, projectConfig, focusedComponentId} = context
     // Ensure the context is suitable for this assistant
     if (!document) {
       throw new Error("Unsuitable context for the 'enhanceArticle' assistant.");
@@ -90,6 +91,15 @@ liServer.registerAssistant({
   }
 })
 ```
+
+Possible properties on `context`:
+- `projectConfig`
+- `documentId` (optional)
+- `document` (optional)
+- `focusedComponentId` (optional)
+
+Commands are executed with an assistant actor (one per project/assistant combination).
+Actors are created on demand.
 
 ## Benefits and Use Cases
 
