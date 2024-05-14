@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix: don't fail adding components with include service without paramsSchema](https://github.com/livingdocsIO/livingdocs-editor/pull/8464)
 * [Improvement/Document Notification](https://github.com/livingdocsIO/livingdocs-editor/pull/8303)
 * [Increment config version when updating group members](https://github.com/livingdocsIO/livingdocs-editor/pull/8460)
 * [fix(deps): update dependency pino from 9.0.0 to v9.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6895)
