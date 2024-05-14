@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Display error notification when Desk-Net story creation fails](https://github.com/livingdocsIO/livingdocs-editor/pull/8456)
 * [Fix k-menu: close on session expiration](https://github.com/livingdocsIO/livingdocs-editor/pull/8450)
 * [Load document state from database on kanban dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/8451)
 * [fix(deps): update aws-sdk from 3.572.0 to v3.574.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6889)
