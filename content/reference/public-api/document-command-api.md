@@ -38,7 +38,7 @@ PATCH api/v1/documents/:id/commands
 |-|-|-|-|
 |version|integer||Current document version. When set on update the version is checked.|
 |preconditions|array||An array of preconditions for command execution. If a precondition assertion fails, no commands are executed and the request responds with a `429 Conflict` status.<br><br>Each entry is an object with at least a **type** property.<br><br>Possible types:<br>- `isPublished`: Document is currently public<br>- `isPublishedAndHasNoChanges`: Document is currently public and has no changes since last publish<br><br>See further details in example requests.|
-|commands|array|x|An array of commands to execute. Each entry is an object with at least an **operation** property.<br><br>Possible operations:<br>- `setMetadataProperty`<br>- `setEditableDirective`<br>- `publish`.<br><br>See further details in example requests.|
+|commands|array|x|An array of commands to execute. Each entry is an object with at least an **operation** property.<br><br>Possible operations:<br>- `setMetadataProperty`<br>- `setEditableDirective`<br>- `setTitle`<br>- `insertComponent`<br>- `publish`<br><br>See further details in example requests.|
 
 #### Example Request
 ```js
@@ -67,6 +67,26 @@ PATCH api/v1/documents/:id/commands
       "componentId": "doc-1a2b3c4d5",
       "directiveName": "headline",
       "value": "updated headline"
+    },
+    {
+      // sets the title property on a document (might be overruled by displayTitlePattern on read)
+      "operation": "setTitle",
+      "value": "updated title",
+      "oldValue": "previous title"
+    },
+    {
+      // inserts a new component into the document content
+      "operation": "insertComponent",
+      "componentName": "paragraph",
+      "content": {
+        "text": "Some text"
+      },
+      "position": {
+        "parentComponentId": "doc-4a2b3g4d5", // Omit to insert into document root
+        "parentContainerName": "children", // Omit to insert into document root,
+        "previousComopnentId": "doc-1a2b3c4d5", // To insert after component with this id
+        "nextComopnentId": "doc-1a2b3c4d5", // To insert before component with this id
+      }
     },
     {
       "operation": "publish"
