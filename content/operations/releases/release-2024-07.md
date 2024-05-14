@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pino from 9.0.0 to v9.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6895)
 * [Display error notification when Desk-Net story creation fails](https://github.com/livingdocsIO/livingdocs-editor/pull/8456)
 * [Fix k-menu: close on session expiration](https://github.com/livingdocsIO/livingdocs-editor/pull/8450)
 * [Load document state from database on kanban dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/8451)
