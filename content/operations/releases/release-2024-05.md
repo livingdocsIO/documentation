@@ -551,6 +551,7 @@ Here is a list of all patches after the release has been announced.
 - [v251.8.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.2): fix(release-2024-05): Update framework to v29.3.7 (release-2024-05 tag)
 
 ### Livingdocs Editor Patches
+- [v110.13.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.11): fix(desknet): Display error notification when story creation fails
 - [v110.13.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.10): fix(kanban-dashboard): Load document state from database on kanban dashboards
 - [v110.13.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.9): fix(permissions): Also extract content types from `{not: {key: 'contentType', term: 'regular'}}` baseFilters to support permissions correctly
 - [v110.13.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.8): fix(user merge): Spacing
