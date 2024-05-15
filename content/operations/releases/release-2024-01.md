@@ -325,6 +325,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.44): fix(retresco): Properly delete retresco enrich jobs from redis after processing
 - [v245.0.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.43): fix(azure-blob-storage): Correctly handle processing errors by propagating to all the streams
 - [v245.0.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.42): fix(security): Patch security vulnerabilities CVE-2024-30260 and CVE-2024-30261 in `undici`, CVE-2024-29041 in `express`, CVE-2024-28863 in `tar`, CVE-2024-28849 in `follow-redirects`, CVE-2024-28176 in `jose`, and CVE-2023-36665 in `protobufjs`
 - [v245.0.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.41): fix(queue): Properly await in lib/async-queue
