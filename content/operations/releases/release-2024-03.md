@@ -520,6 +520,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.28): chore(queue): Automatically delete processed jobs without calling job.del()
 - [v248.5.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.27): fix(link-directive): Fix link directive html validation to support links without hostname
 - [v248.5.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.26): fix(azure-blob-storage): Correctly handle processing errors by propagating to all the streams
 - [v248.5.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.25): fix(security): Patch security vulnerabilities CVE-2024-30260 and CVE-2024-30261 in `undici`, CVE-2024-29041 in `express`, CVE-2024-28863 in `tar`, CVE-2024-28849 in `follow-redirects`, and CVE-2024-28176 in `jose`
