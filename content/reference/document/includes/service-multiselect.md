@@ -13,8 +13,10 @@ So far we have seen configurations where a `doc-include` directive has one inclu
 {
   "name": "top-news",
   "label": "Top News",
-  "directives": {
-    "top-news": {
+  "directives": [
+    {
+      "name": "top-news",
+      "type": "include",
       "services": [
         {
           "service": "list",
@@ -51,7 +53,7 @@ So far we have seen configurations where a `doc-include` directive has one inclu
         }
       ]
     }
-  }
+  ]
 }
 </script>
 
