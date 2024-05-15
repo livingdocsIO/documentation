@@ -353,7 +353,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ### `document.build.draft`
 ```json
 {
-  "event": "document.build",
+  "event": "document.build.draft",
   "deliveryId": "2Xwe-gvuB_JsK3_4bJerT",
   "projectId": 3,
   "projectHandle": "service",
