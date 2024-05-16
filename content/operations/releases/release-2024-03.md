@@ -551,6 +551,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.62): fix(create print article): handle overflow for the publication dropdown
 - [v110.1.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.61): fix(groups): Increment version when updating group members
 - [v110.1.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.60): fix(kanban-dashboard): Load document state from database on kanban dashboards
 - [v110.1.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.59): fix(groups): Hide api clients from group invitation screen
