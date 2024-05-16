@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sass from 1.77.1 to v1.77.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8477)
 * [Fix: handle overflow for the publication dropdown](https://github.com/livingdocsIO/livingdocs-editor/pull/8469)
 * [Add getCount to documentPreloader for dynamic teaser count requirements](https://github.com/livingdocsIO/livingdocs-server/pull/6899)
 * [fix(deps): update aws-sdk from 3.575.0 to v3.576.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6900)
