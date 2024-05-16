@@ -554,6 +554,7 @@ Here is a list of all patches after the release has been announced.
 - [v251.8.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.2): fix(release-2024-05): Update framework to v29.3.7 (release-2024-05 tag)
 
 ### Livingdocs Editor Patches
+- [v110.13.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.14): fix(create print article): handle overflow for the publication dropdown
 - [v110.13.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.13): fix: don't fail adding components with include service without paramsSchema
 - [v110.13.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.12): fix(groups): Increment version when updating group members
 - [v110.13.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.11): fix(desknet): Display error notification when story creation fails
