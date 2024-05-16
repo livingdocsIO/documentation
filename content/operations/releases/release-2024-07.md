@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add getCount to documentPreloader for dynamic teaser count requirements](https://github.com/livingdocsIO/livingdocs-server/pull/6899)
 * [fix(deps): update aws-sdk from 3.575.0 to v3.576.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6900)
 * [fix: don't fail adding components with include service without paramsSchema](https://github.com/livingdocsIO/livingdocs-editor/pull/8464)
 * [Improvement/Document Notification](https://github.com/livingdocsIO/livingdocs-editor/pull/8303)
