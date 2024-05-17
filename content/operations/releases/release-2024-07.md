@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix/Print Layout Modal](https://github.com/livingdocsIO/livingdocs-editor/pull/8476)
 * [fix(deps): update dependency sharp from 0.33.3 to v0.33.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6911)
 * [fix(deps): update dependency sass from 1.77.1 to v1.77.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8477)
 * [Fix: handle overflow for the publication dropdown](https://github.com/livingdocsIO/livingdocs-editor/pull/8469)
