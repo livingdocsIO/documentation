@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Log error when document saving is stuck](https://github.com/livingdocsIO/livingdocs-editor/pull/8479)
 * [fix(deps): update dependency fluent-ffmpeg from 2.1.2 to v2.1.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6914)
 * [Fix/Print Layout Modal](https://github.com/livingdocsIO/livingdocs-editor/pull/8476)
 * [fix(deps): update dependency sharp from 0.33.3 to v0.33.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6911)
