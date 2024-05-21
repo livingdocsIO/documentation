@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(publish panel): Delivery button](https://github.com/livingdocsIO/livingdocs-editor/pull/8501)
 * [fix(deps): update dependency axios from 1.6.8 to v1.7.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6915)
 * [Fix comment updates and reloads when switching views](https://github.com/livingdocsIO/livingdocs-editor/pull/8491)
 * [Log error when document saving is stuck](https://github.com/livingdocsIO/livingdocs-editor/pull/8479)
