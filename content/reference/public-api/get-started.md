@@ -120,8 +120,6 @@ This is the base Url you will need to interact with our API.
 https://server.livingdocs.io/
 ```
 
-Alternatively speed up your development process using our [Software Development Kit.](https://github.com/livingdocsIO/livingdocs-node-sdk)
-
 ## My First Response
 For testing purposes, you can go and run the following code snippet in your Terminal.
 
