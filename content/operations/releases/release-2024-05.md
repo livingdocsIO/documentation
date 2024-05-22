@@ -554,6 +554,7 @@ Here is a list of all patches after the release has been announced.
 - [v251.8.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.2): fix(release-2024-05): Update framework to v29.3.7 (release-2024-05 tag)
 
 ### Livingdocs Editor Patches
+- [v110.13.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.19): chore: Revert reactive change on draft.remoteDocument
 - [v110.13.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.18): chore: Add last save try and save success to autosave issue log
 - [v110.13.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.17): fix(manual document status): disable in conflict mode
 - [v110.13.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.16): fix(comments): Sync comment store updates over pusher
