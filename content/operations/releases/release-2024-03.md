@@ -551,6 +551,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.65): chore: Add last save try and save success to autosave issue log
 - [v110.1.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.64): fix(documents): Prevent overwriting newer revisions on save errors
 - [v110.1.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.63): fix(print modal): Layout
 - [v110.1.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.62): fix(create print article): handle overflow for the publication dropdown
