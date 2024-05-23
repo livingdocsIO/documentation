@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency pino-pretty from 11.0.0 to v11.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6926)
 * [Prevent Editor Crashes: We suspect that error serialization can produce a memory leak](https://github.com/livingdocsIO/livingdocs-editor/pull/8518)
 * [fix(project setup): URLs in tables](https://github.com/livingdocsIO/livingdocs-editor/pull/8513)
 * [fix(deps): update dependency @livingdocs/framework from 29.4.2 to v29.4.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8511)
