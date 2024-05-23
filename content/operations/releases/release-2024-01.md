@@ -370,6 +370,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.100](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.100): fix(trackjs): Do not use serialize-error as we suspect it can't handle circular references in our production workloads
 - [v106.0.99](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.99): chore: Revert reactive change on draft.remoteDocument
 - [v106.0.98](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.98): chore: Add last save try and save success to autosave issue log
 - [v106.0.97](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.97): fix(documents): Prevent overwriting newer revisions on save errors
