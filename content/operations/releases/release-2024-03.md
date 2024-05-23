@@ -551,6 +551,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.67): fix: update framework to fix override snapshot diffing
 - [v110.1.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.66): chore: Revert reactive change on draft.remoteDocument
 - [v110.1.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.65): chore: Add last save try and save success to autosave issue log
 - [v110.1.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.64): fix(documents): Prevent overwriting newer revisions on save errors
