@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(project setup): URLs in tables](https://github.com/livingdocsIO/livingdocs-editor/pull/8513)
 * [fix(deps): update dependency @livingdocs/framework from 29.4.2 to v29.4.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8511)
 * [fix(deps): update dependency css-loader from 7.1.1 to v7.1.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8510)
 * [Improve autosave issue detection logs](https://github.com/livingdocsIO/livingdocs-editor/pull/8505)
