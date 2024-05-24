@@ -541,6 +541,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v251.8.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.13): fix(deps): update dependency @livingdocs/framework from 29.3.7 to v29.3.8
 - [v251.8.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.12): chore(example-server): Use getCount for documentPreloader example
 - [v251.8.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.11): chore(queue): Automatically delete processed jobs without calling job.del()
 - [v251.8.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.10): fix(link-directive): Fix link directive html validation to support links without hostname
