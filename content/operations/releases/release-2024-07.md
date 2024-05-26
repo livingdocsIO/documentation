@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk from 3.577.0 to v3.583.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6921)
 * [Fix bundle error on metadata screen](https://github.com/livingdocsIO/livingdocs-editor/pull/8524)
 * [chore(deps): update dependency pino-pretty from 11.0.0 to v11.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6926)
 * [Prevent Editor Crashes: We suspect that error serialization can produce a memory leak](https://github.com/livingdocsIO/livingdocs-editor/pull/8518)
