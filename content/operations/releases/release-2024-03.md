@@ -520,6 +520,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.31): chore(oidc-api): Replace `server.log` with `log`
 - [v248.5.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.30): fix(deps): update dependency @livingdocs/framework from 29.2.7 to v29.2.8
 - [v248.5.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.29): chore(example-server): Use getCount for documentPreloader example
 - [v248.5.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.28): chore(queue): Automatically delete processed jobs without calling job.del()
