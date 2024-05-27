@@ -552,6 +552,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.70): fix(drop-actions): Make uploadOptions optional
 - [v110.1.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.69): fix: do not query parent bundles when no bundle content type defined
 - [v110.1.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.68): fix(trackjs): Do not use serialize-error as we suspect it can't handle circular references in our production workloads
 - [v110.1.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.67): fix: update framework to fix override snapshot diffing
