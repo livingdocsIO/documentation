@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Draft Storage Refactoring - Part 2](https://github.com/livingdocsIO/livingdocs-editor/pull/8530)
 * [Fix dropping WoodWing images into image components](https://github.com/livingdocsIO/livingdocs-editor/pull/8529)
 * [fix(deps): update babel from 7.24.5 to v7.24.6 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/8528)
 * [fix(deps): update aws-sdk from 3.577.0 to v3.583.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6921)
