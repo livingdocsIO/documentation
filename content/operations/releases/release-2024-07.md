@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Do not show archived API clients](https://github.com/livingdocsIO/livingdocs-server/pull/6933)
 * [Pass `feature.log` to `config.extractProjects()` within oidc-api](https://github.com/livingdocsIO/livingdocs-server/pull/6930)
 * [Draft Storage Refactoring - Part 2](https://github.com/livingdocsIO/livingdocs-editor/pull/8530)
 * [Fix dropping WoodWing images into image components](https://github.com/livingdocsIO/livingdocs-editor/pull/8529)
