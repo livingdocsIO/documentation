@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency ua-parser-js from 1.0.37 to v1.0.38 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6937)
 * [Do not show archived API clients](https://github.com/livingdocsIO/livingdocs-server/pull/6933)
 * [Pass `feature.log` to `config.extractProjects()` within oidc-api](https://github.com/livingdocsIO/livingdocs-server/pull/6930)
 * [Draft Storage Refactoring - Part 2](https://github.com/livingdocsIO/livingdocs-editor/pull/8530)
