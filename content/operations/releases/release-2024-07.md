@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency exifreader from 4.23.1 to v4.23.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6944)
 * [fix(deps): update dependency sass from 1.77.2 to v1.77.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8537)
 * [Fix an error that occurred when rendering an include with preloaded documents and doNotRender](https://github.com/livingdocsIO/livingdocs-server/pull/6938)
 * [fix(deps): update dependency ua-parser-js from 1.0.37 to v1.0.38 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6937)
