@@ -520,6 +520,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.33): fix(includes): Convert preloaded metadata to JSON
 - [v248.5.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.32): fix(api-clients): Do not return archived clients when querying them
 - [v248.5.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.31): chore(oidc-api): Replace `server.log` with `log`
 - [v248.5.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.30): fix(deps): update dependency @livingdocs/framework from 29.2.7 to v29.2.8
