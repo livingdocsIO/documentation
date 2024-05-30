@@ -486,7 +486,7 @@ Example Dashboard config excerpt:
     {
       filterName: 'characterCount',
       config: {
-        thresholds: [100, 500, 200]
+        thresholds: [100, 500, 2000]
       }
     },
     // ...
