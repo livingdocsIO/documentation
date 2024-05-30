@@ -558,6 +558,7 @@ Here is a list of all patches after the release has been announced.
 - [v251.8.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.2): fix(release-2024-05): Update framework to v29.3.7 (release-2024-05 tag)
 
 ### Livingdocs Editor Patches
+- [v110.13.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.25): fix(kanban-board): Add card actions open and openInNewWindow
 - [v110.13.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.24): fix(drop-actions): Make uploadOptions optional
 - [v110.13.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.23): fix: do not query parent bundles when no bundle content type defined
 - [v110.13.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.22): fix(trackjs): Do not use serialize-error as we suspect it can't handle circular references in our production workloads
