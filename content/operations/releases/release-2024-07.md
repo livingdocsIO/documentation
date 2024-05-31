@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sass from 1.77.3 to v1.77.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8541)
 * [Draft Storage Refactoring - Part 3](https://github.com/livingdocsIO/livingdocs-editor/pull/8534)
 * [fix(deps): update dependency exifreader from 4.23.1 to v4.23.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6944)
 * [fix(deps): update dependency sass from 1.77.2 to v1.77.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8537)
