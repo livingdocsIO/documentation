@@ -462,6 +462,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.105](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.105): fix: change retresco idle to 30s
 - [v102.1.104](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.104): fix(trackjs): Do not use serialize-error as we suspect it can't handle circular references in our production workloads
 - [v102.1.103](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.103): fix: Explicitly pass empty event object to _updateDraft
 - [v102.1.102](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.102): chore: Do not make remoteDocument reactive. It causes issues on the november release
