@@ -372,6 +372,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.103](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.103): fix(draft-storage): Trigger digest when entering document conflict screen
 - [v106.0.102](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.102): fix: change retresco idle to 30s
 - [v106.0.101](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.101): fix(drop-actions): Make uploadOptions optional
 - [v106.0.100](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.100): fix(trackjs): Do not use serialize-error as we suspect it can't handle circular references in our production workloads
