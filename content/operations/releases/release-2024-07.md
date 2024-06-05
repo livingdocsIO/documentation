@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Do not throw in vue created hooks](https://github.com/livingdocsIO/livingdocs-editor/pull/8557)
 * [fix(deps): update dependency pg from 8.11.5 to v8.11.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6952)
 * [Draft Storage: Fix document diffing and conflict handling [master]](https://github.com/livingdocsIO/livingdocs-editor/pull/8545)
 * [fix(deps): update dependency sass from 1.77.3 to v1.77.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8541)
