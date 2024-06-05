@@ -559,6 +559,7 @@ Here is a list of all patches after the release has been announced.
 - [v251.8.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.2): fix(release-2024-05): Update framework to v29.3.7 (release-2024-05 tag)
 
 ### Livingdocs Editor Patches
+- [v110.13.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.28): fix(print): Fix this.draft context in print metadata plugin
 - [v110.13.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.27): fix(kanban-dashboard): Run angular digest when resolving result lists on the kanban dashboards
 - [v110.13.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.26): fix(draft-storage): Trigger digest when entering document conflict screen
 - [v110.13.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.25): fix(kanban-board): Add card actions open and openInNewWindow
