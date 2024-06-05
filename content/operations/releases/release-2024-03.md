@@ -555,6 +555,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.73): fix(print): Fix this.draft context in print metadata plugin
 - [v110.1.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.72): fix(integrations): Log error message instead of throwing in vue created hook when imatrics or retresco integrations are not active
 - [v110.1.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.71): fix(draft-storage): Trigger digest when entering document conflict screen
 - [v110.1.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.70): fix(drop-actions): Make uploadOptions optional
