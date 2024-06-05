@@ -541,6 +541,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v251.8.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.17): fix: add LIFEAT003 customer feature flag for NZZ
 - [v251.8.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.16): fix(includes): Convert preloaded metadata to JSON
 - [v251.8.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.15): chore(oidc-api): Replace `server.log` with `log`
 - [v251.8.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.14): fix(api-clients): Do not return archived clients when querying them
