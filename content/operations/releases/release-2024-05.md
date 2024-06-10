@@ -559,6 +559,7 @@ Here is a list of all patches after the release has been announced.
 - [v251.8.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.2): fix(release-2024-05): Update framework to v29.3.7 (release-2024-05 tag)
 
 ### Livingdocs Editor Patches
+- [v110.13.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.31): fix(draft-storage): Fix document conflicts with self
 - [v110.13.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.30): fix(webhooks): Normalize webhook events defined as strings
 - [v110.13.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.29): fix(li-integer): Disable input if not editable
 - [v110.13.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.28): fix(print): Fix this.draft context in print metadata plugin
