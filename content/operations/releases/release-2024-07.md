@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk from 3.590.0 to v3.592.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6956)
 * [Ticker Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/8575)
 * [Trigger pusher event when updating delivery builds](https://github.com/livingdocsIO/livingdocs-editor/pull/8585)
 * [Trigger pusher event when updating delivery builds](https://github.com/livingdocsIO/livingdocs-server/pull/6965)
