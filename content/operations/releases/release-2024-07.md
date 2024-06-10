@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Delivery Builds: User Choices](https://github.com/livingdocsIO/livingdocs-server/pull/6923)
 * [Draft Storage: Fix conflict with self](https://github.com/livingdocsIO/livingdocs-editor/pull/8579)
 * [fix(deps): update dependency @google-cloud/storage from 7.11.1 to v7.11.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6959)
 * [Hide draft save logs unless relevant](https://github.com/livingdocsIO/livingdocs-editor/pull/8572)
