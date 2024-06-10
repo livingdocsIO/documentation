@@ -62,20 +62,20 @@ A user can change the date to see the scheduled articles in the configured platf
 
 ## Automatic Teaser Placement
 
-Along with manually dragging stories from the side bar on to the page to create teasers, it is also possible to register a document create flow to update or re-generate the content for the current document.
+Along with manually dragging stories from the side bar on to the page to create teasers, it is also possible to register a document generate function to update or re-generate the content for the current document.
 
 This feature should be considered beta.
 
-### Register Create Function
+### Register Generate Function
 
-To begin with you should register a new create function in your server runtime config. Below is an example function which demonstrates the possibility of merging existing document content with new content which is generated from the Desk-Net Schedule:
+To begin with you should register a new generate function in your server runtime config. Below is an example function which demonstrates the possibility of merging existing document content with new content which is generated from the Desk-Net Schedule:
 
 ```js
 liServer.registerInitializedHook(async () => {
   const documentApi = liServer.features.api('li-documents').document
   documentApi.registerGenerateFunction({
     handle: 'generateTeasersFromDesknetSchedule',
-    async create ({projectConfig, userId, params = {}, context = {}}) {
+    async generate ({projectConfig, userId, params = {}, context = {}}) {
       // Extract Desk-Net elements from schedule tree
       function extractElements (accumulator, node) {
         const elements = node.elements || []
