@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @google-cloud/storage from 7.11.1 to v7.11.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6959)
 * [Hide draft save logs unless relevant](https://github.com/livingdocsIO/livingdocs-editor/pull/8572)
 * [fix(deps): update babel from 7.24.6 to v7.24.7 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/8571)
 * [Fix print plugin this context](https://github.com/livingdocsIO/livingdocs-editor/pull/8564)
