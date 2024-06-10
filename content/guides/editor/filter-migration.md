@@ -267,6 +267,7 @@ Before:
 {type: 'documentState', value: 'unpublished'}
 {type: 'documentState', value: 'draft'}
 {type: 'documentState', value: 'publishedWithDraft'}
+{type: 'documentState', value: 'scheduledOrPublished'}
 ```
 After:
 ```js
@@ -274,6 +275,7 @@ After:
 {key: 'lastPublicationId', exists: false}
 {key: 'hasDraft', term: true}
 {and: [{key: 'hasDraft', term: true}, {key: 'lastPublicationId', exists: true}]}
+{or: [{key: 'lastPublicationId', exists: true}, {key: 'publishControl.publishSchedule.date', exists: true}]},
 ```
 
 ### userInTeam
