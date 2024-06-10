@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix parse-date requires](https://github.com/livingdocsIO/livingdocs-server/pull/6961)
 * [Delivery Builds: User Choices](https://github.com/livingdocsIO/livingdocs-editor/pull/8517)
 * [Delivery Builds: User Choices](https://github.com/livingdocsIO/livingdocs-server/pull/6923)
 * [Draft Storage: Fix conflict with self](https://github.com/livingdocsIO/livingdocs-editor/pull/8579)
