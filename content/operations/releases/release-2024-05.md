@@ -561,6 +561,7 @@ Here is a list of all patches after the release has been announced.
 - [v251.8.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.2): fix(release-2024-05): Update framework to v29.3.7 (release-2024-05 tag)
 
 ### Livingdocs Editor Patches
+- [v110.13.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.34): fix: update framework to fix safari 17.5 bug
 - [v110.13.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.33): fix(ticker): Re-render content before editing
 - [v110.13.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.32): fix(draft-storage): Log error when journalist enters the conflict ui that requires conflict resolution
 - [v110.13.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.31): fix(draft-storage): Fix document conflicts with self
