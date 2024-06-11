@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix ticker reordering issues](https://github.com/livingdocsIO/livingdocs-editor/pull/8588)
 * [Fix publication scheduling for postgres dates](https://github.com/livingdocsIO/livingdocs-server/pull/6966)
 * [fix(deps): update aws-sdk from 3.590.0 to v3.592.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/6956)
 * [Ticker Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/8575)
