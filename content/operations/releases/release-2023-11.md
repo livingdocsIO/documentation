@@ -462,6 +462,7 @@ Here is a list of all patches after the release has been announced.
 - [v241.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.5): fix(includes): Remove breaking change introduced by schema changes
 
 ### Livingdocs Editor Patches
+- [v102.1.109](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.109): fix: update framework to fix safari 17.5 bug
 - [v102.1.108](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.108): fix(draft-storage): Fix document conflicts with self
 - [v102.1.107](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.107): fix(print): Fix this.draft context in print metadata plugin
 - [v102.1.106](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v102.1.106): fix(draft-storage): Trigger digest when entering document conflict screen
