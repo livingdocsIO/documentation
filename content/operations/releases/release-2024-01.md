@@ -372,6 +372,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.106](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.106): fix: update framework to fix safari 17.5 bug
 - [v106.0.105](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.105): fix(draft-storage): Fix document conflicts with self
 - [v106.0.104](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.104): fix(print): Fix this.draft context in print metadata plugin
 - [v106.0.103](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.103): fix(draft-storage): Trigger digest when entering document conflict screen
