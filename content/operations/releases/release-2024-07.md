@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sass from 1.77.4 to v1.77.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8607)
 * [fix(deps): update dependency @livingdocs/framework from 29.4.3 to v29.4.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6971)
 * [fix(deps): update dependency @livingdocs/framework from 29.4.3 to v29.4.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8604)
 * [Fix ticker reordering issues](https://github.com/livingdocsIO/livingdocs-editor/pull/8588)
