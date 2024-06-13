@@ -561,6 +561,7 @@ Here is a list of all patches after the release has been announced.
 - [v251.8.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.2): fix(release-2024-05): Update framework to v29.3.7 (release-2024-05 tag)
 
 ### Livingdocs Editor Patches
+- [v110.13.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.37): fix(useDocumentSearch): transform baseFilters to filterStates
 - [v110.13.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.36): fix(draft-storage): Fix function context in backported fix
 - [v110.13.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.35): fix(editor): Do not load ticker panel for non-ticker documents
 - [v110.13.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.34): fix: update framework to fix safari 17.5 bug
