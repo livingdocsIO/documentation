@@ -557,6 +557,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.82](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.82): fix(useDocumentSearch): transform baseFilters to filterStates
 - [v110.1.81](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.81): fix(workspace): Prevent infinite refetch loop while on conflict screen
 - [v110.1.80](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.80): fix(draft-storage): Fix function context in backported fix
 - [v110.1.79](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.79): fix(editor): Do not load ticker panel for non-ticker documents
