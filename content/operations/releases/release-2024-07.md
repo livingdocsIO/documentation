@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix `li-link-edit` document search filters](https://github.com/livingdocsIO/livingdocs-editor/pull/8608)
 * [fix(deps): update dependency exifreader from 4.23.2 to v4.23.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6983)
 * [fix(deps): update dependency @livingdocs/framework from 29.4.4 to v29.4.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8611)
 * [fix(deps): update dependency @livingdocs/framework from 29.4.4 to v29.4.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6982)
