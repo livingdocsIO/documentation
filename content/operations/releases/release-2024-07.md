@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix image extraction on extracted teaser images](https://github.com/livingdocsIO/livingdocs-editor/pull/8626)
 * [Draft Storage: Correctly diff local documents against base and remote documents](https://github.com/livingdocsIO/livingdocs-editor/pull/8606)
 * [Fix `li-link-edit` document search filters](https://github.com/livingdocsIO/livingdocs-editor/pull/8608)
 * [fix(deps): update dependency exifreader from 4.23.2 to v4.23.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6983)
