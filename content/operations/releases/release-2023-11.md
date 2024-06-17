@@ -197,7 +197,7 @@ The option `serverConfig.documents.realtimeUpdates.enabled` has been deprecated.
 
 Please remove the `enabled` property and use `pollingEnabled` and/or `websocketsEnabled` instead. The `enabled` value will be transferred to `pollingEnabled` if `pollingEnabled` does not have a value defined.
 
-This deprecation is related to the [Teaser includes reload](#teaser-includes-reload-) feature. Please read the feature documentation for more information.
+This deprecation is related to the [Teaser includes reload]({{< relref "#real-time-teaser-includes-gift" >}}) feature. Please read the feature documentation for more information.
 
 
 ## Features 🎁
@@ -352,7 +352,7 @@ Teasers can be reloaded automatically on all publish and unpublish events within
 
 If there is a teaser list in the document then all teasers will be reloaded for every event (with throttling and jitter applied). If there are only document teasers then we only refresh if the specific document references are published or unpublished. There is throttling in place to prevent a client from making too many requests (default: 5 seconds), and a jitter is applied to spread the server load of multiple connected clients (set to half of `websocketsThrottling`).
 
-Note: Setting `websocketsEnabled: true` will also use the websocket events to update table dashboard rows, or indicate a new result is available within a table dashboard. More details about real-time updates can be found in the [Server Configuration]({{< ref "http://localhost:1313/customising/server-configuration/#documents" >}}) documentation.
+Note: Setting `websocketsEnabled: true` will also use the websocket events to update table dashboard rows, or indicate a new result is available within a table dashboard. More details about real-time updates can be found in the [Server Configuration]({{< ref "/customising/server-configuration/#documents" >}}) documentation.
 
 {{< feature-info "Document editing" "editor" >}}
 ### Allow `tel:` and `mailto:` inline links :gift:

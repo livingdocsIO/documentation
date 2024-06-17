@@ -26,7 +26,7 @@ Please consult the list below in case your security team needs to verify and whi
   - Automatic validity checks of entered links. Used by the editorial users browser.
 
 - **Websockets (Pusher, optional)**:
-  - To support real-time collaboration in the editor. The feature can be disabled, so this is optional. Used by the server in editing mode, as well as the editorial users browser.
+  - To support real-time collaboration in the editor. The feature can be disabled, so this is optional. Used by the server in editing mode, as well as the editorial users browser. Please ensure "Enable client events" is enabled on the App settings page of the [Pusher Dashboard](https://dashboard.pusher.com/).
 
 - **Spellchecker (optional)**:
   - Livingdocs supports the integration of third-party spellcheckers. The feature can be disabled, so this is optional. Used by the editorial users browser.
