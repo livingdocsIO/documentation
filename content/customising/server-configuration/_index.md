@@ -900,6 +900,10 @@ pusher: {
 }
 ```
 
+{{< info >}}
+Please ensure "Enable client events" is enabled on the App settings page of the [Pusher Dashboard](https://dashboard.pusher.com/).
+{{< /info >}}
+
 #### Push Notifications
 Configuration examples for the different notification services.
 
