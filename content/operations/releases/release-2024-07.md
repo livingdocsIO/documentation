@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sass from 1.77.5 to v1.77.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8633)
 * [Temporarily make content schema less strict in the Desk-Net global integration create function](https://github.com/livingdocsIO/livingdocs-server/pull/6994)
 * [fix(deps): update dependency @livingdocs/framework from 29.4.5 to v29.4.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6991)
 * [Do not emit comment update events for `eventSource: remote`](https://github.com/livingdocsIO/livingdocs-editor/pull/8627)
