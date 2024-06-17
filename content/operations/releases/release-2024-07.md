@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Temporarily make content schema less strict in the Desk-Net global integration create function](https://github.com/livingdocsIO/livingdocs-server/pull/6994)
 * [fix(deps): update dependency @livingdocs/framework from 29.4.5 to v29.4.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/6991)
 * [Do not emit comment update events for `eventSource: remote`](https://github.com/livingdocsIO/livingdocs-editor/pull/8627)
 * [fix(deps): update dependency webpack from 5.91.0 to v5.92.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8605)
