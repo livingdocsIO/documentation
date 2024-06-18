@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Do not send new device email for revoked sessions](https://github.com/livingdocsIO/livingdocs-server/pull/6989)
 * [fix(deps): update dependency @elastic/elasticsearch8 from 8.13.1 to v8.14.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7000)
 * [Feat: SZ article opening behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/8598)
 * [fix(deps): update dependency sass from 1.77.5 to v1.77.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8633)
