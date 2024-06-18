@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency jose from 5.4.0 to v5.4.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7009)
 * [Always log webhook requests](https://github.com/livingdocsIO/livingdocs-server/pull/7005)
 * [Do not send new device email for revoked sessions](https://github.com/livingdocsIO/livingdocs-server/pull/6989)
 * [fix(deps): update dependency @elastic/elasticsearch8 from 8.13.1 to v8.14.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7000)
