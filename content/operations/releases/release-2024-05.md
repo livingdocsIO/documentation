@@ -119,6 +119,8 @@ The internal arrays `liServer.onShutdownHandlers` and `liServer.initializedHooks
 `appConfig.textcount` configuration has been moved to `projectConfig.editorSettings.textCount`. The `appConfig.textcount` configuration will be removed in `release-2024-11`.
 
 Please migrate text count config from `appConfig.textcount` to `projectConfig.editorSettings.textCount`.
+
+Be careful, the `textCount` configuration needs to be written in camelCase in the new location. 
 ```js
 editorSettings: {
   ...
