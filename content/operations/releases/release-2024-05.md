@@ -541,6 +541,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v251.8.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.21): fix(realtime): Add `livingdocs_pusher_messages_count` metric and log when >200 Pusher messages are queued in 1s
 - [v251.8.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.20): fix(desknet): Make content schema less strict in create function
 - [v251.8.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.19): fix(scheduled-publishing): Parse dates instead of relying on string strict comparison, which is error prone if we get postgres dates
 - [v251.8.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.18): fix(documents): Require toISOString correctly for repo config cache
