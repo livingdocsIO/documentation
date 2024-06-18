@@ -520,6 +520,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.36): fix(new-device-email): Do not send new device email for revoked sessions
 - [v248.5.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.35): fix(scheduled-publishing): Parse dates instead of relying on string strict comparison, which is error prone if we get postgres dates
 - [v248.5.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.34): fix(documents): Require toISOString correctly for repo config cache
 - [v248.5.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.33): fix(includes): Convert preloaded metadata to JSON
