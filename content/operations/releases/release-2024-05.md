@@ -562,6 +562,7 @@ Here is a list of all patches after the release has been announced.
 - [v251.8.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.2): fix(release-2024-05): Update framework to v29.3.7 (release-2024-05 tag)
 
 ### Livingdocs Editor Patches
+- [v110.13.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.41): fix(sz): register function to disable external system routing
 - [v110.13.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.40): fix(comments): Do not emit comment update events for `eventSource: remote`
 - [v110.13.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.39): test: Fix tests for image.key attribute
 - [v110.13.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.38): fix(workspace): Prevent infinite refetch loop while on conflict screen
