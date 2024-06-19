@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix: sz article opening bug](https://github.com/livingdocsIO/livingdocs-editor/pull/8638)
 * [fix(deps): update dependency c8 from 10.0.0 to v10.1.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7011)
 * [Improve offline mode wording](https://github.com/livingdocsIO/livingdocs-editor/pull/8639)
 * [Media Library: UI label consistency](https://github.com/livingdocsIO/livingdocs-editor/pull/8449)
