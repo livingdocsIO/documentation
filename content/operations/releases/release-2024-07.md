@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency nodemailer from 6.9.13 to v6.9.14 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7014)
 * [fix(deps): update dependency webpack from 5.92.0 to v5.92.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8641)
 * [Fix: simple search does not return results with exact matching title](https://github.com/livingdocsIO/livingdocs-server/pull/7001)
 * [Fix: sz article opening bug](https://github.com/livingdocsIO/livingdocs-editor/pull/8638)
