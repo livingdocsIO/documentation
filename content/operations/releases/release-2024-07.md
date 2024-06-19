@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Improve offline mode wording](https://github.com/livingdocsIO/livingdocs-editor/pull/8639)
 * [Media Library: UI label consistency](https://github.com/livingdocsIO/livingdocs-editor/pull/8449)
 * [Offline mode](https://github.com/livingdocsIO/livingdocs-editor/pull/8599)
 * [Offline mode](https://github.com/livingdocsIO/livingdocs-server/pull/6970)
