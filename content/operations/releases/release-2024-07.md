@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Offline mode](https://github.com/livingdocsIO/livingdocs-editor/pull/8599)
 * [Offline mode](https://github.com/livingdocsIO/livingdocs-server/pull/6970)
 * [fix(deps): update dependency jose from 5.4.0 to v5.4.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7009)
 * [Always log webhook requests](https://github.com/livingdocsIO/livingdocs-server/pull/7005)
