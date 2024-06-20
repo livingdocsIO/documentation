@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Provide userId to Desk-Net Global functions](https://github.com/livingdocsIO/livingdocs-server/pull/7019)
 * [fix(deps): update dependency fastify from 4.27.0 to v4.28.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8631)
 * [fix(deps): update dependency nodemailer from 6.9.13 to v6.9.14 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7014)
 * [fix(deps): update dependency webpack from 5.92.0 to v5.92.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8641)
