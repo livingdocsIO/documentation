@@ -520,6 +520,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.38): fix: document create functions require a title property
 - [v248.5.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.37): chore(webhooks): Add err attribute to webhook log for errors
 - [v248.5.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.36): fix(new-device-email): Do not send new device email for revoked sessions
 - [v248.5.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.35): fix(scheduled-publishing): Parse dates instead of relying on string strict comparison, which is error prone if we get postgres dates
