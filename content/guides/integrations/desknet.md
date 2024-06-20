@@ -4,8 +4,10 @@ description: Integrate Desk-Net with Livingdocs
 weight: 1
 ---
 
+{{< added-in "release-2024-05" block >}}
+
 {{< info >}}
-  See the [Desk-Net Platform Integration]({{< ref "/guides/integrations/desknet-legacy" >}}) guide for details about the legacy integration, or read the [Desk-Net Migration]({{< ref "/guides/integrations/desknet-migration" >}}) guide for details on upgrading from the platform integration to the global integration.
+  See the [Desk-Net Platform Integration]({{< ref "/guides/integrations/desknet-legacy" >}}) guide for details about the legacy integration used prior to {{< release "release-2024-05" >}}, or read the [Desk-Net Migration]({{< ref "/guides/integrations/desknet-migration" >}}) guide for details on upgrading from the platform integration to the global integration.
 {{< /info >}}
 
 ## Setup
