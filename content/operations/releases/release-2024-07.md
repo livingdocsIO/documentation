@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Command API enhancements](https://github.com/livingdocsIO/livingdocs-server/pull/7023)
 * [Upload UI conditions](https://github.com/livingdocsIO/livingdocs-editor/pull/8642)
 * [Fix: document create functions require a title property](https://github.com/livingdocsIO/livingdocs-server/pull/7015)
 * [fix(deps): update opentelemetry (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/7021)
