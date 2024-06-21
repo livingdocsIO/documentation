@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Offline mode improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/8646)
 * [Offline mode improvements](https://github.com/livingdocsIO/livingdocs-server/pull/7022)
 * [Command API enhancements](https://github.com/livingdocsIO/livingdocs-server/pull/7023)
 * [Upload UI conditions](https://github.com/livingdocsIO/livingdocs-editor/pull/8642)
