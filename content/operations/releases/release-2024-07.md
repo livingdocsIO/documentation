@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Assistant bugfixes and improved error messages](https://github.com/livingdocsIO/livingdocs-editor/pull/8647)
 * [Comyan: Config based mapping of metadata on drag](https://github.com/livingdocsIO/livingdocs-editor/pull/8610)
 * [Comyan: Add config for dynamic metadata mapping](https://github.com/livingdocsIO/livingdocs-server/pull/6977)
 * [Restore old delivery build UI behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/8651)
