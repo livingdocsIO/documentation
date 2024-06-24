@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Comyan: Add config for dynamic metadata mapping](https://github.com/livingdocsIO/livingdocs-server/pull/6977)
 * [Restore old delivery build UI behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/8651)
 * [Make delivery build abort button configurable](https://github.com/livingdocsIO/livingdocs-server/pull/7024)
 * [Offline mode improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/8646)
