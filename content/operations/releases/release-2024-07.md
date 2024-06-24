@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(table dashboard): Integer Cell](https://github.com/livingdocsIO/livingdocs-editor/pull/8653)
 * [Refactor workspace access](https://github.com/livingdocsIO/livingdocs-editor/pull/8634)
 * [Assistant bugfixes and improved error messages](https://github.com/livingdocsIO/livingdocs-editor/pull/8647)
 * [Comyan: Config based mapping of metadata on drag](https://github.com/livingdocsIO/livingdocs-editor/pull/8610)
