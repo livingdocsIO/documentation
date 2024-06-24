@@ -37,24 +37,20 @@ POST api/v1/documents/:documentId/addDeliveryStatus
 ```
 
 --parameters--
-| Name           | Type     | Required | Notes                                                                                           |
-| -------------- | -------  | -------- | ----------------------------------------------------------------------------------------------- |
-| :documentId    | integer  | x        |                                                                                                 |
-| reportId       | string   |          | if provided this will update the record, otherwise it will create a new one with a new reportId |
-| publicationId  | integer  | x        |                                                                                                 |
-| deliveryHandle | string   | x        |                                                                                                 |
-| status         | string   | x        | One of: "success", "failed", "in-progress"                                                      |
-| message        | string   |          | String or sanitized HTML                                                                        |
+| Name           | Type                                  | Required | Notes                                                                                                                                                            |
+|----------------|---------------------------------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :documentId    | integer                               | x        |                                                                                                                                                                  |
+| reportId       | string                                |          | If provided, this will update the matching delivery build; otherwise, it will create a new one.                                                                  |
+| publicationId  | integer                               | (x)      | Required for delivery builds of type `publication`                                                                                                               |
+| deliveryHandle | string                                | x        |                                                                                                                                                                  |
+| status         | string                                | x        | One of: "success", "failed", "aborted" ({{< added-in "release-2024-07" >}}), "in-progress"                                                                       |
+| message        | string                                |          | String or sanitized HTML (supports `<em>`, `<strong>`, `<a>` and `<br>` tags)                                                                                    |
+| userChoices    | Array<{label: string, value: string}> |          | An array of options given to the user to choose from. This parameter is only allowed when `status` is set to "in-progress". ({{< added-in "release-2024-07" >}}) |
 
 --description--
+This endpoint allows an external system to send updates about a delivery build to Livingdocs.
 
-This endpoint allows to provide updates for a document/publication regarding its status in an external delivery system (e.g. page build status in a static site generator).<br>
-The response is a JSON object including the `reportId`.<br>
-If you want to know more about how to setup a Delivery Build, you can find a guide [here]({{< ref "/guides/editor/publish-control/delivery" >}}).
-
-##### Use Cases
-
-- Report build status of publications in an external system like an e-paper which has a "build" stage involved
+Delivery builds are initiated by users within the Livingdocs editor and can be configured to notify an external system. Through this endpoint, external systems can report back to Livingdocs regarding the status of a triggered task or request further clarification by providing user choices. For more information on how to set up and use delivery builds, please refer to our [guide]({{< ref "/guides/editor/publish-control/delivery" >}}).
 
 --response--
 200
