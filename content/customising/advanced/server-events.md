@@ -95,7 +95,11 @@ The following lists all events, before the comma, the name of the event and behi
   - document.copy, `(eventName, {documentVersion, originalDocumentId, isTranslation})`
   - document.transform, `(eventName, {documentVersion, originalContentType})`
   - document.build `(eventName, {user, documentVersion, reportId, deliveryHandle})`
+  - document.build.abort `(eventName, {user, documentVersion, reportId, deliveryHandle})` ({{< added-in "release-2024-07" >}})
+  - document.build.userChoice `(eventName, {user, documentVersion, reportId, deliveryHandle, selectedUserChoice})` ({{< added-in "release-2024-07" >}})
   - document.build.draft `(eventName, {user, documentVersion, reportId, deliveryHandle})`
+  - document.build.draft.abort `(eventName, {user, documentVersion, reportId, deliveryHandle})` ({{< added-in "release-2024-07" >}})
+  - document.build.draft.userChoice `(eventName, {user, documentVersion, reportId, deliveryHandle, selectedUserChoice})` ({{< added-in "release-2024-07" >}})
 
 - publication
   - publication.update, `(eventName, {user, documentVersion})` ({{< added-in "release-2024-03" >}})
@@ -111,7 +115,6 @@ The following lists all events, before the comma, the name of the event and behi
   - migration.prepare, `(eventName, {migration})`
   - migration.accept, `(eventName, {migration})`
   - migration.cancel, `(eventName, {migration})`
-
 
 - mediaLibraryEntry
   - mediaLibraryEntry.create, `(eventName, {userId, projectId, mediaLibraryEntry})`

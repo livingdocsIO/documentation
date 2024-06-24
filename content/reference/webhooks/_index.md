@@ -80,7 +80,11 @@ The following events are supported:
 - `document.unpublish`
 - `document.update`
 - `document.build`
+- `document.build.abort` ({{< added-in "release-2024-07" >}})
+- `document.build.userChoice` ({{< added-in "release-2024-07" >}})
 - `document.build.draft`
+- `document.build.draft.abort` ({{< added-in "release-2024-07" >}})
+- `document.build.draft.userChoice` ({{< added-in "release-2024-07" >}})
 - `publication.update` ({{< added-in "release-2024-03" >}})
 - `mediaLibraryEntry.create`
 - `mediaLibraryEntry.update`
@@ -124,7 +128,11 @@ Content type conditions are applicable to all document and publication events, i
 - `document.unpublish`
 - `document.update`
 - `document.build`
+- `document.build.userChoice`
+- `document.build.abort`
 - `document.build.draft`
+- `document.build.draft.userChoice`
+- `document.build.draft.abort`
 - `publication.update`
 
 #### Delivery Handles
@@ -147,7 +155,11 @@ events: [
 Delivery handle conditions are applicable to document build events, including:
 
 - `document.build`
+- `document.build.userChoice`
+- `document.build.abort`
 - `document.build.draft`
+- `document.build.draft.userChoice`
+- `document.build.draft.abort`
 
 #### Metadata Properties
 
@@ -190,7 +202,11 @@ Metadata property conditions are applicable to all document and publication even
 - `document.unpublish`
 - `document.update`
 - `document.build`
+- `document.build.userChoice`
+- `document.build.abort`
 - `document.build.draft`
+- `document.build.draft.userChoice`
+- `document.build.draft.abort`
 - `publication.update`
 
 ### Change Filters
@@ -350,6 +366,46 @@ Here is an example payload sent to your url set in the Webhook configuration.
 }
 ```
 
+### `document.build.abort`
+```json
+{
+  "event": "document.build.abort",
+  "deliveryId": "2Xwe-gvuB_JsK3_4bJerT",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "documentId": 179,
+  "publicationId": 322,
+  "deliveryHandle": "web",
+  "reportId": "2SG2MAA9RwPn",
+  "actor": {
+    "type": "user"
+  }
+}
+```
+
+### `document.build.userChoice`
+```json
+{
+  "event": "document.build.userChoice",
+  "deliveryId": "2Xwe-gvuB_JsK3_4bJerT",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "documentId": 179,
+  "publicationId": 322,
+  "deliveryHandle": "web",
+  "reportId": "2SG2MAA9RwPn",
+  "selectedUserChoice": {
+    "value": "override",
+    "label": "Override"
+  },
+  "actor": {
+    "type": "user"
+  }
+}
+```
+
 ### `document.build.draft`
 ```json
 {
@@ -361,6 +417,44 @@ Here is an example payload sent to your url set in the Webhook configuration.
   "documentId": 179,
   "deliveryHandle": "web",
   "reportId": "2SG2MAA9RwPn",
+  "actor": {
+    "type": "user"
+  }
+}
+```
+
+### `document.build.draft.abort`
+```json
+{
+  "event": "document.build.draft.abort",
+  "deliveryId": "2Xwe-gvuB_JsK3_4bJerT",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "documentId": 179,
+  "deliveryHandle": "web",
+  "reportId": "2SG2MAA9RwPn",
+  "actor": {
+    "type": "user"
+  }
+}
+```
+
+### `document.build.draft.userChoice`
+```json
+{
+  "event": "document.build.draft.userChoice",
+  "deliveryId": "2Xwe-gvuB_JsK3_4bJerT",
+  "projectId": 3,
+  "projectHandle": "service",
+  "webhookHandle": "handle",
+  "documentId": 179,
+  "deliveryHandle": "web",
+  "reportId": "2SG2MAA9RwPn",
+  "selectedUserChoice": {
+    "value": "override",
+    "label": "Override"
+  },
   "actor": {
     "type": "user"
   }
