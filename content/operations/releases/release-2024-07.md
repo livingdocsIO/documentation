@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use `useWorkspace` with document transform flows after refactor](https://github.com/livingdocsIO/livingdocs-editor/pull/8660)
 * [Fix/Manual Document Status in Table Dashboard Main Cell](https://github.com/livingdocsIO/livingdocs-editor/pull/8658)
 * [Document Transform Flows](https://github.com/livingdocsIO/livingdocs-server/pull/6945)
 * [Show user avatars in merge views](https://github.com/livingdocsIO/livingdocs-editor/pull/8655)
