@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Show user avatars in merge views](https://github.com/livingdocsIO/livingdocs-editor/pull/8655)
 * [Add back (updated) translation for media library button](https://github.com/livingdocsIO/livingdocs-editor/pull/8656)
 * [fix(deps): update dependency fast-json-stringify from 5.16.1 to v6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7026)
 * [fix(table dashboard): Integer Cell](https://github.com/livingdocsIO/livingdocs-editor/pull/8653)
