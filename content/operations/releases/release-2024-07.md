@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency mocha from 10.4.0 to v10.5.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7030)
 * [Add missing translations for July release](https://github.com/livingdocsIO/livingdocs-editor/pull/8667)
 * [Patch security vulnerabilities June 2024](https://github.com/livingdocsIO/livingdocs-editor/pull/8665)
 * [fix(deps): update dependency @livingdocs/secure-password from 5.0.3 to v6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7031)
