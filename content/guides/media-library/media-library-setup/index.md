@@ -671,11 +671,7 @@ module.exports = {
   metadata: [
     {
       handle: 'language',
-      type: 'li-metadata-translations',
-      ui: {
-        component: 'liMetaSelectForm',
-        service: 'languageSelection'
-      }
+      type: 'li-metadata-translations'
     }
   ]
 }
