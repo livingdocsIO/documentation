@@ -411,6 +411,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v241.0.54](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.54): fix(deps): update dependency @livingdocs/framework from 27.1.9 to v27.1.10
 - [v241.0.53](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.53): fix(azure-blob-storage): Correctly handle processing errors by propagating to all the streams
 - [v241.0.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.52): fix(security): Patch security vulnerabilities CVE-2024-30260 and CVE-2024-30261 in `undici`, CVE-2024-29041 in `express`, CVE-2024-28863 in `tar`, CVE-2024-28849 in `follow-redirects`, CVE-2024-28176 in `jose`, and CVE-2023-36665 in `protobufjs`
 - [v241.0.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v241.0.51): fix(queue): Properly await in lib/async-queue
