@@ -325,6 +325,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.48): fix(deps): update dependency @livingdocs/framework from 27.2.14 to v27.2.17
 - [v245.0.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.47): fix: document create functions require a title property
 - [v245.0.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.46): fix(includes): Convert preloaded metadata to JSON
 - [v245.0.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.45): fix(api-clients): Do not return archived clients when querying them
