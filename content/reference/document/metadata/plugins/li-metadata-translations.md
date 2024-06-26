@@ -34,8 +34,5 @@ contentTypeConfig: |2
         type: 'li-metadata-translations',
         config: {
           index: true                      // optional, default: false. {{< added-in "release-2023-07" >}}
-        },
-        ui: {
-          service: 'languageSelection'
         }
 ---
