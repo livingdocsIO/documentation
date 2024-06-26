@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Patch security vulnerabilities June 2024](https://github.com/livingdocsIO/livingdocs-editor/pull/8665)
 * [fix(deps): update dependency @livingdocs/secure-password from 5.0.3 to v6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7031)
 * [Use `useWorkspace` with document transform flows after refactor](https://github.com/livingdocsIO/livingdocs-editor/pull/8660)
 * [Fix/Manual Document Status in Table Dashboard Main Cell](https://github.com/livingdocsIO/livingdocs-editor/pull/8658)
