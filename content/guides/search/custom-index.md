@@ -111,7 +111,6 @@ const elasticsearchMapping = require('./mapping.json')
 module.exports = async function ({server, indexConfig}) {
   const indexingRepo = server.features.api('li-indexing')._indexingRepository
   const publicationApi = server.features.api('li-documents').publication
-  const metadataApi = server.features.api('li-documents').metadata
 
   /**
    * createBatches is an optional function to define how batch jobs for indexing are created
@@ -169,8 +168,11 @@ module.exports = async function ({server, indexConfig}) {
    * @param {?}             params.context.myCustomValue - passed via context object of index config
    */
   async function processBatch ({context, range, ids}) {
-    const documentVersions = await publicationApi.getLatestPublicationsV2({...context, ...range, ids})
-    const updatedDocumentVersions = await Promise.all(documentVersions.map((d) => metadataApi.updateOnRender(d)))
+    const documentVersions = await publicationApi.getLatestPublicationsV2({
+      ...context,
+      ...range,
+      ids
+    })
 
     return esClient.customBulk({
       index: indexConfig.index,
