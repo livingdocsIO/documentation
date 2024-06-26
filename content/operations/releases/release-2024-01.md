@@ -373,6 +373,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.113](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.113): fix(security): Patch security vulnerabilities CVE-2024-4068 in `braces`, and CVE-2024-37890 in `ws`
 - [v106.0.112](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.112): chore(metadata): Improve li-image dropzone message
 - [v106.0.111](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.111): fix(deps): update dependency @livingdocs/framework from 27.2.16 to v27.2.17
 - [v106.0.110](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.110): fix(comments): Do not emit comment update events for `eventSource: remote`
