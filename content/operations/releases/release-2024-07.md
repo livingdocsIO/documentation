@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk from 3.1.0 to v3.1.1 (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/7042)
 * [fix(assistants): Metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/8670)
 * [Default POST, PUT, PATCH, DELETE endpoints to mutating](https://github.com/livingdocsIO/livingdocs-server/pull/6853)
 * [chore(deps): update dependency eslint-plugin-jsdoc from 48.4.0 to v48.5.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7039)
