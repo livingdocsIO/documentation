@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Default POST, PUT, PATCH, DELETE endpoints to mutating](https://github.com/livingdocsIO/livingdocs-server/pull/6853)
 * [chore(deps): update dependency eslint-plugin-jsdoc from 48.4.0 to v48.5.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7039)
 * [Remove support for require('@livingdocs/server/exports')](https://github.com/livingdocsIO/livingdocs-server/pull/7037)
 * [fix(deps): update dependency mocha from 10.4.0 to v10.5.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7030)
