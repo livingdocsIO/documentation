@@ -19,6 +19,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [fix(deps): update dependency @aws-sdk/client-sts from 3.600.0 to v3.606.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7043)
 
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-july-2024).
 To learn about the necessary actions to update Livingdocs to `release-2024-07`, read on.
