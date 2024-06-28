@@ -567,6 +567,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.88](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.88): fix(documents): Do not show metadata conflicts notification triggered by server side metadata hooks
 - [v110.1.87](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.87): fix(security): Patch security vulnerabilities CVE-2024-4068 in `braces`, CVE-2024-4367 in `pdfjs-dist`, and CVE-2024-37890 in `ws`
 - [v110.1.86](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.86): chore(metadata): Improve li-image dropzone message
 - [v110.1.85](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.85): fix(storage): Strip angular $$hashKey attributes from the serialized document to prevent prevent diffing conflicts caused by them
