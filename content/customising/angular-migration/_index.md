@@ -1,9 +1,9 @@
 ---
 title: Angular Migration
-weight: 3
+weight: 4
 menus:
   customising:
-    weight: 3
+    weight: 4
 ---
 
 ## What is an Angular Migration?

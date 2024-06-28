@@ -2,10 +2,10 @@
 title: Livingdocs Server Config
 linkTitle: Server Config
 icon: apps
-weight: 1
+weight: 2
 menus:
   customising:
-    weight: 1
+    weight: 2
 ---
 
 ## Configuration Object

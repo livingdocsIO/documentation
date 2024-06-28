@@ -176,8 +176,69 @@ Please migrate to the new config and hook described [here](#comyan-usage-reporti
 {{< feature-info "Livingdocs Assistants" "server" >}}
 ### Livingdocs Assistants: Proposals :gift:
 
+Instead of executing the commands from an assistant immediately, an assistant can also return a proposal.
+The proposal contains a description and one or multiple options. Each option has a label and a set of commands.
+Users can decide between the proposal options and only after selecting an option, the associated commands are executed.
+
+```js
+liServer.registerAssistant({
+  handle: 'exampleAssistant',
+  ...,
+  async assist ({context}) {
+    return {
+      proposal: {
+        description: {en: '...'},
+        options: [
+          {
+            label: {en: '...'},
+            commands: [{operation: '...'}]
+          }
+        ]
+      }
+    }
+  }
+})
+```
+
+{{< feature-info "Livingdocs Assistants" "server" >}}
+### Livingdocs Assistants: Context conditions :gift:
+
+In the first iteration of Livingdocs Assistants, all assistants registered for a project have been shown in the K-Menu and the context had to be validated in the `assist` function.
+With this release, it's possible to specify context conditions for an assistant, so it will only show up if the context in the editor matches those conditions.
+It's no longer necessary to validate the same conditions in the `assist` function. 
+
+```js
+liServer.registerAssistant({
+  handle: 'exampleAssistant',
+  ...,
+  contextConditions: {
+    documentRequired: true,
+    contentTypes: ['exampleContentType']
+  },
+  async assist ({context}) {
+    console.log(context.document.contentType === 'exampleContentType') // true
+  }
+})
+```
+
 {{< feature-info "Livingdocs Assistants" "server" >}}
 ### Livingdocs Assistants: Metadata properties :gift:
+
+All assistants available in the context can be accessed through the K-Menu. With this release, it's also possible to display an assistant button next to metadata form fields.
+The button has no logical connection that metadata property though. It is not part of the context and an assistant can only be shown for a single metadata form field.
+
+```js
+liServer.registerAssistant({
+  handle: 'exampleAssistant',
+  ...,
+  showAssistantTriggerButton: {
+    metadataPropertyName: 'examplePropertyName'
+  },
+  async assist ({context}) {
+    ...
+  }
+})
+```
 
 {{< feature-info "Saving Feature" "server" >}}
 ### Offline Mode Improvements :gift:
