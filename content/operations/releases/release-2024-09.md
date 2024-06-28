@@ -1,27 +1,37 @@
 ---
 type: release-notes
-title: July 2024 Release
-description: Technical Release Notes for release-2024-07
+title: September 2024 Release
+description: Technical Release Notes for release-2024-09
 excludeFromSearch: true
 hideSectionTeaser: true
 aliases:
-  - /operations/releases/release-2024-07/
-  - /operations/releases/release-2024-07/release-2024-07/
+  - /operations/releases/release-2024-09/
+  - /operations/releases/release-2024-09/release-2024-09/
 ---
 
 {{< release-header
-  title="July 2024 Release"
+  title="September 2024 Release"
   upcoming=true
   legacy=false
   current=false
   maintained=false
-  branchHandle="release-2024-07"
+  branchHandle="release-2024-09"
 >}}
+
+## Caveat :fire:
+
+These are the release notes of the upcoming release (pull requests merged to the main branch).
+
+- :information_source: this document is updated automatically by a bot (pr's to categorize section)
+- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
+- :fire: We don't guarantee stable APIs. They can still change until the official release
+- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
 
-To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-july-2024).
-To learn about the necessary actions to update Livingdocs to `release-2024-07`, read on.
+
+To get an overview about new functionality, read the [Release Notes](TODO).
+To learn about the necessary actions to update Livingdocs to `release-2024-09`, read on.
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
@@ -61,94 +71,25 @@ To learn about the necessary actions to update Livingdocs to `release-2024-07`, 
 | Livingdocs Editor Docker Image | livingdocs/editor-base:18.5                                                              |
 | Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
 
-## Deployment
-
-### Before the deployment
-
-No prior preparations are required before rolling for this release.
-
-### After the deployment
-
-No prior preparations are required after rolling out this release.
-
 ## Breaking Changes 🔥
 
-{{< feature-info "Release" "server" >}}
+{{< feature-info "Operations" "server" >}}
 ### Migrate the Postgres Database :fire:
-No upstream migrations were added this release.
 
-{{< feature-info "Exposed functionality" "server" >}}
-### Remove support for require('@livingdocs/server/exports') :fire:
+It's a simple/fast migration with no expected data losses.
 
-`require('@livingdocs/server/exports')` is no longer useful and was removed.
-
-Server PR: [Remove support for require('@livingdocs/server/exports')](https://github.com/livingdocsIO/livingdocs-server/pull/7037)
-
-{{< feature-info "Import API" "server" >}}
-### `importApi.getImageBatchLog` :fire:
-
-`importApi.getImageBatchLog` has been removed.
-Please use `publicApi.getMediaLibraryImportStatus({projectId, id, type: 'image'})` instead.
-
-Server PR: [Remove importApi.getImageBatchLog')](https://github.com/livingdocsIO/livingdocs-server/pull/7037)
-
-{{< feature-info "Desk-net API" "server" >}}
-### Desk-net API function parameters :fire:
-
-- Drop support for separate Desk-Net platform integration API function arguments
-- Require userId to be passed to Desk-Net platform integration API functions
-
-Before:
-```js
-liServer.features.api('li-desknet-integration').createFromDesknet(projectId, element)
-liServer.features.api('li-desknet-integration').updateFromDesknet(projectId, documentId, element, opts)
-liServer.features.api('li-desknet-integration').unlinkFromDesknet(projectId, documentId)
+```sh
+# run `livingdocs-server migrate up` to update to the newest database schema
+livingdocs-server migrate up
 ```
 
-After:
-```js
-liServer.features.api('li-desknet-integration').createFromDesknet({projectId, userId, element})
-liServer.features.api('li-desknet-integration').updateFromDesknet({projectId, documentId, userId, element, linkPublication})
-liServer.features.api('li-desknet-integration').unlinkFromDesknet({projectId, documentId, userId})
-```
-
-Server PR: [Drop support for separate Desk-Net platform integration API function arguments](https://github.com/livingdocsIO/livingdocs-server/pull/7032)
+TODO: check migration
 
 ## Deprecations
 
-{{< feature-info "Integrations" "server" >}}
-### Comyan drag&drop without metadata mapping configuration :warning:
-
-Using Comyan drag&drop without providing a metadata mapping configuration is deprecated and support is removed with release-2025-01.
-Please specify a `targetMediaType` for the Comyan integration in the project settings and configure a Comyan metadata mapping for that particular media type.
-
-{{< feature-info "Integrations" "server" >}}
-### Comyan reporting from upstream :warning:
-
-
 ## Features
 
-{{< feature-info "Livingdocs Assistants" "server" >}}
-### Livingdocs Assistants: Proposals :gift:
-
-{{< feature-info "Livingdocs Assistants" "server" >}}
-### Livingdocs Assistants: Metadata properties :gift:
-
-{{< feature-info "Saving Feature" "server" >}}
-### Offline mode :gift:
-
-{{< feature-info "Delivery Builds" "server" >}}
-### Delivery Builds: User Choices :gift:
-
-{{< feature-info "Integrations" "server" >}}
-### Comyan: Usage reporting :gift:
-
-{{< feature-info "Integrations" "server" >}}
-### Comyan: Metadata mapping :gift:
-
-{{< feature-info "Command API" "server" >}}
-### Command API enhancements :gift:
-
+TODO (featureset not 100% defined yet)
 
 ## Vulnerability Patches
 
@@ -156,17 +97,14 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 ### Livingdocs Server
 This release we have patched the following vulnerabilities in the Livingdocs Server:
-* [CVE-2024-4068](https://github.com/advisories/GHSA-grv7-fg5c-xmjg) patched in `braces` v3.0.3
-* [CVE-2024-37168](https://github.com/advisories/GHSA-7v5v-9h63-cj86) patched in `@grpc/grpc-js` v1.9.15
-* [CVE-2024-37890](https://github.com/advisories/GHSA-3h5v-q93c-6h6q) patched in `ws` v8.17.1
+- TBD
 
 No known vulnerabilities. :tada:
 
 ### Livingdocs Editor
 This release we have patched the following vulnerabilities in the Livingdocs Editor:
-* [CVE-2024-4068](https://github.com/advisories/GHSA-grv7-fg5c-xmjg) patched in `braces` v3.0.3
-* [CVE-2024-4367](https://github.com/advisories/GHSA-wgrm-67xf-hhpq) patched in `pdfjs-dist` v4.3.136
-* [CVE-2024-37890](https://github.com/advisories/GHSA-3h5v-q93c-6h6q) patched in `ws` v8.17.1
+
+- TBD
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 

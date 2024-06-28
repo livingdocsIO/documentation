@@ -487,6 +487,7 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 ### Livingdocs Server
 
 This release we have patched the following vulnerabilities in the Livingdocs Server:
+* [CVE-2024-4068](https://github.com/advisories/GHSA-grv7-fg5c-xmjg) patched in `braces` v3.0.3
 * [CVE-2024-24758](https://github.com/advisories/GHSA-3787-6prv-h9w3) patched in `undici` v5.28.3
 * [GHSA-9h6g-pr28-7cqp](https://github.com/advisories/GHSA-9h6g-pr28-7cqp) patched in `nodemailer` v6.9.9
 * [CVE-2023-26159](https://github.com/advisories/GHSA-jchw-25xp-jwwc) patched in `follow-redirects` v1.15.4
@@ -496,11 +497,14 @@ This release we have patched the following vulnerabilities in the Livingdocs Ser
 * [CVE-2024-29041](https://github.com/advisories/GHSA-rv95-896h-c2vc) patched in `express` v4.19.2
 * [CVE-2024-30260](https://github.com/advisories/GHSA-m4v8-wqvr-p9f7) patched in `undici` v5.28.4
 * [CVE-2024-30261](https://github.com/advisories/GHSA-9qxr-qj54-h672) patched in `undici` v5.28.4
+* [CVE-2024-37168](https://github.com/advisories/GHSA-7v5v-9h63-cj86) patched in `@grpc/grpc-js` v1.9.15
+* [CVE-2024-37890](https://github.com/advisories/GHSA-3h5v-q93c-6h6q) patched in `ws` v8.17.1
 
 No known vulnerabilities. :tada:
 
 ### Livingdocs Editor
 This release we have patched the following vulnerabilities in the Livingdocs Editor:
+* [CVE-2024-4068](https://github.com/advisories/GHSA-grv7-fg5c-xmjg) patched in `braces` v3.0.3
 * [CVE-2024-24758](https://github.com/advisories/GHSA-3787-6prv-h9w3) patched in `undici` v5.28.3
 * [CVE-2023-26159](https://github.com/advisories/GHSA-jchw-25xp-jwwc) patched in `follow-redirects` v1.15.4
 * [CVE-2023-51701](https://github.com/fastify/fastify-reply-from/security/advisories/GHSA-v2v2-hph8-q5xp) patched in `@fastify/reply-from` v9.6.0
@@ -509,6 +513,8 @@ This release we have patched the following vulnerabilities in the Livingdocs Edi
 * [CVE-2024-29180](https://github.com/advisories/GHSA-wr3j-pwj9-hqq6) patched in `webpack-dev-middleware` v6.1.2
 * [CVE-2024-30260](https://github.com/advisories/GHSA-m4v8-wqvr-p9f7) patched in `undici` v5.28.4
 * [CVE-2024-30261](https://github.com/advisories/GHSA-9qxr-qj54-h672) patched in `undici` v5.28.4
+* [CVE-2024-4367](https://github.com/advisories/GHSA-wgrm-67xf-hhpq) patched in `pdfjs-dist` v4.3.136
+* [CVE-2024-37890](https://github.com/advisories/GHSA-3h5v-q93c-6h6q) patched in `ws` v8.17.1
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
