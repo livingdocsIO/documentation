@@ -19,6 +19,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [fix: resolving comments from deleted components](https://github.com/livingdocsIO/livingdocs-editor/pull/8678)
 * [fix(deps): update dependency https-proxy-agent from 7.0.4 to v7.0.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8681)
 * [fix: correctly highlight comments which are reopened](https://github.com/livingdocsIO/livingdocs-editor/pull/8659)
 * [fix(deps): update dependency @aws-sdk/client-sts from 3.600.0 to v3.606.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7043)
