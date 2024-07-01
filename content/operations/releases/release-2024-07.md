@@ -158,6 +158,14 @@ Please specify a `targetMediaType` for the Comyan integration in the project set
 {{< feature-info "Command API" "server" >}}
 ### Command API enhancements :gift:
 
+We have enhanced and extended the capabilities of the [Document Command API]({{< ref "/reference/public-api/document-command-api" >}}) in the following ways:
+
+- Enhanced `insertComponent`: supports a custom component id, which enables more complex content changes (e.g. inserting entire component hierarchies)
+- Added `removeComponent`
+- Added `unpublish`
+- Improved error handling: a `commandIndex` property is exposed in `error_details` to better understand which exact command has failed
+
+Please note that `publish` and `unpublish` commands are not supported by assistants. 
 
 ## Vulnerability Patches
 
