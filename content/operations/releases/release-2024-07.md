@@ -126,8 +126,51 @@ Server PR: [Drop support for separate Desk-Net platform integration API function
 {{< feature-info "Integrations" "server" >}}
 ### Comyan drag&drop without metadata mapping configuration :warning:
 
-Using Comyan drag&drop without providing a metadata mapping configuration is deprecated and support is removed with release-2025-01.
-Please specify a `targetMediaType` for the Comyan integration in the project settings and configure a Comyan metadata mapping for that particular media type.
+Prior `release-2024-07`, the mapping of Comyan data fields and media type metadata was hardcoded in the upstream codebase and the media type had to have metadata properties with a certain handle.
+With this release, the mapping can be configured in the media type.
+
+The following mapping configuration replicates the same mapping that has been hardcoded in the past:
+
+```js
+mediaTypes: [
+  {
+    handle: 'image',
+    type: 'mediaImage',
+    metadata: [
+      {handle: 'title', ...},
+      {handle: 'caption', ...},
+      {handle: 'source', ...},
+      {handle: 'comyan', ...}, // custom plugin with an object storage schema
+    ],
+    comyanExtraction: {
+      mappings: [
+        {field: 'ImgName', metadataPropertyName: 'title'},
+        {field: 'IPTCCaption', metadataPropertyName: 'caption'},
+        {field: 'IPTCByLine', metadataPropertyName: 'source'},
+        {fullObject: true, metadataPropertyName: 'comyan'},
+      ]
+    }
+  }
+]
+```
+
+The handle of the media type which is being used as target for images from Comyan has to be defined in the integration settings:
+
+```js
+integrations: {
+  comyan: {
+    enabled: true,
+    buttonLabel: 'open comyan',
+    targetMediaType: 'image',
+    mediaSystem: {
+      credentials: {...},
+      baseUrl: 'https://showcase.comyan.com'
+    }
+  }
+}
+```
+
+Using Comyan drag&drop without providing those configurations is deprecated and support is removed with `release-2025-01`.
 
 {{< feature-info "Integrations" "server" >}}
 ### Comyan reporting from upstream :warning:
