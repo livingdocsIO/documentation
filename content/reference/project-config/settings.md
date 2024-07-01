@@ -85,7 +85,8 @@ settings: {
     },
     comyan: {
       enabled: true,
-      buttonLabel: 'open comyan'
+      buttonLabel: 'open comyan',
+      targetMediaType: 'image', // mandatory with release-2025-01
       mediaSystem: {
         additionalApiQueryString: 'foo=bar' // in case of proxy use, set `svcURLFormat=api`
         credentials: {
