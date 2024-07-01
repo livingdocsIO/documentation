@@ -154,6 +154,43 @@ To enhance the offline editing experience, we have improved the user interface t
 {{< feature-info "Delivery Builds" "server" >}}
 ### Delivery Builds: User Choices :gift:
 
+Delivery Builds support products requiring a build stage, allowing users to trigger an external system via webhook from within the Livingdocs editor to initiate the build process. The external system can report the build status back via the Public API. This information is displayed in the editor, providing users with an overview of the product life cycle.
+
+With this release, we are extending Delivery Builds to facilitate advanced use cases where actions and feedback need to be repeatedly exchanged between Livingdocs users and external systems. User choices for Delivery Build enable delivery systems to provide possible actions (user choices), from which users can choose from. When the user selects an action, the external system is informed about the choice and can continue the build.
+
+For instructions on how to implement user choices, please refer to our [guide]({{< ref "/guides/editor/publish-control/delivery" >}}).
+
+- _Modified_ [`/documents/:documentId/addDeliveryStatus`]({{< ref "/reference/public-api/add-delivery-status" >}}). It now supports an optional `userChoices` property with which actions can be provided to the user. The status must be set to "in-progress" for `userChoices` to be accepted.
+
+  ```js
+  userChoices: ms.arrayOf(ms.strictObj({
+    value: ms.required.string(),
+    label: ms.required.string()
+  }))
+  ```
+
+- _Added_ [`document.build.userChoice`]({{< ref "/reference/webhooks/#documentbuilduserchoice" >}}) and [`document.build.draft.userChoice`]({{< ref "/reference/webhooks/#documentbuilddraftuserchoice" >}}) events. They contain a `selectedUserChoice` property. Together with webhooks, these should be used to inform delivery systems about selected user choices.
+
+  ```js
+  selectedUserChoice: ms.strictObj({
+    value: ms.required.string(),
+    label: ms.required.string()
+  })
+  ```
+
+#### Aborting Delivery Builds
+
+By default, Livingdocs adds an abort option to user choices. You can change this behavior with the `abortButtonEnabled` option in the Project Config. If a build is aborted, your external system will be notified via a webhook event.
+
+- _Added_ new Project Config properties [`abortButtonEnabled`]({{< ref "/reference/project-config/deliveries#delivery-builds" >}}) and [`abortButtonLabel`]({{< ref "/reference/project-config/deliveries#delivery-builds" >}}) to `deliveries.[].build`. When `abortButtonEnabled` is set to false, the abort button will never be shown. When set to true, the abort button will be shown for builds that are in "in-progress", including user choices. When undefined, the abort button will be shown only with user choices.
+
+  ```js
+  abortButtonEnabled: ms.boolean(),
+  abortButtonLabel: ms.$ref('LivingdocsTranslatableString')
+  ```
+
+- _Added_ [`document.build.abort`]({{< ref "/reference/webhooks/#documentbuildabort" >}}) and [`document.build.draft.abort`]({{< ref "/reference/webhooks/#documentbuilddraftabort" >}}) events. These are triggered when a build is aborted by a user.
+
 {{< feature-info "Integrations" "server" >}}
 ### Comyan: Usage reporting :gift:
 
