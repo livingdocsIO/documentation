@@ -145,7 +145,11 @@ Please specify a `targetMediaType` for the Comyan integration in the project set
 ### Livingdocs Assistants: Metadata properties :gift:
 
 {{< feature-info "Saving Feature" "server" >}}
-### Offline mode :gift:
+### Offline Mode Improvements :gift:
+
+Livingdocs allows users to edit documents while offline. However, during offline periods, changes cannot be saved immediately, which could result in data loss if documents are closed before the connection is restored and changes can be saved. To prevent this, it is essential to keep documents open until they can be saved.
+
+To enhance the offline editing experience, we have improved the user interface to more clearly indicate when a user is offline and provide better guidance on what to do. If users remain disconnected for a prolonged period, they are required to acknowledge it, ensuring they are aware of their offline status.
 
 {{< feature-info "Delivery Builds" "server" >}}
 ### Delivery Builds: User Choices :gift:
