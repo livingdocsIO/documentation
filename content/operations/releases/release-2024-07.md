@@ -19,6 +19,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 29.4.8 to v29.4.9 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7053)
 * [Restore unsaved document from local storage](https://github.com/livingdocsIO/livingdocs-editor/pull/8677)
 * [Use `reply.elapsedTime` instead of deprecated `reply.getResponseTime()`](https://github.com/livingdocsIO/livingdocs-editor/pull/8687)
 * [Add support for multilingual delivery build messages and user choices](https://github.com/livingdocsIO/livingdocs-server/pull/7046)
