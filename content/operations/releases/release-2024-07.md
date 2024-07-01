@@ -154,7 +154,7 @@ To enhance the offline editing experience, we have improved the user interface t
 {{< feature-info "Delivery Builds" "server" >}}
 ### Delivery Builds: User Choices :gift:
 
-Delivery Builds support products requiring a build stage, allowing users to trigger an external system via webhook from within the Livingdocs editor to initiate the build process. The external system can report the build status back via the Public API. This information is displayed in the editor, providing users with an overview of the product life cycle.
+Delivery Builds support products requiring a build stage, allowing users to trigger an external system via webhook from within the Livingdocs Editor to initiate the build process. The external system can report the build status back via the Public API. This information is displayed in the editor, providing users with an overview of the product life cycle.
 
 With this release, we are extending Delivery Builds to facilitate advanced use cases where actions and feedback need to be repeatedly exchanged between Livingdocs users and external systems. User choices for Delivery Build enable delivery systems to provide possible actions (user choices), from which users can choose from. When the user selects an action, the external system is informed about the choice and can continue the build.
 
