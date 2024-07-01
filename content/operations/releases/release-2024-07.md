@@ -19,20 +19,6 @@ aliases:
 >}}
 
 ## PRs to Categorize
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/8700)
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/7056)
-* [fix(deps): update dependency @livingdocs/framework from 29.4.8 to v29.4.9 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7053)
-* [Restore unsaved document from local storage](https://github.com/livingdocsIO/livingdocs-editor/pull/8677)
-* [Use `reply.elapsedTime` instead of deprecated `reply.getResponseTime()`](https://github.com/livingdocsIO/livingdocs-editor/pull/8687)
-* [Add support for multilingual delivery build messages and user choices](https://github.com/livingdocsIO/livingdocs-server/pull/7046)
-* [Add support for multilingual delivery build messages and user choices](https://github.com/livingdocsIO/livingdocs-editor/pull/8679)
-* [fix(deps): update dependency fastify from 4.28.0 to v4.28.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8686)
-* [fix(deps): update aws-sdk from 3.600.0 to v3.606.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7049)
-* [fix(deps): update dependency fastify from 4.28.0 to v4.28.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7048)
-* [fix: resolving comments from deleted components](https://github.com/livingdocsIO/livingdocs-editor/pull/8678)
-* [fix(deps): update dependency https-proxy-agent from 7.0.4 to v7.0.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8681)
-* [fix: correctly highlight comments which are reopened](https://github.com/livingdocsIO/livingdocs-editor/pull/8659)
-* [fix(deps): update dependency @aws-sdk/client-sts from 3.600.0 to v3.606.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7043)
 
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-july-2024).
 To learn about the necessary actions to update Livingdocs to `release-2024-07`, read on.
@@ -53,7 +39,7 @@ To learn about the necessary actions to update Livingdocs to `release-2024-07`, 
 
 | Name                           | Version                                                                                  |
 | ------------------------------ | ---------------------------------------------------------------------------------------- |
-| Node                           | 22                                                                                       |
+| Node                           | 20                                                                                       |
 | NPM                            | 10                                                                                       |
 | Postgres                       | 16                                                                                       |
 | Elasticsearch<br/>OpenSearch   | 8.x<br/>v2.3.0                                                                           |
