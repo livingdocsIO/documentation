@@ -19,6 +19,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [Add support for multilingual delivery build messages and user choices](https://github.com/livingdocsIO/livingdocs-server/pull/7046)
 * [Add support for multilingual delivery build messages and user choices](https://github.com/livingdocsIO/livingdocs-editor/pull/8679)
 * [fix(deps): update dependency fastify from 4.28.0 to v4.28.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8686)
 * [fix(deps): update aws-sdk from 3.600.0 to v3.606.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7049)
