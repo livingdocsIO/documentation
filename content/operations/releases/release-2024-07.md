@@ -160,7 +160,7 @@ With this release, we are extending Delivery Builds to facilitate advanced use c
 
 For instructions on how to implement user choices, please refer to our [guide]({{< ref "/guides/editor/publish-control/delivery" >}}).
 
-- _Modified_ [`/documents/:documentId/addDeliveryStatus`]({{< ref "/reference/public-api/add-delivery-status" >}}). It now supports an optional `userChoices` property with which actions can be provided to the user. The status must be set to "in-progress" for `userChoices` to be accepted.
+- _Modified_ [`/api/v1/documents/:documentId/addDeliveryStatus`]({{< ref "/reference/public-api/add-delivery-status" >}}). It now supports an optional `userChoices` property with which actions can be provided to the user. The status must be set to "in-progress" for `userChoices` to be accepted.
 
   ```js
   userChoices: ms.arrayOf(ms.strictObj({
