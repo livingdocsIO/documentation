@@ -515,6 +515,14 @@ Example Dashboard config excerpt:
 }
 ```
 
+Watch out:
+- ⚠️&nbsp;&nbsp;Statistics are only computed for new documents. To get them also for old documents, please run the following manual migration and the elasticsearch indexing.
+
+  ```bash
+  node node_modules/@livingdocs/server/db/manual-migrations/010-compute-document-statistics.js
+  livingdocs-server elasticsearch-index --handle=li-documents -y
+  ```
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
