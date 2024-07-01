@@ -182,7 +182,7 @@ For instructions on how to implement user choices, please refer to our [guide]({
 
 By default, Livingdocs adds an abort option to user choices. You can change this behavior with the `abortButtonEnabled` option in the Project Config. If a build is aborted, your external system will be notified via a webhook event.
 
-- _Added_ new Project Config properties [`abortButtonEnabled`]({{< ref "/reference/project-config/deliveries#delivery-builds" >}}) and [`abortButtonLabel`]({{< ref "/reference/project-config/deliveries#delivery-builds" >}}) to `deliveries.[].build`. When `abortButtonEnabled` is set to false, the abort button will never be shown. When set to true, the abort button will be shown for builds that are in "in-progress", including user choices. When undefined, the abort button will be shown only with user choices.
+- _Added_ new Project Config properties [`abortButtonEnabled`]({{< ref "/reference/project-config/deliveries#delivery-builds" >}}) and [`abortButtonLabel`]({{< ref "/reference/project-config/deliveries#delivery-builds" >}}) to `deliveries.[].build`. When `abortButtonEnabled` is set to `false`, the abort button will never be shown. When set to `true`, the abort button will be shown for builds that are in "in-progress", including user choices. When undefined, the abort button will be shown only with user choices.
 
   ```js
   abortButtonEnabled: ms.boolean(),
