@@ -260,6 +260,30 @@ When you use the image Drag&Drop from [Hugo+](https://sternwald.com/hugo/) you c
 
 This feature is only supported for the `mediaImage` mediaType.
 
+## Comyan Extraction
+
+{{< added-in "release-2024-07" block >}}
+
+When you use the image Drag&Drop from Comyan you can configure mappings from Comyan fields to metadata properties similar to the exif extraction. For this you have to set the `comyanExtraction` property.
+
+This feature is only supported for the `mediaImage` mediaType. Make sure to configure the mediaType for `settings.integrations.comyan.targetMediaType` in the [project config]({{< ref "/reference/project-config/settings" >}}).
+
+Example: 
+
+```js
+comyanExtraction: {
+  mappings: [
+    {field: 'ImgName', metadataPropertyName: 'title'},
+    {field: 'IPTCCaption', metadataPropertyName: 'caption'},
+    {field: 'IPTCByLine', metadataPropertyName: 'source'},
+    {fullObject: true, metadataPropertyName: 'comyan'},
+  ]
+}
+```
+
+When setting `fullObject: true`, all Comyan data fields are stored in the corresponding metadata property. Make sure the underlying plugin uses a non-strict object for the storage schema.
+
+
 ## Media Sources
 
 This feature is only supported for mediaTypes of type `mediaImage`.
