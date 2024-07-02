@@ -526,6 +526,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.40): fix(deps): update dependency @livingdocs/framework from 29.2.11 to v29.2.13
 - [v248.5.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.39): fix(security): Patch security vulnerabilities CVE-2024-37168 in `@grpc/grpc-js`, CVE-2024-4068 in `braces`, and CVE-2024-37890 in `ws`
 - [v248.5.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.38): fix: document create functions require a title property
 - [v248.5.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.37): chore(webhooks): Add err attribute to webhook log for errors
