@@ -137,6 +137,8 @@ Please specify a `targetMediaType` for the Comyan integration in the project set
 {{< feature-info "Integrations" "server" >}}
 ### Comyan reporting from upstream :warning:
 
+The automatic registration for the comyan reporting hooks is deprecated and support is removed with release-2025-01. 
+Please migrate to the new config and hook described [here](#comyan-usage-reporting-gift).
 
 ## Features
 
@@ -195,6 +197,44 @@ By default, Livingdocs adds an abort option to user choices. You can change this
 
 {{< feature-info "Integrations" "server" >}}
 ### Comyan: Usage reporting :gift:
+
+By default, Livingdocs reports comyan usage for every image. We're adding a config option to disable this and customize the behavior in the downstream.
+Please note that the built-in `postPublishHookAsync` used for reporting in Livingdocs is [deprecated](#comyan-reporting-from-upstream-warning) and will be removed at a later point.
+
+To disable the reporting from Livingdocs add the following to the configuration:
+```js
+integrations: {
+  comyan: {
+    allowed: true,
+    registerHooks: false
+  }
+}
+```
+
+To enable the same behavior as before configure the following in the downstream:
+
+```js
+liServer.registerInitializedHook(() => {
+  const {reportDocumentVersion} = liServer.features.api('li-comyan')
+  liServer.registerPublicationServerHooks({postPublishHookAsync: reportDocumentVersion})
+})
+```
+
+Additonally this opens up flexibility to customize when comyan usage is reported for example only registering for a certain project and execute it
+for desired `contentTypes`:
+
+```js
+liServer.registerInitializedHook(() => {
+  const {reportDocumentVersion} = liServer.features.api('li-comyan')
+  liServer.registerPublicationHooks({
+    projectHandle: 'myproject',
+    postPublishHookAsync ({documentVersion}) {
+      if (documentVersion.contentType !== 'article') return
+      return reportDocumentVersion({documentVersion})
+    }
+  })
+})
+```
 
 {{< feature-info "Integrations" "server" >}}
 ### Comyan: Metadata mapping :gift:
