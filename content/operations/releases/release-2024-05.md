@@ -557,6 +557,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v251.8.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.26): fix(deps): update dependency @livingdocs/framework from 29.3.11 to v29.3.13
 - [v251.8.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.25): fix: document create functions require a title property
 - [v251.8.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.24): fix(desknet): Provide userId to Desk-Net Global functions
 - [v251.8.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.23): chore: Test volume moounts on elasticsearch containers
