@@ -8,13 +8,13 @@ Delivery Builds add support for products requiring a build stage, such as genera
 
 ![delivery](./delivery.png)
 
-The life cycle of Delivery Builds is tracked through a status, which needs to be supplied to Public API requests. In most scenarios, the following three statuses are relevant: `in-progress`, `success`, `failed`.
+The life cycle of Delivery Builds is tracked through a status, which needs to be supplied to Public API requests.
 
 1. Triggering a build in the Livingdocs editor notifies the external system via a webhook event. The build status is `in-progress`.
 2. The external system can repeatedly provide updates to the current state of the build via the Public API. As long as the build is not finished, the status should be kept as `in-progress`.
 3. Once the build is finished, the external system can provide a final update to the Public API with the status `success`. This marks the build as successful. Alternatively, if the build has failed, the status should be set to `failed`.
 
-After a build has reached a final status, such as `success` or `failed`, it can no longer be updated.
+After a build has reached a final status, such as `success`, `failed` or `aborted`, it can no longer be updated.
 
 ## User Choices
 
