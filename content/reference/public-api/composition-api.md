@@ -44,19 +44,15 @@ POST api/beta/composition/:documentId
 
 --description--
 
-The `Composition API` loads a Publication with all required information to render a whole document/page with one request.
+The `Composition API` loads a Publication with all required information to render a whole document with one request.
 
 ##### Advantages
 
 - Make only one request to get all the required information to render a publication
 - High-performing and efficient preloading of references (e.g. lists, includes, other references)
 - Useful for a pull architecture
-- Deduplication of document teasers
+- Deduplication of document teasers: Teasers in `li-document-search` and `li-list-reference` are deduplicated across a document, taking into account teasers from `li-document-reference` and `li-document-references` as well.
 - The only endpoint which is able to resolve includes
-
-##### Use Cases
-
-- Load a Publication with all required information to render a whole document/page within one request.
 
 ##### Related
 
