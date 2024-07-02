@@ -264,6 +264,7 @@ Here is a list of all patches after the release has been announced.
 - [v254.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.9): fix(release-2024-07): Update framework to v29.4.9 (release-2024-07 tag)
 
 ### Livingdocs Editor Patches
+- [v110.21.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.15): fix(deps): update dependency @livingdocs/framework from 29.4.9 to v29.4.10
 - [v110.21.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.14): fix(workspace): Prevent window reload during tests
 - [v110.21.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.13): fix: active translation not highlighted
 - [v110.21.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.12): fix(dashboard): Enable sync url params for dashboards
