@@ -219,6 +219,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v254.0.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.10): fix(documents): Use target content type settings during transform
 - [v254.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.9): fix(release-2024-07): Update framework to v29.4.9 (release-2024-07 tag)
 
 ### Livingdocs Editor Patches
