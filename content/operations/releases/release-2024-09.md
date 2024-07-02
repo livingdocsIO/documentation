@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use target content type settings during document transforms](https://github.com/livingdocsIO/livingdocs-server/pull/7052)
 
 
 To get an overview about new functionality, read the [Release Notes](TODO).
