@@ -567,6 +567,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.91](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.91): fix(deps): update dependency @livingdocs/framework from 29.2.12 to v29.2.13
 - [v110.1.90](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.90): fix(auth): Redirect all tabs to previous URL when logging in after session expiration
 - [v110.1.89](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.89): fix: resolving comments from deleted components
 - [v110.1.88](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.88): fix(documents): Do not show metadata conflicts notification triggered by server side metadata hooks
