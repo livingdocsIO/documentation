@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Only call channel.getContentType when planningSet.bundleContentType is really defined](https://github.com/livingdocsIO/livingdocs-editor/pull/8717)
 * [Fix li-tree reference extraction](https://github.com/livingdocsIO/livingdocs-server/pull/7072)
 * [Add deprecation notice for comyan usage reporting](https://github.com/livingdocsIO/livingdocs-server/pull/7063)
 * [Prevent window reload during tests](https://github.com/livingdocsIO/livingdocs-editor/pull/8706)
