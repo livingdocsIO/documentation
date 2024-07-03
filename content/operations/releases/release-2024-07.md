@@ -371,6 +371,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v254.0.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.12): fix(li-tree): Fix reference extraction of translated document references in li-tree
 - [v254.0.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.11): fix(print): Fix print metadata access in hugo-export
 - [v254.0.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.10): fix(documents): Use target content type settings during transform
 - [v254.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.9): fix(release-2024-07): Update framework to v29.4.9 (release-2024-07 tag)
