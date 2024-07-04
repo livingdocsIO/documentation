@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Only show lists create button if user has create permission](https://github.com/livingdocsIO/livingdocs-editor/pull/8727)
 * [Fix potential reactivity issue in draft storage](https://github.com/livingdocsIO/livingdocs-editor/pull/8726)
 * [fix(deps): update aws-sdk from 3.608.0 to v3.609.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7068)
 * [fix(deps): update dependency jose from 5.6.2 to v5.6.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7079)
