@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add error states to references](https://github.com/livingdocsIO/livingdocs-editor/pull/8661)
 * [ Remove example-server desknet metadata mapping](https://github.com/livingdocsIO/livingdocs-server/pull/7082)
 * [Only show lists create button if user has create permission](https://github.com/livingdocsIO/livingdocs-editor/pull/8727)
 * [Fix potential reactivity issue in draft storage](https://github.com/livingdocsIO/livingdocs-editor/pull/8726)
