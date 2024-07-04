@@ -568,6 +568,7 @@ Here is a list of all patches after the release has been announced.
 - [v248.5.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.1): fix(release-2024-03): Update framework to v29.2.2 (release-2024-03 tag)
 
 ### Livingdocs Editor Patches
+- [v110.1.94](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.94): fix(lists): Only show create button if user has create permissions
 - [v110.1.93](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.93): fix(planning-system): Only call channel.getContentType when planningSet.bundleContentType is really defined
 - [v110.1.92](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.92): fix(workspace): Prevent window reload during tests
 - [v110.1.91](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.1.91): fix(deps): update dependency @livingdocs/framework from 29.2.12 to v29.2.13
