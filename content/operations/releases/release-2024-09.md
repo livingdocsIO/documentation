@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency lru-cache from 10.3.0 to v10.3.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7087)
 * [Add error states to references](https://github.com/livingdocsIO/livingdocs-editor/pull/8661)
 * [ Remove example-server desknet metadata mapping](https://github.com/livingdocsIO/livingdocs-server/pull/7082)
 * [Only show lists create button if user has create permission](https://github.com/livingdocsIO/livingdocs-editor/pull/8727)
