@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Migrate ESLint config to the flat config format](https://github.com/livingdocsIO/livingdocs-server/pull/6829)
 * [fix: quick publish button not aligning correctly](https://github.com/livingdocsIO/livingdocs-editor/pull/8744)
 * [Update hugo URL to new path](https://github.com/livingdocsIO/livingdocs-editor/pull/8740)
 * [fix(deps): update dependency @smithy/node-http-handler from 3.1.1 to v3.1.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7090)
