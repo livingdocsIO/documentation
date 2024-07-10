@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 29.5.1 to v29.5.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8752)
 * [Fix indexing cli --wait output](https://github.com/livingdocsIO/livingdocs-server/pull/7098)
 * [Migrate ESLint config to the flat config format](https://github.com/livingdocsIO/livingdocs-editor/pull/8735)
 * [fix(deps): update dependency @google-cloud/storage from 7.11.2 to v7.11.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7095)
