@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency puppeteer-core from 22.12.1 to v22.13.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8758)
 * [chore(deps): update dependency eslint-plugin-jsdoc from 48.6.0 to v48.7.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7101)
 * [fix(deps): update dependency @livingdocs/framework from 29.5.1 to v29.5.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8752)
 * [Fix indexing cli --wait output](https://github.com/livingdocsIO/livingdocs-server/pull/7098)
