@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Hide history link in publish control panel for data records](https://github.com/livingdocsIO/livingdocs-editor/pull/8754)
 * [Update documentTransformFlows structure in transform flow tests](https://github.com/livingdocsIO/livingdocs-editor/pull/8762)
 * [chore(deps): update dependency puppeteer-core from 22.12.1 to v22.13.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8758)
 * [chore(deps): update dependency eslint-plugin-jsdoc from 48.6.0 to v48.7.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7101)
