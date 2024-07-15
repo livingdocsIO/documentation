@@ -18,14 +18,6 @@ aliases:
   branchHandle="release-2024-03"
 >}}
 
-## PRs to Categorize
-* [Fix custom date range display filter](https://github.com/livingdocsIO/livingdocs-editor/pull/8122)
-* [Validate metadata property references in project config](https://github.com/livingdocsIO/livingdocs-server/pull/6623)
-* [feat(channel-configs): Add postValidate hooks](https://github.com/livingdocsIO/livingdocs-server/pull/6551)
-* [Fix media library entry state](https://github.com/livingdocsIO/livingdocs-server/pull/6570)
-* [Unify Media Library Metadata schema with Document Metadata schema](https://github.com/livingdocsIO/livingdocs-server/pull/6391)
-
-
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-march-2024).
 To learn about the necessary actions to update Livingdocs to `release-2024-03`, read on.
 

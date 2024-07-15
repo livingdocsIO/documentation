@@ -18,8 +18,6 @@ aliases:
   branchHandle="release-2024-07"
 >}}
 
-## PRs to Categorize
-
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-july-2024).
 To learn about the necessary actions to update Livingdocs to `release-2024-07`, read on.
 
