@@ -371,6 +371,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v254.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.14): fix: Fix support for `component` attribute in livingdocs helpers. `component` must always be preferred over `identifier`
 - [v254.0.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.13): fix: make hugo.assetHost required
 - [v254.0.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.12): fix(li-tree): Fix reference extraction of translated document references in li-tree
 - [v254.0.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.11): fix(print): Fix print metadata access in hugo-export
