@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(assistants): Wording](https://github.com/livingdocsIO/livingdocs-editor/pull/8771)
 * [Make wide side panels wider](https://github.com/livingdocsIO/livingdocs-editor/pull/8760)
 * [fix(deps): update dependency @smithy/node-http-handler from 3.1.2 to v3.1.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7106)
 * [fix(deps): update dependency @uirouter/angularjs from 1.1.0 to v1.1.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8770)
