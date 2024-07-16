@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Harmonize toolbar behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/8751)
 * [fix(sass): Deprecations](https://github.com/livingdocsIO/livingdocs-editor/pull/8772)
 * [fix(assistants): Wording](https://github.com/livingdocsIO/livingdocs-editor/pull/8771)
 * [Make wide side panels wider](https://github.com/livingdocsIO/livingdocs-editor/pull/8760)
