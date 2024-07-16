@@ -379,6 +379,7 @@ Here is a list of all patches after the release has been announced.
 - [v254.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.9): fix(release-2024-07): Update framework to v29.4.9 (release-2024-07 tag)
 
 ### Livingdocs Editor Patches
+- [v110.21.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.27): fix(comments): Prevent selected comment from overlaying component insert panel
 - [v110.21.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.26): fix(assistants): Wording
 - [v110.21.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.25): fix(publish-control): Hide history link for data records
 - [v110.21.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.24): fix(transform-flows): Update documentTransformFlows in tests
