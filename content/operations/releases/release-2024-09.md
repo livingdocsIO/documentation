@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cypress from 13.13.0 to v13.13.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8779)
 * [fix(deps): update playwright monorepo from 1.45.1 to v1.45.2 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/8780)
 * [Harmonize toolbar behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/8751)
 * [fix(sass): Deprecations](https://github.com/livingdocsIO/livingdocs-editor/pull/8772)
