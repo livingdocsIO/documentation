@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [feat: add direct publishing which disables the quick publishing guards](https://github.com/livingdocsIO/livingdocs-server/pull/7094)
 * [fix(deps): update dependency @livingdocs/framework from 29.5.3 to v29.5.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7114)
 * [fix(deps): update dependency @livingdocs/framework from 29.5.3 to v29.5.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8783)
 * [fix(deps): update dependency semver from 7.6.2 to v7.6.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7111)
