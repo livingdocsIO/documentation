@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Only persist document to local storage when it is dirty](https://github.com/livingdocsIO/livingdocs-editor/pull/8789)
 * [Do not unnecessary save document on exit](https://github.com/livingdocsIO/livingdocs-editor/pull/8788)
 * [Make `migrations.versionBumpBatchSize` and `migrations.versionBumpConcurrency` configurable](https://github.com/livingdocsIO/livingdocs-server/pull/7115)
 * [fix(date time fields): Clear function](https://github.com/livingdocsIO/livingdocs-editor/pull/8786)
