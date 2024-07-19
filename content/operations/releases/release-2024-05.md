@@ -557,6 +557,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v251.8.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.30): chore(example-server): Remove Desk-Net schedule status filtering
 - [v251.8.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.29): fix(desknet): Increase limit for schedule linked document search
 - [v251.8.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.28): fix(migrations): Make the `migrations.versionBumpBatchSize` and `migrations.versionBumpConcurrency` configurable
 - [v251.8.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.27): fix(print): Fix print metadata access in hugo-export
