@@ -370,6 +370,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v254.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.17): chore(example-server): Remove Desk-Net schedule status filtering
 - [v254.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.16): fix(desknet): Increase limit for schedule linked document search
 - [v254.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.15): fix(migrations): Make the `migrations.versionBumpBatchSize` and `migrations.versionBumpConcurrency` configurable
 - [v254.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.14): fix: Fix support for `component` attribute in livingdocs helpers. `component` must always be preferred over `identifier`
