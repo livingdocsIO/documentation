@@ -197,7 +197,7 @@ The option `serverConfig.documents.realtimeUpdates.enabled` has been deprecated.
 
 Please remove the `enabled` property and use `pollingEnabled` and/or `websocketsEnabled` instead. The `enabled` value will be transferred to `pollingEnabled` if `pollingEnabled` does not have a value defined.
 
-This deprecation is related to the [Teaser includes reload]({{< relref "#real-time-teaser-includes-gift" >}}) feature. Please read the feature documentation for more information.
+This deprecation is related to the [Teaser includes reload]({{< relref "#real-time-teaser-includes-" >}}) feature. Please read the feature documentation for more information.
 
 
 ## Features 🎁

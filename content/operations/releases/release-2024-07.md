@@ -118,13 +118,13 @@ Server PR: [Drop support for separate Desk-Net platform integration API function
 ### Comyan drag&drop without metadata mapping configuration :warning:
 
 With the introduction of the new metadata mapping configuration for Comyan, using Comyan drag&drop without providing those configurations is deprecated and support will be removed with `release-2025-01`.
-For more information check the [Comyan metadata mapping feature](#comyan-metadata-mapping-gift).
+For more information check the [Comyan metadata mapping feature](#comyan-metadata-mapping-).
 
 {{< feature-info "Integrations" "server" >}}
 ### Comyan reporting from upstream :warning:
 
-The automatic registration for the comyan reporting hooks is deprecated and support is removed with release-2025-01. 
-Please migrate to the new config and hook described [here](#comyan-usage-reporting-gift).
+The automatic registration for the comyan reporting hooks is deprecated and support is removed with `release-2025-01`. 
+Please migrate to the new config and hook described [here](#comyan-usage-reporting-).
 
 ## Features
 
@@ -268,8 +268,7 @@ liServer.registerInitializedHook(() => {
 })
 ```
 
-Additonally this opens up flexibility to customize when comyan usage is reported for example only registering for a certain project and execute it
-for desired `contentTypes`:
+Additonally this opens up flexibility to customize when comyan usage is reported for example only registering for a certain project and execute it for desired `contentTypes`:
 
 ```js
 liServer.registerInitializedHook(() => {

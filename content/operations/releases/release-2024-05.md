@@ -148,7 +148,7 @@ Livingdocs provides with Table Dashboards a structured and customizable approach
 {{< feature-info "Dashboards" "server" >}}
 ### Angular custom dashboard cards :warning:
 
-As part of our ongoing migration from Angular to Vue, we are deprecating Angular dashboard cards and will remove support for them in `release-2024-11`. Custom dashboard cards are currently supported in media library dashboards and dashboards of type `kanbanBoard`, `taskBoard`, and `dashboard` (deprecated, see  [Deprecating dashboards of type `dashboard`]({{< relref "#dashboards-of-type-dashboard-warning" >}})). If you are affected by this change, you should consider using the provided upstream dashboard cards instead. If these do not meet your requirements, please migrate your custom dashboard cards to Vue components.
+As part of our ongoing migration from Angular to Vue, we are deprecating Angular dashboard cards and will remove support for them in `release-2024-11`. Custom dashboard cards are currently supported in media library dashboards and dashboards of type `kanbanBoard`, `taskBoard`, and `dashboard` (deprecated, see  [Deprecating dashboards of type `dashboard`]({{< relref "#dashboards-of-type-dashboard-" >}})). If you are affected by this change, you should consider using the provided upstream dashboard cards instead. If these do not meet your requirements, please migrate your custom dashboard cards to Vue components.
 
 ## Features
 
