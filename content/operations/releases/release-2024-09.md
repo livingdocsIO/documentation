@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency eslint-plugin-jsdoc from 48.7.0 to v48.8.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7126)
 * [Do not load document content for Desk-Net schedule](https://github.com/livingdocsIO/livingdocs-server/pull/7122)
 * [Increase limit for Desk-Net schedule linked document search](https://github.com/livingdocsIO/livingdocs-server/pull/7119)
 * [Only persist document to local storage when it is dirty](https://github.com/livingdocsIO/livingdocs-editor/pull/8789)
