@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Set event source for scheduled publish notification to allow Desk-Net global integration hook to run](https://github.com/livingdocsIO/livingdocs-server/pull/7129)
 * [fix(deps): update dependency @livingdocs/framework from 29.5.4 to v29.5.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8796)
 * [fix(deps): update dependency @livingdocs/framework from 29.5.4 to v29.5.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7128)
 * [chore(deps): update dependency eslint-plugin-jsdoc from 48.7.0 to v48.8.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7126)
