@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Do not call moment.defineLocale multipe times](https://github.com/livingdocsIO/livingdocs-editor/pull/8793)
 * [fix(deps): update playwright monorepo from 1.45.2 to v1.45.3 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/8800)
 * [fix(deps): update dependency @livingdocs/framework from 29.5.5 to v29.5.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7133)
 * [Fix ticker entry component prefilling](https://github.com/livingdocsIO/livingdocs-editor/pull/8784)
