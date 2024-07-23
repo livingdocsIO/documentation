@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use new editor URLs](https://github.com/livingdocsIO/livingdocs-server/pull/7110)
 * [Remove URLs from most editor states](https://github.com/livingdocsIO/livingdocs-editor/pull/8777)
 * [Do not call moment.defineLocale multipe times](https://github.com/livingdocsIO/livingdocs-editor/pull/8793)
 * [fix(deps): update playwright monorepo from 1.45.2 to v1.45.3 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/8800)
