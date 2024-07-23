@@ -382,6 +382,7 @@ Here is a list of all patches after the release has been announced.
 - [v254.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.9): fix(release-2024-07): Update framework to v29.4.9 (release-2024-07 tag)
 
 ### Livingdocs Editor Patches
+- [v110.21.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.31): fix(moment): Do not call defineLocale multiple times
 - [v110.21.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.30): fix(ticker): Support initial metadata extraction and component prefilling for ticker entries
 - [v110.21.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.29): fix(draft-storage): Only persist document to local storage when it is dirty
 - [v110.21.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.28): fix(date time fields): Clear function
