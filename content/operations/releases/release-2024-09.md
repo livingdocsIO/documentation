@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 29.5.6 to v29.5.7 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7135)
 * [fix(deps): update dependency @livingdocs/framework from 29.5.6 to v29.5.7 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8804)
 * [fix(deps): update dependency mocha from 10.6.1 to v10.7.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7127)
 * [Use new editor URLs](https://github.com/livingdocsIO/livingdocs-server/pull/7110)
