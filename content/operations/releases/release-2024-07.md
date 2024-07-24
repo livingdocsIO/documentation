@@ -370,6 +370,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v254.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.19): fix(deps): update dependency @livingdocs/framework from 29.4.10 to v29.4.11
 - [v254.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.18): fix(documents): Set event source for scheduled publish notification
 - [v254.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.17): chore(example-server): Remove Desk-Net schedule status filtering
 - [v254.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.16): fix(desknet): Increase limit for schedule linked document search
