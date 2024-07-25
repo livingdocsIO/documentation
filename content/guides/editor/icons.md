@@ -14,7 +14,6 @@ Icons are widely used and supported in the editor.
 - [Main Navigation Icon]({{< ref "/customising/advanced/editor-configuration/menu-and-dashboards.md#menu-items" >}})
 - [User Menu Icon]({{< ref "/customising/advanced/editor-configuration/menu-and-dashboards.md" >}})
 - [Text Formatting Toolbar Icon]({{< ref "../../../customising/advanced/editor-configuration/text-editing.md#custom-elements" >}})
-- [Icons in UI extensions](#icons-in-ui-extensions)
 
 In every case mentioned before, you can set an icon of the supported [li-icon collection](https://github.com/livingdocsIO/livingdocs-editor/blob/master/server/li_icon.paths.txt). If your icon is not supported, you can [register a material design icon](#register-a-material-design-icon).
 
@@ -38,22 +37,4 @@ The editor supports some material design icons by default ([list of supported ic
 {
   customIconNames: ['abugida-devanagari'],
 }
-```
-
-## Icons in UI Extensions
-
-If you develop an UI extensions like an include, a metadata component or a component sidebar, you can embed icons from the [li-icon collection](https://github.com/livingdocsIO/livingdocs-editor/blob/master/server/li_icon.paths.txt) like this:
-
-```html
-<li-icon name="arrow" theme="small"></li-icon>
-```
-
-Another option is to embed your SVG directly in the html:
-
-```html
-<div class="li-icon li-icon--small">
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#6e6e6e">
-		<path d="M13,13H11V7H13M13,17H11V15H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
-	</svg>
-</div>
 ```
