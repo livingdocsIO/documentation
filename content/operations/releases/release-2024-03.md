@@ -518,6 +518,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.43): fix(deps): update dependency @livingdocs/framework from 29.2.13 to v29.2.14
 - [v248.5.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.42): fix(documents): Set event source for scheduled publish notification
 - [v248.5.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.41): fix(li-tree): Fix reference extraction of translated document references in li-tree
 - [v248.5.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.40): fix(deps): update dependency @livingdocs/framework from 29.2.11 to v29.2.13
