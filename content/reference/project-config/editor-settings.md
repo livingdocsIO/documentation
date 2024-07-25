@@ -919,7 +919,8 @@ inlineLinks: {
     ]
   }
 }
-```
+
+To allow inlineLinks to internal documents, you need at least one [delivery]({{< ref "/reference/project-config/deliveries" >}}) configured.
 
 ### useDashboard
 
