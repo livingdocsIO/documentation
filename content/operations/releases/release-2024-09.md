@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix: rename document statistics components filter label](https://github.com/livingdocsIO/livingdocs-editor/pull/8810)
 * [chore(deps): update dependency pino-socket from 7.3.0 to v7.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7144)
 * [fix(deps): update aws-sdk (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7118)
 * [fix(deps): update dependency @smithy/node-http-handler from 3.1.3 to v3.1.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7140)
