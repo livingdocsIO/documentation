@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [feat: document info panel - add statistics options per content type](https://github.com/livingdocsIO/livingdocs-server/pull/7134)
 * [feat: document info panel](https://github.com/livingdocsIO/livingdocs-editor/pull/8797)
 * [fix(deps): update babel from 7.24.9 to v7.25.2 (master) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/8817)
 * [Migrate editor toolbar to Vue](https://github.com/livingdocsIO/livingdocs-editor/pull/8815)
