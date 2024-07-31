@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update babel from 7.24.9 to v7.25.2 (master) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/8817)
 * [Migrate editor toolbar to Vue](https://github.com/livingdocsIO/livingdocs-editor/pull/8815)
 * [chore(deps): update dependency eslint-plugin-jsdoc from 48.8.3 to v48.9.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7152)
 * [fix(deps): update dependency pdfjs-dist from 4.4.168 to v4.5.136 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8824)
