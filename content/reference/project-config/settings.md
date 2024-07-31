@@ -59,6 +59,7 @@ settings: {
           name: 'imatrics-20211027'
         }
       },
+      testEnvironment: false, // {{< added-in "release-2024-09" >}}
       minchars: 20,
       language: {
         name: 'German',
