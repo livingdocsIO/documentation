@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @babel/preset-env from 7.25.2 to v7.25.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8833)
 * [feat: document info panel - add statistics options per content type](https://github.com/livingdocsIO/livingdocs-server/pull/7134)
 * [feat: document info panel](https://github.com/livingdocsIO/livingdocs-editor/pull/8797)
 * [fix(deps): update babel from 7.24.9 to v7.25.2 (master) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/8817)
