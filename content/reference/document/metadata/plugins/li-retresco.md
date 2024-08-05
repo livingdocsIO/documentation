@@ -28,7 +28,8 @@ storageFormat: |
         name: <String>,
         score: <Number>,
         inappropriate: <Boolean>,
-        userAdded: <Boolean>
+        userAdded: <Boolean>,
+        isMain: <Boolean> // {{< added-in "release-2024-09" >}}
       }
     ]
   }

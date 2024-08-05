@@ -106,6 +106,7 @@ The Retresco entities will be stored in the document's metadata using the metada
       score: 16.924834941594718, // Only when not user-added
       userAdded: false,
       inappropriate: false, // Entity removed (but still visible in the UI with strikethrough)
+      isMain: true // Marks main entities ({{< added-in "release-2024-09" >}})
     }
   ]
 }
