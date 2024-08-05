@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use axios mock adapter post request params support in iMatrics tests](https://github.com/livingdocsIO/livingdocs-server/pull/7165)
 * [Design/Durations](https://github.com/livingdocsIO/livingdocs-editor/pull/8838)
 * [fix(info panel): Reference list scaling](https://github.com/livingdocsIO/livingdocs-editor/pull/8839)
 * [Add support for iMatrics test environments](https://github.com/livingdocsIO/livingdocs-server/pull/7157)
