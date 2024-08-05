@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(info panel): Reference list scaling](https://github.com/livingdocsIO/livingdocs-editor/pull/8839)
 * [Add support for iMatrics test environments](https://github.com/livingdocsIO/livingdocs-server/pull/7157)
 * [chore(deps): update dependency globals from 15.8.0 to v15.9.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7161)
 * [chore(deps): update dependency globals from 15.8.0 to v15.9.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8837)
