@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update playwright monorepo from 1.45.3 to v1.46.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/8841)
 * [Add support for Retresco main entities](https://github.com/livingdocsIO/livingdocs-server/pull/7164)
 * [Use axios mock adapter post request params support in iMatrics tests](https://github.com/livingdocsIO/livingdocs-server/pull/7165)
 * [Design/Durations](https://github.com/livingdocsIO/livingdocs-editor/pull/8838)
