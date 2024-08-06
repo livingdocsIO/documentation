@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Support data-li-external-system attribute of links in reference extraction](https://github.com/livingdocsIO/livingdocs-server/pull/7166)
 * [fix(deps): update dependency cloudinary from 2.3.1 to v2.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7155)
 * [Fix retresco cypress test because of main entities](https://github.com/livingdocsIO/livingdocs-editor/pull/8842)
 * [fix(deps): update playwright monorepo from 1.45.3 to v1.46.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/8841)
