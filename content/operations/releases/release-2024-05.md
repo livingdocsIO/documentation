@@ -557,6 +557,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v251.8.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.33): fix: Update undici & aws modules to fix security issues
 - [v251.8.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.32): fix(deps): update dependency @livingdocs/framework from 29.3.13 to v29.3.14
 - [v251.8.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.31): fix(documents): Set event source for scheduled publish notification
 - [v251.8.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.30): chore(example-server): Remove Desk-Net schedule status filtering
