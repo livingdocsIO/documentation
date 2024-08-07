@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Upgrade undici in package-lock.json](https://github.com/livingdocsIO/livingdocs-server/pull/7171)
 * [fix(deps): update aws-sdk from 3.617.0 to v3.624.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7145)
 * [Support data-li-external-system attribute of links in reference extraction](https://github.com/livingdocsIO/livingdocs-server/pull/7166)
 * [fix(deps): update dependency cloudinary from 2.3.1 to v2.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7155)
