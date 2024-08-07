@@ -386,6 +386,7 @@ Here is a list of all patches after the release has been announced.
 - [v254.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.9): fix(release-2024-07): Update framework to v29.4.9 (release-2024-07 tag)
 
 ### Livingdocs Editor Patches
+- [v110.21.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.34): fix(media-library): Fix media library dashboard with metadata property display filters
 - [v110.21.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.33): test(document-statistics): fix e2e test after filter label got renamed
 - [v110.21.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.32): fix(deps): update dependency @livingdocs/framework from 29.4.10 to v29.4.11
 - [v110.21.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.31): fix(moment): Do not call defineLocale multiple times
