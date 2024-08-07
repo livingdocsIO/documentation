@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix media library dashboard with metadata property display filter](https://github.com/livingdocsIO/livingdocs-editor/pull/8844)
 * [Upgrade undici in package-lock.json](https://github.com/livingdocsIO/livingdocs-server/pull/7171)
 * [fix(deps): update aws-sdk from 3.617.0 to v3.624.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7145)
 * [Support data-li-external-system attribute of links in reference extraction](https://github.com/livingdocsIO/livingdocs-server/pull/7166)
