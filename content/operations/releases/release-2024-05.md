@@ -592,6 +592,7 @@ Here is a list of all patches after the release has been announced.
 - [v251.8.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.2): fix(release-2024-05): Update framework to v29.3.7 (release-2024-05 tag)
 
 ### Livingdocs Editor Patches
+- [v110.13.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.66): fix(home-screen): Do not throw error when tasks do not have assignees
 - [v110.13.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.65): fix(media-library): Fix media library dashboard with metadata property display filters
 - [v110.13.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.64): test(document-statistics): fix e2e test after filter label got renamed
 - [v110.13.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.63): fix(display-filters): improve error message when content type is found because of the base filters
