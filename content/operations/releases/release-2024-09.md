@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency mocha from 10.7.0 to v10.7.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7184)
 * [Close main navigation menu when URL changes](https://github.com/livingdocsIO/livingdocs-editor/pull/8851)
 * [Expose 'document.metadata.update' policies to editor](https://github.com/livingdocsIO/livingdocs-server/pull/7179)
 * [fix(deps): update dependency @aws-sdk/client-s3 from 3.624.0 to v3.626.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7176)
