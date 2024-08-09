@@ -370,6 +370,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v254.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.24): fix(access-control): Expose 'document.metadata.update' policies
 - [v254.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.23): fix: Update undici & aws modules to fix security issues
 - [v254.0.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.22): fix(references): Support data-li-external-system attribute of links in reference extraction
 - [v254.0.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.21): fix(package.json): Defined channel to release branch name, desired tag
