@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Close main navigation menu when URL changes](https://github.com/livingdocsIO/livingdocs-editor/pull/8851)
 * [Expose 'document.metadata.update' policies to editor](https://github.com/livingdocsIO/livingdocs-server/pull/7179)
 * [fix(deps): update dependency @aws-sdk/client-s3 from 3.624.0 to v3.626.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7176)
 * [chore(deps): update dependency eslint-plugin-jsdoc from 49.0.0 to v50 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7177)
