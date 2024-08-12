@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Do not trigger initial save for default metadata values](https://github.com/livingdocsIO/livingdocs-editor/pull/8863)
 * [Feat: add push message proposals](https://github.com/livingdocsIO/livingdocs-editor/pull/8848)
 * [Feat: add push message proposals](https://github.com/livingdocsIO/livingdocs-server/pull/7174)
 * [fix(deps): update dependency mocha from 10.7.0 to v10.7.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7184)
