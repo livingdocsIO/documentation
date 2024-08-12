@@ -388,6 +388,7 @@ Here is a list of all patches after the release has been announced.
 - [v254.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.9): fix(release-2024-07): Update framework to v29.4.9 (release-2024-07 tag)
 
 ### Livingdocs Editor Patches
+- [v110.21.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.37): chore(metadata): Fix default input tests
 - [v110.21.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.36): fix(main-nav): Close when URL changes
 - [v110.21.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.35): fix(home-screen): Do not throw error when tasks do not have assignees
 - [v110.21.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.34): fix(media-library): Fix media library dashboard with metadata property display filters
