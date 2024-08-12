@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix default value for li-language](https://github.com/livingdocsIO/livingdocs-editor/pull/8865)
 * [Fix default input tests](https://github.com/livingdocsIO/livingdocs-editor/pull/8864)
 * [Do not trigger initial save for default metadata values](https://github.com/livingdocsIO/livingdocs-editor/pull/8863)
 * [Feat: add push message proposals](https://github.com/livingdocsIO/livingdocs-editor/pull/8848)
