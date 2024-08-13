@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(publish panel): Horizontal scroll](https://github.com/livingdocsIO/livingdocs-editor/pull/8871)
 * [Playwright page object model](https://github.com/livingdocsIO/livingdocs-editor/pull/8870)
 * [fix(deps): update aws-sdk from 3.626.0 to v3.629.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7178)
 * [chore(deps): update dependency @google-cloud/translate from 8.3.0 to v8.4.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7190)
