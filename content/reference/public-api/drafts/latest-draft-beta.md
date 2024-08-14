@@ -68,7 +68,7 @@ The response is a JSON object with 5 possible top-level properties:
     "firstPublicationDate": "2022-03-16T14:08:11:000Z",
     "significantPublicationDate": "2022-10-26T07:25:00.000Z",
     "visiblePublicationDate": "2022-10-27T06:00:00.000Z",
-    "updatedAt": "2023-02-22T16:33:42.836Z",
+    "lastPublicationDate": "2023-02-22T16:33:42.836Z",
     "design": {
       "name": "living-times",
       "version": "1.0.4"

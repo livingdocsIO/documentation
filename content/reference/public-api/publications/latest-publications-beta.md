@@ -72,7 +72,7 @@ The endpoint provides an unresolved Publication with 4 possible top-level proper
       "firstPublicationDate": "2022-03-16T14:08:11:000Z",
       "significantPublicationDate": "2022-10-26T07:25:00.000Z",
       "visiblePublicationDate": "2022-10-27T06:00:00.000Z",
-      "updatedAt": "2022-10-30T16:32:04.170Z",
+      "lastPublicationDate": "2022-10-30T16:32:04.170Z",
       "design": {
         "name": "timeline",
         "version": "1.1.0"
@@ -141,7 +141,7 @@ The endpoint provides an unresolved Publication with 4 possible top-level proper
       "firstPublicationDate": "2022-03-16T14:08:11:000Z",
       "significantPublicationDate": "2022-10-26T07:25:00.000Z",
       "visiblePublicationDate": "2022-10-27T06:00:00.000Z",
-      "updatedAt": "2022-10-30T16:32:04.170Z",
+      "lastPublicationDate": "2022-10-30T16:32:04.170Z",
       "design": {
         "name": "timeline",
         "version": "1.1.0"
