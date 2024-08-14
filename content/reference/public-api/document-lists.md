@@ -60,7 +60,6 @@ api/v1/document-lists/1
         "documentId": 1,
         "contentType": "article",
         "documentType": "article",
-        "layout": "regular",
         "design": {
           "name": "timeline",
           "version": "1.1.0"

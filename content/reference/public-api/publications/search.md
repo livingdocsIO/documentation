@@ -67,7 +67,6 @@ api/v1/publications/search?search=Obama
       "documentId": 1,
       "contentType": "article",
       "documentType": "article",
-      "layout": "regular",
       "design": {
         "name": "timeline",
         "version": "1.1.0"
@@ -134,7 +133,6 @@ api/v1/publications/search?categories=sport,fashion&languages=en
       "documentId": 1,
       "contentType": "article",
       "documentType": "article",
-      "layout": "regular",
       "design": {
         "name": "timeline",
         "version": "1.1.0"
@@ -207,7 +205,6 @@ api/v1/publications/search?contentTypes=regular,gallery&limit=10&offset=10
       "documentId": 1,
       "contentType": "regular",
       "documentType": "article",
-      "layout": "regular",
       "design": {
         "name": "timeline",
         "version": "1.1.0"

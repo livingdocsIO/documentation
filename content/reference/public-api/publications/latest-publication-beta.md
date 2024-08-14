@@ -79,7 +79,6 @@ The endpoint provides an unresolved Publication with 5 possible top-level proper
     "significantPublicationDate": "2022-10-26T07:25:00.000Z",
     "visiblePublicationDate": "2022-10-27T06:00:00.000Z",
     "updatedAt": "2023-03-18T16:32:04.170Z",
-    "layout": "regular",
     "design": {
       "name": "timeline",
       "version": "1.1.0"

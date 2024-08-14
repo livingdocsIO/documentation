@@ -10,41 +10,27 @@ This guide will show you how to add a custom Include for Twitter. We will show t
 This is more of a quick-guide where you can just copy and paste code. For a deeper understanding you can dive into [Includes Overview]({{< ref "/reference/document/includes" >}}).
 
 
-## Design definition
+## Component definition
 
-In the design you will define the component.
+In the `projectConfig` you define a twitter component.
 
-```json
+```js
 {
-  "name": "blank-design",
-  "layouts": [
+  name: "twitterIncludeComponent",
+  html: "<div doc-include='twitterInclude' class='placeholder'><div className='example-inline-placeholder-styles' style='min-height: 100px;outline: 1px dashed rgba(0, 0, 0, 0.2);position: relative;'/></div>",
+  label: "Twitter Include",
+  description: "Embed a tweet",
+  directives: [
     {
-      "name": "regular",
-      "caption": "Article",
-      "wrapper": "<div>Some wrapper</div>",
-      "groups": [
-        {"label": "Twitter Include", "components": ["twitterIncludeComponent"]}
-      ]
-    }
-  ],
-
-  "components": [
-    {
-      "name": "twitterIncludeComponent",
-      "html": "<div doc-include='twitterInclude' class='placeholder'><div className='example-inline-placeholder-styles' style='min-height: 100px;outline: 1px dashed rgba(0, 0, 0, 0.2);position: relative;'/></div>",
-      "label": "Twitter Include",
-      "description": "Embed a tweet",
-      "directives": [
-        {
-          "name": "twitterInclude",
-          "type": "include",
-          "service": "twitterInclude"
-        }
-      ]
+      name: "twitterInclude",
+      type: "include",
+      service: "twitterInclude"
     }
   ]
 }
 ```
+
+(Don't forget to add this to the contentTypes where you want to use this component)
 
 ## Server - rendering the include and defining the service
 

@@ -158,7 +158,6 @@ curl -k -X GET https://server.livingdocs.io/api/v1/documents/latestPublications 
       "significantPublicationDate": "2022-10-26T07:25:00.000Z",
       "visiblePublicationDate": "2022-10-27T06:00:00.000Z",
       "updatedAt": "2023-03-18T16:32:04.170Z",
-      "layout": "regular",
       "design": {
         "name": "timeline",
         "version": "1.1.0"
@@ -220,7 +219,6 @@ curl -k -X GET https://server.livingdocs.io/api/v1/documents/latestPublications 
       "significantPublicationDate": "2022-10-26T07:25:00.000Z",
       "visiblePublicationDate": "2022-10-27T06:00:00.000Z",
       "updatedAt": "2023-03-19T17:33:05.171Z",
-      "layout": "regular",
       "design": {
         "name": "timeline",
         "version": "1.1.0"
