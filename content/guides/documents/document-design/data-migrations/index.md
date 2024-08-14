@@ -25,14 +25,13 @@ Use a `version bump` when you have non structural changes and want to just lift 
 
 Examples when a `version bump` is the right choice:
 - HTML or CSS changes that don't affect the structure
-- changes in the design's wrapper or any of the layout's wrappers
+- changes in the design wrappers
 - changes in the assets of a design
 - adding a new directive to a component (will be empty)
 - adding a new Content Type
 - moving a directive from one HTML tag to another in the same component
 - removing or adding a `doc-optional` directive (`doc-optional` is never breaking)
 - removing or changing a component property on a component (will be silently ignored)
-- changes in the component set of a layout
 - changes in the component set of a group
 - changing the default component
 - changes in the image ratios

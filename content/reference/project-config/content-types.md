@@ -10,11 +10,7 @@ You can define as many contentTypes per project as you want. A contentType repre
 
 Whenever you create a document you have to choose of what contentType it will be. The contentType of a document cannot be changed after creation.
 
-You might also come across the `documentType`. It distinguishes between articles and pages. It is considered legacy by now, whenever possible differentiate by the content-type.
-
-_Good to know:_ If you use a reference design, then for every `contentType` there must be a `layout` in the reference design. The name layout of the layout must be exactly the same as the `contentType.handle`.
-
-We plan to allow to move all layout options which are currently defined in the design to the `contentType` configuration. The current situation is an intermediary step to limit the required changes when upgrading to the latest version.
+The `documentType` distinguishes between articles, pages and data-records.
 
 ## Example
 
