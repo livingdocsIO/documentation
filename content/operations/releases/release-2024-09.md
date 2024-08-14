@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency puppeteer-core from 23.0.2 to v23.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8878)
 * [fix(deps): update dependency axios from 1.7.3 to 1.7.4 [security] (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8872)
 * [fix(deps): update dependency axios from 1.7.3 to 1.7.4 [security] (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7195)
 * [fix(publish panel): Horizontal scroll](https://github.com/livingdocsIO/livingdocs-editor/pull/8871)
