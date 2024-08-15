@@ -370,6 +370,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v254.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.26): fix(deps): update dependency axios from 1.7.2 to 1.7.4 [security]
 - [v254.0.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.25): test: assistant proposal with media library entry without LIFEAT005
 - [v254.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.24): fix(access-control): Expose 'document.metadata.update' policies
 - [v254.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.23): fix: Update undici & aws modules to fix security issues
