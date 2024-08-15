@@ -389,6 +389,7 @@ Here is a list of all patches after the release has been announced.
 - [v254.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.9): fix(release-2024-07): Update framework to v29.4.9 (release-2024-07 tag)
 
 ### Livingdocs Editor Patches
+- [v110.21.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.41): fix(publish panel): Horizontal scroll
 - [v110.21.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.40): fix(assistants): add proposals with media library entries LIFEAT005
 - [v110.21.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.39): fix(deps): update dependency axios from 1.7.2 to 1.7.4 [security]
 - [v110.21.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.38): fix(delivery builds): wrap very long feedback messages without whitespace
