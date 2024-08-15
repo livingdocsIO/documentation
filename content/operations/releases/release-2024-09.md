@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Feat: add assistant proposals with media library entries LIFEAT005](https://github.com/livingdocsIO/livingdocs-editor/pull/8869)
 * [feat(assistants): add proposals with media library entries LIFEAT005](https://github.com/livingdocsIO/livingdocs-server/pull/7194)
 * [chore(deps): update dependency puppeteer-core from 23.0.2 to v23.1.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8878)
 * [fix(deps): update dependency axios from 1.7.3 to 1.7.4 [security] (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8872)
