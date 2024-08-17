@@ -7,9 +7,11 @@ menus:
     weight: 5
 ---
 
-HTML directives allow you to insert arbitrary HTML within the tag on which the directive is specified. The idiomatic use case is the free-html component. But you can also use embeds that have predefined validators and only allow specific "whitelisted" HTML to be inserted.
+{{< warning >}}
+  The use of `doc-html` is not recommended. We advise you to use [includes]({{< ref "./include.md" >}}) to control the rendering of HTML on the server.
+  {{< /warning >}}
 
-Use of `doc-html` (client-side embeds) is not recommended and deprecated. We advise you to use [includes]({{< ref "./include.md" >}}) to control the rendering of third-party embeds on the server.
+HTML directives allow you to insert arbitrary HTML within the tag on which the directive is specified. The idiomatic use case is the free-html component. But you can also use embeds (iframe, tweet) that have predefined validators and only allow specific HTML to be inserted.
 
 ## Example
 
