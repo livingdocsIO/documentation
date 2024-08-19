@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency jose from 5.6.3 to v5.7.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8888)
 * [fix(deps): update playwright monorepo from 1.46.0 to v1.46.1 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/8882)
 * [fix(deps): update dependency sharp from 0.33.4 to v0.33.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7202)
 * [Feat: add assistant proposals with media library entries LIFEAT005](https://github.com/livingdocsIO/livingdocs-editor/pull/8869)
