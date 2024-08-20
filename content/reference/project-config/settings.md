@@ -43,6 +43,7 @@ settings: {
           }
         }
       },
+      apiEndpoint: 'https://kordiam.app', // Optional, Defaults to 'https://desk-net.com', {{< added-in "release-2023-11" >}}
       createDocumentFunction: 'myCreateDocumentFunction',
       createElementFunction: 'myCreateElementFunction',
       incomingElementToDocumentCommandsFunction: 'myIncomingElementToDocumentCommandsFunction',
