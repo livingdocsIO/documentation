@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix comyan drop handler in li-meta-image](https://github.com/livingdocsIO/livingdocs-editor/pull/8884)
 * [🐞 Add missing defaultMetadata to ContentType Model to be able on Custom List v2 Filter](https://github.com/livingdocsIO/livingdocs-editor/pull/8892)
 * [fix(deps): update dependency wait-on from 7.2.0 to v8 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8890)
 * [fix(deps): update dependency async from 3.2.5 to v3.2.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8889)
