@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Set default paramsSchema values](https://github.com/livingdocsIO/livingdocs-editor/pull/8901)
 * [Remove console error `this.externalSystemLabel is not a function`](https://github.com/livingdocsIO/livingdocs-editor/pull/8902)
 * [Correctly prevent usage of _injector in vue components](https://github.com/livingdocsIO/livingdocs-editor/pull/8885)
 * [fix(push-message): add push message icons on table dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/8896)
