@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Correctly prevent usage of _injector in vue components](https://github.com/livingdocsIO/livingdocs-editor/pull/8885)
 * [fix(push-message): add push message icons on table dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/8896)
 * [Document Inbox for Short-Term Planning](https://github.com/livingdocsIO/livingdocs-server/pull/7192)
 * [Fix comyan drop handler in li-meta-image](https://github.com/livingdocsIO/livingdocs-editor/pull/8884)
