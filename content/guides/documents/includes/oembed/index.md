@@ -274,7 +274,7 @@ oembed: {
         curl --location 'https://graph.facebook.com/v14.0/instagram_oembed?url=https%3A%2F%2Fwww.instagram.com%2Fp%2FEXAMPLE_POST%2F&access_token=YOUR_ACCESS_TOKEN
         ```
         
-    - Replace `EXAMPLE_POST` with the URL of an actual Instagram post (e.g., `C8EeHxkqIV6`) and `YOUR_ACCESS_TOKEN` with the token obtained earlier.
+    - Replace `EXAMPLE_POST` with the URL of an actual Instagram post and `YOUR_ACCESS_TOKEN` with the token obtained earlier.
 3. **Test Facebook oEmbed**:
     - Similarly, you can test Facebook oEmbed by fetching a Facebook post:
         
