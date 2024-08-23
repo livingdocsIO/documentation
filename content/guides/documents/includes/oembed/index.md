@@ -19,7 +19,7 @@ The oEmbed include service (`li-oembed-service`) allows users to embed content (
 - Facebook (`li-facebook-post`), ATTENTION: requires credentials
 - Dailymotion (`li-dailymotion`)
 
-A note on Facebook and Instagram: Meta is not allowing public access to oembed endpoints. You need to provide credentials of a valid Facebook App in order for this to work. In addition your facebook app also needs to undergo a review process for the Oembed Read permissions. See below for more information.
+A note on Facebook and Instagram: Meta is not allowing public access to oembed endpoints. You need to provide credentials of a valid Facebook App in order for this to work. In addition your facebook app also needs to undergo a review process for the Oembed Read permissions. See below for more information. 
 
 ## Server Configuration
 
@@ -199,9 +199,8 @@ module.exports = {
 ## Facebook and Instagram (Meta)
 
 The company Meta is requiring a review process for all parties that want to embed their content using oEmbed. To get it running with Livingdocs, you will need to do the following:
-1. Create a Facebook App (if you don't already have one) on https://developers.facebook.com/
-2. In your Facebook App, navigate to "App Review" -> "Requests" and request a new review. Then select the "Oembed Read" permissions request and fill out all required data for the review. Plan in a couple of days for Meta to process your request.
-3. Once you have the permissions, you need to add the appId and secret to Livingdocs as follows:
+1. We have written a guide below on how to go through these steps. This process can be long. If you cannot complete it, we recommend using HTML embeds (instead of oembeds) for Meta.
+2. Once you have the permissions, you need to add the appId and secret to Livingdocs as follows:
 ```
 oembed: {
   credentials: {
@@ -217,4 +216,73 @@ oembed: {
   }]
 }
 ```
+
+### <u>Step-by-Step Guide to Get the Meta Authorization for oEmbed</u>
+#### Step 1: Set Up a Meta Developer Account and App
+
+1. **Create a Meta Developer Account**:
+    - Sign up at [Meta for Developers](https://developers.facebook.com/) for a developer account if you don’t already have one.
+2. **Create a New App**:
+    - In the Meta Developer Dashboard, create a new app by selecting **"Create App"**.
+    - Fill in the necessary details, such as app name and contact email.
+3. **Link Your App to Your Business Manager Account**:
+    - In your app's settings under **Settings** > **Basic**, link your app to your Business Manager account.
+
+#### **Step 2: Get Business Verification**
+
+1. **Prepare Your Business Manager Account**:
+    - Make sure your Business Manager account is set up with all required business details (legal name, address, etc.).
+2. **Submit for Business Verification**:
+    - In the Business Manager, navigate to the **Security Center** and start the verification process by providing the necessary documentation.
+3. **Await Approval**:
+    - Wait for Meta to verify your business. This step can take some time, so it’s best to complete this early in the process.
+
+#### Step 3: Configure oEmbed Permissions
+
+1. **Add Product: oEmbed**:
+    - In the app dashboard, add the oEmbed product.
+2. **Request the Required Permissions**:
+    - Once your business is verified, go to the **App Review** section and request the `oembed_read` permission.
+
+#### Step 4: App Review and Making the App Live
+
+1. **Prepare for App Review**:
+    - With your business verified, submit your app for Meta’s review, focusing on how it uses oEmbed.
+2. **Submit and Monitor Review**:
+    - Submit the app for review and await feedback or approval.
+3. **Make the App Live**:
+    - After approval, switch your app to live mode to enable oEmbed functionality.
+    
+    **Note:** When taking your app live, you are also required to complete the **Data Use Checkup** form to confirm your compliance with Meta's data usage policies. You can find more information about the Data Use Checkup process [here](https://developers.facebook.com/docs/resp-plat-initiatives/data-use-checkup).
+    
+
+#### Step 5: Testing and Implementation
+
+1. **Generate an Access Token**:
+    - Use the following `curl` command to generate an access token for your app:
+        
+        ```bash
+        curl --location 'https://graph.facebook.com/oauth/access_token?client_id=YOUR_APP_ID&client_secret=YOUR_APP_SECRET&grant_type=client_credentials'
+        ```
+        
+    - Replace `YOUR_APP_ID` and `YOUR_APP_SECRET` with your actual app credentials.
+    - This command will return an access token that you can use to make API requests.
+2. **Test Instagram oEmbed**:
+    - With the access token, test the oEmbed functionality by fetching an Instagram post:
+        
+        ```bash
+        curl --location 'https://graph.facebook.com/v14.0/instagram_oembed?url=https%3A%2F%2Fwww.instagram.com%2Fp%2FEXAMPLE_POST%2F&access_token=YOUR_ACCESS_TOKEN
+        ```
+        
+    - Replace `EXAMPLE_POST` with the URL of an actual Instagram post (e.g., `C8EeHxkqIV6`) and `YOUR_ACCESS_TOKEN` with the token obtained earlier.
+3. **Test Facebook oEmbed**:
+    - Similarly, you can test Facebook oEmbed by fetching a Facebook post:
+        
+        ```bash
+        curl --location 'https://graph.facebook.com/v14.0/oembed_post?url=https%3A%2F%2Fwww.facebook.com%2FEXAMPLE_POST%2F&access_token=YOUR_ACCESS_TOKEN'
+        ```
+        
+    - Replace `EXAMPLE_POST` with the URL of an actual Facebook post and `YOUR_ACCESS_TOKEN` with the generated token.
+4. **Deploy and Monitor**:
+    - Once testing in live mode is successful, deploy the oEmbed functionality to your production environment.
 
