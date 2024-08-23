@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Document Copy Flows](https://github.com/livingdocsIO/livingdocs-editor/pull/8767)
 * [Document Copy Flows](https://github.com/livingdocsIO/livingdocs-server/pull/7105)
 * [Feat: document editing header - collaborators](https://github.com/livingdocsIO/livingdocs-editor/pull/8891)
 * [fix(deps): update dependency @babel/preset-env from 7.25.3 to v7.25.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8905)
