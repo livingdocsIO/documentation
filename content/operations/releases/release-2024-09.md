@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk from 3.629.0 to v3.637.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7198)
 * [Fix axios request in slack api](https://github.com/livingdocsIO/livingdocs-server/pull/7211)
 * [Document Copy Flows](https://github.com/livingdocsIO/livingdocs-editor/pull/8767)
 * [Document Copy Flows](https://github.com/livingdocsIO/livingdocs-server/pull/7105)
