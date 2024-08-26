@@ -11,7 +11,7 @@ During the transition period (a few months) Desk-Net/Kordiam will support both a
 
 At a certain point, you will need to update your integration to use the new Kordiam API endpoint.
 
-## If you are running {{< release "release-2023-11" >}} or later
+## If you are running release-2023-11 or later
 
 You are running a release of Livingdocs that supports the new `apiEndpoint` setting. 
 
