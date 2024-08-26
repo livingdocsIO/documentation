@@ -11,11 +11,11 @@ During the transition period (a few months) Desk-Net/Kordiam will support both a
 
 At a certain point, you will need to update your integration to use the new Kordiam API endpoint.
 
-## If you are running release-2023-11 or later
+## If you are running {{< release "release-2023-11" >}} or later
 
 You are running a release of Livingdocs that supports the new `apiEndpoint` setting. 
 
-Simply add an `apiEndpoint` config in `settings.integration.desknet` to `https://kordiam.app` and you are good to go.
+If you are using the new [Desk-Net Global Integration]({{< ref "/guides/integrations/desknet" >}}), simply add an `apiEndpoint` config in `settings.integrations.desknet` to `https://kordiam.app` and you are good to go.
 
 ```js 
 // settings
@@ -24,6 +24,16 @@ integrations: {
       apiEndpoint: 'https://kordiam.app',
       ...
     }
+  }
+```
+
+If you are using the [Desk-Net Platform Integration]({{< ref "/guides/integrations/desknet-legacy" >}}), you need to add the `apiEndpoint` config in `settings.desknet` and set it to `https://kordiam.app`.
+
+```js 
+// settings
+desknet: {
+    apiEndpoint: 'https://kordiam.app',
+    ...
   }
 ```
 
