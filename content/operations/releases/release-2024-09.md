@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Content Validation Errors](https://github.com/livingdocsIO/livingdocs-server/pull/7185)
 * [Allow LIFEAT003 for SZ](https://github.com/livingdocsIO/livingdocs-server/pull/7222)
 * [Support object-based webhook config for `mediaLibraryEntry.*` events](https://github.com/livingdocsIO/livingdocs-server/pull/7219)
 * [Remove usage of removed `run` function](https://github.com/livingdocsIO/livingdocs-server/pull/7217)
