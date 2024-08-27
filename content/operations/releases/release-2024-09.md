@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Improve dashboard caching behaviour](https://github.com/livingdocsIO/livingdocs-editor/pull/8880)
 * [fix(deps): update dependency jose from 5.7.0 to v5.8.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7226)
 * [chore(deps): update dependency puppeteer-core from 23.1.1 to v23.2.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8912)
 * [Content Validation Errors](https://github.com/livingdocsIO/livingdocs-server/pull/7185)
