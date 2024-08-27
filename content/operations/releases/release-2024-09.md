@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Prevent text loss in table dashboard inputs due to network latency](https://github.com/livingdocsIO/livingdocs-editor/pull/8862)
 * [fix(deps): update dependency webpack from 5.93.0 to v5.94.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8906)
 * [Inbox improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/8900)
 * [Improve dashboard caching behaviour](https://github.com/livingdocsIO/livingdocs-server/pull/7159)
