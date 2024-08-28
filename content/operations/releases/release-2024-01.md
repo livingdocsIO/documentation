@@ -382,6 +382,7 @@ Here is a list of all patches after the release has been announced.
 - [v245.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.2): fix(release-2024-01): Update framework to 27.2.5 (release-2024-01 tag)
 
 ### Livingdocs Editor Patches
+- [v106.0.116](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.116): fix(deps): update dependency webpack from 5.89.0 to 5.94.0 [security]
 - [v106.0.115](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.115): fix(deps): update dependency axios from 1.6.2 to 1.7.4 [security]
 - [v106.0.114](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.114): fix(deps): update dependency @livingdocs/framework from 27.2.17 to v27.2.18
 - [v106.0.113](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v106.0.113): fix(security): Patch security vulnerabilities CVE-2024-4068 in `braces`, and CVE-2024-37890 in `ws`
