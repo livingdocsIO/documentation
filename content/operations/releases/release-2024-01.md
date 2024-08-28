@@ -330,6 +330,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v245.0.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.51): fix(deps): update dependency axios from 1.6.2 to 1.7.4 [security]
 - [v245.0.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.50): fix(li-tree): Fix reference extraction of translated document references in li-tree
 - [v245.0.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.49): fix(deps): update dependency @livingdocs/framework from 27.2.17 to v27.2.18
 - [v245.0.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v245.0.48): fix(deps): update dependency @livingdocs/framework from 27.2.14 to v27.2.17
