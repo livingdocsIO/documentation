@@ -718,30 +718,21 @@ The print options allow you to enable the WoodWing Studio print connector on a c
 
 ## Document Inbox
 
-The document inbox feature allows document and media references to be assigned to another document. Currently pages can accept documents or media library entries to their inbox, articles can only accept media library entries.
+Since {{< release "release-2024-09" >}}, the inbox feature allows document and media references to be assigned to another document. Before, only media library entries could be sent to an inbox.
 
 ### Configuration
 
-The following configuration allows the "page" content type to accept "regular" and "another-handle" documents, and "image" and "video" media library entries, into its inbox. The inbox assignment UI will be displayed for the "regular" and "another-handle" content types on the publication screen. The "Send to inbox" link will be accessible in the context menu of the "image" and "video" media library entires on their dashboards.
+The following configuration allows the "page" content type to accept "regular" and "another-handle" documents, and "image" and "video" media library entries, into its inbox. The inbox assignment UI will be displayed for the "regular" and "another-handle" content types in the publish control panel. The "Send to inbox" link will be accessible in the context menu of the "image" and "video" media library entires on their dashboards.
+Documents in an inbox are displayed similar to a Table Dashboard row. The column definition can be borrowed from a Table Dashboard config, by 
+using the `useDashboardColumns` property.
 
 ```js
 {
   handle: 'page',
   // ...
   inbox: {
-    contentTypes: ['regular', 'another-handle'],
-    mediaTypes: ['image', 'video']
-  }
-}
-```
-
-For regular article content types add only the mediaTypes config to accept images and videos which can be dragged directly into the document. We do not currently support other content types inside of articles. The config will look something like this:
-
-```js
-{
-  handle: 'regular',
-  // ...
-  inbox: {
+    useDashboardColumns: 'inboxDashboard', // added in release-2024-09
+    contentTypes: ['regular', 'another-handle'], // added in release-2024-09
     mediaTypes: ['image', 'video']
   }
 }
@@ -749,19 +740,19 @@ For regular article content types add only the mediaTypes config to accept image
 
 ### Documents
 
-The document inbox for content types provides a way for users to indicate that a document should be listed within another document without the need to know which specific list it should appear on. It can be used in parallel with, or as a replacement for, the list assignment feature. The multilist editor (see screenshot below) is only visible if you have a list in your document.
+The document inbox for content types provides a way for users to indicate that a document should be listed within another document without the need to know in which spot it should appear.
 
-An example use-case would be: When Editor User A finishes an article they would like to tell CvD User B (Chef vom Dienst - a role that is in charge of the frontpage at many newsrooms) to publish the teaser to that article on the frontpage. If the frontpage is compiled from multiple lists, it's not User A's job to decide into which list the article should go, as it's User B deciding that. Once assigned, User B will be able to see the article in the inbox column of the multi-list editor view for the frontpage.
+An example use-case would be: When Editor User A finishes an article they would like to tell CvD User B (Chef vom Dienst - a role that is in charge of the frontpage at many newsrooms) to publish the teaser to that article on the frontpage. It's not User A's job to decide into which location the article should go, as it's User B deciding that. Once User A has sent the article to the page inbox, User B will be able to see the article in the inbox, where it can be further organized in groups and subgroups before it is dragged into the page content and therefore removed from the inbox.  
 
-The inbox assignment UI will be displayed on the publish screen for any content type listed within an `inbox.contentTypes` array. The document search dialog used for the inbox assignment will display documents with content type(s) that accept the content type of the document which is being published.
+The inbox assignment UI will be displayed in the publish control panel for any content type listed within an `inbox.contentTypes` array. The document search dialog used for the inbox assignment will display documents with content type(s) that accept the content type of the document which is being published. The document can be sent to the inbox multiple times (duplicates).
 
-Send document to another document (publish screen):
+Send document to another document (publish control panel):
 
-![image](https://user-images.githubusercontent.com/172394/158125497-a9a8ecb5-5674-4f28-a111-79a3ae344932.png)
+{{< img src="images/inbox-assignment.png" alt="Inbox assignment section in publish control panel" >}}
 
-Open multilist editor in the Editor:
+Inbox with documents and groups:
 
-![image](https://user-images.githubusercontent.com/172394/158125447-5bea2ff6-cc84-4579-9f17-40efb79b350e.png)
+{{< img src="images/inbox-documents.png" alt="Inbox sidepanel with documents and groups" >}}
 
 ### Media Library Entries
 
