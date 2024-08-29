@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Multilist editor customer feature](https://github.com/livingdocsIO/livingdocs-server/pull/7227)
 * [Mutual exclusion of multilist editor and document inbox](https://github.com/livingdocsIO/livingdocs-editor/pull/8916)
 * [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7231)
 * [Prettify Content Feedback on Publish Control Panel](https://github.com/livingdocsIO/livingdocs-editor/pull/8913)
