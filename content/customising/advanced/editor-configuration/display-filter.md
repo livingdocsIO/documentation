@@ -58,13 +58,13 @@ They are separately listed here:
 - `language`: uses the project configuration for [available languages]({{< ref "/reference/project-config/settings.md" >}}) to offer a select box to filter for languages (requires multi-language feature to be enabled)
 - `contentType`: uses the content-types configuration in your server to filter for different content-types, e.g. galleries or regular articles.
 - `channels`: give the user a dropdown to filter by a specific channel. The concept of channels will be removed, if you aren't using them yet, don't start doing so.
-- `includedComponents`: lets the user select a bunch of components from one of them must be used in a document in order to be shown in the result list
-- `missingComponents`: lets the user select a bunch of components from one of them must be absent in a document in order to be shown in the result list
 - `characterCount`: allows the user to select number ranges for the character count a document must have in order to be shown in the result list  
   ```js
   // Creates ranges 0-99, 100-499, 500-2000, 2000-infinity
   displayFilters: [{filterName: 'characterCount', config: {thresholds: [100, 500, 2000]}}]
   ```
+- `includedComponents`: lets the user select a bunch of components from one of them must be used in a document in order to be shown in the result list. Use this as a proof-of-concept to showcase what is possible only. We suggest to configure your own display filter with some combinations of component usages. For example: "Image Heavy Articles" filtering for articles with more than 5 image components.
+- `missingComponents`: lets the user select a bunch of components from one of them must be absent in a document in order to be shown in the result list. Use this as a proof-of-concept to showcase what is possible only. We suggest to configure your own display filter with some combinations of component usages. For example: "Articles without a Quiz" filtering for articles not containing the Quiz component.
 ## Metadata Filters
 
 {{< added-in "release-2023-03" block >}}
