@@ -522,6 +522,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v248.5.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.45): fix(security): Patch security vulnerabilities CVE-2024-4067 in `micromatch` and CVE-2024-41818 in `fast-xml-parser`
 - [v248.5.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.44): fix(deps): update dependency axios from 1.6.7 to 1.7.4 [security]
 - [v248.5.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.43): fix(deps): update dependency @livingdocs/framework from 29.2.13 to v29.2.14
 - [v248.5.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v248.5.42): fix(documents): Set event source for scheduled publish notification
