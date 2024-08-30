@@ -19,6 +19,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [Fix: make source and target label required for copy flows](https://github.com/livingdocsIO/livingdocs-server/pull/7228)
 
 
 To get an overview about new functionality, read the [Release Notes](TODO).
