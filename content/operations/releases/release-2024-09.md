@@ -19,6 +19,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [Fix image url drop handler](https://github.com/livingdocsIO/livingdocs-editor/pull/8930)
 * [Fix: add copy flows to document info panel](https://github.com/livingdocsIO/livingdocs-editor/pull/8914)
 * [Fix inbox group renaming](https://github.com/livingdocsIO/livingdocs-editor/pull/8924)
 * [Fix: make source and target label required for copy flows](https://github.com/livingdocsIO/livingdocs-server/pull/7228)
