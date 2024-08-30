@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cypress from 13.13.3 to v13.14.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8915)
 * [Multilist editor customer feature](https://github.com/livingdocsIO/livingdocs-server/pull/7227)
 * [Mutual exclusion of multilist editor and document inbox](https://github.com/livingdocsIO/livingdocs-editor/pull/8916)
 * [fix(deps): update opentelemetry (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7231)
