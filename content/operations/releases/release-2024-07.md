@@ -396,6 +396,7 @@ Here is a list of all patches after the release has been announced.
 - [v254.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.9): fix(release-2024-07): Update framework to v29.4.9 (release-2024-07 tag)
 
 ### Livingdocs Editor Patches
+- [v110.21.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.46): fix(security): Patch security vulnerabilities CVE-2024-4067 in `micromatch` and CVE-2024-42459 in `elliptic`
 - [v110.21.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.45): fix(deps): update dependency webpack from 5.92.1 to 5.94.0 [security]
 - [v110.21.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.44): fix(li-meta-document-reference-default): update function call
 - [v110.21.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.43): fix(comyan): Pass axiosAuthed to drop handler in li-meta-image
