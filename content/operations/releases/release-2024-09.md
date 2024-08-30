@@ -19,6 +19,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [fix(deps): update dependency axios from 1.7.5 to v1.7.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8939)
 * [Fix image url drop handler](https://github.com/livingdocsIO/livingdocs-editor/pull/8930)
 * [Fix: add copy flows to document info panel](https://github.com/livingdocsIO/livingdocs-editor/pull/8914)
 * [Fix inbox group renaming](https://github.com/livingdocsIO/livingdocs-editor/pull/8924)
