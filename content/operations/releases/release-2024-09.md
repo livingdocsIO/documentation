@@ -19,14 +19,6 @@ aliases:
 >}}
 
 ## PRs to Categorize
-* [Add translations to new features for release-2024-09](https://github.com/livingdocsIO/livingdocs-editor/pull/8943)
-* [fix(deps): update dependency axios from 1.7.5 to v1.7.7 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7236)
-* [fix(deps): update dependency axios from 1.7.6 to v1.7.7 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8940)
-* [fix(deps): update dependency axios from 1.7.5 to v1.7.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8939)
-* [Fix image url drop handler](https://github.com/livingdocsIO/livingdocs-editor/pull/8930)
-* [Fix: add copy flows to document info panel](https://github.com/livingdocsIO/livingdocs-editor/pull/8914)
-* [Fix inbox group renaming](https://github.com/livingdocsIO/livingdocs-editor/pull/8924)
-* [Fix: make source and target label required for copy flows](https://github.com/livingdocsIO/livingdocs-server/pull/7228)
 
 
 To get an overview about new functionality, read the [Release Notes](TODO).
