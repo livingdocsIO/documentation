@@ -374,6 +374,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v254.0.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.30): fix(link-directive): Allow any characters in link directive urls
 - [v254.0.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.29): fix(security): Patch security vulnerabilities CVE-2024-4067 in `micromatch`
 - [v254.0.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.28): fix(sz): allow LIFEAT003 for SZ
 - [v254.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.27): fix: Fix axios request in slack api
