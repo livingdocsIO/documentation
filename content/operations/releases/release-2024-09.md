@@ -19,6 +19,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [Document inbox tests](https://github.com/livingdocsIO/livingdocs-editor/pull/8942)
 * [Allow any characters in link directive urls](https://github.com/livingdocsIO/livingdocs-server/pull/7237)
 
 
