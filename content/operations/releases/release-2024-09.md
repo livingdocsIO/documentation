@@ -74,13 +74,15 @@ No preparations are required after rolling out this release.
 
 ### Rollback
 
-If you need to rollback the release, you can do so by running the following command:
+Only rollback if you have a critical issue with the release in question. Usually forward patching is the better option.
+
+If you need to rollback the release, you can do so by running the following command on the Livingdocs Server running the new release:
 
 ```sh
 livingdocs-server migrate down
 ```
 
-Data added to `document_inbox_v2` table after the rollout of this release won't be copied to `document_inbox` and it will be lost during the rollback. Table `document_inbox` will be used again after the rollback.
+All document inbox entries added after the release deployment are lost when you do a rollback.
 
 ## Breaking Changes 🔥
 
