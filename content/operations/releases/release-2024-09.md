@@ -19,6 +19,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [Allow any characters in link directive urls](https://github.com/livingdocsIO/livingdocs-server/pull/7237)
 
 
 To get an overview about new functionality, read the [Release Notes](TODO).
