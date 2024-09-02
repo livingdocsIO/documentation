@@ -70,6 +70,26 @@ To learn about the necessary actions to update Livingdocs to `release-2024-09`, 
 | Livingdocs Editor Docker Image | livingdocs/editor-base:18.5                                                              |
 | Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
 
+## Deployment
+
+### Before the deployment
+
+No prior preparations (besides `livingdocs-server migrate up`) are required before rolling out this release.
+
+### After the deployment
+
+No preparations are required after rolling out this release.
+
+### Rollback
+
+If you need to rollback the release, you can do so by running the following command:
+
+```sh
+livingdocs-server migrate down
+```
+
+Data added to `document_inbox_v2` table after the rollout of this release won't be copied to `document_inbox` and it will be lost during the rollback. Table `document_inbox` will be used again after the rollback.
+
 ## Breaking Changes 🔥
 
 {{< feature-info "Operations" "server" >}}

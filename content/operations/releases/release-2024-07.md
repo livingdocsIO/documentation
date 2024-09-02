@@ -67,7 +67,7 @@ No prior preparations are required before rolling for this release.
 
 ### After the deployment
 
-No prior preparations are required after rolling out this release.
+No preparations are required after rolling out this release.
 
 ## Breaking Changes 🔥
 
