@@ -19,6 +19,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [Fix back navigation for pages not linked to an issue](https://github.com/livingdocsIO/livingdocs-editor/pull/8944)
 * [Fix: small screen toolbar with css grid](https://github.com/livingdocsIO/livingdocs-editor/pull/8923)
 * [Breaking Change: Remove support for `publication.updated` event](https://github.com/livingdocsIO/livingdocs-server/pull/7240)
 * [Document inbox tests](https://github.com/livingdocsIO/livingdocs-editor/pull/8942)
