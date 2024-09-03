@@ -19,6 +19,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [Remove `isDefault` property for named crops from `li-image and `li-named-crops`](https://github.com/livingdocsIO/livingdocs-server/pull/7241)
 * [Fix back navigation for pages not linked to an issue](https://github.com/livingdocsIO/livingdocs-editor/pull/8944)
 * [Fix: small screen toolbar with css grid](https://github.com/livingdocsIO/livingdocs-editor/pull/8923)
 * [Breaking Change: Remove support for `publication.updated` event](https://github.com/livingdocsIO/livingdocs-server/pull/7240)
