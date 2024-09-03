@@ -109,7 +109,8 @@ livingdocs-server migrate up
 ### Migrate `document_inbox` table to `document_inbox_v2` :fire:
 
 This release we are migrating `document_inbox` to a new postgres table as the data structure is changing.
-By migrating to the new table we can ensure a release rollback can be done more easily without breaking the functionality or losing data.
+By migrating to the new table we can ensure a release rollback can be done more easily.
+However, be aware that all changes done to the inbox while running the system on `release-2024-09` are lost when performing a rollback and the data before the update is restored!
 
 ### Redirect URLs `/p/{projectHandle}/articles/{documentId}/*` to `/p/{projectHandle}/document/{documentId}`
 
@@ -133,6 +134,28 @@ In your .nvmrc (if present) change the string from 18 to 22 or 20.
 
 ### Document Inbox :gift:
 
+In a newsroom's editorial workflow, the tasks of creating articles and placing them on a page are often divided among different roles.
+The document inbox is a tool that allows an article to be sent to a page’s inbox.
+The person responsible for managing the page can then organize the articles within the inbox using groups,
+and finally drag the article to a specific spot on the page.
+
+Configuring the inbox is part of the content type configuration, in this case, for a page.
+By referencing a table dashboard using a handle, it's possible to control which columns are displayed for an article entry in the inbox:
+
+```js
+// Content Type Config
+{
+ handle: 'page',
+ documentType: 'page',
+ inbox: {
+   useDashboardColumns: 'inboxDashboard', // Specifies the dashboard columns to use for the documents in the inbox
+   contentTypes: ['article'], // Added in release-2024-09 
+   mediaTypes: ['image'] // Pre-existing; allows media library entries in the inbox as well
+ }
+}
+```
+
+Further details can be found on the [content type documentation page]({{< ref "/reference/project-config/content-types#document-inbox" >}}).
 
 
 ### Copy & Transform flows :gift:
@@ -193,7 +216,14 @@ integrations: {
 
 ### `li-system-text` metadata plugin :gift:
 
+This release a new system metadata plugin becomes available: `li-system-text`. `li-system-text` is a simple text value store that behaves like `li-text`, but belongs to the system metadata.
 
+It can be used in cases where a simple text value should be stored in the metadata, but the document version should not
+be increased when the metadata value changes. Or in other words, it will not show up as unpublished change.
+
+Please note that it is only available as document metadata, no other contexts.
+
+Further details can be found on the [plugin documentation page](({{< ref "/reference/document/metadata/plugins/li-system-text" >}})).
 
 ### Desknet -> Kordiam editor UI updates :gift:
 
