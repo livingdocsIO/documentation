@@ -146,7 +146,13 @@ In your .nvmrc (if present) change the string from 18 to 22 or 20.
 
 ### Space optimisation for side panels :gift:
 
+The width of the wide side panels (e.g., Media Library) has been increased on large screens to provide additional space. On screens wider than 1920px, these panels will have a width of 800px. On smaller screens, the width remains unchanged at 600px.
 
+Teaser side panels and the Document Inbox have been changed to wide side panels. They now follow the same behavior as described above: 600px on smaller screens and 800px on larger screens.
+
+{{< img src="./release-2024-09-wide-side-panels.png" alt="Screenshot of a wide teaser side panel" >}}
+
+If users notice overlapping components that negatively affect their experience, please contact your CSO manager.
 
 ### Dashboards: search caching behaviour :gift:
 
