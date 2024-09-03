@@ -178,7 +178,15 @@ No changes are required for main entities to work, other than enabling main enti
 
 ### iMatrics test environment support :gift:
 
+To support iMatrics test environments, we are adding a new iMatrics project configuration property to specify whether the iMatrics test environment should be used. By default, it is set to `false`.
 
+```js
+integrations: {
+  imatrics: {
+    testEnvironment: true
+  }
+}
+```
 
 ### `li-system-text` metadata plugin :gift:
 
