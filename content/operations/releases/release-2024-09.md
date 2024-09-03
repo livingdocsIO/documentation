@@ -113,7 +113,7 @@ By migrating to the new table we can ensure a release rollback can be done more 
 
 ### Redirect URLs `/p/{projectHandle}/articles/{documentId}/*` to `/p/{projectHandle}/document/{documentId}`
 
-All URLs of the form /p/{projectHandle}/articles/{documentId}/* will redirect to their corresponding /p/{projectHandle}/document/{documentId}/* URL. If a corresponding URL no longer exists, the URLs will redirect to the main URL /p/{projectHandle}/document/{documentId} and the associated action will no longer work.
+All URLs of the form `/p/{projectHandle}/articles/{documentId}/*` will redirect to their corresponding `/p/{projectHandle}/document/{documentId}/*` URL. If a corresponding URL no longer exists, the URLs will redirect to the main URL `/p/{projectHandle}/document/{documentId}` and the associated action will no longer work.
 
 ## Deprecations
 
