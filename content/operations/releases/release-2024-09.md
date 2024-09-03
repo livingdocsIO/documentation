@@ -172,7 +172,9 @@ If users notice overlapping components that negatively affect their experience, 
 
 ### Retresco support for main entities :gift:
 
+Retresco has introduced a new concept of main entities. These are entities identified by Retresco that are particularly relevant to a document (i.e., they have a high score). To support this new concept, we have extended our storage schema for Retresco entities to include an indicator `isMain` of whether an entity is a main entity and also report this data back to Retresco.
 
+No changes are required for main entities to work, other than enabling main entities in Retresco. Currently, main entities are not marked in the Livingdocs UI. They appear as regular entities.
 
 ### iMatrics test environment support :gift:
 
