@@ -8,8 +8,8 @@
         "maintained": false,
         "legacy": false,
         "sortId": 46,
-        "editorVersion": "v110.34.11",
-        "serverVersion": "v255.4.2"
+        "editorVersion": "v110.35.0",
+        "serverVersion": "v257.1.0"
     },
     "release-2024-09": {
         "key": "release-2024-09",
@@ -20,8 +20,8 @@
         "maintained": false,
         "legacy": false,
         "sortId": 45,
-        "editorVersion": "v110.35.0",
-        "serverVersion": "v257.1.0"
+        "editorVersion": "v110.34.14",
+        "serverVersion": "v257.0.0"
     },
     "release-2024-07": {
         "key": "release-2024-07",
