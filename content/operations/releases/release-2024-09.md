@@ -262,6 +262,7 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+- [v110.34.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.18): fix(ticker): Visualize ValidationErrors correctly for ticker entries
 - [v110.34.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.17): fix(assistants): disable assistants when workspace is read-only
 - [v110.34.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.16): fix(translations): Only set default locale if none is present on document create
 - [v110.34.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.15): fix(info-panel): close info panel when clicked outside
