@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency exifreader from 4.23.3 to v4.23.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7255)
 * [fix(admin-dashboard): occupation filter](https://github.com/livingdocsIO/livingdocs-editor/pull/8976)
 * [Disable assistants when workspace is read-only](https://github.com/livingdocsIO/livingdocs-editor/pull/8974)
 * [fix: info panel goto button](https://github.com/livingdocsIO/livingdocs-editor/pull/8965)
