@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Disable assistants when workspace is read-only](https://github.com/livingdocsIO/livingdocs-editor/pull/8974)
 * [fix: info panel goto button](https://github.com/livingdocsIO/livingdocs-editor/pull/8965)
 * [Delete unused event related to LIBREAKING035](https://github.com/livingdocsIO/livingdocs-server/pull/7251)
 * [fix(deps): update dependency cypress from 13.14.1 to v13.14.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8966)
