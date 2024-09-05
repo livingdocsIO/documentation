@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(admin-dashboard): occupation filter](https://github.com/livingdocsIO/livingdocs-editor/pull/8976)
 * [Disable assistants when workspace is read-only](https://github.com/livingdocsIO/livingdocs-editor/pull/8974)
 * [fix: info panel goto button](https://github.com/livingdocsIO/livingdocs-editor/pull/8965)
 * [Delete unused event related to LIBREAKING035](https://github.com/livingdocsIO/livingdocs-server/pull/7251)
