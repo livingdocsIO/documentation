@@ -264,6 +264,7 @@ Here is a list of all patches after the release has been announced.
 - [v257.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.1): fix(events): Delete unused event related to LIBREAKING035
 
 ### Livingdocs Editor Patches
+- [v110.34.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.20): fix(draft-storage): Persist unsaved document to local storage on unload
 - [v110.34.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.19): chore(admin-dashboard): Filter users completely in memory
 - [v110.34.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.18): fix(ticker): Visualize ValidationErrors correctly for ticker entries
 - [v110.34.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.17): fix(assistants): disable assistants when workspace is read-only
