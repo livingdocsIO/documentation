@@ -399,6 +399,7 @@ Here is a list of all patches after the release has been announced.
 - [v254.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.9): fix(release-2024-07): Update framework to v29.4.9 (release-2024-07 tag)
 
 ### Livingdocs Editor Patches
+- [v110.21.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.50): fix(editor): Add missing publish route
 - [v110.21.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.49): fix(translations): Only set default locale if none is present on document create
 - [v110.21.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.48): fix(images): Use dropActions.processImages in image url drop handler
 - [v110.21.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.47): fix(dashboards): Prevent text loss in table dashboard inputs
