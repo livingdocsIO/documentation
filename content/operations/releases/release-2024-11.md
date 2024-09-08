@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Only show invalid file size error once during image upload](https://github.com/livingdocsIO/livingdocs-editor/pull/8991)
 * [Fix restoring documents from local storage after design version bumps](https://github.com/livingdocsIO/livingdocs-editor/pull/8989)
 * [Support loading users with any archived state](https://github.com/livingdocsIO/livingdocs-server/pull/7256)
 * [fix(deps): update dependency exifreader from 4.23.3 to v4.23.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7255)
