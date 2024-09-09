@@ -203,11 +203,13 @@ If users notice overlapping components that negatively affect their experience, 
 
 
 
-### Retresco support for main entities :gift:
+### Retresco support for "Main Entities" :gift:
 
-Retresco has introduced a new concept of main entities. These are entities identified by Retresco that are particularly relevant to a document (i.e., they have a high score). To support this new concept, we have extended our storage schema for Retresco entities to include an indicator `isMain` of whether an entity is a main entity and also report this data back to Retresco.
+In addition to the regular entity recognition, Retresco has introduced the "Main Entities" concept. "Main Entities" can also be automatically detected and labelled in the Topic Management System (TMS from version 2.4.0). "Main Entities" are determined using an internal relevance score based on frequency and position in the text and describe the content focus of the document. This enables a more precise classification of articles to topic pages and automatically filters out less relevant content.
 
-No changes are required for main entities to work, other than enabling main entities in Retresco. Currently, main entities are not marked in the Livingdocs UI. They appear as regular entities.
+To support this new concept, we have extended our storage schema for Retresco entities to include an indicator `isMain` of whether an entity is a main entity and also report this data back to Retresco.
+
+No changes are required for "Main Entities" to work, other than enabling main entities in Retresco. Currently, main entities are not marked in the Livingdocs UI. They appear as regular entities.
 
 ### iMatrics test environment support :gift:
 
