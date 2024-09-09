@@ -18,17 +18,6 @@ aliases:
   branchHandle="release-2024-09"
 >}}
 
-## PRs to Categorize
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/7244)
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/8948)
-* [Remove `isDefault` property for named crops from `li-image and `li-named-crops`](https://github.com/livingdocsIO/livingdocs-server/pull/7241)
-* [Fix back navigation for pages not linked to an issue](https://github.com/livingdocsIO/livingdocs-editor/pull/8944)
-* [Fix: small screen toolbar with css grid](https://github.com/livingdocsIO/livingdocs-editor/pull/8923)
-* [Breaking Change: Remove support for `publication.updated` event](https://github.com/livingdocsIO/livingdocs-server/pull/7240)
-* [Document inbox tests](https://github.com/livingdocsIO/livingdocs-editor/pull/8942)
-* [Allow any characters in link directive urls](https://github.com/livingdocsIO/livingdocs-server/pull/7237)
-
-
 To get an overview about new functionality, read the [Release Notes](TODO).
 To learn about the necessary actions to update Livingdocs to `release-2024-09`, read on.
 
@@ -106,15 +95,33 @@ It's a simple/fast migration with no expected data losses.
 livingdocs-server migrate up
 ```
 
+### `publication.updated` event :fire:
+
+The `publication.updated` event is no longer supported. Please use the `publication.update` event instead.
+
+Refer to [Livingdocs Server events documentation]({{< ref "customising/advanced/server-events/" >}}) for more information on supported events.
+
+Server PR: [Remove support for `publication.updated` event](https://github.com/livingdocsIO/livingdocs-server/pull/7240)
+
+### Remove `isDefault` property for named crops from `li-image` and `li-named-crops` :fire:
+
+The `isDefault` property for named crops has been removed from the `li-image` and `li-named-crops` metadata plugins. The property was not used and has been removed to simplify the codebase. Downstreams can safely remove the property from their configuration, without any impact on the functionality.
+
+Server PR: [Remove `isDefault` property for named crops from `li-image` and `li-named-crops`](https://github.com/livingdocsIO/livingdocs-server/pull/7241)
+
 ### Migrate `document_inbox` table to `document_inbox_v2` :fire:
 
 This release we are migrating `document_inbox` to a new postgres table as the data structure is changing.
 By migrating to the new table we can ensure a release rollback can be done more easily.
 However, be aware that all changes done to the inbox while running the system on `release-2024-09` are lost when performing a rollback and the data before the update is restored!
 
+Server PR: [Document Inbox](https://github.com/livingdocsIO/livingdocs-server/pull/7192)
+
 ### Redirect URLs `/p/{projectHandle}/articles/{documentId}/*` to `/p/{projectHandle}/document/{documentId}`
 
 All URLs of the form `/p/{projectHandle}/articles/{documentId}/*` will redirect to their corresponding `/p/{projectHandle}/document/{documentId}/*` URL. If a corresponding URL no longer exists, the URLs will redirect to the main URL `/p/{projectHandle}/document/{documentId}` and the associated action will no longer work.
+
+Editor PR: [Remove URLs from editor states](https://github.com/livingdocsIO/livingdocs-editor/pull/8777)
 
 ## Deprecations
 
