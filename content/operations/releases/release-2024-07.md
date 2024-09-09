@@ -399,6 +399,7 @@ Here is a list of all patches after the release has been announced.
 - [v254.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.9): fix(release-2024-07): Update framework to v29.4.9 (release-2024-07 tag)
 
 ### Livingdocs Editor Patches
+- [v110.21.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.52): fix(draft-storage): Persist unsaved document to local storage on unload
 - [v110.21.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.51): chore(admin-dashboard): Load all users, also archived ones, so we can filter in memory
 - [v110.21.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.50): fix(editor): Add missing publish route
 - [v110.21.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.49): fix(translations): Only set default locale if none is present on document create
