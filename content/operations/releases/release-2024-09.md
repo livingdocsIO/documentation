@@ -99,7 +99,7 @@ livingdocs-server migrate up
 
 The `publication.updated` event is no longer supported. Please use the `publication.update` event instead.
 
-Refer to [Livingdocs Server events documentation]({{< ref "customising/advanced/server-events/" >}}) for more information on supported events.
+Refer to [Livingdocs Server events documentation]({{< ref "customising/advanced/server-events" >}}) for more information on supported events.
 
 Server PR: [Remove support for `publication.updated` event](https://github.com/livingdocsIO/livingdocs-server/pull/7240)
 
