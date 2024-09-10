@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix: close info panel on clicking outside but also when button is clicked again](https://github.com/livingdocsIO/livingdocs-editor/pull/9002)
 * [fix(deps): update aws-sdk (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7252)
 * [Make toolbar actions reactive](https://github.com/livingdocsIO/livingdocs-editor/pull/8997)
 * [Upload center fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/8998)
