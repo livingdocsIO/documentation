@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency wait-on from 8.0.0 to v8.0.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9005)
 * [Fix: close info panel on clicking outside but also when button is clicked again](https://github.com/livingdocsIO/livingdocs-editor/pull/9002)
 * [fix(deps): update aws-sdk (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7252)
 * [Make toolbar actions reactive](https://github.com/livingdocsIO/livingdocs-editor/pull/8997)
