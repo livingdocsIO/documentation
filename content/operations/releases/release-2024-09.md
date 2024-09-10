@@ -274,6 +274,7 @@ Here is a list of all patches after the release has been announced.
 - [v257.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.1): fix(events): Delete unused event related to LIBREAKING035
 
 ### Livingdocs Editor Patches
+- [v110.34.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.22): fix(toolbar): Make Kordiam schedule action button reactive
 - [v110.34.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.21): fix(upload-center): Correctly handle cancelled uploads on media library dashboards
 - [v110.34.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.20): fix(draft-storage): Persist unsaved document to local storage on unload
 - [v110.34.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.19): chore(admin-dashboard): Filter users completely in memory
