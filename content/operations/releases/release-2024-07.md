@@ -374,6 +374,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v254.0.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.32): fix(indexing): Normalize li-date, li-datetime and li-datetime-validity values while indexing into elasticsearch
 - [v254.0.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.31): fix(users): Support loading archived users and regular users together
 - [v254.0.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.30): fix(link-directive): Allow any characters in link directive urls
 - [v254.0.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.29): fix(security): Patch security vulnerabilities CVE-2024-4067 in `micromatch`
