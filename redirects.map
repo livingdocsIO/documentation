@@ -73,6 +73,8 @@
 /reference-docs/server-config/teaser-preview-config /guides/editor/teaser-preview/;
 /reference-docs/server-config/webhooks /reference/webhooks/;
 /reference-docs/public-api /reference/public-api/;
+/reference-docs/cli /reference/cli/;
+/reference-docs /reference/;
 /enterprise/reference-docs/server-api/events /customising/server/events/;
 /enterprise/reference-docs/server-configuration/webhooks /reference/webhooks/;
 /enterprise/reference-docs/editor-api /reference/editor-api/;
