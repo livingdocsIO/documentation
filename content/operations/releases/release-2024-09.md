@@ -171,10 +171,34 @@ Further details can be found on the [content type documentation page]({{< ref "/
 
 ### Document Info Panel :gift:
 
+A new document info panel has been added to show general information about the document. It currently shows information about copies, document statistics and incoming- and outgoing links. 
 
+The copy information from the metadata panel was moved to the document info panel. Additionally the original and copies are shown for copy flows.
+
+Statistics needs to be configured per content type:
+
+```js
+// Content Type Config
+editor: {
+  statistics: {
+    characterCount: true,
+    componentCount: [
+      'title',
+      'p',
+      'image',
+      'image-named-crops'
+    ]
+  }
+}
+```
+
+{{< img src="./release-2024-09-document-info-panel.png" alt="Screenshot of a document info panel" >}}
 
 ### Document Editing Header and Toolbar :gift:
 
+We improved the layout of the header to better adjust on small screens. Important information like the title will now always be shown and we removed the collaboration bar. Collaborators are now shown directly next to the user avatar.
+
+In this release, we've streamlined the editor toolbar to enhance its predictability and user-friendliness. We’ve introduced more consistent behavior across actions, panels, and screens, ensuring they no longer interfere with each other.
 
 
 ### Space optimisation for side panels :gift:
@@ -193,6 +217,7 @@ If users notice overlapping components that negatively affect their experience, 
 
 ### Push Message Proposals :gift:
 
+It is now possible to add, edit and delete push message proposals. The stored proposals can then be used at a later point to send them. On tabledashboards we now show icons when a proposal exists (black light bulb) and when push message was sent (green bell with a checkmark).
 
 
 ### Content Validation Errors :gift:
@@ -201,7 +226,27 @@ If users notice overlapping components that negatively affect their experience, 
 
 ### Table dashboards: Direct publish without safeguard :gift:
 
+There are safeguards in place which make sure that it's not possible to direct publish when there are too many changes or document is still unpublished.
 
+Those safeguards can now be disabled:
+```js
+// editor_settings
+{
+  dashboards: [
+    {
+       handle: '...',
+       columns: [
+         {
+            componentOptions: {
+              allowQuickPublish: true,
+              ignoreQuickPublishRecencyRestriction: true
+            }
+         }
+       ]
+    }
+  ]
+}
+```
 
 ### Retresco support for "Main Entities" :gift:
 
