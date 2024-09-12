@@ -8,7 +8,6 @@ enableGitInfo: true
 enableEmoji: true
 enableInlineShortcodes: true
 enableRobotsTXT: true
-googleAnalytics: GTM-K6QTH5K
 
 markup:
   goldmark:
@@ -29,6 +28,10 @@ markup:
     endLevel: 4
     ordered: false
     startLevel: 1
+
+services:
+  googleAnalytics:
+    id: GTM-K6QTH5K
 
 imaging:
   quality: 75
