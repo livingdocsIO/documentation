@@ -28,6 +28,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix: focalpoint reactivity](https://github.com/livingdocsIO/livingdocs-editor/pull/9007)
 * [Support prefilling of directives with multiple metadata values of media library entries](https://github.com/livingdocsIO/livingdocs-server/pull/7277)
 * [Support prefilling of directives with multiple metadata values of media library entries](https://github.com/livingdocsIO/livingdocs-editor/pull/9011)
 * [Normalize date fields while indexing](https://github.com/livingdocsIO/livingdocs-server/pull/7268)
