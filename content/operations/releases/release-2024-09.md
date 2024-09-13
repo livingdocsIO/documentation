@@ -193,11 +193,11 @@ Further details can be found on the [content type documentation page]({{< ref "/
 
 ### Document Info Panel :gift:
 
-A new document info panel has been added to show general information about the document. It currently shows information about copies, document statistics and incoming- and outgoing links. 
+The Document Info panel has been added to show general information about the document which includes document copy, document statistics and incoming and outgoing links. 
 
-The copy information from the metadata panel was moved to the document info panel. Additionally the original and copies are shown for copy flows.
+Copy information from the metadata panel has been moved to the Document Info panel. Additionally, the original document and copies of document are shown when using the Document Copy Flows.
 
-Statistics needs to be configured per content type:
+If you want to show document statistics, they have to be configured per content type:
 
 ```js
 // Content Type Config
@@ -222,6 +222,8 @@ We improved the layout of the header to better adjust on small screens. Importan
 
 In this release, we've streamlined the editor toolbar to enhance its predictability and user-friendliness. We’ve introduced more consistent behavior across actions, panels, and screens, ensuring they no longer interfere with each other.
 
+With this changes we are removing most editor state URLs and redirect URLs `/p/{projectHandle}/articles/{documentId}/*` to `/p/{projectHandle}/document/{documentId}/*`. As a result, each document has only one URL, `/p/{projectHandle}/document/{documentId}` and the old URLs will redirect to the document URL. More information can be found in the [Breaking Changes](#breaking-changes) section.
+
 
 ### Space optimisation for side panels :gift:
 
@@ -239,7 +241,9 @@ If users notice overlapping components that negatively affect their experience, 
 
 ### Push Message Proposals :gift:
 
-It is now possible to add, edit and delete push message proposals. The stored proposals can then be used at a later point to send them. On tabledashboards we now show icons when a proposal exists (black light bulb) and when push message was sent (green bell with a checkmark).
+It is now possible to add, edit and delete push message proposals. The stored proposals can then be retrieved at a later point and editors can interact with them as a plain push message. We also improved Push Messages feedback on Table Dashboards, we now show icons when a proposal exists (black light bulb) and when push message was sent (green bell with a checkmark).
+
+This improvements will be shipped with September release for everyone using Push Messages.
 
 
 ### Content Validation Errors :gift:
@@ -248,9 +252,9 @@ It is now possible to add, edit and delete push message proposals. The stored pr
 
 ### Table dashboards: Direct publish without safeguard :gift:
 
-There are safeguards in place which make sure that it's not possible to direct publish when there are too many changes or document is still unpublished.
+When publishing a document from Table Dashboard cells there are safeguards in place to ensure document quality. This safeguards  make sure that it is not possible to directly publish when there are too many changes or document is still unpublished.
 
-Those safeguards can now be disabled:
+Those safeguards can now be disabled with the Editor configuration below. Please make sure you enable this configuration if it fits the newsroom workflows.
 ```js
 // editor_settings
 {
