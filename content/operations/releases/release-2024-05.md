@@ -601,6 +601,7 @@ Here is a list of all patches after the release has been announced.
 - [v251.8.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.2): fix(release-2024-05): Update framework to v29.3.7 (release-2024-05 tag)
 
 ### Livingdocs Editor Patches
+- [v110.13.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.74): fix: focalpoint reactivity
 - [v110.13.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.73): chore(admin-dashboard): Load all users, also archived ones, so we can filter in memory
 - [v110.13.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.72): fix(editor): Add missing publish route
 - [v110.13.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.71): fix(security): Patch security vulnerabilities CVE-2024-4067 in `micromatch` and CVE-2024-42459 in `elliptic`
