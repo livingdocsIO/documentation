@@ -117,9 +117,23 @@ However, be aware that all changes done to the inbox while running the system on
 
 Server PR: [Document Inbox](https://github.com/livingdocsIO/livingdocs-server/pull/7192)
 
-### Redirect URLs `/p/{projectHandle}/articles/{documentId}/*` to `/p/{projectHandle}/document/{documentId}`
+### Redirect editor URLs `/p/{projectHandle}/articles/{documentId}/*` to `/p/{projectHandle}/document/{documentId}/*`
 
-All URLs of the form `/p/{projectHandle}/articles/{documentId}/*` will redirect to their corresponding `/p/{projectHandle}/document/{documentId}/*` URL. If a corresponding URL no longer exists, the URLs will redirect to the main URL `/p/{projectHandle}/document/{documentId}` and the associated action will no longer work.
+We are introducing simplified URLs for the Livingdocs Editor. Moving forward, the following editor URLs are supported:
+
+- `/p/{projectHandle}/document/{documentId}`
+- `/p/{projectHandle}/document/{documentId}?componentId={componentId}`
+- `/p/{projectHandle}/document/{documentId}/history`
+- `/p/{projectHandle}/document/{documentId}/history?revisionId={revisionId}`
+- `/p/{projectHandle}/document/{documentId}/history?revisionIdGte={revisionIdGte}&revisionIdLte={revisionIdLte}`
+
+In addition, we support the following internal notification URLs that will trigger the associated action but redirect to the new main URL `/p/{projectHandle}/document/{documentId}`:
+
+- `/p/{projectHandle}/document/{documentId}/notifications/unsubscribe`
+- `/p/{projectHandle}/document/{documentId}/publish`
+- `/p/{projectHandle}/document/{documentId}/tasks`
+
+During a transition period (see [deprecations]({{< relref "#livingdocs-editor-urls-pprojecthandlearticlesdocumentid" >}})), all URLs in the format `/p/{projectHandle}/articles/{documentId}/*` will be redirected to their corresponding `/p/{projectHandle}/document/{documentId}/*` URLs. If a corresponding URL no longer exists, the user will be redirected to the new main URL `/p/{projectHandle}/document/{documentId}`, and the associated action will no longer be performed.
 
 Editor PR: [Remove URLs from editor states](https://github.com/livingdocsIO/livingdocs-editor/pull/8777)
 
@@ -136,6 +150,14 @@ In your docker images change:
 `FROM livingdocs/node:18 to FROM livingdocs/node:22` or `FROM livingdocs/node:18 to FROM livingdocs/node:20`
 
 In your .nvmrc (if present) change the string from 18 to 22 or 20.
+
+### Editor URLs `/p/{projectHandle}/articles/{documentId}/*`
+
+As part of the transition to the [new Livingdocs Editor URLs]({{< relref "#redirect-livingdocs-editor-urls-pprojecthandlearticlesdocumentid-to-pprojecthandledocumentdocumentid" >}}), we are deprecating the old URLs and will remove them in release-2025-03. With release-2025-03, all URLs in the format `/p/{projectHandle}/articles/{documentId}/*` will be redirected to the new main URL `/p/{projectHandle}/document/{documentId}`. These redirects will open the document but will no longer trigger any associated actions.
+
+If you are exposing Livingdocs Editor URLs to any external system, please use the new main URL `/p/{projectHandle}/document/{documentId}` instead.
+
+Editor PR: [Remove URLs from editor states](https://github.com/livingdocsIO/livingdocs-editor/pull/8777)
 
 ## Features
 
