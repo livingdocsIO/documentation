@@ -6,7 +6,6 @@ excludeFromSearch: true
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2024-09/
-  - /operations/releases/release-2024-09/release-2024-09/
 ---
 
 {{< release-header
@@ -37,8 +36,8 @@ To learn about the necessary actions to update Livingdocs to `release-2024-09`, 
 
 | Name                           | Version                                                                                  |
 | ------------------------------ | ---------------------------------------------------------------------------------------- |
-| Node                           | 22                                                                                       |
-| NPM                            | 10                                                                                       |
+| Node.js                        | 22                                                                                       |
+| npm                            | 10                                                                                       |
 | Postgres                       | 16                                                                                       |
 | Elasticsearch<br/>OpenSearch   | 8.x<br/>v2.3.0                                                                           |
 | Redis                          | 7                                                                                        |
@@ -50,8 +49,8 @@ To learn about the necessary actions to update Livingdocs to `release-2024-09`, 
 
 | Name                           | Version                                                                                  |
 | ------------------------------ | ---------------------------------------------------------------------------------------- |
-| Node                           | 18                                                                                       |
-| NPM                            | 9                                                                                        |
+| Node.js                        | 18                                                                                       |
+| npm                            | 9                                                                                        |
 | Postgres                       | 13                                                                                       |
 | Elasticsearch<br/>OpenSearch   | 7.x<br/>1                                                                                |
 | Redis                          | 6.2                                                                                      |
@@ -140,9 +139,9 @@ Editor PR: [Remove URLs from editor states](https://github.com/livingdocsIO/livi
 ## Deprecations
 
 {{< feature-info "Operations" "server/editor" >}}
-### NodeJS 18 :warning:
+### Node.js 18 :warning:
 
-Support for NodeJS v18 will be removed in `release-2025-01`. Please upgrade your docker images and local environments to node v20 or v22. 
+Support for Node.js v18 will be removed in `release-2025-01`. Please upgrade your docker images and local environments to node v20 or v22. 
 
 In your docker images change:
 `FROM livingdocs/server-base:18 to FROM livingdocs/server-base:22` or `FROM livingdocs/server-base:18 to FROM livingdocs/server-base:20`
