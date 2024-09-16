@@ -11,14 +11,14 @@ aliases:
 
 {{< release-header
   title="September 2024 Release"
-  upcoming=true
+  upcoming=false
   legacy=false
-  current=false
-  maintained=false
+  current=true
+  maintained=true
   branchHandle="release-2024-09"
 >}}
 
-To get an overview about new functionality, read the [Release Notes](TODO).
+To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-september-2024).
 To learn about the necessary actions to update Livingdocs to `release-2024-09`, read on.
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
