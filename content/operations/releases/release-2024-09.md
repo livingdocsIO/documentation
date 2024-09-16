@@ -245,9 +245,55 @@ It is now possible to add, edit and delete push message proposals. The stored pr
 
 This improvements will be shipped with September release for everyone using Push Messages.
 
-
 ### Content Validation Errors :gift:
 
+When a user wants to publish a document there might be violations thrown in publish hooks.
+
+We want the user to be able to see how many errors in the content have to be solved before being able to publish.
+
+It is now possible to report multiple validation errors to the editor.
+The validation errors can reference to either components or also metadata properties.
+
+This functionality replaces the old `MetadataValidationError`, `MetadataValidationErrors` and `ContentValidationError` error classes, which were constructed manually in most integrations.
+
+
+```js
+const {validationError} = require('@livingdocs/server').errors
+
+// Single content validation error
+throw validationError({
+  message: 'Section titles must not be empty',
+  componentId: component.id,
+  directiveName: 'section-title'
+})
+
+// Array of content validation errors
+throw validationError({
+  message: 'Unable to publish due to validation errors',
+  errors: [{
+    message: 'Section titles must not be empty',
+    componentId: component.id,
+    directiveName: 'section-title'
+  }]
+})
+
+// Single metadata validation error
+throw validationError({
+  message: 'Description cannot contain a number',
+  metadataProperty: 'description',
+  translationLocale: 'en' // optional
+})
+
+// Array of metadata validation errors
+throw validationError({
+  message: 'Unable to publish due to validation errors',
+  errors: [{
+    message: 'Description cannot contain a number',
+    metadataProperty: 'description',
+    translationLocale: 'en' // optional
+  }]
+})
+```
 
 
 ### Table dashboards: Direct publish without safeguard :gift:
