@@ -19,7 +19,9 @@ The editor settings control the behavior of your editor UX, in particular:
 - [Main navigation]({{< ref "editor-settings#main-navigation" >}})
 - [Dashboards]({{< ref "editor-settings#dashboards" >}})
 - [Start page]({{< ref "editor-settings#startpage" >}})
-- [Document creation flow]({{< ref "editor-settings#document-creation-flow" >}})
+- [Document Creation Flows]({{< ref "editor-settings#document-creation-flows" >}})
+- [Document Copy Flows]({{< ref "editor-settings#document-copy-flows" >}})
+- [Document Transform Flows]({{< ref "editor-settings#document-transform-flows" >}})
 - [Media library]({{< ref "editor-settings#media-library" >}})
 - [Document lists]({{< ref "editor-settings#document-lists" >}})
 - [Inline links]({{< ref "editor-settings#inline-links" >}})
@@ -775,7 +777,7 @@ A use case for this could be a personalized list of recommended articles that ar
 - Maximum number of results are limited to 35
 - No pagination supported
 
-## Document Creation Flow
+## Document Creation Flows
 
 With a Document Creation Flow you can define how a document gets created (e.g. create button for a Dashboard).
 
@@ -810,6 +812,111 @@ documentCreationFlows: [
     }
   }
 ]
+```
+
+## Document Copy Flows
+
+{{< added-in "release-2024-09" block >}}
+
+Document Copy Flows define how a document gets copied to another document. This feature allows for the transformation of content and metadata to match different content types or scenarios.
+
+Note: This feature is separate from the declarative copy feature and is designed with different mechanics. The older declarative copy feature will be deprecated and removed in future versions.
+
+```js
+// projectConfig.editorSettings
+documentCopyFlows: [
+  {
+    handle: 'copyWebToPrint',
+    // register a copyFunction with liServer.registerCopyFunction()
+    copyFunction: 'copyWebToPrint',
+    copyButtonLabel: 'Copy to Print',
+    copyDescription: 'Copy the current web article to a new print article',
+    copyIcon: 'newspaper',
+
+    sourceLabel: 'Original Web Article',
+    targetLabel: 'Print Copy',
+
+    // shows title and section field in the copy modal
+    // the config is the same as for metadata plugins
+    paramsSchema: [
+      {handle: 'workingTitle', type: 'li-text'},
+      {handle: 'section', type: 'li-text'},
+    ],
+
+    // values passed to paramsSchema fields as initial value
+    defaultParams: {section: 'News'},
+
+    // additional info for your copyFunction
+    context: {}
+  }
+]
+```
+
+```js
+liServer.registerCopyFunction({
+  handle: 'copyWebToPrint',
+  async copy ({projectConfig, documentVersion, params, context}) {
+    return {
+      title: params.workingTitle,
+      metadata: {
+        ...documentVersion.metadata.toJSON(),
+        section: params.section,
+        platform: 'print'
+      },
+      // you can override the content if you like
+      // The default behavior is that the content is copied as is
+      content: document.content
+    }
+  }
+})
+```
+
+## Document Transform Flows
+{{< added-in "release-2024-09" block >}}
+
+Document transform flows allow you to transform a document to either the same content type or a different one.
+
+Documents can only be transformed to a different content type of the document was never published before.
+
+Note: This feature is separate from the declarative transform feature and is designed with different mechanics. The older declarative transform feature will be deprecated and removed in future versions.
+
+```js
+// projectConfig.editorSettings
+documentTransformFlows: [
+  {
+    handle: 'convertArticleToGallery',
+    // register a transformFunction with liServer.registerTransformFunction()
+    transformFunction: 'convertArticleToGallery',
+    transformButtonLabel: 'Convert to gallery article',
+    transformDescription: '...',
+    transformIcon: 'image-area',
+
+    // shows working title in the transform modal
+    // the config is the same as for metadata plugins
+    paramsSchema: [
+      {handle: 'workingTitle', type: 'li-text'}
+    ],
+
+    // values passed to paramsSchema fields as initial value
+    defaultParams: {},
+
+    // additional info for your transformFunction
+    context: {}
+  }
+]
+```
+
+```js
+liServer.registerTransformFunction({
+  handle: 'convertArticleToGallery',
+  async transform ({params, documentVersion, context}) {
+    return {
+      contentType: 'gallery',
+      title: params.workingTitle || documentVersion.title,
+      content: await transformToGalleryContent(documentVersion.content)
+    }
+  }
+})
 ```
 
 ## Media Library

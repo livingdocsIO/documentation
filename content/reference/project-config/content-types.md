@@ -147,6 +147,21 @@ contentTypes: [
     // you can't create documents with this content-type
     documentCreationDisabled: true, // default false
 
+    // Enable document copy flows for this content type
+    // useDocumentCopyFlow references a document copy flow
+    // in {{< a href="/reference/project-config/editor-settings#document-copy-flows" title="projectConfig.editorSettings.documentCopyFlows">}}
+    documentCopyFlows: [
+      {useDocumentCopyFlow: 'toRegular'},
+      {useDocumentCopyFlow: 'toGallery'}
+    ],
+
+    // Enable document transform flows for this content type
+    // useDocumentTransformFlow references a document transform flow
+    // in {{< a href="/reference/project-config/editor-settings#document-transform-flows" title="projectConfig.editorSettings.documentTransformFlows">}}
+    documentTransformFlows: [
+      {useDocumentTransformFlow: 'externalArticleToArticle'}
+    ],
+
     // defines where to go after creating a document
     viewAfterDocumentCreation: 'publish'
 
@@ -158,6 +173,7 @@ contentTypes: [
     },
 
     // Delivery build button and status to be shown in the Publish Control panel
+    // deliveryName references an entry in {{< a href="/reference/project-config/deliveries" title="projectConfig.deliveries" >}}
     deliveries: [
       { deliveryName: 'web', isPrimary: true }
     ],

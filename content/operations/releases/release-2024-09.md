@@ -144,9 +144,12 @@ Editor PR: [Remove URLs from editor states](https://github.com/livingdocsIO/livi
 Support for Node.js v18 will be removed in `release-2025-01`. Please upgrade your docker images and local environments to node v20 or v22. 
 
 In your docker images change:
-`FROM livingdocs/server-base:18 to FROM livingdocs/server-base:22` or `FROM livingdocs/server-base:18 to FROM livingdocs/server-base:20`
-`FROM livingdocs/editor-base:18 to FROM livingdocs/editor-base:22` or `FROM livingdocs/editor-base:18 to FROM livingdocs/editor-base:20`
-`FROM livingdocs/node:18 to FROM livingdocs/node:22` or `FROM livingdocs/node:18 to FROM livingdocs/node:20`
+- `FROM livingdocs/server-base:18`  to  
+  `FROM livingdocs/server-base:22` or `FROM livingdocs/server-base:20`
+- `FROM livingdocs/editor-base:18` to  
+  `FROM livingdocs/editor-base:22` or `FROM livingdocs/editor-base:20`
+- `FROM livingdocs/node:18` to  
+  `FROM livingdocs/node:22` or `FROM livingdocs/node:20`
 
 In your .nvmrc (if present) change the string from 18 to 22 or 20.
 
@@ -186,9 +189,17 @@ By referencing a table dashboard using a handle, it's possible to control which 
 Further details can be found on the [content type documentation page]({{< ref "/reference/project-config/content-types#document-inbox" >}}).
 
 
-### Copy & Transform flows :gift:
+### Document Copy and Transform Flows :gift:
 
+The **Document Copy Flows** and **Document Transform Flows** are an alternative to the existing declarative Document Copy and Transform feature.
 
+By separating «copy» from «transform» and decoupling the triggers from content-types, we offer more flexibility and clarity.
+
+From now on we discourage the usage of Declarative Document Copy and Transform feature as it has many limitations.
+
+The new flows enable copy and transform documents using server functions.
+
+Please consult the [Document Copy Flows]({{< ref "/reference/project-config/editor-settings#document-transform-flows" >}}) and [Document Transform Flows]({{< ref "/reference/project-config/editor-settings#document-transform-flows" >}}) documentation for implementing the new flows.
 
 ### Document Info Panel :gift:
 
