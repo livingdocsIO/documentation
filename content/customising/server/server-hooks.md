@@ -108,20 +108,18 @@ The `preparePublishHookAsync` hook allows modifications of the [DocumentVersion]
 
 **Example**
 ```js
+const {validationError} = require('@livingdocs/server').errors
+
 async preparePublishHookAsync ({documentVersion}) {
   if (documentVersion.metadata.title === 'Let me pass') {
     // modify the document here
     return
   } else {
     // Example Validation Error for a metadata property
-    const err = new Error('Metadata Errors')
-    err.name = 'MetadataValidationErrors'
-    err.status = 400
-    err.invalidMetadata = [{
-      metadataProperty: 'title'
+    throw validationError({
       message: 'Invalid Title',
-    }]
-    throw err
+      metadataProperty: 'title'
+    })
   }
 }
 ```
@@ -163,20 +161,18 @@ The `preUnpublishHookAsync` hook allows modifications of the [DocumentVersion]({
 
 **Example**
 ```js
+const {validationError} = require('@livingdocs/server').errors
+
 async preUnpublishHookAsync ({documentVersion}) {
   if (documentVersion.metadata.title === 'Let me pass') {
     // modify the document here
     return
   } else {
     // Example Validation Error for a metadata property
-    const err = new Error('Metadata Errors')
-    err.name = 'MetadataValidationErrors'
-    err.status = 400
-    err.invalidMetadata = [{
-      metadataProperty: 'title'
+    throw validationError({
       message: 'Document cannot be unpublished because ...',
-    }]
-    throw err
+      metadataProperty: 'title'
+    })
   }
 }
 ```

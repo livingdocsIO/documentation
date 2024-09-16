@@ -175,7 +175,7 @@ You can also provide a custom id to entries which helps with importing documents
 --response--
 200
 ---
-api/v1/import/mediaLibraryEntries
+api/v1/import/mediaLibrary
 ---
 ```js
 {
@@ -192,7 +192,7 @@ api/v1/import/mediaLibraryEntries
 -----
 200
 ---
-api/v1/import/mediaLibraryEntries (error cases for individual entries)
+api/v1/import/mediaLibrary (error cases for individual entries)
 ---
 ```js
 {
@@ -228,15 +228,13 @@ api/v1/import/mediaLibraryEntries (error cases for individual entries)
       "ok": false,
       "correlation": "id: custom-4",
       "status": 400,
-      "error": "MetadataValidationErrors",
+      "error": "ValidationError",
       "error_details": {
-        "message": "Metadata validation failed.",
-        "invalidMetadata": [
-          {
-            "metadataProperty": "title",
-            "message": "The value of '/title' should be string"
-          }
-        ]
+        "message": 'Metadata validation failed.',
+        "errors": [{
+          "metadataProperty": "title",
+          "message": "The value of '/title' must be string"
+        }]
       }
     }
   ]
