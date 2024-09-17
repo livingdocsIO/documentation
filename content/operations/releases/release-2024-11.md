@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pg from 8.12.0 to v8.13.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7287)
 * [fix(deps): update dependency babel-loader from 9.1.3 to v9.2.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9019)
 * [fix(deps): update dependency ua-parser-js from 1.0.38 to v1.0.39 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7282)
 * [fix(deps): update aws-sdk from 3.645.0 to v3.651.1 (master) (minor) - autoclosed](https://github.com/livingdocsIO/livingdocs-server/pull/7267)
