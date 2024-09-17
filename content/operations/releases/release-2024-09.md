@@ -144,7 +144,7 @@ Editor PR: [Remove URLs from editor states](https://github.com/livingdocsIO/livi
 Support for Node.js v18 will be removed in `release-2025-01`. Please upgrade your docker images and local environments to node v20 or v22. 
 
 In your docker images change:
-- `FROM livingdocs/server-base:18`  to  
+- `FROM livingdocs/server-base:18` to  
   `FROM livingdocs/server-base:22` or `FROM livingdocs/server-base:20`
 - `FROM livingdocs/editor-base:18` to  
   `FROM livingdocs/editor-base:22` or `FROM livingdocs/editor-base:20`
@@ -191,15 +191,41 @@ Further details can be found on the [content type documentation page]({{< ref "/
 
 ### Document Copy and Transform Flows :gift:
 
-The **Document Copy Flows** and **Document Transform Flows** are an alternative to the existing declarative Document Copy and Transform feature.
+This new feature simplifies document copying and transformation, offering more control and flexibility for adapting content to different contexts or platforms (e.g., transforming an article for web into a print version). It also provides a clear and transparent process, helping users understand exactly what happens during content copying and transformation. The **Document Copy Flows** and **Document Transform Flows** are an alternative to the existing declarative Document Copy and Transform feature.
 
-By separating «copy» from «transform» and decoupling the triggers from content-types, we offer more flexibility and clarity.
+**What's New:**
+These new flows allow for:
+- Defining multiple copy functions for the same content type.
+- Specific transformations based on the target content type, allowing for tailored content adaptations.
 
-From now on we discourage the usage of Declarative Document Copy and Transform feature as it has many limitations.
+**Key Benefits:**
+- Copying for Different Platforms: If you need to reuse articles across multiple (regional) platforms with only minor metadata differences, the new copy flows provide transparency by naming each flow and clearly indicating what happens during the copy process.
+- Transforming Content Types: If a user has selected the wrong content type when creating an article, they can now easily transform it into the correct type—provided the article has not been published yet.
 
-The new flows enable copy and transform documents using server functions.
+**Core Functionality:**
+- Flexible Copy Functions: The new copyFunction allows for different copy mechanisms to be registered and applied to content types. This separates the copy action from content type constraints and increases flexibility.
+- Transformation Control: Transformation flows can now specify how an article should change when adapted to a different content type.
 
-Please consult the [Document Copy Flows]({{< ref "/reference/project-config/editor-settings#document-transform-flows" >}}) and [Document Transform Flows]({{< ref "/reference/project-config/editor-settings#document-transform-flows" >}}) documentation for implementing the new flows.
+**Additional Features:**
+Custom Copy Flows:
+- Register custom copyFunction handlers for different content transformation needs.
+- Support for metadata adjustments during the copy process (e.g., clearing specific metadata like `li-external-id` and `li-desknet-integration`).
+
+**UI Interaction:**
+- New buttons and modal dialog elements allow users to copy or transform content with clear, customizable labels and descriptions.
+
+**Handling Metadata and Special Cases:**
+- Special treatment is given to certain metadata plugins (e.g., push notifications, Desknet scheduling), ensuring that these are appropriately managed during the copy process.
+
+**Validation of Target Documents:**
+- Validation ensures that the target document matches the content type before creation. If errors occur, the user is notified, and the process stops.
+
+**Migration and Rollout:**
+- Voluntary Migration: We encourage teams to migrate to these new flows, but it is not mandatory. If you wish to adopt the new flows, reach out to your account manager to ensure the configuration aligns with your processes and needs.
+
+These enhanced Document Copy and Transform Flows empower teams to manage content more efficiently and effectively, adapting to multiple platforms or use cases with ease.
+
+Please consult the [Document Copy Flows]({{< ref "/reference/project-config/editor-settings#document-copy-flows" >}}) and [Document Transform Flows]({{< ref "/reference/project-config/editor-settings#document-transform-flows" >}}) documentation for implementing the new flows.
 
 ### Document Info Panel :gift:
 
@@ -233,7 +259,6 @@ We improved the layout of the header to better adjust on small screens. Importan
 In this release, we've streamlined the editor toolbar to enhance its predictability and user-friendliness. We’ve introduced more consistent behavior across actions, panels, and screens, ensuring they no longer interfere with each other.
 
 With this changes we are removing most editor state URLs and redirect URLs `/p/{projectHandle}/articles/{documentId}/*` to `/p/{projectHandle}/document/{documentId}/*`. As a result, each document has only one URL, `/p/{projectHandle}/document/{documentId}` and the old URLs will redirect to the document URL. More information can be found in the [Breaking Changes](#breaking-changes) section.
-
 
 ### Space optimisation for side panels :gift:
 
