@@ -26,8 +26,8 @@ To learn about the necessary actions to update Livingdocs to `release-2024-09`, 
 
 * [Feature Webinar Recording](https://us02web.zoom.us/rec/share/IIFjIFXtPqT0RTB3wY4QylgBQbDS-dTbsBVhGwkOICb0w0Vwa1OvutL6D2ne-vpJ.GVT776TuKst6yv2_) | Passcode: LIYaJH9!
 * [Feature Webinar Documentation](https://docs.google.com/presentation/d/1oglK4CBdBXV_kC2AN5e7Pa6oIAQFMSie_Jpfu-ZAjSI/edit?usp=sharing)
-* Dev Webinar Recording: **TODO**
-* Dev Webinar Slides: **TODO**
+* [Dev Webinar Recording](https://us02web.zoom.us/rec/share/JOXoaWjjT_WbWBL1bzDr38dxEp4hFZLBbElgX3gceSjyjrGpc3mssNvuv_uLi_5o.ZMtrX8Zeasfl5pBi?startTime=1726574256000) | Passcode: iu2@A%&8 
+* [Dev Webinar Slides](https://docs.google.com/presentation/d/10cmmJLw898DzmOwk31pW1tyeuv3pd1XpcF4lzSa3TsE/edit?usp=sharing)
 * [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ## System Requirements
@@ -416,6 +416,7 @@ This release we have patched the following vulnerabilities in the Livingdocs Ser
 * [CVE-2024-38372](https://nvd.nist.gov/vuln/detail/CVE-2024-38372) patched in `undici` v6.19.2
 * [CVE-2024-39338](https://nvd.nist.gov/vuln/detail/CVE-2024-39338) patched in `axios` v1.7.4
 * [CVE-2024-41818](https://nvd.nist.gov/vuln/detail/CVE-2024-41818) patched in `fast-xml-parser` v4.4.1
+* [CVE-2024-43796](https://nvd.nist.gov/vuln/detail/CVE-2024-43796) patched in `express` 4.20.0
 
 No known vulnerabilities. :tada:
 
