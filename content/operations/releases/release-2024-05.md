@@ -133,7 +133,7 @@ editorSettings: {
 }
 ```
 
-{{< feature-info "Desk-net API" "server" >}}
+{{< feature-info "Integrations" "server" >}}
 ### Desk-net API function parameters :warning:
 
 - Instead of `createFromDesknet(projectId, element)` please use `createFromDesknet({projectId, userId, element})`. `userId` is a new required property.
@@ -152,7 +152,7 @@ As part of our ongoing migration from Angular to Vue, we are deprecating Angular
 
 ## Features
 
-{{< feature-info "New Feature" "server/editor" >}}
+{{< feature-info "Livingdocs Assistants" "server/editor" >}}
 ### Livingdocs Assistants :gift:
 
 We are happy to announce the first version of the Livingdocs Assistants Platform.
@@ -462,7 +462,7 @@ An [additional endpoint]({{< ref "/reference/public-api/imports/files#import-fil
 }
 ```
 
-{{< feature-info "New Feature" "server/editor" >}}
+{{< feature-info "Document Management" "server/editor" >}}
 ### Document Statistics :gift:
 
 Document Statistics allow users to better understand the shape and completeness of an article by looking at a dashboard.

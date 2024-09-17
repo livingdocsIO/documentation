@@ -153,6 +153,7 @@ In your docker images change:
 
 In your .nvmrc (if present) change the string from 18 to 22 or 20.
 
+{{< feature-info "Editor Router" "editor" >}}
 ### Editor URLs `/p/{projectHandle}/articles/{documentId}/*`
 
 As part of the transition to the [new Livingdocs Editor URLs]({{< relref "#redirect-livingdocs-editor-urls-pprojecthandlearticlesdocumentid-to-pprojecthandledocumentdocumentid" >}}), we are deprecating the old URLs and will remove them in release-2025-03. With release-2025-03, all URLs in the format `/p/{projectHandle}/articles/{documentId}/*` will be redirected to the new main URL `/p/{projectHandle}/document/{documentId}`. These redirects will open the document but will no longer trigger any associated actions.
@@ -163,6 +164,7 @@ Editor PR: [Remove URLs from editor states](https://github.com/livingdocsIO/livi
 
 ## Features
 
+{{< feature-info "Document Management" "editor" >}}
 ### Document Inbox :gift:
 
 In a newsroom's editorial workflow, the tasks of creating articles and placing them on a page are often divided among different roles.
@@ -188,7 +190,7 @@ By referencing a table dashboard using a handle, it's possible to control which 
 
 Further details can be found on the [content type documentation page]({{< ref "/reference/project-config/content-types#document-inbox" >}}).
 
-
+{{< feature-info "Document Management" "server" >}}
 ### Document Copy and Transform Flows :gift:
 
 This new feature simplifies document copying and transformation, offering more control and flexibility for adapting content to different contexts or platforms (e.g., transforming an article for web into a print version). It also provides a clear and transparent process, helping users understand exactly what happens during content copying and transformation. The **Document Copy Flows** and **Document Transform Flows** are an alternative to the existing declarative Document Copy and Transform feature.
@@ -219,6 +221,7 @@ These enhanced Document Copy and Transform Flows empower teams to manage content
 
 Please consult the [Document Copy Flows]({{< ref "/reference/project-config/editor-settings#document-copy-flows" >}}) and [Document Transform Flows]({{< ref "/reference/project-config/editor-settings#document-transform-flows" >}}) documentation for implementing the new flows.
 
+{{< feature-info "Document Management" "editor" >}}
 ### Document Info Panel :gift:
 
 The Document Info panel has been added to show general information about the document which includes document copy, document statistics and incoming and outgoing links. 
@@ -244,6 +247,7 @@ editor: {
 
 {{< img src="./release-2024-09-document-info-panel.png" alt="Screenshot of a document info panel" >}}
 
+{{< feature-info "Editor UI" "editor" >}}
 ### Document Editing Header and Toolbar :gift:
 
 We improved the layout of the header to better adjust on small screens. Important information like the title will now always be shown and we removed the collaboration bar. Collaborators are now shown directly next to the user avatar.
@@ -252,6 +256,7 @@ In this release, we've streamlined the editor toolbar to enhance its predictabil
 
 With this changes we are removing most editor state URLs and redirect URLs `/p/{projectHandle}/articles/{documentId}/*` to `/p/{projectHandle}/document/{documentId}/*`. As a result, each document has only one URL, `/p/{projectHandle}/document/{documentId}` and the old URLs will redirect to the document URL. More information can be found in the [Breaking Changes](#breaking-changes) section.
 
+{{< feature-info "Editor UI" "editor" >}}
 ### Space optimisation for side panels :gift:
 
 The width of the wide side panels (e.g., Media Library) has been increased on large screens to provide additional space. On screens wider than 1920px, these panels will have a width of 800px. On smaller screens, the width remains unchanged at 600px.
@@ -262,20 +267,23 @@ Teaser side panels and the Document Inbox have been changed to wide side panels.
 
 If users notice overlapping components that negatively affect their experience, please contact your CSO manager.
 
+{{< feature-info "Search" "editor" >}}
 ### Dashboards: search caching behaviour :gift:
 
 We've enhanced the dashboard search functionality within modals by making the caching behavior configurable. Previously, search phrases were cached and reused when reopening the same search, which could be inconvenient for workflows where the same search is rarely repeated.
 
-- **Opt-in Caching**: Caching is now opt-in for li-document-reference and li-document-references. This change removes default caching, providing flexibility for users who prefer not to retain previous search terms.
+- **Opt-in Caching**: Caching is now opt-in for `li-document-reference` and `li-document-references`. This change removes default caching, providing flexibility for users who prefer not to retain previous search terms.
 - **In-memory Cache for Filters**: Display filters now utilize in-memory caching instead of session storage, preventing persistent filter states across sessions.
 - **Improved URL Syncing**: We no longer sync URL parameters on the home screen or propagate filter changes into browser history. This prevents unnecessary URL clutter.
 
+{{< feature-info "Push Message" "editor" >}}
 ### Push Message Proposals :gift:
 
 It is now possible to add, edit and delete push message proposals. The stored proposals can then be retrieved at a later point and editors can interact with them as a plain push message. We also improved Push Messages feedback on Table Dashboards, we now show icons when a proposal exists (black light bulb) and when push message was sent (green bell with a checkmark).
 
 This improvements will be shipped with September release for everyone using Push Messages.
 
+{{< feature-info "Document Management" "editor" >}}
 ### Content Validation Errors :gift:
 
 When a user wants to publish a document there might be violations thrown in publish hooks.
@@ -326,7 +334,7 @@ throw validationError({
 })
 ```
 
-
+{{< feature-info "Dashboards" "editor" >}}
 ### Table dashboards: Direct publish without safeguard :gift:
 
 When publishing a document from Table Dashboard cells there are safeguards in place to ensure document quality. This safeguards  make sure that it is not possible to directly publish when there are too many changes or document is still unpublished.
@@ -351,6 +359,7 @@ Those safeguards can now be disabled with the Editor configuration below. Please
 }
 ```
 
+{{< feature-info "Integrations" "server" >}}
 ### Retresco support for "Main Entities" :gift:
 
 In addition to the regular entity recognition, Retresco has introduced the "Main Entities" concept. "Main Entities" can also be automatically detected and labelled in the Topic Management System (TMS from version 2.4.0). "Main Entities" are determined using an internal relevance score based on frequency and position in the text and describe the content focus of the document. This enables a more precise classification of articles to topic pages and automatically filters out less relevant content.
@@ -359,6 +368,7 @@ To support this new concept, we have extended our storage schema for Retresco en
 
 No changes are required for "Main Entities" to work, other than enabling main entities in Retresco. Currently, main entities are not marked in the Livingdocs UI. They appear as regular entities.
 
+{{< feature-info "Integrations" "server" >}}
 ### iMatrics test environment support :gift:
 
 To support iMatrics test environments, we are adding a new iMatrics project configuration property to specify whether the iMatrics test environment should be used. By default, it is set to `false`.
@@ -371,6 +381,7 @@ integrations: {
 }
 ```
 
+{{< feature-info "Metadata" "server" >}}
 ### `li-system-text` metadata plugin :gift:
 
 This release a new system metadata plugin becomes available: `li-system-text`. `li-system-text` is a simple text value store that behaves like `li-text`, but belongs to the system metadata.
@@ -382,6 +393,7 @@ Please note that it is only available as document metadata, no other contexts.
 
 Further details can be found on the [plugin documentation page](({{< ref "/reference/document/metadata/plugins/li-system-text" >}})).
 
+{{< feature-info "Integrations" "editor" >}}
 ### Desknet -> Kordiam editor UI updates :gift:
 
 In August 2024, it was announced that [Desk-Net would be renamed to Kordiam](https://support.kordiam.io/hc/en-us/articles/14759979009948-Desk-Net-Becomes-Kordiam-Impact-on-Integrations).
