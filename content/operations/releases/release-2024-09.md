@@ -247,7 +247,11 @@ If users notice overlapping components that negatively affect their experience, 
 
 ### Dashboards: search caching behaviour :gift:
 
+We've enhanced the dashboard search functionality within modals by making the caching behavior configurable. Previously, search phrases were cached and reused when reopening the same search, which could be inconvenient for workflows where the same search is rarely repeated.
 
+- **Opt-in Caching**: Caching is now opt-in for li-document-reference and li-document-references. This change removes default caching, providing flexibility for users who prefer not to retain previous search terms.
+- **In-memory Cache for Filters**: Display filters now utilize in-memory caching instead of session storage, preventing persistent filter states across sessions.
+- **Improved URL Syncing**: We no longer sync URL parameters on the home screen or propagate filter changes into browser history. This prevents unnecessary URL clutter.
 
 ### Push Message Proposals :gift:
 
