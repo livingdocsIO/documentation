@@ -203,22 +203,14 @@ These new flows allow for:
 - Transforming Content Types: If a user has selected the wrong content type when creating an article, they can now easily transform it into the correct type—provided the article has not been published yet.
 
 **Core Functionality:**
-- Flexible Copy Functions: The new copyFunction allows for different copy mechanisms to be registered and applied to content types. This separates the copy action from content type constraints and increases flexibility.
+- Flexible Copy Functions: The new **copyFunction** allows for different copy mechanisms to be registered and applied to content types. This separates the copy action from content type constraints and increases flexibility.
 - Transformation Control: Transformation flows can now specify how an article should change when adapted to a different content type.
-
-**Additional Features:**
-Custom Copy Flows:
-- Register custom copyFunction handlers for different content transformation needs.
-- Support for metadata adjustments during the copy process (e.g., clearing specific metadata like `li-external-id` and `li-desknet-integration`).
 
 **UI Interaction:**
 - New buttons and modal dialog elements allow users to copy or transform content with clear, customizable labels and descriptions.
 
 **Handling Metadata and Special Cases:**
 - Special treatment is given to certain metadata plugins (e.g., push notifications, Desknet scheduling), ensuring that these are appropriately managed during the copy process.
-
-**Validation of Target Documents:**
-- Validation ensures that the target document matches the content type before creation. If errors occur, the user is notified, and the process stops.
 
 **Migration and Rollout:**
 - Voluntary Migration: We encourage teams to migrate to these new flows, but it is not mandatory. If you wish to adopt the new flows, reach out to your account manager to ensure the configuration aligns with your processes and needs.
