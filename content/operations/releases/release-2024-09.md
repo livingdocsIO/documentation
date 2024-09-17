@@ -363,7 +363,15 @@ Further details can be found on the [plugin documentation page](({{< ref "/refer
 
 ### Desknet -> Kordiam editor UI updates :gift:
 
+In August 2024, it was announced that [Desk-Net would be renamed to Kordiam](https://support.kordiam.io/hc/en-us/articles/14759979009948-Desk-Net-Becomes-Kordiam-Impact-on-Integrations).
 
+We have updated the editor UI to use the new name in user facing locations. Further, we changed occurrences of "Desk-Net" to "Kordiam" in logs and technical error messages.
+This was done to ensure that the Livingdocs UI is already consistent with the Kordiam product name from a user perspective.
+
+A full renaming of all related Livingdocs configuration properties and API endpoints will be done in a future release.
+
+In the meantime, we recommend to already update the Kordiam endpoint URL with their new domain name.
+Please have a look at the [Transition from Desk-Net to Kordiam Guide]({{< ref "/guides/integrations/desknet-kordiam" >}}) for more details.
 
 ## Vulnerability Patches
 
