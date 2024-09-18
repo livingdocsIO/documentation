@@ -170,7 +170,12 @@ db: {
   port: '5432',
   user: 'postgres',
   database: 'li_local',
-  poolMax: 20, // pool size per process
+  // Postgres pool size per process
+  // We have two pools to prevent deadlocks.
+  // One for transactions and another for statements without transaction.
+  // The pool size here defines the size for both pools.
+  // Therefore with a value of 20, there will be at maximum 40 connections per process.
+  poolMax: 20,
   ssl: false
   // migrate user: Used to run database migrations
   // Gets created automatically with `livingdocs-server database create`
