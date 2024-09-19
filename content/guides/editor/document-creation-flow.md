@@ -1,7 +1,7 @@
 ---
 title: Document Creation Flow
 description: Define a Document Creation Flow
-weight: 14
+weight: 1
 ---
 
 ## Motivation
