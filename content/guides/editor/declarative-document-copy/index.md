@@ -1,5 +1,5 @@
 ---
-title: Document Copy
+title: Declarative Document Copy (Legacy)
 description: Set up the Livingdocs Server configuration to support copying content into other content types.
 weight: 2
 ---
