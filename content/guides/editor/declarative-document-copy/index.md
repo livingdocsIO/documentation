@@ -4,6 +4,10 @@ description: Set up the Livingdocs Server configuration to support copying conte
 weight: 2
 ---
 
+{{< warning >}}
+  Use of this Document Copy feature is no longer recommended. For new setups please use the [Document Copy Flows]({{< ref "/guides/editor/document-copy-flows" >}}) or [Document Transform Flows]({{< ref "/guides/editor/document-transform-flows" >}}) features instead.
+{{< /warning >}}
+
 ## Introduction
 
 If everything is set up correctly, one can open a document, click on "Copy" in the toolbar and a copy modal opens, e.g.

@@ -193,7 +193,7 @@ Further details can be found on the [content type documentation page]({{< ref "/
 {{< feature-info "Document Management" "server" >}}
 ### Document Copy and Transform Flows :gift:
 
-This new feature simplifies document copying and transformation, offering more control and flexibility for adapting content to different contexts or platforms (e.g., transforming an article for web into a print version). It also provides a clear and transparent process, helping users understand exactly what happens during content copying and transformation. The **Document Copy Flows** and **Document Transform Flows** are an alternative to the existing declarative Document Copy and Transform feature.
+This new feature simplifies document copying and transformation, offering more control and flexibility for adapting content to different contexts or platforms (e.g. transforming an article for web into a print version). It also provides a clear and transparent process, helping users understand exactly what happens during content copying and transformation. The **Document Copy Flows** and **Document Transform Flows** are an alternative to the existing declarative Document Copy and Transform feature.
 
 **What's New:**
 These new flows allow for:
@@ -202,7 +202,7 @@ These new flows allow for:
 
 **Key Benefits:**
 - Copying for Different Platforms: If you need to reuse articles across multiple (regional) platforms with only minor metadata differences, the new copy flows provide transparency by naming each flow and clearly indicating what happens during the copy process.
-- Transforming Content Types: If a user has selected the wrong content type when creating an article, they can now easily transform it into the correct type—provided the article has not been published yet.
+- Transforming Content Types: If a user has selected the wrong content type when creating an article, they can now easily transform it into the correct type (provided the article has not been published yet).
 
 **Core Functionality:**
 - Flexible Copy Functions: The new **copyFunction** allows for different copy mechanisms to be registered and applied to content types. This separates the copy action from content type constraints and increases flexibility.
@@ -212,14 +212,14 @@ These new flows allow for:
 - New buttons and modal dialog elements allow users to copy or transform content with clear, customizable labels and descriptions.
 
 **Handling Metadata and Special Cases:**
-- Special treatment is given to certain metadata plugins (e.g., push notifications, Desknet scheduling), ensuring that these are appropriately managed during the copy process.
+- Special treatment is given to certain metadata plugins (e.g. push notifications, Desk-Net/Kordiam scheduling), ensuring that these are appropriately managed during the copy process.
 
 **Migration and Rollout:**
 - Voluntary Migration: We encourage teams to migrate to these new flows, but it is not mandatory. If you wish to adopt the new flows, reach out to your account manager to ensure the configuration aligns with your processes and needs.
 
 These enhanced Document Copy and Transform Flows empower teams to manage content more efficiently and effectively, adapting to multiple platforms or use cases with ease.
 
-Please consult the [Document Copy Flows]({{< ref "/reference/project-config/editor-settings#document-copy-flows" >}}) and [Document Transform Flows]({{< ref "/reference/project-config/editor-settings#document-transform-flows" >}}) documentation for implementing the new flows.
+Please consult the [Document Copy Flows]({{< ref "/guides/editor/document-copy-flows" >}}) and [Document Transform Flows]({{< ref "/guides/editor/document-transform-flows" >}}) guides for implementing the new flows.
 
 {{< feature-info "Document Management" "editor" >}}
 ### Document Info Panel :gift:
