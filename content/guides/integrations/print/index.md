@@ -193,7 +193,7 @@ copy: [
 
 A few things to note:
 - we copy from the content-type `regular` to the content-type `woodwing`, this is our online to print copy configuration
-- again we only apply the conversion to a subset of the available components for demo purposes. For more details on the available conversion rules see [here]({{< ref "/guides/editor/document-copy" >}})
+- again we only apply the conversion to a subset of the available components for demo purposes. For more details on the available conversion rules see [here]({{< ref "/guides/editor/declarative-document-copy" >}})
 
 As before, use the [CLI]({{< ref "/reference/cli/managing-project-configs" >}}) to publish the changes to your project config.
 

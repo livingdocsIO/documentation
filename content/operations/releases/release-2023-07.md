@@ -399,7 +399,7 @@ When performing a `POST api/v1/import/documents` request, you can define `signif
 
 ### Copy Target Icon and Label Config
 
-The copy target config has been extended to support an icon and a label: [Learn more]({{< ref "/guides/editor/document-copy/index.md#setup-config" >}})
+The copy target config has been extended to support an icon and a label: [Learn more]({{< ref "/guides/editor/declarative-document-copy#setup-config" >}})
 
 Copy config in project config:
 
