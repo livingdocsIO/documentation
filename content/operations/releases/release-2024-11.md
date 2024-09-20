@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(manual-status): breaking onto newline](https://github.com/livingdocsIO/livingdocs-editor/pull/9029)
 * [chore(deps): update dependency puppeteer-core from 23.3.1 to v23.4.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9027)
 * [fix(deps): update dependency date-fns from 4.0.0 to v4.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7291)
 * [fix(deps): update dependency pg from 8.12.0 to v8.13.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7287)
