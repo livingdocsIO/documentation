@@ -1,12 +1,16 @@
 ---
 title: Teaser Previews
-description: Show teaser previews in the prepare publish screen
+description: Show teaser previews in the Metadata Screen
 weight: 16
 ---
 
+{{< warning >}}
+We suggest to use [Metadata Previews]({{< ref "/reference/project-config/content-types/#metadata-previews" >}}) instead. It will let users see the preview immediately when editing a metadata field.
+{{< /warning >}}
+
 {{< img src="teaser-preview.gif" alt="Teaser Preview" >}}
 
-The Teaser Previews add an additional read-only view to the publication section of the Livingdocs Editor. It is by default disabled and can only be enabled and configured through a [content type config]({{< ref "/reference/project-config/content-types#teaser-previews" >}}).
+The Teaser Previews add an additional read-only view to the Metadata Form Section of the Livingdocs Editor. It is by default disabled and can only be enabled and configured through a [content type config]({{< ref "/reference/project-config/content-types#teaser-previews" >}}).
 
 We basically configure a mapping that translates a subset of the **_current document_** (the one we are editing / publishing) into a state that gets rendered using components from your design. Further we can also control the dimensions and look of the preview.
 
