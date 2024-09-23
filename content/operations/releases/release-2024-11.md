@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sass from 1.78.0 to v1.79.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9025)
 * [fix(deps): update dependency @google-cloud/storage from 7.12.1 to v7.13.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7294)
 * [fix(deps): update dependency jose from 5.9.2 to v5.9.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7303)
 * [chore(deps): update dependency eslint from 9.10.0 to v9.11.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9033)
