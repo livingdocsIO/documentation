@@ -5,7 +5,7 @@ weight: 16
 ---
 
 {{< warning >}}
-We suggest to use [Metadata Previews]({{< ref "/reference/project-config/content-types/#metadata-previews" >}}) instead. It will let users see the preview immediately when editing a metadata field.
+We suggest to use [Metadata Previews]({{< ref "/reference/project-config/content-types#metadata-previews" >}}) instead. It will let users see the preview immediately when editing a metadata field.
 {{< /warning >}}
 
 {{< img src="teaser-preview.gif" alt="Teaser Preview" >}}
