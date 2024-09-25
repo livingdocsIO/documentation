@@ -438,6 +438,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v257.0.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.7): fix: Allow empty oembed allowedCoreProviders array
 - [v257.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.6): fix(media-library): Support prefilling of directives using a template
 - [v257.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.5): fix(deps): update dependency express from 4.19.2 to 4.20.0 [security]
 - [v257.0.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.4): chore(indexing): Make date-time format more strict except at problematic locations
