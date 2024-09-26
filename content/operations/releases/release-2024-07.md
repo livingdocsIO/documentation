@@ -374,6 +374,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v254.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.36): fix: Allow empty oembed allowedCoreProviders array
 - [v254.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.35): fix: trigger a new release
 - [v254.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.34): fix(media-library): Support prefilling of directives using a template
 - [v254.0.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.33): fix(deps): update dependency express from 4.19.2 to 4.20.0 [security]
