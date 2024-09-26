@@ -374,6 +374,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v254.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.37): chore(imports): Report conflicting media id when using a systemName/externalId composite that is already in use
 - [v254.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.36): fix: Allow empty oembed allowedCoreProviders array
 - [v254.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.35): fix: trigger a new release
 - [v254.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.34): fix(media-library): Support prefilling of directives using a template
