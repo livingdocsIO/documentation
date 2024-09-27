@@ -130,3 +130,46 @@ The query allows the following entries:
     }
   })
 ```
+
+## Command API
+
+**Related**
+
+- [HTTP Public API - Document Command API]({{< ref "/reference/public-api/document-command-api" >}})
+
+### API
+
+```js
+const publicApi = liServer.features.api('li-public-api')
+
+// add paragraph after the first component
+await publicApi.executeDocumentCommands({
+  documentId: documentVersion.id,
+  projectId: documentVersion.projectId,
+  commands: [
+    {
+      // Inserts a new component into the document content.
+      operation: 'insertComponent',
+      componentId: 'doc-custom-123456',
+      componentName: 'p',
+      content: {
+        text: 'I automatically added a new paragraph.'
+      },
+      position: {
+        previousComponentId: documentVersion.content[0].id
+      }
+    }
+  ]
+})
+```
+
+The function allows the following parameters:
+- `projectId`, mandatory, the projectId (int) for which documents are searched
+- `documentId`, mandatory, document to update
+- `conditions`, mandatory, an array of commands to execute.
+- `userId`, optional, user which updated the document
+- `version` optional, current document version. When set on update the version is checked.
+- `preconditions`, optional, If a precondition assertion fails, no commands are executed
+
+Please check [HTTP Public API - Document Command API]({{< ref "/reference/public-api/document-command-api" >}}) for a more detailled description of how to apply `conditions`, `version`, `preconditions`.
+```
