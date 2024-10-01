@@ -561,6 +561,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v251.8.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.40): fix(deps): update dependency express from 4.19.2 to 4.20.0 [security]
 - [v251.8.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.39): fix(users): Support loading archived users and regular users together
 - [v251.8.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.38): fix(link-directive): Allow any characters in link directive urls
 - [v251.8.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.37): fix(security): Patch security vulnerabilities CVE-2024-4067 in `micromatch`
