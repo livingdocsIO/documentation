@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(multiselect): Scrolling](https://github.com/livingdocsIO/livingdocs-editor/pull/9051)
 * [fix(deps): update dependency @smithy/node-http-handler from 3.2.3 to v3.2.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7326)
 * [fix(deps): update dependency sass from 1.79.3 to v1.79.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9048)
 * [Fix image url patching when crop x or y coordinates are not present](https://github.com/livingdocsIO/livingdocs-server/pull/7315)
