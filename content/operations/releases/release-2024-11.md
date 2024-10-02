@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency puppeteer-core from 23.4.1 to v23.5.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9062)
 * [fix(multiselect): Scrolling](https://github.com/livingdocsIO/livingdocs-editor/pull/9051)
 * [fix(deps): update dependency @smithy/node-http-handler from 3.2.3 to v3.2.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7326)
 * [fix(deps): update dependency sass from 1.79.3 to v1.79.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9048)
