@@ -449,6 +449,7 @@ Here is a list of all patches after the release has been announced.
 - [v257.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.1): fix(events): Delete unused event related to LIBREAKING035
 
 ### Livingdocs Editor Patches
+- [v110.34.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.31): fix(includes): Do not mutate intitialContent object
 - [v110.34.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.30): fix(character-count): Support excludeFromTextCount on container directives
 - [v110.34.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.29): fix(deps): update dependency @livingdocs/framework from 29.5.8 to v29.5.9
 - [v110.34.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.28): fix(editor): Improve back button logic for issue navigation
