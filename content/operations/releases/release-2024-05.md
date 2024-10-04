@@ -603,6 +603,7 @@ Here is a list of all patches after the release has been announced.
 - [v251.8.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.2): fix(release-2024-05): Update framework to v29.3.7 (release-2024-05 tag)
 
 ### Livingdocs Editor Patches
+- [v110.13.78](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.78): fix(includes): Do not mutate intitialContent object
 - [v110.13.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.77): fix(character-count): Support excludeFromTextCount on container directives
 - [v110.13.76](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.76): fix(deps): update dependency @livingdocs/framework from 29.3.14 to v29.3.15
 - [v110.13.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.13.75): fix(assistant): timeout
