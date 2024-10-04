@@ -406,6 +406,7 @@ Here is a list of all patches after the release has been announced.
 - [v254.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.9): fix(release-2024-07): Update framework to v29.4.9 (release-2024-07 tag)
 
 ### Livingdocs Editor Patches
+- [v110.21.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.57): fix(character-count): Support excludeFromTextCount on container directives
 - [v110.21.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.56): fix(document-search): Delay initial search until filters ready
 - [v110.21.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.55): fix(media-library): Support prefilling of directives using a template
 - [v110.21.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.54): fix: focalpoint reactivity
