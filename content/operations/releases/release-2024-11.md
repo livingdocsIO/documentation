@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Do not mutate li-document-search intitialContent object](https://github.com/livingdocsIO/livingdocs-editor/pull/9077)
 * [Fix empty check of li-document-search params](https://github.com/livingdocsIO/livingdocs-server/pull/7342)
 * [Teaser components sidepanel design](https://github.com/livingdocsIO/livingdocs-editor/pull/9055)
 * [Support excludeFromTextCount on container directives](https://github.com/livingdocsIO/livingdocs-editor/pull/9063)
