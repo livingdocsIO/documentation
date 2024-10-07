@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency exifreader from 4.23.6 to v4.23.7 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7351)
 * [chore(deps): update dependency eslint from 9.11.1 to v9.12.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9079)
 * [Move metadata onto revisions table](https://github.com/livingdocsIO/livingdocs-server/pull/7321)
 * [chore(deps): update dependency eslint from 9.11.1 to v9.12.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7349)
