@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Feat: assistant add custom error messages](https://github.com/livingdocsIO/livingdocs-editor/pull/9042)
 * [Feat: assistant add custom error messages](https://github.com/livingdocsIO/livingdocs-server/pull/7314)
 * [fix(deps): update dependency material-design-icons-svg from 3.3.0 to v3.3.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9091)
 * [Improve back button logic for issue navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/9044)
