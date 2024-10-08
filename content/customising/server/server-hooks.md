@@ -123,6 +123,7 @@ async preparePublishHookAsync ({documentVersion}) {
   }
 }
 ```
+If a single content type has multiple hooks throwing validation errors, you'll need to throw all the errors at once. To do so, you can collect each error into an array as they occur. Then, once all hooks have completed, use a global function to handle all the accumulated errors simultaneously.
 
 In case you need to change metadata properties, please always clone the origal value before mutating it. If you mutate an object directly, it can't be tracked and saved.
 
