@@ -156,14 +156,16 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 ### Livingdocs Server
 This release we have patched the following vulnerabilities in the Livingdocs Server:
-- TBD
+* [CVE-2024-45813](https://nvd.nist.gov/vuln/detail/CVE-2024-45813) patched in `find-my-way` v8.2.2
+* [CVE-2024-47764](https://nvd.nist.gov/vuln/detail/CVE-2024-47764) patched in `cookie` v0.7.0
 
 No known vulnerabilities. :tada:
 
 ### Livingdocs Editor
 This release we have patched the following vulnerabilities in the Livingdocs Editor:
-
-- TBD
+* [CVE-2024-45296](https://nvd.nist.gov/vuln/detail/CVE-2024-45296) patched in `path-to-regexp` v6.3.0
+* [CVE-2024-45813](https://nvd.nist.gov/vuln/detail/CVE-2024-45813) patched in `find-my-way` v8.2.2
+* [CVE-2024-47764](https://nvd.nist.gov/vuln/detail/CVE-2024-47764) patched in `cookie` v0.7.0
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
