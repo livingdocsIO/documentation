@@ -416,7 +416,10 @@ This release we have patched the following vulnerabilities in the Livingdocs Ser
 * [CVE-2024-38372](https://nvd.nist.gov/vuln/detail/CVE-2024-38372) patched in `undici` v6.19.2
 * [CVE-2024-39338](https://nvd.nist.gov/vuln/detail/CVE-2024-39338) patched in `axios` v1.7.4
 * [CVE-2024-41818](https://nvd.nist.gov/vuln/detail/CVE-2024-41818) patched in `fast-xml-parser` v4.4.1
-* [CVE-2024-43796](https://nvd.nist.gov/vuln/detail/CVE-2024-43796) patched in `express` 4.20.0
+* [CVE-2024-43796](https://nvd.nist.gov/vuln/detail/CVE-2024-43796) patched in `express` v4.20.0
+* [CVE-2024-43799](https://nvd.nist.gov/vuln/detail/CVE-2024-43799) patched in `send` v0.19.0
+* [CVE-2024-45296](https://nvd.nist.gov/vuln/detail/CVE-2024-45296) patched in `path-to-regexp` v6.3.0
+* [CVE-2024-47764](https://nvd.nist.gov/vuln/detail/CVE-2024-47764) patched in `cookie` v0.7.0
 
 No known vulnerabilities. :tada:
 
@@ -426,6 +429,9 @@ This release we have patched the following vulnerabilities in the Livingdocs Edi
 * [CVE-2024-39338](https://nvd.nist.gov/vuln/detail/CVE-2024-39338) patched in `axios` v1.7.4
 * [CVE-2024-42459](https://nvd.nist.gov/vuln/detail/CVE-2024-42459) patched in `elliptic` v6.5.7
 * [CVE-2024-43788](https://nvd.nist.gov/vuln/detail/CVE-2024-43788) patched in `webpack` v5.94.0
+* [CVE-2024-45296](https://nvd.nist.gov/vuln/detail/CVE-2024-45296) patched in `path-to-regexp` v6.3.0
+* [CVE-2024-45813](https://nvd.nist.gov/vuln/detail/CVE-2024-45813) patched in `find-my-way` v8.2.2
+* [CVE-2024-47764](https://nvd.nist.gov/vuln/detail/CVE-2024-47764) patched in `cookie` v0.7.0
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 

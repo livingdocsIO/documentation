@@ -352,6 +352,9 @@ This release we have patched the following vulnerabilities in the Livingdocs Ser
 * [CVE-2024-4068](https://github.com/advisories/GHSA-grv7-fg5c-xmjg) patched in `braces` v3.0.3
 * [CVE-2024-37168](https://github.com/advisories/GHSA-7v5v-9h63-cj86) patched in `@grpc/grpc-js` v1.9.15
 * [CVE-2024-37890](https://github.com/advisories/GHSA-3h5v-q93c-6h6q) patched in `ws` v8.17.1
+* [CVE-2024-43799](https://nvd.nist.gov/vuln/detail/CVE-2024-43799) patched in `send` v0.19.0
+* [CVE-2024-45296](https://nvd.nist.gov/vuln/detail/CVE-2024-45296) patched in `path-to-regexp` v6.3.0
+* [CVE-2024-47764](https://nvd.nist.gov/vuln/detail/CVE-2024-47764) patched in `cookie` v0.7.0
 
 No known vulnerabilities. :tada:
 
@@ -362,6 +365,9 @@ This release we have patched the following vulnerabilities in the Livingdocs Edi
 * [CVE-2024-4367](https://github.com/advisories/GHSA-wgrm-67xf-hhpq) patched in `pdfjs-dist` v4.3.136
 * [CVE-2024-37890](https://github.com/advisories/GHSA-3h5v-q93c-6h6q) patched in `ws` v8.17.1
 * [CVE-2024-42459](https://nvd.nist.gov/vuln/detail/CVE-2024-42459) patched in `elliptic` v6.5.7
+* [CVE-2024-45296](https://nvd.nist.gov/vuln/detail/CVE-2024-45296) patched in `path-to-regexp` v6.3.0
+* [CVE-2024-45590](https://nvd.nist.gov/vuln/detail/CVE-2024-45296) patched in `body-parser` v1.20.3
+* [CVE-2024-45813](https://nvd.nist.gov/vuln/detail/CVE-2024-45813) patched in `find-my-way` v8.2.2
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
