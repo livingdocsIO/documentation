@@ -444,6 +444,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v257.0.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.12): fix(security): Patch security vulnerabilities CVE-2024-43799 in `send`, CVE-2024-45296 in `path-to-regexp`, CVE-2024-45813 in `find-my-way` and CVE-2024-47764 in `cookie`
 - [v257.0.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.11): fix(import): Do not serialize query strings in import api filename as it could include tokens
 - [v257.0.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.10): fix(li-document-search): Fix empty check of li-document-search params
 - [v257.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.9): fix(character-count): Support excludeFromTextCount on container directives
