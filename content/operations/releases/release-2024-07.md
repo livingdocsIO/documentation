@@ -380,6 +380,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v254.0.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.40): fix(import): Do not serialize query strings in import api filename as it could include tokens
 - [v254.0.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.39): fix(li-document-search): Fix empty check of li-document-search params
 - [v254.0.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.38): fix(character-count): Support excludeFromTextCount on container directives
 - [v254.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.37): chore(imports): Report conflicting media id when using a systemName/externalId composite that is already in use
