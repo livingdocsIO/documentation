@@ -567,6 +567,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v251.8.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.43): fix(import): Do not serialize query strings in import api filename as it could include tokens
 - [v251.8.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.41): fix(character-count): Support excludeFromTextCount on container directives
 - [v251.8.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.40): fix(deps): update dependency express from 4.19.2 to 4.20.0 [security]
 - [v251.8.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v251.8.39): fix(users): Support loading archived users and regular users together
