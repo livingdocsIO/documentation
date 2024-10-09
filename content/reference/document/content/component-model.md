@@ -43,24 +43,27 @@ the root element of a component.
 
 Component Properties definition in the design:
 ```js
-componentProperties: {
-  'css-background-color': {
+componentProperties: [
+  {
+    name: 'css-background-color'
     type: 'style',
     label: 'Background Color',
     cssProperty: 'background-color'
-  }
-  'css-class': {
+  },
+  {
+    name: 'css-class',
     type: 'option',
     value: 'capitalize'
-  }
-  'css-class-selection': {
+  },
+  {
+    name: 'css-class-selection',
     type: 'select',
     options: [
       {caption: 'Default'},
       {caption: 'Red', value: 'color--red'}
     ]
   }
-}
+]
 ```
 
 Component definition:
