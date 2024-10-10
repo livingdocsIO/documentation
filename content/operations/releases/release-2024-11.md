@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update babel from 7.25.7 to v7.25.8 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/9102)
 * [Downgrade severity when authenticating group assigned does not exist](https://github.com/livingdocsIO/livingdocs-server/pull/7381)
 * [Fix teaser level behavior](https://github.com/livingdocsIO/livingdocs-server/pull/7380)
 * [Fix teaser level behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/9094)
