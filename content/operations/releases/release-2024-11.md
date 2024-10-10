@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Downgrade severity when authenticating group assigned does not exist](https://github.com/livingdocsIO/livingdocs-server/pull/7381)
 * [Fix teaser level behavior](https://github.com/livingdocsIO/livingdocs-server/pull/7380)
 * [Fix teaser level behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/9094)
 * [fix(deps): update aws-sdk from 3.667.0 to v3.668.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7376)
