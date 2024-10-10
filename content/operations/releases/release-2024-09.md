@@ -295,6 +295,7 @@ The validation errors can reference to either components or also metadata proper
 
 This functionality replaces the old `MetadataValidationError`, `MetadataValidationErrors` and `ContentValidationError` error classes, which were constructed manually in most integrations.
 
+If a single content type generates multiple errors, you'll need to refactor your code so that all errors are thrown simultaneously. To do so, you can collect each error into an array as they occur. Then, once all hooks have completed, a global function can throw all the accumulated errors at once.
 
 ```js
 const {validationError} = require('@livingdocs/server').errors
