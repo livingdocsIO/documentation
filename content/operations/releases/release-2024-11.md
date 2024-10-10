@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix teaser level behavior](https://github.com/livingdocsIO/livingdocs-server/pull/7380)
 * [Fix teaser level behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/9094)
 * [fix(deps): update aws-sdk from 3.667.0 to v3.668.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7376)
 * [Teaser Component optimizations and reference transfer](https://github.com/livingdocsIO/livingdocs-editor/pull/9083)
