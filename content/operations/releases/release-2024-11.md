@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Teaser Component optimizations and reference transfer](https://github.com/livingdocsIO/livingdocs-editor/pull/9083)
 * [fix(deps): update dependency @livingdocs/framework from 30.1.0 to v31 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9098)
 * [fix(deps): update dependency form-data from 4.0.0 to v4.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7378)
 * [Do not set url querystring in import filename](https://github.com/livingdocsIO/livingdocs-server/pull/7366)
