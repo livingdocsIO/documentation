@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency cookie from 1.0.0 to v1.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7388)
 * [fix(deps): update dependency jose from 5.9.3 to v5.9.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7389)
 * [fix(publish control): Button](https://github.com/livingdocsIO/livingdocs-editor/pull/9104)
 * [Fix version bumps for new metadata column on document_revisions](https://github.com/livingdocsIO/livingdocs-server/pull/7385)
