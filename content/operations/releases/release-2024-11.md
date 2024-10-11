@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(publish control): Button](https://github.com/livingdocsIO/livingdocs-editor/pull/9104)
 * [Fix version bumps for new metadata column on document_revisions](https://github.com/livingdocsIO/livingdocs-server/pull/7385)
 * [fix(deps): update dependency sass from 1.79.4 to v1.79.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9103)
 * [fix(deps): update dependency @opentelemetry/instrumentation-pg from 0.45.0 to v0.45.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7383)
