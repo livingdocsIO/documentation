@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sass from 1.79.4 to v1.79.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9103)
 * [fix(deps): update dependency @opentelemetry/instrumentation-pg from 0.45.0 to v0.45.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7383)
 * [fix(deps): update babel from 7.25.7 to v7.25.8 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/9102)
 * [Downgrade severity when authenticating group assigned does not exist](https://github.com/livingdocsIO/livingdocs-server/pull/7381)
