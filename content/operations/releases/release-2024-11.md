@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix aws signing in with opensearch](https://github.com/livingdocsIO/livingdocs-server/pull/7392)
 * [Toolbar Layout Tweaks](https://github.com/livingdocsIO/livingdocs-editor/pull/9045)
 * [fix(deps): update dependency cookie from 1.0.0 to v1.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7388)
 * [fix(deps): update dependency jose from 5.9.3 to v5.9.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7389)
