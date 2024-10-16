@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update playwright monorepo from 1.48.0 to v1.48.1 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/9115)
 * [New command API commands](https://github.com/livingdocsIO/livingdocs-server/pull/7373)
 * [chore(deps): update dependency jose from 5.9.3 to v5.9.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9108)
 * [Feat: planning system remove enabled config and license reporting](https://github.com/livingdocsIO/livingdocs-server/pull/7396)
