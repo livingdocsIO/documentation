@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency jose from 5.9.3 to v5.9.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9108)
 * [Feat: planning system remove enabled config and license reporting](https://github.com/livingdocsIO/livingdocs-server/pull/7396)
 * [chore(deps): update dependency pino-pretty from 11.2.2 to v11.3.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7401)
 * [Fix aws signing in with opensearch](https://github.com/livingdocsIO/livingdocs-server/pull/7392)
