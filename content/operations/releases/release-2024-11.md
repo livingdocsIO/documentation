@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Feat: webhooks expose more user actor info when config is set](https://github.com/livingdocsIO/livingdocs-editor/pull/9119)
 * [Feat: webhooks expose more user actor info when config is set ](https://github.com/livingdocsIO/livingdocs-server/pull/7410)
 * [Only allow insertion of components that are configured in the content type](https://github.com/livingdocsIO/livingdocs-server/pull/7395)
 * [chore(deps): update dependency puppeteer-core from 23.5.3 to v23.6.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9116)
