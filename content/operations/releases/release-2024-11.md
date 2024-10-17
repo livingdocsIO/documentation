@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [New metadata plugin li-unique-id](https://github.com/livingdocsIO/livingdocs-server/pull/7312)
 * [Feat: webhooks expose more user actor info when config is set](https://github.com/livingdocsIO/livingdocs-editor/pull/9119)
 * [Feat: webhooks expose more user actor info when config is set ](https://github.com/livingdocsIO/livingdocs-server/pull/7410)
 * [Only allow insertion of components that are configured in the content type](https://github.com/livingdocsIO/livingdocs-server/pull/7395)
