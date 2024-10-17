@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency puppeteer-core from 23.5.3 to v23.6.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9116)
 * [fix(deps): update playwright monorepo from 1.48.0 to v1.48.1 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/9115)
 * [New command API commands](https://github.com/livingdocsIO/livingdocs-server/pull/7373)
 * [chore(deps): update dependency jose from 5.9.3 to v5.9.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9108)
