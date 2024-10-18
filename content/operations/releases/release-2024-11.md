@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Server: teaser-improvements-3](https://github.com/livingdocsIO/livingdocs-server/pull/7404)
 * [Editor: teaser-improvementes-1](https://github.com/livingdocsIO/livingdocs-editor/pull/9111)
 * [New metadata plugin li-unique-id](https://github.com/livingdocsIO/livingdocs-editor/pull/9038)
 * [New metadata plugin li-unique-id](https://github.com/livingdocsIO/livingdocs-server/pull/7312)
