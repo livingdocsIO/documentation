@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [li-task-v2 modes](https://github.com/livingdocsIO/livingdocs-editor/pull/9059)
 * [Editor: teaser-improvementes-4](https://github.com/livingdocsIO/livingdocs-editor/pull/9120)
 * [Server: teaser-improvements-4](https://github.com/livingdocsIO/livingdocs-server/pull/7411)
 * [Editor: teaser-improvementes-3](https://github.com/livingdocsIO/livingdocs-editor/pull/9114)
