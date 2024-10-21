@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk (master) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/7419)
 * [Feat: assistant component trigger](https://github.com/livingdocsIO/livingdocs-editor/pull/9099)
 * [Feat: assistant component trigger](https://github.com/livingdocsIO/livingdocs-server/pull/7379)
 * [li-task-v2 modes](https://github.com/livingdocsIO/livingdocs-server/pull/7331)
