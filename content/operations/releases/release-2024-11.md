@@ -180,8 +180,8 @@ livingdocs-server migrate up
 ### Print Copy :gift:
 
 
-{{< feature-info "Task" "editor" >}}
-### Task board :gift:
+{{< feature-info "Task Management" "editor" >}}
+### Task Screens :gift:
 
 
 {{< feature-info "Command API" "server" >}}
