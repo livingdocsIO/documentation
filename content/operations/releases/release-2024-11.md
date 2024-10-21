@@ -41,92 +41,50 @@ These are the release notes of the upcoming release (pull requests merged to the
 * [Feat: webhooks expose more user actor info when config is set](https://github.com/livingdocsIO/livingdocs-editor/pull/9119)
 * [Feat: webhooks expose more user actor info when config is set ](https://github.com/livingdocsIO/livingdocs-server/pull/7410)
 * [Only allow insertion of components that are configured in the content type](https://github.com/livingdocsIO/livingdocs-server/pull/7395)
-* [chore(deps): update dependency puppeteer-core from 23.5.3 to v23.6.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9116)
-* [fix(deps): update playwright monorepo from 1.48.0 to v1.48.1 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/9115)
 * [New command API commands](https://github.com/livingdocsIO/livingdocs-server/pull/7373)
-* [chore(deps): update dependency jose from 5.9.3 to v5.9.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9108)
 * [Feat: planning system remove enabled config and license reporting](https://github.com/livingdocsIO/livingdocs-server/pull/7396)
-* [chore(deps): update dependency pino-pretty from 11.2.2 to v11.3.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7401)
 * [Fix aws signing in with opensearch](https://github.com/livingdocsIO/livingdocs-server/pull/7392)
 * [Toolbar Layout Tweaks](https://github.com/livingdocsIO/livingdocs-editor/pull/9045)
-* [fix(deps): update dependency cookie from 1.0.0 to v1.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7388)
-* [fix(deps): update dependency jose from 5.9.3 to v5.9.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7389)
 * [fix(publish control): Button](https://github.com/livingdocsIO/livingdocs-editor/pull/9104)
 * [Fix version bumps for new metadata column on document_revisions](https://github.com/livingdocsIO/livingdocs-server/pull/7385)
-* [fix(deps): update dependency sass from 1.79.4 to v1.79.5 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9103)
-* [fix(deps): update dependency @opentelemetry/instrumentation-pg from 0.45.0 to v0.45.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7383)
-* [fix(deps): update babel from 7.25.7 to v7.25.8 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/9102)
 * [Downgrade severity when authenticating group assigned does not exist](https://github.com/livingdocsIO/livingdocs-server/pull/7381)
 * [Fix teaser level behavior](https://github.com/livingdocsIO/livingdocs-server/pull/7380)
 * [Fix teaser level behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/9094)
-* [fix(deps): update aws-sdk from 3.667.0 to v3.668.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7376)
 * [Teaser Component optimizations and reference transfer](https://github.com/livingdocsIO/livingdocs-editor/pull/9083)
-* [fix(deps): update dependency @livingdocs/framework from 30.1.0 to v31 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9098)
-* [fix(deps): update dependency form-data from 4.0.0 to v4.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7378)
 * [Do not set url querystring in import filename](https://github.com/livingdocsIO/livingdocs-server/pull/7366)
 * [Feat: assistant add custom error messages](https://github.com/livingdocsIO/livingdocs-editor/pull/9042)
 * [Feat: assistant add custom error messages](https://github.com/livingdocsIO/livingdocs-server/pull/7314)
-* [fix(deps): update dependency material-design-icons-svg from 3.3.0 to v3.3.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9091)
 * [Improve back button logic for issue navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/9044)
 * [Teaser components conditions and optimizations](https://github.com/livingdocsIO/livingdocs-server/pull/7339)
 * [videoSourcePolicy](https://github.com/livingdocsIO/livingdocs-server/pull/7322)
 * [videoSourcePolicy](https://github.com/livingdocsIO/livingdocs-editor/pull/9047)
-* [fix(deps): update dependency @azure/storage-blob from 12.24.0 to v12.25.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7308)
-* [fix(deps): update dependency exifreader from 4.23.6 to v4.23.7 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7351)
-* [chore(deps): update dependency eslint from 9.11.1 to v9.12.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9079)
 * [Move metadata onto revisions table](https://github.com/livingdocsIO/livingdocs-server/pull/7321)
-* [chore(deps): update dependency eslint from 9.11.1 to v9.12.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7349)
 * [Do not mutate li-document-search intitialContent object](https://github.com/livingdocsIO/livingdocs-editor/pull/9077)
 * [Fix empty check of li-document-search params](https://github.com/livingdocsIO/livingdocs-server/pull/7342)
 * [Teaser components sidepanel design](https://github.com/livingdocsIO/livingdocs-editor/pull/9055)
 * [Support excludeFromTextCount on container directives](https://github.com/livingdocsIO/livingdocs-editor/pull/9063)
 * [Support excludeFromTextCount on container directives](https://github.com/livingdocsIO/livingdocs-server/pull/7332)
-* [fix(deps): update dependency @livingdocs/framework from 30.0.1 to v30.0.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9065)
-* [fix(deps): update dependency @livingdocs/framework from 30.0.1 to v30.0.2 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7335)
-* [chore(deps): update dependency puppeteer-core from 23.4.1 to v23.5.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9062)
 * [fix(multiselect): Scrolling](https://github.com/livingdocsIO/livingdocs-editor/pull/9051)
-* [fix(deps): update dependency @smithy/node-http-handler from 3.2.3 to v3.2.4 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7326)
-* [fix(deps): update dependency sass from 1.79.3 to v1.79.4 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9048)
 * [Fix image url patching when crop x or y coordinates are not present](https://github.com/livingdocsIO/livingdocs-server/pull/7315)
 * [Allow empty `oembed.allowedCoreProviders` array in the server configuration](https://github.com/livingdocsIO/livingdocs-server/pull/7309)
-* [fix(deps): update dependency @livingdocs/framework from 30.0.0 to v30.0.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9036)
-* [fix(deps): update dependency @livingdocs/framework from 30.0.0 to v30.0.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7306)
 * [App structure simplification](https://github.com/livingdocsIO/livingdocs-editor/pull/8850)
-* [fix(deps): update dependency sass from 1.78.0 to v1.79.3 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9025)
-* [fix(deps): update dependency @google-cloud/storage from 7.12.1 to v7.13.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7294)
-* [fix(deps): update dependency jose from 5.9.2 to v5.9.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7303)
-* [chore(deps): update dependency eslint from 9.10.0 to v9.11.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9033)
-* [chore(deps): update dependency eslint from 9.10.0 to v9.11.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7301)
 * [fix(manual-status): breaking onto newline](https://github.com/livingdocsIO/livingdocs-editor/pull/9029)
-* [chore(deps): update dependency puppeteer-core from 23.3.1 to v23.4.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9027)
-* [fix(deps): update dependency date-fns from 4.0.0 to v4.1.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7291)
-* [fix(deps): update dependency pg from 8.12.0 to v8.13.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7287)
-* [fix(deps): update dependency babel-loader from 9.1.3 to v9.2.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9019)
-* [fix(deps): update dependency ua-parser-js from 1.0.38 to v1.0.39 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7282)
-* [fix(deps): update aws-sdk from 3.645.0 to v3.651.1 (master) (minor) - autoclosed](https://github.com/livingdocsIO/livingdocs-server/pull/7267)
 * [fix: focalpoint reactivity](https://github.com/livingdocsIO/livingdocs-editor/pull/9007)
 * [Support prefilling of directives with multiple metadata values of media library entries](https://github.com/livingdocsIO/livingdocs-server/pull/7277)
 * [Support prefilling of directives with multiple metadata values of media library entries](https://github.com/livingdocsIO/livingdocs-editor/pull/9011)
 * [Normalize date fields while indexing](https://github.com/livingdocsIO/livingdocs-server/pull/7268)
-* [fix(deps): update dependency wait-on from 8.0.0 to v8.0.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9005)
 * [Fix: close info panel on clicking outside but also when button is clicked again](https://github.com/livingdocsIO/livingdocs-editor/pull/9002)
-* [fix(deps): update aws-sdk (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7252)
 * [Make toolbar actions reactive](https://github.com/livingdocsIO/livingdocs-editor/pull/8997)
 * [Upload center fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/8998)
-* [fix(deps): update dependency body-parser from 1.20.2 to v1.20.3 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7265)
-* [fix(deps): update dependency @smithy/signature-v4 from 4.1.0 to v4.1.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7263)
 * [Expose maxSize attribute that defines the maximum bytes on file uploads](https://github.com/livingdocsIO/livingdocs-server/pull/7261)
 * [Only show invalid file size error once during image upload](https://github.com/livingdocsIO/livingdocs-editor/pull/8991)
 * [Fix restoring documents from local storage after design version bumps](https://github.com/livingdocsIO/livingdocs-editor/pull/8989)
 * [Support loading users with any archived state](https://github.com/livingdocsIO/livingdocs-server/pull/7256)
-* [fix(deps): update dependency exifreader from 4.23.3 to v4.23.5 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7255)
 * [fix(admin-dashboard): occupation filter](https://github.com/livingdocsIO/livingdocs-editor/pull/8976)
 * [Disable assistants when workspace is read-only](https://github.com/livingdocsIO/livingdocs-editor/pull/8974)
 * [fix: info panel goto button](https://github.com/livingdocsIO/livingdocs-editor/pull/8965)
 * [Delete unused event related to LIBREAKING035](https://github.com/livingdocsIO/livingdocs-server/pull/7251)
-* [fix(deps): update dependency cypress from 13.14.1 to v13.14.2 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/8966)
 * [Only set default locale if none is present on document create](https://github.com/livingdocsIO/livingdocs-editor/pull/8962)
-* [fix(deps): update dependency nodemailer from 6.9.14 to v6.9.15 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7247)
 * [Fix: always show push message button](https://github.com/livingdocsIO/livingdocs-editor/pull/8950)
 
 To get an overview about new functionality, read the [Release Notes](TODO).
@@ -166,8 +124,8 @@ To learn about the necessary actions to update Livingdocs to `release-2024-11`, 
 | Postgres                       | 13                                                                                       |
 | Elasticsearch<br/>OpenSearch   | 7.x<br/>1                                                                                |
 | Redis                          | 6.2                                                                                      |
-| Livingdocs Server Docker Image | livingdocs/server-base:18.3                                                              |
-| Livingdocs Editor Docker Image | livingdocs/editor-base:18.5                                                              |
+| Livingdocs Server Docker Image | livingdocs/server-base:18.8                                                              |
+| Livingdocs Editor Docker Image | livingdocs/editor-base:18.10                                                              |
 | Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
 
 ## Breaking Changes 🔥
@@ -182,13 +140,86 @@ It's a simple/fast migration with no expected data losses.
 livingdocs-server migrate up
 ```
 
-TODO: check migration
+{{< feature-info "Internal" "server" >}}
+### Metadata table migration to document_revisions :fire:
+
+
+{{< feature-info "Command API" "server" >}}
+### Command API `insertComponent` validation :fire:
+
+
+{{< feature-info "Search" "server" >}}
+### Strict `limit` validation for `li-document-search` :fire:
+
+
 
 ## Deprecations
 
+{{< feature-info "Integrations" "server/editor" >}}
+### Desk-net rename to Kordiam :warning:
+
+
+
+{{< feature-info "Search" "server" >}}
+### `contentTypes` in `li-document-search` :warning:
+
+
+
+{{< feature-info "Menu Tool" "server/editor" >}}
+### Menu tool :warning:
+
+
+
 ## Features
 
-TODO (featureset not 100% defined yet)
+{{< feature-info "Page management" "server" >}}
+###  Teaser Components :gift:
+
+
+{{< feature-info "Content Management" "server" >}}
+### Print Copy :gift:
+
+
+{{< feature-info "Task" "editor" >}}
+### Task board :gift:
+
+
+{{< feature-info "Command API" "server" >}}
+### Command API enhancements :gift:
+
+
+{{< feature-info "Assistants" "server" >}}
+### Assistants: Component Trigger :gift:
+
+
+{{< feature-info "Assistants" "editor" >}}
+### Assistants: Error messages :gift:
+
+
+{{< feature-info "Metadata" "server" >}}
+### `li-unique-id` metadata plugin :gift:
+
+
+{{< feature-info "Content Management" "editor" >}}
+### Enhanced `componentDirectivesPrefilling` :gift:
+
+
+{{< feature-info "Integrations" "server" >}}
+### Desk-net rename to Kordiam :gift:
+
+
+{{< feature-info "Media Management" "editor" >}}
+### Video Source Policy :gift:
+
+
+{{< feature-info "Webhooks" "server" >}}
+### Webhooks: User Actor Info :gift:
+
+
+{{< feature-info "Access Control Management" "server" >}}
+### `inboxWrite` access right :gift:
+
+
 
 ## Vulnerability Patches
 

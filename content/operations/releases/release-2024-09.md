@@ -94,6 +94,7 @@ It's a simple/fast migration with no expected data losses.
 livingdocs-server migrate up
 ```
 
+{{< feature-info "Events" "server" >}}
 ### `publication.updated` event :fire:
 
 The `publication.updated` event is no longer supported. Please use the `publication.update` event instead.
@@ -102,12 +103,14 @@ Refer to [Livingdocs Server events documentation]({{< ref "customising/advanced/
 
 Server PR: [Remove support for `publication.updated` event](https://github.com/livingdocsIO/livingdocs-server/pull/7240)
 
+{{< feature-info "Metadata" "server" >}}
 ### Remove `isDefault` property for named crops from `li-image` and `li-named-crops` :fire:
 
 The `isDefault` property for named crops has been removed from the `li-image` and `li-named-crops` metadata plugins. The property was not used and has been removed to simplify the codebase. Downstreams can safely remove the property from their configuration, without any impact on the functionality.
 
 Server PR: [Remove `isDefault` property for named crops from `li-image` and `li-named-crops`](https://github.com/livingdocsIO/livingdocs-server/pull/7241)
 
+{{< feature-info "Document Inbox" "server" >}}
 ### Migrate `document_inbox` table to `document_inbox_v2` :fire:
 
 This release we are migrating `document_inbox` to a new postgres table as the data structure is changing.
@@ -116,7 +119,8 @@ However, be aware that all changes done to the inbox while running the system on
 
 Server PR: [Document Inbox](https://github.com/livingdocsIO/livingdocs-server/pull/7192)
 
-### Redirect editor URLs `/p/{projectHandle}/articles/{documentId}/*` to `/p/{projectHandle}/document/{documentId}/*`
+{{< feature-info "Editor URLs" "editor" >}}
+### Redirect editor URLs `/p/{projectHandle}/articles/{documentId}/*` to `/p/{projectHandle}/document/{documentId}/*` :fire:
 
 We are introducing simplified URLs for the Livingdocs Editor. Moving forward, the following editor URLs are supported:
 
@@ -154,7 +158,7 @@ In your docker images change:
 In your .nvmrc (if present) change the string from 18 to 22 or 20.
 
 {{< feature-info "Editor Router" "editor" >}}
-### Editor URLs `/p/{projectHandle}/articles/{documentId}/*`
+### Editor URLs `/p/{projectHandle}/articles/{documentId}/*` :warning:
 
 As part of the transition to the [new Livingdocs Editor URLs]({{< relref "#redirect-livingdocs-editor-urls-pprojecthandlearticlesdocumentid-to-pprojecthandledocumentdocumentid" >}}), we are deprecating the old URLs and will remove them in release-2025-03. With release-2025-03, all URLs in the format `/p/{projectHandle}/articles/{documentId}/*` will be redirected to the new main URL `/p/{projectHandle}/document/{documentId}`. These redirects will open the document but will no longer trigger any associated actions.
 
