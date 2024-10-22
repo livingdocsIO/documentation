@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Make task mode icon mandatory](https://github.com/livingdocsIO/livingdocs-editor/pull/9130)
 * [Server: teaser-improvements-5](https://github.com/livingdocsIO/livingdocs-server/pull/7415)
 * [Editor: teaser-improvements-5](https://github.com/livingdocsIO/livingdocs-editor/pull/9123)
 * [fix(deps): update dependency jose from 5.9.4 to v5.9.6 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7417)
