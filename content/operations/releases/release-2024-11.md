@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Server: teaser-improvements-6](https://github.com/livingdocsIO/livingdocs-server/pull/7420)
 * [New setIncludeDirective command](https://github.com/livingdocsIO/livingdocs-server/pull/7405)
 * [Make task mode icon mandatory](https://github.com/livingdocsIO/livingdocs-server/pull/7421)
 * [Make task mode icon mandatory](https://github.com/livingdocsIO/livingdocs-editor/pull/9130)
