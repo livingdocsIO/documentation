@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Document Print Flows](https://github.com/livingdocsIO/livingdocs-server/pull/7158)
 * [Desk-Net to Kordiam](https://github.com/livingdocsIO/livingdocs-editor/pull/9127)
 * [Fix kanban dashboard realtime support for task updates](https://github.com/livingdocsIO/livingdocs-editor/pull/9137)
 * [Deprecate Menu Tool](https://github.com/livingdocsIO/livingdocs-server/pull/7412)
