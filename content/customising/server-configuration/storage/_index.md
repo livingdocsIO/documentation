@@ -136,15 +136,18 @@ storage: {
 
 ### Azure Blob Storage
 
-The Azure Blob Storage provider just needs a Storage Account name, container name, and generate a SAS token with read, write, create and delete access to the Azure Storage Account.
-Please consult the [detailed instructions]({{< ref "/customising/server-configuration/storage/azure-blob-storage" >}}) to generate the Shared Access Signature (SAS) for `sasToken` config parameter.
+The Azure Blob Storage provider configuration just needs a Storage Account name, Container name. There are multiple options for authentication for Azure Blob Storage:
+- generate a SAS token with read, write, create and delete access to the Azure Storage Account. Please consult the [detailed instructions]({{< ref "/customising/server-configuration/storage/azure-blob-storage" >}}) to generate the Shared Access Signature (SAS) for `sasToken` config parameter.
+- use `DefaultAzureCredential` to automatically select the most appropriate authentication method based on the available environment. Do not forget to define the appropriate RBAC role for the identity used to access the storage account.
+
+If you are going to use `DefaultAzureCredential` authentication method please make sure that your environment is properly set up with at least one of the supported authentication sources. We recommend using Azure CLI for local development and Managed Identity or [Workload Identity (on AKS)](https://learn.microsoft.com/en-us/azure/aks/workload-identity-overview?tabs=javascript) for production environments.
 
 ```js
 storage: {
   strategy: 'azure-blob-storage',
   config: {
     storageAccountName: 'my-storage-account'
-    sasToken: '?my-sas-token',
+    sasToken: '?my-sas-token', // optional, do not define sasToken when using DefaultAzureCredential
     containerName: 'my-container-name'
   }
 }

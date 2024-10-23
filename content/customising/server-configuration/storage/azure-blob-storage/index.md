@@ -64,7 +64,7 @@ In your local configuration, set the storage strategy to `azure-blob-storage` an
       strategy: 'azure-blob-storage',
       config: {
         storageAccountName: 'my-storage-account'
-        sasToken: '?my-sas-token',
+        sasToken: '?my-sas-token', // optional, do not define sasToken when using DefaultAzureCredential
         containerName: 'my-container-name'
       }
     }
@@ -75,7 +75,7 @@ In your local configuration, set the storage strategy to `azure-blob-storage` an
       strategy: 'azure-blob-storage',
       config: {
         storageAccountName: 'my-storage-account'
-        sasToken: '?my-sas-token',
+        sasToken: '?my-sas-token', // optional, do not define sasToken when using DefaultAzureCredential
         containerName: 'my-container-name'
       }
     }
@@ -87,7 +87,7 @@ In your local configuration, set the storage strategy to `azure-blob-storage` an
         strategy: 'azure-blob-storage',
         config: {
           storageAccountName: 'my-storage-account'
-          sasToken: '?my-sas-token',
+          sasToken: '?my-sas-token', // optional, do not define sasToken when using DefaultAzureCredential
           containerName: 'my-container-name'
         }
       }

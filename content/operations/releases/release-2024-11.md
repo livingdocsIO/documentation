@@ -463,6 +463,40 @@ No permission will automatically be granted. So make sure to enable the permissi
 {{< img src="./release-2024-11-inbox-permission.png" alt="Inbox permission" >}}
 
 
+{{< feature-info "Media Storage" "server" >}}
+### Support for DefaultAzureCredential in Azure Blob Storage :gift:
+
+We have introduced support for `DefaultAzureCredential` when using Azure Blob Storage. This feature simplifies authentication by enabling the automatic retrieval of credentials from the environment without explicitly specifying them in the code or server configuration.
+
+The new implementation leverages [Azure's DefaultAzureCredential](https://learn.microsoft.com/en-us/javascript/api/overview/azure/identity-readme?view=azure-node-latest#defaultazurecredential) mechanism to automatically select the most appropriate authentication method based on the available environment. It checks for various identity sources in a predefined order (such as environment variables, workload identity, managed identity, or Azure CLI credentials).
+
+**Authentication Flow**: `defaultProvider()` will attemp to authenticate via the following mechanisms in the specified order:
+- Environment Variables (e.g., AZURE_CLIENT_ID, AZURE_TENANT_ID, AZURE_CLIENT_SECRET)
+- Workload Identity for services deployed to AKS
+- Azure Managed Identity for services deployed to an Azure host
+- Azure CLI (for local development)
+- Azure PowerShell (for local development)
+- Azure Developer CLI (for local development)
+
+**Simplified Configuration**: With this feature, developers no longer need to manually handle or switch between authentication mechanisms in different environments, as `defaultProvider()` automatically handles credentials across development, test, and production environments without changes to code or configuration.
+
+If you are going to use this authentication method please make sure that your environment is properly set up with at least one of the supported authentication sources. We recommend using Azure CLI for local development and Managed Identity or [Workload Identity (on AKS)](https://learn.microsoft.com/en-us/azure/aks/workload-identity-overview?tabs=javascript) for production environments.
+
+To enable this authentication method follow the Azure Blob Storage configuration:
+
+```js
+{
+  storage: {
+    strategy: 'azure-blob-storage',
+    config: {
+      storageAccountName: 'storage-account-name',
+      // Do not define sasToken when using DefaultAzureCredential
+      containerName: 'container-name',
+    }
+  }
+}
+```
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
