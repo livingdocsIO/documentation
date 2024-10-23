@@ -73,7 +73,7 @@ POST api/v1/import/images
 
 --description--
 
-The image import creates images. The image import in Livingdocs is asynchronous. You post a batch of images that you want to import and get back an id with which you can query later to get your result.
+The image import creates image entries in the Media Library and upload the image asset to the configured blob storage. The image import in Livingdocs is asynchronous. You post a batch of images that you want to import and get back a jobId that you can use to retrieve the import job state.
 
 You can patch existing media library entries with the [patch endpoint]({{< ref "/reference/public-api/media-library" >}}).
 
