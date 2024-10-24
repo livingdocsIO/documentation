@@ -186,8 +186,17 @@ editorSettings: {
     ],
     componentDirectivesPrefilling: [
       {
-        metadataPropertyName: 'source',
-        directiveName: 'image.source' // Component prefix
+        type: 'template',
+        // Template placeholders support metadata string and number values
+        // If a value is invalid/not present, it will continue with the next prefilling
+        template: '{{ metadata.photographer }} / {{ metadata.credit }} ©️',
+        directiveName: 'source'
+      },
+      {
+        type: 'template',
+        // acts as fallback if the first template wasn't able to extract values
+        template: '{{ metadata.photographer }} ©️',
+        directiveName: 'source'
       },
       {
         metadataPropertyName: 'caption',
