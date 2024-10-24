@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(restore default): returned to true](https://github.com/livingdocsIO/livingdocs-editor/pull/9141)
 * [Document Print Flows](https://github.com/livingdocsIO/livingdocs-editor/pull/8829)
 * [Document Print Flows](https://github.com/livingdocsIO/livingdocs-server/pull/7158)
 * [Desk-Net to Kordiam](https://github.com/livingdocsIO/livingdocs-editor/pull/9127)
