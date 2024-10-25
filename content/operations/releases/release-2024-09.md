@@ -465,6 +465,7 @@ Here is a list of all patches after the release has been announced.
 - [v257.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.1): fix(events): Delete unused event related to LIBREAKING035
 
 ### Livingdocs Editor Patches
+- [v110.34.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.37): fix(inbox): write access permission
 - [v110.34.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.36): fix(restore default): returned to true
 - [v110.34.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.35): fix(tasks): Fix kanban dashboard realtime support for task updates
 - [v110.34.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.34): fix(toolbar): Fix position of app menu new indicator on small screens
