@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Polish/Print Version Dashboard Cell](https://github.com/livingdocsIO/livingdocs-editor/pull/9147)
 * [fix(global portal target): Z visibility](https://github.com/livingdocsIO/livingdocs-editor/pull/9143)
 * [fix(deps): update dependency pg from 8.13.0 to v8.13.1 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7427)
 * [fix(deps): update dependency cypress from 13.15.0 to v13.15.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9144)
