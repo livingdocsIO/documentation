@@ -449,6 +449,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v257.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.15): test(inbox): add tests for the inbox update permission
 - [v257.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.14): fix(opensearch): Fix aws signing in with opensearch
 - [v257.0.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.13): fix(authentication): Downgrade severity when group assigned does not exist, warn instead of throw as it forbids us from changing group names
 - [v257.0.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.12): fix(security): Patch security vulnerabilities CVE-2024-43799 in `send`, CVE-2024-45296 in `path-to-regexp`, CVE-2024-45813 in `find-my-way` and CVE-2024-47764 in `cookie`
