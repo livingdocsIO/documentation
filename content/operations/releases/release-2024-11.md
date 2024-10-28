@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Task Screens](https://github.com/livingdocsIO/livingdocs-server/pull/7424)
 * [Task Screens](https://github.com/livingdocsIO/livingdocs-editor/pull/9140)
 * [Remove support for `appConfig.textcount` configuration](https://github.com/livingdocsIO/livingdocs-editor/pull/9157)
 * [Ensure includes are requested in order of component appearance](https://github.com/livingdocsIO/livingdocs-editor/pull/9146)
