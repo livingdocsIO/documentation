@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Relax li-unique-id regex validation for tests](https://github.com/livingdocsIO/livingdocs-server/pull/7428)
 * [fix(deps): update playwright monorepo from 1.48.1 to v1.48.2 (master) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/9154)
 * [fix(deps): update aws-sdk from 3.673.0 to v3.679.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7390)
 * [feat(inbox): write access permission](https://github.com/livingdocsIO/livingdocs-editor/pull/9131)
