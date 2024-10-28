@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Add translations for the Document Print Flow feature](https://github.com/livingdocsIO/livingdocs-editor/pull/9156)
 * [Require params property for setIncludeDirective command](https://github.com/livingdocsIO/livingdocs-server/pull/7423)
 * [Hide teaser border if only 1 level possible](https://github.com/livingdocsIO/livingdocs-editor/pull/9150)
 * [Relax li-unique-id regex validation for tests](https://github.com/livingdocsIO/livingdocs-server/pull/7428)
