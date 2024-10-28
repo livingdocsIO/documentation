@@ -209,6 +209,42 @@ livingdocs-server migrate up
 ### Task Screens :gift:
 
 
+{{< feature-info "Metadata" "editor" >}}
+### Task Modes :gift:
+
+We are making several enhancements to the [`li-task-v2` metadata plugin]({{< ref "/reference/document/metadata/plugins/li-task-v2" >}}), with the main highlight being the introduction of task modes.
+
+- **Task Modes** allow users to select how they approach a task. For instance, in the context of proofreading, task modes can reflect the level of rigor applied when reviewing an article. A mode can be chosen when a task is accepted or finished, and it is also shown in the task icon.<br>
+Task modes can be defined in the metadata plugin configuration. Once configured, selecting a mode becomes mandatory for every newly created task. Modes are displayed in the order they are defined, with the first mode being the default.
+
+```js
+{
+  handle: 'proofreading',
+  type: 'li-task-v2',
+  config: {
+    modes: [
+      {
+        handle: 'thorough',
+        label: 'Thorough',
+        icon: 'glasses'
+      },
+      {
+        handle: 'superficial',
+        label: 'Superficial',
+        icon: 'speedometer'
+      }
+    ]
+  },
+  ...
+}
+```
+
+Further enhancements to the `li-task-v2` metadata plugin include:
+
+- **Deadline Presets**: These are hardcoded options that enable users to quickly choose a deadline without manually adjusting the input field. The presets are: "+1 hour", "+2 hours", "+24 hours".
+- **Setting a Deadline**: When requesting a task, it is no longer necessary to confirm the deadline before proceeding. Previously, users had to click both "Set deadline" and "Request task", leading some to forget the second step. This update streamlines the process by removing the "Set deadline" button.
+- **High Priority**: The high priority button has been relocated from the action menu to the task card header for better visibility.
+
 {{< feature-info "Command API" "server" >}}
 ### Command API enhancements :gift:
 

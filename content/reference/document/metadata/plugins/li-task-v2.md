@@ -33,13 +33,14 @@ storageFormat: |
       date: <ISO8601 String>,
       user: <Integer>
     },
-    assignees: [<Integer>]
+    assignees: [<Integer>],
+    mode: <String>
   }
 contentTypeConfig: |2
         handle: 'myHandle'
         type: 'li-task-v2',
         config: {
-          index: true, // optional, default: false. {{< added-in "release-2023-07" >}}
+          index: true, // optional, default: false
           required: true,
           requiredErrorMessage: 'Provide a value',
           realtimeNotification: true,
@@ -66,6 +67,22 @@ contentTypeConfig: |2
           },
           urgency: {
             high: {value: 2, unit: 'hours'}
-          }
+          },
+          // Modes allow users to select how they approach a task. Once
+          // configured, selecting a mode becomes mandatory for every newly
+          // created task. Modes are displayed in the order they are defined,
+          // with the first mode being the default. {{< added-in "release-2024-11" >}}
+          modes: [
+            {
+              handle: 'thorough',
+              label: 'Thorough',
+              icon: 'glasses'
+            },
+            {
+              handle: 'superficial',
+              label: 'Superficial',
+              icon: 'speedometer'
+            }
+          ]
         }
 ---
