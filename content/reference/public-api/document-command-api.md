@@ -209,8 +209,16 @@ api/v1/documents/:id/commands
   "status": 400,
   "error": "Bad Request",
   "error_details": {
-    "commands.0.operation": "value of tag \"operation\" must be in oneOf",
-    "commandIndex": 0
+    "commands.0": "value of tag \"operation\" must be in oneOf"
+  }
+}
+// or
+{
+  "status": 400,
+  "error": "Bad Request",
+  "error_details": {
+    "commands.0.value": "must match exactly one schema in oneOf",
+    "commands.0.value.params": "Missing required property: params"
   }
 }
 // or
@@ -237,6 +245,15 @@ api/v1/documents/:id/commands
   "error": "Bad Request",
   "error_details": {
     "message": "Command at index 0 failed: Directive 'my-directive' of type 'editable' does not exist on component 'doc-123' in document '123'",
+    "commandIndex": 0
+  }
+}
+// or
+{
+  "status": 400,
+  "error": "Bad Request",
+  "error_details": {
+    "message": "Command at index 0 failed: Include validation failed: {\"title\":\"Invalid type: expected string\",\"teasers.limit\":\"Missing required property: limit\",\"teasers.invalid\":\"Additional properties not allowed\"}",
     "commandIndex": 0
   }
 }
