@@ -467,6 +467,7 @@ Here is a list of all patches after the release has been announced.
 - [v257.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.1): fix(events): Delete unused event related to LIBREAKING035
 
 ### Livingdocs Editor Patches
+- [v110.34.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.39): fix(user-avatar): icon size
 - [v110.34.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.38): fix(menu-item): increase max length
 - [v110.34.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.37): fix(inbox): write access permission
 - [v110.34.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.36): fix(restore default): returned to true
