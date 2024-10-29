@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix: increase menu-item max length](https://github.com/livingdocsIO/livingdocs-editor/pull/9161)
 * [Remove support for Angular dashboard cards](https://github.com/livingdocsIO/livingdocs-editor/pull/9160)
 
 
