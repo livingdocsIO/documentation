@@ -285,6 +285,7 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+- [v111.1.1](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.1): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 
   ---
