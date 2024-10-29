@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/9159)
 * [fix(deps): update dependency nodemailer from 6.9.15 to v6.9.16 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7431)
 * [Task Screens](https://github.com/livingdocsIO/livingdocs-server/pull/7424)
 * [Task Screens](https://github.com/livingdocsIO/livingdocs-editor/pull/9140)
