@@ -319,6 +319,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v261.3.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.4): fix: Postpone release-2024-11 dashboard breaking changes to release-2025-01
 - [v261.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.3): fix(breaking-changes): Add type to release-2024-09 breaking change
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
