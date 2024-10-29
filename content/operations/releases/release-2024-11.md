@@ -222,8 +222,15 @@ livingdocs-server migrate up
 
 
 {{< feature-info "Metadata" "server" >}}
-### `li-unique-id` metadata plugin :gift:
+### `li-unique-id` Metadata Plugin :gift:
 
+The new `li-unique-id` metadata plugin is ideal for managing IDs or handles where uniqueness among values is required. The user interface is similar to an `li-text` field, but it includes additional validation properties:
+
+- **Uniqueness**: Ensures uniqueness among values within the same scope per project.
+- **Format**: Enforces the accepted input format using a regular expression.
+- **Required**: Ensures that a value is provided.
+
+For more information on how to configure it, please refer to the [`li-unique-id` plugin page]({{< ref "/reference/document/metadata/plugins/li-unique-id" >}}). Also, check out our [guide]({{< ref "/guides/editor/menus" >}}) on how to set up a menu content type using `li-unique-id`.
 
 {{< feature-info "Content Management" "editor" >}}
 ### Enhanced `componentDirectivesPrefilling` :gift:
