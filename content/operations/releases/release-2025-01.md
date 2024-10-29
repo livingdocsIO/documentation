@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(user-avatar): Icon size](https://github.com/livingdocsIO/livingdocs-editor/pull/9133)
 * [Remove support for dashboards of type 'dashboard'](https://github.com/livingdocsIO/livingdocs-server/pull/7433)
 * [Remove support for dashboards of type 'dashboard'](https://github.com/livingdocsIO/livingdocs-editor/pull/9162)
 * [Add type to release-2024-09 breaking change](https://github.com/livingdocsIO/livingdocs-server/pull/7436)
