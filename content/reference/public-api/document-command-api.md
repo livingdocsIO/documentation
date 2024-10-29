@@ -106,7 +106,7 @@ PATCH api/v1/documents/:id/commands
       }
     },
     {
-      // Updates a component style.
+      // Updates a component style. It supports all types: style, option, and select.
       "operation": "setComponentStyle",
       "componentId": "doc-123",
       "propertyName": "background",
@@ -164,7 +164,7 @@ PATCH api/v1/documents/:id/commands
       }
     },
     {
-      // Updates a style directive.
+      // Updates a style directive. It supports all types: style, option, and select.
       "operation": "setStyleDirective",
       "componentId": "doc-123",
       "directiveName": "appearance",

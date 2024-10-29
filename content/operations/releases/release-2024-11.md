@@ -208,6 +208,8 @@ Each command supports an optional `oldValue` parameter. When specified, the syst
 
 #### `setComponentCondition`
 
+The `setComponentCondition` command updates a component condition. Currently, only conditions of type `dateTime` are supported.
+
 ```js
 {
   operation: 'setComponentCondition',
@@ -226,6 +228,8 @@ Each command supports an optional `oldValue` parameter. When specified, the syst
 
 #### `setComponentStyle`
 
+The `setComponentStyle` command updates a component style. It supports all types: `style`, `option`, and `select`.
+
 ```js
 {
   operation: 'setComponentStyle',
@@ -237,6 +241,8 @@ Each command supports an optional `oldValue` parameter. When specified, the syst
 ```
 
 #### `setStyleDirective`
+
+The `setStyleDirective` command updates a style directive. It supports all types: `style`, `option`, and `select`.
 
 ```js
 {
@@ -250,6 +256,8 @@ Each command supports an optional `oldValue` parameter. When specified, the syst
 ```
 
 #### `setLinkDirective`
+
+The `setLinkDirective` command updates a link directive.
 
 ```js
 {
@@ -270,7 +278,7 @@ Each command supports an optional `oldValue` parameter. When specified, the syst
 
 #### `setIncludeDirective`
 
-The `setIncludeDirective` command supports updating both include `params` and `overrides`. These properties depend on each other: if only `params` are provided, any existing `overrides` are removed. Conversely, specifying `overrides` without `params` is invalid and will return a validation error. To update `overrides`, both the `params` and `overrides` properties must be provided.
+The `setIncludeDirective` command updates an include directive. It supports both include `params` and `overrides`. These properties depend on each other: if only `params` are provided, any existing `overrides` are removed. Conversely, specifying `overrides` without `params` is invalid and will return a validation error. To update `overrides`, both the `params` and `overrides` properties must be provided.
 
 ```js
 {
