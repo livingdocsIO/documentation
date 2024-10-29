@@ -380,6 +380,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v254.0.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.43): fix(breaking-changes): Add type to release-2024-07 breaking changes
 - [v254.0.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.42): fix(opensearch): Fix aws signing in with opensearch
 - [v254.0.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.41): fix(security): Patch security vulnerabilities CVE-2024-43799 in `send`, CVE-2024-45296 in `path-to-regexp`, CVE-2024-45813 in `find-my-way` and CVE-2024-47764 in `cookie`
 - [v254.0.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.40): fix(import): Do not serialize query strings in import api filename as it could include tokens
