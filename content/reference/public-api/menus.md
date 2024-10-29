@@ -8,7 +8,7 @@ menus:
 ---
 
 {{< api-example
-  title="Get Menus for a Channel"
+  title="Get Menus for a Channel ({{< deprecated-in \"release-2024-11\" >}})"
   scopes="public-api:read"
 >}}
 
@@ -21,6 +21,7 @@ curl -k -X GET "https://server.livingdocs.io/api/v1/menus/:channelHandle" \
 ```
 
 --endpoint--
+{{< deprecated-in "release-2024-11" >}}
 ```
 GET api/v1/menus/:channelHandle
 ```
@@ -35,7 +36,7 @@ GET api/v1/menus/:channelHandle
 
 Attention:
 
-Menus and this endpoint should not be used anymore. The [Menu Tool]({{< ref "/guides/editor/menu-tool" >}}) provides a better developer and user experience for managing menus.
+Menus and this endpoint should not be used anymore. The [Menu Tool]({{< ref "/guides/editor/menus" >}}) provides a better developer and user experience for managing menus.
 
 Menu items can be of three types:
 
@@ -48,10 +49,6 @@ Menu items can be of three types:
 ##### Use Cases
 
 - Get menus for deliveries
-
-##### Related
-
-- [Menu Tool]({{< ref "/guides/editor/menu-tool" >}})
 
 --response--
 200

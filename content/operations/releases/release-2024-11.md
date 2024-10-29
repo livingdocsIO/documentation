@@ -197,9 +197,9 @@ We have made the validation of the `insertComponent` command stricter. Previousl
 
 
 {{< feature-info "Menu Tool" "server/editor" >}}
-### Menu tool :warning:
+### Menu Tool :warning:
 
-
+The Menu Tool is deprecated and will be removed in release-2025-05. Please migrate your menus to data records, using the `li-tree` plugin and, if needed, the `li-unique-id` metadata plugin. For detailed instructions on [setting up menus with data records]({{< ref "/guides/editor/menus" >}}), refer to our guide. We are here to assist with the migration as needed.
 
 ## Features
 
