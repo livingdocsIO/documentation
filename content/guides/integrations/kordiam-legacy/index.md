@@ -8,7 +8,7 @@ description: Integrate Kordiam with Livingdocs using a publication platform
 {{< /info >}}
 
 {{< warning >}}
-  The Kordiam Platform Integration will eventually be removed. For new setups please use the [Kordiam Global Integration]({{< ref "/guides/integrations/kordiam" >}}) guide instead, or for upgrading from the platform integration to the global integration please read the [Kordiam Global Integration migration guide]({{< ref "/guides/integrations/kordiam-migration" >}}).
+  The Kordiam Platform Integration will eventually be removed. For new setups please use the [Kordiam Global Integration]({{< ref "/guides/integrations/kordiam" >}}) guide instead, or for upgrading from the platform integration to the global integration please read the [Kordiam Global Integration migration guide]({{< ref "/guides/integrations/kordiam-global-integration-migration" >}}).
 {{< /warning >}}
 
 [Kordiam](https://kordiam.io) is a planning tool for publication processes. This feature, if set up properly, lets you easily connect your Kordiam world to your Livingdocs universe. Here's a few things you can do:

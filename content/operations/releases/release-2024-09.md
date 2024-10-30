@@ -409,7 +409,7 @@ This was done to ensure that the Livingdocs UI is already consistent with the Ko
 A full renaming of all related Livingdocs configuration properties and API endpoints will be done in a future release.
 
 In the meantime, we recommend to already update the Kordiam endpoint URL with their new domain name.
-Please have a look at the [Transition from Desk-Net to Kordiam Guide]({{< ref "/guides/integrations/desknet-kordiam" >}}) for more details.
+Please have a look at the [Transition from Desk-Net to Kordiam Guide]({{< ref "/guides/integrations/desknet-to-kordiam-migration" >}}) for more details.
 
 ## Vulnerability Patches
 

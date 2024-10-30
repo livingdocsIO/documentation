@@ -1,5 +1,5 @@
 ---
-title: Transition from Desk-Net to Kordiam
+title: Desk-Net to Kordiam Migration
 description: Desk-Net is becoming Kordiam, how to migrate the Livingdocs integration
 ---
 

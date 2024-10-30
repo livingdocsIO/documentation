@@ -88,3 +88,5 @@
 /reference/public-api/search /reference/public-api/publications/search/;
 /reference/document/metadata/metadata-plugin-list /reference/document/metadata/plugins/;
 /guides/editor/menu-tool /guides/editor/menus/;
+/guides/integrations/desknet-migration /guides/integrations/desknet-global-integration-migration/;
+/guides/integrations/desknet-kordiam /guides/integrations/desknet-to-kordiam-migration/;

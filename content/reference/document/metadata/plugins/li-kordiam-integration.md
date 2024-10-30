@@ -22,7 +22,7 @@ description: |
   {{< /info >}}
 
   {{< warning >}}
-    Support for `li-kordiam-integration` will eventually be removed. Please use [`li-kordiam-global`]({{< ref "/reference/document/metadata/plugins/li-kordiam-global" >}}) instead. To migrate, please refer to our [Kordiam Global Integration migration guide]({{< ref "/guides/integrations/kordiam-migration" >}}).
+    Support for `li-kordiam-integration` will eventually be removed. Please use [`li-kordiam-global`]({{< ref "/reference/document/metadata/plugins/li-kordiam-global" >}}) instead. To migrate, please refer to our [Kordiam Global Integration migration guide]({{< ref "/guides/integrations/kordiam-global-integration-migration" >}}).
   {{< /warning >}}
 
   This plugin is used to connect Kordiam stories with Livingdocs documents. There are numerous options available to synchronise data between the two platforms. Further details can be found in the [Kordiam Platform Integration Guide]({{< ref "/guides/integrations/kordiam-legacy" >}}).
