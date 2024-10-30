@@ -369,7 +369,7 @@ The `setIncludeDirective` command updates an include directive. It supports both
 {{< feature-info "Metadata" "server" >}}
 ### `li-unique-id` Metadata Plugin :gift:
 
-The new `li-unique-id` metadata plugin is ideal for managing IDs or handles where uniqueness among values is required. The user interface is similar to an `li-text` field, but it includes additional validation properties:
+The new `li-unique-id` metadata plugin is ideal for managing user-defined IDs or handles where uniqueness among values is required. The user interface is similar to an `li-text` field, but it includes additional validation properties:
 
 - **Uniqueness**: Ensures uniqueness among values within the same scope per project.
 - **Format**: Enforces the accepted input format using a regular expression.
