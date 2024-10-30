@@ -1,8 +1,11 @@
 ---
 title: Desk-Net Global Integration
 description: Integrate Desk-Net with Livingdocs
-weight: 1
 ---
+
+{{< warning >}}
+  Desk-Net rebranded as Kordiam. Consequently, the Desk-Net Global Integration has been deprecated as of {{< release "release-2024-11" >}} and will be removed in {{< release "release-2025-05" >}}. Please use the [Kordiam Global Integration]({{< ref "/guides/integrations/kordiam" >}}) instead. For more details, refer to our [Desk-Net to Kordiam migration guide]({{< ref "/guides/integrations/desknet-kordiam" >}}).
+{{< /warning >}}
 
 {{< added-in "release-2024-05" block >}}
 
