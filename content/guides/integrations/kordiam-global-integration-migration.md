@@ -1,10 +1,10 @@
 ---
-title: Kordiam Migration
+title: Kordiam Global Integration Migration
 description: How to move from the Kordiam platform integration to the Kordiam global integration
 ---
 
 {{< info >}}
-  Prior to {{< release "release-2024-11" >}}, the Kordiam Global Integration and Kordiam Platform Integration were known as Desk-Net Global Integration and Desk-Net Platform Integration. If you haven't upgraded yet, refer to the corresponding [Desk-Net Global Integration migration guide]({{< ref "/guides/integrations/desknet-migration" >}}).
+  Prior to {{< release "release-2024-11" >}}, the Kordiam Global Integration and Kordiam Platform Integration were known as Desk-Net Global Integration and Desk-Net Platform Integration. If you haven't upgraded yet, refer to the corresponding [Desk-Net Global Integration migration guide]({{< ref "/guides/integrations/desknet-global-integration-migration" >}}).
 {{< /info >}}
 
 To upgrade from the [Kordiam Platform Integration]({{< ref "/guides/integrations/kordiam-legacy" >}}) to the [Kordiam Global Integration]({{< ref "/guides/integrations/kordiam" >}}) you can follow the [Kordiam Global Integration]({{< ref "/guides/integrations/kordiam" >}}) guide while keeping the following in mind:

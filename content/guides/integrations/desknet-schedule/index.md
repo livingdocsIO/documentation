@@ -4,7 +4,7 @@ description: An optional side panel that can be configured alongside the Desk-Ne
 ---
 
 {{< warning >}}
-  Desk-Net rebranded as Kordiam. Consequently, Desk-Net Schedule has been deprecated as of {{< release "release-2024-11" >}} and will be removed in {{< release "release-2025-05" >}}. Please use [Kordiam Schedule]({{< ref "/guides/integrations/kordiam-schedule" >}}) instead. For more details, refer to our [Desk-Net to Kordiam migration guide]({{< ref "/guides/integrations/desknet-kordiam" >}}).
+  Desk-Net rebranded as Kordiam. Consequently, Desk-Net Schedule has been deprecated as of {{< release "release-2024-11" >}} and will be removed in {{< release "release-2025-05" >}}. Please use [Kordiam Schedule]({{< ref "/guides/integrations/kordiam-schedule" >}}) instead. For more details, refer to our [Desk-Net to Kordiam migration guide]({{< ref "/guides/integrations/desknet-to-kordiam-migration" >}}).
 {{< /warning >}}
 
 The Desk-Net Schedule side panel can be configured to only display for certain content types, for example pages to help with page management. This step can also be done without mapping Desk-Net values, but this will result in the side panel displaying document titles instead of document reference cards.

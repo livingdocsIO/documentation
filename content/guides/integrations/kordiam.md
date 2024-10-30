@@ -9,7 +9,7 @@ weight: 1
 {{< /info >}}
 
 {{< info >}}
-  See the [Kordiam Platform Integration]({{< ref "/guides/integrations/kordiam-legacy" >}}) guide for details about the legacy integration used prior to {{< release "release-2024-05" >}}, or read the [Kordiam Global Integration migration guide]({{< ref "/guides/integrations/kordiam-migration" >}}) for details on upgrading from the platform integration to the global integration.
+  See the [Kordiam Platform Integration]({{< ref "/guides/integrations/kordiam-legacy" >}}) guide for details about the legacy integration used prior to {{< release "release-2024-05" >}}, or read the [Kordiam Global Integration migration guide]({{< ref "/guides/integrations/kordiam-global-integration-migration" >}}) for details on upgrading from the platform integration to the global integration.
 {{< /info >}}
 
 ## Setup

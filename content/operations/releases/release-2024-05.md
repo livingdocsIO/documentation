@@ -426,7 +426,7 @@ dashboards: [
 
 It's now possible to use Desk-Net's "global" integration with Livingdocs. This links a Livingdocs document directly to the story without having to set a publication platform. The new integration also provides a more flexible way to synchronise data between Livingdocs and Desk-Net (in both directions). In addition, a way of creating Desk-Net elements for existing Livingdocs documents is provided to ease some real-world workflows.
 
-Please read the [integration guide]({{< ref "/guides/integrations/desknet" >}}) or [migration guide]({{< ref "/guides/integrations/desknet-migration" >}}) for further details.
+Please read the [integration guide]({{< ref "/guides/integrations/desknet" >}}) or [migration guide]({{< ref "/guides/integrations/desknet-global-integration-migration" >}}) for further details.
 
 {{< feature-info "Integrations" "server" >}}
 ### Migration to iMatrics tag management
