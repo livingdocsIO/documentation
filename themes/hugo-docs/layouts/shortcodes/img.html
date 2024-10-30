@@ -5,7 +5,7 @@
   <img src="{{ .Get "src" }}" {{ with .Get "alt" }} alt='{{.}}'{{ end }}>
 {{ else if (fileExists $src) }}
   {{ $img := imageConfig (path.Join "content" $src) }}
-  <img src="{{ $src | relURL }}" width="{{ $img.Width }}" height="{{ $img.Height }}"{{ with .Get "alt" }} alt='{{.}}'{{ end }}>
+  <img src="{{ $src | relURL }}" width="{{ (or (.Get "width") $img.Width) }}" height="{{ (or (.Get "height") $img.Height) }}"{{ with .Get "alt" }} alt='{{.}}'{{ end }}>
 {{ else }}
   {{ $notfound := resources.Get "svg/not-found.svg" | fingerprint }}
   {{ warnf "Image '%s' not found. It was referenced from %s" $src .Position }}

@@ -361,9 +361,54 @@ The `setIncludeDirective` command updates an include directive. It supports both
 {{< feature-info "Assistants" "server" >}}
 ### Assistants: Component Trigger :gift:
 
+We are adding assistant buttons to components. These enable users to trigger an assistant directly on a focused component. If two 
+or more assistants are registered a k-menu will be opened only with the available assistants on this focused component. Assistants which are registered on a focused component are not shown in the normal k-menu. 
+
+To configure this add the `focusedComponentName` to the `showAssistantTriggerButton` config:
+
+```js
+liServer.registerAssistant({
+  handle: 'exampleAssistant',
+  ...,
+  showAssistantTriggerButton: {
+    focusedComponentName: 'exampleName' // component handle
+  },
+  contextConditions: {
+    documentRequired: true,
+    contentTypes: []
+  },
+
+  async assist ({context}) {
+    ...
+  }
+})
+```
 
 {{< feature-info "Assistants" "editor" >}}
 ### Assistants: Error messages :gift:
+
+To further improve the [Assistants]({{< ref "/customising/assistants" >}}) we are adding two ways to return custom error messages. This helps to better inform the user on why an assistant
+couldn't fullfil its task.
+
+In the `assist` function either an error object can be returned in the response:
+```js
+{
+  error: {
+    translatedMessage: {
+      de: 'Etwas ist falsch gelaufen',
+      en: 'Something went wrong'
+  },
+  commands: []
+}
+```
+
+Or a `validationError` can be thrown: 
+```js
+throw validationError({translatedMessage: {
+  en: 'Something went wrong',
+  de: 'Etwas ist schief gelaufen'
+}})
+```
 
 
 {{< feature-info "Metadata" "server" >}}
