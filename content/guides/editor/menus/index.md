@@ -2,8 +2,6 @@
 title: Menus
 description: Model menus with data records
 weight: 4
-aliases:
-  - menu-tool
 ---
 
 {{< info >}}
