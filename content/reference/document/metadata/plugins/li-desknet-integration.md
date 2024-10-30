@@ -18,8 +18,7 @@ support:
   planningSystem: false
 description: |
   {{< warning >}}
-  Support for `li-desknet-integration` will eventually be removed.\
-  Please use [`li-desknet-global`]({{< ref "/reference/document/metadata/plugins/li-desknet-global" >}}) instead.
+    Desk-Net rebranded as Kordiam. Consequently, `li-desknet-integration` has been deprecated as of {{< release "release-2024-11" >}} and will be removed in {{< release "release-2025-05" >}}. Please use [`li-kordiam-integration`]({{< ref "/reference/document/metadata/plugins/li-kordiam-integration" >}}) instead. For more details, refer to our [Desk-Net to Kordiam migration guide]({{< ref "/guides/integrations/desknet-kordiam" >}}).
   {{< /warning >}}
 
   This plugin is used to connect Desk-Net stories with Livingdocs documents. There are numerous options available to synchronise data between the two platforms. Further details can be found in the [Desk-Net Platform Integration Guide]({{< ref "/guides/integrations/desknet-legacy" >}}).

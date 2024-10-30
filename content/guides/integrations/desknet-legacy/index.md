@@ -4,7 +4,7 @@ description: Integrate Desk-Net with Livingdocs using a publication platform
 ---
 
 {{< warning >}}
-  The Desk-Net Platform Integration will eventually be removed. For new setups please use the [Desk-Net Global Integration]({{< ref "/guides/integrations/desknet" >}}) guide instead, or for upgrading from the platform integration to the global integration please read the [Desk-Net Migration]({{< ref "/guides/integrations/desknet-migration" >}}) guide.
+  Desk-Net rebranded as Kordiam. Consequently, the Desk-Net Platform Integration has been deprecated as of {{< release "release-2024-11" >}} and will be removed in {{< release "release-2025-05" >}}. Please use the [Kordiam Platform Integration]({{< ref "/guides/integrations/kordiam-legacy" >}}) instead. For more details, refer to our [Desk-Net to Kordiam migration guide]({{< ref "/guides/integrations/desknet-kordiam" >}}).
 {{< /warning >}}
 
 [Desk-Net](https://desk-net.com) is a planning tool for publication processes. This feature, if set up properly, lets you easily connect your Desk-Net world to your Livingdocs universe. Here's a few things you can do:

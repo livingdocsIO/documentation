@@ -3,6 +3,10 @@ title: Desk-Net Migration
 description: How to move from the Desk-Net platform integration to the Desk-Net global integration
 ---
 
+{{< warning >}}
+  Desk-Net rebranded as Kordiam. Consequently, the Desk-Net Global Integration was deprecated as of {{< release "release-2024-11" >}} and will be removed in {{< release "release-2025-05" >}}. Please use the [Kordiam Global Integration]({{< ref "/guides/integrations/kordiam" >}}) instead. For more details, refer to our [Desk-Net to Kordiam migration guide]({{< ref "/guides/integrations/desknet-kordiam" >}}) and the [Kordiam Global Integration migration guide]({{< ref "/guides/integrations/kordiam-migration" >}}).
+{{< /warning >}}
+
 To upgrade from the [Desk-Net Platform Integration]({{< ref "/guides/integrations/desknet-legacy" >}}) to the [Desk-Net Global Integration]({{< ref "/guides/integrations/desknet" >}}) you can follow the [Desk-Net Global Integration]({{< ref "/guides/integrations/desknet" >}}) guide while keeping the following in mind:
 
 1. You will need to contact Desk-Net to enable the global integration.
