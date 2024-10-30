@@ -28,14 +28,18 @@ With `release-2024-07` further improvements have been made:
 {{< img src="./assistant-proposal.png" alt="K-Menu dialog with single Assistant Proposal" >}}
 {{< img src="./assistant-metadata-button.png" alt="Assistant Buttons next to Metadata Form Fields" >}}
 
+With `release-2024-11` we added the following improvements:
+- Showing custom error messages
+- Assistant Buttons next to a focused component
+
+{{< img src="./assistant-custom-error-message.png" alt="Assistant custom error messages" >}}
+{{< img width="320" height="320" src="./assistant-focused-component-button.png" alt="Assistant Buttons next to a focused component" >}}
+
 ### Document Command API
 
 The commands returned by assistants are handled by our [Document Command API]({{< ref "/reference/public-api/document-command-api" >}}),
-which supports a variety of operations for manipulating documents. In the context of assistants, the following commands are available:
-- `setMetadataProperty`: Can update a single metadata property value
-- `setEditableDirective`: Updates the text value for a `doc-editable` directive
-- `insertComponent`: Inserts a new component into a document at a certain position
-- `removeComponents`: Removes the component from a document if possible ({{< added-in "release-2024-07" >}})
+which supports a variety of operations for manipulating documents. In the context of assistants, all commands are available except the 
+`publish` and `unpublish` commands. 
 
 ### Assistant Actors
 
@@ -66,7 +70,8 @@ liServer.registerInitializedHook(async () => {
       contentTypes: ['exampleContentType']
     },
     showAssistantTriggerButton: {
-      metadataPropertyName: 'examplePropertyName'
+      metadataPropertyName: 'examplePropertyName',
+      focusedComponentName: 'exampleComponentHandle'
     },
     async assist({context}) {
       const {projectConfig, document, focusedComponentId} = context
@@ -132,6 +137,41 @@ If one or multiple sets of commands should be shown to the user for selection, r
 
 See example assistant above for type details.
 
+## Trigger Buttons
+
+Trigger buttons have been added to metadata form fields as well as components. These enable users to trigger an assistant directly on that component / metadata field. To configure them the `showAssistantTriggerButton` config has to be set: 
+
+- `metadataPropertyName` 
+- `focusedComponentName`
+
+If two or more assistants are registered a k-menu will be opened only with the available assistants on this focused component / metadata field. Assistants which are registered on a focused component are not shown in the normal k-menu.
+
+See example assistant above.
+
+## Error responses
+
+A default error response is shown in cases when an assistant fails. With `release-2024-11` we added two ways to respond with a custom
+error message.
+
+In the `assist` function either an `error` object can be returned in the response:
+```js
+{
+  error: {
+    translatedMessage: {
+      de: 'Etwas ist falsch gelaufen',
+      en: 'Something went wrong'
+  },
+  commands: []
+}
+```
+
+Or a `validationError` can be thrown: 
+```js
+throw validationError({translatedMessage: {
+  en: 'Something went wrong',
+  de: 'Etwas ist schief gelaufen'
+}})
+```
 
 ## Benefits and Use Cases
 
