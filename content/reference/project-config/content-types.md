@@ -178,32 +178,32 @@ contentTypes: [
       { deliveryName: 'web', isPrimary: true }
     ],
 
-    // See the "Desk-Net Integration" guide for further details
-    desknet: {
+    // See the "Kordiam Integration" guide for further details
+    kordiam: {
       title: {
         // Defines if the document title should be synced on document update from
-        // either way, livingdocs -> desknet or desknet -> livingdocs.
+        // either way, livingdocs -> kordiam or kordiam -> livingdocs.
         // By default it is synced.
         sync: false
       },
-      // Link and optionally synchronise Desk-Net element values with Livingdocs metadata
+      // Link and optionally synchronise Kordiam element values with Livingdocs metadata
       metadata: [
         {
           sync: false,
           source: 'slug',
-          target: 'metadata.desknetWorkingTitle'
+          target: 'metadata.kordiamWorkingTitle'
         }, {
           sync: true,
           source: 'publication.scope',
           target: 'metadata.targetLength.characters'
         }
       ],
-      // A more customisable way to link Desk-Net element values with Livingdocs metadata
+      // A more customisable way to link Kordiam element values with Livingdocs metadata
       metadataTransforms: [
         {
           importFunctionHandle: 'getPrintPublicationDate',
           exportFunctionHandle: null,
-          target: 'metadata.desknetPublicationDate'
+          target: 'metadata.kordiamPublicationDate'
         }
       ]
     }
@@ -542,9 +542,9 @@ The schema is as follows:
 
 Apart from the general settings (`renderSettings`) you define an entry for each teaser (`teasers`) giving it the Livingdocs component (from the design) that should be used for rendering as well as a mapping of metadata values to component directives. See our guide on [teaser preview guide]({{< ref "/guides/editor/teaser-preview" >}}) for more details.
 
-## Desk-Net
+## Kordiam
 
-See our (legacy) [Desk-Net Platform Integration guide]({{< ref "/guides/integrations/desknet-legacy" >}}) for more info.
+See our (legacy) [Kordiam Platform Integration guide]({{< ref "/guides/integrations/kordiam-legacy" >}}) for more info.
 
 ## Enable Push Notifications for a ContentType
 

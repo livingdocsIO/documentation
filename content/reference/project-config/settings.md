@@ -30,20 +30,20 @@ settings: {
     translationWorkflow: true // shows "translate" icon on the toolbar
   },
   integrations: {
-    // Desk-Net Global Integration
-    // For the legacy Desk-Net Platform Integration see `settings.desknet`
-    // For further details see the "Desk-Net Global Integration" guide
-    desknet: {
+    // Kordiam Global Integration
+    // For the legacy Kordiam Platform Integration see `settings.kordiam`
+    // For further details see the "Kordiam Global Integration" guide
+    kordiam: {
       enabled: true,
       credentials: {
-        clientId: 'my-desknet-client-id',
+        clientId: 'my-kordiam-client-id',
         clientSecret: {
           $secretRef: {
-            name: 'my-desknet-secret'
+            name: 'my-kordiam-secret'
           }
         }
       },
-      apiEndpoint: 'https://kordiam.app', // Optional, Defaults to 'https://desk-net.com', {{< added-in "release-2023-11" >}}
+      apiEndpoint: 'https://kordiam.app', // Optional, Defaults to 'https://kordiam.app'
       createDocumentFunction: 'myCreateDocumentFunction',
       createElementFunction: 'myCreateElementFunction',
       incomingElementToDocumentCommandsFunction: 'myIncomingElementToDocumentCommandsFunction',
@@ -126,16 +126,16 @@ settings: {
     }
   },
 
-  // Desk-Net Platform Integration (legacy)
-  // For the new Desk-Net Global Integration see `settings.integrations.desknet`
-  // For further details see the "Desk-Net Platform Integration" guide
-  desknet: {
+  // Kordiam Platform Integration (legacy)
+  // For the new Kordiam Global Integration see `settings.integrations.kordiam`
+  // For further details see the "Kordiam Platform Integration" guide
+  kordiam: {
     enabled: true,
     credentials: {
-      clientId: 'my-desknet-client-id',
+      clientId: 'my-kordiam-client-id',
       clientSecret: {
         $secretRef: {
-          name: 'my-desknet-secret-ref'
+          name: 'my-kordiam-secret-ref'
         }
       }
     },
@@ -305,10 +305,10 @@ If you want to use a computer assisted translation (CAT) tool to translate livin
 
 ## Integrations
 
-In general all integrations are under the `integrations` key. We still have some legacy markup where the integration is directly on the root (`desknet`), but this will be moved in the future.
+In general all integrations are under the `integrations` key. We still have some legacy markup where the integration is directly on the root (`kordiam`), but this will be moved in the future.
 
 Available plugins are:
-- Desk-Net (planning)
+- Kordiam (planning)
 - iMatrics (text auto-tagging)
 - Retresco (text auto-tagging)
 - Google Vision (image auto-tagging)
