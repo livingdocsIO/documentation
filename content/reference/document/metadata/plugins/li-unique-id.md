@@ -18,7 +18,7 @@ support:
   planningSystem: false
   webhookConditions: true
 description: |
-  The `li-unique-id` plugin is ideal for managing IDs or handles where uniqueness among values is required. The user interface is similar to an [`li-text`]({{< ref "/reference/document/metadata/plugins/li-text" >}}) field, but it includes additional validation properties:
+  The `li-unique-id` plugin is ideal for managing user-defined IDs or handles where uniqueness among values is required. The user interface is similar to an [`li-text`]({{< ref "/reference/document/metadata/plugins/li-text" >}}) field, but it includes additional validation properties:
 
   - **Uniqueness**: Ensures uniqueness among values within the same `uniquenessScope` per project.
     {{< warning >}}The `uniquenessScope` must not be updated, as doing so would break the uniqueness validation for new values. Changing it requires a manual database migration.{{< /warning >}}
