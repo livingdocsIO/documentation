@@ -392,10 +392,30 @@ For more information on how to configure it, please refer to the [`li-unique-id`
 {{< feature-info "Webhooks" "server" >}}
 ### Webhooks: User Actor Info :gift:
 
+We are adding a config to send more information about users in webhook payloads. External systems can leverage this to understand who triggered an action. If enabled the `name` and `email` for user actors are included in the payload. We do not recommend enabling this configuration unless your external systems require it.
+
+```js
+webhooks: {
+  active: true,
+  configurations: [
+    {
+      active: true,
+      exposeUserActor: true,
+      ...
+    }
+  ]
+}
+```
+
 
 {{< feature-info "Access Control Management" "server" >}}
 ### `inboxWrite` access right :gift:
 
+We are introducing an new `inbox` permission. This enables users to send contentTypes to the inbox without having write access for them. Users then need `read` and `inbox` access on the contentType to be able to search inboxes (read) and send something into the inbox (inbox). Setting the `update` permission contains the inbox permission.
+
+No permission will automatically be granted. So make sure to enable the permission for relevant groups.
+
+{{< img src="./release-2024-11-inbox-permission.png" alt="Inbox permission" >}}
 
 
 ## Vulnerability Patches
