@@ -496,6 +496,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.6): fix(multiselect): add missing translations
 - [v111.1.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.5): fix(release-2024-11): Define `release-2024-11` as channel for npm
 - [v111.1.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.4): fix: Postpone release-2024-11 dashboard breaking changes to release-2025-01
 - [v111.1.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.3): fix(user-avatar): icon size
