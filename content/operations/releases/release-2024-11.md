@@ -139,10 +139,28 @@ We have made the validation of the `insertComponent` command stricter. Previousl
 ## Deprecations
 
 {{< feature-info "Integrations" "server/editor" >}}
-### Desk-net rename to Kordiam :warning:
+### Desk-net Integrations :warning:
 
+Desk-Net announced its rebranding to Kordiam. To align with this change, Livingdocs now calls their new API endpoint `kordiam.app` by default. We also added new Kordiam integrations and deprecated existing Desk-Net integrations, which will be removed in `release-2025-05`.
 
-{{< feature-info "Metadata plugin" "server" >}}
+- Feature `li-desknet`, including all its server APIs
+- Feature `li-desknet-integration`, including all its server APIs
+- Server config `desknet`, `integrations.desknet`, and `integrations.desknet.forceLinkUsingDesknetApiRequest`
+- Server config `hugo.print.desknetMetadataFields` as well as its default values
+- Project config `settings.desknet`, `settings.integrations.desknet`, and `contentTypes.[*].desknet`
+- Public API endpoints `/api/v1/desknet/*`
+- Public API endpoints `/api/v1/desknet-integration/*`
+- Function parameter `desknetApi` of Desk-Net/Kordiam functions
+- Desknet property in the channel return object of `projectApi.getProject()`
+- Desknet property in the return object of `systemApi.config()`
+- Metadata plugin `li-desknet-global`
+- Metadata plugin `li-desknet-integration`
+- Metadata plugin `li-desknet-schedule`
+- Config property `desknetExternalElementIdMetadataPath` of metadata plugin `li-desknet-schedule`
+
+For instructions on how to migrate, please refer to our [Desk-Net to Kordiam migration guide]({{< ref "/guides/integrations/desknet-to-kordiam-migration" >}}).
+
+{{< feature-info "Search" "server" >}}
 ### `contentTypes` in `li-document-search` :warning:
 
 The shorthand property `config.contentTypes` in the `li-document-search` metadata plugin is deprecated and replaced with `config.contentType` which can be a string or an array of strings. This is done to make it consistent with the shorthand syntax in other places. `config.contentTypes` will be supported until `release-2025-05`.
@@ -439,8 +457,9 @@ Thus, the two entries below have the same behavior:
 This behaviour has been backported to September (`@livingdocs/server@257.0.6` and `@livingdocs/editor@110.34.25`) and July (`@livingdocs/server@254.0.34` and `@livingdocs/editor@110.21.55`) releases.
 
 {{< feature-info "Integrations" "server" >}}
-### Desk-net rename to Kordiam :gift:
+### Kordiam Integrations :gift:
 
+We added new Kordiam integrations (including settings, metadata plugins, and APIs) to replace existing Desk-Net integrations. Check out the [deprecation notice]({{< ref "#desk-net-integrations-warning" >}}) above for details on how to migrate.
 
 {{< feature-info "Media Management" "editor" >}}
 ### Video Source Policy :gift:
