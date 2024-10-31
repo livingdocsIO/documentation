@@ -384,7 +384,7 @@ For releases prior to {{< release "release-2022-03" >}} you should specify a `gr
 
 The `dashboards` entry allows you to configure custom dashboards, e.g. for authors (data-records) or proofreading (tasks).
 
-There are 4 `types` of custom dashboards (`type` property):
+There are 3 `types` of custom dashboards (`type` property):
 - `dashboard`
 - `kanbanBoard`
 - `taskBoard` (predefined `kanbanBoard` for a task)
@@ -599,15 +599,7 @@ dashboards: [
 
 #### Supported metadata properties
 
-The following [metadata plugin types]({{< ref "/reference/document/metadata/plugins" >}})
-are supported in the table dashboard:
-- `li-boolean`
-- `li-text`
-- `li-category`
-- `li-document-reference`
-- `li-string-list`
-- `li-desknet-integration`
-- `li-integer` ({{< added-in "release-2023-03" >}})
+See the [metadata plugin list]({{< ref "/reference/document/metadata/plugins" >}}) to understand which metadata plugins have support for a table dashboard cell already. Livingdocs aims to support all of them, if something is missing, please reach out.
 
 #### Upstream components
 
