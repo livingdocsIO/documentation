@@ -17,7 +17,7 @@ One or multiple Webhooks are configured via [Project Config]({{< ref "/reference
 ```js
 // Project Config settings.webhooks
 webhooks: {
-  active: true
+  active: true,
   configurations: [
     {
       // Unique handle per project
@@ -36,6 +36,8 @@ webhooks: {
       secret: 'a-secret-token-to-sign-the-request',
       // Enable webhook
       active: true,
+      // Expose name and email for user actors
+      exposeUserActor: true,
       // The webhook is triggered only for the specified events when both
       // the conditions and change filters are met
       events: [
