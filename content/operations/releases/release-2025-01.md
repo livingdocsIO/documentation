@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix: add missing multiselect translations](https://github.com/livingdocsIO/livingdocs-editor/pull/9178)
 * [fix(user-avatar): Icon size](https://github.com/livingdocsIO/livingdocs-editor/pull/9133)
 * [Remove support for dashboards of type 'dashboard'](https://github.com/livingdocsIO/livingdocs-server/pull/7433)
 * [Remove support for dashboards of type 'dashboard'](https://github.com/livingdocsIO/livingdocs-editor/pull/9162)
