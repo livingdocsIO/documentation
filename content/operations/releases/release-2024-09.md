@@ -449,6 +449,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v257.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.17): fix(document-inbox): Send to inbox with update permission
 - [v257.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.16): fix(breaking-changes): Add type to release-2024-09 breaking change
 - [v257.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.15): test(inbox): add tests for the inbox update permission
 - [v257.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.14): fix(opensearch): Fix aws signing in with opensearch
