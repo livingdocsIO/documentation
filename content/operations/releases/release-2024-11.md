@@ -490,6 +490,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v261.3.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.7): fix(kordiam): Restore support for forceLinkUsingDesknetApiRequest setting
 - [v261.3.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.6): fix(document-inbox): Send to inbox with update permission
 - [v261.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.5): fix(release-2024-11): Define `release-2024-11` as channel for npm
 - [v261.3.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.4): fix: Postpone release-2024-11 dashboard breaking changes to release-2025-01
