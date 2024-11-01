@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Restore support for forceLinkUsingDesknetApiRequest setting](https://github.com/livingdocsIO/livingdocs-server/pull/7445)
 * [Task Screens: Collapsed Board State](https://github.com/livingdocsIO/livingdocs-editor/pull/9186)
 * [Allow sending to inbox with document update permission](https://github.com/livingdocsIO/livingdocs-server/pull/7447)
 * [Fix realtime updates for multilist editor inbox](https://github.com/livingdocsIO/livingdocs-editor/pull/9183)
