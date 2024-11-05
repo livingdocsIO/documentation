@@ -14,7 +14,7 @@ aliases:
   upcoming=false
   legacy=false
   current=false
-  maintained=true
+  maintained=false
   branchHandle="release-2024-05"
 >}}
 
