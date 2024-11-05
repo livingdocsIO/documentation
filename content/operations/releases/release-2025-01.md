@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(field Extractor): return moved out of loop](https://github.com/livingdocsIO/livingdocs-editor/pull/9195)
 * [Close clipboard when toggling insert panel](https://github.com/livingdocsIO/livingdocs-editor/pull/9188)
 * [Restore support for forceLinkUsingDesknetApiRequest setting](https://github.com/livingdocsIO/livingdocs-server/pull/7445)
 * [Task Screens: Collapsed Board State](https://github.com/livingdocsIO/livingdocs-editor/pull/9186)
