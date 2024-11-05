@@ -17,102 +17,6 @@ aliases:
   branchHandle="release-2024-11"
 >}}
 
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to the main branch).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
-
-## PRs to Categorize
-* [Task Screens](https://github.com/livingdocsIO/livingdocs-server/pull/7424)
-* [Task Screens](https://github.com/livingdocsIO/livingdocs-editor/pull/9140)
-* [Remove support for `appConfig.textcount` configuration](https://github.com/livingdocsIO/livingdocs-editor/pull/9157)
-* [Ensure includes are requested in order of component appearance](https://github.com/livingdocsIO/livingdocs-editor/pull/9146)
-* [Add translations for the Document Print Flow feature](https://github.com/livingdocsIO/livingdocs-editor/pull/9156)
-* [Require params property for setIncludeDirective command](https://github.com/livingdocsIO/livingdocs-server/pull/7423)
-* [Hide teaser border if only 1 level possible](https://github.com/livingdocsIO/livingdocs-editor/pull/9150)
-* [Relax li-unique-id regex validation for tests](https://github.com/livingdocsIO/livingdocs-server/pull/7428)
-* [fix(deps): update aws-sdk from 3.673.0 to v3.679.0 (master) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7390)
-* [feat(inbox): write access permission](https://github.com/livingdocsIO/livingdocs-editor/pull/9131)
-* [fix(li-char-counter): micro-positioning](https://github.com/livingdocsIO/livingdocs-editor/pull/9151)
-* [Polish/Print Version Dashboard Cell](https://github.com/livingdocsIO/livingdocs-editor/pull/9147)
-* [fix(global portal target): Z visibility](https://github.com/livingdocsIO/livingdocs-editor/pull/9143)
-* [fix(restore default): returned to true](https://github.com/livingdocsIO/livingdocs-editor/pull/9141)
-* [Document Print Flows](https://github.com/livingdocsIO/livingdocs-editor/pull/8829)
-* [Document Print Flows](https://github.com/livingdocsIO/livingdocs-server/pull/7158)
-* [Desk-Net to Kordiam](https://github.com/livingdocsIO/livingdocs-editor/pull/9127)
-* [Fix kanban dashboard realtime support for task updates](https://github.com/livingdocsIO/livingdocs-editor/pull/9137)
-* [Deprecate Menu Tool](https://github.com/livingdocsIO/livingdocs-server/pull/7412)
-* [Editor: teaser-improvements-6](https://github.com/livingdocsIO/livingdocs-editor/pull/9129)
-* [Server: teaser-improvements-6](https://github.com/livingdocsIO/livingdocs-server/pull/7420)
-* [New setIncludeDirective command](https://github.com/livingdocsIO/livingdocs-server/pull/7405)
-* [Make task mode icon mandatory](https://github.com/livingdocsIO/livingdocs-server/pull/7421)
-* [Make task mode icon mandatory](https://github.com/livingdocsIO/livingdocs-editor/pull/9130)
-* [Server: teaser-improvements-5](https://github.com/livingdocsIO/livingdocs-server/pull/7415)
-* [Editor: teaser-improvements-5](https://github.com/livingdocsIO/livingdocs-editor/pull/9123)
-* [Feat: assistant component trigger](https://github.com/livingdocsIO/livingdocs-editor/pull/9099)
-* [Feat: assistant component trigger](https://github.com/livingdocsIO/livingdocs-server/pull/7379)
-* [li-task-v2 modes](https://github.com/livingdocsIO/livingdocs-server/pull/7331)
-* [li-task-v2 modes](https://github.com/livingdocsIO/livingdocs-editor/pull/9059)
-* [Editor: teaser-improvementes-4](https://github.com/livingdocsIO/livingdocs-editor/pull/9120)
-* [Server: teaser-improvements-4](https://github.com/livingdocsIO/livingdocs-server/pull/7411)
-* [Editor: teaser-improvementes-3](https://github.com/livingdocsIO/livingdocs-editor/pull/9114)
-* [Server: teaser-improvements-3](https://github.com/livingdocsIO/livingdocs-server/pull/7404)
-* [Editor: teaser-improvementes-1](https://github.com/livingdocsIO/livingdocs-editor/pull/9111)
-* [New metadata plugin li-unique-id](https://github.com/livingdocsIO/livingdocs-editor/pull/9038)
-* [New metadata plugin li-unique-id](https://github.com/livingdocsIO/livingdocs-server/pull/7312)
-* [Feat: webhooks expose more user actor info when config is set](https://github.com/livingdocsIO/livingdocs-editor/pull/9119)
-* [Feat: webhooks expose more user actor info when config is set ](https://github.com/livingdocsIO/livingdocs-server/pull/7410)
-* [Only allow insertion of components that are configured in the content type](https://github.com/livingdocsIO/livingdocs-server/pull/7395)
-* [New command API commands](https://github.com/livingdocsIO/livingdocs-server/pull/7373)
-* [Feat: planning system remove enabled config and license reporting](https://github.com/livingdocsIO/livingdocs-server/pull/7396)
-* [Fix aws signing in with opensearch](https://github.com/livingdocsIO/livingdocs-server/pull/7392)
-* [Toolbar Layout Tweaks](https://github.com/livingdocsIO/livingdocs-editor/pull/9045)
-* [fix(publish control): Button](https://github.com/livingdocsIO/livingdocs-editor/pull/9104)
-* [Fix version bumps for new metadata column on document_revisions](https://github.com/livingdocsIO/livingdocs-server/pull/7385)
-* [Downgrade severity when authenticating group assigned does not exist](https://github.com/livingdocsIO/livingdocs-server/pull/7381)
-* [Fix teaser level behavior](https://github.com/livingdocsIO/livingdocs-server/pull/7380)
-* [Fix teaser level behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/9094)
-* [Teaser Component optimizations and reference transfer](https://github.com/livingdocsIO/livingdocs-editor/pull/9083)
-* [Do not set url querystring in import filename](https://github.com/livingdocsIO/livingdocs-server/pull/7366)
-* [Feat: assistant add custom error messages](https://github.com/livingdocsIO/livingdocs-editor/pull/9042)
-* [Feat: assistant add custom error messages](https://github.com/livingdocsIO/livingdocs-server/pull/7314)
-* [Improve back button logic for issue navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/9044)
-* [Teaser components conditions and optimizations](https://github.com/livingdocsIO/livingdocs-server/pull/7339)
-* [videoSourcePolicy](https://github.com/livingdocsIO/livingdocs-server/pull/7322)
-* [videoSourcePolicy](https://github.com/livingdocsIO/livingdocs-editor/pull/9047)
-* [Move metadata onto revisions table](https://github.com/livingdocsIO/livingdocs-server/pull/7321)
-* [Do not mutate li-document-search intitialContent object](https://github.com/livingdocsIO/livingdocs-editor/pull/9077)
-* [Fix empty check of li-document-search params](https://github.com/livingdocsIO/livingdocs-server/pull/7342)
-* [Teaser components sidepanel design](https://github.com/livingdocsIO/livingdocs-editor/pull/9055)
-* [Support excludeFromTextCount on container directives](https://github.com/livingdocsIO/livingdocs-editor/pull/9063)
-* [Support excludeFromTextCount on container directives](https://github.com/livingdocsIO/livingdocs-server/pull/7332)
-* [fix(multiselect): Scrolling](https://github.com/livingdocsIO/livingdocs-editor/pull/9051)
-* [Fix image url patching when crop x or y coordinates are not present](https://github.com/livingdocsIO/livingdocs-server/pull/7315)
-* [Allow empty `oembed.allowedCoreProviders` array in the server configuration](https://github.com/livingdocsIO/livingdocs-server/pull/7309)
-* [App structure simplification](https://github.com/livingdocsIO/livingdocs-editor/pull/8850)
-* [fix(manual-status): breaking onto newline](https://github.com/livingdocsIO/livingdocs-editor/pull/9029)
-* [fix: focalpoint reactivity](https://github.com/livingdocsIO/livingdocs-editor/pull/9007)
-* [Support prefilling of directives with multiple metadata values of media library entries](https://github.com/livingdocsIO/livingdocs-server/pull/7277)
-* [Support prefilling of directives with multiple metadata values of media library entries](https://github.com/livingdocsIO/livingdocs-editor/pull/9011)
-* [Normalize date fields while indexing](https://github.com/livingdocsIO/livingdocs-server/pull/7268)
-* [Fix: close info panel on clicking outside but also when button is clicked again](https://github.com/livingdocsIO/livingdocs-editor/pull/9002)
-* [Make toolbar actions reactive](https://github.com/livingdocsIO/livingdocs-editor/pull/8997)
-* [Upload center fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/8998)
-* [Expose maxSize attribute that defines the maximum bytes on file uploads](https://github.com/livingdocsIO/livingdocs-server/pull/7261)
-* [Only show invalid file size error once during image upload](https://github.com/livingdocsIO/livingdocs-editor/pull/8991)
-* [Fix restoring documents from local storage after design version bumps](https://github.com/livingdocsIO/livingdocs-editor/pull/8989)
-* [Support loading users with any archived state](https://github.com/livingdocsIO/livingdocs-server/pull/7256)
-* [fix(admin-dashboard): occupation filter](https://github.com/livingdocsIO/livingdocs-editor/pull/8976)
-* [Disable assistants when workspace is read-only](https://github.com/livingdocsIO/livingdocs-editor/pull/8974)
-* [fix: info panel goto button](https://github.com/livingdocsIO/livingdocs-editor/pull/8965)
-* [Delete unused event related to LIBREAKING035](https://github.com/livingdocsIO/livingdocs-server/pull/7251)
-* [Only set default locale if none is present on document create](https://github.com/livingdocsIO/livingdocs-editor/pull/8962)
-* [Fix: always show push message button](https://github.com/livingdocsIO/livingdocs-editor/pull/8950)
-
 To get an overview about new functionality, read the [Release Notes](TODO).
 To learn about the necessary actions to update Livingdocs to `release-2024-11`, read on.
 
@@ -154,6 +58,36 @@ To learn about the necessary actions to update Livingdocs to `release-2024-11`, 
 | Livingdocs Editor Docker Image | livingdocs/editor-base:18.10                                                              |
 | Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
 
+## Deployment
+
+### Before the deployment
+
+No prior preparations (besides running `livingdocs-server migrate up`) are required before rolling out this release.
+
+### After the deployment
+
+Related to migration of `document_metadata` table to `document_revisions` table. If the upgrade succeeded and it's definitive that you won't need to roll back (a few days), it's best to migrate all data to the new structure. To do that you can execute the command below.
+**Please make sure you have a few gigabytes of storage available in postgres before executing that command. It will rewrite all metadata probably takes a while.**
+
+```sh
+node db/manual-migrations/011-move-metadata.js 
+```
+
+After executing this script, the `document_metadata` table will get truncated and clean up storage.
+We've tested the script against a database with 4'300'000 revision entries and it took ~7 minutes.
+
+### Rollback
+
+Only rollback if you have a critical issue with the release in question. Usually forward patching is the better option.
+
+If you need to rollback the release, you can do so by running the following command on the Livingdocs Server running the new release:
+
+```sh
+livingdocs-server migrate down 
+```
+
+If you rollback, data that was already upgraded to new schema (`document_metadata` -> `document_revisions`) will take a bit longer to migrate as it needs to scan the whole table, but this is lock-free for reads, **it will only block data that got updated after the deployment**.
+
 ## Breaking Changes 🔥
 
 {{< feature-info "Operations" "server" >}}
@@ -163,17 +97,48 @@ It's a simple/fast migration with no expected data losses.
 
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database schema
+# migration 202-metadata-on-revisions.js
+#   creates a new column `metadata` on `document_revisions` table
+#   requires manual migration to migrate all data from `document_metadata` to `document_revisions`
+# migration 203-li-unique-id.js
+#   creates a new table `document_unique_ids` to store unique ids and ensure its uniqueness
 livingdocs-server migrate up
 ```
 
 {{< feature-info "Internal" "server" >}}
-### Metadata table migration to document_revisions :fire:
+### document_metadata table migration to document_revisions :fire:
 
+We have moved the `document_metadata` table to the `document_revisions` table to support better migrations and cleanup operations. The migration is done automatically when you run `livingdocs-server migrate up`.
+
+If you query the documents and metadata using sql yourself, this will affect you. Please use `COALESCE(document_revisions.metadata, document_metadata.data)` to get the correct value.
+
+We will remove the `document_metadata` table in a future release. Writes against `document_metadata` table are now blocked and metadata is now directly persisted on `document_revisions.metadata`.
+
+After a successful deployment, saves against existing documents will use the new column and writes from old processes are forbidden as the schema changed.
+
+The existing columns won't be touched within the migration, so the migration can execute quick. 
+
+A rollback of already upgraded data takes a bit longer as it needs to scan the whole table, but this is lock-free for reads, it will only block data that got updated **after** the deployment.
+
+After the upgrade succeeded and it's definitive that you won't need to roll back (a few days), it's best to migrate all data to the new structure. To do that you can execute the command below.
+**Please make sure you have a few gigabytes of storage available in postgres before executing that command. It will rewrite all metadata probably takes a while.**
+
+But after executing that script, the `document_metadata` table will get truncated and clean up storage.
+We've tested the script against a database with 4'300'000 revision entries and it took ~7 minutes.
+
+```sh
+node db/manual-migrations/011-move-metadata.js 
+```
 
 {{< feature-info "Command API" "server" >}}
 ### Stricter Document Command API `insertComponent` Validation :fire:
 
 We have made the validation of the `insertComponent` command stricter. Previously, any component available in the design could be inserted into a document with the `insertComponent` command, even if it wasn’t configured in the content type. Now, only components configured in the content type can be inserted, and attempting to insert an unconfigured component will result in a validation error.
+
+{{< feature-info "Content Management" "editor" >}}
+### Move `appConfig.textcount` editor configuration :fire:
+
+`appConfig.textcount` configuration has been moved to `projectConfig.editorSettings.textCount`. If you still want to use this feature please migrate to `projectConfig.editorSettings.textCount`. Be careful, the textCount configuration needs to be written in camelCase in the new location.
 
 ## Deprecations
 
@@ -181,11 +146,24 @@ We have made the validation of the `insertComponent` command stricter. Previousl
 ### Desk-net rename to Kordiam :warning:
 
 
-
-{{< feature-info "Search" "server" >}}
+{{< feature-info "Metadata plugin" "server" >}}
 ### `contentTypes` in `li-document-search` :warning:
 
+The shorthand property `config.contentTypes` in the `li-document-search` metadata plugin is deprecated and replaced with `config.contentType` which can be a string or an array of strings. This is done to make it consistent with the shorthand syntax in other places. `config.contentTypes` will be supported until `release-2025-05`.
 
+Backwards compatibility will take `config.contentType` if defined: `config.contentType || config.contentTypes`. 
+Please migrate your existing configuration from `config.contentTypes` to `config.contentType`.
+  
+```js
+{
+  handle: 'search',
+  type: 'li-document-search',
+  config: {
+    // contentTypes: ['article', 'page']
+    contentType: ['article', 'page']
+  }
+}
+```
 
 {{< feature-info "Menu Tool" "server/editor" >}}
 ### Menu Tool :warning:
@@ -388,6 +366,7 @@ In the `assist` function either an error object can be returned in the response:
     translatedMessage: {
       de: 'Etwas ist falsch gelaufen',
       en: 'Something went wrong'
+    }
   },
   commands: []
 }
@@ -416,6 +395,52 @@ For more information on how to configure it, please refer to the [`li-unique-id`
 {{< feature-info "Content Management" "editor" >}}
 ### Enhanced `componentDirectivesPrefilling` :gift:
 
+There's an extension on `mediaType.editorSettings.mediaLibrary.componentDirectivesPrefilling`.
+It supports now an entry with `type: 'template'`.
+
+Placeholders in templates get replaced by the specific metadata properties if they are present and not empty.
+If a placeholder contains a property that's empty, it will move on to the next prefilling.
+
+That way we can define fallbacks.
+
+```js
+  componentDirectivesPrefilling: [
+    {
+      type: 'template',
+      template: '{{ metadata.photographer }} / {{ metadata.credit }} ©️',
+      directiveName: 'source'
+    },
+    {
+      type: 'template',
+      template: '{{ metadata.photographer }} ©️',
+      directiveName: 'source'
+    },
+    {
+      type: 'template',
+      template: '{{ metadata.credit }} ©️',
+      directiveName: 'source'
+    },
+    {
+      metadataPropertyName: 'description',
+      directiveName: 'caption'
+    }
+  ]
+```
+Thus, the two entries below have the same behavior:
+```js
+  componentDirectivesPrefilling: [
+    {
+      type: 'template',
+      template: '{{ metadata.description }}',
+      directiveName: 'caption'
+    },
+    {
+      metadataPropertyName: 'description',
+      directiveName: 'caption' 
+    }
+  ]
+```
+This behaviour has been backported to September (`@livingdocs/server@257.0.6` and `@livingdocs/editor@110.34.25`) and July (`@livingdocs/server@254.0.34` and `@livingdocs/editor@110.21.55`) releases.
 
 {{< feature-info "Integrations" "server" >}}
 ### Desk-net rename to Kordiam :gift:
@@ -424,6 +449,38 @@ For more information on how to configure it, please refer to the [`li-unique-id`
 {{< feature-info "Media Management" "editor" >}}
 ### Video Source Policy :gift:
 
+The `videoSourcePolicy` sits alongside the existing `imageSourcePolicy` configuration. It only supports the 'upload' provider and can be used to disable uploads globally (including the media library video dashboard) when added to the project config settings, or per content type when added to a content type config. The `videoSourcePolicy` within a content type config has priority over the project config.
+
+You can disable the upload provider for videos by setting `enabled` to `false`:
+
+```js
+{
+  settings: {
+    handle: 'my-project',
+    // ...
+    // imageSourcePolicy: [],
+    videoSourcePolicy: [
+      {
+        provider: 'upload',
+        enabled: false
+      }
+    ]
+  },
+  contentTypes: [
+    {
+      handle: 'regular',
+      // ...
+      // imageSourcePolicy: [],
+      videoSourcePolicy: [
+        {
+          provider: 'upload',
+          enabled: false
+        }
+      ]
+    }
+  ]
+}
+```
 
 {{< feature-info "Webhooks" "server" >}}
 ### Webhooks: User Actor Info :gift:
