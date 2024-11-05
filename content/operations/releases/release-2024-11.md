@@ -2,7 +2,7 @@
 type: release-notes
 title: November 2024 Release
 description: Technical Release Notes for release-2024-11
-excludeFromSearch: true
+excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2024-11/
@@ -10,10 +10,10 @@ aliases:
 
 {{< release-header
   title="November 2024 Release"
-  upcoming=true
+  upcoming=false
   legacy=false
-  current=false
-  maintained=false
+  current=true
+  maintained=true
   branchHandle="release-2024-11"
 >}}
 
