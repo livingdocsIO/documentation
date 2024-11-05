@@ -523,6 +523,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.9): fix: use workspace id in dataloader cache key
 - [v111.1.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.8): fix: Revert connecting local clipboard state to canvas clipboard state
 - [v111.1.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.7): chore(tasks): Add search empty text translation
 - [v111.1.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.6): fix(multiselect): add missing translations
