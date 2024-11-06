@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix Desk-Net backwards compatibility](https://github.com/livingdocsIO/livingdocs-editor/pull/9201)
 * [Clipboard state fixes and refactoring](https://github.com/livingdocsIO/livingdocs-editor/pull/9190)
 * [Bugfix where includes are not resolved](https://github.com/livingdocsIO/livingdocs-editor/pull/9196)
 * [fix(field Extractor): return moved out of loop](https://github.com/livingdocsIO/livingdocs-editor/pull/9195)
