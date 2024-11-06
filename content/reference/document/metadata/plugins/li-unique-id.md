@@ -17,6 +17,7 @@ support:
   systemMetadata: false
   planningSystem: false
   webhookConditions: true
+addedIn: release-2024-11
 description: |
   The `li-unique-id` plugin is ideal for managing user-defined IDs or handles where uniqueness among values is required. The user interface is similar to an [`li-text`]({{< ref "/reference/document/metadata/plugins/li-text" >}}) field, but it includes additional validation properties:
 
