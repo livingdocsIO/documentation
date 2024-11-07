@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix clipboard reactivity](https://github.com/livingdocsIO/livingdocs-editor/pull/9209)
 * [Expand comments when clicking into commented text](https://github.com/livingdocsIO/livingdocs-editor/pull/9204)
 * [Fix task cell minus sign and spacing](https://github.com/livingdocsIO/livingdocs-editor/pull/9203)
 * [Fix Desk-Net backwards compatibility](https://github.com/livingdocsIO/livingdocs-editor/pull/9201)
