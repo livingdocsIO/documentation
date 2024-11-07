@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix task cell minus sign and spacing](https://github.com/livingdocsIO/livingdocs-editor/pull/9203)
 * [Fix Desk-Net backwards compatibility](https://github.com/livingdocsIO/livingdocs-editor/pull/9201)
 * [Clipboard state fixes and refactoring](https://github.com/livingdocsIO/livingdocs-editor/pull/9190)
 * [Bugfix where includes are not resolved](https://github.com/livingdocsIO/livingdocs-editor/pull/9196)
