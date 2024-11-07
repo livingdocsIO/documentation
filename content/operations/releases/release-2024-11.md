@@ -67,7 +67,7 @@ No prior preparations (besides running `livingdocs-server migrate up`) are requi
 ### After the deployment
 
 Related to migration of `document_metadata` table to `document_revisions` table. If the upgrade succeeded and it's definitive that you won't need to roll back (a few days), it's best to migrate all data to the new structure. To do that you can execute the command below.
-**Please make sure you have a few gigabytes of storage available in postgres before executing that command. It will rewrite all metadata probably takes a while.**
+**Please make sure you have a few gigabytes of storage available in postgres before executing that command. It will rewrite all metadata and will probably take a while.**
 
 ```sh
 node db/manual-migrations/011-move-metadata.js 
@@ -120,11 +120,7 @@ The existing columns won't be touched within the migration, so the migration can
 
 A rollback of already upgraded data takes a bit longer as it needs to scan the whole table, but this is lock-free for reads, it will only block data that got updated **after** the deployment.
 
-After the upgrade succeeded and it's definitive that you won't need to roll back (a few days), it's best to migrate all data to the new structure. To do that you can execute the command below.
-**Please make sure you have a few gigabytes of storage available in postgres before executing that command. It will rewrite all metadata probably takes a while.**
-
-But after executing that script, the `document_metadata` table will get truncated and clean up storage.
-We've tested the script against a database with 4'300'000 revision entries and it took ~7 minutes.
+After the upgrade succeeded and it's definitive that you won't need to roll back (a few days), it's best to migrate all data to the new structure. To do that you can execute the command below. **Please make sure you have a few gigabytes of storage available in postgres before executing that command. It will rewrite all metadata probably takes a while.** We've tested the script against a database with 4'300'000 revision entries and it took ~7 minutes. After executing that script, the `document_metadata` table will get truncated and clean up storage.
 
 ```sh
 node db/manual-migrations/011-move-metadata.js 
