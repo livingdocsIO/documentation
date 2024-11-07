@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Do not open floating panel when focusing/bluring components](https://github.com/livingdocsIO/livingdocs-editor/pull/9205)
 * [Fix teaser transform rules](https://github.com/livingdocsIO/livingdocs-editor/pull/9200)
 * [Fix clipboard reactivity](https://github.com/livingdocsIO/livingdocs-editor/pull/9209)
 * [Expand comments when clicking into commented text](https://github.com/livingdocsIO/livingdocs-editor/pull/9204)
