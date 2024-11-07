@@ -576,6 +576,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.14): fix(clipboard): keep clipboard visibility synced using watch
 - [v111.1.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.13): fix(multilist): Restore original scrolling behaviour and height
 - [v111.1.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.12): fix: Set li-canvas min-height
 - [v111.1.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.11): fix(li-task-item): use correct spacing for status icon when compact
