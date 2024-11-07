@@ -978,18 +978,43 @@ mediaLibrary.altTextPrefilling: [
 Provide a metadata property handle from which the `alt` attribute on an image tag is filled. This value will also be stored within the document content using the `altText` property on the directive content. To limit the prefilling to a subset of components you can optionally provide an array of component names using the `onlyOnComponents` property. Providing multiple objects within the array will allow you to have fallbacks when the metadata property has no value, or to specify different properties for different components.
 
 #### Component Directives Prefilling
+There are two ways to prefill component directives with Media Library Entry Metadata. You can either use a template string or directly reference a metadata property. With the template string, you can use metadata properties as placeholders. If a value is invalid or not present, it will continue with the next prefilling, thus acting as a fallback. Below an example with a template string and a direct metadata property reference:
+
 ```js
 mediaLibrary.componentDirectivesPrefilling: [
+  {
+    type: 'template',
+    template: '{{ metadata.photographer }} / {{ metadata.credit }} ©️',
+    directiveName: 'source'
+  },
+  {
+    type: 'template',
+    template: '{{ metadata.photographer }} ©️', // Fallback if credit is not set
+    directiveName: 'source'
+  },
+  {
+    type: 'template',
+    template: '{{ metadata.credit }} ©️', // Fallback if photographer is not set
+    directiveName: 'source'
+  },
   {
     metadataPropertyName: 'source',
     directiveName: 'image.source' // Component prefix
   },
   {
-    metadataPropertyName: 'caption',
+    metadataPropertyName: 'description',
     directiveName: 'caption' // Applies to all components with a caption directive
   }
 ]
 ```
+
+In this example, both entries have the same behavior, with template and metadata property reference.
+
+```js
+mediaLibrary.componentDirectivesPrefilling: [
+s
+```
+
 An array of mappings to prefill `doc-editable` directives with Media Library Entry Metadata. The metadata value must be a string. The directive name can be prefixed with a component name to limit where the prefill will be used, for example "image.source". To limit the prefilling to multiple components you will need to add multiple objects to the array.
 
 ## Document Lists
