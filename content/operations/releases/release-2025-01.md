@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Avoid language label to overlap title](https://github.com/livingdocsIO/livingdocs-editor/pull/9213)
 * [Add link and urgent colour to task label](https://github.com/livingdocsIO/livingdocs-editor/pull/9193)
 * [Fix positioning of side panels next to ticker panel](https://github.com/livingdocsIO/livingdocs-editor/pull/9225)
 * [Do not include empty strings in li-estimated-time-of-completion payload to prevent server schema errors](https://github.com/livingdocsIO/livingdocs-editor/pull/9219)
