@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix positioning of side panels next to ticker panel](https://github.com/livingdocsIO/livingdocs-editor/pull/9225)
 * [Do not include empty strings in li-estimated-time-of-completion payload to prevent server schema errors](https://github.com/livingdocsIO/livingdocs-editor/pull/9219)
 * [Hide display filters on media board with external sources](https://github.com/livingdocsIO/livingdocs-editor/pull/9220)
 * [Only show print copies in document info panel when configured](https://github.com/livingdocsIO/livingdocs-editor/pull/9215)
