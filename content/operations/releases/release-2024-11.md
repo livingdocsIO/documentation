@@ -576,6 +576,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.17): fix: hide display filters on media board with external sources
 - [v111.1.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.16): fix(info-panel): Only show print copies list when configured
 - [v111.1.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.15): fix(li-taser): only allow to transform into teasers allowed in container
 - [v111.1.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.14): fix(clipboard): keep clipboard visibility synced using watch
