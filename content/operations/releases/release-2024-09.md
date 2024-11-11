@@ -449,6 +449,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v257.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.19): fix(desknet): Unlink Kordiam publication if the story gets deleted
 - [v257.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.18): fix(designs): Fix error when server config designs is not set
 - [v257.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.17): fix(document-inbox): Send to inbox with update permission
 - [v257.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.16): fix(breaking-changes): Add type to release-2024-09 breaking change
