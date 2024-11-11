@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix metadata teaser preview include rendering](https://github.com/livingdocsIO/livingdocs-editor/pull/9226)
 * [Hide incoming links from ticker entries in document info panel](https://github.com/livingdocsIO/livingdocs-editor/pull/9218)
 * [fix(deps): update dependency sass from 1.79.6 to v1.80.6 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9118)
 * [Add li-tasks-v2 metadata filter for assignees](https://github.com/livingdocsIO/livingdocs-editor/pull/9187)
