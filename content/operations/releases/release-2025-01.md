@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Planning Boards: fix date format](https://github.com/livingdocsIO/livingdocs-editor/pull/9237)
 * [Unlink Kordiam publication if the story gets deleted](https://github.com/livingdocsIO/livingdocs-server/pull/7457)
 * [Fix undo/redo while ticker is open](https://github.com/livingdocsIO/livingdocs-editor/pull/9233)
 * [Fix error when server config designs is not set](https://github.com/livingdocsIO/livingdocs-server/pull/7458)
