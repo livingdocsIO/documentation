@@ -587,6 +587,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v261.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.10): fix(deps): update dependency @livingdocs/framework from 31.0.1 to v31.0.2
 - [v261.3.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.9): fix(kordiam): Unlink Kordiam publication if the story gets deleted
 - [v261.3.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.8): fix(designs): Fix error when server config designs is not set
 - [v261.3.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.7): fix(kordiam): Restore support for forceLinkUsingDesknetApiRequest setting
