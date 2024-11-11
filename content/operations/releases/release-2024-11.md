@@ -578,6 +578,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.22): fix(history): Overfetch revisions by one to check if more are available to load
 - [v111.1.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.21): fix(li-toolbar): avoid language label to overlap title
 - [v111.1.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.20): chore(tasks): Normalise task screen config within projectBehavior
 - [v111.1.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.19): fix(metadata): Do not include empty strings in etc payload
