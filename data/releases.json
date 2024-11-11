@@ -54,7 +54,7 @@
         "upcoming": false,
         "current": false,
         "maintained": false,
-        "legacy": false,
+        "legacy": true,
         "sortId": 43,
         "editorVersion": "v110.13.82",
         "serverVersion": "v251.8.43"

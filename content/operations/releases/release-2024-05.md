@@ -12,7 +12,7 @@ aliases:
 {{< release-header
   title="May 2024 Release"
   upcoming=false
-  legacy=false
+  legacy=true
   current=false
   maintained=false
   branchHandle="release-2024-05"
