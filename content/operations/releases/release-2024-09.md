@@ -468,6 +468,7 @@ Here is a list of all patches after the release has been announced.
 - [v257.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.1): fix(events): Delete unused event related to LIBREAKING035
 
 ### Livingdocs Editor Patches
+- [v110.34.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.44): fix: hide display filters on media board with external sources
 - [v110.34.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.43): fix(metadata): Do not include empty strings in etc payload
 - [v110.34.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.42): fix: Revert connecting local clipboard state to canvas clipboard state
 - [v110.34.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.41): fix(multiselect): add missing translations
