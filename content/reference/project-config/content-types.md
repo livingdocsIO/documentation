@@ -97,6 +97,11 @@ contentTypes: [
       }
     ],
 
+    // Overwrites config in `settings`
+    videoSourcePolicy: [
+      {provider: 'upload', enabled: true}
+    ],
+
     // Configuration for the Editor behaviour
     editor: {
       ui: {
