@@ -18,6 +18,7 @@ The editor settings control the behavior of your editor UX, in particular:
 - [User menu]({{< ref "editor-settings#user-menu" >}})
 - [Main navigation]({{< ref "editor-settings#main-navigation" >}})
 - [Dashboards]({{< ref "editor-settings#dashboards" >}})
+- [Task Screens]({{< ref "editor-settings#task-screens" >}})
 - [Start page]({{< ref "editor-settings#startpage" >}})
 - [Document Creation Flows]({{< ref "editor-settings#document-creation-flows" >}})
 - [Document Copy Flows]({{< ref "editor-settings#document-copy-flows" >}})
@@ -55,6 +56,12 @@ editorSettings: {
       label: 'Authors',
       dashboard: 'authors-dashboard',
       icon: 'account'
+    },
+    { // custom task screen
+      handle: 'review',
+      label: 'Review',
+      taskScreen: 'review',
+      icon: 'clipboard-check'
     },
     { // custom task dashboard
       handle: 'proofreading',
@@ -95,7 +102,7 @@ editorSettings: {
     {
       handle: 'workflow',
       label: 'Workflow',
-      items: ['proofreading'] // Using the handle of the custom mainNavigation menu item
+      items: ['review', 'proofreading'] // Using the handles of custom mainNavigation menu items
     },
     {
       handle: 'content-management',
@@ -170,6 +177,18 @@ editorSettings: {
           }
         ]
       }
+    }
+  ],
+  taskScreens: [
+    {
+      handle: 'proofreading',
+      pageTitle: 'Proofreading',
+      task: 'proofreading',
+      baseFilters: [{key: 'contentType', term: 'regular'}],
+      displayFilters: ['timeRange', {metadataPropertyName: 'proofreading'}],
+      // columns: [], // Used to replace the default columns
+      additionalMetadataProperties: ['effort', 'importance'],
+      search: {}
     }
   ],
   // The startPage config has no effect if a home screen is configured in the same project.
@@ -303,6 +322,19 @@ To link to custom dashboards you can provide the handle of your [custom dashboar
 
 The shorthand `liItem: 'proofreading'` can be used to point to a dashboard named `kanban-proofreading`.
 
+### Custom Task Screen
+
+To link to custom task screens you can provide the handle of your [custom task screen](#task-screens) in the `taskScreen` property:
+
+```js
+{
+  handle: 'proofreading',
+  taskScreen: 'proofreading',
+  label: 'Proofreading',
+  icon: 'clipboard-check'
+}
+```
+
 ### External Link
 
 To link to an external page you should set the `href` property:
@@ -384,7 +416,7 @@ For releases prior to {{< release "release-2022-03" >}} you should specify a `gr
 
 The `dashboards` entry allows you to configure custom dashboards, e.g. for authors (data-records) or proofreading (tasks).
 
-There are 3 `types` of custom dashboards (`type` property):
+There are 4 `types` of custom dashboards (`type` property):
 - `dashboard`
 - `kanbanBoard`
 - `taskBoard` (predefined `kanbanBoard` for a task)
@@ -721,6 +753,27 @@ columns: [
 
 Custom components of type [tableDashboardCell]({{< ref "/customising/advanced/editor/vue-component-registry#tabledashboardcell" >}})
 can be used to render custom content inside a table cell.
+
+## Task Screens
+
+The configuration of task screens is similar to that of table dashboards. The screen configs use many of the same properties, but they have a required `task` property which should reference an [li-task-v2]({{< ref "/reference/document/metadata/plugins/li-task-v2" >}}) metadata property handle. There is also an `additionalMetadataProperties` property which accepts an array of metadata handles. This will add columns after the default columns, which can be used as a simple way to extend what is displayed on the screen without having to define the whole columns array.
+
+### Example
+
+```js
+taskScreens: [
+  {
+    handle: 'proofreading',
+    pageTitle: 'Proofreading',
+    task: 'proofreading',
+    baseFilters: [{key: 'contentType', term: 'regular'}],
+    displayFilters: ['timeRange', {metadataPropertyName: 'proofreading'}],
+    // columns: [], // Used to replace the default columns
+    additionalMetadataProperties: ['effort', 'importance'], // Used to extend the default columns
+    search: {}
+  }
+]
+```
 
 ## startPage
 

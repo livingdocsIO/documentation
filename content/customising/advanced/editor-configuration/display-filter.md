@@ -86,20 +86,23 @@ All metadata properties in your `Content Type`|`Media Type` config can be used a
 - [`li-integer`]({{< ref "/reference/document/metadata/plugins/li-integer">}})
 - [`li-category`]({{< ref "/reference/document/metadata/plugins/li-category">}})
 - [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference">}}) {{< added-in "release-2023-09" >}}
-  - only supported for `minimal` style
-  - shows a max of 1000 filter options
+  - Only supported for `minimal` style
+  - Shows a max of 1000 filter options
 - [`li-document-references`]({{< ref "/reference/document/metadata/plugins/li-document-references">}}) {{< added-in "release-2023-09" >}}
-  - only supported for `minimal` style
-  - shows a max of 1000 filter options
+  - Only supported for `minimal` style
+  - Shows a max of 1000 filter options
 - [`li-enum`]({{< ref "/reference/document/metadata/plugins/li-enum">}}) {{< added-in "release-2023-09" >}}
-  - shows a max of 1000 filter options
+  - Shows a max of 1000 filter options
 - [`li-text`]({{< ref "/reference/document/metadata/plugins/li-text">}}) {{< added-in "release-2023-09" >}}
-  - only supported if plugin has a `dataProvider`
-  - shows a max of 1000 filter options
+  - Only supported if plugin has a `dataProvider`
+  - Shows a max of 1000 filter options
 - [`li-string-list`]({{< ref "/reference/document/metadata/plugins/li-string-list">}}) {{< added-in "release-2023-09" >}}
-  - shows a max of 1000 filter options
+  - Shows a max of 1000 filter options
 - [`li-imatrics-nlp-tags`]({{< ref "/reference/document/metadata/plugins/li-imatrics-nlp-tags">}}) {{< added-in "release-2024-05" >}}
 - [`li-retresco`]({{< ref "/reference/document/metadata/plugins/li-retresco">}}) {{< added-in "release-2024-05" >}}
   - To enable the Retresco display filter, modifications on your Retresco TMS instance might be necessary. For more details, please contact your Livingdocs Customer Solutions representative.
+- [`li-task-v2`]({{< ref "/reference/document/metadata/plugins/li-task-v2">}}) {{< added-in "release-2024-11" >}}
+  - Provides a way to filter by task assignee
+  - Only supported if `config.assignUsers` is `true`
 
 A Metadata field is active as soon as you have set `config: { index: true }` for a [Metadata property]({{< ref "/reference/document/metadata/#configuration" >}}) and after reindexing all documents with `npx livingdocs-server elasticsearch-index --handle=li-documents -y`.
