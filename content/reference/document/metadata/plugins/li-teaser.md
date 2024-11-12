@@ -5,6 +5,7 @@ menus:
   reference:
     parent: Metadata Plugins List
 summary: Versatile document teaser management with support for direct, curated, and algorithm-based references.
+addedIn: release-2024-11
 support:
   document: false
   media: false
@@ -37,7 +38,6 @@ storageFormat: |
     })
   })
 ---
-{{< added-in "release-2024-11" block >}}
 
 ## About implementing page management
 This plugin offers a flexible and powerful page management approach, by covering many of the technical necessities out of the box, such as document preloading and deduplication.
@@ -74,30 +74,71 @@ The `li-teaser` plugin offers three levels of document selection for teasers:
 Each level can be enabled or restricted in the configuration schema, as shown in the example below.
 
 ```js
-{
-  handle: 'article',
-  type: 'li-teaser',
-  config: {
-    directReference: {
-      contentType: 'article',
-      useDashboard: 'articlesSimple'
-    },
-    curatedList: {
-      contentType: 'curatedList',
-      useDashboard: 'curatedLists'
-    },
-    algorithm: {
-      contentType: 'article',
-      displayFilters: [
-        { metadataPropertyName: 'ressorts' },
-        {
-          filterName: 'liDateTimeRange',
-          config: {
-            documentPropertyName: 'lastPublicationDate',
-            label: { 'en': 'Publication Date', 'de': 'Publikationsdatum' }
+'use strict'
+
+module.exports = function () {
+  return {
+    name: 'textTeaserService',
+    paramsSchema: [
+      {
+        handle: 'teaser',
+        type: 'li-teaser',
+        config: {
+          // Optional, enables level 1 and defines what is selectable by users 
+          directReference: {
+            useDashboard: 'articlesSimple', // Optional, for selection dialog and for column config of selected document
+            contentType: 'article', // Optional, shorthand base filter (string or array)
+            published: true, // Optional, defaults to true
+            baseFilters: [], // Optional, overrides base filters in selection dialog
+            displayFilters: [] // Optional, overrides display filters in selection dialog
+          },
+          // Optional, enables level 2 and defines what is selectable by users
+          curatedList: {
+            useDashboard: 'curatedLists', // For selection dialog
+            contentType: 'curatedList', // Optional, shorthand base filter
+            baseFilters: [], // Optional, overrides base filters in selection dialog
+            displayFilters: [] // Optional, overrides display filters in selection dialog
+          },
+          // Optional, enables and configures level 3
+          algorithm: {
+            contentType: 'article', // Optional, shorthand base filter (string or array)
+            baseFilters: [], // Optional, filters need to conform with publication search!
+            sort: 'lastPublicationDate' // Optional, sorting needs to conform with publication search!
+            displayFilters: [ // Optional, selectable by user, filters need to conform with publication search!
+              { metadataPropertyName: 'ressorts' },
+              {
+                filterName: 'liDateTimeRange',
+                config: {
+                  documentPropertyName: 'lastPublicationDate',
+                  label: { 'en': 'Publication Date', 'de': 'Publikationsdatum' }
+                }
+              }
+            ]
           }
         }
-      ]
+      }
+    ],
+    rendering: {
+      type: 'function',
+      render (params) {
+        // The preloaded document is resolved as value of li-teaser handle.
+        // It can be originated from any of the configured levels.
+        const document = params.teaser?.value
+        const content = document
+          ? [{
+            id: `textTeaser-${document.systemdata.documentId}`,
+            component: 'textTeaser',
+            content: {
+              title: document.metadata.title
+            }
+          }]
+          : [] // make sure not to fail if no document was resolved
+
+        return {
+          content,
+          editableContent: true // has no effect if a level 2 or 3 document was resolved
+        }
+      }
     }
   }
 }
