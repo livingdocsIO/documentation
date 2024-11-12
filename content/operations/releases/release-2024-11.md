@@ -168,9 +168,14 @@ The Menu Tool is deprecated and will be removed in release-2025-05. Please migra
 
 ## Features
 
-{{< feature-info "Page management" "server" >}}
+{{< feature-info "Page management" "server/editor" >}}
 ###  Teaser Components :gift:
 
+The new [`li-teaser` plugin]({{< ref "/reference/document/metadata/plugins/li-teaser" >}}) for includes facilitates flexible page management by allowing users to establish rule based links from teasers to documents. Teasers can be configured to use direct references, curated lists, or algorithm-driven selections, supporting a mix of static and dynamic teasers.
+
+This plugin already covers many of the technical necessities out of the box, such as document preloading and deduplication.
+
+Since page management is a complex topic, we encourage you to get in touch with us, so we can figure out how your use case fits into frame and which migration paths exist.
 
 {{< feature-info "Content Management" "server" >}}
 ### Print Copy :gift:
