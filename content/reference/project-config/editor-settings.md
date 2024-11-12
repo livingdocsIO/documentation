@@ -872,12 +872,51 @@ liServer.registerCopyFunction({
 })
 ```
 
+## Document Print Flows
+
+{{< added-in "release-2024-11" block >}}
+
+Document Print Flows provide a flexible way to create print copies of web documents. They are similar to Document Copy Flows, but they have a different UI based on a 1:1 relationship between a print and web document.
+
+```js
+// projectConfig.editorSettings
+documentPrintFlows: [
+  {
+    handle: 'regularToPrint',
+    // register a printFunction with liServer.registerPrintFunction()
+    printFunction: 'webToPrintFunction',
+    direction: 'web-to-print',
+    printButtonLabel: {en: 'Make Short Format Print Version', de: 'Kurzformatigen Druckartikel Erstellen'},
+    printDescription: 'Only text will be copied, and only some contextual metadata will be cleared',
+    printIcon: 'format-align-justify',
+
+    // additional info for your copyFunction
+    context: {}
+  }
+]
+```
+
+```js
+liServer.registerPrintFunction({
+  handle: 'webToPrintFunction',
+  copy ({projectConfig, document, userId, context}) {
+    return  {
+      title: `Print version of: ${document.title}`,
+      contentType: 'print',
+      content: filterComponents(document.content, allowedComponents),
+      metadata: filterMetadata(document.metadata.toJSON(), allowedMetadata)
+    }
+  }
+})
+```
+
 ## Document Transform Flows
+
 {{< added-in "release-2024-09" block >}}
 
 Document transform flows allow you to transform a document to either the same content type or a different one.
 
-Documents can only be transformed to a different content type of the document was never published before.
+Documents can only be transformed to a different content type if the document was never published before.
 
 Note: This feature is separate from the declarative transform feature and is designed with different mechanics. The older declarative transform feature will be deprecated and removed in future versions.
 

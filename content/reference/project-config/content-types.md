@@ -155,6 +155,13 @@ contentTypes: [
       {useDocumentCopyFlow: 'toGallery'}
     ],
 
+    // Enable document print flows for this content type
+    // useDocumentPrintFlow references a document print flow
+    // in {{< a href="/reference/project-config/editor-settings#document-print-flows" title="projectConfig.editorSettings.documentPrintFlows">}}
+    documentPrintFlows: [
+      {useDocumentPrintFlow: 'regularToPrint'}
+    ],
+
     // Enable document transform flows for this content type
     // useDocumentTransformFlow references a document transform flow
     // in {{< a href="/reference/project-config/editor-settings#document-transform-flows" title="projectConfig.editorSettings.documentTransformFlows">}}

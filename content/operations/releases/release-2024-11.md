@@ -191,8 +191,9 @@ The Menu Tool is deprecated and will be removed in release-2025-05. Please migra
 
 
 {{< feature-info "Content Management" "server" >}}
-### Print Copy :gift:
+### Document Print Flows :gift:
 
+Document Print Flows provide a flexible way to create print copies of web documents. They are configured in a similar way to Document Copy Flows, with the server functions handling most of the logic. The main difference is that there is a 1:1 relationship between a print and web document, and they use a different UI to initiate the copy. There are also additional indicators within the UI to show the status of the linked document. For help with configuring the Document Print Flows feature please see the [guide]({{< ref "/guides/editor/document-print-flows" >}}).
 
 {{< feature-info "Task Management" "editor" >}}
 ### Task Screens :gift:
