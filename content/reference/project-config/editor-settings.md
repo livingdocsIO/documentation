@@ -717,6 +717,27 @@ columns: [
 ]
 ```
 
+##### liTableDashboardCellPrint
+
+{{< added-in "release-2024-11" block >}}
+
+The `liTableDashboardCellPrint` cell provides a quick overview of the state of print versions of web articles. The cell shows the print icon when a print copy exists, and clicking on it will open the print document. It also uses a small dot to indicate that the web version has changed since the print copy was created. [Document Print Flows]({{< ref "guides/editor/document-print-flows" >}}) must be configured to use this cell.
+
+{{< img src="images/table-dashboard-cell-print.png" alt="liTableDashboardCellPrint upstream component" >}}
+
+```js
+columns: [
+  ...,
+  {
+    label: {en: 'Print', de: 'Druck'},
+    minWidth: 50,
+    growFactor: 0,
+    priority: 2,
+    componentName: 'liTableDashboardCellPrint'
+  }
+]
+```
+
 #### Custom components
 
 Custom components of type [tableDashboardCell]({{< ref "/customising/advanced/editor/vue-component-registry#tabledashboardcell" >}})
