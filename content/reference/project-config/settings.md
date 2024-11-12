@@ -264,6 +264,11 @@ settings: {
     }
   ],
 
+  // This setting can be overwritten in the `contentType` config
+  videoSourcePolicy: [
+    {provider: 'upload', enabled: false}
+  ],
+
   // setup the push notification feature if applicable
   // for this to work you also must:
   // 1. configure firebase in the server-wide `pushNotifications` configuration
