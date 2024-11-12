@@ -198,6 +198,51 @@ Document Print Flows provide a flexible way to create print copies of web docume
 {{< feature-info "Task Management" "editor" >}}
 ### Task Screens :gift:
 
+To be able to better support task workflows, especially proofreading flows, we introduce a new way of displaying tasks on the basis of table dashboards. The most relevant information are emphasised and shown in an easy-to-grasp, clean way. By moving away from the task state lanes, we gain more space and make the most important tasks easier accessible.
+
+The configuration of task screens is similar to that of table dashboards, but the task screen configs are defined within `projectConfig.editorSettings.taskScreens`. The screen configs use many of the same properties, but they have a required `task` property which should reference an [li-task-v2]({{< ref "/reference/document/metadata/plugins/li-task-v2" >}}) metadata property handle. There is also an `additionalMetadataProperties` property which accepts an array of metadata handles. This will add columns after the default columns, which can be used as a simple way to extend what is displayed on the screen without having to define the whole columns array.
+
+```js
+{
+  editorSettings: {
+    taskScreens: [
+      {
+        handle: 'proofreading',
+        pageTitle: 'Proofreading',
+        task: 'proofreading',
+        baseFilters: [{key: 'contentType', term: 'regular'}],
+        displayFilters: ['timeRange', {metadataPropertyName: 'proofreading'}],
+        // columns: [], // Used to replace the default columns
+        additionalMetadataProperties: ['effort', 'importance'],
+        search: {}
+      }
+    ]
+  }
+}
+```
+
+There is also a new [li-task-v2 display filter]({{< ref "/customising/advanced/editor-configuration/display-filter" >}}) which can be configured anywhere that document display filters are supported, including for task screens:
+```js
+displayFilters: [
+  {metadataPropertyName: 'proofreading'}
+]
+```
+
+Also, to add a link to a task screen in the [main navigation]({{< ref "/reference/project-config/editor-settings#custom-task-screen" >}}) you can use the new `taskScreen` property in a custom main navigation item:
+```js
+{
+  editorSettings: {
+    mainNavigation: [
+      {
+        handle: 'proofreading',
+        taskScreen: 'proofreading',
+        label: 'Proofreading',
+        icon: 'clipboard-check'
+      }
+    ]
+  }
+}
+```
 
 {{< feature-info "Metadata" "editor" >}}
 ### Task Modes :gift:
