@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Account for fixed dynamic header height when positioning conditions flyout](https://github.com/livingdocsIO/livingdocs-editor/pull/9259)
 * [Only remove dashboard item if deletion succeeded](https://github.com/livingdocsIO/livingdocs-editor/pull/9235)
 * [chore(deps): update dependency eslint from 9.13.0 to v9.14.0 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9249)
 * [fix(deps): update dependency human-format from 1.2.0 to v1.2.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9246)
