@@ -470,6 +470,7 @@ Here is a list of all patches after the release has been announced.
 - [v257.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.1): fix(events): Delete unused event related to LIBREAKING035
 
 ### Livingdocs Editor Patches
+- [v110.34.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.47): fix(li-toolbar): avoid language label to overlap title
 - [v110.34.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.46): fix(dashboard): Handle errors that occur after successful document deletion
 - [v110.34.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.45): fix(info-panel): Hide incoming links from ticker entries
 - [v110.34.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.44): fix: hide display filters on media board with external sources
