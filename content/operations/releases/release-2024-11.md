@@ -650,6 +650,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.29): fix(side-panels): Translate side panel titles
 - [v111.1.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.28): fix(conditions): Account for fixed dynamic header height when positioning conditions flyout
 - [v111.1.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.27): fix(dashboard): Handle errors that occur after successful document deletion
 - [v111.1.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.26): fix(teaser-preview): Fix include rendering
