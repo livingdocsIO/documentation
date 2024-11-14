@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Component conditions UI fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/9258)
 * [Require contentType in print flow function result](https://github.com/livingdocsIO/livingdocs-server/pull/7468)
 * [Account for fixed dynamic header height when positioning conditions flyout](https://github.com/livingdocsIO/livingdocs-editor/pull/9259)
 * [Only remove dashboard item if deletion succeeded](https://github.com/livingdocsIO/livingdocs-editor/pull/9235)
