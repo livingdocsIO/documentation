@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Disable automatic translations in Google Chrome](https://github.com/livingdocsIO/livingdocs-editor/pull/9270)
 * [Migrate dependency ua-parser-js to my-ua-parser](https://github.com/livingdocsIO/livingdocs-server/pull/7485)
 * [chore(deps): update dependency eslint from 9.14.0 to v9.15.0 (master)](https://github.com/livingdocsIO/livingdocs-server/pull/7479)
 * [fix(deps): update dependency @livingdocs/framework from 31.1.0 to v31.1.1 (master)](https://github.com/livingdocsIO/livingdocs-editor/pull/9268)
