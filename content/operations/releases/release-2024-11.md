@@ -651,6 +651,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.33): fix(npm): Remove devDependencies from package.json and npm-shrinkwrap.json before publishing the package
 - [v111.1.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.32): fix: Regenerate package-lock.json as there were install errors with fsevents
 - [v111.1.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.31): fix(chrome): Disable automatic translations of the editor UI and content within the document
 - [v111.1.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.30): fix(deps): update dependency @livingdocs/framework from 31.0.1 to v31.0.3
