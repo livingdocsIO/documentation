@@ -638,6 +638,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v261.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.13): chore(notifications): Remove an unnecessary uncached project config request when sending notifications
 - [v261.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.12): chore: Regenerate package-lock.json as there were install errors with fsevents
 - [v261.3.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.11): fix(print-flows): Require contentType in print function result
 - [v261.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.10): fix(deps): update dependency @livingdocs/framework from 31.0.1 to v31.0.2
