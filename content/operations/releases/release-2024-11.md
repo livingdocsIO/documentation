@@ -652,6 +652,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.35): fix(floating panel): Position
 - [v111.1.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.34): chore(tasks): Use normalised task screen config for task board
 - [v111.1.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.33): fix(npm): Remove devDependencies from package.json and npm-shrinkwrap.json before publishing the package
 - [v111.1.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.32): fix: Regenerate package-lock.json as there were install errors with fsevents
