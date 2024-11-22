@@ -470,6 +470,7 @@ Here is a list of all patches after the release has been announced.
 - [v257.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.1): fix(events): Delete unused event related to LIBREAKING035
 
 ### Livingdocs Editor Patches
+- [v110.34.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.51): fix(editor): Keep search in memory in document dashboard side panel
 - [v110.34.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.50): fix(chrome): Disable automatic translations of the editor UI and content within the document
 - [v110.34.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.49): fix(deps): update dependency @livingdocs/framework from 29.5.9 to v29.5.10
 - [v110.34.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.48): fix(side-panels): Translate side panel titles
