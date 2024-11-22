@@ -418,6 +418,7 @@ Here is a list of all patches after the release has been announced.
 - [v254.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.9): fix(release-2024-07): Update framework to v29.4.9 (release-2024-07 tag)
 
 ### Livingdocs Editor Patches
+- [v110.21.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.69): fix(li-meta-tree): allow publications when `config.document.published` is `false`
 - [v110.21.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.68): fix(side-panels): Translate side panel titles
 - [v110.21.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.67): fix(deps): update dependency @livingdocs/framework from 29.4.12 to v29.4.13
 - [v110.21.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.21.66): fix(dashboard): Handle errors that occur after successful document deletion
