@@ -23,7 +23,7 @@ description: |
   The plugin `li-tree` lets you set up a tree with items of the 4 possible types `group`, `link`, `document`, `multilang`.
 
   * group -> a structural item without a link, just a label
-  * link -> link to an external URL
+  * link -> link to an URL, path or anchor
   * document -> link to another Livingdocs document
   * multilang -> a special kind of item that holds links or documents with a label per language
 defaultUI: The main view lets you structure the menu. The detail let's you edit one menu entry.
@@ -146,8 +146,15 @@ additionalConfig: |
   If multi-language is enabled for `li-tree` and the Display Filters for the document selection dialog are specifying a language filter,
   the dashboard will automatically preselect the correct language filter for an item. Users can still change the language filter setting.
 
-  ### Anchor Links
+  ### Relative path and anchor hash
+  
+  To enable links that are relative paths (e.g. "/departments/technology") or anchor hashes (e.g. #more-on-this), turn on editor environment config `links.allowRelativeUrls` or `links.allowAnchorLinks`, but
+  note that this is also enables the behavior for [inline-links]({{< ref "../../../../customising/advanced/editor-configuration/text-editing#options" >}}) within document content.
+  
+  
 
-  To enable anchor linking (link to a section within a document), [configure editable directives]({{< ref "../../../document/document-design/directives/editable#other" >}}) in design settings.
+  ### Anchor Links (links to a section within a document)
+
+  To enable anchor linking, [configure editable directives]({{< ref "../../../document/document-design/directives/editable#other" >}}) in design settings.
 
 ---
