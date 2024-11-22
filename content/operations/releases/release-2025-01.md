@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 31.1.3 to v32 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9299)
 * [Keep search in memory in document dashboard side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/9295)
 * [fix(deps): update dependency @elastic/elasticsearch from 8.16.1 to v8.16.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7503)
 * [fix(floating panel): Position](https://github.com/livingdocsIO/livingdocs-editor/pull/9296)
