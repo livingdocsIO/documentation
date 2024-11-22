@@ -406,10 +406,13 @@ Exclude individual directives from the text counter (example component config):
 
 
 #### Options
+To enable links that are relative paths (e.g. "/departments/technology") or anchor hashes (e.g. #more-on-this), turn on editor environment config `links.allowRelativeUrls` or `links.allowAnchorLinks`.
+
 If you set the internal hosts as regex, you can define default behavior for internal and external links.
 
 If you configure `deliveries` in your [Project Config]({{< ref "/reference/project-config/deliveries.md" >}}) links to these deliveries will be treated as internal links as well and you don't need to define the `internalHostsRegex`.
 ```js
+// in editor environment config
 {
   links:{
     allowRelativeUrls: false,
