@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Be more specific when excluding ticker links in the document info panel](https://github.com/livingdocsIO/livingdocs-editor/pull/9294)
 * [fix(deps): update dependency openid-client from 5.7.0 to v5.7.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7505)
 * [Bugfix related to `li-tree`](https://github.com/livingdocsIO/livingdocs-editor/pull/9303)
 * [fix(deps): update dependency @livingdocs/framework from 31.1.3 to v32 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9299)
