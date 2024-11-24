@@ -652,6 +652,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.38): fix(info-panel): Be more specific when excluding ticker links
 - [v111.1.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.37): fix(li-meta-tree): allow publications when `config.document.published` is `false`
 - [v111.1.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.36): fix(editor): Keep search in memory in document dashboard side panel
 - [v111.1.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.35): fix(floating panel): Position
