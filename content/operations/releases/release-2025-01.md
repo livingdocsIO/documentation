@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @azure/storage-blob from 12.25.0 to v12.26.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7502)
 * [Correctly handle http server listen errors](https://github.com/livingdocsIO/livingdocs-server/pull/7506)
 * [Do not throw an error on the project config screen when kordiam is enabled](https://github.com/livingdocsIO/livingdocs-editor/pull/9312)
 * [Be more specific when excluding ticker links in the document info panel](https://github.com/livingdocsIO/livingdocs-editor/pull/9294)
