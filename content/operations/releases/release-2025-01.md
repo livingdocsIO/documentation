@@ -131,8 +131,8 @@ To learn about the necessary actions to update Livingdocs to `release-2025-01`, 
 
 | Name                           | Version                                                                                  |
 | ------------------------------ | ---------------------------------------------------------------------------------------- |
-| Node                           | 18                                                                                       |
-| NPM                            | 9                                                                                        |
+| Node                           | 20.18                                                                                       |
+| NPM                            | 10                                                                                        |
 | Postgres                       | 13                                                                                       |
 | Elasticsearch<br/>OpenSearch   | 7.x<br/>1                                                                                |
 | Redis                          | 6.2                                                                                      |
@@ -153,6 +153,15 @@ livingdocs-server migrate up
 ```
 
 TODO: check migration
+
+### Drop support for Node.js 18 :fire:
+- 🔥 Drop Node.js `v18`. Only Node.js `v20.18` and newer are supported.
+
+How to migrate your project to Node.js 22:
+- Change the content of the `.nvmrc` in your project root to `22`
+- Change the `engines.node` declaration in the `package.json` to `>=22`
+- Change the `Dockerfile` of the server to `livingdocs/server-base:22`
+- Change the `Dockerfile` of the editor to `livingdocs/editor-base:22`
 
 ## Deprecations
 
