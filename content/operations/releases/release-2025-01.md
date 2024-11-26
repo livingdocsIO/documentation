@@ -165,6 +165,60 @@ How to migrate your project to Node.js 22:
 
 ## Deprecations
 
+### Sass `@import` declarations are deprecated
+
+In the Livingdocs editor, it is possible to declare an additional stylesheet. This can be done using an environment variable, such as:
+
+```
+CUSTOM_STYLE_PATH_AFTER=./path/to/custom.scss
+```
+
+When this variable is set, the editor uses the specified custom Sass/CSS file.
+
+If your project defines such a custom stylesheet, you are likely using `@import` declarations within it. However, a recent Sass update has deprecated the `@import` syntax. To prevent warnings and ensure compatibility, these `@import` statements need to be migrated.
+
+##### Migration Guide
+
+Follow these guidelines to migrate your `@import` statements:
+
+1. **For files exposing variables, replace `@import` with `@use`:**
+
+   ```scss
+   @use "~styles/settings/defaults";
+
+   .custom-style {
+     // Use variables from the imported file, prefixed by the file name
+     z-index: defaults.$z-index-modal;
+   }
+   ```
+
+   This replaces the previous approach:
+
+   ```scss
+   @import "~styles/settings/defaults";
+
+   .custom-style {
+     z-index: $z-index-modal;
+   }
+   ```
+
+   **Note:** The `@use` directive automatically namespaces variables with the file name (e.g., `defaults.$variableName`), which helps avoid naming conflicts.
+
+2. **For other cases, replace `@import` with `@forward`:**
+
+   ```scss
+   @forward "~styles/settings/defaults";
+   ```
+
+   Use `@forward` to re-export the contents of a file without directly consuming them in the current file.
+
+##### Why This Change?
+
+The Sass team deprecated `@import` because it does not enforce proper scoping, leading to potential variable and mixin conflicts in larger projects. The new directives `@use` and `@forward` are designed to ensure better modularity and maintainability in your stylesheets.
+
+For more details, refer to the [Sass official documentation on deprecating `@import`](https://sass-lang.com/documentation/at-rules/import).
+
+
 ## Features
 
 TODO (featureset not 100% defined yet)
