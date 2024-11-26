@@ -76,6 +76,8 @@ node db/manual-migrations/011-move-revision-metadata.js
 After executing this script, the `document_metadata` table will get truncated and clean up storage.
 We've tested the script against a database with 4'300'000 revision entries and it took ~7 minutes.
 
+There's no need to reindex Elasticsearch, as there are no structural changes.
+
 ### Rollback
 
 Only rollback if you have a critical issue with the release in question. Usually forward patching is the better option.
