@@ -15,4 +15,4 @@ Filters on a dashboard are highly customisable in Livingdocs.
 - One can define `baseFilters` that are invisible and always applied per dashboard
 - One can use [Core DisplayFilter]({{< ref "/customising/advanced/editor-configuration/display-filter.md" >}}) or [Custom DisplayFilter]({{< ref "/guides/editor/custom-dashboard-filters" >}}).
 
-See the [Table Dashboard configuration]({{< ref "/reference/project-config/editor-settings/#displayfilters" >}}) documentation for more details.
+See the [Table Dashboard configuration]({{< ref "/reference/project-config/editor-settings#displayfilters" >}}) documentation for more details.
