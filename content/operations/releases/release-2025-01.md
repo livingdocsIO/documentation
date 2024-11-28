@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Brands component condition](https://github.com/livingdocsIO/livingdocs-server/pull/7507)
 * [Only index documentId for copySource on publications index](https://github.com/livingdocsIO/livingdocs-server/pull/7515)
 * [fix(deps): update dependency axios from 1.7.7 to v1.7.8 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7508)
 * [fix(deps): update dependency axios from 1.7.7 to v1.7.8 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9316)
