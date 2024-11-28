@@ -380,6 +380,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v254.0.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.46): fix(publication): Compute event before modifying document
 - [v254.0.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.45): fix(deps): update dependency @livingdocs/framework from 29.4.12 to v29.4.13
 - [v254.0.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.44): fix(designs): Fix error when server config designs is not set
 - [v254.0.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.43): fix(breaking-changes): Add type to release-2024-07 breaking changes
