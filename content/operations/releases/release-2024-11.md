@@ -640,6 +640,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v261.3.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.15): fix(publication): Compute event before modifying document
 - [v261.3.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.14): fix(indexing): Only index documentId for copySource on publications
 - [v261.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.13): chore(notifications): Remove an unnecessary uncached project config request when sending notifications
 - [v261.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.12): chore: Regenerate package-lock.json as there were install errors with fsevents
