@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Compute scheduled publish event type before modifying document](https://github.com/livingdocsIO/livingdocs-server/pull/7517)
 * [Brands component condition](https://github.com/livingdocsIO/livingdocs-editor/pull/9311)
 * [Brands component condition](https://github.com/livingdocsIO/livingdocs-server/pull/7507)
 * [Only index documentId for copySource on publications index](https://github.com/livingdocsIO/livingdocs-server/pull/7515)
