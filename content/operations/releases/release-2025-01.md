@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Do not persist filters when navigating between dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/9324)
 * [Fix media library entry page not loading when an object is added as a document reference userId](https://github.com/livingdocsIO/livingdocs-editor/pull/9322)
 * [Compute scheduled publish event type before modifying document](https://github.com/livingdocsIO/livingdocs-server/pull/7517)
 * [Brands component condition](https://github.com/livingdocsIO/livingdocs-editor/pull/9311)
