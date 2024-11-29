@@ -472,6 +472,7 @@ Here is a list of all patches after the release has been announced.
 - [v257.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.1): fix(events): Delete unused event related to LIBREAKING035
 
 ### Livingdocs Editor Patches
+- [v110.34.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.56): fix(dashboards): Do not persist filters when navigating between dashboards
 - [v110.34.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.55): fix(document-proxy): Only add numbers to userIds
 - [v110.34.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.54): fix(teaser-preview): Fix include rendering
 - [v110.34.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.53): fix(info-panel): Be more specific when excluding ticker links
