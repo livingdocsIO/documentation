@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Check workspace existance in undo/redo actions](https://github.com/livingdocsIO/livingdocs-editor/pull/9335)
 * [fix(deps): update dependency sass from 1.81.0 to v1.81.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9337)
 * [Run `accessControl.canUnpublish` when executing a publish control unpublish command](https://github.com/livingdocsIO/livingdocs-server/pull/7527)
 * [Feature/user needs dashboard metaplugin](https://github.com/livingdocsIO/livingdocs-editor/pull/9334)
