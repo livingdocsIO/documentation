@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pdfjs-dist from 4.8.69 to v4.9.124 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9332)
 * [fix(deps): update dependency dataloader from 2.2.2 to v2.2.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7533)
 * [chore(deps): update dependency puppeteer-core from 23.9.0 to v23.10.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9342)
 * [Check workspace existance in undo/redo actions](https://github.com/livingdocsIO/livingdocs-editor/pull/9335)
