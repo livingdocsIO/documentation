@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency sass-loader from 16.0.3 to v16.0.4 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9349)
 * [Show document highlight dot on table dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/9172)
 * [Enable table dashboard and teaser realtime updates by default](https://github.com/livingdocsIO/livingdocs-server/pull/7534)
 * [fix(deps): update dependency mocha from 10.8.2 to v11 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7531)
