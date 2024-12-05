@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Do not render document area for include components in timeline and history modes](https://github.com/livingdocsIO/livingdocs-editor/pull/9309)
 * [fix(deps): update dependency axios from 1.7.8 to v1.7.9 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7537)
 * [fix(deps): update dependency sass-loader from 16.0.3 to v16.0.4 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9349)
 * [Show document highlight dot on table dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/9172)
