@@ -115,3 +115,10 @@ build: {
 ```
 
 To enable Delivery Builds on a document, you must also configure `deliveries` in the [contentType]({{< ref "./content-types.md" >}}) config.
+
+
+If you have delivery builds configured in your project but you specifically do not want them on a specific contentType, you must configure an empty array inside of the contentType itself:
+
+```js
+deliveries: []
+```
