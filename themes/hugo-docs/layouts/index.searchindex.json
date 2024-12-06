@@ -6,7 +6,7 @@
     {{- $entry = merge $entry (dict "categories" $page.Params.categories) -}}
     {{- $entry = merge $entry (dict "keywords" $page.Params.keywords) -}}
     {{- $entry = merge $entry (dict "title" $page.Title) -}}
-    {{- $entry = merge $entry (dict "description" ($page.Description | .Page.RenderString | plainify)) -}}
+    {{- $entry = merge $entry (dict "description" ($page.Description | markdownify | plainify)) -}}
     {{- $entry = merge $entry (dict "body" ($page.Content | jsonify)) -}}
     {{- if ne $page.Params.excludeFromSearch true -}}
       {{- if ne $index 0 -}} , {{- end -}}
