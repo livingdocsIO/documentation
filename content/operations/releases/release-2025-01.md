@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Report if there is nothing to commit and exit the job early [CI cron]](https://github.com/livingdocsIO/livingdocs-server/pull/7540)
 * [Feature/user needs](https://github.com/livingdocsIO/livingdocs-server/pull/7513)
 * [fix(deps): update dependency express from 4.21.1 to v4.21.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7539)
 * [fix(toolbar): Title](https://github.com/livingdocsIO/livingdocs-editor/pull/9351)
