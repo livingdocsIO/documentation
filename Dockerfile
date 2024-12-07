@@ -1,7 +1,7 @@
-FROM livingdocs/node:18 as builder
+FROM alpine:3 as builder
 ADD package*.json /app/
 WORKDIR /app
-RUN apk add hugo && npm ci
+RUN apk add git hugo nodejs npm && npm ci
 ADD . /app
 RUN npm run build
 
