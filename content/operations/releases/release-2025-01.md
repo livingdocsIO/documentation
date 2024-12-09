@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Skip PR creation if commit doesn't succeed [CI cron] ](https://github.com/livingdocsIO/livingdocs-server/pull/7541)
 * [Fix/Table Dashboard Main Cell Text](https://github.com/livingdocsIO/livingdocs-editor/pull/9358)
 * [fix(deps): update dependency https-proxy-agent from 7.0.5 to v7.0.6 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9356)
 * [Report if there is nothing to commit and exit the job early [CI cron]](https://github.com/livingdocsIO/livingdocs-server/pull/7540)
