@@ -9,11 +9,11 @@
   <link rel="canonical" href="{{ .Permalink }}">
   <title>{{ .Page.Title }} - {{.Section | default "Documentation" | humanize}}</title>
 
-  {{- $built := resources.Get "style.scss" | resources.ToCSS | resources.Minify | fingerprint }}
+  {{- $built := resources.Get "style.scss" | css.Sass | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $built.RelPermalink }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="preload">
 
-  {{- $built := resources.Get "script.js" | js.Build | resources.Minify | fingerprint }}
+  {{- $built := resources.Get "script.js" | js.Build | minify | fingerprint }}
   <script>window.searchJson = '/search.json'</script>
   <script type="text/javascript" src="{{ $built.RelPermalink }}" defer></script>
   {{- $worker := resources.Get "search.js" | js.Build }}
