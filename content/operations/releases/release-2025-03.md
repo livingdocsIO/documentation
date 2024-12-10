@@ -1,27 +1,35 @@
 ---
 type: release-notes
-title: January 2025 Release
-description: Technical Release Notes for release-2025-01
+title: March 2025 Release
+description: Technical Release Notes for release-2025-03
 excludeFromSearch: true
 hideSectionTeaser: true
 aliases:
-  - /operations/releases/release-2025-01/
+  - /operations/releases/release-2025-03/
 ---
 
 {{< release-header
-  title="January 2025 Release"
+  title="March 2025 Release"
   upcoming=true
   legacy=false
   current=false
   maintained=false
-  branchHandle="release-2025-01"
+  branchHandle="release-2025-03"
 >}}
+
+## Caveat :fire:
+
+These are the release notes of the upcoming release (pull requests merged to the main branch).
+
+- :information_source: this document is updated automatically by a bot (pr's to categorize section)
+- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
+- :fire: We don't guarantee stable APIs. They can still change until the official release
+- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
 
-
-To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-january-2025).
-To learn about the necessary actions to update Livingdocs to `release-2025-01`, read on.
+To get an overview about new functionality, read the [Release Notes](TODO).
+To learn about the necessary actions to update Livingdocs to `release-2025-03`, read on.
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
@@ -66,103 +74,21 @@ To learn about the necessary actions to update Livingdocs to `release-2025-01`, 
 {{< feature-info "Operations" "server" >}}
 ### Migrate the Postgres Database :fire:
 
-No migrations were introduced in this release.
+It's a simple/fast migration with no expected data losses.
 
-{{< feature-info "Operations" "editor/server" >}}
-### Drop support for Node.js 18 :fire:
-- 🔥 Drop Node.js `v18`. Only Node.js `v20.18` and newer are supported.
+```sh
+# run `livingdocs-server migrate up` to update to the newest database schema
+livingdocs-server migrate up
+```
 
-How to migrate your project to Node.js 22:
-- Change the content of the `.nvmrc` in your project root to `22`
-- Change the `engines.node` declaration in the `package.json` to `>=22`
-- Change the `Dockerfile` of the server to `livingdocs/server-base:22`
-- Change the `Dockerfile` of the editor to `livingdocs/editor-base:22`
-
-### Angular dashboard cards
+TODO: check migration
 
 ## Deprecations
-
-{{< feature-info "Design" "editor" >}}
-### Sass `@import` declarations are deprecated
-
-In the Livingdocs editor, it is possible to declare an additional stylesheet. This can be done using an environment variable, such as:
-
-```
-CUSTOM_STYLE_PATH_AFTER=./path/to/custom.scss
-```
-
-When this variable is set, the editor uses the specified custom Sass/CSS file.
-
-If your project defines such a custom stylesheet, you are likely using `@import` declarations within it. However, a recent Sass update has deprecated the `@import` syntax. To prevent warnings and ensure compatibility, these `@import` statements need to be migrated.
-
-##### Migration Guide
-
-Follow these guidelines to migrate your `@import` statements:
-
-1. **For files exposing variables, replace `@import` with `@use`:**
-
-   ```scss
-   @use "~styles/settings/defaults";
-
-   .custom-style {
-     // Use variables from the imported file, prefixed by the file name
-     z-index: defaults.$z-index-modal;
-   }
-   ```
-
-   This replaces the previous approach:
-
-   ```scss
-   @import "~styles/settings/defaults";
-
-   .custom-style {
-     z-index: $z-index-modal;
-   }
-   ```
-
-   **Note:** The `@use` directive automatically namespaces variables with the file name (e.g., `defaults.$variableName`), which helps avoid naming conflicts.
-
-2. **For other cases, replace `@import` with `@forward`:**
-
-   ```scss
-   @forward "~styles/settings/defaults";
-   ```
-
-   Use `@forward` to re-export the contents of a file without directly consuming them in the current file.
-
-##### Why This Change?
-
-The Sass team deprecated `@import` because it does not enforce proper scoping, leading to potential variable and mixin conflicts in larger projects. The new directives `@use` and `@forward` are designed to ensure better modularity and maintainability in your stylesheets.
-
-For more details, refer to the [Sass official documentation on deprecating `@import`](https://sass-lang.com/documentation/at-rules/import).
-
-{{< feature-info "Configuration" "server" >}}
-### Rename `blacklist` and `whitelist` to `blocklist` and `allowlist` :warning:
-
-{{< feature-info "Server Configuration" "server" >}}
-### Multi channel configuration :warning:
 
 
 ## Features
 
-{{< feature-info "Conditions" "server" >}}
-### Brand Conditions :gift:
-
-{{< feature-info "Content Management" "editor" >}}
-### Print diff view :gift:
-
-{{< feature-info "Integrations" "editor" >}}
-### PEIQ integration :gift:
-
-{{< feature-info "Metadata" "server" >}}
-### User needs plugin :gift:
-
-{{< feature-info "Document Preview" "editor" >}}
-### Document preview auto-reload :gift:
-
-{{< feature-info "Metadata" "server" >}}
-### System metadata plugins :gift:
-
+TODO (featureset not 100% defined yet)
 
 ## Vulnerability Patches
 
