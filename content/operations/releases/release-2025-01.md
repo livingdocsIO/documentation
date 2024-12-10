@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [user-needs: fix to use correct prop-type](https://github.com/livingdocsIO/livingdocs-editor/pull/9364)
 * [feat: add user-needs metadata filter and specific components](https://github.com/livingdocsIO/livingdocs-editor/pull/9345)
 * [fix(deps): update playwright monorepo from 1.49.0 to v1.49.1 (main) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/9362)
 * [fix(deps): update aws-sdk (main) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/7545)
