@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update playwright monorepo from 1.49.0 to v1.49.1 (main) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/9362)
 * [fix(deps): update aws-sdk (main) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/7545)
 * [Skip PR creation if commit doesn't succeed [CI cron] ](https://github.com/livingdocsIO/livingdocs-server/pull/7541)
 * [Fix/Table Dashboard Main Cell Text](https://github.com/livingdocsIO/livingdocs-editor/pull/9358)
