@@ -152,16 +152,30 @@ api/v1/import/documents/status?id=25bzj8j
   "id": "25bzj8j",
   "logs": [
     {
-      "system_name": "integration-tests",
+      "state": "imported",
+      "system_name": "external-system-name",
       "external_id": "8Sv9Nu0d",
       "document_id": 1,
       "checksum": "123abc",
       "project_id": 3,
       "channel_id": 2,
-      "revision_id": 1,
+      "revision_id": 4602,
       "version": 1,
+      "id": 1
+    },
+    {
+      "state": "published",
+      "created_at": "2024-12-03T23:38:29.789Z",
+      "updated_at": "2024-12-03T23:38:29.789Z",
+      "system_name": "external-system-name",
+      "external_id": "9av23oaf",
+      "document_id": 1148,
+      "checksum": "10",
+      "project_id": 3,
+      "channel_id": 2,
+      "revision_id": 4603,
+      "version": 1
       "id": 1,
-      "state": "imported"
     },
     {
       "state": "failed",
