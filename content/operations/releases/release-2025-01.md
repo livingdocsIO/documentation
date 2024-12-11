@@ -18,6 +18,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [Fix/Add User Button](https://github.com/livingdocsIO/livingdocs-editor/pull/9369)
 * [user-needs: add transition delay and fix alignment of user-needs in circle](https://github.com/livingdocsIO/livingdocs-editor/pull/9368)
 
 
