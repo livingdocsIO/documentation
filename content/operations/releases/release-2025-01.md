@@ -18,11 +18,6 @@ aliases:
 >}}
 
 ## PRs to Categorize
-* [Posthog Tests](https://github.com/livingdocsIO/livingdocs-editor/pull/9367)
-* [Add event tracking support for dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/9354)
-* [fix(deps): update dependency c8 from 10.1.2 to v10.1.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7549)
-* [Migrate to Express v5](https://github.com/livingdocsIO/livingdocs-server/pull/7518)
-* [Print Diff View](https://github.com/livingdocsIO/livingdocs-editor/pull/9346)
 
 
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-january-2025).
@@ -83,7 +78,22 @@ How to migrate your project to Node.js 22:
 - Change the `Dockerfile` of the server to `livingdocs/server-base:22`
 - Change the `Dockerfile` of the editor to `livingdocs/editor-base:22`
 
-### Angular dashboard cards
+{{< feature-info "Dashboards" "server" >}}
+### Angular dashboard cards :fire:
+
+
+{{< feature-info "Dashboard" "server" >}}
+### Dashboard type `dashboard` :fire:
+
+
+{{< feature-info "Integrations" "server" >}}
+### Comyan upload without `targetMediaType` and metadata mapping :fire:
+
+
+{{< feature-info "Dependencies" "server" >}}
+### Migrate to Express v5 :fire:
+
+
 
 ## Deprecations
 
@@ -142,7 +152,7 @@ The Sass team deprecated `@import` because it does not enforce proper scoping, l
 For more details, refer to the [Sass official documentation on deprecating `@import`](https://sass-lang.com/documentation/at-rules/import).
 
 {{< feature-info "Configuration" "server" >}}
-### Rename `blacklist` and `whitelist` to `blocklist` and `allowlist` :warning:
+### Rename `blacklist` and `whitelist` to `denylist` and `allowlist` :warning:
 
 {{< feature-info "Server Configuration" "server" >}}
 ### Multi channel configuration :warning:
@@ -150,23 +160,33 @@ For more details, refer to the [Sass official documentation on deprecating `@imp
 
 ## Features
 
-{{< feature-info "Conditions" "server" >}}
-### Brand Conditions :gift:
-
 {{< feature-info "Content Management" "editor" >}}
 ### Print diff view :gift:
 
-{{< feature-info "Integrations" "editor" >}}
-### PEIQ integration :gift:
+
+{{< feature-info "Conditions" "server" >}}
+### Brand Conditions :gift:
+
+
+{{< feature-info "Page Management" "server" >}}
+### Page Management:References in Base Filters
+
 
 {{< feature-info "Metadata" "server" >}}
 ### User needs plugin :gift:
 
+
+{{< feature-info "Integrations" "editor" >}}
+### PEIQ integration :gift:
+
+
 {{< feature-info "Document Preview" "editor" >}}
 ### Document preview auto-reload :gift:
 
+
 {{< feature-info "Metadata" "server" >}}
 ### System metadata plugins :gift:
+
 
 
 ## Vulnerability Patches
@@ -175,7 +195,8 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 ### Livingdocs Server
 This release we have patched the following vulnerabilities in the Livingdocs Server:
-* TBD
+* [CVE-2024-55565](https://github.com/advisories/GHSA-mwcw-c2x4-8c55) patched in `nanoid`. 
+* [CVE-2024-45813](https://nvd.nist.gov/vuln/detail/CVE-2024-45813) patched in `find-my-way` v8.2.2
 
 No known vulnerabilities. :tada:
 
