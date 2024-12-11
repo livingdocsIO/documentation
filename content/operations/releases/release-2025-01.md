@@ -18,6 +18,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [Add event tracking support for dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/9354)
 * [fix(deps): update dependency c8 from 10.1.2 to v10.1.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7549)
 * [Migrate to Express v5](https://github.com/livingdocsIO/livingdocs-server/pull/7518)
 * [Print Diff View](https://github.com/livingdocsIO/livingdocs-editor/pull/9346)
