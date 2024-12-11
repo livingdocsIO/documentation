@@ -18,6 +18,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [user-needs: add transition delay and fix alignment of user-needs in circle](https://github.com/livingdocsIO/livingdocs-editor/pull/9368)
 
 
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-january-2025).
