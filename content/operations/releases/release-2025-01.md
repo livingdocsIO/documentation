@@ -18,6 +18,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [fix(li-schema-form): don't do delayed focus clearing after refocused](https://github.com/livingdocsIO/livingdocs-editor/pull/9371)
 * [Term variables in li-document-search and li-teaser](https://github.com/livingdocsIO/livingdocs-server/pull/7536)
 * [Resolve includes when referenced term variables change](https://github.com/livingdocsIO/livingdocs-editor/pull/9357)
 * [Fix/Add User Button](https://github.com/livingdocsIO/livingdocs-editor/pull/9369)
