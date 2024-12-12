@@ -10,13 +10,12 @@
     "glob": "^11.0.0",
     "htmlparser2": "^9.0.0",
     "lunr": "^2.3.9",
-    "opener": "^1.5.2",
     "serve": "^14.2.0"
   },
   "scripts": {
     "build": "./bin/build.sh",
     "build:fast": "./bin/build.sh --fast",
-    "start": "opener http://localhost:1313 && exec hugo serve",
+    "start": "exec hugo server --buildDrafts --buildFuture --openBrowser",
     "start:production": "serve ./public"
   },
   "repository": {
