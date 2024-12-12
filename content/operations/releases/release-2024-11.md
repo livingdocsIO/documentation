@@ -657,6 +657,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.43): fix(li-schema-form): don't do delayed focus clearing after refocused
 - [v111.1.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.42): fix: useUndoRedo() check workspace before history operations
 - [v111.1.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.41): fix(dashboards): Do not persist filters when navigating between dashboards
 - [v111.1.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.40): fix(document-proxy): Only add numbers to userIds
