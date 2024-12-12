@@ -18,6 +18,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [Auto-Reload for Document Preview](https://github.com/livingdocsIO/livingdocs-editor/pull/9355)
 * [Add PostHog event tracking support](https://github.com/livingdocsIO/livingdocs-server/pull/7543)
 * [fix(li-schema-form): don't do delayed focus clearing after refocused](https://github.com/livingdocsIO/livingdocs-editor/pull/9371)
 * [Term variables in li-document-search and li-teaser](https://github.com/livingdocsIO/livingdocs-server/pull/7536)
