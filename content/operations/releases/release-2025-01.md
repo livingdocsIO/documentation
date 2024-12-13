@@ -18,6 +18,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [fix(deps): update aws-sdk from 3.705.0 to v3.709.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7501)
 * [Increase maximum pagination limit of /documents endpoint to 1000](https://github.com/livingdocsIO/livingdocs-server/pull/7562)
 * [Use earlier base source document revision](https://github.com/livingdocsIO/livingdocs-server/pull/7535)
 * [Breaking Change for Comyan config (LIDEP038 -> LIBREAKING038)](https://github.com/livingdocsIO/livingdocs-server/pull/7557)
