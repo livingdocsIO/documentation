@@ -1330,6 +1330,11 @@ There is a general `integrations` configuration for small integrations that can 
       allowed: true,
       ensureExtraction: true
     },
+    kordiam: {
+      allowed: true,
+      registerHooks: true,
+      forceLinkUsingKordiamApiRequest: false
+    },
     woodwingAssets: {
       allowed: true
     }
