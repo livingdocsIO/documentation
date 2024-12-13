@@ -18,6 +18,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [Use earlier base source document revision](https://github.com/livingdocsIO/livingdocs-server/pull/7535)
 * [Breaking Change for Comyan config (LIDEP038 -> LIBREAKING038)](https://github.com/livingdocsIO/livingdocs-server/pull/7557)
 * [fix(deps): update dependency posthog-node from 4.3.1 to v4.3.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7560)
 * [Add autoReload to project config documentPreviews schema](https://github.com/livingdocsIO/livingdocs-server/pull/7542)
