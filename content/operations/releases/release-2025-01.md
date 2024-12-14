@@ -18,6 +18,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [Fix Actions to autopatch vulnerabilities [CI]](https://github.com/livingdocsIO/livingdocs-server/pull/7571)
 * [Feat: PEIQ Integration](https://github.com/livingdocsIO/livingdocs-server/pull/7546)
 * [Feat: PEIQ Integration](https://github.com/livingdocsIO/livingdocs-editor/pull/9363)
 * [fix(deps): update aws-sdk from 3.705.0 to v3.709.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7501)
