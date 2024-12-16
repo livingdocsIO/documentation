@@ -18,6 +18,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [Print Diff View polish](https://github.com/livingdocsIO/livingdocs-editor/pull/9370)
 * [Improve li-task-v2 deadline formatting](https://github.com/livingdocsIO/livingdocs-editor/pull/9380)
 * [Playwright tests for brands component conditions](https://github.com/livingdocsIO/livingdocs-editor/pull/9378)
 * [fix(deps): update dependency lru-cache from 10.4.3 to v11 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7497)
