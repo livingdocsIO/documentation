@@ -18,6 +18,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [fix(deps): update dependency lru-cache from 10.4.3 to v11 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7497)
 * [feat: add additonal system metadata plugins](https://github.com/livingdocsIO/livingdocs-editor/pull/9340)
 * [Tracking additions](https://github.com/livingdocsIO/livingdocs-editor/pull/9377)
 * [Fix Actions to autopatch vulnerabilities [CI]](https://github.com/livingdocsIO/livingdocs-server/pull/7571)
