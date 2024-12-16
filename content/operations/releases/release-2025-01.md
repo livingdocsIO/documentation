@@ -18,6 +18,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [feat: add additonal system metadata plugins](https://github.com/livingdocsIO/livingdocs-editor/pull/9340)
 * [Tracking additions](https://github.com/livingdocsIO/livingdocs-editor/pull/9377)
 * [Fix Actions to autopatch vulnerabilities [CI]](https://github.com/livingdocsIO/livingdocs-server/pull/7571)
 * [Feat: PEIQ Integration](https://github.com/livingdocsIO/livingdocs-server/pull/7546)
