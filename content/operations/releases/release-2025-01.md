@@ -18,6 +18,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [feat: add additonal system metadata plugins](https://github.com/livingdocsIO/livingdocs-server/pull/7532)
 * [feat: add system metadata plugin for li-target-length](https://github.com/livingdocsIO/livingdocs-editor/pull/9386)
 * [Remove Comyan usage reporting registration](https://github.com/livingdocsIO/livingdocs-server/pull/7576)
 * [Print Diff View polish](https://github.com/livingdocsIO/livingdocs-editor/pull/9370)
