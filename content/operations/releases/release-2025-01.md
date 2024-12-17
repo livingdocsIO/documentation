@@ -345,7 +345,7 @@ Along with these endpoints, the related Public API methods also support the new 
 
 To enhance page management workflows, we are introducing support for variables in base filters of `li-teaser` and `li-document-search`.
 
-For example, consider a TV program where articles are categorized by format, with format-specific pages listing articles of a given format. Previously, users had to manually set the format on multiple components of a format page to populate it with matching teasers.
+For example, consider a news site where articles are categorized using a topic metadata property. Each topic has a corresponding page, which also has the same topic metadata property. Specialized teaser components based on `li-teaser` and `li-document-search` will then automatically use the topic from the page to display articles of the same topic, eliminating the need to manually select the topic for each teaser component through the user interface.
 
 With variables, these components can now reference other properties to dynamically adjust their base filter, such as:
 
@@ -358,32 +358,34 @@ For example, consider the following base filter:
 
 ```js
 baseFilters: [
-  {key: 'documentId', termVariable: 'metadata.relatedArticles.references.id'}
+  {key: 'metadata.topic.reference.id', termVariable: 'metadata.topic.reference.id'}
 ]
 ```
 
-This base filter matches all documents with a `documentId` that is referenced by the metadata property `relatedArticles` of the document in which this component is placed.
+This base filter matches all documents that share the same topic metadata property (a reference to a dedicated topic data record) which is also selected for the page in which the teaser component is currently included.
 
-Metadata properties are accessed using the same syntax as the indexing behavior of the underlying metadata plugin. In the example above, the metadata property is of type `li-document-references`. To extract the IDs from this property, the postfix `references.id` is appended. This corresponds to the indexing behavior of `li-document-references`, specifically its key. Metadata properties do not need to be indexed for this to work.
+Metadata properties are accessed using the same syntax as the indexing behavior of the underlying metadata plugin. In the example above, the metadata property is of type `li-document-reference`. To extract the IDs from this property, the postfix `reference.id` is appended. This corresponds to the indexing behavior of `li-document-reference`, specifically its key.
 
 ```js
 indexing: {
   enabled: true,
   behavior: [{
     type: 'keyword',
-    key: 'references.id',
-    getValue (val) { return val.references.map((r) => r.id) }
+    key: 'reference.id',
+    getValue (val) { return val.reference?.id }
   }]
 }
 ```
+
+Metadata properties do not need to be indexed to be referenced by a term variable (such as `topic` on the topic page in this example).
 
 If a referenced metadata property is empty, the term variable will be excluded from the query. Therefore, we recommend to always pair such terms with an additional superset term as a fallback. For example:
 
 ```js
 baseFilters: [
   {key: 'contentType', term: 'article'},
-  // This will be excluded if relatedArticles is empty
-  {key: 'documentId', termVariable: 'metadata.relatedArticles.references.id'}
+  // This will be excluded if metadata property topic is empty
+  {key: 'metadata.topic.reference.id', termVariable: 'metadata.topic.reference.id'}
 ]
 ```
 
