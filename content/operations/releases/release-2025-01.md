@@ -18,31 +18,6 @@ aliases:
 >}}
 
 ## PRs to Categorize
-* [feat: add additonal system metadata plugins](https://github.com/livingdocsIO/livingdocs-server/pull/7532)
-* [feat: add system metadata plugin for li-target-length](https://github.com/livingdocsIO/livingdocs-editor/pull/9386)
-* [Remove Comyan usage reporting registration](https://github.com/livingdocsIO/livingdocs-server/pull/7576)
-* [Print Diff View polish](https://github.com/livingdocsIO/livingdocs-editor/pull/9370)
-* [Improve li-task-v2 deadline formatting](https://github.com/livingdocsIO/livingdocs-editor/pull/9380)
-* [Playwright tests for brands component conditions](https://github.com/livingdocsIO/livingdocs-editor/pull/9378)
-* [fix(deps): update dependency lru-cache from 10.4.3 to v11 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7497)
-* [feat: add additonal system metadata plugins](https://github.com/livingdocsIO/livingdocs-editor/pull/9340)
-* [Tracking additions](https://github.com/livingdocsIO/livingdocs-editor/pull/9377)
-* [Fix Actions to autopatch vulnerabilities [CI]](https://github.com/livingdocsIO/livingdocs-server/pull/7571)
-* [Feat: PEIQ Integration](https://github.com/livingdocsIO/livingdocs-server/pull/7546)
-* [Feat: PEIQ Integration](https://github.com/livingdocsIO/livingdocs-editor/pull/9363)
-* [fix(deps): update aws-sdk from 3.705.0 to v3.709.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7501)
-* [Increase maximum pagination limit of /documents endpoint to 1000](https://github.com/livingdocsIO/livingdocs-server/pull/7562)
-* [Use earlier base source document revision](https://github.com/livingdocsIO/livingdocs-server/pull/7535)
-* [Breaking Change for Comyan config (LIDEP038 -> LIBREAKING038)](https://github.com/livingdocsIO/livingdocs-server/pull/7557)
-* [fix(deps): update dependency posthog-node from 4.3.1 to v4.3.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7560)
-* [Add autoReload to project config documentPreviews schema](https://github.com/livingdocsIO/livingdocs-server/pull/7542)
-* [Auto-Reload for Document Preview](https://github.com/livingdocsIO/livingdocs-editor/pull/9355)
-* [Add PostHog event tracking support](https://github.com/livingdocsIO/livingdocs-server/pull/7543)
-* [fix(li-schema-form): don't do delayed focus clearing after refocused](https://github.com/livingdocsIO/livingdocs-editor/pull/9371)
-* [Term variables in li-document-search and li-teaser](https://github.com/livingdocsIO/livingdocs-server/pull/7536)
-* [Resolve includes when referenced term variables change](https://github.com/livingdocsIO/livingdocs-editor/pull/9357)
-* [Fix/Add User Button](https://github.com/livingdocsIO/livingdocs-editor/pull/9369)
-* [user-needs: add transition delay and fix alignment of user-needs in circle](https://github.com/livingdocsIO/livingdocs-editor/pull/9368)
 
 
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-january-2025).
@@ -86,6 +61,21 @@ To learn about the necessary actions to update Livingdocs to `release-2025-01`, 
 | Livingdocs Editor Docker Image | livingdocs/editor-base:20:7                                                              |
 | Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
 
+
+## Deployment
+
+### Before the deployment
+
+No prior preparations are required before rolling out this release.
+
+### After the deployment
+
+No post-deployment steps are required after rolling out this release.
+
+### Rollback
+
+No steps are required to roll back this release.
+
 ## Breaking Changes 🔥
 
 {{< feature-info "Operations" "server" >}}
@@ -95,7 +85,7 @@ No migrations were introduced in this release.
 
 {{< feature-info "Operations" "editor/server" >}}
 ### Drop support for Node.js 18 :fire:
-- 🔥 Drop Node.js `v18`. Only Node.js `v20.18` and newer are supported.
+- 🔥 Drop Node.js `v18`. Only Node.js `v20.18.1` and newer are supported.
 
 How to migrate your project to Node.js 22:
 - Change the content of the `.nvmrc` in your project root to `22`
@@ -114,11 +104,73 @@ How to migrate your project to Node.js 22:
 {{< feature-info "Integrations" "server" >}}
 ### Comyan upload without `targetMediaType` and metadata mapping :fire:
 
+It's no longer possible to use the Comyan integration without providing a `targetMediaType` and a Comyan metadata mapping config in that media type definition. Please provide `targetMediaType` in Comyan integration settings and `comyanExtraction` in the media type. In the project configuration:
+
+```
+{
+  settings: {
+    integrations: {
+      comyan: {
+        targetMediaType: 'image'
+      },
+      mediaTypes: [
+        {
+          type: 'mediaImage',
+          handle: 'image',
+          comyanExtraction: {
+            mappings: []
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+Server PR: [Comyan upload without `targetMediaType` and metadata mapping](https://github.com/livingdocsIO/livingdocs-server/pull/7557)
+
+{{< feature-info "Integrations" "server" >}}
+### Comyan built-in `postPublishHookAsync` :fire:
+
+The built-in `postPublishHookAsync` used for comyan usage reporting is no longer automatically registered in the upstream code. The registration of the `postPublishHookAsync` hook has to be defined in the downstream. If you are using the Comyan integration, please make sure to register the `postPublishHookAsync` in your project.
+
+```
+liServer.registerInitializedHook(() => )
+```
+
+Server PR: [Remove Comyan usage reporting registration](https://github.com/livingdocsIO/livingdocs-server/pull/7576)
 
 {{< feature-info "Dependencies" "server" >}}
 ### Migrate to Express v5 :fire:
 
+The Livingdocs Server is now using Express v5.
 
+- In case you have custom route declarations, please make sure they conform to the Express v5 conventions. You can find the migration guide here: https://expressjs.com/en/guide/migrating-5.html
+- There's nothing to change if there are no custom route declarations in a project.
+
+The following changes affect the livingdocs server and maybe also downstreams:
+- Wildcards in routes have a new syntax. Unsupported routes now throw an error during server start.
+  `/designs/:name/:version/:file(*)` -> `/designs/:name/:version/*file`
+  `req.params.file` will result in an array with the path segments.
+  
+```diff
+  {
+  -  path: '/custom/api/assets/:file(*)',
+  +  path: '/custom/api/assets/*file',
+     method: 'get',
+     title: 'Retrieve the files',
+     action: (req, res) {
+       const file = fileStream({
+  -      file: req.params.file
+  +      file: req.params.file.join('/')
+       })
+  
+       return pipeline(file, res)
+     }
+  }  
+```
+
+Server PR: [Migrate to Express v5](https://github.com/livingdocsIO/livingdocs-server/pull/7518)
 
 ## Deprecations
 
@@ -220,8 +272,8 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 ### Livingdocs Server
 This release we have patched the following vulnerabilities in the Livingdocs Server:
-* [CVE-2024-55565](https://github.com/advisories/GHSA-mwcw-c2x4-8c55) patched in `nanoid`. 
 * [CVE-2024-45813](https://nvd.nist.gov/vuln/detail/CVE-2024-45813) patched in `find-my-way` v8.2.2
+* [CVE-2024-55565](https://github.com/advisories/GHSA-mwcw-c2x4-8c55) patched in `nanoid` v3.3.8
 
 No known vulnerabilities. :tada:
 
