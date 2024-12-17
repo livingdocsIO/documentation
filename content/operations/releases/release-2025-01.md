@@ -18,6 +18,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/9387)
 
 
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-january-2025).
