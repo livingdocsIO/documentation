@@ -4,8 +4,6 @@ title: January 2025 Release
 description: Technical Release Notes for release-2025-01
 excludeFromSearch: true
 hideSectionTeaser: true
-aliases:
-  - /operations/releases/release-2025-01/
 ---
 
 {{< release-header

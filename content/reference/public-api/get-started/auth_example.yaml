@@ -1,0 +1,43 @@
+title: Authorization
+description: |
+  To work with the Public API first go to the Project Settings page in the Livingdocs Editor and create an `AccessToken`. The token is scoped to the project so make sure you create the token in the correct project.
+
+  Project admins can create new `AccessToken` by going to `Menu` > `Preferences` > `Project Admin`, from the project landing page.
+  On the sidebar, go to `Api Clients` and start the token creation flow with `Add Api Client` on the right.
+
+  In the create token dialog, you can set the name of the token, description (optional), expiration date and permissions. You can click `Create` to generate the token with the chosen permissions. The token will be generated and you can copy it to your clipboard.
+
+  Embed the `AccessToken` in the header of every HTTP request as shown below.
+
+  ##### Base URL
+  This is the base Url you will need to interact with our API.
+
+  ```
+  https://server.livingdocs.io/
+  ```
+
+  ##### Request HTTP headers
+
+  ```
+  Authorization: Bearer ey1234
+  ```
+
+  ##### Auth Example with Curl
+
+  ```bash
+  ACCESS_TOKEN=ey1234
+  curl -k -X GET "http://localhost:9090/api/v1/project"
+    -H "Authorization: Bearer $ACCESS_TOKEN"
+  ```
+
+  ##### Auth Example with Axios
+
+  ```js
+  const axios = require('axios')
+  const token = 'ey1234'
+  const result = await axios.get('api/v1/project', {
+    baseURL: 'http://localhost:9090',
+    headers: {Authorization: `Bearer ${token}`},
+    timeout: 20000
+  })
+  ```

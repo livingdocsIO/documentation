@@ -1,0 +1,15 @@
+title: Check API Status
+useCases: |
+  - Health check for operations
+
+query: |
+  curl -k -X GET "https://server.livingdocs.io/api/v1/health"
+endpoint:
+  method: GET
+  path: /api/v1/health
+responses:
+  - code: "200"
+    body: |
+      {
+        "status": "ok"
+      }

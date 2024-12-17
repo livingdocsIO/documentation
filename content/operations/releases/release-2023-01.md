@@ -5,7 +5,6 @@ description: Technical Release Notes for release-2023-01
 excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
-  - /operations/releases/release-2023-01/
   - /operations/releases/release-2023-01/release-2023-01/
 ---
 
