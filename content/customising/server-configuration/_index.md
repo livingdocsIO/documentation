@@ -594,11 +594,10 @@ documents: {
     anonymizeAfter: '30 days'
   },
   realtimeUpdates: {
-    enabled: true, // Default: false. {{< deprecated-in "release-2023-11" >}}.
-    pollingEnabled: true, // Default: false. {{< added-in "release-2023-11" >}}.
+    pollingEnabled: true, // Default: true (since {{< release "release-2025-01" >}})
     pollingInterval: '1m',
-    websocketsEnabled: true, // Default: false. {{< added-in "release-2023-11" >}}.
-    websocketsThrottling: '5s' // {{< added-in "release-2023-11" >}}.
+    websocketsEnabled: true, // Default: true (since {{< release "release-2025-01" >}})
+    websocketsThrottling: '5s'
   }
 }
 ```
@@ -618,9 +617,11 @@ The properties within `realtimeUpdates` control the behaviour of table dashboard
 
 Documents displayed on a table dashboard will automatically update when they have been modified by another user, and a refresh button will be displayed when there are new results available. You can lower the polling interval for more regular updates, but this will increase the load on your server and databases due to more frequent requests from clients.
 
-Since {{< release "release-2023-11" >}} the `realtimeUpdates` object has been extended with individual controls for updating the editor using polling and/or websockets. Both methods can be used in parallel. The deprecated `enabled` property will be used to control `pollingEnabled` if no value has been defined for `pollingEnabled`.
+The `realtimeUpdates` object has individual controls for updating the editor using polling and/or websockets. Both methods can be used in parallel.
 
-The new `websocketsEnabled` property is also used for updating table dashboards, but instead of polling once per minute it listens to document update events and applies the changes in real-time. There is throttling in place to prevent a client from making too many requests (default: 5 seconds), and a jitter is applied to spread the server load of multiple connected clients (set to half of `websocketsThrottling`). Along with handling dashboard updates, the `websocketsEnabled` property is also used to control teaser updates while a user edits a document. If there is a teaser list in the document then all teasers will be reloaded for every publish or unpublish event within the project. If there are only document teasers in the document then we only refresh the teasers if the specific document references are published or unpublished.
+The `websocketsEnabled` property is primarily used for updating table dashboards, but instead of polling once per minute it listens to document update events and applies the changes in real-time. There is throttling in place to prevent a client from making too many requests (default: 5 seconds), and a jitter is applied to spread the server load of multiple connected clients (set to half of `websocketsThrottling`). Along with handling dashboard updates, the `websocketsEnabled` property is also used to control teaser updates while a user edits a document. If there is a teaser list in the document then all teasers will be reloaded for every publish or unpublish event within the project. If there are only document teasers in the document then we only refresh the teasers if the specific document references are published or unpublished.
+
+The `pollingEnabled` property can be used as a backup if users report problems with the websocket connection. By default it performs the same checks as `websocketsEnabled`, but it is only run once per minute. `pollingEnabled` is not used for reloading teasers.
 
 If you are running the Livingdocs server locally using HTTPS with a self-signed certificate then you will need to start the editor with `NODE_TLS_REJECT_UNAUTHORIZED=0` to establish the websocket connection. This could either prefix the npm start script, be set or exported in the terminal, be added before the start command executed in the terminal, or defined in the runtime code by modifying `process.env`. Please be aware that this is for local development only and should not be needed or used in production. You should see the following warning displayed when node starts if it was applied correctly:
 ```
