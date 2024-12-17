@@ -93,6 +93,7 @@ How to migrate your project to Node.js 22:
 {{< feature-info "Dashboards" "server" >}}
 ### Angular dashboard cards :fire:
 
+As part of our ongoing migration from Angular to Vue, we have removed support for Angular dashboard cards. Please consider using the newly introduced [task screens]({{< ref "/operations/releases/release-2024-11/#task-screens-gift" >}}) or our provided upstream task dashboard cards instead. If these do not meet your requirements, migrate your custom dashboard cards to Vue.
 
 {{< feature-info "Dashboard" "server" >}}
 ### Dashboard type `dashboard` :fire:
