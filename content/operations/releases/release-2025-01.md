@@ -90,6 +90,9 @@ How to migrate your project to Node.js 22:
 - Change the `Dockerfile` of the server to `livingdocs/server-base:22`
 - Change the `Dockerfile` of the editor to `livingdocs/editor-base:22`
 
+Server PR: [Drop support for Node.js 18](https://github.com/livingdocsIO/livingdocs-server/pull/7486)
+Editor PR: [Drop support for Node.js 18](https://github.com/livingdocsIO/livingdocs-editor/pull/9276)
+
 {{< feature-info "Dashboards" "server" >}}
 ### Angular dashboard cards :fire:
 
@@ -133,8 +136,39 @@ Server PR: [Comyan upload without `targetMediaType` and metadata mapping](https:
 
 The built-in `postPublishHookAsync` used for comyan usage reporting is no longer automatically registered in the upstream code. The registration of the `postPublishHookAsync` hook has to be defined in the downstream. If you are using the Comyan integration, please make sure to register the `postPublishHookAsync` in your project.
 
+To disable the reporting from Livingdocs add the following to the configuration:
+
 ```
-liServer.registerInitializedHook(() => )
+integrations: {
+  comyan: {
+    allowed: true,
+    registerHooks: false
+  }
+}
+```
+
+To enable the same behavior as before configure the following in the downstream:
+
+```js
+liServer.registerInitializedHook(() => {
+  const {reportDocumentVersion} = liServer.features.api('li-comyan')
+  liServer.registerPublicationServerHooks({postPublishHookAsync: reportDocumentVersion})
+})
+```
+
+Additonally this opens up flexibility to customize when comyan usage is reported for example only registering for a certain project and execute it for desired contentTypes:
+
+```js
+liServer.registerInitializedHook(() => {
+  const {reportDocumentVersion} = liServer.features.api('li-comyan')
+  liServer.registerPublicationHooks({
+    projectHandle: 'myproject',
+    postPublishHookAsync ({documentVersion}) {
+      if (documentVersion.contentType !== 'article') return
+      return reportDocumentVersion({documentVersion})
+    }
+  })
+})
 ```
 
 Server PR: [Remove Comyan usage reporting registration](https://github.com/livingdocsIO/livingdocs-server/pull/7576)
@@ -189,6 +223,8 @@ indexing: {
   ]
 }
 ```
+
+Server PR: [Stricter Validation of Metadata Plugin Indexing Keys](https://github.com/livingdocsIO/livingdocs-server/pull/7536)
 
 ## Deprecations
 
