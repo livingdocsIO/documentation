@@ -322,8 +322,67 @@ Along with these endpoints, the related Public API methods also support the new 
 - `publicApi.getLatestDraftsBeta({ignoreComponentConditions, componentConditions})`
 
 {{< feature-info "Page Management" "server" >}}
-### Page Management:References in Base Filters
+### Page Management: References in Base Filters
 
+To enhance page management workflows, we are introducing support for variables in base filters of `li-teaser` and `li-document-search`.
+
+For example, consider a TV program where articles are categorized by format, with format-specific pages listing articles of a given format. Previously, users had to manually set the format on multiple components of a format page to populate it with matching teasers.
+
+With variables, these components can now reference other properties to dynamically adjust their base filter, such as:
+
+- Metadata properties of the document containing the component
+- The brand for which the document is requested
+
+#### Metadata Properties
+
+For example, consider the following base filter:
+
+```js
+baseFilters: [
+  {key: 'documentId', termVariable: 'metadata.relatedArticles.references.id'}
+]
+```
+
+This base filter matches all documents with a `documentId` that is referenced by the metadata property `relatedArticles` of the document in which this component is placed.
+
+Metadata properties are accessed using the same syntax as the indexing behavior of the underlying metadata plugin. In the example above, the metadata property is of type `li-document-references`. To extract the IDs from this property, the postfix `references.id` is appended. This corresponds to the indexing behavior of `li-document-references`, specifically its key. Metadata properties do not need to be indexed for this to work.
+
+```js
+indexing: {
+  enabled: true,
+  behavior: [{
+    type: 'keyword',
+    key: 'references.id',
+    getValue (val) { return val.references.map((r) => r.id) }
+  }]
+}
+```
+
+If a referenced metadata property is empty, the term variable will be excluded from the query. Therefore, we recommend to always pair such terms with an additional superset term as a fallback. For example:
+
+```js
+baseFilters: [
+  {key: 'contentType', term: 'article'},
+  // This will be excluded if relatedArticles is empty
+  {key: 'documentId', termVariable: 'metadata.relatedArticles.references.id'}
+]
+```
+
+#### Brand Component Conditions
+
+In addition to metadata properties, you can reference the [brand for which the document is requested]({{< ref "/reference/project-config/content-types/#conditional-components" >}}) using the `componentConditions.brand` term variable. This enables you to load teasers relevant to a specific brand.
+
+For example, if articles are categorized by a `brand` metadata property, you can filter them using the following base filter:
+
+```js
+baseFilters: [
+  {key: 'metadata.brand', termVariable: 'componentConditions.brand'}
+]
+```
+
+If no brand is provided in a request, `componentConditions.brand` uses the [default brand]({{< ref "/reference/project-config/brands" >}}) as configured in the Project Config.
+
+For more details, refer to our [term variable documentation]({{< ref "/reference/document/metadata/plugins/li-teaser/#term-variables" >}}).
 
 {{< feature-info "Metadata" "server" >}}
 ### User needs plugin :gift:
