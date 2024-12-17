@@ -171,6 +171,25 @@ The following changes affect the livingdocs server and maybe also downstreams:
 
 Server PR: [Migrate to Express v5](https://github.com/livingdocsIO/livingdocs-server/pull/7518)
 
+{{< feature-info "Metadata Plugins" "server" >}}
+### Stricter Validation of Metadata Plugin Indexing Keys :fire:
+
+Indexing keys of metadata plugins must contain only alphabetic characters (a-z, A-Z) and dots (.). Please update all indexing keys in your custom metadata plugins that do not fulfil this requirement.
+
+```diff
+indexing: {
+  enabled: true,
+  behavior: [
+    {
+      type: 'keyword',
++     key: 'reference.id',
+-     key: 'reference__id',
+      getValue (val) { return val.reference?.id }
+    }
+  ]
+}
+```
+
 ## Deprecations
 
 {{< feature-info "Design" "editor" >}}
