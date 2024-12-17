@@ -156,3 +156,68 @@ The overall configuration for a full page management rig highly depends on the a
 - Curated Lists: Use dedicated includes based on li-document-reference or a li-teaser (only level 1 configured) for documents in curated lists. Do not use the teaser components used on actual pages.
 - Drag & Drop: For the content types which are rendered by the include service, configure their `teaserComponents` section to enable drag & drop and transformations.
 
+### Term Variables
+
+In addition to the regular [Search DSL]({{< ref "/customising/advanced/editor-configuration/base-filter/" >}}), base filters in the `algorithm` level of `li-teaser` support term variables. Term variables enable you to reference a value that is evaluated only at the time of the request.
+
+Two types of term variables are supported:
+
+- Metadata properties of the document in which the component is placed  
+- The brand for which the document is requested (see [Conditional Components]({{< ref "/reference/project-config/content-types/#conditional-components" >}}))
+
+#### Metadata Properties
+
+Let's first look at term variables that reference metadata properties. For example, consider the following base filter:
+
+```js
+baseFilters: [
+  {key: 'metadata.description', termVariable: 'metadata.title'}
+]
+```
+
+This base filter matches all documents that have the same metadata property `description` as the metadata property `title` of the document in which this component is placed. On request, `metadata.title` is replaced with the value set on the `title` metadata property of the document containing the component.
+
+Metadata properties from all metadata plugins are supported. Values are accessed using the same syntax as the indexing behavior of the underlying metadata plugin. For example, consider a metadata property `relatedArticles` of type `li-document-references`. To reference this property in a term variable, use `metadata.relatedArticles.references.id`, as shown below:
+
+```js
+baseFilters: [
+  {key: 'documentId', termVariable: 'metadata.relatedArticles.references.id'}
+]
+```
+
+This syntax corresponds to the indexing behavior of metadata plugin `li-document-references`, specifically its key. Importantly, metadata properties do not need to be indexed for this to work. Only the indexing behavior needs to be defined in the metadata plugin.
+
+```js
+indexing: {
+  enabled: true,
+  behavior: [{
+    type: 'keyword',
+    key: 'references.id',
+    getValue (val) { return val.references.map((r) => r.id) }
+  }]
+}
+```
+
+If a referenced metadata property is empty, the term variable will be excluded from the query. Therefore, we recommend to always pair such terms with an additional superset term as a fallback. For example:
+
+```js
+baseFilters: [
+  {key: 'contentType', term: 'article'},
+  // This will be excluded if relatedArticles is empty
+  {key: 'documentId', termVariable: 'metadata.relatedArticles.references.id'}
+]
+```
+
+#### Brand Component Conditions
+
+In addition to metadata properties, you can reference the [brand for which the document is requested]({{< ref "/reference/project-config/content-types/#conditional-components" >}}) using the `componentConditions.brand` term variable. This enables you to load teasers relevant to a specific brand.
+
+For example, if articles are categorized by a `brand` metadata property, you can filter them using the following base filter:
+
+```js
+baseFilters: [
+  {key: 'metadata.brand', termVariable: 'componentConditions.brand'}
+]
+```
+
+If no brand is provided in a request, `componentConditions.brand` uses the [default brand]({{< ref "/reference/project-config/brands" >}}) as configured in the Project Config.

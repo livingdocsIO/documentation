@@ -76,6 +76,12 @@ To set it up, create an [include service]({{< ref "/reference/document/includes/
 }
 ```
 
+### Term Variables
+
+In addition to the regular [Search DSL]({{< ref "/customising/advanced/editor-configuration/base-filter/" >}}), base filters in `li-document-search` support term variables. Term variables enable you to reference a value that is evaluated only at the time of the request.
+
+To learn more, please refer to the [term variable documentation]({{< ref "/reference/document/metadata/plugins/li-teaser/#term-variables" >}}).
+
 ## User Interface
 
 Editors can adjust display filters in the user interface to control which articles should be included. If enabled, they can also adjust the number of included articles.

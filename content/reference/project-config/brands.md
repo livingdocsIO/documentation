@@ -34,3 +34,4 @@ You can define your brands in the Project Config. Each brand requires an icon, w
 When retrieving a document via the API, you can specify a brand for which the document is composed. The provided brand is used in two features:
 
 - [Component Conditions]({{< ref "/reference/project-config/content-types/#conditional-components" >}}): These allow you to specify the brands for which a component should appear. Livingdocs ensures that only content enabled for a requested brand is included in the response.
+- Base Filters in [`li-teaser`]({{< ref "/reference/document/metadata/plugins/li-teaser/#term-variables" >}}) and [`li-document-search`]({{< ref "/reference/document/metadata/plugins/li-document-search/#term-variables" >}}): These can reference brands using term variables. The term variable is then replaced with the brand value for which the document is requested, resulting in a brand-specific base filter.

@@ -75,6 +75,10 @@ This are all available `queryTypes` which can be used to form a filter query.
 
 // userInTeam ({{< added-in "release-2023-03" >}})
 {key: 'metadata.myTeamHandle.activeUsers.id', termPattern: '{{ userId }}'}
+
+// term variables ({{< added-in "release-2025-01" >}})
+// only supported by li-teaser and li-document-search
+{key: 'metadata.category.id', termVariable: 'metadata.category.id'}
 ```
 
 ### Example - Filter by metadata with key/value
