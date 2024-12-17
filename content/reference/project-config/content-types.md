@@ -432,25 +432,29 @@ componentGroups: [
 
 ### Conditional Components
 
-{{< added-in "release-2024-03" block >}}
+{{< added-in "release-2024-03" >}} (`dateTime`)
 
-Conditional components introduce the ability to render a component in the delivery based on a `dateTime` condition. The conditions are stored with the component data and can be input in the Livingdocs Editor.
+{{< added-in "release-2025-01" >}} (`brands`)
+
+Conditional components introduce the ability to render a component in the delivery based on a `brands` or `dateTime` condition. The conditions are stored with the component data and can be input in the Livingdocs Editor.
 
 To enable the UI functionality you can modify the `components` array within the content type. Where you have a component defined such as `'paragraph'` or `{name: 'paragraph'}`, you can extend the object with a `conditions` property:
 
 ```js
 components: [
-  {name: 'paragraph', conditions: ['dateTime']},
+  {name: 'paragraph', conditions: ['brands', 'dateTime']},
 ]
 ```
+
+The `brands` condition requires you to also [configure your brands]({{< ref "/reference/project-config/brands" >}}).
 
 All [Public API]({{< ref "/reference/public-api" >}}) endpoints that return document content support conditional components. `GET` endpoints support `ignoreComponentConditions` and `componentConditions` query parameters. `POST` endpoints support `ignoreComponentConditions` and `componentConditions` in the request body.
 
 `ignoreComponentConditions` is a boolean value which defaults to `false`. In other words, if you do not specify `ignoreComponentConditions=true` then the endpoints will only return the components in the content which pass the conditional checks.
 
-The `componentConditions` value is a JSON stringified object (or a plain object when send in the `POST` request body or provided directly to a Public API method) which contains the conditions you would like to apply. At the moment only `dateTime` is supported. An example of the query parameter would be `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`. A default of `new Date()` is used when component conditions should be applied and no `dateTime` is provided.
+The `componentConditions` value is a JSON stringified object (or a plain object when send in the `POST` request body or provided directly to a Public API method) which contains the conditions you would like to apply. At the moment only `brand` and `dateTime` is supported. An example of the query parameter would be `?componentConditions={"brand":"ch","dateTime":"2024-02-14T17:25:10.391Z"}`. When component conditions are applied, and `brand` or `dateTime` are not provided, the default brand and the current date (`new Date()`) are used, respectively.
 
-Within the document content, the components now have a `conditions` property which sits alongside the `content` property. The `conditions` value is an object which contains a property for the supported conditions, currently only `dateTime`, and the value of the condition:
+Within the document content, the components now have a `conditions` property which sits alongside the `content` property. The `conditions` value is an object which contains a property for the supported conditions, currently only `brands` and `dateTime`, and the value of the condition:
 
 ```js
 {
@@ -461,6 +465,7 @@ Within the document content, the components now have a `conditions` property whi
     "title": "My Document Title"
   },
   "conditions": {
+    "brands": ["ch", "de"],
     "dateTime": {
       "gte": "2024-02-11T23:00:00.000Z",
       "lt": "2024-02-25T23:00:00.000Z"
@@ -469,7 +474,7 @@ Within the document content, the components now have a `conditions` property whi
 }
 ```
 
-`gte` and `lt` properties are both optional. It is possible to set a start time (`gte`) without an end time (`lt`), and an end time without a start time. The `dateTime` property will not exist if both of the timestamps are removed.
+`gte` and `lt` properties are both optional. It is possible to set a start time (`gte`) without an end time (`lt`), and an end time without a start time. The `dateTime` property will not exist if both of the timestamps are removed. The same applies for `brands`: If no brands are set, the property will not exist.
 
 Component conditions are only active when the document revision is published. Before publishing, the conditions considered to be part of the draft and will have no effect. When a component condition time passes the background scheduler will trigger a `publication.update` server event and process any configured webhooks, then schedule a future event if one exists.
 

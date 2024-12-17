@@ -243,6 +243,83 @@ For more details, refer to the [Sass official documentation on deprecating `@imp
 {{< feature-info "Conditions" "server" >}}
 ### Brand Conditions :gift:
 
+To support country- or brand-specific content, we are introducing a new component condition: the `brands` condition. This allows downstreams to configure a set of brands, from which one or more can be selected on components to define for which brands a component should be included. This condition works alongside the already existing `dateTime` condition.
+
+{{< img src="./release-2025-01-brands-condition.png" alt="Brands component condition" width="350" >}}
+
+1. To configure the new `brands` condition, downstreams need to first define a set of [brands in the Project Config]({{< ref "/reference/project-config/brands" >}}).
+    ```js
+    brands: [
+      {
+        handle: 'brand1',
+        label: 'Example Brand 1',
+        iconUrl: 'https://example.com/brand1.svg',
+        isDefault: true
+      },
+      {
+        handle: 'brand2',
+        label: 'Example Brand 2',
+        iconUrl: 'https://example.com/brand2.svg'
+      }
+    ]
+    ```
+2. Then, the `brands` condition can be enabled for specific components in the [content type configuration]({{< ref "/reference/project-config/content-types/#conditional-components" >}}).
+    ```js
+    components: [
+      {
+        name: 'title',
+        conditions: ['brands']
+      }
+    ]
+    ```
+3. When requesting a document through the Composition API or any other endpoint, conditions are automatically evaluated according to the provided `componentConditions` property. If no brand is provided, the default brand will be used instead. A document can only be requested for a single brand at a time.
+    ```
+    POST {{server}}/api/beta/composition/1
+    
+    {
+      "componentConditions": {
+        "brand": "brand2"
+      }
+    }
+    ```
+
+For more information, please refer to our [conditional components documentation]({{< ref "/reference/project-config/content-types/#conditional-components" >}}).
+
+#### Visibility Mode
+
+With the introduction of the `brands` condition, we are renaming 'Timeline Mode' to 'Visibility Mode' to better reflect its new use case. Its purpose remains the same: allowing users to preview a document for a specific brand and at a specific date time.
+
+Before release-2025-01:
+
+{{< img src="./release-2025-01-timeline-mode.png" alt="Timeline mode action" width="400" >}}
+
+release-2025-01 and after:
+
+{{< img src="./release-2025-01-visibility-mode.png" alt="Visibility mode action" width="400" >}}
+
+#### API
+
+The `brands` condition is supported by all API endpoints where the existing `dateTime` component condition is supported:
+
+- `GET /api/v1/documents/:documentId/latestPublication`
+- `GET /api/v1/documents/latestPublications`
+- `GET /api/v1/documents/:documentId/latestPublication/renditions/:renditionHandles`
+- `GET /api/v1/publications/search`
+- `GET /api/v1/document-lists/:id`
+- `GET /api/beta/documents/:documentId/latestDraft`
+- `GET /api/beta/documents/:documentId/latestPublication`
+- `GET /api/beta/documents/latestPublications`
+- `POST /api/beta/composition/:documentId`
+
+Along with these endpoints, the related Public API methods also support the new `brands` condition:
+
+- `publicApi.getLatestPublication({ignoreComponentConditions, componentConditions})`
+- `publicApi.getLatestPublications({ignoreComponentConditions, componentConditions})`
+- `publicApi.getRenditions({ignoreComponentConditions, componentConditions})`
+- `publicApi.searchPublications({ignoreComponentConditions, componentConditions})`
+- `publicApi.getDocumentList({ignoreComponentConditions, componentConditions})`
+- `publicApi.getLatestDraftBeta({ignoreComponentConditions, componentConditions})`
+- `publicApi.getLatestDraftsBeta({ignoreComponentConditions, componentConditions})`
 
 {{< feature-info "Page Management" "server" >}}
 ### Page Management:References in Base Filters
