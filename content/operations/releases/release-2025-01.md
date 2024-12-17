@@ -17,11 +17,6 @@ aliases:
   branchHandle="release-2025-01"
 >}}
 
-## PRs to Categorize
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/7579)
-* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/9387)
-
-
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-january-2025).
 To learn about the necessary actions to update Livingdocs to `release-2025-01`, read on.
 
