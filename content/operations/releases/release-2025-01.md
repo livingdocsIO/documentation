@@ -226,6 +226,11 @@ indexing: {
 
 Server PR: [Stricter Validation of Metadata Plugin Indexing Keys](https://github.com/livingdocsIO/livingdocs-server/pull/7536)
 
+{{< feature-info "Metadata Plugins" "server" >}}
+### Legacy base filter syntax in li-document-search :fire:
+
+Base filters in metadata plugin `li-document-search` no longer support the legacy filter syntax. Downstreams which define the `baseFilters` using the old syntax, need to migrate them to the new [Search DSL]({{< ref "/reference/public-api/publications/search/#search-filters" >}}).
+
 ## Deprecations
 
 {{< feature-info "Design" "editor" >}}
