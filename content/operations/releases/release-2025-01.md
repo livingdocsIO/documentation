@@ -18,6 +18,7 @@ aliases:
 >}}
 
 ## PRs to Categorize
+* [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/7579)
 * [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/9387)
 
 
