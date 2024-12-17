@@ -1,0 +1,40 @@
+title: Get Incoming Media References for a Media Library Entry
+description: |
+  This endpoint returns all Media Library Entries which link to this Media Library Entry (via metadata)
+
+scopes: public-api:read
+query: |
+  ACCESS_TOKEN=ey1234
+  curl -k -X GET "https://server.livingdocs.io/api/v1/mediaLibrary/:mediaId/incomingMediaReferences" \
+    -H "Authorization: Bearer $ACCESS_TOKEN"
+endpoint:
+  method: GET
+  path: /api/v1/mediaLibrary/:mediaId/incomingMediaReferences
+parameters:
+  - name: :mediaId
+    type: string
+    required: true
+  - name: ?limit
+    type: integer
+    required: false
+    notes: A limit for how much published documents to retrieve. Defaults to 100. Max. 100.
+  - name: ?offset
+    type: integer
+    required: false
+    notes: An offset into the query. Useful when getting more than 100 results (pagination).
+responses:
+  - code: "200"
+    body: |
+      [
+        {
+          "id": "B1LPgANhJFpo",
+          "references": [
+            {
+              "id": "9fKagDCiN6sb",
+              "type": "image",
+              "location": "metadata",
+              "propertyName": "imageLink"
+            }
+          ]
+        }
+      ]

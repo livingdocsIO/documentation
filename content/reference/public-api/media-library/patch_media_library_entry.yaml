@@ -1,0 +1,111 @@
+title: Patch a Media Library Entry
+description: |
+  Patch a Media Library Entry by its `id`.
+
+useCases: |
+  - Enhancing MediaLibraryEntries. For example, update the metadata after transcoding a video or analyzing the media with an external service.
+  - When having a separate DAM - update Livingdocs Media Library Entry
+
+scopes: public-api:write
+query: |
+  ACCESS_TOKEN=ey1234
+  curl -k -X PATCH "https://server.livingdocs.io/api/v1/mediaLibrary/:id" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $ACCESS_TOKEN"
+endpoint:
+  method: PATCH
+  path: /api/v1/mediaLibrary/:id
+parameters:
+  - name: version
+    type: string
+    required: false
+    notes: "current mediaLibraryEntry version. When set on update the version is checked."
+  - name: patches
+    type: array
+    required: true
+    notes: |
+      An array of patches to execute. Each entry is an object with the following keys:
+      - **operation** `setMetadataProperty`, `replaceAsset`, `revokeAsset`, `archive` or `removeAsset` ({{< added-in "release-2024-01" >}})
+      - **propertyName** string of the propertyName (only for setMetadataProperty)
+      - **value** string or object for the new value. If set to null or value is not set it will remove the property for setMetadataProperty. **required** for replaceAsset operation.
+      - **locale** string of the asset to be removed (only in multilingual setups for removeAsset)
+
+example_request: |
+  {
+    "version": "1",
+    "patches": [
+      {
+        // update a single metadata property
+        "operation": "setMetadataProperty",
+        "propertyName": "title",
+        "value": "updated title"
+      },
+      {
+        // replace the asset
+        "operation": "replaceAsset",
+        "value": {
+          // the file with this key should exist in the configured storage
+          key: '2021/11/23/my-new-file.png',
+          url: 'https://example.com/my-new-file.png',
+          size: 10000,
+          width: 1000,
+          height: 800,
+          filename: 'my-new-file.png',
+          mimeType: 'image/png'
+        }
+      },
+      {
+        // revoke the asset
+        "operation": "revokeAsset"
+      },
+      {
+        // archives a Media Library Entry
+        "operation": "archive"
+      },
+      {
+        // removes a translated asset (the default locale asset cannot be removed)
+        "operation": "removeAsset",
+        "locale": "en"
+      }
+    ]
+  }
+
+responses:
+  - code: "200"
+    endpoint: /api/v1/mediaLibrary/:id
+    body: |
+      {
+        "status": 200
+      }
+  - code: "400"
+    endpoint: /api/v1/mediaLibrary/:id
+    body: |
+      {
+        "status": 400,
+        "error": "Bad Request",
+        "error_details": {
+          "patches.0.operation": "No enum match for: \"notExistingOperation\""
+        }
+      }
+  - code: "404"
+    endpoint: /api/v1/mediaLibrary/:id
+    body: |
+      {
+        "status": 404,
+        "error": "Not Found",
+        "error_details": {
+          "name": "NotFound",
+          "message": "MediaLibrary Entry does not exist (id: 'yLBGtTjWN4ba')"
+        }
+      }
+  - code: "409"
+    endpoint: /api/v1/mediaLibrary/:id
+    body: |
+      {
+        "status": 409,
+        "error": "Conflict",
+        "error_details": {
+          "name": "Conflict",
+          "message": "Version: Expected 36 to be equal to 1"
+        }
+      }

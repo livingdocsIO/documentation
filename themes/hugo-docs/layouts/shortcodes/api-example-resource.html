@@ -1,0 +1,132 @@
+{{- $yamlPath := .Get "file" -}}
+{{ $PAGE := .Page }}
+{{ if (ne $PAGE.BundleType "branch") }}{{ $PAGE = .Page.Parent }}{{ end }}
+{{- $example := $PAGE.Resources.Get $yamlPath | transform.Unmarshal -}}
+
+<div class="api-example{{ if (eq $example.title "") }} api-example--no-title{{ end }}{{ if $example.beta }} api-example--beta{{ end }}">
+
+  {{- if $example.title -}}
+    <h2 id="{{ $example.title | urlize }}" class="api-example__title">{{ $example.title | $PAGE.RenderString }}</h2>
+  {{- end -}}
+
+  {{- if $example.release -}}
+    {{- partial "added-in" (dict "release" $example.release "block" true) -}}
+  {{- end -}}
+
+  {{- if $example.deprecation -}}
+    {{ (printf `> [!WARNING] {{< deprecated-in "%s" >}}<br><br> %s` $example.deprecation.since $example.deprecation.note) | $PAGE.RenderString }}
+  {{- end -}}
+
+  {{- if $example.scopes -}}
+    {{- partial "required-for" (dict "scopes" $example.scopes "block" true) -}}
+  {{- end -}}
+
+  {{- if $example.description -}}
+    <div class="api-example__description">
+      <h4>Description</h4>
+      {{- $example.description | $PAGE.RenderString -}}
+    </div>
+  {{- end -}}
+
+  {{- if $example.useCases -}}
+    <div class="api-example__description">
+      <h4>Use Cases</h4>
+      {{- $example.useCases | $PAGE.RenderString -}}
+    </div>
+  {{- end -}}
+
+  {{- if $example.query -}}
+    <div class="api-example__curl">
+      <div class="teaser-and-code">
+        <div class="teaser-and-code__teaser">
+          <div class="code-teaser code-teaser--with-interaction">
+            <div class="code-teaser__interaction">
+              <span class="arrow arrow--right"></span>
+            </div>
+            <div class="code-teaser__endpoint">Curl Example</div>
+          </div>
+        </div>
+
+        <div class="teaser-and-code__code">
+          {{ highlight $example.query "bash" }}
+        </div>
+      </div>
+    </div>
+  {{- end -}}
+
+  {{- if $example.endpoint -}}
+    <h4>Endpoint</h4>
+    {{ highlight (printf "%s %s" $example.endpoint.method  $example.endpoint.path) "curl" }}
+  {{- end -}}
+
+  {{- if $example.parameters -}}
+    <h4>Parameters</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Required</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{- range $example.parameters -}}
+          <tr>
+            <td>{{ .name }}</td>
+            <td>{{ .type }}</td>
+            <td>{{ if .required }}x{{ end }}</td>
+            <td>{{ .notes | $PAGE.RenderString }}</td>
+          </tr>
+        {{- end -}}
+      </tbody>
+    </table>
+  {{- end -}}
+
+  {{- if $example.example_request -}}
+  <h4>Example Request</h4>
+  {{ highlight $example.example_request "js" }}
+  {{- end -}}
+
+  {{- if $example.responses -}}
+    <div class="api-example__response">
+      <h4>Response{{ if (eq $example.responseBlurry true) }} (may differ in details){{ end }}</h4>
+
+      {{- range $example.responses -}}
+        <div class="api-example__response-entry">
+          <div class="teaser-and-code">
+            <div class="teaser-and-code__teaser">
+              <div class="code-teaser{{ if (ne .collapsible false) }} code-teaser--with-interaction{{ end }}{{ if (eq .code "200") }} code-teaser--success{{ end }}{{ if (ne .code "200") }} code-teaser--error{{ end }}">
+                {{ if (ne .collapsible false) }}
+                <div class="code-teaser__interaction">
+                  <span class="arrow arrow--right"></span>
+                </div>
+                {{ end }}
+                <div class="code-teaser__code">{{ .code }}</div>
+                {{ $routename := "" }}
+                {{- if .name -}}{{  $routename = .name }}
+                {{- else if (eq .code "200") -}}{{ $routename = "OK" }}
+                {{- else if (eq .code "301") -}}{{ $routename = "Moved Permanently" }}
+                {{- else if (eq .code "400") -}}{{ $routename = "Bad Request" }}
+                {{- else if (eq .code "401") -}}{{ $routename = "Unauthorized" }}
+                {{- else if (eq .code "403") -}}{{ $routename = "Forbidden" }}
+                {{- else if (eq .code "404") -}}{{ $routename = "Not Found" }}
+                {{- else if (eq .code "409") -}}{{ $routename = "Conflict" }}
+                {{- else if (eq .code "429") -}}{{ $routename = "Usage Limit Exceeded" }}
+                {{- else if (eq .code "500") -}}{{ $routename = "Bad Request" }}
+                {{ end}}
+                {{- if $routename -}}<div class="code-teaser__name">{{ $routename }}</div>{{ end }}
+                {{- if .endpoint -}}<div class="code-teaser__endpoint">{{ .endpoint }}</div>{{- end -}}
+              </div>
+            </div>
+            <div class="teaser-and-code__code{{ if (eq .collapsible false) }} show{{ end }}">
+              {{ highlight .body (or .format "js") }}
+            </div>
+          </div>
+        </div>
+      {{- end -}}
+
+    </div>
+  {{- end -}}
+
+</div>

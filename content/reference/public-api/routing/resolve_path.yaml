@@ -1,0 +1,64 @@
+title: Resolve a Path to a Document
+description: |
+  You need to activate the [Categories]({{< ref "/reference/project-config/categories" >}}) / [Routing]({{< ref "/reference/project-config/content-types#routing" >}}) feature in the Project Config in order to resolve paths to your documents. Routing is a quite advanced topic and the examples only work with a default configuration. Find more [here](/guides/organisation/routing-system/).
+
+scopes: public-api:read
+query: |
+  ACCESS_TOKEN=ey1234
+  curl -k -X GET "https://server.livingdocs.io/api/v1/routing/resolve?path=:path" \
+    -H "Authorization: Bearer $ACCESS_TOKEN"
+endpoint:
+  method: GET
+  path: /api/v1/routing/resolve
+parameters:
+  - name: path
+    type: string
+    required: true
+    notes: |
+      Path to the document.  
+      Example 1: A page with a category `/news` can be found with `?path=/news.html`.  
+      Example 2: A document with id 10, with category `/news` and a slug `hello` can be found with `?path=/magazin/hello-10.html'`.
+responses:
+  - code: "200"
+    endpoint: /api/v1/routing/resolve?path=/correct-path/my-article-173.html
+    body: |
+      [
+        {
+          "type": "document",
+          "resource": {
+            "id": 173,
+            "statusCode": 200
+          }
+        }
+      ]
+  - code: "301"
+    endpoint: /api/v1/routing/resolve?path=/incorrect-path/slug-with-correct-id-77.html
+    body: |
+      [
+        {
+          "type": "redirect",
+          "path": "/path/to/redirect",
+          "resource": {
+            "statusCode": 301
+          }
+        }
+      ]
+  - code: "404"
+    endpoint: /api/v1/routing/resolve?path=/does/not/exist
+    body: |
+      {
+        "status": 404,
+        "error": "Not Found"
+      }
+  - code: "410"
+    endpoint: /api/v1/routing/resolve?path=/unpublished-document-123.html
+    body: |
+      [
+        {
+          "type": "unpublished",
+          "resource": {
+            "id": 123,
+            "statusCode": 410
+          }
+        }
+      ]

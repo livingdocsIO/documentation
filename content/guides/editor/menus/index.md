@@ -4,9 +4,8 @@ description: Model menus with data records
 weight: 4
 ---
 
-{{< info >}}
-As of {{< release "release-2024-11" >}}, the Menu Tool has been deprecated in favor of modeling menus with data records. Please reach out for assistance with migrating from the Menu Tool to data records.
-{{< /info >}}
+>[!WARNING] {{< deprecated-in "release-2024-11" >}}
+The Menu Tool has been deprecated in favor of modeling menus with data records. Please reach out for assistance with migrating from the Menu Tool to data records.
 
 Menus can be conveniently modeled using data records, which can be included in dashboards and referenced in other documents. Like all documents in Livingdocs, they define the content but not the presentation.
 
