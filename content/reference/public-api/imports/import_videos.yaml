@@ -1,0 +1,85 @@
+title: Import Videos
+description: |
+  The video import does both create and update videos. The import remembers the `externalId` / `systemName` pair and if an import matches an existing pair, it will update (Hint: consider how to rebuild the externalId when you want to update videos). The video import in Livingdocs is asynchronous. You post a batch of videos that you want to import and get back an id with which you can query later to get your result.
+
+useCases: |
+  - [Initial import from a legacy system]({{< ref "/guides/setup/import-legacy-system-documents" >}})
+
+scopes: public-api:write
+query: |
+  ACCESS_TOKEN=ey1234
+  curl -k -X POST "https://server.livingdocs.io/api/v1/import/videos" \
+    -H "Authorization: Bearer $ACCESS_TOKEN" \
+    -H "Content-Type: application/json; charset=utf-8" \
+    --data-binary @- << EOF
+    {
+      "systemName": "identifier-for-your-system",
+      "webhook": "https://my-domain.com/webhooks/video-import",
+      "videos": [
+        {
+          "url": "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
+          "id": "123abc",
+          "fileName": "sample",
+          "metadata": {
+            "title": "sample video"
+            "credit": "LC"
+          }
+        }
+      ]
+    }
+    EOF
+endpoint:
+  method: POST
+  path: /api/v1/import/videos
+
+example_request: |
+  {
+    "systemName": "identifier-for-your-system",
+    "webhook": "https://my-domain.com/webhooks/video-import",
+    "context": {
+      "myIdentifier": "some-identifier-sent-to-the-webhook"
+    },
+    "videos": [
+      {
+        "url": "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
+        "id": "123abc",
+        "fileName": "foo",
+        "metadata": {
+          "title": "sample video",
+          "credit": "LC"
+        }
+      }
+    ]
+  }
+
+
+parameters:
+  - name: systemName
+    type: string
+    required: true
+    notes: "Identifier for the system you are importing from, e.g. an archive"
+  - name: webhook
+    type: uri
+    required: false
+    notes: "Endpoint at the importing system that gets notified by POST when import job is done. Notification contains the id of the import job, the state and an overview."
+  - name: context
+    type: object
+    required: false
+    notes: "An object that is passed as context in the body of the request to the webhook. Limited to 8192 Bytes."
+  - name: videos
+    type: array
+    required: true
+    notes: |
+      An array of videos to import. Each entry is an object with the following keys, all of which are required:
+      - **url:** a URL to a video file, must reference a video file with mimetype `video/*`.
+      - **id:** a unique id (stored as externalId in Livingdocs) that identifies the video on your end, must be unique within your project
+      - **fileName:** the title that the video should get in livingdocs
+      - **metadata:** An object of metadata according to your project config
+responses:
+  - code: "200"
+    name: OK
+    endpoint: /api/v1/import/videos
+    body: |
+      {
+        "id": "25bzj8j"
+      }

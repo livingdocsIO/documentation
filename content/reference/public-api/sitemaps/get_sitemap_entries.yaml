@@ -1,0 +1,50 @@
+title: Get a Sitemap's Entries
+useCases: |
+  - Provides [Sitemap Entries](https://www.sitemaps.org/protocol.html) for Deliveries
+
+scopes: public-api:read
+query: |
+  ACCESS_TOKEN=ey1234
+  curl -k -X GET "https://server.livingdocs.io/api/v1/sitemaps/entries?baseUrl=https://livingdocs.io&date=2021-05" \
+    -H "Authorization: Bearer $ACCESS_TOKEN"
+endpoint:
+  method: GET
+  path: /api/v1/sitemaps/entries
+parameters:
+  - name: ?baseUrl
+    type: string
+    required: true
+    notes: |
+      Base url of the delivery host.  
+      Example: `?baseUrl=https://livingdocs.io/`
+
+  - name: ?date
+    type: string
+    required: true
+    notes: |
+      Date for the specific month matching the schema from the sitemap index file.  
+      Example: `?date=2021-06` or `?date=2021-06.2`
+  - name: ?contentTypes
+    type: string
+    required: false
+    notes: |
+      A comma-separated list of contentTypes to include in the sitemap.  
+      Example: `?contentTypes=regular,pages`
+  - name: ?entriesPerPage
+    type: string
+    required: false
+    notes: Optional sitemap entry page size. Default 20000
+responses:
+  - code: "200"
+    format: xml
+    body: |
+      <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        <url>
+          <loc>https://www.livingdocs.io/category/title-li.1</loc>
+          <lastmod>2021-05-01T04:56:50.276Z</lastmod>
+        </url>
+        <url>
+          <loc>https://www.livingdocs.io/category/title-li.2</loc>
+          <lastmod>2021-05-01T05:35:32.920Z</lastmod>
+        </url>
+      </urlset>

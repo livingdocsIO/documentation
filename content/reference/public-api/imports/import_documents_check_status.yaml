@@ -1,0 +1,87 @@
+title: Check Import Status for Documents
+description: |
+  This endpoint allows you to check the status of a previously initiated document import. The result will indicate whether the import has finished and its state.
+scopes: public-api:write
+query: |
+  ACCESS_TOKEN=ey1234
+  curl -k -X GET "https://server.livingdocs.io/api/v1/import/documents/status" \
+    -H "Authorization: Bearer $ACCESS_TOKEN"
+endpoint:
+  method: GET
+  path: /api/v1/import/documents/status
+parameters:
+  - name: ?id
+    type: string
+    required: true
+    notes: The id that Livingdocs provided you for your prior call to `/api/v1/import/documents`
+responses:
+  - code: "200"
+    endpoint: /api/v1/import/documents/status?id=25bzj8j
+    body: |
+      {
+        "finished": true,
+        "state": "success",
+        "id": "25bzj8j",
+        "logs": [
+          {
+            "state": "imported",
+            "system_name": "external-system-name",
+            "external_id": "8Sv9Nu0d",
+            "document_id": 1,
+            "checksum": "123abc",
+            "project_id": 3,
+            "channel_id": 2,
+            "revision_id": 4602,
+            "version": 1,
+            "id": 1
+          },
+          {
+            "state": "published",
+            "created_at": "2024-12-03T23:38:29.789Z",
+            "updated_at": "2024-12-03T23:38:29.789Z",
+            "system_name": "external-system-name",
+            "external_id": "9av23oaf",
+            "document_id": 1148,
+            "checksum": "10",
+            "project_id": 3,
+            "channel_id": 2,
+            "revision_id": 4603,
+            "version": 1
+            "id": 1,
+          },
+          {
+            "state": "failed",
+            "reason": "Invalid metadata",
+            "external_id": "external-unique-id-345",
+            "title": "my second document"
+          }
+        ]
+      }
+  - code: "200"
+    name: OK
+    endpoint: /api/v1/import/documents/status?id=243kdc
+    body: |
+      {
+        "finished": false,
+        "state": "started",
+        "id": "243kdc",
+        "startedAt": "2020-01-01 13:45:12"
+      }
+  - code: "200"
+    name: OK
+    endpoint: /api/v1/import/documents/status?id=098shjhv9
+    body: |
+      {
+        "finished": true,
+        "state": "failed",
+        "id": "098shjhv9"
+      }
+  - code: "200"
+    name: OK
+    endpoint: /api/v1/import/documents/status?id=098shjhv9
+    body: |
+      {
+        "finished": false,
+        "state": "lost",
+        "id": "no import job found for id \"098shjhv9\""
+      }

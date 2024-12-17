@@ -1,0 +1,84 @@
+title: Import Images
+description: |
+  The image import creates image entries in the Media Library and upload the image asset to the configured blob storage. The image import in Livingdocs is asynchronous. You post a batch of images that you want to import and get back a jobId that you can use to retrieve the import job state.
+
+  You can patch existing media library entries with the [patch endpoint]({{< ref "/reference/public-api/media-library" >}}).
+
+useCases: |
+  - [Initial import from a legacy system]({{< ref "/guides/setup/import-legacy-system-documents" >}}) - When doing an initial import one usually first imports all images and then imports documents referencing the images.
+
+scopes: public-api:write
+query: |
+  ACCESS_TOKEN=ey1234
+  curl -k -X POST "https://server.livingdocs.io/api/v1/import/images" \
+    -H "Authorization: Bearer $ACCESS_TOKEN" \
+    -H "Content-Type: application/json; charset=utf-8" \
+    --data-binary @- << EOF
+    {
+      "systemName": "identifier-for-your-system",
+      "webhook": "https://my-domain.com/webhooks/image-import",
+      "images": [
+        {
+          "url": "https://placekitten.com/800/600",
+          "id": "123abc",
+          "fileName": "cat",
+          "metadata": {
+            "caption": "foo"
+          }
+        }
+      ]
+    }
+    EOF
+endpoint:
+  method: POST
+  path: /api/v1/import/images
+parameters:
+  - name: systemName
+    type: string
+    required: true
+    notes: "Identifier for the system you are importing from, e.g. an archive"
+  - name: webhook
+    type: uri
+    required: false
+    notes: "Endpoint at the importing system that gets notified by POST when import job is done. Notification contains the id of the import job, the state and an overview."
+  - name: context
+    type: object
+    required: false
+    notes: "An object that is passed as context in the body of the request to the webhook. Limited to 8192 Bytes."
+  - name: images
+    type: array
+    required: true
+    notes: |
+      An array of images to import. Each entry is an object with the following keys, all of which are required:
+      - **url:** a URL to an image file, no data urls allowed, allowed types: png, jpg, gif, svg<br>
+      - **id:** a unique id (stored as externalId in Livingdocs) that identifies the image on your end, must be unique within your project<br>
+      - **fileName:** the title that the image should get in livingdocs<br>
+      - **metadata:** An object of metadata according to your project config<br>
+      - **mediaType:** The handle of one of the mediaTypes from your project configuration
+
+example_request: |
+  {
+    "systemName": "identifier-for-your-system",
+    "webhook": "https://my-domain.com/webhooks/image-import",
+    "context": {
+      "myIdentifier": "some-identifier-sent-to-the-webhook"
+    },
+    "images": [
+      {
+        "url": "https://placekitten.com/800/600",
+        "id": "123abc",
+        "fileName": "cat",
+        "metadata": {
+          "caption": "foo"
+        }
+      }
+    ]
+  }
+
+responses:
+  - code: "200"
+    endpoint: /api/v1/import/images
+    body: |
+      {
+        "id": "25bzj8j"
+      }

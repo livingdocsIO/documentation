@@ -1,0 +1,75 @@
+title: Get your First Response
+description: |
+  For testing purposes, you can go and run the following code snippet in your Terminal.
+
+  Don't forget to replace [your token.](https://edit.livingdocs.io/access/111/public-api)
+
+query: |
+  curl -k -X GET https://server.livingdocs.io/api/v1/documents/latestPublications \
+    -H "Authorization: Bearer your_token"
+responses:
+  - code: "200"
+    body: |
+      [
+        {
+          "systemdata": {
+            "projectId": 1,
+            "channelId": 1,
+            "documentId": 1,
+            "contentType": "article",
+            "documentType": "article",
+            "publicationId": 1,
+            "firstPublicationDate": "2022-03-16T14:08:11:000Z",
+            "significantPublicationDate": "2022-10-26T07:25:00.000Z",
+            "visiblePublicationDate": "2022-10-27T06:00:00.000Z",
+            "lastPublicationDate": "2023-03-18T16:32:04.170Z",
+            "design": {
+              "name": "timeline",
+              "version": "1.1.0"
+            }
+          },
+          "metadata": {
+            "title": "a title",
+            "description": "some lead",
+            "dependencies": {}
+          },
+          "content": [
+            {
+              "id": "doc-1b8i1ksh10",
+              "component": "head",
+              "identifier": "timeline.head",
+              "content": {
+                "title": "a title",
+                "text": "some lead"
+              }
+            },
+            {
+              "id": "doc-1b8i1ksh20",
+              "component": "normal",
+              "identifier": "timeline.normal",
+              "content": {
+                "caption": "my caption"
+              },
+              "styles": {
+                "position": "left"
+              }
+            },
+            {
+              "id": "doc-1b8i1ksh30",
+              "component": "p",
+              "identifier": "timeline.p",
+              "content": {
+                "text": "first paragraph"
+              }
+            },
+            {
+              "id": "doc-1b8i1me1d0",
+              "component": "p",
+              "identifier": "timeline.p",
+              "content": {
+                "text": "second paragraph"
+              }
+            }
+          ]
+        }
+      ]

@@ -1,0 +1,26 @@
+{{ $emojis := dict
+  "caution" ":exclamation:"
+  "important" ":information_source:"
+  "note" ":information_source:"
+  "tip" ":bulb:"
+  "warning" ":information_source:"
+}}
+
+{{ if eq .Type "alert" }}
+  <blockquote class="info info-{{ .AlertType }}">
+    <p class="info-heading">
+      {{ $info := resources.Get (printf "svg/%s.svg" .AlertType) | fingerprint }}
+      <img src="{{ $info.RelPermalink }}" alt="" class="info__icon">
+      {{ with .AlertTitle }}
+        {{ . }}
+      {{ else }}
+        {{ or (i18n .AlertType) (title .AlertType) }}
+      {{ end }}
+    </p>
+    {{ .Text }}
+  </blockquote>
+{{ else }}
+  <blockquote>
+    {{ .Text }}
+  </blockquote>
+{{ end }}

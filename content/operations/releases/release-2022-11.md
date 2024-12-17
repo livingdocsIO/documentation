@@ -5,7 +5,6 @@ description: Release notes for release-2022-11
 excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
-  - /operations/releases/release-2022-11/
   - /operations/releases/release-2022-11/release-2022-11/
 ---
 

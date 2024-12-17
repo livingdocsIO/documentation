@@ -1,0 +1,63 @@
+title: Check Import Status for Files
+description: |
+  You can use this endpoint to check for the status and/or result of a file import.
+
+scopes: public-api:write
+query: |
+  ACCESS_TOKEN=ey1234
+  curl -k -X GET "https://server.livingdocs.io/api/v1/import/files/status" \
+    -H "Authorization: Bearer $ACCESS_TOKEN"
+endpoint:
+  method: GET
+  path: /api/v1/import/files/status
+parameters:
+  - name: ?id
+    type: string
+    required: true
+    notes: The id that Livingdocs provided you for your prior call to `/api/v1/import/files`
+responses:
+  - code: "200"
+    endpoint: /api/v1/import/files/status?id=25bzj8j
+    body: |
+      {
+        "finished": true,
+        "state": "success",
+        "id": "25bzj8j",
+        "files": [
+          {
+            "status": "success",
+            "mediaId": "jjiwhsf23kdk",
+            "systemName": "identifier-for-your-system",
+            "externalId": "external-unique-id-123"
+          },
+          {
+            "status": "skipped",
+            "reason": "already exists",
+            "systemName": "identifier-for-your-system",
+            "externalId": "external-unique-id-234"
+          },
+          {
+            "status": "failed",
+            "reason": "Could not upload file",
+            "systemName": "identifier-for-your-system",
+            "externalId": "external-unique-id-345"
+          }
+        ]
+      }
+  - code: "200"
+    endpoint: /api/v1/import/files/status?id=243kdc
+    body: |
+      {
+        "finished": false,
+        "state": "started",
+        "id": "243kdc",
+        "startedAt": "2020-01-01 13:45:12"
+      }
+  - code: "200"
+    endpoint: /api/v1/import/files/status?id=098shjhv9
+    body: |
+      {
+        "finished": true,
+        "state": "failed",
+        "id": "098shjhv9"
+      }
