@@ -98,6 +98,7 @@ As part of our ongoing migration from Angular to Vue, we have removed support fo
 {{< feature-info "Dashboard" "server" >}}
 ### Dashboard type `dashboard` :fire:
 
+Support for dashboards of type `dashboard` has been removed. Please migrate your dashboards of type `dashboard` to dashboards of type `tableDashboard`.
 
 {{< feature-info "Integrations" "server" >}}
 ### Comyan upload without `targetMediaType` and metadata mapping :fire:
