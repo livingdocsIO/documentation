@@ -229,7 +229,7 @@ Server PR: [Stricter Validation of Metadata Plugin Indexing Keys](https://github
 {{< feature-info "Metadata Plugins" "server" >}}
 ### Legacy base filter syntax in li-document-search :fire:
 
-Base filters in metadata plugin `li-document-search` no longer support the legacy filter syntax. Downstreams which define the `baseFilters` using the old syntax, need to migrate them to the new [Search DSL]({{< ref "/reference/public-api/publications/search/#search-filters" >}}).
+Base filters in metadata plugin `li-document-search` no longer support the legacy filter syntax. Downstreams which define the `baseFilters` using the old syntax, need to migrate them to the new [Search DSL]({{< ref "/guides/editor/filter-migration/#migration-examples" >}}).
 
 ## Deprecations
 
