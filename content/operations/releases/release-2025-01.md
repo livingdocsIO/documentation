@@ -508,6 +508,7 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+- [v114.13.1](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.1): fix(teaser-manager): Reduce include resolve requests
 
 
   ---
