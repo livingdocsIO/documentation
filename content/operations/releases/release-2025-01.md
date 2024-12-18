@@ -444,6 +444,15 @@ For more details, refer to our [term variable documentation]({{< ref "/reference
 {{< feature-info "Metadata" "server" >}}
 ### User needs plugin :gift:
 
+The *User Needs* metadata plugin integrates the [User Needs Model 2.0](https://smartocto.com/blog/explaining-user-needs) into Livingdocs, allowing newsrooms to categorize articles based on audience-focused interests.  
+By assigning one of eight user-need categories during content creation or editing, teams can better align with audience preferences, boost engagement, and optimize content placement.
+
+__How to use User Needs  in Livingdocs:__
+- Add, edited, or remove them in the dashboard or in the metadata panel of the editor
+- Add them in the creation-flow panel
+- Enable User Needs as filters in the dashboard to streamline content analysis.
+
+{{< img src="./release-2025-01-user-needs.png" alt="User Needs in Dashboard and in Metadata"  >}}
 
 {{< feature-info "Integrations" "editor" >}}
 ### PEIQ integration :gift:
