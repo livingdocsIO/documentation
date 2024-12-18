@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Reduce include resolve requests in Teaser Manager](https://github.com/livingdocsIO/livingdocs-editor/pull/9389)
 * [fix(deps): update dependency @livingdocs/framework from 32.1.1 to v32.2.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7580)
 * [Remove nzz publish control behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/9388)
 
