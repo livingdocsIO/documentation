@@ -469,6 +469,13 @@ For more details, refer to our [term variable documentation]({{< ref "/reference
 ### System metadata plugins :gift:
 
 
+{{< feature-info "Configuration" "server" >}}
+### Product Usage Analytics :gift:
+
+In order to drive the continuous improvement of Livingdocs in a user-centered way, usage data and patterns can greatly improve our perspective and point us to pain points worth interviewing users about.
+Livingdocs tracks certain user interactions along with some context data and sends it to [PostHog](https://posthog.com), a cloud service to store, process and visualize such data.
+
+It is opt-in, and we are very cautious to respect the privacy of our users. More details can be found in the [project config settings docs]({{< ref "/reference/project-config/settings/#product-usage-analytics" >}}).
 
 ## Vulnerability Patches
 
