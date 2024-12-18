@@ -460,9 +460,11 @@ The *User Needs* metadata plugin integrates the [User Needs Model 2.0](https://s
 By assigning one of eight user-need categories during content creation or editing, teams can better align with audience preferences, boost engagement, and optimize content placement.
 
 __How to use User Needs  in Livingdocs:__
-- Add, edited, or remove them in the dashboard or in the metadata panel of the editor
-- Add them in the creation-flow panel
-- Enable User Needs as filters in the dashboard to streamline content analysis.
+- Select them in the dashboard, in the metadata panel of the editor or in the creation-flow panel
+- Edit them in the dashboard in the metadata panel
+- Enable User Needs as filter in the dashboard to streamline content analysis.
+
+For instructions on how to set it up, refer to the [li-user-needs documentation]({{< ref "/reference/document/metadata/plugins/li-user-needs" >}}).
 
 {{< img src="./release-2025-01-user-needs.png" alt="User Needs in Dashboard and in Metadata"  >}}
 

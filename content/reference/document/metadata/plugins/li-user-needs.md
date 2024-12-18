@@ -26,7 +26,7 @@ description: |
   Additionally, it helps identify which needs are currently most significant to users, providing actionable insights for editorial strategy.
 
   Within Livingdocs, authors can select one of the eight user-need categories for their articles. 
-  They can be added
+  Depending on where the plugin is configured, user needs categories can be selected
   - in the creation-flow panel
   - in the editor metadata panel
   - in the dashboard.
