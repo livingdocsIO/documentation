@@ -98,10 +98,15 @@ Editor PR: [Drop support for Node.js 18](https://github.com/livingdocsIO/livingd
 
 As part of our ongoing migration from Angular to Vue, we have removed support for Angular dashboard cards. Please consider using the newly introduced [task screens]({{< ref "/operations/releases/release-2024-11/#task-screens-gift" >}}) or our provided upstream task dashboard cards instead. If these do not meet your requirements, migrate your custom dashboard cards to Vue.
 
+Editor PR: [Angular dashboard cards](https://github.com/livingdocsIO/livingdocs-editor/pull/9160)
+
 {{< feature-info "Dashboard" "server" >}}
 ### Dashboard type `dashboard` :fire:
 
 Support for dashboards of type `dashboard` has been removed. Please migrate your dashboards of type `dashboard` to dashboards of type `tableDashboard`.
+
+Server PR: [Dashboard type `dashboard`](https://github.com/livingdocsIO/livingdocs-server/pull/7433)
+Editor PR: [Dashboard type `dashboard`](https://github.com/livingdocsIO/livingdocs-editor/pull/9162)
 
 {{< feature-info "Integrations" "server" >}}
 ### Comyan upload without `targetMediaType` and metadata mapping :fire:
@@ -230,6 +235,8 @@ Server PR: [Stricter Validation of Metadata Plugin Indexing Keys](https://github
 ### Legacy base filter syntax in li-document-search :fire:
 
 Base filters in metadata plugin `li-document-search` no longer support the legacy filter syntax. Downstreams which define the `baseFilters` using the old syntax, need to migrate them to the new [Search DSL]({{< ref "/guides/editor/filter-migration/#migration-examples" >}}).
+
+Server PR: [Legacy base filter syntax in li-document-search](https://github.com/livingdocsIO/livingdocs-server/pull/7536)
 
 ## Deprecations
 
