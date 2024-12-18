@@ -288,7 +288,11 @@ settings: {
         value: 'ios_de_sports, android_de_sports'
       }
     ]
-  }
+  },
+  
+  tracking: {
+    enabled: true
+  },
 
   editMode: 'default'
 }
@@ -379,3 +383,33 @@ The copy configuration allows you to define the mapping of what content-types ca
 It's an array of copy definitions. Each definition first defines the `source`, i.e. the content-type that is copied (e.g. web article) and then the possible targets (e.g. print article), which metadata fields should be mapped from source to target and a set of rules on how to convert the components and directives (exlcude, simple copy or one to many).
 
 For the enterprise version we also have a detailed [guide for copy and transform workflows]({{< ref "/guides/editor/declarative-document-copy" >}}).
+
+## Product Usage Analytics
+{{< added-in "release-2025-11" block>}}
+
+In order to drive the continuous improvement of Livingdocs in a user-centered way, usage data and patterns can greatly improve our perspective and point us to pain points worth interviewing users about.
+Livingdocs tracks certain user interactions along with some context data and sends it to [PostHog](https://posthog.com), a cloud service to store, process and visualize such data.
+
+- We do not transmit any user names, email addresses, IP addresses, location data, browser details
+- User Ids are transmitted in a hashed form and are never used to link back to an actual person
+- Only as much data as necessary is transmitted to gain valuable insights
+- User inputs (e.g. search terms) are not transmitted in clear text, it's either hashed or a derived information
+- We do not gather heatmap data, nor are we using features that record the screen of a user
+
+### Tracked events (simplified)
+- dashboard screen opened (display filters, search info)
+- dashboard screen left (display filters, search info)
+- dashboard result selected (display filters, search info, result index, browser target)
+- added, changed, removed, reset display filters or search term (display filters, search info)
+
+### How to opt-in
+Livingdocs has to add the corresponding `customerId` to the allow-list which also requires a patch version to be deployed afterward.
+Additionally, the tracking needs to be enabled per project: 
+```js
+{
+  tracking: {
+    enabled: true
+  }
+}
+```
+
