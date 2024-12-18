@@ -506,6 +506,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
 - [v114.13.1](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.1): fix(teaser-manager): Reduce include resolve requests
