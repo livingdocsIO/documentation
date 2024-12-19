@@ -471,6 +471,49 @@ For instructions on how to set it up, refer to the [li-user-needs documentation]
 {{< feature-info "Integrations" "editor" >}}
 ### PEIQ integration :gift:
 
+You can now upload images directly from PEIQ via drag & drop into our system, making your workflow more efficient and straightforward.
+
+To set it up, add the following configuration to your project settings:
+
+```js
+// project config
+{
+  settings: {
+    integrations: {
+      peiq: {
+        enabled: true,
+        targetMediaType: 'image',
+        apiEndpoint: '...',
+        apiToken: {
+          $secretRef: {
+            name: 'peiq-local'
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+To enable the import of metadata directly from PEIQ, we provide an extraction mapping feature. This allows you to define how PEIQ fields correspond to specific metadata properties:
+
+```js
+// project config
+{
+  mediaTypes: [
+    {
+      handle: 'image',
+      // ...
+      peiqExtraction: {
+        mappings: [
+          {field: 'name', metadataPropertyName: 'title'},
+          // ...
+        ]
+      }
+    }
+  ]
+}
+```
 
 {{< feature-info "Document Preview" "editor" >}}
 ### Document preview auto-reload :gift:

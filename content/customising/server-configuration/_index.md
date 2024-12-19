@@ -1337,6 +1337,9 @@ There is a general `integrations` configuration for small integrations that can 
     },
     woodwingAssets: {
       allowed: true
+    },
+    peiq: {
+      allowed: true
     }
   }
 }
