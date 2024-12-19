@@ -123,6 +123,16 @@ settings: {
         locale: 'de'
       },
       shouldDetectWeb: true
+    },
+    peiq: {
+      enabled: true,
+      targetMediaType: 'image',
+      apiEndpoint: 'https://example.peiq.cloud',
+      apiToken: {
+        $secretRef: {
+          name: '<secret-name>'
+        }
+      }
     }
   },
 
@@ -318,6 +328,7 @@ Available plugins are:
 - Retresco (text auto-tagging)
 - Google Vision (image auto-tagging)
 - Comyan (external image storage)
+- PEIQ (external image storage)
 
 ### Imatrics
 
@@ -352,6 +363,9 @@ Please see the [Retresco integration guide]({{< ref "/guides/integrations/retres
 
 As with [iMatrics](#imatrics) above, the secure secrets feature is used to store the password for the Basic authentication used by the Comyan API. Please note that the integration must also be enabled in the [server config]({{< ref "/customising/server-configuration/#integrations" >}}).
 
+### PEIQ
+
+As with [iMatrics](#imatrics) above, the secure secrets feature is used to store the token for the bearer authentication used by the PEIQ API. Please note that the integration must also be enabled in the [server config]({{< ref "/customising/server-configuration/#integrations" >}}).
 
 ## Includes
 
