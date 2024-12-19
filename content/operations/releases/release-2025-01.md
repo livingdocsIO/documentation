@@ -522,6 +522,18 @@ To enable the import of metadata directly from PEIQ, we provide an extraction ma
 {{< feature-info "Metadata" "server" >}}
 ### System metadata plugins :gift:
 
+System Metadata Plugins are designed for internal use to support workflows, planning, and internal communication. They manage metadata that does not impact the document’s version history, meaning changes made through these plugins will not trigger an “unpublished change”. These plugins are strictly for internal purposes and are not relevant for content delivery, therefore they are not served through the Public API.
+
+Therefore we are adding the following equivalents of metadata plugins to system metadata plugins:
+ - li-system-boolean
+ - li-system-date
+ - li-system-datetime
+ - li-system-integer
+ - li-system-enum
+ - li-system-target-length
+
+ Additionally the `li-kordiam-schedule` metadata plugin was changed to be a system metadata plugin. This plugin facilitates internal communication between Kordiam and Livingdocs. It allows users to customize their experience by selecting the platforms and categories that they want to view in the Kordiam schedule side panel. This should not have an impact on the document's version history.
+
 
 {{< feature-info "Configuration" "server" >}}
 ### Product Usage Analytics :gift:
