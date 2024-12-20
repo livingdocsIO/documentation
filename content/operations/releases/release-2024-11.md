@@ -640,6 +640,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v261.3.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.18): fix(deps): update dependency @livingdocs/framework from 31.0.3 to v31.0.4
 - [v261.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.17): fix(print-flows): Load correct source document revision ids
 - [v261.3.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.16): fix(access-control): Run `accessControl.canUnpublish` when executing a publish control 'unpublish' command
 - [v261.3.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.15): fix(publication): Compute event before modifying document
