@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Respect count in example server teaser-list service](https://github.com/livingdocsIO/livingdocs-server/pull/7583)
 * [fix(confirm button): Angular version](https://github.com/livingdocsIO/livingdocs-editor/pull/9406)
 * [chore(deps): update dependency puppeteer-core from 23.11.0 to v23.11.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9407)
 * [fix(deps): update dependency @livingdocs/framework from 32.2.0 to v32.2.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7588)
