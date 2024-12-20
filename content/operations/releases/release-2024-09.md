@@ -449,6 +449,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v257.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.24): fix(deps): update dependency @livingdocs/framework from 29.5.10 to v29.5.11
 - [v257.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.23): fix(documents): Increase maximum pagination limit of /documents endpoint to 1000
 - [v257.0.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.22): fix(access-control): Run `accessControl.canUnpublish` when executing a publish control 'unpublish' command
 - [v257.0.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.21): fix(publication): Compute event before modifying document
