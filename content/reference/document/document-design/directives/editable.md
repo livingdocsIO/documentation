@@ -35,15 +35,15 @@ Defined on an HTML tag so that the user can edit the text within.
 
 ## Config Options
 
-### `plainText`, `tagWhitelist` and `tagBlacklist`
+### `plainText`, `tagAllowlist` and `tagDenylist`
 
-Only one of these options can be used on a single directive. `plainText` does not allow any markup. `tagWhitelist` can be used to have exact control about the possible tags in content. `tagBlacklist` can be used to filter out only a few specific tags and allow everything else.
+Only one of these options can be used on a single directive. `plainText` does not allow any markup. `tagAllowlist` can be used to have exact control about the possible tags in content. `tagDenylist` can be used to filter out only a few specific tags and allow everything else.
 
 Note: Block level elements and elements like script and style are already prohibited in editable directives. Use the above options only to filter inline elements like `<a>` or `<strong>`.
 
 - `plainText`: true | false, Ensures that a text can not contain any HTML tags (decodes HTML).
-- `tagWhitelist`: Only allows selected tags in the content, e.g. `"tagWhitelist": ['a', 'em']` would only allow a and em tags, but would remove e.g. a strong tag.
-- `tagBlacklist`: Removes certain tags from the content, e.g. `"tagBlacklist": ['a']` would remove all `<a>` tags.
+- `tagAllowlist`: Only allows selected tags in the content, e.g. `"tagAllowlist": ['a', 'em']` would only allow a and em tags, but would remove e.g. a strong tag.
+- `tagDenylist`: Removes certain tags from the content, e.g. `"tagDenylist": ['a']` would remove all `<a>` tags.
 
 ### Character length
 
