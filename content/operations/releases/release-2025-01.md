@@ -297,6 +297,8 @@ For more details, refer to the [Sass official documentation on deprecating `@imp
 {{< feature-info "Configuration" "server" >}}
 ### Rename `blacklist` and `whitelist` to `denylist` and `allowlist` :warning:
 
+As part of our commitment to inclusivity and clarity, we are deprecating the terms “blacklist” and “whitelist” in favor of “denylist” and “allowlist” across all configurations, APIs, and documentation. Please update your configurations and codebases to reflect this change. For example, replace blacklist with denylist and whitelist with allowlist in settings and API calls. Backward compatibility will be maintained until `release-2025-07`, after which the deprecated terms will be removed. 
+
 {{< feature-info "Server Configuration" "server" >}}
 ### Multi channel configuration :warning:
 
