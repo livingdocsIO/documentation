@@ -14,7 +14,7 @@ support:
   tableDashboard: false
   displayFilter: false
   searchIndexing: false
-  systemMetadata: false
+  systemMetadata: true
   planningSystem: false
 description: |
   {{< info >}}
