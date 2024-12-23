@@ -660,6 +660,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.48): fix(security): Patch vulnerability CVE-2024-52810 in  `@intlify/shared` and CVE-2024-55565 in `nanoid`
 - [v111.1.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.47): fix(copy): Ensure document loaded before opening panels
 - [v111.1.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.46): fix(deps): update dependency @livingdocs/framework from 31.0.3 to v31.0.4
 - [v111.1.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.45): fix(teaser-manager): Reduce include resolve requests
