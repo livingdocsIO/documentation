@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Ensure document loaded before opening panels](https://github.com/livingdocsIO/livingdocs-editor/pull/9410)
 * [fix(deps): update dependency ioredis from 5.4.1 to v5.4.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7595)
 * [Make the new `li-system-date` and `li-system-datetime` validations more strict](https://github.com/livingdocsIO/livingdocs-server/pull/7593)
 * [Migrate template string renderings to the same function we use on the server](https://github.com/livingdocsIO/livingdocs-editor/pull/9122)
