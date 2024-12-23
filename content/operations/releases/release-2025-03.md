@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Vulnerability patches December 2024 [master]](https://github.com/livingdocsIO/livingdocs-editor/pull/9416)
 * [fix(deps): update dependency @aws-sdk/client-s3 from 3.716.0 to v3.717.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7596)
 * [Check copySource exists when loading print flows](https://github.com/livingdocsIO/livingdocs-editor/pull/9409)
 * [Ensure document loaded before opening panels](https://github.com/livingdocsIO/livingdocs-editor/pull/9410)
