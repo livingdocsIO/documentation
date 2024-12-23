@@ -563,6 +563,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.7): fix(security): Patch vulnerability CVE-2024-52810 in `@intlify/shared` and CVE-2024-55565 in `nanoid`
 - [v114.13.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.6): fix(print-flows): Check copySource exists
 - [v114.13.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.5): fix(copy): Ensure document loaded before opening panels
 - [v114.13.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.4): fix: remove nzz publish control behavior
