@@ -563,6 +563,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.5): fix(copy): Ensure document loaded before opening panels
 - [v114.13.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.4): fix: remove nzz publish control behavior
 - [v114.13.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.3): fix(confirm button): Angular version
 - [v114.13.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.2): fix(deps): update dependency @livingdocs/framework from 32.1.1 to v32.1.2
