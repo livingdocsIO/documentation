@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @smithy/node-http-handler from 3.3.2 to v3.3.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7600)
 * [Register PEIQ drop handler before image drop handler](https://github.com/livingdocsIO/livingdocs-editor/pull/9415)
 * [Vulnerability patches December 2024 [master]](https://github.com/livingdocsIO/livingdocs-editor/pull/9416)
 * [fix(deps): update dependency @aws-sdk/client-s3 from 3.716.0 to v3.717.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7596)
