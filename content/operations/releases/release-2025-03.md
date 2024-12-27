@@ -4,8 +4,6 @@ title: March 2025 Release
 description: Technical Release Notes for release-2025-03
 excludeFromSearch: true
 hideSectionTeaser: true
-aliases:
-  - /operations/releases/release-2025-03/
 
 header:
   upcoming: true
