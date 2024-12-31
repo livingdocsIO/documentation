@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Allow CI workflow to skip if npm audit returns vulnerabilities](https://github.com/livingdocsIO/livingdocs-server/pull/7604)
 * [Fix print preview size](https://github.com/livingdocsIO/livingdocs-editor/pull/9429)
 * [Set split pane min-width to configured start width if smaller than default (375px)](https://github.com/livingdocsIO/livingdocs-editor/pull/9425)
 * [fix(deps): update dependency @smithy/node-http-handler from 3.3.2 to v3.3.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7600)
