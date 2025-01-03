@@ -4,8 +4,6 @@ title: September 2024 Release
 description: Technical Release Notes for release-2024-09
 excludeFromSearch: false
 hideSectionTeaser: true
-aliases:
-  - /operations/releases/release-2024-09/
 ---
 
 {{< release-header

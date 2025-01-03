@@ -43,6 +43,15 @@ $api-example-padding: $space-m;
       hyphens: auto;
       width: 60%;
     }
+
+    p {
+      font-size: 1em;
+      margin-bottom: 1em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__description,

@@ -15,7 +15,7 @@
   "scripts": {
     "build": "./bin/build.sh",
     "build:fast": "./bin/build.sh --fast",
-    "start": "exec hugo server --buildDrafts --buildFuture --openBrowser",
+    "start": "exec hugo server --buildDrafts --buildFuture --openBrowser --navigateToChanged",
     "start:production": "serve ./public"
   },
   "repository": {

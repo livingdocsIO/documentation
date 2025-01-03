@@ -1,0 +1,64 @@
+title: Add Delivery Status
+description: |
+  This endpoint allows an external system to send updates about a delivery build to Livingdocs.
+
+  Delivery builds are initiated by users within the Livingdocs editor and can be configured to notify an external system. Through this endpoint, external systems can report back to Livingdocs regarding the status of a triggered task or request further clarification by providing user choices. For more information on how to set up and use delivery builds, please refer to our [guide]({{< ref "/guides/editor/publish-control/delivery" >}}).
+
+scopes: public-api:write
+query: |
+  ACCESS_TOKEN=ey1234
+  curl -k -X POST "https://server.livingdocs.io/api/v1/documents/:documentId/addDeliveryStatus" \
+    -H "Authorization: Bearer $ACCESS_TOKEN" \
+    -H "Content-Type: application/json; charset=utf-8" \
+    --data-binary @- << EOF
+    {
+      "reportId": "2SG2MAA9RwPn",
+      "publicationId": 524,
+      "deliveryHandle": "web",
+      "status": "success",
+      "message": "Message with <strong>html</strong>"
+    }
+    EOF
+endpoint:
+  method: POST
+  path: /api/v1/documents/:documentId/addDeliveryStatus
+parameters:
+  - name: :documentId
+    type: integer
+    required: true
+    notes: ""
+  - name: reportId
+    type: string
+    required: false
+    notes: "If provided, this will update the matching delivery build; otherwise, it will create a new one."
+  - name: publicationId
+    type: integer
+    required: conditional
+    notes: "Required for delivery builds of type `publication`"
+  - name: deliveryHandle
+    type: string
+    required: true
+    notes: ""
+  - name: status
+    type: string
+    required: true
+    notes: |
+      One of: `success`, `failed`, `aborted` ({{< added-in "release-2024-07" >}}), `in-progress`
+  - name: message
+    type: string
+    required: false
+    notes: "String or sanitized HTML (supports `<em>`, `<strong>`, `<a>` and `<br>` tags)"
+  - name: userChoices
+    type: |
+      Array<{label: string, value: string}>
+    required: false
+    notes: An array of options given to the user to choose from. This parameter is only allowed when `status` is set to `in-progress`. ({{< added-in "release-2024-07" >}})
+
+responses:
+  - code: "200"
+    name: OK
+    endpoint: /api/v1/documents/222/addDeliveryStatus
+    body: |
+      {
+        "reportId": "0TAW2ORdNjuM"
+      }

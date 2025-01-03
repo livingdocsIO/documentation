@@ -1,0 +1,35 @@
+title: Common Errors
+description: |
+  Common error responses you can expect when working with the public Api.
+
+responses:
+  - code: "401"
+    collapsible: false
+    body: |
+      {
+        "status": 401,
+        "error": "Unauthorized",
+        "error_details": {
+          "access_token": "The access token expired."
+        }
+      }
+  - code: "403"
+    collapsible: false
+    body: |
+      {
+        "status": 403,
+        "error": "Forbidden",
+        "error_details": {
+          "access_token": "The request requires higher privileges"
+        }
+      }
+  - code: "404"
+    collapsible: false
+    body: |
+      {
+        "status": 404,
+        "error": "Not Found",
+        "error_details": {
+          "url": "/api/v1/foo"
+        }
+      }

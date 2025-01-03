@@ -1,0 +1,93 @@
+title: Get List by Id
+description: |
+  This endpoint resolves the referenced documents in a list.  
+  The response is a JSON object including list information with resolved documents.
+
+useCases: |
+  - Resolve a Document List in the delivery
+
+scopes: public-api:read
+query: |
+  ACCESS_TOKEN=ey1234
+  curl -k -X GET "https://server.livingdocs.io/api/v1/document-lists/:id?reverse=false&limit=20" \
+    -H "Authorization: Bearer $ACCESS_TOKEN"
+endpoint:
+  method: GET
+  path: /api/v1/document-lists/:id
+parameters:
+  - name: :id
+    type: integer
+    required: true
+    notes: ""
+  - name: ?reverse
+    type: boolean
+    required: false
+    notes: "Pass 'reverse=false' to get the list in the same order as you see it in the editor. (the default is reverse=true for backwards compatibility reasons)"
+  - name: ?fields
+    type: string
+    required: false
+    notes: "Filters which (comma separated) document properties are included in the response. Defaults to 'systemdata,metadata' also accepts 'content' (no renditions)."
+  - name: ?limit
+    type: integer
+    required: false
+    notes: "A limit for how much documents to resolve for the requested list. Defaults to 100. Max. 100."
+  - name: ?ignoreComponentConditions
+    type: boolean
+    required: false
+    notes: |
+      {{< added-in "release-2024-03" >}}
+
+      Provides a way to opt out of component filtering and return all content regardless of whether each component passes the conditional checks.
+
+      Default: `false`
+  - name: ?componentConditions
+    type: string
+    required: false
+    notes: |
+      {{< added-in "release-2024-03" >}}
+
+      JSON stringified object which contains the component conditions you would like to apply.
+
+      Default: `dateTime: new Date()`  
+      Example: `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`
+
+responses:
+  - code: "200"
+    endpoint: /api/v1/document-lists/1
+    body: |
+      {
+        "id": 1,
+        "name": "List one",
+        "documents": [
+          {
+            "systemdata": {
+              "projectId": 1,
+              "channelId": 1,
+              "documentId": 1,
+              "contentType": "article",
+              "documentType": "article",
+              "design": {
+                "name": "timeline",
+                "version": "1.1.0"
+              }
+            },
+            "metadata": {
+              "title": "a title",
+              "description": "some lead",
+              "dependencies": {},
+              "test": {
+                "callCount": 3,
+                "message": "li-test called 3 times",
+                "events": [
+                  "onUpdate",
+                  "onUpdate",
+                  "onPreparePublish"
+                ]
+              },
+              "testDependency": "li-test-dependency.onUpdate is correct"
+            }
+          }
+        ],
+        "createdAt": "2020-11-05T10:55:51.255Z",
+        "updatedAt": "2020-11-05T10:55:51.255Z"
+      }
