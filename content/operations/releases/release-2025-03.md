@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency pino from 9.5.0 to v9.6.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7601)
 * [Allow CI workflow to skip if npm audit returns vulnerabilities](https://github.com/livingdocsIO/livingdocs-server/pull/7604)
 * [Fix print preview size](https://github.com/livingdocsIO/livingdocs-editor/pull/9429)
 * [Set split pane min-width to configured start width if smaller than default (375px)](https://github.com/livingdocsIO/livingdocs-editor/pull/9425)
