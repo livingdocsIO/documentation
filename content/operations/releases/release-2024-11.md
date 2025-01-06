@@ -646,6 +646,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v261.3.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.20): fix(media-center): Do not throw an error when the max filesize is reached
 - [v261.3.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.19): fix(security): Patch vulnerability CVE-2024-52798 in `path-to-regexp` and CVE-2024-55565 in `nanoid`
 - [v261.3.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.18): fix(deps): update dependency @livingdocs/framework from 31.0.3 to v31.0.4
 - [v261.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.17): fix(print-flows): Load correct source document revision ids
