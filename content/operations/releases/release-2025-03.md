@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fast-glob from 3.3.2 to v3.3.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7611)
 * [fix(deps): update dependency pino from 9.5.0 to v9.6.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7601)
 * [Allow CI workflow to skip if npm audit returns vulnerabilities](https://github.com/livingdocsIO/livingdocs-server/pull/7604)
 * [Fix print preview size](https://github.com/livingdocsIO/livingdocs-editor/pull/9429)
