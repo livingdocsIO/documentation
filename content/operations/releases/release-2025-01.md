@@ -561,6 +561,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.11): fix: Add comment explaining why we don't show the counter when the print preview is open
 - [v114.13.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.10): fix: Fix print preview size
 - [v114.13.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.9): fix: Set split pane min-width to configured start width if smaller than default
 - [v114.13.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.8): fix(peiq): Register PEIQ drop handler before image drop handler
