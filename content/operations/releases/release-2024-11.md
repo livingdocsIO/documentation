@@ -667,6 +667,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.51): fix: Add comment explaining why we don't show the counter when the print preview is open
 - [v111.1.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.50): fix: Fix print preview size
 - [v111.1.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.49): fix: Set split pane min-width to configured start width if smaller than default
 - [v111.1.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.48): fix(security): Patch vulnerability CVE-2024-52810 in  `@intlify/shared` and CVE-2024-55565 in `nanoid`
