@@ -457,6 +457,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v257.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.26): fix(media-center): Do not throw an error when the max filesize is reached
 - [v257.0.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.25): fix(security): Patch vulnerability CVE-2024-21538 in `cross-spawn`, CVE-2024-52798 in `path-to-regexp` and CVE-2024-55565 in `nanoid`
 - [v257.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.24): fix(deps): update dependency @livingdocs/framework from 29.5.10 to v29.5.11
 - [v257.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.23): fix(documents): Increase maximum pagination limit of /documents endpoint to 1000
