@@ -1,4 +1,5 @@
 title: Get Latest Publication
+beta: true
 description: |
   The endpoint provides an unresolved Publication with 5 possible top-level properties:
   - systemdata
@@ -18,7 +19,6 @@ useCases: |
   - (deprecated) Provides a Publication via a [Rendition]({{< ref "/reference/project-config/content-types#renditions" >}}) for a delivery in another format like `RSS`, `XML`
 
 scopes: public-api:read
-beta: true
 query: |
   ACCESS_TOKEN=ey1234
   curl -k -X GET "https://server.livingdocs.io/api/beta/documents/:documentId/latestPublication" \

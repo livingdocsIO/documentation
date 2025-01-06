@@ -1,4 +1,4 @@
-title: Get Menus for a Channel ({{< deprecated-in "release-2024-11" >}})
+title: Get Menus for a Channel
 description: |
   Menu items can be of three types:
   - uri for arbitrary URIs, mainly used for URLs
@@ -9,7 +9,7 @@ useCases: |
   - Get menus for deliveries
 
 deprecation:
-  since: release-2023-03
+  since: release-2024-11
   note: Menus and this endpoint should not be used anymore. The [Menu Tool]({{< ref "/guides/editor/menus" >}}) provides a better developer and user experience for managing menus.
 
 scopes: public-api:read

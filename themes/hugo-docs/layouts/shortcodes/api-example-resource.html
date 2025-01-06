@@ -3,18 +3,31 @@
 {{ if (ne $PAGE.BundleType "branch") }}{{ $PAGE = .Page.Parent }}{{ end }}
 {{- $example := $PAGE.Resources.Get $yamlPath | transform.Unmarshal -}}
 
-<div class="api-example{{ if (eq $example.title "") }} api-example--no-title{{ end }}{{ if $example.beta }} api-example--beta{{ end }}">
+{{ $channel := "" }}
+{{ if $example.beta }}{{ $channel = "beta" }}{{ end }}
+{{ if $example.deprecation.since }}{{ $channel = (print "Deprecated in " $example.deprecation.since) }}{{ end }}
 
+{{ $apiExampleClass := split "" " " }}
+{{ if (eq $example.title "") }}{{ $apiExampleClass = $apiExampleClass | append "api-example--no-title" }}{{ end }}
+{{ if $channel }}
+  {{ if (eq $channel "beta") }}{{ $apiExampleClass = $apiExampleClass | append "api-example--warning" }}
+  {{ else }}{{ $apiExampleClass = $apiExampleClass | append "api-example--danger" }}{{ end }}
+{{ end }}
+
+<div class="api-example {{ delimit $apiExampleClass " " }}" data-channel="{{ $channel }}">
   {{- if $example.title -}}
-    <h2 id="{{ $example.title | urlize }}" class="api-example__title">{{ $example.title | $PAGE.RenderString }}</h2>
+    <div class="api-example__title">
+      <h2  id="{{ $example.title | urlize }}">{{ $example.title | $PAGE.RenderString }}</h2>
+      {{- if $example.deprecation -}}
+      <blockquote class="info info-danger">
+        {{ $example.deprecation.note | $PAGE.RenderString }}
+      </blockquote>
+      {{- end -}}
+    </div>
   {{- end -}}
 
   {{- if $example.release -}}
     {{- partial "added-in" (dict "release" $example.release "block" true) -}}
-  {{- end -}}
-
-  {{- if $example.deprecation -}}
-    {{ (printf `> [!WARNING] {{< deprecated-in "%s" >}}<br><br> %s` $example.deprecation.since $example.deprecation.note) | $PAGE.RenderString }}
   {{- end -}}
 
   {{- if $example.scopes -}}
