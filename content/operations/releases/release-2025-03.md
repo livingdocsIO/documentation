@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Hide text count when print preview is open](https://github.com/livingdocsIO/livingdocs-editor/pull/9432)
 * [Scroll entire publish panel (including error section)](https://github.com/livingdocsIO/livingdocs-editor/pull/9428)
 * [Do not throw an error when the max filesize is reached](https://github.com/livingdocsIO/livingdocs-server/pull/7606)
 * [fix(deps): update dependency fast-glob from 3.3.2 to v3.3.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7611)
