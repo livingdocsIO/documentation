@@ -17,4 +17,12 @@
   :last-child {
     margin-bottom: 0;
   }
+
+  &-warning {
+    background-color: $color-yellow-2;
+  }
+
+  &-alert {
+    background-color: $color-red-2;
+  }
 }

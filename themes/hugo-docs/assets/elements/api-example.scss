@@ -9,13 +9,16 @@ $api-example-padding: $space-m;
   overflow: hidden;
 
   &__title {
-    padding-bottom: $space-m;
-    margin-top: 0;
+    margin-bottom: $space-m;
     border-bottom: 1px solid $color-grey-6;
 
     .anchor {
       top: 15px;
       left: -17px;
+    }
+
+    h2 {
+      margin-top: 0;
     }
   }
 
@@ -79,21 +82,46 @@ $api-example-padding: $space-m;
     }
   }
 
-  &--beta {
-    border: 2px solid $color-yellow-2;
+  &--danger, &--warning {
+    border: 2px solid $color-red-2;
     position: relative;
 
     &::after {
       @extend %font-xxs;
-      content: 'Beta';
+      content: attr(data-channel);
       display: block;
       position: absolute;
       top: 0;
       right: 0;
-      background-color: $color-yellow-2;
+      background-color: $color-red-2;
       text-transform: uppercase;
-      padding: 0 $space-s 0 $space-s + 2px; 
+      padding: 0 $space-s 0 $space-s + 2px;
       border-radius: 0 8px 0 12px;
     }
   }
+
+  &--danger {
+    border: 2px solid $color-red-2;
+
+    &::after {
+      background-color: $color-red-2;
+    }
+
+    blockquote {
+      background-color: $color-red-2;
+    }
+  }
+
+  &--warning {
+    border: 2px solid $color-yellow-2;
+
+    &::after {
+      background-color: $color-yellow-2;
+    }
+
+    blockquote {
+      background-color: $color-yellow-2;
+    }
+  }
+
 }
