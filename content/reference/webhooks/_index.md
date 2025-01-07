@@ -215,7 +215,7 @@ Metadata property conditions are applicable to all document and publication even
 
 Similar to conditions, change filters enable more precise control over when to trigger webhooks.
 
-However, change filters are not evaluated on the current document version but rather on the set of changes made to the document. The webhook is triggered only if at least one of the specified metadata properties has changed. Consequently, display filters are only supported for `document.update` events.
+However, change filters are not evaluated on the current document version but rather on the set of changes made to the document. The webhook is triggered only if at least one of the specified metadata properties has changed. Consequently, change filters are only supported for `document.update` events.
 
 ```js
 events: [
