@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Extract dashboard content types also from nested .or and .and filter arrays](https://github.com/livingdocsIO/livingdocs-editor/pull/9441)
 * [fix(deps): update dependency sass from 1.83.0 to v1.83.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9438)
 * [fix(deps): update dependency fastify from 5.2.0 to v5.2.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7613)
 * [Hide text count when print preview is open](https://github.com/livingdocsIO/livingdocs-editor/pull/9432)
