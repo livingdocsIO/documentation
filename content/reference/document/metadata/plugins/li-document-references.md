@@ -23,7 +23,7 @@ description: |
 defaultUI: |
   Selected documents, or document selection dialog
 
-  ![image](https://user-images.githubusercontent.com/172394/163945540-02557891-ee21-42c5-a03e-4bfb1723e228.png)
+  ![image](../images/163945540-02557891-ee21-42c5-a03e-4bfb1723e228.png)
 storageFormat: |
   {
     $ref: 'documents',

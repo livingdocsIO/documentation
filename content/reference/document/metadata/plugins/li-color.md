@@ -24,7 +24,7 @@ description: |
 defaultUI: |
   Text input with color picker.
 
-  ![image](https://user-images.githubusercontent.com/172394/164286195-51beb096-492d-4f7f-b8e7-4623db658125.png)
+  ![image](../images/li-color-ui.png)
 storageFormat: <String>
 contentTypeConfig: |2
         handle: 'myHandle',

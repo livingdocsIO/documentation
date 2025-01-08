@@ -24,7 +24,7 @@ description: |
 defaultUI: |
   Document selection dialog.
 
-  ![image](https://user-images.githubusercontent.com/172394/164621716-d7dc9fb7-bd6f-4dd5-bc7b-157edd327c34.png)
+  ![image](../images/li-reference-ui.png)
 storageFormat: |
   {
     $ref: 'document',

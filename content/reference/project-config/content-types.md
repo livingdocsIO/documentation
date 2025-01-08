@@ -797,11 +797,11 @@ The "Send to inbox" option will only be displayed in a media library entry's con
 
 Send an asset to a document inbox (Media Library):
 
-![image](https://user-images.githubusercontent.com/5101376/143496169-f06c3e4d-7ed9-4a20-ab0f-87a9f9232178.png)
+![image](../images/send-to-inbox-context-menu-button.png)
 
 Show asset inbox of a document in the Editor:
 
-![image](https://user-images.githubusercontent.com/172394/158125175-42a1758a-d388-46ff-a0c0-57cc7dfcbfec.png)
+![image](../images/asset-inbox-button.png)
 
 ## Comments
 

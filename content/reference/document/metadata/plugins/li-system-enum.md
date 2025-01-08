@@ -24,7 +24,7 @@ description: |
 defaultUI: |
   Select input
 
-  ![image](https://user-images.githubusercontent.com/172394/157249103-fd951f85-edf8-48ff-acc5-1b1a04831589.png)
+  ![image](../images/li-enum-ui.png)
 storageFormat: <String>
 contentTypeConfig: |2
         handle: 'myHandle'

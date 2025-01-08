@@ -21,16 +21,15 @@ First we add a few [gallery components](#add-gallery-components) and a new conte
 
 Content Type "gallery"
 
-![image](https://user-images.githubusercontent.com/172394/140876842-61f298cf-406b-4a5e-aa53-7c058c7c3b85.png)
+![image](../images/image-gallery-content-type.png)
 
 Gallery Teaser Placeholder (no gallery linked yet)
 
-![image](https://user-images.githubusercontent.com/172394/140877439-04639ea7-9fb2-4db0-a3d1-d40c42ba730e.png)
-
+![image](../images/image-gallery-teaser-placeholder.png)
 
 Gallery Teaser
 
-![image](https://user-images.githubusercontent.com/172394/140877202-bce45606-e076-48dd-88e8-a1f0ebf1f971.png)
+![image](../images/image-gallery-teaser.png)
 
 
 ## Guide
