@@ -20,7 +20,7 @@ description: A `li-video-reference` metadata field shows a list of video referen
 defaultUI: |
   Video & Poster Image Upload/Media Library Selection
 
-  ![image](https://user-images.githubusercontent.com/172394/163946930-329405af-f511-40fc-ab8b-e5642702bdea.png)
+  ![image](../images/li-video-reference-ui.png)
 storageFormat: |
   {
     $ref: 'video',

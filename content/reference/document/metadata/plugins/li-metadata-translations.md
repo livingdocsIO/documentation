@@ -23,7 +23,7 @@ description: |
 defaultUI: |
   Built-in language selection UI
 
-  ![image](https://user-images.githubusercontent.com/172394/157072134-5d2be902-3416-4ab3-8047-eb74760b6b5a.png)
+  ![image](../images/li-metadata-translations-ui.png)
 storageFormat: |
   {
     locale: <String>,

@@ -9,7 +9,7 @@ weight: 5
 
 This guide explains you how to enable metadata translations for Data Records.
 
-![image](https://user-images.githubusercontent.com/172394/138244183-c604aed5-efde-4484-a75b-0a1addb8ad6f.png)
+![image](./metadata-translations-form.png)
 
 ## Add Available Languages
 
