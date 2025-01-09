@@ -27,6 +27,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @livingdocs/framework from 32.2.1 to v32.2.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7617)
 * [fix(deps): update dependency @livingdocs/framework from 32.2.1 to v32.2.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9445)
 * [Fix teasers in visibility mode](https://github.com/livingdocsIO/livingdocs-editor/pull/9442)
 * [Extract dashboard content types also from nested .or and .and filter arrays](https://github.com/livingdocsIO/livingdocs-editor/pull/9441)
