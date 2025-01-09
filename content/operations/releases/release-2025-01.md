@@ -559,6 +559,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.15): fix(dialogs): Use fixed position for dialog on mobile
 - [v114.13.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.14): fix(users): Include all users of admin page in csv file
 - [v114.13.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.13): fix(display-filters): Re-add search and keyboard controls to li-display-filter-list-v2-single
 - [v114.13.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.12): fix(visibility mode): use current component conditions to resolve includes
