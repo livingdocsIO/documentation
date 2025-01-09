@@ -665,6 +665,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.53): fix(users): Include all users of admin page in csv file
 - [v111.1.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.52): fix(display-filters): Re-add search and keyboard controls to li-display-filter-list-v2-single
 - [v111.1.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.51): fix: Add comment explaining why we don't show the counter when the print preview is open
 - [v111.1.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.50): fix: Fix print preview size
