@@ -4,16 +4,14 @@ title: July 2017 Release
 description: Release notes for release-2018-07
 hideSectionTeaser: true
 excludeFromSearch: true
----
 
-{{< release-header 
-  title="July 2017 Release"
-  upcoming=false
-  legacy=true
-  current=false
-  maintained=false
-  branchHandle="release-2017-07"
->}}
+header:
+  upcoming: false
+  legacy: true
+  current: false
+  maintained: false
+  branchHandle: release-2017-07
+---
 
 # Release Notes release-17-07
 

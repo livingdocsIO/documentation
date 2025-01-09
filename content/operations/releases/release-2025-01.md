@@ -4,16 +4,56 @@ title: January 2025 Release
 description: Technical Release Notes for release-2025-01
 excludeFromSearch: true
 hideSectionTeaser: true
----
 
-{{< release-header
-  title="January 2025 Release"
-  upcoming=true
-  legacy=false
-  current=false
-  maintained=false
-  branchHandle="release-2025-01"
->}}
+header:
+  upcoming: true
+  legacy: false
+  current: false
+  maintained: false
+  branchHandle: release-2025-01
+
+systemRequirements:
+  suggested:
+    - name: Node
+      version: 22
+    - name: NPM
+      version: 10
+    - name: Postgres
+      version: 16
+    - name: Elasticsearch
+      version: 8.x
+    - name: OpenSearch
+      version: v2.3.0
+    - name: Redis
+      version: 7
+    - name: Livingdocs Server Docker Image
+      version: livingdocs/server-base:22
+    - name: Livingdocs Editor Docker Image
+      version: livingdocs/editor-base:22
+    - name: Browser Support
+      version: Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78
+
+  minimal:
+    - name: Node
+      version: 20.18
+    - name: NPM
+      version: 10
+    - name: Postgres
+      version: 13
+    - name: Elasticsearch
+      version: 7.x
+    - name: OpenSearch
+      version: 1
+    - name: Redis
+      version: 6.2
+    - name: Livingdocs Server Docker Image
+      version: livingdocs/server-base:20:7
+    - name: Livingdocs Editor Docker Image
+      version: livingdocs/editor-base:20:7
+    - name: Browser Support
+      version: Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78
+
+---
 
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-january-2025).
 To learn about the necessary actions to update Livingdocs to `release-2025-01`, read on.
@@ -31,31 +71,10 @@ To learn about the necessary actions to update Livingdocs to `release-2025-01`, 
 ## System Requirements
 
 ### Suggested
-
-| Name                           | Version                                                                                  |
-| ------------------------------ | ---------------------------------------------------------------------------------------- |
-| Node                           | 22                                                                                       |
-| NPM                            | 10                                                                                       |
-| Postgres                       | 16                                                                                       |
-| Elasticsearch<br/>OpenSearch   | 8.x<br/>v2.3.0                                                                           |
-| Redis                          | 7                                                                                        |
-| Livingdocs Server Docker Image | livingdocs/server-base:22                                                                |
-| Livingdocs Editor Docker Image | livingdocs/editor-base:22                                                                |
-| Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
+{{< system-versions list="suggested" >}}
 
 ### Minimal
-
-| Name                           | Version                                                                                  |
-| ------------------------------ | ---------------------------------------------------------------------------------------- |
-| Node                           | 20.18                                                                                    |
-| NPM                            | 10                                                                                       |
-| Postgres                       | 13                                                                                       |
-| Elasticsearch<br/>OpenSearch   | 7.x<br/>1                                                                                |
-| Redis                          | 6.2                                                                                      |
-| Livingdocs Server Docker Image | livingdocs/server-base:20:7                                                              |
-| Livingdocs Editor Docker Image | livingdocs/editor-base:20:7                                                              |
-| Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
-
+{{< system-versions list="minimal" >}}
 
 ## Deployment
 

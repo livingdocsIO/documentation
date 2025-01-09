@@ -6,16 +6,14 @@ excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2023-11/release-2023-11/
----
 
-{{< release-header
-  title="November 2023 Release"
-  upcoming=false
-  legacy=false
-  current=false
-  maintained=false
-  branchHandle="release-2023-11"
->}}
+header:
+  upcoming: false
+  legacy: false
+  current: false
+  maintained: false
+  branchHandle: release-2023-11
+---
 
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-november-2023).
 To learn about the necessary actions to update Livingdocs to `release-2023-11`, read on.

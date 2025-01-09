@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range index .Page.Params.systemRequirements (.Get "list") }}
+      <tr>
+        <td>{{ .name }}</td>
+        <td>{{ .version }}</td>
+      </tr>
+    {{ end }}
+  </tbody>
+</table>

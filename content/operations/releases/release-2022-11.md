@@ -6,17 +6,14 @@ excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2022-11/release-2022-11/
+
+header:
+  upcoming: false
+  legacy: false
+  current: false
+  maintained: false
+  branchHandle: release-2022-11
 ---
-
-{{< release-header
-  title="November 2022 Release"
-  upcoming=false
-  legacy=false
-  current=false
-  maintained=true
-  branchHandle="release-2022-11"
->}}
-
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 

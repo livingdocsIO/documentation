@@ -6,16 +6,14 @@ hideSectionTeaser: true
 excludeFromSearch: true
 aliases:
   - /operations/releases/release-2021-09/release-2021-09/
----
 
-{{< release-header
-  title="September 2021 Release"
-  upcoming=false
-  legacy=true
-  current=false
-  maintained=false
-  branchHandle="release-2021-09"
->}}
+header:
+  upcoming: false
+  legacy: true
+  current: false
+  maintained: false
+  branchHandle: release-2021-09
+---
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 

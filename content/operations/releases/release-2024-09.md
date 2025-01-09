@@ -4,16 +4,14 @@ title: September 2024 Release
 description: Technical Release Notes for release-2024-09
 excludeFromSearch: false
 hideSectionTeaser: true
----
 
-{{< release-header
-  title="September 2024 Release"
-  upcoming=false
-  legacy=false
-  current=false
-  maintained=true
-  branchHandle="release-2024-09"
->}}
+header:
+  upcoming: false
+  legacy: false
+  current: false
+  maintained: true
+  branchHandle: release-2024-09
+---
 
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-september-2024).
 To learn about the necessary actions to update Livingdocs to `release-2024-09`, read on.

@@ -6,16 +6,14 @@ excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2023-09/release-2023-09/
----
 
-{{< release-header
-  title="September 2023 Release"
-  upcoming=false
-  legacy=false
-  current=false
-  maintained=false
-  branchHandle="release-2023-09"
->}}
+header:
+  upcoming: false
+  legacy: false
+  current: false
+  maintained: false
+  branchHandle: release-2023-09
+---
 
 ## Intro
 

@@ -6,16 +6,14 @@ excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2024-05/release-2024-05/
----
 
-{{< release-header
-  title="May 2024 Release"
-  upcoming=false
-  legacy=true
-  current=false
-  maintained=false
-  branchHandle="release-2024-05"
->}}
+header:
+  upcoming: false
+  legacy: true
+  current: false
+  maintained: false
+  branchHandle: release-2024-05
+---
 
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-may-2024).
 To learn about the necessary actions to update Livingdocs to `release-2024-05`, read on.

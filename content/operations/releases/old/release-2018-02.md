@@ -4,17 +4,14 @@ title: February 2018 Release
 description: Release notes for release-2018-02
 hideSectionTeaser: true
 excludeFromSearch: true
+
+header:
+  upcoming: false
+  legacy: true
+  current: false
+  maintained: false
+  branchHandle: release-2018-02
 ---
-
-{{< release-header
-  title="February 2018 Release"
-  upcoming=false
-  legacy=true
-  current=false
-  maintained=false
-  branchHandle="release-2018-02"
->}}
-
 
 ## Repositories
 
