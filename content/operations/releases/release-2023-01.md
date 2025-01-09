@@ -6,16 +6,14 @@ excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2023-01/release-2023-01/
----
 
-{{< release-header
-  title="January 2023 Release"
-  upcoming=false
-  legacy=true
-  current=false
-  maintained=false
-  branchHandle="release-2023-01"
->}}
+header:
+  upcoming: false
+  legacy: true
+  current: false
+  maintained: false
+  branchHandle: release-2023-01
+---
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 

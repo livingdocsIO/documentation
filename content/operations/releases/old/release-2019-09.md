@@ -4,16 +4,14 @@ title: September 2019 Release
 description: Release notes for release-2019-09
 hideSectionTeaser: true
 excludeFromSearch: true
----
 
-{{< release-header 
-  title="September 2019 Release"
-  upcoming=false
-  legacy=true
-  current=false
-  maintained=false
-  branchHandle="release-2019-09"
->}}
+header:
+  upcoming: false
+  legacy: true
+  current: false
+  maintained: false
+  branchHandle: release-2019-09
+---
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 

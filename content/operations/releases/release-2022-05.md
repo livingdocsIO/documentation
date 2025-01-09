@@ -6,16 +6,14 @@ hideSectionTeaser: true
 excludeFromSearch: true
 aliases:
   - /operations/releases/release-2022-05/release-2022-05/
----
 
-{{< release-header
-  title="May 2022 Release"
-  upcoming=false
-  legacy=true
-  current=false
-  maintained=false
-  branchHandle="release-2022-05"
->}}
+header:
+  upcoming: false
+  legacy: true
+  current: false
+  maintained: false
+  branchHandle: release-2022-05
+---
 
 ## Webinar
 

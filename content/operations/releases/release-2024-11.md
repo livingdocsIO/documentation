@@ -4,16 +4,14 @@ title: November 2024 Release
 description: Technical Release Notes for release-2024-11
 excludeFromSearch: false
 hideSectionTeaser: true
----
 
-{{< release-header
-  title="November 2024 Release"
-  upcoming=false
-  legacy=false
-  current=true
-  maintained=true
-  branchHandle="release-2024-11"
->}}
+header:
+  upcoming: false
+  legacy: false
+  current: true
+  maintained: true
+  branchHandle: release-2024-11
+---
 
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-november-2024).
 To learn about the necessary actions to update Livingdocs to `release-2024-11`, read on.

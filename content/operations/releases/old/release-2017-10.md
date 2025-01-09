@@ -1,19 +1,17 @@
 ---
 type: release-notes
 title: October 2017 Release
-description: Release notes for release-2018-10
+description: Release notes for release-2017-10
 hideSectionTeaser: true
 excludeFromSearch: true
----
 
-{{< release-header 
-  title="October 2017 Release"
-  upcoming=false
-  legacy=true
-  current=false
-  maintained=false
-  branchHandle="release-2017-10"
->}}
+header:
+  upcoming: false
+  legacy: true
+  current: false
+  maintained: false
+  branchHandle: release-2017-10
+---
 
 # Release Notes: `October 2017 Release`
 

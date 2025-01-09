@@ -6,16 +6,14 @@ excludeFromSearch: false
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2023-03/release-2023-03/
----
 
-{{< release-header
-  title="March 2023 Release"
-  upcoming=false
-  legacy=false
-  current=false
-  maintained=false
-  branchHandle="release-2023-03"
->}}
+header:
+  upcoming: false
+  legacy: true
+  current: false
+  maintained: false
+  branchHandle: "release-2023-03"
+---
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 

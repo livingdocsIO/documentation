@@ -3,8 +3,31 @@
 <div class="page">
   {{ partial "sidebar.html" . }}
   <main class="page__content">
+
     <article class="article">
-      <div class="article__content">{{ .Content }}</div>
+      <div class="article__content">
+        {{ $release := .Page.Params.header }}
+        {{ if $release }}
+          <div class="release-header">
+            <div class="release-header__badges">
+              {{ with (eq $release.upcoming true) }}<div class="badge badge--red">Upcoming</div>{{ end }}
+              {{ with (eq $release.legacy true) }}<div class="badge badge--red">Legacy</div>{{ end }}
+              {{ with (eq $release.current true) }}<div class="badge badge--cyan">Current</div>{{ end }}
+              {{ with (eq $release.maintained true) }}<div class="badge badge--cyan">Maintained</div>{{ end }}
+              {{ if $release.branchHandle  }}<div class="badge">{{ $release.branchHandle }}</div>{{ end }}
+            </div>
+            <div class="release-header__title">
+              {{ .Page.Title  }}
+            </div>
+            {{ if $release.branchHandle  }}
+            <div class="release-header__link">
+              <a href="https://github.com/livingdocsIO/livingdocs-editor/tree/{{ $release.branchHandle  }}" target="_blank">https://github.com/livingdocsIO/livingdocs-editor/tree/{{ $release.branchHandle }}</a>
+            </div>
+            {{ end }}
+          </div>
+        {{ end }}
+        {{ .Content }}
+      </div>
 
       <div class="article__footer">
         {{ partial "footer.html" . }}

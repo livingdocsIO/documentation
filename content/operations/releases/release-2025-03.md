@@ -6,17 +6,14 @@ excludeFromSearch: true
 hideSectionTeaser: true
 aliases:
   - /operations/releases/release-2025-03/
+
+header:
+  upcoming: true
+  legacy: false
+  current: false
+  maintained: false
+  branchHandle: release-2025-03
 ---
-
-{{< release-header
-  title="March 2025 Release"
-  upcoming=true
-  legacy=false
-  current=false
-  maintained=false
-  branchHandle="release-2025-03"
->}}
-
 ## Caveat :fire:
 
 These are the release notes of the upcoming release (pull requests merged to the main branch).
