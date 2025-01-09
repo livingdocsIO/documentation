@@ -196,22 +196,22 @@ The following changes affect the livingdocs server and maybe also downstreams:
 - Wildcards in routes have a new syntax. Unsupported routes now throw an error during server start.
   `/designs/:name/:version/:file(*)` -> `/designs/:name/:version/*file`
   `req.params.file` will result in an array with the path segments.
-  
+
 ```diff
   {
-  -  path: '/custom/api/assets/:file(*)',
-  +  path: '/custom/api/assets/*file',
+-    path: '/custom/api/assets/:file(*)',
++    path: '/custom/api/assets/*file',
      method: 'get',
      title: 'Retrieve the files',
      action: (req, res) {
        const file = fileStream({
-  -      file: req.params.file
-  +      file: req.params.file.join('/')
+-        file: req.params.file
++        file: req.params.file.join('/')
        })
-  
+
        return pipeline(file, res)
      }
-  }  
+  }
 ```
 
 Server PR: [Migrate to Express v5](https://github.com/livingdocsIO/livingdocs-server/pull/7518)
@@ -222,17 +222,17 @@ Server PR: [Migrate to Express v5](https://github.com/livingdocsIO/livingdocs-se
 Indexing keys of metadata plugins must contain only alphabetic characters (a-z, A-Z) and dots (.). Please update all indexing keys in your custom metadata plugins that do not fulfil this requirement.
 
 ```diff
-indexing: {
-  enabled: true,
-  behavior: [
-    {
-      type: 'keyword',
-+     key: 'reference.id',
--     key: 'reference__id',
-      getValue (val) { return val.reference?.id }
-    }
-  ]
-}
+  indexing: {
+    enabled: true,
+    behavior: [
+      {
+        type: 'keyword',
++       key: 'reference.id',
+-       key: 'reference__id',
+        getValue (val) { return val.reference?.id }
+      }
+    ]
+  }
 ```
 
 Server PR: [Stricter Validation of Metadata Plugin Indexing Keys](https://github.com/livingdocsIO/livingdocs-server/pull/7536)
