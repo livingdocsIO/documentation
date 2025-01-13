@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Task Board: fix german translation](https://github.com/livingdocsIO/livingdocs-editor/pull/9463)
 * [fix(deps): update aws-sdk (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7612)
 * [chore(deps): update dependency eslint from 9.17.0 to v9.18.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9462)
 * [Position formatting popover behind metadata panel](https://github.com/livingdocsIO/livingdocs-editor/pull/9421)
