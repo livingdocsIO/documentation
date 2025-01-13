@@ -572,6 +572,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v267.1.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.6): fix(openid-connect): Log identity object during openid-connect authentication errors
 - [v267.1.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.5): fix: Revoke user occupation also when no email transport is configured
 - [v267.1.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.4): fix(media-center): Do not throw an error when the max filesize is reached
 - [v267.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.3): fix(li-system-date): Make the new `li-system-date` and `li-system-datetime` validations more strict
