@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency @smithy/signature-v4 from 5.0.0 to v5.0.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7626)
 * [Task Board: fix german translation](https://github.com/livingdocsIO/livingdocs-editor/pull/9463)
 * [fix(deps): update aws-sdk (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7612)
 * [chore(deps): update dependency eslint from 9.17.0 to v9.18.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9462)
