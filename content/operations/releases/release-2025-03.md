@@ -24,6 +24,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency eslint from 9.17.0 to v9.18.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9462)
 * [Position formatting popover behind metadata panel](https://github.com/livingdocsIO/livingdocs-editor/pull/9421)
 * [fix(deps): update dependency wait-on from 8.0.1 to v8.0.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9456)
 * [Revoke user occupation also when no email transport is configured](https://github.com/livingdocsIO/livingdocs-server/pull/7616)
