@@ -6,24 +6,24 @@
 {{ $channel := "" }}
 {{ if $example.beta }}{{ $channel = "beta" }}{{ end }}
 {{ if $example.deprecation.since }}
-  {{ $channel = (print "Deprecated in " $example.deprecation.since) }}
+  {{ $channel = print "Deprecated in " $example.deprecation.since }}
 {{ end }}
 
-{{ $apiExampleClass := split "" " " }}
+{{ $apiExampleClass := "api-example" }}
 {{ if (eq $example.title "") }}
-  {{ $apiExampleClass = $apiExampleClass | append "api-example--no-title" }}
+  {{ $apiExampleClass = print $apiExampleClass " api-example--no-title" }}
 {{ end }}
 {{ if $channel }}
   {{ if (eq $channel "beta") }}
-    {{ $apiExampleClass = $apiExampleClass | append "api-example--warning" }}
+    {{ $apiExampleClass = print $apiExampleClass " api-example--warning" }}
   {{ else }}
-    {{ $apiExampleClass = $apiExampleClass | append "api-example--danger" }}
+    {{ $apiExampleClass = print $apiExampleClass " api-example--danger" }}
   {{ end }}
 {{ end }}
 
 
 <div
-  class="api-example {{ delimit $apiExampleClass " " }}"
+  class="{{ $apiExampleClass }}"
   data-channel="{{ $channel }}"
 >
   {{- if $example.title -}}
@@ -35,6 +35,28 @@
         </blockquote>
       {{- end -}}
     </div>
+  {{- end -}}
+
+  {{- if $example.history -}}
+    <details class="api-example__history">
+      <summary><span>History</span></summary>
+      <table>
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Change</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{- range $example.history -}}
+            <tr>
+              <td>{{ .release }}</td>
+              <td>{{ .description | $PAGE.RenderString }}</td>
+            </tr>
+          {{- end -}}
+        </tbody>
+      </table>
+    </details>
   {{- end -}}
 
   {{- if $example.release -}}

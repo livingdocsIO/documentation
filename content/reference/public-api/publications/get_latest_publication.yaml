@@ -1,4 +1,9 @@
 title: Get Latest Publication
+
+history:
+  - release: release-2024-03
+    description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+
 description: |
   The endpoint provides an unresolved Publication with 4 possible top-level properties:
   - systemdata
