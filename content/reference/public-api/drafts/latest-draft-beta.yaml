@@ -1,5 +1,10 @@
 title: Get Latest Draft
 beta: true
+
+history:
+  - release: release-2024-03
+    description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+
 description: |
   This endpoint returns the most recent draft version of a document.
 

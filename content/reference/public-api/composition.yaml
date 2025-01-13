@@ -1,5 +1,10 @@
 title: Compose a Publication
 beta: true
+
+history:
+  - release: release-2024-03
+    description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+
 description: |
   The `Composition API` loads a Publication with all required information to render a whole document with one request.
 

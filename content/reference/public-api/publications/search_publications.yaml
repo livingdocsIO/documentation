@@ -1,4 +1,9 @@
 title: Search Publications
+
+history:
+  - release: release-2024-03
+    description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+
 description: |
   This endpoint allows filtering for published documents.
 
@@ -7,7 +12,7 @@ useCases: |
   - [Ticker Tool]({{< ref "/operations/releases/release-2023-09#ticker-tool" >}})
 
   >[!WARNING]
-  > Even when it’s possible to make a full-text search to this endpoint, it's not thought to be used by a frontend search (because of performance reasons)
+  > Even when it's possible to make a full-text search to this endpoint, it's not thought to be used by a frontend search (because of performance reasons)
 
 scopes: public-api:read
 query: |

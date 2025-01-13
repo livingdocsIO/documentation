@@ -1,5 +1,10 @@
 title: Get Latest Publication
 beta: true
+
+history:
+  - release: release-2024-03
+    description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+
 description: |
   The endpoint provides an unresolved Publication with 5 possible top-level properties:
   - systemdata
@@ -46,6 +51,7 @@ parameters:
   - name: ?ignoreComponentConditions
     type: boolean
     required: false
+    addedIn: release-2024-03
     notes: |
       {{< added-in \"release-2024-03\" >}}
 
@@ -56,6 +62,7 @@ parameters:
   - name: ?componentConditions
     type: string
     required: false
+    addedIn: release-2024-03
     notes: |
       {{< added-in \"release-2024-03\" >}}
 

@@ -1,4 +1,13 @@
 title: Execute Commands on Documents
+
+history:
+  - release: release-2024-05
+    description: 'The following commands got added: `insertComponent`'
+  - release: release-2024-07
+    description: 'The following commands got added: `removeComponent`, `unpublish`'
+  - release: release-2024-11
+    description: 'The following commands got added: `setComponentCondition`, `setComponentStyle`, `setIncludeDirective`, `setLinkDirective`, `setStyleDirective`'
+
 description: |
   Execute a Document Command based on its `id`.  
   All commands run in a single transaction.

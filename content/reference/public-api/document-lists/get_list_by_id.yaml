@@ -1,4 +1,9 @@
 title: Get List by Id
+
+history:
+  - release: release-2024-03
+    description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+
 description: |
   This endpoint resolves the referenced documents in a list.  
   The response is a JSON object including list information with resolved documents.
