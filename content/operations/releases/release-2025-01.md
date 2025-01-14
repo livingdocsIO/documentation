@@ -308,6 +308,10 @@ As part of our commitment to inclusivity and clarity, we are deprecating the ter
 {{< feature-info "Server Configuration" "server" >}}
 ### Multi channel configuration :warning:
 
+Livingdocs is deprecating support for multi-channel configurations within a single project to simplify project setups and ensure a more streamlined workflow. This feature will no longer be supported starting with `release-2025-07`.
+If your project relies on multi-channel setups, you'll see a deprecation message (`LIDEP048`) whenver a project is loaded that has multiple channels present.
+
+Please contact Livingdocs immediately to discuss migration strategies and alternative solutions in case you're seeing the deprecation message.
 
 ## Features
 
