@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [chore(deps): update dependency eslint-config-prettier from 9.1.0 to v10 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9475)
 * [chore(deps): update dependency eslint-config-prettier from 9.1.0 to v10 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7630)
 * [Add prettier](https://github.com/livingdocsIO/livingdocs-server/pull/7622)
 * [update drone signature](https://github.com/livingdocsIO/livingdocs-editor/pull/9473)
