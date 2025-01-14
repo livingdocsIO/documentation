@@ -664,6 +664,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.56): fix: Reduce wide side panel width on small screens
 - [v111.1.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.55): fix(task board): correct german UI translation
 - [v111.1.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.54): fix: Position formatting popover behind metadata panel
 - [v111.1.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.53): fix(users): Include all users of admin page in csv file
