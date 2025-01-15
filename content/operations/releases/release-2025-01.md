@@ -318,6 +318,11 @@ Please contact Livingdocs immediately to discuss migration strategies and altern
 {{< feature-info "Content Management" "editor" >}}
 ### Print diff view :gift:
 
+In {{< release "release-2024-11" >}} we introduced the new [print copy flows]({{< ref "/guides/editor/document-print-flows" >}}) to best support the print production workflow. To top this off print producers and editors should be able to incorporate changes of the online version into the print version easily and efficiently.
+
+In order to achieve this the "View web changes" button which opened the history view in a new tab has been replaced with a "Compare versions" button which opens the new print diff side panel. This enables editors to preview the changes while remaining in the context of the editable print document.
+
+No config changes are required to use this feature, it's always available when print copy flows are configured. 
 
 {{< feature-info "Conditions" "server" >}}
 ### Brand Conditions :gift:
@@ -530,6 +535,51 @@ To enable the import of metadata directly from PEIQ, we provide an extraction ma
 {{< feature-info "Document Preview" "editor" >}}
 ### Document preview auto-reload :gift:
 
+By enabling auto-reloading for Document Previews, besides the existing manual reload, users can have more immediate feedback if the preview system can handle the load.
+
+Auto-reload can be enabled by adding `autoReload: {enabled: true}` to a document preview in your project config:
+
+```js
+{
+  editorSettings: {
+    // ...
+    documentPreviews: [
+      {
+        // Exisiting properties
+        handle: 'htmlPreview',
+        previewFunction: 'myHtmlPreviewFunction',
+        icon: 'book-edit',
+        label: 'HTML Preview',
+        // New property
+        autoReload: {
+          enabled: true
+        }
+      }
+    ]
+  }
+}
+```
+
+When a Document Preview is configured for auto-reload, we don't show the manual reload button.
+
+{{< feature-info "Real-time Updates" "editor" >}}
+### Real-time updates enabled by default :gift:
+
+Real-time updates have been enabled by default. This feature is currently used to keep document content up-to-date in table dashboards, rendered includes, and document inboxes.
+
+To opt-out of this functionality you can set `pollingEnabled` and `websocketsEnabled` to `false` in the server config:
+
+```js
+{
+  documents: {
+    // ...
+    realtimeUpdates: {
+      pollingEnabled: false,
+      websocketsEnabled: false
+    }
+  }
+}
+```
 
 {{< feature-info "Metadata" "server" >}}
 ### System metadata plugins :gift:
