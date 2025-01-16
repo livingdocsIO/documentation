@@ -482,6 +482,7 @@ Here is a list of all patches after the release has been announced.
 - [v257.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.1): fix(events): Delete unused event related to LIBREAKING035
 
 ### Livingdocs Editor Patches
+- [v110.34.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.62): fix: Reduce wide side panel width on small screens
 - [v110.34.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.61): fix(users): Include all users of admin page in csv file
 - [v110.34.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.60): fix(security): Patch vulnerability CVE-2024-21538 in `cross-spawn`, CVE-2024-48948 in `elliptic`, CVE-2024-52810 in `@intlify/shared` and CVE-2024-55565 in `nanoid`
 - [v110.34.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.59): fix(copy): Ensure document loaded before opening panels
