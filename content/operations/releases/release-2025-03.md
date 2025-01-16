@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix(deps): update dependency fast-json-stringify from 6.0.0 to v6.0.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7638)
 * [Fix image upload timeouts](https://github.com/livingdocsIO/livingdocs-server/pull/7631)
 * [Disable request retry in proxy](https://github.com/livingdocsIO/livingdocs-editor/pull/9476)
 * [fix(deps): update dependency @smithy/node-http-handler from 4.0.1 to v4.0.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7635)
