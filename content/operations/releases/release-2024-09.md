@@ -453,6 +453,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v257.0.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.28): fix(upload): Correctly support timeouts on asset uploads
 - [v257.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.27): fix: Revoke user occupation also when no email transport is configured
 - [v257.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.26): fix(media-center): Do not throw an error when the max filesize is reached
 - [v257.0.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.25): fix(security): Patch vulnerability CVE-2024-21538 in `cross-spawn`, CVE-2024-52798 in `path-to-regexp` and CVE-2024-55565 in `nanoid`
