@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Fix image upload timeouts](https://github.com/livingdocsIO/livingdocs-server/pull/7631)
 * [Disable request retry in proxy](https://github.com/livingdocsIO/livingdocs-editor/pull/9476)
 * [fix(deps): update dependency @smithy/node-http-handler from 4.0.1 to v4.0.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7635)
 * [chore(deps): update dependency eslint-config-prettier from 9.1.0 to v10 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9475)
