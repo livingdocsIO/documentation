@@ -119,6 +119,17 @@ httpServer: {
   maxRequestBodySize: '500kb',
   xForwardedForTrustIps: 'loopback,uniquelocal,172.17.0.0/24',
 
+  // Time to wait for http headers. Must be higher than the keepalive timeout.
+  headersTimeout: '60s',
+  // Total request/response timeout
+  requestTimeout: '1h',
+  // Idle socket timeout for connections
+  socketTimeout: '5m',
+  // http keepalive timeout (Node.js default is 5s)
+  // in cloud setups or kubernetes this should get increased
+  // above to the loadbalancers idle timeout for connections
+  keepAliveTimeout: '5s',
+
   // Enable gzip compression for all responses, usually you want to do this in the loadbalancer instead
   useGzipCompression: false,
 
