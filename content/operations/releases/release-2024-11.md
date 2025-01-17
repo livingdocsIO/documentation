@@ -665,6 +665,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.61): fix(editor iframe): Overriding vh values
 - [v111.1.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.60): fix(home-screen): syncUrlParams when only one search dashboard
 - [v111.1.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.59): fix(dashboards): Show document highlight dot on table dashboards
 - [v111.1.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.58): fix(proxy): Ensure we never retry requests. Despite the empty retryMethods, it still retry requests
