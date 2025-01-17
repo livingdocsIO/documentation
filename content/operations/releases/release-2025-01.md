@@ -637,6 +637,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.21): fix(canvas): Iframe size
 - [v114.13.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.20): fix(home-screen): syncUrlParams when only one search dashboard
 - [v114.13.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.19): fix(proxy): Ensure we never retry requests. Despite the empty retryMethods, it still retry requests
 - [v114.13.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.18): fix: Reduce wide side panel width on small screens
