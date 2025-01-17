@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [fix/vh-overriding-in-iframe](https://github.com/livingdocsIO/livingdocs-server/pull/7644)
 * [fix/vh-overriding-in-iframe](https://github.com/livingdocsIO/livingdocs-editor/pull/9491)
 * [fix/canvas-iframe-min-size](https://github.com/livingdocsIO/livingdocs-editor/pull/9490)
 * [Restore search and display filters when navigating back to the home screen when there is only one searchable dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/9483)
