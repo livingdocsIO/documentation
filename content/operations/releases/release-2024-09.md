@@ -483,6 +483,7 @@ Here is a list of all patches after the release has been announced.
 - [v257.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.1): fix(events): Delete unused event related to LIBREAKING035
 
 ### Livingdocs Editor Patches
+- [v110.34.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.64): fix(home-screen): syncUrlParams when only one search dashboard
 - [v110.34.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.63): fix(dashboards): Show document highlight dot on table dashboards
 - [v110.34.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.62): fix: Reduce wide side panel width on small screens
 - [v110.34.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.61): fix(users): Include all users of admin page in csv file
