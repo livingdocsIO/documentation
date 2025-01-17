@@ -628,6 +628,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v267.1.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.8): fix(vh values in designs): Added test component
 - [v267.1.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.7): fix(upload): Correctly support timeouts on asset uploads
 - [v267.1.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.6): fix(openid-connect): Log identity object during openid-connect authentication errors
 - [v267.1.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.5): fix: Revoke user occupation also when no email transport is configured
