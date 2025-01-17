@@ -665,6 +665,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.59): fix(dashboards): Show document highlight dot on table dashboards
 - [v111.1.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.58): fix(proxy): Ensure we never retry requests. Despite the empty retryMethods, it still retry requests
 - [v111.1.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.57): fix: Combine multiple ng-if into one to have them correctly evaluated
 - [v111.1.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.56): fix: Reduce wide side panel width on small screens
