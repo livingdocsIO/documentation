@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Use confirmation button for print flow mark as seen](https://github.com/livingdocsIO/livingdocs-editor/pull/9423)
 * [fix(deps): update dependency posthog-node from 4.4.0 to v4.4.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7650)
 * [fix(deps): update dependency cypress from 13.17.0 to v14 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9484)
 * [fix/vh-overriding-in-iframe](https://github.com/livingdocsIO/livingdocs-server/pull/7644)
