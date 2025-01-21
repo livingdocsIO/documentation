@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+* [Improve collab user flyout](https://github.com/livingdocsIO/livingdocs-editor/pull/9502)
 * [Deprecate li-image and li-videos api and remove resources](https://github.com/livingdocsIO/livingdocs-server/pull/7627)
 * [Use confirmation button for print flow mark as seen](https://github.com/livingdocsIO/livingdocs-editor/pull/9423)
 * [fix(deps): update dependency posthog-node from 4.4.0 to v4.4.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7650)
