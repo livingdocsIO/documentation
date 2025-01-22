@@ -18,6 +18,10 @@ When the function is executed it is provided with the `document` being copied, t
 
 The function can return the following values: `contentType`, `title`, `content`, `metadata`, `translations`. Only `contentType` is required. If any of the other properties are not returned in the response object then the values from the source document will be used to create the copy.
 
+{{< warning >}}
+When returning content you must define component ids, either by keeping the id from the source document or defining your own string. Component ids are used when diffing the content to detect changes, so if they are missing or randomly generated then a green dot used to indicate changes in the UI will always be visible.
+{{< /warning >}}
+
 ```js
 liServer.registerPrintFunctions([
   {
