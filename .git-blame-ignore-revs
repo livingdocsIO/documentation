@@ -1,0 +1,5 @@
+# This file contains a list of ignored commit hashes
+# To make use of ignored revs: git config --local blame.ignoreRevsFile .git-blame-ignore-revs
+
+# Apply prettier 
+37813174ca465d92ae939a535e5fa16d46fa998e
