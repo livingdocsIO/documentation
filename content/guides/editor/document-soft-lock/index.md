@@ -15,6 +15,7 @@ Once the soft lock is enabled for a content-type (e.g. articles) a "Lock" button
 ## Enable soft lock
 
 Add the following metadata JSON to the content-type for which you want a soft lock to be active:
+
 ```js
 {
   handle: 'documentSoftLock',

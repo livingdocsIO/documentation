@@ -18,7 +18,7 @@ parameters:
   - name: :id
     type: integer
     required: true
-    notes: ""
+    notes: ''
   - name: ?reverse
     type: boolean
     required: false
@@ -30,7 +30,7 @@ parameters:
   - name: ?limit
     type: integer
     required: false
-    notes: "A limit for how much documents to resolve for the requested list. Defaults to 100. Max. 100."
+    notes: 'A limit for how much documents to resolve for the requested list. Defaults to 100. Max. 100.'
   - name: ?ignoreComponentConditions
     type: boolean
     required: false
@@ -52,7 +52,7 @@ parameters:
       Example: `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`
 
 responses:
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/document-lists/1
     body: |
       {

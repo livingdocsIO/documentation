@@ -1,5 +1,5 @@
 ---
-title: Media Library Entries 
+title: Media Library Entries
 weight: 4
 renderTOC: false
 menus:

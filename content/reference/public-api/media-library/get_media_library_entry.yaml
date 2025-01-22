@@ -7,7 +7,7 @@ endpoint:
   method: GET
   path: /api/v1/mediaLibrary/:id
 responses:
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/mediaLibrary/:id
     body: |
       {

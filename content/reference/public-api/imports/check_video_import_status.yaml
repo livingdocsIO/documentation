@@ -16,7 +16,7 @@ parameters:
     required: true
     notes: The id that Livingdocs provided you for your prior call to `/api/v1/import/videos`
 responses:
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/import/videos/status?id=25bzj8j
     body: |
       {
@@ -62,7 +62,7 @@ responses:
         ]
       }
 
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/import/videos/status?id=243kdc
     body: |
       {
@@ -72,7 +72,7 @@ responses:
         "startedAt": "2020-01-01 13:45:12"
       }
 
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/import/videos/status?id=098shjhv9
     body: |
       {

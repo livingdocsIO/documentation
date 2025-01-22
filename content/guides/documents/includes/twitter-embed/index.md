@@ -9,7 +9,6 @@ Deprecated: This approach is still working, but we propose to use [oEmbed]({{< r
 This guide will show you how to add a custom Include for Twitter. We will show the implementation for the design, server and editor.
 This is more of a quick-guide where you can just copy and paste code. For a deeper understanding you can dive into [Includes Overview]({{< ref "/reference/document/includes" >}}).
 
-
 ## Component definition
 
 In the `projectConfig` you define a twitter component.
@@ -42,9 +41,7 @@ rendering the include with parameters filled in the editor.
 ```js
 // app/server.js
 liServer.registerInitializedHook(() => {
-  liServer.registerIncludeServices([
-    require('./include-services/tweet')
-  ])
+  liServer.registerIncludeServices([require('./include-services/tweet')])
 })
 
 // app/include-services/tweet.js
@@ -64,7 +61,7 @@ module.exports = {
   }
 }
 
-async function renderTweet (params, context) {
+async function renderTweet(params, context) {
   if (!params.embedLink) {
     return context.preview
       ? {doNotRender: true} // render the placeholder in the editor
@@ -86,14 +83,11 @@ async function renderTweet (params, context) {
     doNotRender: false,
     embed: 'liTwitterRenderPlugin', // Twitter rendering plugin registered in the editor.
     dependencies: {
-      js: [
-        {src: 'https://platform.twitter.com/widgets.js', namespace: 'includes.twitter'}
-      ]
+      js: [{src: 'https://platform.twitter.com/widgets.js', namespace: 'includes.twitter'}]
     }
   }
 }
 ```
-
 
 ## Editor - Sidebar and trigger twitter script
 
@@ -110,12 +104,15 @@ liEditor.vueComponentRegistry.registerComponent({
 })
 
 // register the render plugin implementing 'onIncludeRendered'
-liEditor.includeRenderPlugins.register('liTwitterRenderPlugin',
-  require('../plugins/doc_include_render_plugins/twitter'))
+liEditor.includeRenderPlugins.register(
+  'liTwitterRenderPlugin',
+  require('../plugins/doc_include_render_plugins/twitter')
+)
 ```
 
 You are free to render any kind of form for the sidebar. Any params the user can define here
 will be passed to the include service.
+
 ```vue
 <!-- ../plugins/includes/twitter-include/twitter-include-sidebar.vue -->
 <template>
@@ -124,9 +121,14 @@ will be passed to the include service.
       <h2 class="ld-panel__header__title">Include embed settings</h2>
     </div>
     <div class="ld-panel__body">
-      <form name="idForm" novalidate>
-        <div class="ld-form-group"
-          ng-class="{'has-error': idForm.idInput.$invalid && idForm.idInput.$touched}">
+      <form
+        name="idForm"
+        novalidate
+      >
+        <div
+          class="ld-form-group"
+          ng-class="{'has-error': idForm.idInput.$invalid && idForm.idInput.$touched}"
+        >
           <div class="ld-form-group__label">
             <label class="ld-form-label">Twitter-embed</label>
           </div>
@@ -137,7 +139,8 @@ will be passed to the include service.
               v-model="paramsDraft.embedLink"
               @change="save()"
               placeholder="Twitter embed link"
-              required>
+              required
+            />
           </div>
         </div>
       </form>
@@ -155,12 +158,12 @@ export default {
   data: function () {
     return {
       paramsDraft: {
-        embedLink: this.params.embedLink || '',
+        embedLink: this.params.embedLink || ''
       }
     }
   },
   methods: {
-    save () {
+    save() {
       // you have to dispatch a CustomEvent named 'update:params'
       // the let livingdocs know when your params have changed
       // send the new params object as event.detail
@@ -177,10 +180,11 @@ export default {
 
 Once the server has returned the include object with the HTML and scripts,
 as everything has loaded the `onIncludeRendered` hook will be fired and you can fire `twttr.widgets.load()` and it should be nicely displayed!
+
 ```js
 // ../plugins/doc_include_render_plugins/twitter
 liEditor.includeRenderPlugins.register('liTwitterRenderPlugin', {
-  onIncludeRendered (err, {componentId, directiveName, includeValue, renderer}) {
+  onIncludeRendered(err, {componentId, directiveName, includeValue, renderer}) {
     if (err) return
     const {twttr} = renderer.renderingContainer.window
     twttr != null ? twttr.ready(() => twttr.widgets.load()) : undefined

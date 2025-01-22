@@ -4,7 +4,7 @@ description: An optional side panel that can be configured alongside the Desk-Ne
 ---
 
 {{< warning >}}
-  Desk-Net rebranded as Kordiam. Consequently, Desk-Net Schedule has been deprecated as of {{< release "release-2024-11" >}} and will be removed in {{< release "release-2025-05" >}}. Please use [Kordiam Schedule]({{< ref "/guides/integrations/kordiam-schedule" >}}) instead. For more details, refer to our [Desk-Net to Kordiam migration guide]({{< ref "/guides/integrations/desknet-to-kordiam-migration" >}}).
+Desk-Net rebranded as Kordiam. Consequently, Desk-Net Schedule has been deprecated as of {{< release "release-2024-11" >}} and will be removed in {{< release "release-2025-05" >}}. Please use [Kordiam Schedule]({{< ref "/guides/integrations/kordiam-schedule" >}}) instead. For more details, refer to our [Desk-Net to Kordiam migration guide]({{< ref "/guides/integrations/desknet-to-kordiam-migration" >}}).
 {{< /warning >}}
 
 The Desk-Net Schedule side panel can be configured to only display for certain content types, for example pages to help with page management. This step can also be done without mapping Desk-Net values, but this will result in the side panel displaying document titles instead of document reference cards.
@@ -79,16 +79,12 @@ liServer.registerInitializedHook(async () => {
   const documentApi = liServer.features.api('li-documents').document
   documentApi.registerGenerateFunction({
     handle: 'generateTeasersFromDesknetSchedule',
-    async generate ({projectConfig, userId, params = {}, context = {}}) {
+    async generate({projectConfig, userId, params = {}, context = {}}) {
       // Extract Desk-Net elements from schedule tree
-      function extractElements (accumulator, node) {
+      function extractElements(accumulator, node) {
         const elements = node.elements || []
         const nestedElements = node.categories?.reduce(extractElements, []) || []
-        return [
-          ...accumulator,
-          ...elements,
-          ...nestedElements
-        ]
+        return [...accumulator, ...elements, ...nestedElements]
       }
       const document = context.document
       // Keep the first title (if it exists)
@@ -97,14 +93,11 @@ liServer.registerInitializedHook(async () => {
       const elements = (params.schedule || []).reduce(extractElements, [])
       const elementComponents = elements.map((element, index) => ({
         component: 'p',
-        content: {text: `${index + 1}. ${element.title}`},
+        content: {text: `${index + 1}. ${element.title}`}
       }))
 
       return {
-        content: [
-          title,
-          ...elementComponents
-        ].filter(Boolean)
+        content: [title, ...elementComponents].filter(Boolean)
       }
     }
   })

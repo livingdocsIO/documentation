@@ -24,6 +24,7 @@ When one activates a new design version (e.g. via project setup in the editor), 
 Use a `version bump` when you have non structural changes and want to just lift all documents to a new design version. This operation is fast and cheap for the system.
 
 Examples when a `version bump` is the right choice:
+
 - HTML or CSS changes that don't affect the structure
 - changes in the design wrappers
 - changes in the assets of a design
@@ -39,12 +40,12 @@ Examples when a `version bump` is the right choice:
 - changes in the pre-filled components (will not be re-calculated for old documents)
 - changes in the metadata field extractor configuration
 
-
 #### Data Migration
 
 Use a `data migration` when you have structural changes in the design (e.g. rename/remove design component). A `data migration` can update content, metadata and the design version of a document. This operation is extensive and heavy for the system.
 
 Examples when a `data migration` is the right choice:
+
 - removing a directive from a component
 - renaming a directive in a component
 - changing the type of a directive (e.g. from `doc-editable` to `doc-image`)
@@ -57,7 +58,6 @@ The previous section explained data migrations as a consequence of a design chan
 
 Livingdocs provides you a migration hook `migrateAsync` to implement. This hook will be called/applied for every document in your project.
 
-
 #### Example
 
 ```js
@@ -69,7 +69,7 @@ Livingdocs provides you a migration hook `migrateAsync` to implement. This hook 
 //    content_type: 'regular'
 //    contentType: 'regular'
 module.exports = {
-  async migrateAsync ({serializedLivingdoc, metadata, systemdata}) {
+  async migrateAsync({serializedLivingdoc, metadata, systemdata}) {
     if (systemdata.content_type === 'regular') {
       // skip the revision from being migrated
       return
@@ -85,9 +85,10 @@ module.exports = {
 ```
 
 #### Params
-* `systemdata` - A read only object with info about the document. E.g. `document_id` and `content_type`
-* `serializedLivingdoc` - A serialised Livingdoc data model (JSON)
-* `metadata` - The metadata object
+
+- `systemdata` - A read only object with info about the document. E.g. `document_id` and `content_type`
+- `serializedLivingdoc` - A serialised Livingdoc data model (JSON)
+- `metadata` - The metadata object
 
 #### Testing a migration
 
@@ -97,64 +98,64 @@ They should cover the structural differences between the old and the new content
 Here is an example how such a test could look like:
 
 ```js
-const assert = require("assert");
+const assert = require('assert')
 
 const image = {
-  url: "...",
-  mediaId: "w0tuYoDXwhly",
+  url: '...',
+  mediaId: 'w0tuYoDXwhly',
   width: 1054,
   height: 1180,
-  mimeType: "image/png",
-  altText: "Tiger description",
-};
+  mimeType: 'image/png',
+  altText: 'Tiger description'
+}
 
 // Here is the content you expect after the migration
 const goodContent = [
   {
-    component: "my-image",
-    identifier: "p:1:1.my-image",
-    id: "doc-1hbdelpdn1",
-    content: { image, caption: "A climber climbs" },
-  },
-];
+    component: 'my-image',
+    identifier: 'p:1:1.my-image',
+    id: 'doc-1hbdelpdn1',
+    content: {image, caption: 'A climber climbs'}
+  }
+]
 
 // Here is the content you have before the migration
 const badContent = [
   {
-    component: "my-image",
-    identifier: "p:1:1.my-image",
-    id: "doc-1hbdelpdn1",
-    content: { image, title: "Climbing", caption: "A climber climbs" },
-  },
-];
+    component: 'my-image',
+    identifier: 'p:1:1.my-image',
+    id: 'doc-1hbdelpdn1',
+    content: {image, title: 'Climbing', caption: 'A climber climbs'}
+  }
+]
 
-const migration = require("./018_remove_gallery_title.js");
+const migration = require('./018_remove_gallery_title.js')
 
-const prune = (val) => JSON.parse(JSON.stringify(val));
+const prune = (val) => JSON.parse(JSON.stringify(val))
 
 const returnValue = prune(
   migration.migrateAsync({
     systemdata: {
-      contentType: "gallery",
+      contentType: 'gallery'
     },
     serializedLivingdoc: {
       content: [
         {
           containers: {
             header: {},
-            main: badContent,
-          },
-        },
-      ],
-    },
+            main: badContent
+          }
+        }
+      ]
+    }
   })
-);
+)
 
-const result = returnValue.serializedLivingdoc.content[0].containers.main;
+const result = returnValue.serializedLivingdoc.content[0].containers.main
 
 result.forEach((component, index) => {
-  assert.deepEqual(component, goodContent[index]);
-});
+  assert.deepEqual(component, goodContent[index])
+})
 ```
 
 ## Execute a Migration
@@ -176,6 +177,7 @@ Documents can't be migrated when they are actively edited by users. Therefore a 
 Version bumps are quite fast (just some minutes for a lot of documents). Data migrations need more time, but it's difficult to predict how long they need in a specific production environment. We would estimate roughly 1h per 1 mio. documents.
 
 There are a some factors which are influencing the migration time:
+
 - power of the server
 - request/response time between Livingdocs and the database
 - the computing time for the migration operation

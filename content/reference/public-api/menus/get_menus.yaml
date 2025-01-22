@@ -24,13 +24,13 @@ parameters:
   - name: :channelHandle
     type: string
     required: true
-    notes: "The handle of the channel for which you want to get the events."
+    notes: 'The handle of the channel for which you want to get the events.'
   - name: ?handle
     type: string
     required: false
-    notes: "Handle of the menu to retrieve."
+    notes: 'Handle of the menu to retrieve.'
 responses:
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/menus/web
     body: |
       [

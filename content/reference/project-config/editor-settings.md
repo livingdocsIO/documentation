@@ -290,9 +290,7 @@ For each item you can either use the default properties defined by Livingdocs:
 
 ```js
 editorSettings: {
-  mainNavigation: [
-    {liItem: 'articles'}
-  ]
+  mainNavigation: [{liItem: 'articles'}]
 }
 ```
 
@@ -417,6 +415,7 @@ For releases prior to {{< release "release-2022-03" >}} you should specify a `gr
 The `dashboards` entry allows you to configure custom dashboards, e.g. for authors (data-records) or proofreading (tasks).
 
 There are 4 `types` of custom dashboards (`type` property):
+
 - `dashboard`
 - `kanbanBoard`
 - `taskBoard` (predefined `kanbanBoard` for a task)
@@ -462,7 +461,9 @@ Possible values are:
 - any metadata property e.g. `metadata.proofreading.priority`
 
 When a query string is present, sorting is defined by the `relevance` with the search term.
+
 ### Example: Dashboard
+
 ```js
 dashboards: [
   {
@@ -532,9 +533,7 @@ dashboards: [
         handle: 'requested',
         label: 'Needs Proofreading',
         // Filter applied for this column on top of the `baseFilter`
-        columnFilter: [
-          {key: 'metadata.proofreading.state', term: 'requested'}
-        ],
+        columnFilter: [{key: 'metadata.proofreading.state', term: 'requested'}],
         sort: [`metadata.proofreading.priority`, `metadata.proofreading.deadline`],
         // The componentOptions are injected into the component `liTaskCard` (in this example)
         componentOptions: {column: 'todo', taskName: 'proofreading'}
@@ -542,18 +541,14 @@ dashboards: [
       {
         handle: 'in-progress',
         label: 'In Progress',
-        columnFilter: [
-          {key: 'metadata.proofreading.state', term: 'accepted'}
-        ],
+        columnFilter: [{key: 'metadata.proofreading.state', term: 'accepted'}],
         sort: [`metadata.proofreading.priority`, `-metadata.proofreading.accepted.date`],
         componentOptions: {column: 'doing', taskName: 'proofreading'}
       },
       {
         handle: 'done',
         label: 'Finished Proofreading',
-        columnFilter: [
-          {key: 'metadata.proofreading.state', term: 'completed'}
-        ],
+        columnFilter: [{key: 'metadata.proofreading.state', term: 'completed'}],
         sort: [`-metadata.proofreading.completed.date`],
         componentOptions: {column: 'done', taskName: 'proofreading'}
       }
@@ -570,9 +565,7 @@ dashboards: [
     handle: 'example-table-dashboard',
     type: 'tableDashboard',
     pageTitle: 'Table Dashboard Title',
-    baseFilters: [
-      {key: 'documentType', term: 'article'}
-    ],
+    baseFilters: [{key: 'documentType', term: 'article'}],
     displayFilters: [
       'channels',
       'documentState',
@@ -670,6 +663,7 @@ The `liTableDashboardCellPublishState` upstream component can be used to display
 (only shown if metadata has been edited directly within the table dashboard).
 
 With {{< release "release-2023-05" >}} and following, `allowQuickPublish: true` is required to show the quick publish button.
+
 ```js
 {
   label: 'Published',
@@ -712,7 +706,6 @@ columns: [
 
 ##### liTableDashboardCellStatistics
 
-
 {{< added-in "release-2024-05" block >}}
 
 The `liTableDashboardCellStatistics` displays Document Statistics such as component count, character count and line count (depending on provided `componentOptions`).
@@ -725,7 +718,7 @@ If `projectConfig.editorSettings.textCount.lineCountFraction` is defined [here](
 Component counts are shown for all components listed in the `componentOptions.compomnentCount` array.
 Please make sure to provide a pluralized label string for those components in their design declaration by separating the singular and plural label string with a pipe character (`|`).
 
-Example: `{label: 'Paragraph | Paragraphs', ...}` 
+Example: `{label: 'Paragraph | Paragraphs', ...}`
 
 ```js
 columns: [
@@ -848,6 +841,7 @@ Dashboards on the home screen are eligible of using [Dashboard Sources]({{< ref 
 A use case for this could be a personalized list of recommended articles that are determined by custom queries or even an external system.
 
 **Limitations**:
+
 - No display filters or base filters available
 - Maximum number of results are limited to 35
 - No pagination supported
@@ -872,7 +866,7 @@ documentCreationFlows: [
     // the config is the same as for metadata plugins
     paramsSchema: [
       {handle: 'title', type: 'li-text'},
-      {handle: 'urgency', type: 'li-number'},
+      {handle: 'urgency', type: 'li-number'}
     ],
 
     // values passed to paramsSchema fields as initial value
@@ -915,7 +909,7 @@ documentCopyFlows: [
     // the config is the same as for metadata plugins
     paramsSchema: [
       {handle: 'workingTitle', type: 'li-text'},
-      {handle: 'section', type: 'li-text'},
+      {handle: 'section', type: 'li-text'}
     ],
 
     // values passed to paramsSchema fields as initial value
@@ -930,7 +924,7 @@ documentCopyFlows: [
 ```js
 liServer.registerCopyFunction({
   handle: 'copyWebToPrint',
-  async copy ({projectConfig, documentVersion, params, context}) {
+  async copy({projectConfig, documentVersion, params, context}) {
     return {
       title: params.workingTitle,
       metadata: {
@@ -960,7 +954,10 @@ documentPrintFlows: [
     // register a printFunction with liServer.registerPrintFunction()
     printFunction: 'webToPrintFunction',
     direction: 'web-to-print',
-    printButtonLabel: {en: 'Make Short Format Print Version', de: 'Kurzformatigen Druckartikel Erstellen'},
+    printButtonLabel: {
+      en: 'Make Short Format Print Version',
+      de: 'Kurzformatigen Druckartikel Erstellen'
+    },
     printDescription: 'Only text will be copied, and only some contextual metadata will be cleared',
     printIcon: 'format-align-justify',
 
@@ -973,8 +970,8 @@ documentPrintFlows: [
 ```js
 liServer.registerPrintFunction({
   handle: 'webToPrintFunction',
-  copy ({projectConfig, document, userId, context}) {
-    return  {
+  copy({projectConfig, document, userId, context}) {
+    return {
       title: `Print version of: ${document.title}`,
       contentType: 'print',
       content: filterComponents(document.content, allowedComponents),
@@ -1007,9 +1004,7 @@ documentTransformFlows: [
 
     // shows working title in the transform modal
     // the config is the same as for metadata plugins
-    paramsSchema: [
-      {handle: 'workingTitle', type: 'li-text'}
-    ],
+    paramsSchema: [{handle: 'workingTitle', type: 'li-text'}],
 
     // values passed to paramsSchema fields as initial value
     defaultParams: {},
@@ -1023,7 +1018,7 @@ documentTransformFlows: [
 ```js
 liServer.registerTransformFunction({
   handle: 'convertArticleToGallery',
-  async transform ({params, documentVersion, context}) {
+  async transform({params, documentVersion, context}) {
     return {
       contentType: 'gallery',
       title: params.workingTitle || documentVersion.title,
@@ -1036,12 +1031,14 @@ liServer.registerTransformFunction({
 ## Media Library
 
 ### Dashboards
+
 If you linked the media library on the `mainNavigation` (see above), Livingdocs automatically inserts separate dashboards per type (`mediaImage`/`mediaVideo`/`mediaFiles`).
 You will only see the dashboards for the individual mediaTypes you have configured.
 
 See [Media Type]({{< ref "/reference/project-config/media-types.md" >}}) documentation for more information.
 
 ### Dashboard Cards
+
 You can configure the card used to show results in dashboards. You do this by configuring your own dashboard card in the project config under `editorSettings.dashboardCardConfigurations` and then define this card per mediaType as you please.
 
 ```js
@@ -1077,9 +1074,11 @@ dashboardCardConfigurations: [
 This will define a card `myImageCard` to be used in `mediaType.editor.dashboard.card.name`. See the See [Media Type config example]({{< ref "/reference/project-config/media-types.md" >}}).
 
 ### Prefilling Behavior
+
 Then there are 2 configs to define the behavior when Images are inserted into a Document from the Media Library:
 
 #### Alt Text Prefilling
+
 ```js
 mediaLibrary.altTextPrefilling: [
   {
@@ -1088,9 +1087,11 @@ mediaLibrary.altTextPrefilling: [
   }
 ]
 ```
+
 Provide a metadata property handle from which the `alt` attribute on an image tag is filled. This value will also be stored within the document content using the `altText` property on the directive content. To limit the prefilling to a subset of components you can optionally provide an array of component names using the `onlyOnComponents` property. Providing multiple objects within the array will allow you to have fallbacks when the metadata property has no value, or to specify different properties for different components.
 
 #### Component Directives Prefilling
+
 There are two ways to prefill component directives with Media Library Entry Metadata. You can either use a template string or directly reference a metadata property. With the template string, you can use metadata properties as placeholders. If a value is invalid or not present, it will continue with the next prefilling, thus acting as a fallback. Below an example with a template string and a direct metadata property reference:
 
 ```js
@@ -1131,6 +1132,7 @@ s
 An array of mappings to prefill `doc-editable` directives with Media Library Entry Metadata. The metadata value must be a string. The directive name can be prefixed with a component name to limit where the prefill will be used, for example "image.source". To limit the prefilling to multiple components you will need to add multiple objects to the array.
 
 ## Document Lists
+
 ```js
 documentLists: {
   card: {
@@ -1190,6 +1192,7 @@ To enable anchor linking (link to a section within a document), [configure edita
 The text formatting toolbar can be customized globally here. You can also overwrite this config for each [content type]({{< ref "content-types#text-formatting" >}}).
 
 Enable or disable the existing elements for text formatting:
+
 ```js
 textFormatting: {
   bold: true,
@@ -1206,8 +1209,9 @@ textFormatting: {
 ```
 
 Extend the text formatting toolbar with custom configured elements. The elements will be shown after the default elements. Add this configuration to the textFormatting configuration above.
+
 ```js
- customElements: [
+customElements: [
   {
     label: 'blue color',
     handle: 'bluecolor',
@@ -1228,11 +1232,13 @@ Following attribute types can be added to a customElement:
 - static value
 
   e.g. add to the class attribute on the customElement the value blue `{name: 'class', value: 'blue'}`
+
 - li-reference
 
   {{< deprecated-in "release-2023-09" block >}}
   {{< removed-in "release-2023-11" block >}}
   Users can link a document. The attribute name is always `data-li-document-ref`. And the references are extracted as with a normal link to a document.
+
   ```js
   {
     label: 'author link',
@@ -1248,10 +1254,12 @@ Following attribute types can be added to a customElement:
     ]
   }
   ```
+
 - li-document-reference
 
   {{< added-in "release-2023-07" block >}}
   Users can link a document. The attribute name is always `data-li-document-ref`. And the references are extracted as with a normal link to a document.
+
   ```js
   {
     label: 'author link',
@@ -1267,9 +1275,11 @@ Following attribute types can be added to a customElement:
     ]
   }
   ```
+
 - li-enum
 
   Users can select a value from a list
+
   ```js
   {
     handle: 'specialprovider',
@@ -1291,9 +1301,11 @@ Following attribute types can be added to a customElement:
     }
   }
   ```
+
 - li-text
 
   Users can add a text value by themself
+
   ```js
   {
     label: 'input',
@@ -1315,6 +1327,7 @@ Following attribute types can be added to a customElement:
 There can be only one attribute with a type in the attributes array. Static values can be added as many as needed.
 
 ## Text Count
+
 {{< info >}}
 A version of this configuration for releases prior to {{< release "release-2024-05" >}} is available
 [here]({{< ref "/customising/advanced/editor-configuration/text-editing#character-counter" >}}).
@@ -1340,6 +1353,7 @@ It is also possible to only count the text of selected components or directives.
 is configured in the component library of a Livingdocs design.
 
 Exclude whole components from the text counter (example component config):
+
 ```js
 {
   "name": "aside",
@@ -1349,6 +1363,7 @@ Exclude whole components from the text counter (example component config):
 ```
 
 Exclude individual directives from the text counter (example component config):
+
 ```js
 {
   "name": "quote",

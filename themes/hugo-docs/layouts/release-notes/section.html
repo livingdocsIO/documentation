@@ -1,5 +1,6 @@
 {{ partial "html-header.html" . }}
 
+
 <div class="page">
   {{ partial "sidebar.html" . }}
   <main class="page__content">
@@ -18,15 +19,20 @@
             {{ range .Pages.ByWeight }}
               {{ if (ne (.Param "hideSectionTeaser") true) }}
                 <div class="section-teaser">
-                  <a class="section-teaser__link"  href="{{ .RelPermalink }}">
+                  <a
+                    class="section-teaser__link"
+                    href="{{ .RelPermalink }}"
+                  >
                     {{ if .Param "icon" }}
                       <div class="section-teaser__icon">
                         <div class="mdi mdi-{{ .Param "icon" }}"></div>
                       </div>
                     {{ end }}
                     <div class="section-teaser__content">
-                      <h3 class="section-teaser__title">{{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}</h3>
-                      {{ with .Description}}<p class="section-teaser__text">{{ . }}</p>{{ end }}
+                      <h3 class="section-teaser__title">
+                        {{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}
+                      </h3>
+                      {{ with .Description }}<p class="section-teaser__text">{{ . }}</p>{{ end }}
                     </div>
                   </a>
                 </div>
@@ -42,9 +48,9 @@
     </article>
   </main>
   {{ if (ne (.Param "renderTOC") false) }}
-  <div class="page__toc">
-    {{ .TableOfContents }}
-  </div>
+    <div class="page__toc">
+      {{ .TableOfContents }}
+    </div>
   {{ end }}
 </div>
 

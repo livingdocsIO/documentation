@@ -11,6 +11,7 @@ For details how to create and customize a design please refer to
 [Document Design]({{< ref "/reference/document/document-design" >}}).
 
 Example with a title and a paragraph component:
+
 ```js
 components: [
   {

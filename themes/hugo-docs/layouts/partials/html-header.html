@@ -1,31 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta
+      name="referrer"
+      content="no-referrer-when-downgrade"
+    />
+    <meta
+      name="description"
+      content="{{ with .Description }}
+        {{ . }}
+      {{ else }}
+        {{ with .Site.Params.description }}{{ . }}{{ end }}
+      {{ end }}"
+    />
+    <link
+      rel="canonical"
+      href="{{ .Permalink }}"
+    />
+    <title>{{ .Page.Title }} - {{ .Section | default "Documentation" | humanize }}</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="referrer" content="no-referrer-when-downgrade">
-  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
-  <link rel="canonical" href="{{ .Permalink }}">
-  <title>{{ .Page.Title }} - {{.Section | default "Documentation" | humanize}}</title>
+    {{- $built := resources.Get "style.scss" | css.Sass | minify | fingerprint }}
+    <link
+      rel="stylesheet"
+      href="{{ $built.RelPermalink }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap"
+      rel="preload"
+    />
 
-  {{- $built := resources.Get "style.scss" | css.Sass | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $built.RelPermalink }}">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="preload">
+    {{- $built := resources.Get "script.js" | js.Build | minify | fingerprint }}
+    <script>
+      window.searchJson = '/search.json'
+    </script>
+    <script
+      type="text/javascript"
+      src="{{ $built.RelPermalink }}"
+      defer
+    ></script>
+    {{- $worker := resources.Get "search.js" | js.Build }}
+    <link
+      rel="lunr"
+      href="{{ $worker.RelPermalink }}"
+    />
 
-  {{- $built := resources.Get "script.js" | js.Build | minify | fingerprint }}
-  <script>window.searchJson = '/search.json'</script>
-  <script type="text/javascript" src="{{ $built.RelPermalink }}" defer></script>
-  {{- $worker := resources.Get "search.js" | js.Build }}
-  <link rel="lunr" href="{{ $worker.RelPermalink }}">
-
-  {{- with .Site.Config.Services.GoogleAnalytics.ID }}
+    {{- with .Site.Config.Services.GoogleAnalytics.ID }}
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','{{ . }}');</script>
-  {{- end }}
-</head>
-<body>
-{{ partial "topbar.html" . }}
+    {{- end }}
+  </head>
+  <body>
+    {{ partial "topbar.html" . }}
+  </body>
+</html>

@@ -16,9 +16,9 @@ support:
   systemMetadata: false
   planningSystem: false
 keywords:
-- iMatrics
-- concepts
-- ignoredConceptTypes
+  - iMatrics
+  - concepts
+  - ignoredConceptTypes
 defaultUI: Manage tags, add new tag suggestions
 storageFormat: |
   {

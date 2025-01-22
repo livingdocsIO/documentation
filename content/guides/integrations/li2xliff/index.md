@@ -27,15 +27,13 @@ const {createXliff, updateContent} = require('@livingdocs/li2xliff')
 `createXliff` converts Livingdoc content to XLIFF and requires Livingdoc content and a config object:
 
 ```js
-  const xliffContent = createXliff(
-    {
-      content: documentVersion.content, // Livingdoc Content
-      config: {
-        targetLanguage: config.targetLanguage, // Required
-        srcLanguage: config.srcLanguage // Required
-      }
-    }
-  )
+const xliffContent = createXliff({
+  content: documentVersion.content, // Livingdoc Content
+  config: {
+    targetLanguage: config.targetLanguage, // Required
+    srcLanguage: config.srcLanguage // Required
+  }
+})
 ```
 
 The config object has two required properties, a target language and a source language (so, if you want to translate your German articles to English, your source language is German, target language is English).
@@ -76,27 +74,24 @@ In your Livingdocs Server instance you can subscribe to [server events]({{< ref 
 
 Here we have an example function:
 
-
 ```js
-function registerTranslationHooks ({liServer, config}) {
-    liServer.events.subscribe('document.create',
-    async (eventName, data) => {
-      try {
-        const documentVersion = data.documentVersion
-        const xliffContent = createXliff({
-          content: documentVersion.content,
-          config: {
-            targetLanguage: config.targetLanguage,
-            srcLanguage: config.srcLanguage
-          }
-        })
+function registerTranslationHooks({liServer, config}) {
+  liServer.events.subscribe('document.create', async (eventName, data) => {
+    try {
+      const documentVersion = data.documentVersion
+      const xliffContent = createXliff({
+        content: documentVersion.content,
+        config: {
+          targetLanguage: config.targetLanguage,
+          srcLanguage: config.srcLanguage
+        }
+      })
 
-        // Here you would send your xliff to your CAT tool of choice
-
-      } catch (err) {
-        log.error(err)
-      }
-    })
+      // Here you would send your xliff to your CAT tool of choice
+    } catch (err) {
+      log.error(err)
+    }
+  })
 }
 ```
 
@@ -116,7 +111,7 @@ register: function ({liServer}) {
 And you can then use a [webhook]({{< ref "/reference/webhooks" >}}) to listen to your CAT service to know when to update your Livingdoc afterwards, summarised:
 
 ```js
-function registerTranslationRoute ({liServer, config}) {
+function registerTranslationRoute({liServer, config}) {
   liServer.registerServerRoutes({
     method: 'post',
     prefix: '/daily-planet',
@@ -124,7 +119,7 @@ function registerTranslationRoute ({liServer, config}) {
     title: 'translation webhook',
     body: ms.obj(),
 
-    async action (req, res) {
+    async action(req, res) {
       try {
         const documentApi = liServer.features.api('li-documents').document // Get the document API
         const documentWriteModel = await documentApi.getDocumentWriteModel({projectId, documentId})
@@ -136,7 +131,7 @@ function registerTranslationRoute ({liServer, config}) {
           document: documentWriteModel,
           update: {
             ...documentVersion,
-            ...{revision: {...documentVersion.revisionEntity, ...{data: {content}}}},
+            ...{revision: {...documentVersion.revisionEntity, ...{data: {content}}}}
           },
           isSystemUpdate: true
         })

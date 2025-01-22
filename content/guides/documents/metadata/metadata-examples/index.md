@@ -37,13 +37,12 @@ Some things to note:
 2. Open the `contentType` configuration file you want to edit and add the catchline config from the example to the metadata configuration. The field `catchline` is now available in documents with this `contentType`.
 3. By default, metadata is only stored in the database. When you also want to be the metadata field searchable via public API's publication search, you can read more [here]({{< ref "/guides/search/publication-index.md" >}}).
 
-
-
 ## Example 2: Create your own Metadata Plugin
 
 Let's add your own metadata field `slug`.
 
 A slug is a reader/SEO friendly text, used in a URL – example:
+
 ```
 https://www.example.com/a-way-to-compare-schools
 ```
@@ -92,7 +91,7 @@ There is also a custom component for the form in editor defined via `ui.componen
 
 This custom component is implemented with Vue and registered through the [Vue Component Registry]({{< ref "/customising/advanced/editor/vue-component-registry" >}}).
 
-The `bp` prefix stands for one of our downstreams, named: *boilerplate*. You should prefix your metadata plugins to not clash with any potential components from Livingdocs.
+The `bp` prefix stands for one of our downstreams, named: _boilerplate_. You should prefix your metadata plugins to not clash with any potential components from Livingdocs.
 
 1. Add a new metadata plugin to `./plugins/metadata/bp-slug.js`. Check the [reference docs]({{< ref "/customising/server/metadata-plugins" >}}) to find all validation and hook options.
 
@@ -123,7 +122,7 @@ Add `app/metadata/bp-slug-form.vue` to your editor files.
       type="text"
       class="ld-text-input ld-text-input--full-width"
       @input="handleInput($event.target.value)"
-    >
+    />
   </div>
 </template>
 <script>
@@ -144,12 +143,12 @@ export default {
     }
   },
   computed: {
-    placeholder () {
+    placeholder() {
       return this.uiConfig?.placeholder || `Enter a ${this.handle}`
     }
   },
   methods: {
-    handleInput (value) {
+    handleInput(value) {
       this.$emit('input', value?.replace(/ /g, '-'))
     }
   }
@@ -168,6 +167,7 @@ liEditor.vueComponentRegistry.registerComponent({
 ```
 
 ## References
+
 - [Intro Metadata]({{< ref "/reference/document/metadata" >}})
 - [Metadata Plugin List]({{< ref "/reference/document/metadata/plugins" >}})
 - [Metadata Plugin Server Extension]({{< ref "/customising/server/metadata-plugins" >}})

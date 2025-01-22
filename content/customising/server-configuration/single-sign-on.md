@@ -10,6 +10,7 @@ menus:
 ## Summary
 
 The Single sign-on feature, also known as SSO, allows you to:
+
 - signup: register a new user using one of their social account
 - signin: authenticate that user
 

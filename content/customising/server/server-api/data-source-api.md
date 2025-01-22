@@ -12,6 +12,7 @@ The DataSource API (or Data Source API) provides a simple way to fetch/transform
 The current version supports binding a DataSource to a metadata field, which will be described in more detail in the example section.
 
 ## Metadata plugins with DataSource support
+
 - li-text
 - li-string-list
 - find more metadata plugins [here]({{< ref "/reference/document/metadata/plugins" >}}) with `DataSource` support
@@ -30,7 +31,6 @@ You can register a DataSource (e.g. `labelValuePairDataSource`) and use it as da
 const axios = require('axios')
 
 liServer.registerInitializedHook(() => {
-
   // register code on the server
   liServer.registerDataSource({
     handle: 'labelValuePairDataSource',
@@ -49,7 +49,7 @@ liServer.registerInitializedHook(() => {
      *   (e.g. a metadata plugin on the editor which passes the documentId)
      * @returns {Object} {label, value, ?isDefault}
      */
-    async fetch ({projectId, userId, params}) {
+    async fetch({projectId, userId, params}) {
       const {data: fetchedData} = await axios({
         method: 'get',
         url: 'https://swissbib.ch/mapportal.json'

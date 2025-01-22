@@ -10,12 +10,12 @@ menus:
 The document creation lifecycle handles all steps until the document has been created for the first time. Later updates are handled by the document update lifecycle.
 
 As you can see in the diagram below, there are currently 3 document creation flows available:
+
 - Default (middle part): Thats the default process how most of the documents are created
 - Custom (right part): Implement your own [Document Creation Flow]({{< ref "/guides/editor/document-creation-flow" >}})
 - Import (left part): The document import uses it's own creation/validation logic
 
 You don't need to fully understand everything going on right now, but as you learn and build more, it will be a useful reference.
-
 
 {{< img src="assets/document-creation-lifecycle.png" alt="Document Creation Lifecycle" >}}
 

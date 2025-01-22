@@ -14,16 +14,15 @@ The support for AngularJS has officially [ended](https://docs.angularjs.org/misc
 
 Angular Migration is for customers which have Angular code in their downstream. Angular will stil be around for a while. We properly announce the removal of Angular extensions via Release Notes or via browser console (when you open the editors browser console).
 
-
 ## Why should I switch to a Core plugin and do not write my Vue extension?
 
-  - less code
-  - less bugs
-  - less maintenance
-  - less time used from your side
-  - less money spent
-  - easier updates
-  - continuous improvement of the plugins
+- less code
+- less bugs
+- less maintenance
+- less time used from your side
+- less money spent
+- easier updates
+- continuous improvement of the plugins
 
 ## Roadmap
 

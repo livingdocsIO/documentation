@@ -12,23 +12,23 @@ For users who want to store their images, files and design assets in Azure Blob 
 
 In order to integrate Azure Blob with Livingdocs, you need to make sure you have the following things set up properly:
 
-* An [Azure Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal).
-* At least one [container](https://docs.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal) on your Azure Storage Account.
-* [SAS Token](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview#sas-token).
+- An [Azure Storage Account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal).
+- At least one [container](https://docs.microsoft.com/en-us/azure/storage/blobs/blob-containers-portal) on your Azure Storage Account.
+- [SAS Token](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview#sas-token).
 
 ### Create Storage Account
 
 1. To create a new Storage Account go to your [Azure Portal](https://portal.azure.com) and search for `Storage Account` service.
-{{< img src="0-goto-storageaccount.png" alt="Azure Storage Account in Azure Portal" >}}
+   {{< img src="0-goto-storageaccount.png" alt="Azure Storage Account in Azure Portal" >}}
 
 2. Create a new Storage Account with `+ Create` button.
-{{< img src="1-new-storageaccount.png" alt="Create an Storage Account in Azure Portal" >}}
+   {{< img src="1-new-storageaccount.png" alt="Create an Storage Account in Azure Portal" >}}
 
 3. Fill the configuration according to your needs (i.e. `renduncacy`, `region`) under basics tab.
-{{< img src="2-fill-storageaccount-config.png" alt="Create an Storage Account in Azure Portal" >}}
+   {{< img src="2-fill-storageaccount-config.png" alt="Create an Storage Account in Azure Portal" >}}
 
 4. In Advance tab, choose `enable public access from all networks`, to allow ImgIX access to the Storage Account.
-{{< img src="3-fill-storageaccount-config.png" alt="Create an Storage Account in Azure Portal" >}}
+   {{< img src="3-fill-storageaccount-config.png" alt="Create an Storage Account in Azure Portal" >}}
 
 5. In `Review + Create` tab, check the configuration matches your needs, then press `Create`.
 
@@ -40,10 +40,10 @@ At least one container is needed to store your media documents. In the Storage A
 ### Generate SAS Token
 
 - In the Storage Account menu, open `Shared Access Signature` (SAS) from the left sidebar. Then configure the settings as followed:
-  * Allowed services: Blob.
-  * Allowed resource type: Object.
-  * Allowed permission: Read, Write, Delete, Add, Create.
-  * Configure the start and expiry date according to your needs.
+  - Allowed services: Blob.
+  - Allowed resource type: Object.
+  - Allowed permission: Read, Write, Delete, Add, Create.
+  - Configure the start and expiry date according to your needs.
 
 When the configuration is filled, press `Generate SAS and connection string`.
 {{< img src="5-SAS-storage-account.png" alt="Configure SAS Token in Azure Portal" >}}

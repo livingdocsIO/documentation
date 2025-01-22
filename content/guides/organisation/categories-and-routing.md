@@ -8,6 +8,7 @@ weight: 1
 
 The categories feature allows you to enable a newspaper specific system to handle routes as well as hierarchical metadata for content such as advertising campaigns or tracking codes.
 A typical category tree might look like the following:
+
 ```
 - home
 - economics
@@ -31,12 +32,14 @@ Pages have to be resolved by the Livingdocs routing system.
 In order to setup categories over the UI, simply navigate to your "Project Setup", select
 "Categories / Routing" from the sidebar and click the "Setup Categories" button.
 This will setup:
+
 - the routing system (path patterns as described above) on all articles and pages
 - the categories plugin on all articles and pages
 - the slug plugin on all articles
 
 We recommend not to change the general structure of those plugins since we tested only this
 combination. You can of course customize the metadata plugins to:
+
 - change labels and order
 - make certain fields required
 - include / exclude certain content-types from the categories feature (simply delete all plugins on it)

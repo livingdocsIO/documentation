@@ -7,6 +7,7 @@ menus:
 ---
 
 The settings contain general feature settings for your project, in particular:
+
 - language settings
 - copy configurations (e.g. copy web to print)
 - plugin configurations
@@ -14,6 +15,7 @@ The settings contain general feature settings for your project, in particular:
 - include rendering
 
 An example:
+
 ```js
 settings: {
   handle: 'magazine',
@@ -299,7 +301,7 @@ settings: {
       }
     ]
   },
-  
+
   tracking: {
     enabled: true
   },
@@ -312,21 +314,21 @@ settings: {
 
 Livingdocs allows you to define documents in multiple languages as well as integrating a translation workflow to translate a document from one language to the other.
 
-* `languages` defines which languages are available for documents.
-* `defaultLanguage` set a default language for new documents created.
-* `requiredOnCreation: true` flag, forces the user to choose a language before creating a document.
-* `translationWorkflow: true` flag, enables the translation tools in Livingdocs (shows "translate" icon on the toolbar). This feature is only available for documents and pages (but not for a data-record).
+- `languages` defines which languages are available for documents.
+- `defaultLanguage` set a default language for new documents created.
+- `requiredOnCreation: true` flag, forces the user to choose a language before creating a document.
+- `translationWorkflow: true` flag, enables the translation tools in Livingdocs (shows "translate" icon on the toolbar). This feature is only available for documents and pages (but not for a data-record).
 
 If you activate the translation feature, then the `language` metadata plugin on a document will contain a `groupId`. You can use this in the `languageGroupId` parameter of the [Public API - Search Publications]({{< ref "/reference/public-api/publications/search" >}}) call to retrieve all translations of a document.
 
 If you want to use a computer assisted translation (CAT) tool to translate livingdocs content you can install our li2xliff library to convert documents to XLIFF for translation and list to [server events]({{< ref "/customising/advanced/server-events.md" >}}) to update content. You can follow our in-depth guide [here]({{< ref "/guides/integrations/li2xliff/index.md" >}})
-
 
 ## Integrations
 
 In general all integrations are under the `integrations` key. We still have some legacy markup where the integration is directly on the root (`kordiam`), but this will be moved in the future.
 
 Available plugins are:
+
 - Kordiam (planning)
 - iMatrics (text auto-tagging)
 - Retresco (text auto-tagging)
@@ -338,12 +340,15 @@ Available plugins are:
 
 Imatrics already uses our new secure secrets feature that will in future be used by all plugins.
 If you are using a seeding process, e.g. via the CLI then you need to manually generate a key and reference it in your project config:
+
 ```
 // NOTE: you need to choose a unique name, an easy way is to append the current date to the string 'imatrics-' as done below
 npx livingdocs-server secret-add --project=<handle> --name=imatrics-20211027 --value=secretvalue
 // -> this adds a new secret 'imatrics-20211027' to our encrypted secret store
 ```
+
 After you have created the secret in our system you need to reference it from your project config:
+
 ```
 imatrics: {
   ...
@@ -383,7 +388,6 @@ The `paramsSchema` generates a form for the editor in the sidebar when a respect
 The `defaultParams` object allows you to define defaults for the dynamic params of an include. Dynamic params are set by the user over a UI in the editor.
 The `config` parameter can contain arbitrary (fixed) data that are sent to your micro-service.
 
-
 ## Webhooks
 
 Webhooks allow you to receive notifications for events from within Livingdocs and react to them.
@@ -399,6 +403,7 @@ It's an array of copy definitions. Each definition first defines the `source`, i
 For the enterprise version we also have a detailed [guide for copy and transform workflows]({{< ref "/guides/editor/declarative-document-copy" >}}).
 
 ## Product Usage Analytics
+
 {{< added-in "release-2025-01" block>}}
 
 In order to drive the continuous improvement of Livingdocs in a user-centered way, usage data and patterns can greatly improve our perspective and point us to pain points worth interviewing users about.
@@ -411,14 +416,17 @@ Livingdocs tracks certain user interactions along with some context data and sen
 - We do not gather heatmap data, nor are we using features that record the screen of a user
 
 ### Tracked events (simplified)
+
 - dashboard screen opened (display filters, search info)
 - dashboard screen left (display filters, search info)
 - dashboard result selected (display filters, search info, result index, browser target)
 - added, changed, removed, reset display filters or search term (display filters, search info)
 
 ### How to opt-in
+
 Livingdocs has to add the corresponding `customerId` to the allow-list which also requires a patch version to be deployed afterward.
-Additionally, the tracking needs to be enabled per project: 
+Additionally, the tracking needs to be enabled per project:
+
 ```js
 {
   tracking: {
@@ -426,4 +434,3 @@ Additionally, the tracking needs to be enabled per project:
   }
 }
 ```
-

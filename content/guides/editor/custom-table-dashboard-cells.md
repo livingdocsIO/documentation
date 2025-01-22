@@ -7,12 +7,12 @@ weight: 14
 ## Motivation
 
 With the Table Dashboard introduced in March 2022 we have created upstream components configurable to suit most customer needs. We would highly recommend using these upstream components for several reasons:
+
 - Less custom code
   - This reduces your implementation and maintenance costs
 - The upstream components are better integrated with other features, for example: dashboard filters, metadata plugins and indexing
 
 However, we also offer custom read-only cells for times when you have small requirements to display in a Table Dashboard. For example, if you have a custom metadata plugin you would like displayed or presented in a different way. The example below takes a publish control field and displays it in a specific way.
-
 
 ## Guide
 
@@ -24,15 +24,13 @@ Custom Table Dashboard cells are passed two props, the document and custom optio
 
 ```vue
 <template>
-  <div>
-     {{ publishDate }} at {{ publishTime }}
-  </div>
+  <div>{{ publishDate }} at {{ publishTime }}</div>
 </template>
 
 <script>
 import {format} from 'date-fns'
 export default {
-  name: "customPublishTimeCell",
+  name: 'customPublishTimeCell',
   props: {
     document: {
       type: Object,
@@ -42,7 +40,7 @@ export default {
     options: {
       type: Object,
       required: true
-    },
+    }
   },
   data() {
     return {
@@ -55,15 +53,13 @@ export default {
       const publishDate = this.document.publishControl.publishSchedule.date // UTC String, e.g. 2022-12-14T17:03:00.000Z
       return format(new Date(publishDate), 'dd.MM.yyyy')
     },
-    getPublishTime () {
+    getPublishTime() {
       const publishDate = this.document.publishControl.publishSchedule.date // UTC String, e.g. 2022-12-14T17:03:00.000Z
       return format(new Date(publishDate), 'HH:mm')
     }
-
   }
 }
 </script>
-
 ```
 
 This must be registered in the vue component registry at the editor:
@@ -113,6 +109,6 @@ columns: [
     priority: 3
   }
 ]
-  ```
+```
 
 This dashboard is pictured above and has three columns - the document title with a teaser image, scheduled publish time and the category.

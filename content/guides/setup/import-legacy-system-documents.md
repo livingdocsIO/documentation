@@ -4,10 +4,10 @@ description: Use the import API for large document imports
 weight: 3
 ---
 
-
 ## Foreword and import statistics
 
 Importing millions of documents from legacy systems into Livingdocs takes time. We observed these numbers:
+
 - 50k articles per hour
 - 100k - 300k images per hour
 
@@ -23,6 +23,7 @@ To ease the migration, we want to support user-defined identifiers, so a custom 
 To prevent issues with the id generation of Postgres, we will make the maximum allowed id configurable.
 
 ## Example
+
 SQL to execute to prevent conflicts when new documents are generated:
 
 You should replace 100000 with the maximum id of the legacy system you'd like to import documents from.

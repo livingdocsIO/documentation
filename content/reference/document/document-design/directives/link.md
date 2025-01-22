@@ -55,7 +55,6 @@ If you select a link by document reference, the shown search dashboard is the sa
 }
 ```
 
-
 ## Config Options
 
 The only (optional) config option is `prefill`. This works in tandem with the service Iframely and allows you to prefill other directives (e.g. text) in the same component with metadata fetched from the provided link (through the Iframely service). The example above uses the `prefill` option to render a teaser that works simply by linking any article from the web (e.g. a NYT article).
@@ -63,6 +62,7 @@ What Iframely does in a nutshell is parsing the `head` section of a linked HTML 
 
 The only supported provider is `iframely`.
 The possible fields are:
+
 - title
 - site
 - author

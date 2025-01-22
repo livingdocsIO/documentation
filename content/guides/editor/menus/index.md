@@ -4,8 +4,8 @@ description: Model menus with data records
 weight: 4
 ---
 
->[!WARNING] {{< deprecated-in "release-2024-11" >}}
-The Menu Tool has been deprecated in favor of modeling menus with data records. Please reach out for assistance with migrating from the Menu Tool to data records.
+> [!WARNING] {{< deprecated-in "release-2024-11" >}}
+> The Menu Tool has been deprecated in favor of modeling menus with data records. Please reach out for assistance with migrating from the Menu Tool to data records.
 
 Menus can be conveniently modeled using data records, which can be included in dashboards and referenced in other documents. Like all documents in Livingdocs, they define the content but not the presentation.
 
@@ -126,11 +126,11 @@ Finally, register a creation function on the server, which will be invoked by th
 ```js
 liServer.registerCreateFunction({
   handle: 'createMenu',
-  async create ({params = {}}) {
+  async create({params = {}}) {
     return {
-        title: params.name,
-        contentType: 'menu',
-        metadata: {name: params.name}
+      title: params.name,
+      contentType: 'menu',
+      metadata: {name: params.name}
     }
   }
 })
@@ -141,8 +141,6 @@ liServer.registerCreateFunction({
 Deliveries can query the public API to find a menu using its `li-unique-id` metadata property. Unlike document IDs, this approach allows the same identifier to be used across different environments (e.g., staging, production). When querying with the key `metadata.<handle>.id` and the value `<uniquenessScope>.<uniqueId>`, the `li-unique-id` metadata plugin ensures a single matching result.
 
 ```js
-const filters = JSON.stringify([
-  {key: 'metadata.name.id', term: 'menu:main'}
-])
+const filters = JSON.stringify([{key: 'metadata.name.id', term: 'menu:main'}])
 const response = await fetch(`api/v1/publications/search?filters=${filters}`)
 ```

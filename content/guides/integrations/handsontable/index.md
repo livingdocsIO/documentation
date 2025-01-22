@@ -7,6 +7,7 @@ weight: 7
 We have configured an example include table using an iframe modal and Handsontable where you can create an include as a Livingdocs component which renders a table of data, configured using Handsontable.
 
 To get this feature working you need to do the following things:
+
 - Set up an include component in the Livingdocs server
 - Set up Handsontable as a separate application with functions to send and receive data as a post message
 
@@ -78,7 +79,7 @@ At the moment, the include expects a JSON array of table data. If you want to co
 For this example the data is simply rendered by row with the below function:
 
 ```javascript
-async function renderHandsontable (params) {
+async function renderHandsontable(params) {
   if (params.innerData) {
     return {
       html: dedent`<table>
@@ -92,19 +93,22 @@ async function renderHandsontable (params) {
   }
 }
 
-function renderArray (array) {
-  return array.map((subArray, outerIndex) => {
-    const valueArrayHTML = subArray.map((item, index) => {
-      if (index === 0) {
-        return
-      } else {
-        return `<th :key=${index}>${item}</th>`
-      }
+function renderArray(array) {
+  return array
+    .map((subArray, outerIndex) => {
+      const valueArrayHTML = subArray.map((item, index) => {
+        if (index === 0) {
+          return
+        } else {
+          return `<th :key=${index}>${item}</th>`
+        }
+      })
+      return `<tr :key=${outerIndex}>${valueArrayHTML.join('')}</tr>`
     })
-    return `<tr :key=${outerIndex}>${valueArrayHTML.join('')}</tr>`
-  }).join('')
+    .join('')
 }
 ```
+
 ## Sending and receiving data with Livingdocs
 
 The function for the iframe modal to send messages is already written in the Editor, it waits for a config request before sending configs with a postMessage back to the iframe.
@@ -119,10 +123,10 @@ await window.parent.postMessage(
     params: {
       innerData: dataArray
     },
-    action: "update",
+    action: 'update'
   },
-  "*"
-);
+  '*'
+)
 ```
 
 If the user chooses to reopen the configuration and edit the content, the configuration is received by this function with a config query post message:
@@ -131,23 +135,23 @@ If the user chooses to reopen the configuration and edit the content, the config
 async function getConfig() {
   await window.parent.postMessage(
     {
-      query: "config",
+      query: 'config'
     },
-    "*"
-  );
+    '*'
+  )
   await window.addEventListener(
-    "message",
+    'message',
     (event) => {
-      if (event.data.query === "config") {
+      if (event.data.query === 'config') {
         if (event.data.params.innerData) {
-          dataArray = event.data.params.innerData;
+          dataArray = event.data.params.innerData
         } else {
           dataArray = dataArray
         }
       }
     },
     false
-  );
+  )
 }
 ```
 
@@ -227,11 +231,16 @@ To set up your own application using vue, you can copy and paste a lot of the co
 ```html
 <template>
   <div id="app">
-    <DataGrid v-if='showDataGrid' v-bind:content='content' id="tableHTML" />
+    <DataGrid
+      v-if="showDataGrid"
+      v-bind:content="content"
+      id="tableHTML"
+    />
     <button v-on:click="save()">Save</button>
   </div>
 </template>
 ```
+
 - Inside this file either use your own data array, the simple array above or import the data from the `constants.js` file in the sandbox. Once you have this, return the data as reactive and set a conditional to ensure it has loaded the data before rendering:
 
 ```js
@@ -242,6 +251,7 @@ data () {
     }
   }
 ```
+
 - Write two functions to communicate with the Livingdocs modal:
 
 ```js
@@ -292,6 +302,7 @@ methods: {
   }
 }
 ```
+
 - In a DataGrid.vue add the settings above into hotSettings and have the data be this.content, along with adding "content" as props and components as HotTable, as below:
 
 ```js

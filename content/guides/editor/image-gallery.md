@@ -9,13 +9,13 @@ weight: 14
 With this walkthrough we show how to set up an image gallery and an image gallery teaser, usually used for a slideshow. At the moment the concept of a gallery is not part of the core system, so we show you a way how Livingdocs would create an image gallery.
 
 **Key features**
+
 - You will have your own content-type "gallery" where you can create a slideshow
 - You will have a gallery-teaser component to embed into your document
 
 **Workflow**
 
 First we add a few [gallery components](#add-gallery-components) and a new content type [gallery](#add-content-type-gallery). Then we [add](#integrate-gallery-to-your-project) the components and the content type to your project. In the next step we [add](#add-gallery-teaser-include) and then [register](#register-gallery-teaser-include) a gallery-teaser include. The last step [adds](#add-gallery-teaser-component) and then [integrates](#integrate-gallery-teaser-to-your-project) a gallery teaser component into your project.
-
 
 ## Expected Result
 
@@ -30,7 +30,6 @@ Gallery Teaser Placeholder (no gallery linked yet)
 Gallery Teaser
 
 ![image](../images/image-gallery-teaser.png)
-
 
 ## Guide
 
@@ -189,9 +188,7 @@ module.exports = {
     icon: 'image-multiple'
   },
 
-  components: [
-    {name: 'asset-image'}
-  ],
+  components: [{name: 'asset-image'}],
 
   editorWrapper: '<div class="page container container--article doc-section"></div>',
 
@@ -200,17 +197,12 @@ module.exports = {
       component: 'asset-content',
       position: 'fixed',
       containers: {
-        header: [
-          {component: 'asset-head-gallery', position: 'fixed'}
-        ],
+        header: [{component: 'asset-head-gallery', position: 'fixed'}],
         body: [
           {
             component: 'asset-container-gallery',
             containers: {
-              gallery: [
-                {component: 'asset-image'},
-                {component: 'asset-image'}
-              ]
+              gallery: [{component: 'asset-image'}, {component: 'asset-image'}]
             }
           }
         ]
@@ -253,8 +245,6 @@ module.exports = {
   }
 }
 ```
-
-
 
 ### Add "gallery-teaser" Include
 
@@ -342,9 +332,7 @@ const galleryIsNotPublishedPlaceholder = dedent`
 liServer.registerInitializedHook(() => {
   const publicationApi = liServer.features.api('li-documents').publication
 
-  liServer.registerIncludeServices([
-    require('./include-services/gallery-teaser')({publicationApi})
-  ])
+  liServer.registerIncludeServices([require('./include-services/gallery-teaser')({publicationApi})])
 })
 ```
 

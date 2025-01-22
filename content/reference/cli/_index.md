@@ -29,6 +29,7 @@ npm install -g livingdocs-cli
 ```
 
 Check that the installation was successful.
+
 ```
 livingdocs-cli --help
 ```

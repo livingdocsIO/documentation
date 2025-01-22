@@ -7,6 +7,7 @@ weight: 7
 It is possible to register a custom filter and use it as a [DisplayFilter]({{< ref "/customising/advanced/editor-configuration/display-filter.md" >}}) for Dashboards or search modals.
 
 At the moment there are 2 types of custom filters
+
 - [Custom List v2 Filter](#custom-list-v2-filter)
   - [Example filter using static options](#example-filter-using-static-options)
   - [Example multi value filter](#example-multi-value-filter)
@@ -17,7 +18,6 @@ At the moment there are 2 types of custom filters
 
 Hint: If you want to create a filter with metadata, make sure they are setup correctly in the ElasticSearch index, using `config: {index: true}` on the [metadata property defined in the content type config]({{< ref "/guides/search/publication-index.md" >}}).
 
-
 ## Custom List v2 Filter
 
 #### Example filter using static options
@@ -25,21 +25,23 @@ Hint: If you want to create a filter with metadata, make sure they are setup cor
 ```js
 liEditor.searchFilters.registerListV2('simpleV2Filter', {
   datasource: {
-    fetch ({user}) {
-      return [{
-        label: {en: 'Published Articles', de: 'Publizierte Artikel'},
-        filter: {key: 'lastPublicationId', exists: true}
-      },
-      {
-        label: {en: 'My Articles by updatedAt', de: 'Meine Artikel nach updatedAt'},
-        sort: '-updatedAt',
-        filter: {key: 'ownerId', term: user.id}
-      }]
+    fetch({user}) {
+      return [
+        {
+          label: {en: 'Published Articles', de: 'Publizierte Artikel'},
+          filter: {key: 'lastPublicationId', exists: true}
+        },
+        {
+          label: {en: 'My Articles by updatedAt', de: 'Meine Artikel nach updatedAt'},
+          sort: '-updatedAt',
+          filter: {key: 'ownerId', term: user.id}
+        }
+      ]
     }
   },
 
   // 'mount()' is optional since release-2023-09
-  mount ({data, filter}) {
+  mount({data, filter}) {
     filter.options = data
   }
 })
@@ -54,21 +56,23 @@ liEditor.searchFilters.registerListV2('multiSelectV2Filter', {
   multiple: true, // allow multiple selections
   label: {en: 'Multi Select', de: 'Mehrfachauswahl'},
   datasource: {
-    fetch ({user}) {
-      return [{
-        label: {en: 'Published Articles', de: 'Publizierte Artikel'},
-        filter: {key: 'lastPublicationId', exists: true}
-      },
-      {
-        label: {en: 'My Articles by updatedAt', de: 'Meine Artikel nach updatedAt'},
-        sort: '-updatedAt',
-        filter: {key: 'ownerId', term: user.id}
-      }]
+    fetch({user}) {
+      return [
+        {
+          label: {en: 'Published Articles', de: 'Publizierte Artikel'},
+          filter: {key: 'lastPublicationId', exists: true}
+        },
+        {
+          label: {en: 'My Articles by updatedAt', de: 'Meine Artikel nach updatedAt'},
+          sort: '-updatedAt',
+          filter: {key: 'ownerId', term: user.id}
+        }
+      ]
     }
   },
 
   // 'mount()' is optional since release-2023-09
-  mount ({data, filter}) {
+  mount({data, filter}) {
     filter.options = data
   }
 })
@@ -95,6 +99,7 @@ Request payload if both filters from above are selected:
 {{< img src="filter-dropdown.png" alt="Filter Dropdown" >}}
 
 Process
+
 - `datasource.fetch` fetch data async from a remote service or create a list of filter items
 - `mount` - configure the filter object
 
@@ -102,7 +107,7 @@ Process
 liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
   datasource: {
     // fetch data and inject response into mount function
-    async fetch ({project, user, server, config}) {
+    async fetch({project, user, server, config}) {
       const host = server.host
       const channelId = project.defaultChannel.id
       const uri = `${host}/channel-configs/properties?channelId=${channelId}&properties=contentTypes`
@@ -111,7 +116,7 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
         method: 'GET',
         headers: new window.Headers({
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${server.accessToken}`
+          Authorization: `Bearer ${server.accessToken}`
         })
       })
 
@@ -136,7 +141,7 @@ liEditor.searchFilters.registerListV2('contentTypeV2Filter', {
   //     isDefault: true
   //   }
   // ]
-  async mount ({data, filter}) {
+  async mount({data, filter}) {
     const options = data.contentTypes.map((ct) => {
       return {
         label: ct.info.label,
@@ -158,12 +163,13 @@ When `isDefault: true` (see example above), the default option will be added to 
 ## Custom Vue Component Filter
 
 Filters for the media-library need to define the `dataType`
+
 ```js
 // before release-2023-07
-$emit('update:filter', {type: 'metadata', key:'transformed', dataType: 'boolean', value: true})
+$emit('update:filter', {type: 'metadata', key: 'transformed', dataType: 'boolean', value: true})
 
 // after release-2023-07, uses the new Search DSL
-$emit('update:filter', {filter: {key:'metadata.transformed', term: true}})
+$emit('update:filter', {filter: {key: 'metadata.transformed', term: true}})
 ```
 
 The value of the emitted `filter` property must be an object. If you need to combine multiple properties these should be assigned to an `and`, `or`, or `not` property within the filter object:
@@ -206,43 +212,46 @@ liEditor.vueComponentRegistry.registerComponent({
 ```
 
 After registering the filter, the vue component will recieve a prop called `filter` and the upstream-editor has some logic behind the scenes. For example the filter is written onto the localStorage so it persists through refreshing or navigating and triggers the search, or is cleared after resetting the filter settings.
+
 ```html
 <template>
   <!-- the 'update:filter' event is required -->
-  <div
-    @click="$emit('update:filter', {filter: {key: 'updatedAt', range: {gte: 'now-24h'}})">
-  Filter logic
+  <div @click="$emit('update:filter', {filter: {key: 'updatedAt', range: {gte: 'now-24h'}})">
+    Filter logic
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style
+  lang="scss"
+  scoped
+>
   .my-css-class {
   }
 </style>
 
 <script>
-export default {
-  name: 'customFilter',
-  
-  props: {
-    // synced with it's parent and the value in the localStorage
-    // updated via $emit('update:filter', {...data})
-    filter: {
-      type: Object,
-      default () {}
-    },
-    // the config property defined when configuring the filter on a dashboard
-    config: {
-      type: Object,
-      required: true
-    },
-    // added in release-2023-11. Use it to change the UI of your filter when the user
-    // set a value
-    inDefaultState: {
-      type: Boolean,
-      required: true
+  export default {
+    name: 'customFilter',
+
+    props: {
+      // synced with it's parent and the value in the localStorage
+      // updated via $emit('update:filter', {...data})
+      filter: {
+        type: Object,
+        default() {}
+      },
+      // the config property defined when configuring the filter on a dashboard
+      config: {
+        type: Object,
+        required: true
+      },
+      // added in release-2023-11. Use it to change the UI of your filter when the user
+      // set a value
+      inDefaultState: {
+        type: Boolean,
+        required: true
+      }
     }
   }
-}
 </script>
 ```

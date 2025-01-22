@@ -14,6 +14,7 @@ The implementation of ABAC is in an alpha stage and will change in the future. W
 ## Rules, actions and effects
 
 Example Rule Configuration:
+
 ```js
 {
   effect: 'DENY',
@@ -32,6 +33,7 @@ This is the sequence of how the policy framework evaluates if an `action` is all
 3. explicit DENY                                      -> return DENY
 4. no rule defined                                    -> return ALLOW
 ```
+
 ## Example of a policy config
 
 With the following policy config a member of the group `Reader` is allowed to load the proofreading dashboard, but is not allowed to update a proofreading task.
@@ -52,8 +54,16 @@ With the following policy config a member of the group `Reader` is allowed to lo
             // effect - 'ALLOW' or 'DENY' - access based on an action and a resource
             // action - what kind of action you want to do
             // resource - where you want to execute an action
-            {effect: 'DENY', action: 'document.metadata.update', resource: {handle: 'proofreading', attribute: 'priority'}},
-            {effect: 'DENY', action: 'document.metadata.update', resource: {handle: 'proofreading'}},
+            {
+              effect: 'DENY',
+              action: 'document.metadata.update',
+              resource: {handle: 'proofreading', attribute: 'priority'}
+            },
+            {
+              effect: 'DENY',
+              action: 'document.metadata.update',
+              resource: {handle: 'proofreading'}
+            },
             {effect: 'ALLOW', action: 'dashboard.get', resource: {handle: 'kanban-proofreading'}}
           ]
         }

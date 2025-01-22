@@ -16,6 +16,7 @@ Underlying this we use the abstract-blob-store API: https://github.com/maxogden/
 ## Configuration
 
 At the moment we have a fixed set of supported strategies:
+
 - [memory](#memory)
 - [fs](#local-file-system)
 - [s3](#s3-object-storage)
@@ -46,6 +47,7 @@ to compose a key blueprint that matches your needs, e.g. separate media by proje
 #### Memory
 
 For testing purposes you directly use a memory storage:
+
 ```js
 storage: {
   strategy: 'memory'
@@ -55,6 +57,7 @@ storage: {
 #### Local File System
 
 Example setup to write to a temporary folder:
+
 ```js
 storage: {
   strategy: 'fs',
@@ -137,6 +140,7 @@ storage: {
 ### Azure Blob Storage
 
 The Azure Blob Storage provider configuration needs a Storage Account name, Container name. There are multiple options for authentication for Azure Blob Storage:
+
 - generate a SAS token with read, write, create and delete access to the Azure Storage Account. Please consult the [detailed instructions]({{< ref "/customising/server-configuration/storage/azure-blob-storage" >}}) to generate the Shared Access Signature (SAS) for `sasToken` config parameter. The SAS token should be rotated periodically.
 - skip SAS token configuration and let the Livingdocs Server fetch credentials from environment variables, workload identity, managed identity, Azure CLI, etc. The server will automatically select the most appropriate authentication method based on the available environment. With this method token rotation is not necessary as Azure should manage it.
 

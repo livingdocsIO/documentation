@@ -14,6 +14,7 @@ We use the logging library [pino](https://getpino.io/#/) in most of the Livingdo
 The Livingdocs Server configures a pino instance and exposes it on `liServer.log`.
 
 A few examples how to use the logger:
+
 ```js
 const conf = require('./conf')
 const liServer = require('@livingdocs/server')(conf)
@@ -29,7 +30,8 @@ log.error({err: new Error('noooo!')}, 'ouch!')
 ### Logging options
 
 There are different configurable properties when using Livingdocs Server logging. The snippet below contains all the possible parameters to configure the logs.
-``` js
+
+```js
 logs: {
   enabled: true, // default: true
 
@@ -80,6 +82,7 @@ logs: {
 ```
 
 For example, with the previous configuration the generated logs will look like:
+
 ```
 {"level":"success","time":1658147523276,"project":"livingdocs-server","ns":"li-tasks/setupProjects","customer":"Livingdocs","msg":"Created - project 'e2e-blank' "}
 ```
@@ -113,10 +116,10 @@ loggers.
 
 Every Livingdocs `feature` instance already has a child logger declared using a `ns` with the feature name as value.
 
-
 ### What does the log output look like?
 
 Example json log:
+
 ```js
 log.warn({foo: 'bar'}, 'A log message.')
 
@@ -130,15 +133,14 @@ Any additional keys are additional information that varies depending on what is 
 The level is a numeric value.
 These are the values of the log levels you will see in the logs:
 
-Level   | Value
---------|-------
-'FATAL' | 60
-'ERROR' | 50
-'WARN'  | 40
-'INFO'  | 30
-'DEBUG' | 20
-'TRACE  | 10
-
+| Level   | Value |
+| ------- | ----- |
+| 'FATAL' | 60    |
+| 'ERROR' | 50    |
+| 'WARN'  | 40    |
+| 'INFO'  | 30    |
+| 'DEBUG' | 20    |
+| 'TRACE  | 10    |
 
 ### Example Request Log
 

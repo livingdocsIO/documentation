@@ -5,23 +5,34 @@
 
 {{ $channel := "" }}
 {{ if $example.beta }}{{ $channel = "beta" }}{{ end }}
-{{ if $example.deprecation.since }}{{ $channel = (print "Deprecated in " $example.deprecation.since) }}{{ end }}
-
-{{ $apiExampleClass := split "" " " }}
-{{ if (eq $example.title "") }}{{ $apiExampleClass = $apiExampleClass | append "api-example--no-title" }}{{ end }}
-{{ if $channel }}
-  {{ if (eq $channel "beta") }}{{ $apiExampleClass = $apiExampleClass | append "api-example--warning" }}
-  {{ else }}{{ $apiExampleClass = $apiExampleClass | append "api-example--danger" }}{{ end }}
+{{ if $example.deprecation.since }}
+  {{ $channel = (print "Deprecated in " $example.deprecation.since) }}
 {{ end }}
 
-<div class="api-example {{ delimit $apiExampleClass " " }}" data-channel="{{ $channel }}">
+{{ $apiExampleClass := split "" " " }}
+{{ if (eq $example.title "") }}
+  {{ $apiExampleClass = $apiExampleClass | append "api-example--no-title" }}
+{{ end }}
+{{ if $channel }}
+  {{ if (eq $channel "beta") }}
+    {{ $apiExampleClass = $apiExampleClass | append "api-example--warning" }}
+  {{ else }}
+    {{ $apiExampleClass = $apiExampleClass | append "api-example--danger" }}
+  {{ end }}
+{{ end }}
+
+
+<div
+  class="api-example {{ delimit $apiExampleClass " " }}"
+  data-channel="{{ $channel }}"
+>
   {{- if $example.title -}}
     <div class="api-example__title">
-      <h2  id="{{ $example.title | urlize }}">{{ $example.title | $PAGE.RenderString }}</h2>
+      <h2 id="{{ $example.title | urlize }}">{{ $example.title | $PAGE.RenderString }}</h2>
       {{- if $example.deprecation -}}
-      <blockquote class="info info-danger">
-        {{ $example.deprecation.note | $PAGE.RenderString }}
-      </blockquote>
+        <blockquote class="info info-danger">
+          {{ $example.deprecation.note | $PAGE.RenderString }}
+        </blockquote>
       {{- end -}}
     </div>
   {{- end -}}
@@ -97,42 +108,60 @@
   {{- end -}}
 
   {{- if $example.example_request -}}
-  <h4>Example Request</h4>
-  {{ highlight $example.example_request "js" }}
+    <h4>Example Request</h4>
+    {{ highlight $example.example_request "js" }}
   {{- end -}}
 
   {{- if $example.responses -}}
     <div class="api-example__response">
-      <h4>Response{{ if (eq $example.responseBlurry true) }} (may differ in details){{ end }}</h4>
+      <h4>Response{{ if (eq $example.responseBlurry true) }}(may differ in details){{ end }}</h4>
 
       {{- range $example.responses -}}
         <div class="api-example__response-entry">
           <div class="teaser-and-code">
             <div class="teaser-and-code__teaser">
-              <div class="code-teaser{{ if (ne .collapsible false) }} code-teaser--with-interaction{{ end }}{{ if (eq .code "200") }} code-teaser--success{{ end }}{{ if (ne .code "200") }} code-teaser--error{{ end }}">
+              <div
+                class="code-teaser{{ if (ne .collapsible false) }}
+                  code-teaser--with-interaction
+                {{ end }}{{ if (eq .code "200") }}
+                  code-teaser--success
+                {{ end }}{{ if (ne .code "200") }}code-teaser--error{{ end }}"
+              >
                 {{ if (ne .collapsible false) }}
-                <div class="code-teaser__interaction">
-                  <span class="arrow arrow--right"></span>
-                </div>
+                  <div class="code-teaser__interaction">
+                    <span class="arrow arrow--right"></span>
+                  </div>
                 {{ end }}
                 <div class="code-teaser__code">{{ .code }}</div>
                 {{ $routename := "" }}
-                {{- if .name -}}{{  $routename = .name }}
-                {{- else if (eq .code "200") -}}{{ $routename = "OK" }}
-                {{- else if (eq .code "301") -}}{{ $routename = "Moved Permanently" }}
-                {{- else if (eq .code "400") -}}{{ $routename = "Bad Request" }}
-                {{- else if (eq .code "401") -}}{{ $routename = "Unauthorized" }}
-                {{- else if (eq .code "403") -}}{{ $routename = "Forbidden" }}
-                {{- else if (eq .code "404") -}}{{ $routename = "Not Found" }}
-                {{- else if (eq .code "409") -}}{{ $routename = "Conflict" }}
-                {{- else if (eq .code "429") -}}{{ $routename = "Usage Limit Exceeded" }}
-                {{- else if (eq .code "500") -}}{{ $routename = "Bad Request" }}
-                {{ end}}
+                {{- if .name -}}
+                  {{ $routename = .name }}
+                {{- else if (eq .code "200") -}}
+                  {{ $routename = "OK" }}
+                {{- else if (eq .code "301") -}}
+                  {{ $routename = "Moved Permanently" }}
+                {{- else if (eq .code "400") -}}
+                  {{ $routename = "Bad Request" }}
+                {{- else if (eq .code "401") -}}
+                  {{ $routename = "Unauthorized" }}
+                {{- else if (eq .code "403") -}}
+                  {{ $routename = "Forbidden" }}
+                {{- else if (eq .code "404") -}}
+                  {{ $routename = "Not Found" }}
+                {{- else if (eq .code "409") -}}
+                  {{ $routename = "Conflict" }}
+                {{- else if (eq .code "429") -}}
+                  {{ $routename = "Usage Limit Exceeded" }}
+                {{- else if (eq .code "500") -}}
+                  {{ $routename = "Bad Request" }}
+                {{ end }}
                 {{- if $routename -}}<div class="code-teaser__name">{{ $routename }}</div>{{ end }}
-                {{- if .endpoint -}}<div class="code-teaser__endpoint">{{ .endpoint }}</div>{{- end -}}
+                {{- if .endpoint -}}
+                  <div class="code-teaser__endpoint">{{ .endpoint }}</div>
+                {{- end -}}
               </div>
             </div>
-            <div class="teaser-and-code__code{{ if (eq .collapsible false) }} show{{ end }}">
+            <div class="teaser-and-code__code {{ if (eq .collapsible false) }}show{{ end }}">
               {{ highlight .body (or .format "js") }}
             </div>
           </div>

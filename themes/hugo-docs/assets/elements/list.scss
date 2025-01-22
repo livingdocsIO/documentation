@@ -15,7 +15,9 @@ $list-number-gap: 1.5 * $space-s;
     }
 
     ol {
-      padding-left: calc(#{$list-number-circle-size} + #{$list-number-font-factor} * #{$list-number-gap});
+      padding-left: calc(
+        #{$list-number-circle-size} + #{$list-number-font-factor} * #{$list-number-gap}
+      );
       margin-top: $space-m;
       margin-bottom: $space-m;
       list-style: none;

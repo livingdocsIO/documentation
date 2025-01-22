@@ -16,6 +16,7 @@ A new version of this document for {{< release "release-2023-07" >}} and above i
 The publication index is an elastic search index that allows developers to do queries in order to retrieve published documents from Livingdocs.
 
 There are two parts to the feature:
+
 - the indexing side that defines how values are indexed to the publication index
 - the query side that defines the syntax for querying
 
@@ -24,6 +25,7 @@ There are two parts to the feature:
 Some fields like `projectId`, `category` or `contentType` are indexed by default and can not be changed. You can see all the fields that are mapped by default in the mapping file for the publication index: https://github.com/livingdocsIO/livingdocs-server/blob/5f04a637bef5a2e7c766668b85ed5537a78ac296/app/features/indexing/publications/document-publication-mapping.json
 
 Two larger concepts are configurable by customers:
+
 - the date logic, in particular sort date and scheduled publishing
 - generic filter values from custom metadata fields that can be used to query
 
@@ -65,18 +67,17 @@ The `sortDate` defines the date that is used to sort results in a publication se
 The `scheduledPublishing` set allows you to define `on` and `off` dates. When set, all search queries to the publication index will automatically exclude publications that have a `sortDate` outside of the `on` and `off` bounds. This is how customers can define future publish and un-publish actions for an article, e.g. when there are blocking periods on the content due to confidentiality or copyright.
 
 Lastly, the `filters` array allows customers to register custom filters for indexing. Filters are always indexed as elastic keywords, e.g. the definition above could result in the following elastic instance:
+
 ```js
-filters: [
-  {"value": "news=true"},
-  {"value": "authors=1"},
-  {"value": "authors=4"}
-]
+filters: [{value: 'news=true'}, {value: 'authors=1'}, {value: 'authors=4'}]
 ```
+
 As you can see, the filters are indexed as key/value strings. This brings with it the limitation that you can not execute operations on it, e.g. you can not query for something like 'all author ids greater than 5'. You can query for exact matches, e.g. 'all news articles' or contains queries, e.g. 'all documents where author 1 is among the authors'.
 
 ### Metadata Plugins
 
 The exact way how the `value` of the index is set (see above) is defined in the metadata plugin. All core metadata plugins have fixed value function that you can not change. In a custom metadata plugin you can define your own value function. An example looks as follows.
+
 ```js
 publicationIndex: {
   enabled: true,
@@ -85,6 +86,7 @@ publicationIndex: {
   }
 }
 ```
+
 As with the channel-config, the metadata plugin can also have an entry `publicationIndex`.
 First of all, you need to set `enabled` to true so that indexing of this metadata plugin to the index is allowed. The `getValue` method is optional, if you don't define one, it will just index the whole value stored in the metadata entry.
 If you define `getValue`, you can return 3 things:
@@ -98,6 +100,7 @@ If you define `getValue`, you can return 3 things:
 After setting up your publication index you can use either the Public API or the core's search API (enterprise only) to query for published documents. The documentation for the Public API can be found here: [Public API - Search Publications]({{< ref "/reference/public-api/publications/search" >}}).
 
 The core API allows you all the options of the public API plus some additional ones. To get the search API, do the following in your server-side feature:
+
 ```js
 module.exports = function (feature, server) {
   const searchManager = server.features.api('li-search').searchManager
@@ -107,11 +110,13 @@ module.exports = function (feature, server) {
 To query publications you use the `searchPublications` method on the `searchManager`. It takes the 2 parameters `query` and `options`.
 
 Allowed options are:
+
 - `offset`, from which position to count results, useful for pagination, default 0
 - `limit`, how many results to get, default 10
 - `onlyId` flag, if set to `true` will only return the ids of the resulting documents (documentIds)
 
 The query allows the following entries:
+
 - `projectId`, mandatory, the projectId (int) for which documents are searched
 - `channelId`, the channelId (int) for which documents are searched
 - `searchTerm`, string used for full-text search

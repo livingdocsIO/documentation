@@ -154,7 +154,6 @@ httpServer: {
 
 #### Editor
 
-
 ```js
 editor: {
   // configure the Editor Host. This is used for password reset & login urls.
@@ -253,7 +252,6 @@ redis: {
 
 ## Features
 
-
 #### Authentication
 
 ```js
@@ -297,14 +295,14 @@ Livingdocs uses JWT tokens for client (browser and public api) authorization.
 The `accessTokenSigningKeys` configuration defines the signing and verification keys for the tokens.
 
 To generate a new token signing key, execute the following command:
-  `livingdocs-server key-generate sig`
+`livingdocs-server key-generate sig`
 
 Or convert an existing `auth.accessTokenSecret` value:
-  `livingdocs-server key-generate convert-hs256 '<your-existing-secret>'`
-
+`livingdocs-server key-generate convert-hs256 '<your-existing-secret>'`
 
 And then configure the json web key in the array.
 Please use different keys for all of your environments.
+
 ```patch
   auth: {
 +    accessTokenSigningKeys: [{"kty":"oct","k":"c29tZS1zZWNyZXQtZm9yLWhtYWMyNTYtdG9rZW4tc2lnbmluZw","kid":"","alg":"HS256","use":"sig"}]
@@ -314,9 +312,11 @@ Please use different keys for all of your environments.
 Any of the following signing algorithms are supported:
 
 Symmetric Algorithms:
+
 - `HS256`, `HS384`, `HS512`
 
 Asymmetric Algorithms:
+
 - `EdDSA` (preferred)
 - `ES256`, `ES384`, `ES512`
 - `PS256`, `PS384`, `PS512`
@@ -337,7 +337,6 @@ Represents the default email/password authentication strategy.
   (e.g '@gmail.com') during login
 - `deniedPasswords` Array of regexes that are used in the strong passwords
   feature. If the regex matches the password cannot be used.
-
 
 ```js
 auth: {
@@ -519,21 +518,21 @@ The DesignLoader offers different options how designs are loaded. By default des
 are loaded from the local database.
 
 Options include:
-* Load a specific design from a url
-* Preload a design into memory (useful for testing, or if you only change designs
+
+- Load a specific design from a url
+- Preload a design into memory (useful for testing, or if you only change designs
   during a deployment)
-* Load a design from another Livingdocs Server
+- Load a design from another Livingdocs Server
 
 All these options can work alongside each other.
 
 If a design is requested the design loader will execute these steps in the given order:
 
 1. check if the design is preloaded in `localDesigns`.
-  -> If yes, return it, otherwise continue.
+   -> If yes, return it, otherwise continue.
 2. check if for this design name a custom url is configured in `hostedDesigns`.
-  -> If yes append the version to the url and fetch from that url. Return the design or an error.
+   -> If yes append the version to the url and fetch from that url. Return the design or an error.
 3. load from a remote design server if a `designRepository` is configured otherwise load from local server
-
 
 ```js
 designLoader: {
@@ -635,6 +634,7 @@ The `websocketsEnabled` property is primarily used for updating table dashboards
 The `pollingEnabled` property can be used as a backup if users report problems with the websocket connection. By default it performs the same checks as `websocketsEnabled`, but it is only run once per minute. `pollingEnabled` is not used for reloading teasers.
 
 If you are running the Livingdocs server locally using HTTPS with a self-signed certificate then you will need to start the editor with `NODE_TLS_REJECT_UNAUTHORIZED=0` to establish the websocket connection. This could either prefix the npm start script, be set or exported in the terminal, be added before the start command executed in the terminal, or defined in the runtime code by modifying `process.env`. Please be aware that this is for local development only and should not be needed or used in production. You should see the following warning displayed when node starts if it was applied correctly:
+
 ```
 Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
 ```
@@ -653,7 +653,6 @@ Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' ma
 The `paginationConfig` allows you to set how many documents you can see on the lists dashboard.
 Defaults to max. 1000 documents.
 
-
 #### Project Configs
 
 Get more information about the `Project Config` [here]({{< ref "/reference/project-config" >}})
@@ -665,10 +664,31 @@ More information on secret use can be found at [Project secrets page]({{< ref ".
 ```js
 secretEncryptionKeys: [
   // Encryption key used for encryption
-  {"kty":"oct","k":"7U6k5S_HXSujMpr2u7YjRkZLQO6LUK2vFYFHVbfNJ_g","kid":"220824-xmBI","alg":"dir","enc":"A256GCM","use":"enc"},
+  {
+    kty: 'oct',
+    k: '7U6k5S_HXSujMpr2u7YjRkZLQO6LUK2vFYFHVbfNJ_g',
+    kid: '220824-xmBI',
+    alg: 'dir',
+    enc: 'A256GCM',
+    use: 'enc'
+  },
   // Encryption keys used for decryption only, to support key rotations
-  {"kty":"oct","k":"XY4J0qe3fkI_XrWsfKNVUl7paxltR-_KuYdS2XFmqRI","kid":"220824-DDS1","alg":"dir","enc":"A256GCM","use":"enc"},
-  {"kty":"oct","k":"abBKmiI624FWw1B0yevJEI6AowC4AqDQbLkZx_pSmVM","kid":"220824-aiiA","alg":"dir","enc":"A256GCM","use":"enc"}
+  {
+    kty: 'oct',
+    k: 'XY4J0qe3fkI_XrWsfKNVUl7paxltR-_KuYdS2XFmqRI',
+    kid: '220824-DDS1',
+    alg: 'dir',
+    enc: 'A256GCM',
+    use: 'enc'
+  },
+  {
+    kty: 'oct',
+    k: 'abBKmiI624FWw1B0yevJEI6AowC4AqDQbLkZx_pSmVM',
+    kid: '220824-aiiA',
+    alg: 'dir',
+    enc: 'A256GCM',
+    use: 'enc'
+  }
 ]
 ```
 
@@ -730,7 +750,6 @@ above 10 here.
 `hooksEnabled` should always be true. It makes sure that whenever a document is published the category on the
 document is correctly updated. -->
 
-
 #### Search
 
 Configure the Elasticsearch instance used by the search feature.
@@ -772,9 +791,11 @@ When configuring OpenSearch credentials you can use the `aws` object to configur
 Please make sure to always define the `aws` object, even if you don't use AWS `accessKeyId` and `secretAccessKey`, since we use this config to determine if we should use AWS connection or Elasticsearch connection.
 
 For local development:
+
 - using AWS IAM Roles you can define a token with `accessKeyId` and `secretAccessKey` in the `aws` object
 - using local AWS Profile credentials can be used when connecting to remote Opensearch/Kibana
-With the configuration below:
+  With the configuration below:
+
 ```js
 search: {
   elasticsearchClient: {
@@ -786,10 +807,12 @@ search: {
 ```
 
 For production environments:
+
 - using AWS IAM Roles you can define a token with `accessKeyId` and `secretAccessKey` in the `aws` object
 - when running the Livingdocs Server in EKS, use the [IAM Roles for Service Accounts](https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html) feature to assign the required permissions to the Livingdocs Server pod.
 - when running the Livingdocs Server in ECS/Fargate, use the [IAM Roles for Tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html) feature to assign the required permissions to the Livingdocs Server task.
-With the configuration below:
+  With the configuration below:
+
 ```js
 search: {
   elasticsearchClient: {
@@ -820,14 +843,12 @@ The simplest possible query function looks like this:
 // @returns {Object} Elasticsearch body.query
 module.exports = function (searchQuery) {
   return {
-    match: {'document.title' : searchQuery}
+    match: {'document.title': searchQuery}
   }
 }
 ```
 
 For inspiration, you can also check out our [current default document search function]({{< ref "/customising/advanced/search-customisation" >}}).
-
-
 
 #### Custom Elasticsearch Index
 
@@ -922,9 +943,11 @@ Please ensure "Enable client events" is enabled on the App settings page of the 
 {{< /info >}}
 
 #### Push Notifications
+
 Configuration examples for the different notification services.
 
 Firebase:
+
 ```js
 pushNotifications: {
   enabled: true,
@@ -987,10 +1010,10 @@ pushNotifications: {
 
 For push notifications to be enabled you also need to follow the steps in the [channel config setup]({{< ref "/reference/project-config/content-types.md#push-notifications">}})
 
-
 #### Media Library (DAM)
 
 The Media Library impacts editor in multiple ways:
+
 - You can pick images, videos, and files from the library which have been previously uploaded
 - You can see all the uploaded media and perform operations on them
 - You can edit the Metadata of media in a dedicated view, which is accessible over an image
@@ -999,6 +1022,7 @@ The Media Library impacts editor in multiple ways:
 
 We support the following configs: `mediaLibrary.images` `mediaLibrary.videos` `mediaLibrary.files`.
 Below you see a full mediaLibrary config (with default values).
+
 ```js
 mediaLibrary: {
   // define behavior for images in Livingdocs (upload, upload processing, storage)
@@ -1095,11 +1119,11 @@ mediaLibrary: {
 ##### Filename Strategy
 
 When uploading an asset into the media library, we choose one strategy to define the filename/path. See the pattern below:
+
 - pattern: `<mediaLibrary.images.storage.prefix>/YYYY/MM/DD/uuid.file-extension`
 - example: `/images/2021/05/04/7f6352fb-8bff-4560-98e6-304a0d0885b9.jpeg`
 
 Even when the storage (e.g. Amazon S3) is public, the name of the path is difficult to guess.
-
 
 ##### Alternative Image Proxy Configuration (mediaLibrary.images.proxy)
 
@@ -1119,17 +1143,15 @@ mediaLibrary: {
 }
 ```
 
-
 ##### Setting up the Media Library Elastic Search Mapping
 
 For now the very first step when setting up the server, you need to create a new index 'media-library' in Elastic Search.
 
 The name of the Media index has to be configured:
 
-
 ```js
 {
- search: {
+  search: {
     // Analogous to the `articleDocumentIndex` configuration
     mediaLibraryIndex: 'li-local-media-library'
   }
@@ -1145,6 +1167,7 @@ livingdocs-server elasticsearch-index --handle li-media -y
 To index the metadata the plugin must support `indexing` and on the metadata in the mediaType the index must be enabled.
 
 ###### Enable indexing on metadata plugin
+
 To enable the indexing for the Media Library in a plugin you have to add the `indexing` config.
 
 ```js
@@ -1170,6 +1193,7 @@ To enable the indexing for the Media Library in a plugin you have to add the `in
 ```
 
 We support these types for indexing
+
 - `text` will be available for text search
 - `keyword` to filter by keyword
 - `boolean` to filter by boolean
@@ -1299,7 +1323,7 @@ liServer.registerInitializedHook(async () => {
   const previewApi = liServer.features.api('li-preview')
   const documentApi = liServer.features.api('li-documents').document
   const renderFunction = async ({documentId}) => {
-  const doc = await documentApi.getLatestDocument(documentId)
+    const doc = await documentApi.getLatestDocument(documentId)
     return {html: `<div><h1>${doc.title}</h1><p>This is a custom preview</p></div>`}
   }
   previewApi.registerRenderFunction(renderFunction)
@@ -1307,7 +1331,6 @@ liServer.registerInitializedHook(async () => {
 ```
 
 {{< img src="images/custom_preview.png" alt="Teaser Preview" >}}
-
 
 Alternatively, your render function can just return the url with rendered html. It can be useful when your document is rendered on an external system or to have a preview of your published article on the delivery.
 
@@ -1320,8 +1343,8 @@ liServer.registerInitializedHook(async () => {
   previewApi.registerRenderFunction(renderFunction)
 })
 ```
-## Integrations
 
+## Integrations
 
 There is a general `integrations` configuration for small integrations that can be configured in the `channelConfig` through editor UI. They need to be enabled in the server config with the following config.
 
@@ -1434,8 +1457,15 @@ metadataPlugins: path.resolve('./example-server/plugins/metadata')
 //   Attention:
 //     Relative paths are currently always resolved relative to the current working directory.
 //     Therefore, either require a file, or use absolute paths if you want to load them in a module.
-metadataPlugins: ['some-module', require('./another-local-module'), require.resolve('./plugins/li-text')]
+metadataPlugins: [
+  'some-module',
+  require('./another-local-module'),
+  require.resolve('./plugins/li-text')
+]
 
 // ./another-local-module.js
-module.exports = [{name: 'some-plugin', ...wholePluginDeclaration}, require.resolve('./another-module')]
+module.exports = [
+  {name: 'some-plugin', ...wholePluginDeclaration},
+  require.resolve('./another-module')
+]
 ```

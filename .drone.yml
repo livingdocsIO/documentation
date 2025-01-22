@@ -6,29 +6,29 @@ clone:
   depth: 5000
 
 steps:
-- name: build
-  image: livingdocs/docker-node:20.10
-  volumes:
-    - name: dockersocket
-      path: /var/run/docker.sock
-  settings:
-    push: true
-    repo: livingdocs/docs
-    username:
-      from_secret: DOCKER_USERNAME
-    password:
-      from_secret: DOCKER_PASSWORD
+  - name: build
+    image: livingdocs/docker-node:20.10
+    volumes:
+      - name: dockersocket
+        path: /var/run/docker.sock
+    settings:
+      push: true
+      repo: livingdocs/docs
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
 
-- name: release
-  image: livingdocs/semantic-release:v2.1.1
-  environment:
-    GH_TOKEN:
-      from_secret: GH_TOKEN
+  - name: release
+    image: livingdocs/semantic-release:v2.1.1
+    environment:
+      GH_TOKEN:
+        from_secret: GH_TOKEN
 
 volumes:
-- name: dockersocket
-  host:
-    path: /var/run/docker.sock
+  - name: dockersocket
+    host:
+      path: /var/run/docker.sock
 
 trigger:
   event: [push]
@@ -38,25 +38,25 @@ kind: pipeline
 name: tag
 
 steps:
-- name: tag
-  image: livingdocs/docker-node:20.10
-  environment:
-    DOCKER_USERNAME:
-      from_secret: DOCKER_USERNAME
-    DOCKER_PASSWORD:
-      from_secret: DOCKER_PASSWORD
-  commands:
-    - |
-      docker-login
-      SHA_TAG=livingdocs/docs:sha-$DRONE_COMMIT_SHA
-      RELEASE_TAG=livingdocs/docs:$DRONE_TAG
-      regctl image cp $SHA_TAG $RELEASE_TAG
+  - name: tag
+    image: livingdocs/docker-node:20.10
+    environment:
+      DOCKER_USERNAME:
+        from_secret: DOCKER_USERNAME
+      DOCKER_PASSWORD:
+        from_secret: DOCKER_PASSWORD
+    commands:
+      - |
+        docker-login
+        SHA_TAG=livingdocs/docs:sha-$DRONE_COMMIT_SHA
+        RELEASE_TAG=livingdocs/docs:$DRONE_TAG
+        regctl image cp $SHA_TAG $RELEASE_TAG
 
 trigger:
   event: [tag]
 
 ---
 kind: signature
-hmac: ea8d9ad2448f59d641542f6599671a2f65c5ddc2a06ac04e6626418798b1c8bb
+hmac: 0231cb8f4527ace551e9aba128384e49eb769c91c6521f6f4e3073b828398eec
 
 ...

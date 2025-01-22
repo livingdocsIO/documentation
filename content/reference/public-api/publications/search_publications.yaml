@@ -21,7 +21,7 @@ parameters:
   - name: ?search
     type: string
     required: false
-    notes: "Search term to perform a full-text search with. For exact word matches use \", e.g. 'search=\"Ukulele\"'"
+    notes: 'Search term to perform a full-text search with. For exact word matches use ", e.g. ''search="Ukulele"'''
   - name: ?contentTypes
     type: string
     required: false
@@ -44,7 +44,7 @@ parameters:
   - name: ?filters
     type: string
     required: false
-    notes: "A JSON string which follows the [search filters query DSL]({{< ref \"#search-filters\" >}})"
+    notes: 'A JSON string which follows the [search filters query DSL]({{< ref "#search-filters" >}})'
   - name: ?sort
     type: string
     required: false
@@ -58,11 +58,11 @@ parameters:
   - name: ?limit
     type: integer
     required: false
-    notes: "A limit for how much published documents to retrieve. Defaults to 10. Max. 100"
+    notes: 'A limit for how much published documents to retrieve. Defaults to 10. Max. 100'
   - name: ?offset
     type: integer
     required: false
-    notes: "An offset into the query. Useful when getting more than 100 results (pagination). Max. 10000"
+    notes: 'An offset into the query. Useful when getting more than 100 results (pagination). Max. 10000'
   - name: ?ignoreComponentConditions
     type: boolean
     required: false
@@ -84,217 +84,217 @@ parameters:
       Example: `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`
 
 responses:
-- code: "200"
-  endpoint: /api/v1/publications/search?search=Obama
-  body: |
-    [
-      {
-        "systemdata": {
-          "projectId": 1,
-          "channelId": 1,
-          "documentId": 1,
-          "contentType": "article",
-          "documentType": "article",
-          "design": {
-            "name": "timeline",
-            "version": "1.1.0"
-          }
-        },
-        "metadata": {
-          "title": "Obama re-elected",
-          "description": "some lead",
-          "dependencies": {},
-          "testDependency": "li-test-dependency.onUpdate is correct"
-        },
-        "content": [
-          {
-            "id": "doc-1b8i1ksh10",
-            "component": "head",
-            "identifier": "timeline.head",
-            "content": {
-              "title": "Obama re-elected",
-              "text": "some lead"
+  - code: '200'
+    endpoint: /api/v1/publications/search?search=Obama
+    body: |
+      [
+        {
+          "systemdata": {
+            "projectId": 1,
+            "channelId": 1,
+            "documentId": 1,
+            "contentType": "article",
+            "documentType": "article",
+            "design": {
+              "name": "timeline",
+              "version": "1.1.0"
             }
           },
-          {
-            "id": "doc-1b8i1ksh20",
-            "component": "normal",
-            "identifier": "timeline.normal",
-            "content": {
-              "caption": "my caption"
+          "metadata": {
+            "title": "Obama re-elected",
+            "description": "some lead",
+            "dependencies": {},
+            "testDependency": "li-test-dependency.onUpdate is correct"
+          },
+          "content": [
+            {
+              "id": "doc-1b8i1ksh10",
+              "component": "head",
+              "identifier": "timeline.head",
+              "content": {
+                "title": "Obama re-elected",
+                "text": "some lead"
+              }
             },
-            "styles": {
-              "position": "left"
-            }
-          },
-          {
-            "id": "doc-1b8i1ksh30",
-            "component": "p",
-            "identifier": "timeline.p",
-            "content": {
-              "text": "first paragraph"
-            }
-          },
-          {
-            "id": "doc-1b8i1me1d0",
-            "component": "p",
-            "identifier": "timeline.p",
-            "content": {
-              "text": "second paragraph"
-            }
-          }
-        ]
-      }
-    ]
-
-- code: "200"
-  endpoint: /api/v1/publications/search?categories=sport,fashion&languages=en
-  body: |
-    [
-      {
-        "systemdata": {
-          "projectId": 1,
-          "channelId": 1,
-          "documentId": 1,
-          "contentType": "article",
-          "documentType": "article",
-          "design": {
-            "name": "timeline",
-            "version": "1.1.0"
-          }
-        },
-        "metadata": {
-          "title": "Bayern to win Champions League",
-          "description": "some lead",
-          "category": {
-            "id": "sport"
-          },
-          "language": {
-            "locale": "en"
-          },
-          "dependencies": {},
-          "testDependency": "li-test-dependency.onUpdate is correct"
-        },
-        "content": [
-          {
-            "id": "doc-1b8i1ksh10",
-            "component": "head",
-            "identifier": "timeline.head",
-            "content": {
-              "title": "Bayern to win Champions League",
-              "text": "some lead"
-            }
-          },
-          {
-            "id": "doc-1b8i1ksh20",
-            "component": "normal",
-            "identifier": "timeline.normal",
-            "content": {
-              "caption": "my caption"
+            {
+              "id": "doc-1b8i1ksh20",
+              "component": "normal",
+              "identifier": "timeline.normal",
+              "content": {
+                "caption": "my caption"
+              },
+              "styles": {
+                "position": "left"
+              }
             },
-            "styles": {
-              "position": "left"
-            }
-          },
-          {
-            "id": "doc-1b8i1ksh30",
-            "component": "p",
-            "identifier": "timeline.p",
-            "content": {
-              "text": "first paragraph"
-            }
-          },
-          {
-            "id": "doc-1b8i1me1d0",
-            "component": "p",
-            "identifier": "timeline.p",
-            "content": {
-              "text": "second paragraph"
-            }
-          }
-        ]
-      }
-    ]
-
-- code: "200"
-  endpoint: /api/v1/publications/search?contentTypes=regular,gallery&limit=10&offset=10
-  body: |
-    [
-      {
-        "systemdata": {
-          "projectId": 1,
-          "channelId": 1,
-          "documentId": 1,
-          "contentType": "regular",
-          "documentType": "article",
-          "design": {
-            "name": "timeline",
-            "version": "1.1.0"
-          }
-        },
-        "metadata": {
-          "title": "Bayern to win Champions League",
-          "description": "some lead",
-          "category": {
-            "id": "sport"
-          },
-          "language": {
-            "locale": "en"
-          },
-          "dependencies": {},
-          "testDependency": "li-test-dependency.onUpdate is correct"
-        },
-        "content": [
-          {
-            "id": "doc-1b8i1ksh10",
-            "component": "head",
-            "identifier": "timeline.head",
-            "content": {
-              "title": "Bayern to win Champions League",
-              "text": "some lead"
-            }
-          },
-          {
-            "id": "doc-1b8i1ksh20",
-            "component": "normal",
-            "identifier": "timeline.normal",
-            "content": {
-              "caption": "my caption"
+            {
+              "id": "doc-1b8i1ksh30",
+              "component": "p",
+              "identifier": "timeline.p",
+              "content": {
+                "text": "first paragraph"
+              }
             },
-            "styles": {
-              "position": "left"
+            {
+              "id": "doc-1b8i1me1d0",
+              "component": "p",
+              "identifier": "timeline.p",
+              "content": {
+                "text": "second paragraph"
+              }
             }
-          },
-          {
-            "id": "doc-1b8i1ksh30",
-            "component": "p",
-            "identifier": "timeline.p",
-            "content": {
-              "text": "first paragraph"
-            }
-          },
-          {
-            "id": "doc-1b8i1me1d0",
-            "component": "p",
-            "identifier": "timeline.p",
-            "content": {
-              "text": "second paragraph"
-            }
-          }
-        ]
-      }
-    ]
+          ]
+        }
+      ]
 
-- code: "200"
-  endpoint: /api/v1/publications/search?contentTypes=article&limit=999&fields=id
-  body: |
-    [
-      {
-        "documentId": 1,
-        "projectId": 1
-      },
-      {
-        "documentId": 2,
-        "projectId": 1
-      }
-    ]
+  - code: '200'
+    endpoint: /api/v1/publications/search?categories=sport,fashion&languages=en
+    body: |
+      [
+        {
+          "systemdata": {
+            "projectId": 1,
+            "channelId": 1,
+            "documentId": 1,
+            "contentType": "article",
+            "documentType": "article",
+            "design": {
+              "name": "timeline",
+              "version": "1.1.0"
+            }
+          },
+          "metadata": {
+            "title": "Bayern to win Champions League",
+            "description": "some lead",
+            "category": {
+              "id": "sport"
+            },
+            "language": {
+              "locale": "en"
+            },
+            "dependencies": {},
+            "testDependency": "li-test-dependency.onUpdate is correct"
+          },
+          "content": [
+            {
+              "id": "doc-1b8i1ksh10",
+              "component": "head",
+              "identifier": "timeline.head",
+              "content": {
+                "title": "Bayern to win Champions League",
+                "text": "some lead"
+              }
+            },
+            {
+              "id": "doc-1b8i1ksh20",
+              "component": "normal",
+              "identifier": "timeline.normal",
+              "content": {
+                "caption": "my caption"
+              },
+              "styles": {
+                "position": "left"
+              }
+            },
+            {
+              "id": "doc-1b8i1ksh30",
+              "component": "p",
+              "identifier": "timeline.p",
+              "content": {
+                "text": "first paragraph"
+              }
+            },
+            {
+              "id": "doc-1b8i1me1d0",
+              "component": "p",
+              "identifier": "timeline.p",
+              "content": {
+                "text": "second paragraph"
+              }
+            }
+          ]
+        }
+      ]
+
+  - code: '200'
+    endpoint: /api/v1/publications/search?contentTypes=regular,gallery&limit=10&offset=10
+    body: |
+      [
+        {
+          "systemdata": {
+            "projectId": 1,
+            "channelId": 1,
+            "documentId": 1,
+            "contentType": "regular",
+            "documentType": "article",
+            "design": {
+              "name": "timeline",
+              "version": "1.1.0"
+            }
+          },
+          "metadata": {
+            "title": "Bayern to win Champions League",
+            "description": "some lead",
+            "category": {
+              "id": "sport"
+            },
+            "language": {
+              "locale": "en"
+            },
+            "dependencies": {},
+            "testDependency": "li-test-dependency.onUpdate is correct"
+          },
+          "content": [
+            {
+              "id": "doc-1b8i1ksh10",
+              "component": "head",
+              "identifier": "timeline.head",
+              "content": {
+                "title": "Bayern to win Champions League",
+                "text": "some lead"
+              }
+            },
+            {
+              "id": "doc-1b8i1ksh20",
+              "component": "normal",
+              "identifier": "timeline.normal",
+              "content": {
+                "caption": "my caption"
+              },
+              "styles": {
+                "position": "left"
+              }
+            },
+            {
+              "id": "doc-1b8i1ksh30",
+              "component": "p",
+              "identifier": "timeline.p",
+              "content": {
+                "text": "first paragraph"
+              }
+            },
+            {
+              "id": "doc-1b8i1me1d0",
+              "component": "p",
+              "identifier": "timeline.p",
+              "content": {
+                "text": "second paragraph"
+              }
+            }
+          ]
+        }
+      ]
+
+  - code: '200'
+    endpoint: /api/v1/publications/search?contentTypes=article&limit=999&fields=id
+    body: |
+      [
+        {
+          "documentId": 1,
+          "projectId": 1
+        },
+        {
+          "documentId": 2,
+          "projectId": 1
+        }
+      ]

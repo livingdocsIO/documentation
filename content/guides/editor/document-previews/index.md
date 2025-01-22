@@ -99,22 +99,25 @@ Within your iframe, add this script block:
     window.requestAnimationFrame(() => {
       // when the user scrolls within your iframe
       // send the scroll position to Livingdocs to store it for later
-      window.parent.postMessage({
-        action: 'saveScrollPosition',
-        position: {
-          top: document.querySelector('body').scrollTop
-        }
-      }, parentOrigin)
+      window.parent.postMessage(
+        {
+          action: 'saveScrollPosition',
+          position: {
+            top: document.querySelector('body').scrollTop
+          }
+        },
+        parentOrigin
+      )
     })
   })
 
-  window.addEventListener("message", (event) => {
+  window.addEventListener('message', (event) => {
     if (event.origin !== parentOrigin) return
     if (event.data?.action === 'setScrollPosition') {
       // event.data.position contains the data you sent with
       // the saveScrollPosition message
       document.querySelector('body').scrollTop = event.data.position.top
     }
-  });
+  })
 </script>
 ```

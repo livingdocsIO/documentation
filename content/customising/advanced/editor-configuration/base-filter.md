@@ -84,9 +84,7 @@ This are all available `queryTypes` which can be used to form a filter query.
 ### Example - Filter by metadata with key/value
 
 ```js
-baseFilters: [
-  {key: 'metadata.foo', term: 'bar'}
-]
+baseFilters: [{key: 'metadata.foo', term: 'bar'}]
 ```
 
 This would filter for only documents that have the value `bar` in the metadata field `foo`. You have to make sure that `foo` is an indexed metadata field.
@@ -94,9 +92,7 @@ This would filter for only documents that have the value `bar` in the metadata f
 ### Example - Filter by metadata with objects
 
 ```js
-defaultQueries: [
-  {key: 'metadata.author.reference.id', term: 42}
-]
+defaultQueries: [{key: 'metadata.author.reference.id', term: 42}]
 ```
 
 More complex metadata fields are indexed as an object (instead of key/value). In this case one can filter based on subproperties.
@@ -119,9 +115,7 @@ This example would filter documents that have the value `42` in the metadata fie
 ### Example - Filter by task
 
 ```js
-defaultQueries: [
-  { key: 'metadata.proofreading.state', term: 'requested' }
-]
+defaultQueries: [{key: 'metadata.proofreading.state', term: 'requested'}]
 ```
 
 This would filter for only documents that have had a successful proofreading. The core only exposes the `proofreading` task, but you can define your own custom tasks. The values are `todo`, `doing`, `done` for the 3 states that a task can have.
@@ -129,9 +123,7 @@ This would filter for only documents that have had a successful proofreading. Th
 ### Example - Filter by metadata with dataType keyword for mediaIndex
 
 ```js
-baseFilters: [
-  {key: 'metadata.transformed', term: true }
-]
+baseFilters: [{key: 'metadata.transformed', term: true}]
 ```
 
 This would filter for only transformed assets.
@@ -142,7 +134,7 @@ This would filter for only transformed assets.
 baseFilters: [
   {
     and: [
-      {key: 'statistics.componentCount.image', exists: false },
+      {key: 'statistics.componentCount.image', exists: false},
       {
         or: [
           {key: 'statistics.characterCount', range: {gte: 1000}},

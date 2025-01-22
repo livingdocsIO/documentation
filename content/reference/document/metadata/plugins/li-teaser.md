@@ -40,12 +40,14 @@ storageFormat: |
 ---
 
 ## About implementing page management
+
 This plugin offers a flexible and powerful page management approach, by covering many of the technical necessities out of the box, such as document preloading and deduplication.
-Since page management is a complex topic, we encourage you to get in touch with us, so we can figure out how your use case fits into frame and which migration paths exist.  
+Since page management is a complex topic, we encourage you to get in touch with us, so we can figure out how your use case fits into frame and which migration paths exist.
 
 ## Behavior
 
 ### Resolving and Preloading
+
 - Level 1 (Direct Reference): Always preloads the referenced document selected by the user. Only active when configured and user selected a document. When resolved through Composition API the publication is returned, when previewing in Editor the draft is returned.
 - Level 2 (Curated List): Loads the curated list document, extracting references as candidates for teaser document. Only active when configured and user selected a document. The list content acts as a managed set of documents. Both Composition API and Editor preview work on top of the published list and the referenced publications.
 - Level 3 (Algorithm): Performs a filtered search on the publication index, generating candidates based on configured filters and display filters. Always active when configured, also if no display filters were selected. Acts as fallback if Level 2 runs out of documents. Both Composition API and Editor preview load documents from publication index.
@@ -53,6 +55,7 @@ Since page management is a complex topic, we encourage you to get in touch with 
 When resolving all teasers on a page, li-teaser uses a deduplication process across Levels 2 and 3 to avoid repeated documents in multiple teasers. Documents selected via direct references (Level 1) are excluded from deduplication, as they are explicitly chosen by the user.
 
 ### Editor Interface
+
 In the Livingdocs editor:
 
 - Teasers with a direct reference can be re-positioned easily, transferring the document reference between teasers with a simple interface.
@@ -84,7 +87,7 @@ module.exports = function () {
         handle: 'teaser',
         type: 'li-teaser',
         config: {
-          // Optional, enables level 1 and defines what is selectable by users 
+          // Optional, enables level 1 and defines what is selectable by users
           directReference: {
             useDashboard: 'articlesSimple', // Optional, for selection dialog and for column config of selected document
             contentType: 'article', // Optional, shorthand base filter (string or array)
@@ -162,7 +165,7 @@ In addition to the regular [Search DSL]({{< ref "/customising/advanced/editor-co
 
 Two types of term variables are supported:
 
-- Metadata properties of the document in which the component is placed  
+- Metadata properties of the document in which the component is placed
 - The brand for which the document is requested (see [Conditional Components]({{< ref "/reference/project-config/content-types/#conditional-components" >}}))
 
 #### Metadata Properties
@@ -170,9 +173,7 @@ Two types of term variables are supported:
 Let's first look at term variables that reference metadata properties. For example, consider the following base filter:
 
 ```js
-baseFilters: [
-  {key: 'metadata.description', termVariable: 'metadata.title'}
-]
+baseFilters: [{key: 'metadata.description', termVariable: 'metadata.title'}]
 ```
 
 This base filter matches all documents that have the same metadata property `description` as the metadata property `title` of the document in which this component is placed. On request, `metadata.title` is replaced with the value set on the `title` metadata property of the document containing the component.
@@ -180,9 +181,7 @@ This base filter matches all documents that have the same metadata property `des
 Metadata properties from all metadata plugins are supported. Values are accessed using the same syntax as the indexing behavior of the underlying metadata plugin. For example, consider a metadata property `relatedArticles` of type `li-document-references`. To reference this property in a term variable, use `metadata.relatedArticles.references.id`, as shown below:
 
 ```js
-baseFilters: [
-  {key: 'documentId', termVariable: 'metadata.relatedArticles.references.id'}
-]
+baseFilters: [{key: 'documentId', termVariable: 'metadata.relatedArticles.references.id'}]
 ```
 
 This syntax corresponds to the indexing behavior of metadata plugin `li-document-references`, specifically its key. Importantly, metadata properties do not need to be indexed for this to work. Only the indexing behavior needs to be defined in the metadata plugin.
@@ -215,9 +214,7 @@ In addition to metadata properties, you can reference the [brand for which the d
 For example, if articles are categorized by a `brand` metadata property, you can filter them using the following base filter:
 
 ```js
-baseFilters: [
-  {key: 'metadata.brand', termVariable: 'componentConditions.brand'}
-]
+baseFilters: [{key: 'metadata.brand', termVariable: 'componentConditions.brand'}]
 ```
 
 If no brand is provided in a request, `componentConditions.brand` uses the [default brand]({{< ref "/reference/project-config/brands" >}}) as configured in the Project Config.

@@ -19,7 +19,7 @@ parameters:
   - name: version
     type: string
     required: false
-    notes: "current mediaLibraryEntry version. When set on update the version is checked."
+    notes: 'current mediaLibraryEntry version. When set on update the version is checked.'
   - name: patches
     type: array
     required: true
@@ -71,13 +71,13 @@ example_request: |
   }
 
 responses:
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/mediaLibrary/:id
     body: |
       {
         "status": 200
       }
-  - code: "400"
+  - code: '400'
     endpoint: /api/v1/mediaLibrary/:id
     body: |
       {
@@ -87,7 +87,7 @@ responses:
           "patches.0.operation": "No enum match for: \"notExistingOperation\""
         }
       }
-  - code: "404"
+  - code: '404'
     endpoint: /api/v1/mediaLibrary/:id
     body: |
       {
@@ -98,7 +98,7 @@ responses:
           "message": "MediaLibrary Entry does not exist (id: 'yLBGtTjWN4ba')"
         }
       }
-  - code: "409"
+  - code: '409'
     endpoint: /api/v1/mediaLibrary/:id
     body: |
       {

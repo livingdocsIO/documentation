@@ -1,1 +1,3 @@
-<a href='{{ if (.Get "ref") }}{{ ref . (.Get "ref") }}{{ else }}{{ .Get "href" }}{{ end }}'>{{ .Get "title" }}</a>{{- "" -}}
+<a href="{{ if (.Get "ref") }}{{ ref . (.Get "ref") }}{{ else }}{{ .Get "href" }}{{ end }}"
+  >{{ .Get "title" }}</a
+>{{- "" -}}

@@ -14,17 +14,17 @@ parameters:
   - name: ?name
     type: string
     required: false
-    notes: "Filters the result set and allows searching by list name"
+    notes: 'Filters the result set and allows searching by list name'
   - name: ?limit
     type: integer
     required: false
-    notes: "A limit for how much document lists to retrieve. Defaults to 10. Max. 100"
+    notes: 'A limit for how much document lists to retrieve. Defaults to 10. Max. 100'
   - name: ?offset
     type: integer
     required: false
-    notes: "An offset into the query. Useful when getting more than 100 results (pagination)"
+    notes: 'An offset into the query. Useful when getting more than 100 results (pagination)'
 responses:
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/document-lists
     body: |
       [

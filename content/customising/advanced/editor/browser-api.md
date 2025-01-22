@@ -17,7 +17,6 @@ const livingdoc = doc.editor.livingdoc
 const design = livingdoc.design
 ```
 
-
 ## Working with designs
 
 ```js

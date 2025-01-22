@@ -8,7 +8,6 @@ menus:
 
 A `Livingdoc` represents a Livingdocs document. It consists of a [componentTree]({{< ref "component-tree.md" >}}) and can have one or more views.
 
-
 ## Examples
 
 #### Create a new livingdoc
@@ -26,13 +25,12 @@ const livingdoc = doc.create({
 })
 ```
 
-
 #### Create views
 
 Simply render a livingdoc into your current page:
 
 ```js
-livingdoc.appendTo('.article-container', { interactive: false })
+livingdoc.appendTo('.article-container', {interactive: false})
 ```
 
 Create multiple views in iframes:
@@ -47,15 +45,19 @@ With the iframe technique you can isolate CSS or Javascript that is needed in yo
 ## Properties
 
 #### componentTree
+
 A [componentTree]({{< ref "component-tree.md" >}}) instance. Here you can manipulate your document.
 
 #### design
+
 The Design used in this `livingdoc`.
 
 #### views
+
 An array of all views associated with this `livingdoc`.
 
 #### interactiveView
+
 The interactiveView associated with this `livingdoc` if you created one.
 
 ## Methods
@@ -139,6 +141,7 @@ For reuse in the editor these modules are exposed on `doc`:
 `doc.JsLoader` and `doc.CssLoader`
 
 ### Example
+
 ```js
 const jsLoader = new doc.JsLoader({window: iframe.contentWindow})
 jsLoader.loadSingleUrl(url, callback)

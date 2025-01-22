@@ -46,42 +46,43 @@ app: {
   }
 }
 ```
+
 The example would result in a toolbar with a buttons for
 `bold`, `italic`, `double quotes`, `single quotes`, `link`,
 `superscript`, `subscript` and adding `specialChars`
-(The  apostrophe is currently only used for the pasting logic).
+(The apostrophe is currently only used for the pasting logic).
 
 The `locales` config is only active if you have translations enabled.
 With translations enabled when you create or open a document which has
 a language assigned the `quotes`, `singleQuotes` and `apostrophe` configs
 for the current language will be used if set (Note that the locale value in the documents metadata must match the propertyName in `locales` for this to work).
 
-
 **Behavior when pasting text:**
 If `quotes`, `singleQuotes` or `apostrophe` are configured then
 incorrect quotes and apostrophe will be replaced with the configured ones.
-
 
 ## Custom Elements
 
 The text formatting toolbar can also be extended with custom configured elements. The elements will be shown after the default elements. Add this configuration to the default configuration above.
 
 Example:
-```js
- customElements: [{
-      label: 'blue color',
-      handle: 'bluecolor',
-      // the tag which is set around the selection
-      tagName: 'span',
-      // if trim is set to true, whitespaces on the left and right of the selection are removed
-      trim: true,
-      // the icon which will be displayed. Only existing icons in the editor can be used.
-      icon: 'format-color-highlight',
-      // the attributes which are set on the tag
-      attributes: [{name: 'class', value: 'blue'}]
-    }]
-```
 
+```js
+customElements: [
+  {
+    label: 'blue color',
+    handle: 'bluecolor',
+    // the tag which is set around the selection
+    tagName: 'span',
+    // if trim is set to true, whitespaces on the left and right of the selection are removed
+    trim: true,
+    // the icon which will be displayed. Only existing icons in the editor can be used.
+    icon: 'format-color-highlight',
+    // the attributes which are set on the tag
+    attributes: [{name: 'class', value: 'blue'}]
+  }
+]
+```
 
 #### Special Characters
 
@@ -173,13 +174,13 @@ app: {
 
 A common use case for this is when you want to insert some CSS classes around your formatted text, as in the example above. You are not restricted to the `class` attribute however but can configure any HTML attribute you like.
 
-
 #### Paste Formatting Options
 
 You can configure how pasted text content is filtered.
 
 Here you see the default configuration. Any property you define
 in `pastedHtmlRules` will be merged into the default configuration.
+
 ```js
 app: {
   editable: {
@@ -239,10 +240,10 @@ app: {
 }
 ```
 
-
 ## Text Editing Behavior
 
 Newlines with Shift+Enter. Default: true
+
 ```js
 app: {
   editable: {
@@ -254,6 +255,7 @@ app: {
 Allows the users to make a newline in a paragraph by pressing Shift+Enter. This will result in a `<br>` tag an might not always be wanted thus the ability to turn this off.
 
 Events on Mouse selection. Default: false
+
 ```js
 app: {
   editable: {
@@ -269,6 +271,7 @@ By default the editable selection event is only fired once the user releases the
 Livingdocs allows you to use the default browser spellcheck, a custom spellcheck server or no spellchecking at all. The browser spellcheck is the default browser behaviour and will differ between Chrome, Firefox etc. The custom spellcheck requires a spellcheck service that analyzes the text and returns a list of words that have been spelled wrong. Thus the custom spellchecker is completely customizable.
 
 Spellchecking turned off:
+
 ```js
 app: {
   editable: {
@@ -282,6 +285,7 @@ spellcheck: {
 ```
 
 Default browser spellchecking:
+
 ```js
 app: {
   editable: {
@@ -294,6 +298,7 @@ spellcheck: {
 ```
 
 Custom spellchecker (examples are NZZs vademecum or Duden):
+
 ```js
 app: {
   editable: {
@@ -313,18 +318,21 @@ the configured endpoint with a `text` parameter containing text from
 individual paragraphs.
 
 Example request:
+
 ```http
 GET http://your-spellcheck-server.com/spellcheck/check?text=foobar
 ```
 
 Spellcheck response with no corrections:
+
 ```json
-{"status":true}
+{"status": true}
 ```
 
 Spellcheck response with corrections:
+
 ```json
-{"status":false, "bad":[{"word":"falsch","pos":0}]}
+{"status": false, "bad": [{"word": "falsch", "pos": 0}]}
 ```
 
 **Underline technique**
@@ -339,7 +347,7 @@ If both the Livingdocs spellcheck component and the surrounded text component (e
 The following graphic shows which combinations are valid:
 
 | Spellcheck      | Other Component         |
-|-----------------|-------------------------|
+| --------------- | ----------------------- |
 | border          | text-decoration         |
 | text-decoration | border                  |
 | none            | text-decoration, border |
@@ -361,7 +369,6 @@ spellcheck: {
 Please migrate to `projectConfig.editorSettings.textCount` (see [here]({{< ref "reference/project-config/editor-settings#text-count" >}})).
 {{< /info >}}
 
-
 A character counter can be configured. The counter can be limited to only
 count text within certain components.
 
@@ -379,6 +386,7 @@ It is also possible to only count the text of selected components or directives.
 is configured in the component library of a Livingdocs design.
 
 Exclude whole components from the text counter (example component config):
+
 ```js
 {
   "name": "aside",
@@ -388,6 +396,7 @@ Exclude whole components from the text counter (example component config):
 ```
 
 Exclude individual directives from the text counter (example component config):
+
 ```js
 {
   "name": "quote",
@@ -399,18 +408,18 @@ Exclude individual directives from the text counter (example component config):
 }
 ```
 
-
 ## Links
 
 {{< img src="images/inline_links.png" alt="Links" >}}
 
-
 #### Options
+
 To enable links that are relative paths (e.g. "/departments/technology") or anchor hashes (e.g. #more-on-this), turn on editor environment config `links.allowRelativeUrls` or `links.allowAnchorLinks`.
 
 If you set the internal hosts as regex, you can define default behavior for internal and external links.
 
 If you configure `deliveries` in your [Project Config]({{< ref "/reference/project-config/deliveries.md" >}}) links to these deliveries will be treated as internal links as well and you don't need to define the `internalHostsRegex`.
+
 ```js
 // in editor environment config
 {
@@ -434,5 +443,3 @@ If you configure `deliveries` in your [Project Config]({{< ref "/reference/proje
 ### Link Search settings
 
 You can customise the behaviour of the link search, in the [editor settings]({{< ref "/reference/project-config/editor-settings#inline-links" >}}) (in the server), by defining filters or by using a custom dashboard.
-
-

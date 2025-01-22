@@ -1,5 +1,9 @@
 <div class="warning">
   {{ $warn := resources.Get "svg/warning.svg" | fingerprint }}
-  <img src="{{ $warn.RelPermalink }}" alt="" class="warning__icon">
+  <img
+    src="{{ $warn.RelPermalink }}"
+    alt=""
+    class="warning__icon"
+  />
   {{ .Inner | markdownify }}
 </div>

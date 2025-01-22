@@ -10,17 +10,17 @@ parameters:
   - name: ids
     type: string
     required: false
-    notes: "Comma separated list of media library entry ids"
+    notes: 'Comma separated list of media library entry ids'
   - name: externalId
     type: string
     required: false
-    notes: "External id of the media library entry"
+    notes: 'External id of the media library entry'
   - name: systemName
     type: string
     required: false
-    notes: "System name of the media library entry"
+    notes: 'System name of the media library entry'
 responses:
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/mediaLibrary?ids=asze63i9,2er11b3i
     body: |
       {
@@ -61,7 +61,7 @@ responses:
           }
         ]
       }
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/mediaLibrary?externalId=ex-1&systemName=externalSystem
     body: |
       {

@@ -13,6 +13,7 @@ If you have integrated a Media Source properly, the Livingdocs editor also shows
 ## Example
 
 To integrate a Media Source into Livingdocs you have to do 3 things:
+
 - write a media source plugin (search/import function)
 - register the plugin
 - configure the Media Source on a [Media Type]({{< ref "/reference/project-config/media-types.md" >}}) in the project config.
@@ -20,20 +21,19 @@ To integrate a Media Source into Livingdocs you have to do 3 things:
 ### Step 1 - Write a Media Source Plugin
 
 First you have to implement a Media Source plugin which has 3 properties:
+
 - `handle` - unique identifier which will be referenced later in the config
 - `searchMediaImage` - middleware to request the asset provider and transform the resultset into a Livingdocs format
 - `fetchMediaImage` - middleware to fetch the asset
 
-
 ```js
 // plugins/media-sources/example_plugin
 module.exports = {
-
   handle: 'examplePlugin',
 
   // Implement a search result for the Livingdocs Editor from an asset provider
   // based on a search query
-  async searchMediaImage ({projectId, query, offset, limit, config, log}) {
+  async searchMediaImage({projectId, query, offset, limit, config, log}) {
     const res = await axios.get(myImageServiceUrl)
 
     // {
@@ -46,7 +46,7 @@ module.exports = {
     // }
     const data = res.data
 
-    const results = data.entries.map(result => {
+    const results = data.entries.map((result) => {
       return {
         metadata: {
           title: result.title
@@ -70,7 +70,7 @@ module.exports = {
 
   // When you want to drag+drop an asset from a MediaSource search result into a document
   // you must also define a fetch function to import the asset into the Media Library
-  async fetchMediaImage ({projectId, key, config, log}) {
+  async fetchMediaImage({projectId, key, config, log}) {
     // fetch image from remote service
     const fetchUrl = `https://your-source.com/${key}`
     const res = await axios.get(fetchUrl, {
@@ -87,15 +87,12 @@ module.exports = {
 }
 ```
 
-
 ### Step 2 - Register the Media Source Plugin
 
 ```js
 // app/server.js
 liServer.registerInitializedHook(() => {
-  liServer.registerMediaSources([
-    require('./plugins/media-sources/example_plugin')
-  ])
+  liServer.registerMediaSources([require('./plugins/media-sources/example_plugin')])
 })
 ```
 

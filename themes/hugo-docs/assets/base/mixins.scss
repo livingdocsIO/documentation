@@ -1,31 +1,47 @@
 // mobile first
 @mixin media-query($size) {
   @if $size == ultrawide {
-    @media (min-width: $breakpoint-ultrawide) { @content; }
+    @media (min-width: $breakpoint-ultrawide) {
+      @content;
+    }
   }
   @if $size == widescreen {
-    @media (min-width: $breakpoint-widescreen) { @content; }
+    @media (min-width: $breakpoint-widescreen) {
+      @content;
+    }
   }
   @if $size == desktop {
-    @media (min-width: $breakpoint-desktop) { @content; }
+    @media (min-width: $breakpoint-desktop) {
+      @content;
+    }
   }
   @if $size == tablet {
-    @media (min-width: $breakpoint-tablet) { @content; }
+    @media (min-width: $breakpoint-tablet) {
+      @content;
+    }
   }
 }
 
 @mixin media-query-down($size) {
   @if $size == widescreen {
-    @media (max-width: $breakpoint-widescreen - 1px) { @content; }
+    @media (max-width: $breakpoint-widescreen - 1px) {
+      @content;
+    }
   }
   @if $size == desktop {
-    @media (max-width: $breakpoint-desktop - 1px) { @content; }
+    @media (max-width: $breakpoint-desktop - 1px) {
+      @content;
+    }
   }
   @if $size == tablet {
-    @media (max-width: $breakpoint-tablet - 1px) { @content; }
+    @media (max-width: $breakpoint-tablet - 1px) {
+      @content;
+    }
   }
   @if $size == mobile {
-    @media (max-width: $breakpoint-mobile - 1px) { @content; }
+    @media (max-width: $breakpoint-mobile - 1px) {
+      @content;
+    }
   }
 }
 

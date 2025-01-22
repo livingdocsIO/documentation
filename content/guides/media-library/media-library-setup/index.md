@@ -22,12 +22,15 @@ The [Main Navigation]({{< ref "/reference/project-config/editor-settings#main-na
 ## Images
 
 ### Server Config
+
 First, you need to make sure your Media Library can [store images]({{< ref "/customising/server-configuration#media-library-dam" >}}).
 
 ### Image Services
+
 To render images in documents, Livingdocs uses so called [Image Services]({{< ref "/guides/media-library/image-services.md" >}}). You need to [configure one in your project]({{< ref "/guides/media-library/image-services.md#configuring-an-image-service" >}}) to make use of images in documents.
 
 ### Basic Media Type
+
 Let's setup a `mediaType` for the images first. You add it to your [project config]({{< ref "/reference/project-config" >}}) in an array at the top-level property `mediaTypes`.
 
 ```js
@@ -39,7 +42,8 @@ module.exports = {
     label: 'Images', // used in dashboards generated for this mediaType
     description: ''
   },
-  metadata: [ // any metadata configuration as you know it from contentTypes already
+  metadata: [
+    // any metadata configuration as you know it from contentTypes already
     {
       handle: 'title',
       type: 'li-text',
@@ -108,6 +112,7 @@ module.exports = {
 ```
 
 ### IPTC extraction
+
 Since many image files (especially those you get from image agencies) hold metadata defined by the IPTC standard, you want to configure extraction for certain metadata fields, so your users don't have to manually type them.
 You do this by adding the `exifExtraction` property to the `mediaType`. See [the list of all IPTC fields]({{< ref "/reference/project-config/media-types.md#exif-extraction" >}}) and how to configure them.
 
@@ -127,11 +132,12 @@ module.exports = {
       {metadataPropertyName: 'description', field: 'Description'},
       {metadataPropertyName: 'credit', field: 'Credit Line'}
     ]
-  },
+  }
 }
 ```
 
 ### Named Crops
+
 With Livingocs, you can manage multiple crops per image by using Named Crops. This works as follows:
 
 - You can define the crops associated with an image in the Media Library.
@@ -187,6 +193,7 @@ Subsequently, you can reference and enable them on image directives and image me
 Each of these use cases will be covered in the remainder of this section.
 
 #### Media Types
+
 In order to define default crops for images in the Media Library, you must configure a metadata property of type `li-named-crops`. This plugin enables users to set crops during image upload and subsequently within the Media Library.
 
 The default crops are automatically copied into documents when an image is inserted (technically copied to a `doc-image` directive). This allows users to modify the crops for the specific usage of the image within the document. It's important to note that changes to the crops in the Media Library won't affect the usages in `doc-image` once the crops have been copied.
@@ -232,7 +239,7 @@ module.exports = {
         label: 'Named Crops'
       }
     }
-  ],
+  ]
   // ...
 }
 ```
@@ -282,6 +289,7 @@ module.exports = {
 ```
 
 #### Metadata Properties
+
 Lastly, Named Crops can also be configured on metadata properties of type `li-image`. These properties also inherit previously defined crops from Media Types. A potential use case for such metadata images could be defining teaser images or social media share images.
 
 The configuration is found in the metadata configuration of a [contentType]({{< ref "/reference/project-config/content-types.md" >}}). The crops support the following configuration properties:
@@ -300,23 +308,18 @@ module.exports = {
       handle: 'teaserImage',
       type: 'li-image',
       config: {
-        namedCrops: [
-          {name: 'desktop'},
-          {name: 'mobile', isOptional: true}
-        ]
+        namedCrops: [{name: 'desktop'}, {name: 'mobile', isOptional: true}]
       }
     },
     {
       handle: 'socialMediaTeaserImage',
       type: 'li-image',
       config: {
-        namedCrops: [
-          {name: 'socialMediaTeaser'}
-        ]
+        namedCrops: [{name: 'socialMediaTeaser'}]
       }
     }
     // ...
-  ],
+  ]
   // ...
 }
 ```
@@ -325,8 +328,8 @@ module.exports = {
 
 Focal point selection is supported on [`li-named-crops`](https://docs.livingdocs.io/reference/document/metadata/plugins/li-named-crops) and [`li-image`](https://docs.livingdocs.io/reference/document/metadata/plugins/li-image) whenever multiple crops are present.
 
-
 #### Where automatic cropping struggles
+
 Each crop starts with an automatic crop, choosing the default aspect ratio. This does not always lead to ideal results.
 
 This image of a chapel in front of the famous Matterhorn in the swiss alps is a good example where automatic crops would normally struggle.
@@ -389,6 +392,7 @@ Nevertheless if you find solutions to these problems outside of Livingdocs, you 
 You need to make sure your Media Library can [store videos]({{< ref "/customising/server-configuration#media-library-dam" >}}).
 
 ### Basic Media Type
+
 Let's setup a `mediaType` for the videos. You add it to your [project config]({{< ref "/reference/project-config" >}}) in an array at the top-level property `mediaTypes`.
 
 ```js
@@ -400,7 +404,8 @@ module.exports = {
     label: 'Videos', // used in dashboards generated for this mediaType
     description: ''
   },
-  metadata: [ // any metadata configuration as you know it from contentTypes already
+  metadata: [
+    // any metadata configuration as you know it from contentTypes already
     {
       handle: 'title',
       type: 'li-text',
@@ -431,21 +436,18 @@ module.exports = {
   editor: {
     // the dashboard seen by users when opening Images/Videos from the document editor
     dashboard: {
-      displayFilters: [
-        {filterName: 'liDateTimeRange'}
-      ]
+      displayFilters: [{filterName: 'liDateTimeRange'}]
     },
     // the dashboard opened through the main navigation
     managementDashboard: {
-      displayFilters: [
-        {filterName: 'liDateTimeRange'}
-      ]
+      displayFilters: [{filterName: 'liDateTimeRange'}]
     }
   }
 }
 ```
 
 ### Poster Image
+
 For Videos, you want to have a poster image displayed in your Video Player before the Video starts playing. Livingdocs provides a metadata plugin to manage this image.
 
 When configured, a UI to manage the image is provided.
@@ -459,6 +461,7 @@ Images stored with this metadata plugin will contain one crop in the aspect rati
 Poster Images are stored withing the Media Library as images when uploaded through the poster image metadata plugin or a frame of the video is selected. You probably want to configure a separate `mediaType` for these, since there are different requirements to the metadata.
 
 #### mediaType for the images
+
 Don't forget to add this the the `mediaTypes` in your [project config]({{< ref "/reference/project-config" >}}).
 
 ```js
@@ -480,6 +483,7 @@ module.exports = {
 ```
 
 #### li-poster-image metadata plugin
+
 Now you can add the `li-poster-image` metadata plugin to your video `mediaType`:
 
 ```js
@@ -499,11 +503,10 @@ module.exports = {
         }
       }
     }
-  ],
+  ]
   // ...
 }
 ```
-
 
 ### External Transcoding Service
 
@@ -520,6 +523,7 @@ After transcoding:
 ![Final transcoding state](transcoding-state-done.png)
 
 #### li-transcoding-state metadata plugin
+
 Add the `li-transcoding-state` metadata plugin to your video `mediaType`:
 
 ```js
@@ -534,18 +538,21 @@ module.exports = {
       handle: 'transcoding',
       type: 'li-transcoding-state'
     }
-  ],
+  ]
   // ...
 }
 ```
 
 #### Transcoding Service implementation
+
 An external transcoding service can be connected to Livingdocs as follows:
+
 - Use [webhooks]({{< ref "/reference/webhooks" >}}) to get notified about transcoding requests.
 - Use the public API (mediaLibrary GET) to fetch information about a transcoding request.
 - Use the public API (mediaLibrary PATCH) to update the transcoding state.
 
 This data structure is used to track transcoding state:
+
 ```js
 {
   "metadata": {
@@ -586,10 +593,10 @@ This data structure is used to track transcoding state:
 ```
 
 Transcoding happens in the following sequence:
+
 - When a user clicks "Start processing", a new `command` with `state: "requested"` is created.
 - The transcoding service gets notified via webhook and can report transcoding progress by setting `state` and `progress` / `errorMessage`.
 - When transcoding is done, the transcoding service is expected to set `state` to `done` and add an entry to the `transcodings` array.
-
 
 ## Files
 
@@ -600,6 +607,7 @@ You can also manage other files than videos and images with the Livingdocs Media
 You need to make sure your Media Library can [store files]({{< ref "/customising/server-configuration#media-library-dam" >}}).
 
 ### Basic Media Type
+
 Let's setup a `mediaType` for the files. You add it to your [project config]({{< ref "/reference/project-config" >}}) in an array at the top-level property `mediaTypes`.
 
 ```js
@@ -643,15 +651,11 @@ module.exports = {
   editor: {
     // the dashboard seen by users when opening from the document editor
     dashboard: {
-      displayFilters: [
-        {filterName: 'liDateTimeRange'}
-      ]
+      displayFilters: [{filterName: 'liDateTimeRange'}]
     },
     // the dashboard opened through the main navigation
     managementDashboard: {
-      displayFilters: [
-        {filterName: 'liDateTimeRange'}
-      ]
+      displayFilters: [{filterName: 'liDateTimeRange'}]
     }
   }
 }
@@ -678,6 +682,7 @@ module.exports = {
 ```
 
 ### Translatable metadata properties
+
 Now you can configure any metadata property in a `mediaType` to be translatable by the user like this:
 
 ```js
@@ -688,13 +693,15 @@ module.exports = {
       config: {
         translatable: true
       }
-    },
+    }
   ]
 }
 ```
 
 ### Translatable assets (image/video/file)
+
 If you want to allow users to define different assets per language on a Media Library entry, you have to specifically allow this per `mediaType` like this:
+
 ```js
 //media-types/image.js
 module.exports = {
@@ -712,5 +719,6 @@ module.exports = {
 ```
 
 #### Caveats
+
 - With {{< release "release-2021-06" >}}, using `li-named-crops` metadata plugin on `mediaImage` types in combination with asset translation has some suboptimal behaviors. This will be improved in a future release.
 - Both `translatable` and `replaceable` might need handling in your delivery regarding caching, fallback resolution when rendering different languages etc. You need to be aware of this and find solutions. Setting these assets triggers a `mediaLibraryEntry.update` event on the Events API and the webhooks in the same way as updating the metadata does.

@@ -20,7 +20,7 @@ support:
 description: |
   A simple Boolean value store, almost identical to `li-boolean`, but as system metadata (does not indicate a draft content change).
   {{< added-in "release-2025-01" >}}.
- 
+
   Represented in the UI with a checkbox which you can toggle on/off.
 
   If you want to have the value set to `true` during document creation, you can do that via [defaultMetadata]({{< ref "/reference/project-config/content-types#default-metadata" >}}) in your project config.

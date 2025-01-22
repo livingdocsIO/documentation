@@ -12,4 +12,3 @@ menus:
 {{< api-example-resource file="auth_errors.yaml" >}}
 
 {{< api-example-resource file="first_response.yaml" >}}
-

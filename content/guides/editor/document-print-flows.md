@@ -22,9 +22,9 @@ The function can return the following values: `contentType`, `title`, `content`,
 liServer.registerPrintFunctions([
   {
     handle: 'myPrintCopyFunction',
-    copy ({projectConfig, document, userId, context}) {
+    copy({projectConfig, document, userId, context}) {
       if (context.createPrintArticle) {
-        return  {
+        return {
           title: `Print version of: ${document.title}`,
           contentType: 'print',
           content: filterComponents(document.content, allowedComponents),
@@ -56,7 +56,7 @@ Registering a print flow for a project can be very simple. A unique `handle` pro
       {
         handle: 'printToRegular',
         printFunction: 'myPrintCopyFunction',
-        direction: 'print-to-web', // or 'web-to-print'
+        direction: 'print-to-web' // or 'web-to-print'
         // printButtonLabel will be generated using handle: "Print To Regular"
         // printIcon will default to 'book-open-variant-outline'
       }
@@ -79,8 +79,12 @@ In order to customise the print flow further you can set the label, description 
         handle: 'regularToPrint',
         printFunction: 'myPrintCopyFunction',
         direction: 'web-to-print',
-        printButtonLabel: {en: 'Make Short Format Print Version', de: 'Kurzformatigen Druckartikel Erstellen'},
-        printDescription: 'Only text will be copied, and only some contextual metadata will be cleared',
+        printButtonLabel: {
+          en: 'Make Short Format Print Version',
+          de: 'Kurzformatigen Druckartikel Erstellen'
+        },
+        printDescription:
+          'Only text will be copied, and only some contextual metadata will be cleared',
         printIcon: 'format-align-justify',
         context: {createPrintArticle: true}
       }

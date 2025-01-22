@@ -16,7 +16,6 @@ With a Document Creation Flow you can configure how a document gets created:
 
 With this walkthrough we show you how to define a Document Creation Flow.
 
-
 ## Guide
 
 ### Add a Document Creation Flow to the ProjectConfig
@@ -92,6 +91,7 @@ When you go to the dashboard in the editor, you will see a "Create Breaking News
 The first step defined a creation flow with flexible data (`paramsSchema`, `context`). Now you need to register a `createFunction` to define how your data gets parsed and how the document will be created.
 
 Let's register the createFunction: `breakingNews`, the one you defined in the dashboard config before. We have a few goals with our function:
+
 - apply Project Config defaultMetadata to metadata
 - apply the custom fields from the editor create modal to the metadata (title + urgency)
 - apply context data to metadata (projectType)
@@ -103,13 +103,10 @@ liServer.registerInitializedHook(async () => {
 
     // params and context are coming from Document Creation Flow
     // and can differ from flow to flow
-    async create ({projectConfig, userId, params = {}, context = {}}) {
-
+    async create({projectConfig, userId, params = {}, context = {}}) {
       // you should validate params/context and you can throw an error
       if (!context.projectType) throw new Error("context 'projectType' is required")
-      const contentType = context.projectType === 'flex'
-        ? 'flex'
-        : 'regular'
+      const contentType = context.projectType === 'flex' ? 'flex' : 'regular'
 
       const title = params.title || `Untitled`
 

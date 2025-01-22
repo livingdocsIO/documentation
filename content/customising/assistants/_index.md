@@ -1,6 +1,6 @@
 ---
 title: Assistants
-description: API and configuration options for Livingdocs Assistants 
+description: API and configuration options for Livingdocs Assistants
 icon: robot-happy
 weight: 1
 menus:
@@ -21,6 +21,7 @@ initiated from the editor UI using the `Cmd+K` (macOS) or `Ctrl+K` (Windows/Linu
 where users can find and execute available assistants.
 
 With `release-2024-07` further improvements have been made:
+
 - Propose multiple options for users to choose from before executing commands
 - Live-filtering of assistants based on context conditions
 - Assistant Buttons next to Metadata Form Fields
@@ -29,6 +30,7 @@ With `release-2024-07` further improvements have been made:
 {{< img src="./assistant-metadata-button.png" alt="Assistant Buttons next to Metadata Form Fields" >}}
 
 With `release-2024-11` we added the following improvements:
+
 - Showing custom error messages
 - Assistant Buttons next to a focused component
 
@@ -38,8 +40,8 @@ With `release-2024-11` we added the following improvements:
 ### Document Command API
 
 The commands returned by assistants are handled by our [Document Command API]({{< ref "/reference/public-api/document-command-api" >}}),
-which supports a variety of operations for manipulating documents. In the context of assistants, all commands are available except the 
-`publish` and `unpublish` commands. 
+which supports a variety of operations for manipulating documents. In the context of assistants, all commands are available except the
+`publish` and `unpublish` commands.
 
 ### Assistant Actors
 
@@ -58,7 +60,7 @@ liServer.registerInitializedHook(async () => {
   liServer.registerAssistant({
     handle: 'exampleAssistant',
     label: {
-      en:  'Example Assistant'
+      en: 'Example Assistant'
     },
     description: {
       en: 'Just an example.'
@@ -101,30 +103,38 @@ liServer.registerInitializedHook(async () => {
 ## Configuration Properties
 
 ### handle
+
 Unique identifier for the assistant. Together with a project id, it forms the identity of an assistant actor.
 
 ### label
+
 Label to be shown in the User Interface. Can be a string or an object with language keys for translations.
 
 ### description
+
 Short description shown in the User Interface to communicate the assistant's intention. Can be a string or an object with language keys for translations.
 
 ### icon (optional)
+
 Icon to be shown in the User Interface. Needs to be the name of a [material design icon]({{< ref "/guides/editor/icons#register-a-material-design-icon" >}}) name.
 
 ### contextConditions.documentRequired (optional)
+
 When set to `true`, the assistant is only shown in the User Interface if a document is in the current context. The `assist` function no longer needs to check if `context.document` exists.
 
 ### contextConditions.contentTypes (optional)
+
 When provided with an array of Content Type handles, the assistant is only shown in the User Interface if a document with such a Content Type is in the current context. The `assist` function no longer needs to check for the correct Content Type.
 
 ### showAssistantTriggerButton.metadataPropertyName (optional)
+
 When provided with a metadata property name and all context conditions are fulfilled, an Assistant Button is shown next to the metadata field in the document's metadata form.
-Notice that the metadata property has no other relation to the assistant other than being a User Interface element that allows to trigger it. The assistant is still shown in the K-Menu. 
+Notice that the metadata property has no other relation to the assistant other than being a User Interface element that allows to trigger it. The assistant is still shown in the K-Menu.
 
 ## Assist function parameters
 
 Possible properties on `context`:
+
 - `projectConfig`
 - `documentId` (optional)
 - `document` (optional)
@@ -139,9 +149,9 @@ See example assistant above for type details.
 
 ## Trigger Buttons
 
-Trigger buttons have been added to metadata form fields as well as components. These enable users to trigger an assistant directly on that component / metadata field. To configure them the `showAssistantTriggerButton` config has to be set: 
+Trigger buttons have been added to metadata form fields as well as components. These enable users to trigger an assistant directly on that component / metadata field. To configure them the `showAssistantTriggerButton` config has to be set:
 
-- `metadataPropertyName` 
+- `metadataPropertyName`
 - `focusedComponentName`
 
 If two or more assistants are registered a k-menu will be opened only with the available assistants on this focused component / metadata field. Assistants which are registered on a focused component are not shown in the normal k-menu.
@@ -154,6 +164,7 @@ A default error response is shown in cases when an assistant fails. With `releas
 error message.
 
 In the `assist` function either an `error` object can be returned in the response:
+
 ```js
 {
   error: {
@@ -165,12 +176,15 @@ In the `assist` function either an `error` object can be returned in the respons
 }
 ```
 
-Or a `validationError` can be thrown: 
+Or a `validationError` can be thrown:
+
 ```js
-throw validationError({translatedMessage: {
-  en: 'Something went wrong',
-  de: 'Etwas ist schief gelaufen'
-}})
+throw validationError({
+  translatedMessage: {
+    en: 'Something went wrong',
+    de: 'Etwas ist schief gelaufen'
+  }
+})
 ```
 
 ## Benefits and Use Cases

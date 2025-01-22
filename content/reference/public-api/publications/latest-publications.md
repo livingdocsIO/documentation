@@ -1,5 +1,5 @@
 ---
-title: Latest Publications 
+title: Latest Publications
 weight: 3
 renderTOC: false
 menus:

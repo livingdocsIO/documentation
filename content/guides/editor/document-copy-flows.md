@@ -7,7 +7,7 @@ weight: 1
 {{< added-in "release-2024-09" block >}}
 
 {{< info >}}
-  See the [Declarative Document Copy (Legacy)]({{< ref "/guides/editor/declarative-document-copy" >}}) guide for details about the legacy feature used prior to {{< release "release-2024-09" >}}.
+See the [Declarative Document Copy (Legacy)]({{< ref "/guides/editor/declarative-document-copy" >}}) guide for details about the legacy feature used prior to {{< release "release-2024-09" >}}.
 {{< /info >}}
 
 ## Introduction
@@ -26,7 +26,7 @@ The function can return the following values: `contentType`, `title`, `content`,
 liServer.registerCopyFunctions([
   {
     handle: 'simpleCopy',
-    copy ({document, projectConfig, userId, params, context}) {
+    copy({document, projectConfig, userId, params, context}) {
       if (!context?.targetContentType) {
         throw new Error(`A 'targetContentType' was not provided`)
       }
@@ -75,7 +75,7 @@ The `sourceLabel` and `targetLabel` allow you to specify the origin and destinat
         handle: 'articleToArticle',
         copyFunction: 'simpleCopy',
         sourceLabel: 'original',
-        targetLabel: 'copy',
+        targetLabel: 'copy'
         // copyButtonLabel will be generated using handle: "Simple Copy"
         // copyIcon will default to 'content-duplicate'
       }
@@ -100,7 +100,8 @@ In order to customise the copy function further you can also customise the label
         sourceLabel: {en: 'original article', de: 'Originalartikel'},
         targetLabel: {en: 'article copy', de: 'Artikelkopie'},
         copyButtonLabel: 'Duplicate Article',
-        copyDescription: 'All content will be copied, and only some contextual metadata will be cleared',
+        copyDescription:
+          'All content will be copied, and only some contextual metadata will be cleared',
         copyIcon: 'file-document',
         paramsSchema: [
           {
@@ -154,5 +155,5 @@ Finally, you need to enable the copy flow for each content type that should be a
 ```
 
 {{< info >}}
-  Once a document copy flow is defined for a content type then the legacy declarative document copy and transform options will no longer be available.
+Once a document copy flow is defined for a content type then the legacy declarative document copy and transform options will no longer be available.
 {{< /info >}}

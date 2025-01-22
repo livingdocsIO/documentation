@@ -39,6 +39,7 @@ First, you will need to create a new project in your Livingdocs account. Over th
 After you have created your new project, you will first of all need to create a new API tokens as those are per project. On the main menu, navigate to "Project Access" -> "API Tokens" and choose "Add API Token". Give it read and write rights and any name.
 
 Now, it's time for a sanity check. Go back to the CLI where you were running the DPA Example before. Set the new API Token with:
+
 ```bash
 export LI_TOKEN='<your-new-token>'
 ```

@@ -50,7 +50,6 @@ module.exports = {
   editor: {
     public_host: 'http://localhost:9002'
   }
-
 }
 ```
 

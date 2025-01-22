@@ -22,19 +22,19 @@ parameters:
   - name: ?fields
     type: string
     required: false
-    notes: "Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content` (no renditions)"
+    notes: 'Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content` (no renditions)'
   - name: ?reverse
     type: boolean
     required: false
-    notes: "Order publications in ascending order instead of the default descending order (the property used for sorting is `lastPublicationDate`). This is useful if you want to paginate using a time based filter"
+    notes: 'Order publications in ascending order instead of the default descending order (the property used for sorting is `lastPublicationDate`). This is useful if you want to paginate using a time based filter'
   - name: ?homepage
     type: boolean
     required: false
-    notes: "Return only the document labeled as homepage in the current project"
+    notes: 'Return only the document labeled as homepage in the current project'
   - name: ?contentTypes
     type: string
     required: false
-    notes: "Comma separated list of content types to use as filter"
+    notes: 'Comma separated list of content types to use as filter'
   - name: ?documentTypes
     type: string
     required: false
@@ -57,7 +57,7 @@ parameters:
 
       Request 1: `?id.gt=0&id.lte=100`  
       Request 2: `?id.gt=100&id.lte=200`  
-      Request 3: `?id.gt=200&id.lte=300`  
+      Request 3: `?id.gt=200&id.lte=300`
   - name: ?id
     type: string
     required: false
@@ -105,7 +105,7 @@ parameters:
     notes: An offset into the query. Useful when getting more than 100 results (pagination). Max. 10000. Prefer range based filters like id.get or publishedAt.gte
 
 responses:
-  - code: "200"
+  - code: '200'
     body: |
       [
         {

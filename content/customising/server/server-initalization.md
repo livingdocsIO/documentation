@@ -18,10 +18,9 @@ const port = conf.get('server:port')
 // create a liServer with your configuration
 const liServer = require('@livingdocs/server')(conf)
 
-liServer.listen(port)
-  .then(() => {
-    liServer.warn('Listening on http://localhost:%s', port)
-  })
+liServer.listen(port).then(() => {
+  liServer.warn('Listening on http://localhost:%s', port)
+})
 ```
 
 ### `liServer.initialize`
@@ -32,10 +31,9 @@ Initializes all features and executes _initialized hooks_ (see below) right befo
 const conf = require('./conf')
 const liServer = require('@livingdocs/server')(conf)
 
-liServer.initialize()
-  .then(() => {
-    liServer.warn('Started the server without http server')
-  })
+liServer.initialize().then(() => {
+  liServer.warn('Started the server without http server')
+})
 ```
 
 ### `liServer.listen`

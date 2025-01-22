@@ -28,16 +28,14 @@ For every component you can create a new file. Here is an example for a paragrap
 
 ```html
 <script type="ld-conf">
-{
-  "label": "Paragraph",
-  "iconUrl": "https://livingdocs.io/images/building_blocks_magazine.svg",
-  "description": "Your main writing tool"
-}
+  {
+    "label": "Paragraph",
+    "iconUrl": "https://livingdocs.io/images/building_blocks_magazine.svg",
+    "description": "Your main writing tool"
+  }
 </script>
 
-<p doc-editable="text">
-  Lorem Ipsum...
-</p>
+<p doc-editable="text">Lorem Ipsum...</p>
 ```
 
 Inside of the `<script type="ld-conf">` you can define configurations for the components. The component itself is built with normal HTML and Livingdocs specific attributes indicate to Livingdocs what content the user can change and edit. The attribute `doc-editable` will turn the paragraph into an editable element.
@@ -46,22 +44,28 @@ Inside of the `<script type="ld-conf">` you can define configurations for the co
 
 ```html
 <script type="ld-conf">
-{
-  "name": "hero",
-  "label": "Hero Teaser",
-  "iconUrl": "https://livingdocs.io/images/building_blocks_magazine.svg",
-  "description": "A mega title"
-}
+  {
+    "name": "hero",
+    "label": "Hero Teaser",
+    "iconUrl": "https://livingdocs.io/images/building_blocks_magazine.svg",
+    "description": "A mega title"
+  }
 </script>
-
 
 <div class="jumbotron">
   <h1 doc-editable="title">Hello, world!</h1>
   <p doc-editable="text">
-    This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+    This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
+    featured content or information.
   </p>
   <p>
-    <a doc-link="featured" class="btn btn-primary btn-lg" role="button" doc-editable="button">Learn more</a>
+    <a
+      doc-link="featured"
+      class="btn btn-primary btn-lg"
+      role="button"
+      doc-editable="button"
+      >Learn more</a
+    >
   </p>
 </div>
 ```
@@ -77,7 +81,6 @@ The `defaultComponents` configuration tells the editor which components should b
   "video": "video"  // The component to insert when dragging a video into the document.
 }
 ```
-
 
 ## Component Properties
 
@@ -110,17 +113,14 @@ This is an example configuration of a paragraph component that uses the `dropcap
 
 ```html
 <script type="ld-conf">
-{
-  "label": "Paragraph",
-  "properties": ["dropcap"]
-}
+  {
+    "label": "Paragraph",
+    "properties": ["dropcap"]
+  }
 </script>
 
-<p doc-editable="text">
-  Lorem Ipsum...
-</p>
+<p doc-editable="text">Lorem Ipsum...</p>
 ```
-
 
 ## Image Aspect Ratios
 
@@ -143,19 +143,19 @@ In a component the aspect ratios can be defined per image directive. In the foll
 
 ```html
 <script type="ld-conf">
-{
-  "label": "Image",
-  "directives": {
-    "image": {
-      "imageRatios": ["16:9", "1:1"],
-      "allowOriginalRatio": true
+  {
+    "label": "Image",
+    "directives": {
+      "image": {
+        "imageRatios": ["16:9", "1:1"],
+        "allowOriginalRatio": true
+      }
     }
   }
-}
 </script>
 
 <figure class="figure">
-    <img doc-image="image">
+  <img doc-image="image" />
 </figure>
 ```
 

@@ -30,13 +30,13 @@ description: |
   - in the creation-flow panel
   - in the editor metadata panel
   - in the dashboard.
-  
+
   Categories can be edited or removed at any time in both the editor and the dashboard.
   Furthermore, filtering articles based on user needs can be enabled in the dashboard, helping teams streamline content discovery and analysis.
- 
+
 defaultUI: |
   User Needs in the __metadata panel of the editor__: 
-  
+
   {{< img src="../images/li-user-needs-meta.png" alt="User Needs plugin in the metadata form" >}}
 
   User Needs in the __dashboard__: 

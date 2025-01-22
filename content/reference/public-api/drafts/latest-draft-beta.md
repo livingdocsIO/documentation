@@ -8,5 +8,4 @@ menus:
     parent: Drafts
 ---
 
-
 {{< api-example-resource file="latest-draft-beta.yaml" >}}

@@ -11,13 +11,13 @@ menus:
 ## Overview
 
 With a metadata plugin these things can be defined
+
 - plugin name
 - indexing configuration
 - storage schema
 - config and ui config schema
 
 You can find Livingdocs metadata plugins here: [plugins/metadata](https://github.com/livingdocsIO/livingdocs-server/tree/master/plugins/metadata) on the livingdocs-server.
-
 
 ## Schema of a Metadata Plugin
 
@@ -36,7 +36,7 @@ module.exports = {
       {
         type: 'text',
         key: 'customerPluginName',
-        getValue (val) {
+        getValue(val) {
           return val
         }
       },
@@ -63,15 +63,22 @@ module.exports = {
   // Define your own Schema here
   // For simple schemas Livingdocs uses https://github.com/livingdocsIO/microschema
   // OPTIONAL
-  uiSchema: ms.strictObj({
-    label: 'string',
-    config: ms.strictObj({
-      placeholder: 'string',
-      readOnly: {type: 'boolean', default: false},
-    }, {default: {}})
-  }, {default: {}})
+  uiSchema: ms.strictObj(
+    {
+      label: 'string',
+      config: ms.strictObj(
+        {
+          placeholder: 'string',
+          readOnly: {type: 'boolean', default: false}
+        },
+        {default: {}}
+      )
+    },
+    {default: {}}
+  )
 }
 ```
 
 ## References
+
 - [Metadata]({{< ref "/reference/document/metadata" >}})

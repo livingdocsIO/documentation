@@ -8,6 +8,7 @@ weight: 6
 To be honest, this process is a bit bumpy and lacks UI support. Please bear with us, we will make this super-easy for you in the future. For now though there are quite a lot of requirements.
 
 In order to upload designs to Livingdocs you need the `livingdocs-manager` (short `ldm`) command line tool. In order to install it run:
+
 ```sh
 npm install -g livingdocs-manager
 ```

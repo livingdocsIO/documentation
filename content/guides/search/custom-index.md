@@ -6,6 +6,7 @@ weight: 2
 ---
 
 Livingdocs allows to index data (e.g. publications) in Elasticsearch with custom data and mapping. The customer fully controls what data and format is indexed. The core server supports the indexing process with
+
 - Data transformation hooks for processing
 - Creating/processing the data via batches/jobs
 - CLI support for background indexing
@@ -93,6 +94,7 @@ elasticIndex: {
 
 As a second step the initialisation file needs to be implemented. You will see an example below.
 The init file returns an object with 3 properties:
+
 - `elasticsearchMapping` - defines the Elasticsearch mapping for the custom index
 - `processBatch` - load/transform and put documents into the indexing job queue
 - `createBatches` - create batches definition based on the provided filters and batchSize parameters - **optional function (usually just leave it out)**
@@ -138,7 +140,7 @@ module.exports = async function ({server, indexConfig}) {
    *     ]
    *   }
    */
-  async function createBatches ({batchSize, context}) {
+  async function createBatches({batchSize, context}) {
     return indexingRepo.getDocumentRanges({batchSize, ...context})
   }
 
@@ -167,7 +169,7 @@ module.exports = async function ({server, indexConfig}) {
    * @param {number|Date}   params.context.updatedAt.from time in ms since 1970
    * @param {?}             params.context.myCustomValue - passed via context object of index config
    */
-  async function processBatch ({context, range, ids}) {
+  async function processBatch({context, range, ids}) {
     const documentVersions = await publicationApi.getLatestPublicationsV2({
       ...context,
       ...range,
@@ -231,7 +233,6 @@ module.exports = async function ({server, indexConfig}) {
 }
 ```
 
-
 ## Server API
 
 ### Search
@@ -240,12 +241,11 @@ Based on the customIndex configs, Elasticsearch indexes are updated via live ind
 
 ```js
 const handle = 'my-custom-index-handle'
-const idsToSearchFor = [1,17,42]
+const idsToSearchFor = [1, 17, 42]
 const indexingApi = await test.liServer.features.api('li-indexing')
 const body = {query: {bool: {filter: {terms: {_id: idsToSearchFor}}}}}
 const results = await indexingApi.search({handle, body})
 ```
-
 
 ## Index Management via CLI
 

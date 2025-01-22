@@ -12,6 +12,7 @@ A version of this document for releases prior to {{< release "release-2023-07" >
 The publication index is an Elasticsearch index that allows developers to do queries in order to retrieve published documents from Livingdocs.
 
 There are two parts to the feature:
+
 - the indexing side that defines how values are indexed to the publication index
 - the query side that defines the syntax for querying
 
@@ -55,6 +56,7 @@ To be able to filter documents using a metadata value you must ensure the metada
 ```
 
 You will need to re-index your existing documents to populate the values in Elasticsearch after changing the content type config:
+
 ```
 npx livingdocs-server elasticsearch-index --handle=li-publications
 ```
@@ -73,6 +75,7 @@ const results = await response.json()
 ```
 
 The query allows the following entries:
+
 - `search`, string used for full-text search
 - `contentTypes`, string of comma separated content type handles (OR concatenated)
 - `categories`, string of comma separated category ids (OR concatenated)
@@ -101,6 +104,7 @@ module.exports = function (feature, server) {
 ### Filters:
 
 Valid filter fields are:
+
 - `documentId`
 - `contentType`
 - `firstPublicationDate`
@@ -111,7 +115,7 @@ Valid filter fields are:
 
 The index type of each field will determine which query capabilities are supported:
 
-| Type    | Term          | Range         | Exists        | Sort          |
+| Type    |     Term      |     Range     |    Exists     |     Sort      |
 | :------ | :-----------: | :-----------: | :-----------: | :-----------: |
 | keyword | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
 | integer | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
@@ -165,6 +169,7 @@ For further details on how to define filters please see the [Public API]({{< ref
 ### Fields
 
 Valid fields are:
+
 - `id`
 - `systemdata`
 - `metadata`
@@ -178,6 +183,7 @@ The default fields are `['systemdata', 'metadata', 'content']`. Please be aware 
 ### Sort
 
 Valid sort fields are:
+
 - `relevance`
 - `sortDate`
 - `documentId`

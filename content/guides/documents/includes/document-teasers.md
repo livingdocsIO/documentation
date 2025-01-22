@@ -10,8 +10,8 @@ To drag and drop Document Cards onto a document to create Teaser Components you 
 
 This guide assumes that you are familiar with the possibilities to register an Include Service and how to use it in a Component.
 
-
 ## Teaser Component
+
 First of all we create a article-teaser component which will be visible within the editor's sidebar. The directive of type `include` allows us to define a `service` we can then use to feed the include as well as the final teaser component.
 
 ```js
@@ -51,7 +51,9 @@ module.exports = {
 ```
 
 ### Register components
+
 This component we add to the project settings under the `components` property to be able to use the component.
+
 ```js
 // index.js of projects.config
 {
@@ -61,13 +63,15 @@ This component we add to the project settings under the `components` property to
     // Register the article-teaser component
     require('./components/article-teaser'),
     // the teaser itself will be created later and represents the content of the visible teaser
-    require('./components/article-teaser-template') 
+    require('./components/article-teaser-template')
   ]
   //...
 }
 
 ```
+
 And we define the component in the contentTypes we want to use them:
+
 ```js
 // article.js
 {
@@ -88,13 +92,13 @@ And we define the component in the contentTypes we want to use them:
     }
   ]
 }
-  
+
 ```
 
 Now we have already defined the basic setup for our teaser as a include component. See [Include]({{< ref "/reference/document/document-design/directives/include" >}}) for detailed description of the include feature.
 
-
 ## Teaser Service
+
 We now can create the service we referenced above by the `service` property which will handle our include as desired. On the service we will
 reference our final `article-teaser-template` component within the return object sent to the editor. This way the editor knows what component to use as teaser and how to render its markup. This is an example of a return object sent by the service:
 
@@ -102,19 +106,22 @@ reference our final `article-teaser-template` component within the return object
 return {
   // editableContent defines weather the user is able to change populated values within the teaser or not
   editableContent: true,
-  content: [{
-    id: 'some-unique-id',
-    // here we define the desired component from which the teaser finally will be rendered
-    component: 'article-teaser-template',
-    content: {
-      // all directives defined here are references to the 'article-teaser-template' 
-      // component and will be populated later within the editor
+  content: [
+    {
+      id: 'some-unique-id',
+      // here we define the desired component from which the teaser finally will be rendered
+      component: 'article-teaser-template',
+      content: {
+        // all directives defined here are references to the 'article-teaser-template'
+        // component and will be populated later within the editor
+      }
     }
-  }]
+  ]
 }
 ```
 
 Here is a minimal working example of our service including configuration to consider for the editable teaser usecase. For more information about the `editableContent` property see [Editable Document Teasers]({{< ref "/guides/documents/includes/editable-document-teasers" >}})
+
 ```js
 // teaser-service.js
 module.exports = function ({publicationApi, documentApi}) {
@@ -144,31 +151,32 @@ module.exports = function ({publicationApi, documentApi}) {
     ],
     rendering: {
       type: 'function',
-      async render (params, context) {
+      async render(params, context) {
         // params.article.reference.id contains the id of the linked document
-        // params.article.value contains part of the DocumentVersion ({systemdata, metadata}) 
+        // params.article.value contains part of the DocumentVersion ({systemdata, metadata})
         // of the include (because preload: true is configured)
         const documentVersion = params.article.value
         return {
           editableContent: !params.readOnly,
-          content: [{
-            id: `teaser-${documentVersion.systemdata.documentId}`,
-            component: 'article-teaser-template',
-            content: {
-              image: parseImageData(documentVersion.metadata.teaserImage),
-              title: documentVersion.metadata.title,
-              lead: documentVersion.metadata.lead
+          content: [
+            {
+              id: `teaser-${documentVersion.systemdata.documentId}`,
+              component: 'article-teaser-template',
+              content: {
+                image: parseImageData(documentVersion.metadata.teaserImage),
+                title: documentVersion.metadata.title,
+                lead: documentVersion.metadata.lead
+              }
             }
-          }]
+          ]
         }
       }
     }
   }
 }
 
-
 // this local function resolves the proper image data for the above return
-function parseImageData (metadata, key) {
+function parseImageData(metadata, key) {
   if (!(key in metadata)) return undefined
 
   const teaserImage = metadata[key]
@@ -187,7 +195,6 @@ function parseImageData (metadata, key) {
     focalPoint: teaserImage.focalPoint
   }
 }
-
 ```
 
 Also we need to register the service within our setup:
@@ -200,7 +207,7 @@ liServer.registerInitializedHook(() => {
   const documentApi = liServer.features.api('li-documents').document
   const publicationApi = liServer.features.api('li-documents').publication
   //...
-  
+
   liServer.registerIncludeServices([
     // here we register our service
     require('./plugins/includes/teaser-service')({publicationApi, documentApi})
@@ -215,6 +222,7 @@ Now we see already the outcome of the `article-teaser` and the `teaser-service` 
 For a detailed description of the include api see [Includes Server API]({{< ref "/reference/document/includes/server-customization" >}}).
 
 ## Teaser Template Component
+
 We now have a registered include component `article-teaser` and service `teaser-service` and it is time to define our teaser template component `article-teaser-template` which will be rendered within the document (replacing the include's placeholder markup). Rembember we already registerd `article-teaser-template` [here]({{< ref "#register-components" >}}) for our project.
 
 ```js
@@ -222,16 +230,19 @@ We now have a registered include component `article-teaser` and service `teaser-
 module.exports = {
   name: 'article-teaser-template',
   label: 'Teaser Component',
-  directives: [{
-    name: 'image',
-    type: 'image',
-    allowOriginalRatio: true,
-    imageRatios: ['16:9', '1:1', '4:3', '3:4']
-  }, {
-    type: 'editable',
-    name: 'title',
-    maxLength: 10
-  }],
+  directives: [
+    {
+      name: 'image',
+      type: 'image',
+      allowOriginalRatio: true,
+      imageRatios: ['16:9', '1:1', '4:3', '3:4']
+    },
+    {
+      type: 'editable',
+      name: 'title',
+      maxLength: 10
+    }
+  ],
   properties: ['teaser-type'],
   html: `
     <div class="teaser" style="display: block;">
@@ -243,7 +254,6 @@ module.exports = {
     </div>
   `
 }
-
 ```
 
 With the teaser finally in place we can link articles and the editor will populate the values as we return them out of our service. Also you can see the above directives of our teaser appear in a box on the sidebar (doc-image).
@@ -251,6 +261,7 @@ With the teaser finally in place we can link articles and the editor will popula
 {{< img src="./my-teaser.png" alt="Empty Teaser Include" >}}
 
 ## Document Dashboard in Editor
+
 Now you want to configure a Teaser Dashboard for use in the Editor. For this, you configure an article dashboard first, then you can make use of it in the page ContentType.
 
 Dashboards are configured in the Project Config editorSettings.
@@ -260,38 +271,38 @@ Dashboards are configured in the Project Config editorSettings.
 editorSettings: {
   dashboards: [
     {
-    handle: 'articles-simple',
-    type: 'tableDashboard',
-    pageTitle: 'Articles',
-    baseFilters: [
-      {key: 'documentType', term: 'article'} // This must be set to 'documentType'
-    ],
-    displayFilters: [
-      'channels',
-      'documentState',
-      'contentType',
-      'timeRange',
-      'language',
-      'category'
-    ],
-    sort: '-published_at',
-    columns: [
-      {
-        label: 'Title',
-        minWidth: 100,
-        growFactor: 1,
-        priority: 1,
-        componentName: 'liTableDashboardCellMain',
-        componentOptions: {
-          image: {
-            metadataPropertyName: 'teaserImage'
-          },
-          clampTitle: false,
-          showContentType: true
+      handle: 'articles-simple',
+      type: 'tableDashboard',
+      pageTitle: 'Articles',
+      baseFilters: [
+        {key: 'documentType', term: 'article'} // This must be set to 'documentType'
+      ],
+      displayFilters: [
+        'channels',
+        'documentState',
+        'contentType',
+        'timeRange',
+        'language',
+        'category'
+      ],
+      sort: '-published_at',
+      columns: [
+        {
+          label: 'Title',
+          minWidth: 100,
+          growFactor: 1,
+          priority: 1,
+          componentName: 'liTableDashboardCellMain',
+          componentOptions: {
+            image: {
+              metadataPropertyName: 'teaserImage'
+            },
+            clampTitle: false,
+            showContentType: true
+          }
         }
-      }
-    ]
-  }
+      ]
+    }
   ]
 }
 // ...
@@ -343,7 +354,6 @@ This is done in the source content Content-Type, in this case `article.js`:
   ]
 }
 ```
-
 
 `teaserComponents` is an array, as we support multiple teaser components from the same source content type. For example, you could have several teaser components with different sizes (S, M, L, XL).
 The first teaser component in the array will be the default one.

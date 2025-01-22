@@ -16,7 +16,7 @@ parameters:
     required: true
     notes: The id that Livingdocs provided you for your prior call to `/api/v1/import/files`
 responses:
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/import/files/status?id=25bzj8j
     body: |
       {
@@ -44,7 +44,7 @@ responses:
           }
         ]
       }
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/import/files/status?id=243kdc
     body: |
       {
@@ -53,7 +53,7 @@ responses:
         "id": "243kdc",
         "startedAt": "2020-01-01 13:45:12"
       }
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/import/files/status?id=098shjhv9
     body: |
       {

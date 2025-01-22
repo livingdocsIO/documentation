@@ -16,7 +16,7 @@ In {{< release "release-2025-05" >}}, we are going to remove all Desk-Net settin
 In {{< release "release-2024-11" >}}, we changed the default API endpoint from `desk-net.com` to `kordiam.app` and added new Kordiam settings, plugins, and APIs. Additionally, we deprecated all Desk-Net settings, plugins, and APIs. Customers running on release-2024-11 or newer should upgrade to the new Kordiam integrations.
 
 {{< info >}}
-In most cases, a careful case-sensitive search and replace of `desknet` with `kordiam` and `Desknet` with `Kordiam` in your downstream codebase should suffice. However, please ensure that you do not accidentally rename properties that are not part of our integration changes (such as your defined metadata property handles, for example).  
+In most cases, a careful case-sensitive search and replace of `desknet` with `kordiam` and `Desknet` with `Kordiam` in your downstream codebase should suffice. However, please ensure that you do not accidentally rename properties that are not part of our integration changes (such as your defined metadata property handles, for example).
 
 Two exceptions to this rule are `hugo.print.kordiamMetadataFields` and the configuration property `desknetExternalElementIdMetadataPath` of the `li-desknet-schedule` metadata plugin. If you have configured these, please refer to the details below for migration guidance.
 
@@ -138,7 +138,7 @@ You are running a release of Livingdocs that supports adjusting the Kordiam API 
 
 If you are using the new [Desk-Net Global Integration]({{< ref "/guides/integrations/desknet" >}}), simply add an `apiEndpoint` config in `settings.integrations.desknet` to `https://kordiam.app` and you are good to go.
 
-```js 
+```js
 // settings
 integrations: {
   desknet: {
@@ -150,7 +150,7 @@ integrations: {
 
 If you are using the [Desk-Net Platform Integration]({{< ref "/guides/integrations/desknet-legacy" >}}), you need to add the `apiEndpoint` config in `settings.desknet` and set it to `https://kordiam.app`.
 
-```js 
+```js
 // settings
 desknet: {
   apiEndpoint: 'https://kordiam.app',

@@ -9,7 +9,8 @@ menus:
 This section gives an exhaustive listing of all options for Includes on the server side.
 To get more information about Includes in general, visit the [Includes Overview]({{< ref "/reference/document/includes" >}}).
 
-We recommend where possible going down the paramsSchema route for includes. This saves writing custom sidebar components and covers most  include cases. Where it does not, please get in touch with your customer solutions manager before writing custom components to see if we can extend the paramsSchema for your use case.
+We recommend where possible going down the paramsSchema route for includes. This saves writing custom sidebar components and covers most include cases. Where it does not, please get in touch with your customer solutions manager before writing custom components to see if we can extend the paramsSchema for your use case.
+
 ## Registering your include
 
 ```js
@@ -21,7 +22,6 @@ liServer.registerInitializedHook(() => {
   ])
 })
 ```
-
 
 ## paramsSchema
 
@@ -42,14 +42,14 @@ module.exports = {
         label: 'Teaser',
         config: {
           useDashboard: 'articles-simple',
-          style: 'teaser',
+          style: 'teaser'
         }
       }
     }
   ],
   rendering: {
     type: 'function',
-    async render (params, context) {
+    async render(params, context) {
       // Here you can use the publicationApi to get your document
       // You can then return the content of the linked document with ease, Livingdocs will render
       // it exactly as you see it in the document itself
@@ -62,17 +62,19 @@ module.exports = {
       // Alternatively, you can render some custom content based on the metadata information
       // If you have metadata with teaser content anyway, this is the simplest and most effective solution
       return {
-        content: [{
-          id: `teaser-${documentVersion.documentId}`,
-          component: 'teaser',
-          content: {
-            image: parseImageData(documentVersion.metadata.teaserImage),
-            title: documentVersion.title,
-            lead: 'lead from include',
-            byline: 'byline from include',
-            link: 'https://example.com'
+        content: [
+          {
+            id: `teaser-${documentVersion.documentId}`,
+            component: 'teaser',
+            content: {
+              image: parseImageData(documentVersion.metadata.teaserImage),
+              title: documentVersion.title,
+              lead: 'lead from include',
+              byline: 'byline from include',
+              link: 'https://example.com'
+            }
           }
-        }]
+        ]
       }
     }
   }
@@ -80,8 +82,9 @@ module.exports = {
 ```
 
 This example uses a helper function for teaserImage data:
+
 ```js
-function parseImageData (teaserImage) {
+function parseImageData(teaserImage) {
   // The teaser image is of type li-image but the editable-teaser service
   // requires LivingdocsImageDirective, so this picks the correct values
   return {
@@ -283,10 +286,10 @@ You can choose between 2 types of custom UI components.
 1. `vue-component`, sidebar user interface
 2. `iframe-modal`, as above user interface in a modal dialog but loaded as an iframe (e.g. if you want to implement your UI outside of Livingdocs)
 
-
 ### vue-component
 
 The `uiComponents` config for `vue-component` looks as follows:
+
 ```js
 {
   // required, fixed name
@@ -302,10 +305,10 @@ The `uiComponents` config for `vue-component` looks as follows:
 
 The Vue component `myIncludeSidebarComponent` is required to be registered in the editor. We explain [here]({{< ref "/customising/advanced/editor/vue-component-registry.md#includeParamsSidebarForm" >}}) how to do this.
 
-
 ### iframe-modal
 
 The `uiComponents` config for `iframe-modal` looks as follows:
+
 ```js
 {
   // required, fixed name
@@ -326,16 +329,17 @@ The `uiComponents` config for `iframe-modal` looks as follows:
 The iframe modal enables you to implement the user interface in a third-party system or re-use existing interfaces. There is an API in place to pass the `params` object between the iframe and Livingdocs:
 Existing `params` are passed into the iframe as a URL query parameter `?params`. It contains the stringified JSON of the `params` Object as an urlencoded String.
 From inside the iframe, you have to send messages using [postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) like this:
+
 ```js
 const message = {
-  action: "update",
+  action: 'update',
   params: {
     someParam: 'foo',
     anotherParam: 42
   }
-};
+}
 // the 2nd parameter is the 'targetOrigin'. Set this to the origin of your Livingdocs Editor instance.
-window.parent.postMessage(message, "*");
+window.parent.postMessage(message, '*')
 ```
 
 ## rendering.type
@@ -344,7 +348,6 @@ The `rendering` configuration allows you to define how your `doc-include` is ren
 
 1. `function`
 2. `remote`
-
 
 The `function` option allows you to render your Include on the Livingdocs Server.
 

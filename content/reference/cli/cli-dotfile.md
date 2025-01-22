@@ -43,6 +43,7 @@ alias:
 ```
 
 ## Parameters
+
 ### Host
 
 The hostname of your Livingdocs Server.
@@ -57,6 +58,7 @@ API token used for authentication. This is different for each environment and ea
 
 Note: it is recommended to add a production token with only
 read access (or simply dont add a prouction token at all). When publishing a new config you can supply a write token via `--token` argument.
+
 ### sourceFolder
 
 The source folder for the project config that are going to be published/uploaded.
