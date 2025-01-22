@@ -11,9 +11,9 @@
 // generated using
 // hugo gen chromastyles --style=lovelace > themes/hugo-docs/assets/chroma.scss
 code {
-  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
   font-size: 0.9em;
-  background: rgba($color-violet-1, .1);
+  background: rgba($color-violet-1, 0.1);
   border-radius: $rounded-corners;
   padding: 1px 5px;
 

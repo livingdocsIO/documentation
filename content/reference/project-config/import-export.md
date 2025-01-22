@@ -7,6 +7,7 @@ menus:
 ---
 
 The following properties allow you to configure which projects documents can be imported from and exported to. Read the guide on [copying documents between projects]({{< ref "/guides/editor/project-document-copy" >}}) for more information.
+
 ## Import
 
 The `import` property is an object which contains an `allowedProjects` property. The `allowedProjects` property is an array of objects containing a `handle` property, which indicates the projects you would like to export to, along with (optional) information on how to map the source content and media types to the destination. Within `contentTypeMapping` and `mediaTypeMapping` the object keys are the source types (i.e. the type handles which belong to the document and media being copied), and the values are the destination types (i.e. the type handles used by the project you're adding the `import` config to). If the two projects you are moving documents between share the same types then there is no need to provide a mapping. However, if you would like to transfer a "regular" article from one project to a "print" article in another then you would add `contentTypeMapping: {regular: 'print'}`.

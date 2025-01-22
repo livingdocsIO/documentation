@@ -26,13 +26,11 @@ componentModel.directives.eachImage((imageDirective) => {
   imageDirective.getUrl()
 })
 
-
 // Get the number of directives of a certain type
 // on a component.
 // Possible types: 'editable', 'image', 'html', 'link', 'include'
 const count = componentModel.directives.count('include')
 ```
-
 
 ## Directive Types
 
@@ -46,13 +44,13 @@ textDirective.setContent('Lorem Ipsum dolorem...')
 const content = textDirective.getContent()
 ```
 
-
 #### Image
 
 type: 'image'
 component template attribute: `doc-image`
 
 Minimal Example:
+
 ```js
 imageDirective.setContent({url: 'http://images.com/1'})
 ```
@@ -62,6 +60,7 @@ For this `width`, `height`, `mimeType` as well as the `imageService` itself have
 to be specified when setting an url.
 
 Real World Example with image service:
+
 ```js
 imageDirective.setContent({
   url: 'http://images.com/1',
@@ -71,7 +70,7 @@ imageDirective.setContent({
   imageService: 'resrc.it',
   crop: {x: 100, y: 50, width: 200, height: 200},
   origins: [{name: 'uez463x8ie39', identifier: 'hugo'}],
-  focalPoint: {x: 234, y:123}
+  focalPoint: {x: 234, y: 123}
 })
 
 // Update the crop
@@ -100,7 +99,6 @@ videoDirective.setContent({
 videoDirective.setCrop({x: 0, y: 0, width: 250, height: 250})
 ```
 
-
 #### Html
 
 type: 'html'
@@ -111,7 +109,6 @@ htmlDirective.setContent({
   html: '<div>Moby Dick</div>'
 })
 ```
-
 
 #### Link
 
@@ -125,8 +122,7 @@ linkDirective.setContent({
 })
 ```
 
-Allowed values for `target`: '_blank', '_self', '_parent' or '_top'
-
+Allowed values for `target`: `_blank`, `_self`, `_parent` or `_top`
 
 #### Include
 
@@ -142,7 +138,6 @@ includeDirective.setContent({
 // Retrieve the params set on a directive (this includes defaultParams
 // specified in the component configuration if they have not been overwritten).
 includeDirective.getParams()
-
 
 // setParams overwrites all parameters of this include.
 includeDirective.setParams({foo: 'bar'})

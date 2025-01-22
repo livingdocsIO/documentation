@@ -38,6 +38,7 @@ Includes allow you to define parts of your markup that will be controlled from a
 ```
 
 ## Config Options
+
 ### Parameters
 
 - `config`: object, allows you to pass static configuration to your third-party microservice. In the example above we pass a language as a fixed config.
@@ -52,11 +53,14 @@ You can define one service (`service`) or an array of `services` in which case t
 - `services`, array, defines a set of services that can be changed manually in the editor, each service contains each own service name, default params and config.
 
 schema of services:
+
 ```js
-services: ms.arrayOf(ms.strictObj({
-  service: 'string:required',
-  label: 'string:required',
-  defaultParams: ms.obj(),
-  config: ms.obj()
-}))
+services: ms.arrayOf(
+  ms.strictObj({
+    service: 'string:required',
+    label: 'string:required',
+    defaultParams: ms.obj(),
+    config: ms.obj()
+  })
+)
 ```

@@ -14,27 +14,27 @@ This short guide explains how to set up and use the service with your own design
 
 ### 1) Basic Setup
 
-* Setup a project on the [Livingdocs Service](https://edit.livingdocs.io/)
-* Add an API token on the [Livingdocs Service](https://edit.livingdocs.io/) \(Burger Menu -&gt; Project Access -&gt; Api Tokens)
+- Setup a project on the [Livingdocs Service](https://edit.livingdocs.io/)
+- Add an API token on the [Livingdocs Service](https://edit.livingdocs.io/) \(Burger Menu -&gt; Project Access -&gt; Api Tokens)
 
 ### 2) Create your own design
 
-* [Download](getting_started.md#download-project-config-from-service) the project config from the Livingdocs Service
-* Understand and modify the [project config](reference/project-config/README.md)
-  * modify the project settings
-  * add contentTypes
-  * define components and metadata in contentTypes
-  * define your design [design settings](reference/project-config/design.md)
-* [Publish](getting_started.md#publish-a-project-config-to-the-service) your project config and the embedded design at the Livingdocs Service
+- [Download](getting_started.md#download-project-config-from-service) the project config from the Livingdocs Service
+- Understand and modify the [project config](reference/project-config/README.md)
+  - modify the project settings
+  - add contentTypes
+  - define components and metadata in contentTypes
+  - define your design [design settings](reference/project-config/design.md)
+- [Publish](getting_started.md#publish-a-project-config-to-the-service) your project config and the embedded design at the Livingdocs Service
 
 ### 3) Administration
 
-* Create groups with the different Rights
-* Invite Users to your project
+- Create groups with the different Rights
+- Invite Users to your project
 
 ### 4) Embed documents on your website
 
-* [Show documents on your frontend](getting_started.md#show-documents-on-your-frontend)
+- [Show documents on your frontend](getting_started.md#show-documents-on-your-frontend)
 
 ## Download project config from service
 
@@ -42,9 +42,9 @@ With the CLI tool `livingdocs-cli` (), you can down- and upload project configs 
 
 ### Preconditions
 
-* Registered on [Livingdocs Service](https://edit.livingdocs.io/)
-* Created an API token
-* installed CLI `livingdocs-cli` -&gt; `npm install -g livingdocs-cli`
+- Registered on [Livingdocs Service](https://edit.livingdocs.io/)
+- Created an API token
+- installed CLI `livingdocs-cli` -&gt; `npm install -g livingdocs-cli`
 
 ### Example
 
@@ -57,8 +57,8 @@ livingdocs-cli project-config:download
 
 ### Next Steps
 
-* Go into your LI\_DIST\_FOLDER folder
-* Now you can change your project settings and the design
+- Go into your LI_DIST_FOLDER folder
+- Now you can change your project settings and the design
 
 ## Publish a project config to the service
 
@@ -66,8 +66,8 @@ After modifying the project config and the design locally, you can publish the c
 
 ### Publication restrictions
 
-* content-types can't be removed
-* metadata-fields can't be removed
+- content-types can't be removed
+- metadata-fields can't be removed
 
 ### Example
 

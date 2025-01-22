@@ -14,25 +14,21 @@ It is also a configurable headless CMS as a service that enables developers to m
 
 Read on to learn about the most important concepts of Livingdocs.
 
-
 ## Project
 
 A Livingdocs project is easiest understood as a publication. This can be a newspaper, blog, website or pretty much every imaginable digital publication. Upon signing up for the Livingdocs service a Sandbox is created for you. This is a project. You can also create your own projects and invite teams to them. The number of projects you are allowed to create depends upon your chosen service plan.
 
 {{< vimeo id="426279221" class="video-wrapper" >}}
 
-
 ## Project Setup
 
 This is where you configure your publication. A publication might have different content-types like articles or image galleries. Those in turn have metadata and component sets out of which editors can create content. In order to manage all of those settings you will use the Livingdocs CLI that is explained in the next chapter.
-
 
 ## Project Config
 
 The project-config is the source for the project setup. It's a huge JSON file that contains all settings you applied to your project. The UIs in the "Project Setup" section alter the project-config JSON and you can always see the complete JSON in the "History" screen of the "Project Setup" (it's versioned as well). You can also write to this JSON directly using our CLI, more on this later.
 
 {{< vimeo id="426287530" class="video-wrapper" >}}
-
 
 [Project Config Documentation](/reference/project-config)
 
@@ -71,5 +67,6 @@ This is where you can interact with Livingdocs over a REST interface. The API al
 ## Livingdocs on Vimeo
 
 You can find more videos directly on vimeo:
+
 - [Vimeo: Technical Tutorials](https://vimeo.com/showcase/5875797)
 - [Vimeo: Workflows](https://vimeo.com/showcase/7538934)

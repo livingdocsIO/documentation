@@ -43,7 +43,7 @@ async function processFiles() {
   }
 }
 
-function toImagePrefix (file) {
+function toImagePrefix(file) {
   const dirName = path.dirname(file)
   const fileName = path.basename(file)
 

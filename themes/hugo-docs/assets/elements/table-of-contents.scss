@@ -1,4 +1,5 @@
-#TableOfContents { // scss-lint:disable SelectorFormat
+#TableOfContents {
+  // scss-lint:disable SelectorFormat
   ul {
     li {
       a {
@@ -12,14 +13,16 @@
 }
 
 .page__toc {
-  #TableOfContents { // scss-lint:disable SelectorFormat
+  #TableOfContents {
+    // scss-lint:disable SelectorFormat
     ul {
       list-style-type: none;
       padding: 0;
       margin: 0;
 
       li {
-        ul { // scss-lint:disable SelectorDepth
+        ul {
+          // scss-lint:disable SelectorDepth
           list-style-type: none;
           padding: 0;
           margin-left: 14px;

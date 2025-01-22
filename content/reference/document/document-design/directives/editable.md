@@ -10,6 +10,7 @@ menus:
 Defined on an HTML tag so that the user can edit the text within.
 
 ## Example
+
 ```js
 {
   name: 'p',

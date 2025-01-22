@@ -4,14 +4,15 @@ description: Integrate Kordiam with Livingdocs using a publication platform
 ---
 
 {{< info >}}
-  {{< added-in "release-2024-11" >}}. Prior to {{< release "release-2024-11" >}}, the Kordiam Platform Integration was known as [Desk-Net Platform Integration]({{< ref "/guides/integrations/desknet-legacy" >}}).
+{{< added-in "release-2024-11" >}}. Prior to {{< release "release-2024-11" >}}, the Kordiam Platform Integration was known as [Desk-Net Platform Integration]({{< ref "/guides/integrations/desknet-legacy" >}}).
 {{< /info >}}
 
 {{< warning >}}
-  The Kordiam Platform Integration will eventually be removed. For new setups please use the [Kordiam Global Integration]({{< ref "/guides/integrations/kordiam" >}}) guide instead, or for upgrading from the platform integration to the global integration please read the [Kordiam Global Integration migration guide]({{< ref "/guides/integrations/kordiam-global-integration-migration" >}}).
+The Kordiam Platform Integration will eventually be removed. For new setups please use the [Kordiam Global Integration]({{< ref "/guides/integrations/kordiam" >}}) guide instead, or for upgrading from the platform integration to the global integration please read the [Kordiam Global Integration migration guide]({{< ref "/guides/integrations/kordiam-global-integration-migration" >}}).
 {{< /warning >}}
 
 [Kordiam](https://kordiam.io) is a planning tool for publication processes. This feature, if set up properly, lets you easily connect your Kordiam world to your Livingdocs universe. Here's a few things you can do:
+
 - Create Livingdocs documents directly from Kordiam.
 - Sync publication status between the two domains.
 - Exchange and sync any data that is relevant to your workflow.
@@ -26,8 +27,8 @@ description: Integrate Kordiam with Livingdocs using a publication platform
 - You should know about the different Livingdocs configuration levels/methods, namely the [project config]({{< ref "/reference/project-config" >}}) and the [content type config]({{< ref "/reference/project-config/content-types.md" >}})).
 - You should be familiar with how to [set up custom metadata fields]({{< ref "/customising/server/metadata-plugins" >}}) for your content types.
 - For local development, we strongly suggest you use:
-   - some kind of http tunnel solution like [ngrok](https://ngrok.com). This is useful, when you want to redirect messages from Kordiam to your local server.
-   - a HTTP API client like [Postman](https://www.getpostman.com/). Very handy to explore the Kordiam API. Certain configuration settings also need you to provide Kordiam entity ID's, which are not easily (or not at all) accessible via the Kordiam UI.
+  - some kind of http tunnel solution like [ngrok](https://ngrok.com). This is useful, when you want to redirect messages from Kordiam to your local server.
+  - a HTTP API client like [Postman](https://www.getpostman.com/). Very handy to explore the Kordiam API. Certain configuration settings also need you to provide Kordiam entity ID's, which are not easily (or not at all) accessible via the Kordiam UI.
 
 ### Basic configuration
 
@@ -49,7 +50,7 @@ description: Integrate Kordiam with Livingdocs using a publication platform
 - Paste your token from Livingdocs into the "API secret" field
 - Type any value into the "API user" field (it isn't used)
 - Enter the path to your Livingdocs server's Kordiam integration root enpoint into the "URL" field (e.g. https://example.com/api/v1/kordiam-integration)
-{{< img src="kordiam-config.png" alt="Kordiam Integration" >}}
+  {{< img src="kordiam-config.png" alt="Kordiam Integration" >}}
 - Click on "Test Connection" button to make sure Kordiam can communicate with Livingdocs
 - Optionally, select which publication statuses you would like to trigger updates to Livingdocs
 
@@ -227,10 +228,11 @@ With all this in place, whenever we create a new story in Kordiam that is assign
 In many cases it is probably desirable to have a little more information about the connected Kordiam entity on an article, than just merely the fact, that they're somewhat related.
 
 As an example, let's say we want to achieve the following:
+
 - We want to display the planned publication date from Kordiam in a datetime form field on the «Publish» screen in the Livingdocs Editor.
 - We want this field to be shown only for documents of content type `'regular'`.
 - We want this field to update, whenever somebody changes the planned publication date in Kordiam.
-- We *don't* want this field to be editable in Livingdocs.
+- We _don't_ want this field to be editable in Livingdocs.
 - The technical label for this field on the metadata should be `kordiamPublicationDate` and the actual label should read «Kordiam – Planned publication»
 
 Let's do this, then!
@@ -288,7 +290,7 @@ Again to the settings of content type `'regular'`, add the following:
 }
 ```
 
-And we're all set. From now on, whenever you create a new story on Kordiam with a scheduled publication date or change the scheduled publication date on an existing story *and* the story at hand is assigned to a platform connected to Livingdocs, the metadata of the document will have an up-to-date property `kordiamPublicationDate` with the date as value.
+And we're all set. From now on, whenever you create a new story on Kordiam with a scheduled publication date or change the scheduled publication date on an existing story _and_ the story at hand is assigned to a platform connected to Livingdocs, the metadata of the document will have an up-to-date property `kordiamPublicationDate` with the date as value.
 
 ### What are the available Kordiam properties?
 
@@ -303,6 +305,7 @@ The following prefetches are already in place:
 - `publications[].type` – [GetType](https://api.kordiam.app/#api-Type-GetType)
 
 Additionally, all elements have
+
 - a property `publication` which always points at the one connected to the platformId set up in the current project config.
 - a property `publications[]` which contains all publications, and at least one which is the same as the one at `publication`.
 
@@ -319,12 +322,14 @@ Everything in metadata. Nothing else. So whatever metadata plugins you have set 
 In cases where trivial source/target mappings simply don't cut it, you can write and register custom transform functions to handle the data translation between the entities.
 
 There are two kinds of transform functions:
-- *Import functions* handle incoming data from Kordiam.
-- *Export functions* handle data that should get sent to Kordiam.
+
+- _Import functions_ handle incoming data from Kordiam.
+- _Export functions_ handle data that should get sent to Kordiam.
 
 **Transform functions should always be asynchronous**
 
 The import and export procedures are actually quite similar: They translate data from one domain to the other. But in our case, there are two peculiarities, that you should take note off:
+
 - An an import function always gets resolved to a single corresponding metadata field. The return value must comply to the requirements of the related metadata plugin.
 - An export function should always return an object of (possibly nested) key/value pairs. It should only contain keys accepted by Kordiam.
 
@@ -333,10 +338,11 @@ This means that your import functions only ever resolve to a single field, while
 ### Registering and referencing transforms
 
 Let's do another example:
+
 - We want to display whether the Kordiam story is also assigned to any platform with some occurrence of the word `'Print'` in its name.
 - We want this field to be shown only for documents of content type `'regular'`.
 - We want this field to be shown as a checkbox, so we're looking for a boolean value.
-- We *don't* want this field to be editable in Livingdocs.
+- We _don't_ want this field to be editable in Livingdocs.
 - The technical label for this field on the metadata should be `hasPrint` and the actual label should read «Kordiam – Is planned for Print»
 
 First, we have to write and register the transforms. As we have to register transforms before the server actually starts, but only after the application is properly up and running, we use a [hook]({{< ref "/customising/server/server-hooks" >}}) for that:
@@ -430,6 +436,7 @@ async function myExportTransform (kordiamApi, value, element, document): Object
 ```js
 function registerTransform (handle, transform): void
 ```
+
 - `handle` – String, a unique transform name.
 - `transform` – A transform function
 
@@ -438,8 +445,8 @@ function registerTransform (handle, transform): void
 ```js
 function unregisterTransform (handle): void
 ```
-- `handle` – String, a unique transform name.
 
+- `handle` – String, a unique transform name.
 
 ### Kordiam API
 
@@ -455,115 +462,114 @@ const myImportTransform = async (kordiamApi, element, document) => {
 ```
 
 - `async function getElement (elementId)`
- – [GetElement](https://api.kordiam.app/#api-Element-GetElement)
+  – [GetElement](https://api.kordiam.app/#api-Element-GetElement)
 
 - `async function getElementStatus (elementStatusId)`
- – [GetElementStatus](https://api.kordiam.app/#api-Element_status-GetElementStatus)
+  – [GetElementStatus](https://api.kordiam.app/#api-Element_status-GetElementStatus)
 
 - `async function getElementStatus (publicationStatusId)`
- – [GetPublicationStatus](https://api.kordiam.app/#api-Publication_status-GetPublicationStatus)
+  – [GetPublicationStatus](https://api.kordiam.app/#api-Publication_status-GetPublicationStatus)
 
 - `async function getCategory(categoryId)`
- – [GetCategory](https://api.kordiam.app/#api-Category-GetCategory)
+  – [GetCategory](https://api.kordiam.app/#api-Category-GetCategory)
 
 - `async function getPlatform(platformId)`
- – [GetPlatform](https://api.kordiam.app/#api-Platform-GetPlatform)
+  – [GetPlatform](https://api.kordiam.app/#api-Platform-GetPlatform)
 
 - `async function getType(typeId)`
- – [GetType](https://api.kordiam.app/#api-Type-GetType)
+  – [GetType](https://api.kordiam.app/#api-Type-GetType)
 
 - `async function getFullElement (elementId)` –
-This function resolves to a Kordiam element [with prefetched values](#what-are-the-available-desk-net-properties).
+  This function resolves to a Kordiam element [with prefetched values](#what-are-the-available-desk-net-properties).
 
 #### Full Kordiam element example
+
 ```json
 {
-   "id": 1111111111111,
-   "version": 1,
-   "elementStatus": {
-      "id": 4,
-      "name": "No Status"
-   },
-   "title": "Hallo Test 2",
-   "groups": [
-      33333333
-   ],
-   "publications": [
-      {
-         "id": 222222222,
-         "version": 0,
-         "status": {
-            "id": 4,
-            "name": "Top story"
-         },
-         "category": {
-            "id": 5555555,
-            "version": 0,
-            "name": "TestUnterkategorie",
-            "platform": 6666666,
-            "category": 7777777,
-            "position": 1
-         },
-         "single": {
-            "start": {
-               "date": "2019-09-09"
-            }
-         },
-         "platform": {
-            "id": 6666666,
-            "version": 48,
-            "name": "Livingdocs",
-            "position": 2,
-            "weeklySchedule": {
-               "mon": true,
-               "tue": true,
-               "wed": true,
-               "thu": true,
-               "fri": true,
-               "sat": true,
-               "sun": true
-            }
-         }
-      }
-   ],
-   "url": "https://kordiam.app/mySchedulePage.htm?fragment=de1111111111111",
-   "modificationDate": "2019-09-09T08:19:27Z",
-   "publication": {
+  "id": 1111111111111,
+  "version": 1,
+  "elementStatus": {
+    "id": 4,
+    "name": "No Status"
+  },
+  "title": "Hallo Test 2",
+  "groups": [33333333],
+  "publications": [
+    {
       "id": 222222222,
       "version": 0,
       "status": {
-         "id": 4,
-         "name": "Top story"
+        "id": 4,
+        "name": "Top story"
       },
       "category": {
-         "id": 5555555,
-         "version": 0,
-         "name": "TestUnterkategorie",
-         "platform": 6666666,
-         "category": 7777777,
-         "position": 1
+        "id": 5555555,
+        "version": 0,
+        "name": "TestUnterkategorie",
+        "platform": 6666666,
+        "category": 7777777,
+        "position": 1
       },
       "single": {
-         "start": {
-            "date": "2019-09-09"
-         }
+        "start": {
+          "date": "2019-09-09"
+        }
       },
       "platform": {
-         "id": 6666666,
-         "version": 48,
-         "name": "Livingdocs",
-         "position": 2,
-         "weeklySchedule": {
-            "mon": true,
-            "tue": true,
-            "wed": true,
-            "thu": true,
-            "fri": true,
-            "sat": true,
-            "sun": true
-         }
+        "id": 6666666,
+        "version": 48,
+        "name": "Livingdocs",
+        "position": 2,
+        "weeklySchedule": {
+          "mon": true,
+          "tue": true,
+          "wed": true,
+          "thu": true,
+          "fri": true,
+          "sat": true,
+          "sun": true
+        }
       }
-   }
+    }
+  ],
+  "url": "https://kordiam.app/mySchedulePage.htm?fragment=de1111111111111",
+  "modificationDate": "2019-09-09T08:19:27Z",
+  "publication": {
+    "id": 222222222,
+    "version": 0,
+    "status": {
+      "id": 4,
+      "name": "Top story"
+    },
+    "category": {
+      "id": 5555555,
+      "version": 0,
+      "name": "TestUnterkategorie",
+      "platform": 6666666,
+      "category": 7777777,
+      "position": 1
+    },
+    "single": {
+      "start": {
+        "date": "2019-09-09"
+      }
+    },
+    "platform": {
+      "id": 6666666,
+      "version": 48,
+      "name": "Livingdocs",
+      "position": 2,
+      "weeklySchedule": {
+        "mon": true,
+        "tue": true,
+        "wed": true,
+        "thu": true,
+        "fri": true,
+        "sat": true,
+        "sun": true
+      }
+    }
+  }
 }
 ```
 

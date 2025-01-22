@@ -51,7 +51,7 @@ parameters:
   - name: renderOptions.renderDirectiveInfo
     type: boolean
     required: false
-    notes: "Add attributes with the directive name to directive elements."
+    notes: 'Add attributes with the directive name to directive elements.'
   - name: ignoreComponentConditions
     type: boolean
     required: false
@@ -73,7 +73,7 @@ parameters:
       Example: `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`
 
 responses:
-  - code: "200"
+  - code: '200'
     body: |
       {
         "systemdata": {

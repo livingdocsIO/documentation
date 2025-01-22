@@ -20,7 +20,6 @@ Livingdocs provides an API to register components written in VueJS. Below you fi
 
 Depending on the `type`, you will get different `props` defined on your component. [Vue Single File Components](https://vuejs.org/v2/guide/single-file-components.html) are supported. Please see below for details.
 
-
 ## Types
 
 ### Metadata Plugin
@@ -28,6 +27,7 @@ Depending on the `type`, you will get different `props` defined on your componen
 A `metadataPlugin` is used to render a metadata field in the Metadata View.
 
 **Registration**
+
 ```js
 // registration in app/editor.js
 const liEditor = require('@livingdocs/editor')()
@@ -41,6 +41,7 @@ liEditor.vueComponentRegistry.registerComponent({
 **Vue Props API**
 
 These are the `props` which are provided to your vue component:
+
 ```js
 inject: ['authedHttp'], // authed axios client e.g. to call custom livingdocs server endpoints
 props: {
@@ -90,24 +91,25 @@ props: {
 }
 ```
 
-
 ### Display Filter
 
 A `searchFilter` registers a Vue component as Display Filter for the search UI.
 
 **Registration**
+
 ```js
 // registration in app/editor.js
 liEditor.vueComponentRegistry.registerComponent({
-    type: 'searchFilter',
-    name: 'liDateTimeRangeDisplayFilter',
-    component: require('./components/display-filter/li-date-time-range-display-filter.vue').default
-  })
+  type: 'searchFilter',
+  name: 'liDateTimeRangeDisplayFilter',
+  component: require('./components/display-filter/li-date-time-range-display-filter.vue').default
+})
 ```
 
 **Vue Props API**
 
 These are the `props` which are provided to your vue component:
+
 ```js
 props: {
   filter: {
@@ -124,18 +126,21 @@ A full example can be seen [here]({{< ref "/guides/editor/custom-dashboard-filte
 A `tableDashboardCell` registers a Vue component that can be configured to be displayed in a `tableDashboard` column.
 
 **Registration**
+
 ```js
 // registration in app/editor.js
 liEditor.vueComponentRegistry.registerComponent({
   type: 'tableDashboardCell',
   name: 'liPublishTimeTableDashboardCell',
-  component: require('./components/table-dashboard-cell/li-publish-time-table-dashboard-cell.vue').default
+  component: require('./components/table-dashboard-cell/li-publish-time-table-dashboard-cell.vue')
+    .default
 })
 ```
 
 **Vue Props API**
 
 These are the `props` which are provided to your Vue component:
+
 ```js
 props: {
   // Instance of the Document model
@@ -158,12 +163,12 @@ props: {
 
 A guide to creating simple custom cells can be found [here]({{< ref "/guides/editor/custom-table-dashboard-cells.md" >}})
 
-
 ### Include Params Sidebar
 
 A `includeParamsSidebarForm` is used to render a form to manipulate `params` for `doc-include`s. [This Guide]({{< ref "/guides/documents/includes/twitter-embed" >}}) shows you how to use such a component.
 
 **Registration**
+
 ```js
 // registration in app/editor.js
 liEditor.vueComponentRegistry.registerComponent({
@@ -176,6 +181,7 @@ liEditor.vueComponentRegistry.registerComponent({
 **Vue Props API**
 
 This component needs to take exactly one prop named `params`. It will contain an object with the params for the `doc-include`.
+
 ```js
 props: {
   params: {
@@ -188,6 +194,7 @@ props: {
 **Notification API**
 
 The component needs to emit a CustomEvent to tell Livingdocs when the params have changed. You can do this in a change event handler for example:
+
 ```js
 const event = new CustomEvent('update:params', {
   detail: this.paramsDraft,
@@ -196,7 +203,6 @@ const event = new CustomEvent('update:params', {
 this.$el.dispatchEvent(event)
 ```
 
-
 ### Document List Card Extension
 
 A `liDocumentListCardExtension` registers a Vue component that can be configured to be displayed on `liDocumentListCard` dashboard cards.
@@ -204,6 +210,7 @@ A `liDocumentListCardExtension` registers a Vue component that can be configured
 **Vue Props API**
 
 These are the `props` which are provided to your Vue component:
+
 ```js
 inject: ['authedHttp'], // authed axios client e.g. to call custom livingdocs server endpoints
 props: {
@@ -212,7 +219,9 @@ props: {
   }
 },
 ```
+
 The `options` object looks like this:
+
 ```js
 {
   column: '', // either empty (when in search column) or 'inbox', 'published', 'inline-list-edit`

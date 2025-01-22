@@ -108,7 +108,7 @@ const documentVersion = {
 
 There are two options to access a metadata property:
 
-###  Get a single Metadata property
+### Get a single Metadata property
 
 ```js
 const title = documentVersion.metadata.title
@@ -128,7 +128,6 @@ if ('myCustomField' in documentVersion.metadata) {
   // ...
 }
 ```
-
 
 ### Get all Metadata properties
 

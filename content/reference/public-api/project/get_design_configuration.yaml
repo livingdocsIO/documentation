@@ -14,9 +14,9 @@ parameters:
   - name: :designVersion
     type: string
     required: false
-    notes: "Optional design version. Will take the current design version of a channel if none is passed."
+    notes: 'Optional design version. Will take the current design version of a channel if none is passed.'
 responses:
-  - code: "200"
+  - code: '200'
     body: |
       {
         "name": "p:1:1",

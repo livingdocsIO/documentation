@@ -19,7 +19,7 @@ parameters:
       Example 1: A page with a category `/news` can be found with `?path=/news.html`.  
       Example 2: A document with id 10, with category `/news` and a slug `hello` can be found with `?path=/magazin/hello-10.html'`.
 responses:
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/routing/resolve?path=/correct-path/my-article-173.html
     body: |
       [
@@ -31,7 +31,7 @@ responses:
           }
         }
       ]
-  - code: "301"
+  - code: '301'
     endpoint: /api/v1/routing/resolve?path=/incorrect-path/slug-with-correct-id-77.html
     body: |
       [
@@ -43,14 +43,14 @@ responses:
           }
         }
       ]
-  - code: "404"
+  - code: '404'
     endpoint: /api/v1/routing/resolve?path=/does/not/exist
     body: |
       {
         "status": 404,
         "error": "Not Found"
       }
-  - code: "410"
+  - code: '410'
     endpoint: /api/v1/routing/resolve?path=/unpublished-document-123.html
     body: |
       [

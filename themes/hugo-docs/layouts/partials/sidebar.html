@@ -1,7 +1,12 @@
-<aside class="page__navigation" id="sidebar">
+<aside
+  class="page__navigation"
+  id="sidebar"
+>
   <nav>
     <ul class="topics">
-      <li class="topic{{ if (eq .CurrentSection .Site.Home )}} active{{ end }}"><a href="{{ .Site.Home.RelPermalink }}">Introduction</a></li>
+      <li class="topic{{ if (eq .CurrentSection .Site.Home ) }}active{{ end }}">
+        <a href="{{ .Site.Home.RelPermalink }}">Introduction</a>
+      </li>
     </ul>
   </nav>
 
@@ -15,7 +20,7 @@
     // We always restore the scroll position right after
     // the menu is loaded to prevent flickering
     const sidebar = document.getElementById('sidebar')
-    if(sessionStorage.menuScrollPosition) {
+    if (sessionStorage.menuScrollPosition) {
       sidebar.scrollTop = sessionStorage.getItem('menuScrollPosition')
     }
 

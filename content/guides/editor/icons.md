@@ -17,7 +17,6 @@ Icons are widely used and supported in the editor.
 
 In every case mentioned before, you can set an icon of the supported [li-icon collection](https://github.com/livingdocsIO/livingdocs-editor/blob/master/server/li_icon.paths.txt). If your icon is not supported, you can [register a material design icon](#register-a-material-design-icon).
 
-
 ## Icon and Placeholder Collections
 
 Livingdocs provides some icon collections, which you can use in your downstream.

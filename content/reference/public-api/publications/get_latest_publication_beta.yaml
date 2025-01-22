@@ -8,7 +8,7 @@ description: |
   - renditions
   - references
 
-  Advantages:
+  ##### Advantages
   - Be able to cache the response, because it only changes on a republish (does not contain resolved refs)
   - Useful for a pull architecture
   - (deprecated) Supports the Render Pipeline with it's Renditions
@@ -30,11 +30,11 @@ parameters:
   - name: :documentId
     type: integer
     required: true
-    notes: ""
+    notes: ''
   - name: ?fields
     type: string
     required: false
-    notes: "Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content` (no renditions)."
+    notes: 'Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content` (no renditions).'
   - name: ?renditions
     type: string
     required: false
@@ -64,7 +64,7 @@ parameters:
       Default: `{"dateTime": new Date()}`  
       Example: `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`
 responses:
-  - code: "200"
+  - code: '200'
     name: OK
     endpoint: /api/beta/documents/:documentId/latestPublication
     body: |

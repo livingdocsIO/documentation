@@ -11,6 +11,7 @@ The Project Seeding API provides a simple way to programmatically seed projects.
 ## Configuration
 
 Example: `seeding.js`
+
 ```js
 {
   users: [
@@ -118,12 +119,14 @@ Example: `seeding.js`
 ### Users
 
 You can define users in two places:
-- In the seeding configuration  under `users`(like in the example above)
+
+- In the seeding configuration under `users`(like in the example above)
 - In the `conf/secrets/local.js` file under `development.users`. This way you can define your own email and password
 
 ### Projects
 
 Project configurations can be of three types:
+
 - Multi-channel Configuration (where only referenced designs can be used)
 - Embedded design
 - Referenced design
@@ -147,7 +150,6 @@ Project configurations can be of three types:
 
 Secret values for usage inside a project. Example usage may be for API secrets of external services.
 
-
 ## Usage
 
 You can register an initialized hook.
@@ -156,19 +158,20 @@ Example:
 
 ```js
 // Setup Default Projects
-  liServer.registerInitializedHook(async function initSeeding () {
-    const tasksApi = liServer.features.api('li-tasks')
+liServer.registerInitializedHook(async function initSeeding() {
+  const tasksApi = liServer.features.api('li-tasks')
 
-    const defaultSeedingConfig = require('./seeding')
-    try {
-      // if 'useDevUsers' is true the users will be taken from the local.js file.
-      // 'file' is used only for logging purposes.
-      await tasksApi.setupProjects(defaultSeedingConfig, {
-        useDevUsers: false, file: './example/seeding.js'
-      })
-    } catch (err) {
-      // continue server setup in case of an error
-      liServer.log.error(err)
-    }
-  })
+  const defaultSeedingConfig = require('./seeding')
+  try {
+    // if 'useDevUsers' is true the users will be taken from the local.js file.
+    // 'file' is used only for logging purposes.
+    await tasksApi.setupProjects(defaultSeedingConfig, {
+      useDevUsers: false,
+      file: './example/seeding.js'
+    })
+  } catch (err) {
+    // continue server setup in case of an error
+    liServer.log.error(err)
+  }
+})
 ```

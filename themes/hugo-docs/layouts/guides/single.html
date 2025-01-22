@@ -1,18 +1,26 @@
 {{ partial "html-header.html" . }}
 
+
 <div class="page">
   {{ partial "sidebar.html" . }}
   <main class="page__content">
     <article class="article">
-      <ul id="breadcrumbs" class="breadcrumbs">
+      <ul
+        id="breadcrumbs"
+        class="breadcrumbs"
+      >
         <li><a href="/guides">Guides</a></li>
         {{ if gt (len (split .RelPermalink "/")) 5 }}
-        <li> <a href="{{.CurrentSection.Parent.RelPermalink}}">{{ .CurrentSection.Parent.Title }}</a></li>
+          <li>
+            <a href="{{ .CurrentSection.Parent.RelPermalink }}"
+              >{{ .CurrentSection.Parent.Title }}</a
+            >
+          </li>
         {{ end }}
         {{ if gt (len (split .RelPermalink "/")) 4 }}
-        <li> <a href="{{.CurrentSection.RelPermalink}}">{{ .CurrentSection.Title }}</a></li>
+          <li><a href="{{ .CurrentSection.RelPermalink }}">{{ .CurrentSection.Title }}</a></li>
         {{ end }}
-        <li> <a href="{{.RelPermalink}}">{{ .Title }}</a></li>
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       </ul>
 
       <h1 class="article__title">

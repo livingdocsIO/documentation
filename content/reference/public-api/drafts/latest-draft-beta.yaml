@@ -28,7 +28,7 @@ parameters:
   - name: :documentId
     type: integer
     required: true
-    notes: ""
+    notes: ''
   - name: ?renditions
     type: string
     required: false
@@ -55,7 +55,7 @@ parameters:
       Example: `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`
 
 responses:
-  - code: "200"
+  - code: '200'
     name: OK
     body: |
       {

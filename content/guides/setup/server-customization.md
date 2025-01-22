@@ -17,6 +17,7 @@ A custom route can be used to extned your server with additional functionality. 
 The explanations here only refer to customizations that need coding. Other behavior can be customized using the [JSON configuration files]({{< ref "/customising/server-configuration" >}}).
 
 In the server you will normally have an `app/server.js` file add new features. The content looks something like this:
+
 ```js
 const config = require('../conf')
 // require the core server that you installed via npm
@@ -35,7 +36,7 @@ module.exports = liServer
 A custom route is normally put in a separate folder under `app` and has an `index.js` file with the following structure.
 
 ```js
-module.exports = function customRoute (liServer) {
+module.exports = function customRoute(liServer) {
   // get configuration options that you might have under this feature
   const featureConfig = liServer.config.get('featureName')
 
@@ -49,7 +50,7 @@ module.exports = function customRoute (liServer) {
   return {
     method: 'get',
     prefix: '/daily-planet',
-    path: '/resource',
+    path: '/resource'
     // additional config options
   }
 }

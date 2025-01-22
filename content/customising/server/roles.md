@@ -11,14 +11,16 @@ Roles provide an easy way to scale out your Livingdocs Server instances when acc
 This configuration allows developers to deploy new Server instances with read only permission.
 
 At the moment, there are 3 valid roles available: `write`, `worker` and an implicit read-only role.
- - `write` enables the mutating api endpoints when set.
- - `worker` sets the enableConsumers of internal Server features.
- - read-only: If roles config is set empty `roles: []` then this is a ready-only instance (usually for deliveries)
+
+- `write` enables the mutating api endpoints when set.
+- `worker` sets the enableConsumers of internal Server features.
+- read-only: If roles config is set empty `roles: []` then this is a ready-only instance (usually for deliveries)
 
 We recommend one of the following configurations:
- - one instance with `roles: ['write', 'worker']` (default)
- - for reliability sensitive setups deploy two instances, one with `roles: 'write'` and another instance with `roles: 'worker'`
- - one instance with `roles: ['write', 'worker']` and multiple instances with `roles: []` to scale out deliveries
+
+- one instance with `roles: ['write', 'worker']` (default)
+- for reliability sensitive setups deploy two instances, one with `roles: 'write'` and another instance with `roles: 'worker'`
+- one instance with `roles: ['write', 'worker']` and multiple instances with `roles: []` to scale out deliveries
 
 All possible combinations per use case, can be seen below:
 

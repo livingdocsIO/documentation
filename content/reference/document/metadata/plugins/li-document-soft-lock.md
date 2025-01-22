@@ -4,7 +4,7 @@ type: metadata-plugins
 menus:
   reference:
     parent: Metadata Plugins List
-summary: Enables a user to temporarily lock a document while editing. 
+summary: Enables a user to temporarily lock a document while editing.
 support:
   document: true
   media: false
@@ -16,7 +16,7 @@ support:
   searchIndexing: false
   systemMetadata: true
   planningSystem: false
-description: Enables a user to temporarily lock a document while editing. 
+description: Enables a user to temporarily lock a document while editing.
 defaultUI: None
 storageFormat: |
   {

@@ -34,11 +34,11 @@ parameters:
   - name: :documentId
     type: integer
     required: true
-    notes: ""
+    notes: ''
   - name: ?fields
     type: string
     required: false
-    notes: "Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content` (no renditions)."
+    notes: 'Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content` (no renditions).'
   - name: ?renditions
     type: string
     required: false
@@ -68,7 +68,7 @@ parameters:
       Default: `{"dateTime": new Date()}`  
       Example: `?componentConditions={"dateTime":"2024-02-14T17:25:10.391Z"}`
 responses:
-  - code: "200"
+  - code: '200'
     body: |
       {
         "systemdata": {

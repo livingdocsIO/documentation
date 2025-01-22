@@ -9,7 +9,6 @@
   }
 
   &__content {
-
     a {
       &:not([class]) {
         @include text-link();

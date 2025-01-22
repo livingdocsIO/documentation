@@ -4,7 +4,7 @@ type: metadata-plugins
 menus:
   reference:
     parent: Metadata Plugins List
-summary: 
+summary:
 support:
   document: true
   media: true

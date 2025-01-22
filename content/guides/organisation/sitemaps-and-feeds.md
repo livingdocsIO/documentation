@@ -13,17 +13,22 @@ The `livingdocs-server` ships with a set of APIs to automatically create sitemap
 
 This guide will focus on the setup of Sitemaps within a delivery and the downstream customizations that need to be done to set up Feeds.
 
-__We provide a running minimal delivery, in the "Live Delivery Setup" section__
+**We provide a running minimal delivery, in the "Live Delivery Setup" section**
+
 ## **Robots.txt**
+
 You will need to link the Sitemap and Feed in the robots.txt of your delivery
+
 ```
 Sitemap: https://www.livingdocs.io/sitemap.xml
 Sitemap: https://www.livingdocs.io/feed.xml
 ```
 
 ## **Sitemap index**
+
 The Sitemap index points to individual months, that contain all the actual entries of a Sitemap.
 Several Sitemaps for various content types could be created if they are individually linked in the robots.txt file.
+
 ## **Sitemap entries**
 
 The Sitemap entries follow the schema `sitemap.YYYY-MM.xml` or if it has more than the suggested limit of entries it will be split into a separate file such as `sitemap.YYYY-MM.2.xml`. We suggest keeping the limits the Livingdocs API provides.
@@ -54,7 +59,7 @@ liServer.registerInitializedHook(function () {
     path: '/feed',
     auth: 'public-api:read',
 
-    async action (req, res) {
+    async action(req, res) {
       const {channelId, projectId} = req.verifiedToken
       const feed = await feedsApi.getFeed({channelId, projectId})
       return res.success(feed)
@@ -67,7 +72,7 @@ liServer.registerInitializedHook(function () {
 // Setup the Feature - ./feeds/feeds_api.js
 module.exports = ({searchManager, sitemapsApi}) => {
   return {
-    async getFeed ({projectId, channelId}) {
+    async getFeed({projectId, channelId}) {
       // gather the latest published documents with the 'article' contentType
       const res = await searchManager.searchPublications({
         projectId: projectId,
@@ -139,11 +144,12 @@ Note: This still result still needs to be consumed in the delivery, similar to t
 </rss>
 ```
 
-
 ## **Live Delivery Setup**
+
 This live demo of a minimal delivery runs against a real Livingdocs instance.
 
 You can explore the following routes in the example
+
 - `/robots.txt`
 - `/sitemap.xml`
 - `/sitemap.2021-06.xml`

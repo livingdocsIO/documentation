@@ -3,7 +3,7 @@ description: |
   Common error responses you can expect when working with the public Api.
 
 responses:
-  - code: "401"
+  - code: '401'
     collapsible: false
     body: |
       {
@@ -13,7 +13,7 @@ responses:
           "access_token": "The access token expired."
         }
       }
-  - code: "403"
+  - code: '403'
     collapsible: false
     body: |
       {
@@ -23,7 +23,7 @@ responses:
           "access_token": "The request requires higher privileges"
         }
       }
-  - code: "404"
+  - code: '404'
     collapsible: false
     body: |
       {

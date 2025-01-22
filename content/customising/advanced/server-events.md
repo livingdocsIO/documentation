@@ -9,10 +9,10 @@ menus:
 
 The events API is Livingdocs's implementation of the publish/subscribe pattern. This allows you to send messages back and forth between features or to listen for events from the core features. Events are fire and forget thus it is possible that some calls might be lost (e.g. when there is a connection outage). If you need reliable transaction-like hooks, see [the hooks feature]({{< ref "/customising/server/server-hooks" >}}).
 
-
 ## Requiring events from the li-server
 
 Example:
+
 ```js
 const config = require('../conf')
 const liServer = require('@livingdocs/server')(config)
@@ -75,6 +75,7 @@ The events.subscribers() method lists all the listeners of an event.
 The following lists all events, before the comma, the name of the event and behind the comma, the parameters received by a listener.
 
 - user
+
   - user.create, `(eventName, {user})`
   - user.delete, `(eventName, {user})`
   - user.password.request, `(eventName, {userId, identityId})`
@@ -87,6 +88,7 @@ The following lists all events, before the comma, the name of the event and behi
   - user.newsletter, `(eventName, {newsletter, userId, email, displayName})`
 
 - document
+
   - document.update, `(eventName, {user, documentVersion})`
   - document.delete, `(eventName, {user, documentVersion})`
   - document.create, `(eventName, {user, documentVersion})` <em>Note: this event is also triggered by document transforms</em>
@@ -102,21 +104,25 @@ The following lists all events, before the comma, the name of the event and behi
   - document.build.draft.userChoice `(eventName, {user, documentVersion, reportId, deliveryHandle, selectedUserChoice})` ({{< added-in "release-2024-07" >}})
 
 - publication
+
   - publication.update, `(eventName, {user, documentVersion})` ({{< added-in "release-2024-03" >}})
   - publication.updated, `(eventName, {user, documentVersion})` ({{< deprecated-in "release-2024-03" >}})
 
 - document_list
+
   - document_list.delete, `(eventName, {user, documentList})`
   - document_list.publish, `(eventName, {user, documentList})`
   - document_list.update, `(eventName), {user, documentList}`
   - document_list.create, `(eventName, {user, documentList})`
 
 - migration
+
   - migration.prepare, `(eventName, {migration})`
   - migration.accept, `(eventName, {migration})`
   - migration.cancel, `(eventName, {migration})`
 
 - mediaLibraryEntry
+
   - mediaLibraryEntry.create, `(eventName, {userId, projectId, mediaLibraryEntry})`
   - mediaLibraryEntry.update, `(eventName, {userId, projectId, id, changes})`
   - mediaLibraryEntry.archive, `(eventName, {userId, projectId, id})`
@@ -125,6 +131,7 @@ The following lists all events, before the comma, the name of the event and behi
   - mediaLibraryEntry.invalid, `(eventName, {userId, projectId, id})` ({{< added-in "release-2024-03" >}})
 
 - project
+
   - project.create, `(eventName, {project})`
   - project.update, `(eventName, {project})`
 

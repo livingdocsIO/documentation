@@ -86,11 +86,11 @@ metadata: [
               it: 'Economia'
             },
             value: 'economy'
-          },
+          }
         ]
       }
     }
-  },
+  }
 ]
 ```
 

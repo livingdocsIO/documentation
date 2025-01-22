@@ -14,6 +14,7 @@ Instead of having a template for an entire article or a page, Livingdocs defines
 A Livingdocs document is a structured JSON tree representation. It holds a (nestable) list of components and within each component the data stored in it such as text or image data.
 
 A simple Livingdocs document JSON defining a header and a paragraph:
+
 ```js
 {
   content: [
@@ -44,6 +45,7 @@ A simple Livingdocs document JSON defining a header and a paragraph:
 A Livingdoc references a Livingdocs design which again is a JSON holding the definition how to use the component list to stitch together HTML templates to build a document.
 
 A simple Livingdocs design defining the two components used in the document above:
+
 ```js
 {
   designSettings: {
@@ -79,6 +81,7 @@ To learn more about designs, read our [guide]({{< ref "/guides/documents/documen
 ### Rendering
 
 Livingdocs uses a structured JSON (see above) as its document format. There are 2 kinds of rendering:
+
 - a reactive renderer that renders the JSON to HTML whenever a change occurs. This renderer is used in the editor
 - a scalable and fast bulk renderer with its own DOM implementation that is used to render documents for delivery over the public API and ultimately rendering of frontend pages
 

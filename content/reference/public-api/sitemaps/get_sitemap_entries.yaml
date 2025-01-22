@@ -35,7 +35,7 @@ parameters:
     required: false
     notes: Optional sitemap entry page size. Default 20000
 responses:
-  - code: "200"
+  - code: '200'
     format: xml
     body: |
       <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

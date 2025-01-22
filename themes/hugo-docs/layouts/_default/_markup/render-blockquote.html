@@ -2,7 +2,11 @@
   <blockquote class="info info-{{ .AlertType }}">
     <p class="info-heading">
       {{ $info := resources.Get (printf "svg/%s.svg" .AlertType) | fingerprint }}
-      <img src="{{ $info.RelPermalink }}" alt="" class="info__icon">
+      <img
+        src="{{ $info.RelPermalink }}"
+        alt=""
+        class="info__icon"
+      />
       {{ with .AlertTitle }}
         {{ . }}
       {{ else }}

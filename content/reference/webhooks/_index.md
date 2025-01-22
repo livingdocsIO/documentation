@@ -114,9 +114,7 @@ events: [
   {
     name: 'document.publish',
     conditions: {
-      contentTypes: [
-        'regular'
-      ]
+      contentTypes: ['regular']
     }
   }
 ]
@@ -146,9 +144,7 @@ events: [
   {
     name: 'document.build',
     conditions: {
-      deliveryHandles: [
-        'web'
-      ]
+      deliveryHandles: ['web']
     }
   }
 ]
@@ -222,9 +218,7 @@ events: [
   {
     name: 'document.update',
     changeFilter: {
-      metadataProperties: [
-        'title'
-      ]
+      metadataProperties: ['title']
     }
   }
 ]
@@ -251,6 +245,7 @@ Add a new Webhook by clicking "Add Webhook" or edit an existing one by clicking 
 Here is an example payload sent to your url set in the Webhook configuration.
 
 ### `document.create`
+
 ```json
 {
   "event": "document.create",
@@ -266,6 +261,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `document.delete`
+
 ```json
 {
   "event": "document.delete",
@@ -282,6 +278,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `document.publish`
+
 ```json
 {
   "event": "document.publish",
@@ -308,6 +305,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `document.unpublish`
+
 ```json
 {
   "event": "document.unpublish",
@@ -333,6 +331,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `document.update`
+
 ```json
 {
   "event": "document.update",
@@ -341,9 +340,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
   "projectHandle": "service",
   "webhookHandle": "handle",
   "documentId": 179,
-  "metadataPropertyChanges": [
-    "title"
-  ],
+  "metadataPropertyChanges": ["title"],
   "actor": {
     "type": "user"
   }
@@ -351,6 +348,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `document.build`
+
 ```json
 {
   "event": "document.build",
@@ -369,6 +367,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `document.build.abort`
+
 ```json
 {
   "event": "document.build.abort",
@@ -387,6 +386,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `document.build.userChoice`
+
 ```json
 {
   "event": "document.build.userChoice",
@@ -409,6 +409,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `document.build.draft`
+
 ```json
 {
   "event": "document.build.draft",
@@ -426,6 +427,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `document.build.draft.abort`
+
 ```json
 {
   "event": "document.build.draft.abort",
@@ -443,6 +445,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `document.build.draft.userChoice`
+
 ```json
 {
   "event": "document.build.draft.userChoice",
@@ -464,6 +467,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `publication.update`
+
 ```json
 {
   "event": "publication.update",
@@ -482,6 +486,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `mediaLibraryEntry.create`
+
 ```json
 {
   "event": "mediaLibraryEntry.create",
@@ -497,6 +502,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `mediaLibraryEntry.update`
+
 ```json
 {
   "event": "mediaLibraryEntry.update",
@@ -512,6 +518,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `mediaLibraryEntry.archive`
+
 ```json
 {
   "event": "mediaLibraryEntry.archive",
@@ -527,6 +534,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `mediaLibraryEntry.revoke`
+
 ```json
 {
   "event": "mediaLibraryEntry.revoke",
@@ -542,6 +550,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `mediaLibraryEntry.active`
+
 ```json
 {
   "event": "mediaLibraryEntry.active",
@@ -559,6 +568,7 @@ Here is an example payload sent to your url set in the Webhook configuration.
 ```
 
 ### `mediaLibraryEntry.invalid`
+
 ```json
 {
   "event": "mediaLibraryEntry.invalid",

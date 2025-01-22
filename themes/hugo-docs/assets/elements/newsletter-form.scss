@@ -40,7 +40,7 @@
     margin-right: 0;
   }
 
-  @include media-query (tablet) {
+  @include media-query(tablet) {
     &__row {
       display: flex;
       margin: 0 auto;

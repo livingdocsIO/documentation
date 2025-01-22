@@ -3,6 +3,7 @@ title: Copy Documents Between Projects
 description: Enable copying of selected contentTypes to another project
 weight: 3
 ---
+
 ## Overview
 
 This feature allows you to drag-and-drop a document from one project to another. It is limited to projects on the same server and in the same environment. It is best suited to copying documents between projects with the same design.

@@ -11,7 +11,7 @@ The telemetry stack will assist you in debugging your Livingdocs server instance
 
 Follow the setup instructions in the [livingdocsIO/monitoring](https://github.com/livingdocsIO/monitoring) repository. It should be as simple as cloning the repository and running `docker-compose up`.
 
-If the Livingdocs server is running in a Docker container on the same server then everything *should* just work by adding the following to the [server configuration]({{< ref "/customising/server-configuration" >}}) file:
+If the Livingdocs server is running in a Docker container on the same server then everything _should_ just work by adding the following to the [server configuration]({{< ref "/customising/server-configuration" >}}) file:
 
 ```js
 {
@@ -31,6 +31,7 @@ If you're running this for local development purposes then an additional step is
 ```sh
 logs__pretty=false npm run watch | pino-socket -p 4545 | pino-pretty --ignore ns --translateTime 'HH:MM:ss' --messageFormat '{ns} > {msg}'
 ```
+
 > Note: Make sure you change `npm run watch` to the command you want to use to start the server.
 
 On some systems it might not be possible for Prometheus to scrape the metrics endpoint of the local server too. To check if it's working by default you can go to the [Prometheus Targets](http://localhost:3001/targets) page and see if "livingdocs-server" is up or down. If it's up then you're done! If it's down then you'll need to use the opentelemetry-collector target instead. To enable it update your server configuration with the following:
@@ -108,10 +109,10 @@ Another way to create dashboard graphs is to use the Prometheus datasource. Add 
 
 The [livingdocsIO/monitoring](https://github.com/livingdocsIO/monitoring) repository runs a number of containers, and while Grafana should contain all of the information you require, there are some additional user interfaces exposed that can be accessed by following the "[Local UI]" links listed in the container summary below:
 
-* **cAdvisor** [[Docs](https://github.com/google/cadvisor)] [[Local UI](http://localhost:9081/)] - Provides resource usage and performance metrics of Docker containers to Prometheus
-* **Grafana** [[Docs](https://grafana.com/docs/grafana/latest/)] [[Local UI](http://localhost:3000/)] - UI to explore logs and metrics using queries, charts, and alerts
-* **Jaeger** [[Docs](https://www.jaegertracing.io/docs/)] [[Local UI](http://localhost:16686/)] - Provides tracing data which is linked to each incoming Livingdocs server request
-* **Loki** [[Docs](https://grafana.com/docs/loki/latest/)] - Ingests logs which can be viewed and queried from within Grafana
-* **OpenTelemetry Collector** [[Docs](https://opentelemetry.io/docs/collector/)] - Collects metrics data from Livingdocs server and exports the data to Prometheus
-* **Prometheus** [[Docs](https://prometheus.io/docs/)] [[Local UI](http://localhost:3001/)] - A monitoring toolkit for timeseries based metrics
-* **Vector** [[Docs](https://vector.dev/docs/)] - Transforms Docker logs and send them to Loki, as well as collecting logs from local Node.js processes if required
+- **cAdvisor** [[Docs](https://github.com/google/cadvisor)] [[Local UI](http://localhost:9081/)] - Provides resource usage and performance metrics of Docker containers to Prometheus
+- **Grafana** [[Docs](https://grafana.com/docs/grafana/latest/)] [[Local UI](http://localhost:3000/)] - UI to explore logs and metrics using queries, charts, and alerts
+- **Jaeger** [[Docs](https://www.jaegertracing.io/docs/)] [[Local UI](http://localhost:16686/)] - Provides tracing data which is linked to each incoming Livingdocs server request
+- **Loki** [[Docs](https://grafana.com/docs/loki/latest/)] - Ingests logs which can be viewed and queried from within Grafana
+- **OpenTelemetry Collector** [[Docs](https://opentelemetry.io/docs/collector/)] - Collects metrics data from Livingdocs server and exports the data to Prometheus
+- **Prometheus** [[Docs](https://prometheus.io/docs/)] [[Local UI](http://localhost:3001/)] - A monitoring toolkit for timeseries based metrics
+- **Vector** [[Docs](https://vector.dev/docs/)] - Transforms Docker logs and send them to Loki, as well as collecting logs from local Node.js processes if required

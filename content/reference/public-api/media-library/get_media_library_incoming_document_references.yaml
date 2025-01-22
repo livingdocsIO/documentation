@@ -18,7 +18,7 @@ parameters:
   - name: :mediaId
     type: string
     required: true
-    notes: ""
+    notes: ''
   - name: ?limit
     type: integer
     required: false
@@ -28,7 +28,7 @@ parameters:
     required: false
     notes: An offset into the query. Useful when getting more than 100 results (pagination).
 responses:
-  - code: "200"
+  - code: '200'
     body: |
       [
         {

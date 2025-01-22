@@ -16,7 +16,6 @@ We basically configure a mapping that translates a subset of the **_current docu
 
 **Please note**: This documentation assumes that you have a [channel]({{< ref "/reference/project-config" >}}) and a [design]({{< ref "/guides/documents/document-design" >}}) and at least one [content type]({{< ref "/reference/project-config/content-types" >}}) properly set up.
 
-
 ## Minimalist example
 
 ```js
@@ -46,8 +45,7 @@ teaserPreview: {
 
 This roughly translates into the following:
 
-> Render component `'title'` into a viewport using render settings `'normal'` with the directive `'title'` prefilled  with what was found under `'metadata.title'` on the source object.
-
+> Render component `'title'` into a viewport using render settings `'normal'` with the directive `'title'` prefilled with what was found under `'metadata.title'` on the source object.
 
 ## Source object schema
 
@@ -153,6 +151,7 @@ teaserPreview: {
 ### Example 1
 
 In a design, with a teaser component `teaser`:
+
 ```html
 <div class="teaser">
     <h1 doc-editable="title"></h1>
@@ -204,9 +203,12 @@ contentTypes: [
 ### Example 2
 
 In a design, with a teaser component `embed-teaser`:
+
 ```html
-<div class="embed-teaser" doc-include="embed">
-</div>
+<div
+  class="embed-teaser"
+  doc-include="embed"
+></div>
 ```
 
 Extend a [content-type config]({{< ref "/reference/project-config/content-types.md" >}}):

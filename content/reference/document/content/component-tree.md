@@ -7,7 +7,6 @@ menus:
     name: Component Tree
 ---
 
-
 A component tree is a tree of [components]({{< ref "./component-model" >}}). Just like the DOM is a tree of DOM nodes.
 
 Schematic example of a `componentTree`:
@@ -46,29 +45,28 @@ componentTree.append(title)
 ```js
 // Traverse through each component
 componentTree.each((component) => {
-    // your code
+  // your code
 })
 
 // Traverse through each container
 componentTree.eachContainer((container) => {
-    // your code
+  // your code
 })
 
 // Traverse through each component and container
 componentTree.all((componentOrContainer) => {
-    // your code
+  // your code
 })
 
 // Find all components of a type
 const subtitles = componentTree.find('subtitle')
 if (subtitles.length) {
-    const subtitleComponent = subtitles[0]
+  const subtitleComponent = subtitles[0]
 }
 
 // Get the first component in a document
 const firstComponent = componentTree.first()
 ```
-
 
 #### Serialize
 
@@ -78,7 +76,6 @@ componentTree.toJson()
 
 This method is called by `Livingdoc.toJson()` internally.
 
-
 #### Development Helpers
 
 ```js
@@ -86,11 +83,9 @@ This method is called by `Livingdoc.toJson()` internally.
 componentTree.print()
 ```
 
-
 ## Change Events
 
 A `componentTree` issues events whenever a change happens. You can subscribe to those events to get notified of changes. Internally views listen to the `componentTree` for changes to update the DOM.
-
 
 - **componentAdded**
   Get notified when a component was added

@@ -3,6 +3,7 @@ title: Publish Control Basics
 description: Publish, unpublish, scheduled publish, scheduled unpublish documents
 weight: 1
 ---
+
 ## Overview
 
 The «Publish Control» feature allows users to manage the publication and distribution flow of documents.

@@ -12,6 +12,7 @@ Livingdocs is often used as an editor for both online and print publications in 
   "Exporter from Livingdocs to WoodWing Studio" >}}
 
 Sometimes, a simple export is not enough for the editors. For this use case we have built-in support for:
+
 - choosing a layout (e.g. InDesign template) from the print system
 - previewing that layout in the preview window next to a Livingdocs article (actual print system rendering)
 
@@ -36,6 +37,7 @@ The presented setup assumes a workflow with different content-types for online a
 In order to follow this example we advise you to use our [Service](https://edit.livingdocs.io) with the pre-configured Sandbox. The example can of course be applied to any Livingdocs project with a configurable project config.
 First of all, use the [CLI]({{< ref "/reference/cli/managing-project-configs" >}}) to download the project config of your service project to your local computer and open it with a code editor of your choice.
 In our service Sandbox we already have a content-type for an online article. It has the handle `regular`. So the first thing we need to do is to add a content-type for the print article. It will look as follows:
+
 ```js
 {
   handle: 'woodwing',
@@ -107,6 +109,7 @@ In our service Sandbox we already have a content-type for an online article. It 
 ```
 
 A few things to note here:
+
 - we set the option `print.enabled` to true. This activates the print features (layout selection, print preview) for this content-type.
 - the handle in this case is `woodwing`. You are free to name it whatever you want, but our service uses a pre-configuration with a test installation of the WoodWing Studio connector (DO NOT USE THIS PRODUCTIVELY!).
 - we have a `components` section and a `componentMap` section. Each component needs a respective entry in the component map in order to be exported to the print system. We only showed a subset of the supported components here, for a productive setup you want to discuss this with your print system provider.
@@ -121,6 +124,7 @@ Once you require the new content-type in our project configs index file and publ
 In order to copy a print article from an existing online article, we will use the copy feature of Livingdocs.
 
 In the `settings` section of your project config add a config as follows:
+
 ```js
 copy: [
   {
@@ -192,6 +196,7 @@ copy: [
 ```
 
 A few things to note:
+
 - we copy from the content-type `regular` to the content-type `woodwing`, this is our online to print copy configuration
 - again we only apply the conversion to a subset of the available components for demo purposes. For more details on the available conversion rules see [here]({{< ref "/guides/editor/declarative-document-copy" >}})
 
@@ -210,6 +215,7 @@ Livingdocs itself knows nothing about a print layouting system. All it does is r
 Most likely you will implement a middleware in between Livingdocs and your print system that takes the requests from Livingdocs and transforms them to requests of your print system, delivering back the relevant information.
 
 To sum up:
+
 - Livingdocs sends the requests. Your integration needs to respond to those. You never need to send a request to Livingdocs on your own initiative.
 - The data format is (currently) XML
 - You need to provide Livingdocs with the relevant print information otherwise Livingdocs can not perform a reliable job informing about the layouting system
@@ -238,11 +244,13 @@ Before a print document is created and whenever a user wants to change the layou
 Livingdocs sends the following request to get the layouts.
 
 To:
+
 ```http
 POST /support
 ```
 
 Payload:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
@@ -262,6 +270,7 @@ The authentication sends you a username and a password that you can use to authe
 The layout part queries for the requested publication and the date of this publication (e.g. tomorrow's newspaper). The date will be in the format "dd.mm.YYYY", e.g. "02.09.2016".
 
 Your response should look as follows:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
@@ -276,6 +285,7 @@ Your response should look as follows:
 ```
 
 Each line represents one layout, i.e., one placed and sized box in the InDesign file. The information you need to provide are:
+
 - `department`, the organisational department of the newspaper, e.g. 'International'
 - `group`, namespacing in your layout
 - `id`, a unique id with which you can access the layout, Livingdocs will store this and send it to the middleware in subsequent requests
@@ -288,18 +298,20 @@ Each line represents one layout, i.e., one placed and sized box in the InDesign 
 
 {{< img src="print-layout.png" alt="Choose a print layout in Livingdocs" >}}
 
-*The screenshot above shows how to choose a print layout in the Livingdocs user interface*
+_The screenshot above shows how to choose a print layout in the Livingdocs user interface_
 
 #### Templates
 
 Templates are basically the same as layouts, except that they are for text-for-layout workflows. Templates are pre-defined boxes that are not yet placed on any publication or edition but are common blueprints, e.g. a one-column text. Livingdocs sends the following request to get the templates.
 
 To:
+
 ```http
 POST /support
 ```
 
 Payload:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
@@ -317,6 +329,7 @@ Payload:
 Again, we are using an authentication block. The second block defines the publication name for which you want to get the templates. Note that you don't get a specific publication date since templates are independent of any specific edition. The `allowedOnCms` parameter will always be `true` for calls from Livingdocs.
 
 Your response should look as follows:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
@@ -331,6 +344,7 @@ Your response should look as follows:
 ```
 
 Each line represents one template, i.e., one generic box that can be used in InDesign. The information you need to provide are:
+
 - `department`, the organisational department of the newspaper, e.g. 'International'
 - `columns`, the number of columns that this template has
 - `group`, namespacing in your template
@@ -340,18 +354,20 @@ Each line represents one template, i.e., one generic box that can be used in InD
 
 {{< img src="print-template.png" alt="Choose a print template in Livingdocs" >}}
 
-*The screenshot above shows how to choose a print template in the Livingdocs user interface*
+_The screenshot above shows how to choose a print template in the Livingdocs user interface_
 
 #### Publication Dates
 
 Publication Dates are used for the layouts. They return the dates for which, in a certain publication, layouts already exist, i.e. an InDesign file was prepared for the edition. Livingdocs sends the following request to get the available publication dates (editions):
 
 To:
+
 ```http
 POST /support
 ```
 
 Payload:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
@@ -370,6 +386,7 @@ Payload:
 The authentication block is equivalent to the other requests. The second block defines for which publication you want to get the prepared edition dates and in which time frame (in the example between the 3rd and 23rd of September).
 
 Your response should look as follows:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
@@ -384,6 +401,7 @@ Your response should look as follows:
 ```
 
 Each line represents one prepared edition's date. The information you need to provide are:
+
 - `date`, the date for which this edition is prepared
 - `publication`, the publication to which the prepared edition belongs
 - `isToday`, a boolean indicating the current edition, NOTE: the current edition is normally tomorrow's newspaper
@@ -394,11 +412,13 @@ This is really the gist of the Livingdocs Print API. In the preview response you
 Livingdocs will call your middleware with the following request.
 
 To:
+
 ```http
 /getPreview
 ```
 
 Payload:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
@@ -421,12 +441,14 @@ Payload:
 ```
 
 The authentication block is equivalent to the other requests. The `getPreview` block first defines the layout or template id for which a preview is requested (NOTE: you previously sent this to Livingdocs in the template or layout response, see above) and the type of preview that is requested. The type can be:
+
 - `articleJpeg`, gets the preview in text and image form (both)
 - `articleText`, gets only the textual preview
 - `pageJpeg`, gets the preview for the whole page (Seite) in which this template is placed, both textual and image
 - `pageText`, gets the preview for the whole page (Seite) in which this template is placed, only textual
 
 Inside the `getPreview` block, Livingdocs sends you an `article` block. This block defines parts of the article content. Each `content` element has a `type` attribute and in its content, the actual text that the journalist wrote. The types can be configured/extended with your print design (a Livingdocs design specific for print). We provide a standard print design out of the box with the following types:
+
 - headline
 - catchline
 - subtitle
@@ -437,11 +459,13 @@ Inside the `getPreview` block, Livingdocs sends you an `article` block. This blo
 - footnote
 
 Your middleware is now responsible to use the provided data, feed it to your print layouting system and calculate:
+
 - the correct linebreaks
 - the over-and underflow
 - check if the provided content types are correct for the chosen layout (or template)
 
 Your response to Livingdocs should look as follows:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
@@ -503,6 +527,7 @@ Your response to Livingdocs should look as follows:
 ```
 
 The response consists of different `content` blocks that contain `rows`. The `content` blocks define logical components of your layout or templates in InDesign, such as the title or the body text. The `rows` define the textual content represented in rows. Each row defines:
+
 - `id`, identifies the rows within a content block, normally just a counter
 - `debug`, the name of the component in your InDesign layout
 - `justifying`, the justification information, can be `left` or `justify`
@@ -511,31 +536,35 @@ The response consists of different `content` blocks that contain `rows`. The `co
 - `column`, the column in which the row is rendered
 
 If the content contained information that is not present in the layout or template you can notify Livingdocs of this. For example, if Livingdocs sent you an author content element, but the respective layout in InDesign has no match for author, then you can send back a row containing text that matches the following regex:
+
 ```js
-/IM CMS ZUSATZTEXT FÜR (\w+): (.*)/
+const regex = /IM CMS ZUSATZTEXT FÜR (\w+): (.*)/
 ```
+
 If Livingdocs sees this regex in a row it will render a respective message in the print preview. All of those messages should come at the end of the content block.
 
 {{< img src="print-preview-inexisting-component.png" alt="Print Preview for a component that is not in the layout" >}}
 
-*The preview indicating that the component "Untertitel" is not present in this layout*
+_The preview indicating that the component "Untertitel" is not present in this layout_
 
 In addition, if a jpeg preview was requested, you need to send a `previews` block that passes the URL to an image with the jpeg preview.
 
 {{< img src="print-preview.png" alt="The Livingdocs print preview" >}}
 
-*The screenshot above shows the Livingdocs print preview. To the right the journalist writes text in Livingdocs (the request) and to the left the preview from the print system is displayed (your response)*
+_The screenshot above shows the Livingdocs print preview. To the right the journalist writes text in Livingdocs (the request) and to the left the preview from the print system is displayed (your response)_
 
 #### Metadata - department
 
 Before exporting a print article to the print system, the journalist will add some metadata. Currently, the only supported metadata that is requested from the print system is the department (organisational unit within a newspaper). To request the available departments, Livingdocs will send out the following request.
 
 To:
+
 ```http
 /support
 ```
 
 Payload:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
@@ -552,6 +581,7 @@ Payload:
 The authentication block is equivalent to the other requests. The `getDepartments` block simply requests for which publication the departments are requested.
 
 Your middleware should send a response as follows:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
@@ -567,6 +597,7 @@ Your middleware should send a response as follows:
 ```
 
 Each department element has to provide the following attributes:
+
 - `id`, identifier (shorthand) for this department
 - `isParent`, indicator if this is a main or subdepartment
 - `name`, the name shown in Livingdocs for this department
@@ -575,18 +606,20 @@ Each department element has to provide the following attributes:
 
 {{< img src="print-metadata-department.png" alt="The print department selection in the user interface" >}}
 
-*Screenshot of the print department selection in the Livingdocs editor*
+_Screenshot of the print department selection in the Livingdocs editor_
 
 #### Export
 
 Once a journalist is finished with a print article, she will want to export it to the print system. To do this, Livingdocs sends the following request.
 
 To:
+
 ```http
 /export
 ```
 
 Payload:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
@@ -630,6 +663,7 @@ Payload:
 ```
 
 The authentication block is equivalent to the other requests. There are 2 metadata blocks. The first is general, document-related metadata. It contains:
+
 - information about the author, in particular:
   - the full name
   - fields that indicate the royalty
@@ -643,6 +677,7 @@ The authentication block is equivalent to the other requests. There are 2 metada
   - `status`, the status of this article, [see available statuses](#available-statuses)
 
 The second (`livingdocsMetadata`) metadata block contains information that is specific to Livingdocs:
+
 - `channel`, the name of the Livingdocs channel where this article derives from
 - `createdAt`, the timestamp when this article was created
 - `updatedAt`, the timestamp when this article was last update
@@ -654,6 +689,7 @@ Aside of the component-based export, there is also an `html` field where the who
 Your middleware should use all of this information to export the article to the print system. You will not need to send anything back to Livingdocs except for the status of the export (success or failure).
 
 Response:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
@@ -664,17 +700,20 @@ Response:
 #### Lifecycle - Status
 
 The status call bears a lot of importance. When a print article has been written or partly written its status in the print system may update. For example the article might be locked in the print system or it might have gone to the printing press. To know about such status changes, Livingdocs polls your middleware for status updates. Currently, Livingdocs will call `status` for the following actions:
+
 - when a preview is requested, i.e. whenever a user changes something in the text
 - before the user exports the article
 
 Livingdocs will send the following request.
 
 To:
+
 ```http
 /status
 ```
 
 Payload:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
@@ -693,6 +732,7 @@ The authentication block is equivalent to the other requests. The `getStatus` bl
 Your middleware's response should look as follows.
 
 Response:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <articleUpload>
@@ -701,6 +741,7 @@ Response:
 ```
 
 The `getStatus` elements contains the following attributes:
+
 - `isEditable`, tells Livingdocs if this article can still be edited or is locked (it will switch the editor to read-only if you set this field to `false`)
 - `layoutId`, the id of the layout where this article is placed. If the layout id changes in the print system you can set the changed `layoutId` here and Livingdocs will adapt accordingly
 - `livingdocsId`, the Livingdocs id, should match what you got in the request
@@ -709,6 +750,7 @@ The `getStatus` elements contains the following attributes:
 ##### Available statuses
 
 The available statuses values for a print article are:
+
 - `Redigieren`, the article is being edited
 - `Gegenlesen`, the article is being proofread
 - `Umbruch`, the article is in preparation for layouting, it is read-only for the editor

@@ -13,15 +13,23 @@
   <tbody>
     {{ $page := .Site.Home }}
     {{ range sort $.Site.Data.releases "sortId" "desc" }}
-    <tr>
-      <td><a href="{{ ref $page .ref }}">{{ .name }}</a></td>
-      <td> {{ .key }} {{ if isset . "serverVersion"}} ({{ .serverVersion }}) {{ end }}</td>
-      <td> {{ .key }} {{ if isset . "editorVersion"}} ({{ .editorVersion }}) {{ end }}</td>
-      <td style="text-align: center;">{{ if eq .upcoming true}} {{ partial "check-cross" true }} {{ end }}</td>
-      <td style="text-align: center;">{{ if eq .current true}} {{ partial "check-cross" true }} {{ end }}</td>
-      <td style="text-align: center;">{{ if eq .maintained true}} {{ partial "check-cross" true }} {{ end }}</td>
-      <td style="text-align: center;">{{ if eq .legacy true}} {{ partial "check-cross" true }} {{ end }}</td>
-    </tr>
+      <tr>
+        <td><a href="{{ ref $page .ref }}">{{ .name }}</a></td>
+        <td>{{ .key }} {{ if isset . "serverVersion" }}({{ .serverVersion }}){{ end }}</td>
+        <td>{{ .key }} {{ if isset . "editorVersion" }}({{ .editorVersion }}){{ end }}</td>
+        <td style="text-align: center;">
+          {{ if eq .upcoming true }}{{ partial "check-cross" true }}{{ end }}
+        </td>
+        <td style="text-align: center;">
+          {{ if eq .current true }}{{ partial "check-cross" true }}{{ end }}
+        </td>
+        <td style="text-align: center;">
+          {{ if eq .maintained true }}{{ partial "check-cross" true }}{{ end }}
+        </td>
+        <td style="text-align: center;">
+          {{ if eq .legacy true }}{{ partial "check-cross" true }}{{ end }}
+        </td>
+      </tr>
     {{ end }}
   </tbody>
 </table>

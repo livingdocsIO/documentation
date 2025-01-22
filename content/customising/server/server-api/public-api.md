@@ -44,6 +44,7 @@ const documentVersions = await publicApi.getLatestPublications({
 ```
 
 The query allows the following entries:
+
 - `projectId`, mandatory, the projectId (int) for which documents are searched
 - `documentId`, filter by one, multiple or documentId ranges (Supported filters: id.gte, id.gt, id.lte, id.lt)
 - `contentTypes`, array of contentType handles (string) to filter for (OR concatenated)
@@ -53,7 +54,6 @@ The query allows the following entries:
 - `reverse`, order publications in ascending order instead of the default descending order. This is useful if you want to paginate using a time based filter with publishedAt.
 - `limit`, integer of how many results to get, default 10
 - `after`, offset into the filter. Useful when getting more than 100 results (pagination). Max. 10000. Prefer range based filters like documentId.get or publishedAt.gte.
-
 
 ### Examples
 
@@ -87,14 +87,15 @@ const documentVersions = await publicApi.getLatestPublications({
 ### API
 
 ```js
-  const publicApi = liServer.features.api('li-public-api')
-  const documentVersions = await publicApi.searchPublications({
-    projectId: 12,
-    contentTypes: ['regular']
-  })
+const publicApi = liServer.features.api('li-public-api')
+const documentVersions = await publicApi.searchPublications({
+  projectId: 12,
+  contentTypes: ['regular']
+})
 ```
 
 The query allows the following entries:
+
 - `projectId`, mandatory, the projectId (int) for which documents are searched
 - `searchTerm`, string used for full-text search
 - `contentTypes`, array of contentType handles (string) to filter for (OR concatenated)
@@ -110,25 +111,27 @@ The query allows the following entries:
 ### Examples
 
 ```js
-  const publicApi = liServer.features.api('li-public-api')
+const publicApi = liServer.features.api('li-public-api')
 
-  // search for Regular articles with title 'My Article'
-  const documentVersions = await publicApi.searchPublications({
-    projectId: 12,
-    contentTypes: ['regular'],
-    filters: {
-      key: 'metadata.title', term: 'My Article'
-    }
-  })
+// search for Regular articles with title 'My Article'
+const documentVersions = await publicApi.searchPublications({
+  projectId: 12,
+  contentTypes: ['regular'],
+  filters: {
+    key: 'metadata.title',
+    term: 'My Article'
+  }
+})
 
-  // get documents by id range
-  const documentVersions = await publicApi.searchPublications({
-    projectId: 12,
-    contentTypes: ['regular'],
-    filters: {
-      key: 'documentId', range: {gt: 0, lte: 100}
-    }
-  })
+// get documents by id range
+const documentVersions = await publicApi.searchPublications({
+  projectId: 12,
+  contentTypes: ['regular'],
+  filters: {
+    key: 'documentId',
+    range: {gt: 0, lte: 100}
+  }
+})
 ```
 
 ## Command API
@@ -164,6 +167,7 @@ await publicApi.executeDocumentCommands({
 ```
 
 The function allows the following parameters:
+
 - `projectId`, mandatory, the projectId (int) for which documents are searched
 - `documentId`, mandatory, document to update
 - `conditions`, mandatory, an array of commands to execute.
@@ -172,4 +176,3 @@ The function allows the following parameters:
 - `preconditions`, optional, If a precondition assertion fails, no commands are executed
 
 Please check [HTTP Public API - Document Command API]({{< ref "/reference/public-api/document-command-api" >}}) for a more detailled description of how to apply `conditions`, `version`, `preconditions`.
-```

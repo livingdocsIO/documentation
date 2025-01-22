@@ -1,5 +1,9 @@
 <div class="info">
   {{ $info := resources.Get "svg/info.svg" | fingerprint }}
-  <img src="{{ $info.RelPermalink }}" alt="" class="info__icon">
+  <img
+    src="{{ $info.RelPermalink }}"
+    alt=""
+    class="info__icon"
+  />
   {{ .Inner | markdownify }}
 </div>

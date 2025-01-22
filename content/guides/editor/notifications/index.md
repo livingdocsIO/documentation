@@ -49,7 +49,7 @@ module.exports = {
         config: {
           accessKeyId: 'secret',
           secretAccessKey: 'secret',
-          region: 'eu-west-1',
+          region: 'eu-west-1'
         }
       }
     },
@@ -58,7 +58,9 @@ module.exports = {
       notifications: {
         transport: 'default',
         subject: 'Changes on a document you are subscribed to',
-        htmlTemplatePath: require.resolve('@livingdocs/server/plugins/email-templates/notifications.html')
+        htmlTemplatePath: require.resolve(
+          '@livingdocs/server/plugins/email-templates/notifications.html'
+        )
       }
     }
   }
@@ -68,8 +70,8 @@ module.exports = {
 The `enableConsumers` is the configuration used to enable/disable the email, slack consumers.
 By default, they will be enabled in server instances that define `roles: ['worker']` in server configuration.
 
-
 ### Project config
+
 Certain _actions groups_ can be defined within the [project config for notifications]({{< ref "/reference/project-config/notifications.md" >}}).
 
 With the _action groups_ you can define the types of changes a certain group is interested in.
@@ -128,6 +130,7 @@ module.exports = {
 ```
 
 Possible action to register on at the moment:
+
 - document.publish
 - document.unpublish
 - document.copy
@@ -136,24 +139,26 @@ Possible action to register on at the moment:
 - comment.add
 - task.assign
 - task.change
-   config options:
-   ```js
-    // assign to all tasks and statusChanges
-   'task.change'
+  config options:
 
-    // assign to task proofreading on statusChanges 'requested', 'accepted', 'completed'
-   {type: 'task.change', taskName: 'proofreading', statusChange: ['requested', 'accepted', 'completed']}
-   ```
+  ```js
+   // assign to all tasks and statusChanges
+  'task.change'
+
+   // assign to task proofreading on statusChanges 'requested', 'accepted', 'completed'
+  {type: 'task.change', taskName: 'proofreading', statusChange: ['requested', 'accepted', 'completed']}
+  ```
 
 #### Comments mentioning
+
 In a comment it is possible to mention a user with `@`. A dropdown will be shown and a user can be selected. This user will get a notification about the mentioning in a comment.
 
 ![Comments mentioning](./comments-mentioning.png)
 
 As soon as the comments are enabled it is possible to mention another user in a comment. The other user will get a notification when they are enabled. The user doesn't have to watch a document to get the notification.
 
-
 ### Setup Slack
+
 1. Go to https://api.slack.com/apps/
 2. “Create new app”
 3. select from scratch

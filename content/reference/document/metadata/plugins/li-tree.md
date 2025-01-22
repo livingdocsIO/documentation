@@ -147,14 +147,13 @@ additionalConfig: |
   the dashboard will automatically preselect the correct language filter for an item. Users can still change the language filter setting.
 
   ### Relative path and anchor hash
-  
+
   To enable links that are relative paths (e.g. "/departments/technology") or anchor hashes (e.g. #more-on-this), turn on editor environment config `links.allowRelativeUrls` or `links.allowAnchorLinks`, but
   note that this is also enables the behavior for [inline-links]({{< ref "../../../../customising/advanced/editor-configuration/text-editing#options" >}}) within document content.
-  
-  
+
+
 
   ### Anchor Links (links to a section within a document)
 
   To enable anchor linking, [configure editable directives]({{< ref "../../../document/document-design/directives/editable#other" >}}) in design settings.
-
 ---

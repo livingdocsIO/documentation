@@ -26,19 +26,19 @@ parameters:
   - name: :documentId
     type: integer
     required: true
-    notes: ""
+    notes: ''
   - name: reportId
     type: string
     required: false
-    notes: "If provided, this will update the matching delivery build; otherwise, it will create a new one."
+    notes: 'If provided, this will update the matching delivery build; otherwise, it will create a new one.'
   - name: publicationId
     type: integer
     required: conditional
-    notes: "Required for delivery builds of type `publication`"
+    notes: 'Required for delivery builds of type `publication`'
   - name: deliveryHandle
     type: string
     required: true
-    notes: ""
+    notes: ''
   - name: status
     type: string
     required: true
@@ -47,7 +47,7 @@ parameters:
   - name: message
     type: string
     required: false
-    notes: "String or sanitized HTML (supports `<em>`, `<strong>`, `<a>` and `<br>` tags)"
+    notes: 'String or sanitized HTML (supports `<em>`, `<strong>`, `<a>` and `<br>` tags)'
   - name: userChoices
     type: |
       Array<{label: string, value: string}>
@@ -55,7 +55,7 @@ parameters:
     notes: An array of options given to the user to choose from. This parameter is only allowed when `status` is set to `in-progress`. ({{< added-in "release-2024-07" >}})
 
 responses:
-  - code: "200"
+  - code: '200'
     name: OK
     endpoint: /api/v1/documents/222/addDeliveryStatus
     body: |

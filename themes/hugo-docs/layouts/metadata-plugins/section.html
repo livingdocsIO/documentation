@@ -1,8 +1,9 @@
 {{ partial "default-above-content" . }}
 
+
 <div class="article__content">
   {{ .Content }}
-  <br>
+  <br />
   <table style="width: auto; margin-top: 0;">
     <thead>
       <tr>
@@ -19,17 +20,25 @@
     </thead>
     <tbody>
       {{ range .RegularPages }}
-      <tr>
-        <td style="min-width: 150px;"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></td>
-        <td style="text-align: center;">{{ partial "check-cross" .Params.support.document }}</td>
-        <td style="text-align: center;">{{ partial "check-cross" .Params.support.media }}</td>
-        <td style="text-align: center;">{{ partial "check-cross" .Params.support.include }}</td>
-        <td style="text-align: center;">{{ partial "check-cross" .Params.support.tableDashboard }}</td>
-        <td style="text-align: center;">{{ partial "check-cross" .Params.support.displayFilter }}</td>
-        <td style="text-align: center;">{{ partial "check-cross" .Params.support.searchIndexing }}</td>
-        <td style="text-align: center;">{{ partial "check-cross" .Params.support.systemMetadata }}</td>
-        <td>{{ .Params.summary | markdownify }}</td>
-      </tr>
+        <tr>
+          <td style="min-width: 150px;"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></td>
+          <td style="text-align: center;">{{ partial "check-cross" .Params.support.document }}</td>
+          <td style="text-align: center;">{{ partial "check-cross" .Params.support.media }}</td>
+          <td style="text-align: center;">{{ partial "check-cross" .Params.support.include }}</td>
+          <td style="text-align: center;">
+            {{ partial "check-cross" .Params.support.tableDashboard }}
+          </td>
+          <td style="text-align: center;">
+            {{ partial "check-cross" .Params.support.displayFilter }}
+          </td>
+          <td style="text-align: center;">
+            {{ partial "check-cross" .Params.support.searchIndexing }}
+          </td>
+          <td style="text-align: center;">
+            {{ partial "check-cross" .Params.support.systemMetadata }}
+          </td>
+          <td>{{ .Params.summary | markdownify }}</td>
+        </tr>
       {{ end }}
     </tbody>
   </table>

@@ -7,7 +7,7 @@ weight: 1
 {{< added-in "release-2024-09" block >}}
 
 {{< info >}}
-  See the [Declarative Document Copy (Legacy)]({{< ref "/guides/editor/declarative-document-copy" >}}) guide for details about the legacy feature used prior to {{< release "release-2024-09" >}}.
+See the [Declarative Document Copy (Legacy)]({{< ref "/guides/editor/declarative-document-copy" >}}) guide for details about the legacy feature used prior to {{< release "release-2024-09" >}}.
 {{< /info >}}
 
 ## Introduction
@@ -26,7 +26,7 @@ The function can return the following values: `contentType`, `title`, `content`,
 liServer.registerTransformFunctions([
   {
     handle: 'simpleContentTypeTransform',
-    transform ({document, projectConfig, userId, params, context}) {
+    transform({document, projectConfig, userId, params, context}) {
       if (!context?.targetContentType) {
         throw new Error(`A 'targetContentType' was not provided`)
       }

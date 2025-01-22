@@ -9,7 +9,7 @@ query: |
     -H "Authorization: Bearer $ACCESS_TOKEN"
 
 related:
- - Foobar
+  - Foobar
 
 endpoint:
   method: GET
@@ -18,28 +18,28 @@ parameters:
   - name: :documentId
     type: integer
     required: true
-    notes: ""
+    notes: ''
   - name: ?limit
     type: integer
     required: false
-    notes: "A limit for how much published documents to retrieve. Defaults to 100. Max. 100"
+    notes: 'A limit for how much published documents to retrieve. Defaults to 100. Max. 100'
   - name: ?offset
     type: integer
     required: false
-    notes: "An offset into the query. Useful when getting more than 100 results (pagination)"
+    notes: 'An offset into the query. Useful when getting more than 100 results (pagination)'
 responses:
-- code: "200"
-  body: |
-    [
-      {
-        "id": "98sXCahM5PEk",
-        "references": [
-          {
-            "id": "3",
-            "type": "document",
-            "location": "metadata",
-            "propertyName": "documentLink"
-          }
-        ]
-      }
-    ]
+  - code: '200'
+    body: |
+      [
+        {
+          "id": "98sXCahM5PEk",
+          "references": [
+            {
+              "id": "3",
+              "type": "document",
+              "location": "metadata",
+              "propertyName": "documentLink"
+            }
+          ]
+        }
+      ]

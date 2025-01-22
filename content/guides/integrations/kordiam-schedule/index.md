@@ -4,7 +4,7 @@ description: An optional side panel that can be configured alongside the Kordiam
 ---
 
 {{< info >}}
-  {{< added-in "release-2024-11" >}}. Prior to {{< release "release-2024-11" >}}, Kordiam Schedule was known as [Desk-Net Schedule]({{< ref "/guides/integrations/desknet-schedule" >}}).
+{{< added-in "release-2024-11" >}}. Prior to {{< release "release-2024-11" >}}, Kordiam Schedule was known as [Desk-Net Schedule]({{< ref "/guides/integrations/desknet-schedule" >}}).
 {{< /info >}}
 
 The Kordiam Schedule side panel can be configured to only display for certain content types, for example pages to help with page management. This step can also be done without mapping Kordiam values, but this will result in the side panel displaying document titles instead of document reference cards.
@@ -79,16 +79,12 @@ liServer.registerInitializedHook(async () => {
   const documentApi = liServer.features.api('li-documents').document
   documentApi.registerGenerateFunction({
     handle: 'generateTeasersFromKordiamSchedule',
-    async generate ({projectConfig, userId, params = {}, context = {}}) {
+    async generate({projectConfig, userId, params = {}, context = {}}) {
       // Extract Kordiam elements from schedule tree
-      function extractElements (accumulator, node) {
+      function extractElements(accumulator, node) {
         const elements = node.elements || []
         const nestedElements = node.categories?.reduce(extractElements, []) || []
-        return [
-          ...accumulator,
-          ...elements,
-          ...nestedElements
-        ]
+        return [...accumulator, ...elements, ...nestedElements]
       }
       const document = context.document
       // Keep the first title (if it exists)
@@ -97,14 +93,11 @@ liServer.registerInitializedHook(async () => {
       const elements = (params.schedule || []).reduce(extractElements, [])
       const elementComponents = elements.map((element, index) => ({
         component: 'p',
-        content: {text: `${index + 1}. ${element.title}`},
+        content: {text: `${index + 1}. ${element.title}`}
       }))
 
       return {
-        content: [
-          title,
-          ...elementComponents
-        ].filter(Boolean)
+        content: [title, ...elementComponents].filter(Boolean)
       }
     }
   })

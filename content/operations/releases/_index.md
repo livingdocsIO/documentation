@@ -14,10 +14,10 @@ Subscribe to the release newsletter to get notified with a rundown of the latest
 
 ## Technical Release Notes
 
-* **Current Release**: The latest announced release
-* **Maintained Releases**: Get security fixes and severe bug fixes.
-* **Upcoming Release**: You can already read about the features, improvements and fixes of the next release. But be aware that the release notes are auto generated and will be manually fixed before we officially anounce the new release.
-* **Legacy Release**: Legacy releases do not receive bugfixes anymore. If you use an old release please notify us (release@livingdocs.io) so we are aware and can inform you of critical fixes in newer releases.
+- **Current Release**: The latest announced release
+- **Maintained Releases**: Get security fixes and severe bug fixes.
+- **Upcoming Release**: You can already read about the features, improvements and fixes of the next release. But be aware that the release notes are auto generated and will be manually fixed before we officially anounce the new release.
+- **Legacy Release**: Legacy releases do not receive bugfixes anymore. If you use an old release please notify us (release@livingdocs.io) so we are aware and can inform you of critical fixes in newer releases.
 
 {{< release-notes-overview >}}
 

@@ -12,12 +12,11 @@ For users who want to store their images, files and design assets in a Google Cl
 
 In order to integrate GCS with Livingdocs, you need to make sure you have the following things set up properly:
 
-* A [Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts). **Please note:** Make sure you download the credentials JSON file right after creating the Service Account and keep it somewhere safe, as there is no way to get it any time after you finalised the creation procedure.
-* At least one [bucket](https://cloud.google.com/storage/docs/creating-buckets) on your Google Cloud Storage.
-* [Granted Privileges](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts) to your Service Account to write and read to and from the bucket.
+- A [Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts). **Please note:** Make sure you download the credentials JSON file right after creating the Service Account and keep it somewhere safe, as there is no way to get it any time after you finalised the creation procedure.
+- At least one [bucket](https://cloud.google.com/storage/docs/creating-buckets) on your Google Cloud Storage.
+- [Granted Privileges](https://cloud.google.com/iam/docs/granting-roles-to-service-accounts) to your Service Account to write and read to and from the bucket.
 
 ## Configuring the Livingdocs Server to use GCS as storage
-
 
 In your local configuration, set the storage strategy to `google-cloud-storage` and add the bucket name and the credentials from the JSON file to the config key:
 
@@ -71,7 +70,6 @@ In your local configuration, set the storage strategy to `google-cloud-storage` 
 }
 ```
 
-
 ## Setting up ImgIX with GCS and Livingdocs
 
 1. Get a set of [interoperability credentials](https://cloud.google.com/storage/docs/migrating#keys) from the settings page of GCS.
@@ -79,8 +77,8 @@ In your local configuration, set the storage strategy to `google-cloud-storage` 
 3. Select "New Source"
 4. Select "Google Cloud Storage" from the Source Type dropdown
 5. Use the credentials from above to connect imgIX to your GCS account.
-5. Set the bucket name to the same name as you did in the Livingdocs config. **This is mandatory**
-6. Set the subdomain and path prefix as you see fit.
+6. Set the bucket name to the same name as you did in the Livingdocs config. **This is mandatory**
+7. Set the subdomain and path prefix as you see fit.
 
 In your local Livingdocs config, adjust the `documents` settings as follows:
 

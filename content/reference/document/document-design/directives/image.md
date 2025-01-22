@@ -43,6 +43,7 @@ If defined on any other tag, enables users to set a background image CSS propert
 ```
 
 ## Config Options
+
 ### Ratios
 
 The image ratio definitions control how the crop tool in the Livingdocs editor is configured.
@@ -56,6 +57,7 @@ If you configure `recommendedRatios`, the given ratios are presented to the user
 `recommendedRatios`: array of strings, an array of strings, e.g. '16:9'
 
 ### Named Crops
+
 Alternatively to `imageRatios`/`recommendedRatios` you can configure `namedCrops` if you are using that system.
 To understand what Named Crops are, read the [Media Library Guide]({{< ref "/guides/media-library/media-library-setup" >}}).
 
@@ -64,6 +66,7 @@ To understand what Named Crops are, read the [Media Library Guide]({{< ref "/gui
 The srcSet defines the parameters for [HTML srcsets](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images). If set, Livingocs will generate a `srcSet` attribute on the HTML tag where the image directive is defined. There is a global (instance-wide) default for `srcSet` and image directives can overwrite this.
 
 Schema:
+
 ```
 srcSet: ms.obj({
   defaultWidth: 'number',
@@ -80,6 +83,7 @@ If the `doc-image` directive is used on any other tag than `<img>` it will autom
 Background images don't have srcSet properties (see above). Thus you can define a max width that should be used under the directive config key `backgroundImage`.
 
 Example:
+
 ```
 backgroundImage: {
   maxWidth: 1024

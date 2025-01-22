@@ -23,34 +23,38 @@ const importLog = await import({importJob, rawDocument, shouldCreateNew, updateC
 
 `importJob` is an `object` that contains data about the Document that is being imported.
 
-* `systemName`: A `string` identifying your importer, e.g. `hugo-importer`.
-* `externalId`: A `string` identifying your resource on the external system. This Id should be unique so depending on your case prefixing it with the name of that system might be feasible, e.g. `hugo:1234` instead of `1234`.
-* `checksum`: An arbitrary `string` which allows you to determine whether it's an update.
-* `projectId`: A `number` containing the Id of the Project you want the Document to import to.
-* `channelid`: A `number` containing the Id of the Channel you want the Document to import to.
-* `contentType`: A `string`, the desired `contentType` of your Document.
-* `title`: A `string`, the title of your Document.
-* `publicationDate` A `string` containing an ISO 8601 date time stamp of when an article was published (`autoPublish` flag needs to be set as well)
+- `systemName`: A `string` identifying your importer, e.g. `hugo-importer`.
+- `externalId`: A `string` identifying your resource on the external system. This Id should be unique so depending on your case prefixing it with the name of that system might be feasible, e.g. `hugo:1234` instead of `1234`.
+- `checksum`: An arbitrary `string` which allows you to determine whether it's an update.
+- `projectId`: A `number` containing the Id of the Project you want the Document to import to.
+- `channelid`: A `number` containing the Id of the Channel you want the Document to import to.
+- `contentType`: A `string`, the desired `contentType` of your Document.
+- `title`: A `string`, the title of your Document.
+- `publicationDate` A `string` containing an ISO 8601 date time stamp of when an article was published (`autoPublish` flag needs to be set as well)
 
 ### `rawDocument`
 
 `rawDocument` is an `object` that contains the content of the document.
 
-* `design`: An `object` with `name` and `version` properties.
-* `content`: An `array` of livingdocs components
-* `metadata`: An `object` containing the metadata of your Document
-* `livingdoc`: Can contain the `design` and `content` attributes above. {{< deprecated-in "release-2023-03" >}}
-
+- `design`: An `object` with `name` and `version` properties.
+- `content`: An `array` of livingdocs components
+- `metadata`: An `object` containing the metadata of your Document
+- `livingdoc`: Can contain the `design` and `content` attributes above. {{< deprecated-in "release-2023-03" >}}
 
 Example how to build a `rawDocument` object:
+
 ```js
-const livingdoc = framework.createLivingdoc({
-  content: [{
-    component: 'title',
-    content: {title: 'Moby Dick'}
-  }],
-  design: {name: 'my-design', version: '1.0.0'}
-}).serialize()
+const livingdoc = framework
+  .createLivingdoc({
+    content: [
+      {
+        component: 'title',
+        content: {title: 'Moby Dick'}
+      }
+    ],
+    design: {name: 'my-design', version: '1.0.0'}
+  })
+  .serialize()
 
 const rawDocument = {
   metadata: {title: 'Moby Dick'},
@@ -69,11 +73,12 @@ const rawDocument = {
 **CAUTION**: If you choose to always create new documents you need to leave `systemName` empty so as not to run into the unique constraint configured on the database level.
 
 ### `updateCondition`
+
 `updateCondition` can be a `string` describing a default strategy or it can be a `function`. Available strategies are (`updateCondition` as a `string`)
 
-* `always`: If `externalId`s match, the Document will be updated.
-* `never`: The Document will not be updated. The Update will be discarded.
-* `untouched`: The Document only will be updated if it has not been manually updated in the Editor.
+- `always`: If `externalId`s match, the Document will be updated.
+- `never`: The Document will not be updated. The Update will be discarded.
+- `untouched`: The Document only will be updated if it has not been manually updated in the Editor.
 
 You can customise the behaviour by passing a `function` instead of a `string`. Your `function` will have access to the Document and the matching ImportLog. E.g.
 

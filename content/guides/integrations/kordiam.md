@@ -5,11 +5,11 @@ weight: 1
 ---
 
 {{< info >}}
-  {{< added-in "release-2024-11" >}}. Prior to {{< release "release-2024-11" >}}, the Kordiam Global Integration was known as [Desk-Net Global Integration]({{< ref "/guides/integrations/desknet" >}}).
+{{< added-in "release-2024-11" >}}. Prior to {{< release "release-2024-11" >}}, the Kordiam Global Integration was known as [Desk-Net Global Integration]({{< ref "/guides/integrations/desknet" >}}).
 {{< /info >}}
 
 {{< info >}}
-  See the [Kordiam Platform Integration]({{< ref "/guides/integrations/kordiam-legacy" >}}) guide for details about the legacy integration used prior to {{< release "release-2024-05" >}}, or read the [Kordiam Global Integration migration guide]({{< ref "/guides/integrations/kordiam-global-integration-migration" >}}) for details on upgrading from the platform integration to the global integration.
+See the [Kordiam Platform Integration]({{< ref "/guides/integrations/kordiam-legacy" >}}) guide for details about the legacy integration used prior to {{< release "release-2024-05" >}}, or read the [Kordiam Global Integration migration guide]({{< ref "/guides/integrations/kordiam-global-integration-migration" >}}) for details on upgrading from the platform integration to the global integration.
 {{< /info >}}
 
 ## Setup
@@ -39,7 +39,7 @@ If you use a proxy or message queue between Kordiam and Livingdocs you can defin
 It's also possible to prevent the hooks from being registered to reduce side effects while testing.
 
 {{< info >}}
-  Please be aware that the global integration uses `integrations.kordiam`, and not `kordiam` which the legacy platform integration uses.
+Please be aware that the global integration uses `integrations.kordiam`, and not `kordiam` which the legacy platform integration uses.
 {{< /info >}}
 
 ### Project config
@@ -87,7 +87,7 @@ Along with the project-level config you will also need to register the [`li-kord
 ```
 
 {{< info >}}
-  Please be aware that the global integration uses `settings.integrations.kordiam`, and not `settings.kordiam` which the legacy platform integration uses.
+Please be aware that the global integration uses `settings.integrations.kordiam`, and not `settings.kordiam` which the legacy platform integration uses.
 {{< /info >}}
 
 ### Register functions

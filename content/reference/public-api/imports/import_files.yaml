@@ -36,7 +36,6 @@ endpoint:
   method: POST
   path: /api/v1/import/files
 
-
 example_request: |
   {
     "systemName": "identifier-for-your-system",
@@ -56,20 +55,19 @@ example_request: |
     ]
   }
 
-
 parameters:
   - name: systemName
     type: string
     required: true
-    notes: "Identifier for the system you are importing from, e.g. an archive."
+    notes: 'Identifier for the system you are importing from, e.g. an archive.'
   - name: webhook
     type: uri
     required: false
-    notes: "Endpoint at the importing system that gets notified by POST when import job is done. Notification contains the id of the import job, the state and an overview."
+    notes: 'Endpoint at the importing system that gets notified by POST when import job is done. Notification contains the id of the import job, the state and an overview.'
   - name: context
     type: object
     required: false
-    notes: "An object that is passed as context in the body of the request to the webhook. Limited to 8192 Bytes."
+    notes: 'An object that is passed as context in the body of the request to the webhook. Limited to 8192 Bytes.'
   - name: files
     type: array
     required: true
@@ -81,7 +79,7 @@ parameters:
       - **metadata:** An object of metadata according to your project config
       - **mediaType**: The handle of one of the mediaTypes from your project configuration
 responses:
-  - code: "200"
+  - code: '200'
     name: OK
     endpoint: /api/v1/import/files
     body: |

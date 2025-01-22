@@ -83,13 +83,17 @@ The `'sortBy'` filter should be replaced with a `sort` property on the root of t
 The filter configuration has changed from `type` and `value` properties to `key` and [query expressions]({{< ref "/reference/public-api/publications/search#query-expressions" >}}). The current supported query expressions are `term`, `range` and `exists`.
 
 A simple legacy filter might look like this:
+
 ```js
 {type: 'contentType', value: 'regular'}
 ```
+
 The new filter should look like this:
+
 ```js
 {key: 'contentType', term: 'regular'}
 ```
+
 Below you will find specific examples of how to migrate different legacy filters. These objects can be used for `baseFilters`, the `displayFilters` `filters` property, and for [Public API Search Filters]({{< ref "/reference/public-api/publications/search#search-filters" >}}).
 
 ## Migration Examples
@@ -123,12 +127,15 @@ References are stored as keywords, so you can use any of the query expressions l
 For standard term queries you should provide the correct value type, depending on the indexing config of the metadata plugin. You can also provide an array of values.
 
 Before:
+
 ```js
 {type: 'metadata', key: 'myMetadataHandle', value: 'myValue'}
 {type: 'metadata', key: 'myMetadataHandle', value: 1}
 {type: 'metadata', key: 'myMetadataHandle', value: ['myFirstValue', 'mySecondValue']}
 ```
+
 After:
+
 ```js
 {key: 'metadata.myMetadataHandle', term: 'myValue'}
 {key: 'metadata.myMetadataHandle', term: 1}
@@ -140,11 +147,14 @@ After:
 Previously there was support for `exists` and `value.exists` properties, but this is now just the top-level `exists`, along with the `key`:
 
 Before:
+
 ```js
 {type: 'metadata', key: 'myMetadataHandle', exists: true}
 {type: 'metadata', key: 'myMetadataHandle', value: {exists: false}}
 ```
+
 After:
+
 ```js
 {key: 'metadata.myMetadataHandle', exists: true}
 {key: 'metadata.myMetadataHandle', exists: false}
@@ -155,11 +165,14 @@ After:
 The `dateFilter` and `rangeFilter` properties have been replaced by the `range` property. If you're also using `from` and `to` you should replace them with `gte` and `lte`:
 
 Before:
+
 ```js
 {type: 'metadata', key: 'myMetadataHandle', dateFilter: {from: '2023-07-04T00:00:00.000Z', to: '2023-07-04T23:59:59.999Z'}}
 {type: 'metadata', key: 'myMetadataHandle', rangeFilter: {from: '2023-07-04T00:00:00.000Z', to: '2023-07-04T23:59:59.999Z'}}
 ```
+
 After:
+
 ```js
 {key: 'metadata.myMetadataHandle', range: {gte: '2023-07-04T00:00:00.000Z', lte: '2023-07-04T23:59:59.999Z'}}
 {key: 'metadata.myMetadataHandle', range: {gte: '2023-07-04T00:00:00.000Z', lte: '2023-07-04T23:59:59.999Z'}}
@@ -168,15 +181,23 @@ After:
 The `optional: true` parameter requires an OR filter to check for the existence of the value:
 
 Before:
+
 ```js
 {type: 'metadata', key: 'myMetadataHandle', dateFilter: {gte: '2023-07-04T00:00:00.000Z', lt: '2023-07-05T00:00:00.000Z', optional: true}}
 ```
+
 After:
+
 ```js
-{or: [
-  {key: 'metadata.myMetadataHandle', exists: false},
-  {key: 'metadata.myMetadataHandle', range: {gte: '2023-07-04T00:00:00.000Z', lt: '2023-07-05T00:00:00.000Z'}}
-]}
+{
+  or: [
+    {key: 'metadata.myMetadataHandle', exists: false},
+    {
+      key: 'metadata.myMetadataHandle',
+      range: {gte: '2023-07-04T00:00:00.000Z', lt: '2023-07-05T00:00:00.000Z'}
+    }
+  ]
+}
 ```
 
 See [Date Range]({{< ref "#daterange" >}}) for more examples.
@@ -186,11 +207,14 @@ See [Date Range]({{< ref "#daterange" >}}) for more examples.
 The `'locale'` filter type has been renamed to `'language'`:
 
 Before:
+
 ```js
 {type: 'locale', value: 'en'}
 {type: 'locale', value: ['en', 'de']}
 ```
+
 After:
+
 ```js
 {key: 'language', term: 'en'}
 {key: 'language', term: ['en', 'de']}
@@ -201,11 +225,14 @@ After:
 For NOT queries you can use the new logical operator in the Filter Query DSL:
 
 Before:
+
 ```js
 {type: 'notContentType', value: 'author'}
 {type: 'notContentType', value: ['author', 'page']}
 ```
+
 After:
+
 ```js
 {not: {key: 'contentType', term: 'author'}}
 {not: {key: 'contentType', term: ['author','page']}}
@@ -216,13 +243,16 @@ After:
 The new `range` property supports `gte`, `lte`, `gt`, and `lt`:
 
 Before:
+
 ```js
 {type: 'dateRange', key: 'myDateHandle', gte: '2023-07-04T00:00:00.000Z'}
 {type: 'dateRange', key: 'myDateHandle', gte: '2023-07-04T00:00:00.000Z', lte: '2023-07-04T23:59:59.999Z'}
 {type: 'dateRange', key: 'myDateHandle', gt: '2023-07-03T23:59:59.999Z', lt: '2023-07-05T00:00:00.000Z'}
 {type: 'dateRange', key: 'myDateHandle', gte: '2023-07-04T00:00:00.000Z', lt: '2023-07-05T00:00:00.000Z'}
 ```
+
 After:
+
 ```js
 {key: 'myDateHandle', range: {gte: '2023-07-04T00:00:00.000Z'}}
 {key: 'myDateHandle', range: {gte: '2023-07-04T00:00:00.000Z'}}
@@ -234,10 +264,13 @@ After:
 Instead of `from` and `to`, `gte` and `lte` should be used:
 
 Before:
+
 ```js
 {type: 'dateRange', key: 'myDateHandle', from: '2023-07-04T00:00:00.000Z', to: '2023-07-04T23:59:59.999Z'}
 ```
+
 After:
+
 ```js
 {key: 'myDateHandle', range: {gte: '2023-07-04T00:00:00.000Z', lte: '2023-07-04T23:59:59.999Z'}}
 ```
@@ -247,11 +280,14 @@ After:
 To see if a document is currently published you can check if `lastPublicationId` exists:
 
 Before:
+
 ```js
 {type: 'published', value: true}
 {type: 'published', value: false}
 ```
+
 After:
+
 ```js
 {key: 'lastPublicationId', exists: true}
 {key: 'lastPublicationId', exists: false}
@@ -262,6 +298,7 @@ After:
 The various `'documentState'` filters can be replicated using other available properties:
 
 Before:
+
 ```js
 {type: 'documentState', value: 'published'}
 {type: 'documentState', value: 'unpublished'}
@@ -269,7 +306,9 @@ Before:
 {type: 'documentState', value: 'publishedWithDraft'}
 {type: 'documentState', value: 'scheduledOrPublished'}
 ```
+
 After:
+
 ```js
 {key: 'lastPublicationId', exists: true}
 {key: 'lastPublicationId', exists: false}
@@ -283,10 +322,13 @@ After:
 To recreate the `'userInTeam'` filter type there is a special `termPattern` property which uses the current user's id:
 
 Before:
+
 ```js
 {type: 'userInTeam', key: 'myTeamHandle'}
 ```
+
 After:
+
 ```js
 {key: 'metadata.myTeamHandle.activeUsers.id', termPattern: '{{ userId }}'}
 ```
@@ -296,10 +338,13 @@ After:
 The `'buyInNotExpired'` replacement uses a relative time range:
 
 Before:
+
 ```js
 {type: 'buyInNotExpired', key: 'myBuyInHandle'}
 ```
+
 After:
+
 ```js
 {key: 'metadata.myBuyInHandle.workflow.expiryDate', range: {gte: 'now/d'}}
 ```

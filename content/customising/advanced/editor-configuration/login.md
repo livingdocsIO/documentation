@@ -6,14 +6,17 @@ menus:
 ---
 
 In addition to the Livingdocs login, you can configure additional login providers.
+
 ```js
 auth: {
-  providers: [{
-    id: 'myLoginProvider',
-    strategy: 'link',
-    label: 'Log in via myLoginProvider',
-    url: 'http://localhost:9090/auth/myLoginProvider'
-  }]
+  providers: [
+    {
+      id: 'myLoginProvider',
+      strategy: 'link',
+      label: 'Log in via myLoginProvider',
+      url: 'http://localhost:9090/auth/myLoginProvider'
+    }
+  ]
 }
 ```
 

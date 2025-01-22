@@ -52,29 +52,28 @@ Below you can find an overview of real life installations.
 
 We are running Livingdocs in a managed Kubernetes instance for development purposes. This can be interpreted as the minimum requirements (no high availability and limited performance requirements).
 
-Service | Specs | |
-:--- | :--- | ---
-**Azure Kubernetes Service** | 
-| | Instances | 3
-| | vCPU | 4
-| | Memory | 16 GB
-| | SSD | 32 GB
-**Editor** | Azure Kubernetes Service Cluster
-| | Replicas | 2
-**Server** | Azure Kubernetes Service Cluster
-| | Replicas | 3
-**Elasticsearch** | Azure Kubernetes Service Cluster
-| | Replicas | 2
-**Redis** | Azure Kubernetes Service Cluster
-| | Replicas | 2
-**Postgres** | Azure Database for PostgreSQL
-| | Instance | D2ds
-| | vCPU | 2
-| | Storage | 64 GB
-**Storage** | Azure Blob Storage
+| Service                      | Specs                            |       |
+| :--------------------------- | :------------------------------- | ----- |
+| **Azure Kubernetes Service** |
+|                              | Instances                        | 3     |
+|                              | vCPU                             | 4     |
+|                              | Memory                           | 16 GB |
+|                              | SSD                              | 32 GB |
+| **Editor**                   | Azure Kubernetes Service Cluster |
+|                              | Replicas                         | 2     |
+| **Server**                   | Azure Kubernetes Service Cluster |
+|                              | Replicas                         | 3     |
+| **Elasticsearch**            | Azure Kubernetes Service Cluster |
+|                              | Replicas                         | 2     |
+| **Redis**                    | Azure Kubernetes Service Cluster |
+|                              | Replicas                         | 2     |
+| **Postgres**                 | Azure Database for PostgreSQL    |
+|                              | Instance                         | D2ds  |
+|                              | vCPU                             | 2     |
+|                              | Storage                          | 64 GB |
+| **Storage**                  | Azure Blob Storage               |
 
 Most services are running within Kubernetes except PostgresSQL and Storage.
-
 
 ### Scaled production example Azure
 
@@ -85,23 +84,23 @@ Below you can find an example production setup hosted in Azure without the deliv
 - Planning to import 1.6m documents. The import itself is expected to be heavy on the servers, but no massive scaling required for the daily operations
 - The system includes a shared development/staging environment and production environment with the following specifications.
 
-Service | Specs | |
-:--- | :--- | ---
-**Azure Kubernetes Service** | 
-| | Instances | 6 (3 dedicated for Elasticsearch)
-| | vCPU | 4
-| | Memory | 16 GB
-| | SSD | 32 GB
-**Editor** | Azure Kubernetes Service Cluster
-| | Replicas | 2
-**Server** | Azure Kubernetes Service Cluster
-| | Replicas | 3
-**Elasticsearch** | Azure Kubernetes Service Cluster
-| | Replicas | 3
-**Redis** | Azure Kubernetes Service Cluster
-| | Replicas | 2
-**Postgres** | Azure Database for PostgreSQL
-| | Instance | 2
-| | vCPU | 4
-| | Memory | 64 GB
-**Storage** | Azure Blob Storage
+| Service                      | Specs                            |                                   |
+| :--------------------------- | :------------------------------- | --------------------------------- |
+| **Azure Kubernetes Service** |
+|                              | Instances                        | 6 (3 dedicated for Elasticsearch) |
+|                              | vCPU                             | 4                                 |
+|                              | Memory                           | 16 GB                             |
+|                              | SSD                              | 32 GB                             |
+| **Editor**                   | Azure Kubernetes Service Cluster |
+|                              | Replicas                         | 2                                 |
+| **Server**                   | Azure Kubernetes Service Cluster |
+|                              | Replicas                         | 3                                 |
+| **Elasticsearch**            | Azure Kubernetes Service Cluster |
+|                              | Replicas                         | 3                                 |
+| **Redis**                    | Azure Kubernetes Service Cluster |
+|                              | Replicas                         | 2                                 |
+| **Postgres**                 | Azure Database for PostgreSQL    |
+|                              | Instance                         | 2                                 |
+|                              | vCPU                             | 4                                 |
+|                              | Memory                           | 64 GB                             |
+| **Storage**                  | Azure Blob Storage               |

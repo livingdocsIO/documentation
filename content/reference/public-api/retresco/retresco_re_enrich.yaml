@@ -25,13 +25,13 @@ endpoint:
 parameters:
   - name: ?doc_ids
     type: array<string|number>
-    notes: "A list of the desired document ids to re-enrich."
+    notes: 'A list of the desired document ids to re-enrich.'
 responses:
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/retresco/re-enrich
     body: |
       {}
-  - code: "400"
+  - code: '400'
     endpoint: /api/v1/retresco/re-enrich
     body: |
       {

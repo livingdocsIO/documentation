@@ -13,15 +13,16 @@ If you still have Dashboard Filter configs listed below in your Editor Config un
 ## Migrate `articleList` | `pageList` | `dataRecordList`
 
 ### Old
+
 - `app.filters.articleList` -> Filter for Article Dashboard
 - `app.filters.pageList` -> Filter for Pages Dashboard
 - `app.filters.dataRecordList` -> Filter for Data Record Dashboard
 
 ### New - Switch to [Table Dashboards]({{< ref "/reference/project-config/editor-settings#example-table-dashboard">}}):
-- Remove `{liItem: 'articles'}`, `{liItem: 'pages'}`, `{liItem: 'data-record'}`  in `editorSettings.mainNavigation`
+
+- Remove `{liItem: 'articles'}`, `{liItem: 'pages'}`, `{liItem: 'data-record'}` in `editorSettings.mainNavigation`
 - Set up your [Table Dashboards]({{< ref "/reference/project-config/editor-settings#example-table-dashboard">}})
 - Move the Dashboard Filters to your Table Dashboard Config
-
 
 ## Migrate `inlineArticleList`
 

@@ -28,35 +28,35 @@ parameters:
   - name: mediaLibraryEntries
     type: array
     required: true
-    notes: "An array of documents to import. Each entry is an object."
+    notes: 'An array of documents to import. Each entry is an object.'
   - name: mediaLibraryEntries.id
     type: string
     required: false
-    notes: "Custom id (Allowed characters: a-z, A-Z, 0-9, and -). If omitted a random id will be generated."
+    notes: 'Custom id (Allowed characters: a-z, A-Z, 0-9, and -). If omitted a random id will be generated.'
   - name: mediaLibraryEntries.systemName
     type: string
     required: false
-    notes: "A string identifiyng the external system where the asset is imported from. It is recommended that you always set this value and it is required if you provide an `externalId`."
+    notes: 'A string identifiyng the external system where the asset is imported from. It is recommended that you always set this value and it is required if you provide an `externalId`.'
   - name: mediaLibraryEntries.externalId
     type: string
     required: false
-    notes: "Must be unique in combination with `systemName`."
+    notes: 'Must be unique in combination with `systemName`.'
   - name: mediaLibraryEntries.mediaType
     type: string
     required: true
-    notes: "`image`, `video`, `file`"
+    notes: '`image`, `video`, `file`'
   - name: mediaLibraryEntries.asset
     type: object
     required: true
-    notes: ""
+    notes: ''
   - name: mediaLibraryEntries.metadata
     type: object
     required: false
-    notes: ""
+    notes: ''
   - name: mediaLibraryEntries.translations
     type: object
     required: false
-    notes: ""
+    notes: ''
 
 example_request: |
   {
@@ -167,7 +167,7 @@ example_request: |
       ]
   }
 responses:
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/import/mediaLibrary
     body: |
       {
@@ -180,7 +180,7 @@ responses:
           }
         ]
       }
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/import/mediaLibrary (error cases for individual entries)
     body: |
       {

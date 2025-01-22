@@ -13,6 +13,7 @@ Some of the editing features visible in the top toolbar when
 you are editing a document can be configured.
 
 E.g config/environments/all.js
+
 ```js
 app: {
   useSplitPane: true,
@@ -39,7 +40,6 @@ The search is automatically activated if there are more than 8 components.
 Visibility of the "Transform Component" select menu can be configured.
 
 ![image](../images/properties-panel-transform-component.png)
-
 
 ```js
 app: {
@@ -81,6 +81,7 @@ See [here]({{< ref "./text-editing.md" >}})
 ## Embeds
 
 By default, the Livingdocs core supports embeds of type Iframe:
+
 ### iframe default ratio
 
 ```js
@@ -95,7 +96,6 @@ By default, the Livingdocs core supports embeds of type Iframe:
 
 Iframes in Livingdocs use a special CSS trick to always be rendered in a given aspect ratio and scale automatically to the given width. In this way an iframe out of Livingdocs is never cut off at the sides. The default ratio of 55 is about a 16:9 aspect ratio. Use this formula to calculate the correct value for your custom default aspect ratio: `(width / height) * 100`.
 This setting only sets the default ratio, a user is given an interface to change the aspect ratio inside of the Livingdocs editor.
-
 
 ## Timeout
 
@@ -121,7 +121,9 @@ Allows you to configure after how much time a timeout should happen in calls fro
   }
 }
 ```
+
 Iframely is used for 2 things:
+
 - validating links that you enter in the text (see [text editing]({{< ref "./text-editing.md#links" >}}))
 - in combination with [`doc-link` to prefill component from metadata]({{< ref "/reference/document/document-design/directives/link" >}})
 
@@ -130,7 +132,6 @@ Iframely is used for 2 things:
 When you have your own Iframely account, you should disable this [setting](https://iframely.com/settings/app) (red arrow) to prevent issues with link external link validation in Livingdocs.
 
 ![image](../images/iframely-settings-screen.png)
-
 
 ### Spellcheck
 
@@ -174,6 +175,7 @@ The keyboard shortcuts allow you to customize which keys you want to use for com
 The actions (values) are fixed. You can define on which keys you want to execute the actions.
 
 The following actions are supported:
+
 - `prevent backspace`
 - `esc`
 - `enter`
@@ -231,7 +233,6 @@ app: {
 
 If the copy feature is enabled, it allows you to copy and transform documents.
 
-
 ## Comments
 
 Comments are a great way for editors to communicate about a text.
@@ -253,10 +254,10 @@ It's also possible to turn on/off [Comments]({{< ref "/reference/project-config/
 
 The notification feature needs to be enabled if the mentioned users should get a notification. [Notification feature]({{< ref "/reference/project-config/notifications.md" >}})
 
-
 ## Pin components
 
 Pinning of components enables a pin icon next to a component card in the sidebar. When clicked the component is pinned according to the rules:
+
 - if it is alone in a container it can not be moved, deleted nor can anything be moved or inserted before or after it (perfect for a fixed article header)
 - if it is next to other components, it can not be moved nor deleted, but other components can be moved or inserted around it
 
@@ -267,20 +268,19 @@ pinComponents: {
 ```
 
 Pinning is triggered by the `position` property on the component. You can also pin components over the `defaultContent` by setting the `position` to `fixed` in the JSON:
+
 ```js
 defaultContent: [
   {
-    component: "article-container",
+    component: 'article-container',
     containers: {
       header: [
         {
-          component: "head",
-          position: "fixed"
+          component: 'head',
+          position: 'fixed'
         }
       ],
-      main: [
-        { component: "image" }
-      ]
+      main: [{component: 'image'}]
     }
   }
 ]

@@ -17,7 +17,7 @@ markup:
   highlight:
     codeFences: true
     guessSyntax: true
-    hl_Lines: ""
+    hl_Lines: ''
     lineNoStart: 1
     lineNos: false
     lineNumbersInTable: true
@@ -37,8 +37,8 @@ imaging:
   quality: 75
 
 disableKinds:
-- taxonomy
-- term
+  - taxonomy
+  - term
 
 outputFormats:
   SearchIndex:
@@ -54,4 +54,4 @@ params:
 # default static directory: themes/hugo-docs/static
 # additional static directories below:
 staticDir:
-- data
+  - data

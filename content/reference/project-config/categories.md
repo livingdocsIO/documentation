@@ -9,6 +9,7 @@ menus:
 The categories are normally used together with the routing system to represent the idiomatic department structure in a newspaper. Read our [Setup Categories Guide]({{< ref "/guides/organisation/categories-and-routing.md" >}}) for more infos on the actual use cases.
 
 You can define an array of available categories:
+
 ```js
 categories: [
   {

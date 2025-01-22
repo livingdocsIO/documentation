@@ -15,15 +15,16 @@ Livingdocs is introducing a new publish flow. We call it `Publish Control` and w
 If you compare the supported features from `Prepare Publish` and `Publish Control` it get's obvious why you should migrate to `Publish Control`:
 
 **Prepare Publish Features**
+
 - Instant Publish / Unpublish
 
 **Publish Control Features**
-  - Instant Publish / Unpublish
-  - Scheduled Publish / Unpublish
-  - Embargo Management (documents with an embargo defined cannot get published)
-  - Significant Updates (marking publications as significant (to show your readers, when an existing article got a significant update))
-  - Visible Publication Date (management of a date (with user edit possibilities) to show as the publication date to your readers)
 
+- Instant Publish / Unpublish
+- Scheduled Publish / Unpublish
+- Embargo Management (documents with an embargo defined cannot get published)
+- Significant Updates (marking publications as significant (to show your readers, when an existing article got a significant update))
+- Visible Publication Date (management of a date (with user edit possibilities) to show as the publication date to your readers)
 
 As seen `Prepare Publish` only supported an instant publish/unpublish. The proposed solution for having the other features was to add metadata fields (dates) for the other use cases and then do the whole logic in the delivery.
 
@@ -32,7 +33,7 @@ There are a a few different setups implemented from customers and we can't handl
 ### 1) Disable Prepare Publish
 
 - Remove the editor config `document: {customPublicationDateField: 'publishDate'}`
-- Remove publicationIndex properties in your Project Config 
+- Remove publicationIndex properties in your Project Config
   - `contentTypes['your-content-type'].publicationIndex.sortDate`
   - `contentTypes['your-content-type'].publicationIndex.scheduledPublishing`
 
@@ -63,8 +64,9 @@ Get familiar with the new features and decied what you want to enable for `Publi
 We assume your delivery has some publication logic based on metadata fields and as long as you don't have all data in the [Visible Publication Date]({{< ref "/guides/editor/publish-control/visible-publication-date" >}}), you have to make your application backwards compatible.
 
 We propose a 3 step process
-- 1) Deploy/Update your frontend/delivery to be able to consume both metadata and Publish Control fields in systemdata
-- 2) Deploy/Update your server with enabled Publish Control and a configured [Visible Publication Date]({{< ref "/guides/editor/publish-control/visible-publication-date" >}}) with a fallback to the metadata fields and set the metadata fields to readOnly or hide them
-- 3) Deploy/Update your frontend/delivery to fetch Publish Control fields in systemdata only
+
+- 1. Deploy/Update your frontend/delivery to be able to consume both metadata and Publish Control fields in systemdata
+- 2. Deploy/Update your server with enabled Publish Control and a configured [Visible Publication Date]({{< ref "/guides/editor/publish-control/visible-publication-date" >}}) with a fallback to the metadata fields and set the metadata fields to readOnly or hide them
+- 3. Deploy/Update your frontend/delivery to fetch Publish Control fields in systemdata only
 
 If you ask yourself if you could remove the old metadata fields. The answer is no. But as soon as we provide a migration script where the old metadata can be written to Publish Control, you are able to remove them.

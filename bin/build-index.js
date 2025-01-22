@@ -1,11 +1,11 @@
 const fs = require('fs')
-const {Parser} = require("htmlparser2")
-const {DomHandler} = require("domhandler")
+const {Parser} = require('htmlparser2')
+const {DomHandler} = require('domhandler')
 const {getText, hasAttrib, getAttributeValue, textContent} = require('domutils')
 
 buildIndex('./public/search.json')
 
-function buildIndex (file) {
+function buildIndex(file) {
   const json = JSON.parse(fs.readFileSync(file, 'utf8'))
 
   const index = []
@@ -14,7 +14,7 @@ function buildIndex (file) {
   fs.writeFileSync(file, JSON.stringify(index))
 }
 
-function parseDocument (index, data) {
+function parseDocument(index, data) {
   const dom = getDom(data.body)
   let current = prepareDataForIndex(data)
   index.push(current)
@@ -36,7 +36,7 @@ function parseDocument (index, data) {
   console.log('Processed document %s: %s', data.title, data.url)
 }
 
-function prepareDataForIndex (data, elem) {
+function prepareDataForIndex(data, elem) {
   // Keyword customisations
   const additionalKeywords = []
   if (data.type === 'metadata-plugins') {
@@ -64,12 +64,14 @@ function prepareDataForIndex (data, elem) {
   return dataForIndex
 }
 
-function getDom (body) {
+function getDom(body) {
   let dom
-  const parser = new Parser(new DomHandler(function (err, _dom) {
-    if (err) throw err
-    dom = _dom
-  }))
+  const parser = new Parser(
+    new DomHandler(function (err, _dom) {
+      if (err) throw err
+      dom = _dom
+    })
+  )
   parser.write(JSON.parse(body))
   parser.end()
   return dom

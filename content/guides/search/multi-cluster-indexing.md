@@ -40,11 +40,13 @@ search: {
 ### CLI Tasks
 
 To index to all the clusters, you can call the regular task:
+
 ```sh
 livingdocs-server elasticsearch-index --handle li-documents
 ```
 
 To index to a specific cluster, you can declare the `--cluster` argument:
+
 ```sh
 livingdocs-server elasticsearch-index --handle li-documents --cluster=dc-1
 ```

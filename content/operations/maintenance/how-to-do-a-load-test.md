@@ -7,8 +7,6 @@ Before you start with testing it's very important to understand **what** and **h
 
 A rule of thumb for load testing is: **never do a serious performance test locally!!!!** If you run a test locally you can get inconsistent results. The reason for that is e.g. of a slow internet connection or running applications in the background.
 
-
-
 ## How to do a load test with artillery.io
 
 If you want to make a load test with multiple endpoints, `artillery.io` is a very good tool for that case.
@@ -28,34 +26,31 @@ http://test.ch/3.html
 ```yml
 # artillery.yml
 config:
-  target: "{{ url }}"
+  target: '{{ url }}'
   phases:
     - duration: 120
       arrivalRate: 130
   payload:
-    path: "urls.txt"
+    path: 'urls.txt'
     fields:
-      - "url"
+      - 'url'
 
 scenarios:
-  -
-    name: "call all url's"
+  - name: "call all url's"
     flow:
-      -
-        get:
-          url: "{{ url }}"
+      - get:
+          url: '{{ url }}'
 ```
 
 - phases.duration = time in seconds to run the test
 - phases.arrivalRate = new requests started per second. This value should not be higher than 150 (the performance results are wrong, because the machines are not performant enough). If you need more requests per second, you have to boot up more instances.
 
-
 Run a test with `artillery run artillery.yml`.
 
-
-
 ### Results
+
 An example result looks like this.
+
 ```
   Request latency (ms):
     min: 177.8
@@ -64,7 +59,6 @@ An example result looks like this.
     p95: 373.7
     p99: 380.8
 ```
-
 
 ## How to do a Load Test with Apache Benchmark
 

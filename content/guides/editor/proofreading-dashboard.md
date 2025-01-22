@@ -9,6 +9,7 @@ weight: 8
 Our goal of this walkthrough is to show how to set up a Proofreading Task Dashboard with Realtime Collaboration.
 
 Key features
+
 - You have your own dashboard with your own design card
 - Your dashboard will be updated in realtime (when a task changes)
 - You can change the priority of a proofreading task
@@ -38,10 +39,12 @@ metadata: [
 ```
 
 References:
+
 - [How to customise a proofreading task]({{< ref "./proofreading-task.md" >}})
 - [How to configure a metadata field]({{< ref "/customising/server/metadata-plugins" >}})
 
 ### Add my-proofreading to Elasticsearch
+
 The metadata field `my-proofreading` should be searchable by the proofreading dashboard later. Therefore you have to extend the Elasticsearch document mapping.
 You will find an example on the [server](https://github.com/livingdocsIO/livingdocs-server/blob/cb91a7913149293e2d8562f98c085bb46da41d60/example-server/metadata/es_metadata_mapping_v6.json#L59-L118).
 
@@ -63,6 +66,7 @@ dashboards: [
 ```
 
 References:
+
 - [Project Config]({{< ref "/reference/project-config/editor-settings" >}})
 
 ## 3) Add your custom dashboard to the menu
@@ -81,12 +85,13 @@ As third step you can add the custom dashboard to the [main navigation]({{< ref 
 :tada: After you have added your dashboard to the menu, you have a working custom realtime dashboard filtered by your custom metadata field :tada:
 
 How to test it
+
 - go to the tasks feature in the top bar of an article and change the status of your task
 - go to the `My Proofreading` dashboard via the menu and look if your task is on the board
 
 References:
-- [Project Config]({{< ref "/reference/project-config/editor-settings" >}})
 
+- [Project Config]({{< ref "/reference/project-config/editor-settings" >}})
 
 ## 4) Customise a card on the dashboard
 
@@ -108,7 +113,7 @@ Finally, you need to reference this component in the project config by setting `
 dashboards: [
   {
     handle: 'my-kanban-proofreading',
-    componentName: 'myProofreadingCard',
+    componentName: 'myProofreadingCard'
     // ...
   }
 ]

@@ -1,21 +1,21 @@
-'use strict';
+'use strict'
 const Clipboard = require('clipboard')
 
 // cookies
-function getCookie (name) {
-	let value = `; ${document.cookie}`
-	let parts = value.split(`; ${name}=`)
-	if (parts.length === 2) return parts.pop().split(';').shift()
+function getCookie(name) {
+  let value = `; ${document.cookie}`
+  let parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
 }
 
 // simulate click
-function simulateClick (elem) {
-	var evt = new MouseEvent('click', {
-		bubbles: true,
-		cancelable: true,
-		view: window
-	})
-	var canceled = !elem.dispatchEvent(evt)
+function simulateClick(elem) {
+  var evt = new MouseEvent('click', {
+    bubbles: true,
+    cancelable: true,
+    view: window
+  })
+  var canceled = !elem.dispatchEvent(evt)
 }
 
 // clipboard
@@ -29,7 +29,9 @@ for (const elem of document.querySelectorAll('.highlight')) {
 }
 
 const clip = new Clipboard('.copy-button', {
-  text (btn) { return btn.previousSibling.innerText.replace(/^\$\s/gm, '') }
+  text(btn) {
+    return btn.previousSibling.innerText.replace(/^\$\s/gm, '')
+  }
 })
 
 clip.on('success', function (e) {
@@ -68,16 +70,22 @@ function appendAnchor(heading) {
   heading.removeAttribute('id')
 }
 
-const anchorElements = document.querySelectorAll('.page__content h2, .page__content h3, .page__content h4')
+const anchorElements = document.querySelectorAll(
+  '.page__content h2, .page__content h3, .page__content h4'
+)
 for (const elem of anchorElements) appendAnchor(elem)
 
 // Add target = _blank to all external links.
-document.addEventListener('click', function (e){
-  if (e.target.tagName !== 'A') return
-  const url = new URL(e.target.href, window.location.href)
-  if (url.hostname === window.location.hostname) return
-  e.target.target = '_blank'
-},true)
+document.addEventListener(
+  'click',
+  function (e) {
+    if (e.target.tagName !== 'A') return
+    const url = new URL(e.target.href, window.location.href)
+    if (url.hostname === window.location.hostname) return
+    e.target.target = '_blank'
+  },
+  true
+)
 
 /**
  * Search Support
@@ -88,7 +96,7 @@ const searchInput = search.querySelector('.menu-search__field')
 const searchBox = search.querySelector('.search-box')
 const searchResults = search.querySelector('.search-results')
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function () {
   const urlQueryParameter = new URL(window.location.href).searchParams.get('q')
   if (urlQueryParameter) searchInput.value = urlQueryParameter
 
@@ -99,12 +107,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const filterHandles = activeSearchFilters.split(',')
 
     const searchFilters = document.querySelectorAll('.js-search-filter')
-    searchFilters.forEach(function(searchFilter) {
+    searchFilters.forEach(function (searchFilter) {
       const handle = searchFilter.getAttribute('data-filter-handle')
       if (filterHandles.indexOf(handle) > -1) {
         searchFilter.classList.add('is-active')
-      }
-      else {
+      } else {
         searchFilter.classList.remove('is-active')
       }
     })
@@ -114,8 +121,8 @@ document.addEventListener("DOMContentLoaded", function() {
 let documentResultsTemplate = document.createElement('div')
 documentResultsTemplate.innerHTML = [
   `<div class="search-results-document">`,
-      `<div class="search-results-document__tags"></div>`,
-      `<div class="search-results-document__content"></div>`,
+  `<div class="search-results-document__tags"></div>`,
+  `<div class="search-results-document__content"></div>`,
   `</div>`
 ].join('')
 documentResultsTemplate = documentResultsTemplate.firstElementChild
@@ -123,14 +130,13 @@ documentResultsTemplate = documentResultsTemplate.firstElementChild
 let searchResultTemplate = document.createElement('div')
 searchResultTemplate.innerHTML = [
   `<a class="search-results-line">`,
-      `<div class="search-results-line__title"></div>`,
-      `<div class="search-results-line__text"></div>`,
+  `<div class="search-results-line__title"></div>`,
+  `<div class="search-results-line__text"></div>`,
   `</a>`
 ].join('')
 searchResultTemplate = searchResultTemplate.firstElementChild
 
-
-function hideSearchResults (deleteQuery) {
+function hideSearchResults(deleteQuery) {
   if (deleteQuery) {
     searchInput.value = ''
     searchResults.innerHTML = ''
@@ -139,7 +145,7 @@ function hideSearchResults (deleteQuery) {
   searchBox.classList.remove('visible')
 }
 
-function showSearchResults () {
+function showSearchResults() {
   cancelButton.classList.add('visible')
   searchBox.classList.add('visible')
 }
@@ -156,7 +162,7 @@ searchInput.addEventListener('focus', (evt) => {
   startSearch({})
 })
 
-async function startSearch (e) {
+async function startSearch(e) {
   if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'Enter') return
   if (e.key === 'Escape') return hideSearchResults(false)
 
@@ -168,13 +174,18 @@ async function startSearch (e) {
   const searchFilters = document.querySelectorAll('.js-search-filter.is-active')
   const filterTags = []
 
-  searchFilters.forEach(function(searchFilter) {
+  searchFilters.forEach(function (searchFilter) {
     filterTags.push(searchFilter.getAttribute('data-filter-handle'))
   })
 
   if (!words.length) return hideSearchResults(true)
   else showSearchResults()
-  for (const doc of await searchWorker.search({index: window.searchJson, query: words, filterTags, limit: 20})) {
+  for (const doc of await searchWorker.search({
+    index: window.searchJson,
+    query: words,
+    filterTags,
+    limit: 20
+  })) {
     const docElem = documentResultsTemplate.cloneNode(true)
     docElem.firstChild.innerHTML = doc.title
     for (const result of doc.results) {
@@ -203,7 +214,7 @@ async function startSearch (e) {
 
 let searchFocusIndex = -1
 
-function changeSearchFocus (direction) {
+function changeSearchFocus(direction) {
   const results = document.querySelectorAll('.search-results-document')
   if (results[searchFocusIndex] !== undefined) {
     results[searchFocusIndex].classList.remove('is-focussed')
@@ -212,50 +223,53 @@ function changeSearchFocus (direction) {
   if (searchFocusIndex < 0) {
     searchFocusIndex = -1
     searchInput.focus()
-  }
-  else if (results[searchFocusIndex] === undefined) {
+  } else if (results[searchFocusIndex] === undefined) {
     searchFocusIndex = searchFocusIndex - direction
   }
   if (results[searchFocusIndex] !== undefined) {
     results[searchFocusIndex].classList.add('is-focussed')
-    results[searchFocusIndex].scrollIntoView({behavior: "smooth", block: "center"})
+    results[searchFocusIndex].scrollIntoView({behavior: 'smooth', block: 'center'})
     searchInput.blur()
   }
 }
 
-searchInput.addEventListener('keyup', (e) => { startSearch(e) })
+searchInput.addEventListener('keyup', (e) => {
+  startSearch(e)
+})
 
 // prevent browser default key actions as they are captured by the search input
-window.addEventListener("keydown", function(e) {
-  // Do not prevent CMD+ArrowUp/ArrowDown
-  if (e.metaKey) return
+window.addEventListener(
+  'keydown',
+  function (e) {
+    // Do not prevent CMD+ArrowUp/ArrowDown
+    if (e.metaKey) return
 
-  if(["ArrowUp","ArrowDown"].indexOf(e.code) > -1) {
-      e.preventDefault();
-  }
-}, false)
+    if (['ArrowUp', 'ArrowDown'].indexOf(e.code) > -1) {
+      e.preventDefault()
+    }
+  },
+  false
+)
 
 // add custom key actions
 document.addEventListener('keyup', (e) => {
   // check for up, down and enter keys
   if (e.key === 'ArrowUp') {
     changeSearchFocus(-1)
-  }
-  else if (e.key === 'ArrowDown') {
+  } else if (e.key === 'ArrowDown') {
     changeSearchFocus(1)
-  }
-  else if (e.key === 'Enter') {
+  } else if (e.key === 'Enter') {
     const focussedLink = document.querySelector('.search-results-document.is-focussed a')
     simulateClick(focussedLink)
   }
 })
 
-function createSearchWorker () {
+function createSearchWorker() {
   const worker = new Worker(document.head.querySelector('link[rel=lunr]').href)
   const queue = []
   let current
 
-  function trigger () {
+  function trigger() {
     current = queue.pop()
     queue.length = 0
     worker.postMessage(JSON.stringify(current.body))
@@ -268,7 +282,7 @@ function createSearchWorker () {
   }
 
   return {
-    search (body) {
+    search(body) {
       if (!body) return []
       return new Promise((resolve) => {
         queue.push({body, resolve})
@@ -283,7 +297,7 @@ function createSearchWorker () {
  */
 const pills = document.querySelectorAll('.pill')
 
-pills.forEach(function(pill) {
+pills.forEach(function (pill) {
   pill.addEventListener('click', (evt) => {
     evt.target.classList.toggle('is-active')
   })
@@ -291,24 +305,21 @@ pills.forEach(function(pill) {
 
 const searchFilterPills = document.querySelectorAll('.js-search-filter')
 
-pills.forEach(function(pill) {
+pills.forEach(function (pill) {
   pill.addEventListener('click', (evt) => {
     // update cookie with new filter selection
     const activeSearchFilters = document.querySelectorAll('.js-search-filter.is-active')
     let filters = ' '
-    activeSearchFilters.forEach(function(searchFilter) {
+    activeSearchFilters.forEach(function (searchFilter) {
       filters += `${searchFilter.getAttribute('data-filter-handle')},`
     })
     filters = filters.slice(0, -1)
-    document.cookie = `li-documentation-search-filters=${filters};path=/;`;
+    document.cookie = `li-documentation-search-filters=${filters};path=/;`
 
     // start search feature
     startSearch(evt)
   })
 })
-
-
-
 
 /**
  * Mobile burger navigation
@@ -330,21 +341,23 @@ conent.addEventListener('click', (evt) => {
  */
 const teaserAndCodes = document.querySelectorAll('.teaser-and-code')
 
-teaserAndCodes.forEach(function(teaserAndCode) {
+teaserAndCodes.forEach(function (teaserAndCode) {
   if (teaserAndCode.querySelector('.code-teaser--with-interaction') != undefined) {
-    teaserAndCode.querySelector('.code-teaser--with-interaction').addEventListener('click', (evt) => {
-      const highlight = evt.target.closest('.teaser-and-code').querySelector('.highlight')
-      const teaser = evt.target.closest('.teaser-and-code').querySelector('.code-teaser')
-      const code = evt.target.closest('.teaser-and-code').querySelector('.teaser-and-code__code')
+    teaserAndCode
+      .querySelector('.code-teaser--with-interaction')
+      .addEventListener('click', (evt) => {
+        const highlight = evt.target.closest('.teaser-and-code').querySelector('.highlight')
+        const teaser = evt.target.closest('.teaser-and-code').querySelector('.code-teaser')
+        const code = evt.target.closest('.teaser-and-code').querySelector('.teaser-and-code__code')
 
-      const codeHeight = code.offsetHeight
-      let targetHeight = highlight.offsetHeight + 1 // + 1 to make up for calculation inacurracy
-      if (codeHeight > 0) targetHeight = 0
+        const codeHeight = code.offsetHeight
+        let targetHeight = highlight.offsetHeight + 1 // + 1 to make up for calculation inacurracy
+        if (codeHeight > 0) targetHeight = 0
 
-      teaser.classList.toggle('code-teaser--open')
-      code.classList.toggle('show')
-      code.style.height=`${targetHeight}px`
-    })
+        teaser.classList.toggle('code-teaser--open')
+        code.classList.toggle('show')
+        code.style.height = `${targetHeight}px`
+      })
   }
 })
 
@@ -368,19 +381,23 @@ document.addEventListener('scroll', (evt) => {
  * Fix back buttons for anchors
  */
 const menuHeight = 65
-window.addEventListener('hashchange', function (evt) {
-  const maincontent = document.querySelector('html')
-  if (!maincontent) return
+window.addEventListener(
+  'hashchange',
+  function (evt) {
+    const maincontent = document.querySelector('html')
+    if (!maincontent) return
 
-  let elem = document.getElementById(window.location.hash.replace('#', ''))
-  if (!elem) {
-    maincontent.scrollTop = 0
-  } else {
-    maincontent.scrollTop = offsetTopToParent(maincontent, elem) - menuHeight
-  }
-}, true)
+    let elem = document.getElementById(window.location.hash.replace('#', ''))
+    if (!elem) {
+      maincontent.scrollTop = 0
+    } else {
+      maincontent.scrollTop = offsetTopToParent(maincontent, elem) - menuHeight
+    }
+  },
+  true
+)
 
-function offsetTopToParent (parent, elem) {
+function offsetTopToParent(parent, elem) {
   let y = 0
   while (elem) {
     if (elem === parent) break

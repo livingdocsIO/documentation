@@ -32,7 +32,6 @@ liServer.registerInitializedHook(async () => {
 })
 ```
 
-
 ## Advanced Document Update Example
 
 In this example we only allow the server admin (which has userId = 1) to update a document which has the category 'financialReport'. It's only a showcase to get a feeling what you could do.

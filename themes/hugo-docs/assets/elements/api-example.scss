@@ -82,7 +82,8 @@ $api-example-padding: $space-m;
     }
   }
 
-  &--danger, &--warning {
+  &--danger,
+  &--warning {
     border: 2px solid $color-red-2;
     position: relative;
 
@@ -123,5 +124,4 @@ $api-example-padding: $space-m;
       background-color: $color-yellow-2;
     }
   }
-
 }

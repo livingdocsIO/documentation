@@ -20,7 +20,7 @@ parameters:
 
 deprecated: release-2023-03
 responses:
-  - code: "200"
+  - code: '200'
     body: |
       {
         "channelId": 1,

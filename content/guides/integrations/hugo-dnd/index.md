@@ -17,17 +17,16 @@ You can configure mappings form Hugo fields to the metadata of your MediaLibrary
 Note: you can restrict from which sources images can be uploaded, e.g. you could allow only uploads from _huGO+_.
 See [Image Source Policy]({{< ref "/customising/advanced/editor-configuration/image-source-policy.md" >}})
 
-
 ## Document Drag and Drop
 
 In case you use _huGO+_ as Digital Assets Management software, you can import articles from huGO+ by dragging and dropping them onto a Livingdocs dashboard.
 
 There are two types of articles available for imports:
-* Agency articles
-  These are imported from established news agencies like _DPA_, _Reuters_, etc.
-* Archive articles
-  They come from sources you specify on your own: If you have a print system or any other system and wish to feed articles into huGO+ you would get Archive articles.
 
+- Agency articles
+  These are imported from established news agencies like _DPA_, _Reuters_, etc.
+- Archive articles
+  They come from sources you specify on your own: If you have a print system or any other system and wish to feed articles into huGO+ you would get Archive articles.
 
 ### Preparation
 
@@ -109,7 +108,7 @@ module.exports = function ({hugoArticle, design, layout, metadata, imagesApi}, c
   })
 }
 
-function transform ({hugoArticle, design, layout, imagesApi}, callback) {
+function transform({hugoArticle, design, layout, imagesApi}, callback) {
   const imageService = conf.get('image_service') // You'll need to configure an imageservice like 'imgix' if you'd like to use images
   framework.design.add(design)
   const livingdoc = createEmptyLivingdoc({name: design.name, version: design.version}, layout)
@@ -168,8 +167,12 @@ const createParagraph = function (text, tree) {
   return paragraphComponent
 }
 
-const createImage = function ({url, height, width, size, mime: mimeType},
-  hugoImage, imageService, tree) {
+const createImage = function (
+  {url, height, width, size, mime: mimeType},
+  hugoImage,
+  imageService,
+  tree
+) {
   const imageComponent = tree.createComponent('image')
   imageComponent.setContent('image', {url, height, width, size, mimeType, imageService})
   imageComponent.setContent('caption', hugoImage.caption)
@@ -178,7 +181,7 @@ const createImage = function ({url, height, width, size, mime: mimeType},
 }
 
 // Extract metadata
-function getMetadata (hugoArticle) {
+function getMetadata(hugoArticle) {
   const hugoMetadata = {
     id: hugoArticle.id,
     category: hugoArticle.category,
@@ -199,9 +202,11 @@ function getMetadata (hugoArticle) {
 ```
 
 ### Metadata
+
 You might want to store data that's embedded in each `hugoArticle` thus you need to specify that data in order for it to be valid.
 
 #### Metadata plugin
+
 ```js
 // plugins/metadata/hugo.js
 module.exports = {
@@ -240,6 +245,7 @@ module.exports = {
 ```
 
 #### Elasticsearch metadata
+
 The metadata you have specified should be made known to Elasticsearch as well.
 
 ```js
@@ -288,11 +294,14 @@ The metadata you have specified should be made known to Elasticsearch as well.
 ```
 
 #### Configure articles
+
 At last you have to configure all your possible huGO+ targets with the metadata plugin you created before.
 
 ```js
-  // E.g. conf/channels/web/article/all.js
-  //  or conf/channels/web/magazine/all.js
+// E.g. conf/channels/web/article/all.js
+//  or conf/channels/web/magazine/all.js
 
-  hugo: {plugin: 'hugo'}
+hugo: {
+  plugin: 'hugo'
+}
 ```

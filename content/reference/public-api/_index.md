@@ -16,6 +16,7 @@ The [Livingdocs Public API]({{< ref "/reference/public-api" >}}) can be tested a
 Thanks to the [OpenAPI specification](https://swagger.io/specification/), it's possible to quickly test the API using [Swagger UI](https://petstore.swagger.io/?url=https://livingdocsio.github.io/openapi/livingdocs-openapi.json). And import the full collection of existing API endpoints into Insomnia or Postman.
 
 The easiest way to import the endpoint collection is from a URL, both Postman and Insomnia support it.
+
 ```
 https://livingdocsio.github.io/openapi/livingdocs-openapi.json
 ```

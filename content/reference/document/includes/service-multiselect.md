@@ -10,51 +10,51 @@ So far we have seen configurations where a `doc-include` directive has one inclu
 
 ```html
 <script type="ld-conf">
-{
-  "name": "top-news",
-  "label": "Top News",
-  "directives": [
-    {
-      "name": "top-news",
-      "type": "include",
-      "services": [
-        {
-          "service": "list",
-          "label": "Manual List",
-          "defaultParams": {
-            "layout": "topNews"
+  {
+    "name": "top-news",
+    "label": "Top News",
+    "directives": [
+      {
+        "name": "top-news",
+        "type": "include",
+        "services": [
+          {
+            "service": "list",
+            "label": "Manual List",
+            "defaultParams": {
+              "layout": "topNews"
+            },
+            "config": {
+              "minCount": 5,
+              "maxCount": 5
+            }
           },
-          "config": {
-            "minCount": 5,
-            "maxCount": 5
-          }
-        },
-        {
-          "service": "categoryList",
-          "label": "Automatic List",
-          "defaultParams": {
-            "layout": "topNews"
+          {
+            "service": "categoryList",
+            "label": "Automatic List",
+            "defaultParams": {
+              "layout": "topNews"
+            },
+            "config": {
+              "minCount": 5,
+              "maxCount": 5
+            }
           },
-          "config": {
-            "minCount": 5,
-            "maxCount": 5
+          {
+            "service": "scheduledList",
+            "label": "Scheduled List",
+            "defaultParams": {
+              "layout": "topNews"
+            },
+            "config": {
+              "minCount": 5,
+              "maxCount": 5
+            }
           }
-        },
-        {
-          "service": "scheduledList",
-          "label": "Scheduled List",
-          "defaultParams": {
-            "layout": "topNews"
-          },
-          "config": {
-            "minCount": 5,
-            "maxCount": 5
-          }
-        }
-      ]
-    }
-  ]
-}
+        ]
+      }
+    ]
+  }
 </script>
 
 <div doc-include="top-news">

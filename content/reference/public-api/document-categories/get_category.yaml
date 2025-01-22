@@ -20,7 +20,7 @@ parameters:
     required: false
     notes: If set to `true` will inherit (but not overwrite) metadata properties from all parents Inheritance depth is limited to 20
 responses:
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/categories/123abc
     body: |
       {
@@ -33,7 +33,7 @@ responses:
         }
       }
 
-  - code: "400"
+  - code: '400'
     endpoint: /api/v1/categories/123abc
     body: |
       {
@@ -44,7 +44,7 @@ responses:
         }
       }
 
-  - code: "500"
+  - code: '500'
     endpoint: /api/v1/categories/123abc
     body: |
       {

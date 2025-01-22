@@ -8,7 +8,7 @@ query: |
   curl -k -X GET https://server.livingdocs.io/api/v1/documents/latestPublications \
     -H "Authorization: Bearer your_token"
 responses:
-  - code: "200"
+  - code: '200'
     body: |
       [
         {

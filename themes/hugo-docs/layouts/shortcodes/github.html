@@ -1,7 +1,14 @@
 <div class="github-repo">
   {{ $repo := resources.Get "svg/repo.svg" | fingerprint }}
-  <img src="{{ $repo.RelPermalink }}" class="github-repo__icon">
-  <a class="github-repo__link" href="https://github.com/{{ .Get 0 }}">{{ .Get 0 }}</a>
+  <img
+    src="{{ $repo.RelPermalink }}"
+    class="github-repo__icon"
+  />
+  <a
+    class="github-repo__link"
+    href="https://github.com/{{ .Get 0 }}"
+    >{{ .Get 0 }}</a
+  >
   <p class="github-repo__desc">{{ .Get 1 }}</p>
   <p class="github-repo__info">
     <span class="github-repo__lang-color"></span>

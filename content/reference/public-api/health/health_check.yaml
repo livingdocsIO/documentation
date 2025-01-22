@@ -8,7 +8,7 @@ endpoint:
   method: GET
   path: /api/v1/health
 responses:
-  - code: "200"
+  - code: '200'
     body: |
       {
         "status": "ok"

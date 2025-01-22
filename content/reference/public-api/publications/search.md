@@ -8,7 +8,6 @@ menus:
 
 {{< api-example-resource file="search_publications.yaml" >}}
 
-
 ## Search Filters
 
 {{< added-in "release-2023-07" block >}}
@@ -17,24 +16,24 @@ Search filters can be used to filter documents using a custom query DSL.
 
 ### Filter Fields
 
-| Property                   | Type    |
-| :------------------------- | :------ |
-| documentId                 | long    |
-| contentType                | keyword |
-| firstPublicationDate       | date    |
-| lastPublicationDate        | date    |
-| significantPublicationDate | date    |
-| visiblePublicationDate     | date    |
-| statistics.characterCount  | integer |
-| statistics.componentCount.*| integer |
-| metadata.*                 | Any     |
+| Property                     | Type    |
+| :--------------------------- | :------ |
+| documentId                   | long    |
+| contentType                  | keyword |
+| firstPublicationDate         | date    |
+| lastPublicationDate          | date    |
+| significantPublicationDate   | date    |
+| visiblePublicationDate       | date    |
+| statistics.characterCount    | integer |
+| statistics.componentCount.\* | integer |
+| metadata.\*                  | Any     |
 
 Metadata fields must be indexed. Please read the [Publication Index]({{< ref "/guides/search/publication-index" >}}) guide for further information.
 Details of the core metadata plugins, along with their built-in indexing capabilities, can be found in the [Metadata Plugin List]({{< ref "/reference/document/metadata/plugins" >}}).
 
 The index type of each field will determine which query capabilities are supported:
 
-| Type    | Term          | Range         | Exists        | Sort          |
+| Type    |     Term      |     Range     |    Exists     |     Sort      |
 | :------ | :-----------: | :-----------: | :-----------: | :-----------: |
 | keyword | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
 | integer | {{< check >}} | {{< check >}} | {{< check >}} | {{< check >}} |
@@ -193,6 +192,7 @@ const results = await response.json()
 ## Sort Fields
 
 Valid sort fields are:
+
 - `relevance`
 - `sortDate`
 - `documentId`

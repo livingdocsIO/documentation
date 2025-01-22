@@ -11,7 +11,7 @@ The screenshot below shows you how to set the access rights for a given group.
 
 {{< img src="access-rights.png" alt="Access Rights" >}}
 
-*You reach this screen by clicking on "Preferences" > "Project Admin" > "Groups" in the main menu*
+_You reach this screen by clicking on "Preferences" > "Project Admin" > "Groups" in the main menu_
 
 ## Scopes and Policies
 

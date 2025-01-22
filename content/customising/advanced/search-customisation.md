@@ -21,7 +21,9 @@ const _ = require('lodash')
 // @param {String} searchQuery 'hello world'
 // @returns {Object} Elasticsearch body.query
 module.exports = function (searchQuery) {
-  if (_.isEmpty(searchQuery)) { return }
+  if (_.isEmpty(searchQuery)) {
+    return
+  }
 
   return {
     bool: {
@@ -42,7 +44,6 @@ module.exports = function (searchQuery) {
     }
   }
 }
-
 
 const getBoolQuery = function (searchQuery) {
   const trimmedSearchQuery = searchQuery.trim()
@@ -67,7 +68,7 @@ const getBoolQuery = function (searchQuery) {
   ]
 }
 
-function getFunctionsForScore () {
+function getFunctionsForScore() {
   return [
     {
       gauss: {

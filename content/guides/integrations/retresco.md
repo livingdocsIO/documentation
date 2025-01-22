@@ -75,9 +75,7 @@ You will need to add the metadata plugin for all content types that you would li
 
 ```js
 {
-  metadata: [
-    {handle: 'retresco', type: 'li-retresco'}
-  ]
+  metadata: [{handle: 'retresco', type: 'li-retresco'}]
 }
 ```
 
@@ -113,6 +111,7 @@ The Retresco entities will be stored in the document's metadata using the metada
 ```
 
 ## Re-enrich Documents
+
 {{< added-in "release-2023-03" block >}}
 
 If you want to use the re-enrich feature from Retresco, you will need to configure the webhook and token in Retresco's website.

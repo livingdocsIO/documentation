@@ -5,7 +5,7 @@ weight: 2
 ---
 
 {{< warning >}}
-  Use of this Document Copy feature is no longer recommended. For new setups please use the [Document Copy Flows]({{< ref "/guides/editor/document-copy-flows" >}}) or [Document Transform Flows]({{< ref "/guides/editor/document-transform-flows" >}}) features instead.
+Use of this Document Copy feature is no longer recommended. For new setups please use the [Document Copy Flows]({{< ref "/guides/editor/document-copy-flows" >}}) or [Document Transform Flows]({{< ref "/guides/editor/document-transform-flows" >}}) features instead.
 {{< /warning >}}
 
 ## Introduction
@@ -19,6 +19,7 @@ In the following sections you learn to know three different ways to copy a docum
 ### (A) Create a Simple Copy
 
 If you want to make a simple 1:1 copy, e.g. from content-type `regular` to `regular`, you have to
+
 - remove the copy config on the server (if there is one)
 - enable the simple copy flag on the editor
 
@@ -35,10 +36,11 @@ If you want to make a simple 1:1 copy, e.g. from content-type `regular` to `regu
 ### (B) Copy with a server copy configuration
 
 For more advanced scenarios, it's possible to define a copy config on the server. The copy config supports a lot of scenarios, e.g.
-  - copy from content-type A to content-type B
-  - copy/convert a content-type into another content-type with another design
-  - convert livingdoc components
-  - map metadata
+
+- copy from content-type A to content-type B
+- copy/convert a content-type into another content-type with another design
+- convert livingdoc components
+- map metadata
 
 To get a rough understanding of the copy feature with a server configuration, read [Document Copy Basics](#document-copy-basics) first. The [Copy Config Example](#copy-config-example) section provides an overview of a basic copy config. To get a better feeling of what copy scenarios are supported, visit the [Copy Use Cases](#copy-use-cases).
 
@@ -52,11 +54,12 @@ downstream that triggers an action when a document is first published
 if the document has a certain contentType.
 
 Project config `/settings`
+
 ```js
 copy: [
   {
     source: {
-      contentType: 'fantasy',
+      contentType: 'fantasy'
     },
     targets: [
       {
@@ -67,7 +70,6 @@ copy: [
   }
 ]
 ```
-
 
 ## Document Copy Basics
 
@@ -80,17 +82,15 @@ configuration instructs the system how to deal with this differences. Also even 
 used to create a new document of the same contentType some metadata properties may should not
 be copied.
 
-
 If you request a copy, the copy feature tries to find a config match in the channel config between the source(channel/contentType) and the target(channel/contentType). If there is a match, the copy feature makes a copy based on the configured `options` and `metadata` properties. If there is no match, the copy operation will be ignored.
 
 The configuration of a transformation happens in two places:
 
 1. the "setup config" in the `copy:` section of your main config that
-defines which transformations for which contentType combinations are allowed and specifies the
-location of the corresponding instruction config in `target.instructionPath`
+   defines which transformations for which contentType combinations are allowed and specifies the
+   location of the corresponding instruction config in `target.instructionPath`
 
 2. the "instruction config" referenced above that holds the transformation instructions for a specific scenario
-
 
 ## Copy Config Example
 
@@ -121,17 +121,18 @@ copy: [
         metadata: {
           map: [
             // copies source.title to target.catchline
-            {'from': 'title', 'to': 'catchline'},
+            {from: 'title', to: 'catchline'},
 
             // copies systemdata.id to target.copySourceId.
-            {'from': 'systemdata.id', 'to': 'copySourceId'},
+            {from: 'systemdata.id', to: 'copySourceId'},
 
             // syntactic sugar for:
             // [
             //   {'from': 'title', 'to': 'title'},
             //   {'from': 'tasks', 'to': 'tasks'}
             // ]
-            'title', 'tasks',
+            'title',
+            'tasks'
           ]
         },
         // a document can be transformed
@@ -219,11 +220,12 @@ module.exports = {
 }
 ```
 
-
 ## Copy Use Cases
 
 ### (1) Copy with an Instruction
+
 #### (1.1) Design Copy
+
 {{< img src="copy-design-to-design.png" alt="copy-design-to-design" >}}
 
 If you want to copy an article from `channel 1` -> `channel 2`, you need a transformation between different components of different designs.
@@ -241,6 +243,7 @@ copy: [
 ```
 
 #### (1.2) Layout Copy (Layout L1 to Layout L2)
+
 {{< img src="copy-layout-l1-to-layout-l2-modified-components.png" alt="copy-layout-l1-to-layout-l2-modified-components" >}}
 
 Usually a copy can be done **without** an instruction. If a design has several layouts and in the layouts there are the same type of component with a different name (e.g. in layout1 'title' and in layout2 'title-extended'), then this configuration approach is the correct one at the moment.
@@ -258,7 +261,9 @@ copy: [
 ```
 
 ### (2) Clone Copy
+
 #### Layout L1 to Layout L2 - Ignore unknown components
+
 {{< img src="copy-layout-l1-to-layout-l2-unknown-copy-false.png" alt="copy-layout-l1-to-layout-l2-unknown-copy-false" >}}
 
 This scenario copies all components from one contentType to another contentType.

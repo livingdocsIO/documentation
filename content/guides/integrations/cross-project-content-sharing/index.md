@@ -7,7 +7,6 @@ description: Cross Project Content Sharing enables you to share content between 
 
 Cross Project Content Sharing enables you to share content between different Livingdocs projects.
 
-
 1. Dashboards can be used to search and filter those external documents and link them to your content in metadata properties.
 
    ![Alt text](useDashboard-table-dashboard.png)
@@ -20,26 +19,25 @@ Cross Project Content Sharing enables you to share content between different Liv
    - `li-document-references`
    - `li-tree`
 
-
 ## Prerequisite
 
 The Livingdocs Server instances where the cross project configuration should be supported, have some constraints:
 
 1. Instances need to set the `clusterId` via Server Config. The config value must be unique per Livingdocs cluster/installation.
 
-    ```js
-    {
-      clusterId: 'cAdwxNycQa'
-    }
-    ```
+   ```js
+   {
+     clusterId: 'cAdwxNycQa'
+   }
+   ```
 
-    Keep attention, if you change this config on an already-existing server, you will need to reindex document on Elasticsearch as document ids get prefixed using the cluster id.
+   Keep attention, if you change this config on an already-existing server, you will need to reindex document on Elasticsearch as document ids get prefixed using the cluster id.
 
-    ```bash
-    livingdocs-server elasticsearch-index --handle=li-documents -y
-    livingdocs-server elasticsearch-index --handle=li-publications -y
-    livingdocs-server elasticsearch-index --handle=li-media -y
-    ```
+   ```bash
+   livingdocs-server elasticsearch-index --handle=li-documents -y
+   livingdocs-server elasticsearch-index --handle=li-publications -y
+   livingdocs-server elasticsearch-index --handle=li-media -y
+   ```
 
 2. Instances need to set the same `indexNamePrefix` via Server Config (`elasticIndex.indexNamePrefix`)
 3. All instances need to run against the same Elasticsearch Cluster.
@@ -67,8 +65,9 @@ The Livingdocs Server instances where the cross project configuration should be 
         }
       ],
       ```
-   3. Create a dashboard that includes the `crossProjectContentSearch` filter.
+   2. Create a dashboard that includes the `crossProjectContentSearch` filter.
       Please consult the [dashboard config documentation]({{<ref "/reference/project-config/editor-settings#dashboards" >}}) for a full configuration.
+
       ```js
       {
         handle: 'articlesWithExternalDocuments',
@@ -82,7 +81,7 @@ The Livingdocs Server instances where the cross project configuration should be 
       }
       ```
 
-   1. Use the created dashboard on one of the metadata properties that should support embedding external documents.
+   3. Use the created dashboard on one of the metadata properties that should support embedding external documents.
       ```js
       {
         handle: 'relatedArticles',
@@ -107,6 +106,7 @@ After setting up the configuration as above, you're able to link content of exte
 In metadata properties of type `li-document-reference` and `li-document-references`, this gets represented with the usual structure, but with an additional `externalSystem` property.
 
 For `li-document-references`:
+
 ```js
 "metadata": {
   "relatedArticles": {
@@ -127,6 +127,7 @@ For `li-document-references`:
 ```
 
 For `li-document-reference`:
+
 ```js
 "metadata": {
   "relatedArticle": {
@@ -137,3 +138,4 @@ For `li-document-reference`:
     }
   }
 }
+```

@@ -40,7 +40,7 @@
     left: $space-m;
     height: $space-m;
     width: $space-m;
-    filter: saturate(0)
+    filter: saturate(0);
   }
 
   &__content {
@@ -73,11 +73,10 @@
 }
 
 .section-teaser--guides {
-
   .section-teaser {
     &__link {
       position: relative;
-      background-color: rgba($color-blue-2, .5);
+      background-color: rgba($color-blue-2, 0.5);
       border: 0;
       justify-content: flex-start;
 
@@ -93,7 +92,9 @@
         border-radius: 3 * $rounded-corners;
         pointer-events: none;
         opacity: 0;
-        transition: opacity $transition-time, border $transition-time;
+        transition:
+          opacity $transition-time,
+          border $transition-time;
       }
 
       &:hover {

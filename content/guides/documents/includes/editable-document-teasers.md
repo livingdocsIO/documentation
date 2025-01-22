@@ -10,6 +10,7 @@ If you set `editableContent: true` as return value, a user can overwrite the sin
 This allows the implementation of an Editable Teaser workflow.
 
 An example of an includes return value:
+
 ```js
 {
   // if editableContent is true, the user can locally edit the content
@@ -33,6 +34,7 @@ An example of an includes return value:
 ```
 
 Here is an example includes configuration to consider for the editable teaser usecase:
+
 ```js
 {
   name: 'editable-teaser',
@@ -59,6 +61,7 @@ Here is an example includes configuration to consider for the editable teaser us
 ```
 
 This is how your Teaser Component looks like in this case:
+
 ```js
 {
   name: 'teaser-include',
@@ -89,8 +92,8 @@ This is how your Teaser Component looks like in this case:
 }
 ```
 
-
 ## Caveats
+
 - `editableContent` has no effect when more than one component is returned.
 - The includes won't be resolved when you load the publication via Public API `api/v1/documents/:documentId/latestPublication`.
 - When requesting a web rendition of a publication, the components returned from the include resolver won't be part of rendered html for now.

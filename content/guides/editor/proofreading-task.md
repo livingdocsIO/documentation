@@ -137,9 +137,9 @@ Additionally, you need to extend the metadata mapping defined in your server con
 If `requestDeadline: true` in the configuration, you are asked to set a deadline date when starting a task.
 
 The default behavior is
+
 - default date: now + 1 day
 - allowed date range (validation): now + 7 days
-
 
 If you want to change that default behavior, you can register you own deadline computation in the editor via the `liEditor`.
 

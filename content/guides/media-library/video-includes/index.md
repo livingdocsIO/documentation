@@ -22,13 +22,13 @@ The example include service below uses [Video.js](https://videojs.com/) as the p
 // includes/video.js
 const {nanoid} = require('nanoid')
 
-function getAspectRatio ({width, height}) {
+function getAspectRatio({width, height}) {
   // Calculate the height as a percentage of the width, to one decimal place
   return Math.round((height / width) * 1000) / 10
 }
 
 // This async function should make a call to an external service for additional assets
-async function getTranscodedAssets ({asset}) {
+async function getTranscodedAssets({asset}) {
   return [
     {
       url: asset.url,
@@ -76,7 +76,7 @@ module.exports = function ({liServer, framework}) {
     blockEditorInteraction: 'initial',
     rendering: {
       type: 'function',
-      async render (params, context) {
+      async render(params, context) {
         // value and posterImageValue are the preloaded media library entries
         const {reference, value, posterImageValue} = params['video-param'] || {}
 
@@ -113,14 +113,18 @@ module.exports = function ({liServer, framework}) {
               preload="metadata"
               ${posterImageUrl ? `poster="${posterImageUrl}"` : ''}
             >
-              ${transcodedAssets.map((asset) => `
+              ${transcodedAssets
+                .map(
+                  (asset) => `
                 <source
                   src="${asset.url}"
                   type="${asset.mimeType}"
                   label="${asset.label}"
                   ${asset.selected ? 'selected="true"' : ''}
                 >
-              `).join('')}
+              `
+                )
+                .join('')}
               <div class="status-container">
                 <div class="status-content loading">Loading...</div>
               </div>
@@ -216,11 +220,13 @@ module.exports = {
   name: 'video-include',
   label: 'Video',
   iconUrl: `https://livingdocsio.github.io/livingdocs-design-assets/docs/icons/component-icons/icon_component_video.svg`,
-  directives: [{
-    name: 'video-directive',
-    type: 'include',
-    service: 'video-service'
-  }],
+  directives: [
+    {
+      name: 'video-directive',
+      type: 'include',
+      service: 'video-service'
+    }
+  ],
   html: `
     <div doc-include="video-directive">
       <div

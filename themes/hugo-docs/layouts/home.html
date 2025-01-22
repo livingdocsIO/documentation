@@ -1,9 +1,13 @@
 {{ partial "html-header.html" . }}
 
+
 <div class="page">
   {{ partial "sidebar.html" . }}
   <main class="page__content">
-    <article class="article" id="{{ .Slug }}">
+    <article
+      class="article"
+      id="{{ .Slug }}"
+    >
       <h1 class="article__title">
         {{ .Title }}
         {{ if (ne (.Param "renderEditButton") false) }}

@@ -7,6 +7,7 @@ weight: 3
 The Livingdocs server handles the basic functionality of revoking media - removing the asset(s) from storage, removing the media library entry from the dashboard, and updating the media library entry state.
 It is likely that each customer will have their own requirements for additional steps required to complete the revoke process based on their server configuration and editorial processes.
 These steps may include:
+
 - clearing caches
 - regenerating pages
 - replacing the media with a placeholder

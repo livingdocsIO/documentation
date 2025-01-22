@@ -12,11 +12,11 @@
 ## Project Config Properties
 
 See list form server
+
 - contentType
 - component
 - settings
 - ...
-
 
 ## APIs
 

@@ -10,7 +10,7 @@ References are stored for documents and media library entries. They indicate lin
 
 References for publications are currently available via Public API under [Latest Publication API Beta]({{< ref "/reference/public-api/publications/latest-publication-beta" >}}) and [Latest Publications API Beta]({{< ref "/reference/public-api/publications/latest-publications-beta" >}}).
 
-To find *incoming* references, which point to the document or media library entry that you specify, there are also endpoints available in the "Beta" section of the [Public API]({{< ref "/reference/public-api" >}}). These endpoints can be particularly useful when working with statically generated sites, as they allow you to make decisions on which caches should be cleared when content changes.
+To find _incoming_ references, which point to the document or media library entry that you specify, there are also endpoints available in the "Beta" section of the [Public API]({{< ref "/reference/public-api" >}}). These endpoints can be particularly useful when working with statically generated sites, as they allow you to make decisions on which caches should be cleared when content changes.
 
 ## Examples
 

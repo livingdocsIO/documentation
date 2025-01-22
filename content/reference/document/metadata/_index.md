@@ -12,6 +12,7 @@ menus:
 Every document is defined by it's `contentType` and every `contentType` has to define it's metadata. The metadata object (storage) consists of key-value pairs where the key is unique per document.
 
 Example of a metadata object as it could be returned by the Public API:
+
 ```json
 {
   "title": "Doctor Who 2",
@@ -64,11 +65,9 @@ Livingdocs offers metadata [plugins]({{< ref "/reference/document/metadata/plugi
 
 :information_source: A combination of metadata `type` (plugin) and configuration defines how the UI in the editor looks and in what format data are stored.
 
-
 ## Create your own Plugins
 
 If the provided plugins do not fulfill your needs, you can create your own metadata plugin. Check this [guide]({{< ref "/guides/documents/metadata/metadata-examples" >}}) for an example.
-
 
 ## References
 

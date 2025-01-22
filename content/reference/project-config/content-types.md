@@ -253,6 +253,7 @@ If you like the Working Title (`document.title` property) to be computed based o
 **Limitations**: Metadata fields referenced in `displayTitlePattern` must be of type `li-text`.
 
 Example configuration will display the author and title in the Working Title:
+
 ```js
 displayTitlePattern: '{{metadata.author}} - {{metadata.title}}'
 ```
@@ -269,7 +270,6 @@ defaultMetadata: {
 }
 ```
 
-
 ## viewAfterDocumentCreation
 
 With `viewAfterDocumentCreation` you can define to which view you are redirected after a document has been created.
@@ -282,13 +282,15 @@ viewAfterDocumentCreation: 'publish'
 - `edit` redirects to the 'editor view' (default)
 - `metadata` redirects to the 'metadata view'
 
-
 ## Editor Wrapper
 
 Defines a HTML string that wraps the document when used in the editor. Use the class `doc-section` where you want the content to be inserted.
 
 ```html
-<div class="doc-section" style="padding: 20px"></div>
+<div
+  class="doc-section"
+  style="padding: 20px"
+></div>
 ```
 
 The example above would put a padding of 20px on documents in the editor to give some space on the sides.
@@ -300,8 +302,10 @@ The editor wrapper holds all other content and serves as the overarching contain
 Metadata can be freely configured for each content-type. An article might have different metadata fields than an image gallery.
 
 The schema of the metadata array looks as follows:
+
 ```js
-  metadata: ms.arrayOf(ms.strictObj({
+metadata: ms.arrayOf(
+  ms.strictObj({
     id: 'string',
     handle: 'string:required',
     type: 'string:required',
@@ -314,15 +318,15 @@ The schema of the metadata array looks as follows:
       component: 'string:required',
       label: 'string',
       config: ms.obj({
-        readOnly: 'boolean',
+        readOnly: 'boolean'
         // more properties possible for specific metadata types
       })
     })
-  }))
+  })
+)
 ```
 
 Get a list of available [metadata plugins]({{< ref "/reference/document/metadata/plugins" >}})
-
 
 ## Metadata Groups
 
@@ -330,14 +334,19 @@ The Metadata Groups allow you to logically group the fields into collapsible car
 Once a card has been manually collapsed/expanded in the UI, then this state will be saved in the local storage of the browser and the card will show in that state even after a page reload.
 
 The schema looks as follows:
+
 ```js
-metadataGroups: ms.arrayOf(ms.strictObj({
-  label: 'string',
-  expanded: ms.boolean(), // optional, default is true
-  properties: ms.arrayOf(ms.string())
-}))
+metadataGroups: ms.arrayOf(
+  ms.strictObj({
+    label: 'string',
+    expanded: ms.boolean(), // optional, default is true
+    properties: ms.arrayOf(ms.string())
+  })
+)
 ```
+
 e.g.:
+
 ```js
 metadataGroups: [
   {
@@ -377,13 +386,14 @@ metadataPreviews: [
 The iframe communicates with Livingdocs via a postMessage interface. You have to send a `ready` status when the script in your iframe is ready to listen for `metadata.update` messages and will receive them initially, and then whenever one of the configured `metadataProperties` is changed.
 
 Here is an example script to include in your iframe:
+
 ```html
 <script>
   // it's important to have livingdocsEditorOrigin set to the origin you are serving
   // the Livingdocs Editor on.
   const livingdocsEditorOrigin = 'https://localhost:9000'
 
-  window.addEventListener("message", (event) => {
+  window.addEventListener('message', (event) => {
     // check if the message is actually coming from Livingdocs Editor
     if (event.origin !== parentOrigin) return
 
@@ -395,12 +405,15 @@ Here is an example script to include in your iframe:
     //     description: ''
     //   }
     // }
-  });
+  })
 
   // send a status: ready as soon as the `message` event listener is set up.
-  window.parent.postMessage({
-    status: 'ready'
-  }, livingdocsEditorOrigin)
+  window.parent.postMessage(
+    {
+      status: 'ready'
+    },
+    livingdocsEditorOrigin
+  )
 </script>
 ```
 
@@ -410,6 +423,7 @@ The `components` entry tells the Livingdocs editor which subset of all component
 The groups allow you to define how the components are shown in the Livingdocs editor sidebar of a document.
 
 Example:
+
 ```js
 components: [
   {name: 'subtitle'},
@@ -441,9 +455,7 @@ Conditional components introduce the ability to render a component in the delive
 To enable the UI functionality you can modify the `components` array within the content type. Where you have a component defined such as `'paragraph'` or `{name: 'paragraph'}`, you can extend the object with a `conditions` property:
 
 ```js
-components: [
-  {name: 'paragraph', conditions: ['brands', 'dateTime']},
-]
+components: [{name: 'paragraph', conditions: ['brands', 'dateTime']}]
 ```
 
 The `brands` condition requires you to also [configure your brands]({{< ref "/reference/project-config/brands" >}}).
@@ -491,6 +503,7 @@ For details on the configuration and how it interacts with the metadata configur
 The routing setting defines how the routes cache (Redis) builds lookup route entries for this content-type.
 
 Example:
+
 ```js
   routing: {
     enabled: true,
@@ -535,26 +548,33 @@ The above example disables direct image uploads to Livingdocs and allows only th
 You can configure teaser previews for this content-type that are displayed on the publish panel, e.g. how an article will look like when referenced from the start page. This is useful for your editors to see the provided metadata in the real, visual context.
 
 The schema is as follows:
+
 ```js
-  teaserPreview: ms.strictObj({
-    enabled: ms.boolean(),
-    renderSettings: ms.arrayOf(ms.strictObj({
+teaserPreview: ms.strictObj({
+  enabled: ms.boolean(),
+  renderSettings: ms.arrayOf(
+    ms.strictObj({
       handle: 'string:required',
       windowWidth: 'integer:required',
       windowHeight: 'integer',
       wrapper: 'string'
-    })),
-    teasers: ms.arrayOf(ms.strictObj({
+    })
+  ),
+  teasers: ms.arrayOf(
+    ms.strictObj({
       label: 'string',
       renderSetting: 'string',
       componentName: 'string:required',
-      directives: ms.arrayOf(ms.strictObj({
-        name: 'string:required',
-        source: ms.arrayOf('string'),
-        target: 'string'
-      }))
-    }))
-  })
+      directives: ms.arrayOf(
+        ms.strictObj({
+          name: 'string:required',
+          source: ms.arrayOf('string'),
+          target: 'string'
+        })
+      )
+    })
+  )
+})
 ```
 
 Apart from the general settings (`renderSettings`) you define an entry for each teaser (`teasers`) giving it the Livingdocs component (from the design) that should be used for rendering as well as a mapping of metadata values to component directives. See our guide on [teaser preview guide]({{< ref "/guides/editor/teaser-preview" >}}) for more details.
@@ -568,9 +588,7 @@ See our (legacy) [Kordiam Platform Integration guide]({{< ref "/guides/integrati
 To enable push notifications for a specific content type you must have a metadata field called `pushNotifications`. Name and plugin must match exactly.
 
 ```js
-metadata: [
-  {handle: 'pushNotifications', type: 'li-push-notifications'}
-]
+metadata: [{handle: 'pushNotifications', type: 'li-push-notifications'}]
 ```
 
 With this in place you can set the project configuration for your push notification topics \(see example config above\) and the firebase configuration in the [server config]({{< ref "/customising/server-configuration#push-notifications" >}}).
@@ -590,6 +608,7 @@ The text formatting toolbar can be customized per content-type in addition to th
 Enable or disable the existing elements for text formatting.
 
 Example:
+
 ```js
 editor: {
   textFormatting: {
@@ -619,6 +638,7 @@ editor: {
 Extend the text formatting toolbar with custom configured elements. The elements will be shown after the default elements. Add this configuration to the textFormatting configuration above.
 
 Example:
+
 ```js
 customElements: [
   {
@@ -641,11 +661,13 @@ Following attribute types can be added to a customElement:
 - static value
 
   e.g. add to the class attribute on the customElement the value blue `{name: 'class', value: 'blue'}`
+
 - li-reference
 
   {{< deprecated-in "release-2023-09" block >}}
   {{< removed-in "release-2023-11" block >}}
   Users can link a document. The attribute name is always `data-li-document-ref`. And the references are extracted as with a normal link to a document.
+
   ```js
   {
     label: 'author link',
@@ -661,10 +683,12 @@ Following attribute types can be added to a customElement:
     ]
   }
   ```
+
 - li-document-reference
 
   {{< added-in "release-2023-07" block >}}
   Users can link a document. The attribute name is always `data-li-document-ref`. And the references are extracted as with a normal link to a document.
+
   ```js
   {
     label: 'author link',
@@ -680,9 +704,11 @@ Following attribute types can be added to a customElement:
     ]
   }
   ```
+
 - li-enum
 
   Users can select a value from a list
+
   ```js
   {
     handle: 'specialprovider',
@@ -704,9 +730,11 @@ Following attribute types can be added to a customElement:
     }
   }
   ```
+
 - li-text
 
   Users can add a text value by themself
+
   ```js
   {
     label: 'input',
@@ -756,7 +784,7 @@ Since {{< release "release-2024-09" >}}, the inbox feature allows document and m
 ### Configuration
 
 The following configuration allows the "page" content type to accept "regular" and "another-handle" documents, and "image" and "video" media library entries, into its inbox. The inbox assignment UI will be displayed for the "regular" and "another-handle" content types in the publish control panel. The "Send to inbox" link will be accessible in the context menu of the "image" and "video" media library entires on their dashboards.
-Documents in an inbox are displayed similar to a Table Dashboard row. The column definition can be borrowed from a Table Dashboard config, by 
+Documents in an inbox are displayed similar to a Table Dashboard row. The column definition can be borrowed from a Table Dashboard config, by
 using the `useDashboardColumns` property.
 
 ```js
@@ -775,7 +803,7 @@ using the `useDashboardColumns` property.
 
 The document inbox for content types provides a way for users to indicate that a document should be listed within another document without the need to know in which spot it should appear.
 
-An example use-case would be: When Editor User A finishes an article they would like to tell CvD User B (Chef vom Dienst - a role that is in charge of the frontpage at many newsrooms) to publish the teaser to that article on the frontpage. It's not User A's job to decide into which location the article should go, as it's User B deciding that. Once User A has sent the article to the page inbox, User B will be able to see the article in the inbox, where it can be further organized in groups and subgroups before it is dragged into the page content and therefore removed from the inbox.  
+An example use-case would be: When Editor User A finishes an article they would like to tell CvD User B (Chef vom Dienst - a role that is in charge of the frontpage at many newsrooms) to publish the teaser to that article on the frontpage. It's not User A's job to decide into which location the article should go, as it's User B deciding that. Once User A has sent the article to the page inbox, User B will be able to see the article in the inbox, where it can be further organized in groups and subgroups before it is dragged into the page content and therefore removed from the inbox.
 
 The inbox assignment UI will be displayed in the publish control panel for any content type listed within an `inbox.contentTypes` array. The document search dialog used for the inbox assignment will display documents with content type(s) that accept the content type of the document which is being published. The document can be sent to the inbox multiple times (duplicates).
 

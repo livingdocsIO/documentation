@@ -25,7 +25,7 @@ parameters:
   - name: version
     type: integer
     required: false
-    notes: "Current document version. When set on update the version is checked."
+    notes: 'Current document version. When set on update the version is checked.'
   - name: preconditions
     type: array
     required: false
@@ -203,13 +203,13 @@ example_request: |
     ]
   }
 responses:
-  - code: "204"
+  - code: '204'
     endpoint: /api/v1/documents/:id/commands
     body: |
       {
         "status": 204
       }
-  - code: "400"
+  - code: '400'
     endpoint: /api/v1/documents/:id/commands
     body: |
       {
@@ -264,7 +264,7 @@ responses:
           "commandIndex": 0
         }
       }
-  - code: "404"
+  - code: '404'
     endpoint: /api/v1/documents/:id/commands
     body: |
       {
@@ -275,7 +275,7 @@ responses:
           "message": "Document Not Found"
         }
       }
-  - code: "409"
+  - code: '409'
     endpoint: /api/v1/documents/:id/commands
     body: |
       {

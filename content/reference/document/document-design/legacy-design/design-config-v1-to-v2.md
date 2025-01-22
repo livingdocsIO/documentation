@@ -53,7 +53,7 @@ const v1 = {
       },
       html: '<p doc-editable="text"></p>'
     }
-  ],
+  ]
 }
 ```
 
@@ -80,15 +80,18 @@ const v2 = {
     {
       name: 'plain-text',
       label: 'Plain Text Paragraph',
-      directives: [{ // directives is now an array
-        // specifying directives is optional but if you do a type is required.
-        // If you do not specify a directive it will be added if present in the template.
-        type: 'editable',
-        name: 'text',
-        plainText: true
-      }],
+      // directives is now an array
+      directives: [
+        {
+          // specifying directives is optional but if you do a type is required.
+          // If you do not specify a directive it will be added if present in the template.
+          type: 'editable',
+          name: 'text',
+          plainText: true
+        }
+      ],
       html: '<p doc-editable="text"></p>'
     }
-  ],
+  ]
 }
 ```

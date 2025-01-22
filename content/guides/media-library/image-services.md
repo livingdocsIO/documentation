@@ -17,7 +17,6 @@ There are 3 parts involved in image management:
 2. The **delivery** through a SaaS image service (imgix or a custom one).
 3. The **render strategies** to create HTML markup (e.g. an `img` tag with a `srcset` attribute).
 
-
 ### Storage
 
 The storage of choice for Livingdocs is Amazon S3, a bucket can be set up in the server configuration like this:
@@ -43,6 +42,7 @@ mediaLibrary: {
 ```
 
 You can also configure your own image storage:
+
 ```js
 mediaLibrary: {
   images: {
@@ -55,7 +55,6 @@ mediaLibrary: {
 
 This will route image upload requests from Livingdocs to your chosen URL instead of S3.
 For details please see the reference documentation for the [server configuration]({{< ref "/customising/server-configuration#media-library-dam" >}}).
-
 
 ### Delivery
 
@@ -118,7 +117,6 @@ The image object will now look like this:
 }
 ```
 
-
 Before release-2024-03 we have the url in the image which has a default crop applied. This is not useable as it is only a default crop. We then have the `srcSets` which have hard coded cropped Urls.
 
 In the long term, we want to get rid of any hard coded URls.
@@ -129,14 +127,11 @@ Until you can use the key you need to use the originalUrl and calculate the resi
 
 In our framework we have a function to get the URL from teh original URL which we provide here to help in the delivery:
 
-
 ```js
-
 const md5hex = require('blueimp-md5')
 const keyRegex = /^(?:https?:\/\/[^/]+\/|\/)?\/?([^?]+)/
 
-
-function getUrl (
+function getUrl(
   value, // original URL
   {crop, width, originalDimensions, focalPoint},
   {preferWebp, host: targetHost, stripPathPrefix, secureToken}
@@ -158,9 +153,6 @@ function getUrl (
   return `${targetHost}/${key}${query.replace('&', '?')}`
 }
 
-
-
-
 const getCropPathPart = function (c) {
   return `/C=W${c.width},H${c.height},X${c.x},Y${c.y}`
 }
@@ -168,30 +160,34 @@ const getCropPathPart = function (c) {
 
 We recommend having an srcSet configured in your delivery, as the srcSet in Livingdocs is in the database and exists for all images that are created when it's available - so even changing it in Livingdocs does not change the data.
 
-
 ### Render Strategies
 
 You can choose different render strategies for how an image should be rendered in
 HTML.
 
 Example of an image with a `srcset` attribute:
+
 ```html
 <img
   src="https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg?w=1024"
-  srcset="https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg?w=1024 1024w,
-    https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg?w=620 620w"
-  sizes="100vw">
+  srcset="
+    https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg?w=1024 1024w,
+    https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg?w=620   620w
+  "
+  sizes="100vw"
+/>
 ```
 
 A div with a `data` attribute meant to be processed by a client-side script.
+
 ```html
 <div
   class="resrc"
-  data-src="https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg">
+  data-src="https://livingdocs.imgix.net/2017/3/13/6ff-ef019.jpeg"
+></div>
 ```
 
 There are many more ways how an image can be rendered. And if you miss a strategy please get in touch.
-
 
 ## Why image services? - Some Background
 
@@ -224,13 +220,11 @@ So, in summary the whole process looks like this:
 - Livingdocs loads the `imgix_image_service` and calls the `set` method which will generate an `img` tag with a URL that fits the imgix url specification (https://docs.imgix.com/setup/serving-images).
 - Finally, the browser then renders the image by querying imgix for the respective image.
 
-
 ## Configuring an image service
 
 You need to configure your image service in the server. You add the configuration for one or more image services as well as the selected image service.
 
 Below we'll outline the configuration for Imgix.
-
 
 #### Server Configuration
 
@@ -246,6 +240,7 @@ documents: {
   }
 }
 ```
+
 The `selectedImageService` field tells Livingdocs which image service should be used.
 The `imageServices` contains the configurations for one or more image services.
 
@@ -254,7 +249,6 @@ You can in theory configure several images services in the server, but as of now
 The `host` is simply where your imgix images are served from.
 If `preferWebp` is set to `true` Livingdocs will pass the [`auto=format` parameter](https://docs.imgix.com/apis/url/auto).
 When the optional property `secureToken` is set, the images are [secured](https://docs.imgix.com/setup/securing-images).
-
 
 #### Backwards compatible image rendering server config
 
@@ -286,7 +280,6 @@ documents: {
 }
 ```
 
-
 #### Images in the Metadata of a Document
 
 Images in the metadata have a similar format to images in the document and
@@ -295,6 +288,7 @@ use the same image service.
 Metadata fields of type `li-image` will contain the `srcset` in a specific `crop`, but not in the root. The reason for this is that you normally want teaser images in a certain crop and it is not possible to have the metadata definition for the image without a crop definition.
 
 An example:
+
 ```js
 metadata: {
   teaserImage: {
@@ -338,21 +332,23 @@ metadata: {
 The `srcset` information is useful when you want to have responsive images in your overview pages or embeds (`doc-include` directives). In such a case you could render the `doc-include` HTML in a server-side plugin (template). This plugin will not use the Livingdocs framework to render thus your configured `srcset` will not be automatically applied. You can though use the information on the metadata field to apply it manually in the template.
 
 An example template:
+
 ```html
 module.exports =
 <a href="<%= article.url %>">
   <div class="teaser__img-wrap">
-    <img class="teaser__img"
-        src="<%= article.teaserImage %>"
-        srcset="<%= article.srcSet %>"
-        sizes="(min-width: 1024px) 100vw, 50vw">
+    <img
+      class="teaser__img"
+      src="<%= article.teaserImage %>"
+      srcset="<%= article.srcSet %>"
+      sizes="(min-width: 1024px) 100vw, 50vw"
+    />
   </div>
 </a>
 ```
 
 You apply the `srcset` attribute manually in your `doc-include` template.
 Note also that we prefer here to write the `sizes` attribute directly in the template. This makes sense since the template knows best how the responsive behavior should be.
-
 
 ## Integrate your own image service
 
@@ -365,6 +361,7 @@ to the url dynamically. For example, to define the `width` or crop of an image.
 We support the setting of allowed or disabled mime types which defines which mime types the custom image service will handle but does not stop upload in the editor itself. This is for cases where you want to use different image services for different mime types.
 
 Example of registering an image service:
+
 ```js
 const myImageService = {
   name: 'myImageService',
@@ -402,6 +399,7 @@ livingdocs.imageServices.add(myImageService)
 
 In practice we recommend to create a separate npm package to share your
 image service between a downstream server and editor:
+
 ```js
 const myImageService = require('@yourOrg/myImageService')
 const livingdocs = require('@livingdocs/framework')

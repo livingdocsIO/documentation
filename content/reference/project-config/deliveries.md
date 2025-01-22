@@ -5,13 +5,16 @@ menus:
   reference:
     parent: Project Config
 ---
+
 You can configure `deliveries` to specify one or multiple applications which render Livingdocs content.
 
 The deliveries can be used to configure these functionalities:
+
 - Enable the `Internal Document Links` feature.
 - Enable Delivery Builds for publications and for drafts
 
 An example:
+
 ```js
 // deliveries is configured at projectConfig.deliveries
 deliveries: [
@@ -115,7 +118,6 @@ build: {
 ```
 
 To enable Delivery Builds on a document, you must also configure `deliveries` in the [contentType]({{< ref "./content-types.md" >}}) config.
-
 
 If you have delivery builds configured in your project but you specifically do not want them on a specific contentType, you must configure an empty array inside of the contentType itself:
 

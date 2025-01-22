@@ -41,15 +41,18 @@ notifications: {
 ```
 
 Possible action to register on at the moment:
-- task.change
-   config options:
-   ```js
-    // assign to all tasks and statusChanges
-   'task.change'
 
-    // assign to task proofreading on statusChanges 'requested', 'accepted', 'completed'
-   {type: 'task.change', taskName: 'proofreading', statusChange: ['requested', 'accepted', 'completed']}
-   ```
+- task.change
+  config options:
+
+  ```js
+   // assign to all tasks and statusChanges
+  'task.change'
+
+   // assign to task proofreading on statusChanges 'requested', 'accepted', 'completed'
+  {type: 'task.change', taskName: 'proofreading', statusChange: ['requested', 'accepted', 'completed']}
+  ```
+
 - document.publish
 - document.unpublish
 - document.copy

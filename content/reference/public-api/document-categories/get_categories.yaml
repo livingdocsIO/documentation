@@ -11,7 +11,7 @@ endpoint:
   method: GET
   path: /api/v1/categories
 responses:
-  - code: "200"
+  - code: '200'
     endpoint: /api/v1/categories
     body: |
       [
@@ -32,7 +32,7 @@ responses:
           "path": "/category3"
         }
       ]
-  - code: "400"
+  - code: '400'
     endpoint: /api/v1/categories
     body: |
       {

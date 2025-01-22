@@ -4,13 +4,13 @@ description: Integrate Desk-Net with Livingdocs
 ---
 
 {{< warning >}}
-  Desk-Net rebranded as Kordiam. Consequently, the Desk-Net Global Integration has been deprecated as of {{< release "release-2024-11" >}} and will be removed in {{< release "release-2025-05" >}}. Please use the [Kordiam Global Integration]({{< ref "/guides/integrations/kordiam" >}}) instead. For more details, refer to our [Desk-Net to Kordiam migration guide]({{< ref "/guides/integrations/desknet-to-kordiam-migration" >}}).
+Desk-Net rebranded as Kordiam. Consequently, the Desk-Net Global Integration has been deprecated as of {{< release "release-2024-11" >}} and will be removed in {{< release "release-2025-05" >}}. Please use the [Kordiam Global Integration]({{< ref "/guides/integrations/kordiam" >}}) instead. For more details, refer to our [Desk-Net to Kordiam migration guide]({{< ref "/guides/integrations/desknet-to-kordiam-migration" >}}).
 {{< /warning >}}
 
 {{< added-in "release-2024-05" block >}}
 
 {{< info >}}
-  See the [Desk-Net Platform Integration]({{< ref "/guides/integrations/desknet-legacy" >}}) guide for details about the legacy integration used prior to {{< release "release-2024-05" >}}, or read the [Desk-Net Migration]({{< ref "/guides/integrations/desknet-global-integration-migration" >}}) guide for details on upgrading from the platform integration to the global integration.
+See the [Desk-Net Platform Integration]({{< ref "/guides/integrations/desknet-legacy" >}}) guide for details about the legacy integration used prior to {{< release "release-2024-05" >}}, or read the [Desk-Net Migration]({{< ref "/guides/integrations/desknet-global-integration-migration" >}}) guide for details on upgrading from the platform integration to the global integration.
 {{< /info >}}
 
 ## Setup
@@ -40,7 +40,7 @@ If you use a proxy or message queue between Desk-Net and Livingdocs you can defi
 It's also possible to prevent the hooks from being registered to reduce side effects while testing.
 
 {{< info >}}
-  Please be aware that the global integration uses `integrations.desknet`, and not `desknet` which the legacy platform integration uses.
+Please be aware that the global integration uses `integrations.desknet`, and not `desknet` which the legacy platform integration uses.
 {{< /info >}}
 
 ### Project config
@@ -88,7 +88,7 @@ Along with the project-level config you will also need to register the [`li-desk
 ```
 
 {{< info >}}
-  Please be aware that the global integration uses `settings.integrations.desknet`, and not `settings.desknet` which the legacy platform integration uses.
+Please be aware that the global integration uses `settings.integrations.desknet`, and not `settings.desknet` which the legacy platform integration uses.
 {{< /info >}}
 
 ### Register functions

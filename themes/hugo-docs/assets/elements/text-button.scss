@@ -11,14 +11,17 @@
   text-transform: uppercase;
   text-align: center;
   font-weight: 500;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   color: $color-green-1;
   border: 1px solid $color-green-1;
   box-sizing: border-box;
   vertical-align: 0;
   border-radius: $rounded-corners / 2;
   cursor: pointer;
-  transition: color $transition-time, border-color $transition-time, background-color $transition-time;
+  transition:
+    color $transition-time,
+    border-color $transition-time,
+    background-color $transition-time;
 
   &:hover {
     color: $color-black;

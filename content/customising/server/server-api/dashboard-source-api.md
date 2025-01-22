@@ -22,7 +22,7 @@ liServer.registerInitializedHook(() => {
   const dashboardSourcesApi = liServer.features.api('li-dashboard-sources')
   dashboardSourcesApi.register({
     handle: 'liDashboardSourceExample',
-    async fetch ({projectId, userId}) {
+    async fetch({projectId, userId}) {
       // Make a request to a third party system, query the documents API, read a file or similar.
       return {results: ['1', '2', '3']}
     }

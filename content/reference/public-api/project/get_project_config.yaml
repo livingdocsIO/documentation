@@ -16,7 +16,7 @@ endpoint:
 deprecated_endpoints:
   - GET api/v1/channelConfig
 responses:
-  - code: "200"
+  - code: '200'
     body: |
       {
           "v": 2,

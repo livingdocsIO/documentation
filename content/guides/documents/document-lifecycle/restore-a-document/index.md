@@ -9,10 +9,11 @@ weight: 1
 Livingdocs does not remove deleted documents from the database. Instead they are marked as deleted.
 
 These steps happen on delete:
-* The document is marked as deleted
-* The document is unpublished and any scheduled publishings are undone
-* The document is removed from all lists
-* The document is removed from all elasticsearch indexes (drafts and publications)
+
+- The document is marked as deleted
+- The document is unpublished and any scheduled publishings are undone
+- The document is removed from all lists
+- The document is removed from all elasticsearch indexes (drafts and publications)
 
 ## What happens when you restore a document?
 
@@ -20,8 +21,8 @@ Restoring only makes the document visible again. It does not undo everything tha
 
 These steps happen on restore:
 
-* it is not marked as deleted anymore
-* it is added to the drafts elasticsearch index again
+- it is not marked as deleted anymore
+- it is added to the drafts elasticsearch index again
 
 ## Manual restore via Editor UI
 
@@ -41,7 +42,7 @@ await fetch('https://editor.stage.your-domain.io/proxy/api/documents/restore/:do
   method: 'POST',
   headers: {
     'Content-type': 'application/json; charset=UTF-8',
-    'Authorization': 'Bearer bearer-token-of-your-current-session'
+    Authorization: 'Bearer bearer-token-of-your-current-session'
   }
 })
 ```

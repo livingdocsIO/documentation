@@ -73,6 +73,7 @@ metadata: [
 ```
 
 There are several important things to note in the example:
+
 1. the metadata plugin used is `li-language`, this is a core metadata plugin that enables multi-language
 2. the use of `li-language` **must be unique within a content-type**, i.e. you can only have one metadata property in a content-type that uses the `li-language` plugin
 
@@ -98,12 +99,11 @@ The details about adding a new metadata field can be seen in the [metadata examp
 
 As soon as we have the multi-language feature configured, the dashboard will show a new column `languages` in the search results.
 In order for the dashboard to have the required metadata, you will need to configure the [`documentsMetadataFields`]({{< ref "/customising/server-configuration" >}}) in the server config to include your metadata property. You need to use the metadata property name here. In our example from before this would be:
+
 ```js
 {
   search: {
-    documentsMetadataFields: [
-      'language'
-    ]
+    documentsMetadataFields: ['language']
   }
 }
 ```
