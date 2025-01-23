@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix stuck image upload when uploads get cancelled or error](https://github.com/livingdocsIO/livingdocs-server/pull/7662)
 - [Fix thrown abort error instance](https://github.com/livingdocsIO/livingdocs-server/pull/7655)
 - [Show li-table header on small screens](https://github.com/livingdocsIO/livingdocs-editor/pull/9503)
 - [UI improvements/property panel labels](https://github.com/livingdocsIO/livingdocs-editor/pull/9501)
