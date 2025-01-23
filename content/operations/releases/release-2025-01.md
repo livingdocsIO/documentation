@@ -654,6 +654,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v267.1.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.11): fix(upload): Forward image upload errors to the destination after wrapping upload streams with `limitStreamSize`
 - [v267.1.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.10): fix(project api limit): increase to 500
 - [v267.1.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.9): chore: Fix todos check
 
