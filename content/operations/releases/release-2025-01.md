@@ -665,6 +665,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.24): fix(li-table): Show table header on small screens
 
 - [v114.13.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.23): fix(print-flows): Close print diff when metadata is opened
 - [v114.13.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.22): fix(editor iframe): Overriding vh values
