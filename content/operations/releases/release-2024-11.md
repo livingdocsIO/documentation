@@ -642,6 +642,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v261.3.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.23): chore: Fix todos check
 - [v261.3.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.22): fix(upload): Correctly support timeouts on asset uploads
 - [v261.3.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.21): fix: Revoke user occupation also when no email transport is configured
 - [v261.3.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.20): fix(media-center): Do not throw an error when the max filesize is reached
