@@ -453,6 +453,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v257.0.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.29): chore(drone): Remove nzz tests as they are running on the november release
 - [v257.0.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.28): fix(upload): Correctly support timeouts on asset uploads
 - [v257.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.27): fix: Revoke user occupation also when no email transport is configured
 - [v257.0.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.26): fix(media-center): Do not throw an error when the max filesize is reached
