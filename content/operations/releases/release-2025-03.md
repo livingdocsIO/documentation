@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Show li-table header on small screens](https://github.com/livingdocsIO/livingdocs-editor/pull/9503)
 - [UI improvements/property panel labels](https://github.com/livingdocsIO/livingdocs-editor/pull/9501)
 - [fix(deps): update dependency mocha from 11.0.1 to v11.0.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7652)
 * [UI improvements Insert Panel](https://github.com/livingdocsIO/livingdocs-editor/pull/9499)
