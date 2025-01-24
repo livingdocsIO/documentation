@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency nodemailer from 6.9.16 to v6.10.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7666)
 - [Fix stuck image upload when uploads get cancelled or error](https://github.com/livingdocsIO/livingdocs-server/pull/7662)
 - [Fix thrown abort error instance](https://github.com/livingdocsIO/livingdocs-server/pull/7655)
 - [Show li-table header on small screens](https://github.com/livingdocsIO/livingdocs-editor/pull/9503)
