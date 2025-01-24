@@ -7,7 +7,7 @@
 
 
 <a
-  class="section-label{{ if eq $menu_item_url $page_url }}active{{ end }}"
+  class="section-label {{ if eq $menu_item_url $page_url }}active{{ end }}"
   href="/{{ $menu }}"
   >{{ .title }}</a
 >

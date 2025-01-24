@@ -120,13 +120,17 @@
         <div class="api-example__response-entry">
           <div class="teaser-and-code">
             <div class="teaser-and-code__teaser">
-              <div
-                class="code-teaser{{ if (ne .collapsible false) }}
-                  code-teaser--with-interaction
-                {{ end }}{{ if (eq .code "200") }}
-                  code-teaser--success
-                {{ end }}{{ if (ne .code "200") }}code-teaser--error{{ end }}"
-              >
+              {{ $codeTeaserClass := "code-teaser" }}
+              {{ if (ne .collapsible false) }}
+                {{ $codeTeaserClass = print $codeTeaserClass " code-teaser--with-interaction" }}
+              {{ end }}
+              {{ if (eq .code "200") }}
+                {{ $codeTeaserClass = print $codeTeaserClass " code-teaser--success" }}
+              {{ end }}
+              {{ if (ne .code "200") }}
+                {{ $codeTeaserClass = print $codeTeaserClass " code-teaser--error" }}
+              {{ end }}
+              <div class="{{ $codeTeaserClass }}">
                 {{ if (ne .collapsible false) }}
                   <div class="code-teaser__interaction">
                     <span class="arrow arrow--right"></span>

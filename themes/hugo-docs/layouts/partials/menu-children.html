@@ -5,10 +5,18 @@
 {{- if .HasChildren -}}
   <ul class="{{ with .class }}{{ . }}{{ end }}topics">
     {{ range .Children }}
+      {{ $currentPage := $currentPage }}
+      {{ $itemClass := print "topic topic-level-" $level }}
+      {{ if ($currentPage.IsMenuCurrent $menu .) }}
+        {{ $itemClass = print $itemClass " active" }}
+      {{ end }}
+      {{ if ($currentPage.HasMenuCurrent $menu .) }}
+        {{ $itemClass = print $itemClass " open" }}
+      {{ end }}
+
+
       <li
-        class="topic topic-level-{{ $level }}{{ if ($currentPage.IsMenuCurrent $menu .) }}
-          active
-        {{ end }}{{ if ($currentPage.HasMenuCurrent $menu .) }}open{{ end }}"
+        class="{{ $itemClass }}"
         style="--menu-level: {{ $level }}"
       >
         <a href="{{ .URL }}"
