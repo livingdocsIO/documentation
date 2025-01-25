@@ -27,7 +27,7 @@
               {{ end }}
             </div>
             <div class="release-header__title">
-              {{ .Page.Title }}
+              {{ .Page.Title | markdownify }}
             </div>
             {{ if $release.branchHandle }}
               <div class="release-header__link">

@@ -2,6 +2,8 @@ title: Compose a Publication
 beta: true
 
 history:
+  - release: release-2021-06
+    description: Initial support for the Composition API on `/v1/beta`
   - release: release-2024-03
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
 
