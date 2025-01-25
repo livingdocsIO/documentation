@@ -94,38 +94,38 @@
   </table>
 
   {{ if or (.Params.description) (.Content) }}
-    {{ "## Description" | markdownify }}
+    <h2>Description</h2>
     {{ .Params.description | .Page.RenderString (dict "display" "block") }}
     {{ .Content }}
   {{ end }}
 
   {{ if .Params.defaultUI }}
-    {{ "## Default UI" | markdownify }}
+    <h2>Default UI</h2>
     {{ .Params.defaultUI | .Page.RenderString }}
   {{ end }}
 
   {{ if .Params.storageFormat }}
-    {{ "## Storage Format" | markdownify }}
+    <h2>Storage Format</h2>
     {{ print "```js\n" .Params.storageFormat "\n```" | .Page.RenderString }}
   {{ end }}
 
   {{ if .Params.contentTypeConfig }}
-    {{ "## Content Type Config" | markdownify }}
+    <h2>Content Type Config</h2>
     {{ print "```js\n{\n  handle: 'myContentType',\n  // ...\n  metadata: [\n    {\n" .Params.contentTypeConfig "    }\n    // ...\n  ]\n}" | .Page.RenderString }}
   {{ end }}
 
   {{ if .Params.includeConfig }}
-    {{ "## Include Config" | markdownify }}
+    <h2>Include Config</h2>
     {{ print "```js\n{\n  name: 'myInclude',\n  paramsSchema: [\n    {\n" .Params.includeConfig "    }\n  ]\n}" | .Page.RenderString }}
   {{ end }}
 
   {{ if .Params.tableDashboardConfig }}
-    {{ "## Table Dashboard Config" | markdownify }}
+    <h2>Table Dashboard Config</h2>
     {{ print "```js\n{\n  handle: 'myDashboard',\n  // ...\n" .Params.tableDashboardConfig "}" | .Page.RenderString }}
   {{ end }}
 
   {{ if .Params.additionalConfig }}
-    {{ "## Additional Config" | markdownify }}
+    <h2>Additional Config</h2>
     {{ .Params.additionalConfig | .Page.RenderString }}
   {{ end }}
 </div>
