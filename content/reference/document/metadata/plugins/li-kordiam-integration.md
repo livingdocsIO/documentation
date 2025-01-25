@@ -1,6 +1,11 @@
 ---
 title: li-kordiam-integration
 type: metadata-plugins
+
+history:
+  - release: release-2024-11
+    description: Initial support with the rename as replacement for `li-desknet-integration`
+
 menus:
   reference:
     parent: Metadata Plugins List

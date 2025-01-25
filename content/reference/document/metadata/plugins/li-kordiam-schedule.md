@@ -1,6 +1,11 @@
 ---
 title: li-kordiam-schedule
 type: metadata-plugins
+
+history:
+  - release: release-2024-11
+    description: Initial support with the rename as replacement for `li-desknet-schedule`
+
 menus:
   reference:
     parent: Metadata Plugins List
