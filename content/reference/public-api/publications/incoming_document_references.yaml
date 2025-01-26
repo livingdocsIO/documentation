@@ -1,4 +1,9 @@
 title: Get Incoming Publication References for a Document
+
+history:
+  - release: release-2023-09
+    description: Reference type `documents` changed to `document` where every document id has a separate reference entry.
+
 description: |
   This endpoint returns all publications which link to this document (via content or metadata)
 

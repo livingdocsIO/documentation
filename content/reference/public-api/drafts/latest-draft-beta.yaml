@@ -2,6 +2,8 @@ title: Get Latest Draft
 beta: true
 
 history:
+  - release: release-2022-03
+    description: Initial support
   - release: release-2024-03
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
 

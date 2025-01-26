@@ -1,4 +1,9 @@
 title: Import Videos
+
+history:
+  - release: release-2020-12
+    description: Initial support
+
 description: |
   The video import does both create and update videos. The import remembers the `externalId` / `systemName` pair and if an import matches an existing pair, it will update (Hint: consider how to rebuild the externalId when you want to update videos). The video import in Livingdocs is asynchronous. You post a batch of videos that you want to import and get back an id with which you can query later to get your result.
 

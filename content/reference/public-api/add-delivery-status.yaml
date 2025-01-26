@@ -1,4 +1,11 @@
 title: Add Delivery Status
+
+history:
+  - release: release-2022-09
+    description: Initial support
+  - release: release-2024-07
+    description: Added support for `userChoices` to allow interactive delivery builds
+
 description: |
   This endpoint allows an external system to send updates about a delivery build to Livingdocs.
 

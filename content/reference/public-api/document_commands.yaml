@@ -1,6 +1,10 @@
 title: Execute Commands on Documents
 
 history:
+  - release: release-2023-11
+    description: Initial support
+  - release: release-2024-03
+    description: A new `precondition` named `isPublishedAndHasNoChanges` has been added.
   - release: release-2024-05
     description: 'The following commands got added: `insertComponent`'
   - release: release-2024-07

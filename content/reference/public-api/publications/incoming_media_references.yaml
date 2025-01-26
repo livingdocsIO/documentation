@@ -1,4 +1,9 @@
 title: Get Incoming Media References for a Document
+
+history:
+  - release: release-2023-09
+    description: Reference type `documents` changed to `document` where every document id has a separate reference entry.
+
 description: |
   This endpoint returns all Media Library Entries which link to this document (via metadata - li-document-reference)
 

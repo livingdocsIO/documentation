@@ -1,4 +1,9 @@
 title: Get a Single Media Library Entry
+
+history:
+  - release: release-2020-10
+    description: Initial support
+
 description: |
   Fetch a Media Library Entries by its `id`.
 

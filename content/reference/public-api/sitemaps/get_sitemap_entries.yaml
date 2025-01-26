@@ -1,4 +1,9 @@
 title: Get a Sitemap's Entries
+
+history:
+  - release: release-2021-06
+    description: Initial support
+
 useCases: |
   - Provides [Sitemap Entries](https://www.sitemaps.org/protocol.html) for Deliveries
 

@@ -1,4 +1,9 @@
 title: Get a Sitemap's Index
+
+history:
+  - release: release-2021-06
+    description: Initial support
+
 description: |
   This endoint returns a sitemap index containing links to individual sitemap files. The [Sitemap Guide]({{< ref "/guides/organisation/sitemaps-and-feeds" >}}) explains how to setup sitemaps for a Livingdocs delivery.
 

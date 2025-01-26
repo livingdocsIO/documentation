@@ -1,6 +1,8 @@
 title: Get Latest Publications
 
 history:
+  - release: release-2021-06
+    description: Added `reverse`, `contentTypes`, `id.gte` (and other range filters), `publishedAt.gte` (and other range filters)
   - release: release-2024-03
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
 

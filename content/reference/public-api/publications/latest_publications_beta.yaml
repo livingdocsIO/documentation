@@ -3,6 +3,8 @@ title: Get Latest Publications
 history:
   - release: release-2024-03
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+  - release: release-2023-09
+    description: The type `documents` within `references` changed to `document` where every document id has a separate reference entry.
 
 description: |
   The endpoint provides an unresolved Publication with 4 possible top-level properties:

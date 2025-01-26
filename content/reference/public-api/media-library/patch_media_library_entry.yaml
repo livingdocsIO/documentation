@@ -1,4 +1,11 @@
 title: Patch a Media Library Entry
+
+history:
+  - release: release-2020-12
+    description: Initial support
+  - release: release-2022-03
+    description: Added `replaceAsset` operation
+
 description: |
   Patch a Media Library Entry by its `id`.
 

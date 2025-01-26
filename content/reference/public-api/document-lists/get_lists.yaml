@@ -1,4 +1,9 @@
 title: Get Lists
+
+history:
+  - release: release-2020-12
+    description: Initial support
+
 description: |
   The response is a JSON array including only document lists without resolving documents.
 

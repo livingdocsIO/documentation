@@ -1,4 +1,9 @@
 title: Import Files
+
+history:
+  - release: release-2024-05
+    description: Initial support
+
 description: |
   The file import does both create and update files. The import remembers the `externalId` / `systemName` pair and if an import matches an existing pair, it will update (Hint: consider how to rebuild the externalId when you want to update files). The file import in Livingdocs is asynchronous. You post a batch of files that you want to import and get back an id with which you can query later to get your result.
 

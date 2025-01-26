@@ -1,4 +1,11 @@
 title: Get Publication Events
+
+history:
+  - release: release-2021-03
+    description: Added `reverse` query string support
+  - release: release-2021-06
+    description: Added `contentTypes`, `documentTypes`, `id.gte` (and other range filters), `createdAt.gte` (and other range filters)
+
 description: |
   This endpoint returns publication events (`publish`, `unpublish`, `update`) for a project.
 
