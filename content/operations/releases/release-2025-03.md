@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @aws-sdk/client-s3 from 3.734.0 to v3.735.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7673)
 - [chore(deps): update dependency eslint-plugin-jsdoc from 50.6.2 to v50.6.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7674)
 - [chore(deps): update dependency eslint from 9.18.0 to v9.19.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9515)
 - [Show generated output in print flow diff panel](https://github.com/livingdocsIO/livingdocs-editor/pull/9505)
