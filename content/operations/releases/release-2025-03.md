@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency moment-timezone from 0.5.46 to v0.5.47 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9518)
 - [Document inbox/badge to indicate new documents](https://github.com/livingdocsIO/livingdocs-editor/pull/9516)
 - [Document inbox/push message improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/9504)
 - [fix(deps): update dependency @aws-sdk/client-s3 from 3.734.0 to v3.735.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7673)
