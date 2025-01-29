@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @opentelemetry/instrumentation-pg from 0.50.0 to ^0.51.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7681)
 - [Support span and other elements in doc-editable directive reference extraction](https://github.com/livingdocsIO/livingdocs-server/pull/7676)
 - [fix(deps): update dependency moment-timezone from 0.5.46 to v0.5.47 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9518)
 - [Document inbox/badge to indicate new documents](https://github.com/livingdocsIO/livingdocs-editor/pull/9516)
