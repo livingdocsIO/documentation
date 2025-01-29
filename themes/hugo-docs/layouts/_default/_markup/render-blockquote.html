@@ -1,6 +1,6 @@
 {{ if eq .Type "alert" }}
   <blockquote class="info info-{{ .AlertType }}">
-    <p class="info-heading">
+    <p class="info__header">
       {{ $info := resources.Get (printf "svg/%s.svg" .AlertType) | fingerprint }}
       <img
         src="{{ $info.RelPermalink }}"

@@ -50,15 +50,8 @@
   </main>
   {{ if (ne (.Param "renderTOC") false) }}
     <div class="page__toc">
-      {{ .TableOfContents }}
+      {{ .Page.Fragments.ToHTML 1 2 false }}
     </div>
   {{ end }}
 </div>
-
-<style>
-  /*  The release notes table of content is too noisy. We hide the third level  */
-  nav#TableOfContents li li li {
-    display: none;
-  }
-</style>
 {{ partial "html-footer.html" . }}
