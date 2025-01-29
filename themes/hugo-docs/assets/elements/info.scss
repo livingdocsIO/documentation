@@ -7,6 +7,10 @@
   color: $color-black;
   background-color: $color-grey-8;
 
+  &__header {
+    margin-bottom: 0.6em;
+  }
+
   &__icon {
     width: 18px;
     height: 18px;
