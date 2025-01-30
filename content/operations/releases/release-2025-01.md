@@ -670,6 +670,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.28): fix(confirmation buttons): Vue
 - [v114.13.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.27): fix: only resolve affected includes after deduplication was invalidated
 - [v114.13.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.26): fix(display-filters): Support duplicate labels in single list display filters
 - [v114.13.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.25): chore(print-flows): Change icons
