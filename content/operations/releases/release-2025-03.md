@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Only resolve affected includes after deduplication was invalidated](https://github.com/livingdocsIO/livingdocs-editor/pull/9521)
 - [Support duplicate labels in single list display filters](https://github.com/livingdocsIO/livingdocs-editor/pull/9520)
 - [fix(deps): update dependency @opentelemetry/instrumentation-pg from 0.50.0 to ^0.51.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7681)
 - [Support span and other elements in doc-editable directive reference extraction](https://github.com/livingdocsIO/livingdocs-server/pull/7676)
