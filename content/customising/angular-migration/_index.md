@@ -1,5 +1,7 @@
 ---
 title: Angular Migration
+description: Angular Migration is for customers which have Angular code in their downstream.
+icon: angular
 weight: 4
 menus:
   customising:

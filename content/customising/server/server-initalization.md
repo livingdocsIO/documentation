@@ -1,5 +1,6 @@
 ---
 title: Server Initialization
+description: Initialize features on the server.
 icon: play-circle
 weight: 1
 menus:

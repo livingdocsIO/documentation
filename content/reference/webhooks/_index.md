@@ -1,5 +1,7 @@
 ---
 title: Webhooks
+description: A Webhook notifies another system via a HTTP POST request about a change in Livingdocs.
+icon: webhook
 weight: 4
 menus:
   reference:

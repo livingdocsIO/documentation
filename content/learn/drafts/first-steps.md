@@ -1,5 +1,7 @@
 ---
 title: First Steps
+description: This short guide explains how to set up and use the service with your own design.
+icon: rocket-launch
 draft: true
 menus:
   learn:

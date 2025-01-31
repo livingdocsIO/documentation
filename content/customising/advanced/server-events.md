@@ -1,5 +1,7 @@
 ---
 title: Server Events
+description: The events API is Livingdocs's implementation of the publish/subscribe pattern.
+icon: arrow-decision
 weight: 2
 menus:
   customising:

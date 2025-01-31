@@ -1,5 +1,7 @@
 ---
 title: Import API
+description: The Import API provides a possibility to programmatically create Documents.
+icon: import
 weight: 4
 menus:
   customising:

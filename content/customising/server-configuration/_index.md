@@ -1,7 +1,8 @@
 ---
 title: Livingdocs Server Config
+description: Everything you need to know about setting up your Livingdocs server.
 linkTitle: Server Config
-icon: apps
+icon: cog
 weight: 2
 menus:
   customising:

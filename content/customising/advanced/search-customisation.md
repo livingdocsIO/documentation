@@ -1,5 +1,7 @@
 ---
 title: Search Customisation
+description: An example of the current Elasticsearch function.
+icon: magnify
 weight: 1
 menus:
   customising:

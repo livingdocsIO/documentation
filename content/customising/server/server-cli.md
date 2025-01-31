@@ -1,5 +1,7 @@
 ---
 title: Server CLI
+description: Livingdocs provides a powerful server CLI where you can execute maintenance and administration tasks.
+icon: console-line
 weight: 3
 menus:
   customising:

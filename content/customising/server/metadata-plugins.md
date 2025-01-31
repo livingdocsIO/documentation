@@ -1,6 +1,7 @@
 ---
 title: Metadata Plugins
-icon: apps
+description: A general overview.
+icon: tag
 weight: 3
 menus:
   customising:
