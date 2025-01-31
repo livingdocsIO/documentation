@@ -1,5 +1,7 @@
 ---
 title: Logging
+description: A few examples how to use the logger.
+icon: view-list
 weight: 5
 menus:
   customising:

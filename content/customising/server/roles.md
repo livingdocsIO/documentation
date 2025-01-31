@@ -1,5 +1,7 @@
 ---
 title: Read, Write, Worker Roles
+description: Roles provide an easy way to scale out your Livingdocs Server instances when accessing only one Postgres instance.
+icon: account-key
 weight: 12
 menus:
   customising:

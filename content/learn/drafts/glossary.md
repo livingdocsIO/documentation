@@ -1,5 +1,7 @@
 ---
 title: Glossary
+description: Our very own version of Urban Dictionary. ;)
+icon: chat-question
 draft: true
 menus:
   learn:

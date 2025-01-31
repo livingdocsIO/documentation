@@ -1,5 +1,7 @@
 ---
 title: Server Hooks
+description: Dos, don'ts and alternatives.
+icon: hook
 weight: 9
 menus:
   customising:

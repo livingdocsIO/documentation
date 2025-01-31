@@ -1,7 +1,7 @@
 ---
 title: Advanced
 description: Advanced configuration options which you should only use in agreement with   Livingdocs.
-icon: toy-brick
+icon: lightbulb-question
 weight: 5
 menus:
   customising:

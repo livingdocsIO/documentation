@@ -2,6 +2,7 @@
 title: DocumentVersion
 weight: 4
 description: Model of a document on the server.
+icon: file-document
 menus:
   customising:
     parent: Server Extensions
