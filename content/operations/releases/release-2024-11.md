@@ -669,6 +669,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.65): fix(deps): update dependency @livingdocs/framework from 31.0.4 to v31.0.5
 - [v111.1.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.64): fix: only resolve affected includes after deduplication was invalidated
 - [v111.1.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.63): fix(display-filters): Support duplicate labels in single list display filters
 - [v111.1.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.62): fix(li-table): Show table header on small screens
