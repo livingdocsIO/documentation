@@ -10,7 +10,7 @@ renderTOC: false
 {{< illu-teaser image="illu-learn.svg" flag="Learn" title="The most important concepts of Livingdocs to make using and configuring our product much easier" link="/learn/" >}}
 
 {{< tip title="Do you want to see Livingdocs?" text="[Contact us](mailto:contact@livingdocs.io) to get a demo." >}}
-> {{< /cols >}}
+{{< /cols >}}
 
 ## Discover our technology the way you like
 
@@ -20,7 +20,7 @@ renderTOC: false
 {{< illu-teaser image="illu-guides.png" flag="Guides" title="If you would like to get a specific task done" link="/guides/" >}}
 
 {{< illu-teaser image="illu-operations.png" flag="Operations" title="To see common setups, cloud deployments, required services and monitoring" link="/operations/" >}}
-> {{< /cols >}}
+{{< /cols >}}
 
 {{< cols >}}
 {{< newsletter-form >}}
