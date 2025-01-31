@@ -20,11 +20,11 @@ To learn about the necessary actions to update Livingdocs to `release-2024-11`, 
 
 ## Webinar
 
-* [Feature Webinar Recording](https://us02web.zoom.us/rec/share/OdACLbg51PBPVNQBlE9mSZ0EIMXMHTTeXVBUELrUhwsyt3AwPCJE3_8uIXjM9L-_.65e1GPV2u1lAsv-T) | Passcode: N0Z$qqxh
-* [Feature Webinar Documentation](https://docs.google.com/presentation/d/1dbjXQ5IoQvjdeqT7R_ZsYvIM70VyLrtuREuclQzyNDg/edit?usp=sharing)
-* [Dev Webinar Recording](https://us02web.zoom.us/rec/share/1t_wLXwC2qbcVlpgD62QrUcVBYEu2XDzGHecS5E0Vwn03dPpLD0y7xl3HS8Sdk_A.lK9gDzPbyUD7XBGx) | Passcode: QzP1F&Ar
-* [Dev Webinar Slides](https://docs.google.com/presentation/d/1QgpiRXIkM7SPgT6ndxXOgAX0LtxlaOV8exPhfxbOdtY/edit?usp=sharing)
-* [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
+- [Feature Webinar Recording](https://us02web.zoom.us/rec/share/OdACLbg51PBPVNQBlE9mSZ0EIMXMHTTeXVBUELrUhwsyt3AwPCJE3_8uIXjM9L-_.65e1GPV2u1lAsv-T) | Passcode: N0Z$qqxh
+- [Feature Webinar Documentation](https://docs.google.com/presentation/d/1dbjXQ5IoQvjdeqT7R_ZsYvIM70VyLrtuREuclQzyNDg/edit?usp=sharing)
+- [Dev Webinar Recording](https://us02web.zoom.us/rec/share/1t_wLXwC2qbcVlpgD62QrUcVBYEu2XDzGHecS5E0Vwn03dPpLD0y7xl3HS8Sdk_A.lK9gDzPbyUD7XBGx) | Passcode: QzP1F&Ar
+- [Dev Webinar Slides](https://docs.google.com/presentation/d/1QgpiRXIkM7SPgT6ndxXOgAX0LtxlaOV8exPhfxbOdtY/edit?usp=sharing)
+- [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ## System Requirements
 
@@ -51,7 +51,7 @@ To learn about the necessary actions to update Livingdocs to `release-2024-11`, 
 | Elasticsearch<br/>OpenSearch   | 7.x<br/>1                                                                                |
 | Redis                          | 6.2                                                                                      |
 | Livingdocs Server Docker Image | livingdocs/server-base:18.8                                                              |
-| Livingdocs Editor Docker Image | livingdocs/editor-base:18.10                                                              |
+| Livingdocs Editor Docker Image | livingdocs/editor-base:18.10                                                             |
 | Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
 
 ## Deployment
@@ -66,13 +66,26 @@ Related to migration of `document_metadata` table to `document_revisions` table.
 **Please make sure you have a few gigabytes of storage available in postgres before executing that command. It will rewrite all metadata and will probably take a while.**
 
 ```sh
-node db/manual-migrations/011-move-revision-metadata.js 
+node ./node_modules/@livingdocs/server/db/manual-migrations/011-move-revision-metadata.js
 ```
 
 After executing this script, the `document_metadata` table will get truncated and clean up storage.
 We've tested the script against a database with 4'300'000 revision entries and it took ~7 minutes.
 
+The percentage shown in the command output below is an estimate based on postgres stats. Therefore the percentage can stop early or take longer than expected.
 There's no need to reindex Elasticsearch, as there are no structural changes.
+
+```sh
+16:56:06 INFO  cli > 47.41%: updated revisions (range: 20400 - 20599, duration: 44ms, updates: 200)
+16:56:06 INFO  cli > 47.42%: updated revisions (range: 21000 - 21048, duration: 13ms, updates: 49)
+16:56:06 INFO  cli > 47.42%: updated revisions (range: 20600 - 20799, duration: 44ms, updates: 200)
+16:56:06 INFO  cli > 47.43%: updated revisions (range: 20800 - 20999, duration: 31ms, updates: 200)
+16:56:06 INFO  cli > -------------------------------------------------------------------------------
+16:56:06 INFO  cli > Metadata migration complete!
+16:56:06 INFO  cli > Trying to empty the document_metadata table, verify first we do not use it.
+16:56:06 INFO  cli > Successfully verified that metadata_id is not in use in document_revisions.
+16:56:06 INFO  cli > Successfully cleaned all entries in document_metadata.
+```
 
 ### Rollback
 
@@ -81,7 +94,7 @@ Only rollback if you have a critical issue with the release in question. Usually
 If you need to rollback the release, you can do so by running the following command on the Livingdocs Server running the new release:
 
 ```sh
-livingdocs-server migrate down 
+livingdocs-server migrate down
 ```
 
 If you rollback, data that was already upgraded to new schema (`document_metadata` -> `document_revisions`) will take a bit longer to migrate as it needs to scan the whole table, but this is lock-free for reads, **it will only block data that got updated after the deployment**.
@@ -89,6 +102,7 @@ If you rollback, data that was already upgraded to new schema (`document_metadat
 ## Breaking Changes 🔥
 
 {{< feature-info "Operations" "server" >}}
+
 ### Migrate the Postgres Database :fire:
 
 It's a simple/fast migration with no expected data losses.
@@ -104,6 +118,7 @@ livingdocs-server migrate up
 ```
 
 {{< feature-info "Internal" "server" >}}
+
 ### document_metadata table migration to document_revisions :fire:
 
 We have moved the `document_metadata` table to the `document_revisions` table to support better migrations and cleanup operations. The migration is done automatically when you run `livingdocs-server migrate up`.
@@ -114,22 +129,24 @@ We will remove the `document_metadata` table in a future release. Writes against
 
 After a successful deployment, saves against existing documents will use the new column and writes from old processes are forbidden as the schema changed.
 
-The existing columns won't be touched within the migration, so the migration can execute quick. 
+The existing columns won't be touched within the migration, so the migration can execute quick.
 
 A rollback of already upgraded data takes a bit longer as it needs to scan the whole table, but this is lock-free for reads, it will only block data that got updated **after** the deployment.
 
 After the upgrade succeeded and it's definitive that you won't need to roll back (a few days), it's best to migrate all data to the new structure. To do that you can execute the command below. **Please make sure you have a few gigabytes of storage available in postgres before executing that command. It will rewrite all metadata probably takes a while.** We've tested the script against a database with 4'300'000 revision entries and it took ~7 minutes. After executing that script, the `document_metadata` table will get truncated and clean up storage.
 
 ```sh
-node db/manual-migrations/011-move-revision-metadata.js 
+node ./node_modules/@livingdocs/server/db/manual-migrations/011-move-revision-metadata.js
 ```
 
 {{< feature-info "Command API" "server" >}}
+
 ### Stricter Document Command API `insertComponent` Validation :fire:
 
 We have made the validation of the `insertComponent` command stricter. Previously, any component available in the design could be inserted into a document with the `insertComponent` command, even if it wasn’t configured in the content type. Now, only components configured in the content type can be inserted, and attempting to insert an unconfigured component will result in a validation error.
 
 {{< feature-info "Content Management" "editor" >}}
+
 ### Move `appConfig.textcount` editor configuration :fire:
 
 `appConfig.textcount` configuration has been moved to `projectConfig.editorSettings.textCount`. If you still want to use this feature please migrate to `projectConfig.editorSettings.textCount`. Be careful, the textCount configuration needs to be written in camelCase in the new location.
@@ -137,6 +154,7 @@ We have made the validation of the `insertComponent` command stricter. Previousl
 ## Deprecations
 
 {{< feature-info "Integrations" "server/editor" >}}
+
 ### Desk-net Integrations :warning:
 
 Desk-Net announced its rebranding to Kordiam. To align with this change, Livingdocs now calls their new API endpoint `kordiam.app` by default. We also added new Kordiam integrations and deprecated existing Desk-Net integrations, which will be removed in `release-2025-05`.
@@ -159,13 +177,14 @@ Desk-Net announced its rebranding to Kordiam. To align with this change, Livingd
 For instructions on how to migrate, please refer to our [Desk-Net to Kordiam migration guide]({{< ref "/guides/integrations/desknet-to-kordiam-migration" >}}).
 
 {{< feature-info "Search" "server" >}}
+
 ### `contentTypes` in `li-document-search` :warning:
 
 The shorthand property `config.contentTypes` in the `li-document-search` metadata plugin is deprecated and replaced with `config.contentType` which can be a string or an array of strings. This is done to make it consistent with the shorthand syntax in other places. `config.contentTypes` will be supported until `release-2025-05`.
 
-Backwards compatibility will take `config.contentType` if defined: `config.contentType || config.contentTypes`. 
+Backwards compatibility will take `config.contentType` if defined: `config.contentType || config.contentTypes`.
 Please migrate your existing configuration from `config.contentTypes` to `config.contentType`.
-  
+
 ```js
 {
   handle: 'search',
@@ -178,6 +197,7 @@ Please migrate your existing configuration from `config.contentTypes` to `config
 ```
 
 {{< feature-info "Menu Tool" "server/editor" >}}
+
 ### Menu Tool :warning:
 
 The Menu Tool is deprecated and will be removed in release-2025-05. Please migrate your menus to data records, using the `li-tree` plugin and, if needed, the `li-unique-id` metadata plugin. For detailed instructions on [setting up menus with data records]({{< ref "/guides/editor/menus" >}}), refer to our guide. We are here to assist with the migration as needed.
@@ -185,7 +205,8 @@ The Menu Tool is deprecated and will be removed in release-2025-05. Please migra
 ## Features
 
 {{< feature-info "Page management" "server/editor" >}}
-###  Teaser Components :gift:
+
+### Teaser Components :gift:
 
 The new [`li-teaser` plugin]({{< ref "/reference/document/metadata/plugins/li-teaser" >}}) for includes facilitates flexible page management by allowing users to establish rule based links from teasers to documents. Teasers can be configured to use direct references, curated lists, or algorithm-driven selections, supporting a mix of static and dynamic teasers.
 
@@ -194,11 +215,13 @@ This plugin already covers many of the technical necessities out of the box, suc
 Since page management is a complex topic, we encourage you to get in touch with us, so we can figure out how your use case fits into frame and which migration paths exist.
 
 {{< feature-info "Content Management" "server" >}}
+
 ### Document Print Flows :gift:
 
 Document Print Flows provide a flexible way to create print copies of web documents. They are configured in a similar way to Document Copy Flows, with the server functions handling most of the logic. The main difference is that there is a 1:1 relationship between a print and web document, and they use a different UI to initiate the copy. There are also additional indicators within the UI to show the status of the linked document. For help with configuring the Document Print Flows feature please see the [guide]({{< ref "/guides/editor/document-print-flows" >}}).
 
 {{< feature-info "Task Management" "editor" >}}
+
 ### Task Screens :gift:
 
 To be able to better support task workflows, especially proofreading flows, we introduce a new way of displaying tasks on the basis of table dashboards. The most relevant information are emphasised and shown in an easy-to-grasp, clean way. By moving away from the task state lanes, we gain more space and make the most important tasks easier accessible.
@@ -225,13 +248,13 @@ The configuration of task screens is similar to that of table dashboards, but th
 ```
 
 There is also a new [li-task-v2 display filter]({{< ref "/customising/advanced/editor-configuration/display-filter" >}}) which can be configured anywhere that document display filters are supported, including for task screens:
+
 ```js
-displayFilters: [
-  {metadataPropertyName: 'proofreading'}
-]
+displayFilters: [{metadataPropertyName: 'proofreading'}]
 ```
 
 Also, to add a link to a task screen in the [main navigation]({{< ref "/reference/project-config/editor-settings#custom-task-screen" >}}) you can use the new `taskScreen` property in a custom main navigation item:
+
 ```js
 {
   editorSettings: {
@@ -248,12 +271,13 @@ Also, to add a link to a task screen in the [main navigation]({{< ref "/referenc
 ```
 
 {{< feature-info "Metadata" "editor" >}}
+
 ### Task Modes :gift:
 
 We are making several enhancements to the [`li-task-v2` metadata plugin]({{< ref "/reference/document/metadata/plugins/li-task-v2" >}}), with the main highlight being the introduction of task modes.
 
 - **Task Modes** allow users to select how they approach a task. For instance, in the context of proofreading, task modes can reflect the level of rigor applied when reviewing an article. A mode can be chosen when a task is accepted or finished, and it is also shown in the task icon.<br>
-Task modes can be defined in the metadata plugin configuration. Once configured, selecting a mode becomes mandatory for every newly created task. Modes are displayed in the order they are defined, with the first mode being the default.
+  Task modes can be defined in the metadata plugin configuration. Once configured, selecting a mode becomes mandatory for every newly created task. Modes are displayed in the order they are defined, with the first mode being the default.
 
 ```js
 {
@@ -284,6 +308,7 @@ Further enhancements to the `li-task-v2` metadata plugin include:
 - **High Priority**: The high priority button has been relocated from the action menu to the task card header for better visibility.
 
 {{< feature-info "Command API" "server" >}}
+
 ### Document Command API: New Commands :gift:
 
 We have extended the [Document Command API]({{< ref "/reference/public-api/document-command-api" >}}) with five new commands, which are also available for [Assistants]({{< ref "/customising/assistants" >}}).
@@ -391,10 +416,11 @@ The `setIncludeDirective` command updates an include directive. It supports both
 ```
 
 {{< feature-info "Assistants" "server" >}}
+
 ### Assistants: Component Trigger :gift:
 
-We are adding assistant buttons to components. These enable users to trigger an assistant directly on a focused component. If two 
-or more assistants are registered a k-menu will be opened only with the available assistants on this focused component. Assistants which are registered on a focused component are not shown in the normal k-menu. 
+We are adding assistant buttons to components. These enable users to trigger an assistant directly on a focused component. If two
+or more assistants are registered a k-menu will be opened only with the available assistants on this focused component. Assistants which are registered on a focused component are not shown in the normal k-menu.
 
 To configure this add the `focusedComponentName` to the `showAssistantTriggerButton` config:
 
@@ -417,12 +443,14 @@ liServer.registerAssistant({
 ```
 
 {{< feature-info "Assistants" "editor" >}}
+
 ### Assistants: Error messages :gift:
 
 To further improve the [Assistants]({{< ref "/customising/assistants" >}}) we are adding two ways to return custom error messages. This helps to better inform the user on why an assistant
 couldn't fullfil its task.
 
 In the `assist` function either an error object can be returned in the response:
+
 ```js
 {
   error: {
@@ -435,16 +463,19 @@ In the `assist` function either an error object can be returned in the response:
 }
 ```
 
-Or a `validationError` can be thrown: 
+Or a `validationError` can be thrown:
+
 ```js
-throw validationError({translatedMessage: {
-  en: 'Something went wrong',
-  de: 'Etwas ist schief gelaufen'
-}})
+throw validationError({
+  translatedMessage: {
+    en: 'Something went wrong',
+    de: 'Etwas ist schief gelaufen'
+  }
+})
 ```
 
-
 {{< feature-info "Metadata" "server" >}}
+
 ### `li-unique-id` Metadata Plugin :gift:
 
 The new `li-unique-id` metadata plugin is ideal for managing user-defined IDs or handles where uniqueness among values is required. The user interface is similar to an `li-text` field, but it includes additional validation properties:
@@ -456,6 +487,7 @@ The new `li-unique-id` metadata plugin is ideal for managing user-defined IDs or
 For more information on how to configure it, please refer to the [`li-unique-id` plugin page]({{< ref "/reference/document/metadata/plugins/li-unique-id" >}}). Also, check out our [guide]({{< ref "/guides/editor/menus" >}}) on how to set up a menu content type using `li-unique-id`.
 
 {{< feature-info "Content Management" "editor" >}}
+
 ### Enhanced `componentDirectivesPrefilling` :gift:
 
 There's an extension on `mediaType.editorSettings.mediaLibrary.componentDirectivesPrefilling`.
@@ -467,50 +499,55 @@ If a placeholder contains a property that's empty, it will move on to the next p
 That way we can define fallbacks.
 
 ```js
-  componentDirectivesPrefilling: [
-    {
-      type: 'template',
-      template: '{{ metadata.photographer }} / {{ metadata.credit }} ©️',
-      directiveName: 'source'
-    },
-    {
-      type: 'template',
-      template: '{{ metadata.photographer }} ©️',
-      directiveName: 'source'
-    },
-    {
-      type: 'template',
-      template: '{{ metadata.credit }} ©️',
-      directiveName: 'source'
-    },
-    {
-      metadataPropertyName: 'description',
-      directiveName: 'caption'
-    }
-  ]
+componentDirectivesPrefilling: [
+  {
+    type: 'template',
+    template: '{{ metadata.photographer }} / {{ metadata.credit }} ©️',
+    directiveName: 'source'
+  },
+  {
+    type: 'template',
+    template: '{{ metadata.photographer }} ©️',
+    directiveName: 'source'
+  },
+  {
+    type: 'template',
+    template: '{{ metadata.credit }} ©️',
+    directiveName: 'source'
+  },
+  {
+    metadataPropertyName: 'description',
+    directiveName: 'caption'
+  }
+]
 ```
+
 Thus, the two entries below have the same behavior:
+
 ```js
-  componentDirectivesPrefilling: [
-    {
-      type: 'template',
-      template: '{{ metadata.description }}',
-      directiveName: 'caption'
-    },
-    {
-      metadataPropertyName: 'description',
-      directiveName: 'caption' 
-    }
-  ]
+componentDirectivesPrefilling: [
+  {
+    type: 'template',
+    template: '{{ metadata.description }}',
+    directiveName: 'caption'
+  },
+  {
+    metadataPropertyName: 'description',
+    directiveName: 'caption'
+  }
+]
 ```
+
 This behaviour has been backported to September (`@livingdocs/server@257.0.6` and `@livingdocs/editor@110.34.25`) and July (`@livingdocs/server@254.0.34` and `@livingdocs/editor@110.21.55`) releases.
 
 {{< feature-info "Integrations" "server" >}}
+
 ### Kordiam Integrations :gift:
 
 We added new Kordiam integrations (including settings, metadata plugins, and APIs) to replace existing Desk-Net integrations. Check out the [deprecation notice]({{< ref "#desk-net-integrations-warning" >}}) above for details on how to migrate.
 
 {{< feature-info "Media Management" "editor" >}}
+
 ### Video Source Policy :gift:
 
 The `videoSourcePolicy` sits alongside the existing `imageSourcePolicy` configuration. It only supports the 'upload' provider and can be used to disable uploads globally (including the media library video dashboard) when added to the project config settings, or per content type when added to a content type config. The `videoSourcePolicy` within a content type config has priority over the project config.
@@ -547,6 +584,7 @@ You can disable the upload provider for videos by setting `enabled` to `false`:
 ```
 
 {{< feature-info "Webhooks" "server" >}}
+
 ### Webhooks: User Actor Info :gift:
 
 We are adding a config to send more information about users in webhook payloads. External systems can leverage this to understand who triggered an action. If enabled the `name` and `email` for user actors are included in the payload. We do not recommend enabling this configuration unless your external systems require it.
@@ -564,8 +602,8 @@ webhooks: {
 }
 ```
 
-
 {{< feature-info "Access Control Management" "server" >}}
+
 ### `inboxWrite` access right :gift:
 
 We are introducing an new `inbox` permission. This enables users to send contentTypes to the inbox without having write access for them. Users then need `read` and `inbox` access on the contentType to be able to search inboxes (read) and send something into the inbox (inbox). Setting the `update` permission contains the inbox permission.
@@ -574,8 +612,8 @@ No permission will automatically be granted. So make sure to enable the permissi
 
 {{< img src="./release-2024-11-inbox-permission.png" alt="Inbox permission" >}}
 
-
 {{< feature-info "Media Storage" "server" >}}
+
 ### Support for DefaultAzureCredential in Azure Blob Storage :gift:
 
 We have introduced support for `DefaultAzureCredential` when using Azure Blob Storage. This feature simplifies authentication by enabling the automatic retrieval of credentials from the environment without explicitly specifying them in the code or server configuration.
@@ -583,6 +621,7 @@ We have introduced support for `DefaultAzureCredential` when using Azure Blob St
 The new implementation leverages [Azure's DefaultAzureCredential](https://learn.microsoft.com/en-us/javascript/api/overview/azure/identity-readme?view=azure-node-latest#defaultazurecredential) mechanism to automatically select the most appropriate authentication method based on the available environment. It checks for various identity sources in a predefined order (such as environment variables, workload identity, managed identity, or Azure CLI credentials).
 
 **Authentication Flow**: `defaultProvider()` will attemp to authenticate via the following mechanisms in the specified order:
+
 - Environment Variables (e.g., AZURE_CLIENT_ID, AZURE_TENANT_ID, AZURE_CLIENT_SECRET)
 - Workload Identity for services deployed to AKS
 - Azure Managed Identity for services deployed to an Azure host
@@ -614,34 +653,39 @@ To enable this authentication method follow the Azure Blob Storage configuration
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
 
 ### Livingdocs Server
+
 This release we have patched the following vulnerabilities in the Livingdocs Server:
-* [CVE-2024-45813](https://nvd.nist.gov/vuln/detail/CVE-2024-45813) patched in `find-my-way` v8.2.2
-* [CVE-2024-47764](https://nvd.nist.gov/vuln/detail/CVE-2024-47764) patched in `cookie` v0.7.0
-* [CVE-2024-52798](https://github.com/advisories/GHSA-rhx6-c78j-4q9w) patched in `path-to-regexp` v0.1.12
-* [CVE-2024-55565](https://github.com/advisories/GHSA-mwcw-c2x4-8c55) patched in `nanoid` v3.3.8
+
+- [CVE-2024-45813](https://nvd.nist.gov/vuln/detail/CVE-2024-45813) patched in `find-my-way` v8.2.2
+- [CVE-2024-47764](https://nvd.nist.gov/vuln/detail/CVE-2024-47764) patched in `cookie` v0.7.0
+- [CVE-2024-52798](https://github.com/advisories/GHSA-rhx6-c78j-4q9w) patched in `path-to-regexp` v0.1.12
+- [CVE-2024-55565](https://github.com/advisories/GHSA-mwcw-c2x4-8c55) patched in `nanoid` v3.3.8
 
 No known vulnerabilities. :tada:
 
 ### Livingdocs Editor
+
 This release we have patched the following vulnerabilities in the Livingdocs Editor:
-* [CVE-2024-45296](https://nvd.nist.gov/vuln/detail/CVE-2024-45296) patched in `path-to-regexp` v6.3.0
-* [CVE-2024-45813](https://nvd.nist.gov/vuln/detail/CVE-2024-45813) patched in `find-my-way` v8.2.2
-* [CVE-2024-47764](https://nvd.nist.gov/vuln/detail/CVE-2024-47764) patched in `cookie` v0.7.0
-* [CVE-2024-52810](https://github.com/advisories/GHSA-hjwq-mjwj-4x6c) patched in `@intlify/shared` v9.14.2
-* [CVE-2024-55565](https://github.com/advisories/GHSA-mwcw-c2x4-8c55) patched in `nanoid` v3.3.8
+
+- [CVE-2024-45296](https://nvd.nist.gov/vuln/detail/CVE-2024-45296) patched in `path-to-regexp` v6.3.0
+- [CVE-2024-45813](https://nvd.nist.gov/vuln/detail/CVE-2024-45813) patched in `find-my-way` v8.2.2
+- [CVE-2024-47764](https://nvd.nist.gov/vuln/detail/CVE-2024-47764) patched in `cookie` v0.7.0
+- [CVE-2024-52810](https://github.com/advisories/GHSA-hjwq-mjwj-4x6c) patched in `@intlify/shared` v9.14.2
+- [CVE-2024-55565](https://github.com/advisories/GHSA-mwcw-c2x4-8c55) patched in `nanoid` v3.3.8
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
-* [CVE-2023-44270](https://github.com/advisories/GHSA-7fh5-64p2-3v2j) vulnerability in `postcss`, it affects linters using PostCSS to parse external Cascading Style Sheets (CSS). It is not exploitable in the editor as we don't load untrusted external CSS at build time.
-* [CVE-2023-26116](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26118](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26117](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2022-25869](https://cwe.mitre.org/data/definitions/79.html), [CVE-2022-25844](https://cwe.mitre.org/data/definitions/770.html) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
-* [CVE-2024-6783](https://github.com/advisories/GHSA-g3ch-rx76-35fx) vulnerability in `vue-template-compiler` it allows malicious users to perform XSS via prototype pollution. Editor build is always done in a trusted environment and the vulnerability is not exploitable.
-* [CVE-2024-9506](https://github.com/advisories/GHSA-5j4c-8p2g-v4jx) vulnerability in `vue`, an ReDoS vulnerability exploitable through inefficient regex evaluation in parseHTML function. The issue can cause excessive CPU usage but is not exploitable in the editor as we don't load untrusted HTML at runtime.
+- [CVE-2023-44270](https://github.com/advisories/GHSA-7fh5-64p2-3v2j) vulnerability in `postcss`, it affects linters using PostCSS to parse external Cascading Style Sheets (CSS). It is not exploitable in the editor as we don't load untrusted external CSS at build time.
+- [CVE-2023-26116](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26118](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26117](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2022-25869](https://cwe.mitre.org/data/definitions/79.html), [CVE-2022-25844](https://cwe.mitre.org/data/definitions/770.html) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
+- [CVE-2024-6783](https://github.com/advisories/GHSA-g3ch-rx76-35fx) vulnerability in `vue-template-compiler` it allows malicious users to perform XSS via prototype pollution. Editor build is always done in a trusted environment and the vulnerability is not exploitable.
+- [CVE-2024-9506](https://github.com/advisories/GHSA-5j4c-8p2g-v4jx) vulnerability in `vue`, an ReDoS vulnerability exploitable through inefficient regex evaluation in parseHTML function. The issue can cause excessive CPU usage but is not exploitable in the editor as we don't load untrusted HTML at runtime.
 
 ## Patches
 
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v261.3.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.26): fix(deps): update dependency @livingdocs/framework from 31.0.4 to v31.0.5
 - [v261.3.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.25): chore(references): Update `manual-migrations/006-generate-references.js` to skip revision updates when there are no references on them and remove unnecessary transactions
 - [v261.3.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.24): fix(upload): Forward image upload errors to the destination after wrapping upload streams with `limitStreamSize`
@@ -669,6 +713,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+
 - [v111.1.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.65): fix(deps): update dependency @livingdocs/framework from 31.0.4 to v31.0.5
 - [v111.1.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.64): fix: only resolve affected includes after deduplication was invalidated
 - [v111.1.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.63): fix(display-filters): Support duplicate labels in single list display filters
@@ -686,7 +731,7 @@ Here is a list of all patches after the release has been announced.
 - [v111.1.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.51): fix: Add comment explaining why we don't show the counter when the print preview is open
 - [v111.1.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.50): fix: Fix print preview size
 - [v111.1.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.49): fix: Set split pane min-width to configured start width if smaller than default
-- [v111.1.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.48): fix(security): Patch vulnerability CVE-2024-52810 in  `@intlify/shared` and CVE-2024-55565 in `nanoid`
+- [v111.1.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.48): fix(security): Patch vulnerability CVE-2024-52810 in `@intlify/shared` and CVE-2024-55565 in `nanoid`
 - [v111.1.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.47): fix(copy): Ensure document loaded before opening panels
 - [v111.1.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.46): fix(deps): update dependency @livingdocs/framework from 31.0.3 to v31.0.4
 - [v111.1.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.45): fix(teaser-manager): Reduce include resolve requests
@@ -735,10 +780,11 @@ Here is a list of all patches after the release has been announced.
 - [v111.1.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.2): fix(menu-item): increase max length
 - [v111.1.1](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.1): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
+  ***
 
-  ---
   **Icon Legend**
-  * Breaking changes: :fire:
-  * Feature: :gift:
-  * Bugfix: :beetle:
-  * Chore: :wrench:
+
+  - Breaking changes: :fire:
+  - Feature: :gift:
+  - Bugfix: :beetle:
+  - Chore: :wrench:
