@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update playwright monorepo from 1.50.0 to v1.50.1 (main) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/9534)
 - [Rename `persistOriginalAssets` to `preserveOriginalAssets`](https://github.com/livingdocsIO/livingdocs-server/pull/7688)
 - [Allow opt-out of asset deletion when revoking media library entries](https://github.com/livingdocsIO/livingdocs-server/pull/7660)
 - [fix(deps): update playwright monorepo from 1.49.1 to v1.50.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/9512)
