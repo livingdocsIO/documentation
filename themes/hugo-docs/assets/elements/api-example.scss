@@ -61,25 +61,6 @@ $api-example-padding: $space-m;
     }
   }
 
-  &__history {
-    font-size: 15px;
-    margin-top: -5px;
-    margin-bottom: 1.5em;
-
-    > summary {
-      display: list-item;
-      user-select: none;
-
-      span {
-        margin-left: 5px;
-      }
-    }
-
-    > table {
-      margin-top: 10px;
-    }
-  }
-
   &__description,
   p {
     @extend %font-s-xs;
