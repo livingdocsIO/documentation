@@ -142,14 +142,14 @@
         <div class="api-example__response-entry">
           <div class="teaser-and-code">
             <div class="teaser-and-code__teaser">
+              {{ $code := int .code }}
               {{ $codeTeaserClass := "code-teaser" }}
               {{ if (ne .collapsible false) }}
                 {{ $codeTeaserClass = print $codeTeaserClass " code-teaser--with-interaction" }}
               {{ end }}
-              {{ if (eq .code "200") }}
+              {{ if and (gt $code 199) (lt $code 300) }}
                 {{ $codeTeaserClass = print $codeTeaserClass " code-teaser--success" }}
-              {{ end }}
-              {{ if (ne .code "200") }}
+              {{ else }}
                 {{ $codeTeaserClass = print $codeTeaserClass " code-teaser--error" }}
               {{ end }}
               <div class="{{ $codeTeaserClass }}">
@@ -158,27 +158,29 @@
                     <span class="arrow arrow--right"></span>
                   </div>
                 {{ end }}
-                <div class="code-teaser__code">{{ .code }}</div>
+                <div class="code-teaser__code">{{ $code }}</div>
                 {{ $routename := "" }}
                 {{- if .name -}}
                   {{ $routename = .name }}
-                {{- else if (eq .code "200") -}}
+                {{- else if (eq $code 200) -}}
                   {{ $routename = "OK" }}
-                {{- else if (eq .code "301") -}}
+                {{- else if (eq $code 204) -}}
+                  {{ $routename = "OK" }}
+                {{- else if (eq $code 301) -}}
                   {{ $routename = "Moved Permanently" }}
-                {{- else if (eq .code "400") -}}
+                {{- else if (eq $code 400) -}}
                   {{ $routename = "Bad Request" }}
-                {{- else if (eq .code "401") -}}
+                {{- else if (eq $code 401) -}}
                   {{ $routename = "Unauthorized" }}
-                {{- else if (eq .code "403") -}}
+                {{- else if (eq $code 403) -}}
                   {{ $routename = "Forbidden" }}
-                {{- else if (eq .code "404") -}}
+                {{- else if (eq $code 404) -}}
                   {{ $routename = "Not Found" }}
-                {{- else if (eq .code "409") -}}
+                {{- else if (eq $code 409) -}}
                   {{ $routename = "Conflict" }}
-                {{- else if (eq .code "429") -}}
+                {{- else if (eq $code 429) -}}
                   {{ $routename = "Usage Limit Exceeded" }}
-                {{- else if (eq .code "500") -}}
+                {{- else if (eq $code 500) -}}
                   {{ $routename = "Bad Request" }}
                 {{ end }}
                 {{- if $routename -}}<div class="code-teaser__name">{{ $routename }}</div>{{ end }}
@@ -188,7 +190,11 @@
               </div>
             </div>
             <div class="teaser-and-code__code {{ if (eq .collapsible false) }}show{{ end }}">
-              {{ highlight .body (or .format "js") }}
+              {{- if (eq $code 204) -}}
+                {{ highlight "No Content" (or .format "txt") }}
+              {{- else -}}
+                {{ highlight .body (or .format "js") }}
+              {{- end -}}
             </div>
           </div>
         </div>

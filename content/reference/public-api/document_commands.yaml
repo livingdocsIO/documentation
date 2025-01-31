@@ -218,10 +218,6 @@ example_request: |
 responses:
   - code: '204'
     endpoint: /api/v1/documents/:id/commands
-    body: |
-      {
-        "status": 204
-      }
   - code: '400'
     endpoint: /api/v1/documents/:id/commands
     body: |
