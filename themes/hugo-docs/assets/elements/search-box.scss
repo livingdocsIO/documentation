@@ -32,10 +32,6 @@
     position: relative;
     padding: 1.5 * $space-s;
     overflow-x: auto;
-
-    @include media-query(tablet) {
-      justify-content: center;
-    }
   }
 
   &__main {
