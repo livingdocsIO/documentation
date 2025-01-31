@@ -1,0 +1,42 @@
+.history-button {
+  @include box-shadow;
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  border-radius: $rounded-corners;
+  overflow: hidden;
+  user-select: none;
+  cursor: pointer;
+
+  &:hover {
+    @include box-shadow(highlight);
+  }
+
+  &__interaction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: $space-m;
+    height: 2 * $space-m;
+    background-color: $color-white;
+
+    .history[open] & {
+      .arrow {
+        @extend .arrow--down;
+      }
+    }
+  }
+
+  &__label {
+    @extend %font-s-xs;
+    line-height: 2 * $space-m;
+    padding: 0 $space-s;
+    color: $color-black;
+    background-color: $color-white;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border-left: 1px solid $color-grey-6;
+  }
+}

@@ -1,25 +1,32 @@
 {{ partial "default-above-content" . }}
 
 {{- if .Params.history -}}
-  <details class="api-example__history">
-    <summary><span>History</span></summary>
-    <table>
-      <thead>
-        <tr>
-          <th>Version</th>
-          <th>Change</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{ $PAGE := . }}
-        {{- range .Params.history -}}
+  <details class="history explode">
+    <summary class="history-button">
+      <div class="history-button__interaction">
+        <span class="arrow arrow--right"></span>
+      </div>
+      <div class="history-button__label">History</div>
+    </summary>
+    <div class="history__content">
+      <table>
+        <thead>
           <tr>
-            <td>{{ .release }}</td>
-            <td>{{ .description | $PAGE.RenderString }}</td>
+            <th>Version</th>
+            <th>Change</th>
           </tr>
-        {{- end -}}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {{ $PAGE := . }}
+          {{- range .Params.history -}}
+            <tr>
+              <td>{{ .release }}</td>
+              <td>{{ .description | $PAGE.RenderString }}</td>
+            </tr>
+          {{- end -}}
+        </tbody>
+      </table>
+    </div>
   </details>
 {{- end -}}
 
