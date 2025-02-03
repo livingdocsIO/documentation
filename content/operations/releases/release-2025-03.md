@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @fastify/reply-from from 12.0.1 to v12.0.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9542)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/7692)
 - [fix(deps): update playwright monorepo from 1.50.0 to v1.50.1 (main) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/9534)
 - [Rename `persistOriginalAssets` to `preserveOriginalAssets`](https://github.com/livingdocsIO/livingdocs-server/pull/7688)
