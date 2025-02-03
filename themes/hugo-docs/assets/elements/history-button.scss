@@ -39,4 +39,8 @@
     overflow: hidden;
     border-left: 1px solid $color-grey-6;
   }
+
+  &::-webkit-details-marker {
+    display: none;
+  }
 }
