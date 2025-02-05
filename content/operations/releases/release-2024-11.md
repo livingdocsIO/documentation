@@ -713,6 +713,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.67): fix: Close display filters in modal on click outside
 - [v111.1.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.66): fix(proxy): Increase headers timeout to 1h. The livingdocs server handles the timeouts separately.
 
 - [v111.1.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.65): fix(deps): update dependency @livingdocs/framework from 31.0.4 to v31.0.5
