@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency puppeteer-core from 24.1.1 to v24.2.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9549)
 - [Close display filters in modal on click outside](https://github.com/livingdocsIO/livingdocs-editor/pull/9536)
 - [fix(deps): update dependency @fastify/reply-from from 12.0.1 to v12.0.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9542)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/7692)
