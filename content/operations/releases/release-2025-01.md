@@ -654,6 +654,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v267.1.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.15): fix(upload): Fix video upload timeout
 - [v267.1.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.14): fix(deps): update dependency @livingdocs/framework from 32.1.2 to v32.1.3
 - [v267.1.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.13): chore(references): Update `manual-migrations/006-generate-references.js` to skip revision updates when there are no references on them and remove unnecessary transactions
 - [v267.1.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.12): fix(print-flows): Allow content to be generated for a specific revision
