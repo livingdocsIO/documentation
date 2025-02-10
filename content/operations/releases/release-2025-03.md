@@ -22,6 +22,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency prettier from 3.4.2 to v3.5.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9559)
 - [Fix video upload timeout](https://github.com/livingdocsIO/livingdocs-server/pull/7697)
 - [Support querying media reference placements in document inbox](https://github.com/livingdocsIO/livingdocs-server/pull/7661)
 - [chore(deps): update dependency puppeteer-core from 24.1.1 to v24.2.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9549)
