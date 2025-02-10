@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Server: Distribution Dates Part 1](https://github.com/livingdocsIO/livingdocs-server/pull/7648)
 - [Insert-panel-improvements: add 'open in media library' link to li-meta-image](https://github.com/livingdocsIO/livingdocs-editor/pull/9553)
 - [chore(deps): update dependency prettier from 3.4.2 to v3.5.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9559)
 - [Fix video upload timeout](https://github.com/livingdocsIO/livingdocs-server/pull/7697)
