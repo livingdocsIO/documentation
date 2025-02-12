@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency pg from 8.13.1 to v8.13.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7711)
 - [fix(deps): update dependency @google-cloud/storage from 7.15.0 to v7.15.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7710)
 - [chore(deps): update dependency eslint from 9.20.0 to v9.20.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9565)
 - [Fix image widths](https://github.com/livingdocsIO/livingdocs-editor/pull/9562)
