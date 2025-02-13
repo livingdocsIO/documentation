@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Server: Teaser Container](https://github.com/livingdocsIO/livingdocs-server/pull/7696)
 - [Editor: Teaser Container](https://github.com/livingdocsIO/livingdocs-editor/pull/9560)
 - [fix(deps): update dependency pg from 8.13.1 to v8.13.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7711)
 - [fix(deps): update dependency @google-cloud/storage from 7.15.0 to v7.15.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7710)
