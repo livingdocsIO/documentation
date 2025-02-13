@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency sass from 1.83.4 to v1.84.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9550)
 - [Feat/slate articles](https://github.com/livingdocsIO/livingdocs-server/pull/7708)
 - [UI improvements/task cell](https://github.com/livingdocsIO/livingdocs-editor/pull/9563)
 - [Server: Teaser Container](https://github.com/livingdocsIO/livingdocs-server/pull/7696)
