@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix document_revisions.metadata support in indexing-repository](https://github.com/livingdocsIO/livingdocs-server/pull/7720)
 - [Display context menu in media library image detail view](https://github.com/livingdocsIO/livingdocs-editor/pull/9571)
 - [Do not use media library entry state string](https://github.com/livingdocsIO/livingdocs-editor/pull/9567)
 - [Track media library entry state changes](https://github.com/livingdocsIO/livingdocs-server/pull/7668)
