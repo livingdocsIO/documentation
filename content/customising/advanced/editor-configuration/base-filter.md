@@ -24,7 +24,7 @@ At all these places, one can use the same query format, e.g.
 {key: 'contentType', term: 'regular'}
 ```
 
-Learn more about the filter queries format [here]({{< ref "/reference/public-api/publications/search.md" >}})
+Learn more about the filter queries format [here]({{< ref "/reference/public-api/publications/search-filters" >}})
 
 ## Filter Query Examples
 

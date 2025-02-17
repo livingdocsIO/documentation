@@ -1,0 +1,32 @@
+<!-- To iterate over a map
+  range (sort $.Site.Data.endpoints)
+ -->
+
+{{ range $.Site.Data.sections }}
+  <!-- warnf (string (. | jsonify)) -->
+  <!-- warnf (string .title) -->
+
+  {{ $endpoints := "" }}
+  {{ range .endpoints }}
+    {{ $tmpl := "%s{{< api-example-resource data=\"%s\" >}}" }}
+    {{ $endpoints = printf $tmpl ($endpoints) (string .) }}
+  {{ end }}
+
+  {{ $content := dict
+    "mediaType" "text/markdown"
+    "value" $endpoints
+  }}
+
+  {{ $params := merge (dict "type" "api-reference-section") . }}
+
+  {{ $page := dict
+    "title" .title
+    "kind" (or .kind "page")
+    "weight" .weight
+    "path" (or .path .title)
+    "content" $content
+    "params" $params
+  }}
+
+  {{ $.AddPage $page }}
+{{ end }}
