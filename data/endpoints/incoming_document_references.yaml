@@ -9,7 +9,7 @@ description: |
 
   The example below finds a reference to ID 1 when requesting for incomingDocumentReference with ID 2.
 
-  {{< img src="./references.png" alt="Component Property" >}}
+  {{< img src="publications/references.png" alt="Component Property" >}}
 
 useCases: |
   - Find publications that link to this document for cache invalidation
