@@ -4,9 +4,6 @@ description: Quick tour of public API documentation and how to use the public AP
 icon: file-tree
 renderTOC: false
 weight: 1
-menus:
-  reference:
-    weight: 1
 ---
 
 ## OpenAPI
