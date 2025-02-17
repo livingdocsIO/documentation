@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Add check-document-design-versions task](https://github.com/livingdocsIO/livingdocs-server/pull/7705)
 - [Improve design version handling](https://github.com/livingdocsIO/livingdocs-server/pull/7689)
 - [fix(deps): update dependency sass-loader from 16.0.4 to v16.0.5 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9581)
 - [chore(deps): update dependency chai from 5.1.2 to v5.2.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9582)
