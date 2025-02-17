@@ -7,7 +7,7 @@ description: How to upgrade to the latest filter syntax
 
 ## Display Filter Migration
 
-The structure of display filters has changed. Instead of the typical `type` and `value` properties alongside the `label` there are now three distinct properties that can be used to change the filter functionality. The main one is the `filter` property, which is an object containing the filter query using the new [Search Filters Query DSL]({{< ref "/reference/public-api/publications/search#search-filters" >}}). There is also a `context` property which can be used by [Custom Filters]({{< ref "#custom-filters" >}}). Finally, there is a `sort` property, which is a string that replaces the `'sortBy'` filter type.
+The structure of display filters has changed. Instead of the typical `type` and `value` properties alongside the `label` there are now three distinct properties that can be used to change the filter functionality. The main one is the `filter` property, which is an object containing the filter query using the new [Search Filters Query DSL]({{< ref "/reference/public-api/publications/search-filters" >}}). There is also a `context` property which can be used by [Custom Filters]({{< ref "#custom-filters" >}}). Finally, there is a `sort` property, which is a string that replaces the `'sortBy'` filter type.
 
 ### Type/Value Filters
 
@@ -55,7 +55,7 @@ Migrate the `sortBy` value to the new `sort` attribute:
 
 ## Base Filter Migration
 
-Base Filters have not changed as significantly as Display Filters, as they are equivalent to the `filters` property within the Display Filter options. The same [Search Filters Query DSL]({{< ref "/reference/public-api/publications/search#search-filters" >}}) is used within the object.
+Base Filters have not changed as significantly as Display Filters, as they are equivalent to the `filters` property within the Display Filter options. The same [Search Filters Query DSL]({{< ref "/reference/public-api/publications/search-filters" >}}) is used within the object.
 
 ### Sorting
 
@@ -94,7 +94,7 @@ The new filter should look like this:
 {key: 'contentType', term: 'regular'}
 ```
 
-Below you will find specific examples of how to migrate different legacy filters. These objects can be used for `baseFilters`, the `displayFilters` `filters` property, and for [Public API Search Filters]({{< ref "/reference/public-api/publications/search#search-filters" >}}).
+Below you will find specific examples of how to migrate different legacy filters. These objects can be used for `baseFilters`, the `displayFilters` `filters` property, and for [Public API Search Filters]({{< ref "/reference/public-api/publications/search-filters" >}}).
 
 ## Migration Examples
 

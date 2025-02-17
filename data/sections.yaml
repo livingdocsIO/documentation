@@ -1,0 +1,291 @@
+- title: Get Started
+  weight: 3
+  renderTOC: false
+  menu: public-api
+  endpoints:
+    - auth_example
+    - auth_errors
+    - first_response
+
+- title: Project Configuration
+  path: project
+  weight: 4
+  renderTOC: false
+  menu: public-api
+  endpoints:
+    - get_project_config
+    - get_project_configuration
+    - get_channel_configuration
+    - get_design_configuration
+
+- title: Composition API
+  weight: 5
+  renderTOC: false
+  menu: public-api
+  endpoints:
+    - composition
+
+- title: Document Command API
+  weight: 5
+  renderTOC: false
+  menu: public-api
+  endpoints:
+    - document_commands
+
+## Start Drafts section
+- title: Drafts
+  renderTOC: false
+  weight: 5
+  menus: public-api
+  kind: section
+
+- title: Incoming Draft References
+  path: drafts/incoming-references
+  type: public-api-section
+  identifier: Incoming Draft References
+  weight: 9
+  renderTOC: false
+  menus:
+    public-api:
+      parent: Drafts
+  endpoints:
+    - incoming-references
+
+- title: Latest Draft Beta
+  path: drafts/latest-draft-beta
+  identifier: Latest Draft Beta
+  weight: 8
+  renderTOC: false
+  menus:
+    public-api:
+      parent: Drafts
+  endpoints:
+    - latest-draft-beta
+## End Drafts section
+
+- title: Publications
+  renderTOC: false
+  kind: section
+  weight: 6
+  menu: public-api
+
+## Start Publications section
+- title: Latest Publication
+  path: publications/latest-publication
+  identifier: Latest Publication
+  weight: 1
+  renderTOC: false
+  menus:
+    public-api:
+      parent: Publications
+  endpoints:
+    - get_latest_publication
+
+- title: Latest Publication Beta
+  path: publications/latest-publication-beta
+  identifier: Latest Publication Beta
+  weight: 2
+  renderTOC: false
+  menus:
+    public-api:
+      parent: Publications
+  endpoints:
+    - get_latest_publication_beta
+
+- title: Latest Publications
+  path: publications/latest-publications
+  weight: 3
+  renderTOC: false
+  menus:
+    public-api:
+      parent: Publications
+  endpoints:
+    - latest_publications
+
+- title: Latest Publications Beta
+  path: publications/latest-publications-beta
+  identifier: Latest Publications Beta
+  weight: 4
+  renderTOC: false
+  menus:
+    public-api:
+      parent: Publications
+  endpoints:
+    - latest_publications_beta
+
+- title: Publication Events
+  path: publications/publication-events
+  weight: 5
+  renderTOC: false
+  menus:
+    public-api:
+      parent: Publications
+  endpoints:
+    - publication_events
+
+- title: Incoming References
+  path: publications/references
+  weight: 6
+  renderTOC: false
+  menus:
+    public-api:
+      parent: Publications
+  endpoints:
+    - incoming_document_references
+    - incoming_media_references
+
+- title: Renditions
+  path: publications/renditions
+  weight: 7
+  renderTOC: false
+  menus:
+    public-api:
+      parent: Publications
+  endpoints:
+    - publication_renditions
+
+- title: Search
+  path: publications/search
+  weight: 8
+  menus:
+    public-api:
+      parent: Publications
+  endpoints:
+    - search_publications
+## End Publications section
+
+- title: Document Lists
+  weight: 8
+  renderTOC: false
+  menu: public-api
+  endpoints:
+    - get_list_by_id
+    - get_lists
+
+- title: Document Categories
+  weight: 9
+  renderTOC: false
+  menu: public-api
+  endpoints:
+    - get_category
+    - get_categories
+
+- title: Media Library
+  weight: 9
+  renderTOC: false
+  menu: public-api
+  endpoints:
+    - get_media_library_entry
+    - patch_media_library_entry
+    - get_media_library_entries
+    - get_media_library_incoming_document_references
+    - get_media_library_incoming_media_references
+
+# Start Imports section
+- title: Imports
+  renderTOC: false
+  weight: 10
+  menu: public-api
+  kind: section
+
+- title: Documents
+  path: imports/documents
+  weight: 1
+  renderTOC: false
+  menus:
+    public-api:
+      parent: Imports
+  endpoints:
+    - import_documents
+    - import_documents_check_status
+
+- title: Files
+  path: imports/files
+  weight: 2
+  renderTOC: false
+  menus:
+    public-api:
+      parent: Imports
+  endpoints:
+    - import_files
+    - check_files_import_status
+
+- title: Images
+  path: imports/images
+  weight: 2
+  renderTOC: false
+  menus:
+    public-api:
+      parent: Imports
+  endpoints:
+    - import_images
+    - import_images_import_status
+
+- title: Media Library Entries
+  path: imports/media-library-entries
+  weight: 4
+  renderTOC: false
+  menus:
+    public-api:
+      parent: Imports
+  endpoints:
+    - media-library-entries
+
+- title: Videos
+  path: imports/videos
+  weight: 3
+  renderTOC: false
+  menus:
+    public-api:
+      parent: Imports
+  endpoints:
+    - import_videos
+    - check_video_import_status
+
+# End Imports section
+
+- title: Sitemaps
+  weight: 11
+  renderTOC: false
+  menu: public-api
+
+  endpoints:
+    - get_sitemap_index
+    - get_sitemap_entries
+
+- title: Menus
+  weight: 12
+  renderTOC: false
+  menu: public-api
+  endpoints:
+    - get_menus
+
+- title: Routing
+  weight: 13
+  renderTOC: false
+  menu: public-api
+  endpoints:
+    - resolve_path
+
+- title: Add Delivery Status
+  identifier: Add Delivery Status
+  weight: 14
+  renderTOC: false
+  menu: public-api
+  endpoints:
+    - add-delivery-status
+
+- title: Retresco re-enrich
+  path: retresco
+  weight: 15
+  renderTOC: false
+  menu: public-api
+  endpoints:
+    - retresco_re_enrich
+
+- title: Health
+  weight: 16
+  renderTOC: false
+  menu: public-api
+  endpoints:
+    - health_check

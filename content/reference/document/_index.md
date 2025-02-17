@@ -5,5 +5,5 @@ icon: file-document
 weight: 3
 menus:
   reference:
-    weight: 3
+    weight: 5
 ---

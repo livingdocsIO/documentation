@@ -1,14 +1,10 @@
 ---
-title: Search
-weight: 8
+title: Search Filters
+weight: 9
 menus:
-  reference:
+  public-api:
     parent: Publications
 ---
-
-{{< api-example-resource file="search_publications.yaml" >}}
-
-## Search Filters
 
 {{< added-in "release-2023-07" block >}}
 

@@ -4,7 +4,7 @@ history:
   - release: release-2024-03
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
   - release: release-2023-07
-    description: Added `filters` query parameter to support the [Public API Search DSL]({{< ref "/reference/public-api/publications/search#search-filters" >}}).
+    description: Added `filters` query parameter to support the [Public API Search DSL]({{< ref "/reference/public-api/publications/search-filters" >}}).
 
 description: |
   This endpoint allows filtering for published documents.
@@ -51,12 +51,12 @@ parameters:
   - name: ?filters
     type: string
     required: false
-    notes: 'A JSON string which follows the [search filters query DSL]({{< ref "#search-filters" >}})'
+    notes: 'A JSON string which follows the [search filters query DSL]({{< ref "/reference/public-api/publications/search-filters" >}})'
   - name: ?sort
     type: string
     required: false
     notes: |
-      Comma separated list of sort properties. Any of the [Sort Fields]({{< ref \"#sort-fields\" >}}) can be used. The sort order can be reversed by prefixing the property with a `-`
+      Comma separated list of sort properties. Any of the [Sort Fields]({{< ref "/reference/public-api/publications/search-filters#sort-fields" >}}) can be used. The sort order can be reversed by prefixing the property with a `-`
   - name: ?fields
     type: string
     required: false

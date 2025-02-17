@@ -1,7 +1,12 @@
 {{- $yamlPath := .Get "file" -}}
 {{ $PAGE := .Page }}
 {{ if (ne $PAGE.BundleType "branch") }}{{ $PAGE = .Page.Parent }}{{ end }}
-{{- $example := $PAGE.Resources.Get $yamlPath | transform.Unmarshal -}}
+{{- $example := "" -}}
+{{ if (.Get "data") }}
+  {{- $example = or (index $.Site.Data.endpoints (.Get "data")) (dict "title" "File not found") -}}
+{{ else }}
+  {{- $example = $PAGE.Resources.Get $yamlPath | transform.Unmarshal -}}
+{{ end }}
 
 {{ $channel := "" }}
 {{ if $example.beta }}{{ $channel = "beta" }}{{ end }}
@@ -38,7 +43,6 @@
   {{- end -}}
 
   {{- if $example.history -}}
-  
     <details class="history">
       <summary class="history-button">
         <div class="history-button__interaction">

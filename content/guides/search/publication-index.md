@@ -164,7 +164,7 @@ const publicApi = server.features.api('li-public-api')
 const results = await publicApi.searchPublications({projectId: 1, filters})
 ```
 
-For further details on how to define filters please see the [Public API]({{< ref "/reference/public-api/publications/search#search-filters" >}}) documentation.
+For further details on how to define filters please see the [Public API]({{< ref "/reference/public-api/publications/search-filters" >}}) documentation.
 
 ### Fields
 

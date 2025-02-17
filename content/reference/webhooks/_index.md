@@ -5,7 +5,7 @@ icon: webhook
 weight: 4
 menus:
   reference:
-    weight: 4
+    weight: 7
 ---
 
 A Webhook notifies another system via a HTTP POST request about a change in Livingdocs, e.g. when a document has been published. You can configure multiple Webhooks that are called on only one or multiple events.

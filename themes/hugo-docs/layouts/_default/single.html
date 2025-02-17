@@ -1,6 +1,3 @@
 {{ partial "default-above-content" . }}
-
-
-<div class="article__content">{{ .Content }}</div>
-
+<div class="article__content article__content_{{ .Type }}">{{ .Content }}</div>
 {{ partial "default-below-content" . }}
