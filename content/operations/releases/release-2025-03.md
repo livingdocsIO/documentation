@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(kordiam plugin): Error spacing](https://github.com/livingdocsIO/livingdocs-editor/pull/9583)
 - [Remove design migration screen](https://github.com/livingdocsIO/livingdocs-editor/pull/9533)
 - [Add check-document-design-versions task](https://github.com/livingdocsIO/livingdocs-server/pull/7705)
 - [Improve design version handling](https://github.com/livingdocsIO/livingdocs-server/pull/7689)
