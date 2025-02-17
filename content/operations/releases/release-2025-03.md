@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency chai from 5.1.2 to v5.2.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9582)
 - [fix(deps): update dependency form-data from 4.0.1 to v4.0.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7724)
 - [Fix document_revisions.metadata support in indexing-repository](https://github.com/livingdocsIO/livingdocs-server/pull/7720)
 - [Display context menu in media library image detail view](https://github.com/livingdocsIO/livingdocs-editor/pull/9571)
