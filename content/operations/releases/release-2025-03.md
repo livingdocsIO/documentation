@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Add media library hard-delete functionality](https://github.com/livingdocsIO/livingdocs-editor/pull/9570)
 - [Add media library hard-delete functionality](https://github.com/livingdocsIO/livingdocs-server/pull/7669)
 - [Polish/teaser side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/9584)
 - [Rename migration with duplicate sequence](https://github.com/livingdocsIO/livingdocs-server/pull/7727)
