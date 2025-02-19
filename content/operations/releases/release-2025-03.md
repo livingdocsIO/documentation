@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Allow media library entries to be stored in archive](https://github.com/livingdocsIO/livingdocs-server/pull/7670)
 - [Teaser Side Table](https://github.com/livingdocsIO/livingdocs-editor/pull/9564)
 - [Show canvas border around teaser containers](https://github.com/livingdocsIO/livingdocs-editor/pull/9575)
 - [Add media library hard-delete functionality](https://github.com/livingdocsIO/livingdocs-editor/pull/9570)
