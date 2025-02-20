@@ -1,5 +1,8 @@
+{{- $pages := .Site.AllPages -}}
+{{- $pages = where $pages "Params.hidden" "!=" true -}}
+{{- $pages = where $pages "Params.excludeFromSearch" "!=" true -}}
 [
-  {{- range $index, $page := .Site.AllPages -}}
+  {{- range $index, $page := $pages -}}
     {{- $entry := (dict "url" $page.RelPermalink) -}}
     {{- $entry = merge $entry (dict "type" $page.Type) -}}
     {{- $entry = merge $entry (dict "section" $page.Section) -}}
@@ -8,9 +11,7 @@
     {{- $entry = merge $entry (dict "title" $page.Title) -}}
     {{- $entry = merge $entry (dict "description" ($page.Description | .Page.RenderString | plainify)) -}}
     {{- $entry = merge $entry (dict "body" ($page.Content | jsonify)) -}}
-    {{- if ne $page.Params.excludeFromSearch true -}}
-      {{- if ne $index 0 -}} , {{- end -}}
-      {{- $entry | jsonify -}}
-    {{- end -}}
+    {{- if ne $index 0 -}} , {{- end -}}
+    {{- $entry | jsonify -}}
   {{- end -}}
 ]
