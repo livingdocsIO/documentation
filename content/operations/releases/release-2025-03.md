@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update opentelemetry (main) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/7734)
 - [Add store in archive functionality to media library](https://github.com/livingdocsIO/livingdocs-editor/pull/9590)
 - [Allow media library entries to be stored in archive](https://github.com/livingdocsIO/livingdocs-server/pull/7670)
 - [Teaser Side Table](https://github.com/livingdocsIO/livingdocs-editor/pull/9564)
