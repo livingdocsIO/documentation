@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Add smartquotes setup, editable.js updater and toggle component to editor](https://github.com/livingdocsIO/livingdocs-editor/pull/9545)
 - [fix(tests): Teasers](https://github.com/livingdocsIO/livingdocs-editor/pull/9594)
 - [Add smartQuotes configuration](https://github.com/livingdocsIO/livingdocs-server/pull/7695)
 - [fix(deps): update opentelemetry (main) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/7734)
