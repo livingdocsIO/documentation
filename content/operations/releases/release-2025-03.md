@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency globals from 15.15.0 to v16 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7738)
 - [Correctly escape control characters in json during postgres save](https://github.com/livingdocsIO/livingdocs-server/pull/7736)
 - [Feat: image variants](https://github.com/livingdocsIO/livingdocs-server/pull/7691)
 - [Add smartquotes setup, editable.js updater and toggle component to editor](https://github.com/livingdocsIO/livingdocs-editor/pull/9545)
