@@ -1,0 +1,15 @@
+{{- $redirect := .Param "to" -}}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="refresh"
+      content="0; url={{ $redirect }}"
+    />
+    <script type="text/javascript">
+      window.location.href = '{{ $redirect }}'
+    </script>
+    <title>Redirect to '{{ $redirect }}'</title>
+  </head>
+</html>

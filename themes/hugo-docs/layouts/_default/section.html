@@ -16,7 +16,7 @@
         {{ .Content }}
         {{ if (ne (.Param "renderSummaries") false) }}
           <div class="section-teasers {{ with not .Content }}section-teasers--wide{{ end }}">
-            {{ range .Pages.ByWeight }}
+            {{ range where .Pages.ByWeight  "Params.hidden" "!=" true }}
               {{ if (ne (.Param "hideSectionTeaser") true) }}
                 <div class="section-teaser">
                   <a

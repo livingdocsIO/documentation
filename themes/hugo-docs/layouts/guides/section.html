@@ -29,7 +29,7 @@
         {{ .Content }}
         {{ if (ne (.Param "renderSummaries") false) }}
 
-          {{ $pages := .RegularPagesRecursive.GroupBy "CurrentSection" }}
+          {{ $pages := where (.RegularPagesRecursive.GroupBy "CurrentSection") "Params.hidden" "!=" true }}
           {{ range sort $pages ".Key.Weight" }}
             <div class="section__subsection">
               <h2 class="section__title">{{ .Key.Title }}</h2>
