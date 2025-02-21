@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Distribution dates improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/9592)
 - [fix(deps): update dependency @azure/identity from 4.6.0 to v4.7.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7729)
 - [Hide media library entry and notify after delete](https://github.com/livingdocsIO/livingdocs-editor/pull/9591)
 - [Increase default thread maximum to 300](https://github.com/livingdocsIO/livingdocs-server/pull/7739)
