@@ -4,8 +4,6 @@ title: July 2022 Release
 description: Release notes for release-2022-07
 hideSectionTeaser: true
 excludeFromSearch: true
-aliases:
-  - /operations/releases/release-2022-07/release-2022-07/
 
 header:
   upcoming: false

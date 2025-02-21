@@ -4,8 +4,6 @@ title: May 2023 Release
 description: Technical Release Notes for release-2023-05
 excludeFromSearch: false
 hideSectionTeaser: true
-aliases:
-  - /operations/releases/release-2023-05/release-2023-05/
 
 header:
   upcoming: false

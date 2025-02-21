@@ -4,8 +4,6 @@ title: January 2023 Release
 description: Technical Release Notes for release-2023-01
 excludeFromSearch: false
 hideSectionTeaser: true
-aliases:
-  - /operations/releases/release-2023-01/release-2023-01/
 
 header:
   upcoming: false

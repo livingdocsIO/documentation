@@ -4,8 +4,6 @@ title: March 2023 Release
 description: Technical Release Notes for release-2023-03
 excludeFromSearch: false
 hideSectionTeaser: true
-aliases:
-  - /operations/releases/release-2023-03/release-2023-03/
 
 header:
   upcoming: false

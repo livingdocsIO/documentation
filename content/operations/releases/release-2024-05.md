@@ -4,8 +4,6 @@ title: May 2024 Release
 description: Technical Release Notes for release-2024-05
 excludeFromSearch: false
 hideSectionTeaser: true
-aliases:
-  - /operations/releases/release-2024-05/release-2024-05/
 
 header:
   upcoming: false

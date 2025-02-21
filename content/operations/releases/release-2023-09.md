@@ -4,8 +4,6 @@ title: September 2023 Release
 description: Technical Release Notes for release-2023-09
 excludeFromSearch: false
 hideSectionTeaser: true
-aliases:
-  - /operations/releases/release-2023-09/release-2023-09/
 
 header:
   upcoming: false

@@ -4,8 +4,6 @@ title: July 2023 Release
 description: Technical Release Notes for release-2023-07
 excludeFromSearch: false
 hideSectionTeaser: true
-aliases:
-  - /operations/releases/release-2023-07/release-2023-07/
 
 header:
   upcoming: false
