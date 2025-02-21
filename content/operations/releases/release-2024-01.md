@@ -4,8 +4,6 @@ title: January 2024 Release
 description: Technical Release Notes for release-2024-01
 excludeFromSearch: false
 hideSectionTeaser: true
-aliases:
-  - /operations/releases/release-2024-01/release-2024-01/
 
 header:
   upcoming: false
