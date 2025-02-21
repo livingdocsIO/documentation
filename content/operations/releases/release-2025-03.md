@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency ws from 8.18.0 to v8.18.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7745)
 - [Prevent deletion of published media library entries](https://github.com/livingdocsIO/livingdocs-editor/pull/9595)
 - [Track when a media library entry is in a published document](https://github.com/livingdocsIO/livingdocs-server/pull/7671)
 - [Distribution dates improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/9592)
