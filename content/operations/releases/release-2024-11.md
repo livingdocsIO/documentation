@@ -685,6 +685,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v261.3.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.29): fix(db): Correctly escape control characters in json
 - [v261.3.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.28): fix(db): Fix document_revisions.metadata support in indexing-repository
 - [v261.3.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.27): fix(upload): Fix video upload timeout
 
