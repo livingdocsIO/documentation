@@ -4,8 +4,6 @@ title: July 2024 Release
 description: Technical Release Notes for release-2024-07
 excludeFromSearch: false
 hideSectionTeaser: true
-aliases:
-  - /operations/releases/release-2024-07/release-2024-07/
 
 header:
   upcoming: false

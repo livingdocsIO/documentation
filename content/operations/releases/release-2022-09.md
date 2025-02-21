@@ -4,8 +4,6 @@ title: September 2022 Release
 description: Release notes for release-2022-09
 excludeFromSearch: false
 hideSectionTeaser: true
-aliases:
-  - /operations/releases/release-2022-09/release-2022-09/
 
 header:
   upcoming: false
