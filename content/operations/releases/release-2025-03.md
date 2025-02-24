@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(migrations): Set default document entity data before applying mig…](https://github.com/livingdocsIO/livingdocs-server/pull/7750)
 - [fix: add missing style when task label is not link](https://github.com/livingdocsIO/livingdocs-editor/pull/9605)
 - [Data migration improvements](https://github.com/livingdocsIO/livingdocs-server/pull/7733)
 - [Feat image variants](https://github.com/livingdocsIO/livingdocs-editor/pull/9552)
