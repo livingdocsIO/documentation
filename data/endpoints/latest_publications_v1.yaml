@@ -1,8 +1,8 @@
-title: Get Latest Publications
-
+title: Get Latest Publications [v1]
 endpointId: latest_publications
+
 apiVersion:
-  gte: 2025-03
+  eq: v1
 
 history:
   - release: release-2021-06

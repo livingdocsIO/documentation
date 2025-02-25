@@ -16,12 +16,12 @@ useCases: |
 scopes: public-api:write
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X PATCH "https://server.livingdocs.io/api/v1/mediaLibrary/:id" \
+  curl -k -X PATCH "https://server.livingdocs.io/api/:apiVersion/mediaLibrary/:id" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: PATCH
-  path: /api/v1/mediaLibrary/:id
+  path: /api/:apiVersion/mediaLibrary/:id
 parameters:
   - name: version
     type: string
@@ -79,13 +79,13 @@ example_request: |
 
 responses:
   - code: '200'
-    endpoint: /api/v1/mediaLibrary/:id
+    endpoint: /api/:apiVersion/mediaLibrary/:id
     body: |
       {
         "status": 200
       }
   - code: '400'
-    endpoint: /api/v1/mediaLibrary/:id
+    endpoint: /api/:apiVersion/mediaLibrary/:id
     body: |
       {
         "status": 400,
@@ -95,7 +95,7 @@ responses:
         }
       }
   - code: '404'
-    endpoint: /api/v1/mediaLibrary/:id
+    endpoint: /api/:apiVersion/mediaLibrary/:id
     body: |
       {
         "status": 404,
@@ -106,7 +106,7 @@ responses:
         }
       }
   - code: '409'
-    endpoint: /api/v1/mediaLibrary/:id
+    endpoint: /api/:apiVersion/mediaLibrary/:id
     body: |
       {
         "status": 409,

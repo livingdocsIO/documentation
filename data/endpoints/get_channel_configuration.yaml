@@ -2,16 +2,16 @@ title: Get Channel Configuration
 
 deprecation:
   since: release-2023-03
-  note: Use `GET /api/v1/projectConfig` instead.
+  note: Use `GET /api/:apiVersion/projectConfig` instead.
 
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/channels/:channelHandle" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/channels/:channelHandle" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/v1/channels/:channelHandle
+  path: /api/:apiVersion/channels/:channelHandle
 parameters:
   - name: :channelHandle
     type: string

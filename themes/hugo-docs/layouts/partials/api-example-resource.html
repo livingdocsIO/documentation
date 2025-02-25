@@ -1,21 +1,14 @@
-{{- $yamlPath := .Get "file" -}}
-{{ $PAGE := .Page }}
-{{ if (ne $PAGE.BundleType "branch") }}{{ $PAGE = .Page.Parent }}{{ end }}
-{{- $example := "" -}}
-{{ if (.Get "data") }}
-  {{- $example = or (index $.Site.Data.endpoints (.Get "data")) (dict "title" "File not found") -}}
-{{ else }}
-  {{- $example = $PAGE.Resources.Get $yamlPath | transform.Unmarshal -}}
-{{ end }}
+{{ $page := .page }}
+{{ $endpoint := .endpoint }}
 
 {{ $channel := "" }}
-{{ if $example.beta }}{{ $channel = "beta" }}{{ end }}
-{{ if $example.deprecation.since }}
-  {{ $channel = print "Deprecated in " $example.deprecation.since }}
+{{ if $endpoint.beta }}{{ $channel = "beta" }}{{ end }}
+{{ if $endpoint.deprecation.since }}
+  {{ $channel = print "Deprecated in " $endpoint.deprecation.since }}
 {{ end }}
 
 {{ $apiExampleClass := "api-example" }}
-{{ if (eq $example.title "") }}
+{{ if (eq $endpoint.title "") }}
   {{ $apiExampleClass = print $apiExampleClass " api-example--no-title" }}
 {{ end }}
 {{ if $channel }}
@@ -26,23 +19,30 @@
   {{ end }}
 {{ end }}
 
+{{ $apiVersion := partial "api-version-string" (dict "page" $page "endpoint" $endpoint) }}
+
 
 <div
   class="{{ $apiExampleClass }}"
   data-channel="{{ $channel }}"
+  {{ if $endpoint.apiVersion }}data-version="{{ $endpoint.apiVersion | jsonify }}"{{ end }}
 >
-  {{- if $example.title -}}
+  {{- if $endpoint.title -}}
     <div class="api-example__title">
-      <h2 id="{{ $example.title | urlize }}">{{ $example.title | $PAGE.RenderString }}</h2>
-      {{- if $example.deprecation -}}
+      <h2 id="{{ $endpoint.title | urlize }}">
+        {{ $endpoint.title | $page.RenderString }}
+        {{ partial "api-version-selector" (dict "page" $page "endpoint" $endpoint "version" $apiVersion) }}
+      </h2>
+
+      {{- if $endpoint.deprecation -}}
         <blockquote class="info info-danger">
-          {{ $example.deprecation.note | $PAGE.RenderString }}
+          {{ replace $endpoint.deprecation.note ":apiVersion" $apiVersion | $page.RenderString }}
         </blockquote>
       {{- end -}}
     </div>
   {{- end -}}
 
-  {{- if $example.history -}}
+  {{- if $endpoint.history -}}
     <details class="history">
       <summary class="history-button">
         <div class="history-button__interaction">
@@ -55,14 +55,16 @@
           <thead>
             <tr>
               <th>Version</th>
+              <th>Version</th>
               <th>Change</th>
             </tr>
           </thead>
           <tbody>
-            {{- range $example.history -}}
+            {{- range $endpoint.history -}}
               <tr>
+                <td><a href="?version={{ .version }}">{{ .version }}</a></td>
                 <td>{{ .release }}</td>
-                <td>{{ .description | $PAGE.RenderString }}</td>
+                <td>{{ .description | $page.RenderString }}</td>
               </tr>
             {{- end -}}
           </tbody>
@@ -71,29 +73,29 @@
     </details>
   {{- end -}}
 
-  {{- if $example.release -}}
-    {{- partial "added-in" (dict "release" $example.release "block" true) -}}
+  {{- if $endpoint.release -}}
+    {{- partial "added-in" (dict "release" $endpoint.release "block" true) -}}
   {{- end -}}
 
-  {{- if $example.scopes -}}
-    {{- partial "required-for" (dict "scopes" $example.scopes "block" true) -}}
+  {{- if $endpoint.scopes -}}
+    {{- partial "required-for" (dict "scopes" $endpoint.scopes "block" true) -}}
   {{- end -}}
 
-  {{- if $example.description -}}
+  {{- if $endpoint.description -}}
     <div class="api-example__description">
       <h4>Description</h4>
-      {{- $example.description | $PAGE.RenderString -}}
+      {{- $endpoint.description | $page.RenderString -}}
     </div>
   {{- end -}}
 
-  {{- if $example.useCases -}}
+  {{- if $endpoint.useCases -}}
     <div class="api-example__description">
       <h4>Use Cases</h4>
-      {{- $example.useCases | $PAGE.RenderString -}}
+      {{- $endpoint.useCases | $page.RenderString -}}
     </div>
   {{- end -}}
 
-  {{- if $example.query -}}
+  {{- if $endpoint.query -}}
     <div class="api-example__curl">
       <div class="teaser-and-code">
         <div class="teaser-and-code__teaser">
@@ -106,18 +108,21 @@
         </div>
 
         <div class="teaser-and-code__code">
-          {{ highlight $example.query "bash" }}
+          {{ highlight (replace $endpoint.query ":apiVersion" $apiVersion) "bash" }}
         </div>
       </div>
     </div>
   {{- end -}}
 
-  {{- if $example.endpoint -}}
+  {{- if $endpoint.endpoint -}}
     <h4>Endpoint</h4>
-    {{ highlight (printf "%s %s" $example.endpoint.method  $example.endpoint.path) "curl" }}
+    {{ highlight (
+      replace (printf "%s %s" $endpoint.endpoint.method $endpoint.endpoint.path) ":apiVersion" $apiVersion)
+      "curl"
+    }}
   {{- end -}}
 
-  {{- if $example.parameters -}}
+  {{- if $endpoint.parameters -}}
     <h4>Parameters</h4>
     <table>
       <thead>
@@ -129,28 +134,28 @@
         </tr>
       </thead>
       <tbody>
-        {{- range $example.parameters -}}
+        {{- range $endpoint.parameters -}}
           <tr>
             <td>{{ .name }}</td>
             <td>{{ .type }}</td>
             <td>{{ if .required }}x{{ end }}</td>
-            <td>{{ .notes | $PAGE.RenderString }}</td>
+            <td>{{ .notes | $page.RenderString }}</td>
           </tr>
         {{- end -}}
       </tbody>
     </table>
   {{- end -}}
 
-  {{- if $example.example_request -}}
+  {{- if $endpoint.example_request -}}
     <h4>Example Request</h4>
-    {{ highlight $example.example_request "js" }}
+    {{ highlight (replace $endpoint.example_request ":apiVersion" $apiVersion) "js" }}
   {{- end -}}
 
-  {{- if $example.responses -}}
+  {{- if $endpoint.responses -}}
     <div class="api-example__response">
-      <h4>Response{{ if (eq $example.responseBlurry true) }}(may differ in details){{ end }}</h4>
+      <h4>Response{{ if (eq $endpoint.responseBlurry true) }}(may differ in details){{ end }}</h4>
 
-      {{- range $example.responses -}}
+      {{- range $endpoint.responses -}}
         <div class="api-example__response-entry">
           <div class="teaser-and-code">
             <div class="teaser-and-code__teaser">
@@ -197,7 +202,9 @@
                 {{ end }}
                 {{- if $routename -}}<div class="code-teaser__name">{{ $routename }}</div>{{ end }}
                 {{- if .endpoint -}}
-                  <div class="code-teaser__endpoint">{{ .endpoint }}</div>
+                  <div class="code-teaser__endpoint">
+                    {{ replace .endpoint ":apiVersion" $apiVersion }}
+                  </div>
                 {{- end -}}
               </div>
             </div>
@@ -205,7 +212,7 @@
               {{- if (eq $code 204) -}}
                 {{ highlight "No Content" (or .format "txt") }}
               {{- else -}}
-                {{ highlight .body (or .format "js") }}
+                {{ highlight (replace .body ":apiVersion" $apiVersion) (or .format "js") }}
               {{- end -}}
             </div>
           </div>

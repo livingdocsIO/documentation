@@ -1,0 +1,9 @@
+{{ $version := 0 }}
+{{ if eq . "v1" }}
+  {{ $version = 1 }}
+{{ else if eq . "beta" }}
+  {{ $version = 2 }}
+{{ else }}
+  {{ $version = (printf "%s-01" . | time).Unix }}
+{{ end }}
+{{ return $version }}

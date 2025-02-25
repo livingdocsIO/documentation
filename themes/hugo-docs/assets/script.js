@@ -362,6 +362,38 @@ teaserAndCodes.forEach(function (teaserAndCode) {
 })
 
 /**
+ * Versioning
+ */
+document.addEventListener('DOMContentLoaded', function () {
+  const currentUrl = new URL(window.location.href)
+  const currentVersion = currentUrl.searchParams.get('version') ?? '2025-03'
+  const versions = {v1: 1, beta: 2, '2025-03': 3}
+  const versionedSections = document.querySelectorAll('[data-version]')
+
+  function versionMatchesRange(version, range) {
+    const current = versions[version]
+    for (const key in range) {
+      const compare = versions[range[key]]
+      if (key === 'eq' && current === compare) return true
+      if (key === 'lte' && current <= compare) return true
+      if (key === 'lt' && current < compare) return true
+      if (key === 'gte' && current >= compare) return true
+      if (key === 'gt' && current > compare) return true
+    }
+    return false
+  }
+
+  for (const section of versionedSections) {
+    const version = section.getAttribute('data-version')
+    if (!version) continue
+    const range = JSON.parse(version)
+    if (!versionMatchesRange(currentVersion, range)) {
+      section.remove()
+    }
+  }
+})
+
+/**
  * Header while Scrolling
  */
 let lastScrollingPosition = 0

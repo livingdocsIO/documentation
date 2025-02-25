@@ -15,11 +15,11 @@ deprecation:
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/menus/:channelHandle" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/menus/:channelHandle" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/v1/menus/:channelHandle
+  path: /api/:apiVersion/menus/:channelHandle
 parameters:
   - name: :channelHandle
     type: string
@@ -31,7 +31,7 @@ parameters:
     notes: 'Handle of the menu to retrieve.'
 responses:
   - code: '200'
-    endpoint: /api/v1/menus/web
+    endpoint: /api/:apiVersion/menus/web
     body: |
       [
         {

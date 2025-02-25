@@ -1,0 +1,85 @@
+{{ $redirects := split (readFile "./redirects.map") ";" }}
+{{ $emptyContent := dict "mediaType" "text/markdown" "value" "" }}
+{{ $buildNoList := dict "list" "never" }}
+
+Generate redirects within hugo using the nginx redirect map
+{{ range $redirects }}
+  {{ $redirect := split . " " }}
+  {{ $from := trim (index $redirect 0) "\n" }}
+  {{ $to := trim (index $redirect 1) "\n" }}
+  {{ if not $from }}{{ continue }}{{ end }}
+
+  {{ $params := dict "from" $from "to" $to "hidden" true }}
+
+  {{ $page := dict
+    "title" $from
+    "type" "redirect"
+    "kind" "page"
+    "build" $buildNoList
+    "path" (slicestr $from 1)
+    "content" $emptyContent
+    "dates" (dict "date" now)
+    "params" $params
+    "sitemap" (dict "disable" true)
+  }}
+
+  {{ $.AddPage $page }}
+{{ end }}
+
+Expose releases.json for https://downstreams.cluster.livingdocs.io/
+{{ $.AddResource (
+  dict
+  "content" (dict "mediaType" "application/json" "value" ($.Site.Data.releases | jsonify))
+  "path" "releases.json"
+  )
+}}
+
+{{ $minimumVersion := partial "api-version-sequence" "2025-03" }}
+
+{{ $weight := 0 }}
+{{ range (sort $.Site.Data.releases "key" "desc") }}
+  {{ $version := slicestr .key 8 }}
+  {{ $sequence := partial "api-version-sequence" $version }}
+  {{ if lt $sequence $minimumVersion }}{{ continue }}{{ end }}
+
+  {{ $.AddPage (dict
+    "title" $version
+    "type" "api-version"
+    "kind" "page"
+    "dates" (dict "date" now)
+    "path" (printf "versions/%s" $version)
+    "weight" $weight
+    "content" $emptyContent
+    "params" (dict "release" .key "version" $version "sequence" $sequence "hidden" true)
+    "sitemap" (dict "disable" true)
+    )
+  }}
+
+  {{ $weight = add $weight 1 }}
+{{ end }}
+
+{{ $.AddPage (dict
+  "title" "v1"
+  "type" "api-version"
+  "kind" "page"
+  "dates" (dict "date" now)
+  "path" "versions/v1"
+  "content" $emptyContent
+  "params" (dict "release" "release-2025-01" "version" "v1" "sequence" 1 "hidden" true)
+  "sitemap" (dict "disable" true)
+  )
+}}
+{{ $weight = add $weight 1 }}
+
+{{ $.AddPage (dict
+  "title" "beta"
+  "type" "api-version"
+  "kind" "page"
+  "dates" (dict "date" now)
+  "path" "versions/beta"
+  "content" $emptyContent
+  "params" (dict "release" "release-2025-01" "version" "beta" "sequence" 2 "hidden" true)
+  "sitemap" (dict "disable" true)
+  )
+}}
+{{ $weight = add $weight 1 }}

@@ -19,11 +19,11 @@ useCases: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/publications/search" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/publications/search" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/v1/publications/search
+  path: /api/:apiVersion/publications/search
 parameters:
   - name: ?search
     type: string
@@ -92,7 +92,7 @@ parameters:
 
 responses:
   - code: '200'
-    endpoint: /api/v1/publications/search?search=Obama
+    endpoint: /api/:apiVersion/publications/search?search=Obama
     body: |
       [
         {
@@ -155,7 +155,7 @@ responses:
       ]
 
   - code: '200'
-    endpoint: /api/v1/publications/search?categories=sport,fashion&languages=en
+    endpoint: /api/:apiVersion/publications/search?categories=sport,fashion&languages=en
     body: |
       [
         {
@@ -224,7 +224,7 @@ responses:
       ]
 
   - code: '200'
-    endpoint: /api/v1/publications/search?contentTypes=regular,gallery&limit=10&offset=10
+    endpoint: /api/:apiVersion/publications/search?contentTypes=regular,gallery&limit=10&offset=10
     body: |
       [
         {
@@ -293,7 +293,7 @@ responses:
       ]
 
   - code: '200'
-    endpoint: /api/v1/publications/search?contentTypes=article&limit=999&fields=id
+    endpoint: /api/:apiVersion/publications/search?contentTypes=article&limit=999&fields=id
     body: |
       [
         {

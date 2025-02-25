@@ -1,32 +1,44 @@
 <!-- To iterate over a map
   range (sort $.Site.Data.endpoints)
  -->
+{{ $buildNoRender := dict "render" "never" }}
 
+{{ $endpoints := slice }}
+{{ range $key, $value := $.Site.Data.endpoints }}
+  {{ $stat := os.Stat (printf "data/endpoints/%s.yaml" $key) }}
+  {{ $endpoint := merge $value (dict "endpointId" (or $value.endpointId $key) "hidden" true "endpointFile" $key) }}
+  {{ $endpoints = $endpoints | append $endpoint }}
+
+  {{ $.AddPage (dict
+    "title" .title
+    "kind" "page"
+    "type" "api-endpoint"
+    "dates" (dict "lastmod" $stat.ModTime)
+    "weight" .weight
+    "path" (printf "endpoint/%s" $key)
+    "content" (dict "mediaType" "text/markdown" "value" "")
+    "params" $endpoint
+    "sitemap" (dict "disable" true)
+    )
+  }}
+{{ end }}
+
+{{ $sectionsStat := os.Stat "data/sections.yaml" }}
 {{ range $.Site.Data.sections }}
   <!-- warnf (string (. | jsonify)) -->
   <!-- warnf (string .title) -->
 
-  {{ $endpoints := "" }}
-  {{ range .endpoints }}
-    {{ $tmpl := "%s{{< api-example-resource data=\"%s\" >}}" }}
-    {{ $endpoints = printf $tmpl ($endpoints) (string .) }}
-  {{ end }}
+  {{ $sectionEndpoints := where $endpoints "endpointId" "in" .endpoints }}
+  {{ $params := merge . (dict "endpoints" $sectionEndpoints) }}
 
-  {{ $content := dict
-    "mediaType" "text/markdown"
-    "value" $endpoints
-  }}
-
-  {{ $params := merge (dict "type" "api-reference-section") . }}
-
-  {{ $page := dict
+  {{ $.AddPage (dict
     "title" .title
     "kind" (or .kind "page")
+    "type" "api-reference-section"
+    "dates" (dict "lastmod" $sectionsStat.ModTime)
     "weight" .weight
     "path" (or .path .title)
-    "content" $content
-    "params" $params
+    "content" (dict "mediaType" "text/markdown" "value" "")
+    "params" $params)
   }}
-
-  {{ $.AddPage $page }}
 {{ end }}

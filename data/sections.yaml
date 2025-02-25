@@ -51,16 +51,17 @@
   endpoints:
     - incoming-references
 
-- title: Latest Draft Beta
-  path: drafts/latest-draft-beta
-  identifier: Latest Draft Beta
+- title: Latest Draft
+  path: drafts/latest-draft
+  identifier: Latest Draft
   weight: 8
   renderTOC: false
   menus:
     public-api:
       parent: Drafts
   endpoints:
-    - latest-draft-beta
+    - latest-draft
+
 ## End Drafts section
 
 - title: Publications
@@ -81,17 +82,6 @@
   endpoints:
     - get_latest_publication
 
-- title: Latest Publication Beta
-  path: publications/latest-publication-beta
-  identifier: Latest Publication Beta
-  weight: 2
-  renderTOC: false
-  menus:
-    public-api:
-      parent: Publications
-  endpoints:
-    - get_latest_publication_beta
-
 - title: Latest Publications
   path: publications/latest-publications
   weight: 3
@@ -101,17 +91,6 @@
       parent: Publications
   endpoints:
     - latest_publications
-
-- title: Latest Publications Beta
-  path: publications/latest-publications-beta
-  identifier: Latest Publications Beta
-  weight: 4
-  renderTOC: false
-  menus:
-    public-api:
-      parent: Publications
-  endpoints:
-    - latest_publications_beta
 
 - title: Publication Events
   path: publications/publication-events
@@ -196,8 +175,8 @@
     public-api:
       parent: Imports
   endpoints:
-    - import_documents
-    - import_documents_check_status
+    - import-documents
+    - import-documents-status
 
 - title: Files
   path: imports/files
@@ -207,8 +186,8 @@
     public-api:
       parent: Imports
   endpoints:
-    - import_files
-    - check_files_import_status
+    - import-files
+    - import-files-status
 
 - title: Images
   path: imports/images
@@ -218,8 +197,8 @@
     public-api:
       parent: Imports
   endpoints:
-    - import_images
-    - import_images_import_status
+    - import-images
+    - import-images-status
 
 - title: Media Library Entries
   path: imports/media-library-entries
@@ -229,7 +208,7 @@
     public-api:
       parent: Imports
   endpoints:
-    - media-library-entries
+    - import-media-library-entries
 
 - title: Videos
   path: imports/videos
@@ -239,8 +218,8 @@
     public-api:
       parent: Imports
   endpoints:
-    - import_videos
-    - check_video_import_status
+    - import-videos
+    - import-videos-status
 
 # End Imports section
 

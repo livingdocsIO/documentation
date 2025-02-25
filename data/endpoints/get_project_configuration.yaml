@@ -7,11 +7,11 @@ deprecation:
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/project" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/project" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/v1/project
+  path: /api/:apiVersion/project
 deprecated: release-2023-03
 responses:
   - code: '200'

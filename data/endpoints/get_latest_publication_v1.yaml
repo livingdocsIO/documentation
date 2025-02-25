@@ -2,7 +2,7 @@ title: Get Latest Publication
 endpointId: get_latest_publication
 
 apiVersion:
-  gte: 2025-03
+  eq: v1
 
 history:
   - release: release-2024-03

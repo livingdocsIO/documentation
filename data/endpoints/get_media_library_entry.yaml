@@ -10,10 +10,10 @@ description: |
 scopes: public-api:read
 endpoint:
   method: GET
-  path: /api/v1/mediaLibrary/:id
+  path: /api/:apiVersion/mediaLibrary/:id
 responses:
   - code: '200'
-    endpoint: /api/v1/mediaLibrary/:id
+    endpoint: /api/:apiVersion/mediaLibrary/:id
     body: |
       {
         "id": "asze63i9",

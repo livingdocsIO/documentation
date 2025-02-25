@@ -18,11 +18,11 @@ useCases: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/documents/:documentId/latestPublication/renditions/:renditionHandles" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/documents/:documentId/latestPublication/renditions/:renditionHandles" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/v1/documents/:documentId/latestPublication/renditions/:renditionHandles
+  path: /api/:apiVersion/documents/:documentId/latestPublication/renditions/:renditionHandles
 parameters:
   - name: :renditionHandles
     type: string
