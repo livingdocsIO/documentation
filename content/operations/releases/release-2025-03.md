@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/9608)
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/7754)
 - [Fix versioned route for kordiam & use correct breaking change code](https://github.com/livingdocsIO/livingdocs-server/pull/7753)
 - [Merge beta routes into public api routes](https://github.com/livingdocsIO/livingdocs-server/pull/7474)
