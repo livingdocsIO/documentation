@@ -1,0 +1,8 @@
+{{ partial "default-above-content" . }}
+<div class="article__content article__content_{{ .Type }}">
+  {{ $page := .Page }}
+  {{ range $endpoint := .Params.endpoints }}
+    {{ partial "api-example-resource.html" (dict "page" $page "endpoint" $endpoint) }}
+  {{ end }}
+</div>
+{{ partial "default-below-content" . }}

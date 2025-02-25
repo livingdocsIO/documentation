@@ -1,10 +1,17 @@
 title: Get Latest Publication
 beta: true
 
+endpointId: get_latest_publication
+
+apiVersion:
+  eq: beta
+
 history:
   - release: release-2024-03
+    version: v1
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
   - release: release-2023-09
+    version: v1
     description: The type `documents` within `references` changed to `document` where every document id has a separate reference entry.
 
 deprecation:

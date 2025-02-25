@@ -1,22 +1,24 @@
 title: Check Import Status for Documents
 description: |
   This endpoint allows you to check the status of a previously initiated document import. The result will indicate whether the import has finished and its state.
+
 scopes: public-api:write
+
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/import/documents/status" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/import/documents/status" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/v1/import/documents/status
+  path: /api/:apiVersion/import/documents/status
 parameters:
   - name: ?id
     type: string
     required: true
-    notes: The id that Livingdocs provided you for your prior call to `/api/v1/import/documents`
+    notes: The id that Livingdocs provided you for your prior call to `/api/:apiVersion/import/documents`
 responses:
   - code: '200'
-    endpoint: /api/v1/import/documents/status?id=25bzj8j
+    endpoint: /api/:apiVersion/import/documents/status?id=25bzj8j
     body: |
       {
         "finished": true,
@@ -59,7 +61,7 @@ responses:
       }
   - code: '200'
     name: OK
-    endpoint: /api/v1/import/documents/status?id=243kdc
+    endpoint: /api/:apiVersion/import/documents/status?id=243kdc
     body: |
       {
         "finished": false,
@@ -69,7 +71,7 @@ responses:
       }
   - code: '200'
     name: OK
-    endpoint: /api/v1/import/documents/status?id=098shjhv9
+    endpoint: /api/:apiVersion/import/documents/status?id=098shjhv9
     body: |
       {
         "finished": true,
@@ -78,7 +80,7 @@ responses:
       }
   - code: '200'
     name: OK
-    endpoint: /api/v1/import/documents/status?id=098shjhv9
+    endpoint: /api/:apiVersion/import/documents/status?id=098shjhv9
     body: |
       {
         "finished": false,

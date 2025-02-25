@@ -19,7 +19,7 @@ description: |
 scopes: public-api:write
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X PATCH "https://server.livingdocs.io/api/v1/documents/:id/commands" \
+  curl -k -X PATCH "https://server.livingdocs.io/api/:apiVersion/documents/:id/commands" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $ACCESS_TOKEN" \
     --data-binary @- << EOF
@@ -33,7 +33,7 @@ query: |
     EOF
 endpoint:
   method: PATCH
-  path: /api/v1/documents/:id/commands
+  path: /api/:apiVersion/documents/:id/commands
 parameters:
   - name: version
     type: integer
@@ -217,9 +217,9 @@ example_request: |
   }
 responses:
   - code: '204'
-    endpoint: /api/v1/documents/:id/commands
+    endpoint: /api/:apiVersion/documents/:id/commands
   - code: '400'
-    endpoint: /api/v1/documents/:id/commands
+    endpoint: /api/:apiVersion/documents/:id/commands
     body: |
       {
         "status": 400,
@@ -274,7 +274,7 @@ responses:
         }
       }
   - code: '404'
-    endpoint: /api/v1/documents/:id/commands
+    endpoint: /api/:apiVersion/documents/:id/commands
     body: |
       {
         "status": 404,
@@ -285,7 +285,7 @@ responses:
         }
       }
   - code: '409'
-    endpoint: /api/v1/documents/:id/commands
+    endpoint: /api/:apiVersion/documents/:id/commands
     body: |
       {
         "status": 409,

@@ -1,6 +1,9 @@
 title: Compose a Publication
 beta: true
 
+apiVersion:
+  gte: beta
+
 history:
   - release: release-2021-06
     description: Initial support for the Composition API on `/v1/beta`

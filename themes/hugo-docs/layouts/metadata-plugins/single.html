@@ -1,4 +1,5 @@
 {{ partial "default-above-content" . }}
+{{ $PAGE := . }}
 
 {{- if .Params.history -}}
   <details class="history explode">
@@ -17,7 +18,6 @@
           </tr>
         </thead>
         <tbody>
-          {{ $PAGE := . }}
           {{- range .Params.history -}}
             <tr>
               <td>{{ .release }}</td>

@@ -19,13 +19,12 @@ useCases: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/publicationEvents" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/publicationEvents" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 
 endpoint:
   method: GET
-  path: /api/v1/publicationEvents
-  # TODO: add /api/v1/publicationEvents/:channelHandle
+  path: /api/:apiVersion/publicationEvents
 parameters:
   - name: :channelHandle
     type: string
@@ -72,7 +71,7 @@ parameters:
 
 responses:
   - code: '200'
-    endpoint: /api/v1/publicationEvents
+    endpoint: /api/:apiVersion/publicationEvents
     body: |
       [
         {
@@ -117,7 +116,7 @@ responses:
         }
       ]
   - code: '200'
-    endpoint: /api/v1/publicationEvents?reverse&limit=2
+    endpoint: /api/:apiVersion/publicationEvents?reverse&limit=2
     body: |
       [
         {

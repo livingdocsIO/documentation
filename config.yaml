@@ -50,8 +50,3 @@ outputs:
 
 params:
   branch: main
-
-# default static directory: themes/hugo-docs/static
-# additional static directories below:
-staticDir:
-  - data

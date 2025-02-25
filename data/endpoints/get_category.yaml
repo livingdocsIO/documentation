@@ -5,11 +5,11 @@ description: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/categories/:categoryId" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/categories/:categoryId" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/v1/categories/:categoryId
+  path: /api/:apiVersion/categories/:categoryId
 parameters:
   - name: :categoryId
     type: string
@@ -21,7 +21,7 @@ parameters:
     notes: If set to `true` will inherit (but not overwrite) metadata properties from all parents Inheritance depth is limited to 20
 responses:
   - code: '200'
-    endpoint: /api/v1/categories/123abc
+    endpoint: /api/:apiVersion/categories/123abc
     body: |
       {
         "id": "123abc",
@@ -34,7 +34,7 @@ responses:
       }
 
   - code: '400'
-    endpoint: /api/v1/categories/123abc
+    endpoint: /api/:apiVersion/categories/123abc
     body: |
       {
         "status": 400,
@@ -45,7 +45,7 @@ responses:
       }
 
   - code: '500'
-    endpoint: /api/v1/categories/123abc
+    endpoint: /api/:apiVersion/categories/123abc
     body: |
       {
         "status": 500,

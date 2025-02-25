@@ -10,7 +10,7 @@ description: |
 scopes: public-api:read
 endpoint:
   method: GET
-  path: /api/v1/mediaLibrary
+  path: /api/:apiVersion/mediaLibrary
 parameters:
   - name: ids
     type: string
@@ -26,7 +26,7 @@ parameters:
     notes: 'System name of the media library entry'
 responses:
   - code: '200'
-    endpoint: /api/v1/mediaLibrary?ids=asze63i9,2er11b3i
+    endpoint: /api/:apiVersion/mediaLibrary?ids=asze63i9,2er11b3i
     body: |
       {
         "mediaLibraryEntries": [
@@ -67,7 +67,7 @@ responses:
         ]
       }
   - code: '200'
-    endpoint: /api/v1/mediaLibrary?externalId=ex-1&systemName=externalSystem
+    endpoint: /api/:apiVersion/mediaLibrary?externalId=ex-1&systemName=externalSystem
     body: |
       {
         "mediaLibraryEntries": [

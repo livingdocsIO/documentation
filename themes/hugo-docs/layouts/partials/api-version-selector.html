@@ -1,0 +1,26 @@
+{{ $page := .page }}
+{{ $endpoint := .endpoint }}
+{{ $currentVersion := .version }}
+
+{{ $versionedEndpoints := where (where $page.Site.RegularPages "Type" "api-endpoint") "Params.endpointId" $endpoint.endpointId }}
+{{ if gt (len $versionedEndpoints) 1 }}
+  <select
+    class="api-example__version-selector"
+    name="version"
+    onchange="window.location.href = `?version=${this.value}`"
+  >
+    {{ $versions := slice }}
+    {{ range $versionedEndpoints }}
+      {{ $versions = $versions | append (partial "api-version-string" (dict "page" $page "endpoint" .Params)) }}
+    {{ end }}
+
+    {{ range $version := sort $versions }}
+      <option
+        value="{{ $version }}"
+        {{ if eq $currentVersion $version }}selected{{ end }}
+      >
+        {{ $version }}
+      </option>
+    {{ end }}
+  </select>
+{{ end }}

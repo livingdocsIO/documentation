@@ -10,11 +10,11 @@ description: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/document-lists" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/document-lists" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/v1/document-lists
+  path: /api/:apiVersion/document-lists
 parameters:
   - name: ?name
     type: string
@@ -30,7 +30,7 @@ parameters:
     notes: 'An offset into the query. Useful when getting more than 100 results (pagination)'
 responses:
   - code: '200'
-    endpoint: /api/v1/document-lists
+    endpoint: /api/:apiVersion/document-lists
     body: |
       [
         {
