@@ -7,7 +7,7 @@ history:
 description: |
   When you can upload images, videos or files to the configured Media Library storage (e.g. AWS S3) yourself it is possible to create Media Library Entries through the API.
 
-  This has the advantage that the entries will be included in the response directly in contrast e.g. to the `/api/v1/import/images` endpoint where you only get a `jobId`.
+  This has the advantage that the entries will be included in the response directly in contrast e.g. to the `/api/:apiVersion/import/images` endpoint where you only get a `jobId`.
 
   You can also provide a custom id to entries which helps with importing documents where images in the document should be referenced with the correct `mediaId` maybe even before creating the Media Library Entries themselves.
 
@@ -18,7 +18,7 @@ useCases: |
 scopes: public-api:write
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X POST "https://server.livingdocs.io/api/v1/import/mediaLibrary" \
+  curl -k -X POST "https://server.livingdocs.io/api/:apiVersion/import/mediaLibrary" \
     -H "Authorization: Bearer $ACCESS_TOKEN" \
     -H "Content-Type: application/json; charset=utf-8" \
     --data-binary @- << EOF
@@ -28,7 +28,7 @@ query: |
     EOF
 endpoint:
   method: POST
-  path: /api/v1/import/mediaLibrary
+  path: /api/:apiVersion/import/mediaLibrary
 parameters:
   - name: mediaLibraryEntries
     type: array
@@ -173,7 +173,7 @@ example_request: |
   }
 responses:
   - code: '200'
-    endpoint: /api/v1/import/mediaLibrary
+    endpoint: /api/:apiVersion/import/mediaLibrary
     body: |
       {
         "mediaLibraryEntries": [
@@ -186,7 +186,7 @@ responses:
         ]
       }
   - code: '200'
-    endpoint: /api/v1/import/mediaLibrary (error cases for individual entries)
+    endpoint: /api/:apiVersion/import/mediaLibrary (error cases for individual entries)
     body: |
       {
         "mediaLibraryEntries": [

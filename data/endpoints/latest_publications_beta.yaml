@@ -1,4 +1,9 @@
 title: Get Latest Publications
+endpointId: latest_publications
+beta: true
+version: beta
+apiVersion:
+  eq: beta
 
 history:
   - release: release-2024-03
@@ -17,7 +22,6 @@ description: |
   - content
   - references
 
-beta: true
 useCases: |
   - Bulk export of data, e.g. a specific `Content Type`
 

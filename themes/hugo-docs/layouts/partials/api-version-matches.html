@@ -1,0 +1,17 @@
+{{ $matcher := .matcher }}
+{{ $sequence := (partial "api-version-sequence" .version) }}
+
+{{ $match := false }}
+{{ if and $matcher.eq (eq $sequence (partial "api-version-sequence" $matcher.eq)) }}
+  {{ $match = true }}
+{{ else if and $matcher.lte (le $sequence (partial "api-version-sequence" $matcher.lte)) }}
+  {{ $match = true }}
+{{ else if and $matcher.lt (lt $sequence (partial "api-version-sequence" $matcher.lt)) }}
+  {{ $match = true }}
+{{ else if and $matcher.gte (ge $sequence (partial "api-version-sequence" $matcher.gte)) }}
+  {{ $match = true }}
+{{ else if and $matcher.gt (gt $sequence (partial "api-version-sequence" $matcher.gt)) }}
+  {{ $match = true }}
+{{ end }}
+
+{{ return $match }}

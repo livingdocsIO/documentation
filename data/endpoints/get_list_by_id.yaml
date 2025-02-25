@@ -16,11 +16,11 @@ useCases: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/document-lists/:id?reverse=false&limit=20" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/document-lists/:id?reverse=false&limit=20" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/v1/document-lists/:id
+  path: /api/:apiVersion/document-lists/:id
 parameters:
   - name: :id
     type: integer
@@ -60,7 +60,7 @@ parameters:
 
 responses:
   - code: '200'
-    endpoint: /api/v1/document-lists/1
+    endpoint: /api/:apiVersion/document-lists/1
     body: |
       {
         "id": 1,

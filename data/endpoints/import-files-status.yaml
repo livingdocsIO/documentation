@@ -5,19 +5,21 @@ description: |
 scopes: public-api:write
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/import/files/status" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/import/files/status" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
+
 endpoint:
   method: GET
-  path: /api/v1/import/files/status
+  path: /api/:apiVersion/import/files/status
+
 parameters:
   - name: ?id
     type: string
     required: true
-    notes: The id that Livingdocs provided you for your prior call to `/api/v1/import/files`
+    notes: The id that Livingdocs provided you for your prior call to `/api/:apiVersion/import/files`
 responses:
   - code: '200'
-    endpoint: /api/v1/import/files/status?id=25bzj8j
+    endpoint: /api/:apiVersion/import/files/status?id=25bzj8j
     body: |
       {
         "finished": true,
@@ -45,7 +47,7 @@ responses:
         ]
       }
   - code: '200'
-    endpoint: /api/v1/import/files/status?id=243kdc
+    endpoint: /api/:apiVersion/import/files/status?id=243kdc
     body: |
       {
         "finished": false,
@@ -54,7 +56,7 @@ responses:
         "startedAt": "2020-01-01 13:45:12"
       }
   - code: '200'
-    endpoint: /api/v1/import/files/status?id=098shjhv9
+    endpoint: /api/:apiVersion/import/files/status?id=098shjhv9
     body: |
       {
         "finished": true,

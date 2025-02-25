@@ -13,11 +13,11 @@ useCases: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/sitemaps/index?baseUrl=https://livingdocs.io" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/sitemaps/index?baseUrl=https://livingdocs.io" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/v1/sitemaps/index
+  path: /api/:apiVersion/sitemaps/index
 parameters:
   - name: ?baseUrl
     type: string

@@ -5,14 +5,14 @@ description: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/categories" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/categories" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/v1/categories
+  path: /api/:apiVersion/categories
 responses:
   - code: '200'
-    endpoint: /api/v1/categories
+    endpoint: /api/:apiVersion/categories
     body: |
       [
         {
@@ -33,7 +33,7 @@ responses:
         }
       ]
   - code: '400'
-    endpoint: /api/v1/categories
+    endpoint: /api/:apiVersion/categories
     body: |
       {
         "status": 400,

@@ -30,6 +30,6 @@ responses:
         "status": 404,
         "error": "Not Found",
         "error_details": {
-          "url": "/api/v1/foo"
+          "url": "/api/:apiVersion/foo"
         }
       }

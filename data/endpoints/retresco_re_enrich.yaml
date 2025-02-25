@@ -11,7 +11,7 @@ added: release-2023-03
 scopes: retresco
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X POST "https://server.livingdocs.io/api/v1/retresco/re-enrich" \
+  curl -k -X POST "https://server.livingdocs.io/api/:apiVersion/retresco/re-enrich" \
     -H "Authorization: Bearer $ACCESS_TOKEN" \
     -H "Content-Type: application/json; charset=utf-8" \
     --data-binary @- << EOF
@@ -21,18 +21,18 @@ query: |
     EOF
 endpoint:
   method: GET
-  path: /api/v1/retresco/re-enrich
+  path: /api/:apiVersion/retresco/re-enrich
 parameters:
   - name: ?doc_ids
     type: array<string|number>
     notes: 'A list of the desired document ids to re-enrich.'
 responses:
   - code: '200'
-    endpoint: /api/v1/retresco/re-enrich
+    endpoint: /api/:apiVersion/retresco/re-enrich
     body: |
       {}
   - code: '400'
-    endpoint: /api/v1/retresco/re-enrich
+    endpoint: /api/:apiVersion/retresco/re-enrich
     body: |
       {
         "status":400,

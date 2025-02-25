@@ -3,10 +3,10 @@ useCases: |
   - Health check for operations
 
 query: |
-  curl -k -X GET "https://server.livingdocs.io/api/v1/health"
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/health"
 endpoint:
   method: GET
-  path: /api/v1/health
+  path: /api/:apiVersion/health
 responses:
   - code: '200'
     body: |

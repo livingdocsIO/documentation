@@ -1,0 +1,2 @@
+{{ $versions := partial "api-version-pages" . }}
+{{ return (index $versions 0).Params.version }}

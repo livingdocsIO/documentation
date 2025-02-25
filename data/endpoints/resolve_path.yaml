@@ -5,11 +5,11 @@ description: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/routing/resolve?path=:path" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/routing/resolve?path=:path" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/v1/routing/resolve
+  path: /api/:apiVersion/routing/resolve
 parameters:
   - name: path
     type: string
@@ -20,7 +20,7 @@ parameters:
       Example 2: A document with id 10, with category `/news` and a slug `hello` can be found with `?path=/magazin/hello-10.html'`.
 responses:
   - code: '200'
-    endpoint: /api/v1/routing/resolve?path=/correct-path/my-article-173.html
+    endpoint: /api/:apiVersion/routing/resolve?path=/correct-path/my-article-173.html
     body: |
       [
         {
@@ -32,7 +32,7 @@ responses:
         }
       ]
   - code: '301'
-    endpoint: /api/v1/routing/resolve?path=/incorrect-path/slug-with-correct-id-77.html
+    endpoint: /api/:apiVersion/routing/resolve?path=/incorrect-path/slug-with-correct-id-77.html
     body: |
       [
         {
@@ -44,14 +44,14 @@ responses:
         }
       ]
   - code: '404'
-    endpoint: /api/v1/routing/resolve?path=/does/not/exist
+    endpoint: /api/:apiVersion/routing/resolve?path=/does/not/exist
     body: |
       {
         "status": 404,
         "error": "Not Found"
       }
   - code: '410'
-    endpoint: /api/v1/routing/resolve?path=/unpublished-document-123.html
+    endpoint: /api/:apiVersion/routing/resolve?path=/unpublished-document-123.html
     body: |
       [
         {

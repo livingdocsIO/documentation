@@ -5,12 +5,12 @@ description: |
 scopes: public-api:write
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/import/images/status" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/import/images/status" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 
 endpoint:
   method: GET
-  path: /api/v1/import/images/status
+  path: /api/:apiVersion/import/images/status
 
 parameters:
   - name: id
@@ -20,7 +20,7 @@ parameters:
 
 responses:
   - code: '200'
-    endpoint: /api/v1/import/images/status?id=25bzj8j
+    endpoint: /api/:apiVersion/import/images/status?id=25bzj8j
     body: |
       {
         "finished": true,
@@ -66,7 +66,7 @@ responses:
       }
 
   - code: '200'
-    endpoint: /api/v1/import/images/status?id=243kdc
+    endpoint: /api/:apiVersion/import/images/status?id=243kdc
     body: |
       {
         "finished": false,
@@ -76,7 +76,7 @@ responses:
       }
 
   - code: '200'
-    endpoint: /api/v1/import/images/status?id=098shjhv9
+    endpoint: /api/:apiVersion/import/images/status?id=098shjhv9
     body: |
       {
         "finished": true,

@@ -5,7 +5,7 @@ description: |
   Don't forget to replace [your token.](https://edit.livingdocs.io/access/111/public-api)
 
 query: |
-  curl -k -X GET https://server.livingdocs.io/api/v1/documents/latestPublications \
+  curl -k -X GET https://server.livingdocs.io/api/:apiVersion/documents/latestPublications \
     -H "Authorization: Bearer your_token"
 responses:
   - code: '200'

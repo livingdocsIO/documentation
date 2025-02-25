@@ -5,11 +5,11 @@ useCases: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/v1/design/:designVersion" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/design/:designVersion" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/v1/design/:designVersion
+  path: /api/:apiVersion/design/:designVersion
 parameters:
   - name: :designVersion
     type: string

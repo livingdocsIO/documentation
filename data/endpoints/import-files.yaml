@@ -18,7 +18,7 @@ useCases: |
 scopes: public-api:write
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X POST "https://server.livingdocs.io/api/v1/import/files" \
+  curl -k -X POST "https://server.livingdocs.io/api/:apiVersion/import/files" \
     -H "Authorization: Bearer $ACCESS_TOKEN" \
     -H "Content-Type: application/json; charset=utf-8" \
     --data-binary @- << EOF
@@ -39,7 +39,7 @@ query: |
     EOF
 endpoint:
   method: POST
-  path: /api/v1/import/files
+  path: /api/:apiVersion/import/files
 
 example_request: |
   {
@@ -86,7 +86,7 @@ parameters:
 responses:
   - code: '200'
     name: OK
-    endpoint: /api/v1/import/files
+    endpoint: /api/:apiVersion/import/files
     body: |
       {
         "id": "25bzj8j"
