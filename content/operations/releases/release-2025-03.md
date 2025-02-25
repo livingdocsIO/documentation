@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Merge beta routes into public api routes](https://github.com/livingdocsIO/livingdocs-server/pull/7474)
 - [fix: animate document inbox item count when updating from 0 to 1 docs](https://github.com/livingdocsIO/livingdocs-editor/pull/9604)
 - [fix(deps): update dependency @smithy/node-http-handler from 4.0.2 to v4.0.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7752)
 - [fix(migrations): Set default document entity data before applying mig…](https://github.com/livingdocsIO/livingdocs-server/pull/7750)
