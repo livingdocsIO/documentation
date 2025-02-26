@@ -1,0 +1,64 @@
+{{ partial "html-header.html" . }}
+
+
+<div class="page">
+  {{ partial "sidebar.html" . }}
+  <main class="page__content">
+    <article class="article">
+      <ul
+        id="breadcrumbs"
+        class="breadcrumbs"
+      >
+        {{- range (after 2 .Ancestors.Reverse) }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </li>
+        {{ end }}
+        <li>
+          <a
+            href="{{ .RelPermalink }}"
+            aria-current="location"
+            >{{ .Title }}</a
+          >
+        </li>
+      </ul>
+
+      <div class="article__content">
+        <div class="release-header">
+          {{ if .Page.Params.change.section }}
+            <div
+              class="feature-info"
+              style="float: right;"
+            >
+              <div class="feature-info-pill">
+                {{ with .Page.Params.change.section }}
+                  <span class="feature-info-pill-header">{{ . }}</span>
+                {{ end }}
+                {{ with .Page.Params.change.service }}
+                  <span class="feature-info-pill-content">{{ . }}</span>
+                {{ end }}
+              </div>
+            </div>
+          {{ end }}
+
+
+          <div class="release-header__title">
+            {{ .Page.Title | markdownify }}
+          </div>
+        </div>
+        {{ .Content }}
+      </div>
+
+      <div class="article__footer">
+        {{ partial "footer.html" . }}
+      </div>
+    </article>
+  </main>
+  {{ if (ne (.Param "renderTOC") false) }}
+    <div class="page__toc">
+      {{ .TableOfContents }}
+    </div>
+  {{ end }}
+</div>
+
+{{ partial "html-footer.html" . }}

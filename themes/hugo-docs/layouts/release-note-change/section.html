@@ -1,0 +1,137 @@
+{{ partial "html-header.html" . }}
+
+
+<div class="page">
+  {{ partial "sidebar.html" . }}
+  <main class="page__content">
+    <article class="article">
+      <ul
+        id="breadcrumbs"
+        class="breadcrumbs"
+      >
+        {{- range (after 2 .Ancestors.Reverse) }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </li>
+        {{ end }}
+        <li>
+          <a
+            href="{{ .RelPermalink }}"
+            aria-current="location"
+            >{{ .Title }}</a
+          >
+        </li>
+      </ul>
+
+      <h1 class="article__title">
+        {{ .Title }}
+        {{ partial "edit-page.html" . }}
+
+
+        <div style="float: right;">
+          <span
+            class="pill pill--small is-active"
+            data-filter-handle="deprecation"
+          >
+            Deprecations
+          </span>
+          <span
+            class="pill pill--small is-active"
+            data-filter-handle="breaking-change"
+          >
+            Breaking Changes
+          </span>
+          <span
+            class="pill pill--small is-active"
+            data-filter-handle="feature"
+          >
+            New Features
+          </span>
+        </div>
+      </h1>
+
+      <div class="article__content">
+        {{ .Content }}
+        <style>
+          .release-notes-table {
+            display: grid;
+
+            align-items: stretch;
+            grid-gap: 30px;
+            color: #444;
+            margin-bottom: 30px;
+          }
+
+          .release-notes-table__header {
+            margin-bottom: 0;
+          }
+
+          .release-notes-table__row {
+            display: grid;
+            align-items: stretch;
+            grid-gap: 20px;
+
+            grid-template-columns: 3fr 1fr;
+            grid-template-rows: 4fr;
+          }
+
+          .release-notes-table__main {
+            grid-column: 1;
+          }
+
+          .release-notes-table__secondary {
+            grid-column: 2;
+          }
+        </style>
+
+        {{ $pages := sort (where .RegularPagesRecursive "Type" "release-note-change") ".Params.change.release" "desc" }}
+        {{ range $pages.GroupByParam "change.release" }}
+          <div
+            class="release-notes-table"
+            data-release="{{ .Key }}"
+          >
+            <h2 class="release-notes-table__header">
+              {{ .Key }}
+            </h2>
+            {{ range .Pages }}
+              <div class="release-notes-table__row">
+                <a
+                  class="release-notes-table__main"
+                  href="{{ .RelPermalink }}"
+                >
+                  <h3 class="section-teaser__title">
+                    {{ if .LinkTitle }}
+                      {{ .LinkTitle }}
+                    {{ else }}
+                      {{ .Title }}
+                    {{ end }}
+                  </h3>
+                  {{ with .Description }}
+                    <p class="section-teaser__text">{{ . }}</p>
+                  {{ end }}
+                </a>
+                <div class="release-notes-table__secondary">
+                  {{ with .Params.change.icon }}
+                    <div class="section-teaser__icon">
+                      <div class="mdi mdi-{{ . }}"></div>
+                    </div>
+                  {{ end }}
+                  {{ with .Params.change.release }}
+                    <span>{{ . }}</span>
+                  {{ end }}
+                  {{ with .Params.change.deprecation }}
+                    <span>deprecation</span>
+                  {{ end }}
+                </div>
+              </div>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+
+      <div class="article__footer">{{ partial "footer.html" . }}</div>
+    </article>
+  </main>
+</div>
+
+{{ partial "html-footer.html" . }}
