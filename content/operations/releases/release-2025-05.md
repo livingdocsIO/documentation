@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix opening document inbox when in visibility mode](https://github.com/livingdocsIO/livingdocs-editor/pull/9610)
 
 
 To get an overview about new functionality, read the [Release Notes](TODO).
