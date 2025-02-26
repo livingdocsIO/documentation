@@ -25,7 +25,6 @@ These are the release notes of the upcoming release (pull requests merged to the
 ## PRs to Categorize
 - [Merge beta routes into public api routes](https://github.com/livingdocsIO/livingdocs-server/pull/7474) 
 - [Increase default thread maximum to 300](https://github.com/livingdocsIO/livingdocs-server/pull/7739)
-- [Deprecate li-image and li-videos api and remove resources](https://github.com/livingdocsIO/livingdocs-server/pull/7627)
 - [Extract dashboard content types also from nested .or and .and filter arrays](https://github.com/livingdocsIO/livingdocs-editor/pull/9441)
 - [Make the new `li-system-date` and `li-system-datetime` validations more strict](https://github.com/livingdocsIO/livingdocs-server/pull/7593)
 - [Migrate template string renderings to the same function we use on the server](https://github.com/livingdocsIO/livingdocs-editor/pull/9122)
@@ -97,6 +96,8 @@ TODO: check migration
 ## Deprecations
 
 ### Server APIs `projectApi.getStats` and `designStatsApi.listDesigns` :warning:
+
+### `li-image` and `li-videos` :warning:
 
 ## Features
 
