@@ -20,10 +20,9 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :information_source: this document is updated automatically by a bot (pr's to categorize section)
 - :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
 - :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
+- :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
-- [Fix versioned route for kordiam & use correct breaking change code](https://github.com/livingdocsIO/livingdocs-server/pull/7753)
 - [Merge beta routes into public api routes](https://github.com/livingdocsIO/livingdocs-server/pull/7474)
 - [fix: animate document inbox item count when updating from 0 to 1 docs](https://github.com/livingdocsIO/livingdocs-editor/pull/9604)
 - [fix(migrations): Set default document entity data before applying mig…](https://github.com/livingdocsIO/livingdocs-server/pull/7750)
@@ -40,17 +39,13 @@ These are the release notes of the upcoming release (pull requests merged to the
 - [Correctly escape control characters in json during postgres save](https://github.com/livingdocsIO/livingdocs-server/pull/7736)
 - [Feat: image variants](https://github.com/livingdocsIO/livingdocs-server/pull/7691)
 - [Add smartquotes setup, editable.js updater and toggle component to editor](https://github.com/livingdocsIO/livingdocs-editor/pull/9545)
-- [fix(tests): Teasers](https://github.com/livingdocsIO/livingdocs-editor/pull/9594)
 - [Add smartQuotes configuration](https://github.com/livingdocsIO/livingdocs-server/pull/7695)
 - [Add store in archive functionality to media library](https://github.com/livingdocsIO/livingdocs-editor/pull/9590)
-- [Allow media library entries to be stored in archive](https://github.com/livingdocsIO/livingdocs-server/pull/7670)
-- [Teaser Side Table](https://github.com/livingdocsIO/livingdocs-editor/pull/9564)
 - [Show canvas border around teaser containers](https://github.com/livingdocsIO/livingdocs-editor/pull/9575)
 - [Add media library hard-delete functionality](https://github.com/livingdocsIO/livingdocs-editor/pull/9570)
 - [Add media library hard-delete functionality](https://github.com/livingdocsIO/livingdocs-server/pull/7669)
 - [Polish/teaser side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/9584)
 - [Rename migration with duplicate sequence](https://github.com/livingdocsIO/livingdocs-server/pull/7727)
-- [fix(kordiam plugin): Error spacing](https://github.com/livingdocsIO/livingdocs-editor/pull/9583)
 - [Remove design migration screen](https://github.com/livingdocsIO/livingdocs-editor/pull/9533)
 - [Add check-document-design-versions task](https://github.com/livingdocsIO/livingdocs-server/pull/7705)
 - [Improve design version handling](https://github.com/livingdocsIO/livingdocs-server/pull/7689)
@@ -61,16 +56,11 @@ These are the release notes of the upcoming release (pull requests merged to the
 - [Use new document inbox route and params](https://github.com/livingdocsIO/livingdocs-editor/pull/9569)
 - [Feat/slate articles](https://github.com/livingdocsIO/livingdocs-server/pull/7708)
 - [UI improvements/task cell](https://github.com/livingdocsIO/livingdocs-editor/pull/9563)
-- [Server: Teaser Container](https://github.com/livingdocsIO/livingdocs-server/pull/7696)
-- [Editor: Teaser Container](https://github.com/livingdocsIO/livingdocs-editor/pull/9560)
 - [Fix image widths](https://github.com/livingdocsIO/livingdocs-editor/pull/9562)
-- [Editor: Distribution Dates Part 1](https://github.com/livingdocsIO/livingdocs-editor/pull/9498)
-- [Server: Distribution Dates Part 1](https://github.com/livingdocsIO/livingdocs-server/pull/7648)
 - [Insert-panel-improvements: add 'open in media library' link to li-meta-image](https://github.com/livingdocsIO/livingdocs-editor/pull/9553)
 - [Fix video upload timeout](https://github.com/livingdocsIO/livingdocs-server/pull/7697)
 - [Support querying media reference placements in document inbox](https://github.com/livingdocsIO/livingdocs-server/pull/7661)
 - [Close display filters in modal on click outside](https://github.com/livingdocsIO/livingdocs-editor/pull/9536)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/7692)
 - [Rename `persistOriginalAssets` to `preserveOriginalAssets`](https://github.com/livingdocsIO/livingdocs-server/pull/7688)
 - [Allow opt-out of asset deletion when revoking media library entries](https://github.com/livingdocsIO/livingdocs-server/pull/7660)
 - [Only resolve affected includes after deduplication was invalidated](https://github.com/livingdocsIO/livingdocs-editor/pull/9521)
@@ -88,9 +78,6 @@ These are the release notes of the upcoming release (pull requests merged to the
 - [Improve collab user flyout](https://github.com/livingdocsIO/livingdocs-editor/pull/9502)
 - [Deprecate li-image and li-videos api and remove resources](https://github.com/livingdocsIO/livingdocs-server/pull/7627)
 - [Use confirmation button for print flow mark as seen](https://github.com/livingdocsIO/livingdocs-editor/pull/9423)
-- [fix/vh-overriding-in-iframe](https://github.com/livingdocsIO/livingdocs-server/pull/7644)
-- [fix/vh-overriding-in-iframe](https://github.com/livingdocsIO/livingdocs-editor/pull/9491)
-- [fix/canvas-iframe-min-size](https://github.com/livingdocsIO/livingdocs-editor/pull/9490)
 - [Restore search and display filters when navigating back to the home screen when there is only one searchable dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/9483)
 - [Fix image upload timeouts](https://github.com/livingdocsIO/livingdocs-server/pull/7631)
 - [Disable request retry in proxy](https://github.com/livingdocsIO/livingdocs-editor/pull/9476)
@@ -118,7 +105,6 @@ These are the release notes of the upcoming release (pull requests merged to the
 - [Respect count in example server teaser-list service](https://github.com/livingdocsIO/livingdocs-server/pull/7583)
 - [fix(confirm button): Angular version](https://github.com/livingdocsIO/livingdocs-editor/pull/9406)
 - [Reduce include resolve requests in Teaser Manager](https://github.com/livingdocsIO/livingdocs-editor/pull/9389)
-- [Remove nzz publish control behavior](https://github.com/livingdocsIO/livingdocs-editor/pull/9388)
 
 To get an overview about new functionality, read the [Release Notes](TODO).
 To learn about the necessary actions to update Livingdocs to `release-2025-03`, read on.
@@ -176,11 +162,39 @@ livingdocs-server migrate up
 
 TODO: check migration
 
+### Editor URLs `/p/{projectHandle}/articles/{documentId}/*` :fire:
+
+### MigrationApis replaced with `migrationApi.run()` :fire:
+
+### Server configs `projectConfigs.showMigrationUi` and `projectConfigs.autoDesignMigrations` :fire:
+
+### CLI data-migration-run no longer supports options `--design-version-to` and `--filter-by-design-version` :fire:
+
 ## Deprecations
+
+### Server APIs `projectApi.getStats` and `designStatsApi.listDesigns` :warning:
 
 ## Features
 
-TODO (featureset not 100% defined yet)
+### API versioning :gift:
+
+### Design version handling :gift:
+
+### Media Center: Image variant Storage / Delivery :gift:
+
+### Media Center: Archive/Revoke/Delete :gift:
+
+### Smart quotes :gift:
+
+### Page Management: Teaser Container with List & Algorithm :gift:
+
+### Page Management: Teaser Side Table :gift:
+
+### Document Inbox: Image Support :gift:
+
+
+{{< feature-info "Content management" "editor" >}}
+### Editorial Workflow: Distribution Dates :gift:
 
 ## Vulnerability Patches
 
