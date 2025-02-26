@@ -654,6 +654,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v267.1.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.19): fix(design-version-update): Check only configured content types in
 - [v267.1.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.18): fix(deps): update dependency @livingdocs/framework from 32.1.3 to v32.1.4
 - [v267.1.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.17): fix(db): Correctly escape control characters in json
 - [v267.1.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.16): fix(db): Fix document_revisions.metadata support in indexing-repository
