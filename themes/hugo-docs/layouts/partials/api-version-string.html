@@ -1,2 +1,15 @@
-{{ $versions := partial "api-version-pages" . }}
-{{ return (index $versions 0).Params.version }}
+{{ $page := .page }}
+{{ $endpoint := .endpoint }}
+
+{{ $version := dict }}
+{{ if not $endpoint.apiVersion }}
+  {{ $version = index (partialCached "api-versions" $page true) 0 }}
+{{ else }}
+  {{ range $v := partialCached "api-versions" $page true }}
+    {{ $matchesApiVersion := partial "api-version-matches" (dict "matcher" $endpoint.apiVersion "version" $v.version ) }}
+    {{ if not $matchesApiVersion }}{{ continue }}{{ end }}
+    {{ $version = $v }}
+    {{ break }}
+  {{ end }}
+{{ end }}
+{{ return $version.version }}
