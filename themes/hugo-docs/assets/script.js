@@ -1,6 +1,7 @@
 'use strict'
 const Clipboard = require('clipboard')
 import * as params from '@params'
+
 // cookies
 function getCookie(name) {
   let value = `; ${document.cookie}`
@@ -368,13 +369,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const currentUrl = new URL(window.location.href)
   const currentVersion = currentUrl.searchParams.get('version') ?? params.currentApiVersion
 
-  const versions = {v1: 1, beta: 2, '2025-03': 3}
+  function getVersion(v) {
+    if (v === 'v1') return 1
+    if (v === 'beta') return 2
+    return new Date(v).getTime()
+  }
   const versionedSections = document.querySelectorAll('[data-version]')
 
   function versionMatchesRange(version, range) {
-    const current = versions[version]
+    const current = getVersion(version)
     for (const key in range) {
-      const compare = versions[range[key]]
+      const compare = getVersion(range[key])
       if (key === 'eq' && current === compare) return true
       if (key === 'lte' && current <= compare) return true
       if (key === 'lt' && current < compare) return true
