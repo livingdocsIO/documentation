@@ -380,13 +380,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const current = getVersion(version)
     for (const key in range) {
       const compare = getVersion(range[key])
-      if (key === 'eq' && current === compare) return true
-      if (key === 'lte' && current <= compare) return true
-      if (key === 'lt' && current < compare) return true
-      if (key === 'gte' && current >= compare) return true
-      if (key === 'gt' && current > compare) return true
+      if (key === 'eq' && !(current === compare)) return false
+      if (key === 'neq' && !(current !== compare)) return false
+      if (key === 'lte' && !(current <= compare)) return false
+      if (key === 'lt' && !(current < compare)) return false
+      if (key === 'gte' && !(current >= compare)) return false
+      if (key === 'gt' && !(current > compare)) return false
     }
-    return false
+    return true
   }
 
   for (const section of versionedSections) {

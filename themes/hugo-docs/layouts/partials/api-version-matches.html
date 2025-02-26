@@ -6,6 +6,8 @@
   {{ $matcherSequence := (partial "api-version-sequence" $value) }}
   {{ if and (eq $key "eq") (eq $sequence $matcherSequence) }}
     {{ $match = true }}
+  {{ else if and (eq $key "neq") (ne $sequence $matcherSequence) }}
+    {{ $match = true }}
   {{ else if and (eq $key "lte") (le $sequence $matcherSequence) }}
     {{ $match = true }}
   {{ else if and (eq $key "lt") (lt $sequence $matcherSequence) }}

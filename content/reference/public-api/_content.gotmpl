@@ -11,6 +11,10 @@
 {{ end }}
 
 {{ range $key, $value := $.Site.Data.endpoints }}
+  {{ if not $value.apiVersion }}
+    {{ $value = merge $value (dict "apiVersion" (dict "neq" "beta")) }}
+  {{ end }}
+
   {{ if not $.Site.BuildDrafts }}
     {{ if and $value.apiVersion.eq (in $upcoming $value.apiVersion.eq) }}{{ continue }}{{ end }}
     {{ if and $value.apiVersion.gt (in $upcoming $value.apiVersion.gt) }}{{ continue }}{{ end }}
