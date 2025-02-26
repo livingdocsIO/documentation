@@ -1,22 +1,26 @@
 title: Get Latest Publications
-endpointId: latest_publications
+endpointId: latest-publications
+beta: true
 
 apiVersion:
-  eq: v1
+  eq: beta
 
 history:
-  - release: release-2021-06
-    version: v1
-    description: Added `reverse`, `contentTypes`, `id.gte` (and other range filters), `publishedAt.gte` (and other range filters)
   - release: release-2024-03
-    version: v1
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+  - release: release-2023-09
+    description: The type `documents` within `references` changed to `document` where every document id has a separate reference entry.
+
+# deprecation:
+#   since: release-2025-03
+#   note: With the introduction of the new [versioning strategy]({{< ref "/reference/public-api/versioning" >}}), the `v1` and `beta` versions are now available as `2025-03` version. If you use any of those versions, you can safely change your integration to the `2025-03` version, which now contains both functionalities without any other changes.
 
 description: |
-  The endpoint provides an unresolved Publication with 3 possible top-level properties:
+  The endpoint provides an unresolved Publication with 4 possible top-level properties:
   - systemdata
   - metadata
   - content
+  - references
 
 useCases: |
   - Bulk export of data, e.g. a specific `Content Type`
@@ -24,11 +28,11 @@ useCases: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/documents/latestPublications" \
+  curl -k -X GET "https://server.livingdocs.io/api/beta/documents/latestPublications" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/:apiVersion/documents/latestPublications
+  path: /api/beta/documents/latestPublications
 parameters:
   - name: ?fields
     type: string
@@ -178,6 +182,14 @@ responses:
                 "text": "second paragraph"
               }
             }
+          ],
+          "references": [
+            {
+              "id": "YbzTpusGyJtF",
+              "type": "language-group",
+              "location": "metadata",
+              "propertyName": "language"
+            }
           ]
         },
         {
@@ -238,6 +250,14 @@ responses:
               "content": {
                 "text": "second paragraph"
               }
+            }
+          ],
+          "references": [
+            {
+              "id": "YbzTpusGyJtF",
+              "type": "language-group",
+              "location": "metadata",
+              "propertyName": "language"
             }
           ]
         }

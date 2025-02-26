@@ -1,5 +1,5 @@
 title: Get Latest Publication
-endpointId: get_latest_publication
+endpointId: get-latest-publication
 
 apiVersion:
   gte: 2025-03

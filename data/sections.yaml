@@ -3,9 +3,9 @@
   renderTOC: false
   menu: public-api
   endpoints:
-    - auth_example
-    - auth_errors
-    - first_response
+    - auth-example
+    - auth-errors
+    - first-response
 
 - title: Project Configuration
   path: project
@@ -13,10 +13,10 @@
   renderTOC: false
   menu: public-api
   endpoints:
-    - get_project_config
-    - get_project_configuration
-    - get_channel_configuration
-    - get_design_configuration
+    - get-project-config
+    - get-project-configuration
+    - get-channel-configuration
+    - get-design-configuration
 
 - title: Composition API
   weight: 5
@@ -30,7 +30,7 @@
   renderTOC: false
   menu: public-api
   endpoints:
-    - document_commands
+    - document-commands
 
 ## Start Drafts section
 - title: Drafts
@@ -80,7 +80,7 @@
     public-api:
       parent: Publications
   endpoints:
-    - get_latest_publication
+    - get-latest-publication
 
 - title: Latest Publications
   path: publications/latest-publications
@@ -90,7 +90,7 @@
     public-api:
       parent: Publications
   endpoints:
-    - latest_publications
+    - latest-publications
 
 - title: Publication Events
   path: publications/publication-events
@@ -100,7 +100,7 @@
     public-api:
       parent: Publications
   endpoints:
-    - publication_events
+    - publication-events
 
 - title: Incoming References
   path: publications/references
@@ -110,8 +110,8 @@
     public-api:
       parent: Publications
   endpoints:
-    - incoming_document_references
-    - incoming_media_references
+    - incoming-document-references
+    - incoming-media-references
 
 - title: Renditions
   path: publications/renditions
@@ -121,7 +121,7 @@
     public-api:
       parent: Publications
   endpoints:
-    - publication_renditions
+    - publication-renditions
 
 - title: Search
   path: publications/search
@@ -130,7 +130,7 @@
     public-api:
       parent: Publications
   endpoints:
-    - search_publications
+    - search-publications
 ## End Publications section
 
 - title: Document Lists
@@ -138,27 +138,27 @@
   renderTOC: false
   menu: public-api
   endpoints:
-    - get_list_by_id
-    - get_lists
+    - get-list-by-id
+    - get-lists
 
 - title: Document Categories
   weight: 9
   renderTOC: false
   menu: public-api
   endpoints:
-    - get_category
-    - get_categories
+    - get-category
+    - get-categories
 
 - title: Media Library
   weight: 9
   renderTOC: false
   menu: public-api
   endpoints:
-    - get_media_library_entry
-    - patch_media_library_entry
-    - get_media_library_entries
-    - get_media_library_incoming_document_references
-    - get_media_library_incoming_media_references
+    - get-media-library-entry
+    - patch-media-library-entry
+    - get-media-library-entries
+    - get-media-library-incoming-document-references
+    - get-media-library-incoming-media-references
 
 # Start Imports section
 - title: Imports
@@ -229,22 +229,22 @@
   menu: public-api
 
   endpoints:
-    - get_sitemap_index
-    - get_sitemap_entries
+    - get-sitemap-index
+    - get-sitemap-entries
 
 - title: Menus
   weight: 12
   renderTOC: false
   menu: public-api
   endpoints:
-    - get_menus
+    - get-menus
 
 - title: Routing
   weight: 13
   renderTOC: false
   menu: public-api
   endpoints:
-    - resolve_path
+    - resolve-path
 
 - title: Add Delivery Status
   identifier: Add Delivery Status
@@ -260,11 +260,11 @@
   renderTOC: false
   menu: public-api
   endpoints:
-    - retresco_re_enrich
+    - retresco-re-enrich
 
 - title: Health
   weight: 16
   renderTOC: false
   menu: public-api
   endpoints:
-    - health_check
+    - health-check

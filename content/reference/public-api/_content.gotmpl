@@ -40,23 +40,27 @@
 {{ end }}
 
 {{ $sectionsStat := os.Stat "data/sections.yaml" }}
-{{ range $.Site.Data.sections }}
-  <!-- warnf (string (. | jsonify)) -->
-  <!-- warnf (string .title) -->
+{{ range $section := $.Site.Data.sections }}
+  <!-- warnf (string ($section | jsonify)) -->
+  <!-- warnf (string $section.title) -->
 
   {{ $sectionEndpoints := slice }}
   {{ range .endpoints }}
-    {{ $sectionEndpoints = $sectionEndpoints | append (where $endpoints "endpointId" "eq" .) }}
+    {{ $toMerge := where $endpoints "endpointId" "eq" . }}
+    {{ if eq (len $toMerge) 0 }}
+      {{ errorf (printf "The section '%s' in data/sections.yaml referenced an unavailable endpoint: '%s'" $section.title .) }}
+    {{ end }}
+    {{ $sectionEndpoints = $sectionEndpoints | append $toMerge }}
   {{ end }}
-  {{ $params := merge . (dict "endpoints" $sectionEndpoints) }}
+  {{ $params := merge $section (dict "endpoints" $sectionEndpoints) }}
 
   {{ $.AddPage (dict
-    "title" .title
-    "kind" (or .kind "page")
+    "title" $section.title
+    "kind" (or $section.kind "page")
     "type" "api-reference-section"
     "dates" (dict "lastmod" $sectionsStat.ModTime)
-    "weight" .weight
-    "path" (or .path .title)
+    "weight" $section.weight
+    "path" (or $section.path $section.title)
     "content" (dict "mediaType" "text/markdown" "value" "")
     "params" $params)
   }}

@@ -7,6 +7,10 @@ apiVersion:
   gte: v1
   lt: 2025-03
 
+# deprecation:
+#   since: release-2025-03
+#   note: With the introduction of the new [versioning strategy]({{< ref "/reference/public-api/versioning" >}}), the `v1` and `beta` versions are now available as `2025-03` version. If you use any of those versions, you can safely change your integration to the `2025-03` version, which now contains both functionalities without any other changes.
+
 history:
   - release: release-2021-06
     description: Initial support for the Composition API on `/v1/beta`

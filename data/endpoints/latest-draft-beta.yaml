@@ -15,7 +15,7 @@ history:
 
 # deprecation:
 #   since: release-2025-03
-#   note: With the introduction of the new versioning strategy, the `v1` and `beta` versions are now available as `2025-03` version. If you use any of those versions, you can safely change your integration to the `2025-03` version, which now contains both functionalities without any other changes.
+#   note: With the introduction of the new [versioning strategy]({{< ref "/reference/public-api/versioning" >}}), the `v1` and `beta` versions are now available as `2025-03` version. If you use any of those versions, you can safely change your integration to the `2025-03` version, which now contains both functionalities without any other changes.
 
 description: |
   This endpoint returns the most recent draft version of a document.
