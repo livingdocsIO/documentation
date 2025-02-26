@@ -5,6 +5,7 @@ endpointId: composition
 
 apiVersion:
   gte: v1
+  lt: 2025-03
 
 history:
   - release: release-2021-06
