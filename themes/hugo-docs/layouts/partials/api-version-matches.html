@@ -2,16 +2,22 @@
 {{ $sequence := (partial "api-version-sequence" .version) }}
 
 {{ $match := false }}
-{{ if and $matcher.eq (eq $sequence (partial "api-version-sequence" $matcher.eq)) }}
-  {{ $match = true }}
-{{ else if and $matcher.lte (le $sequence (partial "api-version-sequence" $matcher.lte)) }}
-  {{ $match = true }}
-{{ else if and $matcher.lt (lt $sequence (partial "api-version-sequence" $matcher.lt)) }}
-  {{ $match = true }}
-{{ else if and $matcher.gte (ge $sequence (partial "api-version-sequence" $matcher.gte)) }}
-  {{ $match = true }}
-{{ else if and $matcher.gt (gt $sequence (partial "api-version-sequence" $matcher.gt)) }}
-  {{ $match = true }}
+{{ range $key, $value := $matcher }}
+  {{ $matcherSequence := (partial "api-version-sequence" $value) }}
+  {{ if and (eq $key "eq") (eq $sequence $matcherSequence) }}
+    {{ $match = true }}
+  {{ else if and (eq $key "lte") (le $sequence $matcherSequence) }}
+    {{ $match = true }}
+  {{ else if and (eq $key "lt") (lt $sequence $matcherSequence) }}
+    {{ $match = true }}
+  {{ else if and (eq $key "gte") (ge $sequence $matcherSequence) }}
+    {{ $match = true }}
+  {{ else if and (eq $key "gt") (gt $sequence $matcherSequence) }}
+    {{ $match = true }}
+  {{ else }}
+    {{ $match = false }}
+    {{ break }}
+  {{ end }}}
 {{ end }}
 
 {{ return $match }}
