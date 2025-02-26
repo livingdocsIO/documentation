@@ -1,0 +1,16 @@
+{{ $minimumVersion := partialCached "api-version-sequence" "2025-03" "2025-03" }}
+{{ $versions := slice }}
+{{ $versions = $versions | append (dict "release" "release-2025-01" "version" "v1" "sequence" 1) }}
+{{ $versions = $versions | append (dict "release" "release-2025-01" "version" "beta" "sequence" 2) }}
+
+{{ range (sort .Site.Data.releases "key" "desc") }}
+  {{ if and .Site.BuildDrafts .upcoming }}{{ continue }}{{ end }}
+
+  {{ $version := slicestr .key 8 }}
+  {{ $sequence := partialCached "api-version-sequence" $version $version }}
+  {{ if lt $sequence $minimumVersion }}{{ continue }}{{ end }}
+
+  {{ $versions = $versions | append (dict "release" .key "version" $version "sequence" $sequence) }}
+{{ end }}
+
+{{ return (sort $versions "sequence" "desc") }}

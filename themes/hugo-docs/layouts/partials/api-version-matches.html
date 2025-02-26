@@ -1,9 +1,9 @@
 {{ $matcher := .matcher }}
-{{ $sequence := (partial "api-version-sequence" .version) }}
+{{ $sequence := (partialCached "api-version-sequence" .version .version) }}
 
 {{ $match := false }}
 {{ range $key, $value := $matcher }}
-  {{ $matcherSequence := (partial "api-version-sequence" $value) }}
+  {{ $matcherSequence := (partialCached "api-version-sequence" $value $value) }}
   {{ if and (eq $key "eq") (eq $sequence $matcherSequence) }}
     {{ $match = true }}
   {{ else if and (eq $key "neq") (ne $sequence $matcherSequence) }}

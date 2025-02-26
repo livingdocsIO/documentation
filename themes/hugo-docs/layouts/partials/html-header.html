@@ -35,7 +35,7 @@
       rel="preload"
     />
 
-    {{- $apiVersion := (index (sort (where .Site.Pages "Type" "api-version") "Params.sequence" "desc") 0).Params.version -}}
+    {{- $apiVersion := (index (partialCached "api-versions" . true) 0).version -}}
     {{- if eq $apiVersion "beta" -}}{{ $apiVersion = "v1" }}{{- end -}}
     {{- $lunrWorker := resources.Get "search.js" | js.Build }}
     {{- $scriptParams := dict "searchJson" "/search.json" "lunrWorker"  $lunrWorker.RelPermalink "currentApiVersion" $apiVersion -}}
