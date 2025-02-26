@@ -1,9 +1,10 @@
 title: Compose a Publication
+beta: true
 
 endpointId: composition
 
 apiVersion:
-  gte: 2025-03
+  gte: v1
 
 history:
   - release: release-2021-06
@@ -28,7 +29,7 @@ description: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X POST "https://server.livingdocs.io/api/:apiVersion/composition/:documentId" \
+  curl -k -X POST "https://server.livingdocs.io/api/beta/composition/:documentId" \
     -H "Authorization: Bearer $ACCESS_TOKEN" \
     -H "Content-Type: application/json; charset=utf-8" \
     --data-binary @- << EOF
@@ -39,7 +40,7 @@ query: |
 
 endpoint:
   method: POST
-  path: /api/:apiVersion/composition/:documentId
+  path: /api/beta/composition/:documentId
 parameters:
   - name: fields
     type: array<string>

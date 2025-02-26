@@ -3,6 +3,7 @@ title: API Versioning
 weight: 2
 # renderTOC: false
 menus: public-api
+draft: true
 # Examples of date based api versioning
 # - Microsoft: https://learn.microsoft.com/en-us/linkedin/marketing/versioning?view=li-lms-2025-01
 # - Stripe: https://stripe.com/blog/introducing-stripes-new-api-release-process

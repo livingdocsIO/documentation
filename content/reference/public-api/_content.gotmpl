@@ -4,7 +4,19 @@
 {{ $buildNoRender := dict "render" "never" }}
 
 {{ $endpoints := slice }}
+
+{{ $upcoming := slice }}
+{{ range where (sort $.Site.Data.releases) "upcoming" "eq" true }}
+  {{ $upcoming = $upcoming | append (slicestr .key 8) }}
+{{ end }}
+
 {{ range $key, $value := $.Site.Data.endpoints }}
+  {{ if not $.Site.BuildDrafts }}
+    {{ if and $value.apiVersion.eq (in $upcoming $value.apiVersion.eq) }}{{ continue }}{{ end }}
+    {{ if and $value.apiVersion.gt (in $upcoming $value.apiVersion.gt) }}{{ continue }}{{ end }}
+    {{ if and $value.apiVersion.gte (in $upcoming $value.apiVersion.gte) }}{{ continue }}{{ end }}
+  {{ end }}
+
   {{ $stat := os.Stat (printf "data/endpoints/%s.yaml" $key) }}
   {{ $endpoint := merge $value (dict "endpointId" (or $value.endpointId $key) "hidden" true "endpointFile" $key) }}
   {{ $endpoints = $endpoints | append $endpoint }}
