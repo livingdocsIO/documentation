@@ -15,13 +15,13 @@
     "key": "release-2025-03",
     "name": "March 2025",
     "ref": "/operations/releases/release-2025-03.md",
-    "upcoming": true,
-    "current": false,
-    "maintained": false,
+    "upcoming": false,
+    "current": true,
+    "maintained": true,
     "legacy": false,
     "sortId": 48,
-    "editorVersion": "v115.23.0",
-    "serverVersion": "v271.1.0"
+    "editorVersion": "v115.22.2",
+    "serverVersion": "v271.0.1"
   },
   "release-2025-01": {
     "key": "release-2025-01",
