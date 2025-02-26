@@ -45,3 +45,7 @@ There are multiple reasons why an API endpoint can be deprecated:
    Removal is scheduled for `2027-03` with the regular support window.
 
 - A specific API endpoint is no longer needed as the functionality in Livingdocs got removed or is not supported anymore.
+
+### Making requests
+
+The
