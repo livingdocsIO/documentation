@@ -1,6 +1,6 @@
 'use strict'
 const Clipboard = require('clipboard')
-
+import * as params from '@params'
 // cookies
 function getCookie(name) {
   let value = `; ${document.cookie}`
@@ -181,7 +181,7 @@ async function startSearch(e) {
   if (!words.length) return hideSearchResults(true)
   else showSearchResults()
   for (const doc of await searchWorker.search({
-    index: window.searchJson,
+    index: params.searchJson,
     query: words,
     filterTags,
     limit: 20
@@ -265,7 +265,7 @@ document.addEventListener('keyup', (e) => {
 })
 
 function createSearchWorker() {
-  const worker = new Worker(document.head.querySelector('link[rel=lunr]').href)
+  const worker = new Worker(params.lunrWorker)
   const queue = []
   let current
 
@@ -366,7 +366,8 @@ teaserAndCodes.forEach(function (teaserAndCode) {
  */
 document.addEventListener('DOMContentLoaded', function () {
   const currentUrl = new URL(window.location.href)
-  const currentVersion = currentUrl.searchParams.get('version') ?? '2025-03'
+  const currentVersion = currentUrl.searchParams.get('version') ?? params.currentApiVersion
+
   const versions = {v1: 1, beta: 2, '2025-03': 3}
   const versionedSections = document.querySelectorAll('[data-version]')
 

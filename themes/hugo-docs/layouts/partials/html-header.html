@@ -35,21 +35,18 @@
       rel="preload"
     />
 
-    {{- $built := resources.Get "script.js" | js.Build | minify | fingerprint }}
-    <script>
-      window.searchJson = '/search.json'
-    </script>
+    {{- $apiVersion := (index (sort (where .Site.Pages "Type" "api-version") "Params.sequence" "desc") 0).Params.version -}}
+    {{- if eq $apiVersion "beta" -}}{{ $apiVersion = "v1" }}{{- end -}}
+    {{- $lunrWorker := resources.Get "search.js" | js.Build }}
+    {{- $scriptParams := dict "searchJson" "/search.json" "lunrWorker"  $lunrWorker.RelPermalink "currentApiVersion" $apiVersion -}}
+    {{- $built := resources.Get "script.js" | js.Build (dict "params" $scriptParams) | minify | fingerprint }}
+
+
     <script
       type="text/javascript"
       src="{{ $built.RelPermalink }}"
       defer
     ></script>
-    {{- $worker := resources.Get "search.js" | js.Build }}
-    <link
-      rel="lunr"
-      href="{{ $worker.RelPermalink }}"
-    />
-
     {{- with .Site.Config.Services.GoogleAnalytics.ID }}
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
