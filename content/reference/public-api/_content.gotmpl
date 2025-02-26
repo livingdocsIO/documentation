@@ -40,7 +40,10 @@
   <!-- warnf (string (. | jsonify)) -->
   <!-- warnf (string .title) -->
 
-  {{ $sectionEndpoints := where $endpoints "endpointId" "in" .endpoints }}
+  {{ $sectionEndpoints := slice }}
+  {{ range .endpoints }}
+    {{ $sectionEndpoints = $sectionEndpoints | append (where $endpoints "endpointId" "eq" .) }}
+  {{ end }}
   {{ $params := merge . (dict "endpoints" $sectionEndpoints) }}
 
   {{ $.AddPage (dict
