@@ -453,6 +453,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v257.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.35): fix(webhooks): Add webhook timeout config property
 - [v257.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.34): fix(db): Correctly escape control characters in json
 - [v257.0.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.33): fix(upload): Fix video upload timeout
 - [v257.0.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.32): fix(deps): update dependency @livingdocs/framework from 29.5.11 to v29.5.12
