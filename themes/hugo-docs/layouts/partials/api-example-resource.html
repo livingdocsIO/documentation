@@ -55,14 +55,12 @@
           <thead>
             <tr>
               <th>Version</th>
-              <th>Version</th>
               <th>Change</th>
             </tr>
           </thead>
           <tbody>
             {{- range $endpoint.history -}}
               <tr>
-                <td><a href="?version={{ .version }}">{{ .version }}</a></td>
                 <td>{{ .release }}</td>
                 <td>{{ .description | $page.RenderString }}</td>
               </tr>
