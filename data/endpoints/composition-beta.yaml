@@ -4,8 +4,7 @@ beta: true
 endpointId: composition
 
 apiVersion:
-  gte: v1
-  lt: 2025-03
+  eq: beta
 
 # deprecation:
 #   since: release-2025-03
