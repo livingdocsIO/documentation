@@ -69,41 +69,69 @@ livingdocs-server migrate up
 
 TODO: check migration
 
+{{< feature-info "" "" >}}
+
 ### Editor URLs `/p/{projectHandle}/articles/{documentId}/*` :fire:
+
+{{< feature-info "" "" >}}
 
 ### MigrationApis replaced with `migrationApi.run()` :fire:
 
+{{< feature-info "" "" >}}
+
 ### Server configs `projectConfigs.showMigrationUi` and `projectConfigs.autoDesignMigrations` :fire:
+
+{{< feature-info "" "" >}}
 
 ### CLI data-migration-run no longer supports options `--design-version-to` and `--filter-by-design-version` :fire:
 
 ## Deprecations
 
+{{< feature-info "" "" >}}
+
 ### Server APIs `projectApi.getStats` and `designStatsApi.listDesigns` :warning:
+
+{{< feature-info "" "" >}}
 
 ### `li-image` and `li-videos` :warning:
 
 ## Features
 
+{{< feature-info "" "" >}}
+
 ### API versioning :gift:
 - Merge beta routes into public api routes
 
+{{< feature-info "" "" >}}
+
 ### Design version handling :gift:
+
+{{< feature-info "" "" >}}
 
 ### Media Center: Image variant Storage / Delivery :gift:
 
+{{< feature-info "" "editor" >}}
+
 ### Media Center: Archive/Revoke/Delete :gift:
+
+{{< feature-info "" "editor" >}}
 
 ### Smart quotes :gift:
 
+{{< feature-info "" "editor" >}}
+
 ### Page Management: Teaser Container with List & Algorithm :gift:
+
+{{< feature-info "" "editor" >}}
 
 ### Page Management: Teaser Side Table :gift:
 
+{{< feature-info "" "editor" >}}
+
 ### Document Inbox: Image Support :gift:
 
-
 {{< feature-info "Content management" "editor" >}}
+
 ### Editorial Workflow: Distribution Dates :gift:
 
 ## Vulnerability Patches
