@@ -85,6 +85,12 @@ TODO: check migration
 
 ### CLI data-migration-run no longer supports options `--design-version-to` and `--filter-by-design-version` :fire:
 
+{{< feature-info "Angular Service" "Editor" >}}
+
+### Angular Service Removal
+Angular service 'ldEditApi' has been removed. Please use Angular service 'storage' instead.
+Angular service 'serverApi' has been removed. Please use Angular service 'storage' instead.
+
 ## Deprecations
 
 {{< feature-info "" "" >}}
