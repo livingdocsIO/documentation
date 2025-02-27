@@ -677,6 +677,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.35): chore(comments): Remove tributejs dependency
 - [v114.13.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.34): fix(format-popover): Do not let format popover slip behind preview panel
 - [v114.13.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.33): fix: Open document inbox when in visibility mode
 - [v114.13.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.32): fix(deps): update dependency @livingdocs/framework from 32.1.3 to v32.1.4
