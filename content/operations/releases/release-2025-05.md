@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Do not focus component when mentioning user in comment](https://github.com/livingdocsIO/livingdocs-editor/pull/9617)
 - [Do not let format popover slip behind preview panel](https://github.com/livingdocsIO/livingdocs-editor/pull/9623)
 - [Fix/media library footer width](https://github.com/livingdocsIO/livingdocs-editor/pull/9597)
 - [Make webhook timeout configurable](https://github.com/livingdocsIO/livingdocs-server/pull/7764)
