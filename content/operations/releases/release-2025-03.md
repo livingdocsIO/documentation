@@ -13,17 +13,6 @@ header:
   branchHandle: release-2025-03
 ---
 
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to the main branch).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
-
-## PRs to Categorize
-
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-march-2025).
 To learn about the necessary actions to update Livingdocs to `release-2025-03`, read on.
 
