@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix/media library footer width](https://github.com/livingdocsIO/livingdocs-editor/pull/9597)
 - [Make webhook timeout configurable](https://github.com/livingdocsIO/livingdocs-server/pull/7764)
 - [Keep support for beta routes](https://github.com/livingdocsIO/livingdocs-server/pull/7759)
 - [Fix opening document inbox when in visibility mode](https://github.com/livingdocsIO/livingdocs-editor/pull/9610)
