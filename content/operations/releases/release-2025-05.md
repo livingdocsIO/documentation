@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Only show "Store in Archive" when `use2025Behavior: true`](https://github.com/livingdocsIO/livingdocs-editor/pull/9622)
 - [Fix: azure storage not handling 404 correctly](https://github.com/livingdocsIO/livingdocs-server/pull/7775)
 - [Rename media library config option preserveOriginalAssets to use2025Behavior (Part II)](https://github.com/livingdocsIO/livingdocs-editor/pull/9638)
 - [Prevent serving invalid images from Public API](https://github.com/livingdocsIO/livingdocs-server/pull/7758)
