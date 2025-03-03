@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix: image-variants pass strip path prefix ](https://github.com/livingdocsIO/livingdocs-editor/pull/9630)
 - [Prevent notification composition failure when no modes are defined](https://github.com/livingdocsIO/livingdocs-server/pull/7782)
 - [Account for migratedDocumentVersionDelta when setting model version after an update](https://github.com/livingdocsIO/livingdocs-server/pull/7778)
 - [Only show "Store in Archive" when `use2025Behavior: true`](https://github.com/livingdocsIO/livingdocs-editor/pull/9622)
