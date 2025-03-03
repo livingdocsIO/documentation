@@ -844,3 +844,18 @@ editor: {
   }
 }
 ```
+
+## On-Read Migrations
+
+{{< added-in "release-2025-03" block >}}
+
+On-Read Migrations are applied whenever a document is read from the database. This means they take effect immediately, allowing all functions and clients consuming the data to work with the updated document structure. They are ideal for applying structural changes to existing documents.
+
+Whenever you introduce a breaking change to a document design or metadata configuration, you must ensure that existing documents remain compatible. This is achieved by providing an On-Read Migration alongside these changes. Doing so ensures that documents delivered to the Livingdocs Editor or other clients remain consistent with the documents design and metadata properties.
+
+On-Read Migrations require configuration in two parts:
+
+- They must be defined as the `migrations` property in the Content Type config, referencing a registered migrate function.
+- The migrate function must be registered in the Migrate Function Registry.
+
+For more details, refer to the [On-Read Migration reference]({{< ref "/reference/document/migration/on-read-migration" >}}).
