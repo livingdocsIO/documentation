@@ -1,11 +1,13 @@
 ---
 type: guides
 title: Dealing with Design Changes
-bullets:
-  - Version Bumps
-  - Content Migrations
-weight: 4
+hideSectionTeaser: true
+excludeFromSearch: true
 ---
+
+{{< warning >}}
+A new version of this document, for {{< release "release-2025-03" >}} and later, is available [here]({{< ref "/guides/documents/document-migration/data-migrations" >}}).
+{{< /warning >}}
 
 ## Overview
 

@@ -116,6 +116,10 @@ Ideally you have a webpack (or similar) development setup in your delivery proje
 
 ## Migrate old documents to embedded design
 
+{{< warning >}}
+The functionality described here was removed in {{< release "release-2025-01" >}}. If you're on a later release and migrating to an embedded design, please contact your Livingdocs Customer Solutions representative for assistance.
+{{< /warning >}}
+
 A migration from a reference design to an embedded design should always be a bump migrations. You are responsible to make sure of this. The migration of a certain version, say 1.2.3 of a reference design to the first version (1.0.0) of an embedded design is always non-breaking, i.e. the migration itself does not change anyhting to the logic of the design. **You should never mix a migration to an embedded design with new design features or refactoring, take those aparat into 2 steps**.
 Also, you need to make sure that you always migrate from the last version of your reference design (1.2.3 in the example above) to the first version of your embedded design (1.0.0). If you migrate older documents, say 0.8.1, then split into 2 steps:
 

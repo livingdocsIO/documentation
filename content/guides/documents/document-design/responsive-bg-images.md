@@ -1,7 +1,7 @@
 ---
 title: Responsive Background Images
 description: Set up responsive background images in your documents
-weight: 1
+weight: 4
 ---
 
 ## The problem
