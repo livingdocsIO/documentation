@@ -6,7 +6,7 @@ excludeFromSearch: true
 ---
 
 {{< warning >}}
-A new version of this document, for {{< release "release-2025-03" >}} and later, is available [here]({{< ref "/guides/documents/document-migration/data-migrations" >}}).
+A new version of this document, for {{< release "release-2025-03" >}} and later, is available [here]({{< ref "/reference/document/migration/data-migration" >}}).
 {{< /warning >}}
 
 ## Overview
