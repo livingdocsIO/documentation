@@ -2,10 +2,8 @@ title: Get your First Response
 description: |
   For testing purposes, you can go and run the following code snippet in your Terminal.
 
-  Don't forget to replace [your token.](https://edit.livingdocs.io/access/111/public-api)
-
 query: |
-  curl -k -X GET https://server.livingdocs.io/api/:apiVersion/documents/latestPublications \
+  curl -k -X GET 'https://server.livingdocs.io/api/:apiVersion/documents/latestPublications' \
     -H "Authorization: Bearer your_token"
 responses:
   - code: '200'

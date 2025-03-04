@@ -88,7 +88,7 @@
   {{- if $endpoint.description -}}
     <div class="api-example__description">
       <h4>Description</h4>
-      {{- $endpoint.description | $page.RenderString -}}
+      {{- (replace $endpoint.description ":apiVersion" $apiVersion) | $page.RenderString -}}
     </div>
   {{- end -}}
 
