@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Use Print instead of Druck for german print version labels](https://github.com/livingdocsIO/livingdocs-editor/pull/9649)
 - [Trackjs Sanitization](https://github.com/livingdocsIO/livingdocs-editor/pull/9644)
 - [fix(distribution dates): Polish](https://github.com/livingdocsIO/livingdocs-editor/pull/9647)
 - [Fix: image-variants pass strip path prefix ](https://github.com/livingdocsIO/livingdocs-editor/pull/9630)
