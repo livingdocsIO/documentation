@@ -1,6 +1,4 @@
 title: Get Latest Draft
-beta: true
-
 endpointId: latest-draft
 
 apiVersion:

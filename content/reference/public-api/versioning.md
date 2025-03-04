@@ -31,17 +31,21 @@ Whenever a request is made to an API version that's not available anymore, a `41
 ### Deprecations
 
 Parts of the Livingdocs API can be deprecated if it becomes unnecessary, unsafe, or outdated.
-At minimum, deprecations are announced in the [changelog]({{< ref "./changelog" >}}) six months before they are removed.
+As general rule, deprecations are announced in the [changelog]({{< ref "./changelog" >}}) at minimum six months before they are removed.
 
 There are multiple reasons why an API endpoint can be deprecated:
 
-- The API version is sunset as it reaches end of life and will get removed after six months. Usually this happens two years after introduction of the API version.
+- A specific API endpoint received a breaking change in a newer API version.
+  The older API version is still available as maintained version.
+  Removal is scheduled for `2027-03` with the regular support window.
+
+  e.g. The endpoint `/api/2025-05/publications/search` receives a breaking change that is not compatible with `/api/2025-03/publications/search`. `/api/2025-03/publications/search` and older versions of this endpoint will be marked as deprecated 6 months before removal.
+  Removal is scheduled for `2027-03` with the regular support window.
+
+- The API version is sunset as it reaches end of life and will get removed after six months.
+  Usually this happens two years after introduction of the API version.
 
   e.g. All endpoints in `/api/2025-03` will be deprecated in `2026-09` and removed in `2027-03`.
 
-- A specific API endpoint received a breaking change in a newer API version. All the old versions will be deprecated, but kept as long as possible.
-
-  e.g. The endpoint `/api/2025-05/publications/search` receives a breaking change that is not compatible with `/api/2025-03/publications/search`. `/api/2025-03/publications/search` and older versions of this endpoint will be marked as deprecated when `2025-05` is released.  
-   Removal is scheduled for `2027-03` with the regular support window.
-
 - A specific API endpoint is no longer needed as the functionality in Livingdocs got removed or is not supported anymore.
+  When the endpoint gets removed before we reach the end of life of the API version, we will announce it in the [changelog]({{< ref "./changelog" >}}) 6 months before the removal.

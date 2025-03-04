@@ -4,7 +4,7 @@
 {{ $versions = $versions | append (dict "release" "release-2025-01" "version" "beta" "sequence" 2) }}
 
 {{ range (sort .Site.Data.releases "key" "desc") }}
-  {{ if and .Site.BuildDrafts .upcoming }}{{ continue }}{{ end }}
+  {{ if and (eq .Site.BuildDrafts false) (eq .upcoming true) }}{{ continue }}{{ end }}
 
   {{ $version := slicestr .key 8 }}
   {{ $sequence := partialCached "api-version-sequence" $version $version }}

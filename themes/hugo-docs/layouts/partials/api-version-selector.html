@@ -11,15 +11,17 @@
   >
     {{ $versions := slice }}
     {{ range $versionedEndpoints }}
-      {{ $versions = $versions | append (partial "api-version-string" (dict "page" $page "endpoint" .Params)) }}
+      {{ $version := partial "api-version-string" (dict "page" $page "endpoint" .Params) }}
+      {{ $range := partial "api-version-range" (dict "page" $page "endpoint" .Params) }}
+      {{ $versions = $versions | append (dict "version" $version "range" $range) }}
     {{ end }}
 
-    {{ range $version := sort $versions }}
+    {{ range $v := sort $versions "version" }}
       <option
-        value="{{ $version }}"
-        {{ if eq $currentVersion $version }}selected{{ end }}
+        value="{{ $v.version }}"
+        {{ if eq $currentVersion $v.version }}selected{{ end }}
       >
-        {{ $version }}
+        {{ $v.version }}
       </option>
     {{ end }}
   </select>

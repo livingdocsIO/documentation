@@ -1,6 +1,5 @@
 title: Get Latest Publications
 endpointId: latest-publications
-beta: true
 
 apiVersion:
   eq: beta

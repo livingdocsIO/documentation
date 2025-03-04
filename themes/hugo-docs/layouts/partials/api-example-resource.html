@@ -1,31 +1,32 @@
 {{ $page := .page }}
 {{ $endpoint := .endpoint }}
 
+{{ $apiExampleClass := "api-example" }}
+{{ $newestApiVersion := partial "api-version-string" (dict "page" $page "endpoint" (dict)) }}
+{{ $apiVersion := partial "api-version-string" (dict "page" $page "endpoint" $endpoint) }}
+
 {{ $channel := "" }}
-{{ if $endpoint.beta }}{{ $channel = "beta" }}{{ end }}
+
 {{ if $endpoint.deprecation.since }}
   {{ $channel = print "Deprecated in " $endpoint.deprecation.since }}
+  {{ $apiExampleClass = print $apiExampleClass " api-example--danger" }}
+{{ else if ne $apiVersion $newestApiVersion }}
+  {{ $range := partial "api-version-range" (dict "page" $page "endpoint" $endpoint) }}
+  {{ $channel = print "Supported with " $range }}
+  {{ $apiExampleClass = print $apiExampleClass " api-example--warning" }}
 {{ end }}
 
-{{ $apiExampleClass := "api-example" }}
 {{ if (eq $endpoint.title "") }}
   {{ $apiExampleClass = print $apiExampleClass " api-example--no-title" }}
 {{ end }}
-{{ if $channel }}
-  {{ if (eq $channel "beta") }}
-    {{ $apiExampleClass = print $apiExampleClass " api-example--warning" }}
-  {{ else }}
-    {{ $apiExampleClass = print $apiExampleClass " api-example--danger" }}
-  {{ end }}
-{{ end }}
 
-{{ $apiVersion := partial "api-version-string" (dict "page" $page "endpoint" $endpoint) }}
+{{ $endpointAttr := dict "endpointId" $endpoint.endpointId "apiVersion" $endpoint.apiVersion "latest" $apiVersion }}
 
 
 <div
   class="{{ $apiExampleClass }}"
   data-channel="{{ $channel }}"
-  {{ if $endpoint.apiVersion }}data-version="{{ $endpoint.apiVersion | jsonify }}"{{ end }}
+  data-endpoint="{{ $endpointAttr | jsonify }}"
 >
   {{- if $endpoint.title -}}
     <div class="api-example__title">
@@ -35,8 +36,13 @@
       </h2>
 
       {{- if $endpoint.deprecation -}}
-        <blockquote class="info info-danger">
+        <blockquote class="info info-alert">
           {{ replace $endpoint.deprecation.note ":apiVersion" $apiVersion | $page.RenderString }}
+        </blockquote>
+      {{- else if ne $apiVersion $newestApiVersion -}}
+        <blockquote class="info info-warning">
+          This endpoint has changes in version
+          <a href="?version={{ $newestApiVersion }}">{{ $newestApiVersion }}</a>.
         </blockquote>
       {{- end -}}
     </div>

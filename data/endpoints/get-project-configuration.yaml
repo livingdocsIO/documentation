@@ -2,7 +2,7 @@ title: Get Project Configuration
 
 deprecation:
   since: release-2023-03
-  note: Use `GET api/v1/projectConfig` instead.
+  note: Use `GET /api/v1/projectConfig` instead.
 
 scopes: public-api:read
 query: |
