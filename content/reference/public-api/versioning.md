@@ -28,6 +28,8 @@ We strongly recommend constantly updating your apps to make requests to the late
 
 Whenever a request is made to an API version that's not available anymore, a `410 Gone` error will be returned.
 
+![image](../api-versioning-schedule.svg)
+
 ### Deprecations
 
 Parts of the Livingdocs API can be deprecated if it becomes unnecessary, unsafe, or outdated.
