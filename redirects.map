@@ -1,3 +1,4 @@
+/reference-docs/public-api/ /reference/public-api/;
 /reference/public-api/publications/latest-draft-beta /reference/public-api/drafts/latest-draft-beta/;
 /reference/public-api/search /reference/public-api/publications/search/;
 /reference/document/metadata/metadata-plugin-list /reference/document/metadata/plugins/;
