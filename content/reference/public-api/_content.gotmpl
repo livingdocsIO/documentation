@@ -7,7 +7,9 @@
 
 {{ $upcoming := slice }}
 {{ range where (sort $.Site.Data.releases) "upcoming" "eq" true }}
-  {{ $upcoming = $upcoming | append (slicestr .key 8) }}
+  {{ $version := slicestr .key 8 }}
+  {{ if eq $version "2025-03" }}{{ continue }}{{ end }}
+  {{ $upcoming = $upcoming | append $version }}
 {{ end }}
 
 {{ range $key, $value := $.Site.Data.endpoints }}
