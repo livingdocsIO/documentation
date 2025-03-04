@@ -18,6 +18,10 @@ The components define the building blocks out of which you can create your docum
 
 The design settings define global design properties like the CSS to use or how components are grouped together.
 
+{{< info >}}
+As of {{< release "release-2025-03" >}}, documents are delivered with the newest design version. Ensure that any design changes are accompanied by the corresponding [On-Read Migrations]({{< ref "/reference/document/migration/on-read-migration" >}}).
+{{< /info >}}
+
 ## Video Guide
 
 Intro to how Livingdocs components work and how to apply a design change to your project.
