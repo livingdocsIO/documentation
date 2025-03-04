@@ -490,6 +490,7 @@ Here is a list of all patches after the release has been announced.
 - [v257.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.1): fix(events): Delete unused event related to LIBREAKING035
 
 ### Livingdocs Editor Patches
+- [v110.34.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.68): fix(trackjs): sanitize Bearer, Basic, and Authorization strings in payload
 - [v110.34.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.67): fix(proxy): Increase headers timeout to 1h. The livingdocs server handles the timeouts separately.
 - [v110.34.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.66): fix(deps): update dependency @livingdocs/framework from 29.5.11 to v29.5.12
 - [v110.34.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v110.34.65): fix(li-table): Show table header on small screens
