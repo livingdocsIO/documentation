@@ -374,7 +374,18 @@ document.addEventListener('DOMContentLoaded', function () {
     if (v === 'beta') return 2
     return new Date(v).getTime()
   }
-  const versionedSections = document.querySelectorAll('[data-version]')
+
+  const endpointGroups = [...document.querySelectorAll('[data-endpoint]')].reduce(
+    (byGroups, el) => {
+      try {
+        const endpoint = JSON.parse(el.getAttribute('data-endpoint'))
+        byGroups[endpoint.endpointId] ??= []
+        byGroups[endpoint.endpointId].push({...endpoint, el})
+      } catch (_err) {}
+      return byGroups
+    },
+    {}
+  )
 
   function versionMatchesRange(version, range) {
     const current = getVersion(version)
@@ -390,12 +401,24 @@ document.addEventListener('DOMContentLoaded', function () {
     return true
   }
 
-  for (const section of versionedSections) {
-    const version = section.getAttribute('data-version')
-    if (!version) continue
-    const range = JSON.parse(version)
-    if (!versionMatchesRange(currentVersion, range)) {
-      section.remove()
+  for (const endpointId in endpointGroups) {
+    const endpoints = endpointGroups[endpointId].sort(
+      (a, b) => getVersion(a.latest) - getVersion(b.latest)
+    )
+
+    if (endpoints.length < 2) continue
+    let keep
+    for (const endpoint of endpoints) {
+      if (versionMatchesRange(currentVersion, endpoint.apiVersion)) {
+        keep = endpoint
+        break
+      }
+    }
+
+    if (!keep) keep = endpoints[0]
+    for (const endpoint of endpoints) {
+      if (keep === endpoint) continue
+      endpoint.el.remove()
     }
   }
 })

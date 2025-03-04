@@ -117,20 +117,12 @@ $api-example-padding: $space-m;
     &::after {
       background-color: $color-red-2;
     }
-
-    blockquote {
-      background-color: $color-red-2;
-    }
   }
 
   &--warning {
     outline: 2px solid $color-yellow-2;
 
     &::after {
-      background-color: $color-yellow-2;
-    }
-
-    blockquote {
       background-color: $color-yellow-2;
     }
   }
