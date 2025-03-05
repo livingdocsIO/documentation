@@ -1,5 +1,5 @@
 ---
-title: Restore a deleted document
+title: Restore a Deleted Document
 description: Learn how you can restore deleted documents
 weight: 1
 ---

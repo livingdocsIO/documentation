@@ -72,6 +72,10 @@ Now that everything is ready, we can restart the server to apply our changes. Up
 
 This indicates that the project config was successfully updated. If you have an error in this line there is probably a typo somewhere.
 
+{{< info >}}
+As of {{< release "release-2025-03" >}}, documents are delivered with the newest design version. Ensure that any design changes are accompanied by the corresponding [On-Read Migrations]({{< ref "/reference/document/migration/on-read-migration" >}}).
+{{< /info >}}
+
 Now, create a new article and you should have a Header component in the sidebar to drag in. Beautiful!
 
 [Git patch for those changes](./add-component-patch.patch)

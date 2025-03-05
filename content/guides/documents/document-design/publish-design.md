@@ -1,9 +1,13 @@
 ---
 type: guides
-title: Publish a Design with ldm
-description: Upload a design to a Livingdocs Server with ldm (Livingdocs Design Manager)
+title: Publish a Reference Design with ldm
+description: Upload a Reference Design to a Livingdocs Server with ldm (Livingdocs Design Manager)
 weight: 6
 ---
+
+{{< info >}}
+For new setups, we recommend using Embedded Designs instead of Reference Designs. This guide applies only to Reference Designs.
+{{< /info >}}
 
 To be honest, this process is a bit bumpy and lacks UI support. Please bear with us, we will make this super-easy for you in the future. For now though there are quite a lot of requirements.
 

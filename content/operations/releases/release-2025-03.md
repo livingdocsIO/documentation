@@ -64,38 +64,127 @@ It's a simple/fast migration with no expected data losses.
 
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database schema
+# migration 206-move-revision-metadata.js
+#   writes all data from table `document_metadata` to `document_revisions`
+# migration 207-migration-sequence.js
+#   creates two new columns `content_migration_sequence` and `metadata_migration_sequence`
+#   on the `document_revisions` table
+# migration 208-document-migrations.js
+#   replaces the tables `document_migrations`, `document_migration_jobs`, 
+#   `document_migration_events`, and `document_migration_log` with new tables `document_migrations`
+#   and `document_migration_jobs`. All data stored in these tables will be removed
 livingdocs-server migrate up
 ```
 
 TODO: check migration
 
-{{< feature-info "" "" >}}
+{{< feature-info "Design" "Server" >}}
 
-### Editor URLs `/p/{projectHandle}/articles/{documentId}/*` :fire:
+### Improved design version handling :fire:
 
-{{< feature-info "" "" >}}
+All documents are now automatically bumped to the latest design version, including those passed to functions and hooks, returned by the Public API, or rendered in the Livingdocs Editor. Ensure your downstream functions, hooks, and API clients are compatible with documents delivered with the newest design version.
 
-### MigrationApis replaced with `migrationApi.run()` :fire:
+If a design update contains a breaking change, you must migrate all existing documents using On-Read Migrations. For more details, check out the [announcement below]({{< relref "#improved-design-version-handling-gift" >}}).
 
-{{< feature-info "" "" >}}
+To ensure a smooth transition, downstreams should verify that their stored documents are in an expected state before upgrading to this release. Specifically, ensure that only one design is in use per project and that all documents share the same design version. If these conditions are not met, applying future migrations may cause inconsistencies or errors.
+
+To facilitate this verification, we provide a utility that performs these checks. It is available in the CLI as of release-2025-01:
+
+```
+Usage: livingdocs-server release-2025-03-check-document-design-versions
+
+Checks whether all documents in a project have the same design version.
+
+Options:
+  -h, --help  Show help                                                [boolean]
+```
+
+If everything is in order, the following output will be displayed:
+
+```
+npx livingdocs-server release-2025-03-check-document-design-versions
+10:16:04 INFO  cli > All documents have the same design version. You are ready to upgrade to release-2025-03.
+```
+
+If multiple design versions are detected, the following output will be shown instead:
+
+```
+npx livingdocs-server release-2025-03-check-document-design-versions
+10:15:45 ERROR cli > Not all documents have the same design version. Please migrate them to the latest design version before upgrading to release-2025-03.
+10:15:45 ERROR cli > projectHandle=user-nkmubrc04klh, projectId=76
+10:15:45 ERROR cli >   designName=basic, designVersion=1.0.1
+10:15:45 ERROR cli >   designName=basic, designVersion=1.0.0
+10:15:45 ERROR cli > projectHandle=user-bbab7sud5ap8, projectId=77
+10:15:45 ERROR cli >   designName=basic, designVersion=1.0.0
+10:15:45 ERROR cli >   designName=basic, designVersion=1.0.1
+10:15:45 ERROR cli > projectHandle=user-vn89gm58rxhu, projectId=78
+10:15:45 ERROR cli >   designName=basic, designVersion=1.0.1
+10:15:45 ERROR cli >   designName=basic, designVersion=1.0.0
+```
+
+In that case, documents should be migrated using CLI `data-migration-run` before upgrading to release-2025-03.
+
+{{< feature-info "Server Config" "Server" >}}
 
 ### Server configs `projectConfigs.showMigrationUi` and `projectConfigs.autoDesignMigrations` :fire:
 
-{{< feature-info "" "" >}}
+Server config properties `projectConfigs.showMigrationUi` and `projectConfigs.autoDesignMigrations` are no longer supported due to the improved design version handling. As part of this change, the design migration page has been removed from the Editor. Please remove these properties from your server config.
 
-### CLI data-migration-run no longer supports options `--design-version-to` and `--filter-by-design-version` :fire:
+{{< feature-info "Data Migrations" "CLI" >}}
+
+### CLI `data-migration-run` no longer supports options `--design-version-to` and `--filter-by-design-version` :fire:
+
+The CLI `data-migration-run` no longer supports options `--design-version-to` and `--filter-by-design-version` due to the improved design version handling.
+
+{{< feature-info "Migration API" "Server" >}}
+
+### Migration APIs replaced with `migrationApi.run()` :fire:
+
+The following Server APIs have been removed:
+
+- `migrationApi.listMigrations`
+- `migrationApi.resumeAllMigrations`
+- `migrationApi.getMigration`
+- `migrationApi.createMigration`
+- `migrationApi.updateMigration`
+- `migrationApi.prepareMigration`
+- `migrationApi.acceptMigration`
+- `migrationApi.cancelMigration`
+- `migrationApi.getMigrationReport`
+- `migrationApi.getMigrationLogs`
+- `migrationApi.runMigration`
+
+Please use server API `migrationsApi.run` instead.
+
+{{< feature-info "Document URLs" "Editor" >}}
+
+### Removal of deprecated document URLs `/p/{projectHandle}/document/{documentId}` :fire:
+
+All deprecated editor routes are removed and will redirect to the new base editor URL: `/p/{projectHandle}/document/{documentId}`. They include:
+
+- `/p/{projectHandle}/articles/{documentId}/edit/add`
+- `/p/{projectHandle}/articles/{documentId}/edit/canvas/component/{componentId}`
+- `/p/{projectHandle}/articles/{documentId}/edit/component/{componentId}`
+- `/p/{projectHandle}/articles/{documentId}/history`
+- `/p/{projectHandle}/articles/{documentId}/history/compare/:revisionFromId/with/:revisionToId`
+- `/p/{projectHandle}/articles/{documentId}/history/{revisionId}`
+- `/p/{projectHandle}/articles/{documentId}/edit/notifications/unsubscribe`
+- `/p/{projectHandle}/articles/{documentId}/publish`
+- `/p/{projectHandle}/articles/{documentId}/edit/canvas/tasks`
 
 {{< feature-info "Angular Service" "Editor" >}}
 
-### Angular Service Removal
-Angular service 'ldEditApi' has been removed. Please use Angular service 'storage' instead.
-Angular service 'serverApi' has been removed. Please use Angular service 'storage' instead.
+### Removal of Angular services `ldEditApi` and `serverApi`
+
+Angular services `ldEditApi` and `serverApi` have been removed. Please use Angular service `storage` instead.
 
 ## Deprecations
 
-{{< feature-info "" "" >}}
+{{< feature-info "Server API" "Server" >}}
 
 ### Server APIs `projectApi.getStats` and `designStatsApi.listDesigns` :warning:
+
+Server APIs `projectApi.getStats` and `designStatsApi.listDesigns` are deprecated and will be removed in release-2025-09.
 
 {{< feature-info "" "" >}}
 
@@ -108,9 +197,76 @@ Angular service 'serverApi' has been removed. Please use Angular service 'storag
 ### API versioning :gift:
 - Merge beta routes into public api routes
 
-{{< feature-info "" "" >}}
+{{< feature-info "Design" "Server" >}}
 
-### Design version handling :gift:
+### Improved design version handling :gift:
+
+All documents are now automatically bumped to the latest design version, including those passed to functions and hooks, returned by the Public API, or rendered in the Livingdocs Editor. To ensure compatibility with the newest design version, you need to define the necessary [On-Read Migrations]({{< ref "/reference/document/migration/on-read-migration" >}}).
+
+On-Read Migrations are applied whenever a document is read from the database. This means they take effect immediately, allowing all hooks, functions and clients consuming the data to work with the updated document structure.
+
+1. Define your migrations in the Project Config for each content type, referencing a migrate function.
+
+    ```js
+    {
+      handle: 'article',
+      ...
+      migrations: [
+        {
+          sequence: 1,
+          migrateFunctionHandle: 'removeComponent',
+          context: {componentName: 'subtitle'}
+        },
+        {
+          sequence: 2,
+          migrateFunctionHandle: 'renameMetadataProperty',
+          context: {from: 'description', to: 'lead'}
+        }
+      ]
+    }
+    ```
+
+    - `sequence`: Specifies the execution order of migrations. Values must be unique and increasing.
+    - `migrateFunctionHandle`: References a registered migrate function (see below).
+    - `context`: Optional data passed to the migrate function, enabling reuse of migrate functions.
+
+    {{< warning >}}Migrations should not be removed once added. In a future release, a mechanism will allow running migrations in the background to support safe removal. Until then, only append new migrations.{{< /warning >}}
+
+2. Register the migrate function in the function registry. Migrate functions are registered using `liServer.registerMigrateFunctions`. Alternatively, individual migration functions can be registered using `liServer.registerMigrateFunction`.
+
+    {{< info >}}Only synchronous migrate functions are supported.{{< /info >}}
+
+    ```js
+    liServer.registerMigrateFunctions([
+      {
+        handle: 'removeComponent',
+        migrateContent({content, context}) {
+          return {content}
+        }
+      },
+      {
+        handle: 'renameMetadataProperty',
+        migrateMetadata({metadata, metadataSource, translations, context}) {
+          return {metadata, metadataSource, translations}
+        }
+      }
+    ])
+    ```
+
+    - `handle`: Matches the `migrateFunctionHandle` in the project configuration.
+    - `migrateContent`: Modifies a document's content.
+    - `migrateMetadata`: Modifies metadata, metadataSource, and translations (if applicable).
+
+{{< feature-info "Data Migrations" "CLI" >}}
+
+### Data migration improvements :gift:
+
+[Data Migrations]({{< ref "/reference/document/migration/data-migration" >}}), usually executed using the `data-migration-run` CLI, have received several improvements:
+
+- They are now executed in a single step, with the result written back to the database immediately, eliminating the separate prepare and accept phases. This significantly reduces version conflicts caused by users actively editing documents during migrations. If a data migration still fails due to version conflicts, it is automatically retried up to three times.
+- The `migrateAsync` functions now receive two additional parameters: `metadataSource` and `translations`. These parameters can also be modified and returned.
+- After data migrations are executed, statistics and references are re-extracted.
+- The CLI command `data-migration-run` now includes two new options: `--filter-by-id-from` and `--filter-by-id-to`, allowing migrations to be applied to a specific range of documents.
 
 {{< feature-info "" "" >}}
 
