@@ -718,6 +718,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.71): fix: scroll fixes in editor view
 - [v111.1.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.70): fix(trackjs): sanitize Bearer, Basic, and Authorization strings in payload
 - [v111.1.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.69): chore(comments): Remove tributejs dependency
 - [v111.1.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.68): fix(format-popover): Do not let format popover slip behind preview panel
