@@ -12,8 +12,11 @@
   {{ $apiExampleClass = print $apiExampleClass " api-example--danger" }}
 {{ else if ne $apiVersion $newestApiVersion }}
   {{ $range := partial "api-version-range" (dict "page" $page "endpoint" $endpoint) }}
-  {{ $channel = print "Supported with " $range }}
+  {{ $channel = print "Supported in " $range }}
   {{ $apiExampleClass = print $apiExampleClass " api-example--warning" }}
+{{ else }}
+  {{ $range := partial "api-version-range" (dict "page" $page "endpoint" $endpoint) }}
+  {{ $channel = print "Supported in " $range }}
 {{ end }}
 
 {{ if (eq $endpoint.title "") }}
@@ -25,7 +28,7 @@
 
 <div
   class="{{ $apiExampleClass }}"
-  data-channel="{{ $channel }}"
+  {{ with $channel }}data-channel="{{ . }}"{{ end }}
   data-endpoint="{{ $endpointAttr | jsonify }}"
 >
   {{- if $endpoint.title -}}

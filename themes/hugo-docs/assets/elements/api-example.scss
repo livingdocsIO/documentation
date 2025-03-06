@@ -94,8 +94,7 @@ $api-example-padding: $space-m;
     }
   }
 
-  &--danger,
-  &--warning {
+  &[data-channel] {
     position: relative;
 
     &::after {
@@ -106,15 +105,16 @@ $api-example-padding: $space-m;
       top: 0;
       right: 0;
       text-transform: uppercase;
-      padding: 0 $space-s 0 $space-s + 2px;
+      padding: $space-xs $space-s + 2px;
       border-radius: 0 8px 0 12px;
+      background-color: $color-grey-7;
     }
   }
 
   &--danger {
     outline: 2px solid $color-red-2;
 
-    &::after {
+    &[data-channel]::after {
       background-color: $color-red-2;
     }
   }
@@ -122,7 +122,7 @@ $api-example-padding: $space-m;
   &--warning {
     outline: 2px solid $color-yellow-2;
 
-    &::after {
+    &[data-channel]::after {
       background-color: $color-yellow-2;
     }
   }
