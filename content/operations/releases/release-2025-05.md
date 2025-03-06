@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency exifreader from 4.26.1 to v4.26.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7789)
 - [Use Print instead of Druck for german print version labels](https://github.com/livingdocsIO/livingdocs-editor/pull/9649)
 - [Trackjs Sanitization](https://github.com/livingdocsIO/livingdocs-editor/pull/9644)
 - [fix(distribution dates): Polish](https://github.com/livingdocsIO/livingdocs-editor/pull/9647)
