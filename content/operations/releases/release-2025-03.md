@@ -324,6 +324,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v271.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.9): chore: Enable auto pipelining for queue redis connections
 - [v271.0.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.8): fix(li-task-v2): Only show task mode in notifications if mode is configured
 - [v271.0.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.7): fix(li-task-v2): Prevent notification composition failure when no modes are defined
 - [v271.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.6): fix(design-version-update): Account for migratedDocumentVersionDelta when setting model version after an update
