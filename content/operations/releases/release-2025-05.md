@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Clear authorization middleware cache on api client token or user session change](https://github.com/livingdocsIO/livingdocs-server/pull/7793)
 - [Fix: peiq do metadata extraction when replacing an image](https://github.com/livingdocsIO/livingdocs-editor/pull/9666)
 - [fix(media library): detail details](https://github.com/livingdocsIO/livingdocs-editor/pull/9635)
 - [fix(deps): update dependency @livingdocs/framework from 32.6.2 to v32.7.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7756)
