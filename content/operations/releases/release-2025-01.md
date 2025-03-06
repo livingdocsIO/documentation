@@ -678,6 +678,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.38): fix: scroll fixes in editor view
 - [v114.13.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.37): fix: use Print instead of Druck for german print version labels
 - [v114.13.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.36): fix(trackjs): sanitize Bearer, Basic, and Authorization strings in payload
 - [v114.13.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.35): chore(comments): Remove tributejs dependency
