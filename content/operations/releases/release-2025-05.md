@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @livingdocs/framework from 32.6.2 to v32.7.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7756)
 - [Fix positioning for named crops in portrait mode](https://github.com/livingdocsIO/livingdocs-editor/pull/9662)
 - [Fix Editor Scrolling](https://github.com/livingdocsIO/livingdocs-editor/pull/9660)
 - [fix(deps): update dependency exifreader from 4.26.1 to v4.26.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7789)
