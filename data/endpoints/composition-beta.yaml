@@ -10,7 +10,7 @@ deprecation:
 
 history:
   - release: release-2021-06
-    description: Initial support for the Composition API on `/v1/beta`
+    description: Initial support for the Composition API in version `beta`
   - release: release-2024-03
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
 

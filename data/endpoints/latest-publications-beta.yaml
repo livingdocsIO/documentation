@@ -5,10 +5,10 @@ apiVersion:
   eq: beta
 
 history:
-  - release: release-2024-03
-    description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
   - release: release-2023-09
     description: The type `documents` within `references` changed to `document` where every document id has a separate reference entry.
+  - release: release-2024-03
+    description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
 
 deprecation:
   since: release-2025-03
@@ -36,7 +36,7 @@ parameters:
   - name: ?fields
     type: string
     required: false
-    notes: 'Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content` (no renditions)'
+    notes: 'Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content,references`'
   - name: ?reverse
     type: boolean
     required: false

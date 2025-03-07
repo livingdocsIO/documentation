@@ -6,10 +6,11 @@ apiVersion:
 
 history:
   - release: release-2022-03
-    version: v1
-    description: Initial support
+    description: Initial support in version `beta`
   - release: release-2024-03
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+  - release: release-2025-03
+    description: Support for top-level property `references` in version `2025-03`
 
 description: |
   This endpoint returns the most recent draft version of a document.

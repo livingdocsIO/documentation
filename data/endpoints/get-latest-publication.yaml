@@ -10,9 +10,10 @@ history:
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
 
 description: |
-  The endpoint provides an unresolved Publication with 4 possible top-level properties:
+  The endpoint provides an unresolved Publication with 5 possible top-level properties:
   - systemdata
   - metadata
+  - references
   - content
   - renditions
 
@@ -48,7 +49,7 @@ parameters:
   - name: ?fields
     type: string
     required: false
-    notes: 'Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content` (no renditions).'
+    notes: 'Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content,references`.'
   - name: ?renditions
     type: string
     required: false

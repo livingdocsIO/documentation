@@ -7,9 +7,11 @@ apiVersion:
 
 history:
   - release: release-2021-06
-    description: Initial support for the Composition API on `/v1/beta`
+    description: Initial support for the Composition API in version `beta`
   - release: release-2024-03
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+  - release: release-2025-03
+    description: Support in version `2025-03`
 
 description: |
   The `Composition API` loads a Publication with all required information to render a whole document with one request.

@@ -20,9 +20,9 @@ description: |
   The endpoint provides an unresolved Publication with 5 possible top-level properties:
   - systemdata
   - metadata
+  - references
   - content
   - renditions
-  - references
 
   ##### Advantages
   - Be able to cache the response, because it only changes on a republish (does not contain resolved refs)
@@ -50,7 +50,7 @@ parameters:
   - name: ?fields
     type: string
     required: false
-    notes: 'Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content` (no renditions).'
+    notes: 'Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content,references`.'
   - name: ?renditions
     type: string
     required: false

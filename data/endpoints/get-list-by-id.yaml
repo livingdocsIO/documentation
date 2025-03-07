@@ -33,7 +33,7 @@ parameters:
   - name: ?fields
     type: string
     required: false
-    notes: "Filters which (comma separated) document properties are included in the response. Defaults to 'systemdata,metadata' also accepts 'content' (no renditions)."
+    notes: "Filters which (comma separated) document properties are included in the response. Defaults to 'systemdata,metadata' also accepts 'content'."
   - name: ?limit
     type: integer
     required: false

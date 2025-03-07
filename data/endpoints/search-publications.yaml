@@ -61,7 +61,7 @@ parameters:
     type: string
     required: false
     notes: |
-      Comma separated list of properties to include in the response. Defaults to `systemdata,metadata,content` (no renditions). Use `id` if you only want to retrieve the ids of the published documents. Useful (and faster) if you are fully synchronizing your frontend with the publication events
+      Comma separated list of properties to include in the response. Defaults to `systemdata,metadata,content`. Use `id` if you only want to retrieve the ids of the published documents. Useful (and faster) if you are fully synchronizing your frontend with the publication events
   - name: ?limit
     type: integer
     required: false

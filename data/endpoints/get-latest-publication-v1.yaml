@@ -48,7 +48,7 @@ parameters:
   - name: ?fields
     type: string
     required: false
-    notes: 'Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content` (no renditions).'
+    notes: 'Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content`.'
   - name: ?renditions
     type: string
     required: false

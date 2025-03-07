@@ -6,17 +6,20 @@ apiVersion:
 
 history:
   - release: release-2021-06
-    version: v1
     description: Added `reverse`, `contentTypes`, `id.gte` (and other range filters), `publishedAt.gte` (and other range filters)
   - release: release-2024-03
-    version: v1
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+  - release: release-2023-09
+    description: The type `documents` within `references` changed to `document` where every document id has a separate reference entry.
+  - release: release-2025-03
+    description: Support for top-level property `references` in version `2025-03`
 
 description: |
-  The endpoint provides an unresolved Publication with 3 possible top-level properties:
+  The endpoint provides an unresolved Publication with 4 possible top-level properties:
   - systemdata
   - metadata
   - content
+  - references
 
 useCases: |
   - Bulk export of data, e.g. a specific `Content Type`
@@ -33,7 +36,7 @@ parameters:
   - name: ?fields
     type: string
     required: false
-    notes: 'Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content` (no renditions)'
+    notes: 'Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content,references`'
   - name: ?reverse
     type: boolean
     required: false
