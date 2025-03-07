@@ -280,6 +280,44 @@ On-Read Migrations are applied whenever a document is read from the database. Th
 ### Media Center: Image variant Storage / Delivery :gift:
 
 {{< feature-info "Media Library" "server/editor" >}}
+This release introduces significant enhancements to how images are stored and served within the Media Center. With the new approach, the system now retains the original image upon upload and automatically generates cropped and width-based resized variants for use within the editor.
+
+To enable this functionality, an opt-in configuration has been added:
+```js
+mediaLibrary: {
+  use2025Behavior: true
+}
+```
+
+Additionally, storage configuration has been expanded. While image storage remains configurable, there is now an optional variantsStorage setting that allows a separate storage location for image variants. If this setting is not explicitly configured, the system will default to using the same storage as the original images.
+```js
+mediaLibrary: {
+  use2025Behavior: true,
+  images: {
+    storage: {
+      strategy: 's3',
+      config: {
+        bucket: 'images',
+        // ...
+      }
+    },
+    variantsStorage: {
+      strategy: 's3',
+      config: {
+        bucket: 'image-variants',
+        // ...
+      }
+    }
+  }
+}
+
+```
+
+A new public API endpoint, `/api/v1/mediaLibrary/serve-images/:key`, has been introduced, allowing access to the original image as long as it is not in an unavailable state, such as revoked or marked as invalid.
+
+Looking forward, additional image variant options beyond cropping and resizing are planned for future releases.
+
+{{< feature-info "" "editor" >}}
 
 ### Media Center: Archive/Revoke/Delete :gift:
 
