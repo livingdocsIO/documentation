@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix creation flow warning](https://github.com/livingdocsIO/livingdocs-editor/pull/9678)
 - [Fix distribution dates](https://github.com/livingdocsIO/livingdocs-editor/pull/9679)
 - [Open documents from task screen with task panel open](https://github.com/livingdocsIO/livingdocs-editor/pull/9674)
 - [Clear authorization middleware cache on api client token or user session change](https://github.com/livingdocsIO/livingdocs-server/pull/7793)
