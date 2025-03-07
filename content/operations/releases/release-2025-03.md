@@ -336,6 +336,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.19): fix(task-screen): Open documents with task panel open
 - [v115.22.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.18): fix(peiq): do metadata extraction when replacing an image
 - [v115.22.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.17): fix(media library): detail details
 - [v115.22.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.16): fix: scroll fixes in editor view
