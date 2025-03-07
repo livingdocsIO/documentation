@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Throw LIBREAKING038 and LIBREAKING039 messages](https://github.com/livingdocsIO/livingdocs-server/pull/7797)
 - [Fix creation flow warning](https://github.com/livingdocsIO/livingdocs-editor/pull/9678)
 - [Fix distribution dates](https://github.com/livingdocsIO/livingdocs-editor/pull/9679)
 - [Open documents from task screen with task panel open](https://github.com/livingdocsIO/livingdocs-editor/pull/9674)
