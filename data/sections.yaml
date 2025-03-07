@@ -159,6 +159,7 @@
     - get-media-library-entries
     - get-media-library-incoming-document-references
     - get-media-library-incoming-media-references
+    - get-media-library-serve-image
 
 # Start Imports section
 - title: Imports
