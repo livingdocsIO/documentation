@@ -29,11 +29,6 @@
       rel="stylesheet"
       href="{{ $built.RelPermalink }}"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&display=swap"
-      rel="preload"
-    />
 
     {{- $apiVersion := (index (partialCached "api-versions" . true) 0).version -}}
     {{- if eq $apiVersion "beta" -}}{{ $apiVersion = "v1" }}{{- end -}}

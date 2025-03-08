@@ -11,7 +11,9 @@
 // generated using
 // hugo gen chromastyles --style=lovelace > themes/hugo-docs/assets/chroma.scss
 code {
-  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono',
+    'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono',
+    'Courier New', monospace;
   font-size: 0.9em;
   background: rgba($color-violet-1, 0.1);
   border-radius: $rounded-corners;
