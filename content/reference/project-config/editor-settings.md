@@ -243,7 +243,8 @@ editorSettings: {
     link: true,
     specialChars: true,
     quotes: ['„', '“']
-    singleQuotes: ['‚', '‘']
+    singleQuotes: ['‚', '‘'],
+    smartQuotes: true,
     apostrophe: '’',
     locales: {
       de: {
@@ -1203,6 +1204,7 @@ textFormatting: {
   specialChars: false,
   quotes: ['„', '“'],
   singleQuotes: ['‚', '‘'],
+  smartQuotes: true,
   apostrophe: '’',
   locales: {...}
 }
@@ -1325,6 +1327,40 @@ Following attribute types can be added to a customElement:
 **Restrictions**
 
 There can be only one attribute with a type in the attributes array. Static values can be added as many as needed.
+
+## Smart Quotes
+
+A feature, which automatically replaces quotation marks as you type with the appropriate ones defined in your configuration. This enhancement helps editors maintain high-quality typography without manual effort.
+With the provided switch in the editor UI, users are allowed to disable the feature when necessary for special cases.
+
+**How to Use Smart Quotes**
+
+To enable the Smart Quotes toggle, the `smartQuotes` property must be added to the `textFormatting` configuration. This can be done in `editor_settings.js`. You can also overwrite this config for each content type.
+
+Additionally, either the `quotes` & `singleQuotes` properties or the `locales` property must be set in `textFormatting`, as these will be used as replacement quotes.
+
+```js
+// Either in editor_settings.js or content-types/*
+textFormatting: {
+  smartQuotes: {enabled: true}, // Alternatively: `smartQuotes: true``
+  quotes: ['«', '»'],
+  singleQuotes: ['‹', '›'],
+  // Either quotes and singleQuotes OR locales need to be set
+  locales: {
+    en: {
+      quotes: ['“', '”'],
+      singleQuotes: ['‘', '’']
+    },
+    de: {
+      quotes: ['«', '»'],
+      singleQuotes: ['‹', '›']
+    }
+  }
+} 
+// ...
+```
+
+Once configured, the Smart Quotes toggle will be available in the editor on the bottom left corner. Each time a document is opened, the toggle will be turned on by default. Users can turn off the toggle when needed, allowing flexibility for special cases where standard quotation marks are required.
 
 ## Text Count
 

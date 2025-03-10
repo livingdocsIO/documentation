@@ -619,7 +619,8 @@ editor: {
     link: true,
     specialChars: false,
     quotes: ['„', '“'],
-    singleQuotes: ['‚', '‘']
+    singleQuotes: ['‚', '‘'],
+    smartQuotes: true,
     apostrophe: '’',
     locales: {
       de: {
