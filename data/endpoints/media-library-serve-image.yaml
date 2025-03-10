@@ -8,8 +8,8 @@ history:
     description: Initial support
 
 description: |
-  Delivers the image in its original dimensions, provided the asset is neither revoked nor invalid. 
-  This endpoint can serve as a source for an image proxy or resizing service, ensuring that only valid images are delivered.
+  This endpoint delivers an image in its original dimensions, provided the asset remains valid (i.e., not revoked or marked as invalid).
+  It is designed to serve as a reliable source for image proxies or resizing services, ensuring only authorized and valid images are accessible.
 
 scopes: public-api:read
 query: |

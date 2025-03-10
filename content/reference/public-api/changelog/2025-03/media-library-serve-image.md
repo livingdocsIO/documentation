@@ -8,6 +8,10 @@ change:
   type: feature
 ---
 
-A new public API endpoint, `/api/2025-03/mediaLibrary/serve-image/:key`, has been introduced, allowing access to the original image as long as it is not in an unavailable state, such as revoked or marked as invalid.
+We’ve added a new public API endpoint:
 
-Please check the [API reference](/reference/public-api/media-library/#serve-image) for more details.
+`/api/2025-03/mediaLibrary/serve-image/:key`
+
+This endpoint provides access to an image in its original dimensions, as long as it has not been revoked or marked as invalid. It can serve as a source for proxies or image processing services.
+
+Please check the [API reference]({{< ref "/reference/public-api/media-library/#serve-image" >}}) for more details.
