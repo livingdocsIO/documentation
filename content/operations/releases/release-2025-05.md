@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Omit devDependencies from npm-shrinkwrap.json](https://github.com/livingdocsIO/livingdocs-server/pull/7813)
 - [Account for migratedDocumentVersionDelta when component condition is triggered](https://github.com/livingdocsIO/livingdocs-server/pull/7814)
 - [Fix: rename url path to serve-image instead of serve-images](https://github.com/livingdocsIO/livingdocs-editor/pull/9690)
 - [Fix: rename url path to serve-image instead of serve-images](https://github.com/livingdocsIO/livingdocs-server/pull/7808)
