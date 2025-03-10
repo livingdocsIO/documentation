@@ -453,6 +453,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v257.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.37): fix(deps): update dependency axios from 1.7.7 to 1.8.2 [security]
 - [v257.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.36): fix(logger): Do not try to serialize streams in pino serializer for axios
 - [v257.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.35): fix(webhooks): Add webhook timeout config property
 - [v257.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v257.0.34): fix(db): Correctly escape control characters in json
