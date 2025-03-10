@@ -656,6 +656,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v267.1.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.25): fix(security): Patch `undici` vulnerability `CVE-2025-22150` to v6.21.1
 - [v267.1.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.24): fix(peiq): add externalid and systemname to elasticsearch
 - [v267.1.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.23): fix: Throw breaking change messages
 - [v267.1.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.22): fix(li-task-v2): Only show task mode in notifications if mode is configured
