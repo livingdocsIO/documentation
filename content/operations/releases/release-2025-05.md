@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Do not try to serialize streams in pino serializer for axios](https://github.com/livingdocsIO/livingdocs-server/pull/7821)
 - [Fix: peiq add externalid and systemname to elasticsearch](https://github.com/livingdocsIO/livingdocs-server/pull/7796)
 - [No longer allow videos and files in inbox](https://github.com/livingdocsIO/livingdocs-server/pull/7811)
 - [Omit devDependencies from npm-shrinkwrap.json](https://github.com/livingdocsIO/livingdocs-server/pull/7813)
