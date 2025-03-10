@@ -194,7 +194,7 @@ Server APIs `projectApi.getStats` and `designStatsApi.listDesigns` are deprecate
 
 ## Features
 
-{{< feature-info "" "" >}}
+{{< feature-info "API Versioning" "Server" >}}
 
 ### API versioning :gift:
 
@@ -333,7 +333,7 @@ textFormatting: {
 
 Once configured, the Smart Quotes toggle will be available in the editor on the bottom left corner. Each time a document is opened, the toggle will be turned on by default. Users can turn off the toggle when needed, allowing flexibility for special cases where standard quotation marks are required.
 
-{{< img src="./release-2025-03-smart-quotes.png" alt="Smart Quotes Toggle"  >}}
+{{< img width="250" src="./release-2025-03-smart-quotes.png" alt="Smart Quotes Toggle"  >}}
 
 {{< feature-info "" "editor" >}}
 
