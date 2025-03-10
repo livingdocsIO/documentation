@@ -393,6 +393,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.22): fix(image-variants): rename url path to serve-image instead of serve-images
 - [v115.22.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.21): fix(creation flow metadata form): suppress workspace injection warning
 - [v115.22.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.20): fix(li-distribution-dates): avoid saving without valid date
 - [v115.22.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.19): fix(task-screen): Open documents with task panel open
