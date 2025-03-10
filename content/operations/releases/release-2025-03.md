@@ -70,7 +70,7 @@ It's a simple/fast migration with no expected data losses.
 #   creates two new columns `content_migration_sequence` and `metadata_migration_sequence`
 #   on the `document_revisions` table
 # migration 208-document-migrations.js
-#   replaces the tables `document_migrations`, `document_migration_jobs`, 
+#   replaces the tables `document_migrations`, `document_migration_jobs`,
 #   `document_migration_events`, and `document_migration_log` with new tables `document_migrations`
 #   and `document_migration_jobs`. All data stored in these tables will be removed
 # migration 209-asset-keys.js
@@ -212,55 +212,55 @@ On-Read Migrations are applied whenever a document is read from the database. Th
 
 1. Define your migrations in the Project Config for each content type, referencing a migrate function.
 
-    ```js
-    {
-      handle: 'article',
-      ...
-      migrations: [
-        {
-          sequence: 1,
-          migrateFunctionHandle: 'removeComponent',
-          context: {componentName: 'subtitle'}
-        },
-        {
-          sequence: 2,
-          migrateFunctionHandle: 'renameMetadataProperty',
-          context: {from: 'description', to: 'lead'}
-        }
-      ]
-    }
-    ```
+   ```js
+   {
+     handle: 'article',
+     ...
+     migrations: [
+       {
+         sequence: 1,
+         migrateFunctionHandle: 'removeComponent',
+         context: {componentName: 'subtitle'}
+       },
+       {
+         sequence: 2,
+         migrateFunctionHandle: 'renameMetadataProperty',
+         context: {from: 'description', to: 'lead'}
+       }
+     ]
+   }
+   ```
 
-    - `sequence`: Specifies the execution order of migrations. Values must be unique and increasing.
-    - `migrateFunctionHandle`: References a registered migrate function (see below).
-    - `context`: Optional data passed to the migrate function, enabling reuse of migrate functions.
+   - `sequence`: Specifies the execution order of migrations. Values must be unique and increasing.
+   - `migrateFunctionHandle`: References a registered migrate function (see below).
+   - `context`: Optional data passed to the migrate function, enabling reuse of migrate functions.
 
-    {{< warning >}}Migrations should not be removed once added. In a future release, a mechanism will allow running migrations in the background to support safe removal. Until then, only append new migrations.{{< /warning >}}
+   {{< warning >}}Migrations should not be removed once added. In a future release, a mechanism will allow running migrations in the background to support safe removal. Until then, only append new migrations.{{< /warning >}}
 
 2. Register the migrate function in the function registry. Migrate functions are registered using `liServer.registerMigrateFunctions`. Alternatively, individual migration functions can be registered using `liServer.registerMigrateFunction`.
 
-    {{< info >}}Only synchronous migrate functions are supported.{{< /info >}}
+   {{< info >}}Only synchronous migrate functions are supported.{{< /info >}}
 
-    ```js
-    liServer.registerMigrateFunctions([
-      {
-        handle: 'removeComponent',
-        migrateContent({content, context}) {
-          return {content}
-        }
-      },
-      {
-        handle: 'renameMetadataProperty',
-        migrateMetadata({metadata, metadataSource, translations, context}) {
-          return {metadata, metadataSource, translations}
-        }
-      }
-    ])
-    ```
+   ```js
+   liServer.registerMigrateFunctions([
+     {
+       handle: 'removeComponent',
+       migrateContent({content, context}) {
+         return {content}
+       }
+     },
+     {
+       handle: 'renameMetadataProperty',
+       migrateMetadata({metadata, metadataSource, translations, context}) {
+         return {metadata, metadataSource, translations}
+       }
+     }
+   ])
+   ```
 
-    - `handle`: Matches the `migrateFunctionHandle` in the project configuration.
-    - `migrateContent`: Modifies a document's content.
-    - `migrateMetadata`: Modifies metadata, metadataSource, and translations (if applicable).
+   - `handle`: Matches the `migrateFunctionHandle` in the project configuration.
+   - `migrateContent`: Modifies a document's content.
+   - `migrateMetadata`: Modifies metadata, metadataSource, and translations (if applicable).
 
 {{< feature-info "Data Migrations" "CLI" >}}
 
@@ -275,21 +275,23 @@ On-Read Migrations are applied whenever a document is read from the database. Th
 - After data migrations are executed, statistics and references are re-extracted.
 - The CLI command `data-migration-run` now includes two new options: `--filter-by-id-from` and `--filter-by-id-to`, allowing migrations to be applied to a specific range of documents.
 
-{{< feature-info "" "" >}}
-
 ### Media Center: Image variant Storage / Delivery :gift:
 
 {{< feature-info "Media Library" "server/editor" >}}
 This release introduces significant enhancements to how images are stored and served within the Media Center. With the new approach, the system now retains the original image upon upload and automatically generates cropped and width-based resized variants for use within the editor.
 
 To enable this functionality, an opt-in configuration has been added:
+
 ```js
 mediaLibrary: {
   use2025Behavior: true
 }
 ```
 
-Additionally, storage configuration has been expanded. While image storage remains configurable, there is now an optional variantsStorage setting that allows a separate storage location for image variants. If this setting is not explicitly configured, the system will default to using the same storage as the original images.
+Resized and cropped image variants are stored in the image storage under the `image-variants-cache/` prefix. To manage storage efficiently, we recommend setting up a retention policy for these cached variants in your blob storage provider.
+
+If the main storage does not support image variants, you can use the `variantsStorage` configuration to store resized images in a separate bucket. This is optional—by default, the system saves variants in the same storage as the original images.
+
 ```js
 mediaLibrary: {
   use2025Behavior: true,
@@ -313,9 +315,13 @@ mediaLibrary: {
 
 ```
 
-A new public API endpoint, `/api/2025-03/mediaLibrary/serve-image/:key`, has been introduced, allowing access to the original image as long as it is not in an unavailable state, such as revoked or marked as invalid.
+Additionally, we've introduced a new public API endpoint:
 
-Looking forward, additional image variant options beyond cropping and resizing are planned for future releases.
+`/api/2025-03/mediaLibrary/serve-image/:key`
+
+This endpoint delivers the image with its original dimensions, as long as it has not been revoked or marked as invalid.
+
+Looking ahead, we plan to introduce more advanced image processing capabilities beyond cropping and resizing in future releases.
 
 {{< feature-info "" "editor" >}}
 
@@ -337,7 +343,7 @@ Please read the information about [Media Center: Image variant Storage / Deliver
 
 ### Smart quotes :gift:
 
-Typography plays a crucial role in journalism, ensuring that text maintains a professional and polished appearance. However, most standard keyboards do not provide an easy way to input typographically correct quotation marks. 
+Typography plays a crucial role in journalism, ensuring that text maintains a professional and polished appearance. However, most standard keyboards do not provide an easy way to input typographically correct quotation marks.
 
 To address this challenge, Livingdocs introduces the Smart Quotes feature, which automatically replaces quotation marks as you type with the appropriate ones defined in your configuration. This enhancement helps editors maintain high-quality typography without manual effort.
 With the provided switch in the editor UI, users are allowed to disable the feature when necessary for special cases.
@@ -365,7 +371,7 @@ textFormatting: {
       singleQuotes: ['‹', '›']
     }
   }
-} 
+}
 // ...
 ```
 
@@ -419,6 +425,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v271.0.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.13): fix(deps): update dependency axios from 1.7.9 to 1.8.2 [security]
 - [v271.0.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.12): fix(design-version-update): Account for migratedDocumentVersionDelta when component condition is triggered
 - [v271.0.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.11): fix(image-variants): rename url path to serve-image instead of serve-images
@@ -433,6 +440,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+
 - [v115.22.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.23): fix(inbox): implicit breaking change - remove support for video and file
 - [v115.22.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.22): fix(image-variants): rename url path to serve-image instead of serve-images
 - [v115.22.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.21): fix(creation flow metadata form): suppress workspace injection warning
