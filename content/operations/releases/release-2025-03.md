@@ -290,9 +290,45 @@ Finally, a new **Store in Archive** action has been added (along with **Remove f
 
 Please read the information about [Media Center: Image variant Storage / Delivery]({{< relref "#media-center-image-variant-storage--delivery-gift" >}}) before enabling `use2025Behavior`, as the two features are linked together with the same server config property.
 
-{{< feature-info "" "editor" >}}
+{{< feature-info "Text Formatting" "editor" >}}
 
 ### Smart quotes :gift:
+
+Typography plays a crucial role in journalism, ensuring that text maintains a professional and polished appearance. However, most standard keyboards do not provide an easy way to input typographically correct quotation marks. 
+
+To address this challenge, Livingdocs introduces the Smart Quotes feature, which automatically replaces quotation marks as you type with the appropriate ones defined in your configuration. This enhancement helps editors maintain high-quality typography without manual effort.
+With the provided switch in the editor UI, users are allowed to disable the feature when necessary for special cases.
+
+**How to Use Smart Quotes**
+
+To enable the Smart Quotes toggle, the `smartQuotes` property must be added to the `textFormatting` configuration. This can be done in `editor_settings.js`. You can also overwrite this config for each content type.
+
+Additionally, either the `quotes` & `singleQuotes` properties or the `locales` property must be set in `textFormatting`, as these will be used as replacement quotes.
+
+```js
+// Either in editor_settings.js or content-types/*
+textFormatting: {
+  smartQuotes: {enabled: true}, // Alternatively: `smartQuotes: true``
+  quotes: ['«', '»'],
+  singleQuotes: ['‹', '›'],
+  // Either quotes and singleQuotes OR locales need to be set
+  locales: {
+    en: {
+      quotes: ['“', '”'],
+      singleQuotes: ['‘', '’']
+    },
+    de: {
+      quotes: ['«', '»'],
+      singleQuotes: ['‹', '›']
+    }
+  }
+} 
+// ...
+```
+
+Once configured, the Smart Quotes toggle will be available in the editor on the bottom left corner. Each time a document is opened, the toggle will be turned on by default. Users can turn off the toggle when needed, allowing flexibility for special cases where standard quotation marks are required.
+
+{{< img src="./release-2025-03-smart-quotes.png" alt="Smart Quotes Toggle"  >}}
 
 {{< feature-info "" "editor" >}}
 
