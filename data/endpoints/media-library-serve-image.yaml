@@ -1,0 +1,25 @@
+title: Serve Image
+
+apiVersion:
+  gte: 2025-03
+
+history:
+  - release: release-2025-03
+    description: Initial support
+
+description: |
+  Delivers the image in its original dimensions, provided the asset is neither revoked nor invalid. 
+  This endpoint can serve as a source for an image proxy or resizing service, ensuring that only valid images are delivered.
+
+scopes: public-api:read
+query: |
+  ACCESS_TOKEN=ey1234
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/mediaLibrary/serve-image/2025/03/14/c316ace8-0ded-4e41-9388-386a5759c01f.jpeg" \
+    -H "Authorization: Bearer $ACCESS_TOKEN"
+endpoint:
+  method: GET
+  path: /api/:apiVersion/mediaLibrary/serve-image/:key
+responses:
+  - code: '200'
+    endpoint: /api/:apiVersion/mediaLibrary/serve-image/2025/03/14/c316ace8-0ded-4e41-9388-386a5759c01f.jpeg
+    body: binary

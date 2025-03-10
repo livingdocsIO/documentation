@@ -313,7 +313,7 @@ mediaLibrary: {
 
 ```
 
-A new public API endpoint, `/api/2025-03/mediaLibrary/serve-images/:key`, has been introduced, allowing access to the original image as long as it is not in an unavailable state, such as revoked or marked as invalid.
+A new public API endpoint, `/api/2025-03/mediaLibrary/serve-image/:key`, has been introduced, allowing access to the original image as long as it is not in an unavailable state, such as revoked or marked as invalid.
 
 Looking forward, additional image variant options beyond cropping and resizing are planned for future releases.
 
