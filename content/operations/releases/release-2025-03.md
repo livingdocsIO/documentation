@@ -381,6 +381,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v271.0.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.12): fix(design-version-update): Account for migratedDocumentVersionDelta when component condition is triggered
 - [v271.0.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.11): fix(image-variants): rename url path to serve-image instead of serve-images
 - [v271.0.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.10): fix: Throw breaking change messages
 - [v271.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.9): chore: Enable auto pipelining for queue redis connections
