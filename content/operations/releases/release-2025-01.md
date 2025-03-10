@@ -656,6 +656,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v267.1.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.27): fix(logger): Do not try to serialize streams in pino serializer for axios
 - [v267.1.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.26): fix(deps): update dependency axios from 1.7.9 to 1.8.2 [security]
 - [v267.1.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.25): fix(security): Patch `undici` vulnerability `CVE-2025-22150` to v6.21.1
 - [v267.1.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.24): fix(peiq): add externalid and systemname to elasticsearch
