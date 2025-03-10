@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix: peiq add externalid and systemname to elasticsearch](https://github.com/livingdocsIO/livingdocs-server/pull/7796)
 - [No longer allow videos and files in inbox](https://github.com/livingdocsIO/livingdocs-server/pull/7811)
 - [Omit devDependencies from npm-shrinkwrap.json](https://github.com/livingdocsIO/livingdocs-server/pull/7813)
 - [Account for migratedDocumentVersionDelta when component condition is triggered](https://github.com/livingdocsIO/livingdocs-server/pull/7814)
