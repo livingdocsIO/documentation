@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix: rename url path to serve-image instead of serve-images](https://github.com/livingdocsIO/livingdocs-editor/pull/9690)
 - [Fix: rename url path to serve-image instead of serve-images](https://github.com/livingdocsIO/livingdocs-server/pull/7808)
 - [Add tests for version 2025-03 of /latestPublication](https://github.com/livingdocsIO/livingdocs-server/pull/7801)
 - [fix(deps): update dependency axios from 1.7.9 to 1.8.2 [security] (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9687)
