@@ -73,10 +73,12 @@ It's a simple/fast migration with no expected data losses.
 #   replaces the tables `document_migrations`, `document_migration_jobs`, 
 #   `document_migration_events`, and `document_migration_log` with new tables `document_migrations`
 #   and `document_migration_jobs`. All data stored in these tables will be removed
+# migration 209-asset-keys.js
+#   adds support for asset keys in `media_library_entries` table
+# migration 210-api-client-token-annotations.js
+#   adds support for annotations in `api_client_tokens` table
 livingdocs-server migrate up
 ```
-
-TODO: check migration
 
 {{< feature-info "Design" "Server" >}}
 
