@@ -1,15 +1,20 @@
 ---
 title: Changelog
-type: release-note-change
+type: changelog
 weight: 1
-renderTOC: false
 menus: public-api
 
-build:
-  list: false
+cascade:
+  target:
+    path: '{/reference/public-api/changelog/**}'
+  build:
+    render: never
+  sitemap:
+    disable: true
 ---
 
-This page lists all changes to the public api for the corresponding release.
+In the Public API Changelog you’ll find an overview of all significant changes to our API, including new features, deprecations, and breaking changes. Our goal is to provide a clear and structured update history, helping you stay informed about improvements and necessary adjustments.
 
-Bug fixes are not listed here.  
-Please report bugs to the customer solutions team of Livingdocs.
+Please consult the [API Versioning Strategy]({{< ref "/reference/public-api/versioning" >}}) for more information on how we manage API versions.
+
+Bug fixes are not listed here. If you encounter issues, please report them to the Livingdocs Customer Solutions team.

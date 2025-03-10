@@ -195,7 +195,10 @@ Server APIs `projectApi.getStats` and `designStatsApi.listDesigns` are deprecate
 {{< feature-info "" "" >}}
 
 ### API versioning :gift:
-- Merge beta routes into public api routes
+
+We're introducing a new [API Versioning Strategy]({{< ref "/reference/public-api/versioning" >}}) that allows us to iterate on the API without breaking existing integrations.
+
+With the introduction of a new versioning strategy, the `v1` and `beta` versions are now available as `2025-03` version. If you use any of those versions, you can safely change your integration to the `2025-03` version, which now contains both functionalities without any other changes.
 
 {{< feature-info "Design" "Server" >}}
 
@@ -375,5 +378,3 @@ Here is a list of all patches after the release has been announced.
 
 - Breaking changes: :fire:
 - Feature: :gift:
-- Bugfix: :beetle:
-- Chore: :wrench:
