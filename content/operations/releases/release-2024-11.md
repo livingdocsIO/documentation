@@ -721,6 +721,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.74): fix(security): Patch `undici` vulnerability `CVE-2025-22150` to v6.21.1
 - [v111.1.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.73): fix(creation flow metadata form): suppress workspace injection warning
 - [v111.1.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.72): fix(task-screen): Open documents with task panel open
 - [v111.1.71](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.71): fix: scroll fixes in editor view
