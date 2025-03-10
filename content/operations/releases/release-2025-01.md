@@ -8,7 +8,7 @@ hideSectionTeaser: true
 header:
   upcoming: false
   legacy: false
-  current: true
+  current: false
   maintained: true
   branchHandle: release-2025-01
 

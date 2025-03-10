@@ -2,14 +2,14 @@
 type: release-notes
 title: March 2025 Release
 description: Technical Release Notes for release-2025-03
-excludeFromSearch: true
+excludeFromSearch: false
 hideSectionTeaser: true
 
 header:
-  upcoming: true
+  upcoming: false
   legacy: false
-  current: false
-  maintained: false
+  current: true
+  maintained: true
   branchHandle: release-2025-03
 ---
 
