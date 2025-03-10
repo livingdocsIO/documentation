@@ -1,5 +1,8 @@
 title: Get Media Library Serve Image
 
+apiVersion:
+  gte: 2025-03
+
 history:
   - release: release-2025-03
     description: Initial support
@@ -8,6 +11,10 @@ description: |
   Serves the original image if the asset is not in revoked or invalid state
 
 scopes: public-api:read
+query: |
+  ACCESS_TOKEN=ey1234
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/mediaLibrary/serve-images/2025/03/14/c316ace8-0ded-4e41-9388-386a5759c01f.jpeg" \
+    -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
   path: /api/:apiVersion/mediaLibrary/serve-images/:key
