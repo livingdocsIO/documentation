@@ -218,3 +218,49 @@ baseFilters: [{key: 'metadata.brand', termVariable: 'componentConditions.brand'}
 ```
 
 If no brand is provided in a request, `componentConditions.brand` uses the [default brand]({{< ref "/reference/project-config/brands" >}}) as configured in the Project Config.
+
+### Teaser Containers
+
+{{< added-in "release-2025-03" block >}}
+
+In real-world page management scenarios, teasers often come in groups (technically achieved with `doc-container` directives). It can be tedious to define and manage the level 2 and level 3 settings for all teasers in a group.
+
+It is possible to edit these settings at once for all teasers in a container. Teasers within the container can still have a different level 1 direct reference to a document. For this to work, all teasers need to have an identical paramsSchema configuration for `curatedList` and `algorithm` in their service. Additionally, the container directive needs to be configured with `isTeaserContainer: true`.
+The best way to guarantee compatability of teasers within a teaser container is to use the `allowedChildren` configuration for `doc-container` and only list teaser components in there, which are known to be compatible with each other. 
+
+If everything is set up correctly, it's no longer possible to define the curated list and algorithm setting for an individual teaser in the container using the component inspector. Instead, it links to the container where the setting is available. Changing it on the container will update all teasers with the same settings.
+
+Please note that on a technical level, all teasers are still independent. They hold their own settings and will be resolved individually. Teaser containers are a way to bulk-edit the teaser settings, but containers have no knowledge about the selected settings.
+
+{{< img src="../images/li-teaser-container-settings.png" alt="Focused teaser container showing settings for curated list and algorithm of all the teasers inside." >}}
+
+{{< img src="../images/li-teaser-container-child-settings.png" alt="Focused teaser within a teaser showing that it receives the settings from the container." >}}
+
+
+#### Command API
+
+Since teaser containers are not holding any information about the teaser settings, this has some implications on the Command API. To update the settings for all teasers in a teaser container, the `setIncludeDirective` command can be used. If the targeted directive is within a teaser container and all sibling teasers have a compatible params schema, the Command API will make sure to apply the same algorithm and curatedList settings to the siblings.
+
+### Teaser Side Table
+
+{{< added-in "release-2025-03" block >}}
+
+In a typical page management use case, an article might "tickle down" the page throughout the day. Editors can place a particular article on a teaser by setting it as a direct reference (Level 1). This can happen in several ways:
+
+- Dragging a document from the Document Inbox or a Document Dashboard directly onto an existing teaser
+- Selecting a teaser and then using the properties panel to select an article in the "Direct Reference" section
+- Transferring a direct reference from one teaser to another
+
+Whenever an article was set as the direct reference for a teaser, it might replace the previous article. So if the previous article also needs to be moved somewhere else, Editors have a hard time keeping track of them.
+
+So instead of just letting the previous article fall on the floor, we temporarily store it on the Teaser Side Table. From there, Editors can pick it up again and drag it to the desired location.
+The Teaser Side Table holds up to 5 articles, and it behaves like a queue. Once it is full and an article is added, the one which was in it for the longest time will be pushed off the table.
+
+Please not that the articles in the Teaser Side Table are not associated with a document, nor with a user. It's temporary data in the users local storage, and it is lost when clearing browser data or switching browsers.
+
+{{< img src="../images/li-teaser-side-table.png" alt="Teaser Side Table shown in inbox, holding 5 articles." >}}
+
+#### Configuration
+
+The Teaser Side Table works with teasers based on `li-teaser` or `li-document-reference`. If it has articles in it, it will automatically appear or disappear on top of the [Document Inbox]({{< ref "/reference/project-config/content-types#document-inbox" >}}) and [Document Dashboards]({{< ref "/reference/project-config/content-types#document-editing-toolbar" >}}) accessed trough Editor Toolbar.
+Make sure to configure either one for the content types where it shall be supported.

@@ -780,7 +780,10 @@ The print options allow you to enable the WoodWing Studio print connector on a c
 
 ## Document Inbox
 
-Since {{< release "release-2024-09" >}}, the inbox feature allows document and media references to be assigned to another document. Before, only media library entries could be sent to an inbox.
+### Changelog
+- {{< release "release-2024-09" >}}: The inbox feature allows document and media references to be assigned to another document. Before, only media library entries could be sent to an inbox.
+- {{< release "release-2025-03" >}}: Images can be organized in groups too, and they can be assigned to the same inbox multiple times.
+- {{< release "release-2025-03" >}}: Removed support for videos and files in inbox.
 
 ### Configuration
 
@@ -795,7 +798,7 @@ using the `useDashboardColumns` property.
   inbox: {
     useDashboardColumns: 'inboxDashboard', // added in release-2024-09
     contentTypes: ['regular', 'another-handle'], // added in release-2024-09
-    mediaTypes: ['image', 'video']
+    mediaTypes: ['image'] // changed in release-2025-03
   }
 }
 ```
@@ -818,7 +821,7 @@ Inbox with documents and groups:
 
 ### Media Library Entries
 
-When a content type is configured to accept media library entries into its inbox it allows users to send images, videos, and files to specific documents. This can be achieved directly from the media library dashboards by using the "Send to inbox" link within the content menu of media library entries.
+When a content type is configured to accept media library entries into its inbox it allows users to send images to specific documents. This can be achieved directly from the media library dashboards by using the "Send to inbox" link within the content menu of media library entries.
 
 An example use-case would be: A user is interested in adding images to a document they are working on, but they are unsure which to use from an initial search, and would like to view a larger version of the images or get some additional context from the metadata. The user can search through the media library and then assign the images to the document they are working on. Once assigned to a document's inbox the media can be dragged from the Inbox sidebar when the user is editing the document.
 
@@ -831,6 +834,8 @@ Send an asset to a document inbox (Media Library):
 Show asset inbox of a document in the Editor:
 
 ![image](../images/asset-inbox-button.png)
+
+Images can be assigned to an Inbox multiple times at the same time. They appear alongside documents and have the same sorting and grouping functionality. It is also possible to add an Image to the Inbox directly from the Inbox using the "Add Image" button.
 
 ## Comments
 
