@@ -1,12 +1,11 @@
 ---
 title: 'Document Command API: New Commands'
-type: release-note-change
+type: changelog-entry
 weight: 1
 
 change:
-  release: release-2024-11
-  service: Server
-  section: Commands API
+  date: 2024-11
+  type: feature
 ---
 
 We have extended the [Document Command API]({{< ref "/reference/public-api/document-command-api" >}}) with five new commands, which are also available for [Assistants]({{< ref "/customising/assistants" >}}).

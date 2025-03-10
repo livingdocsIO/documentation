@@ -152,5 +152,3 @@ Here is a list of all patches after the release has been announced.
 
 - Breaking changes: :fire:
 - Feature: :gift:
-- Bugfix: :beetle:
-- Chore: :wrench:

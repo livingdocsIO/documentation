@@ -1,0 +1,110 @@
+{{ partial "html-header.html" . }}
+
+
+<div class="page">
+  {{ partial "sidebar.html" . }}
+  <main class="page__content">
+    <article class="article">
+      <ul
+        id="breadcrumbs"
+        class="breadcrumbs"
+      >
+        {{- range (after 2 .Ancestors.Reverse) }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </li>
+        {{ end }}
+        <li>
+          <a
+            href="{{ .RelPermalink }}"
+            aria-current="location"
+            >{{ .Title }}</a
+          >
+        </li>
+      </ul>
+
+      <h1 class="article__title">
+        {{ .Title }}
+        {{ partial "edit-page.html" . }}
+      </h1>
+
+      <div class="article__content">
+        {{ .Content }}
+        <style>
+          .changelog {
+            margin-bottom: 3em;
+          }
+
+          .changelog--date {
+            margin-bottom: 1em;
+          }
+
+          .changelog--entry {
+            display: flex;
+            margin-bottom: 2em;
+          }
+
+          .changelog--annotations {
+            flex: 0;
+            display: flex;
+            flex-basis: 32px;
+            font-size: 20px;
+            line-height: 32px;
+            width: 100px;
+            flex-direction: column;
+          }
+
+          .changelog--entry-main {
+            flex: 1;
+          }
+
+          .changelog--entry-title {
+            margin-top: 0;
+          }
+        </style>
+
+        {{ $changelogs := where .RegularPagesRecursive "Type" "changelog-entry" }}
+        {{ range (sort ($changelogs.GroupByParam "change.date") "Key" "desc") }}
+          <article
+            class="changelog"
+            data-release="{{ .Key }}"
+          >
+            <h2 class="changelog--date">
+              {{ time.Format "January 2006" (printf "%s-01" .Key | time) }}
+            </h2>
+            {{ range .Pages.ByWeight }}
+              {{ $type := split .Params.change.type "," }}
+              <div
+                class="changelog--entry"
+                data-change-type="{{ .Params.change.type }}"
+              >
+                <div class="changelog--annotations">
+                  {{ if not (eq (len $type) 0) }}
+                    {{ range $type }}
+                      {{ if eq . "deprecation" }}
+                        <div>⚠️</div>
+                      {{ else if eq . "breaking-change" }}
+                        <div>🔥</div>
+                      {{ else if eq . "feature" }}
+                        <div>🎁</div>
+                      {{ end }}
+                    {{ end }}
+                  {{ end }}
+                </div>
+
+                <main class="changelog--entry-main">
+                  <h3 class="changelog--entry-title">{{ .Title }}</h3>
+                  {{ .Content }}
+                </main>
+              </div>
+            {{ end }}
+          </article>
+        {{ end }}
+      </div>
+
+      <div class="article__footer">{{ partial "footer.html" . }}</div>
+    </article>
+  </main>
+</div>
+
+{{ partial "html-footer.html" . }}
