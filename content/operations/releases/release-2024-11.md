@@ -687,6 +687,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v261.3.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.33): fix(deps): update dependency axios from 1.7.7 to 1.8.2 [security]
 - [v261.3.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.32): fix(li-task-v2): Only show task mode in notifications if mode is configured
 - [v261.3.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.31): fix(li-task-v2): Prevent notification composition failure when no modes are defined
 - [v261.3.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.30): fix(webhooks): Add webhook timeout config property
