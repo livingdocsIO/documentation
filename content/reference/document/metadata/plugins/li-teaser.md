@@ -218,3 +218,26 @@ baseFilters: [{key: 'metadata.brand', termVariable: 'componentConditions.brand'}
 ```
 
 If no brand is provided in a request, `componentConditions.brand` uses the [default brand]({{< ref "/reference/project-config/brands" >}}) as configured in the Project Config.
+
+### Teaser Containers
+
+{{< added-in "release-2025-03" block >}}
+
+In real-world page management scenarios, teasers often come in groups (technically achieved with `doc-container` directives). It can be tedious to define and manage the level 2 and level 3 settings for all teasers in a group.
+
+It is possible to edit these settings at once for all teasers in a container. Teasers within the container can still have a different level 1 direct reference to a document. For this to work, all teasers need to have an identical paramsSchema configuration for `curatedList` and `algorithm` in their service. Additionally, the container directive needs to be configured with `isTeaserContainer: true`.
+The best way to guarantee compatability of teasers within a teaser container is to use the `allowedChildren` configuration for `doc-container` and only list teaser components in there, which are known to be compatible with each other. 
+
+If everything is set up correctly, it's no longer possible to define the curated list and algorithm setting for an individual teaser in the container using the component inspector. Instead, it links to the container where the setting is available. Changing it on the container will update all teasers with the same settings.
+
+Please note that on a technical level, all teasers are still independent. They hold their own settings and will be resolved individually. Teaser containers are a way to bulk-edit the teaser settings, but containers have no knowledge about the selected settings.
+
+{{< img src="../images/li-teaser-container-settings.png" alt="Focused teaser container showing settings for curated list and algorithm of all the teasers inside." >}}
+
+{{< img src="../images/li-teaser-container-child-settings.png" alt="Focused teaser within a teaser showing that it receives the settings from the container." >}}
+
+
+#### Command API
+
+Since teaser containers are not holding any information about the teaser settings, this has some implications on the Command API. To update the settings for all teasers in a teaser container, the `setIncludeDirective` command can be used. If the targeted directive is within a teaser container and all sibling teasers have a compatible params schema, the Command API will make sure to apply the same algorithm and curatedList settings to the siblings.
+
