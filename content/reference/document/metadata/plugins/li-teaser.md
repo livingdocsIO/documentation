@@ -262,5 +262,5 @@ Please not that the articles in the Teaser Side Table are not associated with a 
 
 #### Configuration
 
-The Teaser Side Table works with teasers based on `li-teaser` and if it has articles in it, it will automatically appear or disappear on top of the [Document Inbox]({{< ref "/reference/project-config/content-types#document-inbox" >}}) and [Document Dashboards]({{< ref "/reference/project-config/content-types#document-editing-toolbar" >}}) accessed trough Editor Toolbar.
+The Teaser Side Table works with teasers based on `li-teaser` or `li-document-reference`. If it has articles in it, it will automatically appear or disappear on top of the [Document Inbox]({{< ref "/reference/project-config/content-types#document-inbox" >}}) and [Document Dashboards]({{< ref "/reference/project-config/content-types#document-editing-toolbar" >}}) accessed trough Editor Toolbar.
 Make sure to configure either one for the content types where it shall be supported.

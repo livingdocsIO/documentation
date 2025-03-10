@@ -180,6 +180,12 @@ All deprecated editor routes are removed and will redirect to the new base edito
 
 Angular services `ldEditApi` and `serverApi` have been removed. Please use Angular service `storage` instead.
 
+### Removal of video and file support from document inbox
+
+Support for media types `mediaVideo` and `mediaFile` has been removed from the document inbox.
+We don't expect this to break any customer setup and this change does not delete any data.
+In case you see a removal warning after the update, please reach out to us and we find will a solution.
+
 ## Deprecations
 
 {{< feature-info "Server API" "Server" >}}
@@ -383,17 +389,42 @@ Once configured, the Smart Quotes toggle will be available in the editor on the 
 
 ### Page Management: Teaser Container with List & Algorithm :gift:
 
-{{< feature-info "" "editor" >}}
+{{< feature-info "Page management" "server/editor" >}}
+
+In real-world page management scenarios, teasers often come in groups. It can be tedious to define and manage the details for every single teaser if you just want them to be the same.
+
+With teaser containers, we let editors change the Algorithm and Curated List on a group level and all the teasers in the group will be updated with the same settings. Setting a Direct Reference on individual teasers is still possible.
+
+There are two prerequisites for this feature:
+- The teaser group component uses a `doc-container` with the config `isTeaserContainer: true`
+- All the teasers in the group are using an identical `li-teaser` config in their include service params
+
+For further information, or if you are using the Command API to update teasers, please read up all the details on the [`li-teaser` documentation page]({{< ref "/reference/document/metadata/plugins/li-teaser/#teaser-containers" >}}).
 
 ### Page Management: Teaser Side Table :gift:
 
-{{< feature-info "" "editor" >}}
+{{< feature-info "Page Management" "editor" >}}
+
+In a typical page management use case, an article might "tickle down" the page throughout the day. Editors can place a particular article on a teaser by setting it as a direct reference (Level 1).
+Whenever an article was set as the direct reference for a teaser, it might replace the previous article. So if the previous article also needs to be moved somewhere else, Editors have a hard time keeping track of them.
+
+So instead of just letting the previous article fall on the floor, we temporarily store it on the Teaser Side Table. From there, Editors can pick it up again and drag it to the desired location.
+
+For further information, please read up all the details on the [`li-teaser` documentation page]({{< ref "/reference/document/metadata/plugins/li-teaser/#teaser-side-table" >}}).
 
 ### Document Inbox: Image Support :gift:
 
-{{< feature-info "Content management" "editor" >}}
+{{< feature-info "Editorial Workflows" "editor" >}}
 
-### Editorial Workflow: Distribution Dates :gift:
+Images have been supported in the Inbox for a long time, but they did not yet have the same sorting and grouping features we added for Documents in 2024.
+
+We are happy to announce that this is now possible for images too. And like documents, images can be in the same inbox multiple times. Images can even be added to an inbox directly from within the inbox.
+All your images sitting already in an inbox will automatically appear at the top of the inbox, just next to the documents. From there, you can start organizing them in the same groups alongside documents.
+
+Technically, the inbox also supported videos and files. To our knowledge, this has never been set up by any of our customers. We decided to remove the support for Videos and Files in Inboxes altogether.
+This decision allowed us to optimize the user experience for the two things our customer care about the most: Documents and Images.
+
+For further information, please read up all the details on the [Content Type documentation page]({{< ref "/reference/project-config/content-types#document-inbox" >}}).
 
 ## Vulnerability Patches
 
