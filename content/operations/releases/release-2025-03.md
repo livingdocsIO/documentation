@@ -274,9 +274,7 @@ On-Read Migrations are applied whenever a document is read from the database. Th
 
 [Data Migrations]({{< ref "/reference/document/migration/data-migration" >}}), usually executed using the `data-migration-run` CLI, have received several improvements:
 
-- Data Migrations migrate the latest draft, the latest publication, and any scheduled publication. Previously, only the latest draft and latest publication were migrated.
 - Data Migrations are executed in a single step, with the result written back to the database immediately, eliminating the separate prepare and accept phases. This significantly reduces version conflicts caused by users actively editing documents during migrations. If a data migration still fails due to version conflicts, it is automatically retried up to three times.
-- Data Migrations update existing rows instead of duplicating migrated publications and revisions in the database.
 - The `migrateAsync` functions now receive two additional parameters: `metadataSource` and `translations`. These parameters can also be modified and returned.
 - After data migrations are executed, statistics and references are re-extracted.
 - The CLI command `data-migration-run` now includes two new options: `--filter-by-id-from` and `--filter-by-id-to`, allowing migrations to be applied to a specific range of documents.
