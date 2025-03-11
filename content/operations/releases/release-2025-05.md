@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Show more than 100 revisions in history](https://github.com/livingdocsIO/livingdocs-server/pull/7830)
 - [Ignore the legacy revision.data.layout property that prevents diffing history entries on content type change](https://github.com/livingdocsIO/livingdocs-editor/pull/9670)
 - [Save field extractor changes after assistant finished](https://github.com/livingdocsIO/livingdocs-editor/pull/9673)
 - [fix(deps): update dependency @livingdocs/framework from 32.7.0 to v32.7.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7829)
