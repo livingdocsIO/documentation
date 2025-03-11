@@ -375,6 +375,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v254.0.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.50): fix(deps): update dependency axios from 1.7.4 to 1.8.2 [security]
 - [v254.0.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.49): chore(drone): Fix todos check
 - [v254.0.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.48): fix(documents): Increase maximum pagination limit of /documents endpoint to 1000
 - [v254.0.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v254.0.47): chore(drone): Remove nzz and demo tests
