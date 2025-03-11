@@ -10,7 +10,12 @@ useCases: |
 
 deprecation:
   since: release-2024-11
-  note: Menus and this endpoint should not be used anymore. The [Menu Tool]({{< ref "/guides/editor/menus" >}}) provides a better developer and user experience for managing menus.
+  note: |
+    The dedicated Menu Tool with the endpoint `GET /api/v1/menus/:channelHandle` has been deprecated in favor of modeling menus with data records as described below.
+    This endpoint will get removed with `release-2025-05`.
+
+    The [li-tree]({{< ref "/guides/editor/menus" >}}) metadata plugin provides a better developer and user experience for managing menus.
+    Please reach out for assistance with migrating from the Menu Tool to data records.
 
 scopes: public-api:read
 query: |
