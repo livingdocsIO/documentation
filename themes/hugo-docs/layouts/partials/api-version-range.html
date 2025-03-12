@@ -1,12 +1,4 @@
-{{ $page := .page }}
-{{ $endpoint := .endpoint }}
-
-{{ $versions := slice }}
-{{ range $v := partialCached "api-versions" $page true }}
-  {{ $matchesApiVersion := partial "api-version-matches" (dict "matcher" $endpoint.apiVersion "version" $v.version ) }}
-  {{ if not $matchesApiVersion }}{{ continue }}{{ end }}
-  {{ $versions = $versions | append $v }}
-{{ end }}
+{{ $versions := partial "api-version-array-matches" (dict "page" .page "endpoint" .endpoint) }}
 
 {{ $value := "" }}
 {{ if eq (len $versions) 1 }}
