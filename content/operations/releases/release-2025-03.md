@@ -473,6 +473,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.25): fix(history): Load old designs of revisions in the history view
 - [v115.22.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.24): fix(assistants): save field extractor changes after assistant finished
 
 - [v115.22.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.23): fix(inbox): implicit breaking change - remove support for video and file
