@@ -63,7 +63,7 @@ To learn about the necessary actions to update Livingdocs to `release-2025-01`, 
 
 - [Feature Webinar Recording](https://us02web.zoom.us/rec/share/92KnIUx16-tJuF1ekdmAVlANSMjCqt1AoeiKRupWnrA-c3CJT4Ziy6DH5XKNEIYd.I8Q9XkNv-G5uJQEk) | Passcode: v.32aM^7
 - [Feature Webinar Documentation](https://docs.google.com/presentation/d/1XpsOcLzC8DbmH5WCfdn1jjT5LVUE8KTmu0lWnKm1EBA/edit?usp=sharing)
-- [Dev Webinar Recording](https://us02web.zoom.us/rec/share/XGelwH8v0l5rUYGAljGo_5lwvu4yCMOXsk3wTqIwkDtjEDqB6HEC-TAg8u05tg7J.OnlrReuGNLyUyD7S?startTime=1736859542000) Passcode: Bc=54rh9
+- [Dev Webinar Recording](https://us02web.zoom.us/rec/share/XGelwH8v0l5rUYGAljGo_5lwvu4yCMOXsk3wTqIwkDtjEDqB6HEC-TAg8u05tg7J.OnlrReuGNLyUyD7S?startTime=1736859542000) | Passcode: Bc=54rh9
 - [Dev Webinar Slides](https://docs.google.com/presentation/d/10oEhDuNslywhvfLY2EQvTmaGs-lA4h2v6m09s9Zu6Tk/edit#slide=id.g27b8eb4a248_0_0)
 - [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
