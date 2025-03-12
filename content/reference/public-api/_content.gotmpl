@@ -13,14 +13,15 @@
 {{ end }}
 
 {{ range $key, $value := $.Site.Data.endpoints }}
-  {{ if not $value.apiVersion }}
-    {{ $value = merge $value (dict "apiVersion" (dict "neq" "beta")) }}
+  {{ if not $value.apiVersionConstraints }}
+    {{ $value = merge $value (dict "apiVersionConstraints" (dict "neq" "beta")) }}
   {{ end }}
 
   {{ if not $.Site.BuildDrafts }}
-    {{ if and $value.apiVersion.eq (in $upcoming $value.apiVersion.eq) }}{{ continue }}{{ end }}
-    {{ if and $value.apiVersion.gt (in $upcoming $value.apiVersion.gt) }}{{ continue }}{{ end }}
-    {{ if and $value.apiVersion.gte (in $upcoming $value.apiVersion.gte) }}{{ continue }}{{ end }}
+    {{ $constraint := $value.apiVersionConstraints }}
+    {{ if and $constraint.eq (in $upcoming $constraint.eq) }}{{ continue }}{{ end }}
+    {{ if and $constraint.gt (in $upcoming $constraint.gt) }}{{ continue }}{{ end }}
+    {{ if and $constraint.gte (in $upcoming $constraint.gte) }}{{ continue }}{{ end }}
   {{ end }}
 
   {{ $stat := os.Stat (printf "data/endpoints/%s.yaml" $key) }}

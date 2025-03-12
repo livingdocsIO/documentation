@@ -2,7 +2,7 @@ title: Compose a Publication
 
 endpointId: composition
 
-apiVersion:
+apiVersionConstraints:
   gte: 2025-03
 
 history:

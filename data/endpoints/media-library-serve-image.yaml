@@ -1,6 +1,6 @@
 title: Serve Image
 
-apiVersion:
+apiVersionConstraints:
   gte: 2025-03
 
 history:

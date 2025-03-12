@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (endpoints.length < 2) continue
     let keep
     for (const endpoint of endpoints) {
-      if (versionMatchesRange(currentVersion, endpoint.apiVersion)) {
+      if (versionMatchesRange(currentVersion, endpoint.apiVersionConstraints)) {
         keep = endpoint
         break
       }

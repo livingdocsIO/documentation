@@ -23,7 +23,7 @@
   {{ $apiExampleClass = print $apiExampleClass " api-example--no-title" }}
 {{ end }}
 
-{{ $endpointAttr := dict "endpointId" $endpoint.endpointId "apiVersion" $endpoint.apiVersion "latest" $apiVersion }}
+{{ $endpointAttr := dict "endpointId" $endpoint.endpointId "apiVersionConstraints" $endpoint.apiVersionConstraints "latest" $apiVersion }}
 
 
 <div

@@ -1,7 +1,7 @@
 title: Compose a Publication
 endpointId: composition
 
-apiVersion:
+apiVersionConstraints:
   eq: beta
 
 deprecation:
