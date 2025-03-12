@@ -633,6 +633,7 @@ This release we have patched the following vulnerabilities in the Livingdocs Ser
 - [CVE-2024-52798](https://github.com/advisories/GHSA-rhx6-c78j-4q9w) patched in `path-to-regexp` v0.1.12
 - [CVE-2024-55565](https://github.com/advisories/GHSA-mwcw-c2x4-8c55) patched in `nanoid` v3.3.8
 - [CVE-2025-22150](https://github.com/advisories/GHSA-c76h-2ccp-4975) patched in `undici` v6.21.1
+- [CVE-2025-27152] patched in `axios` v1.8.2
 
 No known vulnerabilities. :tada:
 
@@ -643,6 +644,7 @@ This release we have patched the following vulnerabilities in the Livingdocs Edi
 - [CVE-2024-52810](https://github.com/advisories/GHSA-hjwq-mjwj-4x6c) patched in `@intlify/shared` v9.14.2
 - [CVE-2024-55565](https://github.com/advisories/GHSA-mwcw-c2x4-8c55) patched in `nanoid` v3.3.8
 - [CVE-2025-22150](https://github.com/advisories/GHSA-c76h-2ccp-4975) patched in `undici` v6.21.1
+- [CVE-2025-27152] patched in `axios` v1.8.2
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
