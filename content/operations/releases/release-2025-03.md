@@ -454,6 +454,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v271.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.15): fix(history): Show more than 100 revisions
 - [v271.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.14): fix(logger): Do not try to serialize streams in pino serializer for axios
 
 - [v271.0.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.13): fix(deps): update dependency axios from 1.7.9 to 1.8.2 [security]
