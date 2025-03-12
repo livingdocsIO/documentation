@@ -689,6 +689,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.44): fix(deps): update dependency axios from 1.7.9 to 1.8.2 [security]
 - [v114.13.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.43): fix(history): Load old designs of revisions in the history view
 - [v114.13.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.42): fix(assistants): save field extractor changes after assistant finished
 - [v114.13.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.41): fix(peiq): do metadata extraction when replacing an image
