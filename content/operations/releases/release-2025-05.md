@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [feat: migrate comment header from angular to vue](https://github.com/livingdocsIO/livingdocs-editor/pull/9713)
 - [fix(deps): update dependency axios from 1.8.2 to v1.8.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9716)
 - [fix(deps): update dependency @babel/core from 7.26.9 to v7.26.10 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9711)
 - [Show more than 100 revisions in history](https://github.com/livingdocsIO/livingdocs-server/pull/7830)
