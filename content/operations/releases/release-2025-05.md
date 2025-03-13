@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Show image for current locale in media library lightbox](https://github.com/livingdocsIO/livingdocs-editor/pull/9719)
 - [Remove Menu Tool](https://github.com/livingdocsIO/livingdocs-server/pull/7838)
 - [Remove Menu Tool](https://github.com/livingdocsIO/livingdocs-editor/pull/9714)
 - [feat: migrate comment header from angular to vue](https://github.com/livingdocsIO/livingdocs-editor/pull/9713)
