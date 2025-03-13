@@ -70,3 +70,63 @@ responses:
           ]
         }
       ]
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Media Library
+  operationId: getIncomingDocumentReferencesForMediaLibraryEntry
+  summary: Get Incoming Publication References for a Media Library Entry
+  description: 'Added in: release-2022-03'
+  parameters:
+    - name: mediaId
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: limit
+      description: A limit for how much published documents to retrieve. Defaults
+        to 100. Max. 100.
+      in: query
+      schema:
+        type: number
+        examples: [100]
+    - name: offset
+      description: An offset into the query. Useful when getting more than 100 results
+        (pagination).
+      in: query
+      schema:
+        type: number
+        examples: [0]
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          example:
+            - id: 2
+              references:
+                - id: 9fKagDCiN6sb
+                  type: image
+                  location: image-directive
+                  componentId: doc-1ev8345oj0
+                  componentName: image
+                  directiveName: image
+                - id: 9fKagDCiN6sb
+                  type: image
+                  location: metadata
+                  propertyName: teaserImage
+            - id: 3
+              references:
+                - id: 9fKagDCiN6sb
+                  type: image
+                  location: image-directive
+                  componentId: doc-1euq8lq1o0
+                  componentName: image
+                  directiveName: image
+                - id: 9fKagDCiN6sb
+                  type: image
+                  location: metadata
+                  propertyName: teaserImage

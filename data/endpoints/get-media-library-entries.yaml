@@ -92,3 +92,74 @@ responses:
           }
         ]
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Media Library
+  operationId: getMediaLibraryEntries
+  summary: Get Media Library Entries
+  description: Fetch multiple Media Library Entries by their `id` or `externalId`
+  parameters:
+    - name: ids
+      description: Ids of a Media Library entries
+      in: query
+      schema:
+        type: string
+        examples: [gxMMLV1fc-cm, f4jH1hyijDiF]
+    - name: externalIds
+      description: Must be unique in combination with systemName
+      in: query
+      schema:
+        type: string
+        examples: [6hedie82]
+    - name: systemName
+      description: A string identifiyng the external system where the asset is imported
+        from. It is recommended that you always set this value and it is required
+        if you provide an externalId.
+      in: query
+      schema:
+        type: string
+        examples: [externalSystem]
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              mediaLibraryEntries:
+                type: array
+                items:
+                  '$ref': '#/components/schemas/MediaLibraryEntry'
+            examples:
+              - mediaLibraryEntries:
+                  - id: asze63i9
+                    version: 1
+                    mediaType: image
+                    asset:
+                      url: https://livingdocs.io/img.jpg
+                      mimeType: image/jpeg
+                      width: 1600
+                      height: 900
+                      size: 21000
+                    metadata:
+                      title: An Image
+                    createdAt: '2020-12-27T09:19:00.928Z'
+                    updatedAt: '2020-12-27T09:19:00.928Z'
+                  - id: 2er11b3i
+                    version: 1
+                    mediaType: image
+                    asset:
+                      url: https://livingdocs.io/img2.jpg
+                      mimeType: image/jpeg
+                      width: 1600
+                      height: 900
+                      size: 21000
+                    metadata:
+                      title: An Other Image
+                    createdAt: '2020-12-27T09:19:00.928Z'
+                    updatedAt: '2020-12-27T09:19:00.928Z'

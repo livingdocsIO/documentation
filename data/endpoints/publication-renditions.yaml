@@ -108,3 +108,90 @@ responses:
           }
         }
       ]
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Publications
+  operationId: getDocumentRendition
+  summary: Get Specific Renditions for a Publication
+  description: |-
+    **Upcoming Deprecation**
+
+    Please note that we’re working on offering a better alternative to the renditions with the `Composition API`.
+
+    If you need the HTML for a document you can use the `Composition API` and pass the field `html`.
+
+    **Required Server Configuration**
+
+    Renditions are only available if configured in the contentType configuration.
+  parameters:
+    - name: renditionHandles
+      description: A comma-separated list of renditions handles, e.g. `web,name`.
+      schema:
+        type: string
+      in: path
+      required: true
+      examples: [web, name]
+    - name: documentId
+      schema:
+        type: integer
+      in: path
+      required: true
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+            example:
+              - handle: web
+                content: |-
+                  <div class="head">
+                    <h1>a title</h1>
+                    <p class="lead">some lead</p>
+                  </div>
+                  <figure class="aspect-ratio left">
+                    <img class="doc-image-empty" src="data:image/svg+xml;charset=UTF-8,…">
+                    <figcaption>my caption</figcaption>
+                  </figure>
+                  <p>first paragraph</p>
+                  <p>second</p>
+                  <p>and third one. :)</p>
+              - handle: mobile
+                content:
+                  - id: doc-1b8i1ksh10
+                    identifier: timeline.head
+                    component: head
+                    content:
+                      title: a title
+                      text: some lead
+                  - id: doc-1b8i1ksh20
+                    identifier: timeline.normal
+                    component: normal
+                    content:
+                      caption: my caption
+                    styles:
+                      position: left
+                  - id: doc-1b8i1ksh30
+                    identifier: timeline.p
+                    component: p
+                    content:
+                      text: first paragraph
+                  - id: doc-1b8i1me1d0
+                    identifier: timeline.p
+                    component: p
+                    content:
+                      text: second paragraph
+                design:
+                  name: timeline
+                  version: 1.1.0
+              - handle: app
+                error:
+                  message: Processing of Channel 'app' for document '1' failed.
+                    Detailed error message…

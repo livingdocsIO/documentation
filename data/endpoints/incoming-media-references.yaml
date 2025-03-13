@@ -48,3 +48,49 @@ responses:
           ]
         }
       ]
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Publications
+  operationId: getIncomingMediaReferencesForDocument
+  summary: Incoming Media References
+  description: 'Get Incoming Media References for a Document. Added in: [release-2022-03](https://docs.livingdocs.io/operations/releases/release-2022-03/release-2022-03/)'
+  parameters:
+    - name: documentId
+      schema:
+        type: integer
+      in: path
+      required: true
+    - name: limit
+      description: A limit for how much published documents to retrieve. Defaults
+        to 100. Max. 100.
+      schema:
+        type: integer
+        examples: [100]
+      in: query
+    - name: offset
+      description: An offset into the query. Useful when getting more than 100 results
+        (pagination).
+      schema:
+        type: integer
+        examples: [0]
+      in: query
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+            example:
+              - id: 98sXCahM5PEk
+                references:
+                  - id: '3'
+                    type: document
+                    location: metadata
+                    propertyName: documentLink

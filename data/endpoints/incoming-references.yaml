@@ -63,3 +63,65 @@ responses:
           ]
         }
       ]
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:drafts:read
+  tags:
+    - Drafts
+  operationId: getIncomingDraftReferences
+  summary: Get Incoming Draft References for a Document
+  description: This endpoint is functionally equivalent to the incoming document
+    references endpoint for publications. But with this draft endpoint you will
+    receive references from unpublished documents as well as references from the
+    current state of documents even if these latest updates to the document are
+    not published yet.
+  parameters:
+    - name: documentId
+      schema:
+        type: integer
+      in: path
+      required: true
+    - name: limit
+      description: A limit for how much documents to retrieve. Defaults to 100.
+        Max. 100.
+      schema:
+        type: integer
+        examples: [100]
+      in: query
+    - name: offset
+      description: An offset into the query. Useful when getting more than 100 results
+        (pagination).
+      schema:
+        type: integer
+        examples: [0]
+      in: query
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: array
+            example:
+              - id: 4
+                references:
+                  - id: '1'
+                    type: document
+                    location: include-directive
+                    componentId: doc-1euiflvoq0
+                    serviceName: editable-teaser
+                    propertyName: article
+                    componentName: teaser-include
+                    directiveName: teaser
+              - id: 2
+                references:
+                  - id: '1'
+                    type: document
+                    location: include-directive
+                    componentId: doc-1eu6i7l880
+                    serviceName: editable-teaser
+                    propertyName: article
+                    componentName: teaser-include
+                    directiveName: teaser

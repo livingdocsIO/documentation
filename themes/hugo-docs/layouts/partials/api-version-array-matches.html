@@ -3,9 +3,9 @@
 
 {{ $versions := slice }}
 {{ if not $endpoint.apiVersionConstraints }}
-  {{ $versions = partialCached "api-versions" $page true }}
+  {{ $versions = hugo.Store.Get "api-versions" }}
 {{ else }}
-  {{ range $v := partialCached "api-versions" $page true }}
+  {{ range $v := hugo.Store.Get "api-versions" }}
     {{ $matchesApiVersion := partial "api-version-matches" (dict "matcher" $endpoint.apiVersionConstraints "version" $v.version ) }}
     {{ if not $matchesApiVersion }}{{ continue }}{{ end }}
     {{ $versions = $versions | append $v }}

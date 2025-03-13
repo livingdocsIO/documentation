@@ -53,3 +53,50 @@ responses:
           <lastmod>2021-05-01T05:35:32.920Z</lastmod>
         </url>
       </urlset>
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Sitemaps
+  operationId: getSitemapEntries
+  summary: Get a Sitemap's Entries
+  description: Get a Sitemap's Entries
+  parameters:
+    - name: baseUrl
+      description: Base url of the delivery host. `?baseUrl=https://livingdocs.io/`
+      required: true
+      in: query
+      schema:
+        type: string
+      examples: [https://livingdocs.io/]
+    - name: date
+      description: 'Date for the specific month matching the schema from the sitemap
+        index file. Example: `?date=2021-06` or `?date=2021-06.2`'
+      schema:
+        type: string
+      in: query
+      required: true
+    - name: contentTypes
+      description: 'A comma-separated list of contentTypes to include in the sitemap.
+        Example: `?contentTypes=regular,pages`'
+      schema:
+        type: string
+      in: query
+      examples: [regular, pages]
+    - name: entriesPerPage
+      description: Optional sitemap entry page size. Default 20000
+      schema:
+        type: string
+      in: query
+      examples: ['20000']
+  responses:
+    '200':
+      description: Sitemap
+      content:
+        application/xml:
+          examples:
+            xml:
+              summary: Sitemap example
+              externalValue: https://livingdocsio.github.io/openapi/examples/sitemap-entries.xml

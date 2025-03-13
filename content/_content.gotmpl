@@ -33,3 +33,50 @@ Expose releases.json for https://downstreams.cluster.livingdocs.io/
   "path" "releases.json"
   )
 }}
+
+{{ $versions := partialCached "_api-versions" $ true }}
+{{ if eq $.Site.BuildDrafts false }}{{ $versions = where $versions "upcoming" "eq" false }}{{ end }}
+{{ hugo.Store.Set "api-versions" $versions }}
+
+{{ $endpoints := partialCached "_api-endpoints" $ true }}
+{{ hugo.Store.Set "api-endpoints" $endpoints }}
+
+Expose openapi versions
+{{ $first := dict }}
+{{ range $version := $versions }}
+  {{ $openapiPaths := dict }}
+
+  {{ range $endpoint := $endpoints }}
+    {{ if not $endpoint.openapi }}{{ continue }}{{ end }}
+
+    {{ $path := and $endpoint.endpoint $endpoint.endpoint.path }}
+    {{ $method := lower (and $endpoint.endpoint $endpoint.endpoint.method) }}
+    {{ if not (and $method $path) }}{{ continue }}{{ end }}
+
+    {{ $path = replace $path ":apiVersion" $version.version }}
+    {{ $endpointSpec := merge (or (index $openapiPaths $path) dict) (dict $method $endpoint.openapi) }}
+    {{ if (partial "api-version-matches" (dict "version" $version.version "matcher" $endpoint.apiVersionConstraints)) }}
+      {{ $openapiPaths = merge $openapiPaths (dict $path $endpointSpec) }}
+    {{ end }}
+  {{ end }}
+
+  {{ $openapi := merge $.Site.Data.openapi (dict "paths" $openapiPaths) }}
+  {{ $path := printf "openapi-%s.json" $version.version }}
+
+  {{ $openapi = merge $openapi (dict "info" (merge $openapi.info (dict "version" $version.version))) }}
+  {{ if not $first }}{{ $first = $openapi }}{{ end }}
+
+  {{ $.AddResource (
+    dict
+    "content" (dict "mediaType" "application/json" "value" ($openapi | jsonify))
+    "path" $path
+    )
+  }}
+{{ end }}
+
+{{ $.AddResource (
+  dict
+  "content" (dict "mediaType" "application/json" "value" ($first | jsonify))
+  "path" "openapi.json"
+  )
+}}

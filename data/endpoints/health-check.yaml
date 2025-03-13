@@ -13,3 +13,13 @@ responses:
       {
         "status": "ok"
       }
+
+openapi:
+  tags:
+    - Health
+  operationId: getApiStatus
+  summary: Check API Status
+  description: Check API Status
+  responses:
+    '200':
+      description: Status ok

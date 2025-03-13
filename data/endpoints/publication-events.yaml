@@ -140,3 +140,133 @@ responses:
           "publicationId": 1131
         }
       ]
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Publications
+  operationId: getPublicationEvents
+  summary: Publication Events
+  description: Get Publication Events for the default channel
+  parameters:
+    - name: limit
+      description: 'Number of events to return. Default: 100. Highest limit: 1000.'
+      schema:
+        type: integer
+        examples: [100]
+      in: query
+    - name: reverse
+      description: Returns the events in reverse order, starting at the biggest
+        id.
+      schema:
+        type: boolean
+        examples: [false]
+      in: query
+    - name: contentTypes
+      description: Comma separated list of content types to use as filter.
+      schema:
+        type: string
+      in: query
+    - name: documentTypes
+      description: "Comma separated list of document types to use as filter. \n\nCan
+        be one of `article`, `page`, `data-record`."
+      schema:
+        type: string
+      in: query
+    - name: after
+      description: |-
+        **Deprecated**: Please use `id.gte` instead.
+
+        Return matching events after this event id.
+      schema:
+        type: integer
+      in: query
+      deprecated: true
+    - name: id.gte
+      description: |-
+        Filter by event id range.
+
+        **Supported filters**: `id.gte`, `id.gt`, `id.lte`, `id.lt`.
+
+        **Example**: To retrieve all events since you’ve fetched the last entry, use `?limit=1000&id.gt=40000`
+      schema:
+        type: string
+      in: query
+    - name: id.gt
+      schema:
+        type: string
+      in: query
+    - name: id.lte
+      schema:
+        type: string
+      in: query
+    - name: id.lt
+      schema:
+        type: string
+      in: query
+    - name: createdAt.gte
+      description: |-
+        Filter by event date range.
+
+        **Supported filters**: `createdAt.gte`, `createdAt.gt`, `createdAt.lte`, `createdAt.lt`.
+
+        **Example**: To retrieve all events since a specific timestamp, use `?limit=1000&createdAt.gte=2021-05-01T00:00:00.000Z`
+      schema:
+        type: string
+      in: query
+    - name: createdAt.gt
+      schema:
+        type: string
+      in: query
+    - name: createdAt.lte
+      schema:
+        type: string
+      in: query
+    - name: createdAt.lt
+      schema:
+        type: string
+      in: query
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+            example:
+              - id: 910
+                createdAt: '2016-12-27T09:19:00.928Z'
+                projectId: 30
+                channelId: 53
+                documentId: 7892
+                documentType: article
+                eventType: publish
+                publicationId: 1066
+              - id: 988
+                createdAt: '2016-12-27T09:32:10.898Z'
+                projectId: 30
+                channelId: 53
+                documentId: 7892
+                documentType: article
+                eventType: unpublish
+                publicationId: 1100
+              - id: 990
+                createdAt: '2016-12-27T09:33:05.010Z'
+                projectId: 30
+                channelId: 53
+                documentId: 8005
+                documentType: article
+                eventType: publish
+                publicationId: 1131
+              - id: 1011
+                createdAt: '2016-12-27T09:33:31.517Z'
+                projectId: 30
+                channelId: 53
+                documentId: 7892
+                documentType: article
+                eventType: update
+                publicationId: 1394

@@ -62,3 +62,53 @@ responses:
           }
         }
       ]
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Routing
+  operationId: resolveDocumentPath
+  summary: Resolve a Path to a Document
+  description: You need to activate the Categories / Routing Feature in the Project
+    Config in order to resolve paths to your documents. Routing is a quite advanced
+    topic and the examples only work with a default configuration. Find more [here](https://docs.livingdocs.io/guides/organisation/routing-system/).
+  parameters:
+    - name: path
+      description: |-
+        Path to the document.
+
+        **Example 1:** A page with a category `/news` can be found with `?path=/news.html`.
+
+        **Example 2:** A document with id 10, with category /news and a slug `hello` can be found with `?path=/magazin/hello-10.html`.
+      in: query
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          example:
+            - type: document
+              resource:
+                id: 173
+                statusCode: 200
+    '301':
+      description: Moved Permanently
+      content:
+        application/json:
+          example:
+            - type: redirect
+              path: '/path/to/redirect'
+              resource:
+                statusCode: 301
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          example:
+            status: 404
+            error: Not Found

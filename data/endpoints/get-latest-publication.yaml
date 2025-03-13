@@ -201,3 +201,40 @@ responses:
           }
         ]
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Publications
+  operationId: getLatestPublicationForDocument
+  summary: Latest Publication
+  description: 'Required scope: public-api:read. The response is a JSON object
+    with 4 possible top-level properties: systemdata, metadata, content, renditions'
+  parameters:
+    - name: documentId
+      schema:
+        type: integer
+      in: path
+      required: true
+    - name: fields
+      description: Filters which (comma separated) properties are included in the
+        response. Defaults to `systemdata,metadata,content,renditions`.
+      schema:
+        type: string
+        examples: [systemdata, metadata, content, renditions]
+      in: query
+    - name: renditions
+      description: 'A comma-separated list of rendition handles. Example: ?renditions=web,json'
+      schema:
+        type: string
+        examples: [web, json]
+      in: query
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            '$ref': '#/components/schemas/LatestPublicationForDocumentResponse'

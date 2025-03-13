@@ -16,6 +16,7 @@
     - get-project-config
     - get-project-configuration
     - get-channel-configuration
+    - get-latest-design-configuration
     - get-design-configuration
 
 - title: Composition API

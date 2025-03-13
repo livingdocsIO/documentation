@@ -83,3 +83,60 @@ responses:
         "state": "failed",
         "id": "098shjhv9"
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:write
+  tags:
+    - Imports
+  operationId: getImageImportStatus
+  summary: Check Import Status for Images
+  description: You can use this endpoint to check for the status and/or result
+    of a image import.
+  parameters:
+    - name: id
+      description: The id that Livingdocs provided you for your prior call to `/import/images`
+      schema:
+        type: string
+      required: true
+      in: query
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: object
+            example:
+              finished: true
+              state: success
+              id: 25bzj8j
+              images:
+                - status: success
+                  externalId: external-unique-id-123
+                  title: my image
+                  image:
+                    mediaId: jjiwhsf23kdk
+                    originalUrl: https://server.livingdocs.io/api/v1/images/truck-in-flood-water?id=MQkvMjAxOS8xMS8yMS9hMjA5NzkwZS0xNTQ5LTQ2ZDktYjNjNy1jZWZlMjhjN2VhOTkuanBlZwk2NzM=
+                    url: https://server.livingdocs.io/api/v1/images/truck-in-flood-water?id=MQkvMjAxOS8xMS8yMS9hMjA5NzkwZS0xNTQ5LTQ2ZDktYjNjNy1jZWZlMjhjN2VhOTkuanBlZwk2NzM=?format=auto
+                    width: 100
+                    height: 100
+                    mimeType: image/png
+                    imageService: imgix
+                - status: skipped
+                  reason: already exists
+                  externalId: external-unique-id-234
+                  title: my second image
+                  image:
+                    mediaId: jjiwhsf23wer
+                    originalUrl: https://server.livingdocs.io/api/v1/images/truck-in-flood-water?id=MQkvMjAxOS8xMS8yMS9hMjA5NzkwZS0xNTQ5LTQ2ZDktYjNjNy1jZWZlMjhjN2VhOTkuanBlZwk2NzM=
+                    url: https://server.livingdocs.io/api/v1/images/truck-in-flood-water?id=MQkvMjAxOS8xMS8yMS9hMjA5NzkwZS0xNTQ5LTQ2ZDktYjNjNy1jZWZlMjhjN2VhOTkuanBlZwk2NzM=?format=auto
+                    width: 100
+                    height: 100
+                    mimeType: image/png
+                    imageService: imgix
+                - status: failed
+                  reason: Could not upload image
+                  externalId: external-unique-id-345
+                  title: my third image

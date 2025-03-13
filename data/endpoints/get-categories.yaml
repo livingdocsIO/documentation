@@ -42,3 +42,53 @@ responses:
           "message": "Use of the category API requires a configurable channel. The project you requested uses a static configuration though."
         }
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Document Categories
+  operationId: getAllCategories
+  summary: Get Categories for a Project
+  description: You need to activate the Categories / Routing Feature in the Project
+    Config in order to query categories.
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                id:
+                  type: string
+                label:
+                  type: string
+                path:
+                  type: string
+          example:
+            - id: category-id-1
+              label: Category 1
+              path: '/category1'
+            - id: category-id-2
+              label: Category 2
+              path: '/category2'
+              parent: category-id-1
+            - id: category-id-3
+              label: Category 3
+              path: '/category3'
+    '400':
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            '$ref': '#/components/schemas/ErrorResponse'
+          example:
+            status: 400
+            error: Bad Request
+            error_details:
+              message: Use of the category API requires a configurable channel.
+                The project you requested uses a static configuration though.

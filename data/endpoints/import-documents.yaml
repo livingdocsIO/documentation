@@ -138,3 +138,156 @@ responses:
       {
         "id": "25bzj8j"
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:write
+  tags:
+    - Imports
+  operationId: getImportDocuments
+  summary: Import Documents
+  description: 'The document import does both create and update documents. The
+    import remembers the `externalId` / `systemName` pair and if an import matches
+    an existing pair, it will update (Hint: consider how to rebuild the `externalId`
+    when you want to update documents). The document import in Livingdocs is asynchronous.
+    You post a batch of documents that you want to import and get back an id with
+    which you can query later to get your result.'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          example:
+            systemName: identifier-for-your-system
+            webhook: https://my-domain.com/webhooks/document-import
+            context:
+              myIdentifier: some-identifier-sent-to-the-webhook
+            documents:
+              - id: 123abc
+                title: test import
+                contentType: article
+                checksum: xyz456
+                publicationDate: '1999-03-18T17:27:00.107Z'
+                livingdoc:
+                  content:
+                    - identifier: header
+                      content:
+                        catchline: imported catchline
+                        title: imported title
+                        author: imported author
+                  design:
+                    name: living-times
+                    version: 1.0.1
+                metadata:
+                  description: foo
+                translations:
+                  - locale: fr
+                    metadata:
+                      description: foo FR
+                flags:
+                  autoPublish: true
+          required:
+            - systemName
+            - documents
+          properties:
+            systemName:
+              type: string
+              description: Identifier for the system you are importing from, e.g.
+                an archive
+            webhook:
+              type: string
+              format: uri
+              description: Endpoint at the importing system that gets notified
+                by POST when import job is done. Notification contains the id
+                of the import job, the state and an overview.
+            context:
+              type: object
+              description: An object that is passed as context in the body of
+                the request to the webhook. Limited to 8192 Bytes.
+            documents:
+              description: An array of documents to import. Each entry is an object.
+              type: array
+              items:
+                type: object
+                required:
+                  - id
+                  - checksum
+                  - title
+                  - contentType
+                  - publicationDate
+                  - livingdoc
+                  - metadata
+                properties:
+                  id:
+                    type: string
+                    description: a unique id (stored as externalId in Livingdocs)
+                      that identifies the document on your end, must be unique
+                      within your project.
+                  title:
+                    type: string
+                    description: the title that the document should get in livingdocs
+                  checksum:
+                    type: string
+                    description: string to identify changes, e.g. an updated_at
+                      timestamp
+                  contentType:
+                    type: string
+                    description: the content type that the document should get
+                      in livingdocs
+                  publicationDate:
+                    type: string
+                    format: date-time
+                    description: sets the date of a publication. `autoPublish’
+                      flag must be set for this to have an effect.
+                  livingdoc:
+                    type: object
+                    description: 'A valid livingdoc declaration (content / design),
+                      must conform to your channel-config otherwise throws a validation
+                      error / release-2022-07: if no design is set it takes the
+                      design of the Project Config.'
+                  metadata:
+                    type: object
+                    description: An object of metadata, must conform to your channel-config
+                      otherwise throws a validation error
+                  translations:
+                    type: array
+                    items:
+                      type: object
+                    description: sets the date of a publication. `autoPublish`
+                      flag must be set for this to have an effect.
+                  flags:
+                    type: object
+                    description: "(optional) define additional import logic: \n`autoPublish`:
+                      publishes imported documents immediately \n`unpublish`:
+                      unpublishes imported documents immediately (release-2022-07)\n`onlyOverwriteUntouched`:
+                      only update documents that have no manual changes in livingdocs\n`neverOverwrite`:
+                      never update documents through the import API"
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+            example:
+              id: 25bzj8j
+    '429':
+      description: Usage Limit Exceeded
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+            example:
+              - status: 429
+                error: Usage Limit Exceeded
+                error_details:
+                  message: |-
+                    Your plan does not allow you to upload more than 100 per day.
+                          You already uploaded 99 in the last 24 hours and are trying to upload 10 more.
+                          Please try again later.
