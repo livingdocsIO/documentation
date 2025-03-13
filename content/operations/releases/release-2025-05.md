@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(li-button--bar): Long labels](https://github.com/livingdocsIO/livingdocs-editor/pull/9722)
 - [Show image for current locale in media library lightbox](https://github.com/livingdocsIO/livingdocs-editor/pull/9719)
 - [Remove Menu Tool](https://github.com/livingdocsIO/livingdocs-server/pull/7838)
 - [Remove Menu Tool](https://github.com/livingdocsIO/livingdocs-editor/pull/9714)
