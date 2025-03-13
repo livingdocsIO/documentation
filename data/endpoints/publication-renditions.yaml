@@ -18,13 +18,13 @@ useCases: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/documents/:documentId/latestPublication/renditions/:renditionHandles" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/documents/{documentId}/latestPublication/renditions/{renditionHandles}" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/:apiVersion/documents/:documentId/latestPublication/renditions/:renditionHandles
+  path: /api/:apiVersion/documents/{documentId}/latestPublication/renditions/{renditionHandles}
 parameters:
-  - name: :renditionHandles
+  - name: renditionHandles
     type: string
     required: true
     notes: 'A comma-separated list of renditions handles, e.g. "web,name"'
@@ -149,49 +149,49 @@ openapi:
             type: array
             items:
               type: object
-            example:
-              - handle: web
-                content: |-
-                  <div class="head">
-                    <h1>a title</h1>
-                    <p class="lead">some lead</p>
-                  </div>
-                  <figure class="aspect-ratio left">
-                    <img class="doc-image-empty" src="data:image/svg+xml;charset=UTF-8,…">
-                    <figcaption>my caption</figcaption>
-                  </figure>
-                  <p>first paragraph</p>
-                  <p>second</p>
-                  <p>and third one. :)</p>
-              - handle: mobile
-                content:
-                  - id: doc-1b8i1ksh10
-                    identifier: timeline.head
-                    component: head
-                    content:
-                      title: a title
-                      text: some lead
-                  - id: doc-1b8i1ksh20
-                    identifier: timeline.normal
-                    component: normal
-                    content:
-                      caption: my caption
-                    styles:
-                      position: left
-                  - id: doc-1b8i1ksh30
-                    identifier: timeline.p
-                    component: p
-                    content:
-                      text: first paragraph
-                  - id: doc-1b8i1me1d0
-                    identifier: timeline.p
-                    component: p
-                    content:
-                      text: second paragraph
-                design:
-                  name: timeline
-                  version: 1.1.0
-              - handle: app
-                error:
-                  message: Processing of Channel 'app' for document '1' failed.
-                    Detailed error message…
+            examples:
+              - - handle: web
+                  content: |-
+                    <div class="head">
+                      <h1>a title</h1>
+                      <p class="lead">some lead</p>
+                    </div>
+                    <figure class="aspect-ratio left">
+                      <img class="doc-image-empty" src="data:image/svg+xml;charset=UTF-8,…">
+                      <figcaption>my caption</figcaption>
+                    </figure>
+                    <p>first paragraph</p>
+                    <p>second</p>
+                    <p>and third one. :)</p>
+                - handle: mobile
+                  content:
+                    - id: doc-1b8i1ksh10
+                      identifier: timeline.head
+                      component: head
+                      content:
+                        title: a title
+                        text: some lead
+                    - id: doc-1b8i1ksh20
+                      identifier: timeline.normal
+                      component: normal
+                      content:
+                        caption: my caption
+                      styles:
+                        position: left
+                    - id: doc-1b8i1ksh30
+                      identifier: timeline.p
+                      component: p
+                      content:
+                        text: first paragraph
+                    - id: doc-1b8i1me1d0
+                      identifier: timeline.p
+                      component: p
+                      content:
+                        text: second paragraph
+                  design:
+                    name: timeline
+                    version: 1.1.0
+                - handle: app
+                  error:
+                    message: Processing of Channel 'app' for document '1' failed.
+                      Detailed error message…

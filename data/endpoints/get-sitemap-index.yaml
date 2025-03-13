@@ -93,6 +93,6 @@ openapi:
       content:
         application/xml:
           examples:
-            xml:
-              summary: Sitemap example
-              externalValue: https://livingdocsio.github.io/openapi/examples/sitemap-index.xml
+            - xml:
+                summary: Sitemap example
+                externalValue: https://livingdocsio.github.io/openapi/examples/sitemap-index.xml

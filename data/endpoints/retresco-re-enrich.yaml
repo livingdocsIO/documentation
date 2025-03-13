@@ -59,12 +59,12 @@ openapi:
       application/json:
         schema:
           type: object
-          example:
-            doc_ids:
-              - 1
-              - 2
-              - 3
-              - 4
+          examples:
+            - doc_ids:
+                - 1
+                - 2
+                - 3
+                - 4
           required:
             - doc_ids
           properties:

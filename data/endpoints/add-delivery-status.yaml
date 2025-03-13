@@ -14,7 +14,7 @@ description: |
 scopes: public-api:write
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X POST "https://server.livingdocs.io/api/:apiVersion/documents/:documentId/addDeliveryStatus" \
+  curl -k -X POST "https://server.livingdocs.io/api/:apiVersion/documents/{documentId}/addDeliveryStatus" \
     -H "Authorization: Bearer $ACCESS_TOKEN" \
     -H "Content-Type: application/json; charset=utf-8" \
     --data-binary @- << EOF
@@ -28,9 +28,9 @@ query: |
     EOF
 endpoint:
   method: POST
-  path: /api/:apiVersion/documents/:documentId/addDeliveryStatus
+  path: /api/:apiVersion/documents/{documentId}/addDeliveryStatus
 parameters:
-  - name: :documentId
+  - name: documentId
     type: integer
     required: true
     notes: ''
@@ -93,12 +93,12 @@ openapi:
       application/json:
         schema:
           type: object
-          example:
-            reportId: 2SG2MAA9RwPn
-            publicationId: 524
-            deliveryHandle: web
-            status: success
-            message: Message with <strong>html</strong>
+          examples:
+            - reportId: 2SG2MAA9RwPn
+              publicationId: 524
+              deliveryHandle: web
+              status: success
+              message: Message with <strong>html</strong>
           required:
             - publicationId
             - deliveryHandle

@@ -102,18 +102,18 @@ openapi:
       application/json:
         schema:
           type: object
-          example:
-            systemName: identifier-for-your-system
-            webhook: https://my-domain.com/webhooks/image-import
-            context:
-              myIdentifier: some-identifier-sent-to-the-webhook
-            images:
-              - url: https://placekitten.com/800/600
-                id: 123abc
-                fileName: cat
-                mediaType: image
-                metadata:
-                  title: kitten
+          examples:
+            - systemName: identifier-for-your-system
+              webhook: https://my-domain.com/webhooks/image-import
+              context:
+                myIdentifier: some-identifier-sent-to-the-webhook
+              images:
+                - url: https://placekitten.com/800/600
+                  id: 123abc
+                  fileName: cat
+                  mediaType: image
+                  metadata:
+                    title: kitten
           required:
             - systemName
             - images
@@ -176,8 +176,8 @@ openapi:
             properties:
               id:
                 type: string
-            example:
-              id: 25bzj8j
+            examples:
+              - id: 25bzj8j
     '429':
       description: Usage Limit Exceeded
       content:
@@ -186,7 +186,7 @@ openapi:
             type: array
             items:
               type: object
-            example:
+            examples:
               - status: 429
                 error: Usage Limit Exceeded
                 error_details:

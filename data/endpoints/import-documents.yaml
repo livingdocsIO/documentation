@@ -158,35 +158,35 @@ openapi:
       application/json:
         schema:
           type: object
-          example:
-            systemName: identifier-for-your-system
-            webhook: https://my-domain.com/webhooks/document-import
-            context:
-              myIdentifier: some-identifier-sent-to-the-webhook
-            documents:
-              - id: 123abc
-                title: test import
-                contentType: article
-                checksum: xyz456
-                publicationDate: '1999-03-18T17:27:00.107Z'
-                livingdoc:
-                  content:
-                    - identifier: header
-                      content:
-                        catchline: imported catchline
-                        title: imported title
-                        author: imported author
-                  design:
-                    name: living-times
-                    version: 1.0.1
-                metadata:
-                  description: foo
-                translations:
-                  - locale: fr
-                    metadata:
-                      description: foo FR
-                flags:
-                  autoPublish: true
+          examples:
+            - systemName: identifier-for-your-system
+              webhook: https://my-domain.com/webhooks/document-import
+              context:
+                myIdentifier: some-identifier-sent-to-the-webhook
+              documents:
+                - id: 123abc
+                  title: test import
+                  contentType: article
+                  checksum: xyz456
+                  publicationDate: '1999-03-18T17:27:00.107Z'
+                  livingdoc:
+                    content:
+                      - identifier: header
+                        content:
+                          catchline: imported catchline
+                          title: imported title
+                          author: imported author
+                    design:
+                      name: living-times
+                      version: 1.0.1
+                  metadata:
+                    description: foo
+                  translations:
+                    - locale: fr
+                      metadata:
+                        description: foo FR
+                  flags:
+                    autoPublish: true
           required:
             - systemName
             - documents
@@ -273,8 +273,8 @@ openapi:
             properties:
               id:
                 type: string
-            example:
-              id: 25bzj8j
+            examples:
+              - id: 25bzj8j
     '429':
       description: Usage Limit Exceeded
       content:
@@ -283,7 +283,7 @@ openapi:
             type: array
             items:
               type: object
-            example:
+            examples:
               - status: 429
                 error: Usage Limit Exceeded
                 error_details:
