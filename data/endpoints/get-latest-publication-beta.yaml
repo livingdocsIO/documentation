@@ -221,7 +221,7 @@ openapi:
         - public-api:read
   tags:
     - Publications
-  operationId: getLatestPublicationForDocumentBeta
+  operationId: getLatestPublicationForDocument
   summary: Latest Publication Beta
   description: 'The response is a JSON object with 5 possible top-level properties:
     systemdata, metadata, content, renditions, references'
