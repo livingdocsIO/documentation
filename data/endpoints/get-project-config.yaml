@@ -334,7 +334,7 @@ responses:
                   "icon": "book-open",
                   "url": {
                       "origin": "https://livingdocs.io",
-                      "pathPattern": "/doc/:id"
+                      "pathPattern": "/doc/{id}"
                   }
               }
           ],

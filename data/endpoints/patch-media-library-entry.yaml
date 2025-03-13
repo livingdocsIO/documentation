@@ -16,12 +16,12 @@ useCases: |
 scopes: public-api:write
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X PATCH "https://server.livingdocs.io/api/:apiVersion/mediaLibrary/:id" \
+  curl -k -X PATCH "https://server.livingdocs.io/api/:apiVersion/mediaLibrary/{id}" \
     -H "Content-Type: application/json" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: PATCH
-  path: /api/:apiVersion/mediaLibrary/:id
+  path: /api/:apiVersion/mediaLibrary/{id}
 parameters:
   - name: version
     type: string
@@ -79,13 +79,13 @@ example_request: |
 
 responses:
   - code: '200'
-    endpoint: /api/:apiVersion/mediaLibrary/:id
+    endpoint: /api/:apiVersion/mediaLibrary/{id}
     body: |
       {
         "status": 200
       }
   - code: '400'
-    endpoint: /api/:apiVersion/mediaLibrary/:id
+    endpoint: /api/:apiVersion/mediaLibrary/{id}
     body: |
       {
         "status": 400,
@@ -95,7 +95,7 @@ responses:
         }
       }
   - code: '404'
-    endpoint: /api/:apiVersion/mediaLibrary/:id
+    endpoint: /api/:apiVersion/mediaLibrary/{id}
     body: |
       {
         "status": 404,
@@ -106,7 +106,7 @@ responses:
         }
       }
   - code: '409'
-    endpoint: /api/:apiVersion/mediaLibrary/:id
+    endpoint: /api/:apiVersion/mediaLibrary/{id}
     body: |
       {
         "status": 409,
@@ -138,25 +138,25 @@ openapi:
       application/json:
         schema:
           type: object
-          example:
-            version: 1
-            patches:
-              - operation: setMetadataProperty
-                propertyName: title
-                value: updated title
-              - operation: replaceAsset
-                value:
-                  key: 2021/11/23/my-new-file.png
-                  url: 'https: //example.com/my-new-file.png'
-                  size: 10000
-                  width: 1000
-                  height: 800
-                  filename: my-new-file.png
-                  mimeType: image/png
-              - operation: revokeAsset
-              - operation: archive
-              - operation: removeAsset
-                locale: en
+          examples:
+            - version: 1
+              patches:
+                - operation: setMetadataProperty
+                  propertyName: title
+                  value: updated title
+                - operation: replaceAsset
+                  value:
+                    key: 2021/11/23/my-new-file.png
+                    url: 'https: //example.com/my-new-file.png'
+                    size: 10000
+                    width: 1000
+                    height: 800
+                    filename: my-new-file.png
+                    mimeType: image/png
+                - operation: revokeAsset
+                - operation: archive
+                - operation: removeAsset
+                  locale: en
           properties:
             version:
               type: number

@@ -91,24 +91,24 @@ openapi:
       description: OK
       content:
         application/json:
-          example:
-            - type: document
-              resource:
-                id: 173
-                statusCode: 200
+          examples:
+            - - type: document
+                resource:
+                  id: 173
+                  statusCode: 200
     '301':
       description: Moved Permanently
       content:
         application/json:
-          example:
-            - type: redirect
-              path: '/path/to/redirect'
-              resource:
-                statusCode: 301
+          examples:
+            - - type: redirect
+                path: '/path/to/redirect'
+                resource:
+                  statusCode: 301
     '404':
       description: Not Found
       content:
         application/json:
-          example:
-            status: 404
-            error: Not Found
+          examples:
+            - status: 404
+              error: Not Found

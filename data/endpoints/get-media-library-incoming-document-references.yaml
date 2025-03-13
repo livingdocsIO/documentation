@@ -8,14 +8,14 @@ useCases: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/mediaLibrary/:mediaId/incomingDocumentReferences" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/mediaLibrary/{mediaId}/incomingDocumentReferences" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 
 endpoint:
   method: GET
-  path: /api/:apiVersion/mediaLibrary/:mediaId/incomingDocumentReferences
+  path: /api/:apiVersion/mediaLibrary/{mediaId}/incomingDocumentReferences
 parameters:
-  - name: :mediaId
+  - name: mediaId
     type: string
     required: true
     notes: ''
@@ -105,28 +105,28 @@ openapi:
       description: ok
       content:
         application/json:
-          example:
-            - id: 2
-              references:
-                - id: 9fKagDCiN6sb
-                  type: image
-                  location: image-directive
-                  componentId: doc-1ev8345oj0
-                  componentName: image
-                  directiveName: image
-                - id: 9fKagDCiN6sb
-                  type: image
-                  location: metadata
-                  propertyName: teaserImage
-            - id: 3
-              references:
-                - id: 9fKagDCiN6sb
-                  type: image
-                  location: image-directive
-                  componentId: doc-1euq8lq1o0
-                  componentName: image
-                  directiveName: image
-                - id: 9fKagDCiN6sb
-                  type: image
-                  location: metadata
-                  propertyName: teaserImage
+          examples:
+            - - id: 2
+                references:
+                  - id: 9fKagDCiN6sb
+                    type: image
+                    location: image-directive
+                    componentId: doc-1ev8345oj0
+                    componentName: image
+                    directiveName: image
+                  - id: 9fKagDCiN6sb
+                    type: image
+                    location: metadata
+                    propertyName: teaserImage
+              - id: 3
+                references:
+                  - id: 9fKagDCiN6sb
+                    type: image
+                    location: image-directive
+                    componentId: doc-1euq8lq1o0
+                    componentName: image
+                    directiveName: image
+                  - id: 9fKagDCiN6sb
+                    type: image
+                    location: metadata
+                    propertyName: teaserImage

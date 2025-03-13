@@ -9,13 +9,13 @@ description: |
 scopes: public-api:drafts:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/drafts/:documentId/incomingDocumentReferences" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/drafts/{documentId}/incomingDocumentReferences" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/:apiVersion/drafts/:documentId/incomingDocumentReferences
+  path: /api/:apiVersion/drafts/{documentId}/incomingDocumentReferences
 parameters:
-  - name: :documentId
+  - name: documentId
     type: integer
     required: true
     notes: ''
@@ -104,24 +104,24 @@ openapi:
         application/json:
           schema:
             type: array
-            example:
-              - id: 4
-                references:
-                  - id: '1'
-                    type: document
-                    location: include-directive
-                    componentId: doc-1euiflvoq0
-                    serviceName: editable-teaser
-                    propertyName: article
-                    componentName: teaser-include
-                    directiveName: teaser
-              - id: 2
-                references:
-                  - id: '1'
-                    type: document
-                    location: include-directive
-                    componentId: doc-1eu6i7l880
-                    serviceName: editable-teaser
-                    propertyName: article
-                    componentName: teaser-include
-                    directiveName: teaser
+            examples:
+              - - id: 4
+                  references:
+                    - id: '1'
+                      type: document
+                      location: include-directive
+                      componentId: doc-1euiflvoq0
+                      serviceName: editable-teaser
+                      propertyName: article
+                      componentName: teaser-include
+                      directiveName: teaser
+                - id: 2
+                  references:
+                    - id: '1'
+                      type: document
+                      location: include-directive
+                      componentId: doc-1eu6i7l880
+                      serviceName: editable-teaser
+                      propertyName: article
+                      componentName: teaser-include
+                      directiveName: teaser

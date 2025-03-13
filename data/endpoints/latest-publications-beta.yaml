@@ -403,100 +403,100 @@ openapi:
                   '$ref': '#/components/schemas/Content'
                 renditions:
                   '$ref': '#/components/schemas/References'
-            example:
-              - systemdata:
-                  projectId: 1
-                  channelId: 1
-                  documentId: 1
-                  contentType: article
-                  documentType: article
-                  publicationId: 1
-                  firstPublicationDate: '2022-03-16T14:08:11.000Z'
-                  significantPublicationDate: '2022-10-26T07:25:00.000Z'
-                  visiblePublicationDate: '2022-10-27T06:00:00.000Z'
-                  updatedAt: '2022-10-30T16:32:04.170Z'
-                  layout: regular
-                  design:
-                    name: timeline
-                    version: 1.1.0
-                metadata:
-                  title: a title
-                  description: some lead
-                  dependencies: {}
-                content:
-                  - id: doc-1b8i1ksh10
-                    identifier: timeline.head
-                    component: head
-                    content:
-                      title: a title
-                      text: some lead
-                  - id: doc-1b8i1ksh20
-                    identifier: timeline.normal
-                    component: normal
-                    content:
-                      caption: my caption
-                    styles:
-                      position: left
-                  - id: doc-1b8i1ksh30
-                    identifier: timeline.p
-                    component: p
-                    content:
-                      text: first paragraph
-                  - id: doc-1b8i1me1d0
-                    identifier: timeline.p
-                    component: p
-                    content:
-                      text: second paragraph
-                references:
-                  - id: YbzTpusGyJtF
-                    type: language-group
-                    location: metadata
-                    propertyName: language
-              - systemdata:
-                  projectId: 1
-                  channelId: 1
-                  documentId: 2
-                  contentType: article
-                  documentType: article
-                  publicationId: 5
-                  firstPublicationDate: '2022-03-16T14:08:11.000Z'
-                  significantPublicationDate: '2022-10-26T07:25:00.000Z'
-                  visiblePublicationDate: '2022-10-27T06:00:00.000Z'
-                  updatedAt: '2022-10-30T16:32:04.170Z'
-                  layout: regular
-                  design:
-                    name: timeline
-                    version: 1.1.0
-                metadata:
-                  title: another title
-                  description: some other lead
-                  dependencies: {}
-                content:
-                  - id: doc-1b8i1ksh10
-                    identifier: timeline.head
-                    component: head
-                    content:
-                      title: a title
-                      text: some lead
-                  - id: doc-1b8i1ksh20
-                    identifier: timeline.normal
-                    component: normal
-                    content:
-                      caption: my caption
-                    styles:
-                      position: left
-                  - id: doc-1b8i1ksh30
-                    identifier: timeline.p
-                    component: p
-                    content:
-                      text: first paragraph
-                  - id: doc-1b8i1me1d0
-                    identifier: timeline.p
-                    component: p
-                    content:
-                      text: second paragraph
-                references:
-                  - id: YbzTpusGyJtF
-                    type: language-group
-                    location: metadata
-                    propertyName: language
+            examples:
+              - - systemdata:
+                    projectId: 1
+                    channelId: 1
+                    documentId: 1
+                    contentType: article
+                    documentType: article
+                    publicationId: 1
+                    firstPublicationDate: '2022-03-16T14:08:11.000Z'
+                    significantPublicationDate: '2022-10-26T07:25:00.000Z'
+                    visiblePublicationDate: '2022-10-27T06:00:00.000Z'
+                    updatedAt: '2022-10-30T16:32:04.170Z'
+                    layout: regular
+                    design:
+                      name: timeline
+                      version: 1.1.0
+                  metadata:
+                    title: a title
+                    description: some lead
+                    dependencies: {}
+                  content:
+                    - id: doc-1b8i1ksh10
+                      identifier: timeline.head
+                      component: head
+                      content:
+                        title: a title
+                        text: some lead
+                    - id: doc-1b8i1ksh20
+                      identifier: timeline.normal
+                      component: normal
+                      content:
+                        caption: my caption
+                      styles:
+                        position: left
+                    - id: doc-1b8i1ksh30
+                      identifier: timeline.p
+                      component: p
+                      content:
+                        text: first paragraph
+                    - id: doc-1b8i1me1d0
+                      identifier: timeline.p
+                      component: p
+                      content:
+                        text: second paragraph
+                  references:
+                    - id: YbzTpusGyJtF
+                      type: language-group
+                      location: metadata
+                      propertyName: language
+                - systemdata:
+                    projectId: 1
+                    channelId: 1
+                    documentId: 2
+                    contentType: article
+                    documentType: article
+                    publicationId: 5
+                    firstPublicationDate: '2022-03-16T14:08:11.000Z'
+                    significantPublicationDate: '2022-10-26T07:25:00.000Z'
+                    visiblePublicationDate: '2022-10-27T06:00:00.000Z'
+                    updatedAt: '2022-10-30T16:32:04.170Z'
+                    layout: regular
+                    design:
+                      name: timeline
+                      version: 1.1.0
+                  metadata:
+                    title: another title
+                    description: some other lead
+                    dependencies: {}
+                  content:
+                    - id: doc-1b8i1ksh10
+                      identifier: timeline.head
+                      component: head
+                      content:
+                        title: a title
+                        text: some lead
+                    - id: doc-1b8i1ksh20
+                      identifier: timeline.normal
+                      component: normal
+                      content:
+                        caption: my caption
+                      styles:
+                        position: left
+                    - id: doc-1b8i1ksh30
+                      identifier: timeline.p
+                      component: p
+                      content:
+                        text: first paragraph
+                    - id: doc-1b8i1me1d0
+                      identifier: timeline.p
+                      component: p
+                      content:
+                        text: second paragraph
+                  references:
+                    - id: YbzTpusGyJtF
+                      type: language-group
+                      location: metadata
+                      propertyName: language

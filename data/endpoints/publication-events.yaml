@@ -26,7 +26,7 @@ endpoint:
   method: GET
   path: /api/:apiVersion/publicationEvents
 parameters:
-  - name: :channelHandle
+  - name: channelHandle
     type: string
     required: false
     notes: 'The handle of the channel for which you want to get the events'
@@ -237,36 +237,36 @@ openapi:
             type: array
             items:
               type: object
-            example:
-              - id: 910
-                createdAt: '2016-12-27T09:19:00.928Z'
-                projectId: 30
-                channelId: 53
-                documentId: 7892
-                documentType: article
-                eventType: publish
-                publicationId: 1066
-              - id: 988
-                createdAt: '2016-12-27T09:32:10.898Z'
-                projectId: 30
-                channelId: 53
-                documentId: 7892
-                documentType: article
-                eventType: unpublish
-                publicationId: 1100
-              - id: 990
-                createdAt: '2016-12-27T09:33:05.010Z'
-                projectId: 30
-                channelId: 53
-                documentId: 8005
-                documentType: article
-                eventType: publish
-                publicationId: 1131
-              - id: 1011
-                createdAt: '2016-12-27T09:33:31.517Z'
-                projectId: 30
-                channelId: 53
-                documentId: 7892
-                documentType: article
-                eventType: update
-                publicationId: 1394
+            examples:
+              - - id: 910
+                  createdAt: '2016-12-27T09:19:00.928Z'
+                  projectId: 30
+                  channelId: 53
+                  documentId: 7892
+                  documentType: article
+                  eventType: publish
+                  publicationId: 1066
+                - id: 988
+                  createdAt: '2016-12-27T09:32:10.898Z'
+                  projectId: 30
+                  channelId: 53
+                  documentId: 7892
+                  documentType: article
+                  eventType: unpublish
+                  publicationId: 1100
+                - id: 990
+                  createdAt: '2016-12-27T09:33:05.010Z'
+                  projectId: 30
+                  channelId: 53
+                  documentId: 8005
+                  documentType: article
+                  eventType: publish
+                  publicationId: 1131
+                - id: 1011
+                  createdAt: '2016-12-27T09:33:31.517Z'
+                  projectId: 30
+                  channelId: 53
+                  documentId: 7892
+                  documentType: article
+                  eventType: update
+                  publicationId: 1394

@@ -36,13 +36,13 @@ useCases: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/documents/:documentId/latestPublication" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/documents/{documentId}/latestPublication" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/:apiVersion/documents/:documentId/latestPublication
+  path: /api/:apiVersion/documents/{documentId}/latestPublication
 parameters:
-  - name: :documentId
+  - name: documentId
     type: integer
     required: true
     notes: ''

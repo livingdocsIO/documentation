@@ -34,13 +34,13 @@ useCases: |
 scopes: public-api:write, public-api:drafts:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/documents/:documentId/latestDraft" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/documents/{documentId}/latestDraft" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/:apiVersion/documents/:documentId/latestDraft
+  path: /api/:apiVersion/documents/{documentId}/latestDraft
 parameters:
-  - name: :documentId
+  - name: documentId
     type: integer
     required: true
     notes: ''
@@ -176,57 +176,57 @@ openapi:
         application/json:
           schema:
             type: object
-            example:
-              systemdata:
-                projectId: 1
-                channelId: 1
-                documentId: 603
-                contentType: regular
-                documentType: article
-                firstPublicationDate: '2022-02-22T16:33:42.836Z'
-                updatedAt: '2022-02-22T16:33:42.836Z'
-                design:
-                  name: living-times
-                  version: 1.0.4
-              content:
-                - id: doc-1fsh4faeo0
-                  identifier: living-times.article-container
-                  component: article-container
-                  position: fixed
-                  containers:
-                    main:
-                      - id: doc-1fsh4faeo3
-                        identifier: living-times.paragraph
-                        component: paragraph
-                        content:
-                          text: First paragraph published.
-                      - id: doc-1fsh4g83l0
-                        identifier: living-times.paragraph
-                        component: paragraph
-                        content:
-                          text: Second paragraph unpublished.
-              references:
-                - id: KjqXSj2P1-L0
-                  type: language-group
-                  location: metadata
-                  propertyName: language
-              metadata:
-                language:
-                  label: German
-                  locale: de
-                  groupId: KjqXSj2P1-L0
-                title: Draft (Changed)
-              renditions:
-                - handle: web
-                  content: |-
-                    <div class="head">
-                      <h1>a title</h1>
-                      <p class="lead">some lead</p>
-                    </div>
-                    <figure class="aspect-ratio left">
-                      <img class="doc-image-empty" src="data:image/svg+xml;charset=UTF-8,…">
-                      <figcaption>my caption</figcaption>
-                    </figure>
-                    <p>first paragraph</p>
-                    <p>second</p>
-                    <p>and third one. :)</p>
+            examples:
+              - systemdata:
+                  projectId: 1
+                  channelId: 1
+                  documentId: 603
+                  contentType: regular
+                  documentType: article
+                  firstPublicationDate: '2022-02-22T16:33:42.836Z'
+                  updatedAt: '2022-02-22T16:33:42.836Z'
+                  design:
+                    name: living-times
+                    version: 1.0.4
+                content:
+                  - id: doc-1fsh4faeo0
+                    identifier: living-times.article-container
+                    component: article-container
+                    position: fixed
+                    containers:
+                      main:
+                        - id: doc-1fsh4faeo3
+                          identifier: living-times.paragraph
+                          component: paragraph
+                          content:
+                            text: First paragraph published.
+                        - id: doc-1fsh4g83l0
+                          identifier: living-times.paragraph
+                          component: paragraph
+                          content:
+                            text: Second paragraph unpublished.
+                references:
+                  - id: KjqXSj2P1-L0
+                    type: language-group
+                    location: metadata
+                    propertyName: language
+                metadata:
+                  language:
+                    label: German
+                    locale: de
+                    groupId: KjqXSj2P1-L0
+                  title: Draft (Changed)
+                renditions:
+                  - handle: web
+                    content: |-
+                      <div class="head">
+                        <h1>a title</h1>
+                        <p class="lead">some lead</p>
+                      </div>
+                      <figure class="aspect-ratio left">
+                        <img class="doc-image-empty" src="data:image/svg+xml;charset=UTF-8,…">
+                        <figcaption>my caption</figcaption>
+                      </figure>
+                      <p>first paragraph</p>
+                      <p>second</p>
+                      <p>and third one. :)</p>

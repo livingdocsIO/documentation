@@ -107,18 +107,18 @@ openapi:
       application/json:
         schema:
           type: object
-          example:
-            systemName: identifier-for-your-system
-            webhook: https://my-domain.com/webhooks/video-import
-            context:
-              myIdentifier: some-identifier-sent-to-the-webhook
-            videos:
-              - url: https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4
-                id: 123abc
-                fileName: foo
-                metadata:
-                  title: sample video
-                  credit: LC
+          examples:
+            - systemName: identifier-for-your-system
+              webhook: https://my-domain.com/webhooks/video-import
+              context:
+                myIdentifier: some-identifier-sent-to-the-webhook
+              videos:
+                - url: https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4
+                  id: 123abc
+                  fileName: foo
+                  metadata:
+                    title: sample video
+                    credit: LC
           required:
             - systemName
             - videos
@@ -173,8 +173,8 @@ openapi:
         application/json:
           schema:
             type: object
-            example:
-              id: 25bzj8j
+            examples:
+              - id: 25bzj8j
     '429':
       description: Usage Limit Exceeded
       content:
@@ -183,7 +183,7 @@ openapi:
             type: array
             items:
               type: object
-            example:
+            examples:
               - status: 429
                 error: Usage Limit Exceeded
                 error_details:

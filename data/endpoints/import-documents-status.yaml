@@ -111,22 +111,22 @@ openapi:
         application/json:
           schema:
             type: object
-            example:
-              finished: true
-              state: success
-              id: 25bzj8j
-              logs:
-                - system_name: integration-tests
-                  external_id: 8Sv9Nu0d
-                  document_id: 1
-                  checksum: 123abc
-                  project_id: 3
-                  channel_id: 2
-                  revision_id: 1
-                  version: 1
-                  id: 1
-                  state: imported
-                - state: failed
-                  reason: Invalid metadata
-                  external_id: external-unique-id-345
-                  title: my second document
+            examples:
+              - finished: true
+                state: success
+                id: 25bzj8j
+                logs:
+                  - system_name: integration-tests
+                    external_id: 8Sv9Nu0d
+                    document_id: 1
+                    checksum: 123abc
+                    project_id: 3
+                    channel_id: 2
+                    revision_id: 1
+                    version: 1
+                    id: 1
+                    state: imported
+                  - state: failed
+                    reason: Invalid metadata
+                    external_id: external-unique-id-345
+                    title: my second document

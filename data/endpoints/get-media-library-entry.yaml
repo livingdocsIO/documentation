@@ -10,10 +10,10 @@ description: |
 scopes: public-api:read
 endpoint:
   method: GET
-  path: /api/:apiVersion/mediaLibrary/:id
+  path: /api/:apiVersion/mediaLibrary/{id}
 responses:
   - code: '200'
-    endpoint: /api/:apiVersion/mediaLibrary/:id
+    endpoint: /api/:apiVersion/mediaLibrary/{id}
     body: |
       {
         "id": "asze63i9",
@@ -56,17 +56,17 @@ openapi:
         application/json:
           schema:
             '$ref': '#/components/schemas/MediaLibraryEntry'
-          example:
-            id: asze63i9
-            version: 1
-            mediaType: image
-            asset:
-              url: https://livingdocs.io/img.jpg
-              mimeType: image/jpeg
-              width: 1600
-              height: 900
-              size: 21000
-            metadata:
-              title: An Image
-            createdAt: '2020-12-27T09:19:00.928Z'
-            updatedAt: '2020-12-27T09:19:00.928Z'
+          examples:
+            - id: asze63i9
+              version: 1
+              mediaType: image
+              asset:
+                url: https://livingdocs.io/img.jpg
+                mimeType: image/jpeg
+                width: 1600
+                height: 900
+                size: 21000
+              metadata:
+                title: An Image
+              createdAt: '2020-12-27T09:19:00.928Z'
+              updatedAt: '2020-12-27T09:19:00.928Z'

@@ -5,13 +5,13 @@ description: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/mediaLibrary/:mediaId/incomingMediaReferences" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/mediaLibrary/{mediaId}/incomingMediaReferences" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/:apiVersion/mediaLibrary/:mediaId/incomingMediaReferences
+  path: /api/:apiVersion/mediaLibrary/{mediaId}/incomingMediaReferences
 parameters:
-  - name: :mediaId
+  - name: mediaId
     type: string
     required: true
   - name: ?limit
@@ -73,10 +73,10 @@ openapi:
       description: ok
       content:
         application/json:
-          example:
-            - id: B1LPgANhJFpo
-              references:
-                - id: 9fKagDCiN6sb
-                  type: image
-                  location: metadata
-                  propertyName: imageLink
+          examples:
+            - - id: B1LPgANhJFpo
+                references:
+                  - id: 9fKagDCiN6sb
+                    type: image
+                    location: metadata
+                    propertyName: imageLink

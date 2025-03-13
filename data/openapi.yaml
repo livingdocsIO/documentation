@@ -265,113 +265,113 @@ components:
           '$ref': '#/components/schemas/Content'
         renditions:
           '$ref': '#/components/schemas/Renditions'
-      example:
-        systemdata:
-          projectId: 1
-          channelId: 1
-          documentId: 1
-          contentType: regular
-          documentType: article
-          publicationId: 1
-          firstPublicationDate: '2022-03-16T14:08:11.000Z'
-          significantPublicationDate: '2022-10-26T07:25:00.000Z'
-          visiblePublicationDate: '2022-10-27T06:00:00.000Z'
-          updatedAt: '2023-03-18T16:32:04.170Z'
-          layout: regular
-          design:
-            name: timeline
-            version: 1.1.0
-        metadata:
-          title: a title
-          description: some lead
-          dependencies: {}
-        content:
-          - id: doc-1b8i1ksh10
-            identifier: timeline.head
-            component: head
-            content:
-              title: a title
-              text: some lead
-          - id: doc-1b8i1ksh20
-            identifier: timeline.normal
-            component: normal
-            content:
-              caption: my caption
-            styles:
-              position: left
-          - id: doc-1b8i1ksh30
-            identifier: timeline.p
-            component: p
-            content:
-              text: first paragraph
-          - id: doc-1b8i1me1d0
-            identifier: timeline.p
-            component: p
-            content:
-              text: second paragraph
-        renditions:
-          - handle: web
-            content: |-
-              <div class="head">
-                <h1>a title</h1>
-                <p class="lead">some lead</p>
-              </div>
-              <figure class="aspect-ratio left">
-                <img class="doc-image-empty" src="data:image/svg+xml;charset=UTF-8,…">
-                <figcaption>my caption</figcaption>
-              </figure>
-              <p>first paragraph</p>
-              <p>second</p>
-              <p> and third one. :)</p>
-          - handle: mobile
-            content:
+      examples:
+        - systemdata:
+            projectId: 1
+            channelId: 1
+            documentId: 1
+            contentType: regular
+            documentType: article
+            publicationId: 1
+            firstPublicationDate: '2022-03-16T14:08:11.000Z'
+            significantPublicationDate: '2022-10-26T07:25:00.000Z'
+            visiblePublicationDate: '2022-10-27T06:00:00.000Z'
+            updatedAt: '2023-03-18T16:32:04.170Z'
+            layout: regular
+            design:
+              name: timeline
+              version: 1.1.0
+          metadata:
+            title: a title
+            description: some lead
+            dependencies: {}
+          content:
+            - id: doc-1b8i1ksh10
+              identifier: timeline.head
+              component: head
               content:
-                - id: doc-1b8i1ksh10
-                  identifier: timeline.head
-                  component: head
-                  content:
-                    title: a title
-                    text: some lead
-                - id: doc-1b8i1ksh20
-                  identifier: timeline.normal
-                  component: normal
-                  content:
-                    caption: my caption
-                  styles:
-                    position: left
-                - id: doc-1b8i1ksh30
-                  identifier: timeline.p
-                  component: p
-                  content:
-                    text: first paragraph
-                - id: doc-1b8i1me1d0
-                  identifier: timeline.p
-                  component: p
-                  content:
-                    text: second paragraph
-              design:
-                name: timeline
-                version: 1.1.0
-          - handle: app
-            error:
-              message: Processing of Channel 'app' for document '1' failed. Detailed
-                error message…
+                title: a title
+                text: some lead
+            - id: doc-1b8i1ksh20
+              identifier: timeline.normal
+              component: normal
+              content:
+                caption: my caption
+              styles:
+                position: left
+            - id: doc-1b8i1ksh30
+              identifier: timeline.p
+              component: p
+              content:
+                text: first paragraph
+            - id: doc-1b8i1me1d0
+              identifier: timeline.p
+              component: p
+              content:
+                text: second paragraph
+          renditions:
+            - handle: web
+              content: |-
+                <div class="head">
+                  <h1>a title</h1>
+                  <p class="lead">some lead</p>
+                </div>
+                <figure class="aspect-ratio left">
+                  <img class="doc-image-empty" src="data:image/svg+xml;charset=UTF-8,…">
+                  <figcaption>my caption</figcaption>
+                </figure>
+                <p>first paragraph</p>
+                <p>second</p>
+                <p> and third one. :)</p>
+            - handle: mobile
+              content:
+                content:
+                  - id: doc-1b8i1ksh10
+                    identifier: timeline.head
+                    component: head
+                    content:
+                      title: a title
+                      text: some lead
+                  - id: doc-1b8i1ksh20
+                    identifier: timeline.normal
+                    component: normal
+                    content:
+                      caption: my caption
+                    styles:
+                      position: left
+                  - id: doc-1b8i1ksh30
+                    identifier: timeline.p
+                    component: p
+                    content:
+                      text: first paragraph
+                  - id: doc-1b8i1me1d0
+                    identifier: timeline.p
+                    component: p
+                    content:
+                      text: second paragraph
+                design:
+                  name: timeline
+                  version: 1.1.0
+            - handle: app
+              error:
+                message: Processing of Channel 'app' for document '1' failed. Detailed
+                  error message…
     CompositionApiRequestBody:
       type: object
-      example:
-        fields:
-          - systemdata
-          - metadata
-          - content
-          - html
-          - includes
-          - design
-        metadata:
-          preload:
-            myMetadataProp: true
-        resolveIncludes: true
-        renderOptions:
-          renderDirectiveInfo: true
+      examples:
+        - fields:
+            - systemdata
+            - metadata
+            - content
+            - html
+            - includes
+            - design
+          metadata:
+            preload:
+              myMetadataProp: true
+          resolveIncludes: true
+          renderOptions:
+            renderDirectiveInfo: true
       properties:
         fields:
           type: array
@@ -432,71 +432,71 @@ components:
                           type: object
         html:
           type: string
-      example:
-        systemdata:
-          projectId: 1
-          channelId: 1
-          documentId: 1
-          contentType: article
-          documentType: article
-          publicationId: 1
-          firstPublicationDate: '2022-03-16T14:08:11.000Z'
-          significantPublicationDate: '2022-10-26T07:25:00.000Z'
-          visiblePublicationDate: '2022-10-27T06:00:00.000Z'
-          updatedAt: '2023-03-18T16:32:04.170Z'
-          design:
-            name: timeline
-            version: 1.1.0
-        content:
-          - id: doc-1b8i1ksh10
-            identifier: timeline.head
-            component: head
-            content:
-              title: a title
-              text: some lead
-          - id: doc-2c95a77x14
-            identifier: timeline.teaser
-            component: teaser
-            content:
-              embed-teaser:
-                service: embed-teaser
-                params:
-                  document:
-                    "'$ref'": document
-                    reference:
-                      id: 7
-        metadata:
-          title: a title
-          description: some lead
-          topic:
-            "'$ref'": document
-            reference:
-              id: '5'
-            isPreloaded: true
-            value:
-              metadata:
-                title: Another title
-              systemdata:
-                projectId: 1
-                channelId: 1
-                documentId: 5
-                contentType: article
-                documentType: article
-                publicationId: 7
-                firstPublicationDate: '2022-03-16T14:08:11.000Z'
-                significantPublicationDate: '2022-10-26T07:25:00.000Z'
-                visiblePublicationDate: '2022-10-27T06:00:00.000Z'
-                updatedAt: '2023-03-18T17:32:04.170Z'
-                design:
-                  name: timeline
-                  version: 1.1.0
-        includes:
-          - componentId: doc-2c95a77x14
-            directiveName: embed-teaser
-            resolvedValue:
+      examples:
+        - systemdata:
+            projectId: 1
+            channelId: 1
+            documentId: 1
+            contentType: article
+            documentType: article
+            publicationId: 1
+            firstPublicationDate: '2022-03-16T14:08:11.000Z'
+            significantPublicationDate: '2022-10-26T07:25:00.000Z'
+            visiblePublicationDate: '2022-10-27T06:00:00.000Z'
+            updatedAt: '2023-03-18T16:32:04.170Z'
+            design:
+              name: timeline
+              version: 1.1.0
+          content:
+            - id: doc-1b8i1ksh10
+              identifier: timeline.head
+              component: head
               content:
-                - id: ref-7
-                  component: p
-                  content:
-                    text: Some text.
-        html: '<div>...</div>'
+                title: a title
+                text: some lead
+            - id: doc-2c95a77x14
+              identifier: timeline.teaser
+              component: teaser
+              content:
+                embed-teaser:
+                  service: embed-teaser
+                  params:
+                    document:
+                      "'$ref'": document
+                      reference:
+                        id: 7
+          metadata:
+            title: a title
+            description: some lead
+            topic:
+              "'$ref'": document
+              reference:
+                id: '5'
+              isPreloaded: true
+              value:
+                metadata:
+                  title: Another title
+                systemdata:
+                  projectId: 1
+                  channelId: 1
+                  documentId: 5
+                  contentType: article
+                  documentType: article
+                  publicationId: 7
+                  firstPublicationDate: '2022-03-16T14:08:11.000Z'
+                  significantPublicationDate: '2022-10-26T07:25:00.000Z'
+                  visiblePublicationDate: '2022-10-27T06:00:00.000Z'
+                  updatedAt: '2023-03-18T17:32:04.170Z'
+                  design:
+                    name: timeline
+                    version: 1.1.0
+          includes:
+            - componentId: doc-2c95a77x14
+              directiveName: embed-teaser
+              resolvedValue:
+                content:
+                  - id: ref-7
+                    component: p
+                    content:
+                      text: Some text.
+          html: '<div>...</div>'
