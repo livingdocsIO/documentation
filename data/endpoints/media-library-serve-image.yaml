@@ -23,3 +23,4 @@ responses:
   - code: '200'
     endpoint: /api/:apiVersion/mediaLibrary/serve-image/2025/03/14/c316ace8-0ded-4e41-9388-386a5759c01f.jpeg
     body: binary
+# openapi missing

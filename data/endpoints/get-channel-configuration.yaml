@@ -87,3 +87,23 @@ responses:
           }
         ]
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Project
+  operationId: getChannelConfigurationByChannelHandle
+  summary: Get Channel Configuration (deprecated 2023-03)
+  description: Get Channel Configuration (deprecated 2023-03)
+  deprecated: true
+  parameters:
+    - name: channelHandle
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok

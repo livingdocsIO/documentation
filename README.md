@@ -122,6 +122,16 @@ weight: 6
 ---
 ```
 
+## Endpoint Versioning
+
+### How to do versioned api changes
+
+### Behavior of versioned endpoints
+
+### How to introduce new endpoints
+
+### How to make changes to version endpoints
+
 ### Properties
 
 ```yaml

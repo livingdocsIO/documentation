@@ -1,0 +1,502 @@
+---
+openapi: 3.1.0
+info:
+  description: 'This is to quickly test the Livingdocs Public API. First create a
+    project on your Livingdocs instance. Then create a API Client for that
+    project. Use the token to authorize your requests. You can find out more about
+    Livingdocs at [https://livingdocs.io](https://livingdocs.io). '
+  version: 'PLACEHOLDER'
+  title: Livingdocs Public API
+  termsOfService: https://livingdocs.io/terms/
+  contact:
+    email: team@livingdocs.io
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+tags:
+  - name: Project
+    description: Project
+    externalDocs:
+      description: Docs
+      url: https://docs.livingdocs.io/reference/public-api/project/
+  - name: Document Command API
+    description: Execute commands on documents
+    externalDocs:
+      description: Docs
+      url: https://docs.livingdocs.io/reference/public-api/command-api/
+  - name: Composition
+    description: ''
+    externalDocs:
+      description: Docs
+      url: https://docs.livingdocs.io/reference/public-api/composition-api/
+  - name: Publications
+    description: Publications
+    externalDocs:
+      description: Docs
+      url: https://docs.livingdocs.io/reference/public-api/publications/
+  - name: Drafts
+    description: Drafts
+    externalDocs:
+      description: Docs
+      url: https://docs.livingdocs.io/reference/public-api/drafts/
+  - name: Document Lists
+    description: ''
+    externalDocs:
+      description: Docs
+      url: https://docs.livingdocs.io/reference/public-api/document-lists/
+  - name: Document Categories
+    description: ''
+    externalDocs:
+      description: Docs
+      url: https://docs.livingdocs.io/reference/public-api/document-categories/
+  - name: Media Library
+    description: Media Library
+    externalDocs:
+      description: Docs
+      url: https://docs.livingdocs.io/reference/public-api/media-library/
+  - name: Imports
+    description: Imports
+    externalDocs:
+      description: Docs
+      url: https://docs.livingdocs.io/reference/public-api/imports/
+  - name: Sitemaps
+    description: Sitemaps
+    externalDocs:
+      description: Docs
+      url: https://docs.livingdocs.io/reference/public-api/sitemaps/
+  - name: Menus
+    description: Menus
+    externalDocs:
+      description: Docs
+      url: https://docs.livingdocs.io/reference/public-api/menus/
+  - name: Routing
+    description: Routing
+    externalDocs:
+      description: Docs
+      url: https://docs.livingdocs.io/reference/public-api/routing/
+  - name: Add Delivery Status
+    description: ''
+    externalDocs:
+      description: Docs
+      url: https://docs.livingdocs.io/reference/public-api/add-delivery-status/
+  - name: Health
+    description: Check API status
+    externalDocs:
+      description: Docs
+      url: https://docs.livingdocs.io/reference/public-api/health/
+  - name: Retresco
+    description: Retresco Webhook
+    externalDocs:
+      description: Docs
+      url: https://docs.livingdocs.io/guides/integrations/retresco/
+paths: {}
+externalDocs:
+  description: Find out more about Livingdocs
+  url: http://docs.livingdocs.io
+servers:
+  - url: http://localhost:9090
+    description: localhost
+  - url: '{protocol}://{hostname}'
+    description: downstream
+    variables:
+      protocol:
+        enum:
+          - http
+          - https
+        default: https
+      hostname:
+        default: example.com
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    Systemdata:
+      type: object
+      properties:
+        projectId:
+          type: number
+        channelId:
+          type: number
+        documentId:
+          type: number
+        contentType:
+          type: string
+        documentType:
+          type: string
+        publicationId:
+          type: number
+        firstPublicationDate:
+          type: string
+          format: date-time
+        significantPublicationDate:
+          type: string
+          format: date-time
+        visiblePublicationDate:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        layout:
+          type: string
+        design:
+          type: object
+          properties:
+            name:
+              type: string
+            version:
+              type: string
+    Metadata:
+      type: object
+    Content:
+      type: array
+      items:
+        type: object
+    ErrorResponse:
+      type: object
+      properties:
+        status:
+          type: number
+        error:
+          type: string
+        error_details:
+          type: object
+          properties:
+            message:
+              type: string
+    Renditions:
+      type: array
+      items:
+        type: object
+        properties:
+          handle:
+            type: string
+          content:
+            oneOf:
+              - type: string
+                format: html
+              - type: object
+    References:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+          location:
+            type: string
+          propertyName:
+            type: string
+    MediaLibraryEntryAsset:
+      type: object
+      additionalProperties: false
+      properties:
+        storage:
+          deprecated: true
+          type: string
+        key:
+          type: string
+        url:
+          type: string
+          format: url
+        width:
+          type: integer
+        height:
+          type: integer
+        size:
+          type: integer
+        duration:
+          type: number
+        mimeType:
+          type: string
+        filename:
+          type: string
+    MediaLibraryEntry:
+      type: object
+      additionalProperties: false
+      properties:
+        id:
+          type: string
+        version:
+          type: number
+        mediaType:
+          type: string
+        asset:
+          '$ref': '#/components/schemas/MediaLibraryEntryAsset'
+        metadata:
+          type: object
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+    MediaLibraryTranslations:
+      type: array
+      items:
+        type: object
+        additionalProperties: false
+        required:
+          - locale
+          - metadata
+        properties:
+          locale:
+            type: string
+            pattern: "^[a-z][a-zA-Z0-9\\-]+$"
+          metadata:
+            title: Metadata
+            type: object
+            additionalProperties: true
+          asset:
+            '$ref': '#/components/schemas/MediaLibraryEntryAsset'
+    LatestPublicationForDocumentResponse:
+      type: object
+      properties:
+        systemdata:
+          '$ref': '#/components/schemas/Systemdata'
+        metadata:
+          '$ref': '#/components/schemas/Metadata'
+        content:
+          '$ref': '#/components/schemas/Content'
+        renditions:
+          '$ref': '#/components/schemas/Renditions'
+      example:
+        systemdata:
+          projectId: 1
+          channelId: 1
+          documentId: 1
+          contentType: regular
+          documentType: article
+          publicationId: 1
+          firstPublicationDate: '2022-03-16T14:08:11.000Z'
+          significantPublicationDate: '2022-10-26T07:25:00.000Z'
+          visiblePublicationDate: '2022-10-27T06:00:00.000Z'
+          updatedAt: '2023-03-18T16:32:04.170Z'
+          layout: regular
+          design:
+            name: timeline
+            version: 1.1.0
+        metadata:
+          title: a title
+          description: some lead
+          dependencies: {}
+        content:
+          - id: doc-1b8i1ksh10
+            identifier: timeline.head
+            component: head
+            content:
+              title: a title
+              text: some lead
+          - id: doc-1b8i1ksh20
+            identifier: timeline.normal
+            component: normal
+            content:
+              caption: my caption
+            styles:
+              position: left
+          - id: doc-1b8i1ksh30
+            identifier: timeline.p
+            component: p
+            content:
+              text: first paragraph
+          - id: doc-1b8i1me1d0
+            identifier: timeline.p
+            component: p
+            content:
+              text: second paragraph
+        renditions:
+          - handle: web
+            content: |-
+              <div class="head">
+                <h1>a title</h1>
+                <p class="lead">some lead</p>
+              </div>
+              <figure class="aspect-ratio left">
+                <img class="doc-image-empty" src="data:image/svg+xml;charset=UTF-8,…">
+                <figcaption>my caption</figcaption>
+              </figure>
+              <p>first paragraph</p>
+              <p>second</p>
+              <p> and third one. :)</p>
+          - handle: mobile
+            content:
+              content:
+                - id: doc-1b8i1ksh10
+                  identifier: timeline.head
+                  component: head
+                  content:
+                    title: a title
+                    text: some lead
+                - id: doc-1b8i1ksh20
+                  identifier: timeline.normal
+                  component: normal
+                  content:
+                    caption: my caption
+                  styles:
+                    position: left
+                - id: doc-1b8i1ksh30
+                  identifier: timeline.p
+                  component: p
+                  content:
+                    text: first paragraph
+                - id: doc-1b8i1me1d0
+                  identifier: timeline.p
+                  component: p
+                  content:
+                    text: second paragraph
+              design:
+                name: timeline
+                version: 1.1.0
+          - handle: app
+            error:
+              message: Processing of Channel 'app' for document '1' failed. Detailed
+                error message…
+    CompositionApiRequestBody:
+      type: object
+      example:
+        fields:
+          - systemdata
+          - metadata
+          - content
+          - html
+          - includes
+          - design
+        metadata:
+          preload:
+            myMetadataProp: true
+        resolveIncludes: true
+        renderOptions:
+          renderDirectiveInfo: true
+      properties:
+        fields:
+          type: array
+          items:
+            type: string
+            enum:
+              - systemdata
+              - metadata
+              - content
+              - html
+              - includes
+              - design
+        metadata:
+          type: object
+          additionalProperties: false
+          properties:
+            preload:
+              type: object
+        resolveIncludes:
+          type: boolean
+        renderOptions:
+          type: object
+          additionalProperties: false
+          properties:
+            renderDirectiveInfo:
+              type: boolean
+    CompositionApiResponse:
+      type: object
+      properties:
+        systemdata:
+          '$ref': '#/components/schemas/Systemdata'
+        metadata:
+          '$ref': '#/components/schemas/Metadata'
+        content:
+          '$ref': '#/components/schemas/Content'
+        includes:
+          type: array
+          items:
+            type: object
+            properties:
+              componentId:
+                type: string
+              directiveName:
+                type: string
+              resolvedValue:
+                type: object
+                properties:
+                  content:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        component:
+                          type: string
+                        content:
+                          type: object
+        html:
+          type: string
+      example:
+        systemdata:
+          projectId: 1
+          channelId: 1
+          documentId: 1
+          contentType: article
+          documentType: article
+          publicationId: 1
+          firstPublicationDate: '2022-03-16T14:08:11.000Z'
+          significantPublicationDate: '2022-10-26T07:25:00.000Z'
+          visiblePublicationDate: '2022-10-27T06:00:00.000Z'
+          updatedAt: '2023-03-18T16:32:04.170Z'
+          design:
+            name: timeline
+            version: 1.1.0
+        content:
+          - id: doc-1b8i1ksh10
+            identifier: timeline.head
+            component: head
+            content:
+              title: a title
+              text: some lead
+          - id: doc-2c95a77x14
+            identifier: timeline.teaser
+            component: teaser
+            content:
+              embed-teaser:
+                service: embed-teaser
+                params:
+                  document:
+                    "'$ref'": document
+                    reference:
+                      id: 7
+        metadata:
+          title: a title
+          description: some lead
+          topic:
+            "'$ref'": document
+            reference:
+              id: '5'
+            isPreloaded: true
+            value:
+              metadata:
+                title: Another title
+              systemdata:
+                projectId: 1
+                channelId: 1
+                documentId: 5
+                contentType: article
+                documentType: article
+                publicationId: 7
+                firstPublicationDate: '2022-03-16T14:08:11.000Z'
+                significantPublicationDate: '2022-10-26T07:25:00.000Z'
+                visiblePublicationDate: '2022-10-27T06:00:00.000Z'
+                updatedAt: '2023-03-18T17:32:04.170Z'
+                design:
+                  name: timeline
+                  version: 1.1.0
+        includes:
+          - componentId: doc-2c95a77x14
+            directiveName: embed-teaser
+            resolvedValue:
+              content:
+                - id: ref-7
+                  component: p
+                  content:
+                    text: Some text.
+        html: '<div>...</div>'

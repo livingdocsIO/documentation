@@ -315,3 +315,96 @@ responses:
           "message": "Cannot update outdated value'"
         }
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:write
+  tags:
+    - Document Command API
+  operationId: executeDocumentCommands
+  summary: Execute Commands on Documents. Added in release-2023-11.
+  description: Execute a Document Command based on its `id`. All commands run
+    in a single transaction.
+  parameters:
+    - name: documentId
+      in: path
+      description: Id of the document
+      required: true
+      schema:
+        type: integer
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          example:
+            version: 1
+            preconditions:
+              - type: isPublished
+                value: true
+            commands:
+              - operation: setMetadataProperty
+                propertyName: title
+                value: updated title
+                oldValue: previous title
+              - operation: setEditableDirective
+                componentId: doc-1a2b3c4d5
+                directiveName: headline
+                value: updated headline
+              - operation: publish
+          properties:
+            version:
+              type: number
+            preconditions:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+            commands:
+              type: array
+              items:
+                type: object
+                properties:
+                  operation:
+                    type: string
+  responses:
+    '204':
+      description: ok
+      content:
+        application/json:
+          example:
+            status: 204
+    '400':
+      description: Bad Request
+      content:
+        application/json:
+          example:
+            status: 400
+            error: Bad Request
+            error_details:
+              commands.0.operation: value of tag "operation" must be in oneOf
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          example:
+            status: 404
+            error: Not Found
+            error_details:
+              name: NotFound
+              message: Document Not Found
+    '409':
+      description: Conflict
+      content:
+        application/json:
+          example:
+            status: 409
+            error: Conflict
+            error_details:
+              name: Conflict
+              message: The document you tried to update is outdated
+              expectedVersion: 1
+              currentVersion: 2

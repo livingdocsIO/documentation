@@ -116,3 +116,57 @@ responses:
           "message": "Version: Expected 36 to be equal to 1"
         }
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:write
+  tags:
+    - Media Library
+  operationId: updateMediaLibraryEntry
+  summary: Patch a Single Media Library Entry
+  description: Patch a Media Library Entries by its `id`
+  parameters:
+    - name: id
+      description: Id of a Media Library entry
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          example:
+            version: 1
+            patches:
+              - operation: setMetadataProperty
+                propertyName: title
+                value: updated title
+              - operation: replaceAsset
+                value:
+                  key: 2021/11/23/my-new-file.png
+                  url: 'https: //example.com/my-new-file.png'
+                  size: 10000
+                  width: 1000
+                  height: 800
+                  filename: my-new-file.png
+                  mimeType: image/png
+              - operation: revokeAsset
+              - operation: archive
+              - operation: removeAsset
+                locale: en
+          properties:
+            version:
+              type: number
+            patches:
+              type: array
+              items:
+                type: object
+                properties:
+                  operation:
+                    type: string
+  responses:
+    '200':
+      description: ok

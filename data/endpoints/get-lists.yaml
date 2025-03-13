@@ -58,3 +58,38 @@ responses:
           "updatedAt": "2020-11-05T11:08:53.765Z"
         }
       ]
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Document Lists
+  operationId: getAndFilterDocumentLists
+  description: Get Lists
+  summary: Get Lists
+  parameters:
+    - name: name
+      description: Filters the result set and allows searching by list name.
+      in: query
+      schema:
+        type: string
+    - name: limit
+      description: A limit for how much documents to resolve for the requested list.
+        Defaults to 10. Max. 100.
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 100
+        examples: [10]
+    - name: offset
+      description: An offset into the query. Useful when getting more than 100 results
+        (pagination).
+      in: query
+      schema:
+        type: integer
+        examples: [0]
+  responses:
+    '200':
+      description: ok

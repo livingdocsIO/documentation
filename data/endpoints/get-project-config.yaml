@@ -389,3 +389,16 @@ responses:
               }
           ]
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:config:read
+  tags:
+    - Project
+  summary: Get Project Configuration
+  description: Get Project Configuration
+  operationId: getProjectConfig
+  responses:
+    '200':
+      description: ok

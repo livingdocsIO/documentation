@@ -5,13 +5,13 @@ description: |
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
-  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/categories/:categoryId" \
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/categories/{categoryId}" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
 endpoint:
   method: GET
-  path: /api/:apiVersion/categories/:categoryId
+  path: /api/:apiVersion/categories/{categoryId}
 parameters:
-  - name: :categoryId
+  - name: categoryId
     type: string
     required: true
     notes: Id of a specific categories as fetched from the /categories endpoint
@@ -54,3 +54,74 @@ responses:
           "message": "Inheritance queries can only be made up to a depth of 20."
         }
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Document Categories
+  operationId: getCategoryById
+  summary: Get a Category with all Information
+  description: You need to activate the Categories / Routing Feature in the Project
+    Config in order to query categories.
+  parameters:
+    - name: categoryId
+      description: Id of a specific categories as fetched from the /categories endpoint.
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: inheritMetadata
+      description: If set to `true` will inherit (but not overwrite) metadata properties
+        from all parents Inheritance depth is limited to 20.
+      in: query
+      schema:
+        type: boolean
+        examples: [false]
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+              label:
+                type: string
+              path:
+                type: string
+              metadata:
+                type: object
+          example:
+            id: 123abc
+            label: Sport
+            path: '/sport'
+            metadata:
+              adId: sport-ads
+              analyticsCode: sport-analytics
+    '400':
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            '$ref': '#/components/schemas/ErrorResponse'
+          example:
+            status: 400
+            error: Bad Request
+            error_details:
+              message: Use of the category API requires a configurable channel.
+                The project you requested uses a static configuration though.
+    '500':
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            '$ref': '#/components/schemas/ErrorResponse'
+          example:
+            status: 500
+            error: Bad Request
+            error_details:
+              message: Inheritance queries can only be made up to a depth of 20.

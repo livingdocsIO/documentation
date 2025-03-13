@@ -32,3 +32,41 @@ responses:
         "createdAt": "2020-12-27T09:19:00.928Z",
         "updatedAt": "2020-12-27T09:19:00.928Z"
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Media Library
+  operationId: getMediaLibraryEntryById
+  summary: Get a Single Media Library Entry
+  description: Fetch a Media Library Entries by its `id`
+  parameters:
+    - name: id
+      description: Id of a Media Library entry
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            '$ref': '#/components/schemas/MediaLibraryEntry'
+          example:
+            id: asze63i9
+            version: 1
+            mediaType: image
+            asset:
+              url: https://livingdocs.io/img.jpg
+              mimeType: image/jpeg
+              width: 1600
+              height: 900
+              size: 21000
+            metadata:
+              title: An Image
+            createdAt: '2020-12-27T09:19:00.928Z'
+            updatedAt: '2020-12-27T09:19:00.928Z'

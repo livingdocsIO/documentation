@@ -140,3 +140,93 @@ responses:
           }
         ]
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:write
+        - public-api:drafts:read
+  tags:
+    - Drafts
+  operationId: getLatestDraftForDocument
+  summary: Get Latest Draft
+  description:
+    "**Added in:** [release-2022-03](https://docs.livingdocs.io/operations/releases/release-2022-03/release-2022-03/)\n\n**Required
+    scope:** `public-api:write` `public-api:drafts:read`\n\nThis endpoint returns
+    the most recent draft version of a document. A token with permission The response
+    is a JSON object with 5 possible top-level properties: \n- systemdata \n-
+    metadata \n- content \n- references \n- renditions (if rendition handles are
+    specified)"
+  parameters:
+    - name: documentId
+      schema:
+        type: integer
+      in: path
+      required: true
+    - name: renditions
+      description: 'A comma-separated list of rendition handles. Example: `?renditions=web,json`'
+      schema:
+        type: string
+        examples: [web, json]
+      in: query
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: object
+            example:
+              systemdata:
+                projectId: 1
+                channelId: 1
+                documentId: 603
+                contentType: regular
+                documentType: article
+                firstPublicationDate: '2022-02-22T16:33:42.836Z'
+                updatedAt: '2022-02-22T16:33:42.836Z'
+                design:
+                  name: living-times
+                  version: 1.0.4
+              content:
+                - id: doc-1fsh4faeo0
+                  identifier: living-times.article-container
+                  component: article-container
+                  position: fixed
+                  containers:
+                    main:
+                      - id: doc-1fsh4faeo3
+                        identifier: living-times.paragraph
+                        component: paragraph
+                        content:
+                          text: First paragraph published.
+                      - id: doc-1fsh4g83l0
+                        identifier: living-times.paragraph
+                        component: paragraph
+                        content:
+                          text: Second paragraph unpublished.
+              references:
+                - id: KjqXSj2P1-L0
+                  type: language-group
+                  location: metadata
+                  propertyName: language
+              metadata:
+                language:
+                  label: German
+                  locale: de
+                  groupId: KjqXSj2P1-L0
+                title: Draft (Changed)
+              renditions:
+                - handle: web
+                  content: |-
+                    <div class="head">
+                      <h1>a title</h1>
+                      <p class="lead">some lead</p>
+                    </div>
+                    <figure class="aspect-ratio left">
+                      <img class="doc-image-empty" src="data:image/svg+xml;charset=UTF-8,…">
+                      <figcaption>my caption</figcaption>
+                    </figure>
+                    <p>first paragraph</p>
+                    <p>second</p>
+                    <p>and third one. :)</p>

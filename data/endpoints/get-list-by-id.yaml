@@ -98,3 +98,48 @@ responses:
         "createdAt": "2020-11-05T10:55:51.255Z",
         "updatedAt": "2020-11-05T10:55:51.255Z"
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Document Lists
+  operationId: getDocumentListById
+  summary: Get List by Id
+  description: Get List by Id
+  parameters:
+    - name: id
+      description: List Id
+      in: path
+      required: true
+      schema:
+        type: integer
+    - name: reverse
+      description: Pass `reverse=false` to get the list in the same order as you
+        see it in the editor. (the default is reverse=true for backwards compatibility
+        reasons)
+      in: query
+      schema:
+        type: boolean
+        examples: [false]
+    - name: fields
+      description: Filters which (comma separated) document properties are included
+        in the response. Defaults to `systemdata,metadata` also accepts `content`
+        (no renditions).
+      in: query
+      schema:
+        type: string
+        examples: [systemdata, metadata, content]
+    - name: limit
+      description: A limit for how much documents to resolve for the requested list.
+        Defaults to 100. Max. 100.
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        maximum: 100
+        examples: [100]
+  responses:
+    '200':
+      description: ok

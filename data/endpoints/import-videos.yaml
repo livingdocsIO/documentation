@@ -87,3 +87,107 @@ responses:
       {
         "id": "25bzj8j"
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:write
+  tags:
+    - Imports
+  operationId: importVideos
+  summary: Import Videos
+  description: 'The video import does both create and update videos. The import
+    remembers the `externalId` / `systemName` pair and if an import matches an
+    existing pair, it will update (Hint: consider how to rebuild the `externalId`
+    when you want to update videos). The video import in Livingdocs is asynchronous.
+    You post a batch of videos that you want to import and get back an id with
+    which you can query later to get your result.'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          example:
+            systemName: identifier-for-your-system
+            webhook: https://my-domain.com/webhooks/video-import
+            context:
+              myIdentifier: some-identifier-sent-to-the-webhook
+            videos:
+              - url: https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4
+                id: 123abc
+                fileName: foo
+                metadata:
+                  title: sample video
+                  credit: LC
+          required:
+            - systemName
+            - videos
+          properties:
+            systemName:
+              type: string
+              description: Identifier for the system you are importing from, e.g.
+                an archive
+            webhook:
+              type: string
+              format: uri
+              description: Endpoint at the importing system that gets notified
+                by POST when import job is done. Notification contains the id
+                of the import job, the state and an overview.
+            context:
+              type: object
+              description: An object that is passed as context in the body of
+                the request to the webhook. Limited to 8192 Bytes.
+            videos:
+              description: 'An array of videos to import. Each entry is an object
+                with the following keys, all of which are required:'
+              type: array
+              items:
+                type: object
+                required:
+                  - id
+                  - url
+                  - fileName
+                  - metadata
+                properties:
+                  id:
+                    type: string
+                    description: a unique id (stored as externalId in Livingdocs)
+                      that identifies the document on your end, must be unique
+                      within your project.
+                  url:
+                    type: string
+                    format: uri
+                    description: 'a URL to an video file, no data urls allowed,
+                      must be an video, allowed types: (TODO)'
+                  fileName:
+                    type: string
+                    description: the title that the video should get in livingdocs
+                  metadata:
+                    type: object
+                    description: An object of metadata according to your project
+                      config
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: object
+            example:
+              id: 25bzj8j
+    '429':
+      description: Usage Limit Exceeded
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+            example:
+              - status: 429
+                error: Usage Limit Exceeded
+                error_details:
+                  message: |-
+                    Your plan does not allow you to upload more than 100 per day.
+                          You already uploaded 99 in the last 24 hours and are trying to upload 10 more.
+                          Please try again later.

@@ -2,7 +2,7 @@
 {{ $endpoint := .endpoint }}
 {{ $currentVersion := .version }}
 
-{{ $versionedEndpoints := where (where $page.Site.RegularPages "Type" "api-endpoint") "Params.endpointId" $endpoint.endpointId }}
+{{ $versionedEndpoints := where (hugo.Store.Get "api-endpoints") "endpointId" "eq" $endpoint.endpointId }}
 {{ if gt (len $versionedEndpoints) 1 }}
   <select
     class="api-example__version-selector"
@@ -11,7 +11,7 @@
   >
     {{ $versions := slice }}
     {{ range $versionedEndpoints }}
-      {{ $versions = $versions | append (partial "api-version-string" (dict "page" $page "endpoint" .Params)) }}
+      {{ $versions = $versions | append (partial "api-version-string" (dict "page" $page "endpoint" .)) }}
     {{ end }}
 
     {{ range $v := sort $versions }}

@@ -43,3 +43,37 @@ responses:
           "name":"ConfigurationError"
         }
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - retresco
+  tags:
+    - Retresco
+  operationId: retrescoReenrich
+  summary: Retresco re-enrich Webhook
+  description: This hook should be used on Retresco when enabling the re-enrich
+    feature to trigger asynchronous document enrichment.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          example:
+            doc_ids:
+              - 1
+              - 2
+              - 3
+              - 4
+          required:
+            - doc_ids
+          properties:
+            doc_ids:
+              type: array
+              items:
+                oneOf:
+                  - type: number
+                  - type: string
+  responses:
+    '200':
+      description: doc_ids list accepted to process

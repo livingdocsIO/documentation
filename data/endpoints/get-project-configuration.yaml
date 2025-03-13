@@ -89,3 +89,17 @@ responses:
           }
         ]
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Project
+  operationId: getProjectionConfiguration
+  summary: Get Project Configuration (deprecated release-2023-03)
+  description: Your AccessToken is valid for a single project. This endpoint tells
+    you the details and configuration of this project.
+  responses:
+    '200':
+      description: ok

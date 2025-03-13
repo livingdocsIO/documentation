@@ -57,3 +57,42 @@ responses:
           <lastmod>2020-02-29T21:07:31.544Z</lastmod>
         </sitemap>
       </sitemapindex>
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Sitemaps
+  operationId: getSitemapIndex
+  summary: Get a Sitemap's Index
+  description: Get a Sitemap's Index
+  parameters:
+    - name: baseUrl
+      description: Base url of the delivery host
+      schema:
+        type: string
+      in: query
+      required: true
+    - name: contentTypes
+      description: 'A comma-separated list of contentTypes to include in the sitemap.
+        Example: `?contentTypes=regular,pages`'
+      schema:
+        type: string
+      in: query
+      examples: [regular, pages]
+    - name: entriesPerPage
+      description: Optional sitemap entry page size. Default 20000
+      schema:
+        type: string
+      in: query
+      examples: ['20000']
+  responses:
+    '200':
+      description: Sitemap
+      content:
+        application/xml:
+          examples:
+            xml:
+              summary: Sitemap example
+              externalValue: https://livingdocsio.github.io/openapi/examples/sitemap-index.xml

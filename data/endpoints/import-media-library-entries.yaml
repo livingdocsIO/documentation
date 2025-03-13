@@ -232,3 +232,264 @@ responses:
           }
         ]
       }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:write
+  tags:
+    - Imports
+  operationId: importMediaLibraryEntries
+  summary: Import Media Library Entries
+  description: |-
+    When you can upload images to the configured Media Library storage (e.g. AWS S3) yourself it is possible to create Media Library Entries through the API.
+
+    This has the advantage that the entris will be included in the response directly in contrast to the importImages endpoint where you only get a job id.
+
+    You can also provide a custom id to entries which helps with importing documents where images in the document should be referenced with the correct `mediaId` maybe even before creating the Media Library Entries themselves.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          example:
+            mediaLibraryEntries:
+              - id: custom-1
+                systemName: externalSystem
+                externalId: 6hedie82
+                mediaType: image
+                asset:
+                  key: 2022/08/25/d6068c02-ca85-421d-948d-ee0e2c15f372.jpeg
+                  url: https://livingdocs-images-development.s3.amazonaws.com/2022/08/25/d6068c02-ca85-421d-948d-ee0e2c15f372.jpeg
+                  size: 34910
+                  width: 640
+                  height: 427
+                  filename: super-mario.jpeg
+                  mimeType: image/jpeg
+                metadata:
+                  title: This is Super Mario!
+                translations:
+                  - asset:
+                      key: 2022/09/30/60984f90-c766-4546-9bc8-61f0832f9755.jpeg
+                      url: https://livingdocs-images-development.s3.amazonaws.com/2022/09/30/60984f90-c766-4546-9bc8-61f0832f9755.jpeg
+                      size: 188497
+                      width: 640
+                      height: 853
+                      filename: jpg-super-mario-wall.jpg
+                      mimeType: image/jpeg
+                    locale: fr
+                    metadata:
+                      title: C'est Super Mario!
+              - id: custom-2
+                systemName: externalSystem
+                externalId: ahedie8x
+                mediaType: file
+                asset:
+                  key: 2022/09/30/a1cb173d-e85f-498b-996e-5ce46058e9b9.pdf
+                  url: https://livingdocs-files-development.s3.amazonaws.com/2022/09/30/a1cb173d-e85f-498b-996e-5ce46058e9b9.pdf
+                  size: 3028
+                  filename: a-simple-pdf.pdf
+                  mimeType: application/pdf
+                metadata:
+                  title: A simple PDF
+                translations:
+                  - locale: fr
+                    metadata:
+                      title: Un simple PDF
+              - id: custom-3
+                systemName: externalSystem
+                externalId: srfhediess
+                mediaType: video
+                asset:
+                  key: 2022/09/30/2804fc3d-098d-4f8f-b25c-c6c15583d672.mp4
+                  url: https://livingdocs-videos-development.s3.amazonaws.com/2022/09/30/2804fc3d-098d-4f8f-b25c-c6c15583d672.mp4
+                  size: 8633462
+                  width: 1280
+                  height: 720
+                  duration: 35.241667
+                  filename: fire.mp4
+                  mimeType: video/mp4
+                metadata:
+                  title: This is a fire
+                translations:
+                  - locale: fr
+                    metadata:
+                      title: C'est un feu
+          required:
+            - mediaLibraryEntries
+          properties:
+            mediaLibraryEntries:
+              description: An array of documents to import. Each entry is an object.
+              type: array
+              items:
+                type: object
+                discriminator:
+                  propertyName: mediaType
+                properties:
+                  mediaType:
+                    type: string
+                required:
+                  - mediaType
+                oneOf:
+                  - type: object
+                    properties:
+                      id:
+                        type: string
+                        pattern: "^[a-zA-Z0-9\\-]{1,32}$"
+                        description: 'Custom id (Allowed characters: a-z, A-Z, 0-9,
+                          and -). If omitted a random id will be generated.'
+                      systemName:
+                        type: string
+                        description: A string identifiyng the external system where
+                          the asset is imported from. It is recommended that you
+                          always set this value and it is required if you provide
+                          an externalId.
+                      externalId:
+                        type: string
+                        description: Must be unique in combination with systemName.
+                      mediaType:
+                        type: string
+                        enum:
+                          - image
+                      asset:
+                        type: object
+                        properties:
+                          key:
+                            type: string
+                          url:
+                            type: string
+                            format: uri
+                            pattern: (http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|png|svg|webp|mp4|mov))
+                          size:
+                            type: number
+                          width:
+                            type: number
+                          height:
+                            type: number
+                          filename:
+                            type: string
+                          mimeType:
+                            type: string
+                        required:
+                          - key
+                          - url
+                          - size
+                          - width
+                          - height
+                          - mimeType
+                          - filename
+                      metadata:
+                        type: object
+                      translations:
+                        '$ref': '#/components/schemas/MediaLibraryTranslations'
+                    required:
+                      - mediaType
+                      - asset
+                  - type: object
+                    properties:
+                      id:
+                        type: string
+                        pattern: "^[a-zA-Z0-9\\-]{1,32}$"
+                        description: 'Custom id (Allowed characters: a-z, A-Z, 0-9,
+                          and -). If omitted a random id will be generated.'
+                      systemName:
+                        type: string
+                        description: A string identifiyng the external system where
+                          the asset is imported from. It is recommended that you
+                          always set this value and it is required if you provide
+                          an externalId.
+                      externalId:
+                        type: string
+                        description: Must be unique in combination with systemName.
+                      mediaType:
+                        type: string
+                        enum:
+                          - file
+                      asset:
+                        type: object
+                        properties:
+                          key:
+                            type: string
+                          url:
+                            type: string
+                            format: uri
+                            pattern: (http)?s?:?(\/\/[^"']*\.*)
+                          size:
+                            type: number
+                          filename:
+                            type: string
+                          mimeType:
+                            type: string
+                        required:
+                          - key
+                          - url
+                          - size
+                          - mimeType
+                          - filename
+                      metadata:
+                        type: object
+                      translations:
+                        '$ref': '#/components/schemas/MediaLibraryTranslations'
+                    required:
+                      - mediaType
+                      - asset
+                  - type: object
+                    properties:
+                      id:
+                        type: string
+                        pattern: "^[a-zA-Z0-9\\-]{1,32}$"
+                        description: 'Custom id (Allowed characters: a-z, A-Z, 0-9,
+                          and -). If omitted a random id will be generated.'
+                      systemName:
+                        type: string
+                        description: A string identifiyng the external system where
+                          the asset is imported from. It is recommended that you
+                          always set this value and it is required if you provide
+                          an externalId.
+                      externalId:
+                        type: string
+                        description: Must be unique in combination with systemName.
+                      mediaType:
+                        type: string
+                        enum:
+                          - video
+                      asset:
+                        type: object
+                        properties:
+                          key:
+                            type: string
+                          url:
+                            type: string
+                            format: uri
+                            pattern: (http)?s?:?(\/\/[^"']*\.*)
+                          size:
+                            type: number
+                          width:
+                            type: number
+                          height:
+                            type: number
+                          duration:
+                            type: number
+                          filename:
+                            type: string
+                          mimeType:
+                            type: string
+                        required:
+                          - key
+                          - url
+                          - size
+                          - width
+                          - height
+                          - duration
+                          - mimeType
+                          - filename
+                      metadata:
+                        type: object
+                      translations:
+                        '$ref': '#/components/schemas/MediaLibraryTranslations'
+                    required:
+                      - mediaType
+                      - asset
+  responses:
+    '200':
+      description: successful operation

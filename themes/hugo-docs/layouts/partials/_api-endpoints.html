@@ -1,0 +1,25 @@
+{{ $versions := partial "_api-versions" $ }}
+{{ $endpoints := slice }}
+{{ $upcoming := slice }}
+{{ range where $versions "upcoming" "eq" true }}
+  {{ $upcoming = $upcoming | append .version }}
+{{ end }}
+
+{{ range $key, $value := $.Site.Data.endpoints }}
+  {{ if not $value.apiVersionConstraints }}
+    {{ $value = merge $value (dict "apiVersionConstraints" (dict "neq" "beta")) }}
+  {{ end }}
+
+  {{ if not $.Site.BuildDrafts }}
+    {{ $constraint := $value.apiVersionConstraints }}
+    {{ if and $constraint.eq (in $upcoming $constraint.eq) }}{{ continue }}{{ end }}
+    {{ if and $constraint.gt (in $upcoming $constraint.gt) }}{{ continue }}{{ end }}
+    {{ if and $constraint.gte (in $upcoming $constraint.gte) }}{{ continue }}{{ end }}
+  {{ end }}
+
+  {{ $stat := os.Stat (printf "data/endpoints/%s.yaml" $key) }}
+  {{ $endpoint := merge $value (dict "endpointId" (or $value.endpointId $key) "hidden" true "endpointFile" $key "osStat" $stat) }}
+  {{ $endpoints = $endpoints | append $endpoint }}
+{{ end }}
+
+{{ return $endpoints }}
