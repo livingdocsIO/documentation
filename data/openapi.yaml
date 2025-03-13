@@ -227,9 +227,11 @@ components:
         mediaType:
           type: string
         asset:
-          '$ref': '#/components/schemas/MediaLibraryEntryAsset'
+          $ref: '#/components/schemas/MediaLibraryEntryAsset'
         metadata:
           type: object
+        translations:
+          $ref: '#/components/schemas/MediaLibraryTranslations'
         createdAt:
           type: string
           format: date-time
