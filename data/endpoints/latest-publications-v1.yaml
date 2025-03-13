@@ -258,7 +258,9 @@ openapi:
         response. Defaults to `systemdata,metadata,content` (no renditions).
       schema:
         type: string
-        examples: [systemdata, metadata, content]
+      examples:
+        default:
+          value: systemdata,metadata,content
       in: query
     - name: limit
       description: A limit for how much published documents to retrieve. Defaults
@@ -267,7 +269,9 @@ openapi:
         type: integer
         minimum: 0
         maximum: 100
-        examples: [100]
+      examples:
+        default:
+          value: 100
       in: query
     - name: offset
       description: An offset into the query. Useful when getting more than 100 results
@@ -291,7 +295,9 @@ openapi:
       description: Comma separated list of content types to use as filter.
       schema:
         type: string
-        examples: [regular]
+      examples:
+        regularArticles:
+          value: regular
       in: query
     - name: documentTypes
       description: |-
@@ -299,7 +305,9 @@ openapi:
         Can be one of `article`, `page`, `data-record`.
       schema:
         type: string
-        examples: [article, page, data-record]
+      examples:
+        specificDocumentTypes:
+          value: article,page,data-record
       in: query
     - name: id
       description: "Filter by one or multiple document ids.\n\nExample 1: `?id=12`\n\nExample
@@ -346,25 +354,33 @@ openapi:
       schema:
         type: string
         format: date-time
-        examples: ['2021-01-30T08:30:00Z']
+      examples:
+        example:
+          value: '2021-01-30T08:30:00Z'
       in: query
     - name: publishedAt.gt
       schema:
         type: string
         format: date-time
-        examples: ['2021-01-30T08:30:00Z']
+      examples:
+        example:
+          value: '2021-01-30T08:30:00Z'
       in: query
     - name: publishedAt.lte
       schema:
         type: string
         format: date-time
-        examples: ['2021-01-30T08:30:00Z']
+      examples:
+        example:
+          value: '2021-01-30T08:30:00Z'
       in: query
     - name: publishedAt.lt
       schema:
         type: string
         format: date-time
-        examples: ['2021-01-30T08:30:00Z']
+      examples:
+        example:
+          value: '2021-01-30T08:30:00Z'
       in: query
   responses:
     '200':
@@ -382,90 +398,92 @@ openapi:
                   '$ref': '#/components/schemas/Metadata'
                 content:
                   '$ref': '#/components/schemas/Content'
-            example:
-              - systemdata:
-                  projectId: 1
-                  channelId: 1
-                  documentId: 1
-                  contentType: article
-                  documentType: article
-                  publicationId: 1
-                  firstPublicationDate: '2022-03-16T14:08:11.000Z'
-                  significantPublicationDate: '2022-10-26T07:25:00.000Z'
-                  visiblePublicationDate: '2022-10-27T06:00:00.000Z'
-                  updatedAt: '2022-10-30T16:32:04.170Z'
-                  layout: regular
-                  design:
-                    name: timeline
-                    version: 1.1.0
-                metadata:
-                  title: a title
-                  description: some lead
-                  dependencies: {}
-                content:
-                  - id: doc-1b8i1ksh10
-                    identifier: timeline.head
-                    component: head
-                    content:
-                      title: a title
-                      text: some lead
-                  - id: doc-1b8i1ksh20
-                    identifier: timeline.normal
-                    component: normal
-                    content:
-                      caption: my caption
-                    styles:
-                      position: left
-                  - id: doc-1b8i1ksh30
-                    identifier: timeline.p
-                    component: p
-                    content:
-                      text: first paragraph
-                  - id: doc-1b8i1me1d0
-                    identifier: timeline.p
-                    component: p
-                    content:
-                      text: second paragraph
-              - systemdata:
-                  projectId: 1
-                  channelId: 1
-                  documentId: 2
-                  contentType: article
-                  documentType: article
-                  publicationId: 5
-                  firstPublicationDate: '2022-03-16T14:08:11.000Z'
-                  significantPublicationDate: '2022-10-26T07:25:00.000Z'
-                  visiblePublicationDate: '2022-10-27T06:00:00.000Z'
-                  updatedAt: '2022-10-30T16:32:04.170Z'
-                  layout: regular
-                  design:
-                    name: timeline
-                    version: 1.1.0
-                metadata:
-                  title: another title
-                  description: some other lead
-                  dependencies: {}
-                content:
-                  - id: doc-1b8i1ksh10
-                    identifier: timeline.head
-                    component: head
-                    content:
-                      title: a title
-                      text: some lead
-                  - id: doc-1b8i1ksh20
-                    identifier: timeline.normal
-                    component: normal
-                    content:
-                      caption: my caption
-                    styles:
-                      position: left
-                  - id: doc-1b8i1ksh30
-                    identifier: timeline.p
-                    component: p
-                    content:
-                      text: first paragraph
-                  - id: doc-1b8i1me1d0
-                    identifier: timeline.p
-                    component: p
-                    content:
-                      text: second paragraph
+          examples:
+            success:
+              value:
+                - systemdata:
+                    projectId: 1
+                    channelId: 1
+                    documentId: 1
+                    contentType: article
+                    documentType: article
+                    publicationId: 1
+                    firstPublicationDate: '2022-03-16T14:08:11.000Z'
+                    significantPublicationDate: '2022-10-26T07:25:00.000Z'
+                    visiblePublicationDate: '2022-10-27T06:00:00.000Z'
+                    updatedAt: '2022-10-30T16:32:04.170Z'
+                    layout: regular
+                    design:
+                      name: timeline
+                      version: 1.1.0
+                  metadata:
+                    title: a title
+                    description: some lead
+                    dependencies: {}
+                  content:
+                    - id: doc-1b8i1ksh10
+                      identifier: timeline.head
+                      component: head
+                      content:
+                        title: a title
+                        text: some lead
+                    - id: doc-1b8i1ksh20
+                      identifier: timeline.normal
+                      component: normal
+                      content:
+                        caption: my caption
+                      styles:
+                        position: left
+                    - id: doc-1b8i1ksh30
+                      identifier: timeline.p
+                      component: p
+                      content:
+                        text: first paragraph
+                    - id: doc-1b8i1me1d0
+                      identifier: timeline.p
+                      component: p
+                      content:
+                        text: second paragraph
+                - systemdata:
+                    projectId: 1
+                    channelId: 1
+                    documentId: 2
+                    contentType: article
+                    documentType: article
+                    publicationId: 5
+                    firstPublicationDate: '2022-03-16T14:08:11.000Z'
+                    significantPublicationDate: '2022-10-26T07:25:00.000Z'
+                    visiblePublicationDate: '2022-10-27T06:00:00.000Z'
+                    updatedAt: '2022-10-30T16:32:04.170Z'
+                    layout: regular
+                    design:
+                      name: timeline
+                      version: 1.1.0
+                  metadata:
+                    title: another title
+                    description: some other lead
+                    dependencies: {}
+                  content:
+                    - id: doc-1b8i1ksh10
+                      identifier: timeline.head
+                      component: head
+                      content:
+                        title: a title
+                        text: some lead
+                    - id: doc-1b8i1ksh20
+                      identifier: timeline.normal
+                      component: normal
+                      content:
+                        caption: my caption
+                      styles:
+                        position: left
+                    - id: doc-1b8i1ksh30
+                      identifier: timeline.p
+                      component: p
+                      content:
+                        text: first paragraph
+                    - id: doc-1b8i1me1d0
+                      identifier: timeline.p
+                      component: p
+                      content:
+                        text: second paragraph

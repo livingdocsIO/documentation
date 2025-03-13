@@ -322,21 +322,27 @@ openapi:
       in: query
       schema:
         type: string
-        examples: ['some sentence to search']
+      examples:
+        search:
+          value: some sentence to search
     - name: categories
       description: 'Comma separated list of category ids for which documents should
         be found. Categories are concatenated with OR. Example: `sport,fashion`'
       in: query
       schema:
         type: string
-        examples: [sport, fashion]
+      examples:
+        categories:
+          value: sport,fashion
     - name: languages
       description: 'Comma separated list of languages for which documents should
         be found. Languages are concatenated with OR. Example: `en,de`'
       in: query
       schema:
         type: string
-        examples: [en, de]
+      examples:
+        enAndDe:
+          value: en,de
     - name: languageGroupId
       description: 'A GroupId used to fetch all translations of a document Using
         the ?languages param a document in a specific language can be fetched. Example:
@@ -344,20 +350,26 @@ openapi:
       in: query
       schema:
         type: string
-        examples: ['1jfasfdu']
+      examples:
+        languageGroupId:
+          value: 1jfasfdu
     - name: contentTypes
       description: 'Comma separated list of content-types for which documents should
         be found. Content types are concatenated with OR. Example: `article,author`'
       in: query
       schema:
         type: string
-        examples: [regular, author]
+      examples:
+        regularAndAuthor:
+          value: regular,author
     - name: filters
       description: A JSON string which follows the search filters query DSL.
       in: query
       schema:
         type: string
-        examples: ['[{"key":"metadata.title","term":"My Title"}]']
+      examples:
+        termFilter:
+          value: '[{"key":"metadata.title","term":"My Title"}]'
     - name: sort
       description: Comma separated list of sort properties. Any of the filter fields
         can be used, and also sortDate, which can be defined using the publication
@@ -368,7 +380,12 @@ openapi:
       in: query
       schema:
         type: string
-        examples: [sortDate, -documentId]
+      examples:
+        sortDate:
+          value: sortDate
+        descendingDocumentId:
+          value: -documentId
+
     - name: fields
       description: Filters which (comma separated) properties are included in the
         response. Defaults to `systemdata,metadata,content` (no renditions). Use
@@ -378,7 +395,9 @@ openapi:
       in: query
       schema:
         type: string
-        examples: [systemdata, metadata, content]
+      examples:
+        default:
+          value: systemdata,metadata,content
     - name: limit
       description: A limit for how much published documents to retrieve. Defaults
         to 10. Max. 100.
@@ -387,14 +406,18 @@ openapi:
         type: integer
         minimum: 0
         maximum: 100
-        examples: [10]
+      examples:
+        default:
+          value: 10
     - name: offset
       description: An offset into the query. Useful when getting more than 100 results
         (pagination)
       in: query
       schema:
         type: integer
-        examples: [0]
+      examples:
+        default:
+          value: 0
   responses:
     '200':
       description: ok

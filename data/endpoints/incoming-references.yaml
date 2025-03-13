@@ -88,14 +88,18 @@ openapi:
         Max. 100.
       schema:
         type: integer
-        examples: [100]
+      examples:
+        default:
+          value: 100
       in: query
     - name: offset
       description: An offset into the query. Useful when getting more than 100 results
         (pagination).
       schema:
         type: integer
-        examples: [0]
+      examples:
+        default:
+          value: 0
       in: query
   responses:
     '200':
@@ -104,8 +108,10 @@ openapi:
         application/json:
           schema:
             type: array
-            examples:
-              - - id: 4
+          examples:
+            success:
+              value:
+                - id: 4
                   references:
                     - id: '1'
                       type: document

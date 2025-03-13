@@ -20,7 +20,7 @@ query: |
     }
     EOF
 endpoint:
-  method: GET
+  method: POST
   path: /api/:apiVersion/retresco/re-enrich
 parameters:
   - name: ?doc_ids
@@ -59,12 +59,6 @@ openapi:
       application/json:
         schema:
           type: object
-          examples:
-            - doc_ids:
-                - 1
-                - 2
-                - 3
-                - 4
           required:
             - doc_ids
           properties:
@@ -74,6 +68,14 @@ openapi:
                 oneOf:
                   - type: number
                   - type: string
+        examples:
+          reEnrichWithIds:
+            value:
+              doc_ids:
+                - 1
+                - 2
+                - 3
+                - 4
   responses:
     '200':
       description: doc_ids list accepted to process

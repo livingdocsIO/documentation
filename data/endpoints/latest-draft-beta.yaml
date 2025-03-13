@@ -167,7 +167,9 @@ openapi:
       description: 'A comma-separated list of rendition handles. Example: `?renditions=web,json`'
       schema:
         type: string
-        examples: [web, json]
+      examples:
+        renditions:
+          value: web,json
       in: query
   responses:
     '200':
@@ -176,8 +178,10 @@ openapi:
         application/json:
           schema:
             type: object
-            examples:
-              - systemdata:
+          examples:
+            success:
+              value:
+                systemdata:
                   projectId: 1
                   channelId: 1
                   documentId: 603

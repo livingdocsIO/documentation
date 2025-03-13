@@ -70,7 +70,9 @@ openapi:
       in: query
       schema:
         type: string
-      examples: [https://livingdocs.io/]
+      examples:
+        baseURL:
+          value: https://livingdocs.io/
     - name: date
       description: 'Date for the specific month matching the schema from the sitemap
         index file. Example: `?date=2021-06` or `?date=2021-06.2`'
@@ -84,19 +86,23 @@ openapi:
       schema:
         type: string
       in: query
-      examples: [regular, pages]
+      examples:
+        regularAndPagesContentTypes:
+          value: regular,pages
     - name: entriesPerPage
       description: Optional sitemap entry page size. Default 20000
       schema:
         type: string
       in: query
-      examples: ['20000']
+      examples:
+        default:
+          value: '20000'
   responses:
     '200':
       description: Sitemap
       content:
         application/xml:
           examples:
-            - xml:
-                summary: Sitemap example
-                externalValue: https://livingdocsio.github.io/openapi/examples/sitemap-entries.xml
+            success:
+              summary: Sitemap example
+              externalValue: https://livingdocsio.github.io/openapi/examples/sitemap-entries.xml

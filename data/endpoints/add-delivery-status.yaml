@@ -93,12 +93,6 @@ openapi:
       application/json:
         schema:
           type: object
-          examples:
-            - reportId: 2SG2MAA9RwPn
-              publicationId: 524
-              deliveryHandle: web
-              status: success
-              message: Message with <strong>html</strong>
           required:
             - publicationId
             - deliveryHandle
@@ -122,6 +116,14 @@ openapi:
             message:
               type: string
               description: String or sanitized HTML
+        examples:
+          addSuccessReport:
+            value:
+              reportId: 2SG2MAA9RwPn
+              publicationId: 524
+              deliveryHandle: web
+              status: success
+              message: Message with <strong>html</strong>
   responses:
     '200':
       description: successful operation

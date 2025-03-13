@@ -122,7 +122,9 @@ openapi:
       in: query
       schema:
         type: boolean
-        examples: [false]
+      examples:
+        doNotReverse:
+          value: false
     - name: fields
       description: Filters which (comma separated) document properties are included
         in the response. Defaults to `systemdata,metadata` also accepts `content`
@@ -130,7 +132,9 @@ openapi:
       in: query
       schema:
         type: string
-        examples: [systemdata, metadata, content]
+      examples:
+        withContent:
+          value: systemdata,metadata,content
     - name: limit
       description: A limit for how much documents to resolve for the requested list.
         Defaults to 100. Max. 100.
@@ -139,7 +143,9 @@ openapi:
         type: integer
         minimum: 0
         maximum: 100
-        examples: [100]
+      examples:
+        default:
+          value: 100
   responses:
     '200':
       description: ok

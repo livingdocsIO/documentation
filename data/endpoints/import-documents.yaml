@@ -156,10 +156,10 @@ openapi:
   requestBody:
     content:
       application/json:
-        schema:
-          type: object
-          examples:
-            - systemName: identifier-for-your-system
+        examples:
+          example:
+            value:
+              systemName: identifier-for-your-system
               webhook: https://my-domain.com/webhooks/document-import
               context:
                 myIdentifier: some-identifier-sent-to-the-webhook
@@ -187,6 +187,8 @@ openapi:
                         description: foo FR
                   flags:
                     autoPublish: true
+        schema:
+          type: object
           required:
             - systemName
             - documents
@@ -273,8 +275,10 @@ openapi:
             properties:
               id:
                 type: string
-            examples:
-              - id: 25bzj8j
+          examples:
+            success:
+              value:
+                id: 25bzj8j
     '429':
       description: Usage Limit Exceeded
       content:
@@ -283,8 +287,10 @@ openapi:
             type: array
             items:
               type: object
-            examples:
-              - status: 429
+          examples:
+            usageLimitExceeded:
+              value:
+                status: 429
                 error: Usage Limit Exceeded
                 error_details:
                   message: |-

@@ -82,14 +82,18 @@ openapi:
         type: integer
         minimum: 0
         maximum: 100
-        examples: [10]
+      examples:
+        default:
+          value: 10
     - name: offset
       description: An offset into the query. Useful when getting more than 100 results
         (pagination).
       in: query
       schema:
         type: integer
-        examples: [0]
+      examples:
+        default:
+          value: 0
   responses:
     '200':
       description: ok

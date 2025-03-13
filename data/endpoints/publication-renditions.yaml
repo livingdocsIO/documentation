@@ -134,7 +134,9 @@ openapi:
         type: string
       in: path
       required: true
-      examples: [web, name]
+      examples:
+        renditionHandles:
+          value: web,name
     - name: documentId
       schema:
         type: integer
@@ -149,8 +151,10 @@ openapi:
             type: array
             items:
               type: object
-            examples:
-              - - handle: web
+          examples:
+            success:
+              value:
+                - handle: web
                   content: |-
                     <div class="head">
                       <h1>a title</h1>

@@ -80,19 +80,23 @@ openapi:
       schema:
         type: string
       in: query
-      examples: [regular, pages]
+      examples:
+        regularAndPagesContentTypes:
+          value: regular,pages
     - name: entriesPerPage
       description: Optional sitemap entry page size. Default 20000
       schema:
         type: string
       in: query
-      examples: ['20000']
+      examples:
+        default:
+          value: '20000'
   responses:
     '200':
       description: Sitemap
       content:
         application/xml:
           examples:
-            - xml:
-                summary: Sitemap example
-                externalValue: https://livingdocsio.github.io/openapi/examples/sitemap-index.xml
+            success:
+              summary: Sitemap example
+              externalValue: https://livingdocsio.github.io/openapi/examples/sitemap-index.xml

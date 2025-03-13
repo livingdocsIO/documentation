@@ -100,7 +100,9 @@ openapi:
       required: true
       schema:
         type: string
-        examples: [web]
+      examples:
+        channelHandle:
+          value: web
     - name: handle
       description: Handle of the menu to retrieve.
       in: query
@@ -112,30 +114,32 @@ openapi:
       content:
         application/json:
           examples:
-            - - version: 8
-                label: My Menu
-                maxDepth: 1
-                nodes:
-                  - id: 11111111-0601-4c2b-a3b5-4da19b6d3bde
-                    label: My Index
-                    path: '/'
-                    type: uri
-                    target: _self
-                    nodes:
-                      - id: 22222222-0601-4c2b-a3b5-4da19b6d3bde
-                        documentId: 71
-                        label: Other Page
-                        type: path
-                        path: '/page/some-other-page'
-                        nodes: []
-                  - id: 33333333-0601-4c2b-a3b5-4da19b6d3bde
-                    label: Arbitrary URL
-                    type: uri
-                    uri: http://example.com
-                    nodes: []
-                  - id: 44444444-0601-4c2b-a3b5-4da19b6d3bde
-                    label: Other But External URL Link
-                    type: uri
-                    uri: http://foo.bar
-                    target: _blank
-                    nodes: []
+            success:
+              value:
+                - version: 8
+                  label: My Menu
+                  maxDepth: 1
+                  nodes:
+                    - id: 11111111-0601-4c2b-a3b5-4da19b6d3bde
+                      label: My Index
+                      path: '/'
+                      type: uri
+                      target: _self
+                      nodes:
+                        - id: 22222222-0601-4c2b-a3b5-4da19b6d3bde
+                          documentId: 71
+                          label: Other Page
+                          type: path
+                          path: '/page/some-other-page'
+                          nodes: []
+                    - id: 33333333-0601-4c2b-a3b5-4da19b6d3bde
+                      label: Arbitrary URL
+                      type: uri
+                      uri: http://example.com
+                      nodes: []
+                    - id: 44444444-0601-4c2b-a3b5-4da19b6d3bde
+                      label: Other But External URL Link
+                      type: uri
+                      uri: http://foo.bar
+                      target: _blank
+                      nodes: []

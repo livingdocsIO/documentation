@@ -223,13 +223,17 @@ openapi:
         response. Defaults to `systemdata,metadata,content,renditions`.
       schema:
         type: string
-        examples: [systemdata, metadata, content, renditions]
+      examples:
+        all:
+          value: systemdata,metadata,content,renditions
       in: query
     - name: renditions
       description: 'A comma-separated list of rendition handles. Example: ?renditions=web,json'
       schema:
         type: string
-        examples: [web, json]
+      examples:
+        renditions:
+          value: web,json
       in: query
   responses:
     '200':

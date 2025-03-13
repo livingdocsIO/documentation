@@ -116,7 +116,9 @@ openapi:
       required: true
       schema:
         type: string
-        examples: ['3.0.0']
+      examples:
+        designVersion:
+          value: '3.0.0'
   responses:
     '200':
       description: ok

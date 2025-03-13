@@ -108,13 +108,17 @@ openapi:
       in: query
       schema:
         type: string
-        examples: [gxMMLV1fc-cm, f4jH1hyijDiF]
+      examples:
+        multiple:
+          value: gxMMLV1fc-cm,f4jH1hyijDiF
     - name: externalIds
       description: Must be unique in combination with systemName
       in: query
       schema:
         type: string
-        examples: [6hedie82]
+      examples:
+        externalId:
+          value: 6hedie82
     - name: systemName
       description: A string identifiyng the external system where the asset is imported
         from. It is recommended that you always set this value and it is required
@@ -122,7 +126,9 @@ openapi:
       in: query
       schema:
         type: string
-        examples: [externalSystem]
+      examples:
+        systemName:
+          value: externalSystem
   responses:
     '200':
       description: ok
@@ -135,8 +141,10 @@ openapi:
                 type: array
                 items:
                   '$ref': '#/components/schemas/MediaLibraryEntry'
-            examples:
-              - mediaLibraryEntries:
+          examples:
+            success:
+              value:
+                mediaLibraryEntries:
                   - id: asze63i9
                     version: 1
                     mediaType: image

@@ -279,7 +279,9 @@ openapi:
         response. Defaults to `systemdata,metadata,content` (no renditions).
       schema:
         type: string
-        examples: [systemdata, metadata, content, references]
+      examples:
+        example:
+          value: systemdata,metadata,content,references
       in: query
     - name: limit
       description: A limit for how much published documents to retrieve. Defaults
@@ -288,7 +290,9 @@ openapi:
         type: integer
         minimum: 0
         maximum: 100
-        examples: [100]
+      examples:
+        default:
+          value: 100
       in: query
     - name: offset
       description: An offset into the query. Useful when getting more than 100 results
@@ -312,7 +316,9 @@ openapi:
       description: Comma separated list of content types to use as filter.
       schema:
         type: string
-        examples: [regular]
+      examples:
+        regularArticles:
+          value: regular
       in: query
     - name: documentTypes
       description: |-
@@ -320,7 +326,9 @@ openapi:
         Can be one of `article`, `page`, `data-record`.
       schema:
         type: string
-        examples: [article, page, data-record]
+      examples:
+        documentTypes:
+          value: article,page,data-record
       in: query
     - name: id
       description: "Filter by one or multiple document ids.\n\nExample 1: `?id=12`\n\nExample
@@ -365,25 +373,33 @@ openapi:
       schema:
         type: string
         format: date-time
-        examples: ['2021-01-30T08:30:00Z']
+      examples:
+        example:
+          value: '2021-01-30T08:30:00Z'
       in: query
     - name: publishedAt.gt
       schema:
         type: string
         format: date-time
-        examples: ['2021-01-30T08:30:00Z']
+      examples:
+        example:
+          value: '2021-01-30T08:30:00Z'
       in: query
     - name: publishedAt.lte
       schema:
         type: string
         format: date-time
-        examples: ['2021-01-30T08:30:00Z']
+      examples:
+        example:
+          value: '2021-01-30T08:30:00Z'
       in: query
     - name: publishedAt.lt
       schema:
         type: string
         format: date-time
-        examples: ['2021-01-30T08:30:00Z']
+      examples:
+        example:
+          value: '2021-01-30T08:30:00Z'
       in: query
   responses:
     '200':
@@ -403,8 +419,10 @@ openapi:
                   '$ref': '#/components/schemas/Content'
                 renditions:
                   '$ref': '#/components/schemas/References'
-            examples:
-              - - systemdata:
+          examples:
+            success:
+              value:
+                - systemdata:
                     projectId: 1
                     channelId: 1
                     documentId: 1

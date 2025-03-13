@@ -68,7 +68,7 @@ Expose openapi versions
 
   {{ $.AddResource (
     dict
-    "content" (dict "mediaType" "application/json" "value" ($openapi | jsonify))
+    "content" (dict "mediaType" "application/json" "value" ($openapi | jsonify (dict "indent" "  ")))
     "path" $path
     )
   }}
@@ -76,7 +76,7 @@ Expose openapi versions
 
 {{ $.AddResource (
   dict
-  "content" (dict "mediaType" "application/json" "value" ($first | jsonify))
+  "content" (dict "mediaType" "application/json" "value" ($first | jsonify (dict "indent" "  ")))
   "path" "openapi.json"
   )
 }}

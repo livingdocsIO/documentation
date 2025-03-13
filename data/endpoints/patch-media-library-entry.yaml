@@ -138,8 +138,20 @@ openapi:
       application/json:
         schema:
           type: object
-          examples:
-            - version: 1
+          properties:
+            version:
+              type: number
+            patches:
+              type: array
+              items:
+                type: object
+                properties:
+                  operation:
+                    type: string
+        examples:
+          post:
+            value:
+              version: 1
               patches:
                 - operation: setMetadataProperty
                   propertyName: title
@@ -157,16 +169,6 @@ openapi:
                 - operation: archive
                 - operation: removeAsset
                   locale: en
-          properties:
-            version:
-              type: number
-            patches:
-              type: array
-              items:
-                type: object
-                properties:
-                  operation:
-                    type: string
   responses:
     '200':
       description: ok

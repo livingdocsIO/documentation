@@ -236,13 +236,17 @@ openapi:
         response.
       schema:
         type: string
-        examples: [systemdata, metadata, content, renditions, references]
+      examples:
+        all:
+          value: systemdata,metadata,content,renditions,references
       in: query
     - name: renditions
       description: 'A comma-separated list of rendition handles. Example: ?renditions=web,json'
       schema:
         type: string
-        examples: [web, json]
+      examples:
+        renditions:
+          value: web,json
       in: query
   responses:
     '200':
@@ -262,8 +266,10 @@ openapi:
                 '$ref': '#/components/schemas/Renditions'
               references:
                 '$ref': '#/components/schemas/References'
-            examples:
-              - systemdata:
+          examples:
+            default:
+              value:
+                systemdata:
                   projectId: 1
                   channelId: 1
                   documentId: 1

@@ -108,8 +108,10 @@ openapi:
         application/json:
           schema:
             type: object
-            examples:
-              - finished: true
+          examples:
+            success:
+              value:
+                finished: true
                 state: success
                 id: 25bzj8j
                 images:
