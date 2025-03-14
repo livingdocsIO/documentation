@@ -727,6 +727,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.77](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.77): fix(dashboards): Add li-kordiam-integration to supported columns
 - [v111.1.76](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.76): fix(toolbar): Make document dashboard active state reactive
 - [v111.1.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.75): fix(assistants): save field extractor changes after assistant finished
 - [v111.1.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.74): fix(security): Patch `undici` vulnerability `CVE-2025-22150` to v6.21.1
