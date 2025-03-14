@@ -12,11 +12,7 @@
     />
     <meta
       name="description"
-      content="{{ with .Description }}
-        {{ . }}
-      {{ else }}
-        {{ with .Site.Params.description }}{{ . }}{{ end }}
-      {{ end }}"
+      content="{{ or .Description .Site.Params.description }}"
     />
     <link
       rel="canonical"

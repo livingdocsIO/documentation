@@ -29,6 +29,11 @@ markup:
     ordered: false
     startLevel: 1
 
+minify:
+  tdewolff:
+    html:
+      keepWhitespace: false
+
 services:
   googleAnalytics:
     id: GTM-K6QTH5K
