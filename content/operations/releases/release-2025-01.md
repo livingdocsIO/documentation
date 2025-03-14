@@ -690,6 +690,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.46): fix(dashboards): Add li-kordiam-integration to supported columns
 - [v114.13.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.45): fix(toolbar): Make document dashboard active state reactive
 - [v114.13.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.44): fix(deps): update dependency axios from 1.7.9 to 1.8.2 [security]
 - [v114.13.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.43): fix(history): Load old designs of revisions in the history view
