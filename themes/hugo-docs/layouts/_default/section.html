@@ -1,57 +1,52 @@
-{{ partial "html-header.html" . }}
+{{ define "main" }}
+  <article class="article">
+    <h1 class="article__title">
+      {{ .Title }}
+      {{ if (ne (.Param "renderEditButton") false) }}
+        {{ partial "edit-page.html" . }}
+      {{ end }}
+    </h1>
 
-
-<div class="page">
-  {{ partial "sidebar.html" . }}
-  <main class="page__content">
-    <article class="article">
-      <h1 class="article__title">
-        {{ .Title }}
-        {{ if (ne (.Param "renderEditButton") false) }}
-          {{ partial "edit-page.html" . }}
-        {{ end }}
-      </h1>
-
-      <div class="article__content">
-        {{ .Content }}
-        {{ if (ne (.Param "renderSummaries") false) }}
-          <div class="section-teasers {{ with not .Content }}section-teasers--wide{{ end }}">
-            {{ range where .Pages.ByWeight  "Params.hidden" "!=" true }}
-              {{ if (ne (.Param "hideSectionTeaser") true) }}
-                <div class="section-teaser">
-                  <a
-                    class="section-teaser__link"
-                    href="{{ .RelPermalink }}"
-                  >
-                    {{ if .Param "icon" }}
-                      <div class="section-teaser__icon">
-                        <div class="mdi mdi-{{ .Param "icon" }}"></div>
-                      </div>
-                    {{ end }}
-                    <div class="section-teaser__content">
-                      <h3 class="section-teaser__title">
-                        {{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}
-                      </h3>
-                      {{ with .Description }}<p class="section-teaser__text">{{ . }}</p>{{ end }}
+    <div class="article__content">
+      {{ .Content }}
+      {{ if (ne (.Param "renderSummaries") false) }}
+        <div class="section-teasers {{ with not .Content }}section-teasers--wide{{ end }}">
+          {{ range where .Pages.ByWeight  "Params.hidden" "!=" true }}
+            {{ if (ne (.Param "hideSectionTeaser") true) }}
+              <div class="section-teaser">
+                <a
+                  class="section-teaser__link"
+                  href="{{ .RelPermalink }}"
+                >
+                  {{ if .Param "icon" }}
+                    <div class="section-teaser__icon">
+                      <div class="mdi mdi-{{ .Param "icon" }}"></div>
                     </div>
-                  </a>
-                </div>
-              {{ end }}
+                  {{ end }}
+                  <div class="section-teaser__content">
+                    <h3 class="section-teaser__title">
+                      {{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}
+                    </h3>
+                    {{ with .Description }}<p class="section-teaser__text">{{ . }}</p>{{ end }}
+                  </div>
+                </a>
+              </div>
             {{ end }}
-          </div>
-        {{ end }}
-      </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
 
-      <div class="article__footer">
-        {{ partial "footer.html" . }}
-      </div>
-    </article>
-  </main>
+    <div class="article__footer">
+      {{ partial "footer.html" . }}
+    </div>
+  </article>
+{{ end }}
+
+{{ define "side" }}
   {{ if (ne (.Param "renderTOC") false) }}
     <div class="page__toc">
       {{ .TableOfContents }}
     </div>
   {{ end }}
-</div>
-
-{{ partial "html-footer.html" . }}
+{{ end }}

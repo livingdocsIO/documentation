@@ -1,10 +1,31 @@
-{{ $versions := hugo.Store.Get "api-versions" }}
-{{ $firstVersion := index $versions 0 }}
-{{ (resources.FromString "openapi.json" (partialCached "openapi-template.gotmpl" (dict "Site" $.Site "version" $firstVersion.version) $firstVersion.version)).Publish }}
-{{ range $versions }}
-  {{ (resources.FromString (printf "openapi-%s.json" .version) (partialCached "openapi-template.gotmpl" (dict "Site" $.Site "version" .version) .version)).Publish }}
+{{ define "main" }}
+  {{ $versions := hugo.Store.Get "api-versions" }}
+  {{ $firstVersion := index $versions 0 }}
+  {{ (resources.FromString "openapi.json" (partialCached "openapi-template.gotmpl" (dict "Site" $.Site "version" $firstVersion.version) $firstVersion.version)).Publish }}
+  {{ range $versions }}
+    {{ (resources.FromString (printf "openapi-%s.json" .version) (partialCached "openapi-template.gotmpl" (dict "Site" $.Site "version" .version) .version)).Publish }}
+  {{ end }}
+
+
+  <article class="article">
+    <h1 class="article__title">
+      {{ .Title }}
+      {{ if (ne (.Param "renderEditButton") false) }}
+        {{ partial "edit-page.html" . }}
+      {{ end }}
+    </h1>
+
+    <div class="article__content article__content_{{ .Type }}">{{ .Content }}</div>
+    <div class="article__footer">
+      {{ partial "footer.html" . }}
+    </div>
+  </article>
 {{ end }}
 
-{{ partial "default-above-content" . }}
-<div class="article__content article__content_{{ .Type }}">{{ .Content }}</div>
-{{ partial "default-below-content" . }}
+{{ define "side" }}
+  {{ if (ne (.Param "renderTOC") false) }}
+    <div class="page__toc">
+      {{ .TableOfContents }}
+    </div>
+  {{ end }}
+{{ end }}

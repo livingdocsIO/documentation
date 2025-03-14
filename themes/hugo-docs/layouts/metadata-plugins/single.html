@@ -1,140 +1,186 @@
-{{ partial "default-above-content" . }}
-{{ $PAGE := . }}
+{{ define "main" }}
+  <article class="article">
+    <h1 class="article__title">
+      {{ .Title }}
+      {{ if (ne (.Param "renderEditButton") false) }}
+        {{ partial "edit-page.html" . }}
+      {{ end }}
+    </h1>
 
-{{- if .Params.history -}}
-  <details class="history explode">
-    <summary class="history-button">
-      <div class="history-button__interaction">
-        <span class="arrow arrow--right"></span>
-      </div>
-      <div class="history-button__label">History</div>
-    </summary>
-    <div class="history__content">
-      <table>
-        <thead>
-          <tr>
-            <th>Version</th>
-            <th>Change</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{- range .Params.history -}}
-            <tr>
-              <td>{{ .release }}</td>
-              <td>{{ .description | $PAGE.RenderString }}</td>
-            </tr>
-          {{- end -}}
-        </tbody>
+    {{ $PAGE := . }}
+
+    {{- if .Params.history -}}
+      <details class="history explode">
+        <summary class="history-button">
+          <div class="history-button__interaction">
+            <span class="arrow arrow--right"></span>
+          </div>
+          <div class="history-button__label">History</div>
+        </summary>
+        <div class="history__content">
+          <table>
+            <thead>
+              <tr>
+                <th>Version</th>
+                <th>Change</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{- range .Params.history -}}
+                <tr>
+                  <td>{{ .release }}</td>
+                  <td>{{ .description | $PAGE.RenderString }}</td>
+                </tr>
+              {{- end -}}
+            </tbody>
+          </table>
+        </div>
+      </details>
+    {{- end -}}
+
+
+    <div class="article__content">
+      {{ if .Params.addedIn }}
+        {{ partial "added-in" (dict "release" .Params.addedIn "block" true) }}
+      {{ end }}
+      {{ if .Params.deprecatedIn }}
+        {{ partial "deprecated-in" (dict "release" .Params.deprecatedIn "block" true) }}
+      {{ end }}
+      {{ if .Params.removedIn }}
+        {{ partial "removed-in" (dict "release" .Params.removedIn "block" true) }}
+      {{ end }}
+
+      {{ if .Params.support.planningSystem }}
+        {{ "**Notice**: The" | markdownify }}
+        {{ .Title }}
+        {{ "plugin is only available if the Planning System is enabled." | markdownify }}
+      {{ end }}
+
+      {{ "## Supported Features" | markdownify }}
+      <table style="width: auto; margin-top: 0;">
+        <tr>
+          <td>Document</td>
+          <td style="text-align: center;">
+            {{ partial "check-cross" .Params.support.document }}
+          </td>
+        </tr>
+        <tr>
+          <td>Media</td>
+          <td style="text-align: center;">{{ partial "check-cross" .Params.support.media }}</td>
+        </tr>
+        <tr>
+          <td>Include</td>
+          <td style="text-align: center;">
+            {{ partial "check-cross" .Params.support.include }}
+          </td>
+        </tr>
+        <tr>
+          <td>Document Creation Flow</td>
+          <td style="text-align: center;">
+            {{ partial "check-cross" .Params.support.creationFlow }}
+          </td>
+        </tr>
+        <tr>
+          <td>Push Message</td>
+          <td style="text-align: center;">
+            {{ partial "check-cross" .Params.support.pushMessage }}
+          </td>
+        </tr>
+        <tr>
+          <td>Table Dashboard</td>
+          <td style="text-align: center;">
+            {{ partial "check-cross" .Params.support.tableDashboard }}
+          </td>
+        </tr>
+        <tr>
+          <td>Display Filter</td>
+          <td style="text-align: center;">
+            {{ partial "check-cross" .Params.support.displayFilter }}
+          </td>
+        </tr>
+        <tr>
+          <td>Search Indexing</td>
+          <td style="text-align: center;">
+            {{ partial "check-cross" .Params.support.searchIndexing }}
+          </td>
+        </tr>
+        <tr>
+          <td>System Metadata</td>
+          <td style="text-align: center;">
+            {{ partial "check-cross" .Params.support.systemMetadata }}
+          </td>
+        </tr>
+        <tr>
+          <td>Webhook Conditions</td>
+          <td style="text-align: center;">
+            {{ partial "check-cross" .Params.support.webhookConditions }}
+          </td>
+        </tr>
       </table>
+
+      {{ if or (.Params.description) (.Content) }}
+        <h2>Description</h2>
+        {{ .Params.description | .Page.RenderString (dict "display" "block") }}
+        {{ .Content }}
+      {{ end }}
+
+      {{ if .Params.defaultUI }}
+        <h2>Default UI</h2>
+        {{ .Params.defaultUI | .Page.RenderString }}
+      {{ end }}
+
+      {{ if .Params.storageFormat }}
+        <h2>Storage Format</h2>
+        {{ print "```js\n" .Params.storageFormat "\n```" | .Page.RenderString }}
+      {{ end }}
+
+      {{ if .Params.contentTypeConfig }}
+        <h2>Content Type Config</h2>
+        {{ print "```js\n{\n  handle: 'myContentType',\n  // ...\n  metadata: [\n    {\n" .Params.contentTypeConfig "    }\n    // ...\n  ]\n}" | .Page.RenderString }}
+      {{ end }}
+
+      {{ if .Params.includeConfig }}
+        <h2>Include Config</h2>
+        {{ print "```js\n{\n  name: 'myInclude',\n  paramsSchema: [\n    {\n" .Params.includeConfig "    }\n  ]\n}" | .Page.RenderString }}
+      {{ end }}
+
+      {{ if .Params.tableDashboardConfig }}
+        <h2>Table Dashboard Config</h2>
+        {{ print "```js\n{\n  handle: 'myDashboard',\n  // ...\n" .Params.tableDashboardConfig "}" | .Page.RenderString }}
+      {{ end }}
+
+      {{ if .Params.additionalConfig }}
+        <h2>Additional Config</h2>
+        {{ .Params.additionalConfig | .Page.RenderString }}
+      {{ end }}
     </div>
-  </details>
-{{- end -}}
 
+    <div class="article__footer">
+      {{ partial "footer.html" . }}
+    </div>
+  </article>
+{{ end }}
 
-<div class="article__content">
-  {{ if .Params.addedIn }}
-    {{ partial "added-in" (dict "release" .Params.addedIn "block" true) }}
-  {{ end }}
-  {{ if .Params.deprecatedIn }}
-    {{ partial "deprecated-in" (dict "release" .Params.deprecatedIn "block" true) }}
-  {{ end }}
-  {{ if .Params.removedIn }}
-    {{ partial "removed-in" (dict "release" .Params.removedIn "block" true) }}
-  {{ end }}
-
-  {{ if .Params.support.planningSystem }}
-    {{ "**Notice**: The" | markdownify }}
-    {{ .Title }}
-    {{ "plugin is only available if the Planning System is enabled." | markdownify }}
-  {{ end }}
-
-  {{ "## Supported Features" | markdownify }}
-  <table style="width: auto; margin-top: 0;">
-    <tr>
-      <td>Document</td>
-      <td style="text-align: center;">{{ partial "check-cross" .Params.support.document }}</td>
-    </tr>
-    <tr>
-      <td>Media</td>
-      <td style="text-align: center;">{{ partial "check-cross" .Params.support.media }}</td>
-    </tr>
-    <tr>
-      <td>Include</td>
-      <td style="text-align: center;">{{ partial "check-cross" .Params.support.include }}</td>
-    </tr>
-    <tr>
-      <td>Document Creation Flow</td>
-      <td style="text-align: center;">{{ partial "check-cross" .Params.support.creationFlow }}</td>
-    </tr>
-    <tr>
-      <td>Push Message</td>
-      <td style="text-align: center;">{{ partial "check-cross" .Params.support.pushMessage }}</td>
-    </tr>
-    <tr>
-      <td>Table Dashboard</td>
-      <td style="text-align: center;">
-        {{ partial "check-cross" .Params.support.tableDashboard }}
-      </td>
-    </tr>
-    <tr>
-      <td>Display Filter</td>
-      <td style="text-align: center;">{{ partial "check-cross" .Params.support.displayFilter }}</td>
-    </tr>
-    <tr>
-      <td>Search Indexing</td>
-      <td style="text-align: center;">
-        {{ partial "check-cross" .Params.support.searchIndexing }}
-      </td>
-    </tr>
-    <tr>
-      <td>System Metadata</td>
-      <td style="text-align: center;">
-        {{ partial "check-cross" .Params.support.systemMetadata }}
-      </td>
-    </tr>
-    <tr>
-      <td>Webhook Conditions</td>
-      <td style="text-align: center;">
-        {{ partial "check-cross" .Params.support.webhookConditions }}
-      </td>
-    </tr>
-  </table>
-
-  {{ if or (.Params.description) (.Content) }}
-    <h2>Description</h2>
-    {{ .Params.description | .Page.RenderString (dict "display" "block") }}
-    {{ .Content }}
-  {{ end }}
-
-  {{ if .Params.defaultUI }}
-    <h2>Default UI</h2>
-    {{ .Params.defaultUI | .Page.RenderString }}
-  {{ end }}
-
-  {{ if .Params.storageFormat }}
-    <h2>Storage Format</h2>
-    {{ print "```js\n" .Params.storageFormat "\n```" | .Page.RenderString }}
-  {{ end }}
-
-  {{ if .Params.contentTypeConfig }}
-    <h2>Content Type Config</h2>
-    {{ print "```js\n{\n  handle: 'myContentType',\n  // ...\n  metadata: [\n    {\n" .Params.contentTypeConfig "    }\n    // ...\n  ]\n}" | .Page.RenderString }}
-  {{ end }}
-
-  {{ if .Params.includeConfig }}
-    <h2>Include Config</h2>
-    {{ print "```js\n{\n  name: 'myInclude',\n  paramsSchema: [\n    {\n" .Params.includeConfig "    }\n  ]\n}" | .Page.RenderString }}
-  {{ end }}
-
-  {{ if .Params.tableDashboardConfig }}
-    <h2>Table Dashboard Config</h2>
-    {{ print "```js\n{\n  handle: 'myDashboard',\n  // ...\n" .Params.tableDashboardConfig "}" | .Page.RenderString }}
-  {{ end }}
-
-  {{ if .Params.additionalConfig }}
-    <h2>Additional Config</h2>
-    {{ .Params.additionalConfig | .Page.RenderString }}
-  {{ end }}
-</div>
-
-{{ partial "default-below-content--metadata-plugins" . }}
+{{ define "side" }}
+  <div class="page__toc">
+    <nav id="TableOfContents">
+      <ul>
+        <li><a href="#supported-features">Supported Features</a></li>
+        {{ if .Params.description }}<li><a href="#description">Description</a></li>{{ end }}
+        {{ if .Params.defaultUI }}<li><a href="#default-ui">Default UI</a></li>{{ end }}
+        {{ if .Params.storageformat }}
+          <li><a href="#storage-format">Storage Format</a></li>
+        {{ end }}
+        {{ if .Params.contentTypeConfig }}
+          <li><a href="#content-type-config">Content Type Config</a></li>
+        {{ end }}
+        {{ if .Params.tableDashboardConfig }}
+          <li><a href="#table-dashboard-config">Table Dashboard Config</a></li>
+        {{ end }}
+        {{ if .Params.additionalConfig }}
+          <li><a href="#additional-config">Additional Config</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+{{ end }}

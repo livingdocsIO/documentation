@@ -1,8 +1,28 @@
-{{ partial "default-above-content" . }}
-<div class="article__content article__content_{{ .Type }}">
-  {{ $page := .Page }}
-  {{ range $endpoint := .Params.endpoints }}
-    {{ partial "api-example-resource.html" (dict "page" $page "endpoint" $endpoint) }}
+{{ define "main" }}
+  <article class="article">
+    <h1 class="article__title">
+      {{ .Title }}
+      {{ if (ne (.Param "renderEditButton") false) }}
+        {{ partial "edit-page.html" . }}
+      {{ end }}
+    </h1>
+
+    <div class="article__content article__content_{{ .Type }}">
+      {{ $page := .Page }}
+      {{ range $endpoint := .Params.endpoints }}
+        {{ partial "api-example-resource.html" (dict "page" $page "endpoint" $endpoint) }}
+      {{ end }}
+    </div>
+    <div class="article__footer">
+      {{ partial "footer.html" . }}
+    </div>
+  </article>
+{{ end }}
+
+{{ define "side" }}
+  {{ if (ne (.Param "renderTOC") false) }}
+    <div class="page__toc">
+      {{ .TableOfContents }}
+    </div>
   {{ end }}
-</div>
-{{ partial "default-below-content" . }}
+{{ end }}

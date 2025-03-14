@@ -1,86 +1,80 @@
-{{ partial "html-header.html" . }}
-
-
-<div class="page">
-  {{ partial "sidebar.html" . }}
-  <main class="page__content">
-    <article class="section">
-      {{ if gt (len (split .RelPermalink "/")) 2 }}
-        <ul
-          id="breadcrumbs"
-          class="breadcrumbs"
-        >
-          {{ if gt (len (split .RelPermalink "/")) 3 }}
-            <li><a href="/guides">Guides</a></li>
-          {{ end }}
-          {{ if gt (len (split .RelPermalink "/")) 4 }}
-            <li>
-              <a href="{{ .CurrentSection.Parent.RelPermalink }}"
-                >{{ .CurrentSection.Parent.Title }}</a
-              >
-            </li>
-          {{ end }}
-          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-        </ul>
-      {{ end }}
-
-
-      <div class="section__content">
-        {{ .Content }}
-        {{ if (ne (.Param "renderSummaries") false) }}
-
-          {{ $pages := where (.RegularPagesRecursive.GroupBy "CurrentSection") "Params.hidden" "!=" true }}
-          {{ range sort $pages ".Key.Weight" }}
-            <div class="section__subsection">
-              <h2 class="section__title">{{ .Key.Title }}</h2>
-              <div class="section-teasers">
-                {{ range .Pages.ByWeight }}
-                  {{ if (ne (.Param "hideSectionTeaser") true) }}
-                    <div
-                      class="section-teaser section-teaser--guides"
-                      {{ if .Params.TeaserColor }}
-                        style="--teaser-color: {{ .Params.TeaserColor }}"
-                      {{ end }}
-                    >
-                      <a
-                        class="section-teaser__link"
-                        href="{{ .RelPermalink }}"
-                      >
-                        {{ if .Param "icon" }}
-                          <div class="section-teaser__icon">
-                            <div class="mdi mdi-{{ .Param "icon" }}"></div>
-                          </div>
-                        {{ end }}
-                        <div class="section-teaser__content">
-                          <h3 class="section-teaser__title">
-                            {{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}
-                          </h3>
-                          {{ with .Description }}
-                            <p class="section-teaser__text">{{ . }}</p>
-                          {{ end }}
-                          <ul>
-                            {{ range .Params.bullets }}
-                              <li>{{ . }}</li>
-                            {{ end }}
-                          </ul>
-                          <!-- <div>{{ range .Params.Tags }}<span>{{ . }}</span>{{ end }}</div> -->
-                        </div>
-                      </a>
-                    </div>
-                  {{ end }}
-                {{ end }}
-              </div>
-            </div>
-          {{ end }}
-
+{{ define "main" }}
+  <article class="section">
+    {{ if gt (len (split .RelPermalink "/")) 2 }}
+      <ul
+        id="breadcrumbs"
+        class="breadcrumbs"
+      >
+        {{ if gt (len (split .RelPermalink "/")) 3 }}
+          <li><a href="/guides">Guides</a></li>
         {{ end }}
-      </div>
+        {{ if gt (len (split .RelPermalink "/")) 4 }}
+          <li>
+            <a href="{{ .CurrentSection.Parent.RelPermalink }}"
+              >{{ .CurrentSection.Parent.Title }}</a
+            >
+          </li>
+        {{ end }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      </ul>
+    {{ end }}
 
-      <div class="section__footer">
-        {{ partial "footer.html" . }}
-      </div>
-    </article>
-  </main>
-</div>
 
-{{ partial "html-footer.html" . }}
+    <div class="section__content">
+      {{ .Content }}
+      {{ if (ne (.Param "renderSummaries") false) }}
+
+        {{ $pages := where (.RegularPagesRecursive.GroupBy "CurrentSection") "Params.hidden" "!=" true }}
+        {{ range sort $pages ".Key.Weight" }}
+          <div class="section__subsection">
+            <h2 class="section__title">{{ .Key.Title }}</h2>
+            <div class="section-teasers">
+              {{ range .Pages.ByWeight }}
+                {{ if (ne (.Param "hideSectionTeaser") true) }}
+                  <div
+                    class="section-teaser section-teaser--guides"
+                    {{ if .Params.TeaserColor }}
+                      style="--teaser-color: {{ .Params.TeaserColor }}"
+                    {{ end }}
+                  >
+                    <a
+                      class="section-teaser__link"
+                      href="{{ .RelPermalink }}"
+                    >
+                      {{ if .Param "icon" }}
+                        <div class="section-teaser__icon">
+                          <div class="mdi mdi-{{ .Param "icon" }}"></div>
+                        </div>
+                      {{ end }}
+                      <div class="section-teaser__content">
+                        <h3 class="section-teaser__title">
+                          {{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}
+                        </h3>
+                        {{ with .Description }}
+                          <p class="section-teaser__text">{{ . }}</p>
+                        {{ end }}
+                        <ul>
+                          {{ range .Params.bullets }}
+                            <li>{{ . }}</li>
+                          {{ end }}
+                        </ul>
+                        <!-- <div>{{ range .Params.Tags }}
+                          <span>{{ . }}</span>
+                        {{ end }}</div> -->
+                      </div>
+                    </a>
+                  </div>
+                {{ end }}
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+
+      {{ end }}
+    </div>
+
+    <div class="section__footer">
+      {{ partial "footer.html" . }}
+    </div>
+  </article>
+{{ end }}

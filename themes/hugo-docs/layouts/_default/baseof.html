@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <meta
+      name="referrer"
+      content="no-referrer-when-downgrade"
+    />
+    <meta
+      name="description"
+      content="{{ with .Description }}
+        {{ . }}
+      {{ else }}
+        {{ with .Site.Params.description }}{{ . }}{{ end }}
+      {{ end }}"
+    />
+    <link
+      rel="canonical"
+      href="{{ .Permalink }}"
+    />
+    <title>{{ .Page.Title }} - {{ .Section | default "Documentation" | humanize }}</title>
+
+    {{ block "meta" . }}{{ end }}
+    {{ partialCached "html-header-global-meta.html" . }}
+  </head>
+  <body>
+    {{ block "top" . }}{{ partial "topbar.html" . }}{{ end }}
+
+
+    <div class="page">
+      {{ partial "sidebar.html" . }}
+      <main class="page__content">
+        {{ block "main" . }}{{ end }}
+      </main>
+      {{ block "side" . }}{{ end }}
+    </div>
+  </body>
+</html>

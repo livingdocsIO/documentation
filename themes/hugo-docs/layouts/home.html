@@ -1,29 +1,21 @@
-{{ partial "html-header.html" . }}
+{{ define "main" }}
+  <article
+    class="article"
+    id="{{ .Slug }}"
+  >
+    <h1 class="article__title">
+      {{ .Title }}
+      {{ if (ne (.Param "renderEditButton") false) }}
+        {{ partial "edit-page.html" . }}
+      {{ end }}
+    </h1>
 
+    <div class="article__content">
+      {{ .Content }}
+    </div>
 
-<div class="page">
-  {{ partial "sidebar.html" . }}
-  <main class="page__content">
-    <article
-      class="article"
-      id="{{ .Slug }}"
-    >
-      <h1 class="article__title">
-        {{ .Title }}
-        {{ if (ne (.Param "renderEditButton") false) }}
-          {{ partial "edit-page.html" . }}
-        {{ end }}
-      </h1>
-
-      <div class="article__content">
-        {{ .Content }}
-      </div>
-
-      <div class="article__footer">
-        {{ partial "footer.html" . }}
-      </div>
-    </article>
-  </main>
-</div>
-
-{{ partial "html-footer.html" . }}
+    <div class="article__footer">
+      {{ partial "footer.html" . }}
+    </div>
+  </article>
+{{ end }}

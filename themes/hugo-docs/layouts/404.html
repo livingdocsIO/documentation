@@ -1,26 +1,18 @@
-{{ partial "html-header.html" . }}
+{{ define "main" }}
+  <article
+    class="article"
+    id="{{ .Slug }}"
+  >
+    {{ if (ne .Title "Get started with Livingdocs") }}
+      {{ partial "edit-page.html" . }}
+    {{ end }}
 
 
-<div class="page">
-  {{ partial "sidebar.html" . }}
-  <main class="page__content">
-    <article
-      class="article"
-      id="{{ .Slug }}"
-    >
-      {{ if (ne .Title "Get started with Livingdocs") }}
-        {{ partial "edit-page.html" . }}
-      {{ end }}
+    <h1 class="article__title">Uh-oh</h1>
 
-
-      <h1 class="article__title">Uh-oh</h1>
-
-      <div class="article__content">
-        <h3>Sorry, but we can't find the page… 😞</h3>
-        <p><a href="{{ .Site.BaseURL }}">Go to homepage</a></p>
-      </div>
-    </article>
-  </main>
-</div>
-
-{{ partial "html-footer.html" . }}
+    <div class="article__content">
+      <h3>Sorry, but we can't find the page… 😞</h3>
+      <p><a href="{{ .Site.BaseURL }}">Go to homepage</a></p>
+    </div>
+  </article>
+{{ end }}

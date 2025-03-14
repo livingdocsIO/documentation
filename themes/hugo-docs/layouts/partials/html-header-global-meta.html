@@ -1,0 +1,25 @@
+{{- $built := resources.Get "style.scss" | css.Sass | minify | fingerprint }}
+<link
+  rel="stylesheet"
+  href="{{ $built.RelPermalink }}"
+/>
+
+{{- $apiVersion := (index (hugo.Store.Get "api-versions") 0).version -}}
+{{- if eq $apiVersion "beta" -}}{{ $apiVersion = "v1" }}{{- end -}}
+{{- $lunrWorker := resources.Get "search.js" | js.Build }}
+{{- $scriptParams := dict "searchJson" "/search.json" "lunrWorker"  $lunrWorker.RelPermalink "currentApiVersion" $apiVersion -}}
+{{- $built := resources.Get "script.js" | js.Build (dict "params" $scriptParams) | minify | fingerprint }}
+
+
+<script
+  type="text/javascript"
+  src="{{ $built.RelPermalink }}"
+  defer
+></script>
+{{- with .Site.Config.Services.GoogleAnalytics.ID }}
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ . }}');</script>
+{{- end }}
