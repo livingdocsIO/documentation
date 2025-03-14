@@ -28,7 +28,7 @@ parameters:
   - name: ?search
     type: string
     required: false
-    notes: 'Search term to perform a full-text search with. For exact word matches use ", e.g. ''search="Ukulele"'''
+    notes: Search term to perform a full-text search with. For exact word matches use “, e.g. `search=“Ukulele”`
   - name: ?contentTypes
     type: string
     required: false
@@ -317,17 +317,23 @@ openapi:
   description: Search Publications
   parameters:
     - name: search
-      description: Search term to perform a full-text search with. For exact word
-        matches use “, e.g. `search=“Ukulele”`
+      description: Search term to perform a full-text search with. For exact word matches use “, e.g. `search=“Ukulele”`
       in: query
       schema:
         type: string
       examples:
         search:
           value: some sentence to search
+    - name: contentTypes
+      description: "Comma separated list of content-types for which documents should be found. Content types are concatenated with OR. Example: 'regular,author'"
+      in: query
+      schema:
+        type: string
+      examples:
+        regularAndAuthor:
+          value: regular,author
     - name: categories
-      description: 'Comma separated list of category ids for which documents should
-        be found. Categories are concatenated with OR. Example: `sport,fashion`'
+      description: "Comma separated list of category ids for which documents should be found. Categories are concatenated with OR. Example: 'sport,fashion'"
       in: query
       schema:
         type: string
@@ -335,8 +341,7 @@ openapi:
         categories:
           value: sport,fashion
     - name: languages
-      description: 'Comma separated list of languages for which documents should
-        be found. Languages are concatenated with OR. Example: `en,de`'
+      description: "Comma separated list of languages for which documents should be found. Languages are concatenated with OR. Example: 'en,de'"
       in: query
       schema:
         type: string
@@ -353,15 +358,6 @@ openapi:
       examples:
         languageGroupId:
           value: 1jfasfdu
-    - name: contentTypes
-      description: 'Comma separated list of content-types for which documents should
-        be found. Content types are concatenated with OR. Example: `article,author`'
-      in: query
-      schema:
-        type: string
-      examples:
-        regularAndAuthor:
-          value: regular,author
     - name: filters
       description: A JSON string which follows the search filters query DSL.
       in: query
@@ -418,6 +414,22 @@ openapi:
       examples:
         default:
           value: 0
+    - name: ignoreComponentConditions
+      description: Provides a way to opt out of component filtering and return all content regardless of whether each component passes the conditional checks.
+      in: query
+      schema:
+        type: boolean
+      examples:
+        default:
+          value: false
+    - name: componentConditions
+      description: JSON stringified object which contains the component conditions you would like to apply.
+      in: query
+      schema:
+        type: string
+      examples:
+        atASpecificTime:
+          value: '{"dateTime":"2024-02-14T17:25:10.391Z"}'
   responses:
     '200':
       description: ok

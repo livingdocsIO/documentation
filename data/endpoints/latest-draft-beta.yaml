@@ -171,6 +171,22 @@ openapi:
         renditions:
           value: web,json
       in: query
+    - name: ignoreComponentConditions
+      description: Provides a way to opt out of component filtering and return all content regardless of whether each component passes the conditional checks.
+      in: query
+      schema:
+        type: boolean
+      examples:
+        default:
+          value: false
+    - name: componentConditions
+      description: JSON stringified object which contains the component conditions you would like to apply.
+      in: query
+      schema:
+        type: string
+      examples:
+        atASpecificTime:
+          value: '{"dateTime":"2024-02-14T17:25:10.391Z"}'
   responses:
     '200':
       description: ok
