@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/7845)
 - [Add li-kordiam-integration to supported dashboard columns](https://github.com/livingdocsIO/livingdocs-editor/pull/9728)
 - [Make document dashboard toolbar action button active state reactive](https://github.com/livingdocsIO/livingdocs-editor/pull/9718)
 - [fix(li-button--bar): Long labels](https://github.com/livingdocsIO/livingdocs-editor/pull/9722)
