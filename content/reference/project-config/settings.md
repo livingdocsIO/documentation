@@ -343,7 +343,7 @@ If you are using a seeding process, e.g. via the CLI then you need to manually g
 
 ```
 // NOTE: you need to choose a unique name, an easy way is to append the current date to the string 'imatrics-' as done below
-npx livingdocs-server secret-add --project=<handle> --name=imatrics-20211027 --value=secretvalue
+npx livingdocs-server secret-add --project=<handle> --name=imatrics-20211027 --value='secretvalue'
 // -> this adds a new secret 'imatrics-20211027' to our encrypted secret store
 ```
 
