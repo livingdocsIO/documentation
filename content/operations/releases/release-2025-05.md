@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update playwright monorepo from 1.51.0 to v1.51.1 (main) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/9739)
 - [fix(deps): update dependency pg from 8.14.0 to v8.14.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7851)
 - [Fix: peiq check externalid on image drop](https://github.com/livingdocsIO/livingdocs-editor/pull/9684)
 - [fix: document usage of single quotes for secret-add value](https://github.com/livingdocsIO/livingdocs-server/pull/7848)
