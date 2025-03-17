@@ -84,7 +84,7 @@ You will need to add the metadata plugin for all content types that you would li
 Finally, a secret must be added for the relevant `<project-handle>`. The `<secret-name>` should match the value of the `password.$secretRef.name` property in the Retresco integration's project config object. The `<password>` should be the password provided by Retresco used to access the API. Within a development or test environment it is also possible to seed this value.
 
 ```bash
-npx livingdocs-server secret-add --project="<project-handle>" --name="<secret-name>" --value="<password>"
+npx livingdocs-server secret-add --project="<project-handle>" --name="<secret-name>" --value='<password>'
 ```
 
 For more information on how to use secrets, please check [Project Secrets](../setup/project-secrets).
