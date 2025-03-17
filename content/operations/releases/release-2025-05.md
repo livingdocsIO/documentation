@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix: document usage of single quotes for secret-add value](https://github.com/livingdocsIO/livingdocs-server/pull/7848)
 - [fix(deps): update dependency @livingdocs/framework from 32.7.1 to v32.7.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7846)
 - [fix(deps): update dependency @livingdocs/framework from 32.7.1 to v32.7.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9734)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/9733)
