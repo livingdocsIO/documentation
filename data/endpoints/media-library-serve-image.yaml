@@ -16,11 +16,85 @@ query: |
   ACCESS_TOKEN=ey1234
   curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/mediaLibrary/serve-image/2025/03/14/c316ace8-0ded-4e41-9388-386a5759c01f.jpeg" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
+
 endpoint:
   method: GET
   path: /api/:apiVersion/mediaLibrary/serve-image/{key}
+
 responses:
   - code: '200'
     endpoint: /api/:apiVersion/mediaLibrary/serve-image/2025/03/14/c316ace8-0ded-4e41-9388-386a5759c01f.jpeg
     body: binary
-# openapi missing
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Media Library
+  operationId: getMediaLibraryImage
+  summary: Serve Image
+  description: |
+    This endpoint delivers an image in its original dimensions, provided the asset remains valid (i.e., not revoked or marked as invalid).
+    It is designed to serve as a reliable source for image proxies or resizing services, ensuring only authorized and valid images are accessible.
+  parameters:
+    - name: key
+      in: path
+      description: The unique key of the image asset in the media library
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        image/*:
+          schema:
+            type: string
+            format: binary
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: number
+              error:
+                type: string
+              error_details:
+                type: object
+                properties:
+                  message:
+                    type: string
+          examples:
+            revokedOrInvalid:
+              value:
+                status: 403
+                error: Forbidden
+                error_details:
+                  message: The requested image is revoked or marked as invalid
+    '404':
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: number
+              error:
+                type: string
+              error_details:
+                type: object
+                properties:
+                  message:
+                    type: string
+          examples:
+            imageNotFound:
+              value:
+                status: 404
+                error: Not Found
+                error_details:
+                  message: No image found.

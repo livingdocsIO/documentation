@@ -27,19 +27,20 @@ responses:
         "id": "25bzj8j",
         "files": [
           {
-            "status": "success",
+            "state": "success",
             "mediaId": "jjiwhsf23kdk",
             "systemName": "identifier-for-your-system",
             "externalId": "external-unique-id-123"
           },
           {
-            "status": "skipped",
+            "state": "skipped",
             "reason": "already exists",
             "systemName": "identifier-for-your-system",
+            "mediaId": "jjiwhsf23kdg",
             "externalId": "external-unique-id-234"
           },
           {
-            "status": "failed",
+            "state": "failed",
             "reason": "Could not upload file",
             "systemName": "identifier-for-your-system",
             "externalId": "external-unique-id-345"
@@ -64,4 +65,58 @@ responses:
         "id": "098shjhv9"
       }
 
-# openapi missing
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:write
+  tags:
+    - Imports
+  operationId: getFileImportStatus
+  summary: Check Import Status for Files
+  description: You can use this endpoint to check for the status and/or result
+    of a file import.
+  parameters:
+    - name: id
+      description: The id that Livingdocs provided you for your prior call to `/import/files`
+      schema:
+        type: string
+      required: true
+      in: query
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: object
+          examples:
+            success:
+              value:
+                finished: true
+                state: success
+                id: 25bzj8j
+                files:
+                  - state: success
+                    mediaId: jjiwhsf23kdk
+                    systemName: identifier-for-your-system
+                    externalId: external-unique-id-123
+                  - state: skipped
+                    reason: already exists
+                    systemName: identifier-for-your-system
+                    externalId: external-unique-id-234
+                    mediaId: jjiwhsf23kdg
+                  - state: failed
+                    reason: Could not upload file
+                    systemName: identifier-for-your-system
+                    externalId: external-unique-id-345
+            inProgress:
+              value:
+                finished: false
+                state: started
+                id: 243kdc
+                startedAt: '2020-01-01 13:45:12'
+            failed:
+              value:
+                finished: true
+                state: failed
+                id: 098shjhv9

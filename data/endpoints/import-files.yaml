@@ -27,11 +27,12 @@ query: |
       "webhook": "https://my-domain.com/webhooks/file-import",
       "files": [
         {
-          "url": "https://placekitten.com/800/600",
-          "id": "123abc",
-          "fileName": "cat",
+          "url": "https://example.com/documents/annual-report-2023.pdf",
+          "id": "file-123abc",
+          "fileName": "Annual Report 2023",
           "metadata": {
-            "caption": "foo"
+            "title": "Annual Report 2023",
+            "description": "Financial report for fiscal year 2023"
           }
         }
       ]
@@ -50,11 +51,12 @@ example_request: |
     },
     "files": [
       {
-        "url": "https://placekitten.com/800/600",
-        "id": "123abc",
-        "fileName": "cat",
+        "url": "https://example.com/documents/annual-report-2023.pdf",
+        "id": "file-123abc",
+        "fileName": "Annual Report 2023",
         "metadata": {
-          "caption": "foo"
+          "title": "Annual Report 2023",
+          "description": "Financial report for fiscal year 2023"
         }
       }
     ]
@@ -92,4 +94,125 @@ responses:
         "id": "25bzj8j"
       }
 
-# openapi missing
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:write
+  tags:
+    - Imports
+  operationId: importFiles
+  summary: Import Files
+  description: 'The file import does both create and update files. The import
+    remembers the `externalId` / `systemName` pair and if an import matches an
+    existing pair, it will update (Hint: consider how to rebuild the `externalId`
+    when you want to update files). The file import in Livingdocs is asynchronous.
+    You post a batch of files that you want to import and get back an id with
+    which you can query later to get your result.'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - systemName
+            - files
+          properties:
+            systemName:
+              type: string
+              description: Identifier for the system you are importing from, e.g.
+                an archive
+            webhook:
+              type: string
+              format: uri
+              description: Endpoint at the importing system that gets notified
+                by POST when import job is done. Notification contains the id
+                of the import job, the state and an overview.
+            context:
+              type: object
+              description: An object that is passed as context in the body of
+                the request to the webhook. Limited to 8192 Bytes.
+            files:
+              description: 'An array of files to import. Each entry is an object
+                with the following keys, all of which are required:'
+              type: array
+              items:
+                type: object
+                required:
+                  - id
+                  - url
+                  - fileName
+                  - metadata
+                properties:
+                  id:
+                    type: string
+                    description: a unique id (stored as externalId in Livingdocs)
+                      that identifies the file on your end, must be unique
+                      within your project.
+                  url:
+                    type: string
+                    format: uri
+                    description: 'a URL to a file'
+                  fileName:
+                    type: string
+                    description: the title that the file should get in livingdocs
+                  metadata:
+                    type: object
+                    description: An object of metadata according to your project
+                      config
+                  mediaType:
+                    type: string
+                    description: the handle of one of the mediaTypes from your project configuration
+        examples:
+          import:
+            value:
+              systemName: identifier-for-your-system
+              webhook: https://my-domain.com/webhooks/file-import
+              context:
+                myIdentifier: some-identifier-sent-to-the-webhook
+              files:
+                - url: https://example.com/documents/annual-report-2023.pdf
+                  id: file-123abc
+                  fileName: Annual Report 2023
+                  mediaType: file
+                  metadata:
+                    title: Annual Report 2023
+                    description: Financial report for fiscal year 2023
+                - url: https://example.com/spreadsheets/sales-data-2023.xlsx
+                  id: file-456def
+                  fileName: Sales Data 2023
+                  mediaType: file
+                  metadata:
+                    title: Sales Data 2023
+                    description: Quarterly sales figures for 2023
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+          examples:
+            success:
+              value:
+                id: 25bzj8j
+    '429':
+      description: Usage Limit Exceeded
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+          examples:
+            usageLimitExceeded:
+              value:
+                status: 429
+                error: Usage Limit Exceeded
+                error_details:
+                  message: |-
+                    Your plan does not allow you to upload more than 100 per day.
+                          You already uploaded 99 in the last 24 hours and are trying to upload 10 more.
+                          Please try again later.

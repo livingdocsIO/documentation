@@ -10,9 +10,11 @@
   {{ if not (and $method $path) }}{{ continue }}{{ end }}
 
   {{ $path = replace $path ":apiVersion" $version }}
-  {{ $endpointSpec := merge (or (index $openapiPaths $path) dict) (dict $method $endpoint.openapi) }}
+  {{ $endpointSpec := $endpoint.openapi }}
+  {{ $pathSpec := merge (or (index $openapiPaths $path) dict) (dict $method $endpointSpec) }}
+
   {{ if (partial "api-version-matches" (dict "version" $version "matcher" $endpoint.apiVersionConstraints)) }}
-    {{ $openapiPaths = merge $openapiPaths (dict $path $endpointSpec) }}
+    {{ $openapiPaths = merge $openapiPaths (dict $path $pathSpec) }}
   {{ end }}
 {{- end -}}
 
