@@ -194,9 +194,11 @@ In case you see a removal warning after the update, please reach out to us and w
 
 Server APIs `projectApi.getStats` and `designStatsApi.listDesigns` are deprecated and will be removed in release-2025-09.
 
-{{< feature-info "" "" >}}
+{{< feature-info "Server API" "Server" >}}
 
-### `li-image` and `li-videos` :warning:
+### `li-images` and `li-videos` :warning:
+
+The internal `li-images` and `li-videos` feature APIs are deprecated and will be removed in release-2025-07. Please use `li-media-library`.
 
 ## Features
 
@@ -383,11 +385,9 @@ Once configured, the Smart Quotes toggle will be available in the editor on the 
 
 {{< img width="250" src="./release-2025-03-smart-quotes.png" alt="Smart Quotes Toggle"  >}}
 
-{{< feature-info "" "editor" >}}
+{{< feature-info "Page management" "server/editor" >}}
 
 ### Page Management: Teaser Container with List & Algorithm :gift:
-
-{{< feature-info "Page management" "server/editor" >}}
 
 In real-world page management scenarios, teasers often come in groups. It can be tedious to define and manage the details for every single teaser if you just want them to be the same.
 
@@ -399,9 +399,9 @@ There are two prerequisites for this feature:
 
 For further information, or if you are using the Command API to update teasers, please read up all the details on the [`li-teaser` documentation page]({{< ref "/reference/document/metadata/plugins/li-teaser/#teaser-containers" >}}).
 
-### Page Management: Teaser Side Table :gift:
-
 {{< feature-info "Page Management" "editor" >}}
+
+### Page Management: Teaser Side Table :gift:
 
 In a typical page management use case, an article might "tickle down" the page throughout the day. Editors can place a particular article on a teaser by setting it as a direct reference (Level 1).
 Whenever an article was set as the direct reference for a teaser, it might replace the previous article. So if the previous article also needs to be moved somewhere else, Editors have a hard time keeping track of them.
@@ -410,9 +410,9 @@ So instead of just letting the previous article fall on the floor, we temporaril
 
 For further information, please read up all the details on the [`li-teaser` documentation page]({{< ref "/reference/document/metadata/plugins/li-teaser/#teaser-side-table" >}}).
 
-### Document Inbox: Image Support :gift:
-
 {{< feature-info "Editorial Workflows" "editor" >}}
+
+### Document Inbox: Image Support :gift:
 
 Images have been supported in the Inbox for a long time, but they did not yet have the same sorting and grouping features we added for Documents in 2024.
 
