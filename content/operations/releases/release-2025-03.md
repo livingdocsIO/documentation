@@ -456,6 +456,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v271.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.17): fix(image-variants): add cloudinary storage fetch implementation
 - [v271.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.16): fix(menu-tool): Log deprecation warnings in menu API
 - [v271.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.15): fix(history): Show more than 100 revisions
 - [v271.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.14): fix(logger): Do not try to serialize streams in pino serializer for axios
