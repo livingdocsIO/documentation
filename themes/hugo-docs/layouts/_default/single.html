@@ -1,12 +1,4 @@
 {{ define "main" }}
-  {{ $versions := hugo.Store.Get "api-versions" }}
-  {{ $firstVersion := index $versions 0 }}
-  {{ (resources.FromString "openapi.json" (partialCached "openapi-template.gotmpl" (dict "Site" $.Site "version" $firstVersion.version) $firstVersion.version)).Publish }}
-  {{ range $versions }}
-    {{ (resources.FromString (printf "openapi-%s.json" .version) (partialCached "openapi-template.gotmpl" (dict "Site" $.Site "version" .version) .version)).Publish }}
-  {{ end }}
-
-
   <article class="article">
     <h1 class="article__title">
       {{ .Title }}

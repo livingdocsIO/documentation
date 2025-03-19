@@ -32,7 +32,7 @@ openapi:
         - public-api:read
   tags:
     - Media Library
-  operationId: getMediaLibraryImage
+  operationId: mediaLibraryServeImage
   summary: Serve Image
   description: |
     This endpoint delivers an image in its original dimensions, provided the asset remains valid (i.e., not revoked or marked as invalid).
