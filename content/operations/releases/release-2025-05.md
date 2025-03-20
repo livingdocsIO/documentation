@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix: clipboard use first descendant with content for description](https://github.com/livingdocsIO/livingdocs-editor/pull/9741)
 - [fix(deps): update dependency axios from 1.8.3 to v1.8.4 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9745)
 - [fix(deps): update dependency axios from 1.8.3 to v1.8.4 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7860)
 - [Improvement/Example Server Design](https://github.com/livingdocsIO/livingdocs-server/pull/7847)
