@@ -476,6 +476,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.31): fix(media-library): Check entry exists before displaying archive icon
 - [v115.22.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.30): fix(peiq): make system name 'peiq' lowercase
 - [v115.22.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.29): fix(dashboards): Add li-kordiam-integration to supported columns
 - [v115.22.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.28): fix(toolbar): Make document dashboard active state reactive
