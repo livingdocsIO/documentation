@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Check entry exists before displaying stored in archive icon in the media library card component](https://github.com/livingdocsIO/livingdocs-editor/pull/9750)
 - [fix(deps): update aws-sdk from 3.758.0 to v3.772.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7863)
 - [fix(deps): update dependency @livingdocs/framework from 32.7.2 to v32.7.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9747)
 - [fix(deps): update dependency @livingdocs/framework from 32.7.2 to v32.7.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7864)
