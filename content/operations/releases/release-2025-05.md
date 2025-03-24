@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Show content type label instead of content type handle in li-document-resource component](https://github.com/livingdocsIO/livingdocs-editor/pull/9749)
 - [chore(deps): update dependency eslint from 9.22.0 to v9.23.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9754)
 - [Check entry exists before displaying stored in archive icon in the media library card component](https://github.com/livingdocsIO/livingdocs-editor/pull/9750)
 - [fix(deps): update aws-sdk from 3.758.0 to v3.772.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7863)
