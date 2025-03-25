@@ -691,6 +691,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.48): fix: Show content type label instead of content type handle in li-document-resource
 - [v114.13.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.47): fix(peiq): make system name 'peiq' lowercase
 - [v114.13.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.46): fix(dashboards): Add li-kordiam-integration to supported columns
 - [v114.13.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.45): fix(toolbar): Make document dashboard active state reactive
