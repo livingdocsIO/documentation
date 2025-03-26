@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency fastify from 5.2.1 to v5.2.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7878)
 - [fix(deps): update dependency fastify from 5.2.1 to v5.2.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9762)
 - [fix(deps): update aws-sdk (main) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/7874)
 - [Apply crops in top left corner of an image](https://github.com/livingdocsIO/livingdocs-server/pull/7869)
