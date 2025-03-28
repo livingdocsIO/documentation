@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(manual document status): Empty state](https://github.com/livingdocsIO/livingdocs-editor/pull/9763)
 - [Migrate Angular li-comment component to Vue](https://github.com/livingdocsIO/livingdocs-editor/pull/9721)
 - [fix(deps): update dependency posthog-node from 4.10.1 to v4.10.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7879)
 - [fix(deps): update dependency fastify from 5.2.1 to v5.2.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7878)
