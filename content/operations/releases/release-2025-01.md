@@ -658,6 +658,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v267.1.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.31): fix(db): Fix scheduled components by taking over li_jsonb_patch of main branch (removing properties that don't exist won't throw with that)
 - [v267.1.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.30): fix(li-image): Re-add the config.readOnly attribute on li-media
 - [v267.1.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.29): fix(menu-tool): Log deprecation warnings in menu API
 - [v267.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.28): fix(history): Show more than 100 revisions
