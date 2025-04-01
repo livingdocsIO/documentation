@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Migrate Angular comment-thread component to Vue](https://github.com/livingdocsIO/livingdocs-editor/pull/9742)
 - [Feat: clickable titles in teaser sidebar](https://github.com/livingdocsIO/livingdocs-editor/pull/9744)
 - [improvement(visited document highlight): Animation added](https://github.com/livingdocsIO/livingdocs-editor/pull/9771)
 - [Chore/small icon size corrections](https://github.com/livingdocsIO/livingdocs-editor/pull/9768)
