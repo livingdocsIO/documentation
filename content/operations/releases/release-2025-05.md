@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(li-form-textarea): non-editable state](https://github.com/livingdocsIO/livingdocs-editor/pull/9785)
 - [Allow configuring `alt` in shortcuts](https://github.com/livingdocsIO/livingdocs-editor/pull/9773)
 - [fix(deps): update aws-sdk (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/7875)
 - [Prevent text-info-settings from blocking text selection](https://github.com/livingdocsIO/livingdocs-editor/pull/9778)
