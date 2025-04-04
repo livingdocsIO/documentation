@@ -477,6 +477,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.35): fix(shortcuts): Allow configuring `alt` in shortcuts
 - [v115.22.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.34): fix(editor): Prevent text-info-settings from blocking text selection
 - [v115.22.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.33): fix(scss): In some build setups, sass reported issues. The `@forward`ed variables aren't even in use, so we can safely remove them.
 - [v115.22.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.32): fix: Show content type label instead of content type handle in li-document-resource
