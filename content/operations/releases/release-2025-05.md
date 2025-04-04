@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Prevent token and user stats consumer deadlocks in postgres](https://github.com/livingdocsIO/livingdocs-server/pull/7892)
 - [fix(deps): update dependency sass from 1.86.2 to v1.86.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9787)
 - [fix(li-form-textarea): non-editable state](https://github.com/livingdocsIO/livingdocs-editor/pull/9785)
 - [Allow configuring `alt` in shortcuts](https://github.com/livingdocsIO/livingdocs-editor/pull/9773)
