@@ -692,6 +692,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.50): fix(shortcuts): Allow configuring `alt` in shortcuts
 - [v114.13.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.49): fix(scss): In some build setups, sass reported issues. The `@forward`ed variables aren't even in use, so we can safely remove them.
 - [v114.13.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.48): fix: Show content type label instead of content type handle in li-document-resource
 - [v114.13.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.47): fix(peiq): make system name 'peiq' lowercase
