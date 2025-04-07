@@ -689,6 +689,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v261.3.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.38): fix(delivery-status): Restrict distinct query of delivery status to project & document scope
 - [v261.3.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.37): fix(li-image): Re-add the config.readOnly attribute on li-media
 - [v261.3.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.36): fix(menu-tool): Log deprecation warnings in menu API
 - [v261.3.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.35): fix(history): Show more than 100 revisions
