@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Remove mapping of desknet properties in projectProxy and systemProxy](https://github.com/livingdocsIO/livingdocs-editor/pull/9724)
 - [Remove Desk-Net properties, features, and plugins](https://github.com/livingdocsIO/livingdocs-server/pull/7844)
 - [Feat: add missing cells to table dashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/9772)
 - [Only render the document preview after the iframe load event fires to prevent flickers](https://github.com/livingdocsIO/livingdocs-editor/pull/9779)
