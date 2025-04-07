@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Restrict distinct query of delivery status to project & document scope](https://github.com/livingdocsIO/livingdocs-server/pull/7897)
 - [chore(deps): update dependency eslint from 9.23.0 to v9.24.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9790)
 - [Remove mapping of desknet properties in projectProxy and systemProxy](https://github.com/livingdocsIO/livingdocs-editor/pull/9724)
 - [Remove Desk-Net properties, features, and plugins](https://github.com/livingdocsIO/livingdocs-server/pull/7844)
