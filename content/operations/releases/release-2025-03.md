@@ -456,6 +456,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v271.0.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.21): fix(delivery-status): Restrict distinct query of delivery status to project & document scope
 - [v271.0.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.20): fix(stats): Order api client and user stats by ids to prevent deadlocks in postgres
 - [v271.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.19): fix: Apply crops in top left corner of an image
 - [v271.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.18): fix(li-image): Re-add the config.readOnly attribute on li-media
