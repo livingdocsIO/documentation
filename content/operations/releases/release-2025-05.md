@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix distribution date in non-planning-boards](https://github.com/livingdocsIO/livingdocs-editor/pull/9802)
 - [Make design in document revision optional](https://github.com/livingdocsIO/livingdocs-server/pull/7904)
 - [Reload document when only document design changed](https://github.com/livingdocsIO/livingdocs-editor/pull/9800)
 - [Improvement/Metadata View Layout](https://github.com/livingdocsIO/livingdocs-editor/pull/9798)
