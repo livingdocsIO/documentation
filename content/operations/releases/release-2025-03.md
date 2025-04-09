@@ -480,6 +480,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.39): fix(li-distribution-dates): only render mounting portal when necessary
 - [v115.22.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.38): fix: Reload document when document design changed
 - [v115.22.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.37): fix(li assistant button): Busy state
 - [v115.22.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.36): fix(document-preview): Only render the document preview after the iframe load event fires to prevent flickers
