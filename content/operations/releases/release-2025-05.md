@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Reload document when only document design changed](https://github.com/livingdocsIO/livingdocs-editor/pull/9800)
 - [Improvement/Metadata View Layout](https://github.com/livingdocsIO/livingdocs-editor/pull/9798)
 - [Fix/Assistant Busy Button](https://github.com/livingdocsIO/livingdocs-editor/pull/9797)
 - [Fix GIF image upload with use2025behavior](https://github.com/livingdocsIO/livingdocs-server/pull/7887)
