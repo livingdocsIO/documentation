@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Improvement/Metadata View Layout](https://github.com/livingdocsIO/livingdocs-editor/pull/9798)
 - [Fix/Assistant Busy Button](https://github.com/livingdocsIO/livingdocs-editor/pull/9797)
 - [Fix GIF image upload with use2025behavior](https://github.com/livingdocsIO/livingdocs-server/pull/7887)
 - [fix(deps): update dependency posthog-node from 4.11.1 to v4.11.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7901)
