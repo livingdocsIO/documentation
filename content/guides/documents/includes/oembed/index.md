@@ -8,18 +8,21 @@ The oEmbed include service (`li-oembed-service`) allows users to embed content (
 
 ## Core oEmbed Providers
 
+- Bluesky (`li-bluesky`), {{< added-in "release-2025-05" >}}
+- Dailymotion (`li-dailymotion`)
+- Datawrapper (`li-datawrapper`)
+- Facebook (`li-facebook-post`), ATTENTION: requires credentials
+- Instagram (`li-instagram`), ATTENTION: requires credentials
+- Pinterest (`li-pinterest`), {{< added-in "release-2025-05" >}}
+- Podigee (`li-podigee`)
+- Reddit (`li-reddit`), {{< added-in "release-2025-05" >}}
+- Spotify (`li-spotify`)
 - TikTok (`li-tiktok`)
 - Twitter (`li-twitter`)
 - Vimeo (`li-vimeo`)
 - YouTube (`li-youtube`)
-- Podigee (`li-podigee`)
-- Datawrapper (`li-datawrapper`)
-- Spotify (`li-spotify`)
-- Instagram (`li-instagram`), ATTENTION: requires credentials
-- Facebook (`li-facebook-post`), ATTENTION: requires credentials
-- Dailymotion (`li-dailymotion`)
 
-A note on Facebook and Instagram: Meta is not allowing public access to oembed endpoints. You need to provide credentials of a valid Facebook App in order for this to work. In addition your facebook app also needs to undergo a review process for the Oembed Read permissions. See below for more information.
+A note on Facebook and Instagram: Meta is not allowing public access to oEmbed endpoints. You need to provide credentials of a valid Facebook App in order for this to work. In addition your Facebook app also needs to undergo a review process for the Oembed Read permissions. See below for more information.
 
 ## Server Configuration
 
