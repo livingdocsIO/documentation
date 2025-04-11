@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency posthog-node from 4.11.2 to v4.11.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7920)
 - [fix(deps): update dependency jose from 5.10.0 to v6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7749)
 - [fix(deps): update dependency chartist from 1.3.0 to v1.3.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9792)
 - [Fix/li-card Body Height](https://github.com/livingdocsIO/livingdocs-editor/pull/9817)
