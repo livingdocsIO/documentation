@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency express from 5.0.1 to v5.1.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7890)
 - [Set image default width on image directive if present](https://github.com/livingdocsIO/livingdocs-editor/pull/9813)
 - [Fix distribution date in non-planning-boards](https://github.com/livingdocsIO/livingdocs-editor/pull/9802)
 - [Make design in document revision optional](https://github.com/livingdocsIO/livingdocs-server/pull/7904)
