@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency jose from 5.10.0 to v6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7749)
 - [fix(deps): update dependency chartist from 1.3.0 to v1.3.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9792)
 - [Fix/li-card Body Height](https://github.com/livingdocsIO/livingdocs-editor/pull/9817)
 - [fix(deps): update dependency express from 5.0.1 to v5.1.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7890)
