@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency fastify from 5.2.2 to v5.3.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7928)
 - [fix(deps): update dependency fastify from 5.2.2 to v5.3.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9828)
 - [fix(deps): update dependency nodemailer from 6.10.0 to v6.10.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7927)
 - [fix(deps): update dependency posthog-node from 4.11.2 to v4.11.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7920)
