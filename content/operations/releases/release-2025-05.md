@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency mime from 4.0.6 to v4.0.7 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7888)
 - [fix(deps): update dependency fastify from 5.2.2 to v5.3.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7928)
 - [fix(deps): update dependency fastify from 5.2.2 to v5.3.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9828)
 - [fix(deps): update dependency nodemailer from 6.10.0 to v6.10.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7927)
