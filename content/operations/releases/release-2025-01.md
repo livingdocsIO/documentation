@@ -695,6 +695,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.52): fix(deps): update dependency nanoid [security]
 - [v114.13.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.51): fix(document-preview): Only render the document preview after the iframe load event fires to prevent flickers
 - [v114.13.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.50): fix(shortcuts): Allow configuring `alt` in shortcuts
 - [v114.13.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.49): fix(scss): In some build setups, sass reported issues. The `@forward`ed variables aren't even in use, so we can safely remove them.
