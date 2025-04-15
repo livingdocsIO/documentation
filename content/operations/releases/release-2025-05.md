@@ -186,7 +186,78 @@ TODO: check migration
 
 ## Features
 
-TODO (featureset not 100% defined yet)
+{{< feature-info "Exposure Boosting" "server/editor" >}}
+
+### Exposure Boosting :gift:
+
+When using algorithmic teasers, the order of the documents is determined by a sort criteria. Oftentimes, this is the latest publication date.
+By activating the exposure boost for a document, it will appear before all non-boosted documents returned by an algorithm.
+This is useful, in scenarios where algorithms receive high frequency updates and important topics would get pushed down quickly.
+The effect will go away automatically after a certain time.
+
+1. Add the `li-exposure-boost` plugin to your content type metadata
+
+   ```js
+   {
+     handle: 'article',
+     // ...
+     metadata: [
+       // ...
+       {
+         handle: 'exposureBoost',
+         type: 'li-exposure-boost',
+         config: {
+           index: true
+         }
+       }
+     ]
+   }
+   ```
+   - **handle**: Make sure to use the same handle for all content types where the plugin is configured
+   - **indexing**: The config option `index` needs to be enabled for it to work
+
+2. Generally allow exposure boosting for certain teasers in their service params schema
+   ```js
+   {
+     name: 'someTeaserService',
+     paramsSchema: [
+       // ...
+       {
+         handle: 'someTeaser',
+         type: 'li-teaser',
+         config: {
+           // ...
+           algorithm: {
+             // ...
+             allowExposureBoost: true
+           }
+         }
+       }
+     ]
+   }
+   ```
+
+3. Show the exposure boost UI on a Table Dashboard (optional)
+   ```js
+   {
+     handle: 'someDashboard',
+     // ...
+     columns: [
+       // ...
+       {
+         label: 'Boost',
+         minWidth: 100,
+         growFactor: 0,
+         priority: 1,
+         metadataPropertyName: 'exposureBoost',
+         editable: true
+       }
+     ]
+   }
+   ```
+
+Visit the [`li-exposure-boost` plugin]({{< ref "/reference/document/metadata/plugins/li-exposure-boost" >}}) page for more information.
+
 
 ## Vulnerability Patches
 
