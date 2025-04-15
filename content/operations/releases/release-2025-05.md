@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency posthog-node from 4.11.3 to v4.11.6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7932)
 - [Feat/li Button Concept](https://github.com/livingdocsIO/livingdocs-editor/pull/9810)
 - [Remove `config.contentTypes` from `li-document-search`](https://github.com/livingdocsIO/livingdocs-server/pull/7930)
 - [fix(deps): update dependency mime from 4.0.6 to v4.0.7 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7888)
