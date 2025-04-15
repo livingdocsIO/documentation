@@ -34,7 +34,8 @@ storageFormat: |
       })
     }),
     algorithm: ms.strictObj({
-      displayFilterStates: ms.arrayOf(ms.obj())
+      displayFilterStates: ms.arrayOf(ms.obj()),
+      applyExposureBoost: ms.boolean()
     })
   })
 ---
@@ -106,7 +107,8 @@ module.exports = function () {
           algorithm: {
             contentType: 'article', // Optional, shorthand base filter (string or array)
             baseFilters: [], // Optional, filters need to conform with publication search!
-            sort: 'lastPublicationDate' // Optional, sorting needs to conform with publication search!
+            sort: 'lastPublicationDate', // Optional, sorting needs to conform with publication search!
+            allowExposureBoost: true, // Optional, allows users to enable exposure boost effect for teaser
             displayFilters: [ // Optional, selectable by user, filters need to conform with publication search!
               { metadataPropertyName: 'ressorts' },
               {
@@ -264,3 +266,14 @@ Please not that the articles in the Teaser Side Table are not associated with a 
 
 The Teaser Side Table works with teasers based on `li-teaser` or `li-document-reference`. If it has articles in it, it will automatically appear or disappear on top of the [Document Inbox]({{< ref "/reference/project-config/content-types#document-inbox" >}}) and [Document Dashboards]({{< ref "/reference/project-config/content-types#document-editing-toolbar" >}}) accessed trough Editor Toolbar.
 Make sure to configure either one for the content types where it shall be supported.
+
+### Exposure Boosting
+
+{{< added-in "release-2025-05" block >}}
+
+By activating the [exposure boost]({{< ref "/reference/document/metadata/plugins/li-exposure-boost" >}}) for a document, it will win over all other sort criteria in algorithmic teasers.
+The teaser algorithm config needs to have the option `allowExposureBoost` to support the behavior in general.
+Additionally, for each teaser the behavior needs to be activated in the UI.
+
+
+
