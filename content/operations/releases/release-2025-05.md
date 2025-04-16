@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency posthog-node from 4.11.6 to v4.11.7 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7937)
 - [Allow deletion of media library entry translations in mediaLibraryApi.update()](https://github.com/livingdocsIO/livingdocs-server/pull/7926)
 - [Add CLI task change-design-name-and-version-to-latest-project-design](https://github.com/livingdocsIO/livingdocs-server/pull/7929)
 - [Require Facebook credentials when all oEmbed providers are loaded](https://github.com/livingdocsIO/livingdocs-server/pull/7917)
