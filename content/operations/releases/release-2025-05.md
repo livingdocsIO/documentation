@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Add Bluesky, Pinterest and Reddit oEmbed providers](https://github.com/livingdocsIO/livingdocs-server/pull/7916)
 - [implement `li-button-confirm` with floating-ui library](https://github.com/livingdocsIO/livingdocs-editor/pull/9804)
 - [Adjust exposure boost durations](https://github.com/livingdocsIO/livingdocs-server/pull/7931)
 - [fix(deps): update dependency posthog-node from 4.11.3 to v4.11.6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7932)
