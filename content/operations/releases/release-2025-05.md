@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Optimize data migration database query](https://github.com/livingdocsIO/livingdocs-server/pull/7933)
 - [Migrate Angular comment-wrapper component to Vue](https://github.com/livingdocsIO/livingdocs-editor/pull/9755)
 - [Add Bluesky, Pinterest and Reddit oEmbed providers](https://github.com/livingdocsIO/livingdocs-server/pull/7916)
 - [implement `li-button-confirm` with floating-ui library](https://github.com/livingdocsIO/livingdocs-editor/pull/9804)
