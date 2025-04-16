@@ -456,6 +456,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v271.0.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.25): fix(change-project-design): Iterate documents from newest to oldest
 - [v271.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.24): fix(data-migrations): Optimize database query
 - [v271.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.23): fix(deps): Upgrade @livingdocs/framework@release-2025-03
 - [v271.0.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.22): fix: Make design in document revision optional
