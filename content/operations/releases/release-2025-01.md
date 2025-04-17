@@ -658,6 +658,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v267.1.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.36): fix: Add parameters concurrency and batchSize to change-design-name-and-version-to-latest-project-design CLI
 - [v267.1.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.35): fix(change-project-design): Iterate documents from newest to oldest
 - [v267.1.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.34): fix(deps): Upgrade @livingdocs/framework@release-2025-01
 - [v267.1.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.33): fix(delivery-status): Restrict distinct query of delivery status to project & document scope
