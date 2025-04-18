@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency fastify from 5.3.0 to 5.3.1 [security] (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9839)
 - [Add parameters concurrency and batchSize to change-design-name-and-version-to-latest-project-design CLI](https://github.com/livingdocsIO/livingdocs-server/pull/7940)
 - [fix(deps): update dependency open from 10.1.0 to v10.1.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9832)
 - [fix(deps): update dependency posthog-node from 4.11.6 to v4.11.7 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7937)
