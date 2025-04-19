@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency webpack from 5.99.5 to v5.99.6 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9842)
 - [fix(deps): update dependency fastify from 5.3.1 to 5.3.2 [security] (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9841)
 - [chore(deps): update dependency eslint from 9.24.0 to v9.25.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7946)
 - [fix(deps): update dependency fastify from 5.3.0 to 5.3.1 [security] (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7944)
