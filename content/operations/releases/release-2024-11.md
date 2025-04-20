@@ -730,6 +730,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.81](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.81): fix(media-library): Flush autosave on media library detail view close
 - [v111.1.80](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.80): test: Update @livingdocs/framework and adopt test expectations with new image urls
 - [v111.1.79](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.79): fix: Show content type label instead of content type handle in li-document-resource
 - [v111.1.78](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.78): fix(history): Load old designs of revisions in the history view
