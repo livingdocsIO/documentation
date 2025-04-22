@@ -484,6 +484,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.44): fix(media-manager): Reset replaced state when picking new media
 - [v115.22.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.43): fix(media-library): Apply filters from URL on browser reload
 - [v115.22.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.42): fix(deps): update dependency @livingdocs/framework from 32.6.3 to v32.6.4
 - [v115.22.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.41): fix(properties-panel): Update media titles on change
