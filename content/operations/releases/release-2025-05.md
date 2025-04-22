@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Allow deletion of media library entry translations](https://github.com/livingdocsIO/livingdocs-editor/pull/9826)
 - [Reset replaced state when picking new media](https://github.com/livingdocsIO/livingdocs-editor/pull/9840)
 - [Apply media library filters from URL on browser reload](https://github.com/livingdocsIO/livingdocs-editor/pull/9837)
 - [fix(deps): update dependency @livingdocs/framework from 32.7.4 to v32.7.5 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9860)
