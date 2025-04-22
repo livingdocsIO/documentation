@@ -730,6 +730,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.84](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.84): fix(media-manager): Reset replaced state when picking new media
 - [v111.1.83](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.83): fix(media-library): Apply filters from URL on browser reload
 - [v111.1.82](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.82): fix(properties-panel): Update media titles on change
 - [v111.1.81](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.81): fix(media-library): Flush autosave on media library detail view close
