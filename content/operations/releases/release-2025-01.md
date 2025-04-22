@@ -658,6 +658,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v267.1.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.38): fix(deps): update dependency fastify from 5.2.0 to 5.3.2 [security]
 - [v267.1.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.37): fix(cli): Do not rely on config within cli option building as it breaks support for many tasks
 - [v267.1.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.36): fix: Add parameters concurrency and batchSize to change-design-name-and-version-to-latest-project-design CLI
 - [v267.1.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.35): fix(change-project-design): Iterate documents from newest to oldest
