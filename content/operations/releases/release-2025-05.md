@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @livingdocs/framework from 32.7.4 to v32.7.6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7956)
 - [Do not rely on config within cli option building](https://github.com/livingdocsIO/livingdocs-server/pull/7951)
 - [Fix issue where leaving selection mode would occasionally not re-enable the interactive view](https://github.com/livingdocsIO/livingdocs-editor/pull/9846)
 - [Allow deletion of media library entry translations](https://github.com/livingdocsIO/livingdocs-editor/pull/9826)
