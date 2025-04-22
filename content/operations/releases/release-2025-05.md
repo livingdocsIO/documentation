@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @livingdocs/framework from 32.7.4 to v32.7.5 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9860)
 - [Allow string for comment component indicator label](https://github.com/livingdocsIO/livingdocs-editor/pull/9845)
 - [Update media titles and actions in properties panel on media change](https://github.com/livingdocsIO/livingdocs-editor/pull/9847)
 - [Flush autosave on media library detail view close](https://github.com/livingdocsIO/livingdocs-editor/pull/9843)
