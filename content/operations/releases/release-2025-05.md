@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix issue where leaving selection mode would occasionally not re-enable the interactive view](https://github.com/livingdocsIO/livingdocs-editor/pull/9846)
 - [Allow deletion of media library entry translations](https://github.com/livingdocsIO/livingdocs-editor/pull/9826)
 - [Reset replaced state when picking new media](https://github.com/livingdocsIO/livingdocs-editor/pull/9840)
 - [Apply media library filters from URL on browser reload](https://github.com/livingdocsIO/livingdocs-editor/pull/9837)
