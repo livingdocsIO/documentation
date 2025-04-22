@@ -697,6 +697,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.56): fix(media-manager): Reset replaced state when picking new media
 - [v114.13.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.55): fix(media-library): Apply filters from URL on browser reload
 - [v114.13.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.54): fix(properties-panel): Update media titles on change
 - [v114.13.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.53): fix(media-library): Flush autosave on media library detail view close
