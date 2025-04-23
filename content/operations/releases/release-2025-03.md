@@ -11,6 +11,47 @@ header:
   current: true
   maintained: true
   branchHandle: release-2025-03
+
+systemRequirements:
+  suggested:
+    - name: Node
+      version: 22
+    - name: NPM
+      version: 10
+    - name: Postgres
+      version: 16
+    - name: Elasticsearch
+      version: 8.x
+    - name: OpenSearch
+      version: v2.3.0
+    - name: Redis
+      version: 7
+    - name: Livingdocs Server Docker Image
+      version: livingdocs/server-base:22
+    - name: Livingdocs Editor Docker Image
+      version: livingdocs/editor-base:22
+    - name: Browser Support
+      version: Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78
+
+  minimal:
+    - name: Node
+      version: 20.18
+    - name: NPM
+      version: 10
+    - name: Postgres
+      version: 13
+    - name: Elasticsearch
+      version: 7.x
+    - name: OpenSearch
+      version: 1
+    - name: Redis
+      version: 6.2
+    - name: Livingdocs Server Docker Image
+      version: livingdocs/server-base:20:7
+    - name: Livingdocs Editor Docker Image
+      version: livingdocs/editor-base:20:7
+    - name: Browser Support
+      version: Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78
 ---
 
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-march-2025).
@@ -30,42 +71,37 @@ To learn about the necessary actions to update Livingdocs to `release-2025-03`, 
 
 ### Suggested
 
-| Name                           | Version                                                                                  |
-| ------------------------------ | ---------------------------------------------------------------------------------------- |
-| Node                           | 22                                                                                       |
-| NPM                            | 10                                                                                       |
-| Postgres                       | 16                                                                                       |
-| Elasticsearch<br/>OpenSearch   | 8.x<br/>v2.3.0                                                                           |
-| Redis                          | 7                                                                                        |
-| Livingdocs Server Docker Image | livingdocs/server-base:22                                                                |
-| Livingdocs Editor Docker Image | livingdocs/editor-base:22                                                                |
-| Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
+{{< system-versions list="suggested" >}}
 
 ### Minimal
 
-| Name                           | Version                                                                                  |
-| ------------------------------ | ---------------------------------------------------------------------------------------- |
-| Node                           | 20.18                                                                                    |
-| NPM                            | 10                                                                                       |
-| Postgres                       | 13                                                                                       |
-| Elasticsearch<br/>OpenSearch   | 7.x<br/>1                                                                                |
-| Redis                          | 6.2                                                                                      |
-| Livingdocs Server Docker Image | livingdocs/server-base:20:7                                                              |
-| Livingdocs Editor Docker Image | livingdocs/editor-base:20:7                                                              |
-| Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
+{{< system-versions list="minimal" >}}
 
-## Breaking Changes 🔥
+## Deployment
 
-{{< feature-info "Operations" "server" >}}
+### Before the deployment
 
-### Migrate the Postgres Database :fire:
+{{< warning >}}
+Please make sure the [manual migration from November Release]({{< ref "/operations/releases/release-2024-11#after-the-deployment" >}}) has been run. It can be checked running the database query:
+```sql
+SELECT FROM document_metadata LIMIT 1;
+```
+If this query returns a row, the migration has not been run.
+{{< /warning >}}
 
-It's a simple/fast migration with no expected data losses.
+### Rollout deployment
+
+#### Migrate the Postgres Database
+Once you deploy new release instances, you have to run the migrations below. The migrations are simple and fast with no expected data loss.
 
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database schema
+# migration 204-feature-complete-li_jsonb_patch.js
+#   deletes unused function `li_jsonb_patch_pg9`
+# migration 205-add-media-library-state-history.js
+#   adds column state_history and states to `media_library_entries` table
 # migration 206-move-revision-metadata.js
-#   writes all data from table `document_metadata` to `document_revisions`
+#   if November manual migration was not run, it writes all data from table `document_metadata` to `document_revisions`
 # migration 207-migration-sequence.js
 #   creates two new columns `content_migration_sequence` and `metadata_migration_sequence`
 #   on the `document_revisions` table
@@ -79,6 +115,20 @@ It's a simple/fast migration with no expected data losses.
 #   adds support for annotations in `api_client_tokens` table
 livingdocs-server migrate up
 ```
+
+### After the deployment
+
+No post-deployment steps are required after rolling out this release.
+
+### Rollback
+
+If you encounter any issues after the deployment, you can rollback to the previous release. If you have already run the migrations and they have completed, you can rollback to the previous release by running the following command:
+
+```sh
+livingdocs-server migrate down
+``` 
+
+## Breaking Changes 🔥
 
 {{< feature-info "Design" "Server" >}}
 
