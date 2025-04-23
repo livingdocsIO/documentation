@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @azure/identity from 4.8.0 to v4.9.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7938)
 - [fix(deps): update dependency @livingdocs/framework from 32.7.5 to v32.7.6 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9872)
 - [fix(deps): update dependency cypress from 14.3.1 to v14.3.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9876)
 - [fix(deps): update dependency @livingdocs/framework from 32.7.4 to v32.7.6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7956)
