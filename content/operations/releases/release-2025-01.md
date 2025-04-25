@@ -699,6 +699,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.59): fix: Reload document on design change
 - [v114.13.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.58): fix(deps): update dependency fastify to v5.3.2 [security]
 - [v114.13.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.57): fix(selection-mode): Ensure component blur does not interfere
 - [v114.13.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.56): fix(media-manager): Reset replaced state when picking new media
