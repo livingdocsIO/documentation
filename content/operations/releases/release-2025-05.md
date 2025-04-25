@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Image editing](https://github.com/livingdocsIO/livingdocs-server/pull/7886)
 - [fix(deps): update dependency @smithy/signature-v4 from 5.0.2 to v5.1.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7963)
 - [fix(deps): update dependency pg from 8.15.1 to v8.15.5 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7961)
 - [Make li-image upload state reactive](https://github.com/livingdocsIO/livingdocs-editor/pull/9859)
