@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Add 2025-05 api version](https://github.com/livingdocsIO/livingdocs-server/pull/7974)
 - [fix(deps): update dependency pg from 8.15.5 to v8.15.6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7973)
 - [First install NPM packages before embedding Pintura from node_modules](https://github.com/livingdocsIO/livingdocs-editor/pull/9883)
 - [Image editing](https://github.com/livingdocsIO/livingdocs-server/pull/7886)
