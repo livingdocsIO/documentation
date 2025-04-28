@@ -23,12 +23,14 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/9891)
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/7978)
 - [Use correct document locale when selecting li-image metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/9850)
 - [Display task deadline validation error for new tasks](https://github.com/livingdocsIO/livingdocs-editor/pull/9838)
 - [Add PEIQ agency report import flow](https://github.com/livingdocsIO/livingdocs-server/pull/7950)
 - [Fix `pqina` error in CI](https://github.com/livingdocsIO/livingdocs-editor/pull/9888)
+
 - [Add 2025-05 api version](https://github.com/livingdocsIO/livingdocs-server/pull/7974)
 - [fix(deps): update dependency pg from 8.15.5 to v8.15.6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7973)
 - [First install NPM packages before embedding Pintura from node_modules](https://github.com/livingdocsIO/livingdocs-editor/pull/9883)
@@ -181,7 +183,6 @@ These are the release notes of the upcoming release (pull requests merged to the
 - [Keep support for beta routes](https://github.com/livingdocsIO/livingdocs-server/pull/7759)
 - [Fix opening document inbox when in visibility mode](https://github.com/livingdocsIO/livingdocs-editor/pull/9610)
 
-
 To get an overview about new functionality, read the [Release Notes](TODO).
 To learn about the necessary actions to update Livingdocs to `release-2025-05`, read on.
 
@@ -214,7 +215,7 @@ To learn about the necessary actions to update Livingdocs to `release-2025-05`, 
 
 | Name                           | Version                                                                                  |
 | ------------------------------ | ---------------------------------------------------------------------------------------- |
-| Node                           | 20.18                                                                                    |
+| Node                           | 20.19                                                                                    |
 | NPM                            | 10                                                                                       |
 | Postgres                       | 13                                                                                       |
 | Elasticsearch<br/>OpenSearch   | 7.x<br/>1                                                                                |
@@ -223,22 +224,47 @@ To learn about the necessary actions to update Livingdocs to `release-2025-05`, 
 | Livingdocs Editor Docker Image | livingdocs/editor-base:20:7                                                              |
 | Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
 
+## Deployment
+
+TODO: check migrations / add deployment steps as in release-2025-03
+
 ## Breaking Changes 🔥
 
-{{< feature-info "Operations" "server" >}}
+### Update Minimal Node Version v20.19 :fire:
 
-### Migrate the Postgres Database :fire:
+The minimal supported Node.js version is now `v20.19.0`.
+This version allows us to require esm modules within commonjs.
 
-It's a simple/fast migration with no expected data losses.
+### Rebrand of Desk-Net to Kordiam :fire:
 
-```sh
-# run `livingdocs-server migrate up` to update to the newest database schema
-livingdocs-server migrate up
-```
+Desk-Net rebranded as Kordiam.
+To align Livingdocs with this change, we previously introduced corresponding Kordiam properties, features, and plugins.
+With this release, we are removing the superseded Desk-Net functionality:
 
-TODO: check migration
+- Feature `li-desknet` and `li-desknet-`integration, including all server APIs
+- Server config `desknet`, `integrations.desknet`, and `hugo.print.desknetMetadataFields`
+- Project config `settings.desknet`, `settings.integrations.desknet`, and `contentTypes.[*].desknet`
+- Function parameter `desknetApi` of Desk-Net/Kordiam functions
+- `desknet` property in the return objects of `projectApi.getProject()` and `systemApi.config()`
+- Metadata plugins `li-desknet-global`, `li-desknet-integration`, and `li-desknet-schedule`
+- li-kordiam-schedule config property `desknetExternalElementIdMetadataPath`
+
+### Removal of Menu Tool :fire:
+
+The Menu Tool has been removed.
+
+- Menu items `{liItem: 'menus'}` are no longer supported. Please remove them from the project config.
+- Public API GET `/api/:apiVersion/menus/:channelHandle?` has been removed.
+- Feature `li-menus` has been removed including all its server APIs.
+
+### Removal of config.contentTypes :fire:
+
+The deprecated shorthand property `config.contentTypes` in the li-document-search metadata plugin was now removed.
+Use `config.contentType` instead.
 
 ## Deprecations
+
+TODO: no deprecations, just removals??
 
 ## Features
 
@@ -269,10 +295,12 @@ The effect will go away automatically after a certain time.
      ]
    }
    ```
+
    - **handle**: Make sure to use the same handle for all content types where the plugin is configured
    - **indexing**: The config option `index` needs to be enabled for it to work
 
 2. Generally allow exposure boosting for certain teasers in their service params schema
+
    ```js
    {
      name: 'someTeaserService',
@@ -314,6 +342,29 @@ The effect will go away automatically after a certain time.
 
 Visit the [`li-exposure-boost` plugin]({{< ref "/reference/document/metadata/plugins/li-exposure-boost" >}}) page for more information.
 
+{{< feature-info "" "" >}}
+
+### Document Inbox for Data Records :gift:
+
+{{< feature-info "" "" >}}
+
+### Media Center Image Editing :gift:
+
+{{< feature-info "" "" >}}
+
+### PEIQ Integration - Article Import :gift:
+
+{{< feature-info "" "" >}}
+
+### Media Center - Delete language metadata set :gift:
+
+{{< feature-info "" "" >}}
+
+### Table Dashboards - Support All Metadata Cells :gift:
+
+{{< feature-info "" "" >}}
+
+### Additional oEmbed Providers :gift:
 
 ## Vulnerability Patches
 
@@ -323,7 +374,7 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 This release we have patched the following vulnerabilities in the Livingdocs Server:
 
-- TBD
+- TODO: add
 
 No known vulnerabilities. :tada:
 
@@ -331,7 +382,7 @@ No known vulnerabilities. :tada:
 
 This release we have patched the following vulnerabilities in the Livingdocs Editor:
 
-- TBD
+- TODO: add
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
@@ -343,10 +394,12 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v276.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.2): fix(data-migration-run): Parse argument --filter-by-id to integers
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+
 - [v117.6.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.4): fix(drag-drop): Clear up markers after dragend event
 - [v117.6.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.3): fix(core): Replace app when registering project settings components
 - [v117.6.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.2): fix(properties-panel): Hide edit local version when empty
