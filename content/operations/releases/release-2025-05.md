@@ -56,16 +56,16 @@ To learn about the necessary actions to update Livingdocs to `release-2025-05`, 
 
 ## Breaking Changes 🔥
 
-{{< feature-info "" "" >}}
+{{< feature-info "Dependencies" "Version" >}}
 
 ### Update Minimal Node Version v20.19 :fire:
 
 The minimal supported Node.js version is now `v20.19.0`.
 This version allows us to require esm modules within commonjs.
 
-{{< feature-info "" "" >}}
+{{< feature-info "Server" "Removal" >}}
 
-### Rebrand of Desk-Net to Kordiam :fire:
+### Removal of Desk-Net in favor to Kordiam :fire:
 
 Desk-Net rebranded as Kordiam.
 To align Livingdocs with this change, we previously introduced corresponding Kordiam properties, features, and plugins.
@@ -78,8 +78,9 @@ With this release, we are removing the superseded Desk-Net functionality:
 - `desknet` property in the return objects of `projectApi.getProject()` and `systemApi.config()`
 - Metadata plugins `li-desknet-global`, `li-desknet-integration`, and `li-desknet-schedule`
 - li-kordiam-schedule config property `desknetExternalElementIdMetadataPath`
+- TODO: @marcbachmann -> API urls changes?
 
-{{< feature-info "" "" >}}
+{{< feature-info "Server" "Removal" >}}
 
 ### Removal of Menu Tool :fire:
 
@@ -89,7 +90,7 @@ The Menu Tool has been removed.
 - Public API GET `/api/:apiVersion/menus/:channelHandle?` has been removed.
 - Feature `li-menus` has been removed including all its server APIs.
 
-{{< feature-info "" "" >}}
+{{< feature-info "Server" "Removal" >}}
 
 ### Removal of config.contentTypes :fire:
 
