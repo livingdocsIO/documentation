@@ -538,6 +538,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.47): fix(tasks): Display deadline error for new tasks
 - [v115.22.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.46): fix(metadata): Make li-image upload state reactive
 - [v115.22.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.45): fix(selection-mode): Ensure component blur does not interfere
 - [v115.22.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.44): fix(media-manager): Reset replaced state when picking new media
