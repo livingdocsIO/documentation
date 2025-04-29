@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/7978)
 - [Use correct document locale when selecting li-image metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/9850)
 - [Display task deadline validation error for new tasks](https://github.com/livingdocsIO/livingdocs-editor/pull/9838)
 - [Add PEIQ agency report import flow](https://github.com/livingdocsIO/livingdocs-server/pull/7950)
