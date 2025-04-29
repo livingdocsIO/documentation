@@ -487,7 +487,7 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 This release we have patched the following vulnerabilities in the Livingdocs Server:
 
 - [CVE-2025-22150](https://github.com/advisories/GHSA-c76h-2ccp-4975) patched in `undici` v6.21.1
-- [CVE-2025-27152] patched in `axios` v1.8.2
+- [CVE-2025-27152](https://github.com/advisories/GHSA-jr5f-v2jv-69x6) patched in `axios` v1.8.2
 
 No known vulnerabilities. :tada:
 
@@ -496,7 +496,7 @@ No known vulnerabilities. :tada:
 This release we have patched the following vulnerabilities in the Livingdocs Editor:
 
 - [CVE-2025-22150](https://github.com/advisories/GHSA-c76h-2ccp-4975) patched in `undici` v6.21.1
-- [CVE-2025-27152] patched in `axios` v1.8.2
+- [CVE-2025-27152](https://github.com/advisories/GHSA-jr5f-v2jv-69x6) patched in `axios` v1.8.2
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
