@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Improve handling of empty property image_ids](https://github.com/livingdocsIO/livingdocs-server/pull/7982)
 
 
 To get an overview about new functionality, read the [Release Notes](TODO).
