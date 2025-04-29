@@ -16,13 +16,6 @@ header:
 To get an overview about new functionality, read the [Release Notes] (TODO: add release notes when finished).
 To learn about the necessary actions to update Livingdocs to `release-2025-05`, read on.
 
-- [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/9891)
-- [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/7978)
-- [Use correct document locale when selecting li-image metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/9850)
-- [Display task deadline validation error for new tasks](https://github.com/livingdocsIO/livingdocs-editor/pull/9838)
-- [Add PEIQ agency report import flow](https://github.com/livingdocsIO/livingdocs-server/pull/7950)
-- [Fix `pqina` error in CI](https://github.com/livingdocsIO/livingdocs-editor/pull/9888)
-
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
 
 ## Webinar
