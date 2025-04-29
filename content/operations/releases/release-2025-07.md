@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix data migration statistics mutation](https://github.com/livingdocsIO/livingdocs-server/pull/7985)
 - [Improve handling of empty property image_ids](https://github.com/livingdocsIO/livingdocs-server/pull/7982)
 
 
