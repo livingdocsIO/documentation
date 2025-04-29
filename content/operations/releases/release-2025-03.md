@@ -488,6 +488,7 @@ This release we have patched the following vulnerabilities in the Livingdocs Ser
 
 - [CVE-2025-22150](https://github.com/advisories/GHSA-c76h-2ccp-4975) patched in `undici` v6.21.1
 - [CVE-2025-27152](https://github.com/advisories/GHSA-jr5f-v2jv-69x6) patched in `axios` v1.8.2
+- [CVE-2025-27789] https://github.com/advisories/GHSA-968p-4wvh-cqc8 patched `@babel/runtime` & `@babel/helpers` v7.26.10
 
 No known vulnerabilities. :tada:
 
@@ -497,6 +498,7 @@ This release we have patched the following vulnerabilities in the Livingdocs Edi
 
 - [CVE-2025-22150](https://github.com/advisories/GHSA-c76h-2ccp-4975) patched in `undici` v6.21.1
 - [CVE-2025-27152](https://github.com/advisories/GHSA-jr5f-v2jv-69x6) patched in `axios` v1.8.2
+- [CVE-2025-27789] https://github.com/advisories/GHSA-968p-4wvh-cqc8 patched `@babel/runtime` & `@babel/helpers` v7.26.10
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
