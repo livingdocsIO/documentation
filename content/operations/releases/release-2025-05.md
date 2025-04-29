@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Display task deadline validation error for new tasks](https://github.com/livingdocsIO/livingdocs-editor/pull/9838)
 - [Add PEIQ agency report import flow](https://github.com/livingdocsIO/livingdocs-server/pull/7950)
 - [Fix `pqina` error in CI](https://github.com/livingdocsIO/livingdocs-editor/pull/9888)
 - [Add 2025-05 api version](https://github.com/livingdocsIO/livingdocs-server/pull/7974)
