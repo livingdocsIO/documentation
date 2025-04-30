@@ -539,6 +539,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.50): fix(core): Replace app when registering project settings components
 - [v115.22.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.49): fix(drag-drop): Clear up markers after dragend event
 - [v115.22.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.48): fix(properties-panel): Hide edit local version when empty
 - [v115.22.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.47): fix(tasks): Display deadline error for new tasks
