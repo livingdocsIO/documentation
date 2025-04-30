@@ -83,15 +83,18 @@ To learn about the necessary actions to update Livingdocs to `release-2025-03`, 
 
 {{< warning >}}
 Please make sure the [manual migration from November Release]({{< ref "/operations/releases/release-2024-11#after-the-deployment" >}}) has been run. It can be checked running the database query:
+
 ```sql
 SELECT FROM document_metadata LIMIT 1;
 ```
+
 If this query returns a row, the migration has not been run.
 {{< /warning >}}
 
 ### Rollout deployment
 
 #### Migrate the Postgres Database
+
 Once you deploy new release instances, you have to run the migrations below. The migrations are simple and fast with no expected data loss.
 
 ```sh
@@ -126,7 +129,7 @@ If you encounter any issues after the deployment, you can rollback to the previo
 
 ```sh
 livingdocs-server migrate down
-``` 
+```
 
 ## Breaking Changes 🔥
 
@@ -444,6 +447,7 @@ In real-world page management scenarios, teasers often come in groups. It can be
 With teaser containers, we let editors change the Algorithm and Curated List on a group level and all the teasers in the group will be updated with the same settings. Setting a Direct Reference on individual teasers is still possible.
 
 There are two prerequisites for this feature:
+
 - The teaser group component uses a `doc-container` with the config `isTeaserContainer: true`
 - All the teasers in the group are using an identical `li-teaser` config in their include service params
 
@@ -506,6 +510,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v271.0.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.31): fix(data-migrations): Use `add` json patch operation to set statistics instead of a `replace`. That way it won't fail if the field does not exist.
 - [v271.0.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.30): fix(deps): automatically patch Node.js vulnerabilities
 - [v271.0.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.29): fix(deps): update dependency @livingdocs/framework from 32.6.3 to v32.6.4
@@ -539,6 +544,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+
 - [v115.22.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.50): fix(core): Replace app when registering project settings components
 - [v115.22.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.49): fix(drag-drop): Clear up markers after dragend event
 - [v115.22.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.48): fix(properties-panel): Hide edit local version when empty
