@@ -699,6 +699,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.62): fix(metadata): Use correct document locale when selecting li-image
 - [v114.13.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.61): fix(metadata): Make li-image upload state reactive
 - [v114.13.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.60): fix(tasks): Display deadline error for new tasks
 - [v114.13.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.59): fix: Reload document on design change
