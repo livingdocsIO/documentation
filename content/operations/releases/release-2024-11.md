@@ -730,6 +730,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.87](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.87): fix(metadata): Make li-image upload state reactive
 - [v111.1.86](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.86): fix(tasks): Display deadline error for new tasks
 - [v111.1.85](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.85): fix(selection-mode): Ensure component blur does not interfere
 - [v111.1.84](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.84): fix(media-manager): Reset replaced state when picking new media
