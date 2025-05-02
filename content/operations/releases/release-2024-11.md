@@ -689,6 +689,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v261.3.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.40): fix(queue): Execute redis streams cleanup only on worker
 - [v261.3.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.39): fix(deps): update dependency @livingdocs/framework from 31.0.5 to v31.0.6
 - [v261.3.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.38): fix(delivery-status): Restrict distinct query of delivery status to project & document scope
 - [v261.3.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.37): fix(li-image): Re-add the config.readOnly attribute on li-media
