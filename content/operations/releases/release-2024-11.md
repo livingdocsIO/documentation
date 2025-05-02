@@ -730,6 +730,7 @@ Here is a list of all patches after the release has been announced.
 - [v261.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v261.3.2): fix(release-2024-11): Update framework to v31.0.1 (release-2024-11 tag)
 
 ### Livingdocs Editor Patches
+- [v111.1.90](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.90): fix(login): Show login errors correctly. Do not prune the hash part if it doesn't include a token parameter
 - [v111.1.89](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.89): fix(drag-drop): Clear up markers after dragend event
 - [v111.1.88](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.88): fix(metadata): Use correct document locale when selecting li-image
 - [v111.1.87](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v111.1.87): fix(metadata): Make li-image upload state reactive
