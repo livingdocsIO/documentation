@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Prevent component blur when clicking on component area for a ticker entry to allow doc-link to be set](https://github.com/livingdocsIO/livingdocs-editor/pull/9917)
 - [fix(deps): update dependency @aws-sdk/client-s3 from 3.799.0 to v3.800.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/7993)
 - [Download images from /serve-image endpoint](https://github.com/livingdocsIO/livingdocs-editor/pull/9914)
 - [Download modified instead of original images](https://github.com/livingdocsIO/livingdocs-server/pull/7980)
