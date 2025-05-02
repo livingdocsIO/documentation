@@ -547,6 +547,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.52): fix(login): Show login errors correctly. Do not prune the hash part if it doesn't include a token parameter
 - [v115.22.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.51): fix(properties-panel): Always show "Has local changes" for documents
 
 - [v115.22.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.50): fix(core): Replace app when registering project settings components
