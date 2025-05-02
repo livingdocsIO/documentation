@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Download modified instead of original images](https://github.com/livingdocsIO/livingdocs-server/pull/7980)
 - [Show login errors correctly](https://github.com/livingdocsIO/livingdocs-editor/pull/9924)
 - [chore(deps): update dependency mocha from 11.1.0 to v11.2.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9921)
 - [Always show "Has local changes" in properties panel for embedded documents](https://github.com/livingdocsIO/livingdocs-editor/pull/9913)
