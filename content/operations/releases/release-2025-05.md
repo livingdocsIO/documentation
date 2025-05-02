@@ -239,6 +239,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v276.3.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.4): fix: Support downloading images from /serve-image endpoint
 - [v276.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.3): fix(queue): Execute redis streams cleanup only on worker
 
 - [v276.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.2): fix(data-migration-run): Parse argument --filter-by-id to integers
