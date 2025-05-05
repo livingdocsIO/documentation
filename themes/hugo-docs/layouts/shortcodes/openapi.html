@@ -1,8 +1,11 @@
 {{- $versions := hugo.Store.Get "api-versions" -}}
-{{- $firstVersion := index $versions 0 -}}
-{{- range $versions -}}
-  {{ (resources.FromString (printf "openapi-%s.json" .version) (partialCached "openapi-template.gotmpl" (dict "Site" $.Site "version" .version) .version)).Publish }}
-{{- end -}}
-{{- $latest := (resources.FromString "openapi.json" (partialCached "openapi-template.gotmpl" (dict "Site" $.Site "version" $firstVersion.version) $firstVersion.version)) -}}
-{{- $latest.Publish -}}
-{{- $latest.Permalink -}}
+
+
+<!-- Note: $version will have upcoming versions excluded if buildDrafts is false (see partial _api-versions.html) -->
+{{- $currentVersion := index $versions 0 -}}
+
+
+<!-- Sideeffect: publish json file at path /openapi.json -->
+{{- $current := (resources.FromString "openapi.json" (partialCached "openapi-template.gotmpl" (dict "Site" $.Site "version" $currentVersion.version) $currentVersion.version)) -}}
+{{- $current.Publish -}}
+{{- $current.Permalink -}}
