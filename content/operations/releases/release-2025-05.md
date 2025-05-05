@@ -246,6 +246,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+- [v117.6.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.9): fix: Remove non-existent linked Pintura package from downstream tests
 - [v117.6.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.8): fix(ticker): Prevent component blur when clicking on component area
 - [v117.6.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.7): fix: Download images from /serve-image endpoint
 - [v117.6.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.6): fix(login): Show login errors correctly. Do not prune the hash part if it doesn't include a token parameter
