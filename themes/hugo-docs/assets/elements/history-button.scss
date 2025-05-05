@@ -20,12 +20,6 @@
     width: $space-m;
     height: 2 * $space-m;
     background-color: $color-white;
-
-    .history[open] & {
-      .arrow {
-        @extend .arrow--down;
-      }
-    }
   }
 
   &__label {
@@ -40,7 +34,9 @@
     border-left: 1px solid $color-grey-6;
   }
 
-  &::-webkit-details-marker {
-    display: none;
+  &--open {
+    .arrow {
+      @extend .arrow--down;
+    }
   }
 }

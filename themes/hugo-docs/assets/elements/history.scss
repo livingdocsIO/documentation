@@ -6,15 +6,31 @@
   }
 }
 
-.history__content {
-  margin-top: $space-m;
-  padding: $space-m;
-  background-color: $color-grey-8;
-  border-radius: $rounded-corners;
+.history__content-wrapper {
+  height: 0;
+  overflow: hidden;
+  margin-top: 0;
+  opacity: 0;
 
-  table {
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
+  transition:
+      height 1.5 * $transition-time ease,
+      margin-top 1.5 * $transition-time ease,
+      opacity 1.5 * $transition-time ease;
+
+  &.show {
+    margin-top: $space-m;
+    opacity: 1;
+  }
+
+  .history__content {
+    padding: $space-m;
+    background-color: $color-grey-8;
+    border-radius: $rounded-corners;
+
+    table {
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 }

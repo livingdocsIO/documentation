@@ -52,32 +52,34 @@
   {{- end -}}
 
   {{- if $endpoint.history -}}
-    <details class="history">
-      <summary class="history-button">
+    <div class="history">
+      <div class="history-button">
         <div class="history-button__interaction">
           <span class="arrow arrow--right"></span>
         </div>
         <div class="history-button__label">History</div>
-      </summary>
-      <div class="history__content">
-        <table>
-          <thead>
-            <tr>
-              <th>Version</th>
-              <th>Change</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{- range $endpoint.history -}}
-              <tr>
-                <td>{{ .release }}</td>
-                <td>{{ .description | $page.RenderString }}</td>
-              </tr>
-            {{- end -}}
-          </tbody>
-        </table>
       </div>
-    </details>
+      <div class="history__content-wrapper">
+        <div class="history__content">
+          <table>
+            <thead>
+              <tr>
+                <th>Version</th>
+                <th>Change</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{- range $endpoint.history -}}
+                <tr>
+                  <td>{{ .release }}</td>
+                  <td>{{ .description | $page.RenderString }}</td>
+                </tr>
+              {{- end -}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   {{- end -}}
 
   {{- if $endpoint.release -}}

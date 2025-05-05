@@ -363,6 +363,28 @@ teaserAndCodes.forEach(function (teaserAndCode) {
 })
 
 /**
+ * History Visibility
+ */
+const histories = document.querySelectorAll('.history')
+
+histories.forEach(function (history) {
+  history
+    .querySelector('.history-button')
+    .addEventListener('click', (evt) => {
+      const contentWrapper = evt.target.closest('.history').querySelector('.history__content-wrapper')
+      const button = evt.target.closest('.history').querySelector('.history-button')
+      const content = evt.target.closest('.history').querySelector('.history__content')
+
+      let targetHeight = content.offsetHeight
+      if (contentWrapper.classList.contains('show')) targetHeight = 0
+
+      button.classList.toggle('history-button--open')
+      contentWrapper.classList.toggle('show')
+      contentWrapper.style.height = `${targetHeight}px`
+    })
+})
+
+/**
  * Versioning
  */
 document.addEventListener('DOMContentLoaded', function () {
