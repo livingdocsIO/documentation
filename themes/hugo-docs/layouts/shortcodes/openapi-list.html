@@ -1,0 +1,10 @@
+{{- $versions := hugo.Store.Get "api-versions" -}}
+{{- range $versions -}}
+  <!-- Sideeffect: publish json file at path /openapi-version.json -->
+  {{ $resource := (resources.FromString (printf "openapi-%s.json" .version) (partialCached "openapi-template.gotmpl" (dict "Site" $.Site "version" .version) .version)) -}}
+  {{ $resource.Publish }}
+  <p>
+    <strong>{{ .version }}:</strong><br />
+    <a href="{{ $resource.Permalink }}">{{ $resource.Permalink }}</a>
+  </p>
+{{- end -}}
