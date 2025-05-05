@@ -17,4 +17,8 @@
   :last-child {
     margin-bottom: 0;
   }
+
+  .highlight {
+    @extend .highlight--fit-parent;
+  }
 }
