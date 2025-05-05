@@ -35,4 +35,19 @@
       }
     }
   }
+
+  // special case: top section on landing page
+  &:has(.illu-teaser:first-child):has(.tip:nth-child(2)):has(.tip:last-child) {
+    @include media-query(tablet) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .illu-teaser {
+      grid-column: span 2;
+    }
+
+    .tip {
+      grid-column: span 1;
+    }
+  }
 }
