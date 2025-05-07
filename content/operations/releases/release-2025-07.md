@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Import Pintura from private NPM repository](https://github.com/livingdocsIO/livingdocs-editor/pull/9944)
 - [fix(deps): update dependency cloudinary from 2.6.0 to v2.6.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8010)
 - [Remove non-existent linked Pintura package from downstream tests](https://github.com/livingdocsIO/livingdocs-editor/pull/9938)
 - [chore(deps): update dependency eslint from 9.25.1 to v9.26.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8007)
