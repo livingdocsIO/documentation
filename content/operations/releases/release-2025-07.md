@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency nanoid from 5.0.9 to v5.1.5 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9794)
 - [fix: dont disable metadata button](https://github.com/livingdocsIO/livingdocs-editor/pull/9937)
 - [Import Pintura from private NPM repository](https://github.com/livingdocsIO/livingdocs-editor/pull/9944)
 - [fix(deps): update dependency cloudinary from 2.6.0 to v2.6.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8010)
