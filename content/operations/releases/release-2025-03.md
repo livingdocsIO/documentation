@@ -547,6 +547,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.56): fix: Disable supportsVideoConversion in rendering image service
 - [v115.22.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.55): fix: dont disable metadata button
 - [v115.22.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.54): fix: Compute clipboard image URL with rendering image service
 - [v115.22.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.53): fix(ticker): Prevent component blur when clicking on component area
