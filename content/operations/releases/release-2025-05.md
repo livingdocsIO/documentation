@@ -193,21 +193,38 @@ Visit the [`li-exposure-boost` plugin]({{< ref "/reference/document/metadata/plu
 
 ### Media Center - Delete language metadata set :gift:
 
-{{< feature-info "" "" >}}
+{{< feature-info "Table Dashboards" "editor" >}}
 
 ### Table Dashboards - Support All Metadata Cells :gift:
+
+In earlier iterations of the table dashboards, support for metadata plugins was intentionally limited to reduce initial implementation complexity. However, as the feature matured, the lack of support for certain plugins introduced inconsistencies and additional coordination overhead when extending functionality on demand.
+
+This release addresses that gap by adding support for a broader range of metadata plugins in table dashboards, improving completeness and consistency across the system. Newly supported plugins include:
+
+-	li-datetime, li-system-datetime
+-	li-date, li-system-date
+-	li-enum, li-system-enum
+-	li-document-references
+-	li-target-length
 
 {{< feature-info "" "" >}}
 
 ### Additional oEmbed Providers :gift:
 
-{{< feature-info "" "" >}}
+{{< feature-info "Clipboard" "editor" >}}
 
 ### Added Clipboard Context
 
-{{< feature-info "" "" >}}
+A small improvement in this release enhances clipboard usability for nested components.
+Previously, when copying or cutting nested components, the clipboard displayed only the component name, with no descriptive context making it difficult to distinguish between components, especially those with identical names.
+The clipboard preview now includes the content of the first descendant as a description, providing better context and improving the overall editing experience.
+
+
+{{< feature-info "Teaser Sidebar" "editor" >}}
 
 ### Clickable Titles in Teaser Sidebar
+
+Another small improvement in this release makes working with the teaser sidebar more efficient. Teaser titles are now clickable, allowing editors to directly open the linked article in a new window without needing to navigate to it manually.
 
 ## Vulnerability Patches
 
