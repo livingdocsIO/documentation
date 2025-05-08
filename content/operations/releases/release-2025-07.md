@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Preserve loop and delay properties of animated images](https://github.com/livingdocsIO/livingdocs-server/pull/8014)
 - [Disable supportsVideoConversion in rendering image service](https://github.com/livingdocsIO/livingdocs-editor/pull/9952)
 - [fix(deps): update dependency nanoid from 5.0.9 to v5.1.5 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9794)
 - [fix: dont disable metadata button](https://github.com/livingdocsIO/livingdocs-editor/pull/9937)
