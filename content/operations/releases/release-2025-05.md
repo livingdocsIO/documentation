@@ -197,7 +197,7 @@ Visit the [`li-exposure-boost` plugin]({{< ref "/reference/document/metadata/plu
 
 ### Table Dashboards - Support All Metadata Cells :gift:
 
-In earlier iterations of the table dashboards, support for metadata plugins was intentionally limited to reduce initial implementation complexity. However, as the feature matured, the lack of support for certain plugins introduced inconsistencies and additional coordination overhead when extending functionality on demand.
+In earlier iterations of the Table Dashboards, metadata plugin support was limited. However, as the feature has become more widely adopted inconsistencies across plugin behaviour became confusing and problematic.
 
 This release addresses that gap by adding support for a broader range of metadata plugins in table dashboards, improving completeness and consistency across the system. Newly supported plugins include:
 
@@ -215,16 +215,14 @@ This release addresses that gap by adding support for a broader range of metadat
 
 ### Added Clipboard Context
 
-A small improvement in this release enhances clipboard usability for nested components.
-Previously, when copying or cutting nested components, the clipboard displayed only the component name, with no descriptive context making it difficult to distinguish between components, especially those with identical names.
-The clipboard preview now includes the content of the first descendant as a description, providing better context and improving the overall editing experience.
+This release enhances clipboard usability for nested components. Previously, when copying or cutting nested components, the clipboard displayed only the component name, with no descriptive context making it difficult to distinguish between components, especially those with identical names. The clipboard preview now includes the content of the first descendant as a description, providing better context and improving the overall editing experience.
 
 
 {{< feature-info "Teaser Sidebar" "editor" >}}
 
 ### Clickable Titles in Teaser Sidebar
 
-Another small improvement in this release makes working with the teaser sidebar more efficient. Teaser titles are now clickable, allowing editors to directly open the linked article in a new window without needing to navigate to it manually.
+Teaser titles are now clickable, allowing editors to directly open the linked article in a new window without needing to navigate to it manually. This enables more efficient workflows for all those roles that work with the teaser sidebar.
 
 ## Vulnerability Patches
 
