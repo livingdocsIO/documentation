@@ -254,6 +254,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v276.3.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.6): fix(deps): update dependency @livingdocs/framework from 32.7.6 to v32.7.7
 - [v276.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.5): fix: Convert gif images to webp when rendering in the editor
 - [v276.3.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.4): fix: Support downloading images from /serve-image endpoint
 - [v276.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.3): fix(queue): Execute redis streams cleanup only on worker
