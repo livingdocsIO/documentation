@@ -78,7 +78,20 @@ With this release, we are removing the superseded Desk-Net functionality:
 - `desknet` property in the return objects of `projectApi.getProject()` and `systemApi.config()`
 - Metadata plugins `li-desknet-global`, `li-desknet-integration`, and `li-desknet-schedule`
 - li-kordiam-schedule config property `desknetExternalElementIdMetadataPath`
-- TODO: @marcbachmann -> API urls changes?
+- The public API endpoints of the `2025-05` do not support `desknet` in the path anymore
+
+  That means the `/desknet-integration` sub-path is removed in `/api/2025-05` and now only supports `/kordiam-integration`:
+
+  ❌ `/api/2025-05/desknet-integration/statuses`  
+  ✅ `/api/2025-05/kordiam-integration/statuses`
+
+  The api versions `v1` till `2025-03` are not affected:  
+  ✅ `/api/v1/desknet-integration/statuses`  
+  ✅ `/api/2025-03/desknet-integration/statuses`
+
+  But we suggest to migrate to the new versions that use `kordiam` in the path:  
+  ✅ `/api/2025-03/kordiam-integration/statuses`  
+  ✅ `/api/2025-05/kordiam-integration/statuses`
 
 {{< feature-info "Server" "Removal" >}}
 
@@ -201,11 +214,11 @@ In earlier iterations of the Table Dashboards, metadata plugin support was limit
 
 This release addresses that gap by adding support for a broader range of metadata plugins in table dashboards, improving completeness and consistency across the system. Newly supported plugins include:
 
--	li-datetime, li-system-datetime
--	li-date, li-system-date
--	li-enum, li-system-enum
--	li-document-references
--	li-target-length
+- li-datetime, li-system-datetime
+- li-date, li-system-date
+- li-enum, li-system-enum
+- li-document-references
+- li-target-length
 
 {{< feature-info "" "" >}}
 
@@ -216,7 +229,6 @@ This release addresses that gap by adding support for a broader range of metadat
 ### Added Clipboard Context
 
 This release enhances clipboard usability for nested components. Previously, when copying or cutting nested components, the clipboard displayed only the component name, with no descriptive context making it difficult to distinguish between components, especially those with identical names. The clipboard preview now includes the content of the first descendant as a description, providing better context and improving the overall editing experience.
-
 
 {{< feature-info "Teaser Sidebar" "editor" >}}
 
@@ -254,6 +266,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v276.3.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.6): fix(deps): update dependency @livingdocs/framework from 32.7.6 to v32.7.7
 - [v276.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.5): fix: Convert gif images to webp when rendering in the editor
 - [v276.3.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.4): fix: Support downloading images from /serve-image endpoint
@@ -263,6 +276,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+
 - [v117.6.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.15): fix(deps): update dependency @livingdocs/framework from 32.7.6 to v32.7.7
 - [v117.6.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.14): fix(image-editing): Show image editor button also if it is the only action
 - [v117.6.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.13): fix: Disable supportsVideoConversion in rendering image service
