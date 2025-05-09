@@ -23,6 +23,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency posthog-node from 4.16.0 to v4.17.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8005)
 - [Improvement/Loader and Progress Icon](https://github.com/livingdocsIO/livingdocs-editor/pull/9939)
 - [fix(deps): update dependency execa from 9.5.2 to v9.5.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8017)
 - [fix(deps): update dependency exifreader from 4.30.0 to v4.30.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8018)
