@@ -65,20 +65,22 @@ This version allows us to require esm modules within commonjs.
 
 {{< feature-info "Server" "Removal" >}}
 
-### Removal of Desk-Net in favor to Kordiam :fire:
+### Removal of Desk-Net in favor of Kordiam :fire:
 
 Desk-Net rebranded as Kordiam.
 To align Livingdocs with this change, we previously introduced corresponding Kordiam properties, features, and plugins.
 With this release, we are removing the superseded Desk-Net functionality:
 
-- Feature `li-desknet` and `li-desknet-`integration, including all server APIs
+- Feature `li-desknet` and `li-desknet-integration`, including all server APIs
 - Server config `desknet`, `integrations.desknet`, and `hugo.print.desknetMetadataFields`
 - Project config `settings.desknet`, `settings.integrations.desknet`, and `contentTypes.[*].desknet`
 - Function parameter `desknetApi` of Desk-Net/Kordiam functions
 - `desknet` property in the return objects of `projectApi.getProject()` and `systemApi.config()`
 - Metadata plugins `li-desknet-global`, `li-desknet-integration`, and `li-desknet-schedule`
-- li-kordiam-schedule config property `desknetExternalElementIdMetadataPath`
+- `li-kordiam-schedule` config property `desknetExternalElementIdMetadataPath`
 - TODO: @marcbachmann -> API urls changes?
+
+For instructions on how to migrate, please refer to our [Desk-Net to Kordiam migration guide]({{< ref "/guides/integrations/desknet-to-kordiam-migration" >}}).
 
 {{< feature-info "Server" "Removal" >}}
 
@@ -177,17 +179,103 @@ The effect will go away automatically after a certain time.
 
 Visit the [`li-exposure-boost` plugin]({{< ref "/reference/document/metadata/plugins/li-exposure-boost" >}}) page for more information.
 
-{{< feature-info "" "" >}}
+{{< feature-info "Document Inbox" "Editor" >}}
 
 ### Document Inbox for Data Records :gift:
 
-{{< feature-info "" "" >}}
+The Document Inbox is now also supported for documents of type Data Record. It offers the same functionality as with other document types, including the ability to store images and documents, and organize them into groups.
+
+One particular use case we had in mind is the use with Pitch documents, modeled as Data Records, to collect ideas for stories. The Document Inbox allows users to gather images or related stories that may prove useful when writing the final piece later on. If the document is transformed, the contents of the inbox are preserved and carried over to the resulting document.
+
+To enable the inbox for a Data Record, configure which types of documents and media can be added to it.
+
+```js
+{
+  handle: 'pitch',
+  documentType: 'data-record',
+  ...
+  inbox: {
+    contentTypes: ['regular'],
+    mediaTypes: ['image']
+  }
+}
+```
+
+{{< feature-info "Media Center" "Server/Editor" >}}
 
 ### Media Center Image Editing :gift:
 
-{{< feature-info "" "" >}}
+Journalists are sometimes required to redact areas of an image, such as license plates or faces, or to perform color corrections, such as adjusting brightness, contrast, or saturation. To simplify this task and eliminate the need for external tools, we are adding support for basic image editing.
 
-### PEIQ Integration - Article Import :gift:
+{{< img src="./release-2025-05-image-editor-button.png" alt="Image Editor Button"  >}}
+
+In the Livingdocs, we added a new image editor. Users can open the editor by clicking the edit button in the media center detail view. It allows users to adjust brightness, contrast, or saturation, and to blur parts of an image. The original image is always preserved and can be restored at any time. Users can also continue editing an image or selectively undo specific adjustments at a later point. Once an edited image is saved, it will be served instead of the original.
+
+{{< img src="./release-2025-05-image-editor.png" alt="Image Editor"  >}}
+
+Image editing is currently supported for jpg, png, and webp formats when [`use2025Behavior`]({{< ref "/operations/releases/release-2025-03/#media-center-image-variant-storage--delivery-gift" >}}) is enabled. Accordingly, images must be requested via the public API endpoint [`GET /api/2025-03/mediaLibrary/serve-image/{key}`]({{< ref "/reference/public-api/media-library/#serve-image" >}}) for the modifications to be applied.
+
+{{< info >}}
+Make sure to have a CDN or other image service set up in front of Livingdocs that retrieves images via this API endpoint and caches them for serving in your frontend, to reduce load on Livingdocs.
+
+Whenever an asset gets modified, we emit the [`mediaLibraryEntry.update`]({{< ref "/customising/advanced/server-events" >}}) server event. This event can be used to purge a CDN or other image service.
+{{< /info >}}
+
+{{< feature-info "PEIQ" "Server/Editor" >}}
+
+### PEIQ Integration - Agency Report Import :gift:
+
+The Livingdocs integration with PEIQ has been enhanced to enable the import of agency reports. Users can now drag and drop an agency report from PEIQ into a Livingdocs dashboard to initiate the import.
+
+The user experience may vary depending on the report's contents and Livingdocs configuration:
+
+- If the agency report has no attached images and no `paramsSchema` is configured, the document is created and opened immediately. No user input is required.
+- If the agency report has no images but a `paramsSchema` is configured, users must complete the `paramsSchema` form before the document is created and opened.
+- If the report includes images but no `paramsSchema`, the media upload center opens to collect required metadata before creating and opening the document.
+- If both a `paramsSchema` and images are present, users first complete the `paramsSchema` form, then proceed to the media upload center before the document is created and opened.
+
+At any point during this process, users can abort the import, in which case no document is created.
+
+To enable this functionality, begin by configuring the `settings.agencyReportImport` property in your project configuration:
+
+- `peiqFunctionHandle`: The handle of a PEIQ function registered in your server
+- `paramsSchema`: An optional schema prompting the user to provide additional data after dropping an agency report into a dashboard
+- `defaultParams`: Default values to prefill the `paramsSchema` form
+- `context`: Optional additional data passed to the PEIQ function, useful when reusing a function
+
+```js
+agencyReportImport: {
+  peiqFunctionHandle: 'create-from-agency-report',
+  paramsSchema: [
+    {
+      handle: 'category',
+      type: 'li-category'
+    }
+  ],
+  defaultParams: {},
+  context: {
+    contentType: 'regular'
+  }
+}
+```
+
+Next, register your PEIQ function. It will be called when an agency report is imported and must return a document object. The function receives the following arguments:
+
+* `agencyReport`: The raw agency report data returned by the PEIQ API
+* `mediaLibraryEntries`: If the report includes images, they are imported into the Media Library and passed to the function in this array
+* `params`: If a `paramsSchema` is defined, the submitted user values are passed here
+* `context`: The configured `context` from `agencyReportImport` is forwarded to the function
+* `userId`: The ID of the user performing the import
+* `projectConfig`: The project configuration
+
+```js
+liServer.registerPeiqFunction({
+  handle: 'create-from-agency-report',
+  action({agencyReport, mediaLibraryEntries, params, context, userId, projectConfig}) {
+    return {title, contentType, metadata, metadataSource, translations, content}
+  }
+})
+```
 
 {{< feature-info "" "" >}}
 
