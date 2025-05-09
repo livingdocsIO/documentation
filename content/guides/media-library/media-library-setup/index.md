@@ -378,6 +378,26 @@ However, each image starts with no focal point defined.
 It will only be set if a user explicitly selected a focal point.
 In all other cases, the automatic crop calculation falls back to the center crop as it was before `release_2022-11`.
 
+### Image Editing
+
+{{< added-in "release-2025-05" block >}}
+
+Journalists are sometimes required to redact areas of an image, such as license plates or faces, or to perform color corrections, such as adjusting brightness, contrast, or saturation. To simplify this task and eliminate the need for external tools, Livingdocs supports for basic image editing.
+
+{{< img src="./image-editor-button.png" alt="Image Editor Button"  >}}
+
+Users can open the image editor by clicking the edit button in the media center detail view. It allows users to adjust brightness, contrast, or saturation, and to blur parts of an image. The original image is always preserved and can be restored at any time. Users can also continue editing an image or selectively undo specific adjustments at a later point. Once an edited image is saved, it will be served instead of the original.
+
+{{< img src="./image-editor.png" alt="Image Editor"  >}}
+
+Image editing is supported for jpg, png, and webp formats when [`use2025Behavior`]({{< ref "/operations/releases/release-2025-03/#media-center-image-variant-storage--delivery-gift" >}}) is enabled. Accordingly, images must be requested via the public API endpoint [`GET /api/2025-03/mediaLibrary/serve-image/{key}`]({{< ref "/reference/public-api/media-library/#serve-image" >}}) for the modifications to be applied.
+
+{{< info >}}
+Make sure to have a CDN or other image service set up in front of Livingdocs that retrieves images via this API endpoint and caches them for serving in your frontend, to reduce load on Livingdocs.
+
+Whenever an asset gets modified, we emit the [`mediaLibraryEntry.update`]({{< ref "/customising/advanced/server-events" >}}) server event. This event can be used to purge a CDN or other image service.
+{{< /info >}}
+
 ## Videos
 
 Videos work in a similar way to images. The solution still has some shortcomings you need to be aware of:
