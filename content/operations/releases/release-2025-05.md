@@ -190,9 +190,27 @@ The effect will go away automatically after a certain time.
 
 Visit the [`li-exposure-boost` plugin]({{< ref "/reference/document/metadata/plugins/li-exposure-boost" >}}) page for more information.
 
-{{< feature-info "" "" >}}
+{{< feature-info "Document Inbox" "Editor" >}}
 
 ### Document Inbox for Data Records :gift:
+
+The Document Inbox is now also supported for documents of type Data Record. It offers the same functionality as with other document types, including the ability to store images and documents, and organize them into groups.
+
+One particular use case we had in mind is the use with Pitch documents, modeled as Data Records, to collect ideas for stories. The Document Inbox allows users to gather images or related stories that may prove useful when writing the final piece later on. If the document is transformed, the contents of the inbox are preserved and carried over to the resulting document.
+
+To enable the inbox for a Data Record, configure which types of documents and media can be added to it.
+
+```js
+{
+  handle: 'pitch',
+  documentType: 'data-record',
+  ...
+  inbox: {
+    contentTypes: ['regular'],
+    mediaTypes: ['image']
+  }
+}
+```
 
 {{< feature-info "" "" >}}
 

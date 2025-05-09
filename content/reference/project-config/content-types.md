@@ -784,6 +784,7 @@ The print options allow you to enable the WoodWing Studio print connector on a c
 - {{< release "release-2024-09" >}}: The inbox feature allows document and media references to be assigned to another document. Before, only media library entries could be sent to an inbox.
 - {{< release "release-2025-03" >}}: Images can be organized in groups too, and they can be assigned to the same inbox multiple times.
 - {{< release "release-2025-03" >}}: Removed support for videos and files in inbox.
+- {{< release "release-2025-05" >}}: The Document Inbox is now also supported for documents of type Data Record.
 
 ### Configuration
 
