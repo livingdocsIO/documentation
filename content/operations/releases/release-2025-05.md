@@ -232,9 +232,61 @@ Make sure to have a CDN or other image service set up in front of Livingdocs tha
 Whenever an asset gets modified, we emit the [`mediaLibraryEntry.update`]({{< ref "/customising/advanced/server-events" >}}) server event. This event can be used to purge a CDN or other image service.
 {{< /info >}}
 
-{{< feature-info "" "" >}}
+{{< feature-info "PEIQ" "Server/Editor" >}}
 
-### PEIQ Integration - Article Import :gift:
+### PEIQ Integration - Agency Report Import :gift:
+
+The Livingdocs integration with PEIQ has been enhanced to enable the import of agency reports. Users can now drag and drop an agency report from PEIQ into a Livingdocs dashboard to initiate the import.
+
+The user experience may vary depending on the report's contents and Livingdocs configuration:
+
+- If the agency report has no attached images and no `paramsSchema` is configured, the document is created and opened immediately. No user input is required.
+- If the agency report has no images but a `paramsSchema` is configured, users must complete the `paramsSchema` form before the document is created and opened.
+- If the report includes images but no `paramsSchema`, the media upload center opens to collect required metadata before creating and opening the document.
+- If both a `paramsSchema` and images are present, users first complete the `paramsSchema` form, then proceed to the media upload center before the document is created and opened.
+
+At any point during this process, users can abort the import, in which case no document is created.
+
+To enable this functionality, begin by configuring the `settings.agencyReportImport` property in your project configuration:
+
+- `peiqFunctionHandle`: The handle of a PEIQ function registered in your server
+- `paramsSchema`: An optional schema prompting the user to provide additional data after dropping an agency report into a dashboard
+- `defaultParams`: Default values to prefill the `paramsSchema` form
+- `context`: Optional additional data passed to the PEIQ function, useful when reusing a function
+
+```js
+agencyReportImport: {
+  peiqFunctionHandle: 'create-from-agency-report',
+  paramsSchema: [
+    {
+      handle: 'category',
+      type: 'li-category'
+    }
+  ],
+  defaultParams: {},
+  context: {
+    contentType: 'regular'
+  }
+}
+```
+
+Next, register your PEIQ function. It will be called when an agency report is imported and must return a document object. The function receives the following arguments:
+
+* `agencyReport`: The raw agency report data returned by the PEIQ API
+* `mediaLibraryEntries`: If the report includes images, they are imported into the Media Library and passed to the function in this array
+* `params`: If a `paramsSchema` is defined, the submitted user values are passed here
+* `context`: The configured `context` from `agencyReportImport` is forwarded to the function
+* `userId`: The ID of the user performing the import
+* `projectConfig`: The project configuration
+
+```js
+liServer.registerPeiqFunction({
+  handle: 'create-from-agency-report',
+  action({agencyReport, mediaLibraryEntries, params, context, userId, projectConfig}) {
+    return {title, contentType, metadata, metadataSource, translations, content}
+  }
+})
+```
 
 {{< feature-info "" "" >}}
 
