@@ -134,6 +134,15 @@ settings: {
         $secretRef: {
           name: '<secret-name>'
         }
+      },
+      agencyReportImport: {
+        peiqFunctionHandle: 'create-from-agency-report',
+        paramsSchema: [{
+          handle: 'category',
+          type: 'li-category'
+        }],
+        defaultParams: {},
+        context: {contentType: 'regular'}
       }
     }
   },
