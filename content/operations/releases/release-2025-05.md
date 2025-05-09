@@ -65,13 +65,13 @@ This version allows us to require esm modules within commonjs.
 
 {{< feature-info "Server" "Removal" >}}
 
-### Removal of Desk-Net in favor to Kordiam :fire:
+### Removal of Desk-Net in favor of Kordiam :fire:
 
 Desk-Net rebranded as Kordiam.
 To align Livingdocs with this change, we previously introduced corresponding Kordiam properties, features, and plugins.
 With this release, we are removing the superseded Desk-Net functionality:
 
-- Feature `li-desknet` and `li-desknet-`integration, including all server APIs
+- Feature `li-desknet` and `li-desknet-integration`, including all server APIs
 - Server config `desknet`, `integrations.desknet`, and `hugo.print.desknetMetadataFields`
 - Project config `settings.desknet`, `settings.integrations.desknet`, and `contentTypes.[*].desknet`
 - Function parameter `desknetApi` of Desk-Net/Kordiam functions
@@ -92,6 +92,8 @@ With this release, we are removing the superseded Desk-Net functionality:
   But we suggest to migrate to the new versions that use `kordiam` in the path:  
   ✅ `/api/2025-03/kordiam-integration/statuses`  
   ✅ `/api/2025-05/kordiam-integration/statuses`
+
+For instructions on how to migrate, please refer to our [Desk-Net to Kordiam migration guide]({{< ref "/guides/integrations/desknet-to-kordiam-migration" >}}).
 
 {{< feature-info "Server" "Removal" >}}
 
