@@ -512,6 +512,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v271.0.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.33): fix(deps): update dependency @livingdocs/framework from 32.6.4 to v32.6.5
 - [v271.0.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.32): fix(queue): Execute redis streams cleanup only on worker
 
 - [v271.0.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.31): fix(data-migrations): Use `add` json patch operation to set statistics instead of a `replace`. That way it won't fail if the field does not exist.
