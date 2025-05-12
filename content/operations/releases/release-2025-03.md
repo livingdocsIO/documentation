@@ -23,7 +23,7 @@ systemRequirements:
     - name: Elasticsearch
       version: 8.x
     - name: OpenSearch
-      version: v2.3.0
+      version: 2.3.0
     - name: Redis
       version: 7
     - name: Livingdocs Server Docker Image
@@ -47,9 +47,9 @@ systemRequirements:
     - name: Redis
       version: 6.2
     - name: Livingdocs Server Docker Image
-      version: livingdocs/server-base:20:7
+      version: livingdocs/server-base:20:9
     - name: Livingdocs Editor Docker Image
-      version: livingdocs/editor-base:20:7
+      version: livingdocs/editor-base:20:9
     - name: Browser Support
       version: Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78
 ---
@@ -94,8 +94,7 @@ If this query returns a row, the migration has not been run.
 ### Rollout deployment
 
 #### Migrate the Postgres Database
-
-Once you deploy new release instances, you have to run the migrations below. The migrations are simple and fast with no expected data loss.
+Once you deploy new release instances, you have to run the migrations below. Migration 209-asset-keys.js can take a bit long to run, depending on the existing media assets. During that time the Server might respond with 500 errors, due to tables being locked during the migration.
 
 ```sh
 # run `livingdocs-server migrate up` to update to the newest database schema

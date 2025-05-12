@@ -11,9 +11,50 @@ header:
   current: true
   maintained: true
   branchHandle: release-2025-05
+
+systemRequirements:
+  suggested:
+    - name: Node
+      version: 22
+    - name: NPM
+      version: 10
+    - name: Postgres
+      version: 16
+    - name: Elasticsearch
+      version: 8.x
+    - name: OpenSearch
+      version: 2.3.0
+    - name: Redis
+      version: 7
+    - name: Livingdocs Server Docker Image
+      version: livingdocs/server-base:22
+    - name: Livingdocs Editor Docker Image
+      version: livingdocs/editor-base:22
+    - name: Browser Support
+      version: Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78
+
+  minimal:
+    - name: Node
+      version: 20.19
+    - name: NPM
+      version: 10
+    - name: Postgres
+      version: 13
+    - name: Elasticsearch
+      version: 7.x
+    - name: OpenSearch
+      version: 1
+    - name: Redis
+      version: 6.2
+    - name: Livingdocs Server Docker Image
+      version: livingdocs/server-base:20:10
+    - name: Livingdocs Editor Docker Image
+      version: livingdocs/editor-base:20:10
+    - name: Browser Support
+      version: Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78
 ---
 
-To get an overview about new functionality, read the [Release Notes] (TODO: add release notes when finished).
+To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-may-2025).
 To learn about the necessary actions to update Livingdocs to `release-2025-05`, read on.
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -30,40 +71,42 @@ To learn about the necessary actions to update Livingdocs to `release-2025-05`, 
 
 ### Suggested
 
-| Name                           | Version                                                                                  |
-| ------------------------------ | ---------------------------------------------------------------------------------------- |
-| Node                           | 22                                                                                       |
-| NPM                            | 10                                                                                       |
-| Postgres                       | 16                                                                                       |
-| Elasticsearch<br/>OpenSearch   | 8.x<br/>v2.3.0                                                                           |
-| Redis                          | 7                                                                                        |
-| Livingdocs Server Docker Image | livingdocs/server-base:22                                                                |
-| Livingdocs Editor Docker Image | livingdocs/editor-base:22                                                                |
-| Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
+{{< system-versions list="suggested" >}}
 
 ### Minimal
 
-| Name                           | Version                                                                                  |
-| ------------------------------ | ---------------------------------------------------------------------------------------- |
-| Node                           | 20.19                                                                                    |
-| NPM                            | 10                                                                                       |
-| Postgres                       | 13                                                                                       |
-| Elasticsearch<br/>OpenSearch   | 7.x<br/>1                                                                                |
-| Redis                          | 6.2                                                                                      |
-| Livingdocs Server Docker Image | livingdocs/server-base:20:7                                                              |
-| Livingdocs Editor Docker Image | livingdocs/editor-base:20:7                                                              |
-| Browser Support                | Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78 |
+{{< system-versions list="minimal" >}}
+
+## Deployment
+
+### Before the deployment
+
+No pre-deployment steps are required before rolling out this release.
+
+### Rollout deployment
+
+#### Migrate the Postgres Database
+
+No migrations are required for this release.
+
+### After the deployment
+
+No post-deployment steps are required after rolling out this release.
+
+### Rollback
+
+No rollback steps are required for this release.
 
 ## Breaking Changes 🔥
 
-{{< feature-info "Dependencies" "Version" >}}
+{{< feature-info "Operations" "server/editor" >}}
 
 ### Update Minimal Node Version v20.19 :fire:
 
 The minimal supported Node.js version is now `v20.19.0`.
 This version allows us to require esm modules within commonjs.
 
-{{< feature-info "Server" "Removal" >}}
+{{< feature-info "Integrations" "server" >}}
 
 ### Removal of Desk-Net in favor of Kordiam :fire:
 
@@ -95,7 +138,7 @@ With this release, we are removing the superseded Desk-Net functionality:
 
 For instructions on how to migrate, please refer to our [Desk-Net to Kordiam migration guide]({{< ref "/guides/integrations/desknet-to-kordiam-migration" >}}).
 
-{{< feature-info "Server" "Removal" >}}
+{{< feature-info "Menu Tool" "server" >}}
 
 ### Removal of Menu Tool :fire:
 
@@ -105,19 +148,19 @@ The Menu Tool has been removed.
 - Public API GET `/api/:apiVersion/menus/:channelHandle?` has been removed.
 - Feature `li-menus` has been removed including all its server APIs.
 
-{{< feature-info "Server" "Removal" >}}
+{{< feature-info "Metadata plugin" "server" >}}
 
 ### Removal of config.contentTypes :fire:
 
 The deprecated shorthand property `config.contentTypes` in the li-document-search metadata plugin was now removed.
 Use `config.contentType` instead.
 
-{{< feature-info "Server" "Removal" >}}
+{{< feature-info "Data Sources" "server" >}}
 
 ### Removal of params.documentId in Data Sources :fire:
 
 The `params.documentId` is no longer included in data source requests originating from the editor.
-If your integration depends on this parameter, please reach out to us to discuss alternative solutions.
+If your integration depends on this parameter, please reach out to your customer solutions manager to discuss alternative solutions.
 
 ## Deprecations
 
@@ -221,7 +264,7 @@ To enable the inbox for a Data Record, configure which types of documents and me
 }
 ```
 
-{{< feature-info "Media Center" "Server/Editor" >}}
+{{< feature-info "Media Center" "server/editor" >}}
 
 ### Media Center Image Editing :gift:
 
@@ -241,7 +284,7 @@ To avoid performance bottlenecks, ensure you place a CDN or image proxy in front
 Whenever an asset gets modified, we emit the [`mediaLibraryEntry.update`]({{< ref "/customising/advanced/server-events" >}}) server event. This event can be used to purge a CDN or other image service.
 {{< /info >}}
 
-{{< feature-info "PEIQ" "Server/Editor" >}}
+{{< feature-info "Integrations" "server/editor" >}}
 
 ### PEIQ Integration - Agency Report Import :gift:
 
@@ -297,7 +340,7 @@ liServer.registerPeiqFunction({
 })
 ```
 
-{{< feature-info "" "" >}}
+{{< feature-info "Media Center" "editor" >}}
 
 ### Media Center - Delete language metadata set :gift:
 
@@ -315,7 +358,7 @@ This release addresses that gap by adding support for a broader range of metadat
 - li-document-references
 - li-target-length
 
-{{< feature-info "" "" >}}
+{{< feature-info "oEmbed" "server" >}}
 
 ### Additional oEmbed Providers :gift:
 
