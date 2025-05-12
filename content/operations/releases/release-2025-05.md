@@ -229,14 +229,14 @@ Journalists are sometimes required to redact areas of an image, such as license 
 
 {{< img src="./release-2025-05-image-editor-button.png" alt="Image Editor Button"  >}}
 
-In the Livingdocs, we added a new image editor. Users can open the editor by clicking the edit button in the media center detail view. It allows users to adjust brightness, contrast, or saturation, and to blur parts of an image. The original image is always preserved and can be restored at any time. Users can also continue editing an image or selectively undo specific adjustments at a later point. Once an edited image is saved, it will be served instead of the original.
+We added a new image editor to Livingdocs. Users can open the editor by clicking the edit button in the media center detail view. It allows users to adjust brightness, contrast, or saturation, as well as blur parts of an image. The original image is always preserved and can be restored at any time. Users can also continue editing an image or selectively undo specific adjustments at a later point.
 
 {{< img src="./release-2025-05-image-editor.png" alt="Image Editor"  >}}
 
-Image editing is currently supported for jpg, png, and webp formats when [`use2025Behavior`]({{< ref "/operations/releases/release-2025-03/#media-center-image-variant-storage--delivery-gift" >}}) is enabled. Accordingly, images must be requested via the public API endpoint [`GET /api/2025-03/mediaLibrary/serve-image/{key}`]({{< ref "/reference/public-api/media-library/#serve-image" >}}) for the modifications to be applied.
+Image editing is currently supported for jpg, png, and webp formats when [`use2025Behavior`]({{< ref "/operations/releases/release-2025-03/#media-center-image-variant-storage--delivery-gift" >}}) is enabled. Accordingly, images must be requested via the public API endpoint [`GET /api/2025-03/mediaLibrary/serve-image/{key}`]({{< ref "/reference/public-api/media-library/#serve-image" >}}) for the modifications to be applied. The edited image will be delivered in place of the original. The original version remains stored and can be restored in the editor.
 
 {{< info >}}
-Make sure to have a CDN or other image service set up in front of Livingdocs that retrieves images via this API endpoint and caches them for serving in your frontend, to reduce load on Livingdocs.
+To avoid performance bottlenecks, ensure you place a CDN or image proxy in front of Livingdocs, retrieving images via the new API. This prevents excessive load on the Livingdocs Server.
 
 Whenever an asset gets modified, we emit the [`mediaLibraryEntry.update`]({{< ref "/customising/advanced/server-events" >}}) server event. This event can be used to purge a CDN or other image service.
 {{< /info >}}
