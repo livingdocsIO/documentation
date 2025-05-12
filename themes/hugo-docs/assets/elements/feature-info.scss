@@ -1,6 +1,10 @@
 .feature-info {
-  margin-top: $space-m;
+  margin-top: 30px;
   margin-bottom: $space-m;
+}
+
+.feature-info + h3 {
+  margin-top: -0.5em;
 }
 
 .feature-info-pill {
