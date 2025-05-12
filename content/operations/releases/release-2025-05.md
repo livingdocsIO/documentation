@@ -277,6 +277,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+- [v117.6.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.16): fix(deps): update dependency @livingdocs/framework from 32.7.7 to v32.7.8
 
 - [v117.6.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.15): fix(deps): update dependency @livingdocs/framework from 32.7.6 to v32.7.7
 - [v117.6.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.14): fix(image-editing): Show image editor button also if it is the only action
