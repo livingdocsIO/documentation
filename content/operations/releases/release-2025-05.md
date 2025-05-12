@@ -110,6 +110,13 @@ The Menu Tool has been removed.
 The deprecated shorthand property `config.contentTypes` in the li-document-search metadata plugin was now removed.
 Use `config.contentType` instead.
 
+{{< feature-info "Server" "Removal" >}}
+
+### Removal of params.documentId in Data Sources :fire:
+
+The `params.documentId` is no longer included in data source requests originating from the editor.
+If your integration depends on this parameter, please reach out to us to discuss alternative solutions.
+
 ## Deprecations
 
 There have been no deprecations since the last release.

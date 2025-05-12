@@ -46,7 +46,6 @@ liServer.registerInitializedHook(() => {
      * @param {Number} params.projectId
      * @param {Number} params.userId
      * @param {Object} params.params params will be passed by the requester
-     *   (e.g. a metadata plugin on the editor which passes the documentId)
      * @returns {Object} {label, value, ?isDefault}
      */
     async fetch({projectId, userId, params}) {
