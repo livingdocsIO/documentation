@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @livingdocs/framework from 32.8.1 to v32.8.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9968)
 - [Fix: cache data provider requests](https://github.com/livingdocsIO/livingdocs-editor/pull/9955)
 - [fix(deps): update dependency inquirer from 12.6.0 to v12.6.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8025)
 - [fix(deps): update dependency nodemailer from 7.0.2 to v7.0.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8023)
