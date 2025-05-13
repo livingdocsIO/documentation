@@ -425,7 +425,7 @@ No known vulnerabilities. :tada:
 This release we have patched the following vulnerabilities in the Livingdocs Editor:
 
 - [CVE-2025-32442](https://github.com/fastify/fastify/security/advisories/GHSA-mg2h-6x62-wpwc) patched in `fastify` v5.3.2
-- [CVE-2025-27789] https://github.com/advisories/GHSA-968p-4wvh-cqc8 patched `@babel/runtime` & `@babel/helpers` v7.26.10
+- [CVE-2025-27789](https://github.com/advisories/GHSA-968p-4wvh-cqc8) patched `@babel/runtime` & `@babel/helpers` v7.26.10
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
