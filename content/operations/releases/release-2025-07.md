@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update babel from 7.26.10 to v7.27.1 (main) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/9919)
 - [fix(deps): update aws-sdk from 3.800.0 to v3.808.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8004)
 - [fix(deps): update dependency sass from 1.87.0 to v1.88.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9974)
 - [chore(deps): update dependency diff from 7.0.0 to v8 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9975)
