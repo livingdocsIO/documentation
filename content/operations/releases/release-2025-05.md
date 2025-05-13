@@ -162,6 +162,12 @@ Use `config.contentType` instead.
 The `params.documentId` is no longer included in data source requests originating from the editor.
 If your integration depends on this parameter, please reach out to your customer solutions manager to discuss alternative solutions.
 
+### Facebook and Instagram oEmbed Providers Now Require Credentials :fire:
+
+The Facebook and Instagram oEmbed providers are enabled by default when using the upstream oEmbed service. These providers require credentials to function correctly. Previously, missing credentials caused these providers to fail silently.
+
+Livingdocs now throws an error if the credentials for Facebook or Instagram are not provided. Either define the credentials or disable the providers by excluding them from the `oembed.allowedCoreProviders` array.
+
 ## Deprecations
 
 There have been no deprecations since the last release.
@@ -364,7 +370,30 @@ This release addresses that gap by adding support for a broader range of metadat
 
 {{< feature-info "oEmbed" "server" >}}
 
-### Additional oEmbed Providers :gift:
+### Additional oEmbed Providers Bluesky, Pinterest and Reddit :gift:
+
+We've added support for three new oEmbed providers:
+
+- Bluesky
+- Pinterest
+- Reddit 
+
+Using `allowedCoreProviders` is strongly recommended to configure these providers due to a [breaking change introduced regarding Facebook and Instagram providers]({{< relref "#facebook-and-instagram-oembed-providers-now-require-credentials-fire" >}}).
+
+```js
+{
+  oembed: {
+    allowedCoreProviders: [
+      {name: 'li-bluesky'},
+      {name: 'li-pinterest'},
+      {name: 'li-reddit'},
+      ...
+    ]
+  }
+}
+```
+
+No additional configs are required as the providers do not support any customisations.
 
 {{< feature-info "Clipboard" "editor" >}}
 
