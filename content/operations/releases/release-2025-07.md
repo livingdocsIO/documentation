@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency sass from 1.87.0 to v1.88.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9974)
 - [chore(deps): update dependency diff from 7.0.0 to v8 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9975)
 - [fix(deps): update dependency semver from 7.7.1 to v7.7.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8029)
 - [fix(deps): update dependency @livingdocs/framework from 32.8.1 to v32.8.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9968)
