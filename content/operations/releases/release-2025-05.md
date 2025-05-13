@@ -344,6 +344,10 @@ liServer.registerPeiqFunction({
 
 ### Media Center - Delete language metadata set :gift:
 
+When using the multi-language metadata feature for media types, users can now not only add new translation languages but also remove existing translations if they are no longer needed. To support this, we've added a new button to a translated metadata set that allows users to delete a language from a media library entry.
+
+{{< img src="./release-2025-05-remove-metadata-translations.png" alt="Remove Metadata Translations Button" width="250" >}}
+
 {{< feature-info "Table Dashboards" "editor" >}}
 
 ### Table Dashboards - Support All Metadata Cells :gift:
