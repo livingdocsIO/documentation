@@ -7,7 +7,10 @@
 
 {{ $channel := "" }}
 
-{{ if $endpoint.deprecation.since }}
+{{ if $endpoint.removed.since }}
+  {{ $channel = print "Removed in " $endpoint.removed.since }}
+  {{ $apiExampleClass = print $apiExampleClass " api-example--danger" }}
+{{ else if $endpoint.deprecation.since }}
   {{ $channel = print "Deprecated in " $endpoint.deprecation.since }}
   {{ $apiExampleClass = print $apiExampleClass " api-example--danger" }}
 {{ else if ne $apiVersion $newestApiVersion }}
@@ -38,7 +41,11 @@
         {{ partial "api-version-selector" (dict "page" $page "endpoint" $endpoint "version" $apiVersion) }}
       </h2>
 
-      {{- if $endpoint.deprecation -}}
+      {{- if $endpoint.removed -}}
+        <blockquote class="info info-alert">
+          {{ replace $endpoint.removed.note ":apiVersion" $apiVersion | $page.RenderString }}
+        </blockquote>
+      {{- else if $endpoint.deprecation -}}
         <blockquote class="info info-alert">
           {{ replace $endpoint.deprecation.note ":apiVersion" $apiVersion | $page.RenderString }}
         </blockquote>
