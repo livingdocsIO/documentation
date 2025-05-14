@@ -8,14 +8,14 @@ description: |
 useCases: |
   - Get menus for deliveries
 
-deprecation:
-  since: release-2024-11
-  note: |
-    The dedicated Menu Tool with the endpoint `GET /api/v1/menus/{channelHandle}` has been deprecated in favor of modeling menus with data records as described below.
-    This endpoint will get removed with `release-2025-05`.
+apiVersionConstraints:
+  lte: 2025-03
 
-    The [li-tree]({{< ref "/guides/editor/menus" >}}) metadata plugin provides a better developer and user experience for managing menus.
-    Please reach out for assistance with migrating from the Menu Tool to data records.
+removed:
+  since: release-2025-05
+  note: |
+    The Menu Tool with the endpoint `GET /api/v1/menus/{channelHandle}` has been removed in release-2025-05.
+    We suggest migrating menus to data records. For detailed instructions on setting them up, refer to our [guide]({{< ref "/guides/editor/menus" >}}).
 
 scopes: public-api:read
 query: |
