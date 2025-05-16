@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix usages of uniqueItemProperties AJV keyword](https://github.com/livingdocsIO/livingdocs-server/pull/8038)
 - [Search result tooltip fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/9958)
 - [chore(deps): update dependency @google-cloud/translate from 9.0.1 to v9.1.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8033)
 - [fix(deps): update dependency fastify from 5.3.2 to v5.3.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9977)
