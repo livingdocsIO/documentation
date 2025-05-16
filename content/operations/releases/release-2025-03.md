@@ -548,6 +548,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.59): fix(media-library): Pass valid mediaLibraryEntry on tooltip select
 - [v115.22.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.58): fix(deps): update dependency @livingdocs/framework from 32.6.5 to v32.6.6
 - [v115.22.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.57): fix(deps): update dependency @livingdocs/framework from 32.6.4 to v32.6.5
 - [v115.22.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.56): fix: Disable supportsVideoConversion in rendering image service
