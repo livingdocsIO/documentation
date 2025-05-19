@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update aws-sdk (main) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/8044)
 - [fix(deps): update dependency pino from 9.6.0 to v9.7.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8043)
 - [Fix usages of uniqueItemProperties AJV keyword](https://github.com/livingdocsIO/livingdocs-server/pull/8038)
 - [Search result tooltip fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/9958)
