@@ -44,7 +44,7 @@ There are multiple reasons why an API endpoint can be deprecated:
   e.g. The endpoint `/api/2025-05/publications/search` receives a breaking change that is not compatible with `/api/2025-03/publications/search`. `/api/2025-03/publications/search` and older versions of this endpoint will be marked as deprecated 6 months before removal.
   Removal of `/api/2025-03/publications/search` is scheduled for `2027-05` with the regular support window.
 
-- The API version is sunset as it reaches end of life and will get removed after six months.
+- The API version is sunsetted as it reaches end of life and will get removed after six months.
   Usually this happens two years after introduction of the API version.
 
   e.g. All endpoints in `/api/2025-03` will be deprecated in `2026-11` and removed in `2027-05`.
