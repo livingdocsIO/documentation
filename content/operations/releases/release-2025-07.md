@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [News agency copy flow ui elements](https://github.com/livingdocsIO/livingdocs-editor/pull/9935)
 - [fix(deps): update dependency sass from 1.88.0 to v1.89.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9982)
 - [fix(deps): update aws-sdk (main) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/8044)
 - [fix(deps): update dependency pino from 9.6.0 to v9.7.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8043)
