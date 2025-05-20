@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency puppeteer-core from 24.8.2 to v24.9.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9992)
 - [News agency copy flow ui elements](https://github.com/livingdocsIO/livingdocs-editor/pull/9935)
 - [fix(deps): update dependency sass from 1.88.0 to v1.89.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9982)
 - [fix(deps): update aws-sdk (main) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/8044)
