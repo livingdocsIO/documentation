@@ -16,7 +16,7 @@ Example: `seeding.js`
 {
   users: [
     {
-      _importHandle: ':john',
+      _importHandle: ':admin',
       firstName: 'John',
       lastName: 'Doe',
       email: 'john@livingdocs.io',
@@ -24,95 +24,62 @@ Example: `seeding.js`
       password: 'Secret-Phrase'
     },
     {
-      _importHandle: ':clark',
+      _importHandle: ':editor',
       firstName: 'Clark',
       lastName: 'Kent',
-      email: 'clark@livingdocs.io',
+      email: 'john+editor@livingdocs.io',
       password: 'Secret-Phrase'
     }
   ],
 
   projects: [
-  // project with embedded design
-  {
-    __recreateIfItExists: false,
-    __update: true,
-
-    handle: 'my-embedded-design-project',
-    owner: ':clark',
-    groups: [{
-      label: 'Editors',
-      policies: [
-        {effect: 'ALLOW', action: 'document.create', contentType: '*'},
-        {effect: 'ALLOW', action: 'document.read', contentType: '*'},
-        {effect: 'ALLOW', action: 'document.update', contentType: '*'},
-        {effect: 'ALLOW', action: 'document.publish', contentType: '*'},
-        {effect: 'ALLOW', action: 'document.delete', contentType: '*'},
-      ]
-    }],
-    groupMemberships: {
-      'Editors': [':john'],
-    },
-    config: require('./projects/service'), // the project config
-    secrets: [{name: 'my-secret', value: 'super-secret'}]
-  },
-  // project with reference design
-  {
-    __recreateIfItExists: false,
-    __update: true,
-    handle: 'my-referenced-design-project',
-    owner: ':john',
-    groups: [],
-    groupMemberships: {},
-    channel: {
-      designName: 'some-design',
-      designVersion: ':some-version'
-    },
-    config: require('./projects/website') // the project config
-  },
-  // project with multi-channel configuration
+    // project with embedded design
     {
-    __recreateIfItExists: false,
+      __recreateIfItExists: false,
+      __update: true,
 
-    handle: 'my-multi-channel-project', // required
-    owner: ':john', // required, the _importHandle of a user
-    // user groups
-    groups: [{
-      label: 'Editors',
-      policies: [
-        {effect: 'ALLOW',  action: 'document.create', contentType: 'regular'},
-        {effect: 'ALLOW',  action: 'document.read', contentType: 'regular'},
-        {effect: 'ALLOW',  action: 'document.update', contentType: 'regular'},
-        {effect: 'ALLOW',  action: 'document.delete', contentType: 'regular'},
-        {effect: 'ALLOW',  action: 'document.publish', contentType: 'regular'}
-      ]
-    }, {
-      label: 'Readers',
-      policies: [
-        {effect: 'ALLOW',  action: 'document.read', contentType: 'regular'}
-      ]
-    }],
-    groupMemberships: {
-      'Editors': [':john'], // :john is the '_importHandle' of a user
-      'Readers': [':clark']
+      handle: 'my-embedded-design-project',
+      owner: ':admin',
+      groups: [
+        {
+          label: 'Editors',
+          policies: [
+            {effect: 'ALLOW', action: 'document.create', contentType: '*'},
+            {effect: 'ALLOW', action: 'document.read', contentType: '*'},
+            {effect: 'ALLOW', action: 'document.update', contentType: '*'},
+            {effect: 'ALLOW', action: 'document.publish', contentType: '*'},
+            {effect: 'ALLOW', action: 'document.delete', contentType: '*'},
+          ]
+        },
+        {
+          label: 'Readers',
+          policies: [
+            {effect: 'ALLOW',  action: 'document.read', contentType: 'regular'}
+          ]
+        }
+      ],
+      groupMemberships: {
+        'Editors': [':admin'],
+        'Readers': [':editor']
+      },
+      config: require('./projects/service'), // the project config
+      secrets: [{name: 'my-secret', value: 'super-secret'}]
     },
-    channels: [{
-      handle: 'web',
-      label: 'Web',
-      designName: 'my-design',
-      designVersion: ':latest',
-      // If staticConfig if provided the channel config will be
-      // stored in the cache as well.
-      staticConfig: 'web'
-    }, {
-      handle: 'print',
-      label: 'Print',
-      designName: 'another-design',
-      designVersion: ':latest',
-      staticConfig: 'print'
-    }],
-    secrets: [{name: 'my-secret', value: 'super-secret'}]
-  }]
+    // project with reference design
+    {
+      __recreateIfItExists: false,
+      __update: true,
+      handle: 'my-referenced-design-project',
+      owner: ':admin',
+      groups: [],
+      groupMemberships: {},
+      channel: {
+        designName: 'some-design',
+        designVersion: ':some-version'
+      },
+      config: require('./projects/website') // the project config
+    }
+  ]
 }
 ```
 
