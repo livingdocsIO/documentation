@@ -700,6 +700,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.68): fix: scroll focused component into view after iframe size has stabilized
 - [v114.13.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.67): fix: dont disable metadata button
 - [v114.13.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.66): fix(ticker): Prevent component blur when clicking on component area
 - [v114.13.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.65): fix(login): Show login errors correctly. Do not prune the hash part if it doesn't include a token parameter
