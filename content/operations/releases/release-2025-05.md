@@ -448,6 +448,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+- [v117.6.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.18): fix: scroll focused component into view after iframe size has stabilized
 - [v117.6.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.17): fix(media-library): Pass valid mediaLibraryEntry on tooltip select
 - [v117.6.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.16): fix(deps): update dependency @livingdocs/framework from 32.7.7 to v32.7.8
 
