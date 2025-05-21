@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix scroll to focused component](https://github.com/livingdocsIO/livingdocs-editor/pull/9994)
 - [feat(embargo): index so that it can be used in basefilters](https://github.com/livingdocsIO/livingdocs-server/pull/8037)
 - [fix(deps): update dependency sharp from 0.34.1 to v0.34.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8047)
 - [chore(deps): update dependency puppeteer-core from 24.8.2 to v24.9.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9992)
