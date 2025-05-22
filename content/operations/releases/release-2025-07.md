@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Feat: Show tooltip on hovering team members](https://github.com/livingdocsIO/livingdocs-editor/pull/9988)
 - [Fix scroll to focused component](https://github.com/livingdocsIO/livingdocs-editor/pull/9994)
 - [feat(embargo): index so that it can be used in basefilters](https://github.com/livingdocsIO/livingdocs-server/pull/8037)
 - [fix(deps): update dependency sharp from 0.34.1 to v0.34.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8047)
