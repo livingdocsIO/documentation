@@ -448,6 +448,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+- [v117.6.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.21): fix(drop-handler): Support undefined params on include teaser drop
 - [v117.6.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.20): chore(metadata): Clear li-video-reference poster image state
 - [v117.6.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.19): fix(document search): prioritize activeFilters param over cached filters
 - [v117.6.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.18): fix: scroll focused component into view after iframe size has stabilized
