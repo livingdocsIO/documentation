@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Change the documentWriteModel.version correctly after persisting migration changes](https://github.com/livingdocsIO/livingdocs-server/pull/8049)
 - [LIFEAT009: in-memory dashboard filter caching in liEmbedTeaserIncludeModal](https://github.com/livingdocsIO/livingdocs-server/pull/8051)
 - [Support `undefined` params to allow dropping teasers into new components](https://github.com/livingdocsIO/livingdocs-editor/pull/10004)
 - [fix(deps): update dependency posthog-node from 4.17.1 to v4.17.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8050)
