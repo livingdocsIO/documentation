@@ -548,6 +548,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.63): fix(drop-handler): Support undefined params on include teaser drop
 - [v115.22.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.62): chore(metadata): Clear li-video-reference poster image state
 - [v115.22.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.61): fix(document search): prioritize activeFilters param over cached filters
 - [v115.22.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.60): fix: scroll focused component into view after iframe size has stabilized
