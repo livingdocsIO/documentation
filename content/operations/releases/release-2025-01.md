@@ -700,6 +700,7 @@ Here is a list of all patches after the release has been announced.
 - [v267.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.1): fix(channels): Deprecate Multi-Channel Setups (LIDEP048)
 
 ### Livingdocs Editor Patches
+- [v114.13.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.70): fix(drop-handler): Support undefined params on include teaser drop
 - [v114.13.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.69): fix: solve eslint formatting errors after backport
 - [v114.13.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.68): fix: scroll focused component into view after iframe size has stabilized
 - [v114.13.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v114.13.67): fix: dont disable metadata button
