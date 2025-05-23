@@ -437,6 +437,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v276.3.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.8): fix(migrations): Change the documentWriteModel.version correctly after persisting migration changes
 - [v276.3.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.7): fix(deps): update dependency @livingdocs/framework from 32.7.7 to v32.7.8
 
 - [v276.3.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.6): fix(deps): update dependency @livingdocs/framework from 32.7.6 to v32.7.7
