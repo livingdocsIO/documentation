@@ -511,6 +511,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v271.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.37): fix(media-center): Fix mediaLibrary.images.variantsStorage config check when cloudinary is configured
 - [v271.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.36): fix(LIFEAT009): in-memory dashboard filter caching in liEmbedTeaserIncludeModal
 - [v271.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.35): fix(migrations): Change the documentWriteModel.version correctly after persisting migration changes
 - [v271.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.34): fix(deps): update dependency @livingdocs/framework from 32.6.5 to v32.6.6
