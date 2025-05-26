@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Add Agency Copy Flow](https://github.com/livingdocsIO/livingdocs-editor/pull/9936)
 - [Add Agency Copy Flow](https://github.com/livingdocsIO/livingdocs-server/pull/8009)
 - [fix(deps): update dependency moment-timezone from 0.5.48 to ^0.6.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10016)
 - [fix(deps): update aws-sdk from 3.812.0 to v3.817.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8048)
