@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update aws-sdk from 3.812.0 to v3.817.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8048)
 - [chore(deps): update dependency globals from 16.1.0 to v16.2.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10014)
 - [chore(deps): update dependency globals from 16.1.0 to v16.2.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8062)
 - [Change the documentWriteModel.version correctly after persisting migration changes](https://github.com/livingdocsIO/livingdocs-server/pull/8049)
