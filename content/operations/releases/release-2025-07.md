@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency yargs from 17.7.2 to v18 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10020)
 - [Feat: add embargo support for import api](https://github.com/livingdocsIO/livingdocs-server/pull/8046)
 - [Remove li-metadata-translations check in migrations](https://github.com/livingdocsIO/livingdocs-server/pull/8063)
 - [Add Agency Copy Flow](https://github.com/livingdocsIO/livingdocs-editor/pull/9936)
