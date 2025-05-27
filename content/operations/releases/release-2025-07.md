@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @livingdocs/framework from 32.8.4 to v32.8.5 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8068)
 - [chore(deps): update dependency yargs from 17.7.2 to v18 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10020)
 - [Feat: add embargo support for import api](https://github.com/livingdocsIO/livingdocs-server/pull/8046)
 - [Remove li-metadata-translations check in migrations](https://github.com/livingdocsIO/livingdocs-server/pull/8063)
