@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @babel/core from 7.27.3 to v7.27.4 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10024)
 - [fix(deps): update aws-sdk (main) (patch)](https://github.com/livingdocsIO/livingdocs-server/pull/8073)
 - [fix(deps): update dependency @pqina/pintura from 8.92.15 to v8.92.16 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10023)
 - [fix(deps): update dependency @pqina/pintura from 8.92.14 to v8.92.15 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10022)
