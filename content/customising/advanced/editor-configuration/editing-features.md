@@ -51,6 +51,14 @@ app: {
 }
 ```
 
+When the transform option is enabled, all compatible components become available. Compatibility is determined by the following rules:
+
+* Components with exactly one directive can be transformed if the directive matches the target type.
+* Components with multiple directives can only be transformed if all directives have matching names and types.
+* Only directives of the following types are supported: editable, image, video, audio, and link. Components containing any other directive types cannot be transformed.
+* Components must be permitted at their intended location within the document structure.
+
+
 ## Images
 
 There are several configuration options concerning images.
