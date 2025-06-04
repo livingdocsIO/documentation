@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency yargs from 17.7.2 to v18 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8071)
 - [Fix imatrics and retresco filter reactivity](https://github.com/livingdocsIO/livingdocs-editor/pull/10031)
 - [Migrations: Always persist content and sequences on change](https://github.com/livingdocsIO/livingdocs-server/pull/8076)
 - [Add news-agency-screen](https://github.com/livingdocsIO/livingdocs-editor/pull/10017)
