@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Migrations: Always persist content and sequences on change](https://github.com/livingdocsIO/livingdocs-server/pull/8076)
 - [Add news-agency-screen](https://github.com/livingdocsIO/livingdocs-editor/pull/10017)
 - [Add News Agency Screen](https://github.com/livingdocsIO/livingdocs-server/pull/8064)
 - [fix(deps): update dependency sass from 1.89.0 to v1.89.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10026)
