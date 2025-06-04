@@ -553,6 +553,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.65): fix(imatrics): Fix imatrics filter reactivity
 - [v115.22.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.64): fix(LIFEAT009): in-memory dashboard filter caching in liEmbedTeaserIncludeModal
 - [v115.22.63](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.63): fix(drop-handler): Support undefined params on include teaser drop
 - [v115.22.62](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.62): chore(metadata): Clear li-video-reference poster image state
