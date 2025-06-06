@@ -453,6 +453,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+- [v117.6.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.24): fix(api-clients): Fix api client rotating state
 - [v117.6.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.23): fix(imatrics): Fix imatrics filter reactivity
 - [v117.6.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.22): fix(LIFEAT009): in-memory dashboard filter caching in liEmbedTeaserIncludeModal
 - [v117.6.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.21): fix(drop-handler): Support undefined params on include teaser drop
