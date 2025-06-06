@@ -179,6 +179,8 @@ In the `assist` function either an `error` object can be returned in the respons
 Or a `validationError` can be thrown:
 
 ```js
+// Be aware that no error gets logged on the server when you throw a validationError
+const {validationError} = require('@livingdocs/server').errors
 throw validationError({
   translatedMessage: {
     en: 'Something went wrong',
