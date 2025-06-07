@@ -20,6 +20,7 @@ keywords:
 
 - **Influence the publication process**
 - Influence the document rendering
+- report validation errors back to the editor
 - Get notified about list updates
 
 **Use Cases of a Server Hook**
@@ -259,5 +260,48 @@ listUpdateHookAsync: ({
   listId,
   remove: [30, 199],
   add: [{id: 77, order: 12}]
+})
+```
+
+## Validation Errors
+
+Server hooks can throw one or multiple validation errors and can reference to either components or metadata properties and are reported back to the editor.
+Below you see a few examples how to report validation errors:
+
+```js
+const {validationError} = require('@livingdocs/server').errors
+
+// Single content validation error
+throw validationError({
+  message: 'Section titles must not be empty',
+  componentId: component.id,
+  directiveName: 'section-title'
+})
+
+// Array of content validation errors
+throw validationError({
+  message: 'Unable to publish due to validation errors',
+  errors: [{
+    message: 'Section titles must not be empty',
+    componentId: component.id,
+    directiveName: 'section-title'
+  }]
+})
+
+// Single metadata validation error
+throw validationError({
+  message: 'Description cannot contain a number',
+  metadataProperty: 'description',
+  translationLocale: 'en' // optional
+})
+
+// Array of metadata validation errors
+throw validationError({
+  message: 'Unable to publish due to validation errors',
+  errors: [{
+    message: 'Description cannot contain a number',
+    metadataProperty: 'description',
+    translationLocale: 'en' // optional
+  }]
 })
 ```
