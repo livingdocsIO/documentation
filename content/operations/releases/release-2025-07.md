@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency cheerio from 1.0.0 to v1.1.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8084)
 - [Fix api client rotating state](https://github.com/livingdocsIO/livingdocs-editor/pull/10035)
 - [fix(deps): update dependency yargs from 17.7.2 to v18 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8071)
 - [Fix imatrics and retresco filter reactivity](https://github.com/livingdocsIO/livingdocs-editor/pull/10031)
