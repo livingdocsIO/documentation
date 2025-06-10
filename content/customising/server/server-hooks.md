@@ -265,7 +265,7 @@ listUpdateHookAsync: ({
 
 ## Validation Errors
 
-Server hooks can throw one or multiple validation errors and can reference to either components or metadata properties and are reported back to the editor.
+Server hooks can throw one or multiple validation errors and can reference either components or metadata properties and are reported back to the editor.
 Below you see a few examples how to report validation errors:
 
 ```js
