@@ -553,6 +553,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.67): fix(display-filter): Clear search input when selecting option in Retresco/iMatrics display filters
 - [v115.22.66](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.66): fix(api-clients): Fix api client rotating state
 - [v115.22.65](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.65): fix(imatrics): Fix imatrics filter reactivity
 - [v115.22.64](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.64): fix(LIFEAT009): in-memory dashboard filter caching in liEmbedTeaserIncludeModal
