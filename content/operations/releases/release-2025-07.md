@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency mocha from 11.5.0 to v11.6.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10044)
 - [fix(deps): update dependency @livingdocs/framework from 32.8.5 to v32.8.7 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8086)
 - [fix(deps): update dependency @livingdocs/framework from 32.8.5 to v32.8.6 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10040)
 - [chore(deps): update dependency cheerio from 1.0.0 to v1.1.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8084)
