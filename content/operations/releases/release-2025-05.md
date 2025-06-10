@@ -453,6 +453,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+- [v117.6.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.26): fix: Update github action schedule comment
 - [v117.6.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.25): fix(display-filter): Clear search input when selecting option in Retresco/iMatrics display filters
 - [v117.6.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.24): fix(api-clients): Fix api client rotating state
 - [v117.6.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.23): fix(imatrics): Fix imatrics filter reactivity
