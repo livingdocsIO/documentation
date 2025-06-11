@@ -29,11 +29,40 @@ Livingdocs provides some icon collections, which you can use in your downstream.
 
 ## Register a Material Design Icon
 
-The editor supports some material design icons by default ([list of supported icons](https://github.com/livingdocsIO/livingdocs-editor/blob/master/server/li_icon.paths.txt)). If you want to use another icon from the [material design icon collection](http://livingdocsio.github.io/material-design-icons-svg), you can add the icons to the editor config.
+The editor supports some material design icons by default ([list of supported icons](https://github.com/livingdocsIO/livingdocs-editor/blob/master/server/li_icon.paths.txt)). If you want to use another icon from the [material design icon collection](http://livingdocsio.github.io/material-design-icons-svg), you need to register the icon within the Editor Config (typically `editor/config/environments/all.js`).
 
 ```js
-// all.js
+// editor/config/environments/all.js
 {
-  customIconNames: ['abugida-devanagari'],
+  customIconNames: ['rocket-launch-outline']
 }
 ```
+
+### Example: Adding a Rocket Icon to the Menu Navigation
+
+If you want to use the `rocket-launch-outline` icon for a menu item, follow these steps:
+
+1. **Register the icon** in your editor config:
+   ```js
+   // editor/config/environments/all.js
+   {
+     customIconNames: ['rocket-launch-outline']
+   }
+   ```
+
+2. **Use the icon** in your editor settings:
+   ```js
+   // server/projects/project-config/editorSettings.js
+   {
+     mainNavigation: [
+       {
+         handle: 'article',
+         label: 'Article',
+         dashboard: 'article',
+         icon: 'rocket-launch-outline'  // Now available
+       }
+     ]
+   }
+   ```
+
+**Note**: After adding custom icons to the Editor Config (during local development), you need to restart your editor for the changes to take effect.
