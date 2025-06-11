@@ -211,6 +211,13 @@ livingdocs-server migrate up
 
 TODO: check migration
 
+{{< feature-info "Data Sources" "server" >}}
+
+### Removal of params.documentId in Data Sources :fire:
+
+The `params.documentId` is no longer included in data source requests originating from the editor.
+If your integration depends on this parameter, please reach out to your customer solutions manager to discuss alternative solutions.
+
 ## Deprecations
 
 ## Features
