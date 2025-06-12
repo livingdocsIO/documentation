@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update aws-sdk from 3.826.0 to v3.828.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8085)
 - [fix(deps): update dependency posthog-node from 4.18.0 to v5 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8088)
 - [Add publish control operations to Command API](https://github.com/livingdocsIO/livingdocs-server/pull/8091)
 - [Display untranslated error details in assistant error notification](https://github.com/livingdocsIO/livingdocs-editor/pull/10053)
