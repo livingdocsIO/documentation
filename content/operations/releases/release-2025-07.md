@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Add publish control operations to Command API](https://github.com/livingdocsIO/livingdocs-server/pull/8091)
 - [Display untranslated error details in assistant error notification](https://github.com/livingdocsIO/livingdocs-editor/pull/10053)
 - [Fix: li-target-length add support for allowAnyNumber on tabledashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/10034)
 - [fix(deps): update dependency @livingdocs/framework from 32.8.7 to v32.8.8 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8089)
