@@ -511,6 +511,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v271.0.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.40): fix(metadata): ignore type declaration files when loading metadata plugins
 - [v271.0.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.39): test(migrations): Explain version change behavior in more detail
 - [v271.0.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.38): fix(migrations): Remove li-metadata-translations presence check
 - [v271.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.37): fix(media-center): Fix mediaLibrary.images.variantsStorage config check when cloudinary is configured
