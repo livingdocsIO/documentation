@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency posthog-node from 5.0.0 to v5.1.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8097)
 - [Fix ajv compile memory leak](https://github.com/livingdocsIO/livingdocs-server/pull/8100)
 - [chore(deps): update dependency eslint-plugin-jsdoc from 50.8.0 to v51 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8098)
 - [fix(deps): update aws-sdk from 3.826.0 to v3.828.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8085)
