@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency posthog-node from 5.1.0 to v5.1.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8113)
 - [fix(application menu): Chevron position](https://github.com/livingdocsIO/livingdocs-editor/pull/10066)
 - [fix(deps): update dependency axios from 1.9.0 to v1.10.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8108)
 - [fix(deps): update dependency fastify from 5.3.3 to v5.4.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10059)
