@@ -432,6 +432,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v276.3.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.14): fix(memory): Merge command api caches into one shared Map cache per project & design
 - [v276.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.13): fix(memory): Fix memory leak that was caused by constantly compiling metadata plugin schemas
 - [v276.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.12): test(migrations): Explain version change behavior in more detail
 - [v276.3.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.11): fix(migrations): Remove li-metadata-translations presence check
