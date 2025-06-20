@@ -300,7 +300,7 @@ The user experience may vary depending on the report's contents and Livingdocs c
 
 At any point during this process, users can abort the import, in which case no document is created.
 
-To enable this functionality, begin by configuring the `settings.agencyReportImport` property in your project configuration:
+To enable this functionality, begin by configuring the PEIQ configuration's `agencyReport` property in your project configuration (`settings.integrations.peiq.agencyReportImport`):
 
 - `peiqFunctionHandle`: The handle of a PEIQ function registered in your server
 - `paramsSchema`: An optional schema prompting the user to provide additional data after dropping an agency report into a dashboard
@@ -331,6 +331,14 @@ Next, register your PEIQ function. It will be called when an agency report is im
 * `context`: The configured `context` from `agencyReportImport` is forwarded to the function
 * `userId`: The ID of the user performing the import
 * `projectConfig`: The project configuration
+
+For the return object the livingdocs server expects the following:
+* `title`: optional string
+* `contentType`: required string
+* `metadata`: optional object
+* `metadataSource`: optional object
+* `translations`: optional array of metadata translations, e.g. `[{locale: 'en'}]`,
+* `content`: optional array of components
 
 ```js
 liServer.registerPeiqFunction({
