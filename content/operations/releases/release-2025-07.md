@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [News Agency Screen: Change content-type for news-agency-report and require content-type basefiler in news-agency-screen config](https://github.com/livingdocsIO/livingdocs-server/pull/8116)
 - [Fix document list query performance](https://github.com/livingdocsIO/livingdocs-server/pull/8125)
 - [fix(deps): update dependency pg from 8.16.1 to v8.16.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8124)
 - [fix(deps): update dependency pg from 8.16.0 to v8.16.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8120)
