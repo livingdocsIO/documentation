@@ -400,7 +400,7 @@ Here is an example script to include in your iframe:
     // event.data looks like this:
     // {
     //   action: 'metadata.update',
-    //   metadataProperties: {
+    //   metadata: {
     //     // all properties that are configured in this `metadataPreview` are included
     //     description: ''
     //   }
