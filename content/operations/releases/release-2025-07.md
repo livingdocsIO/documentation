@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [feat: add lines support for li-target-length](https://github.com/livingdocsIO/livingdocs-server/pull/8094)
 - [News Agency Screen: New dashboard cells + sidepanel](https://github.com/livingdocsIO/livingdocs-editor/pull/10021)
 - [News Agency Screen: Change content-type for news-agency-report and require content-type basefiler in news-agency-screen config](https://github.com/livingdocsIO/livingdocs-server/pull/8116)
 - [Fix document list query performance](https://github.com/livingdocsIO/livingdocs-server/pull/8125)
