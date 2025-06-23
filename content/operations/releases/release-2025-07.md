@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [News Agency Sidepanel: persist collapse indicator state in local storage](https://github.com/livingdocsIO/livingdocs-editor/pull/10077)
 - [feat: add system metadata priority plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/10027)
 - [feat: add system metadata priority plugin](https://github.com/livingdocsIO/livingdocs-server/pull/8075)
 - [feat: add lines support for li-target-length ](https://github.com/livingdocsIO/livingdocs-editor/pull/10057)
