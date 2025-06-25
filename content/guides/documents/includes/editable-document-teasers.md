@@ -6,8 +6,7 @@ weight: 4
 
 Editable Document Teasers based on [Includes]({{< ref "/reference/document/includes" >}}) and an extended version of [Document Teasers]({{< ref "/guides/documents/includes/document-teasers" >}}) provide a simple way to setup teasers and the possiblity to define the UI with a `paramsSchema`.
 
-If you set `editableContent: true` as return value, a user can overwrite the single directive values within the local document. These overwrites will be stored and sent to the include resolve function for consideration.
-This allows the implementation of an Editable Teaser workflow.
+If you set `editableContent: true` as return value, a user can overwrite the single directive values within the local document.
 
 An example of an includes return value:
 
