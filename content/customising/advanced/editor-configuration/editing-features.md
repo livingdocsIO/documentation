@@ -260,6 +260,8 @@ The `defaultForDocumentType` section allows you to separately turn comments off 
 
 It's also possible to turn on/off [Comments]({{< ref "/reference/project-config/content-types#comments" >}}) for a specific Content Type.
 
+It is worth noting that comments cannot be enabled on [Editable Document Teasers.]({{< ref "/guides/documents/includes/editable-document-teasers" >}})
+
 The notification feature needs to be enabled if the mentioned users should get a notification. [Notification feature]({{< ref "/reference/project-config/notifications.md" >}})
 
 ## Pin components
