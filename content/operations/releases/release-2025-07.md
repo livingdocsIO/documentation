@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Breaking changes for release-2025-07](https://github.com/livingdocsIO/livingdocs-server/pull/8115)
 - [fix(deps): update dependency @babel/core from 7.27.4 to v7.27.7 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10084)
 - [News Agency Sidepanel: persist collapse indicator state in local storage](https://github.com/livingdocsIO/livingdocs-editor/pull/10077)
 - [feat: add system metadata priority plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/10027)
