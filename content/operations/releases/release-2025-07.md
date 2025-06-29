@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency chartist from 1.3.1 to v1.4.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10089)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10090)
 - [chore(deps): update dependency eslint from 9.29.0 to v9.30.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8138)
 - [fix(deps): update dependency cloudinary from 2.6.1 to v2.7.0 (main) - autoclosed](https://github.com/livingdocsIO/livingdocs-server/pull/8123)
