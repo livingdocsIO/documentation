@@ -195,11 +195,26 @@ TODO: check migration
 The `params.documentId` is no longer included in data source requests originating from the editor.
 If your integration depends on this parameter, please reach out to your customer solutions manager to discuss alternative solutions.
 
+{{< feature-info "Document Command API" "server" >}}
+
+### Restricting Operation Order in Document Command API :fire:
+
+The [Document Command API]({{< ref "/reference/public-api/document-command-api" >}}) operations `publish`, `unpublish`, and `addPublishSchedule` can now only be used as the last operation in a request. Hence, they are also mutually exclusive.
+
 ## Deprecations
 
 ## Features
 
+### New Document Command API Operations :gift:
 
+The [Document Command API]({{< ref "/reference/public-api/document-command-api" >}}) has been extended with new Publish Control operations. The following new commands are now available:
+
+- `setEmbargo`
+- `removeEmbargo`
+- `addPublishSchedule`
+- `cancelPublishSchedule`
+- `addUnpublishSchedule`
+- `cancelUnpublishSchedule`
 
 ## Vulnerability Patches
 
