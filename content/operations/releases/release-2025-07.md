@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Feat: media center improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/10094)
 - [News Agency Flow](https://github.com/livingdocsIO/livingdocs-editor/pull/10080)
 - [News Agency Flow](https://github.com/livingdocsIO/livingdocs-server/pull/8133)
 - [fix(deps): update dependency ws from 8.18.2 to v8.18.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8141)
