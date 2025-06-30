@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update playwright monorepo from 1.53.1 to v1.53.2 (main) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/10099)
 - [Remove unused angular directives](https://github.com/livingdocsIO/livingdocs-editor/pull/10091)
 - [Feat: media center improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/10094)
 - [News Agency Flow](https://github.com/livingdocsIO/livingdocs-editor/pull/10080)
