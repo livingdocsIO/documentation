@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [News Agency Flow](https://github.com/livingdocsIO/livingdocs-editor/pull/10080)
 - [News Agency Flow](https://github.com/livingdocsIO/livingdocs-server/pull/8133)
 - [fix(deps): update dependency ws from 8.18.2 to v8.18.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8141)
 - [fix(deps): update dependency chartist from 1.3.1 to v1.4.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10089)
