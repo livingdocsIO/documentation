@@ -93,14 +93,14 @@ module.exports = function () {
             useDashboard: 'articlesSimple', // Optional, for selection dialog and for column config of selected document
             contentType: 'article', // Optional, shorthand base filter (string or array)
             published: true, // Optional, defaults to true
-            baseFilters: [], // Optional, overrides base filters in selection dialog
+            baseFilters: [], // Optional, extends base filters from the dashboard referenced in useDashboard
             displayFilters: [] // Optional, overrides display filters in selection dialog
           },
           // Optional, enables level 2 and defines what is selectable by users
           curatedList: {
             useDashboard: 'curatedLists', // For selection dialog
             contentType: 'curatedList', // Optional, shorthand base filter
-            baseFilters: [], // Optional, overrides base filters in selection dialog
+            baseFilters: [], // Optional, extends base filters from the dashboard specified in useDashboard
             displayFilters: [] // Optional, overrides display filters in selection dialog
           },
           // Optional, enables and configures level 3
