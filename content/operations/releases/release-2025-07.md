@@ -338,7 +338,14 @@ TBD
 
 ### New Document Command API Operations :gift:
 
-TBD
+The [Document Command API]({{< ref "/reference/public-api/document-command-api" >}}) has been extended with new Publish Control operations. The following new commands are now available:
+
+- `setEmbargo`
+- `removeEmbargo`
+- `addPublishSchedule`
+- `cancelPublishSchedule`
+- `addUnpublishSchedule`
+- `cancelUnpublishSchedule`
 
 {{< feature-info "TBD" "TBD" >}}
 
@@ -407,12 +414,14 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v280.1.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.4): fix(migrations): Rename index-reference-ids to avoid number conflict
 - [v280.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.3): fix: Remove support for property query.conditions in searchManager.search()
 - [v280.1.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.2): chore: Fix reference id population with new media library references table
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+
 - [v119.3.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.3): fix(navigation): Support cmd+click on back button to open window in new tab
 - [v119.3.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.2): fix(rubrics): show rubric document title as label in li-tree items
 
