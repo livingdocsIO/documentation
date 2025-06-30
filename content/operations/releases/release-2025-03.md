@@ -291,11 +291,13 @@ On-Read Migrations are applied whenever a document is read from the database. Th
    }
    ```
 
-   - `sequence`: Specifies the execution order of migrations. Values must be unique and increasing.
+   - `sequence`: Specifies the execution order of migrations. Values must be unique per content type and increasing.
    - `migrateFunctionHandle`: References a registered migrate function (see below).
    - `context`: Optional data passed to the migrate function, enabling reuse of migrate functions.
 
-   {{< warning >}}Migrations should not be removed once added. In a future release, a mechanism will allow running migrations in the background to support safe removal. Until then, only append new migrations.{{< /warning >}}
+   {{< warning >}}
+   Migrations must not be updated or removed once added. Only append new migrations. If you need to fix or revert a migration, append an additional migration that fixes the data or reverts the changes. Not doing so, may lead to data inconsistencies.
+   {{< /warning >}}
 
 2. Register the migrate function in the function registry. Migrate functions are registered using `liServer.registerMigrateFunctions`. Alternatively, individual migration functions can be registered using `liServer.registerMigrateFunction`.
 
