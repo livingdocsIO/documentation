@@ -55,8 +55,8 @@ contentTypeConfig: |2
           config: {
             style: 'default',   // optional, defaults to 'default'. Other options: 'teaser' | 'minimal'
             useDashboard: '',   // optional, reference to a custom dashboard
-            baseFilters: [],    // optional, invisible filters and applied to every search (including the default result list)
-            displayFilters: [], // optional, filters that the user can set in the UI (below the search input)
+            baseFilters: [],    // optional, extends base filters from the dashboard specified in useDashboard
+            displayFilters: [], // optional, overrides display filters in selection dialog
             cacheSearch: false, // optional, used to persist search query and filters when reopening search dialog, default: false
             sortable: true,     // optional, allow drag and drop sorting of items (not compatible with `style: 'minimal'`), default: false
             readOnly: false     // optional, default: false
