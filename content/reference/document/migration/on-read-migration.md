@@ -43,12 +43,12 @@ On-Read Migrations are defined in the Project Config for each content type:
 }
 ```
 
-- `sequence`: Specifies the execution order of migrations. Values must be unique and increasing.
+- `sequence`: Specifies the execution order of migrations. Values must be unique per content type and increasing.
 - `migrateFunctionHandle`: References a registered migrate function (see below).
 - `context`: Optional data passed to the migrate function, enabling reuse of migrate functions.
 
 {{< warning >}}
-Migrations should not be removed once added. In a future release, a mechanism will allow running migrations in the background to support safe removal. Until then, only append new migrations.
+Migrations must not be updated or removed once added. Only append new migrations. If you need to fix or revert a migration, append an additional migration that fixes the data or reverts the changes. Not doing so, may lead to data inconsistencies.
 {{< /warning >}}
 
 ### Function Registry
@@ -60,8 +60,6 @@ Only synchronous migrate functions are supported.
 {{< /info >}}
 
 ```js
-const transmogrify = require('./transmogrify')
-
 liServer.registerInitializedHook(function () {
   liServer.registerMigrateFunctions([
     {
@@ -69,8 +67,7 @@ liServer.registerInitializedHook(function () {
       migrateContent({content, context}) {
         if (!context?.componentName) return
 
-        const {content} = transmogrify({content})
-          .remove({componentName: context.componentName})
+        content = content.filter(({component}) => component !== context.componentName)
 
         return {content}
       }
