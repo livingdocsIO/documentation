@@ -37,6 +37,7 @@ Here is an overview of the top level properties. You can find detailed documenta
   import: {...},
   export: {...},
   finiteProducts: [{...}],
-  brands: [{...}]
+  brands: [{...}],
+  newsAgency: [{...}]
 }
 ```
