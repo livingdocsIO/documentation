@@ -432,6 +432,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v276.3.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.16): fix(security): Patch `undici` vulnerability `CVE-2025-47279` to v6.21.3 and `brace-expansion` vulnerability `CVE-2025-5889` to v1.1.12
 - [v276.3.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.15): fix(document-lists): Improve query performance for document lists
 - [v276.3.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.14): fix(memory): Merge command api caches into one shared Map cache per project & design
 - [v276.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.13): fix(memory): Fix memory leak that was caused by constantly compiling metadata plugin schemas
