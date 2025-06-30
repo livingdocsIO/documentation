@@ -11,7 +11,7 @@ description: |
 
 useCases: |
   - [Initial Import from a legacy system]({{< ref "/guides/setup/import-legacy-system-documents" >}})
-  - Feed Imports e.g. [DPA Import]({{< ref "/guides/integrations/dpa-import" >}})
+  - [Import news agency reports]({{< ref "/guides/integrations/news-agencies" >}})
 
 scopes: public-api:write
 query: |

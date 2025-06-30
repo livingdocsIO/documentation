@@ -1,0 +1,195 @@
+---
+title: News Agencies
+description: News Agency Integration
+weight: 2
+---
+
+{{< added-in "release-2025-07" block >}}
+
+Livingdocs offers built-in support for News Agencies, enabling editorial teams to review and process news agency reports directly within Livingdocs. With a single click, reports can be copied into regular Livingdocs articles, ready for editing and publication.
+
+The News Agency integration supports two kinds of import flows: manual flows and auto-publish flows.
+
+## Manual Flow
+
+Manual flows let users decide which news agency reports should be turned into articles. Because of this, they have their own views in the Livingdocs Editor and are more visible to users.
+
+{{< img src="./news-agencies-screen.png" alt="News Agency Screen"  >}}
+
+1. **Import**: News agency reports are imported via the Import API. They must be imported into a pre-configured content type with the handle `liNewsAgencyReport`. This content type is pre-configured with a fixed set of metadata properties and content components. It is created automatically once the integration is set up.
+2. **Triage**: Imported reports are displayed on a dedicated news agency screen. While this is the recommended way to work with news agency reports, it's also possible to configure other dashboards to display this content type.
+3. **Article Creation**: On the news agency screen, users can copy a report into a regular article by clicking the plus button. This action triggers the configured news agency function to transform the report into a regular article. It creates an independent copy that no longer receives updates from the original report.
+4. **Editing**: The resulting article behaves like any other article in Livingdocs: it can be edited, published, and managed without restrictions.
+
+## Auto-publish Flow
+
+Unlike the manual flow, the auto-publish flow requires no user-interaction. It enables publishing articles received from news agencies automatically.
+
+1. **Import**: Auto-publish reports are imported via the Import API to content type `liNewsAgencyReport` as well. However, the metadata property `autoPublish` must be set to `true`.
+2. **Triage**: This automatically bypasses the manual review process. Auto-publish reports do not appear on any news agency screens.
+3. **Article Creation**: A new article is automatically generated using the configured news agency function. The article is then immediately published without any user interaction. Auto-published articles are unpublished two weeks after their publication.
+4. **Editing**: When accessed by users, auto-published articles are read-only. They continue to receive updates made to the original news agency report, which are also automatically published. Users may choose to convert the auto-published article into an editable article. Once converted, it will stop receiving updates from the original report.
+
+{{< img src="./news-agencies-flow.png" alt="News Agency Screen"  >}}
+
+## Setup
+
+With this high-level overview in mind, this section will guide you through the configuration steps needed to enable the News Agency feature.
+
+### 1. Configure the News Agency Feature
+
+Set up the feature using the [`newsAgency` property]({{< ref "/reference/project-config/news-agencies" >}}):
+
+- `functionHandle` refers to a registered news agency function. This function is used to copy news agency reports into regular articles or, in the auto-publish flow, to also update already copied articles.
+- `screens` defines one or more news agency screens. The `displayFilterOptionsSource` and `displayFilterOptionsCategory` properties configure the filter options shown on the screen. If no options are set, the display filter won't be shown.
+
+```js
+newsAgency: {
+  functionHandle: 'someNewsAgencyFunction',
+  screens: [
+    {
+      handle: 'newsAgencyReports',
+      pageTitle: {en: 'Agency Inbox', de: 'Agentureingang'},
+      search: {strategy: 'simple'},
+      baseFilters: [],
+      displayFilterOptionsSource: [
+        {label: 'afp', value: 'afp'},
+        {label: 'dpa', value: 'dpa'},
+        {label: 'sid', value: 'sid'}
+      ],
+      displayFilterOptionsCategory: [
+        {label: {en: 'Politics', de: 'Politik'}, value: 'politics'},
+        {label: {en: 'Economy', de: 'Wirtschaft'}, value: 'economy'},
+        {label: {en: 'Sports', de: 'Sport'}, value: 'sport'},
+        {label: {en: 'Feuilleton', de: 'Feuilleton'}, value: 'feuilleton'},
+        {label: {en: 'Media', de: 'Medien'}, value: 'media'},
+        {label: {en: 'Other', de: 'Sonstiges'}, value: 'other'}
+      ]
+    }
+  ]
+}
+```
+
+### 2. Register a News Agency Function
+
+The news agency function copies reports into regular articles or, in the auto-publish flow, also updates already copied articles.
+
+It receives the parameters: `document` (a `liNewsAgencyReport`), `userId`, and `projectConfig`. It must return a document structure that will be used to create or update the document copy. Supported return properties include: `title`, `contentType`, `metadata`, `metadataSource`, `translations`, and `content`.
+
+Register the function using the server API `registerNewsAgencyFunction`:
+
+```js
+liServer.registerNewsAgencyFunction({
+  handle: 'someNewsAgencyFunction',
+  action({document, projectConfig, userId}) {
+    return {
+      title: document.title,
+      contentType: 'newswireArticle',
+      content: document.content,
+      metadata: document.metadata.toJSON()
+    }
+  }
+})
+```
+
+Since this function works with a `liNewsAgencyReport`, it's important to understand the structure of this content type. The `newsAgencyReport` is pre-configured by Livingdocs and only supports a specific set of metadata properties and content components.
+
+#### Content Type Config `liNewsAgencyReport`
+
+```js
+{
+  handle: 'liNewsAgencyReport',
+  components: [
+    {name: 'h2'},
+    {name: 'p'},
+    {name: 'ol'},
+    {name: 'ul'},
+    {name: 'li'}
+  ],
+  metadata: [
+    {handle: 'title', type: 'li-text', config: {required: true}},
+    {handle: 'lead', type: 'li-text', config: {required: true}},
+    {handle: 'keywords', type: 'li-string-list', config: {index: true}},
+    {handle: 'department', type: 'li-text', config: {index: true, required: true}},
+    {handle: 'sender', type: 'li-text', config: {index: true, required: true}},
+    {handle: 'priority', type: 'li-system-priority', config: {index: true, required: true}},
+    {handle: 'datetime', type: 'li-datetime', config: {index: true, required: true}},
+    {handle: 'autoPublish', type: 'li-system-boolean', config: {index: true}},
+    {handle: 'embargo', type: 'li-datetime', config: {index: true}},
+    {handle: 'language', type: 'li-language', config: {index: true}}
+  ]
+}
+```
+
+#### Design `newsAgencyReport`
+
+```js
+{
+  name: 'liNewsAgencyReport',
+  components: [
+    {name: 'h2', directives: [{type: 'editable', name: 'text', plainText: true}]},
+    {name: 'p', directives: [{type: 'editable', name: 'text'}]},
+    {name: 'ol', directives: {items: {allowedChildren: ['ol']}}},
+    {name: 'ul', directives: {items: {allowedChildren: ['li']}}},
+    {name: 'li', directives: [{type: 'editable', name: 'text'}], allowedParents: ['ol', 'ul']}
+  ]
+}
+```
+
+### 3. Set Up the Resulting Content Type
+
+The content type returned by your news agency function must be set up like any other content type in your project config. You can also reuse an existing content type that is already used for non-agency articles.
+
+Since news agency flows use the same news agency function for both manual and auto-publish flows, the resulting document will have the same content type in both cases. The only difference is the `newsAgencySource.autoPublish` property.
+
+News agency flows rely on publish control in the resulting document to support features like `autoPublish` and `embargo`. This means publish control must be configured correctly, otherwise, the news agency flow may fail:
+
+- If using `autoPublish` on import, you must enable `publishControl.unpublishSchedule` on the resulting content type.
+- If using `embargo` on import, enable `publishControl.embargo`.
+- If using both `autoPublish` and `embargo` on import, enable `publishControl.publishSchedule`.
+
+### 4. Set Up Dashboards
+
+You can now add the configured news agency screens to your menu or create additional dashboards. To filter articles based on how they were created:
+
+```js
+// Created with manual flow
+{key: 'newsAgencySource.autoPublish', term: false}
+
+// Created with auto-publish flow
+{key: 'newsAgencySource.autoPublish', term: true}
+```
+
+### 5. Import News Agency Reports
+
+Now you're ready to import news agency reports using the Import API. Since you'll import documents of type `liNewsAgencyReport`, it's important to know the supported metadata properties and content components of this content type (see above).
+
+```js
+POST /api/v1/import/documents
+
+{
+  "systemName": "alephdam",
+  "documents": [
+    {
+      "id": "1",
+      "checksum": "1",
+      "contentType": "liNewsAgencyReport",
+      "title": "Some title",
+      "metadata": {
+        "title": "Some title",
+        "lead": "Some lead",
+        "source": "dpa",
+        "category": "Economics",
+        "keywords": ["Money", "Finance"],
+        "priority": 2,
+        "datetime": "2025-07-25T15:00:58.615Z", // datetime of the agency report (as shown in the UI)
+        "embargo": "2025-07-25T15:00:58.615Z",
+        "autoPublish": true // manual/auto-publish flow
+      },
+      "content": [
+        {"component": "h2", "content": {"text": "Some subtitle"}}
+      ]
+    }
+  ]
+}
+```
