@@ -11,6 +11,8 @@ history:
     description: 'The following commands got added: `removeComponent`, `unpublish`'
   - release: release-2024-11
     description: 'The following commands got added: `setComponentCondition`, `setComponentStyle`, `setIncludeDirective`, `setLinkDirective`, `setStyleDirective`'
+  - release: release-2025-07
+    description: 'The following commands got added: `setEmbargo`, `removeEmbargo`, `addPublishSchedule`, `cancelPublishSchedule`, `addUnpublishSchedule`, `cancelUnpublishSchedule`'
 
 description: |
   Execute a Document Command based on its `id`.  
@@ -58,6 +60,8 @@ parameters:
     notes: |
       An array of commands to execute. Each entry is an object with at least an **operation** property.
 
+      Command API operations `publish`, `unpublish`, and `addPublishSchedule` can only be used as the last operation in a request and are mutually exclusive.
+
       Possible operations:
       - `setMetadataProperty`
       - `setTitle`
@@ -69,6 +73,12 @@ parameters:
       - `setIncludeDirective` {{< added-in "release-2024-11" >}}
       - `setLinkDirective` {{< added-in "release-2024-11" >}}
       - `setStyleDirective` {{< added-in "release-2024-11" >}}
+      - `setEmbargo` {{< added-in "release-2025-07" >}}
+      - `removeEmbargo` {{< added-in "release-2025-07" >}}
+      - `addPublishSchedule` {{< added-in "release-2025-07" >}}
+      - `cancelPublishSchedule` {{< added-in "release-2025-07" >}}
+      - `addUnpublishSchedule` {{< added-in "release-2025-07" >}}
+      - `cancelUnpublishSchedule` {{< added-in "release-2025-07" >}}
       - `publish`
       - `unpublish` {{< added-in "release-2024-07" >}}
 
@@ -205,12 +215,44 @@ example_request: |
         "oldValue": "#000"
       },
       {
-        // Creates a new publication for the document if applicable
+        // Adds an embargo
+        "operation": "setEmbargo",
+        "reason": "Some reason", // optional
+        "until": "2021-11-04T00:00:00Z" // optional
+      },
+      {
+        // Removes an embargo
+        "operation": "removeEmbargo"
+      },
+      {
+        // Adds a publish schedule. Can only be the last command in a request.
+        // Therefore, it cannot be used with "publish" or "unpublish".
+        "operation": "addPublishSchedule",
+        "date": "2021-11-04T00:00:00Z"
+      },
+      {
+        // Removes a publish schedule
+        "operation": "cancelPublishSchedule"
+      },
+      {
+        // Adds a unpublish schedule
+        "operation": 'addUnpublishSchedule',
+        "date": "2021-11-04T00:00:00Z"
+      },
+      {
+        // Removes a unpublish schedule
+        "operation": "cancelUnpublishSchedule"
+      }
+      {
+        // Creates a new publication for the document if applicable.  Can only
+        // be the last command in a request. Therefore, it cannot be used with
+        // "addPublishSchedule" or "unpublish".
         "operation": "publish"
       },
       {
-        // Unpublishes the document if it was published before.
-        // Cannot be used with "publish" command in same request.
+        // Unpublishes the document if it was published before. Can only be the
+        // last command in a request. Therefore, it cannot be used with
+        // "addPublishSchedule" or "publish".
         "operation": "unpublish"
       }
     ]
