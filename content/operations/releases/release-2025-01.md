@@ -658,6 +658,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v267.1.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.40): fix(security): Patch `undici` vulnerability `CVE-2025-47279` to v6.21.3, `brace-expansion` vulnerability `CVE-2025-5889` to v1.1.12 and `@babel/runtime` vulnerability `CVE-2025-27789` to v7.27.6
 - [v267.1.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.39): fix(queue): Execute redis streams cleanup only on worker
 - [v267.1.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.38): fix(deps): update dependency fastify from 5.2.0 to 5.3.2 [security]
 - [v267.1.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v267.1.37): fix(cli): Do not rely on config within cli option building as it breaks support for many tasks
