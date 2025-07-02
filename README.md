@@ -183,3 +183,64 @@ weight: 6
 npm install -g markdown-link-check
 markdown-link-check SUMMARY.md -q
 ```
+
+## Release Notes
+
+### Generate Release Changes File
+
+The script `bin/generate-release-changes.js` allows you to generate a changelog-style file that compiles all Pull Request descriptions included in a given release. It provides a clear and comprehensive overview and supports the creation of release notes.
+
+Usage:
+
+```
+node bin/generate-release-changes.js [options] <markdown-file>
+```
+
+Options:
+
+```
+  -f, --format <format>  Output format: json or markdown (default: json)
+  -h, --help            Show help
+```
+
+Example:
+
+```
+node bin/generate-release-changes.js release-2025-07.md
+node bin/generate-release-changes.js --format=markdown release-2025-07.md
+```
+
+#### Generate Github Access Token
+
+To run the script, you must provide a valid `GitHub Access Token` with proper repository access.
+
+Steps to Generate a Token
+
+1. Go to GitHub → Profile → Settings → Developer Settings → Personal Access Tokens
+
+2. Choose Tokens (Classic) and click Generate new token (Fine-grained)
+
+3. Configure the token:  
+   Resource Owner: LivingdocsIO  
+   Repository Access: Only selected repositories  
+   Select: Editor, Server, Documentation
+   Permissions: Pull requests: Read-only & Contents: Read-only
+
+4. Click Generate Token, wait for permissions to be granted, then copy the token.
+
+5. Set the github token for the generate script
+   ```
+   export GITHUB_TOKEN=<created-github-token>
+   ```
+
+#### Generate and view output file
+
+To generate and open a Markdown file with all included PR descriptions:
+
+```
+// Generate file
+node bin/generate-release-changes.js --format=markdown content/operations/releases/release-2025-07.md b/content/operations/releases/release-2025-07.md > changes.md
+
+// View the file
+open changes.md
+```
