@@ -163,7 +163,12 @@ No pre-deployment steps are required before rolling out this release.
 
 #### Migrate the Postgres Database
 
-No migrations are required for this release.
+```sh
+# run `livingdocs-server migrate up` to update to the newest database schema
+livingdocs-server migrate up
+```
+
+This release includes migrations that prepare for the removal of multi-channel support and implement data structure changes for the news agency flow feature.
 
 ### After the deployment
 
@@ -171,7 +176,13 @@ No post-deployment steps are required after rolling out this release.
 
 ### Rollback
 
-No rollback steps are required for this release.
+If you need to roll back after applying migrations, you can use the following command:
+
+```sh
+livingdocs-server migrate down
+```
+
+Note that this will only roll back database changes, but code changes may require additional steps. Please contact Livingdocs support for assistance with a complete rollback.
 
 ## Breaking Changes 🔥
 
@@ -186,7 +197,151 @@ It's a simple/fast migration with no expected data losses.
 livingdocs-server migrate up
 ```
 
-TODO: check migration
+The migrations in this release are required for proper functionality and prepare your system for the removal of multi-channel support.
+
+{{< feature-info "Operations" "server" >}}
+
+### Multi-Channel Projects Removed :fire:
+
+Multi-Channel Configurations within one Project have been completely removed. Projects can no longer contain multiple channels. **Please contact Livingdocs support immediately to plan your migration** to migrate content types into one channel.
+
+Functionality-wise some setups might need to migrate tests to not create multiple channels. There will be errors if some test setup uses multiple channels. If you don't see errors, there's nothing to do.
+
+Data-wise at the moment no data gets deleted in postgres. **But documents of the secondary channel won't be available anymore in any queries**. We'll delete all the data in another release.
+
+{{< feature-info "APIs" "server" >}}
+
+### Server Configuration Changes :fire:
+
+The server configuration properties have been restructured. You need to update your configuration to use the new structure:
+
+```js
+// ❌ Old (removed)
+{
+  server: {
+    host: 'localhost',
+    port: 3000,
+    max_json_request_size: '10mb',
+    gzip: true,
+    trust_proxy: true,
+    https: {...}
+  },
+  cors: {
+    enabled: true,
+    whitelist: ['https://example.com']
+  },
+  auth: {
+    connections: {
+      local: {
+        config: {
+          passwordBlacklist: ['livingdocs']
+        }
+      }
+    }
+  }
+}
+
+// ✅ New (required)
+{
+  httpServer: {
+    host: 'localhost', 
+    port: 3000,
+    maxRequestBodySize: '10mb',
+    useGzipCompression: true,
+    xForwardedForTrustIps: true,
+    https: {...},
+    cors: {
+      allowlist: ['https://example.com']
+    }
+  },
+  auth: {
+    connections: {
+      local: {
+        config: {
+          deniedPasswords: ['livingdocs']
+        }
+      }
+    }
+  }
+}
+```
+
+### Media APIs Removed :fire:
+
+The deprecated media APIs have been removed. You need to update your code to use the new media library API:
+
+```js
+// ❌ Old (removed)
+const imagesApi = server.features.api('li-images')
+const videosApi = server.features.api('li-videos')
+await imagesApi.processJob(job)
+await videosApi.upload(params)
+
+// ✅ New (required)  
+const mediaLibraryApi = server.features.api('li-media-library')
+await mediaLibraryApi.addImage(params)
+await mediaLibraryApi.addVideo(params)
+```
+
+### Inclusive Language Changes :fire:
+
+All configurations using blacklist/whitelist terminology have been updated to use inclusive language:
+
+```js
+// ❌ Old (removed)
+{
+  // Project config
+  components: [{
+    directives: [{
+      tagWhitelist: [...],
+      tagBlacklist: [...]  
+    }]
+  }],
+  contentTypes: [{
+    editor: {
+      images: { whitelist: [...] }
+    }
+  }]
+}
+
+// ✅ New (required)
+{
+  // Project config  
+  components: [{
+    directives: [{
+      tagAllowlist: [...],
+      tagDenylist: [...]
+    }]
+  }],
+  contentTypes: [{
+    editor: {
+      images: { allowlist: [...] }
+    }
+  }]
+}
+```
+
+### API Endpoints Changes :fire:
+
+Several API endpoints have been removed from v2025-07:
+
+```js
+// ❌ Removed from v2025-07+
+GET /api/2025-07/project
+GET /api/2025-07/channels  
+GET /api/2025-07/channelConfig
+POST /api/2025-07/channelConfig
+
+// ✅ Available in v2025-07+
+GET /api/2025-07/projectConfig
+POST /api/2025-07/projectConfig
+
+// ℹ️ Legacy endpoints still available in v1 through 2025-05
+GET /api/v1/project (until 2025-05)
+GET /api/v1/channels (until 2025-05)
+GET /api/v1/channelConfig (until 2025-05)
+POST /api/v1/channelConfig (until 2025-05)
+```
 
 {{< feature-info "Data Sources" "server" >}}
 
@@ -197,9 +352,69 @@ If your integration depends on this parameter, please reach out to your customer
 
 ## Deprecations
 
+### Postgres v13 Deprecated
+
+Postgres v13 is now deprecated. Support for it will be removed in `release-2026-01`. Please upgrade to a newer version.
+
+### Project Builders Deprecated
+
+Project builders are now deprecated. Support for them will be removed in `release-2026-01`.
+
 ## Features
 
+{{< feature-info "Editing" "editor" >}}
 
+### System Metadata Priority Plugin :gift:
+
+A new system metadata priority plugin has been added that allows for prioritizing content in your editorial workflow. This provides a standardized way to set and display content priority across your projects.
+
+{{< feature-info "Editing" "both" >}}
+
+### Target Length Lines Support :gift:
+
+The target length feature now supports line-based measurements in addition to character counts. This enhancement offers more flexibility in defining content length requirements, with a toggle to switch between T-Shirt size slider and exact number input.
+
+{{< feature-info "Media" "editor" >}}
+
+### Media Center Improvements :gift:
+
+The media center has been enhanced with several improvements:
+- Embedded Pintura image editor for better in-app editing experience
+- Modified images are now downloaded instead of originals when using the download function
+- Improved handling of video references in metadata
+
+{{< feature-info "Dashboard" "editor" >}}
+
+### Dashboard Enhancements :gift:
+
+Multiple dashboard improvements have been implemented:
+- New character count dashboard cell for tracking content length
+- Support for custom display filters on task screens
+- Improved UI for embedded documents in the properties panel
+- Enhanced drag and drop experience in the side panel
+
+{{< feature-info "User Experience" "editor" >}}
+
+### UX Improvements :gift:
+
+Several user experience enhancements have been added:
+- Improved error display in assistant error notifications
+- Fixed login error display
+- Better UI for character limit side panel properties
+- Fixed application menu chevron positioning for multi-line text
+- Improved tooltips for team members
+
+{{< feature-info "Performance" "server" >}}
+
+### Performance Improvements :gift:
+
+Significant performance enhancements have been implemented:
+- Fixed document list query performance
+- Fixed document command API memory leak
+- Fixed AJV compile memory leak
+- Improved in-memory dashboard filter caching
+- Added default lock timeout of 2 seconds for Postgres read & write roles
+- Optimized data provider request caching in the editor
 
 ## Vulnerability Patches
 
@@ -209,7 +424,9 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 This release we have patched the following vulnerabilities in the Livingdocs Server:
 
-- TBD
+- Fixed AJV compile memory leak that could lead to memory issues under heavy load
+- Fixed document command API memory leak that could affect system stability
+- Set default lock timeout for Postgres connections to prevent query deadlocks
 
 No known vulnerabilities. :tada:
 
@@ -217,7 +434,9 @@ No known vulnerabilities. :tada:
 
 This release we have patched the following vulnerabilities in the Livingdocs Editor:
 
-- TBD
+- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10090)
+- Embedded Pintura image editor to eliminate external security dependencies
+- Fixed API client rotating state to prevent token exposure
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
