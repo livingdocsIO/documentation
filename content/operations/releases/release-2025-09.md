@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @elastic/elasticsearch from 9.0.2 to v9.0.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8154)
 - [fix(deps): update aws-sdk from 3.837.0 to v3.840.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8139)
 
 
