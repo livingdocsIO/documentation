@@ -332,13 +332,13 @@ The News Agency integration supports two kinds of import flows: manual flows and
 
 #### Manual Flow
 
-Manual flows let users decide which news agency reports should be turned into articles. Because of this, they have their own views in the Livingdocs Editor and are more visible to users.
+Manual flows let users decide which news agency reports should be turned into articles. As a result, they are more visible to users, whereas auto-publish flows are designed to operate in the background.
 
-{{< img src="./release-2025-07-news-agencies.png" alt="News Agency Screen"  >}}
+{{< img src="./news-agencies-screen.png" alt="News Agency Screen"  >}}
 
 1. **Import**: News agency reports are imported via the Import API. They must be imported into a pre-configured content type with the handle `liNewsAgencyReport`. This content type is pre-configured with a fixed set of metadata properties and content components. It is created automatically once the integration is set up.
 2. **Triage**: Imported reports are displayed on a dedicated news agency screen. While this is the recommended way to work with news agency reports, it's also possible to configure other dashboards to display this content type.
-3. **Article Creation**: On the news agency screen, users can copy a report into a regular article by clicking the plus button. This action triggers the configured news agency function to transform the report into a regular article. It creates an independent copy that no longer receives updates from the original report.
+3. **Article Creation**: On the news agency screen, users can copy a report into a regular article by clicking the plus button. This action triggers the configured news agency function to transform the report into a regular article. It creates an independent copy that no longer receives updates from the original report, though it remains linked to the original news agency report. This relationship is displayed in the document info panel of the article and on the news agency screen next to the report from which it was created.
 4. **Editing**: The resulting article behaves like any other article in Livingdocs: it can be edited, published, and managed without restrictions.
 
 #### Auto-publish Flow
