@@ -17,24 +17,38 @@ For instructions on how to set it up, please refer to our [integration guide]({{
 
 ```js
 newsAgency: {
+  // Required. References a registered news agency function. This function is
+  // used to copy news agency reports into regular articles or, in the
+  // auto-publish flow, to also update already copied articles.
   functionHandle: 'someNewsAgencyFunction',
+
+  // Optional. Configures the news agency screens.
   screens: [
     {
+      // Required. Handle identifying the news agency screen.
       handle: 'newsAgencyReports',
+
+      // Optional. Title displayed at the top of the news agency screen.
       pageTitle: {en: 'Agency Inbox', de: 'Agentureingang'},
+
+      // Optional. Defines the strategy used to search news agency reports.
       search: {strategy: 'simple'},
-      // Further restricts the displayed news agency reports. Regardless of
-      // baseFilters, only reports imported with manual flows of content type
-      // liNewsAgencyReport are shown.
+
+      // Optional. Further restricts the displayed news agency reports.
+      // Regardless of baseFilters, only reports imported through manual flows
+      // with the content type `liNewsAgencyReport` are shown.
       baseFilters: [],
-      // The displayFilterOptionsSource and displayFilterOptionsCategory
-      // properties configure the filter options shown on the screen. If no
-      // options are set, the display filter won't be shown.
+
+      // Optional. Configures the source display filter options. If none are
+      // defined, the display filter will not be shown.
       displayFilterOptionsSource: [
         {label: 'afp', value: 'afp'},
         {label: 'dpa', value: 'dpa'},
         {label: 'sid', value: 'sid'}
       ],
+
+      // Optional. Configures the category display filter options. If none are
+      // defined, the display filter will not be shown.
       displayFilterOptionsCategory: [
         {label: {en: 'Politics', de: 'Politik'}, value: 'politics'},
         {label: {en: 'Economy', de: 'Wirtschaft'}, value: 'economy'},
