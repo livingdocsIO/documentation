@@ -54,82 +54,6 @@ systemRequirements:
       version: Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78
 ---
 
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to the main branch).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
-
-## PRs to Categorize
-
-- [Set default lock timeout of postgres read & write roles to 2s](https://github.com/livingdocsIO/livingdocs-server/pull/7970)
-- [Remove unused angular directives](https://github.com/livingdocsIO/livingdocs-editor/pull/10091)
-- [Feat: media center improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/10094)
-- [News Agency Flow](https://github.com/livingdocsIO/livingdocs-editor/pull/10080)
-- [News Agency Flow](https://github.com/livingdocsIO/livingdocs-server/pull/8133)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10090)
-- [Breaking changes for release-2025-07](https://github.com/livingdocsIO/livingdocs-server/pull/8115)
-- [News Agency Sidepanel: persist collapse indicator state in local storage](https://github.com/livingdocsIO/livingdocs-editor/pull/10077)
-- [feat: add system metadata priority plugin](https://github.com/livingdocsIO/livingdocs-editor/pull/10027)
-- [feat: add system metadata priority plugin](https://github.com/livingdocsIO/livingdocs-server/pull/8075)
-- [feat: add lines support for li-target-length ](https://github.com/livingdocsIO/livingdocs-editor/pull/10057)
-- [feat: add lines support for li-target-length](https://github.com/livingdocsIO/livingdocs-server/pull/8094)
-- [News Agency Screen: New dashboard cells + sidepanel](https://github.com/livingdocsIO/livingdocs-editor/pull/10021)
-- [News Agency Screen: Change content-type for news-agency-report and require content-type basefiler in news-agency-screen config](https://github.com/livingdocsIO/livingdocs-server/pull/8116)
-- [Fix document list query performance](https://github.com/livingdocsIO/livingdocs-server/pull/8125)
-- [Fix document command api memory leak](https://github.com/livingdocsIO/livingdocs-server/pull/8109)
-- [fix(character limit): Sidepanel property display](https://github.com/livingdocsIO/livingdocs-editor/pull/10067)
-- [fix(application menu): Chevron position](https://github.com/livingdocsIO/livingdocs-editor/pull/10066)
-- [Fix ajv compile memory leak](https://github.com/livingdocsIO/livingdocs-server/pull/8100)
-- [Add publish control operations to Command API](https://github.com/livingdocsIO/livingdocs-server/pull/8091)
-- [Display untranslated error details in assistant error notification](https://github.com/livingdocsIO/livingdocs-editor/pull/10053)
-- [Fix: li-target-length add support for allowAnyNumber on tabledashboard](https://github.com/livingdocsIO/livingdocs-editor/pull/10034)
-- [Embedd Pintura in repository](https://github.com/livingdocsIO/livingdocs-editor/pull/10048)
-- [Clear search input when selecting option in Retresco/iMatrics display filters](https://github.com/livingdocsIO/livingdocs-editor/pull/10045)
-- [Test against elasticsearch v9](https://github.com/livingdocsIO/livingdocs-server/pull/8081)
-- [Fix api client rotating state](https://github.com/livingdocsIO/livingdocs-editor/pull/10035)
-- [Fix imatrics and retresco filter reactivity](https://github.com/livingdocsIO/livingdocs-editor/pull/10031)
-- [Migrations: Always persist content and sequences on change](https://github.com/livingdocsIO/livingdocs-server/pull/8076)
-- [Add news-agency-screen](https://github.com/livingdocsIO/livingdocs-editor/pull/10017)
-- [Add News Agency Screen](https://github.com/livingdocsIO/livingdocs-server/pull/8064)
-- [Feat: add embargo support for import api](https://github.com/livingdocsIO/livingdocs-server/pull/8046)
-- [Remove li-metadata-translations check in migrations](https://github.com/livingdocsIO/livingdocs-server/pull/8063)
-- [Add Agency Copy Flow](https://github.com/livingdocsIO/livingdocs-editor/pull/9936)
-- [Add Agency Copy Flow](https://github.com/livingdocsIO/livingdocs-server/pull/8009)
-- [Change the documentWriteModel.version correctly after persisting migration changes](https://github.com/livingdocsIO/livingdocs-server/pull/8049)
-- [LIFEAT009: in-memory dashboard filter caching in liEmbedTeaserIncludeModal](https://github.com/livingdocsIO/livingdocs-server/pull/8051)
-- [Support `undefined` params to allow dropping teasers into new components](https://github.com/livingdocsIO/livingdocs-editor/pull/10004)
-- [Allow removal of video references from metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/10001)
-- [Cache dashboard filters and query while document is open](https://github.com/livingdocsIO/livingdocs-editor/pull/9990)
-- [Feat: Show tooltip on hovering team members](https://github.com/livingdocsIO/livingdocs-editor/pull/9988)
-- [Fix scroll to focused component](https://github.com/livingdocsIO/livingdocs-editor/pull/9994)
-- [feat(embargo): index so that it can be used in basefilters](https://github.com/livingdocsIO/livingdocs-server/pull/8037)
-- [News agency copy flow ui elements](https://github.com/livingdocsIO/livingdocs-editor/pull/9935)
-- [Fix usages of uniqueItemProperties AJV keyword](https://github.com/livingdocsIO/livingdocs-server/pull/8038)
-- [Search result tooltip fixes](https://github.com/livingdocsIO/livingdocs-editor/pull/9958)
-- [Fix: cache data provider requests](https://github.com/livingdocsIO/livingdocs-editor/pull/9955)
-- [Improvement/Loader and Progress Icon](https://github.com/livingdocsIO/livingdocs-editor/pull/9939)
-- [Show image editor button also if it is the only action](https://github.com/livingdocsIO/livingdocs-editor/pull/9956)
-- [Preserve loop and delay properties of animated images](https://github.com/livingdocsIO/livingdocs-server/pull/8014)
-- [Disable supportsVideoConversion in rendering image service](https://github.com/livingdocsIO/livingdocs-editor/pull/9952)
-- [fix: dont disable metadata button](https://github.com/livingdocsIO/livingdocs-editor/pull/9937)
-- [Import Pintura from private NPM repository](https://github.com/livingdocsIO/livingdocs-editor/pull/9944)
-- [Remove non-existent linked Pintura package from downstream tests](https://github.com/livingdocsIO/livingdocs-editor/pull/9938)
-- [Prevent component blur when clicking on component area for a ticker entry to allow doc-link to be set](https://github.com/livingdocsIO/livingdocs-editor/pull/9917)
-- [Download images from /serve-image endpoint](https://github.com/livingdocsIO/livingdocs-editor/pull/9914)
-- [Download modified instead of original images](https://github.com/livingdocsIO/livingdocs-server/pull/7980)
-- [Show login errors correctly](https://github.com/livingdocsIO/livingdocs-editor/pull/9924)
-- [Always show "Has local changes" in properties panel for embedded documents](https://github.com/livingdocsIO/livingdocs-editor/pull/9913)
-- [Clear up markers after dragend event for side panel drag and drop items](https://github.com/livingdocsIO/livingdocs-editor/pull/9849)
-- [Allow the use of custom display filters on task screens](https://github.com/livingdocsIO/livingdocs-editor/pull/9844)
-- [Hide "Edit Local Version" in properties panel when empty](https://github.com/livingdocsIO/livingdocs-editor/pull/9848)
-- [Fix data migration statistics mutation](https://github.com/livingdocsIO/livingdocs-server/pull/7985)
-- [Improve handling of empty property image_ids](https://github.com/livingdocsIO/livingdocs-server/pull/7982)
-
-
 To get an overview about new functionality, read the [Release Notes](TODO).
 To learn about the necessary actions to update Livingdocs to `release-2025-07`, read on.
 
@@ -198,8 +122,6 @@ If your integration depends on this parameter, please reach out to your customer
 ## Deprecations
 
 ## Features
-
-
 
 ## Vulnerability Patches
 
