@@ -99,25 +99,172 @@ No rollback steps are required for this release.
 
 ## Breaking Changes 🔥
 
-{{< feature-info "Operations" "server" >}}
+{{< feature-info "Multichannel Projects" "Server" >}}
 
-### Migrate the Postgres Database :fire:
+### Removal of Multi-Channel Projects :fire:
 
-It's a simple/fast migration with no expected data losses.
+Multi-Channel Configurations within one Project have been completely removed. Projects can no longer contain multiple channels. **Please contact Livingdocs support immediately to plan your migration** to migrate content types into one channel.
 
-```sh
-# run `livingdocs-server migrate up` to update to the newest database schema
-livingdocs-server migrate up
+Functionality-wise some setups might need to migrate tests to not create multiple channels. There will be errors if some test setup uses multiple channels. If you don't see errors, there's nothing to do.
+
+Data-wise at the moment no data gets deleted in postgres. **But documents of the secondary channel won't be available anymore in any queries**. We'll delete all the data in another release.
+
+#### Code changes required
+
+Media APIs:
+
+```
+❌ Old (removed)
+const imagesApi = server.features.api('li-images')
+const videosApi = server.features.api('li-videos')
+await imagesApi.processJob(job)
+await videosApi.upload(params)
+
+✅ New (required)
+const mediaLibraryApi = server.features.api('li-media-library')
+await mediaLibraryApi.addImage(params)
+await mediaLibraryApi.addVideo(params)
 ```
 
-TODO: check migration
+Server Configuration:
 
-{{< feature-info "Data Sources" "server" >}}
+```
+❌ Old (removed)
+{
+  server: {
+    host: 'localhost',
+    port: 3000,
+    max_json_request_size: '10mb',
+    gzip: true,
+    trust_proxy: true,
+    https: {...}
+  },
+  cors: {
+    enabled: true,
+    whitelist: ['https://example.com']
+  },
+  auth: {
+    connections: {
+      local: {
+        config: {
+          passwordBlacklist: ['livingdocs']
+        }
+      }
+    }
+  }
+}
+
+✅ New (required)
+{
+  httpServer: {
+    host: 'localhost',
+    port: 3000,
+    maxRequestBodySize: '10mb',
+    useGzipCompression: true,
+    xForwardedForTrustIps: true,
+    https: {...},
+    cors: {
+      allowlist: ['https://example.com']
+    }
+  },
+  auth: {
+    connections: {
+      local: {
+        config: {
+          deniedPasswords: ['livingdocs']
+        }
+      }
+    }
+  }
+}
+```
+
+Project Configuration:
+
+```
+❌ Old (removed)
+{
+  // Project config
+  components: [{
+    directives: [{
+      tagWhitelist: [...],
+      tagBlacklist: [...]
+    }]
+  }],
+  contentTypes: [{
+    editor: {
+      images: { whitelist: [...] }
+    }
+  }]
+}
+
+✅ New (required)
+{
+  // Project config
+  components: [{
+    directives: [{
+      tagAllowlist: [...],
+      tagDenylist: [...]
+    }]
+  }],
+  contentTypes: [{
+    editor: {
+      images: { allowlist: [...] }
+    }
+  }]
+}
+```
+
+API Endpoints (v2025-07):
+
+```
+❌ Removed from v2025-07+
+GET /api/2025-07/project
+GET /api/2025-07/channels
+GET /api/2025-07/channelConfig
+POST /api/2025-07/channelConfig
+
+✅ Available in v2025-07+
+GET /api/2025-07/projectConfig
+POST /api/2025-07/projectConfig
+
+ℹ️ Legacy endpoints still available in v1 through 2025-05
+GET /api/v1/project (until 2025-05)
+GET /api/v1/channels (until 2025-05)
+GET /api/v1/channelConfig (until 2025-05)
+POST /api/v1/channelConfig (until 2025-05)
+```
+
+{{< feature-info "Data Sources" "Server" >}}
 
 ### Removal of params.documentId in Data Sources :fire:
 
 The `params.documentId` is no longer included in data source requests originating from the editor.
 If your integration depends on this parameter, please reach out to your customer solutions manager to discuss alternative solutions.
+
+{{< feature-info "Config" "Server" >}}
+
+### Removal of `server._` in favor of `httpServer._` :fire:
+
+The Livingdocs Server config properties `server._` has been moved to `httpServer._` in `release-2022-09`. In this release we’ve enforced the new config as breaking change.
+
+{{< feature-info "Config" "Server" >}}
+
+### Removal of `blacklist` and `whitelist` :fire:
+
+The terms `blacklist` and `whitelist` have been deprecated in `release-2025-01` and this is now enforced by a breaking change.
+
+{{< feature-info "Config" "Server" >}}
+
+### Removal of `li-images` and `li-videos` :fire:
+
+The deprecated features `li-images` and `li-videos` got removed. Please use `li-media-library`.
+
+{{< feature-info "Config" "Server" >}}
+
+### Enforce Uniqueness of project config props :fire:
+
+Enforce uniqueness of project config properties `contentTypes[].handle`, `finiteProducts[].issueContentType`, `dashboards[].columns[].handle`, `editorSettings.mainNavigationGroups[].handle`, and `contentTypes[].componentGroups[].name`. Due to miss-configuration, our setup had no effect in certain cases.
 
 ## Deprecations
 
