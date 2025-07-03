@@ -121,6 +121,26 @@ If your integration depends on this parameter, please reach out to your customer
 
 ## Deprecations
 
+{{< feature-info "Postgres Version" "Database" >}}
+
+### Deprecate `Postgres v13` :warning:
+
+Deprecate `Postgres v13` as it’s end of life in November 2025.  
+Support for it will be removed in `release-2026-01`.
+
+{{< feature-info "Server API" "Server" >}}
+
+### Deprecate endpoint `GET /api/:apiVersion/channelConfig` :warning:
+
+The endpoint `GET /api/:apiVersion/channelConfig` is deprecated and `/api/2025-05/channelConfig` is the last api version that supports it.  
+Please use `/api/2025-07/projectConfig` instead.
+
+{{< feature-info "Removal" "Server" >}}
+
+### Deprecate `project builders` :warning:
+
+Support for those will be removed in `release-2026-01`.
+
 ## Features
 
 ## Vulnerability Patches
