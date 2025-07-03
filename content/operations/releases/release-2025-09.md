@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Li-Tree improvements for Rubrics](https://github.com/livingdocsIO/livingdocs-editor/pull/10106)
 - [Fix deletion routine reference extraction](https://github.com/livingdocsIO/livingdocs-server/pull/8155)
 - [Prevent configuring news agency report content type multiple times](https://github.com/livingdocsIO/livingdocs-server/pull/8159)
 - [fix(deps): update dependency @elastic/elasticsearch from 9.0.2 to v9.0.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8154)
