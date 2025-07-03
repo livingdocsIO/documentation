@@ -31,7 +31,7 @@ systemRequirements:
     - name: Livingdocs Editor Docker Image
       version: livingdocs/editor-base:24
     - name: Browser Support
-      version: Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78
+      version: Chrome >= 126, Edge >= 126, Firefox >= 127, Safari >= 17.5
 
   minimal:
     - name: Node
@@ -51,7 +51,7 @@ systemRequirements:
     - name: Livingdocs Editor Docker Image
       version: livingdocs/editor-base:20:10
     - name: Browser Support
-      version: Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78
+      version: Chrome >= 126, Edge >= 126, Firefox >= 127, Safari >= 17.5
 ---
 
 ## Caveat :fire:
