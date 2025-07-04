@@ -97,6 +97,12 @@ The following events are supported:
 - `mediaLibraryEntry.active` ({{< added-in "release-2024-03" >}})
 - `mediaLibraryEntry.invalid` ({{< added-in "release-2024-03" >}})
 
+{{< info >}}
+When a document or media library event is emitted, the Elasticsearch index may not have been updated yet. Hence, when fetching data from a Public API endpoint that internally queries the Elasticsearch index, the response may not immediately reflect the event.
+
+Currently, Livingdocs does not provide a mechanism to circumvent this limitation. Customers impacted by this are recommended to delay fetching data after receiving an event. Depending on the use case, such as when invalidating caches, it may be worth considering an alternative cache invalidation strategy.
+{{< /info >}}
+
 ### Conditions
 
 For more precise control over the triggering of webhooks, additional conditions can be defined for events. Webhooks will only be triggered if all conditions for an event are met.
