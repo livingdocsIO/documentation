@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix kordiam global es query](https://github.com/livingdocsIO/livingdocs-server/pull/8164)
 - [Support cmd+click on back button to open in new window](https://github.com/livingdocsIO/livingdocs-editor/pull/10110)
 - [Li-Tree improvements for Rubrics](https://github.com/livingdocsIO/livingdocs-editor/pull/10106)
 - [Fix deletion routine reference extraction](https://github.com/livingdocsIO/livingdocs-server/pull/8155)
