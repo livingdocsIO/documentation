@@ -4,6 +4,10 @@ description: Setup an agency import from DPA
 weight: 2
 ---
 
+{{< warning >}}
+As of {{< release "release-2025-07" >}}, Livingdocs includes a built-in [integration for news agencies]({{< ref "/guides/integrations/news-agencies" >}}). It offers a better user and developer experience. Please reach out to your customer solutions manager to learn more.
+{{< /warning >}}
+
 Apart from the one-time imports to import a set of legacy data into Livingdocs, continuous imports from a third-party feed, e.g. DPA articles are a major case for publishers.
 
 In this guide we use an [open-source example](https://github.com/livingdocsIO/dpa-example) provided by Livingdocs to get a DPA feed import running with the Livingdocs service sandbox and then in a hands-on exercise adapt the open-source boilerplate such as to import DPA articles to the living-stories design (another design available on the Livigndocs service).

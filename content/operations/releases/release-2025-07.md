@@ -195,11 +195,70 @@ TODO: check migration
 The `params.documentId` is no longer included in data source requests originating from the editor.
 If your integration depends on this parameter, please reach out to your customer solutions manager to discuss alternative solutions.
 
+{{< feature-info "News Agencies" "server" >}}
+
+### Reserving Content Type Handle `liNewsAgencyReport` :fire:
+
+The content type handle `liNewsAgencyReport` can no longer be configured manually. It is a reserved content type handle and should not be used.
+
+{{< feature-info "Categories" "server" >}}
+
+### Changing Categories API `getDocumentsWithOldPaths` :fire:
+
+`categoriesApi.getDocumentsWithOldPaths` now requires `metadata.categories` properties to be indexed with `index: true`. A static Elasticsearch mapping is no longer necessary. Additionally, it returns a different document structure retrieved from Postgres.
+
+{{< feature-info "Document Command API" "server" >}}
+
+### Restricting Operation Order in Document Command API :fire:
+
+The [Document Command API]({{< ref "/reference/public-api/document-command-api" >}}) operations `publish`, `unpublish`, and `addPublishSchedule` can now only be used as the last operation in a request. Hence, they are also mutually exclusive.
+
 ## Deprecations
 
 ## Features
 
+{{< feature-info "News Agencies" "server/editor" >}}
 
+### News Agencies :gift:
+
+Livingdocs now offers built-in support for News Agencies, enabling editorial teams to review and process news agency reports directly within Livingdocs. With a single click, reports can be copied into regular Livingdocs articles, ready for editing and publication.
+
+The News Agency integration supports two kinds of import flows: manual flows and auto-publish flows.
+
+#### Manual Flow
+
+Manual flows let users decide which news agency reports should be turned into articles. As a result, they are more visible to users, whereas auto-publish flows are designed to operate in the background.
+
+{{< img src="./news-agencies-screen.png" alt="News Agency Screen"  >}}
+
+1. **Import**: News agency reports are imported via the Import API. They must be imported into a pre-configured content type with the handle `liNewsAgencyReport`. This content type is pre-configured with a fixed set of metadata properties and content components. It is created automatically once the integration is set up.
+2. **Triage**: Imported reports are displayed on a dedicated news agency screen. While this is the recommended way to work with news agency reports, it's also possible to configure other dashboards to display this content type.
+3. **Article Creation**: On the news agency screen, users can copy a report into a regular article by clicking the plus button. This action triggers the configured news agency function to transform the report into a regular article. It creates an independent copy that no longer receives updates from the original report, though it remains linked to the original news agency report. This relationship is displayed in the document info panel of the article and on the news agency screen next to the report from which it was created.
+4. **Editing**: The resulting article behaves like any other article in Livingdocs: it can be edited, published, and managed without restrictions.
+
+#### Auto-publish Flow
+
+Unlike the manual flow, the auto-publish flow requires no user-interaction. It enables publishing articles received from news agencies automatically.
+
+1. **Import**: Auto-publish reports are imported via the Import API to content type `liNewsAgencyReport` as well. However, the metadata property `autoPublish` must be set to `true`.
+2. **Triage**: This automatically bypasses the manual review process. Auto-publish reports do not appear on any news agency screens.
+3. **Article Creation**: A new article is automatically generated using the configured news agency function. The article is then immediately published without any user interaction. Auto-published articles are unpublished two weeks after their publication.
+4. **Editing**: When accessed by users, auto-published articles are read-only. They continue to receive updates made to the original news agency report, which are also automatically published. Users may choose to convert the auto-published article into an editable article. Once converted, it will stop receiving updates from the original report.
+
+For instructions on how to set it up, please refer to our [integration guide]({{< ref "/guides/integrations/news-agencies" >}}).
+
+{{< feature-info "Document Command API" "server" >}}
+
+### New Document Command API Operations :gift:
+
+The [Document Command API]({{< ref "/reference/public-api/document-command-api" >}}) has been extended with new Publish Control operations. The following new commands are now available:
+
+- `setEmbargo`
+- `removeEmbargo`
+- `addPublishSchedule`
+- `cancelPublishSchedule`
+- `addUnpublishSchedule`
+- `cancelUnpublishSchedule`
 
 ## Vulnerability Patches
 
