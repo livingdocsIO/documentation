@@ -76,66 +76,75 @@ The events.subscribers() method lists all the listeners of an event.
 
 The following lists all events, before the comma, the name of the event and behind the comma, the parameters received by a listener.
 
-- user
+{{< info >}}
+When a document or media library event is emitted, the Elasticsearch index may not have been updated yet. Hence, when fetching data from a Public API endpoint that internally queries the Elasticsearch index, the response may not immediately reflect the event.
 
-  - user.create, `(eventName, {user})`
-  - user.delete, `(eventName, {user})`
-  - user.password.request, `(eventName, {userId, identityId})`
-  - user.password.redeem, `(eventName, {userId, identityId})`
-  - user.password.change, `(eventName, {id, connectionId, identityId, userId})`
-  - user.email.change, `(eventName, identity)`
-  - user.login.success, `(eventName, {user})`
-  - user.login.fail, `(eventName, {error})`
-  - user.login.new-device, `(eventName, {userId, identityId})`
-  - user.newsletter, `(eventName, {newsletter, userId, email, displayName})`
+Currently, Livingdocs does not provide a mechanism to circumvent this limitation. Customers impacted by this are recommended to delay fetching data after receiving an event. Depending on the use case, such as when invalidating caches, it may be worth considering an alternative cache invalidation strategy.
+{{< /info >}}
 
-- document
+### User
 
-  - document.update, `(eventName, {user, documentVersion})`
-  - document.delete, `(eventName, {user, documentVersion})`
-  - document.create, `(eventName, {user, documentVersion})` <em>Note: this event is also triggered by document transforms</em>
-  - document.publish, `(eventName, {user, documentVersion})`
-  - document.unpublish, `(eventName, {user, documentVersion})`
-  - document.copy, `(eventName, {documentVersion, originalDocumentId, isTranslation})`
-  - document.transform, `(eventName, {documentVersion, originalContentType})`
-  - document.build `(eventName, {user, documentVersion, reportId, deliveryHandle})`
-  - document.build.abort `(eventName, {user, documentVersion, reportId, deliveryHandle})` ({{< added-in "release-2024-07" >}})
-  - document.build.userChoice `(eventName, {user, documentVersion, reportId, deliveryHandle, selectedUserChoice})` ({{< added-in "release-2024-07" >}})
-  - document.build.draft `(eventName, {user, documentVersion, reportId, deliveryHandle})`
-  - document.build.draft.abort `(eventName, {user, documentVersion, reportId, deliveryHandle})` ({{< added-in "release-2024-07" >}})
-  - document.build.draft.userChoice `(eventName, {user, documentVersion, reportId, deliveryHandle, selectedUserChoice})` ({{< added-in "release-2024-07" >}})
+- user.create, `(eventName, {user})`
+- user.delete, `(eventName, {user})`
+- user.password.request, `(eventName, {userId, identityId})`
+- user.password.redeem, `(eventName, {userId, identityId})`
+- user.password.change, `(eventName, {id, connectionId, identityId, userId})`
+- user.email.change, `(eventName, identity)`
+- user.login.success, `(eventName, {user})`
+- user.login.fail, `(eventName, {error})`
+- user.login.new-device, `(eventName, {userId, identityId})`
+- user.newsletter, `(eventName, {newsletter, userId, email, displayName})`
 
-- publication
+### Document
+
+- document.update, `(eventName, {user, documentVersion})`
+- document.delete, `(eventName, {user, documentVersion})`
+- document.create, `(eventName, {user, documentVersion})` <em>Note: this event is also triggered by document transforms</em>
+- document.publish, `(eventName, {user, documentVersion})`
+- document.unpublish, `(eventName, {user, documentVersion})`
+- document.copy, `(eventName, {documentVersion, originalDocumentId, isTranslation})`
+- document.transform, `(eventName, {documentVersion, originalContentType})`
+- document.build `(eventName, {user, documentVersion, reportId, deliveryHandle})`
+- document.build.abort `(eventName, {user, documentVersion, reportId, deliveryHandle})` ({{< added-in "release-2024-07" >}})
+- document.build.userChoice `(eventName, {user, documentVersion, reportId, deliveryHandle, selectedUserChoice})` ({{< added-in "release-2024-07" >}})
+- document.build.draft `(eventName, {user, documentVersion, reportId, deliveryHandle})`
+- document.build.draft.abort `(eventName, {user, documentVersion, reportId, deliveryHandle})` ({{< added-in "release-2024-07" >}})
+- document.build.draft.userChoice `(eventName, {user, documentVersion, reportId, deliveryHandle, selectedUserChoice})` ({{< added-in "release-2024-07" >}})
+
+### Publication
 
   - publication.update, `(eventName, {user, documentVersion})` ({{< added-in "release-2024-03" >}})
   - publication.updated, `(eventName, {user, documentVersion})` ({{< deprecated-in "release-2024-03" >}})
 
-- document_list
+### Document List
 
-  - document_list.delete, `(eventName, {user, documentList})`
-  - document_list.publish, `(eventName, {user, documentList})`
-  - document_list.update, `(eventName), {user, documentList}`
-  - document_list.create, `(eventName, {user, documentList})`
+- document_list.delete, `(eventName, {user, documentList})`
+- document_list.publish, `(eventName, {user, documentList})`
+- document_list.update, `(eventName), {user, documentList}`
+- document_list.create, `(eventName, {user, documentList})`
 
-- migration
+### Media Library Entry
 
-  - migration.prepare, `(eventName, {migration})`
-  - migration.accept, `(eventName, {migration})`
-  - migration.cancel, `(eventName, {migration})`
+- mediaLibraryEntry.create, `(eventName, {userId, projectId, mediaLibraryEntry})`
+- mediaLibraryEntry.update, `(eventName, {userId, projectId, id, changes})`
+- mediaLibraryEntry.archive, `(eventName, {userId, projectId, id})`
+- mediaLibraryEntry.revoke, `(eventName, {userId, projectId, id, mediaLibraryEntry})`
+- mediaLibraryEntry.active, `(eventName, {userId, projectId, id})` ({{< added-in "release-2024-03" >}})
+- mediaLibraryEntry.invalid, `(eventName, {userId, projectId, id})` ({{< added-in "release-2024-03" >}})
 
-- mediaLibraryEntry
+### Project
 
-  - mediaLibraryEntry.create, `(eventName, {userId, projectId, mediaLibraryEntry})`
-  - mediaLibraryEntry.update, `(eventName, {userId, projectId, id, changes})`
-  - mediaLibraryEntry.archive, `(eventName, {userId, projectId, id})`
-  - mediaLibraryEntry.revoke, `(eventName, {userId, projectId, id, mediaLibraryEntry})`
-  - mediaLibraryEntry.active, `(eventName, {userId, projectId, id})` ({{< added-in "release-2024-03" >}})
-  - mediaLibraryEntry.invalid, `(eventName, {userId, projectId, id})` ({{< added-in "release-2024-03" >}})
+- project.create, `(eventName, {project})`
+- project.update, `(eventName, {project})`
 
-- project
+### Category
 
-  - project.create, `(eventName, {project})`
-  - project.update, `(eventName, {project})`
+- category.update, `(eventName, {pointer, value, projectId, user})`
 
-- category
-  - category.update, `(eventName, {pointer, value, projectId, user})`
+### Migration
+
+{{< removed-in "release-2025-01" >}}
+
+- migration.prepare, `(eventName, {migration})`
+- migration.accept, `(eventName, {migration})`
+- migration.cancel, `(eventName, {migration})`
