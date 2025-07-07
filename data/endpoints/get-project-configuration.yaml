@@ -1,18 +1,33 @@
 title: Get Project Configuration
 
+apiVersionConstraints:
+  lt: 2025-07
+
+history:
+  - release: release-2023-03
+    version: v1
+    description: This endpoint got deprecreated. Use `GET /api/v1/projectConfig` instead.
+  - release: release-2025-07
+    version: 2025-07
+    description: This endpoint got removed in the `2025-07` version. It's still available on `/api/2025-05/project` and older versions.
+
 deprecation:
   since: release-2023-03
-  note: Use `GET /api/v1/projectConfig` instead.
+  note: |
+    Use `GET /api/:apiVersion/projectConfig` instead.<br>
+    This endpoint got removed in the `2025-07` version.<br>
+    It's still available on `/api/2025-05/project` and older versions.
 
 scopes: public-api:read
 query: |
   ACCESS_TOKEN=ey1234
   curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/project" \
     -H "Authorization: Bearer $ACCESS_TOKEN"
+
 endpoint:
   method: GET
   path: /api/:apiVersion/project
-deprecated: release-2023-03
+
 responses:
   - code: '200'
     body: |
