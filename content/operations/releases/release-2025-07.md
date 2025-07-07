@@ -81,13 +81,15 @@ To learn about the necessary actions to update Livingdocs to `release-2025-07`, 
 
 ### Before the deployment
 
-No pre-deployment steps are required before rolling out this release.
+TBD
 
 ### Rollout deployment
 
 #### Migrate the Postgres Database
 
-No migrations are required for this release.
+Once you deploy new release instances, you have to run the migrations below.
+
+TBD
 
 ### After the deployment
 
@@ -95,7 +97,11 @@ No post-deployment steps are required after rolling out this release.
 
 ### Rollback
 
-No rollback steps are required for this release.
+If you encounter any issues after the deployment, you can rollback to the previous release. If you have already run the migrations and they have completed, you can rollback to the previous release by running the following command:
+
+```sh
+livingdocs-server migrate down
+```
 
 ### Add Postgres Lock Timeout of 2s for read & write roles :gift:
 
@@ -374,7 +380,8 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 This release we have patched the following vulnerabilities in the Livingdocs Server:
 
-- TBD
+- [CVE-2025-47279](https://github.com/advisories/GHSA-cxrh-j4jr-qwg3) Patch vulnerability `undici` to v6.21.3
+- [CVE-2025-5889](https://github.com/advisories/GHSA-v6h2-p8h4-qcjw) Patch vulnerability `brace-expansion` to v1.1.12
 
 No known vulnerabilities. :tada:
 
