@@ -97,6 +97,14 @@ No post-deployment steps are required after rolling out this release.
 
 No rollback steps are required for this release.
 
+### Add Postgres Lock Timeout of 2s for read & write roles :gift:
+
+To improve system resilience and avoid query pile-ups during lock contention, we configure a default lock timeout of `2 seconds` for all application database roles.
+This `lockTimeout` value can be configured, if needed.
+This ensures that queries waiting on row-level locks will automatically fail after 2 seconds instead of blocking indefinitely.
+
+Note: This setting is applied at the role level for compatibility across all environments and connection poolers.
+
 ## Breaking Changes 🔥
 
 {{< feature-info "Multichannel Projects" "Server" >}}
@@ -262,17 +270,17 @@ The deprecated features `li-images` and `li-videos` got removed. Please use `li-
 
 {{< feature-info "Config" "Server" >}}
 
-### Enforce Uniqueness of project config props :fire:
+### Enforce uniqueness of project config props :fire:
 
 Enforce uniqueness of project config properties `contentTypes[].handle`, `finiteProducts[].issueContentType`, `dashboards[].columns[].handle`, `editorSettings.mainNavigationGroups[].handle`, and `contentTypes[].componentGroups[].name`. Due to miss-configuration, our setup had no effect in certain cases.
 
-## Deprecations
+## Deprecations :warning:
 
 {{< feature-info "Postgres Version" "Database" >}}
 
 ### Deprecate `Postgres v13` :warning:
 
-Deprecate `Postgres v13` as it’s end of life in November 2025.  
+`Postgres v13` has been deprecated, as it’s end of life in November 2025.  
 Support for it will be removed in `release-2026-01`.
 
 {{< feature-info "Server API" "Server" >}}
@@ -289,6 +297,74 @@ Please use `/api/2025-07/projectConfig` instead.
 Support for those will be removed in `release-2026-01`.
 
 ## Features
+
+{{< feature-info "News Agencies" "server/editor" >}}
+
+### News Agencies :gift:
+
+TBD
+
+{{< feature-info "LiPriority" "System Metadata Plugin" >}}
+
+### New System Metadata Plugin: Priority :gift:
+
+TBD
+
+{{< feature-info "TBD" "TBD" >}}
+
+### Media Center: Deletion Routines :gift:
+
+TBD
+
+{{< feature-info "TBD" "TBD" >}}
+
+### Page Management: Rubrics :gift:
+
+TBD
+
+{{< feature-info "TBD" "TBD" >}}
+
+### Target Length Extensions :gift:
+
+TBD
+
+{{< feature-info "Document Command API" "server" >}}
+
+### New Document Command API Operations :gift:
+
+TBD
+
+{{< feature-info "TBD" "TBD" >}}
+
+### Base Filter hasEmbargo :gift:
+
+TBD
+
+{{< feature-info "TBD" "TBD" >}}
+
+### Support embago in Import API :gift:
+
+TBD
+
+{{< feature-info "TBD" "TBD" >}}
+
+TBD
+
+### New Table Dashboard Cells :gift:
+
+TBD
+
+#### Li-Table-Dashboard-Cell-Time
+
+TBD
+
+#### Li-Table-Dashboard-Cell-Title
+
+TBD
+
+#### Li-Table-Dashboard-Cell-CharacterCount
+
+TBD
 
 ## Vulnerability Patches
 
