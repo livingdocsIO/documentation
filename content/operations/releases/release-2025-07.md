@@ -81,26 +81,57 @@ To learn about the necessary actions to update Livingdocs to `release-2025-07`, 
 
 ### Before the deployment
 
-TBD
+With this release, we're removing multi channel support in a project.
+Please make sure you don't have logs with the deprecation code `LIDEP048` on your livingdocs server instances.
+
+If multiple channels are in use, those deprecations are logged since `release-2025-01` during process start or when there's activity shortly after the process start.
+
+If you're seeing such deprecations, please do not upgrade and contact us immediately. Content of secondary channels won't be served anymore and will vanish after the upgrade.
 
 ### Rollout deployment
 
 #### Migrate the Postgres Database
 
-Once you deploy new release instances, you have to run the migrations below.
+When you upgrade to this new release, please make sure to migrate your database first.
+At livingdocs we're running those two commands directly in an initContainer on kubernetes.
 
-TBD
+```sh
+# This sets up the database and write roles with the new lockTimeout
+# This command is not destructive. If the database already exists, it will not recreate it.
+livingdocs-server database create -y
+
+# 211-archive-secondary-channel-content-types.js
+#   Archives content types of secondary channels. This also makes all content unavailable of those channels, but doesn't delete it yet from the database.
+# 212-index-reference-ids.js
+#   Adds reference indexes needed for media center deletion routines.
+#   The migration will just create the schema without migrating data.
+#   A manual migration of existing content is needed after the deployment.
+livingdocs-server migrate up
+```
 
 ### After the deployment
 
-No post-deployment steps are required after rolling out this release.
+To support deletion routines of media center entries, please run the following command after a successful deployment.
+
+This command will take a while to execute, but as we operate based on ranges, the blocking time should be minimal.
+
+As estimate for the execution duration, you can calculate the minutes using those numbers:
+
+- 15 seconds for 1 million documents to update states in postgres
+- 20 seconds for 1 million media center entries to update states in postgres
+- 45 seconds to reindex media library entries in elasticsearch
+
+```sh
+node ./node_modules/@livingdocs/server/db/manual-migrations/012-populate-reference-ids.js -y
+```
 
 ### Rollback
 
-If you encounter any issues after the deployment, you can rollback to the previous release. If you have already run the migrations and they have completed, you can rollback to the previous release by running the following command:
+If you encounter any issues after the deployment, you can rollback to the previous release. If you have already run the migrations and they have completed, you can rollback to the previous release by running the commands below. The processes will continue to run even if those down migrations are not executed, but to ensure consistency, please run those after doing a rollback.
 
 ```sh
-livingdocs-server migrate down
+livingdocs-server migrate down 212-index-reference-ids.js
+livingdocs-server migrate down 211-archive-secondary-channel-content-types.js
 ```
 
 ### Add Postgres Lock Timeout of 2s for read & write roles :gift:
