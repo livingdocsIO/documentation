@@ -54,7 +54,7 @@ systemRequirements:
       version: Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78
 ---
 
-To get an overview about new functionality, read the [Release Notes](TODO).
+To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-july-2025).
 To learn about the necessary actions to update Livingdocs to `release-2025-07`, read on.
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -382,12 +382,18 @@ No known vulnerabilities. :tada:
 
 This release we have patched the following vulnerabilities in the Livingdocs Editor:
 
-- TBD
+- [CVE-2025-47279](https://github.com/advisories/GHSA-cxrh-j4jr-qwg3) Patch vulnerability `undici` to v6.21.3
+- [CVE-2025-5889](https://github.com/advisories/GHSA-v6h2-p8h4-qcjw) Patch vulnerability `brace-expansion` to v1.1.12
+- [CVE-2025-6547](https://github.com/advisories/GHSA-v62p-rq8g-8h59) Patch vulnerability `pbkdf2` to v3.1.3
+- [CVE-2025-48387](https://github.com/advisories/GHSA-8cj5-5rvv-wf4v) Patch vulnerability `tar-fs` to v3.1.0
+- [CVE-2025-27789](https://github.com/advisories/GHSA-968p-4wvh-cqc8) Patch vulnerability `@babel/helpers` and `@babel/runtime` to v7.27.6
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
 - [CVE-2023-44270](https://github.com/advisories/GHSA-7fh5-64p2-3v2j) vulnerability in `postcss`, it affects linters using PostCSS to parse external Cascading Style Sheets (CSS). It is not exploitable in the editor as we don't load untrusted external CSS at build time.
 - [CVE-2023-26116](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26118](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26117](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2022-25869](https://cwe.mitre.org/data/definitions/79.html), [CVE-2022-25844](https://cwe.mitre.org/data/definitions/770.html) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
+- [CVE-2024-6783](https://github.com/advisories/GHSA-g3ch-rx76-35fx) vulnerability in `vue-template-compiler` it allows malicious users to perform XSS via prototype pollution. Editor build is always done in a trusted environment and the vulnerability is not exploitable.
+- [CVE-2024-9506](https://github.com/advisories/GHSA-5j4c-8p2g-v4jx) vulnerability in `vue`, an ReDoS vulnerability exploitable through inefficient regex evaluation in parseHTML function. The issue can cause excessive CPU usage but is not exploitable in the editor as we don't load untrusted HTML at runtime.
 
 ## Patches
 
