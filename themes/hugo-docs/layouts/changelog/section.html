@@ -88,7 +88,7 @@
               </div>
 
               <main class="changelog--entry-main">
-                <h3 class="changelog--entry-title">{{ .Title }}</h3>
+                <h3 class="changelog--entry-title">{{ .Title | markdownify }}</h3>
                 {{ .Content }}
               </main>
             </div>

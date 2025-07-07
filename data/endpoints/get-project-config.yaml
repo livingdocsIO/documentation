@@ -13,8 +13,7 @@ query: |
 endpoint:
   method: GET
   path: /api/:apiVersion/projectConfig
-deprecated_endpoints:
-  - GET api/v1/channelConfig
+
 responses:
   - code: '200'
     body: |
