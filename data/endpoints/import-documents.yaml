@@ -11,7 +11,6 @@ description: |
 
 useCases: |
   - [Initial Import from a legacy system]({{< ref "/guides/setup/import-legacy-system-documents" >}})
-  - [Import news agency reports]({{< ref "/guides/integrations/news-agencies" >}})
 
 scopes: public-api:write
 query: |
