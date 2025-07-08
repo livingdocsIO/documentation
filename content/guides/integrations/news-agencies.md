@@ -2,6 +2,8 @@
 title: News Agencies
 description: News Agency Integration
 weight: 2
+draft: true
+excludeFromSearch: true
 ---
 
 {{< added-in "release-2025-07" block >}}
@@ -30,7 +32,7 @@ Unlike the manual flow, the auto-publish flow requires no user-interaction. It e
 3. **Article Creation**: A new article is automatically generated using the configured news agency function. The article is then immediately published without any user interaction. Auto-published articles are unpublished two weeks after their publication.
 4. **Editing**: When accessed by users, auto-published articles are read-only. They continue to receive updates made to the original news agency report, which are also automatically published. Users may choose to convert the auto-published article into an editable article. Once converted, it will stop receiving updates from the original report.
 
-{{< img src="./news-agencies-flow.png" alt="News Agency Screen"  >}}
+{{< img src="./news-agencies-flow.png" alt="News Agency Flow"  >}}
 
 ## Setup
 
