@@ -4,13 +4,18 @@ weight: 12
 menus:
   reference:
     parent: Project Config
+draft: true
+excludeFromSearch: true
 ---
 
 {{< added-in "release-2025-07" block >}}
 
 Livingdocs provides built-in support for News Agencies, allowing editorial teams to review and process incoming reports from agencies directly within the Livingdocs Editor. With a single click, editors can convert incoming reports into articles, ready for editing and publication.
 
-For instructions on how to set it up, please refer to our [integration guide]({{< ref "/guides/integrations/news-agencies" >}}). The configuration is located in the Project Config under the `newsAgency` property:
+<!-- For instructions on how to set it up, please refer to our [integration guide]({{< ref "/guides/integrations/news-agencies" >}}).  -->
+
+For instructions on how to set it up, please refer to our integration guide.
+The configuration is located in the Project Config under the `newsAgency` property:
 
 - `functionHandle` refers to a registered news agency function. This function is used to copy news agency reports into regular articles or, in the auto-publish flow, to also update already copied articles.
 - `screens` defines one or more news agency screens in the Livingdocs Editor.
