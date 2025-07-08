@@ -154,36 +154,57 @@ Functionality-wise some setups might need to migrate tests to not create multipl
 
 Data-wise at the moment no data gets deleted in postgres. **But documents of the secondary channel won't be available anymore in any queries**. We'll delete all the data in another release.
 
-#### Code changes required
+{{< feature-info "Data Sources" "Server" >}}
 
-Media APIs:
+### Removal of params.documentId in Data Sources :fire:
 
-```
-❌ Old (removed)
-const imagesApi = server.features.api('li-images')
-const videosApi = server.features.api('li-videos')
-await imagesApi.processJob(job)
-await videosApi.upload(params)
+The `params.documentId` is no longer included in data source requests originating from the editor.
+If your integration depends on this parameter, please reach out to your customer solutions manager to discuss alternative solutions.
 
-✅ New (required)
-const mediaLibraryApi = server.features.api('li-media-library')
-await mediaLibraryApi.addImage(params)
-await mediaLibraryApi.addVideo(params)
-```
+{{< feature-info "Config" "Server" >}}
 
-Server Configuration:
+### Removal of `server.*` in favor of `httpServer.*` :fire:
+
+The Livingdocs Server config properties `server.*` has been moved to `httpServer.*` in `release-2022-09`. In this release we’ve enforced the new config as breaking change.
 
 ```
+
 ❌ Old (removed)
 {
   server: {
     host: 'localhost',
-    port: 3000,
-    max_json_request_size: '10mb',
+    port: 9090,
+    max_json_request_size: '3mb',
     gzip: true,
     trust_proxy: true,
     https: {...}
-  },
+  }
+}
+
+✅ New (required)
+{
+  httpServer: {
+    host: '::', // http bind host
+    port: 9090,
+    maxRequestBodySize: '3mb',
+    useGzipCompression: true, // defaults to false
+    xForwardedForTrustIps: true,
+    https: {...}
+  }
+}
+```
+
+{{< feature-info "Config" "Server" >}}
+
+### Removal of `blacklist` and `whitelist` :fire:
+
+The terms `blacklist` and `whitelist` have been deprecated in `release-2025-01` and this is now enforced by a breaking change.
+
+In server config:
+
+```js
+// ❌ Old
+{
   cors: {
     enabled: true,
     whitelist: ['https://example.com']
@@ -199,15 +220,9 @@ Server Configuration:
   }
 }
 
-✅ New (required)
+// ✅ New
 {
   httpServer: {
-    host: 'localhost',
-    port: 3000,
-    maxRequestBodySize: '10mb',
-    useGzipCompression: true,
-    xForwardedForTrustIps: true,
-    https: {...},
     cors: {
       allowlist: ['https://example.com']
     }
@@ -224,10 +239,10 @@ Server Configuration:
 }
 ```
 
-Project Configuration:
+In Project Configuration:
 
-```
-❌ Old (removed)
+```js
+// ❌ Old
 {
   // Project config
   components: [{
@@ -243,49 +258,25 @@ Project Configuration:
   }]
 }
 
-✅ New (required)
+// ✅ New
 {
   // Project config
   components: [{
     directives: [{
+      // Please see the {{< a href="/reference/document/document-design/directives/editable/#plaintext-tagallowlist-and-tagdenylist" title="editable directive options" >}}
       tagAllowlist: [...],
       tagDenylist: [...]
     }]
   }],
   contentTypes: [{
     editor: {
+      // The 'whitelist' got changed to 'allowlist'.
+      // Preferrably even migrate that to {{< a href="/reference/project-config/content-types" title="imageSourcePolicy" >}}
       images: { allowlist: [...] }
     }
   }]
 }
 ```
-
-API Endpoints (v2025-07):
-
-```
-❌ Removed from v2025-07+
-GET /api/2025-07/project
-GET /api/2025-07/channels
-GET /api/2025-07/channelConfig
-POST /api/2025-07/channelConfig
-
-✅ Available in v2025-07+
-GET /api/2025-07/projectConfig
-POST /api/2025-07/projectConfig
-
-ℹ️ Legacy endpoints still available in v1 through 2025-05
-GET /api/v1/project (until 2025-05)
-GET /api/v1/channels (until 2025-05)
-GET /api/v1/channelConfig (until 2025-05)
-POST /api/v1/channelConfig (until 2025-05)
-```
-
-{{< feature-info "Data Sources" "Server" >}}
-
-### Removal of params.documentId in Data Sources :fire:
-
-The `params.documentId` is no longer included in data source requests originating from the editor.
-If your integration depends on this parameter, please reach out to your customer solutions manager to discuss alternative solutions.
 
 {{< feature-info "News Agencies" "server" >}}
 
@@ -307,21 +298,22 @@ The [Document Command API]({{< ref "/reference/public-api/document-command-api" 
 
 {{< feature-info "Config" "Server" >}}
 
-### Removal of `server._` in favor of `httpServer._` :fire:
-
-The Livingdocs Server config properties `server._` has been moved to `httpServer._` in `release-2022-09`. In this release we’ve enforced the new config as breaking change.
-
-{{< feature-info "Config" "Server" >}}
-
-### Removal of `blacklist` and `whitelist` :fire:
-
-The terms `blacklist` and `whitelist` have been deprecated in `release-2025-01` and this is now enforced by a breaking change.
-
-{{< feature-info "Config" "Server" >}}
-
 ### Removal of `li-images` and `li-videos` :fire:
 
 The deprecated features `li-images` and `li-videos` got removed. Please use `li-media-library`.
+
+```js
+// ❌ Old
+const imagesApi = server.features.api('li-images')
+const videosApi = server.features.api('li-videos')
+await imagesApi.processJob({projectId, url, metadata})
+await videosApi.upload({projectId, url, metadata})
+
+// ✅ New
+const mediaLibraryApi = server.features.api('li-media-library')
+await mediaLibraryApi.addImage({projectId, assetSource: {url}, metadata})
+await mediaLibraryApi.addVideo({projectId, assetSource: {url}, metadata})
+```
 
 {{< feature-info "Config" "Server" >}}
 

@@ -84,7 +84,7 @@ A transformation is a single function that is expected to return an object conta
 ```js
 // E.g. ./plugins/hugo-import-transformations/agency/regular.js
 
-module.exports = function ({hugoArticle, design, layout, metadata, imagesApi}, callback) {
+module.exports = function ({hugoArticle, design, layout, metadata, mediaLibraryApi}, callback) {
   // ...
   // Create a livingdoc and collect metadata
   // ...
@@ -92,67 +92,63 @@ module.exports = function ({hugoArticle, design, layout, metadata, imagesApi}, c
 }
 ```
 
-You are provided with the `hugoArticle` you imported, the `design` and `layout` you have specified in your config and the `imagesApi` which is a service you can use to handle images, e.g. uploading them to your storage. You also have the possibility to pass additional metadata which must have been defined beforehand (see below).
+You are provided with the `hugoArticle` you imported, the `design` and `layout` you have specified in your config and the `mediaLibraryApi` which is a service you can use to handle images, e.g. uploading them to your storage. You also have the possibility to pass additional metadata which must have been defined beforehand (see below).
 
 ### Example transformation
 
 ```js
-const async = require('async')
+const util = require('util')
 const framework = require('@livingdocs/server/framework')
 
-module.exports = function ({hugoArticle, design, layout, metadata, imagesApi}, callback) {
-  transform({hugoArticle, design, layout, imagesApi}, function (err, livingdoc) {
-    if (err) return callback(err)
-    const metadata = getMetadata(hugoArticle)
-    callback(null, {livingdoc, metadata})
-  })
-}
-
-function transform({hugoArticle, design, layout, imagesApi}, callback) {
-  const imageService = conf.get('image_service') // You'll need to configure an imageservice like 'imgix' if you'd like to use images
-  framework.design.add(design)
-  const livingdoc = createEmptyLivingdoc({name: design.name, version: design.version}, layout)
-  const tree = livingdoc.componentTree
-
-  // Header
-  const header = createHeader(hugoArticle.title, tree)
-  tree.append(header)
-
-  // Body as a collection of paragraphs
-  for (const text of hugoArticle.text) {
-    const p = createParagraph(text, tree)
-    tree.append(p)
-  }
-
-  // Handle images
-  const imageUploader = function (image, cb) {
-    const job = imagesApi.createImageJob({url: image.url})
-    imagesApi.processJob(job, (err, imageInfo) => {
-      if (err) return cb(err)
-      return cb(null, {imageInfo, image})
+module.exports = util.callbackify(
+  async ({projectId, hugoArticle, design, layout, metadata, mediaLibraryApi}) => {
+    const livingdoc = framework.create({
+      content: [],
+      design,
+      layoutName: layout
     })
-  }
 
-  const hugoImages = hugoArticle.images || []
-  // the images have to be added to the document in order
-  async.map(hugoImages, imageUploader, function (err, livingdocsImages) {
-    if (err) return callback(err)
-    for (const {imageInfo, image} of livingdocsImages) {
-      const imageComponent = createImage(imageInfo, image, imageService, tree)
+    const tree = livingdoc.componentTree
+
+    // Header
+    const header = createHeader(hugoArticle.title, tree)
+    tree.append(header)
+
+    // Body as a collection of paragraphs
+    for (const text of hugoArticle.text) {
+      const p = createParagraph(text, tree)
+      tree.append(p)
+    }
+
+    // Handle images
+    const imageUploader = function (image, cb) {
+      const job = imagesApi.createImageJob({url: image.url})
+      imagesApi.processJob(job, (err, imageInfo) => {
+        if (err) return cb(err)
+        return cb(null, {imageInfo, image})
+      })
+    }
+
+    const hugoImages = hugoArticle.images || []
+    const images = await Promise.all(
+      hugoImages.map(async (image) => {
+        const {mediaLibraryEntry} = await mediaLibraryApi.addImage({
+          projectId,
+          assetSource: {url: image.url}
+        })
+        return {mediaLibraryEntry, hugoImage: image}
+      })
+    )
+
+    for (const {mediaLibraryEntry, hugoImage} of images) {
+      const imageComponent = createImage(mediaLibraryEntry.asset, hugoImage, tree)
       tree.append(imageComponent)
     }
 
-    callback(null, livingdoc)
-  })
-}
-
-const createEmptyLivingdoc = function (targetDesign, layout) {
-  return framework.create({
-    content: [],
-    design: targetDesign,
-    layoutName: layout
-  })
-}
+    const metadata = getMetadata(hugoArticle)
+    return {livingdoc, metadata}
+  }
+)
 
 const createHeader = function (title, tree) {
   const headerComponent = tree.createComponent('header')
@@ -168,13 +164,21 @@ const createParagraph = function (text, tree) {
 }
 
 const createImage = function (
-  {url, height, width, size, mime: mimeType},
+  {key, url, height, width, size, mimeType},
   hugoImage,
   imageService,
   tree
 ) {
   const imageComponent = tree.createComponent('image')
-  imageComponent.setContent('image', {url, height, width, size, mimeType, imageService})
+  imageComponent.setContent('image', {
+    key,
+    url,
+    height,
+    width,
+    size,
+    mimeType,
+    imageService: 'imgix'
+  })
   imageComponent.setContent('caption', hugoImage.caption)
   imageComponent.setContent('source', hugoImage.agency)
   return imageComponent
