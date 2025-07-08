@@ -364,11 +364,20 @@ TBD
 
 TBD
 
-{{< feature-info "TBD" "TBD" >}}
+{{< feature-info "Rubrics" "server/editor" >}}
 
 ### Page Management: Rubrics :gift:
 
-TBD
+As we have observed, many newsrooms are structuring their pages after departments or a similar categorisation scheme.
+If pages and articles share a thematic assignment, algorithmic teasers make it straight forward to fill such pages with recent content.
+
+With the introduction of «Rubrics», we're aiming to provide a flexible but also standardized approach for this use case.
+A key feature is the hierarchical nature of rubrics. This allows to model a rubric tree after the logical hierarchy of your pages and navigation levels.
+
+Editors assign the deepest possible rubric to their articles. Algorithmic teasers have a filter where a rubric is selected that best matches the page or the teaser group topic.
+The teaser will then be populated with articles of the selected rubric and also with articles that have any sub-rubric assigned.
+
+For further information, please contact your account manager.
 
 {{< feature-info "TBD" "TBD" >}}
 
