@@ -405,23 +405,17 @@ TBD
 
 TBD
 
-{{< feature-info "TBD" "TBD" >}}
+{{< feature-info "Table Dashboard Cells" "Editor/Server" >}}
 
 ### New Table Dashboard Cells :gift:
 
-TBD
+Two new table dashboard cells were introduced in this release:
 
-#### Li-Table-Dashboard-Cell-Time
+- `liTableDashboardCellTime`: Displays a formatted time and date based on the document’s `metadata.datetime` field.
 
-TBD
+- `liTableDashboardCellTitle`: Renders a bold title taken from `metadata.title`.
 
-#### Li-Table-Dashboard-Cell-Title
-
-TBD
-
-#### Li-Table-Dashboard-Cell-CharacterCount
-
-TBD
+For more details on their appearance and usage, refer to the [`Table Dashboard Cells` overview page]({{< ref "/guides/editor/table-dashboard-cells.md" >}}).
 
 ## Vulnerability Patches
 
