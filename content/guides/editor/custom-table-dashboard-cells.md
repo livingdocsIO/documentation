@@ -6,10 +6,11 @@ weight: 14
 
 ## Motivation
 
-With the Table Dashboard introduced in March 2022 we have created upstream components configurable to suit most customer needs. We would highly recommend using these upstream components for several reasons:
+With the Table Dashboard introduced in March 2022 we have created upstream components configurable to suit most customer needs. A list of these components can be found here: [Table Dashboard Cells]({{< ref "/guides/editor/table-dashboard-cells.md" >}}).
 
-- Less custom code
-  - This reduces your implementation and maintenance costs
+We would highly recommend using these upstream components for several reasons:
+
+- Less custom code: This reduces your implementation and maintenance costs
 - The upstream components are better integrated with other features, for example: dashboard filters, metadata plugins and indexing
 
 However, we also offer custom read-only cells for times when you have small requirements to display in a Table Dashboard. For example, if you have a custom metadata plugin you would like displayed or presented in a different way. The example below takes a publish control field and displays it in a specific way.
