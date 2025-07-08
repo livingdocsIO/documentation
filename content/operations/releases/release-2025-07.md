@@ -334,7 +334,7 @@ The News Agency integration supports two kinds of import flows: manual flows and
 
 Manual flows let users decide which news agency reports should be turned into articles. As a result, they are more visible to users, whereas auto-publish flows are designed to operate in the background.
 
-{{< img src="./news-agencies-screen.png" alt="News Agency Screen"  >}}
+{{< img src="./release-2025-07-news-agencies.png" alt="News Agency Screen"  >}}
 
 1. **Import**: News agency reports are imported via the Import API. They must be imported into a pre-configured content type with the handle `liNewsAgencyReport`. This content type is pre-configured with a fixed set of metadata properties and content components. It is created automatically once the integration is set up.
 2. **Triage**: Imported reports are displayed on a dedicated news agency screen. While this is the recommended way to work with news agency reports, it's also possible to configure other dashboards to display this content type.
@@ -350,7 +350,11 @@ Unlike the manual flow, the auto-publish flow requires no user-interaction. It e
 3. **Article Creation**: A new article is automatically generated using the configured news agency function. The article is then immediately published without any user interaction. Auto-published articles are unpublished two weeks after their publication.
 4. **Editing**: When accessed by users, auto-published articles are read-only. They continue to receive updates made to the original news agency report, which are also automatically published. Users may choose to convert the auto-published article into an editable article. Once converted, it will stop receiving updates from the original report.
 
-For instructions on how to set it up, please refer to our [integration guide]({{< ref "/guides/integrations/news-agencies" >}}).
+{{< img src="./release-2025-07-news-agencies-flow.png" alt="News Agency Flow"  >}}
+
+**Note**:
+While this release introduces the foundational components for integrating news agency workflows into Livingdocs, the feature is not yet ready for full rollout.
+Further development is in progress, and we’ll keep you updated along the way - notifying you as soon as it’s ready for you to explore.
 
 {{< feature-info "LiPriority" "System Metadata Plugin" >}}
 
@@ -402,8 +406,6 @@ TBD
 TBD
 
 {{< feature-info "TBD" "TBD" >}}
-
-TBD
 
 ### New Table Dashboard Cells :gift:
 
