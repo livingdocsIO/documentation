@@ -103,20 +103,18 @@ Make sure you always pass it directly or use `err` or `error` attributes. That b
 - {{< check >}} `log.error({err: new Error()})`
 - {{< check >}} `log.error({error: new Error()})`
 
-### Creating a child logger
+### Creating child loggers
 
 Child loggers can be created with additional properties that will be added to
 all logs which are created with the child logger.
 
 ```js
-const log = server.log.child({ns: 'li-projects'})
+const log = server.log.child({ns: 'seo-assistant'})
 ```
 
-In this example `ns` is short for namespace. And we use this property to identify where logs originated. But the use of the `ns` property is just a convention we
-use in the livingdocs-server. You can also use other properties in your child
-loggers.
+`ns` is short for namespace. And we use this property to be able to identify where logs originated. For example we can filter by namespace in Grafana to narrow logs to a specific functionality.
 
-Every Livingdocs `feature` instance already has a child logger declared using a `ns` with the feature name as value.
+We recommend to use separate child loggers for downstream functionality like create functions, assistants or integrations.
 
 ### What does the log output look like?
 
