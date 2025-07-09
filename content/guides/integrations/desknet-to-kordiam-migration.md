@@ -20,7 +20,7 @@ In most cases, a careful case-sensitive search and replace of `desknet` with `ko
 
 Two exceptions to this rule are `hugo.print.kordiamMetadataFields` and the configuration property `desknetExternalElementIdMetadataPath` of the `li-desknet-schedule` metadata plugin. If you have configured these, please refer to the details below for migration guidance.
 
-Furthermore, if you are using the Kordiam Platform Integration, please update the endpoint to `<LIVINGDOCS_URL>/api/v1/kordiam-integration` in Kordiam under Settings > Platforms > (Your Livingdocs Platform) > Integrations > URL.
+Furthermore, if you are using the Kordiam Platform Integration, please update the endpoint to `<LIVINGDOCS_URL>/api/{{< api-version >}}/kordiam-integration` in Kordiam under Settings > Platforms > (Your Livingdocs Platform) > Integrations > URL.
 {{< /info >}}
 
 ### Server Config
@@ -67,17 +67,17 @@ Additionally, we are deprecating the `desknetExternalElementIdMetadataPath` conf
 
 The following Public API endpoints are deprecated:
 
-- `POST /api/v1/desknet/element` -> `POST /api/v1/kordiam/element`
-- `PUT /api/v1/desknet/element` -> `PUT /api/v1/kordiam/element`
-- `PUT /api/v1/desknet/element/:documentId` -> `PUT /api/v1/kordiam/element/:documentId`
-- `DELETE /api/v1/desknet/element/:documentId` -> `DELETE /api/v1/kordiam/element/:documentId`
-- `POST /api/v1/desknet-integration/oauth/token` -> `POST /api/v1/kordiam-integration/oauth/token`
-- `POST /api/v1/desknet-integration/statuses` -> `POST /api/v1/kordiam-integration/statuses`
-- `POST /api/v1/desknet-integration/publication` -> `POST /api/v1/kordiam-integration/publication`
-- `PUT /api/v1/desknet-integration/publication/:documentId` -> `PUT /api/v1/kordiam-integration/publication/:documentId`
-- `DELETE /api/v1/desknet-integration/publication/:documentId` -> `DELETE /api/v1/kordiam-integration/publication/:documentId`
+- `POST /api/v1/desknet/element` -> `POST /api/{{< api-version >}}/kordiam/element`
+- `PUT /api/v1/desknet/element` -> `PUT /api/{{< api-version >}}/kordiam/element`
+- `PUT /api/v1/desknet/element/:documentId` -> `PUT /api/{{< api-version >}}/kordiam/element/:documentId`
+- `DELETE /api/v1/desknet/element/:documentId` -> `DELETE /api/{{< api-version >}}/kordiam/element/:documentId`
+- `POST /api/v1/desknet-integration/oauth/token` -> `POST /api/{{< api-version >}}/kordiam-integration/oauth/token`
+- `POST /api/v1/desknet-integration/statuses` -> `POST /api/{{< api-version >}}/kordiam-integration/statuses`
+- `POST /api/v1/desknet-integration/publication` -> `POST /api/{{< api-version >}}/kordiam-integration/publication`
+- `PUT /api/v1/desknet-integration/publication/:documentId` -> `PUT /api/{{< api-version >}}/kordiam-integration/publication/:documentId`
+- `DELETE /api/v1/desknet-integration/publication/:documentId` -> `DELETE /api/{{< api-version >}}/kordiam-integration/publication/:documentId`
 
-The removal of these endpoints has not yet been scheduled. If you are using the Kordiam Platform Integration, please update the endpoint to `<LIVINGDOCS_URL>/api/v1/kordiam-integration` in Kordiam under Settings > Platforms > (Your Livingdocs Platform) > Integrations > URL.
+The removal of these endpoints has not yet been scheduled. If you are using the Kordiam Platform Integration, please update the endpoint to `<LIVINGDOCS_URL>/api/{{< api-version >}}/kordiam-integration` in Kordiam under Settings > Platforms > (Your Livingdocs Platform) > Integrations > URL.
 
 ### Server API
 

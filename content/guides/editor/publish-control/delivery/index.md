@@ -125,7 +125,7 @@ With the UI set up, it is time to integrate your external system. To notify it, 
 The external system can report the current build status back to Livingdocs via the Public API. The status and an optional message are reflected in the UI. The message supports a restricted set of HTML tags, specifically `<em>`, `<strong>`, `<a>`, and `<br>`.
 
 ```
-POST /api/v1/documents/360/addDeliveryStatus
+POST /api/{{< api-version >}}/documents/360/addDeliveryStatus
 {
   "reportId": "2SG2MAA9RwPn",
   "publicationId": 524,
@@ -138,7 +138,7 @@ POST /api/v1/documents/360/addDeliveryStatus
 Optionally, a `userChoice` property can be passed, which will be displayed to users to ask for input. When a user selects one of the choices, the external system will be notified via `document.build.userChoice` webhook event.
 
 ```
-POST /api/v1/documents/360/addDeliveryStatus
+POST /api/{{< api-version >}}/documents/360/addDeliveryStatus
 {
   "reportId": "2SG2MAA9RwPn",
   "publicationId": 524,
@@ -237,7 +237,7 @@ As with Delivery Builds for publications, you need to register a webhook for Liv
 The external system can report the current build status back to Livingdocs via the Public API. The status and an optional message are reflected in the Delivery Build section. The message supports a restricted set of HTML tags, specifically `<em>`, `<strong>`, `<a>`, and `<br>`. In contrast to Delivery Builds for publications, no publication ID needs to be provided.
 
 ```
-POST /api/v1/documents/360/addDeliveryStatus
+POST /api/{{< api-version >}}/documents/360/addDeliveryStatus
 {
   "reportId": "2SG2MAA9RwPn",
   "deliveryHandle": "preview",

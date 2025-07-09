@@ -206,7 +206,7 @@ Additionally, you can create dashboards to display articles created from news ag
 Now you're ready to import news agency reports using the Import API. Since you'll import documents of type `liNewsAgencyReport`, it's important to know the supported metadata properties and content components of this content type (see above).
 
 ```js
-POST /api/v1/import/documents
+POST /api/{{< api-version >}}/import/documents
 
 {
   "systemName": "alephdam",

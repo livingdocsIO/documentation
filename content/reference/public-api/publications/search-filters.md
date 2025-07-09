@@ -181,7 +181,7 @@ const filters = JSON.stringify({
   ]
 })
 
-const response = await fetch(`api/v1/publications/search?filters=${filters}`)
+const response = await fetch(`api/{{< api-version >}}/publications/search?filters=${filters}`)
 const results = await response.json()
 ```
 

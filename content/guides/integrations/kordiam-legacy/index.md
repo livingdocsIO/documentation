@@ -49,7 +49,7 @@ The Kordiam Platform Integration will eventually be removed. For new setups plea
 - Click on the "Livingdocs / Forward Publishing" option
 - Paste your token from Livingdocs into the "API secret" field
 - Type any value into the "API user" field (it isn't used)
-- Enter the path to your Livingdocs server's Kordiam integration root enpoint into the "URL" field (e.g. https://example.com/api/v1/kordiam-integration)
+- Enter the path to your Livingdocs server's Kordiam integration root enpoint into the "URL" field (e.g. https://example.com/api/{{< api-version >}}/kordiam-integration)
   {{< img src="kordiam-config.png" alt="Kordiam Integration" >}}
 - Click on "Test Connection" button to make sure Kordiam can communicate with Livingdocs
 - Optionally, select which publication statuses you would like to trigger updates to Livingdocs

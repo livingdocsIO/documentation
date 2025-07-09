@@ -393,7 +393,7 @@ import: {
     imageDailyLimit: 0,
     videoDailyLimit: 0
   },
-  // In the public API "POST api/v1/import/documents" one can pass a Webhook URI to notify the importing system when the import job is done
+  // In the public API "POST api/{{< api-version >}}/import/documents" one can pass a Webhook URI to notify the importing system when the import job is done
   // Default is a POST request to the importing system
   // With transformWebhookRequest, you can influence change that request sent to the importing system
   transformWebhookRequest ({method, url, headers}) {

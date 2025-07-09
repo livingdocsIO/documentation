@@ -17,7 +17,7 @@ See the [Desk-Net Platform Integration]({{< ref "/guides/integrations/desknet-le
 
 ### Desk-Net
 
-The [Global Export Integration (Webhooks)](https://support.desk-net.com/hc/en-us/articles/5288027432860-Global-Export-Integration-Webhooks) feature must be enabled by Desk-Net for your organisation before you can use it with Livingdocs. You will need to provide a URL and a token. The base URL should be `https://<livingdocs-server>/api/v1/desknet`. The token can be generated from the Api Clients page within the Project Admin section of the editor. The Desk-Net integration scope must be selected (no other scope is necessary).
+The [Global Export Integration (Webhooks)](https://support.desk-net.com/hc/en-us/articles/5288027432860-Global-Export-Integration-Webhooks) feature must be enabled by Desk-Net for your organisation before you can use it with Livingdocs. You will need to provide a URL and a token. The base URL should be `https://<livingdocs-server>/api/{{< api-version >}}/desknet`. The token can be generated from the Api Clients page within the Project Admin section of the editor. The Desk-Net integration scope must be selected (no other scope is necessary).
 
 ### Server config
 

@@ -45,7 +45,7 @@ Desk-Net rebranded as Kordiam. Consequently, the Desk-Net Platform Integration h
 - Click on the "Livingdocs / Forward Publishing" option
 - Paste your token from Livingdocs into the "API secret" field
 - Type any value into the "API user" field (it isn't used)
-- Enter the path to your Livingdocs server's Desk-Net integration root enpoint into the "URL" field (e.g. https://example.com/api/v1/desknet-integration)
+- Enter the path to your Livingdocs server's Desk-Net integration root enpoint into the "URL" field (e.g. https://example.com/api/{{< api-version >}}/desknet-integration)
   {{< img src="desknet-config.png" alt="Desk-Net Integration" >}}
 - Click on "Test Connection" button to make sure Desk-Net can communicate with Livingdocs
 - Optionally, select which publication statuses you would like to trigger updates to Livingdocs

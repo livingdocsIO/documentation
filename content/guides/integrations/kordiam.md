@@ -5,7 +5,8 @@ weight: 1
 ---
 
 {{< info >}}
-{{< added-in "release-2024-11" >}}. Prior to {{< release "release-2024-11" >}}, the Kordiam Global Integration was known as [Desk-Net Global Integration]({{< ref "/guides/integrations/desknet" >}}).
+{{< added-in "release-2024-11" >}}.
+Prior to {{< release "release-2024-11" >}}, the Kordiam Global Integration was known as {{< a href="/guides/integrations/desknet" title="Desk-Net Global Integration" >}}.
 {{< /info >}}
 
 {{< info >}}
@@ -16,7 +17,7 @@ See the [Kordiam Platform Integration]({{< ref "/guides/integrations/kordiam-leg
 
 ### Kordiam
 
-The [Global Export Integration (Webhooks)](https://support.kordiam.io/hc/en-us/articles/5288027432860-Global-Export-Integration-Webhooks) feature must be enabled by Kordiam for your organisation before you can use it with Livingdocs. You will need to provide a URL and a token. The base URL should be `https://<livingdocs-server>/api/v1/kordiam`. The token can be generated from the Api Clients page within the Project Admin section of the editor. The Kordiam integration scope must be selected (no other scope is necessary).
+The [Global Export Integration (Webhooks)](https://support.kordiam.io/hc/en-us/articles/5288027432860-Global-Export-Integration-Webhooks) feature must be enabled by Kordiam for your organisation before you can use it with Livingdocs. You will need to provide a URL and a token. The base URL should be `https://<livingdocs-server>/api/{{< api-version >}}/kordiam`. The token can be generated from the Api Clients page within the Project Admin section of the editor. The Kordiam integration scope must be selected (no other scope is necessary).
 
 ### Server config
 

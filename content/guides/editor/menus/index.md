@@ -142,5 +142,7 @@ Deliveries can query the public API to find a menu using its `li-unique-id` meta
 
 ```js
 const filters = JSON.stringify([{key: 'metadata.name.id', term: 'menu:main'}])
-const response = await fetch(`api/v1/publications/search?filters=${filters}`)
+const response = await fetch(
+  `https://server.example.com/api/{{< api-version >}}/publications/search?filters=${filters}`
+)
 ```

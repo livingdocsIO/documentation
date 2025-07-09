@@ -38,7 +38,7 @@ description: |
   const filters = JSON.stringify([
     {key: 'metadata.name.id', term: 'menu:main'}
   ])
-  const response = await fetch(`api/v1/publications/search?filters=${filters}`)
+  const response = await fetch(`api/{{< api-version >}}/publications/search?filters=${filters}`)
   ```
 storageFormat: <String>
 contentTypeConfig: |2

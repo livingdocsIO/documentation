@@ -70,7 +70,9 @@ After setting up your publication index you can use either the public API or the
 The documentation for the public API can be found here: [Public API Publications Search]({{< ref "reference/public-api/publications/search" >}}). It contains details about the query DSL for filtering publications by metadata values. Examples can also be found below.
 
 ```js
-const response = await fetch(`api/v1/publications/search?contentTypes=regular,author`)
+const response = await fetch(
+  `api/{{< api-version >}}/publications/search?contentTypes=regular,author`
+)
 const results = await response.json()
 ```
 
@@ -156,7 +158,9 @@ const filters = {
 }
 
 // Public API request
-const response = await fetch(`api/v1/publications/search?filters=${JSON.stringify(filters)}`)
+const response = await fetch(
+  `api/{{< api-version >}}/publications/search?filters=${JSON.stringify(filters)}`
+)
 const results = await response.json()
 
 // Public API server feature
