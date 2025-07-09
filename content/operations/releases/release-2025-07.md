@@ -373,7 +373,7 @@ The News Agency integration supports two kinds of import flows: manual flows and
 
 Manual flows let users decide which news agency reports should be turned into articles. As a result, they are more visible to users, whereas auto-publish flows are designed to operate in the background.
 
-{{< img src="./news-agencies-screen.png" alt="News Agency Screen"  >}}
+{{< img src="./release-2025-07-news-agencies.png" alt="News Agency Screen"  >}}
 
 1. **Import**: News agency reports are imported via the Import API. They must be imported into a pre-configured content type with the handle `liNewsAgencyReport`. This content type is pre-configured with a fixed set of metadata properties and content components. It is created automatically once the integration is set up.
 2. **Triage**: Imported reports are displayed on a dedicated news agency screen. While this is the recommended way to work with news agency reports, it's also possible to configure other dashboards to display this content type.
