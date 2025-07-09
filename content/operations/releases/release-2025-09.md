@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency chai from 5.2.0 to v5.2.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8177)
 - [Rename index-reference-ids migration to avoid number conflict](https://github.com/livingdocsIO/livingdocs-server/pull/8171)
 - [fix(deps): update dependency @livingdocs/framework from 32.8.8 to v32.9.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8151)
 - [Fix kordiam global es query](https://github.com/livingdocsIO/livingdocs-server/pull/8164)
