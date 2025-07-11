@@ -482,7 +482,7 @@ The [Document Command API]({{< ref "/reference/public-api/document-command-api" 
 - `addUnpublishSchedule`
 - `cancelUnpublishSchedule`
 
-{{< feature-info "Embargo" "Server" >}}
+{{< feature-info "Publish Control" "Server" >}}
 
 ### Base Filter hasEmbargo :gift:
 
