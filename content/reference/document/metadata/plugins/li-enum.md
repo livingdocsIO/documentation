@@ -5,13 +5,17 @@ menus:
   reference:
     parent: Metadata Plugins List
 summary: A select form based on a statically defined list.
+history:
+  - release: release-2025-05
+    version: 2025-05
+    description: Table dashboard support was added in the `2025-05` release.
 support:
   document: true
   media: true
   include: true
   creationFlow: true
   pushMessage: true
-  tableDashboard: false
+  tableDashboard: true
   displayFilter: true
   searchIndexing: true
   systemMetadata: false

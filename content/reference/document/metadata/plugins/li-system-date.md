@@ -5,13 +5,17 @@ menus:
   reference:
     parent: Metadata Plugins List
 summary:
+history:
+  - release: release-2025-05
+    version: 2025-05
+    description: Table dashboard support was added in the `2025-05` release.
 support:
   document: true
   media: false
   include: false
   creationFlow: false
   pushMessage: false
-  tableDashboard: false
+  tableDashboard: true
   displayFilter: false
   searchIndexing: true
   systemMetadata: true
