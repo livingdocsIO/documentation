@@ -5,13 +5,17 @@ menus:
   reference:
     parent: Metadata Plugins List
 summary: Provide a suggested total character count for the text in the document.
+history:
+  - release: release-2025-05
+    version: 2025-05
+    description: Table dashboard support was added in the `2025-05` release.
 support:
   document: true
   media: false
   include: false
   creationFlow: false
   pushMessage: false
-  tableDashboard: false
+  tableDashboard: true
   displayFilter: false
   searchIndexing: false
   systemMetadata: true
@@ -46,7 +50,11 @@ contentTypeConfig: |2
               }
             ],
             // optional, allows the input of an exact number besides picking a step
-            allowAnyNumber: true
+            allowAnyNumber: true,
+            // optional, default: 'characters' {{< added-in "release-2025-07" >}}
+            unit: 'lines', 
+            // optional, {{< added-in "release-2025-07" >}}
+            showExactCountCheckbox: true
           }
         }
 ---

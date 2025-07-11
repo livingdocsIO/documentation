@@ -33,8 +33,8 @@ storageFormat: |
   }
 contentTypeConfig: |2
         handle: 'myHandle',
-        type: 'li-datetime',
+        type: 'li-datetime-validity',
         config: {
-          index: true                              // optional, default: false. {{< added-in "release-2023-07" >}}
+          index: true // optional, default: false. {{< added-in "release-2023-07" >}}
         }
 ---
