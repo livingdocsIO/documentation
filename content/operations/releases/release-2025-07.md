@@ -511,6 +511,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+- [v119.3.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.5): fix(deps): update dependency @livingdocs/framework from 32.8.8 to v32.8.9
 - [v119.3.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.4): fix(li-unique-id): Disable newlines in textarea of li-unique-id metadata plugin
 
 - [v119.3.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.3): fix(navigation): Support cmd+click on back button to open window in new tab
