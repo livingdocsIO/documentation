@@ -78,24 +78,25 @@ events: [
 
 The following events are supported:
 
-- `document.create` ({{< added-in "release-2024-01" >}})
-- `document.delete` ({{< added-in "release-2024-01" >}})
+- `document.create`
+- `document.delete`
 - `document.publish`
 - `document.unpublish`
 - `document.update`
 - `document.build`
-- `document.build.abort` ({{< added-in "release-2024-07" >}})
-- `document.build.userChoice` ({{< added-in "release-2024-07" >}})
+- `document.build.abort`
+- `document.build.userChoice`
 - `document.build.draft`
-- `document.build.draft.abort` ({{< added-in "release-2024-07" >}})
-- `document.build.draft.userChoice` ({{< added-in "release-2024-07" >}})
-- `publication.update` ({{< added-in "release-2024-03" >}})
+- `document.build.draft.abort`
+- `document.build.draft.userChoice`
+- `publication.update`
 - `mediaLibraryEntry.create`
 - `mediaLibraryEntry.update`
 - `mediaLibraryEntry.archive`
 - `mediaLibraryEntry.revoke`
-- `mediaLibraryEntry.active` ({{< added-in "release-2024-03" >}})
-- `mediaLibraryEntry.invalid` ({{< added-in "release-2024-03" >}})
+- `mediaLibraryEntry.active`
+- `mediaLibraryEntry.invalid`
+- `mediaLibraryEntry.delete` ({{< added-in "release-2025-07" >}})
 
 {{< info >}}
 When a document or media library event is emitted, the Elasticsearch index may not have been updated yet. Hence, when fetching data from a Public API endpoint that internally queries the Elasticsearch index, the response may not immediately reflect the event.
