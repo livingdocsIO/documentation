@@ -79,6 +79,14 @@ This are all available `queryTypes` which can be used to form a filter query.
 // term variables ({{< added-in "release-2025-01" >}})
 // only supported by li-teaser and li-document-search
 {key: 'metadata.category.id', termVariable: 'metadata.category.id'}
+
+// embargo ({{< added-in "release-2025-07">}})
+{key: 'publishControl.embargo.enforced', term: true},
+{or: [
+    {key: 'publishControl.embargo.until', exists: false},
+    {key: 'publishControl.embargo.until', range: {gt: 'now'}}
+  ]
+}
 ```
 
 ### Example - Filter by metadata with key/value
