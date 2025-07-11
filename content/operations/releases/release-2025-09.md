@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @livingdocs/framework from 32.9.2 to v32.9.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10120)
 - [chore(deps): update dependency @google-cloud/vision from 5.2.0 to v5.3.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8183)
 - [Disable newlines in li-unique-id](https://github.com/livingdocsIO/livingdocs-editor/pull/10114)
 - [fix(deps): update dependency @livingdocs/framework from 32.8.8 to v32.9.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10105)
