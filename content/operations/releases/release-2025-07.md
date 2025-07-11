@@ -391,11 +391,53 @@ Unlike the manual flow, the auto-publish flow requires no user-interaction. It e
 
 For instructions on how to set it up, please refer to our [integration guide]({{< ref "/guides/integrations/news-agencies" >}}).
 
-{{< feature-info "LiPriority" "System Metadata Plugin" >}}
+{{< feature-info "System Metadata Plugin" "Server/Editor" >}}
 
 ### New System Metadata Plugin: Priority :gift:
 
-TBD
+A new system metadata plugin `li-system-priority` is available to track and display the priority of news agency reports, such as for marking breaking news. It enables filtering and sorting based on priority within table dashboards.
+
+To use the plugin, define it in the metadata configuration of your news agency content type and optionally reference it in your tabledashboard columns:
+
+```js
+{
+  handle: 'agency-report-article',
+  // ...
+  metadata: [
+    // ...
+    {
+      handle: 'priority',
+      type: 'li-system-priority',
+      config: {
+        index: true
+      },
+      ui: {
+        label: {en: 'Prio', de: 'Prio'}
+      }
+    }
+  ]
+}
+```
+
+(Optional) Reference it on a Table Dashboard:
+
+```js
+{
+  handle: 'agency-dashboard',
+  // ...
+  columns: [
+    // ...
+    {
+      label: 'Prio',
+      minWidth: 100,
+      growFactor: 0,
+      priority: 1,
+      metadataPropertyName: 'priority',
+      editable: true
+    }
+  ]
+}
+```
 
 {{< feature-info "TBD" "TBD" >}}
 
@@ -418,11 +460,14 @@ The teaser will then be populated with articles of the selected rubric and also 
 
 For further information, please contact your account manager.
 
-{{< feature-info "TBD" "TBD" >}}
+{{< feature-info "System Metadata Plugin" "Server/Editor" >}}
 
 ### Target Length Extensions :gift:
 
-TBD
+The `li-target-length` system metadata plugin now supports two new configuration options:
+
+- `unit`: Define whether the target size is measured in `characters` or `lines`. In case of `lines` the [lineCountFraction]({{< ref "/reference/project-config/editor-settings/#text-count" >}}) needs to be defined because internally everything is still stored in characters.
+- `showExactCountCheckbox`: Adds a checkbox in the UI that allows editors to toggle between a simplified T-shirt size scale (S/M/L/XL) and a precise numeric input.
 
 {{< feature-info "Document Command API" "server" >}}
 
@@ -437,17 +482,33 @@ The [Document Command API]({{< ref "/reference/public-api/document-command-api" 
 - `addUnpublishSchedule`
 - `cancelUnpublishSchedule`
 
-{{< feature-info "TBD" "TBD" >}}
+{{< feature-info "TBD" "Server" >}}
 
 ### Base Filter hasEmbargo :gift:
 
-TBD
+You can now use `baseFilters` to filter for documents with an embargo, enabling embargo-specific dashboards. Below is an example that displays all documents where an embargo is currently active:
+
+```js
+baseFilters: [
+  {key: 'contentType', term: ['regular', 'simple', 'pitch', 'bundle']},
+  {key: 'publishControl.embargo.enforced', term: true},
+  {
+    or: [
+      {key: 'publishControl.embargo.until', exists: false},
+      {
+        key: 'publishControl.embargo.until',
+        range: {gt: 'now'}
+      }
+    ]
+  }
+],
+```
 
 {{< feature-info "TBD" "TBD" >}}
 
-### Support embago in Import API :gift:
+### Support embargo in Import API :gift:
 
-TBD
+Embargoes can now be set directly when importing documents via the Import API. Include the `publishControl.embargo` object in your payload to prevent documents from being published or made visible.
 
 {{< feature-info "TBD" "TBD" >}}
 
@@ -511,7 +572,9 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+
 - [v119.3.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.5): fix(deps): update dependency @livingdocs/framework from 32.8.8 to v32.8.9
+
 - [v119.3.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.4): fix(li-unique-id): Disable newlines in textarea of li-unique-id metadata plugin
 
 - [v119.3.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.3): fix(navigation): Support cmd+click on back button to open window in new tab
