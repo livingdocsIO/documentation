@@ -51,7 +51,7 @@ contentTypeConfig: |2
             ],
             // optional, allows the input of an exact number besides picking a step
             allowAnyNumber: true,
-            // optional, default: 'characters' {{< added-in "release-2025-07" >}}
+            // optional, default: 'characters', options: 'characters' or 'lines', {{< added-in "release-2025-07" >}}
             unit: 'lines', 
             // optional, {{< added-in "release-2025-07" >}}
             showExactCountCheckbox: true

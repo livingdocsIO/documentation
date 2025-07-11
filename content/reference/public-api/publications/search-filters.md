@@ -24,7 +24,7 @@ Search filters can be used to filter documents using a custom query DSL.
 | statistics.componentCount.\*    | integer |
 | metadata.\*                     | Any     |
 | publishControl.embargo.enforced | boolean |
-| `publishControl.embargo.until   | date    |
+| publishControl.embargo.until    | date    |
 
 Metadata fields must be indexed. Please read the [Publication Index]({{< ref "/guides/search/publication-index" >}}) guide for further information.
 Details of the core metadata plugins, along with their built-in indexing capabilities, can be found in the [Metadata Plugin List]({{< ref "/reference/document/metadata/plugins" >}}).
