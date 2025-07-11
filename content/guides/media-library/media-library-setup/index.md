@@ -378,26 +378,6 @@ However, each image starts with no focal point defined.
 It will only be set if a user explicitly selected a focal point.
 In all other cases, the automatic crop calculation falls back to the center crop as it was before `release_2022-11`.
 
-### Image Editing
-
-{{< added-in "release-2025-05" block >}}
-
-Journalists are sometimes required to redact areas of an image, such as license plates or faces, or to perform color corrections, such as adjusting brightness, contrast, or saturation. To simplify this task and eliminate the need for external tools, Livingdocs supports basic image editing.
-
-{{< img src="./image-editor-button.png" alt="Image Editor Button"  >}}
-
-Users can open the image editor by clicking the edit button in the media center detail view. It allows users to adjust brightness, contrast, or saturation, as well as blur parts of an image. The original image is always preserved and can be restored at any time. Users can also continue editing an image or selectively undo specific adjustments at a later point.
-
-{{< img src="./image-editor.png" alt="Image Editor"  >}}
-
-Image editing is supported for jpg, png, and webp formats when [`use2025Behavior`]({{< ref "/operations/releases/release-2025-03/#media-center-image-variant-storage--delivery-gift" >}}) is enabled. Accordingly, images must be requested via the public API endpoint [`GET /api/2025-03/mediaLibrary/serve-image/{key}`]({{< ref "/reference/public-api/media-library/#serve-image" >}}) for the modifications to be applied. The edited image will be delivered in place of the original. The original version remains stored and can be restored in the editor.
-
-{{< info >}}
-To avoid performance bottlenecks, ensure you place a CDN or image proxy in front of Livingdocs, retrieving images via the new API. This prevents excessive load on the Livingdocs Server.
-
-Whenever an asset gets modified, we emit the [`mediaLibraryEntry.update`]({{< ref "/customising/advanced/server-events" >}}) server event. This event can be used to purge a CDN or other image service.
-{{< /info >}}
-
 ## Videos
 
 Videos work in a similar way to images. The solution still has some shortcomings you need to be aware of:
@@ -742,3 +722,7 @@ module.exports = {
 
 - With {{< release "release-2021-06" >}}, using `li-named-crops` metadata plugin on `mediaImage` types in combination with asset translation has some suboptimal behaviors. This will be improved in a future release.
 - Both `translatable` and `replaceable` might need handling in your delivery regarding caching, fallback resolution when rendering different languages etc. You need to be aware of this and find solutions. Setting these assets triggers a `mediaLibraryEntry.update` event on the Events API and the webhooks in the same way as updating the metadata does.
+
+## 2025 Behavior
+
+A new set of features has been added which can be enabled using an opt-in server config property. To learn more please see the [2025 Behavior]({{< ref "/guides/media-library/2025-behavior" >}}) guide.
