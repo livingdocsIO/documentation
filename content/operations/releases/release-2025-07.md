@@ -446,7 +446,64 @@ To use the plugin, define it in the metadata configuration of your news agency c
 
 ### Media Center: Deletion Routines :gift:
 
-TBD
+Deletion Routines are background tasks which run every 30 minutes and delete unwanted media library entries. They can be particularly useful when you have regular imports from image agencies. Filter criteria can be configured per media type to remove specific media library entries.
+
+The [deployment steps](#deployment) above must be followed before enabling deletion routines.
+
+It is also necessary to enable `use2025Behavior` in the server config. Be aware that this also requires additional configuration steps such as modifying your CDN setup. Holding workshops or informing users within the newsroom might be beneficial before rolling this out because of the changes it introduces.
+
+```js
+mediaLibrary: {
+  use2025Behavior: true
+}
+```
+
+You might also need to manually migrate media library entry data depending on how you have previously handled media licensing and how you have used the old archive and revoke functionality.
+
+To configure a deletion routine you need to add the `deletionRoutine` config to each media type config that you would like the deletion routine to run for:
+
+```js
+{
+  type: 'mediaImage',
+  handle: 'image',
+  // ...
+  deletionRoutine: {
+    enabled: true,
+    filters: [
+      {
+        // Allow any of the rule sets to trigger a deletion
+        or: [
+          // Delete unused my-agency and another-agency entries after 30 days
+          {
+            and: [
+              {key: 'createdAt', range: {lte: 'now-30d'}},
+              {key: 'metadata.agency', term: ['my-agency', 'another-agency']}
+            ]
+          },
+          // Delete unused yet-another-agency entries after 2 months
+          {
+            and: [
+              {key: 'createdAt', range: {lte: 'now-2M'}},
+              {key: 'metadata.agency', term: 'yet-another-agency'}
+            ]
+          },
+          // Delete any unused entries which have not been modified for 1 year
+          {key: 'updatedAt', range: {lte: 'now-1y'}}
+        ]
+      }
+    ]
+  }
+}
+```
+
+The filters property uses our usual [Search Filters Query DSL]({{< ref "/reference/public-api/publications/search-filters" >}}) in the same way as a base filter. Any unused media library entry which matches will be deleted.
+
+We automatically handle the "unused" part which excludes media library entries that:
+- are referenced by documents
+- are referenced by other media library entries
+- are currently in a document inbox
+- have previously been published in a document
+- have been stored in archive
 
 {{< feature-info "Page Management" "server/editor" >}}
 
