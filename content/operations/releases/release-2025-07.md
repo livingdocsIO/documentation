@@ -397,7 +397,7 @@ For instructions on how to set it up, please refer to our [integration guide]({{
 
 A new system metadata plugin `li-system-priority` is available to track and display the priority of news agency reports, such as for marking breaking news. It enables filtering and sorting based on priority within table dashboards.
 
-To use the plugin, define it in the metadata configuration of your news agency content type and optionally reference it in your tabledashboard columns:
+To use the plugin, define it in the metadata configuration of your news agency content type and optionally reference it in your desired Table Dashboard columns:
 
 ```js
 {
@@ -482,7 +482,7 @@ The [Document Command API]({{< ref "/reference/public-api/document-command-api" 
 - `addUnpublishSchedule`
 - `cancelUnpublishSchedule`
 
-{{< feature-info "TBD" "Server" >}}
+{{< feature-info "Embargo" "Server" >}}
 
 ### Base Filter hasEmbargo :gift:
 
@@ -504,11 +504,11 @@ baseFilters: [
 ],
 ```
 
-{{< feature-info "TBD" "TBD" >}}
+{{< feature-info "Import API" "Server" >}}
 
 ### Support embargo in Import API :gift:
 
-Embargoes can now be set directly when importing documents via the Import API. Include the `publishControl.embargo` object in your payload to prevent documents from being published or made visible.
+Embargoes can now be set directly when importing documents via the Import API. Include the `publishControl.embargo` object in your request payload to prevent documents from being published or made visible.
 
 {{< feature-info "TBD" "TBD" >}}
 
