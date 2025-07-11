@@ -117,9 +117,9 @@ This command will take a while to execute, but as we operate based on ranges, th
 
 As estimate for the execution duration, you can calculate the minutes using those numbers:
 
-- 15 seconds for 1 million documents to update states in postgres
-- 20 seconds for 1 million media center entries to update states in postgres
-- 45 seconds to reindex media library entries in elasticsearch
+- 15 seconds for 1 million documents to update states in Postgres
+- 20 seconds for 1 million media center entries to update states in Postgres
+- 45 seconds to reindex 1 million media library entries in Elasticsearch
 
 ```sh
 node ./node_modules/@livingdocs/server/db/manual-migrations/012-populate-reference-ids.js -y
@@ -144,7 +144,7 @@ Note: This setting is applied at the role level for compatibility across all env
 
 ## Breaking Changes 🔥
 
-{{< feature-info "Multichannel Projects" "Server" >}}
+{{< feature-info "Multichannel Projects" "server" >}}
 
 ### Removal of Multi-Channel Projects :fire:
 
@@ -152,16 +152,16 @@ Multi-Channel Configurations within one Project have been completely removed. Pr
 
 Functionality-wise some setups might need to migrate tests to not create multiple channels. There will be errors if some test setup uses multiple channels. If you don't see errors, there's nothing to do.
 
-Data-wise at the moment no data gets deleted in postgres. **But documents of the secondary channel won't be available anymore in any queries**. We'll delete all the data in another release.
+Data-wise at the moment no data gets deleted in Postgres. **But documents of the secondary channel won't be available anymore in any queries**. We'll delete all the data in another release.
 
-{{< feature-info "Data Sources" "Server" >}}
+{{< feature-info "Data Sources" "server" >}}
 
 ### Removal of params.documentId in Data Sources :fire:
 
 The `params.documentId` is no longer included in data source requests originating from the editor.
 If your integration depends on this parameter, please reach out to your customer solutions manager to discuss alternative solutions.
 
-{{< feature-info "Config" "Server" >}}
+{{< feature-info "Config" "server" >}}
 
 ### Removal of `server.*` in favor of `httpServer.*` :fire:
 
@@ -193,7 +193,7 @@ The Livingdocs Server config properties `server.*` has been moved to `httpServer
 }
 ```
 
-{{< feature-info "Config" "Server" >}}
+{{< feature-info "Config" "server" >}}
 
 ### Removal of `blacklist` and `whitelist` :fire:
 
@@ -295,7 +295,7 @@ The content type handle `liNewsAgencyReport` can no longer be configured manuall
 
 The [Document Command API]({{< ref "/reference/public-api/document-command-api" >}}) operations `publish`, `unpublish`, and `addPublishSchedule` can now only be used as the last operation in a request. Hence, they are also mutually exclusive.
 
-{{< feature-info "Config" "Server" >}}
+{{< feature-info "Config" "server" >}}
 
 ### Removal of `li-images` and `li-videos` :fire:
 
@@ -314,7 +314,7 @@ await mediaLibraryApi.addImage({projectId, assetSource: {url}, metadata})
 await mediaLibraryApi.addVideo({projectId, assetSource: {url}, metadata})
 ```
 
-{{< feature-info "Config" "Server" >}}
+{{< feature-info "Config" "server" >}}
 
 ### Enforce uniqueness of project config props :fire:
 
@@ -322,14 +322,14 @@ Enforce uniqueness of project config properties `contentTypes[].handle`, `finite
 
 ## Deprecations :warning:
 
-{{< feature-info "Postgres Version" "Database" >}}
+{{< feature-info "Database" "server" >}}
 
 ### Deprecate `Postgres v13` :warning:
 
 `Postgres v13` has been deprecated, as it’s end of life in November 2025.  
 Support for it will be removed in `release-2026-01`.
 
-{{< feature-info "Server API" "Server" >}}
+{{< feature-info "Public API" "server" >}}
 
 ### Deprecation of `/project`, `/channelConfig` and `/channels/{channelHandle}` endpoints :warning:
 
@@ -352,7 +352,7 @@ All the 4 legacy endpoints are still available in v1 to 2025-05:
 ✅ `GET` `/api/v1/channelConfig` to `/api/2025-05/channelConfig`  
 ✅ `POST` `/api/v1/channelConfig` to `/api/2025-05/channelConfig`
 
-{{< feature-info "Removal" "Server" >}}
+{{< feature-info "Project Builders" "server" >}}
 
 ### Deprecate `project builders` :warning:
 
@@ -394,7 +394,7 @@ Unlike the manual flow, the auto-publish flow requires no user-interaction. It e
 While this release introduces the foundational components for integrating news agency workflows into Livingdocs, the feature is not yet ready for full rollout.
 Further development is in progress, and we’ll keep you updated along the way - notifying you as soon as it’s ready for you to explore.
 
-{{< feature-info "System Metadata Plugin" "Server/Editor" >}}
+{{< feature-info "Metadata Plugins" "server/editor" >}}
 
 ### New System Metadata Plugin: Priority :gift:
 
@@ -442,13 +442,13 @@ To use the plugin, define it in the metadata configuration of your news agency c
 }
 ```
 
-{{< feature-info "TBD" "TBD" >}}
+{{< feature-info "Media Center" "server" >}}
 
 ### Media Center: Deletion Routines :gift:
 
 TBD
 
-{{< feature-info "Rubrics" "server/editor" >}}
+{{< feature-info "Page Management" "server/editor" >}}
 
 ### Page Management: Rubrics :gift:
 
@@ -463,7 +463,7 @@ The teaser will then be populated with articles of the selected rubric and also 
 
 For further information, please contact your account manager.
 
-{{< feature-info "System Metadata Plugin" "Server/Editor" >}}
+{{< feature-info "Metadata Plugins" "server/editor" >}}
 
 ### Target Length Extensions :gift:
 
@@ -485,7 +485,7 @@ The [Document Command API]({{< ref "/reference/public-api/document-command-api" 
 - `addUnpublishSchedule`
 - `cancelUnpublishSchedule`
 
-{{< feature-info "Publish Control" "Server" >}}
+{{< feature-info "Publish Control" "server" >}}
 
 ### Base Filter hasEmbargo :gift:
 
@@ -507,13 +507,13 @@ baseFilters: [
 ],
 ```
 
-{{< feature-info "Import API" "Server" >}}
+{{< feature-info "Import API" "server" >}}
 
 ### Support embargo in Import API :gift:
 
 Embargoes can now be set directly when importing documents via the Import API. Include the `publishControl.embargo` object in your request payload to prevent documents from being published or made visible.
 
-{{< feature-info "Table Dashboard Cells" "Editor/Server" >}}
+{{< feature-info "Dashboards" "server/editor" >}}
 
 ### New Table Dashboard Cells :gift:
 
@@ -560,6 +560,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v280.1.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.5): fix(deps): update dependency @livingdocs/framework from 32.8.8 to v32.8.9
 
 - [v280.1.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.4): fix(migrations): Rename index-reference-ids to avoid number conflict
