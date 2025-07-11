@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency eslint from 9.30.1 to v9.31.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10127)
 - [fix(deps): update dependency sharp from 0.34.2 to v0.34.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8181)
 - [fix(deps): update dependency @livingdocs/framework from 32.9.2 to v32.9.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10120)
 - [chore(deps): update dependency @google-cloud/vision from 5.2.0 to v5.3.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8183)
