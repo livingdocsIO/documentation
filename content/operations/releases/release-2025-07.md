@@ -117,9 +117,9 @@ This command will take a while to execute, but as we operate based on ranges, th
 
 As estimate for the execution duration, you can calculate the minutes using those numbers:
 
-- 15 seconds for 1 million documents to update states in postgres
-- 20 seconds for 1 million media center entries to update states in postgres
-- 45 seconds to reindex media library entries in elasticsearch
+- 15 seconds for 1 million documents to update states in Postgres
+- 20 seconds for 1 million media center entries to update states in Postgres
+- 45 seconds to reindex 1 million media library entries in Elasticsearch
 
 ```sh
 node ./node_modules/@livingdocs/server/db/manual-migrations/012-populate-reference-ids.js -y
@@ -144,7 +144,7 @@ Note: This setting is applied at the role level for compatibility across all env
 
 ## Breaking Changes 🔥
 
-{{< feature-info "Multichannel Projects" "Server" >}}
+{{< feature-info "Multichannel Projects" "server" >}}
 
 ### Removal of Multi-Channel Projects :fire:
 
@@ -152,16 +152,16 @@ Multi-Channel Configurations within one Project have been completely removed. Pr
 
 Functionality-wise some setups might need to migrate tests to not create multiple channels. There will be errors if some test setup uses multiple channels. If you don't see errors, there's nothing to do.
 
-Data-wise at the moment no data gets deleted in postgres. **But documents of the secondary channel won't be available anymore in any queries**. We'll delete all the data in another release.
+Data-wise at the moment no data gets deleted in Postgres. **But documents of the secondary channel won't be available anymore in any queries**. We'll delete all the data in another release.
 
-{{< feature-info "Data Sources" "Server" >}}
+{{< feature-info "Data Sources" "server" >}}
 
 ### Removal of params.documentId in Data Sources :fire:
 
 The `params.documentId` is no longer included in data source requests originating from the editor.
 If your integration depends on this parameter, please reach out to your customer solutions manager to discuss alternative solutions.
 
-{{< feature-info "Config" "Server" >}}
+{{< feature-info "Config" "server" >}}
 
 ### Removal of `server.*` in favor of `httpServer.*` :fire:
 
@@ -194,7 +194,7 @@ The Livingdocs Server config properties `server.*` has been moved to `httpServer
 }
 ```
 
-{{< feature-info "Config" "Server" >}}
+{{< feature-info "Config" "server" >}}
 
 ### Removal of `blacklist` and `whitelist` :fire:
 
@@ -296,7 +296,7 @@ The content type handle `liNewsAgencyReport` can no longer be configured manuall
 
 The [Document Command API]({{< ref "/reference/public-api/document-command-api" >}}) operations `publish`, `unpublish`, and `addPublishSchedule` can now only be used as the last operation in a request. Hence, they are also mutually exclusive.
 
-{{< feature-info "Config" "Server" >}}
+{{< feature-info "Config" "server" >}}
 
 ### Removal of `li-images` and `li-videos` :fire:
 
@@ -315,7 +315,7 @@ await mediaLibraryApi.addImage({projectId, assetSource: {url}, metadata})
 await mediaLibraryApi.addVideo({projectId, assetSource: {url}, metadata})
 ```
 
-{{< feature-info "Config" "Server" >}}
+{{< feature-info "Config" "server" >}}
 
 ### Enforce uniqueness of project config props :fire:
 
@@ -323,14 +323,14 @@ Enforce uniqueness of project config properties `contentTypes[].handle`, `finite
 
 ## Deprecations :warning:
 
-{{< feature-info "Postgres Version" "Database" >}}
+{{< feature-info "Database" "server" >}}
 
 ### Deprecate `Postgres v13` :warning:
 
 `Postgres v13` has been deprecated, as it’s end of life in November 2025.  
 Support for it will be removed in `release-2026-01`.
 
-{{< feature-info "Server API" "Server" >}}
+{{< feature-info "Public API" "server" >}}
 
 ### Deprecation of `/project`, `/channelConfig` and `/channels/{channelHandle}` endpoints :warning:
 
@@ -353,7 +353,7 @@ All the 4 legacy endpoints are still available in v1 to 2025-05:
 ✅ `GET` `/api/v1/channelConfig` to `/api/2025-05/channelConfig`  
 ✅ `POST` `/api/v1/channelConfig` to `/api/2025-05/channelConfig`
 
-{{< feature-info "Removal" "Server" >}}
+{{< feature-info "Project Builders" "server" >}}
 
 ### Deprecate `project builders` :warning:
 
@@ -391,7 +391,7 @@ Unlike the manual flow, the auto-publish flow requires no user-interaction. It e
 
 For instructions on how to set it up, please refer to our [integration guide]({{< ref "/guides/integrations/news-agencies" >}}).
 
-{{< feature-info "System Metadata Plugin" "Server/Editor" >}}
+{{< feature-info "Metadata Plugins" "server/editor" >}}
 
 ### New System Metadata Plugin: Priority :gift:
 
@@ -439,13 +439,70 @@ To use the plugin, define it in the metadata configuration of your news agency c
 }
 ```
 
-{{< feature-info "TBD" "TBD" >}}
+{{< feature-info "Media Center" "server" >}}
 
 ### Media Center: Deletion Routines :gift:
 
-TBD
+Deletion Routines are background tasks which run every 30 minutes and delete unwanted media library entries. They can be particularly useful when you have regular imports from image agencies. Filter criteria can be configured per media type to remove specific media library entries.
 
-{{< feature-info "Rubrics" "server/editor" >}}
+The [deployment steps](#deployment) above must be followed before enabling deletion routines.
+
+It is also necessary to enable `use2025Behavior` in the server config. Be aware that this also requires additional configuration steps such as modifying your CDN setup. Holding workshops or informing users within the newsroom might be beneficial before rolling this out because of the changes it introduces.
+
+```js
+mediaLibrary: {
+  use2025Behavior: true
+}
+```
+
+You might also need to manually migrate media library entry data depending on how you have previously handled media licensing and how you have used the old archive and revoke functionality.
+
+To configure a deletion routine you need to add the `deletionRoutine` config to each media type config that you would like the deletion routine to run for:
+
+```js
+{
+  type: 'mediaImage',
+  handle: 'image',
+  // ...
+  deletionRoutine: {
+    enabled: true,
+    filters: [
+      {
+        // Allow any of the rule sets to trigger a deletion
+        or: [
+          // Delete unused my-agency and another-agency entries after 30 days
+          {
+            and: [
+              {key: 'createdAt', range: {lte: 'now-30d'}},
+              {key: 'metadata.agency', term: ['my-agency', 'another-agency']}
+            ]
+          },
+          // Delete unused yet-another-agency entries after 2 months
+          {
+            and: [
+              {key: 'createdAt', range: {lte: 'now-2M'}},
+              {key: 'metadata.agency', term: 'yet-another-agency'}
+            ]
+          },
+          // Delete any unused entries which have not been modified for 1 year
+          {key: 'updatedAt', range: {lte: 'now-1y'}}
+        ]
+      }
+    ]
+  }
+}
+```
+
+The filters property uses our usual [Search Filters Query DSL]({{< ref "/reference/public-api/publications/search-filters" >}}) in the same way as a base filter. Any unused media library entry which matches will be deleted.
+
+We automatically handle the "unused" part which excludes media library entries that:
+- are referenced by documents
+- are referenced by other media library entries
+- are currently in a document inbox
+- have previously been published in a document
+- have been stored in archive
+
+{{< feature-info "Page Management" "server/editor" >}}
 
 ### Page Management: Rubrics :gift:
 
@@ -460,7 +517,7 @@ The teaser will then be populated with articles of the selected rubric and also 
 
 For further information, please contact your account manager.
 
-{{< feature-info "System Metadata Plugin" "Server/Editor" >}}
+{{< feature-info "Metadata Plugins" "server/editor" >}}
 
 ### Target Length Extensions :gift:
 
@@ -482,7 +539,7 @@ The [Document Command API]({{< ref "/reference/public-api/document-command-api" 
 - `addUnpublishSchedule`
 - `cancelUnpublishSchedule`
 
-{{< feature-info "Publish Control" "Server" >}}
+{{< feature-info "Publish Control" "server" >}}
 
 ### Base Filter hasEmbargo :gift:
 
@@ -504,13 +561,13 @@ baseFilters: [
 ],
 ```
 
-{{< feature-info "Import API" "Server" >}}
+{{< feature-info "Import API" "server" >}}
 
 ### Support embargo in Import API :gift:
 
 Embargoes can now be set directly when importing documents via the Import API. Include the `publishControl.embargo` object in your request payload to prevent documents from being published or made visible.
 
-{{< feature-info "TBD" "TBD" >}}
+{{< feature-info "Dashboards" "editor" >}}
 
 TBD
 
