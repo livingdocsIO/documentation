@@ -559,6 +559,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.70](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.70): fix(deps): update dependency @livingdocs/framework from 32.6.6 to v32.6.7
 - [v115.22.69](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.69): fix(security): Patch `undici` vulnerability `CVE-2025-47279` to v7.11.0, `brace-expansion` vulnerability `CVE-2025-5889` to v1.1.12, `pbkdf2` vulnerability `CVE-2025-6547` to v3.1.3 and `tar-fs` vulnerability `CVE-2025-48387` to v3.1.0
 - [v115.22.68](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.68): fix(assistants): Display untranslated error details in notification
 - [v115.22.67](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.67): fix(display-filter): Clear search input when selecting option in Retresco/iMatrics display filters
