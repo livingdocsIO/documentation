@@ -461,6 +461,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+- [v117.6.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.32): fix: show li-system-target-length on table dashboards
 - [v117.6.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.31): fix(deps): update dependency @livingdocs/framework from 32.7.8 to v32.7.9
 - [v117.6.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.30): fix(li-unique-id): Disable newlines in textarea of li-unique-id metadata plugin
 - [v117.6.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.29): fix(security): Patch `undici` vulnerability `CVE-2025-47279` to v7.11.0, `brace-expansion` vulnerability `CVE-2025-5889` to v1.1.12, `pbkdf2` vulnerability `CVE-2025-6547` to v3.1.3 and `tar-fs` vulnerability `CVE-2025-48387` to v3.1.0
