@@ -167,9 +167,8 @@ If your integration depends on this parameter, please reach out to your customer
 
 The Livingdocs Server config properties `server.*` has been moved to `httpServer.*` in `release-2022-09`. In this release we’ve enforced the new config as breaking change.
 
-```
-
-❌ Old (removed)
+```js
+// ❌ Old
 {
   server: {
     host: 'localhost',
@@ -181,7 +180,7 @@ The Livingdocs Server config properties `server.*` has been moved to `httpServer
   }
 }
 
-✅ New (required)
+// ✅ New
 {
   httpServer: {
     host: '::', // http bind host
@@ -572,6 +571,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+
 - [v119.3.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.6): fix: show li-system-target-length on table dashboards
 
 - [v119.3.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.5): fix(deps): update dependency @livingdocs/framework from 32.8.8 to v32.8.9
