@@ -122,7 +122,7 @@ As estimate for the execution duration, you can calculate the minutes using thos
 - 45 seconds to reindex 1 million media library entries in Elasticsearch
 
 ```sh
-node ./node_modules/@livingdocs/server/db/manual-migrations/012-populate-reference-ids.js -y
+livingdocs-server release-2025-07-populate-reference-ids -y
 ```
 
 ### Rollback
