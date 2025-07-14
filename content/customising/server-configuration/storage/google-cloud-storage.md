@@ -70,13 +70,13 @@ In your local configuration, set the storage strategy to `google-cloud-storage` 
 }
 ```
 
-## Setting up ImgIX with GCS and Livingdocs
+## Setting up Imgix with GCS and Livingdocs
 
 1. Get a set of [interoperability credentials](https://cloud.google.com/storage/docs/migrating#keys) from the settings page of GCS.
-2. Log into your imgIX account and go to the [Sources section](https://dashboard.imgix.com/sources).
+2. Log into your Imgix account and go to the [Sources section](https://dashboard.imgix.com/sources).
 3. Select "New Source"
 4. Select "Google Cloud Storage" from the Source Type dropdown
-5. Use the credentials from above to connect imgIX to your GCS account.
+5. Use the credentials from above to connect Imgix to your GCS account.
 6. Set the bucket name to the same name as you did in the Livingdocs config. **This is mandatory**
 7. Set the subdomain and path prefix as you see fit.
 
