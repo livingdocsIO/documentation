@@ -61,8 +61,8 @@ To learn about the necessary actions to update Livingdocs to `release-2025-07`, 
 
 ## Webinar
 
-- Feature Webinar Recording: **TODO**
-- Feature Webinar Documentation: **TODO**
+- [Feature Webinar Recording](https://us02web.zoom.us/rec/share/IDW9bYoIB_P5wnurNW95s3MQCw_0ANgZP1ShHsONBKuu_eJfU-3f1ogBZJV594kU.erbeCe2kXPdnUemv) | Passcode: i@5%LLLH 
+- [Feature Webinar Documentation](https://docs.google.com/presentation/d/1vbAJMyjVcd-PWMlwOxSi3p5TOi_f63D8nnL7_dzWdOY/edit?usp=sharing)
 - Dev Webinar Recording: **TODO**
 - Dev Webinar Slides: **TODO** 
 - [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
