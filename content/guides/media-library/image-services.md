@@ -8,13 +8,13 @@ weight: 2
 
 Livingdocs has built-in support for image optimization ensuring images are responsive and served efficiently across different devices.
 When an image is uploaded to Livingdocs, it is stored in its original form. Then, as needed, Livingdocs interfaces with
-an image service (such as [imgix](https://imgix.com)) to dynamically crop or resize images according to specified parameters.
+an image service (such as [Imgix](https://www.imgix.com/)) to dynamically crop or resize images according to specified parameters.
 
 There are 3 parts involved in image management:
 
 1. The **storage** of the images
    Uploaded images are stored in a configurable key value store (e.g. Amazon S3).
-2. The **delivery** through a SaaS image service (imgix or a custom one).
+2. The **delivery** through a SaaS image service (Imgix or a custom one).
 3. The **render strategies** to create HTML markup (e.g. an `img` tag with a `srcset` attribute).
 
 ### Storage
@@ -58,9 +58,9 @@ For details please see the reference documentation for the [server configuration
 
 ### Delivery
 
-Images are delivered via a web service that utilizes a URL pattern. Out of the box, Livingdocs supports [imgix](https://imgix.com/).
+Images are delivered via a web service that utilizes a URL pattern. Out of the box, Livingdocs supports [Imgix](https://www.imgix.com/).
 
-To use imgix you have to create an account and configure your server as described [further down in this document](#server-configuration).
+To use Imgix you have to create an account and configure your server as described [further down in this document](#server-configuration).
 
 You can also use other image services as described [at the end of this document](#integrate-your-own-image-service).
 
@@ -196,7 +196,7 @@ You might be wondering as to why Livingdocs relies on an image service in the fi
 1. cropping
 2. different image widths (sizes) for different devices
 
-The first reason is easily explained. Livingdocs provides an image cropping tool (https://github.com/livingdocsIO/srcissors) in the editor which allows users to crop their images and change the aspect ratio. However, the Livingdocs server does not generate these different versions of the image and deliver them. Instead, it gives this responsibility to a web service such as imgix. Currently, Livingdocs expects that a web service takes the cropping information in the form of a URL parameter ([example of imgix](https://docs.imgix.com/apis/rendering/size/rect)). This is the case for all services we know of.
+The first reason is easily explained. Livingdocs provides an image cropping tool (https://github.com/livingdocsIO/srcissors) in the editor which allows users to crop their images and change the aspect ratio. However, the Livingdocs server does not generate these different versions of the image and deliver them. Instead, it gives this responsibility to a web service such as Imgix. Currently, Livingdocs expects that a web service takes the cropping information in the form of a URL parameter ([example of Imgix](https://docs.imgix.com/en-US/apis/rendering/size/source-rectangle-region)). This is the case for all services we know of.
 
 The second reason for using an image service is to have images that are responsive. Put simply, you don't want to download a 5 Megapixel image on your mobile phone. Instead you want a website to be "smart" and download the image in such a size that the resolution is perfect for your device but the size is just as large as need be.
 
@@ -217,8 +217,8 @@ So, in summary the whole process looks like this:
 - the corresponding file is stored on S3 and
 - the URL to the file is made available on the component as the `originalUrl`.
 - Livingdocs chooses the image service for generating the HTML markup in the document that is shown in the editor. (The image service to be used is configured via `selectedImageService`. Let's say `imgix` is configured.)
-- Livingdocs loads the `imgix_image_service` and calls the `set` method which will generate an `img` tag with a URL that fits the imgix url specification (https://docs.imgix.com/setup/serving-images).
-- Finally, the browser then renders the image by querying imgix for the respective image.
+- Livingdocs loads the `imgix_image_service` and calls the `set` method which will generate an `img` tag with a URL that fits the Imgix url specification (https://docs.imgix.com/en-US/getting-started/setup/serving-assets).
+- Finally, the browser then renders the image by querying Imgix for the respective image.
 
 ## Configuring an image service
 
@@ -246,9 +246,9 @@ The `imageServices` contains the configurations for one or more image services.
 
 You can in theory configure several images services in the server, but as of now only one can be active (the `selectedImageService`).
 
-The `host` is simply where your imgix images are served from.
-If `preferWebp` is set to `true` Livingdocs will pass the [`auto=format` parameter](https://docs.imgix.com/apis/url/auto).
-When the optional property `secureToken` is set, the images are [secured](https://docs.imgix.com/setup/securing-images).
+The `host` is simply where your Imgix images are served from.
+If `preferWebp` is set to `true` Livingdocs will pass the [`auto=format` parameter](https://docs.imgix.com/en-US/apis/rendering/automatic).
+When the optional property `secureToken` is set, the images are [secured](https://docs.imgix.com/en-US/getting-started/setup/securing-assets).
 
 #### Backwards compatible image rendering server config
 
@@ -355,7 +355,7 @@ Note also that we prefer here to write the `sizes` attribute directly in the tem
 **Important: You will have to add image services to both your `server` and `editor`!**
 
 An image service in Livingdocs is basically a url transformer allowing you to
-proxy image requests through a 'real' image service like imgix and write params
+proxy image requests through a 'real' image service like Imgix and write params
 to the url dynamically. For example, to define the `width` or crop of an image.
 
 We support the setting of allowed or disabled mime types which defines which mime types the custom image service will handle but does not stop upload in the editor itself. This is for cases where you want to use different image services for different mime types.

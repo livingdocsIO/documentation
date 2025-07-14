@@ -15,7 +15,7 @@ Please consult the list below in case your security team needs to verify and whi
 
   - Used by the server to persist images, videos and files uploaded into the Media Library. Those files are usually served through an Image resizing Service or another CDN.
 
-- **Image resizing Service (eg. imgix)**:
+- **Image resizing Service (eg. Imgix)**:
 
   - Used by the server in editing mode for cropping images.
   - Used by the editorial users browser to deliver responsive images.

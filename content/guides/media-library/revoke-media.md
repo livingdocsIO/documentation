@@ -17,12 +17,12 @@ To be as flexible as possible we have provided a server event and a webhook, bot
 
 ## Example
 
-### imgix cache purge
+### Imgix cache purge
 
-As is common for many content delivery networks (CDN), imgix will cache your source image for up to one year on its own servers.
+As is common for many content delivery networks (CDN), Imgix will cache your source image for up to one year on its own servers.
 After the Livingdocs server deletes the asset from storage it could still take days, weeks or even months before the image is removed from the CDN.
-In order to avoid this delay it is important to instruct imgix to clear it's cache for the asset and serve the latest version, or in this case a missing/broken image.
-Below is an example of simple purge request sent to imgix using the `axios` library and an API key for authorization:
+In order to avoid this delay it is important to instruct Imgix to clear it's cache for the asset and serve the latest version, or in this case a missing/broken image.
+Below is an example of simple purge request sent to Imgix using the `axios` library and an API key for authorization:
 
 ```js
 liServer.events.subscribe('mediaLibraryEntry.revoke', async (event, {mediaLibraryEntry}) => {

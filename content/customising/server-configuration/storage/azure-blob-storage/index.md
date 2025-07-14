@@ -27,7 +27,7 @@ In order to integrate Azure Blob with Livingdocs, you need to make sure you have
 3. Fill the configuration according to your needs (i.e. `renduncacy`, `region`) under basics tab.
    {{< img src="2-fill-storageaccount-config.png" alt="Create an Storage Account in Azure Portal" >}}
 
-4. In Advance tab, choose `enable public access from all networks`, to allow ImgIX access to the Storage Account.
+4. In Advance tab, choose `enable public access from all networks`, to allow Imgix access to the Storage Account.
    {{< img src="3-fill-storageaccount-config.png" alt="Create an Storage Account in Azure Portal" >}}
 
 5. In `Review + Create` tab, check the configuration matches your needs, then press `Create`.

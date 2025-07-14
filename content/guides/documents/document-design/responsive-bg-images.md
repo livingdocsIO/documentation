@@ -6,7 +6,7 @@ weight: 4
 
 ## The problem
 
-For any given image spot in a document a user will upload an image. When readers look at the document they will do so on different devices, e.g. a mobile phone or a desktop browser. Each of these devices will have different widths. Depending on the width you might want to show optimized versions of the image. An example: A user uploads a 5000px wide image (the original). When a reader looks at this image on a desktop browser of width 1000px then you would want to only load a 1000px variant of this image. If a reader looks at the image on a mobile phone with width 320px and a retina screen (2x) then you want to load a 640px variant of the image. The on-the-fly variants of an image are usually done with an image service such as resrc.it or imgIX.
+For any given image spot in a document a user will upload an image. When readers look at the document they will do so on different devices, e.g. a mobile phone or a desktop browser. Each of these devices will have different widths. Depending on the width you might want to show optimized versions of the image. An example: A user uploads a 5000px wide image (the original). When a reader looks at this image on a desktop browser of width 1000px then you would want to only load a 1000px variant of this image. If a reader looks at the image on a mobile phone with width 320px and a retina screen (2x) then you want to load a 640px variant of the image. The on-the-fly variants of an image are usually done with an image service such as resrc.it or Imgix.
 
 For inline images (`img` tag) we have implemented a `srcset` approach (https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/). `srcset` is by now widely supported and it does not require us to write any additional Javascript. For background images the world is a bit more complicated
 
@@ -96,7 +96,7 @@ imageServiceConfig: {
 }
 ```
 
-This would advise the respective image service (e.g. ImgIX) to always add a `w=2048` URL parameter to all background images. If the original background image is larger it would downsize it. If it is smaller it would simply do nothing.
+This would advise the respective image service (e.g. Imgix) to always add a `w=2048` URL parameter to all background images. If the original background image is larger it would downsize it. If it is smaller it would simply do nothing.
 
 This is not ideal and certainly not responsive but it's a pragmatic solution given that background images in the designs we did so far are:
 

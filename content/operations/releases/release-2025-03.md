@@ -391,7 +391,7 @@ We have made some opt-in changes to the media library to provide more clarity ar
 
 When you enable the new behavior you will notice that the **Archive** action has been removed from the UI at the bottom of the media library entry detail page. To recap, this action removed the entry from Elasticsearch, and therefore all dashboards, but the image still existed in Postgres and remained in documents it had already been added to.
 
-**Revoke** remains largely the same, with the same hooks etc. The main change is that we no longer delete the image from the storage bucket so that we retain the image for legal cases. The new image delivery route will prevent the image from being served, but the imgix cache will still need clearing using the hook.
+**Revoke** remains largely the same, with the same hooks etc. The main change is that we no longer delete the image from the storage bucket so that we retain the image for legal cases. The new image delivery route will prevent the image from being served, but the Imgix cache will still need clearing using the hook.
 
 **Delete** has been introduced as a replacement for the Archive action. Delete completely removes the data from databases and storage. Deleting an entry is only possible when it is not referenced, is not in a document inbox, is not stored in the archive, and has never been published in a document.
 
