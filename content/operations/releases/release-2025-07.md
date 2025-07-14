@@ -64,7 +64,7 @@ To learn about the necessary actions to update Livingdocs to `release-2025-07`, 
 - Feature Webinar Recording: **TODO**
 - Feature Webinar Documentation: **TODO**
 - Dev Webinar Recording: **TODO**
-- Dev Webinar Slides: **TODO**
+- Dev Webinar Slides: **TODO** 
 - [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ## System Requirements
