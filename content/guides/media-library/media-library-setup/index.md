@@ -19,6 +19,10 @@ When you have configured mediaTypes, you will get buttons to let users insert `I
 
 The [Main Navigation]({{< ref "/reference/project-config/editor-settings#main-navigation" >}}) will automatically hold entries for `Images` and `Videos` as well if you have a `liItem: 'mediaLibrary'` entry in your `mainNavigation` config.
 
+## 2025 Behavior
+
+A new set of features has been added to the Media Library which can be enabled using an opt-in server config property. To learn more please see the [2025 Behavior]({{< ref "/guides/media-library/2025-behavior" >}}) guide.
+
 ## Images
 
 ### Server Config
@@ -722,7 +726,3 @@ module.exports = {
 
 - With {{< release "release-2021-06" >}}, using `li-named-crops` metadata plugin on `mediaImage` types in combination with asset translation has some suboptimal behaviors. This will be improved in a future release.
 - Both `translatable` and `replaceable` might need handling in your delivery regarding caching, fallback resolution when rendering different languages etc. You need to be aware of this and find solutions. Setting these assets triggers a `mediaLibraryEntry.update` event on the Events API and the webhooks in the same way as updating the metadata does.
-
-## 2025 Behavior
-
-A new set of features has been added which can be enabled using an opt-in server config property. To learn more please see the [2025 Behavior]({{< ref "/guides/media-library/2025-behavior" >}}) guide.

@@ -30,7 +30,7 @@ mediaLibrary: {
 ```
 
 {{< warning >}}
-Be aware that this also requires additional configuration steps such as modifying your CDN setup and potentiallty performing data migrations. Please familiarise yourself with all of the feature information below before enabling the new behaviour.
+Be aware that this also requires additional configuration steps such as modifying your [Image Service]({{< ref "/guides/media-library/image-services/" >}}) (CDN) setup and potentiallty performing data migrations. Please familiarise yourself with all of the feature information below before enabling the new behaviour.
 {{< /warning >}}
 
 ## Features
