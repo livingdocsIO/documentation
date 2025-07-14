@@ -450,7 +450,7 @@ Deletion Routines are background tasks which run every 30 minutes and delete unw
 
 The [deployment steps](#deployment) above must be followed before enabling deletion routines.
 
-It is also necessary to enable `use2025Behavior` in the server config. Be aware that this also requires additional configuration steps such as modifying your CDN setup. Holding workshops or informing users within the newsroom might be beneficial before rolling this out because of the changes it introduces.
+It is also necessary to enable `use2025Behavior` in the server config. Be aware that this also requires additional configuration steps such as modifying your CDN setup. Holding workshops or informing users within the newsroom might be beneficial before rolling this out because of the changes it introduces. Please see the [2025 Behavior]({{< ref "/guides/media-library/2025-behavior" >}}) guide for further details.
 
 ```js
 mediaLibrary: {
