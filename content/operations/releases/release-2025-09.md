@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update aws-sdk (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8178)
 - [Set media as `publishedInDocument` when scheduling a publication](https://github.com/livingdocsIO/livingdocs-server/pull/8194)
 - [Only enable deletion routines with `use2025Behavior`](https://github.com/livingdocsIO/livingdocs-server/pull/8188)
 - [fix(deps): update playwright monorepo from 1.53.2 to v1.54.1 (main) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/10121)
