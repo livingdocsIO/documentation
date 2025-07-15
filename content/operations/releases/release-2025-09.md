@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Rename news agency category labels](https://github.com/livingdocsIO/livingdocs-editor/pull/10112)
 - [fix(deps): update dependency open from 10.1.2 to v10.2.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10131)
 - [fix(deps): update aws-sdk (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8178)
 - [Set media as `publishedInDocument` when scheduling a publication](https://github.com/livingdocsIO/livingdocs-server/pull/8194)
