@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Check Postgres references when deleting media](https://github.com/livingdocsIO/livingdocs-server/pull/8195)
 - [chore(deps): update dependency puppeteer-core from 24.12.1 to v24.13.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10134)
 - [Rename news agency category labels](https://github.com/livingdocsIO/livingdocs-server/pull/8176)
 - [Rename news agency category labels](https://github.com/livingdocsIO/livingdocs-editor/pull/10112)
