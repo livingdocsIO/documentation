@@ -631,6 +631,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+- [v119.3.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.8): fix(media-library): Hide lightbox trigger for videos
 - [v119.3.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.7): fix(dataload): Add maxBatchSize to Dataloader instances to reduce url lengths when loading a lot of entries
 
 - [v119.3.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.6): fix: show li-system-target-length on table dashboards
