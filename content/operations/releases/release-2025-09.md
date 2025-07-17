@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Authenticate /media-library/:id/download editing API endpoint](https://github.com/livingdocsIO/livingdocs-server/pull/7981)
 - [Hide lightbox trigger for videos](https://github.com/livingdocsIO/livingdocs-editor/pull/10136)
 - [Fix downloading images with Cloudinary image service if use2025Behavior is not enabled](https://github.com/livingdocsIO/livingdocs-server/pull/8199)
 - [Fix Dataloader maxBatchSize](https://github.com/livingdocsIO/livingdocs-editor/pull/10137)
