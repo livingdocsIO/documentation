@@ -617,6 +617,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v280.1.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.10): fix(cloudinary): Throw notFound error if resource is not found
 - [v280.1.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.9): fix(tasks): Move populate-reference-ids script to one-time tasks
 - [v280.1.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.8): fix(media-library): Check postgres references when deleting media
 - [v280.1.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.7): chore(redis): Simplify object matcher in consumer `wait` function
