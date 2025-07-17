@@ -44,7 +44,6 @@ contentTypeConfig: |2
           required: true,
           requiredErrorMessage: 'Provide a value',
           realtimeNotification: true,
-          label: 'Proofreading',
           icon: 'flashlight',
           showInTaskList: true,
           isProofreading: true,
@@ -84,5 +83,8 @@ contentTypeConfig: |2
               icon: 'speedometer'
             }
           ]
+        },
+        ui: {
+          label: 'Proofreading' // optional, takes camelized name otherwise
         }
 ---
