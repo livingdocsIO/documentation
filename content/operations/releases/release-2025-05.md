@@ -462,6 +462,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+- [v117.6.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.33): fix: Show embed settings of focused component
 - [v117.6.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.32): fix: show li-system-target-length on table dashboards
 - [v117.6.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.31): fix(deps): update dependency @livingdocs/framework from 32.7.8 to v32.7.9
 - [v117.6.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.30): fix(li-unique-id): Disable newlines in textarea of li-unique-id metadata plugin
