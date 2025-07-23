@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency webpack-assets-manifest from 5.2.1 to v6 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9766)
 - [Fix clearing input in li-system-text metadata property with data provider](https://github.com/livingdocsIO/livingdocs-editor/pull/10142)
 - [Show embed settings of focused component](https://github.com/livingdocsIO/livingdocs-editor/pull/10141)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/8209)
