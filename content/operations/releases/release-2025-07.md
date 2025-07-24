@@ -118,7 +118,7 @@ This command will take a while to execute, but as we operate based on ranges, th
 As estimate for the execution duration, you can calculate the minutes using those numbers:
 
 - 15 seconds for 1 million documents to update states in Postgres
-- 20 seconds for 1 million media center entries to update states in Postgres
+- 45 seconds for 1 million media center entries to update states in Postgres
 - 45 seconds to reindex 1 million media library entries in Elasticsearch
 
 ```sh
