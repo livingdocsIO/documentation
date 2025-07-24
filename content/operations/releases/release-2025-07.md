@@ -458,7 +458,7 @@ mediaLibrary: {
 }
 ```
 
-You might also need to manually migrate media library entry data depending on how you have previously handled media licensing and how you have used the old archive and revoke functionality.
+You might also need to manually migrate media library entry data depending on how you have previously handled media licensing and how you have used the old archive and revoke functionality. In addition to this, if you have custom components or metadata which link to media library entries but do not create references then you should not use deletion routines for these media types until the data has been migrated.
 
 To configure a deletion routine you need to add the `deletionRoutine` config to each media type config that you would like the deletion routine to run for:
 
