@@ -513,6 +513,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v271.0.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.45): fix(li-system-enum): Fix return in validateOnUpdate
 - [v271.0.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.44): fix(deps): update dependency @livingdocs/framework from 32.6.6 to v32.6.7
 - [v271.0.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.43): fix(security): Patch `undici` vulnerability `CVE-2025-47279` to  v6.21.3 and `brace-expansion` vulnerability `CVE-2025-5889` to v1.1.12
 - [v271.0.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.42): fix(document-lists): Improve query performance for document lists
