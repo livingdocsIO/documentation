@@ -115,6 +115,8 @@ Deletion Routines are background tasks which run every 30 minutes and delete unw
 The deployment steps in {{< release "release-2025-07" >}} must be followed before enabling deletion routines as they are used to update references and media library entry states which determine whether an entry is in use.
 
 You might also need to manually migrate media library entry data depending on how you have previously handled media licensing and how you have used the old archive and revoke functionality.
+
+In addition to this, if you have custom components or metadata which link to media library entries but do not create references then you should not use deletion routines for these media types until the data has been migrated.
 {{< /warning >}}
 
 To configure a deletion routine you need to add the `deletionRoutine` config to each media type config that you would like the deletion routine to run for:
