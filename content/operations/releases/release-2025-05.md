@@ -463,6 +463,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+- [v117.6.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.35): fix(dialogs): Do not close open dialogs when attempting to close an already closed one
 - [v117.6.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.34): fix(li-system-text): Fix clearing data provider selection
 - [v117.6.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.33): fix: Show embed settings of focused component
 - [v117.6.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.32): fix: show li-system-target-length on table dashboards
