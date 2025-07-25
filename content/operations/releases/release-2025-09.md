@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Disable scrolling when session expires and login overlay appears](https://github.com/livingdocsIO/livingdocs-editor/pull/10156)
 - [Do not close open dialogs when attempting to close an already closed one](https://github.com/livingdocsIO/livingdocs-editor/pull/10154)
 - [Fix return value of li-system-enum's validateOnUpdate](https://github.com/livingdocsIO/livingdocs-server/pull/8219)
 - [fix(deps): update dependency webpack-assets-manifest from 5.2.1 to v6 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/9766)
