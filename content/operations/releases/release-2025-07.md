@@ -633,6 +633,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+- [v119.3.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.12): fix: Persist document to local storage even if autosave is disabled
 - [v119.3.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.11): fix(dialogs): Do not close open dialogs when attempting to close an already closed one
 - [v119.3.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.10): fix(li-system-text): Fix clearing data provider selection
 - [v119.3.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.9): fix: Show embed settings of focused component
