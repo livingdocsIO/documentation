@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Ensure that display filter popups are visible in dialogs when there is a dashboard in the background](https://github.com/livingdocsIO/livingdocs-editor/pull/10060)
 - [Disable scrolling when session expires and login overlay appears](https://github.com/livingdocsIO/livingdocs-editor/pull/10156)
 - [Do not close open dialogs when attempting to close an already closed one](https://github.com/livingdocsIO/livingdocs-editor/pull/10154)
 - [Fix return value of li-system-enum's validateOnUpdate](https://github.com/livingdocsIO/livingdocs-server/pull/8219)
