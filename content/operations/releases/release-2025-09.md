@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency webpack-assets-manifest from 6.2.1 to v6.2.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10173)
 - [fix(deps): update dependency axios from 1.10.0 to v1.11.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10155)
 - [Prevent error loading display filters in some older browsers](https://github.com/livingdocsIO/livingdocs-editor/pull/10171)
 - [Compute `publishedInDocument` in populate-reference-ids script](https://github.com/livingdocsIO/livingdocs-server/pull/8224)
