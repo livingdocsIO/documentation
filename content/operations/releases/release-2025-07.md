@@ -634,6 +634,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+- [v119.3.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.14): fix(display-filters): Force array in getClosestPortalTarget
 - [v119.3.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.13): fix(metadata): Make li-boolean checkboxId unique
 - [v119.3.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.12): fix: Persist document to local storage even if autosave is disabled
 - [v119.3.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.11): fix(dialogs): Do not close open dialogs when attempting to close an already closed one
