@@ -617,6 +617,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v280.1.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.13): chore(tasks): Reduce concurrency in populate-reference-ids script
 - [v280.1.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.12): fix(li-system-enum): Fix return in validateOnUpdate
 - [v280.1.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.11): refactor: rename displayFilterOptionsCategory values
 - [v280.1.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.10): fix(cloudinary): Throw notFound error if resource is not found
