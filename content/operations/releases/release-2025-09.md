@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Prevent error loading display filters in some older browsers](https://github.com/livingdocsIO/livingdocs-editor/pull/10171)
 - [Compute `publishedInDocument` in populate-reference-ids script](https://github.com/livingdocsIO/livingdocs-server/pull/8224)
 - [Ensure that display filter popups are visible in dialogs when there is a dashboard in the background](https://github.com/livingdocsIO/livingdocs-editor/pull/10060)
 - [Disable scrolling when session expires and login overlay appears](https://github.com/livingdocsIO/livingdocs-editor/pull/10156)
