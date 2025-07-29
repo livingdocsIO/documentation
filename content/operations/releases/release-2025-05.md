@@ -440,6 +440,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v276.3.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.20): fix(deps): update dependency form-data from 4.0.2 to 4.0.4 [security]
 - [v276.3.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.19): fix(li-system-enum): Fix return in validateOnUpdate
 - [v276.3.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.18): fix(cloudinary): Throw notFound error if resource is not found
 - [v276.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.17): fix(deps): update dependency @livingdocs/framework from 32.7.8 to v32.7.9
