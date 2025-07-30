@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix unsetting system metadata plugins](https://github.com/livingdocsIO/livingdocs-editor/pull/10151)
 - [Remove lock routes & controller & other small maintenance](https://github.com/livingdocsIO/livingdocs-server/pull/8187)
 - [fix(deps): update dependency webpack-assets-manifest from 6.2.1 to v6.2.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10173)
 - [fix(deps): update dependency axios from 1.10.0 to v1.11.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10155)
