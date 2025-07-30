@@ -562,6 +562,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.75](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.75): fix: Support unsetting system metadata plugins
 - [v115.22.74](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.74): fix(display-filters): Force array in getClosestPortalTarget
 - [v115.22.73](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.73): fix: Persist document to local storage even if autosave is disabled
 - [v115.22.72](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.72): fix(dialogs): Do not close open dialogs when attempting to close an already closed one
