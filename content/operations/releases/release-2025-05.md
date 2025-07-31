@@ -465,6 +465,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+- [v117.6.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.39): fix(planning-board): enforce sorting by distribution dates and best date
 - [v117.6.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.38): fix: Support unsetting system metadata plugins
 - [v117.6.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.37): fix(display-filters): Force array in getClosestPortalTarget
 - [v117.6.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.36): fix: Persist document to local storage even if autosave is disabled
