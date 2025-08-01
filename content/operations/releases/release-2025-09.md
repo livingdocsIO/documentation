@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update playwright monorepo from 1.54.1 to v1.54.2 (main) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/10184)
 - [Index media library entry after document publish state change](https://github.com/livingdocsIO/livingdocs-server/pull/7763)
 - [Clear session cache on user device revoke](https://github.com/livingdocsIO/livingdocs-server/pull/8237)
 - [Fix unsetting system metadata plugins](https://github.com/livingdocsIO/livingdocs-editor/pull/10151)
