@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency mini-css-extract-plugin from 2.9.2 to v2.9.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10191)
 - [Render strings of v-tooltip as text to prevent script injection](https://github.com/livingdocsIO/livingdocs-editor/pull/10185)
 - [fix(deps): update playwright monorepo from 1.54.1 to v1.54.2 (main) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/10184)
 - [Index media library entry after document publish state change](https://github.com/livingdocsIO/livingdocs-server/pull/7763)
