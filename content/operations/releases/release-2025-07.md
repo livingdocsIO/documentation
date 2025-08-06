@@ -617,6 +617,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v280.1.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.16): fix: Reinstantiate and deprecate unpublishing documents with publicationApi._scheduledPublish
 - [v280.1.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.15): fix(media-library): Force index use when getting assets by key
 - [v280.1.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.14): test(project-config): Test read and update behavior for project config property removals
 - [v280.1.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.13): chore(tasks): Reduce concurrency in populate-reference-ids script
