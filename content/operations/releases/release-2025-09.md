@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Force index use when getting assets by key to improve serve-image endpoint performance](https://github.com/livingdocsIO/livingdocs-server/pull/8253)
 - [fix(deps): update aws-sdk from 3.850.0 to v3.859.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8234)
 - [fix(deps): update dependency mini-css-extract-plugin from 2.9.2 to v2.9.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10191)
 - [Render strings of v-tooltip as text to prevent script injection](https://github.com/livingdocsIO/livingdocs-editor/pull/10185)
