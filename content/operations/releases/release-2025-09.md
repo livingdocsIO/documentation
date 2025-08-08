@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency eslint from 9.32.0 to v9.33.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8264)
 - [Reinstantiate and deprecate unpublishing documents with publicationApi._scheduledPublish](https://github.com/livingdocsIO/livingdocs-server/pull/8254)
 - [Force index use when getting assets by key to improve serve-image endpoint performance](https://github.com/livingdocsIO/livingdocs-server/pull/8253)
 - [fix(deps): update aws-sdk from 3.850.0 to v3.859.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8234)
