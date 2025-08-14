@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Render rubrics tree collapsed initially](https://github.com/livingdocsIO/livingdocs-editor/pull/10201)
 - [fix(deps): update dependency inquirer from 12.9.1 to v12.9.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8273)
 - [fix(deps): update dependency copy-webpack-plugin from 13.0.0 to v13.0.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10199)
 - [fix(deps): update dependency mini-css-extract-plugin from 2.9.3 to v2.9.4 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10198)
