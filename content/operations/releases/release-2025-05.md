@@ -440,6 +440,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v276.3.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.23): fix(media-library): Add multiple states in populateMissingStates
 - [v276.3.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.22): fix(media-library): Force index use when getting assets by key
 - [v276.3.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.21): chore(drone): Disable onboarding tests for release-2025-05
 - [v276.3.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.20): fix(deps): update dependency form-data from 4.0.2 to 4.0.4 [security]
