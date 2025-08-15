@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update babel from 7.28.0 to v7.28.3 (main) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/10205)
 - [Render rubrics tree collapsed initially](https://github.com/livingdocsIO/livingdocs-editor/pull/10201)
 - [fix(deps): update dependency inquirer from 12.9.1 to v12.9.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8273)
 - [fix(deps): update dependency copy-webpack-plugin from 13.0.0 to v13.0.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10199)
