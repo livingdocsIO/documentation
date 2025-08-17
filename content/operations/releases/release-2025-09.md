@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency inquirer from 12.9.2 to v12.9.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8286)
 - [Add multiple states to media library entries in `populateMissingStates` function](https://github.com/livingdocsIO/livingdocs-server/pull/8274)
 - [fix(deps): update webpack (main) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/10174)
 - [fix(deps): update babel from 7.28.0 to v7.28.3 (main) (patch)](https://github.com/livingdocsIO/livingdocs-editor/pull/10205)
