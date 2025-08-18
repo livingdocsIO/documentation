@@ -638,6 +638,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+- [v119.3.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.19): chore: Make pdf responsive by omitting width and height style attributes
 - [v119.3.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.18): fix(li-tree): render rubrics tree collapsed initially
 - [v119.3.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.17): fix(v-tooltip): Render strings of v-tooltip as text, not html
 - [v119.3.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.16): test(planning-board): add playwright tests
