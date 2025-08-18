@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Polish Package Release-2025-09](https://github.com/livingdocsIO/livingdocs-editor/pull/10202)
 - [fix(deps): update dependency @fastify/reply-from from 12.3.0 to v12.3.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10208)
 - [fix(deps): update dependency inquirer from 12.9.2 to v12.9.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8286)
 - [Add multiple states to media library entries in `populateMissingStates` function](https://github.com/livingdocsIO/livingdocs-server/pull/8274)
