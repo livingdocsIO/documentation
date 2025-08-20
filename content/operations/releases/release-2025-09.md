@@ -190,6 +190,14 @@ No rollback steps are required for this release.
 
 ## Breaking Changes 🔥
 
+### Renaming of Table Dashboard Cells
+
+Since the following dashboard cells are now exclusive to the News Agency module, we have renamed them accordingly. They were first introduced in `release-2025-07` to support the needs of the News Agency module.
+
+- `liTableDashboardCellTitle` to `liTableDashboardCellNewsAgencyTitle`
+- `liTableDashboardCellTime` to `liTableDashboardCellNewsAgencyTime`
+- `liTableDashboardCellAgency` to `liTableDashboardCellNewsAgencyCreate`
+
 {{< feature-info "Operations" "server" >}}
 
 ### Migrate the Postgres Database :fire:
