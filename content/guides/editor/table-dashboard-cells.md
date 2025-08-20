@@ -1,6 +1,7 @@
 ---
 title: Table Dashboard Cells
 weight: 302
+excludeFromSearch: true
 ---
 
 ## Motivation
@@ -17,40 +18,51 @@ We strongly recommend using these upstream components whenever possible for the 
 
 ## List of Upstream Table Dashboard Cells
 
-_Note:_ This list is not yet complete. Additional table dashboard cells are available beyond those documented here.
+Shown configurations should be applied in a table dashboard via the project config within the editor settings.
 
-#### liTableDashboardCellTime
+#### liTableDashboardCellStatistics
 
-Displays the time and date in the table dashboard cell, using the value from `metadata.datetime`.
+Shows the statistics of a document.
 
-{{< img src="./liTableDashboardCellTime.png" width="80" alt="liTableDashboardCellTime"  >}}
+{{< img src="./liTableDashboardCellStatistics.png" width="80" alt="liTableDashboardCellStatistics"  >}}
 
-**Configuration** to be used in a Table Dashboard in the Project Config in the editor settings in the server:
+There are multiple componentOptions, which influences how this cell is viewed:
 
-```js
-{
-    label: 'Example-Label',
-    minWidth: 70,
-    growFactor: 0,
-    priority: 2,
-    componentName: 'liTableDashboardCellTime'
-}
-```
-
-#### liTableDashboardCellTitle
-
-Displays a simple bold text in the table dashboard cell, using the value from `metadata.title`.
-
-{{< img src="./liTableDashboardCellTitle.png" width="350" alt="liTableDashboardCellTitle"  >}}
-
-**Configuration** to be used in a Table Dashboard in the Project Config in the editor settings in the server:
+- `componentCount`: Provide an array of component names (strings) to count within the document.
+- `hideLabel`: Show or hide the label next to a statistic. Useful when only a single value is displayed. And the name of the value is the cell label.
+- `hideLineCount`: Determines whether the line count is displayed.
+- `characterCount`: Determines whether the number of characters used is displayed. If a target length is defined in the metadata, the value will be evaluated against it (met, below, or above), and a corresponding icon will be shown.
 
 ```js
-{
-    label: 'Example-Label',
-    minWidth: 250,
-    growFactor: 2,
-    priority: 1,
-    componentName: 'liTableDashboardCellTitle'
-}
+    label: 'Statistics',                      // string or livingdocs string
+    componentName: 'liTableDashboardCellStatistics',
+    componentOptions: {
+        componentCount: ['p', 'title'],       // Array of components as strings, not required
+        characterCount: true,                 // boolean, not required
+        hideLineCount: true,                  // boolean, not required
+        hideLabel: false                      // boolean, not required
+    },
+    metadataPropertyName: 'nameOfProperty',   // type string, not required
+    editable: false,                          // boolean, default: false
+    minWidth: 250,                            // number, required
+    growFactor: 2,                            // number, required
+    priority: 1                               // number, required
 ```
+
+#### liTableDashboardCellMain
+
+#### liTableDashboardCellContextMenu
+
+#### liTableDashboardCellPublishState
+
+#### liTableDashboardCellLanguage
+
+#### liTableDashboardCellTaskList
+
+#### liTableDashboardCellBestDate
+
+#### liTableDashboardCellPrint
+
+#### liTableDashboardCellDistributionDates
+
+#### liTableDashboardCellDistributionDates
