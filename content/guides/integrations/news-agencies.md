@@ -236,3 +236,50 @@ POST /api/{{< api-version >}}/import/documents
   ]
 }
 ```
+
+## Setup of news agencies notifications
+
+To enable notifications for news agency reports, you need to extend the configuration as follows:
+
+Within the [`newsAgency` property]({{< ref "/reference/project-config/news-agencies" >}}), add a property named notifications.
+This property specifies the categories that users can subscribe to in order to receive notifications.
+
+If the notifications property is empty or missing, users will neither be able to configure notification settings nor receive any notifications.
+
+```js
+newsAgency: {
+  // ...
+  notifications: [
+    {
+      handle: 'politics',
+      label: {en: 'Politics', de: 'Politik'},
+      category: 'politics'
+    },
+    {
+      handle: 'economy',
+      label: {en: 'Economy', de: 'Wirtschaft'},
+      category: 'economy'
+    },
+    {
+      handle: 'sports',
+      label: {en: 'Sports', de: 'Sport'},
+      category: 'sports'
+    },
+    {
+      handle: 'feuilleton',
+      label: {en: 'Feuilleton', de: 'Feuilleton'},
+      category: 'feuilleton'
+    },
+    {
+      handle: 'media',
+      label: {en: 'Media', de: 'Medien'},
+      category: 'media'
+    },
+    {
+      handle: 'other',
+      label: {en: 'Other', de: 'Sonstiges'},
+      category: 'other'
+    }
+  ]
+}
+```
