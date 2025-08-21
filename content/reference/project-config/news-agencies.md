@@ -19,6 +19,7 @@ The configuration is located in the Project Config under the `newsAgency` proper
 
 - `functionHandle` refers to a registered news agency function. This function is used to copy news agency reports into regular articles or, in the auto-publish flow, to also update already copied articles.
 - `screens` defines one or more news agency screens in the Livingdocs Editor.
+- `notifications` represent the categories displayed in the notification settings, which are visible for each news agency screen. To be applicable, these must align with the available categories.
 
 ```js
 newsAgency: {
@@ -62,6 +63,41 @@ newsAgency: {
         {label: {en: 'Media', de: 'Medien'}, value: 'media'},
         {label: {en: 'Other', de: 'Sonstiges'}, value: 'other'}
       ]
+    }
+  ]
+
+  // Optional. Configures the categories, which are shown in the notifications settings.
+  // The should match the available categories.
+  notifications: [
+    {
+      handle: 'politics',
+      label: {en: 'Politics', de: 'Politik'},
+      category: 'politics'
+    },
+    {
+      handle: 'economy',
+      label: {en: 'Economy', de: 'Wirtschaft'},
+      category: 'economy'
+    },
+    {
+      handle: 'sports',
+      label: {en: 'Sports', de: 'Sport'},
+      category: 'sports'
+    },
+    {
+      handle: 'feuilleton',
+      label: {en: 'Feuilleton', de: 'Feuilleton'},
+      category: 'feuilleton'
+    },
+    {
+      handle: 'media',
+      label: {en: 'Media', de: 'Medien'},
+      category: 'media'
+    },
+    {
+      handle: 'other',
+      label: {en: 'Other', de: 'Sonstiges'},
+      category: 'other'
     }
   ]
 }
