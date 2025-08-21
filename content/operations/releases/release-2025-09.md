@@ -12,7 +12,6 @@ header:
   maintained: false
   branchHandle: release-2025-09
 
-
 systemRequirements:
   suggested:
     - name: Node
@@ -88,7 +87,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - [fix(deps): update dependency copy-webpack-plugin from 13.0.0 to v13.0.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10199)
 - [fix(deps): update dependency mini-css-extract-plugin from 2.9.3 to v2.9.4 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10198)
 - [chore(deps): update dependency eslint from 9.32.0 to v9.33.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8264)
-- [Reinstantiate and deprecate unpublishing documents with publicationApi._scheduledPublish](https://github.com/livingdocsIO/livingdocs-server/pull/8254)
+- [Reinstantiate and deprecate unpublishing documents with publicationApi.\_scheduledPublish](https://github.com/livingdocsIO/livingdocs-server/pull/8254)
 - [Force index use when getting assets by key to improve serve-image endpoint performance](https://github.com/livingdocsIO/livingdocs-server/pull/8253)
 - [fix(deps): update aws-sdk from 3.850.0 to v3.859.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8234)
 - [fix(deps): update dependency mini-css-extract-plugin from 2.9.2 to v2.9.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10191)
@@ -143,7 +142,6 @@ These are the release notes of the upcoming release (pull requests merged to the
 - [Prevent configuring news agency report content type multiple times](https://github.com/livingdocsIO/livingdocs-server/pull/8159)
 - [fix(deps): update dependency @elastic/elasticsearch from 9.0.2 to v9.0.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8154)
 - [fix(deps): update aws-sdk from 3.837.0 to v3.840.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8139)
-
 
 To get an overview about new functionality, read the [Release Notes](TODO).
 To learn about the necessary actions to update Livingdocs to `release-2025-09`, read on.
@@ -211,12 +209,93 @@ livingdocs-server migrate up
 
 TODO: check migration
 
-
 ## Deprecations
 
 ## Features
 
+### News Agency Notifications
 
+It is now possible to receive notifications for news agency reports directly in Livingdocs. Once enabled, these notifications appear throughout the application - whether on a dashboard, in the editor, or in any other view. They inform users that a new news agency report matching the defined criteria is available. From there, an article can be created instantly with just one click.
+
+To ensure users stay informed even when they are not actively working in Livingdocs, the favicon is highlighted whenever a new notification is available. In addition, browser notifications can be activated to alert users outside of the Livingdocs tab as soon as a new report is received.
+
+#### Criteria for receiving News Agency Notifications
+
+An incoming news agency report will always be displayed on the news agency screen if its criteria match the screen’s configuration.
+However, a notification will only be triggered if all of the following conditions are met:
+
+- The news agency report has a Priority 1 or Priority 2.
+- Notifications are enabled and the sleep timer is deactivated.
+- The corresponding category of the report is selected in the news agency notification settings.
+- The report has not already been received by Livingdocs.
+
+#### News Agency Notification Settings
+
+The settings for news agency notifications are available on every news agency screen. To show the settings, its icon must be clicked. It is located next to the display filters at the top of the document list and indicates the current status: Disabled, Enabled, Sleep Timer Active.
+
+Clicking the icon opens the settings. When the toggle is switched on, a list of all configured categories is displayed. Notifications are delivered for all categories that are checked.
+
+Configure these categories using the `notifications` property inside the `newsAgency` property:
+
+```js
+newsAgency: {
+  notifications: [
+    {
+      handle: 'politics',
+      label: {en: 'Politics', de: 'Politik'},
+      category: 'Politik'
+    }
+    // ...
+  ]
+}
+```
+
+In addition to enabling or disabling notifications and adjusting the category selection, users can also activate a sleep timer to temporarily mute notifications. Settings changes are persisted per user.
+It can also contain a hint regarding browser notifications, if they are unset or disabled (see respective sections below for more information).
+
+{{< img width="300" src="./release-2025-09-news-agencies-notification-settings.png" alt="News Agency Notification Settings" >}}
+
+#### News Agency Notifications Modal
+
+When all notification criteria are met, a notification will appear in the top center of the Livingdocs interface.
+It contains a cell representing the news agency report, including the timestamp, title, source, and a plus button. Clicking the plus button immediately creates a Livingdocs article based on this report.
+Below the report cell, users can either toggle notifications on/off or activate the sleep timer, just as in the notification settings. Additionally, a Details button opens the full report details, mirroring the side panel on the news agency screen.
+If multiple notifications are present, a navigation element appears in the top-right corner. Users can click the arrows to browse through all received news flash reports. The currently opened notification remains active and visible, even when new notifications arrive.
+
+These notifications behave similarly to other Livingdocs notifications (e.g. error messages). They overlay all other interface elements. While interacting directly with the notification and its content, the background remains inactive. However, when clicking or working outside of the notification, the rest of the interface behaves as usual.
+
+{{< img src="./release-2025-09-news-agencies-notifications-decollapsed.png" alt="News Agency Notifications Decollapsed" >}}
+{{< img src="./release-2025-09-news-agencies-notifications-collapsed.png" alt="News Agency Notifications Collapsed" >}}
+
+A notification will remain visible until one of the following occurs:
+
+- An article is created directly from the notification using the plus button.
+- The notification is closed manually via the close button in the top-right corner.
+- 30 minutes have passed. In this case, only the specific notification that reached the 30-minute limit will disappear; other notifications remain unaffected.
+
+Notifications and news agency settings are synchronized across all open browser tabs. When a notification is closed in one tab, it is automatically closed in all other tabs. The same applies when a new notification is received - it becomes visible in every open tab.
+
+When notifications are open, the favicon changes. A small red circle is added on top of the Livingdocs logo (the default favicon). Once all notifications are closed, the favicon reverts to its normal state. This visual cue ensures that users can easily recognize when new notifications are available - even if no Livingdocs tab is currently active.
+
+#### Sleep Timer
+
+The sleep timer can be activated to temporarily mute notifications, allowing you to pause alerts until the next day without disabling notifications entirely. Once the remaining time has passed, notifications will automatically resume.
+
+While active, the sleep timer also displays the remaining time until notifications are re-enabled.
+If news agency notifications are switched off completely, the sleep timer will be deactivated as well.
+
+The sleep timer is available both in the News Agency Notification Settings and in the Notification Modal.
+
+#### Browser Notification
+
+Livingdocs now supports browser notifications for incoming news agency reports that meet the notification criteria, providing a way to receive alerts outside of the application.
+When opening the new agency notification settings for the first time, the browser will ask users to grant permission for Livingdocs notifications (by default, this setting is unset).
+If the user declines, a permanent hint will be shown in the News Agency Notification Settings.
+If the user accepts, in addition to the in-app News Agency Notification, a browser notification will be displayed.
+
+The browser notification itself contains only the title of the incoming news agency report that matches the criteria. Handling of the notification depends entirely on the browser and on the users system (computer) settings. Livingdocs has no control over the appearance, duration, or sound of these notifications.
+
+Note: When sharing your screen in a video call, or if system notifications are disabled, browser notifications may not be displayed at all.
 
 ## Vulnerability Patches
 
