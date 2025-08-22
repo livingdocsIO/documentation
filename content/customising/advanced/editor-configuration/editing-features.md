@@ -145,18 +145,6 @@ When you have your own Iframely account, you should disable this [setting](https
 
 See [here]({{< ref "./text-editing.md#spellcheck" >}})
 
-## Document History
-
-```js
-{
-  app: {
-    useHistoryRestore: true
-  }
-}
-```
-
-The `useHistoryRestore` option enables / disables the restore functionality in the document history, i.e. the ability to restore the opened document to an older revision.
-
 ## Links
 
 See [here]({{< ref "./text-editing.md#links" >}})
