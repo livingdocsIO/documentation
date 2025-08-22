@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [feat(target-length): also store the currently selected unit](https://github.com/livingdocsIO/livingdocs-server/pull/8247)
 - [fix(deps): update dependency jose from 6.0.12 to v6.0.13 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8302)
 - [fix(deps): update dependency webpack from 5.101.2 to v5.101.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10214)
 - [fix(deps): update pintura [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10207)
