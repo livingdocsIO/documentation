@@ -617,6 +617,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v280.1.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.18): fix(peiq): Replace '<?ZE?>' with '\n' instead of ' ' if newlines are enabled on metadata property
 - [v280.1.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.17): fix(media-library): Add multiple states in populateMissingStates
 - [v280.1.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.16): fix: Reinstantiate and deprecate unpublishing documents with publicationApi._scheduledPublish
 - [v280.1.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.15): fix(media-library): Force index use when getting assets by key
