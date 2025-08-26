@@ -237,18 +237,20 @@ POST /api/{{< api-version >}}/import/documents
 }
 ```
 
-## Setup of news agencies notifications
+## Notifications
 
-To enable notifications for news agency reports, you need to extend the configuration as follows:
+{{< added-in "release-2025-09" block >}}
 
-Within the [`newsAgency` property]({{< ref "/reference/project-config/news-agencies" >}}), add a property named notifications.
-This property specifies the categories that users can subscribe to in order to receive notifications.
+To ensure that users don't miss breaking news while working on other topics, Livingdocs provides notifications for incoming news agency reports. These notifications appear throughout Livingdocs—whether on a dashboard, article, or in any other view. Users can directly create an article from a notification with a single click.
 
-If the notifications property is empty or missing, users will neither be able to configure notification settings nor receive any notifications.
+{{< img src="./news-agencies-notifications.png" alt="News Agency Notifications" >}}
+
+### 1. Configure News Agency Notifications
+
+To enable notifications for news agency reports, extend the [`newsAgency` property]({{< ref "/reference/project-config/news-agencies" >}}) with a `notifications` property. This property defines the categories users can subscribe to for notifications. If `notifications` is missing or empty, users cannot configure or receive notifications.
 
 ```js
 newsAgency: {
-  // ...
   notifications: [
     {
       handle: 'politics',
@@ -256,30 +258,28 @@ newsAgency: {
       category: 'politics'
     },
     {
-      handle: 'economy',
-      label: {en: 'Economy', de: 'Wirtschaft'},
-      category: 'economy'
-    },
-    {
-      handle: 'sports',
-      label: {en: 'Sports', de: 'Sport'},
-      category: 'sports'
-    },
-    {
       handle: 'feuilleton',
-      label: {en: 'Feuilleton', de: 'Feuilleton'},
-      category: 'feuilleton'
-    },
-    {
-      handle: 'media',
-      label: {en: 'Media', de: 'Medien'},
-      category: 'media'
-    },
-    {
-      handle: 'other',
-      label: {en: 'Other', de: 'Sonstiges'},
-      category: 'other'
+      label: {en: 'Feuilleton and Media', de: 'Feuilleton und Medien'},
+      category: ['feuilleton', 'media']
     }
   ]
 }
 ```
+
+### 2. User Settings
+
+With the configuration applied, a settings button becomes available on every news agency screen. Opening this panel allows users to configure their individual notification preferences. The following options are available:
+
+- **Enable**: Toggle notifications on or off.
+- **Categories**: Subscribe to one or more of the preconfigured categories to receive notifications only for relevant reports.
+- **Sleep Timer**: Temporarily mute notifications until the next day without disabling them entirely.
+
+{{< img width="300" src="./news-agencies-notifications-settings.png" alt="News Agency Notifications Settings" >}}
+
+Notifications are triggered only if all of the following conditions are met:
+
+- Notifications are enabled and the sleep timer is deactivated.
+- The report matches the selected categories.
+- The report has Priority 1 or Priority 2.
+
+Each notification remains visible until the user closes it, creates an article from it, or 30 minutes have elapsed, after which it is closed automatically.
