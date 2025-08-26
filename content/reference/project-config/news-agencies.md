@@ -64,10 +64,11 @@ newsAgency: {
         {label: {en: 'Other', de: 'Sonstiges'}, value: 'other'}
       ]
     }
-  ]
+  ],
 
-  // Optional. Configures the categories, which are shown in the notifications settings.
-  // The should match the available categories.
+  // Optional. Configures the categories shown in the notification settings.
+  // The values should match the available categories.
+  // {{< added-in "release-2025-09" >}}
   notifications: [
     {
       handle: 'politics',
@@ -75,29 +76,9 @@ newsAgency: {
       category: 'politics'
     },
     {
-      handle: 'economy',
-      label: {en: 'Economy', de: 'Wirtschaft'},
-      category: 'economy'
-    },
-    {
-      handle: 'sports',
-      label: {en: 'Sports', de: 'Sport'},
-      category: 'sports'
-    },
-    {
       handle: 'feuilleton',
-      label: {en: 'Feuilleton', de: 'Feuilleton'},
-      category: 'feuilleton'
-    },
-    {
-      handle: 'media',
-      label: {en: 'Media', de: 'Medien'},
-      category: 'media'
-    },
-    {
-      handle: 'other',
-      label: {en: 'Other', de: 'Sonstiges'},
-      category: 'other'
+      label: {en: 'Feuilleton and Media', de: 'Feuilleton und Medien'},
+      category: ['feuilleton', 'media']
     }
   ]
 }
