@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Show unpublish information in history view](https://github.com/livingdocsIO/livingdocs-server/pull/8300)
 - [News agency notifications](https://github.com/livingdocsIO/livingdocs-editor/pull/10200)
 - [News agency notifications](https://github.com/livingdocsIO/livingdocs-server/pull/8297)
 - [fix(deps): update dependency @fastify/busboy from 3.1.1 to v3.2.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8287)
