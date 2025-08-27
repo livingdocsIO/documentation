@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [feat: add media library permissions](https://github.com/livingdocsIO/livingdocs-editor/pull/10211)
 - [feat: add media library permissions](https://github.com/livingdocsIO/livingdocs-server/pull/8289)
 - [Index news agency report title and lead to make them searchable on news agency screens](https://github.com/livingdocsIO/livingdocs-server/pull/8313)
 - [Strip PEIQs newline characters from extracted metadata properties](https://github.com/livingdocsIO/livingdocs-server/pull/8291)
