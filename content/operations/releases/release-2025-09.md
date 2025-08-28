@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency posthog-node from 5.8.0 to v5.8.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8317)
 - [Show unpublish information in history view](https://github.com/livingdocsIO/livingdocs-editor/pull/10217)
 - [Show unpublish information in history view](https://github.com/livingdocsIO/livingdocs-server/pull/8300)
 - [News agency notifications](https://github.com/livingdocsIO/livingdocs-editor/pull/10200)
