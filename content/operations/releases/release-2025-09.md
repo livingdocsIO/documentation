@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Editor - F.A.Z. Media Library Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/10226)
 - [Server - F.A.Z. Media Library Improvements](https://github.com/livingdocsIO/livingdocs-server/pull/8314)
 - [fix(deps): update dependency jose from 6.0.13 to v6.1.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8318)
 - [fix(deps): update dependency pdfjs-dist from 5.4.54 to v5.4.149 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10233)
