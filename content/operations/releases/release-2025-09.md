@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Add publicApi.minimumApiVersion to server configuration to allow serving only newer api versions](https://github.com/livingdocsIO/livingdocs-server/pull/8290)
 - [ESM example](https://github.com/livingdocsIO/livingdocs-server/pull/8293)
 - [Editor - F.A.Z. Media Library Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/10226)
 - [Server - F.A.Z. Media Library Improvements](https://github.com/livingdocsIO/livingdocs-server/pull/8314)
