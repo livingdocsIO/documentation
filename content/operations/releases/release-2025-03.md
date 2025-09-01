@@ -513,6 +513,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v271.0.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.50): fix(retresco): Request more rows on entities endpoint
 - [v271.0.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.49): fix(peiq): Replace '<?ZE?>' with '\n' instead of ' ' if newlines are enabled on metadata property
 - [v271.0.48](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.48): fix(media-library): Add multiple states in populateMissingStates
 - [v271.0.47](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.47): fix(media-library): Force index use when getting assets by key
