@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Update opentelemetry to v2](https://github.com/livingdocsIO/livingdocs-server/pull/7853)
 - [fix(deps): update dependency mocha from 11.7.1 to v11.7.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8329)
 - [Request more rows on Retresco entities endpoint](https://github.com/livingdocsIO/livingdocs-server/pull/8324)
 - [Add publicApi.minimumApiVersion to server configuration to allow serving only newer api versions](https://github.com/livingdocsIO/livingdocs-server/pull/8290)
