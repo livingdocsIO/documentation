@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @opentelemetry/instrumentation-pg from 0.56.0 to v0.56.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8330)
 - [Update opentelemetry to v2](https://github.com/livingdocsIO/livingdocs-server/pull/7853)
 - [fix(deps): update dependency mocha from 11.7.1 to v11.7.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8329)
 - [Request more rows on Retresco entities endpoint](https://github.com/livingdocsIO/livingdocs-server/pull/8324)
