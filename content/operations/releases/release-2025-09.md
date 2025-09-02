@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix: target-length allow multiple units to support switching for allowAnyNumber](https://github.com/livingdocsIO/livingdocs-server/pull/8323)
 - [Feat: add different media type support](https://github.com/livingdocsIO/livingdocs-editor/pull/10228)
 - [Feat: add different media type support](https://github.com/livingdocsIO/livingdocs-server/pull/8316)
 - [Handle pods and podcastTranscription with Retresco live analysis](https://github.com/livingdocsIO/livingdocs-editor/pull/10236)
