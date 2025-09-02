@@ -357,6 +357,7 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+- [v119.14.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.3): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ---
 
