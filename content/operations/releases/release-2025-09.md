@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Store pods in li-retresco and add li-retresco-podcast-transcription](https://github.com/livingdocsIO/livingdocs-server/pull/8319)
 - [feat(rubrics): support archived rubrics](https://github.com/livingdocsIO/livingdocs-server/pull/8325)
 - [Archive rubrics](https://github.com/livingdocsIO/livingdocs-editor/pull/10235)
 - [Fix indexes of documents, support legacy channel and archived content type deletion](https://github.com/livingdocsIO/livingdocs-server/pull/8298)
