@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/8331)
 - [Prepend drone strip_prefix with '/'](https://github.com/livingdocsIO/livingdocs-editor/pull/10240)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10232)
 - [fix: target-length allow multiple units to support switching for allowAnyNumber](https://github.com/livingdocsIO/livingdocs-server/pull/8323)
