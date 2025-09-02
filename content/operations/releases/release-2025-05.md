@@ -419,7 +419,11 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 This release we have patched the following vulnerabilities in the Livingdocs Server:
 
 - [CVE-2025-32442](https://github.com/fastify/fastify/security/advisories/GHSA-mg2h-6x62-wpwc) patched in `fastify` v5.3.2
-- [CVE-2025-27789] https://github.com/advisories/GHSA-968p-4wvh-cqc8 patched `@babel/runtime` & `@babel/helpers` v7.26.10
+- [CVE-2025-27789](https://github.com/advisories/GHSA-968p-4wvh-cqc8) patched `@babel/runtime` & `@babel/helpers` v7.26.10
+- [GHSA-xffm-g5w8-qvg7](https://github.com/advisories/GHSA-xffm-g5w8-qvg7) patched in `@eslint/plugin-kit` v0.3.5
+- [CVE-2025-7783](https://github.com/advisories/GHSA-fjxv-7rqg-78g4) patched in `form-data` v2.5.5
+- [CVE-2025-7339](https://github.com/advisories/GHSA-76c9-3jph-rj3q) patched in `on-headers` v1.1.0
+- [CVE-2025-54798](https://github.com/advisories/GHSA-52f5-9888-hmc6) patched by no longer depending on `tmp`
 
 No known vulnerabilities. :tada:
 
@@ -429,11 +433,16 @@ This release we have patched the following vulnerabilities in the Livingdocs Edi
 
 - [CVE-2025-32442](https://github.com/fastify/fastify/security/advisories/GHSA-mg2h-6x62-wpwc) patched in `fastify` v5.3.2
 - [CVE-2025-27789](https://github.com/advisories/GHSA-968p-4wvh-cqc8) patched `@babel/runtime` & `@babel/helpers` v7.26.10
+- [GHSA-xffm-g5w8-qvg7](https://github.com/advisories/GHSA-xffm-g5w8-qvg7) patched in `@eslint/plugin-kit` v2.5.5
+- [CVE-2025-7783](https://github.com/advisories/GHSA-fjxv-7rqg-78g4) patched in `form-data` v2.5.5
+- [CVE-2025-9288](https://github.com/advisories/GHSA-95m3-7q98-8xr5) patched in `sha.js` v2.4.12
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
 - [CVE-2023-44270](https://github.com/advisories/GHSA-7fh5-64p2-3v2j) vulnerability in `postcss`, it affects linters using PostCSS to parse external Cascading Style Sheets (CSS). It is not exploitable in the editor as we don't load untrusted external CSS at build time.
-- [CVE-2023-26116](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26118](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26117](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2022-25869](https://cwe.mitre.org/data/definitions/79.html), [CVE-2022-25844](https://cwe.mitre.org/data/definitions/770.html) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
+- [CVE-2022-25844](https://github.com/advisories/GHSA-m2h2-264f-f486), [CVE-2022-25869](https://github.com/advisories/GHSA-prc3-vjfx-vhm9), [CVE-2023-26116](https://github.com/advisories/GHSA-2vrf-hf26-jrp5), [CVE-2023-26117](https://github.com/advisories/GHSA-2qqx-w9hr-q5gx), [CVE-2023-26118](https://github.com/advisories/GHSA-qwqh-hm9m-p5hr), [CVE-2024-8372](https://github.com/advisories/GHSA-m9gf-397r-hwpg), [CVE-2024-8373](https://github.com/advisories/GHSA-mqm9-c95h-x2p6), [CVE-2024-21490](https://github.com/advisories/GHSA-4w4v-5hc9-xrr2), [CVE-2025-0716](https://github.com/advisories/GHSA-j58c-ww9w-pwp5), [CVE-2025-2336](https://github.com/advisories/GHSA-4p4w-6hg8-63wx) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
+- [CVE-2024-6783](https://github.com/advisories/GHSA-g3ch-rx76-35fx) vulnerability in `vue-template-compiler` it allows malicious users to perform XSS via prototype pollution. Editor build is always done in a trusted environment and the vulnerability is not exploitable.
+- [CVE-2024-9506](https://github.com/advisories/GHSA-5j4c-8p2g-v4jx) vulnerability in `vue`, an ReDoS vulnerability exploitable through inefficient regex evaluation in parseHTML function. The issue can cause excessive CPU usage but is not exploitable in the editor as we don't load untrusted HTML at runtime.
 
 ## Patches
 
