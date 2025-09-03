@@ -8,7 +8,7 @@ hideSectionTeaser: true
 header:
   upcoming: false
   legacy: false
-  current: true
+  current: false
   maintained: true
   branchHandle: release-2025-07
 
@@ -61,10 +61,10 @@ To learn about the necessary actions to update Livingdocs to `release-2025-07`, 
 
 ## Webinar
 
-- [Feature Webinar Recording](https://us02web.zoom.us/rec/share/IDW9bYoIB_P5wnurNW95s3MQCw_0ANgZP1ShHsONBKuu_eJfU-3f1ogBZJV594kU.erbeCe2kXPdnUemv) | Passcode: i@5%LLLH 
+- [Feature Webinar Recording](https://us02web.zoom.us/rec/share/IDW9bYoIB_P5wnurNW95s3MQCw_0ANgZP1ShHsONBKuu_eJfU-3f1ogBZJV594kU.erbeCe2kXPdnUemv) | Passcode: i@5%LLLH
 - [Feature Webinar Documentation](https://docs.google.com/presentation/d/1vbAJMyjVcd-PWMlwOxSi3p5TOi_f63D8nnL7_dzWdOY/edit?usp=sharing)
 - [Dev Webinar Recording](https://us02web.zoom.us/rec/share/kS0fnL2pqJE589iZXBm3CQ4KKCACQ_1uyk_h8_4oncY7ACltXBfDVr_e9r53Z-VN.YTJc5RXWd-TuMWb1) | Passcode: tXP3$PC6
-- [Dev Webinar Slides](https://docs.google.com/presentation/d/1i-DFfa1xK0pjFqJxDvhwlhFZaCfFPWT3A_QQLl0XDDc/edit?usp=sharing) 
+- [Dev Webinar Slides](https://docs.google.com/presentation/d/1i-DFfa1xK0pjFqJxDvhwlhFZaCfFPWT3A_QQLl0XDDc/edit?usp=sharing)
 - [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ## System Requirements
@@ -499,6 +499,7 @@ To configure a deletion routine you need to add the `deletionRoutine` config to 
 The filters property uses our usual [Search Filters Query DSL]({{< ref "/reference/public-api/publications/search-filters" >}}) in the same way as a base filter. Any unused media library entry which matches will be deleted.
 
 We automatically handle the "unused" part which excludes media library entries that:
+
 - are referenced by documents
 - are referenced by other media library entries
 - are currently in a document inbox
@@ -625,6 +626,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v280.1.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.25): fix(deps): Axios is vulnerable to DoS attack through lack of data size check - https://github.com/advisories/GHSA-4hjh-wcwx-xvwj
 - [v280.1.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.24): fix(media-library): Expose asset changes in server events
 - [v280.1.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.23): fix: Support setting migration sequence to 0 with documentApi.create
@@ -634,7 +636,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.19): fix(retresco): Request more rows on entities endpoint
 - [v280.1.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.18): fix(peiq): Replace '<?ZE?>' with '\n' instead of ' ' if newlines are enabled on metadata property
 - [v280.1.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.17): fix(media-library): Add multiple states in populateMissingStates
-- [v280.1.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.16): fix: Reinstantiate and deprecate unpublishing documents with publicationApi._scheduledPublish
+- [v280.1.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.16): fix: Reinstantiate and deprecate unpublishing documents with publicationApi.\_scheduledPublish
 - [v280.1.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.15): fix(media-library): Force index use when getting assets by key
 - [v280.1.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.14): test(project-config): Test read and update behavior for project config property removals
 - [v280.1.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.13): chore(tasks): Reduce concurrency in populate-reference-ids script
@@ -654,6 +656,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+
 - [v119.3.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.25): fix(deps): Migrate to vue-template-compiler-patched that has security issues fixed
 - [v119.3.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.24): fix(upload-center): Prevent select all error when configs are undefined
 - [v119.3.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.23): fix: Remove angular-sanitize

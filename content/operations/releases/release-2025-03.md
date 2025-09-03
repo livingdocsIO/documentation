@@ -7,9 +7,9 @@ hideSectionTeaser: true
 
 header:
   upcoming: false
-  legacy: false
+  legacy: true
   current: false
-  maintained: true
+  maintained: false
   branchHandle: release-2025-03
 
 systemRequirements:
@@ -94,6 +94,7 @@ If this query returns a row, the migration has not been run.
 ### Rollout deployment
 
 #### Migrate the Postgres Database
+
 Once you deploy new release instances, you have to run the migrations below. Migration 209-asset-keys.js can take a bit long to run, depending on the existing media assets. During that time the Server might respond with 500 errors, due to tables being locked during the migration.
 
 ```sh
@@ -521,6 +522,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v271.0.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.51): fix: Patch vulnerable dependencies
 - [v271.0.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.50): fix(retresco): Request more rows on entities endpoint
 - [v271.0.49](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.49): fix(peiq): Replace '<?ZE?>' with '\n' instead of ' ' if newlines are enabled on metadata property
@@ -529,7 +531,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.46): fix(deps): update dependency form-data from 4.0.2 to 4.0.4 [security]
 - [v271.0.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.45): fix(li-system-enum): Fix return in validateOnUpdate
 - [v271.0.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.44): fix(deps): update dependency @livingdocs/framework from 32.6.6 to v32.6.7
-- [v271.0.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.43): fix(security): Patch `undici` vulnerability `CVE-2025-47279` to  v6.21.3 and `brace-expansion` vulnerability `CVE-2025-5889` to v1.1.12
+- [v271.0.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.43): fix(security): Patch `undici` vulnerability `CVE-2025-47279` to v6.21.3 and `brace-expansion` vulnerability `CVE-2025-5889` to v1.1.12
 - [v271.0.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.42): fix(document-lists): Improve query performance for document lists
 - [v271.0.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.41): fix(memory): Merge command api caches into one shared Map cache per project & design
 - [v271.0.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.40): fix(metadata): ignore type declaration files when loading metadata plugins
@@ -575,6 +577,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+
 - [v115.22.80](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.80): fix: Remove angular-sanitize
 - [v115.22.79](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.79): fix: Patch vulnerable dependencies
 - [v115.22.78](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.78): fix(drone): Prepend strip_prefix with '/'
