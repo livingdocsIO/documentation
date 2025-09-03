@@ -12,7 +12,6 @@ header:
   maintained: false
   branchHandle: release-2025-11
 
-
 systemRequirements:
   suggested:
     - name: Node
@@ -65,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [chore(deps): update dependency eslint from 9.34.0 to v9.35.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10271)
 - [fix(deps): update dependency pino from 9.9.2 to v9.9.4 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8361)
 - [Support setting migration sequence to 0 with documentApi.createV2](https://github.com/livingdocsIO/livingdocs-server/pull/8356)
@@ -76,8 +76,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - [Allow `li-rubric-assignment` in creation flows](https://github.com/livingdocsIO/livingdocs-server/pull/8348)
 - [Exclude scheduled publication events from revisions list](https://github.com/livingdocsIO/livingdocs-server/pull/8336)
 - [fix(deps): update dependency pino from 9.9.0 to v9.9.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8343)
-- [Rename 213-* db migrations](https://github.com/livingdocsIO/livingdocs-server/pull/8339)
-
+- [Rename 213-\* db migrations](https://github.com/livingdocsIO/livingdocs-server/pull/8339)
 
 To get an overview about new functionality, read the [Release Notes](TODO).
 To learn about the necessary actions to update Livingdocs to `release-2025-11`, read on.
@@ -124,25 +123,9 @@ No rollback steps are required for this release.
 
 ## Breaking Changes 🔥
 
-{{< feature-info "Operations" "server" >}}
-
-### Migrate the Postgres Database :fire:
-
-It's a simple/fast migration with no expected data losses.
-
-```sh
-# run `livingdocs-server migrate up` to update to the newest database schema
-livingdocs-server migrate up
-```
-
-TODO: check migration
-
-
 ## Deprecations
 
 ## Features
-
-
 
 ## Vulnerability Patches
 
