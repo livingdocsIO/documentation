@@ -12,7 +12,6 @@ header:
   maintained: false
   branchHandle: release-2025-11
 
-
 systemRequirements:
   suggested:
     - name: Node
@@ -66,7 +65,6 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
-
 To get an overview about new functionality, read the [Release Notes](TODO).
 To learn about the necessary actions to update Livingdocs to `release-2025-11`, read on.
 
@@ -112,25 +110,9 @@ No rollback steps are required for this release.
 
 ## Breaking Changes 🔥
 
-{{< feature-info "Operations" "server" >}}
-
-### Migrate the Postgres Database :fire:
-
-It's a simple/fast migration with no expected data losses.
-
-```sh
-# run `livingdocs-server migrate up` to update to the newest database schema
-livingdocs-server migrate up
-```
-
-TODO: check migration
-
-
 ## Deprecations
 
 ## Features
-
-
 
 ## Vulnerability Patches
 
@@ -154,6 +136,8 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 
 - [CVE-2023-44270](https://github.com/advisories/GHSA-7fh5-64p2-3v2j) vulnerability in `postcss`, it affects linters using PostCSS to parse external Cascading Style Sheets (CSS). It is not exploitable in the editor as we don't load untrusted external CSS at build time.
 - [CVE-2023-26116](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26118](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2023-26117](https://cwe.mitre.org/data/definitions/1333.html), [CVE-2022-25869](https://cwe.mitre.org/data/definitions/79.html), [CVE-2022-25844](https://cwe.mitre.org/data/definitions/770.html) are all AngularJS vulnerabilities that don't have a patch available. We are working on removing all AngularJS from our code and vulnerabilities will go away when we complete the transition to Vue.js.
+- [CVE-2024-6783](https://github.com/advisories/GHSA-g3ch-rx76-35fx) vulnerability in `vue-template-compiler` it allows malicious users to perform XSS via prototype pollution. Editor build is always done in a trusted environment and the vulnerability is not exploitable.
+- [CVE-2024-9506](https://github.com/advisories/GHSA-5j4c-8p2g-v4jx) vulnerability in `vue`, an ReDoS vulnerability exploitable through inefficient regex evaluation in parseHTML function. The issue can cause excessive CPU usage but is not exploitable in the editor as we don't load untrusted HTML at runtime.
 
 ## Patches
 
