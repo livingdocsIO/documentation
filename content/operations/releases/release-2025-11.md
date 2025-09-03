@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Rename 213-* db migrations](https://github.com/livingdocsIO/livingdocs-server/pull/8339)
 
 
 To get an overview about new functionality, read the [Release Notes](TODO).
