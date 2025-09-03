@@ -2,14 +2,14 @@
 type: release-notes
 title: September 2025 Release
 description: Technical Release Notes for release-2025-09
-excludeFromSearch: true
+excludeFromSearch: false
 hideSectionTeaser: true
 
 header:
-  upcoming: true
+  upcoming: false
   legacy: false
-  current: false
-  maintained: false
+  current: true
+  maintained: true
   branchHandle: release-2025-09
 
 systemRequirements:
@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/10242)
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/8331)
 - [Prepend drone strip_prefix with '/'](https://github.com/livingdocsIO/livingdocs-editor/pull/10240)
@@ -355,9 +356,11 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+
 - [v119.14.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.3): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ---
