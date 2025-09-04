@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency pino from 9.9.1 to v9.9.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8352)
 - [Trigger Google Vision enrichment on image upload](https://github.com/livingdocsIO/livingdocs-server/pull/8341)
 - [Improve comment to component alignment on load](https://github.com/livingdocsIO/livingdocs-editor/pull/10056)
 - [Allow `li-rubric-assignment` in creation flows](https://github.com/livingdocsIO/livingdocs-server/pull/8348)
