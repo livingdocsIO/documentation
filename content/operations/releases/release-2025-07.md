@@ -641,6 +641,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+- [v119.3.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.22): fix(comments): Improve comment to component alignment on load
 - [v119.3.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.21): fix: Patch vulnerable dependencies
 - [v119.3.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.20): fix(drone): Prepend strip_prefix with '/'
 - [v119.3.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.19): chore: Make pdf responsive by omitting width and height style attributes
