@@ -355,6 +355,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v281.3.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.6): fix(google-vision): Enrich images on upload
 - [v281.3.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.5): fix(rubrics): allow `li-rubric-assignment` in creation flows
 - [v281.3.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.4): fix(revisions): Exclude scheduled publication events
 - [v281.3.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.3): fix(db): Rename 213 migrations
