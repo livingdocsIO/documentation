@@ -617,6 +617,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v280.1.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.21): fix(google-vision): Enrich images on upload
 - [v280.1.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.20): fix: Patch vulnerable dependencies
 - [v280.1.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.19): fix(retresco): Request more rows on entities endpoint
 - [v280.1.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.18): fix(peiq): Replace '<?ZE?>' with '\n' instead of ' ' if newlines are enabled on metadata property
