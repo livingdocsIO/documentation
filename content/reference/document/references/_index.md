@@ -8,7 +8,7 @@ menus:
 
 References are stored for documents and media library entries. They indicate links from the document or entry to other content.
 
-References for publications are currently available via Public API under [Latest Publication API Beta]({{< ref "/reference/public-api/publications/latest-publication-beta" >}}) and [Latest Publications API Beta]({{< ref "/reference/public-api/publications/latest-publications-beta" >}}).
+References for publications are currently available via Public API under [Latest Publication API]({{< ref "/reference/public-api/publications/latest-publication" >}}) and [Latest Publications API]({{< ref "/reference/public-api/publications/latest-publications" >}}).
 
 To find _incoming_ references, which point to the document or media library entry that you specify, there are also endpoints available in the "Beta" section of the [Public API]({{< ref "/reference/public-api" >}}). These endpoints can be particularly useful when working with statically generated sites, as they allow you to make decisions on which caches should be cleared when content changes.
 

@@ -18,14 +18,11 @@ description: |
   - renditions
 
   ##### Advantages
-
   - Be able to cache the response, because it only changes on a republish (does not contain resolved refs)
   - Useful for a pull architecture
   - (deprecated) Supports the Render Pipeline with it's Renditions
 
   ##### Related
-
-  - [Latest Publication API Beta]({{< ref "/reference/public-api/publications/latest-publication-beta" >}})
   - [Composition API]({{< ref "/reference/public-api/composition-api" >}})
 
 useCases: |

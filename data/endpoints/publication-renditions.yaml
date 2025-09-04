@@ -9,7 +9,6 @@ description: |
 
   #### Related
   - [Latest Publication API]({{< ref "/reference/public-api/publications/latest-publication" >}})
-  - [Latest Publication API Beta]({{< ref "/reference/public-api/publications/latest-publication-beta" >}})
   - [Composition API]({{< ref "/reference/public-api/composition-api" >}})
 
 useCases: |
