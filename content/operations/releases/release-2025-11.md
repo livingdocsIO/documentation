@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Allow `li-rubric-assignment` in creation flows](https://github.com/livingdocsIO/livingdocs-server/pull/8348)
 - [Exclude scheduled publication events from revisions list](https://github.com/livingdocsIO/livingdocs-server/pull/8336)
 - [fix(deps): update dependency pino from 9.9.0 to v9.9.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8343)
 - [Rename 213-* db migrations](https://github.com/livingdocsIO/livingdocs-server/pull/8339)
