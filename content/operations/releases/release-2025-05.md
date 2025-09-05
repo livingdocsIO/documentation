@@ -479,6 +479,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+- [v117.6.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.44): fix: Remove angular-sanitize
 - [v117.6.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.43): fix(comments): Improve comment to component alignment on load
 - [v117.6.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.42): fix: Patch vulnerable dependencies
 - [v117.6.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.41): fix(drone): Prepend strip_prefix with '/'
