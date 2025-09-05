@@ -450,6 +450,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v276.3.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.27): fix: Support setting migration sequence to 0 with documentApi.create
 - [v276.3.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.26): fix: Patch vulnerable dependencies
 - [v276.3.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.25): fix(retresco): Request more rows on entities endpoint
 - [v276.3.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.24): fix(peiq): Replace '<?ZE?>' with '\n' instead of ' ' if newlines are enabled on metadata property
