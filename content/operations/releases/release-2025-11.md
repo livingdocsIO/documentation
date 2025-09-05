@@ -65,6 +65,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Support setting migration sequence to 0 with documentApi.createV2](https://github.com/livingdocsIO/livingdocs-server/pull/8356)
 - [fix(deps): update dependency dedent from 1.6.0 to v1.7.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10255)
 - [fix(deps): update dependency posthog-node from 5.8.1 to v5.8.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8354)
 - [fix(deps): update dependency pino from 9.9.1 to v9.9.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8352)
