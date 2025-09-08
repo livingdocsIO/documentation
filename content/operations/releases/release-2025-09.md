@@ -54,15 +54,6 @@ systemRequirements:
       version: Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78
 ---
 
-## PRs to Categorize
-
-- -> Marc B. (No Backport) [Fix indexes of documents, support legacy channel and archived content type deletion](https://github.com/livingdocsIO/livingdocs-server/pull/8298)
-- -> Marc B. (No Backport) [Add publicApi.minimumApiVersion to server configuration to allow serving only newer api versions](https://github.com/livingdocsIO/livingdocs-server/pull/8290)
-- -> Marc B. (No Backport)[ESM example](https://github.com/livingdocsIO/livingdocs-server/pull/8293)
-- -> Marc B.(No Backport) [Remove lock routes & controller & other small maintenance](https://github.com/livingdocsIO/livingdocs-server/pull/8187)
-- -> Robin (No Backport) [Authenticate /media-library/:id/download editing API endpoint](https://github.com/livingdocsIO/livingdocs-server/pull/7981)
-- -> Alex (No Backport) [Set media as `publishedInDocument` when scheduling a publication](https://github.com/livingdocsIO/livingdocs-server/pull/8194)
-
 To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-september-2025).
 To learn about the necessary actions to update Livingdocs to `release-2025-09`, read on.
 
@@ -115,7 +106,7 @@ livingdocs-server migrate up
 
 ### After the deployment
 
-No post-deployment steps are required after rolling out this release. // TODO
+TODO: Add livingdocs-server release-2025-09-delete-old-channels helper to delete secondary channels and documents. Documents of secondary channels have not been accessible anymore, so a deletion won't affect other systems.
 
 ### Rollback
 
