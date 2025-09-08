@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency eslint-plugin-jsdoc from 54.5.0 to v54.7.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8367)
 
 - [chore(deps): update dependency eslint from 9.34.0 to v9.35.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10271)
 - [fix(deps): update dependency pino from 9.9.2 to v9.9.4 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8361)
