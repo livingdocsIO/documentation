@@ -122,6 +122,7 @@ No post-deployment steps are required after rolling out this release. // TODO
 If you encounter any issues after the deployment, you can rollback to the previous release. If you have already run the migrations and they have completed, you can rollback to the previous release by running the commands below. The processes will continue to run even if those down migrations are not executed, but to ensure consistency, please run those after doing a rollback.
 
 ```sh
+# File names can also be ommited
 livingdocs-server migrate down 213-add-media-library-permissions.js
 livingdocs-server migrate down 214-remove-unused-tables-and-improve-document-deletion.js
 livingdocs-server migrate down 215-update-document-publications-columns.js
