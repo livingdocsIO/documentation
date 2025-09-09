@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Correctly register opentelemetry span processor](https://github.com/livingdocsIO/livingdocs-server/pull/8371)
 - [chore(deps): update dependency eslint-plugin-jsdoc from 54.5.0 to v54.7.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8367)
 
 - [chore(deps): update dependency eslint from 9.34.0 to v9.35.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10271)
