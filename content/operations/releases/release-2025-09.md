@@ -233,6 +233,132 @@ Note: if system notifications are disabled, or when sharing your screen in a vid
 
 ### Media Center: Improved Image Overview & Display of Metadata
 
+When searching for and selecting images for an article, users want to have the most important information at hand and optionally see more metadata that is relevant for picking the right picture.
+
+{{< img src="./release-2025-09-media-library-card-without-metadata.png" alt="Image cards showing a title, date, credit line, but no additional metadata" >}}
+
+#### Additional metadata
+
+Formerly, we already supported the display of additional metadata in media library cards, but it was sometimes hard to read when too many metadata properties were displayed as a single string. While the configuration for the additional metadata remains the same, we changed the presentation of it.
+
+Each metadata property shows up as an individual bullet point, where label and value differ in their font weight. Properties with missing values remain visible as bullet points, which improves consistency when looking through results.
+
+By default, additional metadata is no longer displayed! Users have to switch it on via the "Show metadata" control in the filter bar. The choice is remembered in local storage. 
+
+{{< img src="./release-2025-09-media-library-card-with-metadata.png" alt="Image cards showing a title, date, credit line, and additional metadata" >}}
+
+
+#### Card title
+
+We allow the title to take up to three lines of text before we truncate it. Additionally, you no longer have to name your metadata property `title` or `caption`. We still look in there by default to display the title, but you can now also provide a mapping configuration yourself (see an example configuration further down).
+
+#### Card date
+
+By default, we're showing the date when an image was uploaded or imported next to the image. In some cases, it might be more suitable to show the date when the photo was taken. You can do that as well by providing a mapping configuration as well (see an example configuration further down).   
+
+#### Credit line
+
+Before this release, some customers were using the additional metadata configuration to show a credit line. As described above, the display of the additional metadata has changed, so we decided to introduce a dedicated spot in the card to display credit or copyright information. 
+It is now possible to provide a mapping configuration for the credit line independent of other displayed metadata information (see an example configuration further down).
+
+#### Configuring the media library card
+
+In the editor config, you have the possibility to define multiple `dashboardCardConfigurations`. To make use of the new capabilities, please make sure to have an entry with `useCard: 'liMediaLibraryCard'`.
+
+We have added three new properties to `options.title`, `options.date` and `options.credit`. All of them are optional, and if not provided, the behavior remains the same as before.
+The three new options support the same metadata mapping rules that are already known from [directive prefilling]({{< ref "/reference/project-config/editor-settings/#component-directives-prefilling" >}}). Each option accepts an array of mapping rules. A rule can point to a metadata property by name, or it can use a template string where multiple metadata properties are accessible.
+A rule applies if all referenced properties exist and store a non-empty string value. Otherwise, we evaluate the next rule.
+
+While the above-mentioned new options are limited to string values, the existing option `addtionalInformation` has been extended to support more metadata plugin types than before.
+In addition to `li-text` and `li-document-reference`, we have added support for:
+
+- `li-integer`
+- `li-boolean`
+- `li-date`
+- `li-date-time`
+- `li-enum`
+- `li-string-list`
+- `li-media-handle`
+
+```js
+module.exports = {
+  // ...
+  dashboardCardConfigurations: [
+    {
+      handle: 'myImageCard',
+      useCard: 'liMediaLibraryCard',
+      options: {
+        // Added in release-2025-09
+        // Optional, with template and fallback support.
+        // Defaults to metadata.title and metadata.caption.
+        title: [
+          {
+            type: 'template',
+            template: '«{{metadata.title}}»'
+          }
+        ],
+        // Added in release-2025-09
+        // Defaults to mediaLibraryEntry.createdAt.
+        date: [
+          {metadataPropertyName: 'capturedAt'}
+        ],
+        // Added in release-2025-09
+        // Optional, with template and fallback support.
+        // No default.
+        credit: [
+          {metadataPropertyName: 'CopyrightNotice'},
+          {metadataPropertyName: 'rightsInfo/copyrightNotice'},
+          {
+            type: 'template',
+            template: '{{metadata.CopyrightOwner}} / {{metadata.Creator}}'
+          }
+        ],
+        // Existing option
+        // No template and fallback support.
+        // All properties are displayed regardless of their presence in the metadata.
+        additionalInfo: [
+          {metadataPropertyName: 'description'},
+          {metadataPropertyName: 'UsageTerms'}
+        ]
+      }
+    }
+  ]
+}
+```
+#### Media Handle
+
+When looking at a series of similar images, they can be hard to distinguish based on the visible information. By providing a visually recognizable and unique identifier, it becomes easier to communicate and locate a particular image.
+
+If a media library entry has a `li-media-handle` metadata property, that value appears as a tag alongside the image. The tag also appears in metadata forms and is not editable by users.
+
+By default, and if the property does not hold a value, we display the ID of the media library entry. However, it is possible to set a value yourself using the Import API or Command API. In that case, you have to ensure yourself that the ID you provide is unique within the system, otherwise users searching for the media handle would be served with multiple results. We do not check for uniqueness when storing a value.
+For the search to work, you have to enable indexing of the metadata property.
+
+{{< img src="./release-2025-09-media-handle-card.png" alt="Image cards with a media handle tag." >}}
+{{< img src="./release-2025-09-media-handle-metadata.png" alt="Metadata form with a li-media-handle property." >}}
+
+```js
+module.exports = {
+  type: 'mediaImage',
+  handle: 'image',
+  // ...
+  metadata: [
+    {
+      handle: 'mediaHandle',
+      type: 'li-media-handle',
+      config: {
+        index: true
+      },
+      ui: {
+        lable: 'Image ID'
+      }
+    }
+  ]
+}
+```
+
+
+
 ### Media Center: Access Control per Media Type
 
 ### Media Center: Support Several Image Media Types
