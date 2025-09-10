@@ -652,6 +652,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+- [v119.3.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.24): fix(upload-center): Prevent select all error when configs are undefined
 - [v119.3.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.23): fix: Remove angular-sanitize
 - [v119.3.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.22): fix(comments): Improve comment to component alignment on load
 - [v119.3.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.21): fix: Patch vulnerable dependencies
