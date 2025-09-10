@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @azure/identity from 4.11.1 to v4.11.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8377)
 - [Correctly register opentelemetry span processor](https://github.com/livingdocsIO/livingdocs-server/pull/8371)
 - [chore(deps): update dependency eslint-plugin-jsdoc from 54.5.0 to v54.7.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8367)
 
