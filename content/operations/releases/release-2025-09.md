@@ -292,6 +292,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+- [v119.14.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.7): fix(upload-center): Prevent select all error when configs are undefined
 - [v119.14.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.6): fix(metadata): Check permission using uploadMediaType
 
 - [v119.14.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.5): fix: Remove angular-sanitize
