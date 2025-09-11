@@ -1042,6 +1042,49 @@ See [Media Type]({{< ref "/reference/project-config/media-types.md" >}}) documen
 
 You can configure the card used to show results in dashboards. You do this by configuring your own dashboard card in the project config under `editorSettings.dashboardCardConfigurations` and then define this card per mediaType as you please.
 
+#### Additional metadata
+Available as option for `liMediaLibraryCard`.
+
+Each metadata property shows up as an individual bullet point, where label and value differ in their font weight. Properties with missing values remain visible as bullet points, which improves consistency when looking through results.
+
+Supported plugin types in `additionalInfo`:
+
+- `li-text`
+- `li-document-reference`
+- `li-integer` ({{< added-in "release-2025-09" >}})
+- `li-boolean` ({{< added-in "release-2025-09" >}})
+- `li-date` ({{< added-in "release-2025-09" >}})
+- `li-date-time` ({{< added-in "release-2025-09" >}})
+- `li-enum` ({{< added-in "release-2025-09" >}})
+- `li-string-list` ({{< added-in "release-2025-09" >}})
+- `li-media-handle` ({{< added-in "release-2025-09" >}})
+
+Since {{< release "release-2025-09" >}}, additional metadata is no longer displayed by default! Users have to switch it on via the "Show metadata" control in the filter bar. The choice is remembered in local storage.
+
+#### Card title ({{< added-in "release-2025-09" >}})
+
+Available as option for `liMediaLibraryCard`.
+
+We allow the title to take up to three lines of text before we truncate it. Additionally, you no longer have to name your metadata property `title` or `caption`. We still look in there by default to display the title, but you can now also provide a mapping configuration yourself (see an example configuration further down).
+
+#### Card date ({{< added-in "release-2025-09" >}})
+
+Available as option for `liMediaLibraryCard`.
+
+By default, we're showing the date when an image was uploaded or imported next to the image. In some cases, it might be more suitable to show the date when the photo was taken. You can do that as well by providing a mapping configuration as well (see an example configuration further down).
+
+#### Credit line ({{< added-in "release-2025-09" >}})
+
+Available as option for `liMediaLibraryCard`.
+
+Some customers were using the additional metadata configuration to show a credit line. As described above, the display of the additional metadata has changed, so we decided to introduce a dedicated spot in the card to display credit or copyright information.
+It is now possible to provide a mapping configuration for the credit line independent of other displayed metadata information (see an example configuration further down).
+
+#### Example Card Configurations
+
+For `liMediaLibraryCard`, the options `title`, `date` and `credit` support the same metadata mapping rules that are already known from [directive prefilling]({{< ref "/reference/project-config/editor-settings/#component-directives-prefilling" >}}). Each option accepts an array of mapping rules. A rule can point to a metadata property by name, or it can use a template string where multiple metadata properties are accessible.
+A rule applies if all referenced properties exist and store a non-empty string value. Otherwise, we evaluate the next rule.
+
 ```js
 // projectConfig.editorSettings
 
@@ -1050,11 +1093,37 @@ dashboardCardConfigurations: [
     handle: 'myImageCard',
     useCard: 'liMediaLibraryCard',
     options: {
-      // will make the card show the credit information from the metadata of the mediaLibraryEntry
-      additionalInfo: [
+      // Added in release-2025-09
+      // Optional, with template and fallback support.
+      // Defaults to metadata.title and metadata.caption.
+      title: [
         {
-          metadataPropertyName: 'credit'
+          type: 'template',
+          template: '«{{metadata.title}}»'
         }
+      ],
+      // Added in release-2025-09
+      // Defaults to mediaLibraryEntry.createdAt.
+      date: [
+        {metadataPropertyName: 'capturedAt'}
+      ],
+      // Added in release-2025-09
+      // Optional, with template and fallback support.
+      // No default.
+      credit: [
+        {metadataPropertyName: 'CopyrightNotice'},
+        {metadataPropertyName: 'rightsInfo/copyrightNotice'},
+        {
+          type: 'template',
+          template: '{{metadata.CopyrightOwner}} / {{metadata.Creator}}'
+        }
+      ],
+      // Existing option
+      // No template and fallback support.
+      // All properties are displayed regardless of their presence in the metadata.
+      additionalInfo: [
+        {metadataPropertyName: 'description'},
+        {metadataPropertyName: 'UsageTerms'}
       ]
     }
   },
