@@ -141,6 +141,11 @@
         {{ print "```js\n{\n  handle: 'myContentType',\n  // ...\n  metadata: [\n    {\n" .Params.contentTypeConfig "    }\n    // ...\n  ]\n}" | .Page.RenderString }}
       {{ end }}
 
+      {{ if .Params.mediaTypeConfig }}
+        <h2>Media Type Config</h2>
+        {{ print "```js\n{\n  handle: 'myMediaType',\n  // ...\n  metadata: [\n    {\n" .Params.mediaTypeConfig "    }\n    // ...\n  ]\n}" | .Page.RenderString }}
+      {{ end }}
+
       {{ if .Params.includeConfig }}
         <h2>Include Config</h2>
         {{ print "```js\n{\n  name: 'myInclude',\n  paramsSchema: [\n    {\n" .Params.includeConfig "    }\n  ]\n}" | .Page.RenderString }}
