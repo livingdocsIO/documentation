@@ -235,9 +235,74 @@ Note: if system notifications are disabled, or when sharing your screen in a vid
 
 ### Media Center: Access Control per Media Type
 
+The Media Center now supports granular access control permissions per media type, similar to the existing document content type permissions. Groups can be granted specific permissions (create, read, update, revoke, delete) for individual media types like images, videos, or files, allowing for more precise content management workflows.
+
+Permissions are configured in user groups and can be set per media type handle (e.g., `image`, `video`, `file`) for each media library operation.
+
+{{< img src="./release-2025-09-media-center-access-control.png" alt="News Agency Notification Settings" >}}
+
+This enables scenarios such as:
+
+- Restricting certain user groups to only upload and manage video content
+- Allowing read-only access to specific media types for review workflows
+- Granting full permissions on images while limiting file access to specific teams
+
+A database migration automatically adds all media type permissions to existing groups to maintain backwards compatibility. However, when creating new media types after the upgrade, permissions will not be automatically granted and must be explicitly configured for each group.
+
 ### Media Center: Support Several Image Media Types
 
+Content types can now restrict which image media types are allowed for upload, drag & drop, and selection. This enables differentiation between regular photos and specialized content like infographics, allowing different workflows, metadata sets, and dashboards for each image type.
+
+Use cases include:
+
+- Restricting regular articles to only allow actual photos via drag & drop and image selection
+- Enabling specialized content types (like infographic articles) to only work with specific media types
+- Separating workflows for different image types with distinct metadata and permissions
+
+Configure allowed media types in the content type's editor configuration:
+
+```js
+{
+  handle: 'infographic-article',
+  documentType: 'article',
+  editor: {
+    images: {
+      mediaTypes: ['infographic']
+    }
+  }
+  // ... rest of content type config
+}
+```
+
+When configured, the system restricts image operations (upload, drag & drop, media library selection) to only the specified media types for that content type.
+
 ### Target Length
+
+The Target Length system metadata plugin now displays automatic unit conversion next to the exact number input field when the `unit` config is set to an array containing both `characters` and `lines`. The `steps` value needs to be always in `characters`.
+
+```js
+{
+  handle: 'targetLength',
+  type: 'li-target-length',
+  ui: {
+    config: {
+      showExactCountCheckbox: true,
+      unit: ['characters', 'lines'],  // Enables unit selection and conversion display
+      steps: [
+        {
+          label: {en: 'S'},
+          value: 100
+        },
+        {
+          label: {en: 'M'},
+          value: 200
+        },
+        // ...
+      ]
+    }
+  }
+}
+```
 
 ### History View: Add unpublish Info
 

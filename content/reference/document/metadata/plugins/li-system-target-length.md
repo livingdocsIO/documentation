@@ -22,6 +22,8 @@ support:
   planningSystem: false
 description: |
   This plugin is used to provide a suggested total character count for the text in the document.
+
+  {{< added-in "release-2025-09" >}} When the `unit` config is set to an array containing both `characters` and `lines`, the plugin displays automatic unit conversion next to the input field (e.g., "~ 125 lines" or "~ 10,000 characters"). The `steps` value must always be in characters when using this feature.
 defaultUI: |
   **Input**: Number input, or slider if `steps` are defined.
 
@@ -53,6 +55,8 @@ contentTypeConfig: |2
             allowAnyNumber: true,
             // optional, default: 'characters' {{< added-in "release-2025-07" >}}
             unit: 'lines', 
+            // or use an array for unit conversion display {{< added-in "release-2025-09" >}}
+            unit: ['characters', 'lines'],
             // optional, {{< added-in "release-2025-07" >}}
             showExactCountCheckbox: true
           }

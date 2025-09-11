@@ -133,7 +133,13 @@ contentTypes: [
           icon: 'link-variant',
           label: 'Publish link'
         }
-      ]
+      ],
+
+      // {{< added-in "release-2025-09" >}}
+      // Restrict image operations to specific media types for this content type
+      images: {
+        mediaTypes: ['image', 'infographic']
+      }
     },
 
     // if enabled is true this content-type will use the WoodWing
@@ -543,6 +549,27 @@ You may set a `contentType` specific sourcePolicy here.
 
 The above example disables direct image uploads to Livingdocs and allows only the external image DAM hugo.
 
+## Image Media Type Restrictions
+
+{{< added-in "release-2025-09" >}}
+
+You can restrict image operations (upload, drag & drop, media library selection) to specific media types for each content type using the `editor.images.mediaTypes` configuration.
+
+```js
+{
+  handle: 'article',
+  editor: {
+    images: {
+      mediaTypes: ['image', 'infographic']
+    }
+  }
+}
+```
+
+When configured, this content type will only allow image operations using the specified media types. This is useful when different content types have specific image workflow requirements (e.g., articles might use regular images while galleries might use high-resolution photography media types).
+
+If not configured, all image media types are allowed (default behavior).
+
 ## Teaser Previews
 
 You can configure teaser previews for this content-type that are displayed on the publish panel, e.g. how an article will look like when referenced from the start page. This is useful for your editors to see the provided metadata in the real, visual context.
@@ -781,6 +808,7 @@ The print options allow you to enable the WoodWing Studio print connector on a c
 ## Document Inbox
 
 ### Changelog
+
 - {{< release "release-2024-09" >}}: The inbox feature allows document and media references to be assigned to another document. Before, only media library entries could be sent to an inbox.
 - {{< release "release-2025-03" >}}: Images can be organized in groups too, and they can be assigned to the same inbox multiple times.
 - {{< release "release-2025-03" >}}: Removed support for videos and files in inbox.
