@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency eslint-plugin-jsdoc from 55.1.2 to v55.4.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8384)
 - [Fix `vue-template-compiler` security issue](https://github.com/livingdocsIO/livingdocs-editor/pull/10273)
 - [Prevent upload center select all error when metadata config properties are undefined](https://github.com/livingdocsIO/livingdocs-editor/pull/10266)
 - [Check permission in li-image metadata form using uploadMediaType to prevent error trying to access the workspace](https://github.com/livingdocsIO/livingdocs-editor/pull/10265)
