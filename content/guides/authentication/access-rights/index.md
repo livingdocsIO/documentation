@@ -19,3 +19,17 @@ Livingdocs has scopes and policies which define granular system level access con
 Users inherit the permission of the specific groups they get assigned to.
 
 All permissions are additive, so if a user is in two groups, the user will have the permissions of both groups.
+
+### Media Type Access Control
+
+{{< added-in "release-2025-09" >}}
+
+Similar to document content type permissions, groups can be granted specific permissions for individual media types in the Media Center. This allows for granular control over media library operations per media type (e.g., `image`, `video`, `file`).
+
+Available media type actions:
+
+- **create** - Create new media entries
+- **read** - View media entries
+- **update** - Edit media entries
+- **revoke** - Revoke/unpublish media entries
+- **delete** - Delete media entries
