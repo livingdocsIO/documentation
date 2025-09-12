@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Axios is vulnerable to DoS attack through lack of data size check - https://github.com/advisories/GHSA-4hjh-wcwx-xvwj](https://github.com/livingdocsIO/livingdocs-server/pull/8389)
 - [Expose media library asset changes in server events](https://github.com/livingdocsIO/livingdocs-server/pull/8387)
 - [chore(deps): update dependency eslint-plugin-jsdoc from 55.1.2 to v55.4.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8384)
 - [Fix `vue-template-compiler` security issue](https://github.com/livingdocsIO/livingdocs-editor/pull/10273)
