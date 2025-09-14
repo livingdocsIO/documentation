@@ -166,10 +166,78 @@ But all three endpoints still support the old logic in v1 to 2025-05:
 
 ### Open Telemetry
 
-- Property `jaegerExporter` has been deprecated. Please use properties `serviceName` and `tracing.exporter`.
-- Properties `metrics.enableCollectorMetricExporter` and `collectorMetricExporter` have been deprecated. Please use property `metrics.exporter`.
+We've upgraded opentelemetry to fix some integration integrations.
+At the same time we've simplified the configuration. For backwards compatibility the old config is still supported.
 
-### require('@livingdocs/server/lib/db')
+The two major changes are how the trace and metrics opentelemetry exporters are configured.
+The prometheus `/metrics` endpoint is not affected by those changes.
+
+- The server config `telemetry.jaegerExporter` has been deprecated. Please use the properties `telemetry.serviceName` and `telemetry.tracing.exporter`.
+- The server config `telemetry.metrics.enableCollectorMetricExporter` and `telemetry.collectorMetricExporter` have been deprecated. Please use property `telemetry.metrics.exporter`.
+
+```diff
+ {
+   // Previously that config was on jaegerExporter.serviceName, but basically not related to the jaeger exporter
+   // We still have fallbacks from the old config
++  serviceName: '@livingdocs/server',
+
+   // Tracing
+   tracing: {
+     enabled: true,
++    exporter: {
++      // Available options: 'jaeger' (deprecated), 'otlp-http', 'otlp-proto', 'otlp-grpc'
++      //   jaeger maps to '@opentelemetry/exporter-jaeger'
++      //   otlp-http maps to '@opentelemetry/exporter-trace-otlp-http'
++      //   otlp-proto maps to '@opentelemetry/exporter-trace-otlp-proto'
++      //   otlp-grpc maps to '@opentelemetry/exporter-trace-otlp-grpc'
++      // The preferred exporter is @opentelemetry/exporter-trace-otlp-grpc
++      type: 'otlp-grpc'
++      config: {
++        url: 'http://localhost:4317'
++      }
++      // If jaegerExporter was present on the telemetry config, we take it over onto that object
++      // those configs are jaeger specific. With the otlp providers you should use config: {url: 'http://localhost:port'}
++      // type: 'jaeger',
++      // config: {
++      //   endpoint: 'http://localhost:14268/api/traces'
++      // }
++    }
+   },
+
+-  // Moved to tracing.exporter, for backwards compatibility this is still supported
+-  jaegerExporter: {
+-    serviceName: serviceName,
+-    host: 'localhost',
+-    port: 6832
+-  },
+
+  // Metrics
+   metrics: {
+     enabled: true,
+     collectDefaultMetrics: true,
+-    // Moved to metrics.exporter, for backwards compatibility this is still supported
+-    enableCollectorMetricExporter: false,
++    exporter: {
++      // Available options: 'otlp-http', 'otlp-proto', 'otlp-grpc'
++      //   otlp-http maps to '@opentelemetry/exporter-metrics-otlp-http'
++      //   otlp-proto maps to '@opentelemetry/exporter-metrics-otlp-proto'
++      //   otlp-grpc maps to '@opentelemetry/exporter-metrics-otlp-grpc'
++      // If enableCollectorMetricExporter is configured, the collectorMetricExporter object is taken as config
++      // With the otlp providers you should use config: {url: 'http://localhost:port'}
++      type: 'otlp-grpc'
++      config: {
++        url: 'http://localhost:4317'
++      }
++    }
+   },
+-  // This config moved to metrics.exporter similar like with the telemetry config
+-  collectorMetricExporter: {
+-    serviceName: serviceName // Taken from package.json
+-  }
+}
+```
+
+### Database connection using require('@livingdocs/server/lib/db')
 
 Accessing a database connection by '@livingdocs/server/lib/db' logs the deprecation `LIDEP057`.
 Please execute queries using `liServer.db.sql` if really necessary.

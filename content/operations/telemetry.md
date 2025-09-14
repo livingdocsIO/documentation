@@ -20,7 +20,13 @@ If the Livingdocs server is running in a Docker container on the same server the
   // Basic telemetry config
   telemetry: {
     tracing: {
-      enabled: true
+      enabled: true,
+      exporter: {
+        type: 'otlp-grpc',
+        config: {
+          url: 'http://localhost:4317'
+        }
+      }
     }
   }
 }
@@ -44,7 +50,12 @@ On some systems it might not be possible for Prometheus to scrape the metrics en
     ... // Existing telemetry parameters
 
     metrics: {
-      enableCollectorMetricExporter: true
+      exporter: {
+        type: 'otlp-grpc', // one of otlp-grpc, otlp-http or otlp-proto
+        config: {
+          url: 'http://localhost:4317'
+        }
+      }
     }
   }
 }
@@ -56,31 +67,31 @@ The `telemetry` object in the [server configuration]({{< ref "/customising/serve
 
 ```js
 {
+  serviceName: 'livingdocs-server', // defaults to the name in the package.json
+
   // Tracing
   tracing: { // Tracing configuration used within livingdocs-server
-    disableEverything: false,
-    enabled: false
-  },
-  jaegerExporter: { // Config forwarded to @opentelemetry/exporter-jaeger JaegerExporter
-    serviceName: serviceName // Taken from package.json
+    enabled: true, // defaults to false
+    exporter: {
+      type: 'otlp-grpc', // one of jaeger, otlp-grpc, otlp-http or otlp-proto
+      config: {
+        url: 'http://localhost:4317'
+      }
+    }
   },
 
   // Metrics
   metrics: { // Metrics configuration used within livingdocs-server
-    enabled: true,
+    enabled: true, // defaults to true
+    port: undefined, // if no port is defined, we expose metrics on the default http server port
     collectDefaultMetrics: true,
-    defaultMeterName: serviceName, // Taken from package.json
-    enableCollectorMetricExporter: false,
-    port: undefined
-  },
-  collectorMetricExporter: { // Config forwarded to @opentelemetry/exporter-collector CollectorMetricExporter
-    serviceName: serviceName // Taken from package.json
-  },
-  prometheusExporter: { // Config forwarded to @opentelemetry/exporter-prometheus PrometheusExporter
-    preventServerStart: true
-  },
-  meterProvider: { // Config forwarded to @opentelemetry/metrics MeterProvider
-    interval: 5000
+    defaultMeterName: serviceName, // defaults to the name in the package.json
+    exporter: {
+      type: 'otlp-grpc', // one of jaeger, otlp-grpc, otlp-http or otlp-proto
+      config: {
+        url: 'http://localhost:4317'
+      }
+    }
   }
 }
 ```

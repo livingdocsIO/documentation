@@ -386,12 +386,7 @@ import: {
   jobs: {
     batchSize: 1000,
     maxRetries: 10,
-    concurrency: 10,
-    retryDelay: 1000,
-    maxCpu: 80,
-    documentDailyLimit: 0,
-    imageDailyLimit: 0,
-    videoDailyLimit: 0
+    concurrency: 10
   },
   // In the public API "POST api/{{< api-version >}}/import/documents" one can pass a Webhook URI to notify the importing system when the import job is done
   // Default is a POST request to the importing system
