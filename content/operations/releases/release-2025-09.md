@@ -106,7 +106,17 @@ livingdocs-server migrate up
 
 ### After the deployment
 
-TODO: Add livingdocs-server release-2025-09-delete-old-channels helper to delete secondary channels and documents. Documents of secondary channels have not been accessible anymore, so a deletion won't affect other systems.
+In `release-2025-07`, we've removed support for multiple channels within a project.
+With the previous release the content of secondary channels isn't accessible anymore.
+
+Therefore we've added a new cli command to delete those secondary channels and their content (also archived content types it had).
+To clean up that content, you can execute `livingdocs-server release-2025-09-delete-old-channels`.
+
+Additionally, we've added support to delete archived content types.
+You might also want to run that command: `livingdocs-server content-types-delete-archived`
+
+Both commands only delete content that wasn't accessible anymore in the system.
+Therefore there is no change in functionality if you execute them.
 
 ### Rollback
 
