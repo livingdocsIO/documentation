@@ -2,7 +2,8 @@ title: Get Latest Draft
 endpointId: latest-draft
 
 apiVersionConstraints:
-  gte: 2025-09
+  gte: 2025-03
+  lt: 2025-09
 
 history:
   - release: release-2022-03
@@ -12,7 +13,7 @@ history:
   - release: release-2025-03
     description: Support for top-level property `references` in version `2025-03`
   - release: release-2025-09
-    description: Support for the `renditions` query string got removed. An error is reported if used.
+    description: The `renditions` query string is deprecated and logs a warning when used
 
 description: |
   This endpoint returns the most recent draft version of a document.
@@ -23,6 +24,7 @@ description: |
   - metadata
   - content
   - references
+  - renditions (deprecated)
 
 useCases: |
   - Automation: Fetch draft, modify draft with an external system, update a draft via [Document Command API]({{< ref "/reference/public-api/document-command-api" >}})
@@ -42,6 +44,11 @@ parameters:
     type: integer
     required: true
     notes: ''
+  - name: ?renditions
+    type: string
+    required: false
+    notes: |
+      A comma-separated list of rendition handles. Example: `?renditions=web,json`
   - name: ?ignoreComponentConditions
     type: boolean
     required: false
@@ -125,7 +132,13 @@ responses:
             "groupId": "KjqXSj2P1-L0"
           },
           "title": "Draft (Changed)"
-        }
+        },
+        "renditions": [
+          {
+            "handle": "web",
+            // ...
+          }
+        ]
       }
 
 openapi:
@@ -142,13 +155,22 @@ openapi:
     scope:** `public-api:write` `public-api:drafts:read`\n\nThis endpoint returns
     the most recent draft version of a document. A token with permission The response
     is a JSON object with 5 possible top-level properties: \n- systemdata \n-
-    metadata \n- content \n- references"
+    metadata \n- content \n- references \n- renditions (if rendition handles are
+    specified)"
   parameters:
     - name: documentId
       schema:
         type: integer
       in: path
       required: true
+    - name: renditions
+      description: 'A comma-separated list of rendition handles. Example: `?renditions=web,json`'
+      schema:
+        type: string
+      examples:
+        renditions:
+          value: web,json
+      in: query
     - name: ignoreComponentConditions
       description: Provides a way to opt out of component filtering and return all content regardless of whether each component passes the conditional checks.
       in: query
@@ -179,6 +201,8 @@ openapi:
                 '$ref': '#/components/schemas/Metadata'
               content:
                 '$ref': '#/components/schemas/Content'
+              renditions:
+                '$ref': '#/components/schemas/Renditions'
               references:
                 '$ref': '#/components/schemas/References'
           examples:
@@ -223,3 +247,17 @@ openapi:
                     locale: de
                     groupId: KjqXSj2P1-L0
                   title: Draft (Changed)
+                renditions:
+                  - handle: web
+                    content: |-
+                      <div class="head">
+                        <h1>a title</h1>
+                        <p class="lead">some lead</p>
+                      </div>
+                      <figure class="aspect-ratio left">
+                        <img class="doc-image-empty" src="data:image/svg+xml;charset=UTF-8,…">
+                        <figcaption>my caption</figcaption>
+                      </figure>
+                      <p>first paragraph</p>
+                      <p>second</p>
+                      <p>and third one. :)</p>

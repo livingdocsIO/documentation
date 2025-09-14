@@ -121,14 +121,6 @@ livingdocs-server migrate down 215-update-document-publications-columns.js
 
 ## Breaking Changes 🔥
 
-### Renditions
-
-Renditions have been deprecated in Public API versions older than `2025-09`. In API version `2025-09` support for the following APIs has been dropped:
-
-- `/api/2025-09/documents/:documentId/latestPublication/renditions/:renditionHandles`
-- Query parameter `?renditions` in `/api/2025-09/documents/:documentId/latestDraft`
-- Query parameter `?renditions` in `/api/2025-09/documents/:documentId/latestPublication`
-
 ### Renaming of Table Dashboard Cells
 
 Since the following dashboard cells are now exclusive to the News Agency module, we have renamed them accordingly. They were first introduced in `release-2025-07` to support the needs of the News Agency module.
@@ -140,6 +132,27 @@ Since the following dashboard cells are now exclusive to the News Agency module,
 If you are using any of these dashboard cells, please update their names accordingly.
 
 ## Deprecations
+
+### `renditions` endpoints and query parameters in Public API
+
+Renditions have been deprecated in Public API versions older than `2025-09`.
+
+The following endpoint is no longer available in newer api versions anymore:
+
+❌ `GET` `/api/2025-09/documents/{documentId}/latestPublication/renditions/{renditionHandles}`
+
+The following endpoints don't support the `?renditions` query parameter anymore:
+
+❌ `GET` `/api/2025-09/documents/{documentId}/latestDraft?renditions=web`  
+❌ `GET` `/api/2025-09/documents/{documentId}/latestPublication?renditions`
+
+There's no replacement for renditions in livingdocs as all transforms should be done when aggregating content for your frontends.
+
+But all three endpoints still support the old logic in v1 to 2025-05:
+
+✅ `GET` `/api/2025-07/documents/{documentId}/latestPublication/renditions/{renditionHandles}`  
+✅ `GET` `/api/2025-07/documents/{documentId}/latestDraft?renditions=web`  
+✅ `GET` `/api/2025-07/documents/{documentId}/latestPublication?renditions`
 
 ### Open Telemetry
 
@@ -243,10 +256,9 @@ Formerly, we already supported the display of additional metadata in media libra
 
 Each metadata property shows up as an individual bullet point, where label and value differ in their font weight. Properties with missing values remain visible as bullet points, which improves consistency when looking through results.
 
-By default, additional metadata is no longer displayed! Users have to switch it on via the "Show metadata" control in the filter bar. The choice is remembered in local storage. 
+By default, additional metadata is no longer displayed! Users have to switch it on via the "Show metadata" control in the filter bar. The choice is remembered in local storage.
 
 {{< img src="./release-2025-09-media-library-card-with-metadata.png" alt="Image cards showing a title, date, credit line, and additional metadata" >}}
-
 
 #### Card title
 
@@ -254,11 +266,11 @@ We allow the title to take up to three lines of text before we truncate it. Addi
 
 #### Card date
 
-By default, we're showing the date when an image was uploaded or imported next to the image. In some cases, it might be more suitable to show the date when the photo was taken. You can do that as well by providing a mapping configuration as well (see an example configuration further down).   
+By default, we're showing the date when an image was uploaded or imported next to the image. In some cases, it might be more suitable to show the date when the photo was taken. You can do that as well by providing a mapping configuration as well (see an example configuration further down).
 
 #### Credit line
 
-Before this release, some customers were using the additional metadata configuration to show a credit line. As described above, the display of the additional metadata has changed, so we decided to introduce a dedicated spot in the card to display credit or copyright information. 
+Before this release, some customers were using the additional metadata configuration to show a credit line. As described above, the display of the additional metadata has changed, so we decided to introduce a dedicated spot in the card to display credit or copyright information.
 It is now possible to provide a mapping configuration for the credit line independent of other displayed metadata information (see an example configuration further down).
 
 #### Configuring the media library card
@@ -299,9 +311,7 @@ module.exports = {
         ],
         // Added in release-2025-09
         // Defaults to mediaLibraryEntry.createdAt.
-        date: [
-          {metadataPropertyName: 'capturedAt'}
-        ],
+        date: [{metadataPropertyName: 'capturedAt'}],
         // Added in release-2025-09
         // Optional, with template and fallback support.
         // No default.
@@ -325,6 +335,7 @@ module.exports = {
   ]
 }
 ```
+
 #### Media Handle
 
 When looking at a series of similar images, they can be hard to distinguish based on the visible information. By providing a visually recognizable and unique identifier, it becomes easier to communicate and locate a particular image.
@@ -356,8 +367,6 @@ module.exports = {
   ]
 }
 ```
-
-
 
 ### Media Center: Access Control per Media Type
 
@@ -473,6 +482,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v281.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.10): fix(deps): Axios is vulnerable to DoS attack through lack of data size check - https://github.com/advisories/GHSA-4hjh-wcwx-xvwj
 - [v281.3.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.9): fix(media-library): Expose asset changes in server events
 - [v281.3.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.8): fix(opentelemetry): Correctly register opentelemetry span processor
@@ -485,6 +495,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+
 - [v119.14.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.8): fix(deps): Migrate to vue-template-compiler-patched that has security issues fixed
 - [v119.14.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.7): fix(upload-center): Prevent select all error when configs are undefined
 - [v119.14.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.6): fix(metadata): Check permission using uploadMediaType

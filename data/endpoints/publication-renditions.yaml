@@ -3,6 +3,11 @@ title: Get Specific Renditions for a Publication
 history:
   - release: release-2024-03
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+  - release: release-2025-09
+    description: Deprecated the endpoint in all api versions, version 2025-09 does not include it anymore.
+
+apiVersionConstraints:
+  lt: 2025-09
 
 description: |
   With the Renditions Endpoint you can load different output formats of your publication like `RSS`, `XML`, `HTML` etc. Attention: A rendition is only available if the output format is configured in the [Content Type]({{< ref "/reference/project-config/content-types#renditions" >}}) configuration.

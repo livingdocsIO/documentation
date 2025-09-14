@@ -8,6 +8,8 @@ history:
   - release: release-2024-03
     version: v1
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+  - release: release-2025-09
+    description: The `renditions` query string is deprecated and logs a warning when used
 
 description: |
   The endpoint provides an unresolved Publication with 4 possible top-level properties:

@@ -10,6 +10,8 @@ history:
     description: Initial support
   - release: release-2024-03
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+  - release: release-2025-09
+    description: The `renditions` query string is deprecated and logs a warning when used
 
 deprecation:
   since: release-2025-03
@@ -194,6 +196,17 @@ openapi:
         application/json:
           schema:
             type: object
+            properties:
+              systemdata:
+                '$ref': '#/components/schemas/Systemdata'
+              metadata:
+                '$ref': '#/components/schemas/Metadata'
+              content:
+                '$ref': '#/components/schemas/Content'
+              references:
+                '$ref': '#/components/schemas/References'
+              renditions:
+                '$ref': '#/components/schemas/Renditions'
           examples:
             success:
               value:

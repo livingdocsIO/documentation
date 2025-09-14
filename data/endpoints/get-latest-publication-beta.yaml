@@ -11,6 +11,8 @@ history:
   - release: release-2023-09
     version: v1
     description: The type `documents` within `references` changed to `document` where every document id has a separate reference entry.
+  - release: release-2025-09
+    description: The `renditions` query string is deprecated and logs a warning when used
 
 deprecation:
   since: release-2025-03

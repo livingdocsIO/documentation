@@ -255,7 +255,7 @@ openapi:
   parameters:
     - name: fields
       description: Filters which (comma separated) properties are included in the
-        response. Defaults to `systemdata,metadata,content` (no renditions).
+        response. Defaults to `systemdata,metadata,content`.
       schema:
         type: string
       examples:

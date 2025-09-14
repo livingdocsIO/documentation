@@ -1,6 +1,6 @@
 title: Get Latest Publications
-
 endpointId: latest-publications
+
 apiVersionConstraints:
   gte: 2025-03
 
@@ -260,7 +260,7 @@ openapi:
   parameters:
     - name: fields
       description: Filters which (comma separated) properties are included in the
-        response. Defaults to `systemdata,metadata,content` (no renditions).
+        response. Defaults to `systemdata,metadata,content`.
       schema:
         type: string
       examples:
@@ -417,7 +417,7 @@ openapi:
                   '$ref': '#/components/schemas/Metadata'
                 content:
                   '$ref': '#/components/schemas/Content'
-                renditions:
+                references:
                   '$ref': '#/components/schemas/References'
           examples:
             success:

@@ -2,14 +2,15 @@ title: Get Latest Publication
 endpointId: get-latest-publication
 
 apiVersionConstraints:
-  gte: 2025-09
+  gte: 2025-03
+  lte: 2025-09
 
 history:
   - release: release-2024-03
     version: v1
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
   - release: release-2025-09
-    description: Support for the `renditions` query string got removed. An error is reported if used.
+    description: The `renditions` query string is deprecated and logs a warning when used
 
 description: |
   The endpoint provides an unresolved Publication with 5 possible top-level properties:
@@ -17,6 +18,7 @@ description: |
   - metadata
   - references
   - content
+  - renditions
 
   ##### Advantages
   - Be able to cache the response, because it only changes on a republish (does not contain resolved refs)
@@ -29,6 +31,7 @@ description: |
 useCases: |
   -  Load an unresolved Publication with the required information to render a document/page.
   -  Export the unresolved Publication to another system and get changes via [Publication Events]({{< ref "/reference/public-api/publications/publication-events" >}}) or [Webhooks]({{< ref "/reference/webhooks" >}})
+  -  (deprecated) Provides a Publication via a [Rendition]({{< ref "/reference/project-config/content-types#renditions" >}}) for a delivery in another format like `RSS`, `XML`
 
 scopes: public-api:read
 query: |
@@ -46,7 +49,15 @@ parameters:
   - name: ?fields
     type: string
     required: false
-    notes: 'Filters which (comma separated) properties are included in the response. Defaults to `systemdata,references,metadata,content`.'
+    notes: 'Filters which (comma separated) properties are included in the response. Defaults to `systemdata,metadata,content,references`.'
+  - name: ?renditions
+    type: string
+    required: false
+    notes: |
+      A comma-separated list of rendition handles.
+
+      Example: `?renditions=web,json`
+
   - name: ?ignoreComponentConditions
     type: boolean
     required: false
@@ -129,6 +140,65 @@ responses:
               "text": "second paragraph"
             }
           }
+        ],
+        "renditions": [
+          {
+            "handle": "web",
+            "content": "<div class=\"head\">\n  <h1>a title</h1>\n  <p class=\"lead\">some lead</p>\n</div>\n<figure class=\"aspect-ratio left\">\n  <img class=\"doc-image-empty\" src=\"data:image/svg+xml;charset=UTF-8,…\">\n  <figcaption>my caption</figcaption>\n</figure>\n<p>first paragraph</p>\n<p>second</p>\n<p> and third one. :)</p>"
+          },
+          {
+            "handle": "mobile",
+            "content": {
+              "content": [
+                {
+                  "id": "doc-1b8i1ksh10",
+                  "component": "head",
+                  "identifier": "timeline.head",
+                  "content": {
+                    "title": "a title",
+                    "text": "some lead"
+                  }
+                },
+                {
+                  "id": "doc-1b8i1ksh20",
+                  "component": "normal",
+                  "identifier": "timeline.normal",
+                  "content": {
+                    "caption": "my caption"
+                  },
+                  "styles": {
+                    "position": "left"
+                  }
+                },
+                {
+                  "id": "doc-1b8i1ksh30",
+                  "component": "p",
+                  "identifier": "timeline.p",
+                  "content": {
+                    "text": "first paragraph"
+                  }
+                },
+                {
+                  "id": "doc-1b8i1me1d0",
+                  "component": "p",
+                  "identifier": "timeline.p",
+                  "content": {
+                    "text": "second paragraph"
+                  }
+                }
+              ],
+              "design": {
+                "name": "timeline",
+                "version": "1.1.0"
+              }
+            }
+          },
+          {
+            "handle": "app",
+            "error": {
+              "message": "Processing of Channel 'app' for document '1' failed. Detailed error message…"
+            }
+          }
         ]
       }
 
@@ -141,7 +211,7 @@ openapi:
   operationId: getLatestPublicationForDocument
   summary: Latest Publication
   description: 'Required scope: public-api:read. The response is a JSON object
-    with 4 possible top-level properties: systemdata, references, metadata, content'
+    with 4 possible top-level properties: systemdata, metadata, content, renditions'
   parameters:
     - name: documentId
       schema:
@@ -150,12 +220,20 @@ openapi:
       required: true
     - name: fields
       description: Filters which (comma separated) properties are included in the
-        response. Defaults to `systemdata,references,metadata,content`.
+        response. Defaults to `systemdata,metadata,content,renditions`.
       schema:
         type: string
       examples:
         all:
-          value: systemdata,references,metadata,content
+          value: systemdata,metadata,content,renditions
+      in: query
+    - name: renditions
+      description: 'A comma-separated list of rendition handles. Example: ?renditions=web,json'
+      schema:
+        type: string
+      examples:
+        renditions:
+          value: web,json
       in: query
     - name: ignoreComponentConditions
       description: Provides a way to opt out of component filtering and return all content regardless of whether each component passes the conditional checks.
@@ -187,8 +265,8 @@ openapi:
                 '$ref': '#/components/schemas/Metadata'
               content:
                 '$ref': '#/components/schemas/Content'
-              references:
-                '$ref': '#/components/schemas/References'
+              renditions:
+                '$ref': '#/components/schemas/Renditions'
             examples:
               - systemdata:
                   projectId: 1
