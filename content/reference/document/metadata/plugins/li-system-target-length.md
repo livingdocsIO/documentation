@@ -9,6 +9,12 @@ history:
   - release: release-2025-05
     version: 2025-05
     description: Table dashboard support was added in the `2025-05` release.
+  - release: release-2025-07
+    version: 2025-07
+    description: Add `unit` and `showExactCountCheckbox` config support.
+  - release: release-2025-09
+    version: 2025-09
+    description: Support an array in the `unit` config to enable both selectors in the UI.
 support:
   document: true
   media: false
@@ -53,10 +59,13 @@ contentTypeConfig: |2
             ],
             // optional, allows the input of an exact number besides picking a step
             allowAnyNumber: true,
-            // optional, default: 'characters' {{< added-in "release-2025-07" >}}
-            unit: 'lines', 
-            // or use an array for unit conversion display {{< added-in "release-2025-09" >}}
-            unit: ['characters', 'lines'],
+            // Define whether the target size is measured in `characters` or `lines`.
+            // In case of `lines` the {{< a href="/reference/project-config/editor-settings/#text-count" title="lineCountFraction">}} needs to be defined because internally everything is stored in characters.
+            // Use a string with either 'characters' or 'lines' ({{< added-in "release-2025-07" >}})
+            //   unit: 'characters' (this is the default)
+            // Or or use an array for unit conversion display: ({{< added-in "release-2025-09" >}})
+            //   unit: ['characters', 'lines']
+            unit: 'lines',
             // optional, {{< added-in "release-2025-07" >}}
             showExactCountCheckbox: true
           }
