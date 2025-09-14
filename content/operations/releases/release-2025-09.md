@@ -466,6 +466,7 @@ This release we have patched the following vulnerabilities in the Livingdocs Ser
 - [CVE-2025-7783](https://github.com/advisories/GHSA-fjxv-7rqg-78g4) in `form-data`
 - [CVE-2025-7339](https://github.com/advisories/GHSA-76c9-3jph-rj3q) in `on-headers`
 - [CVE-2025-54798](https://github.com/advisories/GHSA-52f5-9888-hmc6) in `tmp`
+- [CVE-2025-58754](https://github.com/advisories/GHSA-4hjh-wcwx-xvwj) in `axios`
 
 No known vulnerabilities. :tada:
 
@@ -506,7 +507,6 @@ Here is a list of all patches after the release has been announced.
 - [v119.14.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.8): fix(deps): Migrate to vue-template-compiler-patched that has security issues fixed
 - [v119.14.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.7): fix(upload-center): Prevent select all error when configs are undefined
 - [v119.14.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.6): fix(metadata): Check permission using uploadMediaType
-
 - [v119.14.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.5): fix: Remove angular-sanitize
 - [v119.14.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.4): fix(comments): Improve comment to component alignment on load
 - [v119.14.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.3): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
