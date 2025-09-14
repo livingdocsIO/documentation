@@ -159,6 +159,13 @@ But all three endpoints still support the old logic in v1 to 2025-05:
 - Property `jaegerExporter` has been deprecated. Please use properties `serviceName` and `tracing.exporter`.
 - Properties `metrics.enableCollectorMetricExporter` and `collectorMetricExporter` have been deprecated. Please use property `metrics.exporter`.
 
+### require('@livingdocs/server/lib/db')
+
+Accessing a database connection by '@livingdocs/server/lib/db' logs the deprecation `LIDEP057`.
+Please execute queries using `liServer.db.sql` if really necessary.
+
+Do not use deep requires into the livingdocs codebase. If you have any special use case where this is needed, please let us know.
+
 ## Features
 
 ### News Agency Notifications
