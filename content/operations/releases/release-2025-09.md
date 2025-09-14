@@ -79,8 +79,6 @@ To learn about the necessary actions to update Livingdocs to `release-2025-09`, 
 
 ## Deployment
 
-TODO: Check Migrations
-
 ### Before the deployment
 
 No pre-deployment steps are required before rolling out this release.
@@ -92,13 +90,18 @@ No pre-deployment steps are required before rolling out this release.
 When you upgrade to this new release, please make sure to migrate your database first.
 At livingdocs we're running those two commands directly in an initContainer on kubernetes.
 
+All the migrations should execute quick and not lock write-heavy tables.
+
 ```sh
 # 213-add-media-library-permissions.js
-# TODO: explanation
+#   With the new media library permissions, users don't have write access by default once a new media type gets added.
+#   For that reason we need to grant those permissions to all the existing groups.
 # 214-remove-unused-tables-and-improve-document-deletion.js
-# TODO: explanation
+#   We've observed that there have been some indexes not set up properly which causes
+#   cascaded deletes of documents to take a really long time.
 # 215-update-document-publications-columns.js
-# TODO: explanation
+#   We've added unpublished_at and unpublished_by columns to the publications to
+#   properly visualize the unpublish information in the document history.
 
 # run `livingdocs-server migrate up` to update to the newest database schema
 livingdocs-server migrate up
