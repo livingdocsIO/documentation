@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Hide additional info toggle if nothing to show](https://github.com/livingdocsIO/livingdocs-editor/pull/10277)
 - [set create_date and change_date on retresco request data](https://github.com/livingdocsIO/livingdocs-server/pull/8396)
 - [Feat/li-button with Auto-Icon](https://github.com/livingdocsIO/livingdocs-editor/pull/10284)
 - [chore(deps): update dependency eslint-plugin-jsdoc from 55.4.0 to v57 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8401)
