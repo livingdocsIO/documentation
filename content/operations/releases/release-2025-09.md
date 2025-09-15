@@ -585,6 +585,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+- [v119.14.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.9): fix(media library): hide additional info toggle if nothing to show
 
 - [v119.14.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.8): fix(deps): Migrate to vue-template-compiler-patched that has security issues fixed
 - [v119.14.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.7): fix(upload-center): Prevent select all error when configs are undefined
