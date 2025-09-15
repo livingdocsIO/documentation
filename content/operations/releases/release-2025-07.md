@@ -656,6 +656,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+- [v119.3.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.26): fix(deps): update dependency axios from 1.10.0 to 1.12.0 [security]
 
 - [v119.3.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.25): fix(deps): Migrate to vue-template-compiler-patched that has security issues fixed
 - [v119.3.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.24): fix(upload-center): Prevent select all error when configs are undefined
