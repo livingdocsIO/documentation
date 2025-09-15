@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Feat/li-button with Auto-Icon](https://github.com/livingdocsIO/livingdocs-editor/pull/10284)
 - [chore(deps): update dependency eslint-plugin-jsdoc from 55.4.0 to v57 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8401)
 - [Axios is vulnerable to DoS attack through lack of data size check - https://github.com/advisories/GHSA-4hjh-wcwx-xvwj](https://github.com/livingdocsIO/livingdocs-server/pull/8389)
 - [Expose media library asset changes in server events](https://github.com/livingdocsIO/livingdocs-server/pull/8387)
