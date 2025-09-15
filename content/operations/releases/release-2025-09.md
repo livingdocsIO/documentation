@@ -571,6 +571,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v281.3.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.11): fix: set created_at and updated_at on retresco request data
 
 - [v281.3.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.10): fix(deps): Axios is vulnerable to DoS attack through lack of data size check - https://github.com/advisories/GHSA-4hjh-wcwx-xvwj
 - [v281.3.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.9): fix(media-library): Expose asset changes in server events
