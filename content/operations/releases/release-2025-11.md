@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix minor UI bugs discovered during release testing](https://github.com/livingdocsIO/livingdocs-editor/pull/10290)
 - [fix(deps): update dependency axios from 1.11.0 to 1.12.0 [security] (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10286)
 - [Hide additional info toggle if nothing to show](https://github.com/livingdocsIO/livingdocs-editor/pull/10277)
 - [set create_date and change_date on retresco request data](https://github.com/livingdocsIO/livingdocs-server/pull/8396)
