@@ -141,7 +141,7 @@ To configure OpenID in Azure Active Directory, you have to go follow the steps d
    {{< img src="5-copy-client-secret.png" alt="Copy client secret" >}}
 
 7. Create roles in the `App roles` section to assign users/groups to the app. Click on `+ Create app role` button to create a new role. Define a name, value and description for the role. In `Allowed member types`, choose `Users/Groups` to assign users or groups to this role. Finally, click `Apply` to create the role.
-   {{< img src="7-app-roles-app-registration.png" alt="Create app role in registered app" >}}
+   {{< img src="6-app-roles-app-registration.png" alt="Create app role in registered app" >}}
 
 8. To add users or groups to the app registration go to `Configure your organization`.
    {{< img src="7-open-config-organization.png" alt="Open 'Configure your organization' in registered app" >}}
