@@ -5,11 +5,11 @@ description: Learn how to setup SSO with the example of AzureAD.
 weight: 2
 ---
 
-## SSO example with Azure AD
+## SSO example with Microsoft Entra ID
 
-To use SSO with OpenID Connect we have a strategy `li-authentication-openid-connect` to use in the `auth.connections` config. With this strategy, you can use a SSO Service (AzureAD, Google, Facebook, ...) which supports the OpenID Connect for authentication.
+To use SSO with OpenID Connect we have a strategy `li-authentication-openid-connect` to use in the `auth.connections` config. With this strategy, you can use a SSO Service (Microsoft Entra ID, Google, Facebook, ...) which supports the OpenID Connect for authentication.
 
-To enable AzureAD SSO for Livingdocs, add the config below to the server config in `auth.connections`. It creates a setup for SSO with AzureAD and shows the button for that on the login page. It is also using the existing user from Livingdocs and create an AzureAD Identity. The already written articles with this user will still be assigned to the same user. The match of the user is done with the email address.
+To enable Microsoft Entra ID SSO for Livingdocs, add the config below to the server config in `auth.connections`. It creates a setup for SSO with Microsoft Entra ID and shows the button for that on the login page. It is also using the existing user from Livingdocs and create a Microsoft Entra ID Identity. The already written articles with this user will still be assigned to the same user. The match of the user is done with the email address.
 
 ```js
 const {nanoid} = require('nanoid')
@@ -34,13 +34,13 @@ module.exports = {
         registrationEnabled: false,
         autoRegistrationEnabled: false,
         connectionId: 'azure',
-        // Azure AD Issuer, replace the tenant with your tenant id
+        // Microsoft Entra ID Issuer, replace the tenant with your tenant id
         // example for google: https://accounts.google.com/.well-known/openid-configuration
         issuer: 'https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration',
         config: {
           clientId: azureConfig.clientId,
           clientSecret: azureConfig.clientSecret,
-          // Check `Configuring OpenID in Azure AD` section for a guide
+          // Check `Configuring OpenID in Microsoft Entra ID` section for a guide
           scope: 'openid email profile',
           async extractClaims({tokenSet}) {
             const claims = tokenSet.claims()
@@ -118,7 +118,7 @@ async function transferLocalIdentityToAzure(claims) {
 }
 ```
 
-## Configuring OpenID in Azure AD
+## Configuring OpenID Connect in Microsoft Entra ID
 
 To configure OpenID in Azure Active Directory, you have to go follow the steps depicted below.
 
@@ -143,8 +143,11 @@ To configure OpenID in Azure Active Directory, you have to go follow the steps d
 7. Go back to the registered app list (Azure Active Directory > App registrations) and choose the one you just created. Configure the claims used in the app registration in `Token configuration` section. You can specify AD group types and token used.
    {{< img src="6-configure-scopes.png" alt="Configure scopes in registered app" >}}
 
-8. To add users or groups to the app registration go to `Configure your organization`.
+8. Create roles in the `App roles` section to assign users/groups to the app. Click on `+ Create app role` button to create a new role. Define a name, value and description for the role. In `Allowed member types`, choose `Users/Groups` to assign users or groups to this role. Finally, click `Apply` to create the role.
+   {{< img src="7-app-roles-app-registration.png" alt="Create app role in registered app" >}}
+
+9. To add users or groups to the app registration go to `Configure your organization`.
    {{< img src="7-open-config-organization.png" alt="Open 'Configure your organization' in registered app" >}}
 
-9. Go to `Users and groups` on the sidebar. You should see `+ Add user/group` to add the users that need access to the app.
+10. Go to `Users and groups` on the sidebar. You should see `+ Add user/group` to add the users that need access to the app.
    {{< img src="8-users-and-groups.png" alt="Add users and groups in enterprise application" >}}
