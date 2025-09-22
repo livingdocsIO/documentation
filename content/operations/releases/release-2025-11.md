@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update aws-sdk from 3.884.0 to v3.893.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8385)
 - [fix(deps): update dependency posthog-node from 5.8.4 to v5.8.6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8413)
 - [fix(deps): update dependency sharp from 0.34.3 to v0.34.4 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8408)
 - [fix(deps): update dependency @livingdocs/framework from 32.10.0 to v32.10.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8405)
