@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency posthog-node from 5.8.6 to v5.8.8 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8422)
 - [Index documents without locale in their projects default locale](https://github.com/livingdocsIO/livingdocs-server/pull/8417)
 - [fix(deps): update dependency sass from 1.92.1 to v1.93.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10300)
 - [fix(deps): update aws-sdk from 3.884.0 to v3.893.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8385)
