@@ -587,6 +587,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+- [v119.14.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.13): fix(news-agency): review feedback
 - [v119.14.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.12): fix(news-agency): review feedback
 - [v119.14.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.11): fix: Close lightbox when opening details view
 - [v119.14.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.10): fix(deps): update dependency axios from 1.11.0 to 1.12.0 [security]
