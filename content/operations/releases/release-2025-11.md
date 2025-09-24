@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Disable auto reload on news agency screens when user loaded additional pages](https://github.com/livingdocsIO/livingdocs-editor/pull/10239)
 - [News Agency Improvements](https://github.com/livingdocsIO/livingdocs-server/pull/8412)
 - [News Agency Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/10298)
 - [fix(deps): update dependency sass from 1.93.1 to v1.93.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10305)
