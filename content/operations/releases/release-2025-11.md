@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency sass from 1.93.1 to v1.93.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10305)
 - [chore(deps): update dependency eslint-plugin-jsdoc from 60.1.1 to v60.2.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8427)
 - [Data migrations migrate scheduled publications](https://github.com/livingdocsIO/livingdocs-server/pull/8365)
 - [fix(deps): update dependency sass from 1.93.0 to v1.93.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10303)
