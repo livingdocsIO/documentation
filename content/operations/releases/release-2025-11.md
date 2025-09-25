@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency posthog-node from 5.8.8 to v5.9.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8434)
 - [fix(deps): update dependency on-change from 5.0.1 to v6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8430)
 - [Disable auto reload on news agency screens when user loaded additional pages](https://github.com/livingdocsIO/livingdocs-editor/pull/10239)
 - [News Agency Improvements](https://github.com/livingdocsIO/livingdocs-server/pull/8412)
