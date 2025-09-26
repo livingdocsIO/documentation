@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Remove in-text-linked=false from Retresco enrich URL when saving pods data](https://github.com/livingdocsIO/livingdocs-server/pull/8438)
 - [Allow nesting of items in rubrics tree](https://github.com/livingdocsIO/livingdocs-editor/pull/10318)
 - [Display news agency screen search results in the order they were created](https://github.com/livingdocsIO/livingdocs-editor/pull/10310)
 - [fix(deps): update dependency posthog-node from 5.8.8 to v5.9.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8434)
