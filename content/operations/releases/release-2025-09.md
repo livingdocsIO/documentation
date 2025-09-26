@@ -571,6 +571,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v281.3.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.14): fix(retresco): Remove in-text-linked=false from URL when saving pods
 - [v281.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.13): fix(news-agency): review feedback
 - [v281.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.12): fix: Index documents without locale in their projects default locale
 - [v281.3.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.11): fix: set created_at and updated_at on retresco request data
