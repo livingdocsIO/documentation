@@ -563,6 +563,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v281.3.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.15): fix(li-target-length): simplify ui config
 
 - [v281.3.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.14): fix(retresco): Remove in-text-linked=false from URL when saving pods
 - [v281.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.13): fix(news-agency): review feedback
