@@ -527,14 +527,6 @@ The Target Length system metadata plugin now displays automatic unit conversion 
 }
 ```
 
-### History View: Add unpublish Info
-
-### Support Archived Rubrics
-
-### Restreco Plugin Extension
-
-TODO: Include “pods” but not “transcription”
-
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
@@ -571,6 +563,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v281.3.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.14): fix(retresco): Remove in-text-linked=false from URL when saving pods
 - [v281.3.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.13): fix(news-agency): review feedback
 - [v281.3.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.12): fix: Index documents without locale in their projects default locale
@@ -588,6 +581,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+
 - [v119.14.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.15): fix(li-tree): allow nesting of li-tree items again
 - [v119.14.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.14): fix(news-agency): display search results in the order they were created
 - [v119.14.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.13): fix(news-agency): review feedback
