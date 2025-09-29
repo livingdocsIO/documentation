@@ -581,6 +581,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+- [v119.14.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.16): fix: Avoid destructuring props to preserve reactivity
 
 - [v119.14.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.15): fix(li-tree): allow nesting of li-tree items again
 - [v119.14.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.14): fix(news-agency): display search results in the order they were created
