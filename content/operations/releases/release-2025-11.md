@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix include extraction order](https://github.com/livingdocsIO/livingdocs-server/pull/8445)
 - [Simplify li-target-length UI config](https://github.com/livingdocsIO/livingdocs-server/pull/8425)
 - [Refactor li-target-length](https://github.com/livingdocsIO/livingdocs-editor/pull/10285)
 - [Avoid destructuring props to preserve reactivity](https://github.com/livingdocsIO/livingdocs-editor/pull/10312)
