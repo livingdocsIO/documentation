@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Prevent crashing server if a scheduled publication cannot be found](https://github.com/livingdocsIO/livingdocs-server/pull/8459)
 - [Upgrade pino to replace vulnerable fast-redact dependency](https://github.com/livingdocsIO/livingdocs-editor/pull/10337)
 - [Reuse vue components in angular based properties panel](https://github.com/livingdocsIO/livingdocs-editor/pull/10322)
 - [Fix include extraction order](https://github.com/livingdocsIO/livingdocs-server/pull/8445)
