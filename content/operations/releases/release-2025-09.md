@@ -563,6 +563,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v281.3.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.17): fix(security): Upgrade pino to replace vulnerable fast-redact dependency
 - [v281.3.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.16): fix: Respect component occurence and nested container order in include extraction
 - [v281.3.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.15): fix(li-target-length): simplify ui config
 
