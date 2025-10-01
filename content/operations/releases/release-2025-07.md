@@ -626,6 +626,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v280.1.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.27): fix: prevent crashing server if a scheduled publication cannot be found
 - [v280.1.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.26): fix(security): Upgrade pino to replace vulnerable fast-redact dependency
 
 - [v280.1.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.25): fix(deps): Axios is vulnerable to DoS attack through lack of data size check - https://github.com/advisories/GHSA-4hjh-wcwx-xvwj
