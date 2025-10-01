@@ -657,6 +657,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+- [v119.3.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.30): fix(security): Upgrade pino to replace vulnerable fast-redact dependency
 - [v119.3.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.29): fix: Make images and videos in ticker properties panel reactive
 - [v119.3.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.28): fix: Avoid destructuring props to preserve reactivity
 - [v119.3.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.27): fix(li-tree): allow nesting of li-tree items again
