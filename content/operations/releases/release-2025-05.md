@@ -450,6 +450,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v276.3.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.29): fix: Respect component occurence and nested container order in include extraction
 - [v276.3.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.28): fix(deps): Axios is vulnerable to DoS attack through lack of data size check - https://github.com/advisories/GHSA-4hjh-wcwx-xvwj
 - [v276.3.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.27): fix: Support setting migration sequence to 0 with documentApi.create
 - [v276.3.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.26): fix: Patch vulnerable dependencies
