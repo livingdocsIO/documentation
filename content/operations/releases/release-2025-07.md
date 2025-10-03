@@ -658,6 +658,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+- [v119.3.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.34): fix(task-screen): show task panel when opening document
 - [v119.3.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.33): fix(media-library): keyboard navigation
 - [v119.3.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.32): fix(delivery): disable delivery builds during save
 - [v119.3.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.31): fix(assistants): stop updating componentIsSaved state after it becomes true
