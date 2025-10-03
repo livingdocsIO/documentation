@@ -484,6 +484,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+- [v117.6.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.50): fix(delivery): disable delivery builds during save
 - [v117.6.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.49): fix(assistants): stop updating componentIsSaved state after it becomes true
 - [v117.6.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.48): fix(security): Upgrade pino to replace vulnerable fast-redact dependency
 - [v117.6.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.47): fix: Make images and videos in ticker properties panel reactive
