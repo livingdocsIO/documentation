@@ -585,6 +585,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+- [v119.14.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.20): fix(delivery): disable delivery builds during save
 - [v119.14.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.19): fix(assistants): stop updating componentIsSaved state after it becomes true
 - [v119.14.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.18): fix: Make images and videos in ticker properties panel reactive
 - [v119.14.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.17): chore(li-target-length): update tests
