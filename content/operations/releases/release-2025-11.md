@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Improvement/User Profile, li-rich-list and li-static-table](https://github.com/livingdocsIO/livingdocs-editor/pull/10355)
 - [Show task panel when opening document from task screen in new tab](https://github.com/livingdocsIO/livingdocs-editor/pull/10338)
 - [Disable assistant and delivery builds during save](https://github.com/livingdocsIO/livingdocs-editor/pull/10351)
 - [Feat/Publication History](https://github.com/livingdocsIO/livingdocs-editor/pull/10345)
