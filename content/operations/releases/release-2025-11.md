@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Show task panel when opening document from task screen in new tab](https://github.com/livingdocsIO/livingdocs-editor/pull/10338)
 - [Disable assistant and delivery builds during save](https://github.com/livingdocsIO/livingdocs-editor/pull/10351)
 - [Feat/Publication History](https://github.com/livingdocsIO/livingdocs-editor/pull/10345)
 - [chore(deps): update dependency mocha from 11.7.3 to v11.7.4 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10344)
