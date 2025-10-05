@@ -863,6 +863,33 @@ elasticIndex: {
   // The indexes are created with the following pattern: `${indexNamePrefix}-${index.handle}-index`
   indexNamePrefix: 'your-company-local',
 
+  // {{< added-in "release-2024-05" >}}
+  // By default content is indexed using a german analyzer and language specific fields are not enabled.
+  // Please configure the indexSettings for improved search accuracy and exact word matching.
+  indexSettings: {
+    // Enable language agnostic indexing and exact phrase matching using quoted search terms.
+    // Once enabled, the document language is inferred
+    //   - by either a {{< a title="li-language" ref="/reference/document/metadata/plugins/li-language.md" >}} metadata property on a document
+    //   - or as fallback using the {{< a title="settings.languages.defaultLanguage" ref="/reference/project-config/settings.md#defaultLanguage" >}} ProjectConfig property
+    useLanguageSpecificFields: true,
+
+    // Configure German compound word decomposition for better search results.
+    // Breaks up compound words using a dictionary and hyphenation patterns.
+    // When changing this config, the elasticsearch index needs to be recreated completely.
+    // Note: `useLanguageSpecificFields` must also be enabled when `germanDecompounder` is configured.
+    //
+    // Attention:
+    //   The config files need to be deployed in the config directory
+    //   of the Elasticsearch Instance, not within the Livingdocs server directory.
+    germanDecompounder: {
+      enabled: true,
+      // Path to the German decompounder dictionary
+      dictionary: 'decompounder/dictionary-de.txt',
+      // Path to the German hyphenation patterns file
+      hyphenation: 'decompounder/de_DR.xml'
+    }
+  },
+
   // The concurrency defines how many requests the livingdocs-server is doing
   // in parallel on every single process
   concurrency: 2,

@@ -24,7 +24,7 @@ settings: {
       {label: 'German', locale: 'de'},
       {label: 'English', locale: 'en'}
     ],
-    defaultLanguage: {
+    defaultLanguage: {{{< anchor "defaultLanguage" >}}
       label: 'German',
       locale: 'de'
     },
