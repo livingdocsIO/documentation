@@ -144,11 +144,25 @@ No rollback steps are required for this release.
 
 The news agency project configuration properties `newsAgency.screens[].displayFilterOptionsSource` and `newsAgency.screens[].displayFilterOptionsCategories` have been removed. Use properties `newsAgency.sources` and `newsAgency.categories`, respectively (see [Displaying Custom Values for News Agency Report Properties](#displaying-custom-values-for-news-agency-report-properties)).
 
-### iMatrics
+### Removed Server Feature `li-design-stats` 🔥
 
-iMatrics concepts of type category are now shown if ignoredConceptTypes is not set. Previously, they were excluded unless ignoredConceptTypes was set to [].
+Server feature `li-design-stats`, including its server API (`designStatsApi.listDesigns`), has been removed. In addition, the server API `projectApi.getStats` has also been removed. Please remove any usages of these APIs.
 
-If you want to keep the existing behavior, please set ignoredConceptTypes: ['category'] in your li-imatrics-nlp-tags metadata configurations.
+### Removed Functions `sql`, `insert`, and `begin` of `lib/db` 🔥
+
+- Function `require('@livingdocs/server/lib/db').sql` has been removed. Please use `liServer.db.sql` instead.
+- Function `require('@livingdocs/server/lib/db').insert` has been removed. Please use `liServer.db.insert` instead.
+- Function `require('@livingdocs/server/lib/db').begin` has been removed. Please use `liServer.db.begin` instead.
+
+### API `documentApi.executeDocumentCommands` Requires Parameter `userId` 🔥
+
+Unpublishing documents with `documentApi.executeDocumentCommands` without providing a `userId` is no longer supported. Please provide a `userId`.
+
+### iMatrics Category Concepts Shown By Default 🔥
+
+iMatrics concepts of type category are now shown by default. Previously, they were excluded unless `ignoredConceptTypes: []` was set.
+
+If you want to keep the existing behavior, please set `ignoredConceptTypes: ['category']` in your [`li-imatrics-nlp-tags` metadata configuration]({{< ref "/reference/document/metadata/plugins/li-imatrics-nlp-tags/" >}}).
 
 ## Deprecations
 
