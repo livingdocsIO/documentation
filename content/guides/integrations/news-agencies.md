@@ -42,9 +42,6 @@ With this high-level overview in mind, this section will guide you through the c
 
 Set up the feature using the [`newsAgency` property]({{< ref "/reference/project-config/news-agencies" >}}):
 
-- `functionHandle` refers to a registered news agency function. This function is used to copy news agency reports into regular articles or, in the auto-publish flow, to also update already copied articles.
-- `screens` defines one or more news agency screens. The `displayFilterOptionsSource` and `displayFilterOptionsCategory` properties configure the filter options shown on the screen. If no options are set, the display filter won't be shown.
-
 ```js
 newsAgency: {
   // Required. References a registered news agency function. This function is
@@ -67,28 +64,35 @@ newsAgency: {
       // Optional. Further restricts the displayed news agency reports.
       // Regardless of baseFilters, only reports imported through manual flows
       // with the content type `liNewsAgencyReport` are shown.
-      baseFilters: [],
-
-      // Optional. Configures the source display filter options. If none are
-      // defined, the display filter will not be shown.
-      displayFilterOptionsSource: [
-        {label: 'afp', value: 'afp'},
-        {label: 'dpa', value: 'dpa'},
-        {label: 'sid', value: 'sid'}
-      ],
-
-      // Optional. Configures the category display filter options. If none are
-      // defined, the display filter will not be shown.
-      displayFilterOptionsCategory: [
-        {label: {en: 'Politics', de: 'Politik'}, value: 'politics'},
-        {label: {en: 'Economy', de: 'Wirtschaft'}, value: 'economy'},
-        {label: {en: 'Sports', de: 'Sport'}, value: 'sport'},
-        {label: {en: 'Feuilleton', de: 'Feuilleton'}, value: 'feuilleton'},
-        {label: {en: 'Media', de: 'Medien'}, value: 'media'},
-        {label: {en: 'Other', de: 'Sonstiges'}, value: 'other'}
-      ]
+      baseFilters: []
     }
-  ]
+  ],
+
+  // Optional.
+  // - Maps raw source values to descriptive or localized labels shown in the
+  //   Livingdocs Editor.
+  // - Defines what source display filter options appear on news agency screens.
+  // {{< added-in "release-2025-09" >}}
+  sources: [
+    {label: 'afp', value: 'afp'},
+    {label: 'dpa', value: 'dpa'},
+    {label: 'sid', value: 'sid'}
+  ],
+
+  // Optional.
+  // - Maps raw category values to descriptive or localized labels shown in the
+  //   Livingdocs Editor.
+  // - Defines what category display filter options appear on news agency
+  //   screens.
+  // {{< added-in "release-2025-09" >}}
+  categories: [
+    {label: {en: 'Politics', de: 'Politik'}, value: 'politics'},
+    {label: {en: 'Economy', de: 'Wirtschaft'}, value: 'economy'},
+    {label: {en: 'Sports', de: 'Sport'}, value: 'sport'},
+    {label: {en: 'Feuilleton', de: 'Feuilleton'}, value: 'feuilleton'},
+    {label: {en: 'Media', de: 'Medien'}, value: 'media'},
+    {label: {en: 'Other', de: 'Sonstiges'}, value: 'other'}
+  ],
 }
 ```
 
@@ -131,11 +135,13 @@ Since this function works with a `liNewsAgencyReport`, it's important to underst
     {name: 'li'}
   ],
   metadata: [
-    {handle: 'title', type: 'li-text', config: {required: true}},
-    {handle: 'lead', type: 'li-text', config: {required: true}},
-    {handle: 'keywords', type: 'li-string-list', config: {index: true}},
-    {handle: 'category', type: 'li-text', config: {index: true, required: true}},
+    {handle: 'title', type: 'li-text', config: {index: true, required: true}},
+    {handle: 'lead', type: 'li-text', config: {index: true, required: true}},
+    {handle: 'note', type: 'li-text', config: {index: true}}, // {{< added-in "release-2025-09" >}}
     {handle: 'source', type: 'li-text', config: {index: true, required: true}},
+    {handle: 'category', type: 'li-text', config: {index: true, required: true}},
+    {handle: 'keywords', type: 'li-string-list', config: {index: true}},
+    {handle: 'location', type: 'li-text', config: {index: true}}, // {{< added-in "release-2025-09" >}}
     // Indicates the urgency of a report as an integer from 1 (highest)
     // to 6 (lowest).
     {handle: 'priority', type: 'li-system-priority', config: {index: true, required: true}},
@@ -217,20 +223,22 @@ POST /api/{{< api-version >}}/import/documents
       "id": "1",
       "checksum": "1",
       "contentType": "liNewsAgencyReport",
-      "title": "Some title",
+      "title": "How Leveraging Technology Intentionally Can Help Make...",
       "metadata": {
-        "title": "Some title",
-        "lead": "Some lead",
-        "source": "dpa",
+        "title": "How Leveraging Technology Intentionally Can Help Make...",
+        "lead": "As the news publishing industry is increasingly catalysed...",
+        "note": "Author: Livingdocs (Zurich), contact@livingdocs.io",
+        "source": "sda",
         "category": "Economics",
-        "keywords": ["Money", "Finance"],
-        "priority": 2,
+        "keywords": ["Business", "Media"],
+        "location": "Zurich",
+        "priority": 3,
         "datetime": "2025-07-25T15:00:58.615Z",
         "embargo": "2025-07-25T15:00:58.615Z",
         "autoPublish": true
       },
       "content": [
-        {"component": "h2", "content": {"text": "Some subtitle"}}
+        {"component": "p", "content": {"text": "From the content..."}}
       ]
     }
   ]
