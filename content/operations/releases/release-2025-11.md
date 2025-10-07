@@ -140,9 +140,77 @@ No rollback steps are required for this release.
 
 ## Breaking Changes 🔥
 
+### Removed News Agency Properties `displayFilterOptionsSource` and `displayFilterOptionsCategories` 🔥
+
+The news agency project configuration properties `newsAgency.screens[].displayFilterOptionsSource` and `newsAgency.screens[].displayFilterOptionsCategories` have been removed. Use properties `newsAgency.sources` and `newsAgency.categories`, respectively (see [Displaying Custom Values for News Agency Report Properties](#displaying-custom-values-for-news-agency-report-properties)).
+
+### iMatrics
+
+iMatrics concepts of type category are now shown if ignoredConceptTypes is not set. Previously, they were excluded unless ignoredConceptTypes was set to [].
+
+If you want to keep the existing behavior, please set ignoredConceptTypes: ['category'] in your li-imatrics-nlp-tags metadata configurations.
+
 ## Deprecations
 
 ## Features
+
+### News Agency Improvements
+
+This release refines the News Agency module with new metadata properties and user experience improvements.
+
+{{< info >}}
+These improvements have also been backported to {{< release "release-2025-09" >}}.
+{{< /info >}}
+
+#### New Metadata Properties for News Agency Reports
+
+News agency reports have been extended to include two additional metadata properties:
+
+- `location`: Stores geographical information related to a report (e.g., city, region, or country).
+- `note`: Contains additional details from the news agency, such as contact information or publishing restrictions.
+
+Both properties are displayed alongside the already existing metadata properties.
+
+{{< img src="release-2025-11-news-agency-metadata.png" alt="News Agency Report Metadata" width="600" >}}
+
+#### Displaying Custom Values for News Agency Report Properties
+
+You can now define custom labels for imported news agency report properties. Previously, Livingdocs displayed the raw imported values (e.g., abbreviated sources or untranslated categories). This update allows you to map those raw values to more descriptive or localized labels.
+
+To support this, two new project configuration properties have been added:
+
+```js
+newsAgency: {
+  sources: [
+    {label: 'DPA', value: 'dpa'},
+    {label: 'DPA - OTS', value: 'ots'},
+    {label: 'SDA', value: 'sda'}
+  ],
+  categories: [
+    {label: {en: 'Politics', de: 'Politik'}, value: 'politics'},
+    {label: {en: 'Economy', de: 'Wirtschaft'}, value: 'economy'},
+    {label: {en: 'Sports', de: 'Sport'}, value: 'sports'}
+  ]
+}
+```
+
+For example, if a news agency report import provides the source `ots`, editors will now see `DPA - OTS`. Similarly, categories like `politics` appear as `Politik` or `Politics`, depending on the active language.
+
+In addition, these new properties define the display filter options shown on news agency screens for filtering reports by `source` or `category`. They therefore supersede the project configuration properties `newsAgency.screens[].displayFilterOptionsSource` and `newsAgency.screens[].displayFilterOptionsCategory` (see [Breaking Changes](#removed-news-agency-properties-displayfilteroptionssource-and-displayfilteroptionscategories-)).
+
+#### News Agency Screen Search Results Ordered by Datetime
+
+Search results on news agency screens are now ordered by datetime instead of relevance. This ensures reports appear in the sequence they were received. Previously, results followed the same relevance-based order used on other dashboards, but feedback showed that for news agency reports, chronological order is more valuable. 
+
+#### Increased News Agency Screen Page Size
+
+The page size on news agency screens has been increased from 35 to 100, allowing users to view more reports at once without needing to load more reports.
+
+#### Enabling All News Agency Notifications
+
+The user experience for managing news agency notification categories has been improved with a new "Select all" checkbox. Roles that want to receive all notifications can now enable every notification category with a single click.
+
+{{< img src="release-2025-11-news-agency-select-all.png" alt="News Agency Notifications Preferences" width="250" >}}
 
 ## Vulnerability Patches
 
