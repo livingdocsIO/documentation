@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update pintura [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10363)
 - [fix(deps): update dependency pino from 9.12.0 to v10 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8471)
 - [fix: show revision updated_at instead of document updatedAt](https://github.com/livingdocsIO/livingdocs-editor/pull/10346)
 - [`li-image`: Reintroduce accidentally removed default for `readOnly`](https://github.com/livingdocsIO/livingdocs-server/pull/8474)
