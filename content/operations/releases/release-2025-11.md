@@ -217,6 +217,26 @@ iMatrics concepts of type category are now shown by default. Previously, they we
 
 If you want to keep the existing behavior, please set `ignoredConceptTypes: ['category']` in your [`li-imatrics-nlp-tags` metadata configuration]({{< ref "/reference/document/metadata/plugins/li-imatrics-nlp-tags/" >}}).
 
+### Removed Server Feature `li-design-stats` 🔥
+
+Server feature `li-design-stats`, including its server API (`designStatsApi.listDesigns`), has been removed. In addition, the server API `projectApi.getStats` has also been removed. Please remove any usages of these APIs.
+
+### Removed Functions `sql`, `insert`, and `begin` of `lib/db` 🔥
+
+- Function `require('@livingdocs/server/lib/db').sql` has been removed. Please use `liServer.db.sql` instead.
+- Function `require('@livingdocs/server/lib/db').insert` has been removed. Please use `liServer.db.insert` instead.
+- Function `require('@livingdocs/server/lib/db').begin` has been removed. Please use `liServer.db.begin` instead.
+
+### API `documentApi.executeDocumentCommands` Requires Parameter `userId` 🔥
+
+Unpublishing documents with `documentApi.executeDocumentCommands` without providing a `userId` is no longer supported. Please provide a `userId`.
+
+### iMatrics Category Concepts Shown By Default 🔥
+
+iMatrics concepts of type category are now shown by default. Previously, they were excluded unless `ignoredConceptTypes: []` was set.
+
+If you want to keep the existing behavior, please set `ignoredConceptTypes: ['category']` in your [`li-imatrics-nlp-tags` metadata configuration]({{< ref "/reference/document/metadata/plugins/li-imatrics-nlp-tags/" >}}).
+
 ## Deprecations
 
 ## Features
