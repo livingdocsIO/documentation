@@ -15,11 +15,7 @@ Livingdocs provides built-in support for News Agencies, allowing editorial teams
 <!-- For instructions on how to set it up, please refer to our [integration guide]({{< ref "/guides/integrations/news-agencies" >}}).  -->
 
 For instructions on how to set it up, please refer to our integration guide.
-The configuration is located in the Project Config under the `newsAgency` property:
-
-- `functionHandle` refers to a registered news agency function. This function is used to copy news agency reports into regular articles or, in the auto-publish flow, to also update already copied articles.
-- `screens` defines one or more news agency screens in the Livingdocs Editor.
-- `notifications` represent the categories displayed in the notification settings, which are visible for each news agency screen. To be applicable, these must align with the available categories.
+The configuration is located in the Project Config under the `newsAgency` property.
 
 ```js
 newsAgency: {
@@ -43,27 +39,34 @@ newsAgency: {
       // Optional. Further restricts the displayed news agency reports.
       // Regardless of baseFilters, only reports imported through manual flows
       // with the content type `liNewsAgencyReport` are shown.
-      baseFilters: [],
-
-      // Optional. Configures the source display filter options. If none are
-      // defined, the display filter will not be shown.
-      displayFilterOptionsSource: [
-        {label: 'afp', value: 'afp'},
-        {label: 'dpa', value: 'dpa'},
-        {label: 'sid', value: 'sid'}
-      ],
-
-      // Optional. Configures the category display filter options. If none are
-      // defined, the display filter will not be shown.
-      displayFilterOptionsCategory: [
-        {label: {en: 'Politics', de: 'Politik'}, value: 'politics'},
-        {label: {en: 'Economy', de: 'Wirtschaft'}, value: 'economy'},
-        {label: {en: 'Sports', de: 'Sport'}, value: 'sport'},
-        {label: {en: 'Feuilleton', de: 'Feuilleton'}, value: 'feuilleton'},
-        {label: {en: 'Media', de: 'Medien'}, value: 'media'},
-        {label: {en: 'Other', de: 'Sonstiges'}, value: 'other'}
-      ]
+      baseFilters: []
     }
+  ],
+
+  // Optional.
+  // - Maps raw source values to descriptive or localized labels shown in the
+  //   Livingdocs Editor.
+  // - Defines what source display filter options appear on news agency screens.
+  // {{< added-in "release-2025-09" >}}
+  sources: [
+    {label: 'afp', value: 'afp'},
+    {label: 'dpa', value: 'dpa'},
+    {label: 'sid', value: 'sid'}
+  ],
+
+  // Optional.
+  // - Maps raw category values to descriptive or localized labels shown in the
+  //   Livingdocs Editor.
+  // - Defines what category display filter options appear on news agency
+  //   screens.
+  // {{< added-in "release-2025-09" >}}
+  categories: [
+    {label: {en: 'Politics', de: 'Politik'}, value: 'politics'},
+    {label: {en: 'Economy', de: 'Wirtschaft'}, value: 'economy'},
+    {label: {en: 'Sports', de: 'Sport'}, value: 'sport'},
+    {label: {en: 'Feuilleton', de: 'Feuilleton'}, value: 'feuilleton'},
+    {label: {en: 'Media', de: 'Medien'}, value: 'media'},
+    {label: {en: 'Other', de: 'Sonstiges'}, value: 'other'}
   ],
 
   // Optional. Configures the categories shown in the notification settings.
