@@ -563,6 +563,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v281.3.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.21): fix(news-agency): pass news agency report design to statistics extraction
 - [v281.3.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.20): fix(hugo-api): set XML header in huGO API
 - [v281.3.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.19): fix(li-image): reintroduce accidentally removed default for `readOnly`
 - [v281.3.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.18): fix: prevent crashing server if a scheduled publication cannot be found
