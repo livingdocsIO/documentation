@@ -241,15 +241,13 @@ If you want to keep the existing behavior, please set `ignoredConceptTypes: ['ca
 
 ### Simplified `li-target-length` and `li-system-target-length` UI Configuration
 
-Deprecate the properties `ui.config.allowAnyNumber`, `ui.config.showExactCountCheckbox`, and `ui.config.unit`. They will be removed in release-2026-05. Use `ui.config.mode` instead.
-
 The following `li-target-length` and `li-system-target-length` UI configuration properties are deprecated and will be removed in release-2026-05:
 
 - `ui.config.allowAnyNumber`
 - `ui.config.showExactCountCheckbox`
 - `ui.config.unit`
 
-Use the [new property `ui.config.mode`](#simplified-li-target-length-and-li-system-target-length-ui-configuration-1) instead.
+Use the [new property `ui.config.modes`](#simplified-li-target-length-and-li-system-target-length-ui-configuration-1) instead.
 
 ## Features
 
@@ -315,9 +313,9 @@ The user experience for managing news agency notification categories has been im
 
 Over time, the metadata plugins `li-target-length` and `li-system-target-length` have gained many UI configuration options, some of which are redundant. To make these plugins easier to understand and explain, we are simplifying their configuration.
 
-To achieve this, we are introducing a new configuration property: `ui.config.mode`. This property replaces the existing configuration options `ui.config.allowAnyNumber`, `ui.config.showExactCountCheckbox`, and `ui.config.unit` (see [Deprecations](#simplified-li-target-length-and-li-system-target-length-ui-configuration)).
+To achieve this, we are introducing a new configuration property: `ui.config.modes`. This property replaces the existing configuration options `ui.config.allowAnyNumber`, `ui.config.showExactCountCheckbox`, and `ui.config.unit` (see [Deprecations](#simplified-li-target-length-and-li-system-target-length-ui-configuration)).
 
-The new configuration property `ui.config.mode` defines which input modes are available in the Livingdocs editor:
+The new configuration property `ui.config.modes` defines which input modes are available in the Livingdocs editor:
 
 - `steps`: A slider with pre-configured step values, requires `steps` to be configured
 - `characters`: A number input for entering a character count
