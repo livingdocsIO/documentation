@@ -15,6 +15,9 @@ history:
   - release: release-2025-09
     version: 2025-09
     description: Support an array in the `unit` config to enable both selectors in the metadata UI.
+  - release: release-2025-11
+    version: 2025-11
+    description: Add `mode` UI config property.
 support:
   document: true
   media: false
@@ -27,46 +30,98 @@ support:
   systemMetadata: false
   planningSystem: false
 description: |
-  This plugin is used to provide a suggested total character count for the text in the document.
-
-  {{< added-in "release-2025-09" >}} When the `unit` config is set to an array containing both `characters` and `lines`, the plugin displays automatic unit conversion next to the input field (e.g., "~ 125 lines" or "~ 10,000 characters"). The `steps` value must always be in characters when using this feature.
+  Enables users to define a target length for a document. The plugin provides feedback to help maintain content within a desired range.
 defaultUI: |
-  **Input**: Number input, or slider if `steps` are defined.
+  ### Metadata Panel
 
-  **Editor**: Difference, Total Characters, Target Range, Characters in Focussed Component
+  Within the document's metadata panel, users can set the desired target length. The plugin offers multiple input modes, and displays the first available one in this priority order: `steps`, `characters`, `lines`. Users can switch between any configured modes.
 
-  {{< img src="../images/li-target-length.png" alt="Target Length Indicator" >}}
+  #### Input Mode: `steps`
+
+  {{< img src="../images/li-target-length-steps.png" alt="Input Mode: Steps" width="600" >}}
+
+  #### Input Mode: `characters`
+
+  {{< img src="../images/li-target-length-characters.png" alt="Input Mode: Characters" width="600" >}}
+
+  #### Input Mode: `lines`
+
+  {{< img src="../images/li-target-length-lines.png" alt="Input Mode: Lines" width="600" >}}
+
+  ### Editor
+
+  Once a target length is configured, the editor displays an indicator in the bottom left corner. The indicator includes:
+
+  - Difference to target length
+  - Total document length
+  - Target length
+  - Length of the currently focused component
+
+  {{< img src="../images/li-target-length-indicator.png" alt="Target Length Indicator" >}}
 storageFormat: |
   {
-    characters: <Integer>
+    characters: <Integer>,
+    unit: <String>,
+    isChecked: <Boolean>
   }
 contentTypeConfig: |2
         handle: 'myHandle'
         type: 'li-target-length',
         ui: {
           config: {
-            acceptedCharacterDifference: 20, // Range above and below `value` considered accepted
-            // optional, allows picking a step instead of entering an exact number
+            // Defines which input modes are available to users:
+            // - steps: A slider with pre-configured step values,
+            //   requires `steps` to be configured (see below).
+            // - characters: A number input for entering a
+            //   character count.
+            // - lines: A number input for entering a line count.
+            //   Requires {{< a href="/reference/project-config/editor-settings/#text-count" title="lineCountFraction">}} to convert between
+            //   characters and lines.
+            // {{< added-in "release-2025-09" >}}
+            mode: ['steps', 'characters', 'lines'],
+
+            // Defines the selectable steps when the input mode is
+            // "steps" (see above).
             steps: [
               {
-                label: 'S', // use a short one, e.g. "S" "M" "L"
-                value: 100 // number of characters
+                // Use a short label, e.g. "S", "M", "L"
+                label: 'S',
+                // Number of characters
+                value: 100
               },
               {
                 label: 'M',
                 value: 200
               }
             ],
-            // optional, allows the input of an exact number besides picking a step
+
+            // Optional. Number of characters above or below `value`
+            // considered acceptable when writing a document
+            acceptedCharacterDifference: 20, 
+
+            // Optional. Only allows the input of an exact number
+            // instead of picking a step.
+            // {{< deprecated-in "release-2025-11" >}}
+            // {{< removed-in "release-2026-05" >}}
             allowAnyNumber: true,
-            // Define whether the target size is measured in `characters` or `lines`.
-            // In case of `lines` the {{< a href="/reference/project-config/editor-settings/#text-count" title="lineCountFraction">}} needs to be defined because internally everything is stored in characters.
-            // Use a string with either 'characters' or 'lines' ({{< added-in "release-2025-07" >}})
-            //   unit: 'characters' (this is the default)
-            // Or or use an array for unit conversion display: ({{< added-in "release-2025-09" >}})
-            //   unit: ['characters', 'lines']
+
+            // Optional. Specifies the input unit for exact number
+            // inputs. It can be either `characters` or `lines`. In
+            // the case of `lines`, the {{< a href="/reference/project-config/editor-settings/#text-count" title="lineCountFraction">}} setting is
+            // required to convert between characters and lines.
+            // Starting with {{< release "release-2025-09" >}}, multiple units can be
+            // specified as an array. Previously, only a single unit
+            // (string) was supported.
+            // {{< deprecated-in "release-2025-11" >}}
+            // {{< removed-in "release-2026-05" >}}
             unit: 'lines',
-            // optional, {{< added-in "release-2025-07" >}}
+
+            // Optional. Allows the input of an exact number besides
+            // picking a step. Users can toggle between the input
+            // modes. 
+            // {{< added-in "release-2025-07" >}}
+            // {{< deprecated-in "release-2025-11" >}}
+            // {{< removed-in "release-2026-05" >}}
             showExactCountCheckbox: true
           }
         }
