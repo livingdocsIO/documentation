@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Prevent error if task properties beforeLabel or afterLabel are not configured](https://github.com/livingdocsIO/livingdocs-editor/pull/10362)
 - [Extract statistics of news agency reports](https://github.com/livingdocsIO/livingdocs-server/pull/8476)
 - [fix(table dashboard): Overflow-cell extra-spacing](https://github.com/livingdocsIO/livingdocs-editor/pull/10372)
 - [fix(deps): update opentelemetry (main) (minor) - autoclosed](https://github.com/livingdocsIO/livingdocs-server/pull/8480)
