@@ -17,7 +17,7 @@ history:
     description: Support an array in the `unit` config to enable both selectors in the UI.
   - release: release-2025-11
     version: 2025-11
-    description: Add `mode` UI config property.
+    description: Add `modes` UI config property.
 support:
   document: true
   media: false
@@ -78,7 +78,7 @@ contentTypeConfig: |2
             //   Requires {{< a href="/reference/project-config/editor-settings/#text-count" title="lineCountFraction">}} to convert between
             //   characters and lines.
             // {{< added-in "release-2025-09" >}}
-            mode: ['steps', 'characters', 'lines'],
+            modes: ['steps', 'characters', 'lines'],
 
             // Defines the selectable steps when the input mode is
             // "steps" (see above).
