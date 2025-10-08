@@ -140,9 +140,9 @@ No rollback steps are required for this release.
 
 ## Breaking Changes 🔥
 
-### Removed News Agency Properties `displayFilterOptionsSource` and `displayFilterOptionsCategories` 🔥
+### Removed News Agency Properties `displayFilterOptionsSource` and `displayFilterOptionsCategory` 🔥
 
-The news agency project configuration properties `newsAgency.screens[].displayFilterOptionsSource` and `newsAgency.screens[].displayFilterOptionsCategories` have been removed. Use properties `newsAgency.sources` and `newsAgency.categories`, respectively (see [Displaying Custom Values for News Agency Report Properties](#displaying-custom-values-for-news-agency-report-properties)).
+The news agency project configuration properties `newsAgency.screens[].displayFilterOptionsSource` and `newsAgency.screens[].displayFilterOptionsCategory` have been removed. Use properties `newsAgency.sources` and `newsAgency.categories`, respectively (see [Displaying Custom Values for News Agency Report Properties](#displaying-custom-values-for-news-agency-report-properties)).
 
 ## Deprecations
 
