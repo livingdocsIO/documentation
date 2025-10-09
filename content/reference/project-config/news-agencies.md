@@ -47,7 +47,7 @@ newsAgency: {
   // - Maps raw source values to descriptive or localized labels shown in the
   //   Livingdocs Editor.
   // - Defines what source display filter options appear on news agency screens.
-  // {{< added-in "release-2025-09" >}}
+  // {{< added-in "release-2025-11" >}}
   sources: [
     {label: 'afp', value: 'afp'},
     {label: 'dpa', value: 'dpa'},
@@ -59,7 +59,7 @@ newsAgency: {
   //   Livingdocs Editor.
   // - Defines what category display filter options appear on news agency
   //   screens.
-  // {{< added-in "release-2025-09" >}}
+  // {{< added-in "release-2025-11" >}}
   categories: [
     {label: {en: 'Politics', de: 'Politik'}, value: 'politics'},
     {label: {en: 'Economy', de: 'Wirtschaft'}, value: 'economy'},
