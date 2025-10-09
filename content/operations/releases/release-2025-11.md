@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Show iMatrics concepts of type category by default](https://github.com/livingdocsIO/livingdocs-editor/pull/10366)
 - [Apply default content in ticker entries](https://github.com/livingdocsIO/livingdocs-editor/pull/10373)
 - [Run asset url patching on metadata and document before running publish hooks](https://github.com/livingdocsIO/livingdocs-server/pull/8497)
 - [Breaking Changes for release-2025-11](https://github.com/livingdocsIO/livingdocs-server/pull/8482)
