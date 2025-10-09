@@ -140,9 +140,9 @@ No rollback steps are required for this release.
 
 ## Breaking Changes 🔥
 
-### Removed News Agency Properties `displayFilterOptionsSource` and `displayFilterOptionsCategory` 🔥
+### Replaced News Agency Properties `displayFilterOptionsSource` and `displayFilterOptionsCategory` 🔥
 
-The news agency project configuration properties `newsAgency.screens[].displayFilterOptionsSource` and `newsAgency.screens[].displayFilterOptionsCategory` have been removed. Use properties `newsAgency.sources` and `newsAgency.categories`, respectively (see [Displaying Custom Values for News Agency Report Properties](#displaying-custom-values-for-news-agency-report-properties)).
+The news agency project configuration properties `newsAgency.screens[].displayFilterOptionsSource` and `newsAgency.screens[].displayFilterOptionsCategory` have been replaced by new properties `newsAgency.sources` and `newsAgency.categories`, respectively (see [Displaying Custom Values for News Agency Report Properties](#displaying-custom-values-for-news-agency-report-sources-and-categories)).
 
 ## Deprecations
 
@@ -158,7 +158,7 @@ These improvements have also been backported to {{< release "release-2025-09" >}
 
 #### New Metadata Properties for News Agency Reports
 
-News agency reports have been extended to include two additional metadata properties:
+News agency reports have been extended to include two optional metadata properties:
 
 - `location`: Stores geographical information related to a report (e.g., city, region, or country).
 - `note`: Contains additional details from the news agency, such as contact information or publishing restrictions.
@@ -167,9 +167,9 @@ Both properties are displayed alongside the already existing metadata properties
 
 {{< img src="release-2025-11-news-agency-metadata.png" alt="News Agency Report Metadata" width="600" >}}
 
-#### Displaying Custom Values for News Agency Report Properties
+#### Displaying Custom Values for News Agency Report Sources and Categories
 
-You can now define custom labels for imported news agency report properties. Previously, Livingdocs displayed the raw imported values (e.g., abbreviated sources or untranslated categories). This update allows you to map those raw values to more descriptive or localized labels.
+You can now define custom labels for news agency report sources and categories. Previously, Livingdocs displayed the raw imported values (e.g., abbreviated sources or untranslated categories). This update allows you to map those raw values to more descriptive or localized labels.
 
 To support this, two new project configuration properties have been added:
 
@@ -190,15 +190,15 @@ newsAgency: {
 
 For example, if a news agency report import provides the source `ots`, editors will now see `DPA - OTS`. Similarly, categories like `politics` appear as `Politik` or `Politics`, depending on the active language.
 
-In addition, these new properties define the display filter options shown on news agency screens for filtering reports by `source` or `category`. They therefore supersede the project configuration properties `newsAgency.screens[].displayFilterOptionsSource` and `newsAgency.screens[].displayFilterOptionsCategory` (see [Breaking Changes](#removed-news-agency-properties-displayfilteroptionssource-and-displayfilteroptionscategories-)).
+In addition, these new properties define the display filter options shown on news agency screens for filtering reports by `source` or `category`. They therefore replace the project configuration properties `newsAgency.screens[].displayFilterOptionsSource` and `newsAgency.screens[].displayFilterOptionsCategory` (see [Breaking Changes](#replaced-news-agency-properties-displayfilteroptionssource-and-displayfilteroptionscategory-)).
 
 #### News Agency Screen Search Results Ordered by Datetime
 
 Search results on news agency screens are now ordered by datetime instead of relevance. This ensures reports appear in the sequence they were received. Previously, results followed the same relevance-based order used on other dashboards, but feedback showed that for news agency reports, chronological order is more valuable. 
 
-#### Increased News Agency Screen Page Size
+#### Showing More Reports on News Agency Screens
 
-The page size on news agency screens has been increased from 35 to 100, allowing users to view more reports at once without needing to load more reports.
+News agency screens now show 100 instead of 35 reports per page, allowing users to view more reports at once without needing to click "load more".
 
 #### Enabling All News Agency Notifications
 
