@@ -589,6 +589,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+- [v119.14.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.25): fix(ticker): apply default content when inserting container component
 - [v119.14.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.24): fix(history): prevent error if task properties beforeLabel or afterLabel are not configured
 - [v119.14.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.23): fix: show revision updated_at instead of document updatedAt
 - [v119.14.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.22): fix(media-library): keyboard navigation
