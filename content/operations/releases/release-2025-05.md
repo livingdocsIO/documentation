@@ -450,6 +450,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v276.3.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.32): fix(deps): update dependency nodemailer from 6.10.1 to 7.0.7 [security]
 - [v276.3.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.31): fix(hugo-api): set XML header in huGO API
 - [v276.3.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.30): fix: prevent crashing server if a scheduled publication cannot be found
 - [v276.3.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.29): fix: Respect component occurence and nested container order in include extraction
