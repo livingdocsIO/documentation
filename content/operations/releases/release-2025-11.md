@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Feat: add date only config to distribution dates](https://github.com/livingdocsIO/livingdocs-server/pull/8452)
 - [fix(deps): update dependency @livingdocs/framework from 32.10.1 to v32.10.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10382)
 - [fix(deps): update dependency @livingdocs/framework from 32.10.1 to v32.10.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8500)
 - [Show iMatrics concepts of type category by default](https://github.com/livingdocsIO/livingdocs-editor/pull/10366)
