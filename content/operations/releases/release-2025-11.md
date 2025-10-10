@@ -212,7 +212,37 @@ iMatrics concepts of type category are now shown by default. Previously, they we
 
 If you want to keep the existing behavior, please set `ignoredConceptTypes: ['category']` in your [`li-imatrics-nlp-tags` metadata configuration]({{< ref "/reference/document/metadata/plugins/li-imatrics-nlp-tags/" >}}).
 
+### Removed Server Feature `li-design-stats` 🔥
+
+Server feature `li-design-stats`, including its server API (`designStatsApi.listDesigns`), has been removed. In addition, the server API `projectApi.getStats` has also been removed. Please remove any usages of these APIs.
+
+### Removed Functions `sql`, `insert`, and `begin` of `lib/db` 🔥
+
+- Function `require('@livingdocs/server/lib/db').sql` has been removed. Please use `liServer.db.sql` instead.
+- Function `require('@livingdocs/server/lib/db').insert` has been removed. Please use `liServer.db.insert` instead.
+- Function `require('@livingdocs/server/lib/db').begin` has been removed. Please use `liServer.db.begin` instead.
+
+### API `documentApi.executeDocumentCommands` Requires Parameter `userId` 🔥
+
+Unpublishing documents with `documentApi.executeDocumentCommands` without providing a `userId` is no longer supported. Please provide a `userId`.
+
+### iMatrics Category Concepts Shown By Default 🔥
+
+iMatrics concepts of type category are now shown by default. Previously, they were excluded unless `ignoredConceptTypes: []` was set.
+
+If you want to keep the existing behavior, please set `ignoredConceptTypes: ['category']` in your [`li-imatrics-nlp-tags` metadata configuration]({{< ref "/reference/document/metadata/plugins/li-imatrics-nlp-tags/" >}}).
+
 ## Deprecations
+
+### Simplified `li-target-length` and `li-system-target-length` UI Configuration
+
+The following `li-target-length` and `li-system-target-length` UI configuration properties are deprecated and will be removed in release-2026-05:
+
+- `ui.config.allowAnyNumber`
+- `ui.config.showExactCountCheckbox`
+- `ui.config.unit`
+
+Use the [new property `ui.config.modes`](#simplified-li-target-length-and-li-system-target-length-ui-configuration-1) instead.
 
 ## Features
 
@@ -273,6 +303,43 @@ News agency screens now show 100 instead of 35 reports per page, allowing users 
 The user experience for managing news agency notification categories has been improved with a new "Select all" checkbox. Roles that want to receive all notifications can now enable every notification category with a single click.
 
 {{< img src="release-2025-11-news-agency-select-all.png" alt="News Agency Notifications Preferences" width="250" >}}
+
+### Simplified `li-target-length` and `li-system-target-length` UI Configuration
+
+Over time, the metadata plugins `li-target-length` and `li-system-target-length` have gained many UI configuration options, some of which are redundant. To make these plugins easier to understand and explain, we are simplifying their configuration.
+
+To achieve this, we are introducing a new configuration property: `ui.config.modes`. This property replaces the existing configuration options `ui.config.allowAnyNumber`, `ui.config.showExactCountCheckbox`, and `ui.config.unit` (see [Deprecations](#simplified-li-target-length-and-li-system-target-length-ui-configuration)).
+
+The new configuration property `ui.config.modes` defines which input modes are available in the Livingdocs editor:
+
+- `steps`: A slider with pre-configured step values, requires `steps` to be configured
+- `characters`: A number input for entering a character count
+- `lines`: A number input for entering a line count
+
+```js
+ui: {
+  config: {
+    modes: ['steps', 'characters', 'lines'],
+    steps: [
+      {label: {en: 'S', de: 'Klein'}, value: 100},
+      {label: {en: 'M', de: 'Mittel'}, value: 200}
+    ]
+    // ...
+  }
+}
+```
+
+#### Input Mode: `steps`
+
+{{< img src="release-2025-11-li-target-length-steps.png" alt="UI mode steps of metadata plugin li-target-length" >}}
+
+#### Input Mode: `characters`
+
+{{< img src="release-2025-11-li-target-length-characters.png" alt="UI mode characters of metadata plugin li-target-length" >}}
+
+#### Input Mode: `lines`
+
+{{< img src="release-2025-11-li-target-length-lines.png" alt="UI mode lines of metadata plugin li-target-length" >}}
 
 ## Vulnerability Patches
 
