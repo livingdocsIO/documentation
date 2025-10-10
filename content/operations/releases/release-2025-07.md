@@ -659,6 +659,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+- [v119.3.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.37): fix(properties-panel): Only emit change event when component exists
 - [v119.3.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.36): fix(ticker): apply default content when inserting container component
 - [v119.3.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.35): fix: show revision updated_at instead of document updatedAt
 - [v119.3.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.34): fix(task-screen): show task panel when opening document
