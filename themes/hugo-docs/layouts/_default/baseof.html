@@ -12,7 +12,7 @@
     />
     <meta
       name="description"
-      content="{{ or .Description .Site.Params.description }}"
+      content="{{ trim (or .Description .Site.Params.description | .RenderString | plainify) "\n " }}"
     />
     <link
       rel="canonical"
