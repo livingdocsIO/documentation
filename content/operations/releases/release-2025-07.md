@@ -626,6 +626,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v280.1.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.29): fix(deps): update dependency @livingdocs/framework from 32.8.9 to v32.8.10
 - [v280.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.28): fix(hugo-api): set XML header in huGO API
 - [v280.1.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.27): fix: prevent crashing server if a scheduled publication cannot be found
 - [v280.1.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.26): fix(security): Upgrade pino to replace vulnerable fast-redact dependency
