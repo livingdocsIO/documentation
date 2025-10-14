@@ -450,6 +450,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v276.3.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.34): fix(deps): Migrate @aws-sdk/client-ses to @aws-sdk/client-sesv2
 - [v276.3.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.33): fix(deps): update dependency @livingdocs/framework from 32.7.9 to v32.7.10
 - [v276.3.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.32): fix(deps): update dependency nodemailer from 6.10.1 to 7.0.7 [security]
 - [v276.3.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.31): fix(hugo-api): set XML header in huGO API
