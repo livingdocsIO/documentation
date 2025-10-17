@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Remove `li-hooks` feature](https://github.com/livingdocsIO/livingdocs-server/pull/8523)
 - [Validate news agency flow result against project design](https://github.com/livingdocsIO/livingdocs-server/pull/8519)
 - [Breaking Changes for release-2025-11](https://github.com/livingdocsIO/livingdocs-editor/pull/10371)
 - [Adjust display order of news agency report properties](https://github.com/livingdocsIO/livingdocs-editor/pull/10396)
