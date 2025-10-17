@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Breaking Changes for release-2025-11](https://github.com/livingdocsIO/livingdocs-editor/pull/10371)
 - [Adjust display order of news agency report properties](https://github.com/livingdocsIO/livingdocs-editor/pull/10396)
 - [fix(deps): update pintura [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10390)
 - [Design/Colour Palette](https://github.com/livingdocsIO/livingdocs-editor/pull/10394)
