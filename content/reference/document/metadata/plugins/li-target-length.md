@@ -77,7 +77,7 @@ contentTypeConfig: |2
             // - lines: A number input for entering a line count.
             //   Requires {{< a href="/reference/project-config/editor-settings/#text-count" title="lineCountFraction">}} to convert between
             //   characters and lines.
-            // {{< added-in "release-2025-09" >}}
+            // {{< added-in "release-2025-11" >}}
             modes: ['steps', 'characters', 'lines'],
 
             // Defines the selectable steps when the input mode is
