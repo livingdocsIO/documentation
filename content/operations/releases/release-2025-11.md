@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix: image cropper showing multiple original buttons](https://github.com/livingdocsIO/livingdocs-editor/pull/10399)
 - [Design/small tweaks](https://github.com/livingdocsIO/livingdocs-editor/pull/10413)
 - [Remove `li-hooks` feature](https://github.com/livingdocsIO/livingdocs-server/pull/8523)
 - [Validate news agency flow result against project design](https://github.com/livingdocsIO/livingdocs-server/pull/8519)
