@@ -660,6 +660,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+- [v119.3.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.40): fix(image-cropper): showing multiple original buttons
 - [v119.3.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.39): fix(planning-board): keep sorting from display-filter or dashboard config
 - [v119.3.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.38): fix(deps): update dependency @livingdocs/framework from 32.8.9 to v32.8.10
 - [v119.3.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.37): fix(properties-panel): Only emit change event when component exists
