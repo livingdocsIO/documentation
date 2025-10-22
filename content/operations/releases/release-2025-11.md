@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8541)
 - [Media center batch actions: improve multi select in enabling keyboard navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/10378)
 - [fix: image cropper showing multiple original buttons](https://github.com/livingdocsIO/livingdocs-editor/pull/10399)
 - [Design/small tweaks](https://github.com/livingdocsIO/livingdocs-editor/pull/10413)
