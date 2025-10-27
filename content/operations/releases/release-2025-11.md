@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [Use `accessTokenTtl` for serve-image cookie expiration](https://github.com/livingdocsIO/livingdocs-server/pull/8551)
 - [Media center batch actions: add saving status + batch actions](https://github.com/livingdocsIO/livingdocs-editor/pull/10418)
 - [Bump minimal Node.js version to v20.19.5](https://github.com/livingdocsIO/livingdocs-server/pull/8545)
 - [Design/icon size in circle button](https://github.com/livingdocsIO/livingdocs-editor/pull/10401)
