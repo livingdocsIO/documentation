@@ -592,6 +592,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+- [v119.14.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.31): fix(news-agency): remove redundant translations
 - [v119.14.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.30): fix(image-cropper): showing multiple original buttons
 - [v119.14.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.29): fix(planning-board): keep sorting from display-filter or dashboard config
 - [v119.14.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.28): fix(news-agency): adjust display order of news agency report properties
