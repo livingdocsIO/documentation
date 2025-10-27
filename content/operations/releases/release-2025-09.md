@@ -563,6 +563,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v281.3.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.25): fix(news-agency): render newlines in news agency report notes
 - [v281.3.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.24): fix(news-agency): validate flow result against project design
 - [v281.3.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.23): fix(deps): update dependency @livingdocs/framework from 32.9.4 to v32.9.5
 - [v281.3.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.22): fix: Run asset url generation before executing preparePublish hook
