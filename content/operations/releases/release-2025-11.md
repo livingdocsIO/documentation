@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @livingdocs/framework from 32.10.2 to v32.10.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10440)
 - [Prevent Javascript Injection during Import](https://github.com/livingdocsIO/livingdocs-editor/pull/10433)
 - [Prevent Javascript Injection during Import](https://github.com/livingdocsIO/livingdocs-server/pull/8552)
 - [chore(deps): update aws-sdk from 3.916.0 to v3.917.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8554)
