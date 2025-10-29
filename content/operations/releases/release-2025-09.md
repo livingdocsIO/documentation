@@ -563,6 +563,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v281.3.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.27): fix(auth): Use accessTokenTtl for serve-image token expiration
 - [v281.3.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.26): fix(auth): Use accessTokenTtl for serve-image cookie expiration
 - [v281.3.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.25): fix(news-agency): render newlines in news agency report notes
 - [v281.3.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.24): fix(news-agency): validate flow result against project design
