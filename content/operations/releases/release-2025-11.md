@@ -399,6 +399,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
 - [v121.3.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.2): fix(media center): Multi select polish
