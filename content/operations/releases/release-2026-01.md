@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Use `accessTokenTtl` for serve-image token expiration](https://github.com/livingdocsIO/livingdocs-server/pull/8569)
 - [Design/Media Center Polish](https://github.com/livingdocsIO/livingdocs-editor/pull/10444)
 
 To get an overview about new functionality, read the [Release Notes](TODO).
