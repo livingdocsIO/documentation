@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `master` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/10441)
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/8564)
 - [Media center batch actions: add sidepanel stack navigation](https://github.com/livingdocsIO/livingdocs-editor/pull/10438)
@@ -250,6 +251,49 @@ Use the [new property `ui.config.modes`](#simplified-li-target-length-and-li-sys
 
 ## Features
 
+### Media Library Batch Actions
+
+We are extending the multi-selection functionality within the Media Library.
+To improve efficiency when working with Media Library elements (such as images, videos or files), users can now **perform actions on multiple media items simultaneously**.
+Additionally, this release introduces two enhancements to the Media Library Dashboard Side Panel.
+
+#### Batch Actions on the Media Library Dashboard
+
+On the Media Library Dashboard, users can select multiple media elements and perform the following actions:
+
+- Download selected elements
+- Send selected elements to a document inbox
+- Store selected elements in archive / remove selected elements from archive
+- Delete selected elements
+- Remove selection
+
+{{< img src="release-2025-11-media-library-dashboard-batch-actions.png" alt="Media Library Dashboard Sidepanel" width="400" >}}
+
+Elements can only be deleted if the user has the necessary permissions and the selected items are not stored in the archive.
+Elements can only be stored in the archive if the selection does not include archived or revoked items and the user has sufficient permission rights.
+
+**How to select multiple elements:**
+
+- Hold down the `Shift` key and use the arrow keys, or
+- Hold down the `Command` key (Mac) / `Ctrl` key (Windows) and click on the desired elements.
+- Press `Escape` to clear the selection.
+
+{{< info >}}
+To use the _Store in Archive_, _Remove from Archive_ and _Delete_ functionalities, the `use2025behaviour` needs to be enabled. If not configured, instead the legacy _Archive_ functionality will be available.
+For more details, see the [2025 Behavior]({{< ref "/guides/media-library/2025-behavior" >}}) guide.
+{{< /info >}}
+
+#### Improvements on the Media Library Dashboard Sidepanel
+
+When an element is selected on the Media Library Dashboard, the Side Panel automatically opens.
+This panel has been enhanced with the following improvements:
+
+- A saving status indicator now appears in the top-left corner, showing whether an element’s metadata is currently being saved or has already been saved. This behavior is consistent with the Media Library Detail view.
+
+- Users can now navigate between selected items in the Side Panel to review them in more detail - without changing their selection on the main Media Library dashboard.
+
+{{< img src="release-2025-11-media-library-details-panel.png" alt="Media Library Dashboard Sidepanel" width="600" >}}
+
 ### News Agency Improvements
 
 This release refines the News Agency module with new metadata properties and user experience improvements.
@@ -296,7 +340,7 @@ In addition, these new properties define the display filter options shown on new
 
 #### News Agency Screen Search Results Ordered by Datetime
 
-Search results on news agency screens are now ordered by datetime instead of relevance. This ensures reports appear in the sequence they were received. Previously, results followed the same relevance-based order used on other dashboards, but feedback showed that for news agency reports, chronological order is more valuable. 
+Search results on news agency screens are now ordered by datetime instead of relevance. This ensures reports appear in the sequence they were received. Previously, results followed the same relevance-based order used on other dashboards, but feedback showed that for news agency reports, chronological order is more valuable.
 
 #### Showing More Reports on News Agency Screens
 
@@ -404,6 +448,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+
 - [v121.3.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.2): fix(media center): Multi select polish
 
 ---
