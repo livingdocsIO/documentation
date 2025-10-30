@@ -626,6 +626,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v280.1.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.31): fix(retresco): Support API versions in Retresco re-enrich endpoint
 - [v280.1.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.30): fix(auth): Use accessTokenTtl for serve-image token expiration
 - [v280.1.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.29): fix(deps): update dependency @livingdocs/framework from 32.8.9 to v32.8.10
 - [v280.1.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.28): fix(hugo-api): set XML header in huGO API
