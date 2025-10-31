@@ -448,6 +448,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.3): fix(media-center-batch-actions): fix broken media library in article editor
 
 - [v121.3.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.2): fix(media center): Multi select polish
 
