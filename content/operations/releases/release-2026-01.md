@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix/Overlooked Dashboard Filter](https://github.com/livingdocsIO/livingdocs-editor/pull/10449)
 - [chore(deps): update aws-sdk from 3.918.0 to v3.920.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8567)
 - [Use `accessTokenTtl` for serve-image token expiration](https://github.com/livingdocsIO/livingdocs-server/pull/8569)
 - [Design/Media Center Polish](https://github.com/livingdocsIO/livingdocs-editor/pull/10444)
