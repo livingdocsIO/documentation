@@ -443,6 +443,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v284.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.9): fix: Set minimal v22 node version to v22.17.1
 - [v284.0.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.8): fix(retresco): Support API versions in Retresco re-enrich endpoint
 - [v284.0.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.7): fix(public-api): Add 2025-11 to Public API versions
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
