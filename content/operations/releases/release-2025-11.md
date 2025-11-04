@@ -491,6 +491,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.6): fix(dashboards): Prevent error when searching on kanban boards
 
 - [v121.3.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.5): fix(image-cropper): state pollution
 - [v121.3.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.4): fix(dashboard filters): Overlooked "low res" filter
