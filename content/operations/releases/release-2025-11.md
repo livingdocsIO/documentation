@@ -352,6 +352,47 @@ The user experience for managing news agency notification categories has been im
 
 {{< img src="release-2025-11-news-agency-select-all.png" alt="News Agency Notifications Preferences" width="250" >}}
 
+### Distribution Dates UI Improvements
+
+Editors use the planning board to manage articles scheduled for publishing and distribution. Since distribution dates often correspond to the current day or near future, setting them quickly and accurately is essential for efficient workflow management.
+
+Previously, the workflow required selecting a date from the date picker and then pressing a green confirmation button. This additional confirmation step was unclear to many users, leading to confusion and mistakes — editors often didn't realize they needed to click the button after selecting a date.
+
+This release introduces two key improvements to address these issues:
+
+#### Quick Action Buttons
+
+When adding a distribution date, editors now see three quick action buttons instead of an empty date picker:
+
+- **Today**: Sets the distribution date to today at 12:00 (noon)
+- **Tomorrow**: Sets the distribution date to tomorrow at 12:00 (noon)
+- **Other date**: Opens the date picker for selecting a different date
+
+#### Auto-Save Functionality
+
+Valid dates are now automatically saved as soon as they are selected—no confirmation button required. The date picker remains open in edit mode, and any valid date selection is immediately committed to the document. This removes the confusing confirmation step and provides instant visual feedback.
+
+#### Date-Only Precision Configuration
+
+A new optional configuration property `precision` allows you to configure whether editors should enter dates with or without time information:
+
+```js
+{
+  handle: 'distributionDates',
+  type: 'li-distribution-dates',
+  ui: {
+    config: {
+      precision: 'date' // Options: 'datetime' (default) or 'date'
+    }
+  }
+}
+```
+
+**Configuration Options:**
+
+- `precision: 'datetime'` (default): Editors can set both date and time
+- `precision: 'date'`: Editors only set the date; time is automatically set to 12:00 (noon) for timezone consistency
+
 ### Simplified `li-target-length` and `li-system-target-length` UI Configuration
 
 Over time, the metadata plugins `li-target-length` and `li-system-target-length` have gained many UI configuration options, some of which are redundant. To make these plugins easier to understand and explain, we are simplifying their configuration.
@@ -443,12 +484,14 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v284.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.9): fix: Set minimal v22 node version to v22.17.1
 - [v284.0.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.8): fix(retresco): Support API versions in Retresco re-enrich endpoint
 - [v284.0.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.7): fix(public-api): Add 2025-11 to Public API versions
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+
 - [v121.3.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.5): fix(image-cropper): state pollution
 - [v121.3.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.4): fix(dashboard filters): Overlooked "low res" filter
 - [v121.3.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.3): fix(media-center-batch-actions): fix broken media library in article editor

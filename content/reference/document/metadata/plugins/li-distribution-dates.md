@@ -28,24 +28,51 @@ storageFormat: |
   ]
 contentTypeConfig: |2
         handle: 'myHandle',
-        type: 'li-distribution-dates'
+        type: 'li-distribution-dates',
+        ui: {
+          config: {
+            // {{< added-in "release-2025-11" >}}
+            precision: 'datetime' // Options: 'datetime' (default) or 'date'
+          }
+        }
 ---
 
+## UI Configuration
+
+### Precision
+
+The `precision` configuration option controls whether editors can set both date and time or only the date.
+
+```js
+{
+  handle: 'distributionDates',
+  type: 'li-distribution-dates',
+  ui: {
+    config: {
+      precision: 'date' // Options: 'datetime' (default) or 'date'
+    }
+  }
+}
+```
+
+**Configuration Options:**
+
+- `precision: 'datetime'` (default): Editors can set both date and time
+- `precision: 'date'`: Editors only set the date; time is automatically set to 12:00 (noon) for timezone consistency
+
 ## Planning Board Config
+
 ```js
 // Excerpt from project config
 module.exports = {
   dashboards: [
     {
-      type: 'planningBoard', // automatically adds main column and distribution dates column, hast custom sorting and filtering 
+      type: 'planningBoard', // automatically adds main column and distribution dates column, hast custom sorting and filtering
       handle: 'daily',
       pageTitle: {en: 'Daily Planning', de: 'Tagesplanung'},
       interval: 'day',
       baseFilters: [{key: 'contentType', term: ['regular', 'simple', 'pitch', 'bundle']}],
-      displayFilters: [
-        {metadataPropertyName: 'team'},
-        {metadataPropertyName: 'effort'}
-      ],
+      displayFilters: [{metadataPropertyName: 'team'}, {metadataPropertyName: 'effort'}],
       additionalMetadataProperties: ['team', 'effort'] // Puts these columns between main column and distribution dates column
     }
   ]
