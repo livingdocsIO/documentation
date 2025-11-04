@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix: image cropper state pollution](https://github.com/livingdocsIO/livingdocs-editor/pull/10442)
 - [Set minimal v22 node version to v22.17.1](https://github.com/livingdocsIO/livingdocs-server/pull/8585)
 - [Improvement/variables for sizes sass to css](https://github.com/livingdocsIO/livingdocs-editor/pull/10408)
 - [Fix/Overlooked Dashboard Filter](https://github.com/livingdocsIO/livingdocs-editor/pull/10449)
