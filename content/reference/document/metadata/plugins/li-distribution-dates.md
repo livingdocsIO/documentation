@@ -67,7 +67,7 @@ The `precision` configuration option controls whether editors can set both date 
 module.exports = {
   dashboards: [
     {
-      type: 'planningBoard', // automatically adds main column and distribution dates column, hast custom sorting and filtering
+      type: 'planningBoard', // automatically adds main column and distribution dates column, has custom sorting and filtering
       handle: 'daily',
       pageTitle: {en: 'Daily Planning', de: 'Tagesplanung'},
       interval: 'day',
