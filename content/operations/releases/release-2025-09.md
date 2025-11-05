@@ -563,6 +563,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v281.3.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.29): fix: Apply redaction if image is requested with a width larger than the cropped width
 - [v281.3.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.28): fix(retresco): Support API versions in Retresco re-enrich endpoint
 - [v281.3.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.27): fix(auth): Use accessTokenTtl for serve-image token expiration
 - [v281.3.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.26): fix(auth): Use accessTokenTtl for serve-image cookie expiration
