@@ -596,6 +596,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+- [v119.14.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.34): fix(clipboard): prevent duplicated ids when pasting component from clipboard
 - [v119.14.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.33): fix(dashboards): Prevent error when searching on kanban boards
 - [v119.14.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.32): fix(image-cropper): state pollution
 - [v119.14.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.31): fix(news-agency): remove redundant translations
