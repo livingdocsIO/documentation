@@ -298,6 +298,10 @@ This panel has been enhanced with the following improvements:
 
 {{< img src="release-2025-11-media-library-details-panel.png" alt="Media Library Dashboard Sidepanel" width="600" >}}
 
+### Denser Media Library Modal :gift:
+
+We've optimized the image selection modal to display more images by increasing its width in a previous release. The modal now shows up to 6 images per row (depending on screen size), compared to the previous layout. This change makes better use of available screen space.
+
 ### News Agency Improvements :gift:
 
 This release refines the News Agency module with new metadata properties and user experience improvements.
