@@ -237,6 +237,10 @@ iMatrics concepts of type category are now shown by default. Previously, they we
 
 If you want to keep the existing behavior, please set `ignoredConceptTypes: ['category']` in your [`li-imatrics-nlp-tags` metadata configuration]({{< ref "/reference/document/metadata/plugins/li-imatrics-nlp-tags/" >}}).
 
+### Removed Server Feature `li-hooks` 🔥
+
+Server feature `li-hooks`, including its server APIs, has been removed. Please migrate to regular webhooks.
+
 ## Deprecations
 
 ### Simplified `li-target-length` and `li-system-target-length` UI Configuration
@@ -251,7 +255,7 @@ Use the [new property `ui.config.modes`](#simplified-li-target-length-and-li-sys
 
 ## Features
 
-### Media Library Batch Actions
+### Media Library Multiselect & Batch Actions
 
 We are extending the multi-selection functionality within the Media Library.
 To improve efficiency when working with Media Library elements (such as images, videos or files), users can now **perform actions on multiple media items simultaneously**.
@@ -484,6 +488,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v284.0.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.11): fix(retresco): Limit retries when re-enrich fails
 - [v284.0.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.10): fix: Apply redaction if image is requested with a width larger than the cropped width
 
@@ -493,6 +498,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+
 - [v121.3.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.7): fix(clipboard): prevent duplicated ids when pasting component from clipboard
 - [v121.3.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.6): fix(dashboards): Prevent error when searching on kanban boards
 
