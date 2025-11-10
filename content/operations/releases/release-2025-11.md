@@ -349,6 +349,13 @@ ui: {
 
 {{< img src="release-2025-11-li-target-length-lines.png" alt="UI mode lines of metadata plugin li-target-length" >}}
 
+### Data Migration Improvements :gift:
+
+[Data Migrations]({{< ref "/reference/document/migration/data-migration" >}}), usually executed using the `data-migration-run` CLI, have received two improvements:
+
+- Data Migrations now also migrate any scheduled publication. Previously, only the latest draft and latest publication of a document were migrated.
+- Data Migrations have been optimized to minimize unnecessary duplication of revisions. When the same revision is linked to a document's draft, publication, or scheduled publication, it will now only be duplicated once. Additionally, when migrating a publication or scheduled publication, only the associated revision is duplicated, not the publication itself.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
