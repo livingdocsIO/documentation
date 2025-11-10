@@ -112,7 +112,7 @@ No rollback steps are required for this release.
 
 ## Deprecations
 
-## Features
+## Features :gift:
 
 ## Vulnerability Patches
 
