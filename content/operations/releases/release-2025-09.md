@@ -15,21 +15,21 @@ header:
 systemRequirements:
   suggested:
     - name: Node
-      version: 22
+      version: 24
     - name: NPM
-      version: 10
+      version: 11
     - name: Postgres
-      version: 16
+      version: 17
     - name: Elasticsearch
-      version: 8.x
+      version: 9.x
     - name: OpenSearch
       version: 2.3.0
     - name: Redis
-      version: 7
+      version: 8
     - name: Livingdocs Server Docker Image
-      version: livingdocs/server-base:22
+      version: livingdocs/server-base:24
     - name: Livingdocs Editor Docker Image
-      version: livingdocs/editor-base:22
+      version: livingdocs/editor-base:24
     - name: Browser Support
       version: Edge >= 92, Firefox >= 90, Chrome >= 92, Safari >= 15.4, iOS Safari >= 15.4, Opera >= 78
 
@@ -563,6 +563,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v281.3.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.30): fix(retresco): Limit retries when re-enrich fails
 - [v281.3.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.29): fix: Apply redaction if image is requested with a width larger than the cropped width
 - [v281.3.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.28): fix(retresco): Support API versions in Retresco re-enrich endpoint
@@ -597,6 +598,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+
 - [v119.14.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.34): fix(clipboard): prevent duplicated ids when pasting component from clipboard
 - [v119.14.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.33): fix(dashboards): Prevent error when searching on kanban boards
 - [v119.14.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.32): fix(image-cropper): state pollution
