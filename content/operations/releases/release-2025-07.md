@@ -15,7 +15,7 @@ header:
 systemRequirements:
   suggested:
     - name: Node
-      version: 22
+      version: 24
     - name: NPM
       version: 11
     - name: Postgres
