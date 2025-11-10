@@ -7,9 +7,9 @@ hideSectionTeaser: true
 
 header:
   upcoming: false
-  legacy: false
+  legacy: true
   current: false
-  maintained: true
+  maintained: false
   branchHandle: release-2025-05
 
 systemRequirements:
@@ -325,20 +325,21 @@ agencyReportImport: {
 
 Next, register your PEIQ function. It will be called when an agency report is imported and must return a document object. The function receives the following arguments:
 
-* `agencyReport`: The raw agency report data returned by the PEIQ API
-* `mediaLibraryEntries`: If the report includes images, they are imported into the Media Library and passed to the function in this array
-* `params`: If a `paramsSchema` is defined, the submitted user values are passed here
-* `context`: The configured `context` from `agencyReportImport` is forwarded to the function
-* `userId`: The ID of the user performing the import
-* `projectConfig`: The project configuration
+- `agencyReport`: The raw agency report data returned by the PEIQ API
+- `mediaLibraryEntries`: If the report includes images, they are imported into the Media Library and passed to the function in this array
+- `params`: If a `paramsSchema` is defined, the submitted user values are passed here
+- `context`: The configured `context` from `agencyReportImport` is forwarded to the function
+- `userId`: The ID of the user performing the import
+- `projectConfig`: The project configuration
 
 For the return object the livingdocs server expects the following:
-* `title`: optional string
-* `contentType`: required string
-* `metadata`: optional object
-* `metadataSource`: optional object
-* `translations`: optional array of metadata translations, e.g. `[{locale: 'en'}]`,
-* `content`: optional array of components
+
+- `title`: optional string
+- `contentType`: required string
+- `metadata`: optional object
+- `metadataSource`: optional object
+- `translations`: optional array of metadata translations, e.g. `[{locale: 'en'}]`,
+- `content`: optional array of components
 
 ```js
 liServer.registerPeiqFunction({
@@ -379,7 +380,7 @@ We've added support for three new oEmbed providers:
 
 - Bluesky
 - Pinterest
-- Reddit 
+- Reddit
 
 Using `allowedCoreProviders` is strongly recommended to configure these providers due to a [breaking change introduced regarding Facebook and Instagram providers]({{< relref "#facebook-and-instagram-oembed-providers-now-require-credentials-fire" >}}).
 
@@ -450,6 +451,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v276.3.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.35): fix(auth): Use accessTokenTtl for serve-image token expiration
 - [v276.3.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.34): fix(deps): Migrate @aws-sdk/client-ses to @aws-sdk/client-sesv2
 - [v276.3.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.33): fix(deps): update dependency @livingdocs/framework from 32.7.9 to v32.7.10
@@ -489,6 +491,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+
 - [v117.6.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.56): fix(image-cropper): showing multiple original buttons
 - [v117.6.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.55): fix(deps): update dependency @livingdocs/framework from 32.7.9 to v32.7.10
 - [v117.6.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.54): fix(properties-panel): Only emit change event when component exists
