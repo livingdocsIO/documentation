@@ -626,6 +626,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v280.1.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.33): fix(retresco): Limit retries when re-enrich fails
 - [v280.1.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.32): fix: Apply redaction if image is requested with a width larger than the cropped width
 - [v280.1.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.31): fix(retresco): Support API versions in Retresco re-enrich endpoint
 - [v280.1.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.30): fix(auth): Use accessTokenTtl for serve-image token expiration
