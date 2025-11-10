@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [Design/Horizontal Form Plugin Top Spacing](https://github.com/livingdocsIO/livingdocs-editor/pull/10432)
 - [Limit retries when Retresco re-enrich fails](https://github.com/livingdocsIO/livingdocs-server/pull/8594)
 - [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8603)
@@ -125,7 +126,7 @@ No rollback steps are required for this release.
 
 ## Deprecations
 
-## Features
+## Features :gift:
 
 ## Vulnerability Patches
 

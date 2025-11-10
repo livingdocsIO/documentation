@@ -253,9 +253,9 @@ The following `li-target-length` and `li-system-target-length` UI configuration 
 
 Use the [new property `ui.config.modes`](#simplified-li-target-length-and-li-system-target-length-ui-configuration-1) instead.
 
-## Features
+## Features :gift:
 
-### Media Library Multiselect & Batch Actions
+### Media Library Multiselect & Batch Actions :gift:
 
 We are extending the multi-selection functionality within the Media Library.
 To improve efficiency when working with Media Library elements (such as images, videos or files), users can now **perform actions on multiple media items simultaneously**.
@@ -298,7 +298,7 @@ This panel has been enhanced with the following improvements:
 
 {{< img src="release-2025-11-media-library-details-panel.png" alt="Media Library Dashboard Sidepanel" width="600" >}}
 
-### News Agency Improvements
+### News Agency Improvements :gift:
 
 This release refines the News Agency module with new metadata properties and user experience improvements.
 
@@ -356,7 +356,7 @@ The user experience for managing news agency notification categories has been im
 
 {{< img src="release-2025-11-news-agency-select-all.png" alt="News Agency Notifications Preferences" width="250" >}}
 
-### Distribution Dates UI Improvements
+### Distribution Dates UI Improvements :gift:
 
 Editors use the planning board to manage articles scheduled for publishing and distribution. Since distribution dates often correspond to the current day or near future, setting them quickly and accurately is essential for efficient workflow management.
 
@@ -397,7 +397,7 @@ A new optional configuration property `precision` allows you to configure whethe
 - `precision: 'datetime'` (default): Editors can set both date and time
 - `precision: 'date'`: Editors only set the date; time is automatically set to 12:00 (noon) for timezone consistency
 
-### Simplified `li-target-length` and `li-system-target-length` UI Configuration
+### Simplified `li-target-length` and `li-system-target-length` UI Configuration :gift:
 
 Over time, the metadata plugins `li-target-length` and `li-system-target-length` have gained many UI configuration options, some of which are redundant. To make these plugins easier to understand and explain, we are simplifying their configuration.
 
