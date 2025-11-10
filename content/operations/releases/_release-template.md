@@ -15,21 +15,21 @@ header:
 systemRequirements:
   suggested:
     - name: Node
-      version: 22.17.1
+      version: 24
     - name: NPM
-      version: 10
+      version: 11
     - name: Postgres
-      version: 16
+      version: 17
     - name: Elasticsearch
-      version: 8.x
+      version: 9.x
     - name: OpenSearch
       version: 2.3.0
     - name: Redis
-      version: 7
+      version: 8
     - name: Livingdocs Server Docker Image
-      version: livingdocs/server-base:22
+      version: livingdocs/server-base:24
     - name: Livingdocs Editor Docker Image
-      version: livingdocs/editor-base:22
+      version: livingdocs/editor-base:24
     - name: Browser Support
       version: Chrome >= 144, Edge >= 144, Firefox >= 146, Safari >= 26.0
 
