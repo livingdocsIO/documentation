@@ -15,7 +15,7 @@ header:
 systemRequirements:
   suggested:
     - name: Node
-      version: 24
+      version: 22
     - name: NPM
       version: 11
     - name: Postgres
@@ -626,6 +626,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v280.1.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.33): fix(retresco): Limit retries when re-enrich fails
 - [v280.1.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.32): fix: Apply redaction if image is requested with a width larger than the cropped width
 - [v280.1.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.31): fix(retresco): Support API versions in Retresco re-enrich endpoint
@@ -664,6 +665,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+
 - [v119.3.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.42): fix(clipboard): prevent duplicated ids when pasting component from clipboard
 - [v119.3.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.41): fix(image-cropper): state pollution
 - [v119.3.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.40): fix(image-cropper): showing multiple original buttons

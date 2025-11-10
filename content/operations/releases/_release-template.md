@@ -15,7 +15,7 @@ header:
 systemRequirements:
   suggested:
     - name: Node
-      version: 22
+      version: 22.17.1
     - name: NPM
       version: 10
     - name: Postgres
@@ -35,7 +35,7 @@ systemRequirements:
 
   minimal:
     - name: Node
-      version: 20.19
+      version: 20.19.5
     - name: NPM
       version: 10
     - name: Postgres
