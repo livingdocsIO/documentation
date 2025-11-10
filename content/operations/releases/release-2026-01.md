@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8603)
 - [Prevent duplicate component ids when pasting container components from clipboard](https://github.com/livingdocsIO/livingdocs-editor/pull/10468)
 - [chore(deps): update dependency puppeteer-core from 24.28.0 to v24.29.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10469)
 - [Prevent error when searching on kanban boards](https://github.com/livingdocsIO/livingdocs-editor/pull/10452)
