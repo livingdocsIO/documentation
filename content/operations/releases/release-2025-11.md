@@ -385,6 +385,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v284.0.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.12): fix: serve image with media library entry mime type if format is not specified
 
 - [v284.0.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.11): fix(retresco): Limit retries when re-enrich fails
 - [v284.0.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.10): fix: Apply redaction if image is requested with a width larger than the cropped width
