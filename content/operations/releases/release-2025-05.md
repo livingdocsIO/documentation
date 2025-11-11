@@ -451,6 +451,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v276.3.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.36): fix: add li-tree UI config property treeInitiallyCollapsed
 
 - [v276.3.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.35): fix(auth): Use accessTokenTtl for serve-image token expiration
 - [v276.3.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.34): fix(deps): Migrate @aws-sdk/client-ses to @aws-sdk/client-sesv2
