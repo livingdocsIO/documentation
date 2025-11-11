@@ -492,6 +492,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+- [v117.6.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.57): fix: collapse li-tree properties if treeInitiallyCollapsed is set
 
 - [v117.6.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.56): fix(image-cropper): showing multiple original buttons
 - [v117.6.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.55): fix(deps): update dependency @livingdocs/framework from 32.7.9 to v32.7.10
