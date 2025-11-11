@@ -99,7 +99,7 @@ contentTypeConfig: |2
           // specific
           maxDepth: 3,                                  // default: undefined | tree depth
           allowedTypes: ['group', 'document', 'link'],  // default: ['group', 'document', 'link'], multilang is configured seperatly
-          multilang: true,                             // optional, default: false
+          multilang: true,                              // optional, default: false
 
           // settings for document link
           document: {
@@ -111,12 +111,12 @@ contentTypeConfig: |2
           label: 'foo',                                 // optional, takes camelized name otherwise
           config: {
             readOnly: true,                             // optional, default: false
-
             document: {                                 // define a Dashboard with filters
               useDashboard: 'my-dashboard',             //   reference to a custom dashboard
               baseFilters: [],                          //   https://docs.livingdocs.io/customising/advanced/editor-configuration/base-filter/
               displayFilters: []                        //   https://docs.livingdocs.io/customising/advanced/editor-configuration/display-filter/
-            }
+            },
+            treeInitiallyCollapsed: true                // default: false, shows the tree in its collapsed form when opening a document
           }
         }
 additionalConfig: |
