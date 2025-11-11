@@ -522,6 +522,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v271.0.52](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.52): fix: add li-tree UI config property treeInitiallyCollapsed
 
 - [v271.0.51](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.51): fix: Patch vulnerable dependencies
 - [v271.0.50](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.50): fix(retresco): Request more rows on entities endpoint
