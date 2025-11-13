@@ -5,8 +5,7 @@ weight: 2
 ---
 
 {{< warning >}}
-As of {{< release "release-2025-07" >}}, Livingdocs includes a built-in integration for news agencies. It offers a better user and developer experience. Please reach out to your customer solutions manager to learn more.
-
+As of {{< release "release-2025-07" >}}, Livingdocs includes a [built-in integration for news agencies]({{< ref "/guides/integrations/news-agencies" >}}). It offers a better user and developer experience. Please reach out to your customer solutions manager to learn more.
 {{< /warning >}}
 
 Apart from the one-time imports to import a set of legacy data into Livingdocs, continuous imports from a third-party feed, e.g. DPA articles are a major case for publishers.

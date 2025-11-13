@@ -4,8 +4,6 @@ weight: 12
 menus:
   reference:
     parent: Project Config
-draft: true
-excludeFromSearch: true
 ---
 
 {{< added-in "release-2025-07" block >}}
