@@ -76,8 +76,23 @@ This endpoint delivers the image with its original dimensions, as long as it has
 {{< info >}}
 To avoid performance bottlenecks ensure you place a CDN or image proxy in front of Livingdocs, retrieving images via the new API. This prevents excessive load on the Livingdocs Server.
 
-Whenever an asset gets modified, we emit the [`mediaLibraryEntry.update`]({{< ref "/customising/advanced/server-events/#media-library-entry" >}}) server event. This event can be used to purge a CDN or other image service.
+Whenever an asset gets modified, we emit the [`mediaLibraryEntry.update`]({{< ref "/customising/advanced/server-events/#media-library-entry" >}}) server event. This event can be used to purge a CDN or other image service. The `mediaLibraryEntry.update` event also occurs for metadata changes, so if you want to only handle asset changes you can filter the events by checking whether `payload.changes?.some((c) => c.event === 'mediaLibraryEntry.asset.update')`.
 {{< /info >}}
+
+{{< warning >}}
+If you had a path (and not just a domain) in `serverConfig.mediaLibrary.images.publicUrl`, or if you have documents which were created before {{< release "release-2024-03" >}}, you will need to set `serverConfig.mediaLibrary.generateImageServiceUrlsOnRead: true`.
+
+If both of the above conditions apply you will also need to define `serverConfig.mediaLibrary.images.storage.extractKey` as something like the following:
+```js
+extractKey(url) {
+  const path = new URL(url).pathname
+  const pathPrefix = 'images/'
+  return path.startsWith(pathPrefix)
+    ? path.slice(pathPrefix.length)
+    : path
+}
+```
+{{< /warning >}}
 
 ### Image Editing
 
