@@ -2,8 +2,6 @@
 title: News Agencies
 description: News Agency Integration
 weight: 2
-draft: true
-excludeFromSearch: true
 ---
 
 {{< added-in "release-2025-07" block >}}
