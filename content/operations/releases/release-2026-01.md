@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Migrate remaining Media Library views from Angular.js to Vue](https://github.com/livingdocsIO/livingdocs-editor/pull/10473)
 - [Add li-tree UI config property treeInitiallyCollapsed](https://github.com/livingdocsIO/livingdocs-server/pull/8604)
 - [Collapse li-tree properties if treeInitiallyCollapsed is set](https://github.com/livingdocsIO/livingdocs-editor/pull/10475)
 - [Upgrade vue-eslint-parser](https://github.com/livingdocsIO/livingdocs-editor/pull/10426)
