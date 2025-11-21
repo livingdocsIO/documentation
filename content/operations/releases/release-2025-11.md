@@ -385,6 +385,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v284.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.14): chore(retresco): Simplify retresco config lookup further
 - [v284.0.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.13): fix: add li-tree UI config property treeInitiallyCollapsed
 - [v284.0.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.12): fix: serve image with media library entry mime type if format is not specified
 
