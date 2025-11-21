@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency posthog-node from 5.12.0 to v5.13.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8649)
 - [Validate content schema when importing document via Public API](https://github.com/livingdocsIO/livingdocs-server/pull/8638)
 - [Prevent legacy dashboards from loading twice](https://github.com/livingdocsIO/livingdocs-editor/pull/10451)
 - [fix(deps): update dependency open from 10.2.0 to v11 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10506)
