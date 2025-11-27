@@ -578,6 +578,7 @@ Here is a list of all patches after the release has been announced.
 - [v271.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v271.0.2): fix(api-version): Keep supporting beta routes
 
 ### Livingdocs Editor Patches
+- [v115.22.83](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.83): fix(metadata): Prevent nested items jumping when dragging li-tree items
 - [v115.22.82](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.82): fix(dataload): Add maxBatchSize to Dataloader instances to reduce url lengths when loading a lot of entries
 - [v115.22.81](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v115.22.81): fix(li-tree): allow nesting of li-tree items again
 
