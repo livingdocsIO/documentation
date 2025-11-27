@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Use full gap between li-tree items as the drop zone](https://github.com/livingdocsIO/livingdocs-editor/pull/10513)
 - [Extend Revoke capabilities](https://github.com/livingdocsIO/livingdocs-editor/pull/10497)
 - [Extend Revoke capabilities](https://github.com/livingdocsIO/livingdocs-server/pull/8632)
 - [Inject built-in content type liNewsAgencyReport when writing project config](https://github.com/livingdocsIO/livingdocs-server/pull/8509)
