@@ -8,7 +8,7 @@ menus:
 
 ## Changelog
 
-In the last few months we have substantially extended the media library. To show you what changed in what release, we provide you a changelog.
+The media library is a feature we are constantly extending and changing. To show you what changed in what release, we provide you a changelog.
 
 #### Add Image Support
 

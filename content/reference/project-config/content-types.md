@@ -578,6 +578,66 @@ When configured, this content type will only allow image operations using the sp
 
 If not configured, all image media types are allowed (default behavior).
 
+## dashboardReference: Media Library Dashboard References for Media Elements (images, videos, files)
+
+{{< added-in "release-2026-01" >}}
+
+<!-- TODO: when available add link to Media Library Dashboards introduction in release notes -->
+
+Together with the introduction of Media Library Dashboards, we are introducing the property `dashboardReference` for media elements (images, videos, files).
+It determines, which media library dashboard should be shown for the respective media assetType (mediaImage, mediaVideo, mediaFile) on a content-type.
+Further, it is possible to extend base-filters and display-filters of the referenced dashboard.
+
+<strong>Schema for `dashboardReference`:</strong>
+
+```js
+ms.obj({
+  useDashboard: ms.required.$ref('LivingdocsHandle'), // referenced media library dashboard
+  baseFilters: ms.arrayOf({$ref: 'LivingdocsBaseFilterStrict'}), // extends base filters of the referenced media library dashboard
+  displayFilters: {$ref: 'LivingdocsDisplayFilters'} // extends display filters of the referenced media library dashboard
+})
+```
+
+This configuration ultimatively determines, which Media Library Dashboard is shown
+
+- in the editor sidepanel for the media type (can be opened via the toolbar elements image / video / file)
+- in any modal in the editor that shows the media library.
+
+If <strong>no</strong> dashboardReference is configured, the displayed media library, shows
+
+- all available mediaTypes of an assetType (mediaImage, mediaVideo, mediaFile), if nothing else is configured.
+- for images (assetType mediaImage), if there are mediaTypes configured in `content-type.editor.images.mediaTypes`, only those mediaTypes.
+
+If dashboardReference is configured,
+
+- the displayed media library shows all mediaTypes for the assetType that is configured on the referenced dashboard.
+- baseFilters & displayFilters of the referenced dashboard, as well as baseFilters & displayFilters configured in `content-type.editor.<images/videos/files>.dashboardReference.baseFilters` are considered.
+- For images (assetType mediaImage), if there are mediaTypes configured in `content-type.editor.images.mediaTypes`, only those mediaTypes will be shown. This will overrule any baseFilters on mediaTypes configured on the referenced dashboard.
+
+<strong>Example Config:</strong>
+
+```js
+{
+  handle: 'article',
+  editor: {
+    images: {
+      mediaTypes: ['image', 'infographic'], // for images (assetType `mediaImage`), you can also define mediaTypes
+      dashboardReference: {
+        useDashboard: 'myImageMediaLibraryDashboard',
+        displayFilters: [{filterName: 'liDateTimeRange'}]
+      }
+    },
+    videos: {
+      dashboardReference: {
+        useDashboard: 'myVideoLibrary',
+        baseFilters: [{key: 'metadata.transformed', term: true}],
+        displayFilters: [{filterName: 'liDateTimeRange'}]
+      }
+    }
+  }
+}
+```
+
 ## Teaser Previews
 
 You can configure teaser previews for this content-type that are displayed on the publish panel, e.g. how an article will look like when referenced from the start page. This is useful for your editors to see the provided metadata in the real, visual context.
