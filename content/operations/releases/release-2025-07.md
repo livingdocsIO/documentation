@@ -667,6 +667,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+- [v119.3.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.44): fix(metadata): Prevent nested items jumping when dragging li-tree items
 - [v119.3.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.43): fix: collapse li-tree properties if treeInitiallyCollapsed is set
 
 - [v119.3.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.42): fix(clipboard): prevent duplicated ids when pasting component from clipboard
