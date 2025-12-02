@@ -134,6 +134,10 @@ No rollback steps are required for this release.
 
 ## Deprecations
 
+### Referenced Designs
+
+Referenced designs are now deprecated and will be removed in release-2026-07. Please use [embedded designs]({{< ref "/guides/documents/document-design/embedded-design/" >}}) instead.
+
 ## Features :gift:
 
 ## Vulnerability Patches
