@@ -4,6 +4,8 @@ description: Set up the Livingdocs Server configuration to support copying conte
 weight: 2
 ---
 
+{{< deprecated-in "release-2026-01" block >}}
+
 {{< warning >}}
 Use of this Document Copy feature is no longer recommended. For new setups please use the [Document Copy Flows]({{< ref "/guides/editor/document-copy-flows" >}}) or [Document Transform Flows]({{< ref "/guides/editor/document-transform-flows" >}}) features instead.
 {{< /warning >}}
