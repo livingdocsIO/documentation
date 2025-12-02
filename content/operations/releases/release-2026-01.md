@@ -35,7 +35,7 @@ systemRequirements:
 
   minimal:
     - name: Node
-      version: 20.19.5
+      version: 22.17.1
     - name: NPM
       version: 10
     - name: Postgres
@@ -47,9 +47,9 @@ systemRequirements:
     - name: Redis
       version: 6.2
     - name: Livingdocs Server Docker Image
-      version: livingdocs/server-base:20:10
+      version: livingdocs/server-base:22
     - name: Livingdocs Editor Docker Image
-      version: livingdocs/editor-base:20:10
+      version: livingdocs/editor-base:22
     - name: Browser Support
       version: Chrome >= 131, Edge >= 131, Firefox >= 133, Safari >= 18.2
 ---
