@@ -57,12 +57,6 @@ liEditor.includes.register('brightcove', {
   }
 })
 
-// Register a custom metadata field model (business logic)
-liEditor.metadataServices.register(
-  'categorySelection',
-  require('../plugins/metadata_services/category_selection_service')
-)
-
 // Example of custom embeds
 // embeds = require('@livingdocs/editor/app/scripts/modules/embeds/embeds')
 // Pinterest = require('./custom/scripts/modules/embeds/pinterest/pinterest')
