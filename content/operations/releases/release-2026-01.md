@@ -173,6 +173,51 @@ These settings were already partially unsupported in the Livingdocs Editor. We'r
 
 Project config properties `deliveries[].publishType` and `contentTypes[].publishType` have been deprecated and will be removed in release-2026-07. Please migrate to the newly introduced [Publish Control Export Mode](#publish-control-export-mode-gift) instead.
 
+### Search Metadata Mapping
+
+The `search.metadataMapping` server config property is deprecated. Please switch to dynamic metadata mapping.
+
+The relevant li-* core plugins have indexing enabled, but for custom plugins you might need to add an `indexing` config to your metadata plugin:
+```js
+{
+  name: 'my-slug',
+
+  indexing: {
+    enabled: true,
+    behavior: [
+      {type: 'text'},
+      {
+        type: 'keyword',
+        getValue(val) {
+          if (val.length > 100) return val.substr(0, 100)
+          return val
+        }
+      }
+    ]
+  },
+
+  storageSchema: {
+    type: 'string'
+  }
+}
+```
+
+In the content type config or media type config you will also need to set `config.index: true`:
+```js
+{
+  handle: 'slug',
+  type: 'my-slug',
+  config: {
+    index: true
+  }
+}
+```
+
+More details can be found in the documentation:
+1. [Enable indexing on metadata plugin]({{< ref "/customising/server-configuration/#enable-indexing-on-metadata-plugin" >}})
+2. [Publication Index > Metadata Plugins]({{< ref "/guides/search/publication-index/#metadata-plugins" >}})
+3. [Create your own Metadata Plugin]({{< ref "/guides/documents/metadata/metadata-examples/#example-2-create-your-own-metadata-plugin" >}})
+
 ## Features :gift:
 
 ### Publish Control Export Mode :gift:
