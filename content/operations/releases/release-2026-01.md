@@ -134,6 +134,25 @@ No rollback steps are required for this release.
 
 ## Deprecations
 
+### Deprecate various search schema properties
+
+The following server config properties are deprecated and will be removed in release-2026-07:
+
+- `search.queryBuilderConfig`
+- `search.implementationVersion`
+- `search.reindexBatchSize`
+- `search.reindexDelay`
+- `search.reindexConcurrency`
+- `search.fields`
+- `search.gaussScale`
+- `search.gaussDecay`
+- `search.gaussOffset`
+- `search.gaussWeight`
+- `search.prefixQueryType`
+- `search.prefixQueryFields`
+- `search.fulltextQueryType`
+- `search.fulltextQueryOperator`
+
 ## Features :gift:
 
 ## Vulnerability Patches
