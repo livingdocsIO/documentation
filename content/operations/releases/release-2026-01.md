@@ -218,6 +218,25 @@ More details can be found in the documentation:
 2. [Publication Index > Metadata Plugins]({{< ref "/guides/search/publication-index/#metadata-plugins" >}})
 3. [Create your own Metadata Plugin]({{< ref "/guides/documents/metadata/metadata-examples/#example-2-create-your-own-metadata-plugin" >}})
 
+### Deprecate various search schema properties
+
+The following server config properties are deprecated and will be removed in release-2026-07:
+
+- `search.queryBuilderConfig`
+- `search.implementationVersion`
+- `search.reindexBatchSize`
+- `search.reindexDelay`
+- `search.reindexConcurrency`
+- `search.fields`
+- `search.gaussScale`
+- `search.gaussDecay`
+- `search.gaussOffset`
+- `search.gaussWeight`
+- `search.prefixQueryType`
+- `search.prefixQueryFields`
+- `search.fulltextQueryType`
+- `search.fulltextQueryOperator`
+
 ## Features :gift:
 
 ### Publish Control Export Mode :gift:
