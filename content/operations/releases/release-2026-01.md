@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Prevent unrevoke when the asset has been deleted](https://github.com/livingdocsIO/livingdocs-editor/pull/10512)
 - [Prevent unrevoke when the asset has been deleted](https://github.com/livingdocsIO/livingdocs-server/pull/8658)
 - [fix(tableDashboard): show language dialog for single contentTypes ](https://github.com/livingdocsIO/livingdocs-editor/pull/10521)
 - [Use full gap between li-tree items as the drop zone](https://github.com/livingdocsIO/livingdocs-editor/pull/10513)
