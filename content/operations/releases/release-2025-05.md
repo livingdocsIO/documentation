@@ -492,6 +492,7 @@ Here is a list of all patches after the release has been announced.
 - [v276.3.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v276.3.1): fix(peiq-agency): Improve handling of empty property image_ids
 
 ### Livingdocs Editor Patches
+- [v117.6.61](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.61): fix(tableDashboard): show language dialog for single contentTypes on the document-creation-flow-button
 - [v117.6.60](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.60): fix(metadata): Prevent nested items jumping when dragging li-tree items
 - [v117.6.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.59): fix(dataload): Add maxBatchSize to Dataloader instances to reduce url lengths when loading a lot of entries
 - [v117.6.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v117.6.58): fix(li-tree): allow nesting of li-tree items again
