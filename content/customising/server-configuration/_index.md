@@ -1284,6 +1284,8 @@ When you want to index your metadata image fields in Elasticsearch (e.g. for das
 
 ##### Google Vision API
 
+{{< deprecated-in "release-2026-01" block >}}
+
 Livingdocs supports auto-tagging of images through the Google Vision API integration. In order to use this feature you need to open an account on GCP. Careful, use of this feature will incur costs with GCP. Refer to Google's pricing for more details. Livingdocs uses the label annotation and web detection features (can be configured).
 The node vision API package has some good documentation on how to create an account: https://github.com/googleapis/nodejs-vision
 
@@ -1304,7 +1306,7 @@ If you want to do it manually, add the following configuration to the project's 
         private_key: `-----BEGIN PRIVATE KEY-----foo bar\n-----END PRIVATE KEY-----\n`,
         client_email: 'vision-api-dev@livingdocs-devel-1540279986584.iam.gserviceaccount.com',
         client_id: '116066780307201591107',
-        auth_uri: 'https://accounts.google.com/o/oauth2/auth',
+        auth_uri: 'https://accounts./oauth2/auth',
         token_uri: 'https://oauth2.googleapis.com/token',
         auth_provider_x509_cert_url: 'https://www.googleapis.com/oauth2/v1/certs',
         client_x509_cert_url: 'https://www.googleapis.com/robot/v1/metadata/x509/vision-api-dev%40livingdocs-devel-1540279986584.iam.gserviceaccount.com'
