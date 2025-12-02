@@ -70,6 +70,7 @@ module.exports = {
       handle: 'slug',
       type: 'bp-slug',
       config: {
+        index: true,
         required: true,
         requiredErrorMessage: 'please provide a slug'
       },
@@ -98,6 +99,20 @@ The `bp` prefix stands for one of our downstreams, named: _boilerplate_. You sho
 ```js
 module.exports = {
   name: 'bp-slug',
+
+  indexing: {
+    enabled: true,
+    behavior: [
+      {type: 'text'},
+      {
+        type: 'keyword',
+        getValue(val) {
+          if (val.length > 100) return val.substr(0, 100)
+          return val
+        }
+      }
+    ]
+  },
 
   storageSchema: {
     type: 'string'
