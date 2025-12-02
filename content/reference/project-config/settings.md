@@ -232,6 +232,7 @@ settings: {
     ]
   },
 
+  // {{< deprecated-in "release-2026-01" >}}
   copy: [{
     source: {
       channelHandle: 'web',
@@ -404,6 +405,8 @@ Webhooks allow you to receive notifications for events from within Livingdocs an
 For details on the parameters see our [Webhooks]({{< ref "/reference/webhooks" >}}) documentation.
 
 ## Copy Configuration
+
+{{< deprecated-in "release-2026-01" block >}}
 
 The copy configuration allows you to define the mapping of what content-types can be copied to what other content-types and how the metadata is mapped. A common example is the copy of a web article to the print article.
 

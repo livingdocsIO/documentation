@@ -134,6 +134,13 @@ No rollback steps are required for this release.
 
 ## Deprecations
 
+### Declarative Document Copy API
+
+The Declarative Document Copy API (which uses the `settings.copy` object in the project config) has been deprecated.
+Please use Document Copy Flows and Document Transform Flows instead:
+- https://docs.livingdocs.io/guides/editor/document-copy-flows
+- https://docs.livingdocs.io/guides/editor/document-transform-flows
+
 ## Features :gift:
 
 ## Vulnerability Patches
