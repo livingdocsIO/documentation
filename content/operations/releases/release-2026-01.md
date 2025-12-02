@@ -248,6 +248,10 @@ Please use Document Copy Flows and Document Transform Flows instead:
 - https://docs.livingdocs.io/guides/editor/document-copy-flows
 - https://docs.livingdocs.io/guides/editor/document-transform-flows
 
+### Referenced Designs
+
+Referenced designs are now deprecated and will be removed in release-2026-07. Please use [embedded designs]({{< ref "/guides/documents/document-design/embedded-design/" >}}) instead.
+
 ## Features :gift:
 
 ### Publish Control Export Mode :gift:

@@ -13,7 +13,7 @@ It also lists the CSS and/or Javascript dependencies that need to be loaded to r
 
 A document design is defined in the [project config]({{< ref "/reference/project-config" >}}) in both `design_settings.js` and `components`.
 
-_Good to know:_ you might come across the notion of a "reference design". Reference designs are basically the same as embedded designs, but live externally, e.g. on an S3 bucket and are referenced in a project. The downside of reference designs is that they can not be customized in the context of a single project.
+_Good to know:_ you might come across the notion of a "reference design". Reference designs are basically the same as embedded designs, but live externally, e.g. on an S3 bucket and are referenced in a project. The downside of reference designs is that they can not be customized in the context of a single project. They have also been deprecated in {{< release "release-2026-01" >}}.
 
 ### Hands-on: add a new component
 
