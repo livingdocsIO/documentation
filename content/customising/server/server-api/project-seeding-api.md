@@ -66,6 +66,7 @@ Example: `seeding.js`
       secrets: [{name: 'my-secret', value: 'super-secret'}]
     },
     // project with reference design
+    // {{< deprecated-in "release-2026-01" >}}
     {
       __recreateIfItExists: false,
       __update: true,
@@ -94,9 +95,9 @@ You can define users in two places:
 
 Project configurations can be of three types:
 
-- Multi-channel Configuration (where only referenced designs can be used)
 - Embedded design
-- Referenced design
+- Referenced design {{< deprecated-in "release-2026-01" >}}
+- Multi-channel Configuration (where only referenced designs can be used) {{< removed-in "release-2025-07" >}}
 
 #### Groups
 

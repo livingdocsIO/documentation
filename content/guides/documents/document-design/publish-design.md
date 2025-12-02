@@ -5,6 +5,8 @@ description: Upload a Reference Design to a Livingdocs Server with ldm (Livingdo
 weight: 6
 ---
 
+{{< deprecated-in "release-2026-01" block >}}
+
 {{< info >}}
 For new setups, we recommend using Embedded Designs instead of Reference Designs. This guide applies only to Reference Designs.
 {{< /info >}}
