@@ -39,7 +39,7 @@ systemRequirements:
     - name: NPM
       version: 10
     - name: Postgres
-      version: 13
+      version: 14
     - name: Elasticsearch
       version: 7.x
     - name: OpenSearch
