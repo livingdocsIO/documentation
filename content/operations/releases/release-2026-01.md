@@ -258,6 +258,10 @@ Please use Document Copy Flows and Document Transform Flows instead:
 
 Referenced designs are now deprecated and will be removed in release-2026-07. Please use [embedded designs]({{< ref "/guides/documents/document-design/embedded-design/" >}}) instead.
 
+### Google Vision Integration :hourglass:
+
+The Google Vision integration is deprecated and will be removed in release-2026-07. This includes the li-google-vision metadata plugin. We do not expect that any customer is using this, but if you are then please contact us and we will provide support for the migration.
+
 ## Features :gift:
 
 ### Publish Control Export Mode :gift:
