@@ -95,7 +95,6 @@ This is how your Teaser Component looks like in this case:
 
 - `editableContent` has no effect when more than one component is returned.
 - The includes won't be resolved when you load the publication via Public API `api/{{< api-version >}}/documents/:documentId/latestPublication`.
-- When requesting a web rendition of a publication, the components returned from the include resolver won't be part of rendered html for now.
 
 ## References
 
