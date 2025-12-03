@@ -28,6 +28,10 @@ Enable the integration on the server level by setting `allowed: true`. You can a
 }
 ```
 
+{{< info >}}
+For the test environment it is recommended to either disable the Retresco integration with `allowed: false`, or to set `registerHooks: false` to prevent the integration from interfering during publish and unpublish events.
+{{< /info >}}
+
 ### Project
 
 Each project also needs to be configured to use the Retresco integration. You must set `enabled: true` to activate the feature, and provide the Retresco API endpoint and credentials.
