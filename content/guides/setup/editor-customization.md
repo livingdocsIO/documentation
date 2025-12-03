@@ -44,7 +44,7 @@ require('./custom/scripts/factories/categories')(editingApiModule)
 
 // Register a custom filter for the dashboard
 const layoutsFilter = require('./custom/filters/layouts_filter')
-liEditor.searchFilters.registerList('layouts', layoutsFilter)
+liEditor.searchFilters.registerListV2('layouts', layoutsFilter)
 
 // Register a custom doc-include sidebar interface (Angular component)
 liEditor.includes.register('brightcove', {
