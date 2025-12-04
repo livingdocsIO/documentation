@@ -600,6 +600,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+- [v119.14.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.37): fix(planning-boards): Use start of week for current week
 - [v119.14.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.36): fix(metadata): Prevent nested items jumping when dragging li-tree items
 - [v119.14.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.35): fix: collapse li-tree properties if treeInitiallyCollapsed is set
 
