@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency @google-cloud/storage from 7.17.3 to v7.18.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8682)
 - [Fix: Last item in --overflow table](https://github.com/livingdocsIO/livingdocs-editor/pull/10543)
 - [Design/Table Dashboard Brush-Up](https://github.com/livingdocsIO/livingdocs-editor/pull/10531)
 - [Use start of week for current week active date range in planning board](https://github.com/livingdocsIO/livingdocs-editor/pull/10539)
