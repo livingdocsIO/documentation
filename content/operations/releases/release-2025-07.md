@@ -626,6 +626,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v280.1.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.36): fix: convert animated images to non-animated ones
 - [v280.1.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.35): fix: add li-tree UI config property treeInitiallyCollapsed
 - [v280.1.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.34): fix: serve image with media library entry mime type if format is not specified
 
