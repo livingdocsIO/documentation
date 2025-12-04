@@ -399,6 +399,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.12): fix(planning-boards): Use start of week for current week
 - [v121.3.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.11): fix(tableDashboard): show language dialog for single contentTypes on the document-creation-flow-button
 - [v121.3.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.10): fix(metadata): Prevent nested items jumping when dragging li-tree items
 - [v121.3.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.9): fix: collapse li-tree properties if treeInitiallyCollapsed is set
