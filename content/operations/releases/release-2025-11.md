@@ -385,6 +385,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v284.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.17): fix: restore support for CJS data migrations
 - [v284.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.16): fix: convert animated images to non-animated ones
 - [v284.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.15): fix(retresco): Ignore configuration errors in hooks
 - [v284.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.14): chore(retresco): Simplify retresco config lookup further
