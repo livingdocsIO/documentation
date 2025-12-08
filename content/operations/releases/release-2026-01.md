@@ -149,9 +149,39 @@ No rollback steps are required for this release.
 
 ## Breaking Changes 🔥
 
-## Deprecations
+### Validation of Delivery References :fire:
+
+Deliveries referenced by project config property `contentTypes[].deliveries[].deliveryName` are now validated. If a delivery reference is invalid, an error will be thrown. Make sure the referenced deliveries exist.
+
+### Publish Control Restrictions When Print Mode Is Enabled :fire:
+
+The project config properties `contentTypes[].publishControl.publishSchedule`,
+`contentTypes[].publishControl.unpublishSchedule`,
+`contentTypes[].publishControl.significantPublicationDate`, and
+`contentTypes[].publishControl.resetVisiblePublicationDateOverrideOnSignificantUpdate`
+are no longer supported when `contentTypes[].print` is enabled.
+
+These settings were already partially unsupported in the Livingdocs Editor. We're now enforcing the same behavior in the Livingdocs Server as well.
+
+## Deprecations :hourglass:
+
+### Publish Type :hourglass:
+
+Project config properties `deliveries[].publishType` and `contentTypes[].publishType` have been deprecated and will be removed in release-2026-07. Please migrate to the newly introduced [Publish Control Export Mode](#publish-control-export-mode-gift) instead.
 
 ## Features :gift:
+
+### Publish Control Export Mode :gift:
+
+Publish control export mode is a new way to export documents from Livingdocs to external systems. It is meant for publishers who use Livingdocs not only for websites but also for print products, digital editions, or newsletters.
+
+In the past, editors had to publish a document first and then trigger an export separately. For some content types this was inconvenient.
+
+With export mode, editors can now export a document with a single button click. This makes it easier to produce print articles and newsletters from the Livingdocs editor.
+
+{{< img src="release-2026-01-export-mode.png" alt="Screenshot showing the export button" width="400" >}}
+
+Under the hood, export mode combines existing concepts such as publishing and delivery builds. For instructions and more details, refer to the [Publish Control Export Mode guide]({{< ref "/guides/editor/publish-control/export-mode" >}}).
 
 ## Vulnerability Patches
 
