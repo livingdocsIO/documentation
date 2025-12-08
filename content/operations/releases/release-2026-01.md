@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Restore support for CJS data migrations](https://github.com/livingdocsIO/livingdocs-server/pull/8698)
 - [Use correct status icons for exported documents](https://github.com/livingdocsIO/livingdocs-editor/pull/10545)
 - [Publish Control Export Mode](https://github.com/livingdocsIO/livingdocs-server/pull/8676)
 - [Publish Control Export Mode](https://github.com/livingdocsIO/livingdocs-editor/pull/10532)
