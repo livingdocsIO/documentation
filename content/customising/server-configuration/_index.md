@@ -776,6 +776,7 @@ search: {
   // The metadata mapping determines which metadata fields will be indexed
   // in elasticsearch. This can then be used to e.g. create search filters
   // based on metadata.
+  // {{< deprecated-in "release-2026-01" >}}
   metadataMapping: require.resolve('../some/path/metadata/es_metadata_mapping'),
 
   // your optional custom elasticsearch search function
