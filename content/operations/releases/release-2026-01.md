@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Show additional info toggle for all media types](https://github.com/livingdocsIO/livingdocs-editor/pull/10546)
 - [Drop support for Postgres v13](https://github.com/livingdocsIO/livingdocs-server/pull/8671)
 - [Drop suport for Node.js v20](https://github.com/livingdocsIO/livingdocs-editor/pull/10519)
 - [Drop suport for Node.js v20](https://github.com/livingdocsIO/livingdocs-server/pull/8661)
