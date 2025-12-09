@@ -167,6 +167,11 @@ are no longer supported when `contentTypes[].print` is enabled.
 
 These settings were already partially unsupported in the Livingdocs Editor. We're now enforcing the same behavior in the Livingdocs Server as well.
 
+### Remove Project Builders API :fire:
+
+The Project Builders API `liServer.features.api('li-project-builders')` has been removed, along with the `projectBuilders` server config property.
+Alongside this, two Registration API functions have been removed: `createUserWithProjectBuilders` and `createSSOUserWithProjectBuilders`.
+
 ## Deprecations :hourglass:
 
 ### Publish Type :hourglass:
