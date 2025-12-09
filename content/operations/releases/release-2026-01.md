@@ -155,7 +155,7 @@ No post-deployment steps are required after rolling out this release.
 
 No rollback steps are required for this release.
 
-## Breaking Changes 🔥
+## Breaking Changes :fire:
 
 ### Validation of Delivery References :fire:
 
