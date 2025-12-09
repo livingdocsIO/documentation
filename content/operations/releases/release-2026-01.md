@@ -153,6 +153,10 @@ No rollback steps are required for this release.
 
 ## Breaking Changes :fire:
 
+### Validation of Declarative Document Copy Configs :fire:
+
+Config properties within `projectConfig.settings.copy`, used for the declarative document copy, are now validated. There was a bug where this code did not run for all configs.
+
 ### Validation of Delivery References :fire:
 
 Deliveries referenced by project config property `contentTypes[].deliveries[].deliveryName` are now validated. If a delivery reference is invalid, an error will be thrown. Make sure the referenced deliveries exist.
