@@ -19,7 +19,7 @@ systemRequirements:
     - name: NPM
       version: 11
     - name: Postgres
-      version: 17
+      version: 18
     - name: Elasticsearch
       version: 9.x
     - name: OpenSearch
@@ -157,6 +157,14 @@ No post-deployment steps are required after rolling out this release.
 No rollback steps are required for this release.
 
 ## Breaking Changes :fire:
+
+### Drop support for Node v20 :fire:
+
+Node versions below 22.17.1 are no longer supported. Node 20 will stop being maintained on 30 April 2026. Please upgrade to at least the latest versions of `livingdocs/server-base:22` and `livingdocs/editor-base:22`, or preferably to `livingdocs/server-base:24` and `livingdocs/editor-base:24`.
+
+### Drop support for Postgres v13 :fire:
+
+Postgres versions below 13 are no longer supported. Postgres 13 stopped being maintained on 13 November 2025. Please upgrade to at least Postgres 14, or preferably to Postgres 18.
 
 ### Validation of Delivery References :fire:
 
