@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Remove Project Builders API](https://github.com/livingdocsIO/livingdocs-server/pull/8672)
 - [Deprecate (Declarative) Document Copy API (for all projects)](https://github.com/livingdocsIO/livingdocs-server/pull/8702)
 - [Extract correct dimensions of rotated images](https://github.com/livingdocsIO/livingdocs-server/pull/8701)
 - [Show additional info toggle in side panels for all media types](https://github.com/livingdocsIO/livingdocs-editor/pull/10547)
