@@ -183,11 +183,11 @@ Alongside this, two Registration API functions have been removed: `createUserWit
 
 Project config properties `deliveries[].publishType` and `contentTypes[].publishType` have been deprecated and will be removed in release-2026-07. Please migrate to the newly introduced [Publish Control Export Mode](#publish-control-export-mode-gift) instead.
 
-### Search Metadata Mapping
+### Search Metadata Mapping :hourglass:
 
-The `search.metadataMapping` server config property is deprecated. Please switch to dynamic metadata mapping.
+The `search.metadataMapping` server config property is deprecated and will be removed in release-2026-07. Please use dynamic metadata mapping instead.
 
-The relevant li-* core plugins have indexing enabled, but for custom plugins you might need to add an `indexing` config to your metadata plugin:
+The relevant li-* core plugins have indexing enabled, but you might need to add an `indexing` config to custom metadata plugins:
 ```js
 {
   name: 'my-slug',
@@ -228,7 +228,7 @@ More details can be found in the documentation:
 2. [Publication Index > Metadata Plugins]({{< ref "/guides/search/publication-index/#metadata-plugins" >}})
 3. [Create your own Metadata Plugin]({{< ref "/guides/documents/metadata/metadata-examples/#example-2-create-your-own-metadata-plugin" >}})
 
-### Deprecate various search schema properties
+### Deprecate various search schema properties :hourglass:
 
 The following server config properties are deprecated and will be removed in release-2026-07:
 
@@ -247,14 +247,14 @@ The following server config properties are deprecated and will be removed in rel
 - `search.fulltextQueryType`
 - `search.fulltextQueryOperator`
 
-### Declarative Document Copy API
+### Declarative Document Copy API :hourglass:
 
-The Declarative Document Copy API (which uses the `settings.copy` object in the project config) has been deprecated.
+The Declarative Document Copy API (which uses the `settings.copy` object in the project config) has been deprecated and will be removed in release-2026-07.
 Please use Document Copy Flows and Document Transform Flows instead:
 - https://docs.livingdocs.io/guides/editor/document-copy-flows
 - https://docs.livingdocs.io/guides/editor/document-transform-flows
 
-### Referenced Designs
+### Referenced Designs :hourglass:
 
 Referenced designs are now deprecated and will be removed in release-2026-07. Please use [embedded designs]({{< ref "/guides/documents/document-design/embedded-design/" >}}) instead.
 
