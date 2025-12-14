@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @livingdocs/framework from 32.11.0 to v32.11.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8714)
 - [Drop suport for Node.js v23](https://github.com/livingdocsIO/livingdocs-editor/pull/10550)
 - [Drop suport for Node.js v23](https://github.com/livingdocsIO/livingdocs-server/pull/8710)
 - [Remove Project Builders API](https://github.com/livingdocsIO/livingdocs-server/pull/8672)
