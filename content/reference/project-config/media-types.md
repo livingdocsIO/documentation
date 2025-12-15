@@ -130,21 +130,6 @@ mediaTypes: [{
      }
     }
   ],
-  editor: {
-    dashboard: { // the dashboard opened from the Document Editor
-      displayFilters: [
-        {filterName: 'liDateTimeRange'}
-      ],
-      card: {
-        name: 'liMediaLibraryCard' // this is the default, can be changed to another card
-      }
-    },
-    managementDashboard: { // the dashboard opened from the Main Navigation
-      displayFilters: [
-        {filterName: 'liDateTimeRange'}
-      ]
-    }
-  }
 }, {
   handle: 'video', // one mediaVideo must have the handle 'video', additional ones can be named as you like
   type: 'mediaVideo',

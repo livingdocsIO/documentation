@@ -4,20 +4,31 @@ description: In-depth guide to the media library
 weight: 1
 ---
 
-Livingdocs contains a Media Library that solves management and delivery of Images and Videos.
+Livingdocs offers Media Library dashboards which allow to manage and deliver Images, Videos and Files.
 There are different pieces that can be used to cover custom needs per project.
 
-This guide will walk you through setting up a basic Media Library for your project with Images and Videos support, you will learn about some details along the way.
+This guide will walk you through setting up a basic Media Library for your project with Images, Videos or File support, you will learn about some details along the way.
 
 At heart, the Media Library is based around configured `Media Types`. You might be familiar already with the concept of `Content Types`. `Media Types` are very similar.
-You can configure as many different `Media Types` as you want. Usually you want to have at least 1 for Images (in fact, if you don't define one yourself, there is one added automatically at runtime).
+You can configure as many different `Media Types` as you want. You want to have at least one for Images - if you don't define one yourself, there is one added automatically at runtime.
 
 See the [mediaType reference]({{< ref "/reference/project-config/media-types.md" >}}) for a full reference of the `mediaType` configuration options.
 
-When you have configured mediaTypes, you will get buttons to let users insert `Images` and `Videos` from the Document Editing Toolbar automatically.
+When you have configured mediaTypes, you will get buttons to let users insert `Images`, `Videos` and `Files` from the Document Editing Toolbar automatically.
+<br>
+<br>
 ![Editing Toolbar](editing-toolbar.png)
 
-The [Main Navigation]({{< ref "/reference/project-config/editor-settings#main-navigation" >}}) will automatically hold entries for `Images` and `Videos` as well if you have a `liItem: 'mediaLibrary'` entry in your `mainNavigation` config.
+<!-- TODO: How to configure Media Library Dashboards -->
+
+{{< info >}}
+**Legacy Media Library Configuration**<br>
+<br>
+Before [release-2026-01]({{< ref "/operations/releases/release-2026-01.md#media-library-dashboards" >}}), it was only possible to have a single Media Library per media category: Images, Videos, and Files.
+The [Main Navigation]({{< ref "/reference/project-config/editor-settings#main-navigation" >}}) automatically included entries for Images, Videos, and Files when a `liItem: 'mediaLibrary'` entry was present in the `mainNavigation` configuration and at least one corresponding Media Type existed.
+Both [Base Filters]({{< ref "/customising/advanced/editor-configuration/base-filter" >}}) and [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter" >}}) were defined on the Media Type ([legacy example]({{< ref "/guides/media-library/media-library-setup/legacy/media-type-example-legacy" >}})). They could be defined individually for the Media Library shown in the document editor and for the Media Library accessible via the main navigation.
+While this is not yet deprecated, we encourage using the new Media Library Dashboard Configuration and referencing configured Media Library dashboards directly on the Content Type via [useDashboard]({{< ref "/reference/project-config/content-types#usedashboard" >}}) (see description above).
+{{< /info >}}
 
 ## 2025 Behavior
 
@@ -93,27 +104,19 @@ module.exports = {
         label: 'Named Crops'
       }
     }
-  ],
-  editor: {
-    // the dashboard seen by users when opening Images/Videos from the document editor
-    dashboard: {
-      displayFilters: [
-        {
-          filterName: 'liDateTimeRange'
-        }
-      ]
-    },
-    // the dashboard opened through the main navigation
-    managementDashboard: {
-      displayFilters: [
-        {
-          filterName: 'liDateTimeRange'
-        }
-      ]
-    }
-  }
+  ]
 }
 ```
+
+{{< info >}}
+**Media Library Filters:**<br>
+**Legacy Media Type Configuration vs. Dashboard-Based Setup**<br>
+<br>
+Before [release-2026-01]({{< ref "/operations/releases/release-2026-01.md#media-library-dashboards" >}}), Display Filters and Base Filters were defined directly on the Media Type. While this approach has not yet been deprecated, we recommend configuring the Media Library via a dedicated Media Library Dashboard (see section beginning) and referencing that dashboard from the Content Type, which shows your Images/Videos/Files.
+When using this new setup, any Display Filters and Base Filters defined on the Media Type are automatically ignored for _Media Library dashboards opened from the Main Navigation_.
+For _Media Library dashboards opened from the document editor_, Display Filters and Base Filters are instead resolved from the [referenced Media Library dashboard]({{< ref "/reference/project-config/content-types#usedashboard" >}}) (`useDashboard`), if one is configured.
+For reference, the legacy configuration is documented here: [Basic Media Type example before release-2026-01]({{< ref "/guides/media-library/media-library-setup/legacy/media-type-example-legacy" >}}).
+{{< /info >}}
 
 ### IPTC extraction
 
@@ -651,17 +654,7 @@ module.exports = {
         index: true
       }
     }
-  ],
-  editor: {
-    // the dashboard seen by users when opening from the document editor
-    dashboard: {
-      displayFilters: [{filterName: 'liDateTimeRange'}]
-    },
-    // the dashboard opened through the main navigation
-    managementDashboard: {
-      displayFilters: [{filterName: 'liDateTimeRange'}]
-    }
-  }
+  ]
 }
 ```
 

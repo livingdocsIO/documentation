@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/10561)
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/8725)
 - [Return objects with results instead of arrays for all Public API methods and endpoints](https://github.com/livingdocsIO/livingdocs-server/pull/8712)
@@ -209,7 +210,8 @@ Project config properties `deliveries[].publishType` and `contentTypes[].publish
 
 The `search.metadataMapping` server config property is deprecated and will be removed in release-2026-07. Please use dynamic metadata mapping instead.
 
-The relevant li-* core plugins have indexing enabled, but you might need to add an `indexing` config to custom metadata plugins:
+The relevant li-\* core plugins have indexing enabled, but you might need to add an `indexing` config to custom metadata plugins:
+
 ```js
 {
   name: 'my-slug',
@@ -235,6 +237,7 @@ The relevant li-* core plugins have indexing enabled, but you might need to add 
 ```
 
 In the content type config or media type config you will also need to set `config.index: true`:
+
 ```js
 {
   handle: 'slug',
@@ -246,6 +249,7 @@ In the content type config or media type config you will also need to set `confi
 ```
 
 More details can be found in the documentation:
+
 1. [Enable indexing on metadata plugin]({{< ref "/customising/server-configuration/#enable-indexing-on-metadata-plugin" >}})
 2. [Publication Index > Metadata Plugins]({{< ref "/guides/search/publication-index/#metadata-plugins" >}})
 3. [Create your own Metadata Plugin]({{< ref "/guides/documents/metadata/metadata-examples/#example-2-create-your-own-metadata-plugin" >}})
@@ -273,6 +277,7 @@ The following server config properties are deprecated and will be removed in rel
 
 The Declarative Document Copy API (which uses the `settings.copy` object in the project config) has been deprecated and will be removed in release-2026-07.
 Please use Document Copy Flows and Document Transform Flows instead:
+
 - https://docs.livingdocs.io/guides/editor/document-copy-flows
 - https://docs.livingdocs.io/guides/editor/document-transform-flows
 
@@ -303,6 +308,7 @@ Under the hood, export mode combines existing concepts such as publishing and de
 Instead of always defaulting to the media types with the handles 'image', 'video' and 'file' it is now possible to configure different media types to use on a project and content type level. These media types will be used when uploading media using the upload functionality in the document side panel and metadata form, or when dragging and dropping images into a document.
 
 Project config:
+
 ```js
 {
   v: 2,
@@ -320,6 +326,7 @@ Project config:
 ```
 
 Content type config:
+
 ```js
 {
   handle: 'data-visualisation',
@@ -334,6 +341,33 @@ Content type config:
 ```
 
 The 'image', 'video' and 'file' media types are still the defaults, so you do not need to configure anything to keep the existing behaviour.
+
+### Media Library Dashboards
+
+We’ve noticed that many customers model their Livingdocs navigation around internal organizational structures to reflect their workflows. However, the Media Library screens for images, videos, and files are constrained to a single configuration and can appear only once in the navigation.
+
+A photo editor triaging large volumes of incoming agency images needs a fundamentally different image dashboard than a journalist working in a regional newsroom.
+
+Bridging this gap is essential for the Media Center to evolve into a fully integrated DAM system.
+
+---
+
+Limitations:
+Maximum one media library per element type → all mediaTypes of the same element type are grouped together
+Users have no option to select the mediaType that should be uploaded (if multiple exist)
+baseFilters, displayFilters and card-configuration are based on mediaTypes. They must be configured separately for the dashboard opened from the main navigation and the one opened from the document editor→ No single source of truth. Cluttered, hard to follow
+
+---
+
+We are introducing Media Library Dashboards. Instead of the preconfigured media library, users can now add limitless media libraries. They can be configured similar to other dashboard.
+It will replace the old preconfigured Media Library Dashboards, which were visible on the main navigation.
+In the document-editor, where the media library is visible in the sidepanel or in a model, it will either display a referenced media library dashboard, or it will fallback to the old ones if nothing is configured.
+
+---
+
+We are introducing Media Library Dashboards. Instead of the preconfigured media library, users can now add limitless media libraries. They can be configured similar to other dashboards. These new media library dashboards can now be referenced on content-types as well.
+
+❗ Before, when having an liItem: 'mediaLibrary' entry in your mainNavigation, the "old" preconfigured media library was shown in the UI. Now, if any media library dashboard is configured, only those will be visible. ❗
 
 ## Vulnerability Patches
 
@@ -364,10 +398,12 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v294.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.2): fix(deps): update dependency @livingdocs/framework from 32.11.2 to v32.11.3
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
+
 - [v123.3.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.3): fix(deps): update dependency @livingdocs/framework from 32.11.2 to v32.11.3
 - [v123.3.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.2): refactor(media-dashboards): use asset type labels for default pageTitle on the media-library
 - [v123.3.1](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
