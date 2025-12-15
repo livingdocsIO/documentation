@@ -196,28 +196,6 @@ responses:
                           }
                       }
                   ],
-                  "editor": {
-                      "dashboard": {
-                          "displayFilters": [
-                              {
-                                  "filterName": "liDateTimeRange"
-                              }
-                          ],
-                          "card": {
-                              "name": "myImageCard"
-                          }
-                      },
-                      "managementDashboard": {
-                          "displayFilters": [
-                              {
-                                  "filterName": "liDateTimeRange"
-                              },
-                              {
-                                  "filterName": "category"
-                              }
-                          ]
-                      }
-                  }
               }
           ],
           "designSettings": {

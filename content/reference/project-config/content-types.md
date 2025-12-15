@@ -578,11 +578,13 @@ When configured, this content type will only allow image operations using the sp
 
 If not configured, all image media types are allowed (default behavior).
 
-## dashboardReference: Media Library Dashboard References for Media Elements (images, videos, files)
+## useDashboard
 
 {{< added-in "release-2026-01" >}}
 
 <!-- TODO: when available add link to Media Library Dashboards introduction in release notes -->
+
+: Media Library Dashboard References for Media Elements (images, videos, files)
 
 Together with the introduction of Media Library Dashboards, we are introducing the property `dashboardReference` for media elements (images, videos, files).
 It determines, which media library dashboard should be shown for the respective media assetType (mediaImage, mediaVideo, mediaFile) on a content-type.
