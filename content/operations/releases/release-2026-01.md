@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Media Library Dashboards](https://github.com/livingdocsIO/livingdocs-server/pull/8631)
 - [chore(deps): update dependency puppeteer-core from 24.31.0 to v24.33.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10556)
 - [fix(deps): update dependency @livingdocs/framework from 32.11.0 to v32.11.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8714)
 - [Drop suport for Node.js v23](https://github.com/livingdocsIO/livingdocs-editor/pull/10550)
