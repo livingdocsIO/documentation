@@ -19,7 +19,37 @@ When you have configured mediaTypes, you will get buttons to let users insert `I
 <br>
 ![Editing Toolbar](editing-toolbar.png)
 
-<!-- TODO: How to configure Media Library Dashboards -->
+When users click these buttons, the Media Library opens in the sidepanel of the document editor.
+Alternatively, they can open the Media Library from the main navigation.
+To make the Media Library available there and to control its appearance, which items are displayed, and which filters are available, you need to configure a Media Library Dashboard.
+
+## Media Library Dashboard Configuration
+
+TODO: explain in more detail: assetType, useCard
+
+Finds available mediaTypes when not filtered by baseFilters
+assetType: ms.required.enum('mediaImage', 'mediaVideo', 'mediaFile'),
+References an existing DashboardCardConfiguration
+useCard: ms.$ref('LivingdocsHandle')
+
+```js
+dashboards: [
+  type: 'mediaLibraryDashboard', // Required
+  handle: 'myMediaLibraryDashboard', // Required
+  assetType: 'mediaImage', // Required: Finds available mediaTypes when not filtered by baseFilters
+  pageTitle: 'Images', // Optional
+  baseFilters: [{key: 'mediaType', term: ['image1', 'image2']}], // Optional: Invisible base filters applied to every search (including the default result list)
+  displayFilters: [{filterName: 'liDateTimeRange'}], // Optional: Filters shown to the user below the search input
+  sort: 'updated_at', // Optional: Defaults to 'updated_at'
+  useCard: '' // Optiona: References an existing DashboardCardConfiguration
+]
+```
+
+Properties `type`, `handle`, `baseFilters`, `displayFilters`, and `sort` are equivalent to other custom dashboards.
+TODO: add link to other custom dashboards for properties type, handle, baseFilters, displayFilters, and sort.
+
+When you have created all Media Library dashboards you need, you can add them to the main navigation to make them available there.
+This works the same way as any other custom dashboard ([how to add a custom dashboard to the `mainNavigation`]({{< ref "/reference/project-config/editor-settings#custom-dashboard" >}})).
 
 {{< info >}}
 **Legacy Media Library Configuration**<br>
