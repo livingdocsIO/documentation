@@ -385,6 +385,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v284.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.19): fix(security): Update packages that have vulnerabilities
 - [v284.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.18): fix: remove superfluous autoOrient  params
 - [v284.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.17): fix: restore support for CJS data migrations
 - [v284.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.16): fix: convert animated images to non-animated ones
