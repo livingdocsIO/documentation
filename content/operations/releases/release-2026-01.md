@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Return objects with results instead of arrays for all Public API methods and endpoints](https://github.com/livingdocsIO/livingdocs-server/pull/8712)
 - [Patch vulnerabilities [fix-vulerability-patching-action]](https://github.com/livingdocsIO/livingdocs-server/pull/8719)
 - [Support defaultMediaTypes in project config](https://github.com/livingdocsIO/livingdocs-editor/pull/10267)
 - [Support defaultMediaTypes in project config](https://github.com/livingdocsIO/livingdocs-server/pull/8360)
