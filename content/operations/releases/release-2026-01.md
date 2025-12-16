@@ -295,6 +295,43 @@ With export mode, editors can now export a document with a single button click. 
 
 Under the hood, export mode combines existing concepts such as publishing and delivery builds. For instructions and more details, refer to the [Publish Control Export Mode guide]({{< ref "/guides/editor/publish-control/export-mode" >}}).
 
+### Default Media Types :gift:
+
+Instead of always defaulting to the media types with the handles 'image', 'video' and 'file' it is now possible to configure different media types to use on a project and content type level. These media types will be used when uploading media using the upload functionality in the document side panel and metadata form, or when dragging and dropping images into a document.
+
+Project config:
+```js
+{
+  v: 2,
+  // ...
+  settings: {
+    handle: 'my-project',
+    // ...
+    defaultMediaTypes: {
+      mediaImage: 'image',
+      mediaVideo: 'video',
+      mediaFile: 'file'
+    }
+  }
+}
+```
+
+Content type config:
+```js
+{
+  handle: 'data-visualisation',
+  documentType: 'article',
+  // ...
+  defaultMediaTypes: {
+    mediaImage: 'infographic',
+    // mediaVideo: 'video',
+    // mediaFile: 'file'
+  }
+}
+```
+
+The 'image', 'video' and 'file' media types are still the defaults, so you do not need to configure anything to keep the existing behaviour.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.

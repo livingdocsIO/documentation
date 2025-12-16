@@ -78,7 +78,15 @@ contentTypes: [
           'description'
         ]
       }
-    ]
+    ],
+
+    // Set the default mediaType handle to use for uploads, drag & drop etc.
+    // The project config defaults will be used when these are not defined.
+    defaultMediaTypes: {
+      mediaImage: 'image',
+      mediaVideo: 'video',
+      mediaFile: 'file'
+    },
 
     // Overwrites config in `settings`
     imageSourcePolicy: [
