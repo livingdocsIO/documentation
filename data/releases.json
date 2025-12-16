@@ -1,5 +1,17 @@
 {
   "main": {
+    "key": "release-2026-03",
+    "name": "March 2026",
+    "ref": "/operations/releases/release-2026-03.md",
+    "upcoming": true,
+    "current": false,
+    "maintained": false,
+    "legacy": false,
+    "sortId": 54,
+    "editorVersion": "v123.4.0",
+    "serverVersion": "v294.1.0"
+  },
+  "release-2026-01": {
     "key": "release-2026-01",
     "name": "January 2026",
     "ref": "/operations/releases/release-2026-01.md",
