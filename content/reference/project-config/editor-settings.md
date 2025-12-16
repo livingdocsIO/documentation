@@ -415,12 +415,13 @@ For releases prior to {{< release "release-2022-03" >}} you should specify a `gr
 
 The `dashboards` entry allows you to configure custom dashboards, e.g. for authors (data-records) or proofreading (tasks).
 
-There are 4 `types` of custom dashboards (`type` property):
+There are 5 `types` of custom dashboards (`type` property):
 
 - `dashboard`
 - `kanbanBoard`
 - `taskBoard` (predefined `kanbanBoard` for a task)
 - `tableDashboard`
+- `mediaLibraryDashboard`
 
 Kanban Boards are very similar to dashboards, except for having multiple result columns. Each result column shows a list of documents just as a single column dashboard does. The documents cannot be manually sorted or moved between columns, instead each column typically has its own filter settings.
 
@@ -429,6 +430,7 @@ For example a task board will show all tasks in the `requested` state in one col
 ### Common Dashboard Properties
 
 Custom dashboards have some basic properties in common which are described in more detail below.
+// TODO: Media Library Dashboard are different, see here
 
 #### handle
 
@@ -436,19 +438,15 @@ Identifier for a custom dashboard. It's also used as a reference for the [main n
 
 #### type
 
-Type of the dashboard, one of these: `dashboard`, `kanbanBoard`, `taskBoard`, `tableDashboard`
+Type of the dashboard, one of these: `dashboard`, `kanbanBoard`, `taskBoard`, `tableDashboard`, `mediaLibraryDashboard`
 
 #### displayFilters
 
 [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter.md" >}}) are filters that the user can set in the UI (below the search input).
 
-With {{< release "release-2021-03" >}} the `displayFilters` for the Media Library Dashboards are defined on the [Media Type]({{< ref "/reference/project-config/media-types.md" >}}).
-
 #### baseFilters
 
 [Base Filters]({{< ref "/customising/advanced/editor-configuration/base-filter.md" >}}) are invisible filters and applied to every search (including the default result list).
-
-With {{< release "release-2021-03" >}} the `baseFilters` for the Media Library Dashboards are defined on the [Media Type]({{< ref "/reference/project-config/media-types.md" >}}).
 
 #### sort
 
@@ -462,6 +460,10 @@ Possible values are:
 - any metadata property e.g. `metadata.proofreading.priority`
 
 When a query string is present, sorting is defined by the `relevance` with the search term.
+
+### Example: Media Library Dashboard
+
+An example and more input on how to configure a Media Library Dashboard can be found on the guide [Media Library Dashboard Configuration]({{< ref "/reference/project-config/editor-settings#media-library-dashboard-configuration" >}}).
 
 ### Example: Dashboard
 
@@ -580,14 +582,14 @@ dashboards: [
       {
         label: 'Title',
 
-        minWidth: 100,  // minimum width in pixels
+        minWidth: 100, // minimum width in pixels
 
-        growFactor: 1,  // share of the remaining space after
-                        // minWidth of all columns has been allocated
-                        // (works like flex-grow in CSS)
+        growFactor: 1, // share of the remaining space after
+        // minWidth of all columns has been allocated
+        // (works like flex-grow in CSS)
 
-        priority: 1,    // If there is not enough space for all columns
-                        // keep those with priority 1, then 2, etc.
+        priority: 1, // If there is not enough space for all columns
+        // keep those with priority 1, then 2, etc.
 
         // Name of the Vue component used for this column
         componentName: 'liTableDashboardCellMain',
@@ -616,9 +618,7 @@ dashboards: [
     ],
 
     // adds a Document Creation Flow to the dashboard (e.g. custom button, custom create modal, custom create function)
-    documentCreationFlows: [
-      {useDocumentCreationFlow: 'breakingNews'}
-    ]
+    documentCreationFlows: [{useDocumentCreationFlow: 'breakingNews'}]
   }
 ]
 ```
@@ -634,6 +634,7 @@ See the [metadata plugin list]({{< ref "/reference/document/metadata/plugins" >}
 The `liTableDashboardCellMain` upstream component can be used to display document thumbnail, title, content type, and last modification / author:
 
 Options:
+
 ```js
 componentOptions: {
   image: {
@@ -1043,6 +1044,7 @@ See [Media Type]({{< ref "/reference/project-config/media-types.md" >}}) documen
 You can configure the card used to show results in dashboards. You do this by configuring your own dashboard card in the project config under `editorSettings.dashboardCardConfigurations` and then define this card per mediaType as you please.
 
 #### Additional metadata
+
 Available as option for `liMediaLibraryCard`.
 
 Each metadata property shows up as an individual bullet point, where label and value differ in their font weight. Properties with missing values remain visible as bullet points, which improves consistency when looking through results.
@@ -1104,9 +1106,7 @@ dashboardCardConfigurations: [
       ],
       // Added in release-2025-09
       // Defaults to mediaLibraryEntry.createdAt.
-      date: [
-        {metadataPropertyName: 'capturedAt'}
-      ],
+      date: [{metadataPropertyName: 'capturedAt'}],
       // Added in release-2025-09
       // Optional, with template and fallback support.
       // No default.
@@ -1121,10 +1121,7 @@ dashboardCardConfigurations: [
       // Existing option
       // No template and fallback support.
       // All properties are displayed regardless of their presence in the metadata.
-      additionalInfo: [
-        {metadataPropertyName: 'description'},
-        {metadataPropertyName: 'UsageTerms'}
-      ]
+      additionalInfo: [{metadataPropertyName: 'description'}, {metadataPropertyName: 'UsageTerms'}]
     }
   },
   {
@@ -1425,7 +1422,7 @@ textFormatting: {
       singleQuotes: ['‹', '›']
     }
   }
-} 
+}
 // ...
 ```
 
