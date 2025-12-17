@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @livingdocs/framework from 32.11.1 to v32.12.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10564)
 - [Media library Dashboards: Small Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/10562)
 
 To get an overview about new functionality, read the [Release Notes](TODO).
