@@ -9,11 +9,10 @@ history:
   - release: release-2025-07
     description: This endpoint got removed in the `2025-07` version. It's still available on `/api/2025-05/project` and older versions.
 
-deprecation:
-  since: release-2023-03
+removed:
+  since: release-2025-07
   note: |
     Use `GET /api/:apiVersion/projectConfig` instead.<br>
-    This endpoint got removed in the `2025-07` version.<br>
     It's still available on `/api/2025-05/project` and older versions.
 
 scopes: public-api:read
