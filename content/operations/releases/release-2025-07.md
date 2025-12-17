@@ -670,6 +670,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+- [v119.3.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.47): chore: remove integration tests
 - [v119.3.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.46): fix(planning-boards): Use start of week for current week
 - [v119.3.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.45): fix(tableDashboard): show language dialog for single contentTypes on the document-creation-flow-button
 - [v119.3.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.44): fix(metadata): Prevent nested items jumping when dragging li-tree items
