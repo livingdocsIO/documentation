@@ -2,8 +2,8 @@
 {{ $endpoint := .endpoint }}
 
 {{ $apiExampleClass := "api-example" }}
-{{ $newestApiVersion := partial "api-version-string" (dict "page" $page "endpoint" (dict)) }}
-{{ $apiVersion := partial "api-version-string" (dict "page" $page "endpoint" $endpoint) }}
+{{ $newestApiVersion := partial "api-version-string" (dict "endpoint" (dict)) }}
+{{ $apiVersion := partial "api-version-string" (dict "endpoint" $endpoint) }}
 
 {{ $channel := "" }}
 
@@ -14,11 +14,11 @@
   {{ $channel = print "Deprecated in " $endpoint.deprecation.since }}
   {{ $apiExampleClass = print $apiExampleClass " api-example--danger" }}
 {{ else if ne $apiVersion $newestApiVersion }}
-  {{ $range := partial "api-version-range" (dict "page" $page "endpoint" $endpoint) }}
+  {{ $range := partial "api-version-range" (dict "endpoint" $endpoint) }}
   {{ $channel = print "Supported in " $range }}
   {{ $apiExampleClass = print $apiExampleClass " api-example--warning" }}
 {{ else }}
-  {{ $range := partial "api-version-range" (dict "page" $page "endpoint" $endpoint) }}
+  {{ $range := partial "api-version-range" (dict "endpoint" $endpoint) }}
   {{ $channel = print "Supported in " $range }}
 {{ end }}
 
@@ -38,7 +38,7 @@
     <div class="api-example__title">
       <h2 id="{{ $endpoint.title | urlize }}">
         {{ $endpoint.title | $page.RenderString }}
-        {{ partial "api-version-selector" (dict "page" $page "endpoint" $endpoint "version" $apiVersion) }}
+        {{ partial "api-version-selector" (dict "endpoint" $endpoint "version" $apiVersion) }}
       </h2>
 
       {{- if $endpoint.removed -}}

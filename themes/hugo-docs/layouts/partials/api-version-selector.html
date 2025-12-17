@@ -1,4 +1,3 @@
-{{ $page := .page }}
 {{ $endpoint := .endpoint }}
 {{ $currentVersion := .version }}
 
@@ -11,7 +10,7 @@
   >
     {{ $versions := slice }}
     {{ range $versionedEndpoints }}
-      {{ $versions = $versions | append (partial "api-version-object" (dict "page" $page "endpoint" .)) }}
+      {{ $versions = $versions | append (partial "api-version-object" (dict "endpoint" .)) }}
     {{ end }}
 
     {{ range $v := sort $versions "sequence" "desc" }}
