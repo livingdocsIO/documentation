@@ -403,6 +403,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.14): fix(deps): update dependency @livingdocs/framework from 32.10.3 to v32.10.4
 - [v121.3.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.13): fix(media-library): Show additional info toggle for all media types
 - [v121.3.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.12): fix(planning-boards): Use start of week for current week
 - [v121.3.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.11): fix(tableDashboard): show language dialog for single contentTypes on the document-creation-flow-button
