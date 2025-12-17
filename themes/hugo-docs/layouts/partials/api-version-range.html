@@ -1,4 +1,4 @@
-{{ $versions := partial "api-version-array-matches" (dict "page" .page "endpoint" .endpoint) }}
+{{ $versions := partial "api-version-array-matches" (dict "endpoint" .endpoint) }}
 
 {{ $value := "" }}
 {{ if eq (len $versions) 1 }}
