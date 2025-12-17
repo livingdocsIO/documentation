@@ -1,4 +1,3 @@
-{{ $versions := partial "api-version-array-matches" (dict "endpoint" .endpoint) }}
-{{ $index := 0 }}
-{{ if eq .oldest true }}{{ $index = (sub (len $versions) 1) }}{{ end }}
+{{ $versions := partial "api-version-array-matches" (dict "endpoint" .endpoint "excludeUpcoming" .excludeUpcoming) }}
+{{ $index := cond (eq .latest true) 0 (sub (len $versions) 1) }}
 {{ return (index $versions $index) }}
