@@ -1,2 +1,2 @@
-{{ $version := partial "api-version-object" (dict "endpoint" .endpoint) }}
+{{ $version := partial "api-version-object" (dict "endpoint" .endpoint "latest" .latest "excludeUpcoming" .excludeUpcoming) }}
 {{ return $version.version }}

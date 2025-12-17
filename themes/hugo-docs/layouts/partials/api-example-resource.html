@@ -1,11 +1,14 @@
 {{ $page := .page }}
 {{ $endpoint := .endpoint }}
 
-{{ $apiExampleClass := "api-example" }}
-{{ $newestApiVersion := partial "api-version-string" (dict "endpoint" (dict)) }}
-{{ $apiVersion := partial "api-version-string" (dict "endpoint" $endpoint) }}
-
 {{ $channel := "" }}
+{{ $apiExampleClass := "api-example" }}
+
+{{ $selectedApiVersionStart := partial "api-version-string" (dict "endpoint" $endpoint) }}
+{{ $selectedApiVersionEnd := partial "api-version-object" (dict "endpoint" $endpoint "latest" true "excludeUpcoming" true) }}
+{{ $versionedEndpoints := where (hugo.Store.Get "api-endpoints") "endpointId" "eq" .endpoint.endpointId }}
+{{ $lastestVersionedEndpointStart := partial "api-version-object" (dict "endpoint" (index $versionedEndpoints 0)) }}
+{{ $hasNewerApiVersion := cond $selectedApiVersionEnd.sequence (lt $selectedApiVersionEnd.sequence $lastestVersionedEndpointStart.sequence) false }}
 
 {{ if $endpoint.removed.since }}
   {{ $channel = print "Removed in " $endpoint.removed.since }}
@@ -13,12 +16,12 @@
 {{ else if $endpoint.deprecation.since }}
   {{ $channel = print "Deprecated in " $endpoint.deprecation.since }}
   {{ $apiExampleClass = print $apiExampleClass " api-example--danger" }}
-{{ else if ne $apiVersion $newestApiVersion }}
-  {{ $range := partial "api-version-range" (dict "endpoint" $endpoint) }}
+{{ else if $hasNewerApiVersion }}
+  {{ $range := partial "api-version-range" (dict "endpoint" $endpoint "excludeUpcoming" true) }}
   {{ $channel = print "Supported in " $range }}
   {{ $apiExampleClass = print $apiExampleClass " api-example--warning" }}
 {{ else }}
-  {{ $range := partial "api-version-range" (dict "endpoint" $endpoint) }}
+  {{ $range := partial "api-version-range" (dict "endpoint" $endpoint "excludeUpcoming" true) }}
   {{ $channel = print "Supported in " $range }}
 {{ end }}
 
@@ -26,7 +29,7 @@
   {{ $apiExampleClass = print $apiExampleClass " api-example--no-title" }}
 {{ end }}
 
-{{ $endpointAttr := dict "endpointId" $endpoint.endpointId "apiVersionConstraints" $endpoint.apiVersionConstraints "latest" $apiVersion }}
+{{ $endpointAttr := dict "endpointId" $endpoint.endpointId "apiVersionConstraints" $endpoint.apiVersionConstraints "latest" $selectedApiVersionEnd.version }}
 
 
 <div
@@ -38,21 +41,23 @@
     <div class="api-example__title">
       <h2 id="{{ $endpoint.title | urlize }}">
         {{ $endpoint.title | $page.RenderString }}
-        {{ partial "api-version-selector" (dict "endpoint" $endpoint "version" $apiVersion) }}
+        {{ partial "api-version-selector" (dict "endpoint" $endpoint "version" $selectedApiVersionStart) }}
       </h2>
 
       {{- if $endpoint.removed -}}
         <blockquote class="info info-alert">
-          {{ replace $endpoint.removed.note ":apiVersion" $apiVersion | $page.RenderString }}
+          {{ $removedIn := replace $endpoint.removed.since "release-" "" }}
+          {{ replace $endpoint.removed.note ":apiVersion" $removedIn | $page.RenderString }}
         </blockquote>
       {{- else if $endpoint.deprecation -}}
         <blockquote class="info info-alert">
-          {{ replace $endpoint.deprecation.note ":apiVersion" $apiVersion | $page.RenderString }}
+          {{ $deprecatedIn := replace $endpoint.deprecation.since "release-" "" }}
+          {{ replace $endpoint.deprecation.note ":apiVersion" $deprecatedIn | $page.RenderString }}
         </blockquote>
-      {{- else if ne $apiVersion $newestApiVersion -}}
+      {{- else if $hasNewerApiVersion -}}
         <blockquote class="info info-warning">
           This endpoint has changes in version
-          <a href="?version={{ $newestApiVersion }}">{{ $newestApiVersion }}</a>.
+          <a href="?version={{ $lastestVersionedEndpointStart.version }}">{{ $lastestVersionedEndpointStart.version }}</a>.
         </blockquote>
       {{- end -}}
     </div>
@@ -100,7 +105,7 @@
   {{- if $endpoint.description -}}
     <div class="api-example__description">
       <h4>Description</h4>
-      {{- (replace $endpoint.description ":apiVersion" $apiVersion) | $page.RenderString -}}
+      {{- (replace $endpoint.description ":apiVersion" $selectedApiVersionEnd.version) | $page.RenderString -}}
     </div>
   {{- end -}}
 
@@ -124,7 +129,7 @@
         </div>
 
         <div class="teaser-and-code__code">
-          {{ highlight (replace $endpoint.query ":apiVersion" $apiVersion) "bash" }}
+          {{ highlight (replace $endpoint.query ":apiVersion" $selectedApiVersionEnd.version) "bash" }}
         </div>
       </div>
     </div>
@@ -133,7 +138,7 @@
   {{- if $endpoint.endpoint -}}
     <h4>Endpoint</h4>
     {{ highlight (
-      replace (printf "%s %s" $endpoint.endpoint.method $endpoint.endpoint.path) ":apiVersion" $apiVersion)
+      replace (printf "%s %s" $endpoint.endpoint.method $endpoint.endpoint.path) ":apiVersion" $selectedApiVersionEnd.version)
       "curl"
     }}
   {{- end -}}
@@ -164,7 +169,7 @@
 
   {{- if $endpoint.example_request -}}
     <h4>Example Request</h4>
-    {{ highlight (replace $endpoint.example_request ":apiVersion" $apiVersion) "js" }}
+    {{ highlight (replace $endpoint.example_request ":apiVersion" $selectedApiVersionEnd.version) "js" }}
   {{- end -}}
 
   {{- if $endpoint.responses -}}
@@ -219,7 +224,7 @@
                 {{- if $routename -}}<div class="code-teaser__name">{{ $routename }}</div>{{ end }}
                 {{- if .endpoint -}}
                   <div class="code-teaser__endpoint">
-                    {{ replace .endpoint ":apiVersion" $apiVersion }}
+                    {{ replace .endpoint ":apiVersion" $selectedApiVersionEnd.version }}
                   </div>
                 {{- end -}}
               </div>
@@ -228,7 +233,7 @@
               {{- if (eq $code 204) -}}
                 {{ highlight "No Content" (or .format "txt") }}
               {{- else -}}
-                {{ highlight (replace .body ":apiVersion" $apiVersion) (or .format "js") }}
+                {{ highlight (replace .body ":apiVersion" $selectedApiVersionEnd.version) (or .format "js") }}
               {{- end -}}
             </div>
           </div>

@@ -10,4 +10,5 @@
     {{ $versions = $versions | append $v }}
   {{ end }}
 {{ end }}
+{{ if .excludeUpcoming }}{{ $versions = where $versions "upcoming" false }}{{ end }}
 {{ return $versions }}
