@@ -3,17 +3,17 @@ endpointId: latest-draft
 
 apiVersionConstraints:
   gte: 2025-03
-  lt: 2025-09
+  lte: 2025-07
 
 history:
   - release: release-2022-03
-    description: Initial support in version `beta`
+    description: Initial support in version `beta`.
   - release: release-2024-03
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
   - release: release-2025-03
-    description: Support for top-level property `references` in version `2025-03`
+    description: Support for top-level property `references` promoted from `beta` to version `2025-03`.
   - release: release-2025-09
-    description: The `renditions` query string is deprecated and logs a warning when used
+    description: The `renditions` query string is deprecated and logs a warning when used.
 
 description: |
   This endpoint returns the most recent draft version of a document.
