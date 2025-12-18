@@ -25,31 +25,40 @@ To make the Media Library available there and to control its appearance, which i
 
 ## Media Library Dashboard Configuration
 
-TODO: explain in more detail: assetType, useCard
-
-Finds available mediaTypes when not filtered by baseFilters
-assetType: ms.required.enum('mediaImage', 'mediaVideo', 'mediaFile'),
-References an existing DashboardCardConfiguration
-useCard: ms.$ref('LivingdocsHandle')
+Since release [release-2026-01]({{< ref "/operations/releases/release-2026-01.md#media-library-dashboards" >}}), media libraries can be defined as custom dashbords.
+Below you can see an example configuration.
 
 ```js
+// In editorSettings
 dashboards: [
   type: 'mediaLibraryDashboard', // Required
-  handle: 'myMediaLibraryDashboard', // Required
+  handle: 'myMediaLibraryDashboard', // Required, must be unique
   assetType: 'mediaImage', // Required: Finds available mediaTypes when not filtered by baseFilters
-  pageTitle: 'Images', // Optional
+  pageTitle: 'Images', // Optional, sets the title in the top toolbar, defaults to a generic title for the mediaType
   baseFilters: [{key: 'mediaType', term: ['image1', 'image2']}], // Optional: Invisible base filters applied to every search (including the default result list)
   displayFilters: [{filterName: 'liDateTimeRange'}], // Optional: Filters shown to the user below the search input
   sort: 'updated_at', // Optional: Defaults to 'updated_at'
-  useCard: '' // Optiona: References an existing DashboardCardConfiguration
+  useCard: 'myImageCard' // Optional: References an existing DashboardCardConfiguration
 ]
 ```
 
-Properties `type`, `handle`, `baseFilters`, `displayFilters`, and `sort` are equivalent to other custom dashboards.
-TODO: add link to other custom dashboards for properties type, handle, baseFilters, displayFilters, and sort.
-
 When you have created all Media Library dashboards you need, you can add them to the main navigation to make them available there.
 This works the same way as any other custom dashboard ([how to add a custom dashboard to the `mainNavigation`]({{< ref "/reference/project-config/editor-settings#custom-dashboard" >}})).
+
+#### type, handle, baseFilters, displayFilters and sort
+
+Properties `type`, `handle`, `baseFilters`, `displayFilters`, and `sort` are equivalent to other custom dashboards.
+You can find more information on those common dashboard properties [in the editor-settings guide]({{< ref "/reference/project-config/editor-settings#common-dashboard-properties" >}}).
+
+#### assetType
+
+Must be one of `mediaImage`, `mediaVideo` or `mediaFile`.
+It retrieves all available mediaTypes that have this assetType defined as their `type` property, unless they are filtered by a baseFilter with `key: 'mediaType'`.
+
+#### useCard
+
+You can reference an existing dashboard card, which will be used to render the media element within a dashboard.
+To do so, add the card’s handle here. ([Read more about dashboard cards]({{< ref "/reference/project-config/editor-settings#dashboard-cards" >}}))
 
 {{< info >}}
 **Legacy Media Library Configuration**<br>
