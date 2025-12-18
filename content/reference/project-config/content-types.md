@@ -581,60 +581,42 @@ If not configured, all image media types are allowed (default behavior).
 ## useDashboard
 
 {{< added-in "release-2026-01" >}}
+<br>
 
-<!-- TODO: when available add link to Media Library Dashboards introduction in release notes -->
+Together with the introduction of [Media Library Dashboards]({{< ref "/guides/media-library/media-library-setup/index#media-library-dashboard-configuration" >}}), we are introducing the `useDashboard` property for images, videos and files.
+It determines which Media Library Dashboard is displayed for a specific media assetType (mediaImage, mediaVideo, or mediaFile) within a content type.
 
-: Media Library Dashboard References for Media Elements (images, videos, files)
+Ultimately, `useDashboard` controls, which Media Library Dashboard is shown:
 
-Together with the introduction of Media Library Dashboards, we are introducing the property `dashboardReference` for media elements (images, videos, files).
-It determines, which media library dashboard should be shown for the respective media assetType (mediaImage, mediaVideo, mediaFile) on a content-type.
-Further, it is possible to extend base-filters and display-filters of the referenced dashboard.
+- in the document editor side panel for the media type (can be opened via the toolbar elements image / video / file).
+- in any dialog modal within the document editor that displays the media library.
 
-<strong>Schema for `dashboardReference`:</strong>
+#### Behaviour without useDashboard
 
-```js
-ms.obj({
-  useDashboard: ms.required.$ref('LivingdocsHandle'), // referenced media library dashboard
-  baseFilters: ms.arrayOf({$ref: 'LivingdocsBaseFilterStrict'}), // extends base filters of the referenced media library dashboard
-  displayFilters: {$ref: 'LivingdocsDisplayFilters'} // extends display filters of the referenced media library dashboard
-})
-```
+If **no** reference is configured, the displayed media library shows all available media types for images / videos / files, unless otherwise restricted.
+If mediaTypes configured in `content-type.editor.images.mediaTypes`, only those mediaTypes are shown.
+This behavior applies only to images, cannot be combined with `useDashboard`, and will be deprecated in the future.
+We therefore recommend using `useDashboard` instead.
 
-This configuration ultimatively determines, which Media Library Dashboard is shown
+#### Behavior with useDashboard
 
-- in the editor sidepanel for the media type (can be opened via the toolbar elements image / video / file)
-- in any modal in the editor that shows the media library.
+If `useDashboard` is configured, the displayed media library shows all media types for the asset type defined on the referenced dashboard.
+Both Base Filters and Display Filters configured on that dashboard are applied.
 
-If <strong>no</strong> dashboardReference is configured, the displayed media library, shows
-
-- all available mediaTypes of an assetType (mediaImage, mediaVideo, mediaFile), if nothing else is configured.
-- for images (assetType mediaImage), if there are mediaTypes configured in `content-type.editor.images.mediaTypes`, only those mediaTypes.
-
-If dashboardReference is configured,
-
-- the displayed media library shows all mediaTypes for the assetType that is configured on the referenced dashboard.
-- baseFilters & displayFilters of the referenced dashboard, as well as baseFilters & displayFilters configured in `content-type.editor.<images/videos/files>.dashboardReference.baseFilters` are considered.
-- For images (assetType mediaImage), if there are mediaTypes configured in `content-type.editor.images.mediaTypes`, only those mediaTypes will be shown. This will overrule any baseFilters on mediaTypes configured on the referenced dashboard.
-
-<strong>Example Config:</strong>
+#### Example Config
 
 ```js
 {
   handle: 'article',
   editor: {
     images: {
-      mediaTypes: ['image', 'infographic'], // for images (assetType `mediaImage`), you can also define mediaTypes
-      dashboardReference: {
-        useDashboard: 'myImageMediaLibraryDashboard',
-        displayFilters: [{filterName: 'liDateTimeRange'}]
-      }
+      useDashboard: 'myImageLibrary',
     },
     videos: {
-      dashboardReference: {
-        useDashboard: 'myVideoLibrary',
-        baseFilters: [{key: 'metadata.transformed', term: true}],
-        displayFilters: [{filterName: 'liDateTimeRange'}]
-      }
+      useDashboard: 'myVideoLibrary',
+    },
+    files: {
+      useDashboard: 'myFileLibrary'
     }
   }
 }
