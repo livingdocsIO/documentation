@@ -364,6 +364,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v294.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.2): fix(deps): update dependency @livingdocs/framework from 32.11.2 to v32.11.3
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
