@@ -346,7 +346,7 @@ The 'image', 'video' and 'file' media types are still the defaults, so you do no
 
 We’ve noticed that many customers model their Livingdocs navigation around internal organizational structures to reflect their workflows.
 However, the Media Library screens for images, videos, and files were constrained to a single configuration and could appear only once in the navigation.
-To enable the Medie Center to evolve into a fully integrated DAM system, we are introducing Media Library Dashboards.
+To enable the Media Center to evolve into a fully integrated DAM system, we are introducing Media Library Dashboards.
 
 Customers can now create an unlimited number of Media Libraries.
 These are configured in the same way as other custom dashboards.
@@ -368,8 +368,6 @@ When opening a Media Library Dashboard from the main navigation, and multiple me
 
 To define which Media Library Dashboard is available in the document editor—either in the side panel or in a modal dialog, you can reference its handle in the content type configuration for images, videos, or files using `useDashboard`.
 Learn how to configure this setting [here]({{< ref "/reference/project-config/content-types#usedashboard" >}}).
-
-If no dashboard is referenced, the system falls back to the legacy behavior, where baseFilters, displayFilters, and card configuration are derived from mediaTypes.
 
 If nothing is referenced, it will fallback to the old setup, where baseFilters, displayFilters and card-configuration are based on mediaTypes.
 This fallback behavior is planned for deprecation.

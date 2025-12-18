@@ -594,7 +594,7 @@ Ultimately, `useDashboard` controls, which Media Library Dashboard is shown:
 #### Behaviour without useDashboard
 
 If **no** reference is configured, the displayed media library shows all available media types for images / videos / files, unless otherwise restricted.
-If mediaTypes configured in `content-type.editor.images.mediaTypes`, only those mediaTypes are shown.
+If mediaTypes are configured in `content-type.editor.images.mediaTypes`, only those mediaTypes are shown.
 This behavior applies only to images, cannot be combined with `useDashboard`, and will be deprecated in the future.
 We therefore recommend using `useDashboard` instead.
 

@@ -166,7 +166,8 @@ mediaTypes: [{
 {{< info >}}
 **Media Library Filters: Legacy Media Type Configuration vs. Dashboard-Based Setup**<br>
 <br>
-Before [release-2026-01]({{< ref "/operations/releases/release-2026-01.md#media-library-dashboards" >}}), Display Filters and Base Filters were defined directly on the Media Type. While this approach has not yet been deprecated, we recommend configuring the Media Library via a dedicated Media Library Dashboard (see [Media Library Dashboard Configuration](({{< ref "/reference/project-config/editor-settings#media-library-dashboard-configuration" >}}))).
+Before [release-2026-01]({{< ref "/operations/releases/release-2026-01#media-library-dashboards" >}}), Display Filters and Base Filters were defined directly on the Media Type. While this approach has not yet been deprecated, we recommend configuring the Media Library via a dedicated Media Library Dashboard (see [Media Library Dashboard Configuration]({{< ref "/guides/media-library/media-library-setup/index#media-library-dashboard-configuration" >}})).
+
 When using this new setup, any Display Filters and Base Filters defined on the Media Type are automatically ignored for _Media Library dashboards opened from the Main Navigation_.
 For _Media Library dashboards opened from the document editor_, Display Filters and Base Filters are instead resolved from the [referenced Media Library dashboard]({{< ref "/reference/project-config/content-types#usedashboard" >}}) (`useDashboard`), if configured on the content-type.
 
