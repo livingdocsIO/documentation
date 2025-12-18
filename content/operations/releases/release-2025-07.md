@@ -626,6 +626,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v280.1.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.39): fix(deps): update dependency @livingdocs/framework from 32.8.10 to v32.8.11
 - [v280.1.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.38): fix(security): Update packages that have vulnerabilities
 - [v280.1.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.37): fix: remove superfluous autoOrient  params
 - [v280.1.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.36): fix: convert animated images to non-animated ones
