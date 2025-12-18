@@ -430,7 +430,6 @@ For example a task board will show all tasks in the `requested` state in one col
 ### Common Dashboard Properties
 
 Custom dashboards have some basic properties in common which are described in more detail below.
-// TODO: Media Library Dashboard are different, see here
 
 #### handle
 
@@ -463,7 +462,7 @@ When a query string is present, sorting is defined by the `relevance` with the s
 
 ### Example: Media Library Dashboard
 
-An example and more input on how to configure a Media Library Dashboard can be found on the guide [Media Library Dashboard Configuration]({{< ref "/reference/project-config/editor-settings#media-library-dashboard-configuration" >}}).
+For a detailed example and additional guidance on configuring a Media Library Dashboard, see the [Media Library Dashboard Configuration]({{< ref "/guides/media-library/media-library-setup/index#media-library-dashboard-configuration" >}}) guide.
 
 ### Example: Dashboard
 
@@ -1034,10 +1033,7 @@ liServer.registerTransformFunction({
 
 ### Dashboards
 
-If you linked the media library on the `mainNavigation` (see above), Livingdocs automatically inserts separate dashboards per type (`mediaImage`/`mediaVideo`/`mediaFiles`).
-You will only see the dashboards for the individual mediaTypes you have configured.
-
-See [Media Type]({{< ref "/reference/project-config/media-types.md" >}}) documentation for more information.
+You can find all information on how to configure a Media Library Dashboard in the [Media Library guide]({{< ref "/guides/media-library/media-library-setup/index#media-library-dashboard-configuration" >}}).
 
 ### Dashboard Cards
 
