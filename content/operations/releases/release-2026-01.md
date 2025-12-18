@@ -342,32 +342,37 @@ Content type config:
 
 The 'image', 'video' and 'file' media types are still the defaults, so you do not need to configure anything to keep the existing behaviour.
 
-### Media Library Dashboards
+### Media Library Dashboards :gift:
 
-We’ve noticed that many customers model their Livingdocs navigation around internal organizational structures to reflect their workflows. However, the Media Library screens for images, videos, and files are constrained to a single configuration and can appear only once in the navigation.
+We’ve noticed that many customers model their Livingdocs navigation around internal organizational structures to reflect their workflows.
+However, the Media Library screens for images, videos, and files were constrained to a single configuration and could appear only once in the navigation.
+To enable the Medie Center to evolve into a fully integrated DAM system, we are introducing Media Library Dashboards.
 
-A photo editor triaging large volumes of incoming agency images needs a fundamentally different image dashboard than a journalist working in a regional newsroom.
+Customers can now create an unlimited number of Media Libraries.
+These are configured in the same way as other custom dashboards.
+Base Filters, Display Filters, and a reference to an existing Card Configuration are now defined centrally, rather than on the media type.
 
-Bridging this gap is essential for the Media Center to evolve into a fully integrated DAM system.
+#### How to configure a Media Library Dashboard to be available in the main navigation?
 
----
+First, create a new Media Library Dashboard.
+You can find detailed instructions in the [Media Library Dashboard Configuration guide]({{< ref "/guides/media-library/media-library-setup/index#media-library-dashboard-configuration" >}}).
+Next, add the dashboard to the dashboards array in the editorSettings.
 
-Limitations:
-Maximum one media library per element type → all mediaTypes of the same element type are grouped together
-Users have no option to select the mediaType that should be uploaded (if multiple exist)
-baseFilters, displayFilters and card-configuration are based on mediaTypes. They must be configured separately for the dashboard opened from the main navigation and the one opened from the document editor→ No single source of truth. Cluttered, hard to follow
+Once this is done, the dashboard can be referenced in the mainNavigation to make it visible.
+Note that, previously, adding an entry with `liItem: 'mediaLibrary'` to the mainNavigation would display the preconfigured (legacy) Media Library.
+If at least one Media Library Dashboard is configured, this navigation entry will be ignored.
 
----
+When opening a Media Library Dashboard from the main navigation, and multiple mediaTypes are available, a dialog will prompt the user to select the desired media type.
 
-We are introducing Media Library Dashboards. Instead of the preconfigured media library, users can now add limitless media libraries. They can be configured similar to other dashboard.
-It will replace the old preconfigured Media Library Dashboards, which were visible on the main navigation.
-In the document-editor, where the media library is visible in the sidepanel or in a model, it will either display a referenced media library dashboard, or it will fallback to the old ones if nothing is configured.
+#### How to configure a specific Media Library Dashboard for the document editor?
 
----
+To define which Media Library Dashboard is available in the document editor—either in the side panel or in a modal dialog, you can reference its handle in the content type configuration for images, videos, or files using `useDashboard`.
+Learn how to configure this setting [here]({{< ref "/reference/project-config/content-types#usedashboard" >}}).
 
-We are introducing Media Library Dashboards. Instead of the preconfigured media library, users can now add limitless media libraries. They can be configured similar to other dashboards. These new media library dashboards can now be referenced on content-types as well.
+If no dashboard is referenced, the system falls back to the legacy behavior, where baseFilters, displayFilters, and card configuration are derived from mediaTypes.
 
-❗ Before, when having an liItem: 'mediaLibrary' entry in your mainNavigation, the "old" preconfigured media library was shown in the UI. Now, if any media library dashboard is configured, only those will be visible. ❗
+If nothing is referenced, it will fallback to the old setup, where baseFilters, displayFilters and card-configuration are based on mediaTypes.
+This fallback behavior is planned for deprecation.
 
 ## Vulnerability Patches
 
