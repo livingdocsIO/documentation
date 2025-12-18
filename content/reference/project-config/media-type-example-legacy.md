@@ -70,15 +70,20 @@ module.exports = {
     }
   ],
   editor: {
-    // the dashboard seen by users when opening Images/Videos from the document editor
+    // the dashboard seen by users when opening Images from the document editor
     dashboard: {
       displayFilters: [
         {
           filterName: 'liDateTimeRange'
         }
-      ]
+      ],
+      card: {
+        name: 'myImageCard'
+      },
+      baseFilters: [{key: 'metadata.transformed', term: true}]
     },
     // the dashboard opened through the main navigation
+    // `card`and `baseFilters` could also be added here
     managementDashboard: {
       displayFilters: [
         {

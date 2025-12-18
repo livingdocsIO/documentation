@@ -170,7 +170,7 @@ Before [release-2026-01]({{< ref "/operations/releases/release-2026-01.md#media-
 When using this new setup, any Display Filters and Base Filters defined on the Media Type are automatically ignored for _Media Library dashboards opened from the Main Navigation_.
 For _Media Library dashboards opened from the document editor_, Display Filters and Base Filters are instead resolved from the [referenced Media Library dashboard]({{< ref "/reference/project-config/content-types#usedashboard" >}}) (`useDashboard`), if configured on the content-type.
 
-For reference, the legacy configuration is documented here: [Basic Media Type example before release-2026-01]({{< ref "/guides/media-library/media-library-setup/legacy/media-type-example-legacy" >}}).
+For reference, the legacy configuration is documented here: [Basic Media Type example before release-2026-01]({{< ref "/reference/project-config/media-type-example-legacy" >}}).
 {{< /info >}}
 
 ## Metadata
