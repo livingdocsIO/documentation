@@ -1,0 +1,157 @@
+title: Get Incoming Draft References for a Document
+endpointId: incoming-draft-references-for-document
+
+apiVersionConstraints:
+  gte: 2026-01
+
+history:
+  - release: release-2026-01
+    description: Responds with an object containing a `results` array, the `total` number of results, and a `cursor` for pagination.
+
+description: |
+  This endpoint is functionally equivalent to the [Incoming Document References]({{< ref "/reference/public-api/publications/references/#get-incoming-publication-references-for-a-document" >}}) endpoint for publications. But with this draft endpoint you will receive references from unpublished documents as well as references from the current state of documents even if these latest updates to the document are not published yet.
+scopes: public-api:drafts:read
+query: |
+  ACCESS_TOKEN=ey1234
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/drafts/{documentId}/incomingDocumentReferences" \
+    -H "Authorization: Bearer $ACCESS_TOKEN"
+endpoint:
+  method: GET
+  path: /api/:apiVersion/drafts/{documentId}/incomingDocumentReferences
+parameters:
+  - name: documentId
+    type: integer
+    required: true
+    notes: ''
+  - name: ?limit
+    type: integer
+    required: false
+    notes: A limit for how much documents to retrieve. Defaults to 100. Max. 100.
+  - name: ?offset
+    type: integer
+    required: false
+    notes: An offset into the query. Useful when getting more than 100 results (pagination).
+responses:
+  - code: '200'
+    name: OK
+    body: |
+      {
+        "results": [
+          {
+            "id": 4,
+            "references": [
+              {
+                "id": "1",
+                "type": "document",
+                "location": "include-directive",
+                "componentId": "doc-1euiflvoq0",
+                "serviceName": "editable-teaser",
+                "propertyName": "article",
+                "componentName": "teaser-include",
+                "directiveName": "teaser"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "references": [
+              {
+                "id": "1",
+                "type": "document",
+                "location": "include-directive",
+                "componentId": "doc-1eu6i7l880",
+                "serviceName": "editable-teaser",
+                "propertyName": "article",
+                "componentName": "teaser-include",
+                "directiveName": "teaser"
+              }
+            ]
+          }
+        ]
+      }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:drafts:read
+  tags:
+    - Drafts
+  operationId: getIncomingDraftReferences
+  summary: Get Incoming Draft References for a Document
+  description: This endpoint is functionally equivalent to the incoming document
+    references endpoint for publications. But with this draft endpoint you will
+    receive references from unpublished documents as well as references from the
+    current state of documents even if these latest updates to the document are
+    not published yet.
+  parameters:
+    - name: documentId
+      schema:
+        type: integer
+      in: path
+      required: true
+    - name: limit
+      description: A limit for how much documents to retrieve. Defaults to 100.
+        Max. 100.
+      schema:
+        type: integer
+      examples:
+        default:
+          value: 100
+      in: query
+    - name: offset
+      description: An offset into the query. Useful when getting more than 100 results
+        (pagination).
+      schema:
+        type: integer
+      examples:
+        default:
+          value: 0
+      in: query
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              cursor:
+                type: string
+              results:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id: integer
+                    references:
+                      type: array
+                      items:
+                        type: object
+              total:
+                type: integer
+          examples:
+            success:
+              value:
+                cursor: eyJhIjpbIjE3NjUyNjIxODYuMjgyIiw2NCw2NF19
+                results:
+                  - id: 4
+                    references:
+                      - id: '1'
+                        type: document
+                        location: include-directive
+                        componentId: doc-1euiflvoq0
+                        serviceName: editable-teaser
+                        propertyName: article
+                        componentName: teaser-include
+                        directiveName: teaser
+                  - id: 2
+                    references:
+                      - id: '1'
+                        type: document
+                        location: include-directive
+                        componentId: doc-1eu6i7l880
+                        serviceName: editable-teaser
+                        propertyName: article
+                        componentName: teaser-include
+                        directiveName: teaser
+                total: 5
