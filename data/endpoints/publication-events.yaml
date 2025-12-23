@@ -1,0 +1,310 @@
+title: Get Publication Events
+endpointId: publication-events
+
+apiVersionConstraints:
+  gte: 2026-01
+
+history:
+  - release: release-2021-03
+    description: Added `reverse` query string support
+  - release: release-2021-06
+    description: Added `contentTypes`, `documentTypes`, `id.gte` (and other range filters), `createdAt.gte` (and other range filters)
+  - release: release-2026-01
+    description: Responds with an object containing a `results` array.
+
+description: |
+  This endpoint returns publication events (`publish`, `unpublish`, `update`) for a project.
+
+  #### Related
+  - [Webhooks]({{< ref "/reference/webhooks" >}})
+
+useCases: |
+  - Reliably fetch documents publication state changes to sync with another system
+  - Cache invalidation management
+
+scopes: public-api:read
+query: |
+  ACCESS_TOKEN=ey1234
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/publicationEvents" \
+    -H "Authorization: Bearer $ACCESS_TOKEN"
+
+endpoint:
+  method: GET
+  path: /api/:apiVersion/publicationEvents
+parameters:
+  - name: channelHandle
+    type: string
+    required: false
+    notes: 'The handle of the channel for which you want to get the events'
+  - name: ?limit
+    type: integer
+    required: false
+    notes: 'Number of events to return. Default: 100. Highest limit: 1000'
+  - name: ?reverse
+    type: boolean
+    required: false
+    notes: 'Returns the events in reverse order, starting at the biggest id'
+  - name: ?contentTypes
+    type: string
+    required: false
+    notes: 'Comma separated list of content types to use as filter'
+  - name: ?documentTypes
+    type: string
+    required: false
+    notes: 'Comma separated list of document types to use as filter. Can be one of `article`, `page`, `data-record`'
+  - name: ?after
+    type: integer
+    required: false
+    notes: 'Deprecated: Please use `id.gte` instead. Return matching events after this event id'
+  - name: ?id.gte
+    type: string
+    required: false
+    notes: |
+      Filter by event id range.
+
+      **Supported filters:** `id.gte`, `id.gt`, `id.lte`, `id.lt`.
+
+      **Example:** To retrieve all events since you've fetched the last entry, use `?limit=1000&id.gt=40000`"
+  - name: ?createdAt.gte
+    type: string
+    required: false
+    notes: |
+      Filter by event date range.
+
+      **Supported filters:** `createdAt.gte`, `createdAt.gt`, `createdAt.lte`, `createdAt.lt`.
+
+      **Example:** To retrieve all events since a specific timestamp, use `?limit=1000&createdAt.gte=2021-05-01T00:00:00.000Z`"
+
+responses:
+  - code: '200'
+    endpoint: /api/:apiVersion/publicationEvents
+    body: |
+      {
+        "results": [
+          {
+            "id": 910,
+            "createdAt": "2016-12-27T09:19:00.928Z",
+            "projectId": 30,
+            "channelId": 53,
+            "documentId": 7892,
+            "documentType": "article",
+            "eventType": "publish",
+            "publicationId": 1066
+          },
+          {
+            "id": 988,
+            "createdAt": "2016-12-27T09:32:10.898Z",
+            "projectId": 30,
+            "channelId": 53,
+            "documentId": 7892,
+            "documentType": "article",
+            "eventType": "unpublish",
+            "publicationId": 1100
+          },
+          {
+            "id": 990,
+            "createdAt": "2016-12-27T09:33:05.010Z",
+            "projectId": 30,
+            "channelId": 53,
+            "documentId": 8005,
+            "documentType": "article",
+            "eventType": "publish",
+            "publicationId": 1131
+          },
+          {
+            "id": 1011,
+            "createdAt": "2016-12-27T09:33:31.517Z",
+            "projectId": 30,
+            "channelId": 53,
+            "documentId": 7892,
+            "documentType": "article",
+            "eventType": "update",
+            "publicationId": 1394
+          }
+        ]
+      }
+  - code: '200'
+    endpoint: /api/:apiVersion/publicationEvents?reverse&limit=2
+    body: |
+      {
+        "results": [
+          {
+            "id": 1011,
+            "createdAt": "2016-12-27T09:33:31.517Z",
+            "projectId": 30,
+            "channelId": 53,
+            "documentId": 7892,
+            "documentType": "article",
+            "eventType": "update",
+            "publicationId": 1394
+          },
+          {
+            "id": 990,
+            "createdAt": "2016-12-27T09:33:05.010Z",
+            "projectId": 30,
+            "channelId": 53,
+            "documentId": 8005,
+            "documentType": "article",
+            "eventType": "publish",
+            "publicationId": 1131
+          }
+        ]
+      }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Publications
+  operationId: getPublicationEvents
+  summary: Publication Events
+  description: Get Publication Events for the default channel
+  parameters:
+    - name: limit
+      description: 'Number of events to return. Default: 100. Highest limit: 1000.'
+      schema:
+        type: integer
+      examples:
+        default:
+          value: 100
+      in: query
+    - name: reverse
+      description: Returns the events in reverse order, starting at the biggest
+        id.
+      schema:
+        type: boolean
+      examples:
+        reverse:
+          value: false
+      in: query
+    - name: contentTypes
+      description: Comma separated list of content types to use as filter.
+      schema:
+        type: string
+      in: query
+    - name: documentTypes
+      description: "Comma separated list of document types to use as filter. \n\nCan
+        be one of `article`, `page`, `data-record`."
+      schema:
+        type: string
+      in: query
+    - name: after
+      description: |-
+        **Deprecated**: Please use `id.gte` instead.
+
+        Return matching events after this event id.
+      schema:
+        type: integer
+      in: query
+      deprecated: true
+    - name: id.gte
+      description: |-
+        Filter by event id range.
+
+        **Supported filters**: `id.gte`, `id.gt`, `id.lte`, `id.lt`.
+
+        **Example**: To retrieve all events since you’ve fetched the last entry, use `?limit=1000&id.gt=40000`
+      schema:
+        type: string
+      in: query
+    - name: id.gt
+      schema:
+        type: string
+      in: query
+    - name: id.lte
+      schema:
+        type: string
+      in: query
+    - name: id.lt
+      schema:
+        type: string
+      in: query
+    - name: createdAt.gte
+      description: |-
+        Filter by event date range.
+
+        **Supported filters**: `createdAt.gte`, `createdAt.gt`, `createdAt.lte`, `createdAt.lt`.
+
+        **Example**: To retrieve all events since a specific timestamp, use `?limit=1000&createdAt.gte=2021-05-01T00:00:00.000Z`
+      schema:
+        type: string
+      in: query
+    - name: createdAt.gt
+      schema:
+        type: string
+      in: query
+    - name: createdAt.lte
+      schema:
+        type: string
+      in: query
+    - name: createdAt.lt
+      schema:
+        type: string
+      in: query
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              results:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    createdAt:
+                      type: string
+                      format: date-time
+                    projectId:
+                      type: integer
+                    channelId:
+                      type: integer
+                    documentId:
+                      type: integer
+                    documentType:
+                      type: string
+                    eventType:
+                      type: string
+                    publicationId:
+                      type: integer
+          examples:
+            success:
+              value:
+                results:
+                  - id: 910
+                    createdAt: '2016-12-27T09:19:00.928Z'
+                    projectId: 30
+                    channelId: 53
+                    documentId: 7892
+                    documentType: article
+                    eventType: publish
+                    publicationId: 1066
+                  - id: 988
+                    createdAt: '2016-12-27T09:32:10.898Z'
+                    projectId: 30
+                    channelId: 53
+                    documentId: 7892
+                    documentType: article
+                    eventType: unpublish
+                    publicationId: 1100
+                  - id: 990
+                    createdAt: '2016-12-27T09:33:05.010Z'
+                    projectId: 30
+                    channelId: 53
+                    documentId: 8005
+                    documentType: article
+                    eventType: publish
+                    publicationId: 1131
+                  - id: 1011
+                    createdAt: '2016-12-27T09:33:31.517Z'
+                    projectId: 30
+                    channelId: 53
+                    documentId: 7892
+                    documentType: article
+                    eventType: update
+                    publicationId: 1394

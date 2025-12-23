@@ -1,0 +1,169 @@
+title: Get Incoming Publication References for a Media Library Entry
+endpointId: incoming-publication-references-for-media
+
+apiVersionConstraints:
+  gte: 2026-01
+
+history:
+  - release: release-2026-01
+    description: Responds with an object containing a `results` array, the `total` number of results, and a `cursor` for pagination.
+
+description: |
+  This endpoint returns all publications which link to this Media Library Entry (via content or metadata)
+
+useCases: |
+  - Useful to know if the Media Library Entry is in use when revoking or archiving
+
+scopes: public-api:read
+query: |
+  ACCESS_TOKEN=ey1234
+  curl -k -X GET "https://server.livingdocs.io/api/:apiVersion/mediaLibrary/{mediaId}/incomingDocumentReferences" \
+    -H "Authorization: Bearer $ACCESS_TOKEN"
+
+endpoint:
+  method: GET
+  path: /api/:apiVersion/mediaLibrary/{mediaId}/incomingDocumentReferences
+parameters:
+  - name: mediaId
+    type: string
+    required: true
+    notes: ''
+  - name: ?limit
+    type: integer
+    required: false
+    notes: A limit for how much published documents to retrieve. Defaults to 100. Max. 100.
+  - name: ?offset
+    type: integer
+    required: false
+    notes: An offset into the query. Useful when getting more than 100 results (pagination).
+responses:
+  - code: '200'
+    body: |
+      {
+        "results": [
+          {
+            "id": 2,
+            "references": [
+              {
+                "id": "9fKagDCiN6sb",
+                "type": "image",
+                "location": "image-directive",
+                "componentId": "doc-1ev8345oj0",
+                "componentName": "image",
+                "directiveName": "image"
+              },
+              {
+                "id": "9fKagDCiN6sb",
+                "type": "image",
+                "location": "metadata",
+                "propertyName": "teaserImage"
+              }
+            ]
+          },
+          {
+            "id": 3,
+            "references": [
+              {
+                "id": "9fKagDCiN6sb",
+                "type": "image",
+                "location": "image-directive",
+                "componentId": "doc-1euq8lq1o0",
+                "componentName": "image",
+                "directiveName": "image"
+              },
+              {
+                "id": "9fKagDCiN6sb",
+                "type": "image",
+                "location": "metadata",
+                "propertyName": "teaserImage"
+              }
+            ]
+          }
+        ]
+      }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Media Library
+  operationId: getIncomingDocumentReferencesForMediaLibraryEntry
+  summary: Get Incoming Publication References for a Media Library Entry
+  description: 'Added in: release-2022-03'
+  parameters:
+    - name: mediaId
+      in: path
+      required: true
+      schema:
+        type: string
+    - name: limit
+      description: A limit for how much published documents to retrieve. Defaults
+        to 100. Max. 100.
+      in: query
+      schema:
+        type: number
+      examples:
+        default:
+          value: 100
+    - name: offset
+      description: An offset into the query. Useful when getting more than 100 results
+        (pagination).
+      in: query
+      schema:
+        type: number
+      examples:
+        default:
+          value: 0
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              cursor:
+                type: string
+              results:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id: integer
+                    references:
+                      type: array
+                      items:
+                        type: object
+              total:
+                type: integer
+          examples:
+            success:
+              value:
+                cursor: eyJhIjpbIjE3NjUyNjIxODYuMjgyIiw2NCw2NF19
+                results:
+                  - id: 2
+                    references:
+                      - id: 9fKagDCiN6sb
+                        type: image
+                        location: image-directive
+                        componentId: doc-1ev8345oj0
+                        componentName: image
+                        directiveName: image
+                      - id: 9fKagDCiN6sb
+                        type: image
+                        location: metadata
+                        propertyName: teaserImage
+                  - id: 3
+                    references:
+                      - id: 9fKagDCiN6sb
+                        type: image
+                        location: image-directive
+                        componentId: doc-1euq8lq1o0
+                        componentName: image
+                        directiveName: image
+                      - id: 9fKagDCiN6sb
+                        type: image
+                        location: metadata
+                        propertyName: teaserImage
+                total: 3
