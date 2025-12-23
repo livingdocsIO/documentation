@@ -50,7 +50,7 @@
     public-api:
       parent: Drafts
   endpoints:
-    - incoming-references
+    - incoming-draft-references-for-document
 
 - title: Latest Draft
   path: drafts/latest-draft
@@ -111,8 +111,8 @@
     public-api:
       parent: Publications
   endpoints:
-    - incoming-document-references
-    - incoming-media-references
+    - incoming-publication-references-for-document
+    - incoming-media-references-for-document
 
 - title: Renditions
   path: publications/renditions
@@ -158,8 +158,8 @@
     - get-media-library-entry
     - patch-media-library-entry
     - get-media-library-entries
-    - get-media-library-incoming-document-references
-    - get-media-library-incoming-media-references
+    - incoming-publication-references-for-media
+    - incoming-media-references-for-media
     - media-library-serve-image
 
 # Start Imports section
