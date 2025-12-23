@@ -200,6 +200,16 @@ These settings were already partially unsupported in the Livingdocs Editor. We'r
 The Project Builders API `liServer.features.api('li-project-builders')` has been removed, along with the `projectBuilders` server config property.
 Alongside this, two Registration API functions have been removed: `createUserWithProjectBuilders` and `createSSOUserWithProjectBuilders`.
 
+### Internal Reference Functions Return Objects
+
+The following internal API methods return an object `{results: [], total: 0, cursor: ''}` instead of an array:
+
+- `documentApi.findIncomingReferences()`
+- `publicationApi.findIncomingReferences()`
+- `mediaLibraryApi.findIncomingReferences()`
+
+Modify any custom code using the functions listed above to use the `results` property of the returned object.
+
 ## Deprecations :hourglass:
 
 ### Publish Type :hourglass:
@@ -372,6 +382,51 @@ Learn how to configure this setting [here]({{< ref "/reference/project-config/co
 If nothing is referenced, it will fallback to the old setup, where baseFilters, displayFilters and card-configuration are based on mediaTypes.
 This fallback behavior is planned for deprecation.
 
+### Public API Return Values :gift:
+
+Starting with `/api/2026-01/*` the Public API endpoints which previously returned an array now return an object containing a `results` property with this array. There can also be a `total` number of results and a `cursor` for pagination depending on whether or not the endpoint supports it. To improve the accuracy of the pagination the `cursor` can be passed back to the endpoints or functions using the `after` parameter, for example: `/api/2026-01/publications/search?filters=${filters}&limit=10&after=${cursor}`.
+
+The following endpoints return `{results: [], total: 0, cursor: ''}`:
+
+- `GET /api/2026-01/publications/search`
+- `GET /api/2026-01/documents/:documentId/incomingDocumentReferences`
+- `GET /api/2026-01/documents/:documentId/incomingMediaReferences`
+- `GET /api/2026-01/mediaLibrary/:mediaId/incomingDocumentReferences`
+- `GET /api/2026-01/mediaLibrary/:mediaId/incomingMediaReferences`
+- `GET /api/2026-01/drafts/:documentId/incomingDocumentReferences`
+
+The following endpoints return `{results: []}`:
+
+- `GET /api/2026-01/documents/latestPublications`
+- `GET /api/2026-01/publicationEvents{/:channelHandle}`
+- `GET /api/2026-01/document-lists`
+- `GET /api/2026-01/categories`
+- `GET /api/2026-01/mediaLibrary`
+- `POST /api/2026-01/import/mediaLibrary`
+
+To achieve the same effect when working directly with the Public API feature in downstream code you can pass `apiVersion: '2026-01'` (or greater once supported) within the main parameter object, for example: `publicApi.searchPublications({projectId, filters, apiVersion: '2026-01'})`.
+
+The following methods return `{results: [], total: 0, cursor: ''}`:
+
+- `publicApi.searchPublications()`
+- `publicApi.getIncomingPublicationReferencesForDocument()`
+- `publicApi.getIncomingMediaReferencesForDocument()`
+- `publicApi.getIncomingPublicationReferencesForMedia()`
+- `publicApi.getIncomingMediaReferencesForMedia()`
+- `publicApi.getIncomingDocumentReferencesForDraft()`
+
+The following methods return `{results: []}`:
+
+- `publicApi.getLatestDraftsBeta()`
+- `publicApi.getLatestPublications()`
+- `publicApi.getPublicationEvents()`
+- `publicApi.findDocumentLists()`
+- `publicApi.getCategories()`
+- `publicApi.getMediaLibraryEntries()`
+- `publicApi.createMediaLibraryEntries()`
+
+To continue to return the array directly you can still use the `/api/2025-11/*` (or earlier) endpoints, or omit the `apiVersion` when calling the methods.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
@@ -401,14 +456,14 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
-- [v294.0.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.3): fix: keep animation when downloading image
 
+- [v294.0.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.3): fix: keep animation when downloading image
 - [v294.0.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.2): fix(deps): update dependency @livingdocs/framework from 32.11.2 to v32.11.3
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
-- [v123.3.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.4): fix: remove outdated comment
 
+- [v123.3.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.4): fix: remove outdated comment
 - [v123.3.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.3): fix(deps): update dependency @livingdocs/framework from 32.11.2 to v32.11.3
 - [v123.3.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.2): refactor(media-dashboards): use asset type labels for default pageTitle on the media-library
 - [v123.3.1](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
