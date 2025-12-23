@@ -16,7 +16,7 @@
     "build": "./bin/build.sh",
     "build:fast": "./bin/build.sh --fast",
     "start": "exec hugo server --buildDrafts --buildFuture --openBrowser --navigateToChanged",
-    "start:production": "serve ./public"
+    "start:production": "serve --config ../serve.json ./public"
   },
   "repository": {
     "type": "git",

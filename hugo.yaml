@@ -55,3 +55,9 @@ outputs:
 
 params:
   branch: main
+
+server:
+  headers:
+    - for: /openapi*.json
+      values:
+        Access-Control-Allow-Origin: '*'
