@@ -1,4 +1,8 @@
 title: Get Lists
+endpointId: get-lists
+
+apiVersionConstraints:
+  lte: 2025-11
 
 history:
   - release: release-2020-12

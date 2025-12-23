@@ -3,6 +3,7 @@ endpointId: latest-publications
 
 apiVersionConstraints:
   gte: 2025-03
+  lte: 2025-11
 
 history:
   - release: release-2020-12

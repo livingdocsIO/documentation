@@ -1,4 +1,8 @@
 title: Get Publication Events
+endpointId: publication-events
+
+apiVersionConstraints:
+  lte: 2025-11
 
 history:
   - release: release-2021-03

@@ -1,4 +1,8 @@
 title: Get Incoming Publication References for a Document
+endpointId: incoming-publication-references-for-document
+
+apiVersionConstraints:
+  lte: 2025-11
 
 history:
   - release: release-2023-09
