@@ -1,4 +1,8 @@
 title: Get Media Library Entries
+endpointId: get-media-library-entries
+
+apiVersionConstraints:
+  lte: 2025-11
 
 history:
   - release: release-2020-10

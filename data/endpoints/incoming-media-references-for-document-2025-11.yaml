@@ -1,4 +1,8 @@
 title: Get Incoming Media References for a Document
+endpointId: incoming-media-references-for-document
+
+apiVersionConstraints:
+  lte: 2025-11
 
 history:
   - release: release-2023-09

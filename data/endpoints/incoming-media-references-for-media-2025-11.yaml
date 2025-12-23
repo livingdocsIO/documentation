@@ -1,4 +1,9 @@
 title: Get Incoming Media References for a Media Library Entry
+endpointId: incoming-media-references-for-media
+
+apiVersionConstraints:
+  lte: 2025-11
+
 description: |
   This endpoint returns all Media Library Entries which link to this Media Library Entry (via metadata)
 

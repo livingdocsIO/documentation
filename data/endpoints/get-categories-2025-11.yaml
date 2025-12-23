@@ -1,4 +1,9 @@
 title: Get Categories for a Project
+endpointId: get-categories
+
+apiVersionConstraints:
+  lte: 2025-11
+
 description: |
   You need to activate the Categories / Routing Feature in the Project Config in order to query categories.
 

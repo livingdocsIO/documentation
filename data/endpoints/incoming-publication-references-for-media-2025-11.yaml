@@ -1,4 +1,9 @@
 title: Get Incoming Publication References for a Media Library Entry
+endpointId: incoming-publication-references-for-media
+
+apiVersionConstraints:
+  lte: 2025-11
+
 description: |
   This endpoint returns all publications which link to this Media Library Entry (via content or metadata)
 

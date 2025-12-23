@@ -1,4 +1,8 @@
 title: Import Media Library Entries
+endpointId: import-media-library-entries
+
+apiVersionConstraints:
+  lte: 2025-11
 
 history:
   - release: release-2020-12
