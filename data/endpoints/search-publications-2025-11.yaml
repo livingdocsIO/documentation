@@ -5,10 +5,10 @@ apiVersionConstraints:
   lte: 2025-11
 
 history:
-  - release: release-2023-07
-    description: Added `filters` query parameter to support the [Public API Search DSL]({{< ref "/reference/public-api/publications/search-filters" >}}).
   - release: release-2024-03
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+  - release: release-2023-07
+    description: Added `filters` query parameter to support the [Public API Search DSL]({{< ref "/reference/public-api/publications/search-filters" >}}).
 
 description: |
   This endpoint allows filtering for published documents.

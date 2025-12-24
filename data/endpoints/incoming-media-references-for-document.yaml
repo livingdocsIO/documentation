@@ -5,10 +5,10 @@ apiVersionConstraints:
   gte: 2026-01
 
 history:
-  - release: release-2023-09
-    description: Reference type `documents` changed to `document` where every document id has a separate reference entry.
   - release: release-2026-01
     description: Responds with an object containing a `results` array, the `total` number of results, and a `cursor` for pagination.
+  - release: release-2023-09
+    description: Reference type `documents` changed to `document` where every document id has a separate reference entry.
 
 description: |
   This endpoint returns all Media Library Entries which link to this document (via metadata - li-document-reference)

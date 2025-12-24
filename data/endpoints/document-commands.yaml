@@ -1,18 +1,18 @@
 title: Execute Commands on Documents
 
 history:
-  - release: release-2023-11
-    description: Initial support
+  - release: release-2025-07
+    description: 'The following commands got added: `setEmbargo`, `removeEmbargo`, `addPublishSchedule`, `cancelPublishSchedule`, `addUnpublishSchedule`, `cancelUnpublishSchedule`.'
+  - release: release-2024-11
+    description: 'The following commands got added: `setComponentCondition`, `setComponentStyle`, `setIncludeDirective`, `setLinkDirective`, `setStyleDirective`.'
+  - release: release-2024-07
+    description: 'The following commands got added: `removeComponent`, `unpublish`.'
+  - release: release-2024-05
+    description: 'The following commands got added: `insertComponent`.'
   - release: release-2024-03
     description: A new `precondition` named `isPublishedAndHasNoChanges` has been added.
-  - release: release-2024-05
-    description: 'The following commands got added: `insertComponent`'
-  - release: release-2024-07
-    description: 'The following commands got added: `removeComponent`, `unpublish`'
-  - release: release-2024-11
-    description: 'The following commands got added: `setComponentCondition`, `setComponentStyle`, `setIncludeDirective`, `setLinkDirective`, `setStyleDirective`'
-  - release: release-2025-07
-    description: 'The following commands got added: `setEmbargo`, `removeEmbargo`, `addPublishSchedule`, `cancelPublishSchedule`, `addUnpublishSchedule`, `cancelUnpublishSchedule`'
+  - release: release-2023-11
+    description: Initial support.
 
 description: |
   Execute a Document Command based on its `id`.  
