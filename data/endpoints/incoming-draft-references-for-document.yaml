@@ -31,11 +31,18 @@ parameters:
     type: integer
     required: false
     notes: An offset into the query. Useful when getting more than 100 results (pagination).
+  - name: ?after
+    type: string
+    required: false
+    notes: The `cursor` provided in the response can be passed back for pagination instead of using
+      `offset`.
 responses:
   - code: '200'
     name: OK
     body: |
       {
+        "total": 5,
+        "cursor": "eyJhIjpbIjE3NjUyNjIxODYuMjgyIiw2NCw2NF19",
         "results": [
           {
             "id": 4,
@@ -90,8 +97,7 @@ openapi:
       in: path
       required: true
     - name: limit
-      description: A limit for how much documents to retrieve. Defaults to 100.
-        Max. 100.
+      description: A limit for how much documents to retrieve. Defaults to 100. Max. 100.
       schema:
         type: integer
       examples:
@@ -99,13 +105,21 @@ openapi:
           value: 100
       in: query
     - name: offset
-      description: An offset into the query. Useful when getting more than 100 results
-        (pagination).
+      description: An offset into the query. Useful when getting more than 100 results (pagination).
       schema:
         type: integer
       examples:
         default:
           value: 0
+      in: query
+    - name: ?after
+      description: The `cursor` provided in the response can be passed back for pagination instead
+        of using `offset`.
+      schema:
+        type: string
+      examples:
+        cursor:
+          value: eyJhIjpbIjE3NjUyNjIxODYuMjgyIiw2NCw2NF19
       in: query
   responses:
     '200':
@@ -115,6 +129,8 @@ openapi:
           schema:
             type: object
             properties:
+              total:
+                type: integer
               cursor:
                 type: string
               results:
@@ -127,11 +143,10 @@ openapi:
                       type: array
                       items:
                         type: object
-              total:
-                type: integer
           examples:
             success:
               value:
+                total: 5
                 cursor: eyJhIjpbIjE3NjUyNjIxODYuMjgyIiw2NCw2NF19
                 results:
                   - id: 4
@@ -154,4 +169,3 @@ openapi:
                         propertyName: article
                         componentName: teaser-include
                         directiveName: teaser
-                total: 5
