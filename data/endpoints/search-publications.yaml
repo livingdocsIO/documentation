@@ -76,6 +76,11 @@ parameters:
     type: integer
     required: false
     notes: 'An offset into the query. Useful when getting more than 100 results (pagination). Max. 10000'
+  - name: ?after
+    type: string
+    required: false
+    notes: The `cursor` provided in the response can be passed back for pagination instead of using
+      `offset`.
   - name: ?ignoreComponentConditions
     type: boolean
     required: false
@@ -433,6 +438,15 @@ openapi:
       examples:
         default:
           value: 0
+    - name: ?after
+      description: The `cursor` provided in the response can be passed back for pagination instead
+        of using `offset`.
+      schema:
+        type: string
+      examples:
+        cursor:
+          value: eyJhIjpbIjE3NjUyNjIxODYuMjgyIiw2NCw2NF19
+      in: query
     - name: ignoreComponentConditions
       description: Provides a way to opt out of component filtering and return all content regardless of whether each component passes the conditional checks.
       in: query
@@ -457,6 +471,10 @@ openapi:
           schema:
             type: object
             properties:
+              total:
+                type: integer
+              cursor:
+                type: string
               results:
                 type: array
                 items:
@@ -473,6 +491,8 @@ openapi:
           examples:
             success:
               value:
+                total: 3
+                cursor: eyJhIjpbIjE3NjUyNjIxODYuMjgyIiw2NCw2NF19
                 results:
                   - systemdata:
                       projectId: 1
