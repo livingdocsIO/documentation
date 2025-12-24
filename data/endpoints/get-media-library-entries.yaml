@@ -5,10 +5,10 @@ apiVersionConstraints:
   gte: 2026-01
 
 history:
-  - release: release-2020-10
-    description: Initial support
   - release: release-2026-01
     description: Responds with an object containing a `results` array.
+  - release: release-2020-10
+    description: Initial support.
 
 description: |
   Fetch multiple Media Library Entries by their `id`s or `externalId`s

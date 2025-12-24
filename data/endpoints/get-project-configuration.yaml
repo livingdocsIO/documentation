@@ -4,10 +4,10 @@ apiVersionConstraints:
   lt: 2025-07
 
 history:
-  - release: release-2023-03
-    description: This endpoint got deprecreated. Use `GET /api/v1/projectConfig` instead.
   - release: release-2025-07
     description: This endpoint got removed in the `2025-07` version. It's still available on `/api/2025-05/project` and older versions.
+  - release: release-2023-03
+    description: This endpoint got deprecreated. Use `GET /api/v1/projectConfig` instead.
 
 removed:
   since: release-2025-07

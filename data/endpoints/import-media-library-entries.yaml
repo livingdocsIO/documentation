@@ -5,10 +5,10 @@ apiVersionConstraints:
   gte: 2026-01
 
 history:
-  - release: release-2020-12
-    description: Initial support
   - release: release-2026-01
     description: Responds with an object containing a `results` array.
+  - release: release-2020-12
+    description: Initial support.
 
 description: |
   When you can upload images, videos or files to the configured Media Library storage (e.g. AWS S3) yourself it is possible to create Media Library Entries through the API.

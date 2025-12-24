@@ -9,10 +9,10 @@ deprecation:
   note: With the introduction of the new [versioning strategy]({{< ref "/reference/public-api/versioning" >}}), the `v1` and `beta` versions are now available as `2025-03` version. If you use any of those versions, you can safely change your integration to the `2025-03` version, which now contains both functionalities without any other changes.
 
 history:
-  - release: release-2021-06
-    description: Initial support for the Composition API in version `beta`
   - release: release-2024-03
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+  - release: release-2021-06
+    description: Initial support for the Composition API in version `beta`.
 
 description: |
   The `Composition API` loads a Publication with all required information to render a whole document with one request.

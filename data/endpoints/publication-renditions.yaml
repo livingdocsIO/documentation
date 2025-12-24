@@ -1,10 +1,10 @@
 title: Get Specific Renditions for a Publication
 
 history:
-  - release: release-2024-03
-    description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
   - release: release-2025-09
     description: Deprecated the endpoint in all api versions, version 2025-09 does not include it anymore.
+  - release: release-2024-03
+    description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
 
 apiVersionConstraints:
   lt: 2025-09

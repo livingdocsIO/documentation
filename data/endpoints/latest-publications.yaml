@@ -5,18 +5,18 @@ apiVersionConstraints:
   gte: 2026-01
 
 history:
-  - release: release-2020-12
-    description: Added beta endpoint with `references` property in the response objects.
-  - release: release-2021-06
-    description: Added `reverse`, `contentTypes`, `id.gte` (and other range filters), `publishedAt.gte` (and other range filters).
-  - release: release-2023-09
-    description: The type `documents` within `references` changed to `document` where every document id has a separate reference entry.
-  - release: release-2024-03
-    description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
-  - release: release-2025-03
-    description: Support for top-level property `references` promoted from `beta` to version `2025-03`.
   - release: release-2026-01
     description: Responds with an object containing a `results` array.
+  - release: release-2025-03
+    description: Support for top-level property `references` promoted from `beta` to version `2025-03`.
+  - release: release-2024-03
+    description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+  - release: release-2023-09
+    description: The type `documents` within `references` changed to `document` where every document id has a separate reference entry.
+  - release: release-2021-06
+    description: Added `reverse`, `contentTypes`, `id.gte` (and other range filters), `publishedAt.gte` (and other range filters).
+  - release: release-2020-12
+    description: Added beta endpoint with `references` property in the response objects.
 
 description: |
   The endpoint provides an unresolved Publication with 4 possible top-level properties:

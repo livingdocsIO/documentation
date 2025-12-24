@@ -5,10 +5,10 @@ apiVersionConstraints:
   eq: v1
 
 history:
-  - release: release-2021-06
-    description: Added `reverse`, `contentTypes`, `id.gte` (and other range filters), `publishedAt.gte` (and other range filters).
   - release: release-2024-03
     description: Added `ignoreComponentConditions` and `componentConditions` query parameters.
+  - release: release-2021-06
+    description: Added `reverse`, `contentTypes`, `id.gte` (and other range filters), `publishedAt.gte` (and other range filters).
 
 description: |
   The endpoint provides an unresolved Publication with 3 possible top-level properties:

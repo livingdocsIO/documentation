@@ -5,12 +5,12 @@ apiVersionConstraints:
   gte: 2026-01
 
 history:
-  - release: release-2021-03
-    description: Added `reverse` query string support
-  - release: release-2021-06
-    description: Added `contentTypes`, `documentTypes`, `id.gte` (and other range filters), `createdAt.gte` (and other range filters)
   - release: release-2026-01
     description: Responds with an object containing a `results` array.
+  - release: release-2021-06
+    description: Added `contentTypes`, `documentTypes`, `id.gte` (and other range filters), `createdAt.gte` (and other range filters).
+  - release: release-2021-03
+    description: Added `reverse` query string support.
 
 description: |
   This endpoint returns publication events (`publish`, `unpublish`, `update`) for a project.

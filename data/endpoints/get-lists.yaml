@@ -5,10 +5,10 @@ apiVersionConstraints:
   gte: 2026-01
 
 history:
-  - release: release-2020-12
-    description: Initial support
   - release: release-2026-01
     description: Responds with an object containing a `results` array.
+  - release: release-2020-12
+    description: Initial support.
 
 description: |
   The response is a JSON array including only document lists without resolving documents.
