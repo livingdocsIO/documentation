@@ -153,8 +153,8 @@ contentTypes: [
     // if enabled is true this content-type will use the WoodWing
     // print layout selection and preview
     print: {
-      enabled: false,
-      enableStepZooming: true,
+      enabled: false, // {{< deprecated-in "release-2026-01" >}}
+      enableStepZooming: true, // {{< deprecated-in "release-2026-01" >}}
       componentMap: {
         toptitle: {
           title: 'toptitle'

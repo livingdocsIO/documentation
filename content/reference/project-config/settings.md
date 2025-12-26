@@ -324,7 +324,7 @@ settings: {
     enabled: true
   },
 
-  editMode: 'default'
+  editMode: 'default' // {{< deprecated-in "release-2026-01" >}}
 }
 ```
 
