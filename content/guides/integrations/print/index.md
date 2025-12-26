@@ -4,6 +4,8 @@ description: Print Integration with WoodWing Studio
 weight: 4
 ---
 
+{{< deprecated-in "release-2026-01" block >}}
+
 ## Motivation
 
 Livingdocs is often used as an editor for both online and print publications in a so-called content-first (or even online-first) workflow. A simple workflow just exports the Livingdocs article to a print system whenever a publish is performed. We have an open-source example for a serverless app that builds upon a Livingdocs webhook and exports to WoodWing Studio:

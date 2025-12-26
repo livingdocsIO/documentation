@@ -299,6 +299,21 @@ Referenced designs are now deprecated and will be removed in release-2026-07. Pl
 
 The Google Vision integration is deprecated and will be removed in release-2026-07. This includes the li-google-vision metadata plugin. We do not expect that any customer is using this, but if you are then please contact us and we will provide support for the migration.
 
+### Print Mode and huGO Print Preview
+
+The huGO Print Preview, and the acompanying "Print Mode" in the Livingdocs editor, are deprecated and will be removed in release-2026-07.
+
+The following config properties should be removed before release-2026-07 as they will no longer have any effect after that point:
+
+- `projectConfig.settings.editMode`
+- `contentTypeConfig.print.enabled`
+- `contentTypeConfig.print.enableStepZooming`
+- `editorConfig.app.editable.print`
+
+Support for `contentTypeConfig.print.componentMap` will remain because it is still used when exporting documents to huGO.
+
+Once `editMode: 'print'` is removed there will be a few UI elements that will no longer be available. The main one is the huGO Print Preview, which should be replace with a [custom preview function]({{< ref "/guides/integrations/print" >}}). The create dialog for print articles will also be removed which can be replaced with a [document creation flow]({{< ref "/guides/editor/document-creation-flow/" >}}) if required. There is also a print section at the top of the metadata form which can be replaced using [metadata plugins]({{< ref "/guides/documents/metadata/metadata-examples/" >}}) and metadata groups.
+
 ## Features :gift:
 
 ### Publish Control Export Mode :gift:
