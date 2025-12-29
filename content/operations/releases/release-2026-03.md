@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix delivery build prop validation error](https://github.com/livingdocsIO/livingdocs-editor/pull/10593)
 - [Show projectId in Retresco error message if integration is disabled](https://github.com/livingdocsIO/livingdocs-server/pull/8760)
 - [Download animated images](https://github.com/livingdocsIO/livingdocs-server/pull/8745)
 - [Download localized asset on media library detail page](https://github.com/livingdocsIO/livingdocs-editor/pull/10566)
