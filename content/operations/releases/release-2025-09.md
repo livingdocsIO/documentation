@@ -605,6 +605,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+- [v119.14.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.41): chore(config): Prevent duplicate keys error from keyboardShortcuts
 - [v119.14.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.40): fix: remove outdated comment
 - [v119.14.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.39): chore: remove integration tests
 - [v119.14.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.38): fix(media-library): Show additional info toggle for all media types
