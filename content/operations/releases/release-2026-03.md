@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix Server Settings console errors](https://github.com/livingdocsIO/livingdocs-editor/pull/10587)
 - [Limit LIDEP075 deprecation to specific print properties](https://github.com/livingdocsIO/livingdocs-server/pull/8759)
 - [Show table dashboard row highlight](https://github.com/livingdocsIO/livingdocs-editor/pull/10592)
 - [Fix delivery build prop validation error](https://github.com/livingdocsIO/livingdocs-editor/pull/10593)
