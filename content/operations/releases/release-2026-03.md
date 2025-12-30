@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Show custom cards in media library sidepanel](https://github.com/livingdocsIO/livingdocs-editor/pull/10605)
 - [Fix rendering of kanban boards](https://github.com/livingdocsIO/livingdocs-editor/pull/10589)
 - [Do not attempt to render comments in history view](https://github.com/livingdocsIO/livingdocs-editor/pull/10594)
 - [Fix Server Settings console errors](https://github.com/livingdocsIO/livingdocs-editor/pull/10587)
