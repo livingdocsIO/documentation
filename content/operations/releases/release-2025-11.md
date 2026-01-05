@@ -405,6 +405,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.19): fix: show tooltips on text formatting toolbar buttons
 - [v121.3.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.18): fix(server-admin): Cache grouped documents to prevent infinite digest
 - [v121.3.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.17): fix: do not attempt to render comments in history view
 - [v121.3.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.16): chore(config): Prevent duplicate keys error from keyboardShortcuts
