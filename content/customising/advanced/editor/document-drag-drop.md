@@ -35,7 +35,7 @@ Example code in `app/editor.js`
 ```js
 liEditor.dropHandlers.register({
   name: 'customPlugin',
-  handler: function ({dropActions, dropObject, next, end}, {session authedAxios, mediaLibraryProxy}, ldNotify) {
+  handler: function ({dropActions, dropObject, next, end}, {session, authedAxios, mediaLibraryProxy}, ldNotify) {
     const {dataTransfer} = dropObject
     const data = dataTransfer.getData('application/test+json')
     if (!data) return next()
