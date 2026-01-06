@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Allow removing settings.editMode](https://github.com/livingdocsIO/livingdocs-server/pull/8778)
 - [Show label tooltips on text formatting toolbar buttons](https://github.com/livingdocsIO/livingdocs-editor/pull/10618)
 - [Replace document ownership links with summary when merging users](https://github.com/livingdocsIO/livingdocs-editor/pull/10588)
 - [Show custom cards in media library sidepanel](https://github.com/livingdocsIO/livingdocs-editor/pull/10605)
