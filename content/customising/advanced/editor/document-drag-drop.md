@@ -19,6 +19,15 @@ You can register your own drop handlers which will be called before the core dro
 are called. In your plugin you can either call `next()` which will call the next drop handler, or you can call `end()` if you either handle the drop with this handler or wish to
 abort without handling the drop.
 
+## Additional arguments
+
+The second parameter can expose: 
+{session, authedAxios, mediaLibraryProxy}
+
+mediaLibraryProxy is useful for deduplication.
+
+an additional third argument, ldNotify, can be used for adding pop alerts to display error messages in the editor. 
+
 The following example recognises a custom mime type in the `DataTransfer` object and inserts an HTML component into the document at the dropLocation:
 
 Example code in `app/editor.js`
@@ -26,7 +35,7 @@ Example code in `app/editor.js`
 ```js
 liEditor.dropHandlers.register({
   name: 'customPlugin',
-  handler: function ({dropActions, dropObject, next, end}) {
+  handler: function ({dropActions, dropObject, next, end}, {session authedAxios, mediaLibraryProxy}, ldNotify) {
     const {dataTransfer} = dropObject
     const data = dataTransfer.getData('application/test+json')
     if (!data) return next()
