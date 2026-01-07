@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update pintura [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10632)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/8768)
 - [Render li-image metadata properties with named crops in media upload](https://github.com/livingdocsIO/livingdocs-editor/pull/10627)
 - [Allow removing settings.editMode](https://github.com/livingdocsIO/livingdocs-server/pull/8778)
