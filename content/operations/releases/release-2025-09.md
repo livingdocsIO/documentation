@@ -605,6 +605,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+- [v119.14.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.46): fix: clear include overrides when replacing a teaser via drag&drop
 - [v119.14.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.45): fix: render li-image metadata properties with namedCrops in media upload
 - [v119.14.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.44): fix: show tooltips on text formatting toolbar buttons
 - [v119.14.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.43): fix(server-admin): Cache grouped documents to prevent infinite digest
