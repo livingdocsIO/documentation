@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Set an unpublish schedule for a scheduled document](https://github.com/livingdocsIO/livingdocs-editor/pull/10638)
 - [Clear include overrides when replacing a teaser via drag&drop](https://github.com/livingdocsIO/livingdocs-editor/pull/10633)
 - [fix(deps): update pintura [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10632)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/8768)
