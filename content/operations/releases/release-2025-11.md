@@ -8,7 +8,7 @@ hideSectionTeaser: true
 header:
   upcoming: false
   legacy: false
-  current: true
+  current: false
   maintained: true
   branchHandle: release-2025-11
 
@@ -385,10 +385,11 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v284.0.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.21): fix: keep animation when downloading image
 - [v284.0.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.20): fix(deps): update dependency @livingdocs/framework from 32.10.3 to v32.10.4
 - [v284.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.19): fix(security): Update packages that have vulnerabilities
-- [v284.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.18): fix: remove superfluous autoOrient  params
+- [v284.0.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.18): fix: remove superfluous autoOrient params
 - [v284.0.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.17): fix: restore support for CJS data migrations
 - [v284.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.16): fix: convert animated images to non-animated ones
 - [v284.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.15): fix(retresco): Ignore configuration errors in hooks
@@ -405,6 +406,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+
 - [v121.3.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.22): fix: set an unpublish schedule for a scheduled document
 - [v121.3.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.21): fix: clear include overrides when replacing a teaser via drag&drop
 - [v121.3.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.20): fix: render li-image metadata properties with namedCrops in media upload
