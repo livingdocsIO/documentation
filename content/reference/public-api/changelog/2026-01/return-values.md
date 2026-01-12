@@ -1,7 +1,7 @@
 ---
 title: Return objects with `results` array instead of directly returning arrays
 type: changelog-entry
-weight: 1
+weight: 3
 
 change:
   date: 2026-01

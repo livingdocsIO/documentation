@@ -91,7 +91,7 @@ No migrations are required for this release.
 
 ### After the deployment
 
-No post-deployment steps are required after rolling out this release.
+Run the one-time script `livingdocs-server release-2026-01-set-flag-for-revoked-media-with-deleted-assets`. This script should run quite quickly as it only processes revoked media library entries. It loops through the entries and checks whether the asset still exists in storage. If the asset has been deleted (which was the old behaviour) it sets a state property which is used to prevent the media library entry from being restored (unrevoked). It's important to do this now, even if you have not set `use2025Behavior: true` in the server config, because without running it users will be able to restore entries which no longer have assets and will therefore display broken images. For future revoke events the flag will automatically be set to the correct value from this release onwards.
 
 ### Rollback
 
@@ -141,6 +141,10 @@ Modify any custom code using the functions listed above to use the `results` pro
 Documents imported via the Public API were previously validated too loosely, allowing imports with incorrect content structures. This could cause issues later when editing these documents in the Livingdocs Editor, where content validation is more strict.
 
 Importing documents with an invalid content schema via the Public API is no longer possible and will now result in a failed import.
+
+### Revoke State Conflict Errors
+
+Revoking an already revoked media library entry will now throw a `ConflictError`, and return a 409 status for requests. Throwing an error is important to preserve the exising revoke note. It also matches the new unrevoke behaviour where calling unrevoke on an entry which is not revoked will throw an error.
 
 ## Deprecations :hourglass:
 
@@ -260,6 +264,36 @@ With export mode, editors can now export a document with a single button click. 
 
 Under the hood, export mode combines existing concepts such as publishing and delivery builds. For instructions and more details, refer to the [Publish Control Export Mode guide]({{< ref "/guides/editor/publish-control/export-mode" >}}).
 
+### Media Library Dashboards :gift:
+
+We’ve noticed that many customers model their Livingdocs navigation around internal organizational structures to reflect their workflows.
+However, the Media Library screens for images, videos, and files were constrained to a single configuration and could appear only once in the navigation.
+To enable the Media Center to evolve into a fully integrated DAM system, we are introducing Media Library Dashboards.
+
+Customers can now create an unlimited number of Media Libraries.
+These are configured in the same way as other custom dashboards.
+Base Filters, Display Filters, and a reference to an existing Card Configuration are now defined centrally, rather than on the media type.
+
+#### How to configure a Media Library Dashboard to be available in the main navigation?
+
+First, create a new Media Library Dashboard.
+You can find detailed instructions in the [Media Library Dashboard Configuration guide]({{< ref "/guides/media-library/media-library-setup/index#media-library-dashboard-configuration" >}}).
+Next, add the dashboard to the dashboards array in the editorSettings.
+
+Once this is done, the dashboard can be referenced in the mainNavigation to make it visible.
+Note that, previously, adding an entry with `liItem: 'mediaLibrary'` to the mainNavigation would display the preconfigured (legacy) Media Library.
+If at least one Media Library Dashboard is configured, this navigation entry will be ignored.
+
+When opening a Media Library Dashboard from the main navigation, and multiple mediaTypes are available, a dialog will prompt the user to select the desired media type.
+
+#### How to configure a specific Media Library Dashboard for the document editor?
+
+To define which Media Library Dashboard is available in the document editor—either in the side panel or in a modal dialog, you can reference its handle in the content type configuration for images, videos, or files using `useDashboard`.
+Learn how to configure this setting [here]({{< ref "/reference/project-config/content-types#usedashboard" >}}).
+
+If nothing is referenced, it will fallback to the old setup, where baseFilters, displayFilters and card-configuration are based on mediaTypes.
+This fallback behavior is planned for deprecation.
+
 ### Default Media Types :gift:
 
 Instead of always defaulting to the media types with the handles 'image', 'video' and 'file' it is now possible to configure different media types to use on a project and content type level. These media types will be used when uploading media using the upload functionality in the document side panel and metadata form, or when dragging and dropping images into a document.
@@ -298,36 +332,6 @@ Content type config:
 ```
 
 The 'image', 'video' and 'file' media types are still the defaults, so you do not need to configure anything to keep the existing behaviour.
-
-### Media Library Dashboards :gift:
-
-We’ve noticed that many customers model their Livingdocs navigation around internal organizational structures to reflect their workflows.
-However, the Media Library screens for images, videos, and files were constrained to a single configuration and could appear only once in the navigation.
-To enable the Media Center to evolve into a fully integrated DAM system, we are introducing Media Library Dashboards.
-
-Customers can now create an unlimited number of Media Libraries.
-These are configured in the same way as other custom dashboards.
-Base Filters, Display Filters, and a reference to an existing Card Configuration are now defined centrally, rather than on the media type.
-
-#### How to configure a Media Library Dashboard to be available in the main navigation?
-
-First, create a new Media Library Dashboard.
-You can find detailed instructions in the [Media Library Dashboard Configuration guide]({{< ref "/guides/media-library/media-library-setup/index#media-library-dashboard-configuration" >}}).
-Next, add the dashboard to the dashboards array in the editorSettings.
-
-Once this is done, the dashboard can be referenced in the mainNavigation to make it visible.
-Note that, previously, adding an entry with `liItem: 'mediaLibrary'` to the mainNavigation would display the preconfigured (legacy) Media Library.
-If at least one Media Library Dashboard is configured, this navigation entry will be ignored.
-
-When opening a Media Library Dashboard from the main navigation, and multiple mediaTypes are available, a dialog will prompt the user to select the desired media type.
-
-#### How to configure a specific Media Library Dashboard for the document editor?
-
-To define which Media Library Dashboard is available in the document editor—either in the side panel or in a modal dialog, you can reference its handle in the content type configuration for images, videos, or files using `useDashboard`.
-Learn how to configure this setting [here]({{< ref "/reference/project-config/content-types#usedashboard" >}}).
-
-If nothing is referenced, it will fallback to the old setup, where baseFilters, displayFilters and card-configuration are based on mediaTypes.
-This fallback behavior is planned for deprecation.
 
 ### Public API Return Values :gift:
 
@@ -374,7 +378,7 @@ The following methods return `{results: []}`:
 
 To continue to return the array directly you can still use the `/api/2025-11/*` (or earlier) endpoints, or omit the `apiVersion` when calling the methods.
 
-## Display `li-tree` Properties Initially Collapsed :gift:
+### Display `li-tree` Properties Initially Collapsed :gift:
 
 The [`li-tree` metadata plugin]({{< ref "/reference/document/metadata/plugins/li-tree/" >}}) has a new configuration option: `treeInitiallyCollapsed`. When enabled, the tree property is displayed in a collapsed state by default. This is especially beneficial for very large tree structures, where the high number of DOM elements can cause browsers to slow down or freeze. For such scenarios, we recommend enabling this option.
 
@@ -394,7 +398,60 @@ The [`li-tree` metadata plugin]({{< ref "/reference/document/metadata/plugins/li
     }
   ]
 }
+```
 
+### Extended Revoke Behaviour :gift:
+
+#### Unrevoke
+
+A new unrevoke action has been added which can be used to revert a revoke action. This can be useful when a legal case has been resolved and the use of the asset is allowed again.
+
+The unrevoke action can be performed in the Livingdocs UI on the media library entry page. This is only available with the media library's [2025 Behavior]({{< ref "/guides/media-library/2025-behavior" >}}).
+
+It's also possible to patch a media library entry in the code:
+
+```js
+publicApi.patchMediaLibraryEntry({
+  userId,
+  projectId,
+  assetId,
+  patches: [{operation: 'unrevokeAsset'}],
+  version
+})
+```
+
+or using the Public API endpoint:
+
+```
+PATCH /api/:apiVersion/mediaLibrary/:id {patches: [{operation: 'unrevokeAsset'}]}
+```
+
+{{< warning >}}
+Please see the [After the deployment]({{< ref "#after-the-deployment" >}}) step to ensure that revoke states are set correctly and this functionality behaves as expected.
+{{< /warning >}}
+
+#### Revoke Note
+
+The revoke action has been extended with a `note` property. `note` is a string which has a maximum length of 200 characters.
+
+The revoke note can be added in the Livingdocs UI on the media library entry page. An optional input field appears after clicking the revoke button. This is only available with the media library's [2025 Behavior]({{< ref "/guides/media-library/2025-behavior" >}}).
+
+It's also possible to patch a media library entry in the code:
+
+```js
+publicApi.patchMediaLibraryEntry({
+  userId,
+  projectId,
+  assetId,
+  patches: [{operation: 'revokeAsset', note: 'Case #1'}],
+  version
+})
+```
+
+or using the Public API endpoint:
+
+```
+PATCH /api/:apiVersion/mediaLibrary/:id {patches: [{operation: 'revokeAsset', note: 'Case #1'}]}
 ```
 
 ## Vulnerability Patches

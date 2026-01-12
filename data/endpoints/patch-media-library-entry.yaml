@@ -1,6 +1,11 @@
 title: Patch a Media Library Entry
 
 history:
+  - release: release-2026-01
+    description: Added `unrevokeAsset` operation.<br>
+      Added the `note` property to be used with the `revokeAsset` operation.
+  - release: release-2024-01
+    description: Added `removeAsset` operation.
   - release: release-2022-03
     description: Added `replaceAsset` operation.
   - release: release-2020-12
@@ -32,10 +37,11 @@ parameters:
     required: true
     notes: |
       An array of patches to execute. Each entry is an object with the following keys:
-      - **operation** `setMetadataProperty`, `replaceAsset`, `revokeAsset`, `archive` or `removeAsset` ({{< added-in "release-2024-01" >}})
+      - **operation** `setMetadataProperty`, `replaceAsset`, `revokeAsset`, `unrevokeAsset` ({{< added-in "release-2026-01" >}}), `archive` or `removeAsset`
       - **propertyName** string of the propertyName (only for setMetadataProperty)
       - **value** string or object for the new value. If set to null or value is not set it will remove the property for setMetadataProperty. **required** for replaceAsset operation.
       - **locale** string of the asset to be removed (only in multilingual setups for removeAsset)
+      - **note** optional string with a maximum length of 200 characters. Only supported by the `revokeAsset` operation. ({{< added-in "release-2026-01" >}})
 
 example_request: |
   {
@@ -63,7 +69,12 @@ example_request: |
       },
       {
         // revoke the asset
-        "operation": "revokeAsset"
+        "operation": "revokeAsset",
+        "note": "Case #1"
+      },
+      {
+        // unrevoke the asset
+        "operation": "unrevokeAsset"
       },
       {
         // archives a Media Library Entry
