@@ -126,7 +126,7 @@ These settings were already partially unsupported in the Livingdocs Editor. We'r
 The Project Builders API `liServer.features.api('li-project-builders')` has been removed, along with the `projectBuilders` server config property.
 Alongside this, two Registration API functions have been removed: `createUserWithProjectBuilders` and `createSSOUserWithProjectBuilders`.
 
-### Internal Reference Functions Return Objects
+### Internal Reference Functions Return Objects :fire:
 
 The following internal API methods return an object `{results: [], total: 0, cursor: ''}` instead of an array:
 
@@ -135,6 +135,12 @@ The following internal API methods return an object `{results: [], total: 0, cur
 - `mediaLibraryApi.findIncomingReferences()`
 
 Modify any custom code using the functions listed above to use the `results` property of the returned object.
+
+## Stricter Validation for Documents Imported via the Public API :fire:
+
+Documents imported via the Public API were previously validated too loosely, allowing imports with incorrect content structures. This could cause issues later when editing these documents in the Livingdocs Editor, where content validation is more strict.
+
+Importing documents with an invalid content schema via the Public API is no longer possible and will now result in a failed import.
 
 ## Deprecations :hourglass:
 
