@@ -54,81 +54,7 @@ systemRequirements:
       version: Chrome >= 131, Edge >= 131, Firefox >= 133, Safari >= 18.2
 ---
 
-## Caveat :fire:
-
-These are the release notes of the upcoming release (pull requests merged to the main branch).
-
-- :information_source: this document is updated automatically by a bot (pr's to categorize section)
-- :information_source: this document will be roughly updated manually once a week (put PRs + description to the right section)
-- :fire: We don't guarantee stable APIs. They can still change until the official release
-- :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
-
-## PRs to Categorize
-
-- [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/10561)
-- [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/8725)
-- [Return objects with results instead of arrays for all Public API methods and endpoints](https://github.com/livingdocsIO/livingdocs-server/pull/8712)
-- [Patch vulnerabilities [fix-vulerability-patching-action]](https://github.com/livingdocsIO/livingdocs-server/pull/8719)
-- [Support defaultMediaTypes in project config](https://github.com/livingdocsIO/livingdocs-editor/pull/10267)
-- [Support defaultMediaTypes in project config](https://github.com/livingdocsIO/livingdocs-server/pull/8360)
-- [Improve PEIQ agency import logging](https://github.com/livingdocsIO/livingdocs-editor/pull/10375)
-- [Improve PEIQ agency import logging](https://github.com/livingdocsIO/livingdocs-server/pull/8468)
-- [Feat/media library dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/10502)
-- [Media Library Dashboards](https://github.com/livingdocsIO/livingdocs-server/pull/8631)
-- [chore(deps): update dependency puppeteer-core from 24.31.0 to v24.33.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10556)
-- [fix(deps): update dependency @livingdocs/framework from 32.11.0 to v32.11.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8714)
-- [Drop suport for Node.js v23](https://github.com/livingdocsIO/livingdocs-editor/pull/10550)
-- [Drop suport for Node.js v23](https://github.com/livingdocsIO/livingdocs-server/pull/8710)
-- [Remove Project Builders API](https://github.com/livingdocsIO/livingdocs-server/pull/8672)
-- [Deprecate (Declarative) Document Copy API (for all projects)](https://github.com/livingdocsIO/livingdocs-server/pull/8702)
-- [Extract correct dimensions of rotated images](https://github.com/livingdocsIO/livingdocs-server/pull/8701)
-- [Show additional info toggle in side panels for all media types](https://github.com/livingdocsIO/livingdocs-editor/pull/10547)
-- [Show additional info toggle for all media types](https://github.com/livingdocsIO/livingdocs-editor/pull/10546)
-- [Drop support for Postgres v13](https://github.com/livingdocsIO/livingdocs-server/pull/8671)
-- [Drop suport for Node.js v20](https://github.com/livingdocsIO/livingdocs-editor/pull/10519)
-- [Drop suport for Node.js v20](https://github.com/livingdocsIO/livingdocs-server/pull/8661)
-- [Restore support for CJS data migrations](https://github.com/livingdocsIO/livingdocs-server/pull/8698)
-- [Use correct status icons for exported documents](https://github.com/livingdocsIO/livingdocs-editor/pull/10545)
-- [Publish Control Export Mode](https://github.com/livingdocsIO/livingdocs-server/pull/8676)
-- [Publish Control Export Mode](https://github.com/livingdocsIO/livingdocs-editor/pull/10532)
-- [chore(deps): update dependency @google-cloud/storage from 7.17.3 to v7.18.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8682)
-- [Fix: Last item in --overflow table](https://github.com/livingdocsIO/livingdocs-editor/pull/10543)
-- [Design/Table Dashboard Brush-Up](https://github.com/livingdocsIO/livingdocs-editor/pull/10531)
-- [Use start of week for current week active date range in planning board](https://github.com/livingdocsIO/livingdocs-editor/pull/10539)
-- [Ignore configuration errors in Retresco hooks](https://github.com/livingdocsIO/livingdocs-server/pull/8675)
-- [Prevent unrevoke when the asset has been deleted](https://github.com/livingdocsIO/livingdocs-editor/pull/10512)
-- [Prevent unrevoke when the asset has been deleted](https://github.com/livingdocsIO/livingdocs-server/pull/8658)
-- [fix(tableDashboard): show language dialog for single contentTypes ](https://github.com/livingdocsIO/livingdocs-editor/pull/10521)
-- [Use full gap between li-tree items as the drop zone](https://github.com/livingdocsIO/livingdocs-editor/pull/10513)
-- [Extend Revoke capabilities](https://github.com/livingdocsIO/livingdocs-editor/pull/10497)
-- [Extend Revoke capabilities](https://github.com/livingdocsIO/livingdocs-server/pull/8632)
-- [Inject built-in content type liNewsAgencyReport when writing project config](https://github.com/livingdocsIO/livingdocs-server/pull/8509)
-- [chore(deps): update dependency posthog-node from 5.12.0 to v5.13.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8649)
-- [Validate content schema when importing document via Public API](https://github.com/livingdocsIO/livingdocs-server/pull/8638)
-- [Prevent legacy dashboards from loading twice](https://github.com/livingdocsIO/livingdocs-editor/pull/10451)
-- [fix(deps): update dependency open from 10.2.0 to v11 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10506)
-- [fix(deps): update dependency inquirer from 12.11.1 to v13 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8637)
-- [Migrate remaining Media Library views from Angular.js to Vue](https://github.com/livingdocsIO/livingdocs-editor/pull/10473)
-- [Add li-tree UI config property treeInitiallyCollapsed](https://github.com/livingdocsIO/livingdocs-server/pull/8604)
-- [Collapse li-tree properties if treeInitiallyCollapsed is set](https://github.com/livingdocsIO/livingdocs-editor/pull/10475)
-- [Upgrade vue-eslint-parser](https://github.com/livingdocsIO/livingdocs-editor/pull/10426)
-- [Serve image in Public API with valid content type if no format is specified](https://github.com/livingdocsIO/livingdocs-server/pull/8613)
-
-- [Design/Horizontal Form Plugin Top Spacing](https://github.com/livingdocsIO/livingdocs-editor/pull/10432)
-- [Limit retries when Retresco re-enrich fails](https://github.com/livingdocsIO/livingdocs-server/pull/8594)
-- [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8603)
-- [Prevent duplicate component ids when pasting container components from clipboard](https://github.com/livingdocsIO/livingdocs-editor/pull/10468)
-- [chore(deps): update dependency puppeteer-core from 24.28.0 to v24.29.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10469)
-- [Prevent error when searching on kanban boards](https://github.com/livingdocsIO/livingdocs-editor/pull/10452)
-- [fix: image cropper state pollution](https://github.com/livingdocsIO/livingdocs-editor/pull/10442)
-- [Set minimal v22 node version to v22.17.1](https://github.com/livingdocsIO/livingdocs-server/pull/8585)
-- [Improvement/variables for sizes sass to css](https://github.com/livingdocsIO/livingdocs-editor/pull/10408)
-- [Fix/Overlooked Dashboard Filter](https://github.com/livingdocsIO/livingdocs-editor/pull/10449)
-- [chore(deps): update aws-sdk from 3.918.0 to v3.920.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8567)
-- [Use `accessTokenTtl` for serve-image token expiration](https://github.com/livingdocsIO/livingdocs-server/pull/8569)
-- [Design/Media Center Polish](https://github.com/livingdocsIO/livingdocs-editor/pull/10444)
-
-To get an overview about new functionality, read the [Release Notes](TODO).
+To get an overview about new functionality, read the [Release Notes](https://livingdocs.io/en/release-january-2026).
 To learn about the necessary actions to update Livingdocs to `release-2026-01`, read on.
 
 **Attention:** If you skipped one or more releases, please also check the release-notes of the skipped ones.
@@ -179,7 +105,7 @@ Node versions below 22.17.1 are no longer supported. Node 20 will stop being mai
 
 ### Drop support for Postgres v13 :fire:
 
-Postgres versions below 13 are no longer supported. Postgres 13 stopped being maintained on 13 November 2025. Please upgrade to at least Postgres 14, or preferably to Postgres 18.
+Postgres versions below 14 are no longer supported. Postgres 13 stopped being maintained on 13 November 2025. Please upgrade to at least Postgres 14, or preferably to Postgres 18.
 
 ### Validation of Delivery References :fire:
 
@@ -450,7 +376,8 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 This release we have patched the following vulnerabilities in the Livingdocs Server:
 
-- TBD
+- [CVE-2025-64718](https://github.com/advisories/GHSA-mh29-5h37-fv8m) patched in `js-yaml` v4.1.1
+- [CVE-2025-65945](https://github.com/advisories/GHSA-869p-cjfg-cm3x) patched in `jws` v3.2.3 and v4.0.1
 
 No known vulnerabilities. :tada:
 
@@ -458,7 +385,7 @@ No known vulnerabilities. :tada:
 
 This release we have patched the following vulnerabilities in the Livingdocs Editor:
 
-- TBD
+- No vulnerabilities were patched in this release.
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
@@ -471,6 +398,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v294.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.6): fix: allow removing settings.editMode
 - [v294.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.5): fix(print): Limit LIDEP075 deprecation to specific properties
 - [v294.0.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.4): fix(retresco): show projectId in error message if integration is disabled
@@ -480,6 +408,7 @@ Here is a list of all patches after the release has been announced.
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
+
 - [v123.3.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.15): fix: set an unpublish schedule for a scheduled document
 - [v123.3.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.14): fix: clear include overrides when replacing a teaser via drag&drop
 - [v123.3.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.13): fix: render li-image metadata properties with namedCrops in media upload
