@@ -368,6 +368,29 @@ The following methods return `{results: []}`:
 
 To continue to return the array directly you can still use the `/api/2025-11/*` (or earlier) endpoints, or omit the `apiVersion` when calling the methods.
 
+## Display `li-tree` Properties Initially Collapsed :gift:
+
+The [`li-tree` metadata plugin]({{< ref "/reference/document/metadata/plugins/li-tree/" >}}) has a new configuration option: `treeInitiallyCollapsed`. When enabled, the tree property is displayed in a collapsed state by default. This is especially beneficial for very large tree structures, where the high number of DOM elements can cause browsers to slow down or freeze. For such scenarios, we recommend enabling this option.
+
+```js
+{
+  handle: 'myContentType',
+  metadata: [
+    {
+      handle: 'myMetadataProperty'
+      type: 'li-tree',
+      config: {},
+      ui: {
+        config: {
+          treeInitiallyCollapsed: true
+        }
+      }
+    }
+  ]
+}
+
+```
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
