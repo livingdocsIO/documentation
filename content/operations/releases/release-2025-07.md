@@ -7,9 +7,9 @@ hideSectionTeaser: true
 
 header:
   upcoming: false
-  legacy: false
+  legacy: true
   current: false
-  maintained: true
+  maintained: false
   branchHandle: release-2025-07
 
 systemRequirements:
@@ -626,10 +626,11 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v280.1.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.40): fix: keep animation when downloading image
 - [v280.1.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.39): fix(deps): update dependency @livingdocs/framework from 32.8.10 to v32.8.11
 - [v280.1.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.38): fix(security): Update packages that have vulnerabilities
-- [v280.1.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.37): fix: remove superfluous autoOrient  params
+- [v280.1.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.37): fix: remove superfluous autoOrient params
 - [v280.1.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.36): fix: convert animated images to non-animated ones
 - [v280.1.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.35): fix: add li-tree UI config property treeInitiallyCollapsed
 - [v280.1.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.34): fix: serve image with media library entry mime type if format is not specified
@@ -672,6 +673,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+
 - [v119.3.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.48): fix: remove outdated comment
 - [v119.3.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.47): chore: remove integration tests
 - [v119.3.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.46): fix(planning-boards): Use start of week for current week
