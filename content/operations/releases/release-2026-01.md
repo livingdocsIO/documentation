@@ -148,9 +148,17 @@ Alongside this, two Registration API functions have been removed: `createUserWit
 
 ## Deprecations :hourglass:
 
-### Publish Type :hourglass:
+### Referenced Designs :hourglass:
 
-Project config properties `deliveries[].publishType` and `contentTypes[].publishType` have been deprecated and will be removed in release-2026-07. Please migrate to the newly introduced [Publish Control Export Mode](#publish-control-export-mode-gift) instead.
+Referenced designs are now deprecated and will be removed in release-2026-07. Please use [embedded designs]({{< ref "/guides/documents/document-design/embedded-design/" >}}) instead.
+
+### Declarative Document Copy API :hourglass:
+
+The Declarative Document Copy API (which uses the `settings.copy` object in the project config) has been deprecated and will be removed in release-2026-07.
+Please use Document Copy Flows and Document Transform Flows instead:
+
+- https://docs.livingdocs.io/guides/editor/document-copy-flows
+- https://docs.livingdocs.io/guides/editor/document-transform-flows
 
 ### Search Metadata Mapping :hourglass:
 
@@ -219,22 +227,6 @@ The following server config properties are deprecated and will be removed in rel
 - `search.fulltextQueryType`
 - `search.fulltextQueryOperator`
 
-### Declarative Document Copy API :hourglass:
-
-The Declarative Document Copy API (which uses the `settings.copy` object in the project config) has been deprecated and will be removed in release-2026-07.
-Please use Document Copy Flows and Document Transform Flows instead:
-
-- https://docs.livingdocs.io/guides/editor/document-copy-flows
-- https://docs.livingdocs.io/guides/editor/document-transform-flows
-
-### Referenced Designs :hourglass:
-
-Referenced designs are now deprecated and will be removed in release-2026-07. Please use [embedded designs]({{< ref "/guides/documents/document-design/embedded-design/" >}}) instead.
-
-### Google Vision Integration :hourglass:
-
-The Google Vision integration is deprecated and will be removed in release-2026-07. This includes the li-google-vision metadata plugin. We do not expect that any customer is using this, but if you are then please contact us and we will provide support for the migration.
-
 ### Print Mode and huGO Print Preview :hourglass:
 
 The huGO Print Preview, and the acompanying "Print Mode" in the Livingdocs editor, are deprecated and will be removed in release-2026-07.
@@ -249,6 +241,14 @@ The following config properties should be removed before release-2026-07 as they
 Support for `contentTypeConfig.print.componentMap` will remain because it is still used when exporting documents to huGO.
 
 Once `editMode: 'print'` is removed there will be a few UI elements that will no longer be available. The main one is the huGO Print Preview, which should be replace with a [custom preview function]({{< ref "/guides/integrations/print" >}}). The create dialog for print articles will also be removed which can be replaced with a [document creation flow]({{< ref "/guides/editor/document-creation-flow/" >}}) if required. There is also a print section at the top of the metadata form which can be replaced using [metadata plugins]({{< ref "/guides/documents/metadata/metadata-examples/" >}}) and metadata groups.
+
+### Publish Type :hourglass:
+
+Project config properties `deliveries[].publishType` and `contentTypes[].publishType` have been deprecated and will be removed in release-2026-07. Please migrate to the newly introduced [Publish Control Export Mode](#publish-control-export-mode-gift) instead.
+
+### Google Vision Integration :hourglass:
+
+The Google Vision integration is deprecated and will be removed in release-2026-07. This includes the li-google-vision metadata plugin. We do not expect that any customer is using this, but if you are then please contact us and we will provide support for the migration.
 
 ## Features :gift:
 
