@@ -131,6 +131,15 @@ These settings were already partially unsupported in the Livingdocs Editor. We'r
 
 Deliveries referenced by project config property `contentTypes[].deliveries[].deliveryName` are now validated. If a delivery reference is invalid, an error will be thrown. Make sure the referenced deliveries exist.
 
+### Project Config Schema Changes for Media Library :fire:
+
+The two following properties have been removed from the project config schema:
+
+- `projectConfig.editorSettings.mediaLibrary.dashboard`
+- `projectConfig.editorSettings.mediaLibrary.editorSelection`
+
+These properties were used to define display filters, but they have not been used since 2021. If they still exist please remove them before upgrading to release-2026-01 to avoid project config validation errors.
+
 ### Internal Reference Functions Return Objects :fire:
 
 The following internal API methods return an object `{results: [], total: 0, cursor: ''}` instead of an array:
