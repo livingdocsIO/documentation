@@ -294,112 +294,6 @@ Learn how to configure this setting [here]({{< ref "/reference/project-config/co
 If nothing is referenced, it will fallback to the old setup, where baseFilters, displayFilters and card-configuration are based on mediaTypes.
 This fallback behavior is planned for deprecation.
 
-### Default Media Types :gift:
-
-Instead of always defaulting to the media types with the handles 'image', 'video' and 'file' it is now possible to configure different media types to use on a project and content type level. These media types will be used when uploading media using the upload functionality in the document side panel and metadata form, or when dragging and dropping images into a document.
-
-Project config:
-
-```js
-{
-  v: 2,
-  // ...
-  settings: {
-    handle: 'my-project',
-    // ...
-    defaultMediaTypes: {
-      mediaImage: 'image',
-      mediaVideo: 'video',
-      mediaFile: 'file'
-    }
-  }
-}
-```
-
-Content type config:
-
-```js
-{
-  handle: 'data-visualisation',
-  documentType: 'article',
-  // ...
-  defaultMediaTypes: {
-    mediaImage: 'infographic',
-    // mediaVideo: 'video',
-    // mediaFile: 'file'
-  }
-}
-```
-
-The 'image', 'video' and 'file' media types are still the defaults, so you do not need to configure anything to keep the existing behaviour.
-
-### Public API Return Values :gift:
-
-Starting with `/api/2026-01/*` the Public API endpoints which previously returned an array now return an object containing a `results` property with this array. There can also be a `total` number of results and a `cursor` for pagination depending on whether or not the endpoint supports it. To improve the accuracy of the pagination the `cursor` can be passed back to the endpoints or functions using the `after` parameter, for example: `/api/2026-01/publications/search?filters=${filters}&limit=10&after=${cursor}`.
-
-The following endpoints return `{results: [], total: 0, cursor: ''}`:
-
-- `GET /api/2026-01/publications/search`
-- `GET /api/2026-01/documents/:documentId/incomingDocumentReferences`
-- `GET /api/2026-01/documents/:documentId/incomingMediaReferences`
-- `GET /api/2026-01/mediaLibrary/:mediaId/incomingDocumentReferences`
-- `GET /api/2026-01/mediaLibrary/:mediaId/incomingMediaReferences`
-- `GET /api/2026-01/drafts/:documentId/incomingDocumentReferences`
-
-The following endpoints return `{results: []}`:
-
-- `GET /api/2026-01/documents/latestPublications`
-- `GET /api/2026-01/publicationEvents{/:channelHandle}`
-- `GET /api/2026-01/document-lists`
-- `GET /api/2026-01/categories`
-- `GET /api/2026-01/mediaLibrary`
-- `POST /api/2026-01/import/mediaLibrary`
-
-To achieve the same effect when working directly with the Public API feature in downstream code you can pass `apiVersion: '2026-01'` (or greater once supported) within the main parameter object, for example: `publicApi.searchPublications({projectId, filters, apiVersion: '2026-01'})`.
-
-The following methods return `{results: [], total: 0, cursor: ''}`:
-
-- `publicApi.searchPublications()`
-- `publicApi.getIncomingPublicationReferencesForDocument()`
-- `publicApi.getIncomingMediaReferencesForDocument()`
-- `publicApi.getIncomingPublicationReferencesForMedia()`
-- `publicApi.getIncomingMediaReferencesForMedia()`
-- `publicApi.getIncomingDocumentReferencesForDraft()`
-
-The following methods return `{results: []}`:
-
-- `publicApi.getLatestDraftsBeta()`
-- `publicApi.getLatestPublications()`
-- `publicApi.getPublicationEvents()`
-- `publicApi.findDocumentLists()`
-- `publicApi.getCategories()`
-- `publicApi.getMediaLibraryEntries()`
-- `publicApi.createMediaLibraryEntries()`
-
-To continue to return the array directly you can still use the `/api/2025-11/*` (or earlier) endpoints, or omit the `apiVersion` when calling the methods.
-
-### Display `li-tree` Properties Initially Collapsed :gift:
-
-The [`li-tree` metadata plugin]({{< ref "/reference/document/metadata/plugins/li-tree/" >}}) has a new configuration option: `treeInitiallyCollapsed`. When enabled, the tree property is displayed in a collapsed state by default. This is especially beneficial for very large tree structures, where the high number of DOM elements can cause browsers to slow down or freeze. For such scenarios, we recommend enabling this option.
-
-```js
-{
-  handle: 'myContentType',
-  metadata: [
-    {
-      handle: 'myMetadataProperty'
-      type: 'li-tree',
-      config: {},
-      ui: {
-        config: {
-          treeInitiallyCollapsed: true
-        }
-      }
-    }
-  ]
-}
-```
-
 ### Extended Revoke Behaviour :gift:
 
 #### Unrevoke
@@ -452,6 +346,112 @@ or using the Public API endpoint:
 
 ```
 PATCH /api/:apiVersion/mediaLibrary/:id {patches: [{operation: 'revokeAsset', note: 'Case #1'}]}
+```
+
+### Public API Return Values :gift:
+
+Starting with `/api/2026-01/*` the Public API endpoints which previously returned an array now return an object containing a `results` property with this array. There can also be a `total` number of results and a `cursor` for pagination depending on whether or not the endpoint supports it. To improve the accuracy of the pagination the `cursor` can be passed back to the endpoints or functions using the `after` parameter, for example: `/api/2026-01/publications/search?filters=${filters}&limit=10&after=${cursor}`.
+
+The following endpoints return `{results: [], total: 0, cursor: ''}`:
+
+- `GET /api/2026-01/publications/search`
+- `GET /api/2026-01/documents/:documentId/incomingDocumentReferences`
+- `GET /api/2026-01/documents/:documentId/incomingMediaReferences`
+- `GET /api/2026-01/mediaLibrary/:mediaId/incomingDocumentReferences`
+- `GET /api/2026-01/mediaLibrary/:mediaId/incomingMediaReferences`
+- `GET /api/2026-01/drafts/:documentId/incomingDocumentReferences`
+
+The following endpoints return `{results: []}`:
+
+- `GET /api/2026-01/documents/latestPublications`
+- `GET /api/2026-01/publicationEvents{/:channelHandle}`
+- `GET /api/2026-01/document-lists`
+- `GET /api/2026-01/categories`
+- `GET /api/2026-01/mediaLibrary`
+- `POST /api/2026-01/import/mediaLibrary`
+
+To achieve the same effect when working directly with the Public API feature in downstream code you can pass `apiVersion: '2026-01'` (or greater once supported) within the main parameter object, for example: `publicApi.searchPublications({projectId, filters, apiVersion: '2026-01'})`.
+
+The following methods return `{results: [], total: 0, cursor: ''}`:
+
+- `publicApi.searchPublications()`
+- `publicApi.getIncomingPublicationReferencesForDocument()`
+- `publicApi.getIncomingMediaReferencesForDocument()`
+- `publicApi.getIncomingPublicationReferencesForMedia()`
+- `publicApi.getIncomingMediaReferencesForMedia()`
+- `publicApi.getIncomingDocumentReferencesForDraft()`
+
+The following methods return `{results: []}`:
+
+- `publicApi.getLatestDraftsBeta()`
+- `publicApi.getLatestPublications()`
+- `publicApi.getPublicationEvents()`
+- `publicApi.findDocumentLists()`
+- `publicApi.getCategories()`
+- `publicApi.getMediaLibraryEntries()`
+- `publicApi.createMediaLibraryEntries()`
+
+To continue to return the array directly you can still use the `/api/2025-11/*` (or earlier) endpoints, or omit the `apiVersion` when calling the methods.
+
+### Default Media Types :gift:
+
+Instead of always defaulting to the media types with the handles 'image', 'video' and 'file' it is now possible to configure different media types to use on a project and content type level. These media types will be used when uploading media using the upload functionality in the document side panel and metadata form, or when dragging and dropping images into a document.
+
+Project config:
+
+```js
+{
+  v: 2,
+  // ...
+  settings: {
+    handle: 'my-project',
+    // ...
+    defaultMediaTypes: {
+      mediaImage: 'image',
+      mediaVideo: 'video',
+      mediaFile: 'file'
+    }
+  }
+}
+```
+
+Content type config:
+
+```js
+{
+  handle: 'data-visualisation',
+  documentType: 'article',
+  // ...
+  defaultMediaTypes: {
+    mediaImage: 'infographic',
+    // mediaVideo: 'video',
+    // mediaFile: 'file'
+  }
+}
+```
+
+The 'image', 'video' and 'file' media types are still the defaults, so you do not need to configure anything to keep the existing behaviour.
+
+### Display `li-tree` Properties Initially Collapsed :gift:
+
+The [`li-tree` metadata plugin]({{< ref "/reference/document/metadata/plugins/li-tree/" >}}) has a new configuration option: `treeInitiallyCollapsed`. When enabled, the tree property is displayed in a collapsed state by default. This is especially beneficial for very large tree structures, where the high number of DOM elements can cause browsers to slow down or freeze. For such scenarios, we recommend enabling this option.
+
+```js
+{
+  handle: 'myContentType',
+  metadata: [
+    {
+      handle: 'myMetadataProperty'
+      type: 'li-tree',
+      config: {},
+      ui: {
+        config: {
+          treeInitiallyCollapsed: true
+        }
+      }
+    }
+  ]
+}
 ```
 
 ## Vulnerability Patches
