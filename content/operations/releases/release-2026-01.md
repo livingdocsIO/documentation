@@ -136,13 +136,13 @@ The following internal API methods return an object `{results: [], total: 0, cur
 
 Modify any custom code using the functions listed above to use the `results` property of the returned object.
 
-## Stricter Validation for Documents Imported via the Public API :fire:
+### Stricter Validation for Documents Imported via the Public API :fire:
 
 Documents imported via the Public API were previously validated too loosely, allowing imports with incorrect content structures. This could cause issues later when editing these documents in the Livingdocs Editor, where content validation is more strict.
 
 Importing documents with an invalid content schema via the Public API is no longer possible and will now result in a failed import.
 
-### Revoke State Conflict Errors
+### Revoke State Conflict Errors :fire:
 
 Revoking an already revoked media library entry will now throw a `ConflictError`, and return a 409 status for requests. Throwing an error is important to preserve the exising revoke note. It also matches the new unrevoke behaviour where calling unrevoke on an entry which is not revoked will throw an error.
 
@@ -235,7 +235,7 @@ Referenced designs are now deprecated and will be removed in release-2026-07. Pl
 
 The Google Vision integration is deprecated and will be removed in release-2026-07. This includes the li-google-vision metadata plugin. We do not expect that any customer is using this, but if you are then please contact us and we will provide support for the migration.
 
-### Print Mode and huGO Print Preview
+### Print Mode and huGO Print Preview :hourglass:
 
 The huGO Print Preview, and the acompanying "Print Mode" in the Livingdocs editor, are deprecated and will be removed in release-2026-07.
 
