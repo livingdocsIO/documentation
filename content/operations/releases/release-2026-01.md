@@ -107,9 +107,15 @@ Node versions below 22.17.1 are no longer supported. Node 20 will stop being mai
 
 Postgres versions below 14 are no longer supported. Postgres 13 stopped being maintained on 13 November 2025. Please upgrade to at least Postgres 14, or preferably to Postgres 18.
 
-### Validation of Delivery References :fire:
+### Stricter Validation for Documents Imported via the Public API :fire:
 
-Deliveries referenced by project config property `contentTypes[].deliveries[].deliveryName` are now validated. If a delivery reference is invalid, an error will be thrown. Make sure the referenced deliveries exist.
+Documents imported via the Public API were previously validated too loosely, allowing imports with incorrect content structures. This could cause issues later when editing these documents in the Livingdocs Editor, where content validation is more strict.
+
+Importing documents with an invalid content schema via the Public API is no longer possible and will now result in a failed import.
+
+### Revoke State Conflict Errors :fire:
+
+Revoking an already revoked media library entry will now throw a `ConflictError`, and return a 409 status for requests. Throwing an error is important to preserve the exising revoke note. It also matches the new unrevoke behaviour where calling unrevoke on an entry which is not revoked will throw an error.
 
 ### Publish Control Restrictions When Print Mode Is Enabled :fire:
 
@@ -121,10 +127,9 @@ are no longer supported when `contentTypes[].print` is enabled.
 
 These settings were already partially unsupported in the Livingdocs Editor. We're now enforcing the same behavior in the Livingdocs Server as well.
 
-### Remove Project Builders API :fire:
+### Validation of Delivery References :fire:
 
-The Project Builders API `liServer.features.api('li-project-builders')` has been removed, along with the `projectBuilders` server config property.
-Alongside this, two Registration API functions have been removed: `createUserWithProjectBuilders` and `createSSOUserWithProjectBuilders`.
+Deliveries referenced by project config property `contentTypes[].deliveries[].deliveryName` are now validated. If a delivery reference is invalid, an error will be thrown. Make sure the referenced deliveries exist.
 
 ### Internal Reference Functions Return Objects :fire:
 
@@ -136,15 +141,10 @@ The following internal API methods return an object `{results: [], total: 0, cur
 
 Modify any custom code using the functions listed above to use the `results` property of the returned object.
 
-### Stricter Validation for Documents Imported via the Public API :fire:
+### Remove Project Builders API :fire:
 
-Documents imported via the Public API were previously validated too loosely, allowing imports with incorrect content structures. This could cause issues later when editing these documents in the Livingdocs Editor, where content validation is more strict.
-
-Importing documents with an invalid content schema via the Public API is no longer possible and will now result in a failed import.
-
-### Revoke State Conflict Errors :fire:
-
-Revoking an already revoked media library entry will now throw a `ConflictError`, and return a 409 status for requests. Throwing an error is important to preserve the exising revoke note. It also matches the new unrevoke behaviour where calling unrevoke on an entry which is not revoked will throw an error.
+The Project Builders API `liServer.features.api('li-project-builders')` has been removed, along with the `projectBuilders` server config property.
+Alongside this, two Registration API functions have been removed: `createUserWithProjectBuilders` and `createSSOUserWithProjectBuilders`.
 
 ## Deprecations :hourglass:
 
