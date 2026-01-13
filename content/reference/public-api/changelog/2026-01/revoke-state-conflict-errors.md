@@ -1,7 +1,7 @@
 ---
 title: Revoke State Conflict Errors
 type: changelog-entry
-weight: 1
+weight: 2
 
 change:
   date: 2026-01

@@ -1,7 +1,7 @@
 ---
 title: Revoke Note
 type: changelog-entry
-weight: 2
+weight: 3
 
 change:
   date: 2026-01
