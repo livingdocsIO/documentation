@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Only support revoke note with use2025Behavior](https://github.com/livingdocsIO/livingdocs-server/pull/8794)
 - [Disable print flow create button when workspace is dirty](https://github.com/livingdocsIO/livingdocs-editor/pull/10648)
 - [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8786)
 - [Set an unpublish schedule for a scheduled document](https://github.com/livingdocsIO/livingdocs-editor/pull/10638)
