@@ -493,6 +493,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v294.0.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.7): fix(media-library): Only support revoke note with use2025Behavior
 
 - [v294.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.6): fix: allow removing settings.editMode
 - [v294.0.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.5): fix(print): Limit LIDEP075 deprecation to specific properties
