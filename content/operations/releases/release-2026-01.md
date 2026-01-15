@@ -504,6 +504,7 @@ Here is a list of all patches after the release has been announced.
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
+- [v123.3.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.17): fix: update framework
 - [v123.3.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.16): fix(print-flow): Disable create button when workspace is dirty
 
 - [v123.3.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.15): fix: set an unpublish schedule for a scheduled document
