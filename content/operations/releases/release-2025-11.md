@@ -406,6 +406,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.23): fix(print-flow): Disable create button when workspace is dirty
 
 - [v121.3.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.22): fix: set an unpublish schedule for a scheduled document
 - [v121.3.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.21): fix: clear include overrides when replacing a teaser via drag&drop
