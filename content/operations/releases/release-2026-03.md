@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @livingdocs/framework from 32.12.1 to v32.12.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8805)
 - [Differentiate custom text formatting with the same attribute name](https://github.com/livingdocsIO/livingdocs-editor/pull/10634)
 - [Scroll document when dragging component close to an edge](https://github.com/livingdocsIO/livingdocs-editor/pull/10642)
 - [Only support revoke note with use2025Behavior](https://github.com/livingdocsIO/livingdocs-server/pull/8794)
