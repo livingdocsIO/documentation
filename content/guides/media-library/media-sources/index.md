@@ -58,7 +58,13 @@ module.exports = {
           // when the remote service supports image resizing, pass '{{width}}' as search parameter
           // the editor will replace {{width}} and the image can then requested in the right size
           previewUrl: `https://li-test.ch/${result.id}.png?w={{width}}`
-        }
+        },
+        // If systemName and externalId are returned for search results,
+        // Livingdocs stores them on the media library entry of inserted items.
+        // When the same item is imported again, Livingdocs reuses the existing
+        // media library entry instead of creating a duplicate.
+        systemName: 'exampleSource', // {{< added-in "release-2026-03" >}}
+        externalId: result.id // {{< added-in "release-2026-03" >}}
       }
     })
 
