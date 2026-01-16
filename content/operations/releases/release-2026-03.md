@@ -138,9 +138,39 @@ No rollback steps are required for this release.
 
 ## Breaking Changes :fire:
 
+### Validation of Media Source Plugin Return Properties `systemName` and `externalId`
+
+The media source plugin function `searchMediaImage` now requires `systemName` and `externalId` to be strings when returned. Previously, these properties were not validated and had no effect.
+
 ## Deprecations
 
 ## Features :gift:
+
+### Reuse Already Imported Media Source Items :gift:
+
+When a media source item has already been imported, Livingdocs now reuses the existing media library entry instead of importing it again. This allows keeping media libraries free of duplicates when using media from external systems.
+
+To enable the deduplication, [media source]({{< ref "/guides/media-library/media-sources/" >}}) search results can include `systemName` and `externalId`. If a media library entry with the same `systemName`/`externalId` pair already exists, it is reused.
+
+```diff
+module.exports = {
+  handle: 'examplePlugin',
+  async searchMediaImage() {
+    return {
+      total: 123,
+      results: [
+        {
+          metadata: {},
+          asset: {},
++         systemName: 'exampleSource',
++         externalId: 'exampleExternalId'
+        }
+      ]
+    }
+  },
+  async fetchMediaImage() {}
+}
+```
 
 ## Vulnerability Patches
 
