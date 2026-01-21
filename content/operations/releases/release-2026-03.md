@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Reuse existing media library entries when a media source item has already been imported](https://github.com/livingdocsIO/livingdocs-server/pull/8811)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/8817)
 - [chore(deps): update dependency posthog-node from 5.20.0 to v5.21.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8800)
 - [fix(deps): update dependency @livingdocs/framework from 32.12.1 to v32.12.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8805)
