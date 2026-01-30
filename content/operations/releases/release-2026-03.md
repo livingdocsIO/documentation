@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update playwright monorepo from 1.57.0 to v1.58.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/10698)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/8849)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/8831)
 - [Reuse existing media library entries when a media source item has already been imported](https://github.com/livingdocsIO/livingdocs-editor/pull/10669)
