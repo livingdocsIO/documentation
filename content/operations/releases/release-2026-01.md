@@ -493,6 +493,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v294.0.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.9): fix: read mimetype from asset object
 - [v294.0.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.8): fix(deps): update dependency @livingdocs/framework from 32.11.3 to v32.11.4
 - [v294.0.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.7): fix(media-library): Only support revoke note with use2025Behavior
 
