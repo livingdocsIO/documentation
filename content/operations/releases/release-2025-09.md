@@ -607,6 +607,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+- [v119.14.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.51): refactor(include): reduce complexity of the debouncing bursts
 - [v119.14.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.50): fix(lightbox): reset locale on close
 - [v119.14.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.49): fix: review feedback
 - [v119.14.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.48): fix: update framework
