@@ -563,6 +563,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v281.3.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.39): fix: read mimetype from asset object
 - [v281.3.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.38): fix(deps): update dependency @livingdocs/framework from 32.9.6 to v32.9.7
 - [v281.3.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.37): fix: keep animation when downloading image
 - [v281.3.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.36): fix(deps): update dependency @livingdocs/framework from 32.9.5 to v32.9.6
