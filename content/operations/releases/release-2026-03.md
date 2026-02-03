@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency @fastify/reply-from from 12.5.0 to v12.6.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10717)
 - [Read mimetype from asset object when downloading](https://github.com/livingdocsIO/livingdocs-server/pull/8861)
 - [chore(deps): update dependency eslint-plugin-jsdoc from 62.4.1 to v62.5.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8866)
 - [Show image and metadata of selected locale in lightbox](https://github.com/livingdocsIO/livingdocs-editor/pull/10705)
