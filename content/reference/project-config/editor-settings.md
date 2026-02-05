@@ -1189,7 +1189,16 @@ In this example, both entries have the same behavior, with template and metadata
 
 ```js
 mediaLibrary.componentDirectivesPrefilling: [
-s
+  {
+    type: 'template',
+    template: '{{ metadata.description }}',
+    directiveName: 'caption'
+  },
+  {
+    metadataPropertyName: 'description',
+    directiveName: 'caption' 
+  }
+]
 ```
 
 An array of mappings to prefill `doc-editable` directives with Media Library Entry Metadata. The metadata value must be a string. The directive name can be prefixed with a component name to limit where the prefill will be used, for example "image.source". To limit the prefilling to multiple components you will need to add multiple objects to the array.
