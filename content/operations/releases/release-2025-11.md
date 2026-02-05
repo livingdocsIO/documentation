@@ -385,6 +385,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v284.0.24](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.24): fix: bump file-type version for a bug fix
 - [v284.0.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.23): fix: read mimetype from asset object
 - [v284.0.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.22): fix(deps): update dependency @livingdocs/framework from 32.10.4 to v32.10.5
 
