@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency pino from 10.2.1 to v10.3.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8843)
 - [feat(media-center): add variable thumbnail sizes](https://github.com/livingdocsIO/livingdocs-editor/pull/10685)
 - [fix: bump file-type version for a bug fix](https://github.com/livingdocsIO/livingdocs-server/pull/8881)
 - [fix(deps): update dependency @livingdocs/framework from 32.12.4 to v32.12.5 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10725)
