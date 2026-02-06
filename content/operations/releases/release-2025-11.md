@@ -409,6 +409,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.27): chore(deps): update dependency fastify from 5.6.1 to 5.7.3 [security]
 - [v121.3.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.26): fix(lightbox): reset locale on close
 - [v121.3.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.25): fix: review feedback
 - [v121.3.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.24): fix: npm authentication error
