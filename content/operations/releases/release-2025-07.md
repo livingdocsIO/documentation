@@ -626,6 +626,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v280.1.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.41): fix: bump file-type version for a bug fix
 
 - [v280.1.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.40): fix: keep animation when downloading image
 - [v280.1.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.39): fix(deps): update dependency @livingdocs/framework from 32.8.10 to v32.8.11
