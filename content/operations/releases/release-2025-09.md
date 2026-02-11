@@ -563,6 +563,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v281.3.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.41): fix(deps): update dependency axios from 1.12.0 to 1.13.5 [security]
 - [v281.3.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.40): chore(deps): update dependency fastify from 5.5.0 to 5.7.3 [security]
 - [v281.3.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.39): fix: read mimetype from asset object
 - [v281.3.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.38): fix(deps): update dependency @livingdocs/framework from 32.9.6 to v32.9.7
