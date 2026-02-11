@@ -626,6 +626,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v280.1.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.42): fix(deps): update dependency axios from 1.12.1 to 1.13.5 [security]
 - [v280.1.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.41): fix: bump file-type version for a bug fix
 
 - [v280.1.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.40): fix: keep animation when downloading image
