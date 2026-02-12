@@ -16,7 +16,6 @@ Possible Livingdocs Editor UI customizations:
 - custom Angular components for doc-include sidebar user interfaces
 - custom [Display Filter]({{< ref "/customising/advanced/editor-configuration/display-filter.md" >}})
 - custom Dashboard item (a single item in the articles dashboard)
-- custom Embed components (the core contains Iframes and Tweets)
 - custom Iframely metadata extractors
 - locale customizations
 
@@ -56,15 +55,6 @@ liEditor.includes.register('brightcove', {
     component: '='
   }
 })
-
-// Example of custom embeds
-// embeds = require('@livingdocs/editor/app/scripts/modules/embeds/embeds')
-// Pinterest = require('./custom/scripts/modules/embeds/pinterest/pinterest')
-// Facebook = require('./custom/scripts/modules/embeds/facebook/facebook')
-// embeds.registerCustomEmbeds [
-//   Facebook,
-//   Pinterest
-// ]
 
 // Example of changing the date locale
 // moment = require('moment')
