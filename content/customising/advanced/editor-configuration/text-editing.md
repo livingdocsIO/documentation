@@ -63,25 +63,50 @@ incorrect quotes and apostrophe will be replaced with the configured ones.
 
 ## Custom Elements
 
-The text formatting toolbar can also be extended with custom configured elements. The elements will be shown after the default elements. Add this configuration to the default configuration above.
+The text formatting toolbar can also be extended with custom configured elements. These elements will be shown in the toolbar after the default elements.
+
+They can be configured in the `customElements` array in the `textFormatting` object, typically located in editor settings.
+
+There is limited support for the use of metadata plugins. For example, `li-text` or `li-enum` can be used to inject text values.
+
+_Note that metadata plugins used in these instances will not be fully configurable and will have only limited functionality. Use sparingly._
 
 Example:
 
 ```js
-customElements: [
-  {
-    label: 'blue color',
-    handle: 'bluecolor',
-    // the tag which is set around the selection
-    tagName: 'span',
-    // if trim is set to true, whitespaces on the left and right of the selection are removed
-    trim: true,
-    // the icon which will be displayed. Only existing icons in the editor can be used.
-    icon: 'format-color-highlight',
-    // the attributes which are set on the tag
-    attributes: [{name: 'class', value: 'blue'}]
-  }
-]
+textFormatting: {
+  customElements: [
+    {
+      label: 'blue color',
+      handle: 'bluecolor',
+      // the tag which is set around the selection
+      tagName: 'span',
+      // if trim is set to true, whitespaces on the left and right of the selection are removed
+      trim: true,
+      // the icon which will be displayed. Only existing icons in the editor can be used.
+      icon: 'format-color-highlight',
+      // the attributes which are set on the tag
+      attributes: [
+        { name: 'class', value: 'blue' }
+      ]
+    },
+    // example using a plugin
+    {
+      label: 'Add Note',
+      handle: 'inline-note',
+      tagName: 'span',
+      trim: true,
+      icon: 'comment-outline',
+      attributes: [
+        {
+          handle: 'inlineNoteText',
+          type: 'li-text',
+          name: 'inline-note'
+        }
+      ]
+    }
+  ]
+}
 ```
 
 #### Special Characters
@@ -101,14 +126,17 @@ app: {
           'caption': null,
           'value': '–',
           'description': 'Dash of 1 en length'
-        }, {
+        }, 
+        {
           'name': 'VULGAR FRACTION ONE HALF',
           'label': '½',
           'caption': null,
           'value': '½',
           'description': 'Fraction: one half'
         }
-      }, {
+        ]
+      }, 
+      {
         'name': 'white_spaces',
         'label': 'White Spaces',
         'charList': [
@@ -129,7 +157,6 @@ app: {
       }
     ]
   }
-}
 ```
 
 #### Advanced Formatting Options
