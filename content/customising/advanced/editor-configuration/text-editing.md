@@ -65,7 +65,7 @@ incorrect quotes and apostrophe will be replaced with the configured ones.
 
 The text formatting toolbar can also be extended with custom configured elements. These elements will be shown in the toolbar after the default elements.
 
-They can be configured in the `customElements` array in the `textFormatting` object, typically located in editor settings.
+They can be configured in the `customElements` array in the `textFormatting` object, typically located in `projectConfig.editorSettings`.
 
 There is limited support for the use of metadata plugins. For example, `li-text` or `li-enum` can be used to inject text values.
 
@@ -146,7 +146,8 @@ app: {
             'caption': 'en',
             'value': ' ',
             'description': 'EN Space'
-          }, {
+          }, 
+          {
             'name': 'FOUR-PER-EM SPACE',
             'label': '◅··▻',
             'caption': '1/4',
