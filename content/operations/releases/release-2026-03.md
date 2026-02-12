@@ -21,9 +21,9 @@ systemRequirements:
     - name: Postgres
       version: 17
     - name: Elasticsearch
-      version: 9.x
+      version: 9
     - name: OpenSearch
-      version: 2.3.0
+      version: 3
     - name: Redis
       version: 8
     - name: Livingdocs Server Docker Image
@@ -41,9 +41,9 @@ systemRequirements:
     - name: Postgres
       version: 14
     - name: Elasticsearch
-      version: 7.x
+      version: 8
     - name: OpenSearch
-      version: 1
+      version: 2
     - name: Redis
       version: 6.2
     - name: Livingdocs Server Docker Image
@@ -158,7 +158,21 @@ No rollback steps are required for this release.
 
 ## Breaking Changes :fire:
 
-### Validation of Media Source Plugin Return Properties `systemName` and `externalId`
+### Drop Support for Elasticsearch 7 and OpenSearch 1 :fire:
+
+Elasticsearch 7 and OpenSearch 1 are no longer maintained and therefore no longer supported by Livingdocs.
+
+Please upgrade to at least the new minimum versions:
+
+- Elasticsearch 8
+- OpenSearch 2
+
+Or preferably to our recommended versions:
+
+- Elasticsearch 9
+- OpenSearch 3
+
+### Validation of Media Source Plugin Return Properties `systemName` and `externalId` :fire:
 
 The media source plugin function `searchMediaImage` now requires `systemName` and `externalId` to be strings when returned. Previously, these properties were not validated and had no effect.
 
