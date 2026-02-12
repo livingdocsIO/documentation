@@ -17,9 +17,8 @@ support:
   systemMetadata: true
   planningSystem: false
 description: |
-  {{< warning >}}
-  Support for `li-push-notifications` will soon be removed. Please use [`li-push-messages`]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}) instead.
-  {{< /warning >}}
+  {{< deprecated-in "release-2026-03" block >}}
+  `li-push-notifications` is deprecated and will be removed in `release-2026-09`. Please use [`li-push-messages`]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}) instead.
 defaultUI: Editor toolbar button which opens a dialog.
 storageFormat: |
   {
