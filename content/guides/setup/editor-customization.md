@@ -10,13 +10,9 @@ weight: 2
 
 Possible Livingdocs Editor UI customizations:
 
-- custom Angular factories or services (for use in other customizations)
-- custom Angular components for metadata fields
-- .. or [custom model classes]({{< ref "/guides/documents/metadata" >}}) for existing metadata fields
-- custom Angular components for doc-include sidebar user interfaces
+- [custom model classes]({{< ref "/guides/documents/metadata" >}}) for existing metadata fields
 - custom [Display Filter]({{< ref "/customising/advanced/editor-configuration/display-filter.md" >}})
 - custom Dashboard item (a single item in the articles dashboard)
-- custom Iframely metadata extractors
 - locale customizations
 
 ## Editor Configuration
@@ -28,33 +24,11 @@ In addition to this some behaviour can be customised using the JSON configuratio
 The editor (like the server) usually has an `app/editor.js` file where code customizations are registered and that looks something like this:
 
 ```js
-// entry point when using the webpack build of the editor
 const liEditor = require('@livingdocs/editor')()
-const editingApiModule = window.angular.module('li-editing-api')
-// the Angular editorModule -> can be used to register services and factories
-const editorModule = window.angular.module('livingdocs-editor')
-
-// example of loading a custom angular module: ui-validate
-// require('angular-ui-validate')
-// editorModule.requires.push('ui.validate')
-
-// Just require a custom Angular factory using the editorApiModule
-require('./custom/scripts/factories/categories')(editingApiModule)
 
 // Register a custom filter for the dashboard
 const layoutsFilter = require('./custom/filters/layouts_filter')
 liEditor.searchFilters.registerListV2('layouts', layoutsFilter)
-
-// Register a custom doc-include sidebar interface (Angular component)
-liEditor.includes.register('brightcove', {
-  template: require('../plugins/includes/ld-brightcove-include/brightcove_include_template.html'),
-  controller: require('../plugins/includes/ld-brightcove-include/brightcove_include_controller'),
-  bindings: {
-    directive: '=',
-    componentView: '=',
-    component: '='
-  }
-})
 
 // Example of changing the date locale
 // moment = require('moment')
