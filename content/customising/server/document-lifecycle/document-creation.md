@@ -23,6 +23,6 @@ You don't need to fully understand everything going on right now, but as you lea
 
 1. For every `ContentType` you can define [`defaultContent`]({{< ref "/reference/project-config/content-types#default-content" >}}) and [`defaultMetadata`]({{< ref "/reference/project-config/content-types#default-metadata" >}}) which will be merged with passed content/metadata (passed data are preferred).
 2. content (import) and metadata (import + editor) will be validated in a next step
-3. metadata plugin hook [`onUpdate`]({{< ref "/customising/server/metadata-plugins#write-a-custom-plugin" >}}) will be called
+3. metadata plugin hook `onUpdate` will be called ({{< deprecated-in "release-2026-03" >}})
 4. Save the document on the database
 5. Call the server event [`document.create`]({{< ref "/customising/advanced/server-events#available-events" >}})
