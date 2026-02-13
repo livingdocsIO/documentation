@@ -507,6 +507,7 @@ Here is a list of all patches after the release has been announced.
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
+- [v123.3.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.22): fix(deps): update dependency axios from 1.13.2 to 1.13.5 [security]
 - [v123.3.21](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.21): fix: Reintroduce accidentally removed `editor` variable on properties panel controller to fix legacy embeds
 - [v123.3.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.20): refactor(include): reduce complexity of the debouncing bursts
 - [v123.3.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.19): fix(lightbox): reset locale on close
