@@ -14,7 +14,7 @@ Below is a diagram for the document publication lifecycle. You don't need to ful
 {{< img src="assets/document-publication-lifecycle.png" alt="Document Publication Lifecycle" >}}
 
 1. Start "Prepare Publish" phase where you still can modify the document, validate data and throw errors back to the callee
-2. Call metadata plugin hook [`onPreparePublish`]({{< ref "/customising/server/metadata-plugins#write-a-custom-plugin" >}}) (modify metadata property, validation)
+2. Call metadata plugin hook `onPreparePublish` (modify metadata property, validation) ({{< deprecated-in "release-2026-03" >}})
 3. Call server hook [`preparePublishHook`]({{< ref "/customising/server/server-hooks#publication-hooks" >}}) (modify document, validation).
 4. Start "Publication" phase
 5. Save the publication on the database
