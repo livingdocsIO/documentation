@@ -18,7 +18,7 @@ support:
   planningSystem: false
 description: |
   {{< info >}}
-  Push **Messages** has been introduced as an alternative to the existing [Push **Notifications**]({{< ref "/guides/editor/push-notifications" >}}) feature, which will soon be removed.
+  Push **Messages** has been introduced as an alternative to the existing [Push **Notifications**]({{< ref "/guides/editor/push-notifications" >}}) feature, which will be removed in release-2026-09.
   {{< /info >}}
 
   The Push Messages feature enables a user to send messages directly from Table Dashboards, and from the article editor ({{< added-in "release-2023-11" >}}), with a customisable message format.
