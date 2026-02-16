@@ -5,8 +5,9 @@ weight: 15
 ---
 
 {{< deprecated-in "release-2026-03" block >}}
-
+{{< warning >}}
 `li-push-notifications` is deprecated and will be removed in `release-2026-09`. Please use the [`li-push-messages` metadata plugin]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}) instead.
+{{</ warning >}}
 
 This guide explains 2 things:
 
