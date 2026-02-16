@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update opentelemetry from 0.211.0 to ^0.212.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8929)
 - [Handle migrations of old documents without the statistics property](https://github.com/livingdocsIO/livingdocs-server/pull/8930)
 - [Move vendors to npm modules](https://github.com/livingdocsIO/livingdocs-editor/pull/10737)
 - [chore(deps): update dependency pino from 10.2.1 to v10.3.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8843)
