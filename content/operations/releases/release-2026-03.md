@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8947)
 - [Upgrade to ajv@8.18.0](https://github.com/livingdocsIO/livingdocs-server/pull/8939)
 - [fix(deps): update opentelemetry from 0.211.0 to ^0.212.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8929)
 - [Handle migrations of old documents without the statistics property](https://github.com/livingdocsIO/livingdocs-server/pull/8930)
