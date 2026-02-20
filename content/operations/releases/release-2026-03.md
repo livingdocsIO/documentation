@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Test oldest and newest of opensearch and valkey](https://github.com/livingdocsIO/livingdocs-server/pull/8949)
 - [Image Rotation](https://github.com/livingdocsIO/livingdocs-server/pull/8907)
 - [Image Rotation](https://github.com/livingdocsIO/livingdocs-editor/pull/10740)
 - [Configure TTL cache of media library dataloader](https://github.com/livingdocsIO/livingdocs-editor/pull/10739)
