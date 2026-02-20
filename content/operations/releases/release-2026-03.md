@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Image Rotation](https://github.com/livingdocsIO/livingdocs-editor/pull/10740)
 - [Configure TTL cache of media library dataloader](https://github.com/livingdocsIO/livingdocs-editor/pull/10739)
 - [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8947)
 - [Upgrade to ajv@8.18.0](https://github.com/livingdocsIO/livingdocs-server/pull/8939)
