@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @isaacs/ttlcache from 1.4.1 to v2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10435)
 - [Use newer ajv version in groups api](https://github.com/livingdocsIO/livingdocs-server/pull/8960)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/8964)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10770)
