@@ -412,6 +412,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.30): chore: Remove code-highlight angular component
 - [v121.3.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.29): fix(deps): update dependency axios from 1.12.2 to 1.13.5 [security]
 - [v121.3.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.28): fix: configure ttl cache of media library dataloader
 - [v121.3.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.27): chore(deps): update dependency fastify from 5.6.1 to 5.7.3 [security]
