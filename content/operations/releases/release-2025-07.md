@@ -675,6 +675,7 @@ Here is a list of all patches after the release has been announced.
 - [v280.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.1): fix(news-agency): Prevent registering news agency report content type multiple times
 
 ### Livingdocs Editor Patches
+- [v119.3.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.50): chore: Remove code-highlight angular component
 - [v119.3.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.49): fix(deps): update dependency fastify from 5.6.1 to 5.7.3 [security]
 
 - [v119.3.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.3.48): fix: remove outdated comment
