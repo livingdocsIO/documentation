@@ -259,6 +259,7 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+- [v123.10.1](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.1): fix(release-2026-03): recreate package-lock.json
 
 ---
 
