@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Add image collections](https://github.com/livingdocsIO/livingdocs-server/pull/8820)
 - [fix(deps): update dependency @livingdocs/framework from 32.12.5 to v32.12.6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8968)
 - [fix(deps): update dependency @livingdocs/framework from 32.12.5 to v32.12.6 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10773)
 - [fix(deps): update dependency @isaacs/ttlcache from 1.4.1 to v2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10435)
