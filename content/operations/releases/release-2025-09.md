@@ -611,6 +611,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+- [v119.14.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.55): fix(deps): update dependency @livingdocs/framework from 32.9.7 to v32.9.8
 - [v119.14.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.54): chore: Remove code-highlight angular component
 - [v119.14.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.53): fix: configure ttl cache of media library dataloader
 - [v119.14.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.52): fix(deps): update dependency axios from 1.12.0 to 1.13.5 [security]
