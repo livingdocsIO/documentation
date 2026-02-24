@@ -697,6 +697,22 @@ module.exports = {
 }
 ```
 
+## Thumbnail Sizes
+
+{{< added-in "release-2026-03" block >}}
+
+When working with image agency feeds, users often need to visually scan through large volumes of images, for example to pick relevant photos from a live coverage event or to identify the start and end of a photo series. The thumbnail size on Media Library Dashboard screens can be adjusted to fit these needs.
+
+![Media Library with adjustable thumbnail sizes](thumbnail-sizes.png)
+
+Three sizes are available: **Small (S)**, **Medium (M)** and **Large (L)**. The number of columns adjusts based on the screen width and the selected size.
+
+The setting works on Media Library Dashboard screens opened from the main navigation as well as on dashboards within the document editor side panel.
+
+Media Library Dashboard screens use the full available screen width. The detail side panel extends to the right edge. Scrolling through search results works like infinite scrolling without interruptions.
+
+The size setting is stored in local storage and shared across all Media Library Dashboard screens.
+
 ## Metadata Translations
 
 First, you have to configure the available languages in the system as [described here]({{< ref "/guides/editor/multi-language-content.md" >}})

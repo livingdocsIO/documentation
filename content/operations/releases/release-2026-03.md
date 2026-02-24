@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/10779)
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/8976)
 - [Add image collections](https://github.com/livingdocsIO/livingdocs-editor/pull/10700)
@@ -227,6 +228,16 @@ module.exports = {
   async fetchMediaImage() {}
 }
 ```
+
+### Media Library Thumbnail Sizes :gift:
+
+When working with image agency feeds, users often need to visually scan through large volumes of images, for example to pick relevant photos from a live coverage event or to identify the start and end of a photo series.
+
+The thumbnail size on Media Library Dashboard screens can now be adjusted between small (S), medium (M) and large (L). The dashboard also uses the full available screen width and scrolling through results works like infinite scrolling without interruptions.
+
+{{< img src="release-2026-03-thumbnail-sizes.png" alt="Media Library with adjustable thumbnail sizes" >}}
+
+For more details, refer to the [Media Library Thumbnail Sizes guide]({{< ref "/guides/media-library/media-library-setup/index#thumbnail-sizes" >}}).
 
 ## Vulnerability Patches
 
