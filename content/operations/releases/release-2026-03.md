@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/10779)
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/8976)
 - [Add image collections](https://github.com/livingdocsIO/livingdocs-editor/pull/10700)
 - [Add image collections](https://github.com/livingdocsIO/livingdocs-server/pull/8820)
