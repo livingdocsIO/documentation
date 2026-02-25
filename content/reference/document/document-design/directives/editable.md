@@ -42,6 +42,8 @@ Only one of these options can be used on a single directive. `plainText` does no
 
 Note: Block level elements and elements like script and style are already prohibited in editable directives. Use the above options only to filter inline elements like `<a>` or `<strong>`.
 
+These options also control which toolbar buttons are shown when a user selects text in the directive. For example, `plainText: true` will hide the entire formatting toolbar (bold, italic, links, etc.), and `tagAllowlist: ['em']` will only show the italic button. This makes them useful for restricting the editing experience of title-like components (e.g. subtitle, catchline) compared to body text components (e.g. paragraph) that should retain the full toolbar.
+
 - `plainText`: true | false, Ensures that a text can not contain any HTML tags (decodes HTML).
 - `tagAllowlist`: Only allows selected tags in the content, e.g. `"tagAllowlist": ['a', 'em']` would only allow a and em tags, but would remove e.g. a strong tag.
 - `tagDenylist`: Removes certain tags from the content, e.g. `"tagDenylist": ['a']` would remove all `<a>` tags.
