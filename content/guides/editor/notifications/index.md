@@ -58,9 +58,8 @@ module.exports = {
       notifications: {
         transport: 'default',
         subject: 'Changes on a document you are subscribed to',
-        htmlTemplatePath: require.resolve(
-          '@livingdocs/server/plugins/email-templates/notifications.html'
-        )
+        htmlTemplatePath:
+          require.resolve('@livingdocs/server/plugins/email-templates/notifications.html')
       }
     }
   }
@@ -70,7 +69,7 @@ module.exports = {
 The `enableConsumers` is the configuration used to enable/disable the email, slack consumers.
 By default, they will be enabled in server instances that define `roles: ['worker']` in server configuration.
 
-### Project config
+## Project config
 
 Certain _actions groups_ can be defined within the [project config for notifications]({{< ref "/reference/project-config/notifications.md" >}}).
 
@@ -137,7 +136,7 @@ Possible action to register on at the moment:
 - document.delete
 - document.transform
 - comment.add
-- task.assign
+- comment.resolve
 - task.change
   config options:
 
@@ -149,7 +148,7 @@ Possible action to register on at the moment:
   {type: 'task.change', taskName: 'proofreading', statusChange: ['requested', 'accepted', 'completed']}
   ```
 
-#### Comments mentioning
+## Comments mentioning
 
 In a comment it is possible to mention a user with `@`. A dropdown will be shown and a user can be selected. This user will get a notification about the mentioning in a comment.
 
@@ -157,7 +156,7 @@ In a comment it is possible to mention a user with `@`. A dropdown will be shown
 
 As soon as the comments are enabled it is possible to mention another user in a comment. The other user will get a notification when they are enabled. The user doesn't have to watch a document to get the notification.
 
-### Setup Slack
+## Setup Slack
 
 1. Go to https://api.slack.com/apps/
 2. “Create new app”
@@ -171,3 +170,11 @@ As soon as the comments are enabled it is possible to mention another user in a 
    - `users:read.mail`
 7. install the app on the workspace
 8. Add `Bot User OAuth Token` to the Livingdocs `notifications.channels.slack.botUserToken` config
+
+## Additional notifications
+
+Along with comment mentions (above) the following notifications can occur without manual subscription by a user:
+
+- When a user is assigned to a task by another user they will receive a notification.
+- When `notifyTaskRequester` is enabled the task creator will receive notifications when the specific task is accepted or completed.
+- When `autoSubscribeOwner` is enabled the creator of the document will be automatically subscribed to notifications for all events in the specified action group.
