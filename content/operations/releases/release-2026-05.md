@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Reset additional language after translation deletion](https://github.com/livingdocsIO/livingdocs-editor/pull/10788)
 - [Delete data record translation](https://github.com/livingdocsIO/livingdocs-editor/pull/10783)
 - [chore(deps): update aws-sdk from 3.996.0 to v3.997.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8981)
 - [Prevent image editor save button from overflowing](https://github.com/livingdocsIO/livingdocs-editor/pull/10781)
