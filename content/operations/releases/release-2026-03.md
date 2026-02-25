@@ -259,6 +259,7 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+- [v123.10.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.3): fix(media-library): Fix redirect after translation deletion
 - [v123.10.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.2): fix(image-editor): prevent save button from overflowing
 - [v123.10.1](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.1): fix(release-2026-03): recreate package-lock.json
 
