@@ -414,6 +414,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.32): fix(metadata): Reset additional language after translation deletion
 - [v121.3.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.31): fix(deps): update dependency @livingdocs/framework from 32.10.5 to v32.10.6
 - [v121.3.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.30): chore: Remove code-highlight angular component
 - [v121.3.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.29): fix(deps): update dependency axios from 1.12.2 to 1.13.5 [security]
