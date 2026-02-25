@@ -61,6 +61,9 @@ for the current language will be used if set (Note that the locale value in the 
 If `quotes`, `singleQuotes` or `apostrophe` are configured then
 incorrect quotes and apostrophe will be replaced with the configured ones.
 
+**Per-component toolbar restrictions:**
+The above configuration applies globally to all editable directives. If you need to restrict the toolbar for a specific component (e.g. show no formatting options on a subtitle but retain the full toolbar on a paragraph), you can use `plainText`, `tagAllowlist` or `tagDenylist` on the component's editable directive. See the [Editable directive docs]({{< ref "/reference/document/document-design/directives/editable#plaintext-tagallowlist-and-tagdenylist" >}}) for details.
+
 ## Custom Elements
 
 The text formatting toolbar can also be extended with custom configured elements. These elements will be shown in the toolbar after the default elements.
