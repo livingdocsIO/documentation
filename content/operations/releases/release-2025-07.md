@@ -626,6 +626,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v280.1.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.44): fix(dep): Update dependencies
 - [v280.1.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.43): fix(deps): update dependency @livingdocs/framework from 32.8.11 to v32.8.12
 - [v280.1.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.42): fix(deps): update dependency axios from 1.12.1 to 1.13.5 [security]
 - [v280.1.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v280.1.41): fix: bump file-type version for a bug fix
