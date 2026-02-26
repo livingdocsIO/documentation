@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @livingdocs/framework from 32.13.0 to v32.13.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10798)
 - [Fix Multiselect Selection Navigation in Sidepanel](https://github.com/livingdocsIO/livingdocs-editor/pull/10787)
 - [Reset additional language after translation deletion](https://github.com/livingdocsIO/livingdocs-editor/pull/10788)
 - [Delete data record translation](https://github.com/livingdocsIO/livingdocs-editor/pull/10783)
