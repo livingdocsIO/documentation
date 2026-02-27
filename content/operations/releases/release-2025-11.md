@@ -415,6 +415,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.34): fix(metadata): Fix undefined property error in user needs form
 - [v121.3.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.33): fix(deps): update dependency @livingdocs/framework from 32.10.6 to v32.10.7
 - [v121.3.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.32): fix(metadata): Reset additional language after translation deletion
 - [v121.3.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.31): fix(deps): update dependency @livingdocs/framework from 32.10.5 to v32.10.6
