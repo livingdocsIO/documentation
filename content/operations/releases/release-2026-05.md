@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Limit search query length and display understandable error](https://github.com/livingdocsIO/livingdocs-editor/pull/10794)
 - [Fix undefined property error in user needs form](https://github.com/livingdocsIO/livingdocs-editor/pull/10800)
 - [fix(deps): update dependency c8 from 10.1.3 to v11 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8989)
 - [fix(deps): update dependency @livingdocs/framework from 32.13.0 to v32.13.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10798)
