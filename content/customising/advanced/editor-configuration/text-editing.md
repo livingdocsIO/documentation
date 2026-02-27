@@ -62,7 +62,7 @@ If `quotes`, `singleQuotes` or `apostrophe` are configured then
 incorrect quotes and apostrophe will be replaced with the configured ones.
 
 **Per-component toolbar restrictions:**
-The above configuration applies globally to all editable directives. If you need to restrict the toolbar for a specific component (e.g. show no formatting options on a subtitle but retain the full toolbar on a paragraph), you can use `plainText`, `tagAllowlist` or `tagDenylist` on the component's editable directive. See the [Editable directive docs]({{< ref "/reference/document/document-design/directives/editable#plaintext-tagallowlist-and-tagdenylist" >}}) for details.
+The above configuration applies globally to all editable directives. If you need to restrict the toolbar for a specific component (e.g. show no formatting options on a subtitle but retain the full toolbar on a paragraph), you can use `plainText` on the component's editable directive. See the [Editable directive docs]({{< ref "/reference/document/document-design/directives/editable#plaintext-tagallowlist-and-tagdenylist" >}}) for details.
 
 ## Custom Elements
 
