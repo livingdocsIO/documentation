@@ -385,6 +385,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v284.0.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.30): fix(deps): update dependency @livingdocs/framework from 32.10.6 to v32.10.7
 - [v284.0.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.29): fix(dep): Update dependencies
 - [v284.0.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.28): fix(deps): update dependency @livingdocs/framework from 32.10.5 to v32.10.6
 - [v284.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.27): fix(hugo): support extracting title from imported picture
