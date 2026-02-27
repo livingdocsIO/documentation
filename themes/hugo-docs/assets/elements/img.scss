@@ -1,0 +1,8 @@
+figure.img {
+  margin: $space-m 0;
+
+  figcaption {
+    @extend %font-s-xs;
+    color: $color-grey-3;
+  }
+}

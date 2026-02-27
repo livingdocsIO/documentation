@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/10779)
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/8976)
 - [Add image collections](https://github.com/livingdocsIO/livingdocs-editor/pull/10700)
@@ -168,7 +169,16 @@ No pre-deployment steps are required before rolling out this release.
 
 #### Migrate the Postgres Database
 
-No migrations are required for this release.
+When upgrading, first run the database migrations. At Livingdocs, we run this command in an initContainer on Kubernetes.
+
+All migrations should execute quickly and not lock write-heavy tables.
+
+```sh
+# 216-image-variants.js
+#   Creates the `media_library_entries_image_variants` table for image editing
+#   in documents.
+livingdocs-server migrate up
+```
 
 ### After the deployment
 
@@ -198,9 +208,41 @@ Or preferably to our recommended versions:
 
 The media source plugin function `searchMediaImage` now requires `systemName` and `externalId` to be strings when returned. Previously, these properties were not validated and had no effect.
 
+### Reserved `v/` Key Prefix for Image Editing in Documents :fire:
+
+Image variant keys use the `v/` prefix (e.g. `v/2026/02/10/abc123`). If you have configured a custom [`storage.computeKey`]({{< ref "/customising/server-configuration/storage/#interface" >}}) function for image storage, ensure it does not return keys starting with `v/`.
+
 ## Deprecations
 
+### `mediaLibrary.disableImageEditingInDocuments`
+
+The `mediaLibrary.disableImageEditingInDocuments` server configuration option is deprecated and will be removed in `release-2026-09`. It is introduced alongside [image editing in documents]({{< ref "#image-editing-in-documents-gift" >}}) as a temporary opt-out.
+
 ## Features :gift:
+
+### Image Editing in Documents :gift:
+
+Images can now be edited directly within a document. An "Adjust" button on each image placement lets users rotate images and apply colour adjustments (brightness, contrast, saturation) per placement, without affecting the original image or other documents that reference it.
+
+{{< img src="release-2026-03-image-editing-adjust.png" alt="Adjust image" width="400" caption="The Adjust button lets users apply colour adjustments per placement." >}}
+
+As a result, colour adjustments are no longer available in the media library. The only image modification that remains in the media library is pixelation. Pixelation continues to be applied globally to all image placements.
+
+{{< img src="release-2026-03-image-editing-pixelate.png" alt="Pixelate image" width="400" caption="Pixelation remains in the media library and applies globally to all placements of the image." >}}
+
+The new behavior is enabled automatically for all setups that have `use2025Behavior: true`. Once enabled, reverting to the previous behavior is not supported.
+
+If newsrooms need time to adapt, image editing in documents can be temporarily disabled using `mediaLibrary.disableImageEditingInDocuments`. Note that this option is deprecated and will be removed in {{< release "release-2026-09" >}}. This option must be set before users start editing images in documents. Disabling it afterwards will not remove existing variants, which will continue to be applied in their respective placements.
+
+This change is non-breaking for deliveries. Images can continue to be fetched by key as before. However, since an image can now have multiple variants, ensure you use `mediaLibraryApi.getAllKeysForMediaLibraryEntry()` when purging CDN caches after a media library entry is revoked or invalidated, as it returns all associated keys including any variant keys.
+
+See [Image Editing in Documents]({{< ref "/guides/media-library/2025-behavior/#image-editing-in-documents" >}}) for details.
+
+### Image Rotation :gift:
+
+Journalists can now rotate images directly within a document. This is particularly useful for correcting a skewed horizon. Rotation is applied per placement, so the original image and any other documents that reference it remain unchanged. Since rotating an image changes its dimensions, any existing crops on that placement are reset automatically.
+
+{{< img src="release-2026-03-image-editing-rotate.png" alt="Rotate image" caption="Images can be rotated per placement directly within a document." >}}
 
 ### Reuse Already Imported Media Source Items :gift:
 
@@ -259,6 +301,7 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+
 - [v123.10.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.8): fix(search): Limit query length and display understandable error
 - [v123.10.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.7): fix(metadata): Fix undefined property error in user needs form
 - [v123.10.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.6): fix: Fix errors for edge cases of certain configurations/behaviors
