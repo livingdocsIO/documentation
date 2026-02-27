@@ -512,6 +512,7 @@ Here is a list of all patches after the release has been announced.
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
+- [v123.3.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.27): fix(deps): update dependency @livingdocs/framework from 32.11.5 to v32.11.7
 - [v123.3.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.26): fix(metadata): Reset additional language after translation deletion
 - [v123.3.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.25): fix(deps): update dependency @livingdocs/framework from 32.11.4 to v32.11.5
 - [v123.3.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.24): chore: Remove code-highlight angular component
