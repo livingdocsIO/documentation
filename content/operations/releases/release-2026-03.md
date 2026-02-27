@@ -259,6 +259,7 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+- [v123.10.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.6): fix: Fix errors for edge cases of certain configurations/behaviors
 - [v123.10.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.5): refactor(multiselect-navigation): improve naming of function useMultiSelectSelection
 - [v123.10.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.4): fix(metadata): Reset additional language after translation deletion
 - [v123.10.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.3): fix(media-library): Fix redirect after translation deletion
