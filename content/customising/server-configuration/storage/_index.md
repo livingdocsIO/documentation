@@ -42,6 +42,10 @@ storage: {
 The default configuration will return `{dateString}/{randomString}{ext}`, but you can use the provided parameters on `computeKey()`
 to compose a key blueprint that matches your needs, e.g. separate media by projectId with `{projectId}/{dateString}/{randomString}{extension}`.
 
+{{< warning >}}
+Keys starting with `v/` are reserved for [image editing in documents]({{< ref "/guides/media-library/2025-behavior/#image-editing-in-documents" >}}) and must not be returned by a custom `computeKey` function.
+{{< /warning >}}
+
 ## Strategies
 
 #### Memory

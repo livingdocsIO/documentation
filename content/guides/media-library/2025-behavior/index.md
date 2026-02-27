@@ -6,8 +6,9 @@ weight: 5
 
 ## Overview
 
-The Media Library is being upgraded during 2025, and the main improvements include:
-- Image editing (colour correction and redaction)
+The `use2025Behavior` represents the future direction of the Media Library. It unlocks new capabilities that were previously not possible. We recommend that new setups always enable it, and existing setups are encouraged to migrate.
+
+- Image editing (colour corrections, rotation and pixelation)
 - Automated deletion routines
 - Manual media library entry deletion
 - Removal of the "Archive" functionality
@@ -35,7 +36,7 @@ Be aware that this also requires additional configuration steps such as modifyin
 
 ## Features
 
-### Image variant Storage / Delivery
+### Image Variant Storage / Delivery
 
 {{< added-in "release-2025-03" block >}}
 
@@ -77,12 +78,38 @@ This endpoint delivers the image with its original dimensions, as long as it has
 To avoid performance bottlenecks ensure you place a CDN or image proxy in front of Livingdocs, retrieving images via the new API. This prevents excessive load on the Livingdocs Server.
 
 Whenever an asset gets modified, we emit the [`mediaLibraryEntry.update`]({{< ref "/customising/advanced/server-events/#media-library-entry" >}}) server event. This event can be used to purge a CDN or other image service. The `mediaLibraryEntry.update` event also occurs for metadata changes, so if you want to only handle asset changes you can filter the events by checking whether `payload.changes?.some((c) => c.event === 'mediaLibraryEntry.asset.update')`.
+
+When purging a CDN cache for a revoked, invalidated, or updated entry, use `mediaLibraryApi.getAllKeysForMediaLibraryEntry({mediaLibraryEntry})` to retrieve all asset keys associated with the entry, including variant keys from [image editing in documents](#image-editing-in-documents):
+
+```js
+liServer.events.subscribe(
+  'mediaLibraryEntry.update',
+  async (event, {mediaLibraryEntry, changes}) => {
+    const isAssetUpdate = changes?.some((c) => c.event === 'mediaLibraryEntry.asset.update')
+    if (!isAssetUpdate) return
+    const keys = await mediaLibraryApi.getAllKeysForMediaLibraryEntry({mediaLibraryEntry})
+    // Purge all keys from your CDN
+  }
+)
+
+liServer.events.subscribe('mediaLibraryEntry.revoke', async (event, {mediaLibraryEntry}) => {
+  const keys = await mediaLibraryApi.getAllKeysForMediaLibraryEntry({mediaLibraryEntry})
+  // Purge all keys from your CDN
+})
+
+liServer.events.subscribe('mediaLibraryEntry.invalid', async (event, {mediaLibraryEntry}) => {
+  const keys = await mediaLibraryApi.getAllKeysForMediaLibraryEntry({mediaLibraryEntry})
+  // Purge all keys from your CDN
+})
+```
+
 {{< /info >}}
 
 {{< warning >}}
 If you had a path (and not just a domain) in `serverConfig.mediaLibrary.images.publicUrl`, or if you have documents which were created before {{< release "release-2024-03" >}}, you will need to set `serverConfig.mediaLibrary.generateImageServiceUrlsOnRead: true`.
 
 If both of the above conditions apply you will also need to define `serverConfig.mediaLibrary.images.storage.extractKey` as something like the following:
+
 ```js
 extractKey(url) {
   const path = new URL(url).pathname
@@ -92,21 +119,42 @@ extractKey(url) {
     : path
 }
 ```
+
 {{< /warning >}}
 
 ### Image Editing
 
 {{< added-in "release-2025-05" block >}}
 
-Journalists are sometimes required to redact areas of an image, such as license plates or faces, or to perform color corrections, such as adjusting brightness, contrast, or saturation. To simplify this task and eliminate the need for external tools, Livingdocs supports basic image editing.
+Livingdocs supports image editing to allow journalists to redact sensitive areas (such as license plates or faces) and apply colour corrections, without the need for external tools.
 
-{{< img src="./image-editor-button.png" alt="Image Editor Button" >}}
+Image editing is supported for jpg, png, and webp formats. Images must be requested via the public API endpoint [`GET /api/2025-03/mediaLibrary/serve-image/:key`]({{< ref "/reference/public-api/media-library/#serve-image" >}}) for the modifications to be applied.
 
-Users can open the image editor by clicking the edit button in the media center detail view. It allows users to adjust brightness, contrast, or saturation, as well as blur parts of an image. The original image is always preserved and can be restored at any time. Users can also continue editing an image or selectively undo specific adjustments at a later point.
+#### Image Editing in the Media Library
 
-{{< img src="./image-editor.png" alt="Image Editor" >}}
+Users can open the image editor by clicking the edit button in the media library detail view. Edits here apply globally to all documents that reference the image. The original is always preserved and can be restored at any time.
 
-Image editing is supported for jpg, png, and webp formats. Accordingly, images must be requested via the public API endpoint [`GET /api/2025-03/mediaLibrary/serve-image/{key}`]({{< ref "/reference/public-api/media-library/#serve-image" >}}) for the modifications to be applied. The edited image will be delivered in place of the original. The original version remains stored and can be restored in the editor.
+This supports:
+
+- Redaction: pixelate areas of the image (e.g. faces, license plates)
+- Colour corrections: brightness, contrast, and saturation ({{< removed-in "release-2026-03" >}})
+
+{{< img src="image-editing-pixelate.png" alt="Pixelate image" width="400" caption="Pixelation remains in the media library and applies globally to all placements of the image." >}}
+
+#### Image Editing in Documents
+
+{{< added-in "release-2026-03" block >}}
+
+Journalists can edit images directly within a document using the "Adjust" button on each image placement. Edits here only affect that specific placement within the document. Other documents using the same image are not affected. The original can always be restored by resetting the adjustments.
+
+This supports:
+
+- Colour corrections: brightness, contrast, and saturation
+- Rotation
+
+{{< img src="image-editing-adjust.png" alt="Adjust image" width="400" caption="The Adjust button lets users apply colour adjustments or fix a skewed horizon per placement." >}}
+
+{{< img src="image-editing-rotate.png" alt="Rotate image" caption="Images can be rotated per placement directly within a document." >}}
 
 ### Archive/Revoke/Delete
 
@@ -173,6 +221,7 @@ To configure a deletion routine you need to add the `deletionRoutine` config to 
 The filters property uses our usual [Search Filters Query DSL]({{< ref "/reference/public-api/publications/search-filters" >}}) in the same way as a base filter. Any unused media library entry which matches will be deleted.
 
 Livingdocs automatically handles the "unused" part which excludes media library entries that:
+
 - are referenced by documents
 - are referenced by other media library entries
 - are currently in a document inbox
