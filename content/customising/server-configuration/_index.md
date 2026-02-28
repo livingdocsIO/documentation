@@ -1410,20 +1410,27 @@ There is a general `integrations` configuration for small integrations that can 
 
 ```js
   notifications: {
-    // Enables notification feature over specified channels: slack, email
+    // Enables notification feature over specified channels
     enabled: false,
     // Enables consumer jobs for the specified channels
     // To be modified in read-only server instances
     // Can also be modified removing `['worker']` role, which disables consumers
     enableConsumers: true,
-    // Defines channels to use: slack, email
+    // Defines channels to use: slack, teams, email
     channels: {
       email: {
         enabled: false,
         fromAddress: 'noreply@livingdocs.dev'
       },
       slack: {
-        enabled: false
+        enabled: false,
+        // Slack documentation on how to create and retrieve that token
+        // https://api.slack.com/authentication/token-types#bot
+        botUserToken: 'botUserToken'
+      },
+      teams: {
+        enabled: false,
+        botUrl: 'https://botUrl'
       }
     }
   },
