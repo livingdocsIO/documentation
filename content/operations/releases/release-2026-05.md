@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency ioredis from 5.9.3 to v5.10.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8998)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10808)
 - [Improvements for image collections](https://github.com/livingdocsIO/livingdocs-editor/pull/10780)
 - [Limit search query length and display understandable error](https://github.com/livingdocsIO/livingdocs-editor/pull/10794)
