@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/10779)
 - [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/8976)
 - [Add image collections](https://github.com/livingdocsIO/livingdocs-editor/pull/10700)
@@ -202,6 +203,52 @@ The media source plugin function `searchMediaImage` now requires `systemName` an
 
 ## Features :gift:
 
+### Image Collections :gift:
+
+Image Collections allow editors to curate persistent, named sets of images for large or ongoing topics.
+Complementing Media Library Dashboards (for research) and the Document Inbox (for short-term article work).
+Collections are shared across the project and can be browsed directly when picking images in the editor.
+
+For a full documentation of the feature, see the [Image Collections Guide]({{< ref "/guides/media-library/image-collections/" >}}).
+
+This is the first iteration of Image Collections. Further extensions are planned.
+
+#### Configuration
+
+Add the `imageCollections` property to the project config:
+
+```js
+{
+  // ...
+  imageCollections: {
+    // Required: mediaImage type handles
+    mediaTypes: ['image'],
+
+    // Optional: media library dashboard for the image picker.
+    // Ensure the dashboard's mediaTypes match the ones listed here
+    useDashboard: 'myImagesDashboard',
+    // Optional: custom page title for the Image Collections screen
+    pageTitle: {en: 'Image Collections', de: 'Bild-Sammlungen'}
+  }
+}
+```
+
+Add the entry to `editorSettings.mainNavigation`:
+
+```js
+{
+  handle: 'imageCollections',
+  label: {en: 'Image Collections', de: 'Bild-Sammlungen'},
+  imageCollections: 'myImageCollections', // value is not used, only the key matters
+  icon: 'image-filter-hdr'
+}
+```
+
+#### Permissions
+
+Users need `mediaLibraryEntry.read` on **all** configured `mediaTypes` to access Image Collections.
+In addition, grant the required permissions for the built-in **"Collection"** content type (`liImageCollection`) in the **Permissions** panel in the project settings.
+
 ### Reuse Already Imported Media Source Items :gift:
 
 When a media source item has already been imported, Livingdocs now reuses the existing media library entry instead of importing it again. This allows keeping media libraries free of duplicates when using media from external systems.
@@ -259,6 +306,7 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+
 - [v123.10.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.8): fix(search): Limit query length and display understandable error
 - [v123.10.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.7): fix(metadata): Fix undefined property error in user needs form
 - [v123.10.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.6): fix: Fix errors for edge cases of certain configurations/behaviors
