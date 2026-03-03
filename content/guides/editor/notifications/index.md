@@ -10,7 +10,7 @@ In a nutshell, _Notifications_ enable editors to actively track interesting chan
 
 Let's have an example with a _Proofreading task_. Let's assume Proofreaders are interested to know if a certain article has been marked for proofreading so that the article can be published with lightspeed once they finished the task.
 
-If they subscribe for changes on a specific document they will get an E-Mail or Slack notification that the document was marked for proofreading.
+If they subscribe for changes on a specific document they will get an E-Mail, Slack or Teams notification that the document was marked for proofreading.
 
 The basic idea is to improve production speed by pushing information to the editors instead of pulling, so going to a colleague and asking if an article is ready for proofreading, review, or publishing.
 
@@ -24,7 +24,7 @@ module.exports = {
   notifications: {
     enabled: true,
     enableConsumers: true,
-    // only email and slack are available at the moment
+    // only email, slack and teams are available at the moment
     channels: {
       email: {
         enabled: true,
@@ -35,6 +35,10 @@ module.exports = {
         // Slack documentation on how to create and retrieve that token
         // https://api.slack.com/authentication/token-types#bot
         botUserToken: 'botUserToken'
+      },
+      teams: {
+        enabled: true,
+        botUrl: 'https://botUrl'
       }
     }
   },
@@ -58,19 +62,37 @@ module.exports = {
       notifications: {
         transport: 'default',
         subject: 'Changes on a document you are subscribed to',
-        htmlTemplatePath: require.resolve(
-          '@livingdocs/server/plugins/email-templates/notifications.html'
-        )
+        htmlTemplatePath:
+          require.resolve('@livingdocs/server/plugins/email-templates/notifications.html')
       }
     }
   }
 }
 ```
 
-The `enableConsumers` is the configuration used to enable/disable the email, slack consumers.
+The `enableConsumers` is the configuration used to enable/disable the email/slack/teams consumers.
 By default, they will be enabled in server instances that define `roles: ['worker']` in server configuration.
 
-### Project config
+### Setup Slack
+
+1. Go to https://api.slack.com/apps/
+2. “Create new app”
+3. select from scratch
+4. Add it to your workspace
+5. Go to the app & go to ‘oauth and permissions’
+6. use the Bot User OAuth Access Token and add the following scopes:
+   - `chat:write`
+   - `chat:write.customize`
+   - `users:read`
+   - `users:read.mail`
+7. install the app on the workspace
+8. Add `Bot User OAuth Token` to the Livingdocs `notifications.channels.slack.botUserToken` config
+
+### Setup Teams
+
+For further information on creating a bot for Microsoft Teams please see the Microsoft [Build bots](https://learn.microsoft.com/en-gb/microsoftteams/platform/bots/overview) documentation.
+
+## Project config
 
 Certain _actions groups_ can be defined within the [project config for notifications]({{< ref "/reference/project-config/notifications.md" >}}).
 
@@ -137,7 +159,7 @@ Possible action to register on at the moment:
 - document.delete
 - document.transform
 - comment.add
-- task.assign
+- comment.resolve
 - task.change
   config options:
 
@@ -149,7 +171,7 @@ Possible action to register on at the moment:
   {type: 'task.change', taskName: 'proofreading', statusChange: ['requested', 'accepted', 'completed']}
   ```
 
-#### Comments mentioning
+## Comments mentioning
 
 In a comment it is possible to mention a user with `@`. A dropdown will be shown and a user can be selected. This user will get a notification about the mentioning in a comment.
 
@@ -157,17 +179,10 @@ In a comment it is possible to mention a user with `@`. A dropdown will be shown
 
 As soon as the comments are enabled it is possible to mention another user in a comment. The other user will get a notification when they are enabled. The user doesn't have to watch a document to get the notification.
 
-### Setup Slack
+## Additional notifications
 
-1. Go to https://api.slack.com/apps/
-2. “Create new app”
-3. select from scratch
-4. Add it to your workspace
-5. Go to the app & go to ‘oauth and permissions’
-6. use the Bot User OAuth Access Token and add the following scopes:
-   - `chat:write`
-   - `chat:write.customize`
-   - `users:read`
-   - `users:read.mail`
-7. install the app on the workspace
-8. Add `Bot User OAuth Token` to the Livingdocs `notifications.channels.slack.botUserToken` config
+Along with comment mentions (above) the following notifications can occur without manual subscription by a user:
+
+- When a user is assigned to a task by another user they will receive a notification.
+- When `notifyTaskRequester` is enabled the task creator will receive notifications when the specific task is accepted or completed.
+- When `autoSubscribeOwner` is enabled the creator of the document will be automatically subscribed to notifications for all events in the specified action group.
