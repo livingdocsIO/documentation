@@ -1,6 +1,8 @@
 title: Execute Commands on Documents
 
 history:
+  - release: release-2026-03
+    description: Added `preserveDate` parameter. When set to `true`, the document's `updated_at` timestamp is not modified. This is useful for imports and migrations where the original timestamps should be preserved.
   - release: release-2025-07
     description: 'The following commands got added: `setEmbargo`, `removeEmbargo`, `addPublishSchedule`, `cancelPublishSchedule`, `addUnpublishSchedule`, `cancelUnpublishSchedule`.'
   - release: release-2024-11
@@ -41,6 +43,15 @@ parameters:
     type: integer
     required: false
     notes: 'Current document version. When set on update the version is checked.'
+  - name: preserveDate
+    type: boolean
+    required: false
+    notes: |
+      When set to `true`, the document's `updated_at` timestamp is not modified by the command execution. By default (`false`), `updated_at` is set to the current time.
+
+      When combined with a `publish` command, the publication date will also reflect the preserved `updated_at` timestamp instead of the current time.
+
+      This is useful for imports and migrations where the original timestamps should be preserved to maintain correct dashboard sort order. {{< added-in "release-2026-03" >}}
   - name: preconditions
     type: array
     required: false
@@ -88,6 +99,8 @@ parameters:
 example_request: |
   {
     "version": 1,
+    // When true, the document's updated_at timestamp is preserved
+    "preserveDate": true,
     "preconditions": [
       // Asserts that the document is published or
       // unpublished based on the value property.
@@ -383,6 +396,10 @@ openapi:
           properties:
             version:
               type: number
+            preserveDate:
+              type: boolean
+              default: false
+              description: When true, the document's updated_at timestamp is not modified. When combined with a publish command, the publication date also reflects the preserved timestamp.
             preconditions:
               type: array
               items:

@@ -239,6 +239,52 @@ The thumbnail size on Media Library Dashboard screens can now be adjusted betwee
 
 For more details, refer to the [Media Library Thumbnail Sizes guide]({{< ref "/guides/media-library/media-library-setup/index#thumbnail-sizes" >}}).
 
+### Preserve Timestamps on Document Command API and Media Library Patch :gift:
+
+A new optional `preserveDate` boolean parameter has been added to the [Document Command API]({{< ref "/reference/public-api/document-command-api" >}}) and the [Media Library]({{< ref "/reference/public-api/media-library" >}}) patch endpoint.
+
+When set to `true`, the `updated_at` timestamp of the document or media library entry is not modified by the operation. By default (`false`), `updated_at` is set to the current time as before.
+
+For the Document Command API, when combined with a `publish` command, the publication date will also reflect the preserved `updated_at` timestamp instead of the current time.
+
+This is useful for imports and migrations where the original timestamps should be preserved to maintain correct dashboard sort order.
+
+Using the Document Command API:
+
+```js
+publicApi.executeDocumentCommands({
+  userId,
+  projectId,
+  documentId,
+  preserveDate: true,
+  commands: [{operation: 'setMetadataProperty', propertyName: 'title', value: 'updated title'}]
+})
+```
+
+or using the Public API endpoint:
+
+```
+PATCH /api/:apiVersion/documents/{documentId}/commands {preserveDate: true, commands: [...]}
+```
+
+Using the Media Library Patch API:
+
+```js
+publicApi.patchMediaLibraryEntry({
+  userId,
+  projectId,
+  assetId,
+  preserveDate: true,
+  patches: [{operation: 'setMetadataProperty', propertyName: 'title', value: 'updated title'}]
+})
+```
+
+or using the Public API endpoint:
+
+```
+PATCH /api/:apiVersion/mediaLibrary/{id} {preserveDate: true, patches: [...]}
+```
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
