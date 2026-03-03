@@ -270,6 +270,7 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+- [v123.10.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.11): fix(tasks): Sort completed tasks by completed date
 - [v123.10.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.10): fix(task-boards): take total results from request
 - [v123.10.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.9): fix(image-collections): make deleted collections readonly and allow to restore them
 - [v123.10.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.8): fix(search): Limit query length and display understandable error
