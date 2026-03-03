@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Allow gifs with 1800 frames](https://github.com/livingdocsIO/livingdocs-server/pull/9002)
 - [fix(deps): update dependency copy-webpack-plugin from 13.0.1 to v14 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10816)
 - [Sort completed tasks on task screen by completed date](https://github.com/livingdocsIO/livingdocs-editor/pull/10814)
 - [Fix task boards load more button not showing](https://github.com/livingdocsIO/livingdocs-editor/pull/10817)
