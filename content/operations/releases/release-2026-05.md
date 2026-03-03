@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix task boards load more button not showing](https://github.com/livingdocsIO/livingdocs-editor/pull/10817)
 - [chore(deps): update dependency ioredis from 5.9.3 to v5.10.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8998)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10808)
 - [Improvements for image collections](https://github.com/livingdocsIO/livingdocs-editor/pull/10780)
