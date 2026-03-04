@@ -416,6 +416,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.38): fix(images): Allow gif uploads with 1800 frames
 - [v121.3.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.37): fix(tasks): Sort completed tasks by completed date
 - [v121.3.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.36): fix(task-boards): take total results from request
 - [v121.3.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.35): fix(search): Limit query length and display understandable error
