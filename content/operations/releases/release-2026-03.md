@@ -182,7 +182,17 @@ livingdocs-server migrate up
 
 ### After the deployment
 
-No post-deployment steps are required after rolling out this release.
+[Image editing in documents](#image-editing-in-documents) moves color adjustments from media library entries to individual document occurrences. A one-time migration script is available to apply this change to existing modifications.
+
+Run the following migration script if `use2025Behavior` is enabled and `disableImageEditingInDocuments` is not:
+
+```sh
+npx livingdocs-server release-2026-03-image-editing-in-documents
+```
+
+This migrates image modifications (brightness, contrast, saturation) from media library entries to their respective image occurrences in documents. Without it, images can still be edited, but existing modifications remain applied globally on media library entries rather than locally per document occurrence.
+
+This migration is not reversible. Run it only once you are confident you won't switch back to the old behavior. If `disableImageEditingInDocuments` is currently enabled, run this script once you disable it.
 
 ### Rollback
 
@@ -230,7 +240,7 @@ As a result, colour adjustments are no longer available in the media library. Th
 
 {{< img src="release-2026-03-image-editing-pixelate.png" alt="Pixelate image" width="400" caption="Pixelation remains in the media library and applies globally to all placements of the image." >}}
 
-The new behavior is enabled automatically for all setups that have `use2025Behavior: true`. Once enabled, reverting to the previous behavior is not supported.
+The new behavior is enabled automatically for all setups that have `use2025Behavior: true`. Once enabled, reverting to the previous behavior is not supported. A [one-time migration script](#after-the-deployment) is available to migrate existing image modifications from media library entries to their respective document occurrences.
 
 If newsrooms need time to adapt, image editing in documents can be temporarily disabled using `mediaLibrary.disableImageEditingInDocuments`. Note that this option is deprecated and will be removed in {{< release "release-2026-09" >}}. This option must be set before users start editing images in documents. Disabling it afterwards will not remove existing variants, which will continue to be applied in their respective placements.
 
