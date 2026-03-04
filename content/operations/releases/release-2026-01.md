@@ -493,6 +493,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v294.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.16): fix(images): Allow gif uploads with 1800 frames
 - [v294.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.15): fix(deps): update dependency @livingdocs/framework from 32.11.5 to v32.11.7
 - [v294.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.14): fix(dep): Update dependencies
 - [v294.0.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.13): fix(deps): update dependency @livingdocs/framework from 32.11.4 to v32.11.5
