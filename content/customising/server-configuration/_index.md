@@ -253,7 +253,7 @@ redis: {
 
 ## Features
 
-#### Authentication
+### Authentication
 
 ```js
 auth: {
@@ -283,14 +283,14 @@ auth: {
 }
 ```
 
-### `auth.accessTokenSecret`
+#### `auth.accessTokenSecret`
 
 {{< deprecated-in "release-2021-11" >}}. Please use `auth.accessTokenSigningKeys` instead.
 
 The `accessTokenSecret` config was used to sign the JWT tokens together with the HMAC-based `HS256` algorithm.
 This setup got replaced with a more standardized one, which supports most signing algorithms and also key rotation.
 
-### `auth.accessTokenSigningKeys`
+#### `auth.accessTokenSigningKeys`
 
 Livingdocs uses JWT tokens for client (browser and public api) authorization.
 The `accessTokenSigningKeys` configuration defines the signing and verification keys for the tokens.
@@ -330,7 +330,7 @@ This allows several processes to consume our api client tokens without contactin
 
 A json web key set of the configured keys is exposed on `http://localhost:9090/.well-known/jwks.json`.
 
-##### `auth.connections.local`
+#### `auth.connections.local`
 
 Represents the default email/password authentication strategy.
 
@@ -367,7 +367,7 @@ auth: {
 }
 ```
 
-#### Import Jobs
+### Import Jobs
 
 ```js
 import: {
@@ -400,7 +400,7 @@ import: {
 }
 ```
 
-#### Document Migration
+### Document Migration
 
 ```js
 documentMigration: {
@@ -417,7 +417,7 @@ documentMigration: {
 }
 ```
 
-#### User Management Emails
+### User Management Emails
 
 ```js
 emails: {
@@ -468,7 +468,7 @@ emails: {
 }
 ```
 
-##### New Login Device Detection
+#### New Login Device Detection
 
 In case you want to activate abuse detection through login device comparison, please configure:
 
@@ -508,7 +508,7 @@ prevent access for the possibly abusing actor.
 In case you want to adjust the email template, head over to the original file `@livingdocs/server/plugins/email-templates/new_login_device.html`
 and copy it's content into your target file which you then can adapt to your needs.
 
-#### Design Loader
+### Design Loader
 
 The DesignLoader offers different options how designs are loaded. By default designs
 are loaded from the local database.
@@ -617,7 +617,7 @@ The `enableConsumers` is the configuration used to enable/disable the publish co
 
 The `history.anonymizeAfter` setting is used to remove the traceability of certain persons work after a given amount of time. This requirement comes typically from the workers council that don't want that it is possible to trace back who did what over a long period of time. Technically, after the given time, no `user_id` is sent along with revision entities anymore and they are marked as "anonymized" in the UI. The time is a "milliseconds" string, meaning that you can type things like '30 days' or '5 minutes'.
 
-##### Realtime Updates
+#### Realtime Updates
 
 The properties within `realtimeUpdates` control the behaviour of table dashboard updates, and, since {{< release "release-2023-11" >}}, teaser updates as well.
 
@@ -635,7 +635,7 @@ If you are running the Livingdocs server locally using HTTPS with a self-signed 
 Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
 ```
 
-#### Document Lists
+### Document Lists
 
 ```js
  documentLists: {
@@ -649,7 +649,7 @@ Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' ma
 The `paginationConfig` allows you to set how many documents you can see on the lists dashboard.
 Defaults to max. 1000 documents.
 
-#### Project Configs
+### Project Configs
 
 Get more information about the `Project Config` [here]({{< ref "/reference/project-config" >}})
 
@@ -688,7 +688,7 @@ secretEncryptionKeys: [
 ]
 ```
 
-#### Routing
+### Routing
 
 ```js
 routing: {
@@ -726,7 +726,7 @@ kv: {
 Note: only use routing in production with redis. Memdown is only for tests or local development.
 
 <!-- Not recommended anymore -->
-<!-- #### Categories
+<!-- ### Categories
 
 ```js
 categories: {
@@ -746,7 +746,7 @@ above 10 here.
 `hooksEnabled` should always be true. It makes sure that whenever a document is published the category on the
 document is correctly updated. -->
 
-#### Search
+### Search
 
 Configure the Elasticsearch instance used by the search feature.
 
@@ -820,13 +820,7 @@ search: {
 }
 ```
 
-##### documentsMetadataFields
-
-{{< deprecated-in "release-2022-03" block >}}
-
-This config must not be defined anymore, because all metadata are returned when calling the editingApi `/documents`.
-
-##### queryBuilderPlugin
+#### queryBuilderPlugin
 
 `queryBuilderPlugin` is the path to your custom Elasticsearch query.
 
@@ -847,7 +841,7 @@ module.exports = function (searchQuery) {
 
 For inspiration, you can also check out our [current default document search function]({{< ref "/customising/advanced/search-customisation" >}}).
 
-#### Custom Elasticsearch Index
+### Custom Elasticsearch Index
 
 Integrate custom Elasticsearch indexes. If you want to know more (with all possible options), look into the [guide]({{< ref "guides/search/custom-index.md" >}}).
 
@@ -946,7 +940,7 @@ elasticIndex: {
 },
 ```
 
-#### Pusher
+### Pusher
 
 Disabled by Default. Enable to show who is viewing a document in real time
 and allow for collaboration features in the editor.
@@ -966,7 +960,11 @@ pusher: {
 Please ensure "Enable client events" is enabled on the App settings page of the [Pusher Dashboard](https://dashboard.pusher.com/).
 {{< /info >}}
 
-#### Push Notifications
+### Push Notifications
+
+{{< warning >}}
+`li-push-notifications` is deprecated and will be removed in `release-2026-09`. Please use the [`li-push-messages` metadata plugin]({{< ref "/reference/document/metadata/plugins/li-push-messages" >}}) instead.
+{{</ warning >}}
 
 Configuration examples for the different notification services.
 
@@ -1034,7 +1032,7 @@ pushNotifications: {
 
 For push notifications to be enabled you also need to follow the steps in the [channel config setup]({{< ref "/reference/project-config/content-types.md#push-notifications">}})
 
-#### Media Library (DAM)
+### Media Library (DAM)
 
 The Media Library impacts editor in multiple ways:
 
@@ -1067,9 +1065,14 @@ mediaLibrary: {
     uploadRestrictions: {
       maxFileSize: '15mb',
     },
+    // {{< a href="#image-processing-medialibraryimagesprocessing" title="Image Processing">}}
     processing: {
       failOn: 'warning', // 'warning' | 'error' | 'truncated' | 'none'
       maxResolution: 24 * 1000 * 1000, // 24MP,  default 24 mega-pixels
+      // Max number of frames allowed for animated images (GIF, WebP).
+      // Uploads exceeding this limit are rejected with an error.
+      // 1800 frames = 90s at 20fps or 60s at 30fps.
+      maxFrames: 1800, // default 1800
       maxConcurrentProcesses: 5, // default 5
       lossy: {
         // max pixel width or height
@@ -1084,8 +1087,8 @@ mediaLibrary: {
       // optional - Convert your image during upload into another format
       convert: [
         {
-          sourceFormat: 'pdf',
-          targetFormat: 'png'
+          sourceFormat: 'jpeg',
+          targetFormat: 'webp'
         }
       ]
     }
@@ -1140,7 +1143,36 @@ mediaLibrary: {
 }
 ```
 
-##### Filename Strategy
+#### Image Processing (`mediaLibrary.images.processing`)
+
+The `processing` block configures what happens when an image is uploaded. It covers two concerns:
+
+1. **Upload-time validation** — images that violate the limits (`maxResolution`, `maxFrames`, `maxFileSize`) are rejected before they are stored.
+2. **Image transformation** — images may be resized or converted. With `use2025Behavior` enabled, transformation is deferred and happens on-demand via the [`/api/{{< api-version >}}/mediaLibrary/serve-image/:key`](/reference/public-api/media-library/#serve-image) endpoint instead of at upload time. Without it (legacy mode), images are processed and stored in their final form during upload.
+
+- **`failOn`** (`'warning' | 'error' | 'truncated' | 'none'`, default `'warning'`)
+  Controls how strict the processing is about corrupt or non-conformant images when reading metadata. `'warning'` rejects images with any issue; `'none'` is the most permissive.
+
+- **`maxResolution`** (number, default `24_000_000`)
+  Maximum total pixel count (width × height). Uploads exceeding this are rejected. Default is 24 megapixels (e.g. 6000 × 4000 px).
+
+- **`maxFrames`** (number, default `1800`)
+  Maximum number of frames allowed for **animated images** (GIF and animated WebP). Uploads with more frames than this limit are rejected with a `Max frames exceeded` error.
+
+  This limit exists because large animated images with many frames can consume significant memory and CPU. The default of 1800 frames corresponds to approximately 90 seconds of animation at 20 fps, or 60 seconds at 30 fps.
+
+- **`maxConcurrentProcesses`** (number, default `20`)
+  Maximum number of images processed in parallel. Lower this if uploads cause memory pressure on the server.
+
+- **`lossy`** / **`lossless`**
+  Output quality and dimension settings applied when images are transformed:
+  - `maxDimension` — largest allowed side in pixels (default `6000`); images exceeding this are downscaled.
+  - `quality` — compression quality for lossy formats such as JPEG (default `80`).
+
+- **`convert`** (array, optional)
+  Automatically convert uploaded images from one format to another (e.g. JPEG → WebP).
+
+#### Filename Strategy
 
 When uploading an asset into the media library, we choose one strategy to define the filename/path. See the pattern below:
 
@@ -1149,7 +1181,7 @@ When uploading an asset into the media library, we choose one strategy to define
 
 Even when the storage (e.g. Amazon S3) is public, the name of the path is difficult to guess.
 
-##### Alternative Image Proxy Configuration (mediaLibrary.images.proxy)
+#### Alternative Image Proxy Configuration (mediaLibrary.images.proxy)
 
 Alternatively you can forward image upload to another service.
 For more info about this see [Image Services]({{< ref "/guides/media-library/image-services.md" >}}).
@@ -1167,7 +1199,7 @@ mediaLibrary: {
 }
 ```
 
-##### Setting up the Media Library Elastic Search Mapping
+#### Setting up the Media Library Elastic Search Mapping
 
 For now the very first step when setting up the server, you need to create a new index 'media-library' in Elastic Search.
 
@@ -1190,7 +1222,7 @@ livingdocs-server elasticsearch-index --handle li-media -y
 
 To index the metadata the plugin must support `indexing` and on the metadata in the mediaType the index must be enabled.
 
-###### Enable indexing on metadata plugin
+#### Enable indexing on metadata plugin
 
 To enable the indexing for the Media Library in a plugin you have to add the `indexing` config.
 
@@ -1225,7 +1257,7 @@ We support these types for indexing
 - `integer` to index integer
 - `float` to index float
 
-##### Document Metadata Mapping in Elasticsearch
+#### Document Metadata Mapping in Elasticsearch
 
 When you want to index your metadata image fields in Elasticsearch (e.g. for dashboard filters), you have to define the Elasticsearch metadata mapping, e.g.
 
@@ -1283,7 +1315,7 @@ When you want to index your metadata image fields in Elasticsearch (e.g. for das
     }
 ```
 
-##### Google Vision API
+#### Google Vision API
 
 {{< deprecated-in "release-2026-01" block >}}
 
@@ -1328,7 +1360,7 @@ You can turn on detection of web entities separately. Refer to the Google Vision
 The credentials object is just the google service account json. We advise you to download the json from GCP and then entering the values here.
 The language enables a separate call to Google Translate API to translate the labels received from an image analysis. You GCP Account needs to have Google Translate API activated for this to work (will also infer costs).
 
-#### Custom previews
+### Custom previews
 
 {{< deprecated-in "release-2023-07" block >}}
 {{< removed-in "release-2023-09" block >}}
