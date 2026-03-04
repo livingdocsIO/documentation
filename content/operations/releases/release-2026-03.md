@@ -271,6 +271,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.12): fix(images): Allow gif uploads with 1800 frames
 - [v123.10.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.11): fix(tasks): Sort completed tasks by completed date
 - [v123.10.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.10): fix(task-boards): take total results from request
 - [v123.10.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.9): fix(image-collections): make deleted collections readonly and allow to restore them
