@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency pg from 8.19.0 to v8.20.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9020)
 - [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/9012)
 - [Allow gifs with 1800 frames](https://github.com/livingdocsIO/livingdocs-editor/pull/10824)
 - [Allow gifs with 1800 frames](https://github.com/livingdocsIO/livingdocs-server/pull/9002)
