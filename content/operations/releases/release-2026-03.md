@@ -314,6 +314,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.5): refactor: rename preserveDate to preserveUpdatedAt
 - [v296.2.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.4): refactor(image-rotation): retry logic and sanity checks
 - [v296.2.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.3): fix: review feedback
 - [v296.2.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.2): fix(images): Allow gif uploads with 1800 frames
