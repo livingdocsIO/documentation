@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix check if image collections are enabled](https://github.com/livingdocsIO/livingdocs-editor/pull/10838)
 - [Prevent onDrag error](https://github.com/livingdocsIO/livingdocs-editor/pull/10839)
 - [Add script for migrating image modifications to variants](https://github.com/livingdocsIO/livingdocs-server/pull/9013)
 - [Show image toolbar button as active when the panel is open](https://github.com/livingdocsIO/livingdocs-editor/pull/10834)
