@@ -273,6 +273,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.14): fix: add an early return guard if onDrag is not a function
 - [v123.10.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.13): fix: support toggling media libary panel with collections
 - [v123.10.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.12): fix(images): Allow gif uploads with 1800 frames
 - [v123.10.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.11): fix(tasks): Sort completed tasks by completed date
