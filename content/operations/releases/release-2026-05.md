@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Feat preserve updated at](https://github.com/livingdocsIO/livingdocs-server/pull/9003)
 - [Fix: correct wrong dimensions in DB for rotated images](https://github.com/livingdocsIO/livingdocs-server/pull/8921)
 - [Fix check if image collections are enabled](https://github.com/livingdocsIO/livingdocs-editor/pull/10838)
 - [Prevent onDrag error](https://github.com/livingdocsIO/livingdocs-editor/pull/10839)
