@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Prevent onDrag error](https://github.com/livingdocsIO/livingdocs-editor/pull/10839)
 - [Add script for migrating image modifications to variants](https://github.com/livingdocsIO/livingdocs-server/pull/9013)
 - [Show image toolbar button as active when the panel is open](https://github.com/livingdocsIO/livingdocs-editor/pull/10834)
 - [chore(deps): update dependency pg from 8.19.0 to v8.20.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9020)
