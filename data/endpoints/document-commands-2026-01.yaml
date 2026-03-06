@@ -2,11 +2,9 @@ title: Execute Commands on Documents
 endpointId: document-commands
 
 apiVersionConstraints:
-  gte: 2026-03
+  lte: 2026-01
 
 history:
-  - release: release-2026-03
-    description: Added `preserveUpdatedAt` parameter. When set to `true`, the document's `updated_at` timestamp is not modified. This is useful for imports and migrations where the original timestamps should be preserved.
   - release: release-2025-07
     description: 'The following commands got added: `setEmbargo`, `removeEmbargo`, `addPublishSchedule`, `cancelPublishSchedule`, `addUnpublishSchedule`, `cancelUnpublishSchedule`.'
   - release: release-2024-11
@@ -21,7 +19,7 @@ history:
     description: Initial support.
 
 description: |
-  Execute a Document Command based on its `id`.  
+  Execute a Document Command based on its `id`.
   All commands run in a single transaction.
 
 scopes: public-api:write
@@ -47,15 +45,6 @@ parameters:
     type: integer
     required: false
     notes: 'Current document version. When set on update the version is checked.'
-  - name: preserveUpdatedAt
-    type: boolean
-    required: false
-    notes: |
-      When set to `true`, the document's `updated_at` timestamp is not modified by the command execution. By default (`false`), `updated_at` is set to the current time.
-
-      When combined with a `publish` command, the `lastPublicationDate` will also be set to the preserved `updated_at` timestamp instead of the current time.
-
-      This is useful for imports and migrations where the original timestamps should be preserved to maintain correct dashboard sort order.
   - name: preconditions
     type: array
     required: false
@@ -103,8 +92,6 @@ parameters:
 example_request: |
   {
     "version": 1,
-    // When true, the document's updated_at timestamp is preserved
-    "preserveUpdatedAt": true,
     "preconditions": [
       // Asserts that the document is published or
       // unpublished based on the value property.
@@ -400,10 +387,6 @@ openapi:
           properties:
             version:
               type: number
-            preserveUpdatedAt:
-              type: boolean
-              default: false
-              description: When true, the document's updated_at timestamp is not modified. When combined with a publish command, the lastPublicationDate is also set to the preserved updated_at timestamp.
             preconditions:
               type: array
               items:

@@ -2,11 +2,9 @@ title: Patch a Media Library Entry
 endpointId: patch-media-library-entry
 
 apiVersionConstraints:
-  gte: 2026-03
+  lte: 2026-01
 
 history:
-  - release: release-2026-03
-    description: Added `preserveUpdatedAt` parameter. When set to `true`, the entry's `updated_at` timestamp is not modified. This is useful for imports and migrations where the original timestamps should be preserved.
   - release: release-2026-01
     description: Added `unrevokeAsset` operation.<br>
       Added the `note` property to be used with the `revokeAsset` operation.
@@ -38,13 +36,6 @@ parameters:
     type: string
     required: false
     notes: 'current mediaLibraryEntry version. When set on update the version is checked.'
-  - name: preserveUpdatedAt
-    type: boolean
-    required: false
-    notes: |
-      When set to `true`, the entry's `updated_at` timestamp is not modified by the patch operation. By default (`false`), `updated_at` is set to the current time.
-
-      This is useful for imports and migrations where the original timestamps should be preserved to maintain correct sort order.
   - name: patches
     type: array
     required: true
@@ -59,8 +50,6 @@ parameters:
 example_request: |
   {
     "version": "1",
-    // When true, the entry's updated_at timestamp is preserved
-    "preserveUpdatedAt": true,
     "patches": [
       {
         // update a single metadata property
@@ -167,10 +156,6 @@ openapi:
           properties:
             version:
               type: number
-            preserveUpdatedAt:
-              type: boolean
-              default: false
-              description: When true, the entry's updated_at timestamp is not modified.
             patches:
               type: array
               items:
