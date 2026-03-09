@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(app navigation): Line wrapping](https://github.com/livingdocsIO/livingdocs-editor/pull/10849)
 - [Migrate canvas to vue](https://github.com/livingdocsIO/livingdocs-editor/pull/10769)
 - [chore(deps): update dependency babel-loader from 10.0.0 to v10.1.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10848)
 - [Feat preserve updated at](https://github.com/livingdocsIO/livingdocs-server/pull/9003)
