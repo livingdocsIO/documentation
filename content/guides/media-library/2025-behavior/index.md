@@ -79,7 +79,7 @@ To avoid performance bottlenecks ensure you place a CDN or image proxy in front 
 
 Whenever an asset gets modified, we emit the [`mediaLibraryEntry.update`]({{< ref "/customising/advanced/server-events/#media-library-entry" >}}) server event. This event can be used to purge a CDN or other image service. The `mediaLibraryEntry.update` event also occurs for metadata changes, so if you want to only handle asset changes you can filter the events by checking whether `payload.changes?.some((c) => c.event === 'mediaLibraryEntry.asset.update')`.
 
-When purging a CDN cache for a revoked, invalidated, or updated entry, use `mediaLibraryApi.getAllKeysForMediaLibraryEntry({mediaLibraryEntry})` to retrieve all asset keys associated with the entry, including variant keys from [image editing in documents](#image-editing-in-documents):
+From {{< release "release-2026-03" >}} on, when purging a CDN cache for a revoked, invalidated, or updated entry, use `mediaLibraryApi.getAllKeysForMediaLibraryEntry({mediaLibraryEntry})` to retrieve all asset keys associated with the entry, including variant keys from [image editing in documents](#image-editing-in-documents). Before {{< release "release-2026-03" >}}, you must extract the keys from the media library entry yourself.
 
 ```js
 liServer.events.subscribe(
@@ -144,6 +144,10 @@ This supports:
 #### Image Editing in Documents
 
 {{< added-in "release-2026-03" block >}}
+
+{{< info >}}
+Use `mediaLibrary.disableImageEditingInDocuments` to temporarily revert to the behavior prior to {{< release "release-2026-03" >}} while your newsroom adapts. This option is deprecated and will be removed in {{< release "release-2026-09" >}}. Set it before users start editing images in documents. Disabling it afterwards will not remove existing variants, which will continue to be applied in their respective placements.
+{{< /info >}}
 
 Journalists can edit images directly within a document using the "Adjust" button on each image placement. Edits here only affect that specific placement within the document. Other documents using the same image are not affected. The original can always be restored by resetting the adjustments.
 

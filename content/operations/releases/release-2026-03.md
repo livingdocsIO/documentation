@@ -100,7 +100,7 @@ livingdocs-server migrate up
 
 ### After the deployment
 
-[Image editing in documents](#image-editing-in-documents) moves color adjustments from media library entries to individual document occurrences. A one-time migration script is available to apply this change to existing modifications.
+[Image editing in documents](#image-editing-in-documents-gift) moves color adjustments from media library entries to individual document occurrences. A one-time migration script is available to apply this change to existing modifications.
 
 Run the following migration script if `use2025Behavior` is enabled and `disableImageEditingInDocuments` is not:
 
