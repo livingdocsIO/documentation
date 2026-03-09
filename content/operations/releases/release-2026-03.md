@@ -202,32 +202,6 @@ Journalists can now rotate images directly within a document. This is particular
 
 {{< img src="release-2026-03-image-editing-rotate.png" alt="Rotate image" caption="Images can be rotated per placement directly within a document." >}}
 
-### Reuse Already Imported Media Source Items :gift:
-
-When a media source item has already been imported, Livingdocs now reuses the existing media library entry instead of importing it again. This allows keeping media libraries free of duplicates when using media from external systems.
-
-To enable the deduplication, [media source]({{< ref "/guides/media-library/media-sources/" >}}) search results can include `systemName` and `externalId`. If a media library entry with the same `systemName`/`externalId` pair already exists, it is reused.
-
-```diff
-module.exports = {
-  handle: 'examplePlugin',
-  async searchMediaImage() {
-    return {
-      total: 123,
-      results: [
-        {
-          metadata: {},
-          asset: {},
-+         systemName: 'exampleSource',
-+         externalId: 'exampleExternalId'
-        }
-      ]
-    }
-  },
-  async fetchMediaImage() {}
-}
-```
-
 ### Media Library Thumbnail Sizes :gift:
 
 When working with image agency feeds, users often need to visually scan through large volumes of images, for example to pick relevant photos from a live coverage event or to identify the start and end of a photo series.
@@ -282,6 +256,32 @@ or using the Public API endpoint:
 
 ```
 PATCH /api/:apiVersion/mediaLibrary/{id} {preserveUpdatedAt: true, patches: [...]}
+```
+
+### Reuse Already Imported Media Source Items :gift:
+
+When a media source item has already been imported, Livingdocs now reuses the existing media library entry instead of importing it again. This allows keeping media libraries free of duplicates when using media from external systems.
+
+To enable the deduplication, [media source]({{< ref "/guides/media-library/media-sources/" >}}) search results can include `systemName` and `externalId`. If a media library entry with the same `systemName`/`externalId` pair already exists, it is reused.
+
+```diff
+module.exports = {
+  handle: 'examplePlugin',
+  async searchMediaImage() {
+    return {
+      total: 123,
+      results: [
+        {
+          metadata: {},
+          asset: {},
++         systemName: 'exampleSource',
++         externalId: 'exampleExternalId'
+        }
+      ]
+    }
+  },
+  async fetchMediaImage() {}
+}
 ```
 
 ## Vulnerability Patches
