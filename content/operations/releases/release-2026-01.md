@@ -8,7 +8,7 @@ hideSectionTeaser: true
 header:
   upcoming: false
   legacy: false
-  current: true
+  current: false
   maintained: true
   branchHandle: release-2026-01
 
@@ -493,6 +493,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v294.0.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.16): fix(images): Allow gif uploads with 1800 frames
 - [v294.0.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.15): fix(deps): update dependency @livingdocs/framework from 32.11.5 to v32.11.7
 - [v294.0.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.14): fix(dep): Update dependencies
@@ -513,6 +514,7 @@ Here is a list of all patches after the release has been announced.
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
+
 - [v123.3.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.33): fix(images): Allow gif uploads with 1800 frames
 - [v123.3.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.32): fix(tasks): Sort completed tasks by completed date
 - [v123.3.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.31): fix(task-boards): take total results from request
