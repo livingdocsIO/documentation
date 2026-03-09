@@ -100,6 +100,8 @@ livingdocs-server migrate up
 
 ### After the deployment
 
+#### Migrate image editing to documents
+
 [Image editing in documents](#image-editing-in-documents-gift) moves color adjustments from media library entries to individual document occurrences. A one-time migration script is available to apply this change to existing modifications.
 
 Run the following migration script if `use2025Behavior` is enabled and `disableImageEditingInDocuments` is not:
@@ -111,6 +113,20 @@ npx livingdocs-server release-2026-03-image-editing-in-documents
 This migrates image modifications (brightness, contrast, saturation) from media library entries to their respective image occurrences in documents. Without it, images can still be edited, but existing modifications remain applied globally on media library entries rather than locally per document occurrence.
 
 This migration is not reversible. Run it only once you are confident you won't switch back to the old behavior. If `disableImageEditingInDocuments` is currently enabled, run this script once you disable it.
+
+#### Fix rotated image dimensions
+
+A bug stored wrong dimensions for rotated images (EXIF orientation 5–8) when `use2025Behavior` was enabled. A one-time script loads the asset from storage, checks the dimensions, and corrects them in the database if they are wrong.
+
+Run the following script if `use2025Behavior` is enabled:
+
+```sh
+npx livingdocs-server release-2026-03-fix-rotated-image-dimensions --yes
+```
+
+Optional flags:
+- `--since` (`-s`): Only check entries updated on or after this date, when the bug was introduced (default: `2025-03-01`)
+- `--delay` (`-d`): Delay in ms between entries to reduce database pressure (default: `50`)
 
 ### Rollback
 
