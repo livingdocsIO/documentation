@@ -7,9 +7,9 @@ hideSectionTeaser: true
 
 header:
   upcoming: false
-  legacy: false
+  legacy: true
   current: false
-  maintained: true
+  maintained: false
   branchHandle: release-2025-09
 
 systemRequirements:
@@ -563,6 +563,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v281.3.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.45): fix(images): Allow gif uploads with 1800 frames
 - [v281.3.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.44): fix(dep): Update dependencies
 - [v281.3.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.43): fix(deps): update dependency @livingdocs/framework from 32.9.7 to v32.9.8
@@ -574,7 +575,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.37): fix: keep animation when downloading image
 - [v281.3.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.36): fix(deps): update dependency @livingdocs/framework from 32.9.5 to v32.9.6
 - [v281.3.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.35): fix(security): Update packages that have vulnerabilities
-- [v281.3.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.34): fix: remove superfluous autoOrient  params
+- [v281.3.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.34): fix: remove superfluous autoOrient params
 - [v281.3.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.33): fix: convert animated images to non-animated ones
 - [v281.3.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.32): fix: add li-tree UI config property treeInitiallyCollapsed
 - [v281.3.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.31): fix: serve image with media library entry mime type if format is not specified
@@ -613,6 +614,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+
 - [v119.14.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.56): fix(images): Allow gif uploads with 1800 frames
 - [v119.14.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.55): fix(deps): update dependency @livingdocs/framework from 32.9.7 to v32.9.8
 - [v119.14.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.54): chore: Remove code-highlight angular component
