@@ -65,76 +65,9 @@ These are the release notes of the upcoming release (pull requests merged to the
 
 ## PRs to Categorize
 
-- [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-editor/pull/10779)
-- [Bump minor version for release management](https://github.com/livingdocsIO/livingdocs-server/pull/8976)
-- [Add image collections](https://github.com/livingdocsIO/livingdocs-editor/pull/10700)
-- [Add image collections](https://github.com/livingdocsIO/livingdocs-server/pull/8820)
-- [fix(deps): update dependency @livingdocs/framework from 32.12.5 to v32.12.6 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8968)
-- [fix(deps): update dependency @livingdocs/framework from 32.12.5 to v32.12.6 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10773)
-- [fix(deps): update dependency @isaacs/ttlcache from 1.4.1 to v2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10435)
 - [Use newer ajv version in groups api](https://github.com/livingdocsIO/livingdocs-server/pull/8960)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/8964)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10770)
-- [Media Usage Log](https://github.com/livingdocsIO/livingdocs-editor/pull/10744)
-- [Media Usage Log](https://github.com/livingdocsIO/livingdocs-server/pull/8923)
-- [Support extracting title from imported HuGO+ picture](https://github.com/livingdocsIO/livingdocs-server/pull/8902)
-- [Fix: thumbnail size slider was not working in firefox](https://github.com/livingdocsIO/livingdocs-editor/pull/10768)
 - [Test oldest and newest of opensearch and valkey](https://github.com/livingdocsIO/livingdocs-server/pull/8949)
-- [Image Rotation](https://github.com/livingdocsIO/livingdocs-server/pull/8907)
-- [Image Rotation](https://github.com/livingdocsIO/livingdocs-editor/pull/10740)
-- [Configure TTL cache of media library dataloader](https://github.com/livingdocsIO/livingdocs-editor/pull/10739)
-- [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8947)
-- [Upgrade to ajv@8.18.0](https://github.com/livingdocsIO/livingdocs-server/pull/8939)
-- [fix(deps): update opentelemetry from 0.211.0 to ^0.212.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8929)
-- [Handle migrations of old documents without the statistics property](https://github.com/livingdocsIO/livingdocs-server/pull/8930)
 - [Move vendors to npm modules](https://github.com/livingdocsIO/livingdocs-editor/pull/10737)
-- [chore(deps): update dependency pino from 10.2.1 to v10.3.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8843)
-- [feat(media-center): add variable thumbnail sizes](https://github.com/livingdocsIO/livingdocs-editor/pull/10685)
-- [fix: bump file-type version for a bug fix](https://github.com/livingdocsIO/livingdocs-server/pull/8881)
-- [fix(deps): update dependency @livingdocs/framework from 32.12.4 to v32.12.5 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10725)
-- [fix(deps): update dependency @livingdocs/framework from 32.12.4 to v32.12.5 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8878)
-- [fix(include): iframe resize bursts debounced](https://github.com/livingdocsIO/livingdocs-editor/pull/10668)
-- [chore(deps): update dependency pg from 8.17.2 to v8.18.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8868)
-- [chore(deps): update dependency @fastify/reply-from from 12.5.0 to v12.6.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10717)
-- [Read mimetype from asset object when downloading](https://github.com/livingdocsIO/livingdocs-server/pull/8861)
-- [chore(deps): update dependency eslint-plugin-jsdoc from 62.4.1 to v62.5.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8866)
-- [Show image and metadata of selected locale in lightbox](https://github.com/livingdocsIO/livingdocs-editor/pull/10705)
-- [fix(deps): update dependency @livingdocs/framework from 32.12.3 to v32.12.4 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10710)
-- [fix(deps): update dependency @livingdocs/framework from 32.12.2 to v32.12.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10707)
-- [chore(deps): update playwright monorepo from 1.57.0 to v1.58.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-editor/pull/10698)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/8849)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/8831)
-- [Reuse existing media library entries when a media source item has already been imported](https://github.com/livingdocsIO/livingdocs-editor/pull/10669)
-- [Reuse existing media library entries when a media source item has already been imported](https://github.com/livingdocsIO/livingdocs-server/pull/8811)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/8817)
-- [chore(deps): update dependency posthog-node from 5.20.0 to v5.21.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8800)
-- [fix(deps): update dependency @livingdocs/framework from 32.12.1 to v32.12.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8805)
-- [Differentiate custom text formatting with the same attribute name](https://github.com/livingdocsIO/livingdocs-editor/pull/10634)
-- [Scroll document when dragging component close to an edge](https://github.com/livingdocsIO/livingdocs-editor/pull/10642)
-- [Only support revoke note with use2025Behavior](https://github.com/livingdocsIO/livingdocs-server/pull/8794)
-- [Disable print flow create button when workspace is dirty](https://github.com/livingdocsIO/livingdocs-editor/pull/10648)
-- [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/8786)
-- [Set an unpublish schedule for a scheduled document](https://github.com/livingdocsIO/livingdocs-editor/pull/10638)
-- [Clear include overrides when replacing a teaser via drag&drop](https://github.com/livingdocsIO/livingdocs-editor/pull/10633)
-- [fix(deps): update pintura [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10632)
-- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/8768)
-- [Render li-image metadata properties with named crops in media upload](https://github.com/livingdocsIO/livingdocs-editor/pull/10627)
-- [Allow removing settings.editMode](https://github.com/livingdocsIO/livingdocs-server/pull/8778)
-- [Show label tooltips on text formatting toolbar buttons](https://github.com/livingdocsIO/livingdocs-editor/pull/10618)
-- [Replace document ownership links with summary when merging users](https://github.com/livingdocsIO/livingdocs-editor/pull/10588)
-- [Show custom cards in media library sidepanel](https://github.com/livingdocsIO/livingdocs-editor/pull/10605)
-- [Fix rendering of kanban boards](https://github.com/livingdocsIO/livingdocs-editor/pull/10589)
-- [Do not attempt to render comments in history view](https://github.com/livingdocsIO/livingdocs-editor/pull/10594)
-- [Fix Server Settings console errors](https://github.com/livingdocsIO/livingdocs-editor/pull/10587)
-- [Limit LIDEP075 deprecation to specific print properties](https://github.com/livingdocsIO/livingdocs-server/pull/8759)
-- [Show table dashboard row highlight](https://github.com/livingdocsIO/livingdocs-editor/pull/10592)
-- [Fix delivery build prop validation error](https://github.com/livingdocsIO/livingdocs-editor/pull/10593)
-- [Show projectId in Retresco error message if integration is disabled](https://github.com/livingdocsIO/livingdocs-server/pull/8760)
-- [Download animated images](https://github.com/livingdocsIO/livingdocs-server/pull/8745)
-- [Download localized asset on media library detail page](https://github.com/livingdocsIO/livingdocs-editor/pull/10566)
-- [fix(deps): update dependency @opentelemetry/instrumentation-ioredis from 0.56.0 to ^0.57.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/8741)
-- [fix(deps): update dependency @livingdocs/framework from 32.11.1 to v32.12.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10564)
-- [Media library Dashboards: Small Improvements](https://github.com/livingdocsIO/livingdocs-editor/pull/10562)
 
 To get an overview about new functionality, read the [Release Notes](TODO).
 To learn about the necessary actions to update Livingdocs to `release-2026-03`, read on.
@@ -314,6 +247,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v296.2.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.5): refactor: rename preserveDate to preserveUpdatedAt
 - [v296.2.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.4): refactor(image-rotation): retry logic and sanity checks
 - [v296.2.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.3): fix: review feedback
@@ -321,6 +255,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+
 - [v123.10.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.15): fix(image-collections): prevent check of undefined
 - [v123.10.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.14): fix: add an early return guard if onDrag is not a function
 - [v123.10.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.13): fix: support toggling media libary panel with collections
