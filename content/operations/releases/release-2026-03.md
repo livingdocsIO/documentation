@@ -117,9 +117,45 @@ Or preferably to our recommended versions:
 
 The media source plugin function `searchMediaImage` now requires `systemName` and `externalId` to be strings when returned. Previously, these properties were not validated and had no effect.
 
+### Reserved Asset Keys :fire:
+
+Variant keys use a `v/` prefix (for example `v/2026/02/10/a1b2c3d4`) to distinguish them from regular asset keys.
+The `v/` prefix is now reserved.
+Any custom `storage.computeKey` that returns keys starting with `v/` is rejected.
+
 ## Deprecations
 
+### Removing Angular
+
+We’ve decided to remove more angular-specific examples in our documentation.
+We’ve also acquired a TuxCare Long Term Support License to ensure that Livingdocs is not affected by the known Vue.js & Angular vulnerabilities.
+To update to the `release-2026-03`, an npm access token requires permissions against those private modules.
+
+### Deprecate Custom doc-html Embeds
+
+The `registerCustomEmbeds` function is deprecated and will be removed in `release-2026-09`.
+
+### Deprecate iframe Plugins
+
+The `liEditor.registerIframePlugin` function is deprecated and will be removed in `release-2026-09`.
+
+### Deprecate Old Push-Notification Feature
+
+The metadata plugin `li-push-notifications` is deprecated and will be removed in `release-2026-09`.
+Please use the `li-push-messages` metadata plugin instead.
+
+### Deprecate Metadata Hooks
+
+The metadata plugin hooks `onUpdate`, `onPreparePublish`, `onUnpublish`, `onRender` are deprecated and will be removed in `release-2026-09`.
+
+The plugin hooks often caused issues or confusion with order of execution and resulted in complex logic in customer setups.
+With the standardization strategy we’re following, there haven’t been any needs anymore for those as there are alternatives.
+
+Please use the `registerPublicationHooks`.
+
 ## Features :gift:
+
+### Usage Log :gift:
 
 ### Reuse Already Imported Media Source Items :gift:
 
