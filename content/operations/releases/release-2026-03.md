@@ -255,7 +255,11 @@ No known vulnerabilities. :tada:
 
 This release we have patched the following vulnerabilities in the Livingdocs Editor:
 
-- TBD
+- [CVE-2026-3419 / GHSA-573f-x89g-hqp9](https://github.com/advisories/GHSA-573f-x89g-hqp9) patched in fastify v5.8.1
+- [CVE-2025-68157 / GHSA-38r7-794h-5758](https://github.com/advisories/GHSA-38r7-794h-5758) patched in webpack 5.104.1
+- [CVE-2026-25639 / GHSA-43fc-jf86-j433](https://github.com/advisories/GHSA-43fc-jf86-j433) patched in axios v1.13.5
+- [CVE-2025-13465 / GHSA-xxjr-mmjv-4gpg](https://github.com/advisories/GHSA-xxjr-mmjv-4gpg) patched in lodash v4.17.23
+- [GHSA-73rr-hh4g-fpgx](https://github.com/kpdecker/jsdiff/security/advisories/GHSA-73rr-hh4g-fpgx) patched in diff v8.0.0
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
