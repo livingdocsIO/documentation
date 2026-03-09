@@ -247,7 +247,9 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 This release we have patched the following vulnerabilities in the Livingdocs Server:
 
-- TBD
+- [CVE-2026-3419 / GHSA-573f-x89g-hqp9](https://github.com/advisories/GHSA-573f-x89g-hqp9) patched in fastify v5.8.1
+- [CVE-2026-25639 / GHSA-43fc-jf86-j433](https://github.com/advisories/GHSA-43fc-jf86-j433) patched in axios v1.13.5
+- [CVE-2025-13465 / GHSA-xxjr-mmjv-4gpg](https://github.com/advisories/GHSA-xxjr-mmjv-4gpg) patched in lodash v4.17.23
 
 No known vulnerabilities. :tada:
 
