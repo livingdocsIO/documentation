@@ -54,7 +54,7 @@ mediaLibrary: {
 ```
 
 This will route image upload requests from Livingdocs to your chosen URL instead of S3.
-For details please see the reference documentation for the [server configuration]({{< ref "/customising/server-configuration#media-library-dam" >}}).
+For details please see the reference documentation for the [server configuration]({{< ref "/customising/server-configuration#media-library" >}}).
 
 ### Delivery
 
