@@ -77,7 +77,7 @@ A new set of features has been added to the Media Library which can be enabled u
 
 ### Server Config
 
-First, you need to make sure your Media Library can [store images]({{< ref "/customising/server-configuration#media-library-dam" >}}).
+First, you need to make sure your Media Library can [store images]({{< ref "/customising/server-configuration#media-library" >}}).
 
 ### Image Services
 
@@ -435,7 +435,7 @@ Nevertheless if you find solutions to these problems outside of Livingdocs, you 
 
 ### Server Config
 
-You need to make sure your Media Library can [store videos]({{< ref "/customising/server-configuration#media-library-dam" >}}).
+You need to make sure your Media Library can [store videos]({{< ref "/customising/server-configuration#media-library" >}}).
 
 ### Basic Media Type
 
@@ -650,7 +650,7 @@ You can also manage other files than videos and images with the Livingdocs Media
 
 ### Server Config
 
-You need to make sure your Media Library can [store files]({{< ref "/customising/server-configuration#media-library-dam" >}}).
+You need to make sure your Media Library can [store files]({{< ref "/customising/server-configuration#media-library" >}}).
 
 ### Basic Media Type
 

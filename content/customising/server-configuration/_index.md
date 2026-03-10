@@ -35,7 +35,7 @@ menus:
   "designs": "{{< a href="#designs" title="<designs config>">}}",
 
   "documents": "{{< a href="#documents" title="<document feature config>">}}",
-  "mediaLibrary": "{{< a href="#media-library-dam" title="<media library config>">}}",
+  "mediaLibrary": "{{< a href="#media-library" title="<media library config>">}}",
   "documentLists": "{{< a href="#document-lists" title="<document list feature config>">}}",
 
   "projectConfigs": "{{< a href="#project-configs" title="<project-config config>">}}"
@@ -1011,7 +1011,7 @@ pushNotifications: {
 
 For push notifications to be enabled you also need to follow the steps in the [channel config setup]({{< ref "/reference/project-config/content-types.md#push-notifications">}})
 
-### Media Library (DAM)
+### Media Library
 
 The Media Library impacts editor in multiple ways:
 
