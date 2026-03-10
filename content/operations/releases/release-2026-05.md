@@ -21,9 +21,9 @@ systemRequirements:
     - name: Postgres
       version: 17
     - name: Elasticsearch
-      version: 9.x
+      version: 9
     - name: OpenSearch
-      version: 2.3.0
+      version: 3
     - name: Redis
       version: 8
     - name: Livingdocs Server Docker Image
@@ -31,7 +31,7 @@ systemRequirements:
     - name: Livingdocs Editor Docker Image
       version: livingdocs/editor-base:24
     - name: Browser Support
-      version: Chrome >= 144, Edge >= 144, Firefox >= 146, Safari >= 26.0
+      version: Chrome >= 145, Edge >= 145, Firefox >= 148, Safari >= 26.3
 
   minimal:
     - name: Node
@@ -41,9 +41,9 @@ systemRequirements:
     - name: Postgres
       version: 14
     - name: Elasticsearch
-      version: 7.x
+      version: 8
     - name: OpenSearch
-      version: 1
+      version: 2
     - name: Redis
       version: 6.2
     - name: Livingdocs Server Docker Image
@@ -51,7 +51,7 @@ systemRequirements:
     - name: Livingdocs Editor Docker Image
       version: livingdocs/editor-base:22
     - name: Browser Support
-      version: Chrome >= 133, Edge >= 133, Firefox >= 135, Safari >= 18.3
+      version: Chrome >= 136, Edge >= 136, Firefox >= 138, Safari >= 18.4
 ---
 
 ## Caveat :fire:
@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [fix(app navigation): Line wrapping](https://github.com/livingdocsIO/livingdocs-editor/pull/10849)
 - [Migrate canvas to vue](https://github.com/livingdocsIO/livingdocs-editor/pull/10769)
 - [chore(deps): update dependency babel-loader from 10.0.0 to v10.1.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10848)

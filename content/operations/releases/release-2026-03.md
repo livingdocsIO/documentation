@@ -31,7 +31,7 @@ systemRequirements:
     - name: Livingdocs Editor Docker Image
       version: livingdocs/editor-base:24
     - name: Browser Support
-      version: Chrome >= 144, Edge >= 144, Firefox >= 146, Safari >= 26.0
+      version: Chrome >= 145, Edge >= 145, Firefox >= 148, Safari >= 26.3
 
   minimal:
     - name: Node
@@ -125,6 +125,7 @@ npx livingdocs-server release-2026-03-fix-rotated-image-dimensions --yes
 ```
 
 Optional flags:
+
 - `--since` (`-s`): Only check entries updated on or after this date, when the bug was introduced (default: `2025-03-01`)
 - `--delay` (`-d`): Delay in ms between entries to reduce database pressure (default: `50`)
 
@@ -344,6 +345,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+
 - [v123.10.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.17): fix(app navigation): Line wrapping
 
 - [v123.10.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.16): fix(deps): update dependency fastify from 5.7.4 to 5.8.1 [security]
