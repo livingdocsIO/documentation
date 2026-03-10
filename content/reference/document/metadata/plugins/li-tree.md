@@ -14,11 +14,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 description: |
   The plugin `li-tree` lets you set up a tree with items of the 4 possible types `group`, `link`, `document`, `multilang`.
 

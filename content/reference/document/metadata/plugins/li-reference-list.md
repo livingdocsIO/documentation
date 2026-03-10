@@ -10,11 +10,15 @@ support:
   document: true
   media: true
   include: true
+  creationFlow: false
+  pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 deprecatedIn: release-2023-09
 removedIn: release-2023-11
 description: |

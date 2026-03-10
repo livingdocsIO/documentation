@@ -11,11 +11,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 description: |
   This plugin allows 'from' and 'to' dates to be defined for a media library entry's validity. An image may have a limited validity, for example due to copyright, so can be used only for a certain period of time. After that period, the copyright expires and the image should be removed from the website.
 

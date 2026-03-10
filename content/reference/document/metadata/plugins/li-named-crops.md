@@ -11,11 +11,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 description: Define Named Crops on a Media Library Image.
 defaultUI: Crop management
 storageFormat: |

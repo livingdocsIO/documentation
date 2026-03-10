@@ -11,11 +11,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 description: |
   When adding `li-metadata-translations`, it allows a user to translate metadata into different languages. Metadata translations are supported for the Media Library and Data Records.
   - Guide: [Metadata Translations for Data Records]({{< ref "/guides/editor/metadata-translations" >}})

@@ -11,11 +11,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: true
   displayFilter: false
   searchIndexing: true
   systemMetadata: true
   planningSystem: true
+  webhookConditions: false
 addedIn: release-2023-03
 description: |
   As part of the Planning System, users want to ask for buy-in when writing an article or pitching an idea.

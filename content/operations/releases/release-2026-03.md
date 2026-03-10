@@ -125,6 +125,7 @@ npx livingdocs-server release-2026-03-fix-rotated-image-dimensions --yes
 ```
 
 Optional flags:
+
 - `--since` (`-s`): Only check entries updated on or after this date, when the bug was introduced (default: `2025-03-01`)
 - `--delay` (`-d`): Delay in ms between entries to reduce database pressure (default: `50`)
 
@@ -193,6 +194,10 @@ The `mediaLibrary.disableImageEditingInDocuments` server configuration option is
 ## Features :gift:
 
 ### Usage Log :gift:
+
+Customers need to keep track of where and when an image was published for legal reasons and royalty billing. This could be a web article, a print product, a social media post, or a digital edition. Some usages can be directly inferred from their presence in a published Livingdocs document. For publications outside of Livingdocs, usage needs to be tracked separately.
+
+To learn how to setup the Usage Log feature please see the [Usage Log]({{< ref "/guides/media-library/media-library-setup/#usage-log" >}}) section of the Media Library guide.
 
 ### Image Editing in Documents :gift:
 
@@ -344,6 +349,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+
 - [v123.10.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.17): fix(app navigation): Line wrapping
 
 - [v123.10.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.16): fix(deps): update dependency fastify from 5.7.4 to 5.8.1 [security]

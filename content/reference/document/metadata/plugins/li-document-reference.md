@@ -11,11 +11,13 @@ support:
   include: true
   creationFlow: true
   pushMessage: true
+  usageLog: false
   tableDashboard: true
   displayFilter: true
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 description: |
   A `li-document-reference` metadata field shows a reference to another document. To select a document one gets provided a Document Selection Modal.
 

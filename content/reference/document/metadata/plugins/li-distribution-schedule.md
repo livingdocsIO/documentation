@@ -11,11 +11,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: true
   planningSystem: true
+  webhookConditions: false
 description: This plugin will allow a user to select Distribution Channels that they would like to view in the Distribution Schedule side panel. Once selected the Schedule button in the editor becomes active and the side panel can be opened. It is possible to lock the schedule to a specific date.
 defaultUI: Multi-select input for distribution channel selection, and date input
 storageFormat: |

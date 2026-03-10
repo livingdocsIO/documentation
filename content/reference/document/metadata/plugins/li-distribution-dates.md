@@ -11,11 +11,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: true
   displayFilter: false
   searchIndexing: false
   systemMetadata: true
   planningSystem: true
+  webhookConditions: false
 description: The plugin is meant to be used on planning boards to express the demand side in editorial planning workflows. Please contact Livingdocs for further details.
 defaultUI: Metadata form and Table Dashboard Cell
 storageFormat: |

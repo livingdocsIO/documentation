@@ -15,11 +15,13 @@ support:
   include: true
   creationFlow: true
   pushMessage: true
+  usageLog: false
   tableDashboard: true
   displayFilter: true
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 description: |
   A `li-document-references` metadata field is a list of references to other documents. A Document Selection Dialog is shown, based on shorthand queries and `useDashboard` to select documents.
 

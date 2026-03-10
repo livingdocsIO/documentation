@@ -16,11 +16,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: true
   displayFilter: false
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 description: |
   {{< info >}}
     {{< added-in "release-2024-11" >}}. Prior to {{< release "release-2024-11" >}}, `li-kordiam-integration` was known as [`li-desknet-integration`]({{< ref "/reference/document/metadata/plugins/li-desknet-integration" >}}).

@@ -11,11 +11,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: true
   displayFilter: false
   searchIndexing: true
   systemMetadata: true
   planningSystem: true
+  webhookConditions: false
 description: Enables the Distribution Planning panel, and allows documents to be assiged to a distribution schedule.
 defaultUI: Distribution Planning panel
 storageFormat: |

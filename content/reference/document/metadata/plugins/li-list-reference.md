@@ -10,11 +10,13 @@ support:
   include: true
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 defaultUI: Selected list, or list selection dialog
 storageFormat: |
   {

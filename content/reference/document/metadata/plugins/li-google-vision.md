@@ -10,11 +10,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 deprecatedIn: release-2026-01
 defaultUI: Specialised UI in the Media Library Image Detail View, no config possible
 storageFormat: |

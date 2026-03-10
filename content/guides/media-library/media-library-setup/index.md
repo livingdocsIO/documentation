@@ -774,3 +774,125 @@ module.exports = {
 
 - With {{< release "release-2021-06" >}}, using `li-named-crops` metadata plugin on `mediaImage` types in combination with asset translation has some suboptimal behaviors. This will be improved in a future release.
 - Both `translatable` and `replaceable` might need handling in your delivery regarding caching, fallback resolution when rendering different languages etc. You need to be aware of this and find solutions. Setting these assets triggers a `mediaLibraryEntry.update` event on the Events API and the webhooks in the same way as updating the metadata does.
+
+## Usage Log
+
+{{< added-in "release-2026-03" block >}}
+
+Customers need to keep track of where and when an image was published for legal reasons and royalty billing. This could be a web article, a print product, a social media post, or a digital edition. Some usages can be directly inferred from their presence in a published Livingdocs document. For publications outside of Livingdocs, usage needs to be tracked separately.
+
+The Usage Log feature is only available when `use2025Behavior` has been enabled. Please read the [2025 Behavior Guide]({{< ref "/guides/media-library/2025-behavior" >}}) if you haven't enabled the new functionality yet.
+
+### Enabling the Usage Log feature
+
+Define at least one purpose in the `projectConfig.mediaCenter.usageLog.purposes` array to enable the feature for all media types in the project.
+
+```js
+{
+  mediaCenter: {
+    usageLog: {
+      purposes: [
+        {
+          handle: 'print',
+          label: {
+            en: 'Print',
+            de: 'Druck'
+          },
+          paramsSchema: [
+            {
+              handle: 'page',
+              type: 'li-integer',
+              ui: {
+                label: {
+                  en: 'Page',
+                  de: 'Seite'
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+The purposes are displayed to a user when creating or updating a usage log entry, or when downloading a media library entry. Any additional properties defined within the `paramsSchema` array will also be displayed when creating or updating an entry, but not in the download form. To see which metadata plugins are supported please refer to the [Metadata Plugins List]({{< ref "reference/document/metadata/plugins">}}). We automatically store the reporting date and `userId`, and provide input fields for the publication date, the state ("pending" or "confirmed") and a url.
+
+### Creating usage log dashboards
+
+It's possible to define dashboards which provide an easy way to review incomplete entries:
+
+```js
+{
+  editorSettings: {
+    dashboards: [
+      // Show all media library entries which have a usage log with `state: 'pending'`
+      {
+        type: 'mediaLibraryDashboard',
+        handle: 'pendingMediaUsageLogs',
+        pageTitle: {en: 'Pending Usage Logs', de: 'Ausstehende Verwendungsnachweise'},
+        assetType: 'mediaImage',
+        baseFilters: [{key: 'usageLog.pendingUserIds', exists: true}],
+        displayFilters: ['timeRange', 'pendingMediaUsageLogs']
+      },
+      // Show media library entries which have a usage log with `state: 'pending'` for the current user
+      {
+        type: 'mediaLibraryDashboard',
+        handle: 'myPendingMediaUsageLogs',
+        pageTitle: {en: 'My Pending Usage Logs', de: 'Meine ausstehenden Verwendungsnachweise'},
+        assetType: 'mediaImage',
+        baseFilters: [{key: 'usageLog.pendingUserIds', termPattern: '{{ userId }}'}],
+        displayFilters: ['timeRange']
+      }
+    ]
+  }
+}
+```
+
+As usual, add a dashboard entry to `mainNavigation` which points to the handle defined and assign this to the correct position within `mainNavigationGroups`.
+
+### Custom usage log display filter
+
+Another option to see media library entries with pending usage logs is to create a display filter which can be added to an existing media library dashboard:
+
+```js
+liEditor.searchFilters.registerListV2('pendingMediaUsageLogs', {
+  label: {
+    en: 'Pending usage logs',
+    de: 'Ausstehende Verwendungsnachweise'
+  },
+  datasource: {
+    fetch({access, config, dashboard}) {
+      // Allow all users to see media library entries with their own pending usage logs
+      const options = [
+        {
+          label: {
+            en: 'My pending usage logs',
+            de: 'Meine ausstehenden Verwendungsnachweise'
+          },
+          filter: {key: 'usageLog.pendingUserIds', termPattern: '{{ userId }}'},
+          isDefault: config.showMyLogsByDefault
+        }
+      ]
+
+      // Allow users with write permissions to see all media library entries with pending usage logs
+      const showAllOption = !!dashboard.mediaTypes?.every((mt) =>
+        access.allowed('mediaLibraryEntry.update', {mediaType: mt})
+      )
+      if (showAllOption) {
+        options.push({
+          label: {
+            en: 'All pending usage logs',
+            de: 'Alle ausstehenden Verwendungsnachweise'
+          },
+          filter: {key: 'usageLog.pendingUserIds', exists: true},
+          isDefault: config.showAllLogsByDefault
+        })
+      }
+
+      return options
+    }
+  }
+})
+```

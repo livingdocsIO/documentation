@@ -16,11 +16,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: true
   planningSystem: false
+  webhookConditions: false
 description: |
   {{< info >}}
     {{< added-in "release-2024-11" >}}. Prior to {{< release "release-2024-11" >}}, `li-kordiam-schedule` was known as [`li-desknet-schedule`]({{< ref "/reference/document/metadata/plugins/li-desknet-schedule" >}}).

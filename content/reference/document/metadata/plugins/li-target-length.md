@@ -24,11 +24,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: true
   displayFilter: false
   searchIndexing: false
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 description: |
   Enables users to define a target length for a document. The plugin provides feedback to help maintain content within a desired range.
 defaultUI: |

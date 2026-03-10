@@ -6,7 +6,18 @@ menus:
     parent: Metadata Plugins List
 summary: Dynamic teaser lists based on configurable filters.
 support:
+  document: false
+  media: false
   include: true
+  creationFlow: false
+  pushMessage: false
+  usageLog: false
+  tableDashboard: false
+  displayFilter: false
+  searchIndexing: false
+  systemMetadata: false
+  planningSystem: false
+  webhookConditions: false
 description: |
   The `li-document-search` plugin simplifies the management and rendering of article teaser lists within pages based on configurable filters. It provides an efficient solution for semi-automatic page management. This approach reduces the need for custom code compared to other solutions within Livingdocs.
 storageFormat: |

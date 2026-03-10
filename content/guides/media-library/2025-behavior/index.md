@@ -15,6 +15,7 @@ The `use2025Behavior` represents the future direction of the Media Library. It u
 - "Store in Archive" functionality to prevent deletion
 - Preservation of assets when revoking an image
 - No longer serving invalid images ([`li-invalid`]({{< ref "/reference/document/metadata/plugins/li-invalid" >}}), [`li-datetime-validity`]({{< ref "/reference/document/metadata/plugins/li-datetime-validity" >}}))
+- Tracking media usage in external systems
 
 {{< info >}}
 Due to changes in the user interface, particularly with the old "Archive" functionality and the new "Store in Archive" functionality, it might be worthwhile holding workshops or informing users within the newsroom before rolling this change out.
@@ -231,3 +232,9 @@ Livingdocs automatically handles the "unused" part which excludes media library 
 - are currently in a document inbox
 - have previously been published in a document
 - have been stored in archive
+
+### Usage Log
+
+Customers need to keep track of where and when an image was published for legal reasons and royalty billing. This could be a web article, a print product, a social media post, or a digital edition. Some usages can be directly inferred from their presence in a published Livingdocs document. For publications outside of Livingdocs, usage needs to be tracked separately.
+
+Details of how to enable and configure the Usage Log feature can be found in the [Media Center]({{< ref "/reference/project-config/media-center/" >}}) reference documentation.
