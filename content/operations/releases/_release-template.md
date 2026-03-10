@@ -21,9 +21,9 @@ systemRequirements:
     - name: Postgres
       version: 17
     - name: Elasticsearch
-      version: 9.x
+      version: 9
     - name: OpenSearch
-      version: 2.3.0
+      version: 3
     - name: Redis
       version: 8
     - name: Livingdocs Server Docker Image
@@ -31,7 +31,7 @@ systemRequirements:
     - name: Livingdocs Editor Docker Image
       version: livingdocs/editor-base:24
     - name: Browser Support
-      version: Chrome >= 144, Edge >= 144, Firefox >= 146, Safari >= 26.0
+      version: Chrome >= 145, Edge >= 145, Firefox >= 148, Safari >= 26.3
 
   minimal:
     - name: Node
@@ -41,9 +41,9 @@ systemRequirements:
     - name: Postgres
       version: 14
     - name: Elasticsearch
-      version: 7.x
+      version: 8
     - name: OpenSearch
-      version: 1
+      version: 2
     - name: Redis
       version: 6.2
     - name: Livingdocs Server Docker Image
@@ -51,7 +51,7 @@ systemRequirements:
     - name: Livingdocs Editor Docker Image
       version: livingdocs/editor-base:22
     - name: Browser Support
-      version: Chrome >= 133, Edge >= 133, Firefox >= 135, Safari >= 18.3
+      version: Chrome >= 138, Edge >= 138, Firefox >= 140, Safari >= 18.6
 ---
 
 ## Caveat :fire:
