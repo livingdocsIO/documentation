@@ -45,7 +45,7 @@ systemRequirements:
     - name: OpenSearch
       version: 1
     - name: Redis
-      version: 6.2
+      version: 7.4
     - name: Livingdocs Server Docker Image
       version: livingdocs/server-base:22
     - name: Livingdocs Editor Docker Image
