@@ -12,11 +12,13 @@ support:
   include: true
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 description: |
   The `li-teaser` plugin for includes facilitates flexible page management by allowing users to establish rule based links from teasers to documents. Teasers can be configured to use direct references, curated lists, or algorithm-driven selections, supporting a mix of static and dynamic teasers.
 defaultUI: |

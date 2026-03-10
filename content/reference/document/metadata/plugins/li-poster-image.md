@@ -11,11 +11,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 description: Set a poster image for a video.
 defaultUI: Poster Image selection, has some special UI within Video Media Library Entries
 storageFormat: |

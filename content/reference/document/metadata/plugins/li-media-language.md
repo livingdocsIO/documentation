@@ -10,11 +10,15 @@ support:
   document: false
   media: true
   include: false
+  creationFlow: false
+  pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 removedIn: release-2023-09
 description: |
   Metadata type `li-media-language` has been replaced with [`li-metadata-translations`]({{< ref "/reference/document/metadata/plugins/li-metadata-translations" >}}).

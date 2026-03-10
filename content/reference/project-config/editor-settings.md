@@ -1059,19 +1059,25 @@ Supported plugin types in `additionalInfo`:
 
 Since {{< release "release-2025-09" >}}, additional metadata is no longer displayed by default! Users have to switch it on via the "Show metadata" control in the filter bar. The choice is remembered in local storage.
 
-#### Card title ({{< added-in "release-2025-09" >}})
+#### Title
+
+{{< added-in "release-2025-09" block >}}
 
 Available as option for `liMediaLibraryCard`.
 
 We allow the title to take up to three lines of text before we truncate it. Additionally, you no longer have to name your metadata property `title` or `caption`. We still look in there by default to display the title, but you can now also provide a mapping configuration yourself (see an example configuration further down).
 
-#### Card date ({{< added-in "release-2025-09" >}})
+#### Date
+
+{{< added-in "release-2025-09" block >}}
 
 Available as option for `liMediaLibraryCard`.
 
 By default, we're showing the date when an image was uploaded or imported next to the image. In some cases, it might be more suitable to show the date when the photo was taken. You can do that as well by providing a mapping configuration as well (see an example configuration further down).
 
-#### Credit line ({{< added-in "release-2025-09" >}})
+#### Credit
+
+{{< added-in "release-2025-09" block >}}
 
 Available as option for `liMediaLibraryCard`.
 
@@ -1196,7 +1202,7 @@ mediaLibrary.componentDirectivesPrefilling: [
   },
   {
     metadataPropertyName: 'description',
-    directiveName: 'caption' 
+    directiveName: 'caption'
   }
 ]
 ```

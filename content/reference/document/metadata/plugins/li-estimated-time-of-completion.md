@@ -11,11 +11,13 @@ support:
   include: false
   creationFlow: true
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: true
   planningSystem: true
+  webhookConditions: false
 addedIn: release-2023-03
 description: The Estimated Time of Completion Metadata Plugin `li-estimated-time-of-completion` enables a user to set an estimated time of completion for the current document. The plugin is available in the Metadata Form.
 defaultUI: |

@@ -11,11 +11,13 @@ support:
   include: false
   creationFlow: true
   pushMessage: false
+  usageLog: false
   tableDashboard: true
   displayFilter: true
   searchIndexing: true
   systemMetadata: true
   planningSystem: true
+  webhookConditions: false
 addedIn: release-2023-03
 description: The team metadata plugin `li-team` enables a user to associate other users with the current document by adding or removing them from the teams plugin. Additionally one user can be marked as the owner. The owner can not be removed from the team.
 defaultUI: |

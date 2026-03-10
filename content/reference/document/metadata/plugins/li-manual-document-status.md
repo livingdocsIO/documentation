@@ -10,11 +10,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: true
   searchIndexing: true
   systemMetadata: true
   planningSystem: false
+  webhookConditions: false
 defaultUI: Manage manual document statuses
 storageFormat: <String>
 contentTypeConfig: |2

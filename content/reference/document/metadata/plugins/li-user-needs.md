@@ -11,6 +11,7 @@ support:
   include: false
   creationFlow: true
   pushMessage: false
+  usageLog: false
   tableDashboard: true
   displayFilter: true
   searchIndexing: true

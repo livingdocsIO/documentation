@@ -11,11 +11,13 @@ support:
   include: true
   creationFlow: true
   pushMessage: false
+  usageLog: false
   tableDashboard: true
   displayFilter: true
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 defaultUI: Select input, with category tree view and search
 storageFormat: |
   {

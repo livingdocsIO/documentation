@@ -11,11 +11,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: true
   planningSystem: true
+  webhookConditions: false
 description: |
   Used for managing bundles of documents.
 defaultUI: None

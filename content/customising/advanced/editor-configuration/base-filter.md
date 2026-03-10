@@ -87,6 +87,9 @@ This are all available `queryTypes` which can be used to form a filter query.
     {key: 'publishControl.embargo.until', range: {gt: 'now'}}
   ]
 }
+
+// media library entry usage logs ({{< added-in "release-2026-03" >}})
+{key: 'usageLog.pendingUserIds', termPattern: '{{ userId }}'}
 ```
 
 ### Example - Filter by metadata with key/value

@@ -16,11 +16,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: true
   planningSystem: false
+  webhookConditions: false
 description: |
   {{< info >}}
     {{< added-in "release-2024-11" >}}. Prior to {{< release "release-2024-11" >}}, `li-kordiam-global` was known as [`li-desknet-global`]({{< ref "/reference/document/metadata/plugins/li-desknet-global" >}}).

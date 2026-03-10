@@ -11,11 +11,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 description: |
   The `li-issue-management` metadata plugin can be used to manage issues (a data-record with references to pages).
 

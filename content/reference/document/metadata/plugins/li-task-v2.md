@@ -10,11 +10,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: true
   displayFilter: true
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 defaultUI: Task side panel
 storageFormat: |
   {

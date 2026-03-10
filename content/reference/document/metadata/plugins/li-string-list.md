@@ -11,11 +11,13 @@ support:
   include: true
   creationFlow: true
   pushMessage: true
+  usageLog: true
   tableDashboard: true
   displayFilter: true
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 description: |
   Requires a `dataProvider` to work.
 

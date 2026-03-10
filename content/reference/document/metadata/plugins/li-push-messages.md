@@ -11,11 +11,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: true
   displayFilter: false
   searchIndexing: false
   systemMetadata: true
   planningSystem: false
+  webhookConditions: false
 description: |
   {{< info >}}
   Push **Messages** has been introduced as an alternative to the existing [Push **Notifications**]({{< ref "/guides/editor/push-notifications" >}}) feature, which will be removed in release-2026-09.

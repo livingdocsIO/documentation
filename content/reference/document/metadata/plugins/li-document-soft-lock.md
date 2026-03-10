@@ -11,11 +11,13 @@ support:
   include: false
   creationFlow: false
   pushMessage: false
+  usageLog: false
   tableDashboard: false
   displayFilter: false
   searchIndexing: false
   systemMetadata: true
   planningSystem: false
+  webhookConditions: false
 description: Enables a user to temporarily lock a document while editing.
 defaultUI: None
 storageFormat: |

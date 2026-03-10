@@ -10,6 +10,7 @@ support:
   include: true
   creationFlow: true
   pushMessage: true
+  usageLog: false
   tableDashboard: true
   displayFilter: true
   searchIndexing: true

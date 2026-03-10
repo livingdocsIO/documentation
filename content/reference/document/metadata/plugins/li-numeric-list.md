@@ -11,11 +11,13 @@ support:
   include: true
   creationFlow: true
   pushMessage: true
+  usageLog: true
   tableDashboard: false
   displayFilter: false
   searchIndexing: true
   systemMetadata: false
   planningSystem: false
+  webhookConditions: false
 defaultUI: |
   Input for multiple numbers.
 
