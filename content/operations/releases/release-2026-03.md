@@ -340,6 +340,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.7): fix(image-collections): remove custom desktop/mobile create label for simplicity
 
 - [v296.2.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.6): fix(deps): update dependency fastify from 5.7.4 to 5.8.1 [security]
 - [v296.2.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.5): refactor: rename preserveDate to preserveUpdatedAt
