@@ -350,6 +350,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.18): fix(image-collections): remove specific mobile/desktop label after refactoring
 
 - [v123.10.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.17): fix(app navigation): Line wrapping
 
