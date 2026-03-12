@@ -514,6 +514,7 @@ Here is a list of all patches after the release has been announced.
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
+- [v123.3.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.34): fix: add scroll offset
 
 - [v123.3.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.33): fix(images): Allow gif uploads with 1800 frames
 - [v123.3.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.32): fix(tasks): Sort completed tasks by completed date
