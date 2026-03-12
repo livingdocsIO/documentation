@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency exifreader from 4.36.2 to v4.37.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9050)
 - [Prevent unexpected scroll jumps](https://github.com/livingdocsIO/livingdocs-editor/pull/10855)
 - [chore(deps): update aws-sdk from 3.1005.0 to v3.1007.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/9044)
 - [chore(deps): update dependency sass from 1.97.3 to v1.98.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10858)
