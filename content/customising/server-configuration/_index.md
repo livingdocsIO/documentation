@@ -1026,6 +1026,11 @@ Below you see a full mediaLibrary config (with default values).
 
 ```js
 mediaLibrary: {
+  // Enables {{< a ref="/guides/media-library/2025-behavior" title="an improved user experience and functionality" >}}
+  use2025Behavior: true, // default false
+
+  generateImageServiceUrlsOnRead: true, // default false
+
   // define behavior for images in Livingdocs (upload, upload processing, storage)
   images: {
     publicUrl: 'https://livingdocs-images-dev.s3.amazonaws.com', // base url of the storage
@@ -1044,33 +1049,32 @@ mediaLibrary: {
     uploadRestrictions: {
       maxFileSize: '15mb',
     },
-    // {{< a href="#image-processing-medialibraryimagesprocessing" title="Image Processing">}}
+    // {{< a href="#image-processing-with-use2025behavior" title="Image Processing (use2025Behavior: true)">}}
+    // Used when use2025Behavior is true — upload-time validation only; transformation happens on-demand.
     processing: {
-      failOn: 'warning', // 'warning' | 'error' | 'truncated' | 'none'
       maxResolution: 24 * 1000 * 1000, // 24MP,  default 24 mega-pixels
-      // Max number of frames allowed for animated images (GIF, WebP).
-      // Uploads exceeding this limit are rejected with an error.
-      // 1800 frames = 90s at 20fps or 60s at 30fps.
       maxFrames: 1800, // default 1800
-      maxConcurrentProcesses: 5, // default 5
-      lossy: {
-        // max pixel width or height
-        maxDimension: 6000, // default 6000
-        // compression
-        quality: 80 // default 80
-      }
-      lossless: {
-        // max pixel width or height
-        maxDimension: 6000, // default 6000
-      },
-      // optional - Convert your image during upload into another format
-      convert: [
-        {
-          sourceFormat: 'jpeg',
-          targetFormat: 'webp'
-        }
-      ]
+      maxConcurrentProcesses: 20, // default 20
     }
+
+    // {{< a href="#image-processing-legacy-use2025behavior-false" title="Image Processing (legacy, use2025Behavior: false)">}}
+    // Used when use2025Behavior is false (default) — images are transformed and stored at upload time.
+    // processing: {
+    //   failOn: 'warning', // 'warning' | 'error' | 'truncated' | 'none'
+    //   maxResolution: 24 * 1000 * 1000, // 24MP,  default 24 mega-pixels
+    //   maxFrames: 1800, // default 1800
+    //   maxConcurrentProcesses: 20, // default 20
+    //   lossy: {
+    //     maxDimension: 6000, // default 6000
+    //     quality: 80 // default 80
+    //   },
+    //   lossless: {
+    //     maxDimension: 6000, // default 6000
+    //   },
+    //   convert: [
+    //     {sourceFormat: 'jpeg', targetFormat: 'webp'}
+    //   ]
+    // }
   },
 
   // define behavior for videos in Livingdocs (upload, storage)
@@ -1122,12 +1126,60 @@ mediaLibrary: {
 }
 ```
 
-#### Image Processing (`mediaLibrary.images.processing`)
+#### Image Processing with `use2025Behavior`
 
-The `processing` block configures what happens when an image is uploaded. It covers two concerns:
+When `mediaLibrary.use2025Behavior` is `true`, the `processing` block performs **upload-time validation only**. Images are stored in their original form; resizing and cropping happen on-demand when images are served via the [`/api/{{< api-version >}}/mediaLibrary/serve-image/:key`](/reference/public-api/media-library/#serve-image) endpoint. There is no upload-time transformation.
 
-1. **Upload-time validation** — images that violate the limits (`maxResolution`, `maxFrames`, `maxFileSize`) are rejected before they are stored.
-2. **Image transformation** — images may be resized or converted. With `use2025Behavior` enabled, transformation is deferred and happens on-demand via the [`/api/{{< api-version >}}/mediaLibrary/serve-image/:key`](/reference/public-api/media-library/#serve-image) endpoint instead of at upload time. Without it (legacy mode), images are processed and stored in their final form during upload.
+```js
+mediaLibrary: {
+  use2025Behavior: true,
+  images: {
+    processing: {
+      maxResolution: 24 * 1000 * 1000, // default 24 mega-pixels
+      maxFrames: 1800,                  // default 1800
+      maxConcurrentProcesses: 20,       // default 20
+    }
+  }
+}
+```
+
+- **`maxResolution`** (number, default `24_000_000`)
+  Maximum total pixel count (width × height). Uploads exceeding this are rejected. Default is 24 megapixels (e.g. 6000 × 4000 px).
+
+- **`maxFrames`** (number, default `1800`)
+  Maximum number of frames allowed for **animated images** (GIF and animated WebP). Uploads exceeding this limit are rejected.
+  The default of 1800 frames corresponds to approximately 90 seconds at 20 fps, or 60 seconds at 30 fps.
+
+- **`maxConcurrentProcesses`** (number, default `20`)
+  Maximum number of images validated in parallel. Lower this if uploads cause memory pressure on the server.
+
+#### Image Processing (legacy, `use2025Behavior: false`)
+
+When `mediaLibrary.use2025Behavior` is `false` (the default), the `processing` block controls both **upload-time validation** and **upload-time transformation**. Images are resized, converted, and stored in their final form during upload.
+
+```js
+mediaLibrary: {
+  images: {
+    processing: {
+      failOn: 'warning',               // 'warning' | 'error' | 'truncated' | 'none'
+      maxResolution: 24 * 1000 * 1000, // default 24 mega-pixels
+      maxFrames: 1800,                 // default 1800
+      maxConcurrentProcesses: 20,      // default 20
+      lossy: {
+        maxDimension: 6000,            // default 6000
+        quality: 80                    // default 80
+      },
+      lossless: {
+        maxDimension: 6000,            // default 6000
+      },
+      // optional - convert images to another format at upload time
+      convert: [
+        {sourceFormat: 'jpeg', targetFormat: 'webp'}
+      ]
+    }
+  }
+}
+```
 
 - **`failOn`** (`'warning' | 'error' | 'truncated' | 'none'`, default `'warning'`)
   Controls how strict the processing is about corrupt or non-conformant images when reading metadata. `'warning'` rejects images with any issue; `'none'` is the most permissive.
@@ -1136,15 +1188,14 @@ The `processing` block configures what happens when an image is uploaded. It cov
   Maximum total pixel count (width × height). Uploads exceeding this are rejected. Default is 24 megapixels (e.g. 6000 × 4000 px).
 
 - **`maxFrames`** (number, default `1800`)
-  Maximum number of frames allowed for **animated images** (GIF and animated WebP). Uploads with more frames than this limit are rejected with a `Max frames exceeded` error.
-
-  This limit exists because large animated images with many frames can consume significant memory and CPU. The default of 1800 frames corresponds to approximately 90 seconds of animation at 20 fps, or 60 seconds at 30 fps.
+  Maximum number of frames allowed for **animated images** (GIF and animated WebP). Uploads exceeding this limit are rejected.
+  The default of 1800 frames corresponds to approximately 90 seconds at 20 fps, or 60 seconds at 30 fps.
 
 - **`maxConcurrentProcesses`** (number, default `20`)
   Maximum number of images processed in parallel. Lower this if uploads cause memory pressure on the server.
 
 - **`lossy`** / **`lossless`**
-  Output quality and dimension settings applied when images are transformed:
+  Output quality and dimension settings applied when images are transformed at upload time:
   - `maxDimension` — largest allowed side in pixels (default `6000`); images exceeding this are downscaled.
   - `quality` — compression quality for lossy formats such as JPEG (default `80`).
 

@@ -50,6 +50,7 @@ If the main storage does not support image variants, you can use the `variantsSt
 ```js
 mediaLibrary: {
   use2025Behavior: true,
+  generateImageServiceUrlsOnRead: true,
   images: {
     storage: {
       strategy: 's3',
