@@ -416,6 +416,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.41): fix: request confirmation before archiving a group
 - [v121.3.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.40): fix(deps): update dependency fastify from 5.7.3 to 5.8.1 [security]
 - [v121.3.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.39): fix: add scroll offset
 - [v121.3.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.38): fix(images): Allow gif uploads with 1800 frames
