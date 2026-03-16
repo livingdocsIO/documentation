@@ -167,7 +167,9 @@ The media source plugin function `searchMediaImage` now requires `systemName` an
 
 We’ve decided to remove more angular-specific examples in our documentation.
 We’ve also acquired a TuxCare Long Term Support License to ensure that Livingdocs is not affected by the known Vue.js & Angular vulnerabilities.
-To update to the `release-2026-03`, an npm access token requires permissions against those private modules.
+
+To update to the `release-2026-03`, an npm access token requires permissions against those private modules:  
+`@livingdocs/angular`, `@livingdocs/editor`, `@livingdocs/framework`, `@livingdocs/pintura`, `@livingdocs/server`, `@livingdocs/vue`, `@livingdocs/vue-demi`, `@livingdocs/vue-pintura`, `@livingdocs/vue-template-compiler`
 
 ### Deprecate Custom doc-html Embeds
 
