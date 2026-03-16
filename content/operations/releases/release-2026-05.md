@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @livingdocs/framework from 32.13.1 to v32.13.4 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9080)
 - [fix(deps): update dependency @livingdocs/framework from 32.13.3 to v32.13.4 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10885)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9069)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10880)
