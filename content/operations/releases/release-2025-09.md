@@ -614,6 +614,7 @@ Here is a list of all patches after the release has been announced.
 - [v281.3.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.2): fix(release-2025-09): Update framework to v32.9.4 (release-2025-09 tag)
 
 ### Livingdocs Editor Patches
+- [v119.14.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.57): fix(deps): update dependency fastify from 5.7.3 to 5.8.1 [security]
 
 - [v119.14.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.56): fix(images): Allow gif uploads with 1800 frames
 - [v119.14.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v119.14.55): fix(deps): update dependency @livingdocs/framework from 32.9.7 to v32.9.8
