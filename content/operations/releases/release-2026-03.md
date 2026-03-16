@@ -340,6 +340,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.9): fix(deps): update dependency file-type from 21.3.0 to 21.3.2 [security]
 - [v296.2.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.8): fix(media-library): Don't replace time in usage log reporting date
 - [v296.2.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.7): fix(image-collections): remove custom desktop/mobile create label for simplicity
 
