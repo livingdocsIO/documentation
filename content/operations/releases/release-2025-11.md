@@ -385,6 +385,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v284.0.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.32): fix(deps): update dependency fastify from 5.7.3 to 5.8.1 [security]
 - [v284.0.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.31): fix(images): Allow gif uploads with 1800 frames
 - [v284.0.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.30): fix(deps): update dependency @livingdocs/framework from 32.10.6 to v32.10.7
 - [v284.0.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.29): fix(dep): Update dependencies
