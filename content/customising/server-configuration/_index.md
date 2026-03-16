@@ -214,8 +214,7 @@ https://github.com/livingdocsIO/docker#livingdocsodyssey
 
 #### Redis Database
 
-Livingdocs uses Redis worker queue for imports and Elasticsearch indexing.
-A functional setup is mandatory.
+Livingdocs uses Redis (or [Valkey](https://valkey.io/), which is a supported drop-in alternative) for background job processing.
 
 ```js
 redis: {

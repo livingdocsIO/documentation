@@ -26,6 +26,8 @@ systemRequirements:
       version: 3
     - name: Redis
       version: 8
+    - name: Valkey
+      version: 9
     - name: Livingdocs Server Docker Image
       version: livingdocs/server-base:24
     - name: Livingdocs Editor Docker Image
@@ -46,6 +48,8 @@ systemRequirements:
       version: 2
     - name: Redis
       version: 6.2
+    - name: Valkey
+      version: 7
     - name: Livingdocs Server Docker Image
       version: livingdocs/server-base:22
     - name: Livingdocs Editor Docker Image
@@ -304,6 +308,12 @@ module.exports = {
   async fetchMediaImage() {}
 }
 ```
+
+### Official Valkey Support :gift:
+
+[Valkey](https://valkey.io/) is now officially supported as a drop-in alternative to Redis. Valkey 7 and 9 are included in our test pipeline. The minimum supported version is Valkey 7, and the recommended version is Valkey 9.
+
+To use Valkey, point the existing Redis configuration in the server config to your Valkey instance. No other changes are required.
 
 ## Vulnerability Patches
 
