@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.11): fix: refactor migrations api
 - [v296.2.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.10): fix(deps): update dependency undici from 7.22.0 to 7.24.0 [security]
 - [v296.2.9](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.9): fix(deps): update dependency file-type from 21.3.0 to 21.3.2 [security]
 - [v296.2.8](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.8): fix(media-library): Don't replace time in usage log reporting date
