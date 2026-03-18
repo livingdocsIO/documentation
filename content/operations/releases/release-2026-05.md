@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Do not expose maxDimension if use2025Behavior is enabled](https://github.com/livingdocsIO/livingdocs-server/pull/9046)
 - [fix(deps): update dependency entities from 7.0.1 to v8 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9084)
 - [fix(deps): update dependency pusher-js from 8.4.0 to v8.4.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10886)
 - [Refactor migrations API](https://github.com/livingdocsIO/livingdocs-server/pull/9056)
