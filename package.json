@@ -8,7 +8,7 @@
     "domhandler": "^5.0.3",
     "domutils": "^3.2.2",
     "glob": "^13.0.0",
-    "htmlparser2": "^10.0.0",
+    "htmlparser2": "^11.0.0",
     "lunr": "^2.3.9",
     "serve": "^14.2.4"
   },
