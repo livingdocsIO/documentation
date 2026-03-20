@@ -516,6 +516,7 @@ Here is a list of all patches after the release has been announced.
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
+- [v123.3.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.38): fix(deps): Update vulnerable dependencies
 - [v123.3.37](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.37): fix(assistants): Fix image proposals in assistants
 - [v123.3.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.36): fix: request confirmation before archiving a group
 - [v123.3.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.35): fix(deps): update dependency fastify from 5.7.3 to 5.8.1 [security]
