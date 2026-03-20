@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix image proposals in assistants](https://github.com/livingdocsIO/livingdocs-editor/pull/10867)
 - [chore(deps): update dependency puppeteer-core from 24.39.1 to v24.40.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10891)
 - [Restrict image processing settings for use2025Behavior](https://github.com/livingdocsIO/livingdocs-server/pull/9047)
 - [Do not expose maxDimension if use2025Behavior is enabled](https://github.com/livingdocsIO/livingdocs-server/pull/9046)
