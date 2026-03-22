@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9101)
 - [Add vue-template-compiler to dependencies](https://github.com/livingdocsIO/livingdocs-editor/pull/10896)
 - [Fix image proposals in assistants](https://github.com/livingdocsIO/livingdocs-editor/pull/10867)
 - [chore(deps): update dependency puppeteer-core from 24.39.1 to v24.40.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10891)
