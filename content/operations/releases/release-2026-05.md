@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @livingdocs/framework from 33.0.0 to v33.0.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10900)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9101)
 - [Add vue-template-compiler to dependencies](https://github.com/livingdocsIO/livingdocs-editor/pull/10896)
 - [Fix image proposals in assistants](https://github.com/livingdocsIO/livingdocs-editor/pull/10867)
