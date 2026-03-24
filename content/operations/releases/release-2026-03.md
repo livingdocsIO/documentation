@@ -368,6 +368,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.25): chore(comments): Do not return initialRange from createThreadDraft
 - [v123.10.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.24): fix(tests): Clear localStorage to prevent cross-test contamination
 - [v123.10.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.23): fix(deps): update dependency @livingdocs/framework from 32.12.7 to v32.12.8
 - [v123.10.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.22): fix(deps): Add vue-template-compiler to dependencies to ensure it's always present
