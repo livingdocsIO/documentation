@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.13): fix(deps): update dependency @livingdocs/framework from 32.12.7 to v32.12.8
 - [v296.2.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.12): fix: do not expose maxDimension if use2025Behavior is enabled
 - [v296.2.11](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.11): fix: refactor migrations api
 - [v296.2.10](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.10): fix(deps): update dependency undici from 7.22.0 to 7.24.0 [security]
