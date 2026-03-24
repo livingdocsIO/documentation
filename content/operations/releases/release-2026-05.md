@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency @livingdocs/framework from 32.13.4 to v33 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9108)
 - [Clear localStorage to prevent cross-test contamination](https://github.com/livingdocsIO/livingdocs-editor/pull/10902)
 - [Add playwright tests for media library card configs](https://github.com/livingdocsIO/livingdocs-editor/pull/10376)
 - [fix(deps): update dependency @livingdocs/framework from 33.0.0 to v33.0.2 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10900)
