@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix selection mode by removing unused scrollPosition property](https://github.com/livingdocsIO/livingdocs-editor/pull/10910)
 - [fix(deps): update dependency @livingdocs/framework from 33.0.2 to v33.0.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9114)
 - [fix(deps): update dependency @livingdocs/framework from 33.0.2 to v33.0.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10909)
 - [Keep comments component link on transformed documents](https://github.com/livingdocsIO/livingdocs-editor/pull/9743)
