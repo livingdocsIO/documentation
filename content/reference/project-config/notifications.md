@@ -8,8 +8,7 @@ menu:
 
 You can configure `notifications` to enable the possibility that a user can get notifications for changes on a document.
 
-There is also a guide how to configure the notifications.
-[Notification guide]({{< ref "/guides/editor/notifications.md" >}})
+There is also a [Setup Notifications]({{< ref "/guides/editor/notifications.md" >}}) guide about how to configure the notifications.
 
 ```js
 notifications: {
@@ -40,8 +39,15 @@ notifications: {
 }
 ```
 
-Possible action to register on at the moment:
+Possible actions to register on at the moment:
 
+- document.publish
+- document.unpublish
+- document.copy
+- document.delete
+- document.transform
+- comment.add
+- comment.resolve
 - task.change
   config options:
 
@@ -52,15 +58,3 @@ Possible action to register on at the moment:
    // assign to task proofreading on statusChanges 'requested', 'accepted', 'completed'
   {type: 'task.change', taskName: 'proofreading', statusChange: ['requested', 'accepted', 'completed']}
   ```
-
-- document.publish
-- document.unpublish
-- document.copy
-- document.delete
-- document.transform
-- comment.add
-- comment.resolve
-
-A user can be mentioned in comment. [Comments mentioning]({{< ref "/guides/editor/notifications.md#comments-mentioning" >}})
-
-The comments mentioning doesn't have to be configured. It will work automatically as soon as the comments and the notifications are enabled.
