@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.15): fix(deps): update dependency fastify from 5.8.1 to 5.8.3 [security]
 - [v296.2.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.14): fix(image-processing): Handle SVG files above 10MB
 - [v296.2.13](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.13): fix(deps): update dependency @livingdocs/framework from 32.12.7 to v32.12.8
 - [v296.2.12](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.12): fix: do not expose maxDimension if use2025Behavior is enabled
