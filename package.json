@@ -6,7 +6,7 @@
   "dependencies": {
     "clipboard": "^2.0.11",
     "domhandler": "^5.0.3",
-    "domutils": "^3.2.2",
+    "domutils": "^4.0.0",
     "glob": "^13.0.0",
     "htmlparser2": "^10.0.0",
     "lunr": "^2.3.9",
