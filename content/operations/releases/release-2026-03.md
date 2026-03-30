@@ -370,6 +370,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.30): fix(media-library): Support display filters on multi-source side panel
 - [v123.10.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.29): chore(properties): Remove unused translation string from video panel
 - [v123.10.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.28): fix(deps): update dependency fastify to v5.8.3 [security]
 - [v123.10.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.27): fix(media-library): Disable toggle select when multi-select is disabled
