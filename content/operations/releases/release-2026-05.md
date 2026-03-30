@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9143)
 - [Handle SVG files above 10MB](https://github.com/livingdocsIO/livingdocs-server/pull/9122)
 - [Enable multi-select in side panels](https://github.com/livingdocsIO/livingdocs-editor/pull/10914)
 - [chore(deps): update aws-sdk from 3.1015.0 to v3.1017.0 (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/9113)
