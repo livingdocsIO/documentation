@@ -149,7 +149,8 @@ openapi:
                 items:
                   type: object
                   properties:
-                    id: integer
+                    id:
+                      type: integer
                     references:
                       type: array
                       items:
