@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Open lightbox with image locale used for thumbnail](https://github.com/livingdocsIO/livingdocs-editor/pull/10917)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10927)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9143)
 - [Handle SVG files above 10MB](https://github.com/livingdocsIO/livingdocs-server/pull/9122)
