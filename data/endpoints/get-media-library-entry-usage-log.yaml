@@ -1,0 +1,102 @@
+title: Get the Usage Log of a Media Library Entry
+
+history:
+  - release: release-2026-05
+    description: Initial support.
+
+description: |
+  Fetch the Usage Log of a Media Library Entry.
+
+scopes: public-api:read
+endpoint:
+  method: GET
+  path: /api/:apiVersion/mediaLibrary/{id}/usageLog
+responses:
+  - code: '200'
+    endpoint: /api/:apiVersion/mediaLibrary/{id}/usageLog
+    body: |
+      {
+        "results": [
+          {
+            "id": "g6Hmp49Y",
+            "url": "https://example.com/article/slug-121",
+            "state": "confirmed",
+            "params": {
+              "medium": "Internet"
+            },
+            "purpose": "web",
+            "documentId": 121,
+            "publicationId": 110,
+            "reportingDate": "2026-04-02T13:34:30.263Z",
+            "publicationDate": "2026-04-02T13:34:26.353Z"
+          }
+        ]
+      }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Media Library
+  operationId: getMediaLibraryEntryUsageLog
+  summary: Get the Usage Log of a Media Library Entry
+  description: Fetch the Usage Log of a Media Library Entry
+  parameters:
+    - name: id
+      description: Id of a Media Library entry
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              results:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    url:
+                      type: string
+                      format: url
+                    state:
+                      type: string
+                      enum:
+                        - pending
+                        - confirmed
+                    params:
+                      type: object
+                    purpose:
+                      type: string
+                    documentId:
+                      type: integer
+                    publicationId:
+                      type: integer
+                    reportingDate:
+                      type: string
+                      format: date-time
+                    publicationDate:
+                      type: string
+                      format: date-time
+          examples:
+            success:
+              value:
+                results:
+                  - id: 'g6Hmp49Y'
+                    url: 'https://example.com/article/slug-121'
+                    state: 'confirmed'
+                    params:
+                      medium: 'Internet'
+                    purpose: 'web'
+                    documentId: 121
+                    publicationId: 110
+                    reportingDate: '2026-04-02T13:34:30.263Z'
+                    publicationDate: '2026-04-02T13:34:26.353Z'

@@ -5,6 +5,8 @@ apiVersionConstraints:
   gte: 2026-03
 
 history:
+  - release: release-2026-05
+    description: Added `addUsageLogEntry`, `updateUsageLogEntry` and `removeUsageLogEntry` operations.
   - release: release-2026-03
     description: Added `preserveUpdatedAt` parameter. When set to `true`, the entry's `updated_at` timestamp is not modified. This is useful for imports and migrations where the original timestamps should be preserved.
   - release: release-2026-01
@@ -42,6 +44,8 @@ parameters:
     type: boolean
     required: false
     notes: |
+      {{< added-in "release-2026-03" block >}}
+
       When set to `true`, the entry's `updated_at` timestamp is not modified by the patch operation. By default (`false`), `updated_at` is set to the current time.
 
       This is useful for imports and migrations where the original timestamps should be preserved to maintain correct sort order.
@@ -50,11 +54,22 @@ parameters:
     required: true
     notes: |
       An array of patches to execute. Each entry is an object with the following keys:
-      - **operation** `setMetadataProperty`, `replaceAsset`, `revokeAsset`, `unrevokeAsset` ({{< added-in "release-2026-01" >}}), `archive` or `removeAsset`
+      - **operation**
+        - `setMetadataProperty`
+        - `archive`
+        - `replaceAsset`
+        - `removeAsset`
+        - `revokeAsset`
+        - `unrevokeAsset` ({{< added-in "release-2026-01" >}})
+        - `addUsageLogEntry` ({{< added-in "release-2026-05" >}})
+        - `updateUsageLogEntry` ({{< added-in "release-2026-05" >}})
+        - `removeUsageLogEntry` ({{< added-in "release-2026-05" >}})
       - **propertyName** string of the propertyName (only for setMetadataProperty)
       - **value** string or object for the new value. If set to null or value is not set it will remove the property for setMetadataProperty. **required** for replaceAsset operation.
       - **locale** string of the asset to be removed (only in multilingual setups for removeAsset)
       - **note** optional string with a maximum length of 200 characters. Only supported by the `revokeAsset` operation. ({{< added-in "release-2026-01" >}})
+      - **usageLogEntryId** required string to identify the usage log entry to operate on. Only supported by the `updateUsageLogEntry` and `removeUsageLogEntry` operations. ({{< added-in "release-2026-05" >}})
+      - **oldValue** optional object containing the previous usage log entry which must match for the operation to proceed. Only supported by the `updateUsageLogEntry` operation. ({{< added-in "release-2026-05" >}})
 
 example_request: |
   {
@@ -99,6 +114,37 @@ example_request: |
         // removes a translated asset (the default locale asset cannot be removed)
         "operation": "removeAsset",
         "locale": "en"
+      },
+      // add a usage log entry
+      {
+        operation: 'addUsageLogEntry',
+        value: {
+          state: 'pending', // Optional 'pending' or 'confirmed' (default: 'pending')
+          purpose: 'print', // Required handle of usage log purpose
+          publicationDate: '2026-05-01T11:00:00.000Z', // Required when state is 'confirmed'
+          url: 'http://localhost', // Optional link to external editor or delivery
+          params: {} // Any value for params defined in the `paramsSchema` of the selected purpose
+        }
+      },
+      // update a usage log entry
+      {
+        operation: 'updateUsageLogEntry',
+        usageLogEntryId: 'g1x419UgQSS5',
+        value: {
+          state: 'confirmed', // Required for updates
+          purpose: 'print',
+          publicationDate: '2026-05-01T11:00:00.000Z',
+          url: 'http://localhost',
+          params: {
+            medium: 'Paper'
+          }
+        },
+        oldValue: {} // Optional expected state condition
+      },
+      // remove a usage log entry
+      {
+        operation: 'removeUsageLogEntry',
+        usageLogEntryId: 'g1x419UgQSS5'
       }
     ]
   }
@@ -196,9 +242,30 @@ openapi:
                     filename: my-new-file.png
                     mimeType: image/png
                 - operation: revokeAsset
+                  note: 'Case #1'
+                - operation: unrevokeAsset
                 - operation: archive
                 - operation: removeAsset
                   locale: en
+                - operation: addUsageLogEntry
+                  value:
+                    state: 'pending'
+                    purpose: 'print'
+                    publicationDate: '2026-05-01T11:00:00.000Z'
+                    url: 'http://localhost'
+                    params: {}
+                - operation: updateUsageLogEntry
+                  usageLogEntryId: g1x419UgQSS5
+                  value:
+                    state: 'confirmed'
+                    purpose: 'print'
+                    publicationDate: '2026-05-01T11:00:00.000Z'
+                    url: 'http://localhost'
+                    params:
+                      medium: 'Paper'
+                  oldValue: {}
+                - operation: removeUsageLogEntry
+                  usageLogEntryId: g1x419UgQSS5
   responses:
     '200':
       description: ok
