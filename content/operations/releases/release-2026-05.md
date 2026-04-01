@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Rename colliding deprecation messages](https://github.com/livingdocsIO/livingdocs-server/pull/9156)
 - [Tabs in media library sidepanels](https://github.com/livingdocsIO/livingdocs-editor/pull/10931)
 - [Export media library entry usage log to CSV](https://github.com/livingdocsIO/livingdocs-editor/pull/10936)
 - [Expose Usage Log Commands in Public API](https://github.com/livingdocsIO/livingdocs-server/pull/9144)
