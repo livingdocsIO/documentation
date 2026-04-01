@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Fix validation of confirmed usage log entries](https://github.com/livingdocsIO/livingdocs-server/pull/9145)
 - [Fix display filters on multi-source side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/10915)
 - [Open lightbox with image locale used for thumbnail](https://github.com/livingdocsIO/livingdocs-editor/pull/10917)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10927)
