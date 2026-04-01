@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Export media library entry usage log to CSV](https://github.com/livingdocsIO/livingdocs-editor/pull/10936)
 - [Expose Usage Log Commands in Public API](https://github.com/livingdocsIO/livingdocs-server/pull/9144)
 - [Fix validation of confirmed usage log entries](https://github.com/livingdocsIO/livingdocs-server/pull/9145)
 - [Fix display filters on multi-source side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/10915)
