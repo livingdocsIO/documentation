@@ -161,6 +161,7 @@
     - incoming-publication-references-for-media
     - incoming-media-references-for-media
     - media-library-serve-image
+    - get-media-library-entry-usage-log
 
 # Start Imports section
 - title: Imports

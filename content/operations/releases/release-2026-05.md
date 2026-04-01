@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9227)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/10980)
 - [fix(deps): update dependency @livingdocs/framework from 33.0.3 to v33.0.4 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9223)
@@ -215,6 +216,78 @@ Please use the following replacements instead:
 ## Deprecations
 
 ## Features :gift:
+
+### Public API Endpoint to get the Usage Log of a Media Library Entry :gift:
+
+A new endpoint has been added, `GET /api/:apiVersion/mediaLibrary/:id/usageLog`, which returns all usage log entries for the specified media library entry. Further details can be found in the [Get the Usage Log of a Media Library Entry]({{< ref "/reference/public-api/media-library/#get-the-usage-log-of-a-media-library-entry" >}}) endpoint documentation.
+
+### Public API Operations to Modify Media Library Entry Usage Log Entries :gift:
+
+The Media Library Entry patch endpoint in the public API has been extended to allow external systems (e.g. print system) to report the usage of a media library entry and provide the details.
+
+Add a new entry:
+
+`PATCH /api/2026-05/mediaLibrary/{id}`
+
+```json
+{
+  "preserveUpdatedAt": true,
+  "patches": [
+    {
+      "operation": "addUsageLogEntry",
+      "value": {
+        "state": "pending", // Optional 'pending' or 'confirmed' (default: 'pending')
+        "purpose": "print", // Required handle of usage log purpose
+        "publicationDate": "2026-05-01T11:00:00.000Z", // Required when state is 'confirmed'
+        "url": "http://localhost", // Optional link to external editor or delivery
+        "params": {} // Any value for params defined in the `paramsSchema` of the selected purpose
+      }
+    }
+  ]
+}
+```
+
+Update an entry:
+
+`PATCH /api/2026-05/mediaLibrary/{id}`
+
+```json
+{
+  "preserveUpdatedAt": true,
+  "patches": [
+    {
+      "operation": "updateUsageLogEntry",
+      "usageLogEntryId": "g1x419UgQSS5",
+      "value": {
+        "state": "confirmed", // Required for updates
+        "purpose": "print",
+        "publicationDate": "2026-05-01T11:00:00.000Z",
+        "url": "http://localhost",
+        "params": {
+          "medium": "Paper"
+        }
+      },
+      "oldValue": {} // Optional expected state condition
+    }
+  ]
+}
+```
+
+Remove an entry:
+
+`PATCH /api/2026-05/mediaLibrary/{id}`
+
+```json
+{
+  "preserveUpdatedAt": true,
+  "patches": [
+    {
+      "operation": "removeUsageLogEntry",
+      "usageLogEntryId": "g1x419UgQSS5"
+    }
+  ]
+}
+```
 
 ## Vulnerability Patches
 
