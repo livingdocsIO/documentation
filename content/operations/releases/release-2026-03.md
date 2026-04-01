@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.17): chore(media-library): Simplify usage log params validation
 - [v296.2.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.16): fix(deps): update dependency nodemailer from 8.0.1 to 8.0.4 [security]
 - [v296.2.15](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.15): fix(deps): update dependency fastify from 5.8.1 to 5.8.3 [security]
 - [v296.2.14](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.14): fix(image-processing): Handle SVG files above 10MB
