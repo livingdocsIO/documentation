@@ -5,6 +5,8 @@ apiVersionConstraints:
   lte: 2026-01
 
 history:
+  - release: release-2026-05
+    description: Added `addUsageLogEntry`, `updateUsageLogEntry` and `removeUsageLogEntry` operations.
   - release: release-2026-01
     description: Added `unrevokeAsset` operation.<br>
       Added the `note` property to be used with the `revokeAsset` operation.
