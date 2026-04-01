@@ -175,6 +175,10 @@ No rollback steps are required for this release.
 
 ## Breaking Changes :fire:
 
+### Direct Imports from `lib/` :fire:
+
+Direct file imports from Livingdocs packages are not supported. This release might break direct imports from `lib/`. Downstreams are urged to remove all direct imports. Since this has never been supported, we will not communicate such changes in the future.
+
 ## Deprecations
 
 ## Features :gift:
