@@ -517,6 +517,7 @@ Here is a list of all patches after the release has been announced.
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
+- [v123.3.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.42): fix(deps): update dependency fastify from 5.8.1 to 5.8.3 [security]
 - [v123.3.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.41): fix(media-library): Support display filters on multi-source side panel
 - [v123.3.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.40): fix(editor): Remove unused scrollPosition property
 - [v123.3.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.39): fix(tests): Clear localStorage to prevent cross-test contamination
