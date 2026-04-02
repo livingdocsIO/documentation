@@ -80,6 +80,14 @@ contentTypes: [
       }
     ],
 
+    // Restricts which media type handles can be placed in the document.
+    // If not set, all media types are allowed.
+    allowedMediaTypes: {
+      mediaImage: ['image'],
+      mediaVideo: ['video'],
+      mediaFile: ['file']
+    },
+
     // Set the default mediaType handle to use for uploads, drag & drop etc.
     // The project config defaults will be used when these are not defined.
     defaultMediaTypes: {
@@ -559,7 +567,12 @@ The above example disables direct image uploads to Livingdocs and allows only th
 
 ## Image Media Type Restrictions
 
-{{< added-in "release-2025-09" >}}
+{{< added-in "release-2025-09" block >}}
+{{< deprecated-in "release-2026-05" block >}}
+
+{{< warning >}}
+`editor.images.mediaTypes` is deprecated and will be removed in `release-2026-11`. Use [`allowedMediaTypes.mediaImage`](#allowedmediatypes) instead.
+{{< /warning >}}
 
 You can restrict image operations (upload, drag & drop, media library selection) to specific media types for each content type using the `editor.images.mediaTypes` configuration.
 
@@ -578,49 +591,50 @@ When configured, this content type will only allow image operations using the sp
 
 If not configured, all image media types are allowed (default behavior).
 
-## useDashboard
+## Allowed Media Types
 
-{{< added-in "release-2026-01" >}}
-<br>
+{{< added-in "release-2026-05" block >}}
 
-Together with the introduction of [Media Library Dashboards]({{< ref "/guides/media-library/media-library-setup/index#media-library-dashboard-configuration" >}}), we are introducing the `useDashboard` property for images, videos and files.
-It determines which Media Library Dashboard is displayed for a specific media assetType (mediaImage, mediaVideo, or mediaFile) within a content type.
+`allowedMediaTypes` restricts which media types can be dragged from the sidepanel or a dialog into a document. If a user drags a media item of a type not listed in `allowedMediaTypes` into the document, an error is shown.
 
-Ultimately, `useDashboard` controls, which Media Library Dashboard is shown:
+```js
+{
+  allowedMediaTypes: {
+    mediaImage: ['myImage', 'myInfographic'],
+    mediaVideo: ['myVideo'],
+    mediaVideo: ['myFile']
+  }
+}
+```
 
-- in the document editor side panel for the media type (can be opened via the toolbar elements image / video / file).
-- in any dialog modal within the document editor that displays the media library.
+## Media Library Sidepanels and Dialogs
 
-#### Behaviour without useDashboard
+{{< added-in "release-2026-05" block >}}
 
-If **no** reference is configured, the displayed media library shows all available media types for images / videos / files, unless otherwise restricted.
-If mediaTypes are configured in `content-type.editor.images.mediaTypes`, only those mediaTypes are shown.
-This behavior applies only to images, cannot be combined with `useDashboard`, and will be deprecated in the future.
-We therefore recommend using `useDashboard` instead.
+Use `editor.images.useDashboard`, `editor.videos.useDashboard`, and `editor.files.useDashboard` to configure which [Media Library Dashboards]({{< ref "/guides/media-library/media-library-setup/index#media-library-dashboard-configuration" >}}) are shown in the image, video, and file sidepanels and selection dialogs for a content type. Each dashboard, media source, and image collection appears as its own tab.
 
-#### Behavior with useDashboard
-
-If `useDashboard` is configured, the displayed media library shows all media types for the asset type defined on the referenced dashboard.
-Both Base Filters and Display Filters configured on that dashboard are applied.
-
-#### Example Config
+{{< info >}}
+In {{< release "release-2026-01" >}} and {{< release "release-2026-03" >}}, `useDashboard` is already supported but only accepts a single dashboard. In addition, media results are always grouped by media type.
+{{< /info >}}
 
 ```js
 {
   handle: 'article',
   editor: {
     images: {
-      useDashboard: 'myImageLibrary',
+      useDashboard: ['images', 'infographics'],
     },
     videos: {
-      useDashboard: 'myVideoLibrary',
+      useDashboard: 'reels',
     },
     files: {
-      useDashboard: 'myFileLibrary'
+      useDashboard: 'epapers'
     }
   }
 }
 ```
+
+If `useDashboard` is not configured, all available media is shown in a single "Feed" tab and grouped by media type. This fallback behavior is deprecated and scheduled to change in `release-2026-11`.
 
 ## Teaser Previews
 

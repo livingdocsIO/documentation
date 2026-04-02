@@ -41,6 +41,17 @@ storageFormat: |
     ]
   }
 contentTypeConfig: |2
-        handle: 'myHandle'
+        handle: 'myHandle',
         type: 'li-poster-image'
+        config: {
+          required: true,                          // optional, default: false
+          requiredErrorMessage: 'Provide a value', // optional
+        },
+        ui: {
+          label: 'Poster Image',                   // optional
+          config: {
+            uploadMediaType: 'posterImage',        // optional, default: 'image'
+            useDashboard: 'posterImagesDashboard', // optional
+          }
+        }
 ---

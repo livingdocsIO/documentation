@@ -5,7 +5,7 @@ excludeFromSearch: true
 ---
 
 {{< warning >}}
-Before [release-2026-01]({{< ref "/operations/releases/release-2026-01#media-library-dashboards" >}}), Display Filters and Base Filters were defined directly on the Media Type, as shown in the example below. While this approach has not yet been deprecated, we recommend configuring the Media Library via a dedicated Media Library Dashboard ([See Media Library Setup Guide]({{< ref "/guides/media-library/media-library-setup/index" >}})) and referencing that dashboard from the Content Type, which shows your Images/Videos/Files.
+Before [release-2026-01]({{< ref "/operations/releases/release-2026-01#media-library-dashboards" >}}), Display Filters and Base Filters were defined directly on the Media Type. This approach has been deprecated in `release-2026-05` (and will be removed in `release-2026-11`) for media library panels, but not yet for management dashboards. We recommend configuring the Media Library via a dedicated Media Library Dashboard ([See Media Library Setup Guide]({{< ref "/guides/media-library/media-library-setup/index" >}})) and referencing that dashboard from the Content Type, which shows your Images/Videos/Files.
 When using this new setup, any Display Filters and Base Filters defined on the Media Type are automatically ignored for Media Library dashboards opened from the Main Navigation.
 For Media Library dashboards opened from the document editor, Display Filters and Base Filters are instead resolved from the [referenced Media Library dashboard]({{< ref "/reference/project-config/content-types#usedashboard" >}}), if one is configured.
 {{< /warning >}}
@@ -70,7 +70,9 @@ module.exports = {
     }
   ],
   editor: {
-    // the dashboard seen by users when opening Images from the document editor
+    // Deprecated since release-2026-05, will be removed in release-2026-11.
+    // Use useDashboard on the content type instead.
+    // The dashboard seen by users when opening Images from the document editor.
     dashboard: {
       displayFilters: [
         {
@@ -82,6 +84,7 @@ module.exports = {
       },
       baseFilters: [{key: 'metadata.transformed', term: true}]
     },
+    // Deprecated since release-2026-05, will be removed in release-2026-11.
     // the dashboard opened through the main navigation
     // `card`and `baseFilters` could also be added here
     managementDashboard: {
