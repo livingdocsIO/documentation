@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(media cards): Top Info](https://github.com/livingdocsIO/livingdocs-editor/pull/10942)
 - [fix(deps): update dependency pusher-js from 8.4.3 to v8.5.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10941)
 - [Rename colliding deprecation messages](https://github.com/livingdocsIO/livingdocs-server/pull/9156)
 - [Tabs in media library sidepanels](https://github.com/livingdocsIO/livingdocs-editor/pull/10931)
