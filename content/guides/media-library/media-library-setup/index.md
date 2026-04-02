@@ -31,14 +31,16 @@ Below you can see an example configuration.
 ```js
 // In editorSettings
 dashboards: [
-  type: 'mediaLibraryDashboard', // Required
-  handle: 'myMediaLibraryDashboard', // Required, must be unique
-  assetType: 'mediaImage', // Required: Finds available mediaTypes when not filtered by baseFilters
-  pageTitle: 'Images', // Optional, sets the title in the top toolbar, defaults to a generic title for the mediaType
-  baseFilters: [{key: 'mediaType', term: ['image1', 'image2']}], // Optional: Invisible base filters applied to every search (including the default result list)
-  displayFilters: [{filterName: 'liDateTimeRange'}], // Optional: Filters shown to the user below the search input
-  sort: 'updated_at', // Optional: Defaults to 'updated_at'
-  useCard: 'myImageCard' // Optional: References an existing DashboardCardConfiguration
+  {
+    type: 'mediaLibraryDashboard', // Required
+    handle: 'myMediaLibraryDashboard', // Required, must be unique
+    assetType: 'mediaImage', // Required: Finds available mediaTypes when not filtered by baseFilters
+    pageTitle: 'Images', // Optional, sets the title in the top toolbar, defaults to a generic title for the mediaType
+    baseFilters: [{key: 'mediaType', term: ['image1', 'image2']}], // Optional: Invisible base filters applied to every search (including the default result list)
+    displayFilters: [{filterName: 'liDateTimeRange'}], // Optional: Filters shown to the user below the search input
+    sort: 'updated_at', // Optional: Defaults to 'updated_at'
+    useCard: 'myImageCard' // Optional: References an existing DashboardCardConfiguration
+  }
 ]
 ```
 
@@ -66,7 +68,7 @@ To do so, add the card’s handle here. ([Read more about dashboard cards]({{< r
 Before [release-2026-01]({{< ref "/operations/releases/release-2026-01#media-library-dashboards" >}}), it was only possible to have a single Media Library per media category: Images, Videos, and Files.
 The [Main Navigation]({{< ref "/reference/project-config/editor-settings#main-navigation" >}}) automatically included entries for Images, Videos, and Files when a `liItem: 'mediaLibrary'` entry was present in the `mainNavigation` configuration and at least one corresponding Media Type existed.
 Both [Base Filters]({{< ref "/customising/advanced/editor-configuration/base-filter" >}}) and [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter" >}}) were defined on the Media Type ([legacy example]({{< ref "/reference/project-config/media-type-example-legacy" >}})). They could be defined individually for the Media Library shown in the document editor and for the Media Library accessible via the main navigation.
-While this approach is not yet deprecated, we encourage using the new Media Library Dashboard Configuration and referencing configured Media Library dashboards directly on the Content Type via [useDashboard]({{< ref "/reference/project-config/content-types#usedashboard" >}}) (see description above).
+This approach has been deprecated in `release-2026-05` and will be removed in `release-2026-11`. We recommend using the new Media Library Dashboard Configuration and referencing configured Media Library dashboards directly on the Content Type via [useDashboard]({{< ref "/reference/project-config/content-types#usedashboard" >}}) (see description above).
 {{< /info >}}
 
 ## 2025 Behavior
@@ -151,7 +153,7 @@ module.exports = {
 **Media Library Filters:**<br>
 **Legacy Media Type Configuration vs. Dashboard-Based Setup**<br>
 <br>
-Before [release-2026-01]({{< ref "/operations/releases/release-2026-01#media-library-dashboards" >}}), Display Filters and Base Filters were defined directly on the Media Type. While this approach has not yet been deprecated, we recommend configuring the Media Library via a dedicated Media Library Dashboard (see section beginning) and referencing that dashboard from the Content Type, which shows your Images/Videos/Files.
+Before [release-2026-01]({{< ref "/operations/releases/release-2026-01#media-library-dashboards" >}}), Display Filters and Base Filters were defined directly on the Media Type. This approach has been deprecated in `release-2026-05` and will be removed in `release-2026-11`. We recommend configuring the Media Library via a dedicated Media Library Dashboard (see the section above) and referencing that dashboard from the Content Type, which shows your Images/Videos/Files.
 When using this new setup, any Display Filters and Base Filters defined on the Media Type are automatically ignored for _Media Library dashboards opened from the Main Navigation_.
 For _Media Library dashboards opened from the document editor_, Display Filters and Base Filters are instead resolved from the [referenced Media Library dashboard]({{< ref "/reference/project-config/content-types#usedashboard" >}}) (`useDashboard`), if one is configured.
 For reference, the legacy configuration is documented here: [Basic Media Type example before release-2026-01]({{< ref "/reference/project-config/media-type-example-legacy" >}}).
@@ -480,7 +482,8 @@ module.exports = {
     }
   ],
   editor: {
-    // the dashboard seen by users when opening Images/Videos from the document editor
+    // Deprecated since release-2026-05, will be removed in release-2026-11.
+    // Use useDashboard on the content type instead.
     dashboard: {
       displayFilters: [{filterName: 'liDateTimeRange'}]
     },
@@ -518,7 +521,7 @@ module.exports = {
   info: {
     label: 'Poster Images'
   },
-  hidden: true, // This makes sure these images are not shown in the regular Image Library
+  hidden: true, // Deprecated since release-2026-05, will be removed in release-2026-11
   metadata: [
     {
       handle: 'title',

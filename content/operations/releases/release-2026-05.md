@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [Add Norwegian Translations](https://github.com/livingdocsIO/livingdocs-editor/pull/10892)
 - [fix(media cards): Top Info](https://github.com/livingdocsIO/livingdocs-editor/pull/10942)
 - [fix(deps): update dependency pusher-js from 8.4.3 to v8.5.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10941)
@@ -202,7 +203,78 @@ Please use the following replacements instead:
 
 ## Deprecations
 
+### Auto-Generated Media Library Dashboards
+
+Auto-generated media library dashboards using `{liItem: 'mediaLibrary'}` are deprecated and will be removed in release-2026-11. Remove `{liItem: 'mediaLibrary'}` as well as `mediaTypes[].editor.managementDashboard` and `mediaTypes[].editor.dashboard` from the project config.
+
+Configure [media library dashboards]({{< ref "/guides/media-library/media-library-setup/#media-library-dashboard-configuration" >}}) instead. These dashboards can also be referenced in content types to configure the dashboards shown in media library sidepanels and media selection dialogs, using `contentTypes[].editor.images.useDashboard`, `contentTypes[].editor.videos.useDashboard`, or `contentTypes[].editor.files.useDashboard`.
+
+### `contentTypes[].editor.images.mediaTypes`
+
+Project config property `contentTypes[].editor.images.mediaTypes` is deprecated and will be removed in `release-2026-11`. It controlled which media types were shown in image sidepanels and dialogs. Configure a media library dashboard with the appropriate `baseFilters` instead.
+
+### `mediaTypes[].hidden`
+
+Project config property `mediaTypes[].hidden` is deprecated and will be removed in `release-2026-11`. To hide a media type from sidepanels and dialogs, exclude it with `baseFilters` instead.
+
+For poster image media types, we introduce `useDashboard` on `li-poster-image` and `posterImageUseDashboard` on `li-video-reference` metadata plugins. You can use these to configure which dashboards appear when selecting a poster image. By setting `baseFilters` on those dashboards, you can specify which media types appear.
+
 ## Features :gift:
+
+### Tabs in Media Library Sidepanels and Dialogs :gift:
+
+When editors open the image, video, or file sidepanel in a document, or use a media selection dialog, the media library is now organized into tabs. Each tab corresponds to a configured media library dashboard, a media source, or image collections (if enabled on the project).
+
+{{< img src="release-2026-05-media-library-tabs.png" alt="Media library sidepanel with tabs for dashboards, media sources, and image collections" caption="Media library sidepanel showing dashboards, media sources, and image collections as tabs." >}}
+
+This replaces the previous behavior where media was grouped by media type. The old appearance is [deprecated]({{< relref "#auto-generated-media-library-dashboards" >}}) and will be removed in `release-2026-11`.
+
+#### Configuration
+
+`contentTypes[].editor.images.useDashboard`, `contentTypes[].editor.videos.useDashboard`, and `contentTypes[].editor.files.useDashboard` now accept a single dashboard handle or an array of handles. Each dashboard in the array becomes a tab.
+
+```js
+editor: {
+  images: {useDashboard: ['images', 'infographics']},
+  videos: {useDashboard: 'reels'}
+}
+```
+
+If no `useDashboard` is configured on a content type, a single "Feed" tab with all media grouped by type is shown instead. This is the old behavior and is now deprecated.
+
+For full configuration details, refer to the [Content Types reference]({{< ref "/reference/project-config/content-types#usedashboard" >}}).
+
+##### Image Collections
+
+For the dialog used to add an image to a collection, `imageCollections.useDashboard` also accepts an array of dashboard handles.
+
+```js
+imageCollections: {
+  useDashboard: ['images', 'infographics']
+}
+```
+
+##### Poster Images
+
+For the dialog used to select a poster image for a video, we introduce `ui.config.useDashboard` on [`li-poster-image`]({{< ref "/reference/document/metadata/plugins/li-poster-image/" >}}) and `ui.config.posterImageUseDashboard` on [`li-video-reference`]({{< ref "/reference/document/metadata/plugins/li-video-reference/" >}}) metadata plugins. You can use these to configure which dashboards appear when selecting a poster image.
+
+### Allowed Media Types :gift:
+
+The new `contentTypes[].allowedMediaTypes` configuration enforces that only specific media types can be placed in a document.
+
+```js
+allowedMediaTypes: {
+  mediaImage: ['myImage', 'myInfographic'],
+  mediaVideo: ['myVideo'],
+  mediaFile: ['myFile']
+}
+```
+
+If `allowedMediaTypes` is not configured, all media types are allowed (default behavior).
+
+It is possible to configure media library dashboards or image collections in sidepanels and dialogs in such a way that they show media types not listed in `allowedMediaTypes`. If a user tries to insert such an asset into a document, an error is shown. We recommend configuring dashboards with appropriate `baseFilters` so that only allowed media types are shown in the first place.
+
+For full configuration details, refer to the [Content Types reference]({{< ref "/reference/project-config/content-types#allowedmediatypes" >}}).
 
 ## Vulnerability Patches
 
