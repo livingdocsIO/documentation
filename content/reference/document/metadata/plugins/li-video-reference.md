@@ -32,7 +32,7 @@ storageFormat: |
     }
   }
 contentTypeConfig: |2
-        handle: 'myHandle'
+        handle: 'myHandle',
         type: 'li-video-reference',
         config: {
           // common
@@ -45,7 +45,8 @@ contentTypeConfig: |2
         },
         ui: {
           config: {
-            posterImageUploadMediaType: 'image2',  // optional, default: 'image'
+            posterImageUploadMediaType: 'posterImage',  // optional, default: 'image'
+            posterImageUseDashboard: 'posterImagesDashboard',  // optional
           }
         }
 ---
