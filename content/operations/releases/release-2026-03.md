@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.19): fix(channel-configs): Pass ttl to TTLCache in object
 - [v296.2.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.18): fix(project-config): Remove editMode: 'default' fallback value
 - [v296.2.17](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.17): chore(media-library): Simplify usage log params validation
 - [v296.2.16](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.16): fix(deps): update dependency nodemailer from 8.0.1 to 8.0.4 [security]
