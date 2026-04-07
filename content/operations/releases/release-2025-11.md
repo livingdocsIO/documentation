@@ -385,6 +385,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v284.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.36): fix(channel-configs): Pass ttl to TTLCache in object
 - [v284.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.35): fix(deps): update dependency fastify from 5.8.1 to 5.8.3 [security]
 - [v284.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.34): fix(image-processing): Handle SVG files above 10MB
 - [v284.0.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.33): fix: do not expose maxDimension if use2025Behavior is enabled
