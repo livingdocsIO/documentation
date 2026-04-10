@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(ld panel title): Collapse indicator position](https://github.com/livingdocsIO/livingdocs-editor/pull/10963)
 - [fix(navigation): Chevron spacing on mobile](https://github.com/livingdocsIO/livingdocs-editor/pull/10959)
 - [Add 2026-05 version support to Public API](https://github.com/livingdocsIO/livingdocs-server/pull/9190)
 - [Pass `ttl` to `set` method of TTLCache in an object to prevent error in latest versions](https://github.com/livingdocsIO/livingdocs-server/pull/9176)
