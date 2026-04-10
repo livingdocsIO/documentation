@@ -374,6 +374,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.33): fix(media-library): restore media source pagination
 - [v123.10.32](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.32): fix(navigation): Chevron spacing on mobile
 - [v123.10.31](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.31): fix(project-config): Remove editMode: 'default' fallback value
 - [v123.10.30](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.30): fix(media-library): Support display filters on multi-source side panel
