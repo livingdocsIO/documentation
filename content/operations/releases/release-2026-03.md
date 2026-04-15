@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.23): fix(deps): automatically patch Node.js vulnerabilities
 - [v296.2.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.22): fix(deps): update dependency @livingdocs/framework from 32.12.8 to v32.12.9
 - [v296.2.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.21): fix(deps): update dependency axios from 1.13.5 to 1.15.0 [security]
 - [v296.2.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.20): fix(image-processing): Do not swallow genuine errors
