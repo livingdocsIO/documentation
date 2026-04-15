@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9203)
 - [fix(deps): update dependency @livingdocs/framework from 33.0.3 to v33.0.4 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/10976)
 - [fix(ld panel title): Collapse indicator position](https://github.com/livingdocsIO/livingdocs-editor/pull/10963)
 - [fix(navigation): Chevron spacing on mobile](https://github.com/livingdocsIO/livingdocs-editor/pull/10959)
