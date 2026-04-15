@@ -385,6 +385,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v284.0.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.38): fix(deps): automatically patch Node.js vulnerabilities
 - [v284.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.37): fix(deps): update dependency @livingdocs/framework from 32.10.7 to v32.10.8
 - [v284.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.36): fix(channel-configs): Pass ttl to TTLCache in object
 - [v284.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.35): fix(deps): update dependency fastify from 5.8.1 to 5.8.3 [security]
