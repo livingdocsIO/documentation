@@ -519,6 +519,7 @@ Here is a list of all patches after the release has been announced.
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
+- [v123.3.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.44): fix(deps): update dependency @livingdocs/framework from 32.11.7 to v32.11.8
 - [v123.3.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.43): fix(project-config): Remove editMode: 'default' fallback value
 - [v123.3.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.42): fix(deps): update dependency fastify from 5.8.1 to 5.8.3 [security]
 - [v123.3.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.41): fix(media-library): Support display filters on multi-source side panel
