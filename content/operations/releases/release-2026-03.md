@@ -376,6 +376,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.36](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.36): fix(deps): automatically patch Node.js vulnerabilities
 - [v123.10.35](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.35): fix(deps): update dependency axios from 1.13.5 to 1.15.0 [security]
 - [v123.10.34](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.34): fix(ld panel title): Collapse indicator position
 - [v123.10.33](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.33): fix(media-library): restore media source pagination
