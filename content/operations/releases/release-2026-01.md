@@ -493,6 +493,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v294.0.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.22): fix(deps): update dependency @livingdocs/framework from 32.11.7 to v32.11.8
 - [v294.0.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.21): fix(channel-configs): Pass ttl to TTLCache in object
 - [v294.0.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.20): fix(project-config): Remove editMode: 'default' fallback value
 - [v294.0.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.19): fix(image-processing): Handle SVG files above 10MB
