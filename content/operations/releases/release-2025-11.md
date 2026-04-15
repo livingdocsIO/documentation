@@ -422,6 +422,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.47): fix(deps): automatically patch Node.js vulnerabilities
 - [v121.3.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.46): fix(deps): update dependency @livingdocs/framework from 32.10.7 to v32.10.8
 - [v121.3.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.45): fix(deps): update dependency fastify from 5.8.1 to 5.8.3 [security]
 - [v121.3.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.44): fix(editor): Remove unused scrollPosition property
