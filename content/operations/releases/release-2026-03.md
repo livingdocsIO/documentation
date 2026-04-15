@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.21): fix(deps): update dependency axios from 1.13.5 to 1.15.0 [security]
 - [v296.2.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.20): fix(image-processing): Do not swallow genuine errors
 - [v296.2.19](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.19): fix(channel-configs): Pass ttl to TTLCache in object
 - [v296.2.18](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.18): fix(project-config): Remove editMode: 'default' fallback value
