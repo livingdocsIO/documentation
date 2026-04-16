@@ -798,6 +798,7 @@ Define at least one purpose in the `projectConfig.mediaCenter.usageLog.purposes`
             en: 'Print',
             de: 'Druck'
           },
+          internal: false,
           paramsSchema: [
             {
               handle: 'page',
@@ -818,6 +819,8 @@ Define at least one purpose in the `projectConfig.mediaCenter.usageLog.purposes`
 ```
 
 The purposes are displayed to a user when creating or updating a usage log entry, or when downloading a media library entry. Any additional properties defined within the `paramsSchema` array will also be displayed when creating or updating an entry, but not in the download form. To see which metadata plugins are supported please refer to the [Metadata Plugins List]({{< ref "reference/document/metadata/plugins">}}). We automatically store the reporting date and `userId`, and provide input fields for the publication date, the state ("pending" or "confirmed") and a url.
+
+Usage log purposes can be flagged as internal. When the `internal` property is set to `true` it prevents a user from creating, updating or deleting entries for the purpose within the editor. A read-only entry will still be visible within the UI. This is intended to be used alongside the [`addUsageLogEntriesForMediaInDocument`]({{< ref "#generating-usage-log-entries-on-publish" >}}) function to create permanent entries.
 
 ### Creating usage log dashboards
 
@@ -894,5 +897,25 @@ liEditor.searchFilters.registerListV2('pendingMediaUsageLogs', {
       return options
     }
   }
+})
+```
+
+### Generating usage log entries on publish
+
+The function `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` can be used to easily create usage log entries. This function is intended to be used in a post publish hook and will add usage log entries for any referenced media library entries which do not already have a usage log entry for the document provided. The entry will automatically be marked as 'confimed' so any mandatory params must be provided.
+
+```js
+liServer.registerInitializedHook(() => {
+  const mediaLibraryApi = liServer.features.api('li-media-library')
+  liServer.registerPublicationHooks({
+    async postPublishHookAsync({documentVersion}) {
+      await mediaLibraryApi.addUsageLogEntriesForMediaInDocument({
+        documentVersion,
+        purpose: 'web',
+        url: `https://example.com/my-slug-${documentVersion.id}`, // Optional
+        params: {medium: 'Internet'} // Required params mandatory
+      })
+    }
+  })
 })
 ```

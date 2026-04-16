@@ -28,6 +28,7 @@ mediaCenter: {
           en: 'Print',
           de: 'Druck'
         },
+        internal: false,
         paramsSchema: [
           {
             handle: 'page',
