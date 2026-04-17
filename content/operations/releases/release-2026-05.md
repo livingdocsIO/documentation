@@ -214,6 +214,30 @@ Please use the following replacements instead:
 - `mediaLibrary.images.processing.maxFileSize` → `mediaLibrary.images.uploadRestrictions.maxFileSize`
 - `mediaLibrary.images.uploadRestrictions.maxResolution` → `mediaLibrary.images.processing.maxResolution`
 
+### Usage Log Params Schema Plugin Type Consistency
+
+All `paramsSchema` entries across usage log purposes are now checked for type consistency. This ensures metadata plugins with the same handle share the same type. If you get the error message while updating a project config then you will need to modify the paramsSchema properties indicated so that they match across all purposes. You may also need to write a script to perform a manual data migration if you want to keep the data. Please contact us if you need any support with this.
+
+An example of an invalid configuration:
+
+```js
+{
+  mediaCenter: {
+    usageLog: {
+      purposes: [
+        {handle: 'web', paramsSchema: [{handle: 'page', type: 'li-text'}]},
+        {handle: 'print', paramsSchema: [{handle: 'page', type: 'li-integer'}]}
+      ]
+    }
+  }
+}
+```
+
+To fix this example:
+
+- both page params would need to be either `li-text` or `li-integer`
+- or, one handle needs to be modified (e.g. renaming `page` to `webpage`)
+
 ## Deprecations
 
 ## Features :gift:
