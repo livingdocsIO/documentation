@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Make poster image dashboards in li-poster-image and li-video-reference configurable](https://github.com/livingdocsIO/livingdocs-editor/pull/10944)
 - [Make poster image dashboards in li-poster-image and li-video-reference configurable](https://github.com/livingdocsIO/livingdocs-server/pull/9164)
 - [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/9244)
 - [Show editable properties in the properties panel for editable teasers](https://github.com/livingdocsIO/livingdocs-editor/pull/10975)
