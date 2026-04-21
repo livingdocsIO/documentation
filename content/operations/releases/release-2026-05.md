@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Image Collections upload drag and drop](https://github.com/livingdocsIO/livingdocs-editor/pull/10954)
 - [Image Collections: inject built-in liImageCollection content type + creationflow when writing project config](https://github.com/livingdocsIO/livingdocs-server/pull/9236)
 - [Image Collections: Distinct between Document Inbox and Image Collections](https://github.com/livingdocsIO/livingdocs-editor/pull/10969)
 - [Image Collections: Distinct between Document Inbox and Image Collections](https://github.com/livingdocsIO/livingdocs-server/pull/9215)
