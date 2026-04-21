@@ -423,6 +423,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.49): fix(deps): update dependency @fastify/static from 8.3.0 to 9.1.1 [security]
 - [v121.3.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.48): fix(deps): update dependency lodash from 4.17.23 to 4.18.1 [security]
 - [v121.3.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.47): fix(deps): automatically patch Node.js vulnerabilities
 - [v121.3.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.46): fix(deps): update dependency @livingdocs/framework from 32.10.7 to v32.10.8
