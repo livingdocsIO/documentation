@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency file-type from 21.3.4 to v22 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9126)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9238)
 - [Make poster image dashboards in li-poster-image and li-video-reference configurable](https://github.com/livingdocsIO/livingdocs-editor/pull/10944)
 - [Make poster image dashboards in li-poster-image and li-video-reference configurable](https://github.com/livingdocsIO/livingdocs-server/pull/9164)
