@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Image Collections: Distinct between Document Inbox and Image Collections](https://github.com/livingdocsIO/livingdocs-editor/pull/10969)
 - [Image Collections: Distinct between Document Inbox and Image Collections](https://github.com/livingdocsIO/livingdocs-server/pull/9215)
 - [fix(deps): update dependency file-type from 21.3.4 to v22 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9126)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9238)
