@@ -1173,7 +1173,11 @@ mediaLibrary: {
       },
       // optional - convert images to another format at upload time
       convert: [
-        {sourceFormat: 'jpeg', targetFormat: 'webp'}
+        {sourceFormat: 'jpeg', targetFormat: 'webp'},
+        // WebP-specific encoding options (only valid when targetFormat is 'webp')
+        {sourceFormat: 'png', targetFormat: 'webp', quality: 90},
+        {sourceFormat: 'tif', targetFormat: 'webp', nearLossless: true},
+        {sourceFormat: 'png', targetFormat: 'webp', lossless: true}
       ]
     }
   }
@@ -1198,8 +1202,18 @@ mediaLibrary: {
   - `maxDimension` — largest allowed side in pixels (default `6000`); images exceeding this are downscaled.
   - `quality` — compression quality for lossy formats such as JPEG (default `80`).
 
-- **`convert`** (array, optional)
-  Automatically convert uploaded images from one format to another (e.g. JPEG → WebP).
+- **`convert`** (array, optional)  
+  Automatically convert uploaded images from one format to another at upload time.  
+  Each entry requires the following properties:
+  - `sourceFormat` (string) - file extension of the source image. e.g. `'jpeg'`, `'png'`, `'tiff'`.
+  - `targetFormat` (string) — file extension to convert to. e.g. `'webp'`, `'avif'`, `'png'`, `'jpeg'`, `'tiff'`, `'gif'`.
+
+  When `targetFormat` is `'webp'`, three additional encoding options are available:
+  - `quality` (number, 1–100) — lossy compression quality (default: `80`).
+  - `nearLossless` (boolean) — near-lossless WebP compression.
+  - `lossless` (boolean) — fully lossless WebP compression.
+
+  Using `quality`, `nearLossless`, or `lossless` with any `targetFormat` other than `'webp'` throws a configuration error at startup.
 
 #### Filename Strategy
 
