@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Upgrade to @livingdocs/fastify-webpack@5.1.1](https://github.com/livingdocsIO/livingdocs-editor/pull/11014)
 - [Upgrade to @livingdocs/framework that doesn't load jquery and jsdom on the server](https://github.com/livingdocsIO/livingdocs-server/pull/9250)
 - [Image Collections upload drag and drop](https://github.com/livingdocsIO/livingdocs-editor/pull/10954)
 - [Image Collections: inject built-in liImageCollection content type + creationflow when writing project config](https://github.com/livingdocsIO/livingdocs-server/pull/9236)
