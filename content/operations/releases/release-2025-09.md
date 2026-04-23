@@ -563,6 +563,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v281.3.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.46): fix: Fix ajv string format for comma separated ids
 
 - [v281.3.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.45): fix(images): Allow gif uploads with 1800 frames
 - [v281.3.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v281.3.44): fix(dep): Update dependencies
