@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Make livingdocs work with ignore-scripts=true to prevent supply chain attacks](https://github.com/livingdocsIO/livingdocs-server/pull/9245)
 - [Fix ajv string format for comma separated ids](https://github.com/livingdocsIO/livingdocs-server/pull/9265)
 - [Support quality, lossless and nearLossless options for webp images](https://github.com/livingdocsIO/livingdocs-server/pull/9258)
 - [Upgrade to @livingdocs/fastify-webpack@5.1.1](https://github.com/livingdocsIO/livingdocs-editor/pull/11014)
