@@ -523,6 +523,7 @@ Here is a list of all patches after the release has been announced.
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
+- [v123.3.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.47): fix(named-crops): triggering auto save on sidepanel open
 - [v123.3.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.46): fix(deps): update dependency fastify from 5.8.3 to 5.8.5 [security]
 - [v123.3.45](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.45): fix(deps): automatically patch Node.js vulnerabilities
 - [v123.3.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.44): fix(deps): update dependency @livingdocs/framework from 32.11.7 to v32.11.8
