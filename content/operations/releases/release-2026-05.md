@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Drop support for deprecated li-target-length UI config properties](https://github.com/livingdocsIO/livingdocs-editor/pull/11024)
 - [fix(named-crops): triggering auto save on sidepanel open](https://github.com/livingdocsIO/livingdocs-editor/pull/11022)
 - [fix(media-library): extra search on image click](https://github.com/livingdocsIO/livingdocs-editor/pull/11023)
 - [Make livingdocs work with ignore-scripts=true to prevent supply chain attacks](https://github.com/livingdocsIO/livingdocs-server/pull/9245)
