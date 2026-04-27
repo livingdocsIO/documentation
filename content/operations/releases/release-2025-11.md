@@ -385,6 +385,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v284.0.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.41): chore(notifications): Warn instead of error when Slack user not found
 - [v284.0.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.40): fix(deps): update dependency fastify from 5.8.3 to 5.8.5 [security]
 - [v284.0.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.39): fix: Fix ajv string format for comma separated ids
 - [v284.0.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.38): fix(deps): automatically patch Node.js vulnerabilities
