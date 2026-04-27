@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.28): fix(media-library): Destroy asset stream on error to prevent leak
 - [v296.2.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.27): chore(notifications): Warn instead of error when Slack user not found
 - [v296.2.26](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.26): fix: Fix ajv string format for comma separated ids
 - [v296.2.25](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.25): fix(deps): update dependency fastify from 5.8.3 to 5.8.5 [security]
