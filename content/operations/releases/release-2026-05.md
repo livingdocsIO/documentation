@@ -371,6 +371,7 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
+- [v123.21.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.2): fix(publish-control): Use correct publishControlMode for labels
 
 ---
 
