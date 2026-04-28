@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Create usage log entries on publish](https://github.com/livingdocsIO/livingdocs-server/pull/9165)
 - [fix(media-library): actionbar positioning when closing sidepanel](https://github.com/livingdocsIO/livingdocs-editor/pull/11031)
 - [Remove li-target-length deprecated properties](https://github.com/livingdocsIO/livingdocs-server/pull/9287)
 - [Add GET endpoint to Public API for media library usage log](https://github.com/livingdocsIO/livingdocs-server/pull/9232)
