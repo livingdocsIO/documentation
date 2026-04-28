@@ -383,6 +383,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.41): fix(deps): automatically patch Node.js vulnerabilities
 - [v123.10.40](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.40): fix(named-crops): triggering auto save on sidepanel open
 - [v123.10.39](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.39): fix(deps): update dependency @fastify/static from 9.0.0 to 9.1.1 [security]
 - [v123.10.38](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.38): chore(properties): Remove handling for AngularJS panel
