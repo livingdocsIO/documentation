@@ -334,6 +334,46 @@ Remove an entry:
 }
 ```
 
+### Create usage log entries on publish :gift:
+
+The function `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` has been introduced to make it easier to create usage log entries. This function is intended to be used in a post publish hook and will add usage log entries for any referenced media library entries which do not already have a usage log entry for the current document. The entry will automatically be marked as 'confimed' so any mandatory params must be provided.
+
+```js
+liServer.registerInitializedHook(() => {
+  const mediaLibraryApi = liServer.features.api('li-media-library')
+  liServer.registerPublicationHooks({
+    async postPublishHookAsync({documentVersion}) {
+      await mediaLibraryApi.addUsageLogEntriesForMediaInDocument({
+        documentVersion,
+        purpose: 'web',
+        url: `https://example.com/my-slug-${documentVersion.id}`, // Optional
+        params: {medium: 'Internet'} // Required params mandatory
+      })
+    }
+  })
+})
+```
+
+### Internal Usage Log Purposes :gift:
+
+Usage log purposes can now be flagged as internal. When set to `true` it prevents a user from creating, updating or deleting entries for the purpose within the editor. A read-only entry will still be visible within the UI. This is intended to be used alongside the `addUsageLogEntriesForMediaInDocument` function to create permanent entries.
+
+```js
+{
+  mediaCenter: {
+    usageLog: {
+      purposes: [
+        {
+          handle: 'web',
+          label: 'Web',
+          internal: true // <-- New property
+        }
+      ]
+    }
+  }
+}
+```
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
