@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Add GET endpoint to Public API for media library usage log](https://github.com/livingdocsIO/livingdocs-server/pull/9232)
 - [Public API `executeDocumentCommands` method returns public document version](https://github.com/livingdocsIO/livingdocs-server/pull/9191)
 - [Image Collections: Enable actions in collections and allow multiselect](https://github.com/livingdocsIO/livingdocs-editor/pull/10999)
 - [Drop support for deprecated li-target-length UI config properties](https://github.com/livingdocsIO/livingdocs-editor/pull/11024)
