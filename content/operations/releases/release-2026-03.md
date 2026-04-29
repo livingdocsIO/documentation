@@ -384,6 +384,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.44](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.44): fix(media-library): Support media source selection in collection dialog
 - [v123.10.43](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.43): fix(publish-control): Use correct publishControlMode for labels
 - [v123.10.42](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.42): fix(media-library): actionbar positioning when closing sidepanel
 - [v123.10.41](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.41): fix(deps): automatically patch Node.js vulnerabilities
