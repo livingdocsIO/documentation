@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/9318)
 - [fix(deps): update dependency @livingdocs/framework from 34.0.2 to v34.1.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9307)
 - [fix(deps): update dependency @livingdocs/framework from 34.0.2 to v34.1.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11045)
 - [Use publish button "release" label for issue pages](https://github.com/livingdocsIO/livingdocs-editor/pull/11041)
