@@ -340,6 +340,51 @@ Remove an entry:
 }
 ```
 
+### Image Collections :gift:
+
+Teams managing large volumes of images - covering ongoing topics, events, or editorial series - can now organize images directly in Livingdocs using Image Collections. A collection is a curated, folder-like grouping with support for nested sub-groups, drag-and-drop ordering, real-time collaboration, and full media library actions. It closes the gap for teams that need structured, long-lived image organization without leaving the platform.
+
+{{< img src="release-2026-05-image-collections.png" alt="Image Collections showing grouped images with drag-and-drop zones" width="600" >}}
+
+#### Adding Images
+
+Upload images directly from the file system or an external DAM by dragging them into any group - or use the **Upload Image** button in the toolbar. Images can also be added from any media library dashboard via multi-select. A single image can exist in multiple collections simultaneously.
+
+#### Multi-select and Batch Actions
+
+Each image in a collection has a context menu with actions: open the detail view, send to inbox, archive, add to another collection, or remove from the collection. Select multiple images to apply any of these as a batch action in one go.
+
+#### Where Is This Image Used?
+
+The media detail view shows which collection and group an image belongs to, with full breadcrumb paths - alongside any Document Inbox references.
+
+#### Configuration
+
+Add `imageCollections` to the project config and reference it in the editor settings main navigation:
+
+```js
+// project config
+imageCollections: {
+  pageTitle: {en: 'Image Collections'},
+  mediaTypes: ['imageColour', 'imageGreyscale'],
+  useDashboard: 'allImagesMediaDashboard' // optional: media library dashboard shown in the modal
+}
+```
+
+```js
+// editor settings, mainNavigation
+{
+  handle: 'imageCollections',
+  label: {en: 'Image Collections'},
+  imageCollections: 'myImageCollections',
+  icon: 'image-filter-hdr'
+}
+```
+
+After configuration, activate permissions for the built-in **Collections** content type in the permissions panel.
+
+For more information, see the [Image Collections]({{< ref "/guides/media-library/image-collections" >}}) documentation.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
