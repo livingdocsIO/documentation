@@ -385,6 +385,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v284.0.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.43): fix(deps): update dependency @livingdocs/framework from 32.10.8 to v32.10.9
 - [v284.0.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.42): fix(deps): automatically patch Node.js vulnerabilities
 - [v284.0.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.41): chore(notifications): Warn instead of error when Slack user not found
 - [v284.0.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.40): fix(deps): update dependency fastify from 5.8.3 to 5.8.5 [security]
