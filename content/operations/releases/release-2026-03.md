@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.30): fix(deps): update dependency @livingdocs/framework from 32.12.9 to v32.12.10
 - [v296.2.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.29): fix(deps): automatically patch Node.js vulnerabilities
 - [v296.2.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.28): fix(media-library): Destroy asset stream on error to prevent leak
 - [v296.2.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.27): chore(notifications): Warn instead of error when Slack user not found
