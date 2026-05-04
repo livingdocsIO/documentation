@@ -96,7 +96,10 @@ You can use Metadata Filters, wherever Display Filters are allowed. The example 
 }
 ```
 
-All metadata properties in your `Content Type`|`Media Type` config can be used as a Metadata Filter, if the metadata type is supported (see below):
+All metadata properties in your `Content Type`|`Media Type` config can be used as a Metadata Filter, if the metadata type is supported (see below).
+
+> **Note:** If you are handling large numbers of data records (100+), ensure that the [`limit` field on `paginationFindConfig`](https://docs.livingdocs.io/customising/server-configuration/#documents) is set to `1000` otherwise only a subset of the total number will be displayed.
+
 
 - [`li-integer`]({{< ref "/reference/document/metadata/plugins/li-integer">}})
 - [`li-category`]({{< ref "/reference/document/metadata/plugins/li-category">}})
