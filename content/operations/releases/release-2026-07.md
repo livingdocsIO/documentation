@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix: batch editing validation](https://github.com/livingdocsIO/livingdocs-editor/pull/11038)
 - [fix(deps): update dependency @livingdocs/framework from 34.1.0 to v34.1.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11060)
 - [fix(deps): update dependency @livingdocs/framework from 34.1.0 to v34.1.1 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9326)
 - [Hide state of media source items](https://github.com/livingdocsIO/livingdocs-editor/pull/11052)
