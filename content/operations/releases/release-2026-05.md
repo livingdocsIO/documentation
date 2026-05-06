@@ -285,6 +285,56 @@ For poster image media types, we introduce `useDashboard` on `li-poster-image` a
 
 ## Features :gift:
 
+### Image Collections :gift:
+
+Image Collections allow editors to curate persistent, named sets of images for large or ongoing topics.
+They complement Media Library Dashboards (for research) and the Document Inbox (for short-term article work).
+Collections are shared across the project and can be browsed directly from the editor when picking images for a document.
+
+They are curated, folder-like groupings with support for nested sub-groups, drag-and-drop ordering, direct uploads and real-time collaboration.
+
+{{< img src="release-2026-05-image-collections.png" alt="Image Collections showing grouped images with drag-and-drop zones" width="300" >}}
+
+#### Adding & Organizing Images
+
+You can add one or multiple images from any media library dashboard.
+Images can also be uploaded directly from your file system or an external source by dragging them into a collection or using the upload button.
+Images can be grouped into subgroups, with up to six levels of nesting.
+You can create an unlimited number of groups, add them to other collections or ungroup them.
+
+#### Multi-select and Batch Actions
+
+Similar to the Media Library, each image in a collection has a context menu with actions: add to another collection, send to inbox, store or remove it from the archive (`use2025behavior` required), or remove it from the collection.
+It is also possible to open the detail view of each image to edit its metadata.
+You can select multiple images and apply any of these actions in a single batch operation.
+
+#### Configuration
+
+Add `imageCollections` to the project config and reference it in the editor settings main navigation:
+
+```js
+// project config
+imageCollections: {
+  pageTitle: {en: 'Image Collections'},
+  mediaTypes: ['images', 'infographics'],
+  useDashboard: 'myMediaLibraryDashboard'
+}
+```
+
+```js
+// editor settings, mainNavigation
+{
+  liItem: 'imageCollections'
+}
+```
+
+After configuration, activate document permissions for the built-in `Collections` content type in the project settings.
+Users also need `read` permissions on **all** configured `mediaTypes` to access Image Collections.
+
+{{< info >}}
+For full (technical) documentation of this feature, see the [Image Collections Guide]({{< ref "/guides/media-library/image-collections/" >}}).
+{{< /info >}}
+
 ### Public API Endpoint to get the Usage Log of a Media Library Entry :gift:
 
 A new endpoint has been added, `GET /api/:apiVersion/mediaLibrary/:id/usageLog`, which returns all usage log entries for the specified media library entry. Further details can be found in the [Get the Usage Log of a Media Library Entry]({{< ref "/reference/public-api/media-library/#get-the-usage-log-of-a-media-library-entry" >}}) endpoint documentation.
@@ -451,57 +501,6 @@ If `allowedMediaTypes` is not configured, all media types are allowed (default b
 It is possible to configure media library dashboards or image collections in sidepanels and dialogs in such a way that they show media types not listed in `allowedMediaTypes`. If a user tries to insert such an asset into a document, an error is shown. We recommend configuring dashboards with appropriate `baseFilters` so that only allowed media types are shown in the first place.
 
 For full configuration details, refer to the [Content Types reference]({{< ref "/reference/project-config/content-types#allowedmediatypes" >}}).
-TODO: Add image
-TODO: Callout guide
-TODO: What happens with multiple media library useDashboards (array)
-TODO: Change string in main navi into boolean
-
-### Image Collections :gift:
-
-Image Collections allow editors to curate persistent, named sets of images for large or ongoing topics.
-They complement Media Library Dashboards (for research) and the Document Inbox (for short-term article work).
-Collections are shared across the project and can be browsed directly from the editor when picking images for a document.
-
-They are curated, folder-like groupings with support for nested sub-groups, drag-and-drop ordering, direct uploads and real-time collaboration.
-
-{{< img src="release-2026-05-image-collections.png" alt="Image Collections showing grouped images with drag-and-drop zones" width="600" >}}
-
-For full (technical) documentation of this feature, see the [Image Collections Guide]({{< ref "/guides/media-library/image-collections/" >}}).
-
-#### Adding Images
-
-You can add one or multiple images from any media library dashboard.
-Images can also be uploaded directly from your file system or an external source by dragging them into a collection or using the **Upload Image** button.
-
-#### Multi-select and Batch Actions
-
-Similar to the Media Library, each image in a collection has a context menu with actions: open the detail view, send to inbox, archive/remove from archive (`use2025behavior`), add to another collection, or remove from the collection.
-You can select multiple images and apply any of these actions in a single batch operation.
-
-#### Configuration
-
-Add `imageCollections` to the project config and reference it in the editor settings main navigation:
-
-```js
-// project config
-imageCollections: {
-  pageTitle: {en: 'Image Collections'},
-  mediaTypes: ['images', 'infographics'],
-  useDashboard: 'myMediaLibraryDashboard'
-}
-```
-
-```js
-// editor settings, mainNavigation
-{
-  handle: 'imageCollections',
-  label: {en: 'Image Collections'},
-  imageCollections: 'myImageCollections',
-}
-```
-
-After configuration, activate document permissions for the built-in `Collections` content type in the project settings.
-Users also need `read` permissions on **all** configured `mediaTypes` to access Image Collections.
 
 ### Media Library Batch Metadata Editing :gift:
 
