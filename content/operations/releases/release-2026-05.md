@@ -452,6 +452,18 @@ It is possible to configure media library dashboards or image collections in sid
 
 For full configuration details, refer to the [Content Types reference]({{< ref "/reference/project-config/content-types#allowedmediatypes" >}}).
 
+### Media Library Batch Metadata Editing :gift:
+
+The Media Center already supports batch actions such as archiving, deleting, and moving assets to an inbox. Metadata editing is now available as an additional batch action, making it easy to correct or enrich metadata across many assets at once.
+
+{{< img src="release-2026-05-media-library-batch-actions.png" alt="Batch action bar showing 3 selected assets with icons for edit metadata, download, send to inbox, store in archive, and delete" >}}
+
+Editors can select multiple assets and edit their metadata in a single combined dialog. The dialog shows thumbnails for each selected asset alongside status indicators for unsaved changes, validation errors, and saving state. Fields that differ across selected assets are clearly marked: leaving a field unchanged keeps each asset's original value, while editing it applies the new value to all selected assets.
+
+This feature is automatically available in all Media Center dashboards. No configuration required.
+
+For more information, see the [Batch Actions]({{< ref "/guides/media-library/batch-actions" >}}) documentation.
+
 ## Vulnerability Patches
 
 We are constantly patching module vulnerabilities for the Livingdocs Server and Livingdocs Editor as module fixes are available. Below is a list of all patched vulnerabilities included in the release.
@@ -481,6 +493,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
