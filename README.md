@@ -184,6 +184,18 @@ npm install -g markdown-link-check
 markdown-link-check SUMMARY.md -q
 ```
 
+## Claude Code Skills
+
+This repo ships Claude Code skills for common workflows. To install them locally, copy the skill to your global skills directory:
+
+```bash
+cp -r .claude/skills/update-release-metadata ~/.claude/skills/
+```
+
+### Available skills
+
+**`update-release-metadata`** — Prepares a PR for announcement day: creates the branch, updates the release metadata in `data/releases.json` and the relevant `content/operations/releases/*.md` files, commits, pushes, and opens the PR. Invoke it by describing what you want, e.g. _"update release metadata for release-2026-05"_, or with `/update-release-metadata`.
+
 ## Release Notes
 
 ### Generate Release Changes File
