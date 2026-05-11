@@ -74,8 +74,6 @@ To learn about the necessary actions to update Livingdocs to `boilerplate-releas
 
 - Feature Webinar Recording: **TODO**
 - Feature Webinar Documentation: **TODO**
-- Dev Webinar Recording: **TODO**
-- Dev Webinar Slides: **TODO**
 - [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ## System Requirements
