@@ -186,11 +186,7 @@ markdown-link-check SUMMARY.md -q
 
 ## Claude Code Skills
 
-This repo ships Claude Code skills for common workflows. To install them locally, copy the skill to your global skills directory:
-
-```bash
-cp -r .claude/skills/update-release-metadata ~/.claude/skills/
-```
+This repo ships Claude Code skills for common workflows.
 
 ### Available skills
 
