@@ -493,6 +493,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v294.0.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.30): fix(deps): update dependency @opentelemetry/sdk-node from 0.208.0 to 0.217.0 [security]
 - [v294.0.29](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.29): chore: Use enumerable headers object in the axios test helper
 - [v294.0.28](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.28): fix(deps): update dependency @livingdocs/framework from 32.11.8 to v32.11.9
 - [v294.0.27](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.27): fix(deps): automatically patch Node.js vulnerabilities
