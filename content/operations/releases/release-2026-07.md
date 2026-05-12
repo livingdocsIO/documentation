@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(includes): li-string-list value not shown immediately in include service params panel](https://github.com/livingdocsIO/livingdocs-editor/pull/11051)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9341)
 - [chore(deps): update dependency sinon from 21.1.2 to v22 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9349)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9325)
