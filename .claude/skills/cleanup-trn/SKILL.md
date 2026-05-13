@@ -140,15 +140,25 @@ Once all PRs have been handled, remove the entire `## Caveat` block and the `## 
 
 ### 5e. Update Vulnerability Patches
 
-The `## Vulnerability Patches` section has two subsections (Server and Editor) with a `- TBD` placeholder. There are two ways to find patches:
+The `## Vulnerability Patches` section has two subsections (Server and Editor) with a `- TBD` placeholder.
 
-**Option B (recommended):** Use the GitHub MCP to search merged PRs in both `livingdocsIO/livingdocs-server` and `livingdocsIO/livingdocs-editor` for PRs tagged with `security` or titled like "Patch vulnerable dependencies [release-XXXX-XX]". Report what you find to the user.
+Use the GitHub MCP to search for merged PRs that have both the `security` label and the `released on @<release-handle>` label in both repos (substituting the actual release handle):
 
-**Option A (more accurate):** Ask the user to check out the release branch (e.g. `release-2026-07`), run `npm ci` and `npm audit`, and share the results.
+```
+repo:livingdocsIO/livingdocs-server is:pr is:merged label:security label:"released on @release-2026-05"
+repo:livingdocsIO/livingdocs-editor is:pr is:merged label:security label:"released on @release-2026-05"
+```
 
-Present your findings and then replace the `- TBD` placeholder with the actual CVE list.
+**Extracting the CVE list:**
+Read the body of each matching PR and extract the vulnerability entries. The format for the TRN is:
 
-**If no patches are found yet:** Leave the `- TBD` placeholder in place and add a checkbox to the PR's `## Open Tasks` section (do not mention it in the changelog).
+```
+- [CVE-XXXX-XXXXX / GHSA-xxxx-xxxx-xxxx](https://github.com/advisories/GHSA-xxxx-xxxx-xxxx) patched in <package> v<version>
+```
+
+Some entries may only have a GHSA identifier (no CVE) — that's fine, just omit the `CVE-... / ` prefix. See older releases (already read in Step 1) for style reference.
+
+Replace each `- TBD` placeholder with the extracted list. If a subsection has no patches, leave its `- TBD` in place. If neither subsection has any patches, also add a checkbox to the PR's `## Open Tasks` section (do not mention it in the changelog).
 
 ## Step 6: Commit, push, and open PR
 
