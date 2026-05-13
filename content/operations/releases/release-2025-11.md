@@ -429,6 +429,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.52): fix(deps): update dependency axios from 1.15.0 to 1.15.2 [security]
 - [v121.3.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.51): fix(deps): automatically patch Node.js vulnerabilities
 - [v121.3.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.50): fix(named-crops): triggering auto save on sidepanel open
 - [v121.3.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.49): fix(deps): update dependency @fastify/static from 8.3.0 to 9.1.1 [security]
