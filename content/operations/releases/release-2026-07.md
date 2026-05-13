@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Image Collections: Improve config for main navigation item](https://github.com/livingdocsIO/livingdocs-editor/pull/11066)
 - [fix(upload): validation state for single images](https://github.com/livingdocsIO/livingdocs-editor/pull/11065)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11078)
 - [fix(includes): li-string-list value not shown immediately in include service params panel](https://github.com/livingdocsIO/livingdocs-editor/pull/11051)
