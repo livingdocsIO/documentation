@@ -144,14 +144,6 @@ To fix this example:
 
 The `allowAnyNumber`, `showExactCountCheckbox`, and `unit` properties inside `ui.config` of `li-target-length` and `li-system-target-length` metadata plugins have been removed. Please use `ui.config.mode` instead.
 
-### `@livingdocs/framework` No Longer Loads jQuery and JSDOM on the Server :fire:
-
-The `@livingdocs/framework` package no longer loads jQuery and JSDOM on the server. No behavior change is expected, but memory usage will decrease. Remove any code that relies on these being available as side effects of loading the framework.
-
-### Stricter Public API Versioning :fire:
-
-New functionality is now only available in new API version endpoints. Any additions made to older API versions will be removed — upgrade to at least the version where the change was introduced.
-
 ## Deprecations
 
 ### Deprecate support for Redis versions below 7.4
@@ -454,6 +446,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v301.1.4](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.4): fix(image-collections): add breaking change to not use any dashboards with handle imageCollections
 - [v301.1.3](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.3): fix(blob-store): suppress late AbortError from Azure download streams
 
@@ -462,6 +455,7 @@ Here is a list of all patches after the release has been announced.
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+
 - [v123.21.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.8): fix(image-collections): add imageCollections as coreItem instead of enrichedItem
 - [v123.21.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.7): fix(image-collections): use container's filtered items for move position
 
