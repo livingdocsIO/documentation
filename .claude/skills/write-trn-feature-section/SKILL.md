@@ -10,7 +10,7 @@ description: Write a Feature section entry for a Livingdocs Technical Release No
 Ask **one question at a time** — wait for each answer before asking the next:
 
 1. **Release** — identifier in `release-YYYY-MM` format. Accept plain year/month and normalize it yourself.
-2. **GitHub PR URLs** — ask for the first URL. After receiving it, ask "Any more PRs? (say 'done' to continue)" and keep collecting until done.
+2. **GitHub PR URLs** — ask whether they'd like to add all URLs at once or one at a time. If one at a time: ask for the first URL, then ask "Any more PRs? (say 'done' to continue)" and keep collecting until done. If all at once: accept a list of URLs in a single message.
 3. **Notion requirement URL** — original requirement page (if available)
 4. **Product Demo Presentation** — Figma Slides URLs are not supported. Ask the developer to paste the first slide screenshot (`Cmd+V` / `Ctrl+V`) or slide text/notes. Then ask "Any more slides? (say 'done' to continue)". Say "none" to skip.
 5. **Additional context** — free-form notes, summaries, or exclusions (e.g. "ignore PR #123"). Optional.
@@ -31,6 +31,8 @@ Ask **one question at a time** — wait for each answer before asking the next:
 ### Optimized Media Library Modal :gift:
 
 We've optimized the image selection modal to display more images by increasing its width. The modal now shows up to 6 images per row (depending on screen size), compared to the previous layout. This makes better use of available screen space.
+
+For more information, see the [Media Library]({{< ref "/reference/media-library" >}}) documentation.
 ```
 
 **Example 2 - Complex (sub-sections, config, before/after):**
@@ -67,6 +69,8 @@ A new optional configuration property `precision` allows you to configure whethe
         }
       }
     }
+
+For more information, see the [Distribution Dates]({{< ref "/reference/distribution-dates" >}}) documentation.
 ```
 
 ## Step 3: Write the feature entry
