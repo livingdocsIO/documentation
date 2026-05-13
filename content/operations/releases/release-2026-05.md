@@ -142,6 +142,10 @@ To fix this example:
 
 The `allowAnyNumber`, `showExactCountCheckbox`, and `unit` properties inside `ui.config` of `li-target-length` and `li-system-target-length` metadata plugins have been removed. Please use `ui.config.mode` instead.
 
+### Reserving Dashboard Handle 'ImageCollections' :fire:
+
+The dashboard handle `ImageCollections` can not be used, as it is a reserved handle.
+
 ## Deprecations
 
 ### Deprecate support for Redis versions below 7.4
