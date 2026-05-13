@@ -88,7 +88,9 @@ Work through the sub-steps below in order. Some require user input before you ca
 
 First, scan the existing `## Breaking Changes`, `## Deprecations`, and `## Features` sections and note what's already documented. Then compare against the confirmed Notion list and only work on the gaps — items missing entirely or listed as "TODO"/incomplete.
 
-For each missing item, add it to the appropriate section. Use the related PRs from the `## PRs to Categorize` list to gather details — read the PR descriptions for context on what changed and why. Use the previous release's TRN (already read in Step 1) as a style reference — match heading level, tone, and level of detail.
+For each missing item, add it to the appropriate section. Use the related PRs from the `## PRs to Categorize` list to gather details — read the PR descriptions for context on what changed and why.
+
+When writing a new **Feature entry**, follow the writing guidelines in `.claude/skills/write-trn-feature-section/SKILL.md` (Steps 3 and 4) — this covers format, tone, activation status, config blocks, and the `:gift:` emoji convention. During cleanup you won't have all the inputs that skill normally gathers (demo slides, screenshots, Notion requirement, doc links) — write the best entry you can from the PR alone, and for any inputs that are missing but would meaningfully improve the entry, add a checkbox to the PR's `## Open Tasks` list rather than leaving a placeholder in the entry itself.
 
 If items exist in the file already but are incomplete (e.g. listed as "TODO" or lacking description), flag them to the user and ask how to proceed.
 
