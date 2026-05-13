@@ -148,10 +148,6 @@ The `allowAnyNumber`, `showExactCountCheckbox`, and `unit` properties inside `ui
 
 The `@livingdocs/framework` package no longer loads jQuery and JSDOM on the server. No behavior change is expected, but memory usage will decrease. Remove any code that relies on these being available as side effects of loading the framework.
 
-### `executeDocumentCommands` Returns Public Document Version :fire:
-
-From API version `2026-05` onward, the public API `executeDocumentCommands` method returns a public document version instead of the document write model. Pass `apiVersion: '2026-05'` to your requests to opt in early.
-
 ### Stricter Public API Versioning :fire:
 
 New functionality is now only available in new API version endpoints. Any additions made to older API versions will be removed — upgrade to at least the version where the change was introduced.
@@ -405,6 +401,17 @@ This feature is automatically available in all Media Center dashboards. No confi
 
 For more information, see the [Batch Actions]({{< ref "/guides/media-library/batch-actions" >}}) documentation.
 
+### Return Public Document Version from `publicApi.executeDocumentCommands()`
+
+The public API `executeDocumentCommands` method can now return a public document version instead of the document write model. This aligns the return value to all other media library methods of the Public API. Pass `apiVersion: '2026-05'` to your requests to opt-in early.
+
+```js
+liServer.features.api('li-public-api').executeDocumentCommands({
+  // ...
+  apiVersion: '2026-05'
+})
+```
+
 ### Norwegian UI Translations :gift:
 
 The Livingdocs Editor is now available in Norwegian. The translations are automatically applied when the browser language is set to Norwegian.
@@ -442,11 +449,13 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v301.1.2](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.2): fix(deps): update dependency @opentelemetry/sdk-node from 0.215.0 to 0.217.0 [security]
 
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+
 - [v123.21.6](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.6): fix(deps): automatically patch Node.js vulnerabilities
 - [v123.21.5](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.5): fix(includes): expose params getter to maintain public API for tests
 
