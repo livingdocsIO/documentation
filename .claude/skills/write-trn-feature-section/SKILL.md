@@ -1,4 +1,9 @@
-Write a Feature section entry for a Livingdocs Technical Release Note (TRN) and insert it into the correct release file. Use when a developer wants to document a new feature in `content/operations/releases/`.
+---
+name: write-trn-feature-section
+description: Write a Feature section entry for a Livingdocs Technical Release Note (TRN) and insert it into the correct release file. Use this skill whenever a developer wants to document a new feature, asks to write or add a TRN entry, mentions "write feature section", "add a feature to the release notes", or provides PR URLs and asks to document a feature for a specific release (e.g. "write the TRN entry for release-2026-05"). This skill handles the full workflow: gathering PR details, Notion requirements, and screenshots, writing the entry in the right tone and format, and inserting it into the release file.
+---
+
+# Write TRN Feature Section
 
 ## Step 1: Gather inputs
 
