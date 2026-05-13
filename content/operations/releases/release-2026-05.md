@@ -413,6 +413,8 @@ liServer.features.api('li-public-api').executeDocumentCommands({
 
 The Livingdocs Editor is now available in Norwegian. The translations are automatically applied when the browser language is set to Norwegian.
 
+For setup instructions, see the [Configure Multi-Language UI]({{< ref "/guides/editor/multi-language-ui/" >}}) guide.
+
 ### Reduce Supply Chain Attack Vector :gift:
 
 Livingdocs Server now supports running with `ignore-scripts=true` in npm. This prevents arbitrary scripts from running during package installation, reducing the attack surface for supply chain attacks.
