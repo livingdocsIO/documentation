@@ -192,6 +192,8 @@ This repo ships Claude Code skills for common workflows.
 
 **`update-release-metadata`** — Prepares a PR for announcement day: creates the branch, updates the release metadata in `data/releases.json` and the relevant `content/operations/releases/*.md` files, commits, pushes, and opens the PR. Invoke it by describing what you want, e.g. _"update release metadata for release-2026-05"_, or with `/update-release-metadata`.
 
+**`cleanup-trn`** — Cleans up the Technical Release Notes (TRN) for a Livingdocs release: gathers features, breaking changes, and deprecations from Notion, creates the git branch and PR, checks migrations, and systematically edits the TRN file. Invoke it by describing what you want, e.g. _"clean up the TRN for release-2026-07"_, or with `/cleanup-trn`.
+
 ## Release Notes
 
 ### Generate Release Changes File
