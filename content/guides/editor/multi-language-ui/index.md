@@ -13,6 +13,7 @@ keywords:
   - French
   - English
   - German
+  - Norwegian
   - Translating Config
 ---
 
@@ -28,7 +29,7 @@ Set the default Editor UI language in the [Editor config]({{< ref "/reference/pr
 ```js
 app: {
   locale: 'de', // optional, language to show UI in - defaults to 'en'
-  availableLocales: ['de', 'en', 'fr', 'it'] // optional - languages available in UI language switcher
+  availableLocales: ['de', 'en', 'fr', 'it', 'nb-NO', 'nn-NO'] // optional - languages available in UI language switcher
 }
 ```
 
@@ -37,6 +38,8 @@ If `app.availableLocales: undefined | undefined` then the language switcher will
 As of {{< release "release-2023-07" >}}, the UI is available in English (`en`) and German (`de`).
 
 As of {{< release "release-2023-09" >}}, the UI is additionally available in French (`fr`) and Italian (`it`).
+
+As of {{< release "release-2026-05" >}}, the UI is additionally available in Norwegian Bokmål (`nb-NO`) and Norwegian Nynorsk (`nn-NO`).
 
 ## Translating Config Labels, Placeholders and Titles
 
@@ -54,14 +57,18 @@ metadata: [
         en: 'Category',
         de: 'Kategorie',
         fr: 'Catégorie',
-        it: 'Categoria'
+        it: 'Categoria',
+        'nb-NO': 'Kategori',
+        'nn-NO': 'Kategori'
       },
       config: {
         placeholder: {
           en: 'Select a category',
           de: 'Wählen Sie eine Kategorie aus',
           fr: 'Sélectionnez une catégorie',
-          it: 'Seleziona una categoria'
+          it: 'Seleziona una categoria',
+          'nb-NO': 'Velg en kategori',
+          'nn-NO': 'Vel ein kategori'
         }
       }
     },
@@ -74,7 +81,9 @@ metadata: [
               en: 'Politics',
               de: 'Politik',
               fr: 'Politique',
-              it: 'Politica'
+              it: 'Politica',
+              'nb-NO': 'Politikk',
+              'nn-NO': 'Politikk'
             },
             value: 'politics'
           },
@@ -83,7 +92,9 @@ metadata: [
               en: 'Economy',
               de: 'Wirtschaft',
               fr: 'Économie',
-              it: 'Economia'
+              it: 'Economia',
+              'nb-NO': 'Økonomi',
+              'nn-NO': 'Økonomi'
             },
             value: 'economy'
           }
