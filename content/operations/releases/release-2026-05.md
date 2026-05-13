@@ -416,23 +416,25 @@ For setup instructions, see the [Configure Multi-Language UI]({{< ref "/guides/e
 ### Reduce Supply Chain Attack Vector :gift:
 
 Livingdocs Server now supports running with `ignore-scripts=true` in npm. This prevents arbitrary scripts from running during package installation, reducing the attack surface for supply chain attacks.
-Verify that no dependency in your tree depends on postinstall scripts.
-You can execute the following query to verify that:
 
-```js
-  npm query ":attr(scripts, [postinstall]), :attr(scripts, [preinstall]), :attr(scripts, [install])" \
-    | jq -r '.[].name' \
-    | grep -vxE 'protobufjs|exifreader|leveldown|sharp|@parcel/watcher' \
-    | sort -u
-```
+1. To verify that no dependency in your tree depends on postinstall scripts, you can use the following script:
 
-Once that’s verified, set `ignore-scripts=true` in your `.npmrc` files in every livingdocs project.
+   ```js
+   npm query ":attr(scripts, [postinstall]), :attr(scripts, [preinstall]), :attr(scripts, [install])" \
+     | jq -r '.[].name' \
+     | grep -vxE 'protobufjs|exifreader|leveldown|sharp|@parcel/watcher' \
+     | sort -u
+   ```
 
-```js
-  package-lock=true
-  ignore-scripts=true
-  //registry.npmjs.org/:_authToken=${NPM_TOKEN}
-```
+2. If there are modules listed, please verify their `postinstall` declaration in the package.json does not use logic your instance depends on.
+3. Once you don't depend on any `postinstall` scripts anymore,  
+   please set `ignore-scripts=true` in your `.npmrc` files in every livingdocs project.
+
+   ```js
+   package-lock=true
+   ignore-scripts=true
+   //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+   ```
 
 ## Vulnerability Patches
 
