@@ -131,7 +131,7 @@ Many features ship as a server PR + editor PR with the same title — treat thes
 Go through each PR listed under `## PRs to Categorize`. For each one:
 
 1. **If it belongs to a feature already in `## Features`** — remove it from the list.
-2. **If it's a dependency bump, backported bugfix, chore, or release management noise** (titles like `fix(deps):`, `chore(deps):`, `Patch vulnerabilities`, `Bump minor version for release management`) — remove it from the list.
+2. **If it's a dependency bump, backported bugfix, chore, or release management noise** (titles like `fix(deps):`, `chore(deps):`, `Patch vulnerabilities`, `Bump minor version for release management`) — remove it from the list. For any PR where the title doesn't make this obvious, fetch the PR body and check for a line like `Backport: release-YYYY-MM` — if present, the PR is a backport and can be safely removed from the list.
 3. **If it looks like a Breaking Change** not yet in `## Breaking Changes` — add it to that section and remove it from the list. The number of breaking changes should match the version jump between releases.
 4. **If it's internal infrastructure** (e.g. "Add 2026-05 version support to Public API") — ask the user whether it should be added to the Open Tasks list or just removed.
 5. **If it doesn't fit any category and isn't noise** — it may represent an undocumented feature or change. Flag it to the user: either add an entry for it in the appropriate TRN section, or reach out to the PR author to clarify what it covers. If the user wants to defer it, add it as a checkbox in an `## Open Tasks` section on the PR using `gh pr edit`.
