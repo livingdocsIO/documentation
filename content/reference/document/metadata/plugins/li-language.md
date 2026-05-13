@@ -22,7 +22,19 @@ description: |
   When adding `li-language`, it allows a user to translate articles and pages into different languages. Additionally you need to enable [translationWorkflow and requiredOnCreation]({{< ref "/reference/project-config/settings" >}}).
 
   Data Records also support translations, but need to add the metadata plugin [li-metadata-translations]({{< ref "/reference/document/metadata/plugins/li-metadata-translations" >}}).
-defaultUI: None
+defaultUI: |
+    Optional but can be configured as follows:
+
+    ```js
+    ui: {
+      label: 'Language', // optional
+      config: {
+        readOnly: true // optional, default: false
+      }
+    }
+    ```
+
+    This will permit users with multiple languages enabled to change the language metadata field via a dropdown field.
 storageFormat: |
   {
     locale: <String>,
