@@ -61,8 +61,8 @@ To learn about the necessary actions to update Livingdocs to `release-2026-05`, 
 
 ## Webinar
 
-- Feature Webinar Recording: **TODO**
-- Feature Webinar Documentation: **TODO**
+- [Feature Webinar Recording](https://us02web.zoom.us/rec/share/vnqeExm1SU0mcT0Deg6THk6QPLyUHsuwTIpHB2hs9FU27YiVZLSS2vPR14LZpsbh.pJcM4iPUnja9n5VU?startTime=1778500779000) | Passcode: `rt^R3TS7`
+- [Feature Webinar Slides](https://drive.google.com/file/d/1N6MoKI1P1JyEo0wsPFlf3U8GnJAQgFWx/view?usp=drive_link)
 - [Release Newsletter Subscription](https://confirmsubscription.com/h/j/61B064416E79453D)
 
 ## System Requirements
