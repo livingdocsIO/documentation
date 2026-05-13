@@ -444,15 +444,11 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 
 This release we have patched the following vulnerabilities in the Livingdocs Server:
 
-- TBD
+- [CVE-2026-44902 / GHSA-q7rr-3cgh-j5r3](https://github.com/advisories/GHSA-q7rr-3cgh-j5r3) patched in @opentelemetry/sdk-node v0.217.0
 
 No known vulnerabilities. :tada:
 
 ### Livingdocs Editor
-
-This release we have patched the following vulnerabilities in the Livingdocs Editor:
-
-- TBD
 
 We are aware of the following vulnerabilities in the Livingdocs Editor:
 
