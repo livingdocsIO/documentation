@@ -388,6 +388,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.49](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.49): fix(drafts): Reload editor when document contentType changes via remote update
 - [v123.10.48](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.48): fix(deps): update dependency sanitize-html from 2.17.1 to 2.17.4 [security]
 - [v123.10.47](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.47): fix(image-collections): use container's filtered items for move position
 - [v123.10.46](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.46): fix(deps): update dependency @livingdocs/framework from 32.12.9 to v32.12.10
