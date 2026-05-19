@@ -474,6 +474,7 @@ Here is a list of all patches after the release has been announced.
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+- [v123.21.9](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.9): fix(deps): update dependency sanitize-html from 2.17.3 to 2.17.4 [security]
 
 - [v123.21.8](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.8): fix(image-collections): add imageCollections as coreItem instead of enrichedItem
 - [v123.21.7](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.7): fix(image-collections): use container's filtered items for move position
