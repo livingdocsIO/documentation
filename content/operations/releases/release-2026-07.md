@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9375)
 - [fix(documents): Serialize content in transform functions to generate component IDs](https://github.com/livingdocsIO/livingdocs-server/pull/9368)
 - [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/9381)
 - [fix(deps): update dependency @livingdocs/framework from 34.1.1 to v34.1.2 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9372)
