@@ -528,6 +528,7 @@ Here is a list of all patches after the release has been announced.
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
+- [v123.3.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.53): fix(deps): update dependency sanitize-html from 2.17.0 to 2.17.4 [security]
 - [v123.3.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.52): fix(image-collections): use container's filtered items for move position
 - [v123.3.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.51): fix(deps): update dependency @livingdocs/framework from 32.11.8 to v32.11.9
 - [v123.3.50](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.50): fix(publish-control): Use correct publishControlMode for labels
