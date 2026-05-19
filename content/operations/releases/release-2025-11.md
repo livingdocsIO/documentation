@@ -430,6 +430,7 @@ Here is a list of all patches after the release has been announced.
 - [v284.0.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.6): fix(auth): Use accessTokenTtl for serve-image token expiration
 
 ### Livingdocs Editor Patches
+- [v121.3.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.54): fix(deps): update dependency sanitize-html from 2.17.0 to 2.17.4 [security]
 - [v121.3.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.53): fix(deps): update dependency @livingdocs/framework from 32.10.8 to v32.10.9
 - [v121.3.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.52): fix(deps): update dependency axios from 1.15.0 to 1.15.2 [security]
 - [v121.3.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v121.3.51): fix(deps): automatically patch Node.js vulnerabilities
