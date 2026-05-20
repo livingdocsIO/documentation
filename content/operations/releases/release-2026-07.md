@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Only generate statistics and references for read migrations when there is content](https://github.com/livingdocsIO/livingdocs-server/pull/9389)
 - [Fix flaky Playwright tests](https://github.com/livingdocsIO/livingdocs-editor/pull/11055)
 - [fix(drafts): Reload editor when document contentType changes via remote update](https://github.com/livingdocsIO/livingdocs-editor/pull/11099)
 - [Remove unused functions in auth api](https://github.com/livingdocsIO/livingdocs-server/pull/9374)
