@@ -465,6 +465,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v301.1.7](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.7): fix(deps): update dependency ws from 8.20.0 to 8.20.1 [security]
 - [v301.1.6](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.6): fix(migrations): Only generate statistics and references with content
 - [v301.1.5](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.5): test: Adjust transform tests to account for serialized component IDs
 
