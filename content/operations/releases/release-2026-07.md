@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Remove Google Vision integration (LIDEP073)](https://github.com/livingdocsIO/livingdocs-server/pull/9397)
 - [Remove Google Vision integration (LIDEP073)](https://github.com/livingdocsIO/livingdocs-editor/pull/11129)
 - [chore: Migrate signup screen to vue](https://github.com/livingdocsIO/livingdocs-editor/pull/11076)
 - [Only generate statistics and references for read migrations when there is content](https://github.com/livingdocsIO/livingdocs-server/pull/9389)
