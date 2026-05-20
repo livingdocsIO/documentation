@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.34): fix(migrations): Only generate statistics and references with content
 - [v296.2.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.33): test: Adjust transform tests to account for serialized component IDs
 - [v296.2.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.32): fix(deps): update dependency @opentelemetry/sdk-node from 0.212.0 to 0.217.0 [security]
 - [v296.2.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.31): chore: Use enumerable headers object in the axios test helper
