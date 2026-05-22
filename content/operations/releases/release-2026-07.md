@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Remove #lib alias](https://github.com/livingdocsIO/livingdocs-server/pull/9409)
 - [Add stats endpoint for total media library entries per project](https://github.com/livingdocsIO/livingdocs-server/pull/9402)
 - [Remove Google Vision integration (LIDEP073)](https://github.com/livingdocsIO/livingdocs-server/pull/9397)
 - [Remove Google Vision integration (LIDEP073)](https://github.com/livingdocsIO/livingdocs-editor/pull/11129)
