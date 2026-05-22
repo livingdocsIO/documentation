@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.36): fix: remove #lib alias
 - [v296.2.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.35): fix(deps): update dependency ws from 8.19.0 to 8.20.1 [security]
 - [v296.2.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.34): fix(migrations): Only generate statistics and references with content
 - [v296.2.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.33): test: Adjust transform tests to account for serialized component IDs
