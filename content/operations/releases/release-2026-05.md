@@ -480,6 +480,7 @@ Here is a list of all patches after the release has been announced.
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+- [v123.21.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.13): fix(scrollbars): styling and active pill scrolling in media panel
 - [v123.21.12](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.12): fix(media-library): Hide internal usage log purposes when downloading
 - [v123.21.11](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.11): fix(project-config): show kordiam form and nav
 - [v123.21.10](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.10): fix(drafts): Reload editor when document contentType changes via remote update
