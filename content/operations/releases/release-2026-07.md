@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Remove translations missing from the editing API update payload](https://github.com/livingdocsIO/livingdocs-server/pull/9404)
 - [Hide internal usage log purposes when downloading images](https://github.com/livingdocsIO/livingdocs-editor/pull/11132)
 - [Design/Scrollbars](https://github.com/livingdocsIO/livingdocs-editor/pull/11021)
 
