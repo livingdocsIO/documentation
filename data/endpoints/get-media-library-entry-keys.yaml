@@ -1,0 +1,65 @@
+title: Get All Media Library Entry Keys
+
+apiVersionConstraints:
+  gte: 2026-03
+
+history:
+  - release: release-2026-03
+    description: Initial support.
+
+description: |
+  Fetch all asset keys (including variants) for a Media Library Entry. Useful for cache purging when image caches are handled by external systems.
+
+scopes: public-api:read
+endpoint:
+  method: GET
+  path: /api/:apiVersion/mediaLibrary/{id}/keys
+responses:
+  - code: '200'
+    endpoint: /api/:apiVersion/mediaLibrary/{id}/keys
+    body: |
+      {
+        "results": [
+          "my/key.jpg",
+          "my/replaced-key.jpg",
+          "my/translated-key.jpg",
+          "v/my/variant-key.webp"
+        ]
+      }
+
+openapi:
+  security:
+    - bearerAuth:
+        - public-api:read
+  tags:
+    - Media Library
+  operationId: getAllKeysForMediaLibraryEntry
+  summary: Get All Media Library Entry Keys
+  description: Fetch all asset keys (including variants) for a Media Library Entry. Useful for cache purging when image caches are handled by external systems. Requires `apiVersion` 2026-03 or above.
+  parameters:
+    - name: id
+      description: Id of a Media Library entry
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: ok
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              results:
+                type: array
+                items:
+                  type: string
+          examples:
+            success:
+              value:
+                results:
+                  - 'my/key.jpg'
+                  - 'my/replaced-key.jpg'
+                  - 'my/translated-key.jpg'
+                  - 'v/my/variant-key.webp'

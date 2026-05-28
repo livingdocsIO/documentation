@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+
 - [Expose `getAllKeysForMediaLibraryEntry` in Public API](https://github.com/livingdocsIO/livingdocs-server/pull/9312)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11136)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9419)
@@ -145,6 +146,16 @@ No rollback steps are required for this release.
 ## Deprecations
 
 ## Features :gift:
+
+### Get All Media Library Entry Keys for Cache Purging :gift:
+
+Sometimes clearing image caches after a revoke or modification is handled by external systems. In order to do this effectively all variant keys must also be cleared. To support this a new `GET /api/:apiVersion/mediaLibrary/:id/keys` endpoint has been added to the Public API. The `:apiVersion` must be 2026-03 or above. The return value of the endpoint will look like this:
+
+```js
+{
+  results: ['my/key.jpg', 'my/replaced-key.jpg', 'my/translated-key.jpg', 'v/my/variant-key.webp']
+}
+```
 
 ## Vulnerability Patches
 
