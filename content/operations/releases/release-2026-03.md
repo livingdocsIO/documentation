@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.38): fix: nest replaceTranslations flag in options property
 - [v296.2.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.37): fix(public-api): Expose getAllKeysForMediaLibraryEntry
 - [v296.2.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.36): fix: remove #lib alias
 - [v296.2.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.35): fix(deps): update dependency ws from 8.19.0 to 8.20.1 [security]
