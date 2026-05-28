@@ -46,7 +46,7 @@ See the [mediaType reference]({{< ref "/reference/project-config/media-types.md"
 
 **`useDashboard`** (optional): The handle or an array of handles of existing [Media Library Dashboards]({{< ref "/guides/media-library/media-library-setup/#media-library-dashboard-configuration" >}}).
 These dashboards are shown as tabs inside the dialog when browsing for images to add to a collection from within a collection.
-More about that in [Tabs in Media Library Sidepanels and Dialogs]({{< ref "/operations/releases/release-2026-05#tabs-in-media-library-sidepanels-and-dialogs-gift" >}}).
+More about that in [Tabs in Media Library Sidepanels and Dialogs]({{< ref "/operations/releases/release-2026-05#tabs-in-media-library-sidepanels-and-dialogs" >}}).
 Make sure the dashboard's filters and base filters cover the same media types listed in `mediaTypes`.
 If `useDashboard` is not configured, all available media is shown in a single "Feed" tab and grouped by media type.
 

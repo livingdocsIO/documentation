@@ -97,7 +97,7 @@ No rollback steps are required for this release.
 
 ## Breaking Changes :fire:
 
-### Direct Imports from `lib/` :fire:
+### Direct Imports from `lib/`
 
 Direct file imports from Livingdocs packages are not supported. This release might break direct imports from `lib/`. Downstreams are urged to remove all direct imports. Since this has never been supported, we will not communicate such changes in the future.
 
@@ -118,7 +118,7 @@ import {something} from '@livingdocs/server/lib/something'
 
 Replace each direct `lib/` import with the equivalent public API. If no public equivalent exists, contact Livingdocs support — there is no general drop-in replacement.
 
-### Stricter Validation of Image Processing Config Properties with `use2025Behavior` :fire:
+### Stricter Validation of Image Processing Config Properties with `use2025Behavior`
 
 The server config properties `mediaLibrary.images.processing.failOn`, `mediaLibrary.images.processing.convert`, `mediaLibrary.images.processing.lossy`, and `mediaLibrary.images.processing.lossless` are not applied when `use2025Behavior` is enabled. Configuring them alongside `use2025Behavior` will now result in an error. Please remove these properties if `use2025Behavior` is enabled.
 
@@ -134,7 +134,7 @@ Server config — the `mediaLibrary` section.
 
 Remove the four `processing.*` properties. They are not applied when `use2025Behavior` is enabled, so removal does not change runtime behaviour.
 
-### Removal of Deprecated Image Processing Config Properties :fire:
+### Removal of Deprecated Image Processing Config Properties
 
 The deprecated server config properties `mediaLibrary.images.processing.maxFileSize` and `mediaLibrary.images.uploadRestrictions.maxResolution` are no longer supported.
 
@@ -161,7 +161,7 @@ Move each property to its new location. The value format is unchanged — only t
 - `mediaLibrary.images.processing.maxFileSize` → `mediaLibrary.images.uploadRestrictions.maxFileSize`
 - `mediaLibrary.images.uploadRestrictions.maxResolution` → `mediaLibrary.images.processing.maxResolution`
 
-### Usage Log Params Schema Plugin Type Consistency :fire:
+### Usage Log Params Schema Plugin Type Consistency
 
 All `paramsSchema` entries across usage log purposes are now checked for type consistency. This ensures metadata plugins with the same handle share the same type. If you get the error message while updating a project config then you will need to modify the paramsSchema properties indicated so that they match across all purposes. You may also need to write a script to perform a manual data migration if you want to keep the data. Please contact us if you need any support with this.
 
@@ -202,7 +202,7 @@ For each conflicting `handle`, either:
 
 Which option is correct depends on the meaning of the field, so review each conflict before changing it. If existing usage log data uses the old handle or type, a manual data migration may be needed — contact Livingdocs support for help.
 
-### Removal of `li-target-length` UI Config Properties :fire:
+### Removal of `li-target-length` UI Config Properties
 
 The `allowAnyNumber`, `showExactCountCheckbox`, and `unit` properties inside `ui.config` of `li-target-length` and `li-system-target-length` metadata plugins have been removed. Please use `ui.config.modes` instead.
 
@@ -226,7 +226,7 @@ Remove the three legacy properties and add `modes` according to this mapping:
 | `showExactCountCheckbox: true`, `unit: 'lines'`                 | `['steps', 'lines']`               |
 | `showExactCountCheckbox: true`, `unit: ['characters', 'lines']` | `['steps', 'characters', 'lines']` |
 
-### Reserving Dashboard Handle 'ImageCollections' :fire:
+### Reserving Dashboard Handle 'ImageCollections'
 
 The dashboard handle `ImageCollections` can not be used, as it is a reserved handle.
 
@@ -327,7 +327,7 @@ Visibility is now controlled at the dashboard level rather than per media type, 
 
 ## Features :gift:
 
-### Image Collections :gift:
+### Image Collections
 
 Image Collections allow editors to curate persistent, named sets of images for large or ongoing topics.
 They complement Media Library Dashboards (for research) and the Document Inbox (for short-term article work).
@@ -377,11 +377,11 @@ Users also need `read` permissions on **all** configured `mediaTypes` to access 
 For full (technical) documentation of this feature, see the [Image Collections Guide]({{< ref "/guides/media-library/image-collections/" >}}).
 {{< /info >}}
 
-### Public API Endpoint to get the Usage Log of a Media Library Entry :gift:
+### Public API Endpoint to get the Usage Log of a Media Library Entry
 
 A new endpoint has been added, `GET /api/:apiVersion/mediaLibrary/:id/usageLog`, which returns all usage log entries for the specified media library entry. Further details can be found in the [Get the Usage Log of a Media Library Entry]({{< ref "/reference/public-api/media-library/#get-the-usage-log-of-a-media-library-entry" >}}) endpoint documentation.
 
-### Public API Operations to Modify Media Library Entry Usage Log Entries :gift:
+### Public API Operations to Modify Media Library Entry Usage Log Entries
 
 The Media Library Entry patch endpoint in the public API has been extended to allow external systems (e.g. print system) to report the usage of a media library entry and provide the details.
 
@@ -449,7 +449,7 @@ Remove an entry:
 }
 ```
 
-### Create usage log entries on publish :gift:
+### Create usage log entries on publish
 
 The function `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` has been introduced to make it easier to create usage log entries. This function is intended to be used in a post publish hook and will add usage log entries for any referenced media library entries which do not already have a usage log entry for the current document. The entry will automatically be marked as 'confirmed' so any mandatory params must be provided.
 
@@ -469,7 +469,7 @@ liServer.registerInitializedHook(() => {
 })
 ```
 
-### Internal Usage Log Purposes :gift:
+### Internal Usage Log Purposes
 
 Usage log purposes can now be flagged as internal. When set to `true` it prevents a user from creating, updating or deleting entries for the purpose within the editor. A read-only entry will still be visible within the UI. This is intended to be used alongside the `addUsageLogEntriesForMediaInDocument` function to create permanent entries.
 
@@ -491,7 +491,7 @@ Note: setting `internal: true` on an existing purpose will hide the editor contr
 }
 ```
 
-### Tabs in Media Library Sidepanels and Dialogs :gift:
+### Tabs in Media Library Sidepanels and Dialogs
 
 When editors open the image, video, or file sidepanel in a document, or use a media selection dialog, the media library is now organized into tabs. Each tab corresponds to a configured media library dashboard, a media source, or image collections (if enabled on the project).
 
@@ -528,7 +528,7 @@ imageCollections: {
 
 For the dialog used to select a poster image for a video, we introduce `ui.config.useDashboard` on [`li-poster-image`]({{< ref "/reference/document/metadata/plugins/li-poster-image/" >}}) and `ui.config.posterImageUseDashboard` on [`li-video-reference`]({{< ref "/reference/document/metadata/plugins/li-video-reference/" >}}) metadata plugins. You can use these to configure which dashboards appear when selecting a poster image.
 
-### Allowed Media Types :gift:
+### Allowed Media Types
 
 The new `contentTypes[].allowedMediaTypes` configuration enforces that only specific media types can be placed in a document.
 
@@ -546,7 +546,7 @@ It is possible to configure media library dashboards or image collections in sid
 
 For full configuration details, refer to the [Content Types reference]({{< ref "/reference/project-config/content-types#allowedmediatypes" >}}).
 
-### Media Library Batch Metadata Editing :gift:
+### Media Library Batch Metadata Editing
 
 The Media Center already supports batch actions such as archiving, deleting, and moving assets to an inbox. Metadata editing is now available as an additional batch action, making it easy to correct or enrich metadata across many assets at once.
 
@@ -569,13 +569,13 @@ liServer.features.api('li-public-api').executeDocumentCommands({
 })
 ```
 
-### Norwegian UI Translations :gift:
+### Norwegian UI Translations
 
 The Livingdocs Editor is now available in Norwegian Bokmål (`nb-NO`) and Norwegian Nynorsk (`nn-NO`). The translations are automatically applied when the browser language is set to either variant.
 
 For setup instructions, see the [Configure Multi-Language UI]({{< ref "/guides/editor/multi-language-ui/" >}}) guide.
 
-### Reduce Supply Chain Attack Vector :gift:
+### Reduce Supply Chain Attack Vector
 
 Livingdocs Server now supports running with `ignore-scripts=true` in npm. This prevents arbitrary scripts from running during package installation, reducing the attack surface for supply chain attacks.
 
@@ -656,9 +656,3 @@ Here is a list of all patches after the release has been announced.
 - [v123.21.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.3): fix(media-library): Hide state of media source items
 - [v123.21.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.2): fix(publish-control): Use correct publishControlMode for labels
 
----
-
-**Icon Legend**
-
-- Breaking changes: :fire:
-- Feature: :gift:
