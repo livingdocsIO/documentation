@@ -162,6 +162,7 @@
     - incoming-media-references-for-media
     - media-library-serve-image
     - get-media-library-entry-usage-log
+    - get-media-library-entry-keys
 
 # Start Imports section
 - title: Imports
