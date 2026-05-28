@@ -493,6 +493,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v294.0.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.33): chore(drone): bump node version for livingdocs-demo integration test
 - [v294.0.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.32): fix: remove #lib alias
 - [v294.0.31](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.31): fix(migrations): Only generate statistics and references with content
 - [v294.0.30](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.30): fix(deps): update dependency @opentelemetry/sdk-node from 0.208.0 to 0.217.0 [security]
