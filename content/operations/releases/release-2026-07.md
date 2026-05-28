@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Expose `getAllKeysForMediaLibraryEntry` in Public API](https://github.com/livingdocsIO/livingdocs-server/pull/9312)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11136)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9419)
 - [Remove #lib alias](https://github.com/livingdocsIO/livingdocs-server/pull/9409)
