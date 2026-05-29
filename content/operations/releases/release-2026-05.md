@@ -242,7 +242,7 @@ The literal string `ImageCollections` anywhere in the project config.
 
 Rename the dashboard to a non-reserved handle (user's choice) and update every reference to point to the new name.
 
-## Deprecations
+## Deprecations :warning:
 
 ### Deprecate support for Redis versions below 7.4
 
@@ -325,242 +325,11 @@ For poster image sites specifically, configure `ui.config.useDashboard` on `li-p
 
 Visibility is now controlled at the dashboard level rather than per media type, so each previously hidden media type needs the relevant dashboards' `baseFilters` reviewed.
 
-## Features :gift:
+### `publicApi.executeDocumentCommands()` write-model return value
 
-### Image Collections
+The `publicApi.executeDocumentCommands()` method currently returns the document write model by default. In a future release the default will change to return a public document version, aligning it with all other media library methods of the public API. No fixed removal release has been announced, but the change is expected within roughly two years.
 
-Image Collections allow editors to curate persistent, named sets of images for large or ongoing topics.
-They complement Media Library Dashboards (for research) and the Document Inbox (for short-term article work).
-Collections are shared across the project and can be browsed directly from the editor when picking images for a document.
-
-They are curated, folder-like groupings with support for nested sub-groups, drag-and-drop ordering, direct uploads and real-time collaboration.
-
-{{< img src="release-2026-05-image-collections.png" alt="Image Collections showing grouped images with drag-and-drop zones" width="300" >}}
-
-#### Adding & Organizing Images
-
-You can add one or multiple images from any media library dashboard.
-Images can also be uploaded directly from your file system or an external source by dragging them into a collection or using the upload button.
-Images can be grouped into subgroups, with up to six levels of nesting.
-You can create an unlimited number of groups, add them to other collections or ungroup them.
-
-#### Multi-select and Batch Actions
-
-Similar to the Media Library, each image in a collection has a context menu with actions: add to another collection, send to inbox, store or remove it from the archive (`use2025Behavior` required), or remove it from the collection.
-It is also possible to open the detail view of each image to edit its metadata.
-You can select multiple images and apply any of these actions in a single batch operation.
-
-#### Configuration
-
-Add `imageCollections` to the project config and reference it in the editor settings main navigation:
-
-```js
-// project config
-imageCollections: {
-  pageTitle: {en: 'Image Collections'},
-  mediaTypes: ['images', 'infographics'],
-  useDashboard: 'myMediaLibraryDashboard'
-}
-```
-
-```js
-// editor settings, mainNavigation
-{
-  liItem: 'imageCollections'
-}
-```
-
-After configuration, activate document permissions for the built-in `Collections` content type in the project settings.
-Users also need `read` permissions on **all** configured `mediaTypes` to access Image Collections.
-
-{{< info >}}
-For full (technical) documentation of this feature, see the [Image Collections Guide]({{< ref "/guides/media-library/image-collections/" >}}).
-{{< /info >}}
-
-### Public API Endpoint to get the Usage Log of a Media Library Entry
-
-A new endpoint has been added, `GET /api/:apiVersion/mediaLibrary/:id/usageLog`, which returns all usage log entries for the specified media library entry. Further details can be found in the [Get the Usage Log of a Media Library Entry]({{< ref "/reference/public-api/media-library/#get-the-usage-log-of-a-media-library-entry" >}}) endpoint documentation.
-
-### Public API Operations to Modify Media Library Entry Usage Log Entries
-
-The Media Library Entry patch endpoint in the public API has been extended to allow external systems (e.g. print system) to report the usage of a media library entry and provide the details.
-
-Add a new entry:
-
-`PATCH /api/2026-05/mediaLibrary/{id}`
-
-```json
-{
-  "preserveUpdatedAt": true,
-  "patches": [
-    {
-      "operation": "addUsageLogEntry",
-      "value": {
-        "state": "pending", // Optional 'pending' or 'confirmed' (default: 'pending')
-        "purpose": "print", // Required handle of usage log purpose
-        "publicationDate": "2026-05-01T11:00:00.000Z", // Required when state is 'confirmed'
-        "url": "http://localhost", // Optional link to external editor or delivery
-        "params": {} // Any value for params defined in the `paramsSchema` of the selected purpose
-      }
-    }
-  ]
-}
-```
-
-Update an entry:
-
-`PATCH /api/2026-05/mediaLibrary/{id}`
-
-```json
-{
-  "preserveUpdatedAt": true,
-  "patches": [
-    {
-      "operation": "updateUsageLogEntry",
-      "usageLogEntryId": "g1x419UgQSS5",
-      "value": {
-        "state": "confirmed", // Required for updates
-        "purpose": "print",
-        "publicationDate": "2026-05-01T11:00:00.000Z",
-        "url": "http://localhost",
-        "params": {
-          "medium": "Paper"
-        }
-      },
-      "oldValue": {} // Optional expected state condition
-    }
-  ]
-}
-```
-
-Remove an entry:
-
-`PATCH /api/2026-05/mediaLibrary/{id}`
-
-```json
-{
-  "preserveUpdatedAt": true,
-  "patches": [
-    {
-      "operation": "removeUsageLogEntry",
-      "usageLogEntryId": "g1x419UgQSS5"
-    }
-  ]
-}
-```
-
-### Create usage log entries on publish
-
-The function `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` has been introduced to make it easier to create usage log entries. This function is intended to be used in a post publish hook and will add usage log entries for any referenced media library entries which do not already have a usage log entry for the current document. The entry will automatically be marked as 'confirmed' so any mandatory params must be provided.
-
-```js
-liServer.registerInitializedHook(() => {
-  const mediaLibraryApi = liServer.features.api('li-media-library')
-  liServer.registerPublicationHooks({
-    async postPublishHookAsync({documentVersion}) {
-      await mediaLibraryApi.addUsageLogEntriesForMediaInDocument({
-        documentVersion,
-        purpose: 'web',
-        url: `https://example.com/my-slug-${documentVersion.id}`, // Optional
-        params: {medium: 'Internet'} // Required params mandatory
-      })
-    }
-  })
-})
-```
-
-### Internal Usage Log Purposes
-
-Usage log purposes can now be flagged as internal. When set to `true` it prevents a user from creating, updating or deleting entries for the purpose within the editor. A read-only entry will still be visible within the UI. This is intended to be used alongside the `addUsageLogEntriesForMediaInDocument` function to create permanent entries.
-
-Note: setting `internal: true` on an existing purpose will hide the editor controls for that purpose, so any users who previously edited usage log entries of that purpose will lose that ability.
-
-```js
-{
-  mediaCenter: {
-    usageLog: {
-      purposes: [
-        {
-          handle: 'web',
-          label: 'Web',
-          internal: true // <-- New property
-        }
-      ]
-    }
-  }
-}
-```
-
-### Tabs in Media Library Sidepanels and Dialogs
-
-When editors open the image, video, or file sidepanel in a document, or use a media selection dialog, the media library is now organized into tabs. Each tab corresponds to a configured media library dashboard, a media source, or image collections (if enabled on the project).
-
-{{< img src="release-2026-05-media-library-tabs.png" alt="Media library sidepanel with tabs for dashboards, media sources, and image collections" caption="Media library sidepanel showing dashboards, media sources, and image collections as tabs." >}}
-
-This replaces the previous behavior where media was grouped by media type. The old appearance is [deprecated]({{< relref "#auto-generated-media-library-dashboards" >}}) and will be removed in `release-2026-11`.
-
-#### Configuration
-
-`contentTypes[].editor.images.useDashboard`, `contentTypes[].editor.videos.useDashboard`, and `contentTypes[].editor.files.useDashboard` now accept a single dashboard handle or an array of handles. Each dashboard in the array becomes a tab.
-
-```js
-editor: {
-  images: {useDashboard: ['images', 'infographics']},
-  videos: {useDashboard: 'reels'}
-}
-```
-
-If no `useDashboard` is configured on a content type, a single "Feed" tab with all media grouped by type is shown instead. This is the old behavior and is now deprecated.
-
-For full configuration details, refer to the [Content Types reference]({{< ref "/reference/project-config/content-types#usedashboard" >}}).
-
-##### Image Collections
-
-For the dialog used to add an image to a collection, `imageCollections.useDashboard` also accepts an array of dashboard handles.
-
-```js
-imageCollections: {
-  useDashboard: ['images', 'infographics']
-}
-```
-
-##### Poster Images
-
-For the dialog used to select a poster image for a video, we introduce `ui.config.useDashboard` on [`li-poster-image`]({{< ref "/reference/document/metadata/plugins/li-poster-image/" >}}) and `ui.config.posterImageUseDashboard` on [`li-video-reference`]({{< ref "/reference/document/metadata/plugins/li-video-reference/" >}}) metadata plugins. You can use these to configure which dashboards appear when selecting a poster image.
-
-### Allowed Media Types
-
-The new `contentTypes[].allowedMediaTypes` configuration enforces that only specific media types can be placed in a document.
-
-```js
-allowedMediaTypes: {
-  mediaImage: ['myImage', 'myInfographic'],
-  mediaVideo: ['myVideo'],
-  mediaFile: ['myFile']
-}
-```
-
-If `allowedMediaTypes` is not configured, all media types are allowed (default behavior).
-
-It is possible to configure media library dashboards or image collections in sidepanels and dialogs in such a way that they show media types not listed in `allowedMediaTypes`. If a user tries to insert such an asset into a document, an error is shown. We recommend configuring dashboards with appropriate `baseFilters` so that only allowed media types are shown in the first place.
-
-For full configuration details, refer to the [Content Types reference]({{< ref "/reference/project-config/content-types#allowedmediatypes" >}}).
-
-### Media Library Batch Metadata Editing
-
-The Media Center already supports batch actions such as archiving, deleting, and moving assets to an inbox. Metadata editing is now available as an additional batch action, making it easy to correct or enrich metadata across many assets at once.
-
-{{< img src="release-2026-05-media-library-batch-actions.png" alt="Batch action bar showing 3 selected assets with icons for edit metadata, download, send to inbox, store in archive, and delete" >}}
-
-Editors can select multiple assets and edit their metadata in a single combined dialog. The dialog shows thumbnails for each selected asset alongside status indicators for unsaved changes, validation errors, and saving state. Fields that differ across selected assets are clearly marked: leaving a field unchanged keeps each asset's original value, while editing it applies the new value to all selected assets.
-
-This feature is automatically available in all Media Center dashboards. No configuration required.
-
-For more information, see the [Batch Actions]({{< ref "/guides/media-library/batch-actions" >}}) documentation.
-
-### Return Public Document Version from `publicApi.executeDocumentCommands()`
-
-The public API `executeDocumentCommands` method can now return a public document version instead of the document write model. This aligns the return value to all other media library methods of the Public API. Pass `apiVersion: '2026-05'` to your requests to opt-in early.
+Opt in to the new behaviour now by passing `apiVersion: '2026-05'`.
 
 ```js
 liServer.features.api('li-public-api').executeDocumentCommands({
@@ -569,34 +338,61 @@ liServer.features.api('li-public-api').executeDocumentCommands({
 })
 ```
 
+#### Applies to
+
+Server project source code — any call to `liServer.features.api('li-public-api').executeDocumentCommands(...)`.
+
+#### Detect
+
+Calls to `executeDocumentCommands` that do not pass `apiVersion: '2026-05'`.
+
+#### Fix
+
+Pass `apiVersion: '2026-05'` to opt in to the new return value, then update any downstream code that consumed the write model to consume a public document version instead.
+
+## Features :gift:
+
+Each feature is marked **Automatic** (works on upgrade) or **Configurable** (requires a config change).
+
+### Media Library Batch Metadata Editing
+
+**Automatic** — Editors can now edit metadata on multiple selected assets in a single dialog, with fields that differ across assets clearly marked. See the [Batch Actions guide]({{< ref "/guides/media-library/batch-actions" >}}).
+
 ### Norwegian UI Translations
 
-The Livingdocs Editor is now available in Norwegian Bokmål (`nb-NO`) and Norwegian Nynorsk (`nn-NO`). The translations are automatically applied when the browser language is set to either variant.
+**Automatic** — The Livingdocs Editor is now available in Norwegian Bokmål (`nb-NO`) and Nynorsk (`nn-NO`). Applied automatically based on browser language; see the [Configure Multi-Language UI guide]({{< ref "/guides/editor/multi-language-ui/" >}}) for setup.
 
-For setup instructions, see the [Configure Multi-Language UI]({{< ref "/guides/editor/multi-language-ui/" >}}) guide.
+### Image Collections
 
-### Reduce Supply Chain Attack Vector
+**Configurable** — Curated, named sets of images for ongoing topics, with nested groups, drag-and-drop ordering, direct uploads, and real-time collaboration. See the [Image Collections guide]({{< ref "/guides/media-library/image-collections/" >}}) for setup.
 
-Livingdocs Server now supports running with `ignore-scripts=true` in npm. This prevents arbitrary scripts from running during package installation, reducing the attack surface for supply chain attacks.
+### Tabs in Media Library Sidepanels and Dialogs
 
-1. To verify that no dependency in your tree depends on postinstall scripts, you can use the following script:
+**Configurable** — Media library sidepanels and dialogs are now organised into tabs, one per configured dashboard. Replaces the previous behaviour where media was grouped by media type, which is now [deprecated]({{< relref "#auto-generated-media-library-dashboards" >}}) and will be removed in `release-2026-11`. Configure via `useDashboard` on content types — see the [Content Types reference]({{< ref "/reference/project-config/content-types#usedashboard" >}}).
 
-   ```sh
-   npm query ":attr(scripts, [postinstall]), :attr(scripts, [preinstall]), :attr(scripts, [install])" \
-     | jq -r '.[].name' \
-     | grep -vxE 'protobufjs|exifreader|leveldown|sharp|@parcel/watcher' \
-     | sort -u
-   ```
+### Allowed Media Types
 
-2. If there are modules listed, please verify their `postinstall` declaration in the package.json does not use logic your instance depends on.
-3. Once you don't depend on any `postinstall` scripts anymore,  
-   please set `ignore-scripts=true` in your `.npmrc` files in every livingdocs project.
+**Configurable** — New `contentTypes[].allowedMediaTypes` restricts which media types can be placed in a document. See the [Content Types reference]({{< ref "/reference/project-config/content-types#allowedmediatypes" >}}).
 
-   ```ini
-   package-lock=true
-   ignore-scripts=true
-   //registry.npmjs.org/:_authToken=${NPM_TOKEN}
-   ```
+### Internal Usage Log Purposes
+
+**Configurable** — New `internal: true` flag on usage log purposes hides editor controls for that purpose, leaving entries read-only in the UI. Intended for use alongside the new server-side `addUsageLogEntriesForMediaInDocument` function. See the [Media Center reference]({{< ref "/reference/project-config/media-center" >}}).
+
+### Create Usage Log Entries on Publish
+
+**Configurable** — New server-side `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` function, intended for use in a post-publish hook. Adds entries automatically for any referenced media library entries that do not already have one for the current document. See the [Publication Hooks reference]().
+
+### Public API: Read Usage Log
+
+**Configurable** — New `GET /api/:apiVersion/mediaLibrary/:id/usageLog` endpoint returns all usage log entries for a media library entry. See the [public API reference]({{< ref "/reference/public-api/media-library/#get-the-usage-log-of-a-media-library-entry" >}}).
+
+### Public API: Modify Usage Log Entries
+
+**Configurable** — New `addUsageLogEntry`, `updateUsageLogEntry`, and `removeUsageLogEntry` patch operations on `PATCH /api/:apiVersion/mediaLibrary/:id`, intended for external systems (e.g. print) to report usage. See the [public API reference]({{< ref "/reference/public-api/media-library/" >}}).
+
+### Run with `ignore-scripts=true` in npm
+
+**Configurable** — Livingdocs Server now supports running with `ignore-scripts=true` in `.npmrc`, preventing arbitrary scripts from running during package installation. Requires verifying that no dependencies in your tree depend on `postinstall` scripts first. See the [Supply Chain Security guide]() for the verification script and rollout steps.
 
 ## Vulnerability Patches
 
@@ -655,4 +451,3 @@ Here is a list of all patches after the release has been announced.
 - [v123.21.4](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.4): fix: hide images count earlier to prevent overlap with batch actions
 - [v123.21.3](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.3): fix(media-library): Hide state of media source items
 - [v123.21.2](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.2): fix(publish-control): Use correct publishControlMode for labels
-
