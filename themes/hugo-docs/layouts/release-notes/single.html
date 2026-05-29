@@ -35,7 +35,9 @@
           {{ end }}
         </div>
       {{ end }}
-      {{ .Content }}
+      <div class="release-notes-content">
+        {{ .Content }}
+      </div>
     </div>
 
     <div class="article__footer">
@@ -47,7 +49,7 @@
 {{ define "side" }}
   {{ if (ne (.Param "renderTOC") false) }}
     <div class="page__toc">
-      {{ .Page.Fragments.ToHTML 1 2 false }}
+      {{ .Page.Fragments.ToHTML 1 3 false }}
     </div>
   {{ end }}
 {{ end }}

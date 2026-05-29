@@ -1,0 +1,17 @@
+.release-notes-content {
+  h2 {
+    margin-top: 2 * $space-l;
+    padding-bottom: $space-s;
+    border-bottom: 1px solid $color-grey-5;
+  }
+
+  h3 {
+    margin-top: 2 * $space-l;
+    padding-bottom: $space-xs;
+    border-bottom: 1px solid $color-grey-6;
+  }
+
+  h4 {
+    margin-top: $space-m;
+  }
+}
