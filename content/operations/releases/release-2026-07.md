@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Show media library entry counts on project details](https://github.com/livingdocsIO/livingdocs-editor/pull/11131)
 - [List reference labels](https://github.com/livingdocsIO/livingdocs-editor/pull/11157)
 - [fix(deps): update dependency @livingdocs/framework from 34.1.2 to v34.1.3 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11159)
 - [fix(deps): update dependency @livingdocs/framework from 34.1.2 to v34.1.3 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9445)
