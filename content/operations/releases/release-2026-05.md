@@ -222,7 +222,7 @@ Rename the dashboard to a non-reserved handle (user's choice) and update every r
 
 ### Deprecate support for Redis versions below 7.4
 
-Redis 7.2 reached End of Life (EOL) on February 28, 2026. Versions 6.2 and 6.4 reached EOL last year.
+Support for Redis versions below 7.4 is deprecated and will be removed in `release-2026-11`. Redis 7.2 reached End of Life (EOL) on February 28, 2026. Versions 6.2 and 6.4 reached EOL last year.
 Upgrade to Redis version 7.4 or above. The most recently supported version is 8.0.
 
 #### Detect
@@ -235,7 +235,7 @@ Upgrade Redis to 7.4 or above. 8.0 is the most recently supported version.
 
 ### Auto-Generated Media Library Dashboards
 
-Auto-generated media library dashboards using `{liItem: 'mediaLibrary'}` are deprecated and will be removed in release-2026-11. Remove `{liItem: 'mediaLibrary'}` as well as `mediaTypes[].editor.managementDashboard` and `mediaTypes[].editor.dashboard` from the project config.
+Auto-generated media library dashboards using `{liItem: 'mediaLibrary'}` are deprecated and will be removed in `release-2026-11`. Remove `{liItem: 'mediaLibrary'}` as well as `mediaTypes[].editor.managementDashboard` and `mediaTypes[].editor.dashboard` from the project config.
 
 Configure [media library dashboards]({{< ref "/guides/media-library/media-library-setup/#media-library-dashboard-configuration" >}}) instead. These dashboards can also be referenced in content types to configure the dashboards shown in media library sidepanels and media selection dialogs, using `contentTypes[].editor.images.useDashboard`, `contentTypes[].editor.videos.useDashboard`, or `contentTypes[].editor.files.useDashboard`.
 
@@ -359,8 +359,6 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 This release we have patched the following vulnerabilities in the Livingdocs Server:
 
 - [CVE-2026-44902 / GHSA-q7rr-3cgh-j5r3](https://github.com/advisories/GHSA-q7rr-3cgh-j5r3) patched in @opentelemetry/sdk-node v0.217.0
-
-No known vulnerabilities. :tada:
 
 ### Livingdocs Editor
 
