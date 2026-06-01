@@ -1,121 +1,85 @@
 ---
 name: write-trn-feature-section
-description: Write a Feature section entry for a Livingdocs Technical Release Note (TRN) and insert it into the correct release file. Use this skill whenever a developer wants to document a new feature, asks to write or add a TRN entry, mentions "write feature section", "add a feature to the release notes", or provides PR URLs and asks to document a feature for a specific release (e.g. "write the TRN entry for release-2026-05"). This skill handles the full workflow: gathering PR details, Notion requirements, and screenshots, writing the entry in the right tone and format, and inserting it into the release file.
+description: Write a Feature section entry for a Livingdocs Technical Release Note (TRN) and insert it into the correct release file. Use this skill whenever a developer wants to document a new feature, asks to write or add a TRN entry, mentions "write feature section", "add a feature to the release notes", or provides PR URLs and asks to document a feature for a specific release (e.g. "write the TRN entry for release-2026-05"). This skill handles the full workflow: gathering PR details, classifying the feature as Automatic / Configurable, writing a thin entry, and inserting it into the release file.
 ---
 
 # Write TRN Feature Section
+
+Feature entries in the TRN are **announcements**, not tutorials. Each entry is one short paragraph that tells the reader what's new and whether they need to do anything, followed by a link to the guide or reference page where the detail lives. The TRN is the dated record of what shipped; guides and reference pages teach the feature.
+
+Before drafting, skim `.claude/trn-format-reference.md` — that file is the source of truth for the entry shape and tone. This skill describes the workflow.
 
 ## Step 1: Gather inputs
 
 Ask **one question at a time** — wait for each answer before asking the next:
 
-1. **Release** — identifier in `release-YYYY-MM` format. Accept plain year/month and normalize it yourself.
+1. **Release** — identifier in `release-YYYY-MM` format. Accept plain year/month and normalise it yourself.
 2. **GitHub PR URLs** — ask whether they'd like to add all URLs at once or one at a time. If one at a time: ask for the first URL, then ask "Any more PRs? (say 'done' to continue)" and keep collecting until done. If all at once: accept a list of URLs in a single message.
-3. **Notion requirement URL** — original requirement page (if available)
-4. **Product Demo Presentation** — Figma Slides URLs are not supported. Ask the developer to paste the first slide screenshot (`Cmd+V` / `Ctrl+V`) or slide text/notes. Then ask "Any more slides? (say 'done' to continue)". Say "none" to skip.
-5. **Additional context** — free-form notes, summaries, or exclusions (e.g. "ignore PR #123"). Optional.
-6. **Screenshots or Images** — ask the developer to paste images (`Cmd+V` / `Ctrl+V`). For each: ask for the filename (`release-YYYY-MM-description.png`) and a short description of what is shown. Say "none" to skip.
-7. **Documentation link** — path under `/reference/` or `/guides/`, if one exists or will exist
+3. **Notion requirement URL** — original requirement page (if available). Say "none" to skip.
+4. **Activation classification** — required. Ask: _"Does this feature work automatically on upgrade, require a config change to use, or both? (Automatic / Configurable / Automatic / Configurable)"_
+
+   The three valid answers map to the leading tag on the entry:
+   - **Automatic** — feature works on upgrade with no config change.
+   - **Configurable** — feature requires a project or server config change to use.
+   - **Automatic / Configurable** — feature ships working but has optional config to tune. Use only when both genuinely apply.
+
+   If the developer is unsure, ask one clarifying question. Getting this wrong misleads customers — never guess.
+5. **Documentation link** — path under `/reference/` or `/guides/` that the entry should link to. If no doc page exists yet, ask whether one is planned and what its path will be. **Required** — every feature entry ends in a link.
+6. **Additional context** — free-form notes from the developer (optional, e.g. cross-link to a related deprecation, special caveats).
 
 ## Step 2: Read the sources
 
-- Fetch each GitHub PR: title, description, linked issues — understand what was built and why.
-- If a Notion URL was provided, fetch it to understand the original user requirement.
-- Use any demo slides or notes from steps 4 and 5 to understand how the feature was positioned.
-- Place each image after the paragraph it best illustrates, using the developer's description to decide.
-- Use these two examples to calibrate tone and structure:
+- Fetch each GitHub PR: title, description, linked issues. Identify what users can now do — focus on benefit, not implementation.
+- If a Notion URL was provided, fetch it to confirm the framing matches the original requirement.
+- Read the existing `## Features :gift:` section in `content/operations/releases/<release-identifier>.md` to:
+  - Confirm the feature isn't already documented.
+  - Calibrate the level of detail used in neighbouring entries.
 
-**Example 1 - Simple (auto-available, no config):**
+## Step 3: Write the entry
 
-```markdown
-### Optimized Media Library Modal :gift:
-
-We've optimized the image selection modal to display more images by increasing its width. The modal now shows up to 6 images per row (depending on screen size), compared to the previous layout. This makes better use of available screen space.
-
-For more information, see the [Media Library]({{< ref "/reference/media-library" >}}) documentation.
-```
-
-**Example 2 - Complex (sub-sections, config, before/after):**
+Use this format (see `.claude/trn-format-reference.md` for the canonical contract):
 
 ```markdown
-### Distribution Dates UI Improvements :gift:
+### Feature Name
 
-Editors use the planning board to manage articles scheduled for publishing and distribution. Setting distribution dates quickly and accurately is essential for efficient workflow management.
-
-Previously, the workflow required selecting a date from the date picker and then pressing a green confirmation button - an extra step that caused confusion.
-
-#### Quick Action Buttons
-
-When adding a distribution date, editors now see three quick action buttons instead of an empty date picker:
-
-- **Today**: Sets the distribution date to today at 12:00 (noon)
-- **Tomorrow**: Sets the distribution date to tomorrow at 12:00 (noon)
-- **Other date**: Opens the date picker for selecting a different date
-
-#### Auto-Save Functionality
-
-Valid dates are now automatically saved as soon as they are selected - no confirmation button required.
-
-#### Date-Only Precision Configuration
-
-A new optional configuration property `precision` allows you to configure whether editors should enter dates with or without time:
-
-    {
-      handle: 'distributionDates',
-      type: 'li-distribution-dates',
-      ui: {
-        config: {
-          precision: 'date' // Options: 'datetime' (default) or 'date'
-        }
-      }
-    }
-
-For more information, see the [Distribution Dates]({{< ref "/reference/distribution-dates" >}}) documentation.
-```
-
-## Step 3: Write the feature entry
-
-Use this format:
-
-```
-### FEATURE NAME :gift:
-
-INTRO_PARAGRAPH
-
-[CONFIG_OR_API_SECTION if activation/config is required]
-
-[{{< img src="FILENAME" alt="ALT TEXT" width="600" >}} if screenshot provided]
-
-[{{< info >}}...{{< /info >}} if there's a prerequisite or important note]
-
-[For more information, see the [LABEL]({{< ref "/path/to/doc" >}}) documentation.]
+**<Tag>** — One or two sentences describing what users can now do. See the [<Link label>]({{< ref "/path/to/guide" >}}).
 ```
 
 ### Writing guidelines
 
-#### Content & structure
+#### Title
 
-- **Lead with user value**: open with what users can now do. Focus on benefit, not implementation.
-- **High-level intro**: one short paragraph — no implementation details. Link to docs instead of repeating them.
-- **Activation status**: always state whether auto-available or requires config. If unclear, ask the developer — getting this wrong misleads customers.
-- **Config/API blocks**: only if config is required to activate the feature. Show only the diff. Use `js` or `json` code blocks.
-- **Before/after**: include if the feature changes existing familiar behavior.
-- **Lifecycle context**: if the feature replaces something deprecated, say so briefly.
-- **Complex topics**: add _"Reach out to your customer solutions contact for help getting started."_ if setup is non-trivial.
-- **Sub-sections**: use `####` headings for multiple distinct sub-features or steps.
-- **Links**: `{{< ref "/path" >}}` for internal docs. `{{< release "release-YYYY-MM" >}}` for other releases.
-- **`:gift:` emoji**: always append to the `###` heading.
+- Sentence case. No icon (`:gift:` lives on the `##` section heading only).
+- Name the feature concretely. Prefer "Image Collections" over "Media Library Improvements".
 
-#### Tone & style
+#### Tag
 
-- **More Sales, less Packungsbeilage**: focus on value and excitement, not exhaustive description.
-- **Less is more**: short, punchy sentences. Omit anything not directly relevant. If in doubt, leave it out.
-- **Use regular hyphens**: write `-` not `—` in the output.
-- **Use visuals**: include screenshots for UI-facing features. Use `{{< img >}}` with meaningful alt text.
+- One of `**Automatic**`, `**Configurable**`, or `**Automatic / Configurable**` — exactly as written (bold, with spaces around the slash for the combined form).
+- Always the first text of the body, followed by ` — ` and the description.
+
+#### Body
+
+- One short paragraph. Two sentences is usually enough.
+- Lead with user value: what can the user now do? Not how the implementation works.
+- **No code blocks.** No config snippets, no JSON payloads, no schema dumps. If a developer wants to show schema, they should add it to the reference page and link there.
+- **No `####` sub-headings.** If the feature is complex enough that it needs sub-sections in the TRN, that's a signal to move the detail into the guide and link to it.
+- **No screenshots.** Visuals belong in the guide.
+
+#### Closing link
+
+- Required. Use `{{< ref "/path/to/page" >}}` for internal docs.
+- If a feature is the replacement for a deprecated feature in the same release, include an inline link to the deprecation's anchor as well: `Replaces the previous behaviour where X, which is now [deprecated](#anchor-of-deprecation)`.
+
+#### Tone
+
+- Sales-friendly but factual. "Curated, named sets of images for ongoing topics" is good. "Revolutionary new way to manage images" is bad.
+- Plain hyphens (`-`) in body text and the em-dash (` — `) after the tag is fine — be consistent with neighbouring entries in the file.
 
 ## Step 4: Ask for feedback
 
-Ask: _"Does this look right? Anything to adjust — wording, missing details, or config examples?"_
+Show the draft to the developer:
+
+> _"Here's the draft. Does it look right? Anything to adjust — the activation tag, wording, or the link target?"_
 
 Apply any requested changes.
 
@@ -125,4 +89,18 @@ Apply any requested changes.
 2. Locate `## Features :gift:`.
 3. Append the entry at the end of that section, before the next `##` heading.
 4. Save and confirm to the developer.
-5. If images were provided: remind the developer to manually save each image to `content/operations/releases/` using the exact filename from the `{{< img src="..." >}}` tags. Claude cannot write image files directly.
+
+## Step 6: Sanity-check after insertion
+
+Quickly verify:
+
+- The new entry's `###` heading has **no** `:gift:` icon.
+- The body opens with `**Automatic**`, `**Configurable**`, or `**Automatic / Configurable**`.
+- The entry has no code blocks, no `####` sub-headings, and no `{{< img >}}` tags.
+- The entry ends with a `{{< ref >}}` link.
+
+If any check fails, surface it to the developer and propose a fix before closing.
+
+## What changed from the previous version of this skill
+
+This skill previously produced full prose feature entries with sub-sections, config blocks, and screenshots. As of release-2026-05 the TRN Features section is a thin index — entries are one-paragraph announcements pointing at guides for detail. If you encounter older TRN files (release-2026-03 and earlier) that still use the old format, leave them alone unless explicitly asked to convert them.
