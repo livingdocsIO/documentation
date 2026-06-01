@@ -385,6 +385,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v284.0.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.46): fix(deps): update dependency ws from 8.18.3 to 8.20.1 [security]
 - [v284.0.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.45): fix(blob-store): suppress late AbortError from Azure download streams
 - [v284.0.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.44): fix(deps): update dependency @opentelemetry/sdk-node from 0.207.0 to 0.217.0 [security]
 - [v284.0.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v284.0.43): fix(deps): update dependency @livingdocs/framework from 32.10.8 to v32.10.9
