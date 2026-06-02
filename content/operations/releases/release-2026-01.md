@@ -493,6 +493,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v294.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.35): fix(deps): update dependency exifreader from 4.33.1 to 4.39.0 [security]
 - [v294.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.34): fix(deps): update dependency ws from 8.18.3 to 8.20.1 [security]
 - [v294.0.33](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.33): chore(drone): bump node version for livingdocs-demo integration test
 - [v294.0.32](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.32): fix: remove #lib alias
