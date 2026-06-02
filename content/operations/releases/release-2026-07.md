@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update eslint from 10.4.0 to v10.4.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11185)
 - [chore(deps): update dependency exifreader from 4.39.1 to v4.40.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9477)
 - [fix(upload): Enable save button when EXIF extraction fills required metadata](https://github.com/livingdocsIO/livingdocs-editor/pull/11177)
 - [Show document translations of available languages after deleting a language](https://github.com/livingdocsIO/livingdocs-editor/pull/11170)
