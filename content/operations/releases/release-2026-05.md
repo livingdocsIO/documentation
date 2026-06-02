@@ -481,6 +481,7 @@ Here is a list of all patches after the release has been announced.
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+- [v123.21.16](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.16): fix(deps): update dependency axios from 1.15.2 to 1.16.0 [security]
 - [v123.21.15](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.15): fix(lists): Translate link text
 - [v123.21.14](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.14): fix(deps): update dependency @livingdocs/framework from 34.0.3 to v34.0.4
 - [v123.21.13](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.13): fix(scrollbars): styling and active pill scrolling in media panel
