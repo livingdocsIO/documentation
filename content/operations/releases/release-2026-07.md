@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Show document translations of available languages after deleting a language](https://github.com/livingdocsIO/livingdocs-editor/pull/11170)
 - [Correct default crop computation for large images with use2025Behavior](https://github.com/livingdocsIO/livingdocs-server/pull/9457)
 - [Design/Compact Floating Panel](https://github.com/livingdocsIO/livingdocs-editor/pull/11162)
 - [Show media library entry counts on project details](https://github.com/livingdocsIO/livingdocs-editor/pull/11131)
