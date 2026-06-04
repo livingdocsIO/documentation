@@ -484,6 +484,7 @@ Here is a list of all patches after the release has been announced.
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+- [v123.21.20](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.20): fix(image-collections): enable batch metadata editing for image collections
 - [v123.21.19](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.19): fix(deps): update livingdocs-patch from 34.0.4 to v34.0.5
 - [v123.21.18](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.18): fix(upload): Enable save button when EXIF extraction fills required metadata
 - [v123.21.17](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.17): fix: detect inbox drags and don't count them as upload drags
