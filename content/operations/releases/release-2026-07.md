@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Image Collections: Add batch editing of metadata to image collections batch actions and hide action pill when deleting items](https://github.com/livingdocsIO/livingdocs-editor/pull/11178)
 - [Copy document inbox on copy and print flows](https://github.com/livingdocsIO/livingdocs-server/pull/9438)
 - [chore(deps): update eslint from 10.4.0 to v10.4.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11185)
 - [chore(deps): update dependency exifreader from 4.39.1 to v4.40.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9477)
