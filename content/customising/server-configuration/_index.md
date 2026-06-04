@@ -1224,6 +1224,20 @@ When uploading an asset into the media library, we choose one strategy to define
 
 Even when the storage (e.g. Amazon S3) is public, the name of the path is difficult to guess.
 
+##### Use Safe Characters in Keys
+
+By default Livingdocs generates the key (a UUID-based path as shown above), so the filename is always safe. When using a `computeKey` function or importing media directly from an existing storage bucket, however, it is recommended to limit keys to the following safe character set:
+
+- digits: `0-9`
+- lowercase letters: `a-z`
+- uppercase letters: `A-Z`
+- hyphen: `-`
+- underscore: `_`
+
+This set is a subset of the [safe characters recommended by Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-guidelines) for object keys, so paths stay valid across cloud storage providers without URL-encoding surprises.
+
+The most important reason to stick to these characters is to avoid issues with Unicode normalization. Some characters (especially accented letters such as `é`) can be represented in different normalization forms — composed (NFC) and decomposed (NFD). Postgres and cloud storage providers (such as Amazon S3) may store and compare these forms differently, so a key that looks identical can fail to match between the database and the storage backend (e.g. `café.jpg` written as NFC but stored or listed as NFD won't be found). Restricting keys to the ASCII set above sidesteps this class of problem entirely.
+
 #### Alternative Image Proxy Configuration (mediaLibrary.images.proxy)
 
 Alternatively you can forward image upload to another service.
