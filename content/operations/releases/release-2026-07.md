@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency pdfjs-dist from 5.7.284 to v6 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11194)
 - [Fix the REPL crashing on startup](https://github.com/livingdocsIO/livingdocs-server/pull/9499)
 - [Image Collections: Add batch editing of metadata to image collections batch actions and hide action pill when deleting items](https://github.com/livingdocsIO/livingdocs-editor/pull/11178)
 - [Copy document inbox on copy and print flows](https://github.com/livingdocsIO/livingdocs-server/pull/9438)
