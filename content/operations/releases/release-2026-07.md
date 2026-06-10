@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Image Collections: Check for Unique Title](https://github.com/livingdocsIO/livingdocs-editor/pull/11184)
 - [Image Card Enhancements: showLabel & maxLineCount](https://github.com/livingdocsIO/livingdocs-server/pull/9500)
 - [Pass workspace to iframe and twitter doc-html embeds](https://github.com/livingdocsIO/livingdocs-editor/pull/11204)
 - [Image Card Enhancements: showLabel & maxLineCount](https://github.com/livingdocsIO/livingdocs-editor/pull/11203)
