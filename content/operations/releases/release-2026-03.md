@@ -395,6 +395,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.54): chore(embeds): Access embed data consistently
 - [v123.10.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.53): fix(deps): update livingdocs-patch from 32.12.10 to v32.12.11
 - [v123.10.52](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.52): fix: show translated documents even if languages became unavailable
 - [v123.10.51](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.51): fix(deps): update dependency axios from 1.15.2 to 1.16.0 [security]
