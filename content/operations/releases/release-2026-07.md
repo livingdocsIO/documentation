@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Seeding media permissions](https://github.com/livingdocsIO/livingdocs-server/pull/9507)
 - [chore(deps): update dependency undici from 8.3.0 to v8.4.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9518)
 - [Image Collections: Check for Unique Title](https://github.com/livingdocsIO/livingdocs-editor/pull/11184)
 - [Image Card Enhancements: showLabel & maxLineCount](https://github.com/livingdocsIO/livingdocs-server/pull/9500)
