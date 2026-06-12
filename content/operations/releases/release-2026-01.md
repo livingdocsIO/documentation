@@ -493,6 +493,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v294.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.37): chore(example-server): Add image read permissions to Readers group
 - [v294.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.36): fix(deps): update livingdocs-patch from 32.11.9 to v32.11.10
 - [v294.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.35): fix(deps): update dependency exifreader from 4.33.1 to 4.39.0 [security]
 - [v294.0.34](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.34): fix(deps): update dependency ws from 8.18.3 to 8.20.1 [security]
