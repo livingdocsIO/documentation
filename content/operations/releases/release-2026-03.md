@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.41): chore(example-server): Add image read permissions to Readers group
 - [v296.2.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.40): fix(deps): update livingdocs-patch from 32.12.10 to v32.12.11
 - [v296.2.39](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.39): fix(deps): update dependency exifreader from 4.36.2 to 4.39.0 [security]
 - [v296.2.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.38): fix: nest replaceTranslations flag in options property
