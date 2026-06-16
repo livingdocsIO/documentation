@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
 
 /**
  * Script to generate a unified documentation file from all markdown files used for AI input via MCP

@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-'use strict'
-const fs = require('fs')
-const files = require('glob').sync('**/*.md', {
+import fs from 'fs'
+import {globSync} from 'glob'
+
+const files = globSync('**/*.md', {
   nodir: true,
   absolute: true
 })

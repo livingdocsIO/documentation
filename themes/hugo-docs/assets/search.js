@@ -1,4 +1,4 @@
-const lunr = require('lunr')
+import lunr from 'lunr'
 
 // Separate on any non-word value so that functions in code blocks will be returned in the results.
 // A search for "registerInitializedHook" would not find `liServer.registerInitializedHook(async`.
