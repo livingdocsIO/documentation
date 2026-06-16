@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/9546)
 - [Remove deprecated NZZ search properties (LIDEP070)](https://github.com/livingdocsIO/livingdocs-server/pull/9407)
 - [Usage Log Billing Part 1](https://github.com/livingdocsIO/livingdocs-editor/pull/11192)
 - [Usage Log Billing Part 1](https://github.com/livingdocsIO/livingdocs-server/pull/9485)
