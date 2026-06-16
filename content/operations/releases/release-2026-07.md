@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Show file type error in upload center dialog](https://github.com/livingdocsIO/livingdocs-editor/pull/11167)
 - [fix(deps): update dependency sharp from 0.34.5 to ^0.35.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9540)
 - [Keep items in inbox on drop when configured](https://github.com/livingdocsIO/livingdocs-editor/pull/11214)
 - [Keep items in inbox on drop when configured](https://github.com/livingdocsIO/livingdocs-server/pull/9521)
