@@ -18,6 +18,6 @@
   {{ end }}
 {{- end -}}
 
-{{ $openapi := merge $.Site.Data.openapi (dict "paths" $openapiPaths) }}
+{{ $openapi := merge hugo.Data.openapi (dict "paths" $openapiPaths) }}
 {{ $openapi = merge $openapi (dict "info" (merge $openapi.info (dict "version" $version))) }}
 {{ return ($openapi | jsonify (dict "indent" "  ")) }}

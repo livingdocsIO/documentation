@@ -29,13 +29,13 @@ Generate redirects within hugo using the nginx redirect map
 Expose releases.json for https://downstreams.cluster.livingdocs.io/
 {{ $.AddResource (
   dict
-  "content" (dict "mediaType" "application/json" "value" ($.Site.Data.releases | jsonify))
+  "content" (dict "mediaType" "application/json" "value" (hugo.Data.releases | jsonify))
   "path" "releases.json"
   )
 }}
 
 {{ $versions := partialCached "_api-versions" $ true }}
-{{ if eq $.Site.BuildDrafts false }}{{ $versions = where $versions "upcoming" "eq" false }}{{ end }}
+{{ if hugo.IsProduction }}{{ $versions = where $versions "upcoming" "eq" false }}{{ end }}
 {{ hugo.Store.Set "api-versions" $versions }}
 
 {{ $endpoints := partialCached "_api-endpoints" $ true }}

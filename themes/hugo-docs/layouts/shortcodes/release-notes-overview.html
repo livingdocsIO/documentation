@@ -12,7 +12,7 @@
   </thead>
   <tbody>
     {{ $page := .Site.Home }}
-    {{ range sort $.Site.Data.releases "sortId" "desc" }}
+    {{ range sort hugo.Data.releases "sortId" "desc" }}
       <tr>
         <td><a href="{{ ref $page .ref }}">{{ .name }}</a></td>
         <td>{{ .key }} {{ with .serverVersion }}({{ . }}){{ end }}</td>

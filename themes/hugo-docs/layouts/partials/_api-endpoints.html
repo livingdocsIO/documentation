@@ -5,12 +5,12 @@
   {{ $upcoming = $upcoming | append .version }}
 {{ end }}
 
-{{ range $key, $value := $.Site.Data.endpoints }}
+{{ range $key, $value := hugo.Data.endpoints }}
   {{ if not $value.apiVersionConstraints }}
     {{ $value = merge $value (dict "apiVersionConstraints" (dict "neq" "beta")) }}
   {{ end }}
 
-  {{ if not $.Site.BuildDrafts }}
+  {{ if hugo.IsProduction }}
     {{ $constraint := $value.apiVersionConstraints }}
     {{ if and $constraint.eq (in $upcoming $constraint.eq) }}{{ continue }}{{ end }}
     {{ if and $constraint.gt (in $upcoming $constraint.gt) }}{{ continue }}{{ end }}
