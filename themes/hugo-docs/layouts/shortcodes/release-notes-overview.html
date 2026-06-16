@@ -15,8 +15,8 @@
     {{ range sort $.Site.Data.releases "sortId" "desc" }}
       <tr>
         <td><a href="{{ ref $page .ref }}">{{ .name }}</a></td>
-        <td>{{ .key }} {{ if isset . "serverVersion" }}({{ .serverVersion }}){{ end }}</td>
-        <td>{{ .key }} {{ if isset . "editorVersion" }}({{ .editorVersion }}){{ end }}</td>
+        <td>{{ .key }} {{ with .serverVersion }}({{ . }}){{ end }}</td>
+        <td>{{ .key }} {{ with .editorVersion }}({{ . }}){{ end }}</td>
         <td style="text-align: center;">
           {{ if eq .upcoming true }}{{ partial "check-cross" true }}{{ end }}
         </td>

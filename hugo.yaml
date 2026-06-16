@@ -49,6 +49,9 @@ outputFormats:
   SearchIndex:
     baseName: search
     mediaType: application/json
+  Markdown:
+    mediaType: text/markdown
+    isPlainText: true
 
 outputs:
   home: [HTML, RSS, SearchIndex]
