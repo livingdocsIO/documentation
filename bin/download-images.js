@@ -1,9 +1,8 @@
-'use strict'
-const glob = require('glob')
-const fs = require('fs/promises')
-const fsSync = require('fs')
-const path = require('path')
-const https = require('https')
+import {globSync} from 'glob'
+import fs from 'fs/promises'
+import fsSync from 'fs'
+import path from 'path'
+import https from 'https'
 
 const githubImageRegex = /https:\/\/user-images\.githubusercontent\.com\/[^"\)\s]+/g
 
@@ -19,7 +18,7 @@ async function downloadImage(url, outputPath) {
 }
 
 async function processFiles() {
-  const files = glob.sync('content/**/*.md', {cwd: path.resolve(__dirname, '../')})
+  const files = globSync('content/**/*.md', {cwd: path.resolve(import.meta.dirname, '../')})
 
   for (const file of files) {
     const content = await fs.readFile(file, 'utf-8')

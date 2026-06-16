@@ -1,5 +1,4 @@
-'use strict'
-const Clipboard = require('clipboard')
+import Clipboard from 'clipboard'
 import * as params from '@params'
 
 // cookies
