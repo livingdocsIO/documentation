@@ -1,7 +1,7 @@
-const fs = require('fs')
-const glob = require('glob')
-const zlib = require('zlib')
-const pipe = require('util').promisify(require('stream').pipeline)
+import fs from 'fs'
+import {globSync} from 'glob'
+import zlib from 'zlib'
+import {pipeline} from 'stream/promises'
 
 const isCompressed = /\.(gz|br)$/
 
@@ -9,7 +9,7 @@ function doGzip(file) {
   if (isCompressed.test(file)) return
   const source = fs.createReadStream(file)
   const destination = fs.createWriteStream(`${file}.gz`)
-  return pipe(
+  return pipeline(
     source,
     zlib.createGzip({
       level: 9
@@ -22,7 +22,7 @@ function doBrotli(file) {
   if (isCompressed.test(file)) return
   const source = fs.createReadStream(file)
   const destination = fs.createWriteStream(`${file}.br`)
-  return pipe(
+  return pipeline(
     source,
     zlib.createBrotliCompress({
       params: {
@@ -34,7 +34,7 @@ function doBrotli(file) {
   )
 }
 
-const files = glob.sync('./public/**/*', {nodir: true, absolute: true})
+const files = globSync('./public/**/*', {nodir: true, absolute: true})
 console.log(`Run compression on ${files.length} files`)
 Promise.all([Promise.all(files.map(doGzip)), Promise.all(files.map(doBrotli))]).then(() =>
   console.log(`Compressed`)
