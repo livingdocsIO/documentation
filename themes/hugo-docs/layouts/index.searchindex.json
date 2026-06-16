@@ -1,4 +1,4 @@
-{{- $pages := .Site.AllPages -}}
+{{- $pages := .Site.Pages -}}
 {{- $pages = where $pages "Params.hidden" "!=" true -}}
 {{- $pages = where $pages "Params.excludeFromSearch" "!=" true -}}
 [

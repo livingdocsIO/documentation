@@ -1,4 +1,4 @@
-languageCode: en-us
+locale: en-us
 theme: hugo-docs
 uglyURLs: false
 refLinksErrorLevel: ERROR
