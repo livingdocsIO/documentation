@@ -54,7 +54,7 @@ outputFormats:
     isPlainText: true
 
 outputs:
-  home: [HTML, RSS, SearchIndex]
+  home: [HTML, RSS, SearchIndex, Markdown]
 
 params:
   branch: main
