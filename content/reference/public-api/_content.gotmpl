@@ -25,6 +25,7 @@
     "dates" (dict "lastmod" $sectionsStat.ModTime)
     "weight" $section.weight
     "path" (or $section.path $section.title)
+    "outputs" (slice "html" "markdown")
     "content" (dict "mediaType" "text/markdown" "value" "")
     "params" $params)
   }}

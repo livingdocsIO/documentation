@@ -1,0 +1,37 @@
+{{- /*
+  Render an API endpoint prose string as clean markdown.
+  Resolves the shortcodes used in endpoint data (ref, added/deprecated/removed-in)
+  in place so the surrounding markdown (lists, paragraphs, links) is preserved.
+  Falls back to RenderString (HTML) only if an unhandled shortcode remains (e.g. img).
+  In inline mode (table cells) multi-line prose is flattened with <br>, since
+  markdown table cells cannot contain real line breaks.
+  Params: page, text, inline (bool, optional).
+*/ -}}
+{{- $page := .page -}}
+{{- $orig := .text -}}
+{{- $text := $orig -}}
+{{- range $m := findRE `\{\{<\s*ref\s+\\?"[^"\\]+\\?"\s*>\}\}` $text -}}
+  {{- $p := replaceRE `^\{\{<\s*ref\s+\\?"([^"\\]+)\\?"\s*>\}\}$` "$1" $m -}}
+  {{- $text = replace $text $m (ref $page $p) -}}
+{{- end -}}
+{{- range $m := findRE `\{\{<\s*(?:added|deprecated|removed)-in\s+\\?"[^"\\]+\\?"[^}]*>\}\}` $text -}}
+  {{- $verb := replaceRE `^\{\{<\s*(added|deprecated|removed)-in.*$` "$1" $m -}}
+  {{- $rel := replaceRE `^\{\{<\s*(?:added|deprecated|removed)-in\s+\\?"([^"\\]+)\\?".*$` "$1" $m -}}
+  {{- $text = replace $text $m (printf "%s in: [`%s`](/operations/releases/%s/)" (title $verb) $rel $rel) -}}
+{{- end -}}
+{{- /* img src is relative to the public-api content root; these are all public-api pages */ -}}
+{{- range $m := findRE `\{\{<\s*img\s[^}]*>\}\}` $text -}}
+  {{- $src := replaceRE `^.*\bsrc="([^"]+)".*$` "$1" $m -}}
+  {{- $alt := cond (in $m "alt=") (replaceRE `^.*\balt="([^"]*)".*$` "$1" $m) "" -}}
+  {{- $text = replace $text $m (printf "![%s](/reference/public-api/%s)" $alt $src) -}}
+{{- end -}}
+{{- if strings.Contains $text "{{" -}}
+  {{- if .inline -}}{{ $page.RenderString (dict "display" "inline") $orig }}{{- else -}}{{ $page.RenderString $orig }}{{- end -}}
+{{- else if .inline -}}
+  {{- $t := trim $text "\n" -}}
+  {{- $t = replaceRE `\n\s*\n` "<br><br>" $t -}}
+  {{- $t = replaceRE `\s*\n\s*` "<br>" $t -}}
+  {{- $t -}}
+{{- else -}}
+  {{- chomp $text -}}
+{{- end -}}

@@ -3,6 +3,9 @@ title: Open API
 weight: 1
 # renderTOC: false
 menus: public-api
+outputs:
+  - HTML
+  - Markdown
 ---
 
 ## OpenAPI
