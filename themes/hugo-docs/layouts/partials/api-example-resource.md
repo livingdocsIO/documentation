@@ -6,19 +6,22 @@
 {{- $latestStart := partial "api-version-object" (dict "endpoint" (index $versioned 0)) -}}
 {{- $hasNewer := cond $selected.sequence (lt $selected.sequence $latestStart.sequence) false -}}
 {{- with $endpoint.title }}
+
 ## {{ . }}
+
 {{ end -}}
 
 {{- if $endpoint.removed }}
+
 > [!WARNING]
 > {{ partial "prose-md.txt" (dict "page" $page "inline" true "text" (replace $endpoint.removed.note ":apiVersion" (replace $endpoint.removed.since "release-" ""))) }}
-{{ else if $endpoint.deprecation }}
+> {{ else if $endpoint.deprecation }}
 > [!WARNING]
 > {{ partial "prose-md.txt" (dict "page" $page "inline" true "text" (replace $endpoint.deprecation.note ":apiVersion" (replace $endpoint.deprecation.since "release-" ""))) }}
-{{ else if $hasNewer }}
+> {{ else if $hasNewer }}
 > [!NOTE]
 > This endpoint has changes in version {{ $latestStart.version }}.
-{{ end -}}
+> {{ end -}}
 
 {{- with $endpoint.release }}
 Added in: [`{{ . }}`](/operations/releases/{{ . }}/)
@@ -43,6 +46,7 @@ Added in: [`{{ . }}`](/operations/releases/{{ . }}/)
 
 | Version | Change |
 | ------- | ------ |
+
 {{ range . -}}
 | {{ .release }} | {{ with .description }}{{ partial "prose-md.txt" (dict "page" $page "inline" true "text" .) }}{{ end }} |
 {{ end -}}
@@ -54,6 +58,7 @@ Added in: [`{{ . }}`](/operations/releases/{{ . }}/)
 ```bash
 {{ replace . ":apiVersion" $v | chomp }}
 ```
+
 {{ end -}}
 
 {{- with $endpoint.endpoint }}
@@ -62,6 +67,7 @@ Added in: [`{{ . }}`](/operations/releases/{{ . }}/)
 ```http
 {{ replace (printf "%s %s" .method .path) ":apiVersion" $v }}
 ```
+
 {{ end -}}
 
 {{- with $endpoint.parameters }}
@@ -69,6 +75,7 @@ Added in: [`{{ . }}`](/operations/releases/{{ . }}/)
 
 | Name | Type | Required | Notes |
 | ---- | ---- | :------: | ----- |
+
 {{ range . -}}
 | {{ .name }} | {{ .type }} | {{ if .required }}x{{ end }} | {{ with .notes }}{{ partial "prose-md.txt" (dict "page" $page "inline" true "text" .) }}{{ end }} |
 {{ end -}}
@@ -80,6 +87,7 @@ Added in: [`{{ . }}`](/operations/releases/{{ . }}/)
 ```js
 {{ replace . ":apiVersion" $v | chomp }}
 ```
+
 {{ end -}}
 
 {{- with $endpoint.responses }}
@@ -88,11 +96,12 @@ Added in: [`{{ . }}`](/operations/releases/{{ . }}/)
 {{- $code := int .code -}}
 {{- $name := .name -}}
 {{- if not $name }}{{ $name = index (dict "200" "OK" "204" "OK" "301" "Moved Permanently" "400" "Bad Request" "401" "Unauthorized" "403" "Forbidden" "404" "Not Found" "409" "Conflict" "429" "Usage Limit Exceeded" "500" "Bad Request") (string $code) }}{{ end }}
-*{{ .code }}{{ with $name }} {{ . }}{{ end }}*{{ with .endpoint }} — `{{ replace . ":apiVersion" $v }}`{{ end }}
+_{{ .code }}{{ with $name }} {{ . }}{{ end }}_{{ with .endpoint }} — `{{ replace . ":apiVersion" $v }}`{{ end }}
 
 ```{{ if eq $code 204 }}txt
 No Content{{ else }}{{ or .format "json" }}
 {{ replace .body ":apiVersion" $v | chomp }}{{ end }}
 ```
+
 {{ end -}}
 {{ end -}}

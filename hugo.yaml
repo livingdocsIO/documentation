@@ -45,18 +45,24 @@ disableKinds:
   - taxonomy
   - term
 
+mediatypes:
+  text/markdown+llms:
+    delimiter: '.'
+    suffixes: ['txt']
+
 outputFormats:
   SearchIndex:
     baseName: search
     mediaType: application/json
-  Markdown:
-    mediaType: text/markdown
+  LLMS:
+    baseName: 'llms'
+    mediaType: text/markdown+llms
     isPlainText: true
 
 outputs:
-  home: [HTML, RSS, SearchIndex, Markdown]
-  section: [HTML, Markdown]
-  page: [HTML, Markdown]
+  home: [HTML, RSS, SearchIndex, LLMS]
+  section: [HTML, LLMS]
+  page: [HTML, LLMS]
 
 params:
   branch: main

@@ -1,0 +1,12 @@
+---
+{{ with .Params.title }}title: {{.}}{{ end }}
+{{ with .Params.description }}description: {{.}}{{ end }}
+---
+
+{{- .RenderShortcodes }}
+
+| Name | Document | Media | Include | Table Dashboard | Display Filter | Search Indexing | System Metadata | Description |
+| ---- | :------: | :---: | :-----: | :-------------: | :------------: | :-------------: | :-------------: | ----------- |
+{{ range .RegularPages -}}
+| [{{ .LinkTitle }}]({{ partial "link" .RelPermalink }}) | {{ cond (.Params.support.document) "✔" "✗" }} | {{ cond (.Params.support.media) "✔" "✗" }} | {{ cond (.Params.support.include) "✔" "✗" }} | {{ cond (.Params.support.tableDashboard) "✔" "✗" }} | {{ cond (.Params.support.displayFilter) "✔" "✗" }} | {{ cond (.Params.support.searchIndexing) "✔" "✗" }} | {{ cond (.Params.support.systemMetadata) "✔" "✗" }} | {{ with .Params.summary }}{{ $.RenderString (dict "display" "inline") . | plainify | chomp }}{{ end }} |
+{{- end -}}
