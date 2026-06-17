@@ -4,9 +4,6 @@ weight: 9
 menus:
   public-api:
     parent: Publications
-outputs:
-  - HTML
-  - Markdown
 ---
 
 {{< added-in "release-2023-07" block >}}
