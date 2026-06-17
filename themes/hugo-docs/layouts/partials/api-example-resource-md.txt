@@ -11,10 +11,10 @@
 
 {{- if $endpoint.removed }}
 > [!WARNING]
-> {{ partial "api-prose-md.txt" (dict "page" $page "inline" true "text" (replace $endpoint.removed.note ":apiVersion" (replace $endpoint.removed.since "release-" ""))) }}
+> {{ partial "prose-md.txt" (dict "page" $page "inline" true "text" (replace $endpoint.removed.note ":apiVersion" (replace $endpoint.removed.since "release-" ""))) }}
 {{ else if $endpoint.deprecation }}
 > [!WARNING]
-> {{ partial "api-prose-md.txt" (dict "page" $page "inline" true "text" (replace $endpoint.deprecation.note ":apiVersion" (replace $endpoint.deprecation.since "release-" ""))) }}
+> {{ partial "prose-md.txt" (dict "page" $page "inline" true "text" (replace $endpoint.deprecation.note ":apiVersion" (replace $endpoint.deprecation.since "release-" ""))) }}
 {{ else if $hasNewer }}
 > [!NOTE]
 > This endpoint has changes in version {{ $latestStart.version }}.
@@ -29,13 +29,13 @@ Added in: [`{{ . }}`](/operations/releases/{{ . }}/)
 {{ end -}}
 
 {{- with $endpoint.description }}
-{{ partial "api-prose-md.txt" (dict "page" $page "text" (replace . ":apiVersion" $v)) }}
+{{ partial "prose-md.txt" (dict "page" $page "text" (replace . ":apiVersion" $v)) }}
 {{ end -}}
 
 {{- with $endpoint.useCases }}
 **Use Cases**
 
-{{ partial "api-prose-md.txt" (dict "page" $page "text" (replace . ":apiVersion" $v)) }}
+{{ partial "prose-md.txt" (dict "page" $page "text" (replace . ":apiVersion" $v)) }}
 {{ end -}}
 
 {{- with $endpoint.history }}
@@ -44,7 +44,7 @@ Added in: [`{{ . }}`](/operations/releases/{{ . }}/)
 | Version | Change |
 | ------- | ------ |
 {{ range . -}}
-| {{ .release }} | {{ with .description }}{{ partial "api-prose-md.txt" (dict "page" $page "inline" true "text" .) }}{{ end }} |
+| {{ .release }} | {{ with .description }}{{ partial "prose-md.txt" (dict "page" $page "inline" true "text" .) }}{{ end }} |
 {{ end -}}
 {{ end -}}
 
@@ -70,7 +70,7 @@ Added in: [`{{ . }}`](/operations/releases/{{ . }}/)
 | Name | Type | Required | Notes |
 | ---- | ---- | :------: | ----- |
 {{ range . -}}
-| {{ .name }} | {{ .type }} | {{ if .required }}x{{ end }} | {{ with .notes }}{{ partial "api-prose-md.txt" (dict "page" $page "inline" true "text" .) }}{{ end }} |
+| {{ .name }} | {{ .type }} | {{ if .required }}x{{ end }} | {{ with .notes }}{{ partial "prose-md.txt" (dict "page" $page "inline" true "text" .) }}{{ end }} |
 {{ end -}}
 {{ end -}}
 
