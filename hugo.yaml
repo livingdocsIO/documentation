@@ -55,6 +55,8 @@ outputFormats:
 
 outputs:
   home: [HTML, RSS, SearchIndex, Markdown]
+  section: [HTML, Markdown]
+  page: [HTML, Markdown]
 
 params:
   branch: main

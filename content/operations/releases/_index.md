@@ -6,13 +6,6 @@ icon: alert-decagram
 menu: operations
 weight: 1
 type: release-notes
-outputs:
-  - HTML
-  - Markdown
-cascade:
-  outputs:
-    - HTML
-    - Markdown
 ---
 
 Every odd month (January, March, May, July, September, November), a new Livindocs release is provided.
