@@ -138,7 +138,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 
 ## Patches
 
-Here is a list of all patches after the release has been announced.
+Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
 
