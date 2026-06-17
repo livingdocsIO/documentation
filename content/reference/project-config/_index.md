@@ -7,6 +7,13 @@ weight: 2
 menus:
   reference:
     weight: 4
+outputs:
+  - HTML
+  - Markdown
+cascade:
+  outputs:
+    - HTML
+    - Markdown
 ---
 
 ## Overview
