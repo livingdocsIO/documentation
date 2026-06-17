@@ -1,0 +1,9 @@
+---
+{{ with .Params.title }}title: {{.}}{{ end }}
+{{ with .Params.description }}description: {{.}}{{ end }}
+{{ with .Params.keywords }}keywords: {{.}}{{ end }}
+---
+{{ $page := .Page }}
+{{- range $endpoint := .Params.endpoints }}
+{{ partial "api-example-resource-md.txt" (dict "page" $page "endpoint" $endpoint) }}
+{{- end }}
