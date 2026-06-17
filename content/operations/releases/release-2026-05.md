@@ -140,22 +140,22 @@ To fix this example:
 
 ### Removal of `li-target-length` UI Config Properties :fire:
 
-The `allowAnyNumber`, `showExactCountCheckbox`, and `unit` properties inside `ui.config` of `li-target-length` and `li-system-target-length` metadata plugins have been removed. Please use `ui.config.mode` instead.
+The `allowAnyNumber`, `showExactCountCheckbox`, and `unit` properties inside `ui.config` of `li-target-length` and `li-system-target-length` metadata plugins have been removed. Please use `ui.config.modes` instead.
 
-### Reserving Dashboard Handle 'ImageCollections' :fire:
+### Reserving Dashboard Handle 'imageCollections' :fire:
 
-The dashboard handle `ImageCollections` can not be used, as it is a reserved handle.
+The dashboard handle `imageCollections` can not be used, as it is a reserved handle.
 
 ## Deprecations
 
 ### Deprecate support for Redis versions below 7.4
 
-Redis 7.2 reached End of Life (EOL) on February 28, 2026. Versions 6.2 and 6.4 reached EOL last year.
+Support for Redis versions below 7.4 is deprecated and will be removed in `release-2026-09`. Redis 7.2 reached End of Life (EOL) on February 28, 2026. Versions 6.2 and 6.4 reached EOL last year.
 Upgrade to Redis version 7.4 or above. The most recently supported version is 8.0.
 
 ### Auto-Generated Media Library Dashboards
 
-Auto-generated media library dashboards using `{liItem: 'mediaLibrary'}` are deprecated and will be removed in release-2026-11. Remove `{liItem: 'mediaLibrary'}` as well as `mediaTypes[].editor.managementDashboard` and `mediaTypes[].editor.dashboard` from the project config.
+Auto-generated media library dashboards using `{liItem: 'mediaLibrary'}` are deprecated and will be removed in `release-2026-11`. Remove `{liItem: 'mediaLibrary'}` as well as `mediaTypes[].editor.managementDashboard` and `mediaTypes[].editor.dashboard` from the project config.
 
 Configure [media library dashboards]({{< ref "/guides/media-library/media-library-setup/#media-library-dashboard-configuration" >}}) instead. These dashboards can also be referenced in content types to configure the dashboards shown in media library sidepanels and media selection dialogs, using `contentTypes[].editor.images.useDashboard`, `contentTypes[].editor.videos.useDashboard`, or `contentTypes[].editor.files.useDashboard`.
 
@@ -190,7 +190,7 @@ You can create an unlimited number of groups, add them to other collections or u
 
 #### Multi-select and Batch Actions
 
-Similar to the Media Library, each image in a collection has a context menu with actions: add to another collection, send to inbox, store or remove it from the archive (`use2025behavior` required), or remove it from the collection.
+Similar to the Media Library, each image in a collection has a context menu with actions: add to another collection, send to inbox, store or remove it from the archive (`use2025Behavior` required), or remove it from the collection.
 It is also possible to open the detail view of each image to edit its metadata.
 You can select multiple images and apply any of these actions in a single batch operation.
 
@@ -295,7 +295,7 @@ Remove an entry:
 
 ### Create usage log entries on publish :gift:
 
-The function `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` has been introduced to make it easier to create usage log entries. This function is intended to be used in a post publish hook and will add usage log entries for any referenced media library entries which do not already have a usage log entry for the current document. The entry will automatically be marked as 'confimed' so any mandatory params must be provided.
+The function `mediaLibraryApi.addUsageLogEntriesForMediaInDocument()` has been introduced to make it easier to create usage log entries. This function is intended to be used in a post publish hook and will add usage log entries for any referenced media library entries which do not already have a usage log entry for the current document. The entry will automatically be marked as 'confirmed' so any mandatory params must be provided.
 
 ```js
 liServer.registerInitializedHook(() => {
@@ -316,6 +316,8 @@ liServer.registerInitializedHook(() => {
 ### Internal Usage Log Purposes :gift:
 
 Usage log purposes can now be flagged as internal. When set to `true` it prevents a user from creating, updating or deleting entries for the purpose within the editor. A read-only entry will still be visible within the UI. This is intended to be used alongside the `addUsageLogEntriesForMediaInDocument` function to create permanent entries.
+
+Note: setting `internal: true` on an existing purpose will hide the editor controls for that purpose, so any users who previously edited usage log entries of that purpose will lose that ability.
 
 ```js
 {
@@ -413,7 +415,7 @@ liServer.features.api('li-public-api').executeDocumentCommands({
 
 ### Norwegian UI Translations :gift:
 
-The Livingdocs Editor is now available in Norwegian. The translations are automatically applied when the browser language is set to Norwegian.
+The Livingdocs Editor is now available in Norwegian Bokmål (`nb-NO`) and Norwegian Nynorsk (`nn-NO`). The translations are automatically applied when the browser language is set to either variant.
 
 For setup instructions, see the [Configure Multi-Language UI]({{< ref "/guides/editor/multi-language-ui/" >}}) guide.
 
@@ -423,7 +425,7 @@ Livingdocs Server now supports running with `ignore-scripts=true` in npm. This p
 
 1. To verify that no dependency in your tree depends on postinstall scripts, you can use the following script:
 
-   ```js
+   ```sh
    npm query ":attr(scripts, [postinstall]), :attr(scripts, [preinstall]), :attr(scripts, [install])" \
      | jq -r '.[].name' \
      | grep -vxE 'protobufjs|exifreader|leveldown|sharp|@parcel/watcher' \
@@ -434,7 +436,7 @@ Livingdocs Server now supports running with `ignore-scripts=true` in npm. This p
 3. Once you don't depend on any `postinstall` scripts anymore,  
    please set `ignore-scripts=true` in your `.npmrc` files in every livingdocs project.
 
-   ```js
+   ```ini
    package-lock=true
    ignore-scripts=true
    //registry.npmjs.org/:_authToken=${NPM_TOKEN}
@@ -449,8 +451,6 @@ We are constantly patching module vulnerabilities for the Livingdocs Server and 
 This release we have patched the following vulnerabilities in the Livingdocs Server:
 
 - [CVE-2026-44902 / GHSA-q7rr-3cgh-j5r3](https://github.com/advisories/GHSA-q7rr-3cgh-j5r3) patched in @opentelemetry/sdk-node v0.217.0
-
-No known vulnerabilities. :tada:
 
 ### Livingdocs Editor
 
