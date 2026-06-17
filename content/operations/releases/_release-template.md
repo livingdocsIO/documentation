@@ -108,7 +108,7 @@ No rollback steps are required for this release.
 
 ## Breaking Changes :fire:
 
-## Deprecations
+## Deprecations :warning:
 
 ## Features :gift:
 
@@ -143,10 +143,3 @@ Here is a list of all patches after the release has been announced.
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
-
----
-
-**Icon Legend**
-
-- Breaking changes: :fire:
-- Feature: :gift:
