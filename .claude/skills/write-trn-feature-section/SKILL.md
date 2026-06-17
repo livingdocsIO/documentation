@@ -28,7 +28,7 @@ Ask **one question at a time** — wait for each answer before asking the next:
 **Example 1 - Simple (auto-available, no config):**
 
 ```markdown
-### Optimized Media Library Modal :gift:
+### Optimized Media Library Modal
 
 We've optimized the image selection modal to display more images by increasing its width. The modal now shows up to 6 images per row (depending on screen size), compared to the previous layout. This makes better use of available screen space.
 
@@ -38,7 +38,7 @@ For more information, see the [Media Library]({{< ref "/reference/media-library"
 **Example 2 - Complex (sub-sections, config, before/after):**
 
 ```markdown
-### Distribution Dates UI Improvements :gift:
+### Distribution Dates UI Improvements
 
 Editors use the planning board to manage articles scheduled for publishing and distribution. Setting distribution dates quickly and accurately is essential for efficient workflow management.
 
@@ -78,7 +78,7 @@ For more information, see the [Distribution Dates]({{< ref "/reference/distribut
 Use this format:
 
 ```
-### FEATURE NAME :gift:
+### FEATURE NAME
 
 INTRO_PARAGRAPH
 
@@ -104,7 +104,7 @@ INTRO_PARAGRAPH
 - **Complex topics**: add _"Reach out to your customer solutions contact for help getting started."_ if setup is non-trivial.
 - **Sub-sections**: use `####` headings for multiple distinct sub-features or steps.
 - **Links**: `{{< ref "/path" >}}` for internal docs. `{{< release "release-YYYY-MM" >}}` for other releases.
-- **`:gift:` emoji**: always append to the `###` heading.
+- **No emoji on the entry heading**: the `:gift:` lives on the `## Features` section heading only (see `.claude/trn-format-reference.md`).
 
 #### Tone & style
 
