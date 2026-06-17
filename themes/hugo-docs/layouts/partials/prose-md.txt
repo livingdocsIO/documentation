@@ -1,0 +1,72 @@
+{{- /*
+  Shared prose-to-markdown resolver.
+  Resolves the shortcodes used in data-driven prose (endpoint data, metadata-plugin
+  front matter) IN PLACE, so the surrounding markdown — lists, paragraphs, links,
+  code fences — is preserved instead of being converted to HTML by RenderString.
+  Falls back to RenderString only if an unhandled shortcode remains.
+
+  Params:
+    page   – the page (for ref resolution and page-relative image paths)
+    text   – the string to resolve
+    inline – (bool) flatten multi-line output with <br> for use in table cells
+    code   – (bool) the text is inside a code fence: convert version/link
+             shortcodes to PLAIN TEXT (markdown links don't render in code blocks)
+*/ -}}
+{{- $page := .page -}}
+{{- $text := .text -}}
+{{- /* api-version -> current API version string */ -}}
+{{- with hugo.Store.Get "api-versions" }}{{ $text = replaceRE `\{\{<\s*api-version\s*>\}\}` (index . 0).version $text }}{{ end -}}
+{{- if .code -}}
+  {{- $text = replaceRE `\{\{<\s*added-in\s+\\?"([^"\\]+)\\?"[^}]*>\}\}` "Added in $1" $text -}}
+  {{- $text = replaceRE `\{\{<\s*deprecated-in\s+\\?"([^"\\]+)\\?"[^}]*>\}\}` "Deprecated in $1" $text -}}
+  {{- $text = replaceRE `\{\{<\s*removed-in\s+\\?"([^"\\]+)\\?"[^}]*>\}\}` "Removed in $1" $text -}}
+  {{- $text = replaceRE `\{\{<\s*release\s+\\?"([^"\\]+)\\?"[^}]*>\}\}` "$1" $text -}}
+  {{- $text = replaceRE `\{\{<\s*a\s+[^}]*title="([^"]*)"[^}]*>\}\}` "$1" $text -}}
+  {{- $text -}}
+{{- else -}}
+  {{- $orig := $text -}}
+  {{- /* ref -> absolute URL */ -}}
+  {{- range $m := findRE `\{\{<\s*ref\s+\\?"[^"\\]+\\?"\s*>\}\}` $text -}}
+    {{- $p := replaceRE `^\{\{<\s*ref\s+\\?"([^"\\]+)\\?"\s*>\}\}$` "$1" $m -}}
+    {{- $text = replace $text $m (ref $page $p) -}}
+  {{- end -}}
+  {{- /* added/deprecated/removed-in -> release link */ -}}
+  {{- range $m := findRE `\{\{<\s*(?:added|deprecated|removed)-in\s+\\?"[^"\\]+\\?"[^}]*>\}\}` $text -}}
+    {{- $verb := replaceRE `^\{\{<\s*(added|deprecated|removed)-in.*$` "$1" $m -}}
+    {{- $rel := replaceRE `^\{\{<\s*(?:added|deprecated|removed)-in\s+\\?"([^"\\]+)\\?".*$` "$1" $m -}}
+    {{- $text = replace $text $m (printf "%s in: [`%s`](/operations/releases/%s/)" (title $verb) $rel $rel) -}}
+  {{- end -}}
+  {{- /* release -> release link */ -}}
+  {{- range $m := findRE `\{\{<\s*release\s+\\?"[^"\\]+\\?"[^}]*>\}\}` $text -}}
+    {{- $rel := replaceRE `^\{\{<\s*release\s+\\?"([^"\\]+)\\?".*$` "$1" $m -}}
+    {{- $text = replace $text $m (printf "[`%s`](/operations/releases/%s/)" $rel $rel) -}}
+  {{- end -}}
+  {{- /* img -> markdown image; resolve src relative to the page's source dir.
+         Content-adapter pages have no .File, so fall back to the public-api root. */ -}}
+  {{- range $m := findRE `\{\{<\s*img\s[^}]*>\}\}` $text -}}
+    {{- $src := replaceRE `^.*\bsrc="([^"]+)".*$` "$1" $m -}}
+    {{- $alt := cond (in $m "alt=") (replaceRE `^.*\balt="([^"]*)".*$` "$1" $m) "" -}}
+    {{- $base := "reference/public-api" -}}
+    {{- with $page.File }}{{ $base = .Dir }}{{ end -}}
+    {{- $text = replace $text $m (printf "![%s](%s)" $alt (path.Join $base $src | relURL)) -}}
+  {{- end -}}
+  {{- /* warning / info paired shortcodes -> GFM alerts */ -}}
+  {{- range $m := findRE `(?s)\{\{<\s*warning\s*>\}\}.*?\{\{<\s*/warning\s*>\}\}` $text -}}
+    {{- $inner := trim (replaceRE `(?s)^\{\{<\s*warning\s*>\}\}(.*?)\{\{<\s*/warning\s*>\}\}$` "$1" $m) " \n" -}}
+    {{- $text = replace $text $m (printf "> [!WARNING]\n> %s" (replaceRE `\n` "\n> " $inner)) -}}
+  {{- end -}}
+  {{- range $m := findRE `(?s)\{\{<\s*info\s*>\}\}.*?\{\{<\s*/info\s*>\}\}` $text -}}
+    {{- $inner := trim (replaceRE `(?s)^\{\{<\s*info\s*>\}\}(.*?)\{\{<\s*/info\s*>\}\}$` "$1" $m) " \n" -}}
+    {{- $text = replace $text $m (printf "> [!NOTE]\n> %s" (replaceRE `\n` "\n> " $inner)) -}}
+  {{- end -}}
+  {{- if strings.Contains $text "{{" -}}
+    {{- if .inline -}}{{ $page.RenderString (dict "display" "inline") $orig }}{{- else -}}{{ $page.RenderString $orig }}{{- end -}}
+  {{- else if .inline -}}
+    {{- $t := trim $text "\n" -}}
+    {{- $t = replaceRE `\n\s*\n` "<br><br>" $t -}}
+    {{- $t = replaceRE `\s*\n\s*` "<br>" $t -}}
+    {{- $t -}}
+  {{- else -}}
+    {{- chomp $text -}}
+  {{- end -}}
+{{- end -}}
