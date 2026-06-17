@@ -97,28 +97,56 @@ No rollback steps are required for this release.
 
 ## Breaking Changes :fire:
 
-### Direct Imports from `lib/` :fire:
+### Direct Imports from `lib/`
 
-Direct file imports from Livingdocs packages are not supported. This release might break direct imports from `lib/`. Downstreams are urged to remove all direct imports. Since this has never been supported, we will not communicate such changes in the future.
+Direct file imports from Livingdocs packages are not supported. This release may break direct imports from `lib/`. Downstreams should remove all such imports. Since this was never supported, we will not communicate these changes in the future.
 
-### Stricter Validation of Image Processing Config Properties with `use2025Behavior` :fire:
+#### Detect
 
-The server config properties `mediaLibrary.images.processing.failOn`, `mediaLibrary.images.processing.convert`, `mediaLibrary.images.processing.lossy`, and `mediaLibrary.images.processing.lossless` are not applied when `use2025Behavior` is enabled. Configuring them alongside `use2025Behavior` will now result in an error. Please remove these properties if `use2025Behavior` is enabled.
+In server project source code, a `require()` or `import` referencing `@livingdocs/server/lib/`.
 
-### Removal of Deprecated Image Processing Config Properties :fire:
+#### Fix
 
-The deprecated server config properties `mediaLibrary.images.processing.maxFileSize` and `mediaLibrary.images.uploadRestrictions.maxResolution` are no longer supported.
+Replace each direct `lib/` import with the equivalent public API. If no public equivalent exists, contact Livingdocs support — there is no general drop-in replacement.
 
-Please use the following replacements instead:
+### Stricter Validation of Image Processing Config Properties with `use2025Behavior`
 
-- `mediaLibrary.images.processing.maxFileSize` → `mediaLibrary.images.uploadRestrictions.maxFileSize`
-- `mediaLibrary.images.uploadRestrictions.maxResolution` → `mediaLibrary.images.processing.maxResolution`
+**Codes:** `LIBREAKING064-failOn`, `LIBREAKING064-convert`, `LIBREAKING064-lossy`, `LIBREAKING064-lossless`
+
+The server config properties `failOn`, `convert`, `lossy`, and `lossless` under `mediaLibrary.images.processing` are not applied when `use2025Behavior` is enabled. Configuring any of them alongside `use2025Behavior` now raises an error at startup. Remove these properties when `use2025Behavior` is enabled.
+
+#### Detect
+
+In the server config, `mediaLibrary.use2025Behavior` is `true` AND any of `failOn`, `convert`, `lossy`, or `lossless` is set under `mediaLibrary.images.processing`. Search for `(failOn|convert|lossy|lossless)\s*:` and confirm each hit sits under `processing`.
+
+#### Fix
+
+Remove the four `processing.*` properties. They are not applied when `use2025Behavior` is enabled, so removing them does not change runtime behaviour.
+
+### Removal of Deprecated Image Processing Config Properties
+
+**Codes:** `LIBREAKING065`, `LIBREAKING066`
+
+The deprecated server config properties `mediaLibrary.images.processing.maxFileSize` and `mediaLibrary.images.uploadRestrictions.maxResolution` are no longer supported. Each moves to a new location; the value format is unchanged:
+
+| Before (removed)                                       | After (use instead)                                  |
+| ------------------------------------------------------ | ---------------------------------------------------- |
+| `mediaLibrary.images.processing.maxFileSize`           | `mediaLibrary.images.uploadRestrictions.maxFileSize` |
+| `mediaLibrary.images.uploadRestrictions.maxResolution` | `mediaLibrary.images.processing.maxResolution`       |
+
+#### Detect
+
+In the server config, either `maxFileSize` is set under `mediaLibrary.images.processing`, or `maxResolution` is set under `mediaLibrary.images.uploadRestrictions`. Search for `maxFileSize\s*:` and `maxResolution\s*:` and check which parent each sits under.
+
+#### Fix
+
+Move each property to its new location per the table above. Only the key path changes; the value is unchanged.
 
 ### Usage Log Params Schema Plugin Type Consistency
 
-All `paramsSchema` entries across usage log purposes are now checked for type consistency. This ensures metadata plugins with the same handle share the same type. If you get the error message while updating a project config then you will need to modify the paramsSchema properties indicated so that they match across all purposes. You may also need to write a script to perform a manual data migration if you want to keep the data. Please contact us if you need any support with this.
+All `paramsSchema` entries across usage log purposes are now checked for type consistency: metadata plugins that share a `handle` must share the same `type`. Updating a project config that violates this raises an error. Keeping existing data may require a manual data migration — contact Livingdocs support if needed.
 
-An example of an invalid configuration:
+An invalid configuration (the same `handle` `page` with two different types):
 
 ```js
 {
@@ -133,41 +161,144 @@ An example of an invalid configuration:
 }
 ```
 
-To fix this example:
+#### Detect
 
-- both page params would need to be either `li-text` or `li-integer`
-- or, one handle needs to be modified (e.g. renaming `page` to `webpage`)
+In `mediaCenter.usageLog.purposes[].paramsSchema[]`, the same `handle` value appears in two or more purposes with a different `type`. Search the config for `handle:` / `type:` pairs under `paramsSchema` and compare the `type` for each repeated handle.
 
-### Removal of `li-target-length` UI Config Properties :fire:
+#### Fix
 
-The `allowAnyNumber`, `showExactCountCheckbox`, and `unit` properties inside `ui.config` of `li-target-length` and `li-system-target-length` metadata plugins have been removed. Please use `ui.config.modes` instead.
+For each conflicting `handle`, either:
 
-### Reserving Dashboard Handle 'imageCollections' :fire:
+- align the `type` across all purposes (preferred when the field is semantically the same), or
+- rename the handle in one purpose so the two are no longer treated as the same plugin (preferred when the fields are semantically different).
 
-The dashboard handle `imageCollections` can not be used, as it is a reserved handle.
+Which option is correct depends on the meaning of the field, so review each conflict before changing it. If existing usage log data uses the old handle or type, a manual data migration may be needed — contact Livingdocs support for help.
 
-## Deprecations
+### Removal of `li-target-length` UI Config Properties
+
+**Codes:** `LIBREAKING067-allowAnyNumber`, `LIBREAKING067-showExactCountCheckbox`, `LIBREAKING067-unit`
+
+The `allowAnyNumber`, `showExactCountCheckbox`, and `unit` properties inside `ui.config` of the `li-target-length` and `li-system-target-length` metadata plugins have been removed. Use `ui.config.modes` instead, mapping the old combination to the equivalent `modes` array:
+
+| Before (`ui.config`)                                            | After (`ui.config.modes`)          |
+| --------------------------------------------------------------- | ---------------------------------- |
+| (defaults — steps only)                                         | `['steps']`                        |
+| `allowAnyNumber: true`                                          | `['characters']`                   |
+| `showExactCountCheckbox: true`, `unit: 'characters'`            | `['steps', 'characters']`          |
+| `showExactCountCheckbox: true`, `unit: 'lines'`                 | `['steps', 'lines']`               |
+| `showExactCountCheckbox: true`, `unit: ['characters', 'lines']` | `['steps', 'characters', 'lines']` |
+
+#### Detect
+
+In metadata plugin definitions of `type: 'li-target-length'` or `type: 'li-system-target-length'` (typically under `contentTypes[].metadata[]` and `documentTypes[].metadata[]`), any of `allowAnyNumber`, `showExactCountCheckbox`, or `unit` set inside `ui.config`. Search for `(allowAnyNumber|showExactCountCheckbox|unit)\s*:` and confirm it sits in the `ui.config` of one of those plugins.
+
+#### Fix
+
+Remove the three properties and add `modes` according to the mapping above.
+
+### Reserving the Dashboard Handle `imageCollections`
+
+**Code:** `LIBREAKING068`
+
+The dashboard handle `imageCollections` is now reserved and cannot be configured manually. A dashboard configured with this handle in `editorSettings.dashboards` raises an error.
+
+#### Detect
+
+The dashboard handle `imageCollections` in `editorSettings.dashboards`, and any references to it (e.g. `useDashboard`). Search the project config for `imageCollections`.
+
+#### Fix
+
+Rename the dashboard to a non-reserved handle of your choice and update every reference to point to the new name.
+
+## Deprecations :warning:
 
 ### Deprecate support for Redis versions below 7.4
 
-Support for Redis versions below 7.4 is deprecated and will be removed in `release-2026-09`. Redis 7.2 reached End of Life (EOL) on February 28, 2026. Versions 6.2 and 6.4 reached EOL last year.
-Upgrade to Redis version 7.4 or above. The most recently supported version is 8.0.
+**Code:** `LIDEP079`
+
+Support for Redis versions below 7.4 is deprecated and will be removed in `release-2026-09`. Redis 7.2 reached End of Life (EOL) on February 28, 2026; versions 6.2 and 6.4 reached EOL in 2025. Upgrade to Redis 7.4 or above — the most recently supported version is 8.0.
+
+#### Detect
+
+The Redis instance(s) used by Livingdocs Server run a version below 7.4. Check the deployed Redis version (e.g. `redis-cli INFO server | grep redis_version`), not the project config.
+
+#### Fix
+
+Upgrade Redis to 7.4 or above. 8.0 is the most recently supported version.
 
 ### Auto-Generated Media Library Dashboards
 
-Auto-generated media library dashboards using `{liItem: 'mediaLibrary'}` are deprecated and will be removed in `release-2026-11`. Remove `{liItem: 'mediaLibrary'}` as well as `mediaTypes[].editor.managementDashboard` and `mediaTypes[].editor.dashboard` from the project config.
+**Codes:** `LIDEP080`, `LIDEP083`
 
-Configure [media library dashboards]({{< ref "/guides/media-library/media-library-setup/#media-library-dashboard-configuration" >}}) instead. These dashboards can also be referenced in content types to configure the dashboards shown in media library sidepanels and media selection dialogs, using `contentTypes[].editor.images.useDashboard`, `contentTypes[].editor.videos.useDashboard`, or `contentTypes[].editor.files.useDashboard`.
+Auto-generated media library dashboards are deprecated and will be removed in `release-2026-11`. This covers `{liItem: 'mediaLibrary'}` in the editor settings, and `mediaTypes[].editor.managementDashboard` and `mediaTypes[].editor.dashboard` in the project config.
+
+Configure explicit [media library dashboards]({{< ref "/guides/media-library/media-library-setup/#media-library-dashboard-configuration" >}}) instead. They can also be referenced from content types to control the dashboards shown in media library sidepanels and selection dialogs, via `contentTypes[].editor.images.useDashboard`, `contentTypes[].editor.videos.useDashboard`, and `contentTypes[].editor.files.useDashboard`.
+
+#### Detect
+
+In the project config, any of:
+
+- `{liItem: 'mediaLibrary'}` in the editor settings (e.g. a `mainNavigation` or similar `liItem` slot) — search for `liItem: 'mediaLibrary'`
+- `managementDashboard` or `dashboard` set under a `mediaTypes[].editor` block — search for `(managementDashboard|dashboard)\s*:` and confirm the parent is `mediaTypes[].editor`
+
+#### Fix
+
+Remove the three settings above and configure explicit [media library dashboards]({{< ref "/guides/media-library/media-library-setup/#media-library-dashboard-configuration" >}}), referencing them from content types via `contentTypes[].editor.images.useDashboard`, `.videos.useDashboard`, and `.files.useDashboard`.
+
+The new model is a different shape rather than a simple property rename, so the choice of which dashboards to expose at each site needs to be made deliberately.
 
 ### `contentTypes[].editor.images.mediaTypes`
 
+**Code:** `LIDEP081`
+
 Project config property `contentTypes[].editor.images.mediaTypes` is deprecated and will be removed in `release-2026-11`. It controlled which media types were shown in image sidepanels and dialogs. Configure a media library dashboard with the appropriate `baseFilters` instead.
+
+#### Detect
+
+`mediaTypes` set under `contentTypes[].editor.images` in the project config. Search for `mediaTypes\s*:` and confirm it sits under an `editor.images` block (not a top-level `mediaTypes` definition).
+
+#### Fix
+
+Define (or reuse) a media library dashboard whose `baseFilters` restrict to the same media types, then reference it via `contentTypes[].editor.images.useDashboard`. Remove the `mediaTypes` property afterwards.
+
+Because this replaces one property with a reference to a separate dashboard definition, each affected content type needs a deliberate choice of which dashboard to point at.
 
 ### `mediaTypes[].hidden`
 
+**Code:** `LIDEP082`
+
 Project config property `mediaTypes[].hidden` is deprecated and will be removed in `release-2026-11`. To hide a media type from sidepanels and dialogs, exclude it with `baseFilters` instead.
 
-For poster image media types, we introduce `useDashboard` on `li-poster-image` and `posterImageUseDashboard` on `li-video-reference` metadata plugins. You can use these to configure which dashboards appear when selecting a poster image. By setting `baseFilters` on those dashboards, you can specify which media types appear.
+For poster images, new `useDashboard` (on the `li-poster-image` plugin) and `posterImageUseDashboard` (on the `li-video-reference` plugin) settings control which dashboards appear when selecting a poster image; set `baseFilters` on those dashboards to control which media types appear.
+
+#### Detect
+
+`hidden: true` on any entry in the top-level `mediaTypes[]` array of the project config. Search for `hidden\s*:\s*true` and confirm it sits under a `mediaTypes[]` entry.
+
+#### Fix
+
+For each hidden media type, set `baseFilters` on the relevant media library dashboards to exclude it. For poster image sites, configure `ui.config.useDashboard` on `li-poster-image` and `ui.config.posterImageUseDashboard` on `li-video-reference`, pointing at dashboards whose `baseFilters` exclude the previously hidden types. Remove the `hidden` property afterwards.
+
+Visibility is now controlled at the dashboard level rather than per media type, so each previously hidden media type needs the relevant dashboards' `baseFilters` reviewed.
+
+### `publicApi.executeDocumentCommands()` write-model return value
+
+The `publicApi.executeDocumentCommands()` method currently returns the document write model by default. In a future release the default will change to return a public document version, aligning it with the other media library methods of the public API. No fixed removal release has been announced; opt in to the new behaviour now by passing `apiVersion: '2026-05'`.
+
+```js
+liServer.features.api('li-public-api').executeDocumentCommands({
+  // ...
+  apiVersion: '2026-05'
+})
+```
+
+#### Detect
+
+In server project source code, a call to `liServer.features.api('li-public-api').executeDocumentCommands(...)` that does not pass `apiVersion: '2026-05'` (or later). Search for `executeDocumentCommands(`.
+
+#### Fix
+
+Pass `apiVersion: '2026-05'` to opt in to the new return value, then update downstream code that consumed the write model to consume a public document version instead.
 
 ## Features :gift:
 
@@ -402,17 +533,6 @@ This feature is automatically available in all Media Center dashboards. No confi
 
 For more information, see the [Batch Actions]({{< ref "/guides/media-library/batch-actions" >}}) documentation.
 
-### Return Public Document Version from `publicApi.executeDocumentCommands()`
-
-The public API `executeDocumentCommands` method can now return a public document version instead of the document write model. This aligns the return value to all other media library methods of the Public API. Pass `apiVersion: '2026-05'` to your requests to opt-in early.
-
-```js
-liServer.features.api('li-public-api').executeDocumentCommands({
-  // ...
-  apiVersion: '2026-05'
-})
-```
-
 ### Norwegian UI Translations :gift:
 
 The Livingdocs Editor is now available in Norwegian Bokmål (`nb-NO`) and Norwegian Nynorsk (`nn-NO`). The translations are automatically applied when the browser language is set to either variant.
@@ -465,6 +585,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+
 - [v301.1.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.22): fix: Trigger release after deps update
 - [v301.1.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.21): fix(deps): update livingdocs-patch
 - [v301.1.20](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.20): fix: remove server-lib workspace
@@ -492,6 +613,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+
 - [v123.21.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.25): fix(media-library): Prevent li-metadata-translations save on open
 - [v123.21.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.24): fix(deps): update livingdocs-patch from 34.0.5 to v34.0.6
 - [v123.21.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.23): fix(deps): update dependency js-yaml from 4.1.1 to 4.2.0 [security]
