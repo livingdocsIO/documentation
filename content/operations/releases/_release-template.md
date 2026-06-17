@@ -108,7 +108,7 @@ No rollback steps are required for this release.
 
 ## Breaking Changes :fire:
 
-## Deprecations
+## Deprecations :warning:
 
 ## Features :gift:
 
@@ -143,10 +143,3 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 ### Livingdocs Server Patches
 
 ### Livingdocs Editor Patches
-
----
-
-**Icon Legend**
-
-- Breaking changes: :fire:
-- Feature: :gift:
