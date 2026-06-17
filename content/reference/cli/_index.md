@@ -8,6 +8,13 @@ weight: 5
 menus:
   reference:
     weight: 8
+outputs:
+  - HTML
+  - Markdown
+cascade:
+  outputs:
+    - HTML
+    - Markdown
 ---
 
 ## Repo

@@ -6,6 +6,13 @@ weight: 4
 menus:
   reference:
     weight: 7
+outputs:
+  - HTML
+  - Markdown
+cascade:
+  outputs:
+    - HTML
+    - Markdown
 ---
 
 A Webhook notifies another system via a HTTP POST request about a change in Livingdocs, e.g. when a document has been published. You can configure multiple Webhooks that are called on only one or multiple events.

@@ -3,6 +3,9 @@ title: Changelog
 type: changelog
 weight: 1
 menus: public-api
+outputs:
+  - HTML
+  - Markdown
 
 cascade:
   target:
