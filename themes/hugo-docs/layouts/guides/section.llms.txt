@@ -1,0 +1,23 @@
+---
+{{ with .Params.title }}title: {{.}}{{ end }}
+{{ with .Params.description }}description: {{.}}{{ end }}
+{{ with .Params.keywords }}keywords: {{.}}{{ end }}
+---
+
+{{- .RenderShortcodes -}}
+
+{{- if (ne (.Param "renderSummaries") false) }}
+{{- $pages := where (.RegularPagesRecursive.GroupBy "CurrentSection") "Params.hidden" "!=" true }}
+{{- range sort $pages ".Key.Weight" }}
+
+## {{ .Key.Title }}
+{{ range .Pages.ByWeight -}}
+{{- if (ne (.Param "hideSectionTeaser") true) }}
+- [{{ if .LinkTitle }}{{ .LinkTitle }}{{ else }}{{ .Title }}{{ end }}]({{ partial "link" .RelPermalink }}){{ with .Description }} — {{ . }}{{ end }}
+{{- range .Params.bullets }}
+  - {{ . }}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}

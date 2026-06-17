@@ -4,4 +4,4 @@
 {{ with .Params.keywords }}keywords: {{.}}{{ end }}
 ---
 
-{{ .RenderShortcodes -}}
+{{- .RenderShortcodes -}}

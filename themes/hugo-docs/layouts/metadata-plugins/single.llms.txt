@@ -2,7 +2,7 @@
 {{ with .Params.title }}title: {{.}}{{ end }}
 {{ with .Params.summary }}description: {{ $.RenderString (dict "display" "inline") . | plainify | chomp | jsonify }}{{ end }}
 ---
-{{ $PAGE := . }}
+{{- $PAGE := . -}}
 {{- with .Params.history }}
 
 ## History
@@ -116,4 +116,4 @@ Removed in: [`{{ . }}`](/operations/releases/{{ . }}/)
 ## Additional Config
 
 {{ partial "prose-md.txt" (dict "page" $PAGE "text" .) }}
-{{ end -}}
+{{- end -}}
