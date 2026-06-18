@@ -28,7 +28,7 @@
   {{- /* ref -> absolute URL */ -}}
   {{- range $m := findRE `\{\{<\s*ref\s+\\?"[^"\\]+\\?"\s*>\}\}` $text -}}
     {{- $p := replaceRE `^\{\{<\s*ref\s+\\?"([^"\\]+)\\?"\s*>\}\}$` "$1" $m -}}
-    {{- $text = replace $text $m (ref $page $p) -}}
+    {{- $text = replace $text $m (partial "link" (dict "path" $p "format" "llms")) -}}
   {{- end -}}
   {{- /* added/deprecated/removed-in -> release link */ -}}
   {{- range $m := findRE `\{\{<\s*(?:added|deprecated|removed)-in\s+\\?"[^"\\]+\\?"[^}]*>\}\}` $text -}}

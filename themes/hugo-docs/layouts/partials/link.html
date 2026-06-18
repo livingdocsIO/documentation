@@ -1,1 +1,8 @@
-{{- page.RelRef (dict "path" . "outputFormat" (cond (hasSuffix templates.Current.Parent.Name ".llms.txt") "llms" "html")) -}}
+{{- /* Resolve an internal ref to the correct output format. Accepts a path
+       string (format auto-detected from the calling template) or a dict
+       {path, format} for callers that can't be auto-detected (e.g. nested
+       partials). RelRef preserves an inline #anchor. */ -}}
+{{- $path := . -}}
+{{- $fmt := cond (hasSuffix templates.Current.Parent.Name ".llms.txt") "llms" "html" -}}
+{{- if reflect.IsMap . -}}{{ $path = .path }}{{ with .format }}{{ $fmt = . }}{{ end }}{{- end -}}
+{{- page.RelRef (dict "path" $path "outputFormat" $fmt) -}}
