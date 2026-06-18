@@ -18,8 +18,15 @@
       rel="canonical"
       href="{{ .Permalink }}"
     />
+    {{ with .OutputFormats.Get "llms" }}
+      <link
+        rel="alternate"
+        type="text/markdown"
+        title="LLM-friendly version"
+        href="{{ .Permalink }}"
+      />
+    {{ end }}
     <title>{{ .Page.Title }} - {{ .Section | default "Documentation" | humanize }}</title>
-
     {{ block "meta" . }}{{ end }}
     {{ partialCached "html-header-global-meta.html" . }}
   </head>
