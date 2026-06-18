@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Add Retresco main entity toggle](https://github.com/livingdocsIO/livingdocs-server/pull/9508)
 - [Add Retresco main entity toggle](https://github.com/livingdocsIO/livingdocs-editor/pull/11205)
 - [Replace Semantic Release Check from Vercel to GitHub Action to be more reliable](https://github.com/livingdocsIO/livingdocs-server/pull/9553)
 - [chore(deps): update eslint from 10.4.1 to v10.5.0 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11225)
