@@ -103,17 +103,17 @@ All metadata properties in your `Content Type`|`Media Type` config can be used a
 - [`li-category`]({{< ref "/reference/document/metadata/plugins/li-category">}})
 - [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference">}}) {{< added-in "release-2023-09" >}}
   - Only supported for `minimal` style
-  - Shows a max of 1000 filter options ([Filter limits are handled by the `limit` field on `paginationFindConfig`](https://docs.livingdocs.io/customising/server-configuration/#documents))
+  - Shows a max of 1000 filter options ([Filter limits are handled by the `limit` field on `paginationFindConfig`]({{< ref "/customising/server-configuration/#documents" >}}))
 - [`li-document-references`]({{< ref "/reference/document/metadata/plugins/li-document-references">}}) {{< added-in "release-2023-09" >}}
   - Only supported for `minimal` style
-  - Shows a max of 1000 filter options ([Filter limits are handled by the `limit` field on `paginationFindConfig`](https://docs.livingdocs.io/customising/server-configuration/#documents))
+  - Shows a max of 1000 filter options ([Filter limits are handled by the `limit` field on `paginationFindConfig`]({{< ref "/customising/server-configuration/#documents" >}}))
 - [`li-enum`]({{< ref "/reference/document/metadata/plugins/li-enum">}}) {{< added-in "release-2023-09" >}}
-  - Shows a max of 1000 filter options ([Filter limits are handled by the `limit` field on `paginationFindConfig`](https://docs.livingdocs.io/customising/server-configuration/#documents))
+  - Shows a max of 1000 filter options ([Filter limits are handled by the `limit` field on `paginationFindConfig`]({{< ref "/customising/server-configuration/#documents" >}}))
 - [`li-text`]({{< ref "/reference/document/metadata/plugins/li-text">}}) {{< added-in "release-2023-09" >}}
   - Only supported if plugin has a `dataProvider`
-  - Shows a max of 1000 filter options ([Filter limits are handled by the `limit` field on `paginationFindConfig`](https://docs.livingdocs.io/customising/server-configuration/#documents))
+  - Shows a max of 1000 filter options ([Filter limits are handled by the `limit` field on `paginationFindConfig`]({{< ref "/customising/server-configuration/#documents" >}}))
 - [`li-string-list`]({{< ref "/reference/document/metadata/plugins/li-string-list">}}) {{< added-in "release-2023-09" >}}
-  - Shows a max of 1000 filter options ([Filter limits are handled by the `limit` field on `paginationFindConfig`](https://docs.livingdocs.io/customising/server-configuration/#documents))
+  - Shows a max of 1000 filter options ([Filter limits are handled by the `limit` field on `paginationFindConfig`]({{< ref "/customising/server-configuration/#documents" >}}))
 - [`li-imatrics-nlp-tags`]({{< ref "/reference/document/metadata/plugins/li-imatrics-nlp-tags">}}) {{< added-in "release-2024-05" >}}
 - [`li-retresco`]({{< ref "/reference/document/metadata/plugins/li-retresco">}}) {{< added-in "release-2024-05" >}}
   - To enable the Retresco display filter, modifications on your Retresco TMS instance might be necessary. For more details, please contact your Livingdocs Customer Solutions representative.

@@ -115,7 +115,7 @@ Remove getter functions which have a replacement on the `DocumentVersion` class:
 ### Remove support for metadata based scheduling supported via `customPublicationDateField` config
 
 Editor configuration parameter `document.customPublicationDateField` support has been removed. With this change metadata based scheduling is no longer supported.
-Please migrate to `contentType.publishControl.publishSchedule` within [Publish Control feature](https://docs.livingdocs.io/guides/editor/publish-control/publish-control-migration/).
+Please migrate to `contentType.publishControl.publishSchedule` within [Publish Control feature]({{< ref "/guides/editor/publish-control/publish-control-migration/" >}}).
 
 * [Editor PR: Remove support for configuration `document.customPublicationDateField`](https://github.com/livingdocsIO/livingdocs-editor/pull/7622)
 
@@ -166,7 +166,7 @@ The Endpoint `PATCH /document/:id` will be removed in `release-2024-01`. Please 
 {{< feature-info "Project configuration" "server" >}}
 ### Metadata plugins and paramSchema validation changes :warning:
 
-Plugins used in other contexts than the ones stated in the [docs](https://docs.livingdocs.io/reference/document/metadata/plugins/), will report an error during server startup with release-2024-01.
+Plugins used in other contexts than the ones stated in the [docs]({{< ref "/reference/document/metadata/plugins/" >}}), will report an error during server startup with release-2024-01.
 
 All downstream plugins are supported by default in document metadata and media library metadata. But if a downstream plugin is used in include services, creation flows or push messages, that will cause an error during startup.
 

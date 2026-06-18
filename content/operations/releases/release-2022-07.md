@@ -62,7 +62,7 @@ The second iteration of Publish Control comes with more features:
 
 Consult the [Guide on «Publish Control»]({{< ref "/guides/editor/publish-control" >}}) to learn how to configure this feature.
 
-* [Guide](https://docs.livingdocs.io/guides/editor/publish-control/)
+* [Guide]({{< ref "/guides/editor/publish-control/" >}})
 * [PR: Significant Update](https://github.com/livingdocsIO/livingdocs-editor/pull/5429)
 * [PR: Embargo](https://github.com/livingdocsIO/livingdocs-editor/pull/5364)
 * [PR: Embargo date validation](https://github.com/livingdocsIO/livingdocs-editor/pull/5413)
@@ -77,7 +77,7 @@ Consult the [Guide on «Publish Control»]({{< ref "/guides/editor/publish-contr
 
 We enable you to drag + drop Document Cards onto a document to create Teaser Components. You need to configure Teaser Components using an Include Service with a `li-document-reference` param to make it work.
 
-* [Guide](https://docs.livingdocs.io/guides/documents/includes/document-teasers/)
+* [Guide]({{< ref "/guides/documents/includes/document-teasers/" >}})
 * [PR: Editor integration](https://github.com/livingdocsIO/livingdocs-editor/pull/5356)
 * [PR: Teaser Drag and Drop](https://github.com/livingdocsIO/livingdocs-server/pull/4556)
 * [PR: Add Document Dashboard to Editing Toolbar](https://github.com/livingdocsIO/livingdocs-editor/pull/5405)
@@ -121,8 +121,8 @@ Currently we are working hard on the improvement of Dashboards. Here you have a 
 External Systems define a relation to a source system. Usually this is used when an old CMS imports articles to Livingdocs.
 This first version provides links to the source system via the Table Dashboard action menu.
 
-* [Documentation External Systems](https://docs.livingdocs.io/reference/project-config/external-systems/)
-* [Documentation Metadata Plugin li-external-id](https://docs.livingdocs.io/reference/document/metadata/plugins/li-external-id)
+* [Documentation External Systems]({{< ref "/reference/project-config/external-systems/" >}})
+* [Documentation Metadata Plugin li-external-id]({{< ref "/reference/document/metadata/plugins/li-external-id" >}})
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5443)
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4548)
 
@@ -135,7 +135,7 @@ We did a few more steps to make the Comyan integration better.
 - Improved asset duplication check
 - Image usage report to Comyan
 
-* [Project Config Example](https://docs.livingdocs.io/reference/project-config/settings/#comyan)
+* [Project Config Example]({{< ref "/reference/project-config/settings/#comyan" >}})
 * [PR: Use JSON format](https://github.com/livingdocsIO/livingdocs-server/pull/4546)
 * [PR: Use MediaLibraryEntry model in the editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5439)
 * [PR: Move Comyan secure request to server](https://github.com/livingdocsIO/livingdocs-server/pull/4426)
@@ -153,7 +153,7 @@ The `li-desknet-integration` metadata plugin has been extended to support one-wa
 
 We added new oEmbed include services for Facebook, Instagram, Spotify, Datawrapper and Podigee.
 
-* [Guide](https://docs.livingdocs.io/guides/documents/includes/oembed/)
+* [Guide]({{< ref "/guides/documents/includes/oembed/" >}})
 * [PR: Instagram + Facebook](https://github.com/livingdocsIO/livingdocs-server/pull/4570)
 * [PR: Datawrapper + Spotify](https://github.com/livingdocsIO/livingdocs-server/pull/4579)
 
@@ -275,8 +275,8 @@ References:
 We added 2 properties `configSchema` and `uiSchema` to a metadata plugin where one can define a schema validation. If you want to know more about the motivation and a fallback (`metadataPluginsToIgnoreForConfigValidation`), you get some insights [here](https://github.com/livingdocsIO/livingdocs-server/pull/4296).
 
 References:
-- [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference/document/metadata/plugins)
-- [li-integer PR](https://docs.livingdocs.io/reference/document/metadata/plugins/li-integer)
+- [Metadata Plugin List Documentation]({{< ref "/reference/document/metadata/plugins" >}})
+- [li-integer PR]({{< ref "/reference/document/metadata/plugins/li-integer" >}})
 
 ### Error on Metadata Plugin registration :fire:
 
@@ -347,7 +347,7 @@ References:
 Whilst we continue to refine the selection across multiple components we have enabled a config to turn it off. In the editable settings set `multiEditablesTextSelection: false`.
 
 - [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5416)
-- [Documentation](https://docs.livingdocs.io/customising/advanced/editor-configuration/editing-features/#multi-select-and-multi-text-select)
+- [Documentation]({{< ref "/customising/advanced/editor-configuration/editing-features/#multi-select-and-multi-text-select" >}})
 
 ## APIs :gift:
 
@@ -355,12 +355,12 @@ Whilst we continue to refine the selection across multiple components we have en
 
 Allows the patch operation `archive` via public API to archive an asset.
 
-* [Documentation](https://docs.livingdocs.io/reference/public-api/media-library/)
+* [Documentation]({{< ref "/reference/public-api/media-library/" >}})
 * [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4532)
 
 ### Unpublish Document via Public API
 
-* [Documentation](https://docs.livingdocs.io/reference/public-api/imports/documents/)
+* [Documentation]({{< ref "/reference/public-api/imports/documents/" >}})
 * [PR](https://github.com/livingdocsIO/livingdocs-server/pull/4459)
 
 ## Other Changes

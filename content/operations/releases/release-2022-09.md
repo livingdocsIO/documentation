@@ -185,7 +185,7 @@ To restore to the old behavior is not 100% possible because the updated version 
 
 If you have defined `LiMetaTextareaForm` as UI component or set `rows`, you have now to set `allowNewlines: true`.
 
-For other changes please consult the [documentation](https://docs.livingdocs.io/reference/document/metadata/plugins/li-text)
+For other changes please consult the [documentation]({{< ref "/reference/document/metadata/plugins/li-text" >}})
 
 #### Backward Compatibility Mode
 
@@ -210,7 +210,7 @@ metadataPluginsToIgnoreForConfigValidation: ['li-text', 'li-string-list'],
 
 ### Document Publication Lifecycle Update
 
-:fire: Move server hook `preparePublish` hooks after metadata plugin `onPreparePublish` hooks (see [Diagram](https://docs.livingdocs.io/customising/server/document-lifecycle/document-publication/)).
+:fire: Move server hook `preparePublish` hooks after metadata plugin `onPreparePublish` hooks (see [Diagram]({{< ref "/customising/server/document-lifecycle/document-publication/" >}})).
 
 During the migration to the `preparePublish` hooks, the order accidentally changed. Before, the `prePublish` hooks were run after the metadata plugin `onPublish` hooks.
 This has the effect that required metadata are always present in the `preparePublish` hooks, unlike before where they still could be missing.
@@ -282,7 +282,7 @@ Remove `ui.config.rows` config of metadata plugin `li-text`. If defined, replace
 - :gift: Add [Server Event]({{< ref "/customising/advanced/server-events" >}}) `document.build`
 - :gift: Add [Webhook Event]({{< ref "/reference/webhooks" >}}) `document.build`
 
-* [Guide](https://docs.livingdocs.io/guides/editor/publish-control/delivery/)
+* [Guide]({{< ref "/guides/editor/publish-control/delivery/" >}})
 * [PR: Delivery Status Fetching](https://github.com/livingdocsIO/livingdocs-server/pull/4740)
 * [PR: Delivery Status Reporting](https://github.com/livingdocsIO/livingdocs-server/pull/4731)
 

@@ -70,7 +70,7 @@ The following capabilities will follow with the July / September Releases:
 
 Consult the [Guide on «Publish Control»]({{< ref "/guides/editor/publish-control" >}}) to learn how to configure this feature.
 
-* [Guide](https://docs.livingdocs.io/guides/editor/publish-control/)
+* [Guide]({{< ref "/guides/editor/publish-control/" >}})
 * [Basic Document History](https://github.com/livingdocsIO/livingdocs-editor/pull/5069)
 * [Scheduled Unpublish](https://github.com/livingdocsIO/livingdocs-editor/pull/5177)
 * [Document Inbox Assignment](https://github.com/livingdocsIO/livingdocs-editor/pull/5185)
@@ -115,7 +115,7 @@ References:
 The Desk-Net integration has been extended to provide a preview of scheduled stories within a side panel in the Livingdocs editor. At the moment the side panel is for information only. A user can change the date to see the scheduled articles in the configured platforms or categories. However, the ability to create teasers by dragging articles from the side panel will be added soon.
 
 References:
-* [Documentation](https://docs.livingdocs.io/guides/integrations/desknet/#story-planning-schedule-in-livingdocs)
+* [Documentation]({{< ref "/guides/integrations/desknet/#story-planning-schedule-in-livingdocs" >}})
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4396)
 * [Editor PR: Desk-Net Schedule Side Panel](https://github.com/livingdocsIO/livingdocs-editor/pull/5134)
 * [Editor PR: Metadata Plugin li-desknet-platforms](https://github.com/livingdocsIO/livingdocs-editor/pull/5155)
@@ -126,7 +126,7 @@ References:
 Media Library Entries can now sent to a document inbox and put into a document via drag + drop.
 
 * References
-  * [Documentation](https://docs.livingdocs.io/reference/project-config/content-types/#document-inbox)
+  * [Documentation]({{< ref "/reference/project-config/content-types/#document-inbox" >}})
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4852)
 
 
@@ -136,7 +136,7 @@ Media Library Entries can now sent to a document inbox and put into a document v
 
 ### Remove callbacks for Server Hooks :fire:
 
-All callback-based server hooks have been removed (throw an error on registration). Please visit the [server hooks documentation](https://docs.livingdocs.io/customising/server/server-hooks/) to find examples of how to implement server hooks based on a promise.
+All callback-based server hooks have been removed (throw an error on registration). Please visit the [server hooks documentation]({{< ref "/customising/server/server-hooks/" >}}) to find examples of how to implement server hooks based on a promise.
 
 **Publish Hooks**
 - 🔥 remove `preparePublishHook` / `preparePublishHookCb` (throw err on registration)
@@ -155,13 +155,13 @@ All callback-based server hooks have been removed (throw an error on registratio
 
 We added 2 properties `configSchema` and `uiSchema` to a metadata plugin where one can define a schema validation. If you want to know more about the motivation and a fallback (`metadataPluginsToIgnoreForConfigValidation`), you get some insights [here](https://github.com/livingdocsIO/livingdocs-server/pull/4296).
 
-- :fire: Add strict validation for [`li-enum`](https://docs.livingdocs.io/reference/document/metadata/plugins/li-enum)
-- :fire: Add strict validation for [`li-text`](https://docs.livingdocs.io/reference/document/metadata/plugins/li-text)
-- :fire: Add strict validation for [`li-reference`](https://docs.livingdocs.io/reference/document/metadata/plugins/li-reference)
-- :fire: Add strict validation for [`li-document-reference`](https://docs.livingdocs.io/reference/document/metadata/plugins/li-document-reference)
+- :fire: Add strict validation for [`li-enum`]({{< ref "/reference/document/metadata/plugins/li-enum" >}})
+- :fire: Add strict validation for [`li-text`]({{< ref "/reference/document/metadata/plugins/li-text" >}})
+- :fire: Add strict validation for [`li-reference`]({{< ref "/reference/document/metadata/plugins/li-reference" >}})
+- :fire: Add strict validation for [`li-document-reference`]({{< ref "/reference/document/metadata/plugins/li-document-reference" >}})
 
 References:
-- [Metadata Plugin List Documentation](https://docs.livingdocs.io/reference/document/metadata/plugins)
+- [Metadata Plugin List Documentation]({{< ref "/reference/document/metadata/plugins" >}})
 - [li-text PR](https://github.com/livingdocsIO/livingdocs-server/pull/4296)
 - [li-enum PR](https://github.com/livingdocsIO/livingdocs-server/pull/4316)
 - [li-reference | li-document-reference PR](https://github.com/livingdocsIO/livingdocs-server/pull/4425)
@@ -229,7 +229,7 @@ documentsApi.registerPublicationHooks({
 ```
 
 References:
-- [Documentation](https://docs.livingdocs.io/customising/server/server-hooks/)
+- [Documentation]({{< ref "/customising/server/server-hooks/" >}})
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4371)
 
 
@@ -237,7 +237,7 @@ References:
 
 #### project config v1 (channel config v1) 🔥
 
-❗❗❗🔥🔥🔥 remove any support of project config v1. All your project configs must use the [project config v2 format](https://docs.livingdocs.io/reference/project-config/)
+❗❗❗🔥🔥🔥 remove any support of project config v1. All your project configs must use the [project config v2 format]({{< ref "/reference/project-config/" >}})
 
 #### channelApi
 
@@ -329,7 +329,7 @@ const channelConfig = await channelConfigApi.read.getFullConfig({projectId, chan
 - 🔥 remove task `livingdocs-server parse-channel-config-v1-to-v2` (no replacement)
 
 References:
-- [Project Config v2 Format](https://docs.livingdocs.io/reference/project-config/)
+- [Project Config v2 Format]({{< ref "/reference/project-config/" >}})
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4435)
 
 
@@ -346,7 +346,7 @@ References:
 :fire: Because we changed interally the approach how to create a new document, we removed support for `designV1.defaultContent` and `designV1.layouts[].defaultContent`. Please move the declaration of `defaultContent` into the Project Config `contentType.defaultContent`.
 
 References:
-- [Documentation](https://docs.livingdocs.io/reference/document/document-design/legacy-design/design-config-v1-to-v2/)
+- [Documentation]({{< ref "/reference/document/document-design/legacy-design/design-config-v1-to-v2/" >}})
 
 ### Remove Q drop handler :fire:
 
@@ -385,7 +385,7 @@ References: [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5
 Deprecate metadata plugin `li-media-language`, use `li-metadata-translations` instead (same config).
 
 References:
-- [Documentation](https://docs.livingdocs.io/reference/document/metadata/plugins)
+- [Documentation]({{< ref "/reference/document/metadata/plugins" >}})
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4315)
 
 ### Metadata Services

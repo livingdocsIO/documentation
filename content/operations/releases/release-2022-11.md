@@ -56,7 +56,7 @@ header:
 
 Automatic crops are a great way to define multiple crops of an image, but automatic crops could cut off the important subject in the image. There is where focal point cropping comes into the game by letting users choose where in the image the main subject is and all automatic crops will make sure it is visible in the frame.
 
-* [Documentation](https://docs.livingdocs.io/guides/media-library/media-library-setup/#focal-point-cropping)
+* [Documentation]({{< ref "/guides/media-library/media-library-setup/#focal-point-cropping" >}})
 * [PR: Focal point selection for images](https://github.com/livingdocsIO/livingdocs-editor/pull/5916)
 
 ### Push Messages
@@ -103,7 +103,7 @@ Cutting and pasting components makes reordering components within a long documen
 
 To replace the existing `li-reference-list` metadata plugin with it's more modern variant, `li-document-references` is introduced. It allows a more flexible configuration for the dashboard in use to search documents by the means of the `useDashboard` config as you know it from `li-document-reference`.
 
-* [Documentation](https://docs.livingdocs.io/reference/document/metadata/plugins/li-document-references)
+* [Documentation]({{< ref "/reference/document/metadata/plugins/li-document-references" >}})
 * [PR: Server](https://github.com/livingdocsIO/livingdocs-server/pull/4871)
 * [PR: Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5873)
 
@@ -114,7 +114,7 @@ We introduce `roles` to define the type of server
 - `write` (stores data)
 - `worker` (executes jobs like indexing)
 
-* [Documentation](https://docs.livingdocs.io/customising/server/roles/)
+* [Documentation]({{< ref "/customising/server/roles/" >}})
 * [PR: Roles](https://github.com/livingdocsIO/livingdocs-server/pull/4814)
 
 ### Reindexing CLI task improvements
@@ -238,7 +238,7 @@ Please use `indexIndexingApi.addBackgroundIndexingJobsByIds` that supports also 
 
 ### Remove Regex support in Delivery :fire:
 
-Remove any regular expressions from `pathPattern` configs and update them according to our [examples](https://docs.livingdocs.io/reference/project-config/deliveries/#pathpattern).
+Remove any regular expressions from `pathPattern` configs and update them according to our [examples]({{< ref "/reference/project-config/deliveries/#pathpattern" >}}).
 
 * [PR Editor](https://github.com/livingdocsIO/livingdocs-editor/pull/5908)
 
@@ -273,7 +273,7 @@ to:
 }
 ```
 
-If you would like to migrate the data from "li-desknet-platforms" to "li-desknet-schedule" then you will need to write a [migration script](https://docs.livingdocs.io/guides/documents/document-design/data-migrations/) which moves the current metadata value to the platforms property of the new metadata value object:
+If you would like to migrate the data from "li-desknet-platforms" to "li-desknet-schedule" then you will need to write a [migration script]({{< ref "/guides/documents/document-design/data-migrations/" >}}) which moves the current metadata value to the platforms property of the new metadata value object:
 
 ```js
 module.exports = {
@@ -361,9 +361,9 @@ httpServer: {
 
 ### Public API
 
-* [Allow to import video and file Media Library Entries via public API - Documentation](https://docs.livingdocs.io/reference/public-api/imports/media-library-entries/)
+* [Allow to import video and file Media Library Entries via public API - Documentation]({{< ref "/reference/public-api/imports/media-library-entries/" >}})
 * [Allow to import video and file Media Library Entries via public API - PR](https://github.com/livingdocsIO/livingdocs-server/pull/4876)
-* [Allow translated assets for a MediaLibraryEntries import - Documentation](https://docs.livingdocs.io/reference/public-api/imports/media-library-entries/)
+* [Allow translated assets for a MediaLibraryEntries import - Documentation]({{< ref "/reference/public-api/imports/media-library-entries/" >}})
 * [Allow translated assets for a MediaLibraryEntries import - PR](https://github.com/livingdocsIO/livingdocs-server/pull/4904)
 
 ## Other Changes

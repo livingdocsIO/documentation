@@ -40,7 +40,7 @@ module.exports = {
   },
 
   // A valid email configuration is required:
-  // https://docs.livingdocs.io/customising/server/server-config/config#user-management-emails
+  // https://docs.livingdocs.io/customising/server-configuration/#user-management-emails
   emails: {
     transports: {
       default: {

@@ -71,7 +71,7 @@ Drop support for Node versions below 18.17 due to a dependency. Use `livingdocs/
 {{< feature-info "Project configuration" "server" >}}
 ### Custom downstream plugins paramSchema validation changes :fire:
 
-Plugins used in other contexts than the ones stated in the [docs](https://docs.livingdocs.io/reference/document/metadata/plugins/), will now report an error during server startup.
+Plugins used in other contexts than the ones stated in the [docs]({{< ref "/reference/document/metadata/plugins/" >}}), will now report an error during server startup.
 
 All downstream plugins are supported by default in document metadata and media library metadata. But if a downstream plugin is used in include services, creation flows or push messages, that will now cause an error during startup.
 
