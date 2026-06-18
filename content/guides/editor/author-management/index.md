@@ -15,7 +15,7 @@ The author management can be completely setup using the Project Setup.
 
 ### Author content type
 
-If you don't have an author content-type yet, create one on the server via the [CLI](https://docs.livingdocs.io/reference/cli/) as follows:
+If you don't have an author content-type yet, create one on the server via the [CLI]({{< ref "/reference/cli/" >}}) as follows:
 
 ```js
 {
@@ -73,7 +73,7 @@ If you don't have an author content-type yet, create one on the server via the [
 ```
 
 Note that only one content-type in a project can have the `isAuthor` flag. In the metadata for your "Author" content-type you will want to add fields such as a profile picture, biography, etc.
-Once you're done setting up your author content-type, publish it via the [CLI](https://docs.livingdocs.io/reference/cli/).
+Once you're done setting up your author content-type, publish it via the [CLI]({{< ref "/reference/cli/" >}}).
 
 ### Author reference
 

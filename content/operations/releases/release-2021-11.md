@@ -66,7 +66,7 @@ header:
 We introduce "Metadata Translations for Data Records". It allows to translate data records into different languages. The behavior and look is similar like for the translation of Media Library Assets.
 
 * References
-  * [Guide - Enable Metadata Translations for Data Records](https://docs.livingdocs.io/guides/editor/metadata-translations/)
+  * [Guide - Enable Metadata Translations for Data Records]({{< ref "/guides/editor/metadata-translations/" >}})
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4761)
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4046)
 
@@ -102,7 +102,7 @@ We added 3 new possibilities to select data for custom attributes in the text fo
 * Select a document reference
 * Text input
 
-* [Documentation](https://docs.livingdocs.io/reference/project-config/editor-settings/#text-formatting)
+* [Documentation]({{< ref "/reference/project-config/editor-settings/#text-formatting" >}})
 * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4799)
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4060)
 

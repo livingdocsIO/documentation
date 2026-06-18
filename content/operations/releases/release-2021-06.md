@@ -73,7 +73,7 @@ Allows to export/import a document via drag + drop (only between 2 projects of t
 
 Allows to mention another user in the comments. When writing '@' in a comment a user search will appear to select a user to be mentioned. The mentioned user then gets a notification. Check the [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4375) if you want to get some visual impressions.
 
-Important: If you want to use comments mentioning, you have to enable [Notifications](https://docs.livingdocs.io/enterprise/guides/watching-documents/)
+Important: If you want to use comments mentioning, you have to enable [Notifications]({{< ref "/guides/editor/notifications/" >}})
 
 * References
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4375)
@@ -342,8 +342,8 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3
 
 - :fire: remove serverConfig `assetManagement` (googleVision and enabled has no effect since release-2020-07)
 - :fire: remove serverConfig `mediaLibrary.enabled` (had no effect since release-2020-07)
-- :fire: remove serverConfig `mediaLibrary.types` (had no effect since release-2020-07) use [mediaTypes](https://docs.livingdocs.io/enterprise/reference/project-config/media_types/) instead
-- :fire: remove serverConfig `mediaLibrary.autoTagging` (googleVision has no effect since release-2020-07) use [project integrations](https://docs.livingdocs.io/enterprise/reference/server-configuration/#google-vision-api) instead
+- :fire: remove serverConfig `mediaLibrary.types` (had no effect since release-2020-07) use [mediaTypes]({{< ref "/reference/project-config/media-types/" >}}) instead
+- :fire: remove serverConfig `mediaLibrary.autoTagging` (googleVision has no effect since release-2020-07) use [project integrations]({{< ref "/guides/integrations/google-vision/" >}}) instead
 - :fire: remove serverConfig `mediaLibrary.paginationSize` (had no effect since release-2020-07)
 
 References:

@@ -36,4 +36,4 @@ Typical Questions:
 References:
 
 - [Vue Metadata Plugin Guide]({{< ref "/guides/documents/metadata/metadata-examples">}})
-- [Vue Metadata Plugin API](https://docs.livingdocs.io/customising/advanced/editor/vue-component-registry/#metadataplugin)
+- [Vue Metadata Plugin API]({{< ref "/customising/advanced/editor/vue-component-registry/#metadataplugin" >}})

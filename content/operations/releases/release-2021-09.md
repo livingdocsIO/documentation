@@ -71,7 +71,7 @@ Customers have different requirements for what should happen after revoking an i
 Therefore we provide a server event and a webhook, both named `mediaLibraryEntry.revoke`, which the downstream server can subscribe to.
 
 * References
-  * [Guide: Revoke Media](https://docs.livingdocs.io/guides/media-library/revoke-media/)
+  * [Guide: Revoke Media]({{< ref "/guides/media-library/revoke-media/" >}})
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4516)
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3809)
 
@@ -81,7 +81,7 @@ Therefore we provide a server event and a webhook, both named `mediaLibraryEntry
 This feature allows you to register your own dashboard card in the Media Library. The default card `liMediaLibraryCard`, allows to be extended with additional metadata fields.
 
 * References
-  * [Documentation: Search for 'dashboardCardConfigurations'](https://docs.livingdocs.io/reference/project-config/editor-settings)
+  * [Documentation: Search for 'dashboardCardConfigurations']({{< ref "/reference/project-config/editor-settings" >}})
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4500)
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3779)
 
@@ -90,7 +90,7 @@ This feature allows you to register your own dashboard card in the Media Library
 This feature allows you to register your own dashboard card in the Document List.
 
 * References
-  * [Documentation](https://docs.livingdocs.io/reference/project-config/editor-settings/#document-lists)
+  * [Documentation]({{< ref "/reference/project-config/editor-settings/#document-lists" >}})
   * [Editor Preparation PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4553)
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4591)
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3876)
@@ -101,7 +101,7 @@ This feature allows you to register your own dashboard card in the Document List
 We now support list teasers as includes without registering your own plugin.
 
 * References
-  * [Guide: List Teasers](https://docs.livingdocs.io/guides/documents/includes/list-teasers/)
+  * [Guide: List Teasers]({{< ref "/guides/documents/includes/list-teasers/" >}})
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4556)
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/3846)
 

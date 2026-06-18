@@ -374,7 +374,7 @@ module.exports = {
 
 ### Focal Point Cropping
 
-Focal point selection is supported on [`li-named-crops`](https://docs.livingdocs.io/reference/document/metadata/plugins/li-named-crops) and [`li-image`](https://docs.livingdocs.io/reference/document/metadata/plugins/li-image) whenever multiple crops are present.
+Focal point selection is supported on [`li-named-crops`]({{< ref "/reference/document/metadata/plugins/li-named-crops" >}}) and [`li-image`]({{< ref "/reference/document/metadata/plugins/li-image" >}}) whenever multiple crops are present.
 
 #### Where automatic cropping struggles
 

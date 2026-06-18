@@ -76,9 +76,9 @@ References:
 A much requested feature was adding metadata plugins with a custom Vue component. Finally we have it!
 
 References:
-* [Guide - Slug example implementation](https://docs.livingdocs.io/guides/documents/metadata/metadata-examples/)
-* [Documentation - List of available metadata plugins](https://docs.livingdocs.io/reference/document/metadata/plugins)
-* [Documentation - Register a metadata plugin via Vue component registry](https://docs.livingdocs.io/customising/advanced/editor/vue-component-registry)
+* [Guide - Slug example implementation]({{< ref "/guides/documents/metadata/metadata-examples/" >}})
+* [Documentation - List of available metadata plugins]({{< ref "/reference/document/metadata/plugins" >}})
+* [Documentation - Register a metadata plugin via Vue component registry]({{< ref "/customising/advanced/editor/vue-component-registry" >}})
 
 ### Table Dashboards
 
@@ -111,7 +111,7 @@ We integrated `Retresco` tagging system to automatically add tags to a document 
 - ability to change tags via Editor
 
 * References
-  * [Documentation](https://docs.livingdocs.io/reference/project-config/settings/)
+  * [Documentation]({{< ref "/reference/project-config/settings/" >}})
   * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5013)
   * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4215)
 
@@ -131,7 +131,7 @@ The oEmbed include service allows users to embed content (such as photos, videos
 
 References:
 
-* [Guide](https://docs.livingdocs.io/guides/documents/includes/oembed/)
+* [Guide]({{< ref "/guides/documents/includes/oembed/" >}})
 * [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/4942)
 * [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4156)
 
@@ -205,7 +205,7 @@ References:
 
 Until now, you were able to register a publication hook with any name, even when the hook had no effect.
 
-🔥 Only support the registration of well-known [Publication Hooks](https://docs.livingdocs.io/customising/server/server-hooks/#publication-hooks)
+🔥 Only support the registration of well-known [Publication Hooks]({{< ref "/customising/server/server-hooks/#publication-hooks" >}})
 
 
 ### Remove prepublishHook :fire:
@@ -213,7 +213,7 @@ Until now, you were able to register a publication hook with any name, even when
 🔥 removed server hook `prepublishHook`
 🔥 renamed server config `integrations.retresco.registerPrepublishHook` to `integrations.retresco.registerPreparePublishHook`
 
-If you want to keep the functionality of the `prepublishHook`, you can use the `preparePublishHook`. For alternatives and explanations check the [Server Hooks documentation](https://docs.livingdocs.io/customising/server/server-hooks/#publication-hooks)
+If you want to keep the functionality of the `prepublishHook`, you can use the `preparePublishHook`. For alternatives and explanations check the [Server Hooks documentation]({{< ref "/customising/server/server-hooks/#publication-hooks" >}})
 
 ```js
 // migrate from
@@ -235,7 +235,7 @@ References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4
 
 🔥 removed `publishHook` (throws an error on server startup)
 
-If you want to keep the functionality of the `publishHook`, you can use the `preparePublishHook` (modify the document) or `postPublishHook` (notify other systems). For more explanations check the [Server Hooks documentation](https://docs.livingdocs.io/customising/server/server-hooks/#publication-hooks)
+If you want to keep the functionality of the `publishHook`, you can use the `preparePublishHook` (modify the document) or `postPublishHook` (notify other systems). For more explanations check the [Server Hooks documentation]({{< ref "/customising/server/server-hooks/#publication-hooks" >}})
 
 **Example 1 - migration from publishHook to preparePublishHook**
 ```js
@@ -339,8 +339,8 @@ Tasks v1 is deprecated since 2 years. We removed it, because no customers use it
 - delete metadata plugin projectConfig with type `li-tasks`
 - delete Elasticsearch document mapping for li-tasks (see [example](https://github.com/livingdocsIO/livingdocs-server/pull/3625/files))
 - configure `tasks-v2`, if you want to continue using tasks, e.g.
-  - [Proofreading Task Guide](https://docs.livingdocs.io/guides/editor/proofreading-task/)
-  - [Add a custom task](https://docs.livingdocs.io/guides/editor/review-task/)
+  - [Proofreading Task Guide]({{< ref "/guides/editor/proofreading-task/" >}})
+  - [Add a custom task]({{< ref "/guides/editor/review-task/" >}})
 
 References: [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4196)
 
@@ -638,7 +638,7 @@ References:
 
 ### Config ui.component in metadata plugin config
 
-Configuring `ui.component` with the default component name for a type is now deprecated. Please consult the [documentation](https://docs.livingdocs.io/reference/document/metadata/plugins) to learn about the default components per type. If you have the default component configured, please remove the `ui.component` configuration.
+Configuring `ui.component` with the default component name for a type is now deprecated. Please consult the [documentation]({{< ref "/reference/document/metadata/plugins" >}}) to learn about the default components per type. If you have the default component configured, please remove the `ui.component` configuration.
 
 An example:
 ```js
@@ -667,7 +667,7 @@ An example:
 ```
 
 References:
-- [Documentation](https://docs.livingdocs.io/reference/document/metadata/plugins)
+- [Documentation]({{< ref "/reference/document/metadata/plugins" >}})
 - [Editor PR](https://github.com/livingdocsIO/livingdocs-editor/pull/5041)
 
 
@@ -694,7 +694,7 @@ References:
 🎁 Added new publicApi endpoint `GET /api/beta/documents/:documentId/latestDraft` to get the latest draft of a document
 
 References:
-- [Documentation]({{< ref "/reference/public-api/drafts/latest-draft-beta" >}})
+- [Documentation]({{< ref "/reference/public-api/drafts/latest-draft" >}}?version=beta)
 - [Server PR](https://github.com/livingdocsIO/livingdocs-server/pull/4224)
 
 ### Server Config

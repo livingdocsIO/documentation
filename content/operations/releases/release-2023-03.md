@@ -193,7 +193,7 @@ These Dashboard Display Filters are not supported anymore:
 - `coreApi.searchFilters.registerList`
 - `coreApi.searchFilters.registerAngularComponent`
 
-Update the deprecated filter to the supported [Display Filters](https://docs.livingdocs.io/customising/advanced/editor-configuration/display-filter/) from the core.
+Update the deprecated filter to the supported [Display Filters]({{< ref "/customising/advanced/editor-configuration/display-filter/" >}}) from the core.
 - Named Filters
 - Metadata Filters
 - ListV2 Filters

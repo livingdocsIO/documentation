@@ -164,10 +164,7 @@ Referenced designs are now deprecated and will be removed in release-2026-07. Pl
 ### Declarative Document Copy API :hourglass:
 
 The Declarative Document Copy API (which uses the `settings.copy` object in the project config) has been deprecated and will be removed in release-2026-07.
-Please use Document Copy Flows and Document Transform Flows instead:
-
-- https://docs.livingdocs.io/guides/editor/document-copy-flows
-- https://docs.livingdocs.io/guides/editor/document-transform-flows
+Please use [Document Copy Flows]({{< ref "/guides/editor/document-copy-flows" >}}) and [Document Transform Flows]({{< ref "/guides/editor/document-transform-flows" >}}) instead.
 
 ### Search Metadata Mapping :hourglass:
 
@@ -493,6 +490,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+
 - [v294.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.37): chore(example-server): Add image read permissions to Readers group
 - [v294.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.36): fix(deps): update livingdocs-patch from 32.11.9 to v32.11.10
 - [v294.0.35](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.35): fix(deps): update dependency exifreader from 4.33.1 to 4.39.0 [security]
@@ -535,6 +533,7 @@ Here is a list of all patches after the release has been announced.
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
+
 - [v123.3.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.56): fix(deps): update livingdocs-patch from 32.11.9 to v32.11.10
 - [v123.3.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.55): fix: show translated documents even if languages became unavailable
 - [v123.3.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.54): fix(project-config): show kordiam form and nav

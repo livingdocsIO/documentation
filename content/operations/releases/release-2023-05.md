@@ -261,7 +261,7 @@ References: [PR](https://github.com/livingdocsIO/livingdocs-server/pull/5540)
 
 ### Removed Editor metadataLifecycle :fire:
 
-:fire: Removed Editors `coreApi.metadataLifecycle` function, please use [contentType.defaultMetadata](https://docs.livingdocs.io/reference/project-config/content-types/#default-metadata) instead
+:fire: Removed Editors `coreApi.metadataLifecycle` function, please use [contentType.defaultMetadata]({{< ref "/reference/project-config/content-types/#default-metadata" >}}) instead
 
 References: [PR](https://github.com/livingdocsIO/livingdocs-editor/pull/6678)
 

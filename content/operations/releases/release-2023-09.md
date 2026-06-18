@@ -169,8 +169,8 @@ To optionally update existing documents, run the following command:
 The manual migration can be executed any time after the deployment.
 
 Affected API endpoints:
-- [`GET api/beta/documents/:documentId/latestPublication`]({{< ref "/reference/public-api/publications/latest-publication-beta" >}})
-- [`GET api/beta/documents/latestPublications`]({{< ref "/reference/public-api/publications/latest-publications-beta" >}})
+- [`GET api/beta/documents/:documentId/latestPublication`]({{< ref "/reference/public-api/publications/latest-publication" >}}?version=beta)
+- [`GET api/beta/documents/latestPublications`]({{< ref "/reference/public-api/publications/latest-publications" >}}?version=beta)
 - [`GET api/v1/documents/:documentId/incomingDocumentReferences`]({{< ref "/reference/public-api/publications/references#get-incoming-publication-references-for-a-document" >}})
 - [`GET api/v1/documents/:documentId/incomingMediaReferences`]({{< ref "/reference/public-api/publications/references#get-incoming-media-references-for-a-document" >}})
 
