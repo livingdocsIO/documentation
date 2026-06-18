@@ -39,5 +39,9 @@
       @extend .section-label;
       @extend .section-label--table-of-contents;
     }
+
+    ul ul ul a {
+      @extend %font-xs;
+    }
   }
 }
