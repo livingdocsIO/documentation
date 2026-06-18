@@ -10,8 +10,6 @@ weight: 1
 Every odd month (January, March, May, July, September, November), a new Livindocs release is provided.
 Subscribe to the release newsletter to get notified with a rundown of the latest features and improvements and join the webinars where the release is presented mid month.
 
-{{< newsletter-form >}}
-
 ## Technical Release Notes
 
 - **Current Release**: The latest announced release
@@ -58,3 +56,5 @@ npm update @livingdocs/editor
 // and then you can commit the change
 npm list | grep @livingdocs/editor
 ```
+
+{{< newsletter-form >}}
