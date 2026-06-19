@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.43): fix(blob-store): prevent S3 socket exhaustion on partial image reads
 - [v296.2.42](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.42): fix(deps): update dependency nodemailer from 8.0.5 to 9.0.1 [security]
 - [v296.2.41](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.41): chore(example-server): Add image read permissions to Readers group
 - [v296.2.40](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.40): fix(deps): update livingdocs-patch from 32.12.10 to v32.12.11
