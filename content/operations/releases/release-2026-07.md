@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(deps): update dependency nodemailer from 8.0.11 to 9.0.1 [security] (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9562)
 - [fix(channel-config): allow nb-NO and nn-NO in translatable strings](https://github.com/livingdocsIO/livingdocs-server/pull/9557)
 - [Add Retresco main entity toggle](https://github.com/livingdocsIO/livingdocs-server/pull/9508)
 - [Add Retresco main entity toggle](https://github.com/livingdocsIO/livingdocs-editor/pull/11205)
