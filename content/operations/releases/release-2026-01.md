@@ -533,6 +533,7 @@ Here is a list of all patches after the release has been announced.
 - [v294.0.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.1): fix(release-2026-01): Update framework to v32.11.2 (release-2026-01 tag)
 
 ### Livingdocs Editor Patches
+- [v123.3.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.57): fix(deps): update dependency js-yaml from 4.1.1 to 4.2.0 [security]
 
 - [v123.3.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.56): fix(deps): update livingdocs-patch from 32.11.9 to v32.11.10
 - [v123.3.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.3.55): fix: show translated documents even if languages became unavailable
