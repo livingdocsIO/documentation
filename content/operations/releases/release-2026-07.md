@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [fix(test): upgrade mocha to 12.0.0-rc.1 and use renamed cli.js entry](https://github.com/livingdocsIO/livingdocs-server/pull/9591)
 - [Design/history side panel brush up](https://github.com/livingdocsIO/livingdocs-editor/pull/11210)
 - [fix(blob-store): prevent S3 socket exhaustion on partial image reads](https://github.com/livingdocsIO/livingdocs-server/pull/9558)
 - [fix(deps): update dependency nodemailer from 8.0.11 to 9.0.1 [security] (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9562)
