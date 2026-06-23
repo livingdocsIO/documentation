@@ -490,6 +490,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v294.0.38](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.38): fix: remove server-lib workspace
 
 - [v294.0.37](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.37): chore(example-server): Add image read permissions to Readers group
 - [v294.0.36](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v294.0.36): fix(deps): update livingdocs-patch from 32.11.9 to v32.11.10
