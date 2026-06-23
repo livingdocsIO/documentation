@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Usage Log Billing Part 2](https://github.com/livingdocsIO/livingdocs-server/pull/9501)
 - [Image Collections & Inbox: Auto-scroll near edges while dragging](https://github.com/livingdocsIO/livingdocs-editor/pull/11084)
 - [fix(test): upgrade mocha to 12.0.0-rc.1 and use renamed cli.js entry](https://github.com/livingdocsIO/livingdocs-server/pull/9591)
 - [Design/history side panel brush up](https://github.com/livingdocsIO/livingdocs-editor/pull/11210)
