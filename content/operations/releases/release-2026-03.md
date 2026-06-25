@@ -400,6 +400,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.56): fix(deps): update livingdocs-patch from 32.12.11 to v32.12.12
 - [v123.10.55](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.55): fix(deps): update dependency js-yaml from 4.1.1 to 4.2.0 [security]
 - [v123.10.54](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.54): chore(embeds): Access embed data consistently
 - [v123.10.53](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.53): fix(deps): update livingdocs-patch from 32.12.10 to v32.12.11
