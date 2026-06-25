@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Prevent li-metadata-translations save on open](https://github.com/livingdocsIO/livingdocs-editor/pull/11244)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11238)
 - [Usage Log Billing Part 2](https://github.com/livingdocsIO/livingdocs-server/pull/9501)
 - [Image Collections & Inbox: Auto-scroll near edges while dragging](https://github.com/livingdocsIO/livingdocs-editor/pull/11084)
