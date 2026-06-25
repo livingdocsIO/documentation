@@ -492,6 +492,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+- [v123.21.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.25): fix(media-library): Prevent li-metadata-translations save on open
 - [v123.21.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.24): fix(deps): update livingdocs-patch from 34.0.5 to v34.0.6
 - [v123.21.23](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.23): fix(deps): update dependency js-yaml from 4.1.1 to 4.2.0 [security]
 - [v123.21.22](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.22): fix(media-library): Show file type error in upload center dialog
