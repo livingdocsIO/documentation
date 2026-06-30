@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [chore(deps): update dependency webpack from 5.108.0 to v5.108.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11269)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11260)
 - [Prevent li-metadata-translations save on open](https://github.com/livingdocsIO/livingdocs-editor/pull/11244)
 - [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-editor/pull/11238)
