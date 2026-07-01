@@ -2,15 +2,16 @@
   "name": "livingdocs",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "dependencies": {
     "clipboard": "^2.0.11",
-    "domhandler": "^5.0.3",
-    "domutils": "^3.2.2",
-    "glob": "^13.0.0",
-    "htmlparser2": "^10.0.0",
+    "domhandler": "^6.0.1",
+    "domutils": "^4.0.2",
+    "glob": "^13.0.6",
+    "htmlparser2": "^12.0.0",
     "lunr": "^2.3.9",
-    "serve": "^14.2.4"
+    "serve": "^14.2.6"
   },
   "scripts": {
     "build": "./bin/build.sh",

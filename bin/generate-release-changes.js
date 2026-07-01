@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const fs = require('fs')
-const {parseArgs} = require('util')
+import fs from 'fs'
+import {parseArgs} from 'util'
 
 const MAX_RETRIES = 5
 const RETRY_DELAY = 1000

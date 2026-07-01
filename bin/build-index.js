@@ -1,7 +1,7 @@
-const fs = require('fs')
-const {Parser} = require('htmlparser2')
-const {DomHandler} = require('domhandler')
-const {getText, hasAttrib, getAttributeValue, textContent} = require('domutils')
+import fs from 'fs'
+import {Parser} from 'htmlparser2'
+import {DomHandler} from 'domhandler'
+import {getText, hasAttrib, getAttributeValue, textContent} from 'domutils'
 
 buildIndex('./public/search.json')
 

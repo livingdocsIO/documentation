@@ -7,7 +7,7 @@ clone:
 
 steps:
   - name: build
-    image: livingdocs/docker-node:20.10
+    image: livingdocs/docker-node:28-22
     volumes:
       - name: dockersocket
         path: /var/run/docker.sock
@@ -20,7 +20,7 @@ steps:
         from_secret: DOCKER_PASSWORD
 
   - name: release
-    image: livingdocs/semantic-release:v2.1.1
+    image: livingdocs/semantic-release:v3.0.3
     environment:
       GH_TOKEN:
         from_secret: GH_TOKEN
@@ -39,7 +39,7 @@ name: tag
 
 steps:
   - name: tag
-    image: livingdocs/docker-node:20.10
+    image: livingdocs/docker-node:28-22
     environment:
       DOCKER_USERNAME:
         from_secret: DOCKER_USERNAME
@@ -57,6 +57,6 @@ trigger:
 
 ---
 kind: signature
-hmac: 0231cb8f4527ace551e9aba128384e49eb769c91c6521f6f4e3073b828398eec
+hmac: 14b59a09279d47928fb83dedfe6de5ace7e75f64e14ad53f5e9bbe0e8ce53640
 
 ...

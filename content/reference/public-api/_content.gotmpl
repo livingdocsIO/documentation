@@ -1,10 +1,10 @@
 <!-- To iterate over a map
-  range (sort $.Site.Data.endpoints)
+  range (sort hugo.Data.endpoints)
  -->
 {{ $endpoints := partialCached "_api-endpoints" $ true }}
 
 {{ $sectionsStat := os.Stat "data/sections.yaml" }}
-{{ range $section := $.Site.Data.sections }}
+{{ range $section := hugo.Data.sections }}
   <!-- warnf (string ($section | jsonify)) -->
   <!-- warnf (string $section.title) -->
 
