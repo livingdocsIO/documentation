@@ -613,6 +613,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+- [v123.21.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.26): fix: show component groups with translated labels
 
 - [v123.21.25](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.25): fix(media-library): Prevent li-metadata-translations save on open
 - [v123.21.24](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.24): fix(deps): update livingdocs-patch from 34.0.5 to v34.0.6
