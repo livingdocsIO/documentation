@@ -400,6 +400,7 @@ Here is a list of all patches after the release has been announced.
 - [v296.2.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.1): fix(deps): update dependency @livingdocs/framework from 32.12.6 to v32.12.7
 
 ### Livingdocs Editor Patches
+- [v123.10.59](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.59): fix(deps): ship angular, vue and vue-demi TuxCare forks as direct deps
 - [v123.10.58](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.58): fix: show component groups with translated labels
 - [v123.10.57](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.57): fix(media-library): Prevent li-metadata-translations save on open
 - [v123.10.56](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.10.56): fix(deps): update livingdocs-patch from 32.12.11 to v32.12.12
