@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [feat(indexing): Add Norwegian language support and media library full-text search](https://github.com/livingdocsIO/livingdocs-server/pull/9542)
 - [License profiles](https://github.com/livingdocsIO/livingdocs-editor/pull/11201)
 - [License profiles](https://github.com/livingdocsIO/livingdocs-server/pull/9491)
 - [Show component groups with translated labels](https://github.com/livingdocsIO/livingdocs-editor/pull/11273)
