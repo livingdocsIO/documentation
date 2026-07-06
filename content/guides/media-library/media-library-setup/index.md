@@ -811,35 +811,33 @@ The Usage Log feature is only available when `use2025Behavior` has been enabled.
 
 ### Enabling the Usage Log feature
 
-Define at least one purpose in the `projectConfig.mediaCenter.usageLog.purposes` array to enable the feature for all media types in the project.
+Define at least one purpose in the `projectConfig.mediaCenter.usagePurposes` array to enable the feature for all media types in the project.
 
 ```js
 {
   mediaCenter: {
-    usageLog: {
-      purposes: [
-        {
-          handle: 'print',
-          label: {
-            en: 'Print',
-            de: 'Druck'
-          },
-          internal: false,
-          paramsSchema: [
-            {
-              handle: 'page',
-              type: 'li-integer',
-              ui: {
-                label: {
-                  en: 'Page',
-                  de: 'Seite'
-                }
+    usagePurposes: [
+      {
+        handle: 'print',
+        label: {
+          en: 'Print',
+          de: 'Druck'
+        },
+        internal: false,
+        paramsSchema: [
+          {
+            handle: 'page',
+            type: 'li-integer',
+            ui: {
+              label: {
+                en: 'Page',
+                de: 'Seite'
               }
             }
-          ]
-        }
-      ]
-    }
+          }
+        ]
+      }
+    ]
   }
 }
 ```
