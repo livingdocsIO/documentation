@@ -352,6 +352,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Here is a list of all patches after the release has been announced.
 
 ### Livingdocs Server Patches
+- [v296.2.46](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.46): fix(deps): bump @opentelemetry to ^0.219 to remove vulnerable protobufjs 8.0.x
 - [v296.2.45](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.45): fix: Trigger release after deps update
 - [v296.2.44](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.44): fix(deps): update dependency undici from 7.24.0 to 7.28.0 [security]
 - [v296.2.43](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v296.2.43): fix(blob-store): prevent S3 socket exhaustion on partial image reads
