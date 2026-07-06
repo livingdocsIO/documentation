@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Usage Log Billing Part 3](https://github.com/livingdocsIO/livingdocs-server/pull/9600)
 - [feat(search): Add search syntax cheat sheet for simple query dashboards](https://github.com/livingdocsIO/livingdocs-editor/pull/11222)
 - [feat(indexing): Add Norwegian language support and media library full-text search](https://github.com/livingdocsIO/livingdocs-server/pull/9542)
 - [License profiles](https://github.com/livingdocsIO/livingdocs-editor/pull/11201)
