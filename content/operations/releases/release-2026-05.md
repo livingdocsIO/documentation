@@ -585,6 +585,7 @@ We are aware of the following vulnerabilities in the Livingdocs Editor:
 Patches typically fix bugs and apply improvements within the current release. Keeping your deployment up-to-date with the latest patch version means you benefit from those fixes. No explicit action is required per patch — bumping the version is enough.
 
 ### Livingdocs Server Patches
+- [v301.1.23](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.23): fix: comply with demo platform code rules
 
 - [v301.1.22](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.22): fix: Trigger release after deps update
 - [v301.1.21](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.21): fix(deps): update livingdocs-patch
