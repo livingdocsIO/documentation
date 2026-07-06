@@ -36,7 +36,8 @@ storageFormat: |
       user: <Integer>
     },
     assignees: [<Integer>],
-    mode: <String>
+    mode: <String>,
+    data: <Object> // task-specific state, e.g. license profile approvals store approved media ids at data.mediaIds
   }
 contentTypeConfig: |2
         handle: 'myHandle'
