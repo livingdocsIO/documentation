@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [License profiles](https://github.com/livingdocsIO/livingdocs-server/pull/9491)
 - [Show component groups with translated labels](https://github.com/livingdocsIO/livingdocs-editor/pull/11273)
 - [chore(deps): update dependency eslint from 10.5.0 to v10.6.0 (main)](https://github.com/livingdocsIO/livingdocs-server/pull/9643)
 - [chore(deps): update dependency webpack from 5.108.0 to v5.108.1 (main)](https://github.com/livingdocsIO/livingdocs-editor/pull/11269)
