@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Patch vulnerabilities [main]](https://github.com/livingdocsIO/livingdocs-server/pull/9649)
 - [Remove search.metadataMapping (LIDEP069)](https://github.com/livingdocsIO/livingdocs-server/pull/9406)
 - [feat(search): Add expert search display filter](https://github.com/livingdocsIO/livingdocs-editor/pull/11211)
 - [Usage Log Billing Part 4](https://github.com/livingdocsIO/livingdocs-editor/pull/11254)
