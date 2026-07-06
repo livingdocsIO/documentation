@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Remove publishType references (LIDEP074)](https://github.com/livingdocsIO/livingdocs-editor/pull/11134)
 - [Remove publishType from contentTypes and deliveries (LIDEP074)](https://github.com/livingdocsIO/livingdocs-server/pull/9408)
 - [Usage Log Billing Part 3](https://github.com/livingdocsIO/livingdocs-editor/pull/11245)
 - [Usage Log Billing Part 3](https://github.com/livingdocsIO/livingdocs-server/pull/9600)
