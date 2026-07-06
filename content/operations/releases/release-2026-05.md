@@ -614,6 +614,7 @@ Patches typically fix bugs and apply improvements within the current release. Ke
 - [v301.1.1](https://github.com/livingdocsIO/livingdocs-server/releases/tag/v301.1.1): fix(release-2026-05): Update framework to v34.0.3 (release-2026-05 tag)
 
 ### Livingdocs Editor Patches
+- [v123.21.29](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.29): fix(buy-in): show expiry hint immediately after requesting
 - [v123.21.28](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.28): fix: trigger a new release version
 - [v123.21.27](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.27): fix(deps): ship angular, vue and vue-demi TuxCare forks as direct deps
 - [v123.21.26](https://github.com/livingdocsIO/livingdocs-editor/releases/tag/v123.21.26): fix: show component groups with translated labels
