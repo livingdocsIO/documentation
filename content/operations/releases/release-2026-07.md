@@ -64,6 +64,7 @@ These are the release notes of the upcoming release (pull requests merged to the
 - :fire: Integration against the upcoming release (currently `main` branch) is at your own risk
 
 ## PRs to Categorize
+- [Image Card Enhancements: Tags](https://github.com/livingdocsIO/livingdocs-editor/pull/11220)
 - [Image Card Enhancements: Tags](https://github.com/livingdocsIO/livingdocs-server/pull/9547)
 - [fix(search): Prevent search cheat sheet from being clipped in side panel](https://github.com/livingdocsIO/livingdocs-editor/pull/11302)
 - [fix(deps): update opentelemetry (main) (minor)](https://github.com/livingdocsIO/livingdocs-server/pull/9669)
